@@ -300,11 +300,13 @@ footer{border-top:1px solid rgba(184,146,42,0.2);padding:48px 24px 32px;max-widt
     </div>
     <h1>Dissect. Learn.<br>Dominate.</h1>
     <p class="hero-sub">The only surgical education resource written by a resident, for the overnight shift. No textbook theory. Just the clinical decisions that keep patients alive.</p>
-    <div class="hero-input-row">
-      <input class="hero-input" type="email" placeholder="Enter your email" id="heroEmail">
-      <button class="hero-btn" onclick="heroSignup()">Get Free Notes</button>
-    </div>
-    <p class="hero-footnote">All notes free on <a href="https://t.me/sugicalInsightHub" target="_blank">Telegram</a> · Built by Dr. Abdulmalik Moh</p>
+    <form id="signupForm" action="https://forminit.com/f/8fcbo3pg7br" method="POST" onsubmit="handleSignup(event)">
+      <div class="hero-input-row">
+        <input class="hero-input" type="email" name="email" placeholder="Enter your email" id="heroEmail" required>
+        <button class="hero-btn" type="submit" id="signupBtn">Get Free Notes</button>
+      </div>
+    </form>
+    <p class="hero-footnote" id="signupMsg">All notes free on <a href="https://t.me/sugicalInsightHub" target="_blank">Telegram</a> · Built by Dr. Abdulmalik Moh</p>
   </div>
 </section>
 
@@ -416,11 +418,35 @@ footer{border-top:1px solid rgba(184,146,42,0.2);padding:48px 24px 32px;max-widt
 </footer>
 
 <script>
-function heroSignup(){
-  var v=document.getElementById('heroEmail').value;
-  if(!v||v.indexOf('@')<0){alert('Enter a valid email.');return;}
-  document.getElementById('heroEmail').value='';
-  alert('Saved. You will get the next note first.');
+function handleSignup(e){
+  e.preventDefault();
+  var email=document.getElementById('heroEmail').value;
+  var btn=document.getElementById('signupBtn');
+  var msg=document.getElementById('signupMsg');
+  if(!email||email.indexOf('@')<0){return;}
+  btn.textContent='Sending...';
+  btn.disabled=true;
+  var form=document.getElementById('signupForm');
+  var data=new FormData(form);
+  fetch('https://forminit.com/f/8fcbo3pg7br',{
+    method:'POST',
+    body:data,
+    headers:{'Accept':'application/json'}
+  }).then(function(r){
+    if(r.ok||r.status===200||r.status===302){
+      document.getElementById('heroEmail').value='';
+      btn.textContent='Done!';
+      msg.innerHTML='<strong style="color:#b8922a;">Saved.</strong> You will get the next note first.';
+      setTimeout(function(){btn.textContent='Get Free Notes';btn.disabled=false;},3000);
+    } else {
+      btn.textContent='Get Free Notes';
+      btn.disabled=false;
+      msg.innerHTML='Something went wrong. <a href="https://t.me/sugicalInsightHub" target="_blank">Join Telegram instead.</a>';
+    }
+  }).catch(function(){
+    // fallback — submit normally
+    form.submit();
+  });
 }
 function answerMCQ(el){
   document.querySelectorAll('.mcq-opt').forEach(function(o){o.style.opacity='.4';o.disabled=true;});
