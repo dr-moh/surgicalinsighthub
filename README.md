@@ -1,9 +1,7 @@
 # Surgical Insight Hub — Website
-
 **Dissect. Learn. Dominate.**
 
-Official website for Surgical Insight Hub (SIH) and the YesSurgeryBet podcast.
-
+Official website for Surgical Insight Hub (SIH), the YesSurgeryBet podcast, and the SIH Monograph Series.
 Built by Dr. Abdulmalik Moh.
 
 ---
@@ -13,7 +11,6 @@ Built by Dr. Abdulmalik Moh.
 All content lives in **one file: `data.json`**
 
 To add a new note, open `data.json` and add an entry to the `notes` array:
-
 ```json
 {
   "id": 9,
@@ -31,7 +28,6 @@ To add a new note, open `data.json` and add an entry to the `notes` array:
 **Category options:** `emergency` · `hpb` · `colorectal` · `peds` · `periop`
 
 To add a new podcast episode, add an entry to the `episodes` array:
-
 ```json
 {
   "id": 9,
@@ -56,6 +52,8 @@ Set `"isLatest": true` on the newest episode and `false` on all others.
 | `podcast.html` | Podcast episodes |
 | `about.html` | About page |
 | `data.json` | **All content — edit this to update the site** |
+| `colorectal_Notebook.html` | SIH Monograph — Colorectal & Anal Surgery |
+| `anestesia_with_mono.html` | SIH Monograph — Anesthesia & Perioperative Care |
 | `Surgical_Insight_Hub_Logo.png` | Logo — keep in root folder |
 
 ---
@@ -70,13 +68,12 @@ Set `"isLatest": true` on the newest episode and `false` on all others.
 
 ## Hosting
 
-Hosted free on GitHub Pages.
-Live at: `https://yourusername.github.io/sih-website`
+Hosted free on Cloudflare Pages.
+Live at: `https://surgicalinsighthub.pages.dev`
 
 ---
 
 ## Daily Update Workflow
-
 ```bash
 # 1. Edit data.json with new content
 # 2. Save the file
