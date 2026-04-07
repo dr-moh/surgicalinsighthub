@@ -263,41 +263,107 @@
     .nav-close-btn:hover { background: rgba(255,255,255,0.15); }
 
 
-    /* LOGO WATERMARK */
-    .page-watermark {
+    /* LOGO WATERMARK — fixed dead center, always visible behind content */
+    body::after {
+        content: '';
         position: fixed;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: min(520px, 70vw);
-        height: min(520px, 70vw);
-        opacity: 0.055;
+        width: min(540px, 72vw);
+        height: min(540px, 72vw);
+        background-image: url('Surgical_Insight_Hub_Logo.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        opacity: 0.07;
         pointer-events: none;
         z-index: 0;
-        filter: sepia(1) saturate(0.3) brightness(0.5);
+        filter: sepia(1) saturate(0.3) brightness(0.45);
     }
-    .page-watermark img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
+    /* ensure all content floats above watermark */
+    .main-content { position: relative; z-index: 2; }
+    .sidebar, #mainSidebar { z-index: 200 !important; }
+    .nav-toggle { z-index: 300 !important; }
+    .nav-overlay { z-index: 150 !important; }
+
+
+    /* SIDEBAR ABSTRACT SURGICAL DESIGN */
+    .nav-surgical-art {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 290px;
+        pointer-events: none;
+        opacity: 0.18;
+        overflow: hidden;
     }
-    .main-content { position: relative; z-index: 1; }
-    .nav-toggle { z-index: 300; }
-    .nav-overlay { z-index: 150; }
-    #mainSidebar { z-index: 200; }
+    .nav-surgical-art svg { width: 100%; height: 100%; }
+    #mainSidebar { overflow: hidden; position: relative; }
 
 </style>
 </head>
 <body>
 
-    <div class="page-watermark"><img src="Surgical_Insight_Hub_Logo.png" alt=""></div>
-
-<div class="nav-overlay" id="navOverlay" onclick="toggleNav()"></div>
+    <div class="nav-overlay" id="navOverlay" onclick="toggleNav()"></div>
 
 <button class="nav-toggle" onclick="toggleNav()">☰ Contents</button>
 
 <div class="sidebar" id="mainSidebar">
   <button class="nav-close-btn" onclick="toggleNav()">✕</button>
+  <div class="nav-surgical-art">
+    <svg viewBox="0 0 280 280" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMax meet">
+      <!-- Syringe -->
+      <g transform="translate(20, 30) rotate(-20)">
+        <rect x="10" y="8" width="100" height="14" rx="4" fill="#b8922a"/>
+        <rect x="110" y="10" width="30" height="10" rx="5" fill="#f0d080"/>
+        <rect x="140" y="13" width="18" height="4" rx="2" fill="#b8922a"/>
+        <line x1="158" y1="15" x2="175" y2="15" stroke="#f0d080" stroke-width="1.5" stroke-linecap="round"/>
+        <!-- plunger -->
+        <rect x="0" y="5" width="6" height="20" rx="2" fill="#f0d080"/>
+        <rect x="6" y="8" width="4" height="14" rx="1" fill="#b8922a"/>
+        <!-- graduation marks -->
+        <line x1="30" y1="8" x2="30" y2="4" stroke="#f0d080" stroke-width="1.5"/>
+        <line x1="50" y1="8" x2="50" y2="4" stroke="#f0d080" stroke-width="1.5"/>
+        <line x1="70" y1="8" x2="70" y2="4" stroke="#f0d080" stroke-width="1.5"/>
+        <line x1="90" y1="8" x2="90" y2="4" stroke="#f0d080" stroke-width="1.5"/>
+      </g>
+      <!-- ECG/heart trace -->
+      <path d="M 10 130 L 40 130 L 50 110 L 60 155 L 75 100 L 90 155 L 105 130 L 140 130 L 150 125 L 160 130 L 200 130"
+            fill="none" stroke="#b8922a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <!-- Stethoscope -->
+      <g transform="translate(30, 150)">
+        <circle cx="50" cy="90" r="20" fill="none" stroke="#b8922a" stroke-width="2.5"/>
+        <circle cx="50" cy="90" r="11" fill="rgba(184,146,42,0.25)"/>
+        <path d="M 30 90 Q 5 90 5 68 Q 5 38 20 38" fill="none" stroke="#b8922a" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M 70 90 Q 95 90 95 68 Q 95 38 80 38" fill="none" stroke="#b8922a" stroke-width="2.5" stroke-linecap="round"/>
+        <circle cx="20" cy="36" r="5" fill="#f0d080" stroke="#b8922a" stroke-width="1.5"/>
+        <circle cx="80" cy="36" r="5" fill="#f0d080" stroke="#b8922a" stroke-width="1.5"/>
+      </g>
+      <!-- Oxygen mask suggestion -->
+      <ellipse cx="195" cy="60" rx="28" ry="20" fill="none" stroke="#b8922a" stroke-width="2"/>
+      <ellipse cx="195" cy="60" rx="20" ry="13" fill="rgba(184,146,42,0.15)"/>
+      <line x1="167" y1="55" x2="145" y2="50" stroke="#b8922a" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="167" y1="65" x2="145" y2="70" stroke="#b8922a" stroke-width="1.5" stroke-linecap="round"/>
+      <!-- IV bag -->
+      <g transform="translate(185, 140)">
+        <rect x="10" y="0" width="40" height="55" rx="8" fill="none" stroke="#b8922a" stroke-width="2"/>
+        <rect x="10" y="0" width="40" height="30" rx="8" fill="rgba(184,146,42,0.1)"/>
+        <line x1="30" y1="55" x2="30" y2="75" stroke="#b8922a" stroke-width="2" stroke-linecap="round"/>
+        <line x1="25" y1="75" x2="35" y2="75" stroke="#b8922a" stroke-width="2" stroke-linecap="round"/>
+        <line x1="15" y1="10" x2="45" y2="10" stroke="rgba(184,146,42,0.4)" stroke-width="1"/>
+        <line x1="15" y1="18" x2="45" y2="18" stroke="rgba(184,146,42,0.4)" stroke-width="1"/>
+        <!-- hang hook -->
+        <path d="M 30 0 Q 30 -8 38 -8 Q 46 -8 46 -2" fill="none" stroke="#f0d080" stroke-width="1.8" stroke-linecap="round"/>
+      </g>
+      <!-- Medical cross -->
+      <g transform="translate(10, 230)" opacity="0.5">
+        <rect x="8" y="0" width="10" height="28" rx="3" fill="#b8922a"/>
+        <rect x="0" y="8" width="28" height="10" rx="3" fill="#b8922a"/>
+      </g>
+    </svg>
+  </div>
         <div class="sidebar-header" style="font-size:.85rem;line-height:1.4;">Surgical Insight Hub<br><span style="color:#b8922a;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;">Anesthesia Monograph</span></div>
         <button class="nav-btn active" onclick="showTab('tab-1', this)">Topic 1: Airway</button>
         <button class="nav-btn" onclick="showTab('tab-2', this)">Topic 2: Pharmacology</button>

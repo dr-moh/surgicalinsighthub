@@ -366,38 +366,51 @@
   .nav-close:hover { background: rgba(255,255,255,0.15); }
 
 
-  /* LOGO WATERMARK */
-  .page-watermark {
+  /* LOGO WATERMARK — fixed dead center, always visible behind content */
+  body::after {
+    content: '';
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: min(520px, 70vw);
-    height: min(520px, 70vw);
-    opacity: 0.055;
+    width: min(540px, 72vw);
+    height: min(540px, 72vw);
+    background-image: url('Surgical_Insight_Hub_Logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.07;
     pointer-events: none;
     z-index: 0;
-    filter: sepia(1) saturate(0.3) brightness(0.5);
+    filter: sepia(1) saturate(0.3) brightness(0.45);
   }
-  .page-watermark img {
+  /* ensure all content floats above watermark */
+  .main-content { position: relative; z-index: 2; }
+  nav { z-index: 200 !important; }
+  .nav-toggle { z-index: 300 !important; }
+  .nav-overlay { z-index: 150 !important; }
+
+
+  /* SIDEBAR ABSTRACT SURGICAL DESIGN */
+  .nav-surgical-art {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 280px;
+    pointer-events: none;
+    opacity: 0.18;
+    overflow: hidden;
+  }
+  .nav-surgical-art svg {
     width: 100%;
     height: 100%;
-    object-fit: contain;
   }
-  /* make sure content sits above watermark */
-  nav, .main-content, .nav-toggle, .nav-overlay {
-    position: relative;
-    z-index: 1;
-  }
-  nav, .nav-toggle { z-index: 200; }
-  .nav-overlay { z-index: 150; }
-  .main-content { z-index: 1; }
+  nav { overflow: hidden; position: relative; }
 
 </style>
 </head>
 <body>
-
-<div class="page-watermark"><img src="Surgical_Insight_Hub_Logo.png" alt=""></div>
 
 <div class="nav-overlay" id="navOverlay" onclick="toggleNav()"></div>
 
@@ -407,6 +420,62 @@
 
 <nav class="no-print" id="mainNav">
   <button class="nav-close" onclick="toggleNav()">✕</button>
+  <div class="nav-surgical-art">
+    <svg viewBox="0 0 210 280" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMax meet">
+      <!-- Scalpel -->
+      <g transform="translate(20, 40) rotate(-30)">
+        <rect x="0" y="6" width="80" height="8" rx="4" fill="#b8922a"/>
+        <polygon points="80,0 110,10 80,20" fill="#f0d080"/>
+        <rect x="0" y="8" width="80" height="3" fill="rgba(255,255,255,0.3)" rx="1"/>
+      </g>
+      <!-- Curved surgical needle -->
+      <path d="M 30 160 Q 60 120 90 150 Q 120 180 150 140" 
+            fill="none" stroke="#b8922a" stroke-width="2.5" stroke-linecap="round"/>
+      <!-- Needle tip -->
+      <circle cx="150" cy="140" r="3" fill="#f0d080"/>
+      <!-- Suture thread -->
+      <path d="M 150 140 Q 170 130 165 110 Q 160 90 180 85"
+            fill="none" stroke="#b8922a" stroke-width="1.2" stroke-dasharray="4,3" stroke-linecap="round"/>
+      <!-- Forceps -->
+      <g transform="translate(100, 30) rotate(45)">
+        <rect x="0" y="0" width="3" height="60" rx="1.5" fill="#b8922a"/>
+        <rect x="8" y="0" width="3" height="60" rx="1.5" fill="#b8922a"/>
+        <path d="M 1.5 60 Q 5.5 70 5.5 75" fill="none" stroke="#b8922a" stroke-width="2" stroke-linecap="round"/>
+        <path d="M 9.5 60 Q 5.5 70 5.5 75" fill="none" stroke="#b8922a" stroke-width="2" stroke-linecap="round"/>
+        <rect x="0" y="25" width="11" height="3" rx="1" fill="#f0d080"/>
+        <rect x="0" y="30" width="11" height="3" rx="1" fill="#f0d080"/>
+      </g>
+      <!-- Stethoscope -->
+      <g transform="translate(10, 170)">
+        <circle cx="50" cy="80" r="18" fill="none" stroke="#b8922a" stroke-width="2.5"/>
+        <circle cx="50" cy="80" r="10" fill="rgba(184,146,42,0.3)"/>
+        <path d="M 32 80 Q 10 80 10 60 Q 10 30 22 30" fill="none" stroke="#b8922a" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M 68 80 Q 90 80 90 60 Q 90 30 78 30" fill="none" stroke="#b8922a" stroke-width="2.5" stroke-linecap="round"/>
+        <circle cx="22" cy="28" r="5" fill="#f0d080" stroke="#b8922a" stroke-width="1.5"/>
+        <circle cx="78" cy="28" r="5" fill="#f0d080" stroke="#b8922a" stroke-width="1.5"/>
+      </g>
+      <!-- Cross/medical symbol -->
+      <g transform="translate(150, 180)" opacity="0.6">
+        <rect x="8" y="0" width="10" height="30" rx="3" fill="#b8922a"/>
+        <rect x="0" y="8" width="30" height="10" rx="3" fill="#b8922a"/>
+      </g>
+      <!-- DNA helix suggestion -->
+      <path d="M 160 60 Q 175 70 160 80 Q 145 90 160 100 Q 175 110 160 120 Q 145 130 160 140"
+            fill="none" stroke="#b8922a" stroke-width="1.8" stroke-linecap="round"/>
+      <path d="M 175 60 Q 160 70 175 80 Q 190 90 175 100 Q 160 110 175 120 Q 190 130 175 140"
+            fill="none" stroke="#f0d080" stroke-width="1.8" stroke-linecap="round"/>
+      <!-- connecting rungs -->
+      <line x1="160" y1="68" x2="175" y2="68" stroke="#b8922a" stroke-width="1" opacity="0.6"/>
+      <line x1="157" y1="80" x2="177" y2="80" stroke="#b8922a" stroke-width="1" opacity="0.6"/>
+      <line x1="160" y1="92" x2="175" y2="92" stroke="#b8922a" stroke-width="1" opacity="0.6"/>
+      <line x1="157" y1="104" x2="177" y2="104" stroke="#b8922a" stroke-width="1" opacity="0.6"/>
+      <line x1="160" y1="116" x2="175" y2="116" stroke="#b8922a" stroke-width="1" opacity="0.6"/>
+      <line x1="157" y1="128" x2="177" y2="128" stroke="#b8922a" stroke-width="1" opacity="0.6"/>
+      <!-- Paperclip -->
+      <path d="M 55 200 Q 45 200 45 210 L 45 240 Q 45 252 55 252 Q 65 252 65 240 L 65 215 Q 65 208 59 208 L 59 238 Q 59 244 55 244 Q 51 244 51 238 L 51 210"
+            fill="none" stroke="#f0d080" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+  </div>
   <div class="nav-brand">Surgical Insight Hub<br>Monograph Series</div><h2>Colorectal &amp; Anal Surgery</h2>
   <div class="nav-section">Notebook</div>
   <a href="#cover">Cover</a>
