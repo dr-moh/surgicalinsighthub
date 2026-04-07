@@ -26,7 +26,7 @@
   /* NAV — SIH brand */
   nav {
     position: fixed;
-    top: 0; left: 0;
+    top: 0; left: -220px;
     width: 210px;
     height: 100vh;
     background: #2b1810;
@@ -35,9 +35,11 @@
     overflow-y: auto;
     font-family: Arial, sans-serif;
     font-size: 11px;
-    z-index: 100;
+    z-index: 200;
     border-right: 2px solid #b8922a;
+    transition: left 0.3s ease;
   }
+  nav.open { left: 0; }
   nav h2 {
     font-size: 11px;
     color: #b8922a;
@@ -75,8 +77,9 @@
   }
 
   .main-content {
-    margin-left: 230px;
-    max-width: 900px;
+    margin-left: 0;
+    max-width: 960px;
+    padding-top: 56px;
   }
 
   /* COVER — SIH brand */
@@ -307,14 +310,73 @@
   .sih-footer span { color: #b8922a; font-weight: 700; }
 
   @media(max-width: 700px) {
-    nav { display: none; }
-    .main-content { margin-left: 0; }
+    .main-content { padding-top: 56px; }
   }
+
+  /* TOGGLE BUTTON */
+  .nav-toggle {
+    position: fixed;
+    top: 12px; left: 12px;
+    z-index: 300;
+    background: #2b1810;
+    border: 1.5px solid #b8922a;
+    color: #f0d080;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 13px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-family: Arial, sans-serif;
+    font-weight: 700;
+    box-shadow: 0 2px 8px rgba(43,24,16,0.2);
+    transition: opacity .15s;
+  }
+  .nav-toggle:hover { opacity: .85; }
+  .nav-toggle .tog-icon { font-size: 16px; line-height: 1; }
+
+  /* OVERLAY */
+  .nav-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(43,24,16,0.45);
+    z-index: 150;
+    backdrop-filter: blur(2px);
+  }
+  .nav-overlay.show { display: block; }
+
+  /* CLOSE button inside nav */
+  .nav-close {
+    position: absolute;
+    top: 10px; right: 10px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(184,146,42,0.3);
+    color: #b8922a;
+    border-radius: 6px;
+    width: 26px; height: 26px;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+  }
+  .nav-close:hover { background: rgba(255,255,255,0.15); }
+
 </style>
 </head>
 <body>
 
-<nav class="no-print">
+<div class="nav-overlay" id="navOverlay" onclick="toggleNav()"></div>
+
+<button class="nav-toggle no-print" onclick="toggleNav()">
+  <span class="tog-icon">☰</span> Contents
+</button>
+
+<nav class="no-print" id="mainNav">
+  <button class="nav-close" onclick="toggleNav()">✕</button>
   <div class="nav-brand">Surgical Insight Hub<br>Monograph Series</div><h2>Colorectal &amp; Anal Surgery</h2>
   <div class="nav-section">Notebook</div>
   <a href="#cover">Cover</a>
@@ -1317,5 +1379,22 @@
   </div>
 </div>
 
-</div></body>
+</div>
+<script>
+function toggleNav() {
+  var nav = document.getElementById('mainNav');
+  var overlay = document.getElementById('navOverlay');
+  nav.classList.toggle('open');
+  overlay.classList.toggle('show');
+}
+// Close nav when a link inside is clicked
+document.querySelectorAll('#mainNav a').forEach(function(link) {
+  link.addEventListener('click', function() {
+    document.getElementById('mainNav').classList.remove('open');
+    document.getElementById('navOverlay').classList.remove('show');
+  });
+});
+</script>
+
+</body>
 </html>

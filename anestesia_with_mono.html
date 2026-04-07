@@ -26,9 +26,9 @@
         color: var(--text-primary);
         margin: 0;
         padding: 0;
-        display: flex;
-        height: 100vh;
-        overflow: hidden;
+        display: block;
+        min-height: 100vh;
+        overflow-x: hidden;
     }
 
     /* Sidebar Navigation */
@@ -40,7 +40,13 @@
         flex-direction: column;
         flex-shrink: 0;
         overflow-y: auto;
+        position: fixed;
+        top: 0; left: -290px;
+        height: 100vh;
+        z-index: 200;
+        transition: left 0.3s ease;
     }
+    .sidebar.open { left: 0; }
 
     .sidebar-header {
         padding: 1.5rem;
@@ -79,9 +85,11 @@
     /* Main Content Area */
     .main-content {
         flex-grow: 1;
-        padding: 2rem 3rem;
+        padding: 4rem 3rem 2rem;
         overflow-y: auto;
         background-color: var(--bg-color);
+        margin-left: 0;
+        width: 100%;
     }
 
     .tab-content {
@@ -206,11 +214,64 @@
         flex-wrap:wrap;gap:8px;
     }
     .sih-footer-bar b{color:#b8922a;font-weight:700;}
+
+    /* TOGGLE */
+    .nav-toggle {
+        position: fixed;
+        top: 12px; left: 12px;
+        z-index: 300;
+        background: #2b1810;
+        border: 1.5px solid #b8922a;
+        color: #f0d080;
+        border-radius: 8px;
+        padding: 8px 14px;
+        font-size: 13px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        font-family: inherit;
+        font-weight: 700;
+        box-shadow: 0 2px 8px rgba(43,24,16,0.2);
+        transition: opacity .15s;
+    }
+    .nav-toggle:hover { opacity: .85; }
+    .nav-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(43,24,16,0.45);
+        z-index: 150;
+        backdrop-filter: blur(2px);
+    }
+    .nav-overlay.show { display: block; }
+    .nav-close-btn {
+        background: rgba(255,255,255,0.08);
+        border: 1px solid rgba(184,146,42,0.3);
+        color: #b8922a;
+        border-radius: 6px;
+        width: 26px; height: 26px;
+        font-size: 14px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: auto;
+        margin-bottom: 12px;
+        font-family: inherit;
+    }
+    .nav-close-btn:hover { background: rgba(255,255,255,0.15); }
+
 </style>
 </head>
 <body>
 
-    <div class="sidebar">
+    <div class="nav-overlay" id="navOverlay" onclick="toggleNav()"></div>
+
+<button class="nav-toggle" onclick="toggleNav()">☰ Contents</button>
+
+<div class="sidebar" id="mainSidebar">
+  <button class="nav-close-btn" onclick="toggleNav()">✕</button>
         <div class="sidebar-header" style="font-size:.85rem;line-height:1.4;">Surgical Insight Hub<br><span style="color:#b8922a;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;">Anesthesia Monograph</span></div>
         <button class="nav-btn active" onclick="showTab('tab-1', this)">Topic 1: Airway</button>
         <button class="nav-btn" onclick="showTab('tab-2', this)">Topic 2: Pharmacology</button>
@@ -220,8 +281,9 @@
         <button class="nav-btn" style="border-top: 1px solid #334155; margin-top: 1rem;" onclick="showTab('tab-mcq', this)">Board Review MCQs</button>
         <button class="nav-btn" onclick="showTab('tab-ref', this)">Rapid Reference</button>
     </div>
+</div>
 
-    <div class="main-content">
+<div class="main-content">
 
         <div id="tab-1" class="tab-content active">
             <h1>Topic 1: Airway Management</h1>
@@ -658,6 +720,23 @@
             <b>@sugicalInsightHub · t.me/sugicalInsightHub</b>
         </div>
 </div>
+
+
+<script>
+function toggleNav() {
+    var sidebar = document.getElementById('mainSidebar');
+    var overlay = document.getElementById('navOverlay');
+    sidebar.classList.toggle('open');
+    overlay.classList.toggle('show');
+}
+// Close when nav button clicked
+document.querySelectorAll('.nav-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+        document.getElementById('mainSidebar').classList.remove('open');
+        document.getElementById('navOverlay').classList.remove('show');
+    });
+});
+</script>
 
     <script>
         function showTab(tabId, btn) {
