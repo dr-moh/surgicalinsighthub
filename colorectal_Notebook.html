@@ -9,64 +9,111 @@
     body { margin: 0; }
     .page-break { page-break-before: always; }
     .no-print { display: none; }
-    nav { display: none; }
+    #sideNav { display: none; }
   }
-
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
   body {
-    font-family: 'Georgia', serif;
+    font-family: Georgia, serif;
     font-size: 13px;
     line-height: 1.7;
     color: #1a1208;
     background: #f5f0e8;
-    padding: 20px;
+    padding: 0;
   }
 
-  /* NAV — SIH brand */
-  nav {
+  /* ── TOGGLE BUTTON ── */
+  #navToggle {
     position: fixed;
-    top: 0; left: -220px;
-    width: 210px;
+    top: 12px; left: 12px;
+    z-index: 9999;
+    background: #2b1810;
+    border: 1.5px solid #b8922a;
+    color: #f0d080;
+    border-radius: 8px;
+    padding: 8px 14px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  }
+  #navToggle:hover { opacity: 0.88; }
+
+  /* ── OVERLAY ── */
+  #navOverlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 8888;
+  }
+
+  /* ── SIDEBAR ── */
+  #sideNav {
+    position: fixed;
+    top: 0; left: -260px;
+    width: 240px;
     height: 100vh;
     background: #2b1810;
-    color: #fff;
-    padding: 16px 12px;
+    z-index: 9998;
     overflow-y: auto;
+    overflow-x: hidden;
+    transition: left 0.28s ease;
+    border-right: 2px solid #b8922a;
+    padding: 16px 14px 40px;
     font-family: Arial, sans-serif;
     font-size: 11px;
-    z-index: 200;
-    border-right: 2px solid #b8922a;
-    transition: left 0.3s ease;
   }
-  nav.open { left: 0; }
-  nav h2 {
-    font-size: 11px;
+  #sideNav.open { left: 0; }
+
+  #navClose {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 12px;
+  }
+  #navClose button {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(184,146,42,0.3);
+    color: #b8922a;
+    border-radius: 6px;
+    width: 26px; height: 26px;
+    font-size: 14px;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+  }
+
+  #sideNav .nav-brand {
+    font-size: 12px;
+    color: #f0d080;
+    font-weight: bold;
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(184,146,42,0.3);
+    line-height: 1.4;
+  }
+  #sideNav h2 {
+    font-size: 10px;
     color: #b8922a;
     margin-bottom: 4px;
     letter-spacing: 0.8px;
     text-transform: uppercase;
     font-weight: 700;
+    margin-top: 0;
   }
-  nav .nav-brand {
-    font-size: 13px;
-    color: #f0d080;
-    font-weight: bold;
-    margin-bottom: 16px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid rgba(184,146,42,0.3);
-    line-height: 1.3;
-  }
-  nav a {
+  #sideNav a {
     display: block;
-    color: rgba(255,255,255,0.6);
+    color: rgba(255,255,255,0.65);
     text-decoration: none;
-    padding: 3px 0;
+    padding: 4px 0;
     border-bottom: 1px solid rgba(255,255,255,0.06);
     transition: color .15s;
   }
-  nav a:hover { color: #b8922a; }
-  nav .nav-section {
+  #sideNav a:hover { color: #b8922a; }
+  #sideNav .nav-section {
     color: #b8922a;
     font-weight: bold;
     margin-top: 12px;
@@ -76,13 +123,42 @@
     text-transform: uppercase;
   }
 
+  /* ── SURGICAL ART inside sidebar ── */
+  .nav-art {
+    position: relative;
+    margin-top: 24px;
+    height: 200px;
+    opacity: 0.18;
+    overflow: hidden;
+  }
+  .nav-art svg { width: 100%; height: 100%; }
+
+  /* ── MAIN CONTENT ── */
   .main-content {
-    margin-left: 0;
-    max-width: 960px;
-    padding-top: 56px;
+    padding: 60px 24px 40px 24px;
+    max-width: 980px;
+    margin: 0 auto;
   }
 
-  /* COVER — SIH brand */
+  /* ── WATERMARK ── */
+  body::after {
+    content: '';
+    position: fixed;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: min(540px, 75vw);
+    height: min(540px, 75vw);
+    background-image: url('Surgical_Insight_Hub_Logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.07;
+    pointer-events: none;
+    z-index: -1;
+    filter: sepia(1) saturate(0.3) brightness(0.45);
+  }
+
+  /* ── COVER ── */
   .cover {
     background: #2b1810;
     color: #fff;
@@ -96,9 +172,9 @@
   }
   .cover::before {
     content: '';
-    position: absolute;
-    inset: 0;
+    position: absolute; inset: 0;
     background: repeating-linear-gradient(to bottom, transparent 0, transparent 39px, rgba(184,146,42,0.04) 39px, rgba(184,146,42,0.04) 40px);
+    pointer-events: none;
   }
   .cover h1 { font-size: 28px; font-weight: bold; color: #f0d080; margin-bottom: 10px; position: relative; }
   .cover p { font-size: 14px; color: rgba(255,255,255,0.6); position: relative; }
@@ -106,7 +182,7 @@
   .cover .meta { margin-top: 20px; font-size: 12px; color: #b8922a; position: relative; }
   .cover .monograph-number { font-size: 11px; color: #b8922a; text-transform: uppercase; letter-spacing: 1.5px; font-family: Arial, sans-serif; margin-bottom: 12px; position: relative; }
 
-  /* TOC */
+  /* ── TOC ── */
   .toc { background: #fff; border-radius: 8px; padding: 30px; margin-bottom: 30px; border-left: 5px solid #2b1810; box-shadow: 0 1px 4px rgba(43,24,16,0.07); }
   .toc h2 { font-size: 18px; color: #2b1810; margin-bottom: 16px; font-family: Arial, sans-serif; }
   .toc ol { padding-left: 20px; }
@@ -116,7 +192,7 @@
   .toc .toc-sub { padding-left: 20px; list-style: disc; }
   .toc .toc-sub li { font-size: 12px; color: #6b5a40; margin-bottom: 3px; }
 
-  /* MONOGRAPH */
+  /* ── MONOGRAPH ── */
   .monograph {
     background: #fff;
     border-radius: 8px;
@@ -125,83 +201,35 @@
     box-shadow: 0 1px 4px rgba(43,24,16,0.07);
     border: 1px solid rgba(184,146,42,0.15);
   }
-
-  .monograph-header {
-    border-bottom: 3px solid #b8922a;
-    padding-bottom: 14px;
-    margin-bottom: 24px;
-  }
+  .monograph-header { border-bottom: 3px solid #b8922a; padding-bottom: 14px; margin-bottom: 24px; }
   .monograph-number { font-size: 11px; color: #b8922a; text-transform: uppercase; letter-spacing: 1px; font-family: Arial, sans-serif; }
   .monograph-title { font-size: 22px; font-weight: bold; color: #2b1810; margin: 6px 0 4px; }
   .monograph-subtitle { font-size: 13px; color: #6b5a40; font-family: Arial, sans-serif; }
 
-  /* SECTION HEADINGS */
   h2.section {
-    font-size: 15px;
-    font-family: Arial, sans-serif;
-    font-weight: bold;
-    color: #fff;
-    background: #2b1810;
-    padding: 8px 14px;
-    border-radius: 4px;
-    margin: 28px 0 14px;
-    letter-spacing: 0.3px;
+    font-size: 15px; font-family: Arial, sans-serif; font-weight: bold;
+    color: #fff; background: #2b1810; padding: 8px 14px;
+    border-radius: 4px; margin: 28px 0 14px;
     border-left: 4px solid #b8922a;
   }
   h3.subsection {
-    font-size: 13px;
-    font-family: Arial, sans-serif;
-    font-weight: bold;
-    color: #2b1810;
-    border-left: 4px solid #b8922a;
-    padding-left: 10px;
-    margin: 20px 0 10px;
+    font-size: 13px; font-family: Arial, sans-serif; font-weight: bold;
+    color: #2b1810; border-left: 4px solid #b8922a;
+    padding-left: 10px; margin: 20px 0 10px;
   }
   h4.sub2 {
-    font-size: 12px;
-    font-family: Arial, sans-serif;
-    font-weight: bold;
-    color: #2b1810;
-    margin: 14px 0 6px;
-    text-decoration: underline;
-    text-decoration-color: #b8922a;
+    font-size: 12px; font-family: Arial, sans-serif; font-weight: bold;
+    color: #2b1810; margin: 14px 0 6px;
+    text-decoration: underline; text-decoration-color: #b8922a;
   }
 
-  /* TABLES */
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 12px 0 18px;
-    font-size: 12px;
-    font-family: Arial, sans-serif;
-  }
-  th {
-    background: #2b1810;
-    color: #f0d080;
-    padding: 7px 10px;
-    text-align: left;
-    font-weight: bold;
-    font-size: 11px;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-  }
-  td {
-    padding: 6px 10px;
-    border-bottom: 1px solid rgba(184,146,42,0.15);
-    vertical-align: top;
-    color: #1a1208;
-  }
+  table { width: 100%; border-collapse: collapse; margin: 12px 0 18px; font-size: 12px; font-family: Arial, sans-serif; }
+  th { background: #2b1810; color: #f0d080; padding: 7px 10px; text-align: left; font-weight: bold; font-size: 11px; letter-spacing: 0.05em; text-transform: uppercase; }
+  td { padding: 6px 10px; border-bottom: 1px solid rgba(184,146,42,0.15); vertical-align: top; color: #1a1208; }
   tr:nth-child(even) td { background: rgba(184,146,42,0.04); }
   tr:hover td { background: rgba(184,146,42,0.08); }
 
-  /* CALLOUT BOXES */
-  .callout {
-    border-radius: 6px;
-    padding: 12px 16px;
-    margin: 14px 0;
-    font-family: Arial, sans-serif;
-    font-size: 12px;
-  }
+  .callout { border-radius: 6px; padding: 12px 16px; margin: 14px 0; font-family: Arial, sans-serif; font-size: 12px; }
   .callout-danger { background: #fff0f0; border-left: 4px solid #a31515; }
   .callout-danger strong { color: #a31515; }
   .callout-pearl { background: rgba(184,146,42,0.07); border-left: 4px solid #b8922a; }
@@ -211,295 +239,97 @@
   .callout-green { background: #f0fdf4; border-left: 4px solid #16a34a; }
   .callout-green strong { color: #15803d; }
 
-  /* BRUTAL RULE box — SIH signature */
-  .brutal-rule {
-    background: #3b2314;
-    border-left: 5px solid #b8922a;
-    padding: 10px 14px;
-    border-radius: 0 6px 6px 0;
-    margin: 14px 0;
-    font-family: Arial, sans-serif;
-    font-size: 12px;
-  }
-  .brutal-rule .br-label { font-size: 10px; color: #b8922a; letter-spacing: .15em; text-transform: uppercase; margin-bottom: 4px; font-weight: 700; }
-  .brutal-rule .br-text { color: rgba(255,255,255,0.88); font-style: italic; line-height: 1.5; }
-
-  /* VIVA Q&A */
   .viva { margin: 10px 0; padding: 12px 16px; background: rgba(43,24,16,0.04); border-radius: 6px; font-family: Arial, sans-serif; font-size: 12px; border: 1px solid rgba(184,146,42,0.15); }
   .viva .q { font-weight: bold; color: #2b1810; margin-bottom: 6px; }
   .viva .a { color: #3d2a18; }
 
-  /* FORMULA */
-  .formula {
-    background: #faf7f2;
-    border: 1px solid rgba(184,146,42,0.25);
-    border-radius: 4px;
-    padding: 10px 14px;
-    font-family: 'Courier New', monospace;
-    font-size: 12px;
-    margin: 10px 0;
-    color: #1a1208;
-  }
+  .formula { background: #faf7f2; border: 1px solid rgba(184,146,42,0.25); border-radius: 4px; padding: 10px 14px; font-family: 'Courier New', monospace; font-size: 12px; margin: 10px 0; color: #1a1208; }
 
-  /* SVG DIAGRAMS */
-  .diagram-wrapper {
-    background: #faf7f2;
-    border: 1px solid rgba(184,146,42,0.2);
-    border-radius: 8px;
-    padding: 16px;
-    margin: 18px 0;
-    overflow-x: auto;
-  }
-  .diagram-title {
-    font-family: Arial, sans-serif;
-    font-size: 11px;
-    font-weight: bold;
-    color: #b8922a;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-bottom: 10px;
-  }
+  .diagram-wrapper { background: #faf7f2; border: 1px solid rgba(184,146,42,0.2); border-radius: 8px; padding: 16px; margin: 18px 0; overflow-x: auto; }
+  .diagram-title { font-family: Arial, sans-serif; font-size: 11px; font-weight: bold; color: #b8922a; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 10px; }
   svg text { font-family: Arial, sans-serif; }
 
-  /* RAPID SUMMARY CARD */
-  .summary-card {
-    background: #2b1810;
-    color: #fff;
-    border-radius: 8px;
-    padding: 20px 24px;
-    margin: 20px 0;
-    font-family: Arial, sans-serif;
-    font-size: 12px;
-    border: 1px solid rgba(184,146,42,0.3);
-  }
+  .summary-card { background: #2b1810; color: #fff; border-radius: 8px; padding: 20px 24px; margin: 20px 0; font-family: Arial, sans-serif; font-size: 12px; border: 1px solid rgba(184,146,42,0.3); }
   .summary-card h3 { color: #f0d080; font-size: 14px; margin-bottom: 12px; }
   .summary-card ul { padding-left: 18px; }
   .summary-card li { margin-bottom: 5px; color: rgba(255,255,255,0.8); }
   .summary-card strong { color: #b8922a; }
 
-  /* TRIAL HIGHLIGHT */
   .trial { background: rgba(184,146,42,0.06); border: 1px solid rgba(184,146,42,0.25); border-radius: 6px; padding: 10px 14px; margin: 8px 0; font-family: Arial, sans-serif; font-size: 12px; }
   .trial strong { color: #7a5c00; }
 
   ul.body-list { padding-left: 20px; margin: 8px 0 12px; font-family: Arial, sans-serif; font-size: 12px; }
   ul.body-list li { margin-bottom: 5px; }
-
   p.body { font-family: Arial, sans-serif; font-size: 12px; margin: 8px 0; line-height: 1.6; }
-
   .page-break { page-break-before: always; }
   .spacer { height: 16px; }
-
-  /* MASTER TABLE */
   .master-table th { background: #2b1810; font-size: 11px; color: #f0d080; }
   .master-table td { font-size: 11px; }
 
-  /* FOOTER branding */
-  .sih-footer {
-    margin-top: 40px;
-    padding: 16px 20px;
-    background: #2b1810;
-    border-radius: 8px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-family: Arial, sans-serif;
-    font-size: 11px;
-    color: rgba(255,255,255,0.45);
-    border-top: 2px solid #b8922a;
-  }
+  .sih-footer { margin-top: 40px; padding: 14px 20px; background: #2b1810; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; font-family: Arial, sans-serif; font-size: 11px; color: rgba(255,255,255,0.45); border-top: 2px solid #b8922a; flex-wrap: wrap; gap: 6px; }
   .sih-footer span { color: #b8922a; font-weight: 700; }
-
-  @media(max-width: 700px) {
-    .main-content { padding-top: 56px; }
-  }
-
-  /* TOGGLE BUTTON */
-  .nav-toggle {
-    position: fixed;
-    top: 12px; left: 12px;
-    z-index: 300;
-    background: #2b1810;
-    border: 1.5px solid #b8922a;
-    color: #f0d080;
-    border-radius: 8px;
-    padding: 8px 12px;
-    font-size: 13px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 7px;
-    font-family: Arial, sans-serif;
-    font-weight: 700;
-    box-shadow: 0 2px 8px rgba(43,24,16,0.2);
-    transition: opacity .15s;
-  }
-  .nav-toggle:hover { opacity: .85; }
-  .nav-toggle .tog-icon { font-size: 16px; line-height: 1; }
-
-  /* OVERLAY */
-  .nav-overlay {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(43,24,16,0.45);
-    z-index: 150;
-    backdrop-filter: blur(2px);
-  }
-  .nav-overlay.show { display: block; }
-
-  /* CLOSE button inside nav */
-  .nav-close {
-    position: absolute;
-    top: 10px; right: 10px;
-    background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(184,146,42,0.3);
-    color: #b8922a;
-    border-radius: 6px;
-    width: 26px; height: 26px;
-    font-size: 14px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: Arial, sans-serif;
-  }
-  .nav-close:hover { background: rgba(255,255,255,0.15); }
-
-
-  /* LOGO WATERMARK — fixed dead center, always visible behind content */
-  body::after {
-    content: '';
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: min(540px, 72vw);
-    height: min(540px, 72vw);
-    background-image: url('Surgical_Insight_Hub_Logo.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    opacity: 0.07;
-    pointer-events: none;
-    z-index: 0;
-    filter: sepia(1) saturate(0.3) brightness(0.45);
-  }
-  /* ensure all content floats above watermark */
-  .main-content { position: relative; z-index: 2; }
-  nav { z-index: 200 !important; }
-  .nav-toggle { z-index: 300 !important; }
-  .nav-overlay { z-index: 150 !important; }
-
-
-  /* SIDEBAR ABSTRACT SURGICAL DESIGN */
-  .nav-surgical-art {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 280px;
-    pointer-events: none;
-    opacity: 0.18;
-    overflow: hidden;
-  }
-  .nav-surgical-art svg {
-    width: 100%;
-    height: 100%;
-  }
-  nav { overflow: hidden; position: relative; }
-
 </style>
 </head>
 <body>
 
-<div class="nav-overlay" id="navOverlay" onclick="toggleNav()"></div>
+<div id="navOverlay" onclick="closeNav()"></div>
 
-<button class="nav-toggle no-print" onclick="toggleNav()">
-  <span class="tog-icon">☰</span> Contents
-</button>
+<button id="navToggle" onclick="openNav()">☰ Contents</button>
 
-<nav class="no-print" id="mainNav">
-  <button class="nav-close" onclick="toggleNav()">✕</button>
-  <div class="nav-surgical-art">
-    <svg viewBox="0 0 210 280" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMax meet">
-      <!-- Scalpel -->
-      <g transform="translate(20, 40) rotate(-30)">
+<div id="sideNav">
+  <div id="navClose"><button onclick="closeNav()">✕</button></div>
+  <div class="nav-brand">Surgical Insight Hub<br>Monograph Series</div>
+  <h2>Colorectal &amp; Anal Surgery</h2>
+  <div class="nav-section">Notebook</div>
+  <a href="#cover" onclick="closeNav()">Cover</a>
+  <a href="#toc" onclick="closeNav()">Contents</a>
+  <div class="nav-section">Monograph 1</div>
+  <a href="#m1" onclick="closeNav()">Benign Polyps / FAP / Lynch</a>
+  <div class="nav-section">Monograph 2</div>
+  <a href="#m2" onclick="closeNav()">Colon Cancer (CRC)</a>
+  <div class="nav-section">Monograph 3</div>
+  <a href="#m3" onclick="closeNav()">Rectal Cancer</a>
+  <div class="nav-section">Monograph 4</div>
+  <a href="#m4" onclick="closeNav()">CRLM &amp; Peritoneal</a>
+  <div class="nav-section">Monograph 5</div>
+  <a href="#m5" onclick="closeNav()">Anal Canal Tumors</a>
+  <div class="nav-section">Monograph 6</div>
+  <a href="#m6" onclick="closeNav()">Fournier's Gangrene</a>
+  <div class="nav-section">Reference</div>
+  <a href="#master" onclick="closeNav()">Master Exam Table</a>
+  <div class="nav-art">
+    <svg viewBox="0 0 240 200" xmlns="http://www.w3.org/2000/svg">
+      <g transform="translate(20,30) rotate(-25)">
         <rect x="0" y="6" width="80" height="8" rx="4" fill="#b8922a"/>
-        <polygon points="80,0 110,10 80,20" fill="#f0d080"/>
+        <polygon points="80,0 108,10 80,20" fill="#f0d080"/>
         <rect x="0" y="8" width="80" height="3" fill="rgba(255,255,255,0.3)" rx="1"/>
       </g>
-      <!-- Curved surgical needle -->
-      <path d="M 30 160 Q 60 120 90 150 Q 120 180 150 140" 
-            fill="none" stroke="#b8922a" stroke-width="2.5" stroke-linecap="round"/>
-      <!-- Needle tip -->
-      <circle cx="150" cy="140" r="3" fill="#f0d080"/>
-      <!-- Suture thread -->
-      <path d="M 150 140 Q 170 130 165 110 Q 160 90 180 85"
-            fill="none" stroke="#b8922a" stroke-width="1.2" stroke-dasharray="4,3" stroke-linecap="round"/>
-      <!-- Forceps -->
-      <g transform="translate(100, 30) rotate(45)">
-        <rect x="0" y="0" width="3" height="60" rx="1.5" fill="#b8922a"/>
-        <rect x="8" y="0" width="3" height="60" rx="1.5" fill="#b8922a"/>
-        <path d="M 1.5 60 Q 5.5 70 5.5 75" fill="none" stroke="#b8922a" stroke-width="2" stroke-linecap="round"/>
-        <path d="M 9.5 60 Q 5.5 70 5.5 75" fill="none" stroke="#b8922a" stroke-width="2" stroke-linecap="round"/>
+      <path d="M 20 120 Q 55 85 90 115 Q 125 145 155 108" fill="none" stroke="#b8922a" stroke-width="2.5" stroke-linecap="round"/>
+      <circle cx="155" cy="108" r="3" fill="#f0d080"/>
+      <path d="M 155 108 Q 175 98 170 78" fill="none" stroke="#b8922a" stroke-width="1.2" stroke-dasharray="4,3" stroke-linecap="round"/>
+      <g transform="translate(150,30) rotate(40)">
+        <rect x="0" y="0" width="3" height="50" rx="1.5" fill="#b8922a"/>
+        <rect x="8" y="0" width="3" height="50" rx="1.5" fill="#b8922a"/>
+        <path d="M 1.5 50 Q 5.5 60 5.5 65" fill="none" stroke="#b8922a" stroke-width="2" stroke-linecap="round"/>
+        <path d="M 9.5 50 Q 5.5 60 5.5 65" fill="none" stroke="#b8922a" stroke-width="2" stroke-linecap="round"/>
+        <rect x="0" y="20" width="11" height="3" rx="1" fill="#f0d080"/>
         <rect x="0" y="25" width="11" height="3" rx="1" fill="#f0d080"/>
-        <rect x="0" y="30" width="11" height="3" rx="1" fill="#f0d080"/>
       </g>
-      <!-- Stethoscope -->
-      <g transform="translate(10, 170)">
-        <circle cx="50" cy="80" r="18" fill="none" stroke="#b8922a" stroke-width="2.5"/>
-        <circle cx="50" cy="80" r="10" fill="rgba(184,146,42,0.3)"/>
-        <path d="M 32 80 Q 10 80 10 60 Q 10 30 22 30" fill="none" stroke="#b8922a" stroke-width="2.5" stroke-linecap="round"/>
-        <path d="M 68 80 Q 90 80 90 60 Q 90 30 78 30" fill="none" stroke="#b8922a" stroke-width="2.5" stroke-linecap="round"/>
-        <circle cx="22" cy="28" r="5" fill="#f0d080" stroke="#b8922a" stroke-width="1.5"/>
-        <circle cx="78" cy="28" r="5" fill="#f0d080" stroke="#b8922a" stroke-width="1.5"/>
+      <g transform="translate(20,140)">
+        <circle cx="45" cy="45" r="16" fill="none" stroke="#b8922a" stroke-width="2.5"/>
+        <circle cx="45" cy="45" r="9" fill="rgba(184,146,42,0.25)"/>
+        <path d="M 29 45 Q 8 45 8 28 Q 8 10 20 10" fill="none" stroke="#b8922a" stroke-width="2" stroke-linecap="round"/>
+        <path d="M 61 45 Q 82 45 82 28 Q 82 10 70 10" fill="none" stroke="#b8922a" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="20" cy="8" r="4" fill="#f0d080" stroke="#b8922a" stroke-width="1.5"/>
+        <circle cx="70" cy="8" r="4" fill="#f0d080" stroke="#b8922a" stroke-width="1.5"/>
       </g>
-      <!-- Cross/medical symbol -->
-      <g transform="translate(150, 180)" opacity="0.6">
-        <rect x="8" y="0" width="10" height="30" rx="3" fill="#b8922a"/>
-        <rect x="0" y="8" width="30" height="10" rx="3" fill="#b8922a"/>
-      </g>
-      <!-- DNA helix suggestion -->
-      <path d="M 160 60 Q 175 70 160 80 Q 145 90 160 100 Q 175 110 160 120 Q 145 130 160 140"
-            fill="none" stroke="#b8922a" stroke-width="1.8" stroke-linecap="round"/>
-      <path d="M 175 60 Q 160 70 175 80 Q 190 90 175 100 Q 160 110 175 120 Q 190 130 175 140"
-            fill="none" stroke="#f0d080" stroke-width="1.8" stroke-linecap="round"/>
-      <!-- connecting rungs -->
-      <line x1="160" y1="68" x2="175" y2="68" stroke="#b8922a" stroke-width="1" opacity="0.6"/>
-      <line x1="157" y1="80" x2="177" y2="80" stroke="#b8922a" stroke-width="1" opacity="0.6"/>
-      <line x1="160" y1="92" x2="175" y2="92" stroke="#b8922a" stroke-width="1" opacity="0.6"/>
-      <line x1="157" y1="104" x2="177" y2="104" stroke="#b8922a" stroke-width="1" opacity="0.6"/>
-      <line x1="160" y1="116" x2="175" y2="116" stroke="#b8922a" stroke-width="1" opacity="0.6"/>
-      <line x1="157" y1="128" x2="177" y2="128" stroke="#b8922a" stroke-width="1" opacity="0.6"/>
-      <!-- Paperclip -->
-      <path d="M 55 200 Q 45 200 45 210 L 45 240 Q 45 252 55 252 Q 65 252 65 240 L 65 215 Q 65 208 59 208 L 59 238 Q 59 244 55 244 Q 51 244 51 238 L 51 210"
-            fill="none" stroke="#f0d080" stroke-width="2" stroke-linecap="round"/>
     </svg>
   </div>
-  <div class="nav-brand">Surgical Insight Hub<br>Monograph Series</div><h2>Colorectal &amp; Anal Surgery</h2>
-  <div class="nav-section">Notebook</div>
-  <a href="#cover">Cover</a>
-  <a href="#toc">Contents</a>
-  <div class="nav-section">Monograph 1</div>
-  <a href="#m1">Benign Polyps / FAP / Lynch</a>
-  <div class="nav-section">Monograph 2</div>
-  <a href="#m2">Colon Cancer (CRC)</a>
-  <div class="nav-section">Monograph 3</div>
-  <a href="#m3">Rectal Cancer</a>
-  <div class="nav-section">Monograph 4</div>
-  <a href="#m4">CRLM & Peritoneal</a>
-  <div class="nav-section">Monograph 5</div>
-  <a href="#m5">Anal Canal Tumors</a>
-  <div class="nav-section">Monograph 6</div>
-  <a href="#m6">Fournier's Gangrene</a>
-  <div class="nav-section">Reference</div>
-  <a href="#master">Master Exam Table</a>
-</nav>
+</div>
 
 <div class="main-content">
-
 <div class="cover" id="cover">
-  <div class="monograph-number">Surgical Insight Hub Monograph Series</div>
+  <div class="monograph-number">Surgical Insight Hub Monograph</div>
   <h1>Colorectal & Anal Surgery</h1>
   <div class="subtitle">Comprehensive Exam Notebook</div>
   <p>ABSITE · MRCS · FRCS Board Review</p>
@@ -1480,19 +1310,14 @@
 
 </div>
 <script>
-function toggleNav() {
-  var nav = document.getElementById('mainNav');
-  var overlay = document.getElementById('navOverlay');
-  nav.classList.toggle('open');
-  overlay.classList.toggle('show');
+function openNav() {
+  document.getElementById('sideNav').classList.add('open');
+  document.getElementById('navOverlay').style.display = 'block';
 }
-// Close nav when a link inside is clicked
-document.querySelectorAll('#mainNav a').forEach(function(link) {
-  link.addEventListener('click', function() {
-    document.getElementById('mainNav').classList.remove('open');
-    document.getElementById('navOverlay').classList.remove('show');
-  });
-});
+function closeNav() {
+  document.getElementById('sideNav').classList.remove('open');
+  document.getElementById('navOverlay').style.display = 'none';
+}
 </script>
 
 </body>
