@@ -262,62 +262,29 @@ footer{border-top:1px solid rgba(184,146,42,0.2);padding:48px 24px 32px;max-widt
 .tst-section{padding:80px 24px;background:#fff8f0;border-top:1px solid rgba(184,146,42,0.15);}
 .tst-inner{max-width:1040px;margin:0 auto;}
 .tst-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;}
-
-/* SUBMIT FORM */
 .tst-form-wrap{}
 .tst-kicker{font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#b8922a;margin-bottom:10px;}
 .tst-form-wrap h2{font-size:1.6rem;font-weight:900;color:#1a1208;letter-spacing:-.04em;line-height:1.1;margin-bottom:8px;}
 .tst-form-wrap p{font-size:.82rem;color:#6b5a40;line-height:1.6;margin-bottom:24px;}
 .tst-form{display:flex;flex-direction:column;gap:10px;}
-.tst-form input,.tst-form textarea{
-  font-family:inherit;font-size:.82rem;color:#1a1208;
-  background:#ffffff;border:1px solid rgba(184,146,42,0.25);
-  border-radius:10px;padding:12px 14px;outline:none;
-  transition:border-color .15s;width:100%;
-  letter-spacing:-.01em;
-}
+.tst-form input,.tst-form textarea{font-family:inherit;font-size:.82rem;color:#1a1208;background:#ffffff;border:1px solid rgba(184,146,42,0.25);border-radius:10px;padding:12px 14px;outline:none;transition:border-color .15s;width:100%;letter-spacing:-.01em;}
 .tst-form input::placeholder,.tst-form textarea::placeholder{color:#b8a48a;}
 .tst-form input:focus,.tst-form textarea:focus{border-color:#b8922a;}
 .tst-form textarea{resize:vertical;min-height:100px;line-height:1.55;}
 .tst-form-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
 .tst-submit{background:#2b1810;color:#f0d080;border:none;border-radius:100px;padding:12px 28px;font-family:inherit;font-size:.82rem;font-weight:700;cursor:pointer;transition:opacity .15s;letter-spacing:-.01em;align-self:flex-start;}
 .tst-submit:hover{opacity:.82;}
+.tst-submit:disabled{opacity:.5;cursor:not-allowed;}
 .tst-success{display:none;background:rgba(184,146,42,0.1);border:1px solid rgba(184,146,42,0.3);border-radius:10px;padding:14px 18px;font-size:.82rem;color:#7a5c00;font-weight:600;margin-top:4px;}
-
-/* TESTIMONIAL DISPLAY */
+.tst-error{display:none;background:rgba(163,21,21,0.07);border:1px solid rgba(163,21,21,0.2);border-radius:10px;padding:14px 18px;font-size:.82rem;color:#a31515;font-weight:600;margin-top:4px;}
 .tst-display{position:relative;min-height:320px;}
-.tst-card{
-  background:#ffffff;border:1px solid rgba(184,146,42,0.2);
-  border-radius:20px;padding:36px;
-  position:relative;overflow:hidden;
-}
-.tst-card::before{
-  content:'"';
-  position:absolute;top:-10px;left:20px;
-  font-size:8rem;font-family:Georgia,serif;
-  color:rgba(184,146,42,0.1);line-height:1;
-  pointer-events:none;
-}
-.tst-quote{
-  font-family:Georgia,serif;font-size:1.05rem;
-  color:#1a1208;line-height:1.7;
-  font-style:italic;margin-bottom:24px;
-  position:relative;z-index:2;
-  min-height:80px;
-}
+.tst-card{background:#ffffff;border:1px solid rgba(184,146,42,0.2);border-radius:20px;padding:36px;position:relative;overflow:hidden;}
+.tst-card::before{content:'"';position:absolute;top:-10px;left:20px;font-size:8rem;font-family:Georgia,serif;color:rgba(184,146,42,0.1);line-height:1;pointer-events:none;}
+.tst-quote{font-family:Georgia,serif;font-size:1.05rem;color:#1a1208;line-height:1.7;font-style:italic;margin-bottom:24px;position:relative;z-index:2;min-height:80px;}
 .tst-author-row{display:flex;align-items:center;gap:12px;}
-.tst-avatar{
-  width:44px;height:44px;border-radius:50%;
-  background:linear-gradient(135deg,#2b1810,#b8922a);
-  display:flex;align-items:center;justify-content:center;
-  color:#f0d080;font-size:.9rem;font-weight:800;
-  flex-shrink:0;border:2px solid rgba(184,146,42,0.3);
-}
-.tst-author-info{}
+.tst-avatar{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#2b1810,#b8922a);display:flex;align-items:center;justify-content:center;color:#f0d080;font-size:.9rem;font-weight:800;flex-shrink:0;border:2px solid rgba(184,146,42,0.3);}
 .tst-author-name{font-size:.82rem;font-weight:700;color:#1a1208;}
 .tst-author-role{font-size:.68rem;color:#b8922a;letter-spacing:.06em;text-transform:uppercase;font-weight:600;margin-top:2px;}
-
-/* Progress & navigation */
 .tst-nav{display:flex;align-items:center;justify-content:space-between;margin-top:20px;}
 .tst-dots{display:flex;gap:6px;align-items:center;}
 .tst-dot{width:6px;height:6px;border-radius:50%;background:rgba(184,146,42,0.25);transition:all .3s;cursor:pointer;}
@@ -325,22 +292,14 @@ footer{border-top:1px solid rgba(184,146,42,0.2);padding:48px 24px 32px;max-widt
 .tst-arrows{display:flex;gap:8px;}
 .tst-arrow{width:34px;height:34px;border-radius:50%;border:1px solid rgba(184,146,42,0.3);background:transparent;color:#b8922a;font-size:14px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .15s;}
 .tst-arrow:hover{background:#2b1810;color:#f0d080;border-color:#2b1810;}
-
-/* Progress bar */
 .tst-progress{height:2px;background:rgba(184,146,42,0.15);border-radius:1px;margin-top:16px;overflow:hidden;}
 .tst-progress-fill{height:100%;background:#b8922a;border-radius:1px;transition:width .5s cubic-bezier(.22,1,.36,1);}
-
-/* counter */
-.tst-counter{font-size:.62rem;font-family:'Inter',monospace;color:#a3927a;letter-spacing:.06em;}
-
-/* animate in */
-.tst-quote.animating{animation:tstFadeIn .4s cubic-bezier(.22,1,.36,1);}
-@keyframes tstFadeIn{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
-
-@media(max-width:768px){
-  .tst-grid{grid-template-columns:1fr;gap:32px;}
-  .tst-form-row{grid-template-columns:1fr;}
-}
+.tst-counter{font-size:.62rem;font-family:monospace;color:#a3927a;letter-spacing:.06em;}
+.tst-loading{text-align:center;padding:40px 20px;color:#a3927a;font-size:.82rem;}
+.tst-quote.animating{animation:tstFade .4s cubic-bezier(.22,1,.36,1);}
+@keyframes tstFade{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
+.tst-pending-note{font-size:.72rem;color:#a3927a;margin-top:8px;font-style:italic;}
+@media(max-width:768px){.tst-grid{grid-template-columns:1fr;gap:32px;}.tst-form-row{grid-template-columns:1fr;}}
 
 </style>
 </head>
@@ -583,25 +542,26 @@ footer{border-top:1px solid rgba(184,146,42,0.2);padding:48px 24px 32px;max-widt
         <div class="tst-kicker">Community Voices</div>
         <h2>Share your experience</h2>
         <p>Has SIH helped you on the wards or in your exams? Tell us. Your words help other residents find us.</p>
-        <div class="tst-form" id="tstForm">
+        <div class="tst-form">
           <textarea placeholder="What did SIH help you with? How did it change your approach on the ward or in exams?" id="tstQuote"></textarea>
           <div class="tst-form-row">
             <input type="text" placeholder="Your name" id="tstName">
             <input type="text" placeholder="Your role / year" id="tstRole">
           </div>
           <input type="text" placeholder="Hospital / institution (optional)" id="tstInstitution">
-          <button class="tst-submit" onclick="submitTestimonial()">Submit Testimonial</button>
-          <div class="tst-success" id="tstSuccess">
-            Thank you. Your testimonial has been added. It will appear on the left after submission.
-          </div>
+          <button class="tst-submit" id="tstSubmitBtn" onclick="submitTestimonial()">Submit Testimonial</button>
+          <div class="tst-success" id="tstSuccess">Thank you. Your testimonial has been submitted for review. We will add it shortly.</div>
+          <div class="tst-error" id="tstError">Something went wrong. Please try again.</div>
+          <p class="tst-pending-note">All testimonials are reviewed before appearing publicly.</p>
         </div>
       </div>
 
       <!-- TESTIMONIAL DISPLAY -->
       <div class="tst-display">
         <div class="tst-card">
-          <div class="tst-quote" id="tstQuoteDisplay"></div>
-          <div class="tst-author-row">
+          <div class="tst-loading" id="tstLoading">Loading testimonials...</div>
+          <div class="tst-quote" id="tstQuoteDisplay" style="display:none;"></div>
+          <div class="tst-author-row" id="tstAuthorRow" style="display:none;">
             <div class="tst-avatar" id="tstAvatarDisplay"></div>
             <div class="tst-author-info">
               <div class="tst-author-name" id="tstNameDisplay"></div>
@@ -619,7 +579,7 @@ footer{border-top:1px solid rgba(184,146,42,0.2);padding:48px 24px 32px;max-widt
             </div>
           </div>
         </div>
-        <div class="tst-progress"><div class="tst-progress-fill" id="tstProgressFill"></div></div>
+        <div class="tst-progress"><div class="tst-progress-fill" id="tstProgressFill" style="width:0%"></div></div>
       </div>
 
     </div>
@@ -800,133 +760,171 @@ document.addEventListener('DOMContentLoaded', loadTelegramFeed);
 
 
 <script>
-// ── TESTIMONIALS ──
-var tstData = [
-  {
-    quote: "The Bowel Obstruction note saved me on a night call. I pulled it up at 2AM and knew exactly what to do. No textbook gives you that clarity under pressure.",
-    name: "Dr. Amara K.",
-    role: "Surgery Resident, Year 3",
-    institution: "Teaching Hospital"
-  },
-  {
-    quote: "I used the Fournier's Gangrene note the morning before my FRCS exam. The FGSI table alone was worth more than an hour of revision. Passed first attempt.",
-    name: "Dr. James M.",
-    role: "ST4 General Surgery",
-    institution: "Royal Infirmary"
-  },
-  {
-    quote: "No paragraphs, no filler. Just the decision I need. This is how surgical education should be built — by someone who actually works the overnight shift.",
-    name: "Dr. Fatima A.",
-    role: "PGY-2 Surgery",
-    institution: "University Medical Centre"
-  }
+// ── SUPABASE CONFIG ──
+var SUPA_URL = 'https://sxushsvvmyokoknnsbuj.supabase.co';
+var SUPA_KEY = 'sb_publishable_Kl4RNEOxvmBewUToRv7HHw_2epulGkp';
+var FORMINIT_URL = 'https://forminit.com/f/8fcbo3pg7br';
+
+// Fallback testimonials shown while loading or if DB empty
+var TST_FALLBACK = [
+  {quote:"The Bowel Obstruction note saved me on a night call. I pulled it up at 2AM and knew exactly what to do. No textbook gives you that clarity under pressure.",name:"Dr. Amara K.",role:"Surgery Resident, Year 3",institution:"Teaching Hospital"},
+  {quote:"I used the Fournier's Gangrene note the morning before my FRCS exam. The FGSI table alone was worth more than an hour of revision. Passed first attempt.",name:"Dr. James M.",role:"ST4 General Surgery",institution:"Royal Infirmary"},
+  {quote:"No paragraphs, no filler. Just the decision I need. This is how surgical education should be — built by someone who works the overnight shift.",name:"Dr. Fatima A.",role:"PGY-2 Surgery",institution:"University Medical Centre"}
 ];
 
+var tstData = [];
 var tstIndex = 0;
 var tstAutoplay;
 
 function tstInitials(name) {
-  return name.split(' ').filter(Boolean).slice(0,2).map(function(n){return n[0];}).join('');
+  return (name||'?').split(' ').filter(Boolean).slice(0,2).map(function(n){return n[0].toUpperCase();}).join('');
 }
 
+// ── LOAD FROM SUPABASE ──
+async function loadTestimonials() {
+  try {
+    var res = await fetch(SUPA_URL + '/rest/v1/testimonials?approved=eq.true&order=created_at.desc&limit=20', {
+      headers: {
+        'apikey': SUPA_KEY,
+        'Authorization': 'Bearer ' + SUPA_KEY,
+        'Content-Type': 'application/json'
+      }
+    });
+    if (res.ok) {
+      var data = await res.json();
+      if (data && data.length > 0) {
+        tstData = data.map(function(r) {
+          return {quote:r.quote, name:r.name, role:r.role, institution:r.institution||''};
+        });
+      } else {
+        tstData = TST_FALLBACK;
+      }
+    } else {
+      tstData = TST_FALLBACK;
+    }
+  } catch(e) {
+    tstData = TST_FALLBACK;
+  }
+  tstRender(0, false);
+}
+
+// ── RENDER ──
 function tstRender(idx, animate) {
+  if (!tstData.length) return;
+  idx = Math.max(0, Math.min(idx, tstData.length - 1));
+  tstIndex = idx;
   var d = tstData[idx];
+
+  var loading = document.getElementById('tstLoading');
+  var quoteEl = document.getElementById('tstQuoteDisplay');
+  var authorRow = document.getElementById('tstAuthorRow');
+  if (loading) loading.style.display = 'none';
+  if (quoteEl) quoteEl.style.display = 'block';
+  if (authorRow) authorRow.style.display = 'flex';
+
   var q = document.getElementById('tstQuoteDisplay');
+  if (q) {
+    if (animate) { q.classList.remove('animating'); void q.offsetWidth; q.classList.add('animating'); }
+    q.textContent = d.quote;
+  }
+
   var n = document.getElementById('tstNameDisplay');
   var r = document.getElementById('tstRoleDisplay');
   var av = document.getElementById('tstAvatarDisplay');
   var ctr = document.getElementById('tstCounter');
   var fill = document.getElementById('tstProgressFill');
 
-  if (!q) return;
+  if (n) n.textContent = d.name;
+  if (r) r.textContent = d.role + (d.institution ? ' · ' + d.institution : '');
+  if (av) av.textContent = tstInitials(d.name);
+  if (ctr) ctr.textContent = String(idx+1).padStart(2,'0') + ' / ' + String(tstData.length).padStart(2,'0');
+  if (fill) fill.style.width = (((idx+1)/tstData.length)*100) + '%';
 
-  if (animate) {
-    q.classList.remove('animating');
-    void q.offsetWidth;
-    q.classList.add('animating');
-  }
-
-  q.textContent = d.quote;
-  n.textContent = d.name;
-  r.textContent = d.role + (d.institution ? ' · ' + d.institution : '');
-  av.textContent = tstInitials(d.name);
-  ctr.textContent = String(idx + 1).padStart(2,'0') + ' / ' + String(tstData.length).padStart(2,'0');
-  fill.style.width = (((idx + 1) / tstData.length) * 100) + '%';
-
-  // Dots
   var dots = document.getElementById('tstDots');
   if (dots) {
     dots.innerHTML = '';
-    tstData.forEach(function(_, i) {
+    tstData.forEach(function(_,i) {
       var dot = document.createElement('div');
-      dot.className = 'tst-dot' + (i === idx ? ' active' : '');
-      dot.onclick = function() { tstGoTo(i); };
+      dot.className = 'tst-dot' + (i===idx?' active':'');
+      dot.onclick = function(){tstGoTo(i);};
       dots.appendChild(dot);
     });
   }
 }
 
-function tstNext() {
-  tstIndex = (tstIndex + 1) % tstData.length;
-  tstRender(tstIndex, true);
-  tstResetAutoplay();
-}
+function tstNext() { tstRender(((tstIndex+1)%tstData.length), true); tstResetAutoplay(); }
+function tstPrev() { tstRender(((tstIndex-1+tstData.length)%tstData.length), true); tstResetAutoplay(); }
+function tstGoTo(i) { tstRender(i, true); tstResetAutoplay(); }
+function tstResetAutoplay() { clearInterval(tstAutoplay); tstAutoplay = setInterval(tstNext, 6000); }
 
-function tstPrev() {
-  tstIndex = (tstIndex - 1 + tstData.length) % tstData.length;
-  tstRender(tstIndex, true);
-  tstResetAutoplay();
-}
+// ── SUBMIT ──
+async function submitTestimonial() {
+  var quote = (document.getElementById('tstQuote').value||'').trim();
+  var name = (document.getElementById('tstName').value||'').trim();
+  var role = (document.getElementById('tstRole').value||'').trim();
+  var institution = (document.getElementById('tstInstitution').value||'').trim();
+  var btn = document.getElementById('tstSubmitBtn');
+  var success = document.getElementById('tstSuccess');
+  var error = document.getElementById('tstError');
 
-function tstGoTo(i) {
-  tstIndex = i;
-  tstRender(tstIndex, true);
-  tstResetAutoplay();
-}
-
-function tstResetAutoplay() {
-  clearInterval(tstAutoplay);
-  tstAutoplay = setInterval(tstNext, 6000);
-}
-
-function submitTestimonial() {
-  var quote = document.getElementById('tstQuote').value.trim();
-  var name = document.getElementById('tstName').value.trim();
-  var role = document.getElementById('tstRole').value.trim();
-  var institution = document.getElementById('tstInstitution').value.trim();
+  success.style.display = 'none';
+  error.style.display = 'none';
 
   if (!quote || !name || !role) {
     alert('Please fill in your testimonial, name, and role.');
     return;
   }
 
-  tstData.push({
-    quote: quote,
-    name: name,
-    role: role,
-    institution: institution
-  });
+  btn.disabled = true;
+  btn.textContent = 'Submitting...';
 
-  // Clear form
-  document.getElementById('tstQuote').value = '';
-  document.getElementById('tstName').value = '';
-  document.getElementById('tstRole').value = '';
-  document.getElementById('tstInstitution').value = '';
+  var saved = false;
 
-  // Show success
-  var success = document.getElementById('tstSuccess');
-  success.style.display = 'block';
-  setTimeout(function() { success.style.display = 'none'; }, 4000);
+  // ── Save to Supabase (approved=false, pending review) ──
+  try {
+    var supaRes = await fetch(SUPA_URL + '/rest/v1/testimonials', {
+      method: 'POST',
+      headers: {
+        'apikey': SUPA_KEY,
+        'Authorization': 'Bearer ' + SUPA_KEY,
+        'Content-Type': 'application/json',
+        'Prefer': 'return=minimal'
+      },
+      body: JSON.stringify({quote:quote, name:name, role:role, institution:institution, approved:false})
+    });
+    if (supaRes.ok || supaRes.status === 201) saved = true;
+  } catch(e) { console.log('Supabase error:', e); }
 
-  // Jump to new testimonial
-  tstIndex = tstData.length - 1;
-  tstRender(tstIndex, true);
-  tstResetAutoplay();
+  // ── Notify via Forminit ──
+  try {
+    var fd = new FormData();
+    fd.append('name', name);
+    fd.append('role', role);
+    fd.append('institution', institution);
+    fd.append('quote', quote);
+    fd.append('source', 'SIH Website Testimonial');
+    await fetch(FORMINIT_URL, {method:'POST', body:fd, headers:{Accept:'application/json'}});
+  } catch(e) { console.log('Forminit error:', e); }
+
+  btn.disabled = false;
+  btn.textContent = 'Submit Testimonial';
+
+  if (saved) {
+    success.style.display = 'block';
+    document.getElementById('tstQuote').value = '';
+    document.getElementById('tstName').value = '';
+    document.getElementById('tstRole').value = '';
+    document.getElementById('tstInstitution').value = '';
+    setTimeout(function(){success.style.display='none';}, 5000);
+  } else {
+    error.style.display = 'block';
+    setTimeout(function(){error.style.display='none';}, 5000);
+  }
 }
 
-// Init on load
+// ── INIT ──
 document.addEventListener('DOMContentLoaded', function() {
-  tstRender(0, false);
+  loadTestimonials();
   tstAutoplay = setInterval(tstNext, 6000);
 });
 </script>
