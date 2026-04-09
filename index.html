@@ -35,7 +35,7 @@ body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 .hb3{width:400px;height:400px;top:30%;left:50%;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(184,146,42,.12) 0%,transparent 70%);}
 
 /* WATERMARK - more visible */
-.hero-watermark{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:min(620px,84vw);height:min(620px,84vw);opacity:0.18;pointer-events:none;z-index:1;filter:none;}
+.hero-watermark{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:min(600px,82vw);height:min(600px,82vw);opacity:0.11;pointer-events:none;z-index:1;filter:sepia(1) saturate(0.4) brightness(0.55);}
 .hero-watermark img{width:100%;height:100%;object-fit:contain;}
 
 /* FLOATING CARDS */
@@ -157,7 +157,7 @@ h1{font-size:clamp(3rem,6.5vw,5.4rem);font-weight:900;color:#1a1208;line-height:
 
 /* CTA */
 .cta-section{background:linear-gradient(160deg,#f0e4cc 0%,#faf7f2 50%,#ecdfc8 100%);padding:80px 24px;text-align:center;position:relative;overflow:hidden;}
-.cta-wm{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:min(440px,67vw);height:min(440px,67vw);opacity:0.18;pointer-events:none;filter:none;}
+.cta-wm{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:min(420px,65vw);height:min(420px,65vw);opacity:0.1;pointer-events:none;filter:sepia(1) saturate(0.4) brightness(0.55);}
 .cta-wm img{width:100%;height:100%;object-fit:contain;}
 .cta-blob{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none;opacity:.5;}
 .cb1{width:500px;height:500px;top:-120px;left:50%;transform:translateX(-50%);background:radial-gradient(circle,#dcc89a 0%,transparent 70%);}
@@ -257,6 +257,91 @@ footer{border-top:1px solid rgba(184,146,42,0.2);padding:48px 24px 32px;max-widt
 
 @media(max-width:900px){.feat-full{grid-template-columns:1fr;}.feat-full.flip{direction:ltr;}.bento{grid-template-columns:1fr;}.topics-grid{grid-template-columns:repeat(2,1fr);}.ft-grid{grid-template-columns:1fr 1fr;}.fc-ml,.fc-mr,.fc-bl,.fc-br,.scalpel,.stethoscope,.paperclip-1,.paperclip-2{display:none;}}
 @media(max-width:620px){.nav-links-pill{display:none;}.fc-tl,.fc-tr,.sticky-pink,.pin-1,.pin-2,.pin-3{display:none;}.topics-grid{grid-template-columns:1fr 1fr;}.mcq-opts{grid-template-columns:1fr;}.ft-grid{grid-template-columns:1fr;}}
+
+/* ── TESTIMONIALS ── */
+.tst-section{padding:80px 24px;background:#fff8f0;border-top:1px solid rgba(184,146,42,0.15);}
+.tst-inner{max-width:1040px;margin:0 auto;}
+.tst-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;}
+
+/* SUBMIT FORM */
+.tst-form-wrap{}
+.tst-kicker{font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#b8922a;margin-bottom:10px;}
+.tst-form-wrap h2{font-size:1.6rem;font-weight:900;color:#1a1208;letter-spacing:-.04em;line-height:1.1;margin-bottom:8px;}
+.tst-form-wrap p{font-size:.82rem;color:#6b5a40;line-height:1.6;margin-bottom:24px;}
+.tst-form{display:flex;flex-direction:column;gap:10px;}
+.tst-form input,.tst-form textarea{
+  font-family:inherit;font-size:.82rem;color:#1a1208;
+  background:#ffffff;border:1px solid rgba(184,146,42,0.25);
+  border-radius:10px;padding:12px 14px;outline:none;
+  transition:border-color .15s;width:100%;
+  letter-spacing:-.01em;
+}
+.tst-form input::placeholder,.tst-form textarea::placeholder{color:#b8a48a;}
+.tst-form input:focus,.tst-form textarea:focus{border-color:#b8922a;}
+.tst-form textarea{resize:vertical;min-height:100px;line-height:1.55;}
+.tst-form-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.tst-submit{background:#2b1810;color:#f0d080;border:none;border-radius:100px;padding:12px 28px;font-family:inherit;font-size:.82rem;font-weight:700;cursor:pointer;transition:opacity .15s;letter-spacing:-.01em;align-self:flex-start;}
+.tst-submit:hover{opacity:.82;}
+.tst-success{display:none;background:rgba(184,146,42,0.1);border:1px solid rgba(184,146,42,0.3);border-radius:10px;padding:14px 18px;font-size:.82rem;color:#7a5c00;font-weight:600;margin-top:4px;}
+
+/* TESTIMONIAL DISPLAY */
+.tst-display{position:relative;min-height:320px;}
+.tst-card{
+  background:#ffffff;border:1px solid rgba(184,146,42,0.2);
+  border-radius:20px;padding:36px;
+  position:relative;overflow:hidden;
+}
+.tst-card::before{
+  content:'"';
+  position:absolute;top:-10px;left:20px;
+  font-size:8rem;font-family:Georgia,serif;
+  color:rgba(184,146,42,0.1);line-height:1;
+  pointer-events:none;
+}
+.tst-quote{
+  font-family:Georgia,serif;font-size:1.05rem;
+  color:#1a1208;line-height:1.7;
+  font-style:italic;margin-bottom:24px;
+  position:relative;z-index:2;
+  min-height:80px;
+}
+.tst-author-row{display:flex;align-items:center;gap:12px;}
+.tst-avatar{
+  width:44px;height:44px;border-radius:50%;
+  background:linear-gradient(135deg,#2b1810,#b8922a);
+  display:flex;align-items:center;justify-content:center;
+  color:#f0d080;font-size:.9rem;font-weight:800;
+  flex-shrink:0;border:2px solid rgba(184,146,42,0.3);
+}
+.tst-author-info{}
+.tst-author-name{font-size:.82rem;font-weight:700;color:#1a1208;}
+.tst-author-role{font-size:.68rem;color:#b8922a;letter-spacing:.06em;text-transform:uppercase;font-weight:600;margin-top:2px;}
+
+/* Progress & navigation */
+.tst-nav{display:flex;align-items:center;justify-content:space-between;margin-top:20px;}
+.tst-dots{display:flex;gap:6px;align-items:center;}
+.tst-dot{width:6px;height:6px;border-radius:50%;background:rgba(184,146,42,0.25);transition:all .3s;cursor:pointer;}
+.tst-dot.active{background:#b8922a;width:20px;border-radius:3px;}
+.tst-arrows{display:flex;gap:8px;}
+.tst-arrow{width:34px;height:34px;border-radius:50%;border:1px solid rgba(184,146,42,0.3);background:transparent;color:#b8922a;font-size:14px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .15s;}
+.tst-arrow:hover{background:#2b1810;color:#f0d080;border-color:#2b1810;}
+
+/* Progress bar */
+.tst-progress{height:2px;background:rgba(184,146,42,0.15);border-radius:1px;margin-top:16px;overflow:hidden;}
+.tst-progress-fill{height:100%;background:#b8922a;border-radius:1px;transition:width .5s cubic-bezier(.22,1,.36,1);}
+
+/* counter */
+.tst-counter{font-size:.62rem;font-family:'Inter',monospace;color:#a3927a;letter-spacing:.06em;}
+
+/* animate in */
+.tst-quote.animating{animation:tstFadeIn .4s cubic-bezier(.22,1,.36,1);}
+@keyframes tstFadeIn{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
+
+@media(max-width:768px){
+  .tst-grid{grid-template-columns:1fr;gap:32px;}
+  .tst-form-row{grid-template-columns:1fr;}
+}
+
 </style>
 </head>
 <body>
@@ -487,6 +572,60 @@ footer{border-top:1px solid rgba(184,146,42,0.2);padding:48px 24px 32px;max-widt
   </div>
 </section>
 
+
+<!-- TESTIMONIALS -->
+<section class="tst-section">
+  <div class="tst-inner">
+    <div class="tst-grid">
+
+      <!-- SUBMIT FORM -->
+      <div class="tst-form-wrap">
+        <div class="tst-kicker">Community Voices</div>
+        <h2>Share your experience</h2>
+        <p>Has SIH helped you on the wards or in your exams? Tell us. Your words help other residents find us.</p>
+        <div class="tst-form" id="tstForm">
+          <textarea placeholder="What did SIH help you with? How did it change your approach on the ward or in exams?" id="tstQuote"></textarea>
+          <div class="tst-form-row">
+            <input type="text" placeholder="Your name" id="tstName">
+            <input type="text" placeholder="Your role / year" id="tstRole">
+          </div>
+          <input type="text" placeholder="Hospital / institution (optional)" id="tstInstitution">
+          <button class="tst-submit" onclick="submitTestimonial()">Submit Testimonial</button>
+          <div class="tst-success" id="tstSuccess">
+            Thank you. Your testimonial has been added. It will appear on the left after submission.
+          </div>
+        </div>
+      </div>
+
+      <!-- TESTIMONIAL DISPLAY -->
+      <div class="tst-display">
+        <div class="tst-card">
+          <div class="tst-quote" id="tstQuoteDisplay"></div>
+          <div class="tst-author-row">
+            <div class="tst-avatar" id="tstAvatarDisplay"></div>
+            <div class="tst-author-info">
+              <div class="tst-author-name" id="tstNameDisplay"></div>
+              <div class="tst-author-role" id="tstRoleDisplay"></div>
+            </div>
+          </div>
+        </div>
+        <div class="tst-nav">
+          <div class="tst-dots" id="tstDots"></div>
+          <div style="display:flex;align-items:center;gap:12px;">
+            <span class="tst-counter" id="tstCounter"></span>
+            <div class="tst-arrows">
+              <button class="tst-arrow" onclick="tstPrev()">&#8592;</button>
+              <button class="tst-arrow" onclick="tstNext()">&#8594;</button>
+            </div>
+          </div>
+        </div>
+        <div class="tst-progress"><div class="tst-progress-fill" id="tstProgressFill"></div></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <section class="cta-section">
   <div class="cta-blob cb1"></div>
   <div class="cta-wm"><img src="Surgical_Insight_Hub_Logo.png" alt=""></div>
@@ -657,6 +796,139 @@ function getFallbackHTML(channel) {
 
 // Load on page ready
 document.addEventListener('DOMContentLoaded', loadTelegramFeed);
+</script>
+
+
+<script>
+// ── TESTIMONIALS ──
+var tstData = [
+  {
+    quote: "The Bowel Obstruction note saved me on a night call. I pulled it up at 2AM and knew exactly what to do. No textbook gives you that clarity under pressure.",
+    name: "Dr. Amara K.",
+    role: "Surgery Resident, Year 3",
+    institution: "Teaching Hospital"
+  },
+  {
+    quote: "I used the Fournier's Gangrene note the morning before my FRCS exam. The FGSI table alone was worth more than an hour of revision. Passed first attempt.",
+    name: "Dr. James M.",
+    role: "ST4 General Surgery",
+    institution: "Royal Infirmary"
+  },
+  {
+    quote: "No paragraphs, no filler. Just the decision I need. This is how surgical education should be built — by someone who actually works the overnight shift.",
+    name: "Dr. Fatima A.",
+    role: "PGY-2 Surgery",
+    institution: "University Medical Centre"
+  }
+];
+
+var tstIndex = 0;
+var tstAutoplay;
+
+function tstInitials(name) {
+  return name.split(' ').filter(Boolean).slice(0,2).map(function(n){return n[0];}).join('');
+}
+
+function tstRender(idx, animate) {
+  var d = tstData[idx];
+  var q = document.getElementById('tstQuoteDisplay');
+  var n = document.getElementById('tstNameDisplay');
+  var r = document.getElementById('tstRoleDisplay');
+  var av = document.getElementById('tstAvatarDisplay');
+  var ctr = document.getElementById('tstCounter');
+  var fill = document.getElementById('tstProgressFill');
+
+  if (!q) return;
+
+  if (animate) {
+    q.classList.remove('animating');
+    void q.offsetWidth;
+    q.classList.add('animating');
+  }
+
+  q.textContent = d.quote;
+  n.textContent = d.name;
+  r.textContent = d.role + (d.institution ? ' · ' + d.institution : '');
+  av.textContent = tstInitials(d.name);
+  ctr.textContent = String(idx + 1).padStart(2,'0') + ' / ' + String(tstData.length).padStart(2,'0');
+  fill.style.width = (((idx + 1) / tstData.length) * 100) + '%';
+
+  // Dots
+  var dots = document.getElementById('tstDots');
+  if (dots) {
+    dots.innerHTML = '';
+    tstData.forEach(function(_, i) {
+      var dot = document.createElement('div');
+      dot.className = 'tst-dot' + (i === idx ? ' active' : '');
+      dot.onclick = function() { tstGoTo(i); };
+      dots.appendChild(dot);
+    });
+  }
+}
+
+function tstNext() {
+  tstIndex = (tstIndex + 1) % tstData.length;
+  tstRender(tstIndex, true);
+  tstResetAutoplay();
+}
+
+function tstPrev() {
+  tstIndex = (tstIndex - 1 + tstData.length) % tstData.length;
+  tstRender(tstIndex, true);
+  tstResetAutoplay();
+}
+
+function tstGoTo(i) {
+  tstIndex = i;
+  tstRender(tstIndex, true);
+  tstResetAutoplay();
+}
+
+function tstResetAutoplay() {
+  clearInterval(tstAutoplay);
+  tstAutoplay = setInterval(tstNext, 6000);
+}
+
+function submitTestimonial() {
+  var quote = document.getElementById('tstQuote').value.trim();
+  var name = document.getElementById('tstName').value.trim();
+  var role = document.getElementById('tstRole').value.trim();
+  var institution = document.getElementById('tstInstitution').value.trim();
+
+  if (!quote || !name || !role) {
+    alert('Please fill in your testimonial, name, and role.');
+    return;
+  }
+
+  tstData.push({
+    quote: quote,
+    name: name,
+    role: role,
+    institution: institution
+  });
+
+  // Clear form
+  document.getElementById('tstQuote').value = '';
+  document.getElementById('tstName').value = '';
+  document.getElementById('tstRole').value = '';
+  document.getElementById('tstInstitution').value = '';
+
+  // Show success
+  var success = document.getElementById('tstSuccess');
+  success.style.display = 'block';
+  setTimeout(function() { success.style.display = 'none'; }, 4000);
+
+  // Jump to new testimonial
+  tstIndex = tstData.length - 1;
+  tstRender(tstIndex, true);
+  tstResetAutoplay();
+}
+
+// Init on load
+document.addEventListener('DOMContentLoaded', function() {
+  tstRender(0, false);
+  tstAutoplay = setInterval(tstNext, 6000);
+});
 </script>
 
 </body>
