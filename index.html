@@ -206,6 +206,52 @@ footer{border-top:1px solid rgba(184,146,42,0.2);padding:48px 24px 32px;max-widt
 .tg-embed-wrap::-webkit-scrollbar{width:6px;}
 .tg-embed-wrap::-webkit-scrollbar-track{background:rgba(184,146,42,0.05);}
 .tg-embed-wrap::-webkit-scrollbar-thumb{background:rgba(184,146,42,0.3);border-radius:3px;}
+
+/* TELEGRAM POST CARDS */
+.tg-post-card {
+  display: block;
+  padding: 16px 20px;
+  border-bottom: 1px solid rgba(184,146,42,0.12);
+  text-decoration: none;
+  transition: background .15s;
+  cursor: pointer;
+}
+.tg-post-card:last-child { border-bottom: none; }
+.tg-post-card:hover { background: rgba(184,146,42,0.05); }
+.tg-post-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+.tg-channel-name {
+  font-size: .65rem;
+  font-weight: 700;
+  color: #b8922a;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  font-family: Arial, sans-serif;
+}
+.tg-post-date {
+  font-size: .6rem;
+  color: #a3927a;
+  font-family: Arial, sans-serif;
+}
+.tg-post-text {
+  font-size: .82rem;
+  color: #1a1208;
+  line-height: 1.6;
+  margin-bottom: 10px;
+  font-family: Arial, sans-serif;
+}
+.tg-post-footer {
+  font-size: .68rem;
+  color: #b8922a;
+  font-weight: 700;
+  font-family: Arial, sans-serif;
+  letter-spacing: .04em;
+}
+
 .tg-note{font-size:.72rem;color:#a3927a;text-align:center;margin-top:14px;}
 .tg-note a{color:#2b1810;font-weight:700;text-decoration:none;}
 
@@ -428,17 +474,11 @@ footer{border-top:1px solid rgba(184,146,42,0.2);padding:48px 24px 32px;max-widt
       </a>
     </div>
     <div class="tg-embed-wrap" id="tgFeed">
-      <!-- Telegram channel widget — shows latest posts automatically -->
-      <iframe
-        src="https://t.me/sugicalInsightHub?embed=1&mode=1"
-        width="100%"
-        height="580"
-        frameborder="0"
-        scrolling="yes"
-        style="border:none;display:block;"
-        allowtransparency="true"
-        title="Surgical Insight Hub Telegram Channel">
-      </iframe>
+      <div id="tgPosts" style="padding:8px;">
+        <div style="text-align:center;padding:40px 20px;color:#a3927a;font-size:.82rem;font-family:Arial,sans-serif;">
+          Loading latest posts...
+        </div>
+      </div>
     </div>
     <p class="tg-note">
       Showing latest posts from <a href="https://t.me/sugicalInsightHub" target="_blank">@sugicalInsightHub</a> ·
@@ -521,5 +561,103 @@ function floatAll(){
 }
 floatAll();
 </script>
+
+<script>
+// Fetch latest Telegram posts via RSSHub
+async function loadTelegramFeed() {
+  const container = document.getElementById('tgPosts');
+  const channel = 'sugicalInsightHub';
+  
+  // Use multiple fallback sources
+  const sources = [
+    `https://rsshub.app/telegram/channel/${channel}?format=json`,
+    `https://rss.app/feeds/telegram/${channel}.xml`
+  ];
+
+  // Try fetching via a CORS proxy + RSS
+  try {
+    const rssUrl = `https://rsshub.app/telegram/channel/${channel}`;
+    const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(rssUrl)}`;
+    
+    const res = await fetch(proxyUrl, { signal: AbortSignal.timeout(8000) });
+    const data = await res.json();
+    
+    if (data && data.contents) {
+      const parser = new DOMParser();
+      const xml = parser.parseFromString(data.contents, 'text/xml');
+      const items = xml.querySelectorAll('item');
+      
+      if (items.length > 0) {
+        renderPosts(items, container, channel);
+        return;
+      }
+    }
+  } catch(e) {
+    console.log('RSS fetch failed, showing fallback');
+  }
+  
+  // Fallback: show direct Telegram link cards
+  showFallback(container, channel);
+}
+
+function renderPosts(items, container, channel) {
+  const posts = Array.from(items).slice(0, 6);
+  let html = '';
+  
+  posts.forEach(item => {
+    const title = item.querySelector('title')?.textContent || '';
+    const desc = item.querySelector('description')?.textContent || '';
+    const link = item.querySelector('link')?.textContent || `https://t.me/${channel}`;
+    const pubDate = item.querySelector('pubDate')?.textContent || '';
+    
+    // Clean HTML from description
+    const tmp = document.createElement('div');
+    tmp.innerHTML = desc;
+    const text = tmp.textContent || tmp.innerText || '';
+    const preview = text.slice(0, 220) + (text.length > 220 ? '...' : '');
+    
+    // Format date
+    let dateStr = '';
+    try {
+      dateStr = new Date(pubDate).toLocaleDateString('en-GB', {day:'numeric',month:'short',year:'numeric'});
+    } catch(e) {}
+    
+    if (!preview.trim()) return;
+    
+    html += `
+      <a href="${link}" target="_blank" class="tg-post-card">
+        <div class="tg-post-header">
+          <span class="tg-channel-name">@sugicalInsightHub</span>
+          ${dateStr ? `<span class="tg-post-date">${dateStr}</span>` : ''}
+        </div>
+        <div class="tg-post-text">${preview}</div>
+        <div class="tg-post-footer">Read on Telegram →</div>
+      </a>`;
+  });
+  
+  container.innerHTML = html || getFallbackHTML(channel);
+}
+
+function showFallback(container, channel) {
+  container.innerHTML = getFallbackHTML(channel);
+}
+
+function getFallbackHTML(channel) {
+  return `
+    <div style="text-align:center;padding:32px 20px;">
+      <div style="font-size:2rem;margin-bottom:12px;">✈</div>
+      <div style="font-weight:700;color:#1a1208;margin-bottom:6px;font-size:.92rem;">Latest posts on Telegram</div>
+      <div style="font-size:.78rem;color:#6b5a40;margin-bottom:20px;line-height:1.6;">Clinical pearls, new notes, and exam tips posted regularly.<br>Join the channel to see all posts.</div>
+      <a href="https://t.me/${channel}" target="_blank" 
+         style="display:inline-flex;align-items:center;gap:8px;background:#2b1810;color:#f0d080;border-radius:100px;padding:12px 24px;font-size:.82rem;font-weight:700;text-decoration:none;border:1px solid rgba(184,146,42,0.3);">
+        Open @${channel} on Telegram
+      </a>
+    </div>`;
+}
+
+// Load on page ready
+document.addEventListener('DOMContentLoaded', loadTelegramFeed);
+</script>
+
 </body>
 </html>
