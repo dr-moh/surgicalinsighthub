@@ -47,7 +47,7 @@ body{font-family:'Inter',-apple-system,sans-serif;background:#faf7f2;color:#1a12
 .setup-field input:focus,.setup-field select:focus{border-color:#b8922a;background:#fff;}
 .setup-field select option{background:#fff;}
 .setup-section-title{font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#b8922a;margin:16px 0 8px;}
-.specialty-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:6px;margin-bottom:16px;}
+.specialty-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:6px;margin-bottom:16px;max-height:160px;overflow-y:auto;padding-right:4px;}
 .spec-chip{padding:7px 12px;border-radius:8px;border:1px solid rgba(184,146,42,0.25);background:#faf7f2;font-size:.75rem;font-weight:600;color:#6b5a40;cursor:pointer;transition:all .15s;text-align:center;}
 .spec-chip:hover{border-color:#b8922a;color:#1a1208;}
 .spec-chip.active{background:#2b1810;color:#f0d080;border-color:#2b1810;}
@@ -235,6 +235,23 @@ body{font-family:'Inter',-apple-system,sans-serif;background:#faf7f2;color:#1a12
       </div>
       <button class="start-btn" id="startBtn" onclick="startSession()">Start Session →</button>
     </div>
+
+    <!-- LEADERBOARD BELOW SETUP -->
+    <div style="max-width:640px;width:100%;margin-top:24px;position:relative;z-index:2;">
+      <div style="background:#2b1810;border-radius:16px;overflow:hidden;border:1px solid rgba(184,146,42,0.25);">
+        <div style="padding:14px 20px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(184,146,42,0.2);">
+          <div>
+            <div style="font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(184,146,42,0.7);margin-bottom:2px;">Global Rankings</div>
+            <div style="font-size:.9rem;font-weight:800;color:#f0d080;letter-spacing:-.02em;">Top Performers</div>
+          </div>
+          <div style="font-size:.65rem;color:rgba(255,255,255,0.3);">Live · All specialties</div>
+        </div>
+        <div id="setupLbRows" style="padding:4px 0;">
+          <div style="padding:20px;text-align:center;font-size:.78rem;color:rgba(255,255,255,0.25);">Loading rankings...</div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>
 
@@ -363,9 +380,10 @@ var state = {
 };
 
 // ── INIT ──
-var SPECIALTIES = ['All', 'General Surgery', 'HPB', 'Colorectal', 'Anesthesia', 'Vascular'];
+var SPECIALTIES = ['All', 'General Surgery', 'HPB', 'Colorectal', 'Anesthesia', 'Vascular', 'Trauma', 'Urology', 'Cardiothoracic', 'Pediatric Surgery', 'Orthopedic', 'Neurosurgery', 'Breast & Endocrine'];
 
 document.addEventListener('DOMContentLoaded', function() {
+  loadSetupLeaderboard();
   // Update question count
   document.getElementById('totalQCount').textContent = QUESTIONS.length;
 
@@ -469,8 +487,7 @@ function renderQuestion() {
 }
 
 function selectOpt(letter) {
-  if (state.selectedOpt !== null) return; // already answered? no — allow reselect before submit
-  // Allow reselect before submit
+  // Allow free reselection before submit — no lock
   document.querySelectorAll('.opt').forEach(function(o) { o.classList.remove('selected'); });
   document.getElementById('opt-' + letter).classList.add('selected');
   state.selectedOpt = letter;
@@ -611,6 +628,40 @@ async function showResults() {
 
   // Load leaderboard
   loadLeaderboard();
+}
+
+async function loadSetupLeaderboard() {
+  var container = document.getElementById('setupLbRows');
+  if (!container) return;
+  try {
+    var res = await fetch(SUPA_URL + '/rest/v1/mcq_scores?order=percentage.desc,score.desc&limit=8', {
+      headers: { 'apikey': SUPA_KEY, 'Authorization': 'Bearer ' + SUPA_KEY }
+    });
+    var data = await res.json();
+    if (!data || !data.length) {
+      container.innerHTML = '<div style="padding:16px;text-align:center;font-size:.75rem;color:rgba(255,255,255,0.25);">No scores yet — be first!</div>';
+      return;
+    }
+    var html = '';
+    data.forEach(function(row, i) {
+      var initials = (row.name||'?').split(' ').filter(Boolean).map(function(n){return n[0];}).join('').slice(0,2).toUpperCase();
+      var pct = row.percentage !== undefined ? row.percentage : Math.round((row.score/row.total)*100);
+      var medal = i===0?'🥇':i===1?'🥈':i===2?'🥉':'';
+      var rankColor = i===0?'#f0d080':i===1?'rgba(240,208,128,0.6)':'rgba(184,146,42,0.5)';
+      html += '<div style="display:flex;align-items:center;gap:10px;padding:9px 20px;border-bottom:1px solid rgba(184,146,42,0.08);">' +
+        '<div style="font-size:.75rem;font-weight:800;color:'+rankColor+';width:20px;text-align:center;font-family:monospace;">'+(i+1)+'</div>' +
+        '<div style="width:28px;height:28px;border-radius:50%;background:rgba(184,146,42,0.2);display:flex;align-items:center;justify-content:center;font-size:.62rem;font-weight:800;color:#f0d080;flex-shrink:0;">'+initials+'</div>' +
+        '<div style="flex:1;min-width:0;">' +
+          '<div style="font-size:.78rem;font-weight:700;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">'+( row.name||'Anonymous')+medal+'</div>' +
+          '<div style="font-size:.62rem;color:rgba(255,255,255,0.3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">'+(row.school||'')+' · '+(row.specialty||'Mixed')+'</div>' +
+        '</div>' +
+        '<div style="font-size:.82rem;font-weight:800;color:#f0d080;font-family:monospace;">'+pct+'%<span style="font-size:.58rem;color:rgba(240,208,128,0.4);margin-left:3px;">'+row.score+'/'+row.total+'</span></div>' +
+        '</div>';
+    });
+    container.innerHTML = html;
+  } catch(e) {
+    container.innerHTML = '<div style="padding:16px;text-align:center;font-size:.75rem;color:rgba(255,255,255,0.25);">Leaderboard unavailable.</div>';
+  }
 }
 
 async function loadLeaderboard() {
