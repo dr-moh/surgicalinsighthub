@@ -257,35 +257,6 @@ footer{border-top:1px solid rgba(184,146,42,0.2);padding:48px 24px 32px;max-widt
 
 @media(max-width:900px){.feat-full{grid-template-columns:1fr;}.feat-full.flip{direction:ltr;}.bento{grid-template-columns:1fr;}.topics-grid{grid-template-columns:repeat(2,1fr);}.ft-grid{grid-template-columns:1fr 1fr;}.fc-ml,.fc-mr,.fc-bl,.fc-br,.scalpel,.stethoscope,.paperclip-1,.paperclip-2{display:none;}}
 @media(max-width:620px){.nav-links-pill{display:none;}.fc-tl,.fc-tr,.sticky-pink,.pin-1,.pin-2,.pin-3{display:none;}.topics-grid{grid-template-columns:1fr 1fr;}.mcq-opts{grid-template-columns:1fr;}.ft-grid{grid-template-columns:1fr;}}
-
-/* ── HOME LEADERBOARD STRIP ── */
-.home-lb{padding:60px 24px;background:#2b1810;position:relative;overflow:hidden;}
-.home-lb::before{content:'';position:absolute;top:-60px;right:-60px;width:300px;height:300px;background:radial-gradient(circle,rgba(184,146,42,0.12) 0%,transparent 70%);border-radius:50%;pointer-events:none;}
-.home-lb-inner{max-width:1040px;margin:0 auto;}
-.home-lb-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:24px;flex-wrap:wrap;gap:12px;}
-.home-lb-left{}
-.home-lb-kicker{font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(184,146,42,0.7);margin-bottom:6px;}
-.home-lb-title{font-size:1.5rem;font-weight:900;color:#f0d080;letter-spacing:-.03em;line-height:1.1;}
-.home-lb-sub{font-size:.78rem;color:rgba(255,255,255,0.4);margin-top:4px;}
-.home-lb-cta{background:#b8922a;color:#2b1810;border:none;border-radius:100px;padding:10px 22px;font-family:inherit;font-size:.78rem;font-weight:800;cursor:pointer;text-decoration:none;display:inline-block;transition:opacity .15s;}
-.home-lb-cta:hover{opacity:.85;}
-.home-lb-table{background:rgba(255,255,255,0.04);border:1px solid rgba(184,146,42,0.15);border-radius:16px;overflow:hidden;}
-.home-lb-row{display:grid;grid-template-columns:40px 1fr 1fr 80px;align-items:center;padding:12px 16px;border-bottom:1px solid rgba(184,146,42,0.08);gap:8px;}
-.home-lb-row:last-child{border-bottom:none;}
-.home-lb-row.thead{background:rgba(184,146,42,0.08);padding:8px 16px;}
-.home-lb-row.you{background:rgba(184,146,42,0.08);}
-.home-lb-th{font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(184,146,42,0.6);}
-.home-lb-rank{font-size:.8rem;font-weight:800;color:#b8922a;font-family:monospace;text-align:center;}
-.home-lb-rank.r1{color:#f0d080;}
-.home-lb-name-wrap{display:flex;align-items:center;gap:8px;}
-.home-lb-avatar{width:28px;height:28px;border-radius:50%;background:#b8922a;display:flex;align-items:center;justify-content:center;font-size:.6rem;font-weight:800;color:#2b1810;flex-shrink:0;}
-.home-lb-name{font-size:.8rem;font-weight:700;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-.home-lb-school{font-size:.65rem;color:rgba(255,255,255,0.35);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-.home-lb-specialty{font-size:.7rem;color:rgba(255,255,255,0.45);}
-.home-lb-score{font-size:.85rem;font-weight:800;color:#f0d080;font-family:monospace;text-align:right;}
-.home-lb-loading{padding:24px;text-align:center;font-size:.8rem;color:rgba(255,255,255,0.3);}
-@media(max-width:600px){.home-lb-row{grid-template-columns:32px 1fr 60px;}.home-lb-row .home-lb-specialty{display:none;}}
-
 </style>
 </head>
 <body>
@@ -301,6 +272,7 @@ footer{border-top:1px solid rgba(184,146,42,0.2);padding:48px 24px 32px;max-widt
       <a href="notes.html">Notes</a>
       <a href="podcast.html">Podcast</a>
       <a href="about.html">About</a>
+      <a href="mcq.html" style="background:rgba(163,21,21,0.1);color:#a31515;font-weight:700;">MCQ Arena</a>
     </div>
   </div>
   <div class="nav-right">
@@ -686,40 +658,6 @@ function getFallbackHTML(channel) {
 
 // Load on page ready
 document.addEventListener('DOMContentLoaded', loadTelegramFeed);
-</script>
-
-
-<script>
-// Home page leaderboard
-(async function() {
-  try {
-    var res = await fetch('https://sxushsvvmyokoknnsbuj.supabase.co/rest/v1/mcq_scores?order=percentage.desc,score.desc&limit=10', {
-      headers: { 'apikey': 'sb_publishable_Kl4RNEOxvmBewUToRv7HHw_2epulGkp', 'Authorization': 'Bearer sb_publishable_Kl4RNEOxvmBewUToRv7HHw_2epulGkp' }
-    });
-    var data = await res.json();
-    if (!data || !data.length) {
-      document.getElementById('homeLbRows').innerHTML = '<div class="home-lb-loading">No scores yet — be the first!</div>';
-      return;
-    }
-    var html = '';
-    data.forEach(function(row, i) {
-      var initials = (row.name||'?').split(' ').filter(Boolean).map(function(n){return n[0];}).join('').slice(0,2).toUpperCase();
-      var pct = row.percentage !== undefined ? row.percentage : Math.round((row.score/row.total)*100);
-      var medal = i===0?' 🥇':i===1?' 🥈':i===2?' 🥉':'';
-      html += '<div class="home-lb-row">' +
-        '<div class="home-lb-rank' + (i===0?' r1':'') + '">' + (i+1) + '</div>' +
-        '<div class="home-lb-name-wrap"><div class="home-lb-avatar">' + initials + '</div>' +
-        '<div><div class="home-lb-name">' + (row.name||'Anonymous') + medal + '</div>' +
-        '<div class="home-lb-school">' + (row.school||'') + '</div></div></div>' +
-        '<div class="home-lb-specialty">' + (row.specialty||'Mixed') + '</div>' +
-        '<div class="home-lb-score">' + pct + '%<span style="font-size:.6rem;color:rgba(240,208,128,0.4);margin-left:3px;">' + row.score+'/'+row.total + '</span></div>' +
-        '</div>';
-    });
-    document.getElementById('homeLbRows').innerHTML = html;
-  } catch(e) {
-    document.getElementById('homeLbRows').innerHTML = '<div class="home-lb-loading">Leaderboard unavailable.</div>';
-  }
-})();
 </script>
 
 </body>
