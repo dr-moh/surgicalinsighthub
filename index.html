@@ -258,48 +258,33 @@ footer{border-top:1px solid rgba(184,146,42,0.2);padding:48px 24px 32px;max-widt
 @media(max-width:900px){.feat-full{grid-template-columns:1fr;}.feat-full.flip{direction:ltr;}.bento{grid-template-columns:1fr;}.topics-grid{grid-template-columns:repeat(2,1fr);}.ft-grid{grid-template-columns:1fr 1fr;}.fc-ml,.fc-mr,.fc-bl,.fc-br,.scalpel,.stethoscope,.paperclip-1,.paperclip-2{display:none;}}
 @media(max-width:620px){.nav-links-pill{display:none;}.fc-tl,.fc-tr,.sticky-pink,.pin-1,.pin-2,.pin-3{display:none;}.topics-grid{grid-template-columns:1fr 1fr;}.mcq-opts{grid-template-columns:1fr;}.ft-grid{grid-template-columns:1fr;}}
 
-/* ── TESTIMONIALS ── */
-.tst-section{padding:80px 24px;background:#fff8f0;border-top:1px solid rgba(184,146,42,0.15);}
-.tst-inner{max-width:1040px;margin:0 auto;}
-.tst-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;}
-.tst-form-wrap{}
-.tst-kicker{font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#b8922a;margin-bottom:10px;}
-.tst-form-wrap h2{font-size:1.6rem;font-weight:900;color:#1a1208;letter-spacing:-.04em;line-height:1.1;margin-bottom:8px;}
-.tst-form-wrap p{font-size:.82rem;color:#6b5a40;line-height:1.6;margin-bottom:24px;}
-.tst-form{display:flex;flex-direction:column;gap:10px;}
-.tst-form input,.tst-form textarea{font-family:inherit;font-size:.82rem;color:#1a1208;background:#ffffff;border:1px solid rgba(184,146,42,0.25);border-radius:10px;padding:12px 14px;outline:none;transition:border-color .15s;width:100%;letter-spacing:-.01em;}
-.tst-form input::placeholder,.tst-form textarea::placeholder{color:#b8a48a;}
-.tst-form input:focus,.tst-form textarea:focus{border-color:#b8922a;}
-.tst-form textarea{resize:vertical;min-height:100px;line-height:1.55;}
-.tst-form-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
-.tst-submit{background:#2b1810;color:#f0d080;border:none;border-radius:100px;padding:12px 28px;font-family:inherit;font-size:.82rem;font-weight:700;cursor:pointer;transition:opacity .15s;letter-spacing:-.01em;align-self:flex-start;}
-.tst-submit:hover{opacity:.82;}
-.tst-submit:disabled{opacity:.5;cursor:not-allowed;}
-.tst-success{display:none;background:rgba(184,146,42,0.1);border:1px solid rgba(184,146,42,0.3);border-radius:10px;padding:14px 18px;font-size:.82rem;color:#7a5c00;font-weight:600;margin-top:4px;}
-.tst-error{display:none;background:rgba(163,21,21,0.07);border:1px solid rgba(163,21,21,0.2);border-radius:10px;padding:14px 18px;font-size:.82rem;color:#a31515;font-weight:600;margin-top:4px;}
-.tst-display{position:relative;min-height:320px;}
-.tst-card{background:#ffffff;border:1px solid rgba(184,146,42,0.2);border-radius:20px;padding:36px;position:relative;overflow:hidden;}
-.tst-card::before{content:'"';position:absolute;top:-10px;left:20px;font-size:8rem;font-family:Georgia,serif;color:rgba(184,146,42,0.1);line-height:1;pointer-events:none;}
-.tst-quote{font-family:Georgia,serif;font-size:1.05rem;color:#1a1208;line-height:1.7;font-style:italic;margin-bottom:24px;position:relative;z-index:2;min-height:80px;}
-.tst-author-row{display:flex;align-items:center;gap:12px;}
-.tst-avatar{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#2b1810,#b8922a);display:flex;align-items:center;justify-content:center;color:#f0d080;font-size:.9rem;font-weight:800;flex-shrink:0;border:2px solid rgba(184,146,42,0.3);}
-.tst-author-name{font-size:.82rem;font-weight:700;color:#1a1208;}
-.tst-author-role{font-size:.68rem;color:#b8922a;letter-spacing:.06em;text-transform:uppercase;font-weight:600;margin-top:2px;}
-.tst-nav{display:flex;align-items:center;justify-content:space-between;margin-top:20px;}
-.tst-dots{display:flex;gap:6px;align-items:center;}
-.tst-dot{width:6px;height:6px;border-radius:50%;background:rgba(184,146,42,0.25);transition:all .3s;cursor:pointer;}
-.tst-dot.active{background:#b8922a;width:20px;border-radius:3px;}
-.tst-arrows{display:flex;gap:8px;}
-.tst-arrow{width:34px;height:34px;border-radius:50%;border:1px solid rgba(184,146,42,0.3);background:transparent;color:#b8922a;font-size:14px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .15s;}
-.tst-arrow:hover{background:#2b1810;color:#f0d080;border-color:#2b1810;}
-.tst-progress{height:2px;background:rgba(184,146,42,0.15);border-radius:1px;margin-top:16px;overflow:hidden;}
-.tst-progress-fill{height:100%;background:#b8922a;border-radius:1px;transition:width .5s cubic-bezier(.22,1,.36,1);}
-.tst-counter{font-size:.62rem;font-family:monospace;color:#a3927a;letter-spacing:.06em;}
-.tst-loading{text-align:center;padding:40px 20px;color:#a3927a;font-size:.82rem;}
-.tst-quote.animating{animation:tstFade .4s cubic-bezier(.22,1,.36,1);}
-@keyframes tstFade{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
-.tst-pending-note{font-size:.72rem;color:#a3927a;margin-top:8px;font-style:italic;}
-@media(max-width:768px){.tst-grid{grid-template-columns:1fr;gap:32px;}.tst-form-row{grid-template-columns:1fr;}}
+/* ── HOME LEADERBOARD STRIP ── */
+.home-lb{padding:60px 24px;background:#2b1810;position:relative;overflow:hidden;}
+.home-lb::before{content:'';position:absolute;top:-60px;right:-60px;width:300px;height:300px;background:radial-gradient(circle,rgba(184,146,42,0.12) 0%,transparent 70%);border-radius:50%;pointer-events:none;}
+.home-lb-inner{max-width:1040px;margin:0 auto;}
+.home-lb-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:24px;flex-wrap:wrap;gap:12px;}
+.home-lb-left{}
+.home-lb-kicker{font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(184,146,42,0.7);margin-bottom:6px;}
+.home-lb-title{font-size:1.5rem;font-weight:900;color:#f0d080;letter-spacing:-.03em;line-height:1.1;}
+.home-lb-sub{font-size:.78rem;color:rgba(255,255,255,0.4);margin-top:4px;}
+.home-lb-cta{background:#b8922a;color:#2b1810;border:none;border-radius:100px;padding:10px 22px;font-family:inherit;font-size:.78rem;font-weight:800;cursor:pointer;text-decoration:none;display:inline-block;transition:opacity .15s;}
+.home-lb-cta:hover{opacity:.85;}
+.home-lb-table{background:rgba(255,255,255,0.04);border:1px solid rgba(184,146,42,0.15);border-radius:16px;overflow:hidden;}
+.home-lb-row{display:grid;grid-template-columns:40px 1fr 1fr 80px;align-items:center;padding:12px 16px;border-bottom:1px solid rgba(184,146,42,0.08);gap:8px;}
+.home-lb-row:last-child{border-bottom:none;}
+.home-lb-row.thead{background:rgba(184,146,42,0.08);padding:8px 16px;}
+.home-lb-row.you{background:rgba(184,146,42,0.08);}
+.home-lb-th{font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(184,146,42,0.6);}
+.home-lb-rank{font-size:.8rem;font-weight:800;color:#b8922a;font-family:monospace;text-align:center;}
+.home-lb-rank.r1{color:#f0d080;}
+.home-lb-name-wrap{display:flex;align-items:center;gap:8px;}
+.home-lb-avatar{width:28px;height:28px;border-radius:50%;background:#b8922a;display:flex;align-items:center;justify-content:center;font-size:.6rem;font-weight:800;color:#2b1810;flex-shrink:0;}
+.home-lb-name{font-size:.8rem;font-weight:700;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.home-lb-school{font-size:.65rem;color:rgba(255,255,255,0.35);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.home-lb-specialty{font-size:.7rem;color:rgba(255,255,255,0.45);}
+.home-lb-score{font-size:.85rem;font-weight:800;color:#f0d080;font-family:monospace;text-align:right;}
+.home-lb-loading{padding:24px;text-align:center;font-size:.8rem;color:rgba(255,255,255,0.3);}
+@media(max-width:600px){.home-lb-row{grid-template-columns:32px 1fr 60px;}.home-lb-row .home-lb-specialty{display:none;}}
 
 </style>
 </head>
@@ -531,61 +516,6 @@ footer{border-top:1px solid rgba(184,146,42,0.2);padding:48px 24px 32px;max-widt
   </div>
 </section>
 
-
-<!-- TESTIMONIALS -->
-<section class="tst-section">
-  <div class="tst-inner">
-    <div class="tst-grid">
-
-      <!-- SUBMIT FORM -->
-      <div class="tst-form-wrap">
-        <div class="tst-kicker">Community Voices</div>
-        <h2>Share your experience</h2>
-        <p>Has SIH helped you on the wards or in your exams? Tell us. Your words help other residents find us.</p>
-        <div class="tst-form">
-          <textarea placeholder="What did SIH help you with? How did it change your approach on the ward or in exams?" id="tstQuote"></textarea>
-          <div class="tst-form-row">
-            <input type="text" placeholder="Your name" id="tstName">
-            <input type="text" placeholder="Your role / year" id="tstRole">
-          </div>
-          <input type="text" placeholder="Hospital / institution (optional)" id="tstInstitution">
-          <button class="tst-submit" id="tstSubmitBtn" onclick="submitTestimonial()">Submit Testimonial</button>
-          <div class="tst-success" id="tstSuccess">Thank you. Your testimonial has been submitted for review. We will add it shortly.</div>
-          <div class="tst-error" id="tstError">Something went wrong. Please try again.</div>
-          <p class="tst-pending-note">All testimonials are reviewed before appearing publicly.</p>
-        </div>
-      </div>
-
-      <!-- TESTIMONIAL DISPLAY -->
-      <div class="tst-display">
-        <div class="tst-card">
-          <div class="tst-loading" id="tstLoading">Loading testimonials...</div>
-          <div class="tst-quote" id="tstQuoteDisplay" style="display:none;"></div>
-          <div class="tst-author-row" id="tstAuthorRow" style="display:none;">
-            <div class="tst-avatar" id="tstAvatarDisplay"></div>
-            <div class="tst-author-info">
-              <div class="tst-author-name" id="tstNameDisplay"></div>
-              <div class="tst-author-role" id="tstRoleDisplay"></div>
-            </div>
-          </div>
-        </div>
-        <div class="tst-nav">
-          <div class="tst-dots" id="tstDots"></div>
-          <div style="display:flex;align-items:center;gap:12px;">
-            <span class="tst-counter" id="tstCounter"></span>
-            <div class="tst-arrows">
-              <button class="tst-arrow" onclick="tstPrev()">&#8592;</button>
-              <button class="tst-arrow" onclick="tstNext()">&#8594;</button>
-            </div>
-          </div>
-        </div>
-        <div class="tst-progress"><div class="tst-progress-fill" id="tstProgressFill" style="width:0%"></div></div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
 <section class="cta-section">
   <div class="cta-blob cb1"></div>
   <div class="cta-wm"><img src="Surgical_Insight_Hub_Logo.png" alt=""></div>
@@ -760,173 +690,36 @@ document.addEventListener('DOMContentLoaded', loadTelegramFeed);
 
 
 <script>
-// ── SUPABASE CONFIG ──
-var SUPA_URL = 'https://sxushsvvmyokoknnsbuj.supabase.co';
-var SUPA_KEY = 'sb_publishable_Kl4RNEOxvmBewUToRv7HHw_2epulGkp';
-var FORMINIT_URL = 'https://forminit.com/f/8fcbo3pg7br';
-
-// Fallback testimonials shown while loading or if DB empty
-var TST_FALLBACK = [
-  {quote:"The Bowel Obstruction note saved me on a night call. I pulled it up at 2AM and knew exactly what to do. No textbook gives you that clarity under pressure.",name:"Dr. Amara K.",role:"Surgery Resident, Year 3",institution:"Teaching Hospital"},
-  {quote:"I used the Fournier's Gangrene note the morning before my FRCS exam. The FGSI table alone was worth more than an hour of revision. Passed first attempt.",name:"Dr. James M.",role:"ST4 General Surgery",institution:"Royal Infirmary"},
-  {quote:"No paragraphs, no filler. Just the decision I need. This is how surgical education should be — built by someone who works the overnight shift.",name:"Dr. Fatima A.",role:"PGY-2 Surgery",institution:"University Medical Centre"}
-];
-
-var tstData = [];
-var tstIndex = 0;
-var tstAutoplay;
-
-function tstInitials(name) {
-  return (name||'?').split(' ').filter(Boolean).slice(0,2).map(function(n){return n[0].toUpperCase();}).join('');
-}
-
-// ── LOAD FROM SUPABASE ──
-async function loadTestimonials() {
+// Home page leaderboard
+(async function() {
   try {
-    var res = await fetch(SUPA_URL + '/rest/v1/testimonials?approved=eq.true&order=created_at.desc&limit=20', {
-      headers: {
-        'apikey': SUPA_KEY,
-        'Authorization': 'Bearer ' + SUPA_KEY,
-        'Content-Type': 'application/json'
-      }
+    var res = await fetch('https://sxushsvvmyokoknnsbuj.supabase.co/rest/v1/mcq_scores?order=percentage.desc,score.desc&limit=10', {
+      headers: { 'apikey': 'sb_publishable_Kl4RNEOxvmBewUToRv7HHw_2epulGkp', 'Authorization': 'Bearer sb_publishable_Kl4RNEOxvmBewUToRv7HHw_2epulGkp' }
     });
-    if (res.ok) {
-      var data = await res.json();
-      if (data && data.length > 0) {
-        tstData = data.map(function(r) {
-          return {quote:r.quote, name:r.name, role:r.role, institution:r.institution||''};
-        });
-      } else {
-        tstData = TST_FALLBACK;
-      }
-    } else {
-      tstData = TST_FALLBACK;
+    var data = await res.json();
+    if (!data || !data.length) {
+      document.getElementById('homeLbRows').innerHTML = '<div class="home-lb-loading">No scores yet — be the first!</div>';
+      return;
     }
+    var html = '';
+    data.forEach(function(row, i) {
+      var initials = (row.name||'?').split(' ').filter(Boolean).map(function(n){return n[0];}).join('').slice(0,2).toUpperCase();
+      var pct = row.percentage !== undefined ? row.percentage : Math.round((row.score/row.total)*100);
+      var medal = i===0?' 🥇':i===1?' 🥈':i===2?' 🥉':'';
+      html += '<div class="home-lb-row">' +
+        '<div class="home-lb-rank' + (i===0?' r1':'') + '">' + (i+1) + '</div>' +
+        '<div class="home-lb-name-wrap"><div class="home-lb-avatar">' + initials + '</div>' +
+        '<div><div class="home-lb-name">' + (row.name||'Anonymous') + medal + '</div>' +
+        '<div class="home-lb-school">' + (row.school||'') + '</div></div></div>' +
+        '<div class="home-lb-specialty">' + (row.specialty||'Mixed') + '</div>' +
+        '<div class="home-lb-score">' + pct + '%<span style="font-size:.6rem;color:rgba(240,208,128,0.4);margin-left:3px;">' + row.score+'/'+row.total + '</span></div>' +
+        '</div>';
+    });
+    document.getElementById('homeLbRows').innerHTML = html;
   } catch(e) {
-    tstData = TST_FALLBACK;
+    document.getElementById('homeLbRows').innerHTML = '<div class="home-lb-loading">Leaderboard unavailable.</div>';
   }
-  tstRender(0, false);
-}
-
-// ── RENDER ──
-function tstRender(idx, animate) {
-  if (!tstData.length) return;
-  idx = Math.max(0, Math.min(idx, tstData.length - 1));
-  tstIndex = idx;
-  var d = tstData[idx];
-
-  var loading = document.getElementById('tstLoading');
-  var quoteEl = document.getElementById('tstQuoteDisplay');
-  var authorRow = document.getElementById('tstAuthorRow');
-  if (loading) loading.style.display = 'none';
-  if (quoteEl) quoteEl.style.display = 'block';
-  if (authorRow) authorRow.style.display = 'flex';
-
-  var q = document.getElementById('tstQuoteDisplay');
-  if (q) {
-    if (animate) { q.classList.remove('animating'); void q.offsetWidth; q.classList.add('animating'); }
-    q.textContent = d.quote;
-  }
-
-  var n = document.getElementById('tstNameDisplay');
-  var r = document.getElementById('tstRoleDisplay');
-  var av = document.getElementById('tstAvatarDisplay');
-  var ctr = document.getElementById('tstCounter');
-  var fill = document.getElementById('tstProgressFill');
-
-  if (n) n.textContent = d.name;
-  if (r) r.textContent = d.role + (d.institution ? ' · ' + d.institution : '');
-  if (av) av.textContent = tstInitials(d.name);
-  if (ctr) ctr.textContent = String(idx+1).padStart(2,'0') + ' / ' + String(tstData.length).padStart(2,'0');
-  if (fill) fill.style.width = (((idx+1)/tstData.length)*100) + '%';
-
-  var dots = document.getElementById('tstDots');
-  if (dots) {
-    dots.innerHTML = '';
-    tstData.forEach(function(_,i) {
-      var dot = document.createElement('div');
-      dot.className = 'tst-dot' + (i===idx?' active':'');
-      dot.onclick = function(){tstGoTo(i);};
-      dots.appendChild(dot);
-    });
-  }
-}
-
-function tstNext() { tstRender(((tstIndex+1)%tstData.length), true); tstResetAutoplay(); }
-function tstPrev() { tstRender(((tstIndex-1+tstData.length)%tstData.length), true); tstResetAutoplay(); }
-function tstGoTo(i) { tstRender(i, true); tstResetAutoplay(); }
-function tstResetAutoplay() { clearInterval(tstAutoplay); tstAutoplay = setInterval(tstNext, 6000); }
-
-// ── SUBMIT ──
-async function submitTestimonial() {
-  var quote = (document.getElementById('tstQuote').value||'').trim();
-  var name = (document.getElementById('tstName').value||'').trim();
-  var role = (document.getElementById('tstRole').value||'').trim();
-  var institution = (document.getElementById('tstInstitution').value||'').trim();
-  var btn = document.getElementById('tstSubmitBtn');
-  var success = document.getElementById('tstSuccess');
-  var error = document.getElementById('tstError');
-
-  success.style.display = 'none';
-  error.style.display = 'none';
-
-  if (!quote || !name || !role) {
-    alert('Please fill in your testimonial, name, and role.');
-    return;
-  }
-
-  btn.disabled = true;
-  btn.textContent = 'Submitting...';
-
-  var saved = false;
-
-  // ── Save to Supabase (approved=false, pending review) ──
-  try {
-    var supaRes = await fetch(SUPA_URL + '/rest/v1/testimonials', {
-      method: 'POST',
-      headers: {
-        'apikey': SUPA_KEY,
-        'Authorization': 'Bearer ' + SUPA_KEY,
-        'Content-Type': 'application/json',
-        'Prefer': 'return=minimal'
-      },
-      body: JSON.stringify({quote:quote, name:name, role:role, institution:institution, approved:false})
-    });
-    if (supaRes.ok || supaRes.status === 201) saved = true;
-  } catch(e) { console.log('Supabase error:', e); }
-
-  // ── Notify via Forminit ──
-  try {
-    var fd = new FormData();
-    fd.append('name', name);
-    fd.append('role', role);
-    fd.append('institution', institution);
-    fd.append('quote', quote);
-    fd.append('source', 'SIH Website Testimonial');
-    await fetch(FORMINIT_URL, {method:'POST', body:fd, headers:{Accept:'application/json'}});
-  } catch(e) { console.log('Forminit error:', e); }
-
-  btn.disabled = false;
-  btn.textContent = 'Submit Testimonial';
-
-  if (saved) {
-    success.style.display = 'block';
-    document.getElementById('tstQuote').value = '';
-    document.getElementById('tstName').value = '';
-    document.getElementById('tstRole').value = '';
-    document.getElementById('tstInstitution').value = '';
-    setTimeout(function(){success.style.display='none';}, 5000);
-  } else {
-    error.style.display = 'block';
-    setTimeout(function(){error.style.display='none';}, 5000);
-  }
-}
-
-// ── INIT ──
-document.addEventListener('DOMContentLoaded', function() {
-  loadTestimonials();
-  tstAutoplay = setInterval(tstNext, 6000);
-});
+})();
 </script>
 
 </body>
