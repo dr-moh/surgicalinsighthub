@@ -13,7 +13,7 @@ html,body{height:100%;overflow:hidden;background:#faf7f2;color:#1a1208;font-fami
 /* ── NAV ── */
 .nav{position:fixed;top:0;left:0;right:0;height:52px;display:flex;align-items:center;justify-content:space-between;padding:0 16px;z-index:300;background:rgba(250,247,242,0.95);backdrop-filter:blur(16px);border-bottom:1px solid rgba(184,146,42,0.2);}
 .nav-logo{display:flex;align-items:center;gap:8px;}
-.nav-logo-img{width:34px;height:34px;border-radius:50%;border:2px solid #b8922a;background:#2b1810;overflow:hidden;flex-shrink:0;}
+.nav-logo-img{width:48px;height:48px;border-radius:50%;border:2px solid #b8922a;background:#2b1810;overflow:hidden;flex-shrink:0;}
 .nav-logo-img img{width:100%;height:100%;object-fit:cover;}
 .nav-brand{font-size:.78rem;font-weight:800;color:#1a1208;letter-spacing:-.02em;line-height:1.1;}
 .nav-brand-sub{font-size:.55rem;font-weight:600;color:#b8922a;letter-spacing:.1em;text-transform:uppercase;}
@@ -69,8 +69,10 @@ html,body{height:100%;overflow:hidden;background:#faf7f2;color:#1a1208;font-fami
 .input-bar{flex-shrink:0;padding:10px 16px;background:#fff;border-bottom:1px solid rgba(184,146,42,0.15);display:flex;gap:8px;align-items:center;}
 .topic-input{flex:1;font-family:inherit;font-size:.9rem;color:#1a1208;background:#faf7f2;border:1px solid rgba(184,146,42,0.2);border-radius:9px;padding:9px 13px;outline:none;transition:border-color .15s;}
 .topic-input:focus{border-color:#b8922a;background:#fff;}
+.topic-input{opacity:0.6;pointer-events:none;}
+.run-btn{opacity:0.6;}
 .topic-input::placeholder{color:#b8a48a;}
-.run-btn{background:#2b1810;color:#f0d080;border:none;border-radius:9px;padding:9px 18px;font-family:'IBM Plex Mono',monospace;font-size:.72rem;font-weight:600;cursor:pointer;letter-spacing:.04em;white-space:nowrap;transition:opacity .15s;flex-shrink:0;}
+.run-btn{background:#a3927a;color:#f0d080;border:none;border-radius:9px;padding:9px 18px;font-family:'IBM Plex Mono',monospace;font-size:.72rem;font-weight:600;cursor:pointer;letter-spacing:.04em;white-space:nowrap;transition:opacity .15s;flex-shrink:0;}
 .run-btn:hover{opacity:.85;}
 .run-btn:disabled{opacity:.4;cursor:not-allowed;}
 
@@ -208,10 +210,10 @@ code{font-family:'IBM Plex Mono',monospace;background:#f5f0e8;color:#6b5a40;padd
 
 <!-- NAV -->
 <nav class="nav">
-  <div class="nav-logo">
+  <a href="index.html" style="text-decoration:none;display:flex;align-items:center;gap:8px;" class="nav-logo">
     <div class="nav-logo-img"><img src="Surgical_Insight_Hub_Logo.png" alt="SIH"></div>
     <div><div class="nav-brand">Surgical Insight Hub</div><div class="nav-brand-sub">High-Yield Review</div></div>
-  </div>
+  </a>
   <div class="nav-right" style="display:flex;align-items:center;gap:6px;">
     <div style="display:flex;align-items:center;gap:2px;background:rgba(250,247,242,0.9);backdrop-filter:blur(16px);border:1px solid rgba(184,146,42,0.2);border-radius:100px;padding:4px;box-shadow:0 2px 8px rgba(43,24,16,0.07);">
       <a href="index.html" style="font-size:.72rem;font-weight:600;color:#6b5a40;text-decoration:none;padding:4px 10px;border-radius:100px;transition:all .15s;">Home</a>
@@ -257,9 +259,14 @@ code{font-family:'IBM Plex Mono',monospace;background:#f5f0e8;color:#6b5a40;padd
       <!-- OUTPUT -->
       <div class="output-area" id="outputArea">
         <div class="empty-state">
-          <div class="empty-icon">⚕</div>
-          <div class="empty-title">Drop a topic.</div>
-          <div class="empty-sub">Pick from the sidebar or type any surgical topic. Full high-yield review streams instantly.</div>
+          <div class="empty-icon" style="background:rgba(184,146,42,0.12);border:2px solid rgba(184,146,42,0.3);font-size:1.8rem;">⚡</div>
+          <div class="empty-title" style="font-size:1.5rem;">Coming Soon</div>
+          <div class="empty-sub" style="max-width:340px;font-size:.85rem;line-height:1.7;color:#6b5a40;">
+            The AI High-Yield Review feature is currently being set up.<br><br>
+            <strong style="color:#2b1810;">What it will do:</strong><br>
+            Stream a full structured surgical review — Definition, Pathophysiology, Classifications, Management, and MCQ bullets — for any topic in seconds.<br><br>
+            <span style="color:#b8922a;font-weight:700;">Back soon. Stay sharp.</span>
+          </div>
         </div>
       </div>
 
@@ -434,6 +441,14 @@ document.getElementById('topicInput').addEventListener('keydown', e => {
 let isRunning = false;
 
 async function runQuery() {
+  // Coming Soon — API not active yet
+  const outputArea = document.getElementById('outputArea');
+  outputArea.innerHTML = `<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;gap:12px;text-align:center;padding:40px 24px;">
+    <div style="font-size:2.5rem;">⚡</div>
+    <div style="font-family:'EB Garamond',serif;font-size:1.4rem;font-weight:700;color:#2b1810;">Coming Soon</div>
+    <div style="font-size:.85rem;color:#6b5a40;max-width:320px;line-height:1.7;">The AI Review feature is being set up. Check back shortly.</div>
+  </div>`;
+  return;
   const topic = document.getElementById('topicInput').value.trim();
   if (!topic || isRunning) return;
 
@@ -459,24 +474,27 @@ async function runQuery() {
   let fullText = '';
 
   try {
-    // Gemini streaming
+    // Gemini — try models in order, fallback on quota
     const _k = ['AIzaSyAsB8crh','TBaDERrEz-V7v','gxo33xIxDl9u4'].join('');
-    const _m = 'gemini-2.0-flash';
-    const _url = `https://generativelanguage.googleapis.com/v1beta/models/${_m}:streamGenerateContent?key=${_k}&alt=sse`;
-    const res = await fetch(_url, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        system_instruction: { parts: [{ text: SYSTEM_PROMPT }] },
-        contents: [{ role: 'user', parts: [{ text: topic }] }],
-        generationConfig: { maxOutputTokens: 4000, temperature: 0.3 }
-      })
-    });
-
-    if (!res.ok) {
-      const e = await res.json();
-      throw new Error(e.error?.message || `HTTP ${res.status}`);
+    const _models = ['gemini-1.5-flash','gemini-1.5-flash-8b','gemini-1.0-pro'];
+    let res = null, lastErr = '';
+    for (const _m of _models) {
+      const _url = `https://generativelanguage.googleapis.com/v1beta/models/${_m}:streamGenerateContent?key=${_k}&alt=sse`;
+      const attempt = await fetch(_url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          system_instruction: { parts: [{ text: SYSTEM_PROMPT }] },
+          contents: [{ role: 'user', parts: [{ text: topic }] }],
+          generationConfig: { maxOutputTokens: 4000, temperature: 0.3 }
+        })
+      });
+      if (attempt.ok) { res = attempt; break; }
+      const errJson = await attempt.json().catch(() => ({}));
+      lastErr = errJson?.error?.message || ('HTTP ' + attempt.status);
+      if (!lastErr.includes('quota') && !lastErr.includes('RESOURCE_EXHAUSTED')) break;
     }
+    if (!res) throw new Error(lastErr || 'Quota exceeded on all models. Please try again in a few minutes.');
 
     const reader = res.body.getReader();
     const dec = new TextDecoder();
