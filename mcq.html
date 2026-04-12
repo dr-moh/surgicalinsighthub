@@ -180,6 +180,22 @@ body{font-family:'Inter',-apple-system,sans-serif;background:#faf7f2;color:#1a12
   .results-card{padding:24px;}
   .hero-stats{gap:16px;}
 }
+
+/* ── MOBILE HAMBURGER NAV ── */
+.mob-nav-toggle{display:none;background:#2b1810;border:1.5px solid #b8922a;color:#f0d080;border-radius:8px;padding:7px 12px;font-size:12px;cursor:pointer;align-items:center;gap:6px;font-family:inherit;font-weight:700;z-index:500;}
+.mob-nav-overlay{display:none;position:fixed;inset:0;background:rgba(43,24,16,0.55);z-index:480;backdrop-filter:blur(4px);}
+.mob-nav-sheet{display:none;position:fixed;bottom:0;left:0;right:0;background:#2b1810;border-radius:20px 20px 0 0;border-top:2px solid #b8922a;padding:20px 20px 40px;z-index:490;transform:translateY(100%);transition:transform .28s ease;}
+.mob-nav-sheet.open{transform:translateY(0);}
+.mob-nav-sheet a{display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:.92rem;font-weight:600;padding:11px 0;border-bottom:1px solid rgba(184,146,42,0.15);}
+.mob-nav-sheet a:last-child{border-bottom:none;}
+.mob-nav-sheet a:hover,.mob-nav-sheet a.active{color:#f0d080;}
+.mob-nav-sheet a.mcq-link{color:#f87171;font-weight:700;}
+.mob-nav-sheet a.review-link{color:#b8922a;font-weight:700;}
+.mob-nav-handle{width:40px;height:4px;background:rgba(184,146,42,0.4);border-radius:2px;margin:0 auto 18px;}
+@media(max-width:768px){
+  .mob-nav-toggle{display:flex;}
+}
+
 </style>
 </head>
 <body>
@@ -192,6 +208,7 @@ body{font-family:'Inter',-apple-system,sans-serif;background:#faf7f2;color:#1a12
       <div><div class="nav-brand-text">Surgical Insight Hub</div><div class="nav-brand-sub">MCQ Arena</div></div>
     </div>
   </div>
+  <button class="mob-nav-toggle" onclick="openMobNav()">☰ Menu</button>
   <div class="nav-right">
     <a href="index.html" class="nav-back">← Back to Home</a>
   </div>
@@ -710,5 +727,30 @@ function restartSession() {
 
 function goHome() { window.location.href = 'index.html'; }
 </script>
+
+<div class="mob-nav-overlay" id="mobNavOverlay" onclick="closeMobNav()"></div>
+<div class="mob-nav-sheet" id="mobNavSheet">
+  <div class="mob-nav-handle"></div>
+  <a href="index.html">Home</a>
+  <a href="podcast.html">Podcast</a>
+  <a href="notes.html">Notes</a>
+  <a href="mcq.html" class="mcq-link">MCQ Arena</a>
+  <a href="review.html" class="review-link">AI Review</a>
+  <a href="about.html">About</a>
+</div>
+
+<script>
+function openMobNav(){
+  document.getElementById('mobNavSheet').classList.add('open');
+  document.getElementById('mobNavOverlay').style.display='block';
+  document.body.style.overflow='hidden';
+}
+function closeMobNav(){
+  document.getElementById('mobNavSheet').classList.remove('open');
+  document.getElementById('mobNavOverlay').style.display='none';
+  document.body.style.overflow='';
+}
+</script>
+
 </body>
 </html>

@@ -272,6 +272,65 @@
         padding: 1.2rem 1.5rem !important;
     }
 
+
+/* ── MOBILE RESPONSIVE ── */
+@media(max-width:768px){
+  body{
+    background:#f7f3ec;
+    padding:0;
+    display:block;
+  }
+  .page{
+    width:100% !important;
+    height:auto !important;
+    min-height:0 !important;
+    padding:14px !important;
+    box-shadow:none !important;
+    border:none !important;
+    border-radius:0 !important;
+    margin:0 !important;
+    page-break-after:auto !important;
+  }
+  .body{
+    overflow:visible !important;
+    flex:none !important;
+  }
+  .grid,.two-col,.col-2,.columns{
+    grid-template-columns:1fr !important;
+    display:flex !important;
+    flex-direction:column !important;
+  }
+  table{
+    font-size:11px !important;
+    display:block;
+    overflow-x:auto;
+    white-space:nowrap;
+  }
+  th,td{
+    padding:5px 8px !important;
+    font-size:11px !important;
+  }
+  .tab-strip,.tabs{
+    overflow-x:auto;
+    white-space:nowrap;
+    -webkit-overflow-scrolling:touch;
+  }
+  .tab-strip .tab,.tabs .tab{
+    font-size:9px !important;
+    padding:6px 10px !important;
+  }
+  h1,.title{font-size:1.1rem !important;}
+  h2,.section-title{font-size:.95rem !important;}
+  h3{font-size:.85rem !important;}
+  .foot,.footer{margin-top:16px !important;}
+  .brutal-rule,.callout,.description{
+    font-size:.78rem !important;
+    line-height:1.6 !important;
+  }
+  li{font-size:.78rem !important;}
+  .badge{font-size:9px !important;}
+}
+
 </style>
 </head>
 <body>
