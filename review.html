@@ -153,20 +153,93 @@ code{font-family:'IBM Plex Mono',monospace;background:#f5f0e8;color:#6b5a40;padd
   .stream-badge span{display:none;}
 }
 
-/* ── MOBILE HAMBURGER NAV ── */
-.mob-nav-toggle{display:none;background:#2b1810;border:1.5px solid #b8922a;color:#f0d080;border-radius:8px;padding:7px 12px;font-size:12px;cursor:pointer;align-items:center;gap:6px;font-family:inherit;font-weight:700;z-index:500;}
-.mob-nav-overlay{display:none;position:fixed;inset:0;background:rgba(43,24,16,0.55);z-index:480;backdrop-filter:blur(4px);}
-.mob-nav-sheet{display:none;position:fixed;bottom:0;left:0;right:0;background:#2b1810;border-radius:20px 20px 0 0;border-top:2px solid #b8922a;padding:20px 20px 40px;z-index:490;transform:translateY(100%);transition:transform .28s ease;}
-.mob-nav-sheet.open{transform:translateY(0);}
-.mob-nav-sheet a{display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:.92rem;font-weight:600;padding:11px 0;border-bottom:1px solid rgba(184,146,42,0.15);}
-.mob-nav-sheet a:last-child{border-bottom:none;}
-.mob-nav-sheet a:hover,.mob-nav-sheet a.active{color:#f0d080;}
-.mob-nav-sheet a.mcq-link{color:#f87171;font-weight:700;}
-.mob-nav-sheet a.review-link{color:#b8922a;font-weight:700;}
-.mob-nav-handle{width:40px;height:4px;background:rgba(184,146,42,0.4);border-radius:2px;margin:0 auto 18px;}
-@media(max-width:768px){
-  .mob-nav-toggle{display:flex;}
+
+
+
+/* ── INNER PAGE MOBILE BACK BUTTON ── */
+.mob-back-btn{
+  display:none;
+  align-items:center;
+  gap:6px;
+  background:#2b1810;
+  border:1.5px solid #b8922a;
+  color:#f0d080;
+  border-radius:8px;
+  padding:7px 13px;
+  font-size:.75rem;
+  font-weight:700;
+  text-decoration:none;
+  font-family:inherit;
+  white-space:nowrap;
 }
+.mob-back-btn:hover{opacity:.85;}
+@media(max-width:620px){
+  .mob-back-btn{display:flex;}
+  .nav-links-pill,.nav-pill{display:none!important;}
+  .mob-nav-toggle{display:none!important;}
+}
+
+
+/* ── API KEY BANNER ── */
+.api-key-banner{
+  background:#fff8f0;
+  border-bottom:1px solid rgba(184,146,42,0.2);
+  padding:10px 16px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+  flex-shrink:0;
+}
+.api-key-banner label{
+  font-size:.72rem;
+  font-weight:700;
+  color:#2b1810;
+  white-space:nowrap;
+  letter-spacing:.02em;
+}
+.api-key-input{
+  flex:1;
+  min-width:200px;
+  font-family:'IBM Plex Mono',monospace;
+  font-size:.72rem;
+  color:#1a1208;
+  background:#fff;
+  border:1px solid rgba(184,146,42,0.3);
+  border-radius:8px;
+  padding:7px 12px;
+  outline:none;
+  transition:border-color .15s;
+}
+.api-key-input:focus{border-color:#b8922a;}
+.api-key-input::placeholder{color:#b8a48a;font-family:inherit;}
+.api-key-save-btn{
+  background:#2b1810;
+  color:#f0d080;
+  border:none;
+  border-radius:8px;
+  padding:7px 14px;
+  font-family:inherit;
+  font-size:.72rem;
+  font-weight:700;
+  cursor:pointer;
+  white-space:nowrap;
+  transition:opacity .15s;
+}
+.api-key-save-btn:hover{opacity:.85;}
+.api-key-status{
+  font-size:.68rem;
+  color:#16a34a;
+  font-weight:700;
+  display:none;
+}
+.api-key-help{
+  font-size:.65rem;
+  color:#a3927a;
+  width:100%;
+  margin-top:2px;
+}
+.api-key-help a{color:#b8922a;}
 
 </style>
 </head>
@@ -178,7 +251,6 @@ code{font-family:'IBM Plex Mono',monospace;background:#f5f0e8;color:#6b5a40;padd
     <div class="nav-logo-img"><img src="Surgical_Insight_Hub_Logo.png" alt="SIH"></div>
     <div><div class="nav-brand">Surgical Insight Hub</div><div class="nav-brand-sub">High-Yield Review</div></div>
   </div>
-  <button class="mob-nav-toggle" onclick="openMobNav()">☰ Menu</button>
   <div class="nav-right" style="display:flex;align-items:center;gap:6px;">
     <div style="display:flex;align-items:center;gap:2px;background:rgba(250,247,242,0.9);backdrop-filter:blur(16px);border:1px solid rgba(184,146,42,0.2);border-radius:100px;padding:4px;box-shadow:0 2px 8px rgba(43,24,16,0.07);">
       <a href="index.html" style="font-size:.72rem;font-weight:600;color:#6b5a40;text-decoration:none;padding:4px 10px;border-radius:100px;transition:all .15s;">Home</a>
@@ -213,6 +285,19 @@ code{font-family:'IBM Plex Mono',monospace;background:#f5f0e8;color:#6b5a40;padd
         <select class="mob-category-select" id="mobCategorySelect" onchange="onMobCategoryChange(this.value)">
           <option value="">— Select a system or topic —</option>
         </select>
+      </div>
+
+
+      <!-- API KEY BANNER -->
+      <div class="api-key-banner" id="apiKeyBanner">
+        <label>🔑 API Key</label>
+        <input type="password" class="api-key-input" id="apiKeyInput" placeholder="sk-ant-api03-..." autocomplete="off">
+        <button class="api-key-save-btn" onclick="saveApiKey()">Save</button>
+        <span class="api-key-status" id="apiKeyStatus">✓ Saved</span>
+        <div class="api-key-help">
+          Enter your Anthropic API key. It is stored only in this browser session — never sent anywhere else.
+          Get one at <a href="https://console.anthropic.com" target="_blank">console.anthropic.com</a>
+        </div>
       </div>
 
       <!-- INPUT BAR -->
@@ -403,6 +488,12 @@ let isRunning = false;
 async function runQuery() {
   const topic = document.getElementById('topicInput').value.trim();
   if (!topic || isRunning) return;
+  if (!getApiKey()) {
+    document.getElementById('apiKeyBanner').style.display = 'flex';
+    document.getElementById('apiKeyInput').focus();
+    alert('Please enter your Anthropic API key first.');
+    return;
+  }
 
   isRunning = true;
   const runBtn = document.getElementById('runBtn');
@@ -427,7 +518,12 @@ async function runQuery() {
   try {
     const res = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'anthropic-dangerous-direct-browser-access': 'true' },
+      headers: {
+        'Content-Type': 'application/json',
+        'x-api-key': getApiKey(),
+        'anthropic-version': '2023-06-01',
+        'anthropic-dangerous-direct-browser-access': 'true'
+      },
       body: JSON.stringify({
         model: 'claude-sonnet-4-20250514',
         max_tokens: 4000,
@@ -680,6 +776,35 @@ sidebarEl.addEventListener('touchstart', function(e) {
   if (sidebarCollapsed) { expandSidebar(); e.preventDefault(); }
 }, { passive: false });
 
+
+// ── API KEY ──
+function getApiKey() {
+  return sessionStorage.getItem('sih_api_key') || '';
+}
+
+function saveApiKey() {
+  var key = document.getElementById('apiKeyInput').value.trim();
+  if (!key) { alert('Please enter your API key.'); return; }
+  sessionStorage.setItem('sih_api_key', key);
+  document.getElementById('apiKeyStatus').style.display = 'inline';
+  document.getElementById('apiKeyInput').value = '••••••••••••••••••••';
+  setTimeout(function() {
+    document.getElementById('apiKeyBanner').style.display = 'none';
+  }, 1500);
+}
+
+// Check if key already saved this session
+document.addEventListener('DOMContentLoaded', function() {
+  if (getApiKey()) {
+    document.getElementById('apiKeyInput').value = '••••••••••••••••••••';
+    document.getElementById('apiKeyStatus').style.display = 'inline';
+    document.getElementById('apiKeyStatus').textContent = '✓ Key loaded';
+    setTimeout(function() {
+      document.getElementById('apiKeyBanner').style.display = 'none';
+    }, 2000);
+  }
+});
+
 // ── MOBILE: Show dropdown again when input cleared ──
 document.getElementById('topicInput').addEventListener('input', function() {
   if (!this.value && window.innerWidth <= 768) {
@@ -689,29 +814,13 @@ document.getElementById('topicInput').addEventListener('input', function() {
 });
 </script>
 
-<div class="mob-nav-overlay" id="mobNavOverlay" onclick="closeMobNav()"></div>
-<div class="mob-nav-sheet" id="mobNavSheet">
-  <div class="mob-nav-handle"></div>
-  <a href="index.html">Home</a>
+<a href="index.html">Home</a>
   <a href="podcast.html">Podcast</a>
   <a href="notes.html">Notes</a>
   <a href="mcq.html" class="mcq-link">MCQ Arena</a>
   <a href="review.html" class="review-link">AI Review</a>
   <a href="about.html">About</a>
 </div>
-
-<script>
-function openMobNav(){
-  document.getElementById('mobNavSheet').classList.add('open');
-  document.getElementById('mobNavOverlay').style.display='block';
-  document.body.style.overflow='hidden';
-}
-function closeMobNav(){
-  document.getElementById('mobNavSheet').classList.remove('open');
-  document.getElementById('mobNavOverlay').style.display='none';
-  document.body.style.overflow='';
-}
-</script>
 
 </body>
 </html>
