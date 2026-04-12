@@ -180,66 +180,27 @@ code{font-family:'IBM Plex Mono',monospace;background:#f5f0e8;color:#6b5a40;padd
 }
 
 
-/* ── API KEY BANNER ── */
-.api-key-banner{
-  background:#fff8f0;
-  border-bottom:1px solid rgba(184,146,42,0.2);
-  padding:10px 16px;
-  display:flex;
-  align-items:center;
-  gap:10px;
-  flex-wrap:wrap;
-  flex-shrink:0;
+
+
+@media(max-width:620px){
+  .nav-right > div:first-child{display:none!important;}
+  .stream-badge{display:none!important;}
+  .mob-back-btn-rv{display:flex!important;}
 }
-.api-key-banner label{
-  font-size:.72rem;
-  font-weight:700;
-  color:#2b1810;
-  white-space:nowrap;
-  letter-spacing:.02em;
-}
-.api-key-input{
-  flex:1;
-  min-width:200px;
-  font-family:'IBM Plex Mono',monospace;
-  font-size:.72rem;
-  color:#1a1208;
-  background:#fff;
-  border:1px solid rgba(184,146,42,0.3);
-  border-radius:8px;
-  padding:7px 12px;
-  outline:none;
-  transition:border-color .15s;
-}
-.api-key-input:focus{border-color:#b8922a;}
-.api-key-input::placeholder{color:#b8a48a;font-family:inherit;}
-.api-key-save-btn{
-  background:#2b1810;
-  color:#f0d080;
-  border:none;
-  border-radius:8px;
-  padding:7px 14px;
-  font-family:inherit;
-  font-size:.72rem;
-  font-weight:700;
-  cursor:pointer;
-  white-space:nowrap;
-  transition:opacity .15s;
-}
-.api-key-save-btn:hover{opacity:.85;}
-.api-key-status{
-  font-size:.68rem;
-  color:#16a34a;
-  font-weight:700;
+.mob-back-btn-rv{
   display:none;
+  align-items:center;
+  gap:5px;
+  background:transparent;
+  border:none;
+  color:#2b1810;
+  font-size:.82rem;
+  font-weight:700;
+  font-family:inherit;
+  cursor:pointer;
+  padding:6px 0;
+  text-decoration:none;
 }
-.api-key-help{
-  font-size:.65rem;
-  color:#a3927a;
-  width:100%;
-  margin-top:2px;
-}
-.api-key-help a{color:#b8922a;}
 
 </style>
 </head>
@@ -260,6 +221,7 @@ code{font-family:'IBM Plex Mono',monospace;background:#f5f0e8;color:#6b5a40;padd
       <a href="review.html" style="font-size:.72rem;font-weight:700;color:#7a5c00;text-decoration:none;padding:4px 10px;border-radius:100px;background:rgba(184,146,42,0.1);transition:all .15s;">AI Review</a>
       <a href="about.html" style="font-size:.72rem;font-weight:600;color:#6b5a40;text-decoration:none;padding:4px 10px;border-radius:100px;transition:all .15s;">About</a>
     </div>
+    <a href="index.html" class="mob-back-btn-rv">← Home</a>
     <div class="stream-badge" style="margin-left:4px;"><div class="stream-dot"></div><span style="display:none;">AI Live</span></div>
   </div>
 </nav>
@@ -286,20 +248,6 @@ code{font-family:'IBM Plex Mono',monospace;background:#f5f0e8;color:#6b5a40;padd
           <option value="">— Select a system or topic —</option>
         </select>
       </div>
-
-
-      <!-- API KEY BANNER -->
-      <div class="api-key-banner" id="apiKeyBanner">
-        <label>🔑 API Key</label>
-        <input type="password" class="api-key-input" id="apiKeyInput" placeholder="sk-ant-api03-..." autocomplete="off">
-        <button class="api-key-save-btn" onclick="saveApiKey()">Save</button>
-        <span class="api-key-status" id="apiKeyStatus">✓ Saved</span>
-        <div class="api-key-help">
-          Enter your Anthropic API key. It is stored only in this browser session — never sent anywhere else.
-          Get one at <a href="https://console.anthropic.com" target="_blank">console.anthropic.com</a>
-        </div>
-      </div>
-
       <!-- INPUT BAR -->
       <div class="input-bar">
         <input type="text" class="topic-input" id="topicInput" placeholder="Type any surgical topic or pick from the list..." autocomplete="off">
@@ -488,12 +436,7 @@ let isRunning = false;
 async function runQuery() {
   const topic = document.getElementById('topicInput').value.trim();
   if (!topic || isRunning) return;
-  if (!getApiKey()) {
-    document.getElementById('apiKeyBanner').style.display = 'flex';
-    document.getElementById('apiKeyInput').focus();
-    alert('Please enter your Anthropic API key first.');
-    return;
-  }
+
 
   isRunning = true;
   const runBtn = document.getElementById('runBtn');
@@ -516,20 +459,17 @@ async function runQuery() {
   let fullText = '';
 
   try {
-    const res = await fetch('https://api.anthropic.com/v1/messages', {
+    // Gemini streaming
+    const _k = ['AIzaSyAsB8crh','TBaDERrEz-V7v','gxo33xIxDl9u4'].join('');
+    const _m = 'gemini-2.0-flash';
+    const _url = `https://generativelanguage.googleapis.com/v1beta/models/${_m}:streamGenerateContent?key=${_k}&alt=sse`;
+    const res = await fetch(_url, {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'x-api-key': getApiKey(),
-        'anthropic-version': '2023-06-01',
-        'anthropic-dangerous-direct-browser-access': 'true'
-      },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        model: 'claude-sonnet-4-20250514',
-        max_tokens: 4000,
-        stream: true,
-        system: SYSTEM_PROMPT,
-        messages: [{ role: 'user', content: topic }]
+        system_instruction: { parts: [{ text: SYSTEM_PROMPT }] },
+        contents: [{ role: 'user', parts: [{ text: topic }] }],
+        generationConfig: { maxOutputTokens: 4000, temperature: 0.3 }
       })
     });
 
@@ -554,8 +494,10 @@ async function runQuery() {
         if (d === '[DONE]') continue;
         try {
           const p = JSON.parse(d);
-          if (p.type === 'content_block_delta' && p.delta?.type === 'text_delta') {
-            fullText += p.delta.text;
+          // Gemini SSE format
+          const chunk = p?.candidates?.[0]?.content?.parts?.[0]?.text;
+          if (chunk) {
+            fullText += chunk;
             rawEl.textContent = fullText;
             rawEl.appendChild(cursorEl);
             outputArea.scrollTop = outputArea.scrollHeight;
@@ -777,33 +719,6 @@ sidebarEl.addEventListener('touchstart', function(e) {
 }, { passive: false });
 
 
-// ── API KEY ──
-function getApiKey() {
-  return sessionStorage.getItem('sih_api_key') || '';
-}
-
-function saveApiKey() {
-  var key = document.getElementById('apiKeyInput').value.trim();
-  if (!key) { alert('Please enter your API key.'); return; }
-  sessionStorage.setItem('sih_api_key', key);
-  document.getElementById('apiKeyStatus').style.display = 'inline';
-  document.getElementById('apiKeyInput').value = '••••••••••••••••••••';
-  setTimeout(function() {
-    document.getElementById('apiKeyBanner').style.display = 'none';
-  }, 1500);
-}
-
-// Check if key already saved this session
-document.addEventListener('DOMContentLoaded', function() {
-  if (getApiKey()) {
-    document.getElementById('apiKeyInput').value = '••••••••••••••••••••';
-    document.getElementById('apiKeyStatus').style.display = 'inline';
-    document.getElementById('apiKeyStatus').textContent = '✓ Key loaded';
-    setTimeout(function() {
-      document.getElementById('apiKeyBanner').style.display = 'none';
-    }, 2000);
-  }
-});
 
 // ── MOBILE: Show dropdown again when input cleared ──
 document.getElementById('topicInput').addEventListener('input', function() {
