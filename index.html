@@ -10,150 +10,166 @@
 <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet"></noscript>
 <link rel="stylesheet" href="css/theme.css">
 <link rel="stylesheet" href="css/index.css">
-  .tm-stage {
+<style>
+  /* PREMIUM TESTIMONIAL SLIDER */
+  .testimonials-section {
+    position: relative;
+    overflow: hidden;
     background: var(--bg-card);
     border: 1px solid var(--border-color);
     border-radius: 32px;
-    padding: 60px;
-    position: relative;
-    cursor: pointer;
-    overflow: hidden;
-    transition: transform 0.3s ease, border-color 0.3s ease;
-  }
-  .tm-stage:hover {
-    border-color: var(--brand-gold);
+    margin: 40px auto 100px !important;
+    padding: 80px 40px !important;
+    cursor: none; /* Hide default cursor */
   }
   
-  .tm-top-bar {
+  #customCursor {
+    position: fixed;
+    width: 0;
+    height: 0;
+    background: var(--text-primary);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 1000;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    margin-bottom: 60px;
+    justify-content: center;
+    color: var(--bg-card);
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    opacity: 0;
+    transition: width 0.3s cubic-bezier(0.22, 1, 0.36, 1), height 0.3s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.3s;
+    mix-blend-difference: difference;
   }
-  .tm-avatars-stack {
+  .testimonials-section:hover #customCursor {
+    width: 80px;
+    height: 80px;
+    opacity: 1;
+  }
+
+  .tm-indicator {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    font-family: monospace;
+    font-size: 12px;
     display: flex;
-    margin-left: 10px;
+    align-items: baseline;
+    gap: 4px;
   }
-  .tm-stack-img {
-    width: 28px;
-    height: 28px;
+  .tm-active-idx { font-size: 24px; font-weight: 300; color: var(--text-primary); }
+  .tm-total-idx { color: var(--text-muted); }
+
+  .tm-stack {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    display: flex;
+    gap: -8px;
+  }
+  .tm-stack-avatar {
+    width: 24px;
+    height: 24px;
     border-radius: 50%;
     border: 2px solid var(--bg-card);
-    margin-left: -10px;
-    object-fit: cover;
+    overflow: hidden;
     background: var(--brand-burgundy);
-    transition: all 0.3s ease;
-    filter: grayscale(1) opacity(0.4);
+    margin-left: -8px;
+    transition: all 0.3s;
+    filter: grayscale(1) opacity(0.5);
   }
-  .tm-stack-img.active {
+  .tm-stack-avatar.active {
     filter: grayscale(0) opacity(1);
-    transform: scale(1.2);
-    z-index: 10;
-    border-color: var(--brand-gold);
+    transform: scale(1.1);
+    z-index: 2;
   }
-  
-  .tm-indicator {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 0.75rem;
-    color: var(--text-muted);
-    font-weight: 700;
-  }
-  #tmCurrent {
-    font-size: 1.8rem;
-    color: var(--text-primary);
-    font-weight: 300;
-    margin-right: 4px;
-  }
-  .tm-sep { margin-right: 4px; opacity: 0.3; }
 
-  #tmQuote {
+  .tm-content {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+  }
+  .tm-quote-text {
     font-size: 1.8rem;
     font-weight: 300;
-    line-height: 1.5;
+    line-height: 1.4;
     color: var(--text-primary);
-    letter-spacing: -0.03em;
-    margin-bottom: 60px;
+    letter-spacing: -0.02em;
     min-height: 120px;
-    transition: opacity 0.3s ease;
   }
-  
+  .tm-word {
+    display: inline-block;
+    margin-right: 0.25em;
+    opacity: 0;
+    transform: translateY(20px);
+    filter: blur(8px);
+    transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .tm-word.visible {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+
   .tm-author-row {
+    margin-top: 48px;
     display: flex;
     align-items: center;
     gap: 16px;
+    position: relative;
   }
-  .tm-active-avatar-wrap {
-    width: 56px;
-    height: 56px;
+  .tm-main-avatar {
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
-    border: 1px solid var(--brand-gold-muted);
-    padding: 3px;
-  }
-  #tmActiveAvatar {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    object-fit: cover;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
     background: var(--brand-burgundy);
   }
-  
+  .tm-main-avatar img { width: 100%; height: 100%; object-fit: cover; }
+
   .tm-author-info {
-    position: relative;
-    padding-left: 20px;
+    padding-left: 16px;
+    border-left: 1px solid var(--brand-gold);
+    transition: all 0.3s;
   }
-  .tm-accent-line {
-    position: absolute;
-    left: 0;
-    top: 2px;
-    bottom: 2px;
-    width: 1px;
-    background: var(--brand-gold);
-    transform-origin: top;
-    transition: transform 0.5s ease;
-  }
-  .tm-name {
-    font-weight: 700;
-    font-size: 1rem;
-    color: var(--text-primary);
-  }
-  .tm-role {
-    font-size: 0.65rem;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    color: var(--text-muted);
-    margin-top: 4px;
-  }
-  
-  .tm-footer {
+  .tm-author-name { font-weight: 600; font-size: 0.95rem; color: var(--text-primary); }
+  .tm-author-sub { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; margin-top: 2px; }
+
+  .tm-progress-bar {
     margin-top: 60px;
-  }
-  .tm-progress-track {
     height: 1px;
     background: var(--border-color);
-    width: 100%;
     position: relative;
-    margin-bottom: 20px;
+    overflow: hidden;
   }
-  .tm-progress-bar {
+  .tm-progress-fill {
     position: absolute;
-    top: 0;
     left: 0;
+    top: 0;
     height: 100%;
     background: var(--brand-gold);
     width: 0%;
-    transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: width 0.5s cubic-bezier(0.22, 1, 0.36, 1);
   }
+
   .tm-hint {
-    font-size: 0.6rem;
-    letter-spacing: 0.2em;
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
     color: var(--text-muted);
     opacity: 0.4;
   }
 
-  @media(max-width: 600px) {
-    .tm-stage { padding: 40px 24px; border-radius: 20px; }
-    #tmQuote { font-size: 1.4rem; }
-    .tm-top-bar { margin-bottom: 40px; }
+  @media(max-width: 768px) {
+    .testimonials-section { padding: 80px 24px !important; cursor: auto; }
+    #customCursor { display: none; }
+    .tm-quote-text { font-size: 1.4rem; }
   }
 </style>
 <script>
@@ -413,43 +429,41 @@
   </div>
 </section>
 
-<!-- WALL OF INSIGHT (PREMIUM SLIDESHOW) -->
-<section class="testimonials-section observe-target" style="max-width:1000px; margin: 0 auto 100px; padding:0 24px;">
-  <div class="tm-stage" id="tmStage" onclick="nextTestimonial()">
-    <!-- Top Bar -->
-    <div class="tm-top-bar">
-      <div class="tm-avatars-stack" id="tmAvatars">
-        <!-- Avatars injected here -->
+<!-- PREMIUM TESTIMONIAL SLIDER -->
+<section class="testimonials-section observe-target" id="tmContainer" onclick="nextTestimonial()">
+  <div id="customCursor">Next</div>
+  
+  <div class="tm-indicator">
+    <span class="tm-active-idx" id="tmActiveIdx">01</span>
+    <span class="tm-total-idx">/</span>
+    <span class="tm-total-idx" id="tmTotalIdx">03</span>
+  </div>
+
+  <div class="tm-stack" id="tmStack">
+    <!-- Stacked avatars loaded via JS -->
+  </div>
+
+  <div class="tm-content">
+    <blockquote class="tm-quote-text" id="tmQuote">
+      <!-- Split words loaded via JS -->
+    </blockquote>
+
+    <div class="tm-author-row">
+      <div class="tm-main-avatar" id="tmMainAvatar">
+        <!-- Main avatar img -->
       </div>
-      <div class="tm-indicator">
-        <span id="tmCurrent">01</span><span class="tm-sep">/</span><span id="tmTotal">03</span>
+      <div class="tm-author-info">
+        <span class="tm-author-name" id="tmAuthorName">Loading...</span>
+        <span class="tm-author-sub" id="tmAuthorSub">Please wait</span>
       </div>
     </div>
 
-    <!-- Content -->
-    <div class="tm-content">
-      <blockquote id="tmQuote">Loading community insights...</blockquote>
-      
-      <div class="tm-author-row">
-        <div class="tm-active-avatar-wrap">
-          <img src="" id="tmActiveAvatar" alt="">
-        </div>
-        <div class="tm-author-info">
-          <div class="tm-accent-line"></div>
-          <div class="tm-name" id="tmName">...</div>
-          <div class="tm-role" id="tmRole">...</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Progress & Footer -->
-    <div class="tm-footer">
-      <div class="tm-progress-track">
-        <div class="tm-progress-bar" id="tmProgress"></div>
-      </div>
-      <div class="tm-hint">CLICK ANYWHERE TO CYCLE</div>
+    <div class="tm-progress-bar">
+      <div class="tm-progress-fill" id="tmProgress"></div>
     </div>
   </div>
+
+  <div class="tm-hint">Click anywhere</div>
 </section>
 
 <section class="cta-section">
@@ -697,8 +711,7 @@ function getFallbackHTML(channel) {
     </div>`;
 }
 
-// Testimonials Logic
-const TESTIMONIAL_URL = 'https://sxushsvvmyokoknnsbuj.supabase.co/rest/v1/testimonials?approved=eq.true&order=created_at.desc&limit=10';
+// Testimonials Premium Slider Logic
 let testimonials = [];
 let activeIdx = 0;
 
@@ -710,60 +723,84 @@ async function loadTestimonials() {
     testimonials = await res.json();
     
     if (!testimonials || testimonials.length === 0) {
-      document.getElementById('tmStage').style.display = 'none';
+      document.getElementById('tmContainer').style.display = 'none';
       return;
     }
     
+    document.getElementById('tmTotalIdx').textContent = String(testimonials.length).padStart(2, '0');
     renderTestimonial(0);
+    renderStack();
   } catch(e) {
-    document.getElementById('tmQuote').textContent = "Insights currently unavailable.";
+    document.getElementById('tmContainer').style.display = 'none';
   }
 }
 
 function renderTestimonial(idx) {
-  activeIdx = idx;
   const t = testimonials[idx];
-  const q = document.getElementById('tmQuote');
+  const quoteEl = document.getElementById('tmQuote');
+  const nameEl = document.getElementById('tmAuthorName');
+  const subEl = document.getElementById('tmAuthorSub');
+  const avatarEl = document.getElementById('tmMainAvatar');
+  const progressEl = document.getElementById('tmProgress');
+  const activeIdxEl = document.getElementById('tmActiveIdx');
+
+  // Update indices
+  activeIdxEl.textContent = String(idx + 1).padStart(2, '0');
+  progressEl.style.width = `${((idx + 1) / testimonials.length) * 100}%`;
+
+  // Update Content with reveal effect
+  const words = (t.quote || '').split(' ');
+  quoteEl.innerHTML = words.map((w, i) => `<span class="tm-word" style="transition-delay: ${i * 0.03}s">${esc(w)}</span>`).join(' ');
   
-  // Fade effect
-  q.style.opacity = 0;
-  
+  // Trigger animation after a tiny delay
   setTimeout(() => {
-    q.textContent = t.quote;
-    q.style.opacity = 1;
-    
-    document.getElementById('tmName').textContent = t.name || 'Anonymous Doctor';
-    document.getElementById('tmRole').textContent = (t.role || 'Surgical Resident') + (t.institution ? ' — ' + t.institution : '');
-    document.getElementById('tmCurrent').textContent = String(idx + 1).padStart(2, '0');
-    document.getElementById('tmTotal').textContent = String(testimonials.length).padStart(2, '0');
-    
-    // Progress
-    document.getElementById('tmProgress').style.width = ((idx + 1) / testimonials.length * 100) + '%';
-    
-    // Avatars Stack
-    const avatarStack = document.getElementById('tmAvatars');
-    avatarStack.innerHTML = testimonials.map((tm, i) => `
-      <img src="https://ui-avatars.com/api/?name=${encodeURIComponent(tm.name || 'D')}&background=2b1810&color=f0d080&bold=true" 
-           class="tm-stack-img ${i === idx ? 'active' : ''}" 
-           alt="">
-    `).join('');
-    
-    // Active Avatar
-    document.getElementById('tmActiveAvatar').src = `https://ui-avatars.com/api/?name=${encodeURIComponent(t.name || 'D')}&background=2b1810&color=f0d080&bold=true`;
-  }, 200);
+    quoteEl.querySelectorAll('.tm-word').forEach(w => w.classList.add('visible'));
+  }, 50);
+
+  nameEl.textContent = t.name || 'Anonymous Doctor';
+  subEl.textContent = `${t.role || 'Resident'} — ${t.institution || 'SIH'}`;
+  
+  // Avatar fallback
+  const initials = (t.name || 'D').charAt(0).toUpperCase();
+  avatarEl.innerHTML = `<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:var(--brand-burgundy);color:#f0d080;font-weight:800;">${initials}</div>`;
+  
+  // Update stack highlight
+  document.querySelectorAll('.tm-stack-avatar').forEach((a, i) => {
+    a.classList.toggle('active', i === idx);
+  });
+}
+
+function renderStack() {
+  const stackEl = document.getElementById('tmStack');
+  stackEl.innerHTML = testimonials.map((t, i) => {
+    const initials = (t.name || 'D').charAt(0).toUpperCase();
+    return `<div class="tm-stack-avatar ${i === 0 ? 'active' : ''}">${initials}</div>`;
+  }).join('');
 }
 
 function nextTestimonial() {
-  const next = (activeIdx + 1) % testimonials.length;
-  renderTestimonial(next);
+  activeIdx = (activeIdx + 1) % testimonials.length;
+  // Fade out content briefly
+  document.getElementById('tmQuote').style.opacity = '0';
+  document.querySelector('.tm-author-info').style.opacity = '0';
+  
+  setTimeout(() => {
+    renderTestimonial(activeIdx);
+    document.getElementById('tmQuote').style.opacity = '1';
+    document.querySelector('.tm-author-info').style.opacity = '1';
+  }, 300);
 }
 
-function esc(s) {
-  if (!s) return '';
-  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-}
+// Custom Cursor Logic
+const cursor = document.getElementById('customCursor');
+const container = document.getElementById('tmContainer');
 
-const SUPA_KEY = 'sb_publishable_Kl4RNEOxvmBewUToRv7HHw_2epulGkp';
+if (container && cursor) {
+  document.addEventListener('mousemove', (e) => {
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
+  });
+}
 
 // Load on page ready
 document.addEventListener('DOMContentLoaded', () => {
