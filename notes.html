@@ -12,46 +12,26 @@
   if (savedTheme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
 </script>
 <style>
-  /* ── WEB-ACCESSIBLE cards: green system ── */
+  /* ── WEB-ACCESSIBLE cards: green border system ── */
   .note-card.web-card {
     border-top-color: #1B6B45 !important;
     background: linear-gradient(160deg, rgba(27,107,69,0.04) 0%, var(--card-bg,#fff) 60%);
   }
   .note-card.web-card .nc-kicker { color: #1B6B45; }
-  .nc-access-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.32rem;
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    padding: 0.22em 0.75em;
-    border-radius: 20px;
-    margin-bottom: 0.6rem;
+  /* Gold button for web/online cards */
+  .nc-dl.gold {
+    background: #b8922a;
+    color: #fff;
+    border: none;
   }
-  .nc-access-badge.web {
-    background: rgba(27,107,69,0.12);
-    color: #1B6B45;
-  }
-  .nc-access-badge.tg {
-    background: rgba(44,165,224,0.12);
-    color: #1a8abf;
-  }
-  /* Green Read Now button */
-  .nc-dl.green {
+  .nc-dl.gold:hover { background: #9a7820; }
+  /* Forest green button for Telegram PDF cards */
+  .nc-dl.tg-btn {
     background: #1B6B45;
     color: #fff;
     border: none;
   }
-  .nc-dl.green:hover { background: #155736; }
-  /* Telegram blue Download button */
-  .nc-dl.tg-btn {
-    background: transparent;
-    color: #1a8abf;
-    border: 1.5px solid #2ca5e0;
-  }
-  .nc-dl.tg-btn:hover { background: #2ca5e0; color: #fff; }
+  .nc-dl.tg-btn:hover { background: #155736; }
   /* Legend */
   .notes-legend {
     max-width: 1100px;
@@ -133,7 +113,7 @@
 <div class="notes-legend">
   <span style="font-size:0.78rem;color:var(--muted,#888);font-weight:500;">Key:</span>
   <span class="legend-item"><span class="legend-dot" style="background:#1B6B45;"></span>Read online — no download needed</span>
-  <span class="legend-item"><span class="legend-dot" style="background:#b8922a;"></span>PDF — free download via Telegram</span>
+  <span class="legend-item"><span class="legend-dot" style="background:#b8922a;"></span>Free PDF via Telegram</span>
 </div>
 
 <div class="notes-body">
@@ -142,7 +122,6 @@
     <!-- ═══ WEB-ACCESSIBLE CARDS — Read directly on the site ═══ -->
 
     <div class="note-card web-card" data-cat="ortho">
-      <span class="nc-access-badge web">🌐 Read Online</span>
       <div class="nc-top">
         <div class="nc-kicker">SIH Monograph Series <span class="nc-new">New</span></div>
         <h3>Orthopaedic Trauma</h3>
@@ -153,12 +132,11 @@
       </div>
       <div class="nc-foot">
         <span class="nc-pages">3 volumes</span>
-        <a href="notes/ortho_trauma.html" class="nc-dl green">Read Now →</a>
+        <a href="notes/ortho_trauma.html" class="nc-dl gold">Read Now →</a>
       </div>
     </div>
 
     <div class="note-card web-card" data-cat="emergency">
-      <span class="nc-access-badge web">🌐 Read Online</span>
       <div class="nc-top">
         <div class="nc-kicker">SIH Monograph Series <span class="nc-new">New</span></div>
         <h3>Appendicitis 2025</h3>
@@ -169,12 +147,11 @@
       </div>
       <div class="nc-foot">
         <span class="nc-pages">5 Sections</span>
-        <a href="notes/appendicitis_2025_notebook.html" class="nc-dl green">Read Now →</a>
+        <a href="notes/appendicitis_2025_notebook.html" class="nc-dl gold">Read Now →</a>
       </div>
     </div>
 
     <div class="note-card web-card" data-cat="periop">
-      <span class="nc-access-badge web">🌐 Read Online</span>
       <div class="nc-top">
         <div class="nc-kicker">SIH Monograph Series <span class="nc-new">New</span></div>
         <h3>Anesthesia &amp; Perioperative Care</h3>
@@ -185,12 +162,11 @@
       </div>
       <div class="nc-foot">
         <span class="nc-pages">5 topics + MCQ</span>
-        <a href="notes/anestesia_with_mono.html" class="nc-dl green">Read Now →</a>
+        <a href="notes/anestesia_with_mono.html" class="nc-dl gold">Read Now →</a>
       </div>
     </div>
 
     <div class="note-card web-card" data-cat="colorectal">
-      <span class="nc-access-badge web">🌐 Read Online</span>
       <div class="nc-top">
         <div class="nc-kicker">SIH Monograph Series <span class="nc-new">New</span></div>
         <h3>Colorectal &amp; Anal Surgery</h3>
@@ -201,14 +177,13 @@
       </div>
       <div class="nc-foot">
         <span class="nc-pages">6 monographs</span>
-        <a href="notes/colorectal_Notebook.html" class="nc-dl green">Read Now →</a>
+        <a href="notes/colorectal_Notebook.html" class="nc-dl gold">Read Now →</a>
       </div>
     </div>
 
     <!-- ═══ TELEGRAM PDF CARDS — Free download via channel ═══ -->
 
     <div class="note-card" data-cat="hpb" style="border-top-color:#b8922a;">
-      <span class="nc-access-badge tg">📲 Telegram PDF</span>
       <div class="nc-top">
         <div class="nc-kicker">SIH Master Library <span class="nc-new">New</span></div>
         <h3>HPB Tumours Master Library</h3>
@@ -224,7 +199,6 @@
     </div>
 
     <div class="note-card" data-cat="basics" style="border-top-color:#b8922a;">
-      <span class="nc-access-badge tg">📲 Telegram PDF</span>
       <div class="nc-top">
         <div class="nc-kicker">SIH Master Library <span class="nc-new">New</span></div>
         <h3>Basic Surgical Techniques</h3>
@@ -240,7 +214,6 @@
     </div>
 
     <div class="note-card" data-cat="basics" style="border-top-color:#b8922a;">
-      <span class="nc-access-badge tg">📲 Telegram PDF</span>
       <div class="nc-top">
         <div class="nc-kicker">SIH Master Library <span class="nc-new">New</span></div>
         <h3>All I Need For Basics Surgery — Vol 1</h3>
@@ -256,7 +229,6 @@
     </div>
 
     <div class="note-card" data-cat="basics" style="border-top-color:#b8922a;">
-      <span class="nc-access-badge tg">📲 Telegram PDF</span>
       <div class="nc-top">
         <div class="nc-kicker">SIH Master Library <span class="nc-new">New</span></div>
         <h3>All I Need For Basics Surgery — Vol 2</h3>
@@ -272,7 +244,6 @@
     </div>
 
     <div class="note-card" data-cat="peds" style="border-top-color:#b8922a;">
-      <span class="nc-access-badge tg">📲 Telegram PDF</span>
       <div class="nc-top">
         <div class="nc-kicker">Paediatric Surgery <span class="nc-new">New</span></div>
         <h3>Anorectal Malformation</h3>
@@ -288,7 +259,6 @@
     </div>
 
     <div class="note-card" data-cat="emergency" style="border-top-color:#b8922a;">
-      <span class="nc-access-badge tg">📲 Telegram PDF</span>
       <div class="nc-top">
         <div class="nc-kicker">Emergency Surgery</div>
         <h3>Bowel Obstruction</h3>
@@ -302,7 +272,6 @@
     </div>
 
     <div class="note-card" data-cat="emergency" style="border-top-color:#b8922a;">
-      <span class="nc-access-badge tg">📲 Telegram PDF</span>
       <div class="nc-top">
         <div class="nc-kicker">Emergency Surgery</div>
         <h3>PUD Perforation</h3>
@@ -316,7 +285,6 @@
     </div>
 
     <div class="note-card" data-cat="emergency colorectal" style="border-top-color:#b8922a;">
-      <span class="nc-access-badge tg">📲 Telegram PDF</span>
       <div class="nc-top">
         <div class="nc-kicker">Emergency Surgery</div>
         <h3>Fournier's Gangrene</h3>
@@ -330,7 +298,6 @@
     </div>
 
     <div class="note-card" data-cat="hpb" style="border-top-color:#b8922a;">
-      <span class="nc-access-badge tg">📲 Telegram PDF</span>
       <div class="nc-top">
         <div class="nc-kicker">HPB Surgery</div>
         <h3>Choledocholithiasis</h3>
@@ -344,7 +311,6 @@
     </div>
 
     <div class="note-card" data-cat="hpb" style="border-top-color:#b8922a;">
-      <span class="nc-access-badge tg">📲 Telegram PDF</span>
       <div class="nc-top">
         <div class="nc-kicker">HPB Surgery</div>
         <h3>HPB Surgery</h3>
@@ -358,7 +324,6 @@
     </div>
 
     <div class="note-card" data-cat="periop" style="border-top-color:#b8922a;">
-      <span class="nc-access-badge tg">📲 Telegram PDF</span>
       <div class="nc-top">
         <div class="nc-kicker">Perioperative Care</div>
         <h3>Anesthesia &amp; Perioperative Care</h3>
@@ -372,7 +337,6 @@
     </div>
 
     <div class="note-card" data-cat="emergency" style="border-top-color:#b8922a;">
-      <span class="nc-access-badge tg">📲 Telegram PDF</span>
       <div class="nc-top">
         <div class="nc-kicker">Imaging</div>
         <h3>High-Yield CT Imaging Findings</h3>
