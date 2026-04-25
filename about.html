@@ -352,8 +352,10 @@
         </div>
         <div class="feedback-form-wrap">
           <form class="feedback-form" onsubmit="handleFeedback(event)">
-            <input type="text" placeholder="Name or Specialty (Optional)" class="feedback-input">
-            <textarea required rows="4" placeholder="Tell us what you love, what's missing, or how we can make the hub better..." class="feedback-textarea"></textarea>
+            <input type="text" id="fbName" placeholder="Full Name (Optional)" class="feedback-input">
+            <input type="text" id="fbRole" placeholder="Role / Specialty (e.g. Surgical Resident)" class="feedback-input" required>
+            <input type="text" id="fbInst" placeholder="Institution / Hospital (Optional)" class="feedback-input">
+            <textarea id="fbQuote" required rows="4" placeholder="Tell us what you love, what's missing, or how we can make the hub better..." class="feedback-textarea"></textarea>
             <button type="submit" class="feedback-btn" id="submitBtn">
               <span>Send Feedback</span>
               <span class="btn-icon">🚀</span>
@@ -431,8 +433,10 @@ async function handleFeedback(e) {
   const formArea = document.getElementById('formArea');
   const successArea = document.getElementById('successArea');
   
-  const name = document.querySelector('.feedback-input').value;
-  const content = document.querySelector('.feedback-textarea').value;
+  const name = document.getElementById('fbName').value;
+  const role = document.getElementById('fbRole').value;
+  const inst = document.getElementById('fbInst').value;
+  const quote = document.getElementById('fbQuote').value;
   
   btn.disabled = true;
   btn.innerHTML = 'Sending...';
@@ -448,7 +452,9 @@ async function handleFeedback(e) {
       },
       body: JSON.stringify({
         name: name || 'Anonymous Doctor',
-        quote: content,
+        role: role || 'Surgical Resident',
+        institution: inst || 'SIH Community',
+        quote: quote,
         approved: false // Default to false for moderation
       })
     });
