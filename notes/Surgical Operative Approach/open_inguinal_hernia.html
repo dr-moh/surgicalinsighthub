@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Open Inguinal Hernia Repair (Lichtenstein) — Operative Playbook</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/theme.css">
+<link rel="stylesheet" href="../../css/shared.css">
+<style>
+  :root {
+    --brand-burgundy: #2b1810;
+    --brand-gold: #b8922a;
+    --section-bg: #fdfaf7;
+  }
+  
+  body { background: var(--bg-primary); color: var(--text-primary); }
+
+  .proc-header {
+    padding: 100px 5% 60px;
+    background: #fff;
+    border-bottom: 1px solid var(--border-color);
+  }
+  .proc-kicker {
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: var(--brand-gold);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 12px;
+  }
+  .proc-header h1 { font-size: 3rem; font-weight: 900; letter-spacing: -0.04em; margin-bottom: 16px; }
+
+  .proc-grid {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 5%;
+  }
+
+  .op-section {
+    margin-bottom: 60px;
+    background: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: 24px;
+    overflow: hidden;
+  }
+  .os-head {
+    padding: 24px 32px;
+    background: var(--brand-burgundy);
+    color: #f0d080;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  .os-head h2 { font-size: 1.25rem; font-weight: 800; margin: 0; }
+  .os-body { padding: 40px; }
+
+  .step-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+  }
+  .step-num {
+    width: 32px;
+    height: 32px;
+    background: var(--brand-gold);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    flex-shrink: 0;
+    font-size: 0.9rem;
+  }
+  .step-content h4 { font-size: 1.1rem; font-weight: 800; margin-bottom: 8px; }
+  .step-content p { color: var(--text-secondary); line-height: 1.6; margin: 0; }
+
+  .pearl-box {
+    background: rgba(184, 146, 42, 0.05);
+    border-left: 4px solid var(--brand-gold);
+    padding: 24px;
+    border-radius: 0 16px 16px 0;
+    margin: 20px 0;
+  }
+  .pearl-box h5 { color: var(--brand-gold); font-weight: 800; margin-bottom: 8px; }
+
+  .bailout-box {
+    background: #fff5f5;
+    border: 1px solid #feb2b2;
+    padding: 24px;
+    border-radius: 16px;
+    margin: 20px 0;
+  }
+  .bailout-box h5 { color: #c53030; font-weight: 800; margin-bottom: 8px; }
+
+  .sidebar-box {
+    background: var(--bg-secondary);
+    border-radius: 24px;
+    padding: 24px;
+    margin-bottom: 24px;
+    border: 1px solid var(--border-color);
+  }
+  .sidebar-box h4 { font-weight: 800; font-size: 0.9rem; text-transform: uppercase; margin-bottom: 16px; color: var(--brand-burgundy); }
+  .sidebar-list { list-style: none; padding: 0; margin: 0; }
+  .sidebar-list li { 
+    font-size: 0.88rem; 
+    color: var(--text-secondary); 
+    padding: 8px 0; 
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    display: flex;
+    gap: 8px;
+  }
+  .sidebar-list li::before { content: '•'; color: var(--brand-gold); }
+
+  @media (max-width: 900px) {
+    .proc-grid { grid-template-columns: 1fr; }
+    .proc-header h1 { font-size: 2.2rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-left">
+    <div class="nav-pill" onclick="window.location.href='../operative_approach.html'" style="cursor: pointer;">
+      <div class="nav-logo-img"><img src="../../assets/images/Surgical_Insight_Hub_Logo.png" alt="SIH"></div>
+      <div><div class="nav-brand-text">Operative Playbook</div><div class="nav-brand-sub">SIH Master Series</div></div>
+    </div>
+  </div>
+  <a href="../operative_approach.html" class="nav-btn">Back to Playbook</a>
+</nav>
+
+<header class="proc-header">
+  <div class="proc-kicker">Procedure Mastery · General Surgery</div>
+  <h1>Open Inguinal Hernia Repair</h1>
+  <div style="display:flex; gap:20px; color:var(--text-muted); font-size:0.9rem; font-weight:600;">
+    <span>Technique: Lichtenstein Tension-Free</span>
+    <span>Level: Core Junior/Senior</span>
+    <span>Time: 45-60 mins</span>
+  </div>
+</header>
+
+<div class="proc-grid">
+  <main>
+    <!-- 1. PRE-OP -->
+    <section class="op-section" id="preop">
+      <div class="os-head">
+        <div style="font-size:24px;">📋</div>
+        <h2>1. Pre-operative Optimization & Preparation</h2>
+      </div>
+      <div class="os-body">
+        <p>Success starts in the holding bay. Inguinal hernia repair requires precise consent and planning.</p>
+        <ul style="margin: 20px 0; color: var(--text-secondary); line-height: 1.8;">
+          <li><strong>Consent Criticals:</strong> Must mention Chronic Groin Pain (10-12%), Recurrence (1-2%), Mesh infection, and Ischaemic Orchitis.</li>
+          <li><strong>Anesthesia:</strong> Local with sedation is preferred for day cases; Spinal or GA for larger/bilateral cases.</li>
+          <li><strong>Positioning:</strong> Supine. Ensure the groin is shaved and prepped down to the mid-thigh.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 2. GAME PLAN -->
+    <section class="op-section" id="plan">
+      <div class="os-head">
+        <div style="font-size:24px;">🎯</div>
+        <h2>2. The Operative "Game Plan"</h2>
+      </div>
+      <div class="os-body">
+        <div class="step-row">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h4>Incising the External Oblique</h4>
+            <p>Make a 5-6cm skin incision 2cm above and parallel to the inguinal ligament. Carry dissection down to the External Oblique aponeurosis. Identify the superficial inguinal ring. Incise the aponeurosis in the direction of its fibers, taking care to preserve the <strong>Ilioinguinal nerve</strong> underneath.</p>
+          </div>
+        </div>
+        <div class="step-row">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h4>Cord Mobilization & Sac Identification</h4>
+            <p>Mobilize the cord at the pubic tubercle. Lift the cord with a Tape. Identify the sac. <strong>Indirect sacs</strong> are found anterolateral to the cord (reduce or ligated). <strong>Direct sacs</strong> are a bulge in the floor of the canal (Hesselbach's triangle)—reduce these without opening the fascia transversalis.</p>
+          </div>
+        </div>
+        <div class="step-row">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h4>Mesh Placement (Lichtenstein)</h4>
+            <p>Use a 7x15cm Prolene mesh. Suture the lower edge to the inguinal ligament. Crucially, the mesh must <strong>overlap the pubic tubercle by 1.5-2cm</strong> to prevent recurrence. Slit the mesh to accommodate the cord at the internal ring. Suture the upper edge to the conjoint tendon with "relaxed" sutures to allow for mesh shrinkage.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. PEARLS & BAILOUT -->
+    <section class="op-section" id="pearls">
+      <div class="os-head">
+        <div style="font-size:24px;">💎</div>
+        <h2>3. Technical Pearls & "Bail-out" Strategies</h2>
+      </div>
+      <div class="os-body">
+        <div class="pearl-box">
+          <h5>The "Three Nerve" Pearl</h5>
+          <p>Always identify and protect the <strong>Ilioinguinal</strong>, <strong>Iliohypogastric</strong>, and the <strong>Genital branch of the Genitofemoral nerve</strong>. Inguinodynia (chronic pain) is usually caused by nerve entrapment in mesh or sutures.</p>
+        </div>
+        
+        <div class="bailout-box">
+          <h5>Bail-out: Large Scrotal Indirect Sac</h5>
+          <p>If the sac is massive and extends deep into the scrotum, <strong>do not attempt a full dissection</strong>. This leads to massive hematomas and ischaemic orchitis. Instead, open the sac, ensure it's empty, transect it at the mid-canal, and leave the distal portion open to drain.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. POST-OP -->
+    <section class="op-section" id="postop">
+      <div class="os-head">
+        <div style="font-size:24px;">🛌</div>
+        <h2>4. Post-operative Care & Follow-up</h2>
+      </div>
+      <div class="os-body">
+        <p>Most patients are discharged within 4 hours of surgery.</p>
+        <ul style="margin: 20px 0; color: var(--text-secondary); line-height: 1.8;">
+          <li><strong>Analgesia:</strong> Regular paracetamol and ibuprofen. Avoid codeine (constipation leads to straining).</li>
+          <li><strong>Activity:</strong> Early mobilization. No heavy lifting (>5kg) for 4-6 weeks. Driving allowed once an emergency stop can be performed safely.</li>
+          <li><strong>Follow-up:</strong> Clinical review at 2-6 weeks. Check for seroma vs recurrence.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 5. COMPLICATIONS -->
+    <section class="op-section" id="complications">
+      <div class="os-head">
+        <div style="font-size:24px;">⚠️</div>
+        <h2>5. Complication Management</h2>
+      </div>
+      <div class="os-body">
+        <p>Managing the most common surgical pitfalls:</p>
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:20px; margin-top:20px;">
+          <div style="padding:15px; background:var(--bg-secondary); border-radius:12px;">
+            <h5 style="font-weight:800; margin-bottom:8px;">Hematoma / Seroma</h5>
+            <p style="font-size:0.85rem; color:var(--text-secondary);">Common. Most resolve with reassurance and scrotal support. Only aspirate if infected.</p>
+          </div>
+          <div style="padding:15px; background:var(--bg-secondary); border-radius:12px;">
+            <h5 style="font-weight:800; margin-bottom:8px;">Ischaemic Orchitis</h5>
+            <p style="font-size:0.85rem; color:var(--text-secondary);">Caused by aggressive cord dissection or tight internal ring mesh slit. Leads to testicular atrophy.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <aside>
+    <div class="sidebar-box">
+      <h4>Anatomic Landmarks</h4>
+      <ul class="sidebar-list">
+        <li>Pubic Tubercle</li>
+        <li>Inguinal Ligament (Poupart's)</li>
+        <li>Inferior Epigastric Vessels</li>
+        <li>Conjoint Tendon</li>
+      </ul>
+    </div>
+    
+    <div class="sidebar-box" style="border-color: #feb2b2;">
+      <h4 style="color: #c53030;">Critical Zones</h4>
+      <p style="font-size: 0.85rem; color: var(--text-secondary);"><strong>The Medial Overlap:</strong> Recurrence most commonly occurs at the pubic tubercle. Ensure the mesh covers this bone by 2cm.</p>
+    </div>
+  </aside>
+</div>
+
+<footer style="padding: 60px 5%; border-top: 1px solid var(--border-color); text-align: center;">
+  <p>© 2025 Surgical Insight Hub · Operative Playbook Series</p>
+</footer>
+
+</body>
+</html>
