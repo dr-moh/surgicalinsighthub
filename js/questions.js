@@ -8554,4 +8554,485 @@ var QUESTIONS = [
   "guideline": "Rush Review 5th Edition",
   "takeaway": "Airway protection is the first priority in patients with impaired consciousness."
 }
+,
+{
+  "id": 381,
+  "specialty": "Trauma",
+  "topic": "Colonic Injury - GSW",
+  "question": "A 44-year-old man suffers a gunshot wound to his abdomen. He is hemodynamically stable. On exploration, his injuries are two small bowel injuries each with 70% wall destruction, and a through-and-through ascending colon injury with 30% wall destruction. How should these injuries be managed?",
+  "options": {
+    "A": "Resection and anastomosis of the small bowel injuries and primary repair of the colon injury",
+    "B": "Primary repair of both the small bowel and colon injuries",
+    "C": "Primary repair of the small bowel injuries, primary repair of the colon injury, and diverting ileostomy",
+    "D": "Resection of the small bowel injuries and exteriorization of the colon injury as a colostomy",
+    "E": "Resection and anastomosis of all injuries"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Small bowel injuries >50% wall destruction require resection. In hemodynamically stable patients, colon injuries <50% wall destruction can undergo primary repair.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "guideline": "Rush Review 5th Edition",
+  "takeaway": "Stable patients with limited contamination can tolerate primary colon repair."
+},
+{
+  "id": 382,
+  "specialty": "Trauma",
+  "topic": "Neck Trauma - Zone III",
+  "question": "A 27-year-old woman sustains a gunshot wound at the angle of the mandible (Zone III). She is asymptomatic. All of the following are correct management choices EXCEPT:",
+  "options": {
+    "A": "Cervical spine radiographic studies",
+    "B": "Mandatory neck exploration",
+    "C": "Four-vessel angiographic studies",
+    "D": "Flexible esophagoscopic examination",
+    "E": "Contrast-enhanced esophagographic examination"
+  },
+  "answer": "B",
+  "explanation": {
+    "correct": "Current practice for asymptomatic Zone III injuries favors selective management with imaging (CTA, esophagography, endoscopy) rather than mandatory exploration.",
+    "A": "",
+    "B": "Incorrect; selective management is preferred.",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "guideline": "Rush Review 5th Edition",
+  "takeaway": "Mandatory exploration is no longer standard for asymptomatic penetrating neck injuries."
+},
+{
+  "id": 383,
+  "specialty": "Trauma",
+  "topic": "Pancreatico-Duodenal Injury",
+  "question": "A 45-year-old man who struck the steering wheel is found to have a duodenal injury (second portion) and a grade II pancreatic head laceration (<1/3 depth). Most appropriate management?",
+  "options": {
+    "A": "Duodenojejunostomy with external drainage",
+    "B": "Roux-en-Y pancreaticojejunostomy",
+    "C": "Primary repair and drainage of the pancreatic duct",
+    "D": "Pyloric exclusion",
+    "E": "Pancreatoduodenectomy"
+  },
+  "answer": "D",
+  "explanation": {
+    "correct": "Pyloric exclusion diverts gastric contents away from the duodenal repair to allow healing when combined injuries are present.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "Correct; protects the repair.",
+    "E": ""
+  },
+  "guideline": "Rush Review 5th Edition",
+  "takeaway": "Pyloric exclusion is ideal for complex duodenal injuries with concurrent pancreatic trauma."
+},
+{
+  "id": 384,
+  "specialty": "Trauma",
+  "topic": "Compartment Syndrome",
+  "question": "A patient with a repaired superficial femoral artery develops diminished pulses and pain with passive dorsiflexion 5 hours postoperatively. Anterior compartment pressure is 30 mm Hg. Which is true?",
+  "options": {
+    "A": "Fractures cause ~30% of all compartment syndromes",
+    "B": "Lateral compartment is most commonly affected",
+    "C": "25 mmHg negates need for fasciotomy",
+    "D": "Paresthesias are an early finding",
+    "E": "A four-compartment fasciotomy should be performed"
+  },
+  "answer": "E",
+  "explanation": {
+    "correct": "A full four-compartment fasciotomy is the definitive treatment for lower leg compartment syndrome.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": "Correct; clinical signs take priority over a single pressure reading."
+  },
+  "guideline": "Rush Review 5th Edition",
+  "takeaway": "Never wait for 'textbook' pressures — clinical findings dictate fasciotomy."
+},
+{
+  "id": 385,
+  "specialty": "Trauma",
+  "topic": "Rhabdomyolysis",
+  "question": "Regarding rhabdomyolysis and its complications, which is true?",
+  "options": {
+    "A": "Acute renal failure occurs secondary to myoglobin release",
+    "B": "Alkalotic urine promotes myoglobin cast formation",
+    "C": "Renal failure typically resolves within 3-5 days",
+    "D": "Severe hyponatremia is a frequent complication",
+    "E": "Alkalinization to pH 8-9 is the treatment goal"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Myoglobin released from damaged muscle causes tubular obstruction and direct renal toxicity.",
+    "A": "Primary mechanism.",
+    "B": "Acidic urine promotes casts; alkaline urine inhibits.",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "guideline": "Rush Review 5th Edition",
+  "takeaway": "Treat rhabdomyolysis with aggressive IVF and urine alkalinization to protect the kidneys."
+},
+{
+  "id": 386,
+  "specialty": "Trauma",
+  "topic": "Abdominal Compartment Syndrome",
+  "question": "A patient develops a distended abdomen and decreased urine output 12 hours after massive transfusion and laparotomy. His IAP is 25 mmHg. Which is true regarding ACS?",
+  "options": {
+    "A": "Grade IV ACS is defined as IAP > 20 mmHg",
+    "B": "There is increased cardiac output",
+    "C": "There is increased central venous pressure",
+    "D": "Urinary output increases with grade I ACS",
+    "E": "Grade IV ACS is best managed conservatively"
+  },
+  "answer": "C",
+  "explanation": {
+    "correct": "Elevated IAP is transmitted to the thorax, raising intrathoracic pressure and producing falsely high CVP readings while cardiac output actually decreases.",
+    "A": "",
+    "B": "",
+    "C": "Falsely elevated.",
+    "D": "",
+    "E": ""
+  },
+  "guideline": "Rush Review 5th Edition",
+  "takeaway": "ACS causes multi-organ dysfunction; decompressive laparotomy is the treatment."
+},
+{
+  "id": 387,
+  "specialty": "Trauma",
+  "topic": "Pregnancy Trauma",
+  "question": "A 25-year-old woman at 30 weeks' gestation is involved in an MVA. Which is true regarding trauma in pregnancy?",
+  "options": {
+    "A": "Less than 5% of pregnancies are affected by trauma",
+    "B": "Uterus is protected by the bony pelvis until the beginning of the second trimester",
+    "C": "At 25 weeks, fundal height is at the umbilicus",
+    "D": "Blood volume increases by approximately 30%",
+    "E": "Hypotensive patients should be placed in the right lateral position"
+  },
+  "answer": "B",
+  "explanation": {
+    "correct": "Until ~12 weeks, the uterus remains within the bony pelvis. After that, it becomes vulnerable to direct trauma.",
+    "A": "Up to 8%.",
+    "B": "Correct.",
+    "C": "Umbilicus level is at 20 weeks.",
+    "D": "50% increase.",
+    "E": "Left lateral to relieve IVC compression."
+  },
+  "guideline": "Rush Review 5th Edition",
+  "takeaway": "Maternal physiology changes can mask hemorrhage until severe."
+},
+{
+  "id": 388,
+  "specialty": "Critical Care",
+  "topic": "Sedation in ICU",
+  "question": "A 76-year-old man with cirrhosis and chronic renal insufficiency is agitated in the ICU after laparotomy for ruptured appendicitis. Best sedation choice?",
+  "options": {
+    "A": "Lorazepam 5 mg IV bolus",
+    "B": "Four-point restraints and reasoning",
+    "C": "Morphine via PCA",
+    "D": "Propofol and fentanyl infusion",
+    "E": "Epidural catheter placement"
+  },
+  "answer": "D",
+  "explanation": {
+    "correct": "Propofol offers rapid titration and short half-life. Fentanyl is hepatically metabolized and avoids morphine's active metabolites which accumulate in renal failure.",
+    "A": "",
+    "B": "",
+    "C": "Morphine metabolites accumulate in renal failure.",
+    "D": "Optimal choice for this patient.",
+    "E": ""
+  },
+  "guideline": "Rush Review 5th Edition",
+  "takeaway": "Fentanyl is preferred over morphine in renal failure for ICU analgesia."
+},
+{
+  "id": 389,
+  "specialty": "Critical Care",
+  "topic": "PA Catheter Complications",
+  "question": "A post-op cardiac surgery patient develops blood-tinged sputum in the ET tube 5 hours after PA catheter placement. Best intervention?",
+  "options": {
+    "A": "Supine position and lidocaine",
+    "B": "Double-lumen ETT and Fogarty catheter to occlude affected bronchus",
+    "C": "Pull PA catheter back 2 cm with balloon inflated",
+    "D": "Deflate catheter balloon for 2-4 hours",
+    "E": "Obtain CXR to confirm catheter placement"
+  },
+  "answer": "B",
+  "explanation": {
+    "correct": "Hemoptysis after PA catheter insertion suggests pulmonary artery rupture. The affected lung must be isolated to control hemorrhage.",
+    "A": "",
+    "B": "Correct emergency management.",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "guideline": "Rush Review 5th Edition",
+  "takeaway": "PA rupture is rare but catastrophic; lung isolation is the priority."
+},
+{
+  "id": 390,
+  "specialty": "Critical Care",
+  "topic": "Enteral Nutrition",
+  "question": "Which of the following is true regarding nutritional support in the ICU?",
+  "options": {
+    "A": "TPN is superior to enteral nutrition",
+    "B": "Enteral nutrition should be started within 24 to 48 hours of admission",
+    "C": "Gastric residuals >100 mL always require cessation of feeds",
+    "D": "Prokinetic agents have no role in high gastric residuals",
+    "E": "TPN has a lower infectious complication rate than enteral nutrition"
+  },
+  "answer": "B",
+  "explanation": {
+    "correct": "Early enteral nutrition (24-48 hours) maintains gut integrity, reduces bacterial translocation, and is associated with better outcomes than delayed or parenteral feeding.",
+    "A": "",
+    "B": "Correct; guideline-based practice.",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "guideline": "Rush Review 5th Edition",
+  "takeaway": "If the gut works, use it — early EN is the gold standard."
+},
+{
+  "id": 391,
+  "specialty": "Critical Care",
+  "topic": "VAP Diagnosis",
+  "question": "Which of the following statements regarding ventilator-associated pneumonia (VAP) is true?",
+  "options": {
+    "A": "VAP is defined as pneumonia occurring more than 24 hours after intubation",
+    "B": "Quantitative BAL culture with >10^4 CFU/mL is diagnostic",
+    "C": "Early-onset VAP is usually caused by MDR pathogens",
+    "D": "Linezolid is the first-line agent for all VAP cases",
+    "E": "Routine ventilator circuit changes every 48 hours reduce VAP incidence"
+  },
+  "answer": "B",
+  "explanation": {
+    "correct": "Quantitative cultures from BAL (>10^4 CFU/mL) or protected brush specimens (>10^3 CFU/mL) are the standard diagnostic criteria for VAP.",
+    "A": "",
+    "B": "Correct diagnostic threshold.",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "guideline": "Rush Review 5th Edition",
+  "takeaway": "Quantitative BAL cultures are the most accurate diagnostic tool for VAP."
+},
+{
+  "id": 392,
+  "specialty": "Critical Care",
+  "topic": "Oxygen Delivery",
+  "question": "A ventilated patient with perforation has free air. Which intervention will NOT directly affect oxygen delivery (DO2)?",
+  "options": {
+    "A": "Rapid infusion of 2 L of saline",
+    "B": "Administration of 3 ampules of sodium bicarbonate to correct acidosis",
+    "C": "Increasing PEEP by 2.5 cm H2O",
+    "D": "Transfusion of 2 units of PRBCs",
+    "E": "Increasing FiO2 to 60%"
+  },
+  "answer": "B",
+  "explanation": {
+    "correct": "DO2 = CO × CaO2. Sodium bicarbonate corrects acidosis but does not directly change cardiac output, hemoglobin, or oxygen saturation.",
+    "A": "",
+    "B": "Does not change DO2 formula components.",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "guideline": "Rush Review 5th Edition",
+  "takeaway": "DO2 = Cardiac Output × Arterial O2 Content (Hb × SaO2 × 1.34 + 0.003 × PaO2)."
+},
+{
+  "id": 393,
+  "specialty": "Critical Care",
+  "topic": "Sepsis - Oxygen Demand",
+  "question": "A patient is found in the OR to have perforated colon cancer with fecal peritonitis. BP 70/40, HR 120. Which is true?",
+  "options": {
+    "A": "Lactate would be decreased",
+    "B": "Patient has 15-20% of total body O2 consumption available",
+    "C": "O2 delivery to tissues is likely increased",
+    "D": "If >40% of total body O2 consumption is available, no intervention is needed",
+    "E": "There is an increased demand for oxygen"
+  },
+  "answer": "E",
+  "explanation": {
+    "correct": "In septic shock, the inflammatory state dramatically increases metabolic demand and oxygen consumption, while delivery is impaired.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": "Correct; O2 demand is high in sepsis."
+  },
+  "guideline": "Rush Review 5th Edition",
+  "takeaway": "Sepsis creates a profound supply-demand mismatch for oxygen at the cellular level."
+},
+{
+  "id": 394,
+  "specialty": "Critical Care",
+  "topic": "Ventilator Pressures",
+  "question": "A mechanically ventilated trauma patient has a peak airway pressure of 45 cm H2O and plateau pressure of 25 cm H2O. Most likely cause?",
+  "options": {
+    "A": "Tension pneumothorax",
+    "B": "Abdominal compartment syndrome",
+    "C": "Kinked endotracheal tube",
+    "D": "ARDS",
+    "E": "Mucus plug in right mainstem bronchus"
+  },
+  "answer": "C",
+  "explanation": {
+    "correct": "A high peak-to-plateau gradient (>15-20 cm H2O) indicates increased airway resistance. Causes include kinked ETT, bronchospasm, or secretions.",
+    "A": "",
+    "B": "",
+    "C": "Resistance problem.",
+    "D": "ARDS causes high plateau pressure.",
+    "E": ""
+  },
+  "guideline": "Rush Review 5th Edition",
+  "takeaway": "Peak pressure = Resistance + Compliance; Plateau pressure = Compliance only."
+},
+{
+  "id": 395,
+  "specialty": "Critical Care",
+  "topic": "Septic Shock - Vasopressors",
+  "question": "Regarding vasopressors in septic shock, which is true?",
+  "options": {
+    "A": "Dopamine is the first-line agent",
+    "B": "Norepinephrine is the first-line agent",
+    "C": "Vasopressin should be used as monotherapy",
+    "D": "Epinephrine is preferred over norepinephrine",
+    "E": "Phenylephrine is the first-line agent"
+  },
+  "answer": "B",
+  "explanation": {
+    "correct": "Surviving Sepsis Campaign guidelines recommend norepinephrine as the first-line vasopressor for septic shock.",
+    "A": "",
+    "B": "Correct per SSC guidelines.",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "guideline": "Rush Review 5th Edition",
+  "takeaway": "Norepinephrine is superior to dopamine in septic shock (less arrhythmia, better survival)."
+},
+{
+  "id": 396,
+  "specialty": "Critical Care",
+  "topic": "Arterial Line",
+  "question": "Which of the following statements regarding radial artery cannulation is true?",
+  "options": {
+    "A": "Ischemia is common",
+    "B": "An Allen test is required",
+    "C": "Infection incidence is higher with catheters placed by surgical cutdown",
+    "D": "The catheter should be replaced every 3 days",
+    "E": "Intermittent flushing is desirable to prevent clots"
+  },
+  "answer": "C",
+  "explanation": {
+    "correct": "Surgical cutdown carries a higher infection risk compared to percutaneous techniques.",
+    "A": "",
+    "B": "Allen test is no longer routinely recommended.",
+    "C": "Correct.",
+    "D": "",
+    "E": ""
+  },
+  "guideline": "Rush Review 5th Edition",
+  "takeaway": "Percutaneous arterial access is preferred for minimizing infection risk."
+},
+{
+  "id": 397,
+  "specialty": "Trauma",
+  "topic": "Massive Hemothorax",
+  "question": "A chest tube returns 1800 mL of blood immediately after a gunshot wound to the chest. Next step?",
+  "options": {
+    "A": "CT scan of chest",
+    "B": "Transfuse 2 units and observe",
+    "C": "Angiography",
+    "D": "Exploratory laparotomy",
+    "E": "Exploratory thoracotomy"
+  },
+  "answer": "E",
+  "explanation": {
+    "correct": "Massive hemothorax, defined as immediate drainage >1500 mL, is an absolute indication for emergency thoracotomy.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": "Definitive surgical control."
+  },
+  "guideline": "Rush Review 5th Edition",
+  "takeaway": "1500 mL immediate drainage or 200 mL/hr ongoing = Emergency thoracotomy."
+},
+{
+  "id": 398,
+  "specialty": "Trauma",
+  "topic": "Penetrating Trauma DPL",
+  "question": "A patient with an RUQ stab wound has a DPL with 20,000 RBC/mm3. Next step?",
+  "options": {
+    "A": "CT scan",
+    "B": "Observation",
+    "C": "Suture repair of wound",
+    "D": "Exploratory laparotomy",
+    "E": "Discharge"
+  },
+  "answer": "D",
+  "explanation": {
+    "correct": "The threshold for a positive DPL in penetrating abdominal trauma is >10,000 RBC/mm3 (vs. 100,000 in blunt trauma).",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "Indicated by this positive DPL.",
+    "E": ""
+  },
+  "guideline": "Rush Review 5th Edition",
+  "takeaway": "DPL thresholds differ: Penetrating (10k RBC) vs. Blunt (100k RBC)."
+},
+{
+  "id": 399,
+  "specialty": "Critical Care",
+  "topic": "ICU Sedation Agents",
+  "question": "Which of the following is true regarding sedative and analgesic drugs used in the ICU?",
+  "options": {
+    "A": "Most benzodiazepines and opioids are metabolized via the kidneys",
+    "B": "Midazolam has a long half-life and is poorly suited for sedation",
+    "C": "Fentanyl has a high incidence of hypotension and is poorly suited for shock",
+    "D": "Lorazepam is longer acting than midazolam and can be used as a continuous infusion",
+    "E": "Propofol has no significant effect on blood pressure"
+  },
+  "answer": "D",
+  "explanation": {
+    "correct": "Lorazepam (half-life 10-20 hrs) is longer-acting than midazolam (1-4 hrs) and is commonly used for sustained sedation.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "Correct pharmacokinetics.",
+    "E": ""
+  },
+  "guideline": "Rush Review 5th Edition",
+  "takeaway": "Propofol is short-acting, midazolam is intermediate, lorazepam is long-acting."
+},
+{
+  "id": 400,
+  "specialty": "Critical Care",
+  "topic": "ARDS Management",
+  "question": "Which of the following is the most important ventilatory strategy for a patient with ARDS?",
+  "options": {
+    "A": "High tidal volume ventilation (10-12 mL/kg) to improve oxygenation",
+    "B": "Low tidal volume ventilation (6 mL/kg predicted body weight)",
+    "C": "Prone positioning in all patients",
+    "D": "FiO2 > 0.8 to maintain normal PaO2",
+    "E": "High PEEP (>20 cm H2O) in all patients"
+  },
+  "answer": "B",
+  "explanation": {
+    "correct": "The ARMA trial established that lung-protective ventilation with low tidal volumes (6 mL/kg PBW) reduces mortality in ARDS.",
+    "A": "",
+    "B": "Lung-protective strategy - cornerstone of ARDS management.",
+    "C": "Indicated in severe ARDS but not all.",
+    "D": "High FiO2 causes oxygen toxicity.",
+    "E": "PEEP is titrated to response, not universal high PEEP."
+  },
+  "guideline": "Rush Review 5th Edition",
+  "takeaway": "Low tidal volume (6 mL/kg) ventilation is the only proven mortality-reducing intervention in ARDS."
+}
 ];
