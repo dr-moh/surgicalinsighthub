@@ -718,7 +718,14 @@ function getFallbackHTML(channel) {
 }
 
 // Testimonials Premium Slider Logic
+const SUPA_KEY = 'sb_publishable_Kl4RNEOxvmBewUToRv7HHw_2epulGkp';
 const TESTIMONIAL_URL = 'https://sxushsvvmyokoknnsbuj.supabase.co/rest/v1/testimonials?approved=eq.true&order=created_at.desc&limit=6';
+
+function esc(s) {
+  if (!s) return '';
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
 let testimonials = [];
 let activeIdx = 0;
 
