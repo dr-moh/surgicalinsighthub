@@ -166,6 +166,32 @@ h1 { font-size: clamp(3rem, 6.5vw, 5.4rem); font-weight: 900; color: var(--text-
 .hero-btn:hover { background: var(--brand-burgundy-light); transform: translateY(-1px); }
 .hero-footnote { font-size: .72rem; color: var(--text-muted); }
 
+/* PARALLAX WATERMARK */
+.parallax-watermark {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(800px, 90vw);
+  height: min(800px, 90vw);
+  opacity: 0.06;
+  z-index: -1;
+  pointer-events: none;
+  filter: grayscale(1);
+  will-change: transform;
+  transition: opacity 0.5s ease;
+}
+[data-theme="dark"] .parallax-watermark {
+  filter: invert(0.8) grayscale(1);
+  opacity: 0.04;
+}
+.parallax-watermark img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+
 /* FEATURES */
 .features { max-width: 1040px; margin: 0 auto; padding: 80px 24px 0; }
 .feat-full { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 22px; padding: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; margin-bottom: 24px; overflow: hidden; box-shadow: var(--shadow-sm); transition: transform 0.3s ease, box-shadow 0.3s ease; }

@@ -306,6 +306,12 @@
   </div>
 </section>
 
+<!-- PARALLAX WATERMARK -->
+<div class="parallax-watermark" id="parallaxWM">
+  <img src="assets/images/Surgical_Insight_Hub_Logo.png" alt="">
+</div>
+
+
 <section class="features">
   <div class="feat-full observe-target">
     <div class="feat-text">
@@ -815,6 +821,26 @@ if (container && cursor) {
     cursor.style.top = e.clientY + 'px';
   });
 }
+
+// Parallax Watermark Scroll Logic
+const parallaxWM = document.getElementById('parallaxWM');
+window.addEventListener('scroll', () => {
+  if (parallaxWM) {
+    const scrollY = window.scrollY;
+    // Move slightly slower (0.15 factor)
+    parallaxWM.style.transform = `translate(-50%, calc(-50% + ${scrollY * 0.15}px))`;
+  }
+});
+
+// Parallax Watermark Scroll Logic
+const parallaxWM = document.getElementById('parallaxWM');
+window.addEventListener('scroll', () => {
+  if (parallaxWM) {
+    const scrollY = window.scrollY;
+    // Move slightly slower (0.15 factor)
+    parallaxWM.style.transform = `translate(-50%, calc(-50% + ${scrollY * 0.15}px))`;
+  }
+});
 
 // Load on page ready
 document.addEventListener('DOMContentLoaded', () => {
