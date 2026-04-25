@@ -92,20 +92,32 @@
     color: #5a4a3a;
   }
 
+  /* ── SPLIT VIEW LAYOUT ── */
+  .notes-split-container {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    align-items: start;
+  }
+  .notes-column { min-width: 0; }
+
   /* ── SECTION FEATURE CARDS (Image 1 style) ── */
   .feature-card {
     background: var(--bg-card);
     border: 1px solid var(--border-color);
     border-radius: 24px;
-    margin: 0 auto 40px;
-    max-width: 1000px;
+    margin-bottom: 32px;
+    width: 100%;
     overflow: hidden;
     box-shadow: 0 4px 20px rgba(0,0,0,0.03);
   }
-  .fc-top { padding: 40px; }
-  .fc-kicker-row { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+  .fc-top { padding: 32px; }
+  .fc-kicker-row { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
   .fc-kicker {
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 0.12em;
@@ -115,21 +127,20 @@
   .fc-badge {
     background: #b8922a;
     color: #fff;
-    font-size: 0.65rem;
+    font-size: 0.6rem;
     font-weight: 800;
     text-transform: uppercase;
-    padding: 3px 10px;
-    border-radius: 6px;
-    letter-spacing: 0.05em;
+    padding: 2px 8px;
+    border-radius: 5px;
   }
-  .fc-title { font-size: 2.2rem; font-weight: 900; letter-spacing: -0.04em; margin-bottom: 12px; color: var(--text-primary); }
-  .fc-desc { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6; max-width: 800px; margin-bottom: 24px; }
-  .fc-tags { display: flex; gap: 10px; flex-wrap: wrap; }
+  .fc-title { font-size: 1.8rem; font-weight: 900; letter-spacing: -0.04em; margin-bottom: 10px; color: var(--text-primary); }
+  .fc-desc { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.55; margin-bottom: 20px; }
+  .fc-tags { display: flex; gap: 8px; flex-wrap: wrap; }
   .fc-tag {
-    font-size: 0.72rem;
+    font-size: 0.68rem;
     font-weight: 700;
-    padding: 6px 14px;
-    border-radius: 8px;
+    padding: 5px 12px;
+    border-radius: 7px;
     background: #fdf8ed;
     color: #5a4a3a;
     border: 1px solid #f0d08044;
@@ -139,23 +150,34 @@
   .fc-foot {
     background: rgba(0,0,0,0.02);
     border-top: 1px solid var(--border-color);
-    padding: 20px 40px;
+    padding: 16px 32px;
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
-  .fc-foot-text { font-size: 0.8rem; font-weight: 700; color: var(--text-muted); opacity: 0.7; }
+  .fc-foot-text { font-size: 0.75rem; font-weight: 700; color: var(--text-muted); opacity: 0.7; }
   .fc-btn {
     background: #b8922a;
     color: #fff;
-    padding: 10px 24px;
+    padding: 8px 18px;
     border-radius: 100px;
-    font-size: 0.85rem;
+    font-size: 0.78rem;
     font-weight: 700;
     text-decoration: none;
-    transition: transform 0.2s;
   }
-  .fc-btn:hover { transform: scale(1.03); background: #a68121; }
+  
+  /* Compact lists for split view */
+  .notes-body { display: flex; flex-direction: column; gap: 16px; padding: 0; }
+  .op-grid { grid-template-columns: 1fr; gap: 16px; padding: 0; }
+  .note-card { width: 100%; margin-bottom: 0; }
+  
+  .filter-bar { margin: 0 0 20px 0; padding: 0; background: transparent; border: none; }
+  .filter-inner { padding: 0; border: none; }
+  .notes-legend { padding: 0; margin-bottom: 24px; }
+
+  @media (max-width: 1100px) {
+    .notes-split-container { grid-template-columns: 1fr; padding: 0 1.5rem; gap: 60px; }
+  }
   .tab-pane { display: none; }
   .tab-pane.active { display: block; }
   /* Operative Approach grid */
@@ -250,58 +272,47 @@
   </div>
 </div>
 
-<div class="filter-bar">
-  <div class="filter-inner">
-    <span class="filter-label">Filter:</span>
-    <button class="fb active" onclick="filterNotes('all',this)">All</button>
-    <button class="fb" onclick="filterNotes('emergency',this)">Emergency</button>
-    <button class="fb" onclick="filterNotes('hpb',this)">HPB</button>
-    <button class="fb" onclick="filterNotes('colorectal',this)">Colorectal</button>
-    <button class="fb" onclick="filterNotes('peds',this)">Paediatric</button>
-    <button class="fb" onclick="filterNotes('periop',this)">Perioperative</button>
-    <button class="fb" onclick="filterNotes('ortho',this)">Orthopaedics</button>
-    <button class="fb" onclick="filterNotes('hpb',this)">HPB Oncology</button>
-    <button class="fb" onclick="filterNotes('basics',this)">Basics</button>
-  </div>
-</div>
+<div class="notes-split-container">
 
-<div class="notes-legend">
-  <span style="font-size:0.78rem;color:var(--muted,#888);font-weight:500;">Key:</span>
-  <span class="legend-item"><span class="legend-dot" style="background:#1B6B45;"></span>Read online — no download needed</span>
-  <span class="legend-item"><span class="legend-dot" style="background:#b8922a;"></span>Free PDF via Telegram</span>
-</div>
-
-<!-- ── SECTION TABS ── -->
-<div class="section-tabs">
-  <button class="section-tab active" id="tab-highjield" onclick="switchTab('highjield')">📚 Surgical High-Yield Notes</button>
-  <button class="section-tab" id="tab-operative" onclick="switchTab('operative')">🔪 Surgical Operative Approach</button>
-</div>
-
-<!-- ══ TAB 1: HIGH-YIELD NOTES ══ -->
-<div class="tab-pane active" id="pane-highjield">
-  
-  <!-- Section Feature Card -->
-  <div class="feature-card">
-    <div class="fc-top">
-      <div class="fc-kicker-row">
-        <div class="fc-kicker">Master Series</div>
-        <div class="fc-badge">Resident Core</div>
+  <!-- ══ COLUMN 1: HIGH-YIELD NOTES ══ -->
+  <div class="notes-column">
+    <div class="feature-card">
+      <div class="fc-top">
+        <div class="fc-kicker-row">
+          <div class="fc-kicker">Master Series</div>
+          <div class="fc-badge">Resident Core</div>
+        </div>
+        <h2 class="fc-title">High-Yield Notes</h2>
+        <p class="fc-desc">Dense, evidence-based study guides designed for rapid board review. Everything is filtered for absolute relevance.</p>
+        <div class="fc-tags">
+          <span class="fc-tag dark">ABSITE & MRCS</span>
+          <span class="fc-tag">Rapid Revision</span>
+        </div>
       </div>
-      <h2 class="fc-title">Surgical High-Yield Notes</h2>
-      <p class="fc-desc">Dense, evidence-based study guides designed for rapid board review and clinical utility. From trauma algorithms to metabolic response, everything is filtered for absolute relevance.</p>
-      <div class="fc-tags">
-        <span class="fc-tag dark">ABSITE & MRCS</span>
-        <span class="fc-tag">Rapid Revision</span>
-        <span class="fc-tag">Guideline-Focused</span>
+      <div class="fc-foot">
+        <div class="fc-foot-text">SIH Master Library</div>
+        <a href="https://t.me/sugicalInsightHub" target="_blank" class="fc-btn">Full Library →</a>
       </div>
     </div>
-    <div class="fc-foot">
-      <div class="fc-foot-text">Surgical Insight Hub Master Library</div>
-      <a href="https://t.me/sugicalInsightHub" target="_blank" class="fc-btn">Browse Full Library →</a>
-    </div>
-  </div>
 
-<div class="notes-body">
+    <div class="filter-bar">
+      <div class="filter-inner">
+        <span class="filter-label">Filter:</span>
+        <button class="fb active" onclick="filterNotes('all',this)">All</button>
+        <button class="fb" onclick="filterNotes('emergency',this)">Emergency</button>
+        <button class="fb" onclick="filterNotes('hpb',this)">HPB</button>
+        <button class="fb" onclick="filterNotes('colorectal',this)">Colorectal</button>
+        <button class="fb" onclick="filterNotes('peds',this)">Paediatric</button>
+        <button class="fb" onclick="filterNotes('basics',this)">Basics</button>
+      </div>
+    </div>
+
+    <div class="notes-legend">
+      <span class="legend-item"><span class="legend-dot" style="background:#1B6B45;"></span>Read online</span>
+      <span class="legend-item"><span class="legend-dot" style="background:#b8922a;"></span>PDF via Telegram</span>
+    </div>
+
+    <div class="notes-body">
 
     <!-- ═══ WEB-ACCESSIBLE CARDS — Read directly on the site ═══ -->
 
@@ -533,34 +544,30 @@
       </div>
   </div>
 </div>
-</div><!-- end notes-body -->
-</div><!-- end pane-highjield -->
+  </div><!-- end column 1 -->
 
-<!-- ══ TAB 2: OPERATIVE APPROACH ══ -->
-<div class="tab-pane" id="pane-operative">
-
-  <!-- Section Feature Card (Exactly like user image) -->
-  <div class="feature-card">
-    <div class="fc-top">
-      <div class="fc-kicker-row">
-        <div class="fc-kicker">Master Series</div>
-        <div class="fc-badge">New Section</div>
+  <!-- ══ COLUMN 2: OPERATIVE APPROACH ══ -->
+  <div class="notes-column">
+    <div class="feature-card">
+      <div class="fc-top">
+        <div class="fc-kicker-row">
+          <div class="fc-kicker">Master Series</div>
+          <div class="fc-badge">New Section</div>
+        </div>
+        <h2 class="fc-title">Operative Approach</h2>
+        <p class="fc-desc">The "Operative Playbook" for surgical residents. Systematic task analysis for major procedures covering Pre-op, the "Game Plan", and Pearls.</p>
+        <div class="fc-tags">
+          <span class="fc-tag dark">Cognitive Task Analysis</span>
+          <span class="fc-tag">Bail-out Strategies</span>
+        </div>
       </div>
-      <h2 class="fc-title">Surgical Operative Approach</h2>
-      <p class="fc-desc">The "Operative Playbook" for surgical residents. Systematic task analysis for major procedures covering Pre-op preparation, the Intra-op "Game Plan", Technical Pearls, and Complication management.</p>
-      <div class="fc-tags">
-        <span class="fc-tag dark">Cognitive Task Analysis</span>
-        <span class="fc-tag">Bail-out Strategies</span>
-        <span class="fc-tag">Technical Pearls</span>
+      <div class="fc-foot">
+        <div class="fc-foot-text">Comprehensive Playbook</div>
+        <a href="notes/operative_approach.html" class="fc-btn">Open →</a>
       </div>
     </div>
-    <div class="fc-foot">
-      <div class="fc-foot-text">Comprehensive Playbook</div>
-      <a href="notes/operative_approach.html" class="fc-btn">Open Playbook →</a>
-    </div>
-  </div>
 
-  <div class="op-grid">
+    <div class="op-grid">
 
     <div class="op-card-sm" onclick="window.location.href='notes/Surgical Operative Approach/Open Inguinal Hernia Repair.html'">
       <div>
@@ -610,11 +617,13 @@
       </div>
     </div>
 
-  </div>
-  <div style="text-align:center; margin: 48px 0 20px; color: var(--text-muted); font-size: 0.85rem;">
-    More procedures being added. <a href="notes/operative_approach.html" style="color:var(--brand-gold); font-weight:700;">View Full Playbook →</a>
-  </div>
-</div><!-- end pane-operative -->
+    </div><!-- end op-grid -->
+    <div style="text-align:center; margin: 32px 0; color: var(--text-muted); font-size: 0.8rem;">
+      <a href="notes/operative_approach.html" style="color:var(--brand-gold); font-weight:700;">View Full Playbook →</a>
+    </div>
+  </div><!-- end column 2 -->
+
+</div><!-- end split-container -->
 
 <!-- REQUEST TOPIC BOX -->
 <section class="request-box-section" style="margin: 80px auto; padding: 0 24px; width: 100%; box-sizing: border-box;">
@@ -668,20 +677,9 @@
 function filterNotes(cat,btn){
   document.querySelectorAll('.fb').forEach(b=>b.classList.remove('active'));
   btn.classList.add('active');
-  document.querySelectorAll('#pane-highjield .note-card').forEach(c=>{
-    c.style.display=(cat==='all'||c.dataset.cat&&c.dataset.cat.includes(cat))?'flex':'none';
+  document.querySelectorAll('.note-card').forEach(c=>{
+    c.style.display=(cat==='all'||(c.dataset.cat && c.dataset.cat.includes(cat)))?'flex':'none';
   });
-}
-function switchTab(id){
-  document.querySelectorAll('.section-tab').forEach(t=>t.classList.remove('active'));
-  document.querySelectorAll('.tab-pane').forEach(p=>p.classList.remove('active'));
-  document.getElementById('tab-'+id).classList.add('active');
-  document.getElementById('pane-'+id).classList.add('active');
-  // hide filter bar when operative tab is active
-  const fb = document.querySelector('.filter-bar');
-  const leg = document.querySelector('.notes-legend');
-  if(id==='operative'){ if(fb) fb.style.display='none'; if(leg) leg.style.display='none'; }
-  else { if(fb) fb.style.display=''; if(leg) leg.style.display=''; }
 }
 </script>
 
