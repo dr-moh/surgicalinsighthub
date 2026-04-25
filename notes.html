@@ -11,6 +11,72 @@
   const savedTheme = localStorage.getItem('sih-theme') || 'light';
   if (savedTheme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
 </script>
+<style>
+  /* ── WEB-ACCESSIBLE cards: green system ── */
+  .note-card.web-card {
+    border-top-color: #1B6B45 !important;
+    background: linear-gradient(160deg, rgba(27,107,69,0.04) 0%, var(--card-bg,#fff) 60%);
+  }
+  .note-card.web-card .nc-kicker { color: #1B6B45; }
+  .nc-access-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.32rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 0.22em 0.75em;
+    border-radius: 20px;
+    margin-bottom: 0.6rem;
+  }
+  .nc-access-badge.web {
+    background: rgba(27,107,69,0.12);
+    color: #1B6B45;
+  }
+  .nc-access-badge.tg {
+    background: rgba(44,165,224,0.12);
+    color: #1a8abf;
+  }
+  /* Green Read Now button */
+  .nc-dl.green {
+    background: #1B6B45;
+    color: #fff;
+    border: none;
+  }
+  .nc-dl.green:hover { background: #155736; }
+  /* Telegram blue Download button */
+  .nc-dl.tg-btn {
+    background: transparent;
+    color: #1a8abf;
+    border: 1.5px solid #2ca5e0;
+  }
+  .nc-dl.tg-btn:hover { background: #2ca5e0; color: #fff; }
+  /* Legend */
+  .notes-legend {
+    max-width: 1100px;
+    margin: 0 auto 0.5rem;
+    padding: 0 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--muted,#666);
+  }
+  .legend-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+</style>
 </head>
 <body>
 <nav class="nav">
@@ -64,70 +130,19 @@
   </div>
 </div>
 
+<div class="notes-legend">
+  <span style="font-size:0.78rem;color:var(--muted,#888);font-weight:500;">Key:</span>
+  <span class="legend-item"><span class="legend-dot" style="background:#1B6B45;"></span>Read online — no download needed</span>
+  <span class="legend-item"><span class="legend-dot" style="background:#b8922a;"></span>PDF — free download via Telegram</span>
+</div>
+
 <div class="notes-body">
   <div class="notes-grid" id="notesGrid">
 
-    <div class="note-card" data-cat="hpb" style="border-top-color:#1B4332;">
-      <div class="nc-top">
-        <div class="nc-kicker">SIH Master Library <span class="nc-new">New</span></div>
-        <h3>HPB Tumours Master Library</h3>
-        <p>Comprehensive hepatopancreatobiliary oncology. Hepatocellular carcinoma, cholangiocarcinoma, pancreatic adenocarcinoma, GIST, and ampullary tumours. Staging, resectability criteria, and landmark trials.</p>
-        <div class="nc-tags">
-          <span class="nc-tag red">HCC</span><span class="nc-tag red">Pancreatic Ca</span><span class="nc-tag">Bismuth</span><span class="nc-tag">Resectability</span>
-        </div>
-      </div>
-      <div class="nc-foot">
-        <span class="nc-pages">Master Library</span>
-        <a href="https://t.me/sugicalInsightHub" target="_blank" class="nc-dl">Download Free</a>
-      </div>
-    </div>
+    <!-- ═══ WEB-ACCESSIBLE CARDS — Read directly on the site ═══ -->
 
-    <div class="note-card" data-cat="basics" style="border-top-color:#b8922a;">
-      <div class="nc-top">
-        <div class="nc-kicker">SIH Master Library <span class="nc-new">New</span></div>
-        <h3>Basic Surgical Techniques</h3>
-        <p>The resident's practical bible. Knot tying, suture selection, tissue handling, wound closure, drain placement, stoma formation, and operative setup. Zero theory — all technique.</p>
-        <div class="nc-tags">
-          <span class="nc-tag red">Knot Tying</span><span class="nc-tag red">Sutures</span><span class="nc-tag">Drains</span><span class="nc-tag">Stoma</span>
-        </div>
-      </div>
-      <div class="nc-foot">
-        <span class="nc-pages">Master Library</span>
-        <a href="https://t.me/sugicalInsightHub" target="_blank" class="nc-dl">Download Free</a>
-      </div>
-    </div>
-
-    <div class="note-card" data-cat="basics" style="border-top-color:#a31515;">
-      <div class="nc-top">
-        <div class="nc-kicker">SIH Master Library <span class="nc-new">New</span></div>
-        <h3>All I Need For Basics Surgery — Vol 1</h3>
-        <p>Foundations for the surgical resident. Fluid management, wound healing, surgical infection, nutritional support, blood transfusion, and pre/postoperative care. Board review integrated.</p>
-        <div class="nc-tags">
-          <span class="nc-tag red">Fluids</span><span class="nc-tag red">Wound Healing</span><span class="nc-tag">Nutrition</span><span class="nc-tag">Infection</span>
-        </div>
-      </div>
-      <div class="nc-foot">
-        <span class="nc-pages">Volume 1</span>
-        <a href="https://t.me/sugicalInsightHub" target="_blank" class="nc-dl">Download Free</a>
-      </div>
-    </div>
-
-    <div class="note-card" data-cat="basics" style="border-top-color:#a31515;">
-      <div class="nc-top">
-        <div class="nc-kicker">SIH Master Library <span class="nc-new">New</span></div>
-        <h3>All I Need For Basics Surgery — Vol 2</h3>
-        <p>Core surgical pathology and decision-making. Hernias, thyroid and parathyroid, adrenal, breast, soft tissue tumours, and skin lesions. High-yield for MRCS, ABSITE & FRCS.</p>
-        <div class="nc-tags">
-          <span class="nc-tag red">Hernias</span><span class="nc-tag red">Thyroid</span><span class="nc-tag">Breast</span><span class="nc-tag">Adrenal</span>
-        </div>
-      </div>
-      <div class="nc-foot">
-        <span class="nc-pages">Volume 2</span>
-        <a href="https://t.me/sugicalInsightHub" target="_blank" class="nc-dl">Download Free</a>
-      </div>
-    </div>
-
-    <div class="note-card" data-cat="ortho" style="border-top-color:#b8922a;">
+    <div class="note-card web-card" data-cat="ortho">
+      <span class="nc-access-badge web">🌐 Read Online</span>
       <div class="nc-top">
         <div class="nc-kicker">SIH Monograph Series <span class="nc-new">New</span></div>
         <h3>Orthopaedic Trauma</h3>
@@ -138,11 +153,12 @@
       </div>
       <div class="nc-foot">
         <span class="nc-pages">3 volumes</span>
-        <a href="notes/ortho_trauma.html" class="nc-dl">Read Now</a>
+        <a href="notes/ortho_trauma.html" class="nc-dl green">Read Now →</a>
       </div>
     </div>
 
-    <div class="note-card" data-cat="emergency" style="border-top-color:#1B4332;">
+    <div class="note-card web-card" data-cat="emergency">
+      <span class="nc-access-badge web">🌐 Read Online</span>
       <div class="nc-top">
         <div class="nc-kicker">SIH Monograph Series <span class="nc-new">New</span></div>
         <h3>Appendicitis 2025</h3>
@@ -153,10 +169,12 @@
       </div>
       <div class="nc-foot">
         <span class="nc-pages">5 Sections</span>
-        <a href="notes/appendicitis_2025_notebook.html" class="nc-dl">Read Now</a>
+        <a href="notes/appendicitis_2025_notebook.html" class="nc-dl green">Read Now →</a>
       </div>
     </div>
-    <div class="note-card" data-cat="periop" style="border-top-color:#b8922a;">
+
+    <div class="note-card web-card" data-cat="periop">
+      <span class="nc-access-badge web">🌐 Read Online</span>
       <div class="nc-top">
         <div class="nc-kicker">SIH Monograph Series <span class="nc-new">New</span></div>
         <h3>Anesthesia &amp; Perioperative Care</h3>
@@ -167,11 +185,12 @@
       </div>
       <div class="nc-foot">
         <span class="nc-pages">5 topics + MCQ</span>
-        <a href="notes/anestesia_with_mono.html" class="nc-dl">Read Now</a>
+        <a href="notes/anestesia_with_mono.html" class="nc-dl green">Read Now →</a>
       </div>
     </div>
 
-    <div class="note-card" data-cat="colorectal" style="border-top-color:#b8922a;">
+    <div class="note-card web-card" data-cat="colorectal">
+      <span class="nc-access-badge web">🌐 Read Online</span>
       <div class="nc-top">
         <div class="nc-kicker">SIH Monograph Series <span class="nc-new">New</span></div>
         <h3>Colorectal &amp; Anal Surgery</h3>
@@ -182,13 +201,78 @@
       </div>
       <div class="nc-foot">
         <span class="nc-pages">6 monographs</span>
-        <a href="notes/colorectal_Notebook.html" class="nc-dl">Read Now</a>
+        <a href="notes/colorectal_Notebook.html" class="nc-dl green">Read Now →</a>
       </div>
     </div>
 
+    <!-- ═══ TELEGRAM PDF CARDS — Free download via channel ═══ -->
 
+    <div class="note-card" data-cat="hpb" style="border-top-color:#b8922a;">
+      <span class="nc-access-badge tg">📲 Telegram PDF</span>
+      <div class="nc-top">
+        <div class="nc-kicker">SIH Master Library <span class="nc-new">New</span></div>
+        <h3>HPB Tumours Master Library</h3>
+        <p>Comprehensive hepatopancreatobiliary oncology. Hepatocellular carcinoma, cholangiocarcinoma, pancreatic adenocarcinoma, GIST, and ampullary tumours. Staging, resectability criteria, and landmark trials.</p>
+        <div class="nc-tags">
+          <span class="nc-tag red">HCC</span><span class="nc-tag red">Pancreatic Ca</span><span class="nc-tag">Bismuth</span><span class="nc-tag">Resectability</span>
+        </div>
+      </div>
+      <div class="nc-foot">
+        <span class="nc-pages">Master Library</span>
+        <a href="https://t.me/sugicalInsightHub" target="_blank" class="nc-dl tg-btn">Download Free</a>
+      </div>
+    </div>
 
-    <div class="note-card featured" data-cat="peds">
+    <div class="note-card" data-cat="basics" style="border-top-color:#b8922a;">
+      <span class="nc-access-badge tg">📲 Telegram PDF</span>
+      <div class="nc-top">
+        <div class="nc-kicker">SIH Master Library <span class="nc-new">New</span></div>
+        <h3>Basic Surgical Techniques</h3>
+        <p>The resident's practical bible. Knot tying, suture selection, tissue handling, wound closure, drain placement, stoma formation, and operative setup. Zero theory — all technique.</p>
+        <div class="nc-tags">
+          <span class="nc-tag red">Knot Tying</span><span class="nc-tag red">Sutures</span><span class="nc-tag">Drains</span><span class="nc-tag">Stoma</span>
+        </div>
+      </div>
+      <div class="nc-foot">
+        <span class="nc-pages">Master Library</span>
+        <a href="https://t.me/sugicalInsightHub" target="_blank" class="nc-dl tg-btn">Download Free</a>
+      </div>
+    </div>
+
+    <div class="note-card" data-cat="basics" style="border-top-color:#b8922a;">
+      <span class="nc-access-badge tg">📲 Telegram PDF</span>
+      <div class="nc-top">
+        <div class="nc-kicker">SIH Master Library <span class="nc-new">New</span></div>
+        <h3>All I Need For Basics Surgery — Vol 1</h3>
+        <p>Foundations for the surgical resident. Fluid management, wound healing, surgical infection, nutritional support, blood transfusion, and pre/postoperative care. Board review integrated.</p>
+        <div class="nc-tags">
+          <span class="nc-tag red">Fluids</span><span class="nc-tag red">Wound Healing</span><span class="nc-tag">Nutrition</span><span class="nc-tag">Infection</span>
+        </div>
+      </div>
+      <div class="nc-foot">
+        <span class="nc-pages">Volume 1</span>
+        <a href="https://t.me/sugicalInsightHub" target="_blank" class="nc-dl tg-btn">Download Free</a>
+      </div>
+    </div>
+
+    <div class="note-card" data-cat="basics" style="border-top-color:#b8922a;">
+      <span class="nc-access-badge tg">📲 Telegram PDF</span>
+      <div class="nc-top">
+        <div class="nc-kicker">SIH Master Library <span class="nc-new">New</span></div>
+        <h3>All I Need For Basics Surgery — Vol 2</h3>
+        <p>Core surgical pathology and decision-making. Hernias, thyroid and parathyroid, adrenal, breast, soft tissue tumours, and skin lesions. High-yield for MRCS, ABSITE &amp; FRCS.</p>
+        <div class="nc-tags">
+          <span class="nc-tag red">Hernias</span><span class="nc-tag red">Thyroid</span><span class="nc-tag">Breast</span><span class="nc-tag">Adrenal</span>
+        </div>
+      </div>
+      <div class="nc-foot">
+        <span class="nc-pages">Volume 2</span>
+        <a href="https://t.me/sugicalInsightHub" target="_blank" class="nc-dl tg-btn">Download Free</a>
+      </div>
+    </div>
+
+    <div class="note-card" data-cat="peds" style="border-top-color:#b8922a;">
+      <span class="nc-access-badge tg">📲 Telegram PDF</span>
       <div class="nc-top">
         <div class="nc-kicker">Paediatric Surgery <span class="nc-new">New</span></div>
         <h3>Anorectal Malformation</h3>
@@ -199,11 +283,12 @@
       </div>
       <div class="nc-foot">
         <span class="nc-pages">In progress</span>
-        <a href="https://t.me/sugicalInsightHub" target="_blank" class="nc-dl">Get on Telegram</a>
+        <a href="https://t.me/sugicalInsightHub" target="_blank" class="nc-dl tg-btn">Get on Telegram</a>
       </div>
     </div>
 
-    <div class="note-card" data-cat="emergency">
+    <div class="note-card" data-cat="emergency" style="border-top-color:#b8922a;">
+      <span class="nc-access-badge tg">📲 Telegram PDF</span>
       <div class="nc-top">
         <div class="nc-kicker">Emergency Surgery</div>
         <h3>Bowel Obstruction</h3>
@@ -212,11 +297,12 @@
       </div>
       <div class="nc-foot">
         <span class="nc-pages">8 pages</span>
-        <a href="https://t.me/sugicalInsightHub" target="_blank" class="nc-dl">Download Free</a>
+        <a href="https://t.me/sugicalInsightHub" target="_blank" class="nc-dl tg-btn">Download Free</a>
       </div>
     </div>
 
-    <div class="note-card" data-cat="emergency">
+    <div class="note-card" data-cat="emergency" style="border-top-color:#b8922a;">
+      <span class="nc-access-badge tg">📲 Telegram PDF</span>
       <div class="nc-top">
         <div class="nc-kicker">Emergency Surgery</div>
         <h3>PUD Perforation</h3>
@@ -225,11 +311,12 @@
       </div>
       <div class="nc-foot">
         <span class="nc-pages">6 pages</span>
-        <a href="https://t.me/sugicalInsightHub" target="_blank" class="nc-dl">Download Free</a>
+        <a href="https://t.me/sugicalInsightHub" target="_blank" class="nc-dl tg-btn">Download Free</a>
       </div>
     </div>
 
-    <div class="note-card" data-cat="emergency colorectal">
+    <div class="note-card" data-cat="emergency colorectal" style="border-top-color:#b8922a;">
+      <span class="nc-access-badge tg">📲 Telegram PDF</span>
       <div class="nc-top">
         <div class="nc-kicker">Emergency Surgery</div>
         <h3>Fournier's Gangrene</h3>
@@ -238,11 +325,12 @@
       </div>
       <div class="nc-foot">
         <span class="nc-pages">5 pages</span>
-        <a href="https://t.me/sugicalInsightHub" target="_blank" class="nc-dl">Download Free</a>
+        <a href="https://t.me/sugicalInsightHub" target="_blank" class="nc-dl tg-btn">Download Free</a>
       </div>
     </div>
 
-    <div class="note-card" data-cat="hpb">
+    <div class="note-card" data-cat="hpb" style="border-top-color:#b8922a;">
+      <span class="nc-access-badge tg">📲 Telegram PDF</span>
       <div class="nc-top">
         <div class="nc-kicker">HPB Surgery</div>
         <h3>Choledocholithiasis</h3>
@@ -251,11 +339,12 @@
       </div>
       <div class="nc-foot">
         <span class="nc-pages">6 pages</span>
-        <a href="https://t.me/sugicalInsightHub" target="_blank" class="nc-dl">Download Free</a>
+        <a href="https://t.me/sugicalInsightHub" target="_blank" class="nc-dl tg-btn">Download Free</a>
       </div>
     </div>
 
-    <div class="note-card" data-cat="hpb">
+    <div class="note-card" data-cat="hpb" style="border-top-color:#b8922a;">
+      <span class="nc-access-badge tg">📲 Telegram PDF</span>
       <div class="nc-top">
         <div class="nc-kicker">HPB Surgery</div>
         <h3>HPB Surgery</h3>
@@ -264,24 +353,26 @@
       </div>
       <div class="nc-foot">
         <span class="nc-pages">7 pages</span>
-        <a href="https://t.me/sugicalInsightHub" target="_blank" class="nc-dl">Download Free</a>
+        <a href="https://t.me/sugicalInsightHub" target="_blank" class="nc-dl tg-btn">Download Free</a>
       </div>
     </div>
 
-    <div class="note-card" data-cat="periop">
+    <div class="note-card" data-cat="periop" style="border-top-color:#b8922a;">
+      <span class="nc-access-badge tg">📲 Telegram PDF</span>
       <div class="nc-top">
         <div class="nc-kicker">Perioperative Care</div>
-        <h3>Anesthesia & Perioperative Care</h3>
+        <h3>Anesthesia &amp; Perioperative Care</h3>
         <p>RSI, airway decision tree, regional vs general, postop pain protocols, ICU handover essentials.</p>
         <div class="nc-tags"><span class="nc-tag red">RSI</span><span class="nc-tag">ASA</span><span class="nc-tag">6 pages</span></div>
       </div>
       <div class="nc-foot">
         <span class="nc-pages">6 pages</span>
-        <a href="https://t.me/sugicalInsightHub" target="_blank" class="nc-dl">Download Free</a>
+        <a href="https://t.me/sugicalInsightHub" target="_blank" class="nc-dl tg-btn">Download Free</a>
       </div>
     </div>
 
-    <div class="note-card" data-cat="emergency">
+    <div class="note-card" data-cat="emergency" style="border-top-color:#b8922a;">
+      <span class="nc-access-badge tg">📲 Telegram PDF</span>
       <div class="nc-top">
         <div class="nc-kicker">Imaging</div>
         <h3>High-Yield CT Imaging Findings</h3>
@@ -290,12 +381,11 @@
       </div>
       <div class="nc-foot">
         <span class="nc-pages">5 pages</span>
-        <a href="https://t.me/sugicalInsightHub" target="_blank" class="nc-dl">Download Free</a>
+        <a href="https://t.me/sugicalInsightHub" target="_blank" class="nc-dl tg-btn">Download Free</a>
       </div>
     </div>
 
   </div>
-
   <div class="cta-bar">
     <div>
       <h3>All notes. Always free.</h3>
