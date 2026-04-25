@@ -82,42 +82,77 @@
     letter-spacing: -0.02em;
   }
   .section-tab:hover { border-color: var(--brand-gold); color: var(--text-primary); }
-  /* ── BIG CARD TABS GRID ── */
-  .big-tabs-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 24px;
-    max-width: 1100px;
-    margin: 0 auto 48px;
-    padding: 0 1.5rem;
-  }
-  @media(max-width: 850px) { .big-tabs-grid { grid-template-columns: 1fr; } }
-
-  .feature-card.tab-trigger {
-    cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.23,1,0.32,1);
-    margin: 0; /* Override previous margin */
-    height: 100%;
+  /* ── PREMIUM FEATURE CARDS ── */
+  .feature-card {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
     display: flex;
     flex-direction: column;
-    border: 2px solid transparent;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
   }
-  .feature-card.tab-trigger:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 30px rgba(43,24,16,0.1);
-    border-color: #f0d08044;
-  }
-  .feature-card.tab-trigger.active {
+  .feature-card.tab-trigger { cursor: pointer; border-width: 2px; }
+  .feature-card.tab-trigger:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
+  .feature-card.active {
     border-color: #b8922a;
-    box-shadow: 0 12px 40px rgba(184,146,42,0.15);
-    background: linear-gradient(180deg, #fff 0%, #fdf8ed 100%);
+    background: #fafaf8;
+    box-shadow: 0 20px 50px rgba(184, 146, 42, 0.15);
   }
+
+  .fc-top { padding: 32px 40px; flex: 1; }
+  .fc-kicker-row { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
+  .fc-kicker { font-size: 0.65rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: #1a1208; }
+  .fc-badge { background: #b8922a; color: #fff; font-size: 0.65rem; font-weight: 800; padding: 3px 10px; border-radius: 6px; }
   
-  /* Refine feature card for grid */
-  .fc-top { flex: 1; padding: 32px; }
-  .fc-title { font-size: 1.6rem; }
-  .fc-desc { font-size: 0.88rem; margin-bottom: 20px; }
-  .fc-foot { padding: 16px 32px; }
+  .fc-title { 
+    font-size: 2.1rem; 
+    font-weight: 900; 
+    letter-spacing: -0.05em; 
+    line-height: 1.1; 
+    color: #1a1208; 
+    margin-bottom: 14px; 
+  }
+  @media(max-width: 1000px) { .fc-title { font-size: 1.6rem; } }
+
+  .fc-desc { font-size: 0.88rem; color: #6b7280; line-height: 1.5; margin-bottom: 24px; }
+  
+  .fc-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+  .fc-tag { 
+    font-size: 0.7rem; 
+    font-weight: 700; 
+    padding: 6px 14px; 
+    border-radius: 8px; 
+    background: #f3f4f6; 
+    color: #374151; 
+  }
+  .fc-tag.dark { background: #2b1810; color: #f0d080; }
+  .fc-tag.gold-lt { background: #fdf8ed; color: #5a4a3a; border: 1px solid #f0d08033; }
+
+  .fc-foot { 
+    padding: 20px 40px; 
+    border-top: 1px solid #f3f4f6; 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between;
+    background: #fafaf8;
+  }
+  .fc-foot-text { font-size: 0.75rem; font-weight: 600; color: #9ca3af; }
+  .fc-btn {
+    background: #b8922a;
+    color: #fff;
+    font-size: 0.82rem;
+    font-weight: 700;
+    padding: 10px 24px;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s;
+  }
+  .feature-card.active .fc-btn { background: #b8922a; box-shadow: 0 4px 12px rgba(184, 146, 42, 0.3); }
+  .feature-card:not(.active) .fc-btn { background: #9ca3af; opacity: 0.6; }
   .tab-pane { display: none; }
   .tab-pane.active { display: block; }
   /* Operative Approach grid */
@@ -234,24 +269,26 @@
 </div>
 
 <!-- ── BIG CARD TABS GRID ── -->
-<div class="big-tabs-grid">
+<div class="big-tabs-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 1200px; margin: 0 auto 48px; padding: 0 1.5rem;">
+  
   <!-- Tab 1 Trigger -->
   <div class="feature-card tab-trigger active" id="trigger-highjield" onclick="switchTab('highjield')">
     <div class="fc-top">
       <div class="fc-kicker-row">
-        <div class="fc-kicker">Master Library</div>
-        <div class="fc-badge" style="background:#5a4a3a">Core Notes</div>
+        <div class="fc-kicker">Master Series</div>
+        <div class="fc-badge" style="background:#5a4a3a">Resident Core</div>
       </div>
       <h2 class="fc-title">Surgical High-Yield Notes</h2>
       <p class="fc-desc">Dense, evidence-based study guides designed for rapid board review and clinical utility.</p>
       <div class="fc-tags">
         <span class="fc-tag dark">ABSITE & MRCS</span>
-        <span class="fc-tag">Guideline-Focused</span>
+        <span class="fc-tag gold-lt">Guideline-Focused</span>
+        <span class="fc-tag gold-lt">Rapid Revision</span>
       </div>
     </div>
     <div class="fc-foot">
-      <div class="fc-foot-text">Study Library</div>
-      <span class="fc-btn" style="padding: 8px 16px; font-size: 0.75rem;">Select Section</span>
+      <div class="fc-foot-text">Master Library</div>
+      <div class="fc-btn">Open Library →</div>
     </div>
   </div>
 
@@ -259,19 +296,20 @@
   <div class="feature-card tab-trigger" id="trigger-operative" onclick="switchTab('operative')">
     <div class="fc-top">
       <div class="fc-kicker-row">
-        <div class="fc-kicker">Operative Playbook</div>
+        <div class="fc-kicker">Master Series</div>
         <div class="fc-badge">New Section</div>
       </div>
       <h2 class="fc-title">Surgical Operative Approach</h2>
-      <p class="fc-desc">Systematic task analysis for major procedures covering Pre-op to Complication management.</p>
+      <p class="fc-desc">The "Operative Playbook" for surgical residents. Systematic task analysis for major procedures covering Pre-op preparation, the Intra-op "Game Plan", Technical Pearls, and Complication management.</p>
       <div class="fc-tags">
-        <span class="fc-tag dark">Technical Pearls</span>
-        <span class="fc-tag">Bail-outs</span>
+        <span class="fc-tag dark">Cognitive Task Analysis</span>
+        <span class="fc-tag gold-lt">Bail-out Strategies</span>
+        <span class="fc-tag gold-lt">Technical Pearls</span>
       </div>
     </div>
     <div class="fc-foot">
-      <div class="fc-foot-text">Operative Playbook</div>
-      <span class="fc-btn" style="padding: 8px 16px; font-size: 0.75rem;">Select Section</span>
+      <div class="fc-foot-text">Comprehensive Playbook</div>
+      <div class="fc-btn">Open Playbook →</div>
     </div>
   </div>
 </div>
