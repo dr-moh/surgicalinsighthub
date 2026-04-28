@@ -14,30 +14,34 @@
 <style>
   /* Adjust navbar for podcast page visibility */
   .nav {
-    background: var(--bg-card);
+    background: var(--bg-card) !important;
     border-bottom: 1px solid var(--border-color);
-    color: var(--text-primary) !important;
-  }
-  .nav.scrolled {
-    background: var(--bg-card);
-    box-shadow: var(--shadow-md);
   }
   .nav-brand-text {
-    color: var(--text-primary);
+    color: var(--text-primary) !important;
+    font-weight: 800;
+  }
+  .nav-brand-sub {
+    color: var(--text-muted) !important;
   }
   .nav-links-pill a {
-    color: var(--text-secondary) !important;
+    color: var(--text-primary) !important;
+    font-weight: 600;
   }
   .nav-links-pill a:hover {
-    color: var(--text-primary) !important;
+    color: var(--brand-gold) !important;
     background: rgba(184, 146, 42, 0.1);
   }
   .nav-links-pill a.active {
-    color: #fff !important;
+    color: #f0d080 !important;
     background: var(--brand-burgundy);
   }
   .theme-toggle svg {
     fill: var(--brand-gold);
+  }
+  .arena-btn {
+    background: var(--brand-burgundy) !important;
+    color: #f0d080 !important;
   }
 </style>
 </head>

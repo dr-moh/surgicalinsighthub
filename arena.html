@@ -434,6 +434,11 @@ var state = {
 var SPECIALTIES = ['All', 'General Surgery', 'HPB', 'Colorectal', 'Anesthesia', 'Vascular', 'Trauma', 'Urology', 'Cardiothoracic', 'Pediatric Surgery', 'Orthopedic', 'Neurosurgery', 'Breast & Endocrine', 'Plastic Surgery'];
 
 document.addEventListener('DOMContentLoaded', function() {
+  if (typeof QUESTIONS === 'undefined') {
+    console.error('QUESTIONS data not loaded');
+    alert('Questions data is still loading or failed to load. Please refresh the page.');
+    return;
+  }
   loadSetupLeaderboard();
   // Update question and specialty counts
   document.getElementById('totalQCount').textContent = QUESTIONS.length;
@@ -823,20 +828,7 @@ function goHome() { window.location.href = 'index.html'; }
     });
   }
 </script>
-</body>
-</html>
-// Initial state
-applyTheme(savedTheme || 'light');
 
-themeToggle.addEventListener('click', () => {
-  const isDark = document.documentElement.hasAttribute('data-theme');
-  const newTheme = isDark ? 'light' : 'dark';
-  applyTheme(newTheme);
-  localStorage.setItem('sih-theme', newTheme);
-});
-</script>
-
-<script src="js/nav-pill.js"></script>
 <script src="js/nav-pill.js"></script>
 </body>
 </html>
