@@ -1,0 +1,1933 @@
+[
+  {
+    "id": 20001,
+    "specialty": "Anesthesia",
+    "topic": "Anesthesia Review",
+    "question": "A 90-year-old male is presented to the operating room for surgical repair of a right femoral neck fracture. His medical history is significant for chronic obstructive pulmonary disease (60 pack year smoking history) and is prescribed 4 L/min of continuous home oxygen. A note from his pulmonologist states that this patient is a high-risk candidate for general anesthesia and will prove to be difficult to wean from mechanical ventilation. To properly assess the respiratory risk for this patient, which of the following will provide the least beneficial value?",
+    "options": {
+      "A": "Stat pulmonary function tests",
+      "B": "Baseline chest radiograph",
+      "C": "Thorough history and physical examination",
+      "D": "Baseline arterial blood gas"
+    },
+    "answer": "A",
+    "explanation": {
+      "correct": "Pulmonary function test results have not been shown to be beneficial or to guide treatment when planning for intraoperative anesthesia. History and physical exam are the basics and important in anesthesia plan formulation. Baseline chest films along with arterial blood gas results are not indicated in every pulmonary patient, but may be helpful in anesthesia decision-making and intraoperative anesthetic management.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Lippincott's Anesthesia Review 2026",
+    "takeaway": "Key Anesthesia Concept: Pulmonary function test results have not been shown to be beneficial or to guide treatment when planning for intraoperat..."
+  },
+  {
+    "id": 20002,
+    "specialty": "Anesthesia",
+    "topic": "Anesthesia Review",
+    "question": "A 65-year-old female, status post coronary artery bypass grafting (CABG) 2 weeks ago, is scheduled for a fem-fem bypass. The patient has been recovering well since her routine two-vessel cardiac bypass surgery, but continues to experience intermittent claudication symptoms of the left lower extremity. The surgeon informs you that the patient was scheduled for the vascular bypass surgery several weeks ago, but could not undergo the surgery due to her poor cardiac function. Now that cardiac pathology has been resolved, he would like to proceed with the vascular procedure as soon as possible. Your recommendations to the vascular surgeon would be",
+    "options": {
+      "A": "Provided she is without cardiac symptoms, the vascular surgery can now be performed",
+      "B": "The vascular procedure should be delayed for another 2 weeks",
+      "C": "The surgeon needs to obtain cardiology clearance prior to the procedure",
+      "D": "The vascular surgery should be delayed for at least 6 months following the"
+    },
+    "answer": "B",
+    "explanation": {
+      "correct": "With the exception of emergency surgery, current guidelines suggest waiting at least for a 1-month time interval following a coronary intervention, before proceeding with any elective surgical procedure.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Lippincott's Anesthesia Review 2026",
+    "takeaway": "Key Anesthesia Concept: With the exception of emergency surgery, current guidelines suggest waiting at least for a 1-month time interval followi..."
+  },
+  {
+    "id": 20003,
+    "specialty": "Anesthesia",
+    "topic": "Anesthesia Review",
+    "question": "A 76-year-old female comes to the preadmission clinic for anesthetic evaluation prior to a right total hip replacement (THR) scheduled in 2 weeks. Her medical history is significant for coronary artery disease (status post stent placement 6 months ago) and baseline unstable angina one to two times per month. The patient indicates that her symptoms are relieved by sublingual nitroglycerin. A recent echocardiogram (30 days prior) showed an ejection fraction of 30% along with evidence of inferior-wall-motion abnormality. Examination of the most current EKG shows diffuse T-wave inversions with a heart rate of 60 to 65 bpm (on metoprolol) and a blood pressure of 125/60 mm Hg. In addition, the patient has severe chronic obstructive pulmonary disease, is dependent upon 2 L/min home O2, and has obstructive sleep apnea (on bi-level positive-airway pressure at night). In order to maximize the preoperative condition of this patient, you will order all of the following diagnostic tests/examinations/consultations, except",
+    "options": {
+      "A": "Repeat the cardiac catheterization and confirm whether or not the patient requires coronary artery bypass grafting (CABG) surgery prior to THR",
+      "B": "Communicate with cardiologist to confirm patient is medically optimized",
+      "C": "Would not introduce any more coronary interventions unless new symptoms are present",
+      "D": "Maintain hemodynamic stability during THR surgery"
+    },
+    "answer": "A",
+    "explanation": {
+      "correct": "Generally speaking, the indications for cardiovascular investigations are the same in surgical patients as in any other patient. Unless the combined risk of coronary intervention and surgery is less than surgery alone without coronary intervention, preoperative CABG/stent, etc., is not generally suggested.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Lippincott's Anesthesia Review 2026",
+    "takeaway": "Key Anesthesia Concept: Generally speaking, the indications for cardiovascular investigations are the same in surgical patients as in any other ..."
+  },
+  {
+    "id": 20004,
+    "specialty": "Anesthesia",
+    "topic": "Anesthesia Review",
+    "question": "A 74-year-old patient undergoes a lumbar sympathetic blockade to improve blood flow after sustaining a frostbite injury to the left lower extremity. Clinical findings that would suggest a successful block include",
+    "options": {
+      "A": "Inability to dorsiflex the foot",
+      "B": "Piloerection on the legs",
+      "C": "Numbness from the knee to the toes",
+      "D": "Temperature increase in the legs"
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "Indications for a lumbar sympathetic blockade include diagnosis, prognosis, and therapy of circulatory and pain conditions such as inoperable peripheral vascular disease, vasospastic disease (lower), reflexive sympathetic dystrophies and herpes zoster (lower), and the presence of pain (neuropathic, urogenic/pelvic, cancer pain, and phantom limb). Contraindications for a lumbar sympathetic blockade include anticoagulant therapy, hemorrhagic disorder, allergy to injected medications, infection, local neoplasm, and local vascular anomalies. Lumbar sympathetic chain includes L3\u2013L5 ganglia, and is positioned anterior to L2, L3, and L4 vertebral bodies, anterior to the psoas muscle margin and fascia, posterior to the vena cava on the right, and posterior to the aorta on the left. Complications of a lumbar sympathetic blockade include blockade of the L2 somatic nerve root, injection into the subarachnoid/epidural/intravascular (vena cava/aorta/lumbar vessels) spaces, damage by needle or neurolytics to the kidneys/renal pelvis/ureters/intervertebral disks, infection, backache, neuropathic pain, hematoma, sympathalgia, destruction of sympathetic fibers (cramping/burning pain to anterior thigh), sympathectomy-mediated hypotension, intravascular steal (especially arteriosclerotic patient), and failure of ejaculation.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Lippincott's Anesthesia Review 2026",
+    "takeaway": "Key Anesthesia Concept: Indications for a lumbar sympathetic blockade include diagnosis, prognosis, and therapy of circulatory and pain conditio..."
+  },
+  {
+    "id": 20005,
+    "specialty": "Anesthesia",
+    "topic": "Anesthesia Review",
+    "question": "The nerve that needs to be blocked to obliterate the gag reflex when applying pressure to the posterior portion of the tongue during an awake fiberoptic intubation is the",
+    "options": {
+      "A": "Recurrent laryngeal nerve",
+      "B": "Glossopharyngeal nerve",
+      "C": "Superior laryngeal nerve",
+      "D": "Inferior laryngeal nerve"
+    },
+    "answer": "B",
+    "explanation": {
+      "correct": "Airway blockade techniques: For anesthesia of nasal mucosa and nasopharynx, and nasal intubation, the sphenopalatine ganglion and ethmoid nerves need to be",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Lippincott's Anesthesia Review 2026",
+    "takeaway": "Key Anesthesia Concept: Airway blockade techniques: For anesthesia of nasal mucosa and nasopharynx, and nasal intubation, the sphenopalatine gan..."
+  },
+  {
+    "id": 20006,
+    "specialty": "Anesthesia",
+    "topic": "Anesthesia Review",
+    "question": "A 74-year-old patient undergoes a stellate ganglion block secondary to extreme hot flashes and night awakenings secondary to a long history of breast cancer. Potential complications include all of the following, except",
+    "options": {
+      "A": "Recurrent laryngeal nerve paralysis",
+      "B": "Subarachnoid block",
+      "C": "Pneumothorax",
+      "D": "All of the above"
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "Complications of stellate ganglion block include hematoma formation (vascular injury to carotid artery, internal jugular vein), nerve injury (vagus, brachial plexus roots), pneumothorax, esophageal perforation, intravascular injection (carotid or vertebral artery, internal jugular vein), epidural or intrathecal injection, hoarseness of voice (recurrent laryngeal nerve), elevated hemidiaphragm (phrenic nerve), infection, and Horner syndrome (ptosis, anhidrosis, miosis).",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Lippincott's Anesthesia Review 2026",
+    "takeaway": "Key Anesthesia Concept: Complications of stellate ganglion block include hematoma formation (vascular injury to carotid artery, internal jugular..."
+  },
+  {
+    "id": 20007,
+    "specialty": "Anesthesia",
+    "topic": "Anesthesia Review",
+    "question": "Incorrect statement regarding metabolic equivalent (MET) is",
+    "options": {
+      "A": "1 MET = consumption of 3.5 mL O2/min/kg of body weight",
+      "B": "5 MET = climbing one to two flights of stairs, dancing, or bicycling",
+      "C": "4 MET = equivalent to gardening",
+      "D": "2 MET = equivalent to getting dressed"
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "1 MET = consumption of 3.5 mL O2/min/kg of body weight. Typically, 1 MET = dressing or eating; 2 MET = walking downstairs or cooking; 4 MET = gardening; 5 MET = climbing one to two flights of stairs. A patient unable to achieve the level of 4 to 5 MET is at an increasing risk of perioperative complications, typically cardiopulmonary adverse reactions.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Lippincott's Anesthesia Review 2026",
+    "takeaway": "Key Anesthesia Concept: 1 MET = consumption of 3.5 mL O2/min/kg of body weight. Typically, 1 MET = dressing or eating; 2 MET = walking downstair..."
+  },
+  {
+    "id": 20008,
+    "specialty": "Anesthesia",
+    "topic": "Anesthesia Review",
+    "question": "A 35-year-old G2P1 at 30 weeks gestational age is coming to the OR within the next hour for open reduction internal fixation of an ankle fracture. The patient\u2019s blood type is O+ and has hematocrit of 32. All of the following should be arranged, except",
+    "options": {
+      "A": "Prepare for a perioperative obstetrical (OB) consultation",
+      "B": "Type screen and crossmatch for blood",
+      "C": "Intraoperative RhoGam injection prior to surgery start",
+      "D": "Prepare for perioperative fetal monitoring"
+    },
+    "answer": "C",
+    "explanation": {
+      "correct": "The patient is Rh O+; therefore, there exists no need for RhoGam immunoglobulin injection. OB consultation should be initiated with any pregnant patient, and the obstetrician should decide the need for appropriate perioperative monitoring (continuous monitoring versus pre- and postoperative monitoring) of the mother and the fetus based upon the stage of pregnancy.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Lippincott's Anesthesia Review 2026",
+    "takeaway": "Key Anesthesia Concept: The patient is Rh O+; therefore, there exists no need for RhoGam immunoglobulin injection. OB consultation should be ini..."
+  },
+  {
+    "id": 20009,
+    "specialty": "Anesthesia",
+    "topic": "Anesthesia Review",
+    "question": "An E-cylinder of oxygen with a pressure of 1,000 psig and being used at a rate of 2 L/min will run out in",
+    "options": {
+      "A": "2 hours",
+      "B": "3 hours",
+      "C": "4 hours",
+      "D": "6 hours"
+    },
+    "answer": "B",
+    "explanation": {
+      "correct": "An E-cylinder of oxygen at 1,000 psig is approximately half full, that is, it has about 330 L of oxygen. If being consumed at a rate of 2 L/min, it will be exhausted in about 3 hours.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Lippincott's Anesthesia Review 2026",
+    "takeaway": "Key Anesthesia Concept: An E-cylinder of oxygen at 1,000 psig is approximately half full, that is, it has about 330 L of oxygen. If being consum..."
+  },
+  {
+    "id": 20010,
+    "specialty": "Anesthesia",
+    "topic": "Anesthesia Review",
+    "question": "A 49-year-old patient is undergoing a craniotomy for tumor resection. Intraoperatively, the patient received drugs including thiopental, vecuronium, isoflurane, and fentanyl. The patient is brought to the postanesthesia care unit with a HR of 58/min, BP of 196/96 mm Hg, and oxygen saturation of 98%. A few moments later the patient has two episodes of vomiting. You would then",
+    "options": {
+      "A": "Give ondansetron",
+      "B": "Give metoclopramide",
+      "C": "Give fentanyl",
+      "D": "Call the neurosurgeon"
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "Vomiting in patient who has undergone an intracranial procedure may indicate raised intracranial pressure. Therefore, the patient needs to be evaluated immediately, and the neurosurgeon needs to be notified.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Lippincott's Anesthesia Review 2026",
+    "takeaway": "Key Anesthesia Concept: Vomiting in patient who has undergone an intracranial procedure may indicate raised intracranial pressure. Therefore, th..."
+  },
+  {
+    "id": 20011,
+    "specialty": "Anesthesia",
+    "topic": "Anesthesia Review",
+    "question": "Parkinsonism is associated with",
+    "options": {
+      "A": "Loss of dopaminergic neurons alone",
+      "B": "Loss of cholinergic neurons alone",
+      "C": "Loss of cholinergic and increase in dopaminergic activity",
+      "D": "Loss of dopaminergic and increase in cholinergic activity"
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "Parkinsonism of Parkinson disease (called when no identifiable cause) is associated with a loss of dopaminergic activity and a reciprocal increase in cholinergic activity in the brain.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Lippincott's Anesthesia Review 2026",
+    "takeaway": "Key Anesthesia Concept: Parkinsonism of Parkinson disease (called when no identifiable cause) is associated with a loss of dopaminergic activity..."
+  },
+  {
+    "id": 20012,
+    "specialty": "Anesthesia",
+    "topic": "Anesthesia Review",
+    "question": "A 36-year-old patient with multiple sclerosis (MS) is to undergo an exploratory laparotomy. The best anesthesia technique to prevent a flare-up of symptoms would be",
+    "options": {
+      "A": "General anesthesia with endotracheal intubation using a nondepolarizing muscle relaxant",
+      "B": "General anesthesia with endotracheal intubation using a depolarizing muscle relaxant",
+      "C": "Spinal anesthesia",
+      "D": "Combined spinal\u2013epidural anesthesia"
+    },
+    "answer": "A",
+    "explanation": {
+      "correct": "General anesthesia is most often used in patients with MS. Regarding muscle relaxants, the use of succinylcholine should be avoided, as demyelination and",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Lippincott's Anesthesia Review 2026",
+    "takeaway": "Key Anesthesia Concept: General anesthesia is most often used in patients with MS. Regarding muscle relaxants, the use of succinylcholine should..."
+  },
+  {
+    "id": 20013,
+    "specialty": "Anesthesia",
+    "topic": "Anesthesia Review",
+    "question": "The primary aim of using succinylcholine for anesthesia for electroconvulsive therapy (ECT) is to",
+    "options": {
+      "A": "Prevent loss of airway",
+      "B": "Control excessive seizure activity",
+      "C": "Control cardiovascular sympathetic discharge",
+      "D": "Prevent musculoskeletal injuries"
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "ECT is performed under general anesthesia. The patient is preoxygenated, and general anesthesia is induced with a hypnotic (methohexital or propofol). Once the patient is asleep, succinylcholine is administered to relax the muscles. Seizures produced by ECT have been known to cause musculoskeletal injuries and joint dislocations. Therefore, succinylcholine is used to relax the muscle and prevent such injuries. Airway is maintained with mask ventilation.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Lippincott's Anesthesia Review 2026",
+    "takeaway": "Key Anesthesia Concept: ECT is performed under general anesthesia. The patient is preoxygenated, and general anesthesia is induced with a hypnot..."
+  },
+  {
+    "id": 20014,
+    "specialty": "Anesthesia",
+    "topic": "Anesthesia Review",
+    "question": "Cardiovascular response following an electroconvulsive therapy (ECT) is characterized by",
+    "options": {
+      "A": "An initial parasympathetic discharge followed by a sympathetic discharge",
+      "B": "An initial sympathetic discharge followed by a parasympathetic discharge",
+      "C": "Sympathetic discharge alone",
+      "D": "Parasympathetic discharge alone"
+    },
+    "answer": "A",
+    "explanation": {
+      "correct": "Cardiovascular response following an ECT consists of an initial parasympathetic response followed by a sympathetic response. The parasympathetic response may lead to severe bradycardia in some. Glycopyrrolate administered pre-ECT may attenuate the parasympathetic response and also decrease secretions. The sympathetic response leads to tachycardia and hypertension, which may lead to deleterious effects in patients with coronary artery disease. The sympathetic discharge can be attenuated by using \u03b2-blockers (esmolol, metoprolol) or labetalol.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Lippincott's Anesthesia Review 2026",
+    "takeaway": "Key Anesthesia Concept: Cardiovascular response following an ECT consists of an initial parasympathetic response followed by a sympathetic respo..."
+  },
+  {
+    "id": 20015,
+    "specialty": "Anesthesia",
+    "topic": "Anesthesia Review",
+    "question": "Nondepolarizing muscle relaxants block which of the following receptors?",
+    "options": {
+      "A": "Adrenergic",
+      "B": "Calcium",
+      "C": "Muscarinic",
+      "D": "Nicotinic"
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "Nondepolarizing muscle relaxants inhibit neuronal transmission to the muscle by blocking the nicotinic acetylcholine receptors. They act as competitive antagonists to acetylcholine (Ach) and prevent the binding of Ach to the receptors.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Lippincott's Anesthesia Review 2026",
+    "takeaway": "Key Anesthesia Concept: Nondepolarizing muscle relaxants inhibit neuronal transmission to the muscle by blocking the nicotinic acetylcholine rec..."
+  },
+  {
+    "id": 20016,
+    "specialty": "Anesthesia",
+    "topic": "Anesthesia Review",
+    "question": "Ipratropium acts to relieve bronchospasm via which of the following receptors?",
+    "options": {
+      "A": "Nicotinic",
+      "B": "Muscarinic",
+      "C": "\u03b1-Receptors",
+      "D": "\u03b2-Receptors"
+    },
+    "answer": "B",
+    "explanation": {
+      "correct": "Ipratropium (atrovent) is a bronchodilator and acts on the muscarinic acetylcholine receptors in the smooth muscles of the bronchi in the lung when inhaled. It is a derivative of atropine, but has a quaternary amine structure and thus it does not cross the blood-brain barrier to cause central effects. Although ipratropium is commonly combined with albuterol as a rescue agent for bronchospasm, it should not be used as a replacement for albuterol.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Lippincott's Anesthesia Review 2026",
+    "takeaway": "Key Anesthesia Concept: Ipratropium (atrovent) is a bronchodilator and acts on the muscarinic acetylcholine receptors in the smooth muscles of t..."
+  },
+  {
+    "id": 20017,
+    "specialty": "Anesthesia",
+    "topic": "Anesthesia Review",
+    "question": "All statements regarding neostigmine are true, except",
+    "options": {
+      "A": "It inhibits acetylcholinesterase",
+      "B": "It inhibits pseudocholinesterase",
+      "C": "It shortens the duration of action of succinylcholine",
+      "D": "It can cause neuromuscular blockade"
+    },
+    "answer": "C",
+    "explanation": {
+      "correct": "Neostigmine is a reversible acetylcholinesterase inhibitor, the enzyme that",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Lippincott's Anesthesia Review 2026",
+    "takeaway": "Key Anesthesia Concept: Neostigmine is a reversible acetylcholinesterase inhibitor, the enzyme that"
+  },
+  {
+    "id": 20018,
+    "specialty": "Anesthesia",
+    "topic": "Anesthesia Review",
+    "question": "When using neostigmine to reverse neuromuscular blockade in the presence of severe renal disease, you would use the following dose when compared to a normal patient",
+    "options": {
+      "A": "Same",
+      "B": "Higher",
+      "C": "Lower",
+      "D": "Titrated"
+    },
+    "answer": "A",
+    "explanation": {
+      "correct": "Renal excretion accounts for about 50% of excretion of neostigmine (about 75% of that of pyridostigmine and edrophonium). It is important to note that the presence of renal failure decreases the plasma clearance of not only neostigmine (and pyridostigmine, edrophonium) but also nondepolarizing muscle relaxants. Therefore, if neostigmine is administered in the usual dosage, and overdoses of muscle relaxants are avoided, renal failure should not be associated with recurarization.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Lippincott's Anesthesia Review 2026",
+    "takeaway": "Key Anesthesia Concept: Renal excretion accounts for about 50% of excretion of neostigmine (about 75% of that of pyridostigmine and edrophonium)..."
+  },
+  {
+    "id": 20019,
+    "specialty": "Anesthesia",
+    "topic": "Anesthesia Review",
+    "question": "Fastest acting neuromuscular reversal agent is",
+    "options": {
+      "A": "Edrophonium",
+      "B": "Neostigmine",
+      "C": "Pyridostigmine",
+      "D": "Physostigmine"
+    },
+    "answer": "A",
+    "explanation": {
+      "correct": "Edrophonium is given in a dose of 0.5 to 1 mg/kg and has an onset of action in 30 to 60 seconds. Peak action occurs in 1 to 5 minutes and duration of action of is about 5 to 20 minutes. Because of its short duration of action, patients should be monitored for the effects of recurarization. Onset of neostigmine\u2019s action (0.04\u20130.07 mg/kg) is in 1 to 3 minutes, peak effect occurs in 5 to 7 minutes, and duration of action is 40 to 60 minutes. Pyridostigmine is not used for neuromuscular reversal, and physostigmine has no role in neuromuscular blockade reversal.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Lippincott's Anesthesia Review 2026",
+    "takeaway": "Key Anesthesia Concept: Edrophonium is given in a dose of 0.5 to 1 mg/kg and has an onset of action in 30 to 60 seconds. Peak action occurs in 1..."
+  },
+  {
+    "id": 20020,
+    "specialty": "Anesthesia",
+    "topic": "Anesthesia Review",
+    "question": "Highest plasma concentration of a local anesthetic will occur if infiltrated via which of the following routes?",
+    "options": {
+      "A": "Tracheal",
+      "B": "Caudal",
+      "C": "Intercostal",
+      "D": "Brachial plexus"
+    },
+    "answer": "C",
+    "explanation": {
+      "correct": "Local anesthetics, when infiltrated into tissues, get absorbed into the circulation to some extent. The amount of local anesthetic absorbed into circulation depends upon the vascularity of the area. Highest blood concentration occurs with intercostal infiltration due to the high vascularity of the area.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Lippincott's Anesthesia Review 2026",
+    "takeaway": "Key Anesthesia Concept: Local anesthetics, when infiltrated into tissues, get absorbed into the circulation to some extent. The amount of local ..."
+  },
+  {
+    "id": 20021,
+    "specialty": "Anesthesia",
+    "topic": "Anesthesia Review",
+    "question": "A 27-year-old 38 weeks pregnant female presents with painless vaginal bleeding. The best step in the management of this patient is",
+    "options": {
+      "A": "Direct examination with a vaginal speculum and then take the patient to OR for cesarean section",
+      "B": "Cesarean section",
+      "C": "Bed rest and observation",
+      "D": "Epidural after bleeding stops"
+    },
+    "answer": "B",
+    "explanation": {
+      "correct": "Painless vaginal bleeding is most commonly due to placenta previa. A full-term parturient who presents with active painless vaginal bleeding should be taken to the operating room for cesarean section under general anesthesia. Examination with a vaginal speculum may initiate massive hemorrhage and hence should be not performed. Patients should have large-bore IVs (even a central line) for adequate fluid resuscitation, and blood should be available for transfusion. Patients with placenta previa, who are less than 37 weeks of gestation, and with mild bleeding, may be managed with bed rest and observation.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Lippincott's Anesthesia Review 2026",
+    "takeaway": "Key Anesthesia Concept: Painless vaginal bleeding is most commonly due to placenta previa. A full-term parturient who presents with active painl..."
+  },
+  {
+    "id": 20022,
+    "specialty": "Anesthesia",
+    "topic": "Anesthesia Review",
+    "question": "The most frequent cause of delayed emergence in the postanesthesia care unit is",
+    "options": {
+      "A": "Residual anesthetic agents",
+      "B": "Hypoventilation",
+      "C": "Hypotension",
+      "D": "Hypothermia"
+    },
+    "answer": "A",
+    "explanation": {
+      "correct": "The most common cause of delayed emergence is residual anesthetics. These can be sedatives, analgesics, muscle relaxants, or volatile inhalational agents. Overdose of narcotics can be reversed by naloxone, benzodiazepines can be reversed by flumazenil, muscle relaxants are reversed with an appropriate dose of",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Lippincott's Anesthesia Review 2026",
+    "takeaway": "Key Anesthesia Concept: The most common cause of delayed emergence is residual anesthetics. These can be sedatives, analgesics, muscle relaxants..."
+  },
+  {
+    "id": 20023,
+    "specialty": "Anesthesia",
+    "topic": "Anesthesia Review",
+    "question": "Emergence from inhalational anesthetics is primarily dependent on",
+    "options": {
+      "A": "Type of agent used",
+      "B": "Cardiac output",
+      "C": "Ventilation",
+      "D": "Adjunct anesthetic drugs"
+    },
+    "answer": "C",
+    "explanation": {
+      "correct": "Once the administration of volatile agent is stopped at the end of the surgery, the washout or elimination occurs primarily through the lungs. Hence, adequate ventilation is the main route of elimination of volatile inhalational agents. Hypoventilation due to any cause will decrease the washout of volatile anesthetics and delay emergence from anesthesia.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Lippincott's Anesthesia Review 2026",
+    "takeaway": "Key Anesthesia Concept: Once the administration of volatile agent is stopped at the end of the surgery, the washout or elimination occurs primar..."
+  },
+  {
+    "id": 20024,
+    "specialty": "Anesthesia",
+    "topic": "Anesthesia Review",
+    "question": "Emergence from intravenous anesthetics is primarily dependent on",
+    "options": {
+      "A": "Redistribution",
+      "B": "Elimination half-life",
+      "C": "Type of agent used",
+      "D": "Hepatic or renal disease"
+    },
+    "answer": "A",
+    "explanation": {
+      "correct": "Emergence from intravenous anesthetics depends primarily on redistribution from the brain. However, as the intravenous drugs accumulate, due to repeated administration or infusion, emergence becomes dependent on metabolism and elimination half-life. Presence of hepatic or renal disease, and the pharmacokinetics of the agents, also affects emergence from anesthesia.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Lippincott's Anesthesia Review 2026",
+    "takeaway": "Key Anesthesia Concept: Emergence from intravenous anesthetics depends primarily on redistribution from the brain. However, as the intravenous d..."
+  },
+  {
+    "id": 20025,
+    "specialty": "Anesthesia",
+    "topic": "Anesthesia Review",
+    "question": "A 35-year-old patient is brought to the postanesthesia care unit (PACU) after undergoing an appendectomy. His anesthetics included propofol 140 mg, isoflurane 2.0 MAC, vecuronium 6 mg, and morphine 6 mg. In the PACU, the patient is shivering. The most likely cause of his shivering is",
+    "options": {
+      "A": "Use of isoflurane",
+      "B": "Presence of infection and dehydration",
+      "C": "Use of unwarmed fluids",
+      "D": "Use of morphine"
+    },
+    "answer": "A",
+    "explanation": {
+      "correct": "Volatile inhalational agents cause peripheral vasodilation and cause redistribution of heat from the body core to the peripheral compartment. Using isoflurane in such a high concentration (2 MAC) is the most likely cause of shivering in the PACU in this patient. Other causes that can cause shivering are cold ambient operating room temperature, using unwarmed intravenous fluids, and an open large wound (exploratory laparotomy). Shivering tries to raise the body\u2019s temperature by causing intense vasoconstriction. In addition, shivering can increase the oxygen demand tremendously, which can be of issue in patients with coronary artery disease. Shivering can be treated with meperidine (12.5\u201325 mg IV). Hypothermia should be treated by raising the room temperature or by using a forced-air-warming device.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Lippincott's Anesthesia Review 2026",
+    "takeaway": "Key Anesthesia Concept: Volatile inhalational agents cause peripheral vasodilation and cause redistribution of heat from the body core to the pe..."
+  },
+  {
+    "id": 20026,
+    "specialty": "Anesthesia",
+    "topic": "Anesthesia Review",
+    "question": "Best method to prevent shivering is A. Use warmed fluids",
+    "options": {
+      "B": "Warming lights",
+      "C": "Meperidine",
+      "D": "Forced-air-warming device"
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "One of the best methods to prevent hypothermia and shivering is using a forced-air-warming device intraoperatively or in the postanesthesia care unit. Meperidine is commonly used to treat shivering, 12.5 to 25 mg IV. Warming lights, raising the room temperature, and using warm intravenous fluids are other methods to prevent or treat",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Lippincott's Anesthesia Review 2026",
+    "takeaway": "Key Anesthesia Concept: One of the best methods to prevent hypothermia and shivering is using a forced-air-warming device intraoperatively or in..."
+  },
+  {
+    "id": 20027,
+    "specialty": "Anesthesia",
+    "topic": "Anesthesia Review",
+    "question": "A 56-year-old patient, with a tracheostomy, is undergoing a radical neck dissection under general anesthesia. The induction is uneventful and you proceed to replace the tracheostomy tube with an endotracheal tube for the procedure. The patient\u2019s peak airway inspiratory pressures increase suddenly. The most likely diagnosis is",
+    "options": {
+      "A": "Bronchospasm",
+      "B": "Pneumothorax",
+      "C": "Malposition of the endotracheal tube (ETT)",
+      "D": "Patient attempting to breath"
+    },
+    "answer": "C",
+    "explanation": {
+      "correct": "Patients undergoing radical neck dissection for laryngeal cancer often have a tracheostomy tube. After induction, the tracheostomy tube is commonly replaced with an ETT, which is sutured into place by the surgeon. The ETT should be placed carefully, and adequacy of ventilation should be checked by ausculating breath sounds and the presence of end-tidal CO2. A malposition of the ETT, including placement in a false passage will lead to high peak inspiratory pressures. Other causes listed can also lead to high inspiratory pressures.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Lippincott's Anesthesia Review 2026",
+    "takeaway": "Key Anesthesia Concept: Patients undergoing radical neck dissection for laryngeal cancer often have a tracheostomy tube. After induction, the tr..."
+  },
+  {
+    "id": 20028,
+    "specialty": "Anesthesia",
+    "topic": "Anesthesia Review",
+    "question": "Laryngospasm (LS) is due to stimulation of the",
+    "options": {
+      "A": "Superior laryngeal nerve",
+      "B": "Internal laryngeal nerve",
+      "C": "Recurrent laryngeal nerve",
+      "D": "External laryngeal nerve"
+    },
+    "answer": "A",
+    "explanation": {
+      "correct": "LS is a forceful involuntary spasm of laryngeal muscles. It is due to stimulation of the superior laryngeal nerve. LS occurs commonly due to intense stimulation during light anesthesia (during extubation). Also, the presence of oral secretions can lead to LS. Treatment of LS is done by providing positive-pressure breaths (bag and mask) with 100% oxygen. This usually breaks the LS. However, if LS persists, succinylcholine is administered in a small dose (0.25 mg/kg) to relax the laryngeal muscles.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Lippincott's Anesthesia Review 2026",
+    "takeaway": "Key Anesthesia Concept: LS is a forceful involuntary spasm of laryngeal muscles. It is due to stimulation of the superior laryngeal nerve. LS oc..."
+  },
+  {
+    "id": 20029,
+    "specialty": "Anesthesia",
+    "topic": "Anesthesia Review",
+    "question": "Which of the following statements regarding emergence excitement is most correct?",
+    "options": {
+      "A": "It is most common in children aged 6 to 8 years",
+      "B": "Less than 5% of children experience emergence excitement",
+      "C": "It is associated with long-term cognitive sequelae",
+      "D": "Preoperative midazolam administration is associated with an increased incidence"
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "Emergence excitement is a transient confusional state that is associated with emergence from general anesthesia. It is common in children, with more than 30% experiencing agitation or delirium at some period during their postanesthesia care unit stay. The peak age of emergence excitement in children is between 2 and 4 years. Unlike delirium, emergence excitement typically resolves quickly and without long-term cognitive sequelae. Preoperative midazolam administration has been associated with an increase in the incidence and duration of emergence delirium in children.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Lippincott's Anesthesia Review 2026",
+    "takeaway": "Key Anesthesia Concept: Emergence excitement is a transient confusional state that is associated with emergence from general anesthesia. It is c..."
+  },
+  {
+    "id": 20030,
+    "specialty": "Anesthesia",
+    "topic": "Anesthesia Review",
+    "question": "Oliguria is defined as urine output less than",
+    "options": {
+      "A": "0.2 mL/kg/hr",
+      "B": "0.5 mL/kg/hr",
+      "C": "0.7 mL/kg/hr",
+      "D": "1.0 mL/kg/hr"
+    },
+    "answer": "B",
+    "explanation": {
+      "correct": "Postoperative oliguria can result from prerenal, renal, and postrenal causes. Frequently, the cause is multifactorial, with a preexisting renal insufficiency that is exacerbated by an intraoperative insult. Oliguria is defined as urine output less than 0.5 mL/kg/hr.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Lippincott's Anesthesia Review 2026",
+    "takeaway": "Key Anesthesia Concept: Postoperative oliguria can result from prerenal, renal, and postrenal causes. Frequently, the cause is multifactorial, w..."
+  },
+  {
+    "id": 20031,
+    "specialty": "Anesthesia",
+    "topic": "Anesthesia Review",
+    "question": "Postoperative urinary retention (POUR) is the inability to void despite a bladder volume of",
+    "options": {
+      "A": "100 to 200 mL",
+      "B": "300 to 400 mL",
+      "C": "500 to 600 mL",
+      "D": "700 to 800 mL"
+    },
+    "answer": "C",
+    "explanation": {
+      "correct": "POUR is defined as the inability to void despite a bladder volume of more than 500 to 600 mL. Risk factors include male gender, age older than 50 years, intraoperative fluid volume, duration of surgery, and bladder volume on admission. Certain types of surgery are also associated with a higher risk of POUR, including anorectal and joint replacement surgery. Commonly used perioperative medications such as anticholinergics, \u03b2-blockers, and narcotics can also contribute to POUR. Diagnosis can be made by clinical examination, bladder catheterization, or ultrasound assessment. Bladder volumes measured by ultrasound imaging correlate well with volumes obtained by urinary catheterization.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Lippincott's Anesthesia Review 2026",
+    "takeaway": "Key Anesthesia Concept: POUR is defined as the inability to void despite a bladder volume of more than 500 to 600 mL. Risk factors include male ..."
+  },
+  {
+    "id": 20032,
+    "specialty": "Anesthesia",
+    "topic": "Anesthesia Review",
+    "question": "The most common cause of oliguria in the immediate postoperative period is",
+    "options": {
+      "A": "Low cardiac output",
+      "B": "Acute tubular necrosis",
+      "C": "Renal vascular obstruction",
+      "D": "Hypovolemia"
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "The most common cause of oliguria in the immediate postoperative period is hypovolemia. A fluid challenge is usually effective in restoring urine output. Volume resuscitation to maximize renal perfusion is particularly important in order to prevent the development of acute kidney injury. If an intravascular fluid challenge is contraindicated or oliguria persists, assessment of intravascular volume or cardiac function is indicated to differentiate hypovolemia from low cardiac output states.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Lippincott's Anesthesia Review 2026",
+    "takeaway": "Key Anesthesia Concept: The most common cause of oliguria in the immediate postoperative period is hypovolemia. A fluid challenge is usually eff..."
+  },
+  {
+    "id": 20033,
+    "specialty": "Anesthesia",
+    "topic": "Anesthesia Review",
+    "question": "An intra-abdominal pressure higher than which of the following is required to impede renal perfusion?",
+    "options": {
+      "A": "10 cm H2O",
+      "B": "15 cm H2O",
+      "C": "20 cm H2O",
+      "D": "30 cm H2O"
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "An intra-abdominal pressure higher than 30 cm H2O can impede renal perfusion, leading to renal ischemia and postoperative renal dysfunction. Bladder pressure should be measured in patients in whom intra-abdominal hypertension is suspected so that abdominal decompression can be performed to relieve intra-abdominal",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Lippincott's Anesthesia Review 2026",
+    "takeaway": "Key Anesthesia Concept: An intra-abdominal pressure higher than 30 cm H2O can impede renal perfusion, leading to renal ischemia and postoperativ..."
+  },
+  {
+    "id": 20034,
+    "specialty": "Anesthesia",
+    "topic": "Anesthesia Review",
+    "question": "A 42-year-old morbidly obese male undergoes a laparoscopic gastric bypass. The surgical procedure lasts 8 hours. Estimated blood loss is 200 mL, and he receives 4.5 L of crystalloid. In the postanesthesia care unit, his urine output is 5 to 10 mL/hr despite an additional 1 L of crystalloid. The most likely etiology of his oliguria is",
+    "options": {
+      "A": "Contrast-induced nephropathy",
+      "B": "Rhabdomyolysis",
+      "C": "Hypovolemia",
+      "D": "Surgical injury of ureters"
+    },
+    "answer": "B",
+    "explanation": {
+      "correct": "Rhabdomyolysis is a recognized cause of postoperative renal insufficiency in morbidly obese patients, particularly those who have undergone gastric bypass procedures. Risk factors include the body mass index and duration of surgery. Volume loading, diuretics, and alkalinization of urine to flush the renal tubules can prevent ongoing renal tubular damage and subsequent acute renal failure.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Lippincott's Anesthesia Review 2026",
+    "takeaway": "Key Anesthesia Concept: Rhabdomyolysis is a recognized cause of postoperative renal insufficiency in morbidly obese patients, particularly those..."
+  },
+  {
+    "id": 20035,
+    "specialty": "Anesthesia",
+    "topic": "Anesthesia Review",
+    "question": "All of the following are consequences of moderate hypothermia (33\u201335\u00b0C), except",
+    "options": {
+      "A": "Inhibition of platelet function",
+      "B": "Prolongation of neuromuscular blockade",
+      "C": "Inhibition of drug metabolism",
+      "D": "Increases coagulation-factor activity"
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "Mild to moderate hypothermia (33\u201335\u00b0C) is a recognized cause of a number of postoperative complications, including inhibition of platelet function, reduced coagulation-factor activity, and decreased drug metabolism. In addition, it exacerbates postoperative bleeding, prolongs neuromuscular blockade, and may delay awakening.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Lippincott's Anesthesia Review 2026",
+    "takeaway": "Key Anesthesia Concept: Mild to moderate hypothermia (33\u201335\u00b0C) is a recognized cause of a number of postoperative complications, including inhib..."
+  },
+  {
+    "id": 20036,
+    "specialty": "Anesthesia",
+    "topic": "Anesthesia Review",
+    "question": "The most accurate measurement of core body temperature is obtained via",
+    "options": {
+      "A": "Axillary",
+      "B": "Tympanic membrane",
+      "C": "Rectal",
+      "D": "Nasopharyngeal"
+    },
+    "answer": "B",
+    "explanation": {
+      "correct": "Core body temperature can most accurately be measured at the tympanic membrane. Axillary, rectal, and nasopharyngeal temperature measurements are less accurate and may underestimate core temperature.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Lippincott's Anesthesia Review 2026",
+    "takeaway": "Key Anesthesia Concept: Core body temperature can most accurately be measured at the tympanic membrane. Axillary, rectal, and nasopharyngeal tem..."
+  },
+  {
+    "id": 20037,
+    "specialty": "Anesthesia",
+    "topic": "Anesthesia Review",
+    "question": "The most effective treatment for abolishing postoperative shivering is",
+    "options": {
+      "A": "Clonidine",
+      "B": "Doxapram",
+      "C": "Meperidine",
+      "D": "Fentanyl"
+    },
+    "answer": "C",
+    "explanation": {
+      "correct": "A number of opioids and clonidine are effective in stopping shivering once it starts, but meperidine is the most effective treatment. Doxapram, a central nervous system stimulant, is somewhat effective in abolishing postoperative shivering.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Lippincott's Anesthesia Review 2026",
+    "takeaway": "Key Anesthesia Concept: A number of opioids and clonidine are effective in stopping shivering once it starts, but meperidine is the most effecti..."
+  },
+  {
+    "id": 20038,
+    "specialty": "Anesthesia",
+    "topic": "Anesthesia Review",
+    "question": "A 22-year-old nonsmoking woman with no previous anesthetic history undergoes a laparoscopic ovarian cystectomy. Her risk of postoperative nausea and vomiting (PONV) is most closely approximated by",
+    "options": {
+      "A": "5%",
+      "B": "10%",
+      "C": "20%",
+      "D": "40%"
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "A simple risk score consisting of four factors can be used to identify high-risk patients for PONV. The four risk factors are (1) female gender, (2) history of motion sickness or PONV, (3) nonsmoking, and (4) the use of postoperative opioids. The incidence of PONV correlates with the number of these factors present: zero, one, two, three, or four factors correspond to an incidence of 10%, 21%, 39%, 61%, and 79%, respectively. The patient in the vignette has two risk factors (female, nonsmoker), so her approximate risk of PONV is 40%.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Lippincott's Anesthesia Review 2026",
+    "takeaway": "Key Anesthesia Concept: A simple risk score consisting of four factors can be used to identify high-risk patients for PONV. The four risk factor..."
+  },
+  {
+    "id": 20039,
+    "specialty": "Anesthesia",
+    "topic": "Anesthesia Review",
+    "question": "A 30-year-old woman who underwent a knee arthroscopy has postoperative nausea and vomiting (PONV) in the postanesthesia care unit (PACU). Per report, she received ondansetron 4 mg IV 30 minutes prior to the conclusion of her procedure. Which of the following treatments is most appropriate for managing her PONV in the PACU?",
+    "options": {
+      "A": "Scopolamine patch",
+      "B": "Dexamethasone",
+      "C": "Ondansetron",
+      "D": "Promethazine"
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "When choosing a rescue antiemetic for patients with PONV, both the class of drug and the timing of administration are factors. If an adequate dose of antiemetic given at the appropriate time proves ineffective, simply giving more of the same class of drug in the PACU is unlikely to be of significant benefit. If no prophylactic drug was given, the recommended treatment is a low-dose 5-HT3 antagonist, ondansetron. Of the choices provided in the vignette, promethazine is likely to be the most effective rescue antiemetic. Since the patient received ondansetron for prophylaxis, additional ondansetron is unlikely to be effective. A scopolamine patch",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Lippincott's Anesthesia Review 2026",
+    "takeaway": "Key Anesthesia Concept: When choosing a rescue antiemetic for patients with PONV, both the class of drug and the timing of administration are fa..."
+  },
+  {
+    "id": 20040,
+    "specialty": "Anesthesia",
+    "topic": "Anesthesia Review",
+    "question": "Which of the following is the most frequent cause of delayed awakening in the postanesthesia care unit (PACU)?",
+    "options": {
+      "A": "Hypothermia",
+      "B": "Hypoglycemia",
+      "C": "Residual effects of sedatives",
+      "D": "Hypercarbia"
+    },
+    "answer": "C",
+    "explanation": {
+      "correct": "Even after prolonged surgery and anesthesia, a response to stimulation in 60 to 90 minutes should be expected. The etiology of delayed awakening after anesthesia can be divided into the general categories of pharmacologic, metabolic, and neurologic causes. Of these, residual sedation from drugs used during anesthesia is the most frequent cause of delayed awakening in the PACU.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Lippincott's Anesthesia Review 2026",
+    "takeaway": "Key Anesthesia Concept: Even after prolonged surgery and anesthesia, a response to stimulation in 60 to 90 minutes should be expected. The etiol..."
+  },
+  {
+    "id": 20041,
+    "specialty": "Anesthesia",
+    "topic": "Anesthesia Review",
+    "question": "Which of the following general principles regarding discharge from the postanesthesia care unit (PACU) is correct?",
+    "options": {
+      "A": "A mandatory minimum stay in the PACU is not required",
+      "B": "Patients should not be discharged until they are pain-free",
+      "C": "Patients need to void prior to PACU discharge",
+      "D": "Patients need to demonstrate the ability to drink and retain clear fluids prior to PACU discharge"
+    },
+    "answer": "A",
+    "explanation": {
+      "correct": "Specific PACU discharge criteria may vary, but certain general principles are universally applicable. These principles include mandatory minimum stay in the PACU is not required, patients must be observed until they are no longer at risk for respiratory depression, and their mental status is clear or has returned to baseline; hemodynamic criteria are based on the patient\u2019s baseline hemodynamics without specific systemic blood pressure and heart rate requirements. To facilitate PACU discharge, discharge scoring systems have been developed and modified over time to reflect current anesthesia practice.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Lippincott's Anesthesia Review 2026",
+    "takeaway": "Key Anesthesia Concept: Specific PACU discharge criteria may vary, but certain general principles are universally applicable. These principles i..."
+  },
+  {
+    "id": 20042,
+    "specialty": "Anesthesia",
+    "topic": "Anesthesia Review",
+    "question": "According to the ASA Standards for Postanesthesia Care, which of the following statements is correct?",
+    "options": {
+      "A": "A patient is to be transported to the postanesthesia care unit (PACU) by at least one physician",
+      "B": "A patient must be monitored by continuous pulse oximetry during transport to the PACU",
+      "C": "A patient who solely received regional anesthesia may routinely bypass the PACU",
+      "D": "A patient must be discharged from the PACU by a physician"
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "The Standards for Postanesthesia Care are intended to ensure the quality of postanesthetic patient care. They include the following:",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Lippincott's Anesthesia Review 2026",
+    "takeaway": "Key Anesthesia Concept: The Standards for Postanesthesia Care are intended to ensure the quality of postanesthetic patient care. They include th..."
+  },
+  {
+    "id": 20043,
+    "specialty": "Anesthesia",
+    "topic": "Anesthesia Review",
+    "question": "An otherwise-healthy adult male breathing room air receives a large dose of opioid that depresses his ventilation to the point that his alveolar PaCO2 is 80 mm Hg. What is his predicted alveolar PaO2?",
+    "options": {
+      "A": "40 mm Hg",
+      "B": "50 mm Hg",
+      "C": "70 mm Hg",
+      "D": "90 mm Hg"
+    },
+    "answer": "B",
+    "explanation": {
+      "correct": "At sea level, a normocapnic patient breathing room air will have an alveolar oxygen pressure of 100 mm Hg. Review of the alveolar gas equation demonstrates",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Lippincott's Anesthesia Review 2026",
+    "takeaway": "Key Anesthesia Concept: At sea level, a normocapnic patient breathing room air will have an alveolar oxygen pressure of 100 mm Hg. Review of the..."
+  },
+  {
+    "id": 20044,
+    "specialty": "Anesthesia",
+    "topic": "Anesthesia Review",
+    "question": "If the patient described in the previous question is administered 2 L of oxygen by nasal cannula, then his alveolar PaO2 increases to what amount?",
+    "options": {
+      "A": "60 mm Hg",
+      "B": "80 mm Hg",
+      "C": "100 mm Hg",
+      "D": "120 mm Hg"
+    },
+    "answer": "C",
+    "explanation": {
+      "correct": "In the setting of isolated hypoventilation, modest increases in inspired oxygen are remarkably effective at restoring alveolar oxygenation. For this patient, if 2 L of supplemental oxygen is administered by nasal cannula, then the FIO2 increases to approximately 28% and the calculated alveolar PaO2 is 100 mm Hg.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Lippincott's Anesthesia Review 2026",
+    "takeaway": "Key Anesthesia Concept: In the setting of isolated hypoventilation, modest increases in inspired oxygen are remarkably effective at restoring al..."
+  },
+  {
+    "id": 20045,
+    "specialty": "Anesthesia",
+    "topic": "Anesthesia Review",
+    "question": "A 42-year-old woman complains of pain and inability to dorsiflex the first toe. The nerve most likely to be involved is the",
+    "options": {
+      "A": "Sciatic",
+      "B": "Femoral",
+      "C": "Tibial",
+      "D": "Peroneal"
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "An assessment and written documentation of the patient\u2019s peripheral nerve function on discharge from the postanesthesia care unit may become useful information should a new peripheral neuropathy develop in the later postoperative period. The peroneal nerve provides the motor innervation for dorsiflexion of the first toe, while the tibial nerve allows plantar flexion of the first toe.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Lippincott's Anesthesia Review 2026",
+    "takeaway": "Key Anesthesia Concept: An assessment and written documentation of the patient\u2019s peripheral nerve function on discharge from the postanesthesia ..."
+  },
+  {
+    "id": 20046,
+    "specialty": "Anesthesia",
+    "topic": "Anesthesia Review",
+    "question": "Which of the following clinical criteria is associated with transfusion-related acute lung injury (TRALI) as compared to transfusion-associated circulatory overload (TACO)?",
+    "options": {
+      "A": "Pulmonary edema",
+      "B": "Hypoxemia",
+      "C": "Leukopenia",
+      "D": "Leukocytosis"
+    },
+    "answer": "C",
+    "explanation": {
+      "correct": "TRALI can occur up to 6 hours after transfusion of blood, coagulation factor, or platelet transfusions. Therefore, it should be included in the differential diagnosis of pulmonary edema in the postanesthesia care unit, among patients who received intraoperative transfusions. The resulting noncardiogenic pulmonary edema is often associated with fever, systemic hypotension, and the presence of exudative pulmonary fluid. If a complete blood count is obtained with the onset of symptoms, an acute decrease in the white blood cell count (leukopenia) reflecting the sequestration of granulocytes is seen within the lung. Initially, it may be difficult distinguishing TRALI from TACO caused by volume overload resulting from the blood products transfused. In either case, treatment is supportive and includes supplemental oxygen, dieresis, and mechanical ventilation, if needed.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Lippincott's Anesthesia Review 2026",
+    "takeaway": "Key Anesthesia Concept: TRALI can occur up to 6 hours after transfusion of blood, coagulation factor, or platelet transfusions. Therefore, it sh..."
+  },
+  {
+    "id": 20047,
+    "specialty": "Anesthesia",
+    "topic": "Anesthesia Review",
+    "question": "Which of the following statements regarding postoperative shivering is most correct?",
+    "options": {
+      "A": "Occurs with general anesthesia but not epidural anesthesia",
+      "B": "Is always associated with a decrease in body temperature",
+      "C": "In normothermic patients is related to a hypothalamic depressant effects of",
+      "D": "In normothermic patients results from uninhibited spinal reflexes"
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "Postoperative shivering commonly occurs after both general and neuraxial anesthesia and is usually, but not always, associated with a decrease in the patient\u2019s body temperature. Although thermoregulatory mechanisms can explain shivering in a",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Lippincott's Anesthesia Review 2026",
+    "takeaway": "Key Anesthesia Concept: Postoperative shivering commonly occurs after both general and neuraxial anesthesia and is usually, but not always, asso..."
+  },
+  {
+    "id": 20048,
+    "specialty": "Anesthesia",
+    "topic": "Anesthesia Review",
+    "question": "A 49-year-old woman with nephrolithiasis develops tachycardia, low-grade fever, and hypotension after a ureteral stent placement. Urine output is 5 to 10 mL/hr. All of the following can be used to treat the patient, except",
+    "options": {
+      "A": "Antibiotics",
+      "B": "Fluids",
+      "C": "Diuretics",
+      "D": "Vasopressors"
+    },
+    "answer": "C",
+    "explanation": {
+      "correct": "Urinary tract manipulation can result in sepsis in the postanesthesia care unit. In these cases, hypotension is often accompanied by fever and rigor. If sepsis is suspected, fluid resuscitation and vasopressor support should be initiated, blood should be obtained for culture, and antibiotic therapy should be administered. The patient\u2019s low urine output should be improved with hemodynamic support. Diuretics are not indicated for a hypovolemic patient with sepsis.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Lippincott's Anesthesia Review 2026",
+    "takeaway": "Key Anesthesia Concept: Urinary tract manipulation can result in sepsis in the postanesthesia care unit. In these cases, hypotension is often ac..."
+  },
+  {
+    "id": 20049,
+    "specialty": "Anesthesia",
+    "topic": "Anesthesia Review",
+    "question": "All of the following are advantages of high-flow nasal cannula delivery systems, except",
+    "options": {
+      "A": "Humidification of the gas",
+      "B": "Gas delivery up to 6 L/min",
+      "C": "Deliver of gas throughout the respiratory cycle",
+      "D": "Ability to deliver warm gas (37\u00b0C)"
+    },
+    "answer": "B",
+    "explanation": {
+      "correct": "Delivery of oxygen by traditional nasal cannula is limited to 6 L/min flow to minimize discomfort and complications that result from inadequate humidification. Alternatively, oxygen can be delivered up to 40 L/min by high-flow nasal cannula systems, which humidify and warm the gas to 99.9% relative humidity and 37\u00b0C. Unlike non-rebreather masks, these devices deliver oxygen directly to the nasopharynx throughout the respiratory cycle.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Lippincott's Anesthesia Review 2026",
+    "takeaway": "Key Anesthesia Concept: Delivery of oxygen by traditional nasal cannula is limited to 6 L/min flow to minimize discomfort and complications that..."
+  },
+  {
+    "id": 20050,
+    "specialty": "Anesthesia",
+    "topic": "Anesthesia Review",
+    "question": "Which of the following procedures is most likely to be associated with postoperative hypertension?",
+    "options": {
+      "A": "Craniotomy",
+      "B": "Colectomy",
+      "C": "Gastric bypass",
+      "D": "Hip arthroplasty"
+    },
+    "answer": "A",
+    "explanation": {
+      "correct": "A number of patient, procedural, and postoperative factors can contribute to the development of postoperative hypertension. Patients with a history of essential hypertension are at greatest risk for significant systemic hypertension in the postanesthesia care unit. Advanced age, history of cigarette smoking, and preexisting renal disease are other patient-related risk factors for postoperative hypertension. Surgical procedures that predispose the patient to postoperative hypertension include craniotomy and carotid endarterectomy. Other common postoperative causes of hypertension include pain, hypoxemia, hypoventilation and associated hypercapnia, emergence excitement, shivering, bladder distension, drug withdrawal, and hypervolemia.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Lippincott's Anesthesia Review 2026",
+    "takeaway": "Key Anesthesia Concept: A number of patient, procedural, and postoperative factors can contribute to the development of postoperative hypertensi..."
+  },
+  {
+    "id": 20051,
+    "specialty": "Anesthesia",
+    "topic": "Anesthesia Review",
+    "question": "True statement regarding neuraxial opioids for labor and delivery is",
+    "options": {
+      "A": "Opioids should never be used as a sole agent",
+      "B": "Most common side effect is fetal bradycardia",
+      "C": "Intrathecal morphine is associated with quick peak in concentration and early onset maternal respiratory depression",
+      "D": "Systemic absorption is similar to intramuscular (IM) administration"
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "Opioids can be added to local anesthetics or alternatively can be used as a sole agent (epidural or intrathecal) to provide peripartum analgesia. Side effects of neuraxial opioids include pruritus, nausea/vomiting, hypotension, urinary retention, fetal bradycardia, and maternal respiratory depression. Among these, pruritus occurs most commonly. The epidural space contains an extensive vascular plexus with extensive systemic absorption such that absorption of epidural morphine, fentanyl, or sufentanil produces opioid serum concentrations that are similar to an equivalent dose of IM injection.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Lippincott's Anesthesia Review 2026",
+    "takeaway": "Key Anesthesia Concept: Opioids can be added to local anesthetics or alternatively can be used as a sole agent (epidural or intrathecal) to prov..."
+  },
+  {
+    "id": 20052,
+    "specialty": "Anesthesia",
+    "topic": "Anesthesia Review",
+    "question": "All of the following drugs readily cross the placenta, except",
+    "options": {
+      "A": "\u03b2-Agonist antagonists",
+      "B": "Local anesthetics",
+      "C": "Insulin",
+      "D": "Morphine"
+    },
+    "answer": "C",
+    "explanation": {
+      "correct": "Glycopyrrolate, insulin, heparin, and neuromuscular blockers are unable to cross the placenta, whereas opioids, local anesthetics, atropine, ephedrine, and \u03b2-blockers readily cross the placenta to enter the neonatal circulation.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Lippincott's Anesthesia Review 2026",
+    "takeaway": "Key Anesthesia Concept: Glycopyrrolate, insulin, heparin, and neuromuscular blockers are unable to cross the placenta, whereas opioids, local an..."
+  },
+  {
+    "id": 20053,
+    "specialty": "Anesthesia",
+    "topic": "Anesthesia Review",
+    "question": "Following a 0.6 mg/kg intravenous dose of rocuronium to facilitate rapid-sequence induction in a parturient requiring surgical delivery, one would expect",
+    "options": {
+      "A": "Minimal placental transfer of rocuronium to the newborn",
+      "B": "Shorter duration of relaxation with concurrent magnesium administration",
+      "C": "Unsuitable intubating conditions as recommended doses are 1.5 mg/kg",
+      "D": "Use of rocuronium has been shown to affect Apgar scores and fetal muscle tone at birth and should be strictly avoided"
+    },
+    "answer": "A",
+    "explanation": {
+      "correct": "Reversal of neuromuscular blockade may be unsatisfactory in patients receiving",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Lippincott's Anesthesia Review 2026",
+    "takeaway": "Key Anesthesia Concept: Reversal of neuromuscular blockade may be unsatisfactory in patients receiving"
+  },
+  {
+    "id": 20054,
+    "specialty": "Anesthesia",
+    "topic": "Anesthesia Review",
+    "question": "During cesarean section under general endotracheal anesthesia, venous air embolism (VAE)",
+    "options": {
+      "A": "Is associated with high end-tidal CO2",
+      "B": "Should be treated with nitrous oxide",
+      "C": "Is associated with expired nitrogen",
+      "D": "Induces severe hypertension"
+    },
+    "answer": "C",
+    "explanation": {
+      "correct": "VAE has a very high incidence during cesarean sections secondary to entrainment of room air from ruptured or severed veins. The sudden development of hypotension, hypoxia, and a drop in end-tidal CO2 suggests the presence of a VAE. Supportive therapy includes flooding the surgical field with normal saline and placing the patient in Trendelenburg position with a left-lateral tilt. Medical gases such as carbon dioxide, nitrous oxide, and helium will aggravate this condition by expanding the pulmonary vascular bubbles that can create an air lock with mechanical flow obstruction. If central venous catheter or pulmonary artery catheter is in place, the trapped air may be aspirated. Expired nitrogen is the most sensitive VAE-detection method, as the largest component of air is nitrogen.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Lippincott's Anesthesia Review 2026",
+    "takeaway": "Key Anesthesia Concept: VAE has a very high incidence during cesarean sections secondary to entrainment of room air from ruptured or severed vei..."
+  },
+  {
+    "id": 20055,
+    "specialty": "Anesthesia",
+    "topic": "Anesthesia Review",
+    "question": "The appropriate next step considering persistent fetal bradycardia (&lt;80 bpm) is",
+    "options": {
+      "A": "Administer 1 mg/kg of rocuronium intravenously",
+      "B": "Use bag-mask ventilation and allow surgical delivery to proceed",
+      "C": "Wake the patient up for awake fiberoptic intubation",
+      "D": "Reposition the patient in Trendelenburg with left-uterine displacement"
+    },
+    "answer": "B",
+    "explanation": {
+      "correct": "General anesthesia is used most commonly in emergency surgical deliveries for fetal distress. Endotracheal intubation following rapid-sequence induction remains the principal approach. Pregnancy-related features (obesity, enlarging breasts, short neck) make intubation challenging such that inability to intubate the trachea is a major cause of morbidity and mortality. Current opinion is that after two failed attempts at direct laryngoscopy, one should proceed with surgery as repeated trauma and edema may prevent ability to ventilate as well. Severe fetal distress requires emergent delivery as opposed to preparing for an awake fiberoptic intubation.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Lippincott's Anesthesia Review 2026",
+    "takeaway": "Key Anesthesia Concept: General anesthesia is used most commonly in emergency surgical deliveries for fetal distress. Endotracheal intubation fo..."
+  },
+  {
+    "id": 20056,
+    "specialty": "Anesthesia",
+    "topic": "Anesthesia Review",
+    "question": "The fetus is quickly delivered (skin-to-skin time of 18 minutes). However, 10 minutes after delivery, her uterus is noted to be boggy and bleeding persists. The appropriate treatment option is",
+    "options": {
+      "A": "Bolus oxytocin (Pitocin) 20 U intravenously",
+      "B": "Bolus methylergonovine (Methergine) 0.2 mg intravenously",
+      "C": "Misoprostol (Cytotec) 800 mg intramuscularly",
+      "D": "15-Methyl PGF2\u03b1 (Hemabate) 0.25 mg intramuscularly"
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "15-Methyl PGF2\u03b1 is a smooth-muscle constrictor with additional sites of action on bronchial smooth muscles, which may promote bronchospasm. Direct intravenous bolus injection of oxytocin (&gt;5 units) has been associated with maternal hypotension and death, thus should only be infused over time in a dilute solution (e.g., 40 units/L). Methylergonovine is a potent vasoconstrictor that can cause vasospasm and severe hypertension if given intravenously, such as usual administration intramuscularly. Misoprostol is a prostaglandin analog that can be given up to 1 mg rectally or sublingually, but is to be used with caution in patients under general anesthesia due to aspiration risk.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Lippincott's Anesthesia Review 2026",
+    "takeaway": "Key Anesthesia Concept: 15-Methyl PGF2\u03b1 is a smooth-muscle constrictor with additional sites of action on bronchial smooth muscles, which may pr..."
+  },
+  {
+    "id": 20057,
+    "specialty": "Anesthesia",
+    "topic": "Anesthesia Review",
+    "question": "Two hours later, the patient remains apneic and intubated in the intensive care unit. She is sedated and mechanically ventilated (TV = 450, RR = 12, FIO2 = 0.4) with the arterial blood gas revealing a pH of 7.45, PaO2 of 100 mm Hg, and PaCO2 of 37 mm Hg with a base excess of zero. Her examination reveals absent deep-tendon reflexes throughout. ECG reveals intermittent ventricular bigeminy. This situation could be explained by",
+    "options": {
+      "A": "Hypermagnesemia",
+      "B": "Severe hypovolemic shock",
+      "C": "Hypocalcemia",
+      "D": "Pituitary necrosis"
+    },
+    "answer": "A",
+    "explanation": {
+      "correct": "Overdose of magnesium during the peripartum period can lead to arreflexia and cardiac conduction abnormalities, resulting in bradycardia and ectopy. Metabolic acidosis would be seen in cases of severe hypovolemic shock. Examination findings expected with hypocalcemia would include hyperreflexia, as opposed to arreflexia.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Lippincott's Anesthesia Review 2026",
+    "takeaway": "Key Anesthesia Concept: Overdose of magnesium during the peripartum period can lead to arreflexia and cardiac conduction abnormalities, resultin..."
+  },
+  {
+    "id": 20058,
+    "specialty": "Anesthesia",
+    "topic": "Anesthesia Review",
+    "question": "At 3 weeks\u2019 postpartum, the patient has absence of lactation and denies return of her menstrual cycle. Review of systems is positive for intolerance to cold, constipation, hair loss, and 2-pound weight gain. The best explanation for this constellation of symptoms is",
+    "options": {
+      "A": "Amenorrhea\u2013galactorrhea syndrome",
+      "B": "Sheehan syndrome",
+      "C": "Fibromyalgia",
+      "D": "Meigs syndrome"
+    },
+    "answer": "B",
+    "explanation": {
+      "correct": "During pregnancy, hypertrophy and hyperplasia of lactotrophs result in enlargement of the anterior pituitary, but without a corresponding increase in blood supply. As such, major hemorrhage or hypotension during labor and delivery can result in anterior pituitary ischemia and necrosis. Sheehan syndrome specifically is hypopituitarism caused by ischemic necrosis during the peripartum period.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Lippincott's Anesthesia Review 2026",
+    "takeaway": "Key Anesthesia Concept: During pregnancy, hypertrophy and hyperplasia of lactotrophs result in enlargement of the anterior pituitary, but withou..."
+  },
+  {
+    "id": 20077,
+    "specialty": "Anesthesia",
+    "topic": "Anesthesia Review",
+    "question": "During general anesthesia, which of the following agents is most appropriate to treat an acute episode of cyanosis in a child with tetralogy of Fallot?",
+    "options": {
+      "A": "Atropine",
+      "B": "Epinephrine",
+      "C": "Phenylephrine",
+      "D": "100% oxygen"
+    },
+    "answer": "C",
+    "explanation": {
+      "correct": "An acute of episode of cyanosis in a child with history of tetralogy of Fallot signifies more right-to-left shunt because of decreased systemic vascular resistance. Phenylephrine may be an appropriate agent for this situation, as it will increase the systemic vascular resistance through its action on \u03b11 receptors, thus decreasing the shunt. As more blood flows through the lungs before returning to the heart, more oxygen will be available to the peripheral tissues improving the cyanosis.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Lippincott's Anesthesia Review 2026",
+    "takeaway": "Key Anesthesia Concept: An acute of episode of cyanosis in a child with history of tetralogy of Fallot signifies more right-to-left shunt becaus..."
+  },
+  {
+    "id": 20078,
+    "specialty": "Anesthesia",
+    "topic": "Anesthesia Review",
+    "question": "Rebound hypertension is most likely after sudden discontinuation of which of the following classes of antihypertensive drugs?",
+    "options": {
+      "A": "Thiazide diuretics",
+      "B": "Calcium channel blockers",
+      "C": "\u03b1-Agonist",
+      "D": "Angiotensin-converting enzyme inhibitors"
+    },
+    "answer": "C",
+    "explanation": {
+      "correct": "Clonidine has been in clinical use for over two decades now. It is a very potent antihypertensive and is very useful to control high blood pressure in some patients with a very resistant kind of disease. Unfortunately, oral dose requires repeated doses, and omission of a dose, as will happen if a long surgical procedure was scheduled, may lead to severe rebound hypertension. Availability of transcutaneous patch has helped decrease this problem. A differential diagnosis in a patient with hypertension in the recovery room should always include possibility of rebound hypertension secondary to omission of a dose of an \u03b1 agonist like clonidine.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Lippincott's Anesthesia Review 2026",
+    "takeaway": "Key Anesthesia Concept: Clonidine has been in clinical use for over two decades now. It is a very potent antihypertensive and is very useful to ..."
+  },
+  {
+    "id": 20079,
+    "specialty": "Anesthesia",
+    "topic": "Anesthesia Review",
+    "question": "A 65-year-old man has nausea and vomiting in the post\u2013anesthesia care unit, needing antiemetic therapy. He develops involuntary facial movements, difficulty swallowing, and torticollis. Which of the following drugs is most likely to be the cause of these symptoms?",
+    "options": {
+      "A": "Promethazine (Phenergan)",
+      "B": "Diphenhydramine (Benadryl)",
+      "C": "Metoclopramide (Reglan)",
+      "D": "Granisetron (Kytril)"
+    },
+    "answer": "C",
+    "explanation": {
+      "correct": "Postoperative nausea and vomiting (PONV) is one of the most disliked side effects of anesthesia and surgery. Efforts to treat it sometimes lead to troublesome side effects which look alarming at the time of presentation but are easy to treat. Dystonic reactions, including tardive dyskinesia, torticollis (commonly called oculogyric crisis), dysphagia, and excessive salivation, are some of the manifestations of this pseudoparkinsonian syndrome. Butyrophenones, phenothiazines, gastrointestinal prokinetics, and lithium are some of the etiologic agents.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Lippincott's Anesthesia Review 2026",
+    "takeaway": "Key Anesthesia Concept: Postoperative nausea and vomiting (PONV) is one of the most disliked side effects of anesthesia and surgery. Efforts to ..."
+  },
+  {
+    "id": 20080,
+    "specialty": "Anesthesia",
+    "topic": "Anesthesia Review",
+    "question": "Which of the following statements about ketamine is true?",
+    "options": {
+      "A": "Tolerance may develop after repeated administration",
+      "B": "It is extensively bound to plasma protein",
+      "C": "Primary site of action is GABA receptor",
+      "D": "Kidney is the primary route of elimination"
+    },
+    "answer": "A",
+    "explanation": {
+      "correct": "Repeated administration of ketamine may necessitate increased dose to achieve the same effect. This phenomenon could partly be explained by the fact that chronic administration of ketamine stimulates the liver enzymes that metabolize it. It exerts its primary anesthetic and analgesic action through NMDA receptor, although it is found to interact with many other receptors in the central nervous system. Primary site of metabolism of ketamine is liver. It is not significantly bound to plasma proteins and thus is readily available for distribution into the tissues.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Lippincott's Anesthesia Review 2026",
+    "takeaway": "Key Anesthesia Concept: Repeated administration of ketamine may necessitate increased dose to achieve the same effect. This phenomenon could par..."
+  },
+  {
+    "id": 20081,
+    "specialty": "Anesthesia",
+    "topic": "Anesthesia Review",
+    "question": "Which of the following statements about etomidate is most likely true?",
+    "options": {
+      "A": "It causes significant dose-dependent respiratory depression",
+      "B": "It causes cerebral vasodilatation",
+      "C": "It increases frequency of excitatory spikes on the EEG more than thiopental",
+      "D": "Most of the administered dose is excreted unchanged by the kidney"
+    },
+    "answer": "C",
+    "explanation": {
+      "correct": "Etomidate cannot be used as an infusion because of its suppressive action on the adrenal gland; otherwise, it would be an ideal sedative agent for procedure that needs moderate sedation as it does not depress respiration even when used in induction doses. It is a potent cerebral vasoconstrictor and causes decrease in cerebral metabolism as well as cerebral blood flow. In comparison to thiopental it increases the excitatory spikes on the EEG and is a good agent for anesthesia for electroconvulsive therapy and mapping for seizure focus if EEG activity needs to be facilitated. An administered dose of etomidate is almost completely metabolized by the liver, and very little of the parent molecule is found in the urine.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Lippincott's Anesthesia Review 2026",
+    "takeaway": "Key Anesthesia Concept: Etomidate cannot be used as an infusion because of its suppressive action on the adrenal gland; otherwise, it would be a..."
+  },
+  {
+    "id": 20082,
+    "specialty": "Anesthesia",
+    "topic": "Anesthesia Review",
+    "question": "The MOST likely analgesic mechanism of action of gabapentin for neuropathic pain is",
+    "options": {
+      "A": "Antagonism at the GABA receptor",
+      "B": "NMDA receptor inhibition",
+      "C": "Sodium channel blockade",
+      "D": "Calcium channel modulation"
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "Gabapentin has become a first-line treatment for neuropathic pain. This action is not mediated through GABA receptors as would be expected from the name. Instead, it modulates voltage-gated calcium channels which get activated in an injured nerve.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Lippincott's Anesthesia Review 2026",
+    "takeaway": "Key Anesthesia Concept: Gabapentin has become a first-line treatment for neuropathic pain. This action is not mediated through GABA receptors as..."
+  },
+  {
+    "id": 20083,
+    "specialty": "Anesthesia",
+    "topic": "Anesthesia Review",
+    "question": "Which of the following properties of local anesthetics is most likely a primary determinant of potency?",
+    "options": {
+      "A": "Vasodilation",
+      "B": "pKa",
+      "C": "Protein-binding",
+      "D": "Lipid solubility"
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "Lipid solubility of a local anesthetic is most closely related to its potency, while pKa determines the onset of action. As a result, more lipid-soluble local anesthetics like tetracaine and bupivacaine are more potent (needing less dose) than less lipid-soluble local anesthetics like lidocaine. The pH at which the charged and uncharged forms of the drug exist in equal concentration is pKa. As it is the uncharged form that crosses the neuronal membrane, local anesthetics with a pKa farther from the physiologic pH have more of the drug in ionized (charged) form delaying their onset of action. This is not the only determinant of the onset of action, though chloroprocaine has a very short onset of action despite having a pKa of 8.7. Reason is that the quantity of the drug injected is so high with chloroprocaine that more of its molecules are available in its uncharged form despite the low percentage of the drug found in uncharged form. Protein-binding of the local anesthetic determines its duration of action as the receptors are proteins, and a drug with a higher affinity for protein will latch on to these receptors longer than a drug with less affinity for protein-binding. Intrinsic property of a drug to cause vasodilatation causes the drug to get absorbed in the systemic circulation, reducing its duration of action at the site of injection compared to a local anesthetic which causes vasoconstriction.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Lippincott's Anesthesia Review 2026",
+    "takeaway": "Key Anesthesia Concept: Lipid solubility of a local anesthetic is most closely related to its potency, while pKa determines the onset of action...."
+  },
+  {
+    "id": 20084,
+    "specialty": "Anesthesia",
+    "topic": "Anesthesia Review",
+    "question": "Which of the following statements about etomidate is most likely true?",
+    "options": {
+      "A": "It is water soluble at an acidic pH and lipid soluble at physiologic pH",
+      "B": "It may be used as an infusion for sedation in the ICU",
+      "C": "It is related to propofol in its chemical structure",
+      "D": "Awakening from induction dose is secondary to very rapid liver metabolism"
+    },
+    "answer": "A",
+    "explanation": {
+      "correct": "Etomidate is a carboxylated imidazole. It resembles midazolam in its pharmacokinetics, in that it is water soluble in acidic form and would be useless as an induction agent, except that it changes its characteristics in the body and becomes lipid soluble on exposure to physiologic pH. Unlike propofol, it is not useful for sedation of the patients in the ICU because of its action on adrenal glands. It inhibits 11-\u03b2-hydroxylase, thus causing inhibition of conversion of cholesterol to cortisol. Patients experiencing sepsis or hemorrhage, and who might require an intact cortisol response, would be at risk if etomidate is administered to them. Even a single dose may lead to a prolonged depressant effect (4\u20138 hours) on the adrenal gland. As propofol is a substituted isopropyl phenol, it is very dissimilar in its chemical structure to etomidate. Like other induction agents, awakening from an induction dose of etomidate is secondary to redistribution of the drug. Liver metabolism of etomidate is very complete but not fast enough that that action will lead to awakening from an induction dose of this agent.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Lippincott's Anesthesia Review 2026",
+    "takeaway": "Key Anesthesia Concept: Etomidate is a carboxylated imidazole. It resembles midazolam in its pharmacokinetics, in that it is water soluble in ac..."
+  },
+  {
+    "id": 20085,
+    "specialty": "Anesthesia",
+    "topic": "Anesthesia Review",
+    "question": "A 64-year-old man is scheduled for an open abdominal aortic aneurysm surgery. Anesthetic plan includes placement of an epidural catheter for postoperative pain relief. On review of his medication list, it is noted that he has been taking clopidogrel for a coronary artery stent that was inserted 2 years ago. Which of the following statements about clopidogrel is most likely true?",
+    "options": {
+      "A": "The American Society for Regional Anesthesia recommends that clopidogrel be stopped 3 days before neuraxial anesthesia",
+      "B": "A single dose of clopidogrel may have a clinically significant effect on platelet function",
+      "C": "Clopidogrel is associated with pancytopenia",
+      "D": "Inhibition of platelet function by clopidogrel is reversible"
+    },
+    "answer": "A",
+    "explanation": {
+      "correct": "Clopidogrel binds to ADP receptors on the surface of platelets. This action leads to inhibition of activation, aggregation, and degranulation of platelets. Clopidogrel modifies the ADP receptor irreversibly, resulting in its inhibition for the lifetime of the platelet, which is up to 7 days. So recommendation from ASRA is to avoid performing a neuraxial block for 7 days even if only a single therapeutic dose of clopidogrel was used by the patient. Clopidogrel may cause neutropenia, thrombotic thrombocytopenic purpura, and hepatic dysfunction but has not been associated with pancytopenia.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Lippincott's Anesthesia Review 2026",
+    "takeaway": "Key Anesthesia Concept: Clopidogrel binds to ADP receptors on the surface of platelets. This action leads to inhibition of activation, aggregati..."
+  },
+  {
+    "id": 20086,
+    "specialty": "Anesthesia",
+    "topic": "Anesthesia Review",
+    "question": "Which of the following statements about ketamine is most likely true?",
+    "options": {
+      "A": "Analgesic efficacy of epidural ketamine is equivalent to epidural morphine",
+      "B": "Ketamine decreases the duration of action of nondepolarizing neuromuscular-",
+      "C": "Ketamine is a direct myocardial depressant",
+      "D": "Ketamine decreases the cortical amplitude of somatosensory-evoked potentials"
+    },
+    "answer": "C",
+    "explanation": {
+      "correct": "NMDA receptors have been documented in the spinal cord, and epidural ketamine does have some analgesic action but much less than morphine. Of all the anesthetics available, ketamine maintains the muscle tone the most, and so it does not decrease the duration of action of nondepolarizing neuromuscular-blocking agents. Although in vivo ketamine has been shown to maintain the stroke volume, in vitro studies with isolated myocardial cell show that ketamine leads to decrease in the force of contraction of myocardial cell. In vivo finding is explained by the ability of ketamine to stimulate sympathetic system, which counteracts its myocardial depressant action. This action of ketamine can get unmasked in a patient with chronic congestive heart failure, that is, already using maximum sympathetic activity to maintain his or her cardiac output. Ketamine does not decrease the amplitude of the cortical sensory\u2013evoked potentials.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Lippincott's Anesthesia Review 2026",
+    "takeaway": "Key Anesthesia Concept: NMDA receptors have been documented in the spinal cord, and epidural ketamine does have some analgesic action but much l..."
+  },
+  {
+    "id": 20087,
+    "specialty": "Anesthesia",
+    "topic": "Anesthesia Review",
+    "question": "A patient has a history of an allergic reaction to a local anesthetic but does not recall the name. Which of the following local anesthetics will most likely be the cause of a true allergic reaction?",
+    "options": {
+      "A": "Procaine",
+      "B": "Lidocaine",
+      "C": "Mepivacaine",
+      "D": "Bupivacaine"
+    },
+    "answer": "A",
+    "explanation": {
+      "correct": "True allergic reaction to a local anesthetic is very rare, but is more common with ester local anesthetics compared with amide local anesthetics. Procaine is the only ester local anesthetic among the choices given in this question. All others are amides. So it is probably from procaine.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Lippincott's Anesthesia Review 2026",
+    "takeaway": "Key Anesthesia Concept: True allergic reaction to a local anesthetic is very rare, but is more common with ester local anesthetics compared with..."
+  },
+  {
+    "id": 20088,
+    "specialty": "Anesthesia",
+    "topic": "Anesthesia Review",
+    "question": "Which of the following is most likely the (analgesic) mechanism of action of lidocaine when used for neuropathic pain?",
+    "options": {
+      "A": "Inhibition of G-protein\u2013coupled receptors",
+      "B": "Antagonism of NMDA receptors",
+      "C": "Calcium channel blockade",
+      "D": "Sodium channel blockade"
+    },
+    "answer": "A",
+    "explanation": {
+      "correct": "Lidocaine has been in use for treating a myriad of pain conditions involving neuropathic pain. Although primary mechanism of its analgesic action may be through blockade of the sodium channel, it acts on many other channels including calcium and G-protein\u2013coupled receptors. So the mechanism of its analgesic action may be more complicated than simple blockade of sodium channel. Although lidocaine has been found to inhibit NMDA receptor in supra clinical levels, activation of this receptor would not lead to analgesia.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Lippincott's Anesthesia Review 2026",
+    "takeaway": "Key Anesthesia Concept: Lidocaine has been in use for treating a myriad of pain conditions involving neuropathic pain. Although primary mechanis..."
+  },
+  {
+    "id": 20089,
+    "specialty": "Anesthesia",
+    "topic": "Anesthesia Review",
+    "question": "A 45-year-old farmer is brought into the emergency room. He is agitated and confused. On examination, he has dry skin with fever and rapid heart rate. Anticholinergic poisoning is suspected. Which of the following medications is most appropriate to treat his condition?",
+    "options": {
+      "A": "Neostigmine",
+      "B": "Pyridostigmine",
+      "C": "Edrophonium",
+      "D": "Physostigmine"
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "Belladonna alkaloids found in the nature sometimes lead to manifestations of anticholinergic syndrome. Factors that need to be taken into consideration for treatment of this condition include whether there is CNS involvement or not. In this case, it seems that manifestations of CNS involvement are obvious. Neostigmine,",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Lippincott's Anesthesia Review 2026",
+    "takeaway": "Key Anesthesia Concept: Belladonna alkaloids found in the nature sometimes lead to manifestations of anticholinergic syndrome. Factors that need..."
+  },
+  {
+    "id": 20090,
+    "specialty": "Anesthesia",
+    "topic": "Anesthesia Review",
+    "question": "Which of the following medications will prolong the neuromuscular blockade produced by vecuronium?",
+    "options": {
+      "A": "Carbamazepine",
+      "B": "Clindamycin",
+      "C": "Quinidine",
+      "D": "Verapamil"
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "Many physiologic factors and medications are associated with potentiation of action of neuromuscular blockers. Calcium channel blockers like verapamil lead to decreased sarcoplasmic concentration of calcium, which may potentiate the muscle weakness as well as prolong the duration of action of neuromuscular-blocking agents.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Lippincott's Anesthesia Review 2026",
+    "takeaway": "Key Anesthesia Concept: Many physiologic factors and medications are associated with potentiation of action of neuromuscular blockers. Calcium c..."
+  },
+  {
+    "id": 20091,
+    "specialty": "Anesthesia",
+    "topic": "Anesthesia Review",
+    "question": "The shorter duration of action of remifentanil compared with fentanyl is primarily due to its",
+    "options": {
+      "A": "Rapid redistribution",
+      "B": "Renal elimination",
+      "C": "Metabolism by esterases",
+      "D": "Hepatic extraction ratio"
+    },
+    "answer": "C",
+    "explanation": {
+      "correct": "Remifentanil is metabolized by nonspecific esterases found in blood and tissues. This metabolism is so rapid that action of remifentanil is terminated without the need for redistribution or hepatic extraction. There is no accumulation of the drug in patients with renal failure. Elimination half-life (6 minutes) is not prolonged even after a prolonged infusion. Hypothermia during cardiac bypass does prolong its elimination time up to 20%.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Lippincott's Anesthesia Review 2026",
+    "takeaway": "Key Anesthesia Concept: Remifentanil is metabolized by nonspecific esterases found in blood and tissues. This metabolism is so rapid that action..."
+  },
+  {
+    "id": 20092,
+    "specialty": "Anesthesia",
+    "topic": "Anesthesia Review",
+    "question": "Which of the following statements about dexmedetomidine is most likely true?",
+    "options": {
+      "A": "It has more \u03b12 selectivity than clonidine",
+      "B": "It can increase opioid-induced rigidity",
+      "C": "Context-sensitive half time increases markedly after prolonged infusion of dexmedetomidine",
+      "D": "It has no effect on systemic vascular resistance"
+    },
+    "answer": "C",
+    "explanation": {
+      "correct": "Dexmedetomidine is an \u03b12-agonist, which acts centrally to inhibit sympathetic nervous system activity. Clonidine belongs to the same group of medicines. Dexmedetomidine actually sometimes is used to treat spasm observed in cerebral palsy patients. Its effect in opioid-induced rigidity is not well studied. Decay time of the serum levels of dexmedetomidine after a short duration of infusion is very fast, but if it used for longer time, for example, 10 hours, as it is sometimes used in intensive care unit setting, the sedative action may take a long time to dissipate. Dexmedetomidine decreases systemic vascular resistance, and that is one of its mechanism by which it may cause a decrease in blood pressure.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Lippincott's Anesthesia Review 2026",
+    "takeaway": "Key Anesthesia Concept: Dexmedetomidine is an \u03b12-agonist, which acts centrally to inhibit sympathetic nervous system activity. Clonidine belongs..."
+  },
+  {
+    "id": 20093,
+    "specialty": "Anesthesia",
+    "topic": "Anesthesia Review",
+    "question": "Which of the following can precipitate an episode of myotonia in a patient with myotonic dystrophy?",
+    "options": {
+      "A": "Lidocaine administration",
+      "B": "Neostigmine administration",
+      "C": "Nondepolarizing neuromuscular-blocker administration",
+      "D": "Hypothermia"
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "Myotonia is characterized by continued involuntary contraction of a group of muscles. So once triggered, muscles fail to relax. Myotonic dystrophy is the most common form. Succinylcholine can cause severe hyperkalemia and is contraindicated in this condition. Nondepolarizing muscle relaxants may not be able to reverse this",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Lippincott's Anesthesia Review 2026",
+    "takeaway": "Key Anesthesia Concept: Myotonia is characterized by continued involuntary contraction of a group of muscles. So once triggered, muscles fail to..."
+  },
+  {
+    "id": 20094,
+    "specialty": "Anesthesia",
+    "topic": "Anesthesia Review",
+    "question": "A 50-year-old woman had cholecystectomy done under general anesthesia. Rocuronium was used as muscle relaxant, and a combination of anticholinergic and anticholinesterase was used for reversal of muscle-relaxant action. The patient is now bradycardic. The combination of reversal agents most likely to cause the bradycardia is",
+    "options": {
+      "A": "Atropine and edrophonium",
+      "B": "Glycopyrrolate and edrophonium",
+      "C": "Atropine and neostigmine",
+      "D": "Glycopyrrolate and neostigmine"
+    },
+    "answer": "C",
+    "explanation": {
+      "correct": "Administration of anticholinesterase agents to reverse the action of nondepolarizing agent allows the acetylcholine levels to build up not only in neuromuscular junction of the skeletal muscle but also at the level of muscarinic receptors. That leads to the problem of bradycardia if not effectively counterbalanced by administration of an anticholinergic agent. Finding the best combination of these agents is of great importance to an anesthesiologist. Older anticholinesterase agent edrophonium causes the cholinesterase activity to increase in cardiac muscarinic receptors, while neostigmine was found to have additional direct action on these cardiac receptors. Despite that finding, neostigmine-induced bradycardia is effectively prevented by administration of anticholinergic agent compared with edrophonium, where this effect is not as predictable. Another factor to consider is the onset of action of these drugs. Atropine and edrophonium are very fast-acting, while neostigmine and glycopyrrolate are slower in onset. As a result, if glycopyrrolate is injected to counteract the cholinergic response induced by edrophonium, the chance of development of bradycardia is greatest with this combination, as glycopyrrolate will take much longer and may not reverse all of the cholinergic effect produced by edrophonium.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Lippincott's Anesthesia Review 2026",
+    "takeaway": "Key Anesthesia Concept: Administration of anticholinesterase agents to reverse the action of nondepolarizing agent allows the acetylcholine leve..."
+  },
+  {
+    "id": 20095,
+    "specialty": "Anesthesia",
+    "topic": "Anesthesia Review",
+    "question": "A 68-year-old man is undergoing exploratory laparotomy for intestinal obstruction. Cause of obstruction is found to be an ileal carcinoid tumor. Suddenly, the patient develops bronchospasm, and the peak airway pressure increases from 24 to 45 cm of H2O. Which of the following is the best treatment for the bronchospasm in this situation?",
+    "options": {
+      "A": "Dexamethasone",
+      "B": "Sevoflurane",
+      "C": "Ketamine",
+      "D": "Somatostatin"
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "Carcinoid syndrome can be precipitated in the operating room when the carcinoid tumor is manipulated by the surgeon. Cause is the release of massive amount of hormones made by the carcinoid tumor into the systemic circulation. Signs and symptoms during anesthesia may include flushing of head, neck, and upper thorax, bronchospasm, and hypo or hypertension. Many carcinoid tumors contain somatostatin receptors: a gastrointestinal regulatory peptide that reduces the production and release of gastro pancreatic hormone. Somatostatin infusion can avoid and treat the manifestation of this syndrome in the perioperative period. A synthetic analogue: octreotide is used more often in contemporary practice. It is recommended to be started 2 weeks prior to the scheduled surgery and continued in the postoperative period. Ketamine is not indicated in this condition, as it may increase the sympathetic nervous system discharge and worsen the situation. Sevoflurane is helpful to treat bronchospasm acutely but is not specific for this condition and may not be potent enough to treat bronchospasm induced by these",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Lippincott's Anesthesia Review 2026",
+    "takeaway": "Key Anesthesia Concept: Carcinoid syndrome can be precipitated in the operating room when the carcinoid tumor is manipulated by the surgeon. Cau..."
+  },
+  {
+    "id": 20096,
+    "specialty": "Anesthesia",
+    "topic": "Anesthesia Review",
+    "question": "A 15-year-old boy has severe gastroenteritis with nausea, vomiting, and diarrhea for last 3 days. A CT scan of the abdomen shows intussusceptions, which needs exploratory laparotomy for relief of intestinal obstruction. The patient\u2019s systolic blood pressure is 78 mm Hg and heart rate is 112 bpm. Thiopental is selected as the induction agent for general anesthesia. A decreased dose of this agent is recommended in patients with hypovolemic shock primarily because",
+    "options": {
+      "A": "Delivery of the drug to the brain is increased",
+      "B": "Hepatic clearance is decreased",
+      "C": "Thiopental is a myocardial depressant",
+      "D": "Thiopental is a vasodilator"
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "This patient seems to be in hypovolemic shock. Body\u2019s response to such a state is to redirect the intravascular volume to vital organs like brain and heart by causing peripheral vasoconstriction through activation of the sympathetic system. Thiopental is a known vasodilator. Mechanism of this action includes barbiturate-induced depression of the medullary vasomotor center and decreased CNS outflow from the CNS. This vasodilatation will cause peripheral pooling of blood. This may cause catastrophic drop in blood pressure, which this patient may not be able to tolerate. Metabolism of thiopental by the liver is slow and does not contribute appreciably to the termination of effect of this drug. Thiopental does have negative inotropic effects on the heart, although this effect is normally masked by baroreceptor-mediated responses.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Lippincott's Anesthesia Review 2026",
+    "takeaway": "Key Anesthesia Concept: This patient seems to be in hypovolemic shock. Body\u2019s response to such a state is to redirect the intravascular volume t..."
+  },
+  {
+    "id": 20097,
+    "specialty": "Anesthesia",
+    "topic": "Anesthesia Review",
+    "question": "A 75-year-old woman is scheduled for mitral valve repair. High-dose fentanyl is used to induce anesthesia. In order to counteract the bradycardia caused by fentanyl, pancuronium is administered. Pancuronium blocks the bradycardia caused by fentanyl by acting on which of the following?",
+    "options": {
+      "A": "\u03b2-Adrenergic receptors",
+      "B": "Cardiac muscarinic receptors",
+      "C": "Carotid baroreceptors",
+      "D": "Central vagal nuclei"
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "Patients with valvular heart disease are sometimes extremely sensitive to abrupt changes in the heart rate. High-dose fentanyl has been shown to cause bradycardia through its effect on the vagus nerve. To some extent, this may be desirable in a patient with stenotic valvular lesion. In case of regurgitant lesions, this may lead to critical decrease in cardiac output. In order to counteract this bradycardia action of the fentanyl, some anesthesiologists like to use a muscle relaxant that causes tachycardia. Pancuronium and an older nondepolarizing muscle-relaxant gallamine were used for this purpose. Effect of pancuronium on the heart rate is elicited at the level of sinoatrial node by blockade of the muscarinic receptors. On the other hand, effect of fentanyl that caused bradycardia was more through central nuclei of the vagus nerve. Carotid baroreceptors and \u03b2 adrenergic receptor are not involved in induction of tachycardia noticed after administration of pancuronium.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Lippincott's Anesthesia Review 2026",
+    "takeaway": "Key Anesthesia Concept: Patients with valvular heart disease are sometimes extremely sensitive to abrupt changes in the heart rate. High-dose fe..."
+  },
+  {
+    "id": 20098,
+    "specialty": "Anesthesia",
+    "topic": "Anesthesia Review",
+    "question": "Which of the following medications would be most appropriate to treat symptomatic bradycardia 1 month after cardiac transplant?",
+    "options": {
+      "A": "Glycopyrrolate",
+      "B": "Phenylephrine",
+      "C": "Atropine",
+      "D": "Isoproterenol"
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "Different surgical techniques are used to suture the donor heart to the cuff of the recipient heart. In any case, donor sinoatrial (SA) node is severed of its autonomic nervous system connections. As a result, all of the drugs that use SA node and normal conduction system of the heart to produce their cardiac effects fail to produce their effects in a transplanted heart. Although \u03b11 receptors are found in the heart, their stimulation with phenylephrine is not associated with chronotropic effects.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Lippincott's Anesthesia Review 2026",
+    "takeaway": "Key Anesthesia Concept: Different surgical techniques are used to suture the donor heart to the cuff of the recipient heart. In any case, donor ..."
+  },
+  {
+    "id": 20099,
+    "specialty": "Anesthesia",
+    "topic": "Anesthesia Review",
+    "question": "Which of the following statements about propofol infusion syndrome is most likely false?",
+    "options": {
+      "A": "Mortality rate in an established case is very high",
+      "B": "Rhabdomyolysis is one of the diagnostic criteria",
+      "C": "Tachycardia is an early sign of this syndrome",
+      "D": "Cardiac dysfunction is very common in this condition"
+    },
+    "answer": "C",
+    "explanation": {
+      "correct": "Propofol infusion syndrome was first described in pediatric intensive care units, but quite a few adult cases have been reported now. Earliest sign of syndrome is metabolic acidosis because of impairment oxidative phosphorylation in the mitochondria, anaerobic metabolism, and accumulation of lactic acid. Cardiac dysfunction is also an early sign, which manifests early on as bradycardia, and right-heart block is very common. Rhabdomyolysis is a hallmark of this condition, and free myoglobin precipitates in the renal tubules, leading to kidney failure. In an established case, the mortality rate is extremely high, in excess of 80%. Higher cumulative dose of propofol over a relatively longer period of time seems to be associated with higher incidence of this condition. This has led to a drop in the popularity of this drug in the pediatric intensive care setting.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Lippincott's Anesthesia Review 2026",
+    "takeaway": "Key Anesthesia Concept: Propofol infusion syndrome was first described in pediatric intensive care units, but quite a few adult cases have been ..."
+  },
+  {
+    "id": 20100,
+    "specialty": "Anesthesia",
+    "topic": "Anesthesia Review",
+    "question": "A patient is undergoing resection of a supratentorial brain tumor. He is normocarbic, and his mean blood pressure is 70 mm Hg. Administration of which of the following is most likely to decrease cerebral blood volume?",
+    "options": {
+      "A": "Nitrous oxide at 0.5 minimum alveolar concentration (MAC)",
+      "B": "Desflurane at 1 MAC",
+      "C": "Thiopental 2 mg/kg",
+      "D": "Phenytoin 15 mg/kg"
+    },
+    "answer": "C",
+    "explanation": {
+      "correct": "Generally, cerebral blood flow is related to cerebral metabolic rate with factors that decrease cerebral metabolic rate decrease the cerebral blood flow. This coupling effect is preserved during anesthesia, but the degree of the coupling may be altered by anesthetic agents where inhalational agents have relatively higher cerebral blood flow for any degree of cerebral metabolic rate. This variation is different for different inhalational agents and also at different doses of the same agent. At 1.5 MAC, the overall effect of desflurane is cerebral vasodilatation and increased blood flow.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Lippincott's Anesthesia Review 2026",
+    "takeaway": "Key Anesthesia Concept: Generally, cerebral blood flow is related to cerebral metabolic rate with factors that decrease cerebral metabolic rate ..."
+  },
+  {
+    "id": 20101,
+    "specialty": "Anesthesia",
+    "topic": "Anesthesia Review",
+    "question": "Which of the following classes of drugs is most likely to be responsible for an anaphylactic reaction during general anesthesia?",
+    "options": {
+      "A": "Neuromuscular-blocking drugs",
+      "B": "Opioids",
+      "C": "Antibiotics",
+      "D": "Radio contrast dyes"
+    },
+    "answer": "A",
+    "explanation": {
+      "correct": "Anaphylactic reaction during anesthesia is estimated to occur between 1 in 5,000 and 1 in 25,000 cases. Neuromuscular-blocking drugs seem to be the most common agents causing this reaction. Incidence is far too low to determine the relative frequency of occurrence with individual neuromuscular blocker. Latex, antibiotics, and induction agents are much less common etiologic agents in anesthesia. Opioids extremely rarely cause anaphylactic reactions.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Lippincott's Anesthesia Review 2026",
+    "takeaway": "Key Anesthesia Concept: Anaphylactic reaction during anesthesia is estimated to occur between 1 in 5,000 and 1 in 25,000 cases. Neuromuscular-bl..."
+  },
+  {
+    "id": 20102,
+    "specialty": "Anesthesia",
+    "topic": "Anesthesia Review",
+    "question": "Which of the following is the most effective way to reduce renal failure in a patient having an abdominal aortic aneurysm repair?",
+    "options": {
+      "A": "Fluid bolus prior to aortic clamping",
+      "B": "Fluid bolus after aortic clamp release",
+      "C": "Administration of mannitol",
+      "D": "Minimization of cross-clamp time"
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "The incidence of renal failure after abdominal aortic aneurysm surgery is 5.4%, of which 0.6% requires hemodialysis. Loop diuretics (furosemide), dopamine, mannitol, fenoldopam, and N-acetylcysteine are proposed renal protective agents; however, there is no concrete evidence to support their use. The mainstay of renal preservation is by reducing aortic cross-clamping time, adequate fluid resuscitation, and avoidance of nephrotoxins (nonsteroidal anti-inflammatory drugs, angiotensin-converting-enzyme inhibitors, aminoglycoside antibiotics).",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Lippincott's Anesthesia Review 2026",
+    "takeaway": "Key Anesthesia Concept: The incidence of renal failure after abdominal aortic aneurysm surgery is 5.4%, of which 0.6% requires hemodialysis. Loo..."
+  }
+]

@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Surgical Insight Hub — Damage Control Laparotomy Monograph</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  /* Terracotta & Deep Slate Aesthetic */
+  --primary:   #6F3023; 
+  --primary-dk:#211412;
+  --primary-lt:#F6EBE9;
+  --accent:    #9C4634;
+  --accent2:   #D4806A;
+  --gold:      #C28E46;
+  --gold-lt:   #FDF8ED;
+  --s1:        #6F3023;
+  --s2:        #44383D;
+  --s3:        #3B4A43;
+  --s4:        #8C6746;
+  --s5:        #293642;
+  --s1-lt:     #F6EBE9;
+  --s2-lt:     #ECEAEB;
+  --s3-lt:     #EAECEB;
+  --s4-lt:     #F4EFEB;
+  --s5-lt:     #E8EBED;
+  --red:       #A32A2A;
+  --red-lt:    #FEF2F2;
+  --amber:     #A65D12;
+  --amber-lt:  #FFFBEB;
+  --blue:      #234A70;
+  --blue-lt:   #EFF6FF;
+  --bg:        #FCFBF9;
+  --bg2:       #F3F1ED;
+  --border:    #E4DFD9;
+  --text:      #2A2624;
+  --muted:     #635B56;
+  --white:     #FFFFFF;
+  --sidebar-w: 320px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.75;}
+
+/* SLIDE-OVER SIDEBAR */
+#sidebar {
+  position: fixed; top: 0; left: 0; width: var(--sidebar-w); height: 100vh;
+  background: var(--primary-dk); color: #EBE5E7;
+  display: flex; flex-direction: column;
+  z-index: 1000; overflow: hidden;
+  transform: translateX(-100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 4px 0 24px rgba(0,0,0,0.3);
+}
+body.sidebar-open #sidebar {
+  transform: translateX(0);
+}
+
+/* OVERLAY */
+#sidebar-overlay {
+  position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+  background: rgba(33, 20, 18, 0.5); backdrop-filter: blur(2px);
+  z-index: 950; opacity: 0; pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+body.sidebar-open #sidebar-overlay {
+  opacity: 1; pointer-events: auto;
+}
+
+/* TOGGLE BUTTON - TOP LEFT */
+#sidebar-toggle {
+  position: fixed; top: 24px; left: 28px; z-index: 900;
+  background: var(--primary); color: white;
+  border: none; border-radius: 30px;
+  padding: 10px 18px; font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600;
+  letter-spacing: 0.05em; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  display: flex; align-items: center; gap: 8px; transition: all 0.2s;
+}
+#sidebar-toggle:hover {
+  background: var(--accent); transform: translateY(-2px);
+}
+
+#sidebar-header{padding:20px 20px 14px;border-bottom:1px solid rgba(255,255,255,0.08);flex-shrink:0;}
+#sidebar-header .logo{font-family:'Playfair Display',serif;font-size:13px;font-weight:700;color:var(--accent2);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;}
+#sidebar-header .sub{font-size:10.5px;color:rgba(235,229,231,0.6);letter-spacing:0.04em;}
+#sidebar-search{padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.05);flex-shrink:0;}
+#sidebar-search input{width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:6px;color:#EBE5E7;padding:6px 10px;font-size:12px;font-family:'Source Serif 4',serif;outline:none;transition:border-color 0.2s;}
+#sidebar-search input::placeholder{color:rgba(235,229,231,0.4);}
+#sidebar-search input:focus{border-color:var(--accent2);}
+#sidebar-nav{flex:1;overflow-y:auto;padding:8px 0 20px;}
+#sidebar-nav::-webkit-scrollbar{width:4px;}
+#sidebar-nav::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.15);border-radius:2px;}
+.vol-label{font-size:9.5px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent2);padding:14px 18px 4px;}
+.nav-item{display:block;padding:8px 18px 8px 22px;font-size:12.5px;color:rgba(235,229,231,0.75);text-decoration:none;border-left:2px solid transparent;transition:all 0.15s;line-height:1.4;}
+.nav-item:hover{color:#fff;background:rgba(255,255,255,0.03);border-left-color:rgba(212,128,106,0.5);}
+.nav-item.active{color:#fff;background:rgba(255,255,255,0.06);border-left-color:var(--accent2);font-weight:600;}
+.nav-item .num{font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(235,229,231,0.4);margin-right:6px;}
+
+/* MAIN */
+#main{margin-left:0; min-height:100vh;}
+
+/* HERO */
+#hero{background:linear-gradient(135deg,var(--primary-dk) 0%,#4D1E14 60%,#211412 100%);color:white;padding:90px 72px 60px;position:relative;overflow:hidden;}
+#hero::before{content:'';position:absolute;top:-60px;right:-60px;width:380px;height:380px;background:radial-gradient(circle,rgba(212,128,106,0.15) 0%,transparent 70%);pointer-events:none;}
+#hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent2),var(--gold),transparent);}
+#hero .eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.16em;color:var(--accent2);text-transform:uppercase;margin-bottom:14px;}
+#hero h1{font-family:'Playfair Display',serif;font-size:46px;font-weight:700;line-height:1.15;margin-bottom:10px;color:#fff;}
+#hero .subtitle{font-size:18px;color:rgba(255,255,255,0.7);font-style:italic;margin-bottom:28px;}
+#hero .badges{display:flex;gap:10px;flex-wrap:wrap;}
+#hero .badge{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:20px;padding:4px 14px;font-size:12px;color:rgba(255,255,255,0.9);font-family:'JetBrains Mono',monospace;}
+
+/* CONTENT */
+.content-wrap{max-width:900px;margin:0 auto;padding:0 48px 80px;}
+
+/* SECTION HEADER */
+.sec-header{margin-top:60px;margin-bottom:8px;padding:28px 36px;border-radius:10px;display:flex;align-items:center;gap:20px;}
+.sec-header.s1{background:linear-gradient(135deg,#6F302308,#6F302315);border-left:4px solid var(--s1);}
+.sec-header.s2{background:linear-gradient(135deg,#44383D08,#44383D15);border-left:4px solid var(--s2);}
+.sec-header.s3{background:linear-gradient(135deg,#3B4A4308,#3B4A4315);border-left:4px solid var(--s3);}
+.sec-header.s4{background:linear-gradient(135deg,#8C674608,#8C674615);border-left:4px solid var(--s4);}
+.sec-header.s5{background:linear-gradient(135deg,#29364208,#29364215);border-left:4px solid var(--s5);}
+.sec-badge{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;letter-spacing:0.1em;padding:4px 12px;border-radius:4px;white-space:nowrap;flex-shrink:0;}
+.s1 .sec-badge{background:var(--s1);color:white;}
+.s2 .sec-badge{background:var(--s2);color:white;}
+.s3 .sec-badge{background:var(--s3);color:white;}
+.s4 .sec-badge{background:var(--s4);color:white;}
+.s5 .sec-badge{background:var(--s5);color:white;}
+.sec-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;}
+.s1 .sec-title{color:var(--s1);}
+.s2 .sec-title{color:var(--s2);}
+.s3 .sec-title{color:var(--s3);}
+.s4 .sec-title{color:var(--s4);}
+.s5 .sec-title{color:var(--s5);}
+
+/* TOPIC */
+.topic{margin-top:48px;padding-top:48px;border-top:1px solid var(--border);}
+.topic:first-of-type{border-top:none;}
+.topic-header{display:flex;align-items:flex-start;gap:16px;margin-bottom:24px;}
+.topic-num{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;padding:3px 10px;border-radius:4px;margin-top:4px;flex-shrink:0;}
+.s1 .topic-num{background:var(--s1-lt);color:var(--s1);}
+.s2 .topic-num{background:var(--s2-lt);color:var(--s2);}
+.s3 .topic-num{background:var(--s3-lt);color:var(--s3);}
+.s4 .topic-num{background:var(--s4-lt);color:var(--s4);}
+.s5 .topic-num{background:var(--s5-lt);color:var(--s5);}
+.topic h2{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;line-height:1.2;}
+.s1 .topic h2{color:var(--s1);}
+.s2 .topic h2{color:var(--s2);}
+.s3 .topic h2{color:var(--s3);}
+.s4 .topic h2{color:var(--s4);}
+.s5 .topic h2{color:var(--s5);}
+.topic h3{font-family:'Playfair Display',serif;font-size:17px;font-weight:600;color:var(--muted);margin:26px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--border);}
+.topic h4{font-size:13px;font-weight:600;color:var(--muted);letter-spacing:0.06em;text-transform:uppercase;margin:18px 0 8px;font-family:'JetBrains Mono',monospace;}
+.topic p{margin-bottom:12px;color:var(--text);}
+.topic ul,.topic ol{margin:8px 0 14px 20px;color:var(--text);}
+.topic li{margin-bottom:6px;line-height:1.65;}
+.topic li::marker{color:var(--accent2);}
+.topic strong{color:var(--text);font-weight:600;}
+
+/* TABLES */
+.table-wrap{overflow-x:auto;margin:16px 0 20px;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.04);}
+table{width:100%;border-collapse:collapse;font-size:13.5px;background:white;}
+thead tr{background:var(--s1);}
+thead th{color:white;padding:10px 14px;text-align:left;font-family:'Source Serif 4',serif;font-weight:600;font-size:13px;}
+tbody tr:nth-child(even){background:var(--bg2);}
+tbody tr:hover{background:var(--s1-lt);transition:background 0.15s;}
+tbody td{padding:9px 14px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.5;}
+.s2-tbl thead tr{background:var(--s2);}
+.s3-tbl thead tr{background:var(--s3);}
+.s4-tbl thead tr{background:var(--s4);}
+.s5-tbl thead tr{background:var(--s5);}
+
+/* CALLOUTS */
+.callout{margin:18px 0;padding:14px 18px;border-radius:0 8px 8px 0;border-left:4px solid;font-size:14px;line-height:1.65;}
+.callout .label{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;display:block;margin-bottom:4px;}
+.callout.pearl{background:var(--amber-lt);border-color:var(--amber);}
+.callout.pearl .label{color:var(--amber);}
+.callout.warn{background:var(--red-lt);border-color:var(--red);}
+.callout.warn .label{color:var(--red);}
+.callout.clin{background:var(--s1-lt);border-color:var(--s1);}
+.callout.clin .label{color:var(--s1);}
+.callout.exam{background:var(--blue-lt);border-color:var(--blue);}
+.callout.exam .label{color:var(--blue);}
+
+/* DIAGRAM PLACEHOLDERS */
+.diagram-wrap{background:white;border:1px solid var(--border);border-radius:8px;padding:18px;margin:20px 0;box-shadow:0 1px 4px rgba(0,0,0,0.03);text-align:center;}
+.diagram-title{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--s1);margin-bottom:12px;text-align:left;}
+
+/* RAPID REFERENCE */
+.rapid-ref{background:var(--primary-dk);color:var(--primary-lt);border-radius:10px;padding:28px 32px;margin:30px 0;}
+.rapid-ref h3{font-family:'Playfair Display',serif;font-size:20px;color:var(--accent2);margin-bottom:16px;}
+.rapid-ref table{font-size:12.5px; background: transparent;} 
+.rapid-ref thead tr{background:rgba(212,128,106,0.15);}
+.rapid-ref thead th{color:var(--accent2);padding:8px 12px;font-size:11px;}
+.rapid-ref tbody tr:nth-child(even){background:rgba(255,255,255,0.03);}
+.rapid-ref tbody tr:hover{background:rgba(255,255,255,0.06);}
+.rapid-ref tbody td{color:var(--primary-lt);padding:7px 12px;border-bottom:1px solid rgba(255,255,255,0.05);}
+.rapid-ref tbody td strong{color:var(--gold);}
+
+/* PROGRESS */
+#progress-bar{position:fixed;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent2),var(--gold));transform-origin:left;transform:scaleX(0);transition:transform 0.1s;z-index:50;}
+
+/* TOP BTN */
+#top-btn{position:fixed;bottom:28px;right:28px;background:var(--primary);color:white;border:none;border-radius:50%;width:44px;height:44px;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,0.2);transition:all 0.2s;opacity:0;pointer-events:none;}
+#top-btn.show{opacity:1;pointer-events:auto;}
+#top-btn:hover{background:var(--accent2);transform:translateY(-2px);}
+
+/* ANIMATION */
+.topic{animation:fadeUp 0.4s ease both;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
+
+@media(max-width:900px){
+  .content-wrap{padding:0 20px 60px;}
+  #hero{padding:72px 20px 40px;}
+  #hero h1{font-size:30px;}
+}
+@media print{
+  #sidebar-toggle, #sidebar-overlay, #sidebar, #top-btn, #progress-bar{display:none!important;}
+  .topic{page-break-inside:avoid;}
+  .sec-header{page-break-before:always;}
+}
+</style>
+</head>
+<body>
+<div id="progress-bar"></div>
+
+<div id="sidebar-overlay" onclick="closeSidebar()"></div>
+
+<button id="sidebar-toggle" onclick="toggleSidebar()">
+  <span>☰</span> Contents
+</button>
+
+<nav id="sidebar">
+  <div id="sidebar-header">
+    <div class="logo">Surgical Insight Hub</div>
+    <div class="sub">Damage Control Laparotomy · Monograph Series</div>
+  </div>
+  <div id="sidebar-search">
+    <input type="text" id="search-input" placeholder="Search topics…" oninput="filterNav(this.value)">
+  </div>
+  <div id="sidebar-nav">
+    <div class="vol-label">Pillar 1 — Pre-Op Optimization</div>
+    <a class="nav-item" href="#p1a"><span class="num">1.1</span>Clinical Workup</a>
+    <a class="nav-item" href="#p1b"><span class="num">1.2</span>The Lethal Triad</a>
+    <a class="nav-item" href="#p1c"><span class="num">1.3</span>Immediate Prep &amp; MTP</a>
+    <div class="vol-label">Pillar 2 — The Operative Game Plan</div>
+    <a class="nav-item" href="#p2a"><span class="num">2.1</span>Phase I: Abbreviated Laparotomy</a>
+    <a class="nav-item" href="#p2b"><span class="num">2.2</span>Phase II: ICU Resuscitation</a>
+    <a class="nav-item" href="#p2c"><span class="num">2.3</span>Phase III: Planned Re-Look</a>
+    <div class="vol-label">Pillar 3 — Pearls &amp; Bail-Outs</div>
+    <a class="nav-item" href="#p3a"><span class="num">3.1</span>Consultant Pearls</a>
+    <a class="nav-item" href="#p3b"><span class="num">3.2</span>The Bail-Out Point</a>
+    <div class="vol-label">Pillar 4 — Post-Op Care</div>
+    <a class="nav-item" href="#p4a"><span class="num">4.1</span>ICU Monitoring &amp; Targets</a>
+    <a class="nav-item" href="#p4b"><span class="num">4.2</span>Long-term Follow-up</a>
+    <div class="vol-label">Pillar 5 — Complications</div>
+    <a class="nav-item" href="#p5a"><span class="num">5.1</span>Abdominal Compartment Syndrome</a>
+    <a class="nav-item" href="#p5b"><span class="num">5.2</span>Missed Injury / Retained Pack</a>
+    <a class="nav-item" href="#p5c"><span class="num">5.3</span>Enteroatmospheric Fistula</a>
+    <div class="vol-label">Quick Reference</div>
+    <a class="nav-item" href="#rapid">High-Yield Board Facts</a>
+  </div>
+</nav>
+
+<main id="main">
+<section id="hero">
+  <div class="eyebrow">Surgical Insight Hub · Monograph Series · ABSITE · PGY-3 Framework</div>
+  <h1>Damage Control Laparotomy (DCL)</h1>
+  <p class="subtitle">Trauma and Non-Trauma Indications</p>
+  <div class="badges">
+    <span class="badge">Trauma Surgery</span>
+    <span class="badge">Abbreviated Laparotomy</span>
+    <span class="badge">Massive Transfusion Protocol</span>
+  </div>
+</section>
+
+<div class="content-wrap">
+
+<div class="callout warn" style="margin-top: 40px;">
+  <span class="label">Upfront Philosophy</span>
+  Damage control is a philosophy before it is a technique. The operation is not the hard part. The hard part is the decision: recognising early enough that this patient cannot survive a definitive operation today, stopping before you've pushed them past the point of no return, and handing them to the ICU team in a state they can resuscitate. Most residents learn damage control after they've already done too much. The goal of this monograph is to teach you to recognise the threshold before you cross it, not after.
+</div>
+
+<div class="sec-header s1">
+  <span class="sec-badge">PILLAR 1</span>
+  <span class="sec-title">Pre-operative Optimization &amp; Preparation</span>
+</div>
+
+<section class="topic s1" id="p1a">
+  <div class="topic-header"><span class="topic-num">1.1</span><h2>Clinical Workup</h2></div>
+  
+  <h3>History: What you need in the first 2 minutes</h3>
+  <ul>
+    <li><strong>Mechanism of injury (trauma):</strong> Penetrating (gunshot, stab) has more predictable patterns; blunt has higher rates of solid organ injury, mesenteric tears, and hollow viscus injuries. Assume multiple injuries for high-energy mechanisms.</li>
+    <li><strong>Time from injury to arrival:</strong> Longer prehospital times equal more physiological derangement on arrival; factor this into your urgency threshold.</li>
+    <li><strong>Prehospital interventions:</strong> Tourniquet placement, blood products, needle decompression; all change your immediate assessment.</li>
+  </ul>
+
+  <h3>Non-trauma Indications for Damage Control</h3>
+  <ul>
+    <li><strong>Ruptured abdominal aortic aneurysm (rAAA):</strong> Haemodynamic instability + abdominal/back pain. CT only if stable enough; straight to theatre if not.</li>
+    <li><strong>Perforated viscus with septic shock:</strong> Damage control is appropriate when physiological derangement is severe enough that a definitive repair cannot be safely completed.</li>
+    <li><strong>Mesenteric ischaemia with bowel necrosis:</strong> Resect the dead bowel; leave reconstruction for Phase III.</li>
+    <li><strong>Abdominal compartment syndrome:</strong> Fasciotomy/decompression as a damage control maneuver.</li>
+    <li><strong>Pre-existing conditions lowering your threshold:</strong> Anticoagulation, cirrhosis, obesity, age &gt;65. The lethal triad develops faster.</li>
+  </ul>
+</section>
+
+<section class="topic s1" id="p1b">
+  <div class="topic-header"><span class="topic-num">1.2</span><h2>The Decision to Do Damage Control: The Lethal Triad</h2></div>
+  <p>This is the most important diagnostic assessment in this entire monograph. The decision for damage control is made on physiology, not anatomy.</p>
+  
+  <ul>
+    <li><strong>Hypothermia:</strong> Core temperature &lt;35°C (coagulation enzyme activity falls dramatically below this threshold; at &lt;32°C, coagulopathy is effectively uncorrectable).</li>
+    <li><strong>Acidosis:</strong> pH &lt;7.2 or base deficit worse than -6; lactate &gt;4mmol/L (marker of tissue hypoperfusion and anaerobic metabolism).</li>
+    <li><strong>Coagulopathy:</strong> INR &gt;1.5, PTT &gt;60 seconds, fibrinogen &lt;1.5g/L, platelets &lt;100,000, or clinical coagulopathy (diffuse non-surgical oozing from all raw surfaces).</li>
+  </ul>
+
+  <div class="diagram-wrap">
+    
+  </div>
+
+  <p>These three elements are mutually reinforcing. Once established, they can only be corrected in the ICU, not on the operating table.</p>
+
+  <div class="callout clin">
+    <span class="label">Damage Control Triggers</span>
+    Systolic BP &lt;90mmHg not responding to initial resuscitation; massive transfusion requirement (&gt;10 units pRBC/24h or &gt;4 units/1h); core temp &lt;35°C; pH &lt;7.2; lactate &gt;4mmol/L; diffuse non-surgical ooze; operative time &gt;60-90 minutes with no end in sight; complex multi-cavity injury; loss of abdominal domain. Every minute of operating on a coagulopathic patient costs "physiological credit" you do not have.
+  </div>
+</section>
+
+<section class="topic s1" id="p1c">
+  <div class="topic-header"><span class="topic-num">1.3</span><h2>Immediate Pre-operative Preparation</h2></div>
+  
+  <h3>Resuscitation: Before and during access to theatre</h3>
+  <ul>
+    <li><strong>Permissive hypotension:</strong> Target systolic BP 80-90mmHg in penetrating trauma without TBI. Aggressive normalization of BP before haemorrhage control increases clot disruption and worsens coagulopathy.</li>
+    <li><strong>Massive Transfusion Protocol (MTP):</strong> 1:1:1 ratio of pRBC:FFP:Platelets. Activate immediately based on criteria, do not wait for labs.</li>
+    <li><strong>Tranexamic acid (TXA):</strong> 1g IV over 10 minutes within 3 hours of injury, followed by 1g IV over 8 hours. Do not give after 3 hours.</li>
+    <li><strong>Calcium:</strong> Blood products chelate calcium. Give 1g calcium chloride IV after every 4 units.</li>
+    <li><strong>Avoid crystalloid:</strong> Normal saline and Ringer's lactate worsen hyperchloraemic acidosis and dilute clotting factors.</li>
+    <li><strong>REBOA:</strong> Zone I (descending thoracic) for subdiaphragmatic haemorrhage; Zone III (infrarenal) for pelvic haemorrhage. Temporises haemorrhage to buy minutes.</li>
+  </ul>
+
+  <h3>Labs &amp; Consent</h3>
+  <ul>
+    <li><strong>Labs:</strong> ABG (pH, lactate, base deficit, haemoglobin) is the most rapidly available snapshot. FBC, coagulation, BMP. TEG/ROTEM if available. Type and crossmatch immediately (use O-negative pRBC / AB-positive FFP initially).</li>
+    <li><strong>Consent:</strong> Implied consent operates in haemodynamic instability. If stable enough, briefly explain the life-saving nature, staged approach, and open abdomen. Document the conversation.</li>
+  </ul>
+</section>
+
+<div class="sec-header s2">
+  <span class="sec-badge">PILLAR 2</span>
+  <span class="sec-title">The Operative Game Plan</span>
+</div>
+
+<section class="topic s2" id="p2a">
+  <div class="topic-header"><span class="topic-num">2.1</span><h2>Phase I: The Abbreviated Damage Control Laparotomy</h2></div>
+  <p>The mandate of Phase I is four things, in this order: Haemorrhage control, Contamination control, Temporary abdominal closure, Get out. Nothing else.</p>
+
+  <h3>Setup &amp; Anesthesia</h3>
+  <ul>
+    <li>Call the most senior anaesthetist. Induction: ketamine or etomidate (avoid propofol). Maintain with ketamine/low-dose volatile. Active warming is non-negotiable.</li>
+    <li>Positioning: Supine, arms out. Both groins and chest prepped and draped for potential access.</li>
+    <li>Instruments: Large self-retaining retractor, vascular clamps, linear staplers, damage control pack (lap pads, vessel loops, shunts, VAC device).</li>
+  </ul>
+
+  <h3>Access &amp; Immediate Packing</h3>
+  <ul>
+    <li>Midline laparotomy from xiphoid to pubis. Rapid entry. Do not waste time with subcutaneous haemostasis.</li>
+    <li><strong>Four-quadrant packing immediately:</strong> Before assessing, pack all four quadrants to temporarily tamponade bleeding. Gives you 60 seconds to plan. Count the packs as they go in.</li>
+  </ul>
+
+  <h3>Rapid Systematic Haemorrhage Assessment</h3>
+  <p>Remove packs one quadrant at a time. The hierarchy of control:</p>
+  <ul>
+    <li><strong>Arterial bleeding (Aorta):</strong> Manual compression at the hiatus, then formal cross-clamp. Deflate REBOA once proximal control is established.</li>
+    <li><strong>Hepatic haemorrhage:</strong> Manual Pringle manoeuvre (occludes portal vein/hepatic artery). Perihepatic packing (definitive Phase I management for most liver injuries). Suture ligation or balloon tamponade.</li>
+    <li><strong>Splenic haemorrhage:</strong> Splenectomy is the damage control answer. Do not attempt salvage.</li>
+    <li><strong>Mesenteric/bowel vascular injury:</strong> Suture ligation for small vessels. Intravascular shunt for SMA/SMV. Do not attempt complex vascular anastomosis in Phase I.</li>
+    <li><strong>Pelvic fracture haemorrhage:</strong> Pre-peritoneal pelvic packing (PPP) to tamponade venous plexus. External fixator application. Post-op angioembolization.</li>
+  </ul>
+
+  <h3>Contamination Control</h3>
+  <ul>
+    <li>Identify perforations. <strong>Small bowel/Colon:</strong> staple across the bowel on each side with GIA stapler. Do not anastomose. Leave ends in discontinuity.</li>
+    <li><strong>Stomach:</strong> Rapid running suture closure with 2-0 PDS.</li>
+    <li><strong>Duodenum:</strong> Primary repair or omental patch with drainage.</li>
+    <li><strong>Ureteric injury:</strong> Place a stent or tie a vessel loop around the cut end. Do not attempt uretero-ureterostomy.</li>
+  </ul>
+
+  <h3>Temporary Abdominal Closure (TAC)</h3>
+  <p>Do not close the fascia formally. Visceral oedema prevents safe closure and requires ongoing access.</p>
+  <ul>
+    <li><strong>Vacuum-Assisted Closure (VAC):</strong> The standard. Non-adherent fenestrated plastic sheet over bowel, foam/towels, suction drain, sealed with Ioban drape, connected to -75 to -125mmHg suction.</li>
+    <li><strong>Bogotá bag (improvised):</strong> 3-litre saline bag cut open and sutured to skin edges. Rapid and cheap.</li>
+    <li><strong>Towel clip closure:</strong> Fastest method; skin edges approximated with large towel clips.</li>
+  </ul>
+
+  <div class="diagram-wrap">
+    
+  </div>
+</section>
+
+<section class="topic s2" id="p2b">
+  <div class="topic-header"><span class="topic-num">2.2</span><h2>Phase II: ICU Resuscitation</h2></div>
+  <p>This phase is the ICU team's work, but you are responsible for communicating findings and planning re-look timing.</p>
+  <ul>
+    <li><strong>Goals:</strong> Warm the patient (&gt;35°C), correct acidosis (pH &gt;7.35, normal lactate), and correct coagulopathy (guided by TEG/ROTEM).</li>
+    <li><strong>Avoid the "second hit":</strong> Restrict crystalloid aggressively to prevent abdominal compartment syndrome. Delay re-look if hypothermic.</li>
+    <li><strong>Communication:</strong> Hand over exactly what was found, what was done, and what is left (exact pack count, shunts, bowel discontinuity). Set triggers for early return (rising IAP, increasing vasopressors).</li>
+    <li><strong>IAP Monitoring:</strong> Measured via urinary catheter. IAP &gt;20mmHg + new organ dysfunction = Abdominal Compartment Syndrome (requires immediate decompressive laparotomy).</li>
+  </ul>
+</section>
+
+<section class="topic s2" id="p2c">
+  <div class="topic-header"><span class="topic-num">2.3</span><h2>Phase III: Planned Re-look and Definitive Repair</h2></div>
+  <p>Typically at 24-48 hours when the lethal triad has been corrected. Criteria: Temp &gt;35°C, pH &gt;7.35, normal coagulation, stable vasopressors, restored urine output.</p>
+  <ul>
+    <li><strong>Pack removal:</strong> Remove all packs systematically, guided by the operative note count. Irrigate with warm saline. Reassess haemostasis.</li>
+    <li><strong>Vascular repair:</strong> Remove temporary shunts and perform definitive repair/grafting. Assess bowel viability post-revascularization.</li>
+    <li><strong>Bowel reconstruction:</strong> Perform anastomoses now (no tension, good blood supply, negative leak test). If physiology remains borderline, return for a third look rather than risking an unsafe anastomosis.</li>
+    <li><strong>Fascial closure:</strong> Goal is primary fascial closure at first or second re-look. If impossible due to oedema, consider botulinum toxin, biologic mesh bridging, or planned ventral hernia management at 6-12 months.</li>
+  </ul>
+</section>
+
+<div class="sec-header s3">
+  <span class="sec-badge">PILLAR 3</span>
+  <span class="sec-title">Technical Pearls &amp; Bail-Out Strategies</span>
+</div>
+
+<section class="topic s3" id="p3a">
+  <div class="topic-header"><span class="topic-num">3.1</span><h2>Consultant Pearls</h2></div>
+  
+  <div class="callout pearl">
+    <span class="label">Consultant Pearl #1: Pack First, Ask Questions Second</span>
+    Every damage control surgeon learned to pack decisively only after wasting time trying to find the source. When you open a damage control abdomen and blood is everywhere, pack all four quadrants before doing anything else. The 60 seconds spent searching is 60 seconds of lethal triad accumulation you don't have. Pack. Assess. Prioritise. Operate.
+  </div>
+
+  <div class="callout pearl">
+    <span class="label">Consultant Pearl #2: The Retroperitoneal Haematoma Decision</span>
+    No intraoperative decision is more consequential.
+    <br><br>
+    <strong>Zone I (central):</strong> Always open (aorta or IVC injury). Proximal control first.<br>
+    <strong>Zone II (flank):</strong> Blunt, stable = Do NOT open (you will lose tamponade). Penetrating/pulsatile = Open.<br>
+    <strong>Zone III (pelvic):</strong> Blunt = Do NOT open (pelvic venous plexus will exsanguinate you; pack and angioembolize). Penetrating/pulsatile = Open.
+  </div>
+
+  <div class="diagram-wrap">
+    
+  </div>
+
+  <div class="callout pearl">
+    <span class="label">Consultant Pearl #3: Know When Phase I Is Over</span>
+    The most dangerous moment is when bleeding is controlled and you are tempted to "just do the anastomosis." Resist it. Phase I ends when haemorrhage and contamination are temporarily controlled. The anastomosis will be there in 48 hours; the patient may not be.
+  </div>
+</section>
+
+<section class="topic s3" id="p3b">
+  <div class="topic-header"><span class="topic-num">3.2</span><h2>The Bail-Out Point</h2></div>
+  <p>In damage control, the entire operation is a bail-out from definitive surgery. Specific escalation triggers:</p>
+  <ul>
+    <li><strong>Cardiac arrest on the table:</strong> Emergency thoracotomy, open cardiac massage, aortic cross-clamp at hiatus. Survivable in penetrating trauma; &lt;1% survival in blunt traumatic arrest.</li>
+    <li><strong>Uncontrolled aortic/IVC haemorrhage:</strong> Manual compression, call vascular surgery immediately. Do not attempt complex formal aortic anastomosis without senior supervision.</li>
+    <li><strong>Cannot close abdomen with TAC without tension:</strong> Bowel is massively oedematous. A Bogotá bag or skin-only closure is required. Accept the open abdomen.</li>
+    <li><strong>Vasopressor requirements escalating:</strong> Discuss with anaesthesia. Consider ending the operation immediately regardless of completion status. Patient needs the ICU.</li>
+    <li><strong>Operating for &gt;90 minutes with deterioration:</strong> Stop. TAC. ICU. No operation takes priority over survival.</li>
+  </ul>
+</section>
+
+<div class="sec-header s4">
+  <span class="sec-badge">PILLAR 4</span>
+  <span class="sec-title">Post-operative Care &amp; Longitudinal Follow-up</span>
+</div>
+
+<section class="topic s4" id="p4a">
+  <div class="topic-header"><span class="topic-num">4.1</span><h2>Immediate Post-op (Phase II — ICU)</h2></div>
+  
+  <ul>
+    <li><strong>ICU Handover:</strong> Must be highly structured. Cover exactly what was done, what was left behind (pack counts, shunts), the planned re-look timing, and triggers for early return.</li>
+    <li><strong>Monitoring Targets:</strong>
+      <ul>
+        <li>Temp &gt;35°C (active warming).</li>
+        <li>MAP &gt;65mmHg with decreasing vasopressors.</li>
+        <li>TEG/ROTEM-guided coagulation (INR &lt;1.5, fibrinogen &gt;2g/L, platelets &gt;100,000).</li>
+        <li>Lactate halving within 2 hours.</li>
+        <li>IAP &lt;12mmHg (measure every 4 hours via urinary catheter).</li>
+      </ul>
+    </li>
+    <li><strong>Nutrition:</strong> Enteral nutrition via nasojejunal tube started within 24-48 hours, even in the open abdomen.</li>
+    <li><strong>Abdominal closure planning:</strong> Daily assessment of readiness (physiology met, visceral oedema settling).</li>
+  </ul>
+</section>
+
+<section class="topic s4" id="p4b">
+  <div class="topic-header"><span class="topic-num">4.2</span><h2>Long-term Follow-up</h2></div>
+  <ul>
+    <li><strong>6-week visit:</strong> Wound assessment (incisional hernia rate is 30-50% after open abdomen management). Vaccination after splenectomy is mandatory (Pneumococcal, Meningococcal, Hib, Influenza) ideally given 2 weeks post-op. Document lifelong penicillin prophylaxis for high-risk patients.</li>
+    <li><strong>3-month visit:</strong> Formal incisional hernia assessment. Bowel function review. Psychosocial screening (PTSD, depression, and cognitive impairment are highly prevalent after major trauma and ICU admission).</li>
+  </ul>
+</section>
+
+<div class="sec-header s5">
+  <span class="sec-badge">PILLAR 5</span>
+  <span class="sec-title">Complication Management</span>
+</div>
+
+<section class="topic s5" id="p5a">
+  <div class="topic-header"><span class="topic-num">5.1</span><h2>Complication 1: Abdominal Compartment Syndrome (ACS)</h2></div>
+  <ul>
+    <li><strong>Recognition:</strong> IAP &gt;20mmHg on two measurements + new organ dysfunction (oliguria, rising peak airway pressures, falling cardiac output). Tense, board-like abdomen.</li>
+    <li><strong>Medical management:</strong> NG/rectal decompression, neuromuscular blockade (temporising), diuresis/haemofiltration for iatrogenic ACS.</li>
+    <li><strong>Surgical decompression:</strong> Return to theatre immediately for decompressive laparotomy if IAP &gt;20mmHg + organ dysfunction (or IAP &gt;25mmHg regardless). Do not close the fascia; TAC is required. Expect a reperfusion response (hypotension) upon opening.</li>
+  </ul>
+</section>
+
+<section class="topic s5" id="p5b">
+  <div class="topic-header"><span class="topic-num">5.2</span><h2>Complication 2: Missed Injury / Retained Pack</h2></div>
+  <ul>
+    <li><strong>Missed Injury:</strong> Peritonitis developing 24-48 hours post-DCL, bowel sounds in the chest, or delayed haemorrhage. CT abdomen/pelvis is definitive. Return to theatre for source control.</li>
+    <li><strong>Retained Pack:</strong> A pack left beyond 48-72 hours causes infection, erosion, and fistula. Prevent via meticulous documentation and verbal handover. Return to theatre at next planned re-look. Late discoveries (&gt;5 days) require IR drainage or operative removal.</li>
+  </ul>
+</section>
+
+<section class="topic s5" id="p5c">
+  <div class="topic-header"><span class="topic-num">5.3</span><h2>Complication 3: Enteroatmospheric Fistula (EAF)</h2></div>
+  <ul>
+    <li><strong>Recognition:</strong> The most devastating open abdomen complication. Bowel content appearing in the open wound. Rapid malnutrition and sepsis follow.</li>
+    <li><strong>Immediate management (Non-operative):</strong> Isolate the EAF from the rest of the wound using a purpose-built VAC chimney. Protect surrounding skin aggressively. Initiate parenteral nutrition. Drain associated collections. Spontaneous closure rate is &lt;10%.</li>
+    <li><strong>Definitive surgical management:</strong> Do not attempt prematurely. Wait 3-6 months until patient is nutritionally rehabilitated, wound is granulated, and anatomy is defined. Requires major planned abdominal wall reconstruction at a specialist centre.</li>
+  </ul>
+</section>
+
+<div class="rapid-ref" id="rapid">
+  <h3>Rapid Reference — High-Yield Board Facts</h3>
+  <table>
+    <thead><tr><th>Topic</th><th>Key Fact</th></tr></thead>
+    <tbody>
+      <tr><td>The Lethal Triad</td><td><strong>Hypothermia</strong> (&lt;35°C), <strong>Acidosis</strong> (pH &lt;7.2), <strong>Coagulopathy</strong>.</td></tr>
+      <tr><td>Resuscitation Target</td><td>Permissive hypotension: Systolic BP <strong>80-90mmHg</strong> (unless TBI present).</td></tr>
+      <tr><td>Massive Transfusion</td><td><strong>1:1:1 ratio</strong> of pRBC to FFP to Platelets. Give 1g TXA within 3 hours.</td></tr>
+      <tr><td>First Operative Step</td><td>Xiphoid-to-pubis laparotomy followed immediately by <strong>4-quadrant packing</strong>.</td></tr>
+      <tr><td>Zone I Retroperitoneal Hematoma</td><td>Central (Aorta/IVC). <strong>Always explore</strong>.</td></tr>
+      <tr><td>Zone III Retroperitoneal Hematoma</td><td>Pelvic. <strong>Do NOT open in blunt trauma</strong> (pack and angioembolize).</td></tr>
+      <tr><td>Hollow Viscus Injury</td><td>Staple and leave in discontinuity. <strong>No anastomoses</strong> in Phase I.</td></tr>
+      <tr><td>Phase III Timing</td><td>Planned re-look at <strong>24-48 hours</strong> once physiology is fully optimized.</td></tr>
+      <tr><td>ACS Diagnostic Criteria</td><td>IAP <strong>&gt;20mmHg</strong> + new organ dysfunction.</td></tr>
+      <tr><td>Post-Splenectomy Vaccines</td><td>Pneumococcal, Meningococcal, Hib, Influenza. Administer 2 weeks post-op.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div></main>
+
+<button id="top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+const progressBar = document.getElementById('progress-bar');
+const topBtn = document.getElementById('top-btn');
+const sidebarToggle = document.getElementById('sidebar-toggle');
+const sidebarOverlay = document.getElementById('sidebar-overlay');
+const navItems = document.querySelectorAll('.nav-item');
+const sections = document.querySelectorAll('.topic[id], .rapid-ref[id]');
+const body = document.body;
+
+function toggleSidebar() { body.classList.toggle('sidebar-open'); }
+function closeSidebar() { body.classList.remove('sidebar-open'); }
+
+window.addEventListener('scroll', () => {
+  const st = window.scrollY;
+  const dh = document.documentElement.scrollHeight - window.innerHeight;
+  progressBar.style.transform = `scaleX(${st / dh})`;
+  topBtn.classList.toggle('show', st > 400);
+  
+  let current = '';
+  sections.forEach(s => { if (st >= s.offsetTop - 120) current = s.id; });
+  navItems.forEach(n => { n.classList.toggle('active', n.getAttribute('href') === '#' + current); });
+});
+
+function filterNav(query) {
+  const q = query.toLowerCase();
+  navItems.forEach(item => { item.style.display = (!q || item.textContent.toLowerCase().includes(q)) ? 'block' : 'none'; });
+  document.querySelectorAll('.vol-label').forEach(l => { l.style.display = 'block'; });
+}
+
+navItems.forEach(item => {
+  item.addEventListener('click', e => {
+    e.preventDefault();
+    closeSidebar();
+    const target = document.querySelector(item.getAttribute('href'));
+    if (target) window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 80, behavior: 'smooth' });
+  });
+});
+
+document.querySelectorAll('.topic').forEach((el, i) => { el.style.animationDelay = `${i * 0.03}s`; });
+</script>
+</body>
+</html>
