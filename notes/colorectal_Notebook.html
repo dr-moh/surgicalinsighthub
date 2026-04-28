@@ -1,497 +1,240 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Surgical Insight Hub — Colorectal Monograph</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-<noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
-
-<link rel="stylesheet" href="../css/theme.css">
-<link rel="stylesheet" href="../css/shared.css">
-
-<script>
-  const savedTheme = localStorage.getItem('sih-theme') || 'light';
-  if (savedTheme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
-</script>
 <style>
-  @media print {
-    body { margin: 0; }
-    .page-break { page-break-before: always; }
-    .no-print { display: none; }
-    #sideNav { display: none; }
+  :root {
+    --brand-gold: #b8922a;
+    --brand-cream: #f5f0e8;
+    --brand-dark: #1a1208;
+    --brand-brown: #2b1810;
+    --text-main: #1a1208;
+    --bg-main: #f5f0e8;
+    --card-bg: #ffffff;
+    --sidebar-bg: #2b1810;
+    --nav-height: 70px;
+    --sidebar-width: 280px;
   }
+
+  [data-theme="dark"] {
+    --bg-main: #0f1115;
+    --text-main: #e2e8f0;
+    --card-bg: #1a1d23;
+    --brand-cream: #1a1d23;
+  }
+
   * { box-sizing: border-box; margin: 0; padding: 0; }
-
   body {
-    font-family: Georgia, serif;
-    font-size: 13px;
+    font-family: 'Source Serif 4', Georgia, serif;
+    background: var(--bg-main);
+    color: var(--text-main);
     line-height: 1.7;
-    color: #1a1208;
-    background: #f5f0e8;
-    padding: 0;
+    transition: background 0.3s ease, color 0.3s ease;
   }
 
-  /* ── TOGGLE BUTTON ── */
-  #navToggle {
+  /* Progress Bar */
+  #progress-bar {
     position: fixed;
-    top: 82px; left: 12px;
-    z-index: 9999;
-    background: #2b1810;
-    border: 1.5px solid #b8922a;
-    color: #f0d080;
-    border-radius: 8px;
-    padding: 8px 14px;
-    font-size: 13px;
-    font-weight: 700;
-    cursor: pointer;
-    font-family: Arial, sans-serif;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+    top: 0; left: 0;
+    width: 100%; height: 3px;
+    background: var(--brand-gold);
+    z-index: 10001;
+    transform-origin: left;
+    transform: scaleX(0);
+    transition: transform 0.1s linear;
+  }
+
+  /* Navigation */
+  .nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: var(--nav-height);
+    background: rgba(26, 18, 8, 0.95);
+    backdrop-filter: blur(10px);
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 7px;
+    padding: 0 24px;
+    z-index: 10000;
+    border-bottom: 1px solid rgba(184, 146, 42, 0.2);
   }
-  #navToggle:hover { opacity: 0.88; }
 
-  /* ── OVERLAY ── */
-  #navOverlay {
-    display: none;
+  .nav-left, .nav-right { display: flex; align-items: center; gap: 20px; }
+  .nav-pill { display: flex; align-items: center; gap: 12px; text-decoration: none; color: white; }
+  .nav-logo-img img { width: 32px; height: 32px; border-radius: 6px; }
+  .nav-brand-text { font-weight: 700; font-size: 16px; color: var(--brand-gold); }
+  .nav-brand-sub { font-size: 10px; opacity: 0.6; }
+
+  .nav-links-pill { display: flex; background: rgba(255,255,255,0.05); border-radius: 100px; padding: 4px; border: 1px solid rgba(255,255,255,0.1); }
+  .nav-links-pill a { padding: 6px 16px; border-radius: 100px; text-decoration: none; color: rgba(255,255,255,0.7); font-size: 13px; font-weight: 500; transition: 0.2s; }
+  .nav-links-pill a.active { background: var(--brand-gold); color: #1a1208; }
+
+  .theme-toggle { background: none; border: none; cursor: pointer; color: var(--brand-gold); padding: 8px; border-radius: 50%; transition: 0.3s; }
+  .theme-toggle:hover { background: rgba(184, 146, 42, 0.1); }
+  .theme-toggle svg { width: 20px; height: 20px; }
+
+  /* Sidebar Toggle */
+  #sidebar-toggle {
     position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0,0,0,0.5);
-    z-index: 8888;
-  }
-
-  /* ── SIDEBAR ── */
-  #sideNav {
-    position: fixed;
-    top: 70px; left: -260px;
-    width: 240px;
-    height: calc(100vh - 70px);
-    background: #2b1810;
-    z-index: 9998;
-    overflow-y: auto;
-    overflow-x: hidden;
-    transition: left 0.28s ease;
-    border-right: 2px solid #b8922a;
-    padding: 16px 14px 40px;
-    font-family: Arial, sans-serif;
-    font-size: 11px;
-  }
-  #sideNav.open { left: 0; }
-
-  #navClose {
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: 12px;
-  }
-  #navClose button {
-    background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(184,146,42,0.3);
-    color: #b8922a;
-    border-radius: 6px;
-    width: 26px; height: 26px;
-    font-size: 14px;
-    cursor: pointer;
-    font-family: Arial, sans-serif;
-  }
-
-  #sideNav .nav-brand {
+    top: 85px; left: 24px;
+    z-index: 999;
+    background: var(--brand-brown);
+    border: 1px solid var(--brand-gold);
+    color: var(--brand-gold);
+    padding: 8px 16px;
+    border-radius: 100px;
     font-size: 12px;
-    color: #f0d080;
-    font-weight: bold;
-    margin-bottom: 14px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid rgba(184,146,42,0.3);
-    line-height: 1.4;
-  }
-  #sideNav h2 {
-    font-size: 10px;
-    color: #b8922a;
-    margin-bottom: 4px;
-    letter-spacing: 0.8px;
-    text-transform: uppercase;
     font-weight: 700;
-    margin-top: 0;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex; align-items: center; gap: 8px;
   }
-  #sideNav a {
-    display: block;
-    color: rgba(255,255,255,0.65);
-    text-decoration: none;
-    padding: 4px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.06);
-    transition: color .15s;
-  }
-  #sideNav a:hover { color: #b8922a; }
-  #sideNav .nav-section {
-    color: #b8922a;
-    font-weight: bold;
-    margin-top: 12px;
-    margin-bottom: 3px;
-    font-size: 10px;
-    letter-spacing: .08em;
-    text-transform: uppercase;
-  }
+  #sidebar-toggle:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(0,0,0,0.4); }
 
-  /* ── SURGICAL ART inside sidebar ── */
-  .nav-art {
-    position: relative;
-    margin-top: 24px;
-    height: 200px;
-    opacity: 0.18;
-    overflow: hidden;
-  }
-  .nav-art svg { width: 100%; height: 100%; }
-
-  /* ── MAIN CONTENT ── */
-  .main-content {
-    padding: 100px 24px 40px 24px;
-    max-width: 980px;
-    margin: 0 auto;
-  }
-
-  /* ── WATERMARK ── */
-  body::after {
-    content: '';
+  /* Sidebar Overlay */
+  .sidebar-overlay {
     position: fixed;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-    width: min(540px, 75vw);
-    height: min(540px, 75vw);
-    background-image: url('Surgical_Insight_Hub_Logo.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    opacity: 0.07;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(4px);
+    z-index: 1001;
+    opacity: 0;
     pointer-events: none;
-    z-index: -1;
-    filter: sepia(1) saturate(0.3) brightness(0.45);
+    transition: 0.3s;
+  }
+  body.sidebar-open .sidebar-overlay { opacity: 1; pointer-events: auto; }
+
+  /* Sidebar */
+  .sidebar {
+    position: fixed;
+    top: 0; left: 0; bottom: 0;
+    width: var(--sidebar-width);
+    background: var(--sidebar-bg);
+    z-index: 1002;
+    transform: translateX(-100%);
+    transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border-right: 1px solid rgba(184, 146, 42, 0.2);
+    display: flex; flex-direction: column;
+    color: white;
+  }
+  body.sidebar-open .sidebar { transform: translateX(0); }
+
+  .sidebar-header { padding: 32px 24px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+  .sidebar-header h2 { color: var(--brand-gold); font-size: 18px; margin-bottom: 4px; }
+  .sidebar-header p { font-size: 12px; opacity: 0.6; }
+
+  .sidebar-nav { flex: 1; overflow-y: auto; padding: 24px; }
+  .nav-group { margin-bottom: 24px; }
+  .nav-group-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--brand-gold); opacity: 0.8; margin-bottom: 12px; font-weight: 700; }
+  .nav-item { display: block; padding: 8px 0; color: rgba(255,255,255,0.7); text-decoration: none; font-size: 14px; transition: 0.2s; border-bottom: 1px solid rgba(255,255,255,0.03); }
+  .nav-item:hover { color: var(--brand-gold); padding-left: 8px; }
+  .nav-item.active { color: var(--brand-gold); font-weight: 600; }
+
+  /* Main Content */
+  .main-content {
+    margin-left: 0;
+    padding: 100px 24px 60px;
+    max-width: 900px;
+    margin: 0 auto;
+    min-height: 100vh;
   }
 
-  /* ── COVER ── */
-  .cover {
-    background: #2b1810;
-    color: #fff;
-    padding: 60px 50px;
-    border-radius: 8px;
-    margin-bottom: 30px;
-    text-align: center;
-    border: 1px solid rgba(184,146,42,0.3);
-    position: relative;
-    overflow: hidden;
-  }
-  .cover::before {
-    content: '';
-    position: absolute; inset: 0;
-    background: repeating-linear-gradient(to bottom, transparent 0, transparent 39px, rgba(184,146,42,0.04) 39px, rgba(184,146,42,0.04) 40px);
-    pointer-events: none;
-  }
-  .cover h1 { font-size: 28px; font-weight: bold; color: #f0d080; margin-bottom: 10px; position: relative; }
-  .cover p { font-size: 14px; color: rgba(255,255,255,0.6); position: relative; }
-  .cover .subtitle { font-size: 16px; margin: 10px 0; color: #fff; position: relative; }
-  .cover .meta { margin-top: 20px; font-size: 12px; color: #b8922a; position: relative; }
-  .cover .monograph-number { font-size: 11px; color: #b8922a; text-transform: uppercase; letter-spacing: 1.5px; font-family: Arial, sans-serif; margin-bottom: 12px; position: relative; }
-
-  /* ── TOC ── */
-  .toc { background: #fff; border-radius: 8px; padding: 30px; margin-bottom: 30px; border-left: 5px solid #2b1810; box-shadow: 0 1px 4px rgba(43,24,16,0.07); }
-  .toc h2 { font-size: 18px; color: #2b1810; margin-bottom: 16px; font-family: Arial, sans-serif; }
-  .toc ol { padding-left: 20px; }
-  .toc li { margin-bottom: 6px; }
-  .toc a { color: #2b1810; text-decoration: none; font-family: Arial, sans-serif; font-size: 13px; }
-  .toc a:hover { color: #b8922a; text-decoration: underline; }
-  .toc .toc-sub { padding-left: 20px; list-style: disc; }
-  .toc .toc-sub li { font-size: 12px; color: #6b5a40; margin-bottom: 3px; }
-
-  /* ── MONOGRAPH ── */
+  /* Monograph Components */
   .monograph {
-    background: #fff;
-    border-radius: 8px;
-    padding: 36px 40px;
-    margin-bottom: 30px;
-    box-shadow: 0 1px 4px rgba(43,24,16,0.07);
-    border: 1px solid rgba(184,146,42,0.15);
+    background: var(--card-bg);
+    border-radius: 16px;
+    padding: 40px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 30px rgba(0,0,0,0.05);
+    border: 1px solid rgba(184, 146, 42, 0.1);
   }
-  .monograph-header { border-bottom: 3px solid #b8922a; padding-bottom: 14px; margin-bottom: 24px; }
-  .monograph-number { font-size: 11px; color: #b8922a; text-transform: uppercase; letter-spacing: 1px; font-family: Arial, sans-serif; }
-  .monograph-title { font-size: 22px; font-weight: bold; color: #2b1810; margin: 6px 0 4px; }
-  .monograph-subtitle { font-size: 13px; color: #6b5a40; font-family: Arial, sans-serif; }
+  .monograph-header { border-bottom: 2px solid var(--brand-gold); padding-bottom: 20px; margin-bottom: 30px; }
+  .monograph-title { font-size: 28px; color: var(--brand-brown); margin: 8px 0; }
+  [data-theme="dark"] .monograph-title { color: var(--brand-gold); }
 
-  h2.section {
-    font-size: 15px; font-family: Arial, sans-serif; font-weight: bold;
-    color: #fff; background: #2b1810; padding: 8px 14px;
-    border-radius: 4px; margin: 28px 0 14px;
-    border-left: 4px solid #b8922a;
-  }
-  h3.subsection {
-    font-size: 13px; font-family: Arial, sans-serif; font-weight: bold;
-    color: #2b1810; border-left: 4px solid #b8922a;
-    padding-left: 10px; margin: 20px 0 10px;
-  }
-  h4.sub2 {
-    font-size: 12px; font-family: Arial, sans-serif; font-weight: bold;
-    color: #2b1810; margin: 14px 0 6px;
-    text-decoration: underline; text-decoration-color: #b8922a;
-  }
+  h2.section { background: var(--brand-brown); color: white; padding: 12px 20px; border-radius: 8px; margin-top: 40px; border-left: 4px solid var(--brand-gold); font-size: 18px; }
+  h3.subsection { border-left: 3px solid var(--brand-gold); padding-left: 15px; margin: 30px 0 15px; font-size: 16px; }
 
-  table { width: 100%; border-collapse: collapse; margin: 12px 0 18px; font-size: 12px; font-family: Arial, sans-serif; }
-  th { background: #2b1810; color: #f0d080; padding: 7px 10px; text-align: left; font-weight: bold; font-size: 11px; letter-spacing: 0.05em; text-transform: uppercase; }
-  td { padding: 6px 10px; border-bottom: 1px solid rgba(184,146,42,0.15); vertical-align: top; color: #1a1208; }
-  tr:nth-child(even) td { background: rgba(184,146,42,0.04); }
-  tr:hover td { background: rgba(184,146,42,0.08); }
+  /* Tables */
+  table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px; border-radius: 12px; overflow: hidden; }
+  th { background: var(--brand-brown); color: var(--brand-gold); padding: 12px 16px; text-align: left; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; }
+  td { padding: 12px 16px; border-bottom: 1px solid rgba(184, 146, 42, 0.1); }
+  tr:nth-child(even) td { background: rgba(184, 146, 42, 0.03); }
 
-  .callout { border-radius: 6px; padding: 12px 16px; margin: 14px 0; font-family: Arial, sans-serif; font-size: 12px; }
-  .callout-danger { background: #fff0f0; border-left: 4px solid #a31515; }
-  .callout-danger strong { color: #a31515; }
-  .callout-pearl { background: rgba(184,146,42,0.07); border-left: 4px solid #b8922a; }
-  .callout-pearl strong { color: #96740e; }
-  .callout-exam { background: #fffbea; border-left: 4px solid #b8922a; }
-  .callout-exam strong { color: #7a5c00; }
-  .callout-green { background: #f0fdf4; border-left: 4px solid #16a34a; }
-  .callout-green strong { color: #15803d; }
+  /* Callouts */
+  .callout { padding: 20px; border-radius: 12px; margin: 20px 0; border-left: 4px solid; }
+  .callout-danger { background: rgba(163, 21, 21, 0.05); border-color: #a31515; }
+  .callout-pearl { background: rgba(184, 146, 42, 0.05); border-color: var(--brand-gold); }
+  .callout-exam { background: rgba(240, 208, 128, 0.1); border-color: #f0d080; }
 
-  .viva { margin: 10px 0; padding: 12px 16px; background: rgba(43,24,16,0.04); border-radius: 6px; font-family: Arial, sans-serif; font-size: 12px; border: 1px solid rgba(184,146,42,0.15); }
-  .viva .q { font-weight: bold; color: #2b1810; margin-bottom: 6px; }
-  .viva .a { color: #3d2a18; }
-
-  .formula { background: #faf7f2; border: 1px solid rgba(184,146,42,0.25); border-radius: 4px; padding: 10px 14px; font-family: 'Courier New', monospace; font-size: 12px; margin: 10px 0; color: #1a1208; }
-
-  .diagram-wrapper { background: #faf7f2; border: 1px solid rgba(184,146,42,0.2); border-radius: 8px; padding: 16px; margin: 18px 0; overflow-x: auto; }
-  .diagram-title { font-family: Arial, sans-serif; font-size: 11px; font-weight: bold; color: #b8922a; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 10px; }
-  svg text { font-family: Arial, sans-serif; }
-
-  .summary-card { background: #2b1810; color: #fff; border-radius: 8px; padding: 20px 24px; margin: 20px 0; font-family: Arial, sans-serif; font-size: 12px; border: 1px solid rgba(184,146,42,0.3); }
-  .summary-card h3 { color: #f0d080; font-size: 14px; margin-bottom: 12px; }
-  .summary-card ul { padding-left: 18px; }
-  .summary-card li { margin-bottom: 5px; color: rgba(255,255,255,0.8); }
-  .summary-card strong { color: #b8922a; }
-
-  .trial { background: rgba(184,146,42,0.06); border: 1px solid rgba(184,146,42,0.25); border-radius: 6px; padding: 10px 14px; margin: 8px 0; font-family: Arial, sans-serif; font-size: 12px; }
-  .trial strong { color: #7a5c00; }
-
-  ul.body-list { padding-left: 20px; margin: 8px 0 12px; font-family: Arial, sans-serif; font-size: 12px; }
-  ul.body-list li { margin-bottom: 5px; }
-  p.body { font-family: Arial, sans-serif; font-size: 12px; margin: 8px 0; line-height: 1.6; }
-  .page-break { page-break-before: always; }
-  .spacer { height: 16px; }
-  .master-table th { background: #2b1810; font-size: 11px; color: #f0d080; }
-  .master-table td { font-size: 11px; }
-
-  .sih-footer { margin-top: 40px; padding: 14px 20px; background: #2b1810; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; font-family: Arial, sans-serif; font-size: 11px; color: rgba(255,255,255,0.45); border-top: 2px solid #b8922a; flex-wrap: wrap; gap: 6px; }
-  .sih-footer span { color: #b8922a; font-weight: 700; }
-
-/* ── MOBILE RESPONSIVE ── */
-@media(max-width:768px){
-  body{
-    background:#f7f3ec;
-    padding:0;
-    display:block;
+  /* Responsive */
+  @media (max-width: 768px) {
+    .nav-links-pill { display: none; }
+    .main-content { padding: 90px 16px 40px; }
+    .monograph { padding: 24px; }
+    table { display: block; overflow-x: auto; }
   }
-  .page{
-    width:100% !important;
-    height:auto !important;
-    min-height:0 !important;
-    padding:14px !important;
-    box-shadow:none !important;
-    border:none !important;
-    border-radius:0 !important;
-    margin:0 !important;
-    page-break-after:auto !important;
-  }
-  .body{
-    overflow:visible !important;
-    flex:none !important;
-  }
-  .grid,.two-col,.col-2,.columns{
-    grid-template-columns:1fr !important;
-    display:flex !important;
-    flex-direction:column !important;
-  }
-  table{
-    font-size:11px !important;
-    display:block;
-    overflow-x:auto;
-    white-space:nowrap;
-  }
-  th,td{
-    padding:5px 8px !important;
-    font-size:11px !important;
-  }
-  .tab-strip,.tabs{
-    overflow-x:auto;
-    white-space:nowrap;
-    -webkit-overflow-scrolling:touch;
-  }
-  .tab-strip .tab,.tabs .tab{
-    font-size:9px !important;
-    padding:6px 10px !important;
-  }
-  h1,.title{font-size:1.1rem !important;}
-  h2,.section-title{font-size:.95rem !important;}
-  h3{font-size:.85rem !important;}
-  .foot,.footer{margin-top:16px !important;}
-  .brutal-rule,.callout,.description{
-    font-size:.78rem !important;
-    line-height:1.6 !important;
-  }
-  li{font-size:.78rem !important;}
-  .badge{font-size:9px !important;}
-}
-
 </style>
 </head>
-<nav class="nav">
-  <div class="nav-left">
-    <div class="nav-pill" onclick="window.location.href='../index.html'" style="cursor: pointer;">
-      <div class="nav-logo-img"><img src="../assets/images/Surgical_Insight_Hub_Logo.png" alt="SIH" onerror="this.parentElement.style.background='#b8922a'"></div>
-      <div><div class="nav-brand-text">Surgical Insight Hub</div><div class="nav-brand-sub">@sugicalInsightHub</div></div>
+<body data-theme="light">
+  <div id="progress-bar"></div>
+
+  <nav class="nav">
+    <div class="nav-left">
+      <a href="../index.html" class="nav-pill">
+        <div class="nav-logo-img"><img src="../assets/images/Surgical_Insight_Hub_Logo.png" alt="SIH"></div>
+        <div>
+          <div class="nav-brand-text">Surgical Insight Hub</div>
+          <div class="nav-brand-sub">@sugicalInsightHub</div>
+        </div>
+      </a>
     </div>
-  </div>
+
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle">
+        <svg class="sun-icon" viewBox="0 0 24 24"><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M6.34 19.07l1.41-1.41M17.66 6.34l1.41-1.41M12 7a5 5 0 100 10m0 0a5 5 0 100-10z" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+        <svg class="moon-icon" viewBox="0 0 24 24" style="display:none;"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" fill="currentColor"/></svg>
+      </button>
+      <div class="nav-links-pill">
+        <a href="../notes.html" class="active">Notes</a>
+        <a href="../podcast.html">Podcast</a>
+        <a href="../mcq.html">MCQ Arena</a>
+      </div>
+      <a href="https://t.me/sugicalInsightHub" target="_blank" class="nav-item" style="background:var(--brand-gold); color: #1a1208; padding: 8px 16px; border-radius: 100px; border: none; font-weight: 700; font-size: 12px;">Join Telegram →</a>
+    </div>
+  </nav>
+
+  <div class="sidebar-overlay" onclick="closeSidebar()"></div>
   
-  <div class="nav-right">
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-      <svg class="sun-icon" viewBox="0 0 24 24"><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M6.34 19.07l1.41-1.41M17.66 6.34l1.41-1.41M12 7a5 5 0 100 10m0 0a5 5 0 100-10z"/></svg>
-      <svg class="moon-icon" viewBox="0 0 24 24" style="display:none;"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
-    </button>
-    <div class="nav-links-pill">
-      <a href="../notes.html" class="active">Notes</a>
-      <a href="../podcast.html">Podcast</a>
-      <a href="../review.html">Review</a>
-      <a href="../mcq.html">MCQ Arena</a>
-      <a href="../about.html">About</a>
+  <button id="sidebar-toggle" onclick="toggleSidebar()">
+    <span>☰</span> Contents
+  </button>
+
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <h2>Monograph Index</h2>
+      <p>Colorectal & Anal Surgery</p>
     </div>
-    <a href="https://t.me/sugicalInsightHub" target="_blank" class="nav-btn-sih" style="background:var(--brand-gold);color:#1a1208;padding:8px 16px;border-radius:100px;text-decoration:none;font-size:13px;font-weight:700;margin-left:15px;display:inline-block;">Get Notes →</a>
+    <nav class="sidebar-nav">
+      <div class="nav-group">
+        <div class="nav-group-label">Introduction</div>
+        <a href="#cover" class="nav-item" onclick="closeSidebar()">Cover Page</a>
+        <a href="#toc" class="nav-item" onclick="closeSidebar()">Table of Contents</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-label">Monographs</div>
+        <a href="#m1" class="nav-item" onclick="closeSidebar()">1. Benign Polyps / Lynch</a>
+        <a href="#m2" class="nav-item" onclick="closeSidebar()">2. Colon Cancer (CRC)</a>
+        <a href="#m3" class="nav-item" onclick="closeSidebar()">3. Rectal Cancer</a>
+        <a href="#m4" class="nav-item" onclick="closeSidebar()">4. CRLM & Peritoneal</a>
+        <a href="#m5" class="nav-item" onclick="closeSidebar()">5. Anal Canal Tumors</a>
+        <a href="#m6" class="nav-item" onclick="closeSidebar()">6. Fournier's Gangrene</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-label">Reference</div>
+        <a href="#master" class="nav-item" onclick="closeSidebar()">Master Summary Table</a>
+      </div>
+    </nav>
+  </aside>
 
-    <button class="mob-nav-toggle" id="hamburgerMenu" aria-label="Open menu">
-      ☰ Menu
-    </button>
-  </div>
-</nav>
-
-<!-- Mobile Navigation Sheet -->
-<div class="mob-nav-overlay-sih" id="mobOverlaySih"></div>
-<div class="mob-nav-sheet-sih" id="mobSheetSih">
-  <div class="mob-nav-handle" id="mobCloseSih"></div>
-  <a href="../index.html">Home</a>
-  <a href="../notes.html" class="active">Notes</a>
-  <a href="../podcast.html">Podcast</a>
-  <a href="../review.html">Review</a>
-  <a href="../mcq.html">MCQ Arena</a>
-  <a href="../about.html">About</a>
-  <a href="https://t.me/sugicalInsightHub" target="_blank" class="mob-nav-cta" style="margin-top:20px;display:block;text-align:center;background:var(--brand-gold);color:#1a1208;padding:12px;border-radius:100px;">Join Telegram</a>
-</div>
-
-<script src="../js/nav-pill.js"></script>
-<script>
-  // SIH Global Logic
-  (function(){
-    const themeToggle = document.getElementById('themeToggle');
-    const sunIcon = document.querySelector('.sun-icon');
-    const moonIcon = document.querySelector('.moon-icon');
-
-    function updateIcons(theme) {
-      if (theme === 'dark') {
-        if(sunIcon) sunIcon.style.display = 'none';
-        if(moonIcon) moonIcon.style.display = 'block';
-      } else {
-        if(sunIcon) sunIcon.style.display = 'block';
-        if(moonIcon) moonIcon.style.display = 'none';
-      }
-    }
-
-    const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
-    updateIcons(currentTheme);
-
-    if (themeToggle) {
-      themeToggle.addEventListener('click', () => {
-        const root = document.documentElement;
-        let newTheme = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-        root.setAttribute('data-theme', newTheme);
-        localStorage.setItem('sih-theme', newTheme);
-        updateIcons(newTheme);
-      });
-    }
-
-    // Mobile Nav Logic
-    const mobToggle = document.getElementById('hamburgerMenu');
-    const mobOverlay = document.getElementById('mobOverlaySih');
-    const mobSheet = document.getElementById('mobSheetSih');
-    const mobClose = document.getElementById('mobCloseSih');
-
-    if(mobToggle) {
-      mobToggle.addEventListener('click', () => {
-        mobOverlay.style.display = 'block';
-        setTimeout(() => mobSheet.classList.add('open'), 10);
-      });
-    }
-    
-    function closeNavSih() {
-      mobSheet.classList.remove('open');
-      setTimeout(() => mobOverlay.style.display = 'none', 300);
-    }
-
-    if(mobOverlay) mobOverlay.addEventListener('click', closeNavSih);
-    if(mobClose) mobClose.addEventListener('click', closeNavSih);
-  })();
-</script>
-
-<div id="navOverlay" onclick="closeNav()"></div>
-
-<button id="navToggle" onclick="openNav()">☰ Contents</button>
-
-<div id="sideNav">
-  <div id="navClose"><button onclick="closeNav()">✕</button></div>
-  <div class="nav-brand">Surgical Insight Hub<br>Monograph Series</div>
-  <h2>Colorectal &amp; Anal Surgery</h2>
-  <div class="nav-section">Notebook</div>
-  <a href="#cover" onclick="closeNav()">Cover</a>
-  <a href="#toc" onclick="closeNav()">Contents</a>
-  <div class="nav-section">Monograph 1</div>
-  <a href="#m1" onclick="closeNav()">Benign Polyps / FAP / Lynch</a>
-  <div class="nav-section">Monograph 2</div>
-  <a href="#m2" onclick="closeNav()">Colon Cancer (CRC)</a>
-  <div class="nav-section">Monograph 3</div>
-  <a href="#m3" onclick="closeNav()">Rectal Cancer</a>
-  <div class="nav-section">Monograph 4</div>
-  <a href="#m4" onclick="closeNav()">CRLM &amp; Peritoneal</a>
-  <div class="nav-section">Monograph 5</div>
-  <a href="#m5" onclick="closeNav()">Anal Canal Tumors</a>
-  <div class="nav-section">Monograph 6</div>
-  <a href="#m6" onclick="closeNav()">Fournier's Gangrene</a>
-  <div class="nav-section">Reference</div>
-  <a href="#master" onclick="closeNav()">Master Exam Table</a>
-  <div class="nav-art">
-    <svg viewBox="0 0 240 200" xmlns="http://www.w3.org/2000/svg">
-      <g transform="translate(20,30) rotate(-25)">
-        <rect x="0" y="6" width="80" height="8" rx="4" fill="#b8922a"/>
-        <polygon points="80,0 108,10 80,20" fill="#f0d080"/>
-        <rect x="0" y="8" width="80" height="3" fill="rgba(255,255,255,0.3)" rx="1"/>
-      </g>
-      <path d="M 20 120 Q 55 85 90 115 Q 125 145 155 108" fill="none" stroke="#b8922a" stroke-width="2.5" stroke-linecap="round"/>
-      <circle cx="155" cy="108" r="3" fill="#f0d080"/>
-      <path d="M 155 108 Q 175 98 170 78" fill="none" stroke="#b8922a" stroke-width="1.2" stroke-dasharray="4,3" stroke-linecap="round"/>
-      <g transform="translate(150,30) rotate(40)">
-        <rect x="0" y="0" width="3" height="50" rx="1.5" fill="#b8922a"/>
-        <rect x="8" y="0" width="3" height="50" rx="1.5" fill="#b8922a"/>
-        <path d="M 1.5 50 Q 5.5 60 5.5 65" fill="none" stroke="#b8922a" stroke-width="2" stroke-linecap="round"/>
-        <path d="M 9.5 50 Q 5.5 60 5.5 65" fill="none" stroke="#b8922a" stroke-width="2" stroke-linecap="round"/>
-        <rect x="0" y="20" width="11" height="3" rx="1" fill="#f0d080"/>
-        <rect x="0" y="25" width="11" height="3" rx="1" fill="#f0d080"/>
-      </g>
-      <g transform="translate(20,140)">
-        <circle cx="45" cy="45" r="16" fill="none" stroke="#b8922a" stroke-width="2.5"/>
-        <circle cx="45" cy="45" r="9" fill="rgba(184,146,42,0.25)"/>
-        <path d="M 29 45 Q 8 45 8 28 Q 8 10 20 10" fill="none" stroke="#b8922a" stroke-width="2" stroke-linecap="round"/>
-        <path d="M 61 45 Q 82 45 82 28 Q 82 10 70 10" fill="none" stroke="#b8922a" stroke-width="2" stroke-linecap="round"/>
-        <circle cx="20" cy="8" r="4" fill="#f0d080" stroke="#b8922a" stroke-width="1.5"/>
-        <circle cx="70" cy="8" r="4" fill="#f0d080" stroke="#b8922a" stroke-width="1.5"/>
-      </g>
-    </svg>
-  </div>
-</div>
-
-<div class="main-content">
+  <div class="main-content">
 <div class="cover" id="cover">
   <div class="monograph-number">Surgical Insight Hub Monograph</div>
   <h1>Colorectal & Anal Surgery</h1>
@@ -1473,17 +1216,69 @@
 </div>
 
 </div>
+<footer style="margin-top: 80px; padding: 40px 24px; border-top: 1px solid rgba(184, 146, 42, 0.1); text-align: center; opacity: 0.6; font-size: 13px;">
+  <p>© 2026 Surgical Insight Hub · Colorectal Monograph Series</p>
+  <p style="margin-top: 8px;">ABSITE · MRCS · FRCS · FWACS Preparation</p>
+</footer>
+
+</div> <!-- main-content -->
+
 <script>
-function openNav() {
-  document.getElementById('sideNav').classList.add('open');
-  document.getElementById('navOverlay').style.display = 'block';
-}
-function closeNav() {
-  document.getElementById('sideNav').classList.remove('open');
-  document.getElementById('navOverlay').style.display = 'none';
-}
+  function toggleSidebar() { document.body.classList.toggle('sidebar-open'); }
+  function closeSidebar() { document.body.classList.remove('sidebar-open'); }
+
+  // Theme & Progress
+  (function() {
+    const themeToggle = document.getElementById('themeToggle');
+    const sunIcon = document.querySelector('.sun-icon');
+    const moonIcon = document.querySelector('.moon-icon');
+    const progressBar = document.getElementById('progress-bar');
+
+    function updateIcons(theme) {
+      if (theme === 'dark') {
+        if(sunIcon) sunIcon.style.display = 'none';
+        if(moonIcon) moonIcon.style.display = 'block';
+      } else {
+        if(sunIcon) sunIcon.style.display = 'block';
+        if(moonIcon) moonIcon.style.display = 'none';
+      }
+    }
+
+    const currentTheme = localStorage.getItem('sih-theme') || 'light';
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    updateIcons(currentTheme);
+
+    if (themeToggle) {
+      themeToggle.addEventListener('click', () => {
+        let newTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('sih-theme', newTheme);
+        updateIcons(newTheme);
+      });
+    }
+
+    window.addEventListener('scroll', () => {
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height);
+      if(progressBar) progressBar.style.transform = `scaleX(${scrolled})`;
+    });
+
+    // Active Sidebar Link on Scroll
+    const observerOptions = { rootMargin: '-100px 0px -70% 0px', threshold: 0 };
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          document.querySelectorAll('.nav-item').forEach(link => {
+            link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id);
+          });
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.monograph, #cover, #toc').forEach(section => observer.observe(section));
+  })();
 </script>
 
-<script src="nav-pill.js"></script>
 </body>
 </html>

@@ -43,42 +43,97 @@
 html{scroll-behavior:smooth;}
 body{font-family:'Source Serif 4',Georgia,serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.75;}
 
-/* SLIDE-OVER SIDEBAR */
+/* ── GLOBAL NAV ── */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; height: 52px;
+  background: var(--primary-dk); border-bottom: 1px solid rgba(255,255,255,0.1);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 24px; z-index: 1100; color: white;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+.nav-left { display: flex; align-items: center; gap: 12px; }
+.nav-pill { display: flex; align-items: center; gap: 10px; text-decoration: none; color: inherit; }
+.nav-logo-img { width: 32px; height: 32px; border-radius: 50%; overflow: hidden; border: 1.5px solid var(--gold); }
+.nav-logo-img img { width: 100%; height: 100%; object-fit: cover; }
+.nav-brand-text { font-size: 0.85rem; font-weight: 800; letter-spacing: -0.02em; }
+.nav-brand-sub { font-size: 0.6rem; font-weight: 500; color: var(--gold); opacity: 0.9; text-transform: uppercase; letter-spacing: 0.05em; }
+
+.nav-right { display: flex; align-items: center; gap: 16px; }
+.nav-links-pill { display: flex; align-items: center; gap: 8px; }
+.nav-links-pill a { 
+  text-decoration: none; color: rgba(255,255,255,0.7); font-size: 0.78rem; font-weight: 600; 
+  padding: 6px 12px; border-radius: 100px; transition: all 0.2s;
+}
+.nav-links-pill a:hover { color: white; background: rgba(255,255,255,0.1); }
+.nav-links-pill a.active { color: var(--gold); background: rgba(184, 146, 42, 0.15); }
+.nav-btn {
+  background: var(--gold); color: #fff; text-decoration: none; font-size: 0.78rem; font-weight: 700;
+  padding: 7px 16px; border-radius: 100px; transition: transform 0.2s;
+}
+.nav-btn:hover { transform: translateY(-1px); }
+
+.theme-toggle {
+  background: none; border: none; cursor: pointer; padding: 8px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center; transition: background 0.2s;
+}
+.theme-toggle:hover { background: rgba(255,255,255,0.1); }
+.theme-toggle svg { width: 18px; height: 18px; fill: white; }
+
+@media (max-width: 850px) {
+  .nav-links-pill { display: none; }
+}
+
+/* ── DARK MODE OVERRIDES ── */
+[data-theme="dark"] {
+  --bg: #0D0B0A;
+  --bg2: #161210;
+  --text: #EBE5E7;
+  --muted: #A3927A;
+  --border: rgba(255,255,255,0.1);
+  --gold-lt: #1F1B14;
+  --primary-lt: #2B1810;
+  --s1-lt: #2B1810;
+  --s2-lt: #201A1C;
+  --s3-lt: #1A201D;
+  --s4-lt: #221D18;
+  --s5-lt: #161A1F;
+  --white: #161210;
+}
+
+/* ── SIDEBAR & OVERLAY ── */
 #sidebar {
   position: fixed; top: 0; left: 0; width: var(--sidebar-w); height: 100vh;
   background: var(--primary-dk); color: #EBE5E7;
   display: flex; flex-direction: column;
-  z-index: 1000; overflow: hidden;
+  z-index: 1200; overflow: hidden;
   transform: translateX(-100%);
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 4px 0 24px rgba(0,0,0,0.3);
 }
-body.sidebar-open #sidebar {
-  transform: translateX(0);
-}
+body.sidebar-open #sidebar { transform: translateX(0); }
 
-/* OVERLAY */
 #sidebar-overlay {
-  position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
-  background: rgba(33, 20, 18, 0.5); backdrop-filter: blur(2px);
-  z-index: 950; opacity: 0; pointer-events: none;
+  position: fixed; inset: 0;
+  background: rgba(33, 20, 18, 0.6); backdrop-filter: blur(3px);
+  z-index: 1150; opacity: 0; pointer-events: none;
   transition: opacity 0.3s ease;
 }
-body.sidebar-open #sidebar-overlay {
-  opacity: 1; pointer-events: auto;
-}
+body.sidebar-open #sidebar-overlay { opacity: 1; pointer-events: auto; }
 
-/* TOGGLE BUTTON - TOP LEFT */
 #sidebar-toggle {
-  position: fixed; top: 24px; left: 28px; z-index: 900;
+  position: fixed; top: 72px; left: 24px; z-index: 1000;
   background: var(--primary); color: white;
   border: none; border-radius: 30px;
-  padding: 10px 18px; font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600;
-  letter-spacing: 0.05em; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  padding: 10px 18px; font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 600;
+  letter-spacing: 0.05em; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.2);
   display: flex; align-items: center; gap: 8px; transition: all 0.2s;
 }
-#sidebar-toggle:hover {
-  background: var(--accent); transform: translateY(-2px);
+#sidebar-toggle:hover { background: var(--accent); transform: translateY(-2px); }
+
+#progress-bar {
+  position: fixed; top: 52px; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--accent2), var(--gold));
+  transform-origin: left; transform: scaleX(0); transition: transform 0.1s; z-index: 1105;
 }
 
 #sidebar-header{padding:20px 20px 14px;border-bottom:1px solid rgba(255,255,255,0.08);flex-shrink:0;}
@@ -211,17 +266,40 @@ tbody td{padding:9px 14px;border-bottom:1px solid var(--border);vertical-align:t
 
 @media(max-width:900px){
   .content-wrap{padding:0 20px 60px;}
-  #hero{padding:72px 20px 40px;}
+  #hero{padding:120px 20px 40px;}
   #hero h1{font-size:30px;}
 }
 @media print{
-  #sidebar-toggle, #sidebar-overlay, #sidebar, #top-btn, #progress-bar{display:none!important;}
+  #sidebar-toggle, #sidebar-overlay, #sidebar, #top-btn, #progress-bar, .nav{display:none!important;}
   .topic{page-break-inside:avoid;}
   .sec-header{page-break-before:always;}
 }
 </style>
 </head>
 <body>
+<nav class="nav">
+  <div class="nav-left">
+    <a href="../../index.html" class="nav-pill">
+      <div class="nav-logo-img"><img src="../../assets/images/Surgical_Insight_Hub_Logo.png" alt="SIH"></div>
+      <div>
+        <div class="nav-brand-text">Surgical Insight Hub</div>
+        <div class="nav-brand-sub">Monograph Series</div>
+      </div>
+    </a>
+  </div>
+  <div class="nav-right">
+    <div class="nav-links-pill">
+      <a href="../../index.html">Home</a>
+      <a href="../../notes.html" class="active">Notes</a>
+      <a href="../../podcast.html">Podcast</a>
+    </div>
+    <button class="theme-toggle" id="themeToggle">
+      <svg viewBox="0 0 24 24"><path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m11.314 11.314l.707.707M12 8a4 4 0 100 8 4 4 0 000-8z"/></svg>
+    </button>
+    <a href="../../mcq.html" class="nav-btn">Arena</a>
+  </div>
+</nav>
+
 <div id="progress-bar"></div>
 
 <div id="sidebar-overlay" onclick="closeSidebar()"></div>
@@ -541,43 +619,83 @@ tbody td{padding:9px 14px;border-bottom:1px solid var(--border);vertical-align:t
 <button id="top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 
 <script>
+// --- Standardized SIH Monograph JS ---
 const progressBar = document.getElementById('progress-bar');
 const topBtn = document.getElementById('top-btn');
-const sidebarToggle = document.getElementById('sidebar-toggle');
-const sidebarOverlay = document.getElementById('sidebar-overlay');
+const sidebar = document.getElementById('sidebar');
 const navItems = document.querySelectorAll('.nav-item');
 const sections = document.querySelectorAll('.topic[id], .rapid-ref[id]');
-const body = document.body;
 
-function toggleSidebar() { body.classList.toggle('sidebar-open'); }
-function closeSidebar() { body.classList.remove('sidebar-open'); }
+// Toggle Sidebar
+function toggleSidebar() {
+  document.body.classList.toggle('sidebar-open');
+}
 
+// Close Sidebar
+function closeSidebar() {
+  document.body.classList.remove('sidebar-open');
+}
+
+// Scroll Handling
 window.addEventListener('scroll', () => {
   const st = window.scrollY;
   const dh = document.documentElement.scrollHeight - window.innerHeight;
-  progressBar.style.transform = `scaleX(${st / dh})`;
-  topBtn.classList.toggle('show', st > 400);
   
+  // Progress Bar
+  if (progressBar) progressBar.style.transform = `scaleX(${st / dh})`;
+  
+  // Back to Top Button
+  if (topBtn) topBtn.classList.toggle('show', st > 400);
+  
+  // Active Nav Link on Scroll
   let current = '';
-  sections.forEach(s => { if (st >= s.offsetTop - 120) current = s.id; });
-  navItems.forEach(n => { n.classList.toggle('active', n.getAttribute('href') === '#' + current); });
-});
-
-function filterNav(query) {
-  const q = query.toLowerCase();
-  navItems.forEach(item => { item.style.display = (!q || item.textContent.toLowerCase().includes(q)) ? 'block' : 'none'; });
-  document.querySelectorAll('.vol-label').forEach(l => { l.style.display = 'block'; });
-}
-
-navItems.forEach(item => {
-  item.addEventListener('click', e => {
-    e.preventDefault();
-    closeSidebar();
-    const target = document.querySelector(item.getAttribute('href'));
-    if (target) window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 80, behavior: 'smooth' });
+  sections.forEach(s => {
+    if (st >= s.offsetTop - 120) current = s.id;
+  });
+  navItems.forEach(n => {
+    n.classList.toggle('active', n.getAttribute('href') === '#' + current);
   });
 });
 
+// Sidebar Search
+function filterNav(query) {
+  const q = query.toLowerCase();
+  navItems.forEach(item => {
+    const text = item.textContent.toLowerCase();
+    item.style.display = (!q || text.includes(q)) ? 'block' : 'none';
+  });
+}
+
+// Smooth Scroll & Auto-Close Sidebar
+navItems.forEach(item => {
+  item.addEventListener('click', e => {
+    e.preventDefault();
+    const targetId = item.getAttribute('href');
+    const target = document.querySelector(targetId);
+    if (target) {
+      closeSidebar();
+      window.scrollTo({
+        top: target.getBoundingClientRect().top + window.scrollY - 80,
+        behavior: 'smooth'
+      });
+    }
+  });
+});
+
+// Theme Toggle Logic
+(function() {
+  const themeToggle = document.getElementById('themeToggle');
+  if (!themeToggle) return;
+
+  themeToggle.addEventListener('click', () => {
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    const nextTheme = isDark ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', nextTheme);
+    localStorage.setItem('sih-theme', nextTheme);
+  });
+})();
+
+// Animation delays
 document.querySelectorAll('.topic').forEach((el, i) => { el.style.animationDelay = `${i * 0.03}s`; });
 </script>
 </body>

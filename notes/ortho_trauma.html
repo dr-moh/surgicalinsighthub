@@ -16,16 +16,14 @@
   const savedTheme = localStorage.getItem('sih-theme') || 'light';
   if (savedTheme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
 </script>
-
 <style>
-
 :root {
   --primary:   #2C4A6E;
   --primary-dk:#1A3050;
   --primary-lt:#E6F2F8;
   --accent:    #4A9EBF;
   --accent-lt: #E0F4FA;
-  --gold:      #C9910A;
+  --gold:      #B8860B;
   --gold-lt:   #FFF8E8;
   --v1:        #2C4A6E;
   --v2:        #3A5F82;
@@ -51,8 +49,96 @@
 html{scroll-behavior:smooth;}
 body{font-family:'Source Serif 4',Georgia,serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.75;}
 
-/* SIDEBAR */
-#sidebar{position:fixed;top:70px;left:0;width:var(--sidebar-w);height:calc(100vh - 70px);background:var(--primary-dk);color:#CBD8E8;display:flex;flex-direction:column;z-index:100;overflow:hidden;}
+/* ── GLOBAL NAV ── */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; height: 52px;
+  background: var(--primary-dk); border-bottom: 1px solid rgba(255,255,255,0.1);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 24px; z-index: 1100; color: white;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+.nav-left { display: flex; align-items: center; gap: 12px; }
+.nav-pill { display: flex; align-items: center; gap: 10px; text-decoration: none; color: inherit; }
+.nav-logo-img { width: 32px; height: 32px; border-radius: 50%; overflow: hidden; border: 1.5px solid var(--gold); }
+.nav-logo-img img { width: 100%; height: 100%; object-fit: cover; }
+.nav-brand-text { font-size: 0.85rem; font-weight: 800; letter-spacing: -0.02em; }
+.nav-brand-sub { font-size: 0.6rem; font-weight: 500; color: var(--gold); opacity: 0.9; text-transform: uppercase; letter-spacing: 0.05em; }
+
+.nav-right { display: flex; align-items: center; gap: 16px; }
+.nav-links-pill { display: flex; align-items: center; gap: 8px; }
+.nav-links-pill a { 
+  text-decoration: none; color: rgba(255,255,255,0.7); font-size: 0.78rem; font-weight: 600; 
+  padding: 6px 12px; border-radius: 100px; transition: all 0.2s;
+}
+.nav-links-pill a:hover { color: white; background: rgba(255,255,255,0.1); }
+.nav-links-pill a.active { color: var(--gold); background: rgba(184, 146, 42, 0.15); }
+.nav-btn {
+  background: var(--gold); color: #fff; text-decoration: none; font-size: 0.78rem; font-weight: 700;
+  padding: 7px 16px; border-radius: 100px; transition: transform 0.2s;
+}
+.nav-btn:hover { transform: translateY(-1px); }
+
+.theme-toggle {
+  background: none; border: none; cursor: pointer; padding: 8px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center; transition: background 0.2s;
+}
+.theme-toggle:hover { background: rgba(255,255,255,0.1); }
+.theme-toggle svg { width: 18px; height: 18px; fill: white; }
+
+@media (max-width: 850px) {
+  .nav-links-pill { display: none; }
+}
+
+/* ── DARK MODE OVERRIDES ── */
+[data-theme="dark"] {
+  --bg: #0D1117;
+  --bg2: #161B22;
+  --text: #C9D1D9;
+  --muted: #8B949E;
+  --border: rgba(255,255,255,0.1);
+  --primary-lt: #1F2937;
+  --v1-lt: #1F2937;
+  --v2-lt: #111827;
+  --v3-lt: #0F172A;
+  --white: #161B22;
+}
+
+/* ── SIDEBAR & OVERLAY ── */
+#sidebar {
+  position: fixed; top: 0; left: 0; width: var(--sidebar-w); height: 100vh;
+  background: var(--primary-dk); color: #CBD8E8;
+  display: flex; flex-direction: column;
+  z-index: 1200; overflow: hidden;
+  transform: translateX(-100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 4px 0 24px rgba(0,0,0,0.3);
+}
+body.sidebar-open #sidebar { transform: translateX(0); }
+
+#sidebar-overlay {
+  position: fixed; inset: 0;
+  background: rgba(26, 48, 80, 0.6); backdrop-filter: blur(3px);
+  z-index: 1150; opacity: 0; pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+body.sidebar-open #sidebar-overlay { opacity: 1; pointer-events: auto; }
+
+#sidebar-toggle {
+  position: fixed; top: 72px; left: 24px; z-index: 1000;
+  background: var(--primary); color: white;
+  border: none; border-radius: 30px;
+  padding: 10px 18px; font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 600;
+  letter-spacing: 0.05em; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  display: flex; align-items: center; gap: 8px; transition: all 0.2s;
+}
+#sidebar-toggle:hover { background: var(--accent); transform: translateY(-2px); }
+
+#progress-bar {
+  position: fixed; top: 52px; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-lt));
+  transform-origin: left; transform: scaleX(0); transition: transform 0.1s; z-index: 1105;
+}
+
 #sidebar-header{padding:20px 20px 14px;border-bottom:1px solid rgba(255,255,255,0.1);flex-shrink:0;}
 #sidebar-header .logo{font-family:'Playfair Display',serif;font-size:13px;font-weight:700;color:#9EC8E0;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;}
 #sidebar-header .sub{font-size:10.5px;color:rgba(203,216,232,0.6);letter-spacing:0.04em;}
@@ -64,13 +150,13 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--bg);color:var(-
 #sidebar-nav::-webkit-scrollbar{width:4px;}
 #sidebar-nav::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.15);border-radius:2px;}
 .vol-label{font-size:9.5px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#9EC8E0;padding:14px 18px 4px;}
-.nav-item{display:block;padding:6px 18px 6px 22px;font-size:12px;color:rgba(203,216,232,0.75);text-decoration:none;border-left:2px solid transparent;transition:all 0.15s;line-height:1.4;}
+.nav-item{display:block;padding:8px 18px 8px 22px;font-size:12.5px;color:rgba(203,216,232,0.75);text-decoration:none;border-left:2px solid transparent;transition:all 0.15s;line-height:1.4;}
 .nav-item:hover{color:#fff;background:rgba(255,255,255,0.05);border-left-color:rgba(158,200,224,0.5);}
 .nav-item.active{color:#fff;background:rgba(255,255,255,0.08);border-left-color:#9EC8E0;font-weight:600;}
 .nav-item .num{font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(203,216,232,0.4);margin-right:6px;}
 
 /* MAIN */
-#main{margin-left:var(--sidebar-w);min-height:100vh;padding-top:0;}
+#main{margin-left:0; min-height:100vh;}
 
 /* HERO */
 #hero{background:linear-gradient(135deg,var(--primary-dk) 0%,#071A10 60%,#040F08 100%);color:white;padding:120px 72px 60px;position:relative;overflow:hidden;}
@@ -162,7 +248,7 @@ tbody td{padding:9px 14px;border-bottom:1px solid var(--border);vertical-align:t
 svg text{font-family:'Source Serif 4',Georgia,serif;}
 
 /* PROGRESS */
-#progress-bar{position:fixed;top:70px;left:var(--sidebar-w);right:0;height:3px;background:linear-gradient(90deg,#4A9EBF,#9EC8E0);transform-origin:left;transform:scaleX(0);transition:transform 0.1s;z-index:50;}
+#progress-bar{position:fixed;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#4A9EBF,#9EC8E0);transform-origin:left;transform:scaleX(0);transition:transform 0.1s;z-index:50;}
 
 /* TOP BTN */
 #top-btn{position:fixed;bottom:28px;right:28px;background:var(--primary);color:white;border:none;border-radius:50%;width:44px;height:44px;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,0.2);transition:all 0.2s;opacity:0;pointer-events:none;}
@@ -173,27 +259,15 @@ svg text{font-family:'Source Serif 4',Georgia,serif;}
 .topic{animation:fadeUp 0.4s ease both;}
 @keyframes fadeUp{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
 
-/* SIH FOOTER */
-.sih-footer{background:#1A3050;padding:20px 48px;border-top:1px solid rgba(74,158,191,0.2);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;font-size:.72rem;color:rgba(203,216,232,0.5);}
-.sih-footer .sf-brand{font-family:'Playfair Display',serif;color:#9EC8E0;font-weight:700;}
-.sih-footer a{color:#9EC8E0;text-decoration:none;font-weight:600;}
-
 @media(max-width:900px){
-  :root{--sidebar-w:0px;}
-  #sidebar{transform:translateX(-300px);width:300px;top:70px;height:calc(100vh - 70px);}
-  #sidebar.open{transform:translateX(0);}
-  #main{margin-left:0;}
   .content-wrap{padding:0 24px 60px;}
-  #hero{padding:48px 24px 40px;}
+  #hero{padding:120px 24px 40px;}
   #hero h1{font-size:32px;}
-  #progress-bar{left:0;}
-  .sih-footer{padding:16px 24px;}
 }
 
 @media print{
-  .nav,.mob-nav-overlay,.mob-nav-sheet,#top-btn,#progress-bar,.sih-footer{display:none;}
+  #sidebar-toggle, #sidebar-overlay, #sidebar, #top-btn, #progress-bar, .nav{display:none!important;}
   #main{margin-left:0;padding-top:0;}
-  #sidebar{display:none;}
   .topic{page-break-inside:avoid;}
   .vol-header{page-break-before:always;}
 }
@@ -202,51 +276,35 @@ svg text{font-family:'Source Serif 4',Georgia,serif;}
 <body>
 <nav class="nav">
   <div class="nav-left">
-    <div class="nav-pill" onclick="window.location.href='../index.html'" style="cursor: pointer;">
-      <div class="nav-logo-img"><img src="../assets/images/Surgical_Insight_Hub_Logo.png" alt="SIH" onerror="this.parentElement.style.background='#b8922a'"></div>
-      <div><div class="nav-brand-text">Surgical Insight Hub</div><div class="nav-brand-sub">@sugicalInsightHub</div></div>
-    </div>
+    <a href="../index.html" class="nav-pill">
+      <div class="nav-logo-img"><img src="../assets/images/Surgical_Insight_Hub_Logo.png" alt="SIH"></div>
+      <div>
+        <div class="nav-brand-text">Surgical Insight Hub</div>
+        <div class="nav-brand-sub">Monograph Series</div>
+      </div>
+    </a>
   </div>
-  
   <div class="nav-right">
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-      <svg class="sun-icon" viewBox="0 0 24 24"><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M6.34 19.07l1.41-1.41M17.66 6.34l1.41-1.41M12 7a5 5 0 100 10m0 0a5 5 0 100-10z"/></svg>
-      <svg class="moon-icon" viewBox="0 0 24 24" style="display:none;"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
-    </button>
     <div class="nav-links-pill">
+      <a href="../index.html">Home</a>
       <a href="../notes.html" class="active">Notes</a>
       <a href="../podcast.html">Podcast</a>
-      <a href="../review.html">Review</a>
-      <a href="../mcq.html">MCQ Arena</a>
-      <a href="../about.html">About</a>
     </div>
-    <a href="https://t.me/sugicalInsightHub" target="_blank" class="nav-btn">Get Notes →</a>
-
-    <button class="mob-nav-toggle" id="hamburgerMenu" aria-label="Open menu">
-      ☰ Menu
+    <button class="theme-toggle" id="themeToggle">
+      <svg viewBox="0 0 24 24"><path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m11.314 11.314l.707.707M12 8a4 4 0 100 8 4 4 0 000-8z"/></svg>
     </button>
+    <a href="../mcq.html" class="nav-btn">Arena</a>
   </div>
 </nav>
 
-<!-- Mobile Navigation Sheet -->
-<div class="mob-nav-overlay" id="mobOverlay"></div>
-<div class="mob-nav-sheet" id="mobSheet">
-  <div class="mob-nav-handle" id="mobClose"></div>
-  <a href="../index.html">Home</a>
-  <a href="../notes.html" class="active">Notes</a>
-  <a href="../podcast.html">Podcast</a>
-  <a href="../review.html">Review</a>
-  <a href="../mcq.html">MCQ Arena</a>
-  <a href="../about.html">About</a>
-</div>
+<div id="progress-bar"></div>
 
-<button class="mono-sidebar-toggle" id="monoToggle">
+<div id="sidebar-overlay" onclick="closeSidebar()"></div>
+
+<button id="sidebar-toggle" onclick="toggleSidebar()">
   <span>☰</span> Contents
 </button>
-
-<script src="../js/nav-pill.js"></script>
-
-<div id="progress-bar"></div>
+></div>
 
 <!-- SIDEBAR -->
 <nav id="sidebar">
@@ -952,98 +1010,99 @@ svg text{font-family:'Source Serif 4',Georgia,serif;}
 <button id="top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 
 <script>
+// --- Standardized SIH Monograph JS ---
 const progressBar = document.getElementById('progress-bar');
 const topBtn = document.getElementById('top-btn');
+const sidebar = document.getElementById('sidebar');
 const navItems = document.querySelectorAll('.nav-item');
 const sections = document.querySelectorAll('.topic[id]');
 
-window.addEventListener('scroll', () => {
-  const scrollTop = window.scrollY;
-  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-  progressBar.style.transform = `scaleX(${scrollTop / docHeight})`;
-  topBtn.classList.toggle('show', scrollTop > 400);
-  let current = '';
-  sections.forEach(s => { if (scrollTop >= s.offsetTop - 120) current = s.id; });
-  navItems.forEach(n => { n.classList.toggle('active', n.getAttribute('href') === '#' + current); });
-});
-
-function filterNav(query) {
-  const q = query.toLowerCase();
-  navItems.forEach(item => { item.style.display = (!q || item.textContent.toLowerCase().includes(q)) ? 'block' : 'none'; });
-  document.querySelectorAll('.vol-label').forEach(label => { label.style.display = 'block'; });
+// Toggle Sidebar
+function toggleSidebar() {
+  document.body.classList.toggle('sidebar-open');
 }
 
-navItems.forEach(item => {
-  item.addEventListener('click', e => {
-    e.preventDefault();
-    const target = document.querySelector(item.getAttribute('href'));
-    if (target) window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 80, behavior: 'smooth' });
+// Close Sidebar
+function closeSidebar() {
+  document.body.classList.remove('sidebar-open');
+}
+
+// Scroll Handling
+window.addEventListener('scroll', () => {
+  const st = window.scrollY;
+  const dh = document.documentElement.scrollHeight - window.innerHeight;
+  
+  // Progress Bar
+  if (progressBar) progressBar.style.transform = `scaleX(${st / dh})`;
+  
+  // Back to Top Button
+  if (topBtn) topBtn.classList.toggle('show', st > 400);
+  
+  // Active Nav Link on Scroll
+  let current = '';
+  sections.forEach(s => {
+    if (st >= s.offsetTop - 120) current = s.id;
+  });
+  navItems.forEach(n => {
+    n.classList.toggle('active', n.getAttribute('href') === '#' + current);
   });
 });
 
-document.querySelectorAll('.topic').forEach((el, i) => { el.style.animationDelay = `${i * 0.04}s`; });
+// Sidebar Search
+function filterNav(query) {
+  const q = query.toLowerCase();
+  navItems.forEach(item => {
+    const text = item.textContent.toLowerCase();
+    item.style.display = (!q || text.includes(q)) ? 'block' : 'none';
+  });
+}
 
-// Global Navigation & Theme Logic
+// Smooth Scroll & Auto-Close Sidebar
+navItems.forEach(item => {
+  item.addEventListener('click', e => {
+    e.preventDefault();
+    const targetId = item.getAttribute('href');
+    const target = document.querySelector(targetId);
+    if (target) {
+      closeSidebar();
+      window.scrollTo({
+        top: target.getBoundingClientRect().top + window.scrollY - 80,
+        behavior: 'smooth'
+      });
+    }
+  });
+});
+
+// Theme Toggle Logic
 (function() {
   const themeToggle = document.getElementById('themeToggle');
-  const sunIcon = document.querySelector('.sun-icon');
-  const moonIcon = document.querySelector('.moon-icon');
+  if (!themeToggle) return;
 
-  function updateIcons(theme) {
-    if (theme === 'dark') {
-      if(sunIcon) sunIcon.style.display = 'none';
-      if(moonIcon) moonIcon.style.display = 'block';
-    } else {
-      if(sunIcon) sunIcon.style.display = 'block';
-      if(moonIcon) moonIcon.style.display = 'none';
-    }
-  }
-
-  const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
-  updateIcons(currentTheme);
-
-  if (themeToggle) {
-    themeToggle.addEventListener('click', () => {
-      const root = document.documentElement;
-      let newTheme = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-      root.setAttribute('data-theme', newTheme);
-      localStorage.setItem('sih-theme', newTheme);
-      updateIcons(newTheme);
-    });
-  }
-
-  // Mobile Global Nav
-  const mobToggle = document.getElementById('hamburgerMenu');
-  const mobOverlay = document.getElementById('mobOverlay');
-  const mobSheet = document.getElementById('mobSheet');
-  const mobClose = document.getElementById('mobClose');
-
-  if(mobToggle) {
-    mobToggle.addEventListener('click', () => {
-      mobOverlay.style.display = 'block';
-      setTimeout(() => mobSheet.classList.add('open'), 10);
-    });
-  }
-  
-  function closeNav() {
-    if(mobSheet) mobSheet.classList.remove('open');
-    setTimeout(() => { if(mobOverlay) mobOverlay.style.display = 'none'; }, 300);
-  }
-
-  if(mobOverlay) mobOverlay.addEventListener('click', closeNav);
-  if(mobClose) mobClose.addEventListener('click', closeNav);
-
-  // Monograph Sidebar Toggle
-  const monoToggle = document.getElementById('monoToggle');
-  const sidebar = document.getElementById('sidebar');
-
-  if(monoToggle && sidebar) {
-    monoToggle.addEventListener('click', () => {
-      sidebar.classList.toggle('open');
-      monoToggle.innerHTML = sidebar.classList.contains('open') ? '<span>✕</span> Close' : '<span>☰</span> Contents';
-    });
-  }
+  themeToggle.addEventListener('click', () => {
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    const nextTheme = isDark ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', nextTheme);
+    localStorage.setItem('sih-theme', nextTheme);
+  });
 })();
+
+// Intersection Observer for animations
+const observerOptions = { threshold: 0.1 };
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('.topic').forEach(t => {
+  t.style.opacity = '0';
+  t.style.transform = 'translateY(20px)';
+  t.style.transition = 'all 0.5s ease-out';
+  observer.observe(t);
+});
 </script>
 </body>
 </html>

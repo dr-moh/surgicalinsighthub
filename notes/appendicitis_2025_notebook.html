@@ -24,7 +24,7 @@
   --primary-lt:#E6F2EE;
   --accent:    #2D6A4F;
   --accent2:   #40916C;
-  --gold:      #C9910A;
+  --gold:      #B8860B;
   --gold-lt:   #FFF8E8;
   --s1:        #1B4332;
   --s2:        #2D6A4F;
@@ -54,8 +54,98 @@
 html{scroll-behavior:smooth;}
 body{font-family:'Source Serif 4',Georgia,serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.75;}
 
-/* SIDEBAR */
-#sidebar{position:fixed;top:70px;left:0;width:var(--sidebar-w);height:calc(100vh - 70px);background:var(--primary-dk);color:#C4D9CC;display:flex;flex-direction:column;z-index:100;overflow:hidden;}
+/* ── GLOBAL NAV ── */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; height: 52px;
+  background: var(--primary-dk); border-bottom: 1px solid rgba(255,255,255,0.1);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 24px; z-index: 1100; color: white;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+.nav-left { display: flex; align-items: center; gap: 12px; }
+.nav-pill { display: flex; align-items: center; gap: 10px; text-decoration: none; color: inherit; }
+.nav-logo-img { width: 32px; height: 32px; border-radius: 50%; overflow: hidden; border: 1.5px solid var(--gold); }
+.nav-logo-img img { width: 100%; height: 100%; object-fit: cover; }
+.nav-brand-text { font-size: 0.85rem; font-weight: 800; letter-spacing: -0.02em; }
+.nav-brand-sub { font-size: 0.6rem; font-weight: 500; color: var(--gold); opacity: 0.9; text-transform: uppercase; letter-spacing: 0.05em; }
+
+.nav-right { display: flex; align-items: center; gap: 16px; }
+.nav-links-pill { display: flex; align-items: center; gap: 8px; }
+.nav-links-pill a { 
+  text-decoration: none; color: rgba(255,255,255,0.7); font-size: 0.78rem; font-weight: 600; 
+  padding: 6px 12px; border-radius: 100px; transition: all 0.2s;
+}
+.nav-links-pill a:hover { color: white; background: rgba(255,255,255,0.1); }
+.nav-links-pill a.active { color: var(--gold); background: rgba(184, 146, 42, 0.15); }
+.nav-btn {
+  background: var(--gold); color: #fff; text-decoration: none; font-size: 0.78rem; font-weight: 700;
+  padding: 7px 16px; border-radius: 100px; transition: transform 0.2s;
+}
+.nav-btn:hover { transform: translateY(-1px); }
+
+.theme-toggle {
+  background: none; border: none; cursor: pointer; padding: 8px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center; transition: background 0.2s;
+}
+.theme-toggle:hover { background: rgba(255,255,255,0.1); }
+.theme-toggle svg { width: 18px; height: 18px; fill: white; }
+
+@media (max-width: 850px) {
+  .nav-links-pill { display: none; }
+}
+
+/* ── DARK MODE OVERRIDES ── */
+[data-theme="dark"] {
+  --bg: #0B110F;
+  --bg2: #121A16;
+  --text: #C4D9CC;
+  --muted: #8ECFAD;
+  --border: rgba(255,255,255,0.1);
+  --primary-lt: #121A16;
+  --s1-lt: #0F1A15;
+  --s2-lt: #14211A;
+  --s3-lt: #182820;
+  --s4-lt: #1C2F26;
+  --s5-lt: #0F1721;
+  --white: #121A16;
+}
+
+/* ── SIDEBAR & OVERLAY ── */
+#sidebar {
+  position: fixed; top: 0; left: 0; width: var(--sidebar-w); height: 100vh;
+  background: var(--primary-dk); color: #C4D9CC;
+  display: flex; flex-direction: column;
+  z-index: 1200; overflow: hidden;
+  transform: translateX(-100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 4px 0 24px rgba(0,0,0,0.3);
+}
+body.sidebar-open #sidebar { transform: translateX(0); }
+
+#sidebar-overlay {
+  position: fixed; inset: 0;
+  background: rgba(13, 43, 31, 0.6); backdrop-filter: blur(3px);
+  z-index: 1150; opacity: 0; pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+body.sidebar-open #sidebar-overlay { opacity: 1; pointer-events: auto; }
+
+#sidebar-toggle {
+  position: fixed; top: 72px; left: 24px; z-index: 1000;
+  background: var(--primary); color: white;
+  border: none; border-radius: 30px;
+  padding: 10px 18px; font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 600;
+  letter-spacing: 0.05em; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  display: flex; align-items: center; gap: 8px; transition: all 0.2s;
+}
+#sidebar-toggle:hover { background: var(--accent); transform: translateY(-2px); }
+
+#progress-bar {
+  position: fixed; top: 52px; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  transform-origin: left; transform: scaleX(0); transition: transform 0.1s; z-index: 1105;
+}
+
 #sidebar-header{padding:20px 20px 14px;border-bottom:1px solid rgba(255,255,255,0.1);flex-shrink:0;}
 #sidebar-header .logo{font-family:'Playfair Display',serif;font-size:13px;font-weight:700;color:#8ECFAD;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;}
 #sidebar-header .sub{font-size:10.5px;color:rgba(196,217,204,0.6);letter-spacing:0.04em;}
@@ -67,13 +157,13 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--bg);color:var(-
 #sidebar-nav::-webkit-scrollbar{width:4px;}
 #sidebar-nav::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.15);border-radius:2px;}
 .vol-label{font-size:9.5px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#8ECFAD;padding:14px 18px 4px;}
-.nav-item{display:block;padding:6px 18px 6px 22px;font-size:12px;color:rgba(196,217,204,0.75);text-decoration:none;border-left:2px solid transparent;transition:all 0.15s;line-height:1.4;}
+.nav-item{display:block;padding:8px 18px 8px 22px;font-size:12.5px;color:rgba(196,217,204,0.75);text-decoration:none;border-left:2px solid transparent;transition:all 0.15s;line-height:1.4;}
 .nav-item:hover{color:#fff;background:rgba(255,255,255,0.05);border-left-color:rgba(142,207,173,0.5);}
 .nav-item.active{color:#fff;background:rgba(255,255,255,0.08);border-left-color:#8ECFAD;font-weight:600;}
 .nav-item .num{font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(196,217,204,0.4);margin-right:6px;}
 
 /* MAIN */
-#main{margin-left:var(--sidebar-w);min-height:100vh;padding-top:0;}
+#main{margin-left:0; min-height:100vh;}
 
 /* HERO */
 #hero{background:linear-gradient(135deg,var(--primary-dk) 0%,#071A10 60%,#040F08 100%);color:white;padding:120px 72px 60px;position:relative;overflow:hidden;}
@@ -196,80 +286,68 @@ tbody td{padding:9px 14px;border-bottom:1px solid var(--border);vertical-align:t
 .rapid-ref tbody td strong{color:#8ECFAD;}
 
 /* PROGRESS */
-#progress-bar{position:fixed;top:70px;left:var(--sidebar-w);right:0;height:3px;background:linear-gradient(90deg,#40916C,#8ECFAD);transform-origin:left;transform:scaleX(0);transition:transform 0.1s;z-index:50;}
+#progress-bar {
+  position: fixed; top: 52px; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  transform-origin: left; transform: scaleX(0); transition: transform 0.1s; z-index: 1105;
+}
 
 /* TOP BTN */
-#top-btn{position:fixed;bottom:28px;right:28px;background:var(--primary);color:white;border:none;border-radius:50%;width:44px;height:44px;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,0.2);transition:all 0.2s;opacity:0;pointer-events:none;}
-#top-btn.show{opacity:1;pointer-events:auto;}
-#top-btn:hover{background:var(--accent2);transform:translateY(-2px);}
+#top-btn {
+  position: fixed; bottom: 28px; right: 28px; background: var(--primary); color: white;
+  border: none; border-radius: 50%; width: 44px; height: 44px; font-size: 18px; cursor: pointer;
+  display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: all 0.2s; opacity: 0; pointer-events: none; z-index: 1000;
+}
+#top-btn.show { opacity: 1; pointer-events: auto; }
+#top-btn:hover { background: var(--accent2); transform: translateY(-2px); }
 
 /* ANIMATION */
-.topic{animation:fadeUp 0.4s ease both;}
-@keyframes fadeUp{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
+.animate-on-scroll { opacity: 0; transform: translateY(20px); transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
+.animate-on-scroll.visible { opacity: 1; transform: translateY(0); }
 
-@media(max-width:900px){
-  :root{--sidebar-w:0px;}
-  #sidebar{transform:translateX(-300px);width:300px;top:70px;height:calc(100vh - 70px);}
-  #main{margin-left:0;}
-  .content-wrap{padding:0 20px 60px;}
-  #hero{padding:48px 20px 40px;}
-  #hero h1{font-size:30px;}
-  #progress-bar{left:0;}
-  #sidebar.open { transform: translateX(0); z-index: 10000; }
+@media(max-width:900px) {
+  .content-wrap { padding: 0 20px 60px; }
+  #hero { padding: 120px 20px 40px; }
+  #hero h1 { font-size: 30px; }
 }
-@media print{
-  .nav,.mob-nav-overlay,.mob-nav-sheet,#top-btn,#progress-bar{display:none!important;}
-  #main{margin-left:0;}
-  .topic{page-break-inside:avoid;}
-  .sec-header{page-break-before:always;}
+
+@media print {
+  .nav, #sidebar-toggle, #sidebar-overlay, #sidebar, #top-btn, #progress-bar { display: none !important; }
+  #main { margin-left: 0; }
+  .topic { page-break-inside: avoid; }
+  .sec-header { page-break-before: always; }
 }
 </style>
 </head>
 <body>
 <nav class="nav">
   <div class="nav-left">
-    <div class="nav-pill" onclick="window.location.href='../index.html'" style="cursor: pointer;">
-      <div class="nav-logo-img"><img src="../assets/images/Surgical_Insight_Hub_Logo.png" alt="SIH" onerror="this.parentElement.style.background='#b8922a'"></div>
-      <div><div class="nav-brand-text">Surgical Insight Hub</div><div class="nav-brand-sub">@sugicalInsightHub</div></div>
-    </div>
+    <a href="../index.html" class="nav-pill">
+      <div class="nav-logo-img"><img src="../assets/images/Surgical_Insight_Hub_Logo.png" alt="SIH"></div>
+      <div>
+        <div class="nav-brand-text">Surgical Insight Hub</div>
+        <div class="nav-brand-sub">Monograph Series</div>
+      </div>
+    </a>
   </div>
-  
   <div class="nav-right">
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-      <svg class="sun-icon" viewBox="0 0 24 24"><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M6.34 19.07l1.41-1.41M17.66 6.34l1.41-1.41M12 7a5 5 0 100 10m0 0a5 5 0 100-10z"/></svg>
-      <svg class="moon-icon" viewBox="0 0 24 24" style="display:none;"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
-    </button>
     <div class="nav-links-pill">
+      <a href="../index.html">Home</a>
       <a href="../notes.html" class="active">Notes</a>
       <a href="../podcast.html">Podcast</a>
-      <a href="../review.html">Review</a>
-      <a href="../mcq.html">MCQ Arena</a>
-      <a href="../about.html">About</a>
     </div>
-    <a href="https://t.me/sugicalInsightHub" target="_blank" class="nav-btn">Get Notes →</a>
-
-    <button class="mob-nav-toggle" id="hamburgerMenu" aria-label="Open menu">
-      ☰ Menu
+    <button class="theme-toggle" id="themeToggle">
+      <svg class="sun-icon" viewBox="0 0 24 24"><path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m11.314 11.314l.707.707M12 8a4 4 0 100 8 4 4 0 000-8z"/></svg>
+      <svg class="moon-icon" style="display:none" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
     </button>
+    <a href="../mcq.html" class="nav-btn">Arena</a>
   </div>
 </nav>
 
-<!-- Mobile Navigation Sheet -->
-<div class="mob-nav-overlay" id="mobOverlay"></div>
-<div class="mob-nav-sheet" id="mobSheet">
-  <div class="mob-nav-handle" id="mobClose"></div>
-  <a href="../index.html">Home</a>
-  <a href="../notes.html" class="active">Notes</a>
-  <a href="../podcast.html">Podcast</a>
-  <a href="../review.html">Review</a>
-  <a href="../mcq.html">MCQ Arena</a>
-  <a href="../about.html">About</a>
-  <a href="https://t.me/sugicalInsightHub" target="_blank" class="mob-nav-cta" style="margin-top:20px;display:block;text-align:center;background:var(--brand-gold);color:#1a1208;padding:12px;border-radius:100px;">Join Telegram</a>
-</div>
-
-<button class="mono-sidebar-toggle" id="monoToggle">
-  <span>☰</span> Contents
-</button>
+<div id="progress-bar"></div>
+<div id="sidebar-overlay" onclick="closeSidebar()"></div>
+<button id="sidebar-toggle" onclick="toggleSidebar()"><span>☰</span> Contents</button>
 
 <script src="../js/nav-pill.js"></script>
 <script>
@@ -1089,49 +1167,90 @@ tbody td{padding:9px 14px;border-bottom:1px solid var(--border);vertical-align:t
 <button id="top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 
 <script>
-const progressBar = document.getElementById('progress-bar');
-const topBtn = document.getElementById('top-btn');
-const navItems = document.querySelectorAll('.nav-item');
-const sections = document.querySelectorAll('.topic[id], .rapid-ref[id]');
+  // ── THEME LOGIC ──
+  const themeToggle = document.getElementById('themeToggle');
+  const sunIcon = themeToggle?.querySelector('.sun-icon');
+  const moonIcon = themeToggle?.querySelector('.moon-icon');
 
-window.addEventListener('scroll', () => {
-  const st = window.scrollY;
-  const dh = document.documentElement.scrollHeight - window.innerHeight;
-  progressBar.style.transform = `scaleX(${st / dh})`;
-  topBtn.classList.toggle('show', st > 400);
-  let current = '';
-  sections.forEach(s => { if (st >= s.offsetTop - 120) current = s.id; });
-  navItems.forEach(n => { n.classList.toggle('active', n.getAttribute('href') === '#' + current); });
-});
+  function updateIcons(theme) {
+    if (!sunIcon || !moonIcon) return;
+    if (theme === 'dark') {
+      sunIcon.style.display = 'none';
+      moonIcon.style.display = 'block';
+    } else {
+      sunIcon.style.display = 'block';
+      moonIcon.style.display = 'none';
+    }
+  }
 
-function filterNav(query) {
-  const q = query.toLowerCase();
-  navItems.forEach(item => { item.style.display = (!q || item.textContent.toLowerCase().includes(q)) ? 'block' : 'none'; });
-  document.querySelectorAll('.vol-label').forEach(l => { l.style.display = 'block'; });
-}
+  const initialTheme = document.documentElement.getAttribute('data-theme') || 'light';
+  updateIcons(initialTheme);
 
-navItems.forEach(item => {
-  item.addEventListener('click', e => {
-    e.preventDefault();
-    const target = document.querySelector(item.getAttribute('href'));
-    if (target) window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 80, behavior: 'smooth' });
+  themeToggle?.addEventListener('click', () => {
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    const newTheme = isDark ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('sih-theme', newTheme);
+    updateIcons(newTheme);
   });
-});
 
-document.querySelectorAll('.topic').forEach((el, i) => { el.style.animationDelay = `${i * 0.03}s`; });
+  // ── SIDEBAR LOGIC ──
+  function toggleSidebar() {
+    document.body.classList.toggle('sidebar-open');
+  }
+  function closeSidebar() {
+    document.body.classList.remove('sidebar-open');
+  }
 
-// Monograph Sidebar Toggle Logic
-(function() {
-  const monoToggle = document.getElementById('monoToggle');
-  const sidebar = document.getElementById('sidebar');
+  // ── PROGRESS & SCROLL ──
+  const progressBar = document.getElementById('progress-bar');
+  const topBtn = document.getElementById('top-btn');
+  const navItems = document.querySelectorAll('.nav-item');
+  const sections = document.querySelectorAll('.topic[id], .rapid-ref[id]');
 
-  if(monoToggle && sidebar) {
-    monoToggle.addEventListener('click', () => {
-      sidebar.classList.toggle('open');
-      monoToggle.innerHTML = sidebar.classList.contains('open') ? '<span>✕</span> Close' : '<span>☰</span> Contents';
+  window.addEventListener('scroll', () => {
+    const st = window.scrollY;
+    const dh = document.documentElement.scrollHeight - window.innerHeight;
+    if (progressBar) progressBar.style.transform = `scaleX(${st / dh})`;
+    if (topBtn) topBtn.classList.toggle('show', st > 400);
+
+    let current = '';
+    sections.forEach(s => {
+      if (st >= s.offsetTop - 120) current = s.id;
+    });
+    navItems.forEach(n => {
+      n.classList.toggle('active', n.getAttribute('href') === '#' + current);
+    });
+  }, { passive: true });
+
+  function filterNav(query) {
+    const q = query.toLowerCase();
+    navItems.forEach(item => {
+      const text = item.textContent.toLowerCase();
+      item.style.display = text.includes(q) ? 'block' : 'none';
     });
   }
-})();
+
+  // ── ANIMATIONS ──
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.topic, .sec-header, .viva, .callout').forEach(el => {
+    el.classList.add('animate-on-scroll');
+    observer.observe(el);
+  });
+
+  // Close sidebar on link click (mobile)
+  navItems.forEach(item => {
+    item.addEventListener('click', () => {
+      if (window.innerWidth < 900) closeSidebar();
+    });
+  });
 </script>
 </body>
 </html>
