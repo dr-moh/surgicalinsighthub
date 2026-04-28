@@ -25,7 +25,7 @@
     border: none;
   }
   .nc-dl.gold:hover { background: #9a7820; }
-  /* Forest green button for Telegram PDF cards */
+  /* Forest green button for LinkedIn PDF cards */
   .nc-dl.tg-btn {
     background: #1B6B45;
     color: #fff;
@@ -296,7 +296,7 @@
   <div class="nav-left">
     <a href="index.html" class="nav-pill">
       <div class="nav-logo-img">
-        <img src="assets/images/Surgical_Insight_Hub_Logo.png" alt="SIH">
+        <img src="assets/images/Surgical_Insight_Hub_Logo.png" alt="SIH" onerror="this.parentElement.style.background='#b8922a'">
       </div>
       <div>
         <div class="nav-brand-text">Surgical Insight Hub</div>
@@ -317,7 +317,7 @@
       <svg id="moonIcon" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/></svg>
       <svg id="sunIcon" style="display:none;" viewBox="0 0 24 24"><path d="M12 7a5 5 0 1 0 5 5 5.006 5.006 0 0 0-5-5zm0 8a3 3 0 1 1 3-3 3.003 3.003 0 0 1-3 3zm0-13a1 1 0 0 0-1 1v2a1 1 0 0 0 2 0V3a1 1 0 0 0-1-1zm0 18a1 1 0 0 0-1 1v2a1 1 0 0 0 2 0v-2a1 1 0 0 0-1-1zm8-11h-2a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2zm-16 0H2a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2zm13.657-5.657a1 1 0 0 0-1.414 0l-1.414 1.414a1 1 0 0 0 1.414 1.414l1.414-1.414a1 1 0 0 0 0-1.414zm-11.314 0a1 1 0 0 0 0 1.414l1.414 1.414a1 1 0 0 0 1.414-1.414L4.929 5.757a1 1 0 0 0-1.414 0zm11.314 11.314a1 1 0 0 0 0 1.414l1.414 1.414a1 1 0 0 0 1.414-1.414l-1.414-1.414a1 1 0 0 0-1.414 0zm-11.314 0a1 1 0 0 0-1.414 1.414l1.414 1.414a1 1 0 0 0 1.414-1.414l-1.414-1.414a1 1 0 0 0 0-1.414z"/></svg>
     </button>
-    <a href="arena.html" class="nav-btn arena-btn">Arena</a>
+    <a href="arena.html" class="nav-btn arena-btn">MCQ Arena</a>
     <button class="mob-nav-toggle" onclick="openMobNav()">
       <div class="hamburger">
         <span></span>
@@ -328,13 +328,24 @@
   </div>
 </nav>
 
+<div class="mob-nav-overlay" id="mobNavOverlay" onclick="closeMobNav()"></div>
+<div class="mob-nav-sheet" id="mobNavSheet">
+  <div class="mob-nav-handle"></div>
+  <a href="index.html" onclick="closeMobNav()">Home</a>
+  <a href="notes.html" onclick="closeMobNav()">Notes</a>
+  <a href="notes/operative_approach.html" onclick="closeMobNav()">Playbook</a>
+  <a href="podcast.html" onclick="closeMobNav()">Podcast</a>
+  <a href="about.html" onclick="closeMobNav()">About</a>
+  <a href="arena.html" class="nav-btn" style="text-align:center; margin-top:10px;" onclick="closeMobNav()">MCQ Arena</a>
+</div>
+
 <div class="page-hero">
   <div class="blob blob-1"></div>
   <div class="hero-watermark"><img src="assets/images/Surgical_Insight_Hub_Logo.png" alt=""></div>
   <div class="page-hero-inner">
     <div class="ph-kicker">Residency Journal</div>
     <h1>The Library.<br>All Free.</h1>
-    <p>High-yield PDF study guides. Dense tables, zero paragraphs, referenced against current guidelines. Download free via Telegram.</p>
+    <p>High-yield PDF study guides. Dense tables, zero paragraphs, referenced against current guidelines. Download free via LinkedIn.</p>
   </div>
 </div>
 
@@ -356,7 +367,7 @@
 <div class="notes-legend">
   <span style="font-size:0.78rem;color:var(--muted,#888);font-weight:500;">Key:</span>
   <span class="legend-item"><span class="legend-dot" style="background:#1B6B45;"></span>Read online — no download needed</span>
-  <span class="legend-item"><span class="legend-dot" style="background:#b8922a;"></span>Free PDF via Telegram</span>
+  <span class="legend-item"><span class="legend-dot" style="background:#b8922a;"></span>Free PDF via LinkedIn / Telegram</span>
 </div>
 
 <!-- ── BIG CARD TABS GRID ── -->
@@ -471,6 +482,66 @@
       </div>
     </div>
 
+    <div class="note-card web-card" data-cat="hpb">
+      <div class="nc-top">
+        <div class="nc-kicker">SIH Monograph Series <span class="nc-new">New</span></div>
+        <h3>Pancreaticoduodenectomy (Whipple's)</h3>
+        <p>Master Monograph. Systematic task analysis of the Whipple procedure. Kocherization, SMV/Portal vein dissection, and the "Big Three" reconstructions (PJ, HJ, GJ).</p>
+        <div class="nc-tags">
+          <span class="nc-tag red">Whipple</span><span class="nc-tag red">HPB</span><span class="nc-tag">Reconstruction</span><span class="nc-tag">SMV</span>
+        </div>
+      </div>
+      <div class="nc-foot">
+        <span class="nc-pages">Interactive</span>
+        <a href="notes/Surgical Operative Approach/Pancreaticoduodenectomy (Whipple's Procedure) Monograph.html" class="nc-dl gold">Read Now →</a>
+      </div>
+    </div>
+
+    <div class="note-card web-card" data-cat="emergency">
+      <div class="nc-top">
+        <div class="nc-kicker">SIH Monograph Series <span class="nc-new">New</span></div>
+        <h3>Repair of Perforated Peptic Ulcer</h3>
+        <p>Technical Monograph. From resuscitation to the Graham Patch. Decision making for conservative management vs. surgical repair, and H. pylori eradication.</p>
+        <div class="nc-tags">
+          <span class="nc-tag red">PPU</span><span class="nc-tag red">Graham Patch</span><span class="nc-tag">Emergency</span><span class="nc-tag">Omental Patch</span>
+        </div>
+      </div>
+      <div class="nc-foot">
+        <span class="nc-pages">Interactive</span>
+        <a href="notes/Surgical Operative Approach/Repair of Perforated Peptic Ulcer Monograph.html" class="nc-dl gold">Read Now →</a>
+      </div>
+    </div>
+
+    <div class="note-card web-card" data-cat="hpb">
+      <div class="nc-top">
+        <div class="nc-kicker">SIH Monograph Series <span class="nc-new">New</span></div>
+        <h3>Laparoscopic Cholecystectomy</h3>
+        <p>Technical Monograph. Achieving the Critical View of Safety, Calot's dissection, and the bail-out algorithm for the difficult gallbladder. Biliary anatomy and safe laparoscopy.</p>
+        <div class="nc-tags">
+          <span class="nc-tag red">CVS</span><span class="nc-tag red">Biliary</span><span class="nc-tag">Calot</span><span class="nc-tag">Laparoscopy</span>
+        </div>
+      </div>
+      <div class="nc-foot">
+        <span class="nc-pages">Interactive</span>
+        <a href="notes/Surgical Operative Approach/Cholecystectomy Monograph.html" class="nc-dl gold">Read Now →</a>
+      </div>
+    </div>
+
+    <div class="note-card web-card" data-cat="basics">
+      <div class="nc-top">
+        <div class="nc-kicker">SIH Monograph Series <span class="nc-new">New</span></div>
+        <h3>Surgical Drain Placement</h3>
+        <p>Technical Monograph. Indications, types of drains (passive vs active), placement techniques, and "The Drain Game" exit strategy for the surgical resident.</p>
+        <div class="nc-tags">
+          <span class="nc-tag red">Drains</span><span class="nc-tag red">JP Drain</span><span class="nc-tag">Basic Tech</span><span class="nc-tag">Resident Guide</span>
+        </div>
+      </div>
+      <div class="nc-foot">
+        <span class="nc-pages">Interactive</span>
+        <a href="notes/Surgical Operative Approach/Surgical Drain Placement Monograph.html" class="nc-dl gold">Read Now →</a>
+      </div>
+    </div>
+
     <!-- ═══ TELEGRAM PDF CARDS — Free download via channel ═══ -->
 
     <div class="note-card" data-cat="hpb" style="border-top-color:#b8922a;">
@@ -484,7 +555,7 @@
       </div>
       <div class="nc-foot">
         <span class="nc-pages">Master Library</span>
-        <a href="https://t.me/sugicalInsightHub" target="_blank" class="nc-dl tg-btn">Download Free</a>
+        <a href="https://t.me/surgicalInsightHub" target="_blank" class="nc-dl gold">Download Free</a>
       </div>
     </div>
 
@@ -499,7 +570,7 @@
       </div>
       <div class="nc-foot">
         <span class="nc-pages">Master Library</span>
-        <a href="https://t.me/sugicalInsightHub" target="_blank" class="nc-dl tg-btn">Download Free</a>
+        <a href="https://t.me/surgicalInsightHub" target="_blank" class="nc-dl gold">Download Free</a>
       </div>
     </div>
 
@@ -514,7 +585,7 @@
       </div>
       <div class="nc-foot">
         <span class="nc-pages">Volume 1</span>
-        <a href="https://t.me/sugicalInsightHub" target="_blank" class="nc-dl tg-btn">Download Free</a>
+        <a href="https://t.me/surgicalInsightHub" target="_blank" class="nc-dl gold">Download Free</a>
       </div>
     </div>
 
@@ -529,7 +600,7 @@
       </div>
       <div class="nc-foot">
         <span class="nc-pages">Volume 2</span>
-        <a href="https://t.me/sugicalInsightHub" target="_blank" class="nc-dl tg-btn">Download Free</a>
+        <a href="https://t.me/surgicalInsightHub" target="_blank" class="nc-dl gold">Download Free</a>
       </div>
     </div>
 
@@ -544,7 +615,7 @@
       </div>
       <div class="nc-foot">
         <span class="nc-pages">In progress</span>
-        <a href="https://t.me/sugicalInsightHub" target="_blank" class="nc-dl tg-btn">Get on Telegram</a>
+        <a href="https://t.me/surgicalInsightHub" target="_blank" class="nc-dl gold">Download Free</a>
       </div>
     </div>
 
@@ -557,7 +628,7 @@
       </div>
       <div class="nc-foot">
         <span class="nc-pages">8 pages</span>
-        <a href="https://t.me/sugicalInsightHub" target="_blank" class="nc-dl tg-btn">Download Free</a>
+        <a href="https://t.me/surgicalInsightHub" target="_blank" class="nc-dl gold">Download Free</a>
       </div>
     </div>
 
@@ -570,7 +641,7 @@
       </div>
       <div class="nc-foot">
         <span class="nc-pages">6 pages</span>
-        <a href="https://t.me/sugicalInsightHub" target="_blank" class="nc-dl tg-btn">Download Free</a>
+        <a href="https://t.me/surgicalInsightHub" target="_blank" class="nc-dl gold">Download Free</a>
       </div>
     </div>
 
@@ -583,7 +654,7 @@
       </div>
       <div class="nc-foot">
         <span class="nc-pages">5 pages</span>
-        <a href="https://t.me/sugicalInsightHub" target="_blank" class="nc-dl tg-btn">Download Free</a>
+        <a href="https://t.me/surgicalInsightHub" target="_blank" class="nc-dl gold">Download Free</a>
       </div>
     </div>
 
@@ -596,7 +667,7 @@
       </div>
       <div class="nc-foot">
         <span class="nc-pages">6 pages</span>
-        <a href="https://t.me/sugicalInsightHub" target="_blank" class="nc-dl tg-btn">Download Free</a>
+        <a href="https://t.me/surgicalInsightHub" target="_blank" class="nc-dl gold">Download Free</a>
       </div>
     </div>
 
@@ -609,7 +680,7 @@
       </div>
       <div class="nc-foot">
         <span class="nc-pages">7 pages</span>
-        <a href="https://t.me/sugicalInsightHub" target="_blank" class="nc-dl tg-btn">Download Free</a>
+        <a href="https://t.me/surgicalInsightHub" target="_blank" class="nc-dl gold">Download Free</a>
       </div>
     </div>
 
@@ -622,7 +693,7 @@
       </div>
       <div class="nc-foot">
         <span class="nc-pages">6 pages</span>
-        <a href="https://t.me/sugicalInsightHub" target="_blank" class="nc-dl tg-btn">Download Free</a>
+        <a href="https://t.me/surgicalInsightHub" target="_blank" class="nc-dl gold">Download Free</a>
       </div>
     </div>
 
@@ -635,7 +706,7 @@
       </div>
       <div class="nc-foot">
         <span class="nc-pages">5 pages</span>
-        <a href="https://t.me/sugicalInsightHub" target="_blank" class="nc-dl tg-btn">Download Free</a>
+        <a href="https://t.me/surgicalInsightHub" target="_blank" class="nc-dl gold">Download Free</a>
       </div>
   </div>
 </div>
@@ -706,15 +777,51 @@
       </div>
     </div>
 
-    <div class="op-card-sm" style="opacity:0.55; cursor:default;">
+    <div class="op-card-sm" onclick="window.location.href='notes/Surgical Operative Approach/Cholecystectomy Monograph.html'">
       <div>
         <div class="op-kicker">HPB · Laparoscopy</div>
         <h3>Laparoscopic Cholecystectomy</h3>
         <p>Critical View of Safety, Calot's dissection, and the bail-out algorithm for the difficult gallbladder.</p>
       </div>
       <div class="op-foot">
-        <span class="op-badge">Coming Soon</span>
+        <span class="op-badge">Essential</span>
         <span>12 Technical Pearls</span>
+      </div>
+    </div>
+
+    <div class="op-card-sm" onclick="window.location.href='notes/Surgical Operative Approach/Pancreaticoduodenectomy (Whipple\'s Procedure) Monograph.html'">
+      <div>
+        <div class="op-kicker">HPB · Oncology</div>
+        <h3>Whipple's Procedure</h3>
+        <p>Pancreaticoduodenectomy game plan. Kocherization, SMV dissection, and the three reconstructions.</p>
+      </div>
+      <div class="op-foot">
+        <span class="op-badge">Master Series</span>
+        <span>HPB Monograph</span>
+      </div>
+    </div>
+
+    <div class="op-card-sm" onclick="window.location.href='notes/Surgical Operative Approach/Repair of Perforated Peptic Ulcer Monograph.html'">
+      <div>
+        <div class="op-kicker">Emergency · Upper GI</div>
+        <h3>Repair of Perforated Peptic Ulcer</h3>
+        <p>The Graham Patch and beyond. Resuscitation, operative steps, and post-op care.</p>
+      </div>
+      <div class="op-foot">
+        <span class="op-badge">Essential</span>
+        <span>Technical Guide</span>
+      </div>
+    </div>
+
+    <div class="op-card-sm" onclick="window.location.href='notes/Surgical Operative Approach/Surgical Drain Placement Monograph.html'">
+      <div>
+        <div class="op-kicker">Basic Surgical Techniques</div>
+        <h3>Surgical Drain Placement</h3>
+        <p>Indications, types of drains, and placement techniques. Jackson-Pratt vs. Penrose.</p>
+      </div>
+      <div class="op-foot">
+        <span class="op-badge">Fundamentals</span>
+        <span>Skills Lab</span>
       </div>
     </div>
 
@@ -750,24 +857,18 @@
 <footer>
   <div class="ft">
     <div class="fb2"><div class="fb2-name">Surgical Insight Hub</div><p>High-yield surgical education for residents. Built by Dr. Abdulmalik Moh.</p></div>
-    <div class="fc"><h5>Resources</h5><a href="notes.html">Notes</a><a href="podcast.html">Podcast</a><a href="arena.html">MCQ Arena</a><a href="mcq_bank.html">MCQ Bank</a><a href="https://t.me/sugicalInsightHub" target="_blank">Telegram</a></div>
+    <div class="fc"><h5>Resources</h5><a href="notes.html">Notes</a><a href="podcast.html">Podcast</a><a href="arena.html">MCQ Arena</a><a href="mcq_bank.html">MCQ Bank</a><a href="https://www.linkedin.com/company/surgical-insight-hub" target="_blank">LinkedIn</a></div>
     <div class="fc">
       <h5>Connect</h5>
       <div style="display: flex; gap: 12px; margin-top: 10px;">
-        <a href="https://t.me/sugicalInsightHub" title="Telegram" target="_blank" style="background:var(--brand-burgundy); border-radius: 50%; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; transition: transform 0.3s ease;">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.11.02-1.93 1.23-5.46 3.62-.51.35-.98.53-1.4.51-.46-.01-1.35-.26-2.01-.48-.81-.27-1.45-.42-1.39-.88.03-.24.36-.49.99-.75 3.88-1.69 6.46-2.8 7.74-3.35 3.68-1.57 4.45-1.84 4.95-1.85.11 0 .35.03.5.16.13.13.17.31.18.44z"/></svg>
-        </a>
-        <a href="https://www.youtube.com/@YeSurgeryBett" title="YouTube" target="_blank" style="background:var(--brand-burgundy); border-radius: 50%; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; transition: transform 0.3s ease;">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 .6-.03 1.29-.1 2.09-.06.8-.15 1.43-.28 1.9-.17.63-.44 1.08-.8 1.37-.36.29-.86.46-1.51.5-1.07.07-2.31.1-3.73.1H12c-1.42 0-2.66-.03-3.73-.1-.65-.04-1.15-.21-1.51-.5-.36-.29-.63-.74-.8-1.37-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L5.56 12.17c0-.6.03-1.29.1-2.09.06-.8.15-1.43.28-1.9.17-.63.44-1.08.8-1.37.36-.29.86-.46 1.51-.5 1.07-.07 2.31-.1 3.73-.1H12c1.42 0 2.66.03 3.73.1.65.04 1.15.21 1.51.5.36.29.63.74.8 1.37z"/></svg>
-        </a>
-        <a href="https://www.linkedin.com/company/surgical-insight-hub" title="LinkedIn" target="_blank" style="background:var(--brand-burgundy); border-radius: 50%; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; transition: transform 0.3s ease;">
+        <a href="https://t.me/surgicalInsightHub" title="Telegram" target="_blank" style="background:var(--brand-burgundy); border-radius: 50%; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; transition: transform 0.3s ease; margin-right: 12px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.89 8.22l-1.97 9.28c-.15.66-.54.82-1.08.51l-3-2.21-1.45 1.39c-.16.16-.3.3-.61.3l.21-3.05 5.56-5.02c.24-.21-.05-.33-.37-.12l-6.87 4.33-2.96-.92c-.64-.2-.66-.64.14-.95l11.57-4.46c.54-.19 1.01.13.83.94z"/></svg></a><a href="https://www.linkedin.com/company/surgical-insight-hub" title="LinkedIn" target="_blank" style="background:var(--brand-burgundy); border-radius: 50%; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; transition: transform 0.3s ease;">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
         </a>
       </div>
     </div>
   </div>
   <div class="fbot">
-    <p>© 2025 Surgical Insight Hub · Dr. Abdulmalik Moh · @sugicalInsightHub</p>
+    <p>© 2025 Surgical Insight Hub · Dr. Abdulmalik Moh · LinkedIn/SurgicalInsightHub</p>
     <p>Not a substitute for clinical judgment</p>
   </div>
 </footer>
@@ -927,7 +1028,7 @@ applyTheme(savedTheme);
   <a href="notes.html" class="active">Notes</a>
   <a href="notes/operative_approach.html">Playbook</a>
   <a href="podcast.html">Podcast</a>
-  <a href="arena.html">Arena</a>
+  <a href="arena.html">MCQ Arena</a>
   <a href="about.html">About</a>
 </div>
 

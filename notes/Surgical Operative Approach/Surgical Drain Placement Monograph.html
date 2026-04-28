@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Surgical Insight Hub — Surgical Drain Placement</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  /* Deep Indigo & Amber Aesthetic */
+  --primary:   #2E3192; 
+  --primary-dk:#1B1464;
+  --primary-lt:#EEF2FF;
+  --accent:    #3730A3;
+  --accent2:   #F59E0B;
+  --gold:      #D97706;
+  --gold-lt:   #FEF3C7;
+  --s1:        #2E3192;
+  --s2:        #3730A3;
+  --s3:        #312E81;
+  --s4:        #4338CA;
+  --s5:        #1E1B4B;
+  --s1-lt:     #EEF2FF;
+  --s2-lt:     #E0E7FF;
+  --s3-lt:     #EEF2FF;
+  --s4-lt:     #E0E7FF;
+  --s5-lt:     #EEF2FF;
+  --red:       #B91C1C;
+  --red-lt:    #FEF2F2;
+  --amber:     #B45309;
+  --amber-lt:  #FFFBEB;
+  --blue:      #1D4ED8;
+  --blue-lt:   #EFF6FF;
+  --bg:        #F8FAFC;
+  --bg2:       #F1F5F9;
+  --border:    #E2E8F0;
+  --text:      #0F172A;
+  --muted:     #475569;
+  --white:     #FFFFFF;
+  --sidebar-w: 320px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.75;}
+
+/* SLIDE-OVER SIDEBAR */
+#sidebar {
+  position: fixed; top: 0; left: 0; width: var(--sidebar-w); height: 100vh;
+  background: var(--primary-dk); color: #E0E7FF;
+  display: flex; flex-direction: column;
+  z-index: 1000; overflow: hidden;
+  transform: translateX(-100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 4px 0 24px rgba(0,0,0,0.3);
+}
+body.sidebar-open #sidebar {
+  transform: translateX(0);
+}
+
+/* OVERLAY */
+#sidebar-overlay {
+  position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+  background: rgba(27, 20, 100, 0.6); backdrop-filter: blur(2px);
+  z-index: 950; opacity: 0; pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+body.sidebar-open #sidebar-overlay {
+  opacity: 1; pointer-events: auto;
+}
+
+/* TOGGLE BUTTON - TOP LEFT */
+#sidebar-toggle {
+  position: fixed; top: 24px; left: 28px; z-index: 900;
+  background: var(--primary); color: white;
+  border: none; border-radius: 30px;
+  padding: 10px 18px; font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600;
+  letter-spacing: 0.05em; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  display: flex; align-items: center; gap: 8px; transition: all 0.2s;
+}
+#sidebar-toggle:hover {
+  background: var(--accent); transform: translateY(-2px);
+}
+
+#sidebar-header{padding:20px 20px 14px;border-bottom:1px solid rgba(255,255,255,0.08);flex-shrink:0;}
+#sidebar-header .logo{font-family:'Playfair Display',serif;font-size:13px;font-weight:700;color:var(--accent2);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;}
+#sidebar-header .sub{font-size:10.5px;color:rgba(224,231,255,0.6);letter-spacing:0.04em;}
+#sidebar-search{padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.05);flex-shrink:0;}
+#sidebar-search input{width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:6px;color:#E0E7FF;padding:6px 10px;font-size:12px;font-family:'Source Serif 4',serif;outline:none;transition:border-color 0.2s;}
+#sidebar-search input::placeholder{color:rgba(224,231,255,0.4);}
+#sidebar-search input:focus{border-color:var(--accent2);}
+#sidebar-nav{flex:1;overflow-y:auto;padding:8px 0 20px;}
+#sidebar-nav::-webkit-scrollbar{width:4px;}
+#sidebar-nav::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.15);border-radius:2px;}
+.vol-label{font-size:9.5px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent2);padding:14px 18px 4px;}
+.nav-item{display:block;padding:8px 18px 8px 22px;font-size:12.5px;color:rgba(224,231,255,0.75);text-decoration:none;border-left:2px solid transparent;transition:all 0.15s;line-height:1.4;}
+.nav-item:hover{color:#fff;background:rgba(255,255,255,0.03);border-left-color:rgba(245,158,11,0.5);}
+.nav-item.active{color:#fff;background:rgba(255,255,255,0.06);border-left-color:var(--accent2);font-weight:600;}
+.nav-item .num{font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(224,231,255,0.4);margin-right:6px;}
+
+/* MAIN */
+#main{margin-left:0; min-height:100vh;}
+
+/* HERO */
+#hero{background:linear-gradient(135deg,var(--primary-dk) 0%,#2E3192 60%,#1E1B4B 100%);color:white;padding:90px 72px 60px;position:relative;overflow:hidden;}
+#hero::before{content:'';position:absolute;top:-60px;right:-60px;width:380px;height:380px;background:radial-gradient(circle,rgba(245,158,11,0.15) 0%,transparent 70%);pointer-events:none;}
+#hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent2),var(--gold),transparent);}
+#hero .eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.16em;color:var(--accent2);text-transform:uppercase;margin-bottom:14px;}
+#hero h1{font-family:'Playfair Display',serif;font-size:46px;font-weight:700;line-height:1.15;margin-bottom:10px;color:#fff;}
+#hero .subtitle{font-size:18px;color:rgba(255,255,255,0.8);font-style:italic;margin-bottom:28px;}
+#hero .badges{display:flex;gap:10px;flex-wrap:wrap;}
+#hero .badge{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:4px 14px;font-size:12px;color:rgba(255,255,255,0.95);font-family:'JetBrains Mono',monospace;}
+
+/* CONTENT */
+.content-wrap{max-width:900px;margin:0 auto;padding:0 48px 80px;}
+
+/* SECTION HEADER */
+.sec-header{margin-top:60px;margin-bottom:8px;padding:28px 36px;border-radius:10px;display:flex;align-items:center;gap:20px;}
+.sec-header.s1{background:linear-gradient(135deg,#2E31920A,#2E31921A);border-left:4px solid var(--s1);}
+.sec-header.s2{background:linear-gradient(135deg,#3730A30A,#3730A31A);border-left:4px solid var(--s2);}
+.sec-header.s3{background:linear-gradient(135deg,#312E810A,#312E811A);border-left:4px solid var(--s3);}
+.sec-header.s4{background:linear-gradient(135deg,#4338CA0A,#4338CA1A);border-left:4px solid var(--s4);}
+.sec-header.s5{background:linear-gradient(135deg,#1E1B4B0A,#1E1B4B1A);border-left:4px solid var(--s5);}
+.sec-badge{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;letter-spacing:0.1em;padding:4px 12px;border-radius:4px;white-space:nowrap;flex-shrink:0;}
+.s1 .sec-badge{background:var(--s1);color:white;}
+.s2 .sec-badge{background:var(--s2);color:white;}
+.s3 .sec-badge{background:var(--s3);color:white;}
+.s4 .sec-badge{background:var(--s4);color:white;}
+.s5 .sec-badge{background:var(--s5);color:white;}
+.sec-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;}
+.s1 .sec-title{color:var(--s1);}
+.s2 .sec-title{color:var(--s2);}
+.s3 .sec-title{color:var(--s3);}
+.s4 .sec-title{color:var(--s4);}
+.s5 .sec-title{color:var(--s5);}
+
+/* TOPIC */
+.topic{margin-top:48px;padding-top:48px;border-top:1px solid var(--border);}
+.topic:first-of-type{border-top:none;}
+.topic-header{display:flex;align-items:flex-start;gap:16px;margin-bottom:24px;}
+.topic-num{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;padding:3px 10px;border-radius:4px;margin-top:4px;flex-shrink:0;}
+.s1 .topic-num{background:var(--s1-lt);color:var(--s1);}
+.s2 .topic-num{background:var(--s2-lt);color:var(--s2);}
+.s3 .topic-num{background:var(--s3-lt);color:var(--s3);}
+.s4 .topic-num{background:var(--s4-lt);color:var(--s4);}
+.s5 .topic-num{background:var(--s5-lt);color:var(--s5);}
+.topic h2{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;line-height:1.2;}
+.s1 .topic h2{color:var(--s1);}
+.s2 .topic h2{color:var(--s2);}
+.s3 .topic h2{color:var(--s3);}
+.s4 .topic h2{color:var(--s4);}
+.s5 .topic h2{color:var(--s5);}
+.topic h3{font-family:'Playfair Display',serif;font-size:17px;font-weight:600;color:var(--muted);margin:26px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--border);}
+.topic h4{font-size:13px;font-weight:600;color:var(--muted);letter-spacing:0.06em;text-transform:uppercase;margin:18px 0 8px;font-family:'JetBrains Mono',monospace;}
+.topic p{margin-bottom:12px;color:var(--text);}
+.topic ul,.topic ol{margin:8px 0 14px 20px;color:var(--text);}
+.topic li{margin-bottom:6px;line-height:1.65;}
+.topic li::marker{color:var(--accent);}
+.topic strong{color:var(--text);font-weight:600;}
+
+/* TABLES */
+.table-wrap{overflow-x:auto;margin:16px 0 20px;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.04);}
+table{width:100%;border-collapse:collapse;font-size:13.5px;background:white;}
+thead tr{background:var(--s1);}
+thead th{color:white;padding:10px 14px;text-align:left;font-family:'Source Serif 4',serif;font-weight:600;font-size:13px;}
+tbody tr:nth-child(even){background:var(--bg2);}
+tbody tr:hover{background:var(--s1-lt);transition:background 0.15s;}
+tbody td{padding:9px 14px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.5;}
+.s2-tbl thead tr{background:var(--s2);}
+.s3-tbl thead tr{background:var(--s3);}
+.s4-tbl thead tr{background:var(--s4);}
+.s5-tbl thead tr{background:var(--s5);}
+
+/* CALLOUTS */
+.callout{margin:18px 0;padding:14px 18px;border-radius:0 8px 8px 0;border-left:4px solid;font-size:14px;line-height:1.65;}
+.callout .label{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;display:block;margin-bottom:4px;}
+.callout.pearl{background:var(--amber-lt);border-color:var(--amber);}
+.callout.pearl .label{color:var(--amber);}
+.callout.warn{background:var(--red-lt);border-color:var(--red);}
+.callout.warn .label{color:var(--red);}
+.callout.clin{background:var(--s1-lt);border-color:var(--s1);}
+.callout.clin .label{color:var(--s1);}
+.callout.exam{background:var(--blue-lt);border-color:var(--blue);}
+.callout.exam .label{color:var(--blue);}
+
+/* DIAGRAM PLACEHOLDERS */
+.diagram-wrap{background:white;border:1px solid var(--border);border-radius:8px;padding:18px;margin:20px 0;box-shadow:0 1px 4px rgba(0,0,0,0.03);text-align:center;}
+.diagram-title{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--s1);margin-bottom:12px;text-align:left;}
+
+/* RAPID REFERENCE */
+.rapid-ref{background:var(--primary-dk);color:var(--primary-lt);border-radius:10px;padding:28px 32px;margin:30px 0;}
+.rapid-ref h3{font-family:'Playfair Display',serif;font-size:20px;color:var(--accent2);margin-bottom:16px;}
+.rapid-ref table{font-size:12.5px; background: transparent;} 
+.rapid-ref thead tr{background:rgba(245,158,11,0.15);}
+.rapid-ref thead th{color:var(--accent2);padding:8px 12px;font-size:11px;}
+.rapid-ref tbody tr:nth-child(even){background:rgba(255,255,255,0.03);}
+.rapid-ref tbody tr:hover{background:rgba(255,255,255,0.06);}
+.rapid-ref tbody td{color:var(--primary-lt);padding:7px 12px;border-bottom:1px solid rgba(255,255,255,0.05);}
+.rapid-ref tbody td strong{color:var(--gold);}
+
+/* PROGRESS */
+#progress-bar{position:fixed;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent2),var(--gold));transform-origin:left;transform:scaleX(0);transition:transform 0.1s;z-index:50;}
+
+/* TOP BTN */
+#top-btn{position:fixed;bottom:28px;right:28px;background:var(--primary);color:white;border:none;border-radius:50%;width:44px;height:44px;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,0.2);transition:all 0.2s;opacity:0;pointer-events:none;}
+#top-btn.show{opacity:1;pointer-events:auto;}
+#top-btn:hover{background:var(--accent2);transform:translateY(-2px);}
+
+/* ANIMATION */
+.topic{animation:fadeUp 0.4s ease both;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
+
+@media(max-width:900px){
+  .content-wrap{padding:0 20px 60px;}
+  #hero{padding:72px 20px 40px;}
+  #hero h1{font-size:30px;}
+}
+@media print{
+  #sidebar-toggle, #sidebar-overlay, #sidebar, #top-btn, #progress-bar{display:none!important;}
+  .topic{page-break-inside:avoid;}
+  .sec-header{page-break-before:always;}
+}
+</style>
+</head>
+<body>
+<div id="progress-bar"></div>
+
+<div id="sidebar-overlay" onclick="closeSidebar()"></div>
+
+<button id="sidebar-toggle" onclick="toggleSidebar()">
+  <span>☰</span> Contents
+</button>
+
+<nav id="sidebar">
+  <div id="sidebar-header">
+    <div class="logo">Surgical Insight Hub</div>
+    <div class="sub">Surgical Drains · Monograph Series</div>
+  </div>
+  <div id="sidebar-search">
+    <input type="text" id="search-input" placeholder="Search topics…" oninput="filterNav(this.value)">
+  </div>
+  <div id="sidebar-nav">
+    <div class="vol-label">Pillar 1 — Pre-Op Optimization</div>
+    <a class="nav-item" href="#p1a"><span class="num">1.1</span>The Decision to Drain</a>
+    <a class="nav-item" href="#p1b"><span class="num">1.2</span>Clinical Assessment</a>
+    <a class="nav-item" href="#p1c"><span class="num">1.3</span>Risk Stratification</a>
+    <div class="vol-label">Pillar 2 — The Operative Game Plan</div>
+    <a class="nav-item" href="#p2a"><span class="num">2.1</span>Drain Selection by Type</a>
+    <a class="nav-item" href="#p2b"><span class="num">2.2</span>Intraoperative Placement</a>
+    <a class="nav-item" href="#p2c"><span class="num">2.3</span>Percutaneous Image-Guided</a>
+    <a class="nav-item" href="#p2d"><span class="num">2.4</span>Specific Anatomical Locations</a>
+    <div class="vol-label">Pillar 3 — Pearls &amp; Bail-Outs</div>
+    <a class="nav-item" href="#p3a"><span class="num">3.1</span>Consultant Pearls</a>
+    <a class="nav-item" href="#p3b"><span class="num">3.2</span>The Bail-Out Point</a>
+    <div class="vol-label">Pillar 4 — Post-Op Care</div>
+    <a class="nav-item" href="#p4a"><span class="num">4.1</span>Daily Assessment</a>
+    <a class="nav-item" href="#p4b"><span class="num">4.2</span>Removal Criteria</a>
+    <a class="nav-item" href="#p4c"><span class="num">4.3</span>Ward Complications</a>
+    <div class="vol-label">Pillar 5 — Complication Management</div>
+    <a class="nav-item" href="#p5a"><span class="num">5.1</span>Haemorrhage &amp; Erosion</a>
+    <a class="nav-item" href="#p5b"><span class="num">5.2</span>Bowel Injury &amp; Fistula</a>
+    <a class="nav-item" href="#p5c"><span class="num">5.3</span>Retained Fragments</a>
+    <div class="vol-label">Quick Reference</div>
+    <a class="nav-item" href="#rapid">High-Yield Board Facts</a>
+  </div>
+</nav>
+
+<main id="main">
+<section id="hero">
+  <div class="eyebrow">Surgical Insight Hub · Monograph Series · ABSITE · PGY-3 Framework</div>
+  <h1>Surgical Drain Placement</h1>
+  <p class="subtitle">Abdominal, Pelvic, Thoracic, and Specialty Drains</p>
+  <div class="badges">
+    <span class="badge">General Surgery</span>
+    <span class="badge">Perioperative Care</span>
+    <span class="badge">Procedural Technique</span>
+  </div>
+</section>
+
+<div class="content-wrap">
+
+<div class="callout warn" style="margin-top: 40px;">
+  <span class="label">Upfront Philosophy</span>
+  Drain placement is often treated as an afterthought. It is performed at the end of long operations when attention is fading, and its principles are rarely explicitly taught. That combination produces drains placed in the wrong location, drains that do not drain what they are meant to, drains removed too early or left too long, and complications incorrectly attributed to the underlying disease. A drain placed correctly is a diagnostic tool, a therapeutic conduit, and an early warning system. A drain placed incorrectly is a foreign body that causes pain, introduces infection, and gives false reassurance. One principle governs everything: a drain drains what it is sitting in, nothing else. Position is everything.
+</div>
+
+<div class="sec-header s1">
+  <span class="sec-badge">PILLAR 1</span>
+  <span class="sec-title">Pre-operative Optimization &amp; Preparation</span>
+</div>
+
+<section class="topic s1" id="p1a">
+  <div class="topic-header"><span class="topic-num">1.1</span><h2>The Decision to Drain: This Is Not Automatic</h2></div>
+  
+  <p>Before placement, answer three questions:</p>
+  <ul>
+    <li><strong>What specifically are you draining?</strong> A named space, a named anastomosis, or a named collection. Vague drainage "of the abdomen" is not a plan.</li>
+    <li><strong>What will you do with the information?</strong> If the answer is nothing, the drain is not necessary.</li>
+    <li><strong>Will output change your management?</strong> If you will act on bile in the drain, place it; if you will ignore it, don't.</li>
+  </ul>
+
+  <h3>Evidence-Based Drain Use</h3>
+  <ul>
+    <li><strong>Elective colorectal anastomosis:</strong> Evidence is mixed. Most ERAS protocols do not mandate routine drainage. Selective use for high-risk anastomoses is supported.</li>
+    <li><strong>Hepaticojejunostomy after Whipple:</strong> Drain is mandatory. The PJ anastomosis is highly leak-prone, and drain amylase on POD1/POD3 drives management.</li>
+    <li><strong>Laparoscopic cholecystectomy:</strong> No drain. Routine drainage after uncomplicated LC shows no benefit and possible harm.</li>
+    <li><strong>Open cholecystectomy with CBD exploration:</strong> Drain adjacent to the CBD for bile leak detection.</li>
+    <li><strong>Splenectomy:</strong> Not routinely required. Place selectively if the splenic bed is oozing or the pancreatic tail was divided.</li>
+    <li><strong>Liver resection:</strong> Drain adjacent to the cut surface for bile/haemorrhage detection. Selective use for major resections.</li>
+    <li><strong>Appendicectomy:</strong> Uncomplicated requires no drain. Perforated with an abscess requires drainage if not fully washed out.</li>
+    <li><strong>Thyroidectomy:</strong> Selective. Drain for total thyroidectomy with significant dissection or Graves' disease. Uncomplicated hemithyroidectomy does not require a drain.</li>
+    <li><strong>Pancreatectomy:</strong> Drain mandatory for POPF detection.</li>
+    <li><strong>Trauma / contaminated field:</strong> Drain spaces where residual contamination cannot be fully washed out, or after hepatic packing.</li>
+  </ul>
+</section>
+
+<section class="topic s1" id="p1b">
+  <div class="topic-header"><span class="topic-num">1.2</span><h2>Clinical Assessment Before Percutaneous Placement</h2></div>
+
+  <ul>
+    <li><strong>Imaging review:</strong> Define the collection precisely (size, location, depth, relationship to vessels/bowel). Identify the safest access route. Assess collection character on CT (simple fluid vs. complex/septated). Loculated collections require image-guided placement.</li>
+    <li><strong>Coagulation status:</strong> Correct INR &gt;1.5 or Platelets &lt;50,000 before elective placement. For emergency drainage (sepsis, unstable), proceed and correct simultaneously.</li>
+    <li><strong>Antibiotic coverage:</strong> Draining a large abscess can cause bacteraemia. Cover is not optional.</li>
+  </ul>
+</section>
+
+<section class="topic s1" id="p1c">
+  <div class="topic-header"><span class="topic-num">1.3</span><h2>Risk Stratification &amp; Consent</h2></div>
+  
+  <div class="table-wrap s1-tbl"><table>
+    <thead><tr><th>Factor</th><th>Risk</th><th>Management</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Coagulopathy</strong></td><td>Haemorrhage from drain tract</td><td>Correct INR/platelets before elective placement.</td></tr>
+      <tr><td><strong>Posterior location</strong></td><td>Bowel or vascular injury risk</td><td>CT-guided placement mandatory.</td></tr>
+      <tr><td><strong>Ascites</strong></td><td>Drain tract leak around the drain</td><td>Tension suture; drain with side ports above the ascitic level.</td></tr>
+      <tr><td><strong>Prior radiation</strong></td><td>Fistula formation from drain tract</td><td>Minimise duration; avoid prolonged drainage through irradiated tissue.</td></tr>
+      <tr><td><strong>Obesity</strong></td><td>Drain migration; inadequate drainage</td><td>Longer drain; secure with extra sutures; verify position with imaging.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Consent Requirements</h3>
+  <p>Failure to drain target, haemorrhage, bowel injury, migration (inward/outward), site infection, drain-related fistula, and local pain (intercostal neuralgia or visceral pressure).</p>
+</section>
+
+<div class="sec-header s2">
+  <span class="sec-badge">PILLAR 2</span>
+  <span class="sec-title">The Operative Game Plan</span>
+</div>
+
+<section class="topic s2" id="p2a">
+  <div class="topic-header"><span class="topic-num">2.1</span><h2>Drain Selection by Type</h2></div>
+  
+  <p><strong>Active drains</strong> use negative pressure (suction) and are effective for low-viscosity fluid. <strong>Passive drains</strong> rely on gravity/capillary action for high-output/viscous collections. <strong>Sump drains</strong> are double-lumen to vent air and prevent suction collapse.</p>
+
+  <div class="diagram-wrap">
+    <div class="diagram-title">Types of Surgical Drains</div>
+    
+  </div>
+
+  <ul>
+    <li><strong>Jackson-Pratt (JP):</strong> Flat, fenestrated silicone connected to a compressed bulb (-60 to -80 mmHg). Used for abdominal/pelvic spaces, thyroid bed, and axillary drainage. <em>Limitation:</em> Clogs with viscous material; requires bulb re-compression.</li>
+    <li><strong>Blake Drain:</strong> Round, fluted silicone with four longitudinal channels. Fluid flows by capillary action and suction. Less likely to occlude than a JP. Preferred at high-volume HPB/colorectal centres.</li>
+    <li><strong>Robinson (Tube) Drain:</strong> Simple round silicone tube with side fenestrations. Passive gravity or low-suction. Used for peritonitis, contaminated surgery, and biliary drainage.</li>
+    <li><strong>Penrose Drain:</strong> Flat, soft latex tube. Passive wicking. Used for superficial/perineal wounds. <em>Limitation:</em> Open system increases infection risk with prolonged use.</li>
+    <li><strong>T-Tube (Kehr's Tube):</strong> T-shaped tube placed in the CBD with the long arm exiting the abdomen. Used after CBD exploration to allow tract formation. Removed only after 4-6 weeks and a confirming cholangiogram.</li>
+    <li><strong>Closed Suction (Hemovac):</strong> Spring-loaded suction mechanism for high-output situations (mastectomy, large abdominal wall reconstructions).</li>
+    <li><strong>Sump Drain (Salem Sump):</strong> Double-lumen (drains and vents) used for pancreatic necrosis, abscesses, or duodenal fistulas. The air vent must be kept open to prevent collapse.</li>
+  </ul>
+</section>
+
+<section class="topic s2" id="p2b">
+  <div class="topic-header"><span class="topic-num">2.2</span><h2>Intraoperative Drain Placement Technique</h2></div>
+  
+  <ul>
+    <li><strong>Step 1: Select the exit site.</strong> Choose a separate dependent site avoiding the primary incision, neurovascular bundles, and the patient's back.</li>
+    <li><strong>Step 2: Create the exit tract.</strong> Stab incision, then tunnel a large curved clamp from inside to outside. Grasp the drain tip and draw it through. Ensure a straight line without kinks or internal loops.</li>
+    <li><strong>Step 3: Position the tip.</strong> Place it adjacent to (not directly on) the anastomosis to avoid pressure necrosis. Ensure all fenestrations are inside the cavity to prevent a negative pressure air siphon.</li>
+    <li><strong>Step 4: Secure the drain.</strong> Use a non-absorbable monofilament (Prolene/Nylon) with a Roman sandal or Edinburgh knot to prevent slippage. Document the depth at skin level. Apply a transparent occlusive dressing.</li>
+    <li><strong>Step 5: Verify position.</strong> Physically trace the drain before closing. Use post-op imaging if uncertain.</li>
+  </ul>
+</section>
+
+<section class="topic s2" id="p2c">
+  <div class="topic-header"><span class="topic-num">2.3</span><h2>Percutaneous Image-Guided Placement</h2></div>
+
+  <p><strong>Ultrasound</strong> is preferred for superficial or bedside procedures. <strong>CT-guidance</strong> is preferred for deep, posterior, or loculated collections adjacent to major vessels. Both generally utilize the Seldinger technique.</p>
+
+  <div class="diagram-wrap">
+    <div class="diagram-title">Seldinger Technique for Drain Placement</div>
+    
+  </div>
+
+  <ol>
+    <li>Insert 18-gauge introducer needle into the collection and aspirate fluid.</li>
+    <li>Pass a guidewire through the needle and remove the needle.</li>
+    <li>Make a small skin incision at the guidewire entry point.</li>
+    <li>Sequentially dilate the tract over the wire.</li>
+    <li>Insert the drain over the wire, remove the wire, and confirm drainage.</li>
+    <li>Secure the drain and apply an occlusive dressing.</li>
+  </ol>
+</section>
+
+<section class="topic s2" id="p2d">
+  <div class="topic-header"><span class="topic-num">2.4</span><h2>Specific Anatomical Locations</h2></div>
+
+  <div class="diagram-wrap">
+    <div class="diagram-title">Target Anatomical Spaces for Drainage</div>
+    
+  </div>
+
+  <ul>
+    <li><strong>Right Subhepatic Space (Morrison's Pouch):</strong> For bile leaks or post-hepatectomy monitoring. Exit via right lateral abdominal wall below the costal margin. Tip sits between the liver and right kidney.</li>
+    <li><strong>Left Subphrenic Space:</strong> Post-splenectomy or gastric surgery. Tip sits between the stomach/spleen and left hemidiaphragm.</li>
+    <li><strong>Pelvic Space:</strong> Colorectal anastomosis monitoring. Tip must be in the deep pelvis, not hovering in the iliac fossa.</li>
+    <li><strong>Pancreatic Bed:</strong> For POPF detection post-Whipple. Blake drain placed adjacent to the PJ anastomosis. Drain amylase measured on POD1 and POD3.</li>
+    <li><strong>Biliary Drainage (T-Tube):</strong> Cut the crossbar to 1.5-2cm per arm. Secure choledochotomy tightly. Gravity drainage only. Output 200-500ml/day is normal.</li>
+    <li><strong>Thyroid Bed / Axilla:</strong> Small JP/Blake drains for haematoma/seroma prevention. Removed based on output criteria (&lt;30ml/24h).</li>
+  </ul>
+</section>
+
+<div class="sec-header s3">
+  <span class="sec-badge">PILLAR 3</span>
+  <span class="sec-title">Technical Pearls &amp; Bail-Out Strategies</span>
+</div>
+
+<section class="topic s3" id="p3a">
+  <div class="topic-header"><span class="topic-num">3.1</span><h2>Consultant Pearls</h2></div>
+  
+  <div class="callout pearl">
+    <span class="label">Consultant Pearl #1: A Drain with No Output is Blocked, Misplaced, or Unnecessary</span>
+    When a drain produces nothing, do not assume the patient is fine. Flush with 20ml saline via a three-way tap. Check for kinks and ensure suction is engaged. If patent but dry, check imaging to confirm tip position. A collection adjacent to a non-functioning drain is the worst-case scenario.
+  </div>
+
+  <div class="callout pearl">
+    <span class="label">Consultant Pearl #2: Drain Amylase is a Clinical Tool, Not Just a Number</span>
+    ISGPF criteria define POPF by biochemical threshold plus clinical impact. An amylase of 4000 U/L on POD3 in an afebrile, well patient is a Grade A leak (watch and wait). The exact same number in a febrile, tachycardic patient is a Grade B/C POPF requiring CT and intervention. Treat the patient, not the number.
+  </div>
+
+  <div class="callout pearl">
+    <span class="label">Consultant Pearl #3: Drains Left Too Long Cause The Problems They Try To Prevent</span>
+    Drains left beyond clinical indication cause ascending infection, pressure necrosis of adjacent bowel, drain-related fistulas, and patient immobility. Remove drains based on objective output criteria, not arbitrary timepoints.
+  </div>
+</section>
+
+<section class="topic s3" id="p3b">
+  <div class="topic-header"><span class="topic-num">3.2</span><h2>The Bail-Out Point</h2></div>
+  <p>Stop and escalate when:</p>
+  <ul>
+    <li><strong>Aspirating bowel content/blood during percutaneous placement:</strong> Withdraw needle immediately. Do not advance. Obtain imaging. Call senior.</li>
+    <li><strong>Drain resists passage through abdominal wall:</strong> Do not force it. Tunneling aggressively can create false planes. Re-create the exit tract.</li>
+    <li><strong>Drain loops internally or has excessive tension:</strong> Internal loops lead to migration. Choose a new exit site for a straighter trajectory.</li>
+    <li><strong>Post-placement imaging shows wrong location:</strong> Reposition immediately before leaving the interventional suite or closing the abdomen.</li>
+    <li><strong>Large volume fresh blood immediately after placement:</strong> Indicates vessel injury. Do not remove the drain (it may be tamponading). Apply pressure and order CT Angiography.</li>
+  </ul>
+</section>
+
+<div class="sec-header s4">
+  <span class="sec-badge">PILLAR 4</span>
+  <span class="sec-title">Post-operative Care &amp; Drain Management</span>
+</div>
+
+<section class="topic s4" id="p4a">
+  <div class="topic-header"><span class="topic-num">4.1</span><h2>Daily Assessment</h2></div>
+  
+  <p>Document daily: output volume, fluid character (serous, bilious, faeculent, purulent), drain depth at skin, and exit site condition.</p>
+  <ul>
+    <li><strong>Bile post-cholecystectomy/hepatectomy:</strong> Order CT with hepatobiliary phase. Consider ERCP stenting.</li>
+    <li><strong>Turbid output post-Whipple:</strong> Check drain amylase. If &gt;3x ULN on POD3, this is Grade B POPF requiring antibiotics and octreotide.</li>
+    <li><strong>Fresh blood:</strong> Early (&lt;24h) suggests operative bleeding. Late (&gt;POD5) suggests a pseudoaneurysm (sentinel bleed requires immediate CT Angio).</li>
+    <li><strong>Faeculent output:</strong> Indicates bowel injury or anastomotic dehiscence. Requires surgical review.</li>
+  </ul>
+</section>
+
+<section class="topic s4" id="p4b">
+  <div class="topic-header"><span class="topic-num">4.2</span><h2>Removal Criteria and Technique</h2></div>
+  <ul>
+    <li><strong>General Criteria:</strong> Output &lt;30ml/24h for two consecutive days. Fluid must be serous/serosanguinous. Patient must be clinically well.</li>
+    <li><strong>Post-Whipple:</strong> Remove POD3-5 if amylase is &lt;3x ULN and output is serous. Do not remove if amylase remains elevated.</li>
+    <li><strong>T-Tube:</strong> Remove minimum 4-6 weeks post-op to ensure a mature tract. A confirming cholangiogram is mandatory prior to removal.</li>
+    <li><strong>Technique:</strong> Remove sutures, apply gentle continuous traction. If it resists, do not force it. Gentle rotation helps release adherence. If entirely stuck, image to investigate.</li>
+  </ul>
+</section>
+
+<section class="topic s4" id="p4c">
+  <div class="topic-header"><span class="topic-num">4.3</span><h2>Ward Complications</h2></div>
+  <ul>
+    <li><strong>Inward Migration:</strong> Indicates tip may be inside a viscus. Order urgent CT. Do not remove without surgical backup.</li>
+    <li><strong>Outward Migration:</strong> Drain no longer in target space. Do not reinsert a migrated drain. Replace under imaging if necessary.</li>
+    <li><strong>Exit Site Infection:</strong> Swab for MC&amp;S, clean daily. Remove drain if clinically obsolete. Use systemic antibiotics for extending cellulitis.</li>
+    <li><strong>Drain-Related Fistula:</strong> Fluid mimics adjacent organ contents. Biliary fistulas often require ERCP stenting. Enteric fistulas are managed via conservative NBM/TPN protocols if controlled.</li>
+  </ul>
+</section>
+
+<div class="sec-header s5">
+  <span class="sec-badge">PILLAR 5</span>
+  <span class="sec-title">Complication Management</span>
+</div>
+
+<section class="topic s5" id="p5a">
+  <div class="topic-header"><span class="topic-num">5.1</span><h2>Haemorrhage from Drain Tract or Erosion</h2></div>
+  <ul>
+    <li><strong>Early Haemorrhage (&lt;24h):</strong> Unstable patient with &gt;200ml/hr blood output requires immediate return to theatre.</li>
+    <li><strong>Late Haemorrhage (&gt;POD5):</strong> Often associated with POPF pseudoaneurysm. A sentinel bleed is a surgical emergency. Order CT Angiography immediately.</li>
+    <li><strong>Correction:</strong> IR angioembolization is first-line for pseudoaneurysms (&gt;85% success). If unstable or IR unavailable, perform emergency laparotomy for vascular ligation.</li>
+  </ul>
+</section>
+
+<section class="topic s5" id="p5b">
+  <div class="topic-header"><span class="topic-num">5.2</span><h2>Bowel Injury &amp; Enteric Fistula</h2></div>
+  <ul>
+    <li><strong>Intraoperative Needle Injury:</strong> Small bowel needle tracts often seal without intervention. Colonic punctures require close monitoring and potential direct repair.</li>
+    <li><strong>Delayed Drain Erosion:</strong> Occurs after 1-2 weeks of hard drains pressing on bowel. Output becomes faeculent.</li>
+    <li><strong>Correction (Controlled Fistula):</strong> The drain has become the fistula conduit. Do not pull it out. Manage with NBM, TPN, antibiotics. Gradually withdraw over days to allow the tract to close.</li>
+    <li><strong>Correction (Uncontrolled):</strong> Emergency operative management for free contamination.</li>
+  </ul>
+</section>
+
+<section class="topic s5" id="p5c">
+  <div class="topic-header"><span class="topic-num">5.3</span><h2>Retained Drain Fragment</h2></div>
+  <ul>
+    <li><strong>Recognition:</strong> Drain tears upon removal. Removed drain is shorter than expected. Can cause chronic foreign body reactions or abscesses later.</li>
+    <li><strong>Workup:</strong> Plain AXR (drains are radiopaque) and CT to confirm location.</li>
+    <li><strong>Correction:</strong> If recognized immediately, return to theatre for laparoscopic or open retrieval. If recognized late and symptomatic, operative/endoscopic retrieval is required. If deeply embedded and asymptomatic, MDT discussion dictates management.</li>
+  </ul>
+</section>
+
+<div class="rapid-ref" id="rapid">
+  <h3>Rapid Reference — High-Yield Board Facts</h3>
+  <table>
+    <thead><tr><th>Topic</th><th>Key Fact</th></tr></thead>
+    <tbody>
+      <tr><td>Uncomplicated Cholecystectomy</td><td><strong>No drain required.</strong> Routine use shows no benefit and possible harm.</td></tr>
+      <tr><td>T-Tube Removal Timing</td><td>Wait <strong>4-6 weeks</strong> for a mature tract, and confirm with cholangiogram.</td></tr>
+      <tr><td>Jackson-Pratt Mechanism</td><td>Closed active suction generated by bulb compression (<strong>-60 to -80 mmHg</strong>).</td></tr>
+      <tr><td>Drain Exit Site Rule</td><td>Must be through a <strong>separate stab incision</strong>, never through the primary wound.</td></tr>
+      <tr><td>General Removal Criteria</td><td>Output <strong>&lt;30ml/24h</strong> for two consecutive days with serous fluid.</td></tr>
+      <tr><td>Whipple Drain Amylase</td><td>Check on POD1 and POD3. <strong>&gt;3x ULN</strong> defines a biochemical leak (Grade A POPF).</td></tr>
+      <tr><td>Sentinel Bleed</td><td>A small amount of fresh blood from a post-Whipple drain demands urgent <strong>CT Angiography</strong>.</td></tr>
+      <tr><td>Enteric Fistula Management</td><td>If the drain output becomes faeculent but the patient is stable, <strong>do not remove the drain</strong> immediately; it is controlling the fistula.</td></tr>
+      <tr><td>Drain Tip Position</td><td>Place <strong>adjacent to</strong>, not directly on, an anastomosis to prevent pressure necrosis.</td></tr>
+      <tr><td>Blocked Drain First Step</td><td>Flush with <strong>10-20ml normal saline</strong> and check for kinks before removing.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div></main>
+
+<button id="top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+const progressBar = document.getElementById('progress-bar');
+const topBtn = document.getElementById('top-btn');
+const sidebarToggle = document.getElementById('sidebar-toggle');
+const sidebarOverlay = document.getElementById('sidebar-overlay');
+const navItems = document.querySelectorAll('.nav-item');
+const sections = document.querySelectorAll('.topic[id], .rapid-ref[id]');
+const body = document.body;
+
+function toggleSidebar() { body.classList.toggle('sidebar-open'); }
+function closeSidebar() { body.classList.remove('sidebar-open'); }
+
+window.addEventListener('scroll', () => {
+  const st = window.scrollY;
+  const dh = document.documentElement.scrollHeight - window.innerHeight;
+  progressBar.style.transform = `scaleX(${st / dh})`;
+  topBtn.classList.toggle('show', st > 400);
+  
+  let current = '';
+  sections.forEach(s => { if (st >= s.offsetTop - 120) current = s.id; });
+  navItems.forEach(n => { n.classList.toggle('active', n.getAttribute('href') === '#' + current); });
+});
+
+function filterNav(query) {
+  const q = query.toLowerCase();
+  navItems.forEach(item => { item.style.display = (!q || item.textContent.toLowerCase().includes(q)) ? 'block' : 'none'; });
+  document.querySelectorAll('.vol-label').forEach(l => { l.style.display = 'block'; });
+}
+
+navItems.forEach(item => {
+  item.addEventListener('click', e => {
+    e.preventDefault();
+    closeSidebar();
+    const target = document.querySelector(item.getAttribute('href'));
+    if (target) window.scrollTo({ top: target.getBoundingClientRect().top - 80, behavior: 'smooth' });
+  });
+});
+
+document.querySelectorAll('.topic').forEach((el, i) => { el.style.animationDelay = `${i * 0.03}s`; });
+</script>
+</body>
+</html>

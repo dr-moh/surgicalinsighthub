@@ -12,11 +12,11 @@ Cloudflare Pages — auto-deploys on every push to main branch.
 ## File Map
 | File | Purpose |
 |------|---------|
-| `index.html` | Home page — hero, features, MCQ bento, podcast, Telegram feed, leaderboard, testimonials, CTA |
+| `index.html` | Home page — hero, features, MCQ bento, podcast, LinkedIn feed, leaderboard, testimonials, CTA |
 | `notes.html` | Notes library with filter by specialty |
 | `podcast.html` | YesSurgeryBet podcast episodes |
 | `about.html` | About Dr. Abdulmalik Moh — surgical resident |
-| `mcq.html` | Full MCQ Practice Arena — setup, questions, SHARP debrief, global leaderboard |
+| `mcq.html` | Full MCQ Practice MCQ Arena — setup, questions, SHARP debrief, global leaderboard |
 | `review.html` | AI High-Yield Review — streams Claude AI content for surgical topics |
 | `colorectal_Notebook.html` | SIH Monograph: Colorectal & Anal Surgery |
 | `anestesia_with_mono.html` | SIH Monograph: Anesthesia & Perioperative Care |
@@ -44,14 +44,14 @@ Cloudflare Pages — auto-deploys on every push to main branch.
 - `mcq_scores` — name, school, specialty, topic, score, total, percentage, time_taken
 
 ## Navbar Order (all pages)
-Home · Podcast · Notes · MCQ Arena · AI Review · About
+Home · Podcast · Notes · MCQ MCQ Arena · AI Review · About
 + Mobile hamburger (☰ Menu) slides up a bottom sheet
 
 ## Key Features Status
-- [x] Home page with hero, floating cards, MCQ preview, podcast, Telegram feed
+- [x] Home page with hero, floating cards, MCQ preview, podcast, LinkedIn feed
 - [x] Global MCQ leaderboard on home page (live from Supabase)
 - [x] Testimonials with Supabase storage + Forminit notifications
-- [x] MCQ Arena: 20 questions, SHARP debrief, global leaderboard
+- [x] MCQ MCQ Arena: 20 questions, SHARP debrief, global leaderboard
 - [x] AI Review: streams Claude API for any surgical topic
 - [x] Colorectal monograph with collapsible sidebar + surgical art
 - [x] Anesthesia monograph with collapsible sidebar + surgical art
@@ -64,7 +64,7 @@ Home · Podcast · Notes · MCQ Arena · AI Review · About
 - [ ] ARM (Anorectal Malformation) Residency Journal note
 - [ ] More Residency Journal notes (Fournier's, PUD, Choledocholithiasis, HPB)
 - [ ] data.json integration for notes library
-- [ ] Telegram feed (currently shows fallback — RSS blocked by CORS)
+- [x] LinkedIn integration
 
 ## Notes on AI Review (review.html)
 Uses direct Claude API call from browser with:

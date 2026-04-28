@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Surgical Insight Hub — Cholecystectomy Monograph</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  /* Deep Plum & Amber Aesthetic */
+  --primary:   #4C1D95; 
+  --primary-dk:#2E1065;
+  --primary-lt:#F5F3FF;
+  --accent:    #6D28D9;
+  --accent2:   #A78BFA;
+  --gold:      #F59E0B;
+  --gold-lt:   #FEF3C7;
+  --s1:        #4C1D95;
+  --s2:        #5B21B6;
+  --s3:        #3B0764;
+  --s4:        #4C1D95;
+  --s5:        #2E1065;
+  --s1-lt:     #F5F3FF;
+  --s2-lt:     #EDE9FE;
+  --s3-lt:     #F5F3FF;
+  --s4-lt:     #EDE9FE;
+  --s5-lt:     #F5F3FF;
+  --red:       #B91C1C;
+  --red-lt:    #FEF2F2;
+  --amber:     #B45309;
+  --amber-lt:  #FFFBEB;
+  --blue:      #1D4ED8;
+  --blue-lt:   #EFF6FF;
+  --bg:        #FAFAFA;
+  --bg2:       #F4F4F5;
+  --border:    #E7E5E4;
+  --text:      #1C1917;
+  --muted:     #57534E;
+  --white:     #FFFFFF;
+  --sidebar-w: 320px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.75;}
+
+/* SLIDE-OVER SIDEBAR */
+#sidebar {
+  position: fixed; top: 0; left: 0; width: var(--sidebar-w); height: 100vh;
+  background: var(--primary-dk); color: #EDE9FE;
+  display: flex; flex-direction: column;
+  z-index: 1000; overflow: hidden;
+  transform: translateX(-100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 4px 0 24px rgba(0,0,0,0.3);
+}
+body.sidebar-open #sidebar {
+  transform: translateX(0);
+}
+
+/* OVERLAY */
+#sidebar-overlay {
+  position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+  background: rgba(46, 16, 101, 0.6); backdrop-filter: blur(2px);
+  z-index: 950; opacity: 0; pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+body.sidebar-open #sidebar-overlay {
+  opacity: 1; pointer-events: auto;
+}
+
+/* TOGGLE BUTTON - TOP LEFT */
+#sidebar-toggle {
+  position: fixed; top: 24px; left: 28px; z-index: 900;
+  background: var(--primary); color: white;
+  border: none; border-radius: 30px;
+  padding: 10px 18px; font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600;
+  letter-spacing: 0.05em; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  display: flex; align-items: center; gap: 8px; transition: all 0.2s;
+}
+#sidebar-toggle:hover {
+  background: var(--accent); transform: translateY(-2px);
+}
+
+#sidebar-header{padding:20px 20px 14px;border-bottom:1px solid rgba(255,255,255,0.08);flex-shrink:0;}
+#sidebar-header .logo{font-family:'Playfair Display',serif;font-size:13px;font-weight:700;color:var(--accent2);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;}
+#sidebar-header .sub{font-size:10.5px;color:rgba(237,233,254,0.6);letter-spacing:0.04em;}
+#sidebar-search{padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.05);flex-shrink:0;}
+#sidebar-search input{width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:6px;color:#EDE9FE;padding:6px 10px;font-size:12px;font-family:'Source Serif 4',serif;outline:none;transition:border-color 0.2s;}
+#sidebar-search input::placeholder{color:rgba(237,233,254,0.4);}
+#sidebar-search input:focus{border-color:var(--accent2);}
+#sidebar-nav{flex:1;overflow-y:auto;padding:8px 0 20px;}
+#sidebar-nav::-webkit-scrollbar{width:4px;}
+#sidebar-nav::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.15);border-radius:2px;}
+.vol-label{font-size:9.5px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent2);padding:14px 18px 4px;}
+.nav-item{display:block;padding:8px 18px 8px 22px;font-size:12.5px;color:rgba(237,233,254,0.75);text-decoration:none;border-left:2px solid transparent;transition:all 0.15s;line-height:1.4;}
+.nav-item:hover{color:#fff;background:rgba(255,255,255,0.03);border-left-color:rgba(167,139,250,0.5);}
+.nav-item.active{color:#fff;background:rgba(255,255,255,0.06);border-left-color:var(--accent2);font-weight:600;}
+.nav-item .num{font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(237,233,254,0.4);margin-right:6px;}
+
+/* MAIN */
+#main{margin-left:0; min-height:100vh;}
+
+/* HERO */
+#hero{background:linear-gradient(135deg,var(--primary-dk) 0%,#4C1D95 60%,#3B0764 100%);color:white;padding:90px 72px 60px;position:relative;overflow:hidden;}
+#hero::before{content:'';position:absolute;top:-60px;right:-60px;width:380px;height:380px;background:radial-gradient(circle,rgba(167,139,250,0.15) 0%,transparent 70%);pointer-events:none;}
+#hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent2),var(--gold),transparent);}
+#hero .eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.16em;color:var(--accent2);text-transform:uppercase;margin-bottom:14px;}
+#hero h1{font-family:'Playfair Display',serif;font-size:46px;font-weight:700;line-height:1.15;margin-bottom:10px;color:#fff;}
+#hero .subtitle{font-size:18px;color:rgba(255,255,255,0.8);font-style:italic;margin-bottom:28px;}
+#hero .badges{display:flex;gap:10px;flex-wrap:wrap;}
+#hero .badge{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:4px 14px;font-size:12px;color:rgba(255,255,255,0.95);font-family:'JetBrains Mono',monospace;}
+
+/* CONTENT */
+.content-wrap{max-width:900px;margin:0 auto;padding:0 48px 80px;}
+
+/* SECTION HEADER */
+.sec-header{margin-top:60px;margin-bottom:8px;padding:28px 36px;border-radius:10px;display:flex;align-items:center;gap:20px;}
+.sec-header.s1{background:linear-gradient(135deg,#4C1D950A,#4C1D951A);border-left:4px solid var(--s1);}
+.sec-header.s2{background:linear-gradient(135deg,#5B21B60A,#5B21B61A);border-left:4px solid var(--s2);}
+.sec-header.s3{background:linear-gradient(135deg,#3B07640A,#3B07641A);border-left:4px solid var(--s3);}
+.sec-header.s4{background:linear-gradient(135deg,#4C1D950A,#4C1D951A);border-left:4px solid var(--s4);}
+.sec-header.s5{background:linear-gradient(135deg,#2E10650A,#2E10651A);border-left:4px solid var(--s5);}
+.sec-badge{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;letter-spacing:0.1em;padding:4px 12px;border-radius:4px;white-space:nowrap;flex-shrink:0;}
+.s1 .sec-badge{background:var(--s1);color:white;}
+.s2 .sec-badge{background:var(--s2);color:white;}
+.s3 .sec-badge{background:var(--s3);color:white;}
+.s4 .sec-badge{background:var(--s4);color:white;}
+.s5 .sec-badge{background:var(--s5);color:white;}
+.sec-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;}
+.s1 .sec-title{color:var(--s1);}
+.s2 .sec-title{color:var(--s2);}
+.s3 .sec-title{color:var(--s3);}
+.s4 .sec-title{color:var(--s4);}
+.s5 .sec-title{color:var(--s5);}
+
+/* TOPIC */
+.topic{margin-top:48px;padding-top:48px;border-top:1px solid var(--border);}
+.topic:first-of-type{border-top:none;}
+.topic-header{display:flex;align-items:flex-start;gap:16px;margin-bottom:24px;}
+.topic-num{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;padding:3px 10px;border-radius:4px;margin-top:4px;flex-shrink:0;}
+.s1 .topic-num{background:var(--s1-lt);color:var(--s1);}
+.s2 .topic-num{background:var(--s2-lt);color:var(--s2);}
+.s3 .topic-num{background:var(--s3-lt);color:var(--s3);}
+.s4 .topic-num{background:var(--s4-lt);color:var(--s4);}
+.s5 .topic-num{background:var(--s5-lt);color:var(--s5);}
+.topic h2{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;line-height:1.2;}
+.s1 .topic h2{color:var(--s1);}
+.s2 .topic h2{color:var(--s2);}
+.s3 .topic h2{color:var(--s3);}
+.s4 .topic h2{color:var(--s4);}
+.s5 .topic h2{color:var(--s5);}
+.topic h3{font-family:'Playfair Display',serif;font-size:17px;font-weight:600;color:var(--muted);margin:26px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--border);}
+.topic h4{font-size:13px;font-weight:600;color:var(--muted);letter-spacing:0.06em;text-transform:uppercase;margin:18px 0 8px;font-family:'JetBrains Mono',monospace;}
+.topic p{margin-bottom:12px;color:var(--text);}
+.topic ul,.topic ol{margin:8px 0 14px 20px;color:var(--text);}
+.topic li{margin-bottom:6px;line-height:1.65;}
+.topic li::marker{color:var(--accent);}
+.topic strong{color:var(--text);font-weight:600;}
+
+/* TABLES */
+.table-wrap{overflow-x:auto;margin:16px 0 20px;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.04);}
+table{width:100%;border-collapse:collapse;font-size:13.5px;background:white;}
+thead tr{background:var(--s1);}
+thead th{color:white;padding:10px 14px;text-align:left;font-family:'Source Serif 4',serif;font-weight:600;font-size:13px;}
+tbody tr:nth-child(even){background:var(--bg2);}
+tbody tr:hover{background:var(--s1-lt);transition:background 0.15s;}
+tbody td{padding:9px 14px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.5;}
+.s2-tbl thead tr{background:var(--s2);}
+.s3-tbl thead tr{background:var(--s3);}
+.s4-tbl thead tr{background:var(--s4);}
+.s5-tbl thead tr{background:var(--s5);}
+
+/* CALLOUTS */
+.callout{margin:18px 0;padding:14px 18px;border-radius:0 8px 8px 0;border-left:4px solid;font-size:14px;line-height:1.65;}
+.callout .label{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;display:block;margin-bottom:4px;}
+.callout.pearl{background:var(--amber-lt);border-color:var(--amber);}
+.callout.pearl .label{color:var(--amber);}
+.callout.warn{background:var(--red-lt);border-color:var(--red);}
+.callout.warn .label{color:var(--red);}
+.callout.clin{background:var(--s1-lt);border-color:var(--s1);}
+.callout.clin .label{color:var(--s1);}
+.callout.exam{background:var(--blue-lt);border-color:var(--blue);}
+.callout.exam .label{color:var(--blue);}
+
+/* DIAGRAM PLACEHOLDERS */
+.diagram-wrap{background:white;border:1px solid var(--border);border-radius:8px;padding:18px;margin:20px 0;box-shadow:0 1px 4px rgba(0,0,0,0.03);text-align:center;}
+.diagram-title{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--s1);margin-bottom:12px;text-align:left;}
+
+/* RAPID REFERENCE */
+.rapid-ref{background:var(--primary-dk);color:var(--primary-lt);border-radius:10px;padding:28px 32px;margin:30px 0;}
+.rapid-ref h3{font-family:'Playfair Display',serif;font-size:20px;color:var(--accent2);margin-bottom:16px;}
+.rapid-ref table{font-size:12.5px; background: transparent;} 
+.rapid-ref thead tr{background:rgba(167,139,250,0.15);}
+.rapid-ref thead th{color:var(--accent2);padding:8px 12px;font-size:11px;}
+.rapid-ref tbody tr:nth-child(even){background:rgba(255,255,255,0.03);}
+.rapid-ref tbody tr:hover{background:rgba(255,255,255,0.06);}
+.rapid-ref tbody td{color:var(--primary-lt);padding:7px 12px;border-bottom:1px solid rgba(255,255,255,0.05);}
+.rapid-ref tbody td strong{color:var(--gold);}
+
+/* PROGRESS */
+#progress-bar{position:fixed;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent2),var(--gold));transform-origin:left;transform:scaleX(0);transition:transform 0.1s;z-index:50;}
+
+/* TOP BTN */
+#top-btn{position:fixed;bottom:28px;right:28px;background:var(--primary);color:white;border:none;border-radius:50%;width:44px;height:44px;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,0.2);transition:all 0.2s;opacity:0;pointer-events:none;}
+#top-btn.show{opacity:1;pointer-events:auto;}
+#top-btn:hover{background:var(--accent2);transform:translateY(-2px);}
+
+/* ANIMATION */
+.topic{animation:fadeUp 0.4s ease both;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
+
+@media(max-width:900px){
+  .content-wrap{padding:0 20px 60px;}
+  #hero{padding:72px 20px 40px;}
+  #hero h1{font-size:30px;}
+}
+@media print{
+  #sidebar-toggle, #sidebar-overlay, #sidebar, #top-btn, #progress-bar{display:none!important;}
+  .topic{page-break-inside:avoid;}
+  .sec-header{page-break-before:always;}
+}
+</style>
+</head>
+<body>
+<div id="progress-bar"></div>
+
+<div id="sidebar-overlay" onclick="closeSidebar()"></div>
+
+<button id="sidebar-toggle" onclick="toggleSidebar()">
+  <span>☰</span> Contents
+</button>
+
+<nav id="sidebar">
+  <div id="sidebar-header">
+    <div class="logo">Surgical Insight Hub</div>
+    <div class="sub">Cholecystectomy · Monograph Series</div>
+  </div>
+  <div id="sidebar-search">
+    <input type="text" id="search-input" placeholder="Search topics…" oninput="filterNav(this.value)">
+  </div>
+  <div id="sidebar-nav">
+    <div class="vol-label">Pillar 1: Pre-Op Optimization</div>
+    <a class="nav-item" href="#p1a"><span class="num">1.1</span>Clinical Workup Expansion</a>
+    <a class="nav-item" href="#p1b"><span class="num">1.2</span>Risk Stratification</a>
+    <a class="nav-item" href="#p1c"><span class="num">1.3</span>Immediate Pre-Op</a>
+    <div class="vol-label">Pillar 2: The Operative Game Plan</div>
+    <a class="nav-item" href="#p2a"><span class="num">2.1</span>Modified Laparoscopic Approach</a>
+    <a class="nav-item" href="#p2b"><span class="num">2.2</span>Open Cholecystectomy</a>
+    <a class="nav-item" href="#p2c"><span class="num">2.3</span>Subtotal Cholecystectomy</a>
+    <a class="nav-item" href="#p2d"><span class="num">2.4</span>The Conversion Decision</a>
+    <div class="vol-label">Pillar 3: Pearls &amp; Bail-Outs</div>
+    <a class="nav-item" href="#p3a"><span class="num">3.1</span>Consultant Pearls</a>
+    <a class="nav-item" href="#p3b"><span class="num">3.2</span>The Bail-Out Point</a>
+    <div class="vol-label">Pillar 4: Post-Op Care</div>
+    <a class="nav-item" href="#p4a"><span class="num">4.1</span>Immediate Recovery</a>
+    <a class="nav-item" href="#p4b"><span class="num">4.2</span>Clinic Follow-up</a>
+    <div class="vol-label">Pillar 5: Complications</div>
+    <a class="nav-item" href="#p5a"><span class="num">5.1</span>Bile Duct Injury</a>
+    <a class="nav-item" href="#p5b"><span class="num">5.2</span>Post-operative Bile Leak</a>
+    <a class="nav-item" href="#p5c"><span class="num">5.3</span>Retained CBD Stone</a>
+    <div class="vol-label">Quick Reference</div>
+    <a class="nav-item" href="#rapid">High-Yield Board Facts</a>
+  </div>
+</nav>
+
+<main id="main">
+<section id="hero">
+  <div class="eyebrow">Surgical Insight Hub · Monograph Series · ABSITE · PGY-3 Framework</div>
+  <h1>Cholecystectomy</h1>
+  <p class="subtitle">Laparoscopic, Open, and Subtotal Variants</p>
+  <div class="badges">
+    <span class="badge">Biliary Surgery</span>
+    <span class="badge">Tokyo Guidelines</span>
+    <span class="badge">Strasberg Classification</span>
+  </div>
+</section>
+
+<div class="content-wrap">
+
+<div class="callout warn" style="margin-top: 40px;">
+  <span class="label">Upfront Philosophy</span>
+  Laparoscopic cholecystectomy was covered in the first monograph of this series. This entry does not repeat that ground; it expands it. The focus here is on the open technique, the conversion decision, the subtotal cholecystectomy in detail, the acute cholecystitis operation specifically, and the management of intraoperative cholangiography findings. 
+  <br><br>
+  The residents who get into trouble with cholecystectomy are not the ones who lack procedural knowledge. They are the ones who fail to recognise when to stop, when to convert, and when the anatomy they are seeing is not the anatomy they think it is. This monograph addresses the gap between procedural knowledge and operative judgment.
+</div>
+
+<div class="sec-header s1">
+  <span class="sec-badge">PILLAR 1</span>
+  <span class="sec-title">Pre-operative Optimization &amp; Preparation</span>
+</div>
+
+<section class="topic s1" id="p1a">
+  <div class="topic-header"><span class="topic-num">1.1</span><h2>Clinical Workup: Beyond the Basics</h2></div>
+  
+  <h3>Tokyo Guidelines 2018 (TG18) Severity Grading</h3>
+  <p>Apply this to every acute cholecystitis presentation:</p>
+
+  <div class="diagram-wrap">
+    <div class="diagram-title">Tokyo Guidelines 2018 (TG18) for Acute Cholecystitis</div>
+    
+  </div>
+
+  <div class="table-wrap s1-tbl"><table>
+    <thead><tr><th>Grade</th><th>Criteria</th><th>Operative Implication</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Grade I (Mild)</strong></td><td>Acute cholecystitis without organ dysfunction or severe local findings.</td><td>Early laparoscopic cholecystectomy within 72 hours; safe and preferred.</td></tr>
+      <tr><td><strong>Grade II (Moderate)</strong></td><td>WBC &gt;18,000; symptom duration &gt;72 hours; palpable tender mass; marked pericholecystic inflammation; no organ dysfunction.</td><td>Early laparoscopic cholecystectomy feasible at experienced centres; percutaneous cholecystostomy if unfit.</td></tr>
+      <tr><td><strong>Grade III (Severe)</strong></td><td>Organ dysfunction (cardiovascular, neurological, respiratory, renal, hepatic, haematological).</td><td>Urgent source control; percutaneous cholecystostomy as bridge; high-risk operative mortality if operated in the acute phase.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Duration of Symptoms</h3>
+  <ul>
+    <li><strong>&lt;72 hours:</strong> The inflammatory process is oedematous and relatively soft. Planes are identifiable. Early laparoscopic cholecystectomy is safe and recommended.</li>
+    <li><strong>72 hours to 7 days:</strong> Inflammation becomes organised. Planes are harder to develop, and the conversion rate increases. Still feasible at experienced centres.</li>
+    <li><strong>&gt;7 days:</strong> A fibrotic inflammatory mass (the "difficult gallbladder"). Consider an interval approach or plan for a subtotal cholecystectomy from the outset.</li>
+  </ul>
+
+  <h3>Mirizzi Syndrome</h3>
+  <p>A large gallstone impacted in the Hartmann's pouch or cystic duct compresses the common hepatic duct externally. Presents as jaundice and biliary obstruction on imaging. MRCP or ERCP defines the anatomy before the operation.</p>
+
+  <div class="diagram-wrap">
+    <div class="diagram-title">Mirizzi Syndrome Classification</div>
+    
+  </div>
+
+  <p>Type I involves external compression only, whereas Types II-V involve a fistula between the gallstone and the CHD requiring biliary reconstruction. If Mirizzi is suspected, plan for an open operation with a senior HPB surgeon. Laparoscopic approaches carry a very high bile duct injury risk.</p>
+
+  <h3>Specific Pathology Considerations</h3>
+  <ul>
+    <li><strong>Gallbladder empyema:</strong> Tense, pus-filled gallbladder on imaging. Decompress with a laparoscopic suction needle through the fundus before applying traction to reduce rupture risk.</li>
+    <li><strong>Gangrenous cholecystitis:</strong> Wall necrosis on CT. Higher perforation risk, higher conversion rate, and higher perioperative mortality. Subtotal cholecystectomy should be planned from the outset.</li>
+    <li><strong>Porcelain gallbladder:</strong> Calcification of the wall. Selectively calcified walls have higher malignancy risk, indicating cholecystectomy. Diffuse complete calcification has lower risk and can be observed in poor operative candidates. The wall is brittle; use a gauze-covered grasper intraoperatively.</li>
+    <li><strong>Choledocholithiasis:</strong> Follow ASGE 2019 criteria. High probability requires ERCP. Intermediate requires MRCP/EUS. Low probability proceeds with cholecystectomy plus intraoperative cholangiography (IOC).</li>
+    <li><strong>Gallbladder polyps:</strong> Polyps &gt;10mm require cholecystectomy. Polyps 6-9mm with risk factors (age &gt;50, sessile morphology) require cholecystectomy. Polyps &lt;6mm require surveillance.</li>
+  </ul>
+</section>
+
+<section class="topic s1" id="p1b">
+  <div class="topic-header"><span class="topic-num">1.2</span><h2>Risk Stratification</h2></div>
+  
+  <h3>AUGIS/SAGES Difficult Cholecystectomy Scoring</h3>
+  <p>Pre-operative prediction of operative difficulty.</p>
+
+  <div class="table-wrap s1-tbl"><table>
+    <thead><tr><th>Factor</th><th>Points</th></tr></thead>
+    <tbody>
+      <tr><td>Age &gt;50</td><td>1</td></tr>
+      <tr><td>Male sex</td><td>1</td></tr>
+      <tr><td>Obesity (BMI &gt;30)</td><td>1</td></tr>
+      <tr><td>Previous upper abdominal surgery</td><td>1</td></tr>
+      <tr><td>Acute cholecystitis</td><td>1</td></tr>
+      <tr><td>WBC &gt;10,000</td><td>1</td></tr>
+      <tr><td>Thickened gallbladder wall &gt;4mm on US</td><td>1</td></tr>
+      <tr><td>Pericholecystic fluid</td><td>1</td></tr>
+      <tr><td>Previous acute cholecystitis</td><td>1</td></tr>
+    </tbody>
+  </table></div>
+
+  <ul>
+    <li><strong>Score 0-3 (Low difficulty):</strong> Standard laparoscopic approach.</li>
+    <li><strong>Score 4-6 (Moderate difficulty):</strong> Senior assistance recommended; plan for longer operative time.</li>
+    <li><strong>Score ≥7 (High difficulty):</strong> Senior HPB surgeon should be present; plan for open or subtotal approach.</li>
+  </ul>
+</section>
+
+<section class="topic s1" id="p1c">
+  <div class="topic-header"><span class="topic-num">1.3</span><h2>Immediate Pre-operative Preparation</h2></div>
+  
+  <ul>
+    <li><strong>Antibiotic prophylaxis:</strong> Uncomplicated elective cases have weak evidence for prophylaxis; follow institutional protocol. High-risk elective cases require Cefazolin 1-2g IV within 60 minutes of incision. For acute cholecystitis, continue therapeutic antibiotics perioperatively.</li>
+    <li><strong>Consent additions:</strong> For acute cases, explicitly consent for higher conversion rates (20-30%), potential subtotal cholecystectomy, higher bile duct injury risk, and longer hospital stays. If choledocholithiasis is suspected, consent for IOC, potential CBD exploration, or post-operative ERCP.</li>
+  </ul>
+</section>
+
+<div class="sec-header s2">
+  <span class="sec-badge">PILLAR 2</span>
+  <span class="sec-title">The Operative Game Plan</span>
+</div>
+
+<section class="topic s2" id="p2a">
+  <div class="topic-header"><span class="topic-num">2.1</span><h2>Modified Laparoscopic Approach for Acute Inflammation</h2></div>
+  
+  <p>The standard approach of dissecting the hepatocystic triangle from the lateral peritoneum often fails in severe acute cholecystitis due to obliterated planes, friable walls, and medially displaced CBDs.</p>
+
+  <h3>Fundus-First (Retrograde) Dissection</h3>
+  <p>Instead of starting at the hepatocystic triangle, begin at the fundus and dissect downward toward the neck. This provides better orientation as you approach the obliterated triangle from a known point.</p>
+
+  <div class="diagram-wrap">
+    <div class="diagram-title">Fundus-First Retrograde Dissection</div>
+    
+  </div>
+
+  <ul>
+    <li><strong>Decompression:</strong> Tense gallbladders cannot be grasped safely. Insert a laparoscopic suction needle through the fundus and aspirate bile/pus before applying traction.</li>
+    <li><strong>Separating adhesions:</strong> Bluntly take down omentum, duodenum, and colon adhesions before attempting triangle dissection. Do not enter the triangle through omental adhesions.</li>
+  </ul>
+
+  <h3>Intraoperative Cholangiography (IOC)</h3>
+  <p>Setup involves clipping the gallbladder side of the cystic duct, making a small transverse incision (30-50% of circumference), and inserting the cholangiogram catheter. Inject water-soluble contrast under fluoroscopy.</p>
+
+  <div class="diagram-wrap">
+    <div class="diagram-title">Intraoperative Cholangiogram (IOC) Anatomy</div>
+    
+  </div>
+
+  <ul>
+    <li><strong>Normal findings:</strong> Smooth tapering of the distal CBD, free flow into the duodenum, no filling defects, and bilateral proximal hepatic duct filling.</li>
+    <li><strong>Filling defect (stone):</strong> Small stones (&lt;6mm) can be retrieved transcystically. Larger/multiple stones require laparoscopic choledochotomy or post-operative ERCP.</li>
+    <li><strong>No flow to duodenum:</strong> Indicates distal obstruction. Reposition patient (head-down tilt) and repeat injection. If confirmed, plan for post-operative ERCP.</li>
+    <li><strong>Proximal ducts not filling:</strong> May be an air bubble artifact or misapplied clip on the proximal duct. Check clip positions immediately.</li>
+    <li><strong>Abnormal anatomy:</strong> A low insertion of the right posterior sectoral duct into the cystic duct is highly dangerous. If the duct appears to have a double lumen, stop and seek senior input.</li>
+  </ul>
+</section>
+
+<section class="topic s2" id="p2b">
+  <div class="topic-header"><span class="topic-num">2.2</span><h2>PROCEDURE B: Open Cholecystectomy</h2></div>
+  
+  <p>Indications include conversion from laparoscopic, dense adhesions from prior surgeries, suspected gallbladder carcinoma, Mirizzi syndrome Types II-V, or severe coagulopathy/haemodynamic instability precluding pneumoperitoneum.</p>
+
+  <ul>
+    <li><strong>Incision:</strong> Right subcostal (Kocher) incision is standard, providing excellent exposure to the hepatoduodenal ligament. Upper midline is an alternative but provides inferior right upper quadrant exposure.</li>
+    <li><strong>Exposure:</strong> Pack the hepatic flexure inferiorly and the duodenum medially. Elevate the right lobe of the liver with a retractor to expose the hepatoduodenal ligament.</li>
+    <li><strong>Retrograde Technique:</strong> For difficult gallbladders, grasp the fundus with a sponge forceps (ring forceps with gauze). Dissect the gallbladder off the liver bed downward using scissors and diathermy in the areolar plane.</li>
+    <li><strong>Tactile Feedback:</strong> Open approaches allow palpation. The CBD should feel soft and compressible without a thrill. The hepatic artery is pulsatile. Ensure the cystic duct feels like a distinct tubular structure separate from the CBD.</li>
+    <li><strong>Critical View of Safety (CVS):</strong> CVS applies equally to open surgery. The triangle must be cleared, the lower third separated from the liver bed, and two (and only two) structures must be seen entering the gallbladder.</li>
+    <li><strong>Haemostasis:</strong> Open surgery allows direct digital pressure and suture ligation (3-0 Prolene figure-of-eight) for liver bed bleeding.</li>
+  </ul>
+</section>
+
+<section class="topic s2" id="p2c">
+  <div class="topic-header"><span class="topic-num">2.3</span><h2>PROCEDURE C: Subtotal Cholecystectomy</h2></div>
+
+  <p>Subtotal cholecystectomy is a planned, correct operation when CVS cannot be achieved. It is indicated when the triangle is obliterated, the wall is gangrenous and cannot be retracted, or the cystic duct cannot be identified after 30-45 minutes of safe dissection.</p>
+
+  <div class="diagram-wrap">
+    <div class="diagram-title">Subtotal Cholecystectomy: Reconstituting vs Fenestrating</div>
+    
+  </div>
+
+  <ul>
+    <li><strong>Type 1: Reconstituting:</strong> The gallbladder is removed above the obliterated triangle, leaving a small infundibular cuff. The mucosal opening is closed from the inside with a purse-string or figure-of-eight 2-0 Vicryl suture. The posterior wall is left attached to the liver. This has a lower post-operative bile leak rate.</li>
+    <li><strong>Type 2: Fenestrating:</strong> The gallbladder is opened widely and stones removed, leaving the posterior wall in situ. The cystic duct is not identified or closed. All visible mucosa is ablated with diathermy. The anterior opening is left open (fenestrated) for ongoing drainage. Used when a cuff cannot be safely created.</li>
+    <li><strong>Post-operative Management:</strong> A drain adjacent to the liver bed is mandatory for all subtotal procedures. Fenestrating procedures have a high bile leak rate, usually managed effectively with ERCP and stenting to reduce CBD pressure.</li>
+  </ul>
+</section>
+
+<section class="topic s2" id="p2d">
+  <div class="topic-header"><span class="topic-num">2.4</span><h2>The Conversion Decision: When and How</h2></div>
+  
+  <p>The decision to convert is clinical judgment, not a failure. The failure is not converting when you should.</p>
+
+  <ul>
+    <li><strong>Indications:</strong> Inability to achieve CVS after 30-45 minutes of systematic dissection, suspected bile duct injury, uncontrolled haemorrhage, unexpected pathology (carcinoma, fistula), or technical equipment failure.</li>
+    <li><strong>How to Convert:</strong> Do not panic. The conversion incision is rarely an emergency unless dealing with active haemorrhage. Communicate with anaesthesia, plan a right subcostal incision, and re-establish your orientation once open. Laparoscopic and open views differ drastically.</li>
+    <li><strong>When CVS cannot be achieved:</strong> Call for a senior surgeon, perform an IOC to clarify anatomy, convert to open, or proceed with a subtotal cholecystectomy.</li>
+  </ul>
+</section>
+
+<div class="sec-header s3">
+  <span class="sec-badge">PILLAR 3</span>
+  <span class="sec-title">Technical Pearls &amp; Bail-Out Strategies</span>
+</div>
+
+<section class="topic s3" id="p3a">
+  <div class="topic-header"><span class="topic-num">3.1</span><h2>Consultant Pearls</h2></div>
+  
+  <div class="callout pearl">
+    <span class="label">Consultant Pearl #1: The Posterior Window Is Where Injuries Begin</span>
+    Most bile duct injuries occur because the posterior peritoneal window was never adequately developed. The anterior window looks open, but without the posterior window, the CBD can be tented into the field and mistaken for the cystic duct. CVS is not achieved until both windows are open.
+  </div>
+
+  <div class="callout pearl">
+    <span class="label">Consultant Pearl #2: Time at the Triangle Is Not Progress</span>
+    After 30 minutes of dissection in an obliterated triangle without achieving CVS, you are not making progress; you are making danger. Change your strategy. Try fundus-first dissection, perform an IOC, call a senior, or convert to open.
+  </div>
+
+  <div class="callout pearl">
+    <span class="label">Consultant Pearl #3: The Dropped Stone Is a Medicolegal Time Bomb</span>
+    Bile spillage and stone loss occurs in 10-30% of laparoscopic procedures. Retrieve every stone you can see, use copious irrigation, and explicitly document the spillage in the operative note. Downplaying the spillage is far more damaging if a patient presents years later with a stone-containing abscess.
+  </div>
+</section>
+
+<section class="topic s3" id="p3b">
+  <div class="topic-header"><span class="topic-num">3.2</span><h2>The Bail-Out Point</h2></div>
+  <p>Stop and escalate when:</p>
+  <ul>
+    <li><strong>Bile in the field from an unknown source:</strong> Stop dissection immediately. Do not place clips until the source is identified. Call a senior.</li>
+    <li><strong>Anatomy changes after placing a clip:</strong> If the gallbladder no longer moves freely or the stump is shorter than expected, you may have clipped the CBD. Do not divide. Perform an immediate IOC.</li>
+    <li><strong>Bleeding from the hepatoduodenal ligament:</strong> Assume it is the hepatic artery or portal vein. Apply direct pressure, avoid blind cautery, and call a senior.</li>
+    <li><strong>Dissection exceeds 45-60 minutes without CVS:</strong> Recognize that the current approach is failing. Change strategy.</li>
+    <li><strong>Suspicion of gallbladder carcinoma:</strong> Do not continue laparoscopically. Convert to open to avoid peritoneal seeding.</li>
+  </ul>
+</section>
+
+<div class="sec-header s4">
+  <span class="sec-badge">PILLAR 4</span>
+  <span class="sec-title">Post-operative Care &amp; Longitudinal Follow-up</span>
+</div>
+
+<section class="topic s4" id="p4a">
+  <div class="topic-header"><span class="topic-num">4.1</span><h2>Immediate Recovery</h2></div>
+  
+  <ul>
+    <li><strong>Uncomplicated Laparoscopic (Same-day target):</strong> Scheduled acetaminophen and NSAIDs. Use port-site and intraperitoneal bupivacaine infiltration to reduce shoulder tip pain. Provide free fluids and a light meal within 2-3 hours. Address PONV prophylactically with ondansetron.</li>
+    <li><strong>Open Cholecystectomy (POD2-5 target):</strong> Epidural analgesia for 48-72 hours. Early mobilization. Progress diet as tolerated. Remove drain when output is &lt;30ml/24h and serous.</li>
+    <li><strong>Acute Cholecystitis:</strong> Continue therapeutic antibiotics for 5-7 days for gangrenous/perforated cases. Leave drains in situ until output is low and serous.</li>
+    <li><strong>Subtotal Cholecystectomy:</strong> Monitor drain output closely. Bilious output indicates a leak requiring ERCP stenting.</li>
+  </ul>
+</section>
+
+<section class="topic s4" id="p4b">
+  <div class="topic-header"><span class="topic-num">4.2</span><h2>Clinic Follow-up</h2></div>
+  <ul>
+    <li><strong>2-week visit:</strong> Inspect wounds. Investigate ongoing right upper quadrant pain or jaundice (rule out retained stone or bile leak). Every gallbladder specimen must be sent for pathology. Incidental carcinoma (T1b or T2) requires oncological referral and potential liver resection.</li>
+    <li><strong>6-week visit:</strong> Return to full activity. Address post-cholecystectomy diarrhoea (occurring in 5-10% due to unregulated bile acid delivery) with bile acid sequestrants like cholestyramine if it persists.</li>
+  </ul>
+</section>
+
+<div class="sec-header s5">
+  <span class="sec-badge">PILLAR 5</span>
+  <span class="sec-title">Complication Management</span>
+</div>
+
+<section class="topic s5" id="p5a">
+  <div class="topic-header"><span class="topic-num">5.1</span><h2>Bile Duct Injury</h2></div>
+  
+  <div class="diagram-wrap">
+    <div class="diagram-title">Strasberg / Bismuth Classification of Bile Duct Injuries</div>
+    
+  </div>
+
+  <div class="table-wrap s5-tbl"><table>
+    <thead><tr><th>Type</th><th>Description</th><th>Repair Strategy</th></tr></thead>
+    <tbody>
+      <tr><td><strong>A</strong></td><td>Leak from cystic duct stump or minor right sectoral duct</td><td>ERCP + stenting; most resolve non-operatively</td></tr>
+      <tr><td><strong>B</strong></td><td>Clipped/occluded right sectoral duct (no leak)</td><td>Often silent acutely; operative reconstruction if detected</td></tr>
+      <tr><td><strong>C</strong></td><td>Transected right sectoral duct (leak)</td><td>Operative repair; Roux-en-Y hepaticojejunostomy</td></tr>
+      <tr><td><strong>D</strong></td><td>Lateral injury to main duct</td><td>ERCP if minor; operative repair if major</td></tr>
+      <tr><td><strong>E1-E5</strong></td><td>Complete CBD transection (Bismuth I-V)</td><td>Roux-en-Y hepaticojejunostomy by HPB surgeon</td></tr>
+    </tbody>
+  </table></div>
+
+  <p><strong>Intraoperative response:</strong> Stop dissection immediately. Call an HPB surgeon. Do not attempt laparoscopic repair. Convert to open, perform an IOC, and plan a definitive Roux-en-Y hepaticojejunostomy for complete transections.</p>
+</section>
+
+<section class="topic s5" id="p5b">
+  <div class="topic-header"><span class="topic-num">5.2</span><h2>Post-operative Bile Leak</h2></div>
+  <ul>
+    <li><strong>Recognition:</strong> Bile-stained drain output, or RUQ pain/fever/rising bilirubin without a drain. CT reveals a biloma.</li>
+    <li><strong>Sources:</strong> Cystic duct stump leak (most common), Duct of Luschka (accessory hepatic ductule), or bile duct injury.</li>
+    <li><strong>Correction:</strong> For contained leaks, ERCP + biliary stenting is first-line with a &gt;90% success rate. Bilomas without a drain require CT-guided percutaneous drainage in combination with ERCP. Free bile peritonitis requires an emergency laparotomy for washout and source control.</li>
+  </ul>
+</section>
+
+<section class="topic s5" id="p5c">
+  <div class="topic-header"><span class="topic-num">5.3</span><h2>Retained Common Bile Duct Stone</h2></div>
+  <ul>
+    <li><strong>Recognition:</strong> Ascending cholangitis (Charcot's triad) immediately post-op, or delayed post-cholecystectomy syndrome with intermittent jaundice and elevated ALP/GGT.</li>
+    <li><strong>Workup:</strong> LFTs, Ultrasound, MRCP to confirm. Do not use ERCP purely diagnostically.</li>
+    <li><strong>Correction:</strong> Ascending cholangitis requires emergency IV antibiotics and urgent ERCP (within 24-48 hours) for sphincterotomy and extraction. Asymptomatic stones can be managed electively. Stones failing ERCP extraction may require lithotripsy or surgical CBD exploration.</li>
+  </ul>
+</section>
+
+<div class="rapid-ref" id="rapid">
+  <h3>Rapid Reference — High-Yield Board Facts</h3>
+  <table>
+    <thead><tr><th>Topic</th><th>Key Fact</th></tr></thead>
+    <tbody>
+      <tr><td>TG18 Grade III Cholecystitis</td><td>Organ dysfunction present. High operative mortality. Bridge with <strong>percutaneous cholecystostomy</strong>.</td></tr>
+      <tr><td>Fundus-First Dissection</td><td>The <strong>retrograde approach</strong> used when the hepatocystic triangle is completely obliterated by inflammation.</td></tr>
+      <tr><td>Subtotal Cholecystectomy Types</td><td><strong>Reconstituting</strong> (cuff closed, lower leak rate) vs. <strong>Fenestrating</strong> (left open, higher leak rate, requires drain).</td></tr>
+      <tr><td>Critical View of Safety (CVS)</td><td>Triangle cleared, lower 1/3 off liver bed, <strong>two and only two</strong> structures seen entering gallbladder.</td></tr>
+      <tr><td>Mirizzi Syndrome Type II-V</td><td>Gallstone fistulises into the CHD. Requires <strong>open biliary reconstruction</strong> by HPB surgeon.</td></tr>
+      <tr><td>Gallbladder Carcinoma</td><td>Found in 0.3-0.5% of specimens. <strong>T1b or T2</strong> requires segment IVb/V liver resection + lymphadenectomy.</td></tr>
+      <tr><td>Strasberg E Injury</td><td>Complete CBD transection. The definitive repair is a <strong>Roux-en-Y hepaticojejunostomy</strong>.</td></tr>
+      <tr><td>Post-op Bile Leak First-Line</td><td><strong>ERCP + Biliary Stenting</strong> to decrease CBD pressure and allow the stump/ductule to seal.</td></tr>
+      <tr><td>Duct of Luschka</td><td>Accessory hepatic ductules that drain directly into the gallbladder. Injured if dissection enters liver parenchyma.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div></main>
+
+<button id="top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+const progressBar = document.getElementById('progress-bar');
+const topBtn = document.getElementById('top-btn');
+const sidebarToggle = document.getElementById('sidebar-toggle');
+const sidebarOverlay = document.getElementById('sidebar-overlay');
+const navItems = document.querySelectorAll('.nav-item');
+const sections = document.querySelectorAll('.topic[id], .rapid-ref[id]');
+const body = document.body;
+
+function toggleSidebar() { body.classList.toggle('sidebar-open'); }
+function closeSidebar() { body.classList.remove('sidebar-open'); }
+
+window.addEventListener('scroll', () => {
+  const st = window.scrollY;
+  const dh = document.documentElement.scrollHeight - window.innerHeight;
+  progressBar.style.transform = `scaleX(${st / dh})`;
+  topBtn.classList.toggle('show', st > 400);
+  
+  let current = '';
+  sections.forEach(s => { if (st >= s.offsetTop - 120) current = s.id; });
+  navItems.forEach(n => { n.classList.toggle('active', n.getAttribute('href') === '#' + current); });
+});
+
+function filterNav(query) {
+  const q = query.toLowerCase();
+  navItems.forEach(item => { item.style.display = (!q || item.textContent.toLowerCase().includes(q)) ? 'block' : 'none'; });
+  document.querySelectorAll('.vol-label').forEach(l => { l.style.display = 'block'; });
+}
+
+navItems.forEach(item => {
+  item.addEventListener('click', e => {
+    e.preventDefault();
+    closeSidebar();
+    const target = document.querySelector(item.getAttribute('href'));
+    if (target) window.scrollTo({ top: target.getBoundingClientRect().top - 80, behavior: 'smooth' });
+  });
+});
+
+document.querySelectorAll('.topic').forEach((el, i) => { el.style.animationDelay = `${i * 0.03}s`; });
+</script>
+</body>
+</html>

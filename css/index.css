@@ -278,7 +278,7 @@ h1 { font-size: clamp(3rem, 6.5vw, 5.4rem); font-weight: 900; color: var(--text-
 }
 
 
-/* TELEGRAM FEED */
+/* LINKEDIN FEED */
 .tg-section { padding: 80px 24px; background: var(--bg-primary); border-top: 1px solid var(--border-color); }
 .tg-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 32px; flex-wrap: wrap; gap: 1rem; }
 .tg-header-left .tg-kicker { font-size: .62rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--brand-gold); margin-bottom: 10px; }
@@ -291,7 +291,7 @@ h1 { font-size: clamp(3rem, 6.5vw, 5.4rem); font-weight: 900; color: var(--text-
 .tg-embed-wrap::-webkit-scrollbar-track { background: transparent; }
 .tg-embed-wrap::-webkit-scrollbar-thumb { background: rgba(184, 146, 42, 0.3); border-radius: 3px; }
 
-/* TELEGRAM POST CARDS */
+/* LINKEDIN POST CARDS */
 .tg-post-card { display: block; padding: 16px 20px; border-bottom: 1px solid var(--border-color); text-decoration: none; transition: background .15s; cursor: pointer; color: var(--text-primary); }
 .tg-post-card:last-child { border-bottom: none; }
 .tg-post-card:hover { background: var(--bg-card-alt); }
@@ -329,8 +329,7 @@ footer { border-top: 1px solid var(--border-color); padding: 48px 24px 32px; max
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 .social-lottie-link svg { width: 18px; height: 18px; }
-.telegram { background: #0088cc; }
-.youtube { background: #ff0000; }
+.linkedin { background: #0077b5; }
 .linkedin { background: #0077b5; }
 
 .social-lottie-link:hover {

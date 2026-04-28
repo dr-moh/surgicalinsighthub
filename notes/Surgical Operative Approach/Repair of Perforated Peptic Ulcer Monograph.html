@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Surgical Insight Hub — Perforated Peptic Ulcer</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  /* Teal & Amber Aesthetic */
+  --primary:   #0F766E; 
+  --primary-dk:#042F2E;
+  --primary-lt:#F0FDFA;
+  --accent:    #0D9488;
+  --accent2:   #2DD4BF;
+  --gold:      #D97706;
+  --gold-lt:   #FEF3C7;
+  --s1:        #0F766E;
+  --s2:        #115E59;
+  --s3:        #134E4A;
+  --s4:        #0F766E;
+  --s5:        #042F2E;
+  --s1-lt:     #F0FDFA;
+  --s2-lt:     #ECFDF5;
+  --s3-lt:     #F0FDF4;
+  --s4-lt:     #F0FDFA;
+  --s5-lt:     #E6FAFC;
+  --red:       #B91C1C;
+  --red-lt:    #FEF2F2;
+  --amber:     #B45309;
+  --amber-lt:  #FFFBEB;
+  --blue:      #1D4ED8;
+  --blue-lt:   #EFF6FF;
+  --bg:        #FAFAFA;
+  --bg2:       #F5F5F4;
+  --border:    #E7E5E4;
+  --text:      #1C1917;
+  --muted:     #57534E;
+  --white:     #FFFFFF;
+  --sidebar-w: 320px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.75;}
+
+/* SLIDE-OVER SIDEBAR */
+#sidebar {
+  position: fixed; top: 0; left: 0; width: var(--sidebar-w); height: 100vh;
+  background: var(--primary-dk); color: #E0F2FE;
+  display: flex; flex-direction: column;
+  z-index: 1000; overflow: hidden;
+  transform: translateX(-100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 4px 0 24px rgba(0,0,0,0.3);
+}
+body.sidebar-open #sidebar {
+  transform: translateX(0);
+}
+
+/* OVERLAY */
+#sidebar-overlay {
+  position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+  background: rgba(4, 47, 46, 0.6); backdrop-filter: blur(2px);
+  z-index: 950; opacity: 0; pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+body.sidebar-open #sidebar-overlay {
+  opacity: 1; pointer-events: auto;
+}
+
+/* TOGGLE BUTTON - TOP LEFT */
+#sidebar-toggle {
+  position: fixed; top: 24px; left: 28px; z-index: 900;
+  background: var(--primary); color: white;
+  border: none; border-radius: 30px;
+  padding: 10px 18px; font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600;
+  letter-spacing: 0.05em; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  display: flex; align-items: center; gap: 8px; transition: all 0.2s;
+}
+#sidebar-toggle:hover {
+  background: var(--accent); transform: translateY(-2px);
+}
+
+#sidebar-header{padding:20px 20px 14px;border-bottom:1px solid rgba(255,255,255,0.08);flex-shrink:0;}
+#sidebar-header .logo{font-family:'Playfair Display',serif;font-size:13px;font-weight:700;color:var(--accent2);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;}
+#sidebar-header .sub{font-size:10.5px;color:rgba(224,242,254,0.6);letter-spacing:0.04em;}
+#sidebar-search{padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.05);flex-shrink:0;}
+#sidebar-search input{width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:6px;color:#E0F2FE;padding:6px 10px;font-size:12px;font-family:'Source Serif 4',serif;outline:none;transition:border-color 0.2s;}
+#sidebar-search input::placeholder{color:rgba(224,242,254,0.4);}
+#sidebar-search input:focus{border-color:var(--accent2);}
+#sidebar-nav{flex:1;overflow-y:auto;padding:8px 0 20px;}
+#sidebar-nav::-webkit-scrollbar{width:4px;}
+#sidebar-nav::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.15);border-radius:2px;}
+.vol-label{font-size:9.5px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent2);padding:14px 18px 4px;}
+.nav-item{display:block;padding:8px 18px 8px 22px;font-size:12.5px;color:rgba(224,242,254,0.75);text-decoration:none;border-left:2px solid transparent;transition:all 0.15s;line-height:1.4;}
+.nav-item:hover{color:#fff;background:rgba(255,255,255,0.03);border-left-color:rgba(45,212,191,0.5);}
+.nav-item.active{color:#fff;background:rgba(255,255,255,0.06);border-left-color:var(--accent2);font-weight:600;}
+.nav-item .num{font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(224,242,254,0.4);margin-right:6px;}
+
+/* MAIN */
+#main{margin-left:0; min-height:100vh;}
+
+/* HERO */
+#hero{background:linear-gradient(135deg,var(--primary-dk) 0%,#0F766E 60%,#115E59 100%);color:white;padding:90px 72px 60px;position:relative;overflow:hidden;}
+#hero::before{content:'';position:absolute;top:-60px;right:-60px;width:380px;height:380px;background:radial-gradient(circle,rgba(45,212,191,0.15) 0%,transparent 70%);pointer-events:none;}
+#hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent2),var(--gold),transparent);}
+#hero .eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.16em;color:var(--accent2);text-transform:uppercase;margin-bottom:14px;}
+#hero h1{font-family:'Playfair Display',serif;font-size:46px;font-weight:700;line-height:1.15;margin-bottom:10px;color:#fff;}
+#hero .subtitle{font-size:18px;color:rgba(255,255,255,0.8);font-style:italic;margin-bottom:28px;}
+#hero .badges{display:flex;gap:10px;flex-wrap:wrap;}
+#hero .badge{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:4px 14px;font-size:12px;color:rgba(255,255,255,0.95);font-family:'JetBrains Mono',monospace;}
+
+/* CONTENT */
+.content-wrap{max-width:900px;margin:0 auto;padding:0 48px 80px;}
+
+/* SECTION HEADER */
+.sec-header{margin-top:60px;margin-bottom:8px;padding:28px 36px;border-radius:10px;display:flex;align-items:center;gap:20px;}
+.sec-header.s1{background:linear-gradient(135deg,#0F766E0A,#0F766E1A);border-left:4px solid var(--s1);}
+.sec-header.s2{background:linear-gradient(135deg,#115E590A,#115E591A);border-left:4px solid var(--s2);}
+.sec-header.s3{background:linear-gradient(135deg,#134E4A0A,#134E4A1A);border-left:4px solid var(--s3);}
+.sec-header.s4{background:linear-gradient(135deg,#0F766E0A,#0F766E1A);border-left:4px solid var(--s4);}
+.sec-header.s5{background:linear-gradient(135deg,#042F2E0A,#042F2E1A);border-left:4px solid var(--s5);}
+.sec-badge{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;letter-spacing:0.1em;padding:4px 12px;border-radius:4px;white-space:nowrap;flex-shrink:0;}
+.s1 .sec-badge{background:var(--s1);color:white;}
+.s2 .sec-badge{background:var(--s2);color:white;}
+.s3 .sec-badge{background:var(--s3);color:white;}
+.s4 .sec-badge{background:var(--s4);color:white;}
+.s5 .sec-badge{background:var(--s5);color:white;}
+.sec-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;}
+.s1 .sec-title{color:var(--s1);}
+.s2 .sec-title{color:var(--s2);}
+.s3 .sec-title{color:var(--s3);}
+.s4 .sec-title{color:var(--s4);}
+.s5 .sec-title{color:var(--s5);}
+
+/* TOPIC */
+.topic{margin-top:48px;padding-top:48px;border-top:1px solid var(--border);}
+.topic:first-of-type{border-top:none;}
+.topic-header{display:flex;align-items:flex-start;gap:16px;margin-bottom:24px;}
+.topic-num{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;padding:3px 10px;border-radius:4px;margin-top:4px;flex-shrink:0;}
+.s1 .topic-num{background:var(--s1-lt);color:var(--s1);}
+.s2 .topic-num{background:var(--s2-lt);color:var(--s2);}
+.s3 .topic-num{background:var(--s3-lt);color:var(--s3);}
+.s4 .topic-num{background:var(--s4-lt);color:var(--s4);}
+.s5 .topic-num{background:var(--s5-lt);color:var(--s5);}
+.topic h2{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;line-height:1.2;}
+.s1 .topic h2{color:var(--s1);}
+.s2 .topic h2{color:var(--s2);}
+.s3 .topic h2{color:var(--s3);}
+.s4 .topic h2{color:var(--s4);}
+.s5 .topic h2{color:var(--s5);}
+.topic h3{font-family:'Playfair Display',serif;font-size:17px;font-weight:600;color:var(--muted);margin:26px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--border);}
+.topic h4{font-size:13px;font-weight:600;color:var(--muted);letter-spacing:0.06em;text-transform:uppercase;margin:18px 0 8px;font-family:'JetBrains Mono',monospace;}
+.topic p{margin-bottom:12px;color:var(--text);}
+.topic ul,.topic ol{margin:8px 0 14px 20px;color:var(--text);}
+.topic li{margin-bottom:6px;line-height:1.65;}
+.topic li::marker{color:var(--accent);}
+.topic strong{color:var(--text);font-weight:600;}
+
+/* TABLES */
+.table-wrap{overflow-x:auto;margin:16px 0 20px;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.04);}
+table{width:100%;border-collapse:collapse;font-size:13.5px;background:white;}
+thead tr{background:var(--s1);}
+thead th{color:white;padding:10px 14px;text-align:left;font-family:'Source Serif 4',serif;font-weight:600;font-size:13px;}
+tbody tr:nth-child(even){background:var(--bg2);}
+tbody tr:hover{background:var(--s1-lt);transition:background 0.15s;}
+tbody td{padding:9px 14px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.5;}
+.s2-tbl thead tr{background:var(--s2);}
+.s3-tbl thead tr{background:var(--s3);}
+.s4-tbl thead tr{background:var(--s4);}
+.s5-tbl thead tr{background:var(--s5);}
+
+/* CALLOUTS */
+.callout{margin:18px 0;padding:14px 18px;border-radius:0 8px 8px 0;border-left:4px solid;font-size:14px;line-height:1.65;}
+.callout .label{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;display:block;margin-bottom:4px;}
+.callout.pearl{background:var(--amber-lt);border-color:var(--amber);}
+.callout.pearl .label{color:var(--amber);}
+.callout.warn{background:var(--red-lt);border-color:var(--red);}
+.callout.warn .label{color:var(--red);}
+.callout.clin{background:var(--s1-lt);border-color:var(--s1);}
+.callout.clin .label{color:var(--s1);}
+.callout.exam{background:var(--blue-lt);border-color:var(--blue);}
+.callout.exam .label{color:var(--blue);}
+
+/* DIAGRAM PLACEHOLDERS */
+.diagram-wrap{background:white;border:1px solid var(--border);border-radius:8px;padding:18px;margin:20px 0;box-shadow:0 1px 4px rgba(0,0,0,0.03);text-align:center;}
+.diagram-title{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--s1);margin-bottom:12px;text-align:left;}
+
+/* RAPID REFERENCE */
+.rapid-ref{background:var(--primary-dk);color:var(--primary-lt);border-radius:10px;padding:28px 32px;margin:30px 0;}
+.rapid-ref h3{font-family:'Playfair Display',serif;font-size:20px;color:var(--accent2);margin-bottom:16px;}
+.rapid-ref table{font-size:12.5px; background: transparent;} 
+.rapid-ref thead tr{background:rgba(45,212,191,0.15);}
+.rapid-ref thead th{color:var(--accent2);padding:8px 12px;font-size:11px;}
+.rapid-ref tbody tr:nth-child(even){background:rgba(255,255,255,0.03);}
+.rapid-ref tbody tr:hover{background:rgba(255,255,255,0.06);}
+.rapid-ref tbody td{color:var(--primary-lt);padding:7px 12px;border-bottom:1px solid rgba(255,255,255,0.05);}
+.rapid-ref tbody td strong{color:var(--gold);}
+
+/* PROGRESS */
+#progress-bar{position:fixed;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent2),var(--gold));transform-origin:left;transform:scaleX(0);transition:transform 0.1s;z-index:50;}
+
+/* TOP BTN */
+#top-btn{position:fixed;bottom:28px;right:28px;background:var(--primary);color:white;border:none;border-radius:50%;width:44px;height:44px;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,0.2);transition:all 0.2s;opacity:0;pointer-events:none;}
+#top-btn.show{opacity:1;pointer-events:auto;}
+#top-btn:hover{background:var(--accent2);transform:translateY(-2px);}
+
+/* ANIMATION */
+.topic{animation:fadeUp 0.4s ease both;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
+
+@media(max-width:900px){
+  .content-wrap{padding:0 20px 60px;}
+  #hero{padding:72px 20px 40px;}
+  #hero h1{font-size:30px;}
+}
+@media print{
+  #sidebar-toggle, #sidebar-overlay, #sidebar, #top-btn, #progress-bar{display:none!important;}
+  .topic{page-break-inside:avoid;}
+  .sec-header{page-break-before:always;}
+}
+</style>
+</head>
+<body>
+<div id="progress-bar"></div>
+
+<div id="sidebar-overlay" onclick="closeSidebar()"></div>
+
+<button id="sidebar-toggle" onclick="toggleSidebar()">
+  <span>☰</span> Contents
+</button>
+
+<nav id="sidebar">
+  <div id="sidebar-header">
+    <div class="logo">Surgical Insight Hub</div>
+    <div class="sub">Perforated Peptic Ulcer · Monograph Series</div>
+  </div>
+  <div id="sidebar-search">
+    <input type="text" id="search-input" placeholder="Search topics…" oninput="filterNav(this.value)">
+  </div>
+  <div id="sidebar-nav">
+    <div class="vol-label">Pillar 1 — Pre-Op Optimization</div>
+    <a class="nav-item" href="#p1a"><span class="num">1.1</span>Clinical Workup</a>
+    <a class="nav-item" href="#p1b"><span class="num">1.2</span>Risk Stratification (Boey)</a>
+    <a class="nav-item" href="#p1c"><span class="num">1.3</span>Non-Op &amp; Immediate Prep</a>
+    <div class="vol-label">Pillar 2 — The Operative Game Plan</div>
+    <a class="nav-item" href="#p2a"><span class="num">2.1</span>Setup &amp; Anesthesia</a>
+    <a class="nav-item" href="#p2b"><span class="num">2.2</span>Open Repair (Graham Patch)</a>
+    <a class="nav-item" href="#p2c"><span class="num">2.3</span>Laparoscopic Repair</a>
+    <a class="nav-item" href="#p2d"><span class="num">2.4</span>The Critical View</a>
+    <div class="vol-label">Pillar 3 — Pearls &amp; Bail-Outs</div>
+    <a class="nav-item" href="#p3a"><span class="num">3.1</span>Consultant Pearls</a>
+    <a class="nav-item" href="#p3b"><span class="num">3.2</span>The Bail-Out Point</a>
+    <div class="vol-label">Pillar 4 — Post-Op Care</div>
+    <a class="nav-item" href="#p4a"><span class="num">4.1</span>Immediate Recovery</a>
+    <a class="nav-item" href="#p4b"><span class="num">4.2</span>Clinic Follow-up</a>
+    <div class="vol-label">Pillar 5 — Complications</div>
+    <a class="nav-item" href="#p5a"><span class="num">5.1</span>Repair Breakdown (Fistula)</a>
+    <a class="nav-item" href="#p5b"><span class="num">5.2</span>Intra-abdominal Collection</a>
+    <a class="nav-item" href="#p5c"><span class="num">5.3</span>Gastric Outlet Obstruction</a>
+    <div class="vol-label">Quick Reference</div>
+    <a class="nav-item" href="#rapid">High-Yield Board Facts</a>
+  </div>
+</nav>
+
+<main id="main">
+<section id="hero">
+  <div class="eyebrow">Surgical Insight Hub · Monograph Series · ABSITE · PGY-3 Framework</div>
+  <h1>Repair of Perforated Peptic Ulcer</h1>
+  <p class="subtitle">Open Graham Patch, Laparoscopic Repair, and Damage Control Variants</p>
+  <div class="badges">
+    <span class="badge">Emergency General Surgery</span>
+    <span class="badge">Boey Score</span>
+    <span class="badge">Omental Patch</span>
+  </div>
+</section>
+
+<div class="content-wrap">
+
+<div class="callout warn" style="margin-top: 40px;">
+  <span class="label">Upfront Philosophy</span>
+  Perforated peptic ulcer (PPU) is an emergency where the decision-making window is measured in hours, not days. Delays at any step directly increase mortality. The Boey score predicts this mortality with brutal accuracy. The technical repair (an omental patch over a hole) is genuinely one of the simpler maneuvers in abdominal surgery. That simplicity is deceptive. The complexity lies in resuscitation, the decision to operate, approach selection, managing the contaminated peritoneum, and post-operative care of comorbid, septic patients. Master these components. The patch will follow.
+</div>
+
+<div class="sec-header s1">
+  <span class="sec-badge">PILLAR 1</span>
+  <span class="sec-title">Pre-operative Optimization &amp; Preparation</span>
+</div>
+
+<section class="topic s1" id="p1a">
+  <div class="topic-header"><span class="topic-num">1.1</span><h2>Clinical Workup</h2></div>
+  
+  <h3>History: What you need in the first 5 minutes</h3>
+  <ul>
+    <li><strong>Classic presentation:</strong> Sudden onset severe epigastric pain rapidly becoming generalised. The patient can often tell you the exact minute it started. History of dyspepsia, GORD, H. pylori treatment, or NSAID use.</li>
+    <li><strong>Risk factors:</strong> NSAID use (ask specifically about over-the-counter NSAIDs like ibuprofen/diclofenac), H. pylori infection, smoking (doubles risk), steroid use (masks peritoneal signs), anticoagulation, prior gastric surgery (changes anatomy fundamentally), corrosive ingestion.</li>
+    <li><strong>Duration of symptoms:</strong> &lt;24 hours means contamination is primarily chemical; 24-48 hours means established bacterial peritonitis; 48 hours indicates generalised faecal-equivalent peritonitis with multi-organ dysfunction.</li>
+    <li><strong>Atypical presentations:</strong> Elderly/immunosuppressed (mild discomfort, confusion), steroid-dependent (blunted rigidity, haemodynamic instability may be the first sign), posterior perforation (pain localised to back, free gas absent), right iliac fossa pain (contents track down paracolic gutter, mimics appendicitis).</li>
+  </ul>
+
+  <h3>Mandatory Investigations</h3>
+  <ul>
+    <li><strong>Erect chest X-ray:</strong> First-line investigation; identifies free subdiaphragmatic gas in 70-80% of cases. Absent free gas does not exclude perforation (20-30% do not produce visible free gas on CXR).</li>
+    <li><strong>CT abdomen/pelvis with IV contrast:</strong> Definitive investigation (sensitivity ~98%). Reveals site of perforation, volume of free fluid, extraluminal oral contrast (confirms active leak), and gastric wall thickening (&gt;1cm raises suspicion of malignancy). Do not withhold IV contrast for renal concerns in a sick patient.</li>
+    <li><strong>Laboratory:</strong> ABG (lactate &gt;4mmol/L = severe physiological compromise; changes threshold for damage control). CBC, BMP, LFTs, amylase/lipase. Coagulation. Blood cultures. Group and screen (crossmatch if haemodynamically compromised).</li>
+    <li><strong>H. pylori testing:</strong> Every patient with PPU must be tested and treated. Failure to eradicate H. pylori after repair is the most common reason for recurrence. Plan for CLO test on the ulcer biopsy.</li>
+  </ul>
+</section>
+
+<section class="topic s1" id="p1b">
+  <div class="topic-header"><span class="topic-num">1.2</span><h2>Risk Stratification &amp; The Boey Score</h2></div>
+  <p>Memorise this. Apply it to every PPU patient before you scrub.</p>
+
+  <div class="diagram-wrap">
+    <div class="diagram-title">Boey Score Criteria</div>
+      </div>
+
+  <div class="table-wrap s1-tbl"><table>
+    <thead><tr><th>Boey Factor</th><th>Definition</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Serious medical illness</strong></td><td>ASA III or higher; significant cardiopulmonary, renal, or hepatic disease.</td></tr>
+      <tr><td><strong>Pre-operative shock</strong></td><td>Systolic BP &lt;90mmHg at any point pre-operatively.</td></tr>
+      <tr><td><strong>Duration &gt;24 hours</strong></td><td>Symptom onset to operative intervention &gt;24 hours.</td></tr>
+    </tbody>
+  </table></div>
+
+  <ul>
+    <li><strong>Score 0:</strong> mortality &lt;1% (Proceed with standard repair; laparoscopic approach appropriate).</li>
+    <li><strong>Score 1:</strong> mortality ~10%.</li>
+    <li><strong>Score 2:</strong> mortality ~45% (Open approach preferred; HDU post-op; frank mortality discussion with family).</li>
+    <li><strong>Score 3:</strong> mortality &gt;80% (Is operative intervention appropriate at all? These patients may die on the table or in the ICU regardless of technical success. Consider non-operative management or palliative intent).</li>
+  </ul>
+</section>
+
+<section class="topic s1" id="p1c">
+  <div class="topic-header"><span class="topic-num">1.3</span><h2>Non-Operative Management &amp; Immediate Preparation</h2></div>
+  
+  <h3>Non-operative Management (Taylor's Method)</h3>
+  <p>Not every PPU requires surgery. Appropriate for haemodynamically stable patients with a clearly sealed/localised perforation on CT, improving symptoms over 6-12 hours observation, and no signs of malignancy. Also considered for elderly high-risk patients (Boey 3) where operative risk exceeds non-operative risk.</p>
+  
+  <div class="diagram-wrap">
+    <div class="diagram-title">Taylor's Method Protocol</div>
+      </div>
+
+  <ul>
+    <li>Strict NBM, NGT on free drainage, IV PPI, broad-spectrum IV antibiotics, IV fluid resuscitation.</li>
+    <li>Serial clinical assessment every 2-4 hours. Convert to operative management immediately for haemodynamic deterioration, worsening peritonism, failure to improve within 12-24 hours, or rising inflammatory markers.</li>
+  </ul>
+
+  <h3>Immediate Pre-operative Resuscitation</h3>
+  <ul>
+    <li><strong>Fluids:</strong> Crystalloid boluses (250-500ml) to restore haemodynamic stability (target MAP &gt;65mmHg). Consider early vasopressors if not responding to 1-1.5L. Ongoing fluid loading in a non-responsive patient causes oedema without benefit.</li>
+    <li><strong>Nasogastric tube:</strong> Insert immediately to decompress stomach, reduce ongoing leak, and lower aspiration risk.</li>
+    <li><strong>PPI Therapy:</strong> IV omeprazole 80mg bolus then 8mg/hour infusion started pre-operatively to reduce gastric acid secretion.</li>
+    <li><strong>Antibiotics:</strong> Piperacillin-tazobactam 4.5g IV Q8H (or Meropenem + Metronidazole for penicillin allergy). Start immediately upon confirmation, not after theatre is booked.</li>
+    <li><strong>Consent:</strong> Conversion from laparoscopic to open, re-operation if repair breaks down, stoma formation (rare but possible), gastric resection if malignant/massive tissue loss, and mortality risk explicitly stated.</li>
+  </ul>
+</section>
+
+<div class="sec-header s2">
+  <span class="sec-badge">PILLAR 2</span>
+  <span class="sec-title">The Operative Game Plan</span>
+</div>
+
+<section class="topic s2" id="p2a">
+  <div class="topic-header"><span class="topic-num">2.1</span><h2>Setup &amp; Anesthesia</h2></div>
+  <ul>
+    <li><strong>Anesthesia:</strong> Rapid Sequence Induction (RSI) is mandatory. All PPU patients have a full stomach regardless of NBM status. Aspirate NGT immediately before induction. Use etomidate/ketamine for unstable patients. Epidural strongly recommended for open cases. Active warming required (patients arrive hypothermic).</li>
+    <li><strong>Positioning:</strong> Supine, arms out. For laparoscopic: reverse Trendelenburg 15-20° + left lateral tilt. For open: table flat.</li>
+    <li><strong>Prep:</strong> Nipples to pubis, including both flanks for subhepatic space washout access.</li>
+  </ul>
+</section>
+
+<section class="topic s2" id="p2b">
+  <div class="topic-header"><span class="topic-num">2.2</span><h2>PROCEDURE A: Open Repair (Graham Patch Omentoplasty)</h2></div>
+  
+  <h3>Phase 1: Identification of the Perforation</h3>
+  <p>Upper midline laparotomy. Rapid entry. Take a sample of peritoneal fluid for Microbiology (MC&amp;S) immediately upon opening. Identify the perforation (usually anterior first part of duodenum or anterior lesser curve). If not visible, perform a Kocher maneuver to inspect the posterior wall. A typical acute PPU has a punched-out appearance with indurated margins.</p>
+
+  <h3>Phase 2: Biopsy (Mandatory for Gastric Ulcers)</h3>
+  <p>Every gastric ulcer perforation must be biopsied. 5-10% of perforations are perforated gastric cancers. Take 4-6 biopsies from the ulcer margin, not the necrotic base. Send for histopathology and H. pylori testing (CLO test from the antrum). Duodenal perforations do not require routine biopsy.</p>
+
+  <h3>Phase 3: Graham Patch Repair</h3>
+  <p>The definitive repair for the vast majority of PPU cases.</p>
+  
+  <div class="diagram-wrap">
+    <div class="diagram-title">Graham Patch Omentoplasty</div>
+      </div>
+
+  <ul>
+    <li>Place 3 absorbable sutures (2-0 Vicryl/PDS) across the perforation, longitudinally along the duodenum (parallel to long axis) to avoid narrowing the lumen. Take full-thickness bites through healthy tissue. Leave untied.</li>
+    <li>Identify a well-vascularised, mobile tongue of greater omentum. Do not use avascular or fatty omentum.</li>
+    <li>Place omental tongue over perforation. Tie the sutures gently over the omentum. Do not tie too tightly, or the sutures will cut through the omentum and lose the seal.</li>
+    <li>Confirm the repair: gently compress the stomach; no bile/fluid should emerge.</li>
+    <li>If defect &gt;2cm: use more sutures (5-7) or consider a pedicled omental flap/sandwich technique.</li>
+    <li>If margins are friable: push omental plug into the defect and hold with sutures placed well away from the margin. Consider formal resection (distal gastrectomy) for massive unrepairable defects in fit patients.</li>
+  </ul>
+
+  <h3>Phase 4 &amp; 5: Peritoneal Washout and Closure</h3>
+  <p>Systematic washout of all four quadrants (Morison's pouch, left subphrenic, paracolic gutters, pelvis) with a minimum of 6-8 litres of warm normal saline. Do not use antiseptic solutions. Place a Blake/Robinson drain in the right subhepatic space adjacent to the repair. Mass closure of midline with 1-loop PDS (Jenkins rule). Delayed primary skin closure at 48 hours for heavily contaminated cases.</p>
+</section>
+
+<section class="topic s2" id="p2c">
+  <div class="topic-header"><span class="topic-num">2.3</span><h2>PROCEDURE B: Laparoscopic Repair</h2></div>
+
+  <p>Appropriate for Boey 0-1, haemodynamically stable patients, symptom duration &lt;24h, experienced surgeon, and perforation &lt;10mm. Do not perform on Boey 2-3, unstable patients, or those with generalized faeculent peritonitis.</p>
+
+  <ul>
+    <li><strong>Port placement:</strong> 10-12mm umbilical (camera), 5mm RUQ (retraction), 5mm LUQ (working), 5mm epigastric left of falciform (working).</li>
+    <li><strong>Identification:</strong> If perforation not visible, ask the anaesthetist to insufflate air through the NGT to see bubbles, or inject methylene blue. Do not spend &gt;20 mins searching.</li>
+    <li><strong>Repair:</strong> Intracorporeal placement of 3 sutures longitudinally. Bring omentum over defect. Tie knots intracorporeally or extracorporeally. Fibrin glue is an acceptable adjunct, but never the sole repair mechanism.</li>
+    <li><strong>Washout:</strong> 6-10 liters warm saline using suction-irrigation. If fibrinous exudate is thick, consider conversion to open for mechanical debridement.</li>
+    <li><strong>Closure:</strong> Place drain in right subhepatic space under direct vision. Close 10-12mm fascial defect.</li>
+  </ul>
+</section>
+
+<section class="topic s2" id="p2d">
+  <div class="topic-header"><span class="topic-num">2.4</span><h2>The Critical View in PPU Repair</h2></div>
+  <p>Non-negotiable confirmations before closing:</p>
+  <ul>
+    <li>The perforation is identified and fully repaired.</li>
+    <li>The omentum is vascularised and under no tension.</li>
+    <li>The NGT insufflation test is negative (no bubbles from the repair site).</li>
+    <li>All four quadrants have been irrigated (document volume).</li>
+    <li>Biopsies have been taken from gastric ulcers before closure.</li>
+    <li>The drain is positioned in the right subhepatic space.</li>
+  </ul>
+</section>
+
+<div class="sec-header s3">
+  <span class="sec-badge">PILLAR 3</span>
+  <span class="sec-title">Technical Pearls &amp; Bail-Out Strategies</span>
+</div>
+
+<section class="topic s3" id="p3a">
+  <div class="topic-header"><span class="topic-num">3.1</span><h2>Consultant Pearls</h2></div>
+  
+  <div class="callout pearl">
+    <span class="label">Consultant Pearl #1: The Repair That Fails Is A Tension Problem</span>
+    Every Graham patch failure traces to sutures placed through friable tissue that cut through, or omentum under tension that pulled away. Before tying sutures, pull the omentum to the repair site. If it requires traction, find a longer tongue. If a suture pulls through after tying, place another before irrigating. A repair you have doubts about will break down.
+  </div>
+
+  <div class="callout pearl">
+    <span class="label">Consultant Pearl #2: The Perforated Gastric Ulcer Is Cancer</span>
+    Five to ten percent of perforated gastric ulcers are malignant. Take 4-6 biopsies from the margin before patching, plus a CLO test from the antrum. Document it. Ensure the pathology is followed up. A malignant result ignored is a medico-legal catastrophe. If frozen section returns malignancy in a fit patient, gastrectomy is definitive. If unfit, patch and plan a staged gastrectomy.
+  </div>
+
+  <div class="callout pearl">
+    <span class="label">Consultant Pearl #3: The Post-operative Drain Tells You Everything</span>
+    A right subhepatic drain is your most sensitive monitor. Decreasing volume is reassuring. Bile-stained or green output on POD2-3 equals repair breakdown until proven otherwise. A bile-stained drain demands a CT with IV contrast and a low threshold for re-operation or IR drainage. Do not attribute it to "normal post-operative drainage".
+  </div>
+</section>
+
+<section class="topic s3" id="p3b">
+  <div class="topic-header"><span class="topic-num">3.2</span><h2>The Bail-Out Point</h2></div>
+  <p>Stop and escalate when:</p>
+  <ul>
+    <li><strong>Perforation too large for omental patch:</strong> Call senior. May require formal gastric resection. Do not proceed with an inadequate patch on a large defect.</li>
+    <li><strong>Omentum absent/avascular:</strong> Consider falciform ligament patch, jejunal serosal patch, or resection.</li>
+    <li><strong>Posterior perforation not accessible anteriorly:</strong> Extend Kocher maneuver; if still inaccessible, call senior.</li>
+    <li><strong>Perforated gastric cancer with invasion:</strong> Do not resect without a consultant/oncological plan. Pack, close, plan staged approach.</li>
+    <li><strong>Haemodynamic instability on the table:</strong> Apply damage control principles (rapid patch, minimal washout, TAC closure, get to ICU). A prolonged washout in a crashing patient kills.</li>
+    <li><strong>Laparoscopic repair not technically feasible:</strong> Convert to open without hesitation. The decision to convert is surgical judgment, not failure.</li>
+  </ul>
+</section>
+
+<div class="sec-header s4">
+  <span class="sec-badge">PILLAR 4</span>
+  <span class="sec-title">Post-operative Care &amp; Longitudinal Follow-up</span>
+</div>
+
+<section class="topic s4" id="p4a">
+  <div class="topic-header"><span class="topic-num">4.1</span><h2>Immediate Post-op (First 24 Hours)</h2></div>
+  
+  <ul>
+    <li><strong>Disposition:</strong> Boey 0 to ward. Boey 1-2 to HDU (decompensate rapidly). Boey 3 or unstable to ICU.</li>
+    <li><strong>Monitoring:</strong> Tachycardia on POD2-3 equals repair breakdown, collection, or PE. Monitor hourly drain output. Bile-stained output requires CT. Monitor urine output for AKI.</li>
+    <li><strong>NGT Management:</strong> Keep on free drainage 24-48 hours to decompress stomach. Remove when output is minimal (&lt;200ml/24h) and no clinical concern about repair.</li>
+    <li><strong>Pain Management:</strong> Epidural for open cases (48-72h). TAP blocks for laparoscopic. Scheduled acetaminophen + NSAIDs (with PPI cover; consider COX-2 inhibitors). Opioids PRN rescue.</li>
+    <li><strong>PPI Therapy:</strong> IV omeprazole 40mg BD for first 48-72h, then switch to oral. Continue for minimum 8 weeks.</li>
+    <li><strong>Diet:</strong> NBM 24-48h with NGT decompression. Water sips POD2. Free fluids POD2-3. Soft diet POD3-4. If diet causes pain/nausea, assess repair via CT.</li>
+    <li><strong>H. pylori eradication:</strong> Standard triple therapy (omeprazole, amoxicillin, clarithromycin) for 14 days started on discharge. Confirm eradication at 4-6 weeks via stool antigen or breath test (not serology).</li>
+  </ul>
+</section>
+
+<section class="topic s4" id="p4b">
+  <div class="topic-header"><span class="topic-num">4.2</span><h2>Clinic Follow-up</h2></div>
+  <ul>
+    <li><strong>2-week visit:</strong> Wound inspection, diet tolerance review. Pathology review for gastric ulcers (if malignant, immediate oncological referral). Review NSAID use.</li>
+    <li><strong>6-8 week visit:</strong> H. pylori eradication confirmation (mandatory). Upper GI endoscopy (OGD) is mandatory for all gastric ulcers to confirm healing and re-biopsy if needed. An unhealed gastric ulcer at 8 weeks is malignant until proven otherwise.</li>
+    <li><strong>3-6 month visit:</strong> Functional recovery. Monitor for recurrence symptoms (dyspepsia, haematemesis). Reinforce smoking cessation (halves recurrence risk) and NSAID avoidance.</li>
+  </ul>
+</section>
+
+<div class="sec-header s5">
+  <span class="sec-badge">PILLAR 5</span>
+  <span class="sec-title">Complication Management</span>
+</div>
+
+<section class="topic s5" id="p5a">
+  <div class="topic-header"><span class="topic-num">5.1</span><h2>Complication 1: Repair Breakdown / Duodenal Fistula</h2></div>
+  <ul>
+    <li><strong>Recognition:</strong> Feared complication (2-10%). Bile-stained drain output on POD2-5. Worsening abdominal pain, fever, tachycardia. Late presentation (&gt;POD7) involves persistent ileus.</li>
+    <li><strong>Workup:</strong> CT abdomen/pelvis with IV and oral/NG contrast confirms leak and containment. Drain fluid bilirubin level higher than serum confirms bile leak.</li>
+    <li><strong>Correction (Contained / Controlled Fistula):</strong> NBM, NGT decompression, TPN, IV antibiotics, Octreotide, IV PPI infusion. Output usually decreases over 2-3 weeks. Persistent fistula &gt;6 weeks requires definitive surgical repair or ERCP stenting.</li>
+    <li><strong>Correction (Free Leak / Peritonitis):</strong> Resuscitate and return to theatre. Re-repair if tissue allows. If tissue is poor, perform duodenal exclusion (oversew pylorus, gastrojejunostomy, tube decompression). If unstable, damage control.</li>
+  </ul>
+</section>
+
+<section class="topic s5" id="p5b">
+  <div class="topic-header"><span class="topic-num">5.2</span><h2>Complication 2: Intra-abdominal Collection / Post-operative Abscess</h2></div>
+  <ul>
+    <li><strong>Recognition:</strong> Peak onset POD5-10. Persistent fever &gt;38.5°C, tachycardia, ileus, RUQ or shoulder pain. Most common in right subhepatic space.</li>
+    <li><strong>Workup:</strong> CT abdomen/pelvis with IV contrast. Drain fluid culture.</li>
+    <li><strong>Correction:</strong> CT or US-guided percutaneous drainage is first-line (85-90% success). For multiple collections or failed IR drainage, return to theatre for operative washout. Transrectal/transvaginal US drainage excellent for pelvic abscesses.</li>
+  </ul>
+</section>
+
+<section class="topic s5" id="p5c">
+  <div class="topic-header"><span class="topic-num">5.3</span><h2>Complication 3: Delayed Gastric Emptying / Gastric Outlet Obstruction</h2></div>
+  <ul>
+    <li><strong>Recognition:</strong> Functional delayed emptying (ileus) presents early with nausea/vomiting. Mechanical obstruction presents as vomiting on POD8-10 (repair oedema) or intolerance of diet &gt;2 weeks (scarring/stricture).</li>
+    <li><strong>Workup:</strong> Water-soluble contrast swallow (Gastrografin meal). CT if repair breakdown is a differential. OGD for late obstruction.</li>
+    <li><strong>Correction (Functional):</strong> NGT decompression, correct electrolytes, minimise opioids, consider prokinetics (erythromycin/metoclopramide). Nasojejunal enteral nutrition if prolonged.</li>
+    <li><strong>Correction (Mechanical):</strong> Early oedema resolves with conservative management over 3-4 weeks. Late stricture (&gt;6 weeks) requires endoscopic balloon dilatation (first-line). Refractory stricture requires elective Heineke-Mikulicz pyloroplasty or gastrojejunostomy.</li>
+  </ul>
+</section>
+
+<div class="rapid-ref" id="rapid">
+  <h3>Rapid Reference — High-Yield Board Facts</h3>
+  <table>
+    <thead><tr><th>Topic</th><th>Key Fact</th></tr></thead>
+    <tbody>
+      <tr><td>Boey Score 3</td><td>Mortality <strong>&gt;80%</strong>. Requires explicit family counseling on appropriateness of surgery.</td></tr>
+      <tr><td>Taylor's Method Criteria</td><td>Stable patient, <strong>sealed/localised perforation on CT</strong>, no malignancy signs, improving symptoms.</td></tr>
+      <tr><td>Mandatory Biopsy</td><td><strong>Every gastric ulcer perforation</strong> requires 4-6 margin biopsies to rule out malignancy.</td></tr>
+      <tr><td>Graham Patch Sutures</td><td>Placed <strong>longitudinally</strong> along the duodenum to avoid narrowing the lumen.</td></tr>
+      <tr><td>Right Subhepatic Drain</td><td>Bile-stained output on <strong>POD2-3</strong> indicates repair breakdown until proven otherwise by CT.</td></tr>
+      <tr><td>H. pylori Eradication</td><td>Start standard triple therapy on discharge. Confirm eradication at <strong>4-6 weeks</strong> via stool/breath test.</td></tr>
+      <tr><td>Gastric Ulcer Follow-up</td><td><strong>OGD at 6-8 weeks is mandatory</strong> to confirm healing. Unhealed = malignant until proven otherwise.</td></tr>
+      <tr><td>Duodenal Fistula Mgt</td><td>If contained (drain output only, patient stable), manage conservatively (NBM, TPN, Octreotide).</td></tr>
+      <tr><td>Laparoscopic Indication</td><td>Boey score <strong>0-1</strong>, stable, symptom duration <strong>&lt;24 hours</strong>, perforation &lt;10mm.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div></main>
+
+<button id="top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+const progressBar = document.getElementById('progress-bar');
+const topBtn = document.getElementById('top-btn');
+const sidebarToggle = document.getElementById('sidebar-toggle');
+const sidebarOverlay = document.getElementById('sidebar-overlay');
+const navItems = document.querySelectorAll('.nav-item');
+const sections = document.querySelectorAll('.topic[id], .rapid-ref[id]');
+const body = document.body;
+
+function toggleSidebar() { body.classList.toggle('sidebar-open'); }
+function closeSidebar() { body.classList.remove('sidebar-open'); }
+
+window.addEventListener('scroll', () => {
+  const st = window.scrollY;
+  const dh = document.documentElement.scrollHeight - window.innerHeight;
+  progressBar.style.transform = `scaleX(${st / dh})`;
+  topBtn.classList.toggle('show', st > 400);
+  
+  let current = '';
+  sections.forEach(s => { if (st >= s.offsetTop - 120) current = s.id; });
+  navItems.forEach(n => { n.classList.toggle('active', n.getAttribute('href') === '#' + current); });
+});
+
+function filterNav(query) {
+  const q = query.toLowerCase();
+  navItems.forEach(item => { item.style.display = (!q || item.textContent.toLowerCase().includes(q)) ? 'block' : 'none'; });
+  document.querySelectorAll('.vol-label').forEach(l => { l.style.display = 'block'; });
+}
+
+navItems.forEach(item => {
+  item.addEventListener('click', e => {
+    e.preventDefault();
+    closeSidebar();
+    const target = document.querySelector(item.getAttribute('href'));
+    if (target) window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 80, behavior: 'smooth' });
+  });
+});
+
+document.querySelectorAll('.topic').forEach((el, i) => { el.style.animationDelay = `${i * 0.03}s`; });
+</script>
+</body>
+</html>

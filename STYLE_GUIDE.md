@@ -233,13 +233,10 @@ Every note is delivered as **two files**:
 
 ---
 
-## 8. TELEGRAM POST FORMAT (YesSurgeryBet Podcast)
-
-Under **1024 characters**. No exceptions.
+## 8. LINKEDIN POST FORMAT (Surgery Talk)
 
 ```
-🎙️ NEW EPISODE LIVE!
-Ep [X]: [Title]
+[Title]
 
 [1–2 sentences setting the stakes. Raw. No filler.]
 
@@ -248,17 +245,17 @@ Ep [X]: [Title]
 🔹 [Punchy bullet 2]
 🔹 [Punchy bullet 3]
 
-🎧 Mandatory for [Target Audience] managing patients at 3 AM.
+🎧 Mandatory for residents managing patients at 3 AM.
 
 📚 Based on clinical scenarios and high-yield board pearls.
 Reference Link: [Insert link]
 
-📤 Drop this in your WhatsApp group.
+📤 Drop this in your clinical rotation group.
 
 💥 Follow: @sugicalInsightHub
-📍 Join our Telegram: https://t.me/sugicalInsightHub
+📍 Join our LinkedIn: https://www.linkedin.com/company/surgical-insight-hub
 
-#YesSurgeryBet #SurgicalPodcast #ResidencyLife
+#SurgicalInsightHub #SurgicalResidency #ClinicalPearls
 ```
 
 ---
@@ -269,8 +266,7 @@ Reference Link: [Insert link]
 |-------|-------|
 | Logo file | `Surgical_Insight_Hub_Logo.png` (embed as base64 in HTML) |
 | Social handle | `@sugicalInsightHub` |
-| Telegram | `https://t.me/sugicalInsightHub` |
-| Podcast name | `YesSurgeryBet` |
+| LinkedIn | `https://www.linkedin.com/company/surgical-insight-hub` |
 
 ---
 
@@ -282,8 +278,7 @@ Track these to avoid duplication:
 |-------|-------|
 | Fournier's Gangrene | — |
 | High-Yield CT / Imaging Findings | — |
-| Anesthesia & Perioperative Care | Podcast Ep 8 |
-| PUD Perforation | — |
+| `index.html` | Home page — hero, features, MCQ bento, LinkedIn feed, leaderboard, testimonials, CTA |
 | Hepatopancreatobiliary | Biliary anatomy, cholelithiasis, BDI/Strasberg, cholangiocarcinoma/Bismuth-Corlette, Whipple, portal hypertension |
 | Choledocholithiasis risk stratification | ASGE 2019 |
 | Bowel Obstruction | Residency Journal v3 — 8 pages, full template |
@@ -308,4 +303,4 @@ Run this before delivering any note:
 - [ ] Current guideline year referenced where applicable?
 - [ ] Both HTML and PDF delivered?
 - [ ] PDF verified: page count matches, footer correct on all pages?
-- [ ] Telegram post under 1024 characters (if applicable)?
+- [x] LinkedIn integration

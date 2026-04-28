@@ -205,7 +205,7 @@
       <svg id="moonIcon" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/></svg>
       <svg id="sunIcon" style="display:none;" viewBox="0 0 24 24"><path d="M12 7a5 5 0 1 0 5 5 5.006 5.006 0 0 0-5-5zm0 8a3 3 0 1 1 3-3 3.003 3.003 0 0 1-3 3zm0-13a1 1 0 0 0-1 1v2a1 1 0 0 0 2 0V3a1 1 0 0 0-1-1zm0 18a1 1 0 0 0-1 1v2a1 1 0 0 0 2 0v-2a1 1 0 0 0-1-1zm8-11h-2a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2zm-16 0H2a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2zm13.657-5.657a1 1 0 0 0-1.414 0l-1.414 1.414a1 1 0 0 0 1.414 1.414l1.414-1.414a1 1 0 0 0 0-1.414zm-11.314 0a1 1 0 0 0 0 1.414l1.414 1.414a1 1 0 0 0 1.414-1.414L4.929 5.757a1 1 0 0 0-1.414 0zm11.314 11.314a1 1 0 0 0 0 1.414l1.414 1.414a1 1 0 0 0 1.414-1.414l-1.414-1.414a1 1 0 0 0-1.414 0zm-11.314 0a1 1 0 0 0-1.414 1.414l1.414 1.414a1 1 0 0 0 1.414-1.414l-1.414-1.414a1 1 0 0 0 0-1.414z"/></svg>
     </button>
-    <a href="arena.html" class="nav-btn arena-btn">Arena</a>
+    <a href="arena.html" class="nav-btn arena-btn">MCQ Arena</a>
     <button class="mob-nav-toggle" onclick="openMobNav()">
       <div class="hamburger">
         <span></span>
@@ -215,6 +215,17 @@
     </button>
   </div>
 </nav>
+
+<div class="mob-nav-overlay" id="mobNavOverlay" onclick="closeMobNav()"></div>
+<div class="mob-nav-sheet" id="mobNavSheet">
+  <div class="mob-nav-handle"></div>
+  <a href="index.html" onclick="closeMobNav()">Home</a>
+  <a href="notes.html" onclick="closeMobNav()">Notes</a>
+  <a href="notes/operative_approach.html" onclick="closeMobNav()">Playbook</a>
+  <a href="podcast.html" onclick="closeMobNav()">Podcast</a>
+  <a href="about.html" onclick="closeMobNav()">About</a>
+  <a href="arena.html" class="nav-btn" style="text-align:center; margin-top:10px;" onclick="closeMobNav()">MCQ Arena</a>
+</div>
 
 <section class="hero">
   <div class="hero-bg">
@@ -326,7 +337,7 @@
         <button class="hero-btn" type="submit" id="signupBtn">Get Free Notes</button>
       </div>
     </form>
-    <p class="hero-footnote" id="signupMsg">All notes free on <a href="https://t.me/sugicalInsightHub" target="_blank">Telegram</a> · Built by Dr. Abdulmalik Moh</p>
+    <p class="hero-footnote" id="signupMsg">Updates available on <a href="https://www.linkedin.com/company/surgical-insight-hub" target="_blank">LinkedIn</a> · Built by Dr. Abdulmalik Moh</p>
   </div>
 </section>
 
@@ -362,9 +373,9 @@
     </div>
     <div class="feat-visual">
       <div class="pod-mock">
-        <div class="pm-ep"><span class="pm-num">EP 08</span><div class="pm-info"><div class="pm-t">Anesthesia &amp; Perioperative Care</div><div class="pm-s">RSI · Airway · ICU handover</div></div><div class="pm-play" onclick="window.open('https://www.youtube.com/@YeSurgeryBett','_blank')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
-        <div class="pm-ep"><span class="pm-num">EP 07</span><div class="pm-info"><div class="pm-t">PUD Perforation</div><div class="pm-s">Boey score · Patch vs resection</div></div><div class="pm-play" onclick="window.open('https://www.youtube.com/@YeSurgeryBett','_blank')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
-        <div class="pm-ep"><span class="pm-num">EP 06</span><div class="pm-info"><div class="pm-t">Fournier's Gangrene</div><div class="pm-s">FGSI · Debridement · Reconstruction</div></div><div class="pm-play" onclick="window.open('https://www.youtube.com/@YeSurgeryBett','_blank')"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
+        <div class="pm-ep"><span class="pm-num">EP 08</span><div class="pm-info"><div class="pm-t">Anesthesia &amp; Perioperative Care</div><div class="pm-s">RSI · Airway · ICU handover</div></div><div class="pm-play" onclick="window.open('https://www.linkedin.com/company/surgical-insight-hub','_blank')"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z"/></svg></div></div>
+        <div class="pm-ep"><span class="pm-num">EP 07</span><div class="pm-info"><div class="pm-t">PUD Perforation</div><div class="pm-s">Boey score · Patch vs resection</div></div><div class="pm-play" onclick="window.open('https://www.linkedin.com/company/surgical-insight-hub','_blank')"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z"/></svg></div></div>
+        <div class="pm-ep"><span class="pm-num">EP 06</span><div class="pm-info"><div class="pm-t">Fournier's Gangrene</div><div class="pm-s">FGSI · Debridement · Reconstruction</div></div><div class="pm-play" onclick="window.open('https://www.linkedin.com/company/surgical-insight-hub','_blank')"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z"/></svg></div></div>
       </div>
     </div>
   </div>
@@ -386,7 +397,7 @@
     </div>
   </div>
   <div class="bento-card" style="background:#2b1810;border-color:#3d2418;">
-    <h3 style="color:#f0d080;">15 topics.<br>8 episodes.<br>100% free.</h3>
+    <h3 style="color:#f0d080;">20 topics.<br>8 episodes.<br>100% free.</h3>
 
     <p style="color:rgba(255,255,255,.4);margin-top:8px;">Every note referenced against current guidelines. Written by a surgical resident who lives this daily.</p>
     <div style="margin-top:24px;display:flex;flex-direction:column;gap:10px;">
@@ -399,7 +410,7 @@
 
 <div class="topics-wrap observe-target">
   <div class="feat-kicker">The Library</div>
-  <div style="font-size:1.6rem;font-weight:900;color:#1a1208;letter-spacing:-.04em;margin-bottom:6px;">15 topics. All free.</div>
+  <div style="font-size:1.6rem;font-weight:900;color:#1a1208;letter-spacing:-.04em;margin-bottom:6px;">20 topics. All free.</div>
 
   <p style="font-size:.85rem;color:#6b5a40;max-width:480px;line-height:1.6;">Every note referenced against current guidelines. Written by a surgical resident. Updated regularly.</p>
   <div class="topics-grid">
@@ -415,6 +426,10 @@
     <div class="topic-chip"><div class="tc-n">10</div><div class="tc-t">PUD Perforation</div><div class="tc-s">Boey score · H. pylori</div></div>
     <div class="topic-chip"><div class="tc-n">11</div><div class="tc-t">Fournier's Gangrene</div><div class="tc-s">FGSI · Debridement</div></div>
     <div class="topic-chip"><div class="tc-n">12</div><div class="tc-t">Basics Surgery Vol 1</div><div class="tc-s">Fluids · Nutrition</div></div>
+    <div class="topic-chip"><div class="tc-n">13</div><div class="tc-t">Lap Cholecystectomy</div><div class="tc-s">CVS · Biliary Anatomy</div></div>
+    <div class="topic-chip"><div class="tc-n">14</div><div class="tc-t">Whipple's Procedure</div><div class="tc-s">SMV · Reconstruction</div></div>
+    <div class="topic-chip"><div class="tc-n">15</div><div class="tc-t">PPU Repair</div><div class="tc-s">Graham Patch · Boey</div></div>
+    <div class="topic-chip"><div class="tc-n">16</div><div class="tc-t">Drain Placement</div><div class="tc-s">JP · Active vs Passive</div></div>
 
   </div>
 </div>
@@ -429,24 +444,8 @@
   </div>
 
   <div class="social-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
-    <!-- TELEGRAM COLUMN -->
-    <div class="social-col" style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 20px; overflow: hidden; display: flex; flex-direction: column;">
-      <div style="padding: 20px; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; background: rgba(0, 136, 204, 0.05);">
-        <div style="display: flex; align-items: center; gap: 10px;">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="#0088cc"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.18-.08-.05-.19-.02-.27 0-.11.03-1.84 1.18-5.18 3.44-.49.34-.93.5-1.33.49-.44-.01-1.28-.25-1.91-.45-.77-.25-1.38-.38-1.33-.8.03-.22.34-.45.94-.69 3.69-1.61 6.16-2.67 7.4-3.18 3.52-1.46 4.25-1.72 4.73-1.73.1 0 .34.02.48.13.12.09.15.22.16.32-.01.07-.01.19-.02.31z"/></svg>
-          <span style="font-weight: 700; color: var(--text-primary); font-size: 1.05rem;">Telegram Stream</span>
-        </div>
-        <a href="https://t.me/sugicalInsightHub" target="_blank" style="background: #0088cc; color: #fff; padding: 6px 14px; border-radius: 100px; font-size: .75rem; font-weight: 700; text-decoration: none;">Join</a>
-      </div>
-      <div class="tg-embed-wrap" id="tgFeed" style="flex: 1; min-height: 400px; background: var(--bg-card);">
-        <div id="tgPosts" style="padding:16px;">
-          <div style="text-align:center;padding:40px 20px;color:var(--text-muted);font-size:.82rem;">Loading latest posts...</div>
-        </div>
-      </div>
-    </div>
-
     <!-- LINKEDIN COLUMN -->
-    <div class="social-col" style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 20px; overflow: hidden; display: flex; flex-direction: column;">
+    <div class="social-col" style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 20px; overflow: hidden; display: flex; flex-direction: column; grid-column: 1 / -1; max-width: 800px; margin: 0 auto; width: 100%;">
       <div style="padding: 20px; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; background: rgba(0, 119, 181, 0.05);">
         <div style="display: flex; align-items: center; gap: 10px;">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="#0077b5"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
@@ -511,15 +510,13 @@
   <div class="cta-wm"><img src="assets/images/Surgical_Insight_Hub_Logo.png" alt=""></div>
   <div class="cta-inner">
     <h2>Start learning.<br>Right now.</h2>
-    <p>All notes, all episodes, always free. Join Telegram and get the next note the moment it drops.</p>
+    <p>All notes, all episodes, always free. Follow our professional updates on LinkedIn.</p>
     <div class="cta-channels">
-      <a href="https://t.me/sugicalInsightHub" target="_blank" class="cta-ch"><span class="ch-dot" style="background:#2ca5e0;"></span>Telegram</a>
-      <a href="https://www.youtube.com/@YeSurgeryBett" target="_blank" class="cta-ch"><span class="ch-dot" style="background:#ff0000;"></span>YouTube</a>
       <a href="https://www.linkedin.com/company/surgical-insight-hub" target="_blank" class="cta-ch"><span class="ch-dot" style="background:#0077b5;"></span>LinkedIn</a>
     </div>
     
-    <a href="https://t.me/sugicalInsightHub" target="_blank" class="cta-primary">Join Telegram — It is Free</a>
-    <p class="cta-footnote">Built by Dr. Abdulmalik Moh · @sugicalInsightHub</p>
+    <a href="https://www.linkedin.com/company/surgical-insight-hub" target="_blank" class="cta-primary">Follow on LinkedIn</a>
+    <p class="cta-footnote">Built by Dr. Abdulmalik Moh · LinkedIn/SurgicalInsightHub</p>
   </div>
 </section>
 
@@ -531,11 +528,8 @@
     <div class="ft-col">
       <h5>Connect</h5>
       <div class="social-lottie-row">
-        <a href="https://t.me/sugicalInsightHub" title="Telegram" target="_blank" class="social-lottie-link telegram" style="background:var(--brand-burgundy); border-radius: 50%; width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; transition: transform 0.3s ease;">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.11.02-1.93 1.23-5.46 3.62-.51.35-.98.53-1.4.51-.46-.01-1.35-.26-2.01-.48-.81-.27-1.45-.42-1.39-.88.03-.24.36-.49.99-.75 3.88-1.69 6.46-2.8 7.74-3.35 3.68-1.57 4.45-1.84 4.95-1.85.11 0 .35.03.5.16.13.13.17.31.18.44z"/></svg>
-        </a>
-        <a href="https://www.youtube.com/@YeSurgeryBett" title="YouTube" target="_blank" class="social-lottie-link youtube" style="background:var(--brand-burgundy); border-radius: 50%; width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; transition: transform 0.3s ease;">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 .6-.03 1.29-.1 2.09-.06.8-.15 1.43-.28 1.9-.17.63-.44 1.08-.8 1.37-.36.29-.86.46-1.51.5-1.07.07-2.31.1-3.73.1H12c-1.42 0-2.66-.03-3.73-.1-.65-.04-1.15-.21-1.51-.5-.36-.29-.63-.74-.8-1.37-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L5.56 12.17c0-.6.03-1.29.1-2.09.06-.8.15-1.43.28-1.9.17-.63.44-1.08.8-1.37.36-.29.86-.46 1.51-.5 1.07-.07 2.31-.1 3.73-.1H12c1.42 0 2.66.03 3.73.1.65.04 1.15.21 1.51.5.36.29.63.74.8 1.37z"/></svg>
+        <a href="https://t.me/surgicalInsightHub" title="Telegram" target="_blank" class="social-lottie-link telegram" style="background:var(--brand-burgundy); border-radius: 50%; width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; transition: transform 0.3s ease; margin-right: 12px;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.89 8.22l-1.97 9.28c-.15.66-.54.82-1.08.51l-3-2.21-1.45 1.39c-.16.16-.3.3-.61.3l.21-3.05 5.56-5.02c.24-.21-.05-.33-.37-.12l-6.87 4.33-2.96-.92c-.64-.2-.66-.64.14-.95l11.57-4.46c.54-.19 1.01.13.83.94z"/></svg>
         </a>
         <a href="https://www.linkedin.com/company/surgical-insight-hub" title="LinkedIn" target="_blank" class="social-lottie-link linkedin" style="background:var(--brand-burgundy); border-radius: 50%; width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; transition: transform 0.3s ease;">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
@@ -545,7 +539,7 @@
   </div>
   <div class="ft-bottom">
     <p>2025 Surgical Insight Hub · Dr. Abdulmalik Moh</p>
-    <span class="ft-handle">@sugicalInsightHub</span>
+    <span class="ft-handle">LinkedIn/SurgicalInsightHub</span>
     <p>All content free · Not a substitute for clinical judgment</p>
   </div>
 </footer>
@@ -574,7 +568,7 @@ function handleSignup(e){
     } else {
       btn.textContent='Get Free Notes';
       btn.disabled=false;
-      msg.innerHTML='Something went wrong. <a href="https://t.me/sugicalInsightHub" target="_blank">Join Telegram instead.</a>';
+      msg.innerHTML='Something went wrong. Please try again later.';
     }
   }).catch(function(){
     // fallback — submit normally
@@ -658,99 +652,7 @@ themeToggle.addEventListener('click', () => {
 </script>
 
 <script>
-// Fetch latest Telegram posts via RSSHub
-async function loadTelegramFeed() {
-  const container = document.getElementById('tgPosts');
-  const channel = 'sugicalInsightHub';
-  
-  // Use multiple fallback sources
-  const rssHubProxies = [
-    'https://rsshub.app',
-    'https://rsshub.rssforever.com',
-    'https://rsshub.woodland.cafe'
-  ];
-
-  for (const proxyBase of rssHubProxies) {
-    try {
-      const rssUrl = `${proxyBase}/telegram/channel/${channel}`;
-      const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(rssUrl)}`;
-      
-      const res = await fetch(proxyUrl, { signal: AbortSignal.timeout(6000) });
-      const data = await res.json();
-      
-      if (data && data.contents) {
-        const parser = new DOMParser();
-        const xml = parser.parseFromString(data.contents, 'text/xml');
-        const items = xml.querySelectorAll('item');
-        
-        if (items.length > 0) {
-          renderPosts(items, container, channel);
-          return;
-        }
-      }
-    } catch(e) {
-      console.log(`RSS fetch failed for ${proxyBase}, trying next...`);
-    }
-  }
-  
-  // Fallback: show direct Telegram link cards
-  showFallback(container, channel);
-}
-
-function renderPosts(items, container, channel) {
-  const posts = Array.from(items).slice(0, 6);
-  let html = '';
-  
-  posts.forEach(item => {
-    const title = item.querySelector('title')?.textContent || '';
-    const desc = item.querySelector('description')?.textContent || '';
-    const link = item.querySelector('link')?.textContent || `https://t.me/${channel}`;
-    const pubDate = item.querySelector('pubDate')?.textContent || '';
-    
-    // Clean HTML from description
-    const tmp = document.createElement('div');
-    tmp.innerHTML = desc;
-    const text = tmp.textContent || tmp.innerText || '';
-    const preview = text.slice(0, 220) + (text.length > 220 ? '...' : '');
-    
-    // Format date
-    let dateStr = '';
-    try {
-      dateStr = new Date(pubDate).toLocaleDateString('en-GB', {day:'numeric',month:'short',year:'numeric'});
-    } catch(e) {}
-    
-    if (!preview.trim()) return;
-    
-    html += `
-      <a href="${link}" target="_blank" class="tg-post-card">
-        <div class="tg-post-header">
-          <span class="tg-channel-name">@sugicalInsightHub</span>
-          ${dateStr ? `<span class="tg-post-date">${dateStr}</span>` : ''}
-        </div>
-        <div class="tg-post-text">${preview}</div>
-        <div class="tg-post-footer">Read on Telegram →</div>
-      </a>`;
-  });
-  
-  container.innerHTML = html || getFallbackHTML(channel);
-}
-
-function showFallback(container, channel) {
-  container.innerHTML = getFallbackHTML(channel);
-}
-
-function getFallbackHTML(channel) {
-  return `
-    <div style="text-align:center;padding:32px 20px;">
-      <div style="font-size:2rem;margin-bottom:12px;">✈</div>
-      <div style="font-weight:700;color:#1a1208;margin-bottom:6px;font-size:.92rem;">Latest posts on Telegram</div>
-      <div style="font-size:.78rem;color:#6b5a40;margin-bottom:20px;line-height:1.6;">Clinical pearls, new notes, and exam tips posted regularly.<br>Join the channel to see all posts.</div>
-      <a href="https://t.me/${channel}" target="_blank" 
-         style="display:inline-flex;align-items:center;gap:8px;background:#2b1810;color:#f0d080;border-radius:100px;padding:12px 24px;font-size:.82rem;font-weight:700;text-decoration:none;border:1px solid rgba(184,146,42,0.3);">
-        Open @${channel} on Telegram
-      </a>
-    </div>`;
-}
+// LinkedIn feed is handled by Elfsight widget in the social-grid section.
 
 // Testimonials Premium Slider Logic
 const SUPA_KEY = 'sb_publishable_Kl4RNEOxvmBewUToRv7HHw_2epulGkp';
@@ -863,25 +765,12 @@ document.addEventListener('DOMContentLoaded', () => {
   loadTestimonials();
   
   // Then load the external feed
-  loadTelegramFeed();
+  // loadLinkedInFeed();
   
   // Auto-update feed every 60 seconds
-  setInterval(loadTelegramFeed, 60000);
+  // setInterval(loadLinkedInFeed, 60000);
 });
 </script>
-
-
-<div class="mob-nav-overlay" id="mobNavOverlay" onclick="closeMobNav()"></div>
-<div class="mob-nav-sheet" id="mobNavSheet">
-  <div class="mob-nav-handle"></div>
-  <a href="index.html">Home</a>
-  <a href="podcast.html">Podcast</a>
-  <a href="notes.html">Notes</a>
-  <a href="surgery-talk.html">Surgery Talk</a>
-  <a href="arena.html" class="mcq-link">MCQ Arena</a>
-  <a href="review.html" class="review-link">AI Review</a>
-  <a href="about.html">About</a>
-</div>
 
 <script>
 function openMobNav(){
@@ -898,4 +787,3 @@ function closeMobNav(){
 
 <script src="js/nav-pill.js"></script>
 </body>
-</html>
