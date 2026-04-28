@@ -195,6 +195,7 @@ code{font-family:'IBM Plex Mono',monospace;background:var(--bg-secondary);color:
       <a href="notes.html">Notes</a>
       <a href="notes/operative_approach.html">Playbook</a>
       <a href="podcast.html">Podcast</a>
+      <a href="surgery-talk.html">Surgery Talk</a>
       <a href="about.html">About</a>
     </div>
   </div>
@@ -717,17 +718,6 @@ document.getElementById('topicInput').addEventListener('input', function() {
 });
 </script>
 
-<div class="mob-nav-overlay" id="mobNavOverlay" onclick="closeMobNav()"></div>
-<div class="mob-nav-sheet" id="mobNavSheet">
-  <div class="mob-nav-handle"></div>
-  <a href="index.html">Home</a>
-  <a href="podcast.html">Podcast</a>
-  <a href="notes.html">Notes</a>
-  <a href="surgery-talk.html">Surgery Talk</a>
-  <a href="arena.html" class="mcq-link">MCQ Arena</a>
-  <a href="review.html" class="review-link">AI Review</a>
-  <a href="about.html">About</a>
-</div>
 
 <script>
   // Scroll Listener for Premium Nav
@@ -784,12 +774,13 @@ document.getElementById('topicInput').addEventListener('input', function() {
 <div class="mob-nav-overlay" id="mobNavOverlay" onclick="closeMobNav()"></div>
 <div class="mob-nav-sheet" id="mobNavSheet">
   <div class="mob-nav-handle"></div>
-  <a href="index.html">Home</a>
-  <a href="notes.html">Notes</a>
-  <a href="surgery-talk.html">Surgery Talk</a>
-  <a href="arena.html">MCQ Arena</a>
-  <a href="podcast.html">Podcast</a>
-  <a href="about.html">About</a>
+  <a href="index.html" onclick="closeMobNav()">Home</a>
+  <a href="notes.html" onclick="closeMobNav()">Notes</a>
+  <a href="notes/operative_approach.html" onclick="closeMobNav()">Playbook</a>
+  <a href="podcast.html" onclick="closeMobNav()">Podcast</a>
+  <a href="surgery-talk.html" onclick="closeMobNav()">Surgery Talk</a>
+  <a href="arena.html" onclick="closeMobNav()">MCQ Arena</a>
+  <a href="about.html" onclick="closeMobNav()">About</a>
 </div>
 
 <script src="js/nav-pill.js"></script>
