@@ -1,6 +1,6 @@
 import re
 
-with open('mcq.html', 'r') as f:
+with open('arena.html', 'r') as f:
     content = f.read()
 
 # Make a copy of the styles block
@@ -31,6 +31,6 @@ if style_match:
     
     content = content.replace(style_match.group(0), f'<link rel="stylesheet" href="theme.css">\n<link rel="stylesheet" href="shared.css">\n{styles}')
 
-with open('mcq.html', 'w') as f:
+with open('arena.html', 'w') as f:
     f.write(content)
 
