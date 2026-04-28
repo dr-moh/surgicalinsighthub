@@ -229,7 +229,7 @@ a:hover {
 .nav-links-pill a {
   font-size: .78rem;
   font-weight: 600;
-  color: var(--text-secondary);
+  color: var(--text-primary);
   text-decoration: none;
   padding: 8px 16px;
   border-radius: 100px;

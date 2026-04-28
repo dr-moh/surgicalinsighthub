@@ -276,6 +276,9 @@
       <svg id="moonIcon" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/></svg>
       <svg id="sunIcon" style="display:none;" viewBox="0 0 24 24"><path d="M12 7a5 5 0 1 0 5 5 5.006 5.006 0 0 0-5-5zm0 8a3 3 0 1 1 3-3 3.003 3.003 0 0 1-3 3zm0-13a1 1 0 0 0-1 1v2a1 1 0 0 0 2 0V3a1 1 0 0 0-1-1zm0 18a1 1 0 0 0-1 1v2a1 1 0 0 0 2 0v-2a1 1 0 0 0-1-1zm8-11h-2a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2zm-16 0H2a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2zm13.657-5.657a1 1 0 0 0-1.414 0l-1.414 1.414a1 1 0 0 0 1.414 1.414l1.414-1.414a1 1 0 0 0 0-1.414zm-11.314 0a1 1 0 0 0 0 1.414l1.414 1.414a1 1 0 0 0 1.414-1.414L4.929 5.757a1 1 0 0 0-1.414 0zm11.314 11.314a1 1 0 0 0 0 1.414l1.414 1.414a1 1 0 0 0 1.414-1.414l-1.414-1.414a1 1 0 0 0-1.414 0zm-11.314 0a1 1 0 0 0-1.414 1.414l1.414 1.414a1 1 0 0 0 1.414-1.414l-1.414-1.414a1 1 0 0 0 0-1.414z"/></svg>
     </button>
+    <a href="https://t.me/surgicalInsightHub" target="_blank" class="nav-tg-btn" title="Join Telegram" style="background: #24A1DE; color: white; padding: 8px 12px; border-radius: 8px; display: flex; align-items: center; justify-content: center; text-decoration: none; margin-right: 8px;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.89 8.22l-1.97 9.28c-.15.66-.54.82-1.08.51l-3-2.21-1.45 1.39c-.16.16-.3.3-.61.3l.21-3.05 5.56-5.02c.24-.21-.05-.33-.37-.12l-6.87 4.33-2.96-.92c-.64-.2-.66-.64.14-.95l11.57-4.46c.54-.19 1.01.13.83.94z"/></svg>
+    </a>
     <a href="arena.html" class="nav-btn arena-btn">MCQ Arena</a>
     <button class="mob-nav-toggle" onclick="openMobNav()">
       <div class="hamburger">
@@ -390,12 +393,13 @@
 <div class="mob-nav-overlay" id="mobNavOverlay" onclick="closeMobNav()"></div>
 <div class="mob-nav-sheet" id="mobNavSheet">
   <div class="mob-nav-handle"></div>
-  <a href="index.html">Home</a>
-  <a href="notes.html">Notes</a>
-  <a href="surgery-talk.html">Surgery Talk</a>
-  <a href="arena.html">MCQ Arena</a>
-  <a href="podcast.html">Podcast</a>
-  <a href="about.html" class="active">About</a>
+  <a href="index.html" onclick="closeMobNav()">Home</a>
+  <a href="notes.html" onclick="closeMobNav()">Notes</a>
+  <a href="surgery-talk.html" onclick="closeMobNav()">Surgery Talk</a>
+  <a href="arena.html" onclick="closeMobNav()">MCQ Arena</a>
+  <a href="podcast.html" onclick="closeMobNav()">Podcast</a>
+  <a href="about.html" class="active" onclick="closeMobNav()">About</a>
+  <a href="https://t.me/surgicalInsightHub" target="_blank" onclick="closeMobNav()" style="color: #24A1DE; font-weight: 800;">Join Telegram</a>
 </div>
 
 <script>
