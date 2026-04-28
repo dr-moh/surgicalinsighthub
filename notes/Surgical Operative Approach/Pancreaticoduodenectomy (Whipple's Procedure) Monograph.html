@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Surgical Insight Hub — Whipple Procedure Monograph</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/theme.css">
+<link rel="stylesheet" href="../../css/shared.css">
+<script>
+  const savedTheme = localStorage.getItem('sih-theme') || 'light';
+  if (savedTheme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+</script>
+<style>
+:root {
+  /* Terracotta & Deep Slate Aesthetic - Overridden by theme.css but keeping specific colors for monograph */
+  --primary:   #6F3023; 
+  --primary-dk:#211412;
+  --primary-lt:#F6EBE9;
+  --accent:    #9C4634;
+  --accent2:   #D4806A;
+  --gold:      #C28E46;
+  --gold-lt:   #FDF8ED;
+  --s1:        #6F3023;
+  --s2:        #44383D;
+  --s3:        #3B4A43;
+  --s4:        #8C6746;
+  --s5:        #293642;
+  --s1-lt:     #F6EBE9;
+  --s2-lt:     #ECEAEB;
+  --s3-lt:     #EAECEB;
+  --s4-lt:     #F4EFEB;
+  --s5-lt:     #E8EBED;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.75;}
+
+/* SLIDE-OVER SIDEBAR */
+#sidebar {
+  position: fixed; top: 0; left: 0; width: var(--sidebar-w); height: 100vh;
+  background: var(--primary-dk); color: #EBE5E7;
+  display: flex; flex-direction: column;
+  z-index: 1000; overflow: hidden;
+  transform: translateX(-100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 4px 0 24px rgba(0,0,0,0.3);
+}
+body.sidebar-open #sidebar {
+  transform: translateX(0);
+}
+
+/* OVERLAY */
+#sidebar-overlay {
+  position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+  background: rgba(33, 20, 18, 0.5); backdrop-filter: blur(2px);
+  z-index: 950; opacity: 0; pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+body.sidebar-open #sidebar-overlay {
+  opacity: 1; pointer-events: auto;
+}
+
+/* TOGGLE BUTTON - TOP LEFT */
+#sidebar-toggle {
+  position: fixed; top: 24px; left: 28px; z-index: 900;
+  background: var(--primary); color: white;
+  border: none; border-radius: 30px;
+  padding: 10px 18px; font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600;
+  letter-spacing: 0.05em; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  display: flex; align-items: center; gap: 8px; transition: all 0.2s;
+}
+#sidebar-toggle:hover {
+  background: var(--accent); transform: translateY(-2px);
+}
+
+#sidebar-header{padding:20px 20px 14px;border-bottom:1px solid rgba(255,255,255,0.08);flex-shrink:0;}
+#sidebar-header .logo{font-family:'Playfair Display',serif;font-size:13px;font-weight:700;color:var(--accent2);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;}
+#sidebar-header .sub{font-size:10.5px;color:rgba(235,229,231,0.6);letter-spacing:0.04em;}
+#sidebar-search{padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.05);flex-shrink:0;}
+#sidebar-search input{width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:6px;color:#EBE5E7;padding:6px 10px;font-size:12px;font-family:'Source Serif 4',serif;outline:none;transition:border-color 0.2s;}
+#sidebar-search input::placeholder{color:rgba(235,229,231,0.4);}
+#sidebar-search input:focus{border-color:var(--accent2);}
+#sidebar-nav{flex:1;overflow-y:auto;padding:8px 0 20px;}
+#sidebar-nav::-webkit-scrollbar{width:4px;}
+#sidebar-nav::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.15);border-radius:2px;}
+.vol-label{font-size:9.5px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent2);padding:14px 18px 4px;}
+.nav-item{display:block;padding:8px 18px 8px 22px;font-size:12.5px;color:rgba(235,229,231,0.75);text-decoration:none;border-left:2px solid transparent;transition:all 0.15s;line-height:1.4;}
+.nav-item:hover{color:#fff;background:rgba(255,255,255,0.03);border-left-color:rgba(212,128,106,0.5);}
+.nav-item.active{color:#fff;background:rgba(255,255,255,0.06);border-left-color:var(--accent2);font-weight:600;}
+.nav-item .num{font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(235,229,231,0.4);margin-right:6px;}
+
+/* MAIN */
+#main{margin-left:0; min-height:100vh;}
+
+/* HERO */
+#hero{background:linear-gradient(135deg,var(--primary-dk) 0%,#4D1E14 60%,#211412 100%);color:white;padding:90px 72px 60px;position:relative;overflow:hidden;}
+#hero::before{content:'';position:absolute;top:-60px;right:-60px;width:380px;height:380px;background:radial-gradient(circle,rgba(212,128,106,0.15) 0%,transparent 70%);pointer-events:none;}
+#hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent2),var(--gold),transparent);}
+#hero .eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.16em;color:var(--accent2);text-transform:uppercase;margin-bottom:14px;}
+#hero h1{font-family:'Playfair Display',serif;font-size:46px;font-weight:700;line-height:1.15;margin-bottom:10px;color:#fff;}
+#hero .subtitle{font-size:18px;color:rgba(255,255,255,0.7);font-style:italic;margin-bottom:28px;}
+#hero .badges{display:flex;gap:10px;flex-wrap:wrap;}
+#hero .badge{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:20px;padding:4px 14px;font-size:12px;color:rgba(255,255,255,0.9);font-family:'JetBrains Mono',monospace;}
+
+/* CONTENT */
+.content-wrap{max-width:900px;margin:0 auto;padding:0 48px 80px;}
+
+/* SECTION HEADER */
+.sec-header{margin-top:60px;margin-bottom:8px;padding:28px 36px;border-radius:10px;display:flex;align-items:center;gap:20px;}
+.sec-header.s1{background:linear-gradient(135deg,#6F302308,#6F302315);border-left:4px solid var(--s1);}
+.sec-header.s2{background:linear-gradient(135deg,#44383D08,#44383D15);border-left:4px solid var(--s2);}
+.sec-header.s3{background:linear-gradient(135deg,#3B4A4308,#3B4A4315);border-left:4px solid var(--s3);}
+.sec-header.s4{background:linear-gradient(135deg,#8C674608,#8C674615);border-left:4px solid var(--s4);}
+.sec-header.s5{background:linear-gradient(135deg,#29364208,#29364215);border-left:4px solid var(--s5);}
+.sec-badge{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;letter-spacing:0.1em;padding:4px 12px;border-radius:4px;white-space:nowrap;flex-shrink:0;}
+.s1 .sec-badge{background:var(--s1);color:white;}
+.s2 .sec-badge{background:var(--s2);color:white;}
+.s3 .sec-badge{background:var(--s3);color:white;}
+.s4 .sec-badge{background:var(--s4);color:white;}
+.s5 .sec-badge{background:var(--s5);color:white;}
+.sec-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;}
+.s1 .sec-title{color:var(--s1);}
+.s2 .sec-title{color:var(--s2);}
+.s3 .sec-title{color:var(--s3);}
+.s4 .sec-title{color:var(--s4);}
+.s5 .sec-title{color:var(--s5);}
+
+/* TOPIC */
+.topic{margin-top:48px;padding-top:48px;border-top:1px solid var(--border);}
+.topic:first-of-type{border-top:none;}
+.topic-header{display:flex;align-items:flex-start;gap:16px;margin-bottom:24px;}
+.topic-num{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;padding:3px 10px;border-radius:4px;margin-top:4px;flex-shrink:0;}
+.s1 .topic-num{background:var(--s1-lt);color:var(--s1);}
+.s2 .topic-num{background:var(--s2-lt);color:var(--s2);}
+.s3 .topic-num{background:var(--s3-lt);color:var(--s3);}
+.s4 .topic-num{background:var(--s4-lt);color:var(--s4);}
+.s5 .topic-num{background:var(--s5-lt);color:var(--s5);}
+.topic h2{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;line-height:1.2;}
+.s1 .topic h2{color:var(--s1);}
+.s2 .topic h2{color:var(--s2);}
+.s3 .topic h2{color:var(--s3);}
+.s4 .topic h2{color:var(--s4);}
+.s5 .topic h2{color:var(--s5);}
+.topic h3{font-family:'Playfair Display',serif;font-size:17px;font-weight:600;color:var(--muted);margin:26px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--border);}
+.topic h4{font-size:13px;font-weight:600;color:var(--muted);letter-spacing:0.06em;text-transform:uppercase;margin:18px 0 8px;font-family:'JetBrains Mono',monospace;}
+.topic p{margin-bottom:12px;color:var(--text);}
+.topic ul,.topic ol{margin:8px 0 14px 20px;color:var(--text);}
+.topic li{margin-bottom:6px;line-height:1.65;}
+.topic li::marker{color:var(--accent2);}
+.topic strong{color:var(--text);font-weight:600;}
+
+/* TABLES */
+.table-wrap{overflow-x:auto;margin:16px 0 20px;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.04);}
+table{width:100%;border-collapse:collapse;font-size:13.5px;background:white;}
+thead tr{background:var(--s1);}
+thead th{color:white;padding:10px 14px;text-align:left;font-family:'Source Serif 4',serif;font-weight:600;font-size:13px;}
+tbody tr:nth-child(even){background:var(--bg2);}
+tbody tr:hover{background:var(--s1-lt);transition:background 0.15s;}
+tbody td{padding:9px 14px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.5;}
+.s2-tbl thead tr{background:var(--s2);}
+.s3-tbl thead tr{background:var(--s3);}
+.s4-tbl thead tr{background:var(--s4);}
+.s5-tbl thead tr{background:var(--s5);}
+
+/* CALLOUTS */
+.callout{margin:18px 0;padding:14px 18px;border-radius:0 8px 8px 0;border-left:4px solid;font-size:14px;line-height:1.65;}
+.callout .label{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;display:block;margin-bottom:4px;}
+.callout.pearl{background:var(--amber-lt);border-color:var(--amber);}
+.callout.pearl .label{color:var(--amber);}
+.callout.warn{background:var(--red-lt);border-color:var(--red);}
+.callout.warn .label{color:var(--red);}
+.callout.clin{background:var(--s1-lt);border-color:var(--s1);}
+.callout.clin .label{color:var(--s1);}
+.callout.exam{background:var(--blue-lt);border-color:var(--blue);}
+.callout.exam .label{color:var(--blue);}
+
+/* DIAGRAM PLACEHOLDERS */
+.diagram-wrap{background:white;border:1px solid var(--border);border-radius:8px;padding:18px;margin:20px 0;box-shadow:0 1px 4px rgba(0,0,0,0.03);text-align:center;}
+.diagram-title{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--s1);margin-bottom:12px;text-align:left;}
+
+/* RAPID REFERENCE */
+.rapid-ref{background:var(--primary-dk);color:var(--primary-lt);border-radius:10px;padding:28px 32px;margin:30px 0;}
+.rapid-ref h3{font-family:'Playfair Display',serif;font-size:20px;color:var(--accent2);margin-bottom:16px;}
+.rapid-ref table{font-size:12.5px; background: transparent;} 
+.rapid-ref thead tr{background:rgba(212,128,106,0.15);}
+.rapid-ref thead th{color:var(--accent2);padding:8px 12px;font-size:11px;}
+.rapid-ref tbody tr:nth-child(even){background:rgba(255,255,255,0.03);}
+.rapid-ref tbody tr:hover{background:rgba(255,255,255,0.06);}
+.rapid-ref tbody td{color:var(--primary-lt);padding:7px 12px;border-bottom:1px solid rgba(255,255,255,0.05);}
+.rapid-ref tbody td strong{color:var(--gold);}
+
+/* PROGRESS */
+#progress-bar{position:fixed;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent2),var(--gold));transform-origin:left;transform:scaleX(0);transition:transform 0.1s;z-index:50;}
+
+/* TOP BTN */
+#top-btn{position:fixed;bottom:28px;right:28px;background:var(--primary);color:white;border:none;border-radius:50%;width:44px;height:44px;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,0.2);transition:all 0.2s;opacity:0;pointer-events:none;}
+#top-btn.show{opacity:1;pointer-events:auto;}
+#top-btn:hover{background:var(--accent2);transform:translateY(-2px);}
+
+/* ANIMATION */
+.topic{animation:fadeUp 0.4s ease both;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
+
+@media(max-width:900px){
+  .content-wrap{padding:0 20px 60px;}
+  #hero{padding:72px 20px 40px;}
+  #hero h1{font-size:30px;}
+}
+@media print{
+  #sidebar-toggle, #sidebar-overlay, #sidebar, #top-btn, #progress-bar{display:none!important;}
+  .topic{page-break-inside:avoid;}
+  .sec-header{page-break-before:always;}
+}
+</style>
+</head>
+<body>
+<nav class="nav" id="mainNav">
+  <div class="nav-left">
+    <a href="../../index.html" class="nav-pill">
+      <div class="nav-logo-img">
+        <img src="../../assets/images/Surgical_Insight_Hub_Logo.png" alt="SIH">
+      </div>
+      <div>
+        <div class="nav-brand-text">Surgical Insight Hub</div>
+        <div class="nav-brand-sub">Medical Library</div>
+      </div>
+    </a>
+    <div class="nav-links-pill">
+      <a href="../../index.html">Home</a>
+      <a href="../../notes.html">Notes</a>
+      <a href="../operative_approach.html" class="active">Playbook</a>
+      <a href="../../podcast.html">Podcast</a>
+      <a href="../../about.html">About</a>
+    </div>
+  </div>
+
+  <div class="nav-right">
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+      <svg id="moonIcon" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/></svg>
+      <svg id="sunIcon" style="display:none;" viewBox="0 0 24 24"><path d="M12 7a5 5 0 1 0 5 5 5.006 5.006 0 0 0-5-5zm0 8a3 3 0 1 1 3-3 3.003 3.003 0 0 1-3 3zm0-13a1 1 0 0 0-1 1v2a1 1 0 0 0 2 0V3a1 1 0 0 0-1-1zm0 18a1 1 0 0 0-1 1v2a1 1 0 0 0 2 0v-2a1 1 0 0 0-1-1zm8-11h-2a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2zm-16 0H2a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2zm13.657-5.657a1 1 0 0 0-1.414 0l-1.414 1.414a1 1 0 0 0 1.414 1.414l1.414-1.414a1 1 0 0 0 0-1.414zm-11.314 0a1 1 0 0 0 0 1.414l1.414 1.414a1 1 0 0 0 1.414-1.414L4.929 5.757a1 1 0 0 0-1.414 0zm11.314 11.314a1 1 0 0 0 0 1.414l1.414 1.414a1 1 0 0 0 1.414-1.414l-1.414-1.414a1 1 0 0 0-1.414 0zm-11.314 0a1 1 0 0 0-1.414 1.414l1.414 1.414a1 1 0 0 0 1.414-1.414l-1.414-1.414a1 1 0 0 0 0-1.414z"/></svg>
+    </button>
+    <a href="../../arena.html" class="nav-btn arena-btn">Arena</a>
+    <button class="mob-nav-toggle" onclick="openMobNav()">
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </button>
+  </div>
+</nav>
+
+<button id="sidebar-toggle" onclick="toggleSidebar()">
+  <span>☰</span> Contents
+</button>
+
+<nav id="sidebar">
+  <div id="sidebar-header">
+    <div class="logo">Surgical Insight Hub</div>
+    <div class="sub">Whipple Procedure · Monograph Series</div>
+  </div>
+  <div id="sidebar-search">
+    <input type="text" id="search-input" placeholder="Search topics…" oninput="filterNav(this.value)">
+  </div>
+  <div id="sidebar-nav">
+    <div class="vol-label">Pillar 1 — Pre-Op Optimization</div>
+    <a class="nav-item" href="#p1a"><span class="num">1.1</span>Clinical Workup</a>
+    <a class="nav-item" href="#p1b"><span class="num">1.2</span>Risk Stratification (FRS)</a>
+    <a class="nav-item" href="#p1c"><span class="num">1.3</span>Immediate Pre-Op</a>
+    <div class="vol-label">Pillar 2 — The Operative Game Plan</div>
+    <a class="nav-item" href="#p2a"><span class="num">2.1</span>Setup &amp; Access</a>
+    <a class="nav-item" href="#p2b"><span class="num">2.2</span>Phase 1 &amp; 2: Resection</a>
+    <a class="nav-item" href="#p2c"><span class="num">2.3</span>Phase 3: Reconstruction</a>
+    <a class="nav-item" href="#p2d"><span class="num">2.4</span>The Critical View</a>
+    <div class="vol-label">Pillar 3 — Pearls &amp; Bail-Outs</div>
+    <a class="nav-item" href="#p3a"><span class="num">3.1</span>Consultant Pearls</a>
+    <a class="nav-item" href="#p3b"><span class="num">3.2</span>The Bail-Out Point</a>
+    <div class="vol-label">Pillar 4 — Post-Op Care</div>
+    <a class="nav-item" href="#p4a"><span class="num">4.1</span>ERAS &amp; ICU Management</a>
+    <a class="nav-item" href="#p4b"><span class="num">4.2</span>Clinic Follow-up</a>
+    <div class="vol-label">Pillar 5 — Complications</div>
+    <a class="nav-item" href="#p5a"><span class="num">5.1</span>Post-op Pancreatic Fistula</a>
+    <a class="nav-item" href="#p5b"><span class="num">5.2</span>Delayed Gastric Emptying</a>
+    <a class="nav-item" href="#p5c"><span class="num">5.3</span>Post-pancreatectomy Haemorrhage</a>
+    <div class="vol-label">Quick Reference</div>
+    <a class="nav-item" href="#rapid">High-Yield Board Facts</a>
+  </div>
+</nav>
+
+<main id="main">
+<section id="hero">
+  <div class="eyebrow">Surgical Insight Hub · Monograph Series · ABSITE · PGY-3 Framework</div>
+  <h1>Pancreaticoduodenectomy (Whipple's Procedure)</h1>
+  <p class="subtitle">Classic, Pylorus-Preserving, and Total Pancreatectomy Variants</p>
+  <div class="badges">
+    <span class="badge">HPB Surgery</span>
+    <span class="badge">Oncological Resection</span>
+    <span class="badge">High Complexity</span>
+  </div>
+</section>
+
+<div class="content-wrap">
+
+<div class="callout warn" style="margin-top: 40px;">
+  <span class="label">Upfront Philosophy</span>
+  The Whipple is the most technically demanding elective abdominal operation in general surgery. It has a 30-day mortality of 1-3% at high-volume centres and 10-15% at low-volume centres. That gap is explained by institutional expertise, volume-outcome relationships, and the management of complications. As a PGY-3, you will assist, scrub, and manage post-operative complications. A resident who understands the anatomy, operative steps, and complication spectrum is categorically more valuable in that role. 
+  <br><br>
+  The decision to operate is as important as the operation itself. Operating on an unresectable tumour produces R1 or R2 margins, morbidity without oncological benefit, and prevents the patient from receiving chemotherapy. Know when to refer.
+</div>
+
+<div class="sec-header s1">
+  <span class="sec-badge">PILLAR 1</span>
+  <span class="sec-title">Pre-operative Optimization &amp; Preparation</span>
+</div>
+
+<section class="topic s1" id="p1a">
+  <div class="topic-header"><span class="topic-num">1.1</span><h2>Clinical Workup</h2></div>
+  
+  <h3>History: Changing the Assessment</h3>
+  <ul>
+    <li><strong>Symptoms:</strong> Painless progressive jaundice is the classic presentation. Back pain is a critical symptom; it indicates coeliac plexus invasion or retroperitoneal extension, strongly associated with unresectability.</li>
+    <li><strong>Weight loss &amp; Steatorrhoea:</strong> Markers of tumour burden and exocrine insufficiency. Nutritionally depleting and highly modifiable pre-operatively.</li>
+    <li><strong>New-onset diabetes:</strong> Up to 80% of pancreatic cancers cause diabetes. This is not a coincidence.</li>
+    <li><strong>Prior biliary stenting:</strong> Changes bacterial flora, increases infectious complications, and causes duodenal inflammation.</li>
+    <li><strong>Performance status:</strong> ECOG 0-1 is fit for surgery. ECOG 3-4 is unlikely to benefit.</li>
+  </ul>
+
+  <h3>Mandatory Pre-operative Investigations</h3>
+  <ul>
+    <li><strong>CA 19-9:</strong> Elevated in 70-80% of PDAC. Use as a baseline and surveillance marker. Do not use it to determine resectability (an anatomical determination). Falsely elevated in biliary obstruction/cholangitis. Falsely normal in Lewis antigen-negative patients.</li>
+    <li><strong>CT pancreas protocol (triple-phase CT):</strong> The single most important imaging study. Defines tumour size, location, and the critical relationship to the SMA, SMV, and portal vein.</li>
+    <li><strong>MRCP / MRI:</strong> Superior for biliary anatomy and defining the level of duct obstruction.</li>
+    <li><strong>EUS with FNA:</strong> Superior for T-staging small tumours (&lt;2cm). Secures tissue diagnosis before neoadjuvant therapy.</li>
+    <li><strong>Staging Laparoscopy:</strong> Identifies peritoneal metastases missed by CT in 10-15% of cases. Avoids unnecessary laparotomy. Recommended for body/tail tumours or CA 19-9 &gt;500.</li>
+  </ul>
+
+  <div class="diagram-wrap">
+    <div class="diagram-title">Resectability Assessment Criteria</div>
+    
+  </div>
+</section>
+
+<section class="topic s1" id="p1b">
+  <div class="topic-header"><span class="topic-num">1.2</span><h2>Risk Stratification &amp; Fistula Risk Score (FRS)</h2></div>
+  <p>The Fistula Risk Score (FRS) dictates post-operative pancreatic fistula (POPF) risk. Calculate this during every case to guide drainage strategy.</p>
+
+  <div class="table-wrap s1-tbl"><table>
+    <thead><tr><th>Variable</th><th>Risk Factor</th><th>Score</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Gland Texture</strong></td><td>Soft</td><td>4</td></tr>
+      <tr><td></td><td>Firm</td><td>0</td></tr>
+      <tr><td><strong>Pathology</strong></td><td>IPMN / Other</td><td>4</td></tr>
+      <tr><td></td><td>Islet Cell / Other</td><td>3</td></tr>
+      <tr><td></td><td>Pancreatic Adenocarcinoma</td><td>1</td></tr>
+      <tr><td></td><td>Chronic Pancreatitis</td><td>0</td></tr>
+      <tr><td><strong>Duct Diameter</strong></td><td>≤3mm</td><td>4</td></tr>
+      <tr><td></td><td>4mm</td><td>3</td></tr>
+      <tr><td></td><td>5mm</td><td>2</td></tr>
+      <tr><td></td><td>6mm</td><td>1</td></tr>
+      <tr><td></td><td>≥7mm</td><td>0</td></tr>
+      <tr><td><strong>Intra-op Blood Loss</strong></td><td>≤400ml</td><td>0</td></tr>
+      <tr><td></td><td>401-700ml</td><td>1</td></tr>
+      <tr><td></td><td>701-1000ml</td><td>2</td></tr>
+      <tr><td></td><td>&gt;1000ml</td><td>3</td></tr>
+    </tbody>
+  </table></div>
+
+  <ul>
+    <li><strong>Score 0:</strong> Negligible risk (&lt;1%)</li>
+    <li><strong>Score 1-2:</strong> Low risk (6%)</li>
+    <li><strong>Score 3-6:</strong> Moderate risk (12%)</li>
+    <li><strong>Score 7-10:</strong> High risk (28%)</li>
+  </ul>
+</section>
+
+<section class="topic s1" id="p1c">
+  <div class="topic-header"><span class="topic-num">1.3</span><h2>Immediate Pre-operative Preparation</h2></div>
+  
+  <ul>
+    <li><strong>Antibiotic Prophylaxis:</strong> Piperacillin-tazobactam 4.5g IV within 60 minutes of incision. Target biliary flora. Adjust if a prior stent has colonised the bile.</li>
+    <li><strong>DVT Prophylaxis:</strong> Pancreatic cancer is one of the highest DVT risk malignancies. Mechanical compression and LMWH are mandatory, extending for 28 days post-op.</li>
+    <li><strong>Nutritional Optimisation:</strong> For albumin &lt;30g/L, provide 7-14 days of supplementation. Start Pancreatic Enzyme Replacement Therapy (PERT) pre-operatively for established exocrine insufficiency.</li>
+    <li><strong>Consent Non-Negotiables:</strong> POPF (10-20%), Delayed Gastric Emptying (DGE) (20-30%), Post-pancreatectomy haemorrhage (PPH) (5%), R1 resection risk (20-30%), 30-day mortality, and long-term oncological outcomes.</li>
+  </ul>
+</section>
+
+<div class="sec-header s2">
+  <span class="sec-badge">PILLAR 2</span>
+  <span class="sec-title">The Operative Game Plan</span>
+</div>
+
+<section class="topic s2" id="p2a">
+  <div class="topic-header"><span class="topic-num">2.1</span><h2>Setup &amp; Access</h2></div>
+  <ul>
+    <li><strong>Anesthesia:</strong> GA with endotracheal intubation. Epidural analgesia (T6-T8) run for 72 hours. Arterial line for continuous BP and ABG sampling. Cell salvage set up due to significant blood loss potential.</li>
+    <li><strong>Positioning:</strong> Supine, table flat. Slight reverse Trendelenburg (10-15°) during hepatic dissection to reduce venous engorgement.</li>
+    <li><strong>Incision:</strong> Bilateral subcostal (chevron) or upper midline extended to right subcostal.</li>
+  </ul>
+</section>
+
+<section class="topic s2" id="p2b">
+  <div class="topic-header"><span class="topic-num">2.2</span><h2>Phase 1 &amp; 2: Exploration and Resection</h2></div>
+  
+  <p>The order of division matters. Work systematically.</p>
+
+  <div class="diagram-wrap">
+    <div class="diagram-title">Resection Margins: Whipple Procedure</div>
+    
+  </div>
+
+  <ul>
+    <li><strong>Step 1: Exploration &amp; Kocher Maneuver:</strong> Palpate liver and peritoneum. Mobilise the duodenum and pancreatic head off the retroperitoneum. Palpate the SMA.</li>
+    <li><strong>Step 2: SMV/Portal Vein Tunnel:</strong> Develop the avascular plane between the pancreatic neck and the SMV/PV. When the finger from below and above meet, resection is feasible without vascular reconstruction.</li>
+    <li><strong>Step 3: Cholecystectomy &amp; Bile Duct Division:</strong> Remove gallbladder. Divide common hepatic duct above cystic duct entry. <em>Key Danger: Right hepatic artery frequently crosses posterior to the duct. Identify Aberrant Right Hepatic Artery (ARHA) from the SMA.</em></li>
+    <li><strong>Step 4: GDA Ligation:</strong> Perform a test occlusion of the GDA. If hepatic pulse disappears, look for replaced anatomy. Ligate and divide.</li>
+    <li><strong>Step 5: Stomach/Duodenum Division:</strong> Classic Whipple divides the stomach 40-50% along the curve. Pylorus-Preserving (PPPD) divides the duodenum 2-3cm distal to the pylorus.</li>
+    <li><strong>Step 6: Jejunum Division:</strong> Divide 10-15cm distal to the ligament of Treitz. Pass the limb under the mesenteric root to the right upper quadrant.</li>
+    <li><strong>Step 7: Pancreatic Neck Division:</strong> Divide over the SMV/PV with a scalpel (avoid cautery). Identify and stent the pancreatic duct. Send margin for frozen section.</li>
+    <li><strong>Step 8: Uncinate Process Dissection (Most Dangerous):</strong> Retract SMV to expose the SMA. Dissect uncinate off the SMA from medial to lateral directly on the adventitia. Ligate branches individually. Do not mass-ligate.</li>
+  </ul>
+</section>
+
+<section class="topic s2" id="p2c">
+  <div class="topic-header"><span class="topic-num">2.3</span><h2>Phase 3: Reconstruction</h2></div>
+
+  <p>The jejunal limb receives three anastomoses in sequence: Pancreaticojejunostomy (PJ), Hepaticojejunostomy (HJ), and Gastrojejunostomy (GJ).</p>
+
+  <div class="diagram-wrap">
+    <div class="diagram-title">Reconstruction Sequence and Techniques</div>
+    
+  </div>
+
+  <h3>Anastomosis 1: Pancreaticojejunostomy (PJ)</h3>
+  <p>POPF originates here. Every technical decision matters.</p>
+  <ul>
+    <li><strong>Duct-to-mucosa PJ (Preferred):</strong> Two-layer anastomosis. Outer layer approximates parenchyma to seromuscular jejunum (3-0 PDS). Inner layer anastomoses duct directly to a small jejunotomy (4-0 or 5-0 PDS). Place a silastic stent into the duct to bridge the anastomosis.</li>
+    <li><strong>Invagination (Dunking) PJ:</strong> Pancreatic stump is telescoped into the open jejunum, secured with a purse-string. Used for very soft glands where duct-to-mucosa is impossible.</li>
+  </ul>
+  
+  <div class="diagram-wrap">
+    <div class="diagram-title">Pancreaticojejunostomy: Duct-to-Mucosa vs. Invagination</div>
+    
+  </div>
+
+  <h3>Anastomosis 2: Hepaticojejunostomy (HJ)</h3>
+  <p>End-to-side to the jejunum, 10-15cm distal to the PJ. Single-layer interrupted 3-0/4-0 PDS. Protect the right hepatic artery posterior to the duct.</p>
+
+  <h3>Anastomosis 3: Gastrojejunostomy (GJ) or Duodenojejunostomy</h3>
+  <p>40-50cm distal to the HJ. Antecolic GJ is preferred to reduce DGE rates. Ensure it is tension-free and isoperistaltic.</p>
+
+  <h3>Drain Placement</h3>
+  <p>Place a minimum of one drain adjacent to the PJ anastomosis. This is your POPF alarm system. Check amylase on POD1 and POD3.</p>
+</section>
+
+<section class="topic s2" id="p2d">
+  <div class="topic-header"><span class="topic-num">2.4</span><h2>The Critical View in Whipple's Procedure</h2></div>
+  <p>Non-negotiable confirmations before anastomosis and closure:</p>
+  <ul>
+    <li><strong>Resectability confirmed:</strong> SMA free, SMV/PV tunnel established before any structure is divided.</li>
+    <li><strong>Aberrant anatomy preserved:</strong> ARHA identified and protected before GDA ligation.</li>
+    <li><strong>Clear margins:</strong> Pancreatic neck, bile duct, and soft tissue/SMA margin sent for frozen section and confirmed clear.</li>
+    <li><strong>Duct stented:</strong> Pancreatic duct identified and stented at the PJ before completing the inner layer.</li>
+    <li><strong>Tension-free sequence:</strong> The jejunal limb must reach each anastomosis without pulling or twisting.</li>
+  </ul>
+</section>
+
+<div class="sec-header s3">
+  <span class="sec-badge">PILLAR 3</span>
+  <span class="sec-title">Technical Pearls &amp; Bail-Out Strategies</span>
+</div>
+
+<section class="topic s3" id="p3a">
+  <div class="topic-header"><span class="topic-num">3.1</span><h2>Consultant Pearls</h2></div>
+  
+  <div class="callout pearl">
+    <span class="label">Consultant Pearl #1: The SMA Is Your Most Important Landmark</span>
+    The "artery-first" approach provides accurate resectability assessment and reduces positive margins. As a PGY-3, your primary job is knowing where the SMA is at every moment. If a structure is about to be ligated and you are not certain it isn't the SMA, speak up.
+  </div>
+
+  <div class="callout pearl">
+    <span class="label">Consultant Pearl #2: Pancreaticojejunostomy Needs Perfect Technique</span>
+    The PJ punishes imprecision. Place all posterior outer sutures before tying any. Do not place sutures more than 5mm from the parenchymal edge or they will tear. The stent must be in the duct. If the jejunal limb is pale or under tension, revise it before closing.
+  </div>
+
+  <div class="callout pearl">
+    <span class="label">Consultant Pearl #3: DGE Is Prevented Intraoperatively</span>
+    Delayed Gastric Emptying is prevented on the table. Use an antecolic, isoperistaltic gastrojejunostomy. Ensure the stomach reaches without tension. Avoid kinking the jejunal limb as it turns toward the hepatoduodenal ligament.
+  </div>
+</section>
+
+<section class="topic s3" id="p3b">
+  <div class="topic-header"><span class="topic-num">3.2</span><h2>The Bail-Out Point</h2></div>
+  <p>Stop and escalate when:</p>
+  <ul>
+    <li><strong>Tumour is unresectable at exploration:</strong> Stop the resection. Consider palliative bypass (HJ + GJ). Discuss with senior.</li>
+    <li><strong>SMV/portal vein injured during uncinate dissection:</strong> Manual pressure immediately. Call vascular surgery. Do not attempt blind suture repair without proximal and distal control.</li>
+    <li><strong>SMA is injured:</strong> Manual pressure. This is a catastrophic event affecting gut viability. Call vascular surgery immediately.</li>
+    <li><strong>Frozen section returns positive margin:</strong> If at the SMA margin, further resection is often impossible. Discuss oncological implications post-operatively.</li>
+    <li><strong>PJ is technically unsatisfactory:</strong> Call senior. Options include invagination technique, pancreaticogastrostomy, or total pancreatectomy. Do not close over an anastomosis you doubt.</li>
+    <li><strong>Patient unstable / operating &gt;4 hours:</strong> Apply damage control principles. Pack, haemostasis, close, ICU. Reconstruct later.</li>
+  </ul>
+</section>
+
+<div class="sec-header s4">
+  <span class="sec-badge">PILLAR 4</span>
+  <span class="sec-title">Post-operative Care &amp; Longitudinal Follow-up</span>
+</div>
+
+<section class="topic s4" id="p4a">
+  <div class="topic-header"><span class="topic-num">4.1</span><h2>ERAS &amp; ICU Management</h2></div>
+  
+  <ul>
+    <li><strong>Drain Amylase Protocol:</strong> POD1 amylase &gt;5000 U/L indicates high POPF risk (retain drain). POD3 amylase &gt;3x upper limit of normal defines a biochemical leak (Grade A POPF). If amylase is normalising, remove drain on POD3-5.</li>
+    <li><strong>Fluids:</strong> Restrict to 1-1.5L/day. Excess crystalloid causes gut oedema and ascites.</li>
+    <li><strong>Diet &amp; PERT:</strong> Sips same day. Early oral feeding is safe. Start PERT (25,000-50,000 units per meal) with the first meal.</li>
+    <li><strong>Pain &amp; Respiratory:</strong> Epidural for 72 hours. Opioids as rescue only (they worsen DGE). Incentive spirometry and chest physiotherapy are critical to prevent pneumonia (most common 30-day mortality cause).</li>
+    <li><strong>Glucose:</strong> Monitor every 4-6 hours. Endocrine input for new-onset diabetes.</li>
+  </ul>
+</section>
+
+<section class="topic s4" id="p4b">
+  <div class="topic-header"><span class="topic-num">4.2</span><h2>Clinic Follow-up</h2></div>
+  <ul>
+    <li><strong>2-week visit:</strong> Nutritional assessment (titrate PERT). Review final pathology (TNM staging, margins, lymph node count).</li>
+    <li><strong>4-6 week visit:</strong> Adjuvant chemotherapy planning (mFOLFIRINOX for fit patients). Start within 6-8 weeks. Draw baseline post-operative CA 19-9 (only after jaundice resolves).</li>
+    <li><strong>Long-term surveillance:</strong> CA 19-9 and CT every 3 months for 2 years. Monitor fat-soluble vitamins and bone health (DEXA scan at 2 years). Manage Type 3c diabetes.</li>
+  </ul>
+</section>
+
+<div class="sec-header s5">
+  <span class="sec-badge">PILLAR 5</span>
+  <span class="sec-title">Complication Management</span>
+</div>
+
+<section class="topic s5" id="p5a">
+  <div class="topic-header"><span class="topic-num">5.1</span><h2>Complication 1: Post-operative Pancreatic Fistula (POPF)</h2></div>
+  <ul>
+    <li><strong>Recognition:</strong> Drain amylase &gt;3x ULN on POD3. Grade B/C presents with fever, tachycardia, pain, turbid drain output, or sentinel bleed.</li>
+    <li><strong>Workup:</strong> Drain fluid amylase and culture. CT abdomen with IV contrast to identify collections or pseudoaneurysms.</li>
+    <li><strong>Correction (Grade B):</strong> Keep drain in situ. IV antibiotics, Octreotide (reduces secretion), TPN if needed. IR drainage of undrained collections.</li>
+    <li><strong>Correction (Grade C / Haemorrhage):</strong> Sentinel bleed requires immediate CT angiography and IR embolization. If unstable, emergency laparotomy and damage control. Completion pancreatectomy is the final option for severe uncontrolled leaks.</li>
+  </ul>
+</section>
+
+<section class="topic s5" id="p5b">
+  <div class="topic-header"><span class="topic-num">5.2</span><h2>Complication 2: Delayed Gastric Emptying (DGE)</h2></div>
+  <ul>
+    <li><strong>Recognition:</strong> Nausea, vomiting, high NGT output (&gt;500ml/day) persisting beyond POD3-4. Defined as inability to tolerate diet by POD7 (Grade A), POD14 (Grade B), or POD21 (Grade C).</li>
+    <li><strong>Workup:</strong> Water-soluble contrast meal excludes mechanical obstruction. CT assesses for underlying POPF compressing the stomach.</li>
+    <li><strong>Correction:</strong> NGT decompression. Prokinetics (Erythromycin 125-250mg IV TDS is most effective). Minimise opioids. Correct hypokalemia. For Grade B/C, insert a nasojejunal tube past the anastomosis for enteral feeding. Treat underlying POPF if present.</li>
+  </ul>
+</section>
+
+<section class="topic s5" id="p5c">
+  <div class="topic-header"><span class="topic-num">5.3</span><h2>Complication 3: Post-pancreatectomy Haemorrhage (PPH)</h2></div>
+  <ul>
+    <li><strong>Early PPH (&lt;24 hours):</strong> From the operative field (GDA stump, mesenteric vessel). Presents as instability or blood in drain/NGT. Resuscitate and return to theatre for haemostasis.</li>
+    <li><strong>Late PPH (&gt;POD5):</strong> Almost always associated with POPF eroding vessels (pseudoaneurysm). A sentinel bleed from the drain is a surgical emergency.</li>
+    <li><strong>Correction (Late PPH):</strong> IR angioembolization is first-line and highly effective. If IR fails or patient is unstable, emergency laparotomy (ligation or completion pancreatectomy).</li>
+  </ul>
+</section>
+
+<div class="rapid-ref" id="rapid">
+  <h3>Rapid Reference — High-Yield Board Facts</h3>
+  <table>
+    <thead><tr><th>Topic</th><th>Key Fact</th></tr></thead>
+    <tbody>
+      <tr><td>Unresectability Criteria</td><td>SMA or Coeliac contact <strong>&gt;180°</strong>. Unreconstructable SMV/PV occlusion.</td></tr>
+      <tr><td>Fistula Risk Score (FRS)</td><td>Soft gland, small duct (≤3mm), high blood loss, and IPMN pathology increase risk.</td></tr>
+      <tr><td>Aberrant Anatomy</td><td>Replaced/Aberrant Right Hepatic Artery arises from the <strong>SMA</strong> in 15-20%.</td></tr>
+      <tr><td>Most Common Positive Margin</td><td>The <strong>SMA / Retroperitoneal margin</strong> (20-70% depending on pathology).</td></tr>
+      <tr><td>POPF Diagnostic Marker</td><td>Drain amylase <strong>&gt;3x Upper Limit of Normal</strong> on POD3.</td></tr>
+      <tr><td>DGE Prevention</td><td>Use an <strong>antecolic, isoperistaltic</strong> gastrojejunostomy to reduce rates.</td></tr>
+      <tr><td>Late Sentinel Bleed</td><td>Indicates a <strong>pseudoaneurysm</strong> driven by a POPF. Demands immediate CT Angio.</td></tr>
+      <tr><td>First-line DGE Prokinetic</td><td><strong>Erythromycin</strong> (motilin agonist) is more effective than metoclopramide.</td></tr>
+      <tr><td>Adjuvant Chemotherapy</td><td><strong>mFOLFIRINOX</strong> for fit patients (improves median survival over gemcitabine).</td></tr>
+      <tr><td>Post-op Diabetes Type</td><td><strong>Type 3c</strong>: Brittle and hypoglycaemia-prone due to concurrent loss of glucagon.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div></main>
+
+<button id="top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+  // Scroll Listener for Premium Nav
+  const mainNav = document.getElementById('mainNav');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      mainNav.classList.add('scrolled');
+    } else {
+      mainNav.classList.remove('scrolled');
+    }
+  });
+
+  function openMobNav() {
+    document.getElementById('mobNavSheet').classList.add('open');
+    document.getElementById('mobNavOverlay').style.display = 'block';
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMobNav() {
+    document.getElementById('mobNavSheet').classList.remove('open');
+    document.getElementById('mobNavOverlay').style.display = 'none';
+    document.body.style.overflow = '';
+  }
+
+  // Dark Mode Toggle Logic
+  const themeToggle = document.getElementById('themeToggle');
+  const moonIcon = document.getElementById('moonIcon');
+  const sunIcon = document.getElementById('sunIcon');
+
+  function applyTheme(theme) {
+    if (theme === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      if(moonIcon) moonIcon.style.display = 'none';
+      if(sunIcon) sunIcon.style.display = 'block';
+    } else {
+      document.documentElement.removeAttribute('data-theme');
+      if(sunIcon) sunIcon.style.display = 'none';
+      if(moonIcon) moonIcon.style.display = 'block';
+    }
+  }
+
+  const currentTheme = localStorage.getItem('sih-theme') || 'light';
+  applyTheme(currentTheme);
+
+  if(themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      const isDark = document.documentElement.hasAttribute('data-theme');
+      const newTheme = isDark ? 'light' : 'dark';
+      applyTheme(newTheme);
+      localStorage.setItem('sih-theme', newTheme);
+    });
+  }
+</script>
+
+<div class="mob-nav-overlay" id="mobNavOverlay" onclick="closeMobNav()"></div>
+<div class="mob-nav-sheet" id="mobNavSheet">
+  <div class="mob-nav-handle"></div>
+  <a href="../../index.html">Home</a>
+  <a href="../../notes.html">Notes</a>
+  <a href="../operative_approach.html" class="active">Playbook</a>
+  <a href="../../arena.html">Arena</a>
+  <a href="../../podcast.html">Podcast</a>
+  <a href="../../about.html">About</a>
+</div>
+
+<script>
+const progressBar = document.getElementById('progress-bar');
+const topBtn = document.getElementById('top-btn');
+const sidebarToggle = document.getElementById('sidebar-toggle');
+const sidebarOverlay = document.getElementById('sidebar-overlay');
+const navItems = document.querySelectorAll('.nav-item');
+const sections = document.querySelectorAll('.topic[id], .rapid-ref[id]');
+const body = document.body;
+
+function toggleSidebar() { body.classList.toggle('sidebar-open'); }
+function closeSidebar() { body.classList.remove('sidebar-open'); }
+
+window.addEventListener('scroll', () => {
+  const st = window.scrollY;
+  const dh = document.documentElement.scrollHeight - window.innerHeight;
+  if(progressBar) progressBar.style.transform = `scaleX(${st / dh})`;
+  if(topBtn) topBtn.classList.toggle('show', st > 400);
+  
+  let current = '';
+  sections.forEach(s => { if (st >= s.offsetTop - 120) current = s.id; });
+  navItems.forEach(n => { n.classList.toggle('active', n.getAttribute('href') === '#' + current); });
+});
+
+function filterNav(query) {
+  const q = query.toLowerCase();
+  navItems.forEach(item => { item.style.display = (!q || item.textContent.toLowerCase().includes(q)) ? 'block' : 'none'; });
+  document.querySelectorAll('.vol-label').forEach(l => { l.style.display = 'block'; });
+}
+
+navItems.forEach(item => {
+  item.addEventListener('click', e => {
+    e.preventDefault();
+    closeSidebar();
+    const target = document.querySelector(item.getAttribute('href'));
+    if (target) window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 80, behavior: 'smooth' });
+  });
+});
+
+document.querySelectorAll('.topic').forEach((el, i) => { el.style.animationDelay = `${i * 0.03}s`; });
+</script>
+<script src="../../js/nav-pill.js"></script>
+</body>
+</html>
