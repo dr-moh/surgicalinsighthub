@@ -11,39 +11,6 @@
   const savedTheme = localStorage.getItem('sih-theme') || 'light';
   if (savedTheme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
 </script>
-<style>
-  /* Adjust navbar for podcast page visibility */
-  .nav {
-    background: var(--bg-card) !important;
-    border-bottom: 1px solid var(--border-color);
-  }
-  .nav-brand-text {
-    color: var(--text-primary) !important;
-    font-weight: 800;
-  }
-  .nav-brand-sub {
-    color: var(--text-muted) !important;
-  }
-  .nav-links-pill a {
-    color: var(--text-primary) !important;
-    font-weight: 600;
-  }
-  .nav-links-pill a:hover {
-    color: var(--brand-gold) !important;
-    background: rgba(184, 146, 42, 0.1);
-  }
-  .nav-links-pill a.active {
-    color: #f0d080 !important;
-    background: var(--brand-burgundy);
-  }
-  .theme-toggle svg {
-    fill: var(--brand-gold);
-  }
-  .arena-btn {
-    background: var(--brand-burgundy) !important;
-    color: #f0d080 !important;
-  }
-</style>
 </head>
 <body>
 <nav class="nav" id="mainNav">
@@ -54,7 +21,7 @@
       </div>
       <div>
         <div class="nav-brand-text">Surgical Insight Hub</div>
-        <div class="nav-brand-sub">Medical Library</div>
+        <div class="nav-brand-sub">Advanced Surgical Learning</div>
       </div>
     </a>
     <div class="nav-links-pill">
