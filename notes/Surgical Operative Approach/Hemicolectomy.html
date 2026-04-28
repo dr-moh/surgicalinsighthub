@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Surgical Insight Hub — Hemicolectomy Monograph</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  /* Terracotta & Deep Slate Aesthetic */
+  --primary:   #6F3023; 
+  --primary-dk:#211412;
+  --primary-lt:#F6EBE9;
+  --accent:    #9C4634;
+  --accent2:   #D4806A;
+  --gold:      #C28E46;
+  --gold-lt:   #FDF8ED;
+  --s1:        #6F3023;
+  --s2:        #44383D;
+  --s3:        #3B4A43;
+  --s4:        #8C6746;
+  --s5:        #293642;
+  --s1-lt:     #F6EBE9;
+  --s2-lt:     #ECEAEB;
+  --s3-lt:     #EAECEB;
+  --s4-lt:     #F4EFEB;
+  --s5-lt:     #E8EBED;
+  --red:       #A32A2A;
+  --red-lt:    #FEF2F2;
+  --amber:     #A65D12;
+  --amber-lt:  #FFFBEB;
+  --blue:      #234A70;
+  --blue-lt:   #EFF6FF;
+  --bg:        #FCFBF9;
+  --bg2:       #F3F1ED;
+  --border:    #E4DFD9;
+  --text:      #2A2624;
+  --muted:     #635B56;
+  --white:     #FFFFFF;
+  --sidebar-w: 320px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.75;}
+
+/* SLIDE-OVER SIDEBAR */
+#sidebar {
+  position: fixed; top: 0; left: 0; width: var(--sidebar-w); height: 100vh;
+  background: var(--primary-dk); color: #EBE5E7;
+  display: flex; flex-direction: column;
+  z-index: 1000; overflow: hidden;
+  transform: translateX(-100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 4px 0 24px rgba(0,0,0,0.3);
+}
+body.sidebar-open #sidebar {
+  transform: translateX(0);
+}
+
+/* OVERLAY */
+#sidebar-overlay {
+  position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+  background: rgba(33, 20, 18, 0.5); backdrop-filter: blur(2px);
+  z-index: 950; opacity: 0; pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+body.sidebar-open #sidebar-overlay {
+  opacity: 1; pointer-events: auto;
+}
+
+/* TOGGLE BUTTON - Moved to TOP LEFT */
+#sidebar-toggle {
+  position: fixed; top: 24px; left: 28px; z-index: 900;
+  background: var(--primary); color: white;
+  border: none; border-radius: 30px;
+  padding: 10px 18px; font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600;
+  letter-spacing: 0.05em; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  display: flex; align-items: center; gap: 8px; transition: all 0.2s;
+}
+#sidebar-toggle:hover {
+  background: var(--accent); transform: translateY(-2px);
+}
+
+#sidebar-header{padding:20px 20px 14px;border-bottom:1px solid rgba(255,255,255,0.08);flex-shrink:0;}
+#sidebar-header .logo{font-family:'Playfair Display',serif;font-size:13px;font-weight:700;color:var(--accent2);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;}
+#sidebar-header .sub{font-size:10.5px;color:rgba(235,229,231,0.6);letter-spacing:0.04em;}
+#sidebar-search{padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.05);flex-shrink:0;}
+#sidebar-search input{width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:6px;color:#EBE5E7;padding:6px 10px;font-size:12px;font-family:'Source Serif 4',serif;outline:none;transition:border-color 0.2s;}
+#sidebar-search input::placeholder{color:rgba(235,229,231,0.4);}
+#sidebar-search input:focus{border-color:var(--accent2);}
+#sidebar-nav{flex:1;overflow-y:auto;padding:8px 0 20px;}
+#sidebar-nav::-webkit-scrollbar{width:4px;}
+#sidebar-nav::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.15);border-radius:2px;}
+.vol-label{font-size:9.5px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent2);padding:14px 18px 4px;}
+.nav-item{display:block;padding:8px 18px 8px 22px;font-size:12.5px;color:rgba(235,229,231,0.75);text-decoration:none;border-left:2px solid transparent;transition:all 0.15s;line-height:1.4;}
+.nav-item:hover{color:#fff;background:rgba(255,255,255,0.03);border-left-color:rgba(212,128,106,0.5);}
+.nav-item.active{color:#fff;background:rgba(255,255,255,0.06);border-left-color:var(--accent2);font-weight:600;}
+.nav-item .num{font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(235,229,231,0.4);margin-right:6px;}
+
+/* MAIN */
+#main{margin-left:0; min-height:100vh;}
+
+/* HERO */
+#hero{background:linear-gradient(135deg,var(--primary-dk) 0%,#4D1E14 60%,#211412 100%);color:white;padding:90px 72px 60px;position:relative;overflow:hidden;} /* Increased top padding so toggle button doesn't block text */
+#hero::before{content:'';position:absolute;top:-60px;right:-60px;width:380px;height:380px;background:radial-gradient(circle,rgba(212,128,106,0.15) 0%,transparent 70%);pointer-events:none;}
+#hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent2),var(--gold),transparent);}
+#hero .eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.16em;color:var(--accent2);text-transform:uppercase;margin-bottom:14px;}
+#hero h1{font-family:'Playfair Display',serif;font-size:46px;font-weight:700;line-height:1.15;margin-bottom:10px;color:#fff;}
+#hero .subtitle{font-size:18px;color:rgba(255,255,255,0.7);font-style:italic;margin-bottom:28px;}
+#hero .badges{display:flex;gap:10px;flex-wrap:wrap;}
+#hero .badge{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:20px;padding:4px 14px;font-size:12px;color:rgba(255,255,255,0.9);font-family:'JetBrains Mono',monospace;}
+
+/* CONTENT */
+.content-wrap{max-width:900px;margin:0 auto;padding:0 48px 80px;}
+
+/* SECTION HEADER */
+.sec-header{margin-top:60px;margin-bottom:8px;padding:28px 36px;border-radius:10px;display:flex;align-items:center;gap:20px;}
+.sec-header.s1{background:linear-gradient(135deg,#6F302308,#6F302315);border-left:4px solid var(--s1);}
+.sec-header.s2{background:linear-gradient(135deg,#44383D08,#44383D15);border-left:4px solid var(--s2);}
+.sec-header.s3{background:linear-gradient(135deg,#3B4A4308,#3B4A4315);border-left:4px solid var(--s3);}
+.sec-header.s4{background:linear-gradient(135deg,#8C674608,#8C674615);border-left:4px solid var(--s4);}
+.sec-header.s5{background:linear-gradient(135deg,#29364208,#29364215);border-left:4px solid var(--s5);}
+.sec-badge{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;letter-spacing:0.1em;padding:4px 12px;border-radius:4px;white-space:nowrap;flex-shrink:0;}
+.s1 .sec-badge{background:var(--s1);color:white;}
+.s2 .sec-badge{background:var(--s2);color:white;}
+.s3 .sec-badge{background:var(--s3);color:white;}
+.s4 .sec-badge{background:var(--s4);color:white;}
+.s5 .sec-badge{background:var(--s5);color:white;}
+.sec-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;}
+.s1 .sec-title{color:var(--s1);}
+.s2 .sec-title{color:var(--s2);}
+.s3 .sec-title{color:var(--s3);}
+.s4 .sec-title{color:var(--s4);}
+.s5 .sec-title{color:var(--s5);}
+
+/* TOPIC */
+.topic{margin-top:48px;padding-top:48px;border-top:1px solid var(--border);}
+.topic:first-of-type{border-top:none;}
+.topic-header{display:flex;align-items:flex-start;gap:16px;margin-bottom:24px;}
+.topic-num{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;padding:3px 10px;border-radius:4px;margin-top:4px;flex-shrink:0;}
+.s1 .topic-num{background:var(--s1-lt);color:var(--s1);}
+.s2 .topic-num{background:var(--s2-lt);color:var(--s2);}
+.s3 .topic-num{background:var(--s3-lt);color:var(--s3);}
+.s4 .topic-num{background:var(--s4-lt);color:var(--s4);}
+.s5 .topic-num{background:var(--s5-lt);color:var(--s5);}
+.topic h2{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;line-height:1.2;}
+.s1 .topic h2{color:var(--s1);}
+.s2 .topic h2{color:var(--s2);}
+.s3 .topic h2{color:var(--s3);}
+.s4 .topic h2{color:var(--s4);}
+.s5 .topic h2{color:var(--s5);}
+.topic h3{font-family:'Playfair Display',serif;font-size:17px;font-weight:600;color:var(--muted);margin:26px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--border);}
+.topic h4{font-size:13px;font-weight:600;color:var(--muted);letter-spacing:0.06em;text-transform:uppercase;margin:18px 0 8px;font-family:'JetBrains Mono',monospace;}
+.topic p{margin-bottom:12px;color:var(--text);}
+.topic ul,.topic ol{margin:8px 0 14px 20px;color:var(--text);}
+.topic li{margin-bottom:6px;line-height:1.65;}
+.topic li::marker{color:var(--accent2);}
+.topic strong{color:var(--text);font-weight:600;}
+
+/* TABLES */
+.table-wrap{overflow-x:auto;margin:16px 0 20px;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.04);}
+table{width:100%;border-collapse:collapse;font-size:13.5px;background:white;}
+thead tr{background:var(--s1);}
+thead th{color:white;padding:10px 14px;text-align:left;font-family:'Source Serif 4',serif;font-weight:600;font-size:13px;}
+tbody tr:nth-child(even){background:var(--bg2);}
+tbody tr:hover{background:var(--s1-lt);transition:background 0.15s;}
+tbody td{padding:9px 14px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.5;}
+.s2-tbl thead tr{background:var(--s2);}
+.s3-tbl thead tr{background:var(--s3);}
+.s4-tbl thead tr{background:var(--s4);}
+.s5-tbl thead tr{background:var(--s5);}
+
+/* CALLOUTS */
+.callout{margin:18px 0;padding:14px 18px;border-radius:0 8px 8px 0;border-left:4px solid;font-size:14px;line-height:1.65;}
+.callout .label{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;display:block;margin-bottom:4px;}
+.callout.pearl{background:var(--amber-lt);border-color:var(--amber);}
+.callout.pearl .label{color:var(--amber);}
+.callout.warn{background:var(--red-lt);border-color:var(--red);}
+.callout.warn .label{color:var(--red);}
+.callout.clin{background:var(--s1-lt);border-color:var(--s1);}
+.callout.clin .label{color:var(--s1);}
+.callout.exam{background:var(--blue-lt);border-color:var(--blue);}
+.callout.exam .label{color:var(--blue);}
+
+/* DIAGRAM */
+.diagram-wrap{background:white;border:1px solid var(--border);border-radius:8px;padding:18px;margin:20px 0;box-shadow:0 1px 4px rgba(0,0,0,0.03);}
+.diagram-title{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--s1);margin-bottom:12px;}
+
+/* RAPID REFERENCE */
+.rapid-ref{background:var(--primary-dk);color:var(--primary-lt);border-radius:10px;padding:28px 32px;margin:30px 0;}
+.rapid-ref h3{font-family:'Playfair Display',serif;font-size:20px;color:var(--accent2);margin-bottom:16px;}
+.rapid-ref table{font-size:12.5px; background: transparent;} /* Fixed Transparency */
+.rapid-ref thead tr{background:rgba(212,128,106,0.15);}
+.rapid-ref thead th{color:var(--accent2);padding:8px 12px;font-size:11px;}
+.rapid-ref tbody tr:nth-child(even){background:rgba(255,255,255,0.03);}
+.rapid-ref tbody tr:hover{background:rgba(255,255,255,0.06);}
+.rapid-ref tbody td{color:var(--primary-lt);padding:7px 12px;border-bottom:1px solid rgba(255,255,255,0.05);}
+.rapid-ref tbody td strong{color:var(--gold);}
+
+/* PROGRESS */
+#progress-bar{position:fixed;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent2),var(--gold));transform-origin:left;transform:scaleX(0);transition:transform 0.1s;z-index:50;}
+
+/* TOP BTN */
+#top-btn{position:fixed;bottom:28px;right:28px;background:var(--primary);color:white;border:none;border-radius:50%;width:44px;height:44px;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,0.2);transition:all 0.2s;opacity:0;pointer-events:none;}
+#top-btn.show{opacity:1;pointer-events:auto;}
+#top-btn:hover{background:var(--accent2);transform:translateY(-2px);}
+
+/* ANIMATION */
+.topic{animation:fadeUp 0.4s ease both;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
+
+@media(max-width:900px){
+  .content-wrap{padding:0 20px 60px;}
+  #hero{padding:72px 20px 40px;}
+  #hero h1{font-size:30px;}
+}
+@media print{
+  #sidebar-toggle, #sidebar-overlay, #sidebar, #top-btn, #progress-bar{display:none!important;}
+  .topic{page-break-inside:avoid;}
+  .sec-header{page-break-before:always;}
+}
+</style>
+</head>
+<body>
+<div id="progress-bar"></div>
+
+<div id="sidebar-overlay" onclick="closeSidebar()"></div>
+
+<button id="sidebar-toggle" onclick="toggleSidebar()">
+  <span>☰</span> Contents
+</button>
+
+<nav id="sidebar">
+  <div id="sidebar-header">
+    <div class="logo">Surgical Insight Hub</div>
+    <div class="sub">Hemicolectomy · Monograph Series</div>
+  </div>
+  <div id="sidebar-search">
+    <input type="text" id="search-input" placeholder="Search topics…" oninput="filterNav(this.value)">
+  </div>
+  <div id="sidebar-nav">
+    <div class="vol-label">Pillar 1 — Pre-Op Optimization</div>
+    <a class="nav-item" href="#p1a"><span class="num">1.1</span>Clinical Workup</a>
+    <a class="nav-item" href="#p1b"><span class="num">1.2</span>Risk Stratification</a>
+    <a class="nav-item" href="#p1c"><span class="num">1.3</span>Immediate Pre-Op</a>
+    <div class="vol-label">Pillar 2 — The Operative Game Plan</div>
+    <a class="nav-item" href="#p2a"><span class="num">2.1</span>Setup &amp; Positioning</a>
+    <a class="nav-item" href="#p2b"><span class="num">2.2</span>Right Hemicolectomy</a>
+    <a class="nav-item" href="#p2c"><span class="num">2.3</span>Left Hemicolectomy</a>
+    <a class="nav-item" href="#p2d"><span class="num">2.4</span>The Critical View</a>
+    <div class="vol-label">Pillar 3 — Pearls &amp; Bail-Outs</div>
+    <a class="nav-item" href="#p3a"><span class="num">3.1</span>Consultant Pearls</a>
+    <a class="nav-item" href="#p3b"><span class="num">3.2</span>The Bail-Out Point</a>
+    <div class="vol-label">Pillar 4 — Post-Op Care</div>
+    <a class="nav-item" href="#p4a"><span class="num">4.1</span>Immediate Recovery (ERAS)</a>
+    <a class="nav-item" href="#p4b"><span class="num">4.2</span>Clinic Follow-up</a>
+    <div class="vol-label">Pillar 5 — Complications</div>
+    <a class="nav-item" href="#p5a"><span class="num">5.1</span>Anastomotic Leak</a>
+    <a class="nav-item" href="#p5b"><span class="num">5.2</span>Ureteric Injury</a>
+    <a class="nav-item" href="#p5c"><span class="num">5.3</span>Ileus vs. SBO</a>
+    <div class="vol-label">Quick Reference</div>
+    <a class="nav-item" href="#rapid">High-Yield Board Facts</a>
+  </div>
+</nav>
+
+<main id="main">
+<section id="hero">
+  <div class="eyebrow">Surgical Insight Hub · Monograph Series · ABSITE · PGY-3 Framework</div>
+  <h1>Hemicolectomy</h1>
+  <p class="subtitle">Right, Left, and Extended Variants</p>
+  <div class="badges">
+    <span class="badge">ERAS Protocol</span>
+    <span class="badge">Oncological Resection</span>
+    <span class="badge">TNM Staging</span>
+  </div>
+</section>
+
+<div class="content-wrap">
+
+<div class="callout warn" style="margin-top: 40px;">
+  <span class="label">⚠ Read Before Proceeding</span>
+  Most residents approach colon resection as a plumbing problem: take out the segment, join the ends. That framing will get you into trouble. The colon sits in intimate relationship with the duodenum, ureter, gonadal vessels, and major mesenteric vasculature. The anastomosis you construct will either hold or it won't, and when it doesn't, the consequences are septic, prolonged, and sometimes fatal. Understand the embryology, respect the fascial planes, and treat the anastomosis as the most important 10 minutes of the case. Because it is.
+</div>
+
+<div class="sec-header s1">
+  <span class="sec-badge">PILLAR 1</span>
+  <span class="sec-title">Pre-operative Optimization &amp; Preparation</span>
+</div>
+
+<section class="topic s1" id="p1a">
+  <div class="topic-header"><span class="topic-num">1.1</span><h2>Clinical Workup</h2></div>
+  
+  <h3>History: details that directly change your operative plan</h3>
+  <ul>
+    <li><strong>Indication:</strong> malignancy vs. inflammatory bowel disease vs. volvulus vs. ischemia vs. diverticular disease. Each changes your resection margins, lymphadenectomy extent, and anastomotic strategy.</li>
+    <li><strong>Prior abdominal surgery:</strong> adhesions change access; prior right hemicolectomy means a left or extended resection; prior pelvic surgery increases ureteric risk.</li>
+    <li><strong>Bowel habit change, rectal bleeding, weight loss, obstructive symptoms:</strong> duration and progression matter.</li>
+    <li><strong>Steroid or immunosuppressant use (IBD, transplant):</strong> impairs healing, increases anastomotic leak risk. May require defunctioning stoma even when you wouldn't otherwise.</li>
+    <li><strong>Nutritional status:</strong> a malnourished patient with albumin &lt;25g/L has a significantly higher anastomotic leak and wound complication rate; this is modifiable pre-operatively.</li>
+    <li><strong>Smoking, diabetes, obesity:</strong> each independently increases leak risk; document and optimize.</li>
+    <li><strong>Family history:</strong> Lynch syndrome, FAP. If relevant, changes your oncological resection extent and genetic counseling obligations.</li>
+  </ul>
+
+  <h3>Examination: what must be confirmed</h3>
+  <ul>
+    <li><strong>Abdominal distension, peritonism, visible peristalsis:</strong> are you operating electively or urgently?</li>
+    <li><strong>Digital rectal exam:</strong> mandatory in any colorectal case. Establishes rectal tone, identifies low rectal lesions, detects blood.</li>
+    <li><strong>Stoma siting:</strong> mark pre-operatively by a stoma nurse if there is any possibility of a stoma (right iliac fossa for ileostomy, left iliac fossa for colostomy). This is a pre-op obligation, not an afterthought.</li>
+  </ul>
+
+  <h3>Mandatory Investigations</h3>
+  <ul>
+    <li><strong>Colonoscopy with biopsy:</strong> for malignancy: confirms histology, localizes the lesion (tattooing is essential for laparoscopic cases), excludes synchronous lesions (present in 3-5% of colorectal cancers).</li>
+    <li><strong>CT chest/abdomen/pelvis with IV contrast:</strong> staging for malignancy; vascular anatomy (SMA/IMA variants); liver metastases; ureteric course; lymphadenopathy.</li>
+    <li><strong>MRI liver:</strong> if CT suggests hepatic lesions. Characterize before resection; simultaneous liver resection is a decision requiring HPB input.</li>
+    <li><strong>CEA:</strong> pre-operative baseline for colorectal malignancy; post-op surveillance marker. A rising CEA after resection mandates restaging.</li>
+    <li><strong>CBC &amp; BMP:</strong> Anaemia is common in right-sided colonic malignancy. Optimize pre-operatively (iron infusion if time allows). Group and screen/crossmatch if significant anaemia.</li>
+    <li><strong>Albumin:</strong> non-negotiable nutritional marker. &lt;30g/L = consider pre-operative nutritional support; &lt;25g/L = high risk for anastomotic complications (consider defunctioning).</li>
+    <li><strong>Urinalysis:</strong> if pelvic/sigmoid pathology; colovesical fistula produces pneumaturia and recurrent UTI.</li>
+  </ul>
+
+  <h3>Cardiopulmonary Optimization</h3>
+  <ul>
+    <li><strong>Formal cardiology review</strong> for patients with known IHD, heart failure, or significant arrhythmia. This is a major abdominal case with significant fluid shifts.</li>
+    <li><strong>PFTs and respiratory review</strong> if significant COPD. Post-op pulmonary complications are a major cause of morbidity after colorectal surgery.</li>
+    <li><strong>Prehabilitation:</strong> for elective cancer cases, a structured exercise program in the weeks before surgery demonstrably reduces post-op complications.</li>
+  </ul>
+</section>
+
+<section class="topic s1" id="p1b">
+  <div class="topic-header"><span class="topic-num">1.2</span><h2>Risk Stratification</h2></div>
+  <div class="table-wrap s1-tbl"><table>
+    <thead><tr><th>Score</th><th>Application</th><th>Impact on Plan</th></tr></thead>
+    <tbody>
+      <tr><td><strong>ASA</strong></td><td>Global operative risk</td><td>ASA IV dictates MDT discussion; consider defunctioning stoma over primary anastomosis.</td></tr>
+      <tr><td><strong>POSSUM / P-POSSUM</strong></td><td>Predicted morbidity and mortality</td><td>Use to counsel patients; high score dictates ICU/HDU bed booked pre-op.</td></tr>
+      <tr><td><strong>NSQIP</strong></td><td>30-day morbidity/mortality</td><td>Risk-stratifies anastomosis decision.</td></tr>
+      <tr><td><strong>Alberts / CLASSIC</strong></td><td>Anastomotic leak risk score</td><td>Factors: male sex, obesity, steroid use, low albumin, blood transfusion, prolonged OR time.</td></tr>
+      <tr><td><strong>TNM / Dukes staging</strong></td><td>Colorectal malignancy stage</td><td>Determines adjuvant chemotherapy need; does not change acute operative plan but informs oncology referral timing.</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="callout clin">
+    <span class="label">High-Risk Anastomosis Markers: When to Defunction</span>
+    Albumin &lt;25g/L, intraoperative contamination (perforated/obstructed bowel), steroid/immunosuppressant use, significant intraoperative blood loss, emergency presentation, or a distal anastomosis under tension. Your threshold for defunctioning drops with each additional factor.
+  </div>
+</section>
+
+<section class="topic s1" id="p1c">
+  <div class="topic-header"><span class="topic-num">1.3</span><h2>Immediate Pre-operative Protocols</h2></div>
+  
+  <ul>
+    <li><strong>Bowel Preparation:</strong> 
+      <ul>
+        <li>Mechanical prep is controversial for right hemicolectomy (often no benefit, possible harm).</li>
+        <li>For left hemicolectomy and sigmoid resections: combined mechanical bowel prep + oral antibiotics (neomycin + metronidazole) reduces SSI and anastomotic leak. This is standard practice at high-volume centers.</li>
+        <li>For emergency cases: no prep; wash the bowel at operation if necessary.</li>
+      </ul>
+    </li>
+    <li><strong>Antibiotic Prophylaxis:</strong> Cefazolin 1-2g IV + Metronidazole 500mg IV within 60 minutes of incision. Covers skin flora and anaerobes. Repeat dosing for cases &gt;3 hours. Single dose is sufficient for elective clean-contaminated cases.</li>
+    <li><strong>DVT Prophylaxis:</strong> Colorectal cancer patients are among the highest DVT/PE risk surgical patients. Mechanical compression devices on before induction. LMWH pre-op for intermediate/high-risk patients. <em>Extended LMWH for 28 days post-op for colorectal malignancy is guideline-supported.</em></li>
+    <li><strong>Ureteric Stents:</strong> Consider pre-operative placement for locally advanced malignancy, severe diverticular disease with pericolic inflammation, or prior pelvic surgery/radiation. Stents make the ureter palpable intraoperatively.</li>
+    <li><strong>Consent Non-Negotiables:</strong> Anastomotic leak (2-5% elective right; 3-8% left-sided), stoma formation, ureteric injury, hemorrhage, wound infection, ileus vs. mechanical obstruction, sexual/bladder dysfunction (left/sigmoid), adhesional SBO, and oncological margins.</li>
+  </ul>
+</section>
+
+<div class="sec-header s2">
+  <span class="sec-badge">PILLAR 2</span>
+  <span class="sec-title">The Operative Game Plan</span>
+</div>
+
+<section class="topic s2" id="p2a">
+  <div class="topic-header"><span class="topic-num">2.1</span><h2>Setup &amp; Positioning</h2></div>
+  <ul>
+    <li><strong>Anesthesia:</strong> General anesthesia with endotracheal intubation. Epidural analgesia strongly recommended for open cases (core component of ERAS). Nasogastric tube inserted after induction, removed at end of case. Urinary catheter is mandatory.</li>
+    <li><strong>Positioning (Right Hemicolectomy):</strong> Supine, arms out. Table flat or slight Trendelenburg. Left lateral tilt during dissection to move small bowel away from the right colon.</li>
+    <li><strong>Positioning (Left Hemicolectomy/Sigmoid):</strong> Modified Lloyd-Davies (lithotomy-Trendelenburg) with legs in stirrups. Allows access to the perineum. Right lateral tilt during dissection. Ensure legs are well padded to prevent compartment syndrome.</li>
+    <li><strong>Laparoscopic vs. Open:</strong> Laparoscopic is oncologically equivalent and the standard of care. Open indications: emergency, locally advanced, extensive adhesions, anastomotic leak re-operation, BMI &gt;45.</li>
+    <li><strong>Instruments:</strong> Linear cutting stapler (GIA/Echelon) 60-80mm. Circular stapler (CDH/EEA) 25-29mm for left-sided anastomosis. Vessel-sealing device for mesenteric vessel control. Self-retaining retractor (Bookwalter or Omni-Tract) for open.</li>
+  </ul>
+</section>
+
+<section class="topic s2" id="p2b">
+  <div class="topic-header"><span class="topic-num">2.2</span><h2>Step-by-Step: Right Hemicolectomy</h2></div>
+  
+  <h3>Phase 1: Access and Exploration</h3>
+  <p>Midline laparotomy. Systematically explore the abdominal cavity before resection: palpate liver for metastases, run the small bowel, feel the mesentery for nodal disease, and assess primary tumour mobility. Document all findings.</p>
+  
+  <h3>Phase 2: Mobilization</h3>
+  <p><strong>Medial-to-lateral (preferred for malignancy):</strong> Elevate the terminal ileum and right colon mesentery off the retroperitoneum by entering Toldt's fascia from the medial side. The plane lies between the colonic mesentery and the retroperitoneal structures (duodenum, right ureter, gonadal vessels, Gerota's fascia). Avascular, gossamer-thin areolar tissue separates easily; bleeding means you are in the wrong plane.</p>
+
+  <h3>Phase 3: Vascular Ligation</h3>
+  <p>For malignancy, high vascular ligation at the vessel origin is required for adequate lymph node harvest (minimum 12 nodes). Ligate the ileocolic artery and vein at their origin from the SMA/SMV. Ligate the right colic artery (variable). Divide the right branch of the middle colic artery. <em>Critical anatomy to protect: SMV, Duodenum (D2/D3), and Right Ureter.</em></p>
+
+  <h3>Phase 4: Bowel Division</h3>
+  <p>Distal division: transverse colon at the junction of the right and middle thirds (ensure 5cm margin for cancer). Proximal division: terminal ileum, 10-15cm proximal to the ileocecal valve. Use GIA stapler. Send specimen for macroscopic margin assessment.</p>
+
+  <h3>Phase 5: Ileocolic Anastomosis</h3>
+  <p><strong>Stapled side-to-side (functional end-to-end):</strong> Align terminal ileum and transverse colon in isoperistaltic orientation. Make enterotomies, insert GIA stapler, and fire. Close the common enterotomy. Inspect staple lines for bleeding, ensure no tension, confirm good blood supply, and verify no twist.</p>
+
+  <h3>Phase 6: Closure of Mesenteric Defect</h3>
+  <p>Close the mesenteric window with continuous 2-0 Vicryl to prevent internal hernia. In laparoscopic cases, defect closure is mandatory to prevent strangulated small bowel.</p>
+</section>
+
+<section class="topic s2" id="p2c">
+  <div class="topic-header"><span class="topic-num">2.3</span><h2>Step-by-Step: Left Hemicolectomy / Sigmoid Resection</h2></div>
+
+  <h3>Phase 1 &amp; 2: Access, Exploration, and Mobilization</h3>
+  <p>Midline laparotomy and confirm lesion location. <strong>Medial-to-lateral:</strong> Identify the inferior mesenteric artery (IMA) at its origin from the aorta. Incise the peritoneum at the base. Develop the retroperitoneal plane to identify and protect the left ureter and gonadal vessels. Splenic flexure takedown (entering lesser sac, dividing splenocolic/phrenocolic ligaments) is required for most left hemicolectomies to achieve a tension-free anastomosis.</p>
+
+  <div class="diagram-wrap">
+    <div class="diagram-title">Left-Sided Danger Zone: IMA, Ureter, and Retroperitoneum</div>
+    <svg width="100%" viewBox="0 0 680 320" xmlns="http://www.w3.org/2000/svg">
+      <rect x="0" y="0" width="680" height="320" fill="#FCFBF9" />
+      
+      <path d="M 340 40 L 340 280" stroke="#8C3B26" stroke-width="24" stroke-linecap="round"/>
+      <text x="340" y="150" text-anchor="middle" font-size="14" font-weight="bold" fill="#FDF8ED">Aorta</text>
+
+      <path d="M 340 180 Q 250 200, 200 260" fill="none" stroke="#D4806A" stroke-width="12" stroke-linecap="round"/>
+      <text x="210" y="285" font-size="12" font-weight="bold" fill="#6F3023">IMA</text>
+
+      <path d="M 280 60 Q 250 160, 260 280" fill="none" stroke="#C28E46" stroke-width="8" stroke-dasharray="10 4"/>
+      <text x="260" y="100" font-size="12" font-weight="bold" fill="#8C6746">Left Ureter (Retroperitoneal)</text>
+
+      <circle cx="260" cy="195" r="20" fill="none" stroke="#211412" stroke-width="3" stroke-dasharray="4 2"/>
+      <text x="80" y="180" font-size="11" font-weight="bold" fill="#211412">High Risk Zone:</text>
+      <text x="80" y="195" font-size="11" fill="#211412">Ureter posterior to IMA</text>
+      <line x1="200" y1="190" x2="240" y2="195" stroke="#211412" stroke-width="1"/>
+    </svg>
+  </div>
+
+  <h3>Phase 3: Vascular Ligation</h3>
+  <p><strong>IMA ligation:</strong> For cancer, high tie at the aortic origin (clears IMA root lymph nodes). Identify the left ureter before the IMA is divided (the ureter is directly posterior to the IMA at the aortic origin). Ligate the inferior mesenteric vein (IMV) separately at the inferior border of the pancreas for mesenteric length.</p>
+
+  <h3>Phase 4: Bowel Division</h3>
+  <p>Distal division: at the rectosigmoid junction or upper rectum using a linear stapler. The stapler must be applied perpendicular to the bowel. Proximal division: descending colon proximal to the tumour with adequate margin.</p>
+
+  <h3>Phase 5: Colorectal Anastomosis (Stapled End-to-End)</h3>
+  <ul>
+    <li><strong>Anvil placement:</strong> Insert anvil into the proximal colon and secure with a full-thickness purse-string suture tied snugly around the spike.</li>
+    <li><strong>Transanal introduction:</strong> Circular stapler introduced per rectum. Advance spike through or adjacent to the rectal staple line.</li>
+    <li><strong>Docking:</strong> Connect anvil spike to stapler body. Ensure no tension, no twist, and no adjacent tissue caught. Fire the stapler.</li>
+    <li><strong>Check donuts:</strong> Both rings of excised tissue must be complete 360° circles. Send as separate specimens.</li>
+    <li><strong>Leak test mandatory:</strong> Fill pelvis with saline, occlude proximal colon, insufflate air per rectum. No bubbles = satisfactory.</li>
+  </ul>
+
+  <h3>Phase 6: Closure</h3>
+  <p>Close the mesenteric defect. Consider a pelvic drain for left-sided anastomoses. Mass closure of midline laparotomy using the Jenkins rule (suture length to wound length ratio ≥4:1) with small bites.</p>
+</section>
+
+<section class="topic s2" id="p2d">
+  <div class="topic-header"><span class="topic-num">2.4</span><h2>The Critical View in Hemicolectomy</h2></div>
+  <p>Non-negotiable confirmations before division and anastomosis:</p>
+  <ul>
+    <li><strong>Both ureters identified:</strong> particularly the left ureter before IMA ligation; the right ureter before ileocolic vessel ligation.</li>
+    <li><strong>Vascular supply confirmed:</strong> pink bowel, bleeding cut edges, warm antimesenteric fat.</li>
+    <li><strong>No tension on the anastomosis:</strong> the bowel reaches without pulling; if in doubt, mobilize more.</li>
+    <li><strong>Donuts are complete:</strong> both rings inspected and confirmed 360° before closing.</li>
+    <li><strong>Leak test is negative:</strong> documented in the operative note.</li>
+  </ul>
+</section>
+
+<div class="sec-header s3">
+  <span class="sec-badge">PILLAR 3</span>
+  <span class="sec-title">Technical Pearls &amp; Bail-Out Strategies</span>
+</div>
+
+<section class="topic s3" id="p3a">
+  <div class="topic-header"><span class="topic-num">3.1</span><h2>Consultant Pearls</h2></div>
+  
+  <div class="callout pearl">
+    <span class="label">Consultant Pearl #1: Respect the Embryological Planes</span>
+    The correct dissection plane is an embryological plane: the fusion fascia between the colonic mesentery and the retroperitoneum. In the correct plane, the dissection is nearly bloodless, and retroperitoneal structures remain down and visible. When you're bleeding in the retroperitoneum and the ureter is not where it should be, you're in the wrong plane. Stop. Re-enter the correct plane from a known point. Do not dissect through a bloody retroperitoneum hoping to find the right plane.
+  </div>
+
+  <div class="callout pearl">
+    <span class="label">Consultant Pearl #2: The Anastomosis Is Only as Good as the Blood Supply</span>
+    A technically perfect staple anastomosis on ischemic bowel will leak. Transect the antimesenteric fat at the proposed anastomotic margin and confirm it bleeds. If the proximal end looks ischemic after splenic flexure takedown, resect more proximally. If the rectal stump looks ischemic, you've taken the IMA too high or stripped too much blood supply: call your senior before you proceed.
+  </div>
+
+  <div class="callout pearl">
+    <span class="label">Consultant Pearl #3: The Tension-Free Anastomosis</span>
+    Residents underestimate the mobilization required for a tension-free left-sided anastomosis. Steps buy length: full splenic flexure takedown, IMV ligation at the inferior pancreatic border, and division of lateral peritoneal attachments. If still under tension, consider mobilizing the right colon. A stapler fired under tension will cause ischemia. Hurrying this step is the fastest route to a re-laparotomy.
+  </div>
+</section>
+
+<section class="topic s3" id="p3b">
+  <div class="topic-header"><span class="topic-num">3.2</span><h2>The Bail-Out Point</h2></div>
+  <p>Stop and escalate when:</p>
+  <ul>
+    <li><strong>Ureteric injury identified:</strong> Stop dissection, call urology immediately. Primary repair over a DJ stent is feasible for clean lacerations.</li>
+    <li><strong>Anastomosis is under tension:</strong> Bring out a stoma. Do not convince yourself it will be fine.</li>
+    <li><strong>Both donuts are not complete:</strong> Redo the anastomosis or bring out a stoma.</li>
+    <li><strong>Positive leak test that cannot be repaired:</strong> Defunctioning loop ileostomy and abandon the anastomosis, or bring out a Hartmann's procedure. A known leak left in situ is indefensible.</li>
+    <li><strong>Locally advanced tumour adherent to adjacent structures:</strong> Do not attempt a blind R0 resection without senior input. An R2 resection that damages the ureter is worse than a planned multidisciplinary approach.</li>
+    <li><strong>Significant intraoperative blood loss from mesenteric vasculature:</strong> Direct pressure, call senior. Blind clamping risks devascularizing the small bowel.</li>
+    <li><strong>Emergency case with unprepared bowel/contamination:</strong> Hartmann's procedure is the safe option. Bring out the stoma, plan reversal electively.</li>
+  </ul>
+</section>
+
+<div class="sec-header s4">
+  <span class="sec-badge">PILLAR 4</span>
+  <span class="sec-title">Post-operative Care &amp; Longitudinal Follow-up</span>
+</div>
+
+<section class="topic s4" id="p4a">
+  <div class="topic-header"><span class="topic-num">4.1</span><h2>Immediate Post-op (First 24 Hours) &amp; ERAS</h2></div>
+  
+  <ul>
+    <li><strong>Fluids:</strong> Restrict IV fluids aggressively. Excess IV fluid causes bowel oedema, delays return of gut function, and increases anastomotic leak risk.</li>
+    <li><strong>Diet:</strong> Early oral feeding (soft diet POD1, full diet POD2) reduces ileus. The old "wait for flatus" doctrine is not evidence-based. Carbohydrate loading 2 hours pre-op reduces insulin resistance.</li>
+    <li><strong>Pain management:</strong> Epidural analgesia (open cases) run for 48-72 hours. TAP blocks for laparoscopic cases. Scheduled acetaminophen + NSAIDs. Minimize opioids aggressively. Alvimopan accelerates return of bowel function if available.</li>
+    <li><strong>Mobilization:</strong> Out of bed on the day of surgery. Ambulating POD1. Respiratory physiotherapy prevents pneumonia.</li>
+    <li><strong>Monitoring:</strong> Urine output &gt;0.5ml/kg/h. <em>Tachycardia on POD2-4 is an anastomotic leak until proven otherwise.</em></li>
+    <li><strong>Nasogastric tube:</strong> Remove at end of case unless significant intraoperative contamination. Routine post-op NGT does not reduce leak risk.</li>
+    <li><strong>Stoma care:</strong> Stoma nurse review on POD1. New ileostomy should start functioning within 24-48 hours. High output (&gt;1500ml/day) requires electrolyte replacement.</li>
+    <li><strong>Discharge criteria:</strong> Target POD3-5 for laparoscopic, POD5-7 for open. Tolerating solid diet, pain controlled, stoma functioning, ambulating, no fever/tachycardia. Extended LMWH confirmed.</li>
+  </ul>
+</section>
+
+<section class="topic s4" id="p4b">
+  <div class="topic-header"><span class="topic-num">4.2</span><h2>Clinic Follow-up</h2></div>
+  <ul>
+    <li><strong>2-week visit:</strong> Wound inspection, stoma review, pathology review (TNM stage, margins, nodes retrieved). Functional recovery assessment.</li>
+    <li><strong>6-week visit:</strong> Oncology referral confirmation for adjuvant chemotherapy. CT chest/abdomen/pelvis restaging. CEA level baseline. Stoma reversal discussion (reversal at 8-12 weeks is standard post-chemo).</li>
+    <li><strong>Colorectal malignancy surveillance:</strong> 3-monthly for 2 years, then 6-monthly to 5 years. CEA at each visit. CT annually for 3 years. Colonoscopy at 1 year post-op, then 3-yearly. Liver ultrasound 6-monthly in some centers.</li>
+  </ul>
+</section>
+
+<div class="sec-header s5">
+  <span class="sec-badge">PILLAR 5</span>
+  <span class="sec-title">Complication Management</span>
+</div>
+
+<section class="topic s5" id="p5a">
+  <div class="topic-header"><span class="topic-num">5.1</span><h2>Complication 1: Anastomotic Leak</h2></div>
+  <ul>
+    <li><strong>Recognition:</strong> Peak onset POD3-5. Minor leak: low-grade fever, elevated CRP, mild abdominal pain. Major leak: sepsis, peritonism, clinical deterioration. <em>The single most important rule: Tachycardia on POD3-4 after colorectal anastomosis is a leak until proven otherwise.</em></li>
+    <li><strong>Immediate workup:</strong> CBC, CRP, lactate. CT abdomen/pelvis with IV and rectal contrast confirms leak and guides management. Plain AXR is inadequate.</li>
+    <li><strong>Correction (Contained leak):</strong> IV antibiotics, CT-guided percutaneous drainage, optimize nutrition. Defunctioning loop ileostomy avoids the morbidity of a full re-laparotomy in a stable patient.</li>
+    <li><strong>Correction (Major leak / Septic):</strong> Resuscitate immediately. Emergency re-laparotomy. Wash out. If salvageable, repair and defunction. If non-salvageable, perform Hartmann's procedure (resect anastomosis, end colostomy).</li>
+  </ul>
+</section>
+
+<section class="topic s5" id="p5b">
+  <div class="topic-header"><span class="topic-num">5.2</span><h2>Complication 2: Ureteric Injury</h2></div>
+  <ul>
+    <li><strong>Recognition:</strong> Intraoperative: urine in the field, visualizing a catheter in a divided structure. Post-operative (delayed): flank pain/fever POD2-5, urinoma, rising creatinine, ileus, urine from drain.</li>
+    <li><strong>Immediate workup:</strong> CT urogram identifies site of injury. Urology review immediately.</li>
+    <li><strong>Correction (Intraoperative):</strong> Remove ligature/staple immediately. Place a DJ stent. Primary repair over stent for small injuries; uretero-ureterostomy for transection. Call urology before attempting repair.</li>
+    <li><strong>Correction (Post-operative):</strong> Percutaneous nephrostomy first priority. Antegrade or retrograde DJ stenting. Formal surgical repair planned electively after 6-8 weeks. Must disclose injury to patient.</li>
+  </ul>
+</section>
+
+<section class="topic s5" id="p5c">
+  <div class="topic-header"><span class="topic-num">5.3</span><h2>Complication 3: Post-operative Ileus vs. Early Mechanical Small Bowel Obstruction</h2></div>
+  <ul>
+    <li><strong>Recognition (Ileus):</strong> Diffuse distension, absent bowel sounds, no flatus/stool by POD4-5. CT shows dilated small and large bowel without transition point.</li>
+    <li><strong>Recognition (SBO):</strong> Progressive, colicky abdominal pain. CT shows dilated proximal bowel with a discrete transition point.</li>
+    <li><strong>Immediate workup:</strong> Clinical assessment, correct electrolytes, CT abdomen/pelvis distinguishes ileus from mechanical obstruction.</li>
+    <li><strong>Correction (Ileus):</strong> Correct hypokalemia, minimize opioids, NG tube decompression, ambulation. Neostigmine for severe Ogilvie's with monitoring.</li>
+    <li><strong>Correction (SBO):</strong> Conservative trial (48-72h) only if no signs of strangulation. Early operative intervention for complete obstruction, closed loop obstruction, or clinical signs of strangulation.</li>
+  </ul>
+</section>
+
+<div class="rapid-ref" id="rapid">
+  <h3>Rapid Reference — High-Yield Board Facts</h3>
+  <table>
+    <thead><tr><th>Topic</th><th>Key Fact</th></tr></thead>
+    <tbody>
+      <tr><td>High-Risk Anastomosis Markers</td><td>Albumin &lt;25g/L, steroids, contamination, emergency.</td></tr>
+      <tr><td>Embryological Planes</td><td>Medial-to-lateral dissection enters Toldt's fascia between mesentery and retroperitoneum.</td></tr>
+      <tr><td>Minimum LN Harvest</td><td><strong>12 nodes</strong> are required for accurate colorectal staging.</td></tr>
+      <tr><td>IMA Ligation Danger Zone</td><td>The left ureter lies <strong>directly posterior</strong> to the IMA at the aortic origin.</td></tr>
+      <tr><td>Circular Stapler Requirement</td><td>Both donuts must be complete 360° circles; perform a leak test immediately.</td></tr>
+      <tr><td>ERAS Fluid Management</td><td>Restrict IV fluids; excess crystalloid causes bowel oedema and increases leak risk.</td></tr>
+      <tr><td>Tachycardia POD3-4</td><td>This is an <strong>anastomotic leak</strong> until proven otherwise by CT with contrast.</td></tr>
+      <tr><td>Ureteric Injury (Delayed)</td><td>Presents as flank pain, urinoma, or rising creatinine POD2-5. Order CT urogram.</td></tr>
+      <tr><td>Colorectal Surveillance</td><td>CEA 3-monthly. CT annually. Colonoscopy at 1 year.</td></tr>
+      <tr><td>Hartmann's Reversal Rate</td><td>Disappointingly low in practice (40-60%). Counsel patients accordingly.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div></main>
+
+<button id="top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+const progressBar = document.getElementById('progress-bar');
+const topBtn = document.getElementById('top-btn');
+const sidebarToggle = document.getElementById('sidebar-toggle');
+const sidebarOverlay = document.getElementById('sidebar-overlay');
+const navItems = document.querySelectorAll('.nav-item');
+const sections = document.querySelectorAll('.topic[id], .rapid-ref[id]');
+const body = document.body;
+
+function toggleSidebar() { body.classList.toggle('sidebar-open'); }
+function closeSidebar() { body.classList.remove('sidebar-open'); }
+
+window.addEventListener('scroll', () => {
+  const st = window.scrollY;
+  const dh = document.documentElement.scrollHeight - window.innerHeight;
+  progressBar.style.transform = `scaleX(${st / dh})`;
+  topBtn.classList.toggle('show', st > 400);
+  
+  let current = '';
+  sections.forEach(s => { if (st >= s.offsetTop - 120) current = s.id; });
+  navItems.forEach(n => { n.classList.toggle('active', n.getAttribute('href') === '#' + current); });
+});
+
+function filterNav(query) {
+  const q = query.toLowerCase();
+  navItems.forEach(item => { item.style.display = (!q || item.textContent.toLowerCase().includes(q)) ? 'block' : 'none'; });
+  document.querySelectorAll('.vol-label').forEach(l => { l.style.display = 'block'; });
+}
+
+navItems.forEach(item => {
+  item.addEventListener('click', e => {
+    e.preventDefault();
+    closeSidebar();
+    const target = document.querySelector(item.getAttribute('href'));
+    if (target) window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 80, behavior: 'smooth' });
+  });
+});
+
+document.querySelectorAll('.topic').forEach((el, i) => { el.style.animationDelay = `${i * 0.03}s`; });
+</script>
+</body>
+</html>

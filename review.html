@@ -433,16 +433,17 @@ async function runQuery() {
     const res = await fetch('https://openrouter.ai/api/v1/chat/completions', {
       method: 'POST',
       headers: { 
-        'Authorization': 'Bearer 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',
+        'Authorization': 'Bearer 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',
         'Content-Type': 'application/json' 
       },
       body: JSON.stringify({
-        model: 'anthropic/claude-3.5-sonnet',
+        model: 'openai/gpt-4o',
         stream: true,
         messages: [
           { role: 'system', content: SYSTEM_PROMPT },
           { role: 'user', content: topic }
-        ]
+        ],
+        session_id: 'my-session-123'
       })
     });
 

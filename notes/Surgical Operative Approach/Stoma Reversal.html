@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Surgical Insight Hub — Stoma Reversal Monograph</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  /* Terracotta & Deep Slate Aesthetic */
+  --primary:   #6F3023; 
+  --primary-dk:#211412;
+  --primary-lt:#F6EBE9;
+  --accent:    #9C4634;
+  --accent2:   #D4806A;
+  --gold:      #C28E46;
+  --gold-lt:   #FDF8ED;
+  --s1:        #6F3023;
+  --s2:        #44383D;
+  --s3:        #3B4A43;
+  --s4:        #8C6746;
+  --s5:        #293642;
+  --s1-lt:     #F6EBE9;
+  --s2-lt:     #ECEAEB;
+  --s3-lt:     #EAECEB;
+  --s4-lt:     #F4EFEB;
+  --s5-lt:     #E8EBED;
+  --red:       #A32A2A;
+  --red-lt:    #FEF2F2;
+  --amber:     #A65D12;
+  --amber-lt:  #FFFBEB;
+  --blue:      #234A70;
+  --blue-lt:   #EFF6FF;
+  --bg:        #FCFBF9;
+  --bg2:       #F3F1ED;
+  --border:    #E4DFD9;
+  --text:      #2A2624;
+  --muted:     #635B56;
+  --white:     #FFFFFF;
+  --sidebar-w: 320px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.75;}
+
+/* SLIDE-OVER SIDEBAR */
+#sidebar {
+  position: fixed; top: 0; left: 0; width: var(--sidebar-w); height: 100vh;
+  background: var(--primary-dk); color: #EBE5E7;
+  display: flex; flex-direction: column;
+  z-index: 1000; overflow: hidden;
+  transform: translateX(-100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 4px 0 24px rgba(0,0,0,0.3);
+}
+body.sidebar-open #sidebar {
+  transform: translateX(0);
+}
+
+/* OVERLAY */
+#sidebar-overlay {
+  position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+  background: rgba(33, 20, 18, 0.5); backdrop-filter: blur(2px);
+  z-index: 950; opacity: 0; pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+body.sidebar-open #sidebar-overlay {
+  opacity: 1; pointer-events: auto;
+}
+
+/* TOGGLE BUTTON - TOP LEFT */
+#sidebar-toggle {
+  position: fixed; top: 24px; left: 28px; z-index: 900;
+  background: var(--primary); color: white;
+  border: none; border-radius: 30px;
+  padding: 10px 18px; font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600;
+  letter-spacing: 0.05em; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  display: flex; align-items: center; gap: 8px; transition: all 0.2s;
+}
+#sidebar-toggle:hover {
+  background: var(--accent); transform: translateY(-2px);
+}
+
+#sidebar-header{padding:20px 20px 14px;border-bottom:1px solid rgba(255,255,255,0.08);flex-shrink:0;}
+#sidebar-header .logo{font-family:'Playfair Display',serif;font-size:13px;font-weight:700;color:var(--accent2);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;}
+#sidebar-header .sub{font-size:10.5px;color:rgba(235,229,231,0.6);letter-spacing:0.04em;}
+#sidebar-search{padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.05);flex-shrink:0;}
+#sidebar-search input{width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:6px;color:#EBE5E7;padding:6px 10px;font-size:12px;font-family:'Source Serif 4',serif;outline:none;transition:border-color 0.2s;}
+#sidebar-search input::placeholder{color:rgba(235,229,231,0.4);}
+#sidebar-search input:focus{border-color:var(--accent2);}
+#sidebar-nav{flex:1;overflow-y:auto;padding:8px 0 20px;}
+#sidebar-nav::-webkit-scrollbar{width:4px;}
+#sidebar-nav::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.15);border-radius:2px;}
+.vol-label{font-size:9.5px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent2);padding:14px 18px 4px;}
+.nav-item{display:block;padding:8px 18px 8px 22px;font-size:12.5px;color:rgba(235,229,231,0.75);text-decoration:none;border-left:2px solid transparent;transition:all 0.15s;line-height:1.4;}
+.nav-item:hover{color:#fff;background:rgba(255,255,255,0.03);border-left-color:rgba(212,128,106,0.5);}
+.nav-item.active{color:#fff;background:rgba(255,255,255,0.06);border-left-color:var(--accent2);font-weight:600;}
+.nav-item .num{font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(235,229,231,0.4);margin-right:6px;}
+
+/* MAIN */
+#main{margin-left:0; min-height:100vh;}
+
+/* HERO */
+#hero{background:linear-gradient(135deg,var(--primary-dk) 0%,#4D1E14 60%,#211412 100%);color:white;padding:90px 72px 60px;position:relative;overflow:hidden;}
+#hero::before{content:'';position:absolute;top:-60px;right:-60px;width:380px;height:380px;background:radial-gradient(circle,rgba(212,128,106,0.15) 0%,transparent 70%);pointer-events:none;}
+#hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent2),var(--gold),transparent);}
+#hero .eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.16em;color:var(--accent2);text-transform:uppercase;margin-bottom:14px;}
+#hero h1{font-family:'Playfair Display',serif;font-size:46px;font-weight:700;line-height:1.15;margin-bottom:10px;color:#fff;}
+#hero .subtitle{font-size:18px;color:rgba(255,255,255,0.7);font-style:italic;margin-bottom:28px;}
+#hero .badges{display:flex;gap:10px;flex-wrap:wrap;}
+#hero .badge{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:20px;padding:4px 14px;font-size:12px;color:rgba(255,255,255,0.9);font-family:'JetBrains Mono',monospace;}
+
+/* CONTENT */
+.content-wrap{max-width:900px;margin:0 auto;padding:0 48px 80px;}
+
+/* SECTION HEADER */
+.sec-header{margin-top:60px;margin-bottom:8px;padding:28px 36px;border-radius:10px;display:flex;align-items:center;gap:20px;}
+.sec-header.s1{background:linear-gradient(135deg,#6F302308,#6F302315);border-left:4px solid var(--s1);}
+.sec-header.s2{background:linear-gradient(135deg,#44383D08,#44383D15);border-left:4px solid var(--s2);}
+.sec-header.s3{background:linear-gradient(135deg,#3B4A4308,#3B4A4315);border-left:4px solid var(--s3);}
+.sec-header.s4{background:linear-gradient(135deg,#8C674608,#8C674615);border-left:4px solid var(--s4);}
+.sec-header.s5{background:linear-gradient(135deg,#29364208,#29364215);border-left:4px solid var(--s5);}
+.sec-badge{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;letter-spacing:0.1em;padding:4px 12px;border-radius:4px;white-space:nowrap;flex-shrink:0;}
+.s1 .sec-badge{background:var(--s1);color:white;}
+.s2 .sec-badge{background:var(--s2);color:white;}
+.s3 .sec-badge{background:var(--s3);color:white;}
+.s4 .sec-badge{background:var(--s4);color:white;}
+.s5 .sec-badge{background:var(--s5);color:white;}
+.sec-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;}
+.s1 .sec-title{color:var(--s1);}
+.s2 .sec-title{color:var(--s2);}
+.s3 .sec-title{color:var(--s3);}
+.s4 .sec-title{color:var(--s4);}
+.s5 .sec-title{color:var(--s5);}
+
+/* TOPIC */
+.topic{margin-top:48px;padding-top:48px;border-top:1px solid var(--border);}
+.topic:first-of-type{border-top:none;}
+.topic-header{display:flex;align-items:flex-start;gap:16px;margin-bottom:24px;}
+.topic-num{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;padding:3px 10px;border-radius:4px;margin-top:4px;flex-shrink:0;}
+.s1 .topic-num{background:var(--s1-lt);color:var(--s1);}
+.s2 .topic-num{background:var(--s2-lt);color:var(--s2);}
+.s3 .topic-num{background:var(--s3-lt);color:var(--s3);}
+.s4 .topic-num{background:var(--s4-lt);color:var(--s4);}
+.s5 .topic-num{background:var(--s5-lt);color:var(--s5);}
+.topic h2{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;line-height:1.2;}
+.s1 .topic h2{color:var(--s1);}
+.s2 .topic h2{color:var(--s2);}
+.s3 .topic h2{color:var(--s3);}
+.s4 .topic h2{color:var(--s4);}
+.s5 .topic h2{color:var(--s5);}
+.topic h3{font-family:'Playfair Display',serif;font-size:17px;font-weight:600;color:var(--muted);margin:26px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--border);}
+.topic h4{font-size:13px;font-weight:600;color:var(--muted);letter-spacing:0.06em;text-transform:uppercase;margin:18px 0 8px;font-family:'JetBrains Mono',monospace;}
+.topic p{margin-bottom:12px;color:var(--text);}
+.topic ul,.topic ol{margin:8px 0 14px 20px;color:var(--text);}
+.topic li{margin-bottom:6px;line-height:1.65;}
+.topic li::marker{color:var(--accent2);}
+.topic strong{color:var(--text);font-weight:600;}
+
+/* TABLES */
+.table-wrap{overflow-x:auto;margin:16px 0 20px;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.04);}
+table{width:100%;border-collapse:collapse;font-size:13.5px;background:white;}
+thead tr{background:var(--s1);}
+thead th{color:white;padding:10px 14px;text-align:left;font-family:'Source Serif 4',serif;font-weight:600;font-size:13px;}
+tbody tr:nth-child(even){background:var(--bg2);}
+tbody tr:hover{background:var(--s1-lt);transition:background 0.15s;}
+tbody td{padding:9px 14px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.5;}
+.s2-tbl thead tr{background:var(--s2);}
+.s3-tbl thead tr{background:var(--s3);}
+.s4-tbl thead tr{background:var(--s4);}
+.s5-tbl thead tr{background:var(--s5);}
+
+/* CALLOUTS */
+.callout{margin:18px 0;padding:14px 18px;border-radius:0 8px 8px 0;border-left:4px solid;font-size:14px;line-height:1.65;}
+.callout .label{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;display:block;margin-bottom:4px;}
+.callout.pearl{background:var(--amber-lt);border-color:var(--amber);}
+.callout.pearl .label{color:var(--amber);}
+.callout.warn{background:var(--red-lt);border-color:var(--red);}
+.callout.warn .label{color:var(--red);}
+.callout.clin{background:var(--s1-lt);border-color:var(--s1);}
+.callout.clin .label{color:var(--s1);}
+.callout.exam{background:var(--blue-lt);border-color:var(--blue);}
+.callout.exam .label{color:var(--blue);}
+
+/* DIAGRAM */
+.diagram-wrap{background:white;border:1px solid var(--border);border-radius:8px;padding:18px;margin:20px 0;box-shadow:0 1px 4px rgba(0,0,0,0.03);}
+.diagram-title{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--s1);margin-bottom:12px;}
+
+/* RAPID REFERENCE */
+.rapid-ref{background:var(--primary-dk);color:var(--primary-lt);border-radius:10px;padding:28px 32px;margin:30px 0;}
+.rapid-ref h3{font-family:'Playfair Display',serif;font-size:20px;color:var(--accent2);margin-bottom:16px;}
+.rapid-ref table{font-size:12.5px; background: transparent;}
+.rapid-ref thead tr{background:rgba(212,128,106,0.15);}
+.rapid-ref thead th{color:var(--accent2);padding:8px 12px;font-size:11px;}
+.rapid-ref tbody tr:nth-child(even){background:rgba(255,255,255,0.03);}
+.rapid-ref tbody tr:hover{background:rgba(255,255,255,0.06);}
+.rapid-ref tbody td{color:var(--primary-lt);padding:7px 12px;border-bottom:1px solid rgba(255,255,255,0.05);}
+.rapid-ref tbody td strong{color:var(--gold);}
+
+/* PROGRESS */
+#progress-bar{position:fixed;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent2),var(--gold));transform-origin:left;transform:scaleX(0);transition:transform 0.1s;z-index:50;}
+
+/* TOP BTN */
+#top-btn{position:fixed;bottom:28px;right:28px;background:var(--primary);color:white;border:none;border-radius:50%;width:44px;height:44px;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,0.2);transition:all 0.2s;opacity:0;pointer-events:none;}
+#top-btn.show{opacity:1;pointer-events:auto;}
+#top-btn:hover{background:var(--accent2);transform:translateY(-2px);}
+
+/* ANIMATION */
+.topic{animation:fadeUp 0.4s ease both;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
+
+@media(max-width:900px){
+  .content-wrap{padding:0 20px 60px;}
+  #hero{padding:72px 20px 40px;}
+  #hero h1{font-size:30px;}
+}
+@media print{
+  #sidebar-toggle, #sidebar-overlay, #sidebar, #top-btn, #progress-bar{display:none!important;}
+  .topic{page-break-inside:avoid;}
+  .sec-header{page-break-before:always;}
+}
+</style>
+</head>
+<body>
+<div id="progress-bar"></div>
+
+<div id="sidebar-overlay" onclick="closeSidebar()"></div>
+
+<button id="sidebar-toggle" onclick="toggleSidebar()">
+  <span>☰</span> Contents
+</button>
+
+<nav id="sidebar">
+  <div id="sidebar-header">
+    <div class="logo">Surgical Insight Hub</div>
+    <div class="sub">Stoma Reversal · Monograph Series</div>
+  </div>
+  <div id="sidebar-search">
+    <input type="text" id="search-input" placeholder="Search topics…" oninput="filterNav(this.value)">
+  </div>
+  <div id="sidebar-nav">
+    <div class="vol-label">Pillar 1 — Pre-Op Optimization</div>
+    <a class="nav-item" href="#p1a"><span class="num">1.1</span>Clinical Workup</a>
+    <a class="nav-item" href="#p1b"><span class="num">1.2</span>Risk Stratification</a>
+    <a class="nav-item" href="#p1c"><span class="num">1.3</span>Immediate Pre-Op</a>
+    <div class="vol-label">Pillar 2 — The Operative Game Plan</div>
+    <a class="nav-item" href="#p2a"><span class="num">2.1</span>Loop Ileostomy Reversal</a>
+    <a class="nav-item" href="#p2b"><span class="num">2.2</span>Loop Colostomy Reversal</a>
+    <a class="nav-item" href="#p2c"><span class="num">2.3</span>Hartmann's Reversal</a>
+    <a class="nav-item" href="#p2d"><span class="num">2.4</span>End Ileostomy (IPAA)</a>
+    <div class="vol-label">Pillar 3 — Pearls &amp; Bail-Outs</div>
+    <a class="nav-item" href="#p3a"><span class="num">3.1</span>Consultant Pearls</a>
+    <a class="nav-item" href="#p3b"><span class="num">3.2</span>The Bail-Out Point</a>
+    <div class="vol-label">Pillar 4 — Post-Op Care</div>
+    <a class="nav-item" href="#p4a"><span class="num">4.1</span>Immediate Recovery</a>
+    <a class="nav-item" href="#p4b"><span class="num">4.2</span>Clinic Follow-up</a>
+    <div class="vol-label">Pillar 5 — Complications</div>
+    <a class="nav-item" href="#p5a"><span class="num">5.1</span>Anastomotic Leak</a>
+    <a class="nav-item" href="#p5b"><span class="num">5.2</span>Stoma Site Hernia / SSI</a>
+    <a class="nav-item" href="#p5c"><span class="num">5.3</span>Small Bowel Obstruction</a>
+    <div class="vol-label">Quick Reference</div>
+    <a class="nav-item" href="#rapid">High-Yield Board Facts</a>
+  </div>
+</nav>
+
+<main id="main">
+<section id="hero">
+  <div class="eyebrow">Surgical Insight Hub · Monograph Series · ABSITE · PGY-3 Framework</div>
+  <h1>Stoma Reversal</h1>
+  <p class="subtitle">Hartmann's, Loop Ileostomy, Loop Colostomy &amp; End Ileostomy</p>
+  <div class="badges">
+    <span class="badge">Colorectal</span>
+    <span class="badge">Re-Operative Surgery</span>
+    <span class="badge">Anastomosis</span>
+  </div>
+</section>
+
+<div class="content-wrap">
+
+<div class="callout warn" style="margin-top: 40px;">
+  <span class="label">⚠ Read Before Proceeding</span>
+  Stoma reversal is consistently underestimated. Residents see it as "just putting the bowel back together" — the inverse of what was already done. That framing is dangerous. You are operating in a previously dissected field, on bowel that has been defunctioned and may be atrophic, through an abdominal wall that has scarred around the stoma. Hartmann's reversal in particular carries morbidity rates that rival the index operation. Respect every one of these procedures.
+</div>
+
+<div class="sec-header s1">
+  <span class="sec-badge">PILLAR 1</span>
+  <span class="sec-title">Pre-operative Optimization &amp; Preparation</span>
+</div>
+
+<section class="topic s1" id="p1a">
+  <div class="topic-header"><span class="topic-num">1.1</span><h2>Clinical Workup</h2></div>
+  
+  <h3>History: Index Operation Details</h3>
+  <ul>
+    <li>What was the original indication (malignancy, diverticular disease, IBD, trauma)?</li>
+    <li>What exactly was done? Get the original operative note; do not rely on patient recollection.</li>
+    <li>Was there intraoperative contamination, peritonitis, or radiation to the pelvis? All increase difficulty.</li>
+    <li>What mesh is in the abdominal wall if a prior hernia repair was done? Synthetic mesh changes access.</li>
+  </ul>
+
+  <h3>Stoma-specific History</h3>
+  <ul>
+    <li><strong>Duration:</strong> longer duration means more adhesions, distal bowel atrophy, and a fibrotic defect.</li>
+    <li><strong>Complications:</strong> retraction, prolapse, parastomal hernia, skin excoriation suggest technical difficulty.</li>
+    <li><strong>Output:</strong> high output ileostomy suggests ongoing small bowel adaptation issues; correct before reversal.</li>
+    <li><strong>Distal limb usage:</strong> A completely defunctioned segment undergoes disuse atrophy (fragile mucosa, decreased caliber).</li>
+  </ul>
+
+  <h3>Functional &amp; Oncological Assessment</h3>
+  <ul>
+    <li><strong>Anorectal function:</strong> Ask specifically about continence, urgency, ability to defer. A patient with pre-existing faecal incontinence should not have a Hartmann's reversal without a frank discussion on functional outcomes.</li>
+    <li><strong>Oncological status:</strong> Confirm restaging CT before reversal for malignancy cases. Has adjuvant chemotherapy been completed? A rising CEA mandates restaging.</li>
+    <li><strong>Nutritional status:</strong> High-output ileostomy patients are often chronically dehydrated and sodium-depleted. Nutritional supplementation for 4-6 weeks if albumin &lt;30g/L.</li>
+  </ul>
+
+  <h3>Mandatory Pre-operative Investigations</h3>
+  <ul>
+    <li><strong>Distal limb assessment:</strong> Water-soluble contrast enema (Gastrografin) defines stump length, excludes stricture/fistula, and confirms patency. Flexible sigmoidoscopy assesses mucosal health (diversion colitis is common).</li>
+    <li><strong>CT abdomen/pelvis:</strong> Mandatory for Hartmann's reversal to define stump length, assess pelvic scarring, and stage malignancy.</li>
+    <li><strong>Labs:</strong> CBC, BMP (electrolytes are critical), LFTs, coagulation, albumin. Group and screen (crossmatch if complex adhesiolysis anticipated).</li>
+  </ul>
+</section>
+
+<section class="topic s1" id="p1b">
+  <div class="topic-header"><span class="topic-num">1.2</span><h2>Risk Stratification</h2></div>
+  <div class="table-wrap s1-tbl"><table>
+    <thead><tr><th>Score/Factor</th><th>Application</th><th>Impact on Plan</th></tr></thead>
+    <tbody>
+      <tr><td><strong>ASA / POSSUM</strong></td><td>Global operative risk</td><td>Hartmann's reversal POSSUM scores often exceed the index operation.</td></tr>
+      <tr><td><strong>Leak Risk Factors</strong></td><td>Modifiable pre-op risk</td><td>Albumin, steroid use, radiation, obesity, male sex. Modify what you can.</td></tr>
+      <tr><td><strong>Hinchey Class</strong></td><td>Index operation contamination</td><td>Higher Hinchey at index = more pelvic scarring = higher reversal difficulty.</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="callout clin">
+    <span class="label">The Reversal Rate Reality Check</span>
+    Published Hartmann's reversal rates are 40-65% in population-level studies. The gap between "planned temporary" and "actually reversed" is large, driven by patient comorbidity and surgical reluctance. When consenting for the index operation, be honest: reversal is not guaranteed.
+  </div>
+</section>
+
+<section class="topic s1" id="p1c">
+  <div class="topic-header"><span class="topic-num">1.3</span><h2>Immediate Pre-operative Protocols</h2></div>
+  
+  <ul>
+    <li><strong>Bowel Preparation:</strong> 
+      <ul>
+        <li><em>Loop ileostomy reversal:</em> Mechanical prep not routinely required; oral antibiotics the day before.</li>
+        <li><em>Hartmann's / loop colostomy reversal:</em> Full mechanical prep of proximal stoma AND distal limb (retrograde prep via stump). The distal segment must be cleared of mucus and disuse debris.</li>
+      </ul>
+    </li>
+    <li><strong>Antibiotic Prophylaxis:</strong> Cefazolin 1-2g IV + Metronidazole 500mg IV within 60 minutes of incision.</li>
+    <li><strong>DVT Prophylaxis:</strong> Mechanical compression + LMWH. Extended 28-day LMWH if original indication was malignancy.</li>
+    <li><strong>Ureteric Stents:</strong> Consider strongly for Hartmann's reversal with prior pelvic sepsis, radiation, or locally advanced malignancy.</li>
+    <li><strong>Consent Non-Negotiables:</strong> Anastomotic leak, re-formation of stoma, wound infection, SBO. <em>For Hartmann's:</em> Ureteric injury, bleeding (transfusion consent), rectal stump perforation, sexual/bladder dysfunction, and functional outcomes.</li>
+  </ul>
+</section>
+
+<div class="sec-header s2">
+  <span class="sec-badge">PILLAR 2</span>
+  <span class="sec-title">The Operative Game Plan</span>
+</div>
+
+<section class="topic s2" id="p2a">
+  <div class="topic-header"><span class="topic-num">2.1</span><h2>PROCEDURE A: Loop Ileostomy Reversal</h2></div>
+  
+  <p>Straightforward in concept; the complications are real and underappreciated.</p>
+  <ul>
+    <li><strong>Phase 1 — Stoma Mobilization:</strong> Incise circumferentially at the mucocutaneous junction. Use sharp and blunt dissection to free bowel from skin, fascia, and peritoneum. Deliver 5-8cm of each limb.</li>
+    <li><strong>Phase 2 — Assessment:</strong> Inspect both limbs for adequate length, healthy blood supply, no active disease, and no stricture. Resect any stricture.</li>
+    <li><strong>Phase 3 — Anastomosis (Stapled Side-to-Side):</strong> Excise trimmed edges back to healthy bowel. Align limbs in isoperistaltic orientation. Insert GIA stapler limbs and fire. Close the common enterotomy. Check for bleeding, tension, and twist. Hand-sewn end-to-end is acceptable for caliber mismatch.</li>
+    <li><strong>Phase 4 — Fascial Closure:</strong> This is where stoma site hernias originate. Close fascial defect securely with interrupted 1-loop PDS. Consider sublay mesh for large defects.</li>
+    <li><strong>Phase 5 — Skin Closure:</strong> Purse-string closure (Vicryl purse-string at skin level, left to granulate) significantly reduces SSI compared to primary closure.</li>
+  </ul>
+</section>
+
+<section class="topic s2" id="p2b">
+  <div class="topic-header"><span class="topic-num">2.2</span><h2>PROCEDURE B: Loop Colostomy Reversal</h2></div>
+  <p>Technically similar to loop ileostomy reversal but with important differences.</p>
+  <ul>
+    <li>Bowel prep of both limbs is more critical due to formed stool and higher bacterial load.</li>
+    <li>The colostomy is typically more adherent with more omental adhesions. Be prepared for more dissection.</li>
+    <li>Examine the distal limb carefully for severe diversion colitis.</li>
+    <li><strong>Anastomosis:</strong> Stapled side-to-side (75-80mm cartridge) reduces stricture risk. Colon handles less gently than small bowel — do not crush the wall.</li>
+    <li>Purse-string skin closure is preferred given the higher bacterial contamination.</li>
+  </ul>
+</section>
+
+<section class="topic s2" id="p2c">
+  <div class="topic-header"><span class="topic-num">2.3</span><h2>PROCEDURE C: Hartmann's Reversal</h2></div>
+  
+  <div class="callout warn">
+    <span class="label">A Major Operation</span>
+    This is a different operation entirely from a loop stoma reversal. Treat it as a major colorectal procedure.
+  </div>
+
+  <ul>
+    <li><strong>Setup:</strong> Modified Lloyd-Davies positioning is mandatory. You need access to the abdomen and perineum.</li>
+    <li><strong>Phase 1 — Access &amp; Adhesiolysis:</strong> Midline laparotomy. Systematic adhesiolysis (can take 30-60 mins). Free left colon from retroperitoneal adhesions. Identify both ureters early.</li>
+    <li><strong>Phase 2 — Mobilization of Rectal Stump:</strong> Palpate per rectum with non-dominant hand while dissecting in the pelvis. Alternatively, pass a rigid sigmoidoscope to tent the stump. Excise the staple line to reach viable rectal wall.</li>
+    <li><strong>Phase 3 — Mobilization of End Colostomy:</strong> Mobilize colostomy from abdominal wall. Free proximal colon. Splenic flexure takedown is commonly required to ensure no tension.</li>
+    <li><strong>Phase 4 — Anastomosis:</strong> Circular stapled end-to-end. Insert anvil into proximal colon, secure with full-thickness purse-string. Introduce stapler transanally. Dock anvil, confirm no tension, twist, or caught tissue. Fire stapler. Inspect both donuts (must be 360°).</li>
+    <li><strong>Phase 5 — Leak Test:</strong> Fill pelvis with saline, insufflate air per rectum. No bubbles = proceed.</li>
+    <li><strong>Phase 6 — Closure:</strong> Close colostomy fascial defect. Consider pelvic drain to the anastomosis. Mass closure of midline fascia.</li>
+  </ul>
+</section>
+
+<section class="topic s2" id="p2d">
+  <div class="topic-header"><span class="topic-num">2.4</span><h2>PROCEDURE D: End Ileostomy Reversal (After IPAA)</h2></div>
+  <ul>
+    <li>Pre-operative pouch assessment is mandatory: water-soluble contrast pouchogram (confirms integrity, no stricture), flexible pouchoscopy (mucosal assessment), and anorectal manometry (confirm sphincter function).</li>
+    <li>Minimum interval from index operation is 8-12 weeks.</li>
+    <li>The anastomosis is standard, but early pouch function is poor (8-10 bowel movements per day is normal initially). Counsel patients heavily on functional expectations.</li>
+  </ul>
+</section>
+
+<div class="sec-header s3">
+  <span class="sec-badge">PILLAR 3</span>
+  <span class="sec-title">Technical Pearls &amp; Bail-Out Strategies</span>
+</div>
+
+<section class="topic s3" id="p3a">
+  <div class="topic-header"><span class="topic-num">3.1</span><h2>Consultant Pearls</h2></div>
+  
+  <div class="callout pearl">
+    <span class="label">Consultant Pearl #1: Find the Rectal Stump First</span>
+    In Hartmann's reversal, the sequence matters. The most common point of significant blood loss is searching for a buried stump through dense adhesions. Your first maneuver after adhesiolysis should be a bimanual examination to locate the stump. Once found, dissection becomes targeted. If you can't find it after 20 minutes, use ureteric stents, a sigmoidoscope, or call a senior. Do not dissect blindly.
+  </div>
+
+  <div class="callout pearl">
+    <span class="label">Consultant Pearl #2: The Short Rectal Stump Options</span>
+    A stump shorter than 5cm creates a genuine challenge. Options include transanal dissection to gain length, intersphincteric dissection (requires experience), hand-sewn coloanal anastomosis (demanding, high urgency/frequency), or accepting a permanent stoma if comorbidities dictate.
+  </div>
+
+  <div class="callout pearl">
+    <span class="label">Consultant Pearl #3: The Purse-String Is Critical</span>
+    For circular-stapled anastomosis, technical failures begin at the purse-string. A poor purse-string causes dog-ears, incomplete donuts, or ischemia. Place full-thickness bites at 3-4mm intervals. Tie snugly around the anvil spike, but ensure the anvil can still rotate freely.
+  </div>
+</section>
+
+<section class="topic s3" id="p3b">
+  <div class="topic-header"><span class="topic-num">3.2</span><h2>The Bail-Out Point</h2></div>
+  <p>Stop and escalate when:</p>
+  <ul>
+    <li><strong>Cannot find the rectal stump</strong> after reasonable bimanual and sigmoidoscopic search. Further blind dissection risks ureteric/bladder injury.</li>
+    <li><strong>Anastomosis is under tension</strong> after full mobilization including splenic flexure takedown. Abandon anastomosis, bring out new end colostomy, plan staged approach.</li>
+    <li><strong>Donuts are not complete.</strong> Redo the anastomosis. A partial donut is never acceptable.</li>
+    <li><strong>Leak test is persistently positive</strong> despite repair attempts. Defunction with a loop ileostomy.</li>
+    <li><strong>Ureteric injury identified.</strong> Stop pelvic dissection, call urology.</li>
+    <li><strong>Bowel is ischemic</strong> at proposed anastomotic site. Resect proximally to viable bowel.</li>
+    <li><strong>Haemodynamic instability on the table.</strong> Pack pelvis, call senior, consider damage control closure.</li>
+  </ul>
+</section>
+
+<div class="sec-header s4">
+  <span class="sec-badge">PILLAR 4</span>
+  <span class="sec-title">Post-operative Care &amp; Longitudinal Follow-up</span>
+</div>
+
+<section class="topic s4" id="p4a">
+  <div class="topic-header"><span class="topic-num">4.1</span><h2>Immediate Post-op (First 24 Hours)</h2></div>
+  
+  <h3>Loop Ileostomy / Colostomy Reversal (No Laparotomy)</h3>
+  <ul>
+    <li><strong>Diet:</strong> Clear fluids same day. Soft diet POD1. Flatus expected within 24-48h.</li>
+    <li><strong>Pain:</strong> Modest requirements. Scheduled acetaminophen + NSAIDs.</li>
+    <li><strong>Wound:</strong> Purse-string wounds require daily dressing changes (pack gently with non-adherent dressing).</li>
+    <li><strong>Discharge target:</strong> POD1-2 if tolerating diet, bowel function returning, wound manageable.</li>
+  </ul>
+
+  <h3>Hartmann's Reversal (Major Laparotomy / ERAS)</h3>
+  <ul>
+    <li><strong>Fluids:</strong> Restrict IV fluids aggressively.</li>
+    <li><strong>Diet:</strong> Sips same day; clear fluids POD1; regular diet POD3.</li>
+    <li><strong>Pain:</strong> Epidural for open cases; TAP blocks for laparoscopic. Minimize opioids.</li>
+    <li><strong>Monitoring:</strong> Tachycardia on POD3-4 is a leak until proven otherwise. Daily CRP. Monitor urine output for ureteric injury.</li>
+    <li><strong>Discharge target:</strong> POD4-6 uncomplicated.</li>
+  </ul>
+</section>
+
+<section class="topic s4" id="p4b">
+  <div class="topic-header"><span class="topic-num">4.2</span><h2>Clinic Follow-up</h2></div>
+  <ul>
+    <li><strong>2-week visit:</strong> Wound inspection (stoma site hernia, SSI, purse-string healing). Bowel function assessment (set realistic expectations for early impairment).</li>
+    <li><strong>6-week visit:</strong> Functional assessment. Investigate persistent difficulty (anastomotic stricture is common and amenable to endoscopic dilatation). Early hernias detected should be referred for elective repair.</li>
+    <li><strong>3-6 month visit:</strong> Long-term functional outcome assessment. Colonoscopy at 1 year for malignancy cases.</li>
+  </ul>
+</section>
+
+<div class="sec-header s5">
+  <span class="sec-badge">PILLAR 5</span>
+  <span class="sec-title">Complication Management</span>
+</div>
+
+<section class="topic s5" id="p5a">
+  <div class="topic-header"><span class="topic-num">5.1</span><h2>Complication 1: Anastomotic Leak</h2></div>
+  <ul>
+    <li><strong>Recognition:</strong> Peak POD3-5. For Hartmann's reversal: tachycardia, rising CRP, failure to progress. For loop ileostomy reversal: often presents earlier as small bowel fistula or wound breakdown. <em>CRP &gt;150 on POD3 has high sensitivity for significant leak.</em></li>
+    <li><strong>Correction (Contained):</strong> IV antibiotics, CT-guided drainage, defunctioning loop ileostomy.</li>
+    <li><strong>Correction (Free leak / Septic):</strong> Emergency re-laparotomy. Washout. If salvageable: repair + defunction. If not salvageable: dismantle anastomosis, end stoma formation. Patient must know this risk beforehand.</li>
+  </ul>
+</section>
+
+<section class="topic s5" id="p5b">
+  <div class="topic-header"><span class="topic-num">5.2</span><h2>Complication 2: Stoma Site Hernia / SSI</h2></div>
+  <ul>
+    <li><strong>Recognition:</strong> Bulge at old stoma site (10-30% incidence after loop ileostomy reversal). SSI presents as erythema, breakdown, or purulent discharge POD3-7 (primary closure has 10-20% SSI rate).</li>
+    <li><strong>Correction (Hernia):</strong> Elective laparoscopic mesh repair preferred (primary suture alone has &gt;50% recurrence). Urgent repair for incarceration.</li>
+    <li><strong>Correction (SSI):</strong> Open the wound, irrigate, pack with non-adherent dressing, allow secondary intention healing. Do not treat with antibiotics alone if there is a collection.</li>
+  </ul>
+</section>
+
+<section class="topic s5" id="p5c">
+  <div class="topic-header"><span class="topic-num">5.3</span><h2>Complication 3: Small Bowel Obstruction</h2></div>
+  <ul>
+    <li><strong>Recognition:</strong> Early SBO (within 1 week) usually at anastomotic site. Late SBO is adhesional. Colicky pain, bilious vomiting, distension.</li>
+    <li><strong>Workup:</strong> CT abdomen/pelvis defines site, level, and excludes closed loop.</li>
+    <li><strong>Correction (Early/Partial):</strong> NG decompression, IV fluids, observe 48-72h. Water-soluble contrast via NG tube is therapeutic/diagnostic.</li>
+    <li><strong>Correction (Complete/Failure to resolve):</strong> Operative intervention (laparoscopic adhesiolysis). Advise all patients that SBO is a lifetime risk.</li>
+  </ul>
+</section>
+
+<div class="rapid-ref" id="rapid">
+  <h3>Rapid Reference — High-Yield Board Facts</h3>
+  <table>
+    <thead><tr><th>Topic</th><th>Key Fact</th></tr></thead>
+    <tbody>
+      <tr><td>Distal Limb Assessment</td><td>Mandatory before reversal. Requires <strong>Water-soluble contrast enema</strong> + Flexible sigmoidoscopy.</td></tr>
+      <tr><td>Purse-String Skin Closure</td><td>Significantly reduces SSI at stoma site to &lt;5% compared to primary closure (10-20%).</td></tr>
+      <tr><td>Hartmann's Reversal First Step</td><td>After adhesiolysis, perform a <strong>bimanual examination</strong> to locate the rectal stump before pelvic dissection.</td></tr>
+      <tr><td>Incomplete Circular Donut</td><td>Means incomplete anastomosis. Must redo or convert to hand-sewn.</td></tr>
+      <tr><td>End Ileostomy Reversal Timing</td><td>Wait <strong>8-12 weeks</strong> from index operation. Requires pouchogram + manometry.</td></tr>
+      <tr><td>Leak Indicator</td><td>Tachycardia + CRP &gt;150 on POD3-4. Act immediately; order CT with rectal contrast.</td></tr>
+      <tr><td>Stoma Site Hernia Rate</td><td>10-30% after reversal. Mesh closure reduces rate but carries infection risk.</td></tr>
+      <tr><td>Hartmann's Reversal Rate</td><td>Only 40-65% actually get reversed in population studies.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div></main>
+
+<button id="top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+const progressBar = document.getElementById('progress-bar');
+const topBtn = document.getElementById('top-btn');
+const sidebarToggle = document.getElementById('sidebar-toggle');
+const sidebarOverlay = document.getElementById('sidebar-overlay');
+const navItems = document.querySelectorAll('.nav-item');
+const sections = document.querySelectorAll('.topic[id], .rapid-ref[id]');
+const body = document.body;
+
+function toggleSidebar() { body.classList.toggle('sidebar-open'); }
+function closeSidebar() { body.classList.remove('sidebar-open'); }
+
+window.addEventListener('scroll', () => {
+  const st = window.scrollY;
+  const dh = document.documentElement.scrollHeight - window.innerHeight;
+  progressBar.style.transform = `scaleX(${st / dh})`;
+  topBtn.classList.toggle('show', st > 400);
+  
+  let current = '';
+  sections.forEach(s => { if (st >= s.offsetTop - 120) current = s.id; });
+  navItems.forEach(n => { n.classList.toggle('active', n.getAttribute('href') === '#' + current); });
+});
+
+function filterNav(query) {
+  const q = query.toLowerCase();
+  navItems.forEach(item => { item.style.display = (!q || item.textContent.toLowerCase().includes(q)) ? 'block' : 'none'; });
+  document.querySelectorAll('.vol-label').forEach(l => { l.style.display = 'block'; });
+}
+
+navItems.forEach(item => {
+  item.addEventListener('click', e => {
+    e.preventDefault();
+    closeSidebar();
+    const target = document.querySelector(item.getAttribute('href'));
+    if (target) window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 80, behavior: 'smooth' });
+  });
+});
+
+document.querySelectorAll('.topic').forEach((el, i) => { el.style.animationDelay = `${i * 0.03}s`; });
+</script>
+</body>
+</html>

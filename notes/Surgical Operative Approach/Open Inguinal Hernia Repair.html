@@ -72,10 +72,10 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--bg);color:var(-
 .nav-item .num{font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(224,225,221,0.4);margin-right:6px;}
 
 /* MAIN */
-#main{margin-left:var(--sidebar-w);min-height:100vh;padding-top:70px;}
+#main{margin-left:var(--sidebar-w);min-height:100vh;padding-top:0;}
 
 /* HERO */
-#hero{background:linear-gradient(135deg,var(--primary-dk) 0%,#1D2D44 60%,#0D1B2A 100%);color:white;padding:72px 72px 60px;position:relative;overflow:hidden;}
+#hero{background:linear-gradient(135deg,var(--primary-dk) 0%,#2D3E50 60%,#1B2838 100%);color:white;padding:120px 72px 60px;position:relative;overflow:hidden;}
 #hero::before{content:'';position:absolute;top:-60px;right:-60px;width:380px;height:380px;background:radial-gradient(circle,rgba(152,193,217,0.18) 0%,transparent 70%);pointer-events:none;}
 #hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent2),transparent);}
 #hero .eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.16em;color:var(--accent2);text-transform:uppercase;margin-bottom:14px;}
@@ -191,6 +191,7 @@ tbody td{padding:9px 14px;border-bottom:1px solid var(--border);vertical-align:t
   #hero{padding:48px 20px 40px;}
   #hero h1{font-size:30px;}
   #progress-bar{left:0;}
+  #sidebar.open { transform: translateX(0); z-index: 10000; }
 }
 @media print{
   .nav,.mob-nav-overlay,.mob-nav-sheet,#top-btn,#progress-bar{display:none!important;}
@@ -239,35 +240,11 @@ tbody td{padding:9px 14px;border-bottom:1px solid var(--border);vertical-align:t
   <a href="https://t.me/sugicalInsightHub" target="_blank" style="margin-top:20px;display:block;text-align:center;background:var(--brand-gold);color:#1a1208;padding:12px;border-radius:100px;">Join Telegram</a>
 </div>
 
+<button class="mono-sidebar-toggle" id="monoToggle">
+  <span>☰</span> Contents
+</button>
+
 <script src="../../js/nav-pill.js"></script>
-<script>
-  const themeToggle = document.getElementById('themeToggle');
-  const sunIcon = document.querySelector('.sun-icon');
-  const moonIcon = document.querySelector('.moon-icon');
-  function updateIcons(theme) {
-    if (theme === 'dark') { if(sunIcon) sunIcon.style.display='none'; if(moonIcon) moonIcon.style.display='block'; }
-    else { if(sunIcon) sunIcon.style.display='block'; if(moonIcon) moonIcon.style.display='none'; }
-  }
-  const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
-  updateIcons(currentTheme);
-  if (themeToggle) {
-    themeToggle.addEventListener('click', () => {
-      const root = document.documentElement;
-      let newTheme = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-      root.setAttribute('data-theme', newTheme);
-      localStorage.setItem('sih-theme', newTheme);
-      updateIcons(newTheme);
-    });
-  }
-  const mobToggle = document.getElementById('hamburgerMenu');
-  const mobOverlay = document.getElementById('mobOverlay');
-  const mobSheet = document.getElementById('mobSheet');
-  const mobClose = document.getElementById('mobClose');
-  if(mobToggle) mobToggle.addEventListener('click', () => { mobOverlay.style.display='block'; setTimeout(()=>mobSheet.classList.add('open'),10); });
-  function closeNav() { mobSheet.classList.remove('open'); setTimeout(()=>mobOverlay.style.display='none',300); }
-  if(mobOverlay) mobOverlay.addEventListener('click', closeNav);
-  if(mobClose) mobClose.addEventListener('click', closeNav);
-</script>
 
 <div id="progress-bar"></div>
 
@@ -705,7 +682,69 @@ navItems.forEach(item => {
   });
 });
 
-document.querySelectorAll('.topic').forEach((el, i) => { el.style.animationDelay = `${i * 0.03}s`; });
+document.querySelectorAll('.topic').forEach((el, i) => { el.style.animationDelay = `${i * 0.04}s`; });
+
+// Global Navigation & Theme Logic
+(function() {
+  const themeToggle = document.getElementById('themeToggle');
+  const sunIcon = document.querySelector('.sun-icon');
+  const moonIcon = document.querySelector('.moon-icon');
+
+  function updateIcons(theme) {
+    if (theme === 'dark') {
+      if(sunIcon) sunIcon.style.display = 'none';
+      if(moonIcon) moonIcon.style.display = 'block';
+    } else {
+      if(sunIcon) sunIcon.style.display = 'block';
+      if(moonIcon) moonIcon.style.display = 'none';
+    }
+  }
+
+  const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+  updateIcons(currentTheme);
+
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      const root = document.documentElement;
+      let newTheme = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', newTheme);
+      localStorage.setItem('sih-theme', newTheme);
+      updateIcons(newTheme);
+    });
+  }
+
+  // Mobile Global Nav
+  const mobToggle = document.getElementById('hamburgerMenu');
+  const mobOverlay = document.getElementById('mobOverlay');
+  const mobSheet = document.getElementById('mobSheet');
+  const mobClose = document.getElementById('mobClose');
+
+  if(mobToggle) {
+    mobToggle.addEventListener('click', () => {
+      mobOverlay.style.display = 'block';
+      setTimeout(() => mobSheet.classList.add('open'), 10);
+    });
+  }
+  
+  function closeNav() {
+    if(mobSheet) mobSheet.classList.remove('open');
+    setTimeout(() => { if(mobOverlay) mobOverlay.style.display = 'none'; }, 300);
+  }
+
+  if(mobOverlay) mobOverlay.addEventListener('click', closeNav);
+  if(mobClose) mobClose.addEventListener('click', closeNav);
+
+  // Monograph Sidebar Toggle
+  const monoToggle = document.getElementById('monoToggle');
+  const sidebar = document.getElementById('sidebar');
+
+  if(monoToggle && sidebar) {
+    monoToggle.addEventListener('click', () => {
+      sidebar.classList.toggle('open');
+      monoToggle.innerHTML = sidebar.classList.contains('open') ? '<span>✕</span> Close' : '<span>☰</span> Contents';
+    });
+  }
+})();
 </script>
 </body>
 </html>

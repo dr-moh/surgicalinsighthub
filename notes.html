@@ -82,13 +82,79 @@
     letter-spacing: -0.02em;
   }
   .section-tab:hover { border-color: var(--brand-gold); color: var(--text-primary); }
+
+  .filter-bar {
+    background: var(--glass-bg);
+    backdrop-filter: var(--nav-backdrop-filter);
+    -webkit-backdrop-filter: var(--nav-backdrop-filter);
+    border-bottom: 1px solid var(--glass-border);
+    position: sticky;
+    top: 92px;
+    z-index: 90;
+    margin-bottom: 40px;
+    padding: 10px 0;
+  }
+  .filter-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .filter-inner::-webkit-scrollbar { display: none; }
+  
+  .fb {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--glass-border);
+    color: var(--text-secondary);
+    padding: 8px 20px;
+    border-radius: 100px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s;
+  }
+  .fb:hover { background: rgba(184,146,42,0.1); border-color: var(--brand-gold); }
+  .fb.active { background: var(--brand-gold); color: #fff; border-color: var(--brand-gold); }
+
+  .notes-legend {
+    max-width: 1200px;
+    margin: 0 auto 24px;
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--muted,#666);
+  }
+  .legend-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
   /* ── PREMIUM FEATURE CARDS ── */
   .feature-card {
-    background: #fff;
-    border: 1px solid #e5e7eb;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
     border-radius: 28px;
     overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+    box-shadow: var(--shadow-sm);
     display: flex;
     flex-direction: column;
     transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -132,11 +198,11 @@
 
   .fc-foot { 
     padding: 20px 40px; 
-    border-top: 1px solid #f3f4f6; 
+    border-top: 1px solid var(--border-color); 
     display: flex; 
     align-items: center; 
     justify-content: space-between;
-    background: #fafaf8;
+    background: rgba(184, 146, 42, 0.03);
   }
   .fc-foot-text { font-size: 0.75rem; font-weight: 600; color: #9ca3af; }
   .fc-btn {
@@ -155,6 +221,22 @@
   .feature-card:not(.active) .fc-btn { background: #9ca3af; opacity: 0.6; }
   .tab-pane { display: none; }
   .tab-pane.active { display: block; }
+  
+  .big-tabs-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    max-width: 1200px;
+    margin: 0 auto 48px;
+    padding: 0 1.5rem;
+  }
+  @media(max-width: 850px) {
+    .big-tabs-grid { grid-template-columns: 1fr; }
+    .fc-title { font-size: 1.8rem; }
+    .fc-top { padding: 24px; }
+    .fc-foot { padding: 16px 24px; }
+  }
+
   /* Operative Approach grid */
   .op-grid {
     display: grid;
@@ -269,7 +351,7 @@
 </div>
 
 <!-- ── BIG CARD TABS GRID ── -->
-<div class="big-tabs-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 1200px; margin: 0 auto 48px; padding: 0 1.5rem;">
+<div class="big-tabs-grid">
   
   <!-- Tab 1 Trigger -->
   <div class="feature-card tab-trigger active" id="trigger-highjield" onclick="switchTab('highjield')">

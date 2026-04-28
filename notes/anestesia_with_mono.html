@@ -342,6 +342,7 @@
   }
   li{font-size:.78rem !important;}
   .badge{font-size:9px !important;}
+  .sidebar.open { left: 0; z-index: 10000; }
 }
 
 </style>
@@ -387,62 +388,12 @@
   <a href="https://t.me/sugicalInsightHub" target="_blank" class="mob-nav-cta" style="margin-top:20px;display:block;text-align:center;background:var(--brand-gold);color:#1a1208;padding:12px;border-radius:100px;">Join Telegram</a>
 </div>
 
+<button class="mono-sidebar-toggle" id="monoToggle">
+  <span>☰</span> Contents
+</button>
+
 <script src="../js/nav-pill.js"></script>
-<script>
-  // Theme Toggle Logic
-  (function(){
-    const themeToggle = document.getElementById('themeToggle');
-    const sunIcon = document.querySelector('.sun-icon');
-    const moonIcon = document.querySelector('.moon-icon');
 
-    function updateIcons(theme) {
-      if (theme === 'dark') {
-        if(sunIcon) sunIcon.style.display = 'none';
-        if(moonIcon) moonIcon.style.display = 'block';
-      } else {
-        if(sunIcon) sunIcon.style.display = 'block';
-        if(moonIcon) moonIcon.style.display = 'none';
-      }
-    }
-
-    const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
-    updateIcons(currentTheme);
-
-    if (themeToggle) {
-      themeToggle.addEventListener('click', () => {
-        const root = document.documentElement;
-        let newTheme = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-        root.setAttribute('data-theme', newTheme);
-        localStorage.setItem('sih-theme', newTheme);
-        updateIcons(newTheme);
-      });
-    }
-
-    // Mobile Nav Logic
-    const mobToggle = document.getElementById('hamburgerMenu');
-    const mobOverlay = document.getElementById('mobOverlay');
-    const mobSheet = document.getElementById('mobSheet');
-    const mobClose = document.getElementById('mobCloseSih');
-
-    if(mobToggle) {
-      mobToggle.addEventListener('click', () => {
-        mobOverlay.style.display = 'block';
-        setTimeout(() => mobSheet.classList.add('open'), 10);
-      });
-    }
-    
-    function closeNavSih() {
-      mobSheet.classList.remove('open');
-      setTimeout(() => mobOverlay.style.display = 'none', 300);
-    }
-
-    if(mobOverlay) mobOverlay.addEventListener('click', closeNavSih);
-    if(mobClose) mobClose.addEventListener('click', closeNavSih);
-  })();
-</script>
-
-    <div id="navOverlay2" onclick="closeNav2()"></div>
-<button id="navToggle2" onclick="openNav2()">☰ Contents</button>
 <div class="sidebar" id="mainSidebar2">
         <div class="sidebar-header">Surgical Insight Hub<br><span style="color:#b8922a;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;">Anesthesia Monograph</span></div>
         <button class="nav-btn active" onclick="showTab('tab-1', this)">Topic 1: Airway</button>
@@ -939,30 +890,28 @@
             // Scroll to top of content
             document.querySelector('.main-content').scrollTop = 0;
         }
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            // Close sidebar on mobile after selection
+            if (window.innerWidth <= 768) {
+                const sidebar = document.querySelector('.sidebar');
+                const monoToggle = document.getElementById('monoToggle');
+                if(sidebar) sidebar.classList.remove('open');
+                if(monoToggle) monoToggle.innerHTML = '<span>☰</span> Contents';
+            }
+        }
 
-        function toggleAnswer(answerId) {
-            const answerDiv = document.getElementById(answerId);
-            const btn = answerDiv.previousElementSibling;
-            
-            if (answerDiv.style.display === 'block') {
-                answerDiv.style.display = 'none';
+        function toggleAnswer(id) {
+            const ans = document.getElementById(id);
+            const btn = ans.previousElementSibling;
+            if (ans.style.display === 'block') {
+                ans.style.display = 'none';
                 btn.textContent = 'Show Answer';
             } else {
-                answerDiv.style.display = 'block';
+                ans.style.display = 'block';
                 btn.textContent = 'Hide Answer';
             }
         }
     </script>
-
-<script>
-function openNav2() {
-    document.getElementById('mainSidebar2').classList.add('open');
-    document.getElementById('navOverlay2').style.display = 'block';
-}
-function closeNav2() {
-    document.getElementById('mainSidebar2').classList.remove('open');
-    document.getElementById('navOverlay2').style.display = 'none';
-}
 // Close when nav button clicked
 document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.nav-btn').forEach(function(btn) {

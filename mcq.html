@@ -241,7 +241,7 @@ body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg-primary);c
     <p class="hero-sub">Board-style questions with SHARP debriefing after each answer. Your score goes on the global leaderboard.</p>
     <div class="hero-stats">
       <div class="hero-stat"><div class="hero-stat-num" id="totalQCount">20</div><div class="hero-stat-label">Questions</div></div>
-      <div class="hero-stat"><div class="hero-stat-num">5</div><div class="hero-stat-label">Specialties</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">13</div><div class="hero-stat-label">Specialties</div></div>
       <div class="hero-stat"><div class="hero-stat-num">Global</div><div class="hero-stat-label">Leaderboard</div></div>
     </div>
 
@@ -422,8 +422,11 @@ var SPECIALTIES = ['All', 'General Surgery', 'HPB', 'Colorectal', 'Anesthesia', 
 
 document.addEventListener('DOMContentLoaded', function() {
   loadSetupLeaderboard();
-  // Update question count
+  // Update question and specialty counts
   document.getElementById('totalQCount').textContent = QUESTIONS.length;
+  // Subtract 1 because 'All' is in the array but is a filter, not a specialty itself
+  const specialtyHeroNum = document.querySelector('.hero-stat:nth-child(2) .hero-stat-num');
+  if (specialtyHeroNum) specialtyHeroNum.textContent = SPECIALTIES.length - 1;
 
   // Build specialty chips
   var sg = document.getElementById('specialtyGrid');
@@ -500,6 +503,12 @@ function renderQuestion() {
   document.getElementById('qSpecialty').textContent = q.specialty;
   document.getElementById('qTopic').textContent = q.topic;
   document.getElementById('qNum').textContent = 'Q' + (idx + 1);
+  const bankBadge = document.createElement('span');
+  bankBadge.style.fontSize = '0.6em';
+  bankBadge.style.opacity = '0.5';
+  bankBadge.style.marginLeft = '10px';
+  bankBadge.textContent = '[Global ID: #' + q.id + ']';
+  document.getElementById('qNum').appendChild(bankBadge);
   document.getElementById('qText').textContent = q.question;
 
   // Options
