@@ -336,6 +336,9 @@
         <span class="q-num" id="qNum">Q1</span>
       </div>
       <div class="q-text" id="qText"></div>
+      <div id="qImageWrap" style="display:none; margin: 20px 0; text-align: center;">
+        <img id="qImage" src="" alt="Question Image" style="max-width: 100%; border-radius: 12px; box-shadow: var(--shadow-sm); border: 1px solid var(--border-color);">
+      </div>
       <div class="options" id="optionsWrap"></div>
       <button class="submit-btn" id="submitBtn" onclick="submitAnswer()" disabled>Submit Answer</button>
     </div>
@@ -544,6 +547,17 @@ function renderQuestion() {
   bankBadge.textContent = '[Global ID: #' + q.id + ']';
   document.getElementById('qNum').appendChild(bankBadge);
   document.getElementById('qText').textContent = q.question;
+
+  // Image handling
+  const imgWrap = document.getElementById('qImageWrap');
+  const imgEl = document.getElementById('qImage');
+  if (q.imagePath) {
+    imgEl.src = q.imagePath;
+    imgWrap.style.display = 'block';
+  } else {
+    imgEl.src = '';
+    imgWrap.style.display = 'none';
+  }
 
   // Options
   var wrap = document.getElementById('optionsWrap');
