@@ -19254,6 +19254,7 @@ var QUESTIONS = [
     "guideline": "Surgical Insight Hub Premium Board Review",
     "takeaway": "Key Pediatric Surgery Pearl: This is a high-yield Pediatric Surgery board review concept that is frequently t...",
     "id": 851
+  },
   {
     "specialty": "Pediatric Surgery",
     "topic": "Pediatric Surgery Core Concept",
@@ -29556,5 +29557,4108 @@ var QUESTIONS = [
     "guideline": "Surgical Insight Hub Premium Board Review",
     "takeaway": "Key Plastic Surgery Pearl: This is a high-yield Plastic Surgery board review concept that is frequently tes...",
     "id": 1300
+  },
+  {
+    "id": 1301,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "This  book is intended to address the needs of those preparing for the board examination as well as those who need to  maintain an up to date knowledge for the maintenance of certification examination. We thank all of you for moti vating us to become better surgeons and for helping us to deliver the best care for our patients. We hope you  benefit from this book.DEDICATIONS This book is dedicated to my wife, Beth, and my children, Jack and Megan, for their ongoing love and support and  keeping me focused on the important things in life. Jonathan",
+    "options": {
+      "A": "Interleukin-6",
+      "B": "Interleukin-10",
+      "D": "Interleukin-1",
+      "C": "Tumor necrosis factor-\u03b1",
+      "E": "Interleukin-8"
+    },
+    "answer": "B",
+    "explanation": {
+      "correct": "The complement cascade is the earliest humoral  system activated in response to injury. C3a and C5a, the biologically  active anaphylatoxins, induce the release of proinflammatory cyto kines. Tumor necrosis factor-\u03b1 (TNF-\u03b1) and interleukin-1 (IL-1) are  the key mediators of this cascade. IL-6 induces T and B cells, and  IL-8 recruits and activates inflammatory cells at the site of injury. IL-10, in contrast, is one of the key mediators of the antiinflammatory response and acts to inhibit the aforementioned cytokines.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1302,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "A 56-year-old female is admitted to the intensive care unit  (ICU) with a diffuse axonal injury after a motor vehicle  crash. The nursing staff notices coffee ground material  coming from her orogastric tube. What is the best interven tion to prevent this complication?",
+    "options": {
+      "A": "Enteral feeding",
+      "B": "Oral sucralfate",
+      "C": "Oral proton pump inhibitor (PPI)",
+      "D": "Intravenous (IV) H2 blocker",
+      "E": "IV PPI drip"
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "Stress-related gastritis can cause clinically signifi cant bleeding in up to 5%\u201310% of ICU patients; therefore stress  ulcer prophylaxis is now routinely administered in the ICU. Ulcers  and bleeding are thought to be secondary to mucosal damage  caused by low-flow states and subclinical hypoperfusion to the gastric mucosa. Patients with the following criteria should receive  stress ulcer prophylaxis: \u2003\u2003 \u2022  coagulopathy defined as platelets &lt; 50,000 cells per mcl (microliter); INR &gt; 1.5; or PTT &gt; two times the normal  reference range \u2022 mechanical ventilation &gt; 48 h \u2022 history of gastrointestinal ulcer or bleed \u2022 traumatic brain/spinal cord injury or burn \u2022 two or more of the following minor criteria: \u2022 Sepsis \u2022 ICU admission \u2022 Occult gastrointestinal bleed &gt; 6 days \u2022 Glucocorticoids &gt; 250 mg\u2003\u2003 Clinical data suggest that if enteral access is possible,the best  agent is an oral PPI. If enteral access is not feasible, an IV PPI  or H2 antagonist is an alternative. IV PPIs are costly, so most  centers favor an IV H2 antagonist. Sucralfate has been studied and  is effective in protecting against stress gastritis, but a disadvan tage is its interference with the absorption of other medications  such as antibiotics, warfarin, and phenytoin. Previously, it was  thought that the use of H2 blockers was associated with nosoco mial pneumonia because of gastric bacterial colonization and  subsequent aspiration. However, more recent trials have not  4 SECTION I / Surgical Fundamentals demonstrated any difference between other protective agents and  H2 receptor antagonists in the rate of ventilator-associated pneu monia. Antacids have not shown efficacy in preventing stress related mucosal lesions in the ICU patients and are not considered  as appropriate prophylactic agents.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1303,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "A 64-year-old male with severe pancreatitis is transferred  to the ICU from an outside hospital. A report is given to  the nurse that the patient has received \u201clarge-volume  resuscitation.\u201d Upon reaching the ICU, he is afebrile,  tachycardic to 127, and has a BP of 120/60 mmHg. His  abdomen is tense and full; he has a Foley in place but no  urine in the bag. You suspect abdominal compartment  syndrome (ACS). What is the mechanism of his  oliguria?",
+    "options": {
+      "A": "Extrinsic compression of abdominal organs on the  kidneys, leading to reduced GFR",
+      "B": "Elevated renal venous pressure, leading to reduced GFR",
+      "C": "Decreased arterial flow to the kidney, leading to reduced glomerular filtration rate (GFR)",
+      "D": "Extrinsic compression of the ureters, causing an obstruc tive oliguric renal failure",
+      "E": "Compression of the bladder, causing an obstructive  oliguric renal failure"
+    },
+    "answer": "B",
+    "explanation": {
+      "correct": "Intraabdominal hypertension can be defined as  intraabdominal pressure greater than or equal to 20 cm H2O.  ACS occurs in the setting of intraabdominal hypertension and  evidence of abdominal hypoperfusion. ACS reduces the GFR  secondary to elevated renal venous pressure and causes oligu ria. Other physiologic derangements that can be seen are eleva tion of the diaphragms impeding oxygenation and ventilation  raising the central intrathoracic, venous, and intracranial pres sures. All of these issues can be treated with decompressive  laparotomy. Decompressive laparotomy should be employed as  a treatment for ACS when there is evidence of end-organ  dysfunction.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1304,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "For the patient in Question 4, which of the following  parameters would necessitate a decompressive laparotomy  for treatment?",
+    "options": {
+      "A": "Peak airway pressures of 30 mmHg",
+      "B": "Systemic vascular resistance of 1400 dyn/s/cm5",
+      "C": "Pulmonary capillary wedge pressure of 18 mmHg",
+      "D": "Urine output of 0 ml",
+      "E": "Requirements of Fraction of inspired oxygen (FiO)2 of  80% with positive end-expiratory pressure (PEEP) of 12"
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "Decompressive laparotomy should be performed  only when there is evidence of end-organ dysfunction. Of all the  answer choices provided, only decreased urine output indicates  end-organ dysfunction. The rest of the parameters may be seen in  ACS but do not indicate organ damage secondary to ACS; however,  laparotomy would improve all of the parameters above.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1305,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "A patient is brought to the emergency department after being  found unresponsive. Electroencephalography (EEG) indicates  status epilepticus. A potential secondary clinical consequence is:",
+    "options": {
+      "A": "Meningitis",
+      "B": "Hypothermia",
+      "C": "Myoglobinuria",
+      "D": "Cerebrovascular accident",
+      "E": "Hypoglycemia"
+    },
+    "answer": "C",
+    "explanation": {
+      "correct": "Status epilepticus is an entity that should be consid ered in any patient with recurrent or persistent seizure activity or in  those who do not wake up after seizure activity. One of the potential  systemic complications is rhabdomyolysis, which would result in  myoglobinuria, elevated serum creatinine kinase, and pigmented  granular urinary casts. The other options are potential primary causes  of seizure activity. Rhabdomyolysis is a direct result of muscle injury  and can be caused by prolonged seizure activity; major trauma; drug  overdose; vascular embolism; extremity compartment syndrome;  malignant hyperthermia; neuroleptic malignant syndrome; myositis;  severe exertion; alcoholism; and medications such as statins, macro lide antibiotics, and cyclosporine.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1306,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "Euthyroid sick syndrome is diagnosed in a patient in the  surgical ICU. All of the following are part of this clinical  phenomenon except:",
+    "options": {
+      "A": "The patient behaves as though clinically hypothyroid",
+      "B": "Normal or decreased total serum thyroxine (T4) level",
+      "C": "Increased serum reversed triiodothyronine (rT3) level",
+      "D": "Decreased thyroid stimulating hormone (TSH) level",
+      "E": "Decreased total serum T3 level"
+    },
+    "answer": "A",
+    "explanation": {
+      "correct": "The hallmark of this diagnosis is that the patient  behaves neither clinically hypothyroid nor hyperthyroid. The other  choices are the expected laboratory findings in patients with this syndrome. Referred to alternatively as euthyroid sick syndrome,  low T3 syndrome, low T4 syndrome, and nonthyroidal illness, con siderable debate exists regarding whether this syndrome represents  a pathologic process or an adaptive response to systemic illness that  allows the body to lower its tissue energy requirements. In light of  this controversy, no consensus has been reached on how to treat  this entity or whether any treatment at all is necessary. Because the  interpretation of thyroid function tests in critically ill patients is  complex, these tests should not be done in an ICU setting unless a  thyroid disorder is strongly suspected.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1307,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "Acute respiratory distress syndrome (ARDS) develops in an  acutely injured patient. If an alveolar biopsy specimen were  taken within the first 24 h, the histologic examination would demonstrate:",
+    "options": {
+      "A": "Renal ultrasound",
+      "B": "Haptoglobin",
+      "C": "Serum creatinine kinase",
+      "D": "Complete blood count",
+      "E": "Urine electrolytes"
+    },
+    "answer": "C",
+    "explanation": {
+      "correct": "Rhabdomyolysis can occur postoperatively in  obese patients whose back and buttock muscles were compressed  against the operating table for a prolonged time. Preventive mea sures include the use of larger tables to better distribute body  weight, effective padding at all pressure points, intraoperative  changing of patient position, and limitation of operative times.  Physicians should have a high index of suspicion for rhabdomyoly sis in this patient population so that early recognition and treatment  can prevent the potentially devastating consequence of acute renal  failure (ARF) in this already high-risk group. Creatinine kinase  should be measured in any patient complaining of muscle pain or  in whom dark urine, oliguria, or rising plasma creatinine  develops.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1308,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "The primary algorithm to treat the patient in Question 9  includes all of the following except:",
+    "options": {
+      "A": "Loop diuretics",
+      "B": "Mannitol",
+      "C": "Aggressive intravenous fluid resuscitation",
+      "D": "Sodium bicarbonate",
+      "E": "Serial basic metabolic panels"
+    },
+    "answer": "A",
+    "explanation": {
+      "correct": "The goal of the treatment algorithm for rhabdo myolysis is to prevent ARF. The cause of rhabdomyolysis induced ARF is multifactorial and includes hypovolemia,  ischemia, direct tubule toxicity caused by the heme pigment in  myoglobin, and intratubular obstruction by casts. Treatment of  rhabdomyolysis is to induce prompt polyuria with sufficient intravenous fluid resuscitation to produce 1.5 to 2 mL/kg/h of urine. Concurrently, urine alkalinization with a goal urine pH  CHAPTER 1 / Physiologic Response to Injury 5 greater than 6.5 should be instituted with sodium bicarbonate to  prevent precipitation of casts and obstruction of nephrons. Man nitol may also act as a free radical scavenger in addition to a  diuretic, although this is somewhat controversial. Loop diuretics  can be used as an alternative if brisk urine output cannot be  achieved with the aforementioned measures, but they have the  disadvantage of acidifying the urine.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1309,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "An 82-year-old female with multiple prior abdominal  surgeries presents with a small bowel obstruction. She  undergoes an exploratory laparotomy with an extensive lysis  of adhesions for 7 h. She receives 2 L of crystalloid during  the case and has 200 cc of urine output. Her creatinine  increases by 0.6 mg/dL the next day. All of the following are  appropriate treatments except:",
+    "options": {
+      "A": "Rule out causes of outflow obstruction",
+      "B": "Recheck hemoglobin",
+      "C": "Calculate fractional excretion of sodium (FeNa)",
+      "D": "Give a bolus of fluid",
+      "E": "Start vasopressors for a mean arterial pressure (MAP)  goal of 65 mmHg"
+    },
+    "answer": "E",
+    "explanation": {
+      "correct": "The most common cause of postoperative acute  kidney injury (AKI) is renal hypoperfusion secondary to hypovo lemia. Nephrogenic injury in patients with hypovolemia occurs  when the renal arteries constrict in response to increased levels of  epinephrine, angiotensin II, and vasopressin and the nephrons  receive inadequate delivery of oxygen. The goal of the treatment  is to quickly reverse shock and restore renal blood flow. The primary treatment is always intravenous fluid resuscitation. Active bleeding and obstruction should be ruled out. FeNa should be  calculated to confirm your cause. Vasopressors should be avoided whenever possible because the resultant vasoconstriction may  exacerbate the ischemic insult to the kidneys.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1310,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "A 52-year-old diabetic male presents to the emergency  department with chest pain, diaphoresis, and an elevated  troponin. He is taken to the cardiac catheterization lab.  Which of the following is true of contrast-induced AKI  (CIAKI)?",
+    "options": {
+      "A": "It is the most common form of iatrogenic AKI in  hospitalized patients.",
+      "B": "CIAKI is characterized by oliguria.",
+      "C": "Evidence of CIAKI occurs within 6 to 24 h of contrast  administration.",
+      "D": "The creatinine returns to normal within 1 month of insult  for most patients.",
+      "E": "The 1-year mortality associated with CIAKI is &lt; 5%."
+    },
+    "answer": "A",
+    "explanation": {
+      "correct": "CIAKI is the most common cause of iatrogenic  AKI in hospitalized patients. It generally presents as a nonoliguric  injury, with an increase in creatinine seen 48 to 72 h after the dye  load was administered. Patients\u2019 creatinine returns to baseline  within 7 to 10 days. The 1-year associated mortality is 30%.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1311,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "Which of the following interventions reduces the likelihood  of CIAKI?",
+    "options": {
+      "A": "N-acetylcysteine administration before giving the dye  load",
+      "B": "A one-time dose of prednisone 40 mg before administra tion of dye load",
+      "C": "0.9% normal saline for 12 h before and after giving the  dye load",
+      "D": "0.45% normal saline for 12 h before and after giving the  dye load",
+      "E": "1 L bolus of 0.9 normal saline at the time of giving the  dye load"
+    },
+    "answer": "C",
+    "explanation": {
+      "correct": "The pathogenesis of CIAKI is primarily an ischemic  form of injury caused by the vasoconstrictive properties of contrast  media. In addition, contrast media can potentially have direct toxic  effects on endothelial cells and renal tubules. Patients with dimin ished renal vasodilatory capacity (i.e., diabetic nephropathy) have an  increased risk of CIAKI. Hydration is the only intervention proven  to prevent CIAKI, with oral hydration more efficient than PO. Ran domized controlled trials have found a small superiority in treatment,  with 0.9% over 0.45% saline. There have also been multiple smaller  studies demonstrating that 12 h of rehydration before and after dye  load is more beneficial than a single bolus before the contrast load. N-acetylcysteine has been used for the prevention of CIAKI, with  mixed results in the literature. However, due to the low cost and low  side-effect profile, some authors still advocate its use.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1312,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "A 47-year-old male with Crohn\u2019s colitis maintained on 40 \u00e5mg  prednisone daily for the past year presents for elective  colectomy. The procedure was uncomplicated, and he was  adequately resuscitated. In the postanesthesia care unit (PACU)  the patient is noted to be febrile and hypotensive with MAPs  in the 50s. What is your next step in management?",
+    "options": {
+      "A": "IV dobutamine",
+      "B": "Hydrocortisone",
+      "C": "1 unit of packed red blood cells",
+      "D": "Antibiotics",
+      "E": "Epinephrine"
+    },
+    "answer": "B",
+    "explanation": {
+      "correct": "The patient in the above scenario has been exposed  to prolonged steroids and, as a result, hasrelative adrenal insufficiency. These patients may experience shock when they do not receive gluco corticoid replacement during times of relative corticoid and mineralo corticoid deficiencies. Signs and symptoms of acute insufficiency include fever, nausea, vomiting, refractory hypotension, and lethargy.  Intravenous volume replacement with isotonic fluids and immediate IV steroid treatment with hydrocortisone are essential.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1313,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "You are called by a PACU nurse for a patient who just  underwent an elective splenectomy for idiopathic thrombotic  purpura. The patient is afebrile, tachycardic, and hypotensive.  What is your next step in management?",
+    "options": {
+      "A": "Check hemoglobin",
+      "B": "IV fluid resuscitation",
+      "C": "Electrocardiogram",
+      "D": "Antibiotics",
+      "E": "Start vasopressors"
+    },
+    "answer": "A",
+    "explanation": {
+      "correct": "Anytime a patient in the immediate postoperative  period becomes unstable, evaluation for bleeding is critical. Hemo globin should be checked, and if necessary, the patient should be  returned to the operating room. The other steps may ultimately be  required; however, bleeding must be ruled out first.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1314,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "Which of the following metabolic changes occur during  times of physiologic stress?",
+    "options": {
+      "A": "Increase in growth hormone (GH) release",
+      "B": "Increase in TSH",
+      "C": "Increased levels of T4 and T3",
+      "D": "Initial insulin increase and then suppression",
+      "E": "Increase in cortisol excretion"
+    },
+    "answer": "E",
+    "explanation": {
+      "correct": "There are many metabolic changes in times of stress.  Cortisol is a major effector of metabolism and is the main hormone  increased in the stress response. Cortisol inhibits growth hormone  (GH) release, decreasing GH levels. Insulin-like growth factor levels  are decreased in these times as well. Injury decreases TSH and conver sion of T4 into T3, resulting in decreased levels of both T4 and T3.  There are two patterns of insulin release, initial suppression followed  by elevated release but increased peripheral resistance, leading to  hyperglycemia.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1315,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "Which of the following patients most likely has sepsis and  should have prompt evaluation for transfer to an ICU?",
+    "options": {
+      "A": "A 27-year-old female after lithotripsy for nephrolithiasis  who is afebrile with a heart rate (HR) of 102, BP 90/40  mmHg, altered mental status, and white blood cell  (WBC) count of 9",
+      "B": "A 72-year-old male with pancreatitis and a temperature of  102 degrees Farenheit, HR 110 beats/min, BP 110/60  mmHg, and WBC count of 14 cells per mcl",
+      "C": "A 53-year-old female at postoperative day 0 from a colon  resection who is tachycardic to 120 s and requires  intubation in the PACU",
+      "D": "An 84-year-old nursing home resident with a urine  culture positive for Proteus spp.",
+      "E": "An 18-year-old male who presented with a gangrenous  appendicitis, is now at postoperative day 0 from a  laparoscopic appendectomy, and is febrile to 103 and  tachycardic to 130 s with BP of 140/70"
+    },
+    "answer": "A",
+    "explanation": {
+      "correct": "In 2016, the consensus guidelines on the defini tions of sepsis and septic shock were revised for the first time since 2001. The aim of the consensus committee was to change the defi nitions to reflect the change in understanding of the pathophysiol ogy and natural history of sepsis. The committee defined sepsis as a life-threatening organ dysfunction caused by dysregulated host responses to infection. The prior definition of sepsis included two or more SIRS criteria plus a possible source of infection. SIRS may  reflect a host response that is merely adaptive; therefore the old definition did not adequately identify all patients who may benefit from intensive therapies. Through examination of large data sets,  the quick sepsis-related organ failure assessment (qSOFA) was  developed to help promptly identify patients with suspected infec tion who are likely to have a prolonged ICU stay or die in the  hospital. Criteria for the qSOFA are altered mental status, respira tory rate &gt; 22/min, or systolic BP &lt; 100 mmHg. Patients who screen positive warrant a higher level of care and intervention. Of the  patients listed above, only patient A meets the criterion for qSOFA.  While several of the others may meet criteria based on the former  definition of sepsis, their conditions may be physiologic responses to injury and not suggestive of impending life-threatening injury  and therefore do not need intensive monitoring.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1316,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "Which of the following is the best parameter for monitoring  septic shock?",
+    "options": {
+      "A": "Central venous pressure (CVP)",
+      "B": "Vasopressor requirement",
+      "C": "Urine output",
+      "D": "Serum lactate",
+      "E": "Mental status changes"
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "Septic shock is a subset of sepsis in which underly ing circulatory and cellular/metabolic abnormalities are profound  enough to substantially increase mortality. Patients with septic shock  can be identified with a clinical construct of sepsis with persistent hypotension requiring vasopressors to maintain a MAP &gt; 65 mmHg  and a serum lactate level &gt; 2 mmol/L despite adequate volume  resuscitation. With these criteria, hospital mortality is in excess of  40%. Serum lactate is a good indicator of global perfusion. By defini tion, patients with sepsis suffer global hypoperfusion. CVP is often  unreliable and can be affected by patient positioning, catheter posi tioning, and other physiologic derangements. Vasopressor require ments are often needed in septic shock to help improve perfusion but  cannot be used as a direct measure of perfusion. Oliguria and altered  mental status are signs of end-organ damage.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1317,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "All of the following are negative outcomes that have been  directly associated with perioperative hypothermia except:",
+    "options": {
+      "A": "Coagulopathy",
+      "B": "Wound infections",
+      "C": "Nosocomial pneumonia",
+      "D": "Myocardial ischemia",
+      "E": "Delayed wound healing"
+    },
+    "answer": "C",
+    "explanation": {
+      "correct": "Preservation of normothermia in surgical patients  is important and is one of the goals of the Surgical Care Improve ment Project (SCIP). Hypothermia results in peripheral vasocon striction, which leads to decreased subcutaneous oxygen tension  and antibiotic delivery. Both neutrophil activity and leukocyte che motaxis are impaired. All of these sequelae give rise to an increased  incidence of wound infections. Globally reduced enzyme function  CHAPTER 1 / Physiologic Response to Injury 7 leads to coagulopathy. Collagen cross-linking and therefore wound  healing is affected by hypothermia. An increased risk for myocar dial ischemia in patients with known coronary artery disease has  been associated with hypothermic states. There has not been a  direct correlation between the development of nosocomial pneu monia and hypothermia. The SCIP measures aim to achieve a target  temperature of 36.0\u00b0C in perioperative patients using active  warming methods.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1318,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "An obese 21-year-old male suffers multiple fractures and a  liver injury; 21 days later, he develops acute dyspnea,  diaphoresis, and desaturates to 86% at room air. A computed  tomography (CT) of the chest is positive for pulmonary  embolus. All of the following are risk factors for venous  thromboembolic events except:",
+    "options": {
+      "A": "Severity of injury",
+      "B": "BMI",
+      "C": "Smoking",
+      "D": "Pelvic fractures",
+      "E": "Hypertriglyceridemia"
+    },
+    "answer": "E",
+    "explanation": {
+      "correct": "Venous thromboembolic disease (VTE), which can  manifest as deep venous thrombus (DVT) or pulmonary embolism  (PE), is common and can have serious or fatal consequences. Risk  factors for VTE frequently encountered by surgeons include  increased severity of injury, increased BMI, history of smoking,  intraabdominal cancers, pelvic fractures or surgery, lithotomy posi tioning, and operative times longer than 2 h. Hypertriglyceridemia  and hypercholesterolemia have been examined as risk factors  for VTE, but no statistically significant association has been established.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1319,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "Which of the following patients should receive prolonged  prophylaxis (28 days) for VTE?",
+    "options": {
+      "A": "Female with a newly diagnosed DVT in her right  popliteal vein",
+      "B": "Male with chronic pulmonary embolus who undergoes a  laparoscopic cholecystectomy",
+      "C": "Female with gastric cancer who undergoes a total  gastrectomy",
+      "D": "Female with uterine fibroids undergoing total abdominal hysterectomy",
+      "E": "Female with breast cancer undergoing bilateral  mastectomy"
+    },
+    "answer": "C",
+    "explanation": {
+      "correct": "Continued prophylaxis after surgery should be  based on the assessment of risk of VTE. In patients with abdominal  cancer, VTE is an important cause of death. About 29% of patients  with abdominal cancer will develop a complication of VTE during  their disease course. Continuing chemical prophylaxis for 28 days  postoperatively decreases the incidence of thromboembolic events  and has a risk reduction of &gt;50% in mortality, which persists for  greater than 3 months. Patients A and B both require therapeutic  treatment and not prophylaxis.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1320,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "Which of the following is a contraindication to enteral  feeding?",
+    "options": {
+      "A": "Ileus",
+      "B": "Small bowel anastomosis",
+      "C": "Hemodynamic instability requiring vasopressors",
+      "D": "Pancreatitis",
+      "E": "Pneumonia"
+    },
+    "answer": "C",
+    "explanation": {
+      "correct": "Enteral feeding should be initiated early in the  course of critical illness or injury. The intestine plays a role in  digestion and absorption of nutrients and acts as a barrier to enteric  flora, preventing host invasion by microorganisms or their toxins. This intestinal barrier can be impaired during critical illness,  making patients susceptible to bacterial translocation. Enteral  feeding is protective against microvilli atrophy and impairment of  the intestinal barrier. Patients can and should be fed in all of the  scenarios above with the exception of hemodynamic instability. In  times of global hypoperfusion there is a risk of intestinal ischemia  caused by enteral feedings. Patients with pancreatitis may receive  enteral feedings; however, postpyloric feedings are preferred.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1321,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "A patient with a previous history of ischemic bowel requiring  extensive bowel resection, now with only 100 cm of bowel  remaining and dependent on total parenteral nutrition (TPN),  presents to your office complaining of hair loss, rash on the extremities, and dry skin. Which nutrient deficiency is this patient most likely suffering from?",
+    "options": {
+      "A": "Copper",
+      "B": "Selenium",
+      "C": "Vitamin D",
+      "D": "Essential fatty acids",
+      "E": "Zinc"
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "Short gut as a result of small bowel loss and or  dysfunction of the remaining bowel is characterized by malabsorp tion of nutrients, diarrhea, and weight loss. Essential fatty acids are  not part of TPN formulas, and deficiency causes dermatitis, diar rhea, alopecia, patchy red areas on the skin, brittle nails, easy  bruising, bleeding tendencies, and delayed wound healing.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1322,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "Strategies that have been suggested to decrease the risk for  postoperative pulmonary complications include all of the  following except:",
+    "options": {
+      "A": "Routine nasogastric tube decompression",
+      "B": "Lung expansion maneuvers",
+      "C": "Preoperative smoking cessation",
+      "D": "Postoperative epidural anesthesia",
+      "E": "Use of intraoperative short-acting neuromuscular  blocking agents"
+    },
+    "answer": "A",
+    "explanation": {
+      "correct": "Postoperative pulmonary complications include  atelectasis, pneumonia, prolonged mechanical ventilation, bron chospasm, and exacerbation of the underlying lung disease.  Aggressive pulmonary toilet, smoking cessation, epidural analge sia, and minimal neuromuscular blockade have been shown to be  effective means of reducing postoperative respiratory complica tions. In contrast, because systemic reviews have found that  routine use of nasogastric decompression increases pulmonary  complications, nasogastric tubes should be used postoperatively  only when specifically indicated for the operative procedure. An early postoperative fever is most likely due to atelectasis causing  a respiratory shunt secondary to alveolar collapse. This results in  varying degrees of hypoxemia. Persistent collapse leaves alveoli  prone to bacterial colonization. Aggressive pulmonary toilet with  incentive spirometry, forced coughing, and frequent turning is the  best prevention.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1323,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "A patient with resolving ARDS requires a tracheostomy. The  family wants to know the benefit of early tracheostomy compared with prolonged intubation. Which of the following  is correct?",
+    "options": {
+      "A": "There is no difference in overall mortality between  patients receiving prolonged endotracheal (ET) intubation  and those receiving tracheostomy.",
+      "B": "There is increased sedation and pain requirement with a  surgically placed tracheostomy.",
+      "C": "There is an increased risk of pneumonia with ET  intubation.",
+      "D": "There is a decrease in the time required for mechanical  ventilation with tracheostomy.",
+      "E": "ICU stays are the same for both ET intubation and  tracheostomy."
+    },
+    "answer": "A",
+    "explanation": {
+      "correct": "There is no mortality difference between patients  receiving prolonged endotracheal intubation and those receiving a  tracheostomy. Patients with a tracheostomy do have shorter stays  in the ICU and decreased sedation and pain requirements. There  are equivocal rates of pneumonia and days requiring mechanical  ventilation in both tracheostomy and ET intubation.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1324,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "O\u2019Leary PJ, Tabuenca",
+    "options": {
+      "A": "Collagen synthesis in the initial phase of injury is the sole  responsibility of endothelial cells.",
+      "D": "Tensile strength of the wound increases gradually for up  to 2 years after injury; however, it generally reaches a  level of only about 80% of that of uninjured tissue.",
+      "B": "Net collagen content increases for up to 2 years after  injury.",
+      "C": "At 3 weeks after injury, more than 50% of the tensile  strength of the wound has been restored.",
+      "E": "Tensile strength is the force necessary to reopen a wound."
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "Synthesis of collagen by fibroblasts begins as early  as 10 h after injury and increases rapidly; it peaks by day 6 or 7 and  then continues more slowly until day 42. Collagen continues to  mature and remodel for years. Its solubility in saline solution and  the thermal shrinkage temperature of collagen reflect the intermo lecular cross-links, which are directly proportional to collagen age.  After 6 weeks, there is no measurable increase in the net collagen  content. However, synthesis and turnover are ongoing for life. His torical accounts of sailors with scurvy (with impaired collagen pro duction) who experienced reopening of previously healed wounds  illustrate this fact. Tensile strength correlates with the total collagen  content for approximately the first 3 weeks of wound healing. At 3  weeks, the tensile strength of the skin is 30% of normal. After this  time, there is a much slower increase in the content of collagen until  it plateaus at about 6 weeks. Nevertheless, tensile strength continues  to increase because of intermolecular bonding in collagen and  changes in the physical arrangement of collagen fibers. Although the  most rapid increase in tensile strength occurs during the first 6 weeks  of healing, there is a slow gain for at least 2 years. Its ultimate  strength, however, never equals that of the unwounded tissue, with  a level of just 80% of the original skin strength being reached.  Tensile strength is measured as the load capacity per unit area. It  may be differentiated from burst strength, which is the force required  to break a wound (independent of its area). For example, in wounds  of the face and back, burst strength is different because of differ ences in skin thickness, even though tensile strength may be similar.  Corticosteroids affect wound healing by inhibiting fibroblast prolif eration and epithelialization. The latter effect can be reversed by the  administration of vitamin A.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1325,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "A 34-year-old man sustained a gunshot wound to his abdomen  that necessitated exploratory laparotomy and small bowel  resection. Two weeks after the initial operation, he was reex plored for a large intraabdominal abscess. Which of the following  will result in the most rapid gain in strength of the new incision?",
+    "options": {
+      "A": "A separate transverse incision is made.",
+      "B": "The midline scar is excised with a 1-cm margin.",
+      "C": "The midline incision is reopened without excision of the scar.",
+      "D": "The midline incision is left to heal by secondary intention.",
+      "E": "The rate of gain in strength is not affected by the incision  technique."
+    },
+    "answer": "C",
+    "explanation": {
+      "correct": "When a normally healing wound is disrupted after  approximately the fifth day and then reclosed, the return of wound  strength is more rapid than that with primary healing. This is termed  the secondary healing effect and appears to be caused by the elimi nation of the lag phase present in normal primary healing. If the  skin edges more than about 7 mm around the initial wound are  excised, the resulting incision is through essentially uninjured  tissue, so accelerated secondary healing does not occur.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1326,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "A 29-year-old black woman is scheduled for incision and  drainage of a breast abscess that has recurred three times  despite ultrasound-guided needle drainage. The patient has a  history of keloid formation and is concerned about an  unsightly scar on her breast. Which of the following  statements concerning wound healing is true?",
+    "options": {
+      "A": "Keloids contain an overabundance of fibroblasts.",
+      "B": "A hypertrophic scar extends beyond the boundaries of the  original wound.",
+      "C": "Improvement is usually seen with keloid excision  followed by intralesional steroid injection.",
+      "D": "An incision placed perpendicular to the lines of natural  skin tension will result in the least obvious scar.",
+      "E": "Hypertrophic scars occur most commonly on the lower  extremities."
+    },
+    "answer": "C",
+    "explanation": {
+      "correct": "Keloids are caused by an imbalance between  collagen production and degradation. The result is a scar that  extends beyond the boundaries of the original wound. The  absolute number of fibroblasts is not increased. Treatment of  keloids is difficult. There is often some improvement with exci sion and intralesional steroid injection. If this technique is not  successful, excision and radiation treatment can be used. Hyper trophic scars contain an overabundance of collagen, but the  dimensions of the scar are confined to the boundaries of the  original wound. Hypertrophic scars are often seen in the upper  part of the torso and across flexor surfaces. Scar formation is  affected by multiple factors, including the patient\u2019s genetic  makeup, wound location, age, nutritional status, infection,  tension, and surgical technique. In planning for surgical inci sions, an effort to parallel natural tension lines will promote  improved wound healing.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1327,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "A 30-year-old man is scheduled for definitive management of  his open wounds after undergoing embolectomy and  fasciotomies on his left lower extremity. Which of the  following statements is true regarding the use of split- and  full-thickness skin grafts?",
+    "options": {
+      "A": "A split-thickness skin graft undergoes approximately 40%  shrinkage of its surface area immediately after harvesting.",
+      "B": "A full-thickness skin graft undergoes approximately 10%  shrinkage of its surface area immediately after harvesting.",
+      "C": "Secondary contraction is more likely to occur after  adequate healing of a full-thickness skin graft than after  adequate healing of a split-thickness skin graft.",
+      "D": "Sensation usually returns to areas that have undergone  skin grafting.",
+      "E": "Skin grafts may be exposed to moderate amounts of  sunlight without changing pigmentation."
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "Skin grafts are considered to be full thickness  when they are harvested at the dermal\u2013subcutaneous junction.  Split-thickness skin grafts are those that contain epidermis and  variable partial thicknesses of the underlying dermis. They are  usually 0.018 to 0.060 inch in thickness. Cells from epidermal  appendages deep to the plane of graft harvest resurface on the donor  site of a split-thickness skin graft in approximately 1 to 3 weeks,  depending on the depth. The donor site requires a moist environ ment to promote epithelialization, and such an environment is  maintained by using polyurethane or hydrocolloid dressings.  Because a full-thickness graft removes all epidermal appendages,  the defects must be closed primarily. When a skin graft is harvested,  there is immediate shrinkage of the surface area of the graft. This  process, known as primary contraction, is due to recoil of the elastic  fibers of the dermis. The thicker the skin graft, the greater the  immediate shrinkage, with full-thickness grafts shrinking by  approximately 40% of their initial surface area and split-thickness  grafts shrinking by approximately 10% of their initial surface area.  Shrinkage must be considered when planning the amount of skin  to harvest for covering a given wound size. Secondary contraction  occurs when contractile myofibroblasts in the bed of a granulating  wound interact with collagen fibers to cause a decrease in the  wound\u2019s surface area. Secondary contraction is greater in wounds  covered with split-thickness grafts than in those covered with full thickness grafts. The amount of secondary contracture is inversely  proportional to the amount of dermis included in the graft rather  than the absolute thickness of the graft. Dermal elements hasten the  displacement of myofibroblasts from the wound bed. CHAPTER 2 / Wound Healing and Cell Biology 11 Sensation may return to areas that have been grafted if the bed  is suitable and not significantly scarred. Although sensation is not  completely normal, it is usually adequate for protection. This  process begins at about 10 weeks and is maximal at 2 years. Skin  grafts appear to be more sensitive than the normal surrounding skin  to melanocyte stimulation during exposure to ultraviolet sunlight.  Early exposure to sunlight after grafting may lead to permanently  increased pigmentation of the graft and should be avoided. Derm abrasion or the application of hydroquinones may be beneficial in  reducing this pigmentation.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1328,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "A 21-year-old graduate student has a large hypertrophic scar  on the lower part of her face. The patient had sustained a  laceration on her face 2 years previously after hitting her face  on the side of a swimming pool. Which of the following  statements regarding scar revision is true?",
+    "options": {
+      "A": "Scar maturation refers to the change in size of the wound  in the first 1 to 2 months.",
+      "B": "Scar revision should have been performed in the first 3  months after injury to minimize fibrosis.",
+      "C": "Revision should be performed earlier in children than in  adults.",
+      "D": "It corrects undesirable pigmentation.",
+      "E": "Scar revision should be delayed for approximately 1 year  to allow maturation."
+    },
+    "answer": "E",
+    "explanation": {
+      "correct": "Changes in pliability, pigmentation, and configura tion of a scar are known as scar maturation. This process continues  for many months after an incision; therefore it is generally recom mended that revision not be carried out for approximately 12 to 18  months because natural improvement can be anticipated within this  period. In general, scar maturation occurs more rapidly in adults  than in children. Most erythematous scars show little improvement  after revision; therefore scar revision should not be undertaken for  correction of undesirable scar color alone.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1329,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "A 68-year-old diabetic man undergoes a below-knee  amputation. The patient\u2019s postoperative course is complicated  by severe depression and anorexia. Before discharge, the  patient is started on a multivitamin regimen. Which of the  following statements regarding wound healing is true?",
+    "options": {
+      "A": "Vitamin A is needed for hydroxylation of lysine and  proline in collagen synthesis.",
+      "B": "High doses of vitamin C improve wound healing.",
+      "C": "Vitamin E is involved in the stimulation of fibroplasia,  collagen cross-linking, and epithelialization.",
+      "D": "Zinc deficiency results in delayed early wound healing.",
+      "E": "Iron deficiency has been linked to defects in long-term  wound remodeling."
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "Vitamin A is involved in the stimulation of fibro plasia and epithelialization. Although there has been no conclusive  evidence of its efficacy in humans, in animal studies vitamin A has  been shown to reverse the inhibitory effects of glucocorticoids in  the inflammatory phase of wound healing and epithelialization. 12 SECTION I / Surgical Fundamentals Vitamin C is a necessary cofactor in the hydroxylation and cross linking of lysine and proline in collagen synthesis. Deficiencies in  vitamin C (scurvy) can lead to the production of inadequately  hydroxylated collagen, which either degrades rapidly or never  forms proper cross-links. Doses higher than physiologic doses do  not improve wound healing. Vitamin E is applied to wounds and  incisions by many patients, but there is no evidence to support the  role of vitamin E in wound healing. Large doses of vitamin E have  been found to inhibit wound healing. Zinc is a necessary cofactor  of RNA and DNA polymerase, and deficiencies have been linked  to poor early wound healing. Iron (specifically, the ferrous iron) is  necessary for converting hydroxyproline to proline. However,  chronic anemia and iron deficiency have not been linked to delayed  or impaired wound healing.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1330,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "Which of the following statements regarding wound  epithelialization is true?",
+    "options": {
+      "A": "Integrins act as a key modulator of the interaction  between epithelial cells and the surrounding environment.",
+      "B": "Structural support and attachment between the epidermis  and dermis are provided by tight cell junctions.",
+      "C": "Early tensile strength of the wound is a direct result of  collagen deposition.",
+      "D": "A reepithelialized wound develops hair follicles and  sweat glands like those seen in the normal skin.",
+      "E": "Contact inhibition can prevent collagen deposition and  result in a chronic (nonhealing) wound."
+    },
+    "answer": "A",
+    "explanation": {
+      "correct": "Migration of epithelial cells is one of the earliest  events in wound healing. Shortly after injury and during the inflam matory phase, basal epithelial cells begin to multiply and migrate  across the defect, with fibrin strands being used as the support  structure. Integrins are the main cellular receptors involved in epi thelial migration; they act as sensors and integrators between the  extracellular matrix and the epithelial cell cytoskeleton. Tight junc tions within the epithelium contribute to its impermeability, whereas  the basement membrane contributes to structural support and  attachment of the epidermis to the dermis. Surgical incisions seal  rather promptly and after 24 h are protected from the external  environment. Early tensile strength is a result of blood vessel  ingrowth, epithelialization, and protein aggregation. After covering  the wound, the epithelial cells keratinize. The reepithelialized  wound has no sweat glands or hair follicles, which distinguishes it  from the normal skin. Control of the cellular process during wound  epithelialization is not completely understood, but it appears to be  regulated in part by contact inhibition, with growth being arrested  when two or more similar cells come into surface contact. Derange ments in the control of this process can result in epidermoid malig nancy. Malignancy is more frequently observed in wounds resulting  from ionizing radiation or chemical injury, but it can occur in any  wound when the healing process has been chronically disrupted.  For example, squamous cell carcinoma may develop in patients  with chronic burn wounds or osteomyelitis (Marjolin\u2019s ulcer).",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1331,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "In DNA replication, what type of mutation is specifically  associated with the generation of a stop codon?",
+    "options": {
+      "A": "Point mutation",
+      "B": "Missense mutation",
+      "C": "Nonsense mutation",
+      "D": "Frameshift mutation",
+      "E": "Neutral mutation"
+    },
+    "answer": "C",
+    "explanation": {
+      "correct": "A change in a single base pair is known as a point  mutation. A single amino acid change resulting from a point mutation  is known as a missense mutation. A missense mutation may cause  changes in the structure of the protein that lead to altered biologic  activity. Nonsense mutations occur if a point mutation results in the  replacement of an amino acid codon with a stop codon. Nonsense  mutations lead to premature termination of translation and often  result in the loss of encoded protein. Frameshift mutations occur  when a few base pairs are added or deleted and lead to the introduc tion of unrelated amino acids or stop codons. A neutral mutation  occurs when the change results in the substitution of a different but  chemically similar amino acid. Frequently, the amino acids are  similar enough that little or no change occurs in the resultant protein.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1332,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "Which of the following is correct regarding cell signaling?",
+    "options": {
+      "A": "Cytokines are exclusively peptide mediators.",
+      "B": "Autocrine mediators are secreted by a cell and act on  adjacent cells of a different type.",
+      "C": "Cytokines are usually produced by cells specialized for  only that purpose.",
+      "D": "The effects of hormones are generally local rather than  global.",
+      "E": "Growth factors are frequently mediated by second  messenger systems such as diacylglycerol (DAG) and  cyclic adenosine monophosphate (cAMP)."
+    },
+    "answer": "E",
+    "explanation": {
+      "correct": "Cytokines are proteins, glycoproteins, or peptides  that bind to target cell surface receptors to stimulate a cellular response.  They are important mediators of wound healing. Cytokines can reach  target cells by paracrine, autocrine, or intracrine routes. Paracrine  mediators are produced by one cell and act on an adjacent target cell.  Autocrine mediators are secreted by a cell and act on cell surface  receptors on the same cell. Intracrine mediators act within a single  cell. Hormones are released by cells and act on a distant target (endo crine route). Although the distinction between cytokines and hor mones has blurred, in general, hormones are secreted from specialized  glands (e.g., insulin, parathyroid hormone) and cytokines are secreted  by a wide variety of cell types. Hormones typically induce body-wide  effects, whereas the effects of cytokines may be more localized (e.g.,  wound healing at the site of an injury). Generally, growth factors are  named according to their tissue of origin or their originally discovered  action. Growth factors interact with specific membrane receptors to  initiate a series of events that ultimately lead to stimulation of cell  growth, proliferation, or differentiation. The intermediate events acti vate a variety of second messenger systems mediated by agents such  as inositol 1,4,5-triphosphate (IP3), DAG, and cAMP.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1333,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "A 25-year-old man presents to the office with complaints of  contracture of his left index finger after a burn injury. Which  of the following statements is true about growth factors?",
+    "options": {
+      "A": "Epidermal growth factor (EGF) stimulates the production  of collagen.B. Vascular endothelial growth factor (VEGF) and platelet derived growth factor (PDGF) both stimulate angiogen esis by binding to a common receptor.",
+      "C": "Fibroblast growth factor (FGF) stimulates wound  contraction.",
+      "D": "Transforming growth factor-\u03b2 (TGF-\u03b2) is stored in  endothelial cells.",
+      "E": "Tumor necrosis factor-\u03b1 (TNF-\u03b1) inhibits angiogenesis."
+    },
+    "answer": "C",
+    "explanation": {
+      "correct": "EGF was the first cytokine described. It is a  potent mitogen for epithelial cells, endothelial cells, and fibro blasts. EGF stimulates the synthesis of fibronectin, angiogenesis,  and collagenase activity. PDGF is released from the alpha gran ules of platelets and is responsible for the stimulation of neutro phils and macrophages and for increasing the production of  TGF-\u03b2. PDGF is a mitogen and chemotactic agent for fibroblasts  and smooth muscle cells and stimulates angiogenesis, collagen  synthesis, and collagenase activity. VEGF is similar to PDGF but  does not bind to the same receptors. VEGF is mitogenic for endo thelial cells. Its role in promoting angiogenesis has led to an  interest in anti-VEGF therapies for cancer. FGF has acidic and  basic forms whose actions are identical but whose strengths differ  (basic FGF is 10 times stronger than acidic FGF). FGF is mito genic for endothelial cells, fibroblasts, keratinocytes, and myo blasts; stimulates wound contraction and epithelialization; and  induces the production of collagen, fibronectin, and proteogly cans. It is an important mediator of angiogenesis. TGF-\u03b2 is  released from the alpha granules of platelets and has been shown  to regulate its own production in an autocrine manner. TGF-\u03b2 stimulates fibroblast proliferation and the production of proteo glycans, collagen, and fibrin. It is an important mediator of fibro sis. Administration of TGF-\u03b2 has been suggested as an approach  to reduce scarring and reverse the inhibition of wound healing by  glucocorticoids. TNF-\u03b1 is a mitogen for fibroblasts and is pro duced by macrophages. It stimulates angiogenesis and the synthe sis of collagen and collagenase.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1334,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "An 85-year-old nursing home patient is found to have a  worsening stage III sacral pressure ulcer. The ulcer is  debrided and tissue for culture obtained. Tissue cultures  reveal 108 organisms per gram of tissue after operative  debridement. What is the next most appropriate step in the  management of the patient\u2019s wound?",
+    "options": {
+      "A": "Muscle flap coverage",
+      "B": "Wound vacuum-assisted closure (VAC)",
+      "C": "Intravenous antibiotics",
+      "D": "Repeat debridement",
+      "E": "Debridement with immediate application of a split-thick ness skin graft"
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "The National Pressure Ulcer Advisory Panel has  recommended a staging system for pressure sores that is useful in  planning treatment. Stage I is represented by the presence of non blanching erythema of intact skin. Stage II is characterized by  partial-thickness skin loss involving the epidermis or dermis. Clini cally, the ulcer is manifested as a blister, abrasion, or shallow crater.  Stage III is full-thickness skin loss with involvement of the  CHAPTER 2 / Wound Healing and Cell Biology 13 underlying subcutaneous tissue. Stage III wounds may extend  down to but not through the underlying fascia. Stage IV represents  full-thickness skin loss with extensive destruction or tissue necrosis  of underlying structures, which may include muscle and bone.  Studies have shown that wounds with quantitative cultures reveal ing more than 106 organisms per gram of tissue that undergo recon struction with skin or even muscle flaps have a significantly greater  risk for complications, including infection, accumulation of fluid,  and wound dehiscence. Similarly, a skin graft is unlikely to survive  in an environment with such a high bacterial inoculate. Negative pressure wound therapy, such as with the wound VAC system,  involves the use of a sponge and an occlusive dressing connected  to a suction apparatus in a closed system. In patients with large  wounds, a wound VAC may serve as a bridge to reduce the wound  size for definitive reconstruction. It has been shown to be effective  in reducing wound edema, controlling wound drainage, encourag ing diminution of wound size, and facilitating the formation of  granulation tissue. Although studies have shown that wound VAC  therapy may reduce bacterial counts over time, the most appropriate  management of such patients is repeat debridement of the wound.  Intravenous antibiotics may be recommended to treat the underly ing osteomyelitis.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1335,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "A 45-year-old woman undergoes bilateral transverse rectus  abdominis muscle (TRAM) breast reconstruction after  modified radical mastectomy. The patient is scheduled for  postoperative radiation therapy and is concerned that this will  affect her wound-healing ability. Which of the following  statements regarding wound healing in this patient is true?",
+    "options": {
+      "A": "Denervation has a profound effect on wound contraction  and epithelialization.",
+      "B": "A bacterial count of 1000 organisms per square centime ter retards wound healing.",
+      "C": "Chemotherapy beginning 10 to 14 days after primary  wound closure has little effect on the final status of a  wound.",
+      "D": "Tissue ischemia is the main component of tissue damage  after irradiation.",
+      "E": "Postoperative radiation therapy should be delayed for at  least 4 to 6 months after surgery to decrease the inci dence of wound complications."
+    },
+    "answer": "C",
+    "explanation": {
+      "correct": "Denervation has no effect on wound contraction or  epithelialization. Flap wounds in paraplegics heal satisfactorily  when other factors, such as nutrition and temperature, are con trolled. Subinfectious bacterial levels appear to accelerate wound  healing and the formation of granulation tissue. However, when the  level reaches 106 organisms per square centimeter of wound,  healing is delayed because of decreased tissue oxygen pressure,  increased collagenolysis, and a prolonged inflammatory phase.  Various chemotherapeutic agents affect wound healing. Most anti metabolic agents (e.g., 5-fluorouracil) do not delay wound healing,  although agents such as doxorubicin have been shown to delay  wound healing. When chemotherapy begins 10 to 14 days after  wound closure, little effect is noted on its final status despite a  demonstrable early retardation in the wound strength. Tissue  ischemia may not be the primary factor involved in chronic wound healing problems associated with irradiation. Such problems are  most likely related to changes within the nuclei and concomitant 14 SECTION I / Surgical Fundamentals cytoplasmic malformation. To decrease wound complications, it is  usual to delay surgery until at least 3 to 4 weeks after full-dose  irradiation and to avoid radiation therapy for at least 3 to 4 weeks  after surgery.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1336,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "A 46-year-old man is evaluated shortly after undergoing  radiation therapy and chemotherapy for primary laryngeal  cancer. He also gives a history of long-term steroid use for  rheumatoid arthritis. The patient complains of a chronic,  nonhealing wound on his neck, just over his right clavicular  head. Which statement regarding the treatment of this wound  is true?",
+    "options": {
+      "A": "The wound should be treated with compression dressings.",
+      "B": "The wound should be treated with injected steroids.",
+      "C": "The patient should start taking vitamin A, and the wound  should be covered with antimicrobial dressings.",
+      "D": "The patient should start taking vitamin C, and the wound  should be kept open to air.",
+      "E": "The wound should be excised and a skin graft applied."
+    },
+    "answer": "C",
+    "explanation": {
+      "correct": "Radiation results in progressive endarteritis oblit erans and microvascular damage to the skin, which leads to skin  ischemia and fibrotic interstitial changes. This leaves wounds in the  skin particularly prone to infection. The use of antimicrobial dress ings capable of maintaining a moist environment is ideal for these  wounds. Research also supports the use of hyperbaric oxygen and  growth factors to promote wound healing. Patients taking steroids  should receive daily vitamin A supplements. Wounds in these  patients show decreased rates of angiogenesis, collagen deposition,  and cellular proliferation. Wounds should be kept free of bacterial  contamination.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1337,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "A 25-year-old ballet dancer with a history of anorexia  nervosa arrives at the emergency department with right lower  quadrant pain. After an appendectomy, a wound infection at  the surgical site requires debridement. The patient is placed  on an antibiotic regimen, and the wound is packed with  wet-to-dry dressings. Regarding wound healing and malnutri tion, which of the following statements is true?",
+    "options": {
+      "A": "Hypoproteinemia leads to decreased levels of arginine  and glutamine, which are essential in wound healing.",
+      "B": "Cell membranes rapidly become dehydrated in the  absence of vitamin E, resulting in delayed wound healing.",
+      "C": "Zinc is essential to the fibroblast\u2019s ability to cross-link  collagen.",
+      "D": "Vitamin D serves an immunomodulatory role in wound  healing.",
+      "E": "The patient should be treated with high-dose vitamin C,  vitamin A, and zinc."
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "Adequate amounts of protein, carbohydrates, fatty  acids, and vitamins are essential for wound healing. Hypoprotein emia results in decreased delivery of the essential amino acids used  in the synthesis of collagen. Carbohydrates and fats provide energy  for wound healing, and in their absence, proteins are rapidly broken  down. Fatty acids are vital components of cell membranes. Vitamin  C is a cofactor for hydroxylation of lysine and proline during col lagen synthesis, and its deficiency leads to decreased collagen  cross-linking by fibroblasts. Vitamin C is also effective in providing  resistance to infection. Vitamin A is essential for normal epitheli alization, proteoglycan synthesis, and enhanced immune function.  Vitamin D is required for normal calcium metabolism, but it is also  involved in promoting immune function in the skin. Vitamin E has  not been shown to play a role in wound healing. Zinc deficiency  leads to a deficient formation of granulation tissue and inhibition  of cellular proliferation. Increased administration of vitamins  and minerals does not accelerate wound healing and often has a  deleterious effect.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1338,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "Which of the following statements regarding second  messenger systems is true?",
+    "options": {
+      "A": "Most receptor proteins (such as G proteins) are com pletely extracellular.",
+      "B": "Both the \u201cfirst messenger\u201d and \u201csecond messenger\u201d  mediators of cell signaling function within the cell  cytoplasm.",
+      "C": "Adenylate cyclase stimulates the conversion of cAMP to  adenosine triphosphate (ATP).",
+      "D": "IP3 generally increases cytoplasmic calcium  concentrations.",
+      "E": "IP3 and DAG together lead to inactivation of protein  kinase"
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "The thyrotropin (TSH) receptor is a G\u03b1s receptor  found mainly on the surface of thyroid follicular cells. When acti vated, it stimulates increased production of thyroxine (T4) and  triiodothyronine (T3). Several families of receptor proteins have been identified. The  most common is the G protein (guanine nucleotide\u2013binding protein)  family, a subset of guanosine triphosphatase (GTPase) enzymes.  All G protein\u2013coupled receptors have characteristic seven trans membrane domains. Binding of an extracellular ligand causes a  conformational change in the receptor that allows it to exchange  guanosine diphosphate (GDP) for guanosine triphosphate (GTP) on  the intracellular portion of the G protein. The intracellular portion  of the \u201clarge\u201d (heterotrimeric) G protein\u2013coupled receptor consists  of three subunits, G\u03b1, G\u03b2, and G\u03b3. Other \u201csmall\u201d (monomeric) G  protein receptors have only a homologue of the G\u03b1 portion. There  are several important subsets of the \u201clarge\u201d G protein receptors,  and they are classified according to the specific intracellular  pathway that is activated. G\u03b1s stimulates membrane-associated adenylate cyclase to  produce cAMP from ATP. cAMP is a second messenger that acti vates protein kinase A, which results in the phosphorylation of  downstream targets. G\u03b1s ligands include adrenocorticotropic  hormone (ACTH), calcitonin, glucagon, histamine (H2), TSH, and  many others. G\u03b1i inhibits the production of cAMP from ATP. G\u03b1i ligands include acetylcholine (M2 and M4), dopamine (D2, D3, and  D4), and histamine (H3 and H4). G\u03b1q activates phospholipase C,  which cleaves phosphatidylinositol 4,5-bisphosphate (PIP2) into  IP3 and DAG. IP3 mediates the release of calcium from intracellular  reservoirs, such as the endoplasmic reticulum (ER), sarcoplasmic  reticulum (SR) in muscle, and mitochondria. IP3 and DAG together  work to activate protein kinase C, which can modulate membrane permeability and activate gene transcription. G\u03b1q ligands include  histamine (H1), serotonin (5-HT2), and muscarinic receptors. The most well-known \u201csmall\u201d G protein receptors are the Ras  family GTPases. The Ras receptors influence a wide variety of  processes in the cell, including growth, cellular differentiation, and  cell movement.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1339,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "Inflammatory breast cancer is diagnosed in a 36-year-old  woman. A decision is made to treat the patient with radiation,  along with paclitaxel and doxorubicin. Which of the  following statements regarding cellular motility and contrac tility is true?",
+    "options": {
+      "A": "Actin fibers are found mainly in muscle cells.",
+      "B": "The interactions between actin and myosin that underlie the  contraction of skeletal muscle require calcium but not ATP.",
+      "C": "Intermediate filaments extend from the centrosome to the  nucleus.",
+      "D": "The proteins kinesin and dynein are required for  directional transport of cellular components along the  microtubules.",
+      "E": "The microtubules used to form the spindle apparatus are  synthesized de novo before each mitosis."
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "The cytoskeleton provides the structural framework  for the cell. It is composed of three main types of protein polymers:  actin filaments, intermediate filaments, and microtubules. Actin fila ments are found in nearly all types of cells. They form a cortical layer  beneath the plasma membrane of most cells, the stress fibers of  fibroblasts, and the cytoskeleton of microvilli of intestinal epithelial  cells. In muscle cells, the interaction between the heads of myosin  (thick filaments) and actin (thin filaments) requires hydrolysis of ATP  to separate the filaments at the end of the power stroke. Calcium and  troponin C (an actin-associated protein) are also required to expose  the binding site for myosin on the actin filament. Intermediate fila ments are a heterogeneous group of proteins that extend from the  nucleus to the cell surface. They interact with other cytoskeletal fila ments and binding proteins to produce their effects. Microtubules arise from the centrosome, with the cell\u2019s micro tubule-organizing center being located near the nucleus. Microtu bules are in a constant dynamic equilibrium between assembly and  disassembly. Movement of cellular components, such as vacuoles,  along the microtubules requires ATP and either of two associated  proteins: kinesin for movement away from the centrosome and  dynein for movement toward it. Cilia and flagella contain columns  of doublet microtubules in a 9\u20132 arrangement (nine doublets in a  circle surrounding two central doublets). Movement is accom plished when the doublets slide along each other in a process medi ated by dynein and fueled by hydrolysis of ATP. Microtubules also  play an important role in cell division. Assembly of the mitotic  spindle involves replication and splitting of the microtubule-orga nizing center into the two spindle poles and reorganization of the  cytoskeletal microtubules to form the spindle apparatus.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1340,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "Regarding chemotherapeutic agents, which of the following  statements is true?",
+    "options": {
+      "A": "Paclitaxel is a manmade taxane first manufactured in the  polycarbon industry.",
+      "B": "Taxanes unwind DNA thus preventing transcription. CHAPTER 2 / Wound Healing and Cell Biology 15",
+      "C": "Vinca alkaloids inhibit cell division by disrupting the  mitotic spindle.",
+      "D": "Doxirubicin intercalates between DNA base pairs thus  disrupting transcription.",
+      "E": "Taxanes impair the progression of topoisomerase ii."
+    },
+    "answer": "C",
+    "explanation": {
+      "correct": "Taxanes function as mitotic inhibitors by inhibiting  depolymerization of the mitotic spindle, which results in a \u201cfrozen\u201d  mitosis. Paclitaxel is a natural taxane that prevents depolymeriza tion of cellular microtubules. The vinca alkaloids (e.g., vinblastine,  vincristine) also inhibit cell division but by disrupting the mitotic  spindle. Doxorubicin (Adriamycin) intercalates between DNA base  pairs and impairs the progression of topoisomerase ii, which  unwinds DNA for transcription.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1341,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "A 27-year-old woman sustains an incomplete T10 spinal cord  injury after falling off a horse. The patient is given 30 mg/kg  of methylprednisolone. Which of the following is true  regarding steroid hormones and their receptors?",
+    "options": {
+      "A": "Steroid hormones are synthesized from proteins.",
+      "B": "In the bloodstream, steroid hormones often dimerize to  facilitate transport.",
+      "C": "Steroid hormone receptors are found only in the cytoplasm.",
+      "D": "Heat shock proteins (HSPs) are usually associated with  cytosolic steroid hormone receptors.",
+      "E": "Binding of the steroid hormone to a receptor induces a  second messenger cascade to alter cellular metabolism."
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "Steroid hormones are synthesized from cholesterol.  Their lipophilic nature allows them to cross cell membranes easily.  Steroid hormones can be divided into five groups based on their recep tors: glucocorticoids, mineralocorticoids, androgens, estrogens, and  progestogens. In the bloodstream, steroid hormones are generally  bound to specific carrier proteins such as sex hormone\u2013binding globu lin or corticosteroid-binding globulin. Receptors for steroid hormones  are most commonly located in the cytosol, although they are also found  in the nucleus and on the cell membrane. After binding to the steroid  hormone, steroid receptors often dimerize. For many cytosolic steroid  receptors, binding of the ligand induces a conformational change and  releases HSPs. Nuclear steroid receptors are not generally associated  with HSPs. HSPs themselves have several roles, including functioning  as intracellular chaperones for other proteins, serving as transcription  factors, and facilitating antigen binding. They may also serve as targets  for therapeutics. Ultimately, the activated steroid receptor must enter  the nucleus to serve as a transcription factor for augmentation or sup pression of the expression of particular genes. The resulting messenger  RNA leaves the nucleus for the ribosomes, where it is translated to  produce specific proteins.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1342,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "A 55-year-old man with a history of hepatitis C cirrhosis has  complaints of nausea, fever, and progressive lethargy. Part of  his evaluation includes an assessment of his hepatitis C viral  load. Which of the following tests would be most useful in  assessing his hepatitis C viral load?",
+    "options": {
+      "A": "Western blot",
+      "B": "Gel electrophoresis16 SECTION I / Surgical Fundamentals",
+      "C": "Fluorescence microscopy",
+      "D": "Polymerase chain reaction (PCR)",
+      "E": "Expression cloning"
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "Western blot is a technique used to detect specific  proteins in a sample. An antibody to the protein of interest is used  as a probe. Gel electrophoresis is a method for separating proteins  or nucleic acids according to their size, mass, or composition. It is  based on the differential rate of movement of the molecules of inter est through a gel when an electric field is applied. PCR is a technique  by which DNA may be massively amplified. Primers or oligonucle otides are synthesized to complement one strand of the DNA to be  amplified. Amplification involves three temperature-cycled steps: (1)  heating for separation (denaturation) of the double-helix structure  into two single strands, (2) cooling for hybridization of each single  strand with its primer (annealing), and (3) heating for DNA synthesis  (elongation). The steps are repeated with exponential amplification  of the DNA of interest. When RNA is used, reverse transcriptase is  employed initially to transcribe the RNA to DNA before amplifica tion. Quantitative PCR can be used in real time to measure the start ing concentration of DNA or RNA in a sample, for example, the  amount of hepatitis C RNA in a blood sample. With expression  cloning, DNA coding for a protein of interest is cloned into a plasmid  (extrachromosomal DNA molecule) that can be inserted into a bacte rial or animal cell. The cell expresses the protein, which allows the  production of sufficient amounts for study. Fluorescence microscopy  is performed by labeling a component of interest in a sample with a  molecule that absorbs light at one wavelength and emits at another  (fluorescence).",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1343,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "A 56-year-old man underwent total thyroidectomy for  papillary cancer. On the first postoperative day, the patient  complains of circumoral tingling and muscle weakness.  Which of the following statements regarding the electrical  properties of cell membranes is not true?",
+    "options": {
+      "A": "Ions flow through hydrophilic channels formed by  specific transmembrane proteins.",
+      "B": "Lipids provide the ability to store electric charge  (capacitance).",
+      "C": "Active pumps maintain the ionic gradients necessary for  a resting membrane potential.",
+      "D": "Initiation of an action potential depends on voltage-gated  channels.",
+      "E": "Large numbers of sodium ions rush in during the initial  phase of a nerve action potential."
+    },
+    "answer": "E",
+    "explanation": {
+      "correct": "This patient has clinical findings associated with  hypocalcemia. Specific transmembrane proteins provide hydrophilic  paths for the ions (primarily Na+, K+, Ca2+, and Cl\u2212) involved in  electrical signaling. The amino acid sequence in specific regions of  these proteins determines the selectivity for ions. The lipid compo nent of the plasma membrane provides the capability of storing  electric charge (capacitance), and the protein component provides the  capability of resisting electric charge (resistance). Establishment and  maintenance of a resting cell membrane potential require the separa tion of charge maintained by membrane capacitance, selective per meability of the plasma membrane, concentration gradients  (intracellular versus extracellular) of the permeant ions, and imper meant intracellular anions. Active pumping by the sodium [sodium potassium adenosine triphosphatase (Na+, K+-ATPase)] or calcium  pumps generally maintains the ionic concentration gradients. Action  potentials are regenerative (self-sustaining) transient depolarizations  caused by the activation of voltage-sensitive sodium and potassium  channels. Only a small volume of Na+ is necessary to initiate an  action potential. In fact, the amount of Na+ that flows into a typical  nerve cell during an action potential would change the intracellular  Na+ concentration by only a few parts per million.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1344,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "Which cell junction acts as a transmembrane linkage without  an intracellular communication function?",
+    "options": {
+      "A": "Tight junction",
+      "B": "Gap junction",
+      "C": "Desmosome",
+      "D": "Connexon",
+      "E": "All of the above junctions have an intracellular communi cation function"
+    },
+    "answer": "C",
+    "explanation": {
+      "correct": "Any patient undergoing abdominal surgery will  sustain a certain amount of capillary leakage. A proposed mecha nism involves increased release of nitric oxide (NO), which causes  vasodilation in precapillary cells and vasoconstriction in postcapil lary cells, ultimately resulting in increased third-spacing of fluids.  There are three major types of cell junctions: gap junctions, des mosomes, and tight junctions. Gap junctions are the most common  and function primarily in intercellular communication and cellular  adhesion. The connection between cells maintained by a gap junc tion is not particularly stable; it depends on a variety of complexes  on each cell but not on connecting proteins (hence the term gap).  Gap junctions serve as a pathway of permeability between cells for  many different molecules weighing up to 1000 daltons. Connexons  are protein assemblies formed by six identical protein subunits.  They span the intercellular gap of the lipid bilayer to form an  aqueous channel connecting the bilayers. Desmosomes function as  cellular adhesion points but do not provide a pathway of commu nication. They are linked by filaments that function as transmem brane linkers, but desmosomes are not points of true cell fusion.  Tight junctions, in contrast, are true points of cell fusion and are  impermeable barriers. They prevent leakage of molecules across  the epithelium in either direction. They also limit the movement of  membrane proteins within the lipid bilayer of the plasma membrane  and therefore maintain cells in a differentiated polar state.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1345,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "A 42-year-old woman with a history of end-stage renal  disease is being evaluated for cadaveric renal transplantation.  Which of the following statements regarding cell surface  antigens is true?",
+    "options": {
+      "A": "They depend on cell surface\u2013bound proteins to exert their  effect.",
+      "B": "They are limited to intracellular receptors to exert their  effect.",
+      "C": "First messengers bind directly to DNA to begin the  protein synthesis process.",
+      "D": "Extracellular ligands are termed the \u201csecond messengers.\u201d",
+      "E": "Extracellular ligands are termed the \u201cfirst messengers.\u201d"
+    },
+    "answer": "E",
+    "explanation": {
+      "correct": "Chemical messengers can influence intracellular  physiology via several mechanisms. Some ligands, such as acetyl choline (binding to the nicotinic cholinergic receptor) or norepi nephrine (binding to the potassium channel in cardiac muscle),  directly bind to ion channels in the cell membrane to alter their  conductance. Some lipid-soluble messengers, such as steroid and  thyroid hormones, enter the cell and bind to nuclear or cytoplasmic  receptors, which then bind to DNA to increase transcription of  selected mRNA. Many other extracellular messengers bind to the  extracellular portion of transmembrane receptor proteins to trigger  the release of intracellular mediators. The extracellular ligands are  termed as the \u201cfirst messenger,\u201d whereas the intracellular mediators  are \u201csecond messengers.\u201d Examples of second messengers include  IP3, DAG, calcium, and cAMP.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1346,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "A 67-year-old man undergoes revascularization of his right  lower extremity after sustaining thrombosis secondary to a  popliteal artery aneurysm. Shortly after surgery, a compart ment syndrome of the affected limb develops and is  attributed to reperfusion injury. Research suggests that ER  stress may be responsible for apoptosis after ischemia.  Which of the following statements regarding the ER is not  true?",
+    "options": {
+      "A": "Rough ER is a primary site of lipid synthesis.",
+      "B": "Smooth ER plays an important role in the metabolism of  drugs.",
+      "C": "Ribosomes attached to the rough ER manufacture  proteins for use within the cell.",
+      "D": "SR is found mainly in epithelial cells.",
+      "E": "SR plays an important role in gluconeogenesis. CHAPTER 2 / Wound Healing and Cell Biology 17"
+    },
+    "answer": "B",
+    "explanation": {
+      "correct": "The ER is part of a network that includes mito chondria, lysosomes, microbodies, the Golgi complex, and the  nuclear envelope. This network forms an intracellular circulatory  system that allows vital substrates to reach the interior of the cell  for transportation and assembly. There are two types of ER. Rough  ER is coated with ribosomes and functions as the site of synthesis  of membrane and secreted proteins. Other ribosomes that circulate  freely in the cytoplasm synthesize proteins destined to remain  within the cell. Smooth ER plays a major role in metabolic pro cesses, including the synthesis of lipids and steroids, metabolism  of carbohydrates (especially gluconeogenesis), drug detoxification,  and molecular conjugation. Smooth ER contains the enzyme glu cose-6-phosphatase, which converts glucose-6-phosphate to  glucose during gluconeogenesis. Cells that synthesize large amounts  of protein for export have abundant rough ER, whereas cells that  produce steroids (e.g., those in the adrenal cortex) generally have  smoother ER. The smooth ER is continuous with the nuclear enve lope. The SR is a distinct type of smooth ER found in striated and  smooth muscles. The SR contains large stores of calcium, which it  sequesters and then releases when the cell is stimulated. The release  of calcium from the SR plays a major role in excitation\u2013contraction  coupling, which allows muscle cells to convert an electric stimulus  to a mechanical response.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1347,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "Which of the following statements regarding lysosomes is  true?",
+    "options": {
+      "A": "Primary lysosomes usually contain extracellular material  targeted for digestion.",
+      "B": "Lysosomal enzymes work effectively in the acidic pH of  the cytoplasm.",
+      "C": "Serum levels of lysosomal acid phosphatases may have  prognostic value in diseases such as prostate cancer.",
+      "D": "Lysosomal storage diseases such as Tay-Sachs result from  unregulated activity of lysosomal enzymes.",
+      "E": "To better isolate their hydrolytic enzymes, lysosomes are  resistant to fusion with other cell membranes."
+    },
+    "answer": "C",
+    "explanation": {
+      "correct": "Lysosomes are membrane-bound organelles that  contain acid hydrolases. Heterolysosomes are involved in the endo cytosis and digestion of extracellular material, whereas autolyso somes are involved in digestion of the cell\u2019s own intracellular  material. Primary lysosomes are formed by the addition of hydrolytic  enzymes (from the rough ER) to endosomes from the Golgi complex.  Combining a primary lysosome with a phagosome creates a  phagolysosome. Lysosomal enzymes are hydrolases that are resistant  to autolysis. They function best in the acidic milieu of the lysosome;  the slightly alkaline pH of the surrounding cytosol helps protect the  cell from injury if the lysosome leaks. Acid phosphatase is a marker  enzyme for lysosomes. Different forms of acid phosphatases are  found in lysosomes from various organs, and serum levels may be  indicative of specific diseases (for example, prostatic acid phospha tase may have prognostic significance in prostate cancer). One of the distinguishing characteristics of lysosomal mem branes is their ability to fuse with other cell membranes. Lysosomal  membranes have a high proportion of lipids in a micellar configura tion, primarily because of the presence of the phospholipid lyso lecithin. This increased micellar configuration facilitates fusion of 18 SECTION I / Surgical Fundamentals the lysosome membrane with the phagosome membrane for diges tion and with the plasma membrane for secretion. Steroids are  thought to work partially by stabilizing lysosomal membranes,  thereby inhibiting membrane fusion and enzyme release. Lyso somes may engage in autophagocytosis, which is thought to be  important for cell turnover, cell remodeling, and tissue changes.  Several lysosomal storage diseases, such as Tay-Sachs, Gaucher,  and Pompe disease, are caused by inactive or missing lysosomal  digestive proteins. These genetic diseases lead to the accumulation  of normally degraded substrates within the cell.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1348,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "A 56-year-old man is transferred from the county jail with  complaints of hemoptysis, fever, and chills. The patient had  undergone left lower lobectomy 6 years ago for an isolated  lung nodule. Chest radiography on admission shows a lesion  in the left upper lobe that is concerning for tuberculosis. The  cell wall of Mycobacterium tuberculosis prevents lysosomes  from fusing with phagosomes, which contributes to its  tendency to lead to granuloma formation. Which of the  following statements regarding endocytosis is not true?",
+    "options": {
+      "A": "Phagocytosis refers to engulfment of particulate matter.",
+      "B": "Pinocytosis refers to the engulfment of soluble material.",
+      "C": "Only specialized cells of the immune system are capable  of endocytosis.",
+      "D": "Opsonins increase the likelihood of phagocytosis by  binding to the antigen.",
+      "E": "Antibodies and complement fragments can serve as  opsonins."
+    },
+    "answer": "C",
+    "explanation": {
+      "correct": "All cells are capable of endocytosis, which is the  process of internalizing extracellular molecules by engulfing the mol ecule within the cell membrane. Pinocytosis (cell drinking) is the  engulfment of soluble material. Phagocytosis (cell eating) is the  process by which cells ingest solids. For cells of the immune system,  such as macrophages, dendritic cells, and polymorphonuclear leuko cytes, phagocytosis is particularly important in recognizing and com bating pathogens. In phagocytosis the cell membrane surrounding the  engulfed material pinches off and forms a vesicle called phagosome.  The phagosome maintains the material separate from the cytosol of  the cell. The phagosome fuses with a lysosome, which leads to degra dation of the engulfed material. Degradation can be oxygen dependent  (by the production of reactive oxygen species) or oxygen independent  (generally by proteolytic enzymes and cationic proteins). Typically, both the target (antigen) and the phagocyte are  negatively charged. This limits their ability to come into close  proximity. Opsonins are molecules that act to enhance phagocyto sis. Opsonization occurs when antigens are bound by antibody or  complement molecules (or both). Phagocytic cells express recep tors (Fc, CR1) that bind opsonin molecules (antibody, C3b), which  greatly increases the affinity of the phagocyte for the antigen.  Phagocytosis is an unlikely event if the antigen is not opsonized.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1349,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "For tumors with a high mitotic index indicative of active  growth, which portion of the cell cycle in the actively  dividing cells is most sensitive to ionizing radiation?",
+    "options": {
+      "A": "S phase",
+      "B": "M phase",
+      "C": "G1 phase",
+      "D": "G2 phase",
+      "E": "All phases are equally radiosensitive."
+    },
+    "answer": "B",
+    "explanation": {
+      "correct": "The primary mechanism by which ionizing radia tion induces cell death is direct or indirect injury to DNA. Ion izing radiation can cause lethal damage (damage that cannot be  repaired; for example, most double-strand DNA breaks) or sub lethal damage (damage that can be repaired if conditions are  correct; for example, most single-strand DNA breaks). Factors  that increase the cell\u2019s ability to repair damage make it less sensi tive to ionizing radiation. The cell division cycle is divided into  four distinct phases. Replication of DNA occurs in the synthesis  (S) phase, whereas nuclear division and cell fission occur in the  mitotic (M) phase. The intervals between these two phases are  called the gap (G) phases. Cells in the M phase (mitosis) have the  least capability to repair sublethal damage and hence are the most  radiation sensitive. Cells in the S phase have the most capability  of repairing damage and consequently are the most radiation  resistant. Resting cells (G0) are less sensitive to radiation injury  than cells that are actively dividing (and proceeding through the  cell cycle). Cancer cells are generally less differentiated (with less  ability to repair DNA damage) and more rapidly dividing than  normal tissue. The fact that tumor cells are usually more sensitive  to radiation than the surrounding normal tissue is an important  determinant of the utility of radiation therapy.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1350,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "Which of the following statements regarding oxidative  phosphorylation and mitochondria is true?",
+    "options": {
+      "A": "Glycoproteins are transported into the mitochondrial  matrix to facilitate oxidative phosphorylation.",
+      "B": "The citric acid cycle takes place within the inner  mitochondrial membrane.",
+      "C": "Oxidative phosphorylation via ATP synthase converts  adenosine diphosphate (ADP) to ATP.",
+      "D": "Electrochemical (proton) gradients provide the energy to  power chemosmotic production of ATP.",
+      "E": "Mitochondrial DNA is almost exclusively paternally derived."
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "Metabolic substrates such as fats, proteins, and gly coproteins are converted to fatty acids and pyruvate and transported  into mitochondria. Within the mitochondrial matrix, they are metabo lized by the citric acid (Krebs) cycle to produce the reduced forms  of nicotinamide adenine dinucleotide (NADH) and flavin adenine  dinucleotide (FADH2). The reducing power of these substrates fuels  transfer of electrons from electron donors to receptors as oxidative  phosphorylation. The resultant high-energy electrons pass along the  electron transport chain and release the energy used to move protons  across the inner mitochondrial membrane to generate potential  energy in the form of electrical and pH gradients. ATP synthase uses  the energy obtained from allowing protons to flow down this gradient  to synthesize ATP from ADP. This process is called chemosmosis.  Three ATP molecules are generated for each mole of oxygen con sumed. Mitochondrial DNA is transmitted only from the mother  because sperm contains few mitochondria. During sepsis, inhibited  mitochondrial function as a result of hypoxia or other mediators of  sepsis has been postulated to contribute to organ injury through  accelerated oxidant production and thus promotion of cell death.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1351,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "A 26-year-old with a history of type 2 neurofibromatosis is  scheduled to undergo resection of an acoustic neuroma. The  NF2 gene is located on the long arm of chromosome 22. Which  of the following statements regarding chromosomes is not true?",
+    "options": {
+      "A": "The nucleus contains the entire cellular DNA.",
+      "B": "Histones compact and organize the DNA strands.",
+      "C": "Interactions between DNA and proteins expose specific  genes and control their expression.",
+      "D": "During mitosis, the spindle apparatus attaches to the  chromosome at the centromere.",
+      "E": "Telomeres maintain chromosomal length through the  replication cycles."
+    },
+    "answer": "A",
+    "explanation": {
+      "correct": "Chromosomes are formed by the combination of  double-stranded helical DNA with histones and other proteins. The  interactions between DNA and proteins stabilize the chromosomal  structure. Most cellular DNA is located in the nucleus, although a  small portion is found in the mitochondria. Each chromosomal  double helix contains approximately 108 base pairs. There are  several levels of organizational restructuring, from DNA and his tones binding to form chromatin all the way to the complex folded  structure of the chromosome itself. To express a gene, that portion  of the chromosome must be unfolded and unwrapped to expose the  DNA double helix. Gene expression is regulated by the binding of  nonchromosomal proteins, called transcription factors, to specific  regions of the DNA (enhancer and promoter sequences). Several  distinct regions of chromosomes are identifiable: the origins of  replication (sites of initiation of DNA synthesis), the centromere  (site of spindle attachment during mitosis), and telomeres (special ized end structures that maintain the length of the chromosome  through replication cycles).",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1352,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "Which enzyme is responsible for the catalysis of deoxynucle oside triphosphates into DNA?",
+    "options": {
+      "A": "DNA helicase",
+      "B": "DNA ligase",
+      "C": "DNA polymerase",
+      "D": "DNA primase",
+      "E": "All of the above"
+    },
+    "answer": "C",
+    "explanation": {
+      "correct": "DNA polymerases are enzymes that catalyze the  assembly of deoxynucleoside triphosphates into DNA. There are  several types of DNA polymerases. DNA polymerase III promotes  DNA elongation by nucleotide linkage, whereas DNA polymerase  I functions to fill gaps and repair DNA. DNA helicase is the enzyme  involved in unwinding the double-stranded DNA into individual  strands before replication, transcription, or repair. DNA primase  catalyzes the formation of RNA primers used to initiate DNA syn thesis. DNA ligase joins the DNA fragments generated by the  degradation of RNA primers.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1353,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "Which of the following statements regarding protein  synthesis is not true?",
+    "options": {
+      "A": "Transcription of messenger RNA occurs in the nucleus.",
+      "B": "Messenger RNA moves from the nucleus to the cyto plasm and attaches to free ribosomes in the cytoplasm. CHAPTER 2 / Wound Healing and Cell Biology 19",
+      "C": "The enzyme RNA polymerase catalyzes the transcription  of messenger RNA from DNA.",
+      "D": "Introns are placed into the DNA transcript by splicing.",
+      "E": "Posttranslational processing includes glycosylation and  enzymatic cleavage."
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "The sequence of nucleotides in DNA determines  the amino acid sequence of the protein. Protein synthesis involves  (1) transcription of messenger RNA from the gene that codes for  the protein, (2) translation of the messenger RNA into a protein,  and (3) posttranslational processing of the protein, which may  involve enzymatic cleavage or glycosylation of the protein. Tran scription takes place in the nucleus, whereas translation and post translational processing occur in the rough ER, Golgi complex, or  free ribosomes in the cytoplasm. Transcription of messenger RNA  from DNA occurs by the assembly of complementary base pairs on  the DNA template one nucleotide at a time. This step is catalyzed  by the enzyme RNA polymerase. Eukaryotic genes are interrupted  by noncoding regions called introns. Introns are removed from the  RNA transcript by splicing. The resulting messenger RNA is moved  to the cytoplasm in which it binds to ribosomes to begin translation.  The initial step in protein synthesis is attachment of the messenger  RNA to a ribosome that is preloaded with transfer RNA that rec ognizes the start codon (three bases) AUG and thus sets the reading  frame for the translation. Subsequent binding of aminoacyl\u2013trans fer RNA to the ribosomes that match the three-nucleotide codons  specifying each amino acid results in peptide synthesis as the ribo some moves along the messenger RNA molecule. The first portion  of the protein that is synthesized is an amino-terminal leader called  the signal peptide. At this stage, the ribosome becomes attached to  the rough ER. As translation continues, the signal peptide is inserted  into the rough ER membrane by another transmembrane protein  and later cleaved as the peptide elongates.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1354,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "Which of the following methods is most useful for determin ing the RNA content of a sample?",
+    "options": {
+      "A": "Southern blotting",
+      "B": "Northern blotting",
+      "C": "Western blotting",
+      "D": "PCR",
+      "E": "None of the above"
+    },
+    "answer": "B",
+    "explanation": {
+      "correct": "Blotting is a method used to study macromolecules  (DNA, RNA, or proteins) separated by gel electrophoresis (usually  by size) and transferred onto a carrier (technically, the transfer is  the \u201cblot\u201d). The macromolecules can then be visualized by specific  probes or staining methods. A Southern blot is used for detection  of specific DNA sequences. A Northern blot performs the same  function but for RNA or mRNA samples. A Western blot is used to  detect specific proteins in a sample, with an antibody to the protein  of interest being used as a probe. An Eastern blot is a modification  of the Western blot technique that is used to detect posttranslational  modification of proteins. There are several other modifications of  the technique; for example, Southwestern blotting is used to detect  DNA-binding proteins. The origin of the nomenclature is derived  from the Southern blot, which is named after its inventor biologist  Edwin Southern.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1355,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "Which of the following statements regarding wound healing  is true?",
+    "options": {
+      "A": "Granulation tissue results from the cross-linking of  coagulation debris.",
+      "B": "Fibroblasts migrate to the acute wound after the appear ance of granulation tissue.",
+      "C": "Myoepithelial cell\u2013derived growth factors cause fibroblast  differentiation.",
+      "D": "It is during the proliferative phase that the scaffolding for  tissue repair is laid.",
+      "E": "Mucopolysaccharide levels peak 6 weeks after injury."
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "After the acute effects of inflammation begin to  resolve, the proliferative phase of healing begins. It is during this  phase of wound healing that the scaffolding for tissue repair is  created because of angiogenesis, fibroplasia, and epithelialization.  The formation of granulation tissue characterizes this phase. Gran ulation tissue is composed of a capillary bed; fibroblasts; macro phages; and loosely arranged hyaluronic acid, collagen, and  fibronectin. The collagen in the granulation tissue is produced by  fibroblasts. The fibroblasts themselves dedifferentiate from nearby  mesenchymal cells. The time taken by these cells to become colla gen-producing fibroblasts is 3\u20135 days. This period is known as the  lag phase. Tensile strength correlates with the total collagen content  for approximately the first 3 weeks of wound healing. At 3 weeks,  the tensile strength of the skin is 30% of the normal. It plateaus at  about 6 weeks. Simultaneously, macrophages and platelets produce  cytokines and growth factors that stimulate fibroblast production.  Collagen synthesis peaks at 4 weeks and then enters a phase of  collagen maturation that can continue for months. During the matu ration phase, glycoprotein and mucopolysaccharide levels decrease  and new capillaries regress and disappear.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1356,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "How does von Willebrand factor VIII affect coagulation  during the inflammatory phase of wound healing?",
+    "options": {
+      "A": "Von Willebrand factor causes platelets to adhere to intact  endothelium.",
+      "B": "Integrin receptors require von Willebrand factor as a  coenzyme.",
+      "C": "Von Willebrand factor stimulates megakaryocytes to  produce platelets.",
+      "D": "Platelet-collagen contact requires von Willebrand factor  VIII.",
+      "E": "Von Willebrand factor VIII facilitates collagen  cross-linking."
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "Platelets delivered to the wound perform several  acts that result in platelet plug formation. The first act is adherence  to damaged endothelium. This is mediated by a number of platelet  and integrin receptors. Platelet activation requires contact with  exposed type IV and V collagen from the damaged capillary endo thelium. This initial contact requires von Willebrand factor VIII.  The factor is synthesized in megakaryocytes and endothelial cells.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1357,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "Regarding polymorphonucleocytes (PMN) and macrophages,  which statement is true?",
+    "options": {
+      "A": "PMNs are essential for wound healing.",
+      "B": "Macrophages are essential for wound healing.",
+      "C": "Both PMNs and macrophages are essential for wound  healing.",
+      "D": "M1 macrophages predominate in the proliferative phase.",
+      "E": "Macrophages are phenotypically stable."
+    },
+    "answer": "B",
+    "explanation": {
+      "correct": "PMNs mediate wound inflammation but are not  essential for wound healing. Macrophages are able to replace their  antimicrobial role. Sterile wounds heal normally without PMNs.  However, macrophages are crucial to wound healing. They appear  24 to 48 h after injury and are derived from migrating monocytes  initially attracted to the wound. The macrophage exhibits two different phenotypes, and they  are differentiated by their method of activation. A macrophage stimulated by lipopolysaccharide INF gamma becomes an M1 mac rophage. These macrophages release TMF-alpha, NO, and interleu kin (IL)-6. M2 macrophages are activated by IL-4 and IL-13; they  suppress inflammatory reactions and play a role in wound healing  and angiogenesis. In the inflammatory phase of wound healing, M1  macrophages predominate. In the proliferative phase, M2 macro phages predominate.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1358,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "Alarcon LH, Fink MP. Mediators of the inflammatory response. In:  Townsend CM, Beauchamp RD, Evers BM, et al., eds. Sabiston Text book of Surgery: The Biological Basis of Modern Surgical Practice.  18th ed. Philadelphia: WB Saunders; 2008. 2. Ethridge RT, Leong M, Phillips LG. Wound healing. In: Townsend  CM, Beauchamp RD, Evers BM, et al., eds. Sabiston Textbook of  Surgery: The Biological Basis of Modern Surgical Practice. 18th ed.  Philadelphia: WB Saunders; 2008. 3. Fine NA, Mustoe TA. Wound healing. In: Mulholland MW, Lillemoe  KD, Doherty GM, et al., eds. Greenfield\u2019s Surgery: Scientific Principles  and Practice. 4th ed. Philadelphia: Lippincott Williams &amp; Wilkins;  2006. 4. Simmons RL, Steel DL. Basic Science Review for Surgeons. Philadel phia: WB Saunders; 1992. 5. Gupta S, Lawrence WT. Wound healing normal and abnormal mecha nisms and closure techniques. In: O\u2019Leary JP, Tabuenca A, eds. The  Physiologic Basis of Surgery. 4th ed. Philadelphia: Lippincott Williams  &amp; Wilkins; 2008. 6. Barbul A, Efron DT. Wound healing. In: Brunicardi FC, Andersen DK,  Billiar TR, et al., eds. Schwartz\u2019s Principles of Surgery. 9th ed. New  York: McGraw-Hill; 2010. 7. Ko TC, Evers BM. Molecular and cell biology. In: Townsend CM, Beau champ RD, Evers BM, et al., eds. Sabiston Textbook of Surgery: The  Biological Basis of Modern Surgical Practice. 18th ed. Philadelphia: WB  Saunders; 2008. 8. Williams JA, Dawson DC. Cell structure and function. In: Mulholland  MW, Lillemoe KD, Doherty GM, et al., eds. Greenfield\u2019s Surgery:  Scientific Principles and Practice. 4th ed. Philadelphia: Lippincott  Williams &amp; Wilkins; 2006. 9. Rosengart MR, Billiar TR. Inflammation. In: Mulholland MW, Lille moe KD, Doherty GM, et al., eds. Greenfield\u2019s Surgery: Scientific  Principles and Practice. 4th ed. Philadelphia: Lippincott Williams &amp;  Wilkins; 2006. CHAPTER 2 / Wound Healing and Cell Biology 21 10. Peacock Jr EE. Symposium on biological control of scar tissue. Plast  Reconstr Surg. 1968;41:8\u201312. 11. Barbul",
+    "options": {
+      "A": "Unfractionated heparin (UFH)",
+      "C": "Protamine sulfate",
+      "B": "Tranexamic acid (TXA)",
+      "D": "Tissue plasminogen activator (tPA)",
+      "E": "Plasminogen activator inhibitor-1 (PAI-1)"
+    },
+    "answer": "B",
+    "explanation": {
+      "correct": "This question aims to delineate the processes of clot formation and breakdown, or coagulation and fibrinolysis. Fibrinolysis is the process of active clot breakdown. The fibri nolytic system is regulated by activators and inhibitors of its principal protease plasminogen, the inactive form of active plasmin. Plasmin(ogen) activity becomes deranged in certain states such as major trauma and sepsis, both of which lead to hyperfibrinolysis, or excessive breakdown of newly formed clot, leading to excessive blood loss. This state has a similar presenta tion to, but is clinically and therapeutically distinct from, coagu lopathy, which is a derangement in the ability to primarily form a clot. UFH is a glycosaminoglycan used in clinical practice to promote the activity of the anticoagulant protein antithrombin III against thrombin and factor Xa. Its principal use is in therapeutic anticoagulation and venous thromboembolism (VTE) prophylaxis. Protamine sulfate is a protein that binds heparin and neutralizes its anticoagulant activity, often used to reverse supratherapeutic doses of UFH. Neither UFH nor protamine sulfate has a significant direct impact on fibrinolysis. tPA is a profibrinolytic agent sometimes used in the clinical management of acute vascular occlusion. It promotes intravascular clot breakdown, and its effect would be the opposite of what is desired in a hyperfibrinolytic state. PAI-1 is an endogenous antifibrinolytic protein that is not currently used in clinical practice. TXA is an exogenous lysine analogue that competitively inhibits the conversion of plasminogen into active plasmin; thus it is antifibrinolytic. In trauma patients with hemodynamically significant hemorrhage, administration of TXA (1-g IV bolus fol lowed by 1-g IV infusion over 8 h) within 3 h of injury has been shown to decrease the overall mortality and mortality secondary to bleeding without an increase in vascular occlusive events. There was no benefit from the administration of TXA beyond 3 h postinjury.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1359,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "Placement of an inferior vena cava (IVC) filter in patients with proximal lower extremity deep-vein thrombosis (DVT) is indicated in each of the following scenarios except:",
+    "options": {
+      "A": "Known large esophageal varices",
+      "B": "Pulmonary embolus despite therapeutic anticoagulation",
+      "C": "High-risk sonographic appearance of the proximal DVT",
+      "D": "Recurrent unprovoked DVT",
+      "E": "Severe congestive heart failure"
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "Mesh filters placed percutaneously in the infrarenal IVC can prevent lower extremity venous thromboses from emboliz ing to the lungs. Use and complications of these filters have increased substantially over the last decade. While older model filters are permanent, more recently developed filters may be safely removed or left in place. Once a patient is safely anticoagulated, it is recom mended that retrievable filters be removed. As a practical matter, retrieval rates in temporary filters are historically low and long-term filter placement is associated with complicationssuch as filter migra tion, caval thrombosis, and IVC perforation. Indications for IVC filter placement include a proximal lower extremity DVT plus (1) any absolute contraindication to anticoagulation (A), (2) pulmonary embolism (PE) that occurrs while a patient is therapeutically antico agulated (B), (3) high-risk sonographic appearance of the thrombus such as a free-floating leading edge or iliocaval DVT (relative indi cation), and (4) low cardiopulmonary reserve (relative indication), in which case PE could be hemodynamically catastrophic. IVC filter placement in patients without acute DVT, but a high risk of develop ing provoked DVT with absolute contraindications to anticoagula tion, such as brain or spinal cord trauma, is a topic of active debate. In patients who may safely and effectively undergo conventional anticoagulation, IVC filter placement is of no benefit. The first-line treatment of an unprovoked proximal vein (pop liteal, femoral, or iliac) DVT is anticoagulation for 3 to 12 months unless otherwise contraindicated. Specific anticoagulation regi mens vary by institution and clinical setting. Recurrent provoked DVT is treated with longer-term anticoagulation but is not an indi cation for IVC filter placement.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1360,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "Dosing for therapeutic anticoagulation of which of the following modalities is least affected by renal impairment?",
+    "options": {
+      "A": "Warfarin",
+      "B": "Low-molecular-weight heparin",
+      "C": "UFH",
+      "D": "Rivaroxaban (Xarelto)",
+      "E": "Dabigatran (Pradaxa)"
+    },
+    "answer": "C",
+    "explanation": {
+      "correct": "Kidney disease in itself is a risk factor for both thrombotic and adverse bleeding events. Uremic patients demon strate impaired platelet adhesion and aggregation that present as increased risk of clinical bleeding and laboratory elevation of bleeding time. These abnormalities are frequently correctable with the administration of desmopressin (DDAVP), which acts to increase the release of factor VIII:von Willebrand factor (vWF) from endothelial cells. Therapeutic anticoagulation in patients with chronic or acute kidney disease requires particular consideration. Rivaroxaban, dabigatran, and low-molecular-weight heparin demonstrate impaired clearance in both acute and chronic kidney disease. Use of these medications even for prophylactic anticoagulation in patients with severe renal disease is associated with bleeding complications, and while not absolutely contraindicated, alterna tive methods should be considered. Warfarin is cleared primarily by the cytochrome P450 system, which causes therapeutic liabil ity secondary to hepatic dysfunction or drug\u2013drug interactions. However, indirect effects of kidney failure consistently increase warfarin sensitivity and require dose titration and frequent moni toring. UFH is cleared mainly by the reticuloendothelial system except at high doses when unbound molecules are renally cleared. This generally does not require dose adjustments, but monitoring with serial activated partial thromboplastin time (aPTT) is indi cated as in patients without renal dysfunction.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1361,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "Which of the following statements about resuscitation for hemorrhagic shock is true?",
+    "options": {
+      "A": "Blood products should be used as the initial resuscitative fluid in hemodynamically unstable patients.",
+      "B": "A balanced transfusion ratio (1:1:1) between packed red blood cells (PRBCs), fresh-frozen plasma (FFP), and platelets (PLTs) reduces the severity of coagulopathy in hemorrhagic shock.",
+      "C": "Patients with circulating factor levels 50% of the normal will show clinically impaired hemostasis.",
+      "D": "Addition of TXA to massive transfusion protocols comes with an increased risk of thrombotic complications.",
+      "E": "Albumin-containing solutions have a proven mortality benefit over crystalloid fluids in the resuscitation of hypovolemic shock."
+    },
+    "answer": "B",
+    "explanation": {
+      "correct": "Previous theories of intravenous fluid resuscitation relied heavily upon crystalloid fluids to bolster blood volume and pressure. However, recent studies such as the Prospective, Observa tional, Multicenter, Major Trauma Transfusion (PROMMTT) and Pragmatic, Randomized Optimal Platelet and Plasma Ratios (PROPPR) have changed this practice. These studies were grounded in findings from battlefield transfusion studies showing decreased mortality in patients transfused with whole blood when components such as PRBCs and FFP were unavailable. The theory is that aggres sive resuscitation with crystalloid fluids exacerbates the consumptive coagulopathy of trauma (clotting factors are used up in achieving CHAPTER 3 / Hemostasis and Transfusion 23 systemic hemostasis) with an iatrogenic dilutional coagulopathy. Thus crystalloid-resuscitated patients initially responded hemodynamically but were coagulopathic and continued to bleed. The PROMMTT trial first showed that patients who received higher ratios of platelets and plasma to FFPs had reduced all-cause mortality in the first 24 h following injury. These results were sustained at 30 days postinjury. The PROPPR trial refined these findings and showed superior outcomes with a 1:1:1 ratio of PRBC:FFP:PLT compared with a 1:1:2 ratio. The data trended toward significance in 24-h and 30-day mortality but was underpowered.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1362,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "Transfusion of a unit of PRBCs into a hemodynamically stable patient with hemoglobin 7.5 g/dL does which of the following?",
+    "options": {
+      "A": "Increases systemic oxygen delivery (DO2)",
+      "B": "Increases tissue extraction of oxygen",
+      "C": "Increases systemic oxygen uptake (VO2)",
+      "D": "Increases arterial O2 saturation (Sao2)",
+      "E": "Decreases venous O2 saturation (Svo2)"
+    },
+    "answer": "A",
+    "explanation": {
+      "correct": "Multiple well-designed studies have shown that overuse of RBC transfusions in the critical care setting leads to poor outcomes. The findings of these studies can be summed up as \u201ca risk to multiple organ systems without a physiologic benefit.\u201d Increasing circulating hemoglobin concentration through PRBC transfusion serves to increase systemic oxygen delivery (DO2), which is determined by cardiac output and arterial oxygen concen tration. This does not, however, lead to an increase in VO2. Animal and human studies have shown that the increase in oxygen delivery24 SECTION I / Surgical Fundamentals with RBC transfusions is accompanied by a proportional decrease in tissue oxygen extraction, leading to no net change in systemic oxygen utilization. These studies were the basic science grounding for the 1999 Trial of Transfusion Requirements in Critical Care (TRICC) trial, which showed decreased mortality in the euvolemic intensive care unit (ICU) patients who were treated with a restric tive transfusion threshold [hemoglobin (Hb) &lt; 7] compared with those treated with a liberal transfusion threshold (Hb &lt; 10).",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1363,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "Impaired platelet aggregation in uremia is responsive to all of the following except:",
+    "options": {
+      "A": "Hemodialysis",
+      "B": "Cryoprecipitate",
+      "C": "DDAVP",
+      "D": "Platelet transfusion",
+      "E": "Desmopressin"
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "The uremic patient will have clinically and biochemi cally evident impaired platelet adhesion. In the lab, this presents as an increased bleeding time. This occurs as a result of increased circulating levels of prostacyclin and altered binding to exposed vWF on the vascular endothelium. This generally becomes clinically evident in patients with a creatinine level above 6.7 mg/dL. At this level, upper gastrointestinal (GI) bleeding is a major cause of mortality. Hemodialysis can correct uremic bleeding in many patients. Beyond that, the vasopressin analogue desmopressin (DDAVP) acts to stimulate the release of circulating vWF and corrects impaired adhesion. If bleeding persists, cryoprecipitate can be utilized as it contains vWF, thus directly increasing circulating levels. Transfu sion of platelets is not appropriate unless absolute counts are criti cally low, as the transfused platelets will show the same poor aggregative qualities as those already in circulation.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1364,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "Which of the following is not a proven etiology of dissemi nated intravascular coagulation (DIC)?",
+    "options": {
+      "A": "Gram-negative sepsis",
+      "B": "Trauma",
+      "C": "Retained products of conception",
+      "D": "Malignancy",
+      "E": "Supratherapeutic UFH drip"
+    },
+    "answer": "E",
+    "explanation": {
+      "correct": "DIC is a chain reaction. An initial inflammatory or traumatic insult leads to systemic activation of the coagulation system, which in turn leads to increased systemic inflammation, and so on. Patients will present clinically with bleeding from mucosal surfaces and IV access sites secondary to a consumptive coagulopathy. In addi tion, systemic microvascular thrombosis often causes multisystem organ dysfunction. Lab studies will show elevated international nor malized ratio, prolonged aPTT, low fibrinogen, and elevated D-dimer. Of the answer choices, all but a supratherapeutic heparin drip include an instigating inflammatory response that drives the coagulation\u2013 inflammatory cycle that creates DIC. When patients with these condi tions become coagulopathic, DIC should be suspected. Unfortunately, no specific treatment has been shown to correct DIC. Procoagulants such as clotting factor concentrates \u201cfeed the fire\u201d so to speak and further drive the coagulation\u2013inflammatory cycle. Management ofsus pected DIC is limited to source control and supportive care.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1365,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "Gelatin sponge (Gelfoam), oxidized cellulose (Surgicel), fibrin sealants (Tisseel, Evicel), and topical thrombin all have what in common?",
+    "options": {
+      "A": "They are grossly resorbable.",
+      "B": "They have intrinsic hemostatic activity. CHAPTER 3 / Hemostasis and Transfusion 25",
+      "C": "They are derived from human tissue.",
+      "D": "They should be used for definitive control of anastomotic bleeding.",
+      "E": "They directly generate fibrin clots."
+    },
+    "answer": "A",
+    "explanation": {
+      "correct": "Topical hemostatic agents are useful adjuncts in the cessation of tissue surface bleeding. They are derived from human, plant, or animal tissue and may or may not have intrinsic hemostatic activity. The agents that are intrinsically hemostatic (Tisseel, Evicel, and topical thrombin) directly lead to generation of fibrin clots on the surfaces to which they are applied. Others (Gelfoam, Surgicel) have an indirect mechanism and provide a scaffold for hemostasis on a cut tissue edge. In any case, anasto motic or pulsatile bleeding should be definitively controlled with suture ligation or other means.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1366,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "The following groups of patients have a biochemically evident hypercoagulable state along with increased incidence of clinically relevant VTE except:",
+    "options": {
+      "A": "Patients with sickle cell anemia",
+      "B": "Children with essential hypertension",
+      "C": "Patients with solid-organ malignancy",
+      "D": "Diabetics",
+      "E": "Smokers26 SECTION I / Surgical Fundamentals"
+    },
+    "answer": "B",
+    "explanation": {
+      "correct": "The incidence of VTE is low in children compared with that in adults. This is attributable to distinct dynamics of the hemostatic and fibrinolytic systems in children and adults. Most recent studies point to two principal differences: increased effi ciency of the fibrinolytic system in children and lower circulating levels of fibrinogen. Put simply, these differences lead to equally effective hemostasis without thrombosis in children compared with adults. For this reason, VTE prophylaxis is not recommended in childhood. The hemostatic system in children has been described as a juvenile protective factor against VTE, and further research is warranted into pathways that would make the hemostatic system in adults behave more like it does in children. Every other answer choice listed describes a patient group at increased risk for VTE compared with the general population.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1367,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "Which of the following coagulation assays is used clinically to detect a hyperfibrinolytic state?",
+    "options": {
+      "A": "PT",
+      "B": "aPTT",
+      "C": "Bleeding time",
+      "D": "Thromboelastography",
+      "E": "Activated clotting time"
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "Traditional coagulation assays such as PT and aPTT were designed for accurate dosing of anticoagulant medications. While they give some insight into patients\u2019 global coagulation status, they were not intended for this purpose and did not approach the complete picture of a patient\u2019s propensity to bleed or clot. Thromboelastography is an old test that has recently been put to new clinical use in trauma patients. It is capable of detecting a hyperfibrinolytic state and the bleeding propensity through the percent lysis parameter or a variation of it. This information is useful in determining the appropriateness of antifibrinolytic therapy and correlates well with injury severity scores and the magnitude of the systemic inflammatory response. No test used in clinical practice can detect a hypercoagulable state and thrombosis risk with good sensitivity.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1368,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "The overall incidence, in terms of events per units transfused, of transfusion-related acute lung injury (TRALI) is closest to:",
+    "options": {
+      "A": "1 in 10",
+      "B": "1 in 100",
+      "C": "1 in 1000",
+      "D": "1 in 10,000",
+      "E": "1 in 100,000"
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "While uncommon, TRALI is the leading cause of transfusion-related deaths. In order to have a proper index of clini cal suspicion, physicians ordering transfusions should be familiar with the relative rates of complications. Broadly, 1 in 100 patients will experience urticaria; 1 in 1000 will develop anaphylaxis; and 1 in 10,000 will experience TRALI. Hepatitis B virus is transmittedin less than 1 in 200,000 units transfused and is by far the most frequently transmitted viral pathogen in blood products. TRALI usually appears within the first hour after a transfusion begins. It presents with fever, respiratory distress, and, eventually, diffuse infiltrates seen on chest films. On the first suspicion of TRALI, the transfusion should be stopped and supportive care initi ated. Broadly, TRALI is treated in a similar fashion to ARDS.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1369,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "A patient with previously unrecognized gram-negative sepsis begins to bleed from peripheral IV catheter sites and is noted to have prolonged PT and aPTT along with a fibrinogen of 120 mg/dL. The most effective treatment for this patient\u2019s coagulopathy is:",
+    "options": {
+      "A": "IV antibiotics and fluid resuscitation",
+      "B": "PRBC transfusion",
+      "C": "Desmopressin",
+      "D": "FFP",
+      "E": "All of the above"
+    },
+    "answer": "A",
+    "explanation": {
+      "correct": "In DIC, the mainstays of treatment are supportive care and control of the inflammatory instigator. This patient has gram-negative sepsis, a known cause of DIC, and should be treated for that first and foremost. If the infection is not controlled, the coagulopathy will run rampant and the patient will bleed despite efforts to correct the coagulopathy, which is a secondary outcome of the underlying sepsis. If patients become critically deficient in platelets (&lt;10,000/\u03bcL per microliter), they should be given supple mental platelets; however, the response will almost always be less than expected, secondary to ongoing consumption. Fibrinogen levels should be monitored and replenished with cryoprecipitate if they fall below 100 mg/dL.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1370,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "Which of the following is false about fibrinogen?",
+    "options": {
+      "A": "Circulating levels are on average higher in children than in adults.",
+      "B": "It is a scaffold for infiltration of inflammatory cells into a healing wound.",
+      "C": "Circulating levels decrease in direct proportion to the total blood loss in hemorrhage.",
+      "D": "Pure fibrinogen may be delivered to bleeding patients as a reconstituted solution.",
+      "E": "It is a negative acute-phase reactant."
+    },
+    "answer": "E",
+    "explanation": {
+      "correct": "Platelets are the brick and fibrinogen is the mortar of hemostasis. In acute bleeding, fibrinogen is generally the first factor to become critically depleted through volume loss, consump tion, and dilutional mechanisms. Circulating levels are generally twice as high in adults as they are in children. Outside of its hemo static function, fibrin is intrinsically inflammatory. Targets on its gamma chain attract inflammatory cells to sites of injury and are an essential part of the healing process in multiple organ systems. Recent trials show that lyophilized fibrinogen has great promise as a hemostatic agent. These powdered formulations are much better suited to long-term storage and do not require thawing and warming as blood products do. CHAPTER 3 / Hemostasis and Transfusion 27 The acute-phase response induces the up- or downregulation of over 1000 hepatic genes in response to interleukin (IL)-6, tumor necrosis factor, and IL-1 beta released from the site of injury. Most clotting factors are positive acute-phase reactants, meaning that production rises in times of stress. Other proteins, including albumin, are negative acute-phase reactants.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1371,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "With regard to drug effects and platelet function, which of the following statements is true?",
+    "options": {
+      "A": "Vasodilators such as prostaglandin E1 (PGE1), prostacy clin (PGI2), theophylline, and dipyridamole elevate cyclic adenosine monophosphate (cAMP) levels and block platelet aggregation.",
+      "B": "Aspirin and indomethacin interfere with platelet release of ADP and inhibit aggregation.",
+      "C": "Furosemide competitively inhibits PGE2.",
+      "D": "The effect of aspirin is reversible in 2 to 3 days.",
+      "E": "Aspirin will decrease platelet counts, but bleeding time is unchanged.28 SECTION I / Surgical Fundamentals"
+    },
+    "answer": "A",
+    "explanation": {
+      "correct": "Aspirin, indomethacin, and most other nonsteroi dal antiinflammatory drugs (NSAIDs) are inhibitors of prostaglan din synthesis. They block the formation of PGG2 and PGH2 from platelet arachidonic acid and, as a result, inhibit platelet aggrega tion. PGI2, PGE1, and thromboxane A2 stimulate cAMP produc tion, whereas dipyridamole and theophylline derivatives block its degradation. Aspirin inhibits thromboxane production, acetylates fibrinogen, interferes with fibrin formation, and makes fibrin sus ceptible to accelerated fibrinolysis. The effect of aspirin begins within 2 h, is irreversible, and lasts the 7- to 9-day life span of affected platelets. The clinical result is increased bruising and bleeding and increased risk of surgical bleeding. Platelet counts are normal, but the bleeding time is prolonged. Furosemide competi tively inhibits ADP-induced platelet aggregation and reduces the response of platelets to PGG2. Furosemide may also cause throm bocytopenia. A wide variety of drugs inhibit platelet function.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1372,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "With regard to classic hemophilia (hemophilia A), which of the following statements is true?",
+    "options": {
+      "A": "The incidence in the general population is 1 in 1000.",
+      "B": "A given patient\u2019s baseline factor VIII or IX level may fluctuate with stress.",
+      "C": "Muscle compartment bleeding is the most common orthopedic problem.",
+      "D": "Factor VIII replacement therapy is required before any elective surgery.",
+      "E": "Therapy with cryoprecipitate plasma is free of risk for hepatitis."
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "The incidence of classic hemophilia, the most common form of hemophilia, is 1 in 5000 males. Bleeding in patients with hemophilia usually appears during early childhood. Hemarthrosis is the most common orthopedic problem. Epistaxis, hematuria, and intracranial bleeding may occur. Equinus contracture, Volkmann\u2019s con tracture of the forearm, and flexion contracture of the elbows or knees are sequelae of these bleeding episodes. Retroperitoneal or intramural intestinal bleeding may produce abdominal symptoms. The level of factor VIII or IX in plasma (which tends to remain stable throughout life) determines the tendency to bleed. Spontaneous bleeding is fre quent in patients with severe disease, defined as less than 1% (of normal) factor VIII or IX activity. Bleeding typically occurs with trauma in patients with moderately severe disease, defined as 1%\u20135% factor activity. In patients with mild hemophilia A or B, defined as 6%\u201325% factor activity, bleeding typically occurs only with major trauma or surgery. The factor VIII or IX level must be raised to at least 30% to achieve hemostasis and to control minor hemorrhage. A level of approximately 50% isrequired to control joint and muscle bleeding, whereas a level of 80%\u2013100% is necessary to treat life-threatening hemorrhage (central nervous system, retroperitoneal, or retropharyn geal bleeding) and to prepare patients for elective surgery. After elec tive surgery, levels of 25% should be maintained for at least 2 weeks. Transmission of hepatitis or human immunodeficiency virus, the development of neutralizing antibodies, and qualitative platelet dys function are possible complications of factor replacement therapy. Appropriate replacement includes infusions of factor VIII and factor IX. These products are available in both recombinant and highly puri fied concentrates that are virally inactivated. Cryoprecipitate is not an optimal replacement therapy for factor VIII and vWF, does not contain factor IX, and is associated with a risk of viral transmission.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1373,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "A 12-year-old boy with known factor VIII deficiency has a painful, swollen, immobile right knee. The clinician suspects hemarthrosis. Therapeutic options include which of the following?",
+    "options": {
+      "A": "Immediate aspiration and compression dressings to prevent cartilage necrosis",
+      "B": "Compression dressings and immobilization to prevent further bleeding",
+      "C": "Immediate aspiration after appropriate factor VIII replacement therapy",
+      "D": "Initial trial of factor VIII therapy, compression dressings, cold packs, and rest followed by active range-of-motion exercises",
+      "E": "None of the above"
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "Treatment of hemarthrosis is aimed at preventing chronic synovitis and degenerative arthritis. Early, intensive factor VIII therapy is critical for limiting the extent of hemorrhage. Factor VIII replacement therapy is most effective when initiated beforeswelling of the joint capsule. Frequently, replacement therapy is initi ated before the onset of any objective physical findings, when the patient perceives only subtle signs of joint hemorrhage. Factor VIII therapy, joint rest, compression dressing, and cold packs constitute the usual initial therapy. Aspiration is to be avoided. The goal of treatment of hemarthrosis is maintenance of range of motion. Active range-of-motion exercisesshould begin 24 h after factor VIII therapy. Compression and cold packs should be continued for 3 to 5 days.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1374,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "With regard to von Willebrand disease, which of the following statements is true?",
+    "options": {
+      "A": "It is more common than hemophilia.",
+      "B": "It is best treated with cryoprecipitate plasma.",
+      "C": "Factor VIII levels are constant over time in a given patient.",
+      "D": "Bleeding after elective surgery is rare.",
+      "E": "All types of von Willebrand diseases can be effectively treated with desmopressin"
+    },
+    "answer": "A",
+    "explanation": {
+      "correct": "von Willebrand disease is the most common congenital bleeding disorder, with 1% of the population being affected. The prevalence of patients with symptomatic bleeding is approximately 1 in 1000. Most patients have mild disease unless challenged by trauma or surgery. von Willebrand disease is associated with a variable deficiency of both vWF and factor VIII. A platelet defect is also present in most patients. The sever ity of coagulation abnormalities varies from patient to patient and from time to time for a given patient. In all but 1%\u20132% of patients, the bleeding manifestations are milder than in classic hemophilia patients. In the same group of patients with type 3 von Willebrand disease, bleeding is more severe than in hemo philia patients. Bleeding is treated with desmopressin (DDAVP), which induces the release of vWF from storage sites in endo thelial cells and platelets. The effect of DDAVP is rapid, with maximal procoagulant effects being reached in 1 to 2 h. The effects dissipate quickly (within 12 to 24 h) thus necessitating repeated dosing. When more than two or three doses of DDAVP are given, the effects may diminish or are absent. DDAVP is most effective for type 1 disease and is not effective for type 3 disease. Because of a risk for thrombocytopenia, DDAVP is specifically contraindicated in type 2B disease but may be effec tive in other forms of type 2 disease. In type 3 and most type 2 von Willebrand diseases, specific vWF replacement product should be administered.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1375,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "In cirrhotic patients who are actively bleeding, the coagulopa thy of end-stage liver disease can be differentiated from DIC most readily by estimation of which of the following factors?",
+    "options": {
+      "A": "Factor II",
+      "B": "Factor IX",
+      "C": "Factor VII",
+      "D": "Factor VIII:C",
+      "E": "Factor X"
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "Of all of the coagulation factors listed, only factor VIII:C is not produced by hepatocytes. It is produced by reticulo endothelial cells, and its levels are typically increased in the pres ence of cirrhosis. Reductions in factor VIII:C are observed in patients with DIC because it is consumed along with the other coagulation factors.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1376,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "Williams-Johnson JA, McDonald AH, Strachan GG, Williams EW.  Effects of tranexamic acid on death, vascular occlusive events, and blood transfusion in trauma patients with significant haemorrhage (CRASH-2): a randomised, placebo-controlled trial. West Indian Med  J. 2010;59(6):612\u2013624. 2.  Crash-2 Collaborators. The importance of early treatment with tranexamic acid in bleeding trauma patients: an exploratory analysis of the CRASH-2 randomised controlled trial. Lancet. 2011;377(9771): 1096\u20131101. 3.  PREPIC Study Group. Eight-year follow-up of patients with permanent vena cava filters in the prevention of pulmonary embolism: the PREPIC (Pr\u00e9vention du Risque d\u2019Embolie Pulmonaire par Interruption Cave) randomized study. Circulation. 2005;112(3):416\u2013422. 4.  Fairfax LM, Sing RF. Vena cava interruption. Crit Care Clin. 2011; 27(4):781\u2013804. 5.  Decousus H, Leizorovicz A, Parent F, et al. A clinical trial of vena caval filters in the prevention of pulmonary embolism in patients with proxi mal deep-vein thrombosis. N Engl J Med. 1998;338(7):409\u2013416. 6.  Grand\u2019Maison A, Charest AF, Geerts WH. Anticoagulant use in patients with chronic renal impairment. Am J Cardiovasc Drugs.  2005;5(5):291\u2013305. 7.  Holcomb JB, Del Junco DJ, Fox EE, et al. The prospective, observa tional, multicenter, major trauma transfusion (PROMMTT) study: com parative effectiveness of a time-varying treatment with competing risks. JAMA Surg. 2013;148(2):127\u2013136. 8.  Holcomb JB, Tilley BC, Baraniuk S, et al. Transfusion of plasma, platelets, and red blood cells in a 1: 1: 1 vs a 1: 1: 2 ratio and mortality30 SECTION I / Surgical Fundamentals in patients with severe trauma: the PROPPR randomized clinical trial. JAMA. 2015;313(5):471\u2013482. 9.  Marino PL. Marino\u2019s the ICU Book. 4th ed. Philadelphia, PA: Lippincott Williams &amp; Wilkins; 2013. 10.  H\u00e9bert PC, Wells G, Blajchman MA, et al. A multicenter, randomized, controlled clinical trial of transfusion requirements in critical care. N  Engl J Med. 1999;340(6):409\u2013417. 11.  Salman S. Uremic bleeding: pathophysiology, diagnosis, and manage ment. Hosp Physician. 2001;76:45\u201350. 12.  Warkentin TE, Levine MN, Hirsh J, et al. Heparin-induced thrombo cytopenia in patients treated with low-molecular-weight heparin or unfractionated heparin. N Engl J Medicine. 1995;332(20):1330\u20131336. 13.  Gando S. Disseminated intravascular coagulation. In: Gonzalez E, Moore HB, Moore EE, eds. Trauma Induced Coagulopathy. Switzerland: Springer International; 2016:195\u2013217. 14.  Emmerich J, Rosendaal FR, Cattaneo M, et al. Combined effect of factor V Leiden and prothrombin 20210A on the risk of venous throm boembolism. Thromb Haemost. 2001;86(3):809\u2013816. 15.  Colman RW, ed. Hemostasis and Thrombosis: Basic Principles and Clini cal Practice. Philadelphia, PA: Lippincott Williams &amp; Wilkins; 2006. 16.  Rogers FB, Cipolle MD, Velmahos G, Rozycki G, Luchette FA. Prac tice management guidelines for the prevention of venous thromboem bolism in trauma patients: the EAST practice management guidelines work group. J Trauma. 2002;53(1):142\u2013164. 17.  Schulman S, Kearon C, Kakkar AK, et al. Extended use of dabigatran, warfarin, or placebo in venous thromboembolism. N Engl J Med.  2013;368(8):709\u2013718. 18.  Schmitz EMH, Boonen K, van den Heuvel DJA, et al. Determination of dabigatran, rivaroxaban and apixaban by ultra-performance liquid chromatography\u2013tandem mass spectrometry (UPLC-MS/MS) and coagulation assays for therapy monitoring of novel direct oral antico agulants. J Thromb Haemost. 2014;12(10):1636\u20131646. 19.  Ives C, Inaba K, Branco BC, et al. Hyperfibrinolysis elicited via throm boelastography predicts mortality in trauma. J Am Coll Surg.  2012;215(4):496\u2013502. 20.  Knudson MM, Cohen MJ, Reidy R, et al. Trauma, transfusions, and use of recombinant factor VIIa: a multicenter case registry report of 380 patients from the Western Trauma Association. J Am Coll Surg.  2011;212(1):87\u201395. 21.  Morrison CA, Carrick MM, Norman MA, et al. Hypotensive resuscitation strategy reduces transfusion requirements and severe postoperative coagu lopathy in trauma patients with hemorrhagic shock: preliminary results of a randomized controlled trial. J Trauma. 2011;70(3):652\u2013663. 22.  Cole HA, Ohba T, Nyman JS, et al. Fibrin accumulation secondary to loss of plasmin-mediated fibrinolysis drives inflammatory osteoporosis in mice. Arthritis Rheumatol. 2014;66(8):2222\u20132233. 23.  Rutherford EJ, Brecher ME, Fakhry SM, et al. Hematologic principles in surgery. In: Townsend CM, Beauchamp RD, Evers BM, et al., eds. Sabiston Textbook of Surgery: The Biological Basis of Modern Surgical  Practice. 18th ed. Philadelphia: Elsevier; 2008. 24.  Hunt BJ. Bleeding and coagulopathies in critical care. N Engl J Med.  2014;370(9):847\u2013859. 25.  Gonzalez EA, Jastrow KM, Holcomb JB, et al. Hemostasis, surgical bleeding and transfusion. In: Brunicardi FC, Andersen DK, Billiar TR, et al., eds. Schwartz\u2019s Principles of Surgery. 9th ed. NewYork: McGraw Hill; 2010. 26.  Srivastava A, Brewer AK, Mauser-Bunschoten EP, et al. Guidelines for the management of hemophilia. Haemophilia. 2013;19(1):e1\u2013e47. 27.  Taylor J. Von Willebrand disease. In: Hemostasis and Thrombosis.  Switzerland: Springer International Publishing; 2015:23\u201326. 28.  Sethi S, Kumari K. Anesthetic management of a patient with polycy themia vera for nephrectomy. IJAR. 2015;3(7):147\u2013149.CHAPTER 4 NUTRITION, METABOLISM, AND FLUID  AND ELECTROLYTESA. Fluids and Electrolytes Chetan Aher, M.D., and Ami Shah, M.D. 1. Which one of the following clinical scenarios is associated  with hypercalcemia?",
+    "options": {
+      "A": "Fluid resuscitation from shock",
+      "B": "Rapid infusion of blood products",
+      "C": "Improper administration of phosphates",
+      "D": "Malignancy",
+      "E": "Acute pancreatitis"
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "Infusion of large volumes of isotonic fluid can  cause a modest reduction in serum calcium levels. The concomitant  decrease in magnesium also impairs vitamin D activity and makes  correction of the hypocalcemia more difficult. Administration of a  citrate load during rapid transfusion of blood products can lead to  severe hypocalcemia, hypotension, and cardiac failure. In this  setting, calcium should be replaced at a dose of 0.2 g/500 mL of  blood transfused. Most patients receiving blood transfusions do not  require calcium supplementation. Acute pancreatitis causes pre cipitation of calcium salts in the abdomen and may contribute to  hypocalcemia. Other common causes include necrotizing fasciitis,  renal failure, gastrointestinal fistula, and hypoparathyroidism. In  general, calcium replacement should be monitored by measuring  the concentration of ionized calcium.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1377,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "A 30-year-old, 70-kg woman has symptomatic hyponatremia.  Her serum sodium level is 120 mEq/L (normal level, 140  mEq/L). Her sodium deficit is:",
+    "options": {
+      "A": "500 mEq/L",
+      "B": "600 mEq/L",
+      "C": "700 mEq/L",
+      "D": "800 mEq/L",
+      "E": "400 mEq/L"
+    },
+    "answer": "C",
+    "explanation": {
+      "correct": "Correction of changes in concentration depends,  in part, on whether the patient is symptomatic. If symptomatic  hypernatremia or hyponatremia is present, attention is focused  on prompt correction of the abnormal concentration to the point  that the symptoms are relieved. Attention is then shifted to  correction of the associated abnormality in volume. The sodium  deficiency in such patients is estimated by multiplying the  sodium deficit (normal sodium concentration minus observed  sodium concentration) by total body water in liters (60% of body  weight in males and 50% of body weight in females). For the  patient in question, the calculation is as follows: total body water  = 70 kg \u00d7 0.5 = 35 L. Sodium deficit = (140 \u2212 120 mEq/L) \u00d7  35 L = 700 mEq sodium chloride. Initially, half the calculated amount of sodium is infused as  3% sodium chloride. The infusion is given slowly because rapid  infusion can cause symptomatic hypovolemia. Rapid correction  of hyponatremia can be associated with irreversible central  nervous system injury (central pontine and extrapontine myelin olysis). Once the symptoms are alleviated, the patient should be  reassessed before beginning the additional infusion of sodium. In  patients with profound hyponatremia, a correction of no more  than 12 mEq/L/24 h should be achieved. If the original problem  was associated with a volume deficit, the remainder of the resus citation can be accomplished with isotonic fluids (sodium chloride  in the presence of alkalosis and sodium lactate in the presence of  acidosis). Care must be taken when treating hyponatremia associ ated with volume excess. In this setting, after the symptoms are  alleviated with a small volume of hypertonic saline solution,  water restriction is the treatment of choice. Infusion of hypertonic  saline solution in this setting has the potential to further expand  the extracellular intravascular volume and is contraindicated in  patients with severely compromised cardiac reserve. In such a  case, peritoneal dialysis or hemodialysis may be preferred for  removing excess water.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1378,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "Which of the following disturbances is associated with tumor  lysis syndrome?",
+    "options": {
+      "A": "Hypocalcemia",
+      "B": "Hypouricemia",
+      "C": "Hypokalemia",
+      "D": "Hypomagnesemia",
+      "E": "Hypophosphatemia 32 SECTION I / Surgical Fundamentals"
+    },
+    "answer": "A",
+    "explanation": {
+      "correct": "Tumor lysis syndrome is a constellation of electro lyte abnormalities that results from massive tumor cell necrosis  secondary to antineoplastic therapy. Hypocalcemia, hyperphos phatemia, hyperuricemia, and hyperkalemia may occur. Hypo calcemia results from the release of intracellular stores of phosphate,  which binds with ionized serum calcium to form calcium phosphate  salts. Chemotherapy directed against solid tumors, especially lym phomas, is most commonly associated with tumor lysis syndrome.  Acute renal failure can occur and prevent spontaneous correction  of the electrolyte abnormalities. Hypermagnesemia is not associ ated with tumor lysis syndrome.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1379,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "An elderly patient with adult-onset diabetes mellitus is  admitted to the hospital with severe pneumonia. The patient  would not be expected to develop:",
+    "options": {
+      "A": "Hypokalemia",
+      "B": "Hyperkalemia",
+      "C": "Nonketotic hyperosmolar coma",
+      "D": "Hypophosphatemia",
+      "E": "Hyponatremia"
+    },
+    "answer": "B",
+    "explanation": {
+      "correct": "Elderly patients with adult-onset diabetes mellitus are  at risk for the development of nonketotic hyperosmolar coma during  sepsis. As a result of the development of a nonketotic hyperglycemic  hyperosmolar state, hypokalemia and hyperglycemia may also occur.  Treatment of these patients should include a reduction in the glucose  load provided and the administration of isotonic fluids. Patients may  also benefit from the administration of insulin. Systemic bacterial  sepsis is also often accompanied by a drop in the serum sodium con centration, possibly because of interstitial or intracellular sequestration.  It is treated by withholding free water, restoring extracellular fluid  (ECF) volume, and treating the source of sepsis.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1380,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "An asymptomatic patient is found to have a serum calcium  level of 13.5 mg/dL. Which of the following medications  should be avoided?",
+    "options": {
+      "A": "Bisphosphonates",
+      "B": "Thiazide diuretics",
+      "C": "Mithramycin",
+      "D": "Calcitonin",
+      "E": "Corticosteroids"
+    },
+    "answer": "B",
+    "explanation": {
+      "correct": "Hypercalcemia can affect the gastrointestinal,  renal, musculoskeletal, and central nervous systems. Early symp toms include fatigability, lassitude, weakness, anorexia, nausea,  and vomiting. Central nervous symptoms can progress to stupor  and coma. Other symptoms include headaches and the three Ps:  pain, polydipsia, and polyuria. The critical serum calcium level for  hypercalcemia is 16 to 20 mg/mL. Prompt treatment must be insti tuted at this level, or the symptoms may progress to death. Two  major causes of hypercalcemia are hyperparathyroidism and  metastatic disease. Metastatic breast cancer in patients receiving  estrogen therapy is the most common cause of hypercalcemia asso ciated with metastases. Oral or intravenous phosphates are useful for reducing hyper calcemia by inhibiting bone resorption and forming calcium phos phate complexes that are deposited in the soft tissues. Intravenous  phosphorus, however, has been associated with the acute develop ment of hypocalcemia, hypotension, and renal failure. For this  reason, it should be given slowly over a period of 8 to 12 h once  daily for no more than 2 to 3 days. Intravenous sodium sulfate is  effective but no more so than saline diuresis. Bisphosphonates reduce serum calcium levels by suppressing the function of osteo clasts and thus reducing the bone resorption of calcium. In some  malignant conditions, such as breast cancer, bisphosphonates may  be administered prophylactically to prevent hypercalcemia. Mith ramycin lowers serum calcium levels within 24 to 48 h by inhibit ing bone resorption. A single dose may normalize serum calcium  levels for several weeks. Calcitonin is produced by the parafollicular cells of the  thyroid gland and functions by inducing renal excretion of calcium  and suppressing osteoclast bone resorption. Calcitonin can produce  a moderate decrease in serum sodium levels, but the effect is lost  with repeated administration. Because corticosteroids decrease  resorption of calcium from bone and reduce intestinal absorption,  they are useful for treating hypercalcemic patients with sarcoidosis,  myeloma, lymphoma, or leukemia. Their effects, however, may not  be apparent for 1 to 2 weeks. Chelating agents, such as ethylene diaminetetraacetic acid (EDTA), are not indicated since they can  result in metastatic calcification, acute renal failure, and hypocal cemia. Thiazide diuretics are contraindicated because they are  calcium sparing (and are often implicated as a cause of iatrogenic  hypercalcemia). Acute hypercalcemic crisis from hyperparathy roidism is treated by stabilizing the patient and performing a  parathyroidectomy.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1381,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "Which of the following statements regarding the distribution,  composition, and osmolarity of body fluid compartments is true?",
+    "options": {
+      "A": "A majority of intracellular water resides in adipose tissue.",
+      "B": "The principal intracellular anions are proteins and  phosphates.",
+      "C": "Sodium determines the effective osmotic pressure  between the interstitial and intravascular (plasma) fluid  compartments.",
+      "D": "Calcium greatly determines the effective osmotic pressure  between the intracellular fluid (ICF) and ECF  compartments.",
+      "E": "The principal intracellular cation is calcium."
+    },
+    "answer": "B",
+    "explanation": {
+      "correct": "The ICF compartment (accounting for 40% of total  body weight) is contained mostly within skeletal muscles. The  principal intracellular cations are potassium and magnesium,  whereas the principal intracellular anions are proteins and phos phates. In the ECF compartment (20% of total body weight), which  is subdivided into the interstitial (extravascular) and the intravas cular (plasma) fluid compartments, the principal cation is sodium,  whereas the principal anions are chloride and bicarbonate. The  interstitial compartment has a rapidly equilibrating functional com ponent and a slowly equilibrating, relatively nonfunctional compo nent consisting of fluid within connective tissue and cerebrospinal  and joint fluid (termed transcellular water). Intravascular fluid  (plasma) has a higher concentration of nondiffusible organic pro teins than interstitial fluids. These plasma proteins act as multiva lent anions. As a result, the concentration of inorganic anions is CHAPTER 4 / Nutrition, Metabolism, and Fluid and Electrolytes 33 lower, but the total concentration of cations is higher in the intra vascular fluid than in the interstitial fluid. This relationship is  explained in the Gibbs\u2013Donnan equilibrium equation: the  product of the concentrations of any pair of diffusible cations and  anions on one side of a semipermeable membrane equals the  product of the same pair on the other side. In each body compartment the concentration of osmotically  active particles is 290 to 310 mOsm. Although total osmotic pressure  represents the sum of osmotically active particles in the fluid com partment, the effective osmotic pressure depends on osmotically  active particles that do not freely pass through the semipermeable  membranes of the body. The nonpermeable proteins in plasma are  responsible for the effective osmotic pressure between plasma and  the interstitial fluid compartment (the colloid osmotic pressure). The  effective osmotic pressure between the ECF and ICF compartments  is due mainly to sodium, the major extracellular cation, which does  not freely cross the cell membrane. Because water moves freely  between the compartments, the effective oncotic pressure within the  various body fluid compartments is considered to be equal after fluid  equilibration. An increase in the effective oncotic pressure of the  ECF compartment (such as an increase in sodium concentration)  causes movement of water from the intracellular space to the extra cellular space until the osmotic pressure equalizes. Conversely, loss  of sodium (hyponatremia) from the extracellular space results in  movement of water into the intracellular space. Thus the ICF con tributes to correcting the changes in concentration and composition  in the ECF. Isotonic ECF losses (losses in volume without change in  concentration) generally do not cause transfer of water from the  intracellular space as long as the osmolarity remains unchanged.  Isotonic volume losses result in changes in ECF volume.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1382,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "Which of the following conditions is associated with  hypernatremia?",
+    "options": {
+      "A": "Adrenal insufficiency",
+      "B": "Tumor lysis syndrome",
+      "C": "Marked hyperglycemia",
+      "D": "Stevens\u2013Johnson syndrome",
+      "E": "Excessive loop diuretic administration"
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "Dermatologic conditions such as second-degree  burns and exfoliative dermatitis can substantially increase transcu taneous water loss and thereby result in the rapid onset of dehydra tion and hypernatremia. Tumor lysis syndrome, a condition  involving cell breakdown and release of their intracellular contents  after some chemotherapies, typically develops in patients treated  with vinca alkaloid chemotherapy; it causes hyperkalemia, hyper phosphatemia, hyperuricemia, and ultimately, renal failure. Tumor  lysis syndrome does not cause hypernatremia. Adrenal insuffi ciency, hyperglycemia, and loop diuretics all cause hyponatremia.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1383,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "Which of the following humoral factors increases arterial  vasodilation while not decreasing protein permeability in the  capillary membranes?",
+    "options": {
+      "A": "Bradykinin",
+      "B": "Nitric oxide (NO)",
+      "C": "Atrial natriuretic factor",
+      "D": "Histamine",
+      "E": "Platelet-activating factor"
+    },
+    "answer": "B",
+    "explanation": {
+      "correct": "The protein permeability characteristics of capil lary membranes are quantified by a numeric value termed the  reflection coefficient. This value ranges from 0 to 1 and is concep tualized as the fraction of plasma protein that \u201creflects\u201d back from  the capillary wall when water crosses. The higher the coefficient,  the more impermeable the capillary is to protein. Therefore the  oncotic pressure of the plasma volume declines as the reflection  coefficient decreases. Certain intravascular factors can reduce the  reflection coefficient and increase arterial vasodilation. Bradykinin,  atrial natriuretic factor, histamine, and platelet-activating factor  increase microvascular membrane permeability while causing arte rial vasodilation. NO, although it causes arterial vasodilation, does  not increase microvascular membrane permeability. Membrane  permeability causes a shift of fluid and plasma proteins into the  interstitium and thereby decreases the intravascular compartment.  The protein-rich edema in the interstitium can adversely affect the  ability to combat infection.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1384,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "A 55-year-old female with a small bowel obstruction is found to  have a serum potassium level of 2.8 mmol/L. Her hypokalemia is  refractory to aggressive repletion. Which of the following is true?",
+    "options": {
+      "A": "The patient will likely suffer from flaccid paralysis and  respiratory compromise until her potassium level is  increased to at least 3.0 mmol/L.",
+      "B": "An electrocardiogram will likely show peaked T waves.",
+      "C": "Intravenous potassium repletion with a rate of 80 mEq/h  should improve her condition.",
+      "D": "Hypomagnesemia could contribute to her problem.",
+      "E": "Hypokalemia results in hypopolarization of the resting  potential of the cell."
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "Potassium is the main intracellular ion. Patients  with a potassium concentration lower than 3.5 mmol/L have hypo kalemia, which results in hyperpolarization of the resting potential  of the cell and interferes with neuromuscular function. In severe  cases where the serum potassium falls below 2.0 mmol/L, flaccid  paralysis with respiratory compromise can occur. In the setting of hypokalemia, an electrocardiogram may show  depressed T waves and U waves. Cardiac arrhythmia, particularly  atrial tachycardia with or without a block; atrioventricular dissocia tion; ventricular tachycardia; and ventricular fibrillation can all  result from hypokalemia. Patients on digoxin are at increased risk  for hypokalemia-associated arrhythmia. Fatal arrhythmia can occur  with IV potassium repletion over 40 mEq/h. Magnesium levels should be monitored in the setting of hypo kalemia as magnesium is an important cofactor for the uptake and  maintenance of potassium levels. Supplemental magnesium also  reduces the risk of cardiac arrhythmia.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1385,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "A 70-kg man is nil per os and receiving maintenance  intravenous fluids in the form of 5% dextrose in 0.45% saline  after gastrointestinal surgery. Which of the following is true  regarding his fluid and electrolyte requirements?",
+    "options": {
+      "A": "His daily water need is 4000 mL.",
+      "B": "His sodium requirement is 1 g/day.",
+      "C": "His potassium requirement is 50 mEq/day.34 SECTION I / Surgical Fundamentals",
+      "D": "Average urine volume is 3000 mL.",
+      "E": "If he were febrile, his average increase in insensible loss  would be 250 mL/day for each degree of fever."
+    },
+    "answer": "E",
+    "explanation": {
+      "correct": "The average individual has an intake of 2000 to  2500 mL of water per day\u20141500 mL is ingested orally, and the  remainder is acquired in solid food. Daily losses include 250  mL in stool, 800 to 1500 mL in urine, and approximately 600  mL as insensible loss. To excrete the products of normal daily  catabolism, an individual must produce at least 500 to 800 mL  of urine. In healthy individuals, 75% of insensible loss occurs  through the skin and 25% through the lungs. Insensible loss  from the skin occurs as loss of water vapor through the skin and  not by evaporation of water secreted by the sweat glands. In  febrile patients, insensible loss through the skin may increase  to 250 mL/day for each degree of fever. Losses from sweating  can be as high as 4 L/h. In a patient with a tracheostomy who  is being ventilated with unhumidified air, insensible loss from  the lungs may increase to 1500 mL/day. Average sodium needs  are 2 to 4 g/day. Maintenance of potassium requires 100 mEq/ day.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1386,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "Which of the following statements regarding hypervolemia in  postoperative patients is true?",
+    "options": {
+      "A": "Hypervolemia can be produced by the administration of  isotonic salt solutions in amounts that exceed the loss of  volume.",
+      "B": "Acute overexpansion of the ECF space is typically not  well tolerated in healthy individuals.",
+      "C": "Excess administration of normal saline can result in  metabolic derangement, most commonly hyperchloremic  metabolic alkalosis.",
+      "D": "The most reliable sign of volume excess is peripheral  edema.",
+      "E": "Daily weight measurement in the postoperative period  does not help determine fluid status."
+    },
+    "answer": "A",
+    "explanation": {
+      "correct": "The earliest sign of volume excess during the  postoperative period is weight gain. Normally, during this period  the patient is in a catabolic state and is expected to lose weight  (1/4 to 1/2 lb/day). Circulatory and pulmonary signs of overload  appear late and usually represent massive overload. Peripheral  edema does not necessarily indicate excess volume. In a patient  with edema but without additional evidence of volume overload,  other causes of peripheral edema should be considered. The most  common cause of excess volume in a surgical patient is the  administration of isotonic salt solutions in amounts that exceed  the loss of volume. In a healthy individual, such overload is  usually well tolerated. However, if the excess fluid is adminis tered for several days, the ability of the kidneys to secrete sodium  may be exceeded, thus resulting in hypernatremia. In the case of  excess normal saline administration, hyperchloremic metabolic  acidosis may occur.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1387,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "With regard to potassium, which of the following statements  is true?",
+    "options": {
+      "A": "Normal dietary intake of potassium is 150 to 200 mEq/day.",
+      "B": "In patients with normal renal function, most ingested  potassium remains in the extracellular space.",
+      "C": "More than 90% of the potassium in the body is located in  the extracellular compartment.",
+      "D": "Critical hyperkalemia (&gt;6 mEq/L) is rarely encountered if  renal function is normal.",
+      "E": "Administration of sodium bicarbonate shifts potassium  from the ICF to the ECF."
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "The average daily dietary intake of potassium is 50  to 100 mEq. In patients with normal renal function and serum potas sium levels, most ingested potassium is excreted in urine. More than  90% of the body\u2019s potassium stores are within the intracellular com partment at a concentration of 150 mEq/L. Although the total extracel lular potassium concentration is just 50 to 70 mEq (4.5 mEq/L), this  concentration is critical for cardiac and neuromuscular function. Sig nificant quantities of intracellular potassium are released in response  to severe injury, surgical stress, acidosis, and a catabolic state. However,  dangerous hyperkalemia (&gt;6 mEq/L) is rarely encountered if renal  function is normal. The administration of bicarbonate shifts potassium  from the ECF across the cell membrane into the ICF.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1388,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "Which of the following electrocardiographic (ECG) findings  is associated with hyperkalemia?",
+    "options": {
+      "A": "Inverted T waves",
+      "B": "Shortened PR interval",
+      "C": "Peaked P waves",
+      "D": "Narrowing of the QRS complex",
+      "E": "T waves higher than R waves in more than one lead"
+    },
+    "answer": "E",
+    "explanation": {
+      "correct": "Hyperkalemia occurs when the serum potassium  level exceeds 5 mmol/L. As potassium increases, changes in the  resting membrane potential of cells impair depolarization and repo larization and lead to cardiac arrhythmias. The signs of hyperkale mia are generally limited to cardiovascular and gastrointestinal  symptoms. Gastrointestinal symptoms include nausea, vomiting,  intermittent intestinal colic, and diarrhea. ECG changes can be the  first manifestation of hyperkalemia and include peaked T waves  and a prolonged PR interval, which are characteristic early findings.  These ECG changes may be seen with potassium concentrations  greater than 6 mEq/L. Symmetrically peaked T waves indicate  dangerous hyperkalemia, particularly if the T waves are higher than  the R wave in more than one lead. At higher potassium concentra tions (7 mmol/L), loss of P waves, slurring, or widening of the QRS  complexes occurs. As [K+] exceeds 8 mmol/L, sudden lethal  arrhythmias, such as asystole, ventricular fibrillation, or a wide  pulseless idioventricular rhythm, ensue.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1389,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "With regard to postoperative hyponatremia, which of the  following statements is true?",
+    "options": {
+      "A": "It does not occur when water is used to replace sodium containing fluids because intracellular reserves often  replace these losses.",
+      "B": "In patients with head injury, hyponatremia despite  adequate salt administration is usually caused by occult  renal dysfunction.CHAPTER 4 / Nutrition, Metabolism, and Fluid and Electrolytes 35",
+      "C": "In oliguric patients, cellular catabolism with resultant  metabolic acidosis increases cellular release of water and  can contribute to hyponatremia.",
+      "D": "Hyperglycemia is not a cause of hyponatremia.",
+      "E": "Patients with salt-wasting nephropathy usually have  abnormal blood urea nitrogen and creatinine values."
+    },
+    "answer": "C",
+    "explanation": {
+      "correct": "Abnormalities in sodium concentration do not  usually occur during the postoperative period if the functional ECF  volume has been adequately replaced during the operation. The  sodium concentration generally remains normal because the  kidneys retain the ability to excrete moderate excesses of water and  solute administered during the early postoperative period. Hypona tremia does occur when water is given to replace lost sodium containing fluids or when the amount of water given consistently  exceeds the amount of water lost. In patients with head injury,  hyponatremia may develop despite adequate salt administration  because of excessive secretion of antidiuretic hormone (ADH) with  resultant increased water retention. Patients with preexisting renal disease and loss of concentrating  ability may excrete urine with a high salt concentration. This salt wasting phenomenon is commonly encountered in elderly patients  and is often not anticipated because the blood urea nitrogen and  creatinine levels are within normal limits. When there is doubt,  determination of the urine sodium concentration can help clarify the  diagnosis. Oliguria reduces the daily water requirement and can lead  to hyponatremia if not anticipated. Cellular catabolism in patients  without adequate caloric intake can lead to gain of significant quanti ties of water released from the tissues. Hyperglycemia may produce  a depressed serum sodium level by exerting an osmotic force in the  extracellular compartment and thus diluting serum sodium levels.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1390,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "Which of the following statements regarding changes in  volume status of the ECF compartment is true?",
+    "options": {
+      "A": "Hyponatremia is diagnostic of excess ECF volume.",
+      "B": "Hypernatremia is diagnostic of depletion of ECF volume.",
+      "C": "Excess extracellular volume is usually iatrogenic or due  to renal or cardiac failure.",
+      "D": "Central nervous system symptoms appear after tissue  signs with acute volume loss.",
+      "E": "The concentration of serum sodium is directly related to  extracellular volume."
+    },
+    "answer": "C",
+    "explanation": {
+      "correct": "The serum concentration of sodium is not neces sarily related to the volume status of the ECF compartment. Volume  deficit or excess can exist with high, low, or normal serum sodium  concentrations. Volume deficit is the most frequent volume disorder  encountered during surgery. Its most common cause is loss of  isotonic fluid (i.e., fluid having the same composition as ECF), for  example, through hemorrhage, vomiting, diarrhea, fistulas, or third  spacing. With acute volume loss, central nervous system symptoms  (e.g., sleepiness and apathy progressing to coma) and cardiovascu lar signs (e.g., orthostasis, hypotension, tachycardia, and coolness  in the extremities) appear first, along with decreasing urine output.  Tissue signs (e.g., decreased turgor, softness of the tongue with  longitudinal wrinkling, and atonicity of muscles) usually do not  appear during the first 24 h. In response to hypovolemia, body  temperature may be slightly decreased. It is therefore important to  also monitor the body temperature of hypovolemic patients. Signs  and symptoms of sepsis may be depressed in volume-depleted  patients. The abdominal pain, fever, and leukocytosis associated  with peritonitis may be absent until ECF volume is restored. Volume overload is generally either iatrogenic or the result of  renal insufficiency or heart failure. Both plasma and the interstitial  fluid spaces are involved. The signs are those of circulatory overload  and include distended veins, bounding pulses, functional murmurs,  edema, and basilar rales. These signs may be present in young,  healthy patients, but these patients can compensate for moderate to  severe volume excess without overt failure or pulmonary edema  development. In elderly patients, however, congestive heart failure  (CHF) with pulmonary edema may develop quite rapidly.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1391,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "With regard to hypokalemia, which of the following  statements is true?",
+    "options": {
+      "A": "It is less common than hyperkalemia in surgical patients.",
+      "B": "Respiratory acidosis is associated with increased renal  potassium loss.",
+      "C": "Hypokalemia can cause increased deep tendon reflexes.",
+      "D": "Flattened T waves and a prolonged QT interval are  associated with hypokalemia.",
+      "E": "Intravenous potassium administration should not exceed  10 to 20 mEq/h."
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "Hypokalemia is more common than hyperkalemia  in surgical patients. Hypokalemia can result from increased renal  excretion, prolonged administration of potassium-free fluids, hyper alimentation with inadequate potassium replacement, or gastrointes tinal losses. Respiratory and metabolic alkalosis results in increased  renal potassium loss because potassium is preferentially excreted in  an attempt to preserve hydrogen ions. Loss of gastrointestinal secre tions can also be a significant cause of potassium depletion. This  problem is compounded if potassium-free fluids are used for volume  replacement. Signs of hypokalemia, including paralytic ileus,  diminished or absent tendon reflexes, weakness, and even flaccid  paralysis, are related to decreased muscle contractility. ECG changes  include flattened or inverted T waves, U waves, and prolongation  of the QT interval. The best treatment of hypokalemia is prevention.  Gastrointestinal losses should be treated by the administration of  fluids containing enough potassium to replace the daily obligatory  loss (20 mEq/day), as well as the additional losses in gastrointestinal  drainage. As a rule, no more than 40 to 60 mEq of potassium should  be added to each liter of intravenous fluid, and the rate of potassium  administration should never exceed 40 to 60 mEq/h.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1392,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "With regard to abnormalities in serum sodium concentration,  which of the following statements is true?",
+    "options": {
+      "A": "Changes in serum sodium concentration usually produce  changes in the status of ECF volume.",
+      "B": "The chloride ion is the main determinant of the osmolar ity of the ECF space.",
+      "C": "Extracellular hyponatremia leads to depletion of intracel lular water.",
+      "D": "Dry, sticky mucous membranes are characteristic of  hyponatremia.",
+      "E": "Preservation of normal ECF has higher precedence than  maintenance of normal osmolality.36 SECTION I / Surgical Fundamentals"
+    },
+    "answer": "A",
+    "explanation": {
+      "correct": "Although extracellular volume may change without  a change in serum sodium concentration (as occurs after isotonic  volume losses), changes in serum sodium concentration usually  produce changes in ECF volume because the serum sodium con centration is the main determinant of the osmolarity of the ECF  TABLE 4.1 Given a Patient with Hypernatremia  (Serum [Na+] = 160 mEq/L), the Estimated Change  in [Na+] after Infusion of 1 L Change in [Na+] L = Infusate [Na+]\u2212Serum [Na+] TBW+1 space. Alterations in its concentration produce concomitant shifts  in water volume. Signs and symptoms of hypernatremia and hypo natremia are not generally present unless the changes are severe or  Infusate Woman Aged 70 Years 50 kg \u00d7 0.45 = 22.5 L  TBW Man Aged 20 Years 80 kg \u00d7 0.60 =  48.0 L TBW the alteration in sodium concentration occurs rapidly. Hyponatremia is caused by excessive intake of hypotonic  fluids or salt loss that exceeds water loss. With hyponatremia,  decreased extracellular osmolarity causes a shift of water into the  intracellular compartment. When such a shift occurs, central nervous  system symptoms caused by increased intracranial pressure develop,  and tissue signs of excess water are noted. Central nervous system  symptoms include muscle twitching, hyperactive tendon reflexes,  and, when the hyponatremia is severe, convulsions and hypertension.  Tissue signs include salivation, lacrimation, watery diarrhea, and  \u201cfingerprinting\u201d of the skin. When hyponatremia develops rapidly,  signs and symptoms may appear at sodium concentrations of less  than 130 mEq/L. Acute dilution of osmolality can occur if patients  with an ECF deficit are given sodium-free water. The hyponatremia  is exacerbated in hypovolemic patients because of secretion of ADH  as a result of the hypothalamic\u2013pituitary response to both elevated  ECF osmolality and a reduction in ECF volume. The normal response  of the hypothalamic\u2013pituitary axis to hyponatremia is suppression of  ADH release, and as the dilute urine is excreted, there is a corrective  increase in serum [Na+]. A moderate or severely hyponatremic  patient should have undetectable blood levels of ADH. Preservation  of normal ECF has higher precedence than maintenance of normal  osmolality. In symptomatic patients, administration of hypertonic  (3%) solutions of sodium may be indicated to correct the problem in  those with severe hyponatremia who are at risk for seizures. In less  severe cases, restriction of free water and judicious infusion of  normal saline solution are usually sufficient. In patients with acute  hyponatremia and [Na+] less than 120 mEq/L, the rate of infusion of  sodium-containing solutions should not increase serum [Na+] more  rapidly than 0.25 mEq/L/h. Chronic hyponatremia develops slowly, and patients may have  sodium levels as low as 120 mEq/L before becoming symptomatic.  Severe hyponatremia may be associated with the onset of irreversible  oliguric renal failure. Patients with a closed head injury are sensitive  to even mild hyponatremia because of increased intracellular water,  which exacerbates the increased intracranial pressure associated with  the head injury. The syndrome of inappropriate release of antidi uretic hormone (SIADH) and chronic renal failure are frequent causes  of hyponatremia. The diagnosis of SIADH can be made only in  euvolemic patients who have a serum osmolality of less than 270  mmol/kg H2O along with inappropriately concentrated urine. Hypernatremia is the result of excessive free water loss or  salt intake. Central nervous system signs and symptoms associated  with hypernatremia include restlessness, weakness, delirium, and  maniacal behavior. The tissue signs are characteristic and include  dryness and stickiness of mucous membranes, decreased salivation  and tear production, and redness and swelling of the tongue. Body  temperature is usually elevated, occasionally to a lethal level. An  acute onset of hypernatremia increases ECF osmolality and con tracts the size of the ICF compartment. Patients have moderate  hypernatremia if their serum [Na+] is 146 to 159 mEq/L. Water loss  is the most common explanation for acute hypernatremia. Neuro logic damage as a result of contraction of brain cell volume is the  D5W 0\u2212 160 22.5 +1= \u22126.8 0\u2212 160 48+ 1 = \u22123.3 D5 0.2% NaCl 34\u2212 160 22.5 +1 = \u22125.4 34\u2212 160 48+ 1 = \u22122.6 D5 0.45% NaCl 77\u2212 160 22.5 +1 = \u22123.5 77\u2212 160 48+ 1 = \u22121.7 D5W, 5% dextrose in water; TBW, total body water.primary risk associated with hypernatremia. Patients with diabetes  insipidus or nephrogenic diabetes insipidus have a failure to  synthesize and release ADH or a failure of the renal tubular cells  to respond to ADH, respectively, thus leading to hypernatremia.  Treatment of patients with hypernatremia secondary to dehydration  involves the administration of water. Hypernatremic patients are  frequently hypovolemic, and these patients are treated by the intra venous infusion of isotonic saline solution until the volume deficit  has been restored. A rapid decline in ECF osmolality in a severely  hypernatremic patient can lead to cerebral injury as a result of cel lular swelling. [Na+] should be lowered at a rate not to exceed 8  mEq/day (Table 4.1). Patients with central diabetes insipidus are  treated with desmopressin [1-desamino-8-D-arginine vasopressin  (DDAVP)]. Desmopressin is a synthetic analogue of ADH.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1393,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "A 45-year-old alcoholic man is found to have hypomagnese mia. Which of the following statements about magnesium is  true?",
+    "options": {
+      "A": "The distribution of nonosseous magnesium is similar to  that of sodium.",
+      "B": "Calcium deficiency cannot be adequately corrected until  the hypomagnesemia is addressed.",
+      "C": "Magnesium depletion is characterized by depression of  the neuromuscular and central nervous systems.",
+      "D": "Magnesium supplementation should be stopped as soon  as the serum level has normalized.",
+      "E": "The treatment of choice for magnesium deficiency is oral  magnesium phosphate."
+    },
+    "answer": "B",
+    "explanation": {
+      "correct": "The body contains 2000 mEq of magnesium, half  of which is contained in bone. Most of the remaining magnesium  is intracellular (a distribution similar to that of potassium). Plasma  levels range between 1.5 and 2.5 mEq/L. Normal dietary intake is  240 mg/day, most of which is excreted in feces. The kidneys  excrete some magnesium but can help conserve magnesium when  a deficiency is present. Hypomagnesemia (like calcium deficiency)  is characterized by neuromuscular and central nervous system  hyperactivity. Hypomagnesemia can occur with starvation, mal absorption, protracted loss of gastrointestinal fluid, and prolonged  parenteral therapy without proper magnesium supplementation.  CHAPTER 4 / Nutrition, Metabolism, and Fluid and Electrolytes 37 An accompanying calcium deficiency, cannot be successfully  treated until the hypomagnesemia is corrected. Magnesium deficiency is treated with parenteral administra tion of magnesium sulfate or magnesium chloride. The extracel lular magnesium concentration can be restored rapidly, but therapy  must be continued for 1 to 2 weeks to replenish the intracellular  component. To avoid magnesium deficiency, patients managed with  hyperalimentation should receive 12 to 24 mEq of magnesium  daily. Oral supplementation and intramuscular injection are alterna tive routes for replacement but are not preferred. Magnesium tox icity is rare except in the setting of renal insufficiency. Immediate  treatment is infusion of calcium chloride or calcium gluconate;  if the symptoms persist, dialysis may be required.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1394,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "Which of the following clinical situations can be associated  with hypovolemic hyponatremia?",
+    "options": {
+      "A": "CHF",
+      "B": "SIADH",
+      "C": "Cirrhosis",
+      "D": "Hyperglycemia",
+      "E": "Gastrointestinal losses"
+    },
+    "answer": "E",
+    "explanation": {
+      "correct": "Hyponatremia in a surgical patient can be clas sified into hypervolemic, euvolemic, and hypovolemic categories,  which can then be further subclassified according to tonicity  (hypertonic, &gt;290 mOsm; isotonic, 280 to 290 mOsm; and hypo tonic, &lt;280 mOsm). For simplicity and rapid clinical evaluation,  volume status can be used to direct treatment. Hypervolemic  hyponatremia may be caused by increased intake of water, post operative secretion of ADH, and high ECF volume states such as  cirrhosis and CHF. Hyponatremia can develop in patients with  edema and ascites secondary to CHF, nephrotic syndrome, or cir rhosis despite having an expanded overall volume of extracellular  water. These patients have an excess of sodium but an even greater  proportional increase in water volume. Their pathophysiologic  condition entails an overall contracted intravascular volume,  which stimulates the release of vasopressin from the hypothalamus  centrally. Peripherally, renal hypoperfusion contributes to water  retention. Fluid restriction is crucial to the treatment of this type  of hyponatremia. In patients with severe hyponatremia, small  volumes of hypertonic saline solution may be administered. Diure sis may be used but is generally unsuccessful. Hemodialysis may  be performed in extreme circumstances of fluid excess. Euvolemic  hyponatremia may be caused by hyperglycemia, hyperlipidemia,  or hyperproteinemia (termed pseudohyponatremia because of  relative hyperosmolar protein, lipid, or glucose-rich plasma  drawing fluid from the interstitial space and diluting plasma  sodium), SIADH, water intoxication, and diuretics. SIADH is  characterized by functional reabsorption of free water and subse quent dilution of plasma sodium. Hypovolemic hyponatremia may be caused by decreased overall sodium intake, gastrointestinal  losses, renal losses associated with the use of diuretics (especially  thiazide diuretics), and primary renal disease. Conversely, hypernatremia can also be subdivided into volume  states. Hypervolemic hypernatremia may be caused by iatrogenic  sodium administration or mineralocorticoid excess (e.g., aldosteron ism, Cushing disease, congenital adrenal hyperplasia). Euvolemic  hypernatremia may be associated with renal (renal disease, diuretics,  or diabetes insipidus) or nonrenal free water loss through the skin or  gastrointestinal tract. Hypovolemic hypernatremia can likewise be  subdivided into nonrenal and renal water loss.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1395,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "With regard to intraoperative management of fluids, which of  the following statements is true?",
+    "options": {
+      "A": "In a healthy person, up to 500 mL of blood loss may be  well tolerated without the need for blood replacement.",
+      "B": "During an operation, functional ECF volume is directly  related to the volume lost to suction.",
+      "C": "Functional ECF losses should be replaced with plasma.",
+      "D": "Administration of albumin plays an important role in the  replacement of functional ECF volume loss.",
+      "E": "Operative blood loss is usually overestimated by the surgeon."
+    },
+    "answer": "A",
+    "explanation": {
+      "correct": "It is now believed that the routine use of albumin  to replace blood and ECF losses intraoperatively is not indicated  and may be potentially harmful. Maintenance of cardiac and pul monary function by replacing blood with blood products and ECF  with \u201cmimic\u201d solutions can be achieved without the addition of  albumin. In general, it is believed that blood should be replaced as  it is lost. However, it is usually unnecessary to replace blood loss  of less than 500 mL. Operative blood loss is usually underestimated  by the surgeon by 15%\u201340% in comparison to the isotopically  measured loss, a factor that may contribute to the detection of  anemia during the immediate postoperative period.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1396,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "Which of the following statements regarding total body water  is true?",
+    "options": {
+      "A": "In males, approximately 40% of total body weight is water.",
+      "B": "The percentage of total body weight that is water is  higher in females than in males.",
+      "C": "Obese individuals have a greater proportion of water  (relative to body weight) than lean individuals.",
+      "D": "The percentage of total body water decreases with age.",
+      "E": "The majority of body water is contained within the  interstitial fluid compartments."
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "Approximately 50%\u201375% of body weight is water.  In males, 60% (\u00b115%) of body weight is water, and in females,  50% (\u00b115%) of body weight is water. Age and lean body mass also  contribute to differences in the percentage of total body weight that  is water. Since fat contains little water, lean individuals have a  greater proportion of body water than obese individuals of the  same weight. Because females have more subcutaneous fat in rela tion to lean mass than males, they have less body water. Total body  water decreases with age as a result of decreasing lean muscle  mass. Infants have an unusually high ratio of total body water to  body weight: up to 75%\u201380%. By 1 year of age, however, the  percentage of body water approaches that of adults. Body water is divided into three functional compartments: the  ICF compartment (40% of body weight) and the ECF compart ment (20% of body weight), which is further subdivided into the  interstitial (15% of body weight) and intravascular (5% of body  weight) fluid compartments.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1397,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "A 62-year-old female takes 40 mg of furosemide twice daily  for hypertension and CHF. Which of the following is true?",
+    "options": {
+      "A": "Loop diuretics act on the distal convoluted tubule in the  nephron.",
+      "B": "Magnesium is affected by loop diuretics.",
+      "C": "Fatigue and muscle weakness are not side effects of her  medication.",
+      "D": "Loop diuretics decrease venous capacitance.",
+      "E": "Loop diuretics are agonists to the sodium-potassium chloride cotransporter."
+    },
+    "answer": "B",
+    "explanation": {
+      "correct": "Loop diuretics, such as furosemide, are potent  inhibitors of the sodium-potassium-chloride cotransporter. They act  by competing for the chloride-binding site at the thick ascending  limb of the loop of Henle. The effect is inhibition of sodium reab sorption, resulting in diuresis. Magnesium, potassium, and calcium  will likewise be excreted, with the net increase in urine output.  Hypomagnesemia can result in fatigue, muscle weakness, numb ness, or even convulsions. Therefore it is important to monitor  serum levels to prevent depletion while a patient is being treated  with a loop diuretic. Loop diuretics are commonly used for pulmonary edema  because of their potency. In addition to inhibition of sodium absorp tion, they increase blood flow to the kidneys by stimulating vaso dilatory prostaglandins and increase venous capacitance, which can  quickly relieve pulmonary edema, even before diuresis and natri uresis have occurred. These three mechanisms help decrease ECF  volume. Loop diuretics, such as furosemide or bumetanide, are  extensively protein bound and must reach their intratubular site of  action through active proximal tubular secretion.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1398,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "With regard to distributional shifts during an operation,  which of the following statements is true?",
+    "options": {
+      "A": "The surface area of the peritoneum is not large enough to  account for significant third-space loss.",
+      "B": "Approximately 1 to 1.5 L/h of fluid is needed during an  operation.",
+      "C": "Blood is replaced as it is lost, without modification of the  basal operative fluid replacement rate.",
+      "D": "Sequestered ECF is predominantly hypotonic.",
+      "E": "A major stimulus to ECF expansion is peripheral  vasoconstriction."
+    },
+    "answer": "C",
+    "explanation": {
+      "correct": "The functional ECF volume decreases during  major abdominal operations largely because of sequestration of  fluid in the operative site as a consequence of (1) extensive dis section, (2) fluid collection within the lumen and wall of the small  bowel, and (3) accumulation of fluid in the peritoneal cavity. The  surface area of the peritoneum is 1.8 m2. When irritated, it can  account for a functional loss of several liters of fluid that is not  readily apparent. It is generally agreed that this lost volume  should be replaced during the course of an operation with an  isotonic saline solution as a \u201cmimic\u201d of sequestered ECF. Although  there is no set formula for intraoperative fluid therapy, useful  guidelines for replacement include the following. (1) Blood is  replaced as it is lost, regardless of additional fluid therapy,  provided that the patient meets the criteria for transfusion: hemo globin concentration less than 7 g/dL. (2) Lost ECF should be  replaced during the operative procedure if there is a delay in  replacement until after the operation; fluid management is then  complicated by adrenal and hypophyseal compensatory mecha nisms that respond to operative trauma during the immediate  postoperative period.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1399,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "With regard to perioperative fluid management, which of the  following statements is correct?",
+    "options": {
+      "A": "Insensible loss is approximately 600 mL/day.",
+      "B": "Intraoperative insensible losses from an open abdomen  are less than 250 mL/h.",
+      "C": "About 200 to 300 mL of fluid is needed to excrete the  catabolic end products of metabolism.",
+      "D": "Lost urine should be replaced milliliter for milliliter.",
+      "E": "Hypermetabolism and hyperventilation are not important  factors in postoperative fluid loss or management."
+    },
+    "answer": "A",
+    "explanation": {
+      "correct": "Postoperative fluid management requires assess ment of the patient\u2019s volume status and evaluation for possible  disorders in concentration or composition. All measured and insen sible losses should be treated by replacement with appropriate  fluids. In patients with normal renal function, the amount of potas sium given is 40 mEq/day for replacement of renal excretion. An  additional 20 mEq should be given for each liter of gastrointestinal  loss. Insensible water loss is usually constant in the range of 600  mL/day. It can be increased to 1500 mL/day by hypermetabolism,  hyperventilation, or fever. Insensible loss is replaced with 5%  dextrose in water. Insensible loss may be offset by an insensible  gain of water from excessive catabolism in postoperative patients  who require prolonged intravenous fluid therapy. Approximately  800 to 1000 mL/day of fluid is needed to excrete the catabolic end  products of metabolism. Because the kidneys are able to conserve  sodium in a healthy individual, this amount can be replaced with  5% dextrose in water. A small amount of salt is usually added,  however, to relieve the kidneys of the stress of sodium resorption.  If there is a question regarding urinary sodium loss, measurement  of urinary sodium levels helps determine the type of fluid that can  best be used. Urine volume should not be replaced milliliter for  milliliter because high output may represent diuresis of the fluids  given during surgery or the diuresis that takes place to eliminate  excessive fluid administration. Sensible or measurable losses such  as those from the gastrointestinal tract are usually isotonic and  should therefore be treated by replacement in equal volumes with  isotonic salt solutions. The type of salt solution selected depends  on determination of the patient\u2019s serum sodium, potassium, and  chloride levels. In general, replacement fluids are administered at  a steady rate over a period of 18 to 24 h as losses are incurred.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1400,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "Which of the following has no effect on the development of  hypernatremia?",
+    "options": {
+      "A": "Diabetes insipidus causes hypervolemic hyponatremia.",
+      "B": "Central diabetes insipidus cannot be corrected by the  administration of desmopressin.",
+      "C": "Treatment of diabetes insipidus requires correction of  hypernatremia at a rate faster than 12 mEq/day.",
+      "D": "Alcohol intoxication can mimic diabetes insipidus.",
+      "E": "Lithium administration could induce central diabetes  insipidus."
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "Diabetes insipidus is one of the causes of hypo volemic hypernatremia and is marked by a continual production of  dilute urine of less than 200 mOsm/kg H2O in the context of serum  osmolarity of ECF greater than 300 Osm/L. Patients can have either  central (lack of production of ADH by the hypothalamus) or neph rogenic (lack of response of the distal tubule of the nephron to  ADH) diabetes insipidus. Alcohol causes suppression of vasopres sin release and can mimic central diabetes insipidus. Treatment of  hypernatremia consists of slow correction of sodium by the admin istration of free water. Whenever hypernatremia develops, a rela tive free water deficit exists and must be replaced. The water deficit  can be approximated by using the following formula: water deficit  = total body water \u00d7 (1 \u2212 140 \u00f7 serum sodium). Usually, the rate  of correction of hypernatremia should not exceed 12 mEq/L/day.  The aim should be to correct approximately half the deficit over  the first 24 h. Too rapid correction of hypernatremia may lead to  cerebral edema and seizures. Desmopressin is a synthetic analogue of ADH that can be used  to mimic arginine vasopressin (AVP) and to differentiate between  central and nephrogenic diabetes insipidus. It is the agent of choice for  treating patients with central diabetes insipidus because the drug  increases water movement out of the collecting duct but does not have  the vasoconstrictive effects of ADH. Central diabetes insipidus will  respond to desmopressin, whereas nephrogenic diabetes insipidus will  not. Unlike vasopressin, desmopressin is only renally active and does  not have the vasoactive side effects. Lithium and amphotericin B can  induce nephrogenic, not central, diabetes insipidus.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1401,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "Which one of the following is least useful in the immediate  treatment of hyperkalemia?",
+    "options": {
+      "A": "Calcium salts",
+      "B": "Sodium bicarbonate",
+      "C": "Potassium-binding resins",
+      "D": "Glucose and insulin",
+      "E": "Hemodialysis"
+    },
+    "answer": "C",
+    "explanation": {
+      "correct": "The most dreaded complication of hyperkalemia is the development of a lethal arrhythmia. Immediate manage ment includes ECG monitoring and cessation of all potassium  supplementation and potassium-sparing drugs. Calcium is admin istered intravenously to stabilize the membrane potential and  decrease myocardial excitability. It acts in less than 5 min, and  the effects last for 30 to 60 min. Sodium bicarbonate drives  potassium into cells, thereby transiently reducing serum potas sium levels. Its actions last 15 to 30 min. Insulin and glucose also facilitate entry of potassium into cells, with an almost imme diate onset of action. In cases of severe hyperkalemia, hemodi alysis is the definitive and most rapid method of decreasing  extracellular potassium. Potassium-binding resins, such as  sodium polystyrene sulfonate (Kayexalate), begin lowering serum  potassium within 1 to 2 h and last 4 to 6 h. Rectal administration 40 SECTION I / Surgical Fundamentals of these binding resins is more effective than oral formulations.  However, enemas with sodium polystyrene sulfonate combined  with sorbitol have been associated with colon necrosis and per foration. Kaliuresis through the administration of diuretics such  as acetazolamide is also effective in reducing serum potassium  levels.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1402,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "Which one of the following is not associated with  hypocalcemia?",
+    "options": {
+      "A": "Shortening of the QT interval",
+      "B": "Painful muscle spasms",
+      "C": "Perioral or fingertip tingling",
+      "D": "Seizures in children",
+      "E": "Prolongation of the QT interval"
+    },
+    "answer": "A",
+    "explanation": {
+      "correct": "The symptoms of hypocalcemia are generally seen  at serum levels of less than 8 mg/dL. Symptoms include numbness  and tingling in the circumoral area and in the tips of the fingers and  toes. Signs include hyperactive deep tendon reflexes, positive  Chvostek sign, positive Trousseau sign, muscle and abdominal  cramps, tetany with carpal pedal spasm, or convulsions. The ECG  may show prolongation of the QT interval. Calcium is found in  three forms in the body: protein bound (\u224850%, mostly to albumin);  diffusible calcium combined with anions such as bicarbonate, phos phate, and acetate (5%); and ionized (\u224845%). Patients with severe  alkalosis may have symptoms of hypocalcemia despite normal  serum calcium levels because the ionized calcium is markedly  decreased. Conversely, hypocalcemia without signs or symptoms  may be present in patients with hypoproteinemia and a normal  ionized fraction. Acute symptoms can be relieved by the intrave nous administration of calcium gluconate or calcium chloride.  Patients requiring prolonged replacement can be treated with oral  calcium, often given with vitamin D.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1403,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "Which one of the following clinical signs or symptoms is  associated with serum sodium concentrations below 125  mEq/L?",
+    "options": {
+      "A": "Restlessness",
+      "B": "Hallucinations",
+      "C": "Tachycardia",
+      "D": "Hyperventilation",
+      "E": "Hyperthermia"
+    },
+    "answer": "B",
+    "explanation": {
+      "correct": "In most patients with symptomatic hyponatre mia, the serum sodium concentration decreases below 125 mEq/L.  When the concentration falls below 125 mEq/L, clinical signs and  symptoms may occur, including headache, nausea, lethargy, hal lucinations, seizures, bradycardia, hypoventilation, and occasion ally coma. Hypothermia, not hyperthermia, occurs.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1404,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "Which one of the following is not a stimulus for ECF  expansion?",
+    "options": {
+      "A": "Hemorrhage leading to a reduction in blood volume",
+      "B": "Increased capillary permeability after major surgery",
+      "C": "Peripheral arterial vasoconstriction",
+      "D": "Negative interstitial fluid hydrostatic pressure",
+      "E": "Colloid oncotic pressure"
+    },
+    "answer": "C",
+    "explanation": {
+      "correct": "Approximately 85% of the ECF that is within the  vascular compartment resides in the venous circulation. Therefore  the remaining 15% resides within the arterial system. The vascular  compartment, otherwise known as plasma fluid, constitutes  approximately one-third of the ECF. Interstitial fluid (i.e., fluid  between the cells) makes up approximately two-thirds of the ECF.  The ECF constitutes one-third of total body water, whereas the ICF  represents two-thirds. Expansion of ECF is primarily driven by  three mechanisms, all of which have the final common stimulus of  reduction of intravascular volume. The first mechanism, hemor rhage, is directly responsible for the reduction in blood volume.  Through various pathways, this drop in volume signals the reten tion and sequestration of fluid in the intravascular space. Increased  capillary permeability, the second mechanism, occurs following  major surgery and is due to the loss of endothelial integrity. This  loss of integrity is mediated by several humoral factors that act on  the endothelium. The end result of the loss of endothelial integrity  is extravasation of protein-rich fluid into the interstitium, with a  consequent increase in the interstitial fluid space. This constitutes  the third mechanism of ECF expansion. Serum albumin is a major  determinant of colloid oncotic pressure, and hypoalbuminemia  could lead to transudation of fluid from the vascular to the intersti tial compartment. This concept is expressed mathematically by the  Starling equation: Qf = Kf \u00d7 (Pv \u2212 Pt) \u2212 \u03b4 \u00d7 (COP \u2212 TOP), where  Qf is fluid flux, Kf is the capillary filtration coefficient, Pv is vas cular hydrostatic pressure, Pt is interstitial hydrostatic pressure, \u03b4 is a reflection coefficient (which defines the effectiveness of the  membrane in preventing flow of solutes), COP is colloid osmotic  pressure, and TOP is tissue osmotic pressure.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1405,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "A 70-year-old man with sepsis has a pH of 7.18. Which of  the following statements is true regarding his metabolic  acidosis?",
+    "options": {
+      "A": "Tissue hypoxia leads to increased oxidative metabolism.",
+      "B": "Acute compensation for metabolic acidosis is primarily renal.",
+      "C": "Metabolic acidosis results from the loss of bicarbonate or  the gain of fixed acids.",
+      "D": "The most common cause of excess acid is prolonged  nasogastric suction.",
+      "E": "Restoration of blood pressure with vasopressors corrects  the metabolic acidosis associated with circulatory failure."
+    },
+    "answer": "C",
+    "explanation": {
+      "correct": "Metabolic acidosis results from the retention or  gain of fixed acids (e.g., through diabetic acidosis or lactic acidosis)  or the loss of bicarbonate (e.g., through diarrhea, small bowel  fistula, or renal tubular dysfunction). Initial compensation is respi ratory (by hyperventilation). Renal compensation is slower and  occurs through the same means as the renal compensation for  respiratory acidosis: excretion of acid salts and retention of bicar bonate. This compensation depends on normal renal function.  When kidney damage interferes with the ability to excrete acid and  resorb bicarbonate, metabolic acidosis may rapidly progress to  profound levels. The most common cause of metabolic acidosis in CHAPTER 4 / Nutrition, Metabolism, and Fluid and Electrolytes 41 surgical patients is circulatory failure, with tissue hypoxia and  anaerobic metabolism, leading to the accumulation of lactic acid.  Resuscitation with vasopressors or infusion of bicarbonate does not  correct the underlying problem. Replacement of volume with a  balanced electrolyte solution, blood, or both results in restoration  of the circulation, hepatic clearance of lactate, consumption of the  formed bicarbonate, and clearance of carbonic acid by the lung.  Excessive use of bicarbonate can cause metabolic alkalosis,  which, in combination with other sequelae such as hypothermia and  low levels of 2,3-diphosphoglycerate (from banked blood), shifts  the oxygen\u2013hemoglobin distribution curve to the left and thereby  compromises oxygen delivery.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1406,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "A 70-kg man with pyloric obstruction secondary to ulcer  disease is admitted to the hospital for resuscitation after 1  week of prolonged vomiting. What metabolic disturbance is  expected?",
+    "options": {
+      "A": "Hypokalemic, hyperchloremic metabolic acidosis",
+      "B": "Hyperkalemic, hypochloremic metabolic alkalosis",
+      "C": "Hyperkalemic, hyperchloremic metabolic acidosis",
+      "D": "Hypokalemic, hypochloremic metabolic alkalosis",
+      "E": "None of the above"
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "A common problem seen in patients with persistent  emesis is hypokalemic, hypochloremic metabolic alkalosis. To  compensate for the alkalosis associated with the loss of chloride and hydrogen ion\u2013rich fluid from the stomach, bicarbonate excre tion in urine is increased. The bicarbonate is usually excreted as a  sodium salt. However, in an attempt to conserve intravascular  volume, aldosterone-mediated sodium absorption occurs and leads  to potassium and hydrogen excretion. This compounds the alkalosis  and results in a paradoxical aciduria. Management includes resus citation with isotonic saline solutions and aggressive replacement  of lost potassium.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1407,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "Mullins RJ. Shock, electrolytes, and fluid. In: Townsend CM, Beau champ RD, Evers BM, et al., eds. Sabiston Textbook of Surgery: The  Biological Basis of Modern Surgical Practice. 18th ed. Philadelphia:  WB Saunders; 2008. 2. Shires GT. Fluid and electrolyte management of the surgical patient. In:  Brunicardi FC, Andersen DK, Billiar TR, et al., eds. Schwartz\u2019s Prin ciples of Surgery. 9th ed. New York: McGraw-Hill; 2010. 3. Fenves AZ, Rao A, Emmett M. Fluids and electrolytes. In: O\u2019Leary JP,  ed. The Physiologic Basis of Surgery. 4th ed. Philadelphia: Lippincott  Williams &amp; Wilkins; 2008. 4. Jan BV, Lowry SF. Systemic response to injury and metabolic support.  In: Brunicardi FC, Andersen DK, Billiar TR, et al., eds. Schwartz\u2019s  Principles of Surgery. 9th ed. New York: McGraw-Hill; 2010.42 SECTION I / Surgical Fundamentals",
+    "options": {
+      "B": "Hypovolemia",
+      "A": "Pain",
+      "C": "Acidosis",
+      "D": "Hypercapnia",
+      "E": "Acetylcholine"
+    },
+    "answer": "E",
+    "explanation": {
+      "correct": "In response to stress or injury, neural afferent  signals converge on the brain to activate the sympathetic nervous  system and hypothalamic stimulation. Catecholamines are released  from the sympathetic nervous system and result in increases in  blood pressure, heart rate, cardiac output, and minute ventilation.  Hypothalamic release of corticotropin-releasing hormone leads to  release of corticotropin from the pituitary gland, which in turn  induces the adrenal cortex to synthesize and release cortisol. These  responses are designed to compensate for lost circulatory volume,  maintain organ perfusion, and provide the energy substrates needed  for organ function. Pain is a potent activator of these pathways.  Hypovolemia simulates baroreceptors in the aorta and carotid  bodies, which stimulates these pathways. Chemoreceptors in the  carotid bodies and aorta are activated by hypoxemia, acidosis, and  hypercapnia. These receptors also trigger the hypothalamic pituitary-adrenal axis. Cytokines can likewise affect these path ways, though in a less direct manner since they do not have direct  neural input into these axes. Acetylcholine has antiinflammatory  effects and is not a part of the afferent response to injury.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1408,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "The patient above exhibits signs of a systemic inflammatory  response. All of the following are a part of the systemic  inflammatory response syndrome (SIRS) except:",
+    "options": {
+      "A": "Temperature of 36\u00b0C or lower",
+      "B": "Pulse rate lower than 56 beats/min",
+      "C": "Respiratory rate of 20 breaths/min or higher",
+      "D": "White blood cell count of 12,000/\u03bcL or greater",
+      "E": "10% or greater band forms on complete blood count  (CBC) with differential"
+    },
+    "answer": "B",
+    "explanation": {
+      "correct": "The clinical spectrum of SIRS includes two or  more of the following criteria: \u2003\u2003 \u2022 Temperature of 38\u00b0C or higher or 36\u00b0C or lower \u2022 Pulse rate of 90 beats/min or greater \u2022 Respiratory rate of 20 breaths/min or greater or a Paco2 of 32  mmHg or lower \u2022 White blood cell count of 12,000/\u03bcL or greater or 4000/\u03bcL  or lower or 10% or more band forms on the CBC with  differential\u2003\u2003 SIRS is a sterile response. Sepsis includes an identifiable  source of infection in addition to SIRS.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1409,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "A patient with pheochromocytoma shows signs of an amino  acid deficiency, with coarse hair, dry skin and nails, and  constipation. Which of the amino acids is critical to the  synthesis of catecholamines?",
+    "options": {
+      "A": "Tyrosine",
+      "B": "Phenylalanine",
+      "C": "Glutamate",
+      "D": "Aspartic acid",
+      "E": "Methionine"
+    },
+    "answer": "A",
+    "explanation": {
+      "correct": "Tyrosine from the diet or from conversion of phe nylalanine is the prime substrate for the synthesis of catechol amines. Tyrosine is hydroxylated to form dihydroxyphenylalanine  (dopa), which undergoes decarboxylation to form dopamine. Dopa mine is then hydroxylated to form norepinephrine. Norepinephrine  is subsequently methylated in the adrenal medulla to form epineph rine. In patients with pheochromocytoma, tyrosine can be used up  and the patient can become tyrosine deficient, exhibiting the symp toms above.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1410,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "The patient above undergoes an open adrenalectomy and has  an early postoperative fever, indicating inflammation due to  cytokine release. All of the following are secreted as a part of  the endocrine response to stress except:",
+    "options": {
+      "A": "Corticotropin",
+      "B": "Antidiuretic hormone (ADH)",
+      "C": "Growth hormone",
+      "D": "Thyroid hormone",
+      "E": "None of the above"
+    },
+    "answer": "E",
+    "explanation": {
+      "correct": "Trauma induces the release of hormones, which  directly affect the metabolism of carbohydrates, fats, and proteins.  Corticotropin is released from the pituitary gland and stimulates the  release of cortisol, which stimulates hepatic gluconeogenesis and  increases the release of amino acids from skeletal muscles. Release  of ADH from the posterior pituitary gland in response to a decreased  effective circulating plasma volume leads to increased peripheral  vasoconstriction, increased water reabsorption, increased hepatic  gluconeogenesis, and glycogenolysis. Growth hormone is released  from the anterior pituitary and increases amino acid uptake and CHAPTER 4 / Nutrition, Metabolism, and Fluid and Electrolytes 43 hepatic protein synthesis. Thyroid hormone release increases after  injury in response to the release of thyroid-stimulating hormone  (TSH) from the anterior pituitary. It induces glycolysis and gluco neogenesis and increases the metabolic rate and heat production.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1411,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "A patient presents with an aldosteronoma and clinical  evidence of suppression of the renin\u2013angiotensin system.  Which of the following is true of the system?",
+    "options": {
+      "A": "It is activated by an increase in the renal tubular sodium  concentration.",
+      "B": "Angiotensinogen is found in the renal medulla.",
+      "C": "Angiotensin-converting enzyme in the liver converts  angiotensin I to angiotensin II.",
+      "D": "Angiotensin II stimulates the release of aldosterone.",
+      "E": "Angiotensin II decreases splanchnic vasoconstriction."
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "The renin\u2013angiotensin system is activated by  decreases in renal arterial blood flow and renal tubular sodium  concentration, as well as increased \u03b2-adrenergic stimulation. Renin  is secreted from the juxtaglomerular cells of the renal afferent  arteriole. It converts angiotensinogen in the liver to angiotensin I.  Angiotensin-converting enzyme produced by the lung converts  angiotensin I to angiotensin II. Angiotensin II simulates the release  of aldosterone, increases peripheral and splanchnic vasoconstric tion, and decreases the renal excretion of salt and water.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1412,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "A 35-year-old woman presents to you after running her first  marathon with complaints of muscle aches. Which of the  following is not an action of cortisol in this metabolically  stressed patient?",
+    "options": {
+      "A": "It stimulates release of insulin by the pancreas.",
+      "B": "It induces insulin resistance in muscles and adipose  tissue.",
+      "C": "It stimulates release of lactate from skeletal muscle.",
+      "D": "It induces release of glycerol from adipose tissue.",
+      "E": "It leads to immunosuppression."
+    },
+    "answer": "A",
+    "explanation": {
+      "correct": "Cortisol is the major glucocorticoid released  during physiologic stress. After injury, cortisol levels are elevated  in proportion to the degree of stress to the patient. Metabolically,  cortisol potentiates the actions of glucagon and epinephrine, which  is manifested as hyperglycemia. It also stimulates enzymatic activi ties favoring hepatic gluconeogenesis. In skeletal muscle, cortisol  induces protein degradation and release of lactate; lactate serves as  a substrate for hepatic gluconeogenesis. It also potentiates the  release of free fatty acids, triglycerides, and glycerol from adipose  tissue to provide additional energy sources. In a stressed patient,  cortisol induces insulin resistance in muscles and adipose tissue.  All these actions are directed at increasing blood glucose levels in  the stressed system. Answer A is therefore incorrect because insulin  causes a decrease in blood glucose levels. Additionally, glucocor ticoids cause depressed cell-mediated immune responses (decreased  killer T-cell and natural killer cell function, as well as T-cell genera tion) and delayed hypersensitivity responses.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1413,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "The patient above is found to have marked rhabdomyolysis.  Which of the following are effects of epinephrine in response  to injury in this patient?",
+    "options": {
+      "A": "It enhances the adherence of leukocytes to vascular  endothelial membranes.",
+      "B": "It stimulates the release of aldosterone.",
+      "C": "It inhibits the secretion of thyroid hormones.",
+      "D": "It increases glucagon secretion.",
+      "E": "It decreases lipolysis in adipose tissue."
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "The catecholamines norepinephrine and epi nephrine are increased up to fourfold in plasma immediately after  injury. In the liver, epinephrine promotes glycogenolysis, gluconeo genesis, lipolysis, and ketogenesis. It decreases insulin release and  increases glucagon secretion. Epinephrine increases lipolysis in  adipose tissue and induces insulin resistance in skeletal muscle. The  overall effect of these actions is stress-induced hyperglycemia.  Catecholamines also increase the secretion of thyroid and parathy roid hormones as a part of the stress response. Epinephrine induces  leukocyte demargination from vascular endothelial membranes,  which is manifested as leukocytosis.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1414,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "Which of the following substances has been shown to be  useful as a measurable marker of the response to injury?",
+    "options": {
+      "A": "Tumor necrosis factor-\u03b1 (TNF-\u03b1)",
+      "B": "Interleukin-2 (IL-2)",
+      "C": "IL-6",
+      "D": "IL-10",
+      "E": "C-reactive protein (CRP)"
+    },
+    "answer": "E",
+    "explanation": {
+      "correct": "Cytokines released as a part of the stress response have a myriad of effects that both drive and inhibit the inflammatory  process. TNF-\u03b1 is among the earliest detectable cytokines after  injury. It is secreted by macrophages, Kupffer cells, neutrophils,  natural killer cells, T lymphocytes, mast cells, and endothelial cells,  among others. It has a half-life of less than 20 min. TNF-\u03b1 induces  significant shock and catabolism. IL-2 is secreted by T lymphocytes  and has a half-life of less than 10 min. It promotes lymphocyte  proliferation, immunoglobulin production, and gut barrier integrity.  It also regulates lymphocyte apoptosis. IL-6 is released by macro phages, B lymphocytes, neutrophils, basophils, mast cells, and  endothelial cells. It has a long half-life and prolongs the survival of  activated neutrophils. It is a potent inducer of acute-phase proteins  in the liver. IL-10 is secreted by B and T lymphocytes, macro phages, basophils, and mast cells. It is an antiinflammatory cytokine  and has been shown to reduce mortality in animal models of sepsis  and acute respiratory distress syndrome (ARDS). CRP is useful as  a marker of the response to injury because it reflects the degree of  inflammation fairly accurately. CRP levels are not subject to diurnal  variations and do not change with feeding. Consequently, it is used  as a biomarker of inflammation and response to treatment.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1415,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "After a gunshot wound to the lower extremity requiring  operative exploration and repair of the popliteal artery, a  patient has pain, pallor, and coldness of his leg. You suspect 44 SECTION I / Surgical Fundamentals reperfusion injury causing compartment syndrome. Which of  the following is true regarding reactive oxygen metabolites?",
+    "options": {
+      "A": "Reactive oxygen metabolites are synthesized and stored  within leukocytes before being released in response to  injury.",
+      "B": "Reactive oxygen metabolites cause injury by oxidation of  unsaturated fatty acids within cell membranes.",
+      "C": "Cells secreting reactive oxygen metabolites are immune  to damage after the release of these metabolites.",
+      "D": "In ischemic tissue, the mechanisms for the production of  reactive oxygen metabolites are downregulated.",
+      "E": "Reactive oxygen metabolites are quenched by inhibitory  cytokines."
+    },
+    "answer": "B",
+    "explanation": {
+      "correct": "Reactive oxygen metabolites are short-lived,  highly reactive molecules that cause tissue injury by oxidation of  fatty acids within cell membranes. They are produced during anaero bic glucose oxidation, with the resulting production of superoxide  anion from the reduction of oxygen. Superoxide anion is further  metabolized to hydrogen peroxide and hydroxyl radicals. Cells are  not immune to injury from the reactive oxygen metabolites that they  release, but they are usually protected from damage by oxygen  scavengers such as glutathione and catalases, not inhibitory cyto kines. In ischemic tissues, the mechanisms for the production of  oxygen metabolites are actually activated, but because of the lack of  oxygen supply, the production of reactive oxygen metabolites is kept  to a minimum. Once blood flow is restored, oxygen is redelivered,  thereby allowing large quantities of reactive oxygen metabolites to  be produced, which in turn leads to reperfusion injury. This is the  inciting insult in compartment syndrome after the repair of vessels.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1416,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "A patient presents with an acute gastrointestinal bleed and  receives multiple transfusions of packed red blood cells. The  following day, hypoxemia and bilateral infiltrates are  observed on his chest x-ray. Which of the following  statements about eicosanoids is true?",
+    "options": {
+      "A": "Their synthesis is dependent on the enzymatic activation  of phospholipase A2.",
+      "B": "They originate from lymphocytes around the site of injury.",
+      "C": "They are stored within inflammatory cells and released on  tissue injury.",
+      "D": "The production of leukotrienes is dependent on the  enzymatic activation of cyclooxygenase.",
+      "E": "The production of prostaglandins is dependent on the  enzymatic activation of lipoxygenase."
+    },
+    "answer": "A",
+    "explanation": {
+      "correct": "Eicosanoids are a class of mediators that includes  prostaglandins, thromboxanes, leukotrienes, hydroxyeicosatetraenoic  acids, and lipoxins. They are secreted by all nucleated cells except for  lymphocytes. Phospholipids are converted by phospholipase A2 into  arachidonic acid. Arachidonic acid is then metabolized by cyclooxy genase to yield cyclic endoperoxides and eventually prostaglandins  and thromboxanes. Alternatively, arachidonic acid is metabolized by  lipoxygenase to yield hydroperoxyeicosatetraenoic acid and, eventu ally, hydroxyeicosatetraenoic acid and leukotrienes. Eicosanoids are  not stored within cells but are synthesized and released in response  to hypoxia or direct tissue injury. Other substances such as endo toxin, norepinephrine, vasopressin, angiotensin II, bradykinin,  serotonin, acetylcholine, cytokines, and histamine can also induce  the production and release of eicosanoids. Eicosanoids have a  variety of deleterious effects, including acute lung injury, pancre atitis, and renal failure. They are extremely potent in promoting  capillary leakage, leukocyte adherence, neutrophil activation, bron choconstriction, and vasoconstriction.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1417,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "In the patient above, you suspect transfusion-induced acute  lung injury and intubate. The next day he has severe diffuse  edema. Which of the following is true regarding the  kallikrein\u2013kinin system?",
+    "options": {
+      "A": "Bradykinins are potent vasoconstrictors produced in  ischemic tissues.",
+      "B": "Bradykinins are stored in macrophages and released in  response to tissue injury.",
+      "C": "Bradykinin release and elevation are proportional to the  magnitude of injury.",
+      "D": "Bradykinin antagonists have been shown to improve  survival in septic trauma patients.",
+      "E": "Bradykinin release is actually decreased in sepsis."
+    },
+    "answer": "C",
+    "explanation": {
+      "correct": "Bradykinins are vasodilators produced by kinino gen degradation by the protease kallikrein. Kallikrein circulates in  blood and tissues in an inactive form until it is activated by  Hageman factor, trypsin, plasmin, factor XI, kaolin, and collagen.  Bradykinins increase capillary permeability, which leads to tissue  edema. They also increase renal vasodilation, thereby leading to a  reduction in renal perfusion pressure, which in turn activates the  renin\u2013angiotensin system and culminates in retention of sodium  and water. Bradykinins are released during hypoxia and ischemia  and after hemorrhage, sepsis, and endotoxemia. Elevations in bra dykinins are proportional to the magnitude of the injury present.  Studies in which bradykinin antagonists have been used to reduce  the effects of sepsis show no improvement in survival.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1418,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "Which of the following is true with regard to the complement  cascade in the setting of injury, as in acute lung injury in the  patient above?",
+    "options": {
+      "A": "Complement deactivates granulocyte activation.",
+      "B": "Complement induces the release of TNF-\u03b1 and IL-1.",
+      "C": "Complement induces the relaxation of endothelial smooth  muscle.",
+      "D": "The complement components C3b and C5b are strong  anaphylatoxins.",
+      "E": "The complement cascade is inhibited by hemorrhage."
+    },
+    "answer": "B",
+    "explanation": {
+      "correct": "Ischemia and endothelial injuries lead to the acti vation of complement, a series of plasma proteins involved in the  inflammatory response. Complement is activated with the release  of biologically active anaphylatoxins C3a and C5a during hemor rhage. These components cause granulocyte activation and aggre gation, increased vascular permeability, smooth muscle contraction,  and release of histamine and arachidonic acid metabolites. They CHAPTER 4 / Nutrition, Metabolism, and Fluid and Electrolytes 45 also promote the release of TNF-\u03b1 and IL-1, both major cytokines  in the inflammatory response. Although the activation of comple ment can lead to the destruction and lysis of invading organisms,  overactivation may result in tissue destruction and damage, as seen  in ARDS.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1419,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "A patient presents to the emergency room after a pitchfork  puncture wound the day before, concerned about infection.  Which of the following is true with regard to the inflamma tory response?",
+    "options": {
+      "A": "Clot at the site of injury is the primary chemoattractant  for neutrophils and monocytes.",
+      "B": "Migration of neutrophils to the site of injury is inhibited  by the release of serotonin.",
+      "C": "Mast cells appear at the site of injury after migrating to  the injury via chemoattractants such as cytokines.",
+      "D": "Surgical or traumatic injury is associated with upregula tion of cell-mediated immunity via type 1 helper T (TH1)  cells and downregulation of antibody-mediated immunity  via type 2 helper T (TH2) cells.",
+      "E": "Eosinophils involved in the inflammatory response are  inactivated by the complement anaphylatoxins C3a and  C5a."
+    },
+    "answer": "A",
+    "explanation": {
+      "correct": "Formation of clot at the site of injury serves as  the primary chemoattractant for Band monocytes during the  inflammatory response of the body to injury. Migration of neu trophils along with platelets through the vascular endothelium  occurs within hours of injury and is facilitated by serotonin,  platelet-activating factor, and prostaglandin E2. Mast cells are  preexistent in tissues and are therefore the first to be involved in  the inflammatory response. They release histamine, cytokines,  eicosanoids, proteases, and TNF-\u03b1, which results in local vasodi lation, capillary leakage, and recruitment of other inflammatory  cells to the area. In severe injuries, there is a reduction in cell mediated immunity and TH1 cytokine production and a shift  toward antibody-mediated immunity through the action of TH2  cells. A TH1 response is favored in lesser injuries, with intact  cell-mediated opsonizing capability and antibody immunity  against microbial infections and with the activation of monocytes,  B lymphocytes, and cytotoxic T lymphocytes. A shift to the TH2  response is associated with more severe injuries and includes  activation of eosinophils, mast cells, and B-lymphocyte antibody  production. Eosinophils involved in the inflammatory response  are activated by IL-3, granulocyte\u2013macrophage colony-stimulat ing factor (GM-CSF), IL-5, platelet-activating factor, and the  complement anaphylatoxins C3a and C5a.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1420,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "In acute wounds as in the patient above, the initial recruit ment of neutrophils to endothelial surfaces is mediated  primarily by:",
+    "options": {
+      "A": "Immunoglobulins",
+      "B": "Integrins",
+      "C": "Selectins",
+      "D": "All of the above",
+      "E": "None of the above"
+    },
+    "answer": "C",
+    "explanation": {
+      "correct": "In endothelial injury, the initial recruitment of  inflammatory leukocytes, specifically neutrophils, to the endo thelial surfaces is mediated by adhesion molecules known as  selectins, which are found on cell surfaces. Neutrophil rolling in  the first 20 min after injury is mediated by P-selectin, which is  stored within endothelial cells. After 20 min, P-selectin is  degraded and L-selectin becomes the primary mediator of leuko cyte rolling. Firm adhesion and transmigration of neutrophils  through the endothelium and into the site of injury are mediated  by integrins and the immunoglobulin family of adhesion mole cules, including intercellular adhesion molecule (ICAM), vascu lar cell adhesion molecule (VCAM), and platelet\u2013endothelial cell  adhesion molecule (PECAM).",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1421,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "Which of the following regarding macrophages/monocytes is  true?",
+    "options": {
+      "A": "Macrophages and monocytes become hyperresponsive to  continued injury/insult after trauma.",
+      "B": "Functional impairment in macrophage/monocyte  capability may persist for a week and is overcome with  the development and growth of newer, more immature  monocytes.",
+      "C": "Macrophages present peptides in association with major  histocompatibility complex (MHC) class II molecules to  prime CD8+ cytotoxic T lymphocytes.",
+      "D": "Human leukocyte antigen (HLA)/MHC II expression on  monocytes increases after a major injury.",
+      "E": "Macrophages present peptides in association with  MHC class I molecules to prime CD4+ helper T  lymphocytes."
+    },
+    "answer": "B",
+    "explanation": {
+      "correct": "After the initial short-lived hyperactivation  involving the release of TNF and IL-1, macrophages and mono cytes actually become hyporesponsive. Deactivation of these cells  results in a type of immunologic paralysis. With stress, these cells  release prostaglandin E2, which has immunosuppressive effects.  It inhibits T-cell mitogenesis, along with IL-1 and TNF-\u03b1 produc tion. This functional impairment in the patient\u2019s innate cellular  immunity lasts for up to 7 days, until newly recruited monocytes  are produced to bolster the immune response. Additional media tors such as transforming growth factor-\u03b2 (TGF-\u03b2), IL-10, and  IL-4 are also secreted after stress or trauma and inhibit the capa bility of macrophages and monocytes to present antigen to T cells,  thereby contributing to impairment in antigen-specific immunity  as well. The overall decrease in the adaptive immune response  has been found to be associated with decreased resistance to  infection. The functional impairment in macrophage/monocyte  capability may persist for up to 7 days and is overcome with the  development and growth of newer, more immature monocytes,  which may lack the abilities of their predecessor monocytes.  HLA-DR/MHC II expression on monocytes decreases after a  major injury, with prolonged depression being associated with an  increased infection rate. Macrophages present peptides in associa tion with MHC class I molecules to prime CD8+ cytotoxic T  lymphocytes and peptides in association with MHC class II to  prime CD4+ helper T lymphocytes.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1422,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "A patient with a history of alcohol abuse presents with  profound hepatic failure after a Tylenol overdose. She is  hypotensive, and you suspect delayed degradation of nitric  oxide (NO) from her failing liver. Which of the following is  true regarding NO?",
+    "options": {
+      "A": "NO is inhibited by acetylcholine stimulation.",
+      "B": "NO is expressed constitutively.",
+      "C": "NO can induce platelet adhesion and thus lead to  microthrombosis.",
+      "D": "NO has a half-life of 5 min.",
+      "E": "NO is formed from the oxidation of l-alanine."
+    },
+    "answer": "B",
+    "explanation": {
+      "correct": "NO is derived from the endothelial surfaces in  response to acetylcholine stimulation, hypoxia, endotoxins, and  cellular injury. It is expressed constitutively at low levels and helps  maintain normal vascular smooth muscle relaxation. It reduces  platelet adhesion and aggregation, thus making thrombosis of small  vessels less likely. It is diffusible, with a half-life measured in  seconds. NO is formed from the oxidation of l-arginine via the  enzyme NO synthase. In liver failure, NO is not broken down  efficiently, leading to hypotension.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1423,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "A patient presents with complaints of weight loss and is  found to have colon cancer. Which of the following regarding  TNF-\u03b1 is true?",
+    "options": {
+      "A": "It is predominantly a local mediator that induces the  classic inflammatory febrile response to injury by  stimulating local prostaglandin activity in the anterior  hypothalamus.",
+      "B": "It is effective in promoting the maturation/recruitment of  functional leukocytes needed for a normal cytokine  response and delays apoptosis of macrophages and  neutrophils, which may contribute to organ injury.",
+      "C": "It has both a proinflammatory and antiinflammatory  roles; is a mediator of the hepatic acute-phase response  to injury; induces neutrophil activation but also delays  disposal of neutrophils; and can attenuate TNF-\u03b1 and  IL-1 activity, thereby curbing the inflammatory  response.",
+      "D": "It is an inducer of muscle catabolism and cachexia during  stress by shunting available amino acids to the hepatic  circulation as fuel substrates; it also activates coagulation  and promotes the expression/release of adhesion mol ecules, prostaglandin E2, platelet-activating factor,  glucocorticoids, and eicosanoids.",
+      "E": "It promotes T-cell proliferation, production of immuno globulins, and gut barrier integrity."
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "Cytokines are the most potent mediators of the  inflammatory response. On a local level, they promote wound  healing and proliferation of microorganisms. In excess levels, as  sometimes occurs during the response to injury, they may induce  hemodynamic instability, which can lead to organ failure or death.  There is considerable overlap regarding the effects of cytokines  with regard to promoting or attenuating the inflammatory response.  Choice A describes IL-1. Choice B describes GM-CSF. Choice C  describes IL-6. Choice D describes TNF-\u03b1. Choice E describes  IL-2. TNF-\u03b1 is thought to be responsible for the cachexia observed  in cancer patients.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1424,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "Which of the following is considered an antiinflammatory  cytokine?",
+    "options": {
+      "A": "IL-1",
+      "B": "IL-4",
+      "C": "IL-6",
+      "D": "IL-8",
+      "E": "Interferon-\u03b3 (IFN-\u03b3)"
+    },
+    "answer": "B",
+    "explanation": {
+      "correct": "The alterations in the hemodynamic, metabolic,  and immune responses evident in stressed patients are orchestrated  by endogenous polypeptides known as cytokines. They are pro duced by immune cells in direct response to injury, with levels  correlating with the degree of tissue damage. Despite considerable  overlap in bioactivity among cytokines, they are commonly classi fied by their predominant effect as proinflammatory or antiinflam matory. Those commonly considered proinflammatory include  IL-1, IL-6, IL-8, and IFN-\u03b3. Those usually considered antiinflam matory include IL-4, IL-10, IL-13, and TGF-\u03b2.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1425,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "Which of the following is true with regard to TNF-\u03b1 and  IL-1?",
+    "options": {
+      "A": "Levels of soluble molecules that antagonize the effects of  TNF-\u03b1 and IL-1 have been shown to be predictive of  organ failure.",
+      "B": "Secretion of TNF-\u03b1 and IL-1 is conducive to a hypoco agulable state during an acute injury.",
+      "C": "Secretion of TNF-\u03b1 and IL-1 in response to injury leads  to the downregulation of the synthesis of NO and  subsequent vasoconstriction.",
+      "D": "TNF-\u03b1 and IL-1 have a long half-life, which makes them  effective markers for determining the magnitude and  severity of the inflammatory response.",
+      "E": "TNF-\u03b1 and IL-1 have no natural antagonists; rather, their  systemic effects diminish because of natural cytokine  degradation."
+    },
+    "answer": "A",
+    "explanation": {
+      "correct": "TNF-\u03b1 and IL-1 are overproduced in patients  after posttraumatic inflammation. They induce increased synthe sis of NO; activation of the cyclooxygenase and lipoxygenase pathways, which leads to the formation of thromboxanes and  prostaglandins; and production of platelet-activating factor, intra cellular adhesion molecules, and selectins, which is conducive to  hypercoagulability. TNF-\u03b1 and IL-1 have a short half-life, thus  making them unreliable predictors of the severity of injury in the  clinical setting. Soluble molecules that antagonize their effects  are more stable and have been found to be predictive of lethal  outcome and end-organ failure. IL-1 receptor antagonist (IL-1Ra)  binds to the IL-1 receptor and blocks IL-1 activity. Soluble TNF  receptors I and II (sTNF-RI and sTNF-RII) bind biologically  active TNF and antagonize its effects.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1426,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "All of the following with regard to IL-6 are true except:",
+    "options": {
+      "A": "IL-6 is a sensitive marker for the degree of tissue injury.",
+      "B": "IL-6 induces the synthesis of CRP.",
+      "C": "IL-6 secretion is inhibited by TNF-\u03b1 and IL-1.",
+      "D": "IL-6 levels peak early after injury.",
+      "E": "IL-6 has antiinflammatory effects."
+    },
+    "answer": "C",
+    "explanation": {
+      "correct": "IL-6 is a very sensitive marker for the degree of  tissue injury. It is secreted by monocytes, macrophages, neutro phils, T and B cells, endothelial cells, smooth muscle cells, and  fibroblasts. IL-6 expression is induced by bradykinin, TGF-\u03b2,  platelet-derived growth factor, TNF-\u03b1, and IL-1, among others.  IL-6 levels peak early after injury, with levels found to be predictive  of risk for and mortality from organ failure after trauma. IL-6  induces the synthesis of acute-phase proteins such as fibrinogen,  complement factors, \u03b11-antitrypsin, and CRP. CRP itself is a marker  for states with increased inflammation and, in addition, is predictive  of adverse outcomes following a secondary surgery. IL-6 also has  some antiinflammatory effects, including inhibition of proteases  and reduction of TNF-\u03b1 and IL-1 synthesis; furthermore, it can  cause the release of immunosuppressive glucocorticoids.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1427,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "All of the following with regard to IL-8 are true except:",
+    "options": {
+      "A": "IL-8 levels after injury have been shown to correlate with  the onset of multiorgan failure.",
+      "B": "IL-8 exerts important inhibitory effects on polymorpho nuclear cells.",
+      "C": "IL-8 is associated with ARDS.",
+      "D": "Local hypoxia induces the production of IL-8 from  macrophages.",
+      "E": "IL-8 does not produce the hemodynamic instability  characteristic of TNF-\u03b1 and IL-1."
+    },
+    "answer": "B",
+    "explanation": {
+      "correct": "Like IL-6, IL-8 levels peak within the first 24 h of  injury. Prolonged elevation of IL-8 is predictive of the onset of  multiorgan failure and even mortality. IL-8 is secreted by mono cytes, macrophages, neutrophils, and endothelial cells. It is a potent  chemoattractant for polymorphonuclear cells, particularly in the  lung, where it is thought to have a role in initiating ARDS. Local  hypoxia is thought to play a role in stimulating IL-8 production by  pulmonary macrophages. Circulating polymorphonuclear cells  migrate in response to IL-8 production, thereby leading to massive  infiltration into the lungs, which in turn can progress to full-blown  ARDS. Interestingly, IL-8 does not produce the hemodynamic  instability characteristic of TNF-\u03b1 and IL-1.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1428,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "Which of the following with regard to IL-10 is true?",
+    "options": {
+      "A": "IL-10 is a strong proinflammatory cytokine.",
+      "B": "IL-10 is secreted primarily by platelets in response to  injury.",
+      "C": "IL-10 inhibits some proinflammatory cytokines such as  IL-1.",
+      "D": "IL-10 has a short half-life and is therefore not a useful  marker for assessing the severity of injury.",
+      "E": "IL-10 secretion is inhibited by the stress of surgical  procedures."
+    },
+    "answer": "C",
+    "explanation": {
+      "correct": "IL-10 originates from T cells and monocytes. It  has strong antiinflammatory properties and is capable of inhibiting  the synthesis of proinflammatory cytokines such as IL-1 and TNF \u03b1. It also induces a reduction in class II MHC molecules on mono cytes, thereby leading to the downregulation of the immune  response. IL-10 levels in trauma patients have been shown to reflect  the severity of injury and are predictive of patients in whom sepsis  or multiorgan dysfunction syndrome will develop. Release of IL-10  is increased in direct proportion to tissue damage, thus suggesting  that more invasive surgical procedures augment the release of  IL-10.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1429,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "A patient in your intensive care unit (ICU) has hyperglyce mia at 250 mg/dL 17 h after coronary artery bypass grafting.  All of the following regarding insulin therapy are true except:",
+    "options": {
+      "A": "Hyperglycemia increases the morbidity of critically ill  patients in the surgical ICU setting without significantly  affecting mortality rates.",
+      "B": "Maintaining blood glucose levels of 80 to 110 mg/dL is  beneficial in surgical ICU patients.",
+      "C": "Hyperglycemia impairs macrophage ability.",
+      "D": "Insulin has antiinflammatory effects.",
+      "E": "Hyperglycemia promotes coagulation."
+    },
+    "answer": "A",
+    "explanation": {
+      "correct": "Prospective, randomized data from Van den Berge  and colleagues have shown that hyperglycemia increases mortality  rates in critically ill surgical ICU patients. Hyperglycemia promotes  oxidative stress, coagulation, and phagocyte dysfunction. Advanced  glycation end products resulting from hyperglycemia are them selves proinflammatory. Insulin has anabolic, antiinflammatory,  and antiapoptotic effects. For all these reasons, insulin therapy for  tight blood glucose control has been shown to improve outcomes  in ICU patients. However, maintaining very strict glucose control  (80 to 110 mg/dL) has been shown to worsen outcomes and increase  mortality, and a higher threshold is recommended.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1430,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "The above patient remains intubated and is without enteral  feeding for 3 days. Which of the following is the main  energy source during critical illness/injury?",
+    "options": {
+      "A": "Skeletal muscle",
+      "B": "Liver",
+      "C": "Adipose tissue",
+      "D": "Kidney",
+      "E": "Gut"
+    },
+    "answer": "C",
+    "explanation": {
+      "correct": "Lipids are nonprotein, noncarbohydrate fuel  sources that minimize protein breakdown in injured patients. In  response to catecholamines released during stress, triglyceride  lipase induces fat mobilization/lipolysis from adipose stores. Glyc erol is released and provides a substrate for hepatic gluconeogen esis. Fatty acids are released and processed into ketone bodies by 48 SECTION I / Surgical Fundamentals the liver to provide an additional fuel source. Free fatty acids can  also serve as a direct source of energy for such tissues as cardiac,  kidney, liver, and muscle cells.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1431,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "When attempting to wean from the ventilator on postopera tive day 6, you notice the above patient has persistent  hypercapnea and suspect overfeeding. Which of the follow ing is correct with respect to the respiratory quotient (RQ)?",
+    "options": {
+      "A": "RQ = 1: greater oxidation of protein for fuel",
+      "B": "RQ &gt; 1: overfeeding/greater carbohydrate oxidation",
+      "C": "RQ = 0.7: greater oxidation of carbohydrate for fuel",
+      "D": "RQ = 0.85: greater oxidation of fatty acid for fuel",
+      "E": "RQ &lt; 1: excess breakdown of proteins for fuel"
+    },
+    "answer": "B",
+    "explanation": {
+      "correct": "The RQ is a unitless number used for the calcula tion of basal metabolic rate when estimated from carbon dioxide  production. It is calculated from the ratio of CO2 produced and O2 consumed. The RQ in patients who are in metabolic balance usually  ranges from 1.0 (the value expected for pure carbohydrate oxida tion) to 0.7 (the value expected for pure fat oxidation). A mixed  diet of fat and carbohydrate results in an average value between  these numbers. The RQ may rise above 1.0 in an organism oxidiz ing carbohydrate to produce fat, as in overfeeding. In summary, \u2003\u2003 RQ = 1: greater oxidation of carbohydrate for fuel RQ &gt; 1: overfeeding/greater carbohydrate oxidation RQ = 0.7: greater oxidation of fatty acid for fuel RQ = 0.85: oxidation of equal amounts of fatty acids and glucose",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1432,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "Zukerbraun BS, Harbrecht BG. The physiologic response to injury. In:  Peitzman AB, Rhoes M, Schwab CW, et al., eds. The Trauma Manual:  Trauma &amp; Acute Care Surgery. 3rd ed. New York: Lippincott Williams  &amp; Wilkins; 2008. 2. Jan BV, Lowry SF. Systemic response to injury and metabolic support.  In: Brunicardi FC, Andersen DK, Billiar TR, et al., eds. Schwartz\u2019s  Principles of Surgery. 9th ed. New York: McGraw-Hill; 2010. 3. Phelan HA, Esatman AL, Frotan A, Gonzales RP. Shock and hypoperfu sion states. In: O\u2019Leary JP, Tabuenca A, Capote LR, eds. The Physio logic Basis of Surgery. 4th ed. New York: Lippincott Williams &amp;  Wilkins; 2008. 4. Faist E, Trentzsch H. The immune response. In: Feliciano DV, Mattox  KL, Moore EE, eds. Trauma. 6th ed. New York: McGraw-Hill Medical;  2007.CHAPTER 4 / Nutrition, Metabolism, and Fluid and Electrolytes 49",
+    "options": {
+      "C": "Protein",
+      "A": "Fat",
+      "B": "Alcohol",
+      "D": "Carbohydrate",
+      "E": "Water"
+    },
+    "answer": "A",
+    "explanation": {
+      "correct": "Fat stores can equal 160,000 kcal, with higher  stores present in obese individuals. Lean body mass proteins can  supply 30,000 kcal of the body\u2019s energy stores. Energy in the diet  can be provided by carbohydrates (4 kcal/g), fats (9 kcal/g), pro teins (4 kcal/g), and alcohol (7 kcal/g).",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1433,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "A 53-year-old diabetic patient undergoes small bowel  resection for volvulus. He now has a prolonged postoperative  ileus and has had only 0.45% normal saline for 5 days. In  order to limit protein catabolism, how much glucose should  be administered in his total parenteral nutrition (TPN)?",
+    "options": {
+      "A": "1 L of 5% dextrose in water (D5W)",
+      "B": "2 L of D5W",
+      "C": "3 L of D5W",
+      "D": "4 L of D5W",
+      "E": "5 L of D5W"
+    },
+    "answer": "B",
+    "explanation": {
+      "correct": "Blood glucose levels are regulated by hormones in  response to carbohydrate intake. Insulin secretion increases with  intake of glucose, and glucagon secretion declines, thus allowing  an increased uptake of glucose by liver, muscle, and adipose tissue.  Conversely, glucagon mobilizes liver glycogen via the cyclic ade nosine monophosphate (cAMP) protein kinase system when blood  glucose levels decrease because of decreased intake. Glucose toler ance is determined by the rate at which mechanisms of glucose  removal can operate. Administration of 100 g of glucose (or 1 mg/ kg/min) has a protein-sparing effect that suppresses the use of  nitrogen (from amino acids) for gluconeogenesis. D5W, or 5%  dextrose per liter of water, contains 50 g of dextrose per liter.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1434,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "A patient with a history of a trauma laparotomy presents with  a small bowel obstruction. A nasogastric tube is placed that  aspirates greater than 4L of fluid per day. The gastrointestinal  tract can secrete and reabsorb how much water in the form of  gastric juices per day (in a 70-kg adult male)?",
+    "options": {
+      "A": "1 to 2 L/day",
+      "B": "4 to 5 L/day",
+      "C": "6 to 7 L/day",
+      "D": "8 to 10 L/day",
+      "E": "50 L/day"
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "The end products of protein, carbohydrate, and fat  oxidation include water, with 1 g of carbohydrate yielding 0.6 mL  of water, 1 g of protein yielding 0.42 mL, and 1 g of fat yielding  1.07 mL. In addition, the gastrointestinal tract may secrete and  reabsorb as much as 8 to 10 L/day of water as digestive juices in  the following estimated amounts: saliva, 1500 mL; gastric juice,  2500 mL; bile, 500 mL; pancreatic juices, 700 mL; intestinal juices,  3000 mL; and water intake, 2000 mL.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1435,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "In the above patient, the decreased insulin\u2013glucagon ratio  seen during simple starvation allows:",
+    "options": {
+      "A": "Increased lipogenesis",
+      "B": "Increased lipolysis",
+      "C": "Increased protein synthesis",
+      "D": "Increased glycogen production",
+      "E": "Decreased lipolysis"
+    },
+    "answer": "B",
+    "explanation": {
+      "correct": "During starvation, the insulin\u2013glucagon ratio is  decreased, which allows activation of lipolysis and suppression of  lipogenesis. Lipolysis breaks down fat to free fatty acids, which are  used as alternative fuels by many tissues that prefer fat as a fuel  source (i.e., kidney, cardiac muscle, and skeletal muscle). The liver  oxidizes fatty acids to acetyl CoA, which is then converted to  ketones. As ketone (acetoacetate and \u03b2-hydroxybutyrate) levels rise,  they can cross the blood\u2013brain barrier to supply fuel, but some  glucose is still required. The use of fatty acids as a primary fuel  source allows the sparing of body proteins for gluconeogenesis. This  sparing effect is important for maintenance of immune functions and  liver and respiratory muscle function. A respiratory quotient (RQ,  Vco2/Vo2) of 0.6 to 0.7 during simple starvation reflects the fact that  fat is the body\u2019s primary fuel source during simple starvation.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1436,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "Which amino acid is released in large amounts to be used by  the liver during simple starvation?",
+    "options": {
+      "A": "Valine",
+      "B": "Serine",
+      "C": "Glutamine",
+      "D": "Cysteine",
+      "E": "Homocysteine"
+    },
+    "answer": "C",
+    "explanation": {
+      "correct": "Protein metabolism adapts to starvation as  follows: (1) the synthesis of protein decreases because energy  sources for production are not available, (2) protein catabolism is  reduced as other fuels become the primary sources of energy for  many tissues, and (3) decreased ureagenesis and urinary nitrogen  loss reflect protein sparing (in the initial stages of starvation, the  rate of urea nitrogen loss is greater than 10 g/day, with a decline to  less than 7 g/day after weeks of starvation). Alanine, glutamine,  and glycine are released in large amounts to be used by the liver  and kidney for net glucose formation.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1437,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "A 24-year-old male is made nil per os (NPO) after midnight  for lipoma removal the next day. His case is delayed until  early evening, and he enters simple starvation. In this patient,  glucagon mobilizes which of the following?",
+    "options": {
+      "A": "Glycogen from muscle tissue",
+      "B": "Liver glycogen",
+      "C": "Insulin to improve the cellular uptake of glucose",
+      "D": "Glucose to the liver for storage",
+      "E": "None of the above"
+    },
+    "answer": "A",
+    "explanation": {
+      "correct": "Carbohydrates can be classified as complex (poly saccharides) or simple (mono- and disaccharides). Carbohydrate  digestion starts in the mouth with salivary amylase, which hydro lyzes polysaccharide bonds, and continues with pancreatic amylase  and the enzymes sucrase, lactase, maltase, and isomaltase from  intestinal epithelial cells to yield monosaccharides. Glucose, a monosaccharide, is the preferred fuel in humans,  with all the metabolism beginning or ending with this hexose.  Glucose is transported to the liver via the portal circulation and  goes on to form pyruvate, glycogen, or fat in adipose tissue. Glycogen is the stored form of carbohydrates and is present  in the liver and the skeletal muscle; the liver glycogen is for general  use and can be mobilized at any time using the enzyme  glucose-6-phosphatase, whereas muscles lack this enzyme and  therefore conserve their glycogen for exclusive muscle use. In times of fasting, glucagon activates the enzyme glycogen  phosphorylase to facilitate glycogenolysis. Glucagon also inhibits  glycogen synthase, preventing the formation of new glycogen. Gly cogenolysis can provide glucose supplies for 12 to 24 h of fasting.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1438,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "A patient presents with lymphoma and a left pleural effusion;  upon drainage, the fluid is noted to be chylous. In which of  the following is he likely to be deficient?",
+    "options": {
+      "A": "Short-chain fatty acids",
+      "B": "Medium-chain fatty acids",
+      "C": "Long-chain fatty acids",
+      "D": "Calcium",
+      "E": "Vitamin B12"
+    },
+    "answer": "C",
+    "explanation": {
+      "correct": "Fat absorption is through the small intestine and  the lymphatics. Medium- and short-chain free fatty acids enter the entero cyte through simple diffusion and are transported from there into  the portal system. Triacylglycerides (TAGs), cholesterol, and  lipids are broken down by pancreatic lipase, cholesterol esterase,  phospholipase, and bile salts to form micelles and free fatty acids  in the intestine. Micelles contain bile salts, long-chain fatty acids,  and cholesterol. The micelles then fuse with the enterocyte mem brane and from there undergo breakdown in the enterocyte. TAGs are then resynthesized and form chylomicrons with  phospholipids and cholesterol. These, along with long-chain fatty  acids, enter the lymphatics to empty into the thoracic duct. Chylothorax and other lymphatic or thoracic duct disruptions can  result in a profound deficiency of TAGs and long-chain fatty acids.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1439,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "A patient presents with a 55% total body surface area  (TBSA) burn. Early enteral feeds are started per protocol,  and the burn unit director considers glutamine supplementa tion. Glutamine is an amino acid that:",
+    "options": {
+      "A": "Is categorized as an essential amino acid",
+      "B": "Is found only in muscle tissue",
+      "C": "Has been shown to be conditionally essential during  stress",
+      "D": "Maintains stable levels in plasma during stress",
+      "E": "Can be eliminated from the diet during times of stress"
+    },
+    "answer": "C",
+    "explanation": {
+      "correct": "Body proteins are made up of 20 different amino  acids, each of which has a different metabolic rate and function in  the body. There are three categories of amino acids: (1) essential  amino acids, which cannot be synthesized by the body; (2) nones sential amino acids, which can be synthesized de novo in the body;  and (3) conditionally essential amino acids, which consist of nones sential amino acids that are considered essential during stress or  trauma if their use exceeds the body\u2019s capacity for synthesis and  an outside source is required. Glutamine, the most abundant amino acid in the body, is a  conditionally essential amino acid; it accounts for 50% of the amino  acids in muscle, and its concentrations can fall during times of CHAPTER 4 / Nutrition, Metabolism, and Fluid and Electrolytes 51 stress because of the body\u2019s inability to meet increases in body  requirements for the amino acid. Glutamine is the major amino acid  for intestinal mucosa, and some evidence shows improved out comes in burn patients with glutamine supplementation. Other con ditionally essential amino acids include arginine and tyrosine.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1440,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "Which amino acids are classified as essential, can be  metabolized outside the liver, and are a local source of  energy for muscle?",
+    "options": {
+      "A": "Leucine, isoleucine, and valine",
+      "B": "Alanine, arginine, and lysine",
+      "C": "Ethionine, glutamine, and lysine",
+      "D": "Phenylalanine, tyrosine, and histidine",
+      "E": "None of the above"
+    },
+    "answer": "A",
+    "explanation": {
+      "correct": "Essential amino acids are those that cannot be  synthesized and must be obtained in the diet. The essential amino  acids are valine, leucine, isoleucine, methionine, lysine, threonine,  phenylalanine, and tryptophan. Of these, valine, leucine, and iso leucine are branched-chain amino acids; this makes them less sus ceptible to first-pass metabolism and less amenable to breakdown  in the liver. They are easily broken down by muscle and therefore  provide an energy source to skeletal muscle. The breakdown prod ucts of these amino acids are alanine and glutamine.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1441,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "A 65-year-old woman with recently diagnosed nonobstructing  colon cancer presents to schedule a right hemicolectomy. She has  read about nutrition and healing after her surgery and asks how  she can optimize her protein intake. What are the dietary protein  recommendations for a 60-kg woman with intact protein stores?",
+    "options": {
+      "A": "0.7 to 0.8 g/kg/day (42 to 48 g/day)",
+      "B": "0.9 to 1.0 g/kg/day (54 to 60 g/day)",
+      "C": "1.2 to 1.5 g/kg/day (72 to 90 g/day)",
+      "D": "2 to 4 g/kg/day (120 to 240 g/day)",
+      "E": "5 to 6 g/kg/day (300 to 360 g/day)"
+    },
+    "answer": "A",
+    "explanation": {
+      "correct": "The dietary protein requirement for adults is 0.8 g/ kg/day; that is, approximately 20% of the calories consumed should  be in the form of protein. One gram of nitrogen equals 6.24 g of  protein. In patients undergoing acute stress such as that of surgery,  protein intake should rise to 1.2 to 1.5 g/kg/day; in patients with  severe stress, such as burns or large nonhealing wounds, protein  requirements may rise to 2 to 4 g/kg/day. For burn patients, protein  requirements may be calculated by the following formula: Protein= 1.5 g/kg/day + (3 g \u00d7 % TBSA burn)",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1442,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "A patient presents with a perforated Meckel\u2019s diverticulum  and undergoes terminal ileal resection with reanastomosis.  He subsequently develops poor reabsorption of bile acids.  What is the primary substrate for the formation of bile acids?",
+    "options": {
+      "A": "Cholesterol",
+      "B": "Triglycerol",
+      "C": "Triglycerides",
+      "D": "Phospholipids",
+      "E": "Insulin"
+    },
+    "answer": "A",
+    "explanation": {
+      "correct": "Three main forms of fat are found in the body:  glycerides, phospholipids, and sterols. Glycerides, principally tri glycerides and triglycerol (fatty acid and glycerol), are the storage  forms of fat and are the most abundant forms in food; they account  for approximately 95%\u201398% of ingested fat and the fat in tissues.  Triglycerides store calories, protect organs, and act as insulators.  Phospholipids are ingested in small amounts and are main con stituents of cell membranes and myelin sheaths; they are the sub strates for prostaglandins, leukotrienes, and thromboxanes. Sterols consist primarily of cholesterol. Cholesterol is the substrate for the  formation of bile acids (the primary bile acids are cholate and  chenodeoxycholate) and steroid hormones (aldosterone, progester one, estrogen, and androgens).",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1443,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "A 26-year-old patient presents with abdominal pain, weight  loss, and steatorrhea. He is found to have severe terminal  ileal involvement and structuring. In which of the following  vitamins is he least likely to be deficient?",
+    "options": {
+      "A": "Vitamin A",
+      "B": "Vitamin D",
+      "C": "Vitamin E",
+      "D": "Vitamin C",
+      "E": "Vitamin K"
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "Vitamins can be either water soluble (vitamin C  and B vitamins\u2014thiamin, niacin, riboflavin, folate, vitamin B6,  vitamin B12, biotin, and pantothenic acid) or fat soluble (vitamins  A, D, E, and K). Patients with steatorrhea, as seen in those with an  absent or damaged terminal ileum or those with pancreatitis, can  present with deficiencies of the fat-soluble vitamins. The following are the classic signs of vitamin deficiency:\u2003\u2003 Vitamin A\u2014dermatitis, night blindness, and poor wound healing Vitamin D\u2014bone demineralization and osteopenia Vitamin E\u2014increased platelet aggregation and decreased red  blood cell survival Vitamin K\u2014bruising and hemorrhage",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1444,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "Which of the following is not a component of the Harris\u2013 Benedict equation?",
+    "options": {
+      "A": "Weight",
+      "B": "Height",
+      "C": "Age",
+      "D": "Gender",
+      "E": "% Lean body mass"
+    },
+    "answer": "E",
+    "explanation": {
+      "correct": "The Harris\u2013Benedict equation can be used to  predict the basal metabolic rate of a given patient at rest. The equa tion factors in weight, height, age, and gender form an estimation 52 SECTION I / Surgical Fundamentals of caloric needs. It is not an infallible estimate but is commonly  used as baseline estimation. In general, a patient\u2019s diet should be broken into 20% protein,  30% fat, and 50% carbohydrates. Protein needs may increase in the  postsurgical state or when significant wound healing is necessary,  as in burns. Trauma, surgery, sepsis, pregnancy, lactation, and fever  can increase basal metabolic needs significantly.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1445,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "A 75-year-old female presents with ductal carcinoma in situ  for simple mastectomy. She has marked muscle wasting on  examination and admits to a poor diet. Which of the  following values is most predictive of postoperative  mortality?",
+    "options": {
+      "A": "Serum sodium",
+      "B": "Serum albumin",
+      "C": "Serum protein",
+      "D": "Serum creatinine",
+      "E": "Serum glucose"
+    },
+    "answer": "B",
+    "explanation": {
+      "correct": "Nutritional assessment of surgical patients involves  evaluation for preexisting malnutrition, comorbidities, risk factors  for malabsorption, and substance dependency. A number of labora tory tests may be performed based on the patient\u2019s individual risk  factors. Multiple test values and anthropomorphic measurements  have been used to evaluate the risk of nonhealing and complications  after surgery; however, only serum albumin has been found to  correlate directly with morbidity and mortality. Preoperative  albumin levels less than 3 g/dL are associated with an increased  risk of developing serious complications within 30 days of surgery,  including sepsis, acute renal failure, coma, failure to wean from  ventilation, cardiac arrest, pneumonia, and wound infection. A  serum albumin level greater than 4.5 carries a &lt;1% risk of mortal ity, less than 3 carries a 9% risk, and less than 2 carries a 30% risk.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1446,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "A 55-year-old woman presents with pneumoperitoneum  and is found to have a perforated gastric ulcer with gross  intraabdominal spillage. Subsequently, she has sepsis and a  prolonged intubation, and tube feeds are started. Which of  the following visceral proteins is the best indicator of her  immediate nutritional status?",
+    "options": {
+      "A": "Prealbumin",
+      "B": "Albumin",
+      "C": "Transferrin",
+      "D": "Total protein",
+      "E": "Serum globulin"
+    },
+    "answer": "A",
+    "explanation": {
+      "correct": "In patients with a prolonged lack of nutrition,  serum markers of nutrition are a helpful way of assessing the  adequacy of nutritional supplementation. Serum total protein levels  are nonspecific and can be elevated by viral or autoimmune disease  processes. Levels of serum albumin, which has a half-life of 18 to  21 days, are helpful in the outpatient setting to assess general nutri tion but are poorly reflective of short-term changes while hospital ized. Serum transferrin is commonly used but has a half-life of 8  to 10 days, again reflecting too long a time period to provide day by-day assessments. Serum prealbumin has a half-life of 10 h to 2  days, depending on which isotype is used, and is commonly  obtained to assess the response to supplementation. Of note, all of these markers are hepatic acute-phase reactants  and can decrease in times of stress; therefore the trend is more  significant than the absolute value.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1447,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "A patient presents to the trauma bay after a house fire with a  65% TBSA burn. He is intubated and remains in the burn  unit for 5 days, after which he enters the hypermetabolic  flow phase of stress metabolism. Hyperglycemia during stress  hypermetabolism can be attributed to:",
+    "options": {
+      "A": "Increased insulin resistance",
+      "B": "Increased glycogen storage",
+      "C": "Decreased lipolysis",
+      "D": "Increased glycogenesis",
+      "E": "Increased insulin uptake"
+    },
+    "answer": "A",
+    "explanation": {
+      "correct": "In contrast to simple starvation, activation of stress  hypermetabolism occurs following surgery, trauma, or sepsis to  provide energy and substrates for tissue repair and to activate  immune function and the inflammatory response. In the initial  period, known as the ebb phase, a decline in oxygen consumption  is seen, along with poor circulation, fluid imbalance, and cellular  shock lasting 24 to 36 h. As the body adapts (flow or plateau  phase), enhanced cellular activity and increased hormonal stimula tion take place and lead to an elevated metabolic rate, body tem perature, and nitrogen loss. This phase can last days, weeks, or  months. Both phases are characterized by hyperglycemia. In the ebb  phase, patients manifest impaired glucose tolerance. In the flow  phase, patients display frank insulin resistance. In the hypermetabolic phase, glycogen storage is attenuated  and lipogenolysis is increased in an effort to keep up with the  grossly increased metabolic demands of wound healing.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1448,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "In the patient above, stress hypermetabolism is characterized  by:",
+    "options": {
+      "A": "Decreased body temperature",
+      "B": "Hypoglycemia and glycogenesis",
+      "C": "Fluid imbalance and increased resting metabolic rate",
+      "D": "Decreased gluconeogenesis and proteolysis",
+      "E": "Decreased urinary protein retention"
+    },
+    "answer": "C",
+    "explanation": {
+      "correct": "The earliest stages of hypermetabolism are charac terized by increases in gluconeogenesis, resting energy expenditure  (REE), proteolysis, ureagenesis, and urinary nitrogen loss. Clinical  signs include tachypnea, increased body temperature, and tachycar dia, with laboratory results showing increased leukocytosis, hyper lactatemia, azotemia, and hyperglycemia. Liver production of  glucose during stress is increased through gluconeogenesis and gly cogenolysis (Cori cycle), which are stimulated by endocrine (hor monal) changes: increased cortisol, increased glucagon, increased  catecholamines, and decreased insulin. Overall use of protein as an  oxidative fuel source by the liver is increased, and typically, there is  increased turnover of branched-chain amino acids.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1449,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "A 59-year-old woman remains intubated due to sepsis after  perforated diverticulitis. She has failed multiple trials of  extubation due to hypercapnia, which you suspect to be due  to overfeeding. Which of the following RQs is characteristic  of overfeeding?",
+    "options": {
+      "A": "0.75",
+      "B": "0.85",
+      "C": "0.90",
+      "D": "1.0",
+      "E": "1.05"
+    },
+    "answer": "E",
+    "explanation": {
+      "correct": "Calculation of the RQ allows the clinician to alter  the nutrient content of feedings to optimize the macronutrient  intake. The RQ is the ratio of CO2 expired (Vco2) to the amount of  O2 inspired (Vo2): RQ = Vco2/Vo2. The RQ is reflective of the type of energy expenditure. CO2 is produced when carbohydrates are converted to fat; therefore an  elevated RQ (1.0) indicates pure carbohydrate metabolism, and an  RQ of &gt;1.0 indicates conversion of carbohydrates into fat and  therefore overfeeding. An RQ of 0.7 is consistent with pure fat metabolism (starva tion), 0.8 with pure protein metabolism, and 0.83 with a balanced  metabolism. A high RQ, by definition, causes hypercapnia and can  lead to difficulty to wean from the ventilator.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1450,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "A 35-year-old man is admitted to the intensive care unit  (ICU) following a diagnosis of acute pancreatitis. After initial  resuscitation, the patient\u2019s condition improves and enteral  tube feedings are started through a postpyloric tube. Initial  intolerance to a tube feeding regimen requires the clinician  to:",
+    "options": {
+      "A": "Immediately start TPN",
+      "B": "Add water to the feeding regimen to dilute the feedings  for better tolerance",
+      "C": "Slow the tube feeding regimen and progress to the goal  rate less aggressively",
+      "D": "Immediately change the tube feeding formula",
+      "E": "Increase the tube feeding rate per hour"
+    },
+    "answer": "C",
+    "explanation": {
+      "correct": "Enteral feedings have been shown to decrease  septic complications and are theorized to prevent intestinal  bacterial translocation. Complications can be metabolic (e.g.,  overhydration or underhydration) or gastrointestinal (e.g., diar rhea, nausea, vomiting, delayed gastric emptying, constipation,  or abdominal distention). Diarrhea has been estimated to occur  in 2.3% of the enteral population and in 34%\u201341% of critically  ill patients. Diarrhea may be related to (1) factors associated  with the patient\u2019s underlying illness or (2) factors related to the  tube feeding formula, including too rapid an infusion rate, too  rapid initiation or progression, lactose intolerance, microbe  contamination, lack of fiber, the osmolality of the formula, or  a high fat content in the formula. The diarrhea may be con trolled by (1) antimotility agents, (2) changing to continuous  feeding, or (3) slowing the rate of tube feeding until tolerance  is established, before initiation of medication to control the  problem.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1451,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "A 67-year-old woman with a history of atrial fibrillation is  admitted to the emergency department with complaints of  abdominal pain out of proportion to the physical findings.  She is found to have superior mesenteric arterial occlusion  and undergoes on-table thrombectomy and stenting with  small bowel resection. The remaining proximal jejunum  measures 100 cm. What is the minimum amount of small  intestine required for absorption of nutrients before consider ing the use of enteral feedings?",
+    "options": {
+      "A": "20 cm of small intestine",
+      "B": "50 cm of small intestine",
+      "C": "100 cm of small intestine",
+      "D": "120 cm of small intestine",
+      "E": "250 cm of small intestine"
+    },
+    "answer": "C",
+    "explanation": {
+      "correct": "The functional capacity of the gut must be consid ered before prescribing enteral nutrition therapy. There must be at  least 100 cm of the small intestine for absorption of nutrients with  an intact ileocecal valve, or 150 cm with an incompetent ileocecal  valve. Relative contraindications for the use of the gastrointestinal  tract include gastroparesis, intestinal obstruction, and paralytic  ileus. More absolute contraindications include high-output enteric  fistula, short bowel syndrome, severe malabsorption, and hemody namic instability.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1452,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "Due to multiple takebacks for \u201csecond-look\u201d procedures and  attempts at extubation, the patient in the question above  remains without enteral nutrition for 8 days. Which type of  formula might be appropriate for a patient who has been  NPO for more than 1 week and has a partially functioning  gastrointestinal tract?",
+    "options": {
+      "A": "Elemental formula",
+      "B": "Concentrated formula",
+      "C": "Specialty formula",
+      "D": "Modular formula",
+      "E": "Superconcentrated formula"
+    },
+    "answer": "A",
+    "explanation": {
+      "correct": "Tube feeding formulas are divided into six types:  standard, concentrated, high nitrogen, elemental, fiber containing  or blenderized, and special. They differ by nutritional content and  texture. Standard formulas contain 50%\u201360% of calories being  derived from carbohydrates, 10%\u201315% from protein, and 25%\u201340%  from fat. They are appropriate for patients with no major enteral  restrictions who have been NPO for less than 1 week. Concen trated formulas have similar nutritional content but decreased  water content, making them suitable for patients with fluid restric tions or those receiving bolus feedings. Elemental formulas contain  hydrolyzed macronutrients, requiring less energy and mucosal  interface to digest; they are appropriate for those who have had a  prolonged NPO status or those with tube feed intolerance. High nitrogen-protein formulas provide more than 15% of calories from  proteins and are appropriate for those with high protein needs.  Fiber-containing and blenderized formulas contain increased fiber  to decrease diarrhea. Special formulas have special formulations  for special patient populations, such as those with renal failure or  hepatic failure.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1453,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "Which of the following is one of the most common food  allergies that must be considered when deciding on a tube  feeding formula?",
+    "options": {
+      "A": "Rice allergy",
+      "B": "Soy allergy",
+      "C": "Nut allergy",
+      "D": "Corn syrup allergy",
+      "E": "Citrus fruit allergy"
+    },
+    "answer": "C",
+    "explanation": {
+      "correct": "Food allergy considerations are important when  selecting an enteral formula. Nuts, fruits, and milk are the most  common food allergy triggers for 20% of the population of allergy  sufferers. Gluten tolerance should also be a consideration. Some enteral  products contain lactose, which causes bloating, cramping, and diar rhea in some patients. Because of electrolyte imbalances or the need  for varied macronutrient content, some patients have needs that cannot  be met by the available commercial products. Enteral feeding modules  can be used to create a patient-specific formula (modular formula)  that addresses the carbohydrate, protein, and fat requirements.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1454,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "How many calories are provided in one 500-mL bottle of  20% intravenous fat solution?",
+    "options": {
+      "A": "150 kcal",
+      "B": "550 kcal",
+      "C": "800 kcal",
+      "D": "1000 kcal",
+      "E": "4000 kcal"
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "Fat solutions are available in 10%, 20%, and 30%  solutions, which provide 1.1, 2.0, and 3.0 kcal/mL of energy, respec tively. In this question, 500 mL of a 20% infusion provides 1000 kcal.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1455,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "A 65-year-old man is admitted to the hospital because of  profuse diarrhea after small bowel resection for an ischemic  bowel that resulted in short bowel syndrome. The patient is  resuscitated and TPN started. What is the maximum infusion  rate for lipids when using TPN?",
+    "options": {
+      "A": "0.5 g/kg/day",
+      "B": "1.5 g/kg/day",
+      "C": "2.5 g/kg/day",
+      "D": "3.0 g/kg/day",
+      "E": "4.0 g/kg/day"
+    },
+    "answer": "C",
+    "explanation": {
+      "correct": "A patient whose nutritional needs cannot be met via  the oral or enteral route requires TPN, the basic goal of which is to  meet nutritional needs and maintain or improve metabolic balance  safely. Crystalline protein and synthetic amino acids are the protein sources for TPN solutions. Commercially available dextrose solu tions typically contain 15%\u201335% dextrose. The monohydrate form  of dextrose is used for TPN and provides 3.4 kcal/g on oxidation.  Carbohydrates should be administered at a rate no greater than 5 mg/ kg/min via TPN, which is the maximum oxidation rate of glucose.  Fat solutions are considered isotonic and can be administered  peripherally or centrally without concern about thrombosis. Fat solu tions are available in 10%, 20%, and 30% solutions, which provide  1.1, 2.0, and 3.0 kcal/mL, respectively. Monitoring clearance by  checking triglyceride levels is key to ensuring tolerance to lipid infu sions. Fat should be administered at a rate no faster than 2.5 g/kg/ day. Lipid solutions should be administered cautiously to patients  with acute respiratory distress syndrome (ARDS), severe liver  disease, or increased metabolic stress because fat may exacerbate  these conditions. Patients with hypertriglyceridemia (&gt;250 mg/dL),  lipid nephrosis, egg allergy, or acute pancreatitis associated with  hyperlipidemia should not be given fat emulsions.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1456,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "A patient with multiple small bowel resections for Crohn\u2019s  disease presents with an acute flare. Due to his preexisting  short length of bowel and current profuse diarrhea, he is  suspected of having functionally a short gut syndrome and is  started on TPN. Refeeding syndrome is characterized by  which of the following electrolyte abnormalities?",
+    "options": {
+      "A": "Hyponatremia, hypokalemia, and hypercalcemia",
+      "B": "Hyperphosphatemia, hypokalemia, and hypocalcemia",
+      "C": "Hypokalemia, hypomagnesemia, and hypophosphatemia",
+      "D": "Hypocalcemia, hyponatremia, and hypomagnesemia",
+      "E": "Hyperkalemia, hypernatremia, and hypercalcemia"
+    },
+    "answer": "C",
+    "explanation": {
+      "correct": "Refeeding syndrome is a profound metabolic  disturbance that can occur in patients who are in severe malnutri tion prior to starting TPN. Initiation of TPN can result in mark edly decreased serum potassium, magnesium, and phosphorus;  this is due to the effects of glucose administration in the previ ously starved patient. Refeeding can be prevented by evaluating  and repleting serum levels of these electrolytes prior to starting  TPN.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1457,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "After 4 days of TPN, the patient above develops blood  glucose levels greater than 300 mg/dL. Hyperglycemia in a  surgical patient receiving TPN may best be managed by:",
+    "options": {
+      "A": "Oral hypoglycemics",
+      "B": "Decreasing the dextrose load and doubling the amount of fat",
+      "C": "Adding regular insulin to the TPN",
+      "D": "Discontinuing TPN for 2 weeks and then trying to start  TPN again",
+      "E": "Increasing the concentration of protein and carbohydrate  calories and decreasing that of lipids"
+    },
+    "answer": "C",
+    "explanation": {
+      "correct": "A number of metabolic complications may result  from TPN. Excess glucose can (1) increase blood glucose levels  and induce hyperosmolar nonketotic coma; (2) lead to dehydration;  (3) lead to lipogenesis with subsequent hepatic abnormalities (e.g.,  fatty liver); and (4) increase CO2 production, which may compro mise respiratory function. Because rebound hypoglycemia can  occur with discontinuation of TPN, weaning to 50 mL/h before  complete discontinuation is important. Treatment of hyperglyce mia in TPN patients typically consists of the addition of regular  (not long-acting) insulin to the parenteral solution along with strin gent monitoring of glucose levels.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1458,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "A 40-year-old man undergoes gastric bypass surgery for  morbid obesity. This patient should:",
+    "options": {
+      "A": "Eat only high-protein foods",
+      "B": "Begin a feeding regimen with small amounts of regular  foods",
+      "C": "Begin with small amounts of water",
+      "D": "Eat high-calorie foods six times a day",
+      "E": "Eat only small amounts of high-fat foods"
+    },
+    "answer": "C",
+    "explanation": {
+      "correct": "Bariatric surgery has emerged as a viable weight loss method for patients with medically significant obesity and  morbidly obese patients who are unable to achieve or sustain  weight loss. Nutritional issues are complex in this population.  Patients are expected to lose 50%\u201360% of their presurgery weight.  Therefore numerous postoperative nutritional complications are  common. Malnutrition, vitamin and mineral deficiencies, failure of  weight loss, dehydration, anemia, and dumping syndrome may  occur. Oral feeding resumes on postoperative day 1 with small  volumes of water. A 3-day progression from clear liquids to pureed  foods is recommended, with small-volume feedings of 30 to 60 mL  at each feeding. The diet eventually returns to regular foods given  in small, frequent meals, along with the following general instruc tions: (1) stop eating when full; (2) chew food well, to a pulp-like  consistency; (3) avoid high-calorie liquids, especially those with  ice cream; and (4) make mealtimes last 30 min. Because of bypass  of 90% of the stomach, entire duodenum, and a small portion of  the jejunum, supplemental nutrient recommendations are neces sary. B6, B12, folate, and calcium deficiencies are common, and  these nutrients are usually prescribed as supplements.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1459,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "Which of the following is true when considering the  nutritional status of a geriatric patient?",
+    "options": {
+      "A": "Muscle wasting can be a pathologic process that is  mistaken for normal aging.",
+      "B": "Liver function does not affect the selection of nutrition  regimens.",
+      "C": "Enteral nutrition is not an option because of slowed gut  function.",
+      "D": "Body mass index (BMI) is the best anthropometric  measurement for determining the nutritional status in an  elderly patient.",
+      "E": "Laboratory tests cannot be used to evaluate the nutritional  status."
+    },
+    "answer": "A",
+    "explanation": {
+      "correct": "Determining the most appropriate nutrition support  interventions in elderly surgical patients can be difficult because  of the aging process. Use of the BMI and anthropometrics often  results in inaccurate measurements because of age-related changes.  Many pathologic processes mistaken for normal aging are related  to nutrition or affect the nutritional status (anthropometrics and  biochemical and hematologic aspects) and can include muscle  wasting, weight loss, undernutrition, problems with balance and  endurance, declining cognition, and depression. Multiple age related changes in the renal, liver, cardiovascular, and muscular  systems can affect the overall health and nutrition regimens for  surgical patients. Enteral nutrition may be an option for an elderly  patient with poor nutritional intake before surgery. Commonly,  enteral nutrition has been used in patients with dementia, cancer,  dysphagia secondary to stroke, and other neurologic problems.  Conditions for which the benefits of enteral support have been  demonstrated in the elderly are short-term use in those with stroke  and cancer when significant decreases in body mass can probably  be prevented, the patient is a candidate for physical therapy, or  recovery is probable.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1460,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "Blundell JE, Stubbs J. Diet composition and control of food intake in  humans. In: Bray GA, Bouchard C, eds. Handbook of Obesity: Etiology  and Pathophysiology. New York, NY: Marcel Dekker; 2004. 2. Barrett KE, Barman SM, Boitano S, Heddwen",
+    "options": {
+      "B": "Unasyn (ampicillin/sulbactam)",
+      "A": "Cefepime",
+      "D": "Aztreonam",
+      "E": "Ciprofloxacin",
+      "C": "Ticarcillin"
+    },
+    "answer": "B",
+    "explanation": {
+      "correct": "P. aeruginosa is a gram-negative bacillus commonly  implicated in VAP. Antipseudomonal antibiotics should be initiated  empirically in any patient with VAP prior to isolation of the organism  on culture due to the high mortality associated with pseudomonal  infection. Antipseudomonal penicillins include ticarcillin and piper acillin. Third- and fourth-generation cephalosporins, such as ceftazi dime and cefepime, are effective against P. aeruginosa and have a  relatively narrow range of activity, making them preferred agents in  susceptible isolates. Monobactams (like aztreonam) and carbapen ems (meropenem, imipenem) are effective, but have a very broad  spectrum of activity, and should be deescalated once susceptibilities  are available. Fluoroquinolones are also effective. The polymyxin  colistin is also effective, but has an extensive toxicity profile, and should be used cautiously with multiresistant organisms.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1461,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "A 67-year-old male remains in the hospital 1 week after  undergoing a pancreaticoduodenectomy. He has two intraab dominal closed-suction drains in place, as well as a left internal  jugular triple lumen catheter; his Foley catheter was removed on  the third postoperative day. On the seventh postoperative day, he  becomes febrile to 101.5\u00b0F, and a fever workup reveals a growth  of Enterococcus in two of two peripheral blood cultures. Which  of the following is true regarding the diagnosis of a central  line\u2013associated bloodstream infection (CLABSI)?",
+    "options": {
+      "A": "It is preferential to begin empiric antimicrobial therapy  prior to obtaining cultures.",
+      "B": "Catheter-site exudate, if present, should not be cultured  when there is concern for a line-related bloodstream  infection.",
+      "C": "The subcutaneous portion of the central venous catheter  should be cultured, rather than the tip.",
+      "D": "Paired blood samples (one from the catheter and one  from a peripheral vein, or alternatively from greater than  two lumens of the same central venous catheter) growing  the same organism at levels that meet catheter-related  bloodstream infection criteria are required to diagnose a  CLABSI.",
+      "E": "Growth of greater than 10 colony-forming units (cfu) by  semiquantitative (roll-plate) culture confirms catheter colonization."
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "See Question 3.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1462,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "Which of the following is true regarding the treatment of  catheter-related bloodstream infections?",
+    "options": {
+      "A": "All catheters in cases of confirmed CLABSI should be removed; it is never appropriate to attempt to salvage the  infected catheter.",
+      "B": "Empiric coverage of Candida should be initiated in bone  marrow or solid organ transplant patients with presumed  CLABSI.",
+      "C": "Empiric antibiotic therapy should include methicillin resistant Staphylococcus aureus (MRSA) coverage as  well as gram-negative rod (GNR) coverage, regardless of  the severity of illness.",
+      "D": "Duration of antibiotic therapy in CLABSIs is timed from  the day when empiric antibiotics were initiated.",
+      "E": "The location of a temporary central venous catheter  (subclavian versus internal jugular versus femoral) has no  influence on the empiric antibiotic agents that should be used. ANSWER: B CHAPTER 5 / Surgical Infection and Transmissible Diseases and Surgeons 57"
+    },
+    "answer": "A",
+    "explanation": {
+      "correct": "Central venous catheters are commonly used in  many settings in modern health care, but their use is associated with  the risk of bloodstream infections, known as CLABSIs. These  infections are known to increase morbidity, mortality, and health  care costs. To diagnose a CLABSI, growth of greater than 15 cfu by  semiquantitative (roll-plate) culture from at least two samples is  required; these two samples may be obtained from the catheter and  a peripheral vein or, alternatively, from at least two lumens from  the same central venous catheter. The diagnosis of CLABSI is best  defined by a colony count threefold greater than that obtained from a peripheral vein. Skin and catheter hubs should be prepared with  alcohol, tincture of iodine, or alcohol-based chlorhexidine (&gt;0.5%)  with adequate drying time, prior to obtaining cultures; cultures  should be obtained by trained phlebotomists if possible. Management of CLABSI varies based on the organism cul tured and the severity of illness, but for all CLABSIs, the duration  of antimicrobial therapy is determined on the first day of obtaining negative blood cultures. Preferably, adequate cultures are obtained  prior to the initiation of antibiotic therapy. Empiric therapy in  uncomplicated cases [i.e., cases without evidence of severe sepsis,  endocarditis or osteomyelitis (OM), or without evidence of infec tion of the catheter tunnel or adjacent abscess] should begin with  antibiotics that cover gram-positive cocci. Vancomycin or dapto mycin for empiric therapy should be reserved for areas with a high  prevalence of MRSA. Empiric GNR coverage should be added in  cases of severe sepsis, neutropenia, in patients with known coloni zation with a GNR organism, or in patients with femoral catheters.  Empiric coverage for Candida, either with an echinocandin or a  fluconazole, should be initiated in patients with severe sepsis plus prolonged broad-spectrum antibiotic use, total parenteral nutrition,  hematologic malignancy or receipt of solid organ or bone marrow  transplants, or known Candida colonization. In most circumstances,  the infected catheter should be removed; however, there are certain  instances in which salvage of the catheter may be attempted. Anti biotic locks (antibiotic solutions that are instilled into the catheter  itself) can be used in conjunction with systemic antimicrobial  therapy, particularly in patients in whom catheters are difficult to remove or replace (i.e., tunneled hemodialysis catheters or ports for  parenteral nutrition in short gut syndrome). If patients have persis tent positive blood cultures after salvage attempt, the catheter  should be removed.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1463,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "A 78-year-old man with a history of urinary retention and a  chronic indwelling urinary catheter is admitted to the hospital  from his nursing home with a new-onset altered mental status,  and a catheter-associated urinary tract infection (CAUTI) is  suspected. Which of the following is true regarding CAUTIs?",
+    "options": {
+      "A": "Hepatitis B surface antigen (HBsAg)+ less than 6  months, hepatitis B surface antibody (HBsAb)\u2212, immunoglobulin M (IgM) anti-HBc+, elevated aspartate  transaminase (AST), and alanine transaminase (ALT)",
+      "B": "HBsAg+ greater than 6 months, HBsAb\u2212, HBcAb+, hepatitis B virus (HBV) DNA &gt; 20,000 IU/mL, mildly  elevated AST and ALT",
+      "C": "HBsAg+ greater than 6 months, hepatitis B e antigen  (HBeAg)\u2212, HBV DNA &lt; 2000 IU/mL, normal AST and ALT",
+      "D": "HBsAg\u2212, HBsAb+, HBcAb+, normal AST and ALT",
+      "E": "HBsAg\u2212, HBsAb+, HBcAb\u2212, normal AST and ALT"
+    },
+    "answer": "B",
+    "explanation": {
+      "correct": "Answer A is acute hepatitis B infection; chronic  infection requires HBsAg positivity for at least 6 months. A patient 58 SECTION I / Surgical Fundamentals with chronic active infection (answer B) exhibits normal to mildly  elevated liver enzymes and HBsAg positivity but negative HBsAb  since the infection has not been cleared; HBcAb will be positive  with chronic infection, and HBeAg may be positive as well if there  is a continued high level of viral replication; this is usually accom panied by a high level of HBV DNA. This is different from an  inactive carrier state (answer C); these patients have persistent  HBV infection of the liver without significant hepatic necrosis or inflammation, so their liver enzymes are not significantly elevated; there is a low level of viral replication, which correlates with nega tive HBeAg. Patients who have cleared HBV infection have evi dence of HBsAb and HBcAb positivity (answer D). Answer E  reflects successful vaccination, with only HBsAb positivity on serologic testing.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1464,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "Match the surgical procedure with the most appropriate  preoperative prophylactic antibiotic.",
+    "options": {
+      "A": "Oral metronidazole 500 mg every 8 h for 10 to 14 days",
+      "B": "Intravenous (IV) metronidazole 500 mg every 8 h for 10  to 14 days",
+      "C": "Oral vancomycin 125 mg every 6 h for 10 to 14 days",
+      "D": "Oral vancomycin, in a tapered and pulsed fashion over  approximately 5 to 7 weeks",
+      "E": "IV vancomycin 125 mg every 6 h for 10 to 14 days"
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "See Question 11.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1465,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "The patient in the question above is admitted and started on  antibiotics, but her condition continues to deteriorate  clinically over the next 2 days despite appropriate antibiotic  therapy, probiotics, and supportive treatment. Her white  blood cell (WBC) count continues to rise to 17.8 and  creatinine increases to 1.5 from baseline of 0.8. She has a  low-grade fever and marginal urine output, and her abdomen  becomes distended, tympanic, and tender. An abdominal  obstructive series shows dilation of the entire colon to 10 cm  in diameter without evidence of pneumoperitoneum. Which  of the following is not an acceptable course of action in  treating severe",
+    "options": {
+      "C": "Subtotal colectomy",
+      "A": "Transitioning from pulsed to standard scheduled oral  vancomycin 125 mg every 6 h with the addition of IV  metronidazole 500 mg every 8 h",
+      "B": "Transitioning from pulsed to standard scheduled oral  vancomycin 125 mg every 6 h with the addition of oral  fidaxomicin 200 mg every 12 h",
+      "D": "Diverting loop ileostomy with colonic lavage",
+      "E": "Metronidazole enemas"
+    },
+    "answer": "E",
+    "explanation": {
+      "correct": "See Question 11.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1466,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "Which of the following is true regarding the pathophysiology  of",
+    "options": {
+      "C": "Wound infections in the first 24 to 48 h are uncommon but, if present, are worrisome for group A streptococcal  or clostridial infection.",
+      "A": "Urinalysis, urine culture, and chest x-ray must be  obtained as part of a complete fever workup in postopera tive patients within 72 h of operation.",
+      "B": "In a febrile postoperative patient, wound cultures should  be obtained regardless of the appearance of the wound.",
+      "D": "Fevers persisting for greater than 96 h postoperatively are  expected in cases of diffuse intraabdominal infection,  such as feculent peritonitis from diverticulitis, even with  appropriate surgical management.",
+      "E": "All of the above."
+    },
+    "answer": "C",
+    "explanation": {
+      "correct": "Fever is a common postsurgical finding, but not all fevers require evaluation. In the first 72 h after surgery, fever is more likely related to postoperative inflammatory responses in the host, rather than infection, when the patient is otherwise asymp tomatic or without an indwelling urinary catheter. While fever is  expected in postoperative patients with evidence of diffuse infec tion preoperatively (such as large abscesses, purulent or feculent  peritonitis, or necrotizing soft tissue infection), fevers that are per sistent for greater than 96 h after appropriate surgical management,  or recurrent fevers after 96 h, are concerning for recurrent or incom pletely cleared infection. Fevers presenting greater than 96 h post operatively are more likely to be due to infection. Surgical wounds  should only be cultured if there are signs or symptoms suggestive  of wound infection (i.e., purulence, tenderness, and erythema). SSIs  are most commonly due to the native flora of the organ that was operated upon, but within the first 24 to 48 h of surgery, wound infections are more likely to be due to group A Streptococcus (GAS) or Clostridia, which are significantly more virulent organ isms. Deep venous thrombosis, pulmonary embolism, and superfi cial thrombophlebitis are other possible etiologies that should be  considered in the evaluation of a febrile postoperative patient.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1467,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "A 25-year-old male remains nasotracheally intubated in the ICU  while undergoing repeated debridements for Ludwig\u2019s angina.  His infection appears to be adequately drained, although he still  has persistent facial swelling. Sinusitis is expected. Which of the  following is true regarding sinusitis in critically ill patients?",
+    "options": {
+      "A": "The most important risk factor for sinusitis in critically ill  patients is a history of MRSA of the nares.",
+      "B": "Few sinus infections are polymicrobial; often, only one  organism is isolated in culture.",
+      "C": "The most commonly isolated organism in sinusitis  cultures is coagulase-negative S. aureus.",
+      "D": "Computed tomography (CT) scan of the sinuses is the  most sensitive diagnostic imaging modality for sinusitis.",
+      "E": "Incidence of acute sinusitis in nasotracheally intubated  patients is approximately 75% after 1 week."
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "Sinusitis is an infrequent but potentially life-threat ening cause of fever in critically ill patients. When the ostia of the  sinuses become obstructed (e.g., from nasotracheal intubation,  nasogastric tube placement, or maxillofacial trauma), bacterial  overgrowth can occur, and when drainage is impaired, infection  results; approximately one-third of patients who are nasotracheally  intubated develop sinusitis within 1 week. The diagnosis is sug gested by clinical findings, including cough, purulent nasal dis charge, tooth pain, fever, wheezing, or throat or tooth pain. Normal  nasopharyngeal organisms are the most common causes, and infec tions are often polymicrobial. GNRs are present in approximately  two-third of cases of acute sinusitis in critically ill patients; gram positive rods are isolated in approximately one-third of cases, and  fungi are found in 5%\u201310%. A CT scan of the sinuses is the most  sensitive imaging modality for diagnosing sinusitis, although plain  films can be obtained as well. Plain films are less sensitive than CT scan, but the accuracy of plain films in diagnosis can be augmented if combined with the findings of nasal endoscopy, when performed by a skilled endoscopist. Needle aspiration of the sinuses to obtain  fluid for cultures provides a definitive diagnosis, but a biopsy may be required to rule out invasive fungal sinusitis in immunocompro mised patients.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1468,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "A 24-year-old male presents to the emergency department  after sustaining a puncture wound to his left foot 60 min  prior to presentation. On examination, he has a small metal  nail protruding from the plantar aspect of his left foot, with  moderate surrounding erythema and a small amount of  bleeding, but no significant purulence. He is unsure of his tetanus vaccination status. How should the issue of potential  tetanus infection be addressed in this patient?",
+    "options": {
+      "A": "Local wound care only",
+      "B": "Local wound care, IV metronidazole or penicillin for 7 to  10 days",
+      "C": "Local wound care, IV metronidazole or penicillin for 7 to  10 days, tetanus toxoid",
+      "D": "Local wound care, IV metronidazole or penicillin for 7 to  10 days, tetanus toxoid, tetanus immunoglobulin",
+      "E": "No treatment"
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "See Question 15.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1469,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "A 47-year-old man has been admitted to the burn ICU for 4  days after sustaining a 30% total body surface area (TBSA)  Administration Tetanus ToxoidTetanus  burn, involving the neck, chest, bilateral upper extremities,  Toxoid  Immunoglobulin and lower extremities, when he begins to clinically decom Less than three doses Yes No pensate. Which of the following is suggestive or diagnostic  Three or more doses No; yes, if the last  dose was prior to  more than 10 years of a burn wound sepsis? No",
+    "options": {
+      "A": "Most PLAs are found in the left hepatic lobe.",
+      "B": "Fevers greater than 100.4\u00b0F",
+      "C": "Burn wound culture swab growing greater than 105 organisms per gram of tissue swabbed",
+      "E": "Failure to improve with broad-spectrum antibiotic  administration",
+      "D": "Inability to tolerate enteral tube feeds for greater than  24 h"
+    },
+    "answer": "A",
+    "explanation": {
+      "correct": "Burn wound infections remain a major cause of  morbidity and mortality in burn patients, especially in those with  greater than 20% TBSA burns. Burn wounds have a greater pro pensity for infection than the healthy tissue since the wound lacks  a barrier to environmental organisms, and devascularized burn  tissue provides a protein-rich medium in which bacteria can thrive;  in addition, burns cause significant systemic responses that inhibit a patient\u2019s normal host defense and healing mechanisms. Most  burns are colonized with bacteria early after injury but do not cause  systemic symptoms. Topical antimicrobials help to reduce the rate  of conversion into invasive wound infections; however, invasive 62 SECTION I / Surgical Fundamentals infections do result in systemic symptoms and must be treated.  Diagnosis of a burn wound infection requires positive histopathol ogy: the burn must be biopsied, with the growth of &gt;105 organisms  per gram of burn wound tissue. Burn wound infections often mani fest with physical changes in the appearance of the burn, such as  conversion to a greater degree of burn and surrounding cellulitis.  Because most burn patients exhibit the signs of a systemic inflam matory response syndrome (SIRS), the American Burn Association  has developed criteria for specifically diagnosing burn wound sepsis: \u2003\u2003 \u2022 At least one of the following: \u2022 Culture-positive infection (i.e., blood, urine, wound) \u2022 Pathologic tissue source identified (&gt;105 bacteria per gram  of tissue on quantitative biopsy) \u2022 Clinical improvement with antimicrobial therapy\u2003\u2003 \u2022 At least three of the following: \u2022 Temperature greater than 102.2\u00b0F or less than 97.7\u00b0F \u2022 Progressive tachycardia \u2022 Progressive tachypnea \u2022 Thrombocytopenia that occurs greater than 3 days after  initial resuscitation \u2022 Refractory hypotension \u2022 Leukocytosis &gt; 12,000 or &lt;4000 WBCs/cells MCL \u2022 Hyperglycemia \u2022 Inability to tolerate enteral feedings for &gt;24 h",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1470,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "Which of the following is not a classical clinical manifesta tion of GAS infection?",
+    "options": {
+      "A": "Necrotizing soft tissue infection",
+      "B": "Acute rheumatic fever",
+      "C": "Toxic shock syndrome",
+      "D": "Pharyngitis",
+      "E": "Meningitis"
+    },
+    "answer": "E",
+    "explanation": {
+      "correct": "GAS, or group A S. pyogenes, is an aerobic  gram-positive coccus that is responsible for a wide range of clini cal illnesses, accounting for greater than 600 million infections  globally each year. The infections caused by GAS vary in clinical  severity, from mild cellulitis to life-threatening toxic shock syn drome, as demonstrated by the answer choices above. GAS is  also responsible for a variety of postinfectious immune-mediated  diseases, such as acute rheumatic fever or poststreptococcal glo merulonephritis. All the answer choices above can be classically  attributed to GAS infection except for meningitis, which is more  commonly caused by group B Streptococcus, particularly in  newborns. GAS, which colonizes epithelial surfaces, is almost univer sally sensitive to penicillin. Its main virulence factor is the M  protein, which is a surface antigen and virulence factor encoded by  the emm gene, of which there are over 200 types. Different emm types are associated with different types of infection; some are  known to cause cutaneous infection, while others cause invasive  infection. The prevalence of different emm types is also socioeco nomically distinct, with certain emm types being seen in more  industrialized areas compared with other types being prevalent in  more rural communities. Geography plays a role as well, with vari ability in the prevalence of emm types based on region.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
+  },
+  {
+    "id": 1471,
+    "specialty": "General Surgery",
+    "topic": "Rush Review",
+    "question": "A 45-year-old man who underwent a splenectomy for  immune thrombocytopenic purpura develops a fever. Which  of the following is true regarding postsplenectomy sepsis?",
+    "options": {
+      "A": "A fever without other localizing symptoms of infection  (such as cough and diarrhea) is usually not worrisome in  postsplenectomy patients.",
+      "B": "Postsplenectomy sepsis is almost never seen in patients  who complete the appropriate vaccinations.",
+      "C": "The most common organism implicated in postsplenec tomy sepsis is Haemophilus influenzae.",
+      "D": "Initiation of empiric antibiotics should be delayed until  cultures are obtained.",
+      "E": "Ceftriaxone and vancomycin are an appropriate empiric  antibiotic regimen in an asplenic patient with fever."
+    },
+    "answer": "E",
+    "explanation": {
+      "correct": "See Question 20.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts."
   }
 ];
