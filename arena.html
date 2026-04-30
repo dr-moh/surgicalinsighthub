@@ -627,33 +627,47 @@ function showSharp(q, selected, isCorrect) {
   var card = document.getElementById('sharpCard');
   card.style.display = 'block';
 
+  // Check if we have AI-enriched SHARP metadata
+  var meta = q.sharp_metadata;
+
   // S - Set the stage
   var accuracy = Math.round((state.score / (state.answers.length)) * 100);
-  document.getElementById('sharpS').textContent =
-    (isCorrect ? '✓ Correct — ' : '✗ Incorrect — ') +
-    'The correct answer is ' + q.answer + '. ' + q.options[q.answer] + '. ' +
-    'Your session accuracy: ' + accuracy + '%.';
+  if (meta && meta.set_the_stage) {
+    document.getElementById('sharpS').textContent = meta.set_the_stage;
+  } else {
+    document.getElementById('sharpS').textContent =
+      (isCorrect ? '✓ Correct — ' : '✗ Incorrect — ') +
+      'The correct answer is ' + q.answer + '. ' + q.options[q.answer] + '. ' +
+      'Your session accuracy: ' + accuracy + '%.';
+  }
 
   // H - Highlight Excellence
-  document.getElementById('sharpH').textContent = q.explanation.correct;
+  document.getElementById('sharpH').textContent = (meta && meta.highlight_excellence) ? meta.highlight_excellence : q.explanation.correct;
 
   // A - Address the Gaps
   var aWrap = document.getElementById('sharpA');
   aWrap.innerHTML = '';
-  ['A','B','C','D','E'].forEach(function(letter) {
-    if (!q.options[letter] || letter === q.answer) return;
-    var row = document.createElement('div');
-    row.className = 'opt-exp';
-    row.innerHTML = '<div class="opt-exp-letter">' + letter + '</div><div class="opt-exp-text">' + q.explanation[letter] + '</div>';
-    aWrap.appendChild(row);
-  });
+  if (meta && meta.address_gaps) {
+    var gapDiv = document.createElement('div');
+    gapDiv.className = 'sharp-row-text';
+    gapDiv.textContent = meta.address_gaps;
+    aWrap.appendChild(gapDiv);
+  } else {
+    ['A','B','C','D','E'].forEach(function(letter) {
+      if (!q.options[letter] || letter === q.answer) return;
+      var row = document.createElement('div');
+      row.className = 'opt-exp';
+      row.innerHTML = '<div class="opt-exp-letter">' + letter + '</div><div class="opt-exp-text">' + q.explanation[letter] + '</div>';
+      aWrap.appendChild(row);
+    });
+  }
 
   // R - Review Guidelines
-  document.getElementById('sharpR').textContent = '';
+  document.getElementById('sharpR').textContent = (meta && meta.review_guidelines) ? meta.review_guidelines : '';
   document.getElementById('sharpRTag').textContent = '📋 ' + q.guideline;
 
   // P - Plan / Take-home
-  document.getElementById('sharpP').textContent = q.takeaway;
+  document.getElementById('sharpP').textContent = (meta && meta.plan) ? meta.plan : q.takeaway;
 
   // Result badge
   var res = document.getElementById('sharpResult');
