@@ -447,9 +447,9 @@ var state = {
 var SPECIALTIES = ['All', 'General Surgery', 'HPB', 'Colorectal', 'Anesthesia', 'Vascular', 'Trauma', 'Urology', 'Cardiothoracic', 'Pediatric Surgery', 'Orthopedic', 'Neurosurgery', 'Breast & Endocrine', 'Plastic Surgery'];
 
 function initArena() {
-  if (typeof QUESTIONS === 'undefined') {
-    console.error('QUESTIONS data not loaded - retrying in 500ms...');
-    setTimeout(initArena, 500);
+  if (!window.QUESTIONS_LOADED) {
+    console.log('MCQ Bank: Loading modules...');
+    setTimeout(initArena, 200);
     return;
   }
   loadSetupLeaderboard();
@@ -627,47 +627,33 @@ function showSharp(q, selected, isCorrect) {
   var card = document.getElementById('sharpCard');
   card.style.display = 'block';
 
-  // Check if we have AI-enriched SHARP metadata
-  var meta = q.sharp_metadata;
-
   // S - Set the stage
   var accuracy = Math.round((state.score / (state.answers.length)) * 100);
-  if (meta && meta.set_the_stage) {
-    document.getElementById('sharpS').textContent = meta.set_the_stage;
-  } else {
-    document.getElementById('sharpS').textContent =
-      (isCorrect ? '✓ Correct — ' : '✗ Incorrect — ') +
-      'The correct answer is ' + q.answer + '. ' + q.options[q.answer] + '. ' +
-      'Your session accuracy: ' + accuracy + '%.';
-  }
+  document.getElementById('sharpS').textContent =
+    (isCorrect ? '✓ Correct — ' : '✗ Incorrect — ') +
+    'The correct answer is ' + q.answer + '. ' + q.options[q.answer] + '. ' +
+    'Your session accuracy: ' + accuracy + '%.';
 
   // H - Highlight Excellence
-  document.getElementById('sharpH').textContent = (meta && meta.highlight_excellence) ? meta.highlight_excellence : q.explanation.correct;
+  document.getElementById('sharpH').textContent = q.explanation.correct;
 
   // A - Address the Gaps
   var aWrap = document.getElementById('sharpA');
   aWrap.innerHTML = '';
-  if (meta && meta.address_gaps) {
-    var gapDiv = document.createElement('div');
-    gapDiv.className = 'sharp-row-text';
-    gapDiv.textContent = meta.address_gaps;
-    aWrap.appendChild(gapDiv);
-  } else {
-    ['A','B','C','D','E'].forEach(function(letter) {
-      if (!q.options[letter] || letter === q.answer) return;
-      var row = document.createElement('div');
-      row.className = 'opt-exp';
-      row.innerHTML = '<div class="opt-exp-letter">' + letter + '</div><div class="opt-exp-text">' + q.explanation[letter] + '</div>';
-      aWrap.appendChild(row);
-    });
-  }
+  ['A','B','C','D','E'].forEach(function(letter) {
+    if (!q.options[letter] || letter === q.answer) return;
+    var row = document.createElement('div');
+    row.className = 'opt-exp';
+    row.innerHTML = '<div class="opt-exp-letter">' + letter + '</div><div class="opt-exp-text">' + q.explanation[letter] + '</div>';
+    aWrap.appendChild(row);
+  });
 
   // R - Review Guidelines
-  document.getElementById('sharpR').textContent = (meta && meta.review_guidelines) ? meta.review_guidelines : '';
+  document.getElementById('sharpR').textContent = '';
   document.getElementById('sharpRTag').textContent = '📋 ' + q.guideline;
 
   // P - Plan / Take-home
-  document.getElementById('sharpP').textContent = (meta && meta.plan) ? meta.plan : q.takeaway;
+  document.getElementById('sharpP').textContent = q.takeaway;
 
   // Result badge
   var res = document.getElementById('sharpResult');
