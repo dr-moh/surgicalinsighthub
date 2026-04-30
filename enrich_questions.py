@@ -1,11 +1,10 @@
-# Updated enrich_questions.py
 import json
 import os
 import time
 import requests
 import re
 
-# Manual fallback for .env
+# Load API Key
 if os.path.exists('.env'):
     with open('.env') as f:
         for line in f:
@@ -14,90 +13,104 @@ if os.path.exists('.env'):
                 os.environ[key.strip()] = val.strip()
 
 API_KEY = os.getenv("OPENROUTER_API_KEY")
-# Updated models for Free Tier (DeepSeek R1 and Gemma 2)
+
+# Reliable models for Free Tier
 MODELS = [
-    "deepseek/deepseek-r1:free",
-    "google/gemma-2-9b-it:free", 
-    "mistralai/mistral-7b-instruct:free",
+    "google/gemini-2.0-flash-exp:free",
+    "meta-llama/llama-3.1-8b-instruct:free",
     "openrouter/auto"
 ]
 
-def get_sharp_debrief(question_obj, model):
+def get_sharp_debrief(question_obj):
     prompt = f"""
-    You are a world-class surgical educator. Enhance the following MCQ into a high-yield 'SHARP' debriefing format.
+    Act as a board-certified surgical expert. 
+    Review this MCQ and provide a high-yield SHARP debrief.
     
-    MCQ:
-    Question: {question_obj['question']}
+    Q: {question_obj['question']}
     Options: {json.dumps(question_obj['options'])}
-    Correct Answer: {question_obj['answer']}
-    Base Explanation: {question_obj.get('explanation', {}).get('correct', '')}
-
-    STRICT OUTPUT FORMAT (JSON ONLY):
+    Provided Answer Key: {question_obj['answer']}
+    
+    Return ONLY JSON:
     {{
-    "set_the_stage": "...",
-    "highlight_excellence": "...",
-    "address_gaps": "...",
-    "review_guidelines": "...",
-    "plan": "..."
+      "verified_answer": "Letter of the clinically correct answer",
+      "set_the_stage": "...",
+      "highlight_excellence": "...",
+      "address_gaps": "...",
+      "review_guidelines": "...",
+      "plan": "..."
     }}
     """
     
-    headers = {"Authorization": f"Bearer {API_KEY}", "Content-Type": "application/json"}
-    payload = {"model": model, "messages": [{"role": "user", "content": prompt}], "temperature": 0.5}
+    headers = {
+        "Authorization": f"Bearer {API_KEY}",
+        "Content-Type": "application/json",
+        "HTTP-Referer": "https://surgicalinsighthub.com",
+        "X-Title": "Surgical Insight Hub"
+    }
 
-    try:
-        # Increased timeout to 60s for reasoning models
-        response = requests.post("https://openrouter.ai/api/v1/chat/completions", headers=headers, json=payload, timeout=60)
-        if response.status_code == 200:
-            return response.json()['choices'][0]['message']['content']
-        return None
-    except Exception as e:
-        print(f"  Error on {model}: {e}")
-        return None
+    for model in MODELS:
+        try:
+            payload = {"model": model, "messages": [{"role": "user", "content": prompt}], "temperature": 0.1}
+            response = requests.post("https://openrouter.ai/api/v1/chat/completions", headers=headers, json=payload, timeout=45)
+            if response.status_code == 200:
+                content = response.json()['choices'][0]['message']['content']
+                match = re.search(r'\{.*\}', content, re.DOTALL)
+                if match:
+                    return json.loads(match.group(0))
+            time.sleep(2) 
+        except:
+            continue
+    return None
 
-def process_batch(count=10):
-    with open('js/questions.js', 'r') as f:
-        raw = f.read()
-        json_str = raw.replace('var QUESTIONS = ', '').rstrip().rstrip(';')
-        questions = json.loads(json_str)
+def main():
+    print("--- Starting SHARP Clinical Verification Auto-Pilot ---")
+    
+    while True:
+        # 1. Load the current state
+        with open('js/questions.js', 'r') as f:
+            raw = f.read()
+            json_str = raw.replace('var QUESTIONS = ', '').rstrip().rstrip(';')
+            questions = json.loads(json_str)
 
-    enriched_count = 0
-    for i in range(min(count, len(questions))):
-        q = questions[i]
-        print(f"Processing Q#{q['id']} ({i+1}/{count})...")
-        for model in MODELS:
-            print(f"  Trying {model}...")
-            result = get_sharp_debrief(q, model)
-            if result:
-                try:
-                    # Clean the response from potential markdown or CoT 'thinking'
-                    match = re.search(r'\{.*\}', result, re.DOTALL)
-                    if match:
-                        clean_json = match.group(0)
-                        sharp_data = json.loads(clean_json)
-                        
-                        q['explanation'] = {
-                            "correct": sharp_data.get('highlight_excellence', ''),
-                            "A": "", "B": "", "C": "", "D": "", "E": ""
-                        }
-                        q['sharp_metadata'] = sharp_data
-                        q['takeaway'] = f"PLAN: {sharp_data.get('plan', '')}"
-                        print(f"  Success!")
-                        enriched_count += 1
-                        break
-                except Exception as e:
-                    print(f"  JSON error: {e}")
-                    continue
-            time.sleep(2)
+        # 2. Find ONLY questions that need enrichment
+        targets = [q for q in questions if 'sharp' not in q]
+        
+        if not targets:
+            print("SUCCESS: All 1,472 questions have been enriched!")
+            break
+            
+        print(f"Progress: {len(questions) - len(targets)} / {len(questions)} complete. Next targets: {[q['id'] for q in targets[:5]]}")
+        
+        # 3. Process the next small batch
+        for i in range(min(5, len(targets))):
+            q = targets[i]
+            print(f"  -> Processing Q#{q['id']}...")
+            data = get_sharp_debrief(q)
+            
+            if data:
+                # Update the specific question in our loaded list
+                if data.get('verified_answer') and data['verified_answer'] != q['answer']:
+                    print(f"     !!! Corrected Answer: {q['answer']} -> {data['verified_answer']}")
+                    q['answer'] = data['verified_answer']
+                
+                q['sharp'] = data
+                q['explanation']['correct'] = data.get('highlight_excellence', '')
+                q['takeaway'] = f"PLAN: {data.get('plan', '')}"
+                q['guideline'] = data.get('review_guidelines', '')
+                
+                # 4. CRITICAL: Immediate atomic save of the WHOLE list
+                with open('js/questions.js', 'w') as fw:
+                    fw.write('var QUESTIONS = ')
+                    json.dump(questions, fw, indent=2)
+                    fw.write(';')
+                print(f"     Saved Q#{q['id']} to disk.")
+            else:
+                print(f"     Failed to enrich Q#{q['id']}. Skipping for now.")
+            
+            time.sleep(10) # Safe delay for Free Tier
 
-    with open('js/questions_enriched_test.js', 'w') as f:
-        f.write('var QUESTIONS = ')
-        json.dump(questions, f, indent=2)
-        f.write(';')
-    print(f"\nDone! Enriched {enriched_count} questions. Check js/questions_enriched_test.js")
+        print("--- Batch cycle complete. Resting for 30s... ---")
+        time.sleep(30)
 
 if __name__ == "__main__":
-    if not API_KEY:
-        print("ERROR: OPENROUTER_API_KEY not found in .env")
-    else:
-        process_batch(10)
+    main()

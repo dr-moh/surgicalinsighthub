@@ -28,7 +28,7 @@
 
     modules.forEach(file => {
         const script = document.createElement('script');
-        script.src = 'js/questions/' + file;
+        script.src = 'js/questions/' + file + '?v=2.1';
         script.async = false; // Order of loading into the array is preserved if async is false
         script.onload = () => {
             loadedCount++;
