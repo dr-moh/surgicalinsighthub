@@ -1,6 +1,7 @@
 if (!window.QUESTIONS) window.QUESTIONS = [];
 window.QUESTIONS.push(...[
-{
+[
+  {
     "specialty": "Vascular Surgery",
     "topic": "Abdominal Aortic Aneurysm",
     "question": "What is the standard diameter threshold for recommending elective surgical repair of an asymptomatic infrarenal Abdominal Aortic Aneurysm (AAA) in an average-risk male patient?",
@@ -27,9 +28,10 @@ window.QUESTIONS.push(...[
       "R": "Standard vascular surgical algorithm.",
       "P": "Perform CTA to assess for EVAR suitability (neck length, iliac access)."
     },
-    "id": 1582
+    "id": 1582,
+    "_src_file": "vascular.js"
   },
-{
+  {
     "specialty": "Vascular Surgery",
     "topic": "Acute Limb Ischemia",
     "question": "A patient with sudden onset of cold, painful leg has no palpable pulses, loss of light touch sensation, and partial motor weakness. Which Rutherford category of Acute Limb Ischemia (ALI) does this patient fall into?",
@@ -56,9 +58,10 @@ window.QUESTIONS.push(...[
       "R": "Core vascular surgical emergency.",
       "P": "Start IV Heparin immediately and move to the OR for embolectomy."
     },
-    "id": 1583
+    "id": 1583,
+    "_src_file": "vascular.js"
   },
-{
+  {
     "specialty": "Vascular Surgery",
     "topic": "Carotid Artery Disease",
     "question": "According to the NASCET trial, what is the benefit of Carotid Endarterectomy (CEA) for a SYMPTOMATIC patient with 70-99% stenosis?",
@@ -85,9 +88,10 @@ window.QUESTIONS.push(...[
       "R": "Foundational vascular surgery trial.",
       "P": "Pre-op: Aspirin and Statin. Post-op: Monitor for hyperperfusion syndrome (severe headache)."
     },
-    "id": 1584
+    "id": 1584,
+    "_src_file": "vascular.js"
   },
-{
+  {
     "specialty": "Vascular Surgery",
     "topic": "Leriche Syndrome",
     "question": "The 'classic triad' of Leriche Syndrome (Aortoiliac Occlusive Disease) includes which of the following?",
@@ -114,9 +118,10 @@ window.QUESTIONS.push(...[
       "R": "Classic vascular pattern recognition.",
       "P": "Ankle-Brachial Index (ABI) and CTA for surgical planning (Bypass vs Stent)."
     },
-    "id": 1585
+    "id": 1585,
+    "_src_file": "vascular.js"
   },
-{
+  {
     "specialty": "Vascular Surgery",
     "topic": "Chronic Venous Insufficiency",
     "question": "In the CEAP classification for chronic venous disorders, which 'C' category corresponds to an ACTIVE venous ulcer?",
@@ -143,9 +148,10 @@ window.QUESTIONS.push(...[
       "R": "Standard venous pathology grading.",
       "P": "Ablation of the superficial system (e.g., EVLA) to reduce recurrence risk."
     },
-    "id": 1586
+    "id": 1586,
+    "_src_file": "vascular.js"
   },
-{
+  {
     "specialty": "Vascular Surgery",
     "topic": "Arterial vs Venous Ulcers",
     "question": "Which of the following is a hallmark characteristic of an ARTERIAL (ischemic) ulcer compared to a venous ulcer?",
@@ -172,9 +178,10 @@ window.QUESTIONS.push(...[
       "R": "Clinical wound differential.",
       "P": "Revascularization must be considered to achieve healing."
     },
-    "id": 1587
+    "id": 1587,
+    "_src_file": "vascular.js"
   },
-{
+  {
     "specialty": "Vascular Surgery",
     "topic": "Thoracic Aortic Dissection",
     "question": "A patient presents with 'tearing' chest pain radiating to the back. A CTA shows a dissection starting DISTAL to the left subclavian artery and involving the descending aorta only. According to the Stanford classification, what is this called and what is the typical initial management?",
@@ -201,9 +208,10 @@ window.QUESTIONS.push(...[
       "R": "High-yield vascular emergency.",
       "P": "Start IV Esmolol or Labetalol to reach heart rate <60 and SBP <120."
     },
-    "id": 1588
+    "id": 1588,
+    "_src_file": "vascular.js"
   },
-{
+  {
     "specialty": "Vascular Surgery",
     "topic": "Vascular Access",
     "question": "What is the 'Gold Standard' for long-term hemodialysis access due to its high patency and low infection rates?",
@@ -230,9 +238,10 @@ window.QUESTIONS.push(...[
       "R": "Core renal vascular surgery.",
       "P": "Perform pre-operative vein mapping with ultrasound."
     },
-    "id": 1589
+    "id": 1589,
+    "_src_file": "vascular.js"
   },
-{
+  {
     "specialty": "Vascular Surgery",
     "topic": "Mesenteric Ischemia",
     "question": "A 70-year-old patient with atrial fibrillation presents with sudden-onset severe abdominal pain. On examination, the abdomen is soft and non-tender. What is the most likely diagnosis?",
@@ -259,9 +268,10 @@ window.QUESTIONS.push(...[
       "R": "Critical vascular surgical emergency.",
       "P": "Immediate laparotomy for SMA embolectomy and bowel assessment."
     },
-    "id": 1590
+    "id": 1590,
+    "_src_file": "vascular.js"
   },
-{
+  {
     "specialty": "Vascular Surgery",
     "topic": "Buerger's Disease",
     "question": "Which of the following is the most important intervention to prevent disease progression and amputation in a patient with Thromboangiitis Obliterans (Buerger's Disease)?",
@@ -288,9 +298,10 @@ window.QUESTIONS.push(...[
       "R": "Classic vasculopathy board topic.",
       "P": "Strict counseling: Amputation is inevitable if smoking continues."
     },
-    "id": 1591
+    "id": 1591,
+    "_src_file": "vascular.js"
   },
-{
+  {
     "specialty": "Vascular Surgery",
     "topic": "Compartment Syndrome",
     "question": "What is the generally accepted intracompartmental pressure threshold above which a fasciotomy is indicated?",
@@ -317,9 +328,10 @@ window.QUESTIONS.push(...[
       "R": "Critical post-operative surgical complication.",
       "P": "Perform a 4-compartment fasciotomy of the lower leg via two incisions."
     },
-    "id": 1592
+    "id": 1592,
+    "_src_file": "vascular.js"
   },
-{
+  {
     "specialty": "Vascular Surgery",
     "topic": "Ankle-Brachial Index (ABI)",
     "question": "An Ankle-Brachial Index (ABI) of 0.35 in a patient with a non-healing foot ulcer indicates which level of Peripheral Arterial Disease (PAD)?",
@@ -346,9 +358,10 @@ window.QUESTIONS.push(...[
       "R": "Fundamental vascular screening tool.",
       "P": "Aggressive risk factor management (Statins, Aspirin) + Referral for revascularization."
     },
-    "id": 1593
+    "id": 1593,
+    "_src_file": "vascular.js"
   },
-{
+  {
     "specialty": "Vascular Surgery",
     "topic": "Blue Toe Syndrome",
     "question": "A patient with a known AAA presents with sudden, painful, blue discolouration of the 2nd and 3rd toes on the right foot. Distal pulses (DP/PT) are still palpable. What is the most likely mechanism?",
@@ -375,9 +388,10 @@ window.QUESTIONS.push(...[
       "R": "Classic vascular board scenario.",
       "P": "Antiplatelet therapy and surgical/endovascular stabilization of the source."
     },
-    "id": 1594
+    "id": 1594,
+    "_src_file": "vascular.js"
   },
-{
+  {
     "specialty": "Vascular Surgery",
     "topic": "Amputation: Level Selection",
     "question": "Which of the following levels of amputation has the highest metabolic cost for ambulation (requires the most energy to walk with a prosthesis)?",
@@ -404,9 +418,10 @@ window.QUESTIONS.push(...[
       "R": "Standard surgical rehabilitation concept.",
       "P": "Select the most distal level likely to heal based on Doppler pressures and skin perfusion."
     },
-    "id": 1595
+    "id": 1595,
+    "_src_file": "vascular.js"
   },
-{
+  {
     "specialty": "Vascular Surgery",
     "topic": "Venous Thromboembolism (VTE)",
     "question": "What is the treatment of choice for a patient with a massive DVT causing 'Phlegmasia Cerulea Dolens' (painful blue swelling with compromised arterial flow)?",
@@ -433,9 +448,10 @@ window.QUESTIONS.push(...[
       "R": "High-severity vascular pathology.",
       "P": "Start high-dose Heparin and prepare for interventional radiology or surgery."
     },
-    "id": 1596
+    "id": 1596,
+    "_src_file": "vascular.js"
   },
-{
+  {
     "specialty": "Vascular Surgery",
     "topic": "Popliteal Artery Entrapment",
     "question": "A young, athletic male without traditional cardiovascular risk factors presents with calf claudication. What is the most likely anatomical diagnosis?",
@@ -462,9 +478,10 @@ window.QUESTIONS.push(...[
       "R": "Vascular board favorite for differential diagnosis.",
       "P": "MRI or CT angiography with the foot in provocative positions."
     },
-    "id": 1597
+    "id": 1597,
+    "_src_file": "vascular.js"
   },
-{
+  {
     "specialty": "Vascular Surgery",
     "topic": "Subclavian Steal Syndrome",
     "question": "A patient presents with vertigo and blurred vision triggered by using their LEFT arm. Blood pressure in the left arm is 30 mmHg lower than the right. What is the underlying vascular lesion?",
@@ -491,9 +508,10 @@ window.QUESTIONS.push(...[
       "R": "Classic vascular physiology.",
       "P": "Stenting of the subclavian or Carotid-Subclavian bypass."
     },
-    "id": 1598
+    "id": 1598,
+    "_src_file": "vascular.js"
   },
-{
+  {
     "specialty": "Vascular Surgery",
     "topic": "Infected Graft Management",
     "question": "What is the most common organism involved in 'Early' (within 30 days) vascular graft infections?",
@@ -520,9 +538,10 @@ window.QUESTIONS.push(...[
       "R": "Serious surgical complication.",
       "P": "Exploration, graft excision, and extra-anatomic bypass (through clean tissue) if needed."
     },
-    "id": 1599
+    "id": 1599,
+    "_src_file": "vascular.js"
   },
-{
+  {
     "specialty": "Vascular Surgery",
     "topic": "Renal Artery Stenosis",
     "question": "A 25-year-old female presents with new-onset hypertension (170/110). Angiography shows a 'string of beads' appearance of the right renal artery. What is the most likely diagnosis?",
@@ -549,9 +568,10 @@ window.QUESTIONS.push(...[
       "R": "Common renovascular pathology question.",
       "P": "Renal Duplex ultrasound is the first-line screening tool."
     },
-    "id": 1600
+    "id": 1600,
+    "_src_file": "vascular.js"
   },
-{
+  {
     "specialty": "Vascular Surgery",
     "topic": "SFA Anatomy",
     "question": "Where is the most common site of atherosclerotic narrowing in the Superficial Femoral Artery (SFA)?",
@@ -578,70 +598,73 @@ window.QUESTIONS.push(...[
       "R": "Standard vascular anatomy.",
       "P": "Treat with exercise therapy; if failing, consider PTA/Stent or Fem-Pop bypass."
     },
-    "id": 1601
+    "id": 1601,
+    "_src_file": "vascular.js"
   },
-{
-  "id": 404,
-  "specialty": "Vascular",
-  "topic": "rush.docx",
-  "question": "A 70-kg man with pyloric obstruction secondary to ulcer disease is admitted to the hospital for resuscitation after 1 week of prolonged vomiting. What metabolic disturbance is expected?",
-  "options": {
-    "A": "Hypokalemic, hyperchloremic metabolic acidosis",
-    "B": "Hyperkalemic, hypochloremic metabolic alkalosis",
-    "C": "Hyperkalemic, hyperchloremic metabolic acidosis",
-    "D": "Hypokalemic, hypochloremic metabolic alkalosis",
-    "E": "None of the above"
+  {
+    "id": 404,
+    "specialty": "Vascular",
+    "topic": "rush.docx",
+    "question": "A 70-kg man with pyloric obstruction secondary to ulcer disease is admitted to the hospital for resuscitation after 1 week of prolonged vomiting. What metabolic disturbance is expected?",
+    "options": {
+      "A": "Hypokalemic, hyperchloremic metabolic acidosis",
+      "B": "Hyperkalemic, hypochloremic metabolic alkalosis",
+      "C": "Hyperkalemic, hyperchloremic metabolic acidosis",
+      "D": "Hypokalemic, hypochloremic metabolic alkalosis",
+      "E": "None of the above"
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "The correct answer, 'Hypokalemic, hypochloremic metabolic alkalosis,' accurately reflects the physiological consequences of prolonged vomiting due to pyloric obstruction. The loss of gastric acid (HCl) and potassium (K+) leads to a contraction alkalosis and a shift of intracellular potassium to extracellular space in exchange for hydrogen ions, exacerbating the alkalosis and hypokalemia.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "sharp": {
+      "status": "ACCEPT",
+      "verified_answer": "D",
+      "set_the_stage": "This question probes a classic and high-yield acid-base and electrolyte disturbance encountered in surgical patients, specifically related to upper gastrointestinal losses. Understanding the pathophysiology of pyloric obstruction and prolonged vomiting is key to predicting the resulting metabolic derangements.",
+      "highlight_excellence": "The correct answer, 'Hypokalemic, hypochloremic metabolic alkalosis,' accurately reflects the physiological consequences of prolonged vomiting due to pyloric obstruction. The loss of gastric acid (HCl) and potassium (K+) leads to a contraction alkalosis and a shift of intracellular potassium to extracellular space in exchange for hydrogen ions, exacerbating the alkalosis and hypokalemia.",
+      "address_gaps": "A common pitfall is confusing the electrolyte and acid-base status. While vomiting leads to loss of HCl, which would intuitively suggest acidosis, the body's compensatory mechanisms and the loss of potassium are crucial. The hypochloremia is a direct result of HCl loss. The hypokalemia is due to direct loss in vomitus and also due to renal wasting of potassium in an attempt to conserve hydrogen ions in the setting of alkalosis. The alkalosis itself is driven by the loss of acid and the subsequent shift of hydrogen ions into cells, leaving the extracellular fluid more alkaline. The body's response to hypokalemia also involves the kidneys exchanging potassium for hydrogen, further contributing to alkalosis.",
+      "review_guidelines": "When evaluating patients with prolonged vomiting, especially from gastric outlet obstruction, always consider the following: 1. **Acid Loss:** Gastric fluid is rich in HCl. 2. **Potassium Loss:** Vomitus contains significant amounts of potassium. 3. **Volume Depletion:** Leads to renal conservation of sodium, which is coupled with hydrogen and potassium excretion. 4. **Paradoxical Aciduria:** The kidneys attempt to excrete bicarbonate to correct alkalosis, but in the setting of volume depletion and hypokalemia, they may paradoxically excrete acidic urine. 5. **Contraction Alkalosis:** As the extracellular fluid volume decreases, the concentration of bicarbonate increases, leading to alkalosis.",
+      "plan": "For future encounters, visualize the stomach contents being lost: HCl and K+. Then, consider how the body compensates: renal mechanisms to retain sodium and excrete acid/potassium, and intracellular shifts of ions. This systematic approach will solidify the understanding of hypokalemic, hypochloremic metabolic alkalosis in this clinical scenario."
+    },
+    "guideline": "When evaluating patients with prolonged vomiting, especially from gastric outlet obstruction, always consider the following: 1. **Acid Loss:** Gastric fluid is rich in HCl. 2. **Potassium Loss:** Vomitus contains significant amounts of potassium. 3. **Volume Depletion:** Leads to renal conservation of sodium, which is coupled with hydrogen and potassium excretion. 4. **Paradoxical Aciduria:** The kidneys attempt to excrete bicarbonate to correct alkalosis, but in the setting of volume depletion and hypokalemia, they may paradoxically excrete acidic urine. 5. **Contraction Alkalosis:** As the extracellular fluid volume decreases, the concentration of bicarbonate increases, leading to alkalosis.",
+    "takeaway": "PLAN: For future encounters, visualize the stomach contents being lost: HCl and K+. Then, consider how the body compensates: renal mechanisms to retain sodium and excrete acid/potassium, and intracellular shifts of ions. This systematic approach will solidify the understanding of hypokalemic, hypochloremic metabolic alkalosis in this clinical scenario.",
+    "_src_file": "vascular.js"
   },
-  "answer": "D",
-  "explanation": {
-    "correct": "The correct answer, 'Hypokalemic, hypochloremic metabolic alkalosis,' accurately reflects the physiological consequences of prolonged vomiting due to pyloric obstruction. The loss of gastric acid (HCl) and potassium (K+) leads to a contraction alkalosis and a shift of intracellular potassium to extracellular space in exchange for hydrogen ions, exacerbating the alkalosis and hypokalemia.",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp": {
-    "status": "ACCEPT",
-    "verified_answer": "D",
-    "set_the_stage": "This question probes a classic and high-yield acid-base and electrolyte disturbance encountered in surgical patients, specifically related to upper gastrointestinal losses. Understanding the pathophysiology of pyloric obstruction and prolonged vomiting is key to predicting the resulting metabolic derangements.",
-    "highlight_excellence": "The correct answer, 'Hypokalemic, hypochloremic metabolic alkalosis,' accurately reflects the physiological consequences of prolonged vomiting due to pyloric obstruction. The loss of gastric acid (HCl) and potassium (K+) leads to a contraction alkalosis and a shift of intracellular potassium to extracellular space in exchange for hydrogen ions, exacerbating the alkalosis and hypokalemia.",
-    "address_gaps": "A common pitfall is confusing the electrolyte and acid-base status. While vomiting leads to loss of HCl, which would intuitively suggest acidosis, the body's compensatory mechanisms and the loss of potassium are crucial. The hypochloremia is a direct result of HCl loss. The hypokalemia is due to direct loss in vomitus and also due to renal wasting of potassium in an attempt to conserve hydrogen ions in the setting of alkalosis. The alkalosis itself is driven by the loss of acid and the subsequent shift of hydrogen ions into cells, leaving the extracellular fluid more alkaline. The body's response to hypokalemia also involves the kidneys exchanging potassium for hydrogen, further contributing to alkalosis.",
-    "review_guidelines": "When evaluating patients with prolonged vomiting, especially from gastric outlet obstruction, always consider the following: 1. **Acid Loss:** Gastric fluid is rich in HCl. 2. **Potassium Loss:** Vomitus contains significant amounts of potassium. 3. **Volume Depletion:** Leads to renal conservation of sodium, which is coupled with hydrogen and potassium excretion. 4. **Paradoxical Aciduria:** The kidneys attempt to excrete bicarbonate to correct alkalosis, but in the setting of volume depletion and hypokalemia, they may paradoxically excrete acidic urine. 5. **Contraction Alkalosis:** As the extracellular fluid volume decreases, the concentration of bicarbonate increases, leading to alkalosis.",
-    "plan": "For future encounters, visualize the stomach contents being lost: HCl and K+. Then, consider how the body compensates: renal mechanisms to retain sodium and excrete acid/potassium, and intracellular shifts of ions. This systematic approach will solidify the understanding of hypokalemic, hypochloremic metabolic alkalosis in this clinical scenario."
-  },
-  "guideline": "When evaluating patients with prolonged vomiting, especially from gastric outlet obstruction, always consider the following: 1. **Acid Loss:** Gastric fluid is rich in HCl. 2. **Potassium Loss:** Vomitus contains significant amounts of potassium. 3. **Volume Depletion:** Leads to renal conservation of sodium, which is coupled with hydrogen and potassium excretion. 4. **Paradoxical Aciduria:** The kidneys attempt to excrete bicarbonate to correct alkalosis, but in the setting of volume depletion and hypokalemia, they may paradoxically excrete acidic urine. 5. **Contraction Alkalosis:** As the extracellular fluid volume decreases, the concentration of bicarbonate increases, leading to alkalosis.",
-  "takeaway": "PLAN: For future encounters, visualize the stomach contents being lost: HCl and K+. Then, consider how the body compensates: renal mechanisms to retain sodium and excrete acid/potassium, and intracellular shifts of ions. This systematic approach will solidify the understanding of hypokalemic, hypochloremic metabolic alkalosis in this clinical scenario."
-}
-,
-{
-  "id": 401,
-  "specialty": "Vascular",
-  "topic": "rush.docx",
-  "question": "A unit of blood could be transfused most rapidly through which of the following vascular access catheters?",
-  "options": {
-    "D": "A 16-gauge, 3-cm peripheral IV in the right antecubital fossa",
-    "E": "An 18-gauge, 3-cm peripheral IV in the right antecubital fossa"
-  },
-  "answer": "E",
-  "explanation": {
-    "correct": "The correct answer (E) \u2013 an 18-gauge, 3-cm peripheral IV \u2013 is the optimal choice. An 18-gauge catheter provides significantly greater cross-sectional area for flow compared to a 16-gauge catheter. This translates to a substantially higher flow rate, crucial for rapid blood replacement. The 3cm length is also appropriate for peripheral access.",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp": {
-    "status": "ACCEPT",
-    "verified_answer": "E",
-    "set_the_stage": "This question assesses understanding of vascular access catheters and their suitability for rapid blood transfusion. Rapid transfusion demands maximal flow rates, which are directly related to catheter diameter and venous access site.",
-    "highlight_excellence": "The correct answer (E) \u2013 an 18-gauge, 3-cm peripheral IV \u2013 is the optimal choice. An 18-gauge catheter provides significantly greater cross-sectional area for flow compared to a 16-gauge catheter. This translates to a substantially higher flow rate, crucial for rapid blood replacement. The 3cm length is also appropriate for peripheral access.",
-    "address_gaps": "The incorrect answer (D) \u2013 a 16-gauge catheter \u2013 represents a critical gap in understanding. A 16-gauge catheter has a smaller lumen, severely limiting flow. Furthermore, the provided options are simplistic and don't account for factors like venous pressure and potential for thrombosis. The question could be strengthened by including options representing larger bore catheters (e.g., 20-gauge or larger) or central venous catheters.",
-    "review_guidelines": "1. **Catheter Gauge & Flow:** Larger gauge catheters (e.g., 18G, 16G) allow for significantly higher flow rates than smaller gauges (e.g., 22G, 24G).  Flow is proportional to the cross-sectional area of the lumen. 2. **Peripheral vs. Central Access:** Peripheral IVs (arms) are suitable for smaller volume transfusions. Central venous access (e.g., subclavian, internal jugular) is preferred for rapid, large-volume transfusions due to higher venous pressure and larger vessel diameter. 3. **Considerations for Rapid Transfusion:**  Minimize occlusion risk, maximize flow, and maintain adequate venous return.  Central lines are generally favored for rapid resuscitation.",
-    "plan": "Further education should focus on the relationship between catheter gauge, flow rate, and venous access site selection. Clinical scenarios involving hemorrhage or significant blood loss should be used to reinforce this knowledge.  Simulations using vascular access devices are highly recommended."
-  },
-  "guideline": "1. **Catheter Gauge & Flow:** Larger gauge catheters (e.g., 18G, 16G) allow for significantly higher flow rates than smaller gauges (e.g., 22G, 24G).  Flow is proportional to the cross-sectional area of the lumen. 2. **Peripheral vs. Central Access:** Peripheral IVs (arms) are suitable for smaller volume transfusions. Central venous access (e.g., subclavian, internal jugular) is preferred for rapid, large-volume transfusions due to higher venous pressure and larger vessel diameter. 3. **Considerations for Rapid Transfusion:**  Minimize occlusion risk, maximize flow, and maintain adequate venous return.  Central lines are generally favored for rapid resuscitation.",
-  "takeaway": "PLAN: Further education should focus on the relationship between catheter gauge, flow rate, and venous access site selection. Clinical scenarios involving hemorrhage or significant blood loss should be used to reinforce this knowledge.  Simulations using vascular access devices are highly recommended."
-}
+  {
+    "id": 401,
+    "specialty": "Vascular",
+    "topic": "rush.docx",
+    "question": "A unit of blood could be transfused most rapidly through which of the following vascular access catheters?",
+    "options": {
+      "D": "A 16-gauge, 3-cm peripheral IV in the right antecubital fossa",
+      "E": "An 18-gauge, 3-cm peripheral IV in the right antecubital fossa"
+    },
+    "answer": "E",
+    "explanation": {
+      "correct": "The correct answer (E) – an 18-gauge, 3-cm peripheral IV – is the optimal choice. An 18-gauge catheter provides significantly greater cross-sectional area for flow compared to a 16-gauge catheter. This translates to a substantially higher flow rate, crucial for rapid blood replacement. The 3cm length is also appropriate for peripheral access.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "sharp": {
+      "status": "ACCEPT",
+      "verified_answer": "E",
+      "set_the_stage": "This question assesses understanding of vascular access catheters and their suitability for rapid blood transfusion. Rapid transfusion demands maximal flow rates, which are directly related to catheter diameter and venous access site.",
+      "highlight_excellence": "The correct answer (E) – an 18-gauge, 3-cm peripheral IV – is the optimal choice. An 18-gauge catheter provides significantly greater cross-sectional area for flow compared to a 16-gauge catheter. This translates to a substantially higher flow rate, crucial for rapid blood replacement. The 3cm length is also appropriate for peripheral access.",
+      "address_gaps": "The incorrect answer (D) – a 16-gauge catheter – represents a critical gap in understanding. A 16-gauge catheter has a smaller lumen, severely limiting flow. Furthermore, the provided options are simplistic and don't account for factors like venous pressure and potential for thrombosis. The question could be strengthened by including options representing larger bore catheters (e.g., 20-gauge or larger) or central venous catheters.",
+      "review_guidelines": "1. **Catheter Gauge & Flow:** Larger gauge catheters (e.g., 18G, 16G) allow for significantly higher flow rates than smaller gauges (e.g., 22G, 24G).  Flow is proportional to the cross-sectional area of the lumen. 2. **Peripheral vs. Central Access:** Peripheral IVs (arms) are suitable for smaller volume transfusions. Central venous access (e.g., subclavian, internal jugular) is preferred for rapid, large-volume transfusions due to higher venous pressure and larger vessel diameter. 3. **Considerations for Rapid Transfusion:**  Minimize occlusion risk, maximize flow, and maintain adequate venous return.  Central lines are generally favored for rapid resuscitation.",
+      "plan": "Further education should focus on the relationship between catheter gauge, flow rate, and venous access site selection. Clinical scenarios involving hemorrhage or significant blood loss should be used to reinforce this knowledge.  Simulations using vascular access devices are highly recommended."
+    },
+    "guideline": "1. **Catheter Gauge & Flow:** Larger gauge catheters (e.g., 18G, 16G) allow for significantly higher flow rates than smaller gauges (e.g., 22G, 24G).  Flow is proportional to the cross-sectional area of the lumen. 2. **Peripheral vs. Central Access:** Peripheral IVs (arms) are suitable for smaller volume transfusions. Central venous access (e.g., subclavian, internal jugular) is preferred for rapid, large-volume transfusions due to higher venous pressure and larger vessel diameter. 3. **Considerations for Rapid Transfusion:**  Minimize occlusion risk, maximize flow, and maintain adequate venous return.  Central lines are generally favored for rapid resuscitation.",
+    "takeaway": "PLAN: Further education should focus on the relationship between catheter gauge, flow rate, and venous access site selection. Clinical scenarios involving hemorrhage or significant blood loss should be used to reinforce this knowledge.  Simulations using vascular access devices are highly recommended.",
+    "_src_file": "vascular.js"
+  }
+]
 ]);

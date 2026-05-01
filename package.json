@@ -19,6 +19,6 @@
   },
   "homepage": "https://github.com/dr-moh/surgicalinsighthub#readme",
   "dependencies": {
-    "@openrouter/sdk": "^0.0.12"
+    "@openrouter/sdk": "^0.12.24"
   }
 }

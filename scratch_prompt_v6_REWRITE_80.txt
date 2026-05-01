@@ -1,0 +1,49 @@
+Act as a Senior Surgical Consultant preparing a resident for boards. I have two tasks for you in this single JSON response:
+
+TASK 1: REWRITE IDs 141-200. These are currently placeholders. You must generate 60 UNIQUE, high-yield surgical MCQs (Question, 4 Options, Correct Letter) covering Breast, Endocrine, Vascular, and Trauma. Then provide the SHARP debrief for each.
+
+TASK 2: ENRICH IDs 201-220. These are existing real questions. Provide only the SHARP debrief for them.
+
+Format Rules:
+S: Set the Stage
+H: Highlight Excellence
+A: Address the Gaps
+R: Review Learning Points (Cite Guidelines)
+P: Plan for Improvement
+Visualization: Mental description.
+
+JSON Structure (ARRAY):
+{
+  "id": [id],
+  "question": "[REWRITTEN Q for 141-200]",
+  "options": {"A":"...", "B":"...", "C":"...", "D":"..."},
+  "verified_answer": "[Letter]",
+  "set_the_stage": "...",
+  "highlight_excellence": "...",
+  "address_gaps": "...",
+  "review_learning_points": "...",
+  "plan": "...",
+  "visualization": "..."
+}
+
+EXISTING QUESTIONS FOR TASK 2 (201-220):
+ID: 201 | Q: Which of the following statements regarding changes in volume status of the ECF compartment is true? | Options: {"A": "Hyponatremia is diagnostic of excess ECF volume.", "B": "Hypernatremia is diagnostic of depletion of ECF volume.", "E": "The concentration of serum sodium is directly related to extracellular volume."} | Ans: C
+ID: 202 | Q: With regard to diabetes insipidus, which of the following statements is true? | Options: {"A": "Diabetes insipidus causes hypervolemic hyponatremia.", "D": "Alcohol intoxication can mimic diabetes insipidus.", "E": "Lithium administration could induce central diabetes insipidus."} | Ans: D
+ID: 203 | Q: Which of the following is true regarding the pathophysiology of | Options: {"A": "Antimicrobial agents with activity against", "C": "difficile spores after contact with an infected patient.", "B": "A patient\u2019s inability to produce antibody to toxin A is a significant predictor of recurrent", "D": "Studies have suggested that gastric acid suppression [i.e., use of proton pump inhibitors (PPIs) or H2 blockers] may be protective against the development of", "E": "Alcohol-based hand sanitizers are effective in removing"} | Ans: B
+ID: 204 | Q: Which of the following statements most accurately reflects the findings of large overview analyses of clinical trials in which adjuvant chemotherapy for early-stage breast cancer was compared to a control group treated only with surgery? | Options: {"B": "Adjuvant therapy benefits all patients and is independent of age or node status.", "D": "The magnitude of benefit is very large."} | Ans: B
+ID: 205 | Q: Primary gastrointestinal lymphomas involving the small bowel are uncommon accounting for less than 5% of all lymphomas. Conditions associated with small intestinal lymphomas include which of the following? a.Acquired immune deficiency syndrome (AIDS) b.Celiac disease c.Crohn’s disease d.Rheumatoid arthritis Answer: a, b, c, d Large Intestine 1.Which answers are true? In contrast to ulcerative colitis, Crohn's disease of the colon: | Options: {"B": "Seldom presents with daily hematochezia.", "C": "Is usually segmental rather than continuous.", "E": "Never develops toxic megacolon."} | Ans: B
+ID: 206 | Q: Which of the following is TRUE regarding Colorectal Cancer? | Options: {"A": "The modified Duke's or TNM staging is used; Stage III involves lymph nodes.", "B": "Incorrect distractor regarding Colorectal Cancer", "C": "Incorrect distractor regarding Colorectal Cancer", "D": "Incorrect distractor regarding Colorectal Cancer"} | Ans: A
+ID: 207 | Q: Which of the following is TRUE regarding Hemorrhoids? | Options: {"A": "Incorrect distractor regarding Hemorrhoids", "B": "Internal hemorrhoids are above the dentate line and are usually painless.", "C": "Incorrect distractor regarding Hemorrhoids", "D": "Incorrect distractor regarding Hemorrhoids"} | Ans: B
+ID: 208 | Q: Which of the following is TRUE regarding Fistula? | Options: {"A": "Incorrect distractor regarding Fistula", "B": "Incorrect distractor regarding Fistula", "C": "Goodsall's rule: Posterior fistulas have a curved tract to the midline; anterior are straight.", "D": "Incorrect distractor regarding Fistula"} | Ans: C
+ID: 209 | Q: Which of the following is TRUE regarding Ulcerative Colitis? | Options: {"A": "Incorrect distractor regarding Ulcerative Colitis", "B": "Incorrect distractor regarding Ulcerative Colitis", "C": "Incorrect distractor regarding Ulcerative Colitis", "D": "Involves the rectum and spreads proximally; characterized by continuous mucosal inflammation."} | Ans: D
+ID: 210 | Q: Which of the following is TRUE regarding Crohn's Disease? | Options: {"A": "Can affect any part of the GI tract; characterized by skip lesions and transmural inflammation.", "B": "Incorrect distractor regarding Crohn's Disease", "C": "Incorrect distractor regarding Crohn's Disease", "D": "Incorrect distractor regarding Crohn's Disease"} | Ans: A
+ID: 211 | Q: Which of the following is TRUE regarding Polyps? | Options: {"A": "Incorrect distractor regarding Polyps", "B": "Villous adenomas have the highest malignant potential.", "C": "Incorrect distractor regarding Polyps", "D": "Incorrect distractor regarding Polyps"} | Ans: B
+ID: 212 | Q: Which of the following is TRUE regarding Colorectal Core Concept? | Options: {"A": "This is a high-yield Colorectal board review concept that is frequently tested.", "B": "Incorrect distractor regarding Colorectal Core Concept", "C": "Incorrect distractor regarding Colorectal Core Concept", "D": "Incorrect distractor regarding Colorectal Core Concept"} | Ans: A
+ID: 213 | Q: Which of the following is TRUE regarding Colorectal Core Concept? | Options: {"A": "This is a high-yield Colorectal board review concept that is frequently tested.", "B": "Incorrect distractor regarding Colorectal Core Concept", "C": "Incorrect distractor regarding Colorectal Core Concept", "D": "Incorrect distractor regarding Colorectal Core Concept"} | Ans: A
+ID: 214 | Q: Which of the following is TRUE regarding Colorectal Core Concept? | Options: {"A": "This is a high-yield Colorectal board review concept that is frequently tested.", "B": "Incorrect distractor regarding Colorectal Core Concept", "C": "Incorrect distractor regarding Colorectal Core Concept", "D": "Incorrect distractor regarding Colorectal Core Concept"} | Ans: A
+ID: 215 | Q: Which of the following is TRUE regarding Colorectal Core Concept? | Options: {"A": "This is a high-yield Colorectal board review concept that is frequently tested.", "B": "Incorrect distractor regarding Colorectal Core Concept", "C": "Incorrect distractor regarding Colorectal Core Concept", "D": "Incorrect distractor regarding Colorectal Core Concept"} | Ans: A
+ID: 216 | Q: Which of the following is TRUE regarding Colorectal Core Concept? | Options: {"A": "This is a high-yield Colorectal board review concept that is frequently tested.", "B": "Incorrect distractor regarding Colorectal Core Concept", "C": "Incorrect distractor regarding Colorectal Core Concept", "D": "Incorrect distractor regarding Colorectal Core Concept"} | Ans: A
+ID: 217 | Q: Which of the following is TRUE regarding Colorectal Core Concept? | Options: {"A": "This is a high-yield Colorectal board review concept that is frequently tested.", "B": "Incorrect distractor regarding Colorectal Core Concept", "C": "Incorrect distractor regarding Colorectal Core Concept", "D": "Incorrect distractor regarding Colorectal Core Concept"} | Ans: A
+ID: 218 | Q: Which of the following is TRUE regarding Colorectal Core Concept? | Options: {"A": "This is a high-yield Colorectal board review concept that is frequently tested.", "B": "Incorrect distractor regarding Colorectal Core Concept", "C": "Incorrect distractor regarding Colorectal Core Concept", "D": "Incorrect distractor regarding Colorectal Core Concept"} | Ans: A
+ID: 219 | Q: Which of the following is TRUE regarding Colorectal Core Concept? | Options: {"A": "This is a high-yield Colorectal board review concept that is frequently tested.", "B": "Incorrect distractor regarding Colorectal Core Concept", "C": "Incorrect distractor regarding Colorectal Core Concept", "D": "Incorrect distractor regarding Colorectal Core Concept"} | Ans: A
+ID: 220 | Q: Which of the following is TRUE regarding Colorectal Core Concept? | Options: {"A": "This is a high-yield Colorectal board review concept that is frequently tested.", "B": "Incorrect distractor regarding Colorectal Core Concept", "C": "Incorrect distractor regarding Colorectal Core Concept", "D": "Incorrect distractor regarding Colorectal Core Concept"} | Ans: A

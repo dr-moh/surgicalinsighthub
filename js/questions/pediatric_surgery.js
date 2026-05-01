@@ -1,6 +1,7 @@
 if (!window.QUESTIONS) window.QUESTIONS = [];
 window.QUESTIONS.push(...[
-{
+[
+  {
     "specialty": "Pediatric Surgery",
     "topic": "Hypertrophic Pyloric Stenosis",
     "question": "A 4-week-old male infant presents with non-bilious projectile vomiting. Examination reveals a palpable 'olive-shaped' mass in the epigastrium. What is the classic metabolic abnormality associated with this condition?",
@@ -27,9 +28,10 @@ window.QUESTIONS.push(...[
       "R": "Core pediatric surgery topic.",
       "P": "Aggressive fluid resuscitation with NS + Potassium, followed by Ramstedt pyloromyotomy."
     },
-    "id": 1662
+    "id": 1662,
+    "_src_file": "pediatric_surgery.js"
   },
-{
+  {
     "specialty": "Pediatric Surgery",
     "topic": "Intussusception",
     "question": "Which of the following is the hallmark ultrasound finding and the standard initial treatment for uncomplicated pediatric intussusception?",
@@ -56,9 +58,10 @@ window.QUESTIONS.push(...[
       "R": "Most common cause of bowel obstruction in infants.",
       "P": "Order ultrasound and arrange for air enema in radiology."
     },
-    "id": 1663
+    "id": 1663,
+    "_src_file": "pediatric_surgery.js"
   },
-{
+  {
     "specialty": "Pediatric Surgery",
     "topic": "Hirschsprung Disease",
     "question": "What is the 'Gold Standard' for the diagnosis of Hirschsprung Disease?",
@@ -85,9 +88,10 @@ window.QUESTIONS.push(...[
       "R": "High-yield neonatal surgical topic.",
       "P": "Perform suction biopsy; if positive, plan for a pull-through procedure (e.g., Duhamel or Soave)."
     },
-    "id": 1664
+    "id": 1664,
+    "_src_file": "pediatric_surgery.js"
   },
-{
+  {
     "specialty": "Pediatric Surgery",
     "topic": "Malrotation and Volvulus",
     "question": "A 1-week-old infant presents with sudden-onset BILIOUS vomiting. An Upper GI series shows the 'corkscrew' appearance of the duodenum. what is the emergency surgical procedure required?",
@@ -114,9 +118,10 @@ window.QUESTIONS.push(...[
       "R": "Critical pediatric surgical emergency.",
       "P": "Immediate OR for laparotomy and Ladd's procedure."
     },
-    "id": 1665
+    "id": 1665,
+    "_src_file": "pediatric_surgery.js"
   },
-{
+  {
     "specialty": "Pediatric Surgery",
     "topic": "Tracheoesophageal Fistula (TEF)",
     "question": "What is the most common anatomical type of Esophageal Atresia and Tracheoesophageal Fistula (EA/TEF)?",
@@ -143,9 +148,10 @@ window.QUESTIONS.push(...[
       "R": "Foundational neonatal surgery.",
       "P": "Echocardiogram first to check for right-sided aortic arch, then surgical repair."
     },
-    "id": 1666
+    "id": 1666,
+    "_src_file": "pediatric_surgery.js"
   },
-{
+  {
     "specialty": "Pediatric Surgery",
     "topic": "Omphalocele vs Gastroschisis",
     "question": "Which of the following is TRUE regarding Gastroschisis compared to Omphalocele?",
@@ -172,9 +178,10 @@ window.QUESTIONS.push(...[
       "R": "Standard neonatal surgical comparison.",
       "P": "Silo placement followed by gradual reduction."
     },
-    "id": 1667
+    "id": 1667,
+    "_src_file": "pediatric_surgery.js"
   },
-{
+  {
     "specialty": "Pediatric Surgery",
     "topic": "Biliary Atresia",
     "question": "What is the preferred initial surgical procedure for a 6-week-old infant with confirmed Biliary Atresia?",
@@ -201,9 +208,10 @@ window.QUESTIONS.push(...[
       "R": "High-yield pediatric hepatobiliary topic.",
       "P": "Intraoperative cholangiogram to confirm diagnosis, followed by Kasai."
     },
-    "id": 1668
+    "id": 1668,
+    "_src_file": "pediatric_surgery.js"
   },
-{
+  {
     "specialty": "Pediatric Surgery",
     "topic": "Necrotizing Enterocolitis (NEC)",
     "question": "Which radiographic finding is pathognomonic for Necrotizing Enterocolitis (NEC)?",
@@ -230,9 +238,10 @@ window.QUESTIONS.push(...[
       "R": "Core neonatal surgical pathology.",
       "P": "Serial abdominal X-rays (every 6-8 hours) to monitor for perforation."
     },
-    "id": 1669
+    "id": 1669,
+    "_src_file": "pediatric_surgery.js"
   },
-{
+  {
     "specialty": "Pediatric Surgery",
     "topic": "Pediatric Renal Tumors",
     "question": "A 3-year-old child presents with a large, asymptomatic abdominal mass. On CT, the mass is found to arise from the kidney but does NOT cross the midline. What is the most likely diagnosis?",
@@ -259,9 +268,10 @@ window.QUESTIONS.push(...[
       "R": "High-yield pediatric oncology.",
       "P": "Nephrectomy and chemotherapy."
     },
-    "id": 1670
+    "id": 1670,
+    "_src_file": "pediatric_surgery.js"
   },
-{
+  {
     "specialty": "Pediatric Surgery",
     "topic": "Diaphragmatic Hernia",
     "question": "A neonate with a scaphoid abdomen presents with immediate respiratory distress and cyanosis. Breath sounds are absent on the left. What is the most likely diagnosis?",
@@ -288,99 +298,101 @@ window.QUESTIONS.push(...[
       "R": "Critical neonatal surgical condition.",
       "P": "Initial stabilization (Gentle ventilation, avoid bagging to prevent bowel distention) before surgical repair."
     },
-    "id": 1671
+    "id": 1671,
+    "_src_file": "pediatric_surgery.js"
+  },
+  {
+    "id": 803,
+    "specialty": "Pediatric Surgery",
+    "topic": "Comprhensive Surgery Revision conv.docx",
+    "question": "In neonates with congenital diaphragmatic hernia, which of the following statements is true?",
+    "options": {
+      "C": "An oxygen index of 20 is an indication for extracorporeal membrane oxygenation (ECMO).",
+      "E": "Mortality is the result of pulmonary hypoplasia."
+    },
+    "answer": "E",
+    "explanation": {
+      "correct": "The correct answer (E) accurately identifies that mortality in CDH is primarily due to pulmonary hypoplasia. This is the foundational understanding. The question’s options test this core concept. Option C is a common misconception – the oxygen index is a *relative* measure of oxygen demand, not a definitive ECMO trigger. While ECMO is often used, it’s based on a complex assessment of multiple factors, not just an oxygen index.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "sharp": {
+      "status": "ACCEPT",
+      "verified_answer": "E",
+      "set_the_stage": "This question assesses understanding of congenital diaphragmatic hernia (CDH) – a significant cause of morbidity and mortality in neonates. It probes knowledge of key pathophysiological mechanisms and management considerations, specifically regarding ECMO indication and the primary driver of mortality.",
+      "highlight_excellence": "The correct answer (E) accurately identifies that mortality in CDH is primarily due to pulmonary hypoplasia. This is the foundational understanding. The question’s options test this core concept. Option C is a common misconception – the oxygen index is a *relative* measure of oxygen demand, not a definitive ECMO trigger. While ECMO is often used, it’s based on a complex assessment of multiple factors, not just an oxygen index.",
+      "address_gaps": "Several gaps exist in the options. Option C is misleading and demonstrates a lack of understanding of the nuanced criteria for ECMO in CDH. The question could benefit from including options addressing the role of acidosis, respiratory support, and the importance of a comprehensive clinical assessment. Furthermore, a more detailed explanation of the pathophysiology of hypoplasia would be beneficial.",
+      "review_guidelines": "1. **Pathophysiology of CDH:** Understand the disruption of the diaphragm, leading to abdominal organs migrating into the chest and compressing the lungs, particularly the right lung. This results in hypoplasia, atelectasis, and pulmonary hypertension. 2. **ECMO Indication:** ECMO is indicated in severe CDH with persistent respiratory failure, characterized by high pulmonary arterial pressures, severe hypoxemia, and acidosis. The oxygen index is *one* piece of the puzzle, but not the sole determinant. 3. **Mortality Factors:** Recognize that mortality is primarily driven by pulmonary hypoplasia, but also influenced by acidosis, respiratory support failure, and associated complications. 4. **Clinical Assessment:** Emphasize the importance of a thorough clinical assessment including pH, PaO2, PaCO2, pulmonary artery pressures, and overall clinical stability.",
+      "plan": "Further education should focus on reinforcing the pathophysiology of CDH, the criteria for ECMO, and the importance of a holistic clinical approach. Case studies and simulations involving CDH patients would be valuable. Consider incorporating a detailed discussion of the hemodynamic monitoring and management strategies specific to this condition."
+    },
+    "guideline": "1. **Pathophysiology of CDH:** Understand the disruption of the diaphragm, leading to abdominal organs migrating into the chest and compressing the lungs, particularly the right lung. This results in hypoplasia, atelectasis, and pulmonary hypertension. 2. **ECMO Indication:** ECMO is indicated in severe CDH with persistent respiratory failure, characterized by high pulmonary arterial pressures, severe hypoxemia, and acidosis. The oxygen index is *one* piece of the puzzle, but not the sole determinant. 3. **Mortality Factors:** Recognize that mortality is primarily driven by pulmonary hypoplasia, but also influenced by acidosis, respiratory support failure, and associated complications. 4. **Clinical Assessment:** Emphasize the importance of a thorough clinical assessment including pH, PaO2, PaCO2, pulmonary artery pressures, and overall clinical stability.",
+    "takeaway": "PLAN: Further education should focus on reinforcing the pathophysiology of CDH, the criteria for ECMO, and the importance of a holistic clinical approach. Case studies and simulations involving CDH patients would be valuable. Consider incorporating a detailed discussion of the hemodynamic monitoring and management strategies specific to this condition.",
+    "_src_file": "pediatric_surgery.js"
+  },
+  {
+    "id": 806,
+    "specialty": "Pediatric Surgery",
+    "topic": "Comprhensive Surgery Revision conv.docx",
+    "question": "All of the following conditions are derived from the primitive embryonic foregut except:",
+    "options": {
+      "B": "Cystic adenomatoid malformation.",
+      "E": "Pulmonary sequestration."
+    },
+    "answer": "B",
+    "explanation": {
+      "correct": "The correct answer (B) – Cystic adenomatoid malformation (CAM) – is *derived* from the foregut. CAMs arise from the abnormal development of bronchial buds that originate from the foregut. The question’s distractors (Pulmonary sequestration) are correctly identified as having a different embryological origin – the lung mesenchyme.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "sharp": {
+      "status": "ACCEPT",
+      "verified_answer": "B",
+      "set_the_stage": "This question tests understanding of the embryological origins of congenital lung malformations. It’s a common pitfall question that relies on a solid grasp of foregut development and how anomalies arise from disruptions in this process.",
+      "highlight_excellence": "The correct answer (B) – Cystic adenomatoid malformation (CAM) – is *derived* from the foregut. CAMs arise from the abnormal development of bronchial buds that originate from the foregut. The question’s distractors (Pulmonary sequestration) are correctly identified as having a different embryological origin – the lung mesenchyme.",
+      "address_gaps": "The primary gap here is a potential misunderstanding of the foregut’s role in lung development. Students often conflate the foregut with the entire lung. A stronger understanding of the bronchial bud’s origin from the foregut is crucial. Furthermore, the question highlights the importance of recognizing the *source* of a congenital anomaly, not just the anomaly itself.",
+      "review_guidelines": "1. **Foregut Development:** Review the embryology of the foregut, specifically the formation of the bronchial buds and their connection to the foregut. 2. **Congenital Lung Anomalies:**  Understand the distinct embryological origins of different congenital lung malformations: – *Pulmonary sequestration:* Arises from the lung mesenchyme. – *Bronchogenic cysts:* Derived from persistent foregut structures. – *Cystic adenomatoid malformations (CAMs):* Also derived from foregut bronchial buds. – *Tetralogy of Fallot:* A complex cardiac defect with multiple embryological origins, including the foregut and outflow tract.",
+      "plan": "I recommend a focused review of embryological development of the lungs, emphasizing the origin of bronchial buds.  Case-based learning focusing on the clinical presentation and diagnostic workup of each congenital lung anomaly would be beneficial.  Specifically, students should be able to trace the developmental pathway from the foregut to the specific malformation."
+    },
+    "guideline": "1. **Foregut Development:** Review the embryology of the foregut, specifically the formation of the bronchial buds and their connection to the foregut. 2. **Congenital Lung Anomalies:**  Understand the distinct embryological origins of different congenital lung malformations: – *Pulmonary sequestration:* Arises from the lung mesenchyme. – *Bronchogenic cysts:* Derived from persistent foregut structures. – *Cystic adenomatoid malformations (CAMs):* Also derived from foregut bronchial buds. – *Tetralogy of Fallot:* A complex cardiac defect with multiple embryological origins, including the foregut and outflow tract.",
+    "takeaway": "PLAN: I recommend a focused review of embryological development of the lungs, emphasizing the origin of bronchial buds.  Case-based learning focusing on the clinical presentation and diagnostic workup of each congenital lung anomaly would be beneficial.  Specifically, students should be able to trace the developmental pathway from the foregut to the specific malformation.",
+    "_src_file": "pediatric_surgery.js"
+  },
+  {
+    "id": 805,
+    "specialty": "Pediatric Surgery",
+    "topic": "Comprhensive Surgery Revision conv.docx",
+    "question": "The most common type of congenital diaphragmatic hernia is caused by:",
+    "options": {
+      "B": "Eventration of the diaphragm in the fetus.",
+      "E": "A defect through the pleuroperitoneal fold."
+    },
+    "answer": "E",
+    "explanation": {
+      "correct": "The correct answer (E) accurately identifies the primary etiology of CDH – a defect through the pleuroperitoneal fold. This fold normally separates the pleural and peritoneal cavities, and its disruption allows abdominal contents to herniate into the chest.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "sharp": {
+      "status": "ACCEPT",
+      "verified_answer": "E",
+      "set_the_stage": "This question assesses understanding of congenital diaphragmatic hernia (CDH), a significant cause of morbidity and mortality in newborns. It’s crucial to differentiate between the underlying mechanisms of this complex condition.",
+      "highlight_excellence": "The correct answer (E) accurately identifies the primary etiology of CDH – a defect through the pleuroperitoneal fold. This fold normally separates the pleural and peritoneal cavities, and its disruption allows abdominal contents to herniate into the chest.",
+      "address_gaps": "Option B, ‘Eventration of the diaphragm in the fetus,’ describes eventration, a related but distinct condition where the diaphragm is thin and poorly developed, not necessarily a full herniation.  It’s a common finding *within* CDH, but not the primary cause.  The question specifically asks for the *most common type* of CDH, focusing on the fundamental defect.",
+      "review_guidelines": "1. **Understanding of Diaphragm Anatomy:** Reinforce knowledge of the pleuroperitoneal fold and its normal function. 2. **CDH Classification:**  Differentiate between complete CDH (full herniation) and partial CDH. 3. **Pathophysiology:**  Recognize that CDH often leads to pulmonary hypertension due to compression of the pulmonary veins. 4. **Differential Diagnosis:**  Consider other diaphragmatic defects (e.g., Bochdalek hernia) and eventration.",
+      "plan": "I recommend a review of embryologic development of the diaphragm, focusing on the formation and function of the pleuroperitoneal fold.  Case studies illustrating the clinical presentation and management of CDH are also beneficial.  Specifically, review the pathophysiology linking diaphragmatic defect to pulmonary hypertension."
+    },
+    "guideline": "1. **Understanding of Diaphragm Anatomy:** Reinforce knowledge of the pleuroperitoneal fold and its normal function. 2. **CDH Classification:**  Differentiate between complete CDH (full herniation) and partial CDH. 3. **Pathophysiology:**  Recognize that CDH often leads to pulmonary hypertension due to compression of the pulmonary veins. 4. **Differential Diagnosis:**  Consider other diaphragmatic defects (e.g., Bochdalek hernia) and eventration.",
+    "takeaway": "PLAN: I recommend a review of embryologic development of the diaphragm, focusing on the formation and function of the pleuroperitoneal fold.  Case studies illustrating the clinical presentation and management of CDH are also beneficial.  Specifically, review the pathophysiology linking diaphragmatic defect to pulmonary hypertension.",
+    "_src_file": "pediatric_surgery.js"
   }
-,
-{
-  "id": 803,
-  "specialty": "Pediatric Surgery",
-  "topic": "Comprhensive Surgery Revision conv.docx",
-  "question": "In neonates with congenital diaphragmatic hernia, which of the following statements is true?",
-  "options": {
-    "C": "An oxygen index of 20 is an indication for extracorporeal membrane oxygenation (ECMO).",
-    "E": "Mortality is the result of pulmonary hypoplasia."
-  },
-  "answer": "E",
-  "explanation": {
-    "correct": "The correct answer (E) accurately identifies that mortality in CDH is primarily due to pulmonary hypoplasia. This is the foundational understanding. The question\u2019s options test this core concept. Option C is a common misconception \u2013 the oxygen index is a *relative* measure of oxygen demand, not a definitive ECMO trigger. While ECMO is often used, it\u2019s based on a complex assessment of multiple factors, not just an oxygen index.",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp": {
-    "status": "ACCEPT",
-    "verified_answer": "E",
-    "set_the_stage": "This question assesses understanding of congenital diaphragmatic hernia (CDH) \u2013 a significant cause of morbidity and mortality in neonates. It probes knowledge of key pathophysiological mechanisms and management considerations, specifically regarding ECMO indication and the primary driver of mortality.",
-    "highlight_excellence": "The correct answer (E) accurately identifies that mortality in CDH is primarily due to pulmonary hypoplasia. This is the foundational understanding. The question\u2019s options test this core concept. Option C is a common misconception \u2013 the oxygen index is a *relative* measure of oxygen demand, not a definitive ECMO trigger. While ECMO is often used, it\u2019s based on a complex assessment of multiple factors, not just an oxygen index.",
-    "address_gaps": "Several gaps exist in the options. Option C is misleading and demonstrates a lack of understanding of the nuanced criteria for ECMO in CDH. The question could benefit from including options addressing the role of acidosis, respiratory support, and the importance of a comprehensive clinical assessment. Furthermore, a more detailed explanation of the pathophysiology of hypoplasia would be beneficial.",
-    "review_guidelines": "1. **Pathophysiology of CDH:** Understand the disruption of the diaphragm, leading to abdominal organs migrating into the chest and compressing the lungs, particularly the right lung. This results in hypoplasia, atelectasis, and pulmonary hypertension. 2. **ECMO Indication:** ECMO is indicated in severe CDH with persistent respiratory failure, characterized by high pulmonary arterial pressures, severe hypoxemia, and acidosis. The oxygen index is *one* piece of the puzzle, but not the sole determinant. 3. **Mortality Factors:** Recognize that mortality is primarily driven by pulmonary hypoplasia, but also influenced by acidosis, respiratory support failure, and associated complications. 4. **Clinical Assessment:** Emphasize the importance of a thorough clinical assessment including pH, PaO2, PaCO2, pulmonary artery pressures, and overall clinical stability.",
-    "plan": "Further education should focus on reinforcing the pathophysiology of CDH, the criteria for ECMO, and the importance of a holistic clinical approach. Case studies and simulations involving CDH patients would be valuable. Consider incorporating a detailed discussion of the hemodynamic monitoring and management strategies specific to this condition."
-  },
-  "guideline": "1. **Pathophysiology of CDH:** Understand the disruption of the diaphragm, leading to abdominal organs migrating into the chest and compressing the lungs, particularly the right lung. This results in hypoplasia, atelectasis, and pulmonary hypertension. 2. **ECMO Indication:** ECMO is indicated in severe CDH with persistent respiratory failure, characterized by high pulmonary arterial pressures, severe hypoxemia, and acidosis. The oxygen index is *one* piece of the puzzle, but not the sole determinant. 3. **Mortality Factors:** Recognize that mortality is primarily driven by pulmonary hypoplasia, but also influenced by acidosis, respiratory support failure, and associated complications. 4. **Clinical Assessment:** Emphasize the importance of a thorough clinical assessment including pH, PaO2, PaCO2, pulmonary artery pressures, and overall clinical stability.",
-  "takeaway": "PLAN: Further education should focus on reinforcing the pathophysiology of CDH, the criteria for ECMO, and the importance of a holistic clinical approach. Case studies and simulations involving CDH patients would be valuable. Consider incorporating a detailed discussion of the hemodynamic monitoring and management strategies specific to this condition."
-}
-,
-{
-  "id": 806,
-  "specialty": "Pediatric Surgery",
-  "topic": "Comprhensive Surgery Revision conv.docx",
-  "question": "All of the following conditions are derived from the primitive embryonic foregut except:",
-  "options": {
-    "B": "Cystic adenomatoid malformation.",
-    "E": "Pulmonary sequestration."
-  },
-  "answer": "B",
-  "explanation": {
-    "correct": "The correct answer (B) \u2013 Cystic adenomatoid malformation (CAM) \u2013 is *derived* from the foregut. CAMs arise from the abnormal development of bronchial buds that originate from the foregut. The question\u2019s distractors (Pulmonary sequestration) are correctly identified as having a different embryological origin \u2013 the lung mesenchyme.",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp": {
-    "status": "ACCEPT",
-    "verified_answer": "B",
-    "set_the_stage": "This question tests understanding of the embryological origins of congenital lung malformations. It\u2019s a common pitfall question that relies on a solid grasp of foregut development and how anomalies arise from disruptions in this process.",
-    "highlight_excellence": "The correct answer (B) \u2013 Cystic adenomatoid malformation (CAM) \u2013 is *derived* from the foregut. CAMs arise from the abnormal development of bronchial buds that originate from the foregut. The question\u2019s distractors (Pulmonary sequestration) are correctly identified as having a different embryological origin \u2013 the lung mesenchyme.",
-    "address_gaps": "The primary gap here is a potential misunderstanding of the foregut\u2019s role in lung development. Students often conflate the foregut with the entire lung. A stronger understanding of the bronchial bud\u2019s origin from the foregut is crucial. Furthermore, the question highlights the importance of recognizing the *source* of a congenital anomaly, not just the anomaly itself.",
-    "review_guidelines": "1. **Foregut Development:** Review the embryology of the foregut, specifically the formation of the bronchial buds and their connection to the foregut. 2. **Congenital Lung Anomalies:**  Understand the distinct embryological origins of different congenital lung malformations: \u2013 *Pulmonary sequestration:* Arises from the lung mesenchyme. \u2013 *Bronchogenic cysts:* Derived from persistent foregut structures. \u2013 *Cystic adenomatoid malformations (CAMs):* Also derived from foregut bronchial buds. \u2013 *Tetralogy of Fallot:* A complex cardiac defect with multiple embryological origins, including the foregut and outflow tract.",
-    "plan": "I recommend a focused review of embryological development of the lungs, emphasizing the origin of bronchial buds.  Case-based learning focusing on the clinical presentation and diagnostic workup of each congenital lung anomaly would be beneficial.  Specifically, students should be able to trace the developmental pathway from the foregut to the specific malformation."
-  },
-  "guideline": "1. **Foregut Development:** Review the embryology of the foregut, specifically the formation of the bronchial buds and their connection to the foregut. 2. **Congenital Lung Anomalies:**  Understand the distinct embryological origins of different congenital lung malformations: \u2013 *Pulmonary sequestration:* Arises from the lung mesenchyme. \u2013 *Bronchogenic cysts:* Derived from persistent foregut structures. \u2013 *Cystic adenomatoid malformations (CAMs):* Also derived from foregut bronchial buds. \u2013 *Tetralogy of Fallot:* A complex cardiac defect with multiple embryological origins, including the foregut and outflow tract.",
-  "takeaway": "PLAN: I recommend a focused review of embryological development of the lungs, emphasizing the origin of bronchial buds.  Case-based learning focusing on the clinical presentation and diagnostic workup of each congenital lung anomaly would be beneficial.  Specifically, students should be able to trace the developmental pathway from the foregut to the specific malformation."
-}
-,
-{
-  "id": 805,
-  "specialty": "Pediatric Surgery",
-  "topic": "Comprhensive Surgery Revision conv.docx",
-  "question": "The most common type of congenital diaphragmatic hernia is caused by:",
-  "options": {
-    "B": "Eventration of the diaphragm in the fetus.",
-    "E": "A defect through the pleuroperitoneal fold."
-  },
-  "answer": "E",
-  "explanation": {
-    "correct": "The correct answer (E) accurately identifies the primary etiology of CDH \u2013 a defect through the pleuroperitoneal fold. This fold normally separates the pleural and peritoneal cavities, and its disruption allows abdominal contents to herniate into the chest.",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp": {
-    "status": "ACCEPT",
-    "verified_answer": "E",
-    "set_the_stage": "This question assesses understanding of congenital diaphragmatic hernia (CDH), a significant cause of morbidity and mortality in newborns. It\u2019s crucial to differentiate between the underlying mechanisms of this complex condition.",
-    "highlight_excellence": "The correct answer (E) accurately identifies the primary etiology of CDH \u2013 a defect through the pleuroperitoneal fold. This fold normally separates the pleural and peritoneal cavities, and its disruption allows abdominal contents to herniate into the chest.",
-    "address_gaps": "Option B, \u2018Eventration of the diaphragm in the fetus,\u2019 describes eventration, a related but distinct condition where the diaphragm is thin and poorly developed, not necessarily a full herniation.  It\u2019s a common finding *within* CDH, but not the primary cause.  The question specifically asks for the *most common type* of CDH, focusing on the fundamental defect.",
-    "review_guidelines": "1. **Understanding of Diaphragm Anatomy:** Reinforce knowledge of the pleuroperitoneal fold and its normal function. 2. **CDH Classification:**  Differentiate between complete CDH (full herniation) and partial CDH. 3. **Pathophysiology:**  Recognize that CDH often leads to pulmonary hypertension due to compression of the pulmonary veins. 4. **Differential Diagnosis:**  Consider other diaphragmatic defects (e.g., Bochdalek hernia) and eventration.",
-    "plan": "I recommend a review of embryologic development of the diaphragm, focusing on the formation and function of the pleuroperitoneal fold.  Case studies illustrating the clinical presentation and management of CDH are also beneficial.  Specifically, review the pathophysiology linking diaphragmatic defect to pulmonary hypertension."
-  },
-  "guideline": "1. **Understanding of Diaphragm Anatomy:** Reinforce knowledge of the pleuroperitoneal fold and its normal function. 2. **CDH Classification:**  Differentiate between complete CDH (full herniation) and partial CDH. 3. **Pathophysiology:**  Recognize that CDH often leads to pulmonary hypertension due to compression of the pulmonary veins. 4. **Differential Diagnosis:**  Consider other diaphragmatic defects (e.g., Bochdalek hernia) and eventration.",
-  "takeaway": "PLAN: I recommend a review of embryologic development of the diaphragm, focusing on the formation and function of the pleuroperitoneal fold.  Case studies illustrating the clinical presentation and management of CDH are also beneficial.  Specifically, review the pathophysiology linking diaphragmatic defect to pulmonary hypertension."
-}
+]
 ]);
