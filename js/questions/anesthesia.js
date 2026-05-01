@@ -1,25 +1,34 @@
 if (!window.QUESTIONS) window.QUESTIONS = [];
 window.QUESTIONS.push(...[
 {
+    "id": 20039,
     "specialty": "Anesthesia",
-    "topic": "Qq p Lippincott\u2019s ANESTHESIA REVIEW conv.docx",
-    "question": "Which of the following is the most effective way to reduce renal failure in a patient having an abdominal aortic aneurysm repair?",
+    "topic": "Anesthesia Review",
+    "question": "A 30-year-old woman who underwent a knee arthroscopy has postoperative nausea and vomiting (PONV) in the postanesthesia care unit (PACU). Per report, she received ondansetron 4 mg IV 30 minutes prior to the conclusion of her procedure. Which of the following treatments is most appropriate for managing her PONV in the PACU?",
     "options": {
-      "A": "Fluid bolus prior to aortic clamping",
-      "B": "Fluid bolus after aortic clamp release"
+      "A": "Scopolamine patch",
+      "B": "Dexamethasone",
+      "C": "Ondansetron",
+      "D": "Promethazine"
     },
     "answer": "D",
     "explanation": {
-      "correct": "Scopolamine, an anticholinergic drug, is often applied as a transdermal patch preoperatively for the prevention of postoperative nausea and vomiting. However, like atropine, and unlike glycopyrrolate, scopolamine passes through the blood\u2013brain barrier and can cause confusion, especially in the elderly. Hence, application of scopolamine patch should be avoided in the elderly. Treatment of scopolamine-induced confusion may require administration of physostigmine.",
-      "A": "",
-      "B": "",
-      "C": "",
-      "D": "",
+      "correct": "When choosing a rescue antiemetic for patients with PONV, both the class of drug and the timing of administration are factors. If an adequate dose of antiemetic given at the appropriate time proves ineffective, simply giving more of the same class of drug in the PACU is unlikely to be of significant benefit. If no prophylactic drug was given, the recommended treatment is a low-dose 5-HT3 antagonist, ondansetron. Of the choices provided in the vignette, promethazine is likely to be the most effective rescue antiemetic. Since the patient received ondansetron for prophylaxis, additional ondansetron is unlikely to be effective.",
+      "A": "Scopolamine is more useful as prophylaxis, not rescue therapy.",
+      "B": "Dexamethasone is primarily preventive and not ideal as PACU rescue.",
+      "C": "Additional ondansetron from the same class is unlikely to help after failed prophylaxis.",
+      "D": "Promethazine is a reasonable rescue antiemetic with a different mechanism.",
       "E": ""
     },
-    "guideline": "Source: Qq p Lippincott\u2019s ANESTHESIA REVIEW conv.docx",
-    "takeaway": "Key Concept: Scopolamine, an anticholinergic drug, is often applied as a transdermal patch preoperatively for the...",
-    "id": 301
+    "guideline": "Lippincott's Anesthesia Review 2026",
+    "takeaway": "Rescue PONV therapy should use a different antiemetic class than the prophylactic agent.",
+    "sharp_metadata": {
+      "S": "PONV in PACU after prophylactic ondansetron.",
+      "H": "Promethazine is the best rescue choice because it uses a different mechanism.",
+      "A": "Scopolamine and dexamethasone are better suited for prevention than rescue.",
+      "R": "Avoid repeating the same antiemetic class when prophylaxis has failed.",
+      "P": "Use rescue therapy from a different class when prophylaxis fails."
+    }
   },
 {
     "specialty": "Anesthesia",
