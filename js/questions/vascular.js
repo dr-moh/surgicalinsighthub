@@ -579,5 +579,69 @@ window.QUESTIONS.push(...[
       "P": "Treat with exercise therapy; if failing, consider PTA/Stent or Fem-Pop bypass."
     },
     "id": 1601
-  }
+  },
+{
+  "id": 404,
+  "specialty": "Vascular",
+  "topic": "rush.docx",
+  "question": "A 70-kg man with pyloric obstruction secondary to ulcer disease is admitted to the hospital for resuscitation after 1 week of prolonged vomiting. What metabolic disturbance is expected?",
+  "options": {
+    "A": "Hypokalemic, hyperchloremic metabolic acidosis",
+    "B": "Hyperkalemic, hypochloremic metabolic alkalosis",
+    "C": "Hyperkalemic, hyperchloremic metabolic acidosis",
+    "D": "Hypokalemic, hypochloremic metabolic alkalosis",
+    "E": "None of the above"
+  },
+  "answer": "D",
+  "explanation": {
+    "correct": "The correct answer, 'Hypokalemic, hypochloremic metabolic alkalosis,' accurately reflects the physiological consequences of prolonged vomiting due to pyloric obstruction. The loss of gastric acid (HCl) and potassium (K+) leads to a contraction alkalosis and a shift of intracellular potassium to extracellular space in exchange for hydrogen ions, exacerbating the alkalosis and hypokalemia.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp": {
+    "status": "ACCEPT",
+    "verified_answer": "D",
+    "set_the_stage": "This question probes a classic and high-yield acid-base and electrolyte disturbance encountered in surgical patients, specifically related to upper gastrointestinal losses. Understanding the pathophysiology of pyloric obstruction and prolonged vomiting is key to predicting the resulting metabolic derangements.",
+    "highlight_excellence": "The correct answer, 'Hypokalemic, hypochloremic metabolic alkalosis,' accurately reflects the physiological consequences of prolonged vomiting due to pyloric obstruction. The loss of gastric acid (HCl) and potassium (K+) leads to a contraction alkalosis and a shift of intracellular potassium to extracellular space in exchange for hydrogen ions, exacerbating the alkalosis and hypokalemia.",
+    "address_gaps": "A common pitfall is confusing the electrolyte and acid-base status. While vomiting leads to loss of HCl, which would intuitively suggest acidosis, the body's compensatory mechanisms and the loss of potassium are crucial. The hypochloremia is a direct result of HCl loss. The hypokalemia is due to direct loss in vomitus and also due to renal wasting of potassium in an attempt to conserve hydrogen ions in the setting of alkalosis. The alkalosis itself is driven by the loss of acid and the subsequent shift of hydrogen ions into cells, leaving the extracellular fluid more alkaline. The body's response to hypokalemia also involves the kidneys exchanging potassium for hydrogen, further contributing to alkalosis.",
+    "review_guidelines": "When evaluating patients with prolonged vomiting, especially from gastric outlet obstruction, always consider the following: 1. **Acid Loss:** Gastric fluid is rich in HCl. 2. **Potassium Loss:** Vomitus contains significant amounts of potassium. 3. **Volume Depletion:** Leads to renal conservation of sodium, which is coupled with hydrogen and potassium excretion. 4. **Paradoxical Aciduria:** The kidneys attempt to excrete bicarbonate to correct alkalosis, but in the setting of volume depletion and hypokalemia, they may paradoxically excrete acidic urine. 5. **Contraction Alkalosis:** As the extracellular fluid volume decreases, the concentration of bicarbonate increases, leading to alkalosis.",
+    "plan": "For future encounters, visualize the stomach contents being lost: HCl and K+. Then, consider how the body compensates: renal mechanisms to retain sodium and excrete acid/potassium, and intracellular shifts of ions. This systematic approach will solidify the understanding of hypokalemic, hypochloremic metabolic alkalosis in this clinical scenario."
+  },
+  "guideline": "When evaluating patients with prolonged vomiting, especially from gastric outlet obstruction, always consider the following: 1. **Acid Loss:** Gastric fluid is rich in HCl. 2. **Potassium Loss:** Vomitus contains significant amounts of potassium. 3. **Volume Depletion:** Leads to renal conservation of sodium, which is coupled with hydrogen and potassium excretion. 4. **Paradoxical Aciduria:** The kidneys attempt to excrete bicarbonate to correct alkalosis, but in the setting of volume depletion and hypokalemia, they may paradoxically excrete acidic urine. 5. **Contraction Alkalosis:** As the extracellular fluid volume decreases, the concentration of bicarbonate increases, leading to alkalosis.",
+  "takeaway": "PLAN: For future encounters, visualize the stomach contents being lost: HCl and K+. Then, consider how the body compensates: renal mechanisms to retain sodium and excrete acid/potassium, and intracellular shifts of ions. This systematic approach will solidify the understanding of hypokalemic, hypochloremic metabolic alkalosis in this clinical scenario."
+}
+,
+{
+  "id": 401,
+  "specialty": "Vascular",
+  "topic": "rush.docx",
+  "question": "A unit of blood could be transfused most rapidly through which of the following vascular access catheters?",
+  "options": {
+    "D": "A 16-gauge, 3-cm peripheral IV in the right antecubital fossa",
+    "E": "An 18-gauge, 3-cm peripheral IV in the right antecubital fossa"
+  },
+  "answer": "E",
+  "explanation": {
+    "correct": "The correct answer (E) \u2013 an 18-gauge, 3-cm peripheral IV \u2013 is the optimal choice. An 18-gauge catheter provides significantly greater cross-sectional area for flow compared to a 16-gauge catheter. This translates to a substantially higher flow rate, crucial for rapid blood replacement. The 3cm length is also appropriate for peripheral access.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp": {
+    "status": "ACCEPT",
+    "verified_answer": "E",
+    "set_the_stage": "This question assesses understanding of vascular access catheters and their suitability for rapid blood transfusion. Rapid transfusion demands maximal flow rates, which are directly related to catheter diameter and venous access site.",
+    "highlight_excellence": "The correct answer (E) \u2013 an 18-gauge, 3-cm peripheral IV \u2013 is the optimal choice. An 18-gauge catheter provides significantly greater cross-sectional area for flow compared to a 16-gauge catheter. This translates to a substantially higher flow rate, crucial for rapid blood replacement. The 3cm length is also appropriate for peripheral access.",
+    "address_gaps": "The incorrect answer (D) \u2013 a 16-gauge catheter \u2013 represents a critical gap in understanding. A 16-gauge catheter has a smaller lumen, severely limiting flow. Furthermore, the provided options are simplistic and don't account for factors like venous pressure and potential for thrombosis. The question could be strengthened by including options representing larger bore catheters (e.g., 20-gauge or larger) or central venous catheters.",
+    "review_guidelines": "1. **Catheter Gauge & Flow:** Larger gauge catheters (e.g., 18G, 16G) allow for significantly higher flow rates than smaller gauges (e.g., 22G, 24G).  Flow is proportional to the cross-sectional area of the lumen. 2. **Peripheral vs. Central Access:** Peripheral IVs (arms) are suitable for smaller volume transfusions. Central venous access (e.g., subclavian, internal jugular) is preferred for rapid, large-volume transfusions due to higher venous pressure and larger vessel diameter. 3. **Considerations for Rapid Transfusion:**  Minimize occlusion risk, maximize flow, and maintain adequate venous return.  Central lines are generally favored for rapid resuscitation.",
+    "plan": "Further education should focus on the relationship between catheter gauge, flow rate, and venous access site selection. Clinical scenarios involving hemorrhage or significant blood loss should be used to reinforce this knowledge.  Simulations using vascular access devices are highly recommended."
+  },
+  "guideline": "1. **Catheter Gauge & Flow:** Larger gauge catheters (e.g., 18G, 16G) allow for significantly higher flow rates than smaller gauges (e.g., 22G, 24G).  Flow is proportional to the cross-sectional area of the lumen. 2. **Peripheral vs. Central Access:** Peripheral IVs (arms) are suitable for smaller volume transfusions. Central venous access (e.g., subclavian, internal jugular) is preferred for rapid, large-volume transfusions due to higher venous pressure and larger vessel diameter. 3. **Considerations for Rapid Transfusion:**  Minimize occlusion risk, maximize flow, and maintain adequate venous return.  Central lines are generally favored for rapid resuscitation.",
+  "takeaway": "PLAN: Further education should focus on the relationship between catheter gauge, flow rate, and venous access site selection. Clinical scenarios involving hemorrhage or significant blood loss should be used to reinforce this knowledge.  Simulations using vascular access devices are highly recommended."
+}
 ]);

@@ -289,5 +289,101 @@ window.QUESTIONS.push(...[
       "P": "Bowel rest, IV fluids, and observation; if peritonitic, proceed to surgery."
     },
     "id": 1691
-  }
+  },
+{
+  "id": 202,
+  "specialty": "Colorectal",
+  "topic": "rush.docx",
+  "question": "With regard to diabetes insipidus, which of the following statements is true?",
+  "options": {
+    "A": "Diabetes insipidus causes hypervolemic hyponatremia.",
+    "D": "Alcohol intoxication can mimic diabetes insipidus.",
+    "E": "Lithium administration could induce central diabetes insipidus."
+  },
+  "answer": "D",
+  "explanation": {
+    "correct": "The correct answer, 'Alcohol intoxication can mimic diabetes insipidus,' is high-yield because alcohol is a well-known ADH (antidiuretic hormone) inhibitor. By suppressing ADH release, alcohol leads to increased free water excretion, mimicking the polyuria seen in DI. This is a common clinical scenario that can confuse initial assessments.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp": {
+    "status": "ACCEPT",
+    "verified_answer": "D",
+    "set_the_stage": "This question probes a fundamental understanding of the pathophysiology and clinical presentations of diabetes insipidus (DI), a condition characterized by the inability to concentrate urine, leading to polyuria and polydipsia. Recognizing its mimics and potential etiologies is crucial for accurate diagnosis and management.",
+    "highlight_excellence": "The correct answer, 'Alcohol intoxication can mimic diabetes insipidus,' is high-yield because alcohol is a well-known ADH (antidiuretic hormone) inhibitor. By suppressing ADH release, alcohol leads to increased free water excretion, mimicking the polyuria seen in DI. This is a common clinical scenario that can confuse initial assessments.",
+    "address_gaps": "Option A is incorrect because DI typically leads to hypernatremia (due to free water loss) and can result in hypovolemia if fluid intake doesn't compensate. Hypervolemic hyponatremia is characteristic of conditions like SIADH or heart failure. Option E is incorrect; while lithium is a known cause of nephrogenic DI (impaired kidney response to ADH), it does not typically induce central DI (ADH deficiency).",
+    "review_guidelines": "When evaluating questions about DI, focus on the core mechanisms: ADH deficiency (central DI) or resistance (nephrogenic DI). Consider common causes and mimics. Think about the electrolyte and volume status implications of each. Differentiating DI from other causes of polyuria (e.g., primary polydipsia) is also a key learning objective.",
+    "plan": "For future questions on DI, ensure a comprehensive understanding of: 1. The role of ADH in water balance. 2. The distinction between central and nephrogenic DI. 3. Common etiologies for both types (e.g., head trauma, surgery, tumors for central; lithium, hypercalcemia for nephrogenic). 4. Key diagnostic tests (water deprivation test, ADH levels, response to desmopressin). 5. Important mimics like primary polydipsia and psychogenic polydipsia. 6. The impact on serum sodium and osmolality."
+  },
+  "guideline": "When evaluating questions about DI, focus on the core mechanisms: ADH deficiency (central DI) or resistance (nephrogenic DI). Consider common causes and mimics. Think about the electrolyte and volume status implications of each. Differentiating DI from other causes of polyuria (e.g., primary polydipsia) is also a key learning objective.",
+  "takeaway": "PLAN: For future questions on DI, ensure a comprehensive understanding of: 1. The role of ADH in water balance. 2. The distinction between central and nephrogenic DI. 3. Common etiologies for both types (e.g., head trauma, surgery, tumors for central; lithium, hypercalcemia for nephrogenic). 4. Key diagnostic tests (water deprivation test, ADH levels, response to desmopressin). 5. Important mimics like primary polydipsia and psychogenic polydipsia. 6. The impact on serum sodium and osmolality."
+}
+,
+{
+  "id": 201,
+  "specialty": "Colorectal",
+  "topic": "rush.docx",
+  "question": "Which of the following statements regarding changes in volume status of the ECF compartment is true?",
+  "options": {
+    "A": "Hyponatremia is diagnostic of excess ECF volume.",
+    "B": "Hypernatremia is diagnostic of depletion of ECF volume.",
+    "E": "The concentration of serum sodium is directly related to extracellular volume."
+  },
+  "answer": "Letter C",
+  "explanation": {
+    "correct": "The correct answer (C) accurately reflects the principle that changes in serum sodium concentration are *primarily* driven by alterations in extracellular fluid volume, not simply a direct reflection of volume itself. This demonstrates a solid grasp of the complex interplay between sodium, water, and ECF volume.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp": {
+    "status": "ACCEPT",
+    "verified_answer": "Letter C",
+    "set_the_stage": "This question assesses understanding of volume status assessment, a cornerstone of critical care and surgical patient management. Recognizing the relationship between electrolyte abnormalities and ECF volume is crucial for guiding fluid resuscitation and treatment strategies.",
+    "highlight_excellence": "The correct answer (C) accurately reflects the principle that changes in serum sodium concentration are *primarily* driven by alterations in extracellular fluid volume, not simply a direct reflection of volume itself. This demonstrates a solid grasp of the complex interplay between sodium, water, and ECF volume.",
+    "address_gaps": "Options A and B are frequently misconstrued. Hyponatremia can be caused by both volume depletion *and* excessive water intake, making it a non-specific indicator. Similarly, hypernatremia can be caused by volume expansion. Option E is an oversimplification; while there's a correlation, it\u2019s not a direct, linear relationship and doesn\u2019t account for factors like osmotic shifts.",
+    "review_guidelines": "1. **Assess ECF Volume:** Utilize clinical signs (edema, jugular venous distension, orthostatic hypotension), physical exam findings (tachycardia, rales), and laboratory data (serum creatinine, BUN, fractional excretion of sodium - FEENa) to determine the degree of ECF volume depletion or expansion. 2. **Sodium Interpretation:** Understand that changes in serum sodium are *secondary* to volume shifts.  A low sodium suggests volume depletion, while a high sodium suggests volume expansion. 3. **FEENa:** This is a more sensitive marker of true volume status than BUN/Creatinine ratio, especially in patients with renal dysfunction. 4. **Consider Osmolality:** Total body osmolality provides a more accurate reflection of the overall fluid balance than serum sodium alone, particularly in patients with significant edema or burns.",
+    "plan": "Implement a structured approach to volume assessment: 1. Initial Assessment: Quickly assess for signs of hypotension, tachycardia, and respiratory distress. 2. Fluid Resuscitation: Initiate with crystalloid solutions (e.g., normal saline, lactated Ringer's) based on the suspected volume deficit. 3. Monitor Response: Closely monitor vital signs, urine output, and serum electrolytes. 4. Adjust Fluid Rate: Adjust the fluid rate based on the patient's response and ongoing assessment. Consider adding albumin if hypovolemia persists despite crystalloid resuscitation."
+  },
+  "guideline": "1. **Assess ECF Volume:** Utilize clinical signs (edema, jugular venous distension, orthostatic hypotension), physical exam findings (tachycardia, rales), and laboratory data (serum creatinine, BUN, fractional excretion of sodium - FEENa) to determine the degree of ECF volume depletion or expansion. 2. **Sodium Interpretation:** Understand that changes in serum sodium are *secondary* to volume shifts.  A low sodium suggests volume depletion, while a high sodium suggests volume expansion. 3. **FEENa:** This is a more sensitive marker of true volume status than BUN/Creatinine ratio, especially in patients with renal dysfunction. 4. **Consider Osmolality:** Total body osmolality provides a more accurate reflection of the overall fluid balance than serum sodium alone, particularly in patients with significant edema or burns.",
+  "takeaway": "PLAN: Implement a structured approach to volume assessment: 1. Initial Assessment: Quickly assess for signs of hypotension, tachycardia, and respiratory distress. 2. Fluid Resuscitation: Initiate with crystalloid solutions (e.g., normal saline, lactated Ringer's) based on the suspected volume deficit. 3. Monitor Response: Closely monitor vital signs, urine output, and serum electrolytes. 4. Adjust Fluid Rate: Adjust the fluid rate based on the patient's response and ongoing assessment. Consider adding albumin if hypovolemia persists despite crystalloid resuscitation."
+}
+,
+{
+  "id": 203,
+  "specialty": "Colorectal",
+  "topic": "Infectious Colitis",
+  "question": "Which of the following is true regarding the pathophysiology of C. difficile?",
+  "options": {
+    "A": "Antimicrobial agents with activity against C. difficile spores after contact with an infected patient.",
+    "B": "A patient\u2019s inability to produce antibody to toxin A is a significant predictor of recurrent disease.",
+    "C": "Studies have suggested that gastric acid suppression (PPIs) may be protective.",
+    "D": "Alcohol-based hand sanitizers are effective in removing spores."
+  },
+  "answer": "B",
+  "explanation": {
+    "correct": "Humoral immunity against Toxin A protects against clinical recurrence.",
+    "A": "Incorrect; spores are highly resistant to standard antimicrobials.",
+    "B": "Correct; low IgG against Toxin A predicts failure to clear the organism.",
+    "C": "Incorrect; PPIs *increase* the risk of C. diff.",
+    "D": "Incorrect; alcohol does not kill spores; soap and water mechanical washing is required."
+  },
+  "sharp": {
+    "status": "ACCEPT",
+    "verified_answer": "B",
+    "set_the_stage": "Clostridioides difficile causes pseudomembranous colitis primarily through the action of two exotoxins (Toxin A and Toxin B).",
+    "highlight_excellence": "While Toxin B is highly cytotoxic, a robust host IgG antibody response to Toxin A is the primary determinant of whether a patient will suffer recurrent episodes. Patients who fail to mount this antibody response are at high risk for relapse.",
+    "address_gaps": "Alcohol sanitizers (D) cannot penetrate the thick spore coat; handwashing with soap physically removes them. PPIs (C) eliminate the gastric acid barrier, facilitating spore survival and transit into the colon.",
+    "review_learning_points": "Treatment guidelines (IDSA/SHEA) recommend oral Fidaxomicin or Vancomycin. Fecal microbiota transplant (FMT) is highly effective for multiply recurrent cases, as it restores the microbiome to outcompete C. diff.",
+    "plan_for_improvement": "For C. diff: Wash hands with SOAP, stop the PPI, and use oral Vancomycin."
+  },
+  "guideline": "IDSA Guidelines strongly emphasize discontinuing unnecessary PPIs and practicing contact precautions (soap and water) to prevent transmission.",
+  "takeaway": "Host immune failure is the main driver of the frustrating cycle of recurrent C. diff colitis.",
+  "visualization": "Colonoscopy shows multiple, raised, yellowish-white plaques (pseudomembranes) scattered over erythematous colonic mucosa."
+}
 ]);

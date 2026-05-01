@@ -854,7 +854,7 @@ window.QUESTIONS.push(...[
     },
     "id": 1529
   },
-  {
+{
     "specialty": "Plastic Surgery",
     "topic": "Burn Resuscitation Endpoint",
     "question": "What is the most reliable clinical indicator of adequate fluid resuscitation in a burn patient?",
@@ -883,7 +883,7 @@ window.QUESTIONS.push(...[
     },
     "id": 1530
   },
-  {
+{
     "specialty": "Plastic Surgery",
     "topic": "Hand Surgery: Scaphoid Fracture",
     "question": "A patient with pain in the 'anatomic snuffbox' after a fall should be treated as having which fracture until proven otherwise?",
@@ -911,5 +911,329 @@ window.QUESTIONS.push(...[
       "P": "Thumb spica splint and repeat X-ray (or MRI/CT) in 10-14 days."
     },
     "id": 1531
-  }
+  },
+{
+  "id": 1215,
+  "specialty": "Plastic Surgery",
+  "topic": "Comprhensive Surgery Revision conv.docx",
+  "question": "Several types of gastrointestinal autografts have been used to replace the esophagus after extirpation of carcinomas. Successful reconstructions have been achieved most frequently with:",
+  "options": {
+    "A": "Stomach.",
+    "B": "Jejunum.",
+    "D": "Ascending colon.",
+    "E": "Descending colon."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "The stomach remains the most frequently utilized and successful autograft for esophageal replacement. Its inherent characteristics, such as readily available length, good vascular supply (gastric arteries), and ability to be mobilized into the chest, make it a versatile option. Furthermore, its physiological similarity to the esophagus in terms of peristalsis and ability to handle gastric contents (though with potential for reflux) contributes to its frequent success.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp": {
+    "status": "ACCEPT",
+    "verified_answer": "A",
+    "set_the_stage": "This question probes a fundamental concept in surgical reconstruction, specifically the choice of autograft for esophageal replacement following oncologic resection. Understanding the relative advantages and disadvantages of various gastrointestinal segments is crucial for optimal patient outcomes.",
+    "highlight_excellence": "The stomach remains the most frequently utilized and successful autograft for esophageal replacement. Its inherent characteristics, such as readily available length, good vascular supply (gastric arteries), and ability to be mobilized into the chest, make it a versatile option. Furthermore, its physiological similarity to the esophagus in terms of peristalsis and ability to handle gastric contents (though with potential for reflux) contributes to its frequent success.",
+    "address_gaps": "While the stomach is most frequent, it's important to acknowledge that other segments can be used, particularly when the stomach is unavailable or compromised. The jejunum, while offering good length and vascularity, can be prone to ischemia if the vascular pedicle is too long or kinked. Colon segments (ascending and descending) are also viable options, offering excellent length and a robust blood supply, but may require more complex surgical techniques and can be associated with higher rates of anastomotic leak or stricture compared to the stomach. The choice is often dictated by patient anatomy, previous surgeries, and surgeon preference.",
+    "review_guidelines": "When considering esophageal reconstruction, prioritize grafts that offer adequate length, a reliable blood supply, and physiological compatibility. The stomach is the gold standard due to its inherent advantages. However, be prepared to consider alternatives like jejunum or colon based on individual patient factors and potential complications associated with each.",
+    "plan": "For future questions on esophageal reconstruction, focus on the specific indications and contraindications for each type of graft, as well as the common complications associated with their use. Consider the vascular anatomy of each segment and how it impacts its suitability for thoracic transposition."
+  },
+  "guideline": "When considering esophageal reconstruction, prioritize grafts that offer adequate length, a reliable blood supply, and physiological compatibility. The stomach is the gold standard due to its inherent advantages. However, be prepared to consider alternatives like jejunum or colon based on individual patient factors and potential complications associated with each.",
+  "takeaway": "PLAN: For future questions on esophageal reconstruction, focus on the specific indications and contraindications for each type of graft, as well as the common complications associated with their use. Consider the vascular anatomy of each segment and how it impacts its suitability for thoracic transposition."
+}
+,
+{
+  "id": 1209,
+  "specialty": "Plastic Surgery",
+  "topic": "Comprhensive Surgery Revision conv.docx",
+  "question": "Allograft rejection may involve which of the following?",
+  "options": {
+    "B": "Veto cells.",
+    "C": "Cytotoxicity.",
+    "E": "The Arthus reaction."
+  },
+  "answer": "C",
+  "explanation": {
+    "correct": "The correct answer (C) \u2013 Cytotoxicity \u2013 is the most accurate. Allograft rejection fundamentally involves cytotoxic T cells and NK cells directly attacking the graft endothelium, leading to inflammation and tissue damage. The other options, while related to immune responses, are less directly involved in the *primary* mechanism of allograft rejection.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp": {
+    "status": "ACCEPT",
+    "verified_answer": "C",
+    "set_the_stage": "This question assesses understanding of the cellular and inflammatory mechanisms underlying allograft rejection. It\u2019s a common area of confusion for trainees.",
+    "highlight_excellence": "The correct answer (C) \u2013 Cytotoxicity \u2013 is the most accurate. Allograft rejection fundamentally involves cytotoxic T cells and NK cells directly attacking the graft endothelium, leading to inflammation and tissue damage. The other options, while related to immune responses, are less directly involved in the *primary* mechanism of allograft rejection.",
+    "address_gaps": "The incorrect answer (A) \u2013 Veto cells \u2013 is a misnomer. \u2018Veto cells\u2019 aren\u2019t a recognized cell type in allograft rejection. (B) Cytotoxicity is a key process, but the question asks for the *may involve* mechanism. (E) The Arthus reaction is a localized inflammatory response, but it\u2019s a secondary event in rejection, not the core mechanism.  A significant gap is a lack of emphasis on the role of NK cells.",
+    "review_guidelines": "1. **Cellular Mechanisms:** Reinforce understanding of cytotoxic T cells, NK cells, and their role in endothelial cell lysis. 2. **Inflammation Cascade:** Review the inflammatory response following allograft transplantation \u2013 complement activation, cytokine release, and recruitment of inflammatory cells. 3. **Rejection Types:** Differentiate between acute and chronic rejection, recognizing that cytotoxicity is more prominent in acute rejection. 4. **Immunological Tolerance:** Briefly touch upon the concept of immunological tolerance and how it\u2019s disrupted in allograft rejection.",
+    "plan": "I recommend a focused review of immunology specifically related to transplantation. Case studies illustrating cytotoxic T cell-mediated rejection would be beneficial.  Consider using diagrams to visualize the inflammatory cascade and the interaction between graft endothelium and immune cells. Further questions should focus on differentiating rejection mechanisms and their clinical manifestations."
+  },
+  "guideline": "1. **Cellular Mechanisms:** Reinforce understanding of cytotoxic T cells, NK cells, and their role in endothelial cell lysis. 2. **Inflammation Cascade:** Review the inflammatory response following allograft transplantation \u2013 complement activation, cytokine release, and recruitment of inflammatory cells. 3. **Rejection Types:** Differentiate between acute and chronic rejection, recognizing that cytotoxicity is more prominent in acute rejection. 4. **Immunological Tolerance:** Briefly touch upon the concept of immunological tolerance and how it\u2019s disrupted in allograft rejection.",
+  "takeaway": "PLAN: I recommend a focused review of immunology specifically related to transplantation. Case studies illustrating cytotoxic T cell-mediated rejection would be beneficial.  Consider using diagrams to visualize the inflammatory cascade and the interaction between graft endothelium and immune cells. Further questions should focus on differentiating rejection mechanisms and their clinical manifestations."
+}
+,
+{
+  "id": 1210,
+  "specialty": "Plastic Surgery",
+  "topic": "Comprhensive Surgery Revision conv.docx",
+  "question": "Which of the following statements about allograft rejection are true?",
+  "options": {
+    "B": "Allograft rejection may be mediated by antibodies or by cells.",
+    "D": "Acute cellular rejection is the major cause for loss of clinical organ transplants.",
+    "E": "An individual with \u2015tolerance\u2016 is unable to reject an allograft."
+  },
+  "answer": "B",
+  "explanation": {
+    "correct": "Option B is unequivocally correct. Allograft rejection is a complex process involving both humoral (antibody-mediated) and cellular (T-cell mediated) responses. This represents the foundational understanding of the disease process. The other options contain inaccuracies that are important to identify.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp": {
+    "status": "ACCEPT",
+    "verified_answer": "B",
+    "set_the_stage": "This question assesses understanding of allograft rejection mechanisms, a critical component of transplant surgery. It tests knowledge of the diverse pathways involved and their relative importance.",
+    "highlight_excellence": "Option B is unequivocally correct. Allograft rejection is a complex process involving both humoral (antibody-mediated) and cellular (T-cell mediated) responses. This represents the foundational understanding of the disease process. The other options contain inaccuracies that are important to identify.",
+    "address_gaps": "Several areas need reinforcement. Option D is frequently incorrect \u2013 chronic allograft nephropathy and cardiac allograft syndrome are far more common causes of long-term graft failure than acute cellular rejection. Option E is also incorrect; tolerance, while a fascinating area of research, is *not* a state where rejection is prevented. It's a complex, incompletely understood process where the recipient\u2019s immune system actively suppresses the allograft, and even then, rejection can occur. A deeper understanding of the different types of rejection (ACR, BCR, DCC) and their respective triggers is crucial.",
+    "review_guidelines": "1. **Rejection Types:** Reinforce the distinctions between Acute Cellular Rejection (ACR), Acute Antibody-Mediated Rejection (ABMR), Chronic Rejection, and Delayed Graft Function (DGF). 2. **Immune Mechanisms:** Review the roles of T cells, B cells, antibodies, and HLA matching. 3. **Tolerance:** Discuss the concept of tolerance \u2013 its theoretical basis and the challenges in achieving it clinically. 4. **Clinical Presentation:** Familiarize yourself with the clinical signs and symptoms associated with each type of rejection. 5. **Management:** Understand the immunosuppressive regimens used to prevent and treat rejection.",
+    "plan": "Implement a targeted review of allograft rejection pathophysiology. Include case studies focusing on the clinical presentation and management of different rejection types. Consider utilizing flow diagrams to illustrate the sequential events in the rejection process. Further research into the mechanisms of tolerance is also recommended."
+  },
+  "guideline": "1. **Rejection Types:** Reinforce the distinctions between Acute Cellular Rejection (ACR), Acute Antibody-Mediated Rejection (ABMR), Chronic Rejection, and Delayed Graft Function (DGF). 2. **Immune Mechanisms:** Review the roles of T cells, B cells, antibodies, and HLA matching. 3. **Tolerance:** Discuss the concept of tolerance \u2013 its theoretical basis and the challenges in achieving it clinically. 4. **Clinical Presentation:** Familiarize yourself with the clinical signs and symptoms associated with each type of rejection. 5. **Management:** Understand the immunosuppressive regimens used to prevent and treat rejection.",
+  "takeaway": "PLAN: Implement a targeted review of allograft rejection pathophysiology. Include case studies focusing on the clinical presentation and management of different rejection types. Consider utilizing flow diagrams to illustrate the sequential events in the rejection process. Further research into the mechanisms of tolerance is also recommended."
+}
+,
+{
+  "id": 1201,
+  "specialty": "Plastic Surgery",
+  "topic": "rush.docx",
+  "question": "A 34-year-old man sustained a gunshot wound to his abdomen that necessitated exploratory laparotomy and small bowel resection. Two weeks after the initial operation, he was reex plored for a large intraabdominal abscess. Which of the following will result in the most rapid gain in strength of the new incision?",
+  "options": {
+    "B": "The midline scar is excised with a 1-cm margin.",
+    "C": "The midline incision is reopened without excision of the scar.",
+    "D": "The midline incision is left to heal by secondary intention.",
+    "E": "The rate of gain in strength is not affected by the incision technique."
+  },
+  "answer": "C",
+  "explanation": {
+    "correct": "The correct answer (C) reflects the established principle of minimizing tension on the healing incision. Reopening without excision avoids further mechanical stress, which is a primary driver of delayed healing and scar weakening. The other options are less optimal: B \u2013 Excision creates a new wound edge and significantly increases tension; D \u2013 Secondary intention healing can be slow and prone to complications; E \u2013 Wound healing is profoundly influenced by surgical technique and tension.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp": {
+    "status": "ACCEPT",
+    "verified_answer": "C",
+    "set_the_stage": "This question assesses understanding of wound healing principles, specifically concerning incisional strength and scar management following abdominal surgery. The patient presents with a gunshot wound leading to resection and subsequent abscess formation, highlighting the complexities of post-operative wound care.",
+    "highlight_excellence": "The correct answer (C) reflects the established principle of minimizing tension on the healing incision. Reopening without excision avoids further mechanical stress, which is a primary driver of delayed healing and scar weakening. The other options are less optimal: B \u2013 Excision creates a new wound edge and significantly increases tension; D \u2013 Secondary intention healing can be slow and prone to complications; E \u2013 Wound healing is profoundly influenced by surgical technique and tension.",
+    "address_gaps": "A key gap in understanding is the concept of \u2018mechanical tension\u2019 on the incision. Students may struggle to differentiate between various closure techniques and their impact on scar strength. Furthermore, a deeper understanding of the inflammatory response and its role in wound healing is needed. The question also tests knowledge of the difference between primary and secondary intention healing.",
+    "review_guidelines": "1. **Wound Tension:** Emphasize that minimizing tension at the incision site is paramount for optimal healing. Tension leads to increased inflammation, breakdown of the granulation tissue, and ultimately, a weaker scar. 2. **Scar Management:** Review the different scar closure techniques (primary, secondary, tertiary) and their respective advantages and disadvantages. 3. **Inflammation & Healing:** Reinforce the inflammatory phase as a necessary but controlled process in wound healing. 4. **Re-exploration for Abscesses:** Understand the potential for abscess formation following abdominal surgery and the importance of meticulous wound care.",
+    "plan": "Further education should include a detailed discussion of wound biomechanics, the role of fibroblasts and collagen synthesis in scar formation, and the impact of infection on healing. Case studies illustrating the consequences of excessive tension on incisions would be beneficial. Consider incorporating a practical component \u2013 perhaps a simulated incision closure exercise \u2013 to reinforce these concepts."
+  },
+  "guideline": "1. **Wound Tension:** Emphasize that minimizing tension at the incision site is paramount for optimal healing. Tension leads to increased inflammation, breakdown of the granulation tissue, and ultimately, a weaker scar. 2. **Scar Management:** Review the different scar closure techniques (primary, secondary, tertiary) and their respective advantages and disadvantages. 3. **Inflammation & Healing:** Reinforce the inflammatory phase as a necessary but controlled process in wound healing. 4. **Re-exploration for Abscesses:** Understand the potential for abscess formation following abdominal surgery and the importance of meticulous wound care.",
+  "takeaway": "PLAN: Further education should include a detailed discussion of wound biomechanics, the role of fibroblasts and collagen synthesis in scar formation, and the impact of infection on healing. Case studies illustrating the consequences of excessive tension on incisions would be beneficial. Consider incorporating a practical component \u2013 perhaps a simulated incision closure exercise \u2013 to reinforce these concepts."
+}
+,
+{
+  "id": 1208,
+  "specialty": "Plastic Surgery",
+  "topic": "Comprhensive Surgery Revision conv.docx",
+  "question": "The unusual intensity of alloimmune responses reflects which of the following characteristics?",
+  "options": {
+    "D": "Stimulation of many T-cell receptors during the interaction of a T cell with an antigen-presenting cell.",
+    "E": "The high frequency of antigen-presenting cells able to be recognized by T cells."
+  },
+  "answer": "E",
+  "explanation": {
+    "correct": "The correct answer (E) accurately identifies the fundamental mechanism. The sheer number of antigen-presenting cells (APCs) \u2013 particularly dendritic cells \u2013 available to interact with T cells dramatically increases the probability of T cell activation. This \u2018mass activation\u2019 is what defines the intense alloimmune response seen in transplantation. The other options (D) describe a single T cell interaction, not the overall phenomenon.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp": {
+    "status": "ACCEPT",
+    "verified_answer": "E",
+    "set_the_stage": "This question assesses understanding of alloimmune responses, specifically focusing on the key driver of their intensity. It\u2019s a common question type found in immunology and transplant medicine boards.",
+    "highlight_excellence": "The correct answer (E) accurately identifies the fundamental mechanism. The sheer number of antigen-presenting cells (APCs) \u2013 particularly dendritic cells \u2013 available to interact with T cells dramatically increases the probability of T cell activation. This \u2018mass activation\u2019 is what defines the intense alloimmune response seen in transplantation. The other options (D) describe a single T cell interaction, not the overall phenomenon.",
+    "address_gaps": "The incorrect answer (B) is misleading. While T-cell receptor stimulation is *part* of the process, it\u2019s the *quantity* of APCs, not just the stimulation, that\u2019s the primary determinant of intensity. A single, highly stimulated T cell wouldn\u2019t explain the robust response.  There's also a gap in understanding the role of dendritic cells as the primary APCs in initiating alloimmunity.",
+    "review_guidelines": "1. **Dendritic Cells:** Reinforce the role of dendritic cells as the key APCs in initiating and amplifying alloimmune responses. They are exceptionally efficient at capturing and presenting antigens to T cells. 2. **T-Cell Receptor Diversity:** Understand how the vast diversity of T-cell receptors contributes to the potential for recognition, but quantity is more critical for intensity. 3. **Allograft Rejection Mechanisms:** Review the stages of allograft rejection \u2013 primary, secondary, and tertiary \u2013 and how each stage is influenced by alloimmune responses. 4. **Immunological Tolerance:** Contrast alloimmune responses with the concept of immunological tolerance, where the immune system learns to accept self-antigens.",
+    "plan": "I recommend a focused review of dendritic cell biology, T-cell receptor diversity, and the mechanisms of allograft rejection.  Consider using flashcards or practice questions specifically targeting the factors that contribute to the intensity of alloimmune responses.  A deeper dive into the role of costimulatory signals during T cell activation would also be beneficial."
+  },
+  "guideline": "1. **Dendritic Cells:** Reinforce the role of dendritic cells as the key APCs in initiating and amplifying alloimmune responses. They are exceptionally efficient at capturing and presenting antigens to T cells. 2. **T-Cell Receptor Diversity:** Understand how the vast diversity of T-cell receptors contributes to the potential for recognition, but quantity is more critical for intensity. 3. **Allograft Rejection Mechanisms:** Review the stages of allograft rejection \u2013 primary, secondary, and tertiary \u2013 and how each stage is influenced by alloimmune responses. 4. **Immunological Tolerance:** Contrast alloimmune responses with the concept of immunological tolerance, where the immune system learns to accept self-antigens.",
+  "takeaway": "PLAN: I recommend a focused review of dendritic cell biology, T-cell receptor diversity, and the mechanisms of allograft rejection.  Consider using flashcards or practice questions specifically targeting the factors that contribute to the intensity of alloimmune responses.  A deeper dive into the role of costimulatory signals during T cell activation would also be beneficial."
+}
+,
+{
+  "id": 1213,
+  "specialty": "Plastic Surgery",
+  "topic": "Comprhensive Surgery Revision conv.docx",
+  "question": "Advantages of split-thickness skin grafts over full-thickness skin grafts include:",
+  "options": {
+    "A": "Split-thickness grafts include only part of the epidermis and none of the dermis.",
+    "C": "Split-thickness grafts offer better resistance to contraction.",
+    "E": "Split-thickness grafts survive better on surfaces with compromised blood supply."
+  },
+  "answer": "C",
+  "explanation": {
+    "correct": "The correct answer (C) accurately identifies a primary advantage of STSG \u2013 their superior resistance to contraction. This is due to the relatively thinner dermis component, which minimizes scar tissue formation and subsequent contracture. This is a critical consideration in areas like the face and scalp where minimizing scarring is paramount.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp": {
+    "status": "ACCEPT",
+    "verified_answer": "C",
+    "set_the_stage": "This question assesses understanding of the key differences between split-thickness (STSG) and full-thickness (FTSG) skin grafts, a fundamental concept in reconstructive surgery. The question specifically probes the advantages of STSG, which are crucial for appropriate graft selection.",
+    "highlight_excellence": "The correct answer (C) accurately identifies a primary advantage of STSG \u2013 their superior resistance to contraction. This is due to the relatively thinner dermis component, which minimizes scar tissue formation and subsequent contracture. This is a critical consideration in areas like the face and scalp where minimizing scarring is paramount.",
+    "address_gaps": "Option A is incorrect. STSG *does* include part of the dermis, albeit a thinner layer. Option E is also incorrect; FTSGs generally have better survival in compromised vascular beds due to their thicker dermis, which can tolerate ischemia better. Letter B is also incorrect as it describes a disadvantage of STSG.",
+    "review_guidelines": "1. **Graft Depth:** Reinforce the understanding of the difference in graft depth \u2013 STSG includes the epidermis and a portion of the dermis, while FTSG includes the entire epidermis and dermis. 2. **Contracture Risk:** Emphasize the higher contracture risk associated with STSG due to the thinner dermis. 3. **Vascularity & Survival:** Understand that FTSGs generally have better survival rates in areas with compromised blood supply. 4. **Clinical Indications:** Review the appropriate indications for each graft type based on wound characteristics (size, depth, location, vascularity).",
+    "plan": "I recommend a focused review of graft physiology, including the role of the epidermis and dermis, scar tissue formation, and factors influencing graft survival. Case-based discussions focusing on facial reconstruction, burn management, and other common reconstructive scenarios would be beneficial. Further, a review of the principles of wound healing and vascular assessment is warranted."
+  },
+  "guideline": "1. **Graft Depth:** Reinforce the understanding of the difference in graft depth \u2013 STSG includes the epidermis and a portion of the dermis, while FTSG includes the entire epidermis and dermis. 2. **Contracture Risk:** Emphasize the higher contracture risk associated with STSG due to the thinner dermis. 3. **Vascularity & Survival:** Understand that FTSGs generally have better survival rates in areas with compromised blood supply. 4. **Clinical Indications:** Review the appropriate indications for each graft type based on wound characteristics (size, depth, location, vascularity).",
+  "takeaway": "PLAN: I recommend a focused review of graft physiology, including the role of the epidermis and dermis, scar tissue formation, and factors influencing graft survival. Case-based discussions focusing on facial reconstruction, burn management, and other common reconstructive scenarios would be beneficial. Further, a review of the principles of wound healing and vascular assessment is warranted."
+}
+,
+{
+  "id": 1211,
+  "specialty": "Plastic Surgery",
+  "topic": "Comprhensive Surgery Revision conv.docx",
+  "question": "Survival rates for patients on dialysis are better than those for patients receiving renal allografts in the following circumstances:",
+  "options": {
+    "A": "A living related donor is available.",
+    "C": "The recipient's renal failure is secondary to diabetes.",
+    "D": "None of the above."
+  },
+  "answer": "D",
+  "explanation": {
+    "correct": "The correct answer (D) reflects the current reality. While allograft survival remains generally better, the gap has closed significantly, and dialysis survival rates are now comparable, especially in carefully selected patients. This highlights the importance of individualized decision-making.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp": {
+    "status": "ACCEPT",
+    "verified_answer": "D",
+    "set_the_stage": "This question tests understanding of the evolving landscape of renal replacement therapy and the relative benefits of dialysis versus allograft transplantation. Historically, allograft survival was superior, but dialysis has dramatically improved, particularly with advancements in technology and patient care.",
+    "highlight_excellence": "The correct answer (D) reflects the current reality. While allograft survival remains generally better, the gap has closed significantly, and dialysis survival rates are now comparable, especially in carefully selected patients. This highlights the importance of individualized decision-making.",
+    "address_gaps": "The question\u2019s phrasing \u2013 \u2018better than those for patients receiving renal allografts\u2019 \u2013 is slightly misleading. It implies a clear superiority of dialysis, which isn\u2019t entirely accurate anymore. Options A and C represent factors that *can* influence outcomes, but don\u2019t inherently guarantee better dialysis survival. A living donor improves graft function and reduces immunosuppression, while diabetes is a significant risk factor for allograft failure regardless of the treatment modality.",
+    "review_guidelines": "1. **Dialysis Advances:** Recognize the transformative impact of advancements in dialysis technology (hemodialysis, peritoneal dialysis, and home hemodialysis) on patient survival. 2. **Allograft Considerations:** Understand that allograft survival is influenced by factors like HLA matching, antibody status, patient comorbidities (particularly diabetes), and immunosuppression protocols. 3. **Individualized Assessment:** Emphasize the need for a comprehensive assessment of each patient\u2019s suitability for either dialysis or transplantation, considering factors beyond just the primary renal failure. 4. **Outcome Comparison:** Be aware that dialysis survival rates have improved substantially and are now often comparable to allograft survival, particularly in well-managed patients.",
+    "plan": "Further review should focus on:  * Current dialysis technology and its impact on patient outcomes. * The immunological factors influencing allograft rejection and long-term survival. * The role of patient comorbidities (diabetes, hypertension, cardiovascular disease) in both dialysis and allograft outcomes. * The principles of shared decision-making in renal replacement therapy."
+  },
+  "guideline": "1. **Dialysis Advances:** Recognize the transformative impact of advancements in dialysis technology (hemodialysis, peritoneal dialysis, and home hemodialysis) on patient survival. 2. **Allograft Considerations:** Understand that allograft survival is influenced by factors like HLA matching, antibody status, patient comorbidities (particularly diabetes), and immunosuppression protocols. 3. **Individualized Assessment:** Emphasize the need for a comprehensive assessment of each patient\u2019s suitability for either dialysis or transplantation, considering factors beyond just the primary renal failure. 4. **Outcome Comparison:** Be aware that dialysis survival rates have improved substantially and are now often comparable to allograft survival, particularly in well-managed patients.",
+  "takeaway": "PLAN: Further review should focus on:  * Current dialysis technology and its impact on patient outcomes. * The immunological factors influencing allograft rejection and long-term survival. * The role of patient comorbidities (diabetes, hypertension, cardiovascular disease) in both dialysis and allograft outcomes. * The principles of shared decision-making in renal replacement therapy."
+}
+,
+{
+  "id": 1202,
+  "specialty": "Plastic Surgery",
+  "topic": "rush.docx",
+  "question": "A 30-year-old man is scheduled for definitive management of his open wounds after undergoing embolectomy and fasciotomies on his left lower extremity. Which of the following statements is true regarding the use of split- and full-thickness skin grafts?",
+  "options": {
+    "A": "A split-thickness skin graft undergoes approximately 40% shrinkage of its surface area immediately after harvesting.",
+    "B": "A full-thickness skin graft undergoes approximately 10% shrinkage of its surface area immediately after harvesting.",
+    "E": "Skin grafts may be exposed to moderate amounts of sunlight without changing pigmentation."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "The correct answer (A) accurately reflects the typical shrinkage observed with split-thickness skin grafts (approximately 40%). This shrinkage is a fundamental characteristic driving the graft\u2019s ability to cover a wound. Understanding this shrinkage is crucial for accurate wound bed assessment and graft sizing. The other options are incorrect.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp": {
+    "status": "ACCEPT",
+    "verified_answer": "A",
+    "set_the_stage": "This question assesses understanding of skin graft shrinkage, a critical factor in graft selection and management, particularly in complex wounds like those following embolectomy and fasciotomy. The patient\u2019s history of extensive tissue damage necessitates careful consideration of graft options to achieve optimal coverage and minimize complications.",
+    "highlight_excellence": "The correct answer (A) accurately reflects the typical shrinkage observed with split-thickness skin grafts (approximately 40%). This shrinkage is a fundamental characteristic driving the graft\u2019s ability to cover a wound. Understanding this shrinkage is crucial for accurate wound bed assessment and graft sizing. The other options are incorrect.",
+    "address_gaps": "Several areas represent gaps in understanding. Firstly, the question\u2019s options are somewhat simplistic and don\u2019t fully capture the nuances of graft shrinkage and its relationship to wound bed preparation. Secondly, the provided answer key (D) is incorrect. A more comprehensive understanding of graft types and their shrinkage profiles is needed.  Specifically, the student needs to understand that full-thickness grafts shrink less than split-thickness grafts.",
+    "review_guidelines": "1. **Graft Types & Shrinkage:** Reinforce the differences in shrinkage between split-thickness (STSG) and full-thickness (FTSG) skin grafts.  STSG typically shrinks 40-60% immediately post-harvest, while FTSG shrinks approximately 10-20%. This is due to the different collagen fiber depths and cellularity. 2. **Wound Bed Preparation:** Emphasize the importance of a meticulously prepared wound bed \u2013 debrided, granulation tissue, and appropriate moisture balance \u2013 to maximize graft take. 3. **Graft Sizing:**  Accurate graft sizing is paramount, considering the expected shrinkage. 4. **Post-operative Care:**  Discuss the importance of protecting grafts from excessive sunlight, which can cause hyperpigmentation, and maintaining a moist wound environment.",
+    "plan": "1. **Case Discussion:** Present similar case scenarios involving complex wounds and discuss the rationale for choosing between STSGs and FTSGs based on wound characteristics, patient factors, and desired cosmetic outcome. 2. **Simulation/Lab Exercise:** Utilize simulated wounds to demonstrate graft harvesting and application, highlighting shrinkage and its impact on coverage. 3. **Review Anatomy & Physiology:** Reinforce the understanding of skin structure, collagen fiber arrangement, and cellular response to injury, relating this to graft behavior."
+  },
+  "guideline": "1. **Graft Types & Shrinkage:** Reinforce the differences in shrinkage between split-thickness (STSG) and full-thickness (FTSG) skin grafts.  STSG typically shrinks 40-60% immediately post-harvest, while FTSG shrinks approximately 10-20%. This is due to the different collagen fiber depths and cellularity. 2. **Wound Bed Preparation:** Emphasize the importance of a meticulously prepared wound bed \u2013 debrided, granulation tissue, and appropriate moisture balance \u2013 to maximize graft take. 3. **Graft Sizing:**  Accurate graft sizing is paramount, considering the expected shrinkage. 4. **Post-operative Care:**  Discuss the importance of protecting grafts from excessive sunlight, which can cause hyperpigmentation, and maintaining a moist wound environment.",
+  "takeaway": "PLAN: 1. **Case Discussion:** Present similar case scenarios involving complex wounds and discuss the rationale for choosing between STSGs and FTSGs based on wound characteristics, patient factors, and desired cosmetic outcome. 2. **Simulation/Lab Exercise:** Utilize simulated wounds to demonstrate graft harvesting and application, highlighting shrinkage and its impact on coverage. 3. **Review Anatomy & Physiology:** Reinforce the understanding of skin structure, collagen fiber arrangement, and cellular response to injury, relating this to graft behavior."
+}
+,
+{
+  "id": 1204,
+  "specialty": "Plastic Surgery",
+  "topic": "Surgical Oncology",
+  "question": "Which of the following statements is/are true of the epidemiology and etiology of melanoma?",
+  "options": {
+    "A": "Most patients are diagnosed after age 60 years.",
+    "B": "Skin color has no association with risk of melanoma.",
+    "C": "Sun exposure is the only risk factor for melanoma.",
+    "D": "The per capita incidence of melanoma is highest in Australia."
+  },
+  "answer": "D",
+  "explanation": {
+    "correct": "Australia and New Zealand have the highest incidence of melanoma globally.",
+    "A": "Incorrect; it is one of the most common cancers in young adults (25-29).",
+    "B": "Incorrect; fair skin (Fitzpatrick I/II) is a major risk factor.",
+    "C": "Incorrect; genetics (CDKN2A), family history, and immunosuppression are also factors.",
+    "D": "Correct; due to a predominantly fair-skinned population living near the equator under a thin ozone layer."
+  },
+  "sharp": {
+    "status": "ACCEPT",
+    "verified_answer": "D",
+    "set_the_stage": "Melanoma incidence correlates strongly with intermittent, intense UV radiation exposure on susceptible phenotypes.",
+    "highlight_excellence": "The geographical epidemiology of melanoma perfectly illustrates the gene-environment interaction. The highest rates are in Australia, where Caucasian populations of Celtic descent receive massive UV loads. Conversely, melanoma in dark-skinned populations (which is rare) often presents as acral lentiginous melanoma on the palms/soles, completely independent of sun exposure.",
+    "address_gaps": "Option A ignores that melanoma heavily afflicts the young. Option B ignores the protective effect of melanin. Option C ignores familial dysplastic nevus syndromes.",
+    "review_learning_points": "Risk factors: ABCDE atypical moles, red hair/fair skin, severe childhood blistering sunburns, and positive family history.",
+    "plan_for_improvement": "Highest incidence = Australia. Most common subtype = Superficial Spreading."
+  },
+  "guideline": "WHO and cancer registries universally track UV index and latitude as direct correlates to melanoma incidence in fair-skinned cohorts.",
+  "takeaway": "Blistering sunburns in childhood on fair skin create the biological groundwork for melanoma decades later.",
+  "visualization": "A dark, asymmetrical lesion with irregular borders and varied colors (black, blue, red) on the sun-exposed shoulder of a young patient."
+}
+,
+{
+  "id": 30,
+  "specialty": "Plastic Surgery",
+  "topic": "Wound Care & Grafts",
+  "question": "Which of the following is TRUE of skin grafts?",
+  "options": {
+    "A": "Split-thickness grafts contain the epidermis and all of the dermis.",
+    "B": "Full-thickness grafts are more likely to survive than split-thickness grafts.",
+    "C": "Split-thickness grafts inhibit wound contraction better than full-thickness grafts.",
+    "D": "Full-thickness skin grafts inhibit wound contraction more than split-thickness grafts.",
+    "E": "Split-thickness grafts are more aesthetic than full-thickness grafts."
+  },
+  "answer": "D",
+  "explanation": {
+    "correct": "The amount of dermis determines the graft's ability to inhibit secondary wound contraction.",
+    "A": "Incorrect; split-thickness contains only *part* of the dermis.",
+    "B": "Incorrect; FTSG have higher metabolic demands and are *less* likely to survive (take) than STSG.",
+    "C": "Incorrect; STSG allows significant contraction.",
+    "D": "Correct; FTSG contains all dermal appendages and suppresses myofibroblast activity heavily.",
+    "E": "Incorrect; FTSG matches color and texture much better."
+  },
+  "sharp": {
+    "status": "ACCEPT",
+    "verified_answer": "D",
+    "set_the_stage": "Skin graft selection requires balancing the 'take' rate against the functional and aesthetic outcome.",
+    "highlight_excellence": "A Full-Thickness Skin Graft (FTSG) contains the epidermis and the entire dermis. The thick dermal layer provides excellent structural integrity and actively signals myofibroblasts in the wound bed to stop contracting. Therefore, FTSG prevents contractures across joints or the face perfectly. However, because it is thick, it struggles to revascularize (imbibition/inosculation) and fails easily on poor beds.",
+    "address_gaps": "Split-Thickness Skin Grafts (STSG) take easily because they are thin, but they shrink significantly over time. FTSGs (E) are far superior aesthetically.",
+    "review_learning_points": "Rule of thumb: The thicker the dermis, the better the final appearance and the less the contraction, but the lower the chance of graft survival.",
+    "plan_for_improvement": "Face and hands get FTSG. Massive torso burns get STSG."
+  },
+  "guideline": "Reconstructive ladder principles dictate using the simplest method; however, for functional areas (eyelids, fingers), FTSG is the standard of care to prevent crippling contractures.",
+  "takeaway": "If you don't want the wound to shrink and distort surrounding tissue, use a full-thickness graft.",
+  "visualization": "A thin, meshed STSG expanding like a fishnet over a large burn vs. a smooth, perfectly matched patch of FTSG placed seamlessly onto the nose."
+}
 ]);

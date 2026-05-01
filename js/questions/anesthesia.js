@@ -236,7 +236,6 @@ window.QUESTIONS.push(...[
     "takeaway": "Key Concept: Pulmonary function test results have not been shown to be beneficial or to guide treatment when plan...",
     "id": 311
   },
-
 {
     "specialty": "Anesthesia",
     "topic": "Succinylcholine",
@@ -266,7 +265,7 @@ window.QUESTIONS.push(...[
     },
     "id": 1472
   },
-  {
+{
     "specialty": "Anesthesia",
     "topic": "Local Anesthetic Toxicity",
     "question": "During a transversus abdominis plane (TAP) block, a patient suddenly develops perioral numbness, metallic taste, and subsequently a generalized tonic-clonic seizure. What is the first-line pharmacologic treatment for this condition?",
@@ -295,7 +294,7 @@ window.QUESTIONS.push(...[
     },
     "id": 1473
   },
-  {
+{
     "specialty": "Anesthesia",
     "topic": "Adrenal Suppression",
     "question": "A patient with septic shock is scheduled for an emergency laparotomy. Which induction agent is associated with transient adrenal suppression?",
@@ -324,7 +323,7 @@ window.QUESTIONS.push(...[
     },
     "id": 1474
   },
-  {
+{
     "specialty": "Anesthesia",
     "topic": "Preoperative Fasting",
     "question": "According to ASA NPO guidelines, what is the minimum fasting period for a healthy adult after a light meal (e.g., toast and clear liquid) before elective surgery?",
@@ -353,7 +352,7 @@ window.QUESTIONS.push(...[
     },
     "id": 1475
   },
-  {
+{
     "specialty": "Anesthesia",
     "topic": "Aortocaval Compression",
     "question": "A pregnant patient at 36 weeks gestation is undergoing non-obstetric surgery. Why is left lateral tilt (or right hip wedge) important for this patient?",
@@ -382,7 +381,7 @@ window.QUESTIONS.push(...[
     },
     "id": 1476
   },
-  {
+{
     "specialty": "Anesthesia",
     "topic": "Vocal Cord Anatomy",
     "question": "In a 2-year-old child, what is the narrowest part of the upper airway?",
@@ -411,7 +410,7 @@ window.QUESTIONS.push(...[
     },
     "id": 1477
   },
-  {
+{
     "specialty": "Anesthesia",
     "topic": "Post-Dural Puncture Headache",
     "question": "A patient develops a severe frontal-occipital headache 24 hours after a spinal anesthetic. The headache is relieved when lying flat and worsened when standing. If conservative management fails, what is the most effective treatment?",
@@ -440,7 +439,7 @@ window.QUESTIONS.push(...[
     },
     "id": 1478
   },
-  {
+{
     "specialty": "Anesthesia",
     "topic": "Ketamine",
     "question": "Which of the following is a characteristic effect of Ketamine?",
@@ -469,7 +468,7 @@ window.QUESTIONS.push(...[
     },
     "id": 1479
   },
-  {
+{
     "specialty": "Anesthesia",
     "topic": "Neuromuscular Blockade",
     "question": "Which muscle is the most resistant to neuromuscular blockade and is the last to be paralyzed (and first to recover)?",
@@ -498,7 +497,7 @@ window.QUESTIONS.push(...[
     },
     "id": 1480
   },
-  {
+{
     "specialty": "Anesthesia",
     "topic": "Malignant Hyperthermia Diagnosis",
     "question": "What is the earliest and most sensitive indicator of Malignant Hyperthermia (MH) during general anesthesia?",
@@ -527,7 +526,7 @@ window.QUESTIONS.push(...[
     },
     "id": 1481
   },
-  {
+{
     "specialty": "Anesthesia",
     "topic": "Oxygen Storage",
     "question": "A standard E-cylinder of oxygen is full at 2000 psi. If the flow rate is 5 L/min, approximately how long will the tank last?",
@@ -556,7 +555,7 @@ window.QUESTIONS.push(...[
     },
     "id": 1482
   },
-  {
+{
     "specialty": "Anesthesia",
     "topic": "Spinal Anesthesia Level",
     "question": "Which anatomic landmark corresponds to the T4 dermatome level, used as a target for many abdominal procedures?",
@@ -585,7 +584,7 @@ window.QUESTIONS.push(...[
     },
     "id": 1483
   },
-  {
+{
     "specialty": "Anesthesia",
     "topic": "Laryngospasm Management",
     "question": "What is 'Larson's Maneuver' (Laryngospasm Notch pressure) used for?",
@@ -614,7 +613,7 @@ window.QUESTIONS.push(...[
     },
     "id": 1484
   },
-  {
+{
     "specialty": "Anesthesia",
     "topic": "Intraocular Pressure",
     "question": "Which of the following anesthetic drugs is known to increase intraocular pressure (IOP) and should be used with caution in open globe injuries?",
@@ -643,7 +642,7 @@ window.QUESTIONS.push(...[
     },
     "id": 1485
   },
-  {
+{
     "specialty": "Anesthesia",
     "topic": "Vaporizer Color Coding",
     "question": "What is the industry-standard color code for a Sevoflurane vaporizer and bottle?",
@@ -672,7 +671,7 @@ window.QUESTIONS.push(...[
     },
     "id": 1486
   },
-  {
+{
     "specialty": "Anesthesia",
     "topic": "MAC (Minimum Alveolar Concentration)",
     "question": "Which of the following factors is known to INCREASE the Minimum Alveolar Concentration (MAC) of volatile anesthetics, meaning more agent is required for the same effect?",
@@ -701,7 +700,7 @@ window.QUESTIONS.push(...[
     },
     "id": 1487
   },
-  {
+{
     "specialty": "Anesthesia",
     "topic": "Train-of-Four (TOF) Ratio",
     "question": "What is the minimum Train-of-Four (TOF) ratio required for safe extubation to ensure adequate recovery from non-depolarizing neuromuscular blockers?",
@@ -730,7 +729,7 @@ window.QUESTIONS.push(...[
     },
     "id": 1488
   },
-  {
+{
     "specialty": "Anesthesia",
     "topic": "Sugammadex Reversal",
     "question": "Sugammadex provides rapid reversal of which neuromuscular blockers?",
@@ -759,7 +758,7 @@ window.QUESTIONS.push(...[
     },
     "id": 1489
   },
-  {
+{
     "specialty": "Anesthesia",
     "topic": "Pulse Oximetry Accuracy",
     "question": "Which of the following conditions is most likely to cause a falsely HIGH SpO2 reading on a pulse oximeter?",
@@ -788,7 +787,7 @@ window.QUESTIONS.push(...[
     },
     "id": 1490
   },
-  {
+{
     "specialty": "Anesthesia",
     "topic": "Nitrous Oxide Contraindications",
     "question": "In which of the following cases is Nitrous Oxide (N2O) strictly contraindicated due to its ability to expand gas-filled spaces?",
@@ -817,7 +816,7 @@ window.QUESTIONS.push(...[
     },
     "id": 1491
   },
-  {
+{
     "specialty": "Anesthesia",
     "topic": "Difficult Airway Predictors",
     "question": "The 'Thyromental Distance' (TMD) is a predictor of difficult intubation. A TMD of less than how many centimeters (or 3 fingerbreadths) is associated with a difficult view?",
@@ -846,7 +845,7 @@ window.QUESTIONS.push(...[
     },
     "id": 1492
   },
-  {
+{
     "specialty": "Anesthesia",
     "topic": "Hormonal Response to Surgery",
     "question": "Which hormone's secretion is notably DECREASED as part of the neuroendocrine stress response to major surgery?",
@@ -875,7 +874,7 @@ window.QUESTIONS.push(...[
     },
     "id": 1493
   },
-  {
+{
     "specialty": "Anesthesia",
     "topic": "Bronchial Intubation",
     "question": "During induction of a 10-year-old child, the end-tidal CO2 disappears, peak pressures rise, and breath sounds are absent on the left but present on the right. What is the most likely cause?",
@@ -904,7 +903,7 @@ window.QUESTIONS.push(...[
     },
     "id": 1494
   },
-  {
+{
     "specialty": "Anesthesia",
     "topic": "Vascular Access",
     "question": "What is the preferred site for a central venous catheter if the primary goal is to minimize the risk of pneumothorax?",
@@ -933,7 +932,7 @@ window.QUESTIONS.push(...[
     },
     "id": 1495
   },
-  {
+{
     "specialty": "Anesthesia",
     "topic": "ASA Physical Status",
     "question": "A 55-year-old male with well-controlled hypertension and a BMI of 28 is scheduled for a hernia repair. What is his ASA Physical Status classification?",
@@ -962,7 +961,7 @@ window.QUESTIONS.push(...[
     },
     "id": 1496
   },
-  {
+{
     "specialty": "Anesthesia",
     "topic": "Propofol Allergies",
     "question": "Traditional teaching suggested avoiding Propofol in patients with which of the following allergies, though recent evidence suggests it is safe for most?",
@@ -991,7 +990,7 @@ window.QUESTIONS.push(...[
     },
     "id": 1497
   },
-  {
+{
     "specialty": "Anesthesia",
     "topic": "Neuromuscular Blockade Reversal",
     "question": "What is the primary reason for co-administering an anticholinergic agent (e.g., Glycopyrrolate) with Neostigmine for reversal of neuromuscular blockade?",
@@ -1020,7 +1019,7 @@ window.QUESTIONS.push(...[
     },
     "id": 1498
   },
-  {
+{
     "specialty": "Anesthesia",
     "topic": "Cisatracurium Metabolism",
     "question": "Why is Cisatracurium (Nimbex) the muscle relaxant of choice for patients with severe renal or hepatic failure?",
@@ -1049,7 +1048,7 @@ window.QUESTIONS.push(...[
     },
     "id": 1499
   },
-  {
+{
     "specialty": "Anesthesia",
     "topic": "Inhalational Induction",
     "question": "Which volatile anesthetic is the agent of choice for inhalational induction (mask induction) due to its pleasant smell and low pungency?",
@@ -1078,7 +1077,7 @@ window.QUESTIONS.push(...[
     },
     "id": 1500
   },
-  {
+{
     "specialty": "Anesthesia",
     "topic": "LAST Initial Treatment",
     "question": "In the event of cardiac arrest due to Local Anesthetic Systemic Toxicity (LAST), which of the following drugs should be AVOIDED or used in very low doses?",

@@ -869,5 +869,892 @@ window.QUESTIONS.push(...[
       "P": "Start IV antibiotics and arrange for percutaneous drainage or emergency nephrectomy."
     },
     "id": 1561
+  },
+{
+  "id": 90001,
+  "specialty": "Urology",
+  "topic": "Bladder Cancer Risk Factors",
+  "question": "What percent of bladder cancer in males is caused by smoking?",
+  "options": {
+    "A": "5%",
+    "B": "20%",
+    "C": "40%",
+    "D": "60%"
+  },
+  "answer": "D",
+  "explanation": {
+    "correct": "Smoking is the most significant risk factor for bladder cancer, accounting for approximately 50-65% of cases in males and 20-30% in females. The risk correlates with the number of pack-years and duration of smoking.",
+    "A": "Incorrect. This is far too low.",
+    "B": "Incorrect. This is closer to the percentage for females.",
+    "C": "Incorrect. It is higher than 40% in males.",
+    "D": "Correct. Around 50-65% (often rounded to 60%) of male bladder cancers are attributable to smoking."
+  },
+  "guideline": "EAU Guidelines on Non-muscle-invasive Bladder Cancer",
+  "takeaway": "PLAN: Counsel all patients with hematuria or bladder cancer on smoking cessation, as smoking causes ~60% of male cases.",
+  "sharp_metadata": {
+    "S": "A 60-year-old male smoker presents with painless gross hematuria.",
+    "H": "Excellence in prevention: Smoking cessation is the most important modifiable risk factor to prevent recurrence and progression.",
+    "A": "A common gap is failing to aggressively counsel urology patients on smoking cessation.",
+    "R": "EAU Guidelines on Non-muscle-invasive Bladder Cancer",
+    "P": "Counsel all patients with hematuria or bladder cancer on smoking cessation, as smoking causes ~60% of male cases."
   }
+},
+{
+  "id": 90002,
+  "specialty": "Urology",
+  "topic": "Benign Bladder Tumors",
+  "question": "A 55-year-old male patient was told to have inverted papilloma. Which of the following is true about his disease?",
+  "options": {
+    "A": "It is a benign tumor of the bladder",
+    "B": "It is a precursor to low grade papillary tumor",
+    "C": "It is an invasive tumor",
+    "D": "It is not sensitive for chemotherapy"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Inverted papilloma is a benign urothelial neoplasm characterized by endophytic growth. While benign, it can occasionally be associated with concurrent urothelial carcinoma, warranting thorough evaluation.",
+    "A": "Correct. It is a benign proliferation of urothelium.",
+    "B": "Incorrect. It is not generally considered a direct precursor to papillary carcinoma.",
+    "C": "Incorrect. It grows endophytically (downward) but is not malignant/invasive.",
+    "D": "Incorrect. While true it isn't treated with chemotherapy, 'benign tumor' is the defining characteristic."
+  },
+  "guideline": "AUA Guidelines on Microhematuria and Benign Urothelial Lesions",
+  "takeaway": "PLAN: Reassure the patient that an inverted papilloma is benign, but ensure a complete cystoscopy was performed to rule out concurrent lesions.",
+  "sharp_metadata": {
+    "S": "A 55-year-old male undergoes TURBT for a small, smooth bladder lesion found during workup for microscopic hematuria.",
+    "H": "Excellence in pathology: Recognizing the endophytic growth pattern of a benign inverted papilloma versus an invasive carcinoma.",
+    "A": "Do not confuse 'endophytic' growth with 'invasive' disease in this specific benign pathology.",
+    "R": "AUA Guidelines on Microhematuria and Benign Urothelial Lesions",
+    "P": "Reassure the patient that an inverted papilloma is benign, but ensure a complete cystoscopy was performed to rule out concurrent lesions."
+  }
+},
+{
+  "id": 90003,
+  "specialty": "Urology",
+  "topic": "Bladder Cancer Presentation",
+  "question": "What percentage of patients with newly diagnosed bladder tumors present with non-muscle invasive disease (NMIBC)?",
+  "options": {
+    "A": "20%",
+    "B": "40%",
+    "C": "60%",
+    "D": "80%"
+  },
+  "answer": "D",
+  "explanation": {
+    "correct": "Approximately 75% to 80% of newly diagnosed bladder cancers are non-muscle invasive (Ta, T1, or CIS). The remaining 20-25% present with muscle-invasive or metastatic disease.",
+    "A": "Incorrect. This represents the percentage that present with muscle-invasive disease.",
+    "B": "Incorrect. The vast majority are non-muscle invasive.",
+    "C": "Incorrect. Too low.",
+    "D": "Correct. About 80% present as NMIBC."
+  },
+  "guideline": "AUA/SUO Guidelines on Non-Muscle Invasive Bladder Cancer",
+  "takeaway": "PLAN: Anticipate that most new bladder cancer diagnoses will be NMIBC and require TURBT followed by risk-stratified intravesical therapy.",
+  "sharp_metadata": {
+    "S": "A 65-year-old female is diagnosed with a papillary bladder tumor on ultrasound.",
+    "H": "Excellence in staging: Accurate initial TURBT with detrusor muscle in the specimen is critical for confirming the disease is truly non-muscle invasive.",
+    "A": "Understaging occurs in up to 30% of T1 tumors, highlighting the need for a re-resection in high-risk NMIBC.",
+    "R": "AUA/SUO Guidelines on Non-Muscle Invasive Bladder Cancer",
+    "P": "Anticipate that most new bladder cancer diagnoses will be NMIBC and require TURBT followed by risk-stratified intravesical therapy."
+  }
+},
+{
+  "id": 90004,
+  "specialty": "Urology",
+  "topic": "Prostate Cancer Management",
+  "question": "An 80-year-old man had a routine health check-up. PSA was determined to be 9 ng/ml. Prostate biopsy histology revealed adenocarcinoma with a Gleason score of 3+3=6. What is the best treatment option for the patient?",
+  "options": {
+    "A": "Watchful waiting / Active surveillance",
+    "B": "Radical prostatectomy",
+    "C": "Radiotherapy",
+    "D": "Hormonal therapy"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "In an 80-year-old asymptomatic man with low-grade, localized prostate cancer, watchful waiting or active surveillance is the preferred approach due to competing mortality risks and the slow-growing nature of the disease.",
+    "A": "Correct. Given his age and low-risk disease, conservative management avoids the morbidity of treatment.",
+    "B": "Incorrect. Radical surgery is generally not recommended for men with a life expectancy of less than 10 years.",
+    "C": "Incorrect. Radiotherapy has side effects and is generally deferred in asymptomatic elderly men with low-grade disease.",
+    "D": "Incorrect. ADT is used for advanced/metastatic disease, not as primary monotherapy for localized, low-risk disease."
+  },
+  "guideline": "NCCN Guidelines on Prostate Cancer",
+  "takeaway": "PLAN: In elderly patients (>75-80 yrs) with low-risk prostate cancer, prioritize watchful waiting to maximize quality of life.",
+  "sharp_metadata": {
+    "S": "An asymptomatic 80-year-old man is found to have low-grade prostate cancer.",
+    "H": "Excellence in geriatric oncology: Recognizing when the treatment of a disease is more harmful than the natural history of the disease itself.",
+    "A": "A common mistake is overtreating low-risk prostate cancer in elderly men with limited life expectancy.",
+    "R": "NCCN Guidelines on Prostate Cancer",
+    "P": "In elderly patients (>75-80 yrs) with low-risk prostate cancer, prioritize watchful waiting to maximize quality of life."
+  }
+},
+{
+  "id": 90005,
+  "specialty": "Urology",
+  "topic": "Prostate Cancer Monitoring",
+  "question": "Which of the following statements is true regarding the monitoring and hormonal treatment of prostate cancer (PCa)?",
+  "options": {
+    "A": "Survival is significantly improved if hormonal therapy is started for all localized disease",
+    "B": "There is no survival benefit for hormonal therapy if there is pelvic lymphadenopathy",
+    "C": "Prostate-specific antigen (PSA) can be used to detect biochemical relapse",
+    "D": "Anti-androgens are vastly superior to LHRH agonists in terms of overall survival"
+  },
+  "answer": "C",
+  "explanation": {
+    "correct": "PSA is an excellent tumor marker for monitoring prostate cancer after definitive treatment. A rising PSA after prostatectomy or radiation indicates a biochemical recurrence, often preceding clinical metastasis by months or years.",
+    "A": "Incorrect. Hormonal therapy is not standard primary treatment for all localized disease.",
+    "B": "Incorrect. ADT is highly beneficial in node-positive disease.",
+    "C": "Correct. Biochemical relapse is defined by specific PSA thresholds depending on the primary treatment.",
+    "D": "Incorrect. LHRH agonists (medical castration) are the backbone of ADT. Anti-androgens are often used as adjuncts."
+  },
+  "guideline": "AUA/ASTRO/SUO Guidelines on Prostate Cancer",
+  "takeaway": "PLAN: Use serial PSA measurements to monitor for biochemical recurrence after definitive treatment.",
+  "sharp_metadata": {
+    "S": "A patient who underwent radical prostatectomy 3 years ago presents for a follow-up visit.",
+    "H": "Excellence in post-op care: Identifying biochemical recurrence early allows for timely salvage radiotherapy or androgen deprivation therapy.",
+    "A": "Ensure patients understand that a rising PSA after surgery (e.g., >0.2 ng/mL) requires investigation before symptomatic progression occurs.",
+    "R": "AUA/ASTRO/SUO Guidelines on Prostate Cancer",
+    "P": "Use serial PSA measurements to monitor for biochemical recurrence after definitive treatment."
+  }
+},
+{
+  "id": 90008,
+  "specialty": "Urology",
+  "topic": "Pelvic Anatomy",
+  "question": "What is the fascial layer that separates the posterior aspect of the prostate from the anterior wall of the rectum?",
+  "options": {
+    "A": "Waldeyer's fascia",
+    "B": "Denonvilliers' fascia",
+    "C": "Endopelvic fascia",
+    "D": "Puboprostatic fascia"
+  },
+  "answer": "B",
+  "explanation": {
+    "correct": "Denonvilliers' fascia (rectoprostatic fascia) is a membranous partition that separates the prostate and seminal vesicles anteriorly from the rectum posteriorly. It is a critical surgical landmark during prostatectomy.",
+    "A": "Incorrect. Waldeyer's fascia is the presacral fascia.",
+    "B": "Correct. It provides an important barrier against the posterior spread of prostate cancer.",
+    "C": "Incorrect. Endopelvic fascia covers the levator ani and lateral pelvic sidewalls.",
+    "D": "Incorrect. Puboprostatic ligaments attach the prostate to the pubis anteriorly."
+  },
+  "guideline": "Surgical Anatomy of the Pelvis",
+  "takeaway": "PLAN: During radical prostatectomy, incise posterior to the prostate but anterior to Denonvilliers' fascia to protect the rectum.",
+  "sharp_metadata": {
+    "S": "A surgeon is performing a radical retropubic prostatectomy.",
+    "H": "Excellence in anatomy: Respecting surgical planes to minimize the risk of rectal injury, which is a devastating complication.",
+    "A": "Failure to identify the correct plane between the prostate and Denonvilliers' fascia can lead to rectal perforation.",
+    "R": "Surgical Anatomy of the Pelvis",
+    "P": "During radical prostatectomy, meticulously dissect anterior to the rectum while utilizing Denonvilliers' fascia as a protective barrier."
+  }
+},
+{
+  "id": 90009,
+  "specialty": "Urology",
+  "topic": "Testicular Torsion",
+  "question": "A 6-year-old male child is admitted with suspected testicular torsion. Which of the following is true regarding surgical exploration?",
+  "options": {
+    "A": "It can be delayed until 24 hours and should be limited to the affected side",
+    "B": "It can be delayed, but should include the asymptomatic side as well",
+    "C": "It should be done immediately and should be limited to the affected side",
+    "D": "It should be done immediately and must also include the asymptomatic side"
+  },
+  "answer": "D",
+  "explanation": {
+    "correct": "Testicular torsion is a surgical emergency. Exploration must be done immediately (ideally within 6 hours of symptom onset) to save the testicle. Because the anatomical defect (bell-clapper deformity) is usually bilateral, a contralateral orchiopexy MUST be performed to prevent future torsion on the healthy side.",
+    "A": "Incorrect. Delaying leads to testicular infarction.",
+    "B": "Incorrect. It cannot be delayed.",
+    "C": "Incorrect. The contralateral side must be fixed.",
+    "D": "Correct. Immediate exploration with bilateral orchiopexy is the gold standard."
+  },
+  "guideline": "AUA Guidelines on Acute Scrotum",
+  "takeaway": "PLAN: For suspected torsion, explore immediately. Always perform bilateral orchiopexy.",
+  "sharp_metadata": {
+    "S": "A young boy presents to the ER with sudden onset, severe unilateral scrotal pain and an absent cremasteric reflex.",
+    "H": "Excellence in emergent care: Time is testicle. Do not delay surgery for imaging if the clinical suspicion for torsion is high.",
+    "A": "A critical medico-legal pitfall is failing to secure the contralateral testicle, leading to asynchronous torsion and anorchia.",
+    "R": "AUA Guidelines on Acute Scrotum",
+    "P": "Proceed to immediate scrotal exploration. Untwist and assess viability. Perform bilateral 3-point fixation (orchiopexy)."
+  }
+},
+{
+  "id": 90011,
+  "specialty": "Urology",
+  "topic": "Renal Cell Carcinoma Syndromes",
+  "question": "The genetic abnormality and subsequent syndrome associated with hereditary clear cell Renal Cell Carcinoma (RCC) is also associated with which of the following?",
+  "options": {
+    "A": "Retinal angioma",
+    "B": "Epididymal cystadenoma",
+    "C": "Pheochromocytoma",
+    "D": "All of the above"
+  },
+  "answer": "D",
+  "explanation": {
+    "correct": "This question describes von Hippel-Lindau (VHL) disease, an autosomal dominant condition caused by a mutation in the VHL tumor suppressor gene on chromosome 3. It is characterized by clear cell RCC, retinal hemangioblastomas, cerebellar hemangioblastomas, pheochromocytomas, and epididymal cystadenomas.",
+    "A": "Incorrect. While true, VHL also causes the other lesions.",
+    "B": "Incorrect. While true, VHL also causes the other lesions.",
+    "C": "Incorrect. While true, VHL also causes the other lesions.",
+    "D": "Correct. VHL syndrome involves tumors in multiple organs, including all of the above."
+  },
+  "guideline": "EAU Guidelines on Renal Cell Carcinoma",
+  "takeaway": "PLAN: In young patients presenting with clear cell RCC, or patients with bilateral/multifocal tumors, refer for genetic testing for VHL disease.",
+  "sharp_metadata": {
+    "S": "A 35-year-old patient presents with bilateral clear cell renal cell carcinomas.",
+    "H": "Excellence in diagnosis: Recognizing the syndromic associations of RCC allows for crucial screening of other potentially fatal tumors, like pheochromocytomas.",
+    "A": "Failing to screen for a pheochromocytoma prior to operating on a VHL patient's kidneys can lead to intraoperative hypertensive crisis and death.",
+    "R": "EAU Guidelines on Renal Cell Carcinoma",
+    "P": "Always screen for pheochromocytoma (plasma/urine metanephrines) in VHL patients before any surgical intervention."
+  }
+},
+{
+  "id": 90012,
+  "specialty": "Urology",
+  "topic": "Genitourinary Anatomy",
+  "question": "Which of the following statements is FALSE regarding the surface anatomy and histology of the genitourinary system?",
+  "options": {
+    "A": "The kidneys are approximately a finger-breadth superior to the iliac crest",
+    "B": "The left renal hilum lies roughly at the transpyloric plane",
+    "C": "The ureters cross the tips of the transverse processes of the lumbar vertebrae",
+    "D": "The calyces, renal pelvis, ureters, and bladder have different histology"
+  },
+  "answer": "D",
+  "explanation": {
+    "correct": "Statement D is false. The minor calyces, major calyces, renal pelvis, ureters, and bladder all share the EXACT same histological lining: transitional epithelium (urothelium). This is why urothelial carcinoma can present anywhere along the upper and lower urinary tracts.",
+    "A": "Incorrect. This is anatomically true.",
+    "B": "Incorrect. This is anatomically true (L1 level).",
+    "C": "Incorrect. This is anatomically true; they descend retroperitoneally over the transverse processes.",
+    "D": "Correct. This statement is FALSE because the entire collecting system is lined by uniform urothelium."
+  },
+  "guideline": "Basic Sciences in Urology",
+  "takeaway": "PLAN: Due to the shared urothelial lining, a patient with a bladder tumor must have upper tract imaging (e.g., CT urogram) to rule out synchronous upper tract urothelial carcinoma.",
+  "sharp_metadata": {
+    "S": "A medical student is asked about the 'field effect' in urologic oncology.",
+    "H": "Excellence in fundamentals: Understanding that the entire urinary tract shares the same embryological urothelium explains the multifocal nature of transitional cell carcinoma.",
+    "A": "A common clinical error is treating a bladder tumor but failing to image the ureters and renal pelvis, missing a synchronous upper tract tumor.",
+    "R": "EAU Guidelines on Upper Tract Urothelial Carcinoma",
+    "P": "Always perform upper tract imaging (CT Urography or MR Urography) when working up a new diagnosis of urothelial carcinoma."
+  }
+},
+{
+  "id": 90013,
+  "specialty": "Urology",
+  "topic": "Urolithiasis in Pregnancy",
+  "question": "A 24-year-old gravida-II lady presents with symptomatic urolithiasis that has failed conservative management. Which of the following statements is true?",
+  "options": {
+    "A": "The incidence of kidney stones is significantly higher in pregnancy",
+    "B": "Ureteroscopy is a relatively safe intervention",
+    "C": "Intravenous urography (IVU) is absolutely contraindicated",
+    "D": "Extracorporeal shock wave lithotripsy (ESWL) is a relative contraindication"
+  },
+  "answer": "B",
+  "explanation": {
+    "correct": "Ureteroscopy (URS) with laser lithotripsy is safe and effective in pregnancy when conservative management (hydration, analgesia) fails. It avoids the long-term stent morbidity of continuous exchanges.",
+    "A": "Incorrect. The incidence is generally considered similar to the age-matched non-pregnant population.",
+    "C": "Incorrect. IVU (and low-dose CT) are relatively contraindicated, but can be used in select emergencies if ultrasound/MRI are inconclusive and intervention is required. It is not 'absolutely' contraindicated.",
+    "D": "Incorrect. ESWL is an ABSOLUTE contraindication in pregnancy due to the risk of fetal demise and placental abruption.",
+    "B": "Correct. URS is the definitive treatment of choice for pregnant women requiring stone intervention."
+  },
+  "guideline": "AUA Medical Management of Kidney Stones / EAU Guidelines on Urolithiasis",
+  "takeaway": "PLAN: In pregnant patients with intractable stone pain, URS is preferred over long-term stenting.",
+  "sharp_metadata": {
+    "S": "A 24-week pregnant woman presents with intractable renal colic and a 7mm distal ureteral stone on ultrasound.",
+    "H": "Excellence in maternal care: Recognizing that while temporary stenting is an option, it requires exchanges every 4-6 weeks due to rapid encrustation in pregnancy. URS offers definitive treatment.",
+    "A": "Never perform ESWL on a pregnant patient. This is an absolute contraindication.",
+    "R": "AUA Guidelines on Surgical Management of Stones",
+    "P": "Offer Ureteroscopy for symptomatic ureteral stones in pregnant women who fail conservative therapy."
+  }
+},
+{
+  "id": "8abd5533",
+  "specialty": "Urology",
+  "topic": "Bladder Cancer Presentation",
+  "question": "What percentage of patients with bladder tumor present with non-muscle invasive disease?",
+  "options": {
+    "A": "20%",
+    "B": "40%",
+    "C": "60%",
+    "D": "80%"
+  },
+  "answer": "D",
+  "explanation": {
+    "correct": "Approximately 75% to 80% of patients diagnosed with bladder cancer present with non-muscle-invasive bladder cancer (NMIBC), which includes Ta, T1, and Tis (CIS) lesions. The remaining 20-25% present with muscle-invasive or metastatic disease.",
+    "A": "Incorrect. This roughly corresponds to the percentage presenting with muscle-invasive disease.",
+    "B": "Incorrect. This is an underestimate.",
+    "C": "Incorrect. This is an underestimate.",
+    "D": "Correct. Around 80% present with NMIBC."
+  },
+  "guideline": "AUA/SUO Guideline on Non-Muscle Invasive Bladder Cancer",
+  "takeaway": "PLAN: The vast majority of new bladder cancer diagnoses are non-muscle-invasive and are managed primarily with TURBT and intravesical therapies.",
+  "sharp_metadata": {
+    "S": "A newly diagnosed bladder cancer patient asks about their prognosis and stage.",
+    "H": "Excellence in communication: Reassure the patient that most bladder cancers are caught early (NMIBC), but emphasize the high risk of recurrence necessitating strict surveillance.",
+    "A": "A common gap is underestimating the recurrence risk of NMIBC despite its 'early' stage classification.",
+    "R": "AUA/SUO Guidelines highlight the high prevalence of NMIBC at initial presentation.",
+    "P": "Classify the NMIBC into low, intermediate, or high risk to guide the use of intravesical BCG or chemotherapy."
+  }
+},
+{
+  "id": "8f6e80c0",
+  "specialty": "Urology",
+  "topic": "Renal Cysts",
+  "question": "A hyperdense renal cyst is",
+  "options": {
+    "A": "Bosniak II",
+    "B": "Bosinak III",
+    "C": "Bosinak IV",
+    "D": "Malignant tumor"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "According to the Bosniak classification, a Bosniak II cyst includes benign, minimally complicated cysts. This includes hyperdense (proteinaceous or hemorrhagic) cysts that are < 3 cm, sharply marginated, and do not enhance.",
+    "A": "Correct. Hyperdense cysts (<3cm) that are non-enhancing are classified as Bosniak II.",
+    "B": "Incorrect. Bosniak III cysts have indeterminate features like thickened or irregular walls/septa.",
+    "C": "Incorrect. Bosniak IV cysts have enhancing nodular components and are highly suspicious for malignancy.",
+    "D": "Incorrect. A simple hyperdense cyst is overwhelmingly benign."
+  },
+  "guideline": "Bosniak Classification of Renal Cysts",
+  "takeaway": "PLAN: Bosniak II cysts are benign and typically do not require surgical intervention or follow-up.",
+  "sharp_metadata": {
+    "S": "A patient has an incidental 2cm hyperdense, non-enhancing renal cyst found on a non-contrast CT.",
+    "H": "Excellence in radiology interpretation: Correctly categorizing as Bosniak II prevents unnecessary biopsies or surgeries.",
+    "A": "Address the fact that if a hyperdense cyst is >3cm or entirely endophytic, it may be classified as Bosniak IIF, requiring follow-up.",
+    "R": "The Bosniak classification system is the gold standard for managing complex renal cysts.",
+    "P": "For a classic Bosniak II cyst, reassure the patient and avoid further imaging."
+  }
+},
+{
+  "id": "9d6b3eaa",
+  "specialty": "Urology",
+  "topic": "Prostate Cancer Management",
+  "question": "A 65-year-old male patient presented with clinically localized prostate cancer of Gleason score 2-4. What is the incidence of metastases by 10 years following watchful waiting?",
+  "options": {
+    "A": "10-20%",
+    "B": "20-25%",
+    "C": "25-30%",
+    "D": ">35%"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "For well-differentiated (Gleason 2-4, Grade Group 1) localized prostate cancer managed with watchful waiting or active surveillance, the disease-specific progression and metastatic rate at 10 years is very low, typically around 10-20% (often reported even lower, <10% for metastasis).",
+    "A": "Correct. The risk of metastasis at 10 years is low (typically <20%).",
+    "B": "Incorrect. This overestimates the risk for well-differentiated tumors.",
+    "C": "Incorrect. Higher risk is associated with higher Gleason scores.",
+    "D": "Incorrect. This is characteristic of poorly differentiated or locally advanced disease."
+  },
+  "guideline": "AUA/ASTRO/SUO Guideline on Clinically Localized Prostate Cancer",
+  "takeaway": "PLAN: Active surveillance (or watchful waiting in older/sicker patients) is the preferred management for very-low and low-risk prostate cancer.",
+  "sharp_metadata": {
+    "S": "A 65-year-old man with a 10-year life expectancy is diagnosed with low-volume Gleason 6 (Grade Group 1) prostate cancer.",
+    "H": "Excellence in counseling: Avoid overtreatment by strongly recommending active surveillance for low-risk disease, preventing the morbidity of surgery or radiation.",
+    "A": "A common gap is confusing 'watchful waiting' (palliative intent, symptom-directed) with 'active surveillance' (curative intent, strict monitoring).",
+    "R": "AUA Guidelines strongly endorse active surveillance for low-risk prostate cancer.",
+    "P": "Discuss the excellent 10-year metastasis-free survival rates to alleviate patient anxiety regarding deferred treatment."
+  }
+},
+{
+  "id": "52f8cd3f",
+  "specialty": "Urology",
+  "topic": "Prostate Cancer Treatment Options",
+  "question": "An 80-year-old man had routine health check up. PSA was determined to be 9Nmol/ml. Histology revealed adenocarcinoma with Gleason score of 3-4. What is the best treatment option for the patient?",
+  "options": {
+    "A": "Watchful waiting",
+    "B": "Radical prostatectomy",
+    "C": "Radiotherapy",
+    "D": "Hormonal therapy"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "For an 80-year-old patient with an intermediate-risk prostate cancer (Gleason 7) and a likely life expectancy of less than 10 years, watchful waiting (or active surveillance, depending on exact health status) is generally the most appropriate initial management to avoid overtreatment and treatment-related morbidity.",
+    "A": "Correct. Watchful waiting is appropriate given his advanced age and the likely competing causes of mortality.",
+    "B": "Incorrect. Radical prostatectomy is generally reserved for men with a >10-year life expectancy.",
+    "C": "Incorrect. Radiotherapy can be considered, but watchful waiting is often preferred initially to preserve quality of life.",
+    "D": "Incorrect. Primary hormonal therapy is generally reserved for symptomatic or metastatic disease."
+  },
+  "guideline": "AUA Guidelines on Clinically Localized Prostate Cancer",
+  "takeaway": "PLAN: In elderly men (>75-80 years) with asymptomatic, localized prostate cancer, conservative management (watchful waiting) is often the safest and most appropriate choice.",
+  "sharp_metadata": {
+    "S": "An asymptomatic 80-year-old man is found to have Gleason 7 prostate cancer after a screening PSA of 9.",
+    "H": "Excellence in geriatric oncology: Prioritizing quality of life over aggressive cancer treatment in patients with limited life expectancy (<10 years).",
+    "A": "A common pitfall is treating the cancer rather than the patient, subjecting elderly men to incontinence or erectile dysfunction for a cancer that is unlikely to kill them.",
+    "R": "AUA Guidelines recommend considering life expectancy strongly when formulating a treatment plan.",
+    "P": "Discuss watchful waiting, where treatment (like androgen deprivation therapy) is only initiated if the patient becomes symptomatic (e.g., bone pain, urinary retention)."
+  }
+},
+{
+  "id": "50fd2d18",
+  "specialty": "Urology",
+  "topic": "Prostate Cancer Hormonal Therapy",
+  "question": "Which of the following statement is true about hormonal treatment of prostatic cancer (PCa)?",
+  "options": {
+    "A": "Survival is improved if it is started for localized disease",
+    "B": "There is no survival benefit if there is pelvic lymphadenopathy",
+    "C": "PSA can be used to detect biochemical relapse",
+    "D": "Anti-androgens are inferior to LHRH agonists in terms of survival"
+  },
+  "answer": "C",
+  "explanation": {
+    "correct": "PSA is an excellent tumor marker for prostate cancer and is universally used to monitor disease status, response to hormonal therapy, and to detect biochemical relapse (rising PSA) before clinical symptoms appear.",
+    "A": "Incorrect. Hormonal therapy alone is not standard for localized disease and does not improve overall survival compared to local therapy.",
+    "B": "Incorrect. Adjuvant hormonal therapy does provide a survival benefit in node-positive (N1) disease.",
+    "C": "Correct. PSA monitoring is the cornerstone of detecting biochemical recurrence.",
+    "D": "Incorrect. While LHRH agonists are the backbone of ADT, the statement as an absolute comparison of inferiority in all settings is inaccurate; they are often used together (maximal androgen blockade)."
+  },
+  "guideline": "AUA/ASTRO/SUO Guideline on Advanced Prostate Cancer",
+  "takeaway": "PLAN: Serial PSA measurements are the primary method for monitoring the efficacy of androgen deprivation therapy and detecting early relapse.",
+  "sharp_metadata": {
+    "S": "A patient on LHRH agonists for advanced prostate cancer comes in for a routine follow-up.",
+    "H": "Excellence in monitoring: Recognizing that a rising PSA on ADT defines 'castration-resistant prostate cancer' (CRPC) provided testosterone is at castrate levels (<50 ng/dL).",
+    "A": "Address the misconception that hormonal therapy is a cure; it is palliative and disease-suppressive.",
+    "R": "AUA Advanced Prostate Cancer Guidelines.",
+    "P": "Monitor PSA and testosterone levels every 3-6 months. If PSA rises, verify castrate testosterone levels before diagnosing CRPC."
+  }
+},
+{
+  "id": "328c449f",
+  "specialty": "Urology",
+  "topic": "Benign Prostatic Hyperplasia (BPH) Management",
+  "question": "Which of the following is true about management of benign prostatic hyperplasia (BPH)?",
+  "options": {
+    "A": "IPSS score can determine the surgical outcome",
+    "B": "Urodynamic studies should be done in most patients",
+    "C": "Quality of life score is an important tool for decision making",
+    "D": "The global prostate size can predict severity of the problem"
+  },
+  "answer": "C",
+  "explanation": {
+    "correct": "The primary goal of BPH treatment is to improve the patient's quality of life (QoL). The International Prostate Symptom Score (IPSS), which includes a specific QoL question ('bother score'), is critical for guiding treatment decisions.",
+    "A": "Incorrect. IPSS measures symptom severity, not surgical outcome.",
+    "B": "Incorrect. Urodynamics are not routinely recommended; they are reserved for complex cases (e.g., neurogenic bladder, failed prior therapy).",
+    "C": "Correct. The degree to which symptoms bother the patient dictates the aggressiveness of the management.",
+    "D": "Incorrect. Prostate size correlates poorly with the severity of lower urinary tract symptoms (LUTS)."
+  },
+  "guideline": "AUA Guideline on the Management of Benign Prostatic Hyperplasia (BPH)",
+  "takeaway": "PLAN: BPH is a quality-of-life disease; management should be tailored strictly to how much the symptoms bother the patient.",
+  "sharp_metadata": {
+    "S": "A patient with a large prostate has mild LUTS and is not bothered by them.",
+    "H": "Excellence in conservative management: Reassuring the patient that no medical or surgical intervention is required if their QoL is not significantly impacted.",
+    "A": "A common error is initiating medical therapy based solely on prostate size or a slightly elevated PSA, rather than the patient's actual 'bother' score.",
+    "R": "AUA Guidelines stress that treatment is indicated only for bothersome LUTS or complications (e.g., retention, recurrent UTI).",
+    "P": "Administer the IPSS questionnaire. Offer reassurance and behavioral modifications for mild symptoms."
+  }
+},
+{
+  "id": "65aca656",
+  "specialty": "Urology",
+  "topic": "Retroperitoneal Anatomy",
+  "question": "Gerota fascia envelops & contains which of the following structures?",
+  "options": {
+    "A": "The kidneys",
+    "B": "The adrenals",
+    "C": "Gonadal vessels",
+    "D": "All of the above"
+  },
+  "answer": "D",
+  "explanation": {
+    "correct": "Gerota's fascia (the renal fascia) is a collagenous sheath that encloses the perinephric space. It contains the kidneys, the adrenal glands, the proximal ureter, and the proximal portions of the gonadal vessels.",
+    "A": "True, but incomplete.",
+    "B": "True, but incomplete.",
+    "C": "True (proximal portions), but incomplete.",
+    "D": "Correct. All these structures are contained within or pass through the space bounded by Gerota's fascia."
+  },
+  "guideline": "Campbell-Walsh-Wein Urology: Anatomy of the Retroperitoneum",
+  "takeaway": "PLAN: During a radical nephrectomy for cancer, Gerota's fascia is taken en bloc to ensure complete extirpation of the tumor and surrounding perinephric fat.",
+  "sharp_metadata": {
+    "S": "A surgeon is performing a radical nephrectomy for a 7cm renal cell carcinoma.",
+    "H": "Excellence in surgical oncology: Removing the kidney intact within Gerota's fascia prevents tumor spillage and local recurrence.",
+    "A": "Address the fact that while the adrenal gland is within Gerota's fascia, adrenal-sparing nephrectomy is the standard of care unless the tumor directly invades it.",
+    "R": "Standard urologic anatomic principles.",
+    "P": "Identify and mobilize Gerota's fascia outside the perinephric fat, leaving the adrenal gland if uninvolved."
+  }
+},
+{
+  "id": "d5c5a6b3",
+  "specialty": "Urology",
+  "topic": "Fournier's Gangrene",
+  "question": "A 30-year-old male patient was admitted with Fournier’s gangrene for debridement. Which layers of testis & scrotum need to be debrided?",
+  "options": {
+    "A": "Scrotal skin only",
+    "B": "Scrotal skin & Dartos layer",
+    "C": "Scrotal skin, Dartos layer & external spermatic fascia",
+    "D": "Scrotal skin, Dartos layer, external cremasteric & internal spermatic fascia"
+  },
+  "answer": "B",
+  "explanation": {
+    "correct": "Fournier's gangrene is a necrotizing fasciitis that spreads along the superficial fascial planes (Dartos fascia in the scrotum, Colles' fascia in the perineum, and Scarpa's fascia in the abdomen). It typically spares the deep fascial layers (Buck's fascia) and the testes because the testes have a separate blood supply directly from the aorta.",
+    "A": "Incorrect. The underlying necrotic fascia must be removed.",
+    "B": "Correct. Debridement involves the skin and the superficial Dartos fascia.",
+    "C": "Incorrect. The deeper fascial layers of the spermatic cord are usually spared.",
+    "D": "Incorrect. Testicular and deep cord involvement is extremely rare."
+  },
+  "guideline": "AUA Urologic Emergencies",
+  "takeaway": "PLAN: Fournier's gangrene spreads rapidly along superficial fascial planes but classically spares the testes.",
+  "sharp_metadata": {
+    "S": "A diabetic patient presents with scrotal erythema, extreme pain out of proportion to exam, and crepitus.",
+    "H": "Excellence in surgical technique: Aggressive debridement of all necrotic skin and Dartos fascia is life-saving, but the surgeon can safely 'drop' the healthy testicles into subcutaneous thigh pouches if the entire scrotum is removed.",
+    "A": "A common mistake is failing to debride aggressively enough; you must cut until you reach healthy, bleeding tissue.",
+    "R": "Standard surgical management of necrotizing fasciitis.",
+    "P": "Perform emergent, wide surgical debridement of the skin and Dartos layer, followed by broad-spectrum IV antibiotics."
+  }
+},
+{
+  "id": "85639bf3",
+  "specialty": "Urology",
+  "topic": "Testicular Tumor Markers",
+  "question": "In which of the following conditions is AFP level not elevated?",
+  "options": {
+    "A": "Pure seminoma or choriocarcinoma",
+    "B": "Hepatoma, pancreatic carcinoma, bronchogenic carcinoma",
+    "C": "Fetal yolk sac tumor, embryonal carcinoma, teratocarcinoma",
+    "D": "A & B"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Alpha-fetoprotein (AFP) is NEVER elevated in pure seminoma or pure choriocarcinoma. If AFP is elevated in a patient with an apparent seminoma, there is a non-seminomatous component (like yolk sac or embryonal), and it must be treated as a non-seminomatous germ cell tumor (NSGCT).",
+    "A": "Correct. Pure seminoma and choriocarcinoma do not produce AFP (choriocarcinoma produces hCG).",
+    "B": "Incorrect. AFP can be elevated in these non-testicular malignancies (especially hepatoma/HCC).",
+    "C": "Incorrect. These are the classic NSGCTs that do elevate AFP.",
+    "D": "Incorrect."
+  },
+  "guideline": "EAU Guidelines on Testicular Cancer",
+  "takeaway": "PLAN: Any elevation of AFP in a testicular tumor dictates that it must be managed as a Non-Seminomatous Germ Cell Tumor (NSGCT), regardless of the initial biopsy or histology reading.",
+  "sharp_metadata": {
+    "S": "A 25-year-old male has a testicular mass. Tumor markers show normal hCG but an AFP of 500 ng/mL. Pathology reads 'pure seminoma'.",
+    "H": "Excellence in oncology: Trust the markers. An elevated AFP means there is an unsampled non-seminomatous element.",
+    "A": "A common clinical gap is treating a patient with elevated AFP as a seminoma, leading to undertreatment.",
+    "R": "EAU/AUA Guidelines strictly categorize tumors with elevated AFP as NSGCTs.",
+    "P": "Treat the patient according to the NSGCT algorithm (often involving BEP chemotherapy or retroperitoneal lymph node dissection)."
+  }
+},
+{
+  "id": "ff14ded7",
+  "specialty": "Urology",
+  "topic": "Prostate Anatomy",
+  "question": "What is the posterior fascia relation of the prostate?",
+  "options": {
+    "A": "Waldayer’s fascia",
+    "B": "Denonvillier’s fascia",
+    "C": "Endopelvic fascia",
+    "D": "Puboprostatic fascia"
+  },
+  "answer": "B",
+  "explanation": {
+    "correct": "Denonvilliers' fascia (rectoprostatic fascia) is a strong fibromuscular layer that separates the prostate and seminal vesicles anteriorly from the rectum posteriorly.",
+    "A": "Incorrect. Waldeyer's fascia is located in the posterior aspect of the rectum.",
+    "B": "Correct. Denonvilliers' fascia separates the prostate from the rectum.",
+    "C": "Incorrect. Endopelvic fascia covers the levator ani and lateral aspects of the prostate.",
+    "D": "Incorrect. Puboprostatic ligaments/fascia attach the prostate to the pubis anteriorly."
+  },
+  "guideline": "Campbell-Walsh-Wein Urology: Surgical Anatomy of the Pelvis",
+  "takeaway": "PLAN: Denonvilliers' fascia acts as a crucial anatomical barrier preventing the direct spread of prostate cancer into the rectum.",
+  "sharp_metadata": {
+    "S": "A surgeon is performing a radical prostatectomy and is dissecting posterior to the seminal vesicles.",
+    "H": "Excellence in surgical technique: Recognizing and staying anterior to Denonvilliers' fascia minimizes the risk of rectal injury during prostatectomy.",
+    "A": "Address the risk of rectal injury if the dissection plane strays posterior to this tough fascial layer.",
+    "R": "Surgical anatomy fundamentals.",
+    "P": "Carefully incise Denonvilliers' fascia after dropping the seminal vesicles to establish the plane between the prostate and the rectum."
+  }
+},
+{
+  "id": "6ad4037d",
+  "specialty": "Urology",
+  "topic": "Testicular Torsion",
+  "question": "A 6 year-old male child was admitted with suspected testicular torsion. Which of the following is true about surgical exploration?",
+  "options": {
+    "A": "It can be delayed till 24 hours and should be limited to affected side",
+    "B": "It can be delayed but should include the asymptomatic side as well",
+    "C": "It should be done immediately and should be limited to affected side",
+    "D": "It should be done immediately and should also include asymptomatic side"
+  },
+  "answer": "D",
+  "explanation": {
+    "correct": "Testicular torsion is a surgical emergency requiring immediate exploration to maximize testicular salvage (ideally within 6 hours). The underlying anatomical defect (bell-clapper deformity) is almost always bilateral, so a prophylactic contralateral orchidopexy must be performed concurrently.",
+    "A": "Incorrect. Delaying >6-8 hours drastically reduces salvage rates.",
+    "B": "Incorrect. It cannot be delayed.",
+    "C": "Incorrect. Contralateral exploration and fixation are mandatory.",
+    "D": "Correct. Immediate exploration with bilateral fixation is the gold standard."
+  },
+  "guideline": "AUA Guidelines on Acute Scrotum",
+  "takeaway": "PLAN: Testicular torsion requires emergent surgery. Always fix the contralateral unaffected testis because the anatomical predisposition is bilateral.",
+  "sharp_metadata": {
+    "S": "A child presents with 3 hours of severe right scrotal pain and an absent cremasteric reflex.",
+    "H": "Excellence in emergency urology: Do not delay for ultrasound if the clinical picture is classic; every hour decreases viability.",
+    "A": "A devastating medico-legal pitfall is failing to secure the contralateral testis, leading to torsion and anorchia later in life.",
+    "R": "AUA Guidelines dictate bilateral orchidopexy during exploration for torsion.",
+    "P": "Consent the parents for bilateral scrotal exploration and orchidopexy (and possible orchiectomy if the affected testis is necrotic)."
+  }
+},
+{
+  "id": "7528381a",
+  "specialty": "Urology",
+  "topic": "Benign Prostatic Hyperplasia Diagnostics",
+  "question": "Which of the following statement is true about benign prostatic hypertrophy with bladder neck obstruction?",
+  "options": {
+    "A": "It always results in significant symptoms",
+    "B": "It is best diagnosed by endoscopy and urodynamic studies",
+    "C": "It is easily diagnosed by symptoms of poor stream & straining",
+    "D": "It always results in a residual urine volume of >100ml"
+  },
+  "answer": "B",
+  "explanation": {
+    "correct": "While symptoms (LUTS) often guide medical therapy, the definitive diagnosis of bladder outlet obstruction (BOO) secondary to BPH requires urodynamic studies (pressure-flow studies) to differentiate BOO from detrusor underactivity, and endoscopy to visualize the anatomical obstruction.",
+    "A": "Incorrect. Obstruction can be insidious and relatively asymptomatic until decompensation occurs.",
+    "B": "Correct. Urodynamics (showing high detrusor pressure and low flow) and cystoscopy objectively prove obstruction.",
+    "C": "Incorrect. Poor stream and straining can also be caused by a weak detrusor muscle.",
+    "D": "Incorrect. The bladder can compensate for years, emptying completely despite obstruction, before failing and leaving a residual."
+  },
+  "guideline": "AUA/EAU Guidelines on Management of Non-Neurogenic Male LUTS",
+  "takeaway": "PLAN: LUTS are not synonymous with obstruction. When objective proof of obstruction is needed (e.g., before invasive surgery), urodynamics and cystoscopy are used.",
+  "sharp_metadata": {
+    "S": "A patient with poor stream is scheduled for a TURP but has normal prostate size and minimal residual urine.",
+    "H": "Excellence in diagnostics: Performing pressure-flow urodynamics prevents doing a TURP on a patient with detrusor underactivity, which would not improve their symptoms.",
+    "A": "Address the misconception that a large prostate or subjective symptoms equate to objective obstruction.",
+    "R": "AUA Guidelines recommend urodynamics when the diagnosis of obstruction is in doubt prior to surgery.",
+    "P": "Order a urodynamic pressure-flow study to confirm high voiding pressures and low flow (BOO)."
+  }
+},
+{
+  "id": "e18f7668",
+  "specialty": "Urology",
+  "topic": "Renal Cell Carcinoma Presentation",
+  "question": "A 60-year-old man was told to have renal adenocarcinoma. Which of the following statement is true about his disease?",
+  "options": {
+    "A": "It is transitional in origin",
+    "B": "Patients are usually anemic",
+    "C": "It is extremely radiosensitive",
+    "D": "Usual presentation is gross hematuria"
+  },
+  "answer": "B",
+  "explanation": {
+    "correct": "Anemia is the most common laboratory abnormality and paraneoplastic syndrome associated with Renal Cell Carcinoma (occurring in about 30% of patients). NOTE: Historically, the 'classic' triad was hematuria, flank pain, and a mass, but today the 'usual' presentation is an incidental finding on imaging, not gross hematuria.",
+    "A": "Incorrect. RCC arises from the renal tubular epithelium, not transitional (urothelial) cells.",
+    "B": "Correct. Anemia is very common, often due to chronic disease or hematuria. (Polycythemia can also occur but is less common).",
+    "C": "Incorrect. RCC is notoriously radio-resistant and chemo-resistant.",
+    "D": "Incorrect in modern times. Over 60% of RCCs are now discovered incidentally on abdominal imaging for other reasons."
+  },
+  "guideline": "EAU Guidelines on Renal Cell Carcinoma",
+  "takeaway": "PLAN: Suspect RCC in patients with unexplained anemia or other paraneoplastic syndromes (hypercalcemia, fever, hepatic dysfunction).",
+  "sharp_metadata": {
+    "S": "A patient presents with weight loss, fatigue, normocytic anemia, and an incidental 6cm solid renal mass on CT.",
+    "H": "Excellence in clinical acumen: Recognizing RCC as the 'Internist's Tumor' due to its wide array of paraneoplastic presentations.",
+    "A": "A common trap is assuming all RCC patients present with the classic triad; today, this triad represents late-stage disease.",
+    "R": "EAU Guidelines detail the paraneoplastic syndromes of RCC.",
+    "P": "Work up the anemia, stage the patient with CT chest/abdomen/pelvis, and prepare for partial or radical nephrectomy."
+  }
+},
+{
+  "id": "66aa8e64",
+  "specialty": "Urology",
+  "topic": "Von Hippel-Lindau Disease",
+  "question": "The genetic abnormality & the subsequent syndrome associated with clear cell RCC is, to some degree also associated with?",
+  "options": {
+    "A": "Retinal angioma",
+    "B": "Epidydimal cystadenoma",
+    "C": "Pheochromocytoma",
+    "D": "All of the abve"
+  },
+  "answer": "D",
+  "explanation": {
+    "correct": "Von Hippel-Lindau (VHL) syndrome is an autosomal dominant condition caused by a mutation in the VHL tumor suppressor gene on chromosome 3. It is associated with clear cell RCC, retinal hemangioblastomas (angiomas), CNS hemangioblastomas, pheochromocytomas, pancreatic cysts/tumors, and epididymal papillary cystadenomas.",
+    "A": "True, retinal hemangioblastomas are a hallmark.",
+    "B": "True, epididymal cystadenomas can occur.",
+    "C": "True, pheochromocytomas are a classic component.",
+    "D": "Correct. VHL syndrome encompasses all these manifestations."
+  },
+  "guideline": "Management of Hereditary Renal Cell Carcinoma Syndromes",
+  "takeaway": "PLAN: In any young patient presenting with clear cell RCC, screen for Von Hippel-Lindau syndrome.",
+  "sharp_metadata": {
+    "S": "A 35-year-old patient presents with bilateral clear cell renal cell carcinomas.",
+    "H": "Excellence in genetic screening: Bilateral, multifocal, or early-onset RCC demands a genetic workup for VHL to screen for other life-threatening tumors.",
+    "A": "Address the fact that operating on VHL patients differs from sporadic RCC; nephron-sparing surgery (partial nephrectomy) is critical to delay dialysis.",
+    "R": "Standard genetic urological oncology.",
+    "P": "Refer for genetic counseling, perform an ophthalmologic exam, and screen for pheochromocytoma with plasma metanephrines."
+  }
+}
+,
+{
+  "id": 613,
+  "specialty": "Urology",
+  "topic": "Comprhensive Surgery Revision conv.docx",
+  "question": "Complications of a pancreas transplant drained into the bladder include:",
+  "options": {
+    "B": "Recurrent urinary tract infections.",
+    "E": "Refractory loss of bicarbonate."
+  },
+  "answer": "B",
+  "explanation": {
+    "correct": "The correct answer (B) \u2013 recurrent urinary tract infections \u2013 is the most common and immediately apparent consequence of a UPA leak. The leak introduces pancreatic enzymes into the urinary tract, creating a perfect environment for bacterial colonization and infection. The provided answer key incorrectly identifies \u2018Refractory loss of bicarbonate\u2019 as the correct answer. This is a less frequent, but potentially devastating, consequence related to pancreatic fistula, reflecting a misunderstanding of the pathophysiology.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp": {
+    "status": "ACCEPT",
+    "verified_answer": "B",
+    "set_the_stage": "This question assesses understanding of a rare but serious complication following pancreas transplantation \u2013 uretero-pancreatic anastomosis (UPA) leak. The UPA is the connection between the transplanted pancreas and the bladder, designed to allow for drainage of pancreatic enzymes. Failure of this anastomosis leads to significant morbidity.",
+    "highlight_excellence": "The correct answer (B) \u2013 recurrent urinary tract infections \u2013 is the most common and immediately apparent consequence of a UPA leak. The leak introduces pancreatic enzymes into the urinary tract, creating a perfect environment for bacterial colonization and infection. The provided answer key incorrectly identifies \u2018Refractory loss of bicarbonate\u2019 as the correct answer. This is a less frequent, but potentially devastating, consequence related to pancreatic fistula, reflecting a misunderstanding of the pathophysiology.",
+    "address_gaps": "The question lacks crucial detail regarding the pathophysiology of the UPA leak and its immediate consequences. It would benefit from explicitly mentioning the role of pancreatic enzymes in causing urinary tract infections. Furthermore, the options presented don\u2019t adequately represent the range of complications associated with this anastomosis. A better question would include options related to fistula grade, peristomal abscesses, or sepsis.",
+    "review_guidelines": "1. **UPA Anatomy & Function:** Thoroughly review the anatomy of the UPA, its purpose, and the potential for complications. 2. **Fistula Grading:** Understand the Banff classification of pancreatic fistulas (Grade I, II, III) and their associated risk of complications. 3. **Pathophysiology of UPA Leak:** Grasp the mechanism by which pancreatic enzymes contaminate the urine and lead to infection. 4. **Management of UPA Leak:** Familiarize yourself with the initial management strategies (conservative vs. surgical) and long-term monitoring.",
+    "plan": "Implement a focused review of pancreatic transplant complications, specifically concentrating on the UPA. Utilize diagrams and flowcharts to visualize the anatomy and potential pathways of infection. Consider case studies illustrating the clinical presentation and management of UPA leaks. Further, emphasize the importance of early recognition and aggressive management to minimize morbidity and mortality."
+  },
+  "guideline": "1. **UPA Anatomy & Function:** Thoroughly review the anatomy of the UPA, its purpose, and the potential for complications. 2. **Fistula Grading:** Understand the Banff classification of pancreatic fistulas (Grade I, II, III) and their associated risk of complications. 3. **Pathophysiology of UPA Leak:** Grasp the mechanism by which pancreatic enzymes contaminate the urine and lead to infection. 4. **Management of UPA Leak:** Familiarize yourself with the initial management strategies (conservative vs. surgical) and long-term monitoring.",
+  "takeaway": "PLAN: Implement a focused review of pancreatic transplant complications, specifically concentrating on the UPA. Utilize diagrams and flowcharts to visualize the anatomy and potential pathways of infection. Consider case studies illustrating the clinical presentation and management of UPA leaks. Further, emphasize the importance of early recognition and aggressive management to minimize morbidity and mortality."
+}
+,
+{
+  "id": 611,
+  "specialty": "Urology",
+  "topic": "Comprhensive Surgery Revision conv.docx",
+  "question": "Benign prostatic hypertrophy with bladder neck obstruction:",
+  "options": {
+    "C": "Is easily diagnosed by the symptoms of frequency, hesitancy, and nocturia.",
+    "D": "Is always accompanied by residual urine volume greater than 100 ml."
+  },
+  "answer": "D",
+  "explanation": {
+    "correct": "The correct answer (D) emphasizes the crucial role of residual urine volume measurement. A residual volume >100ml is a highly sensitive and specific indicator of bladder outlet obstruction caused by BPH, significantly more reliable than solely relying on symptoms like frequency, hesitancy, and nocturia which can be influenced by various factors and are often non-specific.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp": {
+    "status": "ACCEPT",
+    "verified_answer": "D",
+    "set_the_stage": "This question assesses understanding of benign prostatic hyperplasia (BPH) and its clinical presentation. It specifically targets the importance of objective measures in diagnosis, differentiating it from relying solely on patient-reported symptoms.",
+    "highlight_excellence": "The correct answer (D) emphasizes the crucial role of residual urine volume measurement. A residual volume >100ml is a highly sensitive and specific indicator of bladder outlet obstruction caused by BPH, significantly more reliable than solely relying on symptoms like frequency, hesitancy, and nocturia which can be influenced by various factors and are often non-specific.",
+    "address_gaps": "Option C is incorrect. While frequency, hesitancy, and nocturia are *common* symptoms of BPH, they are not reliable for diagnosis alone. Many conditions can cause these symptoms. The key is to quantify the obstruction. The question also doesn't fully explore the importance of other diagnostic tools like post-void residual volume measurement, uroflow studies, and transrectal ultrasound.",
+    "review_guidelines": "1. **Diagnostic Workup for BPH:**  Start with a thorough history and physical exam.  Crucially, measure post-void residual volume (PVR) \u2013 >100ml is a significant finding. Uroflowmetry is essential to assess urinary flow rate. Transrectal ultrasound (TRUS) is used for prostate size estimation and to rule out other pathology. 2. **Symptom Assessment:** While symptoms are important for patient understanding and treatment selection, they are not definitive for diagnosis. 3. **Treatment Considerations:**  Treatment options depend on symptom severity and objective findings (e.g., alpha-blockers, 5-alpha reductase inhibitors, minimally invasive procedures, or surgery).",
+    "plan": "Further review should focus on the diagnostic criteria for BPH, specifically the role of PVR and uroflowmetry. Reinforce the understanding that symptoms alone are insufficient for diagnosis and that objective measures are paramount in guiding management decisions. Consider a case-based review of BPH patients, analyzing the diagnostic process and treatment strategies."
+  },
+  "guideline": "1. **Diagnostic Workup for BPH:**  Start with a thorough history and physical exam.  Crucially, measure post-void residual volume (PVR) \u2013 >100ml is a significant finding. Uroflowmetry is essential to assess urinary flow rate. Transrectal ultrasound (TRUS) is used for prostate size estimation and to rule out other pathology. 2. **Symptom Assessment:** While symptoms are important for patient understanding and treatment selection, they are not definitive for diagnosis. 3. **Treatment Considerations:**  Treatment options depend on symptom severity and objective findings (e.g., alpha-blockers, 5-alpha reductase inhibitors, minimally invasive procedures, or surgery).",
+  "takeaway": "PLAN: Further review should focus on the diagnostic criteria for BPH, specifically the role of PVR and uroflowmetry. Reinforce the understanding that symptoms alone are insufficient for diagnosis and that objective measures are paramount in guiding management decisions. Consider a case-based review of BPH patients, analyzing the diagnostic process and treatment strategies."
+}
+,
+{
+  "id": 612,
+  "specialty": "Urology",
+  "topic": "Comprhensive Surgery Revision conv.docx",
+  "question": "The presence of donor-reactive lymphocytotoxic antibodies in the serum of a potential kidney transplant recipient:",
+  "options": {
+    "A": "Can be detected by in vitro testing with recipient leukocytes and donor serum.",
+    "C": "Can be found in all male patients older than 20 years."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "The correct answer (A) accurately describes the standard method for detecting DSA: *in vitro* testing using recipient leukocytes and donor serum. This is the gold standard for quantifying and characterizing DSA. The provided answer key (B) is incorrect. The presence of DSA isn't simply \u2018found\u2019 in a demographic group; it\u2019s a measurable immunological response.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp": {
+    "status": "ACCEPT",
+    "verified_answer": "A",
+    "set_the_stage": "This question assesses understanding of a critical challenge in kidney transplantation \u2013 donor-specific antibodies (DSA). DSA are antibodies formed by the recipient\u2019s immune system against antigens present on the donor kidney, representing a major barrier to successful transplantation.",
+    "highlight_excellence": "The correct answer (A) accurately describes the standard method for detecting DSA: *in vitro* testing using recipient leukocytes and donor serum. This is the gold standard for quantifying and characterizing DSA. The provided answer key (B) is incorrect. The presence of DSA isn't simply \u2018found\u2019 in a demographic group; it\u2019s a measurable immunological response.",
+    "address_gaps": "The question and incorrect answer key highlight a gap in understanding regarding the *mechanics* of DSA detection. It\u2019s crucial to emphasize that DSA are not a universal issue, but rather a specific immunological reaction. Option C is entirely false and demonstrates a lack of fundamental knowledge about transplantation immunology.",
+    "review_guidelines": "1. **DSA Detection:** Reinforce the principles of *in vitro* testing using recipient leukocytes and donor serum for DSA detection.  Discuss the importance of quantifying DSA levels (e.g., MFI \u2013 Mean Fluorescence Intensity). 2. **DSA Classifications:** Review the Banff classification system for DSA (e.g., Class I, II, III, IV) and their prognostic significance. 3. **DSA Management:**  Discuss strategies for managing DSA, including induction immunosuppression, antibody depletion therapies, and donor-specific epitope (DSE) matching.",
+    "plan": "I recommend a focused review of transplantation immunology, specifically concentrating on DSA, their detection, classification, and clinical management.  Case studies illustrating the impact of DSA on transplant outcomes would be beneficial. Further, a discussion on the role of HLA matching and DSEs is warranted."
+  },
+  "guideline": "1. **DSA Detection:** Reinforce the principles of *in vitro* testing using recipient leukocytes and donor serum for DSA detection.  Discuss the importance of quantifying DSA levels (e.g., MFI \u2013 Mean Fluorescence Intensity). 2. **DSA Classifications:** Review the Banff classification system for DSA (e.g., Class I, II, III, IV) and their prognostic significance. 3. **DSA Management:**  Discuss strategies for managing DSA, including induction immunosuppression, antibody depletion therapies, and donor-specific epitope (DSE) matching.",
+  "takeaway": "PLAN: I recommend a focused review of transplantation immunology, specifically concentrating on DSA, their detection, classification, and clinical management.  Case studies illustrating the impact of DSA on transplant outcomes would be beneficial. Further, a discussion on the role of HLA matching and DSEs is warranted."
+}
+,
+{
+  "id": 608,
+  "specialty": "Urology",
+  "topic": "Comprhensive Surgery Revision conv.docx",
+  "question": "Which of the following lesions are believed to be associated with the development of carcinoma of the gallbladder?",
+  "options": {
+    "A": "Cholecystoenteric fistula.",
+    "D": "Xanthogranulomatous cholecystitis.",
+    "E": "All of the above."
+  },
+  "answer": "E",
+  "explanation": {
+    "correct": "The correct answer (E) \u2013 \u2018All of the above\u2019 \u2013 accurately reflects the established association between several inflammatory conditions and gallbladder cancer. This demonstrates a solid grasp of the complex interplay between chronic inflammation and carcinogenesis.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp": {
+    "status": "ACCEPT",
+    "verified_answer": "E",
+    "set_the_stage": "This question tests understanding of risk factors for gallbladder carcinoma. Gallbladder cancer is rare, and its etiology is not fully understood, but several conditions are recognized as being associated with an increased risk.",
+    "highlight_excellence": "The correct answer (E) \u2013 \u2018All of the above\u2019 \u2013 accurately reflects the established association between several inflammatory conditions and gallbladder cancer. This demonstrates a solid grasp of the complex interplay between chronic inflammation and carcinogenesis.",
+    "address_gaps": "The distractors (A and B) represent common cholecystitis variants. While chronic inflammation is a risk factor, they don\u2019t carry the same level of association with malignancy as the listed conditions. Option C, \u2018Xanthogranulomatous cholecystitis,\u2019 is a benign inflammatory process and doesn\u2019t represent a causal link to carcinoma.  A more targeted question would have focused on specific inflammatory processes with a stronger correlation.",
+    "review_guidelines": "1. **Cholecystoenteric fistula:** This represents a chronic communication between the gallbladder and the small intestine. The persistent bacterial overgrowth and inflammation associated with this fistula create a microenvironment conducive to neoplastic transformation. 2. **Chronic Cholecystitis (specifically, severe, long-standing inflammation):**  Prolonged inflammation, particularly with significant fibrosis and cellular atypia, is a well-established risk factor. 3. **Xanthogranulomatous cholecystitis:** While typically benign, the chronic inflammation and potential for cellular changes within this inflammatory process can, in rare cases, progress to malignancy.  It\u2019s important to recognize that the inflammatory process itself is the key driver, not the specific type of cholecystitis.",
+    "plan": "Moving forward, clinicians should consider these conditions as potential risk factors in patients presenting with gallbladder pathology, particularly those with chronic inflammation. Further research is ongoing to identify specific biomarkers and pathways involved in the development of gallbladder cancer.  Detailed imaging and histological examination are crucial for accurate diagnosis and staging."
+  },
+  "guideline": "1. **Cholecystoenteric fistula:** This represents a chronic communication between the gallbladder and the small intestine. The persistent bacterial overgrowth and inflammation associated with this fistula create a microenvironment conducive to neoplastic transformation. 2. **Chronic Cholecystitis (specifically, severe, long-standing inflammation):**  Prolonged inflammation, particularly with significant fibrosis and cellular atypia, is a well-established risk factor. 3. **Xanthogranulomatous cholecystitis:** While typically benign, the chronic inflammation and potential for cellular changes within this inflammatory process can, in rare cases, progress to malignancy.  It\u2019s important to recognize that the inflammatory process itself is the key driver, not the specific type of cholecystitis.",
+  "takeaway": "PLAN: Moving forward, clinicians should consider these conditions as potential risk factors in patients presenting with gallbladder pathology, particularly those with chronic inflammation. Further research is ongoing to identify specific biomarkers and pathways involved in the development of gallbladder cancer.  Detailed imaging and histological examination are crucial for accurate diagnosis and staging."
+}
+,
+{
+  "id": 606,
+  "specialty": "Urology",
+  "topic": "rush.docx",
+  "question": "Match the surgical procedure with the most appropriate preoperative prophylactic antibiotic.",
+  "options": {
+    "A": "Elective laparoscopic cholecystectomy a. Ertapenem",
+    "B": "Femoral to popliteal arterial bypass with graft b. Clindamycin",
+    "C": "Cystoscopy with ureteral stent placement c. None",
+    "D": "Right hemicolectomy d. Cefazolin",
+    "E": "Parotidectomy e. Ciprofloxacin"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "The selection of Ertapenem for elective laparoscopic cholecystectomy is correct. Cholecystectomy carries a significant risk of biliary tract contamination, making Ertapenem (a broad-spectrum penicillin) the most appropriate choice for prophylaxis, aligning with current guidelines. The question format itself is a high-yield method for assessing this knowledge.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp": {
+    "status": "ACCEPT",
+    "verified_answer": "A",
+    "set_the_stage": "This question assesses understanding of appropriate preoperative antibiotic prophylaxis based on surgical procedure and potential source of infection. Preoperative antibiotics are used to reduce the risk of surgical site infections (SSIs).",
+    "highlight_excellence": "The selection of Ertapenem for elective laparoscopic cholecystectomy is correct. Cholecystectomy carries a significant risk of biliary tract contamination, making Ertapenem (a broad-spectrum penicillin) the most appropriate choice for prophylaxis, aligning with current guidelines. The question format itself is a high-yield method for assessing this knowledge.",
+    "address_gaps": "Several options are incorrect. Clindamycin is generally not recommended for cholecystectomy due to resistance. Ciprofloxacin is not ideal for biliary procedures. Cystoscopy with stent placement typically doesn't require prophylactic antibiotics, and cefazolin is not the preferred agent for right hemicolectomy. The femoral-popliteal bypass requires antibiotics to prevent endocarditis, and clindamycin is a reasonable choice.",
+    "review_guidelines": "1. **Risk Assessment:** Always consider the potential source of infection and the likelihood of contamination. 2. **Antibiotic Selection:** Choose an antibiotic with broad coverage against common pathogens (Gram-negative and anaerobic bacteria) relevant to the procedure. 3. **Resistance Patterns:** Be aware of local resistance patterns and tailor antibiotic selection accordingly. 4. **Timing:** Preoperative antibiotics should be administered within 60 minutes prior to incision. 5. **Guidelines:** Refer to current guidelines from organizations like the CDC and ASGE for specific recommendations.",
+    "plan": "Further review should focus on the indications for prophylactic antibiotics in various surgical procedures, including the specific pathogens involved and the rationale behind antibiotic choices.  Specifically, revisit the guidelines for biliary surgery and vascular surgery. Consider a review of antibiotic resistance patterns in the local setting."
+  },
+  "guideline": "1. **Risk Assessment:** Always consider the potential source of infection and the likelihood of contamination. 2. **Antibiotic Selection:** Choose an antibiotic with broad coverage against common pathogens (Gram-negative and anaerobic bacteria) relevant to the procedure. 3. **Resistance Patterns:** Be aware of local resistance patterns and tailor antibiotic selection accordingly. 4. **Timing:** Preoperative antibiotics should be administered within 60 minutes prior to incision. 5. **Guidelines:** Refer to current guidelines from organizations like the CDC and ASGE for specific recommendations.",
+  "takeaway": "PLAN: Further review should focus on the indications for prophylactic antibiotics in various surgical procedures, including the specific pathogens involved and the rationale behind antibiotic choices.  Specifically, revisit the guidelines for biliary surgery and vascular surgery. Consider a review of antibiotic resistance patterns in the local setting."
+}
+,
+{
+  "id": 605,
+  "specialty": "Urology",
+  "topic": "rush.docx",
+  "question": "Which of the following statements is true regarding his metabolic acidosis?",
+  "options": {
+    "A": "Tissue hypoxia leads to increased oxidative metabolism.",
+    "B": "Acute compensation for metabolic acidosis is primarily renal.",
+    "E": "Restoration of blood pressure with vasopressors corrects the metabolic acidosis associated with circulatory failure."
+  },
+  "answer": "Letter B",
+  "explanation": {
+    "correct": "The core concept being tested is the body's initial response to metabolic acidosis. Option B \u2013 \u2018Acute compensation for metabolic acidosis is primarily renal\u2019 \u2013 is the accurate statement. The kidneys are the primary organs responsible for long-term compensation by increasing bicarbonate reabsorption and acid excretion. This is a fundamental principle of acid-base regulation.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp": {
+    "status": "ACCEPT",
+    "verified_answer": "Letter B",
+    "set_the_stage": "This question assesses understanding of the pathophysiology of metabolic acidosis, specifically focusing on compensatory mechanisms and the relationship between circulatory failure and acid-base disturbances. The provided answer key (C) is incorrect.",
+    "highlight_excellence": "The core concept being tested is the body's initial response to metabolic acidosis. Option B \u2013 \u2018Acute compensation for metabolic acidosis is primarily renal\u2019 \u2013 is the accurate statement. The kidneys are the primary organs responsible for long-term compensation by increasing bicarbonate reabsorption and acid excretion. This is a fundamental principle of acid-base regulation.",
+    "address_gaps": "Options A and E are incorrect. A) \u2018Tissue hypoxia leads to increased oxidative metabolism\u2019 describes a separate process (anaerobic metabolism) and isn't the primary compensatory response to acidosis. B) \u2018Restoration of blood pressure with vasopressors corrects the metabolic acidosis associated with circulatory failure\u2019 is misleading. While restoring blood pressure is crucial in circulatory failure, it doesn\u2019t directly correct the underlying metabolic acidosis. The acidosis is driven by factors like lactate accumulation and tissue hypoperfusion, not simply hypotension.",
+    "review_guidelines": "1. **Understand the Types of Metabolic Acidosis:** Differentiate between anion gap acidosis (often due to lactate, ketoacids, or renal failure) and non-anion gap acidosis (e.g., diabetic ketoacidosis, severe diarrhea). 2. **Know the Compensatory Mechanisms:** Renal compensation involves bicarbonate reabsorption and ammonium excretion. 3. **Recognize the Relationship Between Circulatory Failure and Acidosis:** Circulatory failure leads to decreased tissue perfusion, anaerobic metabolism, and lactate production, which exacerbate acidosis. 4. **Prioritize Initial Management:** In circulatory failure, addressing hypotension and tissue perfusion is paramount, but doesn\u2019t directly fix the metabolic acidosis.",
+    "plan": "Further review should focus on acid-base physiology, specifically renal compensation, the mechanisms of metabolic acidosis generation, and the pathophysiology of circulatory failure. Consider reviewing diagrams illustrating the renal compensation process and the metabolic pathways involved in various types of acidosis."
+  },
+  "guideline": "1. **Understand the Types of Metabolic Acidosis:** Differentiate between anion gap acidosis (often due to lactate, ketoacids, or renal failure) and non-anion gap acidosis (e.g., diabetic ketoacidosis, severe diarrhea). 2. **Know the Compensatory Mechanisms:** Renal compensation involves bicarbonate reabsorption and ammonium excretion. 3. **Recognize the Relationship Between Circulatory Failure and Acidosis:** Circulatory failure leads to decreased tissue perfusion, anaerobic metabolism, and lactate production, which exacerbate acidosis. 4. **Prioritize Initial Management:** In circulatory failure, addressing hypotension and tissue perfusion is paramount, but doesn\u2019t directly fix the metabolic acidosis.",
+  "takeaway": "PLAN: Further review should focus on acid-base physiology, specifically renal compensation, the mechanisms of metabolic acidosis generation, and the pathophysiology of circulatory failure. Consider reviewing diagrams illustrating the renal compensation process and the metabolic pathways involved in various types of acidosis."
+}
 ]);
