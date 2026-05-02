@@ -34,6 +34,7 @@
         if (value.indexOf('hpb') !== -1) return 'HPB';
         if (value.indexOf('anesthesia') !== -1) return 'Anesthesia';
         if (value.indexOf('neuro') !== -1) return 'Neurosurgery';
+        if (value.indexOf('surgical oncology') !== -1 || value.indexOf('general surgery') !== -1) return 'General Surgery';
         return specialty || 'General Surgery';
     }
 
@@ -116,7 +117,8 @@
         'neurosurgery.js',
         'breast_endocrine.js',
         'breast_surgery.js',
-        'plastic_surgery.js'
+        'plastic_surgery.js',
+        'pdf_questions.js'
     ];
 
     let loadedCount = 0;
