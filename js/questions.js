@@ -44,38 +44,95 @@
         return match ? match[0] : value;
     }
 
+    function normalizeOptions(options) {
+        var normalized = {};
+        ['A', 'B', 'C', 'D', 'E'].forEach(function(letter) {
+            var value = '';
+            if (options && typeof options === 'object') {
+                value = options[letter];
+            }
+            normalized[letter] = String(value || '').replace(/\s+/g, ' ').trim();
+        });
+        return normalized;
+    }
+
+    function buildSharpFallback(question) {
+        var options = normalizeOptions(question.options || {});
+        var answerLetter = normalizeAnswer(question.answer);
+        var answerText = options[answerLetter] || '';
+        return {
+            S: String(question.question || '').replace(/\s+/g, ' ').trim().slice(0, 140) || 'Review the clinical stem.',
+            H: answerText ? ('Best answer: ' + answerLetter + '. ' + answerText) : 'Focus on the most defensible option.',
+            A: 'Discard distractors that do not fit the stem.',
+            R: String(question.guideline || question.source_file || 'Use the core exam principle to guide recall.').replace(/\s+/g, ' ').trim().slice(0, 160),
+            P: String(question.takeaway || answerText || 'Memorize the key principle behind the correct option.').replace(/\s+/g, ' ').trim().slice(0, 160)
+        };
+    }
+
+    function normalizeSharp(question) {
+        var sharp = {};
+        if (question.sharp_metadata && typeof question.sharp_metadata === 'object') {
+            sharp = question.sharp_metadata;
+        } else if (question.sharp && typeof question.sharp === 'object') {
+            sharp = question.sharp;
+        }
+
+        var fallback = buildSharpFallback(question);
+        var normalized = {
+            S: String(sharp.S || sharp.set_the_stage || fallback.S || '').replace(/\s+/g, ' ').trim(),
+            H: String(sharp.H || sharp.highlight_excellence || question.explanation?.correct || fallback.H || '').replace(/\s+/g, ' ').trim(),
+            A: String(sharp.A || sharp.address_gaps || fallback.A || '').replace(/\s+/g, ' ').trim(),
+            R: String(sharp.R || sharp.guideline || question.guideline || fallback.R || '').replace(/\s+/g, ' ').trim(),
+            P: String(sharp.P || sharp.takeaway || question.takeaway || fallback.P || '').replace(/\s+/g, ' ').trim()
+        };
+
+        if (!normalized.H && question.explanation && typeof question.explanation === 'object' && question.explanation.correct) {
+            normalized.H = String(question.explanation.correct).replace(/\s+/g, ' ').trim();
+        }
+
+        return normalized;
+    }
+
+    function isRenderableQuestion(question) {
+        var options = normalizeOptions(question.options || {});
+        var answer = normalizeAnswer(question.answer);
+        var validOptions = ['A', 'B', 'C', 'D', 'E'].filter(function(letter) {
+            return options[letter];
+        });
+        return validOptions.length >= 4 && !!options[answer];
+    }
+
     function normalizeQuestion(question) {
         if (!question || typeof question !== 'object') return null;
 
         var normalized = Object.assign({}, question);
         normalized.specialty = normalizeSpecialty(normalized.specialty);
         normalized.answer = normalizeAnswer(normalized.answer);
+        normalized.options = normalizeOptions(normalized.options || {});
 
         if (!normalized.explanation || typeof normalized.explanation !== 'object') {
             normalized.explanation = {};
         }
 
-        if (!normalized.explanation.correct && normalized.sharp_metadata && typeof normalized.sharp_metadata === 'object') {
-            normalized.explanation.correct = normalized.sharp_metadata.highlight_excellence || normalized.sharp_metadata.H || normalized.sharp_metadata.S || '';
+        if (!normalized.explanation.correct) {
+            normalized.explanation.correct = buildSharpFallback(normalized).H;
         }
 
-        if (!normalized.guideline && normalized.sharp_metadata && typeof normalized.sharp_metadata === 'object' && normalized.sharp_metadata.R) {
-            normalized.guideline = normalized.sharp_metadata.R;
-        }
+        normalized.sharp_metadata = normalizeSharp(normalized);
+        normalized.sharp = {
+            set_the_stage: normalized.sharp_metadata.S,
+            highlight_excellence: normalized.sharp_metadata.H,
+            address_gaps: normalized.sharp_metadata.A,
+            review_learning_points: normalized.sharp_metadata.R,
+            plan: normalized.sharp_metadata.P,
+            guideline: normalized.sharp_metadata.R,
+            takeaway: normalized.sharp_metadata.P
+        };
 
-        if (!normalized.takeaway && normalized.sharp_metadata && typeof normalized.sharp_metadata === 'object' && normalized.sharp_metadata.P) {
-            normalized.takeaway = normalized.sharp_metadata.P;
-        }
+        normalized.guideline = normalized.sharp_metadata.R;
+        normalized.takeaway = normalized.sharp_metadata.P;
 
-        if (!normalized.takeaway && normalized.sharp && typeof normalized.sharp === 'object' && normalized.sharp.takeaway) {
-            normalized.takeaway = normalized.sharp.takeaway;
-        }
-
-        if (!normalized.guideline && normalized.sharp && typeof normalized.sharp === 'object' && normalized.sharp.guideline) {
-            normalized.guideline = normalized.sharp.guideline;
-        }
-
-        return normalized.question ? normalized : null;
+        return normalized.question && isRenderableQuestion(normalized) ? normalized : null;
     }
 
     function dedupeQuestions(items) {
@@ -125,7 +182,7 @@
 
     modules.forEach(file => {
         const script = document.createElement('script');
-        script.src = 'js/questions/' + file + '?v=2.1';
+        script.src = 'js/questions/' + file + '?v=2.2';
         script.async = false; // Order of loading into the array is preserved if async is false
         script.onload = () => {
             loadedCount++;
