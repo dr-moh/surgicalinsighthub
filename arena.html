@@ -626,34 +626,49 @@ function submitAnswer() {
 function showSharp(q, selected, isCorrect) {
   var card = document.getElementById('sharpCard');
   card.style.display = 'block';
+  var sharp = q.sharp || q.sharp_metadata || {};
+  var explanation = q.explanation || {};
+  var answerText = (q.options && q.options[q.answer]) ? q.options[q.answer] : '';
+  var highlight = String(sharp.H || sharp.highlight_excellence || explanation.correct || '').trim();
+  var addressGaps = String(sharp.A || sharp.address_gaps || '').trim();
+  var reviewGuideline = String(sharp.R || sharp.review_learning_points || q.guideline || '').trim();
+  var takeHome = String(sharp.P || sharp.plan || q.takeaway || '').trim();
 
   // S - Set the stage
   var accuracy = Math.round((state.score / (state.answers.length)) * 100);
   document.getElementById('sharpS').textContent =
     (isCorrect ? '✓ Correct — ' : '✗ Incorrect — ') +
-    'The correct answer is ' + q.answer + '. ' + q.options[q.answer] + '. ' +
+    'The correct answer is ' + q.answer + '. ' + answerText + '. ' +
     'Your session accuracy: ' + accuracy + '%.';
 
   // H - Highlight Excellence
-  document.getElementById('sharpH').textContent = q.explanation.correct;
+  document.getElementById('sharpH').textContent = highlight || 'Review the key distinguishing feature behind the correct option.';
 
   // A - Address the Gaps
   var aWrap = document.getElementById('sharpA');
   aWrap.innerHTML = '';
+  var gapText = addressGaps || 'Use the stem to eliminate distractors that do not fit the diagnosis or operative principle.';
+  var gapRow = document.createElement('div');
+  gapRow.className = 'opt-exp';
+  gapRow.innerHTML = '<div class="opt-exp-letter">A</div><div class="opt-exp-text">' + gapText + '</div>';
+  aWrap.appendChild(gapRow);
+
   ['A','B','C','D','E'].forEach(function(letter) {
     if (!q.options[letter] || letter === q.answer) return;
+    var detail = String(explanation[letter] || '').trim();
+    if (!detail) return;
     var row = document.createElement('div');
     row.className = 'opt-exp';
-    row.innerHTML = '<div class="opt-exp-letter">' + letter + '</div><div class="opt-exp-text">' + q.explanation[letter] + '</div>';
+    row.innerHTML = '<div class="opt-exp-letter">' + letter + '</div><div class="opt-exp-text">' + detail + '</div>';
     aWrap.appendChild(row);
   });
 
   // R - Review Guidelines
-  document.getElementById('sharpR').textContent = '';
-  document.getElementById('sharpRTag').textContent = '📋 ' + q.guideline;
+  document.getElementById('sharpR').textContent = reviewGuideline || 'Review the operative guideline that supports this answer.';
+  document.getElementById('sharpRTag').textContent = '📋 ' + (q.guideline || reviewGuideline || 'Review guideline');
 
   // P - Plan / Take-home
-  document.getElementById('sharpP').textContent = q.takeaway;
+  document.getElementById('sharpP').textContent = takeHome || 'Memorize the board-style takeaway from this question.';
 
   // Result badge
   var res = document.getElementById('sharpResult');
