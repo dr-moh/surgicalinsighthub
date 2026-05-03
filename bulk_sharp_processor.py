@@ -86,17 +86,37 @@ def build_fallback_sharp(question_obj, answer_letter):
     question_text = str(question_obj.get('question', '')).strip()
     options = question_obj.get('options', {}) or {}
     answer_text = options.get(answer_letter, '') if isinstance(options, dict) else ''
+    topic = str(question_obj.get('topic', '')).strip()
+    specialty = str(question_obj.get('specialty', 'General Surgery')).strip()
+
+    def compact_text(text, fallback, limit=18):
+        cleaned = re.sub(r'\s+', ' ', str(text or '')).strip()
+        if not cleaned:
+            return fallback
+        words = cleaned.split(' ')
+        return ' '.join(words[:limit]).strip() if len(words) > limit else cleaned
 
     return {
         'status': 'ACCEPT',
         'verified_answer': answer_letter,
-        'set_the_stage': question_text[:120] or 'Review the clinical stem.',
-        'highlight_excellence': f'Best answer: {answer_letter} {answer_text}'.strip(),
-        'address_gaps': 'Discard distractors that do not fit the stem.',
-        'review_learning_points': 'Focus on the main exam pearl behind the answer.',
-        'plan': 'Memorize the key takeaway for revision.',
-        'guideline': '',
-        'takeaway': answer_text or 'Recall the correct option and core principle.',
+        'set_the_stage': compact_text(topic, 'Review the stem and choose the best option.') or 'Review the stem and choose the best option.',
+        'highlight_excellence': compact_text(
+            answer_text or question_text,
+            'The correct answer matches the key clinical principle.'
+        ),
+        'address_gaps': 'Eliminate options that conflict with the stem or core principle.',
+        'review_learning_points': compact_text(
+            question_obj.get('guideline') or specialty,
+            'Review the topic-specific guideline or surgical principle.',
+            14
+        ),
+        'plan': compact_text(
+            question_obj.get('takeaway') or answer_text,
+            'Memorize the one-line takeaway for revision.',
+            16
+        ),
+        'guideline': compact_text(question_obj.get('guideline') or topic or specialty, '', 14),
+        'takeaway': compact_text(question_obj.get('takeaway') or answer_text or question_text, 'Recall the correct option and core principle.', 18),
         'visualization': ''
     }
 
@@ -241,12 +261,7 @@ def process_q(q):
     if not all(k in opts and isinstance(opts[k], str) and len(opts[k].strip()) > 1 for k in ['A', 'B', 'C', 'D']):
         return None
 
-    if q.get('source_file'):
-        sharp_data = build_fallback_sharp(q, q.get('answer', 'A'))
-    else:
-        sharp_data = get_sharp_debrief(q)
-        if not sharp_data or sharp_data.get('status') != 'ACCEPT':
-            sharp_data = build_fallback_sharp(q, q.get('answer', 'A'))
+    sharp_data = get_sharp_debrief(q)
     if not sharp_data or sharp_data.get('status') != 'ACCEPT':
         sharp_data = build_fallback_sharp(q, q.get('answer', 'A'))
     

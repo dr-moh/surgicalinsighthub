@@ -56,16 +56,64 @@
         return normalized;
     }
 
+    function compactText(value, fallback, maxWords) {
+        var cleaned = String(value || '').replace(/\s+/g, ' ').trim();
+        if (!cleaned) return fallback || '';
+        var words = cleaned.split(' ');
+        if (maxWords && words.length > maxWords) {
+            return words.slice(0, maxWords).join(' ');
+        }
+        return cleaned;
+    }
+
+    function compactSentence(value, fallback, maxWords) {
+        var cleaned = String(value || '').replace(/\s+/g, ' ').trim();
+        if (!cleaned) return fallback || '';
+        var sentence = cleaned.split(/[.!?]/)[0].trim();
+        if (!sentence) sentence = cleaned;
+        var words = sentence.split(' ');
+        if (maxWords && words.length > maxWords) {
+            sentence = words.slice(0, maxWords).join(' ');
+        }
+        return sentence;
+    }
+
+    function guidelineLabel(question) {
+        var guideline = String(question.guideline || '').trim();
+        if (guideline && !/\.(pdf|docx?|pptx?)$/i.test(guideline) && !/^source:/i.test(guideline)) {
+            return compactText(guideline, '', 14);
+        }
+        var specialty = String(question.specialty || '').trim();
+        var familyMap = {
+            'Anesthesia': 'ASA practice guidelines',
+            'Breast & Endocrine': 'NCCN endocrine and breast guidelines',
+            'Cardiothoracic': 'STS / AATS cardiothoracic guidelines',
+            'Colorectal': 'ASCRS colorectal guidelines',
+            'General Surgery': 'ACS / surgical board principles',
+            'HPB': 'HPB surgical guidelines',
+            'Neurosurgery': 'AANS / CNS neurosurgical guidelines',
+            'Orthopedic': 'AAOS orthopedic guidelines',
+            'Pediatric Surgery': 'APSA pediatric surgery principles',
+            'Plastic Surgery': 'BSSH / reconstructive principles',
+            'Trauma': 'ATLS / EAST trauma guidelines',
+            'Urology': 'AUA / EAU urology guidelines',
+            'Vascular': 'SVS / NICE vascular guidelines'
+        };
+        return compactText(familyMap[specialty] || question.topic || 'Review the topic-specific guideline.', '', 14);
+    }
+
     function buildSharpFallback(question) {
         var options = normalizeOptions(question.options || {});
         var answerLetter = normalizeAnswer(question.answer);
         var answerText = options[answerLetter] || '';
+        var stemTopic = compactText(question.topic || question.specialty || 'Review the stem and choose the best option.', '', 12);
+        var explanation = question.explanation && typeof question.explanation === 'object' ? question.explanation.correct : '';
         return {
-            S: String(question.question || '').replace(/\s+/g, ' ').trim().slice(0, 140) || 'Review the clinical stem.',
-            H: answerText ? ('Best answer: ' + answerLetter + '. ' + answerText) : 'Focus on the most defensible option.',
-            A: 'Discard distractors that do not fit the stem.',
-            R: String(question.guideline || question.source_file || 'Use the core exam principle to guide recall.').replace(/\s+/g, ' ').trim().slice(0, 160),
-            P: String(question.takeaway || answerText || 'Memorize the key principle behind the correct option.').replace(/\s+/g, ' ').trim().slice(0, 160)
+            S: stemTopic || 'Review the stem and choose the best option.',
+            H: compactSentence(explanation || answerText, 'The correct option matches the stem.', 24),
+            A: 'Eliminate distractors that conflict with the stem or core principle.',
+            R: guidelineLabel(question),
+            P: compactSentence(question.takeaway || explanation || answerText || 'Memorize the one-line takeaway.', 'Memorize the one-line takeaway.', 20)
         };
     }
 
@@ -79,15 +127,19 @@
 
         var fallback = buildSharpFallback(question);
         var normalized = {
-            S: String(sharp.S || sharp.set_the_stage || fallback.S || '').replace(/\s+/g, ' ').trim(),
-            H: String(sharp.H || sharp.highlight_excellence || question.explanation?.correct || fallback.H || '').replace(/\s+/g, ' ').trim(),
-            A: String(sharp.A || sharp.address_gaps || fallback.A || '').replace(/\s+/g, ' ').trim(),
-            R: String(sharp.R || sharp.guideline || question.guideline || fallback.R || '').replace(/\s+/g, ' ').trim(),
-            P: String(sharp.P || sharp.takeaway || question.takeaway || fallback.P || '').replace(/\s+/g, ' ').trim()
+            S: compactSentence(sharp.S || sharp.set_the_stage || fallback.S || '', fallback.S, 16),
+            H: compactSentence(sharp.H || sharp.highlight_excellence || (question.explanation && question.explanation.correct) || fallback.H || '', fallback.H, 24),
+            A: compactSentence(sharp.A || sharp.address_gaps || fallback.A || '', fallback.A, 18),
+            R: guidelineLabel({ guideline: sharp.R || sharp.guideline || question.guideline || fallback.R || '', topic: question.topic, specialty: question.specialty }),
+            P: compactSentence(sharp.P || sharp.takeaway || question.takeaway || fallback.P || '', fallback.P, 20)
         };
 
         if (!normalized.H && question.explanation && typeof question.explanation === 'object' && question.explanation.correct) {
-            normalized.H = String(question.explanation.correct).replace(/\s+/g, ' ').trim();
+            normalized.H = compactSentence(question.explanation.correct, 'The correct option matches the stem.', 24);
+        }
+
+        if (!normalized.R) {
+            normalized.R = guidelineLabel(question);
         }
 
         return normalized;
@@ -182,7 +234,7 @@
 
     modules.forEach(file => {
         const script = document.createElement('script');
-        script.src = 'js/questions/' + file + '?v=2.2';
+        script.src = 'js/questions/' + file + '?v=2.3';
         script.async = false; // Order of loading into the array is preserved if async is false
         script.onload = () => {
             loadedCount++;
