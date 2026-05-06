@@ -1,0 +1,96 @@
+name: MCQ Bundle Validation
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'MCQ Bank/canonical_questions.json'
+      - 'js/questions/canonical_questions.js'
+      - 'scripts/validate_mcq_standard.js'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'MCQ Bank/canonical_questions.json'
+      - 'js/questions/canonical_questions.js'
+      - 'scripts/validate_mcq_standard.js'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [16.x, 18.x]
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Validate MCQ bundle structure
+        run: node scripts/validate_mcq_standard.js js/questions/canonical_questions.js
+        continue-on-error: false
+
+      - name: Check bundle exists
+        run: |
+          if [ ! -f "MCQ Bank/canonical_questions.json" ]; then
+            echo "ERROR: MCQ Bank/canonical_questions.json not found"
+            exit 1
+          fi
+          if [ ! -f "js/questions/canonical_questions.js" ]; then
+            echo "ERROR: js/questions/canonical_questions.js not found"
+            exit 1
+          fi
+
+      - name: Validate JSON structure
+        run: |
+          node -e "
+          const fs = require('fs');
+          try {
+            const data = JSON.parse(fs.readFileSync('MCQ Bank/canonical_questions.json', 'utf8'));
+            if (!Array.isArray(data)) {
+              console.error('ERROR: canonical_questions.json must be an array');
+              process.exit(1);
+            }
+            console.log('✓ JSON structure valid');
+            console.log('✓ Total questions:', data.length);
+            
+            // Check for critical fields
+            let missingFields = 0;
+            data.forEach((q, idx) => {
+              const required = ['id', 'question', 'options', 'answer', 'sharp'];
+              const missing = required.filter(f => !q[f]);
+              if (missing.length > 0) {
+                console.warn(\`⚠ Q\${q.id}: missing fields: \${missing.join(', ')}\`);
+                missingFields++;
+              }
+            });
+            
+            if (missingFields > 10) {
+              console.error(\`ERROR: \${missingFields} questions have missing critical fields\`);
+              process.exit(1);
+            } else if (missingFields > 0) {
+              console.warn(\`⚠ \${missingFields} questions have minor issues\`);
+            }
+          } catch (e) {
+            console.error('ERROR: Failed to parse JSON:', e.message);
+            process.exit(1);
+          }
+          "
+
+      - name: Comment on PR (if applicable)
+        if: github.event_name == 'pull_request' && success()
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const fs = require('fs');
+            const data = JSON.parse(fs.readFileSync('MCQ Bank/canonical_questions.json', 'utf8'));
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `✅ MCQ bundle validation passed!\n\n**Bundle Stats:**\n- Total canonical questions: ${data.length}\n- Bundle files validated: canonical_questions.json, canonical_questions.js\n- Structure: Passed\n\nReady to merge.`
+            });
