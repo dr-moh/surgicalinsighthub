@@ -140,62 +140,69 @@
         };
     }
 
-    const modules = [
-        'general_surgery.js', 'hpb.js', 'colorectal.js', 'anesthesia.js',
-        'vascular.js', 'trauma.js', 'urology.js', 'cardiothoracic.js',
-        'pediatric_surgery.js', 'orthopedic.js', 'orthopedics.js',
-        'neurosurgery.js', 'breast_endocrine.js', 'breast_surgery.js',
-        'plastic_surgery.js', 'pdf_questions.js'
-    ];
+    // Load canonical questions first (primary source)
+    var canonicalScript = document.createElement('script');
+    canonicalScript.src = 'js/questions/canonical_questions.js?v=3.0';
+    canonicalScript.async = false;
+    canonicalScript.onload = function() {
+        console.log('Loaded canonical questions:', window.QUESTIONS.length);
+        processAllQuestions();
+    };
+    canonicalScript.onerror = function() {
+        console.warn('MCQ Bank: Failed to load canonical_questions.js, falling back to legacy modules');
+        loadLegacyModules();
+    };
+    document.head.appendChild(canonicalScript);
 
-    let loadedCount = 0;
+    function loadLegacyModules() {
+        const legacyModules = [
+            'general_surgery.js', 'hpb.js', 'colorectal.js', 'anesthesia.js',
+            'vascular.js', 'trauma.js', 'urology.js', 'cardiothoracic.js',
+            'pediatric_surgery.js', 'orthopedic.js', 'orthopedics.js',
+            'neurosurgery.js', 'breast_endocrine.js', 'breast_surgery.js',
+            'plastic_surgery.js', 'pdf_questions.js'
+        ];
 
-    // Load legacy JS modules
-    modules.forEach(file => {
-        const script = document.createElement('script');
-        script.src = 'js/questions/' + file + '?v=2.3';
-        script.async = false;
-        script.onload = () => {
-            loadedCount++;
-            checkAllLoaded();
-        };
-        script.onerror = () => {
-            console.warn('MCQ Bank: Failed to load legacy module ' + file);
-            loadedCount++;
-            checkAllLoaded();
-        };
-        document.head.appendChild(script);
-    });
-
-    // Also load the new AI JSON file!
-    fetch('questions.json')
-        .then(response => {
-            if (!response.ok) throw new Error("JSON not found");
-            return response.json();
-        })
-        .then(data => {
-            console.log("Successfully loaded AI questions!");
-            const adaptedData = data.map(adaptAIQuestion);
-            window.QUESTIONS.push(...adaptedData);
-        })
-        .catch(err => {
-            console.log("No AI questions.json found or error reading it.", err);
-        })
-        .finally(() => {
-            // Fake a module load to trigger the final check
-            loadedCount++;
-            checkAllLoaded(true); 
+        let loadedCount = 0;
+        legacyModules.forEach(file => {
+            const script = document.createElement('script');
+            script.src = 'js/questions/' + file + '?v=2.3';
+            script.async = false;
+            script.onload = function() {
+                loadedCount++;
+                if (loadedCount === legacyModules.length) {
+                    processAllQuestions();
+                }
+            };
+            script.onerror = function() {
+                console.warn('MCQ Bank: Failed to load legacy module ' + file);
+                loadedCount++;
+                if (loadedCount === legacyModules.length) {
+                    processAllQuestions();
+                }
+            };
+            document.head.appendChild(script);
         });
+    }
 
-    function checkAllLoaded(fromFetch = false) {
-        // We wait for all modules + 1 for the fetch request
-        if (loadedCount >= modules.length + (fromFetch ? 0 : 1)) {
-            window.QUESTIONS = flattenQuestions(window.QUESTIONS)
-                .map(adaptAIQuestion) // Run ALL questions (legacy + new) through the adapter
-                .filter(Boolean);
-                
-            window.QUESTIONS_LOADED = true;
-            console.log('MCQ Bank Ready! Total questions: ' + window.QUESTIONS.length);
-        }
+    function processAllQuestions() {
+        window.QUESTIONS = flattenQuestions(window.QUESTIONS)
+            .map(adaptAIQuestion)
+            .filter(Boolean);
+            
+        // Dedupe by stem
+        var seen = {};
+        var uniqueQuestions = [];
+        window.QUESTIONS.forEach(function(q) {
+            var stem = (q.question || '').replace(/\s+/g, ' ').trim().toLowerCase();
+            if (stem && !seen[stem]) {
+                seen[stem] = true;
+                uniqueQuestions.push(q);
+            }
+        });
+        
+        window.QUESTIONS = uniqueQuestions;
+        window.QUESTIONS_LOADED = true;
+        console.log('MCQ Bank Ready! Total unique questions: ' + window.QUESTIONS.length);
     }
 })();
