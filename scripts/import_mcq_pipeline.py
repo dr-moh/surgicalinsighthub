@@ -110,6 +110,9 @@ Return ONLY one valid JSON object using exactly this structure:
 """.strip()
 
 W_NS = "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}"
+MAX_TAGS = 6
+DEFAULT_COOLDOWN_SECONDS = 90
+UTC = datetime.timezone.utc
 
 
 @dataclass
@@ -313,7 +316,7 @@ def dedupe_tags(*values: str) -> list[str]:
             if token not in seen:
                 seen.add(token)
                 tags.append(token)
-    return tags[:6] or ["surgery"]
+    return tags[:MAX_TAGS] or ["surgery"]
 
 
 def build_fallback_question(question_obj: dict[str, Any]) -> dict[str, Any]:
@@ -459,13 +462,13 @@ class WaterfallClient:
         until = self.cooldowns.get(name)
         if not until:
             return False
-        if datetime.datetime.now() >= until:
+        if datetime.datetime.now(UTC) >= until:
             self.cooldowns.pop(name, None)
             return False
         return True
 
-    def set_cooldown(self, name: str, seconds: int = 90) -> None:
-        self.cooldowns[name] = datetime.datetime.now() + datetime.timedelta(seconds=seconds)
+    def set_cooldown(self, name: str, seconds: int = DEFAULT_COOLDOWN_SECONDS) -> None:
+        self.cooldowns[name] = datetime.datetime.now(UTC) + datetime.timedelta(seconds=seconds)
 
     def call_gemini(self, prompt: str) -> Any:
         if not self.gemini_client or self.is_cooling("Gemini"):
@@ -523,7 +526,7 @@ class WaterfallClient:
             except Exception as exc:
                 message = str(exc)
                 if "429" in message or "limit" in message.lower():
-                    print(f"        [!] {provider.name} rate limited. Cooling down for 90s.")
+                    print(f"        [!] {provider.name} rate limited. Cooling down for {DEFAULT_COOLDOWN_SECONDS}s.")
                     self.set_cooldown(provider.name)
                 else:
                     print(f"        [!] {provider.name} failed: {message[:120]}")
