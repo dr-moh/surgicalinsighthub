@@ -2,6 +2,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const vm = require('vm');
 
 const targetPath = process.argv[2];
 
@@ -25,11 +26,20 @@ const loadQuestions = (filePath) => {
   }
 
   if (filePath.endsWith('.js')) {
-    const matches = [...raw.matchAll(/^\s*window\.QUESTIONS\s*=\s*(\[[\s\S]*?\]);/gm)];
-    if (matches.length === 0) {
-      throw new Error('Unable to locate `window.QUESTIONS = [...]` in JS bundle');
+    const sandbox = { window: {} };
+    vm.createContext(sandbox);
+
+    try {
+      vm.runInContext(raw, sandbox, { filename: filePath, timeout: 10000 });
+    } catch (error) {
+      throw new Error(`Unable to execute JS bundle safely: ${error.message}`);
     }
-    return JSON.parse(matches[matches.length - 1][1]);
+
+    if (!Array.isArray(sandbox.window.QUESTIONS)) {
+      throw new Error('Unable to locate `window.QUESTIONS` array in JS bundle');
+    }
+
+    return sandbox.window.QUESTIONS;
   }
 
   throw new Error('Unsupported file type. Use a .json or .js MCQ bundle file.');
@@ -74,8 +84,8 @@ questions.forEach((question, index) => {
     return;
   }
 
-  if (typeof question.id !== 'number' || !Number.isFinite(question.id)) {
-    errors.push(`${label}: id must be a number`);
+  if (!Number.isInteger(question.id) || question.id <= 0) {
+    errors.push(`${label}: id must be a positive integer`);
   }
 
   if (!nonEmptyString(question.question)) {
@@ -91,7 +101,9 @@ questions.forEach((question, index) => {
       errors.push(`${label}: missing non-empty option(s): ${missingOptions.join(', ')}`);
     }
 
-    if (!nonEmptyString(question.answer) || !Object.prototype.hasOwnProperty.call(question.options, question.answer)) {
+    if (!nonEmptyString(question.answer)) {
+      errors.push(`${label}: answer is required`);
+    } else if (!Object.prototype.hasOwnProperty.call(question.options, question.answer)) {
       errors.push(`${label}: answer must match one of the provided option keys`);
     }
   }
