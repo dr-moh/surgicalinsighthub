@@ -114,7 +114,7 @@ MAX_TAGS = 6
 MIN_TAG_TOKEN_LENGTH = 3
 DEFAULT_COOLDOWN_SECONDS = 90
 DEFAULT_CHUNK_SIZE = 10000
-UTC_TIMEZONE = datetime.timezone.utc
+API_TIMEOUT_SECONDS = 120
 GEMINI_DEFAULT_MODEL = os.getenv("GEMINI_MODEL", "gemini-1.5-flash")
 GROQ_DEFAULT_MODEL = os.getenv("GROQ_MODEL", "llama-3.3-70b-versatile")
 OPENROUTER_DEFAULT_MODEL = os.getenv("OPENROUTER_MODEL", "meta-llama/llama-3.1-8b-instruct:free")
@@ -325,12 +325,21 @@ def dedupe_tags(*values: str) -> list[str]:
 
 def build_fallback_question(question_obj: dict[str, Any]) -> dict[str, Any]:
     options = normalize_options(question_obj.get("options"))
-    answer_letter = option_letter(question_obj.get("answer") or question_obj.get("correct_answer"))
+    answer_source = question_obj.get("answer") or question_obj.get("correct_answer")
+    answer_letter = option_letter(answer_source)
     answer_text = next((option for option in options if option.startswith(f"{answer_letter})")), answer_letter or "")
+    option_map = {}
+    for option in options:
+        if ")" not in option:
+            continue
+        letter = option_letter(option)
+        if not letter:
+            continue
+        option_map[letter] = option.split(")", 1)[1].strip()
     sharp = build_fallback_sharp(
         {
             "question": question_obj.get("question", ""),
-            "options": {option_letter(option): option.split(")", 1)[1].strip() for option in options if ")" in option},
+            "options": option_map,
             "answer": answer_letter or "A",
             "topic": question_obj.get("topic", ""),
             "specialty": question_obj.get("specialty", "General Surgery"),
@@ -477,13 +486,13 @@ class WaterfallClient:
         until = self.cooldowns.get(name)
         if not until:
             return False
-        if datetime.datetime.now(UTC_TIMEZONE) >= until:
+        if datetime.datetime.now(datetime.timezone.utc) >= until:
             self.cooldowns.pop(name, None)
             return False
         return True
 
     def set_cooldown(self, name: str, seconds: int = DEFAULT_COOLDOWN_SECONDS) -> None:
-        self.cooldowns[name] = datetime.datetime.now(UTC_TIMEZONE) + datetime.timedelta(seconds=seconds)
+        self.cooldowns[name] = datetime.datetime.now(datetime.timezone.utc) + datetime.timedelta(seconds=seconds)
 
     def call_gemini(self, prompt: str) -> Any:
         if not self.gemini_client or self.is_cooling("Gemini"):
@@ -518,7 +527,7 @@ class WaterfallClient:
             messages=[{"role": "user", "content": prompt}],
             model=provider.model,
             temperature=0.2,
-            timeout=120,
+            timeout=API_TIMEOUT_SECONDS,
             **extra,
         )
         content = response.choices[0].message.content or ""
@@ -562,7 +571,7 @@ def extract_questions_from_chunk(client: WaterfallClient, text_chunk: str, max_a
             if isinstance(questions, list):
                 return [normalize_question_payload(question) for question in questions if isinstance(question, dict)]
         if attempt < max_attempts - 1:
-            print(f"        [!] All configured providers failed for chunk. Waiting {retry_wait}s before retry...")
+            print(f"        [!] Attempt {attempt + 1}/{max_attempts} failed for this chunk. Waiting {retry_wait}s before retry...")
             time.sleep(retry_wait)
     return None
 
@@ -695,7 +704,10 @@ def main() -> int:
         results = run_question_json_pipeline(args, client)
     else:
         if args.fallback_only:
-            print("Document extraction requires at least one configured provider; fallback-only mode only supports --question-json.")
+            print(
+                "Document extraction requires AI providers. Configure GEMINI_API_KEY, GROQ_API_KEY, "
+                "OPENROUTER_API_KEY, or LOCAL_OLLAMA_URL, or use --question-json with --fallback-only."
+            )
             return 1
         if not client.gemini_client and not client.providers:
             print("No AI providers are configured. Set GEMINI_API_KEY, GROQ_API_KEY, OPENROUTER_API_KEY, or LOCAL_OLLAMA_URL first.")
