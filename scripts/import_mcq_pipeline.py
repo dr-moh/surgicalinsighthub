@@ -112,7 +112,10 @@ Return ONLY one valid JSON object using exactly this structure:
 W_NS = "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}"
 MAX_TAGS = 6
 DEFAULT_COOLDOWN_SECONDS = 90
-UTC = datetime.timezone.utc
+UTC_TZ = datetime.timezone.utc
+GEMINI_DEFAULT_MODEL = os.getenv("GEMINI_MODEL", "gemini-1.5-flash")
+GROQ_DEFAULT_MODEL = os.getenv("GROQ_MODEL", "llama-3.3-70b-versatile")
+OPENROUTER_DEFAULT_MODEL = os.getenv("OPENROUTER_MODEL", "meta-llama/llama-3.1-8b-instruct:free")
 
 
 @dataclass
@@ -422,13 +425,13 @@ class WaterfallClient:
         local_model = os.getenv("LOCAL_MODEL_NAME", "").strip() or os.getenv("LOCAL_MODEL", "").strip() or "llama3"
 
         if groq_key:
-            providers.append(Provider(name="Groq", base_url="https://api.groq.com/openai/v1", model="llama-3.3-70b-versatile", api_key=groq_key))
+            providers.append(Provider(name="Groq", base_url="https://api.groq.com/openai/v1", model=GROQ_DEFAULT_MODEL, api_key=groq_key))
         if openrouter_key:
             providers.append(
                 Provider(
                     name="OpenRouter",
                     base_url="https://openrouter.ai/api/v1",
-                    model="meta-llama/llama-3.1-8b-instruct:free",
+                    model=OPENROUTER_DEFAULT_MODEL,
                     api_key=openrouter_key,
                 )
             )
@@ -462,13 +465,13 @@ class WaterfallClient:
         until = self.cooldowns.get(name)
         if not until:
             return False
-        if datetime.datetime.now(UTC) >= until:
+        if datetime.datetime.now(UTC_TZ) >= until:
             self.cooldowns.pop(name, None)
             return False
         return True
 
     def set_cooldown(self, name: str, seconds: int = DEFAULT_COOLDOWN_SECONDS) -> None:
-        self.cooldowns[name] = datetime.datetime.now(UTC) + datetime.timedelta(seconds=seconds)
+        self.cooldowns[name] = datetime.datetime.now(UTC_TZ) + datetime.timedelta(seconds=seconds)
 
     def call_gemini(self, prompt: str) -> Any:
         if not self.gemini_client or self.is_cooling("Gemini"):
@@ -476,12 +479,12 @@ class WaterfallClient:
         try:
             if USE_MODERN_GENAI:
                 response = self.gemini_client.models.generate_content(
-                    model="gemini-1.5-flash",
+                    model=GEMINI_DEFAULT_MODEL,
                     contents=prompt,
                     config=types.GenerateContentConfig(temperature=0.2, response_mime_type="application/json"),
                 )
                 return clean_json_response(response.text)
-            model = google_genai.GenerativeModel("gemini-1.5-flash")
+            model = google_genai.GenerativeModel(GEMINI_DEFAULT_MODEL)
             response = model.generate_content(
                 prompt,
                 generation_config=google_genai.types.GenerationConfig(temperature=0.2, response_mime_type="application/json"),
@@ -512,7 +515,7 @@ class WaterfallClient:
     def run(self, prompt: str) -> Any:
         if self.gemini_client and not self.is_cooling("Gemini"):
             try:
-                print("     -> Trying Gemini 1.5 Flash...")
+                print(f"     -> Trying Gemini ({GEMINI_DEFAULT_MODEL})...")
                 return self.call_gemini(prompt)
             except Exception as exc:
                 print(f"        [!] Gemini failed: {str(exc)[:120]}")
@@ -556,11 +559,13 @@ def enrich_existing_question(client: WaterfallClient, question_obj: dict[str, An
     if fallback_only or (not client.gemini_client and not client.providers):
         return build_fallback_question(question_obj)
 
+    normalized_options = normalize_options(question_obj.get("options", {}))
+    answer_letter = option_letter(question_obj.get("answer", ""))
     normalized_input = {
         "question": question_obj.get("question", ""),
-        "options": normalize_options(question_obj.get("options", {})),
+        "options": normalized_options,
         "correct_answer": next(
-            (option for option in normalize_options(question_obj.get("options", {})) if option.startswith(f"{option_letter(question_obj.get('answer', ''))})")),
+            (option for option in normalized_options if option.startswith(f"{answer_letter})")),
             question_obj.get("answer", ""),
         ),
         "tags": dedupe_tags(question_obj.get("specialty", ""), question_obj.get("topic", ""), question_obj.get("question", "")),
