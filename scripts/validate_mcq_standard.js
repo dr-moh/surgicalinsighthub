@@ -2,7 +2,6 @@
 
 const fs = require('fs');
 const path = require('path');
-const vm = require('vm');
 
 const targetPath = process.argv[2];
 
@@ -26,20 +25,53 @@ const loadQuestions = (filePath) => {
   }
 
   if (filePath.endsWith('.js')) {
-    const sandbox = { window: {} };
-    vm.createContext(sandbox);
-
-    try {
-      vm.runInContext(raw, sandbox, { filename: filePath, timeout: 10000 });
-    } catch (error) {
-      throw new Error(`Unable to execute JS bundle safely: ${error.message}`);
+    const assignmentMatch = raw.match(/^\s*window\.QUESTIONS\s*=\s*\[/m);
+    if (!assignmentMatch || assignmentMatch.index === undefined) {
+      throw new Error('Unable to locate `window.QUESTIONS` assignment in JS bundle');
     }
 
-    if (!Array.isArray(sandbox.window.QUESTIONS)) {
-      throw new Error('Unable to locate `window.QUESTIONS` array in JS bundle');
+    const startIndex = raw.indexOf('[', assignmentMatch.index);
+    if (startIndex < 0) {
+      throw new Error('Unable to locate array start for `window.QUESTIONS`');
     }
 
-    return sandbox.window.QUESTIONS;
+    let depth = 0;
+    let inString = false;
+    let stringDelimiter = '';
+    let escaped = false;
+
+    for (let i = startIndex; i < raw.length; i += 1) {
+      const char = raw[i];
+
+      if (inString) {
+        if (escaped) {
+          escaped = false;
+        } else if (char === '\\') {
+          escaped = true;
+        } else if (char === stringDelimiter) {
+          inString = false;
+          stringDelimiter = '';
+        }
+        continue;
+      }
+
+      if (char === '"' || char === '\'') {
+        inString = true;
+        stringDelimiter = char;
+        continue;
+      }
+
+      if (char === '[') {
+        depth += 1;
+      } else if (char === ']') {
+        depth -= 1;
+        if (depth === 0) {
+          return JSON.parse(raw.slice(startIndex, i + 1));
+        }
+      }
+    }
+
+    throw new Error('Unable to parse `window.QUESTIONS` array from JS bundle');
   }
 
   throw new Error('Unsupported file type. Use a .json or .js MCQ bundle file.');
@@ -103,7 +135,7 @@ questions.forEach((question, index) => {
 
     if (!nonEmptyString(question.answer)) {
       errors.push(`${label}: answer is required`);
-    } else if (!Object.prototype.hasOwnProperty.call(question.options, question.answer)) {
+    } else if (!Object.hasOwn(question.options, question.answer)) {
       errors.push(`${label}: answer must match one of the provided option keys`);
     }
   }
