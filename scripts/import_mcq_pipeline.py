@@ -111,8 +111,10 @@ Return ONLY one valid JSON object using exactly this structure:
 
 W_NS = "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}"
 MAX_TAGS = 6
+MIN_TAG_TOKEN_LENGTH = 3
 DEFAULT_COOLDOWN_SECONDS = 90
-UTC_TZ = datetime.timezone.utc
+DEFAULT_CHUNK_SIZE = 10000
+UTC_TIMEZONE = datetime.timezone.utc
 GEMINI_DEFAULT_MODEL = os.getenv("GEMINI_MODEL", "gemini-1.5-flash")
 GROQ_DEFAULT_MODEL = os.getenv("GROQ_MODEL", "llama-3.3-70b-versatile")
 OPENROUTER_DEFAULT_MODEL = os.getenv("OPENROUTER_MODEL", "meta-llama/llama-3.1-8b-instruct:free")
@@ -137,7 +139,7 @@ def load_dotenv(env_path: Path) -> None:
         os.environ.setdefault(key.strip(), value.strip().strip('"').strip("'"))
 
 
-def chunk_text(text: str, max_chars: int = 10000) -> list[str]:
+def chunk_text(text: str, max_chars: int = DEFAULT_CHUNK_SIZE) -> list[str]:
     chunks = []
     remaining = text.strip()
     while len(remaining) > max_chars:
@@ -233,7 +235,7 @@ def strip_code_fences(raw_text: str) -> str:
     text = raw_text.strip()
     if text.startswith("```"):
         lines = text.splitlines()
-        if lines:
+        if lines and re.match(r"^```[\w-]*\s*$", lines[0].strip()):
             lines = lines[1:]
         while lines and lines[-1].strip() == "```":
             lines = lines[:-1]
@@ -301,7 +303,6 @@ def dedupe_tags(*values: str) -> list[str]:
         "question",
         "statement",
         "statements",
-        "surgery",
         "that",
         "the",
         "true",
@@ -312,7 +313,7 @@ def dedupe_tags(*values: str) -> list[str]:
     for value in values:
         cleaned = re.sub(r"[^a-z0-9]+", " ", str(value or "").lower()).strip()
         for token in cleaned.split():
-            if len(token) < 3:
+            if len(token) < MIN_TAG_TOKEN_LENGTH:
                 continue
             if token in ignored:
                 continue
@@ -341,7 +342,7 @@ def build_fallback_question(question_obj: dict[str, Any]) -> dict[str, Any]:
     question_text = str(question_obj.get("question", "")).strip()
     set_the_stage = sharp.get("set_the_stage", "")
     if not set_the_stage or set_the_stage == question_obj.get("topic", ""):
-        set_the_stage = question_text
+        set_the_stage = question_text or "Review the stem and confirm the single best answer."
     guideline = sharp.get("guideline", "")
     if guideline == question_obj.get("topic", ""):
         guideline = ""
@@ -406,6 +407,17 @@ def normalize_question_payload(question_obj: dict[str, Any]) -> dict[str, Any]:
     return normalized
 
 
+def is_rate_limit_error(exc: Exception) -> bool:
+    status_code = getattr(exc, "status_code", None)
+    if status_code == 429:
+        return True
+    response = getattr(exc, "response", None)
+    if getattr(response, "status_code", None) == 429:
+        return True
+    message = str(exc)
+    return "429" in message or "limit" in message.lower()
+
+
 class WaterfallClient:
     def __init__(self, fallback_only: bool = False):
         load_dotenv(ROOT / ".env")
@@ -465,13 +477,13 @@ class WaterfallClient:
         until = self.cooldowns.get(name)
         if not until:
             return False
-        if datetime.datetime.now(UTC_TZ) >= until:
+        if datetime.datetime.now(UTC_TIMEZONE) >= until:
             self.cooldowns.pop(name, None)
             return False
         return True
 
     def set_cooldown(self, name: str, seconds: int = DEFAULT_COOLDOWN_SECONDS) -> None:
-        self.cooldowns[name] = datetime.datetime.now(UTC_TZ) + datetime.timedelta(seconds=seconds)
+        self.cooldowns[name] = datetime.datetime.now(UTC_TIMEZONE) + datetime.timedelta(seconds=seconds)
 
     def call_gemini(self, prompt: str) -> Any:
         if not self.gemini_client or self.is_cooling("Gemini"):
@@ -491,7 +503,7 @@ class WaterfallClient:
             )
             return clean_json_response(response.text)
         except Exception as exc:
-            if "429" in str(exc):
+            if is_rate_limit_error(exc):
                 self.set_cooldown("Gemini")
             raise
 
@@ -528,7 +540,7 @@ class WaterfallClient:
                 return self.call_compatible_provider(provider, prompt)
             except Exception as exc:
                 message = str(exc)
-                if "429" in message or "limit" in message.lower():
+                if is_rate_limit_error(exc):
                     print(f"        [!] {provider.name} rate limited. Cooling down for {DEFAULT_COOLDOWN_SECONDS}s.")
                     self.set_cooldown(provider.name)
                 else:
@@ -583,7 +595,10 @@ def enrich_existing_question(client: WaterfallClient, question_obj: dict[str, An
 def load_question_jsons(paths: list[Path], limit: int = 0) -> list[dict[str, Any]]:
     questions: list[dict[str, Any]] = []
     for path in paths:
-        data = json.loads(path.read_text(encoding="utf-8"))
+        try:
+            data = json.loads(path.read_text(encoding="utf-8"))
+        except json.JSONDecodeError as exc:
+            raise ValueError(f"Failed to parse question JSON file {path}: {exc}") from exc
         items = data if isinstance(data, list) else data.get("questions", [])
         for item in items:
             if isinstance(item, dict):
@@ -662,7 +677,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--question-json", type=Path, nargs="*", default=[], help="Existing extracted MCQ JSON file(s) to enrich.")
     parser.add_argument("--output", type=Path, default=ROOT / "MCQ Bank" / "ai_transformed_questions.json", help="Final output JSON path.")
     parser.add_argument("--backup-output", type=Path, default=ROOT / "MCQ Bank" / "ai_transformed_questions_BACKUP.json", help="Incremental backup JSON path.")
-    parser.add_argument("--chunk-size", type=int, default=10000, help="Maximum characters per text chunk.")
+    parser.add_argument("--chunk-size", type=int, default=DEFAULT_CHUNK_SIZE, help="Maximum characters per text chunk.")
     parser.add_argument("--max-attempts", type=int, default=2, help="Attempts per chunk before giving up.")
     parser.add_argument("--retry-wait", type=float, default=45.0, help="Seconds to wait before retrying a failed chunk.")
     parser.add_argument("--sleep-between-items", type=float, default=1.0, help="Seconds to wait between chunks or questions.")
