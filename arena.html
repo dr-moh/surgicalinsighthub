@@ -354,7 +354,7 @@
 
     <div class="sharp-card" id="sharpCard">
       <div class="sharp-header">
-        <div class="sharp-title">SHARP Debrief</div>
+        <div class="sharp-title">SHARP 2.0 Debrief</div>
         <div class="sharp-result" id="sharpResult"></div>
       </div>
       <div class="sharp-answer-banner">
@@ -389,7 +389,7 @@
         <div class="sharp-row">
           <div class="sharp-badge">R</div>
           <div class="sharp-content">
-            <div class="sharp-row-title">Review — 2026 Guidelines</div>
+            <div class="sharp-row-title">Review Learning Points</div>
             <div class="sharp-row-text" id="sharpR"></div>
             <div class="guideline-tag" id="sharpRTag">📋 Guideline Reference</div>
           </div>
@@ -398,28 +398,22 @@
         <div class="sharp-row">
           <div class="sharp-badge">P</div>
           <div class="sharp-content">
-            <div class="sharp-row-title">Plan — Take-Home</div>
-            <div class="takehome"><div class="takehome-label">For your next shift</div><div class="takehome-text" id="sharpP"></div></div>
+            <div class="sharp-row-title">Plan for Improvement</div>
+            <div class="takehome"><div class="takehome-label">Take-home Pearl</div><div class="takehome-text" id="sharpP"></div></div>
+          </div>
+        </div>
+        <div class="sharp-divider" id="sharpVDiv"></div>
+        <div class="sharp-row" id="sharpVRow">
+          <div class="sharp-badge" style="background: var(--brand-burgundy); border: 1px solid var(--brand-gold); color: var(--brand-gold);">V</div>
+          <div class="sharp-content">
+            <div class="sharp-row-title">Mental Visualization</div>
+            <div class="sharp-row-text" id="sharpV" style="font-style: italic; color: rgba(255,255,255,0.7);"></div>
           </div>
         </div>
       </div>
-      <div class="sharp-callouts">
-        <div class="sharp-callout">
-          <div class="sharp-callout-title">Guideline</div>
-          <div class="sharp-callout-text" id="sharpGuideline"></div>
-        </div>
-        <div class="sharp-callout">
-          <div class="sharp-callout-title">Takeaway</div>
-          <div class="sharp-callout-text" id="sharpTakeaway"></div>
-        </div>
-        <div class="sharp-callout">
-          <div class="sharp-callout-title">Visualization</div>
-          <div class="sharp-callout-text" id="sharpVisualization"></div>
-        </div>
-      </div>
-      <div class="sharp-discrepancy" id="sharpDiscrepancyWrap">
-        <div class="sharp-callout-title">Discrepancy Protocol</div>
-        <div class="sharp-callout-text" id="sharpDiscrepancy"></div>
+      <div class="sharp-discrepancy" id="sharpDiscrepancyWrap" style="display:none; margin-top: 20px; border-top: 1px solid rgba(163,21,21,0.3); padding-top: 10px;">
+        <div class="sharp-row-title" style="color: #ff4d4d; font-size: 0.7rem;">⚠️ Discrepancy Protocol</div>
+        <div class="sharp-row-text" id="sharpDiscrepancy" style="font-size: 0.8rem; color: #ffb3b3;"></div>
       </div>
       <button class="next-btn" id="nextBtn" onclick="nextQuestion()">Next Question →</button>
     </div>
@@ -692,22 +686,17 @@ function showSharp(q, selected, isCorrect) {
 
   document.getElementById('sharpAnswer').textContent = answerLine;
 
-  // S - Set the stage
-  var accuracy = Math.round((state.score / (state.answers.length)) * 100);
+  // S - Set the stage (Remove fluff, focus on context)
   var sText = sharp.S || sharp.set_the_stage || '';
-  document.getElementById('sharpS').textContent = 
-    (sText ? sText + ' — ' : '') + 
-    (isCorrect ? '✓ Correct — ' : '✗ Incorrect — ') +
-    'The correct answer is ' + q.answer + '. ' + answerText + '. ' +
-    'Your session accuracy: ' + accuracy + '%.';
+  document.getElementById('sharpS').textContent = sText || 'No clinical context provided. Evaluate the stem for key identifiers.';
 
-  // H - Highlight Excellence
-  document.getElementById('sharpH').textContent = highlight || 'Review the key distinguishing feature behind the correct option.';
+  // H - Highlight Excellence (Ruthless fallback)
+  document.getElementById('sharpH').textContent = highlight || 'Identify the pathophysiology that makes the correct option the only survivable choice.';
 
-  // A - Address the Gaps
+  // A - Address the Gaps (Ruthless fallback)
   var aWrap = document.getElementById('sharpA');
   aWrap.innerHTML = '';
-  var gapText = addressGaps || 'Use the stem to eliminate distractors that do not fit the diagnosis or operative principle.';
+  var gapText = addressGaps || 'Kill the distractors. If they don\'t fit the anatomy or the guideline, they are noise.';
   aWrap.appendChild(createExplanationRow('A', gapText));
 
   ['A','B','C','D','E'].forEach(function(letter) {
@@ -717,23 +706,32 @@ function showSharp(q, selected, isCorrect) {
     aWrap.appendChild(createExplanationRow(letter, detail));
   });
 
-  // R - Review Guidelines
-  document.getElementById('sharpR').textContent = reviewGuideline || 'Review the operative guideline that supports this answer.';
+  // R - Review Learning Points
+  document.getElementById('sharpR').textContent = reviewGuideline || 'Consult the gold-standard operative guidelines for this scenario.';
   document.getElementById('sharpRTag').textContent = '📋 ' + (q.guideline || reviewGuideline || 'Review guideline');
 
-  // P - Plan / Take-home
-  document.getElementById('sharpP').textContent = takeHome || 'Memorize the board-style takeaway from this question.';
+  // P - Plan for Improvement
+  document.getElementById('sharpP').textContent = takeHome || 'Internalize this principle. Failing to recognize this in the OR costs lives.';
 
-  // Supplementary callouts
-  document.getElementById('sharpGuideline').textContent = guidelineCallout || 'No formal guideline update supplied for this question.';
-  document.getElementById('sharpTakeaway').textContent = takeawayCallout || 'No bottom-line clinical takeaway supplied for this question.';
-  document.getElementById('sharpVisualization').textContent = visualizationCallout || 'No visualization callout supplied for this question.';
+  // V - Visualization (New Integrated Row)
+  var vText = visualizationCallout || q.visualization || '';
+  var vRow = document.getElementById('sharpVRow');
+  var vDiv = document.getElementById('sharpVDiv');
+  if (vText) {
+    document.getElementById('sharpV').textContent = vText;
+    vRow.style.display = 'flex';
+    vDiv.style.display = 'block';
+  } else {
+    vRow.style.display = 'none';
+    vDiv.style.display = 'none';
+  }
+
+  // Discrepancy Protocol
   var discrepancyWrap = document.getElementById('sharpDiscrepancyWrap');
   if (discrepancyFlag) {
     document.getElementById('sharpDiscrepancy').textContent = discrepancyFlag;
     discrepancyWrap.style.display = 'block';
   } else {
-    document.getElementById('sharpDiscrepancy').textContent = '';
     discrepancyWrap.style.display = 'none';
   }
 

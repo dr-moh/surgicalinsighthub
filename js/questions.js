@@ -104,11 +104,17 @@
         var answerText = question.options ? question.options[answerLetter] : '';
         var answerSummary = answerText ? ('Answer ' + answerLetter + ': ' + answerText) : INSUFFICIENT_DATA_FALLBACK;
 
+        // Prioritize: Explicit source > sharpData.V > question.visualization > default
+        var visualization = source.visualization || question.visualization || sharpData.V || question.sharp_metadata?.V || '';
+        if (!visualization) {
+            visualization = 'Visualize the single pathognomonic radiological or operative finding that confirms the diagnosis.';
+        }
+
         return {
             answer: compactText(answerSummary, INSUFFICIENT_DATA_FALLBACK, 24),
             guideline: buildGuidelineCallout(question, sharpData, source),
-            takeaway: compactText(source.takeaway || question.takeaway || sharpData.P || 'Memorize the board-style takeaway from this question.', 'Memorize the board-style takeaway from this question.', 32),
-            visualization: compactText(source.visualization || question.visualization || 'Visualize the single pathognomonic radiological or operative finding that confirms the diagnosis.', 'Visualize the single pathognomonic radiological or operative finding that confirms the diagnosis.', 40)
+            takeaway: compactText(source.takeaway || question.takeaway || sharpData.P || question.sharp_metadata?.P || 'Memorize the board-style takeaway from this question.', 'Memorize the board-style takeaway from this question.', 32),
+            visualization: compactText(visualization, 'Visualize the radiological or operative finding.', 40)
         };
     }
 
@@ -125,9 +131,20 @@
                     H: aiQuestion.explanation?.correct || fallback.H,
                     A: fallback.A,
                     R: aiQuestion.guideline || fallback.R,
-                    P: aiQuestion.takeaway || fallback.P
+                    P: aiQuestion.takeaway || fallback.P,
+                    V: aiQuestion.visualization || ''
                 };
+            } else {
+                // Ensure existing metadata has V if available
+                if (!aiQuestion.sharp_metadata.V) aiQuestion.sharp_metadata.V = aiQuestion.visualization || '';
+                // Support both lowercase/uppercase keys from different pipelines
+                if (!aiQuestion.sharp_metadata.S) aiQuestion.sharp_metadata.S = aiQuestion.sharp_metadata.set_the_stage || '';
+                if (!aiQuestion.sharp_metadata.H) aiQuestion.sharp_metadata.H = aiQuestion.sharp_metadata.highlight_excellence || '';
+                if (!aiQuestion.sharp_metadata.A) aiQuestion.sharp_metadata.A = aiQuestion.sharp_metadata.address_gaps || '';
+                if (!aiQuestion.sharp_metadata.R) aiQuestion.sharp_metadata.R = aiQuestion.sharp_metadata.review_learning_points || '';
+                if (!aiQuestion.sharp_metadata.P) aiQuestion.sharp_metadata.P = aiQuestion.sharp_metadata.plan || aiQuestion.sharp_metadata.plan_for_improvement || '';
             }
+
             if (!aiQuestion.supplementary_callouts) {
                 aiQuestion.supplementary_callouts = buildSupplementaryCallouts(aiQuestion, aiQuestion.sharp_metadata);
             }
@@ -158,24 +175,25 @@
 
         // Return standardized NEW question
         var sharpMetadata = {
-            S: aiQuestion.sharp_debrief?.S_set_the_stage || aiQuestion.sharp_debrief?.scenario || "",
-            H: aiQuestion.sharp_debrief?.H_highlight_excellence || aiQuestion.sharp_debrief?.answer || "",
-            A: aiQuestion.sharp_debrief?.A_address_the_gaps || aiQuestion.sharp_debrief?.rationale || "",
-            R: aiQuestion.sharp_debrief?.R_review_learning_points || aiQuestion.sharp_debrief?.pearls || "",
-            P: aiQuestion.sharp_debrief?.P_plan_for_improvement || aiQuestion.sharp_debrief?.hint || ""
+            S: aiQuestion.sharp_debrief?.S_set_the_stage || aiQuestion.sharp_debrief?.scenario || aiQuestion.sharp_metadata?.S || "",
+            H: aiQuestion.sharp_debrief?.H_highlight_excellence || aiQuestion.sharp_debrief?.answer || aiQuestion.sharp_metadata?.H || "",
+            A: aiQuestion.sharp_debrief?.A_address_the_gaps || aiQuestion.sharp_debrief?.rationale || aiQuestion.sharp_metadata?.A || "",
+            R: aiQuestion.sharp_debrief?.R_review_learning_points || aiQuestion.sharp_debrief?.pearls || aiQuestion.sharp_metadata?.R || "",
+            P: aiQuestion.sharp_debrief?.P_plan_for_improvement || aiQuestion.sharp_debrief?.hint || aiQuestion.sharp_metadata?.P || "",
+            V: aiQuestion.visualization || aiQuestion.sharp_metadata?.V || aiQuestion.sharp_metadata?.visualization || ""
         };
 
         var sourceCallouts = aiQuestion.supplementary_callouts || {
             guideline: aiQuestion.guideline || sharpMetadata.R || "",
             takeaway: aiQuestion.takeaway || sharpMetadata.P || "",
-            visualization: aiQuestion.visualization || ""
+            visualization: sharpMetadata.V || ""
         };
 
         var adaptedQuestion = {
-            id: "AI_" + Math.floor(Math.random() * 10000),
+            id: aiQuestion.id || ("AI_" + Math.floor(Math.random() * 10000)),
             question: aiQuestion.question,
-            specialty: (aiQuestion.tags && aiQuestion.tags[0]) ? aiQuestion.tags[0].charAt(0).toUpperCase() + aiQuestion.tags[0].slice(1) : "General Surgery",
-            topic: (aiQuestion.tags && aiQuestion.tags[1]) ? aiQuestion.tags[1] : "Surgical Principles",
+            specialty: (aiQuestion.tags && aiQuestion.tags[0]) ? aiQuestion.tags[0].charAt(0).toUpperCase() + aiQuestion.tags[0].slice(1) : (aiQuestion.specialty || "General Surgery"),
+            topic: (aiQuestion.tags && aiQuestion.tags[1]) ? aiQuestion.tags[1] : (aiQuestion.topic || "Surgical Principles"),
             options: optionsObj,
             answer: answerLetter,
             sharp_metadata: sharpMetadata,

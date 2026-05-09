@@ -36,24 +36,25 @@ def load_questions() -> list:
 
 def make_prompt(question_obj: dict) -> str:
     return f"""
-Return valid JSON only. No markdown. No reasoning.
+Act as a RUTHLESS Senior Surgical Resident preparing a junior for boards. 
+Your tone is technical, efficient, and intolerant of fluff.
 
 Question: {question_obj.get('question', '')}
 Options: {json.dumps(question_obj.get('options', {}), ensure_ascii=False)}
-Provided Answer Key: {question_obj.get('answer', '')}
+Correct Answer: {question_obj.get('answer', '')}
 
-If valid, return ONLY JSON with short fields:
+Return ONLY valid JSON in this exact structure:
 {{
   "status": "ACCEPT",
-  "verified_answer": "A",
-  "set_the_stage": "short phrase",
-  "highlight_excellence": "short phrase",
-  "address_gaps": "short phrase",
-  "review_learning_points": "short phrase",
-  "plan": "short phrase",
-  "guideline": "short phrase",
-  "takeaway": "short phrase",
-  "visualization": "short phrase"
+  "verified_answer": "{question_obj.get('answer', '')}",
+  "set_the_stage": "One sentence clinical context. No 'Focus on the clue'.",
+  "highlight_excellence": "The single technical or pathophysiological fact that makes the answer correct.",
+  "address_gaps": "Concise disqualification of distractors. Kill the noise.",
+  "review_learning_points": "The gold-standard guideline (e.g., NCCN, ATLS, SAGES) and the core principle.",
+  "plan": "A high-yield 'Take-home Pearl' for the next shift.",
+  "visualization": "A vivid mental image of the operative or radiological finding.",
+  "guideline": "Official Guideline Name",
+  "takeaway": "One-line board pearl"
 }}
 """
 
@@ -71,15 +72,14 @@ def make_batch_prompt(batch: list) -> str:
         )
 
     return f"""
-Return valid JSON only. No markdown. No reasoning.
+Act as a RUTHLESS Senior Surgical Resident. 
+For each MCQ in the array below, provide a SHARP 2.0 debrief.
+No fluff. No generic placeholders. Precise surgical terminology only.
 
-You will receive a JSON array of MCQs.
-For each item, return an object with:
-id, verified_answer, set_the_stage, highlight_excellence, address_gaps, review_learning_points, plan, guideline, takeaway, visualization.
+JSON Array of Questions: {json.dumps(payload, ensure_ascii=False)}
 
-Use short phrases. Return a JSON array with one result per input item, preserving the ids.
-
-Questions: {json.dumps(payload, ensure_ascii=False)}
+Return a JSON array of objects, each containing:
+id, verified_answer, set_the_stage, highlight_excellence, address_gaps, review_learning_points, plan, visualization, guideline, takeaway.
 """
 
 
