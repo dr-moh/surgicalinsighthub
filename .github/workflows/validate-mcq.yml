@@ -17,6 +17,9 @@ on:
 jobs:
   validate:
     runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+      issues: write
     strategy:
       matrix:
         node-version: [16.x, 18.x]
@@ -92,5 +95,5 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: `✅ MCQ bundle validation passed!\n\n**Bundle Stats:**\n- Total canonical questions: ${data.length}\n- Bundle files validated: canonical_questions.json, canonical_questions.js\n- Structure: Passed\n\nReady to merge.`
+              body: `✅ MCQ bundle validation passed!\n\n**Bundle Stats:**\n- Total canonical questions: ${data.length}\n- Bundle files validated: canonical_questions.json, canonical_questions.js[...]`
             });
