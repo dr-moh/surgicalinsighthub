@@ -166,6 +166,9 @@
 .sharp-result{display:flex;align-items:center;gap:6px;font-size:.75rem;font-weight:700;}
 .sharp-result.correct{color:var(--brand-green);}
 .sharp-result.wrong{color:var(--brand-red);}
+.sharp-answer-banner{background:rgba(184,146,42,0.12);border:1px solid rgba(184,146,42,0.18);border-radius:14px;padding:12px 14px;margin-bottom:18px;}
+.sharp-answer-label{font-size:.58rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(184,146,42,0.72);margin-bottom:4px;}
+.sharp-answer-text{font-size:.92rem;font-weight:800;color:#f0d080;line-height:1.5;}
 .sharp-rows{display:flex;flex-direction:column;gap:12px;}
 .sharp-row{display:flex;gap:10px;align-items:flex-start;}
 .sharp-badge{width:22px;height:22px;border-radius:5px;background:var(--brand-gold);display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:800;color:var(--brand-burgundy);flex-shrink:0;margin-top:1px;}
@@ -182,6 +185,12 @@
 .takehome{background:rgba(184,146,42,0.12);border-left:3px solid var(--brand-gold);padding:10px 14px;border-radius:0 8px 8px 0;margin-top:12px;}
 .takehome-label{font-size:.58rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--brand-gold);margin-bottom:4px;}
 .takehome-text{font-size:.8rem;color:#f0d080;font-weight:600;line-height:1.5;}
+.sharp-callouts{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin-top:18px;}
+.sharp-callout{background:rgba(255,255,255,0.04);border:1px solid rgba(184,146,42,0.18);border-radius:12px;padding:12px;}
+.sharp-callout-title{font-size:.58rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(184,146,42,0.72);margin-bottom:6px;}
+.sharp-callout-text{font-size:.76rem;color:rgba(255,255,255,0.78);line-height:1.55;}
+.sharp-discrepancy{margin-top:12px;background:rgba(163,21,21,0.12);border:1px solid rgba(239,68,68,0.24);border-radius:12px;padding:12px;display:none;}
+.sharp-discrepancy .sharp-callout-title{color:#fca5a5;}
 .next-btn{width:100%;background:var(--brand-gold);color:var(--brand-burgundy);border:none;border-radius:12px;padding:13px;font-family:inherit;font-size:.85rem;font-weight:800;cursor:pointer;transition:opacity .15s;margin-top:16px;}
 .next-btn:hover{opacity:.85;}
 
@@ -348,6 +357,10 @@
         <div class="sharp-title">SHARP Debrief</div>
         <div class="sharp-result" id="sharpResult"></div>
       </div>
+      <div class="sharp-answer-banner">
+        <div class="sharp-answer-label">Correct Answer</div>
+        <div class="sharp-answer-text" id="sharpAnswer"></div>
+      </div>
       <div class="sharp-rows">
         <div class="sharp-row">
           <div class="sharp-badge">S</div>
@@ -389,6 +402,24 @@
             <div class="takehome"><div class="takehome-label">For your next shift</div><div class="takehome-text" id="sharpP"></div></div>
           </div>
         </div>
+      </div>
+      <div class="sharp-callouts">
+        <div class="sharp-callout">
+          <div class="sharp-callout-title">Guideline</div>
+          <div class="sharp-callout-text" id="sharpGuideline"></div>
+        </div>
+        <div class="sharp-callout">
+          <div class="sharp-callout-title">Takeaway</div>
+          <div class="sharp-callout-text" id="sharpTakeaway"></div>
+        </div>
+        <div class="sharp-callout">
+          <div class="sharp-callout-title">Visualization</div>
+          <div class="sharp-callout-text" id="sharpVisualization"></div>
+        </div>
+      </div>
+      <div class="sharp-discrepancy" id="sharpDiscrepancyWrap">
+        <div class="sharp-callout-title">Discrepancy Protocol</div>
+        <div class="sharp-callout-text" id="sharpDiscrepancy"></div>
       </div>
       <button class="next-btn" id="nextBtn" onclick="nextQuestion()">Next Question →</button>
     </div>
@@ -627,12 +658,20 @@ function showSharp(q, selected, isCorrect) {
   var card = document.getElementById('sharpCard');
   card.style.display = 'block';
   var sharp = q.sharp || q.sharp_metadata || {};
+  var callouts = q.supplementary_callouts || {};
   var explanation = q.explanation || {};
   var answerText = (q.options && q.options[q.answer]) ? q.options[q.answer] : '';
+  var answerLine = 'Answer ' + q.answer + ': ' + (answerText || 'Insufficient Data in Source');
   var highlight = String(sharp.H || sharp.highlight_excellence || explanation.correct || '').trim();
   var addressGaps = String(sharp.A || sharp.address_gaps || '').trim();
   var reviewGuideline = String(sharp.R || sharp.review_learning_points || q.guideline || '').trim();
   var takeHome = String(sharp.P || sharp.plan || q.takeaway || '').trim();
+  var guidelineCallout = String(callouts.guideline || q.guideline || reviewGuideline || '').trim();
+  var takeawayCallout = String(callouts.takeaway || q.takeaway || takeHome || '').trim();
+  var visualizationCallout = String(callouts.visualization || q.visualization || '').trim();
+  var discrepancyFlag = String(q.discrepancy_flag || '').trim();
+
+  document.getElementById('sharpAnswer').textContent = answerLine;
 
   // S - Set the stage
   var accuracy = Math.round((state.score / (state.answers.length)) * 100);
@@ -650,7 +689,14 @@ function showSharp(q, selected, isCorrect) {
   var gapText = addressGaps || 'Use the stem to eliminate distractors that do not fit the diagnosis or operative principle.';
   var gapRow = document.createElement('div');
   gapRow.className = 'opt-exp';
-  gapRow.innerHTML = '<div class="opt-exp-letter">A</div><div class="opt-exp-text">' + gapText + '</div>';
+  var gapLetter = document.createElement('div');
+  gapLetter.className = 'opt-exp-letter';
+  gapLetter.textContent = 'A';
+  var gapBody = document.createElement('div');
+  gapBody.className = 'opt-exp-text';
+  gapBody.textContent = gapText;
+  gapRow.appendChild(gapLetter);
+  gapRow.appendChild(gapBody);
   aWrap.appendChild(gapRow);
 
   ['A','B','C','D','E'].forEach(function(letter) {
@@ -659,7 +705,14 @@ function showSharp(q, selected, isCorrect) {
     if (!detail) return;
     var row = document.createElement('div');
     row.className = 'opt-exp';
-    row.innerHTML = '<div class="opt-exp-letter">' + letter + '</div><div class="opt-exp-text">' + detail + '</div>';
+    var rowLetter = document.createElement('div');
+    rowLetter.className = 'opt-exp-letter';
+    rowLetter.textContent = letter;
+    var rowBody = document.createElement('div');
+    rowBody.className = 'opt-exp-text';
+    rowBody.textContent = detail;
+    row.appendChild(rowLetter);
+    row.appendChild(rowBody);
     aWrap.appendChild(row);
   });
 
@@ -669,6 +722,14 @@ function showSharp(q, selected, isCorrect) {
 
   // P - Plan / Take-home
   document.getElementById('sharpP').textContent = takeHome || 'Memorize the board-style takeaway from this question.';
+
+  // Supplementary callouts
+  document.getElementById('sharpGuideline').textContent = guidelineCallout || 'No formal guideline update supplied for this question.';
+  document.getElementById('sharpTakeaway').textContent = takeawayCallout || 'No bottom-line clinical takeaway supplied for this question.';
+  document.getElementById('sharpVisualization').textContent = visualizationCallout || 'No visualization callout supplied for this question.';
+  var discrepancyWrap = document.getElementById('sharpDiscrepancyWrap');
+  document.getElementById('sharpDiscrepancy').textContent = discrepancyFlag || 'No discrepancy flagged.';
+  discrepancyWrap.style.display = discrepancyFlag ? 'block' : 'none';
 
   // Result badge
   var res = document.getElementById('sharpResult');
