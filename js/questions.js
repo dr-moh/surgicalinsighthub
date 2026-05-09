@@ -155,6 +155,12 @@
             P: aiQuestion.sharp_debrief?.P_plan_for_improvement || aiQuestion.sharp_debrief?.hint || ""
         };
 
+        var sourceCallouts = aiQuestion.supplementary_callouts || {
+            guideline: aiQuestion.guideline || sharpMetadata.R || "",
+            takeaway: aiQuestion.takeaway || sharpMetadata.P || "",
+            visualization: aiQuestion.visualization || ""
+        };
+
         var adaptedQuestion = {
             id: "AI_" + Math.floor(Math.random() * 10000),
             question: aiQuestion.question,
@@ -163,11 +169,7 @@
             options: optionsObj,
             answer: answerLetter,
             sharp_metadata: sharpMetadata,
-            supplementary_callouts: aiQuestion.supplementary_callouts || {
-                guideline: aiQuestion.guideline || sharpMetadata.R || "",
-                takeaway: aiQuestion.takeaway || sharpMetadata.P || "",
-                visualization: aiQuestion.visualization || ""
-            },
+            supplementary_callouts: sourceCallouts,
             discrepancy_flag: typeof aiQuestion.discrepancy_flag === 'string' ? aiQuestion.discrepancy_flag : ''
         };
         adaptedQuestion.supplementary_callouts = buildSupplementaryCallouts(adaptedQuestion, sharpMetadata);

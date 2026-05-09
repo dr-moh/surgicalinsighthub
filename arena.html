@@ -669,6 +669,10 @@ function createExplanationRow(letter, text) {
   return row;
 }
 
+function formatAnswerLine(letter, answerText) {
+  return 'Answer ' + letter + ': ' + (answerText || INSUFFICIENT_DATA_FALLBACK);
+}
+
 function showSharp(q, selected, isCorrect) {
   var card = document.getElementById('sharpCard');
   card.style.display = 'block';
@@ -676,7 +680,7 @@ function showSharp(q, selected, isCorrect) {
   var callouts = q.supplementary_callouts || {};
   var explanation = q.explanation || {};
   var answerText = (q.options && q.options[q.answer]) ? q.options[q.answer] : '';
-  var answerLine = String(callouts.answer || ('Answer ' + q.answer + ': ' + (answerText || INSUFFICIENT_DATA_FALLBACK))).trim();
+  var answerLine = String(callouts.answer || formatAnswerLine(q.answer, answerText)).trim();
   var highlight = String(sharp.H || sharp.highlight_excellence || explanation.correct || '').trim();
   var addressGaps = String(sharp.A || sharp.address_gaps || '').trim();
   var reviewGuideline = String(sharp.R || sharp.review_learning_points || q.guideline || '').trim();
