@@ -7,6 +7,8 @@
 (function() {
     window.QUESTIONS = [];
     window.QUESTIONS_LOADED = false;
+    window.INSUFFICIENT_DATA_FALLBACK = window.INSUFFICIENT_DATA_FALLBACK || 'Insufficient Data in Source';
+    var INSUFFICIENT_DATA_FALLBACK = window.INSUFFICIENT_DATA_FALLBACK;
 
     // Helper functions
     function flattenQuestions(items, output) {
@@ -84,6 +86,32 @@
         };
     }
 
+    function buildGuidelineCallout(question, sharpData, source) {
+        return compactText(
+            source.guideline || question.guideline || sharpData.R || guidelineLabel(question),
+            guidelineLabel(question),
+            40
+        );
+    }
+
+    function buildSupplementaryCallouts(question, sharpData, sourceOverride) {
+        var source = sourceOverride && typeof sourceOverride === 'object'
+            ? sourceOverride
+            : question.supplementary_callouts && typeof question.supplementary_callouts === 'object'
+                ? question.supplementary_callouts
+            : {};
+        var answerLetter = question.answer || 'A';
+        var answerText = question.options ? question.options[answerLetter] : '';
+        var answerSummary = answerText ? ('Answer ' + answerLetter + ': ' + answerText) : INSUFFICIENT_DATA_FALLBACK;
+
+        return {
+            answer: compactText(answerSummary, INSUFFICIENT_DATA_FALLBACK, 24),
+            guideline: buildGuidelineCallout(question, sharpData, source),
+            takeaway: compactText(source.takeaway || question.takeaway || sharpData.P || 'Memorize the board-style takeaway from this question.', 'Memorize the board-style takeaway from this question.', 32),
+            visualization: compactText(source.visualization || question.visualization || 'Visualize the single pathognomonic radiological or operative finding that confirms the diagnosis.', 'Visualize the single pathognomonic radiological or operative finding that confirms the diagnosis.', 40)
+        };
+    }
+
     // New AI Format Adapter (Translates your SHARP JSON to your Arena format)
     function adaptAIQuestion(aiQuestion) {
         // If it's already in the old format, just return it (Legacy)
@@ -99,6 +127,12 @@
                     R: aiQuestion.guideline || fallback.R,
                     P: aiQuestion.takeaway || fallback.P
                 };
+            }
+            if (!aiQuestion.supplementary_callouts) {
+                aiQuestion.supplementary_callouts = buildSupplementaryCallouts(aiQuestion, aiQuestion.sharp_metadata);
+            }
+            if (typeof aiQuestion.discrepancy_flag !== 'string') {
+                aiQuestion.discrepancy_flag = '';
             }
             return aiQuestion; 
         }
@@ -123,21 +157,32 @@
         }
 
         // Return standardized NEW question
-        return {
+        var sharpMetadata = {
+            S: aiQuestion.sharp_debrief?.S_set_the_stage || aiQuestion.sharp_debrief?.scenario || "",
+            H: aiQuestion.sharp_debrief?.H_highlight_excellence || aiQuestion.sharp_debrief?.answer || "",
+            A: aiQuestion.sharp_debrief?.A_address_the_gaps || aiQuestion.sharp_debrief?.rationale || "",
+            R: aiQuestion.sharp_debrief?.R_review_learning_points || aiQuestion.sharp_debrief?.pearls || "",
+            P: aiQuestion.sharp_debrief?.P_plan_for_improvement || aiQuestion.sharp_debrief?.hint || ""
+        };
+
+        var sourceCallouts = aiQuestion.supplementary_callouts || {
+            guideline: aiQuestion.guideline || sharpMetadata.R || "",
+            takeaway: aiQuestion.takeaway || sharpMetadata.P || "",
+            visualization: aiQuestion.visualization || ""
+        };
+
+        var adaptedQuestion = {
             id: "AI_" + Math.floor(Math.random() * 10000),
             question: aiQuestion.question,
             specialty: (aiQuestion.tags && aiQuestion.tags[0]) ? aiQuestion.tags[0].charAt(0).toUpperCase() + aiQuestion.tags[0].slice(1) : "General Surgery",
             topic: (aiQuestion.tags && aiQuestion.tags[1]) ? aiQuestion.tags[1] : "Surgical Principles",
             options: optionsObj,
             answer: answerLetter,
-            sharp_metadata: {
-                S: aiQuestion.sharp_debrief?.S_set_the_stage || aiQuestion.sharp_debrief?.scenario || "",
-                H: aiQuestion.sharp_debrief?.H_highlight_excellence || aiQuestion.sharp_debrief?.answer || "",
-                A: aiQuestion.sharp_debrief?.A_address_the_gaps || aiQuestion.sharp_debrief?.rationale || "",
-                R: aiQuestion.sharp_debrief?.R_review_learning_points || aiQuestion.sharp_debrief?.pearls || "",
-                P: aiQuestion.sharp_debrief?.P_plan_for_improvement || aiQuestion.sharp_debrief?.hint || ""
-            }
+            sharp_metadata: sharpMetadata,
+            discrepancy_flag: typeof aiQuestion.discrepancy_flag === 'string' ? aiQuestion.discrepancy_flag : ''
         };
+        adaptedQuestion.supplementary_callouts = buildSupplementaryCallouts(adaptedQuestion, sharpMetadata, sourceCallouts);
+        return adaptedQuestion;
     }
 
     // Load canonical questions first (primary source)
