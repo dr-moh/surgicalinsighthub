@@ -86,9 +86,19 @@
         };
     }
 
-    function buildSupplementaryCallouts(question, sharpData) {
-        var source = question.supplementary_callouts && typeof question.supplementary_callouts === 'object'
-            ? question.supplementary_callouts
+    function buildGuidelineCallout(question, sharpData, source) {
+        return compactText(
+            source.guideline || question.guideline || sharpData.R || guidelineLabel(question),
+            guidelineLabel(question),
+            40
+        );
+    }
+
+    function buildSupplementaryCallouts(question, sharpData, sourceOverride) {
+        var source = sourceOverride && typeof sourceOverride === 'object'
+            ? sourceOverride
+            : question.supplementary_callouts && typeof question.supplementary_callouts === 'object'
+                ? question.supplementary_callouts
             : {};
         var answerLetter = question.answer || 'A';
         var answerText = question.options ? question.options[answerLetter] : '';
@@ -96,7 +106,7 @@
 
         return {
             answer: compactText(answerSummary, INSUFFICIENT_DATA_FALLBACK, 24),
-            guideline: compactText(source.guideline || question.guideline || sharpData.R || guidelineLabel(question), guidelineLabel(question), 40),
+            guideline: buildGuidelineCallout(question, sharpData, source),
             takeaway: compactText(source.takeaway || question.takeaway || sharpData.P || 'Memorize the board-style takeaway from this question.', 'Memorize the board-style takeaway from this question.', 32),
             visualization: compactText(source.visualization || question.visualization || 'Visualize the single pathognomonic radiological or operative finding that confirms the diagnosis.', 'Visualize the single pathognomonic radiological or operative finding that confirms the diagnosis.', 40)
         };
@@ -171,9 +181,7 @@
             sharp_metadata: sharpMetadata,
             discrepancy_flag: typeof aiQuestion.discrepancy_flag === 'string' ? aiQuestion.discrepancy_flag : ''
         };
-        adaptedQuestion.supplementary_callouts = buildSupplementaryCallouts(Object.assign({}, adaptedQuestion, {
-            supplementary_callouts: sourceCallouts
-        }), sharpMetadata);
+        adaptedQuestion.supplementary_callouts = buildSupplementaryCallouts(adaptedQuestion, sharpMetadata, sourceCallouts);
         return adaptedQuestion;
     }
 
