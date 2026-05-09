@@ -7,7 +7,8 @@
 (function() {
     window.QUESTIONS = [];
     window.QUESTIONS_LOADED = false;
-    var INSUFFICIENT_DATA_FALLBACK = 'Insufficient Data in Source';
+    window.INSUFFICIENT_DATA_FALLBACK = window.INSUFFICIENT_DATA_FALLBACK || 'Insufficient Data in Source';
+    var INSUFFICIENT_DATA_FALLBACK = window.INSUFFICIENT_DATA_FALLBACK;
 
     // Helper functions
     function flattenQuestions(items, output) {

@@ -462,8 +462,7 @@
 <script>
 
 
-
-var INSUFFICIENT_DATA_FALLBACK = 'Insufficient Data in Source';
+var INSUFFICIENT_DATA_FALLBACK = window.INSUFFICIENT_DATA_FALLBACK;
 
 // ── SUPABASE ──
 var SUPA_URL = 'https://sxushsvvmyokoknnsbuj.supabase.co';
@@ -656,6 +655,20 @@ function submitAnswer() {
   showSharp(q, selected, isCorrect);
 }
 
+function createExplanationRow(letter, text) {
+  var row = document.createElement('div');
+  row.className = 'opt-exp';
+  var rowLetter = document.createElement('div');
+  rowLetter.className = 'opt-exp-letter';
+  rowLetter.textContent = letter;
+  var rowBody = document.createElement('div');
+  rowBody.className = 'opt-exp-text';
+  rowBody.textContent = text;
+  row.appendChild(rowLetter);
+  row.appendChild(rowBody);
+  return row;
+}
+
 function showSharp(q, selected, isCorrect) {
   var card = document.getElementById('sharpCard');
   card.style.display = 'block';
@@ -689,33 +702,13 @@ function showSharp(q, selected, isCorrect) {
   var aWrap = document.getElementById('sharpA');
   aWrap.innerHTML = '';
   var gapText = addressGaps || 'Use the stem to eliminate distractors that do not fit the diagnosis or operative principle.';
-  var gapRow = document.createElement('div');
-  gapRow.className = 'opt-exp';
-  var gapLetter = document.createElement('div');
-  gapLetter.className = 'opt-exp-letter';
-  gapLetter.textContent = 'A';
-  var gapBody = document.createElement('div');
-  gapBody.className = 'opt-exp-text';
-  gapBody.textContent = gapText;
-  gapRow.appendChild(gapLetter);
-  gapRow.appendChild(gapBody);
-  aWrap.appendChild(gapRow);
+  aWrap.appendChild(createExplanationRow('A', gapText));
 
   ['A','B','C','D','E'].forEach(function(letter) {
     if (!q.options[letter] || letter === q.answer) return;
     var detail = String(explanation[letter] || '').trim();
     if (!detail) return;
-    var row = document.createElement('div');
-    row.className = 'opt-exp';
-    var rowLetter = document.createElement('div');
-    rowLetter.className = 'opt-exp-letter';
-    rowLetter.textContent = letter;
-    var rowBody = document.createElement('div');
-    rowBody.className = 'opt-exp-text';
-    rowBody.textContent = detail;
-    row.appendChild(rowLetter);
-    row.appendChild(rowBody);
-    aWrap.appendChild(row);
+    aWrap.appendChild(createExplanationRow(letter, detail));
   });
 
   // R - Review Guidelines
