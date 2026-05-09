@@ -694,7 +694,9 @@ function showSharp(q, selected, isCorrect) {
 
   // S - Set the stage
   var accuracy = Math.round((state.score / (state.answers.length)) * 100);
-  document.getElementById('sharpS').textContent =
+  var sText = sharp.S || sharp.set_the_stage || '';
+  document.getElementById('sharpS').textContent = 
+    (sText ? sText + ' — ' : '') + 
     (isCorrect ? '✓ Correct — ' : '✗ Incorrect — ') +
     'The correct answer is ' + q.answer + '. ' + answerText + '. ' +
     'Your session accuracy: ' + accuracy + '%.';
