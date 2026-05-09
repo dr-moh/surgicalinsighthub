@@ -7,6 +7,7 @@
 (function() {
     window.QUESTIONS = [];
     window.QUESTIONS_LOADED = false;
+    var INSUFFICIENT_DATA_FALLBACK = 'Insufficient Data in Source';
 
     // Helper functions
     function flattenQuestions(items, output) {
@@ -90,10 +91,10 @@
             : {};
         var answerLetter = question.answer || 'A';
         var answerText = question.options ? question.options[answerLetter] : '';
-        var answerSummary = answerText ? ('Answer ' + answerLetter + ': ' + answerText) : 'Insufficient Data in Source';
+        var answerSummary = answerText ? ('Answer ' + answerLetter + ': ' + answerText) : INSUFFICIENT_DATA_FALLBACK;
 
         return {
-            answer: compactText(answerSummary, 'Insufficient Data in Source', 24),
+            answer: compactText(answerSummary, INSUFFICIENT_DATA_FALLBACK, 24),
             guideline: compactText(source.guideline || question.guideline || sharpData.R || guidelineLabel(question), guidelineLabel(question), 40),
             takeaway: compactText(source.takeaway || question.takeaway || sharpData.P || 'Memorize the board-style takeaway from this question.', 'Memorize the board-style takeaway from this question.', 32),
             visualization: compactText(source.visualization || question.visualization || 'Visualize the single pathognomonic radiological or operative finding that confirms the diagnosis.', 'Visualize the single pathognomonic radiological or operative finding that confirms the diagnosis.', 40)

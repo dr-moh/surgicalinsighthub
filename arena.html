@@ -463,6 +463,8 @@
 
 
 
+var INSUFFICIENT_DATA_FALLBACK = 'Insufficient Data in Source';
+
 // ── SUPABASE ──
 var SUPA_URL = 'https://sxushsvvmyokoknnsbuj.supabase.co';
 var SUPA_KEY = 'sb_publishable_Kl4RNEOxvmBewUToRv7HHw_2epulGkp';
@@ -661,7 +663,7 @@ function showSharp(q, selected, isCorrect) {
   var callouts = q.supplementary_callouts || {};
   var explanation = q.explanation || {};
   var answerText = (q.options && q.options[q.answer]) ? q.options[q.answer] : '';
-  var answerLine = String(callouts.answer || ('Answer ' + q.answer + ': ' + (answerText || 'Insufficient Data in Source'))).trim();
+  var answerLine = String(callouts.answer || ('Answer ' + q.answer + ': ' + (answerText || INSUFFICIENT_DATA_FALLBACK))).trim();
   var highlight = String(sharp.H || sharp.highlight_excellence || explanation.correct || '').trim();
   var addressGaps = String(sharp.A || sharp.address_gaps || '').trim();
   var reviewGuideline = String(sharp.R || sharp.review_learning_points || q.guideline || '').trim();
@@ -728,8 +730,13 @@ function showSharp(q, selected, isCorrect) {
   document.getElementById('sharpTakeaway').textContent = takeawayCallout || 'No bottom-line clinical takeaway supplied for this question.';
   document.getElementById('sharpVisualization').textContent = visualizationCallout || 'No visualization callout supplied for this question.';
   var discrepancyWrap = document.getElementById('sharpDiscrepancyWrap');
-  document.getElementById('sharpDiscrepancy').textContent = discrepancyFlag || 'No discrepancy flagged.';
-  discrepancyWrap.style.display = discrepancyFlag ? 'block' : 'none';
+  if (discrepancyFlag) {
+    document.getElementById('sharpDiscrepancy').textContent = discrepancyFlag;
+    discrepancyWrap.style.display = 'block';
+  } else {
+    document.getElementById('sharpDiscrepancy').textContent = '';
+    discrepancyWrap.style.display = 'none';
+  }
 
   // Result badge
   var res = document.getElementById('sharpResult');
