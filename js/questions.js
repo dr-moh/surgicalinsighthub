@@ -169,10 +169,11 @@
             options: optionsObj,
             answer: answerLetter,
             sharp_metadata: sharpMetadata,
-            supplementary_callouts: sourceCallouts,
             discrepancy_flag: typeof aiQuestion.discrepancy_flag === 'string' ? aiQuestion.discrepancy_flag : ''
         };
-        adaptedQuestion.supplementary_callouts = buildSupplementaryCallouts(adaptedQuestion, sharpMetadata);
+        adaptedQuestion.supplementary_callouts = buildSupplementaryCallouts(Object.assign({}, adaptedQuestion, {
+            supplementary_callouts: sourceCallouts
+        }), sharpMetadata);
         return adaptedQuestion;
     }
 
