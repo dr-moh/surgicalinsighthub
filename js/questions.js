@@ -120,87 +120,93 @@
 
     // New AI Format Adapter (Translates your SHARP JSON to your Arena format)
     function adaptAIQuestion(aiQuestion) {
-        // If it's already in the old format, just return it (Legacy)
-        if (aiQuestion.specialty && aiQuestion.options && aiQuestion.options.A) {
-            
-            // Re-apply the legacy SHARP fallback logic for old questions
-            if (!aiQuestion.sharp_metadata) {
-                var fallback = buildSharpFallback(aiQuestion);
-                aiQuestion.sharp_metadata = {
-                    S: fallback.S,
-                    H: aiQuestion.explanation?.correct || fallback.H,
-                    A: fallback.A,
-                    R: aiQuestion.guideline || fallback.R,
-                    P: aiQuestion.takeaway || fallback.P,
-                    V: aiQuestion.visualization || ''
-                };
-            } else {
-                // Ensure existing metadata has V if available
-                if (!aiQuestion.sharp_metadata.V) aiQuestion.sharp_metadata.V = aiQuestion.visualization || '';
-                // Support both lowercase/uppercase keys from different pipelines
-                if (!aiQuestion.sharp_metadata.S) aiQuestion.sharp_metadata.S = aiQuestion.sharp_metadata.set_the_stage || '';
-                if (!aiQuestion.sharp_metadata.H) aiQuestion.sharp_metadata.H = aiQuestion.sharp_metadata.highlight_excellence || '';
-                if (!aiQuestion.sharp_metadata.A) aiQuestion.sharp_metadata.A = aiQuestion.sharp_metadata.address_gaps || '';
-                if (!aiQuestion.sharp_metadata.R) aiQuestion.sharp_metadata.R = aiQuestion.sharp_metadata.review_learning_points || '';
-                if (!aiQuestion.sharp_metadata.P) aiQuestion.sharp_metadata.P = aiQuestion.sharp_metadata.plan || aiQuestion.sharp_metadata.plan_for_improvement || '';
-            }
-
-            if (!aiQuestion.supplementary_callouts) {
-                aiQuestion.supplementary_callouts = buildSupplementaryCallouts(aiQuestion, aiQuestion.sharp_metadata);
-            }
-            if (typeof aiQuestion.discrepancy_flag !== 'string') {
-                aiQuestion.discrepancy_flag = '';
-            }
-            return aiQuestion; 
-        }
-
-        // Figure out correct answer letter for NEW AI JSON
-        let answerLetter = "A";
-        let optionsObj = {};
-        const letters = ['A', 'B', 'C', 'D', 'E'];
-        
-        if (Array.isArray(aiQuestion.options)) {
-            aiQuestion.options.forEach((optText, index) => {
-                if (index < letters.length) {
-                    let cleanText = optText.replace(/^[A-E]\)\s*/i, '').trim();
-                    optionsObj[letters[index]] = cleanText;
-                    
-                    let cleanCorrect = aiQuestion.correct_answer.replace(/^[A-E]\)\s*/i, '').trim();
-                    if (cleanText === cleanCorrect || aiQuestion.correct_answer.includes(cleanText)) {
-                        answerLetter = letters[index];
-                    }
+        try {
+            // If it's already in the old format, just return it (Legacy)
+            if (aiQuestion.specialty && aiQuestion.options && aiQuestion.options.A) {
+                
+                // Re-apply the legacy SHARP fallback logic for old questions
+                if (!aiQuestion.sharp_metadata) {
+                    var fallback = buildSharpFallback(aiQuestion);
+                    aiQuestion.sharp_metadata = {
+                        S: fallback.S,
+                        H: aiQuestion.explanation?.correct || fallback.H,
+                        A: fallback.A,
+                        R: aiQuestion.guideline || fallback.R,
+                        P: aiQuestion.takeaway || fallback.P,
+                        V: aiQuestion.visualization || ''
+                    };
+                } else {
+                    // Ensure existing metadata has V if available
+                    if (!aiQuestion.sharp_metadata.V) aiQuestion.sharp_metadata.V = aiQuestion.visualization || '';
+                    // Support both lowercase/uppercase keys from different pipelines
+                    if (!aiQuestion.sharp_metadata.S) aiQuestion.sharp_metadata.S = aiQuestion.sharp_metadata.set_the_stage || '';
+                    if (!aiQuestion.sharp_metadata.H) aiQuestion.sharp_metadata.H = aiQuestion.sharp_metadata.highlight_excellence || '';
+                    if (!aiQuestion.sharp_metadata.A) aiQuestion.sharp_metadata.A = aiQuestion.sharp_metadata.address_gaps || '';
+                    if (!aiQuestion.sharp_metadata.R) aiQuestion.sharp_metadata.R = aiQuestion.sharp_metadata.review_learning_points || '';
+                    if (!aiQuestion.sharp_metadata.P) aiQuestion.sharp_metadata.P = aiQuestion.sharp_metadata.plan || aiQuestion.sharp_metadata.plan_for_improvement || '';
+                    if (!aiQuestion.sharp_metadata.V) aiQuestion.sharp_metadata.V = aiQuestion.sharp_metadata.visualization || aiQuestion.visualization || '';
                 }
-            });
+
+                if (!aiQuestion.supplementary_callouts) {
+                    aiQuestion.supplementary_callouts = buildSupplementaryCallouts(aiQuestion, aiQuestion.sharp_metadata);
+                }
+                if (typeof aiQuestion.discrepancy_flag !== 'string') {
+                    aiQuestion.discrepancy_flag = '';
+                }
+                return aiQuestion; 
+            }
+
+            // Figure out correct answer letter for NEW AI JSON
+            let answerLetter = "A";
+            let optionsObj = {};
+            const letters = ['A', 'B', 'C', 'D', 'E'];
+            
+            if (Array.isArray(aiQuestion.options)) {
+                aiQuestion.options.forEach((optText, index) => {
+                    if (index < letters.length) {
+                        let cleanText = String(optText || '').replace(/^[A-E]\)\s*/i, '').trim();
+                        optionsObj[letters[index]] = cleanText;
+                        
+                        let cleanCorrect = String(aiQuestion.correct_answer || '').replace(/^[A-E]\)\s*/i, '').trim();
+                        if (cleanText === cleanCorrect || (cleanCorrect && cleanText && cleanCorrect.includes(cleanText))) {
+                            answerLetter = letters[index];
+                        }
+                    }
+                });
+            }
+
+            // Return standardized NEW question
+            var sharpMetadata = {
+                S: aiQuestion.sharp_debrief?.S_set_the_stage || aiQuestion.sharp_debrief?.scenario || aiQuestion.sharp_metadata?.S || "",
+                H: aiQuestion.sharp_debrief?.H_highlight_excellence || aiQuestion.sharp_debrief?.answer || aiQuestion.sharp_metadata?.H || "",
+                A: aiQuestion.sharp_debrief?.A_address_the_gaps || aiQuestion.sharp_debrief?.rationale || aiQuestion.sharp_metadata?.A || "",
+                R: aiQuestion.sharp_debrief?.R_review_learning_points || aiQuestion.sharp_debrief?.pearls || aiQuestion.sharp_metadata?.R || "",
+                P: aiQuestion.sharp_debrief?.P_plan_for_improvement || aiQuestion.sharp_debrief?.hint || aiQuestion.sharp_metadata?.P || "",
+                V: aiQuestion.visualization || aiQuestion.sharp_metadata?.V || aiQuestion.sharp_metadata?.visualization || ""
+            };
+
+            var sourceCallouts = aiQuestion.supplementary_callouts || {
+                guideline: aiQuestion.guideline || sharpMetadata.R || "",
+                takeaway: aiQuestion.takeaway || sharpMetadata.P || "",
+                visualization: sharpMetadata.V || ""
+            };
+
+            var adaptedQuestion = {
+                id: aiQuestion.id || ("AI_" + Math.floor(Math.random() * 1000000)),
+                question: aiQuestion.question || "Malformed Question Data",
+                specialty: (aiQuestion.tags && aiQuestion.tags[0]) ? aiQuestion.tags[0].charAt(0).toUpperCase() + aiQuestion.tags[0].slice(1) : (aiQuestion.specialty || "General Surgery"),
+                topic: (aiQuestion.tags && aiQuestion.tags[1]) ? aiQuestion.tags[1] : (aiQuestion.topic || "Surgical Principles"),
+                options: optionsObj,
+                answer: answerLetter,
+                sharp_metadata: sharpMetadata,
+                discrepancy_flag: typeof aiQuestion.discrepancy_flag === 'string' ? aiQuestion.discrepancy_flag : ''
+            };
+            adaptedQuestion.supplementary_callouts = buildSupplementaryCallouts(adaptedQuestion, sharpMetadata, sourceCallouts);
+            return adaptedQuestion;
+        } catch (e) {
+            console.warn("MCQ Bank: Error adapting question:", e, aiQuestion);
+            return null;
         }
-
-        // Return standardized NEW question
-        var sharpMetadata = {
-            S: aiQuestion.sharp_debrief?.S_set_the_stage || aiQuestion.sharp_debrief?.scenario || aiQuestion.sharp_metadata?.S || "",
-            H: aiQuestion.sharp_debrief?.H_highlight_excellence || aiQuestion.sharp_debrief?.answer || aiQuestion.sharp_metadata?.H || "",
-            A: aiQuestion.sharp_debrief?.A_address_the_gaps || aiQuestion.sharp_debrief?.rationale || aiQuestion.sharp_metadata?.A || "",
-            R: aiQuestion.sharp_debrief?.R_review_learning_points || aiQuestion.sharp_debrief?.pearls || aiQuestion.sharp_metadata?.R || "",
-            P: aiQuestion.sharp_debrief?.P_plan_for_improvement || aiQuestion.sharp_debrief?.hint || aiQuestion.sharp_metadata?.P || "",
-            V: aiQuestion.visualization || aiQuestion.sharp_metadata?.V || aiQuestion.sharp_metadata?.visualization || ""
-        };
-
-        var sourceCallouts = aiQuestion.supplementary_callouts || {
-            guideline: aiQuestion.guideline || sharpMetadata.R || "",
-            takeaway: aiQuestion.takeaway || sharpMetadata.P || "",
-            visualization: sharpMetadata.V || ""
-        };
-
-        var adaptedQuestion = {
-            id: aiQuestion.id || ("AI_" + Math.floor(Math.random() * 10000)),
-            question: aiQuestion.question,
-            specialty: (aiQuestion.tags && aiQuestion.tags[0]) ? aiQuestion.tags[0].charAt(0).toUpperCase() + aiQuestion.tags[0].slice(1) : (aiQuestion.specialty || "General Surgery"),
-            topic: (aiQuestion.tags && aiQuestion.tags[1]) ? aiQuestion.tags[1] : (aiQuestion.topic || "Surgical Principles"),
-            options: optionsObj,
-            answer: answerLetter,
-            sharp_metadata: sharpMetadata,
-            discrepancy_flag: typeof aiQuestion.discrepancy_flag === 'string' ? aiQuestion.discrepancy_flag : ''
-        };
-        adaptedQuestion.supplementary_callouts = buildSupplementaryCallouts(adaptedQuestion, sharpMetadata, sourceCallouts);
-        return adaptedQuestion;
     }
 
     // Load canonical questions first (primary source)
@@ -209,7 +215,13 @@
     canonicalScript.async = false;
     canonicalScript.onload = function() {
         console.log('Loaded canonical questions:', window.QUESTIONS.length);
-        processAllQuestions();
+        if (window.QUESTIONS.length > 0) {
+            console.log('MCQ Bank: Canonical data found. Skipping legacy modules.');
+            processAllQuestions();
+        } else {
+            console.warn('MCQ Bank: Canonical file loaded but QUESTIONS array is empty. Falling back to legacy.');
+            loadLegacyModules();
+        }
     };
     canonicalScript.onerror = function() {
         console.warn('MCQ Bank: Failed to load canonical_questions.js, falling back to legacy modules');
@@ -249,23 +261,46 @@
     }
 
     function processAllQuestions() {
-        window.QUESTIONS = flattenQuestions(window.QUESTIONS)
-            .map(adaptAIQuestion)
-            .filter(Boolean);
-            
-        // Dedupe by stem
-        var seen = {};
-        var uniqueQuestions = [];
-        window.QUESTIONS.forEach(function(q) {
-            var stem = (q.question || '').replace(/\s+/g, ' ').trim().toLowerCase();
-            if (stem && !seen[stem]) {
-                seen[stem] = true;
-                uniqueQuestions.push(q);
-            }
-        });
+        console.log('MCQ Bank: Starting chunked processing of ' + window.QUESTIONS.length + ' questions...');
+        console.time('MCQ_Process');
         
-        window.QUESTIONS = uniqueQuestions;
-        window.QUESTIONS_LOADED = true;
-        console.log('MCQ Bank Ready! Total unique questions: ' + window.QUESTIONS.length);
+        var rawQuestions = flattenQuestions(window.QUESTIONS);
+        var processedQuestions = [];
+        var seen = {};
+        var total = rawQuestions.length;
+        var chunkSize = 200;
+        var index = 0;
+
+        function processChunk() {
+            var end = Math.min(index + chunkSize, total);
+            for (var i = index; i < end; i++) {
+                var q = adaptAIQuestion(rawQuestions[i]);
+                if (q) {
+                    var stem = (q.question || '').replace(/\s+/g, ' ').trim().toLowerCase();
+                    if (stem && !seen[stem]) {
+                        seen[stem] = true;
+                        processedQuestions.push(q);
+                    }
+                }
+            }
+            
+            index = end;
+            if (index < total) {
+                // Update progress if possible
+                var totalQCountEl = document.getElementById('totalQCount');
+                if (totalQCountEl) totalQCountEl.textContent = 'Processing... ' + Math.round((index/total)*100) + '%';
+                
+                requestAnimationFrame(processChunk);
+            } else {
+                window.QUESTIONS = processedQuestions;
+                window.QUESTIONS_LOADED = true;
+                console.timeEnd('MCQ_Process');
+                console.log('MCQ Bank Ready! Total unique questions: ' + window.QUESTIONS.length);
+                
+                // If the Arena UI is already waiting, this will trigger its next check
+            }
+        }
+
+        processChunk();
     }
 })();
