@@ -903,98 +903,16 @@ function switchTab(id){
   document.querySelectorAll('.tab-pane').forEach(p=>p.classList.remove('active'));
   document.getElementById('trigger-'+id).classList.add('active');
   document.getElementById('pane-'+id).classList.add('active');
-  // hide filter bar when operative tab is active
   const fb = document.querySelector('.filter-bar');
   const leg = document.querySelector('.notes-legend');
   if(id==='operative'){ if(fb) fb.style.display='none'; if(leg) leg.style.display='none'; }
   else { if(fb) fb.style.display=''; if(leg) leg.style.display=''; }
 }
 </script>
-
-
-<script>
-function openMobNav(){
-  document.getElementById('mobNavSheet').classList.add('open');
-  document.getElementById('mobNavOverlay').style.display='block';
-  document.body.style.overflow='hidden';
-}
-function closeMobNav(){
-  document.getElementById('mobNavSheet').classList.remove('open');
-  document.getElementById('mobNavOverlay').style.display='none';
-  document.body.style.overflow='';
-}
-
-// Dark Mode Toggle Logic
-const themeToggle = document.getElementById('themeToggle');
-const moonIcon = document.getElementById('moonIcon');
-const sunIcon = document.getElementById('sunIcon');
-
-function applyTheme(theme) {
-  if (theme === 'dark') {
-    document.documentElement.setAttribute('data-theme', 'dark');
-    moonIcon.style.display = 'none';
-    sunIcon.style.display = 'block';
-  } else {
-    document.documentElement.removeAttribute('data-theme');
-    sunIcon.style.display = 'none';
-    moonIcon.style.display = 'block';
-  }
-}
-
-// Initial state
-applyTheme(savedTheme);
+<script src="js/navigation.js"></script>
+<script src="js/nav-pill.js"></script>
 
 <script>
-  // Scroll Listener for Premium Nav
-  const mainNav = document.getElementById('mainNav');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-      mainNav.classList.add('scrolled');
-    } else {
-      mainNav.classList.remove('scrolled');
-    }
-  });
-
-  function openMobNav() {
-    document.getElementById('mobNavSheet').classList.add('open');
-    document.getElementById('mobNavOverlay').style.display = 'block';
-    document.body.style.overflow = 'hidden';
-  }
-  function closeMobNav() {
-    document.getElementById('mobNavSheet').classList.remove('open');
-    document.getElementById('mobNavOverlay').style.display = 'none';
-    document.body.style.overflow = '';
-  }
-
-  // Dark Mode Toggle Logic
-  const themeToggle = document.getElementById('themeToggle');
-  const moonIcon = document.getElementById('moonIcon');
-  const sunIcon = document.getElementById('sunIcon');
-
-  function applyTheme(theme) {
-    if (theme === 'dark') {
-      document.documentElement.setAttribute('data-theme', 'dark');
-      if(moonIcon) moonIcon.style.display = 'none';
-      if(sunIcon) sunIcon.style.display = 'block';
-    } else {
-      document.documentElement.removeAttribute('data-theme');
-      if(sunIcon) sunIcon.style.display = 'none';
-      if(moonIcon) moonIcon.style.display = 'block';
-    }
-  }
-
-  const currentTheme = localStorage.getItem('sih-theme') || 'light';
-  applyTheme(currentTheme);
-
-  if(themeToggle) {
-    themeToggle.addEventListener('click', () => {
-      const isDark = document.documentElement.hasAttribute('data-theme');
-      const newTheme = isDark ? 'light' : 'dark';
-      applyTheme(newTheme);
-      localStorage.setItem('sih-theme', newTheme);
-    });
-  }
-
   // REQUEST LOGIC
   const SUPA_KEY = 'sb_publishable_Kl4RNEOxvmBewUToRv7HHw_2epulGkp';
   async function submitRequest(type) {

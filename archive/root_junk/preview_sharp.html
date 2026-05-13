@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SHARP 2.0 Preview — Surgical Insight Hub</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="css/theme.css">
+<!-- Custom Preview Data -->
+<script src="js/preview_data.js" defer></script>
+<script>
+  const savedTheme = localStorage.getItem('sih-theme') || 'light';
+  if (savedTheme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+</script>
+<style>
+  body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg-primary);color:var(--text-primary);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+  .preview-banner { background: #b8922a; color: #2b1810; text-align: center; padding: 10px; font-weight: 900; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+</style>
+</head>
+<body>
+
+<div class="preview-banner">SHARP 2.0 PEDAGOGICAL PREVIEW (LIVE DATA)</div>
+
+<nav class="nav" id="mainNav">
+  <div class="nav-left">
+    <a href="index.html" class="nav-pill">
+      <div class="nav-logo-img">
+        <img src="assets/images/Surgical_Insight_Hub_Logo.png" alt="SIH" onerror="this.parentElement.style.background='#b8922a'">
+      </div>
+      <div>
+        <div class="nav-brand-text">Surgical Insight Hub</div>
+        <div class="nav-brand-sub">Medical Library</div>
+      </div>
+    </a>
+  </div>
+</nav>
+
+<div class="mcq-hero" id="setupScreen">
+  <div style="position:relative;z-index:2;width:100%;max-width:640px;">
+    <h1 class="hero-title">SHARP <span>Preview</span></h1>
+    <p class="hero-sub">Reviewing the "Ruthless Senior Resident" enriched questions before batch deployment.</p>
+    <div class="setup-card">
+      <div class="setup-title">Test Session</div>
+      <div class="setup-grid">
+        <div class="setup-field">
+          <label>Your Name</label>
+          <input type="text" id="setupName" value="Dr. Reviewer" autocomplete="off">
+        </div>
+        <div class="setup-field">
+          <label>School / Hospital</label>
+          <input type="text" id="setupSchool" value="Internal Audit" autocomplete="off">
+        </div>
+      </div>
+      <button class="start-btn" id="startBtn" onclick="startSession()">Start Preview →</button>
+    </div>
+  </div>
+</div>
+
+<div class="arena" id="arenaScreen">
+  <div class="arena-inner">
+    <div class="prog-wrap">
+      <div class="prog-meta">
+        <span class="prog-label" id="progLabel">Question 1 of 5</span>
+        <span class="prog-score" id="progScore">Score: 0</span>
+      </div>
+      <div class="prog-bar"><div class="prog-fill" id="progFill" style="width:0%"></div></div>
+      <div class="q-steps" id="qSteps"></div>
+    </div>
+
+    <div class="q-card">
+      <div class="q-meta">
+        <div style="display:flex;gap:6px;flex-wrap:wrap;">
+          <span class="q-badge" id="qSpecialty">General Surgery</span>
+          <span class="q-topic-badge" id="qTopic">Critical Care</span>
+        </div>
+        <span class="q-num" id="qNum">Q1</span>
+      </div>
+      <div class="q-text" id="qText"></div>
+      <div class="options" id="optionsWrap"></div>
+      <button class="submit-btn" id="submitBtn" onclick="submitAnswer()" disabled>Submit Answer</button>
+    </div>
+
+    <div class="sharp-card" id="sharpCard">
+      <div class="sharp-header">
+        <div class="sharp-title">SHARP 2.0 Debrief</div>
+        <div class="sharp-result" id="sharpResult"></div>
+      </div>
+      <div class="sharp-answer-banner">
+        <div class="sharp-answer-label">Correct Answer</div>
+        <div class="sharp-answer-text" id="sharpAnswer"></div>
+      </div>
+      <div class="sharp-rows">
+        <div class="sharp-row">
+          <div class="sharp-badge">S</div>
+          <div class="sharp-content">
+            <div class="sharp-row-title">Set the Stage</div>
+            <div class="sharp-row-text" id="sharpS"></div>
+          </div>
+        </div>
+        <div class="sharp-divider"></div>
+        <div class="sharp-row">
+          <div class="sharp-badge">H</div>
+          <div class="sharp-content">
+            <div class="sharp-row-title">Highlight Excellence</div>
+            <div class="sharp-row-text" id="sharpH"></div>
+          </div>
+        </div>
+        <div class="sharp-divider"></div>
+        <div class="sharp-row">
+          <div class="sharp-badge">A</div>
+          <div class="sharp-content">
+            <div class="sharp-row-title">Address Gaps</div>
+            <div class="opt-explanations" id="sharpA"></div>
+          </div>
+        </div>
+        <div class="sharp-divider"></div>
+        <div class="sharp-row">
+          <div class="sharp-badge">R</div>
+          <div class="sharp-content">
+            <div class="sharp-row-title">Review Learning Points</div>
+            <div class="sharp-row-text" id="sharpR"></div>
+            <div class="guideline-tag" id="sharpRTag">📋 Guideline Reference</div>
+          </div>
+        </div>
+        <div class="sharp-divider"></div>
+        <div class="sharp-row">
+          <div class="sharp-badge">P</div>
+          <div class="sharp-content">
+            <div class="sharp-row-title">Plan for Improvement</div>
+            <div class="takehome"><div class="takehome-label">Take-home Pearl</div><div class="takehome-text" id="sharpP"></div></div>
+          </div>
+        </div>
+        <div class="sharp-divider" id="sharpVDiv"></div>
+        <div class="sharp-row" id="sharpVRow">
+          <div class="sharp-badge" style="background: var(--brand-burgundy); border: 1px solid var(--brand-gold); color: var(--brand-gold);">V</div>
+          <div class="sharp-content">
+            <div class="sharp-row-title">Mental Visualization</div>
+            <div class="sharp-row-text" id="sharpV" style="font-style: italic; color: rgba(255,255,255,0.7);"></div>
+          </div>
+        </div>
+      </div>
+      <button class="next-btn" id="nextBtn" onclick="nextQuestion()">Next Question →</button>
+    </div>
+  </div>
+</div>
+
+<div class="results" id="resultsScreen">
+  <div class="results-inner">
+    <div class="results-card">
+      <div class="results-icon">🎯</div>
+      <div class="results-title">Preview Complete</div>
+      <button class="results-btn results-btn-primary" onclick="location.reload()">Restart Preview</button>
+    </div>
+  </div>
+</div>
+
+<script>
+var state = { name: '', school: '', specialty: 'All', qCount: 5, questions: [], current: 0, score: 0, answers: [], startTime: null };
+
+function startSession() {
+  state.name = document.getElementById('setupName').value;
+  state.school = document.getElementById('setupSchool').value;
+  state.startTime = Date.now();
+  state.questions = window.QUESTIONS;
+  state.current = 0;
+  state.score = 0;
+
+  var steps = document.getElementById('qSteps');
+  steps.innerHTML = '';
+  state.questions.forEach(function(_, i) {
+    var s = document.createElement('div');
+    s.className = 'q-step' + (i === 0 ? ' current' : '');
+    s.id = 'step-' + i;
+    steps.appendChild(s);
+  });
+
+  document.getElementById('setupScreen').style.display = 'none';
+  document.getElementById('arenaScreen').style.display = 'block';
+  renderQuestion();
+}
+
+function renderQuestion() {
+  var q = state.questions[state.current];
+  document.getElementById('progLabel').textContent = 'Question ' + (state.current + 1) + ' of ' + state.questions.length;
+  document.getElementById('qSpecialty').textContent = q.specialty;
+  document.getElementById('qTopic').textContent = q.topic;
+  document.getElementById('qNum').textContent = 'Q' + (state.current + 1);
+  document.getElementById('qText').textContent = q.question;
+
+  var wrap = document.getElementById('optionsWrap');
+  wrap.innerHTML = '';
+  ['A','B','C','D'].forEach(function(letter) {
+    if (!q.options[letter]) return;
+    var opt = document.createElement('div');
+    opt.className = 'opt';
+    opt.id = 'opt-' + letter;
+    opt.innerHTML = '<div class="opt-letter">' + letter + '</div><div class="opt-text">' + q.options[letter] + '</div>';
+    opt.onclick = function() { selectOpt(letter); };
+    wrap.appendChild(opt);
+  });
+
+  document.getElementById('submitBtn').disabled = true;
+  document.getElementById('submitBtn').style.display = 'block';
+  document.getElementById('sharpCard').style.display = 'none';
+}
+
+function selectOpt(letter) {
+  document.querySelectorAll('.opt').forEach(function(o) { o.classList.remove('selected'); });
+  document.getElementById('opt-' + letter).classList.add('selected');
+  state.selectedOpt = letter;
+  document.getElementById('submitBtn').disabled = false;
+}
+
+function submitAnswer() {
+  var q = state.questions[state.current];
+  var selected = state.selectedOpt;
+  var correct = q.answer;
+  var isCorrect = selected === correct;
+
+  if (isCorrect) state.score++;
+  document.querySelectorAll('.opt').forEach(function(o) {
+    o.classList.add('locked');
+    var letter = o.querySelector('.opt-letter').textContent;
+    if (letter === correct) o.classList.add('correct');
+    else if (letter === selected) o.classList.add('wrong');
+    else o.classList.add('dimmed');
+  });
+
+  document.getElementById('step-' + state.current).classList.add(isCorrect ? 'done-correct' : 'done-wrong');
+  document.getElementById('submitBtn').style.display = 'none';
+  showSharp(q, selected, isCorrect);
+}
+
+function showSharp(q, selected, isCorrect) {
+  document.getElementById('sharpCard').style.display = 'block';
+  var metadata = q.sharp_metadata;
+  document.getElementById('sharpAnswer').textContent = 'Answer ' + q.answer + ': ' + q.options[q.answer];
+  document.getElementById('sharpS').textContent = metadata.S;
+  document.getElementById('sharpH').textContent = metadata.H;
+  
+  var aWrap = document.getElementById('sharpA');
+  aWrap.innerHTML = '';
+  var gapLines = metadata.A.split('\n');
+  gapLines.forEach(line => {
+    var p = document.createElement('div');
+    p.style.color = 'white';
+    p.style.fontSize = '0.9rem';
+    p.style.marginBottom = '8px';
+    p.textContent = line;
+    aWrap.appendChild(p);
+  });
+
+  document.getElementById('sharpR').textContent = metadata.R;
+  document.getElementById('sharpP').textContent = metadata.P;
+  document.getElementById('sharpV').textContent = metadata.V;
+
+  var res = document.getElementById('sharpResult');
+  res.className = 'sharp-result ' + (isCorrect ? 'correct' : 'wrong');
+  res.textContent = isCorrect ? '✓ Correct' : '✗ Incorrect';
+}
+
+function nextQuestion() {
+  state.current++;
+  if (state.current >= state.questions.length) {
+    document.getElementById('arenaScreen').style.display = 'none';
+    document.getElementById('resultsScreen').style.display = 'block';
+  } else {
+    renderQuestion();
+  }
+}
+</script>
+</body>
+</html>

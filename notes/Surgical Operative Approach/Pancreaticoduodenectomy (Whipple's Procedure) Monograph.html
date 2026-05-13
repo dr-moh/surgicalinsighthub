@@ -7,13 +7,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../../css/theme.css">
 <link rel="stylesheet" href="../../css/shared.css">
+<link rel="stylesheet" href="../../css/theme.css">
 <script>
   const savedTheme = localStorage.getItem('sih-theme') || 'light';
   if (savedTheme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
 </script>
 <style>
 :root {
-  /* Terracotta & Deep Slate Aesthetic - Overridden by theme.css but keeping specific colors for monograph */
+  /* Terracotta & Deep Slate Aesthetic */
   --primary:   #6F3023; 
   --primary-dk:#211412;
   --primary-lt:#F6EBE9;
@@ -31,10 +32,36 @@
   --s3-lt:     #EAECEB;
   --s4-lt:     #F4EFEB;
   --s5-lt:     #E8EBED;
+  --sidebar-w: 300px;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
 body{font-family:'Source Serif 4',Georgia,serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.75;}
+
+/* SLIDE-OVER SIDEBAR */
+#sidebar {
+  position: fixed; top: 0; left: 0; width: var(--sidebar-w); height: 100vh;
+  background: var(--primary-dk); color: #EBE5E7;
+  display: flex; flex-direction: column;
+  z-index: 1400; overflow: hidden;
+  transform: translateX(-100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 4px 0 24px rgba(0,0,0,0.3);
+}
+body.sidebar-open #sidebar {
+  transform: translateX(0);
+}
+#sidebar-overlay {
+  position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+  background: rgba(33, 20, 18, 0.6); backdrop-filter: blur(2px);
+  z-index: 1350; opacity: 0; pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+body.sidebar-open #sidebar-overlay {
+  opacity: 1; pointer-events: auto;
+}
+#hero { padding: 120px 72px 60px; }
+@media (max-width: 900px) { #hero { padding: 100px 24px 40px; } }
 </style>
 </head>
 <body>
@@ -55,11 +82,16 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--bg);color:var(-
       <a href="../../notes.html">Notes</a>
       <a href="../operative_approach.html" class="active">Playbook</a>
       <a href="../../podcast.html">Podcast</a>
-      <a href="../../about.html">About</a>
     </div>
   </div>
 
-  <div class="nav-right"><button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode"><svg id="moonIcon" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/></svg><svg id="sunIcon" style="display:none;" viewBox="0 0 24 24"><path d="M12 7a5 5 0 1 0 5 5 5.006 5.006 0 0 0-5-5zm0 8a3 3 0 1 1 3-3 3.003 3.003 0 0 1-3 3zm0-13a1 1 0 0 0-1 1v2a1 1 0 0 0 2 0V3a1 1 0 0 0-1-1zm0 18a1 1 0 0 0-1 1v2a1 1 0 0 0 2 0v-2a1 1 0 0 0-1-1zm8-11h-2a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2zm-16 0H2a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2zm13.657-5.657a1 1 0 0 0-1.414 0l-1.414 1.414a1 1 0 0 0 1.414 1.414l1.414-1.414a1 1 0 0 0 0-1.414zm-11.314 0a1 1 0 0 0 0 1.414l1.414 1.414a1 1 0 0 0 1.414-1.414L4.929 5.757a1 1 0 0 0-1.414 0zm11.314 11.314a1 1 0 0 0 0 1.414l1.414 1.414a1 1 0 0 0 1.414-1.414l-1.414-1.414a1 1 0 0 0-1.414 0zm-11.314 0a1 1 0 0 0-1.414 1.414l1.414 1.414a1 1 0 0 0 1.414-1.414l-1.414-1.414a1 1 0 0 0 0-1.414z"/></svg></button><a href="../../arena.html" class="nav-btn arena-btn">MCQ Arena</a><button class="mob-nav-toggle" onclick="openMobNav()">
+  <div class="nav-right">
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+      <svg id="moonIcon" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/></svg>
+      <svg id="sunIcon" style="display:none;" viewBox="0 0 24 24"><path d="M12 7a5 5 0 1 0 5 5 5.006 5.006 0 0 0-5-5zm0 8a3 3 0 1 1 3-3 3.003 3.003 0 0 1-3 3zm0-13a1 1 0 0 0-1 1v2a1 1 0 0 0 2 0V3a1 1 0 0 0-1-1zm0 18a1 1 0 0 0-1 1v2a1 1 0 0 0 2 0v-2a1 1 0 0 0-1-1zm8-11h-2a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2zm-16 0H2a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2zm13.657-5.657a1 1 0 0 0-1.414 0l-1.414 1.414a1 1 0 0 0 1.414 1.414l1.414-1.414a1 1 0 0 0 0-1.414zm-11.314 0a1 1 0 0 0 0 1.414l1.414 1.414a1 1 0 0 0 1.414-1.414L4.929 5.757a1 1 0 0 0-1.414 0zm11.314 11.314a1 1 0 0 0 0 1.414l1.414 1.414a1 1 0 0 0 1.414-1.414l-1.414-1.414a1 1 0 0 0-1.414 0zm-11.314 0a1 1 0 0 0-1.414 1.414l1.414 1.414a1 1 0 0 0 1.414-1.414l-1.414-1.414a1 1 0 0 0 0-1.414z"/></svg>
+    </button>
+    <a href="../../arena.html" class="nav-btn arena-btn">MCQ Arena</a>
+    <button class="mob-nav-toggle" onclick="openMobNav()">
       <div class="hamburger">
         <span></span>
         <span></span>
@@ -69,18 +101,16 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--bg);color:var(-
   </div>
 </nav>
 
-<div class="mob-nav-overlay" id="mobNavOverlay" onclick="closeMobNav()"></div>
 <div class="mob-nav-sheet" id="mobNavSheet">
   <div class="mob-nav-handle"></div>
-  <a href="../../index.html" onclick="closeMobNav()">Home</a>
-  <a href="../../notes.html" onclick="closeMobNav()">Notes</a>
-  <a href="../operative_approach.html" class="active" onclick="closeMobNav()">Playbook</a>
-  <a href="../../podcast.html" onclick="closeMobNav()">Podcast</a>
-  <a href="../../about.html" onclick="closeMobNav()">About</a>
-  <a href="../../arena.html" class="nav-btn" style="text-align:center; margin-top:10px;" onclick="closeMobNav()">MCQ Arena</a>
+  <a href="../../index.html">Home</a>
+  <a href="../../notes.html">Notes</a>
+  <a href="../operative_approach.html">Playbook</a>
+  <a href="../../arena.html">MCQ Arena</a>
 </div>
+<div class="mob-nav-overlay" id="mobNavOverlay" onclick="closeMobNav()"></div>
 
-<button id="sidebar-toggle" onclick="toggleSidebar()">
+<button class="mono-sidebar-toggle" onclick="toggleSidebar()">
   <span>☰</span> Contents
 </button>
 
@@ -591,8 +621,7 @@ tbody td{padding:9px 14px;border-bottom:1px solid var(--border);vertical-align:t
       <tr><td>DGE Prevention</td><td>Use an <strong>antecolic, isoperistaltic</strong> gastrojejunostomy to reduce rates.</td></tr>
       <tr><td>Late Sentinel Bleed</td><td>Indicates a <strong>pseudoaneurysm</strong> driven by a POPF. Demands immediate CT Angio.</td></tr>
       <tr><td>First-line DGE Prokinetic</td><td><strong>Erythromycin</strong> (motilin agonist) is more effective than metoclopramide.</td></tr>
-      <tr><td>Adjuvant Chemotherapy</td><td><strong>mFOLFIRINOX</strong> for fit patients (improves median survival over gemcitabine).</td></tr>
-      <tr><td>Post-op Diabetes Type</td><td><strong>Type 3c</strong>: Brittle and hypoglycaemia-prone due to concurrent loss of glucagon.</td></tr>
+      <tr><td>Adjuvant Chemotherapy</td><td><strong>mFOLFIRINOX</strong> for fit patients (improves med      <tr><td>Post-op Diabetes Type</td><td><strong>Type 3c</strong>: Brittle and hypoglycaemia-prone due to concurrent loss of glucagon.</td></tr>
     </tbody>
   </table>
 </div>
@@ -601,76 +630,18 @@ tbody td{padding:9px 14px;border-bottom:1px solid var(--border);vertical-align:t
 
 <button id="top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 
-<script>
-  // Scroll Listener for Premium Nav
-  const mainNav = document.getElementById('mainNav');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-      mainNav.classList.add('scrolled');
-    } else {
-      mainNav.classList.remove('scrolled');
-    }
-  });
-
-  function openMobNav() {
-    document.getElementById('mobNavSheet').classList.add('open');
-    document.getElementById('mobNavOverlay').style.display = 'block';
-    document.body.style.overflow = 'hidden';
-  }
-  function closeMobNav() {
-    document.getElementById('mobNavSheet').classList.remove('open');
-    document.getElementById('mobNavOverlay').style.display = 'none';
-    document.body.style.overflow = '';
-  }
-
-  // Dark Mode Toggle Logic
-  const themeToggle = document.getElementById('themeToggle');
-  const moonIcon = document.getElementById('moonIcon');
-  const sunIcon = document.getElementById('sunIcon');
-
-  function applyTheme(theme) {
-    if (theme === 'dark') {
-      document.documentElement.setAttribute('data-theme', 'dark');
-      if(moonIcon) moonIcon.style.display = 'none';
-      if(sunIcon) sunIcon.style.display = 'block';
-    } else {
-      document.documentElement.removeAttribute('data-theme');
-      if(sunIcon) sunIcon.style.display = 'none';
-      if(moonIcon) moonIcon.style.display = 'block';
-    }
-  }
-
-  const currentTheme = localStorage.getItem('sih-theme') || 'light';
-  applyTheme(currentTheme);
-
-  if(themeToggle) {
-    themeToggle.addEventListener('click', () => {
-      const isDark = document.documentElement.hasAttribute('data-theme');
-      const newTheme = isDark ? 'light' : 'dark';
-      applyTheme(newTheme);
-      localStorage.setItem('sih-theme', newTheme);
-    });
-  }
-</script>
-
-
+<script src="../../js/navigation.js"></script>
 <script>
 const progressBar = document.getElementById('progress-bar');
 const topBtn = document.getElementById('top-btn');
-const sidebarToggle = document.getElementById('sidebar-toggle');
-const sidebarOverlay = document.getElementById('sidebar-overlay');
 const navItems = document.querySelectorAll('.nav-item');
 const sections = document.querySelectorAll('.topic[id], .rapid-ref[id]');
-const body = document.body;
-
-function toggleSidebar() { body.classList.toggle('sidebar-open'); }
-function closeSidebar() { body.classList.remove('sidebar-open'); }
 
 window.addEventListener('scroll', () => {
   const st = window.scrollY;
   const dh = document.documentElement.scrollHeight - window.innerHeight;
-  if(progressBar) progressBar.style.transform = `scaleX(${st / dh})`;
-  if(topBtn) topBtn.classList.toggle('show', st > 400);
+  if (progressBar) progressBar.style.transform = `scaleX(${st / dh})`;
+  if (topBtn) topBtn.classList.toggle('show', st > 400);
   
   let current = '';
   sections.forEach(s => { if (st >= s.offsetTop - 120) current = s.id; });
@@ -680,7 +651,6 @@ window.addEventListener('scroll', () => {
 function filterNav(query) {
   const q = query.toLowerCase();
   navItems.forEach(item => { item.style.display = (!q || item.textContent.toLowerCase().includes(q)) ? 'block' : 'none'; });
-  document.querySelectorAll('.vol-label').forEach(l => { l.style.display = 'block'; });
 }
 
 navItems.forEach(item => {
@@ -688,12 +658,15 @@ navItems.forEach(item => {
     e.preventDefault();
     closeSidebar();
     const target = document.querySelector(item.getAttribute('href'));
-    if (target) window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 80, behavior: 'smooth' });
+    if (target) window.scrollTo({ top: target.getBoundingClientRect().top - 80, behavior: 'smooth' });
   });
 });
 
 document.querySelectorAll('.topic').forEach((el, i) => { el.style.animationDelay = `${i * 0.03}s`; });
 </script>
-<script src="../../js/nav-pill.js"></script>
+</body>
+</html>
+>
+/js/nav-pill.js"></script>
 </body>
 </html>

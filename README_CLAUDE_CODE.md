@@ -51,18 +51,17 @@ Home · Podcast · Notes · MCQ MCQ Arena · AI Review · About
 - [x] Home page with hero, floating cards, MCQ preview, podcast, LinkedIn feed
 - [x] Global MCQ leaderboard on home page (live from Supabase)
 - [x] Testimonials with Supabase storage + Forminit notifications
-- [x] MCQ MCQ Arena: 20 questions, SHARP debrief, global leaderboard
+- [x] MCQ Arena: 4,014+ unique questions, SHARP 2.0 debrief, global leaderboard
 - [x] AI Review: streams Claude API for any surgical topic
-- [x] Colorectal monograph with collapsible sidebar + surgical art
-- [x] Anesthesia monograph with collapsible sidebar + surgical art
-- [x] Logo watermark on all pages
-- [x] Mobile hamburger nav on all pages
-- [x] Mobile-responsive CSS on all note pages
+- [x] "Waterfall" Pipeline: Robust MCQ enrichment using Gemini 2.0 Flash, Groq, and OpenRouter fallbacks.
+- [x] Performance: Chunked rendering (requestAnimationFrame) for high-volume MCQ data.
+- [x] Monograph Standardization: PUD/PPU moved to v3 "Residency Journal" premium template.
+- [x] Mobile hamburger nav with bottom sheet parity across all modules.
 
 ## Pending / To Add
-- [ ] More MCQ questions (currently 20 — target 200+)
+- [ ] Scale MCQ Bank to 10,000+ (Current: 4,014 unique)
 - [ ] ARM (Anorectal Malformation) Residency Journal note
-- [ ] More Residency Journal notes (Fournier's, PUD, Choledocholithiasis, HPB)
+- [ ] More Residency Journal notes (Fournier's, Choledocholithiasis, HPB)
 - [ ] data.json integration for notes library
 - [x] LinkedIn integration
 
@@ -79,3 +78,8 @@ H — Highlight Excellence (why correct answer is right)
 A — Address Gaps (explain each wrong option)
 R — Review Guidelines (2024-2026 guidelines reference)
 P — Plan (one take-home message)
+
+## AI Agent Coordination
+- **Antigravity Swarm:** Coordinated via `.agents/` skills and GitHub issues.
+- **Active Tasks:** Tracked in GitHub Issue #5.
+- **Status Reports:** Generated as artifacts in the conversation history.

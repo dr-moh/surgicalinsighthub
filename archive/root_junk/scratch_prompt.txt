@@ -1,0 +1,34 @@
+Act as a board-certified surgical expert. Review these MCQs and provide a high-yield SHARP debrief for EACH. Return ONLY a single JSON array.
+
+JSON Structure:
+{
+  "id": [id],
+  "verified_answer": "[Letter]",
+  "set_the_stage": "...",
+  "highlight_excellence": "...",
+  "address_gaps": "...",
+  "review_guidelines": "...",
+  "plan": "..."
+}
+
+QUESTIONS:
+ID: 21 | Q: Biologic features of adult soft tissue sarcomas include the following: | Options: {"A": "Mutations of p53 in metastatic liposarcoma.", "B": "A low (less than 1%) risk of metastasis for small, low-grade lesions.", "C": "Recurrent disease in at least 33% of patients.", "D": "Lymph node metastasis in less than 3% of patients.", "E": "Mutations of p53 in Li-Fraumeni syndrome."} | Ans: B
+ID: 22 | Q: Which of the following statements describes an ideal tumor marker? | Options: {"A": "The ideal tumor marker should be tumor specific; that is, in the normal population or patients with benign diseases, false-positive test results are rare.", "B": "The ideal marker must have a low false-negative rate; that means that all patients with a particular type of cancer should test positive.", "C": "The circulating level of an ideal tumor marker should correlate directly with the amount of viable tumor and be a measure of the response to therapy.", "D": "The ideal tumor marker should act as a prognostic indicator.", "E": "All of the above."} | Ans: E
+ID: 23 | Q: Which of the following tumors may cause elevated CEA levels? | Options: {"A": "Breast cancer.", "B": "Colorectal cancer.", "C": "Gastric cancer.", "D": "Lung cancer.", "E": "All of the above."} | Ans: E
+ID: 24 | Q: The most useful circulating marker for patients with hepatocellular carcinoma is: | Options: {"A": "", "B": "Levels of vitamin B 12.", "C": "CE", "D": "AFP.", "E": "hCG."} | Ans: D
+ID: 25 | Q: In patients with colorectal cancer the serum CEA level is a clinically useful measure for all reasons except: | Options: {"A": "Prognosis.", "B": "Detection of recurrence.", "C": "Guiding second-look operations.", "D": "Following treatment response.", "E": "Early diagnosis."} | Ans: E
+ID: 26 | Q: Which serum markers are useful in the management of patients with testicular cancer? | Options: {"A": "hCG.", "B": "AFP.", "C": "CA 15-3.", "D": "Two of the above.", "E": "None of the above."} | Ans: D
+ID: 27 | Q: After intraductal papilloma, unilateral bloody nipple discharge from one duct orifice is most commonly caused by which of the following pathologic conditions? | Options: {"A": "Paget's disease of the nipple.", "C": "Inflammatory carcinoma.", "D": "Subareolar mastitis."} | Ans: B
+ID: 28 | Q: Which of the following treatments should never be recommended to a patient with purely intraductal carcinoma? | Options: {"C": "Incisional biopsy with an involved margin, followed by radiation.", "D": "Excisional biopsy to clear margins, followed by radiation."} | Ans: C
+ID: 29 | Q: The proper treatment for lobular carcinoma in situ (LCIS) includes which of the following components? | Options: {"C": "Mirror-image biopsy of the opposite breast.", "D": "Mastectomy and regional node dissection."} | Ans: A
+ID: 30 | Q: Which of the following statements about follicular carcinoma is/are true? | Options: {"C": "It is the most common type of well-differentiated thyroid carcinoma.", "E": "Follicular carcinomas are frequently multicentric."} | Ans: A
+ID: 31 | Q: All of the following are components of the MEN type 2B syndrome except: | Options: {"B": "Hyperparathyroidism.", "C": "", "D": "Pheochromocytoma."} | Ans: B
+ID: 32 | Q: MEN 2A and MEN 2B syndromes are associated with germline mutations in: | Options: {"B": "The H-ras gene.", "D": "The RET proto-oncogene."} | Ans: D
+ID: 33 | Q: Antidiuretic hormone (ADH): | Options: {"A": "Is related to oxytocin, and both are released from the posterior pituitary in conjunction with neurophysins.", "E": "Deficiency causes prolonged polyuria and polydipsia and may be diagnosed by a combination of high plasma osmolality and low urine osmolality following water deprivation."} | Ans: A
+ID: 34 | Q: Signs and symptoms of acute pituitary apoplexy include: | Options: {"B": "Meningismus.", "E": "May be relieved by emergent transsphenoidal decompression of the sella turcica."} | Ans: A
+ID: 35 | Q: Hypercortisolism: | Options: {"B": "Is best diagnosed by measurement of cortisol from a serum sample collected at 8", "D": "May be caused by small cell carcinoma of the lung, carcinoid tumors, tumors of the endocrine pancreas, pheochromocytoma, or medullary thyroid carcinoma (MT", "E": "In children is most often caused by adrenocortical neoplasia."} | Ans: A
+ID: 36 | Q: Preparation for surgical removal of a pheochromocytoma includes: | Options: {"C": "Alpha-adrenergic blockade, with or without beta-adrenergic blockade.", "E": "Planning removal through an anterior, posterior, or laparoscopic approach based upon tumor localization with CT, magnetic resonance imaging (MRI), and/or 131I-MIBG."} | Ans: B
+ID: 37 | Q: The most common hernia in females is: | Options: {"B": "Direct inguinal hernia.", "C": "Indirect inguinal hernia.", "E": "Umbilical hernia."} | Ans: C
+ID: 38 | Q: Staples may safely be placed during laparoscopic hernia repair in each of the following structures except: | Options: {"B": "Tissues superior to the lateral iliopubic tract.", "C": "The transversus abdominis aponeurotic arch.", "E": "The iliopubic tract at its insertion onto Cooper's ligament."} | Ans: D
+ID: 39 | Q: The following Nyhus classification of hernias is correct except for: | Options: {"B": "Indirect inguinal hernia with a normal internal inguinal ring\u2014Type I.", "E": "Indirect inguinal hernia with destruction of the transversalis fascia of Hesselbach's triangle\u2014Type II."} | Ans: E
+ID: 40 | Q: The following statements about the repair of inguinal hernias are true except: | Options: {"A": "repairs are based on the preperitoneal repairs of Cheattle, Henry, Nyhus, and Stoppa.", "E": "The laparoscopic transabdominal preperitoneal (TAPP) and totally extraperitoneal approach (TEP"} | Ans: A

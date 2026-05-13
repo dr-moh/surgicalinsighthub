@@ -277,17 +277,19 @@ def process_q(q):
                 "correct": sharp_data.get('highlight_excellence', ''),
                 "A": "", "B": "", "C": "", "D": "", "E": ""
             },
-            "sharp": {
-                "set_the_stage": sharp_data.get('set_the_stage', ''),
-                "highlight_excellence": sharp_data.get('highlight_excellence', ''),
-                "address_gaps": sharp_data.get('address_gaps', ''),
-                "review_learning_points": sharp_data.get('review_learning_points', ''),
-                "plan": sharp_data.get('plan', sharp_data.get('plan_for_improvement', '')),
-                "plan_for_improvement": sharp_data.get('plan_for_improvement', sharp_data.get('plan', ''))
+            "sharp_debrief": {
+                "S_set_the_stage": sharp_data.get('set_the_stage', ''),
+                "H_highlight_excellence": sharp_data.get('highlight_excellence', ''),
+                "A_address_the_gaps": sharp_data.get('address_gaps', ''),
+                "R_review_learning_points": sharp_data.get('review_learning_points', ''),
+                "P_plan_for_improvement": sharp_data.get('plan', sharp_data.get('plan_for_improvement', ''))
             },
-            "guideline": sharp_data.get('guideline', ''),
-            "takeaway": sharp_data.get('takeaway', ''),
-            "visualization": sharp_data.get('visualization', '')
+            "supplementary_callouts": {
+                "guideline": sharp_data.get('guideline', ''),
+                "takeaway": sharp_data.get('takeaway', ''),
+                "visualization": sharp_data.get('visualization', '')
+            },
+            "discrepancy_flag": ""
         }
         
         if save_to_module(final_q):

@@ -664,31 +664,6 @@ const observer = new IntersectionObserver((entries) => {
 
 observeTargets.forEach(target => observer.observe(target));
 
-// Theme Toggle Script
-const themeToggle = document.getElementById('themeToggle');
-const moonIcon = document.getElementById('moonIcon');
-const sunIcon = document.getElementById('sunIcon');
-
-function updateThemeIcon(theme) {
-  if (theme === 'dark') {
-    moonIcon.style.display = 'none';
-    sunIcon.style.display = 'block';
-  } else {
-    moonIcon.style.display = 'block';
-    sunIcon.style.display = 'none';
-  }
-}
-
-// Initial Sync
-updateThemeIcon(document.documentElement.getAttribute('data-theme') || 'light');
-
-themeToggle.addEventListener('click', () => {
-  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-  const newTheme = isDark ? 'light' : 'dark';
-  document.documentElement.setAttribute('data-theme', newTheme);
-  localStorage.setItem('sih-theme', newTheme);
-  updateThemeIcon(newTheme);
-});
 </script>
 
 <script>
@@ -810,18 +785,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
-<script>
-function openMobNav(){
-  document.getElementById('mobNavSheet').classList.add('open');
-  document.getElementById('mobNavOverlay').style.display='block';
-  document.body.style.overflow='hidden';
-}
-function closeMobNav(){
-  document.getElementById('mobNavSheet').classList.remove('open');
-  document.getElementById('mobNavOverlay').style.display='none';
-  document.body.style.overflow='';
-}
-</script>
-
+<script src="js/navigation.js"></script>
 <script src="js/nav-pill.js"></script>
 </body>

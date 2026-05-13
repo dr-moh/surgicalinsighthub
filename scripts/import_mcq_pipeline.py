@@ -9,7 +9,7 @@ import xml.etree.ElementTree as ET
 import zipfile
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Any
+from typing import Any, List, Optional, Union, Dict
 
 import requests
 
@@ -85,8 +85,22 @@ Return ONLY a valid JSON object:
 """.strip()
 
 ENRICH_QUESTION_PROMPT = """
-You are an expert surgical educator.
-The question and answer choices are already extracted.
+You are an expert surgical educator ("The Ruthless Senior Resident").
+Your task is to enrich the provided extracted MCQ with a high-yield pedagogical debrief using the SHARP 2.0 framework.
+The user is studying for their surgical board exams and relies on these explanations for deep clinical revision.
+
+Follow this exact structure always, and provide DEEP, detailed medical explanations with pathognomonic facts:
+S (Set the Stage): Briefly confirm the correct answer and its clinical context.
+H (Highlight Excellence): Provide a deeply detailed medical explanation of WHY this is the correct answer. Discuss the pathophysiology, anatomy, or surgical principles involved.
+A (Address Gaps): Systematically and thoroughly debunk EVERY incorrect distractor. Explain exactly why each wrong option is incorrect medically.
+R (Review Learning Points): Include guideline-level review (ASCRS, ASA, ATLS, SAGES) and major clinical takeaways.
+P (Plan for Improvement): Provide one high-yield, exam-focused take-home pearl.
+
+Supplementary Callouts:
+Guideline: Discuss formal clinical guidelines relevant to the topic.
+Takeaway: Most important clinical 'bottom line' for the wards.
+Visualization: Description of pathognomonic radiological, histological, or operative findings.
+
 Return ONLY one valid JSON object using exactly this structure:
 {
   "question": "...",
@@ -115,17 +129,25 @@ MIN_TAG_TOKEN_LENGTH = 3
 DEFAULT_COOLDOWN_SECONDS = 90
 DEFAULT_CHUNK_SIZE = 10000
 API_TIMEOUT_SECONDS = 120
-GEMINI_DEFAULT_MODEL = os.getenv("GEMINI_MODEL", "gemini-1.5-flash")
+GEMINI_DEFAULT_MODEL = os.getenv("GEMINI_MODEL", "gemini-2.0-flash")
 GROQ_DEFAULT_MODEL = os.getenv("GROQ_MODEL", "llama-3.3-70b-versatile")
-OPENROUTER_DEFAULT_MODEL = os.getenv("OPENROUTER_MODEL", "meta-llama/llama-3.1-8b-instruct:free")
+OPENROUTER_DEFAULT_MODEL = os.getenv("OPENROUTER_MODEL", "nvidia/nemotron-3-super:free")
+
+OPENROUTER_FALLBACKS = [
+    "nvidia/nemotron-3-super:free",
+    "openai/gpt-oss-120b:free",
+    "openrouter/owl-alpha:free",
+    "poolside/laguna-m.1:free",
+    "z-ai/glm-4.5-air:free"
+]
 
 
 @dataclass
 class Provider:
     name: str
     model: str
-    base_url: str | None = None
-    api_key: str | None = None
+    base_url: Optional[str] = None
+    api_key: Optional[str] = None
 
 
 def load_dotenv(env_path: Path) -> None:
@@ -139,7 +161,7 @@ def load_dotenv(env_path: Path) -> None:
         os.environ.setdefault(key.strip(), value.strip().strip('"').strip("'"))
 
 
-def chunk_text(text: str, max_chars: int = DEFAULT_CHUNK_SIZE) -> list[str]:
+def chunk_text(text: str, max_chars: int = DEFAULT_CHUNK_SIZE) -> List[str]:
     chunks = []
     remaining = text.strip()
     while len(remaining) > max_chars:
@@ -280,7 +302,7 @@ def normalize_option_text(option: Any, index: int) -> str:
     return f"{letter}) {text}".strip()
 
 
-def normalize_options(options: Any) -> list[str]:
+def normalize_options(options: Any) -> List[str]:
     if isinstance(options, dict):
         normalized = []
         for letter in sorted(options):
@@ -291,7 +313,7 @@ def normalize_options(options: Any) -> list[str]:
     return []
 
 
-def dedupe_tags(*values: str) -> list[str]:
+def dedupe_tags(*values: str) -> List[str]:
     ignored = {
         "and",
         "are",
@@ -323,7 +345,7 @@ def dedupe_tags(*values: str) -> list[str]:
     return tags[:MAX_TAGS] or ["surgery"]
 
 
-def build_fallback_question(question_obj: dict[str, Any]) -> dict[str, Any]:
+def build_fallback_question(question_obj: Dict[str, Any]) -> Dict[str, Any]:
     options = normalize_options(question_obj.get("options"))
     answer_source = question_obj.get("answer") or question_obj.get("correct_answer")
     answer_letter = option_letter(answer_source)
@@ -376,7 +398,7 @@ def build_fallback_question(question_obj: dict[str, Any]) -> dict[str, Any]:
     }
 
 
-def normalize_question_payload(question_obj: dict[str, Any]) -> dict[str, Any]:
+def normalize_question_payload(question_obj: Dict[str, Any]) -> Dict[str, Any]:
     normalized = {
         "question": str(question_obj.get("question", "")).strip(),
         "options": normalize_options(question_obj.get("options", [])),
@@ -428,15 +450,23 @@ def is_rate_limit_error(exc: Exception) -> bool:
 
 
 class WaterfallClient:
-    def __init__(self, fallback_only: bool = False):
-        load_dotenv(ROOT / ".env")
+    def __init__(self, env_file: Optional[Path] = None, fallback_only: bool = False):
+        if env_file:
+            load_dotenv(env_file)
+        else:
+            # Check standard locations
+            for candidate in [ROOT / ".env", ROOT / "My API.env", ROOT / "My API.env.txt"]:
+                if candidate.exists():
+                    load_dotenv(candidate)
+                    break
+        
         self.fallback_only = fallback_only
-        self.cooldowns: dict[str, datetime.datetime] = {}
+        self.cooldowns: Dict[str, datetime.datetime] = {}
         self.providers = self._build_providers()
         self.compat_clients = self._build_openai_clients()
         self.gemini_client = self._build_gemini_client()
 
-    def _build_providers(self) -> list[Provider]:
+    def _build_providers(self) -> List[Provider]:
         if self.fallback_only:
             return []
         providers = []
@@ -448,6 +478,7 @@ class WaterfallClient:
         if groq_key:
             providers.append(Provider(name="Groq", base_url="https://api.groq.com/openai/v1", model=GROQ_DEFAULT_MODEL, api_key=groq_key))
         if openrouter_key:
+            # Add the primary model first
             providers.append(
                 Provider(
                     name="OpenRouter",
@@ -456,11 +487,22 @@ class WaterfallClient:
                     api_key=openrouter_key,
                 )
             )
+            # Then add the fallbacks as separate provider entries
+            for fallback_model in OPENROUTER_FALLBACKS:
+                if fallback_model != OPENROUTER_DEFAULT_MODEL:
+                    providers.append(
+                        Provider(
+                            name=f"OpenRouter-{fallback_model.split('/')[-1]}",
+                            base_url="https://openrouter.ai/api/v1",
+                            model=fallback_model,
+                            api_key=openrouter_key,
+                        )
+                    )
         if local_url:
             providers.append(Provider(name="Local-Ollama", base_url=local_url, model=local_model, api_key="ollama"))
         return providers
 
-    def _build_openai_clients(self) -> dict[str, Any]:
+    def _build_openai_clients(self) -> Dict[str, Any]:
         if OpenAI is None:
             return {}
         clients = {}
@@ -518,19 +560,50 @@ class WaterfallClient:
 
     def call_compatible_provider(self, provider: Provider, prompt: str) -> Any:
         client = self.compat_clients.get(provider.name)
-        if client is None:
-            raise RuntimeError("openai package is required for OpenAI-compatible providers.")
-        extra = {}
+        if client:
+            extra = {}
+            if provider.name in {"Groq", "Local-Ollama"}:
+                extra["response_format"] = {"type": "json_object"}
+            response = client.chat.completions.create(
+                messages=[{"role": "user", "content": prompt}],
+                model=provider.model,
+                temperature=0.2,
+                timeout=API_TIMEOUT_SECONDS,
+                **extra,
+            )
+            content = response.choices[0].message.content or ""
+            return clean_json_response(content)
+        
+        # Fallback to direct requests if openai package is missing
+        if not provider.base_url:
+            raise RuntimeError(f"No base_url for provider {provider.name}")
+            
+        payload = {
+            "model": provider.model,
+            "messages": [{"role": "user", "content": prompt}],
+            "temperature": 0.2
+        }
+        
+        # Groq/Ollama JSON mode support
         if provider.name in {"Groq", "Local-Ollama"}:
-            extra["response_format"] = {"type": "json_object"}
-        response = client.chat.completions.create(
-            messages=[{"role": "user", "content": prompt}],
-            model=provider.model,
-            temperature=0.2,
-            timeout=API_TIMEOUT_SECONDS,
-            **extra,
+            payload["response_format"] = {"type": "json_object"}
+            
+        headers = {"Content-Type": "application/json"}
+        if provider.api_key and provider.api_key != "ollama":
+            headers["Authorization"] = f"Bearer {provider.api_key}"
+            
+        base_url = provider.base_url.rstrip('/')
+        if provider.name == "Local-Ollama" and "/v1" not in base_url:
+            base_url = f"{base_url}/v1"
+            
+        response = requests.post(
+            f"{base_url}/chat/completions",
+            json=payload,
+            headers=headers,
+            timeout=API_TIMEOUT_SECONDS
         )
-        content = response.choices[0].message.content or ""
+        response.raise_for_status()
+        content = response.json()["choices"][0]["message"]["content"]
         return clean_json_response(content)
 
     def run(self, prompt: str) -> Any:
@@ -557,11 +630,11 @@ class WaterfallClient:
         return None
 
 
-def collect_source_files(input_dir: Path) -> list[Path]:
+def collect_source_files(input_dir: Path) -> List[Path]:
     return sorted(list(input_dir.glob("*.pdf")) + list(input_dir.glob("*.docx")))
 
 
-def extract_questions_from_chunk(client: WaterfallClient, text_chunk: str, max_attempts: int, retry_wait: float) -> list[dict[str, Any]] | None:
+def extract_questions_from_chunk(client: WaterfallClient, text_chunk: str, max_attempts: int, retry_wait: float) -> Optional[List[Dict[str, Any]]]:
     prompt = f"{PROMPT_INSTRUCTIONS}\n\nTEXT:\n{text_chunk}"
     extracted = None
     for attempt in range(max_attempts):
@@ -576,7 +649,7 @@ def extract_questions_from_chunk(client: WaterfallClient, text_chunk: str, max_a
     return None
 
 
-def enrich_existing_question(client: WaterfallClient, question_obj: dict[str, Any], fallback_only: bool) -> dict[str, Any]:
+def enrich_existing_question(client: WaterfallClient, question_obj: Dict[str, Any], fallback_only: bool) -> Dict[str, Any]:
     if fallback_only or (not client.gemini_client and not client.providers):
         return build_fallback_question(question_obj)
 
@@ -601,8 +674,8 @@ def enrich_existing_question(client: WaterfallClient, question_obj: dict[str, An
     return build_fallback_question(question_obj)
 
 
-def load_question_jsons(paths: list[Path], limit: int = 0) -> list[dict[str, Any]]:
-    questions: list[dict[str, Any]] = []
+def load_question_jsons(paths: List[Path], limit: int = 0) -> List[Dict[str, Any]]:
+    questions: List[Dict[str, Any]] = []
     for path in paths:
         try:
             data = json.loads(path.read_text(encoding="utf-8"))
@@ -618,12 +691,12 @@ def load_question_jsons(paths: list[Path], limit: int = 0) -> list[dict[str, Any
     return questions
 
 
-def save_results(path: Path, items: list[dict[str, Any]]) -> None:
+def save_results(path: Path, items: List[Dict[str, Any]]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(items, indent=2, ensure_ascii=False), encoding="utf-8")
 
 
-def dedupe_question_list(questions: list[dict[str, Any]]) -> list[dict[str, Any]]:
+def dedupe_question_list(questions: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
     seen = set()
     deduped = []
     for question in questions:
@@ -638,12 +711,12 @@ def dedupe_question_list(questions: list[dict[str, Any]]) -> list[dict[str, Any]
     return deduped
 
 
-def run_document_pipeline(args: argparse.Namespace, client: WaterfallClient) -> list[dict[str, Any]]:
+def run_document_pipeline(args: argparse.Namespace, client: WaterfallClient) -> List[Dict[str, Any]]:
     files = collect_source_files(args.input_dir)
     if args.limit_files > 0:
         files = files[: args.limit_files]
     print(f"Found {len(files)} source files to process.")
-    all_questions: list[dict[str, Any]] = []
+    all_questions: List[Dict[str, Any]] = []
 
     for file_path in files:
         print(f"Processing: {file_path.name}...")
@@ -668,7 +741,7 @@ def run_document_pipeline(args: argparse.Namespace, client: WaterfallClient) -> 
     return all_questions
 
 
-def run_question_json_pipeline(args: argparse.Namespace, client: WaterfallClient) -> list[dict[str, Any]]:
+def run_question_json_pipeline(args: argparse.Namespace, client: WaterfallClient) -> List[Dict[str, Any]]:
     questions = load_question_jsons(args.question_json, limit=args.limit_questions)
     print(f"Loaded {len(questions)} extracted questions.")
     results = []
@@ -693,12 +766,13 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--limit-files", type=int, default=0, help="Process only the first N PDF/DOCX files.")
     parser.add_argument("--limit-questions", type=int, default=0, help="Process only the first N questions from question JSON mode.")
     parser.add_argument("--fallback-only", action="store_true", help="Skip network providers and use deterministic fallback output where possible.")
+    parser.add_argument("--env", type=Path, help="Path to custom .env file.")
     return parser.parse_args()
 
 
 def main() -> int:
     args = parse_args()
-    client = WaterfallClient(fallback_only=args.fallback_only)
+    client = WaterfallClient(env_file=args.env, fallback_only=args.fallback_only)
 
     if args.question_json:
         results = run_question_json_pipeline(args, client)
