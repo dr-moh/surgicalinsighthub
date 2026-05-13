@@ -1,0 +1,13 @@
+{
+  "name": "New Note File Scaffold Check",
+  "version": "1.0.0",
+  "description": "When a new HTML file is created in notes/, checks it has the correct Residency Journal scaffold",
+  "when": {
+    "type": "fileCreated",
+    "patterns": ["notes/**/*.html", "*_ResidencyJournal*.html"]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "A new note HTML file was just created. Before any content is added, verify it has the correct Residency Journal scaffold from STYLE_GUIDE.md:\n- Page size: height:297mm (not min-height), A4 fixed\n- Background: #f7f3ec with ruled lines\n- Fonts: EB Garamond (headings), Overpass (body), Overpass Mono (badges/footer)\n- Tab strip with 4 tabs: Foundations / Presentation / Management / MCQ\n- Page header with burgundy bar (#2b1810)\n- Body as flex column with flex:1\n- Footer with margin-top:auto, background #2b1810, top border 2px solid #b8922a\n- Brutal Rule box placeholder on page 1\nIf the scaffold is missing or incomplete, output the complete correct HTML scaffold for this file so the user can paste it in."
+  }
+}

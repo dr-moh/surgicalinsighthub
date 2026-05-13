@@ -1,0 +1,13 @@
+{
+  "name": "Residency Journal Compliance Audit",
+  "version": "1.0.0",
+  "description": "When a note HTML file is saved, checks it against Residency Journal style rules",
+  "when": {
+    "type": "fileEdited",
+    "patterns": ["notes/**/*.html", "*_ResidencyJournal*.html", "*_Notebook*.html"]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "A Residency Journal note was just saved. Audit it against STYLE_GUIDE.md rules:\n1. Does it have a Brutal Rule box on page 1?\n2. Is the footer pinned with margin-top:auto on a height:297mm flex column (not min-height)?\n3. Are section numbers sequential across all pages (never reset per page)?\n4. Are there any paragraphs outside description boxes?\n5. Are there any banned words from STYLE_GUIDE.md §2?\n6. Are there any em dashes?\n7. Do all description boxes have the gold left border and correct background?\n8. Are the 4 tabs present (Foundations / Presentation / Management / MCQ)?\nReport each issue with the line number and exact fix needed. If everything passes, say 'AUDIT PASSED'."
+  }
+}

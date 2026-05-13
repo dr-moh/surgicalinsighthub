@@ -1,0 +1,13 @@
+{
+  "name": "Validate MCQ on Save",
+  "version": "1.0.0",
+  "description": "Runs MCQ structure validation whenever canonical_questions.js or .json is saved",
+  "when": {
+    "type": "fileEdited",
+    "patterns": ["js/questions/canonical_questions.js", "js/questions/canonical_questions.json", "MCQ Bank/canonical_questions.json"]
+  },
+  "then": {
+    "type": "runCommand",
+    "command": "node scripts/validate_mcq_standard.js"
+  }
+}

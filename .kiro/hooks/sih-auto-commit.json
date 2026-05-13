@@ -1,0 +1,12 @@
+{
+  "name": "Smart Commit Reminder",
+  "version": "1.0.0",
+  "description": "After agent finishes a task, reminds to update docs and commit following SIH workflow",
+  "when": {
+    "type": "agentStop"
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "The agent just finished a task. Check if any of these need to happen before we're done:\n1. Were any HTML notes created or modified? If yes, verify footer is pinned and Brutal Rule box exists.\n2. Was the MCQ bank changed? If yes, check if README_CLAUDE_CODE.md and sih-project-context.md need the question count updated.\n3. Are there uncommitted changes that should be staged and pushed? If yes, remind the user with the exact git commands to run, following the SIH commit message convention.\n4. Was Issue #5 progress made? If yes, list which tasks can now be checked off.\nOnly report items that actually apply. Skip anything that doesn't."
+  }
+}
