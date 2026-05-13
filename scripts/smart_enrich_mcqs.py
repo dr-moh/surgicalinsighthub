@@ -41,36 +41,49 @@ def is_garbage(q):
 def get_category(q):
     spec = q.get("specialty", "").lower()
     topic = q.get("topic", "").lower()
+    text = (q.get("question", "") + " " + q.get("topic", "")).lower()
     
-    # Cholecystectomy specific (high priority)
-    if any(k in topic for k in ["cholecystectomy", "gallbladder", "biliary", "stones", "cholecystitis"]):
+    # Cholecystectomy specific
+    if any(k in text for k in ["cholecystectomy", "gallbladder", "biliary", "stones", "cholecystitis"]):
         return "cholecystectomy"
     
     # HPB
-    if "hpb" in spec or any(k in topic for k in ["pancreas", "whipple", "liver", "hcc", "cholangitis", "bile duct", "spleen"]):
+    if any(k in spec or k in text for k in ["hpb", "pancreas", "whipple", "liver", "hcc", "cholangitis", "bile duct", "spleen", "pud", "gastric"]):
         return "hpb"
     
     # Colorectal & Pediatric
-    if "colorectal" in spec or "pediatric" in spec or any(k in topic for k in ["colon", "rectum", "hemicolectomy", "appendic", "stoma", "fistula", "hernia", "bowel", "intestine", "intussusception", "pyloric stenosis", "hirschsprung"]):
+    if any(k in spec or k in text for k in ["colorectal", "pediatric", "colon", "rectum", "hemicolectomy", "appendic", "stoma", "fistula", "hernia", "bowel", "intestine", "intussusception", "pyloric stenosis", "hirschsprung", "peds"]):
         return "colorectal"
     
     # Endocrine & Breast
-    if "endocrine" in spec or "breast" in spec or any(k in topic for k in ["thyroid", "adrenal", "parathyroid", "men ", "pheochromocytoma", "breast", "mastectomy"]):
+    if any(k in spec or k in text for k in ["endocrine", "breast", "thyroid", "adrenal", "parathyroid", "men ", "pheochromocytoma", "mastectomy"]):
         return "endocrine"
     
     # Trauma & Orthopedics
-    if "trauma" in spec or "ortho" in spec or any(k in topic for k in ["laparotomy", "reboa", "atls", "damage control", "hemorrhage", "fracture", "shock", "trauma"]):
+    if any(k in spec or k in text for k in ["trauma", "ortho", "laparotomy", "reboa", "atls", "damage control", "hemorrhage", "fracture", "shock", "splenic injury", "pelvic"]):
         return "trauma"
     
     # Vascular
-    if "vascular" in spec or any(k in topic for k in ["aneurysm", "evar", "carotid", "bypass", "artery", "vein", "clot"]):
+    if any(k in spec or k in text for k in ["vascular", "aneurysm", "evar", "carotid", "bypass", "artery", "vein", "clot"]):
         return "vascular"
     
     # Anesthesia
-    if "anesthesia" in spec:
+    if "anesthesia" in spec or "anesthesia" in text or any(k in text for k in ["propofol", "succinylcholine", "intubation", "airway", "sedation", "pacu", "npo"]):
         return "anesthesia"
+        
+    # Neurosurgery
+    if any(k in spec or k in text for k in ["neurosurgery", "brain", "icp", "monro-kellie", "glioma", "shunt", "skull", "spine", "acoustic neuroma"]):
+        return "neurosurgery"
+        
+    # Urology
+    if any(k in spec or k in text for k in ["urology", "prostate", "bladder", "renal cell", "kidney", "scrotum", "testis"]):
+        return "urology"
+        
+    # Plastic Surgery
+    if any(k in spec or k in text for k in ["plastic", "skin graft", "flap", "burns", "cleft", "cosmetic", "exosome"]):
+        return "plastic_surgery"
     
-    return "hpb" # Default to HPB if unknown
+    return "general_surgery" # Default
 
 def main():
     print("Loading data...")
@@ -93,6 +106,10 @@ def main():
         if is_garbage(q):
             garbage_count += 1
             continue
+            
+        # Wipe old research insight
+        if "research_insight" in q:
+            del q["research_insight"]
             
         category = get_category(q)
         insight = research_db.get(category)
