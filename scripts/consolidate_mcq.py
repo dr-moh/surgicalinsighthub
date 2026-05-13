@@ -115,7 +115,13 @@ def consolidate():
         'js/questions_enriched_test.js',
         'archive/root_junk/transformed_questions.json',
         'archive/root_junk/questions.json',
-        'MCQ Bank/docx_extracted_questions_incremental.json'
+        'MCQ Bank/docx_extracted_questions_incremental.json',
+        'MCQ Bank/enriched_sharp_all.json',
+        'MCQ Bank/enriched_sharp_batch.json',
+        'js/balanced_draft.json',
+        'js/urology_qs.js',
+        'js/urology_qs_2.js',
+        'js/preview_data.js'
     ]
     
     print(f"Analyzing {len(js_files)} JS files and {len(additional_sources)} JSON sources...")
