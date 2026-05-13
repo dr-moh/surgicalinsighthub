@@ -62,6 +62,7 @@ body.sidebar-open #sidebar-overlay {
 #hero { padding: 120px 72px 60px; }
 @media (max-width: 900px) { #hero { padding: 100px 24px 40px; } }
 </style>
+
 </head>
 <body>
 
@@ -146,10 +147,9 @@ body.sidebar-open #sidebar-overlay {
     <a class="nav-item" href="#rapid">High-Yield Board Facts</a>
   </div>
 </nav>
-
 <div id="sidebar-overlay" onclick="closeSidebar()"></div>
+<main id="main" style="padding-top: 70px;">
 
-<main id="main">
 <section id="hero">
   <div class="eyebrow">Surgical Insight Hub · Monograph Series · ABSITE · PGY-3 Framework</div>
   <h1>Surgical Drain Placement</h1>
@@ -420,7 +420,8 @@ body.sidebar-open #sidebar-overlay {
   </table>
 </div>
 
-</div></main>
+</div>
+</main>
 
 <button id="top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 
@@ -450,7 +451,7 @@ function filterNav(query) {
 navItems.forEach(item => {
   item.addEventListener('click', e => {
     e.preventDefault();
-    closeSidebar();
+    if(typeof closeSidebar === 'function') closeSidebar();
     const target = document.querySelector(item.getAttribute('href'));
     if (target) window.scrollTo({ top: target.getBoundingClientRect().top - 80, behavior: 'smooth' });
   });

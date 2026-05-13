@@ -63,6 +63,151 @@ body.sidebar-open #sidebar-overlay {
 #hero { padding: 120px 72px 60px; }
 @media (max-width: 900px) { #hero { padding: 100px 24px 40px; } }
 </style>
+<style>
+/* ── Monograph Specific Overrides ── */
+#hero { padding: 120px 72px 60px; }
+@media (max-width: 900px) { #hero { padding: 100px 24px 40px; } }
+
+
+#sidebar-header{padding:20px 20px 14px;border-bottom:1px solid rgba(255,255,255,0.08);flex-shrink:0;}
+#sidebar-header .logo{font-family:'Playfair Display',serif;font-size:13px;font-weight:700;color:var(--accent2);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;}
+#sidebar-header .sub{font-size:10.5px;color:rgba(235,229,231,0.6);letter-spacing:0.04em;}
+#sidebar-search{padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.05);flex-shrink:0;}
+#sidebar-search input{width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:6px;color:#EBE5E7;padding:6px 10px;font-size:12px;font-family:'Source Serif 4',serif;outline:none;transition:border-color 0.2s;}
+#sidebar-search input::placeholder{color:rgba(235,229,231,0.4);}
+#sidebar-search input:focus{border-color:var(--accent2);}
+#sidebar-nav{flex:1;overflow-y:auto;padding:8px 0 20px;}
+#sidebar-nav::-webkit-scrollbar{width:4px;}
+#sidebar-nav::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.15);border-radius:2px;}
+.vol-label{font-size:9.5px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent2);padding:14px 18px 4px;}
+.nav-item{display:block;padding:8px 18px 8px 22px;font-size:12.5px;color:rgba(235,229,231,0.75);text-decoration:none;border-left:2px solid transparent;transition:all 0.15s;line-height:1.4;}
+.nav-item:hover{color:#fff;background:rgba(255,255,255,0.03);border-left-color:rgba(212,128,106,0.5);}
+.nav-item.active{color:#fff;background:rgba(255,255,255,0.06);border-left-color:var(--accent2);font-weight:600;}
+.nav-item .num{font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(235,229,231,0.4);margin-right:6px;}
+
+/* MAIN */
+#main{margin-left:0; min-height:100vh;}
+
+/* HERO */
+#hero{background:linear-gradient(135deg,var(--primary-dk) 0%,#4D1E14 60%,#211412 100%);color:white;padding:90px 72px 60px;position:relative;overflow:hidden;}
+#hero::before{content:'';position:absolute;top:-60px;right:-60px;width:380px;height:380px;background:radial-gradient(circle,rgba(212,128,106,0.15) 0%,transparent 70%);pointer-events:none;}
+#hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent2),var(--gold),transparent);}
+#hero .eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.16em;color:var(--accent2);text-transform:uppercase;margin-bottom:14px;}
+#hero h1{font-family:'Playfair Display',serif;font-size:46px;font-weight:700;line-height:1.15;margin-bottom:10px;color:#fff;}
+#hero .subtitle{font-size:18px;color:rgba(255,255,255,0.7);font-style:italic;margin-bottom:28px;}
+#hero .badges{display:flex;gap:10px;flex-wrap:wrap;}
+#hero .badge{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:20px;padding:4px 14px;font-size:12px;color:rgba(255,255,255,0.9);font-family:'JetBrains Mono',monospace;}
+
+/* CONTENT */
+.content-wrap{max-width:900px;margin:0 auto;padding:0 48px 80px;}
+
+/* SECTION HEADER */
+.sec-header{margin-top:60px;margin-bottom:8px;padding:28px 36px;border-radius:10px;display:flex;align-items:center;gap:20px;}
+.sec-header.s1{background:linear-gradient(135deg,#6F302308,#6F302315);border-left:4px solid var(--s1);}
+.sec-header.s2{background:linear-gradient(135deg,#44383D08,#44383D15);border-left:4px solid var(--s2);}
+.sec-header.s3{background:linear-gradient(135deg,#3B4A4308,#3B4A4315);border-left:4px solid var(--s3);}
+.sec-header.s4{background:linear-gradient(135deg,#8C674608,#8C674615);border-left:4px solid var(--s4);}
+.sec-header.s5{background:linear-gradient(135deg,#29364208,#29364215);border-left:4px solid var(--s5);}
+.sec-badge{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;letter-spacing:0.1em;padding:4px 12px;border-radius:4px;white-space:nowrap;flex-shrink:0;}
+.s1 .sec-badge{background:var(--s1);color:white;}
+.s2 .sec-badge{background:var(--s2);color:white;}
+.s3 .sec-badge{background:var(--s3);color:white;}
+.s4 .sec-badge{background:var(--s4);color:white;}
+.s5 .sec-badge{background:var(--s5);color:white;}
+.sec-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;}
+.s1 .sec-title{color:var(--s1);}
+.s2 .sec-title{color:var(--s2);}
+.s3 .sec-title{color:var(--s3);}
+.s4 .sec-title{color:var(--s4);}
+.s5 .sec-title{color:var(--s5);}
+
+/* TOPIC */
+.topic{margin-top:48px;padding-top:48px;border-top:1px solid var(--border);}
+.topic:first-of-type{border-top:none;}
+.topic-header{display:flex;align-items:flex-start;gap:16px;margin-bottom:24px;}
+.topic-num{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;padding:3px 10px;border-radius:4px;margin-top:4px;flex-shrink:0;}
+.s1 .topic-num{background:var(--s1-lt);color:var(--s1);}
+.s2 .topic-num{background:var(--s2-lt);color:var(--s2);}
+.s3 .topic-num{background:var(--s3-lt);color:var(--s3);}
+.s4 .topic-num{background:var(--s4-lt);color:var(--s4);}
+.s5 .topic-num{background:var(--s5-lt);color:var(--s5);}
+.topic h2{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;line-height:1.2;}
+.s1 .topic h2{color:var(--s1);}
+.s2 .topic h2{color:var(--s2);}
+.s3 .topic h2{color:var(--s3);}
+.s4 .topic h2{color:var(--s4);}
+.s5 .topic h2{color:var(--s5);}
+.topic h3{font-family:'Playfair Display',serif;font-size:17px;font-weight:600;color:var(--muted);margin:26px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--border);}
+.topic h4{font-size:13px;font-weight:600;color:var(--muted);letter-spacing:0.06em;text-transform:uppercase;margin:18px 0 8px;font-family:'JetBrains Mono',monospace;}
+.topic p{margin-bottom:12px;color:var(--text);}
+.topic ul,.topic ol{margin:8px 0 14px 20px;color:var(--text);}
+.topic li{margin-bottom:6px;line-height:1.65;}
+.topic li::marker{color:var(--accent2);}
+.topic strong{color:var(--text);font-weight:600;}
+
+/* TABLES */
+.table-wrap{overflow-x:auto;margin:16px 0 20px;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.04);}
+table{width:100%;border-collapse:collapse;font-size:13.5px;background:white;}
+thead tr{background:var(--s1);}
+thead th{color:white;padding:10px 14px;text-align:left;font-family:'Source Serif 4',serif;font-weight:600;font-size:13px;}
+tbody tr:nth-child(even){background:var(--bg2);}
+tbody tr:hover{background:var(--s1-lt);transition:background 0.15s;}
+tbody td{padding:9px 14px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.5;}
+.s2-tbl thead tr{background:var(--s2);}
+.s3-tbl thead tr{background:var(--s3);}
+.s4-tbl thead tr{background:var(--s4);}
+.s5-tbl thead tr{background:var(--s5);}
+
+/* CALLOUTS */
+.callout{margin:18px 0;padding:14px 18px;border-radius:0 8px 8px 0;border-left:4px solid;font-size:14px;line-height:1.65;}
+.callout .label{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;display:block;margin-bottom:4px;}
+.callout.pearl{background:var(--amber-lt);border-color:var(--amber);}
+.callout.pearl .label{color:var(--amber);}
+.callout.warn{background:var(--red-lt);border-color:var(--red);}
+.callout.warn .label{color:var(--red);}
+.callout.clin{background:var(--s1-lt);border-color:var(--s1);}
+.callout.clin .label{color:var(--s1);}
+.callout.exam{background:var(--blue-lt);border-color:var(--blue);}
+.callout.exam .label{color:var(--blue);}
+
+/* DIAGRAM */
+.diagram-wrap{background:white;border:1px solid var(--border);border-radius:8px;padding:18px;margin:20px 0;box-shadow:0 1px 4px rgba(0,0,0,0.03);}
+.diagram-title{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--s1);margin-bottom:12px;}
+
+/* RAPID REFERENCE */
+.rapid-ref{background:var(--primary-dk);color:var(--primary-lt);border-radius:10px;padding:28px 32px;margin:30px 0;}
+.rapid-ref h3{font-family:'Playfair Display',serif;font-size:20px;color:var(--accent2);margin-bottom:16px;}
+.rapid-ref table{font-size:12.5px; background: transparent;} /* Fixed Transparency */
+.rapid-ref thead tr{background:rgba(212,128,106,0.15);}
+.rapid-ref thead th{color:var(--accent2);padding:8px 12px;font-size:11px;}
+.rapid-ref tbody tr:nth-child(even){background:rgba(255,255,255,0.03);}
+.rapid-ref tbody tr:hover{background:rgba(255,255,255,0.06);}
+.rapid-ref tbody td{color:var(--primary-lt);padding:7px 12px;border-bottom:1px solid rgba(255,255,255,0.05);}
+.rapid-ref tbody td strong{color:var(--gold);}
+
+/* PROGRESS */
+#progress-bar{position:fixed;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent2),var(--gold));transform-origin:left;transform:scaleX(0);transition:transform 0.1s;z-index:50;}
+
+/* TOP BTN */
+#top-btn{position:fixed;bottom:28px;right:28px;background:var(--primary);color:white;border:none;border-radius:50%;width:44px;height:44px;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,0.2);transition:all 0.2s;opacity:0;pointer-events:none;}
+#top-btn.show{opacity:1;pointer-events:auto;}
+#top-btn:hover{background:var(--accent2);transform:translateY(-2px);}
+
+/* ANIMATION */
+.topic{animation:fadeUp 0.4s ease both;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
+
+@media(max-width:900px){
+  .content-wrap{padding:0 20px 60px;}
+  #hero{padding:120px 20px 40px;}
+  #hero h1{font-size:30px;}
+}
+@media print{
+  #sidebar-toggle, #sidebar-overlay, #sidebar, #top-btn, #progress-bar, .nav{display:none!important;}
+  .topic{page-break-inside:avoid;}
+  .sec-header{page-break-before:always;}
+}
+</style>
 </head>
 <body>
 
@@ -114,9 +259,41 @@ body.sidebar-open #sidebar-overlay {
   <span>☰</span> Contents
 </button>
 
+<nav id="sidebar">
+  <div id="sidebar-header">
+    <div class="logo">Surgical Insight Hub</div>
+    <div class="sub">Hemicolectomy · Monograph Series</div>
+  </div>
+  <div id="sidebar-search">
+    <input type="text" id="search-input" placeholder="Search topics…" oninput="filterNav(this.value)">
+  </div>
+  <div id="sidebar-nav">
+    <div class="vol-label">Pillar 1 — Pre-Op Optimization</div>
+    <a class="nav-item" href="#p1a"><span class="num">1.1</span>Clinical Workup</a>
+    <a class="nav-item" href="#p1b"><span class="num">1.2</span>Risk Stratification</a>
+    <a class="nav-item" href="#p1c"><span class="num">1.3</span>Immediate Pre-Op</a>
+    <div class="vol-label">Pillar 2 — The Operative Game Plan</div>
+    <a class="nav-item" href="#p2a"><span class="num">2.1</span>Setup &amp; Positioning</a>
+    <a class="nav-item" href="#p2b"><span class="num">2.2</span>Right Hemicolectomy</a>
+    <a class="nav-item" href="#p2c"><span class="num">2.3</span>Left Hemicolectomy</a>
+    <a class="nav-item" href="#p2d"><span class="num">2.4</span>The Critical View</a>
+    <div class="vol-label">Pillar 3 — Pearls &amp; Bail-Outs</div>
+    <a class="nav-item" href="#p3a"><span class="num">3.1</span>Consultant Pearls</a>
+    <a class="nav-item" href="#p3b"><span class="num">3.2</span>The Bail-Out Point</a>
+    <div class="vol-label">Pillar 4 — Post-Op Care</div>
+    <a class="nav-item" href="#p4a"><span class="num">4.1</span>Immediate Recovery (ERAS)</a>
+    <a class="nav-item" href="#p4b"><span class="num">4.2</span>Clinic Follow-up</a>
+    <div class="vol-label">Pillar 5 — Complications</div>
+    <a class="nav-item" href="#p5a"><span class="num">5.1</span>Anastomotic Leak</a>
+    <a class="nav-item" href="#p5b"><span class="num">5.2</span>Ureteric Injury</a>
+    <a class="nav-item" href="#p5c"><span class="num">5.3</span>Ileus vs. SBO</a>
+    <div class="vol-label">Quick Reference</div>
+    <a class="nav-item" href="#rapid">High-Yield Board Facts</a>
+  </div>
+</nav>
 <div id="sidebar-overlay" onclick="closeSidebar()"></div>
+<main id="main" style="padding-top: 70px;">
 
-<main id="main">
 
 <style>
 /* ── Monograph Specific Overrides ── */
@@ -661,74 +838,11 @@ tbody td{padding:9px 14px;border-bottom:1px solid var(--border);vertical-align:t
   </table>
 </div>
 
-</div></main>
+</div>
+</main>
 
 <button id="top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 
-<script>
-  // Scroll Listener for Premium Nav
-  const mainNav = document.getElementById('mainNav');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-      mainNav.classList.add('scrolled');
-    } else {
-      mainNav.classList.remove('scrolled');
-    }
-  });
-
-  function openMobNav() {
-    document.getElementById('mobNavSheet').classList.add('open');
-    document.getElementById('mobNavOverlay').style.display = 'block';
-    document.body.style.overflow = 'hidden';
-  }
-  function closeMobNav() {
-    document.getElementById('mobNavSheet').classList.remove('open');
-    document.getElementById('mobNavOverlay').style.display = 'none';
-    document.body.style.overflow = '';
-  }
-
-  // Dark Mode Toggle Logic
-  const themeToggle = document.getElementById('themeToggle');
-  const moonIcon = document.getElementById('moonIcon');
-  const sunIcon = document.getElementById('sunIcon');
-
-  function applyTheme(theme) {
-    if (theme === 'dark') {
-      document.documentElement.setAttribute('data-theme', 'dark');
-      if(moonIcon) moonIcon.style.display = 'none';
-      if(sunIcon) sunIcon.style.display = 'block';
-    } else {
-      document.documentElement.removeAttribute('data-theme');
-      if(sunIcon) sunIcon.style.display = 'none';
-      if(moonIcon) moonIcon.style.display = 'block';
-    }
-  }
-
-  const currentTheme = localStorage.getItem('sih-theme') || 'light';
-  applyTheme(currentTheme);
-
-  if(themeToggle) {
-    themeToggle.addEventListener('click', () => {
-      const isDark = document.documentElement.hasAttribute('data-theme');
-      const newTheme = isDark ? 'light' : 'dark';
-      applyTheme(newTheme);
-      localStorage.setItem('sih-theme', newTheme);
-    });
-  }
-</script>
-
-<div class="mob-nav-overlay" id="mobNavOverlay" onclick="closeMobNav()"></div>
-<div class="mob-nav-sheet" id="mobNavSheet">
-  <div class="mob-nav-handle"></div>
-  <a href="../../index.html">Home</a>
-  <a href="../../notes.html">Notes</a>
-  <a href="../operative_approach.html" class="active">Playbook</a>
-  <a href="../../arena.html">MCQ Arena</a>
-  <a href="../../podcast.html">Podcast</a>
-  <a href="../../about.html">About</a>
-</div>
-
-<div id="sidebar-overlay" onclick="closeSidebar()"></div>
 <script src="../../js/navigation.js"></script>
 <script>
 const progressBar = document.getElementById('progress-bar');
@@ -755,28 +869,12 @@ function filterNav(query) {
 navItems.forEach(item => {
   item.addEventListener('click', e => {
     e.preventDefault();
-    closeSidebar();
+    if(typeof closeSidebar === 'function') closeSidebar();
     const target = document.querySelector(item.getAttribute('href'));
     if (target) window.scrollTo({ top: target.getBoundingClientRect().top - 80, behavior: 'smooth' });
   });
 });
 
-document.querySelectorAll('.topic').forEach((el, i) => { el.style.animationDelay = `${i * 0.03}s`; });
-</script>
-<script>
-(function() {
-  const themeToggle = document.getElementById('themeToggle');
-  if (!themeToggle) return;
-
-  themeToggle.addEventListener('click', () => {
-    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-    const nextTheme = isDark ? 'light' : 'dark';
-    document.documentElement.setAttribute('data-theme', nextTheme);
-    localStorage.setItem('sih-theme', nextTheme);
-  });
-})();
-
-// Animation delays
 document.querySelectorAll('.topic').forEach((el, i) => { el.style.animationDelay = `${i * 0.03}s`; });
 </script>
 </body>
