@@ -411,6 +411,15 @@
             <div class="takehome"><div class="takehome-label">Take-home Pearl</div><div class="takehome-text" id="sharpP"></div></div>
           </div>
         </div>
+        <div class="sharp-divider"></div>
+        <div class="sharp-row" id="researchInsightRow" style="display:none;">
+          <div class="sharp-badge" style="background: var(--brand-gold); color: var(--brand-burgundy); border: 1px solid white;">i</div>
+          <div class="sharp-content" style="width: 100%;">
+            <div class="sharp-row-title" style="color: var(--brand-gold);">Live Research Insight (2025/26)</div>
+            <div id="mcqResearchCard"></div>
+          </div>
+        </div>
+
         <div class="sharp-divider" id="sharpVDiv"></div>
         <div class="sharp-row" id="sharpVRow">
           <div class="sharp-badge" style="background: var(--brand-burgundy); border: 1px solid var(--brand-gold); color: var(--brand-gold);">V</div>
@@ -734,6 +743,27 @@ function showSharp(q, selected, isCorrect) {
   } else {
     vRow.style.display = 'none';
     vDiv.style.display = 'none';
+  }
+
+  // Research Insight (TinyFish)
+  var research = q.research_insight || null;
+  var researchRow = document.getElementById('researchInsightRow');
+  var researchCard = document.getElementById('mcqResearchCard');
+  if (research) {
+    var points = research.points || [];
+    var pointsHtml = points.map(p => `<li>${p}</li>`).join('');
+    researchCard.innerHTML = `
+      <div class="research-insight" style="margin: 10px 0 0 0; padding: 15px; background: rgba(255,255,255,0.05); border: 1px solid rgba(184,146,42,0.3);">
+        <p style="font-size: 0.85rem; color: #f0d080; margin-bottom: 8px; font-weight: 700;">${research.topic}</p>
+        <p style="font-size: 0.8rem; color: rgba(255,255,255,0.7); margin-bottom: 10px;">${research.summary}</p>
+        <ul style="grid-template-columns: 1fr; gap: 5px; margin: 0;">
+          ${pointsHtml}
+        </ul>
+      </div>
+    `;
+    researchRow.style.display = 'flex';
+  } else {
+    researchRow.style.display = 'none';
   }
 
   // Discrepancy Protocol

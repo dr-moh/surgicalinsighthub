@@ -624,3 +624,83 @@ body.sidebar-open #sidebar-overlay { opacity: 1; pointer-events: auto; }
   width: 40px; height: 4px; background: rgba(255,255,255,0.2);
   border-radius: 2px; margin: -16px auto 20px;
 }
+/* ── RESEARCH INSIGHT CARD (GLOBAL) ── */
+.research-insight {
+  margin: 32px 0;
+  background: linear-gradient(145deg, #ffffff, #fdf8f5);
+  border: 1px solid rgba(111, 48, 35, 0.15);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(111, 48, 35, 0.05);
+  position: relative;
+  overflow: hidden;
+  text-align: left;
+}
+.research-insight::before {
+  content: 'LIVE RESEARCH';
+  position: absolute;
+  top: 12px;
+  right: -30px;
+  background: #C28E46; /* var(--gold) fallback */
+  color: white;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  font-weight: 700;
+  padding: 4px 40px;
+  transform: rotate(45deg);
+}
+.research-insight h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  color: #6F3023; /* var(--primary) fallback */
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-transform: none;
+}
+.research-insight .source-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  background: #F6EBE9; /* var(--primary-lt) fallback */
+  color: #6F3023;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+.research-insight p {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: #2c2c2c;
+  margin-bottom: 16px;
+}
+.research-insight ul {
+  list-style: none;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.research-insight li {
+  font-size: 13px;
+  padding-left: 20px;
+  position: relative;
+  line-height: 1.4;
+}
+.research-insight li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: #C28E46;
+  font-weight: bold;
+}
+
+[data-theme="dark"] .research-insight {
+  background: linear-gradient(145deg, #2a1a18, #211412);
+  border-color: rgba(255,255,255,0.1);
+}
+[data-theme="dark"] .research-insight p { color: rgba(255,255,255,0.8); }
+[data-theme="dark"] .research-insight li { color: rgba(255,255,255,0.7); }
+
+@media (max-width: 600px) {
+  .research-insight ul { grid-template-columns: 1fr; }
+}
