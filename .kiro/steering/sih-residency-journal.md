@@ -86,7 +86,7 @@ Every note = two files:
 - Ortho Trauma
 
 ## Next Notes to Build (priority order)
-1. ARM (Anorectal Malformation)
+1. ✅ ARM (Anorectal Malformation) — COMPLETED (7 pages, 21 sections)
 2. Choledocholithiasis (full Residency Journal)
 3. Fournier's Gangrene (full Residency Journal)
 4. HPB deep-dives (Bismuth-Corlette, Whipple complications)

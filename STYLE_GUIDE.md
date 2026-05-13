@@ -282,6 +282,7 @@ Track these to avoid duplication:
 | Hepatopancreatobiliary | Biliary anatomy, cholelithiasis, BDI/Strasberg, cholangiocarcinoma/Bismuth-Corlette, Whipple, portal hypertension |
 | Choledocholithiasis risk stratification | ASGE 2019 |
 | Bowel Obstruction | Residency Journal v3 — 8 pages, full template |
+| Anorectal Malformation (ARM) | Residency Journal — 7 pages; Krickenbeck, PSARP, LAARP, Cloaca, VACTERL, Sacral Ratio, Currarino Triad |
 
 **Guidelines referenced so far:** TG18, WSES 2020, SAGES/AHPBA 2025, AGA 2023, ESMO 2024, Bologna 2013/2017, ASGE 2019
 

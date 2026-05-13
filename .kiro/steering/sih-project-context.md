@@ -62,7 +62,8 @@ Home · Podcast · Notes · MCQ Arena · AI Review · About
 2. UI audit for Residency Journal compliance across all notes
 3. Update docs to reflect 5,000+ questions milestone
 4. Scale MCQ bank to 10,000+
-5. New Residency Journal notes: ARM, Fournier's Gangrene, Choledocholithiasis, more HPB
+5. New Residency Journal notes: Fournier's Gangrene (full), Choledocholithiasis (full), more HPB
+6. ARM Residency Journal — COMPLETED (7 pages, 21 sections, notes/ARM_ResidencyJournal.html)
 
 ## SHARP Debrief Format
 - **S** — Set the Stage (clinical context + correct answer)

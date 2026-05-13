@@ -184,7 +184,7 @@ window.NOTES_DATA = {
       tags: ['red:Krickenbeck', 'red:PSARP', 'Cloaca', 'VACTERL'],
       pages: 'Monograph',
       type: 'web',
-      url: 'notes/colorectal_Notebook.html',
+      url: 'notes/ARM_ResidencyJournal.html',
       isNew: true
     },
     {
@@ -206,9 +206,9 @@ window.NOTES_DATA = {
       specialty: ['emergency'],
       description: 'Boey score, omental patch technique, resection indications, H. pylori eradication protocol.',
       tags: ['red:Boey Score', 'Omental Patch', '6 pages'],
-      pages: '6 pages',
-      type: 'telegram',
-      url: 'https://t.me/sugicalInsightHub',
+      pages: 'Technical Monograph',
+      type: 'web',
+      url: 'notes/Surgical Operative Approach/Repair of Perforated Peptic Ulcer Monograph.html',
       isNew: false
     },
     {
@@ -230,9 +230,9 @@ window.NOTES_DATA = {
       specialty: ['hpb'],
       description: 'ASGE 2019 risk stratification, ERCP indications, laparoscopic CBD exploration, MRCP pathway.',
       tags: ['red:ASGE 2019', 'ERCP', '6 pages'],
-      pages: '6 pages',
-      type: 'telegram',
-      url: 'https://t.me/sugicalInsightHub',
+      pages: 'Technical Monograph',
+      type: 'web',
+      url: 'notes/Surgical Operative Approach/Cholecystectomy Monograph.html',
       isNew: false
     },
     {
@@ -242,9 +242,9 @@ window.NOTES_DATA = {
       specialty: ['hpb'],
       description: 'Biliary anatomy, BDI Strasberg, cholangiocarcinoma Bismuth-Corlette, Whipple steps, portal HTN.',
       tags: ['red:Strasberg', 'Whipple', '7 pages'],
-      pages: '7 pages',
-      type: 'telegram',
-      url: 'https://t.me/sugicalInsightHub',
+      pages: 'Technical Monograph',
+      type: 'web',
+      url: "notes/Surgical Operative Approach/Pancreaticoduodenectomy (Whipple's Procedure) Monograph.html",
       isNew: false
     },
     {
@@ -270,6 +270,18 @@ window.NOTES_DATA = {
       type: 'telegram',
       url: 'https://t.me/sugicalInsightHub',
       isNew: false
+    },
+    {
+      id: 'anesthesia-illustrated',
+      title: 'Anesthesia Illustrated Monograph',
+      kicker: 'Perioperative Care',
+      specialty: ['periop'],
+      description: 'Heavily illustrated guide to airway management, surgical anesthesia, and critical care monitoring. Full clinical dashboards.',
+      tags: ['red:Illustrated', 'Airway', 'ICU'],
+      pages: 'Monograph',
+      type: 'web',
+      url: 'notes/Anesthesia_Perioperative_Care_Illustrated_Monograph.files/header.html',
+      isNew: true
     }
   ],
 

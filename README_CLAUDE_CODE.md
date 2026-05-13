@@ -51,18 +51,21 @@ Home · Podcast · Notes · MCQ MCQ Arena · AI Review · About
 - [x] Home page with hero, floating cards, MCQ preview, podcast, LinkedIn feed
 - [x] Global MCQ leaderboard on home page (live from Supabase)
 - [x] Testimonials with Supabase storage + Forminit notifications
-- [x] MCQ Arena: 4,014+ unique questions, SHARP 2.0 debrief, global leaderboard
+- [x] MCQ Arena: 4,354+ unique questions, SHARP 2.0 debrief, global leaderboard
 - [x] AI Review: streams Claude API for any surgical topic
 - [x] "Waterfall" Pipeline: Robust MCQ enrichment using Gemini 2.0 Flash, Groq, and OpenRouter fallbacks.
 - [x] Performance: Chunked rendering (requestAnimationFrame) for high-volume MCQ data.
 - [x] Monograph Standardization: PUD/PPU moved to v3 "Residency Journal" premium template.
 - [x] Mobile hamburger nav with bottom sheet parity across all modules.
+- [x] ARM Residency Journal note — 7 pages, 21 sections, full Krickenbeck/PSARP/Cloaca coverage
+- [x] notes_data.js — notes library data layer for notes.html
 
 ## Pending / To Add
-- [ ] Scale MCQ Bank to 10,000+ (Current: 4,014 unique)
-- [ ] ARM (Anorectal Malformation) Residency Journal note
-- [ ] More Residency Journal notes (Fournier's, Choledocholithiasis, HPB)
-- [ ] data.json integration for notes library
+- [ ] Scale MCQ Bank to 10,000+ (Current: 4,354 unique)
+- [ ] Fournier's Gangrene Residency Journal note
+- [ ] Choledocholithiasis Residency Journal note
+- [ ] More HPB Residency Journal notes
+- [ ] UI audit for Residency Journal compliance across all notes
 - [x] LinkedIn integration
 
 ## Notes on AI Review (review.html)
