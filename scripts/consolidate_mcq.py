@@ -100,8 +100,14 @@ def consolidate():
     all_questions = []
     seen_stems = set()
     
+    high_priority_sources = [
+        'MCQ Bank/enriched_sharp_all.json',
+        'MCQ Bank/enriched_sharp_batch.json',
+        'js/questions_enriched_test.js'
+    ]
+
     # Files to process
-    js_files = [f for f in os.listdir(questions_dir) if f.endswith('.js') and f != 'canonical_questions.js']
+    js_files = [f for f in os.listdir(questions_dir) if f.endswith('.js') and f != 'canonical_questions.js' and f != 'questions_enriched_test.js']
     
     additional_sources = [
         'MCQ Bank/canonical_questions_final.json',
@@ -112,19 +118,22 @@ def consolidate():
         'js/new_questions_bulk.json',
         'MCQ Bank/parsed_txt_questions.json',
         'MCQ Bank/ai_transformed_questions_BACKUP.json',
-        'js/questions_enriched_test.js',
         'archive/root_junk/transformed_questions.json',
         'archive/root_junk/questions.json',
         'MCQ Bank/docx_extracted_questions_incremental.json',
-        'MCQ Bank/enriched_sharp_all.json',
-        'MCQ Bank/enriched_sharp_batch.json',
         'js/balanced_draft.json',
         'js/urology_qs.js',
         'js/urology_qs_2.js',
         'js/preview_data.js'
     ]
     
-    print(f"Analyzing {len(js_files)} JS files and {len(additional_sources)} JSON sources...")
+    print(f"Analyzing {len(high_priority_sources)} high priority, {len(js_files)} JS files and {len(additional_sources)} JSON sources...")
+
+    # Process high priority sources
+    for path in high_priority_sources:
+        if os.path.exists(path):
+            filename = os.path.basename(path)
+            process_file(path, filename, seen_stems, all_questions)
 
     # Process JS files
     for filename in js_files:

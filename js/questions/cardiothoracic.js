@@ -746,4 +746,40 @@ window.QUESTIONS.push(...[
     "_src_file": "cardiothoracic.js"
   }
 ]
+,
+{
+  "id": 705,
+  "specialty": "Cardiothoracic",
+  "topic": "Oncology MCQ.docx",
+  "question": "A 38-year-old man presents with a melanoma on the skin of the right calf measuring 5 mm. in thickness. Several large nodes are palpable in the right inguinal region. Which of the following statements about the appropriate management of this clinical problem is false?",
+  "options": {
+    "A": "In the absence of systemic disease, the primary melanoma of the right calf should be excised with at least a 2-cm. margin.",
+    "B": "Complete right inguinal node dissection should be performed if there is no evidence of systemic metastasis.",
+    "C": "If further work-up reveals multiple lung metastases of melanoma, they should be excised as soon as possible.",
+    "D": "Chemotherapy for melanoma is primarily palliative; so surgical therapy is preferred if there is no evidence of metastatic disease beyond the inguinal region.",
+    "E": "If the nodes do not contain metastatic disease but are simply reactive, the chance of 5-year survival is 50% or less."
+  },
+  "answer": "C",
+  "explanation": {
+    "correct": "If further work-up reveals multiple lung metastases of melanoma, they should be excised as soon as possible.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Oncology MCQ.docx",
+    "H_highlight_excellence": "If further work-up reveals multiple lung metastases of melanoma, they should be excised as soon as possible.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "Source: Oncology MCQ.docx",
+    "P_plan_for_improvement": "Key Concept: DISCUSSION: This patient should be evaluated with computed tomography in addition to a careful"
+  },
+  "supplementary_callouts": {
+    "guideline": "Source: Oncology MCQ.docx",
+    "takeaway": "Key Concept: DISCUSSION: This patient should be evaluated with computed tomography in addition to a careful histo...",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
 ]);

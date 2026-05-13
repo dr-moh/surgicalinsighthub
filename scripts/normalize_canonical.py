@@ -25,8 +25,17 @@ def normalize_sharp(q):
     """Convert sharp_metadata or partial sharp to full sharp object."""
     sharp = q.get('sharp')
     meta  = q.get('sharp_metadata')
+    debrief = q.get('sharp_debrief')
 
-    if meta and isinstance(meta, dict) and (not sharp or not isinstance(sharp, dict)):
+    if debrief and isinstance(debrief, dict) and (not sharp or not isinstance(sharp, dict)):
+        sharp = {
+            'set_the_stage':        debrief.get('S_set_the_stage', ''),
+            'highlight_excellence': debrief.get('H_highlight_excellence', ''),
+            'address_gaps':         debrief.get('A_address_the_gaps', debrief.get('A_address_gaps', '')),
+            'review_learning_points': debrief.get('R_review_learning_points', ''),
+            'plan':                 debrief.get('P_plan_for_improvement', debrief.get('plan', '')),
+        }
+    elif meta and isinstance(meta, dict) and (not sharp or not isinstance(sharp, dict)):
         # Convert sharp_metadata {S,H,A,R,P} → sharp object
         sharp = {
             'set_the_stage':        meta.get('S', ''),
@@ -50,10 +59,10 @@ def normalize_sharp(q):
     # Ensure all required fields exist and are non-empty strings
     defaults = {
         'set_the_stage':          q.get('question', '')[:120],
-        'highlight_excellence':   '',
-        'address_gaps':           '',
-        'review_learning_points': '',
-        'plan':                   '',
+        'highlight_excellence':   'Pending enrichment',
+        'address_gaps':           'Pending enrichment',
+        'review_learning_points': 'Pending enrichment',
+        'plan':                   'Pending enrichment',
     }
     for field, default in defaults.items():
         if not sharp.get(field) or not str(sharp[field]).strip():

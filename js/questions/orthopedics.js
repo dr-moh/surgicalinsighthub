@@ -4826,4 +4826,111 @@ window.QUESTIONS.push(...[
     "_src_file": "orthopedics.js"
   }
 ]
+,
+{
+  "id": 987,
+  "specialty": "Orthopedic",
+  "topic": "good ortho mcq exam_2 conv.docx",
+  "question": "Concerning Ollier's disease, which of the following statements is incorrect:",
+  "options": {
+    "A": "There is a strong hereditary predisposition",
+    "B": "Multiple enchondromata occur in small long bones of hands and feet",
+    "C": "The affected bones are stunted",
+    "D": "Deformities may arise from unequal affection of metaphyses",
+    "E": "Chonrosarcoma may develop in one of the enchonromata"
+  },
+  "answer": "D",
+  "explanation": {
+    "correct": "Deformities may arise from unequal affection of metaphyses",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "good ortho mcq exam_2 conv.docx",
+    "H_highlight_excellence": "Deformities may arise from unequal affection of metaphyses",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "Source: good ortho mcq exam_2 conv.docx",
+    "P_plan_for_improvement": "Key Concept: Detailed concept reviewed in standard orthopedic textbooks."
+  },
+  "supplementary_callouts": {
+    "guideline": "Source: good ortho mcq exam_2 conv.docx",
+    "takeaway": "Key Concept: Detailed concept reviewed in standard orthopedic textbooks.",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 986,
+  "specialty": "Orthopedic",
+  "topic": "good ortho mcq exam_2 conv.docx",
+  "question": "Osteogenesis imperfecta is characterized by the following features except:",
+  "options": {
+    "A": "Blue sclerae",
+    "B": "Brittle shell-like bones",
+    "C": "Multiple fractures",
+    "D": "Osteoporosis"
+  },
+  "answer": "E",
+  "explanation": {
+    "correct": "Osteogenesis imperfecta is characterized by the following features except:",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "good ortho mcq exam_2 conv.docx",
+    "H_highlight_excellence": "Osteogenesis imperfecta is characterized by the following features except:",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "Source: good ortho mcq exam_2 conv.docx",
+    "P_plan_for_improvement": "Key Concept: Detailed concept reviewed in standard orthopedic textbooks."
+  },
+  "supplementary_callouts": {
+    "guideline": "Source: good ortho mcq exam_2 conv.docx",
+    "takeaway": "Key Concept: Detailed concept reviewed in standard orthopedic textbooks.",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 929,
+  "specialty": "Orthopedic",
+  "topic": "good ortho mcq exam_2 conv.docx",
+  "question": "What is not True of acute pyogenic osteomyelitis:",
+  "options": {
+    "A": "Trauma is a predisposing factor.",
+    "B": "Common infecting agent is Staph. Aureus.",
+    "C": "Infection is usually blood born",
+    "E": "",
+    "D": "All are tru"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Trauma is a predisposing factor.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "good ortho mcq exam_2 conv.docx",
+    "H_highlight_excellence": "Trauma is a predisposing factor.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "Source: good ortho mcq exam_2 conv.docx",
+    "P_plan_for_improvement": "Key Concept: Detailed concept reviewed in standard orthopedic textbooks."
+  },
+  "supplementary_callouts": {
+    "guideline": "Source: good ortho mcq exam_2 conv.docx",
+    "takeaway": "Key Concept: Detailed concept reviewed in standard orthopedic textbooks.",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
 ]);
