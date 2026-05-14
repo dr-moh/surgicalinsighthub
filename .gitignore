@@ -22,6 +22,14 @@ MCQ Bank/
 # Environment variables
 .env
 .env.local
+*.env.txt
+keys.txt
+
+# Large JSON/logs
+MCQ_extracted.json
+remaining_questions.json
+enrichment_progress.log
+*.log
 
 # IDE files
 .vscode/

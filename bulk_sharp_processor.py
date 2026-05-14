@@ -1,7 +1,7 @@
 import json
 import os
 import time
-import requests
+# import requests (removed)
 import re
 import random
 import threading
@@ -121,6 +121,9 @@ def build_fallback_sharp(question_obj, answer_letter):
     }
 
 def get_sharp_debrief(question_obj):
+    import urllib.request
+    import urllib.error
+
     prompt = f"""
         Return valid JSON only. No markdown. No reasoning.
         If the question is invalid, return exactly {{"status": "REJECT"}}.
@@ -154,9 +157,11 @@ def get_sharp_debrief(question_obj):
     for model in MODELS:
         try:
             payload = {"model": model, "messages": [{"role": "user", "content": prompt}], "temperature": 0.1, "max_tokens": 160}
-            response = requests.post("https://openrouter.ai/api/v1/chat/completions", headers=headers, json=payload, timeout=45)
-            if response.status_code == 200:
-                content = response.json()['choices'][0]['message']['content']
+            req = urllib.request.Request("https://openrouter.ai/api/v1/chat/completions", data=json.dumps(payload).encode('utf-8'), headers=headers, method='POST')
+            
+            with urllib.request.urlopen(req, timeout=45) as response:
+                res_data = json.loads(response.read().decode('utf-8'))
+                content = res_data['choices'][0]['message']['content']
                 match = re.search(r'\{.*\}', content, re.DOTALL)
                 if match:
                     try:
@@ -165,11 +170,11 @@ def get_sharp_debrief(question_obj):
                         recovered = recover_partial_sharp_payload(content)
                         if recovered:
                             return recovered
-            else:
-                print(f"     [API Error {response.status_code} with {model}]: {response.text}")
-                if response.status_code == 429:
-                    time.sleep(5) # Slow down slightly if rate limited
             time.sleep(1) 
+        except urllib.error.HTTPError as e:
+            if e.code == 429:
+                time.sleep(5)
+            print(f"     [API Error {e.code} with {model}]: {e.read().decode('utf-8')}")
         except Exception as e:
             print(f"     [Exception with {model}]: {e}")
             continue
@@ -177,14 +182,12 @@ def get_sharp_debrief(question_obj):
     # --- Local Failover ---
     print(f"     [OpenRouter limits hit]. Failing over to local model: {LOCAL_MODEL}...")
     try:
-        # We reuse the same OpenAI-compatible payload format for Ollama/vLLM/LocalAI
         payload = {"model": LOCAL_MODEL, "messages": [{"role": "user", "content": prompt}], "temperature": 0.1, "max_tokens": 160}
+        req = urllib.request.Request(LOCAL_API_URL, data=json.dumps(payload).encode('utf-8'), headers={"Content-Type": "application/json"}, method='POST')
         
-        # Local instances might be slower, so we use a higher timeout (120s)
-        response = requests.post(LOCAL_API_URL, json=payload, timeout=120)
-        
-        if response.status_code == 200:
-            content = response.json()['choices'][0]['message']['content']
+        with urllib.request.urlopen(req, timeout=120) as response:
+            res_data = json.loads(response.read().decode('utf-8'))
+            content = res_data['choices'][0]['message']['content']
             match = re.search(r'\{.*\}', content, re.DOTALL)
             if match:
                 try:
@@ -194,8 +197,8 @@ def get_sharp_debrief(question_obj):
                     if recovered:
                         return recovered
                     return None
-        else:
-            print(f"     [Local API Error {response.status_code}]: {response.text}")
+    except urllib.error.HTTPError as e:
+        print(f"     [Local API Error {e.code}]: {e.read().decode('utf-8')}")
     except Exception as e:
         print(f"     [Local API Exception]: {e} (Is the Docker container running?)")
 

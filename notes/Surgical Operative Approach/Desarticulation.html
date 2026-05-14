@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Surgical Insight Hub — Disarticulation Monograph</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/theme.css">
+<link rel="stylesheet" href="../../css/shared.css">
+<script>
+  const savedTheme = localStorage.getItem('sih-theme') || 'light';
+  if (savedTheme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+</script>
+<style>
+:root {
+  /* Cobalt Blue & Sunset Orange Aesthetic */
+  --primary:   #1E3A8A; 
+  --primary-dk:#172554;
+  --primary-lt:#EFF6FF;
+  --accent:    #1D4ED8;
+  --accent2:   #EA580C;
+  --gold:      #D97706;
+  --gold-lt:   #FFEDD5;
+  --s1:        #1E3A8A;
+  --s2:        #EA580C;
+  --s3:        #172554;
+  --s4:        #1D4ED8;
+  --s5:        #C2410C;
+  --s1-lt:     #EFF6FF;
+  --s2-lt:     #FFF7ED;
+  --s3-lt:     #EFF6FF;
+  --s4-lt:     #DBEAFE;
+  --s5-lt:     #FFF7ED;
+  --red:       #DC2626;
+  --red-lt:    #FEF2F2;
+  --amber:     #D97706;
+  --amber-lt:  #FFFBEB;
+  --blue:      #2563EB;
+  --blue-lt:   #EFF6FF;
+  --bg:        #FAFAFA;
+  --bg2:       #F4F4F5;
+  --border:    #E5E7EB;
+  --text:      #111827;
+  --muted:     #6B7280;
+  --white:     #FFFFFF;
+  --sidebar-w: 320px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.75;}
+
+/* SLIDE-OVER SIDEBAR */
+#sidebar {
+  position: fixed; top: 0; left: 0; width: var(--sidebar-w); height: 100vh;
+  background: var(--primary-dk); color: #EFF6FF;
+  display: flex; flex-direction: column;
+  z-index: 1000; overflow: hidden;
+  transform: translateX(-100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 4px 0 24px rgba(0,0,0,0.4);
+}
+body.sidebar-open #sidebar {
+  transform: translateX(0);
+}
+
+/* OVERLAY */
+#sidebar-overlay {
+  position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+  background: rgba(23, 37, 84, 0.7); backdrop-filter: blur(3px);
+  z-index: 950; opacity: 0; pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+body.sidebar-open #sidebar-overlay {
+  opacity: 1; pointer-events: auto;
+}
+
+/* TOGGLE BUTTON - TOP LEFT */
+#sidebar-toggle {
+  position: fixed; top: 24px; left: 28px; z-index: 900;
+  background: var(--primary); color: white;
+  border: none; border-radius: 30px;
+  padding: 10px 18px; font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600;
+  letter-spacing: 0.05em; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  display: flex; align-items: center; gap: 8px; transition: all 0.2s;
+}
+#sidebar-toggle:hover {
+  background: var(--accent2); transform: translateY(-2px);
+}
+
+#sidebar-header{padding:20px 20px 14px;border-bottom:1px solid rgba(255,255,255,0.08);flex-shrink:0;}
+#sidebar-header .logo{font-family:'Playfair Display',serif;font-size:13px;font-weight:700;color:var(--accent2);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;}
+#sidebar-header .sub{font-size:10.5px;color:rgba(239,246,255,0.6);letter-spacing:0.04em;}
+#sidebar-search{padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.05);flex-shrink:0;}
+#sidebar-search input{width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:6px;color:#EFF6FF;padding:6px 10px;font-size:12px;font-family:'Source Serif 4',serif;outline:none;transition:border-color 0.2s;}
+#sidebar-search input::placeholder{color:rgba(239,246,255,0.4);}
+#sidebar-search input:focus{border-color:var(--accent2);}
+#sidebar-nav{flex:1;overflow-y:auto;padding:8px 0 20px;}
+#sidebar-nav::-webkit-scrollbar{width:4px;}
+#sidebar-nav::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.15);border-radius:2px;}
+.vol-label{font-size:9.5px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent2);padding:14px 18px 4px;}
+.nav-item{display:block;padding:8px 18px 8px 22px;font-size:12.5px;color:rgba(239,246,255,0.8);text-decoration:none;border-left:2px solid transparent;transition:all 0.15s;line-height:1.4;}
+.nav-item:hover{color:#fff;background:rgba(255,255,255,0.03);border-left-color:rgba(234,88,12,0.5);}
+.nav-item.active{color:#fff;background:rgba(255,255,255,0.06);border-left-color:var(--accent2);font-weight:600;}
+.nav-item .num{font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(239,246,255,0.4);margin-right:6px;}
+
+/* MAIN */
+#main{margin-left:0; min-height:100vh;}
+
+/* HERO */
+#hero{background:linear-gradient(135deg,var(--primary-dk) 0%,#1E3A8A 60%,#172554 100%);color:white;padding:90px 72px 60px;position:relative;overflow:hidden;}
+#hero::before{content:'';position:absolute;top:-60px;right:-60px;width:380px;height:380px;background:radial-gradient(circle,rgba(234,88,12,0.15) 0%,transparent 70%);pointer-events:none;}
+#hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent2),var(--gold),transparent);}
+#hero .eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.16em;color:var(--accent2);text-transform:uppercase;margin-bottom:14px;}
+#hero h1{font-family:'Playfair Display',serif;font-size:46px;font-weight:700;line-height:1.15;margin-bottom:10px;color:#fff;}
+#hero .subtitle{font-size:18px;color:rgba(255,255,255,0.8);font-style:italic;margin-bottom:28px;}
+#hero .badges{display:flex;gap:10px;flex-wrap:wrap;}
+#hero .badge{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:4px 14px;font-size:12px;color:rgba(255,255,255,0.95);font-family:'JetBrains Mono',monospace;}
+
+/* CONTENT */
+.content-wrap{max-width:900px;margin:0 auto;padding:0 48px 80px;}
+
+/* SECTION HEADER */
+.sec-header{margin-top:60px;margin-bottom:8px;padding:28px 36px;border-radius:10px;display:flex;align-items:center;gap:20px;}
+.sec-header.s1{background:linear-gradient(135deg,#1E3A8A0A,#1E3A8A1A);border-left:4px solid var(--s1);}
+.sec-header.s2{background:linear-gradient(135deg,#EA580C0A,#EA580C1A);border-left:4px solid var(--s2);}
+.sec-header.s3{background:linear-gradient(135deg,#1725540A,#1725541A);border-left:4px solid var(--s3);}
+.sec-header.s4{background:linear-gradient(135deg,#1D4ED80A,#1D4ED81A);border-left:4px solid var(--s4);}
+.sec-header.s5{background:linear-gradient(135deg,#C2410C0A,#C2410C1A);border-left:4px solid var(--s5);}
+.sec-badge{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;letter-spacing:0.1em;padding:4px 12px;border-radius:4px;white-space:nowrap;flex-shrink:0;}
+.s1 .sec-badge{background:var(--s1);color:white;}
+.s2 .sec-badge{background:var(--s2);color:white;}
+.s3 .sec-badge{background:var(--s3);color:white;}
+.s4 .sec-badge{background:var(--s4);color:white;}
+.s5 .sec-badge{background:var(--s5);color:white;}
+.sec-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;}
+.s1 .sec-title{color:var(--s1);}
+.s2 .sec-title{color:var(--s2);}
+.s3 .sec-title{color:var(--s3);}
+.s4 .sec-title{color:var(--s4);}
+.s5 .sec-title{color:var(--s5);}
+
+/* TOPIC */
+.topic{margin-top:48px;padding-top:48px;border-top:1px solid var(--border);}
+.topic:first-of-type{border-top:none;}
+.topic-header{display:flex;align-items:flex-start;gap:16px;margin-bottom:24px;}
+.topic-num{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;padding:3px 10px;border-radius:4px;margin-top:4px;flex-shrink:0;}
+.s1 .topic-num{background:var(--s1-lt);color:var(--s1);}
+.s2 .topic-num{background:var(--s2-lt);color:var(--s2);}
+.s3 .topic-num{background:var(--s3-lt);color:var(--s3);}
+.s4 .topic-num{background:var(--s4-lt);color:var(--s4);}
+.s5 .topic-num{background:var(--s5-lt);color:var(--s5);}
+.topic h2{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;line-height:1.2;}
+.s1 .topic h2{color:var(--s1);}
+.s2 .topic h2{color:var(--s2);}
+.s3 .topic h2{color:var(--s3);}
+.s4 .topic h2{color:var(--s4);}
+.s5 .topic h2{color:var(--s5);}
+.topic h3{font-family:'Playfair Display',serif;font-size:17px;font-weight:600;color:var(--muted);margin:26px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--border);}
+.topic p{margin-bottom:12px;color:var(--text);}
+.topic ul,.topic ol{margin:8px 0 14px 20px;color:var(--text);}
+.topic li{margin-bottom:6px;line-height:1.65;}
+.topic li::marker{color:var(--accent2);}
+.topic strong{color:var(--text);font-weight:600;}
+
+/* TABLES */
+.table-wrap{overflow-x:auto;margin:16px 0 20px;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.04);}
+table{width:100%;border-collapse:collapse;font-size:13.5px;background:white;}
+thead tr{background:var(--s1);}
+thead th{color:white;padding:10px 14px;text-align:left;font-family:'Source Serif 4',serif;font-weight:600;font-size:13px; text-transform: uppercase;}
+tbody tr:nth-child(even){background:var(--bg2);}
+tbody tr:hover{background:var(--s1-lt);transition:background 0.15s;}
+tbody td{padding:9px 14px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.5;}
+.s2-tbl thead tr{background:var(--s2);}
+.s3-tbl thead tr{background:var(--s3);}
+.s4-tbl thead tr{background:var(--s4);}
+.s5-tbl thead tr{background:var(--s5);}
+
+/* CALLOUTS */
+.callout{margin:18px 0;padding:14px 18px;border-radius:0 8px 8px 0;border-left:4px solid;font-size:14px;line-height:1.65;}
+.callout .label{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;display:block;margin-bottom:4px;}
+.callout.pearl{background:var(--amber-lt);border-color:var(--amber);}
+.callout.pearl .label{color:var(--amber);}
+.callout.warn{background:var(--red-lt);border-color:var(--red);}
+.callout.warn .label{color:var(--red);}
+.callout.clin{background:var(--s1-lt);border-color:var(--s1);}
+.callout.clin .label{color:var(--s1);}
+
+/* DIAGRAM PLACEHOLDERS */
+.diagram-wrap{background:white;border:1px solid var(--border);border-radius:8px;padding:18px;margin:20px 0;box-shadow:0 1px 4px rgba(0,0,0,0.03);text-align:center;}
+.diagram-title{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--s1);margin-bottom:12px;text-align:left;}
+.diagram-wrap img { max-width: 100%; height: auto; border-radius: 4px; display: block; margin: 0 auto; }
+
+/* RAPID REFERENCE */
+.rapid-ref{background:var(--primary-dk);color:var(--primary-lt);border-radius:10px;padding:28px 32px;margin:30px 0;}
+.rapid-ref h3{font-family:'Playfair Display',serif;font-size:20px;color:var(--accent2);margin-bottom:16px;}
+.rapid-ref table{font-size:12.5px; background: transparent;} 
+.rapid-ref thead tr{background:rgba(234,88,12,0.15);}
+.rapid-ref thead th{color:var(--accent2);padding:8px 12px;font-size:11px;}
+.rapid-ref tbody tr:nth-child(even){background:rgba(255,255,255,0.03);}
+.rapid-ref tbody tr:hover{background:rgba(255,255,255,0.06);}
+.rapid-ref tbody td{color:var(--primary-lt);padding:7px 12px;border-bottom:1px solid rgba(255,255,255,0.05);}
+.rapid-ref tbody td strong{color:var(--gold);}
+
+/* PROGRESS */
+#progress-bar{position:fixed;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent2),var(--gold));transform-origin:left;transform:scaleX(0);transition:transform 0.1s;z-index:50;}
+
+/* TOP BTN */
+#top-btn{position:fixed;bottom:28px;right:28px;background:var(--primary);color:white;border:none;border-radius:50%;width:44px;height:44px;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,0.2);transition:all 0.2s;opacity:0;pointer-events:none;}
+#top-btn.show{opacity:1;pointer-events:auto;}
+#top-btn:hover{background:var(--accent2);transform:translateY(-2px);}
+
+/* ANIMATION */
+.topic{animation:fadeUp 0.4s ease both;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
+
+@media(max-width:900px){
+  .content-wrap{padding:0 20px 60px;}
+  #hero{padding:72px 20px 40px;}
+  #hero h1{font-size:30px;}
+}
+@media print{
+  #sidebar-toggle, #sidebar-overlay, #sidebar, #top-btn, #progress-bar{display:none!important;}
+  .topic{page-break-inside:avoid;}
+  .sec-header{page-break-before:always;}
+}
+</style>
+</head>
+<body>
+<nav class="nav" id="mainNav">
+  <div class="nav-left">
+    <a href="../../index.html" class="nav-pill">
+      <div class="nav-logo-img">
+        <img src="../../assets/images/Surgical_Insight_Hub_Logo.png" alt="SIH">
+      </div>
+      <div>
+        <div class="nav-brand-text">Surgical Insight Hub</div>
+        <div class="nav-brand-sub">Medical Library</div>
+      </div>
+    </a>
+    <div class="nav-links-pill">
+      <a href="../../index.html">Home</a>
+      <a href="../../notes.html">Notes</a>
+      <a href="../operative_approach.html" class="active">Playbook</a>
+      <a href="../../podcast.html">Podcast</a>
+      <a href="../../about.html">About</a>
+    </div>
+  </div>
+
+  <div class="nav-right">
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+      <svg id="moonIcon" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/></svg>
+      <svg id="sunIcon" style="display:none;" viewBox="0 0 24 24"><path d="M12 7a5 5 0 1 0 5 5 5.006 5.006 0 0 0-5-5zm0 8a3 3 0 1 1 3-3 3.003 3.003 0 0 1-3 3zm0-13a1 1 0 0 0-1 1v2a1 1 0 0 0 2 0V3a1 1 0 0 0-1-1zm0 18a1 1 0 0 0-1 1v2a1 1 0 0 0 2 0v-2a1 1 0 0 0-1-1zm8-11h-2a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2zm-16 0H2a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2zm13.657-5.657a1 1 0 0 0-1.414 0l-1.414 1.414a1 1 0 0 0 1.414 1.414l1.414-1.414a1 1 0 0 0 0-1.414zm-11.314 0a1 1 0 0 0 0 1.414l1.414 1.414a1 1 0 0 0 1.414-1.414L4.929 5.757a1 1 0 0 0-1.414 0zm11.314 11.314a1 1 0 0 0 0 1.414l1.414 1.414a1 1 0 0 0 1.414-1.414l-1.414-1.414a1 1 0 0 0-1.414 0zm-11.314 0a1 1 0 0 0-1.414 1.414l1.414 1.414a1 1 0 0 0 1.414-1.414l-1.414-1.414a1 1 0 0 0 0-1.414z"/></svg>
+    </button>
+    <a href="../../arena.html" class="nav-btn arena-btn">MCQ Arena</a>
+    <button class="mob-nav-toggle" onclick="openMobNav()">
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </button>
+  </div>
+</nav>
+
+<div class="mob-nav-overlay" id="mobNavOverlay" onclick="closeMobNav()"></div>
+<div class="mob-nav-sheet" id="mobNavSheet">
+  <div class="mob-nav-handle"></div>
+  <a href="../../index.html" onclick="closeMobNav()">Home</a>
+  <a href="../../notes.html" onclick="closeMobNav()">Notes</a>
+  <a href="../operative_approach.html" class="active" onclick="closeMobNav()">Playbook</a>
+  <a href="../../arena.html" onclick="closeMobNav()">MCQ Arena</a>
+  <a href="../../podcast.html" onclick="closeMobNav()">Podcast</a>
+  <a href="../../about.html" onclick="closeMobNav()">About</a>
+</div>
+
+<div id="progress-bar"></div>
+
+<div id="sidebar-overlay" onclick="closeSidebar()"></div>
+
+<button id="sidebar-toggle" onclick="toggleSidebar()">
+  <span>☰</span> Contents
+</button>
+
+<!-- SIDEBAR -->
+<nav id="sidebar">
+  <div id="sidebar-header">
+    <div class="logo">Surgical Insight Hub</div>
+    <div class="sub">Disarticulation Monograph</div>
+  </div>
+  <div id="sidebar-search">
+    <input type="text" id="search-input" placeholder="Search topics…" oninput="filterNav(this.value)">
+  </div>
+  <div id="sidebar-nav">
+    <div class="vol-label">Pillar 1: Pre-Op Optimization</div>
+    <a class="nav-item" href="#p1a"><span class="num">1.1</span>Clinical Workup</a>
+    <a class="nav-item" href="#p1b"><span class="num">1.2</span>Mandatory Investigations</a>
+    <a class="nav-item" href="#p1c"><span class="num">1.3</span>Risk Stratification</a>
+    <a class="nav-item" href="#p1d"><span class="num">1.4</span>Immediate Preparation</a>
+    <div class="vol-label">Pillar 2: The Operative Game Plan</div>
+    <a class="nav-item" href="#p2a"><span class="num">2.1</span>Universal Principles</a>
+    <a class="nav-item" href="#p2b"><span class="num">2.2</span>Hip Disarticulation</a>
+    <a class="nav-item" href="#p2c"><span class="num">2.3</span>Knee Disarticulation</a>
+    <a class="nav-item" href="#p2d"><span class="num">2.4</span>Shoulder Disarticulation</a>
+    <a class="nav-item" href="#p2e"><span class="num">2.5</span>Digit Disarticulation</a>
+    <a class="nav-item" href="#p2f"><span class="num">2.6</span>The Critical View</a>
+    <div class="vol-label">Pillar 3: Pearls &amp; Bail-Outs</div>
+    <a class="nav-item" href="#p3a"><span class="num">3.1</span>Consultant Pearls</a>
+    <a class="nav-item" href="#p3b"><span class="num">3.2</span>The Bail-Out Point</a>
+    <div class="vol-label">Pillar 4: Post-Op Care</div>
+    <a class="nav-item" href="#p4a"><span class="num">4.1</span>Immediate Recovery</a>
+    <a class="nav-item" href="#p4b"><span class="num">4.2</span>Clinic Follow-up</a>
+    <div class="vol-label">Pillar 5: Complications</div>
+    <a class="nav-item" href="#p5a"><span class="num">5.1</span>Stump Haematoma</a>
+    <a class="nav-item" href="#p5b"><span class="num">5.2</span>Stump Dehiscence/Necrosis</a>
+    <a class="nav-item" href="#p5c"><span class="num">5.3</span>Symptomatic Neuroma</a>
+  </div>
+</nav>
+
+<!-- MAIN -->
+<main id="main">
+<section id="hero">
+  <div class="eyebrow">Surgical Insight Hub · Monograph Series · ABSITE · PGY-3 Framework</div>
+  <h1>Disarticulation</h1>
+  <p class="subtitle">Shoulder, Hip, Knee, and Digit Disarticulation</p>
+  <div class="badges">
+    <span class="badge">Amputation Surgery</span>
+    <span class="badge">Vascular & Trauma</span>
+    <span class="badge">Oncological Resection</span>
+  </div>
+</section>
+
+<div class="content-wrap">
+
+<div class="callout warn" style="margin-top: 40px;">
+  <span class="label">Upfront Philosophy</span>
+  Disarticulation is the amputation that most surgeons are least comfortable performing, not because it is technically complex, but because it is performed infrequently, often under emergency conditions, and the anatomical landmarks are unfamiliar compared to more proximal or distal amputations. The principle governing disarticulation is the same as all amputation surgery: the goal is not simply removing the limb. The goal is creating a residual limb that enables the best possible rehabilitation and quality of life for that specific patient, under those specific circumstances. Every decision (the level, the flap design, the timing of closure) serves that goal. A poorly planned disarticulation produces a stump that cannot be fitted with a prosthesis, cannot bear weight, and does not heal. A well-planned disarticulation returns a patient to function.
+</div>
+
+<!-- ══════════════ PILLAR 1 ══════════════ -->
+<div class="sec-header s1">
+  <span class="sec-badge">PILLAR 1</span>
+  <span class="sec-title">Pre-operative Optimization &amp; Preparation</span>
+</div>
+
+<section class="topic s1" id="p1a">
+  <div class="topic-header"><span class="topic-num">1.1</span><h2>Clinical Workup</h2></div>
+  
+  <h3>History: what determines the level and approach</h3>
+  <ul>
+    <li><strong>Indication:</strong> the single most important determinant.
+      <ul>
+        <li><em>Trauma:</em> Mangled extremity, crush injury, blast injury, vascular injury with ischaemia beyond reconstruction, or traumatic amputation requiring formal completion.</li>
+        <li><em>Vascular disease:</em> The most common indication for lower limb amputation globally. The level is determined by viable tissue as defined by clinical assessment and vascular workup.</li>
+        <li><em>Malignancy:</em> Bone sarcoma, soft tissue sarcoma, melanoma with direct bony extension. The oncological margin drives the level; disarticulation may be required to achieve clear margins when tumour involves the joint.</li>
+        <li><em>Infection:</em> Gas gangrene (Clostridial myonecrosis), necrotising fasciitis extending to the limb, chronic osteomyelitis not amenable to limb salvage, septic arthritis destroying a joint.</li>
+        <li><em>Failed limb salvage:</em> A prior reconstruction that has failed and the limb is no longer salvageable.</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3>The Limb Salvage Decision</h3>
+  <p>The MESS score (Mangled Extremity Severity Score) is used in trauma to guide the decision between disarticulation and reconstruction. A MESS ≥7 strongly predicts amputation.</p>
+
+  <div class="table-wrap s1-tbl"><table>
+    <thead><tr><th>Variable</th><th>Score</th></tr></thead>
+    <tbody>
+      <tr><td colspan="2"><strong>Skeletal / Soft Tissue Injury</strong></td></tr>
+      <tr><td>Low energy (stab, simple fracture)</td><td>1</td></tr>
+      <tr><td>Medium energy (open fracture, dislocation)</td><td>2</td></tr>
+      <tr><td>High energy (close-range shotgun, crush)</td><td>3</td></tr>
+      <tr><td>Very high energy (gross contamination, avulsion)</td><td>4</td></tr>
+      <tr><td colspan="2"><strong>Limb Ischaemia</strong></td></tr>
+      <tr><td>Pulse reduced but perfusion normal</td><td>1 (×2 if &gt;6h)</td></tr>
+      <tr><td>Pulseless, paraesthetic, reduced capillary refill</td><td>2 (×2 if &gt;6h)</td></tr>
+      <tr><td>Cool, paralysed, insensate, numb</td><td>3 (×2 if &gt;6h)</td></tr>
+      <tr><td colspan="2"><strong>Shock</strong></td></tr>
+      <tr><td>Systolic BP always &gt;90mmHg</td><td>0</td></tr>
+      <tr><td>Transient hypotension</td><td>1</td></tr>
+      <tr><td>Persistent hypotension</td><td>2</td></tr>
+      <tr><td colspan="2"><strong>Age</strong></td></tr>
+      <tr><td>&lt;30 years</td><td>0</td></tr>
+      <tr><td>30-50 years</td><td>1</td></tr>
+      <tr><td>&gt;50 years</td><td>2</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="diagram-wrap">
+    <div class="diagram-title">MESS (Mangled Extremity Severity Score) Criteria</div>
+    
+  </div>
+
+  <div class="callout clin">
+    <span class="label">Critical Caveat</span>
+    <p>MESS is a guide, not a mandate. A MESS of 8 in a young patient with an isolated injury may still be a limb salvage candidate at a specialist centre. A MESS of 6 in an elderly patient with multiple comorbidities may not be.</p>
+  </div>
+
+  <h3>Vascular and Oncological Assessment</h3>
+  <ul>
+    <li><strong>Vascular assessment:</strong> Mandatory before elective amputation. Ankle-Brachial Index (ABI) &lt;0.5 = severe ischaemia. Transcutaneous oxygen pressure (TcPO2) &lt;20mmHg = likely failure to heal at that level. Duplex ultrasound defines arterial occlusion.</li>
+    <li><strong>Prior amputation history:</strong> Review previous operative notes. High-level amputations after failed distal amputations involve distorted anatomy and compromised vascularity.</li>
+    <li><strong>Oncological assessment:</strong> Staging CT + MRI of the affected limb is mandatory. The resection must achieve clear margins (R0). Consider the effects of neoadjuvant chemotherapy on tissue healing.</li>
+    <li><strong>Nutritional status:</strong> Albumin &lt;30g/L severely impairs stump healing. Optimise glucose (HbA1c &lt;8%) in diabetics.</li>
+  </ul>
+</section>
+
+<section class="topic s1" id="p1b">
+  <div class="topic-header"><span class="topic-num">1.2</span><h2>Mandatory Pre-operative Investigations</h2></div>
+  <ul>
+    <li><strong>Vascular (Lower Limb):</strong> ABI, Toe pressures, TcPO2 at the planned level, Duplex ultrasound, CT angiography.</li>
+    <li><strong>Imaging:</strong> Plain X-ray of the affected limb, MRI (oncological margin planning, osteomyelitis extent), CT staging for malignancy.</li>
+    <li><strong>Microbiology:</strong> Deep tissue swab or bone biopsy to guide antibiotics. Blood cultures if systemic infection is present. AFB culture if TB is suspected in endemic areas.</li>
+    <li><strong>Laboratory:</strong> CBC, BMP, Coagulation, HbA1c, Albumin. Group and crossmatch (2-4 units for hip/shoulder disarticulation).</li>
+    <li><strong>Cardiopulmonary:</strong> Formal cardiology review for hip/shoulder disarticulation. PFTs for severe COPD.</li>
+  </ul>
+</section>
+
+<section class="topic s1" id="p1c">
+  <div class="topic-header"><span class="topic-num">1.3</span><h2>Risk Stratification</h2></div>
+  <p>The WIfI Classification (Wound, Ischaemia, foot Infection) grades each component 0-3. A high WIfI score predicts amputation within 1 year, guiding the decision between distal revascularisation and proximal amputation.</p>
+
+  <div class="diagram-wrap">
+    <div class="diagram-title">WIfI Classification System</div>
+    
+  </div>
+  
+  <div class="table-wrap s1-tbl"><table>
+    <thead><tr><th>Score / Tool</th><th>Application</th><th>Impact</th></tr></thead>
+    <tbody>
+      <tr><td><strong>MESS Score</strong></td><td>Trauma limb salvage decision</td><td>≥7 = amputation strongly indicated</td></tr>
+      <tr><td><strong>WIfI Classification</strong></td><td>Vascular staging</td><td>Guides revascularisation vs. amputation level</td></tr>
+      <tr><td><strong>ASA Status</strong></td><td>Global perioperative risk</td><td>ASA IV = consider damage control guillotine + planned revision</td></tr>
+      <tr><td><strong>Nutritional Risk</strong></td><td>Healing prediction</td><td>Albumin &lt;30g/L = pre-operative support required</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section class="topic s1" id="p1d">
+  <div class="topic-header"><span class="topic-num">1.4</span><h2>Immediate Pre-operative Preparation</h2></div>
+  <ul>
+    <li><strong>Timing:</strong> Emergency (damage control) for exsanguination, gas gangrene, or necrotising fasciitis requires a guillotine (open) amputation with definitive revision at 48-72 hours. Urgent cases (within 24-48 hours) include limb ischaemia with systemic sepsis. Elective cases are for chronic vascular disease or malignancy.</li>
+    <li><strong>Antibiotic prophylaxis:</strong> Cefazolin 2g IV. If vascular disease + contaminated wound, use Piperacillin-tazobactam 4.5g IV. For gas gangrene, use Penicillin G + Clindamycin (anti-toxin effect is critical). Add Vancomycin for MRSA.</li>
+    <li><strong>DVT Prophylaxis:</strong> Mechanical compression on the contralateral limb. Start LMWH 12 hours pre-op for elective cases, or 24-48 hours post-op for emergency cases. The amputee population has a DVT/PE rate of 5-10%.</li>
+    <li><strong>Tourniquet planning:</strong> Used for distal amputations (digit, knee). NOT used for hip or shoulder disarticulations, as proximal vessels must be controlled under direct vision. Maximum 90 mins for lower limb, 60 mins for upper limb.</li>
+    <li><strong>Consent must-mentions:</strong> Level of amputation (and possibility of moving higher), phantom limb pain (up to 80%), stump complications (infection, neuroma), re-amputation risk, prosthetic fitting realities, and required rehabilitation.</li>
+  </ul>
+</section>
+
+<!-- ══════════════ PILLAR 2 ══════════════ -->
+<div class="sec-header s2">
+  <span class="sec-badge">PILLAR 2</span>
+  <span class="sec-title">The Operative Game Plan</span>
+</div>
+
+<section class="topic s2" id="p2a">
+  <div class="topic-header"><span class="topic-num">2.1</span><h2>Universal Principles for All Disarticulation Levels</h2></div>
+  
+  <h3>Flap Design and Myoplasty</h3>
+  <p>The flap must close without tension. In disarticulation, the broad joint surface requires specific flap geometry. A long posterior flap is standard for below-knee and knee disarticulations. Myoplasty (opposing muscles sutured together) or myodesis (muscles sutured to bone) provides padding, maintains muscle balance, and improves prosthetic function.</p>
+
+  <h3>Nerve Management to Prevent Neuroma</h3>
+  <p>Every named nerve forms a neuroma. The goal is to ensure it forms away from the stump skin and socket pressure points. Identify the nerve, apply gentle traction, and divide it sharply so it retracts into proximal soft tissue. Do not crush or ligate the nerve. Targeted Muscle Reinnervation (TMR) involves implanting the divided nerve into nearby denervated muscle, significantly reducing phantom pain.</p>
+
+  <h3>Vessel Management & Haemostasis</h3>
+  <p>Major vessels require suture ligation (0-Vicryl or 0-PDS) plus a transfixion suture. Do not rely on clips alone. Calcified vessels in vascular disease require mattress sutures. Disarticulation creates significant dead space which must be obliterated or drained with a closed suction drain (JP or Blake).</p>
+
+  <h3>Wound Closure Hierarchy</h3>
+  <p>Primary closure for clean elective cases. Delayed primary closure (DPC) at 48-72 hours for contaminated cases. Open (guillotine) for damage control. Split-thickness skin grafts are rarely used in planned disarticulations.</p>
+</section>
+
+<section class="topic s2" id="p2b">
+  <div class="topic-header"><span class="topic-num">2.2</span><h2>PROCEDURE A: Hip Disarticulation</h2></div>
+  <p>Indicated for proximal femur malignancy, failed transfemoral amputation, severe trauma, or proximal necrotising infections. This is a major operation with 5-15% mortality in vascular patients.</p>
+
+  <div class="diagram-wrap">
+    <div class="diagram-title">Hip Disarticulation Flap Design</div>
+    
+  </div>
+
+  <ul>
+    <li><strong>Setup:</strong> GA + epidural. Arterial line mandatory. Crossmatch 4 units. Lateral decubitus position (affected side up).</li>
+    <li><strong>Phase 1: Incision:</strong> Anterior flap technique (racquet-shaped). Anterior limb along the inguinal ligament; posterior limb along the iliac crest and gluteal fold. The posterior gluteal flap provides excellent padding over the acetabulum.</li>
+    <li><strong>Phase 2: Anterior Dissection:</strong> Identify the femoral triangle. Ligate the femoral artery and vein separately with transfixion sutures. Divide the femoral nerve cleanly and allow it to retract.</li>
+    <li><strong>Phase 3: Muscle Division:</strong> Divide the quadriceps, sartorius, iliopsoas, and adductors at their pelvic/femoral attachments using cautery.</li>
+    <li><strong>Phase 4: Joint Disarticulation:</strong> Circumferentially incise the hip joint capsule. Divide the ligamentum teres (control the foveal artery with bipolar) to dislocate the femoral head.</li>
+    <li><strong>Phase 5: Posterior Dissection:</strong> Divide the hamstrings. Identify the sciatic nerve. Deliver it gently, divide sharply under tension, and allow it to retract. Preserve the gluteal muscles for the posterior flap.</li>
+    <li><strong>Phase 6: Closure:</strong> Curette the acetabulum. Achieve haemostasis. Place closed suction drains in the dead space. Bring the posterior gluteal flap anteriorly and suture to the anterior pelvic wall.</li>
+  </ul>
+</section>
+
+<section class="topic s2" id="p2c">
+  <div class="topic-header"><span class="topic-num">2.3</span><h2>PROCEDURE B: Knee Disarticulation</h2></div>
+  <p>Provides an end-bearing stump, preserves a long lever arm, and spares the physes in children. Reduces blood loss compared to transfemoral amputations.</p>
+
+  <div class="diagram-wrap">
+    <div class="diagram-title">Knee Disarticulation Technique</div>
+    
+  </div>
+
+  <ul>
+    <li><strong>Setup:</strong> Supine. Tourniquet applied to proximal thigh if vascularity allows.</li>
+    <li><strong>Phase 1: Incision:</strong> Long posterior flap technique. Anterior transverse incision at the tibial tubercle. Posterior transverse incision at the flexion crease. The posterior flap includes the gastrocnemius for vascularised coverage.</li>
+    <li><strong>Phase 2: Anterior Dissection:</strong> Divide the patellar tendon at the tibial tuberosity. Open the knee joint capsule anteriorly.</li>
+    <li><strong>Phase 3: Vessel and Nerve Control:</strong> Ligate and divide the popliteal artery and vein separately. Sharply divide the tibial and common peroneal nerves under traction in the popliteal fossa.</li>
+    <li><strong>Phase 4: Joint Disarticulation:</strong> Divide the cruciate ligaments, collateral ligaments, and posterior capsule to free the leg.</li>
+    <li><strong>Phase 5: Stump Preparation:</strong> Smooth sharp edges on the femoral condyles. The patella can be removed or retained for myodesis to provide anterior padding.</li>
+    <li><strong>Phase 6: Closure:</strong> Bring the posterior gastrocnemius flap anteriorly and suture to the patellar tendon/quadriceps. Place a suction drain. Ensure the stump is cylindrical.</li>
+  </ul>
+</section>
+
+<section class="topic s2" id="p2d">
+  <div class="topic-header"><span class="topic-num">2.4</span><h2>PROCEDURE C: Shoulder Disarticulation</h2></div>
+  <p>Indicated for proximal humerus malignancy, severe trauma, or failed forequarter stumps. Differs from forequarter amputation, which removes the entire shoulder girdle (scapula/clavicle).</p>
+
+  <div class="diagram-wrap">
+    <div class="diagram-title">Shoulder Disarticulation Anatomy</div>
+    
+  </div>
+
+  <ul>
+    <li><strong>Setup:</strong> Semi-lateral ("deck chair") position with the affected side elevated 45°. GA + regional block.</li>
+    <li><strong>Phase 1: Incision:</strong> Racquet-shaped incision from the coracoid process, down the deltopectoral groove, across the axilla, and posteriorly along the acromion. The posterior flap is based on the well-vascularised deltoid muscle.</li>
+    <li><strong>Phase 2: Anterior Dissection:</strong> Develop the deltopectoral groove. Divide the pectoralis major. Ligate the axillary artery and vein separately. Identify the brachial plexus cords and divide each sharply under gentle traction.</li>
+    <li><strong>Phase 3: Rotator Cuff Division:</strong> Divide the supraspinatus, infraspinatus, teres minor, and subscapularis tendons from the humeral head.</li>
+    <li><strong>Phase 4: Joint Disarticulation:</strong> Fully incise the glenohumeral joint capsule to free the limb.</li>
+    <li><strong>Phase 5: Closure:</strong> Smooth prominent bony projections on the acromion. Bring the deltoid posteriorly to cover the glenoid cavity. Place a closed suction drain in the dead space.</li>
+  </ul>
+</section>
+
+<section class="topic s2" id="p2e">
+  <div class="topic-header"><span class="topic-num">2.5</span><h2>PROCEDURE D: Digit Disarticulation</h2></div>
+  <p>The goal is preserving functional length. For the thumb, every millimetre counts. For the index finger, a ray amputation (removing the metacarpal head) often provides better function and cosmesis than a short, problematic stump.</p>
+
+  <ul>
+    <li><strong>Setup:</strong> Digital block (no adrenaline) for distal joints. Penrose drain tourniquet at the base of the digit for a bloodless field.</li>
+    <li><strong>Phase 1: Incision:</strong> Plantar/palmar flap technique. The tough plantar skin provides better weight-bearing coverage for the metatarsal/metacarpal head.</li>
+    <li><strong>Phase 2: Joint Disarticulation:</strong> Incise the dorsal skin and extensor tendons. Open the joint capsule circumferentially. Divide the collateral ligaments and plantar plate.</li>
+    <li><strong>Phase 3: Dissection:</strong> Divide the flexor tendons. Ligate digital vessels with 3-0 Vicryl. Sharply divide the digital nerves.</li>
+    <li><strong>Phase 4: Closure:</strong> Smooth the metatarsal head (do not resect entirely for lesser toes to prevent transfer metatarsalgia). Bring the plantar flap over the bone and close with interrupted non-absorbable sutures.</li>
+  </ul>
+</section>
+
+<section class="topic s2" id="p2f">
+  <div class="topic-header"><span class="topic-num">2.6</span><h2>The Critical View in Disarticulation</h2></div>
+  <p>Non-negotiable confirmations before closure at every level:</p>
+  <ul>
+    <li>The joint is fully disarticulated with no residual bony attachment.</li>
+    <li>All named vessels are ligated with transfixion sutures (not clips alone).</li>
+    <li>All major nerves are divided sharply under traction and verified to have retracted.</li>
+    <li>The tourniquet is released, and haemostasis is confirmed before closure.</li>
+    <li>No dead space remains (obliterated by myoplasty or adequately drained).</li>
+    <li>The flap closes completely without tension.</li>
+  </ul>
+</section>
+
+<!-- ══════════════ PILLAR 3 ══════════════ -->
+<div class="sec-header s3">
+  <span class="sec-badge">PILLAR 3</span>
+  <span class="sec-title">Technical Pearls &amp; Bail-Out Strategies</span>
+</div>
+
+<section class="topic s3" id="p3a">
+  <div class="topic-header"><span class="topic-num">3.1</span><h2>Consultant Pearls</h2></div>
+  
+  <div class="callout pearl">
+    <span class="label">Consultant Pearl #1: The Level Is the Most Important Decision</span>
+    The single most common cause of amputation failure is operating at the wrong level. The decision must be based on objective perfusion data (TcPO2, ABI), not on the appearance of the skin alone. A dusky calf with a TcPO2 of 45mmHg will heal. Make the level decision before theatre, and trust your objective data.
+  </div>
+
+  <div class="callout pearl">
+    <span class="label">Consultant Pearl #2: The Sciatic Nerve Demands Specific Technique</span>
+    In hip disarticulation, crushing or improperly dividing the sciatic nerve results in a painful neuroma hidden in the inaccessible sciatic foramen. Deliver the nerve gently, divide it cleanly under tension with a sharp blade, and let it retract into the pelvis. Ninety seconds of correct technique prevents years of intractable pain.
+  </div>
+
+  <div class="callout pearl">
+    <span class="label">Consultant Pearl #3: Phantom Pain Is Treated Pre-operatively</span>
+    Post-operative pharmaceutical management of phantom pain is difficult. Prevention requires pre-operative planning. Starting an epidural 24-72 hours before amputation and continuing it post-operatively reduces central sensitisation. Targeted Muscle Reinnervation (TMR) is increasingly the standard of care for prevention.
+  </div>
+  
+  <div class="diagram-wrap">
+    <div class="diagram-title">Targeted Muscle Reinnervation (TMR)</div>
+    
+  </div>
+</section>
+
+<section class="topic s3" id="p3b">
+  <div class="topic-header"><span class="topic-num">3.2</span><h2>The Bail-Out Point</h2></div>
+  <p>Stop and escalate when:</p>
+  <ul>
+    <li><strong>Tissue at planned level is not viable:</strong> If skin does not bleed or muscle is blue-grey and non-contractile, revise the level proximally.</li>
+    <li><strong>Uncontrolled haemorrhage from axillary/femoral vessels:</strong> Apply direct finger pressure and call vascular surgery. Do not attempt blind clamping near the brachial plexus or femoral nerve.</li>
+    <li><strong>Unexpected tumour extension:</strong> If the planned disarticulation will not achieve clear margins, do not proceed with an R1 resection. Close, re-stage, and consult oncology.</li>
+    <li><strong>Gas gangrene extends proximally:</strong> Perform a guillotine (damage control) amputation at the highest accessible level immediately, transfer to ICU, and plan definitive closure at 48 hours.</li>
+    <li><strong>Inadequate digit block:</strong> Do not proceed with a moving patient. Re-block or convert to regional/general anaesthesia to ensure precise cuts and haemostasis.</li>
+  </ul>
+</section>
+
+<!-- ══════════════ PILLAR 4 ══════════════ -->
+<div class="sec-header s4">
+  <span class="sec-badge">PILLAR 4</span>
+  <span class="sec-title">Post-operative Care &amp; Longitudinal Follow-up</span>
+</div>
+
+<section class="topic s4" id="p4a">
+  <div class="topic-header"><span class="topic-num">4.1</span><h2>Immediate Post-op (First 24-72 Hours)</h2></div>
+  
+  <ul>
+    <li><strong>Pain Management:</strong> Continue epidural analgesia for 72 hours (hip/shoulder) for stump and phantom pain relief. Use scheduled acetaminophen and NSAIDs. Start Gabapentin/pregabalin immediately to reduce central sensitisation. Minimise opioids. Sub-anaesthetic ketamine infusions can be used in specialist centres.</li>
+    <li><strong>Stump Management:</strong> Apply a figure-of-eight elastic compression bandage immediately to reduce oedema and shape the stump. Reapply every 4-6 hours, ensuring distal circulation is not compromised.</li>
+    <li><strong>Drains:</strong> Monitor output hourly for the first 6 hours. Remove when output is &lt;30ml/24h (typically POD2-3). Bloody output &gt;200ml/hour indicates haemorrhage requiring return to theatre.</li>
+    <li><strong>Wound Inspection:</strong> Check daily from POD1 for haematoma, infection, or skin edge necrosis. Small necrotic areas (&lt;5mm) are managed conservatively; larger areas require debridement.</li>
+    <li><strong>Mobilisation:</strong> Physiotherapy from POD1. Knee disarticulations can bear weight early. Hip disarticulations mobilize with crutches/wheelchair, with prosthetic fitting delayed 4-6 weeks.</li>
+    <li><strong>Phantom Sensation vs. Pain:</strong> Reassure the patient that phantom sensation is normal and non-painful. Phantom pain (burning, cramping) requires active pharmacological management and early mirror box therapy.</li>
+  </ul>
+</section>
+
+<section class="topic s4" id="p4b">
+  <div class="topic-header"><span class="topic-num">4.2</span><h2>Clinic Follow-up</h2></div>
+  <ul>
+    <li><strong>2-week visit:</strong> Inspect the wound and remove sutures/staples. Assess stump shape (conical is ideal, bulbous needs more compression). Evaluate phantom pain trajectory. Refer to prosthetics if the wound is healing. Ensure adequate nutrition.</li>
+    <li><strong>6-week visit:</strong> Assess stump maturity. Initiate prosthetic fitting and gait training. Refer to the pain clinic if phantom pain remains refractory.</li>
+    <li><strong>Long-term surveillance:</strong> In vascular disease patients, 30-40% require contralateral amputation within 3 years. Perform annual ABI checks. Educate patients on daily skin inspection under the prosthesis. Proactively refer to psychology for depression/anxiety support (affects 30-50% in the first year).</li>
+  </ul>
+</section>
+
+<!-- ══════════════ PILLAR 5 ══════════════ -->
+<div class="sec-header s5">
+  <span class="sec-badge">PILLAR 5</span>
+  <span class="sec-title">Complication Management</span>
+</div>
+
+<section class="topic s5" id="p5a">
+  <div class="topic-header"><span class="topic-num">5.1</span><h2>Complication 1: Stump Haematoma</h2></div>
+  <ul>
+    <li><strong>Recognition:</strong> Swelling, fluctuance, increasing pain, or discolouration within 24-72 hours. In major disarticulations, it can cause haemodynamic compromise due to the large dead space volume.</li>
+    <li><strong>Workup:</strong> Measure stump circumference. Monitor drain output. Ultrasound confirms haematoma organization (clot vs. liquid).</li>
+    <li><strong>Correction (Small):</strong> Firm compression bandaging and ice packs. Most reabsorb within 2-3 weeks.</li>
+    <li><strong>Correction (Moderate/Large):</strong> Ultrasound-guided aspiration for liquid. If organized into clot, perform operative evacuation under LA/GA, irrigate, control bleeding, and place a new drain.</li>
+    <li><strong>Correction (Expanding/Unstable):</strong> Resuscitate and return to theatre immediately to secure the bleeding vessel.</li>
+  </ul>
+</section>
+
+<section class="topic s5" id="p5b">
+  <div class="topic-header"><span class="topic-num">5.2</span><h2>Complication 2: Stump Wound Dehiscence and Necrosis</h2></div>
+  <ul>
+    <li><strong>Recognition:</strong> Onset POD5-14. Dark, non-blanching wound edges progressing inward. Wound separation exposing deep tissues. Common in vascular and diabetic patients.</li>
+    <li><strong>Causes:</strong> Inadequate tissue perfusion, flap closure under tension, underlying haematoma, or infection.</li>
+    <li><strong>Correction (Superficial):</strong> Debride necrotic edges, apply antimicrobial dressings, and use Negative Pressure Wound Therapy (NPWT/VAC). Most heal by secondary intention.</li>
+    <li><strong>Correction (Full-thickness):</strong> Formal surgical debridement followed by NPWT. If vascular assessment confirms inadequate perfusion, stump revision to a higher amputation level is mandatory. The principles of the revision operation are identical to the original.</li>
+  </ul>
+</section>
+
+<section class="topic s5" id="p5c">
+  <div class="topic-header"><span class="topic-num">5.3</span><h2>Complication 3: Symptomatic Neuroma</h2></div>
+  <ul>
+    <li><strong>Recognition:</strong> Localized exquisite tenderness reproducible with direct pressure weeks to months post-op. Distinct from phantom pain. Worse with prosthetic wear.</li>
+    <li><strong>Workup:</strong> Tinel's sign (percussion produces radiating electric sensation). Ultrasound confirms the hypoechoic nodule on the nerve end. Diagnostic nerve block with local anaesthetic confirms the source.</li>
+    <li><strong>Correction (Conservative):</strong> Desensitisation therapy, prosthetic socket modification, ultrasound-guided corticosteroid injection, and pharmacological agents (gabapentin, lidocaine patches).</li>
+    <li><strong>Correction (Surgical):</strong> Neuroma excision and nerve translocation (burying the proximal nerve end deep into adjacent muscle). Targeted Muscle Reinnervation (TMR) implants the nerve into a denervated muscle motor point, preventing neuroma formation with an 70-85% success rate.</li>
+  </ul>
+</section>
+
+</div><!-- end content-wrap -->
+</main>
+
+<button id="top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+  // Premium Navigation Logic
+  (function() {
+    const mainNav = document.getElementById('mainNav');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        mainNav?.classList.add('scrolled');
+      } else {
+        mainNav?.classList.remove('scrolled');
+      }
+    });
+
+    window.openMobNav = function() {
+      const sheet = document.getElementById('mobNavSheet');
+      const overlay = document.getElementById('mobNavOverlay');
+      if (overlay) overlay.style.display = 'block';
+      if (sheet) setTimeout(() => sheet.classList.add('open'), 10);
+      document.body.style.overflow = 'hidden';
+    };
+
+    window.closeMobNav = function() {
+      const sheet = document.getElementById('mobNavSheet');
+      const overlay = document.getElementById('mobNavOverlay');
+      if (sheet) sheet.classList.remove('open');
+      setTimeout(() => { if (overlay) overlay.style.display = 'none'; }, 300);
+      document.body.style.overflow = '';
+    };
+
+    // Theme Toggle Logic
+    const themeToggle = document.getElementById('themeToggle');
+    const moonIcon = document.getElementById('moonIcon');
+    const sunIcon = document.getElementById('sunIcon');
+
+    function applyTheme(theme) {
+      if (theme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        if(moonIcon) moonIcon.style.display = 'none';
+        if(sunIcon) sunIcon.style.display = 'block';
+      } else {
+        document.documentElement.removeAttribute('data-theme');
+        if(sunIcon) sunIcon.style.display = 'none';
+        if(moonIcon) moonIcon.style.display = 'block';
+      }
+    }
+
+    const currentTheme = localStorage.getItem('sih-theme') || 'light';
+    applyTheme(currentTheme);
+
+    if(themeToggle) {
+      themeToggle.addEventListener('click', () => {
+        const isDark = document.documentElement.hasAttribute('data-theme');
+        const newTheme = isDark ? 'light' : 'dark';
+        applyTheme(newTheme);
+        localStorage.setItem('sih-theme', newTheme);
+      });
+    }
+  })();
+
+  // Sidebar, Progress Bar, and Scroll-to-Top Logic
+  (function() {
+    const progressBar = document.getElementById('progress-bar');
+    const topBtn = document.getElementById('top-btn');
+    const navItems = document.querySelectorAll('.nav-item');
+    const sections = document.querySelectorAll('.topic[id], .rapid-ref[id]');
+    
+    window.toggleSidebar = function() { document.body.classList.toggle('sidebar-open'); };
+    window.closeSidebar = function() { document.body.classList.remove('sidebar-open'); };
+
+    window.addEventListener('scroll', () => {
+      const st = window.scrollY;
+      const dh = document.documentElement.scrollHeight - window.innerHeight;
+      if (progressBar) progressBar.style.transform = `scaleX(${st / dh})`;
+      if (topBtn) topBtn.classList.toggle('show', st > 400);
+      
+      let current = '';
+      sections.forEach(s => {
+        if (st >= s.offsetTop - 120) current = s.id;
+      });
+      navItems.forEach(n => {
+        n.classList.toggle('active', n.getAttribute('href') === '#' + current);
+      });
+    });
+
+    window.filterNav = function(query) {
+      const q = query.toLowerCase();
+      navItems.forEach(item => {
+        item.style.display = (!q || item.textContent.toLowerCase().includes(q)) ? 'block' : 'none';
+      });
+    };
+
+    navItems.forEach(item => {
+      item.addEventListener('click', e => {
+        e.preventDefault();
+        closeSidebar();
+        const target = document.querySelector(item.getAttribute('href'));
+        if (target) {
+          window.scrollTo({
+            top: target.getBoundingClientRect().top + window.scrollY - 80,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // Topic Animation
+    document.querySelectorAll('.topic').forEach((el, i) => {
+      el.style.animationDelay = `${i * 0.03}s`;
+    });
+  })();
+</script>
+</body>
+</html>

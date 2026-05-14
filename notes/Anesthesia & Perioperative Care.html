@@ -285,12 +285,12 @@ tbody td{padding:9px 14px;border-bottom:1px solid var(--border);vertical-align:t
 <div class="mob-nav-overlay" id="mobNavOverlay" onclick="closeMobNav()"></div>
 <div class="mob-nav-sheet" id="mobNavSheet">
   <div class="mob-nav-handle"></div>
-  <a href="../index.html">Home</a>
-  <a href="../notes.html" class="active">Notes</a>
-  <a href="operative_approach.html">Playbook</a>
-  <a href="../arena.html">MCQ Arena</a>
-  <a href="../podcast.html">Podcast</a>
-  <a href="../about.html">About</a>
+  <a href="../index.html" onclick="closeMobNav()">Home</a>
+  <a href="../notes.html" onclick="closeMobNav()">Notes</a>
+  <a href="operative_approach.html" onclick="closeMobNav()">Playbook</a>
+  <a href="../arena.html" onclick="closeMobNav()">MCQ Arena</a>
+  <a href="../podcast.html" onclick="closeMobNav()">Podcast</a>
+  <a href="../about.html" onclick="closeMobNav()">About</a>
 </div>
 
 <div id="progress-bar"></div>
@@ -1105,86 +1105,117 @@ tbody td{padding:9px 14px;border-bottom:1px solid var(--border);vertical-align:t
 <button id="top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 
 <script>
-const progressBar = document.getElementById('progress-bar');
-const topBtn = document.getElementById('top-btn');
-const sidebarToggle = document.getElementById('sidebar-toggle');
-const sidebarOverlay = document.getElementById('sidebar-overlay');
-const navItems = document.querySelectorAll('.nav-item');
-const sections = document.querySelectorAll('.topic[id], .rapid-ref[id], .sec-title[id]');
-const body = document.body;
-
-function toggleSidebar() { body.classList.toggle('sidebar-open'); }
-function closeSidebar() { body.classList.remove('sidebar-open'); }
-
-window.addEventListener('scroll', () => {
-  const st = window.scrollY;
-  const dh = document.documentElement.scrollHeight - window.innerHeight;
-  progressBar.style.transform = `scaleX(${st / dh})`;
-  topBtn.classList.toggle('show', st > 400);
-  
-  let current = '';
-  sections.forEach(s => { if (st >= s.offsetTop - 120) current = s.id; });
-  navItems.forEach(n => { n.classList.toggle('active', n.getAttribute('href') === '#' + current); });
-});
-
-function filterNav(query) {
-  const q = query.toLowerCase();
-  navItems.forEach(item => { item.style.display = (!q || item.textContent.toLowerCase().includes(q)) ? 'block' : 'none'; });
-  document.querySelectorAll('.vol-label').forEach(l => { l.style.display = 'block'; });
-}
-
-navItems.forEach(item => {
-  item.addEventListener('click', e => {
-    e.preventDefault();
-    closeSidebar();
-    const target = document.querySelector(item.getAttribute('href'));
-    if (target) window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 80, behavior: 'smooth' });
-  });
-});
-
-document.querySelectorAll('.topic').forEach((el, i) => { el.style.animationDelay = `${i * 0.03}s`; });
-</script>
-
-<script src="../js/nav-pill.js"></script>
-<script>
-  const themeToggle = document.getElementById('themeToggle');
-  const moonIcon = document.getElementById('moonIcon');
-  const sunIcon = document.getElementById('sunIcon');
-
-  function applyTheme(theme) {
-    if (theme === 'dark') {
-      document.documentElement.setAttribute('data-theme', 'dark');
-      if (moonIcon) moonIcon.style.display = 'none';
-      if (sunIcon) sunIcon.style.display = 'block';
-    } else {
-      document.documentElement.removeAttribute('data-theme');
-      if (sunIcon) sunIcon.style.display = 'none';
-      if (moonIcon) moonIcon.style.display = 'block';
-    }
-  }
-
-  applyTheme(localStorage.getItem('sih-theme') || 'light');
-
-  if (themeToggle) {
-    themeToggle.addEventListener('click', () => {
-      const isDark = document.documentElement.hasAttribute('data-theme');
-      const newTheme = isDark ? 'light' : 'dark';
-      applyTheme(newTheme);
-      localStorage.setItem('sih-theme', newTheme);
+  // Premium Navigation Logic
+  (function() {
+    const mainNav = document.getElementById('mainNav');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        mainNav?.classList.add('scrolled');
+      } else {
+        mainNav?.classList.remove('scrolled');
+      }
     });
-  }
 
-  function openMobNav() {
-    document.getElementById('mobNavSheet').classList.add('open');
-    document.getElementById('mobNavOverlay').style.display = 'block';
-    document.body.style.overflow = 'hidden';
-  }
+    window.openMobNav = function() {
+      const sheet = document.getElementById('mobNavSheet');
+      const overlay = document.getElementById('mobNavOverlay');
+      if (overlay) overlay.style.display = 'block';
+      if (sheet) setTimeout(() => sheet.classList.add('open'), 10);
+      document.body.style.overflow = 'hidden';
+    };
 
-  function closeMobNav() {
-    document.getElementById('mobNavSheet').classList.remove('open');
-    document.getElementById('mobNavOverlay').style.display = 'none';
-    document.body.style.overflow = '';
-  }
+    window.closeMobNav = function() {
+      const sheet = document.getElementById('mobNavSheet');
+      const overlay = document.getElementById('mobNavOverlay');
+      if (sheet) sheet.classList.remove('open');
+      setTimeout(() => { if (overlay) overlay.style.display = 'none'; }, 300);
+      document.body.style.overflow = '';
+    };
+
+    // Theme Toggle Logic
+    const themeToggle = document.getElementById('themeToggle');
+    const moonIcon = document.getElementById('moonIcon');
+    const sunIcon = document.getElementById('sunIcon');
+
+    function applyTheme(theme) {
+      if (theme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        if(moonIcon) moonIcon.style.display = 'none';
+        if(sunIcon) sunIcon.style.display = 'block';
+      } else {
+        document.documentElement.removeAttribute('data-theme');
+        if(sunIcon) sunIcon.style.display = 'none';
+        if(moonIcon) moonIcon.style.display = 'block';
+      }
+    }
+
+    const currentTheme = localStorage.getItem('sih-theme') || 'light';
+    applyTheme(currentTheme);
+
+    if(themeToggle) {
+      themeToggle.addEventListener('click', () => {
+        const isDark = document.documentElement.hasAttribute('data-theme');
+        const newTheme = isDark ? 'light' : 'dark';
+        applyTheme(newTheme);
+        localStorage.setItem('sih-theme', newTheme);
+      });
+    }
+  })();
+
+  // Sidebar, Progress Bar, and Scroll-to-Top Logic
+  (function() {
+    const progressBar = document.getElementById('progress-bar');
+    const topBtn = document.getElementById('top-btn');
+    const navItems = document.querySelectorAll('.nav-item');
+    const sections = document.querySelectorAll('.topic[id], .rapid-ref[id], .sec-title[id]');
+    
+    window.toggleSidebar = function() { document.body.classList.toggle('sidebar-open'); };
+    window.closeSidebar = function() { document.body.classList.remove('sidebar-open'); };
+
+    window.addEventListener('scroll', () => {
+      const st = window.scrollY;
+      const dh = document.documentElement.scrollHeight - window.innerHeight;
+      if (progressBar) progressBar.style.transform = `scaleX(${st / dh})`;
+      if (topBtn) topBtn.classList.toggle('show', st > 400);
+      
+      let current = '';
+      sections.forEach(s => {
+        if (st >= s.offsetTop - 120) current = s.id;
+      });
+      navItems.forEach(n => {
+        n.classList.toggle('active', n.getAttribute('href') === '#' + current);
+      });
+    });
+
+    window.filterNav = function(query) {
+      const q = query.toLowerCase();
+      navItems.forEach(item => {
+        item.style.display = (!q || item.textContent.toLowerCase().includes(q)) ? 'block' : 'none';
+      });
+      document.querySelectorAll('.vol-label').forEach(l => {
+        l.style.display = 'block';
+      });
+    };
+
+    navItems.forEach(item => {
+      item.addEventListener('click', e => {
+        e.preventDefault();
+        closeSidebar();
+        const target = document.querySelector(item.getAttribute('href'));
+        if (target) {
+          window.scrollTo({
+            top: target.getBoundingClientRect().top + window.scrollY - 80,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // Topic Animation
+    document.querySelectorAll('.topic').forEach((el, i) => {
+      el.style.animationDelay = `${i * 0.03}s`;
+    });
+  })();
 </script>
 </body>
 </html>

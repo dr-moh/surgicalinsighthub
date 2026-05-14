@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Colorectal Surgery Masterclass — Surgical Insight Hub</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
+
+<link rel="stylesheet" href="../css/theme.css">
+<link rel="stylesheet" href="../css/shared.css">
+
+<script>
+  const savedTheme = localStorage.getItem('sih-theme') || 'light';
+  if (savedTheme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+</script>
+
+<style>
+:root {
+  --primary:   #1B4332;
+  --primary-dk:#0D2B1F;
+  --primary-lt:#E6F2EE;
+  --accent:    #2D6A4F;
+  --accent2:   #40916C;
+  --gold:      #B8860B;
+  --gold-lt:   #FFF8E8;
+  --s1:        #1B4332;
+  --s2:        #2D6A4F;
+  --s3:        #40916C;
+  --s4:        #52B788;
+  --s5:        #1A3050;
+  --s1-lt:     #E6F2EE;
+  --s2-lt:     #ECF5F0;
+  --s3-lt:     #F0F8F4;
+  --s4-lt:     #F4FAF7;
+  --s5-lt:     #E6EEF8;
+  --red:       #8B1A1A;
+  --red-lt:    #FFF0F0;
+  --amber:     #7B4F00;
+  --amber-lt:  #FFF8E8;
+  --blue:      #1A3050;
+  --blue-lt:   #E6EEF8;
+  --bg:        #F5FAF7;
+  --bg2:       #EBF4EF;
+  --border:    #C8DDD4;
+  --text:      #12241A;
+  --muted:     #3A5A47;
+  --white:     #FFFFFF;
+  --sidebar-w: 300px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.75;}
+
+/* ── DARK MODE OVERRIDES ── */
+[data-theme="dark"] {
+  --bg: #0B110F;
+  --bg2: #121A16;
+  --text: #C4D9CC;
+  --muted: #8ECFAD;
+  --border: rgba(255,255,255,0.1);
+  --primary-lt: #121A16;
+  --s1-lt: #0F1A15;
+  --s2-lt: #14211A;
+  --s3-lt: #182820;
+  --s4-lt: #1C2F26;
+  --s5-lt: #0F1721;
+  --white: #121A16;
+}
+
+/* ── SIDEBAR & OVERLAY ── */
+#sidebar {
+  position: fixed; top: 0; left: 0; width: var(--sidebar-w); height: 100vh;
+  background: var(--primary-dk); color: #C4D9CC;
+  display: flex; flex-direction: column;
+  z-index: 1300; overflow: hidden;
+  transform: translateX(-100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 4px 0 24px rgba(0,0,0,0.3);
+}
+body.sidebar-open #sidebar { transform: translateX(0); }
+
+#sidebar-overlay {
+  position: fixed; inset: 0;
+  background: rgba(13, 43, 31, 0.6); backdrop-filter: blur(3px);
+  z-index: 1250; opacity: 0; pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+body.sidebar-open #sidebar-overlay { opacity: 1; pointer-events: auto; }
+
+#sidebar-toggle {
+  position: fixed; top: 72px; left: 24px; z-index: 1200;
+  background: var(--primary); color: white;
+  border: none; border-radius: 30px;
+  padding: 10px 18px; font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 600;
+  letter-spacing: 0.05em; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  display: flex; align-items: center; gap: 8px; transition: all 0.2s;
+}
+#sidebar-toggle:hover { background: var(--accent); transform: translateY(-2px); }
+
+#progress-bar {
+  position: fixed; top: 52px; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  transform-origin: left; transform: scaleX(0); transition: transform 0.1s; z-index: 1105;
+}
+
+#sidebar-header{padding:20px 20px 14px;border-bottom:1px solid rgba(255,255,255,0.1);flex-shrink:0;}
+#sidebar-header .logo{font-family:'Playfair Display',serif;font-size:13px;font-weight:700;color:#8ECFAD;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;}
+#sidebar-header .sub{font-size:10.5px;color:rgba(196,217,204,0.6);letter-spacing:0.04em;}
+#sidebar-search{padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.08);flex-shrink:0;}
+#sidebar-search input{width:100%;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:6px;color:#C4D9CC;padding:6px 10px;font-size:12px;font-family:'Source Serif 4',serif;outline:none;transition:border-color 0.2s;}
+#sidebar-search input::placeholder{color:rgba(196,217,204,0.4);}
+#sidebar-search input:focus{border-color:#8ECFAD;}
+#sidebar-nav{flex:1;overflow-y:auto;padding:8px 0 20px;}
+#sidebar-nav::-webkit-scrollbar{width:4px;}
+#sidebar-nav::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.15);border-radius:2px;}
+.vol-label{font-size:9.5px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#8ECFAD;padding:14px 18px 4px;}
+.nav-item{display:block;padding:8px 18px 8px 22px;font-size:12.5px;color:rgba(196,217,204,0.75);text-decoration:none;border-left:2px solid transparent;transition:all 0.15s;line-height:1.4;}
+.nav-item:hover{color:#fff;background:rgba(255,255,255,0.05);border-left-color:rgba(142,207,173,0.5);}
+.nav-item.active{color:#fff;background:rgba(255,255,255,0.08);border-left-color:#8ECFAD;font-weight:600;}
+.nav-item .num{font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(196,217,204,0.4);margin-right:6px;}
+
+/* MAIN */
+#main{margin-left:0; min-height:100vh;}
+
+/* HERO */
+#hero{background:linear-gradient(135deg,var(--primary-dk) 0%,#071A10 60%,#040F08 100%);color:white;padding:120px 72px 60px;position:relative;overflow:hidden;}
+#hero::before{content:'';position:absolute;top:-60px;right:-60px;width:380px;height:380px;background:radial-gradient(circle,rgba(64,145,108,0.18) 0%,transparent 70%);pointer-events:none;}
+#hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#40916C,#8ECFAD,transparent);}
+#hero .eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.16em;color:#8ECFAD;text-transform:uppercase;margin-bottom:14px;}
+#hero h1{font-family:'Playfair Display',serif;font-size:46px;font-weight:700;line-height:1.15;margin-bottom:10px;color:#fff;}
+#hero .subtitle{font-size:18px;color:rgba(255,255,255,0.65);font-style:italic;margin-bottom:28px;}
+#hero .badges{display:flex;gap:10px;flex-wrap:wrap;}
+#hero .badge{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:4px 14px;font-size:12px;color:rgba(255,255,255,0.8);font-family:'JetBrains Mono',monospace;}
+
+/* CONTENT */
+.content-wrap{max-width:900px;margin:0 auto;padding:0 48px 80px;}
+
+/* SECTION HEADER */
+.sec-header{margin-top:60px;margin-bottom:8px;padding:28px 36px;border-radius:10px;display:flex;align-items:center;gap:20px;}
+.sec-header.s1{background:linear-gradient(135deg,#1B433208,#1B433218);border-left:4px solid var(--s1);}
+.sec-header.s2{background:linear-gradient(135deg,#2D6A4F08,#2D6A4F18);border-left:4px solid var(--s2);}
+.sec-header.s3{background:linear-gradient(135deg,#40916C08,#40916C18);border-left:4px solid var(--s3);}
+.sec-header.s4{background:linear-gradient(135deg,#52B78808,#52B78818);border-left:4px solid var(--s4);}
+.sec-header.s5{background:linear-gradient(135deg,#1A305008,#1A305018);border-left:4px solid var(--s5);}
+.sec-badge{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;letter-spacing:0.1em;padding:4px 12px;border-radius:4px;white-space:nowrap;flex-shrink:0;}
+.s1 .sec-badge{background:var(--s1);color:white;}
+.s2 .sec-badge{background:var(--s2);color:white;}
+.s3 .sec-badge{background:var(--s3);color:white;}
+.s4 .sec-badge{background:var(--s4);color:white;}
+.s5 .sec-badge{background:var(--s5);color:white;}
+.sec-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;}
+.s1 .sec-title{color:var(--s1);}
+.s2 .sec-title{color:var(--s2);}
+.s3 .sec-title{color:var(--s3);}
+.s4 .sec-title{color:var(--s4);}
+.s5 .sec-title{color:var(--s5);}
+
+/* TOPIC */
+.topic{margin-top:48px;padding-top:48px;border-top:1px solid var(--border);}
+.topic:first-of-type{border-top:none;}
+.topic-header{display:flex;align-items:flex-start;gap:16px;margin-bottom:24px;}
+.topic-num{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;padding:3px 10px;border-radius:4px;margin-top:4px;flex-shrink:0;}
+.s1 .topic-num{background:var(--s1-lt);color:var(--s1);}
+.s2 .topic-num{background:var(--s2-lt);color:var(--s2);}
+.s3 .topic-num{background:var(--s3-lt);color:var(--s3);}
+.s4 .topic-num{background:var(--s4-lt);color:var(--s4);}
+.s5 .topic-num{background:var(--s5-lt);color:var(--s5);}
+.topic h2{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;line-height:1.2;}
+.s1 .topic h2{color:var(--s1);}
+.s2 .topic h2{color:var(--s2);}
+.s3 .topic h2{color:var(--s3);}
+.s4 .topic h2{color:var(--s4);}
+.s5 .topic h2{color:var(--s5);}
+.topic h3{font-family:'Playfair Display',serif;font-size:17px;font-weight:600;color:var(--muted);margin:26px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--border);}
+.topic p{margin-bottom:12px;color:var(--text);}
+.topic ul,.topic ol{margin:8px 0 14px 20px;color:var(--text);}
+.topic li{margin-bottom:6px;line-height:1.65;}
+.topic li::marker{color:var(--accent2);}
+.topic strong{color:var(--text);font-weight:600;}
+
+/* TABLES */
+.table-wrap{overflow-x:auto;margin:16px 0 20px;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.06);}
+table{width:100%;border-collapse:collapse;font-size:13.5px;background:white;}
+thead tr{background:var(--s1);}
+thead th{color:white;padding:10px 14px;text-align:left;font-family:'Source Serif 4',serif;font-weight:600;font-size:13px;}
+tbody tr:nth-child(even){background:var(--bg2);}
+tbody tr:hover{background:var(--s1-lt);transition:background 0.15s;}
+tbody td{padding:9px 14px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.5;}
+.s2-tbl thead tr{background:var(--s2);}
+.s3-tbl thead tr{background:var(--s3);}
+.s4-tbl thead tr{background:var(--s4);}
+.s5-tbl thead tr{background:var(--s5);}
+
+/* CALLOUTS */
+.callout{margin:18px 0;padding:14px 18px;border-radius:0 8px 8px 0;border-left:4px solid;font-size:14px;line-height:1.65;}
+.callout .label{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;display:block;margin-bottom:4px;}
+.callout.pearl{background:var(--amber-lt);border-color:var(--amber);}
+.callout.pearl .label{color:var(--amber);}
+.callout.warn{background:var(--red-lt);border-color:var(--red);}
+.callout.warn .label{color:var(--red);}
+.callout.clin{background:var(--s1-lt);border-color:var(--s1);}
+.callout.clin .label{color:var(--s1);}
+.callout.exam{background:var(--blue-lt);border-color:var(--blue);}
+.callout.exam .label{color:var(--blue);}
+
+/* MCQ WIDGET */
+#mcq-arena { background:var(--s5-lt); border:1px solid var(--border); border-radius:8px; padding:30px; margin-top:40px; }
+.mcq-header { font-family:'Playfair Display',serif; font-size:20px; font-weight:700; color:var(--s5); margin-bottom:20px; display:flex; justify-content:space-between; }
+.question-block { display:none; }
+.question-block.active { display:block; animation:fadeIn 0.3s ease; }
+.q-text { font-size:16px; font-weight:600; margin-bottom:16px; color:var(--text); }
+.options-grid { display:flex; flex-direction:column; gap:10px; }
+.option-btn { background:white; border:1px solid var(--border); border-radius:6px; padding:14px; text-align:left; font-family:'Source Serif 4',serif; font-size:14.5px; cursor:pointer; transition:all 0.2s; color:var(--text); }
+.option-btn:hover { border-color:var(--s5); transform:translateX(4px); }
+.option-btn.correct { background:#E6F2EE; border-color:#2D6A4F; color:#0D2B1F; font-weight:600; }
+.option-btn.wrong { background:#FFF0F0; border-color:#8B1A1A; color:#8B1A1A; }
+.rationale { margin-top:20px; padding:16px; background:white; border-left:4px solid var(--s5); font-size:14px; display:none; }
+.rationale.show { display:block; animation:fadeIn 0.4s ease; }
+.next-btn { margin-top:20px; background:var(--s5); color:white; border:none; padding:10px 20px; border-radius:6px; font-family:'JetBrains Mono',monospace; font-size:12px; cursor:pointer; display:none; }
+@keyframes fadeIn { from{opacity:0; transform:translateY(10px);} to{opacity:1; transform:translateY(0);} }
+
+/* TOP BTN */
+#top-btn {
+  position: fixed; bottom: 28px; right: 28px; background: var(--primary); color: white;
+  border: none; border-radius: 50%; width: 44px; height: 44px; font-size: 18px; cursor: pointer;
+  display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: all 0.2s; opacity: 0; pointer-events: none; z-index: 1000;
+}
+#top-btn.show { opacity: 1; pointer-events: auto; }
+#top-btn:hover { background: var(--accent2); transform: translateY(-2px); }
+
+/* ANIMATION */
+.animate-on-scroll { opacity: 0; transform: translateY(20px); transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
+.animate-on-scroll.visible { opacity: 1; transform: translateY(0); }
+
+@media(max-width:900px) {
+  .content-wrap { padding: 0 20px 60px; }
+  #hero { padding: 120px 20px 40px; }
+  #hero h1 { font-size: 30px; }
+}
+
+@media print {
+  .nav, #sidebar-toggle, #sidebar-overlay, #sidebar, #top-btn, #progress-bar { display: none !important; }
+  #main { margin-left: 0; }
+  .topic { page-break-inside: avoid; }
+  .sec-header { page-break-before: always; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="mainNav">
+  <div class="nav-left">
+    <a href="../index.html" class="nav-pill">
+      <div class="nav-logo-img">
+        <img src="../assets/images/Surgical_Insight_Hub_Logo.png" alt="SIH">
+      </div>
+      <div>
+        <div class="nav-brand-text">Surgical Insight Hub</div>
+        <div class="nav-brand-sub">Medical Library</div>
+      </div>
+    </a>
+    <div class="nav-links-pill">
+      <a href="../index.html">Home</a>
+      <a href="../notes.html" class="active">Notes</a>
+      <a href="operative_approach.html">Playbook</a>
+      <a href="../podcast.html">Podcast</a>
+      <a href="../about.html">About</a>
+    </div>
+  </div>
+
+  <div class="nav-right">
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+      <svg id="moonIcon" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/></svg>
+      <svg id="sunIcon" style="display:none;" viewBox="0 0 24 24"><path d="M12 7a5 5 0 1 0 5 5 5.006 5.006 0 0 0-5-5zm0 8a3 3 0 1 1 3-3 3.003 3.003 0 0 1-3 3zm0-13a1 1 0 0 0-1 1v2a1 1 0 0 0 2 0V3a1 1 0 0 0-1-1zm0 18a1 1 0 0 0-1 1v2a1 1 0 0 0 2 0v-2a1 1 0 0 0-1-1zm8-11h-2a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2zm-16 0H2a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2zm13.657-5.657a1 1 0 0 0-1.414 0l-1.414 1.414a1 1 0 0 0 1.414 1.414l1.414-1.414a1 1 0 0 0 0-1.414zm-11.314 0a1 1 0 0 0 0 1.414l1.414 1.414a1 1 0 0 0 1.414-1.414L4.929 5.757a1 1 0 0 0-1.414 0zm11.314 11.314a1 1 0 0 0 0 1.414l1.414 1.414a1 1 0 0 0 1.414-1.414l-1.414-1.414a1 1 0 0 0-1.414 0zm-11.314 0a1 1 0 0 0-1.414 1.414l1.414 1.414a1 1 0 0 0 1.414-1.414l-1.414-1.414a1 1 0 0 0 0-1.414z"/></svg>
+    </button>
+    <a href="../arena.html" class="nav-btn arena-btn">MCQ Arena</a>
+    <button class="mob-nav-toggle" onclick="openMobNav()">
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </button>
+  </div>
+</nav>
+
+<div class="mob-nav-overlay" id="mobNavOverlay" onclick="closeMobNav()"></div>
+<div class="mob-nav-sheet" id="mobNavSheet">
+  <div class="mob-nav-handle"></div>
+  <a href="../index.html" onclick="closeMobNav()">Home</a>
+  <a href="../notes.html" onclick="closeMobNav()">Notes</a>
+  <a href="operative_approach.html" onclick="closeMobNav()">Playbook</a>
+  <a href="../arena.html" onclick="closeMobNav()">MCQ Arena</a>
+  <a href="../podcast.html" onclick="closeMobNav()">Podcast</a>
+  <a href="../about.html" onclick="closeMobNav()">About</a>
+</div>
+
+<div id="progress-bar"></div>
+<div id="sidebar-overlay" onclick="closeSidebar()"></div>
+<button id="sidebar-toggle" onclick="toggleSidebar()"><span>☰</span> Contents</button>
+
+<nav id="sidebar">
+  <div id="sidebar-header">
+    <div class="logo">Surgical Insight Hub</div>
+    <div class="sub">Colorectal Surgery Masterclass</div>
+  </div>
+  <div id="sidebar-search">
+    <input type="text" id="search-input" placeholder="Search topics…" oninput="filterNav(this.value)">
+  </div>
+  <div id="sidebar-nav">
+    <div class="vol-label">Tier 1: The Ward</div>
+    <a class="nav-item" href="#t1a"><span class="num">1.1</span>Embryology & Presentation</a>
+    <a class="nav-item" href="#t1b"><span class="num">1.2</span>Benign Polyps & Syndromes</a>
+    <div class="vol-label">Tier 2: The Workup</div>
+    <a class="nav-item" href="#t2a"><span class="num">2.1</span>Staging & MRI Physics</a>
+    <a class="nav-item" href="#t2b"><span class="num">2.2</span>Molecular Profiling</a>
+    <div class="vol-label">Tier 3: The Operative Atlas</div>
+    <a class="nav-item" href="#t3a"><span class="num">3.1</span>CME, TME & Fascial Planes</a>
+    <a class="nav-item" href="#t3b"><span class="num">3.2</span>Anal Tumors & Nigro Protocol</a>
+    <div class="vol-label">Tier 4: Post-Op & Pathology</div>
+    <a class="nav-item" href="#t4a"><span class="num">4.1</span>LARS & Anastomotic Leaks</a>
+    <a class="nav-item" href="#t4b"><span class="num">4.2</span>Fournier's Gangrene</a>
+    <div class="vol-label">Tier 5: Fellowship Boards</div>
+    <a class="nav-item" href="#t5a"><span class="num">5.1</span>Radiobiology & Trials</a>
+    <a class="nav-item" href="#t5b"><span class="num">5.2</span>Interactive Board Arena</a>
+  </div>
+</nav>
+
+<main id="main">
+<section id="hero">
+  <div class="eyebrow">Surgical Insight Hub · Floor to OR to Boards Series</div>
+  <h1>Colorectal Surgery Masterclass</h1>
+  <p class="subtitle">The definitive synthesis of Benign, Malignant, Anal, and Perineal Pathology.</p>
+  <div class="badges">
+    <span class="badge">PGY-1 to Consultant</span>
+    <span class="badge">Complete Mesocolic Excision</span>
+    <span class="badge">Total Mesorectal Excision</span>
+    <span class="badge">Molecular Pathology</span>
+    <span class="badge">Fournier's Protocol</span>
+  </div>
+</section>
+
+<div class="content-wrap">
+
+<div class="sec-header s1">
+  <span class="sec-badge">TIER 1</span>
+  <span class="sec-title">The Ward (Intern Level)</span>
+</div>
+
+<section class="topic s1" id="t1a">
+  <div class="topic-header"><span class="topic-num">1.1</span><h2>Embryology, Anatomy, & Clinical Presentation</h2></div>
+  <h3>The Science of the Hindgut</h3>
+  <p>To master colorectal spread patterns, you must start with embryology. The rectum derives from the embryonic hindgut, while the anal canal below the dentate line derives from the ectodermal proctodeum. This dual origin dictates the lymphatic watershed.</p>
+  <ul>
+    <li><strong>Above the dentate line (Endoderm):</strong> Venous drainage goes via the superior rectal vein to the portal system (liver metastases). Lymphatic spread follows the IMV to the mesorectal and internal iliac nodes.</li>
+    <li><strong>Below the dentate line (Ectoderm):</strong> Venous drainage goes via the inferior rectal vein to the caval system (lung metastases). Lymphatic spread goes directly to the superficial inguinal lymph nodes.</li>
+  </ul>
+</section>
+
+<section class="topic s1" id="t1b">
+  <div class="topic-header"><span class="topic-num">1.2</span><h2>Benign Polyps & Polyposis Syndromes</h2></div>
+  <p>Not all benign polyps are treated equally. A pedunculated polyp is graded by Haggitt; a sessile polyp by Kikuchi. If a pedunculated polyp hits <strong>Haggitt Level 4</strong> (invasion into the submucosa of the bowel wall beneath the stalk) or a sessile polyp hits <strong>Kikuchi Sm3</strong> (deep third of submucosa), endoscopic resection is inadequate. Formal oncologic resection is mandated.</p>
+
+  <div class="table-wrap s1-tbl"><table>
+    <thead><tr><th>Syndrome</th><th>Genetics</th><th>Cancer Risk</th><th>Surgical Intervention</th></tr></thead>
+    <tbody>
+      <tr><td>FAP</td><td>APC (AD)</td><td>100% by age 40</td><td>Proctocolectomy + IPAA (age 15-25). Watch out for desmoid tumors post-op.</td></tr>
+      <tr><td>Lynch Syndrome</td><td>MMR (AD)</td><td>40-80% lifetime risk</td><td>Subtotal colectomy for index cancer due to high metachronous risk.</td></tr>
+      <tr><td>MAP</td><td>MUTYH (AR)</td><td>~80% CRC</td><td>Autosomal recessive. Surveillance until polyps unmanageable endoscopically.</td></tr>
+    </tbody>
+  </table></div>
+  <div class="callout warn"><span class="label">⚠ Danger Zone</span>The most common cause of death in FAP patients post-colectomy is not rectal stump cancer. It is intra-abdominal desmoid tumours. Never operate on a desmoid unless there is life-threatening bleeding or obstruction. Surgical trauma incites aggressive regrowth. Treat with NSAIDs (sulindac) and Tamoxifen first.</div>
+</section>
+
+<div class="sec-header s2">
+  <span class="sec-badge">TIER 2</span>
+  <span class="sec-title">The Workup (Mid-Level Resident)</span>
+</div>
+
+<section class="topic s2" id="t2a">
+  <div class="topic-header"><span class="topic-num">2.1</span><h2>Staging, MRI Physics & Risk Stratification</h2></div>
+  <p>Endoscopy gets you the tissue diagnosis. Staging decides the knife. For rectal cancer, high-resolution pelvic MRI is the absolute standard. We do not just look at tumor bulk. We interrogate the tissue cellularity using Diffusion-Weighted Imaging (DWI) and assess the fascial boundaries.</p>
+  <ul>
+    <li><strong>Circumferential Resection Margin (CRM):</strong> Defined as tumor ≤1 mm from the mesorectal fascia. A threatened CRM is an absolute indication for neoadjuvant chemoradiation. CRM+ is an independent predictor of local recurrence (HR 3.5).</li>
+    <li><strong>Extramural Venous Invasion (EMVI):</strong> Tumor cells invading the veins beyond the muscularis propria. It is a massive red flag for synchronous liver metastases.</li>
+  </ul>
+</section>
+
+<section class="topic s2" id="t2b">
+  <div class="topic-header"><span class="topic-num">2.2</span><h2>Molecular Profiling</h2></div>
+  <p>A tissue biopsy means nothing in 2026 without molecular profiling. The systemic therapy decisions completely hinge on these pathways.</p>
+  <div class="table-wrap s2-tbl"><table>
+    <thead><tr><th>Biomarker</th><th>Clinical Impact</th></tr></thead>
+    <tbody>
+      <tr><td>RAS (KRAS/NRAS) mutant</td><td>Anti-EGFR therapies (cetuximab/panitumumab) are STRICTLY CONTRAINDICATED.</td></tr>
+      <tr><td>BRAF V600E</td><td>Aggressive biology. Use BEACON triplet (encorafenib + binimetinib + cetuximab) for metastatic.</td></tr>
+      <tr><td>MSI-H / dMMR</td><td>Stage II: Avoid 5-FU alone (harmful). Metastatic: Pembrolizumab 1st line (KEYNOTE-177).</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<div class="sec-header s3">
+  <span class="sec-badge">TIER 3</span>
+  <span class="sec-title">The Operative Atlas (Senior Resident Level)</span>
+</div>
+
+<section class="topic s3" id="t3a">
+  <div class="topic-header"><span class="topic-num">3.1</span><h2>CME, TME, and Deep Pelvic Fascial Planes</h2></div>
+  <h3>Complete Mesocolic Excision (CME) for Colon Cancer</h3>
+  <p>For a right hemicolectomy, you must execute a CME. This requires sharp dissection in Toldt's fascia (the embryological fusion plane) and central vascular ligation at the mesenteric root (D3 lymphadenectomy). The RELARC trial confirmed that keeping the mesocolic envelope totally intact improves Disease-Free Survival.</p>
+
+  <h3>Total Mesorectal Excision (TME) for Rectal Cancer</h3>
+  <p>The TME is the en bloc excision of the hindgut intact within its fascial envelope. You must dissect strictly within the avascular "Holy Plane" of Heald between the visceral mesorectal fascia and the parietal sacral fascia.</p>
+  <ul>
+    <li><strong>Waldeyer's fascia:</strong> Thickens at S4. Must be divided sharply. Blunt tearing here avulses the presacral veins causing catastrophic bleeding.</li>
+    <li><strong>Denonvilliers' fascia:</strong> Separates the anterior rectum from the prostate/vagina. Dive anterior to this for T3 tumors to secure a negative CRM.</li>
+    <li><strong>Pelvic Nerves (S2-S4):</strong> Form the pelvic plexus laterally. Straying outside the mesorectal fascia during lateral dissection will sever them, leaving the patient with erectile dysfunction and a flaccid neurogenic bladder.</li>
+  </ul>
+</section>
+
+<section class="topic s3" id="t3b">
+  <div class="topic-header"><span class="topic-num">3.2</span><h2>Anal Canal Tumors & The Nigro Protocol</h2></div>
+  <p>We do not routinely operate on Anal Squamous Cell Carcinomas (SCC). The Nigro Protocol is curative.</p>
+  <ul>
+    <li><strong>The Protocol:</strong> 50.4 Gy radiation + continuous 5-FU + Mitomycin C (MMC). The ACT II trial proved MMC is non-inferior to cisplatin and remains the standard.</li>
+    <li><strong>Response Assessment Trap:</strong> Do NOT biopsy an anal SCC before 26 weeks post-CRT. Radiation necrosis looks exactly like residual tumor on MRI and endoscopy. A salvage APR is only offered for biopsy-proven persistent disease at 26 weeks.</li>
+  </ul>
+</section>
+
+<div class="sec-header s4">
+  <span class="sec-badge">TIER 4</span>
+  <span class="sec-title">Post-Op & Pathology (Chief Level)</span>
+</div>
+
+<section class="topic s4" id="t4a">
+  <div class="topic-header"><span class="topic-num">4.1</span><h2>LARS & Anastomotic Leaks</h2></div>
+  <p>When you reconstruct the rectum, you alter the physiology. Low Anterior Resection Syndrome (LARS) occurs due to the loss of compliance (the descending colon neorectum cannot distend), denervation (impaired rectoanal inhibitory reflex), and uncoordinated motility (high-amplitude colonic contractions hitting the anal canal). Refractory cases require sacral neuromodulation.</p>
+  <p>Anastomotic leaks are not just mechanical stapler failures. <em>Enterococcus faecalis</em> colonizes ischemic bowel ends and produces matrix metalloproteinases (MMPs) that degrade collagen. Preserving the marginal artery of Drummond to ensure a pulsatile blood supply is mandatory to prevent this microbiome-driven breakdown.</p>
+</section>
+
+<section class="topic s4" id="t4b">
+  <div class="topic-header"><span class="topic-num">4.2</span><h2>Fournier's Gangrene — The Perineal Emergency</h2></div>
+  <p>Fournier's Gangrene is a synergistic polymicrobial necrotizing fasciitis. The FGSI (Fournier's Gangrene Severity Index) predicts survival. A score >9 carries a ~75% mortality rate. Surgery is the single most time-sensitive intervention.</p>
+  <div class="table-wrap s4-tbl"><table>
+    <thead><tr><th>Fascia</th><th>Spread Pattern</th></tr></thead>
+    <tbody>
+      <tr><td>Dartos fascia</td><td>First plane invaded; causes avascular scrotal skin necrosis.</td></tr>
+      <tr><td>Colles' fascia</td><td>Continuous with Scarpa's (abdomen). Tracks infection up the anterior abdominal wall.</td></tr>
+    </tbody>
+  </table></div>
+  <div class="callout pearl"><span class="label">★ Operative Pearl</span><strong>Testes are usually spared.</strong> The gonadal arteries arise directly from the abdominal aorta and run deep in the spermatic cord, independent of the scrotal fascial planes. Place viable testicles into bilateral medial thigh pouches during debridement.</div>
+</section>
+
+<div class="sec-header s5">
+  <span class="sec-badge">TIER 5</span>
+  <span class="sec-title">Fellowship Boards (Attending Level)</span>
+</div>
+
+<section class="topic s5" id="t5a">
+  <div class="topic-header"><span class="topic-num">5.1</span><h2>Radiobiology & TNT Trials</h2></div>
+  <p>The global shift in rectal cancer is toward <strong>Total Neoadjuvant Therapy (TNT)</strong>. Adjuvant chemotherapy compliance is poor (~50%). Moving systemic chemotherapy before surgery eradicates micrometastases early.</p>
+  <ul>
+    <li><strong>RAPIDO Trial:</strong> Short-course radiotherapy (SCRT 25Gy/5fx) → 18 weeks CAPOX/FOLFOX → Surgery. Reduced disease-related treatment failure and doubled pCR rates (28% vs 14%).</li>
+    <li><strong>PRODIGE 23 Trial:</strong> 6 cycles mFOLFIRINOX → Long-course CRT → Surgery. Improved 3-yr Disease-Free Survival.</li>
+    <li><strong>Watch and Wait:</strong> If a patient achieves a Clinical Complete Response (cCR)—a flat white scar with no restricted diffusion on MRI—they can avoid surgery. Note: ~25-30% will have a local regrowth in the first 2 years. Almost all (95%) are strictly intraluminal and salvageable by standard TME.</li>
+  </ul>
+</section>
+
+<section class="topic s5" id="t5b" style="border:none;">
+  <div class="topic-header"><span class="topic-num">5.2</span><h2>Interactive Board Arena</h2></div>
+  <p>Test your clinical reflexes. Do not guess. Read the pathology and execute the plan.</p>
+
+  <div id="mcq-arena">
+    <div class="mcq-header">
+      <span>TASH / FRCS Board Simulation</span>
+      <span id="score-tracker">Question 1 of 4</span>
+    </div>
+
+    <div class="question-block active" id="q1">
+      <div class="q-text">1. A 55-year-old undergoes EMR for a 2.5 cm sessile polyp. Pathology shows a T1 adenocarcinoma, Kikuchi level Sm3, with a clear deep margin of 2 mm. No lymphovascular invasion. What is the definitive management?</div>
+      <div class="options-grid">
+        <button class="option-btn" onclick="checkAnswer(1, false, this, 'Endoscopic surveillance is only appropriate for Sm1 lesions with clear margins. Sm3 carries a high nodal risk.')">A. Surveillance colonoscopy at 3 months</button>
+        <button class="option-btn" onclick="checkAnswer(1, false, this, 'Adjuvant chemotherapy is not indicated for T1 disease without node positivity.')">B. Adjuvant CAPOX for 3 months</button>
+        <button class="option-btn" onclick="checkAnswer(1, true, this, 'Correct. Kikuchi Sm3 (invasion into the deep third of the submucosa) carries an 11-14% rate of lymph node metastasis. Formal oncologic resection (colectomy) is mandatory.')">C. Formal oncologic segmental colectomy</button>
+        <button class="option-btn" onclick="checkAnswer(1, false, this, 'Radiation is not utilized for colon cancer polyps. It is reserved for rectal cancer.')">D. Pelvic radiation therapy</button>
+      </div>
+      <div class="rationale" id="rat1"></div>
+      <button class="next-btn" id="next1" onclick="nextQuestion(1)">Next Question →</button>
+    </div>
+
+    <div class="question-block" id="q2">
+      <div class="q-text">2. During an open anterior resection for rectal cancer, massive hemorrhage occurs while bluntly developing the presacral space at the level of S4. What fascial structure was improperly managed?</div>
+      <div class="options-grid">
+        <button class="option-btn" onclick="checkAnswer(2, false, this, 'Denonvilliers fascia is anterior, separating the rectum from the prostate or vagina.')">A. Denonvilliers' fascia</button>
+        <button class="option-btn" onclick="checkAnswer(2, false, this, 'Toldt\'s fascia is the lateral reflection of the colon, not the deep presacral space.')">B. Toldt's fascia</button>
+        <button class="option-btn" onclick="checkAnswer(2, false, this, 'The mesorectal fascia wraps the rectum; blunt tearing here causes mesorectal bleeding, but massive presacral bleeding implies violation of the parietal fascia.')">C. Visceral mesorectal fascia</button>
+        <button class="option-btn" onclick="checkAnswer(2, true, this, 'Correct. Waldeyer\'s (rectosacral) fascia thickens at S4. It must be divided sharply. Blunt tearing avulses the basivertebral veins, leading to catastrophic, difficult-to-control presacral hemorrhage.')">D. Waldeyer's fascia</button>
+      </div>
+      <div class="rationale" id="rat2"></div>
+      <button class="next-btn" id="next2" onclick="nextQuestion(2)">Next Question →</button>
+    </div>
+
+    <div class="question-block" id="q3">
+      <div class="q-text">3. A 62-year-old male with a resectable T3N1 right-sided colon cancer is profiled as MSI-H (dMMR) and BRAF wild-type. He undergoes a right hemicolectomy. What is the most appropriate adjuvant strategy?</div>
+      <div class="options-grid">
+        <button class="option-btn" onclick="checkAnswer(3, false, this, '5-FU monotherapy in MSI-H Stage II is harmful. In Stage III, oxaliplatin must be added if chemotherapy is given.')">A. Adjuvant 5-FU/Leucovorin for 6 months</button>
+        <button class="option-btn" onclick="checkAnswer(3, true, this, 'Correct. This is Stage III disease. The standard is FOLFOX for 6 months (or CAPOX for 3-6 months). While MSI-H predicts poor response to 5-FU alone, the addition of oxaliplatin overcomes this resistance in Stage III disease.')">B. Adjuvant FOLFOX for 6 months</button>
+        <button class="option-btn" onclick="checkAnswer(3, false, this, 'Pembrolizumab (KEYNOTE-177) is currently approved as 1st line therapy for METASTATIC (Stage IV) MSI-H disease, not as standard adjuvant therapy for Stage III.')">C. Adjuvant Pembrolizumab</button>
+        <button class="option-btn" onclick="checkAnswer(3, false, this, 'Anti-EGFR therapy is contraindicated in the perioperative setting (EPOC trial).')">D. Adjuvant FOLFOX + Cetuximab</button>
+      </div>
+      <div class="rationale" id="rat3"></div>
+      <button class="next-btn" id="next3" onclick="nextQuestion(3)">Next Question →</button>
+    </div>
+
+    <div class="question-block" id="q4">
+      <div class="q-text">4. A 40-year-old male presents with severe Fournier's Gangrene. During radical debridement, the entire scrotal skin and subcutaneous tissue are found to be necrotic. The testes appear pink and bleed when the tunica albuginea is nicked. What is the anatomic reason the testes are spared?</div>
+      <div class="options-grid">
+        <button class="option-btn" onclick="checkAnswer(4, false, this, 'The cremasteric reflex has nothing to do with preventing vascular necrosis.')">A. The cremasteric reflex prevents bacterial invasion.</button>
+        <button class="option-btn" onclick="checkAnswer(4, false, this, 'Buck\'s fascia protects the penile corpora, not the testicles.')">B. Buck's fascia provides an impenetrable barrier to the scrotum.</button>
+        <button class="option-btn" onclick="checkAnswer(4, true, this, 'Correct. The gonadal arteries originate directly from the abdominal aorta and travel within the spermatic cord, keeping the testicular blood supply totally independent from the necrotic scrotal fascial planes (Dartos/Colles).')">C. The gonadal arterial supply originates from the abdominal aorta.</button>
+        <button class="option-btn" onclick="checkAnswer(4, false, this, 'The internal pudendal artery supplies the perineum and is often thrombosed in this disease process.')">D. The internal pudendal artery provides rich collateral flow.</button>
+      </div>
+      <div class="rationale" id="rat4"></div>
+      <button class="next-btn" id="next4" onclick="finishQuiz()">Finish Revision</button>
+    </div>
+
+  </div>
+</section>
+
+</div>
+</main>
+
+<script>
+  // MCQ Logic
+  let currentQ = 1;
+  const totalQ = 4;
+
+  function checkAnswer(qNum, isCorrect, btnElement, rationaleText) {
+    const block = document.getElementById('q' + qNum);
+    const buttons = block.querySelectorAll('.option-btn');
+    const rationaleDiv = document.getElementById('rat' + qNum);
+    const nextBtn = document.getElementById('next' + qNum);
+
+    buttons.forEach(b => {
+      b.disabled = true;
+      b.style.pointerEvents = 'none';
+      b.style.opacity = '0.6';
+    });
+
+    btnElement.style.opacity = '1';
+    if(isCorrect) {
+      btnElement.classList.add('correct');
+      rationaleDiv.innerHTML = "<strong>✅ Correct.</strong> " + rationaleText;
+    } else {
+      btnElement.classList.add('wrong');
+      rationaleDiv.innerHTML = "<strong>❌ Incorrect.</strong> " + rationaleText;
+      
+      buttons.forEach(b => {
+        if(b.getAttribute('onclick').includes('true')) {
+          b.classList.add('correct');
+          b.style.opacity = '1';
+        }
+      });
+    }
+
+    rationaleDiv.classList.add('show');
+    nextBtn.style.display = 'inline-block';
+  }
+
+  function nextQuestion(qNum) {
+    document.getElementById('q' + qNum).classList.remove('active');
+    currentQ++;
+    document.getElementById('q' + currentQ).classList.add('active');
+    document.getElementById('score-tracker').innerText = `Question ${currentQ} of ${totalQ}`;
+  }
+
+  function finishQuiz() {
+    const arena = document.getElementById('mcq-arena');
+    arena.innerHTML = `
+      <div style="text-align:center; padding:40px 0;">
+        <h2 style="font-family:'Playfair Display',serif; color:var(--s1); font-size:28px;">Revision Complete</h2>
+        <p style="color:var(--muted); margin-top:10px;">If you failed any of those, you are not ready for the FRCS or the TASH OR. Review the fascial planes.</p>
+        <button onclick="location.reload()" style="margin-top:20px; background:var(--primary); color:white; border:none; padding:12px 24px; border-radius:6px; cursor:pointer;">Restart Revision</button>
+      </div>
+    `;
+  }
+
+  // Sidebar Logic
+  const navItems = document.querySelectorAll('.nav-item');
+  const sections = document.querySelectorAll('.topic[id]');
+  
+  window.addEventListener('scroll', () => {
+    const st = window.scrollY;
+    let current = '';
+    sections.forEach(s => {
+      if (st >= s.offsetTop - 150) current = s.id;
+    });
+    navItems.forEach(n => {
+      n.classList.toggle('active', n.getAttribute('href') === '#' + current);
+    });
+  });
+</script>
+</body>
+</html>
