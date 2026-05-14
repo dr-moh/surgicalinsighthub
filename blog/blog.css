@@ -1,0 +1,140 @@
+/* Blog Specific Styles for Surgical Insight Hub */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+
+body {
+  background-color: var(--bg-body);
+  color: var(--text-primary);
+}
+
+.blog-hero {
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border-color);
+  padding: 60px 5%;
+  text-align: center;
+}
+
+.blog-meta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.blog-badge {
+  background: rgba(37,99,235,0.1);
+  color: #2563eb;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.blog-date {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.blog-title {
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: var(--text-primary);
+  line-height: 1.2;
+  max-width: 900px;
+  margin: 0 auto 20px;
+  letter-spacing: -0.03em;
+}
+
+.blog-subtitle {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+.blog-content {
+  max-width: 800px;
+  margin: 60px auto;
+  padding: 0 5%;
+  font-family: 'Merriweather', serif;
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: var(--text-primary);
+}
+
+.blog-content h2 {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin: 40px 0 20px;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+
+.blog-content p {
+  margin-bottom: 24px;
+}
+
+.blog-content ul, .blog-content ol {
+  margin-bottom: 24px;
+  padding-left: 20px;
+}
+
+.blog-content li {
+  margin-bottom: 10px;
+}
+
+.clinical-pearl {
+  background: rgba(163, 21, 21, 0.04);
+  border-left: 4px solid #a31515;
+  padding: 24px 30px;
+  margin: 40px 0;
+  border-radius: 0 12px 12px 0;
+  font-family: 'Inter', sans-serif;
+}
+
+.clinical-pearl strong {
+  display: block;
+  color: #a31515;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+}
+
+.references {
+  margin-top: 80px;
+  padding-top: 40px;
+  border-top: 1px solid var(--border-color);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.references h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: var(--text-primary);
+}
+
+.references ol {
+  padding-left: 20px;
+}
+
+.references li {
+  margin-bottom: 8px;
+}
+
+@media(max-width: 768px) {
+  .blog-title {
+    font-size: 2rem;
+  }
+  .blog-content {
+    font-size: 1.05rem;
+  }
+}

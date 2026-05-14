@@ -209,10 +209,40 @@
   <span class="st-count" id="postCount">Loading…</span>
 </div>
 
+<!-- FILTER TABS -->
+<div class="st-filters" style="display:flex; justify-content:center; gap:10px; margin-bottom:40px; flex-wrap:wrap;">
+  <button class="st-filter-btn active" data-filter="all" style="padding:8px 20px; border-radius:30px; border:1px solid var(--border-color); background:var(--bg-card); color:var(--text-primary); cursor:pointer; font-weight:700; transition:all 0.2s;">All Content</button>
+  <button class="st-filter-btn" data-filter="telegram" style="padding:8px 20px; border-radius:30px; border:1px solid rgba(44,165,224,0.3); background:rgba(44,165,224,0.05); color:#1a8abf; cursor:pointer; font-weight:700; transition:all 0.2s;">📢 Telegram Posts</button>
+  <button class="st-filter-btn" data-filter="blog" style="padding:8px 20px; border-radius:30px; border:1px solid rgba(37,99,235,0.3); background:rgba(37,99,235,0.05); color:#2563eb; cursor:pointer; font-weight:700; transition:all 0.2s;">📝 Blog Articles</button>
+</div>
+
 <div class="st-grid" id="stGrid">
 
+  <!-- POST: FLOT vs ECF (Blog) -->
+  <div class="st-card" data-type="blog" data-date="2026-05-14" style="border-left: 4px solid #2563eb;">
+    <div class="st-meta">
+      <span class="st-badge" style="background:rgba(37,99,235,0.1); color:#2563eb;">Blog Article</span>
+      <span class="st-badge" style="background:rgba(163,21,21,0.08); color:#a31515;">Oncology</span>
+      <span class="st-date">May 14, 2026</span>
+    </div>
+    <h2>FLOT vs ECF/ECX — Which Neoadjuvant Regimen for Gastric &amp; GEJ Cancer?</h2>
+    <p>A landmark trial breakdown for the operating surgeon. Analyzing the FLOT4 vs MAGIC trial data, regimen selection, and operative implications for gastric adenocarcinoma.</p>
+    <div class="st-tags">
+      <span class="st-tag">Gastric Cancer</span>
+      <span class="st-tag">FLOT</span>
+      <span class="st-tag">MAGIC Trial</span>
+      <span class="st-tag">Neoadjuvant</span>
+    </div>
+    <div class="st-footer">
+      <a href="blog/flot-vs-ecf-gastric-cancer.html" class="st-tg-btn" style="color:#2563eb; background:rgba(37,99,235,0.08);">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        Read Full Article →
+      </a>
+    </div>
+  </div>
+
   <!-- POST: Thyroid Surgery & RLN Safety — May 2026 -->
-  <div class="st-card" data-date="2026-05-14">
+  <div class="st-card" data-type="telegram" data-date="2026-05-14">
     <div class="st-meta">
       <span class="st-badge">Head &amp; Neck</span>
       <span class="st-date">May 14, 2026</span>
@@ -379,10 +409,39 @@
 
 <script>
   // Count posts
-  const postCountEl = document.getElementById('postCount');
-  if (postCountEl) {
-    postCountEl.textContent = document.querySelectorAll('.st-card').length + ' posts';
+  function updateCount() {
+    const postCountEl = document.getElementById('postCount');
+    const visibleCards = document.querySelectorAll('.st-card[style*="display: block"], .st-card:not([style*="display: none"])');
+    if (postCountEl) {
+      postCountEl.textContent = visibleCards.length + ' posts';
+    }
   }
+  updateCount();
+
+  // Filter Logic
+  const filterBtns = document.querySelectorAll('.st-filter-btn');
+  const stCards = document.querySelectorAll('.st-card');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Update active state
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filter = btn.getAttribute('data-filter');
+
+      stCards.forEach(card => {
+        const type = card.getAttribute('data-type') || 'telegram'; // fallback for old cards
+        if (filter === 'all' || filter === type) {
+          card.style.display = 'block';
+          card.style.animation = 'fadeInUp 0.4s ease both';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+      updateCount();
+    });
+  });
 
   // Scroll Listener for Premium Nav
   const mainNav = document.getElementById('mainNav');
