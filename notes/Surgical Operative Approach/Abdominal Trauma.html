@@ -4,18 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Surgical Insight Hub — Splenic & Renal Trauma</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-
 <link rel="stylesheet" href="../../css/theme.css">
 <link rel="stylesheet" href="../../css/shared.css">
-
 <script>
   const savedTheme = localStorage.getItem('sih-theme') || 'light';
   if (savedTheme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
 </script>
-
 <style>
 :root {
   /* Blood Red & Slate Aesthetic */
@@ -50,27 +45,69 @@
   --white:     #FFFFFF;
   --sidebar-w: 320px;
 }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.75;}
 
-/* ── DARK MODE OVERRIDES (Monograph Specific) ── */
-[data-theme="dark"] {
-  --bg: #0B0B0B;
-  --bg2: #161616;
-  --text: #F3F4F6;
-  --muted: #9CA3AF;
-  --border: rgba(255,255,255,0.08);
-  --primary-lt: #1C1917;
-  --s1-lt: #1C1917;
-  --s2-lt: #1F2937;
-  --s3-lt: #1C1917;
-  --s4-lt: #1F2937;
-  --s5-lt: #1C1917;
-  --white: #161616;
+/* SLIDE-OVER SIDEBAR */
+#sidebar {
+  position: fixed; top: 0; left: 0; width: var(--sidebar-w); height: 100vh;
+  background: var(--primary-dk); color: #FEF2F2;
+  display: flex; flex-direction: column;
+  z-index: 1000; overflow: hidden;
+  transform: translateX(-100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 4px 0 24px rgba(0,0,0,0.4);
+}
+body.sidebar-open #sidebar {
+  transform: translateX(0);
 }
 
+/* OVERLAY */
+#sidebar-overlay {
+  position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+  background: rgba(69, 10, 10, 0.7); backdrop-filter: blur(3px);
+  z-index: 950; opacity: 0; pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+body.sidebar-open #sidebar-overlay {
+  opacity: 1; pointer-events: auto;
+}
+
+/* TOGGLE BUTTON - TOP LEFT */
+#sidebar-toggle {
+  position: fixed; top: 24px; left: 28px; z-index: 900;
+  background: var(--primary); color: white;
+  border: none; border-radius: 30px;
+  padding: 10px 18px; font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600;
+  letter-spacing: 0.05em; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  display: flex; align-items: center; gap: 8px; transition: all 0.2s;
+}
+#sidebar-toggle:hover {
+  background: var(--accent2); transform: translateY(-2px);
+}
+
+#sidebar-header{padding:20px 20px 14px;border-bottom:1px solid rgba(255,255,255,0.08);flex-shrink:0;}
+#sidebar-header .logo{font-family:'Playfair Display',serif;font-size:13px;font-weight:700;color:var(--accent2);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;}
+#sidebar-header .sub{font-size:10.5px;color:rgba(254,242,242,0.6);letter-spacing:0.04em;}
+#sidebar-search{padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.05);flex-shrink:0;}
+#sidebar-search input{width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:6px;color:#FEF2F2;padding:6px 10px;font-size:12px;font-family:'Source Serif 4',serif;outline:none;transition:border-color 0.2s;}
+#sidebar-search input::placeholder{color:rgba(254,242,242,0.4);}
+#sidebar-search input:focus{border-color:var(--accent2);}
+#sidebar-nav{flex:1;overflow-y:auto;padding:8px 0 20px;}
+#sidebar-nav::-webkit-scrollbar{width:4px;}
+#sidebar-nav::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.15);border-radius:2px;}
+.vol-label{font-size:9.5px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent2);padding:14px 18px 4px;}
+.nav-item{display:block;padding:8px 18px 8px 22px;font-size:12.5px;color:rgba(254,242,242,0.75);text-decoration:none;border-left:2px solid transparent;transition:all 0.15s;line-height:1.4;}
+.nav-item:hover{color:#fff;background:rgba(255,255,255,0.03);border-left-color:rgba(220,38,38,0.5);}
+.nav-item.active{color:#fff;background:rgba(255,255,255,0.06);border-left-color:var(--accent2);font-weight:600;}
+.nav-item .num{font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(254,242,242,0.4);margin-right:6px;}
+
+/* MAIN */
 #main{margin-left:0; min-height:100vh;}
 
 /* HERO */
-#hero{background:linear-gradient(135deg,var(--primary-dk) 0%,#7F1D1D 60%,#450A0A 100%);color:white;padding:120px 72px 60px;position:relative;overflow:hidden;}
+#hero{background:linear-gradient(135deg,var(--primary-dk) 0%,#7F1D1D 60%,#450A0A 100%);color:white;padding:90px 72px 60px;position:relative;overflow:hidden;}
 #hero::before{content:'';position:absolute;top:-60px;right:-60px;width:380px;height:380px;background:radial-gradient(circle,rgba(220,38,38,0.15) 0%,transparent 70%);pointer-events:none;}
 #hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent2),var(--gold),transparent);}
 #hero .eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.16em;color:var(--accent2);text-transform:uppercase;margin-bottom:14px;}
@@ -175,6 +212,9 @@ tbody td{padding:9px 14px;border-bottom:1px solid var(--border);vertical-align:t
 .rapid-ref tbody td{color:var(--primary-lt);padding:7px 12px;border-bottom:1px solid rgba(255,255,255,0.05);}
 .rapid-ref tbody td strong{color:var(--gold);}
 
+/* PROGRESS */
+#progress-bar{position:fixed;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent2),var(--gold));transform-origin:left;transform:scaleX(0);transition:transform 0.1s;z-index:50;}
+
 /* TOP BTN */
 #top-btn{position:fixed;bottom:28px;right:28px;background:var(--primary);color:white;border:none;border-radius:50%;width:44px;height:44px;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,0.2);transition:all 0.2s;opacity:0;pointer-events:none;}
 #top-btn.show{opacity:1;pointer-events:auto;}
@@ -186,11 +226,11 @@ tbody td{padding:9px 14px;border-bottom:1px solid var(--border);vertical-align:t
 
 @media(max-width:900px){
   .content-wrap{padding:0 20px 60px;}
-  #hero{padding:120px 20px 40px;}
+  #hero{padding:72px 20px 40px;}
   #hero h1{font-size:30px;}
 }
 @media print{
-  #sidebar-toggle, #sidebar-overlay, #sidebar, #top-btn, #progress-bar, .nav{display:none!important;}
+  #sidebar-toggle, #sidebar-overlay, #sidebar, #top-btn, #progress-bar{display:none!important;}
   .topic{page-break-inside:avoid;}
   .sec-header{page-break-before:always;}
 }
@@ -237,17 +277,20 @@ tbody td{padding:9px 14px;border-bottom:1px solid var(--border);vertical-align:t
 <div class="mob-nav-overlay" id="mobNavOverlay" onclick="closeMobNav()"></div>
 <div class="mob-nav-sheet" id="mobNavSheet">
   <div class="mob-nav-handle"></div>
-  <a href="../../index.html">Home</a>
-  <a href="../../notes.html">Notes</a>
-  <a href="../operative_approach.html" class="active">Playbook</a>
-  <a href="../../arena.html">MCQ Arena</a>
-  <a href="../../podcast.html">Podcast</a>
-  <a href="../../about.html">About</a>
+  <a href="../../index.html" onclick="closeMobNav()">Home</a>
+  <a href="../../notes.html" onclick="closeMobNav()">Notes</a>
+  <a href="../operative_approach.html" class="active" onclick="closeMobNav()">Playbook</a>
+  <a href="../../arena.html" onclick="closeMobNav()">MCQ Arena</a>
+  <a href="../../podcast.html" onclick="closeMobNav()">Podcast</a>
+  <a href="../../about.html" onclick="closeMobNav()">About</a>
 </div>
 
 <div id="progress-bar"></div>
 <div id="sidebar-overlay" onclick="closeSidebar()"></div>
-<button id="sidebar-toggle" onclick="toggleSidebar()"><span>☰</span> Contents</button>
+
+<button id="sidebar-toggle" onclick="toggleSidebar()">
+  <span>☰</span> Contents
+</button>
 
 <nav id="sidebar">
   <div id="sidebar-header">
@@ -287,6 +330,7 @@ tbody td{padding:9px 14px;border-bottom:1px solid var(--border);vertical-align:t
   </div>
 </nav>
 
+<!-- MAIN -->
 <main id="main">
 <section id="hero">
   <div class="eyebrow">Personalized Surgical Monograph Series</div>
@@ -839,6 +883,9 @@ tbody td{padding:9px 14px;border-bottom:1px solid var(--border);vertical-align:t
       const q = query.toLowerCase();
       navItems.forEach(item => {
         item.style.display = (!q || item.textContent.toLowerCase().includes(q)) ? 'block' : 'none';
+      });
+      document.querySelectorAll('.vol-label').forEach(l => {
+        l.style.display = 'block';
       });
     };
 

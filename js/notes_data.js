@@ -76,7 +76,7 @@ window.NOTES_DATA = {
       tags: ['red:TME', 'red:CRC', 'Lynch', 'CRLM', 'Nigro'],
       pages: '6 monographs',
       type: 'web',
-      url: 'notes/colorectal_Notebook.html',
+      url: 'notes/colorectal_anal_surgery.html',
       isNew: true
     },
     {
@@ -88,7 +88,7 @@ window.NOTES_DATA = {
       tags: ['red:Colorectal', 'Surgical Pathology'],
       pages: 'Monograph',
       type: 'web',
-      url: 'notes/Colorectal & anal Surgery.html',
+      url: 'notes/colorectal_anal_surgery.html',
       isNew: true
     },
     {
@@ -100,7 +100,19 @@ window.NOTES_DATA = {
       tags: ['red:Trauma', 'red:Splenic Injury', 'Renal Trauma', 'AAST Grading'],
       pages: 'Monograph',
       type: 'web',
-      url: 'notes/Abdominal Trauma.html',
+      url: 'notes/Surgical Operative Approach/Abdominal Trauma.html',
+      isNew: true
+    },
+    {
+      id: 'bo-res',
+      title: 'Penetrating & Blunt Abdominal Trauma',
+      kicker: 'SIH Monograph Series',
+      specialty: ['emergency'],
+      description: 'Damage Control, Diagnostic Pathways, and Operative Atlas for blunt and penetrating trauma.',
+      tags: ['red:Trauma', 'Damage Control', 'AAST'],
+      pages: 'Monograph',
+      type: 'web',
+      url: 'notes/Surgical Operative Approach/BO res.html',
       isNew: true
     },
     {
