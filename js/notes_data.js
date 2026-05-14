@@ -92,6 +92,18 @@ window.NOTES_DATA = {
       isNew: true
     },
     {
+      id: 'splenic-renal-trauma',
+      title: 'Splenic &amp; Renal Trauma',
+      kicker: 'SIH Monograph Series',
+      specialty: ['emergency'],
+      description: 'Technical Monograph. AAST organ injury grading, non-operative management criteria, angioembolization indications, splenorrhaphy vs. splenectomy, and renal trauma decision-making.',
+      tags: ['red:Trauma', 'red:AAST Grading', 'Splenectomy', 'NOM'],
+      pages: 'Monograph',
+      type: 'web',
+      url: 'notes/Surgical Operative Approach/SPLENIC & RENAL TRAUMA.html',
+      isNew: true
+    },
+    {
       id: 'anal-surgical-procedures',
       title: 'Anal Surgical Procedures',
       kicker: 'SIH Monograph Series',
