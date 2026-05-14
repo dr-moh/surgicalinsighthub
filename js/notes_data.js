@@ -64,7 +64,7 @@ window.NOTES_DATA = {
       tags: ['red:RSI', 'red:Airway', 'LEMON', 'Mallampati', 'ICU'],
       pages: '5 topics + MCQ',
       type: 'web',
-      url: 'notes/Anesthesia & Perioperative Care Monograph.html',
+      url: 'notes/Anesthesia & Perioperative Care.html',
       isNew: true
     },
     {
@@ -77,6 +77,18 @@ window.NOTES_DATA = {
       pages: '6 monographs',
       type: 'web',
       url: 'notes/colorectal_Notebook.html',
+      isNew: true
+    },
+    {
+      id: 'colorectal-anal-surgery',
+      title: 'Colorectal &amp; Anal Surgery',
+      kicker: 'SIH Monograph Series',
+      specialty: ['colorectal'],
+      description: 'Comprehensive clinical notes and operative frameworks for major colorectal pathologies.',
+      tags: ['red:Colorectal', 'Surgical Pathology'],
+      pages: 'Monograph',
+      type: 'web',
+      url: 'notes/Colorectal & anal Surgery.html',
       isNew: true
     },
     {
@@ -292,7 +304,7 @@ window.NOTES_DATA = {
       tags: ['red:RSI', 'ASA', 'Master Class'],
       pages: 'Monograph',
       type: 'web',
-      url: 'notes/Anesthesia & Perioperative Care Monograph.html',
+      url: 'notes/Anesthesia & Perioperative Care.html',
       isNew: true
     },
     {
@@ -405,6 +417,24 @@ window.NOTES_DATA = {
       opBadge: 'Fundamentals',
       opMeta: 'Skills Lab',
       url: 'notes/Surgical Operative Approach/Surgical Drain Placement Monograph.html'
+    },
+    {
+      id: 'op-fracture-management',
+      title: 'Fracture Management',
+      opKicker: 'Orthopaedic Trauma',
+      description: 'ORIF, Closed Reduction, Nailing, External Fixation, and Skeletal Traction.',
+      opBadge: 'Essential',
+      opMeta: 'Orthopaedics',
+      url: 'notes/Surgical Operative Approach/Fracture Management Monograph.html'
+    },
+    {
+      id: 'op-desarticulation',
+      title: 'Disarticulation',
+      opKicker: 'Vascular & Trauma',
+      description: 'Shoulder, Hip, Knee, and Digit Disarticulation. Level selection and flap design.',
+      opBadge: 'Advanced',
+      opMeta: 'Amputation',
+      url: 'notes/Surgical Operative Approach/Desarticulation.html'
     }
   ]
 };
