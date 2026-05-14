@@ -15,7 +15,7 @@
   /* ── WEB-ACCESSIBLE cards: green border system ── */
   .note-card.web-card {
     border-top-color: #1B6B45 !important;
-    background: linear-gradient(160deg, rgba(27,107,69,0.04) 0%, var(--card-bg,#fff) 60%);
+    background: linear-gradient(160deg, rgba(27,107,69,0.04) 0%, var(--bg-card) 60%);
   }
   .note-card.web-card .nc-kicker { color: #1B6B45; }
   /* Gold button for web/online cards */
@@ -48,7 +48,7 @@
     gap: 0.5rem;
     font-size: 0.82rem;
     font-weight: 600;
-    color: var(--muted,#666);
+    color: var(--text-muted);
   }
   .legend-dot {
     width: 12px;
@@ -139,7 +139,7 @@
     gap: 0.5rem;
     font-size: 0.82rem;
     font-weight: 600;
-    color: var(--muted,#666);
+    color: var(--text-muted);
   }
   .legend-dot {
     width: 12px;
@@ -163,13 +163,13 @@
   .feature-card.tab-trigger:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
   .feature-card.active {
     border-color: #b8922a;
-    background: #fafaf8;
+    background: var(--bg-card-alt);
     box-shadow: 0 20px 50px rgba(184, 146, 42, 0.15);
   }
 
   .fc-top { padding: 32px 40px; flex: 1; }
   .fc-kicker-row { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
-  .fc-kicker { font-size: 0.65rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: #1a1208; }
+  .fc-kicker { font-size: 0.65rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-primary); }
   .fc-badge { background: #b8922a; color: #fff; font-size: 0.65rem; font-weight: 800; padding: 3px 10px; border-radius: 6px; }
   
   .fc-title { 
@@ -177,12 +177,12 @@
     font-weight: 900; 
     letter-spacing: -0.05em; 
     line-height: 1.1; 
-    color: #1a1208; 
+    color: var(--text-primary); 
     margin-bottom: 14px; 
   }
   @media(max-width: 1000px) { .fc-title { font-size: 1.6rem; } }
 
-  .fc-desc { font-size: 0.88rem; color: #6b7280; line-height: 1.5; margin-bottom: 24px; }
+  .fc-desc { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 24px; }
   
   .fc-tags { display: flex; gap: 8px; flex-wrap: wrap; }
   .fc-tag { 
@@ -190,11 +190,11 @@
     font-weight: 700; 
     padding: 6px 14px; 
     border-radius: 8px; 
-    background: #f3f4f6; 
-    color: #374151; 
+    background: var(--bg-secondary); 
+    color: var(--text-secondary); 
   }
   .fc-tag.dark { background: #2b1810; color: #f0d080; }
-  .fc-tag.gold-lt { background: #fdf8ed; color: #5a4a3a; border: 1px solid #f0d08033; }
+  .fc-tag.gold-lt { background: var(--bg-card-alt); color: var(--text-secondary); border: 1px solid var(--border-color); }
 
   .fc-foot { 
     padding: 20px 40px; 
@@ -204,7 +204,7 @@
     justify-content: space-between;
     background: rgba(184, 146, 42, 0.03);
   }
-  .fc-foot-text { font-size: 0.75rem; font-weight: 600; color: #9ca3af; }
+  .fc-foot-text { font-size: 0.75rem; font-weight: 600; color: var(--text-muted); }
   .fc-btn {
     background: #b8922a;
     color: #fff;
@@ -300,7 +300,7 @@
       </div>
       <div>
         <div class="nav-brand-text">Surgical Insight Hub</div>
-        <div class="nav-brand-sub">Medical Library</div>
+        <div class="nav-brand-sub">Advanced Surgical Learning</div>
       </div>
     </a>
     <div class="nav-links-pill">
@@ -381,7 +381,7 @@
 </div>
 
 <div class="notes-legend">
-  <span style="font-size:0.78rem;color:var(--muted,#888);font-weight:500;">Key:</span>
+  <span style="font-size:0.78rem;color:var(--text-muted);font-weight:500;">Key:</span>
   <span class="legend-item"><span class="legend-dot" style="background:#1B6B45;"></span>Read online — no download needed</span>
   <span class="legend-item"><span class="legend-dot" style="background:#b8922a;"></span>Free PDF via Telegram</span>
 </div>
