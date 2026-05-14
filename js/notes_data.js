@@ -80,6 +80,30 @@ window.NOTES_DATA = {
       isNew: true
     },
     {
+      id: 'abdominal-trauma',
+      title: 'Abdominal Trauma',
+      kicker: 'SIH Monograph Series',
+      specialty: ['emergency'],
+      description: 'Master Monograph. Blunt and penetrating abdominal trauma. Splenic and renal injuries, AAST grading, management of liver trauma, and the damage control laparotomy approach.',
+      tags: ['red:Trauma', 'red:Splenic Injury', 'Renal Trauma', 'AAST Grading'],
+      pages: 'Monograph',
+      type: 'web',
+      url: 'notes/Abdominal Trauma.html',
+      isNew: true
+    },
+    {
+      id: 'anal-surgical-procedures',
+      title: 'Anal Surgical Procedures',
+      kicker: 'SIH Monograph Series',
+      specialty: ['colorectal'],
+      description: 'Operative monograph. Haemorrhoidectomy (Milligan-Morgan & Ferguson), anorectal abscess drainage, and fistula-in-ano surgery (Parks classification, LIFT, Seton). Pre-op workup and risk stratification.',
+      tags: ['red:Haemorrhoids', 'red:Fistula-in-Ano', 'Abscess', 'Parks Classification'],
+      pages: '4 Procedures',
+      type: 'web',
+      url: 'notes/anal Surgical Procedures Monograph.html',
+      isNew: true
+    },
+    {
       id: 'whipples-monograph',
       title: 'Pancreaticoduodenectomy (Whipple\'s)',
       kicker: 'SIH Monograph Series',
