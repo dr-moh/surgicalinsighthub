@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Open Inguinal Hernia Repair — Surgical Insight Hub</title>
+<title>Anal Surgical Procedures — Surgical Insight Hub</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -17,42 +17,42 @@
 </script>
 <style>
 :root {
-  /* Surgical Blue & Sky Aesthetic (Hernia Focus) */
-  --primary:   #1A3050; 
-  --primary-dk:#0D1B2A;
-  --primary-lt:#E6EEF8;
-  --accent:    #3D5A80;
-  --accent2:   #98C1D9;
-  --gold:      #B8860B;
-  --gold-lt:   #FFF8E8;
-  --s1:        #1B4332;
-  --s1-lt:     #E6F2EE;
-  --s2:        #2D6A4F;
-  --s2-lt:     #ECF5F0;
-  --s3:        #40916C;
-  --s3-lt:     #F0F8F4;
-  --s4:        #52B788;
-  --s4-lt:     #F4FAF7;
-  --s5:        #1A3050;
-  --s5-lt:     #E6EEF8;
-  --bg:        #F5F8FA;
-  --bg2:       #EDF2F4;
-  --border:    #D1DCE5;
-  --text:      #1B263B;
-  --muted:     #415A77;
+  /* Crimson & Umber Aesthetic (Anal Procedures Focus) */
+  --primary:   #881337; 
+  --primary-dk:#4C0519;
+  --primary-lt:#FFF1F2;
+  --accent:    #9F1239;
+  --accent2:   #F43F5E;
+  --gold:      #B45309;
+  --gold-lt:   #FEF3C7;
+  --s1:        #881337;
+  --s1-lt:     #FFF1F2;
+  --s2:        #4C0519;
+  --s2-lt:     #FEF2F2;
+  --s3:        #9F1239;
+  --s3-lt:     #FFF1F2;
+  --s4:        #7F1D1D;
+  --s4-lt:     #FEF2F2;
+  --s5:        #450A0A;
+  --s5-lt:     #FFF1F2;
+  --bg:        #FAFAF9;
+  --bg2:       #F5F5F4;
+  --border:    #E7E5E4;
+  --text:      #1C1917;
+  --muted:     #57534E;
   --white:     #FFFFFF;
   --sidebar-w: 320px;
 }
 
 [data-theme="dark"] {
-  --bg: #0B0E14;
-  --bg2: #12161F;
-  --text: #C4CCD4;
-  --muted: #8E9AAF;
+  --bg: #0C0C0C;
+  --bg2: #1A1113;
+  --text: #F3F4F6;
+  --muted: #9CA3AF;
   --border: rgba(255,255,255,0.08);
-  --primary-lt: #12161F;
-  --s1-lt: #0F1A15;
-  --white: #12161F;
+  --primary-lt: #1A1113;
+  --s1-lt: #88133733;
+  --white: #1A1113;
 }
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
@@ -62,7 +62,7 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--bg);color:var(-
 /* SIDEBAR & OVERLAY */
 #sidebar {
   position: fixed; top: 0; left: 0; width: var(--sidebar-w); height: 100vh;
-  background: var(--primary-dk); color: #C4CCD4;
+  background: var(--primary-dk); color: #FFF1F2;
   display: flex; flex-direction: column;
   z-index: 1000; overflow: hidden;
   transform: translateX(-100%);
@@ -73,7 +73,7 @@ body.sidebar-open #sidebar { transform: translateX(0); }
 
 #sidebar-overlay {
   position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
-  background: rgba(13, 27, 42, 0.7); backdrop-filter: blur(3px);
+  background: rgba(76, 5, 25, 0.7); backdrop-filter: blur(3px);
   z-index: 950; opacity: 0; pointer-events: none;
   transition: opacity 0.3s ease;
 }
@@ -91,15 +91,15 @@ body.sidebar-open #sidebar-overlay { opacity: 1; pointer-events: auto; }
 
 #sidebar-header{padding:20px 20px 14px;border-bottom:1px solid rgba(255,255,255,0.08);flex-shrink:0;}
 #sidebar-header .logo{font-family:'Playfair Display',serif;font-size:13px;font-weight:700;color:var(--accent2);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;}
-#sidebar-header .sub{font-size:10.5px;color:rgba(196,204,212,0.6);letter-spacing:0.04em;}
+#sidebar-header .sub{font-size:10.5px;color:rgba(255, 241, 242, 0.6);letter-spacing:0.04em;}
 #sidebar-nav{flex:1;overflow-y:auto;padding:8px 0 20px;}
 .vol-label{font-size:9.5px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent2);padding:14px 18px 4px;}
-.nav-item{display:block;padding:8px 18px 8px 22px;font-size:12.5px;color:rgba(196,204,212,0.75);text-decoration:none;border-left:2px solid transparent;transition:all 0.15s;line-height:1.4;}
-.nav-item:hover{color:#fff;background:rgba(255,255,255,0.03);border-left-color:rgba(152,193,217,0.5);}
+.nav-item{display:block;padding:8px 18px 8px 22px;font-size:12.5px;color:rgba(255, 241, 242, 0.75);text-decoration:none;border-left:2px solid transparent;transition:all 0.15s;line-height:1.4;}
+.nav-item:hover{color:#fff;background:rgba(255,255,255,0.03);border-left-color:var(--accent);}
 .nav-item.active{color:#fff;background:rgba(255,255,255,0.06);border-left-color:var(--accent2);font-weight:600;}
 
 /* HERO */
-#hero{background:linear-gradient(135deg,var(--primary-dk) 0%,#243B55 60%,#141E30 100%);color:white;padding:120px 72px 60px;position:relative;overflow:hidden;}
+#hero{background:linear-gradient(135deg,var(--primary-dk) 0%,#881337 60%,#4C0519 100%);color:white;padding:120px 72px 60px;position:relative;overflow:hidden;}
 #hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent2),var(--gold),transparent);}
 #hero .eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.16em;color:var(--accent2);text-transform:uppercase;margin-bottom:14px;}
 #hero h1{font-family:'Playfair Display',serif;font-size:46px;font-weight:700;line-height:1.15;margin-bottom:10px;color:#fff;}
@@ -108,11 +108,11 @@ body.sidebar-open #sidebar-overlay { opacity: 1; pointer-events: auto; }
 /* CONTENT */
 .content-wrap{max-width:900px;margin:0 auto;padding:0 48px 80px;}
 .sec-header{margin-top:60px;margin-bottom:8px;padding:28px 36px;border-radius:10px;display:flex;align-items:center;gap:20px;}
-.sec-header.s1{background:linear-gradient(135deg,#1B43320A,#1B43321A);border-left:4px solid var(--s1);}
-.sec-header.s2{background:linear-gradient(135deg,#2D6A4F0A,#2D6A4F1A);border-left:4px solid var(--s2);}
-.sec-header.s3{background:linear-gradient(135deg,#40916C0A,#40916C1A);border-left:4px solid var(--s3);}
-.sec-header.s4{background:linear-gradient(135deg,#52B7880A,#52B7881A);border-left:4px solid var(--s4);}
-.sec-header.s5{background:linear-gradient(135deg,#1A30500A,#1A30501A);border-left:4px solid var(--s5);}
+.sec-header.s1{background:linear-gradient(135deg,#8813370A,#8813371A);border-left:4px solid var(--s1);}
+.sec-header.s2{background:linear-gradient(135deg,#4C05190A,#4C05191A);border-left:4px solid var(--s2);}
+.sec-header.s3{background:linear-gradient(135deg,#9F12390A,#9F12391A);border-left:4px solid var(--s3);}
+.sec-header.s4{background:linear-gradient(135deg,#7F1D1D0A,#7F1D1D1A);border-left:4px solid var(--s4);}
+.sec-header.s5{background:linear-gradient(135deg,#450A0A0A,#450A0A1A);border-left:4px solid var(--s5);}
 .sec-badge{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;padding:4px 12px;border-radius:4px;white-space:nowrap;color:white;}
 .s1 .sec-badge{background:var(--s1);} .s2 .sec-badge{background:var(--s2);} .s3 .sec-badge{background:var(--s3);} .s4 .sec-badge{background:var(--s4);} .s5 .sec-badge{background:var(--s5);}
 .sec-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;}
@@ -123,7 +123,7 @@ body.sidebar-open #sidebar-overlay { opacity: 1; pointer-events: auto; }
 /* TABLES */
 .table-wrap{overflow-x:auto;margin:16px 0 20px;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.04);}
 table{width:100%;border-collapse:collapse;font-size:13.5px;background:white;}
-thead tr{background:var(--primary);}
+thead tr{background:var(--s1);}
 thead th{color:white;padding:12px 14px;text-align:left;font-family:'Source Serif 4',serif;font-weight:600;font-size:13px; text-transform: uppercase;}
 tbody tr:nth-child(even){background:var(--bg2);}
 tbody td{padding:10px 14px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.5;}
@@ -131,7 +131,7 @@ tbody td{padding:10px 14px;border-bottom:1px solid var(--border);vertical-align:
 .rapid-ref{background:var(--primary-dk);color:var(--primary-lt);border-radius:10px;padding:28px 32px;margin:30px 0;}
 .rapid-ref h3{font-family:'Playfair Display',serif;font-size:20px;color:var(--accent2);margin-bottom:16px;}
 .rapid-ref table{background:transparent;}
-.rapid-ref thead tr{background:rgba(152,193,217,0.15);}
+.rapid-ref thead tr{background:rgba(244,63,94,0.15);}
 .rapid-ref thead th{color:var(--accent2);border-bottom:1px solid rgba(255,255,255,0.1);}
 .rapid-ref tbody td{color:var(--primary-lt);border-bottom:1px solid rgba(255,255,255,0.05);}
 
@@ -185,27 +185,23 @@ tbody td{padding:10px 14px;border-bottom:1px solid var(--border);vertical-align:
 <nav id="sidebar">
   <div id="sidebar-header">
     <div class="logo">Surgical Insight Hub</div>
-    <div class="sub">Open Inguinal Hernia Repair</div>
+    <div class="sub">Anal Procedures Monograph</div>
   </div>
   <div id="sidebar-nav">
-    <div class="vol-label">Pillar 1: Pre-Op</div>
+    <div class="vol-label">Pillar 1 — Pre-Op Optimization</div>
     <a class="nav-item" href="#p1a">1.1 Clinical Workup</a>
-    <a class="nav-item" href="#p1b">1.2 Risk Stratification</a>
+    <a class="nav-item" href="#p1c">1.3 Risk Stratification</a>
     
-    <div class="vol-label">Pillar 2: Game Plan</div>
-    <a class="nav-item" href="#p2a">2.1 Setup & Positioning</a>
-    <a class="nav-item" href="#p2b">2.2 Phase 1: Incision</a>
-    <a class="nav-item" href="#p2c">2.3 Phase 2: Nerve ID</a>
-    <a class="nav-item" href="#p2d">2.4 Phase 3/4: Cord & Sac</a>
-    <a class="nav-item" href="#p2e">2.5 Phase 5: Lichtenstein</a>
+    <div class="vol-label">Pillar 2 — The Operative Game Plan</div>
+    <a class="nav-item" href="#p2b">2.2 Haemorrhoidectomy</a>
+    <a class="nav-item" href="#p2d">2.4 Fistula-in-Ano Surgery</a>
     
-    <div class="vol-label">Pillar 3: Pearls</div>
+    <div class="vol-label">Pillar 3 — Technical Pearls</div>
     <a class="nav-item" href="#p3a">3.1 Consultant Pearls</a>
     <a class="nav-item" href="#p3b">3.2 The Bail-Out Point</a>
     
-    <div class="vol-label">Pillar 5: Complications</div>
-    <a class="nav-item" href="#p5a">5.1 Chronic Pain</a>
-    <a class="nav-item" href="#p5b">5.2 Ischemic Orchitis</a>
+    <div class="vol-label">Pillar 5 — Complications</div>
+    <a class="nav-item" href="#p5b">5.2 Incontinence Risk</a>
     
     <div class="vol-label">Quick Reference</div>
     <a class="nav-item" href="#rapid">High-Yield Board Facts</a>
@@ -214,24 +210,25 @@ tbody td{padding:10px 14px;border-bottom:1px solid var(--border);vertical-align:
 
 <main id="main">
   <section id="hero">
-    <div class="eyebrow">Hernia Surgery · Lichtenstein · Board Review</div>
-    <h1>Open Inguinal Hernia Repair</h1>
-    <p class="subtitle">Lichtenstein Tension-Free & Shouldice Tissue Repair Frameworks.</p>
+    <div class="eyebrow">Colorectal Surgery · Proctology · Sphincter Preservation</div>
+    <h1>Anal Surgical Procedures</h1>
+    <p class="subtitle">Haemorrhoidectomy, Fistula, Fissure, and Abscess: The precision of anorectal restoration.</p>
   </section>
 
   <div class="content-wrap">
     <!-- SECTION 1 -->
     <div class="sec-header s1">
       <span class="sec-badge">PILLAR 1</span>
-      <span class="sec-title">Pre-operative Preparation</span>
+      <span class="sec-title">Decision Framework</span>
     </div>
     <section class="topic s1" id="p1a">
       <div class="topic-header"><h2>1.1 Clinical Workup</h2></div>
       <ul>
-        <li><strong>Reducibility:</strong> Tender + irreducible = strangulation workup.</li>
-        <li><strong>Internal Ring:</strong> Indirect hits fingertip; direct pushes against pulp.</li>
-        <li><strong>Testicular Exam:</strong> Baseline documentation is mandatory for all male patients.</li>
+        <li><strong>Haemorrhoids:</strong> Grade III (manual reduction) and IV (irreducible) are surgical.</li>
+        <li><strong>Fistula:</strong> Rule out Crohn's disease before any definitive cutting.</li>
+        <li><strong>Fissure:</strong> Chronic (>6 weeks) failing medical therapy (GTN/Diltiazem).</li>
       </ul>
+      <div class="callout warn"><strong>PHILOSOPHY:</strong> Permanent incontinence is one of the most consequential complications in surgery. Protect the sphincter at all costs.</div>
     </section>
 
     <!-- SECTION 2 -->
@@ -239,38 +236,42 @@ tbody td{padding:10px 14px;border-bottom:1px solid var(--border);vertical-align:
       <span class="sec-badge">PILLAR 2</span>
       <span class="sec-title">The Operative Game Plan</span>
     </div>
-    <section class="topic s2" id="p2c">
-      <div class="topic-header"><h2>2.3 Phase 2 — Nerve Identification</h2></div>
-      <div class="callout warn"><span class="label">Priority Check</span>Identify <strong>Ilioinguinal</strong> and <strong>Iliohypogastric</strong> nerves immediately upon opening the external oblique. Trapping a nerve in mesh leads to chronic pain.</div>
+    <section class="topic s2" id="p2b">
+      <div class="topic-header"><h2>2.2 Haemorrhoidectomy (Milligan-Morgan)</h2></div>
+      <ul>
+        <li><strong>Rule of Three:</strong> Preserve at least 3 skin-mucosal bridges of 5mm width to prevent anal stenosis.</li>
+        <li><strong>Technique:</strong> Identify and preserve the internal sphincter (white fibres) during dissection.</li>
+      </ul>
     </section>
 
-    <section class="topic s2" id="p2e">
-      <div class="topic-header"><h2>2.5 Phase 5 — Lichtenstein Repair</h2></div>
+    <section class="topic s2" id="p2d">
+      <div class="topic-header"><h2>2.4 Fistula-in-Ano (Goodsall's Rule)</h2></div>
       <ul>
-        <li><strong>Medial Overlap:</strong> Must overlap pubic tubercle by 1.5–2cm.</li>
-        <li><strong>Internal Ring:</strong> Cross tails behind the cord; pass a closed hemostat through the ring alongside the cord to ensure it's not too tight.</li>
+        <li><strong>Anterior:</strong> Usually track straight to the anal canal.</li>
+        <li><strong>Posterior:</strong> Track to the posterior midline (curved).</li>
+        <li><strong>Management:</strong> Fistulotomy for low tracts; Seton for high/complex tracts.</li>
       </ul>
     </section>
 
     <!-- SECTION 3 -->
     <div class="sec-header s3">
       <span class="sec-badge">PILLAR 3</span>
-      <span class="sec-title">Consultant Pearls</span>
+      <span class="sec-title">Technical Pearls</span>
     </div>
     <section class="topic s3" id="p3a">
-      <div class="callout pearl"><strong>The Large Indirect Sac:</strong> Do NOT strip the entire sac down to the scrotum. This devascularises the cord and leads to ischemic orchitis. Divide at mid-canal and leave distal half open.</div>
+      <div class="callout pearl"><strong>Consultant Pearl:</strong> The "white line of Hilton" marks the lower edge of the internal sphincter. Identifying this is the difference between a successful LIS and a disaster.</div>
     </section>
 
     <!-- RAPID REFERENCE -->
     <div class="rapid-ref" id="rapid">
       <h3>High-Yield Board Facts</h3>
       <table>
-        <thead><tr><th>Topic</th><th>Key Fact</th></tr></thead>
+        <thead><tr><th>Topic</th><th>Fact</th></tr></thead>
         <tbody>
-          <tr><td>Incision</td><td>2 fingerbreadths above inguinal ligament.</td></tr>
-          <tr><td>Nerve ID</td><td>Ilioinguinal nerve runs on anterior surface of cord.</td></tr>
-          <tr><td>Recurrence</td><td>Most common site: medial (insufficient pubic tubercle overlap).</td></tr>
-          <tr><td>Chronic Pain</td><td>Inguinodynia affects 10-12% of patients long-term.</td></tr>
+          <tr><td><strong>Skin Bridge Rule</strong></td><td>≥3 bridges of 5mm to prevent stenosis.</td></tr>
+          <tr><td><strong>LIS Limit</strong></td><td>Divide only the lower third of the internal sphincter.</td></tr>
+          <tr><td><strong>Seton Utility</strong></td><td>Maintains drainage while promoting fibrosis; prevents abscess recurrence.</td></tr>
+          <tr><td><strong>Secondary Bleed</strong></td><td>Typically occurs POD 7-14; requires EUA if brisk.</td></tr>
         </tbody>
       </table>
     </div>

@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Surgical Insight Hub — Anesthesia & Perioperative Care</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="../../css/theme.css">
+<link rel="stylesheet" href="../../css/shared.css">
+
+<script>
+  const savedTheme = localStorage.getItem('sih-theme') || 'light';
+  if (savedTheme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+</script>
+<style>
+:root {
+  /* Dark Ruby & Charcoal Aesthetic */
+  --primary:   #7F1D1D; 
+  --primary-dk:#450A0A;
+  --primary-lt:#FEF2F2;
+  --accent:    #991B1B;
+  --accent2:   #FB7185;
+  --gold:      #F59E0B;
+  --gold-lt:   #FEF3C7;
+  --s1:        #7F1D1D;
+  --s1-lt:     #FEF2F2;
+  --s2:        #1F2937;
+  --s2-lt:     #F3F4F6;
+  --s3:        #991B1B;
+  --s3-lt:     #FEF2F2;
+  --s4:        #374151;
+  --s4-lt:     #F3F4F6;
+  --s5:        #450A0A;
+  --s5-lt:     #FEF2F2;
+  --bg:        #FAFAFA;
+  --bg2:       #F4F4F5;
+  --border:    #E5E7EB;
+  --text:      #111827;
+  --muted:     #6B7280;
+  --white:     #FFFFFF;
+  --sidebar-w: 320px;
+}
+
+[data-theme="dark"] {
+  --bg: #0B0B0B;
+  --bg2: #161616;
+  --text: #F3F4F6;
+  --muted: #9CA3AF;
+  --border: rgba(255,255,255,0.08);
+  --primary-lt: #1C1917;
+  --s1-lt: #1C1917;
+  --white: #161616;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.75;}
+
+/* SIDEBAR & OVERLAY */
+#sidebar {
+  position: fixed; top: 0; left: 0; width: var(--sidebar-w); height: 100vh;
+  background: var(--primary-dk); color: #FEF2F2;
+  display: flex; flex-direction: column;
+  z-index: 1000; overflow: hidden;
+  transform: translateX(-100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 4px 0 24px rgba(0,0,0,0.4);
+}
+body.sidebar-open #sidebar { transform: translateX(0); }
+
+#sidebar-overlay {
+  position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+  background: rgba(69, 10, 10, 0.7); backdrop-filter: blur(3px);
+  z-index: 950; opacity: 0; pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+body.sidebar-open #sidebar-overlay { opacity: 1; pointer-events: auto; }
+
+#sidebar-toggle {
+  position: fixed; top: 24px; left: 28px; z-index: 900;
+  background: var(--primary); color: white;
+  border: none; border-radius: 30px;
+  padding: 10px 18px; font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600;
+  letter-spacing: 0.05em; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  display: flex; align-items: center; gap: 8px; transition: all 0.2s;
+}
+#sidebar-toggle:hover { background: var(--accent2); transform: translateY(-2px); }
+
+#sidebar-header{padding:20px 20px 14px;border-bottom:1px solid rgba(255,255,255,0.08);flex-shrink:0;}
+#sidebar-header .logo{font-family:'Playfair Display',serif;font-size:13px;font-weight:700;color:var(--accent2);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;}
+#sidebar-header .sub{font-size:10.5px;color:rgba(254,242,242,0.6);letter-spacing:0.04em;}
+#sidebar-nav{flex:1;overflow-y:auto;padding:8px 0 20px;}
+.vol-label{font-size:9.5px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent2);padding:14px 18px 4px;}
+.nav-item{display:block;padding:8px 18px 8px 22px;font-size:12.5px;color:rgba(254,242,242,0.75);text-decoration:none;border-left:2px solid transparent;transition:all 0.15s;line-height:1.4;}
+.nav-item:hover{color:#fff;background:rgba(255,255,255,0.03);border-left-color:var(--accent2);}
+.nav-item.active{color:#fff;background:rgba(255,255,255,0.06);border-left-color:var(--accent2);font-weight:600;}
+
+/* HERO */
+#hero{background:linear-gradient(135deg,var(--primary-dk) 0%,#7F1D1D 60%,#450A0A 100%);color:white;padding:120px 72px 60px;position:relative;overflow:hidden;}
+#hero::before{content:'';position:absolute;top:-60px;right:-60px;width:380px;height:380px;background:radial-gradient(circle,rgba(251,113,133,0.15) 0%,transparent 70%);pointer-events:none;}
+#hero .eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.16em;color:var(--accent2);text-transform:uppercase;margin-bottom:14px;}
+#hero h1{font-family:'Playfair Display',serif;font-size:46px;font-weight:700;line-height:1.15;margin-bottom:10px;}
+#hero .subtitle{font-size:18px;color:rgba(255,255,255,0.8);font-style:italic;margin-bottom:28px;}
+
+/* CONTENT */
+.content-wrap{max-width:900px;margin:0 auto;padding:0 48px 80px;}
+.sec-header{margin-top:60px;margin-bottom:8px;padding:28px 36px;border-radius:10px;display:flex;align-items:center;gap:20px;}
+.sec-header.s1{background:linear-gradient(135deg,#7F1D1D0A,#7F1D1D1A);border-left:4px solid var(--s1);}
+.sec-header.s2{background:linear-gradient(135deg,#1F29370A,#1F29371A);border-left:4px solid var(--s2);}
+.sec-header.s3{background:linear-gradient(135deg,#991B1B0A,#991B1B1A);border-left:4px solid var(--s3);}
+.sec-header.s4{background:linear-gradient(135deg,#3741510A,#3741511A);border-left:4px solid var(--s4);}
+.sec-header.s5{background:linear-gradient(135deg,#450A0A0A,#450A0A1A);border-left:4px solid var(--s5);}
+.sec-badge{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;padding:4px 12px;border-radius:4px;white-space:nowrap;color:white;}
+.s1 .sec-badge{background:var(--s1);} .s2 .sec-badge{background:var(--s2);} .s3 .sec-badge{background:var(--s3);} .s4 .sec-badge{background:var(--s4);} .s5 .sec-badge{background:var(--s5);}
+.sec-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;}
+.s1 .sec-title{color:var(--s1);} .s2 .sec-title{color:var(--s2);} .s3 .sec-title{color:var(--s3);} .s4 .sec-title{color:var(--s4);} .s5 .sec-title{color:var(--s5);}
+
+.topic{margin-top:48px;padding-top:48px;border-top:1px solid var(--border);animation:fadeUp 0.4s ease both;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
+
+/* TABLE STYLES */
+.table-wrap{overflow-x:auto;margin:16px 0 20px;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.04);}
+table{width:100%;border-collapse:collapse;font-size:13.5px;background:white;}
+thead tr{background:var(--s1);}
+thead th{color:white;padding:12px 14px;text-align:left;font-family:'Source Serif 4',serif;font-weight:600;font-size:13px;text-transform:uppercase;}
+tbody tr:nth-child(even){background:var(--bg2);}
+tbody td{padding:10px 14px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.5;}
+
+.rapid-ref{background:var(--primary-dk);color:var(--primary-lt);border-radius:10px;padding:28px 32px;margin:30px 0;}
+.rapid-ref h3{font-family:'Playfair Display',serif;font-size:20px;color:var(--accent2);margin-bottom:16px;}
+.rapid-ref table{background:transparent;}
+.rapid-ref thead tr{background:rgba(251,113,133,0.15);}
+.rapid-ref thead th{color:var(--accent2);border-bottom:1px solid rgba(255,255,255,0.1);}
+.rapid-ref tbody td{color:var(--primary-lt);border-bottom:1px solid rgba(255,255,255,0.05);}
+
+@media(max-width:900px){
+  .content-wrap{padding:0 20px 60px;}
+  #hero{padding:120px 20px 40px;}
+  #hero h1{font-size:30px;}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="mainNav">
+  <div class="nav-left">
+    <a href="../../index.html" class="nav-pill">
+      <div class="nav-logo-img"><img src="../../assets/images/Surgical_Insight_Hub_Logo.png" alt="SIH"></div>
+      <div>
+        <div class="nav-brand-text">Surgical Insight Hub</div>
+        <div class="nav-brand-sub">Medical Library</div>
+      </div>
+    </a>
+    <div class="nav-links-pill">
+      <a href="../../index.html">Home</a>
+      <a href="../../notes.html">Notes</a>
+      <a href="../operative_approach.html" class="active">Playbook</a>
+    </div>
+  </div>
+  <div class="nav-right">
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+      <svg id="moonIcon" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/></svg>
+      <svg id="sunIcon" style="display:none;" viewBox="0 0 24 24"><path d="M12 7a5 5 0 1 0 5 5 5.006 5.006 0 0 0-5-5zm0 8a3 3 0 1 1 3-3 3.003 3.003 0 0 1-3 3zm0-13a1 1 0 0 0-1 1v2a1 1 0 0 0 2 0V3a1 1 0 0 0-1-1zm0 18a1 1 0 0 0-1 1v2a1 1 0 0 0 2 0v-2a1 1 0 0 0-1-1zm8-11h-2a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2zm-16 0H2a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2zm13.657-5.657a1 1 0 0 0-1.414 0l-1.414 1.414a1 1 0 0 0 1.414 1.414l1.414-1.414a1 1 0 0 0 0-1.414zm-11.314 0a1 1 0 0 0 0 1.414l1.414 1.414a1 1 0 0 0 1.414-1.414L4.929 5.757a1 1 0 0 0-1.414 0zm11.314 11.314a1 1 0 0 0 0 1.414l1.414 1.414a1 1 0 0 0 1.414-1.414l-1.414-1.414a1 1 0 0 0-1.414 0zm-11.314 0a1 1 0 0 0-1.414 1.414l1.414 1.414a1 1 0 0 0 1.414-1.414l-1.414-1.414a1 1 0 0 0 0-1.414z"/></svg>
+    </button>
+    <a href="../../arena.html" class="nav-btn arena-btn">MCQ Arena</a>
+    <button class="mob-nav-toggle" onclick="openMobNav()"><div class="hamburger"><span></span><span></span><span></span></div></button>
+  </div>
+</nav>
+
+<div class="mob-nav-overlay" id="mobNavOverlay" onclick="closeMobNav()"></div>
+<div class="mob-nav-sheet" id="mobNavSheet">
+  <div class="mob-nav-handle"></div>
+  <a href="../../index.html">Home</a>
+  <a href="../../notes.html">Notes</a>
+  <a href="../operative_approach.html" class="active">Playbook</a>
+  <a href="../../arena.html">MCQ Arena</a>
+</div>
+
+<div id="progress-bar"></div>
+<div id="sidebar-overlay" onclick="closeSidebar()"></div>
+<button id="sidebar-toggle" onclick="toggleSidebar()"><span>☰</span> Contents</button>
+
+<nav id="sidebar">
+  <div id="sidebar-header">
+    <div class="logo">Surgical Insight Hub</div>
+    <div class="sub">Anesthesia Monograph</div>
+  </div>
+  <div id="sidebar-nav">
+    <div class="vol-label">Pillar 1: Airway Management</div>
+    <a class="nav-item" href="#p1a">1.1 Surgical Anatomy</a>
+    <a class="nav-item" href="#p1b">1.2 Airway Assessment</a>
+    <a class="nav-item" href="#p1c">1.3 Mallampati & Cormack-Lehane</a>
+    <a class="nav-item" href="#p1d">1.4 RSI Step-by-Step</a>
+    <div class="vol-label">Pillar 2: Anesthetic Pharmacology</div>
+    <a class="nav-item" href="#p2a">2.1 Induction Agents</a>
+    <a class="nav-item" href="#p2b">2.2 Volatile Agents & MAC</a>
+    <a class="nav-item" href="#p2c">2.3 NMBs & Reversal</a>
+    <a class="nav-item" href="#p2d">2.4 Local Anesthetics & LAST</a>
+    <div class="vol-label">Pillar 3: Anesthesia Types</div>
+    <a class="nav-item" href="#p3a">3.1 Neuraxial Anatomy</a>
+    <a class="nav-item" href="#p3b">3.2 Spinal vs Epidural</a>
+    <a class="nav-item" href="#p3c">3.3 Dermatomal Requirements</a>
+    <a class="nav-item" href="#p3d">3.4 ASRA Guidelines</a>
+    <a class="nav-item" href="#p3e">3.5 ASA Physical Status</a>
+    <div class="vol-label">Pillar 4: Complications</div>
+    <a class="nav-item" href="#p4a">4.1 Malignant Hyperthermia</a>
+    <a class="nav-item" href="#p4b">4.2 Anaphylaxis</a>
+    <a class="nav-item" href="#p4c">4.3 PONV — Apfel Score</a>
+    <div class="vol-label">Pillar 5: ICU Basics</div>
+    <a class="nav-item" href="#p5a">5.1 Mechanical Ventilation</a>
+    <a class="nav-item" href="#p5b">5.2 Shock Classification</a>
+    <a class="nav-item" href="#p5c">5.3 Sepsis</a>
+    <a class="nav-item" href="#p5d">5.4 AKI — KDIGO Staging</a>
+    <a class="nav-item" href="#p5e">5.5 Nutrition & Electrolytes</a>
+    <div class="vol-label">Quick Reference</div>
+    <a class="nav-item" href="#rapid">Critical Numbers & Doses</a>
+  </div>
+</nav>
+
+<main id="main">
+  <section id="hero">
+    <div class="eyebrow">Surgical Insight Hub · Monograph Series · ABSITE · PGY-2 Framework</div>
+    <h1>Anesthesia & Perioperative Care</h1>
+    <p class="subtitle">Complete Illustrated Monograph with Embedded Board Review</p>
+  </section>
+
+  <div class="content-wrap">
+    <div class="callout pearl" style="margin-top: 40px;">
+      <span class="label">Calibrated Resource</span>
+      This monograph consolidates the essential anesthesia and perioperative care knowledge required for surgical residents. It bridges the gap between pure anesthetic theory and the practical application required on the surgical floor and in the intensive care unit.
+    </div>
+
+    <!-- PILLAR 1 -->
+    <div class="sec-header s1">
+      <span class="sec-badge">PILLAR 1</span>
+      <span class="sec-title">Airway Management</span>
+    </div>
+    <section class="topic s1" id="p1a">
+      <div class="topic-header"><h2>1.1 Surgical Anatomy</h2></div>
+      <p>Understanding airway anatomy is not just an intubation requisite; it is the foundation for securing an emergency surgical airway. The cricothyroid membrane is the universal target for emergency front-of-neck access.</p>
+      <ul>
+        <li><strong>Thyroid cartilage:</strong> anterior midline, V-shaped, C4–C5 level.</li>
+        <li><strong>Cricoid cartilage:</strong> only complete tracheal ring, C6; inferior to thyroid cartilage.</li>
+        <li><strong>Cricothyroid membrane (CTM):</strong> width ~9 mm, height ~22 mm. The superior cricothyroid arteries cross the UPPER border; therefore, you must incise in the <strong>INFERIOR THIRD</strong> to avoid massive bleeding.</li>
+        <li><strong>Right mainstem bronchus:</strong> wider, shorter, more vertical (25° from midline). Preferential right-sided endobronchial intubation occurs if the endotracheal tube is advanced too far.</li>
+      </ul>
+      <div class="diagram-wrap">
+        <div class="diagram-title">Figure 1: Airway Anatomy & CTM Surgical Landmarks</div>
+        <img src="Anesthesia_Perioperative_Care_Illustrated_Monograph913.png" alt="Airway Anatomy and CTM Landmarks">
+      </div>
+    </section>
+
+    <section class="topic s1" id="p1b">
+      <div class="topic-header"><h2>1.2 Airway Assessment: LEMON Score</h2></div>
+      <p>Airway management relies on predicting difficulty before the patient is apneic. The LEMON score provides a rapid, structured clinical assessment to identify anatomical traits that predict a difficult direct laryngoscopy.</p>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Letter</th><th>Assessment</th><th>Difficulty Indicator</th></tr></thead>
+        <tbody>
+          <tr><td><strong>L</strong></td><td>Look externally</td><td>Short neck, large tongue, retrognathia, obesity</td></tr>
+          <tr><td><strong>E</strong></td><td>3-3-2 rule</td><td>&lt;3 fingers mouth opening / &lt;3 hyoid-chin / &lt;2 thyromental distance</td></tr>
+          <tr><td><strong>M</strong></td><td>Mallampati</td><td>Class III or IV</td></tr>
+          <tr><td><strong>O</strong></td><td>Obstruction</td><td>Mass, haematoma, Ludwig's angina, foreign body</td></tr>
+          <tr><td><strong>N</strong></td><td>Neck mobility</td><td>Cervical spine injury, ankylosing spondylitis, post-RT</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section class="topic s1" id="p1c">
+      <div class="topic-header"><h2>1.3 Mallampati & Cormack-Lehane</h2></div>
+      <p>The Mallampati score correlates the size of the tongue to the pharyngeal volume. A higher class predicts a poorer view during laryngoscopy, quantified by the Cormack-Lehane grading system.</p>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Mallampati Class</th><th>Visible Structures</th><th>CL Grade</th><th>View at Laryngoscopy</th></tr></thead>
+        <tbody>
+          <tr><td><strong>I</strong></td><td>Soft palate, uvula, fauces, pillars</td><td>1</td><td>Full glottis visible</td></tr>
+          <tr><td><strong>II</strong></td><td>Soft palate, uvula, fauces</td><td>2a</td><td>Partial glottis visible</td></tr>
+          <tr><td><strong>III</strong></td><td>Soft palate, base of uvula</td><td>2b</td><td>Arytenoids only</td></tr>
+          <tr><td><strong>IV</strong></td><td>Hard palate only</td><td>3/4</td><td>Epiglottis only / nothing</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section class="topic s1" id="p1d">
+      <div class="topic-header"><h2>1.4 RSI Step-by-Step</h2></div>
+      <p>Rapid Sequence Induction (RSI) is designed to minimize the time between the loss of protective airway reflexes and the inflation of the endotracheal tube cuff, mitigating aspiration risk in patients with a full stomach.</p>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Step</th><th>Action</th><th>Key Detail</th></tr></thead>
+        <tbody>
+          <tr><td><strong>1</strong></td><td>Preoxygenate</td><td>100% O₂ x 3–5 min; SpO₂ target &gt;95%; nasal cannula 15 L/min apnoeic oxygenation</td></tr>
+          <tr><td><strong>2</strong></td><td>Position</td><td>Sniffing position; ear-to-sternal-notch alignment in obese patients</td></tr>
+          <tr><td><strong>3</strong></td><td>Induction</td><td>Propofol 1.5–2 mg/kg (stable) OR ketamine 1–2 mg/kg (haemodynamic instability)</td></tr>
+          <tr><td><strong>4</strong></td><td>NMB</td><td>Suxamethonium 1.5 mg/kg OR rocuronium 1.2 mg/kg (if suxamethonium CI)</td></tr>
+          <tr><td><strong>5</strong></td><td>Laryngoscopy</td><td>Blade tip in vallecula; lift along handle axis; never lever on teeth</td></tr>
+          <tr><td><strong>6</strong></td><td>Tube</td><td>ETT 7.0–7.5 F / 7.5–8.0 M; cuff 20–25 cmH₂O; depth 21 cm F / 23 cm M</td></tr>
+          <tr><td><strong>7</strong></td><td>Confirm</td><td>EtCO₂ waveform (gold standard) + bilateral auscultation</td></tr>
+        </tbody>
+      </table></div>
+      <div class="callout pearl">
+        <span class="label">Board Fact</span>
+        Safe apnoea time is ~8 min for a healthy adult, but drops to ~2–3 min in obese or pregnant patients. The <strong>EtCO₂ waveform is the gold standard</strong> for ETT confirmation.
+      </div>
+    </section>
+
+    <!-- PILLAR 2 -->
+    <div class="sec-header s2">
+      <span class="sec-badge">PILLAR 2</span>
+      <span class="sec-title">Anesthetic Pharmacology</span>
+    </div>
+    <section class="topic s2" id="p2a">
+      <div class="topic-header"><h2>2.1 Induction Agents</h2></div>
+      <p>Induction agent selection must be tailored to the patient's immediate hemodynamic status and physiological reserve. Propofol is standard for elective cases, but ketamine or etomidate are critical in trauma or shock.</p>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Agent</th><th>Dose</th><th>Mechanism</th><th>CVS Effect</th><th>Key Feature</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Propofol</strong></td><td>1.5–2.5 mg/kg</td><td>GABA-A potentiation</td><td>MAP ↓ 25–40%</td><td>Antiemetic; PRIS &gt;4 mg/kg/h &gt;48h; no analgesia</td></tr>
+          <tr><td><strong>Ketamine</strong></td><td>1–2 mg/kg</td><td>NMDA antagonism</td><td>HR/BP ↑</td><td>Preferred in haemodynamic instability; bronchodilator; raises ICP/IOP</td></tr>
+          <tr><td><strong>Etomidate</strong></td><td>0.3 mg/kg</td><td>GABA-A potentiation</td><td>Minimal</td><td>Most CVS stable; adrenocortical suppression 24–48h; myoclonus</td></tr>
+          <tr><td><strong>Thiopental</strong></td><td>3–5 mg/kg</td><td>Barbiturate GABA-A</td><td>BP ↓</td><td>Reduces CMRO₂/ICP; pH 10.8 (necrosis if extravasated)</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section class="topic s2" id="p2b">
+      <div class="topic-header"><h2>2.2 Volatile Agents & MAC</h2></div>
+      <p>Minimum Alveolar Concentration (MAC) measures potency, while the blood:gas partition coefficient dictates the speed of onset and offset (solubility).</p>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Agent</th><th>MAC (%)</th><th>Blood:Gas Coeff.</th><th>Key Features</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Sevoflurane</strong></td><td>2.0</td><td>0.65</td><td>Smooth induction; paediatric first choice; fast offset; MH trigger</td></tr>
+          <tr><td><strong>Isoflurane</strong></td><td>1.15</td><td>1.4</td><td>Vasodilation; reduces MAP; MH trigger</td></tr>
+          <tr><td><strong>Desflurane</strong></td><td>6.0</td><td>0.45</td><td>Fastest onset/offset; airway irritant (not for induction); MH trigger</td></tr>
+          <tr><td><strong>Nitrous oxide</strong></td><td>104</td><td>0.47</td><td>Cannot provide sole anaesthesia; expands gas cavities; NOT an MH trigger</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section class="topic s2" id="p2c">
+      <div class="topic-header"><h2>2.3 NMBs & Reversal</h2></div>
+      <p>Neuromuscular blocking agents are categorized into depolarizing (suxamethonium) and non-depolarizing classes. The advent of Sugammadex has revolutionized the use of rocuronium.</p>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Agent</th><th>Onset</th><th>Duration</th><th>Reversal</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Suxamethonium</strong></td><td>45–60 sec</td><td>8–12 min</td><td>None</td><td>Fastest; K⁺ ↑; CI in burns >24h, crush, denervation, MH</td></tr>
+          <tr><td><strong>Rocuronium</strong></td><td>60–90 sec</td><td>30–60 min</td><td>Sugammadex</td><td>Only NMB reversible at full block (16 mg/kg)</td></tr>
+          <tr><td><strong>Atracurium</strong></td><td>3–5 min</td><td>25–35 min</td><td>Neostigmine</td><td>Hofmann elimination; renal/hepatic failure safe</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section class="topic s2" id="p2d">
+      <div class="topic-header"><h2>2.4 Local Anesthetics & LAST</h2></div>
+      <p>Local anesthetics are the cornerstone of regional anesthesia. Intravascular injection or rapid absorption leads to Local Anesthetic Systemic Toxicity (LAST). Management relies on immediate lipid emulsion therapy.</p>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Agent</th><th>Class</th><th>Max Plain</th><th>Max + Adr</th><th>Key Feature</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Lidocaine</strong></td><td>Amide</td><td>3 mg/kg</td><td>7 mg/kg</td><td>Fastest onset; topical airway; IV antiarrhythmic</td></tr>
+          <tr><td><strong>Bupivacaine</strong></td><td>Amide</td><td>2 mg/kg</td><td>2.5 mg/kg</td><td>Most cardiotoxic (R-enantiomer)</td></tr>
+          <tr><td><strong>Ropivacaine</strong></td><td>Amide</td><td>3 mg/kg</td><td>4 mg/kg</td><td>Less cardiotoxic; motor-sparing at low concentrations</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <!-- PILLAR 3 -->
+    <div class="sec-header s3">
+      <span class="sec-badge">PILLAR 3</span>
+      <span class="sec-title">Anesthesia Types & Classifications</span>
+    </div>
+    <section class="topic s3" id="p3a">
+      <div class="topic-header"><h2>3.1 Neuraxial Anatomy</h2></div>
+      <ul>
+        <li>Layers: skin → subcutaneous → supraspinous → interspinous → ligamentum flavum (Loss of Resistance) → epidural space → dura → arachnoid → subarachnoid (CSF).</li>
+        <li>Conus medullaris: Ends at L1–L2 in adults. Safe insertion is restricted to L3–L4 or L4–L5.</li>
+        <li>Tuffier's line: reliable crosses L4, serves as a standard bedside landmark.</li>
+      </ul>
+    </section>
+
+    <section class="topic s3" id="p3b">
+      <div class="topic-header"><h2>3.2 Spinal vs Epidural</h2></div>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Feature</th><th>Spinal</th><th>Epidural</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Target space</strong></td><td>Subarachnoid (CSF)</td><td>Epidural (fat, veins)</td></tr>
+          <tr><td><strong>Drug volume</strong></td><td>2–3 mL</td><td>10–20 mL bolus</td></tr>
+          <tr><td><strong>Onset</strong></td><td>3–5 min</td><td>15–20 min</td></tr>
+          <tr><td><strong>Duration</strong></td><td>Fixed ~2–3 h</td><td>Indefinite (catheter)</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section class="topic s3" id="p3c">
+      <div class="topic-header"><h2>3.3 Dermatomal Requirements</h2></div>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Dermatome</th><th>Landmark</th><th>Procedure</th></tr></thead>
+        <tbody>
+          <tr><td><strong>T4</strong></td><td>Nipple line</td><td>Caesarean section</td></tr>
+          <tr><td><strong>T6</strong></td><td>Xiphisternum</td><td>Upper abdominal surgery</td></tr>
+          <tr><td><strong>T10</strong></td><td>Umbilicus</td><td>Hip/knee replacement, inguinal herniorrhaphy, TURP</td></tr>
+          <tr><td><strong>S1–S3</strong></td><td>Perineum</td><td>Anorectal / perineal surgery</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section class="topic s3" id="p3d">
+      <div class="topic-header"><h2>3.4 ASRA Guidelines</h2></div>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Agent</th><th>Wait Before Block</th><th>Wait After Catheter Removal</th></tr></thead>
+        <tbody>
+          <tr><td><strong>LMWH prophylactic</strong></td><td>12 hours</td><td>12 hours</td></tr>
+          <tr><td><strong>LMWH therapeutic</strong></td><td>24 hours</td><td>24 hours</td></tr>
+          <tr><td><strong>Warfarin</strong></td><td>INR ≤1.4</td><td>After removal</td></tr>
+          <tr><td><strong>Clopidogrel</strong></td><td>7 days</td><td>After removal</td></tr>
+          <tr><td><strong>DOACs</strong></td><td>72 hours</td><td>6 hours after removal</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section class="topic s3" id="p3e">
+      <div class="topic-header"><h2>3.5 ASA Physical Status</h2></div>
+      <div class="table-wrap"><table>
+        <thead><tr><th>ASA Class</th><th>Description</th><th>Mortality</th></tr></thead>
+        <tbody>
+          <tr><td><strong>I</strong></td><td>Normal healthy</td><td>&lt;0.1%</td></tr>
+          <tr><td><strong>II</strong></td><td>Mild systemic disease (controlled HTN/DM)</td><td>0.1–0.2%</td></tr>
+          <tr><td><strong>III</strong></td><td>Severe systemic disease (COPD, morbid obesity)</td><td>1.8–4.3%</td></tr>
+          <tr><td><strong>IV</strong></td><td>Constant threat to life (recent MI, sepsis)</td><td>7.8–23%</td></tr>
+          <tr><td><strong>V</strong></td><td>Moribund (ruptured AAA)</td><td>Up to 51%</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <!-- PILLAR 4 -->
+    <div class="sec-header s4">
+      <span class="sec-badge">PILLAR 4</span>
+      <span class="sec-title">Anesthetic Complications</span>
+    </div>
+    <section class="topic s4" id="p4a">
+      <div class="topic-header"><h2>4.1 Malignant Hyperthermia (MH)</h2></div>
+      <p>Pharmacogenetic disorder causing a hypermetabolic crisis. Early recognition hinges on identifying a rising EtCO₂ before overt hyperthermia.</p>
+      <ul>
+        <li><strong>Gene:</strong> RYR1 (ryanodine receptor 1); chromosome 19.</li>
+        <li><strong>Triggers:</strong> ALL volatile halogenated agents + suxamethonium.</li>
+        <li><strong>EARLIEST sign:</strong> Rising EtCO₂ despite adequate ventilation.</li>
+        <li><strong>Specific Rx:</strong> Dantrolene 2.5 mg/kg IV q5min.</li>
+      </ul>
+    </section>
+
+    <section class="topic s4" id="p4b">
+      <div class="topic-header"><h2>4.2 Anaphylaxis</h2></div>
+      <p>Often presents abruptly with profound hypotension and bronchospasm. Neuromuscular blockers are the leading culprits.</p>
+      <ul>
+        <li><strong>First-line Rx:</strong> Adrenaline. IV 50 mcg boluses; IM 0.5 mg (1:1000).</li>
+        <li><strong>Tryptase sampling:</strong> 3 samples: 1–2h (peak), 4–6h, 24h (baseline).</li>
+      </ul>
+    </section>
+
+    <section class="topic s4" id="p4c">
+      <div class="topic-header"><h2>4.3 PONV — Apfel Score</h2></div>
+      <p>Apfel factors (1 pt each): female sex / non-smoker / history of PONV or motion sickness / postoperative opioid use.</p>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Apfel Score</th><th>PONV Risk</th><th>Minimum Prophylaxis</th></tr></thead>
+        <tbody>
+          <tr><td><strong>1</strong></td><td>~20%</td><td>1 agent (ondansetron 4 mg)</td></tr>
+          <tr><td><strong>2</strong></td><td>~40%</td><td>2 agents</td></tr>
+          <tr><td><strong>3</strong></td><td>~60%</td><td>3 agents + consider TIVA</td></tr>
+          <tr><td><strong>4</strong></td><td>~80%</td><td>3 agents + TIVA + opioid minimisation</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <!-- PILLAR 5 -->
+    <div class="sec-header s5">
+      <span class="sec-badge">PILLAR 5</span>
+      <span class="sec-title">ICU Basics for Surgeons</span>
+    </div>
+    <section class="topic s5" id="p5a">
+      <div class="topic-header"><h2>5.1 Mechanical Ventilation</h2></div>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Parameter</th><th>Target</th><th>Rationale</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Tidal volume</strong></td><td>6 mL/kg IBW</td><td>Prevents volutrauma; reduces mortality</td></tr>
+          <tr><td><strong>Plateau pressure</strong></td><td>≤30 cmH₂O</td><td>Prevents barotrauma</td></tr>
+          <tr><td><strong>Driving pressure</strong></td><td>≤15 cmH₂O</td><td>Strongest mortality predictor</td></tr>
+          <tr><td><strong>FiO₂</strong></td><td>Lowest for SpO₂ ≥92%</td><td>Prevents oxygen toxicity</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section class="topic s5" id="p5b">
+      <div class="topic-header"><h2>5.2 Shock Classification</h2></div>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Type</th><th>CO</th><th>SVR</th><th>CVP</th><th>First-Line Rx</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Hypovolaemic</strong></td><td>Low</td><td>High</td><td>Low</td><td>Volume; blood products</td></tr>
+          <tr><td><strong>Distributive (septic)</strong></td><td>High</td><td>Low</td><td>Low</td><td>Noradrenaline + source control</td></tr>
+          <tr><td><strong>Cardiogenic</strong></td><td>Low</td><td>High</td><td>High</td><td>Dobutamine; restrict fluids</td></tr>
+          <tr><td><strong>Obstructive</strong></td><td>Low</td><td>High</td><td>High</td><td>Relieve obstruction</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section class="topic s5" id="p5c">
+      <div class="topic-header"><h2>5.3 Sepsis</h2></div>
+      <ul>
+        <li><strong>Sepsis:</strong> SOFA ≥2 from infection.</li>
+        <li><strong>Septic shock:</strong> Sepsis + vasopressor for MAP ≥65 + lactate >2 mmol/L.</li>
+        <li><strong>qSOFA:</strong> RR ≥22 / GCS <15 / SBP ≤100. Score ≥2 triggers escalation.</li>
+      </ul>
+    </section>
+
+    <section class="topic s5" id="p5d">
+      <div class="topic-header"><h2>5.4 AKI — KDIGO Staging</h2></div>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Stage</th><th>Creatinine Criterion</th><th>Urine Output Criterion</th></tr></thead>
+        <tbody>
+          <tr><td><strong>1</strong></td><td>×1.5–1.9 baseline</td><td>&lt;0.5 mL/kg/h for 6–12h</td></tr>
+          <tr><td><strong>2</strong></td><td>×2.0–2.9 baseline</td><td>&lt;0.5 mL/kg/h for ≥12h</td></tr>
+          <tr><td><strong>3</strong></td><td>×3.0 OR RRT initiated</td><td>&lt;0.3 mL/kg/h for ≥24h</td></tr>
+        </tbody>
+      </table></div>
+      <p>Emergency RRT (AEIOU): Acidosis, Electrolytes (K+), Intoxication, Overload, Uraemia.</p>
+    </section>
+
+    <section class="topic s5" id="p5e">
+      <div class="topic-header"><h2>5.5 Nutrition & Electrolytes</h2></div>
+      <div class="callout pearl">
+        <span class="label">Clinical Pearl</span>
+        Refeeding syndrome: commencing nutrition after prolonged starvation drives phosphate, K⁺, and Mg²⁺ intracellularly, leading to respiratory muscle failure.
+      </div>
+    </section>
+
+    <!-- RAPID REFERENCE -->
+    <div class="rapid-ref" id="rapid">
+      <h3>Quick Reference — Critical Numbers & Doses</h3>
+      <table>
+        <thead><tr><th>Drug / Parameter</th><th>Value</th><th>Context</th></tr></thead>
+        <tbody>
+          <tr><td>Suxamethonium RSI</td><td>1.5 mg/kg IV</td><td>Onset 45–60 sec</td></tr>
+          <tr><td>Rocuronium RSI</td><td>1.2 mg/kg IV</td><td>Onset 60–90 sec</td></tr>
+          <tr><td>Dantrolene (MH)</td><td>2.5 mg/kg IV</td><td>Specific MH treatment</td></tr>
+          <tr><td>Intralipid (LAST)</td><td>1.5 mL/kg IV</td><td>20% lipid emulsion</td></tr>
+          <tr><td>Adrenaline (Anaph)</td><td>50 mcg IV bolus</td><td>IM 0.5 mg (1:1000) if no IV</td></tr>
+          <tr><td>Bupivacaine Max</td><td>2 mg/kg</td><td>Most cardiotoxic LA</td></tr>
+          <tr><td>ARDSNet TV</td><td>6 mL/kg IBW</td><td>Reduces mortality</td></tr>
+          <tr><td>MAP Target</td><td>≥65 mmHg</td><td>Septic shock target</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</main>
+
+<button id="top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+  (function() {
+    // Navigation & Theme
+    const mainNav = document.getElementById('mainNav');
+    const themeToggle = document.getElementById('themeToggle');
+    const moonIcon = document.getElementById('moonIcon');
+    const sunIcon = document.getElementById('sunIcon');
+    
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) mainNav?.classList.add('scrolled');
+      else mainNav?.classList.remove('scrolled');
+    });
+    
+    function applyTheme(theme) {
+      if (theme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        if(moonIcon) moonIcon.style.display = 'none';
+        if(sunIcon) sunIcon.style.display = 'block';
+      } else {
+        document.documentElement.removeAttribute('data-theme');
+        if(sunIcon) sunIcon.style.display = 'none';
+        if(moonIcon) moonIcon.style.display = 'block';
+      }
+    }
+    
+    themeToggle?.addEventListener('click', () => {
+      const isDark = document.documentElement.hasAttribute('data-theme');
+      const newTheme = isDark ? 'light' : 'dark';
+      applyTheme(newTheme);
+      localStorage.setItem('sih-theme', newTheme);
+    });
+
+    // Sidebar & Progress
+    const progressBar = document.getElementById('progress-bar');
+    const topBtn = document.getElementById('top-btn');
+    const sections = document.querySelectorAll('.topic[id], .rapid-ref[id]');
+    const navItems = document.querySelectorAll('.nav-item');
+    
+    window.toggleSidebar = () => document.body.classList.toggle('sidebar-open');
+    window.closeSidebar = () => document.body.classList.remove('sidebar-open');
+    
+    window.addEventListener('scroll', () => {
+      const st = window.scrollY;
+      const dh = document.documentElement.scrollHeight - window.innerHeight;
+      if (progressBar) progressBar.style.transform = `scaleX(${st / dh})`;
+      if (topBtn) topBtn.classList.toggle('show', st > 400);
+      
+      let current = '';
+      sections.forEach(s => { if (st >= s.offsetTop - 120) current = s.id; });
+      navItems.forEach(n => n.classList.toggle('active', n.getAttribute('href') === '#' + current));
+    });
+
+    window.openMobNav = () => {
+      document.getElementById('mobNavOverlay').style.display = 'block';
+      setTimeout(() => document.getElementById('mobNavSheet').classList.add('open'), 10);
+      document.body.style.overflow = 'hidden';
+    };
+    window.closeMobNav = () => {
+      document.getElementById('mobNavSheet').classList.remove('open');
+      setTimeout(() => { document.getElementById('mobNavOverlay').style.display = 'none'; }, 300);
+      document.body.style.overflow = '';
+    };
+
+    // Topic Animation Delay
+    document.querySelectorAll('.topic').forEach((el, i) => {
+      el.style.animationDelay = `${i * 0.05}s`;
+    });
+
+    // Sidebar Link Intercept
+    navItems.forEach(item => {
+      item.addEventListener('click', e => {
+        e.preventDefault();
+        closeSidebar();
+        const targetId = item.getAttribute('href');
+        const target = document.querySelector(targetId);
+        if (target) {
+          window.scrollTo({
+            top: target.offsetTop - 100,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  })();
+</script>
+</body>
+</html>

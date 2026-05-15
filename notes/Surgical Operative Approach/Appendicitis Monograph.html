@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Open Inguinal Hernia Repair — Surgical Insight Hub</title>
+<title>Appendicitis — Surgical Insight Hub</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -17,12 +17,12 @@
 </script>
 <style>
 :root {
-  /* Surgical Blue & Sky Aesthetic (Hernia Focus) */
-  --primary:   #1A3050; 
-  --primary-dk:#0D1B2A;
-  --primary-lt:#E6EEF8;
-  --accent:    #3D5A80;
-  --accent2:   #98C1D9;
+  /* Deep Emerald & Sage Aesthetic (Appendicitis Focus) */
+  --primary:   #1B4332; 
+  --primary-dk:#0D2B1F;
+  --primary-lt:#E6F2EE;
+  --accent:    #2D6A4F;
+  --accent2:   #40916C;
   --gold:      #B8860B;
   --gold-lt:   #FFF8E8;
   --s1:        #1B4332;
@@ -35,24 +35,24 @@
   --s4-lt:     #F4FAF7;
   --s5:        #1A3050;
   --s5-lt:     #E6EEF8;
-  --bg:        #F5F8FA;
-  --bg2:       #EDF2F4;
-  --border:    #D1DCE5;
-  --text:      #1B263B;
-  --muted:     #415A77;
+  --bg:        #F5FAF7;
+  --bg2:       #EBF4EF;
+  --border:    #C8DDD4;
+  --text:      #12241A;
+  --muted:     #3A5A47;
   --white:     #FFFFFF;
   --sidebar-w: 320px;
 }
 
 [data-theme="dark"] {
-  --bg: #0B0E14;
-  --bg2: #12161F;
-  --text: #C4CCD4;
-  --muted: #8E9AAF;
+  --bg: #0B110F;
+  --bg2: #121A16;
+  --text: #C4D9CC;
+  --muted: #8ECFAD;
   --border: rgba(255,255,255,0.08);
-  --primary-lt: #12161F;
+  --primary-lt: #121A16;
   --s1-lt: #0F1A15;
-  --white: #12161F;
+  --white: #121A16;
 }
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
@@ -62,7 +62,7 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--bg);color:var(-
 /* SIDEBAR & OVERLAY */
 #sidebar {
   position: fixed; top: 0; left: 0; width: var(--sidebar-w); height: 100vh;
-  background: var(--primary-dk); color: #C4CCD4;
+  background: var(--primary-dk); color: #C4D9CC;
   display: flex; flex-direction: column;
   z-index: 1000; overflow: hidden;
   transform: translateX(-100%);
@@ -73,7 +73,7 @@ body.sidebar-open #sidebar { transform: translateX(0); }
 
 #sidebar-overlay {
   position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
-  background: rgba(13, 27, 42, 0.7); backdrop-filter: blur(3px);
+  background: rgba(13, 43, 31, 0.7); backdrop-filter: blur(3px);
   z-index: 950; opacity: 0; pointer-events: none;
   transition: opacity 0.3s ease;
 }
@@ -90,18 +90,18 @@ body.sidebar-open #sidebar-overlay { opacity: 1; pointer-events: auto; }
 #sidebar-toggle:hover { background: var(--accent); transform: translateY(-2px); }
 
 #sidebar-header{padding:20px 20px 14px;border-bottom:1px solid rgba(255,255,255,0.08);flex-shrink:0;}
-#sidebar-header .logo{font-family:'Playfair Display',serif;font-size:13px;font-weight:700;color:var(--accent2);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;}
-#sidebar-header .sub{font-size:10.5px;color:rgba(196,204,212,0.6);letter-spacing:0.04em;}
+#sidebar-header .logo{font-family:'Playfair Display',serif;font-size:13px;font-weight:700;color:#8ECFAD;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;}
+#sidebar-header .sub{font-size:10.5px;color:rgba(196,217,204,0.6);letter-spacing:0.04em;}
 #sidebar-nav{flex:1;overflow-y:auto;padding:8px 0 20px;}
-.vol-label{font-size:9.5px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent2);padding:14px 18px 4px;}
-.nav-item{display:block;padding:8px 18px 8px 22px;font-size:12.5px;color:rgba(196,204,212,0.75);text-decoration:none;border-left:2px solid transparent;transition:all 0.15s;line-height:1.4;}
-.nav-item:hover{color:#fff;background:rgba(255,255,255,0.03);border-left-color:rgba(152,193,217,0.5);}
-.nav-item.active{color:#fff;background:rgba(255,255,255,0.06);border-left-color:var(--accent2);font-weight:600;}
+.vol-label{font-size:9.5px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#8ECFAD;padding:14px 18px 4px;}
+.nav-item{display:block;padding:8px 18px 8px 22px;font-size:12.5px;color:rgba(196,217,204,0.75);text-decoration:none;border-left:2px solid transparent;transition:all 0.15s;line-height:1.4;}
+.nav-item:hover{color:#fff;background:rgba(255,255,255,0.03);border-left-color:rgba(142,207,173,0.5);}
+.nav-item.active{color:#fff;background:rgba(255,255,255,0.06);border-left-color:#8ECFAD;font-weight:600;}
 
 /* HERO */
-#hero{background:linear-gradient(135deg,var(--primary-dk) 0%,#243B55 60%,#141E30 100%);color:white;padding:120px 72px 60px;position:relative;overflow:hidden;}
-#hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent2),var(--gold),transparent);}
-#hero .eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.16em;color:var(--accent2);text-transform:uppercase;margin-bottom:14px;}
+#hero{background:linear-gradient(135deg,var(--primary-dk) 0%,#071A10 60%,#040F08 100%);color:white;padding:120px 72px 60px;position:relative;overflow:hidden;}
+#hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#40916C,#8ECFAD,transparent);}
+#hero .eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.16em;color:#8ECFAD;text-transform:uppercase;margin-bottom:14px;}
 #hero h1{font-family:'Playfair Display',serif;font-size:46px;font-weight:700;line-height:1.15;margin-bottom:10px;color:#fff;}
 #hero .subtitle{font-size:18px;color:rgba(255,255,255,0.8);font-style:italic;margin-bottom:28px;}
 
@@ -123,17 +123,17 @@ body.sidebar-open #sidebar-overlay { opacity: 1; pointer-events: auto; }
 /* TABLES */
 .table-wrap{overflow-x:auto;margin:16px 0 20px;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.04);}
 table{width:100%;border-collapse:collapse;font-size:13.5px;background:white;}
-thead tr{background:var(--primary);}
+thead tr{background:var(--s1);}
 thead th{color:white;padding:12px 14px;text-align:left;font-family:'Source Serif 4',serif;font-weight:600;font-size:13px; text-transform: uppercase;}
 tbody tr:nth-child(even){background:var(--bg2);}
 tbody td{padding:10px 14px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.5;}
 
-.rapid-ref{background:var(--primary-dk);color:var(--primary-lt);border-radius:10px;padding:28px 32px;margin:30px 0;}
-.rapid-ref h3{font-family:'Playfair Display',serif;font-size:20px;color:var(--accent2);margin-bottom:16px;}
+.rapid-ref{background:var(--primary-dk);color:#C4D9CC;border-radius:10px;padding:28px 32px;margin:30px 0;}
+.rapid-ref h3{font-family:'Playfair Display',serif;font-size:20px;color:#8ECFAD;margin-bottom:16px;}
 .rapid-ref table{background:transparent;}
-.rapid-ref thead tr{background:rgba(152,193,217,0.15);}
-.rapid-ref thead th{color:var(--accent2);border-bottom:1px solid rgba(255,255,255,0.1);}
-.rapid-ref tbody td{color:var(--primary-lt);border-bottom:1px solid rgba(255,255,255,0.05);}
+.rapid-ref thead tr{background:rgba(142,207,173,0.15);}
+.rapid-ref thead th{color:#8ECFAD;border-bottom:1px solid rgba(255,255,255,0.1);}
+.rapid-ref tbody td{color:#C4D9CC;border-bottom:1px solid rgba(255,255,255,0.05);}
 
 @media(max-width:900px){
   .content-wrap{padding:0 20px 60px;}
@@ -185,92 +185,88 @@ tbody td{padding:10px 14px;border-bottom:1px solid var(--border);vertical-align:
 <nav id="sidebar">
   <div id="sidebar-header">
     <div class="logo">Surgical Insight Hub</div>
-    <div class="sub">Open Inguinal Hernia Repair</div>
+    <div class="sub">Appendicitis Monograph</div>
   </div>
   <div id="sidebar-nav">
-    <div class="vol-label">Pillar 1: Pre-Op</div>
-    <a class="nav-item" href="#p1a">1.1 Clinical Workup</a>
-    <a class="nav-item" href="#p1b">1.2 Risk Stratification</a>
+    <div class="vol-label">Section 1 — Operative Atlas</div>
+    <a class="nav-item" href="#s1a">1.1 Surgical Anatomy</a>
+    <a class="nav-item" href="#s1b">1.2 Step-by-Step Procedure</a>
     
-    <div class="vol-label">Pillar 2: Game Plan</div>
-    <a class="nav-item" href="#p2a">2.1 Setup & Positioning</a>
-    <a class="nav-item" href="#p2b">2.2 Phase 1: Incision</a>
-    <a class="nav-item" href="#p2c">2.3 Phase 2: Nerve ID</a>
-    <a class="nav-item" href="#p2d">2.4 Phase 3/4: Cord & Sac</a>
-    <a class="nav-item" href="#p2e">2.5 Phase 5: Lichtenstein</a>
+    <div class="vol-label">Section 2 — Academic Didactics</div>
+    <a class="nav-item" href="#s2b">2.2 Landmark Trials</a>
+    <a class="nav-item" href="#s2c">2.3 Consultant Debate</a>
     
-    <div class="vol-label">Pillar 3: Pearls</div>
-    <a class="nav-item" href="#p3a">3.1 Consultant Pearls</a>
-    <a class="nav-item" href="#p3b">3.2 The Bail-Out Point</a>
-    
-    <div class="vol-label">Pillar 5: Complications</div>
-    <a class="nav-item" href="#p5a">5.1 Chronic Pain</a>
-    <a class="nav-item" href="#p5b">5.2 Ischemic Orchitis</a>
+    <div class="vol-label">Section 3 — Board Review</div>
+    <a class="nav-item" href="#s3a">3.1 Viva Scenarios</a>
+    <a class="nav-item" href="#s3b">3.2 Scoring Systems</a>
     
     <div class="vol-label">Quick Reference</div>
-    <a class="nav-item" href="#rapid">High-Yield Board Facts</a>
+    <a class="nav-item" href="#rapid">Rapid Board Facts</a>
   </div>
 </nav>
 
 <main id="main">
   <section id="hero">
-    <div class="eyebrow">Hernia Surgery · Lichtenstein · Board Review</div>
-    <h1>Open Inguinal Hernia Repair</h1>
-    <p class="subtitle">Lichtenstein Tension-Free & Shouldice Tissue Repair Frameworks.</p>
+    <div class="eyebrow">General Surgery · Appendicectomy · Evidence-Based</div>
+    <h1>Appendicitis Master Monograph</h1>
+    <p class="subtitle">Comprehensive illustrated guide to diagnosis and surgical management.</p>
   </section>
 
   <div class="content-wrap">
     <!-- SECTION 1 -->
     <div class="sec-header s1">
-      <span class="sec-badge">PILLAR 1</span>
-      <span class="sec-title">Pre-operative Preparation</span>
+      <span class="sec-badge">SECTION 1</span>
+      <span class="sec-title">The Operative Atlas</span>
     </div>
-    <section class="topic s1" id="p1a">
-      <div class="topic-header"><h2>1.1 Clinical Workup</h2></div>
+    <section class="topic s1" id="s1a">
+      <div class="topic-header"><h2>1.1 Surgical Anatomy</h2></div>
       <ul>
-        <li><strong>Reducibility:</strong> Tender + irreducible = strangulation workup.</li>
-        <li><strong>Internal Ring:</strong> Indirect hits fingertip; direct pushes against pulp.</li>
-        <li><strong>Testicular Exam:</strong> Baseline documentation is mandatory for all male patients.</li>
+        <li><strong>Base Location:</strong> Arises from posteromedial cecal wall, 2-3cm below IC valve.</li>
+        <li><strong>Taeniae Coli:</strong> All three converge at the appendiceal base (the "reliable landmark").</li>
+        <li><strong>Vascular:</strong> Appendicular artery (terminal branch of ileocolic) runs in the free border of mesoappendix.</li>
       </ul>
+      <div class="callout clin"><strong>★ Board Pearl:</strong> Follow the anterior taenia inferiorly to the cecum to find the base.</div>
     </section>
 
     <!-- SECTION 2 -->
     <div class="sec-header s2">
-      <span class="sec-badge">PILLAR 2</span>
-      <span class="sec-title">The Operative Game Plan</span>
+      <span class="sec-badge">SECTION 2</span>
+      <span class="sec-title">Academic Didactics</span>
     </div>
-    <section class="topic s2" id="p2c">
-      <div class="topic-header"><h2>2.3 Phase 2 — Nerve Identification</h2></div>
-      <div class="callout warn"><span class="label">Priority Check</span>Identify <strong>Ilioinguinal</strong> and <strong>Iliohypogastric</strong> nerves immediately upon opening the external oblique. Trapping a nerve in mesh leads to chronic pain.</div>
-    </section>
-
-    <section class="topic s2" id="p2e">
-      <div class="topic-header"><h2>2.5 Phase 5 — Lichtenstein Repair</h2></div>
-      <ul>
-        <li><strong>Medial Overlap:</strong> Must overlap pubic tubercle by 1.5–2cm.</li>
-        <li><strong>Internal Ring:</strong> Cross tails behind the cord; pass a closed hemostat through the ring alongside the cord to ensure it's not too tight.</li>
-      </ul>
+    <section class="topic s2" id="s2b">
+      <div class="topic-header"><h2>2.2 Landmark Trials</h2></div>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Trial</th><th>Key Finding</th></tr></thead>
+        <tbody>
+          <tr><td><strong>APPAC I</strong></td><td>Antibiotics safe for uncomplicated cases; 27% crossed to surgery at 1yr.</td></tr>
+          <tr><td><strong>CODA</strong></td><td>Non-inferiority demonstrated; <strong>Appendicolith</strong> predicts higher failure risk.</td></tr>
+        </tbody>
+      </table></div>
     </section>
 
     <!-- SECTION 3 -->
     <div class="sec-header s3">
-      <span class="sec-badge">PILLAR 3</span>
-      <span class="sec-title">Consultant Pearls</span>
+      <span class="sec-badge">SECTION 3</span>
+      <span class="sec-title">Senior Fellowship & Board Review</span>
     </div>
-    <section class="topic s3" id="p3a">
-      <div class="callout pearl"><strong>The Large Indirect Sac:</strong> Do NOT strip the entire sac down to the scrotum. This devascularises the cord and leads to ischemic orchitis. Divide at mid-canal and leave distal half open.</div>
+    <section class="topic s3" id="s3a">
+      <div class="topic-header"><h2>3.1 Viva Scenario: Pregnancy</h2></div>
+      <div class="callout exam">
+        <strong>Scenario:</strong> 28-week pregnant woman with RLQ pain. Non-diagnostic USS.
+        <br><strong>Next Step:</strong> MRI without gadolinium (90-100% sensitivity). Perforation risk to fetus is 20-35% mortality; do not delay.
+      </div>
     </section>
 
     <!-- RAPID REFERENCE -->
     <div class="rapid-ref" id="rapid">
-      <h3>High-Yield Board Facts</h3>
+      <h3>Rapid Board Facts</h3>
       <table>
-        <thead><tr><th>Topic</th><th>Key Fact</th></tr></thead>
+        <thead><tr><th>Topic</th><th>Fact</th></tr></thead>
         <tbody>
-          <tr><td>Incision</td><td>2 fingerbreadths above inguinal ligament.</td></tr>
-          <tr><td>Nerve ID</td><td>Ilioinguinal nerve runs on anterior surface of cord.</td></tr>
-          <tr><td>Recurrence</td><td>Most common site: medial (insufficient pubic tubercle overlap).</td></tr>
-          <tr><td>Chronic Pain</td><td>Inguinodynia affects 10-12% of patients long-term.</td></tr>
+          <li><strong>Retrocecal:</strong> 65-70%; Psoas sign (+); mimics renal pain.</li>
+          <li><strong>Carcinoid:</strong> &gt;2cm = Right Hemicolectomy.</li>
+          <li><strong>Mucocele:</strong> Never aspirate before bagging; risk of PMP.</li>
+          <li><strong>Port-Site Infection:</strong> 12mm port extraction MUST use a bag.</li>
         </tbody>
       </table>
     </div>

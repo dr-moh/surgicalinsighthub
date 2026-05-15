@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Open Inguinal Hernia Repair — Surgical Insight Hub</title>
+<title>Splenic & Renal Trauma — Surgical Insight Hub</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -17,42 +17,42 @@
 </script>
 <style>
 :root {
-  /* Surgical Blue & Sky Aesthetic (Hernia Focus) */
-  --primary:   #1A3050; 
-  --primary-dk:#0D1B2A;
-  --primary-lt:#E6EEF8;
-  --accent:    #3D5A80;
-  --accent2:   #98C1D9;
-  --gold:      #B8860B;
-  --gold-lt:   #FFF8E8;
-  --s1:        #1B4332;
-  --s1-lt:     #E6F2EE;
-  --s2:        #2D6A4F;
-  --s2-lt:     #ECF5F0;
-  --s3:        #40916C;
-  --s3-lt:     #F0F8F4;
-  --s4:        #52B788;
-  --s4-lt:     #F4FAF7;
-  --s5:        #1A3050;
-  --s5-lt:     #E6EEF8;
-  --bg:        #F5F8FA;
-  --bg2:       #EDF2F4;
-  --border:    #D1DCE5;
-  --text:      #1B263B;
-  --muted:     #415A77;
+  /* Blood Red & Slate Aesthetic (Trauma Focus) */
+  --primary:   #7F1D1D; 
+  --primary-dk:#450A0A;
+  --primary-lt:#FEF2F2;
+  --accent:    #991B1B;
+  --accent2:   #DC2626;
+  --gold:      #B45309;
+  --gold-lt:   #FEF3C7;
+  --s1:        #7F1D1D;
+  --s1-lt:     #FEF2F2;
+  --s2:        #1F2937;
+  --s2-lt:     #F3F4F6;
+  --s3:        #991B1B;
+  --s3-lt:     #FEF2F2;
+  --s4:        #374151;
+  --s4-lt:     #F3F4F6;
+  --s5:        #450A0A;
+  --s5-lt:     #FEF2F2;
+  --bg:        #FAFAFA;
+  --bg2:       #F4F4F5;
+  --border:    #E5E7EB;
+  --text:      #111827;
+  --muted:     #6B7280;
   --white:     #FFFFFF;
   --sidebar-w: 320px;
 }
 
 [data-theme="dark"] {
-  --bg: #0B0E14;
-  --bg2: #12161F;
-  --text: #C4CCD4;
-  --muted: #8E9AAF;
+  --bg: #0B0B0B;
+  --bg2: #161616;
+  --text: #F3F4F6;
+  --muted: #9CA3AF;
   --border: rgba(255,255,255,0.08);
-  --primary-lt: #12161F;
-  --s1-lt: #0F1A15;
-  --white: #12161F;
+  --primary-lt: #1C1917;
+  --s1-lt: #1C1917;
+  --white: #161616;
 }
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
@@ -62,7 +62,7 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--bg);color:var(-
 /* SIDEBAR & OVERLAY */
 #sidebar {
   position: fixed; top: 0; left: 0; width: var(--sidebar-w); height: 100vh;
-  background: var(--primary-dk); color: #C4CCD4;
+  background: var(--primary-dk); color: #FEF2F2;
   display: flex; flex-direction: column;
   z-index: 1000; overflow: hidden;
   transform: translateX(-100%);
@@ -73,7 +73,7 @@ body.sidebar-open #sidebar { transform: translateX(0); }
 
 #sidebar-overlay {
   position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
-  background: rgba(13, 27, 42, 0.7); backdrop-filter: blur(3px);
+  background: rgba(69, 10, 10, 0.7); backdrop-filter: blur(3px);
   z-index: 950; opacity: 0; pointer-events: none;
   transition: opacity 0.3s ease;
 }
@@ -87,19 +87,19 @@ body.sidebar-open #sidebar-overlay { opacity: 1; pointer-events: auto; }
   letter-spacing: 0.05em; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.25);
   display: flex; align-items: center; gap: 8px; transition: all 0.2s;
 }
-#sidebar-toggle:hover { background: var(--accent); transform: translateY(-2px); }
+#sidebar-toggle:hover { background: var(--accent2); transform: translateY(-2px); }
 
 #sidebar-header{padding:20px 20px 14px;border-bottom:1px solid rgba(255,255,255,0.08);flex-shrink:0;}
 #sidebar-header .logo{font-family:'Playfair Display',serif;font-size:13px;font-weight:700;color:var(--accent2);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;}
-#sidebar-header .sub{font-size:10.5px;color:rgba(196,204,212,0.6);letter-spacing:0.04em;}
+#sidebar-header .sub{font-size:10.5px;color:rgba(254,242,242,0.6);letter-spacing:0.04em;}
 #sidebar-nav{flex:1;overflow-y:auto;padding:8px 0 20px;}
 .vol-label{font-size:9.5px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent2);padding:14px 18px 4px;}
-.nav-item{display:block;padding:8px 18px 8px 22px;font-size:12.5px;color:rgba(196,204,212,0.75);text-decoration:none;border-left:2px solid transparent;transition:all 0.15s;line-height:1.4;}
-.nav-item:hover{color:#fff;background:rgba(255,255,255,0.03);border-left-color:rgba(152,193,217,0.5);}
+.nav-item{display:block;padding:8px 18px 8px 22px;font-size:12.5px;color:rgba(254,242,242,0.75);text-decoration:none;border-left:2px solid transparent;transition:all 0.15s;line-height:1.4;}
+.nav-item:hover{color:#fff;background:rgba(255,255,255,0.03);border-left-color:rgba(220,38,38,0.5);}
 .nav-item.active{color:#fff;background:rgba(255,255,255,0.06);border-left-color:var(--accent2);font-weight:600;}
 
 /* HERO */
-#hero{background:linear-gradient(135deg,var(--primary-dk) 0%,#243B55 60%,#141E30 100%);color:white;padding:120px 72px 60px;position:relative;overflow:hidden;}
+#hero{background:linear-gradient(135deg,var(--primary-dk) 0%,#7F1D1D 60%,#450A0A 100%);color:white;padding:120px 72px 60px;position:relative;overflow:hidden;}
 #hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent2),var(--gold),transparent);}
 #hero .eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.16em;color:var(--accent2);text-transform:uppercase;margin-bottom:14px;}
 #hero h1{font-family:'Playfair Display',serif;font-size:46px;font-weight:700;line-height:1.15;margin-bottom:10px;color:#fff;}
@@ -108,11 +108,11 @@ body.sidebar-open #sidebar-overlay { opacity: 1; pointer-events: auto; }
 /* CONTENT */
 .content-wrap{max-width:900px;margin:0 auto;padding:0 48px 80px;}
 .sec-header{margin-top:60px;margin-bottom:8px;padding:28px 36px;border-radius:10px;display:flex;align-items:center;gap:20px;}
-.sec-header.s1{background:linear-gradient(135deg,#1B43320A,#1B43321A);border-left:4px solid var(--s1);}
-.sec-header.s2{background:linear-gradient(135deg,#2D6A4F0A,#2D6A4F1A);border-left:4px solid var(--s2);}
-.sec-header.s3{background:linear-gradient(135deg,#40916C0A,#40916C1A);border-left:4px solid var(--s3);}
-.sec-header.s4{background:linear-gradient(135deg,#52B7880A,#52B7881A);border-left:4px solid var(--s4);}
-.sec-header.s5{background:linear-gradient(135deg,#1A30500A,#1A30501A);border-left:4px solid var(--s5);}
+.sec-header.s1{background:linear-gradient(135deg,#7F1D1D0A,#7F1D1D1A);border-left:4px solid var(--s1);}
+.sec-header.s2{background:linear-gradient(135deg,#1F29370A,#1F29371A);border-left:4px solid var(--s2);}
+.sec-header.s3{background:linear-gradient(135deg,#991B1B0A,#991B1B1A);border-left:4px solid var(--s3);}
+.sec-header.s4{background:linear-gradient(135deg,#3741510A,#3741511A);border-left:4px solid var(--s4);}
+.sec-header.s5{background:linear-gradient(135deg,#450A0A0A,#450A0A1A);border-left:4px solid var(--s5);}
 .sec-badge{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;padding:4px 12px;border-radius:4px;white-space:nowrap;color:white;}
 .s1 .sec-badge{background:var(--s1);} .s2 .sec-badge{background:var(--s2);} .s3 .sec-badge{background:var(--s3);} .s4 .sec-badge{background:var(--s4);} .s5 .sec-badge{background:var(--s5);}
 .sec-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;}
@@ -123,7 +123,7 @@ body.sidebar-open #sidebar-overlay { opacity: 1; pointer-events: auto; }
 /* TABLES */
 .table-wrap{overflow-x:auto;margin:16px 0 20px;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.04);}
 table{width:100%;border-collapse:collapse;font-size:13.5px;background:white;}
-thead tr{background:var(--primary);}
+thead tr{background:var(--s1);}
 thead th{color:white;padding:12px 14px;text-align:left;font-family:'Source Serif 4',serif;font-weight:600;font-size:13px; text-transform: uppercase;}
 tbody tr:nth-child(even){background:var(--bg2);}
 tbody td{padding:10px 14px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.5;}
@@ -131,7 +131,7 @@ tbody td{padding:10px 14px;border-bottom:1px solid var(--border);vertical-align:
 .rapid-ref{background:var(--primary-dk);color:var(--primary-lt);border-radius:10px;padding:28px 32px;margin:30px 0;}
 .rapid-ref h3{font-family:'Playfair Display',serif;font-size:20px;color:var(--accent2);margin-bottom:16px;}
 .rapid-ref table{background:transparent;}
-.rapid-ref thead tr{background:rgba(152,193,217,0.15);}
+.rapid-ref thead tr{background:rgba(220,38,38,0.15);}
 .rapid-ref thead th{color:var(--accent2);border-bottom:1px solid rgba(255,255,255,0.1);}
 .rapid-ref tbody td{color:var(--primary-lt);border-bottom:1px solid rgba(255,255,255,0.05);}
 
@@ -185,92 +185,124 @@ tbody td{padding:10px 14px;border-bottom:1px solid var(--border);vertical-align:
 <nav id="sidebar">
   <div id="sidebar-header">
     <div class="logo">Surgical Insight Hub</div>
-    <div class="sub">Open Inguinal Hernia Repair</div>
+    <div class="sub">Splenic & Renal Trauma</div>
   </div>
   <div id="sidebar-nav">
-    <div class="vol-label">Pillar 1: Pre-Op</div>
-    <a class="nav-item" href="#p1a">1.1 Clinical Workup</a>
-    <a class="nav-item" href="#p1b">1.2 Risk Stratification</a>
+    <div class="vol-label">Pillar 1: Core Foundations</div>
+    <a class="nav-item" href="#p1a">1.1 Pathophysiology</a>
+    <a class="nav-item" href="#p1c">1.3 Seminal Trials</a>
+    <a class="nav-item" href="#p1d">1.4 Consultant's Debate</a>
     
-    <div class="vol-label">Pillar 2: Game Plan</div>
-    <a class="nav-item" href="#p2a">2.1 Setup & Positioning</a>
-    <a class="nav-item" href="#p2b">2.2 Phase 1: Incision</a>
-    <a class="nav-item" href="#p2c">2.3 Phase 2: Nerve ID</a>
-    <a class="nav-item" href="#p2d">2.4 Phase 3/4: Cord & Sac</a>
-    <a class="nav-item" href="#p2e">2.5 Phase 5: Lichtenstein</a>
+    <div class="vol-label">Pillar 2: Clinical Protocol</div>
+    <a class="nav-item" href="#p2a">2.1 Advanced Diagnostics</a>
+    <a class="nav-item" href="#p2b">2.2 Resuscitation</a>
+    <a class="nav-item" href="#p2c">2.3 Complications</a>
     
-    <div class="vol-label">Pillar 3: Pearls</div>
-    <a class="nav-item" href="#p3a">3.1 Consultant Pearls</a>
-    <a class="nav-item" href="#p3b">3.2 The Bail-Out Point</a>
+    <div class="vol-label">Pillar 3: The Operative Atlas</div>
+    <a class="nav-item" href="#p3a">3.1 Anatomy & Danger Zones</a>
+    <a class="nav-item" href="#p3b">3.2 Operative Steps</a>
+    <a class="nav-item" href="#p3c">3.3 The Difficult Case</a>
     
-    <div class="vol-label">Pillar 5: Complications</div>
-    <a class="nav-item" href="#p5a">5.1 Chronic Pain</a>
-    <a class="nav-item" href="#p5b">5.2 Ischemic Orchitis</a>
+    <div class="vol-label">Pillar 4: Spatial Awareness</div>
+    <a class="nav-item" href="#p4a">4.1 3D Spatial Awareness</a>
+    <a class="nav-item" href="#p4b">4.2 Radiological Read</a>
+    
+    <div class="vol-label">Pillar 5: Board Review</div>
+    <a class="nav-item" href="#p5a">5.1 Viva Scenarios</a>
+    <a class="nav-item" href="#p5b">5.2 AAST Grading</a>
     
     <div class="vol-label">Quick Reference</div>
-    <a class="nav-item" href="#rapid">High-Yield Board Facts</a>
+    <a class="nav-item" href="#rapid">Board Cheat Sheet</a>
   </div>
 </nav>
 
 <main id="main">
   <section id="hero">
-    <div class="eyebrow">Hernia Surgery · Lichtenstein · Board Review</div>
-    <h1>Open Inguinal Hernia Repair</h1>
-    <p class="subtitle">Lichtenstein Tension-Free & Shouldice Tissue Repair Frameworks.</p>
+    <div class="eyebrow">Trauma Surgery · Solid Organ Injury · Board Review</div>
+    <h1>Splenic & Renal Trauma</h1>
+    <p class="subtitle">Advanced management protocols for blunt and penetrating injuries.</p>
   </section>
 
   <div class="content-wrap">
     <!-- SECTION 1 -->
     <div class="sec-header s1">
-      <span class="sec-badge">PILLAR 1</span>
-      <span class="sec-title">Pre-operative Preparation</span>
+      <span class="sec-badge">SECTION 1</span>
+      <span class="sec-title">Core Foundations</span>
     </div>
     <section class="topic s1" id="p1a">
-      <div class="topic-header"><h2>1.1 Clinical Workup</h2></div>
-      <ul>
-        <li><strong>Reducibility:</strong> Tender + irreducible = strangulation workup.</li>
-        <li><strong>Internal Ring:</strong> Indirect hits fingertip; direct pushes against pulp.</li>
-        <li><strong>Testicular Exam:</strong> Baseline documentation is mandatory for all male patients.</li>
-      </ul>
+      <div class="topic-header"><h2>1.1 Pathophysiology & Clinical Framework</h2></div>
+      <h3>The Spleen</h3>
+      <p>The spleen is the most commonly injured solid organ in blunt abdominal trauma (25–30%). Left lower rib fractures (ribs 9–11) are a classical associated finding (20–40%).</p>
+      <div class="callout warn"><span class="label">⚠ Danger Zone</span><strong>Delayed Rupture:</strong> Subcapsular haematoma can release catastrophically at Day 4–14. Always counsel NOM patients on strict return-to-hospital criteria.</div>
+    </section>
+
+    <section class="topic s1" id="p1c">
+      <div class="topic-header"><h2>1.3 Seminal Trials</h2></div>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Study</th><th>Year</th><th>Key Finding</th></tr></thead>
+        <tbody>
+          <tr><td>EAST NOM Splenic</td><td>2024</td><td>NOM first-line regardless of grade if stable. Embolisation reduces failure in Grade IV.</td></tr>
+          <tr><td>WSES Renal</td><td>2023</td><td>Grade I–III blunt = NOM. Grade IV with collecting system leak = stent/drain first.</td></tr>
+        </tbody>
+      </table></div>
     </section>
 
     <!-- SECTION 2 -->
     <div class="sec-header s2">
-      <span class="sec-badge">PILLAR 2</span>
-      <span class="sec-title">The Operative Game Plan</span>
+      <span class="sec-badge">SECTION 2</span>
+      <span class="sec-title">Clinical Protocol</span>
     </div>
-    <section class="topic s2" id="p2c">
-      <div class="topic-header"><h2>2.3 Phase 2 — Nerve Identification</h2></div>
-      <div class="callout warn"><span class="label">Priority Check</span>Identify <strong>Ilioinguinal</strong> and <strong>Iliohypogastric</strong> nerves immediately upon opening the external oblique. Trapping a nerve in mesh leads to chronic pain.</div>
-    </section>
-
-    <section class="topic s2" id="p2e">
-      <div class="topic-header"><h2>2.5 Phase 5 — Lichtenstein Repair</h2></div>
-      <ul>
-        <li><strong>Medial Overlap:</strong> Must overlap pubic tubercle by 1.5–2cm.</li>
-        <li><strong>Internal Ring:</strong> Cross tails behind the cord; pass a closed hemostat through the ring alongside the cord to ensure it's not too tight.</li>
-      </ul>
+    <section class="topic s2" id="p2a">
+      <div class="topic-header"><h2>2.1 Advanced Diagnostics</h2></div>
+      <div class="callout pearl"><strong>The Haematuria Rule:</strong> Image if gross haematuria OR microscopic + shock OR high-energy mechanism. Penetrating trauma near kidney = image ALL.</div>
     </section>
 
     <!-- SECTION 3 -->
     <div class="sec-header s3">
-      <span class="sec-badge">PILLAR 3</span>
-      <span class="sec-title">Consultant Pearls</span>
+      <span class="sec-badge">SECTION 3</span>
+      <span class="sec-title">The Operative Atlas</span>
     </div>
     <section class="topic s3" id="p3a">
-      <div class="callout pearl"><strong>The Large Indirect Sac:</strong> Do NOT strip the entire sac down to the scrotum. This devascularises the cord and leads to ischemic orchitis. Divide at mid-canal and leave distal half open.</div>
+      <div class="topic-header"><h2>3.1 Anatomy & Danger Zones</h2></div>
+      <ul>
+        <li><strong>Pancreatic Tail:</strong> Within 1cm of splenic hilum in 75%. Hilar stapling without care = fistula.</li>
+        <li><strong>Renal Pedicle:</strong> Control renal vessels at the aorta BEFORE opening Gerota's fascia.</li>
+      </ul>
+    </section>
+
+    <section class="topic s3" id="p3b">
+      <div class="topic-header"><h2>3.2 Step-by-Step Splenectomy</h2></div>
+      <ol>
+        <li>Deliver spleen into wound by dividing lateral peritoneal reflection.</li>
+        <li>Divide phrenocolic and gastrosplenic ligaments.</li>
+        <li>Individual ligation of splenic artery (first) then vein.</li>
+        <li>Check pancreatic tail integrity; place drain if in doubt.</li>
+      </ol>
+    </section>
+
+    <!-- SECTION 5 -->
+    <div class="sec-header s5">
+      <span class="sec-badge">SECTION 5</span>
+      <span class="sec-title">Board Review</span>
+    </div>
+    <section class="topic s5" id="p5a">
+      <div class="topic-header"><h2>5.1 Viva Scenario: OPSI</h2></div>
+      <div class="callout exam">
+        <strong>Scenario:</strong> 28yo patient presents with fever 40°C, rigors, and hypotension 3 months post-splenectomy.
+        <br><strong>Management:</strong> Emergency OPSI protocol. Ceftriaxone 2g IV immediately (do not wait for cultures). 50% mortality. Responsible organism: S. pneumoniae (50-90%).
+      </div>
     </section>
 
     <!-- RAPID REFERENCE -->
     <div class="rapid-ref" id="rapid">
-      <h3>High-Yield Board Facts</h3>
+      <h3>Board Cheat Sheet</h3>
       <table>
-        <thead><tr><th>Topic</th><th>Key Fact</th></tr></thead>
+        <thead><tr><th>Fact</th><th>Clinical Detail</th></tr></thead>
         <tbody>
-          <tr><td>Incision</td><td>2 fingerbreadths above inguinal ligament.</td></tr>
-          <tr><td>Nerve ID</td><td>Ilioinguinal nerve runs on anterior surface of cord.</td></tr>
-          <tr><td>Recurrence</td><td>Most common site: medial (insufficient pubic tubercle overlap).</td></tr>
-          <tr><td>Chronic Pain</td><td>Inguinodynia affects 10-12% of patients long-term.</td></tr>
+          <tr><td>Vaccine Timing</td><td>Day 14 post-op (not earlier). PCV13, PPSV23, MenACWY+B, Hib.</td></tr>
+          <tr><td>Renal Exploration</td><td>Only if unstable or expanding Zone II haematoma. Stent leaks.</td></tr>
+          <tr><td>Kehr's Sign</td><td>Left shoulder tip pain = phrenic irritation (C3-C5) from blood.</td></tr>
+          <tr><td>One-Shot IVP</td><td>2mL/kg contrast, film at 10m. Must check other kidney before nephrectomy.</td></tr>
         </tbody>
       </table>
     </div>
