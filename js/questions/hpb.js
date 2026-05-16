@@ -7657,4 +7657,74 @@ window.QUESTIONS.push(...[
   },
   "discrepancy_flag": ""
 }
+,
+{
+  "id": 1342,
+  "specialty": "HPB",
+  "topic": "Choose the artery that does NOT provide blood supply to the extrahepatic",
+  "question": "Choose the artery that does NOT provide blood supply to the extrahepatic bile duct.1",
+  "options": {
+    "A": "Right hepatic",
+    "B": "Posterior superior pancreaticoduodenal",
+    "C": "Retroportal",
+    "D": "Left gastric"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Right hepatic",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Choose the artery that does NOT provide blood supply to the extrahepatic",
+    "H_highlight_excellence": "Right hepatic",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "HPB surgical guidelines",
+    "P_plan_for_improvement": "Right hepatic"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB surgical guidelines",
+    "takeaway": "Right hepatic",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50166,
+  "specialty": "HPB",
+  "topic": "General",
+  "question": "What is the importance of the right inferior phrenic vein? 9",
+  "options": {
+    "A": "It allows identification of the right hepatic vein (RHV) which runs into the inferior vena cava (IVC) just caudally",
+    "B": "It is a common cause of bleeding during liver mobi- lization",
+    "C": "It is frequently used for vascular reconstructions",
+    "D": "All of the above"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "It allows identification of the right hepatic vein (RHV) which runs into the inferior vena cava (IVC) just",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "It allows identification of the right hepatic vein (RHV) which runs into the inferior vena cava (IVC) just",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "HPB",
+    "P_plan_for_improvement": "It allows identification of the right hepatic vein (RHV) which runs into the inferior vena cava"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB",
+    "takeaway": "It allows identification of the right hepatic vein (RHV) which runs into the inferior vena cava (IVC) just",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
 ]);

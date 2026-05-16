@@ -217,6 +217,14 @@ tbody td{padding:9px 14px;border-bottom:1px solid var(--border);vertical-align:t
   .content-wrap{padding:0 20px 60px;}
   #hero{padding:72px 20px 40px;}
   #hero h1{font-size:30px;}
+  #sidebar-toggle{
+    top: auto;
+    bottom: 24px;
+    left: 24px;
+    z-index: 400;
+    padding: 8px 16px;
+    font-size: 12px;
+  }
 }
 @media print{
   #sidebar-toggle, #sidebar-overlay, #sidebar, #top-btn, #progress-bar{display:none!important;}
@@ -274,7 +282,7 @@ tbody td{padding:9px 14px;border-bottom:1px solid var(--border);vertical-align:t
     <a href="../../podcast.html" onclick="closeMobNav()">Podcast</a>
     <a href="../../surgery-talk.html" onclick="closeMobNav()">Surgery Talk</a>
     <a href="../../about.html" onclick="closeMobNav()">About</a>
-    <a href="https://t.me/sugicalInsightHub" target="_blank" style="color: var(--brand-gold); font-weight: 800;">Join Telegram Community</a>
+    <a href="https://t.me/sugicalInsightHub" target="_blank" rel="noopener" onclick="closeMobNav()" style="color: var(--brand-gold); font-weight: 800;">Join Telegram Community</a>
   </div>
 
 

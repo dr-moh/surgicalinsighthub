@@ -223,6 +223,14 @@ svg text{font-family:'Source Serif 4',Georgia,serif;}
   .content-wrap{padding:0 24px 60px;}
   #hero{padding:120px 24px 40px;}
   #hero h1{font-size:32px;}
+  #sidebar-toggle{
+    top: auto;
+    bottom: 24px;
+    left: 24px;
+    z-index: 400;
+    padding: 8px 16px;
+    font-size: 12px;
+  }
 }
 
 @media print{
@@ -282,7 +290,7 @@ svg text{font-family:'Source Serif 4',Georgia,serif;}
     <a href="../../podcast.html" onclick="closeMobNav()">Podcast</a>
     <a href="../../surgery-talk.html" onclick="closeMobNav()">Surgery Talk</a>
     <a href="../../about.html" onclick="closeMobNav()">About</a>
-    <a href="https://t.me/sugicalInsightHub" target="_blank" style="color: var(--brand-gold); font-weight: 800;">Join Telegram Community</a>
+    <a href="https://t.me/sugicalInsightHub" target="_blank" rel="noopener" onclick="closeMobNav()" style="color: var(--brand-gold); font-weight: 800;">Join Telegram Community</a>
   </div>
 
 <div id="progress-bar"></div>

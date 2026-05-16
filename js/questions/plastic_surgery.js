@@ -5052,4 +5052,39 @@ window.QUESTIONS.push(...[
   },
   "discrepancy_flag": ""
 }
+,
+{
+  "id": 1636,
+  "specialty": "Plastic Surgery",
+  "topic": "18A 7-year-old has cryptotia. Which of the following operative techniques is most",
+  "question": "18A 7-year-old has cryptotia. Which of the following operative techniques is most appropriate for173 correction?",
+  "options": {
+    "A": "A Bjork flap is an inferiorly-based U-shaped flap of anterior tracheal wall.",
+    "B": "It is best to enter the trachea above the first cartilaginous ring.",
+    "C": "The tracheal rings are located between the thyroid cartilage and the manubrium.",
+    "D": "The parathyroid glands need to be seen and preserved during the procedure."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "A Bjork flap is an inferiorly-based U-shaped flap of anterior tracheal wall.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "18A 7-year-old has cryptotia. Which of the following operative techniques is most",
+    "H_highlight_excellence": "A Bjork flap is an inferiorly-based U-shaped flap of anterior tracheal wall.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "BSSH / reconstructive principles",
+    "P_plan_for_improvement": "A Bjork flap is an inferiorly-based U-shaped flap of anterior tracheal wall"
+  },
+  "supplementary_callouts": {
+    "guideline": "BSSH / reconstructive principles",
+    "takeaway": "A Bjork flap is an inferiorly-based U-shaped flap of anterior tracheal wall",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
 ]);

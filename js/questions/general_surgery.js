@@ -49136,4 +49136,75 @@ window.QUESTIONS.push(...[
   },
   "discrepancy_flag": ""
 }
+,
+{
+  "id": 51125,
+  "specialty": "General Surgery",
+  "topic": "General",
+  "question": "Which of the following is the indicated treatment for a noncommunicating hydrocele in a 2-month- old infant?",
+  "options": {
+    "A": "Observation",
+    "B": "Needle aspiration",
+    "C": "Hydrocelectomy through a groin incision",
+    "D": "Hydrocelectomy through a scrotal incision",
+    "E": "Repair of the hernia and hydrocelectomy"
+  },
+  "answer": "D",
+  "explanation": {
+    "correct": "Hydrocelectomy through a scrotal incision",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "Hydrocelectomy through a scrotal incision",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "General Surgery",
+    "P_plan_for_improvement": "Hydrocelectomy through a scrotal incision"
+  },
+  "supplementary_callouts": {
+    "guideline": "General Surgery",
+    "takeaway": "Hydrocelectomy through a scrotal incision",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 682,
+  "specialty": "General Surgery",
+  "topic": "The genetic abnormality &amp; the subsequent syndrome associated with clear cell RCC",
+  "question": "The genetic abnormality &amp; the subsequent syndrome associated with clear cell RCC is, to some degree also associated with?",
+  "options": {
+    "A": "Retinal angioma",
+    "B": "Epidydimal cystadenoma",
+    "C": "Pheochromocytoma",
+    "D": "All of the abve"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Retinal angioma",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "The genetic abnormality &amp; the subsequent syndrome associated with clear cell RCC",
+    "H_highlight_excellence": "Retinal angioma",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ACS / surgical board principles",
+    "P_plan_for_improvement": "Retinal angioma"
+  },
+  "supplementary_callouts": {
+    "guideline": "ACS / surgical board principles",
+    "takeaway": "Retinal angioma",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
 ]);
