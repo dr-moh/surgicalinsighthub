@@ -484,7 +484,7 @@
 
 var INSUFFICIENT_DATA_FALLBACK = window.INSUFFICIENT_DATA_FALLBACK !== undefined
   ? window.INSUFFICIENT_DATA_FALLBACK
-  : 'Insufficient Data in Source';
+  : 'Data missing — consult protocol.';
 var OPTION_LETTERS = ['A', 'B', 'C', 'D', 'E'];
 var CALLOUT_ACRONYM_MAP = {
   mcq: 'MCQ',
@@ -509,7 +509,7 @@ function pickFirstText(candidates) {
   return '';
 }
 
-function formatCalloutLabel(key) {
+function formatCalloutKeyToLabel(key) {
   return String(key || '')
     .replace(/[_-]+/g, ' ')
     .split(' ')
@@ -531,6 +531,7 @@ function normalizeOptions(options) {
       if (!raw) return;
       var letter = String.fromCharCode(65 + index);
       if (letter > 'E') return;
+      // Parse prefixes like "A)", "A.", "A:", "A-" or "A " and keep only option text.
       var parsed = raw.match(/^[A-E][).:\s-]+(.+)$/);
       mapped[letter] = parsed ? parsed[1].trim() : raw;
     });
@@ -565,7 +566,7 @@ function resolveAnswerLetter(question, options) {
       if (cleanText(options[letter]).toLowerCase() === cleanFallback) return letter;
     }
   }
-  return 'A';
+  return null;
 }
 
 function normalizeExplanation(explanation) {
@@ -577,7 +578,7 @@ function normalizeExplanation(explanation) {
 function normalizeQuestionForArena(raw) {
   var q = Object.assign({}, raw);
   q.options = normalizeOptions(raw.options);
-  q.answer = resolveAnswerLetter(raw, q.options);
+  q.answer = resolveAnswerLetter(raw, q.options) || OPTION_LETTERS.find(function(letter) { return !!q.options[letter]; }) || 'A';
   q.explanation = normalizeExplanation(raw.explanation);
   return q;
 }
@@ -598,6 +599,7 @@ var state = {
 var SPECIALTIES = ['All', 'General Surgery', 'HPB', 'Colorectal', 'Anesthesia', 'Vascular', 'Trauma', 'Urology', 'Cardiothoracic', 'Pediatric Surgery', 'Orthopedic', 'Neurosurgery', 'Breast & Endocrine', 'Plastic Surgery'];
 
 function initArena() {
+  // Backward-compat fallback for bundles that define window.QUESTIONS without toggling window.QUESTIONS_LOADED.
   if (!window.QUESTIONS_LOADED && Array.isArray(window.QUESTIONS) && window.QUESTIONS.length > 0) {
     window.QUESTIONS_LOADED = true;
     console.log('Arena: Auto-set QUESTIONS_LOADED flag (fallback)');
@@ -845,7 +847,7 @@ function showSharp(q, selected, isCorrect) {
     aWrap.appendChild(createExplanationRow(letter, detail));
     aCount++;
   });
-  if (aCount === 0) aWrap.appendChild(createExplanationRow('A', INSUFFICIENT_DATA_FALLBACK));
+  if (aCount === 0) aWrap.appendChild(createExplanationRow('Note', INSUFFICIENT_DATA_FALLBACK));
 
   // R - Review Learning Points
   document.getElementById('sharpR').textContent = reviewGuideline || INSUFFICIENT_DATA_FALLBACK;
@@ -883,7 +885,7 @@ function showSharp(q, selected, isCorrect) {
     if (KNOWN_SUPPLEMENTARY_CALLOUTS[key]) return;
     var value = cleanText(callouts[key]);
     if (!value) return;
-    var label = formatCalloutLabel(key);
+    var label = formatCalloutKeyToLabel(key);
     supplementary.appendChild(createExplanationRow(label, value));
     supplementaryCount++;
   });
