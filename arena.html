@@ -485,6 +485,16 @@
 var INSUFFICIENT_DATA_FALLBACK = window.INSUFFICIENT_DATA_FALLBACK !== undefined
   ? window.INSUFFICIENT_DATA_FALLBACK
   : 'Insufficient Data in Source';
+var OPTION_LETTERS = ['A', 'B', 'C', 'D', 'E'];
+var CALLOUT_ACRONYM_MAP = {
+  mcq: 'MCQ',
+  osce: 'OSCE',
+  atls: 'ATLS',
+  ascrs: 'ASCRS',
+  asa: 'ASA',
+  sages: 'SAGES'
+};
+var KNOWN_SUPPLEMENTARY_CALLOUTS = { guideline: true, takeaway: true, visualization: true, answer: true };
 
 function cleanText(value) {
   if (value === null || value === undefined) return '';
@@ -500,20 +510,12 @@ function pickFirstText(candidates) {
 }
 
 function formatCalloutLabel(key) {
-  var acronymMap = {
-    mcq: 'MCQ',
-    osce: 'OSCE',
-    atls: 'ATLS',
-    ascrs: 'ASCRS',
-    asa: 'ASA',
-    sages: 'SAGES'
-  };
   return String(key || '')
     .replace(/[_-]+/g, ' ')
     .split(' ')
     .map(function(part) {
       var lower = part.toLowerCase();
-      if (acronymMap[lower]) return acronymMap[lower];
+      if (CALLOUT_ACRONYM_MAP[lower]) return CALLOUT_ACRONYM_MAP[lower];
       if (!part) return '';
       return lower.charAt(0).toUpperCase() + lower.slice(1);
     })
@@ -558,9 +560,8 @@ function resolveAnswerLetter(question, options) {
 
   var cleanFallback = fallbackAnswer.replace(/^([A-E])[).:\s-]+/, '').trim().toLowerCase();
   if (cleanFallback) {
-    var letters = ['A', 'B', 'C', 'D', 'E'];
-    for (var i = 0; i < letters.length; i++) {
-      var letter = letters[i];
+    for (var i = 0; i < OPTION_LETTERS.length; i++) {
+      var letter = OPTION_LETTERS[i];
       if (cleanText(options[letter]).toLowerCase() === cleanFallback) return letter;
     }
   }
@@ -589,7 +590,8 @@ var SUPA_KEY = 'sb_publishable_Kl4RNEOxvmBewUToRv7HHw_2epulGkp';
 var state = {
   name: '', school: '', specialty: 'All', qCount: 5,
   questions: [], current: 0, score: 0,
-  answers: [], startTime: null
+  answers: [], startTime: null,
+  normalizedQuestionIndexes: {}
 };
 
 // ── INIT ──
@@ -665,6 +667,7 @@ function startSession() {
   state.current = 0;
   state.score = 0;
   state.answers = [];
+  state.normalizedQuestionIndexes = {};
 
   // Build step indicators
   var steps = document.getElementById('qSteps');
@@ -684,10 +687,10 @@ function startSession() {
 
 function renderQuestion() {
   var q = state.questions[state.current];
-  if (!q._arenaNormalized) {
+  if (!state.normalizedQuestionIndexes[state.current]) {
     q = normalizeQuestionForArena(q);
-    q._arenaNormalized = true;
     state.questions[state.current] = q;
+    state.normalizedQuestionIndexes[state.current] = true;
   }
   var total = state.questions.length;
   var idx = state.current;
@@ -835,7 +838,7 @@ function showSharp(q, selected, isCorrect) {
     aCount++;
   }
 
-  ['A','B','C','D','E'].forEach(function(letter) {
+  OPTION_LETTERS.forEach(function(letter) {
     if (!q.options[letter] || letter === q.answer) return;
     var detail = String(explanation[letter] || '').trim();
     if (!detail) return;
@@ -875,10 +878,9 @@ function showSharp(q, selected, isCorrect) {
   var supplementaryRow = document.getElementById('sharpSuppRow');
   var supplementaryDiv = document.getElementById('sharpSuppDiv');
   supplementary.innerHTML = '';
-  var knownCallouts = { guideline: true, takeaway: true, visualization: true, answer: true };
   var supplementaryCount = 0;
   Object.keys(callouts).forEach(function(key) {
-    if (knownCallouts[key]) return;
+    if (KNOWN_SUPPLEMENTARY_CALLOUTS[key]) return;
     var value = cleanText(callouts[key]);
     if (!value) return;
     var label = formatCalloutLabel(key);
