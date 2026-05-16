@@ -428,6 +428,14 @@
             <div class="sharp-row-text" id="sharpV" style="font-style: italic; color: rgba(255,255,255,0.7);"></div>
           </div>
         </div>
+        <div class="sharp-divider" id="sharpSuppDiv" style="display:none;"></div>
+        <div class="sharp-row" id="sharpSuppRow" style="display:none;">
+          <div class="sharp-badge" style="background: var(--brand-gold); color: var(--brand-burgundy); border: 1px solid white;">+</div>
+          <div class="sharp-content">
+            <div class="sharp-row-title">Supplementary Callouts</div>
+            <div class="opt-explanations" id="sharpSupplementary"></div>
+          </div>
+        </div>
       </div>
       <div class="sharp-discrepancy" id="sharpDiscrepancyWrap" style="display:none; margin-top: 20px; border-top: 1px solid rgba(163,21,21,0.3); padding-top: 10px;">
         <div class="sharp-row-title" style="color: #ff4d4d; font-size: 0.7rem;">⚠️ Discrepancy Protocol</div>
@@ -474,7 +482,106 @@
 <script>
 
 
-var INSUFFICIENT_DATA_FALLBACK = window.INSUFFICIENT_DATA_FALLBACK;
+var INSUFFICIENT_DATA_FALLBACK = window.INSUFFICIENT_DATA_FALLBACK !== undefined
+  ? window.INSUFFICIENT_DATA_FALLBACK
+  : 'Data missing — consult protocol.';
+var OPTION_LETTERS = ['A', 'B', 'C', 'D', 'E'];
+var CALLOUT_ACRONYM_MAP = {
+  mcq: 'MCQ',
+  osce: 'OSCE',
+  atls: 'ATLS',
+  ascrs: 'ASCRS',
+  asa: 'ASA',
+  sages: 'SAGES'
+};
+var KNOWN_SUPPLEMENTARY_CALLOUTS = { guideline: true, takeaway: true, visualization: true, answer: true };
+
+function cleanText(value) {
+  if (value === null || value === undefined) return '';
+  return String(value).trim();
+}
+
+function pickFirstText(candidates) {
+  for (var i = 0; i < candidates.length; i++) {
+    var text = cleanText(candidates[i]);
+    if (text) return text;
+  }
+  return '';
+}
+
+function formatCalloutKeyToLabel(key) {
+  return String(key || '')
+    .replace(/[_-]+/g, ' ')
+    .split(' ')
+    .map(function(part) {
+      var lower = part.toLowerCase();
+      if (CALLOUT_ACRONYM_MAP[lower]) return CALLOUT_ACRONYM_MAP[lower];
+      if (!part) return '';
+      return lower.charAt(0).toUpperCase() + lower.slice(1);
+    })
+    .join(' ')
+    .trim();
+}
+
+function normalizeOptions(options) {
+  if (Array.isArray(options)) {
+    var mapped = {};
+    options.forEach(function(opt, index) {
+      var raw = cleanText(opt);
+      if (!raw) return;
+      var letter = String.fromCharCode(65 + index);
+      if (letter > 'E') return;
+      // Parse prefixes like "A)", "A.", "A:", "A-" or "A " and keep only option text.
+      var parsed = raw.match(/^[A-E][).:\s-]+(.+)$/);
+      mapped[letter] = parsed ? parsed[1].trim() : raw;
+    });
+    return mapped;
+  }
+  if (options && typeof options === 'object') {
+    var normalized = {};
+    Object.keys(options).forEach(function(key) {
+      var upper = String(key || '').trim().toUpperCase();
+      if (/^[A-E]$/.test(upper)) normalized[upper] = cleanText(options[key]);
+    });
+    return normalized;
+  }
+  return {};
+}
+
+function resolveAnswerLetter(question, options) {
+  var answer = cleanText(question.answer);
+  if (/^[A-E]$/.test(answer)) return answer;
+
+  var verified = cleanText(question.sharp && question.sharp.verified_answer);
+  if (/^[A-E]$/.test(verified)) return verified;
+
+  var fallbackAnswer = cleanText(question.correct_answer);
+  var parsed = fallbackAnswer.match(/^([A-E])[).:\s-]/);
+  if (parsed) return parsed[1].toUpperCase();
+
+  var cleanFallback = fallbackAnswer.replace(/^([A-E])[).:\s-]+/, '').trim().toLowerCase();
+  if (cleanFallback) {
+    for (var i = 0; i < OPTION_LETTERS.length; i++) {
+      var letter = OPTION_LETTERS[i];
+      if (cleanText(options[letter]).toLowerCase() === cleanFallback) return letter;
+    }
+  }
+  return null;
+}
+
+function normalizeExplanation(explanation) {
+  if (explanation && typeof explanation === 'object' && !Array.isArray(explanation)) return explanation;
+  if (typeof explanation === 'string') return { correct: explanation };
+  return {};
+}
+
+function normalizeQuestionForArena(raw) {
+  var q = Object.assign({}, raw);
+  q.options = normalizeOptions(raw.options);
+  q.answer = resolveAnswerLetter(raw, q.options) || OPTION_LETTERS.find(function(letter) { return !!q.options[letter]; }) || 'A';
+  q.explanation = normalizeExplanation(raw.explanation);
+  return q;
+}
 
 // ── SUPABASE ──
 var SUPA_URL = 'https://sxushsvvmyokoknnsbuj.supabase.co';
@@ -484,13 +591,19 @@ var SUPA_KEY = 'sb_publishable_Kl4RNEOxvmBewUToRv7HHw_2epulGkp';
 var state = {
   name: '', school: '', specialty: 'All', qCount: 5,
   questions: [], current: 0, score: 0,
-  answers: [], startTime: null
+  answers: [], startTime: null,
+  normalizedQuestionIndexes: {}
 };
 
 // ── INIT ──
 var SPECIALTIES = ['All', 'General Surgery', 'HPB', 'Colorectal', 'Anesthesia', 'Vascular', 'Trauma', 'Urology', 'Cardiothoracic', 'Pediatric Surgery', 'Orthopedic', 'Neurosurgery', 'Breast & Endocrine', 'Plastic Surgery'];
 
 function initArena() {
+  // Backward-compat fallback for bundles that define window.QUESTIONS without toggling window.QUESTIONS_LOADED.
+  if (!window.QUESTIONS_LOADED && Array.isArray(window.QUESTIONS) && window.QUESTIONS.length > 0) {
+    window.QUESTIONS_LOADED = true;
+    console.log('Arena: Auto-set QUESTIONS_LOADED flag (fallback)');
+  }
   if (!window.QUESTIONS_LOADED) {
     console.log('MCQ Bank: Still loading questions...');
     setTimeout(initArena, 200);
@@ -556,6 +669,7 @@ function startSession() {
   state.current = 0;
   state.score = 0;
   state.answers = [];
+  state.normalizedQuestionIndexes = {};
 
   // Build step indicators
   var steps = document.getElementById('qSteps');
@@ -575,6 +689,11 @@ function startSession() {
 
 function renderQuestion() {
   var q = state.questions[state.current];
+  if (!state.normalizedQuestionIndexes[state.current]) {
+    q = normalizeQuestionForArena(q);
+    state.questions[state.current] = q;
+    state.normalizedQuestionIndexes[state.current] = true;
+  }
   var total = state.questions.length;
   var idx = state.current;
 
@@ -689,15 +808,16 @@ function formatAnswerLine(letter, answerText) {
 function showSharp(q, selected, isCorrect) {
   var card = document.getElementById('sharpCard');
   card.style.display = 'block';
-  var sharp = q.sharp || q.sharp_metadata || {};
-  var callouts = q.supplementary_callouts || {};
-  var explanation = q.explanation || {};
+  var sharp = Object.assign({}, q.sharp || {}, q.sharp_metadata || {}, q.sharp_debrief || {});
+  var callouts = Object.assign({}, q.supplementary_callouts || {}, q.supp || {});
+  var explanation = normalizeExplanation(q.explanation);
   var answerText = (q.options && q.options[q.answer]) ? q.options[q.answer] : '';
   var answerLine = String(callouts.answer ? callouts.answer : formatAnswerLine(q.answer, answerText)).trim();
-  var highlight = String(sharp.H || sharp.highlight_excellence || explanation.correct || '').trim();
-  var addressGaps = String(sharp.A || sharp.address_gaps || '').trim();
-  var reviewGuideline = String(sharp.R || sharp.review_learning_points || q.guideline || '').trim();
-  var takeHome = String(sharp.P || sharp.plan || q.takeaway || '').trim();
+  var sText = pickFirstText([sharp.S, sharp.set_the_stage, sharp.S_set_the_stage]);
+  var highlight = pickFirstText([sharp.H, sharp.highlight_excellence, sharp.H_highlight_excellence, explanation.correct]);
+  var addressGaps = pickFirstText([sharp.A, sharp.address_gaps, sharp.address_the_gaps, sharp.A_address_the_gaps]);
+  var reviewGuideline = pickFirstText([sharp.R, sharp.review_learning_points, sharp.review_guidelines, sharp.R_review_learning_points, q.guideline]);
+  var takeHome = pickFirstText([sharp.P, sharp.plan, sharp.plan_for_improvement, sharp.P_plan_for_improvement, q.takeaway]);
   var guidelineCallout = String(callouts.guideline || q.guideline || reviewGuideline || '').trim();
   var takeawayCallout = String(callouts.takeaway || q.takeaway || takeHome || '').trim();
   var visualizationCallout = String(callouts.visualization || q.visualization || '').trim();
@@ -705,32 +825,42 @@ function showSharp(q, selected, isCorrect) {
 
   document.getElementById('sharpAnswer').textContent = answerLine;
 
-  // S - Set the stage (Remove fluff, focus on context)
-  var sText = sharp.S || sharp.set_the_stage || '';
-  document.getElementById('sharpS').textContent = sText || 'No clinical context provided. Evaluate the stem for key identifiers.';
+  // S - Set the stage
+  document.getElementById('sharpS').textContent = sText || INSUFFICIENT_DATA_FALLBACK;
 
-  // H - Highlight Excellence (Ruthless fallback)
-  document.getElementById('sharpH').textContent = highlight || 'Identify the pathophysiology that makes the correct option the only survivable choice.';
+  // H - Highlight Excellence
+  document.getElementById('sharpH').textContent = highlight || INSUFFICIENT_DATA_FALLBACK;
 
-  // A - Address the Gaps (Ruthless fallback)
+  // A - Address the Gaps
   var aWrap = document.getElementById('sharpA');
   aWrap.innerHTML = '';
-  var gapText = addressGaps || 'Kill the distractors. If they don\'t fit the anatomy or the guideline, they are noise.';
-  aWrap.appendChild(createExplanationRow('A', gapText));
+  var aCount = 0;
+  if (addressGaps) {
+    aWrap.appendChild(createExplanationRow('Overview', addressGaps));
+    aCount++;
+  }
 
-  ['A','B','C','D','E'].forEach(function(letter) {
+  OPTION_LETTERS.forEach(function(letter) {
     if (!q.options[letter] || letter === q.answer) return;
     var detail = String(explanation[letter] || '').trim();
     if (!detail) return;
     aWrap.appendChild(createExplanationRow(letter, detail));
+    aCount++;
   });
+  if (aCount === 0) aWrap.appendChild(createExplanationRow('Note', INSUFFICIENT_DATA_FALLBACK));
 
   // R - Review Learning Points
-  document.getElementById('sharpR').textContent = reviewGuideline || 'Consult the gold-standard operative guidelines for this scenario.';
-  document.getElementById('sharpRTag').textContent = '📋 ' + (q.guideline || reviewGuideline || 'Review guideline');
+  document.getElementById('sharpR').textContent = reviewGuideline || INSUFFICIENT_DATA_FALLBACK;
+  var rTag = document.getElementById('sharpRTag');
+  if (guidelineCallout) {
+    rTag.textContent = '📋 ' + guidelineCallout;
+    rTag.style.display = 'inline-flex';
+  } else {
+    rTag.style.display = 'none';
+  }
 
   // P - Plan for Improvement
-  document.getElementById('sharpP').textContent = takeHome || 'Internalize this principle. Failing to recognize this in the OR costs lives.';
+  document.getElementById('sharpP').textContent = takeHome || INSUFFICIENT_DATA_FALLBACK;
 
   // V - Visualization (New Integrated Row)
   var vText = visualizationCallout || q.visualization || '';
@@ -743,6 +873,28 @@ function showSharp(q, selected, isCorrect) {
   } else {
     vRow.style.display = 'none';
     vDiv.style.display = 'none';
+  }
+
+  // Supplementary callouts (display any extra enriched fields)
+  var supplementary = document.getElementById('sharpSupplementary');
+  var supplementaryRow = document.getElementById('sharpSuppRow');
+  var supplementaryDiv = document.getElementById('sharpSuppDiv');
+  supplementary.innerHTML = '';
+  var supplementaryCount = 0;
+  Object.keys(callouts).forEach(function(key) {
+    if (KNOWN_SUPPLEMENTARY_CALLOUTS[key]) return;
+    var value = cleanText(callouts[key]);
+    if (!value) return;
+    var label = formatCalloutKeyToLabel(key);
+    supplementary.appendChild(createExplanationRow(label, value));
+    supplementaryCount++;
+  });
+  if (supplementaryCount > 0) {
+    supplementaryRow.style.display = 'flex';
+    supplementaryDiv.style.display = 'block';
+  } else {
+    supplementaryRow.style.display = 'none';
+    supplementaryDiv.style.display = 'none';
   }
 
   // Research Insight (TinyFish)
