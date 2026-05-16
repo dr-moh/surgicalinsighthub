@@ -499,13 +499,35 @@ function pickFirstText(candidates) {
   return '';
 }
 
+function formatCalloutLabel(key) {
+  var acronymMap = {
+    mcq: 'MCQ',
+    osce: 'OSCE',
+    atls: 'ATLS',
+    ascrs: 'ASCRS',
+    asa: 'ASA',
+    sages: 'SAGES'
+  };
+  return String(key || '')
+    .replace(/[_-]+/g, ' ')
+    .split(' ')
+    .map(function(part) {
+      var lower = part.toLowerCase();
+      if (acronymMap[lower]) return acronymMap[lower];
+      if (!part) return '';
+      return lower.charAt(0).toUpperCase() + lower.slice(1);
+    })
+    .join(' ')
+    .trim();
+}
+
 function normalizeOptions(options) {
   if (Array.isArray(options)) {
     var mapped = {};
     options.forEach(function(opt, index) {
       var raw = cleanText(opt);
       if (!raw) return;
-      var parsed = raw.match(/^([A-Ea-e])[).:\s-]+(.+)$/);
+      var parsed = raw.match(/^([A-E])[).:\s-]+(.+)$/);
       if (parsed) {
         mapped[parsed[1].toUpperCase()] = parsed[2].trim();
         return;
@@ -534,10 +556,10 @@ function resolveAnswerLetter(question, options) {
   if (/^[A-E]$/.test(verified)) return verified;
 
   var fallbackAnswer = cleanText(question.correct_answer);
-  var parsed = fallbackAnswer.match(/^([A-Ea-e])[).:\s-]/);
+  var parsed = fallbackAnswer.match(/^([A-E])[).:\s-]/);
   if (parsed) return parsed[1].toUpperCase();
 
-  var cleanFallback = fallbackAnswer.replace(/^([A-Ea-e])[).:\s-]+/, '').trim().toLowerCase();
+  var cleanFallback = fallbackAnswer.replace(/^([A-E])[).:\s-]+/, '').trim().toLowerCase();
   if (cleanFallback) {
     var letters = ['A', 'B', 'C', 'D', 'E'];
     for (var i = 0; i < letters.length; i++) {
@@ -806,7 +828,6 @@ function showSharp(q, selected, isCorrect) {
   var aWrap = document.getElementById('sharpA');
   aWrap.innerHTML = '';
   var aCount = 0;
-  var normalizedGapText = cleanText(addressGaps).toLowerCase().replace(/\s+/g, ' ').trim();
   if (addressGaps) {
     aWrap.appendChild(createExplanationRow('Overview', addressGaps));
     aCount++;
@@ -815,8 +836,7 @@ function showSharp(q, selected, isCorrect) {
   ['A','B','C','D','E'].forEach(function(letter) {
     if (!q.options[letter] || letter === q.answer) return;
     var detail = String(explanation[letter] || '').trim();
-    var normalizedDetail = cleanText(detail).toLowerCase().replace(/\s+/g, ' ').trim();
-    if (!detail || normalizedDetail === normalizedGapText) return;
+    if (!detail || detail === addressGaps) return;
     aWrap.appendChild(createExplanationRow(letter, detail));
     aCount++;
   });
@@ -859,7 +879,7 @@ function showSharp(q, selected, isCorrect) {
     if (knownCallouts[key]) return;
     var value = cleanText(callouts[key]);
     if (!value) return;
-    var label = key.replace(/[_-]+/g, ' ').replace(/\b\w/g, function(ch) { return ch.toUpperCase(); });
+    var label = formatCalloutLabel(key);
     supplementary.appendChild(createExplanationRow(label, value));
     supplementaryCount++;
   });
