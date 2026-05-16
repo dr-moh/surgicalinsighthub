@@ -17,7 +17,7 @@ if os.path.exists('.env'):
 
 API_KEY = os.getenv("OPENROUTER_API_KEY")
 
-LOCAL_API_URL = os.getenv("LOCAL_API_URL", "http://localhost:11434/v1/chat/completions")
+LOCAL_API_URL = os.getenv("LOCAL_API_URL", "http://localhost:11435/v1/chat/completions")
 LOCAL_MODEL = os.getenv("LOCAL_MODEL", "gemma3:4b") # Auto-detected local model
 
 MODELS = [
@@ -154,9 +154,32 @@ def get_sharp_debrief(question_obj):
         "X-Title": "Surgical Insight Hub"
     }
 
+    # --- Local Primary (Zero Cost) ---
+    print(f"     [Processing Local]: Using {LOCAL_MODEL}...")
+    try:
+        payload = {"model": LOCAL_MODEL, "messages": [{"role": "user", "content": prompt}], "temperature": 0.1, "max_tokens": 200}
+        req = urllib.request.Request(LOCAL_API_URL, data=json.dumps(payload).encode('utf-8'), headers={"Content-Type": "application/json"}, method='POST')
+        
+        with urllib.request.urlopen(req, timeout=90) as response:
+            res_data = json.loads(response.read().decode('utf-8'))
+            content = res_data['choices'][0]['message']['content']
+            match = re.search(r'\{.*\}', content, re.DOTALL)
+            if match:
+                try:
+                    res = normalize_sharp_payload(json.loads(match.group(0)))
+                    if res and res.get('status') == 'ACCEPT':
+                        return res
+                except Exception:
+                    recovered = recover_partial_sharp_payload(content)
+                    if recovered:
+                        return recovered
+    except Exception as e:
+        print(f"     [Local API Skip]: {e} (Falling back to OpenRouter...)")
+
+    # --- OpenRouter Fallback ---
     for model in MODELS:
         try:
-            payload = {"model": model, "messages": [{"role": "user", "content": prompt}], "temperature": 0.1, "max_tokens": 160}
+            payload = {"model": model, "messages": [{"role": "user", "content": prompt}], "temperature": 0.1, "max_tokens": 200}
             req = urllib.request.Request("https://openrouter.ai/api/v1/chat/completions", data=json.dumps(payload).encode('utf-8'), headers=headers, method='POST')
             
             with urllib.request.urlopen(req, timeout=45) as response:
@@ -170,38 +193,15 @@ def get_sharp_debrief(question_obj):
                         recovered = recover_partial_sharp_payload(content)
                         if recovered:
                             return recovered
-            time.sleep(1) 
+            time.sleep(0.5) 
         except urllib.error.HTTPError as e:
             if e.code == 429:
+                print("     [OpenRouter Rate Limit] Waiting 5s...")
                 time.sleep(5)
-            print(f"     [API Error {e.code} with {model}]: {e.read().decode('utf-8')}")
+            continue
         except Exception as e:
-            print(f"     [Exception with {model}]: {e}")
             continue
             
-    # --- Local Failover ---
-    print(f"     [OpenRouter limits hit]. Failing over to local model: {LOCAL_MODEL}...")
-    try:
-        payload = {"model": LOCAL_MODEL, "messages": [{"role": "user", "content": prompt}], "temperature": 0.1, "max_tokens": 160}
-        req = urllib.request.Request(LOCAL_API_URL, data=json.dumps(payload).encode('utf-8'), headers={"Content-Type": "application/json"}, method='POST')
-        
-        with urllib.request.urlopen(req, timeout=120) as response:
-            res_data = json.loads(response.read().decode('utf-8'))
-            content = res_data['choices'][0]['message']['content']
-            match = re.search(r'\{.*\}', content, re.DOTALL)
-            if match:
-                try:
-                    return normalize_sharp_payload(json.loads(match.group(0)))
-                except Exception:
-                    recovered = recover_partial_sharp_payload(content)
-                    if recovered:
-                        return recovered
-                    return None
-    except urllib.error.HTTPError as e:
-        print(f"     [Local API Error {e.code}]: {e.read().decode('utf-8')}")
-    except Exception as e:
-        print(f"     [Local API Exception]: {e} (Is the Docker container running?)")
-
     return None
 
 def normalize_specialty(spec):
@@ -302,15 +302,24 @@ def process_q(q):
 def main():
     print("--- Starting Bulk SHARP Processor (Concurrent) ---")
     
-    sources = ['transformed_questions.json', 'js/questions.js.bak', 'MCQ Bank/rush_questions.json', 'MCQ Bank/parsed_txt_questions.json']
+    # Priority sources including the massive 150k backlog
+    sources = [
+        'MCQ_extracted.json', 
+        'transformed_questions.json', 
+        'MCQ Bank/rush_questions.json', 
+        'MCQ Bank/parsed_txt_questions.json'
+    ]
     all_raw_questions = []
     
     for s in sources:
+        if not os.path.exists(s): continue
         print(f"Loading {s}...")
         data = load_json_array(s)
-        all_raw_questions.extend(data)
+        # Filter out error entries from raw extraction
+        valid_data = [q for q in data if isinstance(q, dict) and q.get('question') and not q.get('error')]
+        all_raw_questions.extend(valid_data)
         
-    print(f"Total raw questions loaded: {len(all_raw_questions)}")
+    print(f"Total valid raw questions loaded: {len(all_raw_questions)}")
     
     # Shuffle so we get a good mix
     random.shuffle(all_raw_questions)

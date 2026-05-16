@@ -153,7 +153,7 @@ Descriptions are **never** added to:
 ### 3.12 Footer
 
 ```
-Surgical Insight Hub  |  [TOPIC TITLE] — Residency Journal  |  Page N / Total · @surgicalInsightHub
+Surgical Insight Hub  |  [TOPIC TITLE] — Residency Journal  |  Page N / Total · @sugicalInsightHub
 ```
 
 - Background: `#2b1810`, top border: `2px solid #b8922a`
@@ -252,10 +252,10 @@ Reference Link: [Insert link]
 
 📤 Drop this in your clinical rotation group.
 
-💥 Follow: @surgicalInsightHub
+💥 Follow: @sugicalInsightHub
 📍 Join our LinkedIn: https://www.linkedin.com/company/surgical-insight-hub
 
-#SurgicalInsightHub #SurgicalResidency #ClinicalPearls
+#SugicalInsightHub #SurgicalResidency #ClinicalPearls
 ```
 
 ---
@@ -265,7 +265,7 @@ Reference Link: [Insert link]
 | Asset | Value |
 |-------|-------|
 | Logo file | `Surgical_Insight_Hub_Logo.png` (embed as base64 in HTML) |
-| Social handle | `@surgicalInsightHub` |
+| Social handle | `@sugicalInsightHub` |
 | LinkedIn | `https://www.linkedin.com/company/surgical-insight-hub` |
 
 ---

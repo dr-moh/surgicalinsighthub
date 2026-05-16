@@ -4142,4 +4142,739 @@ window.QUESTIONS.push(...[
     "_src_file": "plastic_surgery.js"
   }
 ]
+,
+{
+  "id": 1696,
+  "specialty": "Plastic Surgery",
+  "topic": "Thefollowingarehistopathologicalterms correctly matched with their meanings:",
+  "question": "Thefollowingarehistopathologicalterms correctly matched with their meanings:",
+  "options": {
+    "A": "Parakeratosis: where nucleated cells are found in the superficial epidermis.",
+    "B": "Maturation: where naevocellular naevi become more superficially cited in the epidermis.",
+    "C": "Peripheral pallisading: a feature of poorly differentiated squamous carcinoma.",
+    "D": "Erythroplakia - red lesions of the oral mucosa. E.Leukoplakia - white lesions of the oral mucosa."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Parakeratosis: where nucleated cells are found in the superficial epidermis.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Thefollowingarehistopathologicalterms correctly matched with their meanings:",
+    "H_highlight_excellence": "Parakeratosis: where nucleated cells are found in the superficial epidermis.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "BSSH / reconstructive principles",
+    "P_plan_for_improvement": "Parakeratosis: where nucleated cells are found in the superficial epidermis"
+  },
+  "supplementary_callouts": {
+    "guideline": "BSSH / reconstructive principles",
+    "takeaway": "Parakeratosis: where nucleated cells are found in the superficial epidermis",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1667,
+  "specialty": "Plastic Surgery",
+  "topic": "A.On the right is associated with Poland\u2019s syndrome.",
+  "question": "A.On the right is associated with Poland\u2019s syndrome.",
+  "options": {
+    "A": "Stelling Type A can be treated by ligation. B.Ligation leaves a nubbin.",
+    "B": "The ECRB/L are available for transfer.",
+    "C": "Reconstruction of the ulnar collateral ligament is necessary.",
+    "D": "Is associated with Ellis van Creveld and Lawrence Moon Bardet Biedl syndromes."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Stelling Type A can be treated by ligation. B.Ligation leaves a nubbin.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "A.On the right is associated with Poland\u2019s syndrome.",
+    "H_highlight_excellence": "Stelling Type A can be treated by ligation. B.Ligation leaves a nubbin.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "BSSH / reconstructive principles",
+    "P_plan_for_improvement": "Stelling Type A can be treated by ligation"
+  },
+  "supplementary_callouts": {
+    "guideline": "BSSH / reconstructive principles",
+    "takeaway": "Stelling Type A can be treated by ligation",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1671,
+  "specialty": "Plastic Surgery",
+  "topic": "Basic principles and basic science 38Interleukin-1 (IL-1) is released from:",
+  "question": "Basic principles and basic science 38Interleukin-1 (IL-1) is released from:",
+  "options": {
+    "A": "The posterior radial collateral artery. B.The anterior radial collateral artery. C.The posterior ulnar collateral artery. D.The anterior ulnar collateral artery. E.The lateral circumflex humeral artery.",
+    "B": "The nuclei and cytoplasm decrease in size.",
+    "C": "Sebaceous gland content increases D.The dermis gradually thins.",
+    "D": "The presence of subendothelial damage will cause anastomotic thrombosis and failure."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "The posterior radial collateral artery. B.The anterior radial collateral artery. C.The posterior ulnar collateral artery. D.The anterior ulnar",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Basic principles and basic science 38Interleukin-1 (IL-1) is released from:",
+    "H_highlight_excellence": "The posterior radial collateral artery. B.The anterior radial collateral artery. C.The posterior ulnar collateral artery. D.The anterior ulnar",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "BSSH / reconstructive principles",
+    "P_plan_for_improvement": "The posterior radial collateral artery"
+  },
+  "supplementary_callouts": {
+    "guideline": "BSSH / reconstructive principles",
+    "takeaway": "The posterior radial collateral artery",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1655,
+  "specialty": "Plastic Surgery",
+  "topic": "35A 43-year-old woman has a pinpoint area of tenderness at the base",
+  "question": "35A 43-year-old woman has a pinpoint area of tenderness at the base of the nail of the left ring finger. The area is painful to touch and sensitive to cold. Physical examination of the finger shows a deformity of the nail plate. Which of the following is the most likely diagnosis?",
+  "options": {
+    "A": "May present as Dupuytren\u2019s disease. B.May mimic infection.",
+    "B": "Embryonic rest.",
+    "C": "May mimic melanoma.",
+    "D": "Spreads to lymph nodes."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "May present as Dupuytren\u2019s disease. B.May mimic infection.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "35A 43-year-old woman has a pinpoint area of tenderness at the base",
+    "H_highlight_excellence": "May present as Dupuytren\u2019s disease. B.May mimic infection.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "BSSH / reconstructive principles",
+    "P_plan_for_improvement": "May present as Dupuytren\u2019s disease"
+  },
+  "supplementary_callouts": {
+    "guideline": "BSSH / reconstructive principles",
+    "takeaway": "May present as Dupuytren\u2019s disease",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1681,
+  "specialty": "Plastic Surgery",
+  "topic": "Paediatric plastic surgery 21Microtia is associated with all except:",
+  "question": "Paediatric plastic surgery 21Microtia is associated with all except:",
+  "options": {
+    "A": "Is a congenital defect of the primary palate posterior to the incisive foramen.",
+    "B": "Is a congenital defect of the hard palate anterior to the incisive foramen.",
+    "C": "Can occur as submucous clefts which often present only with speech abnormalities.",
+    "D": "Is twice as common in males."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Is a congenital defect of the primary palate posterior to the incisive foramen.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Paediatric plastic surgery 21Microtia is associated with all except:",
+    "H_highlight_excellence": "Is a congenital defect of the primary palate posterior to the incisive foramen.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "BSSH / reconstructive principles",
+    "P_plan_for_improvement": "Is a congenital defect of the primary palate posterior to the incisive foramen"
+  },
+  "supplementary_callouts": {
+    "guideline": "BSSH / reconstructive principles",
+    "takeaway": "Is a congenital defect of the primary palate posterior to the incisive foramen",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1649,
+  "specialty": "Plastic Surgery",
+  "topic": "27With respect to paediatric burns which of the following is true?",
+  "question": "27With respect to paediatric burns which of the following is true?",
+  "options": {
+    "A": "The lateral head of gastrocnemius is larger than the medial head. B.Use of the medial head of gastrocnemius leads to a significant functional deficit",
+    "B": "The technique of tangential excision was published by Janzekovic in 1970.",
+    "C": "Use of a proximally based soleus flap leads to a significant functional deficit.",
+    "D": "Scoring of the fascia of gastrocnemius can allow the flap to cover a larger area."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "The lateral head of gastrocnemius is larger than the medial head. B.Use of the medial head of gastrocnemius",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "27With respect to paediatric burns which of the following is true?",
+    "H_highlight_excellence": "The lateral head of gastrocnemius is larger than the medial head. B.Use of the medial head of gastrocnemius",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "BSSH / reconstructive principles",
+    "P_plan_for_improvement": "The lateral head of gastrocnemius is larger than the medial head"
+  },
+  "supplementary_callouts": {
+    "guideline": "BSSH / reconstructive principles",
+    "takeaway": "The lateral head of gastrocnemius is larger than the medial head",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1680,
+  "specialty": "Plastic Surgery",
+  "topic": "Paediatric plastic surgery",
+  "question": "Paediatric plastic surgery",
+  "options": {
+    "A": "Should ensure the antihelix marginally projects more than the helix. B.Can often be corrected with splitage at 2-3 years of age.",
+    "B": "The von Langenbeck technique involves raising a unipedicled flap. C.Intravelar veloplasty involves repair of the nasal mucosa.",
+    "C": "Is best undertaken at age 5.",
+    "D": "Using the Mustard\u00e9 and Chongchet (anterior scoring) techniques were both described in 1963 in the British Journal of Plastic Surgery."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Should ensure the antihelix marginally projects more than the helix. B.Can often be corrected with splitage at 2-3",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Paediatric plastic surgery",
+    "H_highlight_excellence": "Should ensure the antihelix marginally projects more than the helix. B.Can often be corrected with splitage at 2-3",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "BSSH / reconstructive principles",
+    "P_plan_for_improvement": "Should ensure the antihelix marginally projects more than the helix"
+  },
+  "supplementary_callouts": {
+    "guideline": "BSSH / reconstructive principles",
+    "takeaway": "Should ensure the antihelix marginally projects more than the helix",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1626,
+  "specialty": "Plastic Surgery",
+  "topic": "11Regarding hemifacial atrophy, which is correct?",
+  "question": "11Regarding hemifacial atrophy, which is correct?",
+  "options": {
+    "A": "Flip-flap (Mathieu) repair is a two-stage repair.",
+    "B": "Meatal advancement with glanuloplasty incorporated (MAGPI) and Snodgrass (tubularised incised plate [TIP]) repairs are BOTH single-stage repairs.",
+    "C": "Full thickness skin grafts must come from the buccal mucosa. D.Homan\u2019s test is critical before commencing surgery.",
+    "D": "Should be treated surgically within 6 months of diagnosis."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Flip-flap (Mathieu) repair is a two-stage repair.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "11Regarding hemifacial atrophy, which is correct?",
+    "H_highlight_excellence": "Flip-flap (Mathieu) repair is a two-stage repair.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "BSSH / reconstructive principles",
+    "P_plan_for_improvement": "Flip-flap (Mathieu) repair is a two-stage repair"
+  },
+  "supplementary_callouts": {
+    "guideline": "BSSH / reconstructive principles",
+    "takeaway": "Flip-flap (Mathieu) repair is a two-stage repair",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1643,
+  "specialty": "Plastic Surgery",
+  "topic": "23With regards to forearm fasciotomies, which one149 is true?",
+  "question": "23With regards to forearm fasciotomies, which one149 is true?",
+  "options": {
+    "A": "A single, straight-line incision all the way along the ulnar and volar aspect of the forearm is a well-recognised approach for the volar fasciotomy.",
+    "B": "Mannitol must be used adjunctively because the risk of disabling contracture is so high.",
+    "C": "It is not possible to decompress both the carpal tunnel and Guyon\u2019s canal through the same palmar incision.",
+    "D": "Hyperbaric oxygen should never be used. E.None of the above is true."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "A single, straight-line incision all the way along the ulnar and volar aspect of the forearm is a",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "23With regards to forearm fasciotomies, which one149 is true?",
+    "H_highlight_excellence": "A single, straight-line incision all the way along the ulnar and volar aspect of the forearm is a",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "BSSH / reconstructive principles",
+    "P_plan_for_improvement": "A single, straight-line incision all the way along the ulnar and volar aspect of the forearm"
+  },
+  "supplementary_callouts": {
+    "guideline": "BSSH / reconstructive principles",
+    "takeaway": "A single, straight-line incision all the way along the ulnar and volar aspect of the forearm is a",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1676,
+  "specialty": "Plastic Surgery",
+  "topic": "Hypoplastic thumbs Type II of the Blauth classification can be treated successfully",
+  "question": "Hypoplastic thumbs Type II of the Blauth classification can be treated successfully by:",
+  "options": {
+    "A": "Releasing the contracted first web space, reconstruction of the ulnar collateral ligament, transposition flap to release the first web space, a full thickness skin graft and opponensplasty.",
+    "B": "Releasing the contracted first web space, reconstruction of the radial collateral ligament, transposition flap to release the first web space, a full thickness skin graft and opponensplasty.",
+    "C": "Amputation of the hypoplastic thumb and pollicisation of the index finger with use of a full thickness skin graft.",
+    "D": "Amputation of the hypoplastic thumb and pollicisation of the small finger with a split thickness skin graft."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Releasing the contracted first web space, reconstruction of the ulnar collateral ligament, transposition flap to release the first",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Hypoplastic thumbs Type II of the Blauth classification can be treated successfully",
+    "H_highlight_excellence": "Releasing the contracted first web space, reconstruction of the ulnar collateral ligament, transposition flap to release the first",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "BSSH / reconstructive principles",
+    "P_plan_for_improvement": "Releasing the contracted first web space, reconstruction of the ulnar collateral ligament, transposition flap to release"
+  },
+  "supplementary_callouts": {
+    "guideline": "BSSH / reconstructive principles",
+    "takeaway": "Releasing the contracted first web space, reconstruction of the ulnar collateral ligament, transposition flap to release the first",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1631,
+  "specialty": "Plastic Surgery",
+  "topic": "14Which one of the following statements do you think would have the",
+  "question": "14Which one of the following statements do you think would have the greatest consensus support from a panel of international burns experts?",
+  "options": {
+    "A": "Following a deep head and neck burn with loss of the ear and an extensive peri-auricular scar it is possible to use tissue expansion in combination with a superficial temporoparietal fascial turnover flap to create a reasonable ear reconstruction.",
+    "B": "When both upper and lower eyelids are involved in a scar, the lower lid should be replaced with a full thickness graft as it has less mobility and acts like a dam, while the upper lid is very mobile and a 146thin, split thickness graft should be used.",
+    "C": "Following deep perineal burns in the very young male child it may be more appropriate to consider gender reassignment than attempt genital reconstruction which is fraught with difficulties.",
+    "D": "The greatest challenge of the complex post-burn reconstruction is to match the reconstructive need with the potential donor tissue as every patient has a different pattern of scarring and deformity."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Following a deep head and neck burn with loss of the ear and an extensive peri-auricular scar it",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "14Which one of the following statements do you think would have the",
+    "H_highlight_excellence": "Following a deep head and neck burn with loss of the ear and an extensive peri-auricular scar it",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "BSSH / reconstructive principles",
+    "P_plan_for_improvement": "Following a deep head and neck burn with loss of the ear and an extensive peri-auricular"
+  },
+  "supplementary_callouts": {
+    "guideline": "BSSH / reconstructive principles",
+    "takeaway": "Following a deep head and neck burn with loss of the ear and an extensive peri-auricular scar it",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1707,
+  "specialty": "Plastic Surgery",
+  "topic": "is correctly attributed?",
+  "question": "is correctly attributed?",
+  "options": {
+    "A": "The thickness of the dermis increases as the skin is expanded. B.The mitotic rate of skin stays static during expansion.",
+    "B": "Next day wound check and discharge.",
+    "C": "The thickness of the epidermis tends to increase. D.The stratum lucidum thickens by at least 75%.",
+    "D": "Winter (1962, Nature) - moist wounds heal better. E.Penn (1955) - ideal breast measurements. Multiple Choice Questions in Plastic Surgery 28The following is the appropriate treatment postoperatively for patients with split skin grafts to the lower limb:"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "The thickness of the dermis increases as the skin is expanded. B.The mitotic rate of skin stays static",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "is correctly attributed?",
+    "H_highlight_excellence": "The thickness of the dermis increases as the skin is expanded. B.The mitotic rate of skin stays static",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "BSSH / reconstructive principles",
+    "P_plan_for_improvement": "The thickness of the dermis increases as the skin is expanded"
+  },
+  "supplementary_callouts": {
+    "guideline": "BSSH / reconstructive principles",
+    "takeaway": "The thickness of the dermis increases as the skin is expanded",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1638,
+  "specialty": "Plastic Surgery",
+  "topic": "20Which one of the following statements regarding autologous breast reconstruction is incorrect?",
+  "question": "20Which one of the following statements regarding autologous breast reconstruction is incorrect?",
+  "options": {
+    "A": "Tissue expanders do not work well for irradiated chest wall breast reconstructions.",
+    "B": "The nipple must always be resected in cases of invasive breast cancer at less than 2.5cm of the areola.",
+    "C": "Primaryreconstructionisusuallybetterthansecondary reconstruction.",
+    "D": "Skin-sparing mastectomy yields more local recurrences."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Tissue expanders do not work well for irradiated chest wall breast reconstructions.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "20Which one of the following statements regarding autologous breast reconstruction is incorrect?",
+    "H_highlight_excellence": "Tissue expanders do not work well for irradiated chest wall breast reconstructions.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "BSSH / reconstructive principles",
+    "P_plan_for_improvement": "Tissue expanders do not work well for irradiated chest wall breast reconstructions"
+  },
+  "supplementary_callouts": {
+    "guideline": "BSSH / reconstructive principles",
+    "takeaway": "Tissue expanders do not work well for irradiated chest wall breast reconstructions",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1661,
+  "specialty": "Plastic Surgery",
+  "topic": "49Which of the following statements is false regarding face transplantation?",
+  "question": "49Which of the following statements is false regarding face transplantation?",
+  "options": {
+    "A": "The composite flap could be based on the superficial temporal artery.",
+    "B": "The composite flap could be based on the facial artery.",
+    "C": "Tacrolimus has shown promising results in experimental studies linking it to faster neural regrowth.",
+    "D": "Partial face transplants have been performed in France, USA and China."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "The composite flap could be based on the superficial temporal artery.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "49Which of the following statements is false regarding face transplantation?",
+    "H_highlight_excellence": "The composite flap could be based on the superficial temporal artery.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "BSSH / reconstructive principles",
+    "P_plan_for_improvement": "The composite flap could be based on the superficial temporal artery"
+  },
+  "supplementary_callouts": {
+    "guideline": "BSSH / reconstructive principles",
+    "takeaway": "The composite flap could be based on the superficial temporal artery",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1688,
+  "specialty": "Plastic Surgery",
+  "topic": "Reconstructive head and neck surgery 36The male ear (choose 2):",
+  "question": "Reconstructive head and neck surgery 36The male ear (choose 2):",
+  "options": {
+    "A": "Infant - thyroglossal duct cyst - most frequent.",
+    "B": "Adolescent - thyroglossal duct cyst - most frequent. C.Adult - thyroglossal duct cyst - most frequent.",
+    "C": "Chondrodermatitis. D.Basal cell carcinoma. E.Gouty tophus. 39The following cystic tumours of the neck are not appropriately matched to their frequency of occurrence and age of occurrence:",
+    "D": "Adult - cervical thymic cyst - very uncommon."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Infant - thyroglossal duct cyst - most frequent.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Reconstructive head and neck surgery 36The male ear (choose 2):",
+    "H_highlight_excellence": "Infant - thyroglossal duct cyst - most frequent.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "BSSH / reconstructive principles",
+    "P_plan_for_improvement": "Infant - thyroglossal duct cyst - most frequent"
+  },
+  "supplementary_callouts": {
+    "guideline": "BSSH / reconstructive principles",
+    "takeaway": "Infant - thyroglossal duct cyst - most frequent",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1623,
+  "specialty": "Plastic Surgery",
+  "topic": "10Whenconsideringextensiveburnscarring restricting movement of all joints of both upper limbs, which should",
+  "question": "10Whenconsideringextensiveburnscarring restricting movement of all joints of both upper limbs, which should be the order of priority for surgical release?",
+  "options": {
+    "A": "Gross mobility of the tooth. B.Root fracture.",
+    "B": "The most severely deformed hand should be treated first, irrespective of dominance.",
+    "C": "Exposed apices. D.None of the above. E.All of the above.",
+    "D": "The axilla of the dominant hand should be treated first."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Gross mobility of the tooth. B.Root fracture.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "10Whenconsideringextensiveburnscarring restricting movement of all joints of both upper limbs, which should",
+    "H_highlight_excellence": "Gross mobility of the tooth. B.Root fracture.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "BSSH / reconstructive principles",
+    "P_plan_for_improvement": "Gross mobility of the tooth"
+  },
+  "supplementary_callouts": {
+    "guideline": "BSSH / reconstructive principles",
+    "takeaway": "Gross mobility of the tooth",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1646,
+  "specialty": "Plastic Surgery",
+  "topic": "24With respect to sentinel lymph node biopsy in melanoma, which is the",
+  "question": "24With respect to sentinel lymph node biopsy in melanoma, which is the best answer?",
+  "options": {
+    "A": "The axillary vein lies lateral to the axillary artery.",
+    "B": "The average number of lymph nodes in each axilla is between 70 and 80.",
+    "C": "Tributaries of the axillary vein should all be divided.",
+    "D": "The thoracodorsal artery must be sacrificed to allow clearance of level 3 nodes."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "The axillary vein lies lateral to the axillary artery.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "24With respect to sentinel lymph node biopsy in melanoma, which is the",
+    "H_highlight_excellence": "The axillary vein lies lateral to the axillary artery.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "BSSH / reconstructive principles",
+    "P_plan_for_improvement": "The axillary vein lies lateral to the axillary artery"
+  },
+  "supplementary_callouts": {
+    "guideline": "BSSH / reconstructive principles",
+    "takeaway": "The axillary vein lies lateral to the axillary artery",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1694,
+  "specialty": "Plastic Surgery",
+  "topic": "The palmar aponeurosis:",
+  "question": "The palmar aponeurosis:",
+  "options": {
+    "A": "Single extremity involvement. B.Stiff elbow.",
+    "B": "Is inserted into the flexor digitorum profundus tendons.",
+    "C": "Stiff shoulder. D.Stiff fingers. E.Absent thumb.",
+    "D": "Is inserted mainly into the bases of the proximal phalanges and the flexor sheaths."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Single extremity involvement. B.Stiff elbow.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "The palmar aponeurosis:",
+    "H_highlight_excellence": "Single extremity involvement. B.Stiff elbow.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "BSSH / reconstructive principles",
+    "P_plan_for_improvement": "Single extremity involvement"
+  },
+  "supplementary_callouts": {
+    "guideline": "BSSH / reconstructive principles",
+    "takeaway": "Single extremity involvement",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1700,
+  "specialty": "Plastic Surgery",
+  "topic": "Which of the following is incorrect about cutaneous squamous cell carcinoma?",
+  "question": "Which of the following is incorrect about cutaneous squamous cell carcinoma?",
+  "options": {
+    "A": "It is more common than BCC.",
+    "B": "It has a higher metastatic rate than BCC.",
+    "C": "It has an increased incidence in the immunosuppressed.",
+    "D": "SCC of the lip has a higher metastatic rate to lymph nodes."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "It is more common than BCC.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Which of the following is incorrect about cutaneous squamous cell carcinoma?",
+    "H_highlight_excellence": "It is more common than BCC.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "BSSH / reconstructive principles",
+    "P_plan_for_improvement": "It is more common than BCC"
+  },
+  "supplementary_callouts": {
+    "guideline": "BSSH / reconstructive principles",
+    "takeaway": "It is more common than BCC",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1641,
+  "specialty": "Plastic Surgery",
+  "topic": "22In the finger, what is the usual relationship of the digital nerve",
+  "question": "22In the finger, what is the usual relationship of the digital nerve to the digital artery?",
+  "options": {
+    "A": "Elbow pain and stiffness of all digits.",
+    "B": "Night pain and delayed union of the callus. C.Pin tract infection.",
+    "C": "Brown pigment of the skin. D.Kidney malformation.",
+    "D": "A and C."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Elbow pain and stiffness of all digits.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "22In the finger, what is the usual relationship of the digital nerve",
+    "H_highlight_excellence": "Elbow pain and stiffness of all digits.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "BSSH / reconstructive principles",
+    "P_plan_for_improvement": "Elbow pain and stiffness of all digits"
+  },
+  "supplementary_callouts": {
+    "guideline": "BSSH / reconstructive principles",
+    "takeaway": "Elbow pain and stiffness of all digits",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1662,
+  "specialty": "Plastic Surgery",
+  "topic": "50Which one of fundamental procedures? the following is experimental true regarding microsurgical",
+  "question": "50Which one of fundamental procedures? the following is experimental true regarding microsurgical",
+  "options": {
+    "A": "Sun Lee\u2019s portocaval shunt operation in the rat was the first published procedure initiating the development of experimental microsurgery.",
+    "B": "Kidney transplantation in a rat was the first published experimental microsurgical procedure.",
+    "C": "Anastomoses of microvessels can be performed by cuff technique only.",
+    "D": "Tissue transplantation can not be completed without vascular anastomoses."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Sun Lee\u2019s portocaval shunt operation in the rat was the first published procedure initiating the development of experimental",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "50Which one of fundamental procedures? the following is experimental true regarding microsurgical",
+    "H_highlight_excellence": "Sun Lee\u2019s portocaval shunt operation in the rat was the first published procedure initiating the development of experimental",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "BSSH / reconstructive principles",
+    "P_plan_for_improvement": "Sun Lee\u2019s portocaval shunt operation in the rat was the first published procedure initiating the development"
+  },
+  "supplementary_callouts": {
+    "guideline": "BSSH / reconstructive principles",
+    "takeaway": "Sun Lee\u2019s portocaval shunt operation in the rat was the first published procedure initiating the development of experimental",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
 ]);

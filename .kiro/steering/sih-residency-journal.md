@@ -65,7 +65,7 @@ NEVER for: action tables, drug doses, eponym lists, ward round checklists.
 
 ## Footer (pinned — non-negotiable)
 ```
-Surgical Insight Hub  |  [TOPIC] — Residency Journal  |  Page N / Total · @surgicalInsightHub
+Surgical Insight Hub  |  [TOPIC] — Residency Journal  |  Page N / Total · @sugicalInsightHub
 ```
 Page must be `height:297mm` (not `min-height`). Footer uses `margin-top:auto` inside flex column.
 

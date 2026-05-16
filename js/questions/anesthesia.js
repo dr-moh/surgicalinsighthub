@@ -3557,4 +3557,634 @@ window.QUESTIONS.push(...[
   "takeaway": "Direct examination with a vaginal speculum and then take the patient to OR for cesarean section",
   "visualization": ""
 }
+,
+{
+  "id": 63,
+  "specialty": "Anesthesia",
+  "topic": "Which of the following statements is false regarding ventilation/perfusion relationship in a",
+  "question": "Which of the following statements is false regarding ventilation/perfusion relationship in a lateral decubitus position during spontaneous ventilation?",
+  "options": {
+    "A": "The ventilation/perfusion matching is preserved",
+    "B": "Contraction of dependent hemi diaphragm is more efficient",
+    "C": "Dependent lung is on a more favorable part of the compliance curve",
+    "D": "The lower lung receives less ventilation and more perfusion than the upper lung"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "The ventilation/perfusion matching is preserved",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Which of the following statements is false regarding ventilation/perfusion relationship in a",
+    "H_highlight_excellence": "The ventilation/perfusion matching is preserved",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ASA practice guidelines",
+    "P_plan_for_improvement": "The ventilation/perfusion matching is preserved"
+  },
+  "supplementary_callouts": {
+    "guideline": "ASA practice guidelines",
+    "takeaway": "The ventilation/perfusion matching is preserved",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 23,
+  "specialty": "Anesthesia",
+  "topic": "After undergoing an uneventful operation, one of the following patients would be",
+  "question": "After undergoing an uneventful operation, one of the following patients would be the best candidate for \u201cdeep extubation\u201d:",
+  "options": {
+    "A": "A 23-year-old woman with asthma who has just undergone an exploratory laparotomy for small bowel obstruction",
+    "B": "A 65-year-old man with gastroesophageal reflux who has just undergone an inguinal hernia repair",
+    "C": "An 18-year-old patient with scoliosis who has just undergone a 6-hour posterior thoracolumbar spinal instrumentation and fusion",
+    "D": "A 64-year-old female with coronary artery disease who has just undergone a total hip arthroplasty under general anesthesia"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "A 23-year-old woman with asthma who has just undergone an exploratory laparotomy for small bowel obstruction",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "After undergoing an uneventful operation, one of the following patients would be",
+    "H_highlight_excellence": "A 23-year-old woman with asthma who has just undergone an exploratory laparotomy for small bowel obstruction",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ASA practice guidelines",
+    "P_plan_for_improvement": "A 23-year-old woman with asthma who has just undergone an exploratory laparotomy for small bowel obstruction"
+  },
+  "supplementary_callouts": {
+    "guideline": "ASA practice guidelines",
+    "takeaway": "A 23-year-old woman with asthma who has just undergone an exploratory laparotomy for small bowel obstruction",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 16,
+  "specialty": "Anesthesia",
+  "topic": "A medical student asks you if \u201cyoung\u201d blood is better for critically",
+  "question": "A medical student asks you if \u201cyoung\u201d blood is better for critically ill patients. Which of the following statements regarding \u201cyoung\u201d blood is most correct?",
+  "options": {
+    "A": "Fresher blood has better ability to deliver oxygen to tissues",
+    "B": "Blood from younger donors has lower risk of immunosuppression than blood donated by the elderly",
+    "C": "Older blood has a lower potassium content",
+    "D": "Fresher blood can be transfused more rapidly than older blood"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Fresher blood has better ability to deliver oxygen to tissues",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "A medical student asks you if \u201cyoung\u201d blood is better for critically",
+    "H_highlight_excellence": "Fresher blood has better ability to deliver oxygen to tissues",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ASA practice guidelines",
+    "P_plan_for_improvement": "Fresher blood has better ability to deliver oxygen to tissues"
+  },
+  "supplementary_callouts": {
+    "guideline": "ASA practice guidelines",
+    "takeaway": "Fresher blood has better ability to deliver oxygen to tissues",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 46,
+  "specialty": "Anesthesia",
+  "topic": "Lidocaine and epinephrine are commonly used together when testing epidural anesthesia because",
+  "question": "Lidocaine and epinephrine are commonly used together when testing epidural anesthesia because",
+  "options": {
+    "A": "Lidocaine injection (3 mL of 1.5%) intravascularly will induce local anesthetic toxicity such as perioral numbness",
+    "B": "Intrathecal injection of epinephrine will result in a high spinal",
+    "C": "Intrathecal injection of lidocaine can cause a low-level spinal anesthesia with some degree of motor block",
+    "D": "Intravascular injection of epinephrine (typically 15 \u03bcg/3 mL) can cause hypertension more than tachycardia"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Lidocaine injection (3 mL of 1.5%) intravascularly will induce local anesthetic toxicity such as perioral numbness",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Lidocaine and epinephrine are commonly used together when testing epidural anesthesia because",
+    "H_highlight_excellence": "Lidocaine injection (3 mL of 1.5%) intravascularly will induce local anesthetic toxicity such as perioral numbness",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ASA practice guidelines",
+    "P_plan_for_improvement": "Lidocaine injection (3 mL of 1"
+  },
+  "supplementary_callouts": {
+    "guideline": "ASA practice guidelines",
+    "takeaway": "Lidocaine injection (3 mL of 1",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 74,
+  "specialty": "Anesthesia",
+  "topic": "with progressive dyspnea and a huge right-sided pulmonary cyst. The cyst is",
+  "question": "with progressive dyspnea and a huge right-sided pulmonary cyst. The cyst is compressing her remaining right lung, and she is brought to the OR for an emergency pulmonary cystectomy. Which of the following is right regarding anesthetic management of this patient?",
+  "options": {
+    "A": "The greatest risk of rupture of the cavity is during preoxygenation just prior to induction",
+    "B": "These cavities allow to and fro movement of air and have a very low chance to progressively enlarge",
+    "C": "Maintenance of spontaneous ventilation is desirable until a double-lumen tube (DLT) is in place",
+    "D": "Assisted ventilation is not necessary immediately after induction and can be harmful"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "The greatest risk of rupture of the cavity is during preoxygenation just prior to induction",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "with progressive dyspnea and a huge right-sided pulmonary cyst. The cyst is",
+    "H_highlight_excellence": "The greatest risk of rupture of the cavity is during preoxygenation just prior to induction",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ASA practice guidelines",
+    "P_plan_for_improvement": "The greatest risk of rupture of the cavity is during preoxygenation just prior to induction"
+  },
+  "supplementary_callouts": {
+    "guideline": "ASA practice guidelines",
+    "takeaway": "The greatest risk of rupture of the cavity is during preoxygenation just prior to induction",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 53,
+  "specialty": "Anesthesia",
+  "topic": "The most correct statement concerning a unilateral paravertebral block is",
+  "question": "The most correct statement concerning a unilateral paravertebral block is",
+  "options": {
+    "A": "Such a block is always associated with a similar degree of sympathectomy as with an epidural block",
+    "B": "Such a block is often associated with a higher serum level of local anesthetic than that achieved with an intercostal nerve block due to high vascularity",
+    "C": "It is not likely to be associated with a pneumothorax",
+    "D": "Such a block may be associated with epidural spread of local anesthetic"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Such a block is always associated with a similar degree of sympathectomy as with an epidural block",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "The most correct statement concerning a unilateral paravertebral block is",
+    "H_highlight_excellence": "Such a block is always associated with a similar degree of sympathectomy as with an epidural block",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ASA practice guidelines",
+    "P_plan_for_improvement": "Such a block is always associated with a similar degree of sympathectomy as with an epidural"
+  },
+  "supplementary_callouts": {
+    "guideline": "ASA practice guidelines",
+    "takeaway": "Such a block is always associated with a similar degree of sympathectomy as with an epidural block",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 11,
+  "specialty": "Anesthesia",
+  "topic": "A 6-year-old patient scheduled for laparoscopic bilateral inguinal hernia repair undergoes inhalational",
+  "question": "A 6-year-old patient scheduled for laparoscopic bilateral inguinal hernia repair undergoes inhalational induction and intubation with a 5.0-mm cuffed endotracheal tube. The tube is secured with the 15-cm mark at the patient\u2019s gumline. Auscultation reveals equal breath sounds bilaterally. Inflation of the pilot balloon results in palpation of the inflated tube cuff just above the cricoid cartilage. A leak test reveals leak of air into the oropharynx at a positive pressure of 20 cm H2O. The next best step in management is",
+  "options": {
+    "A": "No change in anesthetic care is indicated",
+    "B": "The tube cuff should be deflated until a leak is present starting at 15 cm H2O of positive pressure",
+    "C": "The tube cuff should be deflated and the tube advanced until the cuff, when inflated, is palpable below the cricoid cartilage",
+    "D": "The tube cuff should be deflated and the tube withdrawn until ventilator peak pressures decrease"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "No change in anesthetic care is indicated",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "A 6-year-old patient scheduled for laparoscopic bilateral inguinal hernia repair undergoes inhalational",
+    "H_highlight_excellence": "No change in anesthetic care is indicated",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ASA practice guidelines",
+    "P_plan_for_improvement": "No change in anesthetic care is indicated"
+  },
+  "supplementary_callouts": {
+    "guideline": "ASA practice guidelines",
+    "takeaway": "No change in anesthetic care is indicated",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 71,
+  "specialty": "Anesthesia",
+  "topic": "With regard to sodium thiopental, the following statements are accurate, except",
+  "question": "With regard to sodium thiopental, the following statements are accurate, except",
+  "options": {
+    "A": "Peak concentration in the brain occurs at 1 minute postinjection",
+    "B": "Rapid redistribution allows for return of consciousness in <10 minutes",
+    "C": "Infusions maintain appropriate surgical conditions with fast recovery due to ultra-short action",
+    "D": "Repeating the induction dose results in fetal depression"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Peak concentration in the brain occurs at 1 minute postinjection",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "With regard to sodium thiopental, the following statements are accurate, except",
+    "H_highlight_excellence": "Peak concentration in the brain occurs at 1 minute postinjection",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ASA practice guidelines",
+    "P_plan_for_improvement": "Peak concentration in the brain occurs at 1 minute postinjection"
+  },
+  "supplementary_callouts": {
+    "guideline": "ASA practice guidelines",
+    "takeaway": "Peak concentration in the brain occurs at 1 minute postinjection",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 52,
+  "specialty": "Anesthesia",
+  "topic": "The correct statement regarding caudal anesthesia is",
+  "question": "The correct statement regarding caudal anesthesia is",
+  "options": {
+    "A": "Caudal anesthesia is essentially sacral epidural anesthesia",
+    "B": "Caudal anesthesia can only be performed in pediatric population",
+    "C": "A caudal anesthesia catheter should be positioned without penetrating the sacrococcygeal ligament",
+    "D": "The younger the child, the less likely you are to experience an intrathecal injection"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Caudal anesthesia is essentially sacral epidural anesthesia",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "The correct statement regarding caudal anesthesia is",
+    "H_highlight_excellence": "Caudal anesthesia is essentially sacral epidural anesthesia",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ASA practice guidelines",
+    "P_plan_for_improvement": "Caudal anesthesia is essentially sacral epidural anesthesia"
+  },
+  "supplementary_callouts": {
+    "guideline": "ASA practice guidelines",
+    "takeaway": "Caudal anesthesia is essentially sacral epidural anesthesia",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 61,
+  "specialty": "Anesthesia",
+  "topic": "Which of the following predictors is likely to be associated with lower",
+  "question": "Which of the following predictors is likely to be associated with lower incidence of perioperative nausea and vomiting?",
+  "options": {
+    "A": "Female gender",
+    "B": "Use of fentanyl for pain relief",
+    "C": "Patients with a history of smoking",
+    "D": "Patients undergoing laparoscopic surgery"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Female gender",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Which of the following predictors is likely to be associated with lower",
+    "H_highlight_excellence": "Female gender",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ASA practice guidelines",
+    "P_plan_for_improvement": "Female gender"
+  },
+  "supplementary_callouts": {
+    "guideline": "ASA practice guidelines",
+    "takeaway": "Female gender",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 68,
+  "specialty": "Anesthesia",
+  "topic": "While performing a femoral nerve block guided with a nerve stimulator, you",
+  "question": "While performing a femoral nerve block guided with a nerve stimulator, you observe a strong sartorius muscle twitch that disappears at 0.2 mA. What does this mean and how should you proceed further?",
+  "options": {
+    "A": "The stimulating block needle tip is in the correct position, and the local anesthetic can be injected",
+    "B": "The needle tip is likely superficial to the femoral nerve, and the block needle needs to be readjusted (twitch may not be from stimulation of the femoral nerve) prior to local anesthetic injection",
+    "C": "Sartorius muscle twitch indicates that the needle tip is in the correct location, but you need to get closer to the nerve as 0.2 mA stimulus is too high",
+    "D": "The block needle needs to be repositioned more medially, and a paresthesia must be elicited prior to local anesthetic injection"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "The stimulating block needle tip is in the correct position, and the local anesthetic can be injected",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "While performing a femoral nerve block guided with a nerve stimulator, you",
+    "H_highlight_excellence": "The stimulating block needle tip is in the correct position, and the local anesthetic can be injected",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ASA practice guidelines",
+    "P_plan_for_improvement": "The stimulating block needle tip is in the correct position, and the local anesthetic can be"
+  },
+  "supplementary_callouts": {
+    "guideline": "ASA practice guidelines",
+    "takeaway": "The stimulating block needle tip is in the correct position, and the local anesthetic can be injected",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 27,
+  "specialty": "Anesthesia",
+  "topic": "An 80-year-old female underwent a left lower lobectomy. In the ICU on",
+  "question": "An 80-year-old female underwent a left lower lobectomy. In the ICU on postoperative day 2, she develops hemoptysis. The vital signs are stable, but on the chest X-ray a homogenous density is seen in the left lower lung area. After subsequent bronchoscopy, the left upper lobar orifice is closed. The most likely diagnosis is",
+  "options": {
+    "A": "Acute herniation of the heart into the left lower lobe area",
+    "B": "It is a normal finding and the homogenous opacity is due to accumulation of fluid in the left lower lobe area",
+    "C": "Torsion of the left upper lobe as the left upper lobe expanded to occupy the left hemithorax",
+    "D": "Reexpansion edema of the left upper lobe"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Acute herniation of the heart into the left lower lobe area",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "An 80-year-old female underwent a left lower lobectomy. In the ICU on",
+    "H_highlight_excellence": "Acute herniation of the heart into the left lower lobe area",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ASA practice guidelines",
+    "P_plan_for_improvement": "Acute herniation of the heart into the left lower lobe area"
+  },
+  "supplementary_callouts": {
+    "guideline": "ASA practice guidelines",
+    "takeaway": "Acute herniation of the heart into the left lower lobe area",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 39,
+  "specialty": "Anesthesia",
+  "topic": "Helium\u2013oxygen mixtures can be useful therapies for patients with upper airway obstruction.",
+  "question": "Helium\u2013oxygen mixtures can be useful therapies for patients with upper airway obstruction. Compared with air, helium\u2013oxygen mixtures have lower",
+  "options": {
+    "A": "Density",
+    "B": "Viscosity",
+    "C": "Oxygen content",
+    "D": "Nitrous oxide content"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Density",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Helium\u2013oxygen mixtures can be useful therapies for patients with upper airway obstruction.",
+    "H_highlight_excellence": "Density",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ASA practice guidelines",
+    "P_plan_for_improvement": "Density"
+  },
+  "supplementary_callouts": {
+    "guideline": "ASA practice guidelines",
+    "takeaway": "Density",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 28,
+  "specialty": "Anesthesia",
+  "topic": "An otherwise-healthy 38-year-old female patient is undergoing repair of a large ventral",
+  "question": "An otherwise-healthy 38-year-old female patient is undergoing repair of a large ventral hernia under intrathecal anesthesia. A T2 sensory level is obtained with hyperbaric bupivacaine prior to incision. A false statement concerning this situation includes",
+  "options": {
+    "A": "Effective cough is preserved",
+    "B": "The cardioaccelerator nerves are blocked",
+    "C": "Examination of the biceps reveals full strength bilaterally",
+    "D": "Bupivacaine binds to the intracellular portion of sodium channels"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Effective cough is preserved",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "An otherwise-healthy 38-year-old female patient is undergoing repair of a large ventral",
+    "H_highlight_excellence": "Effective cough is preserved",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ASA practice guidelines",
+    "P_plan_for_improvement": "Effective cough is preserved"
+  },
+  "supplementary_callouts": {
+    "guideline": "ASA practice guidelines",
+    "takeaway": "Effective cough is preserved",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 66,
+  "specialty": "Anesthesia",
+  "topic": "Which of the following statements regarding transfusion of packed red blood cells",
+  "question": "Which of the following statements regarding transfusion of packed red blood cells is most correct?",
+  "options": {
+    "A": "The hematocrit of 1 unit is usually 30% to 40%",
+    "B": "Transfusion of a single unit will increase an adult\u2019s hemoglobin concentration about 4 g/dL",
+    "C": "May cause clotting if the transfused packed red blood cells are mixed with lactated Ringer solution",
+    "D": "Their principle use as that of a volume expander"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "The hematocrit of 1 unit is usually 30% to 40%",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Which of the following statements regarding transfusion of packed red blood cells",
+    "H_highlight_excellence": "The hematocrit of 1 unit is usually 30% to 40%",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ASA practice guidelines",
+    "P_plan_for_improvement": "The hematocrit of 1 unit is usually 30% to 40%"
+  },
+  "supplementary_callouts": {
+    "guideline": "ASA practice guidelines",
+    "takeaway": "The hematocrit of 1 unit is usually 30% to 40%",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 67,
+  "specialty": "Anesthesia",
+  "topic": "While monitoring coronary sinus pressure during retrograde cardioplegia,",
+  "question": "While monitoring coronary sinus pressure during retrograde cardioplegia,",
+  "options": {
+    "A": "If the pressure at the distal tip of the coronary sinus catheter during cardioplegia administration at 200 mL/min is equal to central venous pressure, the catheter is not in the coronary sinus but is most likely in the pulmonary artery",
+    "B": "If the pressure is very high (>100 mm Hg), the coronary sinus catheter is in the left ventricle",
+    "C": "If the pressure in the coronary sinus catheter is 40 to 60 mm Hg during a 200-mL/min infusion, the catheter is correctly positioned",
+    "D": "If the catheter is placed too distally, delivery of cardioplegia to the left ventricle will be compromised and result in left-ventricular dysfunction"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "If the pressure at the distal tip of the coronary sinus catheter during cardioplegia administration at 200 mL/min",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "While monitoring coronary sinus pressure during retrograde cardioplegia,",
+    "H_highlight_excellence": "If the pressure at the distal tip of the coronary sinus catheter during cardioplegia administration at 200 mL/min",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ASA practice guidelines",
+    "P_plan_for_improvement": "If the pressure at the distal tip of the coronary sinus catheter during cardioplegia administration at"
+  },
+  "supplementary_callouts": {
+    "guideline": "ASA practice guidelines",
+    "takeaway": "If the pressure at the distal tip of the coronary sinus catheter during cardioplegia administration at 200 mL/min",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 44,
+  "specialty": "Anesthesia",
+  "topic": "Incorrect statement regarding neuraxial blockade is",
+  "question": "Incorrect statement regarding neuraxial blockade is",
+  "options": {
+    "A": "Dermatome level of anesthesia achieved with a spinal anesthetic is often more predictable than following an epidural blockade",
+    "B": "Spinal anesthesia can more rapidly and consistently produce denser motor blockade than epidural anesthesia",
+    "C": "Local anesthetics administered during epidural anesthesia are typically more volume-dependent, and during spinal anesthesia are more concentration-dependent",
+    "D": "Thoracic epidural anesthesia has an increased risk of urinary retention compared to lumbar epidural anesthesia when the same volume of local anesthetic is administered"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Dermatome level of anesthesia achieved with a spinal anesthetic is often more predictable than following an epidural blockade",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Incorrect statement regarding neuraxial blockade is",
+    "H_highlight_excellence": "Dermatome level of anesthesia achieved with a spinal anesthetic is often more predictable than following an epidural blockade",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ASA practice guidelines",
+    "P_plan_for_improvement": "Dermatome level of anesthesia achieved with a spinal anesthetic is often more predictable than following an"
+  },
+  "supplementary_callouts": {
+    "guideline": "ASA practice guidelines",
+    "takeaway": "Dermatome level of anesthesia achieved with a spinal anesthetic is often more predictable than following an epidural blockade",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 60,
+  "specialty": "Anesthesia",
+  "topic": "Which of the following patients will be affected the most from loss",
+  "question": "Which of the following patients will be affected the most from loss of atrial contribution to preload?",
+  "options": {
+    "A": "A 65-year-old patient with severe aortic regurgitation who went into recent onset atrial fibrillation",
+    "B": "A 35-year-old patient with mitral-valve area of 1.0 cm2 who went into recent onset atrial fibrillation",
+    "C": "An 80-year-old patient with severe aortic stenosis who went into recent onset atrial fibrillation",
+    "D": "A 55-year-old patient with acute right-ventricular myocardial infarction"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "A 65-year-old patient with severe aortic regurgitation who went into recent onset atrial fibrillation",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Which of the following patients will be affected the most from loss",
+    "H_highlight_excellence": "A 65-year-old patient with severe aortic regurgitation who went into recent onset atrial fibrillation",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ASA practice guidelines",
+    "P_plan_for_improvement": "A 65-year-old patient with severe aortic regurgitation who went into recent onset atrial fibrillation"
+  },
+  "supplementary_callouts": {
+    "guideline": "ASA practice guidelines",
+    "takeaway": "A 65-year-old patient with severe aortic regurgitation who went into recent onset atrial fibrillation",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
 ]);

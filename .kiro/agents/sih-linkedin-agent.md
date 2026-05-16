@@ -33,10 +33,10 @@ Reference Link: [Insert link]
 
 📤 Drop this in your clinical rotation group.
 
-💥 Follow: @surgicalInsightHub
+💥 Follow: @sugicalInsightHub
 📍 Join our LinkedIn: https://www.linkedin.com/company/surgical-insight-hub
 
-#SurgicalInsightHub #SurgicalResidency #ClinicalPearls
+#SugicalInsightHub #SurgicalResidency #ClinicalPearls
 ```
 
 ## VOICE RULES (non-negotiable)
@@ -48,9 +48,9 @@ Reference Link: [Insert link]
 - Never sound like ChatGPT marketing copy
 
 ## SOCIAL ASSETS
-- Handle: `@surgicalInsightHub` (note: single 'r' in surgical — this is correct)
+- Handle: `@sugicalInsightHub` (note: single 'r' in surgical — this is correct)
 - LinkedIn: `https://www.linkedin.com/company/surgical-insight-hub`
-- Hashtags always: `#SurgicalInsightHub #SurgicalResidency #ClinicalPearls`
+- Hashtags always: `#SugicalInsightHub #SurgicalResidency #ClinicalPearls`
 
 ## OUTPUT
 Deliver the post ready to copy-paste. No explanation needed unless asked.

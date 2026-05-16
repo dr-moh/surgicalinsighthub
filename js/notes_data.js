@@ -82,7 +82,7 @@ window.NOTES_DATA = {
       tags: ['red:HCC', 'red:Pancreatic Ca', 'Bismuth', 'Resectability'],
       pages: 'Master Library',
       type: 'telegram',
-      url: 'https://t.me/surgicalInsightHub',
+      url: 'https://t.me/sugicalInsightHub',
       isNew: true
     },
     {

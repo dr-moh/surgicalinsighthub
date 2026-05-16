@@ -4933,4 +4933,494 @@ window.QUESTIONS.push(...[
   },
   "discrepancy_flag": ""
 }
+,
+{
+  "id": 1609,
+  "specialty": "Orthopedic",
+  "topic": "The initial abnormality in rheumatoid arthritis is a. fibrillation of cartilage",
+  "question": "The initial abnormality in rheumatoid arthritis is a. fibrillation of cartilage",
+  "options": {
+    "A": "hematomyelia following trauma",
+    "B": "damage to the cord by a piece of bone when vertebrae collapse in tuberculosis of the spine",
+    "C": "tuberculous pus and angulation in tuberculosis of the spine",
+    "D": "damage to die corda equina after a fall e. fracture dislocation of cervical vertebrae"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "hematomyelia following trauma",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "The initial abnormality in rheumatoid arthritis is a. fibrillation of cartilage",
+    "H_highlight_excellence": "hematomyelia following trauma",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "AAOS orthopedic guidelines",
+    "P_plan_for_improvement": "hematomyelia following trauma"
+  },
+  "supplementary_callouts": {
+    "guideline": "AAOS orthopedic guidelines",
+    "takeaway": "hematomyelia following trauma",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1618,
+  "specialty": "Orthopedic",
+  "topic": "Treatment of fracture mid-shaft include:",
+  "question": "Treatment of fracture mid-shaft include:",
+  "options": {
+    "A": "Birth fracture is treated by Crede's method.",
+    "B": "Mid shaft fracture of infants and children is treated by gallows's traction.",
+    "C": "Fracture from age of 5-15 years is treated by skin traction on Thomas's splint.",
+    "D": "Mid shaft fracture in adults is treated by skeletal traction using Kirschner-wire or Steinmann's pin."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Birth fracture is treated by Crede's method.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Treatment of fracture mid-shaft include:",
+    "H_highlight_excellence": "Birth fracture is treated by Crede's method.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "AAOS orthopedic guidelines",
+    "P_plan_for_improvement": "Birth fracture is treated by Crede's method"
+  },
+  "supplementary_callouts": {
+    "guideline": "AAOS orthopedic guidelines",
+    "takeaway": "Birth fracture is treated by Crede's method",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1564,
+  "specialty": "Orthopedic",
+  "topic": "Avascular necrosis of head of femur:",
+  "question": "Avascular necrosis of head of femur:",
+  "options": {
+    "A": "Common complication of intracapsular fracture neck femur.",
+    "B": "it occurs due to cut of the blood supply of head which is mainly comes from the retinacular vessels and the nutrient artery of the femur.",
+    "C": "Head appears denser in the x -ray of the hip.",
+    "D": "The main blood supply of the head comes of artery of ligamentum teres."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Common complication of intracapsular fracture neck femur.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Avascular necrosis of head of femur:",
+    "H_highlight_excellence": "Common complication of intracapsular fracture neck femur.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "AAOS orthopedic guidelines",
+    "P_plan_for_improvement": "Common complication of intracapsular fracture neck femur"
+  },
+  "supplementary_callouts": {
+    "guideline": "AAOS orthopedic guidelines",
+    "takeaway": "Common complication of intracapsular fracture neck femur",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1568,
+  "specialty": "Orthopedic",
+  "topic": "Concerning Ollier's disease, which of the following statements is incorrect:",
+  "question": "Concerning Ollier's disease, which of the following statements is incorrect:",
+  "options": {
+    "A": "There is a strong hereditary predisposition",
+    "B": "Multiple enchondromata occur in small long bones of hands and feet",
+    "C": "The affected bones are stunted",
+    "D": "Deformities may arise from unequal affection of metaphyses"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "There is a strong hereditary predisposition",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Concerning Ollier's disease, which of the following statements is incorrect:",
+    "H_highlight_excellence": "There is a strong hereditary predisposition",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "AAOS orthopedic guidelines",
+    "P_plan_for_improvement": "There is a strong hereditary predisposition"
+  },
+  "supplementary_callouts": {
+    "guideline": "AAOS orthopedic guidelines",
+    "takeaway": "There is a strong hereditary predisposition",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1582,
+  "specialty": "Orthopedic",
+  "topic": "In congenital dislocation of the hip (CDH), the pathological changes include the",
+  "question": "In congenital dislocation of the hip (CDH), the pathological changes include the following except :",
+  "options": {
+    "A": "Small shallow acetabulum.",
+    "B": "Snail flattened femoral head lying outside the acetabulum.",
+    "C": "Elongated femoral neck.",
+    "D": "Thickened adherent joint capsule with an hour-glass constriction."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Small shallow acetabulum.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "In congenital dislocation of the hip (CDH), the pathological changes include the",
+    "H_highlight_excellence": "Small shallow acetabulum.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "AAOS orthopedic guidelines",
+    "P_plan_for_improvement": "Small shallow acetabulum"
+  },
+  "supplementary_callouts": {
+    "guideline": "AAOS orthopedic guidelines",
+    "takeaway": "Small shallow acetabulum",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1614,
+  "specialty": "Orthopedic",
+  "topic": "The most serious complication of Winnet-Orr techique in management of chronic osteomyelitis",
+  "question": "The most serious complication of Winnet-Orr techique in management of chronic osteomyelitis is:",
+  "options": {
+    "A": "septicemia and pyaemia.",
+    "B": "stiffness of the near by joint.",
+    "C": "deep vein thrombosis due to long stay in bed.",
+    "D": "anaerobic wound infection in form of gas gangrene and tetanus."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "septicemia and pyaemia.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "The most serious complication of Winnet-Orr techique in management of chronic osteomyelitis",
+    "H_highlight_excellence": "septicemia and pyaemia.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "AAOS orthopedic guidelines",
+    "P_plan_for_improvement": "septicemia and pyaemia"
+  },
+  "supplementary_callouts": {
+    "guideline": "AAOS orthopedic guidelines",
+    "takeaway": "septicemia and pyaemia",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1572,
+  "specialty": "Orthopedic",
+  "topic": "Fracture femoral neck can be diagnosed from: a. Limb shortening.",
+  "question": "Fracture femoral neck can be diagnosed from: a. Limb shortening.",
+  "options": {
+    "A": "Flexor digitorum profundus. b. Flexor digitorum superficials. c. Palmaris longus.",
+    "B": "Undiagnosed pathology within knee. c. Incomplete removal of the cyst.",
+    "C": "Knee stiffness. d. Fat embolism. 65)Spontaneous bleeding into joints in haemophilia occurs when factor VI level is less than:",
+    "D": "All of the above. 6 www.mataryonline.com"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Flexor digitorum profundus. b. Flexor digitorum superficials. c. Palmaris longus.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Fracture femoral neck can be diagnosed from: a. Limb shortening.",
+    "H_highlight_excellence": "Flexor digitorum profundus. b. Flexor digitorum superficials. c. Palmaris longus.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "AAOS orthopedic guidelines",
+    "P_plan_for_improvement": "Flexor digitorum profundus"
+  },
+  "supplementary_callouts": {
+    "guideline": "AAOS orthopedic guidelines",
+    "takeaway": "Flexor digitorum profundus",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1563,
+  "specialty": "Orthopedic",
+  "topic": "Anterior dislocation of the hip joint:",
+  "question": "Anterior dislocation of the hip joint:",
+  "options": {
+    "A": "Rare type of dislocation of the hip joint.",
+    "B": "It is caused by forcible abduction and lateral rotation of the hip.",
+    "C": "It is of two types (obturator and pubic types).",
+    "D": "Its deformity is flexion, abduction and lateral rotation. e. Only dislocation of body with lengthening of the limb."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Rare type of dislocation of the hip joint.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Anterior dislocation of the hip joint:",
+    "H_highlight_excellence": "Rare type of dislocation of the hip joint.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "AAOS orthopedic guidelines",
+    "P_plan_for_improvement": "Rare type of dislocation of the hip joint"
+  },
+  "supplementary_callouts": {
+    "guideline": "AAOS orthopedic guidelines",
+    "takeaway": "Rare type of dislocation of the hip joint",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1584,
+  "specialty": "Orthopedic",
+  "topic": "In osteoarthntis of the hip joint",
+  "question": "In osteoarthntis of the hip joint",
+  "options": {
+    "A": "is the commonest arthropathy",
+    "B": "is characterized by marginal osteophyte formation c. commonly presents with back pain",
+    "C": "the leg is usually adducted and externally rotated when the patient lies supine",
+    "D": "symptoms are least apparent in the morning e. commonly produces swelling of the distal interphalangeal joints"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "is the commonest arthropathy",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "In osteoarthntis of the hip joint",
+    "H_highlight_excellence": "is the commonest arthropathy",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "AAOS orthopedic guidelines",
+    "P_plan_for_improvement": "is the commonest arthropathy"
+  },
+  "supplementary_callouts": {
+    "guideline": "AAOS orthopedic guidelines",
+    "takeaway": "is the commonest arthropathy",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1583,
+  "specialty": "Orthopedic",
+  "topic": "In fractures involving the ankle joint",
+  "question": "In fractures involving the ankle joint",
+  "options": {
+    "A": "the stability of the tibio-fibular mortice determines the outcome",
+    "B": "if the mortice is disrupted it must be reconstructed",
+    "C": "in a third-degree external rotation injury the talus is free to slide beneath, and possibly fracture, the posterior margin of the tibia",
+    "D": "in an inversion (adduction) injury the media malieolus may be sheared from the tibia"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "the stability of the tibio-fibular mortice determines the outcome",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "In fractures involving the ankle joint",
+    "H_highlight_excellence": "the stability of the tibio-fibular mortice determines the outcome",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "AAOS orthopedic guidelines",
+    "P_plan_for_improvement": "the stability of the tibio-fibular mortice determines the outcome"
+  },
+  "supplementary_callouts": {
+    "guideline": "AAOS orthopedic guidelines",
+    "takeaway": "the stability of the tibio-fibular mortice determines the outcome",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1594,
+  "specialty": "Orthopedic",
+  "topic": "Osteoporosis is a deficiency in: a. Calcium metabolism",
+  "question": "Osteoporosis is a deficiency in: a. Calcium metabolism",
+  "options": {
+    "A": "Has a normal serum concentration of 3-13 KA units b. Is present in high concentrations in liver cells",
+    "B": "Calcium deposition",
+    "C": "Is excreted in the bile",
+    "D": "Is elevated in the serum of patients with healing fractures"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Has a normal serum concentration of 3-13 KA units b. Is present in high concentrations in liver cells",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Osteoporosis is a deficiency in: a. Calcium metabolism",
+    "H_highlight_excellence": "Has a normal serum concentration of 3-13 KA units b. Is present in high concentrations in liver cells",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "AAOS orthopedic guidelines",
+    "P_plan_for_improvement": "Has a normal serum concentration of 3-13 KA units b"
+  },
+  "supplementary_callouts": {
+    "guideline": "AAOS orthopedic guidelines",
+    "takeaway": "Has a normal serum concentration of 3-13 KA units b",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1581,
+  "specialty": "Orthopedic",
+  "topic": "In benign tumors of cartilage",
+  "question": "In benign tumors of cartilage",
+  "options": {
+    "A": "of the base of the skull (spheric-occipital1 develop in the remnants of Rathke's pouch",
+    "B": "of the sacrococcygeal region develop in the remnants of the neural canal",
+    "C": "are characterized radiologically by central rarefaction of the bone and cortical thinning and expansion",
+    "D": "are commoner in females than in males e. usually present soon after puberty"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "of the base of the skull (spheric-occipital1 develop in the remnants of Rathke's pouch",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "In benign tumors of cartilage",
+    "H_highlight_excellence": "of the base of the skull (spheric-occipital1 develop in the remnants of Rathke's pouch",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "AAOS orthopedic guidelines",
+    "P_plan_for_improvement": "of the base of the skull (spheric-occipital1 develop in the remnants of Rathke's pouch"
+  },
+  "supplementary_callouts": {
+    "guideline": "AAOS orthopedic guidelines",
+    "takeaway": "of the base of the skull (spheric-occipital1 develop in the remnants of Rathke's pouch",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1567,
+  "specialty": "Orthopedic",
+  "topic": "Complications of tuberculous arthritis are: a. dislocation is very common.",
+  "question": "Complications of tuberculous arthritis are: a. dislocation is very common.",
+  "options": {
+    "A": "loss of weight and night fever and night sweating. b. dull aching pain on exercise or at rest.",
+    "B": "cold abscess formation. c. sinus formation.",
+    "C": "sharp pain occurs at night. d. swelling of the joint affected.",
+    "D": "tuberculous lymphadenitis."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "loss of weight and night fever and night sweating. b. dull aching pain on exercise or at rest.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Complications of tuberculous arthritis are: a. dislocation is very common.",
+    "H_highlight_excellence": "loss of weight and night fever and night sweating. b. dull aching pain on exercise or at rest.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "AAOS orthopedic guidelines",
+    "P_plan_for_improvement": "loss of weight and night fever and night sweating"
+  },
+  "supplementary_callouts": {
+    "guideline": "AAOS orthopedic guidelines",
+    "takeaway": "loss of weight and night fever and night sweating",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1596,
+  "specialty": "Orthopedic",
+  "topic": "Regarding hallux valgus, the following statements are true except that it:",
+  "question": "Regarding hallux valgus, the following statements are true except that it:",
+  "options": {
+    "A": "Overcrowding of the toes by ill-fitting shoes. b. Hallux valgus.",
+    "B": "Is usually due to badly fitting shoes. c. Is not progressive.",
+    "C": "Pes cavus.",
+    "D": "Talipes equinus."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Overcrowding of the toes by ill-fitting shoes. b. Hallux valgus.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Regarding hallux valgus, the following statements are true except that it:",
+    "H_highlight_excellence": "Overcrowding of the toes by ill-fitting shoes. b. Hallux valgus.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "AAOS orthopedic guidelines",
+    "P_plan_for_improvement": "Overcrowding of the toes by ill-fitting shoes"
+  },
+  "supplementary_callouts": {
+    "guideline": "AAOS orthopedic guidelines",
+    "takeaway": "Overcrowding of the toes by ill-fitting shoes",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
 ]);

@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="css/theme.css">
-<script src="js/questions.js?v=3.0" defer></script>
+<script src="js/question-loader.js" defer></script>
 <script>
   const savedTheme = localStorage.getItem('sih-theme') || 'light';
   if (savedTheme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
@@ -44,14 +44,14 @@
       <svg id="moonIcon" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/></svg>
       <svg id="sunIcon" style="display:none;" viewBox="0 0 24 24"><path d="M12 7a5 5 0 1 0 5 5 5.006 5.006 0 0 0-5-5zm0 8a3 3 0 1 1 3-3 3.003 3.003 0 0 1-3 3zm0-13a1 1 0 0 0-1 1v2a1 1 0 0 0 2 0V3a1 1 0 0 0-1-1zm0 18a1 1 0 0 0-1 1v2a1 1 0 0 0 2 0v-2a1 1 0 0 0-1-1zm8-11h-2a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2zm-16 0H2a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2zm13.657-5.657a1 1 0 0 0-1.414 0l-1.414 1.414a1 1 0 0 0 1.414 1.414l1.414-1.414a1 1 0 0 0 0-1.414zm-11.314 0a1 1 0 0 0 0 1.414l1.414 1.414a1 1 0 0 0 1.414-1.414L4.929 5.757a1 1 0 0 0-1.414 0zm11.314 11.314a1 1 0 0 0 0 1.414l1.414 1.414a1 1 0 0 0 1.414-1.414l-1.414-1.414a1 1 0 0 0-1.414 0zm-11.314 0a1 1 0 0 0-1.414 1.414l1.414 1.414a1 1 0 0 0 1.414-1.414l-1.414-1.414a1 1 0 0 0 0-1.414z"/></svg>
     </button>
-    <a href="https://t.me/surgicalInsightHub" target="_blank" class="nav-tg-btn" title="Join Telegram" style="background: var(--brand-burgundy); color: #f0d080; padding: 8px 12px; border-radius: 8px; display: flex; align-items: center; justify-content: center; text-decoration: none; margin-right: 8px; transition: all 0.3s ease;">
+    <a href="https://t.me/sugicalInsightHub" target="_blank" rel="noopener" class="nav-tg-btn" title="Join Telegram" style="background: var(--brand-burgundy); color: #f0d080; padding: 8px 12px; border-radius: 8px; display: flex; align-items: center; justify-content: center; text-decoration: none; margin-right: 8px; transition: all 0.3s ease;">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="#f0d080"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.89 8.22l-1.97 9.28c-.15.66-.54.82-1.08.51l-3-2.21-1.45 1.39c-.16.16-.3.3-.61.3l.21-3.05 5.56-5.02c.24-.21-.05-.33-.37-.12l-6.87 4.33-2.96-.92c-.64-.2-.66-.64.14-.95l11.57-4.46c.54-.19 1.01.13.83.94z"/></svg>
     </a>
-    <a href="https://www.linkedin.com/company/surgical-insight-hub" target="_blank" class="nav-li-btn" title="LinkedIn" style="background: var(--brand-burgundy); color: #f0d080; padding: 8px 12px; border-radius: 8px; display: flex; align-items: center; justify-content: center; text-decoration: none; margin-right: 8px; transition: all 0.3s ease;">
+    <a href="https://www.linkedin.com/company/surgical-insight-hub" target="_blank" rel="noopener" class="nav-li-btn" title="LinkedIn" style="background: var(--brand-burgundy); color: #f0d080; padding: 8px 12px; border-radius: 8px; display: flex; align-items: center; justify-content: center; text-decoration: none; margin-right: 8px; transition: all 0.3s ease;">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="#f0d080"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
     </a>
     <a href="arena.html" class="nav-btn arena-btn active">MCQ Arena</a>
-    <button class="mob-nav-toggle" onclick="openMobNav()">
+    <button class="mob-nav-toggle" onclick="openMobNav()" title="Open Navigation Menu">
       <div class="hamburger">
         <span></span>
         <span></span>
@@ -71,8 +71,8 @@
   <a href="surgery-talk.html" onclick="closeMobNav()">Surgery Talk</a>
   <a href="arena.html" class="active" onclick="closeMobNav()">MCQ Arena</a>
   <a href="about.html" onclick="closeMobNav()">About</a>
-  <a href="https://t.me/surgicalInsightHub" target="_blank" onclick="closeMobNav()" style="color: var(--brand-gold); font-weight: 800;">Join Telegram Community</a>
-  <a href="https://www.linkedin.com/company/surgical-insight-hub" target="_blank" onclick="closeMobNav()" style="color: var(--brand-gold); font-weight: 800;">LinkedIn Community</a>
+  <a href="https://t.me/sugicalInsightHub" target="_blank" rel="noopener" onclick="closeMobNav()" style="color: var(--brand-gold); font-weight: 800;">Join Telegram Community</a>
+  <a href="https://www.linkedin.com/company/surgical-insight-hub" target="_blank" rel="noopener" onclick="closeMobNav()" style="color: var(--brand-gold); font-weight: 800;">LinkedIn Community</a>
 </div>
 
 <style>
@@ -94,7 +94,7 @@
 
 /* SETUP CARD */
 /* SETUP CARD */
-.setup-card{background:rgba(var(--bg-card-rgb, 255, 255, 255), 0.7);backdrop-filter:blur(12px);border:1px solid rgba(184,146,42,0.2);border-radius:24px;padding:40px;max-width:640px;width:100%;box-shadow:0 20px 40px rgba(0,0,0,0.1);position:relative;z-index:2;animation:slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1);}
+.setup-card{background:rgba(var(--bg-card-rgb, 255, 255, 255), 0.7);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border:1px solid rgba(184,146,42,0.2);border-radius:24px;padding:40px;max-width:640px;width:100%;box-shadow:0 20px 40px rgba(0,0,0,0.1);position:relative;z-index:2;animation:slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1);}
 @keyframes slideUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
 .setup-title{font-size:1.4rem;font-weight:900;color:var(--text-primary);margin-bottom:8px;letter-spacing:-.03em;}
 .setup-sub{font-size:.85rem;color:var(--text-secondary);margin-bottom:32px;line-height:1.5;}
@@ -137,7 +137,7 @@
 .q-step.current{background:var(--brand-gold);}
 
 /* QUESTION CARD */
-.q-card{background:rgba(var(--bg-card-rgb, 255, 255, 255), 0.8);backdrop-filter:blur(8px);border:1.5px solid var(--border-color);border-radius:24px;padding:32px;margin-bottom:20px;box-shadow:0 10px 30px rgba(0,0,0,0.04);transition:transform .3s ease;}
+.q-card{background:rgba(var(--bg-card-rgb, 255, 255, 255), 0.8);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border:1.5px solid var(--border-color);border-radius:24px;padding:32px;margin-bottom:20px;box-shadow:0 10px 30px rgba(0,0,0,0.04);transition:transform .3s ease;}
 .q-meta{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;flex-wrap:wrap;gap:12px;}
 .q-badge{font-size:.7rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--brand-burgundy);background:linear-gradient(135deg, #f0d080, #b8922a);border-radius:8px;padding:6px 12px;box-shadow:0 4px 10px rgba(184,146,42,0.2);}
 .q-topic-badge{font-size:.7rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--brand-gold);background:rgba(184,146,42,0.08);border:1px solid rgba(184,146,42,0.2);border-radius:8px;padding:6px 12px;}
@@ -146,7 +146,7 @@
 
 /* OPTIONS */
 .options{display:flex;flex-direction:column;gap:8px;}
-.opt{display:flex;align-items:flex-start;gap:12px;padding:12px 14px;background:var(--bg-primary);border:1.5px solid var(--border-color);border-radius:12px;cursor:pointer;transition:all .18s;user-select:none;}
+.opt{display:flex;align-items:flex-start;gap:12px;padding:12px 14px;background:var(--bg-primary);border:1.5px solid var(--border-color);border-radius:12px;cursor:pointer;transition:all .18s;-webkit-user-select:none;user-select:none;}
 .opt:hover:not(.locked){border-color:var(--brand-gold);background:rgba(184,146,42,0.06);}
 .opt-letter{width:26px;height:26px;border-radius:50%;background:var(--bg-card);border:1.5px solid rgba(184,146,42,0.3);display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:800;color:var(--text-secondary);flex-shrink:0;margin-top:1px;transition:all .18s;}
 .opt-text{font-size:.85rem;color:var(--text-primary);line-height:1.5;padding-top:2px;}
@@ -203,6 +203,11 @@
 .next-btn{width:100%;background:linear-gradient(135deg, #f0d080, #b8922a);color:var(--brand-burgundy);border:none;border-radius:16px;padding:18px;font-family:inherit;font-size:1rem;font-weight:900;cursor:pointer;transition:all .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);margin-top:24px;text-transform:uppercase;letter-spacing:.05em;box-shadow:0 10px 20px rgba(0,0,0,0.2);}
 .next-btn:hover{transform:translateY(-3px);box-shadow:0 15px 30px rgba(0,0,0,0.3);filter:brightness(1.1);}
 
+/* TAGS */
+.q-tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px;}
+.q-tag{font-size:.62rem;font-weight:700;color:var(--text-muted);background:rgba(184,146,42,0.08);border:1px solid rgba(184,146,42,0.15);border-radius:6px;padding:3px 8px;text-transform:lowercase;letter-spacing:0.02em;}
+
+
 /* RESULTS */
 .results{display:none;min-height:100vh;padding:80px 16px 60px;background:var(--bg-primary);}
 .results-inner{max-width:720px;margin:0 auto;}
@@ -257,7 +262,7 @@
 
 /* ── MOBILE HAMBURGER NAV ── */
 .mob-nav-toggle{display:none;background:var(--brand-burgundy);border:1.5px solid var(--brand-gold);color:#f0d080;border-radius:8px;padding:7px 12px;font-size:12px;cursor:pointer;align-items:center;gap:6px;font-family:inherit;font-weight:700;z-index:500;}
-.mob-nav-overlay{display:none;position:fixed;inset:0;background:rgba(43,24,16,0.55);z-index:480;backdrop-filter:blur(4px);}
+.mob-nav-overlay{display:none;position:fixed;inset:0;background:rgba(43,24,16,0.55);z-index:480;-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);}
 .mob-nav-sheet{display:none;position:fixed;bottom:0;left:0;right:0;background:var(--brand-burgundy);border-radius:20px 20px 0 0;border-top:2px solid var(--brand-gold);padding:20px 20px 40px;z-index:490;transform:translateY(100%);transition:transform .28s ease;}
 .mob-nav-sheet.open{transform:translateY(0);}
 .mob-nav-sheet a{display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:.92rem;font-weight:600;padding:11px 0;border-bottom:1px solid var(--border-color);}
@@ -347,11 +352,16 @@
 
     <div class="q-card">
       <div class="q-meta">
-        <div style="display:flex;gap:6px;flex-wrap:wrap;">
-          <span class="q-badge" id="qSpecialty">General Surgery</span>
-          <span class="q-topic-badge" id="qTopic">Critical Care</span>
+        <div style="display:flex; flex-direction:column; gap:8px; width:100%;">
+          <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap; justify-content:space-between;">
+            <div style="display:flex; gap:6px; flex-wrap:wrap;">
+              <span class="q-badge" id="qSpecialty">General Surgery</span>
+              <span class="q-topic-badge" id="qTopic">Critical Care</span>
+            </div>
+            <span class="q-num" id="qNum">Q1</span>
+          </div>
+          <div class="q-tags" id="qTags" style="margin-top: 4px;"></div>
         </div>
-        <span class="q-num" id="qNum">Q1</span>
       </div>
       <div class="q-text" id="qText"></div>
       <div id="qImageWrap" style="display:none; margin: 20px 0; text-align: center;">
@@ -704,6 +714,19 @@ function renderQuestion() {
   bankBadge.style.marginLeft = '10px';
   bankBadge.textContent = '[Global ID: #' + q.id + ']';
   document.getElementById('qNum').appendChild(bankBadge);
+  
+  // Tags
+  const tagsWrap = document.getElementById('qTags');
+  tagsWrap.innerHTML = '';
+  if (q.tags && Array.isArray(q.tags)) {
+    q.tags.forEach(tag => {
+      const t = document.createElement('span');
+      t.className = 'q-tag';
+      t.textContent = tag;
+      tagsWrap.appendChild(t);
+    });
+  }
+
   document.getElementById('qText').textContent = q.question;
 
   // Image handling
