@@ -799,17 +799,16 @@ function formatAnswerLine(letter, answerText) {
   return 'Answer ' + letter + ': ' + (answerText || INSUFFICIENT_DATA_FALLBACK);
 }
 
-function mergeSharpObject(target, source) {
-  if (!source || typeof source !== 'object' || Array.isArray(source)) return target;
-  return Object.assign(target, source);
-}
-
 function normalizeSharpDebrief(question) {
   var merged = {};
-  mergeSharpObject(merged, question.sharp);
-  mergeSharpObject(merged, question.sharp_debrief);
-  mergeSharpObject(merged, question.sharp_description);
-  mergeSharpObject(merged, question.sharpDescription);
+  function addSharpFields(source) {
+    if (!source || typeof source !== 'object' || Array.isArray(source)) return;
+    Object.assign(merged, source);
+  }
+  addSharpFields(question.sharp);
+  addSharpFields(question.sharp_debrief);
+  addSharpFields(question.sharp_description);
+  addSharpFields(question.sharpDescription);
 
   var topLevelSharp = {
     S: question.S,
@@ -833,7 +832,7 @@ function normalizeSharpDebrief(question) {
     verified_answer: question.verified_answer,
     verifiedAnswer: question.verifiedAnswer
   };
-  mergeSharpObject(merged, topLevelSharp);
+  addSharpFields(topLevelSharp);
   return merged;
 }
 
