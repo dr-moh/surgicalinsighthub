@@ -50098,4 +50098,289 @@ window.QUESTIONS.push(...[
   },
   "discrepancy_flag": ""
 }
+,
+{
+  "id": 51079,
+  "specialty": "General Surgery",
+  "topic": "General",
+  "question": "Which of the following is true regarding cervical trauma?",
+  "options": {
+    "A": "The mortality associated with atlanto-occipital dislocation is 100%.",
+    "B": "Most mortality in cervical trauma is not the direct result of neural compression.",
+    "C": "ervical trauma, regardless of the findings on neurologic examination or the time of injury.",
+    "D": "In a neurologically intact patient with neck pain, the cervical spine can be cleared immediately with normal findings on plain cervical radiographs.",
+    "E": "Methylprednisolone should be started immediately in any trauma patient suspected of having"
+  },
+  "answer": "E",
+  "explanation": {
+    "correct": "Methylprednisolone should be started immediately in any trauma patient suspected of having",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "Methylprednisolone should be started immediately in any trauma patient suspected of having",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "General Surgery",
+    "P_plan_for_improvement": "Methylprednisolone should be started immediately in any trauma patient suspected of having"
+  },
+  "supplementary_callouts": {
+    "guideline": "General Surgery",
+    "takeaway": "Methylprednisolone should be started immediately in any trauma patient suspected of having",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": "e62d2222",
+  "specialty": "general surgery",
+  "topic": "General",
+  "question": "Which of the following investigations is the most important to perform prior to excision of a suspected thyroglossal cyst?",
+  "options": {
+    "A": "U/S of the cyst",
+    "B": "Chest X-ray",
+    "C": "TFT",
+    "D": "U/S of thyroid gland"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "U/S of the cyst",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "U/S of the cyst",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "general surgery",
+    "P_plan_for_improvement": "U/S of the cyst"
+  },
+  "supplementary_callouts": {
+    "guideline": "general surgery",
+    "takeaway": "U/S of the cyst",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 594,
+  "specialty": "General Surgery",
+  "topic": "Rush Review",
+  "question": "With regard to drug effects and platelet function, which of the following statements is true?",
+  "options": {
+    "A": "Vasodilators such as prostaglandin E1 (PGE1), prostacy clin (PGI2), theophylline, and dipyridamole elevate cyclic adenosine monophosphate (cAMP) levels and block platelet aggregation.",
+    "B": "Aspirin and indomethacin interfere with platelet release of ADP and inhibit aggregation.",
+    "C": "Furosemide competitively inhibits PGE2.",
+    "D": "The effect of aspirin is reversible in 2 to 3 days.",
+    "E": "Aspirin will decrease platelet counts, but bleeding time is unchanged.28 SECTION I / Surgical Fundamentals"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Vasodilators such as prostaglandin E1 (PGE1), prostacy clin (PGI2), theophylline, and dipyridamole elevate cyclic adenosine monophosphate (cAMP) levels",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Rush Review",
+    "H_highlight_excellence": "Vasodilators such as prostaglandin E1 (PGE1), prostacy clin (PGI2), theophylline, and dipyridamole elevate cyclic adenosine monophosphate (cAMP) levels",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "Rush Review 6th Edition",
+    "P_plan_for_improvement": "See detailed explanation for key surgical concepts"
+  },
+  "supplementary_callouts": {
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1224,
+  "specialty": "General Surgery",
+  "topic": "With regard to distributional shifts during an operation, which of the following",
+  "question": "With regard to distributional shifts during an operation, which of the following statements is true?",
+  "options": {
+    "A": "The surface area of the peritoneum is not large enough to account for significant third-space loss.",
+    "B": "Approximately 1 to 1.5 L/h of fluid is needed during an operation.",
+    "C": "Blood is replaced as it is lost, without modification of the basal operative fluid replacement rate.",
+    "D": "Sequestered ECF is predominantly hypotonic."
+  },
+  "answer": "C",
+  "explanation": {
+    "correct": "Blood is replaced as it is lost, without modification of the basal operative fluid replacement rate.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "With regard to distributional shifts during an operation, which of the following",
+    "H_highlight_excellence": "Blood is replaced as it is lost, without modification of the basal operative fluid replacement rate.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ACS / surgical board principles",
+    "P_plan_for_improvement": "Blood is replaced as it is lost, without modification of the basal operative fluid replacement rate"
+  },
+  "supplementary_callouts": {
+    "guideline": "ACS / surgical board principles",
+    "takeaway": "Blood is replaced as it is lost, without modification of the basal operative fluid replacement rate",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 968,
+  "specialty": "General Surgery",
+  "topic": "Which of the following is true with regard to the inflammatory response?",
+  "question": "Which of the following is true with regard to the inflammatory response?",
+  "options": {
+    "A": "naphylatoxins C3a and C5a.",
+    "B": "Migration of neutrophils to the site of injury is inhibited by the release of serotonin.",
+    "C": "ells.",
+    "D": "Surgical or traumatic injury is associated with upregulation of cell-mediated immunity via type 1 helper T (T H 1) cells and downregulation of antibody-mediated immunity via type 2 helper T (T H 2)",
+    "E": "osinophils involved in the inflammatory response are inactivated by the complement"
+  },
+  "answer": "B",
+  "explanation": {
+    "correct": "Migration of neutrophils to the site of injury is inhibited by the release of serotonin.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Which of the following is true with regard to the inflammatory response?",
+    "H_highlight_excellence": "Migration of neutrophils to the site of injury is inhibited by the release of serotonin.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ACS / surgical board principles",
+    "P_plan_for_improvement": "Migration of neutrophils to the site of injury is inhibited by the release of serotonin"
+  },
+  "supplementary_callouts": {
+    "guideline": "ACS / surgical board principles",
+    "takeaway": "Migration of neutrophils to the site of injury is inhibited by the release of serotonin",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1287,
+  "specialty": "General Surgery",
+  "topic": "metastases by 10 years following watchful waiting?",
+  "question": "metastases by 10 years following watchful waiting?",
+  "options": {
+    "A": "10-20%",
+    "B": "20-25%",
+    "C": "25-30%",
+    "D": ">35%"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "10-20%",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "metastases by 10 years following watchful waiting?",
+    "H_highlight_excellence": "10-20%",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ACS / surgical board principles",
+    "P_plan_for_improvement": "10-20%"
+  },
+  "supplementary_callouts": {
+    "guideline": "ACS / surgical board principles",
+    "takeaway": "10-20%",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1077,
+  "specialty": "General Surgery",
+  "topic": "Which of the following statements concerning the sodium concentration of various fluids",
+  "question": "Which of the following statements concerning the sodium concentration of various fluids is incorrect?",
+  "options": {
+    "A": "Pancreatic secretions, 140 mEq/L",
+    "B": "Sweat, 40 mEq/L",
+    "C": "Gastric secretions, 50 mEq/L",
+    "D": "Saliva, 100 mEq/L",
+    "E": "Ileostomy output, 125 mEq/L"
+  },
+  "answer": "B",
+  "explanation": {
+    "correct": "Sweat, 40 mEq/L",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Which of the following statements concerning the sodium concentration of various fluids",
+    "H_highlight_excellence": "Sweat, 40 mEq/L",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ACS / surgical board principles",
+    "P_plan_for_improvement": "Sweat, 40 mEq/L"
+  },
+  "supplementary_callouts": {
+    "guideline": "ACS / surgical board principles",
+    "takeaway": "Sweat, 40 mEq/L",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 342,
+  "specialty": "General Surgery",
+  "topic": "Hoarseness has developed in a 55-year-old woman following transhiatal esophagectomy. Which of",
+  "question": "Hoarseness has developed in a 55-year-old woman following transhiatal esophagectomy. Which of the following is true about her complication?",
+  "options": {
+    "A": "It is the result of injury to the superior laryngeal nerve.",
+    "B": "It is the result of injury to the recurrent laryngeal nerve.",
+    "C": "The nerve on the right side is more susceptible to injury.",
+    "D": "Seventy percent of bilateral nerve injuries are related to tracheal surgery.",
+    "E": "The most common mechanism of injury to the nerve is thermal from cautery burn."
+  },
+  "answer": "D",
+  "explanation": {
+    "correct": "Seventy percent of bilateral nerve injuries are related to tracheal surgery.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Hoarseness has developed in a 55-year-old woman following transhiatal esophagectomy. Which of",
+    "H_highlight_excellence": "Seventy percent of bilateral nerve injuries are related to tracheal surgery.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ACS / surgical board principles",
+    "P_plan_for_improvement": "Seventy percent of bilateral nerve injuries are related to tracheal surgery"
+  },
+  "supplementary_callouts": {
+    "guideline": "ACS / surgical board principles",
+    "takeaway": "Seventy percent of bilateral nerve injuries are related to tracheal surgery",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
 ]);

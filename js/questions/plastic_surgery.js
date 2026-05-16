@@ -5122,4 +5122,39 @@ window.QUESTIONS.push(...[
   },
   "discrepancy_flag": ""
 }
+,
+{
+  "id": 1624,
+  "specialty": "Plastic Surgery",
+  "topic": "10Who first described the anatomical structures which cause chordee?",
+  "question": "10Who first described the anatomical structures which cause chordee?",
+  "options": {
+    "A": "Carpue. B.Colley.",
+    "B": "Swift.",
+    "C": "Maharata. D.Kooma.",
+    "D": "Anger. E. Galen. 11Who wrote satirically about Tagliacozzi? 266A.Moli\u00e8re."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Carpue. B.Colley.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "10Who first described the anatomical structures which cause chordee?",
+    "H_highlight_excellence": "Carpue. B.Colley.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "BSSH / reconstructive principles",
+    "P_plan_for_improvement": "Carpue"
+  },
+  "supplementary_callouts": {
+    "guideline": "BSSH / reconstructive principles",
+    "takeaway": "Carpue",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
 ]);

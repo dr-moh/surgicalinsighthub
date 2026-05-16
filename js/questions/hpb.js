@@ -7904,4 +7904,40 @@ window.QUESTIONS.push(...[
   },
   "discrepancy_flag": ""
 }
+,
+{
+  "id": 1379,
+  "specialty": "HPB",
+  "topic": "Liver segmental anatomy is named after which physician that defined the hepatic",
+  "question": "Liver segmental anatomy is named after which physician that defined the hepatic segments in the 1950s:",
+  "options": {
+    "A": "Giulio Arantius",
+    "B": "JC a n t l i e",
+    "C": "Claude Couinaud",
+    "D": "Thomas Starzl",
+    "E": "Henri Bismuth"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Giulio Arantius",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Liver segmental anatomy is named after which physician that defined the hepatic",
+    "H_highlight_excellence": "Giulio Arantius",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "HPB surgical guidelines",
+    "P_plan_for_improvement": "Giulio Arantius"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB surgical guidelines",
+    "takeaway": "Giulio Arantius",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
 ]);
