@@ -598,7 +598,7 @@ var SPECIALTIES = ['All', 'General Surgery', 'HPB', 'Colorectal', 'Anesthesia', 
 
 function initArena() {
   // Standard question bundle contract: js/questions.js must set both window.QUESTIONS and window.QUESTIONS_LOADED.
-  if (!window.QUESTIONS_LOADED || !Array.isArray(window.QUESTIONS)) {
+  if (window.QUESTIONS_LOADED !== true || !Array.isArray(window.QUESTIONS)) {
     console.log('MCQ Bank: Still loading questions...');
     setTimeout(initArena, 200);
     return;
@@ -893,7 +893,7 @@ function showSharp(q, selected, isCorrect) {
   }
 
   // Tags from AI-enriched questions are shown as supplementary context.
-  var tags = Array.isArray(q.tags) ? q.tags.filter(function(tag) { return cleanText(tag); }).join(' • ') : '';
+  var tags = Array.isArray(q.tags) ? q.tags.filter(function(tag) { return cleanText(tag).length > 0; }).join(' • ') : '';
   if (tags) {
     supplementary.appendChild(createExplanationRow('Tags', tags));
     supplementaryRow.style.display = 'flex';
