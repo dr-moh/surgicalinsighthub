@@ -58,7 +58,7 @@ window.NOTES_DATA = {
       tags: ['red:RSI', 'red:Airway', 'LEMON', 'Mallampati', 'ICU'],
       pages: '5 topics + MCQ',
       type: 'web',
-      url: 'notes/Surgical High-Yield Notes/Anesthesia & Perioperative Care.html',
+      url: 'notes/Surgical Operative Approach/Anesthesia & Perioperative Care.html',
       isNew: true
     },
     {
