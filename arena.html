@@ -800,15 +800,20 @@ function formatAnswerLine(letter, answerText) {
 }
 
 function normalizeSharpDebrief(question) {
-  var merged = {};
-  function addSharpFields(source) {
-    if (!source || typeof source !== 'object' || Array.isArray(source)) return;
-    Object.assign(merged, source);
+  function toSharpObject(source) {
+    if (!source || typeof source !== 'object' || Array.isArray(source)) return {};
+    return Object.keys(source).reduce(function(acc, key) {
+      if (source[key] !== undefined) acc[key] = source[key];
+      return acc;
+    }, {});
   }
-  addSharpFields(question.sharp);
-  addSharpFields(question.sharp_debrief);
-  addSharpFields(question.sharp_description);
-  addSharpFields(question.sharpDescription);
+  var merged = Object.assign(
+    {},
+    toSharpObject(question.sharp),
+    toSharpObject(question.sharp_debrief),
+    toSharpObject(question.sharp_description),
+    toSharpObject(question.sharpDescription)
+  );
 
   var topLevelSharp = {
     S: question.S,
@@ -832,8 +837,7 @@ function normalizeSharpDebrief(question) {
     verified_answer: question.verified_answer,
     verifiedAnswer: question.verifiedAnswer
   };
-  addSharpFields(topLevelSharp);
-  return merged;
+  return Object.assign(merged, toSharpObject(topLevelSharp));
 }
 
 function showSharp(q, selected, isCorrect) {
