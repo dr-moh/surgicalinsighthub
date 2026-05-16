@@ -5,12 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Surgical Insight Hub — Fracture Management Monograph</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../css/theme.css">
 <link rel="stylesheet" href="../../css/shared.css">
-<script>
-  const savedTheme = localStorage.getItem('sih-theme') || 'light';
-  if (savedTheme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
-</script>
+<link rel="stylesheet" href="../../css/theme.css">
+<style>
 :root {
   /* Orthopaedic Steel Blue & Slate Aesthetic */
   --primary:   #1E3A8A; 
@@ -36,12 +33,12 @@
   --amber-lt:  #FFFBEB;
   --blue:      #1D4ED8;
   --blue-lt:   #EFF6FF;
-  --bg:        #FAFAFA;
-  --bg2:       #F4F4F5;
-  --border:    #E2E8F0;
-  --text:      #0F172A;
-  --muted:     #64748B;
-  --white:     #FFFFFF;
+  --bg:        var(--bg-primary, #FAFAFA);
+  --bg2:       var(--bg-secondary, #F4F4F5);
+  --border:    var(--border-color, #E2E8F0);
+  --text:      var(--text-primary, #0F172A);
+  --muted:     var(--text-secondary, #64748B);
+  --white:     var(--surface-color, #FFFFFF);
   --sidebar-w: 320px;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
@@ -53,7 +50,7 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--bg);color:var(-
   position: fixed; top: 0; left: 0; width: var(--sidebar-w); height: 100vh;
   background: var(--primary-dk); color: #F8FAFC;
   display: flex; flex-direction: column;
-  z-index: 1000; overflow: hidden;
+  z-index: 3000; overflow: hidden;
   transform: translateX(-100%);
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 4px 0 24px rgba(0,0,0,0.4);
@@ -66,7 +63,7 @@ body.sidebar-open #sidebar {
 #sidebar-overlay {
   position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
   background: rgba(15, 23, 42, 0.7); backdrop-filter: blur(3px);
-  z-index: 950; opacity: 0; pointer-events: none;
+  z-index: 2950; opacity: 0; pointer-events: none;
   transition: opacity 0.3s ease;
 }
 body.sidebar-open #sidebar-overlay {
@@ -75,7 +72,7 @@ body.sidebar-open #sidebar-overlay {
 
 /* TOGGLE BUTTON - TOP LEFT */
 #sidebar-toggle {
-  position: fixed; top: 24px; left: 28px; z-index: 900;
+  position: fixed; top: 104px; left: 28px; z-index: 900;
   background: var(--primary); color: white;
   border: none; border-radius: 30px;
   padding: 10px 18px; font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600;
@@ -106,12 +103,14 @@ body.sidebar-open #sidebar-overlay {
 #main{margin-left:0; min-height:100vh;}
 
 /* HERO */
-#hero{background:linear-gradient(135deg,var(--primary-dk) 0%,#1E3A8A 60%,#0F172A 100%);color:white;padding:90px 72px 60px;position:relative;overflow:hidden;}
+#hero{background:linear-gradient(135deg,var(--primary-dk) 0%,#1E3A8A 60%,#0F172A 100%);color:white;padding:120px 72px 60px;position:relative;overflow:hidden;}
 #hero::before{content:'';position:absolute;top:-60px;right:-60px;width:380px;height:380px;background:radial-gradient(circle,rgba(59,130,246,0.15) 0%,transparent 70%);pointer-events:none;}
 #hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent2),var(--gold),transparent);}
 #hero .eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.16em;color:var(--accent2);text-transform:uppercase;margin-bottom:14px;}
 #hero h1{font-family:'Playfair Display',serif;font-size:46px;font-weight:700;line-height:1.15;margin-bottom:10px;color:#fff;}
 #hero .subtitle{font-size:18px;color:rgba(255,255,255,0.8);font-style:italic;margin-bottom:28px;}
+#hero .badges{display:flex;gap:10px;flex-wrap:wrap;}
+#hero .badge{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:4px 14px;font-size:12px;color:rgba(255,255,255,0.95);font-family:'JetBrains Mono',monospace;}
 
 /* CONTENT */
 .content-wrap{max-width:900px;margin:0 auto;padding:0 48px 80px;}
@@ -161,7 +160,7 @@ body.sidebar-open #sidebar-overlay {
 
 /* TABLES */
 .table-wrap{overflow-x:auto;margin:16px 0 20px;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.04);}
-table{width:100%;border-collapse:collapse;font-size:13.5px;background:white;}
+table{width:100%;border-collapse:collapse;font-size:13.5px;background:var(--white);}
 thead tr{background:var(--s1);}
 thead th{color:white;padding:10px 14px;text-align:left;font-family:'Source Serif 4',serif;font-weight:600;font-size:13px; text-transform: uppercase;}
 tbody tr:nth-child(even){background:var(--bg2);}
@@ -179,10 +178,13 @@ tbody td{padding:9px 14px;border-bottom:1px solid var(--border);vertical-align:t
 .callout.pearl .label{color:var(--amber);}
 .callout.warn{background:var(--red-lt);border-color:var(--red);}
 .callout.warn .label{color:var(--red);}
+.callout.clin{background:var(--s1-lt);border-color:var(--s1);}
+.callout.clin .label{color:var(--s1);}
 
 /* DIAGRAM PLACEHOLDERS */
-.diagram-wrap{background:white;border:1px solid var(--border);border-radius:8px;padding:18px;margin:20px 0;box-shadow:0 1px 4px rgba(0,0,0,0.03);text-align:center;}
+.diagram-wrap{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:18px;margin:20px 0;box-shadow:0 1px 4px rgba(0,0,0,0.03);text-align:center;}
 .diagram-title{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--s1);margin-bottom:12px;text-align:left;}
+.diagram-wrap img { max-width: 100%; height: auto; display: block; margin: 0 auto; border-radius: 4px; }
 
 /* RAPID REFERENCE */
 .rapid-ref{background:var(--primary-dk);color:var(--primary-lt);border-radius:10px;padding:28px 32px;margin:30px 0;}
@@ -196,7 +198,7 @@ tbody td{padding:9px 14px;border-bottom:1px solid var(--border);vertical-align:t
 .rapid-ref tbody td strong{color:var(--gold);}
 
 /* PROGRESS */
-#progress-bar{position:fixed;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent2),var(--gold));transform-origin:left;transform:scaleX(0);transition:transform 0.1s;z-index:50;}
+#progress-bar{position:fixed;top:80px;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent2),var(--gold));transform-origin:left;transform:scaleX(0);transition:transform 0.1s;z-index:1050;}
 
 /* TOP BTN */
 #top-btn{position:fixed;bottom:28px;right:28px;background:var(--primary);color:white;border:none;border-radius:50%;width:44px;height:44px;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,0.2);transition:all 0.2s;opacity:0;pointer-events:none;}
@@ -209,7 +211,7 @@ tbody td{padding:9px 14px;border-bottom:1px solid var(--border);vertical-align:t
 
 @media(max-width:900px){
   .content-wrap{padding:0 20px 60px;}
-  #hero{padding:72px 20px 40px;}
+  #hero{padding:100px 20px 40px;}
   #hero h1{font-size:30px;}
 }
 @media print{
@@ -219,6 +221,7 @@ tbody td{padding:9px 14px;border-bottom:1px solid var(--border);vertical-align:t
 }
 </style>
 </head>
+<body>
 
   <!-- Standardized SIH Navbar -->
   <nav class="nav" id="mainNav">
@@ -236,8 +239,8 @@ tbody td{padding:9px 14px;border-bottom:1px solid var(--border);vertical-align:t
 
     <div class="nav-links-pill">
       <a href="../../index.html">Home</a>
-      <a href="../../notes.html">Notes</a>
-      <a href="../operative_approach.html" class="active">Playbook</a>
+      <a href="../../notes.html" class="active">Notes</a>
+      <a href="../operative_approach.html">Playbook</a>
       <a href="../../arena.html">MCQ Arena</a>
       <a href="../../podcast.html">Podcast</a>
       <a href="../../surgery-talk.html">Surgery Talk</a>
@@ -263,15 +266,14 @@ tbody td{padding:9px 14px;border-bottom:1px solid var(--border);vertical-align:t
   <div class="mob-nav-sheet" id="mobNavSheet">
     <div class="mob-nav-handle"></div>
     <a href="../../index.html" onclick="closeMobNav()">Home</a>
-    <a href="../../notes.html" onclick="closeMobNav()">Notes</a>
-    <a href="../operative_approach.html" class="active" onclick="closeMobNav()">Playbook</a>
+    <a href="../../notes.html" class="active" onclick="closeMobNav()">Notes</a>
+    <a href="../operative_approach.html" onclick="closeMobNav()">Playbook</a>
     <a href="../../arena.html" onclick="closeMobNav()">MCQ Arena</a>
     <a href="../../podcast.html" onclick="closeMobNav()">Podcast</a>
     <a href="../../surgery-talk.html" onclick="closeMobNav()">Surgery Talk</a>
     <a href="../../about.html" onclick="closeMobNav()">About</a>
     <a href="https://t.me/sugicalInsightHub" target="_blank" style="color: var(--brand-gold); font-weight: 800;">Join Telegram Community</a>
   </div>
-
 
 <div id="progress-bar"></div>
 
@@ -342,7 +344,8 @@ tbody td{padding:9px 14px;border-bottom:1px solid var(--border);vertical-align:t
 
 <div class="callout warn" style="margin-top: 40px;">
   <span class="label">Upfront Philosophy</span>
-  Fracture management sits at the intersection of general surgery and orthopaedics, and in resource-limited settings where orthopaedic coverage is variable and the general surgeon is the first responder, this knowledge is not academic. It is immediately applicable. You will reduce fractures, apply casts, place skeletal traction, and assist with or perform external fixation. You will manage compartment syndrome. You will make the decision between operative and non-operative management. You will recognise when a fracture that appears straightforward is about to kill someone. Five treatment modalities are covered across multiple locations. Master the principles first. The techniques are applications of the principles.
+  <p>Fracture management sits at the intersection of general surgery and orthopaedics. In resource-limited settings where orthopaedic coverage is variable and the general surgeon is the first responder, this knowledge is not academic. It is immediately applicable. You will reduce fractures, apply casts, place skeletal traction, and assist with or perform external fixation. You will manage compartment syndrome. You will make the decision between operative and non-operative management. You will recognise when a fracture that appears straightforward is about to kill someone.</p>
+  <p>Five treatment modalities are covered across multiple locations. Master the principles first. The techniques are applications of the principles.</p>
 </div>
 
 <div class="sec-header s1">
@@ -598,17 +601,17 @@ tbody td{padding:9px 14px;border-bottom:1px solid var(--border);vertical-align:t
   
   <div class="callout pearl">
     <span class="label">Consultant Pearl #1: The Fluoroscopy Image That Looks Acceptable Is Not Always Acceptable</span>
-    Fluoroscopy provides a 2D snapshot of a 3D structure. Rotational malalignment cannot be detected on AP/Lateral fluoro. A femoral nail may look perfectly aligned but be locked in 20° of external rotation, leading to a crippling gait. Check rotation clinically before locking.
+    <p>Fluoroscopy provides a 2D snapshot of a 3D structure. Rotational malalignment cannot be detected on AP/Lateral fluoro. A femoral nail may look perfectly aligned but be locked in 20° of external rotation, leading to a crippling gait. Check rotation clinically before locking.</p>
   </div>
 
   <div class="callout pearl">
     <span class="label">Consultant Pearl #2: Compartment Syndrome — You Have One Chance</span>
-    Compartment syndrome is a clinical diagnosis. The "6 Ps" do not arrive together. Pain out of proportion, and pain on passive stretch, are the earliest and most reliable signs. If paraesthesia or pulselessness is present, irreversible necrosis has already occurred. When in doubt, perform a fasciotomy.
+    <p>Compartment syndrome is a clinical diagnosis. The "6 Ps" do not arrive together. Pain out of proportion, and pain on passive stretch, are the earliest and most reliable signs. If paraesthesia or pulselessness is present, irreversible necrosis has already occurred. When in doubt, perform a fasciotomy.</p>
   </div>
 
   <div class="callout pearl">
     <span class="label">Consultant Pearl #3: Anterior Knee Pain in Tibial Nailing Is Preventable</span>
-    Up to 60% of patients experience chronic knee pain after tibial nailing. Prevent it by using a paratendon approach rather than splitting the tendon, countersinking the nail deep into the metaphysis so it does not rub the tendon, and ensuring the knee is flexed &gt;120° during insertion to achieve the correct trajectory.
+    <p>Up to 60% of patients experience chronic knee pain after tibial nailing. Prevent it by using a paratendon approach rather than splitting the tendon, countersinking the nail deep into the metaphysis so it does not rub the tendon, and ensuring the knee is flexed &gt;120° during insertion to achieve the correct trajectory.</p>
   </div>
 </section>
 
@@ -714,57 +717,44 @@ tbody td{padding:9px 14px;border-bottom:1px solid var(--border);vertical-align:t
 <button id="top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 
 <script>
-  // Sidebar, Progress Bar, and Scroll-to-Top Logic
-  (function() {
-    const progressBar = document.getElementById('progress-bar');
-    const topBtn = document.getElementById('top-btn');
-    const navItems = document.querySelectorAll('.nav-item');
-    const sections = document.querySelectorAll('.topic[id], .rapid-ref[id]');
-    
-    window.toggleSidebar = function() { document.body.classList.toggle('sidebar-open'); };
-    window.closeSidebar = function() { document.body.classList.remove('sidebar-open'); };
+const progressBar = document.getElementById('progress-bar');
+const topBtn = document.getElementById('top-btn');
+const sidebarToggle = document.getElementById('sidebar-toggle');
+const sidebarOverlay = document.getElementById('sidebar-overlay');
+const navItems = document.querySelectorAll('.nav-item');
+const sections = document.querySelectorAll('.topic[id], .rapid-ref[id]');
+const body = document.body;
 
-    window.addEventListener('scroll', () => {
-      const st = window.scrollY;
-      const dh = document.documentElement.scrollHeight - window.innerHeight;
-      if (progressBar) progressBar.style.transform = `scaleX(${st / dh})`;
-      if (topBtn) topBtn.classList.toggle('show', st > 400);
-      
-      let current = '';
-      sections.forEach(s => {
-        if (st >= s.offsetTop - 120) current = s.id;
-      });
-      navItems.forEach(n => {
-        n.classList.toggle('active', n.getAttribute('href') === '#' + current);
-      });
-    });
+function toggleSidebar() { body.classList.toggle('sidebar-open'); }
+function closeSidebar() { body.classList.remove('sidebar-open'); }
 
-    window.filterNav = function(query) {
-      const q = query.toLowerCase();
-      navItems.forEach(item => {
-        item.style.display = (!q || item.textContent.toLowerCase().includes(q)) ? 'block' : 'none';
-      });
-    };
+window.addEventListener('scroll', () => {
+  const st = window.scrollY;
+  const dh = document.documentElement.scrollHeight - window.innerHeight;
+  progressBar.style.transform = `scaleX(${st / dh})`;
+  topBtn.classList.toggle('show', st > 400);
+  
+  let current = '';
+  sections.forEach(s => { if (st >= s.offsetTop - 120) current = s.id; });
+  navItems.forEach(n => { n.classList.toggle('active', n.getAttribute('href') === '#' + current); });
+});
 
-    navItems.forEach(item => {
-      item.addEventListener('click', e => {
-        e.preventDefault();
-        closeSidebar();
-        const target = document.querySelector(item.getAttribute('href'));
-        if (target) {
-          window.scrollTo({
-            top: target.getBoundingClientRect().top + window.scrollY - 80,
-            behavior: 'smooth'
-          });
-        }
-      });
-    });
+function filterNav(query) {
+  const q = query.toLowerCase();
+  navItems.forEach(item => { item.style.display = (!q || item.textContent.toLowerCase().includes(q)) ? 'block' : 'none'; });
+  document.querySelectorAll('.vol-label').forEach(l => { l.style.display = 'block'; });
+}
 
-    // Topic Animation
-    document.querySelectorAll('.topic').forEach((el, i) => {
-      el.style.animationDelay = `${i * 0.03}s`;
-    });
-  })();
+navItems.forEach(item => {
+  item.addEventListener('click', e => {
+    e.preventDefault();
+    closeSidebar();
+    const target = document.querySelector(item.getAttribute('href'));
+    if (target) window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 80, behavior: 'smooth' });
+  });
+});
+
+document.querySelectorAll('.topic').forEach((el, i) => { el.style.animationDelay = `${i * 0.03}s`; });
 </script>
 <script src="../../js/navigation.js"></script>
 </body>

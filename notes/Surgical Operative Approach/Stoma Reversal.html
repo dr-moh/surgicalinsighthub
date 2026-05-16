@@ -5,12 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Surgical Insight Hub — Stoma Reversal Monograph</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../css/theme.css">
 <link rel="stylesheet" href="../../css/shared.css">
-<script>
-  const savedTheme = localStorage.getItem('sih-theme') || 'light';
-  if (savedTheme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
-</script>
+<link rel="stylesheet" href="../../css/theme.css">
 <style>
 :root {
   /* Terracotta & Deep Slate Aesthetic */
@@ -31,7 +27,19 @@
   --s3-lt:     #EAECEB;
   --s4-lt:     #F4EFEB;
   --s5-lt:     #E8EBED;
-  --sidebar-w: 300px;
+  --red:       #A32A2A;
+  --red-lt:    #FEF2F2;
+  --amber:     #A65D12;
+  --amber-lt:  #FFFBEB;
+  --blue:      #234A70;
+  --blue-lt:   #EFF6FF;
+  --bg:        var(--bg-primary, #FCFBF9);
+  --bg2:       var(--bg-secondary, #F3F1ED);
+  --border:    var(--border-color, #E4DFD9);
+  --text:      var(--text-primary, #2A2624);
+  --muted:     var(--text-secondary, #635B56);
+  --white:     var(--surface-color, #FFFFFF);
+  --sidebar-w: 320px;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
@@ -42,7 +50,7 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--bg);color:var(-
   position: fixed; top: 0; left: 0; width: var(--sidebar-w); height: 100vh;
   background: var(--primary-dk); color: #EBE5E7;
   display: flex; flex-direction: column;
-  z-index: 1400; overflow: hidden;
+  z-index: 3000; overflow: hidden;
   transform: translateX(-100%);
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 4px 0 24px rgba(0,0,0,0.3);
@@ -50,22 +58,172 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--bg);color:var(-
 body.sidebar-open #sidebar {
   transform: translateX(0);
 }
+
+/* OVERLAY */
 #sidebar-overlay {
   position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
-  background: rgba(33, 20, 18, 0.6); backdrop-filter: blur(2px);
-  z-index: 1350; opacity: 0; pointer-events: none;
+  background: rgba(33, 20, 18, 0.5); backdrop-filter: blur(2px);
+  z-index: 2950; opacity: 0; pointer-events: none;
   transition: opacity 0.3s ease;
 }
 body.sidebar-open #sidebar-overlay {
   opacity: 1; pointer-events: auto;
 }
-#hero { padding: 120px 72px 60px; }
-@media (max-width: 900px) { #hero { padding: 100px 24px 40px; } }
-</style>
 
+/* TOGGLE BUTTON - TOP LEFT */
+#sidebar-toggle {
+  position: fixed; top: 104px; left: 28px; z-index: 900;
+  background: var(--primary); color: white;
+  border: none; border-radius: 30px;
+  padding: 10px 18px; font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600;
+  letter-spacing: 0.05em; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  display: flex; align-items: center; gap: 8px; transition: all 0.2s;
+}
+#sidebar-toggle:hover {
+  background: var(--accent); transform: translateY(-2px);
+}
+
+#sidebar-header{padding:20px 20px 14px;border-bottom:1px solid rgba(255,255,255,0.08);flex-shrink:0;}
+#sidebar-header .logo{font-family:'Playfair Display',serif;font-size:13px;font-weight:700;color:var(--accent2);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;}
+#sidebar-header .sub{font-size:10.5px;color:rgba(235,229,231,0.6);letter-spacing:0.04em;}
+#sidebar-search{padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.05);flex-shrink:0;}
+#sidebar-search input{width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:6px;color:#EBE5E7;padding:6px 10px;font-size:12px;font-family:'Source Serif 4',serif;outline:none;transition:border-color 0.2s;}
+#sidebar-search input::placeholder{color:rgba(235,229,231,0.4);}
+#sidebar-search input:focus{border-color:var(--accent2);}
+#sidebar-nav{flex:1;overflow-y:auto;padding:8px 0 20px;}
+#sidebar-nav::-webkit-scrollbar{width:4px;}
+#sidebar-nav::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.15);border-radius:2px;}
+.vol-label{font-size:9.5px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent2);padding:14px 18px 4px;}
+.nav-item{display:block;padding:8px 18px 8px 22px;font-size:12.5px;color:rgba(235,229,231,0.75);text-decoration:none;border-left:2px solid transparent;transition:all 0.15s;line-height:1.4;}
+.nav-item:hover{color:#fff;background:rgba(255,255,255,0.03);border-left-color:rgba(212,128,106,0.5);}
+.nav-item.active{color:#fff;background:rgba(255,255,255,0.06);border-left-color:var(--accent2);font-weight:600;}
+.nav-item .num{font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(235,229,231,0.4);margin-right:6px;}
+
+/* MAIN */
+#main{margin-left:0; min-height:100vh;}
+
+/* HERO */
+#hero{background:linear-gradient(135deg,var(--primary-dk) 0%,#4D1E14 60%,#211412 100%);color:white;padding:120px 72px 60px;position:relative;overflow:hidden;}
+#hero::before{content:'';position:absolute;top:-60px;right:-60px;width:380px;height:380px;background:radial-gradient(circle,rgba(212,128,106,0.15) 0%,transparent 70%);pointer-events:none;}
+#hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent2),var(--gold),transparent);}
+#hero .eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.16em;color:var(--accent2);text-transform:uppercase;margin-bottom:14px;}
+#hero h1{font-family:'Playfair Display',serif;font-size:46px;font-weight:700;line-height:1.15;margin-bottom:10px;color:#fff;}
+#hero .subtitle{font-size:18px;color:rgba(255,255,255,0.7);font-style:italic;margin-bottom:28px;}
+#hero .badges{display:flex;gap:10px;flex-wrap:wrap;}
+#hero .badge{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:20px;padding:4px 14px;font-size:12px;color:rgba(255,255,255,0.9);font-family:'JetBrains Mono',monospace;}
+
+/* CONTENT */
+.content-wrap{max-width:900px;margin:0 auto;padding:0 48px 80px;}
+
+/* SECTION HEADER */
+.sec-header{margin-top:60px;margin-bottom:8px;padding:28px 36px;border-radius:10px;display:flex;align-items:center;gap:20px;}
+.sec-header.s1{background:linear-gradient(135deg,#6F302308,#6F302315);border-left:4px solid var(--s1);}
+.sec-header.s2{background:linear-gradient(135deg,#44383D08,#44383D15);border-left:4px solid var(--s2);}
+.sec-header.s3{background:linear-gradient(135deg,#3B4A4308,#3B4A4315);border-left:4px solid var(--s3);}
+.sec-header.s4{background:linear-gradient(135deg,#8C674608,#8C674615);border-left:4px solid var(--s4);}
+.sec-header.s5{background:linear-gradient(135deg,#29364208,#29364215);border-left:4px solid var(--s5);}
+.sec-badge{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;letter-spacing:0.1em;padding:4px 12px;border-radius:4px;white-space:nowrap;flex-shrink:0;}
+.s1 .sec-badge{background:var(--s1);color:white;}
+.s2 .sec-badge{background:var(--s2);color:white;}
+.s3 .sec-badge{background:var(--s3);color:white;}
+.s4 .sec-badge{background:var(--s4);color:white;}
+.s5 .sec-badge{background:var(--s5);color:white;}
+.sec-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;}
+.s1 .sec-title{color:var(--s1);}
+.s2 .sec-title{color:var(--s2);}
+.s3 .sec-title{color:var(--s3);}
+.s4 .sec-title{color:var(--s4);}
+.s5 .sec-title{color:var(--s5);}
+
+/* TOPIC */
+.topic{margin-top:48px;padding-top:48px;border-top:1px solid var(--border);}
+.topic:first-of-type{border-top:none;}
+.topic-header{display:flex;align-items:flex-start;gap:16px;margin-bottom:24px;}
+.topic-num{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;padding:3px 10px;border-radius:4px;margin-top:4px;flex-shrink:0;}
+.s1 .topic-num{background:var(--s1-lt);color:var(--s1);}
+.s2 .topic-num{background:var(--s2-lt);color:var(--s2);}
+.s3 .topic-num{background:var(--s3-lt);color:var(--s3);}
+.s4 .topic-num{background:var(--s4-lt);color:var(--s4);}
+.s5 .topic-num{background:var(--s5-lt);color:var(--s5);}
+.topic h2{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;line-height:1.2;}
+.s1 .topic h2{color:var(--s1);}
+.s2 .topic h2{color:var(--s2);}
+.s3 .topic h2{color:var(--s3);}
+.s4 .topic h2{color:var(--s4);}
+.s5 .topic h2{color:var(--s5);}
+.topic h3{font-family:'Playfair Display',serif;font-size:17px;font-weight:600;color:var(--muted);margin:26px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--border);}
+.topic h4{font-size:13px;font-weight:600;color:var(--muted);letter-spacing:0.06em;text-transform:uppercase;margin:18px 0 8px;font-family:'JetBrains Mono',monospace;}
+.topic p{margin-bottom:12px;color:var(--text);}
+.topic ul,.topic ol{margin:8px 0 14px 20px;color:var(--text);}
+.topic li{margin-bottom:6px;line-height:1.65;}
+.topic li::marker{color:var(--accent2);}
+.topic strong{color:var(--text);font-weight:600;}
+
+/* TABLES */
+.table-wrap{overflow-x:auto;margin:16px 0 20px;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.04);}
+table{width:100%;border-collapse:collapse;font-size:13.5px;background:var(--white);}
+thead tr{background:var(--s1);}
+thead th{color:white;padding:10px 14px;text-align:left;font-family:'Source Serif 4',serif;font-weight:600;font-size:13px;}
+tbody tr:nth-child(even){background:var(--bg2);}
+tbody tr:hover{background:var(--s1-lt);transition:background 0.15s;}
+tbody td{padding:9px 14px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.5;}
+.s2-tbl thead tr{background:var(--s2);}
+.s3-tbl thead tr{background:var(--s3);}
+.s4-tbl thead tr{background:var(--s4);}
+.s5-tbl thead tr{background:var(--s5);}
+
+/* CALLOUTS */
+.callout{margin:18px 0;padding:14px 18px;border-radius:0 8px 8px 0;border-left:4px solid;font-size:14px;line-height:1.65;}
+.callout .label{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;display:block;margin-bottom:4px;}
+.callout.pearl{background:var(--amber-lt);border-color:var(--amber);}
+.callout.pearl .label{color:var(--amber);}
+.callout.warn{background:var(--red-lt);border-color:var(--red);}
+.callout.warn .label{color:var(--red);}
+.callout.clin{background:var(--s1-lt);border-color:var(--s1);}
+.callout.clin .label{color:var(--s1);}
+.callout.exam{background:var(--blue-lt);border-color:var(--blue);}
+.callout.exam .label{color:var(--blue);}
+
+/* DIAGRAM */
+.diagram-wrap{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:18px;margin:20px 0;box-shadow:0 1px 4px rgba(0,0,0,0.03);}
+.diagram-title{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--s1);margin-bottom:12px;}
+
+/* RAPID REFERENCE */
+.rapid-ref{background:var(--primary-dk);color:var(--primary-lt);border-radius:10px;padding:28px 32px;margin:30px 0;}
+.rapid-ref h3{font-family:'Playfair Display',serif;font-size:20px;color:var(--accent2);margin-bottom:16px;}
+.rapid-ref table{font-size:12.5px; background: transparent;}
+.rapid-ref thead tr{background:rgba(212,128,106,0.15);}
+.rapid-ref thead th{color:var(--accent2);padding:8px 12px;font-size:11px;}
+.rapid-ref tbody tr:nth-child(even){background:rgba(255,255,255,0.03);}
+.rapid-ref tbody tr:hover{background:rgba(255,255,255,0.06);}
+.rapid-ref tbody td{color:var(--primary-lt);padding:7px 12px;border-bottom:1px solid rgba(255,255,255,0.05);}
+.rapid-ref tbody td strong{color:var(--gold);}
+
+/* PROGRESS */
+#progress-bar{position:fixed;top:80px;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent2),var(--gold));transform-origin:left;transform:scaleX(0);transition:transform 0.1s;z-index:1050;}
+
+/* TOP BTN */
+#top-btn{position:fixed;bottom:28px;right:28px;background:var(--primary);color:white;border:none;border-radius:50%;width:44px;height:44px;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,0.2);transition:all 0.2s;opacity:0;pointer-events:none;}
+#top-btn.show{opacity:1;pointer-events:auto;}
+#top-btn:hover{background:var(--accent2);transform:translateY(-2px);}
+
+/* ANIMATION */
+.topic{animation:fadeUp 0.4s ease both;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
+
+@media(max-width:900px){
+  .content-wrap{padding:0 20px 60px;}
+  #hero{padding:100px 20px 40px;}
+  #hero h1{font-size:30px;}
+}
+@media print{
+  #sidebar-toggle, #sidebar-overlay, #sidebar, #top-btn, #progress-bar{display:none!important;}
+  .topic{page-break-inside:avoid;}
+  .sec-header{page-break-before:always;}
+}
+</style>
 </head>
 <body>
-
 
   <!-- Standardized SIH Navbar -->
   <nav class="nav" id="mainNav">
@@ -83,8 +241,8 @@ body.sidebar-open #sidebar-overlay {
 
     <div class="nav-links-pill">
       <a href="../../index.html">Home</a>
-      <a href="../../notes.html">Notes</a>
-      <a href="../operative_approach.html" class="active">Playbook</a>
+      <a href="../../notes.html" class="active">Notes</a>
+      <a href="../operative_approach.html">Playbook</a>
       <a href="../../arena.html">MCQ Arena</a>
       <a href="../../podcast.html">Podcast</a>
       <a href="../../surgery-talk.html">Surgery Talk</a>
@@ -110,17 +268,20 @@ body.sidebar-open #sidebar-overlay {
   <div class="mob-nav-sheet" id="mobNavSheet">
     <div class="mob-nav-handle"></div>
     <a href="../../index.html" onclick="closeMobNav()">Home</a>
-    <a href="../../notes.html" onclick="closeMobNav()">Notes</a>
-    <a href="../operative_approach.html" class="active" onclick="closeMobNav()">Playbook</a>
+    <a href="../../notes.html" class="active" onclick="closeMobNav()">Notes</a>
+    <a href="../operative_approach.html" onclick="closeMobNav()">Playbook</a>
     <a href="../../arena.html" onclick="closeMobNav()">MCQ Arena</a>
     <a href="../../podcast.html" onclick="closeMobNav()">Podcast</a>
     <a href="../../surgery-talk.html" onclick="closeMobNav()">Surgery Talk</a>
     <a href="../../about.html" onclick="closeMobNav()">About</a>
     <a href="https://t.me/sugicalInsightHub" target="_blank" style="color: var(--brand-gold); font-weight: 800;">Join Telegram Community</a>
   </div>
-</div>
 
-<button class="mono-sidebar-toggle" onclick="toggleSidebar()">
+<div id="progress-bar"></div>
+
+<div id="sidebar-overlay" onclick="closeSidebar()"></div>
+
+<button id="sidebar-toggle" onclick="toggleSidebar()">
   <span>☰</span> Contents
 </button>
 
@@ -156,9 +317,8 @@ body.sidebar-open #sidebar-overlay {
     <a class="nav-item" href="#rapid">High-Yield Board Facts</a>
   </div>
 </nav>
-<div id="sidebar-overlay" onclick="closeSidebar()"></div>
-<main id="main" style="padding-top: 70px;">
 
+<main id="main">
 <section id="hero">
   <div class="eyebrow">Surgical Insight Hub · Monograph Series · ABSITE · PGY-3 Framework</div>
   <h1>Stoma Reversal</h1>
@@ -183,18 +343,6 @@ body.sidebar-open #sidebar-overlay {
 </div>
 
 <section class="topic s1" id="p1a">
-  <!-- LIVE INSIGHT FROM TINYFISH RESEARCH -->
-  <div class="research-insight">
-    <h4>
-      <span class="source-tag">Insight 2025/26</span>
-      Robotic CME & 10-Year Appendicitis Data
-    </h4>
-    <p>2025 updates highlight long-term non-operative success and robotic colorectal standardization.</p>
-    <ul>
-      <li><strong>APPAC 10-Year Data:</strong>  55.7% of uncomplicated appendicitis patients avoid surgery long-term with antibiotics.</li><li><strong>ColoRobotica:</strong>  New international metrics established for standardized robotic CME.</li><li><strong>CME Hemicolectomy:</strong>  Robotic approach shows significantly lower conversion rates than laparoscopic.</li><li><strong>Oncologic Efficacy:</strong>  Robotic lymph node yields are now equivalent or superior to open CME.</li>
-    </ul>
-  </div>
-
   <div class="topic-header"><span class="topic-num">1.1</span><h2>Clinical Workup</h2></div>
   
   <h3>History: Index Operation Details</h3>
@@ -443,23 +591,27 @@ body.sidebar-open #sidebar-overlay {
   </table>
 </div>
 
-</div>
-</main>
+</div></main>
 
 <button id="top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 
-<script src="../../js/navigation.js"></script>
 <script>
 const progressBar = document.getElementById('progress-bar');
 const topBtn = document.getElementById('top-btn');
+const sidebarToggle = document.getElementById('sidebar-toggle');
+const sidebarOverlay = document.getElementById('sidebar-overlay');
 const navItems = document.querySelectorAll('.nav-item');
 const sections = document.querySelectorAll('.topic[id], .rapid-ref[id]');
+const body = document.body;
+
+function toggleSidebar() { body.classList.toggle('sidebar-open'); }
+function closeSidebar() { body.classList.remove('sidebar-open'); }
 
 window.addEventListener('scroll', () => {
   const st = window.scrollY;
   const dh = document.documentElement.scrollHeight - window.innerHeight;
-  if (progressBar) progressBar.style.transform = `scaleX(${st / dh})`;
-  if (topBtn) topBtn.classList.toggle('show', st > 400);
+  progressBar.style.transform = `scaleX(${st / dh})`;
+  topBtn.classList.toggle('show', st > 400);
   
   let current = '';
   sections.forEach(s => { if (st >= s.offsetTop - 120) current = s.id; });
@@ -469,18 +621,20 @@ window.addEventListener('scroll', () => {
 function filterNav(query) {
   const q = query.toLowerCase();
   navItems.forEach(item => { item.style.display = (!q || item.textContent.toLowerCase().includes(q)) ? 'block' : 'none'; });
+  document.querySelectorAll('.vol-label').forEach(l => { l.style.display = 'block'; });
 }
 
 navItems.forEach(item => {
   item.addEventListener('click', e => {
     e.preventDefault();
-    if(typeof closeSidebar === 'function') closeSidebar();
+    closeSidebar();
     const target = document.querySelector(item.getAttribute('href'));
-    if (target) window.scrollTo({ top: target.getBoundingClientRect().top - 80, behavior: 'smooth' });
+    if (target) window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 80, behavior: 'smooth' });
   });
 });
 
 document.querySelectorAll('.topic').forEach((el, i) => { el.style.animationDelay = `${i * 0.03}s`; });
 </script>
+<script src="../../js/navigation.js"></script>
 </body>
 </html>
