@@ -5606,4 +5606,74 @@ window.QUESTIONS.push(...[
   },
   "discrepancy_flag": ""
 }
+,
+{
+  "id": 1455,
+  "specialty": "HPB",
+  "topic": "What is the most frequent bacterial colonizer of the bile",
+  "question": "What is the most frequent bacterial colonizer of the bile",
+  "options": {
+    "A": "Escherichia coli",
+    "B": "Staphylococcus aureus",
+    "C": "Klebsiella pneumoniae",
+    "D": "None, bile is sterile in normal conditions"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Escherichia coli",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "What is the most frequent bacterial colonizer of the bile",
+    "H_highlight_excellence": "Escherichia coli",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "HPB surgical guidelines",
+    "P_plan_for_improvement": "Escherichia coli"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB surgical guidelines",
+    "takeaway": "Escherichia coli",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1427,
+  "specialty": "HPB",
+  "topic": "What is Mirizzi\u2019s syndrome?",
+  "question": "What is Mirizzi\u2019s syndrome?",
+  "options": {
+    "A": "It is a malignant obstruction of the common hepatic",
+    "B": "It is a benign obstruction of the common hepatic",
+    "C": "It is a malignant obstruction of the common hepatic",
+    "D": "uct due to stones in the biliary tract"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "It is a malignant obstruction of the common hepatic",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "What is Mirizzi\u2019s syndrome?",
+    "H_highlight_excellence": "It is a malignant obstruction of the common hepatic",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "HPB surgical guidelines",
+    "P_plan_for_improvement": "It is a malignant obstruction of the common hepatic"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB surgical guidelines",
+    "takeaway": "It is a malignant obstruction of the common hepatic",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
 ]);

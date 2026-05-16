@@ -41598,4 +41598,218 @@ window.QUESTIONS.push(...[
   },
   "discrepancy_flag": ""
 }
+,
+{
+  "id": 50227,
+  "specialty": "General Surgery",
+  "topic": "General",
+  "question": "Stress-related hyperglycemia is thought to be due to increased release of all of the following",
+  "options": {
+    "A": "Glucocorticoids",
+    "B": "Growth hormone",
+    "C": "Thyroid-stimulating hormone (TSH)",
+    "D": "Glucagon",
+    "E": "pinephrine"
+  },
+  "answer": "B",
+  "explanation": {
+    "correct": "Growth hormone",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "Growth hormone",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "General Surgery",
+    "P_plan_for_improvement": "Growth hormone"
+  },
+  "supplementary_callouts": {
+    "guideline": "General Surgery",
+    "takeaway": "Growth hormone",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 909,
+  "specialty": "General Surgery",
+  "topic": "Which of the following is not true regarding esophageal motility?",
+  "question": "Which of the following is not true regarding esophageal motility?",
+  "options": {
+    "A": "Primary waveforms are initiated after swallowing and are peristaltic along the length of the",
+    "B": "Primary waveforms can generate pressures from 40 to 80 mm Hg.",
+    "C": "Secondary waveforms are initiated by voluntary mechanisms and are peristaltic.",
+    "D": "Tertiary waveforms are nonprogressive and nonperistaltic.",
+    "E": "sophagus. Tertiary waveforms represent uncoordinated contractions of smooth muscle and are responsible for esophageal spasm."
+  },
+  "answer": "C",
+  "explanation": {
+    "correct": "Secondary waveforms are initiated by voluntary mechanisms and are peristaltic.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Which of the following is not true regarding esophageal motility?",
+    "H_highlight_excellence": "Secondary waveforms are initiated by voluntary mechanisms and are peristaltic.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ACS / surgical board principles",
+    "P_plan_for_improvement": "Secondary waveforms are initiated by voluntary mechanisms and are peristaltic"
+  },
+  "supplementary_callouts": {
+    "guideline": "ACS / surgical board principles",
+    "takeaway": "Secondary waveforms are initiated by voluntary mechanisms and are peristaltic",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 90201,
+  "specialty": "General Surgery",
+  "topic": "MCQ Compilled TASH.docx",
+  "question": "A 24-year-old gravida-II lady presented with urolithiasis. Which of the following statement is true?",
+  "options": {
+    "A": "Incidence is higher in pregnancy",
+    "B": "Ureteroscopy is relatively safe",
+    "C": "IVU is absolutely contraindicated",
+    "D": "Treatment with ESWL is a relative contraindication"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Incidence is higher in pregnancy",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "MCQ Compilled TASH.docx",
+    "H_highlight_excellence": "Incidence is higher in pregnancy",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "General Surgery",
+    "P_plan_for_improvement": "Incidence is higher in pregnancy"
+  },
+  "supplementary_callouts": {
+    "guideline": "MCQ Compilled TASH.docx",
+    "takeaway": "Incidence is higher in pregnancy",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50460,
+  "specialty": "General Surgery",
+  "topic": "General",
+  "question": "The intensivist in the ICU is called to evaluate multiple patients with respiratory difficulty. The respiratory therapist has been busy collecting data on each of them. Which of the following patients",
+  "options": {
+    "A": "47-year-old woman with bilateral pneumonia and an RR of 55 breaths/min",
+    "B": "72-year-old man after quadruple bypass with a Pa",
+    "C": "O 2 of 67 mm Hg 64-year-old mechanic after colectomy for ulcerative colitis with an alveolar-arterial oxygen",
+    "D": "S /V T ) of 0.7",
+    "E": "28-year-old postal worker after a dog bite to the arm and fasciitis with a shunt fraction greater than 5%"
+  },
+  "answer": "D",
+  "explanation": {
+    "correct": "S /V T ) of 0.7",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "S /V T ) of 0.7",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "General Surgery",
+    "P_plan_for_improvement": "S /V T ) of 0.7"
+  },
+  "supplementary_callouts": {
+    "guideline": "General Surgery",
+    "takeaway": "S /V T ) of 0.7",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 245,
+  "specialty": "General Surgery",
+  "topic": "A number of systems have been developed in an effort to allow",
+  "question": "A number of systems have been developed in an effort to allow comparison of trauma injuries and trauma patients among institutions. Which of the following statement(s) is/are true concerning trauma scoring systems?",
+  "options": {
+    "A": "The Revised Trauma Score uses the physiologic parameters of blood pressure, heart rate, and head injury to mathematically assess injury severity",
+    "B": "The Abbreviated Injury Scale (AIS) is a specific anatomic index",
+    "C": "The Injury Severity Score (ISS) correlates not only the severity of the injury but adjusts for patient age and comorbid risk factors",
+    "D": "The Triss System is the most complete system in combining trauma score and anatomic component as well as patient age"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "The Revised Trauma Score uses the physiologic parameters of blood pressure, heart rate, and head injury to mathematically",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "A number of systems have been developed in an effort to allow",
+    "H_highlight_excellence": "The Revised Trauma Score uses the physiologic parameters of blood pressure, heart rate, and head injury to mathematically",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ACS / surgical board principles",
+    "P_plan_for_improvement": "The Revised Trauma Score uses the physiologic parameters of blood pressure, heart rate, and head injury"
+  },
+  "supplementary_callouts": {
+    "guideline": "ACS / surgical board principles",
+    "takeaway": "The Revised Trauma Score uses the physiologic parameters of blood pressure, heart rate, and head injury to mathematically",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 742,
+  "specialty": "General Surgery",
+  "topic": "Ultrasound imaging reveals gallstones in an asymptomatic 50-year-old woman. Which of the",
+  "question": "Ultrasound imaging reveals gallstones in an asymptomatic 50-year-old woman. Which of the following is the recommended treatment?",
+  "options": {
+    "A": "Observation",
+    "B": "Laparoscopic cholecystectomy",
+    "C": "Open cholecystectomy",
+    "D": "Ursodeoxycholic acid",
+    "E": "xtracorporeal shock wave lithotripsy (ESWL)"
+  },
+  "answer": "D",
+  "explanation": {
+    "correct": "Ursodeoxycholic acid",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Ultrasound imaging reveals gallstones in an asymptomatic 50-year-old woman. Which of the",
+    "H_highlight_excellence": "Ursodeoxycholic acid",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ACS / surgical board principles",
+    "P_plan_for_improvement": "Ursodeoxycholic acid"
+  },
+  "supplementary_callouts": {
+    "guideline": "ACS / surgical board principles",
+    "takeaway": "Ursodeoxycholic acid",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
 ]);
