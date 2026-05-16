@@ -48209,4 +48209,931 @@ window.QUESTIONS.push(...[
   },
   "discrepancy_flag": ""
 }
+,
+{
+  "id": 578,
+  "specialty": "General Surgery",
+  "topic": "Rush Review",
+  "question": "A 59-year-old woman remains intubated due to sepsis after perforated diverticulitis. She has failed multiple trials of extubation due to hypercapnia, which you suspect to be due to overfeeding. Which of the following RQs is characteristic of overfeeding?",
+  "options": {
+    "A": "0.75",
+    "B": "0.85",
+    "C": "0.90",
+    "D": "1.0",
+    "E": "1.05"
+  },
+  "answer": "E",
+  "explanation": {
+    "correct": "1.05",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Rush Review",
+    "H_highlight_excellence": "1.05",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "Rush Review 6th Edition",
+    "P_plan_for_improvement": "See detailed explanation for key surgical concepts"
+  },
+  "supplementary_callouts": {
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50309,
+  "specialty": "General Surgery",
+  "topic": "General",
+  "question": "The protein-sparing effect of glucose administration begins to be manifested after the administration of how much glucose?",
+  "options": {
+    "A": "1 L of 5% dextrose in water (D 5 W)",
+    "B": "2 L of D 5 W",
+    "C": "3 L of D 5 W",
+    "D": "4 L of D 5 W",
+    "E": "5 L of D 5 W"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "1 L of 5% dextrose in water (D 5 W)",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "1 L of 5% dextrose in water (D 5 W)",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "General Surgery",
+    "P_plan_for_improvement": "1 L of 5% dextrose in water (D 5 W)"
+  },
+  "supplementary_callouts": {
+    "guideline": "General Surgery",
+    "takeaway": "1 L of 5% dextrose in water (D 5 W)",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50549,
+  "specialty": "General Surgery",
+  "topic": "General",
+  "question": "With regard to breast carcinoma in men, which statement is true?",
+  "options": {
+    "A": "It is detected most commonly in men 60 to 70 years old.",
+    "B": "RCA1 gene.",
+    "C": "It is commonly associated with a mutation in the",
+    "D": "The prognosis is worse stage for stage than for women.",
+    "E": "Sentinel lymph node biopsy is contraindicated."
+  },
+  "answer": "E",
+  "explanation": {
+    "correct": "Sentinel lymph node biopsy is contraindicated.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "Sentinel lymph node biopsy is contraindicated.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "General Surgery",
+    "P_plan_for_improvement": "Sentinel lymph node biopsy is contraindicated."
+  },
+  "supplementary_callouts": {
+    "guideline": "General Surgery",
+    "takeaway": "Sentinel lymph node biopsy is contraindicated.",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 378,
+  "specialty": "General Surgery",
+  "topic": "Ladd's procedure in neonates with bilious vomiting includes:",
+  "question": "Ladd's procedure in neonates with bilious vomiting includes:",
+  "options": {
+    "A": "Clock wise detorsion: division of ladds band positioning cecum on the left",
+    "B": "Counter clock wise derotation, division of ladd's bands, bowel fixation and appendectomy",
+    "C": "Counter clockwise detorsion, division of ladd's bands, broadening of mesentery and appendectomy",
+    "D": "Clock wise detorsion, division of ladd's band positioning cecum on the right"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Clock wise detorsion: division of ladds band positioning cecum on the left",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Ladd's procedure in neonates with bilious vomiting includes:",
+    "H_highlight_excellence": "Clock wise detorsion: division of ladds band positioning cecum on the left",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ACS / surgical board principles",
+    "P_plan_for_improvement": "Clock wise detorsion: division of ladds band positioning cecum on the left"
+  },
+  "supplementary_callouts": {
+    "guideline": "ACS / surgical board principles",
+    "takeaway": "Clock wise detorsion: division of ladds band positioning cecum on the left",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50888,
+  "specialty": "General Surgery",
+  "topic": "General",
+  "question": "Refractory angina develops in a 70-year-old woman in the coronary care unit 2 days after being hospitalized for acute myocardial infarction. With regard to coronary artery bypass in this situation, which of the following statements is true?",
+  "options": {
+    "A": "It should be performed only if left main coronary disease is present.",
+    "B": "Operative mortality and long-term survival rates are poor in comparison with those in patients who have unstable angina not precipitated by myocardial infarction.",
+    "C": "It should be preceded by thrombolytic therapy if multivessel disease is also present.",
+    "D": "The operative mortality rate is less than 5%.",
+    "E": "The preoperative work-up should include dobutamine stress echocardiography to assess viability."
+  },
+  "answer": "E",
+  "explanation": {
+    "correct": "The preoperative work-up should include dobutamine stress echocardiography to assess viability.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "The preoperative work-up should include dobutamine stress echocardiography to assess viability.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "General Surgery",
+    "P_plan_for_improvement": "The preoperative work-up should include dobutamine stress echocardiography to assess viability."
+  },
+  "supplementary_callouts": {
+    "guideline": "General Surgery",
+    "takeaway": "The preoperative work-up should include dobutamine stress echocardiography to assess viability.",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1133,
+  "specialty": "General Surgery",
+  "topic": "Which of the following statements regarding lysosomes is true?",
+  "question": "Which of the following statements regarding lysosomes is true?",
+  "options": {
+    "A": "Primary lysosomes usually contain extracellular material targeted for digestion.",
+    "B": "Lysosomal enzymes work effectively in the acidic pH of the cytoplasm.",
+    "C": "Serum levels of lysosomal acid phosphatases may have prognostic value in diseases such as prostate cancer.",
+    "D": "Lysosomal storage diseases such as Tay-Sachs result from unregulated activity of lysosomal",
+    "E": "nzymes. To better isolate their hydrolytic enzymes, lysosomes are resistant to fusion with other cell membranes."
+  },
+  "answer": "C",
+  "explanation": {
+    "correct": "Serum levels of lysosomal acid phosphatases may have prognostic value in diseases such as prostate cancer.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Which of the following statements regarding lysosomes is true?",
+    "H_highlight_excellence": "Serum levels of lysosomal acid phosphatases may have prognostic value in diseases such as prostate cancer.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ACS / surgical board principles",
+    "P_plan_for_improvement": "Serum levels of lysosomal acid phosphatases may have prognostic value in diseases such as prostate cancer"
+  },
+  "supplementary_callouts": {
+    "guideline": "ACS / surgical board principles",
+    "takeaway": "Serum levels of lysosomal acid phosphatases may have prognostic value in diseases such as prostate cancer",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 51022,
+  "specialty": "General Surgery",
+  "topic": "General",
+  "question": "Which of the following statements regarding infection of a diabetic patient\u2019s foot is true?",
+  "options": {
+    "A": "The infection within the foot is usually less severe than it appears on clinical evaluation.",
+    "B": "The pain expressed by the patient is generally greater than one would expect in relation to the",
+    "C": "onservative measures rarely succeed, with amputation often being necessary.",
+    "D": "egree of infection. Factors contributing to ulceration and infection in the foot of a diabetic patient are neuropathy, peripheral arterial occlusive disease, and impaired leukocyte phagocytic function.",
+    "E": ""
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "The infection within the foot is usually less severe than it appears on clinical evaluation.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "The infection within the foot is usually less severe than it appears on clinical evaluation.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "General Surgery",
+    "P_plan_for_improvement": "The infection within the foot is usually less severe than it appears on clinical evaluation."
+  },
+  "supplementary_callouts": {
+    "guideline": "General Surgery",
+    "takeaway": "The infection within the foot is usually less severe than it appears on clinical evaluation.",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 806,
+  "specialty": "General Surgery",
+  "topic": "Which of the following clinical conditions is not associated with delayed gastric",
+  "question": "Which of the following clinical conditions is not associated with delayed gastric emptying?",
+  "options": {
+    "A": "Hypocalcaemia",
+    "B": "Scleroderma",
+    "C": "Hyperglycemia",
+    "D": "Myxedema",
+    "E": "Zollinger-Ellison syndrome"
+  },
+  "answer": "B",
+  "explanation": {
+    "correct": "Scleroderma",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Which of the following clinical conditions is not associated with delayed gastric",
+    "H_highlight_excellence": "Scleroderma",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ACS / surgical board principles",
+    "P_plan_for_improvement": "Scleroderma"
+  },
+  "supplementary_callouts": {
+    "guideline": "ACS / surgical board principles",
+    "takeaway": "Scleroderma",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": "c2fdd6db",
+  "specialty": "general surgery",
+  "topic": "General",
+  "question": "Which of the following statements is false about ureteric stones?",
+  "options": {
+    "A": "Mid ureteric ureteric stones are the most difficult to treat with hardest to treat with ESWL",
+    "B": "Nifidipine can facilitate stone passage",
+    "C": "Size of the stone is the most important predictor for spontaneous stone passage",
+    "D": "None of the above"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Mid ureteric ureteric stones are the most difficult to treat with hardest to treat with ESWL",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "Mid ureteric ureteric stones are the most difficult to treat with hardest to treat with ESWL",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "general surgery",
+    "P_plan_for_improvement": "Mid ureteric ureteric stones are the most difficult to treat with hardest to treat with ESWL"
+  },
+  "supplementary_callouts": {
+    "guideline": "general surgery",
+    "takeaway": "Mid ureteric ureteric stones are the most difficult to treat with hardest to treat with ESWL",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 90187,
+  "specialty": "General Surgery",
+  "topic": "MCQ Compilled TASH.docx",
+  "question": "Which of the following statement is true about hormonal treatment of prostatic cancer (PCa)?",
+  "options": {
+    "A": "Survival is improved if it is started for localized disease",
+    "B": "There is no survival benefit if there is pelvic lymphadenopathy",
+    "C": "PSA can be used to detect biochemical relapse",
+    "D": "Anti-androgens are inferior to LHRH agonists in terms of survival"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Survival is improved if it is started for localized disease",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "MCQ Compilled TASH.docx",
+    "H_highlight_excellence": "Survival is improved if it is started for localized disease",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "General Surgery",
+    "P_plan_for_improvement": "Survival is improved if it is started for localized disease"
+  },
+  "supplementary_callouts": {
+    "guideline": "MCQ Compilled TASH.docx",
+    "takeaway": "Survival is improved if it is started for localized disease",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 90222,
+  "specialty": "General Surgery",
+  "topic": "MCQ Compilled TASH.docx",
+  "question": "Which of the following investigations is the most important to perform prior to excision of a suspected thyroglossal cyst?",
+  "options": {
+    "A": "U/S of the cyst",
+    "B": "Chest X-ray",
+    "C": "TFT",
+    "D": "U/S of thyroid gland"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "U/S of the cyst",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "MCQ Compilled TASH.docx",
+    "H_highlight_excellence": "U/S of the cyst",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "General Surgery",
+    "P_plan_for_improvement": "U/S of the cyst"
+  },
+  "supplementary_callouts": {
+    "guideline": "MCQ Compilled TASH.docx",
+    "takeaway": "U/S of the cyst",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 90432,
+  "specialty": "General Surgery",
+  "topic": "R2 Prep Exam_.docx",
+  "question": "What is the posterior fascia relation of the prostate?",
+  "options": {
+    "A": "Waldayer's fascia",
+    "B": "Denonvillier's fascia",
+    "C": "Endopelvic fascia",
+    "D": "Puboprostatic fascia 13.A 6 year-old male child was admitted with suspected testicular"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Waldayer's fascia",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "R2 Prep Exam_.docx",
+    "H_highlight_excellence": "Waldayer's fascia",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "General Surgery",
+    "P_plan_for_improvement": "Waldayer's fascia"
+  },
+  "supplementary_callouts": {
+    "guideline": "R2 Prep Exam_.docx",
+    "takeaway": "Waldayer's fascia",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 856,
+  "specialty": "General Surgery",
+  "topic": "Which of the following is accurate about the types of cutaneous malignant",
+  "question": "Which of the following is accurate about the types of cutaneous malignant melanoma?",
+  "options": {
+    "A": "The most common type of head and neck melanoma is nodular.",
+    "B": "Mucosal melanomas mostly arise in the nasal cavity and are associated with a poor prognosis and recurrence after treatment.",
+    "C": "Lentigo maligna (LM) is regarded as the most invasive form of melanoma.",
+    "D": "Desmoplastic melanomas (DMs) are rarely associated with LM lesions, typically appear on the extremities, are mildly infiltrative, and rarely recur"
+  },
+  "answer": "B",
+  "explanation": {
+    "correct": "Mucosal melanomas mostly arise in the nasal cavity and are associated with a poor prognosis and recurrence after",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Which of the following is accurate about the types of cutaneous malignant",
+    "H_highlight_excellence": "Mucosal melanomas mostly arise in the nasal cavity and are associated with a poor prognosis and recurrence after",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ACS / surgical board principles",
+    "P_plan_for_improvement": "Mucosal melanomas mostly arise in the nasal cavity and are associated with a poor prognosis and"
+  },
+  "supplementary_callouts": {
+    "guideline": "ACS / surgical board principles",
+    "takeaway": "Mucosal melanomas mostly arise in the nasal cavity and are associated with a poor prognosis and recurrence after",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 51191,
+  "specialty": "General Surgery",
+  "topic": "General",
+  "question": "Which of the following statements best describes the use of breast ultrasound imaging?",
+  "options": {
+    "A": "It should be used instead of breast biopsy.",
+    "B": "It can be used to distinguish between cystic and solid masses.",
+    "C": "It is considered an initial screening test to evaluate the entire breast.",
+    "D": "It can be used to define microcalcifications.",
+    "E": "It should not be used in lieu of stereotactically guided biopsies even if the lesion is detected ultrasonographically."
+  },
+  "answer": "D",
+  "explanation": {
+    "correct": "It can be used to define microcalcifications.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "It can be used to define microcalcifications.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "General Surgery",
+    "P_plan_for_improvement": "It can be used to define microcalcifications."
+  },
+  "supplementary_callouts": {
+    "guideline": "General Surgery",
+    "takeaway": "It can be used to define microcalcifications.",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 356,
+  "specialty": "General Surgery",
+  "topic": "In a male patient with a pelvic fracture secondary to blunt trauma,",
+  "question": "In a male patient with a pelvic fracture secondary to blunt trauma, retrograde urethrographic",
+  "options": {
+    "A": "ppropriate initial treatment? Passage of a transurethral catheter",
+    "B": "Suprapubic cystostomy",
+    "C": "Urethrostomy",
+    "D": "Retropubic repair",
+    "E": "xamination demonstrates disruption of the membranous urethra. Which of the following constitutes Percutaneous nephrostomy tubes"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "ppropriate initial treatment? Passage of a transurethral catheter",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "In a male patient with a pelvic fracture secondary to blunt trauma,",
+    "H_highlight_excellence": "ppropriate initial treatment? Passage of a transurethral catheter",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ACS / surgical board principles",
+    "P_plan_for_improvement": "ppropriate initial treatment"
+  },
+  "supplementary_callouts": {
+    "guideline": "ACS / surgical board principles",
+    "takeaway": "ppropriate initial treatment",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": "17b683fa",
+  "specialty": "general surgery",
+  "topic": "General",
+  "question": "A 40 year-old otherwise healthy female patient presented with sudden onset of severe abdominal cramp associated with frequent vomiting and inability to pass flatus and stool of 6 hours duration. She was screaming intermittently and her BP was 80/50, PR 104/minute. Abdomen was moderately distended and tender all over. What is the most likely diagnosis?",
+  "options": {
+    "A": "Ileo-colic intussusception",
+    "B": "Ileosigmoid knotting",
+    "C": "Mesenteric thrombosis of the Small bowel",
+    "D": "Perforated PUD",
+    "E": "Gangrenous sigmoid volvulus"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Ileo-colic intussusception",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "Ileo-colic intussusception",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "general surgery",
+    "P_plan_for_improvement": "Ileo-colic intussusception"
+  },
+  "supplementary_callouts": {
+    "guideline": "general surgery",
+    "takeaway": "Ileo-colic intussusception",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50736,
+  "specialty": "General Surgery",
+  "topic": "General",
+  "question": "Which of the following statements is true about the portal vein?",
+  "options": {
+    "A": "It is formed by the junction of the inferior mesenteric vein and splenic vein.",
+    "B": "It is the most dorsal structure in the hepatoduodenal ligament.",
+    "C": "It contains the valves of Mirizzi.",
+    "D": "The right portal vein typically branches later than the left portal vein.",
+    "E": "It carries deoxygenated blood and provides only 10% of the liver\u2019s oxygenation"
+  },
+  "answer": "B",
+  "explanation": {
+    "correct": "It is the most dorsal structure in the hepatoduodenal ligament.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "It is the most dorsal structure in the hepatoduodenal ligament.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "General Surgery",
+    "P_plan_for_improvement": "It is the most dorsal structure in the hepatoduodenal ligament."
+  },
+  "supplementary_callouts": {
+    "guideline": "General Surgery",
+    "takeaway": "It is the most dorsal structure in the hepatoduodenal ligament.",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 51043,
+  "specialty": "General Surgery",
+  "topic": "General",
+  "question": "Which of the following statements is true concerning sleeve gastrectomy?",
+  "options": {
+    "A": "Long-term data show 50% to 70% loss of excess body weight.",
+    "B": "It works by restrictive and malabsorptive mechanisms.",
+    "C": "Postoperative gastric emptying is delayed.",
+    "D": "Postoperative plasma ghrelin levels are elevated.",
+    "E": "It is a component of DS."
+  },
+  "answer": "C",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 51109,
+  "specialty": "General Surgery",
+  "topic": "General",
+  "question": "Which of the following is true regarding the management of a patient with benign prostatic hyperplasia (BPH)?",
+  "options": {
+    "A": "ll patients with complaints of prostatism should undergo therapy.",
+    "B": "Patients with BPH have an increased risk for prostate cancer.",
+    "C": "Initial therapy usually consists of nonoperative therapy.",
+    "D": "Surgery is indicated only in patients who fail medical management.",
+    "E": "The disease arises from the peripheral zone of the prostate."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "ll patients with complaints of prostatism should undergo therapy.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "ll patients with complaints of prostatism should undergo therapy.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "General Surgery",
+    "P_plan_for_improvement": "ll patients with complaints of prostatism should undergo therapy."
+  },
+  "supplementary_callouts": {
+    "guideline": "General Surgery",
+    "takeaway": "ll patients with complaints of prostatism should undergo therapy.",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 648,
+  "specialty": "General Surgery",
+  "topic": "Soon after the patient in Question 2 arrives in the emergency department,",
+  "question": "Soon after the patient in Question 2 arrives in the emergency department, left hemiparesis and",
+  "options": {
+    "A": "phasia develop. At this time, which of the following treatments should be provided?",
+    "B": "Repair of the carotid artery injury",
+    "C": "ontinued observation Ligation of the carotid artery injury",
+    "D": "Repair of the vertebral artery injury",
+    "E": "Systemic anticoagulation"
+  },
+  "answer": "B",
+  "explanation": {
+    "correct": "Repair of the carotid artery injury",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Soon after the patient in Question 2 arrives in the emergency department,",
+    "H_highlight_excellence": "Repair of the carotid artery injury",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ACS / surgical board principles",
+    "P_plan_for_improvement": "Repair of the carotid artery injury"
+  },
+  "supplementary_callouts": {
+    "guideline": "ACS / surgical board principles",
+    "takeaway": "Repair of the carotid artery injury",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50942,
+  "specialty": "General Surgery",
+  "topic": "General",
+  "question": "With regard to blunt traumatic rupture of the aorta, which of the following statements is correct?",
+  "options": {
+    "A": "fter injury.",
+    "B": "ypass support is mandatory for its correction.",
+    "C": "The intima provides nearly 60% of the strength of the thoracic aorta and must remain intact for the patient to survive.",
+    "D": "There is still a high risk for free aortic rupture, even in patients who survive the first 6 weeks",
+    "E": ""
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "fter injury.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "fter injury.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "General Surgery",
+    "P_plan_for_improvement": "fter injury."
+  },
+  "supplementary_callouts": {
+    "guideline": "General Surgery",
+    "takeaway": "fter injury.",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 51194,
+  "specialty": "General Surgery",
+  "topic": "General",
+  "question": "Which of the following is not true regarding radiofrequency ablation (RFA)?",
+  "options": {
+    "A": "It may be used for benign conditions such as neuralgia and cardiac arrhythmias.",
+    "B": "It cannot be applied topically for the treatment of metastatic cutaneous tumors.",
+    "C": "It may be used endoscopically to treat gastroesophageal reflux disease.",
+    "D": "It results in coagulation necrosis, protein denaturation, and tissue desiccation from thermal injury.",
+    "E": "It is synonymous with microwave ablation."
+  },
+  "answer": "E",
+  "explanation": {
+    "correct": "It is synonymous with microwave ablation.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "It is synonymous with microwave ablation.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "General Surgery",
+    "P_plan_for_improvement": "It is synonymous with microwave ablation."
+  },
+  "supplementary_callouts": {
+    "guideline": "General Surgery",
+    "takeaway": "It is synonymous with microwave ablation.",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 972,
+  "specialty": "General Surgery",
+  "topic": "Which of the following is useful in the diagnosis of posterior urethral",
+  "question": "Which of the following is useful in the diagnosis of posterior urethral valves (PUV)?",
+  "options": {
+    "A": "Antenatal diagnosis",
+    "B": "Postnatal ultrasonography",
+    "C": "Micturating cystourethrography",
+    "D": "DMSA scan"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Antenatal diagnosis",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Which of the following is useful in the diagnosis of posterior urethral",
+    "H_highlight_excellence": "Antenatal diagnosis",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ACS / surgical board principles",
+    "P_plan_for_improvement": "Antenatal diagnosis"
+  },
+  "supplementary_callouts": {
+    "guideline": "ACS / surgical board principles",
+    "takeaway": "Antenatal diagnosis",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 695,
+  "specialty": "General Surgery",
+  "topic": "The most important part of repair of a neural tube defect is",
+  "question": "The most important part of repair of a neural tube defect is",
+  "options": {
+    "A": "Closure of the placode",
+    "B": "Cordotomy",
+    "C": "Closure of thoracolumbar fascia",
+    "D": "Closure of the dura"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Closure of the placode",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "The most important part of repair of a neural tube defect is",
+    "H_highlight_excellence": "Closure of the placode",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ACS / surgical board principles",
+    "P_plan_for_improvement": "Closure of the placode"
+  },
+  "supplementary_callouts": {
+    "guideline": "ACS / surgical board principles",
+    "takeaway": "Closure of the placode",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50487,
+  "specialty": "General Surgery",
+  "topic": "General",
+  "question": "Select the correct statement regarding flail chest:",
+  "options": {
+    "A": "It occurs when three or more adjacent ribs are fractured in one place.",
+    "B": "Work of breathing is increased secondary to paradoxical chest wall motion.",
+    "C": "Patients with flail chest should be aggressively resuscitated because of the probable",
+    "D": "evelopment of a pulmonary contusion. Patients with this condition should be prophylactically intubated secondary to a high likelihood of respiratory failure.",
+    "E": "xpiratory pressure."
+  },
+  "answer": "D",
+  "explanation": {
+    "correct": "evelopment of a pulmonary contusion. Patients with this condition should be prophylactically intubated secondary to a high likelihood",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "evelopment of a pulmonary contusion. Patients with this condition should be prophylactically intubated secondary to a high likelihood",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "General Surgery",
+    "P_plan_for_improvement": "evelopment of a pulmonary contusion. Patients with this condition should be prophylactically intubated secondary to a"
+  },
+  "supplementary_callouts": {
+    "guideline": "General Surgery",
+    "takeaway": "evelopment of a pulmonary contusion. Patients with this condition should be prophylactically intubated secondary to a high likelihood",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 959,
+  "specialty": "General Surgery",
+  "topic": "Which of the following is true regarding the hepatic functional unit?",
+  "question": "Which of the following is true regarding the hepatic functional unit?",
+  "options": {
+    "A": "The center of the hepatic lobule is the portal triad.",
+    "B": "ile flows toward the centrilobular hepatic venule.",
+    "C": "Zone III is the most susceptible to hypoxic injury.",
+    "D": "Hepatocytes in zone I have the lowest oxygen tension."
+  },
+  "answer": "C",
+  "explanation": {
+    "correct": "Zone III is the most susceptible to hypoxic injury.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Which of the following is true regarding the hepatic functional unit?",
+    "H_highlight_excellence": "Zone III is the most susceptible to hypoxic injury.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ACS / surgical board principles",
+    "P_plan_for_improvement": "Zone III is the most susceptible to hypoxic injury"
+  },
+  "supplementary_callouts": {
+    "guideline": "ACS / surgical board principles",
+    "takeaway": "Zone III is the most susceptible to hypoxic injury",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
 ]);

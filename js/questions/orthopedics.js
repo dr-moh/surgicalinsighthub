@@ -5493,4 +5493,39 @@ window.QUESTIONS.push(...[
   },
   "discrepancy_flag": ""
 }
+,
+{
+  "id": 1617,
+  "specialty": "Orthopedic",
+  "topic": "Treatment of chronic osteomyelitis:",
+  "question": "Treatment of chronic osteomyelitis:",
+  "options": {
+    "A": "medical treatment in form of antibiotics and blood transfusion.",
+    "B": "surgical treatment in form of sequestrectomy.",
+    "C": "sequestrectomy, and saucerization of bone cavity.",
+    "D": "sequestrectomy, saucerization, and filling of the bone cavity with antibiotic pills."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "medical treatment in form of antibiotics and blood transfusion.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Treatment of chronic osteomyelitis:",
+    "H_highlight_excellence": "medical treatment in form of antibiotics and blood transfusion.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "AAOS orthopedic guidelines",
+    "P_plan_for_improvement": "medical treatment in form of antibiotics and blood transfusion"
+  },
+  "supplementary_callouts": {
+    "guideline": "AAOS orthopedic guidelines",
+    "takeaway": "medical treatment in form of antibiotics and blood transfusion",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
 ]);

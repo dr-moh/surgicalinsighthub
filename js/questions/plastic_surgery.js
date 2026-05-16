@@ -5017,4 +5017,39 @@ window.QUESTIONS.push(...[
   },
   "discrepancy_flag": ""
 }
+,
+{
+  "id": 1659,
+  "specialty": "Plastic Surgery",
+  "topic": "44Trimming the margins and performing a straight line closure of the cleft",
+  "question": "44Trimming the margins and performing a straight line closure of the cleft lip was routine until this surgeon introduced his lateral triangular flap method. Who was he? 243",
+  "options": {
+    "A": "50% of babies proceed to full spontaneous recovery within 3 months.",
+    "B": "Some elbow flexion is present.",
+    "C": "The branches of the posterior cord are unaffected. D.The Oberlin\u2019s transfer can be a useful procedure. E.Horner\u2019s sign is usually present. 244",
+    "D": "The pterygoid hamulus is absent."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "50% of babies proceed to full spontaneous recovery within 3 months.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "44Trimming the margins and performing a straight line closure of the cleft",
+    "H_highlight_excellence": "50% of babies proceed to full spontaneous recovery within 3 months.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "BSSH / reconstructive principles",
+    "P_plan_for_improvement": "50% of babies proceed to full spontaneous recovery within 3 months"
+  },
+  "supplementary_callouts": {
+    "guideline": "BSSH / reconstructive principles",
+    "takeaway": "50% of babies proceed to full spontaneous recovery within 3 months",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
 ]);

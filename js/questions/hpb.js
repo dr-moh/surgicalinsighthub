@@ -7479,4 +7479,182 @@ window.QUESTIONS.push(...[
   },
   "discrepancy_flag": ""
 }
+,
+{
+  "id": 1452,
+  "specialty": "HPB",
+  "topic": "What is the most common course of the right pos- terior hepatic",
+  "question": "What is the most common course of the right pos- terior hepatic artery (RPHA) relative to the right portal vein? 41",
+  "options": {
+    "A": "Supraportal",
+    "B": "Infraportal",
+    "C": "ourses include those that run cranially to the right por - tal vein (supraportal) and those that combine both. When portal anatomy is not normal, these variant courses of the RPHA are not present.",
+    "D": "ally to the right portal vein (infraportal, 85%). Variant",
+    "E": "xplanation: The RPHA most frequently runs cau-"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Supraportal",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "What is the most common course of the right pos- terior hepatic",
+    "H_highlight_excellence": "Supraportal",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "HPB surgical guidelines",
+    "P_plan_for_improvement": "Supraportal"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB surgical guidelines",
+    "takeaway": "Supraportal",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1349,
+  "specialty": "HPB",
+  "topic": "Conventional or normal hepatic artery blood flow is which of the following:",
+  "question": "Conventional or normal hepatic artery blood flow is which of the following:",
+  "options": {
+    "A": "rtery proper to R/L hepatic arteries",
+    "B": "Aorta to celiac axis to common hepatic artery to hepatic",
+    "C": "Aorta to common hepatic artery to celiac axis to hepatic",
+    "D": "None of the above"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "rtery proper to R/L hepatic arteries",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Conventional or normal hepatic artery blood flow is which of the following:",
+    "H_highlight_excellence": "rtery proper to R/L hepatic arteries",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "HPB surgical guidelines",
+    "P_plan_for_improvement": "rtery proper to R/L hepatic arteries"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB surgical guidelines",
+    "takeaway": "rtery proper to R/L hepatic arteries",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1485,
+  "specialty": "HPB",
+  "topic": "Which is the average volume of the left liver?",
+  "question": "Which is the average volume of the left liver?",
+  "options": {
+    "A": "56%",
+    "B": "50%",
+    "C": "45%",
+    "D": "33%"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "56%",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Which is the average volume of the left liver?",
+    "H_highlight_excellence": "56%",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "HPB surgical guidelines",
+    "P_plan_for_improvement": "56%"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB surgical guidelines",
+    "takeaway": "56%",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1355,
+  "specialty": "HPB",
+  "topic": "Hepatocellular carcinoma (HCC) receives its blood supply mainly from:56",
+  "question": "Hepatocellular carcinoma (HCC) receives its blood supply mainly from:56",
+  "options": {
+    "A": "Hepatic artery",
+    "B": "Hepatic vein",
+    "C": "Portal vein",
+    "D": "None of the above",
+    "E": "xplanation: This is the rationale for using trans-arte- rial chemoembolization 57 or Y90 radioembolization 58 in HCC and other liver-directed trans-arterial therapies."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Hepatic artery",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Hepatocellular carcinoma (HCC) receives its blood supply mainly from:56",
+    "H_highlight_excellence": "Hepatic artery",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "HPB surgical guidelines",
+    "P_plan_for_improvement": "Hepatic artery"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB surgical guidelines",
+    "takeaway": "Hepatic artery",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50213,
+  "specialty": "HPB",
+  "topic": "General",
+  "question": "A hilar cholangiocarcinoma invades the hepatic duct",
+  "options": {
+    "A": "lso known as Klatskin tumor, invades the bile ducts of the",
+    "B": "ranches.13 In almost all cases, hilar cholangiocarcinoma,",
+    "C": "audate lobe. Therefore, a curative-intent resection of this",
+    "D": "isease most frequently requires liver resection associated with bile duct resection.67",
+    "E": "xplanation: Biliary drainage from the caudate lobe is highly variable. It can flow into the right or left hepatic"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "lso known as Klatskin tumor, invades the bile ducts of the",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "lso known as Klatskin tumor, invades the bile ducts of the",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "HPB",
+    "P_plan_for_improvement": "lso known as Klatskin tumor, invades the bile ducts of the"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB",
+    "takeaway": "lso known as Klatskin tumor, invades the bile ducts of the",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
 ]);

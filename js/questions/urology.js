@@ -4955,4 +4955,39 @@ window.QUESTIONS.push(...[
   },
   "discrepancy_flag": ""
 }
+,
+{
+  "id": "ab85a6a4",
+  "specialty": "urology",
+  "topic": "General",
+  "question": "Which of the following roughly corresponds to the 24hours maintenance fluid, electrolyte and dextrose requirement of 10kg infant?",
+  "options": {
+    "A": "1000ml water; 30meq of Na+; 30meq of K+; 30mmeq of Cl- and 50gm of dextrose",
+    "B": "1000ml of water; 60meq of Na+; 20meq of K+; 30mmeq of Cl- and 500gm of dextrose",
+    "C": "1000ml of water; 30meq of Na+; 20meq of K+; 30mmeq of Cl- and 50gm of dextrose",
+    "D": "1000m of water; 30meq of Na+; 10meq of K+; 40mmeq of Cl- and 5gm of dextrose"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "1000ml water; 30meq of Na+; 30meq of K+; 30mmeq of Cl- and 50gm of dextrose",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "1000ml water; 30meq of Na+; 30meq of K+; 30mmeq of Cl- and 50gm of dextrose",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "urology",
+    "P_plan_for_improvement": "1000ml water; 30meq of Na+; 30meq of K+; 30mmeq of Cl- and 50gm of dextrose"
+  },
+  "supplementary_callouts": {
+    "guideline": "urology",
+    "takeaway": "1000ml water; 30meq of Na+; 30meq of K+; 30mmeq of Cl- and 50gm of dextrose",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
 ]);
