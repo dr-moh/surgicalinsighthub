@@ -5087,4 +5087,39 @@ window.QUESTIONS.push(...[
   },
   "discrepancy_flag": ""
 }
+,
+{
+  "id": 1645,
+  "specialty": "Plastic Surgery",
+  "topic": "24Which statement is false?",
+  "question": "24Which statement is false?",
+  "options": {
+    "A": "The parascapular flap is vascularised by the transverse branch of the circumflex scapular vessels.",
+    "B": "The anterolateral thigh flap is normally vascularised by the descending branch of the lateral circumflex femoral vessels.",
+    "C": "The skin island of the osteocutaneous fibula free flap is generally circulated by septocutaneous branches from the peroneal vessels running off posterior of the fibula.",
+    "D": "The venous outflow of the radial forearm flap can be based on either the concomitant veins of the radial artery or on the cephalic vein or on both."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "The parascapular flap is vascularised by the transverse branch of the circumflex scapular vessels.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "24Which statement is false?",
+    "H_highlight_excellence": "The parascapular flap is vascularised by the transverse branch of the circumflex scapular vessels.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "BSSH / reconstructive principles",
+    "P_plan_for_improvement": "The parascapular flap is vascularised by the transverse branch of the circumflex scapular vessels"
+  },
+  "supplementary_callouts": {
+    "guideline": "BSSH / reconstructive principles",
+    "takeaway": "The parascapular flap is vascularised by the transverse branch of the circumflex scapular vessels",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
 ]);

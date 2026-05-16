@@ -7727,4 +7727,181 @@ window.QUESTIONS.push(...[
   },
   "discrepancy_flag": ""
 }
+,
+{
+  "id": 50195,
+  "specialty": "HPB",
+  "topic": "General",
+  "question": "What type of portal division is illustrated in the figure",
+  "options": {
+    "A": "Independent right posterior portal vein",
+    "B": "Staged division",
+    "C": "Bifurcation",
+    "D": "Trifurcation"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Independent right posterior portal vein",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "Independent right posterior portal vein",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "HPB",
+    "P_plan_for_improvement": "Independent right posterior portal vein"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB",
+    "takeaway": "Independent right posterior portal vein",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1554,
+  "specialty": "HPB",
+  "topic": "Why are these portal vein anatomical variants impor - tant?",
+  "question": "Why are these portal vein anatomical variants impor - tant?",
+  "options": {
+    "A": "Because the demarcation of the division between the right and left livers will vary",
+    "B": "Because the staged division is associated with a large right posterior sector",
+    "C": "Because the staged division is associated with a small right posterior sector",
+    "D": "Because the staged division is associated with a large right anterior sector"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Because the demarcation of the division between the right and left livers will vary",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Why are these portal vein anatomical variants impor - tant?",
+    "H_highlight_excellence": "Because the demarcation of the division between the right and left livers will vary",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "HPB surgical guidelines",
+    "P_plan_for_improvement": "Because the demarcation of the division between the right and left livers will vary"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB surgical guidelines",
+    "takeaway": "Because the demarcation of the division between the right and left livers will vary",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 51311,
+  "specialty": "HPB",
+  "topic": "General",
+  "question": "Suspensory ligaments of the liver include:",
+  "options": {
+    "A": "Falciform ligament",
+    "B": "Left triangular ligament",
+    "C": "Right triangular ligament",
+    "D": "Round ligament",
+    "E": "All of the above"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Falciform ligament",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "Falciform ligament",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "HPB",
+    "P_plan_for_improvement": "Falciform ligament"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB",
+    "takeaway": "Falciform ligament",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1434,
+  "specialty": "HPB",
+  "topic": "What is the average volume of the left liver? 50",
+  "question": "What is the average volume of the left liver? 50",
+  "options": {
+    "A": "56%",
+    "B": "50%",
+    "C": "45%",
+    "D": "33%"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "56%",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "What is the average volume of the left liver? 50",
+    "H_highlight_excellence": "56%",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "HPB surgical guidelines",
+    "P_plan_for_improvement": "56%"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB surgical guidelines",
+    "takeaway": "56%",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 51303,
+  "specialty": "HPB",
+  "topic": "General",
+  "question": "The left and middle hepatic veins form a common trunk",
+  "options": {
+    "A": "20%",
+    "B": "40%",
+    "C": "60%",
+    "D": "80%",
+    "E": "95%"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "20%",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "20%",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "HPB",
+    "P_plan_for_improvement": "20%"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB",
+    "takeaway": "20%",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
 ]);

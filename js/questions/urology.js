@@ -4990,4 +4990,39 @@ window.QUESTIONS.push(...[
   },
   "discrepancy_flag": ""
 }
+,
+{
+  "id": "b587654d",
+  "specialty": "urology",
+  "topic": "General",
+  "question": "Which of the following is the leastfavored operative management for sigmoid colon cancer that is causing complete obstruction?",
+  "options": {
+    "A": "Sigmoidectomy and primary colorectal anastomosis",
+    "B": "Sigmoidectomy and primary colorectal anastomosis with proximal diversion",
+    "C": "Proximal decompressing colostomy only",
+    "D": "Hartmann's procedure"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Sigmoidectomy and primary colorectal anastomosis",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "Sigmoidectomy and primary colorectal anastomosis",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "urology",
+    "P_plan_for_improvement": "Sigmoidectomy and primary colorectal anastomosis"
+  },
+  "supplementary_callouts": {
+    "guideline": "urology",
+    "takeaway": "Sigmoidectomy and primary colorectal anastomosis",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
 ]);
