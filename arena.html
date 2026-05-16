@@ -799,20 +799,61 @@ function formatAnswerLine(letter, answerText) {
   return 'Answer ' + letter + ': ' + (answerText || INSUFFICIENT_DATA_FALLBACK);
 }
 
+function normalizeSharpDebrief(question) {
+  function toSharpObject(source) {
+    if (!source || typeof source !== 'object' || Array.isArray(source)) return {};
+    return Object.keys(source).reduce(function(acc, key) {
+      if (source[key] !== undefined) acc[key] = source[key];
+      return acc;
+    }, {});
+  }
+  var merged = Object.assign(
+    {},
+    toSharpObject(question.sharp),
+    toSharpObject(question.sharp_debrief),
+    toSharpObject(question.sharp_description),
+    toSharpObject(question.sharpDescription)
+  );
+
+  var topLevelSharp = {
+    S: question.S,
+    H: question.H,
+    A: question.A,
+    R: question.R,
+    P: question.P,
+    set_the_stage: question.set_the_stage,
+    setTheStage: question.setTheStage,
+    highlight_excellence: question.highlight_excellence,
+    highlightExcellence: question.highlightExcellence,
+    address_gaps: question.address_gaps,
+    addressGaps: question.addressGaps,
+    review_learning_points: question.review_learning_points,
+    reviewLearningPoints: question.reviewLearningPoints,
+    review_guidelines: question.review_guidelines,
+    reviewGuidelines: question.reviewGuidelines,
+    plan: question.plan,
+    plan_for_improvement: question.plan_for_improvement,
+    planForImprovement: question.planForImprovement,
+    verified_answer: question.verified_answer,
+    verifiedAnswer: question.verifiedAnswer
+  };
+  return Object.assign(merged, toSharpObject(topLevelSharp));
+}
+
 function showSharp(q, selected, isCorrect) {
   var card = document.getElementById('sharpCard');
   card.style.display = 'block';
   // Current SHARP data contract: top-level `sharp` and/or `sharp_debrief`, plus `supplementary_callouts`.
-  var sharp = Object.assign({}, q.sharp || {}, q.sharp_debrief || {});
+  var sharp = normalizeSharpDebrief(q);
   var callouts = Object.assign({}, q.supplementary_callouts || {});
   var explanation = normalizeExplanation(q.explanation);
   var answerText = (q.options && q.options[q.answer]) ? q.options[q.answer] : '';
   var answerLine = String(callouts.answer ? callouts.answer : formatAnswerLine(q.answer, answerText)).trim();
-  var sText = pickFirstText([sharp.S, sharp.set_the_stage, sharp.S_set_the_stage]);
-  var highlight = pickFirstText([sharp.H, sharp.highlight_excellence, sharp.H_highlight_excellence, explanation.correct]);
-  var addressGaps = pickFirstText([sharp.A, sharp.address_gaps, sharp.address_the_gaps, sharp.A_address_the_gaps]);
-  var reviewGuideline = pickFirstText([sharp.R, sharp.review_learning_points, sharp.review_guidelines, sharp.R_review_learning_points, q.guideline]);
-  var takeHome = pickFirstText([sharp.P, sharp.plan, sharp.plan_for_improvement, sharp.P_plan_for_improvement, q.takeaway]);
+  var sText = pickFirstText([sharp.S, sharp.set_the_stage, sharp.setTheStage, sharp.S_set_the_stage]);
+  var highlight = pickFirstText([sharp.H, sharp.highlight_excellence, sharp.highlightExcellence, sharp.H_highlight_excellence, explanation.correct]);
+  var addressGaps = pickFirstText([sharp.A, sharp.address_gaps, sharp.addressGaps, sharp.address_the_gaps, sharp.A_address_the_gaps]);
+  var reviewGuideline = pickFirstText([sharp.R, sharp.review_learning_points, sharp.reviewLearningPoints, sharp.review_guidelines, sharp.reviewGuidelines, sharp.R_review_learning_points, q.guideline]);
+  var takeHome = pickFirstText([sharp.P, sharp.plan, sharp.plan_for_improvement, sharp.planForImprovement, sharp.P_plan_for_improvement, q.takeaway]);
   var guidelineCallout = String(callouts.guideline || q.guideline || reviewGuideline || '').trim();
   var takeawayCallout = String(callouts.takeaway || q.takeaway || takeHome || '').trim();
   var visualizationCallout = String(callouts.visualization || q.visualization || '').trim();
