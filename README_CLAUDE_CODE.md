@@ -16,7 +16,7 @@ Cloudflare Pages — auto-deploys on every push to main branch.
 | `notes.html` | Notes library with filter by specialty |
 | `podcast.html` | YesSurgeryBet podcast episodes |
 | `about.html` | About Dr. Abdulmalik Moh — surgical resident |
-| `mcq.html` | Full MCQ Practice MCQ Arena — setup, questions, SHARP debrief, global leaderboard |
+| `arena.html` | Full MCQ Arena — setup, questions, SHARP debrief (S/H/A/R/P + supplementary callouts), global leaderboard |
 | `review.html` | AI High-Yield Review — streams Claude AI content for surgical topics |
 | `colorectal_Notebook.html` | SIH Monograph: Colorectal & Anal Surgery |
 | `anestesia_with_mono.html` | SIH Monograph: Anesthesia & Perioperative Care |
@@ -75,12 +75,13 @@ Model: claude-sonnet-4-20250514
 Max tokens: 4000
 Streams SSE events and renders markdown into structured sections.
 
-## SHARP Debrief Format (mcq.html)
+## SHARP Debrief Format (arena.html)
 S — Set the Stage (correct answer + accuracy)
 H — Highlight Excellence (why correct answer is right)
 A — Address Gaps (explain each wrong option)
 R — Review Guidelines (2024-2026 guidelines reference)
 P — Plan (one take-home message)
+Supplementary — guideline tag, takeaway, visualization, extra callouts, and tags (if present)
 
 ## AI Agent Coordination
 - **Antigravity Swarm:** Coordinated via `.agents/` skills and GitHub issues.
