@@ -18,13 +18,12 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             mainNav?.classList.remove('scrolled');
         }
-    });
+    }, { passive: true });
 
     // 2. Dark Mode Toggle Logic
     function applyTheme(theme) {
         if (theme === 'dark') {
             document.documentElement.setAttribute('data-theme', 'dark');
-            // Support both body and documentElement for legacy monograph compat
             document.body.setAttribute('data-theme', 'dark');
             if (moonIcon) moonIcon.style.display = 'none';
             if (sunIcon) sunIcon.style.display = 'block';
@@ -69,4 +68,11 @@ document.addEventListener('DOMContentLoaded', () => {
     window.closeSidebar = function() {
         document.body.classList.remove('sidebar-open');
     };
+
+    // 5. Handle window resize to clean up mobile nav state
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 950) {
+            window.closeMobNav();
+        }
+    }, { passive: true });
 });

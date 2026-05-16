@@ -159,62 +159,59 @@
 </head>
 <body>
 
-<nav class="nav" id="mainNav">
-  <div class="nav-left">
-    <a href="../index.html" class="nav-pill">
-      <div class="nav-logo-img">
-        <img src="../assets/images/Surgical_Insight_Hub_Logo.png" alt="SIH" onerror="this.parentElement.style.background='#b8922a'">
-      </div>
-      <div>
-        <div class="nav-brand-text">Surgical Insight Hub</div>
-        <div class="nav-brand-sub">Advanced Surgical Learning</div>
-      </div>
-    </a>
+
+  <!-- Standardized SIH Navbar -->
+  <nav class="nav" id="mainNav">
+    <div class="nav-left">
+      <a href="../index.html" class="nav-pill">
+        <div class="nav-logo-img">
+          <img src="../assets/icons/apple-touch-icon.png" alt="SIH Logo">
+        </div>
+        <div>
+          <div class="nav-brand-text">Surgical Insight Hub</div>
+          <div class="nav-brand-sub">The Residency Journal</div>
+        </div>
+      </a>
+    </div>
+
     <div class="nav-links-pill">
       <a href="../index.html">Home</a>
       <a href="../notes.html">Notes</a>
       <a href="operative_approach.html" class="active">Playbook</a>
+      <a href="../arena.html">MCQ Arena</a>
       <a href="../podcast.html">Podcast</a>
       <a href="../surgery-talk.html">Surgery Talk</a>
       <a href="../about.html">About</a>
     </div>
+
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+        <svg id="moonIcon" viewBox="0 0 24 24" width="18" height="18"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        <svg id="sunIcon" style="display:none;" viewBox="0 0 24 24" width="18" height="18"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+      </button>
+      <a href="https://t.me/surgicalInsightHub" target="_blank" class="nav-tg-btn" title="Join Telegram" style="background: var(--brand-burgundy); color: #f0d080; padding: 8px 12px; border-radius: 8px; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: all 0.3s ease;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="#f0d080"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.89 8.22l-1.97 9.28c-.15.66-.54.82-1.08.51l-3-2.21-1.45 1.39c-.16.16-.3.3-.61.3l.21-3.05 5.56-5.02c.24-.21-.05-.33-.37-.12l-6.87 4.33-2.96-.92c-.64-.2-.66-.64.14-.95l11.57-4.46c.54-.19 1.01.13.83.94z"/></svg>
+      </a>
+      <a href="../arena.html" class="nav-btn arena-btn">MCQ Arena</a>
+      <button class="mob-nav-toggle" onclick="openMobNav()" aria-label="Menu">
+        <div class="hamburger"><span></span><span></span><span></span></div>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mob-nav-overlay" id="mobNavOverlay" onclick="closeMobNav()"></div>
+  <div class="mob-nav-sheet" id="mobNavSheet">
+    <div class="mob-nav-handle"></div>
+    <a href="../index.html">Home</a>
+    <a href="../notes.html">Notes</a>
+    <a href="operative_approach.html" class="active">Playbook</a>
+    <a href="../arena.html">MCQ Arena</a>
+    <a href="../podcast.html">Podcast</a>
+    <a href="../surgery-talk.html">Surgery Talk</a>
+    <a href="../about.html">About</a>
+    <a href="https://t.me/surgicalInsightHub" target="_blank" style="color: var(--brand-gold); font-weight: 800;">Join Telegram Community</a>
   </div>
 
-  <div class="nav-right">
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-      <svg id="moonIcon" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/></svg>
-      <svg id="sunIcon" style="display:none;" viewBox="0 0 24 24"><path d="M12 7a5 5 0 1 0 5 5 5.006 5.006 0 0 0-5-5zm0 8a3 3 0 1 1 3-3 3.003 3.003 0 0 1-3 3zm0-13a1 1 0 0 0-1 1v2a1 1 0 0 0 2 0V3a1 1 0 0 0-1-1zm0 18a1 1 0 0 0-1 1v2a1 1 0 0 0 2 0v-2a1 1 0 0 0-1-1zm8-11h-2a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2zm-16 0H2a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2zm13.657-5.657a1 1 0 0 0-1.414 0l-1.414 1.414a1 1 0 0 0 1.414 1.414l1.414-1.414a1 1 0 0 0 0-1.414zm-11.314 0a1 1 0 0 0 0 1.414l1.414 1.414a1 1 0 0 0 1.414-1.414L4.929 5.757a1 1 0 0 0-1.414 0zm11.314 11.314a1 1 0 0 0 0 1.414l1.414 1.414a1 1 0 0 0 1.414-1.414l-1.414-1.414a1 1 0 0 0-1.414 0zm-11.314 0a1 1 0 0 0-1.414 1.414l1.414 1.414a1 1 0 0 0 1.414-1.414l-1.414-1.414a1 1 0 0 0 0-1.414z"/></svg>
-    </button>
-    <a href="https://t.me/sugicalInsightHub" target="_blank" class="nav-tg-btn" title="Join Telegram" style="background: var(--brand-burgundy); color: #f0d080; padding: 8px 12px; border-radius: 8px; display: flex; align-items: center; justify-content: center; text-decoration: none; margin-right: 8px; transition: all 0.3s ease;">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="#f0d080"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.89 8.22l-1.97 9.28c-.15.66-.54.82-1.08.51l-3-2.21-1.45 1.39c-.16.16-.3.3-.61.3l.21-3.05 5.56-5.02c.24-.21-.05-.33-.37-.12l-6.87 4.33-2.96-.92c-.64-.2-.66-.64.14-.95l11.57-4.46c.54-.19 1.01.13.83.94z"/></svg>
-    </a>
-    <a href="https://www.linkedin.com/company/surgical-insight-hub" target="_blank" class="nav-li-btn" title="LinkedIn" style="background: var(--brand-burgundy); color: #f0d080; padding: 8px 12px; border-radius: 8px; display: flex; align-items: center; justify-content: center; text-decoration: none; margin-right: 8px; transition: all 0.3s ease;">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="#f0d080"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
-    </a>
-    <a href="../arena.html" class="nav-btn arena-btn">MCQ Arena</a>
-    <button class="mob-nav-toggle" onclick="openMobNav()">
-      <div class="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </button>
-  </div>
-</nav>
-
-<div class="mob-nav-overlay" id="mobNavOverlay" onclick="closeMobNav()"></div>
-<div class="mob-nav-sheet" id="mobNavSheet">
-  <div class="mob-nav-handle"></div>
-  <a href="../index.html" onclick="closeMobNav()">Home</a>
-  <a href="../notes.html" onclick="closeMobNav()">Notes</a>
-  <a href="operative_approach.html" class="active" onclick="closeMobNav()">Playbook</a>
-  <a href="../podcast.html" onclick="closeMobNav()">Podcast</a>
-  <a href="../surgery-talk.html" onclick="closeMobNav()">Surgery Talk</a>
-  <a href="../arena.html" onclick="closeMobNav()">MCQ Arena</a>
-  <a href="../about.html" onclick="closeMobNav()">About</a>
-  <a href="https://t.me/sugicalInsightHub" target="_blank" onclick="closeMobNav()" style="color: var(--brand-gold); font-weight: 800;">Join Telegram Community</a>
-  <a href="https://www.linkedin.com/company/surgical-insight-hub" target="_blank" onclick="closeMobNav()" style="color: var(--brand-gold); font-weight: 800;">LinkedIn Community</a>
-</div>
 
 <div class="op-hero">
   <div class="ph-kicker" style="color:#b8922a;">Surgical Board Series</div>
@@ -233,7 +230,7 @@
 <div class="playbook-grid">
   <!-- PROCEDURES WILL GO HERE -->
   
-  <div class="op-card" onclick="window.location.href='Surgical Operative Approach/Abdominal Trauma Monograph.html'">
+  <div class="op-card" onclick="window.location.href='Surgical Operative Approach/Abdominal Trauma.html'">
     <div>
       <div class="op-kicker">Emergency · Trauma</div>
       <h3>Splenic & Renal Trauma</h3>
@@ -348,46 +345,8 @@
       <p>Systematic approach to PSARP. Peña classification, operative steps for high vs low malformations, and the critical view of the rectum-urethra interface.</p>
     </div>
     <div class="op-meta">
-      <span class="op-status">Essential</span>
-      <span>Technical Playbook</span>
-    </div>
-  </div>
-
-
-
-  <div class="op-card" onclick="window.location.href='Surgical Operative Approach/Orthopaedic Trauma Monograph.html'">
-    <div>
-      <div class="op-kicker">Orthopaedics · Trauma</div>
-      <h3>Orthopaedic Trauma Master</h3>
-      <p>Pelvic fractures, compartment syndrome, open fractures, and the mangled extremity. Comprehensive trauma management for the surgical resident.</p>
-    </div>
-    <div class="op-meta">
-      <span class="op-status">Essential</span>
-      <span>Trauma Playbook</span>
-    </div>
-  </div>
-
-  <div class="op-card" onclick="window.location.href='Surgical Operative Approach/Appendicitis Monograph.html'">
-    <div>
-      <div class="op-kicker">General Surgery · Emergency</div>
-      <h3>Appendicitis Masterclass</h3>
-      <p>From diagnosis to complicated management. Laparoscopic approach, the difficult base, and the non-operative management algorithm.</p>
-    </div>
-    <div class="op-meta">
-      <span class="op-status">Essential</span>
-      <span>Core General Surgery</span>
-    </div>
-  </div>
-
-  <div class="op-card" onclick="window.location.href='Surgical Operative Approach/Anesthesia & Perioperative Care Monograph.html'">
-    <div>
-      <div class="op-kicker">Perioperative · Anesthesia</div>
-      <h3>Anesthesia & Perioperative Care</h3>
-      <p>Mastering the perioperative window. Airway management, fluid resuscitation, and the physiological optimization of the surgical patient.</p>
-    </div>
-    <div class="op-meta">
-      <span class="op-status">Essential</span>
-      <span>Core Knowledge</span>
+      <span class="op-status">Paediatric Core</span>
+      <span>PSARP Steps</span>
     </div>
   </div>
 
@@ -427,7 +386,7 @@
     </div>
   </div>
 
-  <div class="op-card" onclick="window.location.href='Surgical Operative Approach/Disarticulation Monograph.html'">
+  <div class="op-card" onclick="window.location.href='Surgical Operative Approach/Desarticulation.html'">
     <div>
       <div class="op-kicker">Orthopaedics · Trauma</div>
       <h3>Lower Limb Disarticulation</h3>
@@ -460,6 +419,42 @@
     <div class="op-meta">
       <span class="op-status">Essential</span>
       <span>Core Skills</span>
+    </div>
+  </div>
+
+  <div class="op-card" onclick="window.location.href='Surgical Operative Approach/ortho_trauma.html'">
+    <div>
+      <div class="op-kicker">Orthopaedics · High-Yield</div>
+      <h3>Ortho-Trauma Masterclass</h3>
+      <p>Comprehensive board review of musculoskeletal trauma, compartment syndrome, and pelvic ring disruptions.</p>
+    </div>
+    <div class="op-meta">
+      <span class="op-status">High Yield</span>
+      <span>Board Review</span>
+    </div>
+  </div>
+
+  <div class="op-card" onclick="window.location.href='Surgical Operative Approach/appendicitis_2025_notebook.html'">
+    <div>
+      <div class="op-kicker">General Surgery · Emergency</div>
+      <h3>Appendicitis 2025 Notebook</h3>
+      <p>Latest guidelines on non-operative management vs appendicectomy. Interval appendicectomy debate and the "Game Plan" for the phlegmon.</p>
+    </div>
+    <div class="op-meta">
+      <span class="op-status">Updated 2025</span>
+      <span>Pillar 1-5</span>
+    </div>
+  </div>
+
+  <div class="op-card" onclick="window.location.href='Surgical Operative Approach/Anesthesia & Perioperative Care.html'">
+    <div>
+      <div class="op-kicker">Perioperative · Critical Care</div>
+      <h3>Anesthesia & Perioperative Care</h3>
+      <p>Optimization for the surgical patient. Fluid management, acid-base balance, and the "Pillar" system for safe induction and emergence.</p>
+    </div>
+    <div class="op-meta">
+      <span class="op-status">Essential</span>
+      <span>Pillar 1-5</span>
     </div>
   </div>
 
@@ -531,17 +526,9 @@
   }
 </script>
 
-<div class="mob-nav-overlay" id="mobNavOverlay" onclick="closeMobNav()"></div>
-<div class="mob-nav-sheet" id="mobNavSheet">
-  <div class="mob-nav-handle"></div>
-  <a href="../index.html">Home</a>
-  <a href="../notes.html">Notes</a>
-  <a href="operative_approach.html" class="active">Playbook</a>
-  <a href="../arena.html">MCQ Arena</a>
-  <a href="../podcast.html">Podcast</a>
-  <a href="../about.html">About</a>
-</div>
+
 
 <script src="../js/nav-pill.js"></script>
+<script src="../../js/navigation.js"></script>
 </body>
 </html>

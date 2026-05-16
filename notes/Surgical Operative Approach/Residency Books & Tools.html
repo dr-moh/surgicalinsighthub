@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Surgical Residency Books & Digital Tools — SIH Blog</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Overpass:wght@400;600;700;900&family=Overpass+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --paper: #fdfcf8;
+  --ink: #1a1410;
+  --deep: #2b1810;
+  --acc: #a31515;
+  --gold: #b8922a;
+  --border: #d5c8b0;
+  --muted: #6b5a48;
+}
+body {
+  background: #f4f1ea;
+  font-family: 'EB Garamond', serif;
+  color: var(--ink);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+.blog-container {
+  max-width: 800px;
+  margin: 100px auto 60px;
+  background: var(--paper);
+  padding: 40px 60px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+  border: 1px solid var(--border);
+}
+.cover-img {
+  width: calc(100% + 120px);
+  margin-left: -60px;
+  margin-top: -40px;
+  height: 450px;
+  object-fit: cover;
+  margin-bottom: 40px;
+  border-bottom: 3px solid var(--gold);
+}
+h1 {
+  font-size: 3rem;
+  line-height: 1.1;
+  margin-bottom: 20px;
+  color: var(--deep);
+  font-weight: 700;
+}
+.meta {
+  font-family: 'Overpass Mono', monospace;
+  font-size: 0.8rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 40px;
+  display: flex;
+  gap: 20px;
+}
+.content p {
+  font-size: 1.25rem;
+  margin-bottom: 24px;
+}
+.content blockquote {
+  border-left: 4px solid var(--gold);
+  padding-left: 24px;
+  margin: 40px 0;
+  font-style: italic;
+  font-weight: 500;
+  color: var(--deep);
+}
+.content h2 {
+  font-family: 'Overpass', sans-serif;
+  font-size: 1.8rem;
+  margin: 60px 0 30px;
+  color: var(--acc);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 2px solid var(--gold);
+  display: inline-block;
+}
+.content h3 {
+  font-family: 'Overpass', sans-serif;
+  font-size: 1.3rem;
+  margin: 40px 0 15px;
+  color: var(--deep);
+  font-weight: 700;
+}
+.book-card {
+  background: #f9f7f2;
+  border: 1px solid var(--border);
+  padding: 25px;
+  margin-bottom: 30px;
+  border-radius: 8px;
+}
+.book-card ul {
+  list-style: none;
+  padding: 0;
+}
+.book-card li {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+.book-card li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-weight: bold;
+}
+.tg-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #24A1DE;
+  color: white;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-family: 'Overpass', sans-serif;
+  font-weight: 700;
+  margin-top: 20px;
+  transition: transform 0.2s ease;
+}
+.tg-download:hover {
+  transform: translateY(-2px);
+  background: #1e8ec5;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 40px 0;
+  font-family: 'Overpass', sans-serif;
+  font-size: 0.9rem;
+}
+th {
+  background: var(--deep);
+  color: white;
+  text-align: left;
+  padding: 12px;
+}
+td {
+  padding: 12px;
+  border-bottom: 1px solid var(--border);
+}
+tr:nth-child(even) {
+  background: rgba(184, 146, 42, 0.05);
+}
+
+/* NAVBAR STYLES */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: rgba(43, 24, 16, 0.95);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5%;
+  z-index: 2000;
+  border-bottom: 2px solid var(--gold);
+}
+.nav-left, .nav-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.nav-pill {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: white;
+}
+.nav-logo-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid var(--gold);
+}
+.nav-logo-img img { width: 100%; height: 100%; object-fit: cover; }
+.nav-brand-text { font-family: 'EB Garamond', serif; font-size: 1.2rem; font-weight: 700; }
+.nav-brand-sub { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); }
+.nav-links-pill {
+  display: flex;
+  gap: 20px;
+}
+.nav-links-pill a {
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  font-family: 'Overpass', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: color 0.3s;
+}
+.nav-links-pill a:hover, .nav-links-pill a.active { color: var(--gold); }
+.nav-btn {
+  background: var(--gold);
+  color: var(--deep);
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 768px) {
+  .blog-container { padding: 30px 20px; margin-top: 80px; }
+  .cover-img { width: calc(100% + 40px); margin-left: -20px; height: 250px; }
+  h1 { font-size: 2rem; }
+  .nav-links-pill { display: none; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-left">
+    <a href="../../index.html" class="nav-pill">
+      <div class="nav-logo-img"><img src="../../assets/images/Surgical_Insight_Hub_Logo.png" alt="SIH"></div>
+      <div>
+        <div class="nav-brand-text">Surgical Insight Hub</div>
+        <div class="nav-brand-sub">The Residency Journal</div>
+      </div>
+    </a>
+  </div>
+  <div class="nav-links-pill">
+    <a href="../../index.html">Home</a>
+    <a href="../../notes.html">Notes</a>
+    <a href="../operative_approach.html">Playbook</a>
+    <a href="../../arena.html">MCQ Arena</a>
+    <a href="../../surgery-talk.html" class="active">Surgery Talk</a>
+  </div>
+  <div class="nav-right">
+    <a href="https://t.me/surgicalInsightHub" target="_blank" class="nav-btn">Join Telegram</a>
+  </div>
+</nav>
+
+<article class="blog-container">
+  <img src="../../assets/images/residency_books_cover.png" alt="Surgical Books" class="cover-img">
+  
+  <div class="meta">
+    <span>May 16, 2026</span>
+    <span>•</span>
+    <span>Medical Education</span>
+    <span>•</span>
+    <span>15 Min Read</span>
+  </div>
+
+  <h1>Books and Digital Tools To Read During Surgery Residency</h1>
+
+  <div class="content">
+    <p>I often interact with a number of residents and students who are about to enter surgery residency or are first-year PGs. “How do I study during residency?” is a question that is on every resident’s mind.</p>
+
+    <p>Surgery residency in the subcontinent is pretty unstructured. In some situations, the residency is a cakewalk with very few duties. In most situations, it is a toxic hellhole. Studying during a tough surgery residency is not easy at all.</p>
+
+    <blockquote>
+      "Studying in residency is not a privilege, it’s a duty. Acquiring knowledge so that you can treat your patients appropriately is a fundamental duty."
+    </blockquote>
+
+    <p>In this article, we will detail the precise books and digital tools you need to master during your general surgery residency, categorized by how they are actually used in the hospital.</p>
+
+    <h2>1. The "Night Before" Prep & Operative Surgery</h2>
+    <p>Reading before every surgery is essential. These are the books you open to memorize the steps, incisions, and room setup before scrubbing in.</p>
+
+    <div class="book-card">
+      <h3>📖 Zollinger's Atlas of Surgical Operations (10th Edition)</h3>
+      <p><strong>Best for:</strong> Medical students, Interns, and Junior Residents (PGY 1-2).</p>
+      <ul>
+        <li><strong>The Consensus:</strong> The undisputed classic for visual learners. It pairs each procedure across a brilliantly illustrated two-page spread.</li>
+        <li><strong>Community Note:</strong> Remains the gold standard for open anatomy. I always kept a soft copy of Zollinger on my phone.</li>
+      </ul>
+      <a href="https://t.me/surgicalInsightHub" class="tg-download">Download on Telegram</a>
+    </div>
+
+    <div class="book-card">
+      <h3>📖 Netter's Surgical Anatomy and Approaches</h3>
+      <p><strong>Best for:</strong> Junior residents acing "pimp" questions in the OR.</p>
+      <ul>
+        <li><strong>The Consensus:</strong> Pure gold for anatomy. It teaches you exactly where everything is so you don't cut the wrong vessel.</li>
+      </ul>
+      <a href="https://t.me/surgicalInsightHub" class="tg-download">Download on Telegram</a>
+    </div>
+
+    <h2>2. The "Mastery" Level (Technical Strategy)</h2>
+    <p>Once you know the steps, you need to know why you are doing them. These books replace the basic drawings with deep text and comprehensive surgical strategy.</p>
+
+    <div class="book-card">
+      <h3>📖 Fischer's Mastery of Surgery (7th Edition)</h3>
+      <p><strong>Best for:</strong> Senior Residents (PGY 3-5), Fellows, and Attending surgeons.</p>
+      <ul>
+        <li><strong>The Consensus:</strong> Easily the big daddy of operative surgery. It is a "text atlas" that explains the decision-making process.</li>
+      </ul>
+      <a href="https://t.me/surgicalInsightHub" class="tg-download">Download on Telegram</a>
+    </div>
+
+    <h2>7. The Digital Workflow: Websites and Apps</h2>
+    <p>Surgical training has rapidly transitioned from physical text to digital workflows.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Book / Platform</th>
+          <th>Primary Use</th>
+          <th>Best Audience</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Zollinger's</strong></td>
+          <td>Pre-op Step Review</td>
+          <td>Interns / PGY-1</td>
+        </tr>
+        <tr>
+          <td><strong>Fischer's</strong></td>
+          <td>Deep Technical Strategy</td>
+          <td>Senior Residents</td>
+        </tr>
+        <tr>
+          <td><strong>Top Knife</strong></td>
+          <td>Emergency / Trauma Survival</td>
+          <td>Everyone</td>
+        </tr>
+        <tr>
+          <td><strong>WebSurg</strong></td>
+          <td>Minimally Invasive Video</td>
+          <td>Laparoscopic Trainees</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="note" style="border-left: 4px solid var(--acc); background: rgba(163, 21, 21, 0.05); padding: 20px; border-radius: 8px;">
+      <strong>The "Attending Hack":</strong> A highly upvoted tip suggests that the best atlas is actually the past operative notes of the specific attending you are working with.
+    </div>
+  </div>
+</article>
+
+</body>
+</html>

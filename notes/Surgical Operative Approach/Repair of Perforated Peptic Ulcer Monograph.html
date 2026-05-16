@@ -3,21 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Repair of Perforated Peptic Ulcer — Surgical Insight Hub</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<title>Surgical Insight Hub — Perforated Peptic Ulcer Monograph</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-
 <link rel="stylesheet" href="../../css/theme.css">
 <link rel="stylesheet" href="../../css/shared.css">
-
 <script>
   const savedTheme = localStorage.getItem('sih-theme') || 'light';
   if (savedTheme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
 </script>
 <style>
+
 :root {
-  /* Emerald & Deep Slate Aesthetic (PPU Focus) */
+  /* Emerald & Deep Slate Aesthetic */
   --primary:   #064E3B; 
   --primary-dk:#022C22;
   --primary-lt:#ECFDF5;
@@ -26,337 +23,553 @@
   --gold:      #B8860B;
   --gold-lt:   #FDF8ED;
   --s1:        #064E3B;
-  --s1-lt:     #ECFDF5;
   --s2:        #065F46;
-  --s2-lt:     #F0FDF4;
   --s3:        #047857;
-  --s3-lt:     #F0FDFA;
   --s4:        #059669;
-  --s4-lt:     #F5F5F4;
   --s5:        #10B981;
+  --s1-lt:     #ECFDF5;
+  --s2-lt:     #F0FDF4;
+  --s3-lt:     #F0FDFA;
+  --s4-lt:     #F5F5F4;
   --s5-lt:     #E7E5E4;
-  --bg:        #FAFAF9;
-  --bg2:       #F5F5F4;
-  --border:    #E7E5E4;
-  --text:      #1C1917;
-  --muted:     #57534E;
-  --white:     #FFFFFF;
-  --sidebar-w: 320px;
-}
-
-[data-theme="dark"] {
-  --bg: #0D0D0D;
-  --bg2: #1A1A1A;
-  --text: #F9FAFB;
-  --muted: #9CA3AF;
-  --border: rgba(255,255,255,0.08);
-  --primary-lt: #1A1A1A;
-  --s1-lt: #064E3B33;
-  --white: #1A1A1A;
+  --sidebar-w: 300px;
 }
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
 body{font-family:'Source Serif 4',Georgia,serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.75;}
 
-/* SIDEBAR & OVERLAY */
+/* SLIDE-OVER SIDEBAR */
 #sidebar {
   position: fixed; top: 0; left: 0; width: var(--sidebar-w); height: 100vh;
   background: var(--primary-dk); color: #ECFDF5;
   display: flex; flex-direction: column;
-  z-index: 1000; overflow: hidden;
+  z-index: 1400; overflow: hidden;
   transform: translateX(-100%);
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 4px 0 24px rgba(0,0,0,0.4);
+  box-shadow: 4px 0 24px rgba(0,0,0,0.3);
 }
 body.sidebar-open #sidebar { transform: translateX(0); }
-
 #sidebar-overlay {
   position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
-  background: rgba(2, 44, 34, 0.7); backdrop-filter: blur(3px);
-  z-index: 950; opacity: 0; pointer-events: none;
+  background: rgba(2, 44, 34, 0.6); backdrop-filter: blur(2px);
+  z-index: 1350; opacity: 0; pointer-events: none;
   transition: opacity 0.3s ease;
 }
 body.sidebar-open #sidebar-overlay { opacity: 1; pointer-events: auto; }
 
-#sidebar-toggle {
-  position: fixed; top: 72px; left: 28px; z-index: 900;
-  background: var(--primary); color: white;
-  border: none; border-radius: 30px;
-  padding: 10px 18px; font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600;
-  letter-spacing: 0.05em; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-  display: flex; align-items: center; gap: 8px; transition: all 0.2s;
-}
-#sidebar-toggle:hover { background: var(--accent); transform: translateY(-2px); }
+#sidebar-header { padding: 20px 20px 14px; border-bottom: 1px solid rgba(255, 255, 255, 0.08); flex-shrink: 0; }
+#sidebar-header .logo { font-family: 'Playfair Display', serif; font-size: 13px; font-weight: 700; color: var(--accent2); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 4px; }
+#sidebar-header .sub { font-size: 10.5px; color: rgba(236, 253, 245, 0.6); letter-spacing: 0.04em; }
 
-#sidebar-header{padding:20px 20px 14px;border-bottom:1px solid rgba(255,255,255,0.08);flex-shrink:0;}
-#sidebar-header .logo{font-family:'Playfair Display',serif;font-size:13px;font-weight:700;color:var(--accent2);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;}
-#sidebar-header .sub{font-size:10.5px;color:rgba(236, 253, 245, 0.6);letter-spacing:0.04em;}
-#sidebar-nav{flex:1;overflow-y:auto;padding:8px 0 20px;}
-.vol-label{font-size:9.5px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent2);padding:14px 18px 4px;}
-.nav-item{display:block;padding:8px 18px 8px 22px;font-size:12.5px;color:rgba(236, 253, 245, 0.75);text-decoration:none;border-left:2px solid transparent;transition:all 0.15s;line-height:1.4;}
-.nav-item:hover{color:#fff;background:rgba(255,255,255,0.03);border-left-color:var(--accent);}
-.nav-item.active{color:#fff;background:rgba(255,255,255,0.06);border-left-color:var(--accent2);font-weight:600;}
+#sidebar-search { padding: 10px 14px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); flex-shrink: 0; }
+#sidebar-search input { width: 100%; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 6px; color: #ECFDF5; padding: 6px 10px; font-size: 12px; font-family: 'Source Serif 4', serif; outline: none; transition: border-color 0.2s; }
+#sidebar-search input::placeholder { color: rgba(236, 253, 245, 0.4); }
+#sidebar-search input:focus { border-color: var(--accent2); }
+
+#sidebar-nav { flex: 1; overflow-y: auto; padding: 8px 0 20px; }
+#sidebar-nav::-webkit-scrollbar { width: 4px; }
+#sidebar-nav::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.15); border-radius: 2px; }
+
+.vol-label { font-size: 9.5px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent2); padding: 14px 18px 4px; }
+.nav-item { display: block; padding: 8px 18px 8px 22px; font-size: 12.5px; color: rgba(236, 253, 245, 0.75); text-decoration: none; border-left: 2px solid transparent; transition: all 0.15s; line-height: 1.4; }
+.nav-item:hover { color: #fff; background: rgba(255, 255, 255, 0.03); border-left-color: rgba(52, 211, 153, 0.5); }
+.nav-item.active { color: #fff; background: rgba(255, 255, 255, 0.06); border-left-color: var(--accent2); font-weight: 600; }
+.nav-item .num { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: rgba(236, 253, 245, 0.4); margin-right: 6px; }
+
+/* MAIN */
+#main { margin-left: 0; min-height: 100vh; }
 
 /* HERO */
-#hero{background:linear-gradient(135deg,var(--primary-dk) 0%,#064E3B 60%,#022C22 100%);color:white;padding:120px 72px 60px;position:relative;overflow:hidden;}
-#hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent2),var(--gold),transparent);}
-#hero .eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.16em;color:var(--accent2);text-transform:uppercase;margin-bottom:14px;}
-#hero h1{font-family:'Playfair Display',serif;font-size:46px;font-weight:700;line-height:1.15;margin-bottom:10px;color:#fff;}
-#hero .subtitle{font-size:18px;color:rgba(255,255,255,0.8);font-style:italic;margin-bottom:28px;}
+#hero { background: linear-gradient(135deg, var(--primary-dk) 0%, #064E3B 60%, #022C22 100%); color: white; padding: 90px 72px 60px; position: relative; overflow: hidden; }
+#hero::before { content: ''; position: absolute; top: -60px; right: -60px; width: 380px; height: 380px; background: radial-gradient(circle, rgba(52, 211, 153, 0.15) 0%, transparent 70%); pointer-events: none; }
+#hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--accent2), var(--gold), transparent); }
+#hero .eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.16em; color: var(--accent2); text-transform: uppercase; margin-bottom: 14px; }
+#hero h1 { font-family: 'Playfair Display', serif; font-size: 46px; font-weight: 700; line-height: 1.15; margin-bottom: 10px; color: #fff; }
+#hero .subtitle { font-size: 18px; color: rgba(255, 255, 255, 0.7); font-style: italic; margin-bottom: 28px; }
+#hero .badges { display: flex; gap: 10px; flex-wrap: wrap; }
+#hero .badge { background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 20px; padding: 4px 14px; font-size: 12px; color: rgba(255, 255, 255, 0.9); font-family: 'JetBrains Mono', monospace; }
 
 /* CONTENT */
-.content-wrap{max-width:900px;margin:0 auto;padding:0 48px 80px;}
-.sec-header{margin-top:60px;margin-bottom:8px;padding:28px 36px;border-radius:10px;display:flex;align-items:center;gap:20px;}
-.sec-header.s1{background:linear-gradient(135deg,#064E3B0A,#064E3B1A);border-left:4px solid var(--s1);}
-.sec-header.s2{background:linear-gradient(135deg,#065F460A,#065F461A);border-left:4px solid var(--s2);}
-.sec-header.s3{background:linear-gradient(135deg,#0478570A,#0478571A);border-left:4px solid var(--s3);}
-.sec-header.s4{background:linear-gradient(135deg,#0596690A,#0596691A);border-left:4px solid var(--s4);}
-.sec-header.s5{background:linear-gradient(135deg,#10B9810A,#10B9811A);border-left:4px solid var(--s5);}
-.sec-badge{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;padding:4px 12px;border-radius:4px;white-space:nowrap;color:white;}
-.s1 .sec-badge{background:var(--s1);} .s2 .sec-badge{background:var(--s2);} .s3 .sec-badge{background:var(--s3);} .s4 .sec-badge{background:var(--s4);} .s5 .sec-badge{background:var(--s5);}
-.sec-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;}
+.content-wrap { max-width: 900px; margin: 0 auto; padding: 0 48px 80px; }
 
-.topic{margin-top:48px;padding-top:48px;border-top:1px solid var(--border);animation:fadeUp 0.4s ease both;}
-@keyframes fadeUp{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
+/* SECTION HEADER */
+.sec-header { margin-top: 60px; margin-bottom: 8px; padding: 28px 36px; border-radius: 10px; display: flex; align-items: center; gap: 20px; }
+.sec-header.s1 { background: linear-gradient(135deg, #064E3B08, #064E3B15); border-left: 4px solid var(--s1); }
+.sec-header.s2 { background: linear-gradient(135deg, #065F4608, #065F4615); border-left: 4px solid var(--s2); }
+.sec-header.s3 { background: linear-gradient(135deg, #04785708, #04785715); border-left: 4px solid var(--s3); }
+.sec-header.s4 { background: linear-gradient(135deg, #05966908, #05966915); border-left: 4px solid var(--s4); }
+.sec-header.s5 { background: linear-gradient(135deg, #10B98108, #10B98115); border-left: 4px solid var(--s5); }
+
+.sec-badge { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; letter-spacing: 0.1em; padding: 4px 12px; border-radius: 4px; white-space: nowrap; flex-shrink: 0; }
+.s1 .sec-badge { background: var(--s1); color: white; }
+.s2 .sec-badge { background: var(--s2); color: white; }
+.s3 .sec-badge { background: var(--s3); color: white; }
+.s4 .sec-badge { background: var(--s4); color: white; }
+.s5 .sec-badge { background: var(--s5); color: white; }
+.sec-title { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; }
+.s1 .sec-title { color: var(--s1); }
+.s2 .sec-title { color: var(--s2); }
+.s3 .sec-title { color: var(--s3); }
+.s4 .sec-title { color: var(--s4); }
+.s5 .sec-title { color: var(--s5); }
+
+/* TOPIC */
+.topic { margin-top: 48px; padding-top: 48px; border-top: 1px solid var(--border); }
+.topic:first-of-type { border-top: none; }
+.topic-header { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 24px; }
+.topic-num { font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 500; padding: 3px 10px; border-radius: 4px; margin-top: 4px; flex-shrink: 0; }
+.s1 .topic-num { background: var(--s1-lt); color: var(--s1); }
+.s2 .topic-num { background: var(--s2-lt); color: var(--s2); }
+.s3 .topic-num { background: var(--s3-lt); color: var(--s3); }
+.s4 .topic-num { background: var(--s4-lt); color: var(--s4); }
+.s5 .topic-num { background: var(--s5-lt); color: var(--s5); }
+.topic h2 { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 700; line-height: 1.2; }
+.s1 .topic h2 { color: var(--s1); }
+.s2 .topic h2 { color: var(--s2); }
+.s3 .topic h2 { color: var(--s3); }
+.s4 .topic h2 { color: var(--s4); }
+.s5 .topic h2 { color: var(--s5); }
+.topic h3 { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 600; color: var(--muted); margin: 26px 0 10px; padding-bottom: 6px; border-bottom: 1px solid var(--border); }
+.topic h4 { font-size: 13px; font-weight: 600; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; margin: 18px 0 8px; font-family: 'JetBrains Mono', monospace; }
+.topic p { margin-bottom: 12px; color: var(--text); }
+.topic ul, .topic ol { margin: 8px 0 14px 20px; color: var(--text); }
+.topic li { margin-bottom: 6px; line-height: 1.65; }
+.topic li::marker { color: var(--accent2); }
+.topic strong { color: var(--text); font-weight: 600; }
 
 /* TABLES */
-.table-wrap{overflow-x:auto;margin:16px 0 20px;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.04);}
-table{width:100%;border-collapse:collapse;font-size:13.5px;background:white;}
-thead tr{background:var(--s1);}
-thead th{color:white;padding:12px 14px;text-align:left;font-family:'Source Serif 4',serif;font-weight:600;font-size:13px; text-transform: uppercase;}
-tbody tr:nth-child(even){background:var(--bg2);}
-tbody td{padding:10px 14px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.5;}
+.table-wrap { overflow-x: auto; margin: 16px 0 20px; border-radius: 8px; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04); }
+table { width: 100%; border-collapse: collapse; font-size: 13.5px; background: white; }
+thead tr { background: var(--s1); }
+thead th { color: white; padding: 10px 14px; text-align: left; font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 13px; }
+tbody tr:nth-child(even) { background: var(--bg2); }
+tbody tr:hover { background: var(--s1-lt); transition: background 0.15s; }
+tbody td { padding: 9px 14px; border-bottom: 1px solid var(--border); vertical-align: top; line-height: 1.5; }
+.s2-tbl thead tr { background: var(--s2); }
+.s3-tbl thead tr { background: var(--s3); }
+.s4-tbl thead tr { background: var(--s4); }
+.s5-tbl thead tr { background: var(--s5); }
 
-.rapid-ref{background:var(--primary-dk);color:var(--primary-lt);border-radius:10px;padding:28px 32px;margin:30px 0;}
-.rapid-ref h3{font-family:'Playfair Display',serif;font-size:20px;color:var(--accent2);margin-bottom:16px;}
-.rapid-ref table{background:transparent;}
-.rapid-ref thead tr{background:rgba(52,211,147,0.15);}
-.rapid-ref thead th{color:var(--accent2);border-bottom:1px solid rgba(255,255,255,0.1);}
-.rapid-ref tbody td{color:var(--primary-lt);border-bottom:1px solid rgba(255,255,255,0.05);}
+/* CALLOUTS */
+.callout { margin: 18px 0; padding: 14px 18px; border-radius: 0 8px 8px 0; border-left: 4px solid; font-size: 14px; line-height: 1.65; }
+.callout .label { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; display: block; margin-bottom: 4px; }
+.callout.pearl { background: var(--amber-lt); border-color: var(--amber); }
+.callout.pearl .label { color: var(--amber); }
+.callout.warn { background: var(--red-lt); border-color: var(--red); }
+.callout.warn .label { color: var(--red); }
+.callout.clin { background: var(--s1-lt); border-color: var(--s1); }
+.callout.clin .label { color: var(--s1); }
+.callout.exam { background: var(--blue-lt); border-color: var(--blue); }
+.callout.exam .label { color: var(--blue); }
 
-@media(max-width:900px){
-  .content-wrap{padding:0 20px 60px;}
-  #hero{padding:120px 20px 40px;}
-  #hero h1{font-size:30px;}
+/* RESEARCH INSIGHT CARD */
+.research-insight { margin: 32px 0; background: linear-gradient(145deg, #ffffff, #f0fdf4); border: 1px solid rgba(6, 78, 59, 0.15); border-radius: 16px; padding: 24px; box-shadow: 0 10px 30px rgba(6, 78, 59, 0.05); position: relative; overflow: hidden; }
+.research-insight::before { content: 'LIVE RESEARCH'; position: absolute; top: 12px; right: -30px; background: var(--gold); color: white; font-family: 'JetBrains Mono', monospace; font-size: 9px; font-weight: 700; padding: 4px 40px; transform: rotate(45deg); }
+.research-insight h4 { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--primary); margin-bottom: 12px; display: flex; align-items: center; gap: 10px; text-transform: none; }
+.research-insight .source-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; background: var(--primary-lt); color: var(--primary); padding: 2px 8px; border-radius: 4px; }
+.research-insight p { font-size: 14.5px; line-height: 1.6; color: var(--text); margin-bottom: 16px; }
+.research-insight ul { list-style: none; margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.research-insight li { font-size: 13px; padding-left: 20px; position: relative; }
+.research-insight li::before { content: '→'; position: absolute; left: 0; color: var(--gold); font-weight: bold; }
+[data-theme="dark"] .research-insight { background: linear-gradient(145deg, #022c22, #064e3b); border-color: rgba(255, 255, 255, 0.1); }
+
+/* DIAGRAM PLACEHOLDERS */
+.diagram-wrap { background: white; border: 1px solid var(--border); border-radius: 8px; padding: 18px; margin: 20px 0; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03); text-align: center; }
+.diagram-title { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--s1); margin-bottom: 12px; text-align: left; }
+
+/* RAPID REFERENCE */
+.rapid-ref { background: var(--primary-dk); color: var(--primary-lt); border-radius: 10px; padding: 28px 32px; margin: 30px 0; }
+.rapid-ref h3 { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--accent2); margin-bottom: 16px; }
+.rapid-ref table { font-size: 12.5px; background: transparent; }
+.rapid-ref thead tr { background: rgba(52, 211, 153, 0.15); }
+.rapid-ref thead th { color: var(--accent2); padding: 8px 12px; font-size: 11px; }
+.rapid-ref tbody tr:nth-child(even) { background: rgba(255, 255, 255, 0.03); }
+.rapid-ref tbody tr:hover { background: rgba(255, 255, 255, 0.06); }
+.rapid-ref tbody td { color: var(--primary-lt); padding: 7px 12px; border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+.rapid-ref tbody td strong { color: var(--gold); }
+
+/* PROGRESS */
+#progress-bar { position: fixed; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--accent2), var(--gold)); transform-origin: left; transform: scaleX(0); transition: transform 0.1s; z-index: 1500; }
+
+/* TOP BTN */
+#top-btn { position: fixed; bottom: 28px; right: 28px; background: var(--primary); color: white; border: none; border-radius: 50%; width: 44px; height: 44px; font-size: 18px; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); transition: all 0.2s; opacity: 0; pointer-events: none; z-index: 1000;}
+#top-btn.show { opacity: 1; pointer-events: auto; }
+#top-btn:hover { background: var(--accent2); transform: translateY(-2px); }
+
+/* ANIMATION */
+.topic { animation: fadeUp 0.4s ease both; }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+
+@media(max-width:900px) {
+  .content-wrap { padding: 0 20px 60px; }
+  #hero { padding: 72px 20px 40px; }
+  #hero h1 { font-size: 30px; }
 }
+@media print {
+  .mono-sidebar-toggle, #sidebar-overlay, #sidebar, #top-btn, #progress-bar, #mainNav { display: none !important; }
+  .topic { page-break-inside: avoid; }
+  .sec-header { page-break-before: always; }
+}
+
 </style>
+
 </head>
 <body>
+<div id="progress-bar"></div>
 
-<nav class="nav" id="mainNav">
-  <div class="nav-left">
-    <a href="../../index.html" class="nav-pill">
-      <div class="nav-logo-img"><img src="../../assets/images/Surgical_Insight_Hub_Logo.png" alt="SIH"></div>
-      <div>
-        <div class="nav-brand-text">Surgical Insight Hub</div>
-        <div class="nav-brand-sub">Medical Library</div>
-      </div>
-    </a>
+
+
+  <!-- Standardized SIH Navbar -->
+  <nav class="nav" id="mainNav">
+    <div class="nav-left">
+      <a href="../../index.html" class="nav-pill">
+        <div class="nav-logo-img">
+          <img src="../../assets/icons/apple-touch-icon.png" alt="SIH Logo">
+        </div>
+        <div>
+          <div class="nav-brand-text">Surgical Insight Hub</div>
+          <div class="nav-brand-sub">The Residency Journal</div>
+        </div>
+      </a>
+    </div>
+
     <div class="nav-links-pill">
       <a href="../../index.html">Home</a>
-      <a href="../../notes.html">Notes</a>
-      <a href="../operative_approach.html" class="active">Playbook</a>
+      <a href="../../notes.html" class="active">Notes</a>
+      <a href="../operative_approach.html">Playbook</a>
+      <a href="../../arena.html">MCQ Arena</a>
+      <a href="../../podcast.html">Podcast</a>
+      <a href="../../surgery-talk.html">Surgery Talk</a>
+      <a href="../../about.html">About</a>
     </div>
-  </div>
-  <div class="nav-right">
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-      <svg id="moonIcon" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/></svg>
-      <svg id="sunIcon" style="display:none;" viewBox="0 0 24 24"><path d="M12 7a5 5 0 1 0 5 5 5.006 5.006 0 0 0-5-5zm0 8a3 3 0 1 1 3-3 3.003 3.003 0 0 1-3 3zm0-13a1 1 0 0 0-1 1v2a1 1 0 0 0 2 0V3a1 1 0 0 0-1-1zm0 18a1 1 0 0 0-1 1v2a1 1 0 0 0 2 0v-2a1 1 0 0 0-1-1zm8-11h-2a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2zm-16 0H2a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2zm13.657-5.657a1 1 0 0 0-1.414 0l-1.414 1.414a1 1 0 0 0 1.414 1.414l1.414-1.414a1 1 0 0 0 0-1.414zm-11.314 0a1 1 0 0 0 0 1.414l1.414 1.414a1 1 0 0 0 1.414-1.414L4.929 5.757a1 1 0 0 0-1.414 0zm11.314 11.314a1 1 0 0 0 0 1.414l1.414 1.414a1 1 0 0 0 1.414-1.414l-1.414-1.414a1 1 0 0 0-1.414 0zm-11.314 0a1 1 0 0 0-1.414 1.414l1.414 1.414a1 1 0 0 0 1.414-1.414l-1.414-1.414a1 1 0 0 0 0-1.414z"/></svg>
-    </button>
-    <a href="../../arena.html" class="nav-btn arena-btn">MCQ Arena</a>
-    <button class="mob-nav-toggle" onclick="openMobNav()"><div class="hamburger"><span></span><span></span><span></span></div></button>
-  </div>
-</nav>
 
-<div class="mob-nav-overlay" id="mobNavOverlay" onclick="closeMobNav()"></div>
-<div class="mob-nav-sheet" id="mobNavSheet">
-  <div class="mob-nav-handle"></div>
-  <a href="../../index.html">Home</a>
-  <a href="../../notes.html">Notes</a>
-  <a href="../operative_approach.html" class="active">Playbook</a>
-  <a href="../../arena.html">MCQ Arena</a>
-</div>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+        <svg id="moonIcon" viewBox="0 0 24 24" width="18" height="18"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        <svg id="sunIcon" style="display:none;" viewBox="0 0 24 24" width="18" height="18"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+      </button>
+      <a href="https://t.me/surgicalInsightHub" target="_blank" class="nav-tg-btn" title="Join Telegram" style="background: var(--brand-burgundy); color: #f0d080; padding: 8px 12px; border-radius: 8px; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: all 0.3s ease;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="#f0d080"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.89 8.22l-1.97 9.28c-.15.66-.54.82-1.08.51l-3-2.21-1.45 1.39c-.16.16-.3.3-.61.3l.21-3.05 5.56-5.02c.24-.21-.05-.33-.37-.12l-6.87 4.33-2.96-.92c-.64-.2-.66-.64.14-.95l11.57-4.46c.54-.19 1.01.13.83.94z"/></svg>
+      </a>
+      <a href="../../arena.html" class="nav-btn arena-btn">MCQ Arena</a>
+      <button class="mob-nav-toggle" onclick="openMobNav()" aria-label="Menu">
+        <div class="hamburger"><span></span><span></span><span></span></div>
+      </button>
+    </div>
+  </nav>
 
-<div id="progress-bar"></div>
-<div id="sidebar-overlay" onclick="closeSidebar()"></div>
-<button id="sidebar-toggle" onclick="toggleSidebar()"><span>☰</span> Contents</button>
+  <div class="mob-nav-overlay" id="mobNavOverlay" onclick="closeMobNav()"></div>
+  <div class="mob-nav-sheet" id="mobNavSheet">
+    <div class="mob-nav-handle"></div>
+    <a href="../../index.html" onclick="closeMobNav()">Home</a>
+    <a href="../../notes.html" class="active" onclick="closeMobNav()">Notes</a>
+    <a href="../operative_approach.html" onclick="closeMobNav()">Playbook</a>
+    <a href="../../arena.html" onclick="closeMobNav()">MCQ Arena</a>
+    <a href="../../podcast.html" onclick="closeMobNav()">Podcast</a>
+    <a href="../../surgery-talk.html" onclick="closeMobNav()">Surgery Talk</a>
+    <a href="../../about.html" onclick="closeMobNav()">About</a>
+    <a href="https://t.me/surgicalInsightHub" target="_blank" style="color: var(--brand-gold); font-weight: 800;">Join Telegram Community</a>
+  </div>
+
+
+<button class="mono-sidebar-toggle" onclick="toggleSidebar()">
+  <span>☰</span> Contents
+</button>
 
 <nav id="sidebar">
   <div id="sidebar-header">
     <div class="logo">Surgical Insight Hub</div>
-    <div class="sub">PPU Monograph</div>
+    <div class="sub">PPU · Monograph Series</div>
+  </div>
+  <div id="sidebar-search">
+    <input type="text" id="search-input" placeholder="Search topics…" oninput="filterNav(this.value)">
   </div>
   <div id="sidebar-nav">
     <div class="vol-label">Pillar 1 — Pre-Op Optimization</div>
-    <a class="nav-item" href="#p1a">1.1 Clinical Workup</a>
-    <a class="nav-item" href="#p1b">1.2 Boey Risk Score</a>
-    
+    <a class="nav-item" href="#p1a"><span class="num">1.1</span>Clinical Workup</a>
+    <a class="nav-item" href="#p1b"><span class="num">1.2</span>Risk Stratification</a>
+    <a class="nav-item" href="#p1c"><span class="num">1.3</span>Immediate Pre-Op</a>
     <div class="vol-label">Pillar 2 — The Operative Game Plan</div>
-    <a class="nav-item" href="#p2b">2.2 Graham Patch Technique</a>
-    <a class="nav-item" href="#p2c">2.3 Laparoscopic Approach</a>
-    
-    <div class="vol-label">Pillar 3 — Technical Pearls</div>
-    <a class="nav-item" href="#p3a">3.1 Consultant Pearls</a>
-    <a class="nav-item" href="#p3b">3.2 The Bail-Out Point</a>
-    
+    <a class="nav-item" href="#p2a"><span class="num">2.1</span>Setup &amp; Exploration</a>
+    <a class="nav-item" href="#p2b"><span class="num">2.2</span>Graham Patch Technique</a>
+    <a class="nav-item" href="#p2c"><span class="num">2.3</span>Laparoscopic Approach</a>
+    <a class="nav-item" href="#p2d"><span class="num">2.4</span>The Critical View</a>
+    <div class="vol-label">Pillar 3 — Pearls &amp; Bail-Outs</div>
+    <a class="nav-item" href="#p3a"><span class="num">3.1</span>Consultant Pearls</a>
+    <a class="nav-item" href="#p3b"><span class="num">3.2</span>The Bail-Out Point</a>
+    <div class="vol-label">Pillar 4 — Post-Op Care</div>
+    <a class="nav-item" href="#p4a"><span class="num">4.1</span>Immediate Recovery</a>
+    <a class="nav-item" href="#p4b"><span class="num">4.2</span>Clinic Follow-up</a>
     <div class="vol-label">Pillar 5 — Complications</div>
-    <a class="nav-item" href="#p5a">5.1 Leak & Re-Perforation</a>
-    
+    <a class="nav-item" href="#p5a"><span class="num">5.1</span>Leak &amp; Re-Perforation</a>
+    <a class="nav-item" href="#p5b"><span class="num">5.2</span>Subphrenic Abscess</a>
+    <a class="nav-item" href="#p5c"><span class="num">5.3</span>Gastric Outlet Obstruction</a>
     <div class="vol-label">Quick Reference</div>
     <a class="nav-item" href="#rapid">High-Yield Board Facts</a>
   </div>
 </nav>
+<div id="sidebar-overlay" onclick="closeSidebar()"></div>
+<main id="main" style="padding-top: 70px;">
 
-<main id="main">
-  <section id="hero">
-    <div class="eyebrow">Upper GI Surgery · Emergency Source Control · Omental Patch</div>
-    <h1>Repair of Perforated Peptic Ulcer</h1>
-    <p class="subtitle">Graham Patch, Omentopexy, and Laparoscopic Salvage: Emergency management of the upper GI perforation.</p>
-  </section>
-
-  <div class="content-wrap">
-    <!-- SECTION 1 -->
-    <div class="sec-header s1">
-      <span class="sec-badge">PILLAR 1</span>
-      <span class="sec-title">Pre-operative Optimization</span>
-    </div>
-    <section class="topic s1" id="p1a">
-      <div class="topic-header"><h2>1.1 Clinical Workup</h2></div>
-      <ul>
-        <li><strong>History:</strong> Sudden, sharp, agonizing epigastric pain. NSAID use is a major risk.</li>
-        <li><strong>Imaging:</strong> Erect CXR (Free air in 75%). CT with IV contrast is the gold standard.</li>
-        <li><strong>Valentino's Sign:</strong> Succus tracking to RLQ mimicking appendicitis.</li>
-      </ul>
-    </section>
-
-    <section class="topic s1" id="p1b">
-      <div class="topic-header"><h2>1.2 Boey Score (Risk Stratification)</h2></div>
-      <div class="table-wrap"><table>
-        <thead><tr><th>Risk Factor</th><th>Point</th></tr></thead>
-        <tbody>
-          <tr><td>Severe Comorbidity (ASA 3-5)</td><td>1</td></tr>
-          <tr><td>Pre-op Shock (SBP <90)</td><td>1</td></tr>
-          <tr><td>Symptoms >24h</td><td>1</td></tr>
-        </tbody>
-      </table></div>
-      <p>Score 3 = >80% mortality. Frank palliation discussion may be appropriate.</p>
-    </section>
-
-    <!-- SECTION 2 -->
-    <div class="sec-header s2">
-      <span class="sec-badge">PILLAR 2</span>
-      <span class="sec-title">The Operative Game Plan</span>
-    </div>
-    <section class="topic s2" id="p2b">
-      <div class="topic-header"><h2>2.2 Graham Patch Technique</h2></div>
-      <ul>
-        <li><strong>Concept:</strong> Tension-free omental plug, not primary closure.</li>
-        <li><strong>Sutures:</strong> 2-0 silk/vicryl. Place longitudinal to avoid stricture.</li>
-        <li><strong>Biopsy:</strong> Mandatory for ALL gastric ulcers (malignancy check).</li>
-        <li><strong>Washout:</strong> 6-10 Litres warm saline until crystal clear.</li>
-      </ul>
-    </section>
-
-    <!-- SECTION 3 -->
-    <div class="sec-header s3">
-      <span class="sec-badge">PILLAR 3</span>
-      <span class="sec-title">Technical Pearls & Bail-Outs</span>
-    </div>
-    <section class="topic s3" id="p3a">
-      <div class="callout pearl"><strong>Consultant Pearl:</strong> If the tissue is friable and sutures "cheese-wire," use larger bites of healthy serosa further away or consider a G-tube through the perforation as a "Witzel maneuver."</div>
-    </section>
-
-    <!-- RAPID REFERENCE -->
-    <div class="rapid-ref" id="rapid">
-      <h3>High-Yield Board Facts</h3>
-      <table>
-        <thead><tr><th>Topic</th><th>Fact</th></tr></thead>
-        <tbody>
-          <tr><td><strong>H. pylori</strong></td><td>Eradication reduces recurrence from 30% to <5%.</td></tr>
-          <tr><td><strong>Gastric Ulcer</strong></td><td>Mandatory biopsy; 5-10% malignancy risk.</td></tr>
-          <tr><td><strong>Boey Score</strong></td><td>Most validated tool for PPU mortality prediction.</td></tr>
-          <tr><td><strong>Valentino's</strong></td><td>Perforation succus tracks to RLQ mimicking appendicitis.</td></tr>
-        </tbody>
-      </table>
-    </div>
+<section id="hero">
+  <div class="eyebrow">Surgical Insight Hub · Monograph Series · ABSITE · PGY-3 Framework</div>
+  <h1>Repair of Perforated Peptic Ulcer</h1>
+  <p class="subtitle">Graham Patch, Omentopexy, and Laparoscopic Salvage</p>
+  <div class="badges">
+    <span class="badge">Upper GI</span>
+    <span class="badge">Emergency Surgery</span>
+    <span class="badge">Omental Patch</span>
   </div>
+</section>
+
+<div class="content-wrap">
+
+<div class="callout warn" style="margin-top: 40px;">
+  <span class="label">Upfront Philosophy</span>
+  A perforated peptic ulcer (PPU) is a surgical emergency where the "time to theatre" is the strongest predictor of survival. Every hour of delay increases mortality by 2%. Your goal is not complex reconstruction; it is source control, thorough washout, and preventing recurrence. 
+</div>
+
+<div class="sec-header s1">
+  <span class="sec-badge">PILLAR 1</span>
+  <span class="sec-title">Pre-operative Optimization &amp; Preparation</span>
+</div>
+
+<section class="topic s1" id="p1a">
+  <!-- LIVE INSIGHT FROM TINYFISH RESEARCH -->
+  <div class="research-insight">
+    <h4>
+      <span class="source-tag">Insight 2025/26</span>
+      Robotic CME & 10-Year Appendicitis Data
+    </h4>
+    <p>2025 updates highlight long-term non-operative success and robotic colorectal standardization.</p>
+    <ul>
+      <li><strong>APPAC 10-Year Data:</strong>  55.7% of uncomplicated appendicitis patients avoid surgery long-term with antibiotics.</li><li><strong>ColoRobotica:</strong>  New international metrics established for standardized robotic CME.</li><li><strong>CME Hemicolectomy:</strong>  Robotic approach shows significantly lower conversion rates than laparoscopic.</li><li><strong>Oncologic Efficacy:</strong>  Robotic lymph node yields are now equivalent or superior to open CME.</li>
+    </ul>
+  </div>
+
+  <div class="topic-header"><span class="topic-num">1.1</span><h2>Clinical Workup</h2></div>
+  <h3>History: The Sudden Catastrophe</h3>
+  <ul>
+    <li><strong>Onset:</strong> Classic "sudden, sharp, agonizing" epigastric pain that rapidly becomes generalized. If the pain radiates to the right lower quadrant, consider Valentino's sign (succus entericus tracking down the right paracolic gutter).</li>
+    <li><strong>Risk Factors:</strong> Chronic NSAID use (most common), H. pylori infection, smoking, and physiological stress (Curling's/Cushing's ulcers).</li>
+    <li><strong>Masking:</strong> Steroid users and the elderly may not exhibit classic rigidity. Maintain a low threshold for CT.</li>
+  </ul>
+
+  <h3>Physical Examination</h3>
+  <ul>
+    <li><strong>General:</strong> Patient lies perfectly still; any movement (including breathing) is painful.</li>
+    <li><strong>Abdomen:</strong> "Board-like" rigidity, involuntary guarding, and loss of liver dullness to percussion.</li>
+  </ul>
+
+  <h3>Mandatory Investigations</h3>
+  <ul>
+    <li><strong>Erect CXR:</strong> Free air under the diaphragm in 75% of cases. Absence of free air does NOT rule out PPU.</li>
+    <li><strong>CT Abdomen/Pelvis (with IV contrast):</strong> Gold standard. Identifies the site of perforation, volume of extraluminal air/fluid, and excludes other pathologies (e.g., pancreatitis, mesenteric ischemia).</li>
+    <li><strong>Labs:</strong> CBC (leukocytosis), BMP (metabolic acidosis if septic), LFTs, Amylase/Lipase, and Coagulation.</li>
+  </ul>
+</section>
+
+<section class="topic s1" id="p1b">
+  <div class="topic-header"><span class="topic-num">1.2</span><h2>Risk Stratification (Boey Score)</h2></div>
+  <p>The Boey Score is the most validated tool for predicting PPU mortality. Calculate this for every patient.</p>
+  <div class="table-wrap s1-tbl"><table>
+    <thead><tr><th>Risk Factor</th><th>Points</th></tr></thead>
+    <tbody>
+      <tr><td>Severe Medical Comorbidity (ASA 3-5)</td><td>1</td></tr>
+      <tr><td>Pre-operative Shock (SBP <90 mmHg)</td><td>1</td></tr>
+      <tr><td>Duration of Symptoms >24 hours</td><td>1</td></tr>
+    </tbody>
+  </table></div>
+  <ul>
+    <li><strong>Score 0:</strong> Mortality <1%</li>
+    <li><strong>Score 1:</strong> Mortality 10%</li>
+    <li><strong>Score 2:</strong> Mortality 35%</li>
+    <li><strong>Score 3:</strong> Mortality >80%</li>
+  </ul>
+</section>
+
+<section class="topic s1" id="p1c">
+  <div class="topic-header"><span class="topic-num">1.3</span><h2>Immediate Pre-operative Preparation</h2></div>
+  <ul>
+    <li><strong>Resuscitation:</strong> Aggressive crystalloid boluses. Target urine output >0.5 ml/kg/hr.</li>
+    <li><strong>NGT Decompression:</strong> Mandatory to reduce further soilage.</li>
+    <li><strong>Antibiotics:</strong> Broad-spectrum covering Gram-negative and anaerobic organisms (e.g., Piperacillin-tazobactam).</li>
+    <li><strong>PPI Therapy:</strong> Start IV PPI (e.g., Pantoprazole 80mg bolus then infusion).</li>
+    <li><strong>Consent Non-Negotiables:</strong> Graham patch failure/leak, conversion to open (if laparoscopic), subphrenic abscess, and the need for future OGD.</li>
+  </ul>
+</section>
+
+<div class="sec-header s2">
+  <span class="sec-badge">PILLAR 2</span>
+  <span class="sec-title">The Operative Game Plan</span>
+</div>
+
+<section class="topic s2" id="p2a">
+  <div class="topic-header"><span class="topic-num">2.1</span><h2>Setup &amp; Exploration</h2></div>
+  <ul>
+    <li><strong>Position:</strong> Supine. Laparotomy: Midline incision. Laparoscopy: French position (legs abducted).</li>
+    <li><strong>Incision:</strong> Upper midline laparotomy is standard for emergency cases.</li>
+    <li><strong>Exploration:</strong> Systematic search for the perforation (usually anterior duodenum or antrum). Aspirate all succus entericus immediately.</li>
+  </ul>
+</section>
+
+<section class="topic s2" id="p2b">
+  <div class="topic-header"><span class="topic-num">2.2</span><h2>Graham Patch Technique (The Standard)</h2></div>
+  <p>The goal is a tension-free plug, not a primary closure.</p>
+  <ul>
+    <li><strong>Step 1:</strong> Place three or four 2-0 or 3-0 silk/vicryl sutures across the perforation (full thickness). Do not tie them yet.</li>
+    <li><strong>Step 2:</strong> Select a healthy, well-vascularized pedicle of omentum.</li>
+    <li><strong>Step 3:</strong> Place the omentum over the hole (the "plug").</li>
+    <li><strong>Step 4:</strong> Tie the sutures over the omentum snugly but not tight enough to strangulate the omental blood supply.</li>
+    <li><strong>Step 5:</strong> Biopsy ALL gastric ulcers (high malignancy risk). Duodenal ulcers do not require routine biopsy.</li>
+    <li><strong>Step 6:</strong> Massive Washout. Use 6-10 Litres of warm saline until the effluent is crystal clear. This reduces post-op abscess rates.</li>
+  </ul>
+</section>
+
+<section class="topic s2" id="p2c">
+  <div class="topic-header"><span class="topic-num">2.3</span><h2>Laparoscopic Approach</h2></div>
+  <ul>
+    <li>Safe in hemodynamically stable patients with symptoms <24 hours.</li>
+    <li>Requires proficiency in intracorporeal suturing.</li>
+    <li>Higher risk of inadequate washout; must be meticulous in checking all four quadrants.</li>
+  </ul>
+</section>
+
+<section class="topic s2" id="p2d">
+  <div class="topic-header"><span class="topic-num">2.4</span><h2>The Critical View</h2></div>
+  <ul>
+    <li><strong>Source Control:</strong> Perforation clearly identified and completely covered by viable omentum.</li>
+    <li><strong>Tension-free:</strong> Omental pedicle reaches the site without pulling on its blood supply.</li>
+    <li><strong>Clear Effluent:</strong> Final washout fluid contains no visible succus or debris.</li>
+    <li><strong>No Secondary Pathology:</strong> Gallbladder, appendix, and small bowel checked to ensure no concurrent pathology.</li>
+  </ul>
+</section>
+
+<div class="sec-header s3">
+  <span class="sec-badge">PILLAR 3</span>
+  <span class="sec-title">Technical Pearls &amp; Bail-Out Strategies</span>
+</div>
+
+<section class="topic s3" id="p3a">
+  <div class="topic-header"><span class="topic-num">3.1</span><h2>Consultant Pearls</h2></div>
+  <div class="callout pearl">
+    <span class="label">Consultant Pearl #1: Longitudinal Sutures</span>
+    Place sutures in a longitudinal orientation (parallel to the long axis of the duodenum) to avoid narrowing the lumen and causing gastric outlet obstruction.
+  </div>
+  <div class="callout pearl">
+    <span class="label">Consultant Pearl #2: The Malignant Gastric Ulcer</span>
+    Never assume a gastric ulcer is benign. Perforated gastric cancers are real. Take 4-quadrant biopsies of the ulcer edges. If it looks very suspicious, consider a formal resection if the patient is stable.
+  </div>
+</section>
+
+<section class="topic s3" id="p3b">
+  <div class="topic-header"><span class="topic-num">3.2</span><h2>The Bail-Out Point</h2></div>
+  <ul>
+    <li><strong>Giant Perforation (>3cm):</strong> A simple Graham patch may fail. Consider a jejunal serosal patch or a formal distal gastrectomy if the patient is stable and a senior is present.</li>
+    <li><strong>Friable Tissue:</strong> If sutures "cheese-wire" through the tissue, do not keep trying. Use larger bites of healthy serosa further away or consider a G-tube through the perforation site (Witzel maneuver) as a temporary measure.</li>
+  </ul>
+</section>
+
+<div class="sec-header s4">
+  <span class="sec-badge">PILLAR 4</span>
+  <span class="sec-title">Post-operative Care &amp; Longitudinal Follow-up</span>
+</div>
+
+<section class="topic s4" id="p4a">
+  <div class="topic-header"><span class="topic-num">4.1</span><h2>Immediate Recovery</h2></div>
+  <ul>
+    <li><strong>NGT:</strong> Remove once output is low and bowel function returns (usually POD2-3).</li>
+    <li><strong>Diet:</strong> Sips on POD1; advance as tolerated.</li>
+    <li><strong>H. pylori Eradication:</strong> The single most important step for long-term cure. Start triple therapy (PPI + Clarithromycin + Amoxicillin/Metronidazole) once tolerating oral intake.</li>
+    <li><strong>PPI:</strong> Continue high-dose IV then oral PPI for 6-8 weeks.</li>
+  </ul>
+</section>
+
+<section class="topic s4" id="p4b">
+  <div class="topic-header"><span class="topic-num">4.2</span><h2>Clinic Follow-up</h2></div>
+  <ul>
+    <li><strong>6-8 Week Visit:</strong> MANDATORY follow-up OGD for all gastric ulcers to confirm healing and exclude malignancy (even if intra-op biopsy was negative).</li>
+    <li><strong>Breath Test:</strong> Confirm H. pylori eradication 4 weeks after finishing therapy.</li>
+  </ul>
+</section>
+
+<div class="sec-header s5">
+  <span class="sec-badge">PILLAR 5</span>
+  <span class="sec-title">Complication Management</span>
+</div>
+
+<section class="topic s5" id="p5a">
+  <div class="topic-header"><span class="topic-num">5.1</span><h2>Complication 1: Leak &amp; Re-Perforation</h2></div>
+  <ul>
+    <li><strong>Recognition:</strong> Sudden return of peritonitis or high-volume bilious output in a drain.</li>
+    <li><strong>Correction:</strong> Emergency return to theatre. Redo patch or formal resection.</li>
+  </ul>
+</section>
+
+<section class="topic s5" id="p5b">
+  <div class="topic-header"><span class="topic-num">5.2</span><h2>Complication 2: Subphrenic Abscess</h2></div>
+  <ul>
+    <li><strong>Recognition:</strong> Swinging fever, tachycardia, and "hiccups" on POD5-7.</li>
+    <li><strong>Correction:</strong> CT-guided percutaneous drainage and targeted IV antibiotics.</li>
+  </ul>
+</section>
+
+<div class="rapid-ref" id="rapid">
+  <h3>Rapid Reference — High-Yield Board Facts</h3>
+  <table>
+    <thead><tr><th>Topic</th><th>Key Fact</th></tr></thead>
+    <tbody>
+      <tr><td>Boey Score 3 Mortality</td><td><strong>> 80%</strong> (Requires frank palliation discussion).</td></tr>
+      <tr><td>Free Air on CXR</td><td>Visible in only <strong>75%</strong> of cases.</td></tr>
+      <tr><td>Suture Orientation</td><td><strong>Longitudinal</strong> to prevent stricture.</td></tr>
+      <tr><td>Gastric Ulcer Rule</td><td><strong>MANDATORY BIOPSY</strong> (5-10% cancer risk).</td></tr>
+      <tr><td>H. pylori Impact</td><td>Eradication reduces recurrence from 30% to <strong>< 5%</strong>.</td></tr>
+      <tr><td>Valentino Sign</td><td>PPU mimicking <strong>Appendicitis</strong> (fluid in paracolic gutter).</td></tr>
+      <tr><td>Bile in Drain POD 3</td><td>Indicates <strong>Repair Breakdown</strong>. Order CT.</td></tr>
+      <tr><td>Steroid Users</td><td>High risk for <strong>"Silent Perforation"</strong>.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
 </main>
 
 <button id="top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 
+<script src="../../js/navigation.js"></script>
 <script>
-  (function() {
-    // Navigation & Theme
-    const mainNav = document.getElementById('mainNav');
-    const themeToggle = document.getElementById('themeToggle');
-    const moonIcon = document.getElementById('moonIcon');
-    const sunIcon = document.getElementById('sunIcon');
-    
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 50) mainNav?.classList.add('scrolled');
-      else mainNav?.classList.remove('scrolled');
-    });
-    
-    function applyTheme(theme) {
-      if (theme === 'dark') {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        if(moonIcon) moonIcon.style.display = 'none';
-        if(sunIcon) sunIcon.style.display = 'block';
-      } else {
-        document.documentElement.removeAttribute('data-theme');
-        if(sunIcon) sunIcon.style.display = 'none';
-        if(moonIcon) moonIcon.style.display = 'block';
-      }
-    }
-    
-    themeToggle?.addEventListener('click', () => {
-      const isDark = document.documentElement.hasAttribute('data-theme');
-      const newTheme = isDark ? 'light' : 'dark';
-      applyTheme(newTheme);
-      localStorage.setItem('sih-theme', newTheme);
-    });
+const progressBar = document.getElementById('progress-bar');
+const topBtn = document.getElementById('top-btn');
+const navItems = document.querySelectorAll('.nav-item');
+const sections = document.querySelectorAll('.topic[id], .rapid-ref[id]');
 
-    // Sidebar & Progress
-    const progressBar = document.getElementById('progress-bar');
-    const topBtn = document.getElementById('top-btn');
-    const sections = document.querySelectorAll('.topic[id], .rapid-ref[id]');
-    const navItems = document.querySelectorAll('.nav-item');
-    
-    window.toggleSidebar = () => document.body.classList.toggle('sidebar-open');
-    window.closeSidebar = () => document.body.classList.remove('sidebar-open');
-    
-    window.addEventListener('scroll', () => {
-      const st = window.scrollY;
-      const dh = document.documentElement.scrollHeight - window.innerHeight;
-      if (progressBar) progressBar.style.transform = `scaleX(${st / dh})`;
-      if (topBtn) topBtn.classList.toggle('show', st > 400);
-      
-      let current = '';
-      sections.forEach(s => { if (st >= s.offsetTop - 120) current = s.id; });
-      navItems.forEach(n => n.classList.toggle('active', n.getAttribute('href') === '#' + current));
-    });
+window.addEventListener('scroll', () => {
+  const st = window.scrollY;
+  const dh = document.documentElement.scrollHeight - window.innerHeight;
+  if (progressBar) progressBar.style.transform = `scaleX(${st / dh})`;
+  if (topBtn) topBtn.classList.toggle('show', st > 400);
+  
+  let current = '';
+  sections.forEach(s => { if (st >= s.offsetTop - 120) current = s.id; });
+  navItems.forEach(n => { n.classList.toggle('active', n.getAttribute('href') === '#' + current); });
+});
 
-    window.openMobNav = () => {
-      document.getElementById('mobNavOverlay').style.display = 'block';
-      setTimeout(() => document.getElementById('mobNavSheet').classList.add('open'), 10);
-      document.body.style.overflow = 'hidden';
-    };
-    window.closeMobNav = () => {
-      document.getElementById('mobNavSheet').classList.remove('open');
-      setTimeout(() => { document.getElementById('mobNavOverlay').style.display = 'none'; }, 300);
-      document.body.style.overflow = '';
-    };
+function filterNav(query) {
+  const q = query.toLowerCase();
+  navItems.forEach(item => { item.style.display = (!q || item.textContent.toLowerCase().includes(q)) ? 'block' : 'none'; });
+}
 
-    navItems.forEach(item => {
-      item.addEventListener('click', e => {
-        e.preventDefault();
-        closeSidebar();
-        const target = document.querySelector(item.getAttribute('href'));
-        if (target) window.scrollTo({ top: target.offsetTop - 100, behavior: 'smooth' });
-      });
-    });
-  })();
+navItems.forEach(item => {
+  item.addEventListener('click', e => {
+    e.preventDefault();
+    if(typeof closeSidebar === 'function') closeSidebar();
+    const target = document.querySelector(item.getAttribute('href'));
+    if (target) window.scrollTo({ top: target.getBoundingClientRect().top - 80, behavior: 'smooth' });
+  });
+});
+
+document.querySelectorAll('.topic').forEach((el, i) => { el.style.animationDelay = `${i * 0.03}s`; });
 </script>
 </body>
 </html>

@@ -150,7 +150,7 @@ a:hover {
   align-items: center;
   justify-content: space-between;
   padding: 0 40px;
-  z-index: 1000;
+  z-index: 2000;
   background: var(--glass-bg);
   backdrop-filter: var(--nav-backdrop-filter);
   -webkit-backdrop-filter: var(--nav-backdrop-filter);
@@ -160,8 +160,9 @@ a:hover {
 
 .nav.scrolled {
   height: 64px;
-  background: rgba(250, 247, 242, 0.9);
+  background: var(--bg-primary);
   box-shadow: var(--shadow-md);
+  border-bottom: 1px solid var(--border-color);
 }
 
 .nav-left, .nav-right {
@@ -229,16 +230,18 @@ a:hover {
 .nav-links-pill a {
   font-size: .78rem;
   font-weight: 600;
-  color: var(--text-secondary);
+  color: var(--text-primary);
   text-decoration: none;
   padding: 8px 16px;
   border-radius: 100px;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  opacity: 0.75;
 }
 
 .nav-links-pill a:hover {
-  color: #f0d080 !important;
+  color: var(--brand-gold) !important;
   background: rgba(184, 146, 42, 0.1);
+  opacity: 1;
 }
 
 .nav-links-pill a.active {

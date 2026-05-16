@@ -4,449 +4,246 @@
  *
  * Schema per note object:
  *   id          {string}   unique slug
- *   title       {string}   display title (HTML entities allowed)
+ *   title       {string}   display title
  *   kicker      {string}   small label above title
- *   specialty   {string[]} filter keys — must match filter-bar buttons:
- *                          'emergency' | 'hpb' | 'colorectal' | 'peds' |
- *                          'periop' | 'ortho' | 'basics'
- *   description {string}   one-paragraph summary (plain text, no HTML)
- *   tags        {string[]} chip labels; prefix with 'red:' for red chips
- *   pages       {string}   footer left label (e.g. "5 Sections", "6 pages")
+ *   specialty   {string[]} filter keys
+ *   description {string}   one-paragraph summary
+ *   tags        {string[]} chip labels
+ *   pages       {string}   footer left label
  *   type        {string}   'web' | 'telegram'
- *                          web      → green border, "Read Now →" button
- *                          telegram → gold border, "Download Free" button
  *   url         {string}   href for the CTA button
  *   isNew       {boolean}  show "New" badge on kicker
  *   tab         {string}   'highjield' | 'operative'
  *
- * Operative-tab extras (tab === 'operative'):
- *   opKicker    {string}   specialty line under card title
- *   opBadge     {string}   badge label (e.g. "Essential")
+ * Operative-tab extras:
+ *   opKicker    {string}   specialty line
+ *   opBadge     {string}   badge label
  *   opMeta      {string}   right-side footer text
  */
 
 window.NOTES_DATA = {
 
-  /* ─────────────────────────────────────────────
-     TAB 1 — HIGH-YIELD NOTES
-  ───────────────────────────────────────────── */
+  /* ── HIGH-YIELD NOTES ── */
   highjield: [
     {
-      id: 'ortho-trauma',
+      id: 'hy-ortho-trauma',
       title: 'Orthopaedic Trauma',
-      kicker: 'SIH Monograph Series',
+      kicker: 'Surgical High-Yield Notes',
       specialty: ['ortho'],
-      description: '3 volumes, 29 topics. Pelvic ring fractures, compartment syndrome, open fractures, damage control orthopaedics, spine emergencies, and paediatric orthopaedics. ABSITE & MRCS board review.',
+      description: '3 volumes, 29 topics. Pelvic ring fractures, compartment syndrome, open fractures, damage control orthopaedics, and spine emergencies.',
       tags: ['red:Trauma', 'red:Emergencies', 'Polytrauma', 'Paediatrics'],
       pages: '3 volumes',
       type: 'web',
-      url: 'notes/ortho_trauma.html',
+      url: 'notes/Surgical High-Yield Notes/ortho_trauma.html',
       isNew: true
     },
     {
-      id: 'appendicitis-2025',
+      id: 'hy-appendicitis',
       title: 'Appendicitis 2025',
-      kicker: 'SIH Monograph Series',
+      kicker: 'Surgical High-Yield Notes',
       specialty: ['emergency'],
-      description: 'Master Monograph. Surgical anatomy, technical steps (Lap/Open/Robotic), AIR/Alvarado scores, landmark trials (APPAC, CODA), and high-order board review viva scenarios.',
+      description: 'Master Monograph. Surgical anatomy, technical steps, landmark trials (APPAC, CODA), and high-order board review viva scenarios.',
       tags: ['red:Laparoscopy', 'red:WSES 2020', 'AIR Score', 'CODA'],
       pages: '5 Sections',
       type: 'web',
-      url: 'notes/appendicitis_2025_notebook.html',
+      url: 'notes/Surgical High-Yield Notes/appendicitis_2025_notebook.html',
       isNew: true
     },
     {
-      id: 'anesthesia-periop-monograph',
-      title: 'Anesthesia &amp; Perioperative Care',
-      kicker: 'SIH Monograph Series',
+      id: 'hy-anesthesia',
+      title: 'Anesthesia & Perioperative Care',
+      kicker: 'Surgical High-Yield Notes',
       specialty: ['periop'],
-      description: 'Interactive dashboard. Airway, pharmacology, RSI, anesthesia types, complications, ICU basics. LEMON score, Mallampati, Cormack-Lehane. Board review MCQs included.',
+      description: 'Interactive dashboard. Airway, pharmacology, RSI, Mallampati, Cormack-Lehane, and ICU basics for the surgical resident.',
       tags: ['red:RSI', 'red:Airway', 'LEMON', 'Mallampati', 'ICU'],
       pages: '5 topics + MCQ',
       type: 'web',
-      url: 'notes/Anesthesia & Perioperative Care.html',
+      url: 'notes/Surgical High-Yield Notes/Anesthesia & Perioperative Care.html',
       isNew: true
     },
     {
-      id: 'colorectal-notebook',
-      title: 'Colorectal &amp; Anal Surgery',
-      kicker: 'SIH Monograph Series',
-      specialty: ['colorectal'],
-      description: '6 monographs. Benign polyps, FAP, Lynch syndrome, CRC, rectal cancer, CRLM, anal tumors, Fournier\'s. ABSITE · MRCS · FRCS board review with integrated viva Q&A and trial data.',
-      tags: ['red:TME', 'red:CRC', 'Lynch', 'CRLM', 'Nigro'],
-      pages: '6 monographs',
-      type: 'web',
-      url: 'notes/colorectal_anal_surgery.html',
-      isNew: true
-    },
-    {
-      id: 'colorectal-anal-surgery',
-      title: 'Colorectal &amp; Anal Surgery',
-      kicker: 'SIH Monograph Series',
-      specialty: ['colorectal'],
-      description: 'Comprehensive clinical notes and operative frameworks for major colorectal pathologies.',
-      tags: ['red:Colorectal', 'Surgical Pathology'],
-      pages: 'Monograph',
-      type: 'web',
-      url: 'notes/colorectal_anal_surgery.html',
-      isNew: true
-    },
-    {
-      id: 'abdominal-trauma',
-      title: 'Abdominal Trauma',
-      kicker: 'SIH Monograph Series',
-      specialty: ['emergency'],
-      description: 'Master Monograph. Blunt and penetrating abdominal trauma. Splenic and renal injuries, AAST grading, management of liver trauma, and the damage control laparotomy approach.',
-      tags: ['red:Trauma', 'red:Splenic Injury', 'Renal Trauma', 'AAST Grading'],
-      pages: 'Monograph',
-      type: 'web',
-      url: 'notes/Surgical Operative Approach/Abdominal Trauma.html',
-      isNew: true
-    },
-    {
-      id: 'bo-res',
-      title: 'Penetrating & Blunt Abdominal Trauma',
-      kicker: 'SIH Monograph Series',
-      specialty: ['emergency'],
-      description: 'Damage Control, Diagnostic Pathways, and Operative Atlas for blunt and penetrating trauma.',
-      tags: ['red:Trauma', 'Damage Control', 'AAST'],
-      pages: 'Monograph',
-      type: 'web',
-      url: 'notes/Surgical Operative Approach/BO res.html',
-      isNew: true
-    },
-    {
-      id: 'splenic-renal-trauma',
-      title: 'Splenic &amp; Renal Trauma',
-      kicker: 'SIH Monograph Series',
-      specialty: ['emergency'],
-      description: 'Technical Monograph. AAST organ injury grading, non-operative management criteria, angioembolization indications, splenorrhaphy vs. splenectomy, and renal trauma decision-making.',
-      tags: ['red:Trauma', 'red:AAST Grading', 'Splenectomy', 'NOM'],
-      pages: 'Monograph',
-      type: 'web',
-      url: 'notes/Surgical Operative Approach/SPLENIC & RENAL TRAUMA.html',
-      isNew: true
-    },
-    {
-      id: 'anal-surgical-procedures',
-      title: 'Anal Surgical Procedures',
-      kicker: 'SIH Monograph Series',
-      specialty: ['colorectal'],
-      description: 'Operative monograph. Haemorrhoidectomy (Milligan-Morgan & Ferguson), anorectal abscess drainage, and fistula-in-ano surgery (Parks classification, LIFT, Seton). Pre-op workup and risk stratification.',
-      tags: ['red:Haemorrhoids', 'red:Fistula-in-Ano', 'Abscess', 'Parks Classification'],
-      pages: '4 Procedures',
-      type: 'web',
-      url: 'notes/anal Surgical Procedures Monograph.html',
-      isNew: true
-    },
-    {
-      id: 'whipples-monograph',
-      title: 'Pancreaticoduodenectomy (Whipple\'s)',
-      kicker: 'SIH Monograph Series',
+      id: 'hy-thyroid',
+      title: 'Goiter & Thyroid Pathology',
+      kicker: 'Surgical High-Yield Notes',
       specialty: ['hpb'],
-      description: 'Master Monograph. Systematic task analysis of the Whipple procedure. Kocherization, SMV/Portal vein dissection, and the "Big Three" reconstructions (PJ, HJ, GJ).',
-      tags: ['red:Whipple', 'red:HPB', 'Reconstruction', 'SMV'],
-      pages: 'Interactive',
+      description: 'High-yield pathology and surgical management of thyroid disorders. Benign nodules, toxic goiters, and thyroid malignancies.',
+      tags: ['red:Thyroid', 'Endocrine', 'Pathology'],
+      pages: 'Monograph',
       type: 'web',
-      url: "notes/Surgical Operative Approach/Pancreaticoduodenectomy (Whipple's Procedure) Monograph.html",
+      url: 'notes/Surgical High-Yield Notes/goiter & thyroid.html',
       isNew: true
     },
     {
-      id: 'ppu-monograph',
-      title: 'Repair of Perforated Peptic Ulcer',
-      kicker: 'SIH Monograph Series',
-      specialty: ['emergency'],
-      description: 'Technical Monograph. From resuscitation to the Graham Patch. Decision making for conservative management vs. surgical repair, and H. pylori eradication.',
-      tags: ['red:PPU', 'red:Graham Patch', 'Emergency', 'Omental Patch'],
-      pages: 'Interactive',
-      type: 'web',
-      url: 'notes/Surgical Operative Approach/Repair of Perforated Peptic Ulcer Monograph.html',
-      isNew: true
-    },
-    {
-      id: 'cholecystectomy-monograph',
-      title: 'Laparoscopic Cholecystectomy',
-      kicker: 'SIH Monograph Series',
-      specialty: ['hpb'],
-      description: 'Technical Monograph. Achieving the Critical View of Safety, Calot\'s dissection, and the bail-out algorithm for the difficult gallbladder. Biliary anatomy and safe laparoscopy.',
-      tags: ['red:CVS', 'red:Biliary', 'Calot', 'Laparoscopy'],
-      pages: 'Interactive',
-      type: 'web',
-      url: 'notes/Surgical Operative Approach/Cholecystectomy Monograph.html',
-      isNew: true
-    },
-    {
-      id: 'drain-placement-monograph',
-      title: 'Surgical Drain Placement',
-      kicker: 'SIH Monograph Series',
-      specialty: ['basics'],
-      description: 'Technical Monograph. Indications, types of drains (passive vs active), placement techniques, and "The Drain Game" exit strategy for the surgical resident.',
-      tags: ['red:Drains', 'red:JP Drain', 'Basic Tech', 'Resident Guide'],
-      pages: 'Interactive',
-      type: 'web',
-      url: 'notes/Surgical Operative Approach/Surgical Drain Placement Monograph.html',
-      isNew: true
-    },
-    {
-      id: 'hpb-tumours-library',
+      id: 'hy-hpb-tumours',
       title: 'HPB Tumours Master Library',
-      kicker: 'SIH Master Library',
+      kicker: 'Surgical High-Yield Notes',
       specialty: ['hpb'],
-      description: 'Comprehensive hepatopancreatobiliary oncology. Hepatocellular carcinoma, cholangiocarcinoma, pancreatic adenocarcinoma, GIST, and ampullary tumours. Staging, resectability criteria, and landmark trials.',
+      description: 'Comprehensive hepatopancreatobiliary oncology. Hepatocellular carcinoma, cholangiocarcinoma, pancreatic adenocarcinoma, and GIST.',
       tags: ['red:HCC', 'red:Pancreatic Ca', 'Bismuth', 'Resectability'],
       pages: 'Master Library',
       type: 'telegram',
-      url: 'https://t.me/sugicalInsightHub',
+      url: 'https://t.me/surgicalInsightHub',
       isNew: true
     },
     {
-      id: 'basic-surgical-techniques',
-      title: 'Basic Surgical Techniques',
-      kicker: 'SIH Master Library',
+      id: 'hy-residency-books',
+      title: 'Residency Books & Tools',
+      kicker: 'Surgical Residency Journal',
       specialty: ['basics'],
-      description: 'The resident\'s practical bible. Knot tying, suture selection, tissue handling, wound closure, drain placement, stoma formation, and operative setup. Zero theory — all technique.',
-      tags: ['red:Knot Tying', 'red:Sutures', 'Drains', 'Stoma'],
-      pages: 'Master Library',
-      type: 'telegram',
-      url: 'https://t.me/sugicalInsightHub',
-      isNew: true
-    },
-    {
-      id: 'basics-vol1',
-      title: 'All I Need For Basics Surgery — Vol 1',
-      kicker: 'SIH Master Library',
-      specialty: ['basics'],
-      description: 'Foundations for the surgical resident. Fluid management, wound healing, surgical infection, nutritional support, blood transfusion, and pre/postoperative care. Board review integrated.',
-      tags: ['red:Fluids', 'red:Wound Healing', 'Nutrition', 'Infection'],
-      pages: 'Volume 1',
-      type: 'telegram',
-      url: 'https://t.me/sugicalInsightHub',
-      isNew: true
-    },
-    {
-      id: 'basics-vol2',
-      title: 'All I Need For Basics Surgery — Vol 2',
-      kicker: 'SIH Master Library',
-      specialty: ['basics'],
-      description: 'Core surgical pathology and decision-making. Hernias, thyroid and parathyroid, adrenal, breast, soft tissue tumours, and skin lesions. High-yield for MRCS, ABSITE &amp; FRCS.',
-      tags: ['red:Hernias', 'red:Thyroid', 'Breast', 'Adrenal'],
-      pages: 'Volume 2',
-      type: 'telegram',
-      url: 'https://t.me/sugicalInsightHub',
-      isNew: true
-    },
-    {
-      id: 'arm-peds',
-      title: 'Anorectal Malformation',
-      kicker: 'Paediatric Surgery',
-      specialty: ['peds'],
-      description: 'Peña/Krickenbeck classification, VACTERL, PSARP steps, colostomy principles, cloaca management, bowel management programme.',
-      tags: ['red:Krickenbeck', 'red:PSARP', 'Cloaca', 'VACTERL'],
-      pages: 'Monograph',
+      description: 'The ultimate guide to textbooks, atlases, and digital tools for the surgical resident. Strategize your study journey from Intern year to Fellowship.',
+      tags: ['red:Education', 'Textbooks', 'Digital Tools', 'Residency'],
+      pages: 'Blog Article',
       type: 'web',
-      url: 'notes/ARM_ResidencyJournal.html',
-      isNew: true
-    },
-    {
-      id: 'bowel-obstruction',
-      title: 'Bowel Obstruction',
-      kicker: 'Emergency Surgery',
-      specialty: ['emergency'],
-      description: 'SBO/LBO, Bologna criteria, WSES 2020 algorithm, strangulation recognition, operative decision-making.',
-      tags: ['red:WSES 2020', 'Bologna', 'Resident Journal'],
-      pages: 'Monograph',
-      type: 'web',
-      url: 'notes/BO_ResidencyJournal_v3.html',
-      isNew: true
-    },
-    {
-      id: 'pud-perforation',
-      title: 'PUD Perforation',
-      kicker: 'Emergency Surgery',
-      specialty: ['emergency'],
-      description: 'Boey score, omental patch technique, resection indications, H. pylori eradication protocol.',
-      tags: ['red:Boey Score', 'Omental Patch', '6 pages'],
-      pages: 'Technical Monograph',
-      type: 'web',
-      url: 'notes/Surgical Operative Approach/Repair of Perforated Peptic Ulcer Monograph.html',
-      isNew: false
-    },
-    {
-      id: 'fourniers-gangrene',
-      title: 'Fournier\'s Gangrene',
-      kicker: 'Emergency Surgery',
-      specialty: ['emergency', 'colorectal'],
-      description: 'FGSI scoring, debridement extent, reconstruction timing, colostomy indications, mortality predictors.',
-      tags: ['red:FGSI', 'Debridement', '5 pages'],
-      pages: '5 pages',
-      type: 'telegram',
-      url: 'https://t.me/sugicalInsightHub',
-      isNew: false
-    },
-    {
-      id: 'choledocholithiasis',
-      title: 'Choledocholithiasis',
-      kicker: 'HPB Surgery',
-      specialty: ['hpb'],
-      description: 'ASGE 2019 risk stratification, ERCP indications, laparoscopic CBD exploration, MRCP pathway.',
-      tags: ['red:ASGE 2019', 'ERCP', '6 pages'],
-      pages: 'Technical Monograph',
-      type: 'web',
-      url: 'notes/Surgical Operative Approach/Cholecystectomy Monograph.html',
-      isNew: false
-    },
-    {
-      id: 'hpb-surgery',
-      title: 'HPB Surgery',
-      kicker: 'HPB Surgery',
-      specialty: ['hpb'],
-      description: 'Biliary anatomy, BDI Strasberg, cholangiocarcinoma Bismuth-Corlette, Whipple steps, portal HTN.',
-      tags: ['red:Strasberg', 'Whipple', '7 pages'],
-      pages: 'Technical Monograph',
-      type: 'web',
-      url: "notes/Surgical Operative Approach/Pancreaticoduodenectomy (Whipple's Procedure) Monograph.html",
-      isNew: false
-    },
-    {
-      id: 'anesthesia-periop',
-      title: 'Anesthesia &amp; Perioperative Care',
-      kicker: 'Perioperative Care',
-      specialty: ['periop'],
-      description: 'RSI, airway decision tree, regional vs general, postop pain protocols, ICU handover essentials.',
-      tags: ['red:RSI', 'ASA', 'Master Class'],
-      pages: 'Monograph',
-      type: 'web',
-      url: 'notes/Anesthesia & Perioperative Care.html',
-      isNew: true
-    },
-    {
-      id: 'ct-imaging',
-      title: 'High-Yield CT Imaging Findings',
-      kicker: 'Imaging',
-      specialty: ['emergency'],
-      description: 'Free air, pneumatosis, volvulus, closed loop, ischaemia — rapid surgical pattern recognition.',
-      tags: ['CT Pearls', 'Free Air', '5 pages'],
-      pages: '5 pages',
-      type: 'telegram',
-      url: 'https://t.me/sugicalInsightHub',
-      isNew: false
-    },
-    {
-      id: 'anesthesia-illustrated',
-      title: 'Anesthesia Illustrated Monograph',
-      kicker: 'Perioperative Care',
-      specialty: ['periop'],
-      description: 'Heavily illustrated guide to airway management, surgical anesthesia, and critical care monitoring. Full clinical dashboards.',
-      tags: ['red:Illustrated', 'Airway', 'ICU'],
-      pages: 'Monograph',
-      type: 'web',
-      url: 'notes/Anesthesia_Perioperative_Care_Illustrated_Monograph.files/header.html',
+      url: 'blog/residency-books-and-tools.html',
       isNew: true
     }
   ],
 
-  /* ─────────────────────────────────────────────
-     TAB 2 — OPERATIVE APPROACH
-  ───────────────────────────────────────────── */
+  /* ── OPERATIVE PLAYBOOKS ── */
   operative: [
     {
-      id: 'op-inguinal-hernia',
+      id: 'op-arm',
+      title: 'Anorectal Malformation (PSARP)',
+      opKicker: 'Paediatric Surgery · Colorectal',
+      description: 'Systematic approach to PSARP. Peña classification, operative steps for high vs low malformations, and the critical view of the rectum-urethra interface.',
+      opBadge: 'Paediatric Core',
+      opMeta: 'PSARP Steps',
+      url: 'notes/Surgical Operative Approach/ARM Monograph.html'
+    },
+    {
+      id: 'op-abdominal-trauma',
+      title: 'Splenic & Renal Trauma',
+      opKicker: 'Trauma · Emergency',
+      description: 'Management of the most commonly injured solid organs. AAST grading, non-operative pathways, and the critical Gerota\'s fascia control sequence.',
+      opBadge: 'Gold Standard',
+      opMeta: 'Pillar 1-5 Monograph',
+      url: 'notes/Surgical Operative Approach/Abdominal Trauma.html'
+    },
+    {
+      id: 'op-damage-control',
+      title: 'Damage Control Laparotomy',
+      opKicker: 'Emergency · Trauma',
+      description: 'Rapid control of hemorrhage and contamination. Systematic 4-quadrant packing and the physiological "Game Plan" for the triad of death.',
+      opBadge: 'Gold Standard',
+      opMeta: 'Critical Framework',
+      url: 'notes/Surgical Operative Approach/Damage Control Laparotomy.html'
+    },
+    {
+      id: 'op-hemicolectomy',
+      title: 'Right & Left Hemicolectomy',
+      opKicker: 'Colorectal · Oncology',
+      description: 'Standardized oncological resection. Vascular control, safe ureteric identification, and the "Pillar" system for safe anastomosis.',
+      opBadge: 'Essential',
+      opMeta: 'Pillar 1-5 Monograph',
+      url: 'notes/Surgical Operative Approach/Hemicolectomy.html'
+    },
+    {
+      id: 'op-stoma',
+      title: 'Ileostomy & Colostomy Reversal',
+      opKicker: 'Colorectal · General',
+      description: 'Transitioning from temporary stoma to restoration of continuity. Mobilization techniques and the "Game Plan" for the difficult stoma site.',
+      opBadge: 'Essential',
+      opMeta: 'Technical Playbook',
+      url: 'notes/Surgical Operative Approach/Stoma Reversal.html'
+    },
+    {
+      id: 'op-hernia',
       title: 'Open Inguinal Hernia Repair',
       opKicker: 'General Surgery · Groin',
-      description: 'Lichtenstein & Shouldice repair. Nerve identification, sac management, mesh fixation, bail-out strategies.',
+      description: 'Mastering the Lichtenstein tension-free repair and Shouldice tissue repair. Systematic identification of the \'Big Three\' nerves.',
       opBadge: 'Essential',
       opMeta: 'Pillar 1-5 Monograph',
       url: 'notes/Surgical Operative Approach/Open Inguinal Hernia Repair.html'
     },
     {
-      id: 'op-thyroidectomy',
+      id: 'op-thyroid',
       title: 'Thyroidectomy',
-      opKicker: 'Head &amp; Neck · Endocrine',
-      description: 'Total, Hemi &amp; Completion thyroidectomy. RLN identification, parathyroid preservation, Berry\'s Ligament, post-op hematoma emergency.',
+      opKicker: 'Head & Neck · Endocrine',
+      description: 'Total, Hemi & Completion thyroidectomy. RLN identification, parathyroid preservation, Berry\'s Ligament, and managing the post-op hematoma emergency.',
       opBadge: 'Essential',
       opMeta: 'ATA Guidelines · IONM',
       url: 'notes/Surgical Operative Approach/Thyroidectomy.html'
     },
     {
-      id: 'op-damage-control',
-      title: 'Damage Control Laparotomy',
-      opKicker: 'Trauma · Emergency',
-      description: 'The abbreviated laparotomy game plan. Haemorrhage &amp; contamination control, the lethal triad, and the ICU resuscitation phase.',
-      opBadge: 'Essential',
+      id: 'op-whipple',
+      title: 'Whipple Procedure',
+      opKicker: 'HPB Surgery · Oncology',
+      description: 'Mastering the pancreaticoduodenectomy. Systemic approach to resection phases, reconstruction (PJ, HJ, GJ), and the critical view for vascular safety.',
+      opBadge: 'High Complexity',
       opMeta: 'Pillar 1-5 Monograph',
-      url: 'notes/Surgical Operative Approach/Damage Control Laparotomy.html'
+      url: 'notes/Surgical Operative Approach/Pancreaticoduodenectomy (Whipple\'s Procedure) Monograph.html'
     },
     {
-      id: 'op-hemicolectomy',
-      title: 'Right &amp; Left Hemicolectomy',
-      opKicker: 'Colorectal · Oncology',
-      description: 'Systematic medial-to-lateral dissection, vascular ligation (CME/D3), and anastomosis techniques.',
-      opBadge: 'Essential',
-      opMeta: 'Technical Pearls',
-      url: 'notes/Surgical Operative Approach/Hemicolectomy.html'
-    },
-    {
-      id: 'op-stoma-reversal',
-      title: 'Ileostomy &amp; Colostomy Reversal',
-      opKicker: 'Colorectal · General',
-      description: 'Pre-op workup (distal loopogram), mobilization techniques, and hand-sewn vs stapled anastomosis.',
-      opBadge: 'Essential',
-      opMeta: 'Resident Guide',
-      url: 'notes/Surgical Operative Approach/Stoma Reversal.html'
-    },
-    {
-      id: 'op-cholecystectomy',
+      id: 'op-chole',
       title: 'Laparoscopic Cholecystectomy',
       opKicker: 'HPB · Laparoscopy',
-      description: 'Critical View of Safety, Calot\'s dissection, and the bail-out algorithm for the difficult gallbladder.',
+      description: 'The standard of care for biliary disease. Achieving the Critical View of Safety, Calot\'s dissection, and the bail-out algorithm for the difficult gallbladder.',
       opBadge: 'Essential',
-      opMeta: '12 Technical Pearls',
+      opMeta: 'Technical Pearls',
       url: 'notes/Surgical Operative Approach/Cholecystectomy Monograph.html'
     },
     {
-      id: 'op-whipples',
-      title: 'Whipple\'s Procedure',
-      opKicker: 'HPB · Oncology',
-      description: 'Pancreaticoduodenectomy game plan. Kocherization, SMV dissection, and the three reconstructions.',
-      opBadge: 'Master Series',
-      opMeta: 'HPB Monograph',
-      url: "notes/Surgical Operative Approach/Pancreaticoduodenectomy (Whipple's Procedure) Monograph.html"
+      id: 'op-colorectal',
+      title: 'Colorectal & Anal Surgery',
+      opKicker: 'Colorectal · Proctology',
+      description: 'Masterclass covering TME planes, CRM management, Nigro protocol, and the "Pillar" system for oncological resections.',
+      opBadge: 'Essential',
+      opMeta: 'Pillar 1-5 Monograph',
+      url: 'notes/Surgical Operative Approach/Colorectal & Anal Surgery Monograph.html'
     },
     {
-      id: 'op-ppu',
+      id: 'op-bowel-obstr',
+      title: 'Bowel Obstruction Approach',
+      opKicker: 'Emergency Surgery · GI',
+      description: 'The Bologna algorithm and operative decision-making. From trial of Gastrografin to the "The Point of No Return" in strangulation.',
+      opBadge: 'Emergency Core',
+      opMeta: 'Bologna 2020',
+      url: 'notes/Surgical Operative Approach/Bowel Obstruction Monograph.html'
+    },
+    {
+      id: 'op-peptic-ulcer',
       title: 'Repair of Perforated Peptic Ulcer',
       opKicker: 'Emergency · Upper GI',
-      description: 'The Graham Patch and beyond. Resuscitation, operative steps, and post-op care.',
+      description: 'The Graham Patch and beyond. Resuscitation game plan, operative identification of the perforation, and decision making for conservative management.',
       opBadge: 'Essential',
-      opMeta: 'Technical Guide',
+      opMeta: 'Pillar 1-5 Monograph',
       url: 'notes/Surgical Operative Approach/Repair of Perforated Peptic Ulcer Monograph.html'
     },
     {
-      id: 'op-drain-placement',
+      id: 'op-drains',
       title: 'Surgical Drain Placement',
       opKicker: 'Basic Surgical Techniques',
-      description: 'Indications, types of drains, and placement techniques. Jackson-Pratt vs. Penrose.',
+      description: 'Indications, types of drains (passive vs active), placement techniques, and "The Drain Game" exit strategy for the surgical resident.',
       opBadge: 'Fundamentals',
-      opMeta: 'Skills Lab',
+      opMeta: 'Resident Guide',
       url: 'notes/Surgical Operative Approach/Surgical Drain Placement Monograph.html'
     },
     {
-      id: 'op-fracture-management',
-      title: 'Fracture Management',
-      opKicker: 'Orthopaedic Trauma',
-      description: 'ORIF, Closed Reduction, Nailing, External Fixation, and Skeletal Traction.',
-      opBadge: 'Essential',
-      opMeta: 'Orthopaedics',
-      url: 'notes/Surgical Operative Approach/Fracture Management Monograph.html'
+      id: 'op-desarticulation',
+      title: 'Lower Limb Disarticulation',
+      opKicker: 'Orthopaedics · Trauma',
+      description: 'Operative approach to hip and knee disarticulations. Vascular control, flap design for optimal healing, and functional outcomes.',
+      opBadge: 'Advanced',
+      opMeta: 'Technical Playbook',
+      url: 'notes/Surgical Operative Approach/Desarticulation.html'
     },
     {
-      id: 'op-desarticulation',
-      title: 'Disarticulation',
-      opKicker: 'Vascular & Trauma',
-      description: 'Shoulder, Hip, Knee, and Digit Disarticulation. Level selection and flap design.',
-      opBadge: 'Advanced',
-      opMeta: 'Amputation',
-      url: 'notes/Surgical Operative Approach/Desarticulation.html'
+      id: 'op-anal-procedures',
+      title: 'Anal Surgical Procedures',
+      opKicker: 'Colorectal · Proctology',
+      description: 'Hemorrhoidectomy, fistula-in-ano management (LIFT, Seton), and anal fissure repair. The technical atlas for high-volume proctology.',
+      opBadge: 'Essential',
+      opMeta: 'Technical Atlas',
+      url: 'notes/Surgical Operative Approach/Anal Surgical Procedures Monograph.html'
+    },
+    {
+      id: 'op-fracture',
+      title: 'Fracture Management',
+      opKicker: 'Orthopaedics · Trauma',
+      description: 'Principles of reduction, fixation, and healing. Understanding stability, biology, and the "AO" philosophy for operative intervention.',
+      opBadge: 'Essential',
+      opMeta: 'Core Skills',
+      url: 'notes/Surgical Operative Approach/Fracture Management Monograph.html'
     }
   ]
 };

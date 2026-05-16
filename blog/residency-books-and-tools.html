@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Books and Digital Tools To Read During Surgery Residency — Surgical Insight Hub</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Shared Styles -->
+  <link rel="stylesheet" href="../css/theme.css">
+  <link rel="stylesheet" href="../css/shared.css">
+  <link rel="stylesheet" href="blog.css">
+  
+  <script>
+    const savedTheme = localStorage.getItem('sih-theme') || 'light';
+    if (savedTheme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+  </script>
+  <style>
+    .book-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 24px;
+      margin: 30px 0;
+    }
+    .book-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.3s ease;
+      box-shadow: var(--shadow-sm);
+    }
+    .book-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--brand-gold);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+    }
+    .book-cover-area {
+      height: 200px;
+      background: var(--bg-secondary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .book-cover-area img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.9;
+    }
+    .book-info {
+      padding: 20px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .book-info h4 {
+      font-size: 1.1rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+      color: var(--text-primary);
+    }
+    .book-info p {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+      margin-bottom: 16px;
+      flex: 1;
+    }
+    .download-btn {
+      background: var(--brand-burgundy);
+      color: #f0d080;
+      text-decoration: none;
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: all 0.2s;
+    }
+    .download-btn:hover {
+      background: #3d2216;
+      transform: scale(1.02);
+    }
+    .download-btn svg {
+      width: 16px;
+      height: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+
+
+  <!-- Navigation -->
+  <nav class="nav" id="mainNav">
+    <div class="nav-left">
+      <a href="../index.html" class="nav-pill">
+        <div class="nav-logo-img">
+          <img src="../assets/images/Surgical_Insight_Hub_Logo.png" alt="SIH">
+        </div>
+        <div>
+          <div class="nav-brand-text">Surgical Insight Hub</div>
+          <div class="nav-brand-sub">Advanced Surgical Learning</div>
+        </div>
+      </a>
+      <div class="nav-links-pill">
+        <a href="../index.html">Home</a>
+        <a href="../notes.html">Notes</a>
+        <a href="../notes/operative_approach.html">Playbook</a>
+        <a href="../podcast.html">Podcast</a>
+        <a href="../surgery-talk.html" class="active">Surgery Talk</a>
+        <a href="../about.html">About</a>
+      </div>
+    </div>
+
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <svg id="moonIcon" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/></svg>
+        <svg id="sunIcon" style="display:none;" viewBox="0 0 24 24"><path d="M12 7a5 5 0 1 0 5 5 5.006 5.006 0 0 0-5-5zm0 8a3 3 0 1 1 3-3 3.003 3.003 0 0 1-3 3zm0-13a1 1 0 0 0-1 1v2a1 1 0 0 0 2 0V3a1 1 0 0 0-1-1zm0 18a1 1 0 0 0-1 1v2a1 1 0 0 0 2 0v-2a1 1 0 0 0-1-1zm8-11h-2a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2zm-16 0H2a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2zm13.657-5.657a1 1 0 0 0-1.414 0l-1.414 1.414a1 1 0 0 0 1.414 1.414l1.414-1.414a1 1 0 0 0 0-1.414zm-11.314 0a1 1 0 0 0 0 1.414l1.414 1.414a1 1 0 0 0 1.414-1.414L4.929 5.757a1 1 0 0 0-1.414 0zm11.314 11.314a1 1 0 0 0 0 1.414l1.414 1.414a1 1 0 0 0 1.414-1.414l-1.414-1.414a1 1 0 0 0-1.414 0zm-11.314 0a1 1 0 0 0-1.414 1.414l1.414 1.414a1 1 0 0 0 1.414-1.414l-1.414-1.414a1 1 0 0 0 0-1.414z"/></svg>
+      </button>
+      <a href="../arena.html" class="nav-btn arena-btn">MCQ Arena</a>
+      <button class="mob-nav-toggle" onclick="openMobNav()">
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mob-nav-overlay" id="mobNavOverlay" onclick="closeMobNav()"></div>
+  <div class="mob-nav-sheet" id="mobNavSheet">
+    <div class="mob-nav-handle"></div>
+    <a href="../index.html" onclick="closeMobNav()">Home</a>
+    <a href="../notes.html" onclick="closeMobNav()">Notes</a>
+    <a href="../notes/operative_approach.html" onclick="closeMobNav()">Playbook</a>
+    <a href="../podcast.html" onclick="closeMobNav()">Podcast</a>
+    <a href="../surgery-talk.html" class="active" onclick="closeMobNav()">Surgery Talk</a>
+    <a href="../arena.html" onclick="closeMobNav()">MCQ Arena</a>
+    <a href="../about.html" onclick="closeMobNav()">About</a>
+  </div>
+
+  <article>
+    <header class="blog-hero">
+      <div class="blog-meta">
+        <span class="blog-badge">Education</span>
+        <span class="blog-date">May 16, 2026</span>
+      </div>
+      <h1 class="blog-title">𝗕𝗼𝗼𝗸𝘀 𝗮𝗻𝗱 𝗗𝗶𝗴𝗶𝘁𝗮𝗹 𝗧𝗼𝗼𝗹𝘀 𝗧𝗼 𝗥𝗲𝗮𝗱 𝗗𝘂𝗿𝗶𝗻𝗴 𝗦𝘂𝗿𝗴𝗲𝗿𝘆 𝗥𝗲𝘀𝗶𝗱𝗲𝗻𝗰𝘆</h1>
+      <p class="blog-subtitle">A comprehensive guide to the must-have textbooks, atlases, and digital platforms for every level of surgical training. Strategize your study journey from Intern year to Fellowship.</p>
+    </header>
+
+    <div class="blog-content">
+      <p>I often interact with a number of residents and students who are about to enter surgery residency or are first-year PGs. “How do I study during residency?” is a question that is on every resident’s mind.</p>
+
+      <p>Surgery residency in the subcontinent is pretty unstructured. In some situations, the residency is a cakewalk with very few duties. In most situations, it is a toxic hellhole. Studying during a tough surgery residency is not easy at all.</p>
+
+      <p>The biggest challenge will be your seniors and colleagues who will use all their skills of persuasion to make sure that books remain a distant dream. The hours are long, sleep is a long-lost memory, and seniors don’t hesitate to insult your entire khaandaan. This is the reality of most residencies in India, and it doesn’t make studies any easier.</p>
+
+      <div class="clinical-pearl">
+        <strong>The Surgeon's Duty</strong>
+        Studying in residency is not a privilege, it’s a duty. Acquiring knowledge so that you can treat your patients appropriately is a fundamental duty.
+      </div>
+
+      <p>The medical community doesn't rely on a single "best" book; instead, online discussion boards (like r/Residency, Student Doctor Network, and Residency Advisor) and professional blogs reveal a distinct "tier list" based on your level of training.</p>
+
+      <p>In this article, we will detail the precise books and digital tools you need to master during your general surgery residency, categorized by how they are actually used in the hospital.</p>
+
+      <hr>
+
+      <h2>𝟭. 𝗧𝗵𝗲 "𝗡𝗶𝗴𝗵𝘁 𝗕𝗲𝗳𝗼𝗿𝗲" 𝗣𝗿𝗲𝗽 & 𝗢𝗽𝗲𝗿𝗮𝘁𝗶𝘃𝗲 𝗦𝘂𝗿𝗴𝗲𝗿𝘆 (𝗩𝗶𝘀𝘂𝗮𝗹 𝗔𝘁𝗹𝗮𝘀𝗲𝘀)</h2>
+      <p>Reading before every surgery is essential. These are the books you open to memorize the steps, incisions, and room setup before scrubbing in.</p>
+
+      <div class="book-grid">
+        <!-- Zollinger's -->
+        <div class="book-card">
+          <div class="book-cover-area">
+            <div style="background: linear-gradient(135deg, #1e3a8a, #3b82f6); width:100%; height:100%; display:flex; align-items:center; justify-content:center; color:white; font-weight:900; font-size:1.5rem; text-align:center; padding:20px;">ZOLLINGER'S</div>
+          </div>
+          <div class="book-info">
+            <h4>𝗭𝗼𝗹𝗹𝗶𝗻𝗴𝗲𝗿'𝘀 𝗔𝘁𝗹𝗮𝘀 𝗼𝗳 𝗦𝘂𝗿𝗴𝗶𝗰𝗮𝗹 𝗢𝗽𝗲𝗿𝗮𝘁𝗶𝗼𝗻𝘀</h4>
+            <p>The undisputed classic for visual learners. Legendary "one-page-per-step" format for procedural planning.</p>
+            <a href="https://t.me/surgicalInsightHub" target="_blank" class="download-btn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.89 8.22l-1.97 9.28c-.15.66-.54.82-1.08.51l-3-2.21-1.45 1.39c-.16.16-.3.3-.61.3l.21-3.05 5.56-5.02c.24-.21-.05-.33-.37-.12l-6.87 4.33-2.96-.92c-.64-.2-.66-.64.14-.95l11.57-4.46c.54-.19 1.01.13.83.94z"/></svg>
+              Download via Telegram
+            </a>
+          </div>
+        </div>
+
+        <!-- Netter's -->
+        <div class="book-card">
+          <div class="book-cover-area">
+            <div style="background: linear-gradient(135deg, #a31515, #ef4444); width:100%; height:100%; display:flex; align-items:center; justify-content:center; color:white; font-weight:900; font-size:1.5rem; text-align:center; padding:20px;">NETTER'S</div>
+          </div>
+          <div class="book-info">
+            <h4>𝗡𝗲𝘁𝘁𝗲𝗿'𝘀 𝗦𝘂𝗿𝗴𝗶𝗰𝗮𝗹 𝗔𝗻𝗮𝘁𝗼𝗺𝘆</h4>
+            <p>Pure gold for anatomy. Teaches you exactly where everything is so you don't cut the wrong vessel.</p>
+            <a href="https://t.me/surgicalInsightHub" target="_blank" class="download-btn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.89 8.22l-1.97 9.28c-.15.66-.54.82-1.08.51l-3-2.21-1.45 1.39c-.16.16-.3.3-.61.3l.21-3.05 5.56-5.02c.24-.21-.05-.33-.37-.12l-6.87 4.33-2.96-.92c-.64-.2-.66-.64.14-.95l11.57-4.46c.54-.19 1.01.13.83.94z"/></svg>
+              Download via Telegram
+            </a>
+          </div>
+        </div>
+
+        <!-- Farquharson's -->
+        <div class="book-card">
+          <div class="book-cover-area">
+            <div style="background: linear-gradient(135deg, #065f46, #10b981); width:100%; height:100%; display:flex; align-items:center; justify-content:center; color:white; font-weight:900; font-size:1.5rem; text-align:center; padding:20px;">FARQUHARSON</div>
+          </div>
+          <div class="book-info">
+            <h4>𝗙𝗮𝗿𝗾𝘂𝗵𝗮𝗿𝘀𝗼𝗻'𝘀 𝗢𝗽𝗲𝗿𝗮𝘁𝗶𝘃𝗲 𝗦𝘂𝗿𝗴𝗲𝗿𝘆</h4>
+            <p>The textbook of choice when you have very little time. Short, succinct, yet delightfully precise.</p>
+            <a href="https://t.me/surgicalInsightHub" target="_blank" class="download-btn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.89 8.22l-1.97 9.28c-.15.66-.54.82-1.08.51l-3-2.21-1.45 1.39c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.869 4.326-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.829.941z"/></svg>
+              Download via Telegram
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <hr>
+
+      <h2>𝟮. 𝗧𝗵𝗲 "𝗠𝗮𝘀𝘁𝗲𝗿𝘆" 𝗟𝗲𝘃𝗲𝗹 (𝗧𝗲𝗰𝗵𝗻𝗶𝗰𝗮𝗹 𝗦𝘁𝗿𝗮𝘁𝗲𝗴𝘆 & 𝗗𝗲𝗰𝗶𝘀𝗶𝗼𝗻 𝗠𝗮𝗸𝗶𝗻𝗴)</h2>
+      <p>Once you know the steps, you need to know why you are doing them. These books replace the basic drawings with deep technical text.</p>
+
+      <div class="book-grid">
+        <!-- Fischer's -->
+        <div class="book-card">
+          <div class="book-cover-area">
+            <div style="background: linear-gradient(135deg, #1e293b, #475569); width:100%; height:100%; display:flex; align-items:center; justify-content:center; color:white; font-weight:900; font-size:1.5rem; text-align:center; padding:20px;">FISCHER'S</div>
+          </div>
+          <div class="book-info">
+            <h4>𝗙𝗶𝘀𝗰𝗵𝗲𝗿'𝘀 𝗠𝗮𝘀𝘁𝗲𝗿𝘆 𝗼𝗳 𝗦𝘂𝗿𝗴𝗲𝗿𝘆</h4>
+            <p>The "big daddy" of operative surgery. A text atlas that explains the decision-making process in meticulous detail.</p>
+            <a href="https://t.me/surgicalInsightHub" target="_blank" class="download-btn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.89 8.22l-1.97 9.28c-.15.66-.54.82-1.08.51l-3-2.21-1.45 1.39c-.16.16-.3.3-.61.3l.21-3.05 5.56-5.02c.24-.21-.05-.33-.37-.12l-6.87 4.33-2.96-.92c-.64-.2-.66-.64.14-.95l11.57-4.46c.54-.19 1.01.13.83.94z"/></svg>
+              Download via Telegram
+            </a>
+          </div>
+        </div>
+
+        <!-- Chassin's -->
+        <div class="book-card">
+          <div class="book-card">
+            <div class="book-cover-area">
+              <div style="background: linear-gradient(135deg, #431407, #78350f); width:100%; height:100%; display:flex; align-items:center; justify-content:center; color:white; font-weight:900; font-size:1.5rem; text-align:center; padding:20px;">CHASSIN'S</div>
+            </div>
+            <div class="book-info">
+              <h4>𝗖𝗵𝗮𝘀𝘀𝗶𝗻’𝘀 𝗢𝗽𝗲𝗿𝗮𝘁𝗶𝘃𝗲 𝗦𝘁𝗿𝗮𝘁𝗲𝗴𝘆</h4>
+              <p>The strategist’s bible. Focuses entirely on errors—what can go wrong and how to prevent it during each phase.</p>
+              <a href="https://t.me/surgicalInsightHub" target="_blank" class="download-btn">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.89 8.22l-1.97 9.28c-.15.66-.54.82-1.08.51l-3-2.21-1.45 1.39c-.16.16-.3.3-.61.3l.21-3.05 5.56-5.02c.24-.21-.05-.33-.37-.12l-6.87 4.33-2.96-.92c-.64-.2-.66-.64.14-.95l11.57-4.46c.54-.19 1.01.13.83.94z"/></svg>
+                Download via Telegram
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr>
+
+      <h2>𝟯. 𝗕𝗲𝘀𝘁 𝗦𝘂𝗿𝗴𝗶𝗰𝗮𝗹 𝗔𝗻𝗮𝘁𝗼𝗺𝘆 𝗕𝗼𝗼𝗸𝘀</h2>
+      <div class="book-grid" style="grid-template-columns: 1fr;">
+        <div class="book-card" style="flex-direction: row; align-items: center;">
+          <div class="book-cover-area" style="width: 240px; height: 100%; min-height: 200px;">
+            <div style="background: linear-gradient(135deg, #1e1b4b, #312e81); width:100%; height:100%; display:flex; align-items:center; justify-content:center; color:white; font-weight:900; font-size:1.3rem; text      <h2>𝟰. 𝗧𝗵𝗲 "𝗦𝘂𝗿𝘃𝗶𝘃𝗮𝗹" 𝗚𝘂𝗶𝗱𝗲𝘀 (𝗣𝗼𝗰𝗸𝗲𝘁, 𝗘𝗺𝗲𝗿𝗴𝗲𝗻𝗰𝘆 & 𝗧𝗿𝗮𝘂𝗺𝗮)</h2>
+      <div class="book-grid">
+        <!-- Schein's -->
+        <div class="book-card">
+          <div class="book-cover-area">
+            <div style="background: linear-gradient(135deg, #7c2d12, #ea580c); width:100%; height:100%; display:flex; align-items:center; justify-content:center; color:white; font-weight:900; font-size:1.5rem; text-align:center; padding:20px;">SCHEIN'S</div>
+          </div>
+          <div class="book-info">
+            <h4>𝗦𝗰𝗵𝗲𝗶𝗻'𝘀 𝗖𝗼𝗺𝗺𝗼𝗻 𝗦𝗲𝗻𝘀𝗲</h4>
+            <p>Power-packed work for emergency general abdominal surgery. Uses simple language, quips, and anecdotes.</p>
+            <a href="https://t.me/surgicalInsightHub" target="_blank" class="download-btn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.89 8.22l-1.97 9.28c-.15.66-.54.82-1.08.51l-3-2.21-1.45 1.39c-.16.16-.3.3-.61.3l.21-3.05 5.56-5.02c.24-.21-.05-.33-.37-.12l-6.87 4.33-2.96-.92c-.64-.2-.66-.64.14-.95l11.57-4.46c.54-.19 1.01.13.83.94z"/></svg>
+              Download via Telegram
+            </a>
+          </div>
+        </div>
+
+        <!-- Top Knife -->
+        <div class="book-card">
+          <div class="book-cover-area">
+            <div style="background: linear-gradient(135deg, #450a0a, #991b1b); width:100%; height:100%; display:flex; align-items:center; justify-content:center; color:white; font-weight:900; font-size:1.5rem; text-align:center; padding:20px;">TOP KNIFE</div>
+          </div>
+          <div class="book-info">
+            <h4>𝗧𝗼𝗽 𝗞𝗻𝗶𝗳𝗲: 𝗧𝗿𝗮𝘂𝗺𝗮 𝗦𝘂𝗿𝗴𝗲𝗿𝘆</h4>
+            <p>Practical and humorously profane "how-to" manual for emergent crash laparotomies and vascular control.</p>
+            <a href="https://t.me/surgicalInsightHub" target="_blank" class="download-btn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.89 8.22l-1.97 9.28c-.15.66-.54.82-1.08.51l-3-2.21-1.45 1.39c-.16.16-.3.3-.61.3l.21-3.05 5.56-5.02c.24-.21-.05-.33-.37-.12l-6.87 4.33-2.96-.92c-.64-.2-.66-.64.14-.95l11.57-4.46c.54-.19 1.01.13.83.94z"/></svg>
+              Download via Telegram
+            </a>
+          </div>
+        </div>
+
+        <!-- Mont Reid -->
+        <div class="book-card">
+          <div class="book-cover-area">
+            <div style="background: linear-gradient(135deg, #064e3b, #059669); width:100%; height:100%; display:flex; align-items:center; justify-content:center; color:white; font-weight:900; font-size:1.5rem; text-align:center; padding:20px;">MONT REID</div>
+          </div>
+          <div class="book-info">
+            <h4>𝗦𝘂𝗿𝗴𝗶𝗰𝗮𝗹 𝗛𝗮𝗻𝗱𝗯𝗼𝗼𝗸</h4>
+            <p>The "brain in your pocket." Essential for surviving floor work, ICU rounds, and overnight calls.</p>
+            <a href="https://t.me/surgicalInsightHub" target="_blank" class="download-btn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.89 8.22l-1.97 9.28c-.15.66-.54.82-1.08.51l-3-2.21-1.45 1.39c-.16.16-.3.3-.61.3l.21-3.05 5.56-5.02c.24-.21-.05-.33-.37-.12l-6.87 4.33-2.96-.92c-.64-.2-.66-.64.14-.95l11.57-4.46c.54-.19 1.01.13.83.94z"/></svg>
+              Download via Telegram
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <hr>
+
+      <h2>𝟲. 𝗧𝗲𝘅𝘁𝗯𝗼𝗼𝗸𝘀 𝗳𝗼𝗿 𝗙𝗶𝗻𝗮𝗹 𝗘𝘅𝗮𝗺𝘀 & 𝗡𝗘𝗘𝗧 𝗦𝗦 (𝗧𝗵𝗲 " Bo𝗿𝗱 𝗣𝗿𝗲𝗽" 𝗕𝗶𝗯𝗹𝗲𝘀)</h2>
+      <div class="book-grid">
+        <!-- Bailey & Love -->
+        <div class="book-card">
+          <div class="book-cover-area">
+            <div style="background: linear-gradient(135deg, #1e3a8a, #1e40af); width:100%; height:100%; display:flex; align-items:center; justify-content:center; color:white; font-weight:900; font-size:1.5rem; text-align:center; padding:20px;">BAILEY & LOVE</div>
+          </div>
+          <div class="book-info">
+            <h4>𝗕𝗮𝗶𝗹𝗲𝘆 & 𝗟𝗼𝘃𝗲'𝘀 𝗦𝗵𝗼𝗿𝘁 𝗣𝗿𝗮𝗰𝘁𝗶𝗰𝗲</h4>
+            <p>The quintessential classic. Must master cover to cover for final exams and competitive tests.</p>
+            <a href="https://t.me/surgicalInsightHub" target="_blank" class="download-btn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.89 8.22l-1.97 9.28c-.15.66-.54.82-1.08.51l-3-2.21-1.45 1.39c-.16.16-.3.3-.61.3l.21-3.05 5.56-5.02c.24-.21-.05-.33-.37-.12l-6.87 4.33-2.96-.92c-.64-.2-.66-.64.14-.95l11.57-4.46c.54-.19 1.01.13.83.94z"/></svg>
+              Download via Telegram
+            </a>
+          </div>
+        </div>
+
+        <!-- Sabiston -->
+        <div class="book-card">
+          <div class="book-cover-area">
+            <div style="background: linear-gradient(135deg, #7f1d1d, #991b1b); width:100%; height:100%; display:flex; align-items:center; justify-content:center; color:white; font-weight:900; font-size:1.5rem; text-align:center; padding:20px;">SABISTON</div>
+          </div>
+          <div class="book-info">
+            <h4>𝗦𝗮𝗯𝗶𝘀𝘁𝗼𝗻 𝗧𝗲𝘅𝘁𝗯𝗼𝗼𝗸 𝗼𝗳 𝗦𝘂𝗿𝗴𝗲𝗿𝘆</h4>
+            <p>Balances content depth and evidence-based practice. Foundational for GI surgery and transplantation.</p>
+            <a href="https://t.me/surgicalInsightHub" target="_blank" class="download-btn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.89 8.22l-1.97 9.28c-.15.66-.54.82-1.08.51l-3-2.21-1.45 1.39c-.16.16-.3.3-.61.3l.21-3.05 5.56-5.02c.24-.21-.05-.33-.37-.12l-6.87 4.33-2.96-.92c-.64-.2-.66-.64.14-.95l11.57-4.46c.54-.19 1.01.13.83.94z"/></svg>
+              Download via Telegram
+            </a>
+          </div>
+        </div>
+
+        <!-- Schwartz -->
+        <div class="book-card">
+          <div class="book-cover-area">
+            <div style="background: linear-gradient(135deg, #111827, #1f2937); width:100%; height:100%; display:flex; align-items:center; justify-content:center; color:white; font-weight:900; font-size:1.5rem; text-align:center; padding:20px;">SCHWARTZ</div>
+          </div>
+          <div class="book-info">
+            <h4>𝗦𝗰𝗵𝘄𝗮𝗿𝘁𝘇'𝘀 𝗣𝗿𝗶𝗻𝗰𝗶𝗽𝗹𝗲𝘀 𝗼𝗳 𝗦𝘂𝗿𝗴𝗲𝗿𝘆</h4>
+            <p>Essential for board exams, especially endocrine subdivisions. Thyroid and breast surgery covered in exceptional detail.</p>
+            <a href="https://t.me/surgicalInsightHub" target="_blank" class="download-btn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.89 8.22l-1.97 9.28c-.15.66-.54.82-1.08.51l-3-2.21-1.45 1.39c-.16.16-.3.3-.61.3l.21-3.05 5.56-5.02c.24-.21-.05-.33-.37-.12l-6.87 4.33-2.96-.92c-.64-.2-.66-.64.14-.95l11.57-4.46c.54-.19 1.01.13.83.94z"/></svg>
+              Download via Telegram
+            </a>
+          </div>
+        </div>
+      </div>
+�𝘂𝗿𝗴𝗶𝗰𝗮𝗹 𝗛𝗮𝗻𝗱𝗶𝗰𝗿𝗮𝗳𝘁 & 𝗙𝗹𝘂𝗶𝗱 𝗠𝗮𝗻𝗮𝗴𝗲𝗺𝗲𝗻𝘁</h2>
+      <h3>📖 𝗞𝗶𝗿𝗸'𝘀 𝗕asic 𝗦𝘂𝗿𝗴𝗶𝗰𝗮𝗹 𝗧𝗲𝗰𝗵𝗻𝗶𝗾𝘂𝗲𝘀 (𝟳𝘁𝗵 𝗘𝗱𝗶𝘁𝗶𝗼𝗻)</h3>
+      <p>My go-to book during residency for the basics of surgical technique and simple bedside procedures, including nevus excisions, drain fixations, and basic knotting mechanics.</p>
+      <h3>📖 𝗣𝗿𝗮𝗰𝘁𝗶𝗰𝗮𝗹 𝗚𝘂𝗶𝗱𝗲𝗹𝗶𝗻𝗲𝘀 𝗼𝗻 𝗙𝗹𝘂𝗶𝗱 𝗧𝗵𝗲𝗿𝗮𝗽𝘆 (𝗗𝗿. 𝗦𝗮𝗻𝗷𝗮𝘆 𝗣𝗮𝗻𝗱𝘆𝗮, 𝟮𝗻𝗱 𝗘𝗱𝗶𝘁𝗶𝗼𝗻)</h3>
+      <p>Your one-stop guide to understanding fluid management in the perioperative period. It cleanly simplifies complex electrolyte concepts without bogging you down in excessive physiology details.</p>
+
+      <hr>
+
+      <h2>𝟲. 𝗧𝗲𝘅𝘁𝗯𝗼𝗼𝗸𝘀 𝗳𝗼𝗿 𝗙𝗶𝗻𝗮𝗹 𝗘𝘅𝗮𝗺𝘀 & 𝗡𝗘𝗘𝗧 𝗦𝗦 (𝗧𝗵𝗲 " Bo𝗿𝗱 𝗣𝗿𝗲𝗽" 𝗕𝗶𝗯𝗹𝗲𝘀)</h2>
+      <h3>📖 𝗕𝗮𝗶𝗹𝗲𝘆 & 𝗟𝗼𝘃𝗲'𝘀 𝗦𝗵𝗼𝗿𝘁 𝗣𝗿𝗮𝗰𝘁𝗶𝗰𝗲 𝗢𝗳 𝗦𝘂𝗿𝗴𝗲𝗿𝘆 (𝟮𝟳𝘁𝗵 𝗘𝗱𝗶𝘁𝗶𝗼𝗻)</h3>
+      <p>The quintessential classic textbook that you must master from cover to cover. Every single line matters. The first volume on general surgical care, clinical physiology, and nutrition provides a lifetime clinical foundation.</p>
+      <h3>📖 𝗦𝗮𝗯𝗶𝘀𝘁𝗼𝗻 𝗧𝗲𝘅𝘁𝗯𝗼𝗼𝗸 𝗼𝗳 𝗦𝘂𝗿𝗴𝗲𝗿𝘆 (𝟮𝟭𝘀𝘁 𝗘𝗱𝗶𝘁𝗶𝗼𝗻)</h3>
+      <p>Sabiston strikes the right balance between content depth and evidence-based practice. The latest edition includes critical updates on fetal surgery and tissue regeneration. The chapter on robotic platforms is an absolute essential before entering modern practice.</p>
+      <h3>📖 𝗦𝗰𝗵𝘄𝗮𝗿𝘁𝘇'𝘀 𝗣𝗿𝗶𝗻𝗰𝗶𝗽𝗹𝗲𝘀 𝗼𝗳 𝗦𝘂𝗿𝗴𝗲𝗿𝘆 (𝟭𝟭𝘁𝗵 𝗘𝗱𝗶𝘁𝗶𝗼𝗻)</h3>
+      <p>An essential companion for board examinations, especially its endocrine surgery subdivisions. Thyroid and breast surgical pathologies are covered in exceptional detail here and form a significant chunk of super-specialty questions.</p>
+
+      <hr>
+
+      <h2>𝟳. 𝗧𝗵𝗲 𝗗𝗶𝗴𝗶𝘁𝗮𝗹 𝗪𝗼𝗿𝗸𝗳𝗹𝗼𝘄: 𝗪𝗲𝗯𝘀𝗶𝘁𝗲𝘀 𝗮𝗻𝗱 𝗠𝗼𝗯𝗶𝗹𝗲 𝗔𝗽𝗽𝘀</h2>
+      
+      <div class="clinical-pearl">
+        <strong>The Digital Transition</strong>
+        Surgical training has rapidly transitioned from physical text to digital workflows. These tools act as the "flight simulator" for the operating room.
+      </div>
+
+      <h3>💻 𝗛𝗶𝗴𝗵-𝗬𝗶𝗲𝗹𝗱 𝗩𝗶𝗱𝗲𝗼 & 𝗘-𝗟𝗲𝗮𝗿𝗻𝗶𝗻𝗴 𝗣𝗹𝗮𝘁𝗳𝗼𝗿𝗺𝘀</h3>
+      <ul>
+        <li><strong>𝗪𝗲𝗯𝗦𝘂𝗿𝗴 (𝗜提𝗖𝗔𝗗):</strong> The gold standard for minimally invasive surgery. Free massive virtual university dedicated to laparoscopic, robotic, and endoscopic operations.</li>
+        <li><strong>𝗧𝗵𝗲 𝗧𝗼𝗿𝗼𝗻𝘁𝗼 𝗩𝗶𝗱𝗲𝗼 𝗔𝘁𝗹𝗮𝘀 𝗼𝗳 𝗦𝘂𝗿𝗴𝗲𝗿𝘆 (𝗧𝗩𝗔𝗦𝘂𝗿𝗴):</strong> Best for complex spatial anatomy. Combines live-action operative footage with 3D computer animations.</li>
+        <li><strong>𝗦𝗨𝗥𝗚𝗵𝘂𝗯 (𝗨𝗡 𝗚𝗹𝗼𝗯𝗮𝗹 𝗦𝘂𝗿𝗴𝗲𝗿𝘆 𝗟𝗲𝗮𝗿𝗻𝗶𝗻𝗴 𝗛𝘂𝗯):</strong> Best for essential and resource-limited care. Backed by the United Nations.</li>
+      </ul>
+
+      <h3>📱 𝗜𝗻𝘁𝗲𝗿𝗮𝗰𝘁𝗶𝘃𝗲 & 𝗣𝗿𝗼𝗰𝗲𝗱𝘂𝗿𝗲 批𝗲𝗵𝗲𝗮𝗿𝘀𝗮𝗹 𝗔𝗽𝗽𝘀</h3>
+      <ul>
+        <li><strong>𝗧𝗼𝘂𝗰𝗵 𝗦𝘂𝗿𝗴𝗲𝗿𝘆:</strong> Best for cognitive mapping. Walks you through virtual operations step-by-step.</li>
+        <li><strong>𝗧𝗲𝗮𝗰𝗵𝗠𝗲𝗦𝘂𝗿𝗴𝗲𝗿𝘆:</strong> Best for quick ward references. Bite-sized encyclopedia covering over 400 major surgical conditions.</li>
+        <li><strong>𝗔防 𝗦𝘂𝗿𝗴𝗲𝗿𝘆 𝗥𝗲𝗳𝗲𝗿𝗲𝗻𝗰𝗲:</strong> The trauma and fracture bible.</li>
+      </ul>
+
+      <h3>📊 𝗣𝗮𝘁𝗶𝗲𝗻𝘁 𝗖𝗮𝗿𝗲 & 𝗥𝗶𝘀𝗸 𝗖𝗮𝗹𝗰𝘂𝗹𝗮𝘁𝗶𝗼𝗻 𝗧𝗼𝗼𝗹𝘀</h3>
+      <ul>
+        <li><strong>𝗠𝗗𝗖𝗮𝗹𝗰:</strong> The essential clinical decision app. Instantly computes complex surgical risk scores (MELD, Alvarado, ASA).</li>
+        <li><strong>𝗱𝗿𝗮𝘄𝗠𝗗 𝗚𝗲𝗻𝗲𝗿𝗮𝗹 𝗦𝘂𝗿𝗴𝗲𝗿𝘆:</strong> Best for patient informed consent. Allows you to sketch and annotate digital surgical templates.</li>
+      </ul>
+
+      <hr>
+
+      <h2>📊 𝗖𝗼𝗺𝗽𝗮𝗿𝗶𝘀𝗼𝗻 𝗼𝗳 𝗧𝗼𝗽 𝗥𝗲𝗰𝗼𝗺𝗺𝗲𝗻𝗱𝗮𝘁𝗶𝗼𝗻𝘀</h2>
+      <div style="overflow-x: auto;">
+        <table style="width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.9rem;">
+          <thead>
+            <tr style="background: var(--bg-secondary); border-bottom: 2px solid var(--border-color);">
+              <th style="padding: 12px; text-align: left;">𝗕𝗼𝗼𝗸 / 𝗣𝗹𝗮𝘁𝗳𝗼𝗿𝗺</th>
+              <th style="padding: 12px; text-align: left;">𝗣𝗿𝗶𝗺𝗮𝗿𝘆 𝗨𝘀𝗲</th>
+              <th style="padding: 12px; text-align: left;">𝗩𝗶𝘀𝘂𝗮𝗹𝘀 𝘃𝘀. 𝗧𝗲𝘅𝘁</th>
+              <th style="padding: 12px; text-align: left;">𝗕𝗲𝘀𝘁 𝗔𝘂𝗱𝗶𝗲𝗻𝗰𝗲</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid var(--border-color);">
+              <td style="padding: 12px;">𝗭𝗼𝗹𝗹𝗶𝗻𝗴𝗲𝗿'𝘀</td>
+              <td style="padding: 12px;">Pre-op Step Review</td>
+              <td style="padding: 12px;">90% Visual</td>
+              <td style="padding: 12px;">Interns / PGY-1</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-color);">
+              <td style="padding: 12px;">𝗙𝗶𝘀𝗰𝗵𝗲𝗿'𝘀</td>
+              <td style="padding: 12px;">Deep Technical Strategy</td>
+              <td style="padding: 12px;">70% Text</td>
+              <td style="padding: 12px;">Senior Residents</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-color);">
+              <td style="padding: 12px;">𝗧𝗼𝗽 𝗞𝗻𝗶𝗳𝗲</td>
+              <td style="padding: 12px;">Emergency Survival</td>
+              <td style="padding: 12px;">Conversational</td>
+              <td style="padding: 12px;">Everyone</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-color);">
+              <td style="padding: 12px;">𝗪𝗲𝗯𝗦𝘂𝗿𝗴</td>
+              <td style="padding: 12px;">MIS Video Review</td>
+              <td style="padding: 12px;">100% Video</td>
+              <td style="padding: 12px;">Laparoscopic Trainees</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <hr>
+
+      <div class="clinical-pearl" style="background: var(--bg-secondary); border-left-color: var(--brand-burgundy);">
+        <strong>Verified Pro-Tips</strong>
+        <ul>
+          <li><strong>𝗧𝗵𝗲 "𝗔𝘁𝘁𝗲𝗻𝗱𝗶𝗻𝗴 𝗛𝗮𝗰𝗸":</strong> The best atlas is actually the past operative notes of the specific attending you are working with.</li>
+          <li><strong>𝗩𝗶𝗱𝗲𝗼 𝗼𝘃𝗲𝗿 𝗕𝗼𝗼𝗸𝘀:</strong> For laparoscopy, senior residents unanimously recommend online tools like TVASurg or targeted YouTube channels.</li>
+        </ul>
+      </div>
+
+      <section class="references">
+        <h3>Downloads & Community</h3>
+        <p>Join our Telegram community to access the digital library and discuss these tools with fellow residents.</p>
+        <a href="https://t.me/surgicalInsightHub" target="_blank" class="nav-btn" style="display:inline-block; margin-top:10px;">Join Telegram Channel →</a>
+      </section>
+    </div>
+  </article>
+
+  <script src="../js/navigation.js"></script>
+  <script src="../js/nav-pill.js"></script>
+</body>
+</html>

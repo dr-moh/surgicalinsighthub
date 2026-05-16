@@ -33,7 +33,7 @@ Reference Link: [Insert link]
 
 📤 Drop this in your clinical rotation group.
 
-💥 Follow: @sugicalInsightHub
+💥 Follow: @surgicalInsightHub
 📍 Join our LinkedIn: https://www.linkedin.com/company/surgical-insight-hub
 
 #SurgicalInsightHub #SurgicalResidency #ClinicalPearls
@@ -48,7 +48,7 @@ Reference Link: [Insert link]
 - Never sound like ChatGPT marketing copy
 
 ## SOCIAL ASSETS
-- Handle: `@sugicalInsightHub` (note: single 'r' in surgical — this is correct)
+- Handle: `@surgicalInsightHub` (note: single 'r' in surgical — this is correct)
 - LinkedIn: `https://www.linkedin.com/company/surgical-insight-hub`
 - Hashtags always: `#SurgicalInsightHub #SurgicalResidency #ClinicalPearls`
 

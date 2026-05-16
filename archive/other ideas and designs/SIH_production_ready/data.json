@@ -1,11 +1,11 @@
 {
   "site": {
     "name": "Surgical Insight Hub",
-    "handle": "@sugicalInsightHub",
+    "handle": "@surgicalInsightHub",
     "tagline": "Dissect. Learn. Dominate.",
     "differentiator": "The only surgical education resource written by a surgeon, for the overnight shift.",
     "founder": "Dr. Abdulmalik Moh",
-    "telegram": "https://t.me/sugicalInsightHub",
+    "telegram": "https://t.me/surgicalInsightHub",
     "youtube": "https://www.youtube.com/@YeSurgeryBett",
     "linkedin": "https://www.linkedin.com/company/surgical-insight-hub"
   },
@@ -19,7 +19,7 @@
       "tags": ["Krickenbeck", "PSARP", "Cloaca", "VACTERL"],
       "pages": "In progress",
       "isNew": true,
-      "telegramLink": "https://t.me/sugicalInsightHub"
+      "telegramLink": "https://t.me/surgicalInsightHub"
     },
     {
       "id": 2,
@@ -30,7 +30,7 @@
       "tags": ["WSES 2020", "Bologna", "SBO/LBO"],
       "pages": "8 pages",
       "isNew": false,
-      "telegramLink": "https://t.me/sugicalInsightHub"
+      "telegramLink": "https://t.me/surgicalInsightHub"
     },
     {
       "id": 3,
@@ -41,7 +41,7 @@
       "tags": ["Boey Score", "Omental Patch", "H. pylori"],
       "pages": "6 pages",
       "isNew": false,
-      "telegramLink": "https://t.me/sugicalInsightHub"
+      "telegramLink": "https://t.me/surgicalInsightHub"
     },
     {
       "id": 4,
@@ -52,7 +52,7 @@
       "tags": ["FGSI", "Debridement", "Necrotizing"],
       "pages": "5 pages",
       "isNew": false,
-      "telegramLink": "https://t.me/sugicalInsightHub"
+      "telegramLink": "https://t.me/surgicalInsightHub"
     },
     {
       "id": 5,
@@ -63,7 +63,7 @@
       "tags": ["ASGE 2019", "ERCP", "Mirizzi"],
       "pages": "6 pages",
       "isNew": false,
-      "telegramLink": "https://t.me/sugicalInsightHub"
+      "telegramLink": "https://t.me/surgicalInsightHub"
     },
     {
       "id": 6,
@@ -74,7 +74,7 @@
       "tags": ["Strasberg", "Bismuth-Corlette", "Whipple"],
       "pages": "7 pages",
       "isNew": false,
-      "telegramLink": "https://t.me/sugicalInsightHub"
+      "telegramLink": "https://t.me/surgicalInsightHub"
     },
     {
       "id": 7,
@@ -85,7 +85,7 @@
       "tags": ["RSI", "ASA", "Airway"],
       "pages": "6 pages",
       "isNew": false,
-      "telegramLink": "https://t.me/sugicalInsightHub"
+      "telegramLink": "https://t.me/surgicalInsightHub"
     },
     {
       "id": 8,
@@ -96,7 +96,7 @@
       "tags": ["CT Pearls", "Free Air", "Pattern Recognition"],
       "pages": "5 pages",
       "isNew": false,
-      "telegramLink": "https://t.me/sugicalInsightHub"
+      "telegramLink": "https://t.me/surgicalInsightHub"
     }
   ],
   "episodes": [

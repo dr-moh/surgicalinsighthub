@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Surgical Insight Hub — Advanced Management Guide for Goiter</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/theme.css">
+<link rel="stylesheet" href="../../css/shared.css">
+<script>
+  const savedTheme = localStorage.getItem('sih-theme') || 'light';
+  if (savedTheme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+</script>
+<style>
+:root {
+  /* Endocrine Plum & Rose Aesthetic */
+  --primary:   #4C1D95; 
+  --primary-dk:#2E1065;
+  --primary-lt:#F5F3FF;
+  --accent:    #7C3AED;
+  --accent2:   #E11D48;
+  --gold:      #D97706;
+  --gold-lt:   #FEF3C7;
+  --s1:        #4C1D95;
+  --s2:        #5B21B6;
+  --s3:        #6D28D9;
+  --s4:        #7C3AED;
+  --s5:        #2E1065;
+  --s1-lt:     #F5F3FF;
+  --s2-lt:     #EDE9FE;
+  --s3-lt:     #F5F3FF;
+  --s4-lt:     #EDE9FE;
+  --s5-lt:     #F5F3FF;
+  --red:       #E11D48;
+  --red-lt:    #FFF1F2;
+  --amber:     #D97706;
+  --amber-lt:  #FFFBEB;
+  --blue:      #2563EB;
+  --blue-lt:   #EFF6FF;
+  --bg:        #FAFAFA;
+  --bg2:       #F4F4F5;
+  --border:    #E5E7EB;
+  --text:      #0F172A;
+  --muted:     #64748B;
+  --white:     #FFFFFF;
+  --sidebar-w: 320px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.75;}
+
+/* SLIDE-OVER SIDEBAR */
+#sidebar {
+  position: fixed; top: 0; left: 0; width: var(--sidebar-w); height: 100vh;
+  background: var(--primary-dk); color: #F5F3FF;
+  display: flex; flex-direction: column;
+  z-index: 1000; overflow: hidden;
+  transform: translateX(-100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 4px 0 24px rgba(0,0,0,0.4);
+}
+body.sidebar-open #sidebar {
+  transform: translateX(0);
+}
+
+/* OVERLAY */
+#sidebar-overlay {
+  position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+  background: rgba(46, 16, 101, 0.7); backdrop-filter: blur(3px);
+  z-index: 950; opacity: 0; pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+body.sidebar-open #sidebar-overlay {
+  opacity: 1; pointer-events: auto;
+}
+
+/* TOGGLE BUTTON - TOP LEFT */
+#sidebar-toggle {
+  position: fixed; top: 24px; left: 28px; z-index: 900;
+  background: var(--primary); color: white;
+  border: none; border-radius: 30px;
+  padding: 10px 18px; font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600;
+  letter-spacing: 0.05em; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  display: flex; align-items: center; gap: 8px; transition: all 0.2s;
+}
+#sidebar-toggle:hover {
+  background: var(--accent2); transform: translateY(-2px);
+}
+
+#sidebar-header{padding:20px 20px 14px;border-bottom:1px solid rgba(255,255,255,0.08);flex-shrink:0;}
+#sidebar-header .logo{font-family:'Playfair Display',serif;font-size:13px;font-weight:700;color:var(--accent2);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;}
+#sidebar-header .sub{font-size:10.5px;color:rgba(245,243,255,0.6);letter-spacing:0.04em;}
+#sidebar-search{padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.05);flex-shrink:0;}
+#sidebar-search input{width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:6px;color:#F5F3FF;padding:6px 10px;font-size:12px;font-family:'Source Serif 4',serif;outline:none;transition:border-color 0.2s;}
+#sidebar-search input::placeholder{color:rgba(245,243,255,0.4);}
+#sidebar-search input:focus{border-color:var(--accent2);}
+#sidebar-nav{flex:1;overflow-y:auto;padding:8px 0 20px;}
+#sidebar-nav::-webkit-scrollbar{width:4px;}
+#sidebar-nav::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.15);border-radius:2px;}
+.vol-label{font-size:9.5px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent2);padding:14px 18px 4px;}
+.nav-item{display:block;padding:8px 18px 8px 22px;font-size:12.5px;color:rgba(245,243,255,0.8);text-decoration:none;border-left:2px solid transparent;transition:all 0.15s;line-height:1.4;}
+.nav-item:hover{color:#fff;background:rgba(255,255,255,0.03);border-left-color:rgba(225,29,72,0.5);}
+.nav-item.active{color:#fff;background:rgba(255,255,255,0.06);border-left-color:var(--accent2);font-weight:600;}
+.nav-item .num{font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(245,243,255,0.4);margin-right:6px;}
+
+/* MAIN */
+#main{margin-left:0; min-height:100vh;}
+
+/* HERO */
+#hero{background:linear-gradient(135deg,var(--primary-dk) 0%,#4C1D95 60%,#2E1065 100%);color:white;padding:90px 72px 60px;position:relative;overflow:hidden;}
+#hero::before{content:'';position:absolute;top:-60px;right:-60px;width:380px;height:380px;background:radial-gradient(circle,rgba(225,29,72,0.15) 0%,transparent 70%);pointer-events:none;}
+#hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent2),var(--gold),transparent);}
+#hero .eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.16em;color:var(--accent2);text-transform:uppercase;margin-bottom:14px;}
+#hero h1{font-family:'Playfair Display',serif;font-size:46px;font-weight:700;line-height:1.15;margin-bottom:10px;color:#fff;}
+#hero .subtitle{font-size:18px;color:rgba(255,255,255,0.8);font-style:italic;margin-bottom:28px;}
+#hero .badges{display:flex;gap:10px;flex-wrap:wrap;}
+#hero .badge{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:4px 14px;font-size:12px;color:rgba(255,255,255,0.95);font-family:'JetBrains Mono',monospace;}
+
+/* CONTENT */
+.content-wrap{max-width:900px;margin:0 auto;padding:0 48px 80px;}
+
+/* SECTION HEADER */
+.sec-header{margin-top:60px;margin-bottom:8px;padding:28px 36px;border-radius:10px;display:flex;align-items:center;gap:20px;}
+.sec-header.s1{background:linear-gradient(135deg,#4C1D950A,#4C1D951A);border-left:4px solid var(--s1);}
+.sec-header.s2{background:linear-gradient(135deg,#5B21B60A,#5B21B61A);border-left:4px solid var(--s2);}
+.sec-header.s3{background:linear-gradient(135deg,#6D28D90A,#6D28D91A);border-left:4px solid var(--s3);}
+.sec-header.s4{background:linear-gradient(135deg,#7C3AED0A,#7C3AED1A);border-left:4px solid var(--s4);}
+.sec-header.s5{background:linear-gradient(135deg,#2E10650A,#2E10651A);border-left:4px solid var(--s5);}
+.sec-badge{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;letter-spacing:0.1em;padding:4px 12px;border-radius:4px;white-space:nowrap;flex-shrink:0;}
+.s1 .sec-badge{background:var(--s1);color:white;}
+.s2 .sec-badge{background:var(--s2);color:white;}
+.s3 .sec-badge{background:var(--s3);color:white;}
+.s4 .sec-badge{background:var(--s4);color:white;}
+.s5 .sec-badge{background:var(--s5);color:white;}
+.sec-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;}
+.s1 .sec-title{color:var(--s1);}
+.s2 .sec-title{color:var(--s2);}
+.s3 .sec-title{color:var(--s3);}
+.s4 .sec-title{color:var(--s4);}
+.s5 .sec-title{color:var(--s5);}
+
+/* TOPIC */
+.topic{margin-top:48px;padding-top:48px;border-top:1px solid var(--border);}
+.topic:first-of-type{border-top:none;}
+.topic-header{display:flex;align-items:flex-start;gap:16px;margin-bottom:24px;}
+.topic-num{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;padding:3px 10px;border-radius:4px;margin-top:4px;flex-shrink:0;}
+.s1 .topic-num{background:var(--s1-lt);color:var(--s1);}
+.s2 .topic-num{background:var(--s2-lt);color:var(--s2);}
+.s3 .topic-num{background:var(--s3-lt);color:var(--s3);}
+.s4 .topic-num{background:var(--s4-lt);color:var(--s4);}
+.s5 .topic-num{background:var(--s5-lt);color:var(--s5);}
+.topic h2{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;line-height:1.2;}
+.s1 .topic h2{color:var(--s1);}
+.s2 .topic h2{color:var(--s2);}
+.s3 .topic h2{color:var(--s3);}
+.s4 .topic h2{color:var(--s4);}
+.s5 .topic h2{color:var(--s5);}
+.topic h3{font-family:'Playfair Display',serif;font-size:17px;font-weight:600;color:var(--muted);margin:26px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--border);}
+.topic p{margin-bottom:12px;color:var(--text);}
+.topic ul,.topic ol{margin:8px 0 14px 20px;color:var(--text);}
+.topic li{margin-bottom:6px;line-height:1.65;}
+.topic li::marker{color:var(--accent2);}
+.topic strong{color:var(--text);font-weight:600;}
+
+/* TABLES */
+.table-wrap{overflow-x:auto;margin:16px 0 20px;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.04);}
+table{width:100%;border-collapse:collapse;font-size:13.5px;background:white;}
+thead tr{background:var(--s1);}
+thead th{color:white;padding:10px 14px;text-align:left;font-family:'Source Serif 4',serif;font-weight:600;font-size:13px; text-transform: uppercase;}
+tbody tr:nth-child(even){background:var(--bg2);}
+tbody tr:hover{background:var(--s1-lt);transition:background 0.15s;}
+tbody td{padding:9px 14px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.5;}
+.s2-tbl thead tr{background:var(--s2);}
+.s3-tbl thead tr{background:var(--s3);}
+.s4-tbl thead tr{background:var(--s4);}
+.s5-tbl thead tr{background:var(--s5);}
+
+/* CALLOUTS */
+.callout{margin:18px 0;padding:14px 18px;border-radius:0 8px 8px 0;border-left:4px solid;font-size:14px;line-height:1.65;}
+.callout .label{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;display:block;margin-bottom:4px;}
+.callout.pearl{background:var(--amber-lt);border-color:var(--amber);}
+.callout.pearl .label{color:var(--amber);}
+.callout.warn{background:var(--red-lt);border-color:var(--red);}
+.callout.warn .label{color:var(--red);}
+.callout.clin{background:var(--s1-lt);border-color:var(--s1);}
+.callout.clin .label{color:var(--s1);}
+
+/* DIAGRAM PLACEHOLDERS */
+.diagram-wrap{background:white;border:1px solid var(--border);border-radius:8px;padding:18px;margin:20px 0;box-shadow:0 1px 4px rgba(0,0,0,0.03);text-align:center;}
+.diagram-title{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--s1);margin-bottom:12px;text-align:left;}
+.diagram-wrap img { max-width: 100%; height: auto; border-radius: 4px; display: block; margin: 0 auto; }
+
+/* RAPID REFERENCE */
+.rapid-ref{background:var(--primary-dk);color:var(--primary-lt);border-radius:10px;padding:28px 32px;margin:30px 0;}
+.rapid-ref h3{font-family:'Playfair Display',serif;font-size:20px;color:var(--accent2);margin-bottom:16px;}
+.rapid-ref table{font-size:12.5px; background: transparent;} 
+.rapid-ref thead tr{background:rgba(225,29,72,0.15);}
+.rapid-ref thead th{color:var(--accent2);padding:8px 12px;font-size:11px;}
+.rapid-ref tbody tr:nth-child(even){background:rgba(255,255,255,0.03);}
+.rapid-ref tbody tr:hover{background:rgba(255,255,255,0.06);}
+.rapid-ref tbody td{color:var(--primary-lt);padding:7px 12px;border-bottom:1px solid rgba(255,255,255,0.05);}
+.rapid-ref tbody td strong{color:var(--gold);}
+
+/* PROGRESS */
+#progress-bar{position:fixed;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent2),var(--gold));transform-origin:left;transform:scaleX(0);transition:transform 0.1s;z-index:50;}
+
+/* TOP BTN */
+#top-btn{position:fixed;bottom:28px;right:28px;background:var(--primary);color:white;border:none;border-radius:50%;width:44px;height:44px;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,0.2);transition:all 0.2s;opacity:0;pointer-events:none;}
+#top-btn.show{opacity:1;pointer-events:auto;}
+#top-btn:hover{background:var(--accent2);transform:translateY(-2px);}
+
+/* ANIMATION */
+.topic{animation:fadeUp 0.4s ease both;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
+
+@media(max-width:900px){
+  .content-wrap{padding:0 20px 60px;}
+  #hero{padding:72px 20px 40px;}
+  #hero h1{font-size:30px;}
+}
+@media print{
+  #sidebar-toggle, #sidebar-overlay, #sidebar, #top-btn, #progress-bar{display:none!important;}
+  .topic{page-break-inside:avoid;}
+  .sec-header{page-break-before:always;}
+}
+</style>
+</head>
+<body>
+  <nav class="nav" id="mainNav">
+    <div class="nav-left">
+      <a href="../../index.html" class="nav-pill">
+        <div class="nav-logo-img">
+          <img src="../../assets/icons/apple-touch-icon.png" alt="SIH Logo">
+        </div>
+        <div>
+          <div class="nav-brand-text">Surgical Insight Hub</div>
+          <div class="nav-brand-sub">The Residency Journal</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="nav-links-pill">
+      <a href="../../index.html">Home</a>
+      <a href="../../notes.html">Notes</a>
+      <a href="../operative_approach.html" class="active">Playbook</a>
+      <a href="../../arena.html">MCQ Arena</a>
+      <a href="../../podcast.html">Podcast</a>
+      <a href="../../surgery-talk.html">Surgery Talk</a>
+      <a href="../../about.html">About</a>
+    </div>
+
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+        <svg id="moonIcon" viewBox="0 0 24 24" width="18" height="18"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        <svg id="sunIcon" style="display:none;" viewBox="0 0 24 24" width="18" height="18"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+      </button>
+      <a href="https://t.me/surgicalInsightHub" target="_blank" class="nav-tg-btn" title="Join Telegram" style="background: var(--brand-burgundy); color: #f0d080; padding: 8px 12px; border-radius: 8px; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: all 0.3s ease;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="#f0d080"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.89 8.22l-1.97 9.28c-.15.66-.54.82-1.08.51l-3-2.21-1.45 1.39c-.16.16-.3.3-.61.3l.21-3.05 5.56-5.02c.24-.21-.05-.33-.37-.12l-6.87 4.33-2.96-.92c-.64-.2-.66-.64.14-.95l11.57-4.46c.54-.19 1.01.13.83.94z"/></svg>
+      </a>
+      <a href="../../arena.html" class="nav-btn arena-btn">MCQ Arena</a>
+      <button class="mob-nav-toggle" onclick="openMobNav()" aria-label="Menu">
+        <div class="hamburger"><span></span><span></span><span></span></div>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mob-nav-overlay" id="mobNavOverlay" onclick="closeMobNav()"></div>
+  <div class="mob-nav-sheet" id="mobNavSheet">
+    <div class="mob-nav-handle"></div>
+    <a href="../../index.html" onclick="closeMobNav()">Home</a>
+    <a href="../../notes.html" onclick="closeMobNav()">Notes</a>
+    <a href="../operative_approach.html" class="active" onclick="closeMobNav()">Playbook</a>
+    <a href="../../arena.html" onclick="closeMobNav()">MCQ Arena</a>
+    <a href="../../podcast.html" onclick="closeMobNav()">Podcast</a>
+    <a href="../../surgery-talk.html" onclick="closeMobNav()">Surgery Talk</a>
+    <a href="../../about.html" onclick="closeMobNav()">About</a>
+    <a href="https://t.me/surgicalInsightHub" target="_blank" style="color: var(--brand-gold); font-weight: 800;">Join Telegram Community</a>
+  </div>
+
+
+
+<main id="main">
+<section id="hero">
+  <div class="eyebrow">Surgical Insight Hub · Endocrine Surgery Monograph</div>
+  <h1>Advanced Management Guide for Goiter</h1>
+  <p class="subtitle">Diagnostic Pathways, Operative Anatomy, and Meticulous Surgical Technique</p>
+  <div class="badges">
+    <span class="badge">Endocrine Surgery</span>
+    <span class="badge">Bethesda System</span>
+    <span class="badge">RLN Preservation</span>
+  </div>
+</section>
+
+<div class="content-wrap">
+
+<div class="callout warn" style="margin-top: 40px;">
+  <span class="label">Upfront Philosophy</span>
+  <p>Goiter, or benign thyroid enlargement, presents a multifaceted diagnostic and therapeutic challenge requiring a nuanced, risk-stratified approach. This comprehensive clinical guide is designed for surgical residents, endocrinologists, and head &amp; neck surgeons. It focuses on precise pre-operative workup, meticulous surgical technique, and comprehensive post-operative care, emphasizing critical pitfalls and their proactive management.</p>
+</div>
+
+<div class="sec-header s1">
+  <span class="sec-badge">PILLAR 1</span>
+  <span class="sec-title">Core Foundations &amp; Workup</span>
+</div>
+
+<section class="topic s1" id="p1a">
+  <div class="topic-header"><span class="topic-num">1.1</span><h2>Definitions &amp; Classification</h2></div>
+  <p>Goiter is defined as any abnormal enlargement of the thyroid gland. Its presence does not indicate the functional status of the gland, which can be euthyroid (normal function), hyperthyroid (overactive), or hypothyroid (underactive). The gland is classified based on morphology, functional status, and etiology.</p>
+  
+  <h3>Diffuse vs. Nodular</h3>
+  <ul>
+    <li><strong>Diffuse goiter:</strong> A generalized, smooth, symmetric, and uniform enlargement of the entire thyroid gland. Typical of the early stages of iodine deficiency, Graves' disease, or Hashimoto's thyroiditis. Often referred to as a "simple goiter" or "colloid goiter."</li>
+    <li><strong>Nodular goiter:</strong> Contains one or more discrete nodules. A single nodule is termed a uninodular goiter, while multinodular goiter (MNG) is the most common presentation.</li>
+  </ul>
+
+  <h3>Functional Status</h3>
+  <ul>
+    <li><strong>Non-toxic:</strong> The gland is enlarged but produces normal levels of thyroid hormones (euthyroid). This is the most common presentation.</li>
+    <li><strong>Toxic:</strong> The goiter is associated with overproduction of thyroid hormones, leading to hyperthyroidism/thyrotoxicosis. Seen in Graves' disease or toxic multinodular goiter (TMNG).</li>
+  </ul>
+
+  <h3>Special Classifications</h3>
+  <ul>
+    <li><strong>Retrosternal Goiter:</strong> A goiter with a component extending below the thoracic inlet and into the mediastinum, potentially causing significant compressive symptoms.</li>
+    <li><strong>Recurrent Goiter:</strong> Regrowth of thyroid tissue post-thyroidectomy, often due to inadequate initial resection.</li>
+  </ul>
+</section>
+
+<section class="topic s1" id="p1b">
+  <div class="topic-header"><span class="topic-num">1.2</span><h2>Etiologies &amp; Pathogenesis</h2></div>
+  <p>Goiter can arise from nutritional deficiencies, autoimmune disorders, and genetic predispositions. The mechanisms involve TSH-mediated pathways (impaired synthesis leading to elevated TSH), autoimmune pathways (TSH-receptor antibodies stimulating unregulated growth), and nodulogenesis (chronic stimulation leading to autonomous nodule formation).</p>
+
+  <div class="table-wrap s1-tbl"><table>
+    <thead><tr><th>Goiter Etiology</th><th>Primary Mechanism</th><th>Clinical Features</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Iodine Deficiency</strong></td><td>Chronic TSH stimulation due to low dietary iodine, leading to diffuse hyperplasia initially, then nodule formation.</td><td>Endemic goiter; often diffuse in early stages, progressing to multinodular over time. Can be euthyroid or hypothyroid.</td></tr>
+      <tr><td><strong>Graves' Disease</strong></td><td>Thyroid-stimulating antibodies (TSH-RAbs) binding to and activating the TSH receptor, leading to unregulated growth and hormone synthesis.</td><td>Diffuse, homogenous, and highly vascular goiter associated with hyperthyroidism (toxic goiter), often accompanied by ophthalmopathy and dermopathy.</td></tr>
+      <tr><td><strong>Hashimoto's Thyroiditis</strong></td><td>Lymphocytic infiltration and autoimmune destruction of thyroid follicular cells, causing impaired hormone synthesis and compensatory TSH elevation.</td><td>Goiter with a firm, rubbery consistency, often associated with hypothyroidism. Can be diffuse or nodular, and may fluctuate in size. Low T3 &amp; T4.</td></tr>
+      <tr><td><strong>Multinodular Goiter (MNG)</strong></td><td>Complex interplay of genetics, fluctuating TSH levels, and heterogeneous cellular growth within the gland. Local growth factors contribute to nodule formation.</td><td>The most common cause of nodular goiter in iodine-sufficient regions. Typically asymmetric, with multiple palpable or imaged nodules. Can be non-toxic or evolve into toxic MNG. High T3 &amp; T4 if toxic.</td></tr>
+      <tr><td><strong>Toxic Adenoma</strong></td><td>Presence of a single autonomously functioning thyroid nodule, often due to somatic mutations in the TSH receptor gene, leading to TSH-independent hormone production.</td><td>Solitary "hot" nodule on radionuclide scan with suppressed surrounding normal thyroid tissue activity. Leads to subclinical or overt hyperthyroidism.</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="callout clin">
+    <span class="label">The Disease Continuum</span>
+    <p>Understanding goiter development is crucial, as classifications are often a continuum. In iodine deficiency, the gland first undergoes diffuse enlargement due to chronic TSH stimulation. Over years, this transforms into a Non-Toxic Multinodular Goiter (MNG). With advancing age, nodules may acquire somatic mutations allowing autonomous function, evolving into a Toxic Multinodular Goiter (TMNG or Plummer's disease).</p>
+  </div>
+</section>
+
+<section class="topic s1" id="p1c">
+  <div class="topic-header"><span class="topic-num">1.3</span><h2>Epidemiology &amp; Risk Factors</h2></div>
+  <ul>
+    <li><strong>Global Health Issue:</strong> Iodine deficiency affects an estimated 2.2 billion people worldwide. In iodine-sufficient nations, etiologies have shifted toward autoimmune disorders (Hashimoto's and Graves') and sporadic MNG.</li>
+    <li><strong>Female Sex:</strong> Women are significantly more likely to develop goiters than men (ratios ranging from 4:1 to 9:1), attributed to female sex hormones and higher autoimmune prevalence.</li>
+    <li><strong>Age:</strong> Prevalence, particularly of MNG, increases with advancing age.</li>
+    <li><strong>Environmental Factors:</strong> Smoking (thiocyanates inhibit iodine uptake) and goitrogenic foods (cassava, cruciferous vegetables) contribute to goiter formation. Medications like lithium and amiodarone can interfere with thyroid function.</li>
+  </ul>
+</section>
+
+<section class="topic s1" id="p1d">
+  <div class="topic-header"><span class="topic-num">1.4</span><h2>Clinical Evaluation &amp; Imaging</h2></div>
+  <p>A systematic evaluation combines a focused history and physical examination with a multi-modal laboratory and imaging workup to accurately characterize the goiter and stratify the risk of malignancy.</p>
+
+  <h3>History &amp; Physical Exam</h3>
+  <ul>
+    <li><strong>Compressive Symptoms:</strong> Dysphagia, dyspnea (especially when supine), and persistent hoarseness. Hoarseness is a red flag for recurrent laryngeal nerve (RLN) involvement.</li>
+    <li><strong>Palpation:</strong> Assess size, symmetry, consistency (smooth/soft in Graves', firm in Hashimoto's/MNG, hard/fixed in malignancy), and mobility.</li>
+    <li><strong>Tracheal Deviation &amp; Pemberton Sign:</strong> Note deviation indicating a large goiter or retrosternal extension. Pemberton sign (facial plethora and respiratory distress when raising both arms) is a classic finding for thoracic inlet obstruction.</li>
+  </ul>
+
+  <h3>Laboratory Investigations</h3>
+  <ul>
+    <li><strong>TSH:</strong> The most sensitive initial screening test. Low TSH (&lt;0.3 mU/L) suggests hyperthyroidism (next step: radionuclide scan). High TSH (&gt;5.0 mU/L) suggests hypothyroidism (next step: ultrasound). Normal TSH indicates a euthyroid state (next step: ultrasound).</li>
+    <li><strong>Thyroid Antibodies:</strong> Anti-TPO suggests Hashimoto's; TSH receptor antibodies (TRAb) are diagnostic for Graves'.</li>
+    <li><strong>Calcitonin:</strong> Screening for Medullary Thyroid Carcinoma (MTC), especially if FNA is suspicious or there is a family history of MEN2.</li>
+  </ul>
+
+  <h3>Diagnostic Imaging</h3>
+  <ul>
+    <li><strong>Ultrasound (US):</strong> The gold standard for detailed morphological evaluation. Stratifies risk using systems like TI-RADS. Assesses nodule characteristics and cervical lymph nodes.</li>
+    <li><strong>Radionuclide Scan:</strong> Provides functional information when TSH is suppressed. A <strong>"hot" nodule</strong> exhibits intense uptake, indicating autonomy (malignancy risk &lt;1%, FNA rarely required). A <strong>"cold" nodule</strong> shows decreased uptake, carrying a higher malignancy risk (5-15%), warranting FNA.</li>
+    <li><strong>CT Neck/Chest:</strong> Reserved for specific indications, primarily to assess large or retrosternal goiters and their relationship to the trachea and great vessels. <em>Pitfall:</em> Iodinated contrast can precipitate thyrotoxicosis (Jod-Basedow effect) in patients with autonomous nodules.</li>
+  </ul>
+</section>
+
+<section class="topic s1" id="p1e">
+  <div class="topic-header"><span class="topic-num">1.5</span><h2>The Bethesda System for FNA</h2></div>
+  <p>Fine-needle aspiration (FNA) is the cornerstone diagnostic procedure for evaluating discrete thyroid nodules. The Bethesda System for Reporting Thyroid Cytopathology (TBSRTC) standardizes interpretation and guides subsequent surgical management.</p>
+
+  <div class="table-wrap s1-tbl"><table>
+    <thead><tr><th>Category</th><th>Diagnosis</th><th>Malignancy Risk (%)</th><th>Clinical Management</th></tr></thead>
+    <tbody>
+      <tr><td><strong>I</strong></td><td>Non-diagnostic / Unsatisfactory</td><td>1-4</td><td>Repeat FNA, often with ultrasound guidance.</td></tr>
+      <tr><td><strong>II</strong></td><td>Benign</td><td>0-3</td><td>Clinical and ultrasound surveillance.</td></tr>
+      <tr><td><strong>III</strong></td><td>Atypia of Undetermined Significance (AUS) or FLUS</td><td>5-15</td><td>Repeat FNA, molecular testing, or diagnostic lobectomy.</td></tr>
+      <tr><td><strong>IV</strong></td><td>Follicular Neoplasm or Suspicious for Follicular Neoplasm</td><td>15-30</td><td>Diagnostic lobectomy (no frozen section).</td></tr>
+      <tr><td><strong>V</strong></td><td>Suspicious for Malignancy</td><td>60-75</td><td>Thyroid lobectomy or total thyroidectomy.</td></tr>
+      <tr><td><strong>VI</strong></td><td>Malignant</td><td>97-99</td><td>Definitive surgical resection (lobectomy or total thyroidectomy).</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<div class="sec-header s2">
+  <span class="sec-badge">PILLAR 2</span>
+  <span class="sec-title">Management Algorithms</span>
+</div>
+
+<section class="topic s2" id="p2a">
+  <div class="topic-header"><span class="topic-num">2.1</span><h2>Hyperthyroidism Approach</h2></div>
+  <p>Hyperthyroidism requires careful differentiation to determine if surgery is indicated. The single most useful diagnostic test is TSH (&lt;0.3 mU/L), confirmed with Free T4 and T3. Treatment involves medical, radiation, or surgical pathways depending on the specific etiology.</p>
+
+  <div class="table-wrap s2-tbl"><table>
+    <thead><tr><th>Disease</th><th>Predominant Treatment</th></tr></thead>
+    <tbody>
+      <tr><td>Graves' disease</td><td>Medical or surgical (Total thyroidectomy favored for rapid control)</td></tr>
+      <tr><td>Toxic nodular goiter (Plummer disease)</td><td>Surgical or medical (Surgery allows rapid control and avoids long-term ATM toxicity)</td></tr>
+      <tr><td>Solitary hyperfunctioning nodule</td><td>Surgical; rarely medical (Lobectomy plus isthmusectomy is usually sufficient)</td></tr>
+      <tr><td>Iodine induced (Jod-Basedow)</td><td>Medical</td></tr>
+      <tr><td>Subacute thyroiditis (de Quervain)</td><td>Medical</td></tr>
+      <tr><td>Struma ovarii</td><td>Surgical (resect ovarian teratoma)</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section class="topic s2" id="p2b">
+  <div class="topic-header"><span class="topic-num">2.2</span><h2>Treatment Considerations for Hyperthyroidism</h2></div>
+  
+  <h3>Initial Therapy</h3>
+  <p>Medical management for control of symptoms precedes surgical treatment. Antithyroid Medications (ATMs) like methimazole (MMI) and propylthiouracil (PTU) limit hormone synthesis. Beta-blockers provide symptomatic relief for tachycardia and tremor. Achieving a euthyroid state is critical to markedly reduce the chance of intra- or post-operative thyroid storm.</p>
+
+  <h3>Graves' Disease</h3>
+  <ul>
+    <li><strong>Prolonged ATM Administration:</strong> Requires a 12-24 month trial. Initial remission is 50%, declining to 30% at 10 years. Carries risk of agranulocytosis.</li>
+    <li><strong>Radioactive Iodine (RAI):</strong> Definitive choice for many, but hyperthyroidism persists in 5-25%. Risk of subsequent hypothyroidism is high. Absolutely contraindicated in pregnancy.</li>
+    <li><strong>Surgery:</strong> Total thyroidectomy provides rapid normalization, zero recurrence, and avoids ionizing radiation. Preferred for patients with absolute contraindications to RAI, compressive symptoms, or concurrent suspicious nodules.</li>
+  </ul>
+  
+  <div class="callout pearl">
+    <span class="label">Pre-Operative Preparation for Graves'</span>
+    In Graves' disease, inorganic iodine administration (Lugol's solution or SSKI) given for 7-10 days immediately pre-operatively decreases the size and extreme vascularity of the gland, significantly reducing intra-operative blood loss.
+  </div>
+</section>
+
+<section class="topic s2" id="p2c">
+  <div class="topic-header"><span class="topic-num">2.3</span><h2>Euthyroid Nodular Disease</h2></div>
+  <p>Most patients with nodules are clinically and biochemically euthyroid. Management is dictated by symptoms, nodule size, and FNA results.</p>
+  <ul>
+    <li><strong>Cystic Lesions:</strong> Simple cysts are aspirated dry. If they recur after two failed aspirations, or are &gt;4 cm, thyroid lobectomy is indicated.</li>
+    <li><strong>Multinodular Goiter (MNG):</strong> Managed medically with serial evaluations unless compressive symptoms or a dominant nodule develops. Total thyroidectomy is preferred for MNG with compressive symptoms to minimize recurrent disease from remnant hypertrophy.</li>
+    <li><strong>Indeterminate Cytology (AUS/FLUS &amp; Suspicious for Follicular Neoplasm):</strong> The distinction between benign follicular adenoma and follicular carcinoma cannot be made by FNA cytology alone; it requires assessment for capsular or vascular invasion. Diagnostic lobectomy is indicated.</li>
+  </ul>
+</section>
+
+<section class="topic s2" id="p2d">
+  <div class="topic-header"><span class="topic-num">2.4</span><h2>Disease-Specific Thyroid Cancers</h2></div>
+  <p>Thyroid cancer encompasses various types, each with distinct biological behaviors. Differentiated thyroid cancers generally carry an excellent prognosis when treated appropriately.</p>
+  <ul>
+    <li><strong>Papillary Thyroid Cancer (PTC):</strong> Most common (&gt;90% 10-year survival). Spreads via lymphatics. Total thyroidectomy is recommended for tumors &gt;1 cm. Central neck dissection is added for suspected lymphatic spread.</li>
+    <li><strong>Follicular Thyroid Cancer (FTC):</strong> Comprises 10-15%. Typically solitary; metastasis is hematogenous (lung/bone). "Minimally invasive" FTC can be treated with lobectomy. Extensive capsular or vascular invasion requires total thyroidectomy followed by RAI ablation.</li>
+    <li><strong>Oncocytic (Hürthle Cell) Carcinoma (HCC):</strong> More aggressive. RAI uptake is minimal, making surveillance with US and Thyroglobulin (Tg) important.</li>
+    <li><strong>Medullary Thyroid Carcinoma (MTC):</strong> Arises from parafollicular C-cells (5%). Total thyroidectomy with central and modified radical neck dissection is the only effective treatment. Calcitonin is the tumor marker. Must test for MEN2 (RET proto-oncogene).</li>
+    <li><strong>Anaplastic Thyroid Cancer (ATC):</strong> Rare, highly aggressive, median survival ~6 months. Surgery is primarily for airway palliation.</li>
+  </ul>
+</section>
+
+<section class="topic s2" id="p2e">
+  <div class="topic-header"><span class="topic-num">2.5</span><h2>TNM Staging for Differentiated Thyroid Cancer (AJCC 8th Ed)</h2></div>
+  <p>The final stage of DTC is critically dependent on patient age, with a strict cutoff at 55 years reflecting the typically less aggressive nature of DTC in younger individuals.</p>
+
+  <div class="table-wrap s2-tbl"><table>
+    <thead><tr><th>Age Group</th><th>Stage I</th><th>Stage II</th><th>Stage III</th><th>Stage IV</th></tr></thead>
+    <tbody>
+      <tr><td><strong>&lt; 55 Years</strong></td><td>Any T, Any N, <strong>M0</strong> (No distant metastasis)</td><td>Any T, Any N, <strong>M1</strong> (Distant metastasis present)</td><td>N/A</td><td>N/A</td></tr>
+      <tr><td><strong>≥ 55 Years</strong></td><td>T1 or T2, N0, M0 (Small tumor, no nodes)</td><td>T3, N0/N1a, M0 (Larger tumor or central nodes)</td><td>T4a or N1b, M0 (Significant local invasion or lateral nodes)</td><td>T4b OR Any T, Any N, M1 (Very extensive invasion or distant mets)</td></tr>
+    </tbody>
+  </table></div>
+  <div class="callout warn">
+    <span class="label">ATC Staging Exception</span>
+    Due to its extremely aggressive nature and rapid progression, all Anaplastic Thyroid Cancers are uniformly classified as Stage IV at diagnosis, regardless of the initial T, N, or M components.
+  </div>
+</section>
+
+<div class="sec-header s3">
+  <span class="sec-badge">PILLAR 3</span>
+  <span class="sec-title">The Operative Atlas</span>
+</div>
+
+<section class="topic s3" id="p3a">
+  <div class="topic-header"><span class="topic-num">3.1</span><h2>Surgical Anatomy: Overview &amp; Landmarks</h2></div>
+  <p>A thorough knowledge of embryology and surgical anatomy is essential for safe thyroidectomy. The gland extends from approximately the C5 to T1 vertebral level. The lobes extend from the oblique line of the thyroid cartilage to the 5th-6th tracheal ring, while the isthmus lies over the 2nd-3rd tracheal rings.</p>
+  
+  <ul>
+    <li><strong>Superficial Relations:</strong> Skin, superficial fascia (platysma), anterior jugular vein, and infrahyoid (strap) muscles (sternohyoid, omohyoid, sternothyroid, thyrohyoid).</li>
+    <li><strong>Medial Relations:</strong> Two muscles (cricothyroid, inferior constrictor), two tubes (larynx-trachea, pharynx-esophagus), and two nerves (external laryngeal, recurrent laryngeal).</li>
+    <li><strong>Developmental Anatomy:</strong> The thyroid develops from the foramen cecum at the base of the tongue, descending via the thyroglossal duct.</li>
+    <li><strong>Pyramidal Lobe:</strong> A common remnant of the distal duct, extending superiorly from the isthmus. It must be identified and removed during total thyroidectomy to ensure complete resection.</li>
+    <li><strong>Tubercle of Zuckerkandl:</strong> A posterolateral projection of thyroid tissue present in ~70% of people. It acts as a reliable guide: the Recurrent Laryngeal Nerve and Superior Parathyroid Gland are consistently found postero-medial to this tubercle.</li>
+  </ul>
+</section>
+
+<section class="topic s3" id="p3b">
+  <div class="topic-header"><span class="topic-num">3.2</span><h2>Fascia, Capsules &amp; The Surgical Plane</h2></div>
+  <p>The thyroid gland is enveloped by two capsules. The Surgical Plane for safe dissection occurs precisely in the avascular space between these two capsules.</p>
+  <ul>
+    <li><strong>True Capsule:</strong> A fibrous condensation of the gland's own fascia. The venous plexus is deep to the true capsule. The gland is removed with its true capsule intact.</li>
+    <li><strong>False Capsule:</strong> Derived from the pretracheal layer of deep cervical fascia.</li>
+    <li><strong>Ligament of Berry:</strong> A posterior thickening of the false capsule that firmly anchors the thyroid gland to the cricoid cartilage. This explains why the thyroid moves up and down with swallowing.</li>
+  </ul>
+  <div class="callout clin">
+    <span class="label">Clinical Consequence</span>
+    The false capsule is weak posteriorly. Consequently, goiters tend to enlarge posteriorly, compressing the trachea (dyspnea), recurrent laryngeal nerve (dysphonia), and esophagus (dysphagia).
+  </div>
+</section>
+
+<section class="topic s3" id="p3c">
+  <div class="topic-header"><span class="topic-num">3.3</span><h2>The Nerves: Recurrent &amp; External Laryngeal</h2></div>
+  <p>Preservation of the nerves supplying the larynx is the most critical element of thyroid surgery. Understanding their relationship to the local arterial supply dictates surgical technique.</p>
+
+  <div class="diagram-wrap">
+    <div class="diagram-title">Medial Surface Anatomy: Nerves and Tubes</div>
+    <img src="Image_29.jpg" alt="Medial Surface Anatomy showing Larynx, Trachea, Pharynx, Esophagus, and Nerves">
+  </div>
+
+  <h3>The Recurrent Laryngeal Nerve (RLN)</h3>
+  <ul>
+    <li><strong>Origin:</strong> Branches of the Vagus nerve.</li>
+    <li><strong>Course:</strong> The right RLN loops under the right subclavian artery and ascends with an oblique, lateral-to-medial trajectory. The left RLN loops under the aortic arch and ascends more vertically in the tracheoesophageal groove.</li>
+    <li><strong>Relationship to Inferior Thyroid Artery (ITA):</strong> Highly variable. The RLN can pass anterior to, posterior to, or intertwine between the branches of the ITA.</li>
+    <li><strong>Non-Recurrent Laryngeal Nerve:</strong> A rare, high-risk right-sided anomaly where the nerve branches directly from the vagus in the neck, bypassing the subclavian loop. Associated with an aberrant right subclavian artery (arteria lusoria).</li>
+  </ul>
+
+  <h3>The External Laryngeal Nerve (ELN)</h3>
+  <ul>
+    <li><strong>Course:</strong> Innervates the cricothyroid muscle. Runs in close proximity to the Superior Thyroid Artery (STA) at the superior pole of the gland.</li>
+    <li><strong>Cernea Classification:</strong> Describes how far above the superior pole the ELN crosses the STA. Type 2b (crosses below the superior pole) carries the highest risk of injury during superior pole dissection.</li>
+  </ul>
+</section>
+
+<section class="topic s3" id="p3d">
+  <div class="topic-header"><span class="topic-num">3.4</span><h2>Blood Supply &amp; Parathyroid Preservation</h2></div>
+  
+  <h3>Arterial &amp; Venous Supply</h3>
+  <ul>
+    <li><strong>Superior Thyroid Artery:</strong> Branch of the external carotid.</li>
+    <li><strong>Inferior Thyroid Artery (ITA):</strong> Branch of the thyrocervical trunk.</li>
+    <li><strong>Thyroidea Ima Artery:</strong> Present in ~10%, ascending directly from the aortic arch to the isthmus. Must be identified to prevent massive hemorrhage during tracheal dissection.</li>
+    <li><strong>Middle Thyroid Vein:</strong> Drains into the internal jugular vein. Often short, wide, and easily torn during lateral mobilization of the gland, leading to troublesome bleeding.</li>
+  </ul>
+
+  <h3>Parathyroid Preservation</h3>
+  <p>The parathyroid glands regulate calcium. The surgical dictum is to treat each remaining parathyroid as though it is the only one left in the neck.</p>
+  <ul>
+    <li><strong>Superior Parathyroids:</strong> More constant. Found on the posterolateral surface near the cricothyroid junction, deep to the plane of the RLN.</li>
+    <li><strong>Inferior Parathyroids:</strong> Highly variable due to longer embryological migration. Found near the inferior poles, superficial to the plane of the RLN.</li>
+    <li><strong>Blood Supply:</strong> The Inferior Thyroid Artery is the primary blood supply for ALL four parathyroid glands.</li>
+  </ul>
+</section>
+
+<div class="sec-header s4">
+  <span class="sec-badge">PILLAR 4</span>
+  <span class="sec-title">Operative Technique &amp; Decision Making</span>
+</div>
+
+<section class="topic s4" id="p4a">
+  <div class="topic-header"><span class="topic-num">4.1</span><h2>Pre-Op Optimization &amp; Informed Consent</h2></div>
+  <ul>
+    <li><strong>Euthyroid Preparation:</strong> For toxic goiter, achieve a euthyroid state with ATDs to prevent life-threatening thyroid storm intraoperatively.</li>
+    <li><strong>Vocal Cord Assessment:</strong> Pre-operative flexible laryngoscopy provides a critical baseline of vocal cord function, essential for medicolegal documentation.</li>
+    <li><strong>Consent Checklist:</strong> Must explicitly mention Recurrent Laryngeal Nerve injury (hoarseness, aspiration, potential tracheostomy), External Branch of Superior Laryngeal Nerve injury (loss of high pitch), Hypocalcemia (transient or permanent), Hematoma (airway emergency), and Hypothyroidism (lifelong hormone replacement).</li>
+  </ul>
+</section>
+
+<section class="topic s4" id="p4b">
+  <div class="topic-header"><span class="topic-num">4.2</span><h2>Step-by-Step Thyroidectomy</h2></div>
+  <p>The operative setup is highly ritualized. The patient is placed supine with neck extended via a shoulder roll. General anesthesia with endotracheal intubation, utilizing an EMG tube for Intraoperative Nerve Monitoring (IONM).</p>
+
+  <div class="diagram-wrap">
+    <div class="diagram-title">Infrahyoid (Strap) Muscles</div>
+    <img src="Image_27.jpg" alt="Transverse section showing Infrahyoid Muscles: Sternohyoid, Omohyoid, Sternothyroid, Thyrohyoid">
+  </div>
+
+  <ol>
+    <li><strong>Incision &amp; Flap Raising:</strong> A transverse collar incision placed in Langer's lines (marked pre-operatively with the patient awake). Subplatysmal flaps are raised superiorly and inferiorly.</li>
+    <li><strong>Strap Muscle Handling:</strong> The investing layer of deep cervical fascia is opened in the midline raphe. The strap muscles (sternohyoid, sternothyroid, omohyoid) are retracted laterally. If the sternothyroid must be divided for exposure, it must be transected <strong>HIGH (close to the cricoid cartilage)</strong> to avoid injury to its nerve supply from the ansa cervicalis, which enters inferiorly.</li>
+    <li><strong>Superior Pole Dissection (SURGICAL RULE #1):</strong> Ligate the Superior Thyroid Artery as <strong>CLOSE</strong> to the gland as possible (capsular dissection). This ensures the ligature is placed distally, after the External Laryngeal Nerve has separated from the vessel.</li>
+    <li><strong>Middle Thyroid Vein:</strong> Individually ligated and divided to allow medial rotation of the gland.</li>
+    <li><strong>Inferior Pole Dissection (SURGICAL RULE #2):</strong> Ligate the branches of the Inferior Thyroid Artery as <strong>FAR</strong> from the main trunk as possible (directly on the thyroid capsule). This avoids a mass ligature that could catch the variably-located Recurrent Laryngeal Nerve or disrupt the blood supply to the parathyroids.</li>
+    <li><strong>RLN Identification:</strong> The nerve is put on stretch and palpated as a taut "guitar string." Visually trace it from the inferior pole upward to where it enters the cricothyroid muscle through the Ligament of Berry.</li>
+    <li><strong>Ligament of Berry:</strong> The final, critical attachment. High risk of RLN injury. Control bleeding here with direct pressure, never blind clamping.</li>
+    <li><strong>Parathyroid Autotransplantation:</strong> If a parathyroid gland is inadvertently devascularized, it should be minced and autotransplanted into the sternocleidomastoid muscle.</li>
+  </ol>
+</section>
+
+<section class="topic s4" id="p4c">
+  <div class="topic-header"><span class="topic-num">4.3</span><h2>Intra-Operative Decision Points &amp; Pitfalls</h2></div>
+  
+  <div class="callout pearl">
+    <span class="label">Nerve Monitoring Loss of Signal (LOS)</span>
+    If IONM shows a Loss of Signal, methodically check for technical issues first. If a true LOS (functional injury) occurs on the first side during a planned total thyroidectomy, <strong>abandon the contralateral procedure</strong> immediately to prevent a catastrophic bilateral vocal cord palsy and permanent tracheostomy.
+  </div>
+
+  <ul>
+    <li><strong>Difficult Superior Pole:</strong> In large, vascular glands, retract the superior pole inferiorly and laterally to physically pull the thyroid vessels away from the ELN before applying any clips or ligatures.</li>
+    <li><strong>Distorted Planes &amp; Re-operations:</strong> Re-operations are treacherous due to scar tissue. Consider abandoning the midline approach for a lateral "virgin" plane approach to safely identify the RLN before approaching the scar bed.</li>
+    <li><strong>Conversion to Sternotomy:</strong> Rarely needed for retrosternal goiters, as most can be delivered transcervically. Reserved for cases where the goiter cannot be safely delivered or there is frank invasion into great vessels.</li>
+  </ul>
+</section>
+
+<div class="sec-header s5">
+  <span class="sec-badge">PILLAR 5</span>
+  <span class="sec-title">Complication Management</span>
+</div>
+
+<section class="topic s5" id="p5a">
+  <div class="topic-header"><span class="topic-num">5.1</span><h2>Post-Operative Care</h2></div>
+  <ul>
+    <li><strong>Hormone Replacement:</strong> Following total thyroidectomy, lifelong levothyroxine is mandatory. For benign disease, the goal is a normal TSH. For differentiated thyroid cancer, the TSH is deliberately suppressed based on risk stratification. Post-lobectomy patients require a TSH check at 4-6 weeks to assess if supplementation is needed.</li>
+    <li><strong>Voice Change Evaluation:</strong> Hoarseness is common. If persistent &gt;48 hours, perform flexible laryngoscopy. RLN palsy is considered permanent if no recovery is seen after one year.</li>
+  </ul>
+</section>
+
+<section class="topic s5" id="p5b">
+  <div class="topic-header"><span class="topic-num">5.2</span><h2>Hematoma &amp; RLN Injury</h2></div>
+  
+  <h3>Neck Hematoma (Surgical Emergency)</h3>
+  <p>Post-operative bleeding into the closed neck space produces life-threatening airway compromise via rapid venous compression and tracheal edema, not just mechanical shifting.</p>
+  <ul>
+    <li><strong>Signs:</strong> Increasing neck swelling, firmness under the incision, ecchymosis, dysphonia, dyspnea, and stridor.</li>
+    <li><strong>Management:</strong> Immediate bedside wound decompression is the definitive first step. Remove sutures/clips, open the strap muscles, and evacuate the clot right in the PACU or ward. Do not delay for transport to the OR. Once the airway is secured, return to the OR to identify and ligate the unsecured vessel.</li>
+  </ul>
+
+  <h3>Recurrent Laryngeal Nerve Palsy</h3>
+  <p>Caused by traction, thermal spread from energy devices, or inadvertent ligation. Unilateral injury causes hoarseness and a weak, breathy voice with increased aspiration risk. Bilateral injury results in the vocal cords assuming a paramedian position, causing immediate, catastrophic airway obstruction requiring emergency tracheostomy.</p>
+</section>
+
+<section class="topic s5" id="p5c">
+  <div class="topic-header"><span class="topic-num">5.3</span><h2>Hypocalcemia &amp; Thyroid Storm</h2></div>
+
+  <h3>Hypocalcemia (Hypoparathyroidism)</h3>
+  <p>The most common complication post-total thyroidectomy (10-20% transient, 1-2% permanent). Results from inadvertent removal or devascularization of the parathyroid glands.</p>
+  <ul>
+    <li><strong>Symptoms:</strong> Perioral tingling, paresthesias in the fingertips, positive Chvostek's sign, and Trousseau's sign.</li>
+    <li><strong>Management:</strong> Monitor serum calcium and PTH. Provide prophylactic oral calcium/calcitriol for high-risk patients. Administer IV calcium gluconate for severe, symptomatic hypocalcemia.</li>
+  </ul>
+
+  <h3>Thyroid Storm</h3>
+  <p>A life-threatening, massive release of thyroid hormones precipitated by surgical stress in an inadequately prepared hyperthyroid patient. Presents with hyperpyrexia, severe tachycardia, arrhythmias, and altered mental status. Prevention is paramount: the patient must be rendered clinically and biochemically euthyroid prior to scheduling elective thyroidectomy.</p>
+</section>
+
+</div></main>
+
+<button id="top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+const progressBar = document.getElementById('progress-bar');
+const topBtn = document.getElementById('top-btn');
+const sidebarToggle = document.getElementById('sidebar-toggle');
+const sidebarOverlay = document.getElementById('sidebar-overlay');
+const navItems = document.querySelectorAll('.nav-item');
+const sections = document.querySelectorAll('.topic[id], .sec-title[id]');
+const body = document.body;
+
+function toggleSidebar() { body.classList.toggle('sidebar-open'); }
+function closeSidebar() { body.classList.remove('sidebar-open'); }
+
+window.addEventListener('scroll', () => {
+  const st = window.scrollY;
+  const dh = document.documentElement.scrollHeight - window.innerHeight;
+  progressBar.style.transform = `scaleX(${st / dh})`;
+  topBtn.classList.toggle('show', st > 400);
+  
+  let current = '';
+  sections.forEach(s => { if (st >= s.offsetTop - 120) current = s.id; });
+  navItems.forEach(n => { n.classList.toggle('active', n.getAttribute('href') === '#' + current); });
+});
+
+function filterNav(query) {
+  const q = query.toLowerCase();
+  navItems.forEach(item => { item.style.display = (!q || item.textContent.toLowerCase().includes(q)) ? 'block' : 'none'; });
+  document.querySelectorAll('.vol-label').forEach(l => { l.style.display = 'block'; });
+}
+
+navItems.forEach(item => {
+  item.addEventListener('click', e => {
+    e.preventDefault();
+    closeSidebar();
+    const target = document.querySelector(item.getAttribute('href'));
+    if (target) window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 80, behavior: 'smooth' });
+  });
+});
+
+document.querySelectorAll('.topic').forEach((el, i) => { el.style.animationDelay = `${i * 0.03}s`; });
+</script>
+<script src="../../js/navigation.js"></script>
+</body>
+</html>

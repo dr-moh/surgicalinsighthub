@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Anal Surgical Procedures — Surgical Insight Hub</title>
+<title>Surgical Insight Hub — Anal Surgical Procedures</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -17,7 +17,7 @@
 </script>
 <style>
 :root {
-  /* Crimson & Umber Aesthetic (Anal Procedures Focus) */
+  /* Crimson & Umber Aesthetic (Colorectal) */
   --primary:   #881337; 
   --primary-dk:#4C0519;
   --primary-lt:#FFF1F2;
@@ -26,40 +26,51 @@
   --gold:      #B45309;
   --gold-lt:   #FEF3C7;
   --s1:        #881337;
-  --s1-lt:     #FFF1F2;
   --s2:        #4C0519;
-  --s2-lt:     #FEF2F2;
   --s3:        #9F1239;
-  --s3-lt:     #FFF1F2;
   --s4:        #7F1D1D;
-  --s4-lt:     #FEF2F2;
   --s5:        #450A0A;
+  --s1-lt:     #FFF1F2;
+  --s2-lt:     #FEF2F2;
+  --s3-lt:     #FFF1F2;
+  --s4-lt:     #FEF2F2;
   --s5-lt:     #FFF1F2;
-  --bg:        #FAFAF9;
-  --bg2:       #F5F5F4;
-  --border:    #E7E5E4;
+  --red:       #B91C1C;
+  --red-lt:    #FEF2F2;
+  --amber:     #B45309;
+  --amber-lt:  #FFFBEB;
+  --blue:      #1D4ED8;
+  --blue-lt:   #EFF6FF;
+  --bg:        #FAFAFA;
+  --bg2:       #F4F4F5;
+  --border:    #E5E7EB;
   --text:      #1C1917;
   --muted:     #57534E;
   --white:     #FFFFFF;
   --sidebar-w: 320px;
 }
 
+/* ── DARK MODE OVERRIDES ── */
 [data-theme="dark"] {
-  --bg: #0C0C0C;
-  --bg2: #1A1113;
+  --bg: #0B0B0B;
+  --bg2: #161616;
   --text: #F3F4F6;
   --muted: #9CA3AF;
   --border: rgba(255,255,255,0.08);
-  --primary-lt: #1A1113;
-  --s1-lt: #88133733;
-  --white: #1A1113;
+  --primary-lt: #1C1917;
+  --s1-lt: #1C1917;
+  --s2-lt: #1C1917;
+  --s3-lt: #1C1917;
+  --s4-lt: #1C1917;
+  --s5-lt: #1C1917;
+  --white: #161616;
 }
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
 body{font-family:'Source Serif 4',Georgia,serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.75;}
 
-/* SIDEBAR & OVERLAY */
+/* SLIDE-OVER SIDEBAR */
 #sidebar {
   position: fixed; top: 0; left: 0; width: var(--sidebar-w); height: 100vh;
   background: var(--primary-dk); color: #FFF1F2;
@@ -69,258 +80,633 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--bg);color:var(-
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 4px 0 24px rgba(0,0,0,0.4);
 }
-body.sidebar-open #sidebar { transform: translateX(0); }
+body.sidebar-open #sidebar {
+  transform: translateX(0);
+}
 
+/* OVERLAY */
 #sidebar-overlay {
   position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
   background: rgba(76, 5, 25, 0.7); backdrop-filter: blur(3px);
   z-index: 950; opacity: 0; pointer-events: none;
   transition: opacity 0.3s ease;
 }
-body.sidebar-open #sidebar-overlay { opacity: 1; pointer-events: auto; }
+body.sidebar-open #sidebar-overlay {
+  opacity: 1; pointer-events: auto;
+}
 
+/* TOGGLE BUTTON - TOP LEFT */
 #sidebar-toggle {
-  position: fixed; top: 72px; left: 28px; z-index: 900;
+  position: fixed; top: 24px; left: 28px; z-index: 900;
   background: var(--primary); color: white;
   border: none; border-radius: 30px;
   padding: 10px 18px; font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600;
   letter-spacing: 0.05em; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.25);
   display: flex; align-items: center; gap: 8px; transition: all 0.2s;
 }
-#sidebar-toggle:hover { background: var(--accent); transform: translateY(-2px); }
+#sidebar-toggle:hover {
+  background: var(--accent2); transform: translateY(-2px);
+}
 
 #sidebar-header{padding:20px 20px 14px;border-bottom:1px solid rgba(255,255,255,0.08);flex-shrink:0;}
 #sidebar-header .logo{font-family:'Playfair Display',serif;font-size:13px;font-weight:700;color:var(--accent2);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;}
-#sidebar-header .sub{font-size:10.5px;color:rgba(255, 241, 242, 0.6);letter-spacing:0.04em;}
+#sidebar-header .sub{font-size:10.5px;color:rgba(255,241,242,0.6);letter-spacing:0.04em;}
+#sidebar-search{padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.05);flex-shrink:0;}
+#sidebar-search input{width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:6px;color:#FFF1F2;padding:6px 10px;font-size:12px;font-family:'Source Serif 4',serif;outline:none;transition:border-color 0.2s;}
+#sidebar-search input::placeholder{color:rgba(255,241,242,0.4);}
+#sidebar-search input:focus{border-color:var(--accent2);}
 #sidebar-nav{flex:1;overflow-y:auto;padding:8px 0 20px;}
+#sidebar-nav::-webkit-scrollbar{width:4px;}
+#sidebar-nav::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.15);border-radius:2px;}
 .vol-label{font-size:9.5px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent2);padding:14px 18px 4px;}
-.nav-item{display:block;padding:8px 18px 8px 22px;font-size:12.5px;color:rgba(255, 241, 242, 0.75);text-decoration:none;border-left:2px solid transparent;transition:all 0.15s;line-height:1.4;}
-.nav-item:hover{color:#fff;background:rgba(255,255,255,0.03);border-left-color:var(--accent);}
+.nav-item{display:block;padding:8px 18px 8px 22px;font-size:12.5px;color:rgba(255,241,242,0.75);text-decoration:none;border-left:2px solid transparent;transition:all 0.15s;line-height:1.4;}
+.nav-item:hover{color:#fff;background:rgba(255,255,255,0.03);border-left-color:rgba(244,63,94,0.5);}
 .nav-item.active{color:#fff;background:rgba(255,255,255,0.06);border-left-color:var(--accent2);font-weight:600;}
+.nav-item .num{font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(255,241,242,0.4);margin-right:6px;}
+
+/* MAIN */
+#main{margin-left:0; min-height:100vh;}
 
 /* HERO */
 #hero{background:linear-gradient(135deg,var(--primary-dk) 0%,#881337 60%,#4C0519 100%);color:white;padding:120px 72px 60px;position:relative;overflow:hidden;}
+#hero::before{content:'';position:absolute;top:-60px;right:-60px;width:380px;height:380px;background:radial-gradient(circle,rgba(244,63,94,0.15) 0%,transparent 70%);pointer-events:none;}
 #hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent2),var(--gold),transparent);}
 #hero .eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.16em;color:var(--accent2);text-transform:uppercase;margin-bottom:14px;}
 #hero h1{font-family:'Playfair Display',serif;font-size:46px;font-weight:700;line-height:1.15;margin-bottom:10px;color:#fff;}
 #hero .subtitle{font-size:18px;color:rgba(255,255,255,0.8);font-style:italic;margin-bottom:28px;}
+#hero .badges{display:flex;gap:10px;flex-wrap:wrap;}
+#hero .badge{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:4px 14px;font-size:12px;color:rgba(255,255,255,0.95);font-family:'JetBrains Mono',monospace;}
 
 /* CONTENT */
 .content-wrap{max-width:900px;margin:0 auto;padding:0 48px 80px;}
+
+/* SECTION HEADER */
 .sec-header{margin-top:60px;margin-bottom:8px;padding:28px 36px;border-radius:10px;display:flex;align-items:center;gap:20px;}
 .sec-header.s1{background:linear-gradient(135deg,#8813370A,#8813371A);border-left:4px solid var(--s1);}
 .sec-header.s2{background:linear-gradient(135deg,#4C05190A,#4C05191A);border-left:4px solid var(--s2);}
 .sec-header.s3{background:linear-gradient(135deg,#9F12390A,#9F12391A);border-left:4px solid var(--s3);}
 .sec-header.s4{background:linear-gradient(135deg,#7F1D1D0A,#7F1D1D1A);border-left:4px solid var(--s4);}
 .sec-header.s5{background:linear-gradient(135deg,#450A0A0A,#450A0A1A);border-left:4px solid var(--s5);}
-.sec-badge{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;padding:4px 12px;border-radius:4px;white-space:nowrap;color:white;}
-.s1 .sec-badge{background:var(--s1);} .s2 .sec-badge{background:var(--s2);} .s3 .sec-badge{background:var(--s3);} .s4 .sec-badge{background:var(--s4);} .s5 .sec-badge{background:var(--s5);}
+.sec-badge{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;letter-spacing:0.1em;padding:4px 12px;border-radius:4px;white-space:nowrap;flex-shrink:0;}
+.s1 .sec-badge{background:var(--s1);color:white;}
+.s2 .sec-badge{background:var(--s2);color:white;}
+.s3 .sec-badge{background:var(--s3);color:white;}
+.s4 .sec-badge{background:var(--s4);color:white;}
+.s5 .sec-badge{background:var(--s5);color:white;}
 .sec-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;}
+.s1 .sec-title{color:var(--s1);}
+.s2 .sec-title{color:var(--s2);}
+.s3 .sec-title{color:var(--s3);}
+.s4 .sec-title{color:var(--s4);}
+.s5 .sec-title{color:var(--s5);}
 
-.topic{margin-top:48px;padding-top:48px;border-top:1px solid var(--border);animation:fadeUp 0.4s ease both;}
-@keyframes fadeUp{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
+/* TOPIC */
+.topic{margin-top:48px;padding-top:48px;border-top:1px solid var(--border);}
+.topic:first-of-type{border-top:none;}
+.topic-header{display:flex;align-items:flex-start;gap:16px;margin-bottom:24px;}
+.topic-num{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;padding:3px 10px;border-radius:4px;margin-top:4px;flex-shrink:0;}
+.s1 .topic-num{background:var(--s1-lt);color:var(--s1);}
+.s2 .topic-num{background:var(--s2-lt);color:var(--s2);}
+.s3 .topic-num{background:var(--s3-lt);color:var(--s3);}
+.s4 .topic-num{background:var(--s4-lt);color:var(--s4);}
+.s5 .topic-num{background:var(--s5-lt);color:var(--s5);}
+.topic h2{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;line-height:1.2;}
+.s1 .topic h2{color:var(--s1);}
+.s2 .topic h2{color:var(--s2);}
+.s3 .topic h2{color:var(--s3);}
+.s4 .topic h2{color:var(--s4);}
+.s5 .topic h2{color:var(--s5);}
+.topic h3{font-family:'Playfair Display',serif;font-size:17px;font-weight:600;color:var(--muted);margin:26px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--border);}
+.topic p{margin-bottom:12px;color:var(--text);}
+.topic ul,.topic ol{margin:8px 0 14px 20px;color:var(--text);}
+.topic li{margin-bottom:6px;line-height:1.65;}
+.topic li::marker{color:var(--accent2);}
+.topic strong{color:var(--text);font-weight:600;}
 
 /* TABLES */
 .table-wrap{overflow-x:auto;margin:16px 0 20px;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.04);}
 table{width:100%;border-collapse:collapse;font-size:13.5px;background:white;}
 thead tr{background:var(--s1);}
-thead th{color:white;padding:12px 14px;text-align:left;font-family:'Source Serif 4',serif;font-weight:600;font-size:13px; text-transform: uppercase;}
+thead th{color:white;padding:10px 14px;text-align:left;font-family:'Source Serif 4',serif;font-weight:600;font-size:13px; text-transform: uppercase;}
 tbody tr:nth-child(even){background:var(--bg2);}
-tbody td{padding:10px 14px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.5;}
+tbody tr:hover{background:var(--s1-lt);transition:background 0.15s;}
+tbody td{padding:9px 14px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.5;}
+.s2-tbl thead tr{background:var(--s2);}
+.s3-tbl thead tr{background:var(--s3);}
+.s4-tbl thead tr{background:var(--s4);}
+.s5-tbl thead tr{background:var(--s5);}
 
+/* CALLOUTS */
+.callout{margin:18px 0;padding:14px 18px;border-radius:0 8px 8px 0;border-left:4px solid;font-size:14px;line-height:1.65;}
+.callout .label{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;display:block;margin-bottom:4px;}
+.callout.pearl{background:var(--amber-lt);border-color:var(--amber);}
+.callout.pearl .label{color:var(--amber);}
+.callout.warn{background:var(--red-lt);border-color:var(--red);}
+.callout.warn .label{color:var(--red);}
+.callout.clin{background:var(--s1-lt);border-color:var(--s1);}
+.callout.clin .label{color:var(--s1);}
+
+/* DIAGRAM PLACEHOLDERS */
+.diagram-wrap{background:white;border:1px solid var(--border);border-radius:8px;padding:18px;margin:20px 0;box-shadow:0 1px 4px rgba(0,0,0,0.03);text-align:center;}
+.diagram-title{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--s1);margin-bottom:12px;text-align:left;}
+
+/* RAPID REFERENCE */
 .rapid-ref{background:var(--primary-dk);color:var(--primary-lt);border-radius:10px;padding:28px 32px;margin:30px 0;}
 .rapid-ref h3{font-family:'Playfair Display',serif;font-size:20px;color:var(--accent2);margin-bottom:16px;}
-.rapid-ref table{background:transparent;}
+.rapid-ref table{font-size:12.5px; background: transparent;} 
 .rapid-ref thead tr{background:rgba(244,63,94,0.15);}
-.rapid-ref thead th{color:var(--accent2);border-bottom:1px solid rgba(255,255,255,0.1);}
-.rapid-ref tbody td{color:var(--primary-lt);border-bottom:1px solid rgba(255,255,255,0.05);}
+.rapid-ref thead th{color:var(--accent2);padding:8px 12px;font-size:11px;}
+.rapid-ref tbody tr:nth-child(even){background:rgba(255,255,255,0.03);}
+.rapid-ref tbody tr:hover{background:rgba(255,255,255,0.06);}
+.rapid-ref tbody td{color:var(--primary-lt);padding:7px 12px;border-bottom:1px solid rgba(255,255,255,0.05);}
+.rapid-ref tbody td strong{color:var(--gold);}
+
+/* PROGRESS */
+#progress-bar{position:fixed;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent2),var(--gold));transform-origin:left;transform:scaleX(0);transition:transform 0.1s;z-index:50;}
+
+/* TOP BTN */
+#top-btn{position:fixed;bottom:28px;right:28px;background:var(--primary);color:white;border:none;border-radius:50%;width:44px;height:44px;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,0.2);transition:all 0.2s;opacity:0;pointer-events:none;}
+#top-btn.show{opacity:1;pointer-events:auto;}
+#top-btn:hover{background:var(--accent2);transform:translateY(-2px);}
+
+/* ANIMATION */
+.topic{animation:fadeUp 0.4s ease both;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
 
 @media(max-width:900px){
   .content-wrap{padding:0 20px 60px;}
-  #hero{padding:120px 20px 40px;}
+  #hero{padding:72px 20px 40px;}
   #hero h1{font-size:30px;}
+}
+@media(max-width:900px){
+  #hero{padding:120px 20px 40px;}
+}
+@media print{
+  #sidebar-toggle, #sidebar-overlay, #sidebar, #top-btn, #progress-bar, .nav{display:none!important;}
+  .topic{page-break-inside:avoid;}
+  .sec-header{page-break-before:always;}
 }
 </style>
 </head>
 <body>
 
-<nav class="nav" id="mainNav">
-  <div class="nav-left">
-    <a href="../../index.html" class="nav-pill">
-      <div class="nav-logo-img"><img src="../../assets/images/Surgical_Insight_Hub_Logo.png" alt="SIH"></div>
-      <div>
-        <div class="nav-brand-text">Surgical Insight Hub</div>
-        <div class="nav-brand-sub">Medical Library</div>
-      </div>
-    </a>
+
+  <!-- Standardized SIH Navbar -->
+  <nav class="nav" id="mainNav">
+    <div class="nav-left">
+      <a href="../../index.html" class="nav-pill">
+        <div class="nav-logo-img">
+          <img src="../../assets/icons/apple-touch-icon.png" alt="SIH Logo">
+        </div>
+        <div>
+          <div class="nav-brand-text">Surgical Insight Hub</div>
+          <div class="nav-brand-sub">The Residency Journal</div>
+        </div>
+      </a>
+    </div>
+
     <div class="nav-links-pill">
       <a href="../../index.html">Home</a>
-      <a href="../../notes.html">Notes</a>
-      <a href="../operative_approach.html" class="active">Playbook</a>
+      <a href="../operative_approach.html" class="active">Operative Approach</a>
+      <a href="../high_yield_notes.html">High-Yield Notes</a>
+      <a href="../../arena.html">MCQ Arena</a>
+      <a href="../../surgery-talk.html">Surgery Talk</a>
+      <a href="../../about.html">About</a>
     </div>
+
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+        <svg id="moonIcon" viewBox="0 0 24 24" width="18" height="18"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        <svg id="sunIcon" style="display:none;" viewBox="0 0 24 24" width="18" height="18"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+      </button>
+      <a href="https://t.me/surgicalInsightHub" target="_blank" class="nav-tg-btn" title="Join Telegram" style="background: var(--brand-burgundy); color: #f0d080; padding: 8px 12px; border-radius: 8px; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: all 0.3s ease;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="#f0d080"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.89 8.22l-1.97 9.28c-.15.66-.54.82-1.08.51l-3-2.21-1.45 1.39c-.16.16-.3.3-.61.3l.21-3.05 5.56-5.02c.24-.21-.05-.33-.37-.12l-6.87 4.33-2.96-.92c-.64-.2-.66-.64.14-.95l11.57-4.46c.54-.19 1.01.13.83.94z"/></svg>
+      </a>
+      <a href="../../arena.html" class="nav-btn arena-btn">MCQ Arena</a>
+      <button class="mob-nav-toggle" onclick="openMobNav()" aria-label="Menu">
+        <div class="hamburger"><span></span><span></span><span></span></div>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mob-nav-overlay" id="mobNavOverlay" onclick="closeMobNav()"></div>
+  <div class="mob-nav-sheet" id="mobNavSheet">
+    <div class="mob-nav-handle"></div>
+    <a href="../../index.html">Home</a>
+    <a href="../../notes.html">Notes</a>
+    <a href="../operative_approach.html" class="active">Playbook</a>
+    <a href="../../arena.html">MCQ Arena</a>
+    <a href="../../podcast.html">Podcast</a>
+    <a href="../../surgery-talk.html">Surgery Talk</a>
+    <a href="../../about.html">About</a>
+    <a href="https://t.me/surgicalInsightHub" target="_blank" style="color: var(--brand-gold); font-weight: 800;">Join Telegram Community</a>
   </div>
-  <div class="nav-right">
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-      <svg id="moonIcon" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/></svg>
-      <svg id="sunIcon" style="display:none;" viewBox="0 0 24 24"><path d="M12 7a5 5 0 1 0 5 5 5.006 5.006 0 0 0-5-5zm0 8a3 3 0 1 1 3-3 3.003 3.003 0 0 1-3 3zm0-13a1 1 0 0 0-1 1v2a1 1 0 0 0 2 0V3a1 1 0 0 0-1-1zm0 18a1 1 0 0 0-1 1v2a1 1 0 0 0 2 0v-2a1 1 0 0 0-1-1zm8-11h-2a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2zm-16 0H2a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2zm13.657-5.657a1 1 0 0 0-1.414 0l-1.414 1.414a1 1 0 0 0 1.414 1.414l1.414-1.414a1 1 0 0 0 0-1.414zm-11.314 0a1 1 0 0 0 0 1.414l1.414 1.414a1 1 0 0 0 1.414-1.414L4.929 5.757a1 1 0 0 0-1.414 0zm11.314 11.314a1 1 0 0 0 0 1.414l1.414 1.414a1 1 0 0 0 1.414-1.414l-1.414-1.414a1 1 0 0 0-1.414 0zm-11.314 0a1 1 0 0 0-1.414 1.414l1.414 1.414a1 1 0 0 0 1.414-1.414l-1.414-1.414a1 1 0 0 0 0-1.414z"/></svg>
-    </button>
-    <a href="../../arena.html" class="nav-btn arena-btn">MCQ Arena</a>
-    <button class="mob-nav-toggle" onclick="openMobNav()"><div class="hamburger"><span></span><span></span><span></span></div></button>
-  </div>
-</nav>
 
-<div class="mob-nav-overlay" id="mobNavOverlay" onclick="closeMobNav()"></div>
-<div class="mob-nav-sheet" id="mobNavSheet">
-  <div class="mob-nav-handle"></div>
-  <a href="../../index.html">Home</a>
-  <a href="../../notes.html">Notes</a>
-  <a href="../operative_approach.html" class="active">Playbook</a>
-  <a href="../../arena.html">MCQ Arena</a>
-</div>
+  <div id="progress-bar"></div>
+  <div id="sidebar-overlay" onclick="closeSidebar()"></div>
 
-<div id="progress-bar"></div>
-<div id="sidebar-overlay" onclick="closeSidebar()"></div>
-<button id="sidebar-toggle" onclick="toggleSidebar()"><span>☰</span> Contents</button>
+  <button id="sidebar-toggle" onclick="toggleSidebar()">
+    <span>☰</span> Contents
+  </button>
 
+<!-- SIDEBAR -->
 <nav id="sidebar">
   <div id="sidebar-header">
     <div class="logo">Surgical Insight Hub</div>
     <div class="sub">Anal Procedures Monograph</div>
   </div>
+  <div id="sidebar-search">
+    <input type="text" id="search-input" placeholder="Search topics…" oninput="filterNav(this.value)">
+  </div>
   <div id="sidebar-nav">
-    <div class="vol-label">Pillar 1 — Pre-Op Optimization</div>
-    <a class="nav-item" href="#p1a">1.1 Clinical Workup</a>
-    <a class="nav-item" href="#p1c">1.3 Risk Stratification</a>
-    
-    <div class="vol-label">Pillar 2 — The Operative Game Plan</div>
-    <a class="nav-item" href="#p2b">2.2 Haemorrhoidectomy</a>
-    <a class="nav-item" href="#p2d">2.4 Fistula-in-Ano Surgery</a>
-    
-    <div class="vol-label">Pillar 3 — Technical Pearls</div>
-    <a class="nav-item" href="#p3a">3.1 Consultant Pearls</a>
-    <a class="nav-item" href="#p3b">3.2 The Bail-Out Point</a>
-    
-    <div class="vol-label">Pillar 5 — Complications</div>
-    <a class="nav-item" href="#p5b">5.2 Incontinence Risk</a>
-    
+    <div class="vol-label">Pillar 1: Pre-Op Optimization</div>
+    <a class="nav-item" href="#p1a"><span class="num">1.1</span>Clinical Workup</a>
+    <a class="nav-item" href="#p1b"><span class="num">1.2</span>Mandatory Investigations</a>
+    <a class="nav-item" href="#p1c"><span class="num">1.3</span>Risk Stratification</a>
+    <a class="nav-item" href="#p1d"><span class="num">1.4</span>Immediate Pre-Op</a>
+    <div class="vol-label">Pillar 2: The Operative Game Plan</div>
+    <a class="nav-item" href="#p2a"><span class="num">2.1</span>Setup &amp; Anesthesia</a>
+    <a class="nav-item" href="#p2b"><span class="num">2.2</span>Haemorrhoidectomy</a>
+    <a class="nav-item" href="#p2c"><span class="num">2.3</span>Anorectal Abscess Drainage</a>
+    <a class="nav-item" href="#p2d"><span class="num">2.4</span>Fistula-in-Ano Surgery</a>
+    <a class="nav-item" href="#p2e"><span class="num">2.5</span>Fissure-in-Ano Surgery (LIS)</a>
+    <a class="nav-item" href="#p2f"><span class="num">2.6</span>Pilonidal Disease Surgery</a>
+    <a class="nav-item" href="#p2g"><span class="num">2.7</span>The Critical View</a>
+    <div class="vol-label">Pillar 3: Pearls &amp; Bail-Outs</div>
+    <a class="nav-item" href="#p3a"><span class="num">3.1</span>Consultant Pearls</a>
+    <a class="nav-item" href="#p3b"><span class="num">3.2</span>The Bail-Out Point</a>
+    <div class="vol-label">Pillar 4: Post-Op Care</div>
+    <a class="nav-item" href="#p4a"><span class="num">4.1</span>Immediate Recovery</a>
+    <a class="nav-item" href="#p4b"><span class="num">4.2</span>Clinic Follow-up</a>
+    <div class="vol-label">Pillar 5: Complications</div>
+    <a class="nav-item" href="#p5a"><span class="num">5.1</span>Post-haemorrhoidectomy Bleed</a>
+    <a class="nav-item" href="#p5b"><span class="num">5.2</span>Incontinence</a>
+    <a class="nav-item" href="#p5c"><span class="num">5.3</span>Fistula Recurrence</a>
     <div class="vol-label">Quick Reference</div>
     <a class="nav-item" href="#rapid">High-Yield Board Facts</a>
   </div>
 </nav>
 
+<!-- MAIN -->
 <main id="main">
-  <section id="hero">
-    <div class="eyebrow">Colorectal Surgery · Proctology · Sphincter Preservation</div>
-    <h1>Anal Surgical Procedures</h1>
-    <p class="subtitle">Haemorrhoidectomy, Fistula, Fissure, and Abscess: The precision of anorectal restoration.</p>
-  </section>
-
-  <div class="content-wrap">
-    <!-- SECTION 1 -->
-    <div class="sec-header s1">
-      <span class="sec-badge">PILLAR 1</span>
-      <span class="sec-title">Decision Framework</span>
-    </div>
-    <section class="topic s1" id="p1a">
-      <div class="topic-header"><h2>1.1 Clinical Workup</h2></div>
-      <ul>
-        <li><strong>Haemorrhoids:</strong> Grade III (manual reduction) and IV (irreducible) are surgical.</li>
-        <li><strong>Fistula:</strong> Rule out Crohn's disease before any definitive cutting.</li>
-        <li><strong>Fissure:</strong> Chronic (>6 weeks) failing medical therapy (GTN/Diltiazem).</li>
-      </ul>
-      <div class="callout warn"><strong>PHILOSOPHY:</strong> Permanent incontinence is one of the most consequential complications in surgery. Protect the sphincter at all costs.</div>
-    </section>
-
-    <!-- SECTION 2 -->
-    <div class="sec-header s2">
-      <span class="sec-badge">PILLAR 2</span>
-      <span class="sec-title">The Operative Game Plan</span>
-    </div>
-    <section class="topic s2" id="p2b">
-      <div class="topic-header"><h2>2.2 Haemorrhoidectomy (Milligan-Morgan)</h2></div>
-      <ul>
-        <li><strong>Rule of Three:</strong> Preserve at least 3 skin-mucosal bridges of 5mm width to prevent anal stenosis.</li>
-        <li><strong>Technique:</strong> Identify and preserve the internal sphincter (white fibres) during dissection.</li>
-      </ul>
-    </section>
-
-    <section class="topic s2" id="p2d">
-      <div class="topic-header"><h2>2.4 Fistula-in-Ano (Goodsall's Rule)</h2></div>
-      <ul>
-        <li><strong>Anterior:</strong> Usually track straight to the anal canal.</li>
-        <li><strong>Posterior:</strong> Track to the posterior midline (curved).</li>
-        <li><strong>Management:</strong> Fistulotomy for low tracts; Seton for high/complex tracts.</li>
-      </ul>
-    </section>
-
-    <!-- SECTION 3 -->
-    <div class="sec-header s3">
-      <span class="sec-badge">PILLAR 3</span>
-      <span class="sec-title">Technical Pearls</span>
-    </div>
-    <section class="topic s3" id="p3a">
-      <div class="callout pearl"><strong>Consultant Pearl:</strong> The "white line of Hilton" marks the lower edge of the internal sphincter. Identifying this is the difference between a successful LIS and a disaster.</div>
-    </section>
-
-    <!-- RAPID REFERENCE -->
-    <div class="rapid-ref" id="rapid">
-      <h3>High-Yield Board Facts</h3>
-      <table>
-        <thead><tr><th>Topic</th><th>Fact</th></tr></thead>
-        <tbody>
-          <tr><td><strong>Skin Bridge Rule</strong></td><td>≥3 bridges of 5mm to prevent stenosis.</td></tr>
-          <tr><td><strong>LIS Limit</strong></td><td>Divide only the lower third of the internal sphincter.</td></tr>
-          <tr><td><strong>Seton Utility</strong></td><td>Maintains drainage while promoting fibrosis; prevents abscess recurrence.</td></tr>
-          <tr><td><strong>Secondary Bleed</strong></td><td>Typically occurs POD 7-14; requires EUA if brisk.</td></tr>
-        </tbody>
-      </table>
-    </div>
+<section id="hero">
+  <div class="eyebrow">Surgical Insight Hub · Monograph Series · ABSITE · PGY-3 Framework</div>
+  <h1>Anal Surgical Procedures</h1>
+  <p class="subtitle">Haemorrhoidectomy, Fistula, Fissure, Abscess, and Pilonidal Disease</p>
+  <div class="badges">
+    <span class="badge">Colorectal Surgery</span>
+    <span class="badge">Sphincter Preservation</span>
+    <span class="badge">Perineal Anatomy</span>
   </div>
+</section>
+
+<div class="content-wrap">
+
+<div class="callout warn" style="margin-top: 40px;">
+  <span class="label">Upfront Philosophy</span>
+  Anorectal surgery is where surgical careers are quietly damaged. Not by dramatic intraoperative catastrophes, but by undertreated fistulas that recur, fissures cut too aggressively causing incontinence, abscesses inadequately drained progressing to Fournier's gangrene, and haemorrhoids excised without protecting the anoderm. The anal canal is a 4cm structure that controls a function fundamental to human dignity. Permanent incontinence from an anorectal operation is one of the most consequential complications in all of surgery, and it is almost always preventable. The rule governing everything in this monograph: understand the sphincter before you cut anything near it.
+</div>
+
+<!-- ══════════════ PILLAR 1 ══════════════ -->
+<div class="sec-header s1">
+  <span class="sec-badge">PILLAR 1</span>
+  <span class="sec-title">Pre-operative Optimization &amp; Preparation</span>
+</div>
+
+<section class="topic s1" id="p1a">
+  <div class="topic-header"><span class="topic-num">1.1</span><h2>Clinical Workup</h2></div>
+  
+  <h3>Haemorrhoids</h3>
+  <ul>
+    <li><strong>Bleeding:</strong> Characterise bright red blood on paper vs. dripping vs. streaking. Haematochezia is not always haemorrhoids. Any rectal bleeding in a patient &gt;40 or with risk factors requires a colonoscopy before attributing it to haemorrhoidal disease.</li>
+    <li><strong>Prolapse Grading:</strong> 
+      <ul>
+        <li>Grade I: Bleed but do not prolapse.</li>
+        <li>Grade II: Prolapse with defecation but spontaneously reduce.</li>
+        <li>Grade III: Prolapse requiring manual reduction.</li>
+        <li>Grade IV: Irreducible prolapse or acutely thrombosed external haemorrhoids.</li>
+      </ul>
+    </li>
+    <li><strong>Bowel habit &amp; Diet:</strong> Constipation and inadequate fibre are root causes. Address these pre-operatively or haemorrhoids will recur regardless of technique.</li>
+  </ul>
+
+  <h3>Fistula-in-Ano</h3>
+  <ul>
+    <li><strong>Duration &amp; Prior Treatment:</strong> Note history of recurrent abscesses or prior seton placement.</li>
+    <li><strong>Crohn's disease:</strong> The single most important question. Crohn's fistulas behave entirely differently; the algorithm changes completely. Never operate aggressively on a Crohn's fistula.</li>
+    <li><strong>Tuberculosis:</strong> Endemic in Ethiopia. Produces complex, multitract fistulas mimicking Crohn's. Exclude TB before any fistula surgery in a TB-endemic setting.</li>
+    <li><strong>Continence baseline:</strong> Ask specifically before surgery. A patient with pre-existing urgency is at dramatically higher risk of post-operative incontinence.</li>
+  </ul>
+
+  <h3>Fissure-in-Ano</h3>
+  <ul>
+    <li><strong>Position:</strong> Posterior midline (90%) is typical. Anterior midline in women (10%). Any lateral position is atypical and raises suspicion of Crohn's, TB, HIV, syphilis, or malignancy. Biopsy atypical fissures.</li>
+    <li><strong>Continence:</strong> Lateral internal sphincterotomy (LIS) causes permanent incontinence to flatus in up to 30% of patients. This must be discussed before consent.</li>
+  </ul>
+
+  <h3>Anorectal Abscess &amp; Pilonidal Disease</h3>
+  <ul>
+    <li><strong>Abscess:</strong> Note systemic sepsis. Diabetes and immunosuppression dramatically increase severity and progression to Fournier's gangrene. A diabetic with perianal pain and skin changes has a necrotising infection until proven otherwise.</li>
+    <li><strong>Pilonidal:</strong> Acute abscess vs. chronic sinus. Note prior surgeries (midline vs. flap) and address modifiable risk factors like obesity and prolonged sitting.</li>
+  </ul>
+</section>
+
+<section class="topic s1" id="p1b">
+  <div class="topic-header"><span class="topic-num">1.2</span><h2>Mandatory Pre-operative Investigations</h2></div>
+  
+  <h3>Anorectal Examination</h3>
+  <ul>
+    <li><strong>Digital Rectal Examination (DRE):</strong> Assess resting and squeeze sphincter tone. Reduced tone must be documented before any procedure. In acute abscess, do not force DRE if not tolerated; perform Examination Under Anaesthesia (EUA).</li>
+    <li><strong>Proctoscopy:</strong> Mandatory before haemorrhoid surgery to visualise internal haemorrhoids (classic distribution: 3, 7, and 11 o'clock) and exclude mucosal pathology.</li>
+    <li><strong>Colonoscopy:</strong> Mandatory for bleeding patients &gt;40 years old or with cancer risk factors. Do not treat haemorrhoids without investigating bleeding if criteria are met.</li>
+  </ul>
+
+  <h3>Imaging</h3>
+  <ul>
+    <li><strong>MRI Pelvis:</strong> Gold standard for fistula characterisation (St. James's University Hospital classification: Grades 1-5). Mandatory before any complex fistula surgery.</li>
+    <li><strong>Endoanal Ultrasound (EAUS):</strong> Assesses the sphincter complex, identifying defects (obstetric injury, prior surgery). Complementary to MRI.</li>
+    <li><strong>CT Abdomen/Pelvis:</strong> For deep, posterior, or supralevator abscesses, or if systemic sepsis is present.</li>
+  </ul>
+
+  <h3>Laboratory</h3>
+  <ul>
+    <li>CBC, BMP, Coagulation. HIV testing in high-prevalence settings. TB and Crohn's workup for atypical or complex fistulas.</li>
+    <li><strong>Anorectal Manometry:</strong> Mandatory before LIS in patients with any continence concern, or before complex fistula surgery involving significant sphincter division.</li>
+  </ul>
+</section>
+
+<section class="topic s1" id="p1c">
+  <div class="topic-header"><span class="topic-num">1.3</span><h2>Risk Stratification</h2></div>
+  <div class="table-wrap s1-tbl"><table>
+    <thead><tr><th>Factor</th><th>Risk</th><th>Management</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Pre-existing incontinence</strong></td><td>Catastrophic worsening after sphincter division</td><td>Avoid LIS; prefer sphincter-sparing fistula techniques; manometry mandatory.</td></tr>
+      <tr><td><strong>Crohn's disease</strong></td><td>Non-healing, complex, recurrent fistulas</td><td>Medical therapy first; seton drainage only; avoid definitive sphincter surgery.</td></tr>
+      <tr><td><strong>Diabetes</strong></td><td>Rapidly progressive infection; Fournier's</td><td>Aggressive early drainage; tight glucose control; vigilance.</td></tr>
+      <tr><td><strong>Immunosuppression</strong></td><td>Atypical infections; impaired healing</td><td>Lower threshold for broad-spectrum antibiotics; longer healing expected.</td></tr>
+      <tr><td><strong>Prior anorectal surgery</strong></td><td>Distorted anatomy; sphincter compromise</td><td>EUA mandatory; MRI/EAUS before repeat surgery; senior input.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section class="topic s1" id="p1d">
+  <div class="topic-header"><span class="topic-num">1.4</span><h2>Immediate Pre-operative Preparation</h2></div>
+  
+  <ul>
+    <li><strong>Bowel preparation:</strong> Not routinely required for most cases. A phosphate enema 1-2 hours pre-operatively clears the canal, reduces contamination, and improves visualisation.</li>
+    <li><strong>Antibiotic prophylaxis:</strong> Cefazolin 1g IV + metronidazole 500mg IV for clean-contaminated (haemorrhoids) and contaminated (fistula/abscess) fields. For abscesses, antibiotics alone do not treat the source; surgical drainage is required.</li>
+    <li><strong>DVT Prophylaxis:</strong> Mechanical compression and LMWH. Haemorrhoidectomy patients are at higher DVT risk due to pelvic venous congestion.</li>
+    <li><strong>Consent Non-Negotiables:</strong> Warn haemorrhoidectomy patients about severe post-operative pain, bleeding, and urinary retention. Discuss incontinence risks explicitly for LIS (flatus up to 30%) and fistulotomies. Warn abscess patients about the 30-50% risk of subsequent fistula development.</li>
+  </ul>
+</section>
+
+<!-- ══════════════ PILLAR 2 ══════════════ -->
+<div class="sec-header s2">
+  <span class="sec-badge">PILLAR 2</span>
+  <span class="sec-title">The Operative Game Plan</span>
+</div>
+
+<section class="topic s2" id="p2a">
+  <div class="topic-header"><span class="topic-num">2.1</span><h2>Setup &amp; Anesthesia</h2></div>
+  <ul>
+    <li><strong>Anesthesia:</strong> GA is preferred to allow complete sphincter relaxation. Spinal anaesthesia is excellent for motor blockade. Local anaesthesia with sedation (pudendal block + perianal infiltration) is used for simple abscesses but is inadequate for complex fistulas.</li>
+    <li><strong>Local Technique:</strong> 0.5% bupivacaine injected at 3, 6, 9, and 12 o'clock deep into the intersphincteric space. Provides excellent post-op analgesia when given at the end of GA cases.</li>
+    <li><strong>Positioning (Lithotomy):</strong> Patient supine with legs in stirrups. Buttocks must be at or slightly beyond the table edge for proper exposure. Pad bony prominences to avoid peroneal nerve palsy.</li>
+    <li><strong>Positioning (Prone Jack-Knife / Kraske):</strong> Hips flexed, buttocks elevated, tape applied laterally to open the natal cleft. Excellent for posterior fistulas and pilonidal surgery.</li>
+    <li><strong>Instruments:</strong> Bivalve anal speculum (Eisenhammer or Parks) is essential for circumferential exposure. Fistula probes and grooved directors. Never force a probe.</li>
+  </ul>
+</section>
+
+<section class="topic s2" id="p2b">
+  <div class="topic-header"><span class="topic-num">2.2</span><h2>PROCEDURE A: Haemorrhoidectomy</h2></div>
+  
+  <h3>The Options</h3>
+  <ul>
+    <li><strong>Rubber Band Ligation (RBL):</strong> For Grade I-III. Band placed 1-2cm above the dentate line. Placing it below causes exquisite somatic pain.</li>
+    <li><strong>Milligan-Morgan (Open):</strong> Haemorrhoids excised; wounds left open to heal by secondary intention. For Grade III-IV or failed non-op management.</li>
+    <li><strong>Ferguson (Closed):</strong> Wounds closed primarily with absorbable suture.</li>
+    <li><strong>Stapled Haemorrhoidopexy (PPH):</strong> Resects rectal mucosa above haemorrhoids. Less pain, but carries rare catastrophic risks like rectovaginal fistula or pelvic sepsis.</li>
+  </ul>
+
+  <h3>Step-by-Step: Milligan-Morgan (Open)</h3>
+  <ul>
+    <li><strong>Phase 1: Assessment:</strong> Identify columns (typically 3, 7, 11 o'clock). Apply Eisenhammer speculum to visualize the dentate line.</li>
+    <li><strong>Phase 2: Mark Mucocutaneous Bridges:</strong> At least three skin bridges of at least 5mm width must remain to prevent stenosis. If impossible, stage the procedure.</li>
+    <li><strong>Phase 3: Excision:</strong> Grasp external component with Allis forceps. Incise the V-shaped line lateral to the haemorrhoid. Dissect off the internal sphincter (white, transversely oriented fibres). Stay superficial. Underrun the pedicle with a 2-0 Vicryl transfixion suture before dividing. Leave wound open.</li>
+    <li><strong>Phase 4: Wound Dressing:</strong> Pack gently with Vaseline gauze. Remove before the patient leaves recovery to prevent urinary retention and pain.</li>
+  </ul>
+</section>
+
+<section class="topic s2" id="p2c">
+  <div class="topic-header"><span class="topic-num">2.3</span><h2>PROCEDURE B: Anorectal Abscess Drainage</h2></div>
+
+  <p>The majority originate from cryptoglandular infection tracking along the path of least resistance into one of five spaces: Perianal, Ischiorectal, Intersphincteric, Supralevator, or Postanal.</p>
+
+  <h3>Step-by-Step</h3>
+  <ul>
+    <li><strong>Phase 1: EUA:</strong> Assess for skin necrosis or crepitus (Fournier's). Proctoscopy to identify any internal crypt opening exuding pus.</li>
+    <li><strong>Phase 2: Incision:</strong> Cruciate (cross-shaped) incision over maximal fluctuance, close to the anal margin. Exise skin flaps to prevent premature closure. Make it large enough for complete drainage.</li>
+    <li><strong>Phase 3: Cavity Assessment:</strong> Insert a gloved finger to break down loculations. Send pus for MC&amp;S (vital for diabetics or immunocompromised). Irrigate with warm saline.</li>
+    <li><strong>Phase 4: Fistula Assessment:</strong> Look for the internal opening (H₂O₂ injection). If a simple, low fistula is found in a fit patient, primary fistulotomy is safe. For complex fistulas, Crohn's, or poor continence, DO NOT attempt fistulotomy. Drain only.</li>
+    <li><strong>Phase 5: Wound Management:</strong> Leave open. Pack lightly. Heal by secondary intention.</li>
+  </ul>
+</section>
+
+<section class="topic s2" id="p2d">
+  <div class="topic-header"><span class="topic-num">2.4</span><h2>PROCEDURE C: Fistula-in-Ano Surgery</h2></div>
+  
+  <p><strong>Goodsall-Hughes Rule:</strong> Anterior fistulas track straight to the nearest crypt. Posterior fistulas track to the posterior midline. Accurate ~80% of the time. MRI/EUA is more reliable for complex tracts.</p>
+
+  <h3>Step-by-Step</h3>
+  <ul>
+    <li><strong>Phase 1: Mapping:</strong> Inject H₂O₂ via external opening; fizzing at the internal opening confirms the tract. Probe gently. Never force a probe.</li>
+    <li><strong>Phase 2: Fistulotomy (Low tracts):</strong> Pass a grooved director through the tract. Divide the tissue above it. Lay the tract open. Curette the base. Marsupialize the edges to flatten the wound and speed healing.</li>
+    <li><strong>Phase 3: Seton Placement (High/Complex tracts):</strong> A loose draining seton (silastic loop) controls sepsis and promotes fibrosis without cutting the sphincter. Left in for weeks/months.</li>
+    <li><strong>Phase 4: Sphincter-Sparing Techniques:</strong> Used for complex tracts. Options include the LIFT procedure (ligation of tract in the intersphincteric plane), mucosal advancement flap, VAAFT, or fibrin glue/plug.</li>
+  </ul>
+</section>
+
+<section class="topic s2" id="p2e">
+  <div class="topic-header"><span class="topic-num">2.5</span><h2>PROCEDURE D: Fissure-in-Ano Surgery (LIS)</h2></div>
+  
+  <p>Always exhaust non-operative treatments first: Topical GTN, topical diltiazem, or Botox injections. Ensure fiber supplementation. Operate only for chronic fissures failing 2-3 months of therapy.</p>
+
+  <h3>Step-by-Step: Lateral Internal Sphincterotomy (LIS)</h3>
+  <ul>
+    <li><strong>Phase 1: Assessment:</strong> Confirm posterior midline location. A lateral fissure requires biopsy. Assess for sphincter hypertonia.</li>
+    <li><strong>Phase 2: Internal Sphincterotomy:</strong> 
+      <ul>
+        <li><strong>Open technique:</strong> Radial incision at 3 or 9 o'clock. Identify the intersphincteric groove. Divide the lower third of the internal sphincter under direct vision up to the dentate line.</li>
+        <li><strong>Closed technique:</strong> 15-blade inserted bevel-up into the groove, turned inward, and drawn toward the lumen guided by a finger in the canal. Technically demanding.</li>
+      </ul>
+    </li>
+    <li><strong>Crucial Limit:</strong> Do NOT divide beyond the dentate line. This increases incontinence risk without improving healing.</li>
+    <li><strong>Phase 3: Sentinel Pile Excision:</strong> Excise any external skin tag to improve exposure and remove chronic inflammation. Send for pathology.</li>
+  </ul>
+</section>
+
+<section class="topic s2" id="p2f">
+  <div class="topic-header"><span class="topic-num">2.6</span><h2>PROCEDURE E: Pilonidal Disease Surgery</h2></div>
+  
+  <ul>
+    <li><strong>Acute Abscess:</strong> Cruciate incision lateral to the midline. Midline incisions heal slowly and recur frequently. Pack and allow secondary healing.</li>
+    <li><strong>Chronic Sinus: Definitive Surgery:</strong>
+      <ul>
+        <li><strong>Wide Local Excision:</strong> Excise complex; leave open. Highest recurrence (15-30%), 6-12 weeks healing.</li>
+        <li><strong>Bascom's Procedure:</strong> Excise midline pits; curettage via lateral incision. Off-midline closure. Recurrence 5-10%.</li>
+        <li><strong>Karydakis / Limberg Flap:</strong> Excision of complex followed by advancing a contralateral skin flap. The suture line is placed lateral to the natal cleft. Lowest recurrence (1-5%). Requires suction drain.</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+
+<section class="topic s2" id="p2g">
+  <div class="topic-header"><span class="topic-num">2.7</span><h2>The Critical View in Anorectal Surgery</h2></div>
+  <p>Non-negotiable confirmations before each key step:</p>
+  <ul>
+    <li><strong>Haemorrhoidectomy:</strong> Skin bridges confirmed (≥3 bridges, ≥5mm each) before excising any column. Internal sphincter preserved (white fibres visible in base).</li>
+    <li><strong>Fistula:</strong> Internal opening confirmed (H₂O₂ or direct vision) before tract division. Proportion of sphincter being divided explicitly estimated.</li>
+    <li><strong>LIS:</strong> Division does not extend above the dentate line.</li>
+    <li><strong>Abscess:</strong> Cavity fully explored by finger, loculations broken down, irrigated before packing.</li>
+    <li><strong>Pilonidal flap:</strong> Flap lies tension-free; subcutaneous dead space obliterated.</li>
+  </ul>
+</section>
+
+<!-- ══════════════ PILLAR 3 ══════════════ -->
+<div class="sec-header s3">
+  <span class="sec-badge">PILLAR 3</span>
+  <span class="sec-title">Technical Pearls &amp; Bail-Out Strategies</span>
+</div>
+
+<section class="topic s3" id="p3a">
+  <div class="topic-header"><span class="topic-num">3.1</span><h2>Consultant Pearls</h2></div>
+  
+  <div class="callout pearl">
+    <span class="label">Consultant Pearl #1: The Skin Bridge Rule Saves Your Patient</span>
+    Anal stenosis is a devastating, permanent complication of excessive anoderm resection. Assess and preserve the skin bridges before you start excising. If you cannot guarantee three 5mm bridges, stop and stage the procedure. A second operation for a residual haemorrhoid is a nuisance; anal stenosis is a tragedy.
+  </div>
+
+  <div class="callout pearl">
+    <span class="label">Consultant Pearl #2: The Fistula Defines the Probe</span>
+    The probe follows the path of least resistance, not necessarily the fistula tract. Forcing a probe creates iatrogenic false tracts. Hydrogen peroxide injection is far more reliable for identifying the internal opening. If the probe does not pass easily, stop, use H₂O₂, and rely on MRI.
+  </div>
+
+  <div class="callout pearl">
+    <span class="label">Consultant Pearl #3: Diabetic Abscesses are Fournier's Until Proven Otherwise</span>
+    The transition from simple abscess to necrotising fasciitis in a diabetic occurs within hours. Induration extending beyond the fluctuant area, crepitus, disproportionate pain, or systemic toxicity demands an immediate EUA. Be prepared for aggressive debridement.
+  </div>
+</section>
+
+<section class="topic s3" id="p3b">
+  <div class="topic-header"><span class="topic-num">3.2</span><h2>The Bail-Out Point</h2></div>
+  <p>Stop and escalate when:</p>
+  <ul>
+    <li><strong>Fistulotomy requires massive sphincter division:</strong> Stop and place a loose draining seton instead. Do not divide &gt;30-40% of the external sphincter without senior input and manometry.</li>
+    <li><strong>Cannot identify the internal opening:</strong> Do not create a false tract. Close, obtain an MRI, and return with imaging guidance.</li>
+    <li><strong>Abscess extends supralevator:</strong> Obtain a CT before definitive drainage. Do not blindly drain a supralevator abscess through the perineum.</li>
+    <li><strong>Crepitus or necrotic fascia encountered during abscess drainage:</strong> This is Fournier's gangrene. The operation immediately changes to wide debridement. Call senior.</li>
+    <li><strong>Haemorrhoid pedicle will not hold suture:</strong> Use a figure-of-eight, or if entirely friable, pack tightly with oxidised cellulose (Surgicel) and an anal pack, and stage the procedure.</li>
+  </ul>
+</section>
+
+<!-- ══════════════ PILLAR 4 ══════════════ -->
+<div class="sec-header s4">
+  <span class="sec-badge">PILLAR 4</span>
+  <span class="sec-title">Post-operative Care &amp; Longitudinal Follow-up</span>
+</div>
+
+<section class="topic s4" id="p4a">
+  <div class="topic-header"><span class="topic-num">4.1</span><h2>Immediate Post-op (First 24 Hours)</h2></div>
+  
+  <ul>
+    <li><strong>Haemorrhoidectomy Pain:</strong> This operation is more painful than patients expect. Use a perianal bupivacaine block. Schedule acetaminophen + NSAIDs. Metronidazole for 5-7 days reduces oedema. Avoid codeine (causes constipation). Remove anal packs before recovery discharge to prevent urinary retention.</li>
+    <li><strong>Bowel Management:</strong> Prescribe Lactulose or macrogol (PEG) immediately. A hard stool passing over a fresh wound risks pedicle disruption. Do not restrict dietary fiber or hydration.</li>
+    <li><strong>Urinary Retention:</strong> Occurs in 10-30%, especially in males. If unable to void by 4-6 hours post-op, perform urethral catheterisation.</li>
+    <li><strong>Abscess/Fistula Wounds:</strong> Leave open to heal by secondary intention. Daily packing with saline/Vaseline gauze prevents premature bridging.</li>
+    <li><strong>Sitz Baths:</strong> Warm shallow baths 2-3 times daily relieve spasm, clean the wound, and reduce pain.</li>
+  </ul>
+</section>
+
+<section class="topic s4" id="p4b">
+  <div class="topic-header"><span class="topic-num">4.2</span><h2>Clinic Follow-up</h2></div>
+  <ul>
+    <li><strong>2-week visit:</strong> Inspect wounds. Pain should be significantly improving. Assess bowel function and any new incontinence symptoms. For fistulas, check seton drainage and comfort.</li>
+    <li><strong>6-week visit:</strong> Confirm healing. For haemorrhoids, check for early stenosis (a tight canal on DRE demands immediate dilation). For LIS, confirm fissure healing and continence. For pilonidal flaps, ensure drains are out and off-midline wounds are healing cleanly.</li>
+    <li><strong>Long-term:</strong> Reinforce high-fibre diets to prevent haemorrhoid recurrence. Monitor for recurrent fistula drainage. Manage permanent incontinence issues with pelvic floor physiotherapy, biofeedback, or Sacral Nerve Stimulation (SNS).</li>
+  </ul>
+</section>
+
+<!-- ══════════════ PILLAR 5 ══════════════ -->
+<div class="sec-header s5">
+  <span class="sec-badge">PILLAR 5</span>
+  <span class="sec-title">Complication Management</span>
+</div>
+
+<section class="topic s5" id="p5a">
+  <div class="topic-header"><span class="topic-num">5.1</span><h2>Complication 1: Post-haemorrhoidectomy Bleed</h2></div>
+  <ul>
+    <li><strong>Recognition:</strong> Primary (&lt;24h) from a slipped knot. Reactionary (24-72h) as BP normalizes. Secondary (POD7-14) is the most common, occurring when the necrotic eschar separates. Presents as sudden, brisk rectal bleeding.</li>
+    <li><strong>Workup:</strong> Assess haemodynamic stability. DRE to check for clot/haematoma if stable. CBC, crossmatch.</li>
+    <li><strong>Correction (Minor/Self-limiting):</strong> Admit for observation. Correct coagulopathy. Discharged once stopped.</li>
+    <li><strong>Correction (Major/Ongoing):</strong> Return to theatre for EUA. Apply direct pressure, underrun the bleeding pedicle with a 2-0 Vicryl transfixion suture, or pack tightly with Surgicel. Resuscitate simultaneously.</li>
+  </ul>
+</section>
+
+<section class="topic s5" id="p5b">
+  <div class="topic-header"><span class="topic-num">5.2</span><h2>Complication 2: Incontinence</h2></div>
+  <ul>
+    <li><strong>Recognition:</strong> Devastating complication. Spectrum spans from flatus (most common post-LIS) to solid stool (most severe post-fistulotomy). Caused by excessive anoderm excision or direct sphincter injury. Presents as urgency, passive soiling, and reduced squeeze/resting tone on DRE.</li>
+    <li><strong>Workup:</strong> Anorectal manometry (documents pressure deficits), Endoanal ultrasound (identifies sphincter defects), and Pudendal nerve terminal motor latency.</li>
+    <li><strong>Correction (Conservative):</strong> Dietary modification, loperamide, bulking agents, and pelvic floor physiotherapy/biofeedback (60-70% improvement for mild cases).</li>
+    <li><strong>Correction (Interventional):</strong> Sacral Nerve Stimulation (SNS) is first-line surgical option. Overlapping sphincteroplasty for discrete external sphincter defects. End colostomy is reserved for severe, refractory cases.</li>
+  </ul>
+</section>
+
+<section class="topic s5" id="p5c">
+  <div class="topic-header"><span class="topic-num">5.3</span><h2>Complication 3: Fistula Recurrence</h2></div>
+  <ul>
+    <li><strong>Recognition:</strong> Reappearance of drainage from a previously healed opening, or a new opening weeks to years later. Caused by incomplete laying open, missed secondary tracts, missed internal openings, or Crohn's disease.</li>
+    <li><strong>Workup:</strong> MRI pelvis with contrast is mandatory before re-do surgery. EUA to confirm MRI findings and map the tract with H₂O₂.</li>
+    <li><strong>Correction:</strong> For simple recurrence with adequate sphincter reserve, re-fistulotomy. For complex recurrence, place a draining seton first to control sepsis, then plan a definitive LIFT or advancement flap at 8-12 weeks based on MDT review. Crohn's fistulas require medical optimization (biologics) before surgery.</li>
+  </ul>
+</section>
+
+<!-- ══════════════ RAPID REFERENCE ══════════════ -->
+<div class="rapid-ref" id="rapid">
+  <h3>Rapid Reference — High-Yield Board Facts</h3>
+  <table>
+    <thead><tr><th>Topic</th><th>Key Fact</th></tr></thead>
+    <tbody>
+      <tr><td>Skin Bridge Rule</td><td>Maintain at least <strong>three skin bridges of ≥5mm</strong> width after haemorrhoidectomy to prevent anal stenosis.</td></tr>
+      <tr><td>Internal Haemorrhoid Location</td><td>Classic distribution is at the <strong>3, 7, and 11 o'clock</strong> positions in the lithotomy position.</td></tr>
+      <tr><td>Goodsall-Hughes Rule</td><td>Anterior fistulas track radially to nearest crypt. Posterior fistulas track to the <strong>posterior midline</strong>.</td></tr>
+      <tr><td>Rubber Band Ligation Level</td><td>Must be placed <strong>1-2cm above the dentate line</strong> to avoid extreme somatic pain from the anoderm.</td></tr>
+      <tr><td>Atypical Fissure Location</td><td>Any fissure located <strong>laterally</strong> is atypical; suspect Crohn's, TB, HIV, or malignancy and biopsy it.</td></tr>
+      <tr><td>LIS Complication Risk</td><td>Lateral internal sphincterotomy carries up to a <strong>30% risk of permanent incontinence to flatus</strong>.</td></tr>
+      <tr><td>Abscess to Fistula Progression</td><td><strong>30-50%</strong> of simple anorectal abscesses will eventually develop into a fistula-in-ano.</td></tr>
+      <tr><td>Pilonidal Flap Advantage</td><td>Karydakis/Limberg flaps place the suture line <strong>lateral to the natal cleft</strong>, reducing recurrence to 1-5%.</td></tr>
+      <tr><td>Secondary Haemorrhage Timing</td><td>Most severe post-haemorrhoidectomy bleeds occur on <strong>POD7-14</strong> when the necrotic eschar separates.</td></tr>
+      <tr><td>Fournier's Gangrene Warning</td><td>Induration beyond fluctuance or crepitus in a diabetic patient mandates <strong>immediate EUA and debridement</strong>.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+</div><!-- end content-wrap -->
 </main>
 
 <button id="top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 
 <script>
+  // Sidebar, Progress Bar, and Scroll-to-Top Logic
   (function() {
-    // Navigation & Theme
-    const mainNav = document.getElementById('mainNav');
-    const themeToggle = document.getElementById('themeToggle');
-    const moonIcon = document.getElementById('moonIcon');
-    const sunIcon = document.getElementById('sunIcon');
-    
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 50) mainNav?.classList.add('scrolled');
-      else mainNav?.classList.remove('scrolled');
-    });
-    
-    function applyTheme(theme) {
-      if (theme === 'dark') {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        if(moonIcon) moonIcon.style.display = 'none';
-        if(sunIcon) sunIcon.style.display = 'block';
-      } else {
-        document.documentElement.removeAttribute('data-theme');
-        if(sunIcon) sunIcon.style.display = 'none';
-        if(moonIcon) moonIcon.style.display = 'block';
-      }
-    }
-    
-    themeToggle?.addEventListener('click', () => {
-      const isDark = document.documentElement.hasAttribute('data-theme');
-      const newTheme = isDark ? 'light' : 'dark';
-      applyTheme(newTheme);
-      localStorage.setItem('sih-theme', newTheme);
-    });
-
-    // Sidebar & Progress
     const progressBar = document.getElementById('progress-bar');
     const topBtn = document.getElementById('top-btn');
-    const sections = document.querySelectorAll('.topic[id], .rapid-ref[id]');
     const navItems = document.querySelectorAll('.nav-item');
+    const sections = document.querySelectorAll('.topic[id], .rapid-ref[id]');
     
-    window.toggleSidebar = () => document.body.classList.toggle('sidebar-open');
-    window.closeSidebar = () => document.body.classList.remove('sidebar-open');
-    
+    window.toggleSidebar = function() { document.body.classList.toggle('sidebar-open'); };
+    window.closeSidebar = function() { document.body.classList.remove('sidebar-open'); };
+
     window.addEventListener('scroll', () => {
       const st = window.scrollY;
       const dh = document.documentElement.scrollHeight - window.innerHeight;
@@ -328,19 +714,19 @@ tbody td{padding:10px 14px;border-bottom:1px solid var(--border);vertical-align:
       if (topBtn) topBtn.classList.toggle('show', st > 400);
       
       let current = '';
-      sections.forEach(s => { if (st >= s.offsetTop - 120) current = s.id; });
-      navItems.forEach(n => n.classList.toggle('active', n.getAttribute('href') === '#' + current));
+      sections.forEach(s => {
+        if (st >= s.offsetTop - 120) current = s.id;
+      });
+      navItems.forEach(n => {
+        n.classList.toggle('active', n.getAttribute('href') === '#' + current);
+      });
     });
 
-    window.openMobNav = () => {
-      document.getElementById('mobNavOverlay').style.display = 'block';
-      setTimeout(() => document.getElementById('mobNavSheet').classList.add('open'), 10);
-      document.body.style.overflow = 'hidden';
-    };
-    window.closeMobNav = () => {
-      document.getElementById('mobNavSheet').classList.remove('open');
-      setTimeout(() => { document.getElementById('mobNavOverlay').style.display = 'none'; }, 300);
-      document.body.style.overflow = '';
+    window.filterNav = function(query) {
+      const q = query.toLowerCase();
+      navItems.forEach(item => {
+        item.style.display = (!q || item.textContent.toLowerCase().includes(q)) ? 'block' : 'none';
+      });
     };
 
     navItems.forEach(item => {
@@ -348,10 +734,21 @@ tbody td{padding:10px 14px;border-bottom:1px solid var(--border);vertical-align:
         e.preventDefault();
         closeSidebar();
         const target = document.querySelector(item.getAttribute('href'));
-        if (target) window.scrollTo({ top: target.offsetTop - 100, behavior: 'smooth' });
+        if (target) {
+          window.scrollTo({
+            top: target.getBoundingClientRect().top + window.scrollY - 80,
+            behavior: 'smooth'
+          });
+        }
       });
+    });
+
+    // Topic Animation
+    document.querySelectorAll('.topic').forEach((el, i) => {
+      el.style.animationDelay = `${i * 0.03}s`;
     });
   })();
 </script>
+<script src="../../js/navigation.js"></script>
 </body>
 </html>
