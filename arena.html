@@ -482,9 +482,7 @@
 <script>
 
 
-var INSUFFICIENT_DATA_FALLBACK = window.INSUFFICIENT_DATA_FALLBACK !== undefined
-  ? window.INSUFFICIENT_DATA_FALLBACK
-  : 'Data missing — consult protocol.';
+var INSUFFICIENT_DATA_FALLBACK = 'Insufficient Data in Source';
 var OPTION_LETTERS = ['A', 'B', 'C', 'D', 'E'];
 var CALLOUT_ACRONYM_MAP = {
   mcq: 'MCQ',
@@ -531,8 +529,8 @@ function normalizeOptions(options) {
       if (!raw) return;
       var letter = String.fromCharCode(65 + index);
       if (letter > 'E') return;
-      // Parse prefixes like "A)", "A.", "A:", "A-" or "A " and keep only option text.
-      var parsed = raw.match(/^[A-E][).:\s-]+(.+)$/);
+      // Parse prefixes like "A)", "A.", "A:", "A-" or lowercase variants and keep only option text.
+      var parsed = raw.match(/^[A-E][).:\s-]+(.+)$/i);
       mapped[letter] = parsed ? parsed[1].trim() : raw;
     });
     return mapped;
@@ -556,10 +554,10 @@ function resolveAnswerLetter(question, options) {
   if (/^[A-E]$/.test(verified)) return verified;
 
   var fallbackAnswer = cleanText(question.correct_answer);
-  var parsed = fallbackAnswer.match(/^([A-E])[).:\s-]/);
+  var parsed = fallbackAnswer.match(/^([A-E])[).:\s-]/i);
   if (parsed) return parsed[1].toUpperCase();
 
-  var cleanFallback = fallbackAnswer.replace(/^([A-E])[).:\s-]+/, '').trim().toLowerCase();
+  var cleanFallback = fallbackAnswer.replace(/^([A-E])[).:\s-]+/i, '').trim().toLowerCase();
   if (cleanFallback) {
     for (var i = 0; i < OPTION_LETTERS.length; i++) {
       var letter = OPTION_LETTERS[i];
@@ -599,12 +597,8 @@ var state = {
 var SPECIALTIES = ['All', 'General Surgery', 'HPB', 'Colorectal', 'Anesthesia', 'Vascular', 'Trauma', 'Urology', 'Cardiothoracic', 'Pediatric Surgery', 'Orthopedic', 'Neurosurgery', 'Breast & Endocrine', 'Plastic Surgery'];
 
 function initArena() {
-  // Backward-compat fallback for bundles that define window.QUESTIONS without toggling window.QUESTIONS_LOADED.
-  if (!window.QUESTIONS_LOADED && Array.isArray(window.QUESTIONS) && window.QUESTIONS.length > 0) {
-    window.QUESTIONS_LOADED = true;
-    console.log('Arena: Auto-set QUESTIONS_LOADED flag (fallback)');
-  }
-  if (!window.QUESTIONS_LOADED) {
+  // Standard question bundle contract: js/questions.js must set both window.QUESTIONS and window.QUESTIONS_LOADED.
+  if (!window.QUESTIONS_LOADED || !Array.isArray(window.QUESTIONS)) {
     console.log('MCQ Bank: Still loading questions...');
     setTimeout(initArena, 200);
     return;
@@ -808,8 +802,9 @@ function formatAnswerLine(letter, answerText) {
 function showSharp(q, selected, isCorrect) {
   var card = document.getElementById('sharpCard');
   card.style.display = 'block';
-  var sharp = Object.assign({}, q.sharp || {}, q.sharp_metadata || {}, q.sharp_debrief || {});
-  var callouts = Object.assign({}, q.supplementary_callouts || {}, q.supp || {});
+  // Current SHARP data contract: top-level `sharp` and/or `sharp_debrief`, plus `supplementary_callouts`.
+  var sharp = Object.assign({}, q.sharp || {}, q.sharp_debrief || {});
+  var callouts = Object.assign({}, q.supplementary_callouts || {});
   var explanation = normalizeExplanation(q.explanation);
   var answerText = (q.options && q.options[q.answer]) ? q.options[q.answer] : '';
   var answerLine = String(callouts.answer ? callouts.answer : formatAnswerLine(q.answer, answerText)).trim();
@@ -895,6 +890,14 @@ function showSharp(q, selected, isCorrect) {
   } else {
     supplementaryRow.style.display = 'none';
     supplementaryDiv.style.display = 'none';
+  }
+
+  // Tags from AI-enriched questions are shown as supplementary context.
+  var tags = Array.isArray(q.tags) ? q.tags.filter(function(tag) { return cleanText(tag); }).join(' • ') : '';
+  if (tags) {
+    supplementary.appendChild(createExplanationRow('Tags', tags));
+    supplementaryRow.style.display = 'flex';
+    supplementaryDiv.style.display = 'block';
   }
 
   // Research Insight (TinyFish)
