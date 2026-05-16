@@ -4388,4 +4388,571 @@ window.QUESTIONS.push(...[
   },
   "discrepancy_flag": ""
 }
+,
+{
+  "id": "c8ec6aa7",
+  "specialty": "urology",
+  "topic": "General",
+  "question": "A 2-year-old female child presented with a huge left sided renal mass. Intraoperatively, there was tumor rupture. Which of the following statement is true?",
+  "options": {
+    "A": "Preoperative chemotherapy increases the risk of tumor rupture with manipulation",
+    "B": "Rupture of the renal capsule or presence of tumor spillage will upgrade the tumor stage",
+    "C": "Gerota\u2019s fascia should not be touched order decrease the chances of rupture",
+    "D": "Peritoneal soiling is currently considered a stage 2, which adds radiation and chemotherapy to the management"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Preoperative chemotherapy increases the risk of tumor rupture with manipulation",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "Preoperative chemotherapy increases the risk of tumor rupture with manipulation",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "urology",
+    "P_plan_for_improvement": "Preoperative chemotherapy increases the risk of tumor rupture with manipulation"
+  },
+  "supplementary_callouts": {
+    "guideline": "urology",
+    "takeaway": "Preoperative chemotherapy increases the risk of tumor rupture with manipulation",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": "c3cad5ba",
+  "specialty": "urology",
+  "topic": "General",
+  "question": "A 2-day-old male neonate is admitted with bile stained vomiting. Abdominal X-ray showed dilated stomach and few loops of bowel in the left side of the abdomen. What is the most likely diagnosis?",
+  "options": {
+    "A": "Hirshsprung's disease",
+    "B": "Small bowel atresia",
+    "C": "Malroatation",
+    "D": "Pyloric stenosis"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Hirshsprung's disease",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "Hirshsprung's disease",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "urology",
+    "P_plan_for_improvement": "Hirshsprung's disease"
+  },
+  "supplementary_callouts": {
+    "guideline": "urology",
+    "takeaway": "Hirshsprung's disease",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": "4d71af33",
+  "specialty": "urology",
+  "topic": "General",
+  "question": "Which of the following is not a complication of hypospadias repair?",
+  "options": {
+    "A": "Mega prepuce",
+    "B": "Urethral stricture",
+    "C": "Urethral diverticulum and glans dehiscence",
+    "D": "Recurrent penile curvature"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Mega prepuce",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "Mega prepuce",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "urology",
+    "P_plan_for_improvement": "Mega prepuce"
+  },
+  "supplementary_callouts": {
+    "guideline": "urology",
+    "takeaway": "Mega prepuce",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": "31d15f88",
+  "specialty": "urology",
+  "topic": "General",
+  "question": "Which of the following is false regarding anal carcinomas?",
+  "options": {
+    "A": "Most anal carcinomas are the epidermoid type",
+    "B": "Wide local excision can achieve 100% local control for T1 (&lt;2cm) tumor",
+    "C": "Chemoradiation is currently the first line treatment modality for anal cancer",
+    "D": "Recurrence is most likely to occur within 12 months of the initial treatment",
+    "E": "Salvage anorectal excision for recurrent disease achieves cure rates of 50%."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": "49148744",
+  "specialty": "urology",
+  "topic": "General",
+  "question": "A 70-year-old male patient was found to have stage II mid sigmoid ca. What is the current recommended treatment?",
+  "options": {
+    "A": "Sigmoidectomy only",
+    "B": "Sigmoidectomy followed by Chemotherapy",
+    "C": "Noeadjuvant chemotherapy followed by sigmoidectomy",
+    "D": "Left hemicolectomy",
+    "E": "Left hemicolectomy followed by chemotherapy"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Sigmoidectomy only",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "Sigmoidectomy only",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "urology",
+    "P_plan_for_improvement": "Sigmoidectomy only"
+  },
+  "supplementary_callouts": {
+    "guideline": "urology",
+    "takeaway": "Sigmoidectomy only",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": "67b1e964",
+  "specialty": "urology",
+  "topic": "General",
+  "question": "A 6-hour male neonate was born with absent anal opening. Which of the following is true?",
+  "options": {
+    "A": "Urgent colostomy should be done right away",
+    "B": "Anoplasy without colostomy can be done if the anomaly is ARM with rectovesical fistula",
+    "C": "Continence after surgery is almost nil",
+    "D": "A divided descending colostomy is ideal for the management of anorectal malformations"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": "Colostomy for immediate relief"
+  },
+  "supplementary_callouts": {
+    "guideline": "Neonate with absent anus",
+    "takeaway": "Prompt colostomy is vital",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": "84be0220",
+  "specialty": "urology",
+  "topic": "General",
+  "question": "Which of the following is not one of the complications of reperfusion of acute lower limb ischemia?",
+  "options": {
+    "A": "Rhabdomyolysis",
+    "B": "Metabolic alkalosis",
+    "C": "Myoglobinuria",
+    "D": "ATN",
+    "E": "Compartment syndrome"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Rhabdomyolysis",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "Rhabdomyolysis",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "urology",
+    "P_plan_for_improvement": "Rhabdomyolysis"
+  },
+  "supplementary_callouts": {
+    "guideline": "urology",
+    "takeaway": "Rhabdomyolysis",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": "0e0686be",
+  "specialty": "urology",
+  "topic": "General",
+  "question": "Which of the following is true about occlusive disease of the femoral artery?",
+  "options": {
+    "A": "It usually presents with thigh claudication",
+    "B": "It usually occurs at the level of the Adductor haitus",
+    "C": "It might cause impotence",
+    "D": "Stenting is the best treatment for lesions longer than 10cm",
+    "E": "None of the above"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "It usually presents with thigh claudication",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "It usually presents with thigh claudication",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "urology",
+    "P_plan_for_improvement": "It usually presents with thigh claudication"
+  },
+  "supplementary_callouts": {
+    "guideline": "urology",
+    "takeaway": "It usually presents with thigh claudication",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": "419486b2",
+  "specialty": "urology",
+  "topic": "General",
+  "question": "Which of the following is not among recognized complication of open AAA repair?",
+  "options": {
+    "A": "Ischemic colitis",
+    "B": "Paraplegia",
+    "C": "Declamping shock",
+    "D": "Phlegmatica cerulean dolens",
+    "E": "None of the above"
+  },
+  "answer": "D",
+  "explanation": {
+    "correct": "Understanding complications is key",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Phlegmatica cerulean dolens is incorrect",
+    "H_highlight_excellence": "Understanding complications is key",
+    "A_address_the_gaps": "Recognizing less common risks",
+    "R_review_learning_points": "Ischemic colitis, paraplegia, declamping shock",
+    "P_plan_for_improvement": "Focus on standard complications"
+  },
+  "supplementary_callouts": {
+    "guideline": "AAA repair complication management",
+    "takeaway": "D is the outlier option",
+    "visualization": "Diagram of AAA repair risks"
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": "4d71af33",
+  "specialty": "urology",
+  "topic": "General",
+  "question": "Which of the following is not a complication of hypospadias repair?",
+  "options": {
+    "A": "Mega prepuce",
+    "B": "Urethral stricture",
+    "C": "Urethral diverticulum and glans dehiscence",
+    "D": "Recurrent penile curvature"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Mega prepuce",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "Mega prepuce",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "urology",
+    "P_plan_for_improvement": "Mega prepuce"
+  },
+  "supplementary_callouts": {
+    "guideline": "urology",
+    "takeaway": "Mega prepuce",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": "a11ffeda",
+  "specialty": "urology",
+  "topic": "General",
+  "question": "A 65-year-old male patient presented with clinically localized prostate cancer of Gleason score2- 4. What is the incidence of metastases by 10 years following watchful waiting?",
+  "options": {
+    "A": "10-20%",
+    "B": "20-25%",
+    "C": "25-30%",
+    "D": "&gt;35%"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": "c8ec6aa7",
+  "specialty": "urology",
+  "topic": "General",
+  "question": "A 2-year-old female child presented with a huge left sided renal mass. Intraoperatively, there was tumor rupture. Which of the following statement is true?",
+  "options": {
+    "A": "Preoperative chemotherapy increases the risk of tumor rupture with manipulation",
+    "B": "Rupture of the renal capsule or presence of tumor spillage will upgrade the tumor stage",
+    "C": "Gerota\u2019s fascia should not be touched order decrease the chances of rupture",
+    "D": "Peritoneal soiling is currently considered a stage 2, which adds radiation and chemotherapy to the management"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Preoperative chemotherapy increases the risk of tumor rupture with manipulation",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "Preoperative chemotherapy increases the risk of tumor rupture with manipulation",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "urology",
+    "P_plan_for_improvement": "Preoperative chemotherapy increases the risk of tumor rupture with manipulation"
+  },
+  "supplementary_callouts": {
+    "guideline": "urology",
+    "takeaway": "Preoperative chemotherapy increases the risk of tumor rupture with manipulation",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1712,
+  "specialty": "Urology",
+  "topic": "Which of the following features are against the possibility of primary Sclorresing",
+  "question": "Which of the following features are against the possibility of primary Sclorresing Cholangitis",
+  "options": {
+    "A": "The Presence of Periductal Fibrosis",
+    "B": "The Presence of multiple Ductal Dilatations",
+    "C": "Findings of Multiple Stricture",
+    "D": "The majority are related to IgG4 associated Chalangiopathy and finding of this would suggest PSC.",
+    "E": "None of is suggestive of against the possibility Of PSC."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Correct answer identified",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Periductal fibrosis links to PSC",
+    "H_highlight_excellence": "Correct answer identified",
+    "A_address_the_gaps": "Further investigation needed",
+    "R_review_learning_points": "PSC diagnostic criteria",
+    "P_plan_for_improvement": "Explore fibrosis and ducts"
+  },
+  "supplementary_callouts": {
+    "guideline": "Follow diagnostic protocols",
+    "takeaway": "Fibrosis indicates PSC risk",
+    "visualization": "Image analysis crucial"
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": "0c5edd21",
+  "specialty": "urology",
+  "topic": "General",
+  "question": "Gerota fascia envelops &amp; contains which of the following structures?",
+  "options": {
+    "A": "The kidneys",
+    "B": "The adrenals",
+    "C": "Gonadal vessels",
+    "D": "All of the above"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "The kidneys",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "The kidneys",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "urology",
+    "P_plan_for_improvement": "The kidneys"
+  },
+  "supplementary_callouts": {
+    "guideline": "urology",
+    "takeaway": "The kidneys",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": "0c5edd21",
+  "specialty": "urology",
+  "topic": "General",
+  "question": "Gerota fascia envelops &amp; contains which of the following structures?",
+  "options": {
+    "A": "The kidneys",
+    "B": "The adrenals",
+    "C": "Gonadal vessels",
+    "D": "All of the above"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "The kidneys",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "The kidneys",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "urology",
+    "P_plan_for_improvement": "The kidneys"
+  },
+  "supplementary_callouts": {
+    "guideline": "urology",
+    "takeaway": "The kidneys",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": "097148ae",
+  "specialty": "urology",
+  "topic": "General",
+  "question": "Which of the following statements is false with regard to Ischemic colitis?",
+  "options": {
+    "A": "The splenic flexure and descending colon are the most vulnerable parts affected commonly",
+    "B": "Typically, present with acute left iliac fossa pain followed by passage of loose bloody stool",
+    "C": "Occlusion of the major mesenteric vessels is responsible for producing the ischemia in most cases",
+    "D": "Only rarely does ischemic colitis progress to frank gangrene",
+    "E": "Late stricture is one of the rare complication that may follow ischemic colitis"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "The splenic flexure and descending colon are the most vulnerable parts affected commonly",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "The splenic flexure and descending colon are the most vulnerable parts affected commonly",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "urology",
+    "P_plan_for_improvement": "The splenic flexure and descending colon are the most vulnerable parts affected commonly"
+  },
+  "supplementary_callouts": {
+    "guideline": "urology",
+    "takeaway": "The splenic flexure and descending colon are the most vulnerable parts affected commonly",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
 ]);

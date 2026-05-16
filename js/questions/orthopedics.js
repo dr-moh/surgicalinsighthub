@@ -5423,4 +5423,74 @@ window.QUESTIONS.push(...[
   },
   "discrepancy_flag": ""
 }
+,
+{
+  "id": 1569,
+  "specialty": "Orthopedic",
+  "topic": "Coxa vara deformity:",
+  "question": "Coxa vara deformity:",
+  "options": {
+    "A": "Commoner than coxa valga.",
+    "B": "Neck-shaft angle is less than 120 degrees.",
+    "C": "Common to complicate adduction type fracture of neck femur.",
+    "D": "More serious than coxa valga."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Commoner than coxa valga.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Coxa vara deformity:",
+    "H_highlight_excellence": "Commoner than coxa valga.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "AAOS orthopedic guidelines",
+    "P_plan_for_improvement": "Commoner than coxa valga"
+  },
+  "supplementary_callouts": {
+    "guideline": "AAOS orthopedic guidelines",
+    "takeaway": "Commoner than coxa valga",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1619,
+  "specialty": "Orthopedic",
+  "topic": "Treatment of osteoclastoma:",
+  "question": "Treatment of osteoclastoma:",
+  "options": {
+    "A": "Excision of bone affected (rib, fibula, or lower end of radius).",
+    "B": "Curettage of tumour and bone chips application (femur or tibia).",
+    "C": "Excision of bone tumour with bone graft application (mandible).",
+    "D": "Irradiation is the treatment of choice for osteoclastoma of the lower end of femur and upper end of tibia."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Correct surgical approach",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Bone excision for osteoclastoma",
+    "H_highlight_excellence": "Correct surgical approach",
+    "A_address_the_gaps": "Consider other options",
+    "R_review_learning_points": "Tumor removal techniques",
+    "P_plan_for_improvement": "Further investigation needed"
+  },
+  "supplementary_callouts": {
+    "guideline": "Surgical intervention primary",
+    "takeaway": "Excision is often key",
+    "visualization": "Surgical bone removal"
+  },
+  "discrepancy_flag": ""
+}
 ]);

@@ -41812,4 +41812,6401 @@ window.QUESTIONS.push(...[
   },
   "discrepancy_flag": ""
 }
+,
+{
+  "id": 51276,
+  "specialty": "General Surgery",
+  "topic": "General",
+  "question": "The Surgical Care Improvement Project (SCIP) differs from the NSQIP in what major difference?",
+  "options": {
+    "A": "The SCIP does not partner with the ACS, but rather the JCAHO.",
+    "B": "The NSQIP focuses on individual providers of care, whereas the SCIP does not.",
+    "C": "The NSQIP focuses primarily on process measures.",
+    "D": "The SCIP focuses primarily on surgical outcomes.",
+    "E": "The SCIP focuses primarily on process measures."
+  },
+  "answer": "E",
+  "explanation": {
+    "correct": "The SCIP focuses primarily on process measures.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "The SCIP focuses primarily on process measures.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "General Surgery",
+    "P_plan_for_improvement": "The SCIP focuses primarily on process measures."
+  },
+  "supplementary_callouts": {
+    "guideline": "General Surgery",
+    "takeaway": "The SCIP focuses primarily on process measures.",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 700,
+  "specialty": "General Surgery",
+  "topic": "The patient above undergoes an open adrenalectomy and has an early postoperative",
+  "question": "The patient above undergoes an open adrenalectomy and has an early postoperative fever, indicating inflammation due to cytokine release. All of the following are secreted as a part of the endocrine response to stress except:",
+  "options": {
+    "A": "Corticotropin",
+    "B": "Antidiuretic hormone (ADH)",
+    "C": "Growth hormone",
+    "D": "Thyroid hormone"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Corticotropin",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "The patient above undergoes an open adrenalectomy and has an early postoperative",
+    "H_highlight_excellence": "Corticotropin",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ACS / surgical board principles",
+    "P_plan_for_improvement": "Corticotropin"
+  },
+  "supplementary_callouts": {
+    "guideline": "ACS / surgical board principles",
+    "takeaway": "Corticotropin",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 90459,
+  "specialty": "General Surgery",
+  "topic": "R2 Prep Exam_.docx",
+  "question": "Which of the following is not a complication of hypospadias repair?",
+  "options": {
+    "A": "Mega prepuce",
+    "B": "Urethral stricture",
+    "C": "Urethral diverticulum and glans dehiscence",
+    "D": "Recurrent penile curvature"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Mega prepuce",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "R2 Prep Exam_.docx",
+    "H_highlight_excellence": "Mega prepuce",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "General Surgery",
+    "P_plan_for_improvement": "Mega prepuce"
+  },
+  "supplementary_callouts": {
+    "guideline": "R2 Prep Exam_.docx",
+    "takeaway": "Mega prepuce",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 969,
+  "specialty": "General Surgery",
+  "topic": "Which of the following is true with respect to the management of",
+  "question": "Which of the following is true with respect to the management of appendicitis in pregnancy?",
+  "options": {
+    "A": "n appendectomy during pregnancy increases the risk for congenital malformations and stillbirth.",
+    "B": "Fetal mortality can approach 35% for a ruptured appendix.",
+    "C": "Negative laparotomy rates of 50% are considered acceptable in the pregnant population.",
+    "D": "To decrease the risk for congenital malformations, antibiotics should not be given.",
+    "E": "Laparoscopic appendectomy is contraindicated during pregnancy."
+  },
+  "answer": "B",
+  "explanation": {
+    "correct": "Fetal mortality can approach 35% for a ruptured appendix.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Which of the following is true with respect to the management of",
+    "H_highlight_excellence": "Fetal mortality can approach 35% for a ruptured appendix.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ACS / surgical board principles",
+    "P_plan_for_improvement": "Fetal mortality can approach 35% for a ruptured appendix"
+  },
+  "supplementary_callouts": {
+    "guideline": "ACS / surgical board principles",
+    "takeaway": "Fetal mortality can approach 35% for a ruptured appendix",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50821,
+  "specialty": "General Surgery",
+  "topic": "General",
+  "question": "Normally, activation of pancreatic trypsinogen involves which of the following?",
+  "options": {
+    "A": "Pancreatic amylase",
+    "B": "pH greater than 7.0",
+    "C": "Lysosomal hydrolase",
+    "D": "uodenal enterokinase",
+    "E": ""
+  },
+  "answer": "D",
+  "explanation": {
+    "correct": "uodenal enterokinase",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "uodenal enterokinase",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "General Surgery",
+    "P_plan_for_improvement": "uodenal enterokinase"
+  },
+  "supplementary_callouts": {
+    "guideline": "General Surgery",
+    "takeaway": "uodenal enterokinase",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 134,
+  "specialty": "General Surgery",
+  "topic": "23.A 28-year-old white male presents with asymptomatic testicular enlargement. Which of the",
+  "question": "23.A 28-year-old white male presents with asymptomatic testicular enlargement. Which of the following statement(s) is/are true concerning his diagnosis and management?",
+  "options": {
+    "A": "Tumor markers, b-fetoprotein (AFP) and \u0643-human chorionic gonadotropin (HCG) will both be of value in the patient regardless of his ultimate tissue type",
+    "B": "Renal failure secondary to obstructive uropathy occurs as bladder pressure rises and is eventually transmitted proximally to the renal pelvis",
+    "C": "Hormonal treatment for BPH involves treatment with a 5 a-reductase inhibitor which blocks the conversion of testosterone to the dihydrotestosterone",
+    "D": "Intermittent catheterization, although a temporizing measure, is not an effective treatment for relief of symptoms of BPH"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Tumor markers, b-fetoprotein (AFP) and \u0643-human chorionic gonadotropin (HCG) will both be of value in the patient regardless",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "23.A 28-year-old white male presents with asymptomatic testicular enlargement. Which of the",
+    "H_highlight_excellence": "Tumor markers, b-fetoprotein (AFP) and \u0643-human chorionic gonadotropin (HCG) will both be of value in the patient regardless",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ACS / surgical board principles",
+    "P_plan_for_improvement": "Tumor markers, b-fetoprotein (AFP) and \u0643-human chorionic gonadotropin (HCG) will both be of value in the"
+  },
+  "supplementary_callouts": {
+    "guideline": "ACS / surgical board principles",
+    "takeaway": "Tumor markers, b-fetoprotein (AFP) and \u0643-human chorionic gonadotropin (HCG) will both be of value in the patient regardless",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 281,
+  "specialty": "General Surgery",
+  "topic": "All are true about pancreatic carcinoma except:",
+  "question": "All are true about pancreatic carcinoma except:",
+  "options": {
+    "A": "Ductal adenocarcinoma is the most common type",
+    "B": "K-rasmutationandHer-2-neuoverexpressionarethe earliest change(JIPMER GIS 2011)",
+    "C": "Good prognosis",
+    "D": "Most cases present late"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Ductal adenocarcinoma is the most common type",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "All are true about pancreatic carcinoma except:",
+    "H_highlight_excellence": "Ductal adenocarcinoma is the most common type",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ACS / surgical board principles",
+    "P_plan_for_improvement": "Ductal adenocarcinoma is the most common type"
+  },
+  "supplementary_callouts": {
+    "guideline": "ACS / surgical board principles",
+    "takeaway": "Ductal adenocarcinoma is the most common type",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 51062,
+  "specialty": "General Surgery",
+  "topic": "General",
+  "question": "One year after the patient underwent pelvic radiation therapy, she began having symptoms of",
+  "options": {
+    "A": "Terminal ileum",
+    "B": "owel obstruction. Which segment of bowel is most commonly affected?",
+    "C": "ecum Sigmoid colon",
+    "D": "Rectum",
+    "E": "None of the above"
+  },
+  "answer": "B",
+  "explanation": {
+    "correct": "owel obstruction. Which segment of bowel is most commonly affected?",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "owel obstruction. Which segment of bowel is most commonly affected?",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "General Surgery",
+    "P_plan_for_improvement": "owel obstruction. Which segment of bowel is most commonly affected?"
+  },
+  "supplementary_callouts": {
+    "guideline": "General Surgery",
+    "takeaway": "owel obstruction. Which segment of bowel is most commonly affected?",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": "b93e618a",
+  "specialty": "general surgery",
+  "topic": "General",
+  "question": "Which of the following statement is true about benign prostatic hypertrophy with bladder neck obstruction?",
+  "options": {
+    "A": "It always results in significant symptoms",
+    "B": "It is best diagnosed by endoscopy and urodynamic studies",
+    "C": "It is easily diagnosed by symptoms of poor stream &amp; straining",
+    "D": "It always results in a residual urine volume of &gt;100ml"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "It always results in significant symptoms",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "It always results in significant symptoms",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "general surgery",
+    "P_plan_for_improvement": "It always results in significant symptoms"
+  },
+  "supplementary_callouts": {
+    "guideline": "general surgery",
+    "takeaway": "It always results in significant symptoms",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 982,
+  "specialty": "General Surgery",
+  "topic": "Which of the following methods is most useful for determin ing the",
+  "question": "Which of the following methods is most useful for determin ing the RNA content of a sample?",
+  "options": {
+    "A": "Southern blotting",
+    "B": "Northern blotting",
+    "C": "Western blotting",
+    "D": "PCR"
+  },
+  "answer": "B",
+  "explanation": {
+    "correct": "Northern blotting",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Which of the following methods is most useful for determin ing the",
+    "H_highlight_excellence": "Northern blotting",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ACS / surgical board principles",
+    "P_plan_for_improvement": "Northern blotting"
+  },
+  "supplementary_callouts": {
+    "guideline": "ACS / surgical board principles",
+    "takeaway": "Northern blotting",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50919,
+  "specialty": "General Surgery",
+  "topic": "General",
+  "question": "When performing duplex ultrasound imaging of the carotid arteries, what factors help distinguish the external carotid artery from the internal carotid artery?",
+  "options": {
+    "A": "The internal carotid artery has continuous forward flow, and the external carotid artery exhibits reversal of flow during diastole.",
+    "B": "The external carotid artery is larger.",
+    "C": "The internal carotid artery is generally seen first.",
+    "D": "The superior thyroid artery is the first branch of the internal carotid artery and aids in identifying the internal carotid artery.",
+    "E": "The internal carotid artery has triphasic flow with flow reversal."
+  },
+  "answer": "C",
+  "explanation": {
+    "correct": "The internal carotid artery is generally seen first.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "The internal carotid artery is generally seen first.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "General Surgery",
+    "P_plan_for_improvement": "The internal carotid artery is generally seen first."
+  },
+  "supplementary_callouts": {
+    "guideline": "General Surgery",
+    "takeaway": "The internal carotid artery is generally seen first.",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1098,
+  "specialty": "General Surgery",
+  "topic": "Which of the following statements is true regarding breast conservation surgery?",
+  "question": "Which of the following statements is true regarding breast conservation surgery?",
+  "options": {
+    "A": "nd radiotherapy to be completed in one sitting.",
+    "B": "Intraoperative radiotherapy (IORT) targeted to the tumor bed permits breast-conserving surgery",
+    "C": "ancer. IORT is significantly more expensive than MammoSite balloon catheter brachytherapy.",
+    "D": "One known disadvantage of delivering radiotherapy at the time of breast cancer resection is increased toxicity to adjacent tissues.",
+    "E": "IORT can be repeated as needed."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1118,
+  "specialty": "General Surgery",
+  "topic": "Which of the following statements regarding burns of the hands is false?",
+  "question": "Which of the following statements regarding burns of the hands is false?",
+  "options": {
+    "A": "Full-thickness dorsal burns cause scarring, which prevents flexion contractures.",
+    "B": "Loss of the extensor tendons is often treated by joint fusion to prevent contractures from unopposed flexion forces.",
+    "C": "Partial superficial-thickness burns are best treated by sterile d\u00e9bridement, splinting, and occupational therapy.",
+    "D": "eep partial-thickness burns require early d\u00e9bridement and grafting with sheet grafts.",
+    "E": "Splinting in a safe position should be performed whenever possible."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Full-thickness dorsal burns cause scarring, which prevents flexion contractures.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Which of the following statements regarding burns of the hands is false?",
+    "H_highlight_excellence": "Full-thickness dorsal burns cause scarring, which prevents flexion contractures.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ACS / surgical board principles",
+    "P_plan_for_improvement": "Full-thickness dorsal burns cause scarring, which prevents flexion contractures"
+  },
+  "supplementary_callouts": {
+    "guideline": "ACS / surgical board principles",
+    "takeaway": "Full-thickness dorsal burns cause scarring, which prevents flexion contractures",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50252,
+  "specialty": "General Surgery",
+  "topic": "General",
+  "question": "True statements regarding acquired hypofibrinogenemia include which of the following?",
+  "options": {
+    "A": "The thrombin time aids in differentiating primary fibrinolysis from DIC.",
+    "B": "Release of excessive plasminogen activators causes pathologic fibrinolysis.",
+    "C": "Primary fibrinolysis can be differentiated from DIC on the basis of the PT, PTT, and thrombin time.",
+    "D": "The most important aspect of the treatment of DIC is adequate heparinization.",
+    "E": "Thrombocytopenia is common with pure fibrinolysis."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "The thrombin time aids in differentiating primary fibrinolysis from DIC.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "The thrombin time aids in differentiating primary fibrinolysis from DIC.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "General Surgery",
+    "P_plan_for_improvement": "The thrombin time aids in differentiating primary fibrinolysis from DIC."
+  },
+  "supplementary_callouts": {
+    "guideline": "General Surgery",
+    "takeaway": "The thrombin time aids in differentiating primary fibrinolysis from DIC.",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 892,
+  "specialty": "General Surgery",
+  "topic": "Which of the following is not a risk factor for endometrial cancer?",
+  "question": "Which of the following is not a risk factor for endometrial cancer?",
+  "options": {
+    "A": "Obesity",
+    "B": "Smoking",
+    "C": "Unopposed estrogen use",
+    "D": "iabetes"
+  },
+  "answer": "D",
+  "explanation": {
+    "correct": "iabetes",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Which of the following is not a risk factor for endometrial cancer?",
+    "H_highlight_excellence": "iabetes",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ACS / surgical board principles",
+    "P_plan_for_improvement": "iabetes"
+  },
+  "supplementary_callouts": {
+    "guideline": "ACS / surgical board principles",
+    "takeaway": "iabetes",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 393,
+  "specialty": "General Surgery",
+  "topic": "Most dangerous complication in a patient who had undergone thyroid surgery and",
+  "question": "Most dangerous complication in a patient who had undergone thyroid surgery and develop hematoma at the operative site:(AIIMS Nov 99) a. Respiratory obstruction",
+  "options": {
+    "A": "Hypocalcemia(AIIMS Nov 2001, Nov 2000) b. Recurrent laryngeal nerve palsy",
+    "B": "Recurrent laryngeal nerve palsy c. Dysphagia",
+    "C": "Wait and watchd. Cricothyroidotomy",
+    "D": "Shock 172.After thyroidectomy, patient developed stridor within 2 hours. All are likely cause of stridor except:"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Hypocalcemia(AIIMS Nov 2001, Nov 2000) b. Recurrent laryngeal nerve palsy",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Most dangerous complication in a patient who had undergone thyroid surgery and",
+    "H_highlight_excellence": "Hypocalcemia(AIIMS Nov 2001, Nov 2000) b. Recurrent laryngeal nerve palsy",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ACS / surgical board principles",
+    "P_plan_for_improvement": "Hypocalcemia(AIIMS Nov 2001, Nov 2000) b"
+  },
+  "supplementary_callouts": {
+    "guideline": "ACS / surgical board principles",
+    "takeaway": "Hypocalcemia(AIIMS Nov 2001, Nov 2000) b",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 51012,
+  "specialty": "General Surgery",
+  "topic": "General",
+  "question": "Which of the following statements regarding toe amputation is true?",
+  "options": {
+    "A": "mputation.",
+    "B": "When the entire toe must be removed, disarticulation is preferred over transmetatarsal",
+    "C": "Toe amputations should not be attempted in patients who do not have pedal pulses.",
+    "D": "Rehabilitation after transmetatarsal amputation of all five toes is improved by a shoe filler prosthesis.",
+    "E": "mpirical selection and clinical judgment are associated with a 95% healing rate regardless of the presence of pedal pulses. None of the above."
+  },
+  "answer": "B",
+  "explanation": {
+    "correct": "When the entire toe must be removed, disarticulation is preferred over transmetatarsal",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "When the entire toe must be removed, disarticulation is preferred over transmetatarsal",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "General Surgery",
+    "P_plan_for_improvement": "When the entire toe must be removed, disarticulation is preferred over transmetatarsal"
+  },
+  "supplementary_callouts": {
+    "guideline": "General Surgery",
+    "takeaway": "When the entire toe must be removed, disarticulation is preferred over transmetatarsal",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50684,
+  "specialty": "General Surgery",
+  "topic": "General",
+  "question": "On abdominal exploration for a suspected carcinoid tumor, a 2 cm mass is found at the terminal ileum. No liver lesions were detected on preoperative imaging or with intraoperative palpation. What is the best treatment option for this patient?",
+  "options": {
+    "A": "Segmental resection",
+    "B": "Medical therapy with octreotide",
+    "C": "Resection of the terminal ileum with preservation of the ileocecal valve",
+    "D": "Right hemicolectomy with wide resection of the terminal ileum",
+    "E": "Neoadjuvant therapy with streptozotocin and 5-fluorouracil"
+  },
+  "answer": "B",
+  "explanation": {
+    "correct": "Medical therapy with octreotide",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "Medical therapy with octreotide",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "General Surgery",
+    "P_plan_for_improvement": "Medical therapy with octreotide"
+  },
+  "supplementary_callouts": {
+    "guideline": "General Surgery",
+    "takeaway": "Medical therapy with octreotide",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1158,
+  "specialty": "General Surgery",
+  "topic": "Which of the following statements regarding wrist disarticulation is true?",
+  "question": "Which of the following statements regarding wrist disarticulation is true?",
+  "options": {
+    "A": "The stump is stronger than that left when the amputation is through the carpal bones.",
+    "B": "It provides better prosthesis control than does a long forearm amputation.",
+    "C": "The severed tendons and ligaments of the hand must be shortened to allow retraction of them.",
+    "D": "Preservation of the styloid processes is necessary for prosthetic fitting.",
+    "E": "None of the above."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1128,
+  "specialty": "General Surgery",
+  "topic": "Which of the following statements regarding hydrocephalus is the most accurate?",
+  "question": "Which of the following statements regarding hydrocephalus is the most accurate?",
+  "options": {
+    "A": "It represents a primary process in up to two thirds of patients.",
+    "B": "It is classified as communicating or noncommunicating, depending on where the obstruction to",
+    "C": "linical signs of hydrocephalus are manifested the same ways in all age groups.",
+    "D": "Hydrocephalus ex vacuo is more common in the young."
+  },
+  "answer": "B",
+  "explanation": {
+    "correct": "It is classified as communicating or noncommunicating, depending on where the obstruction to",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Which of the following statements regarding hydrocephalus is the most accurate?",
+    "H_highlight_excellence": "It is classified as communicating or noncommunicating, depending on where the obstruction to",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ACS / surgical board principles",
+    "P_plan_for_improvement": "It is classified as communicating or noncommunicating, depending on where the obstruction to"
+  },
+  "supplementary_callouts": {
+    "guideline": "ACS / surgical board principles",
+    "takeaway": "It is classified as communicating or noncommunicating, depending on where the obstruction to",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 51179,
+  "specialty": "General Surgery",
+  "topic": "General",
+  "question": "Which of the following statements regarding burns of the hands is false?",
+  "options": {
+    "A": "Full-thickness dorsal burns cause scarring, which prevents flexion contractures.",
+    "B": "Loss of the extensor tendons is often treated by joint fusion to prevent contractures from unopposed flexion forces.",
+    "C": "Partial superficial-thickness burns are best treated by sterile d\u00e9bridement, splinting, and occupational therapy.",
+    "D": "eep partial-thickness burns require early d\u00e9bridement and grafting with sheet grafts.",
+    "E": "Splinting in a safe position should be performed whenever possible."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 352,
+  "specialty": "General Surgery",
+  "topic": "In DNA replication, what type of mutation is specifically associated with the",
+  "question": "In DNA replication, what type of mutation is specifically associated with the generation of a stop",
+  "options": {
+    "A": "Point mutation",
+    "B": "Missense mutation",
+    "C": "odon? Nonsense mutation",
+    "D": "Frameshift mutation",
+    "E": "Neutral mutation"
+  },
+  "answer": "C",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50639,
+  "specialty": "General Surgery",
+  "topic": "General",
+  "question": "The patient in Question 24 underwent EUS that showed a T2 lesion. The biopsy specimen is positive for adenocarcinoma of the esophagus. His chance of having a positive lymph node is:",
+  "options": {
+    "A": "20%",
+    "B": "40%",
+    "C": "60%",
+    "D": "80%",
+    "E": "100%"
+  },
+  "answer": "E",
+  "explanation": {
+    "correct": "100%",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "100%",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "General Surgery",
+    "P_plan_for_improvement": "100%"
+  },
+  "supplementary_callouts": {
+    "guideline": "General Surgery",
+    "takeaway": "100%",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 436,
+  "specialty": "General Surgery",
+  "topic": "Regarding peritonitis, which of the following statements is not true?",
+  "question": "Regarding peritonitis, which of the following statements is not true?",
+  "options": {
+    "A": "Primary peritonitis is more common in children with nephrosis and adults with cirrhosis than in patients without such conditions.",
+    "B": "Primary peritonitis is usually monomicrobial.",
+    "C": "hemical peritonitis often precedes bacterial contamination.",
+    "D": "Multiple organisms are commonly cultured from peritoneal dialysis catheters.",
+    "E": "Tuberculous peritonitis has an insidious onset."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Primary peritonitis is more common in children with nephrosis and adults with cirrhosis than in patients without such",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Regarding peritonitis, which of the following statements is not true?",
+    "H_highlight_excellence": "Primary peritonitis is more common in children with nephrosis and adults with cirrhosis than in patients without such",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ACS / surgical board principles",
+    "P_plan_for_improvement": "Primary peritonitis is more common in children with nephrosis and adults with cirrhosis than in patients"
+  },
+  "supplementary_callouts": {
+    "guideline": "ACS / surgical board principles",
+    "takeaway": "Primary peritonitis is more common in children with nephrosis and adults with cirrhosis than in patients without such",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 367,
+  "specialty": "General Surgery",
+  "topic": "In which of the following conditions is AFP level not elevated?",
+  "question": "In which of the following conditions is AFP level not elevated?",
+  "options": {
+    "A": "Pure seminoma or choriocarcinoma",
+    "B": "Hepatoma, pancreatic carcinoma, bronchogenic carcinoma",
+    "C": "Fetal yolk sac tumor, embryonal carcinoma, teratocarcinoma",
+    "D": "A& B"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Pure seminoma or choriocarcinoma",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "In which of the following conditions is AFP level not elevated?",
+    "H_highlight_excellence": "Pure seminoma or choriocarcinoma",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ACS / surgical board principles",
+    "P_plan_for_improvement": "Pure seminoma or choriocarcinoma"
+  },
+  "supplementary_callouts": {
+    "guideline": "ACS / surgical board principles",
+    "takeaway": "Pure seminoma or choriocarcinoma",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50310,
+  "specialty": "General Surgery",
+  "topic": "General",
+  "question": "Glutamine is an amino acid that:",
+  "options": {
+    "A": "Is categorized as an essential amino acid",
+    "B": "Is found only in muscle tissue",
+    "C": "an be eliminated from the diet during times of stress",
+    "D": "Maintains stable levels in plasma during stress",
+    "E": ""
+  },
+  "answer": "B",
+  "explanation": {
+    "correct": "Is found only in muscle tissue",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "Is found only in muscle tissue",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "General Surgery",
+    "P_plan_for_improvement": "Is found only in muscle tissue"
+  },
+  "supplementary_callouts": {
+    "guideline": "General Surgery",
+    "takeaway": "Is found only in muscle tissue",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50794,
+  "specialty": "General Surgery",
+  "topic": "General",
+  "question": "Which of the following is the most likely explanation for a serum bilirubin level of 40 mg/dL in a patient with obstructive jaundice?",
+  "options": {
+    "A": "The patient has complete biliary obstruction.",
+    "B": "The duration of obstruction has exceeded 2 weeks.",
+    "C": "The patient has associated renal dysfunction.",
+    "D": "The patient has malignant biliary obstruction.",
+    "E": "The patient also has Gilbert disease"
+  },
+  "answer": "B",
+  "explanation": {
+    "correct": "The duration of obstruction has exceeded 2 weeks.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "The duration of obstruction has exceeded 2 weeks.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "General Surgery",
+    "P_plan_for_improvement": "The duration of obstruction has exceeded 2 weeks."
+  },
+  "supplementary_callouts": {
+    "guideline": "General Surgery",
+    "takeaway": "The duration of obstruction has exceeded 2 weeks.",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 90791,
+  "specialty": "General Surgery",
+  "topic": "rush.docx",
+  "question": "Which of the following is not a proven etiology of dissemi nated intravascular coagulation (DIC)?",
+  "options": {
+    "A": "Gram-negative sepsis",
+    "B": "Trauma",
+    "C": "Retained products of conception",
+    "D": "Malignancy"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Gram-negative sepsis",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "rush.docx",
+    "H_highlight_excellence": "Gram-negative sepsis",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "General Surgery",
+    "P_plan_for_improvement": "Gram-negative sepsis"
+  },
+  "supplementary_callouts": {
+    "guideline": "rush.docx",
+    "takeaway": "Gram-negative sepsis",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50720,
+  "specialty": "General Surgery",
+  "topic": "General",
+  "question": "Match the gene in the left column with the applicable statement in the right column:",
+  "options": {
+    "A": "PC ]) located on",
+    "B": "Late-occurring alteration resulting in loss of cell-to-cell contact, thereby enhancing metastases",
+    "C": "ell growth and differentiation",
+    "D": "Most common mutation found in patients with HNPCC",
+    "E": "Oncogene that when mutated, codes for a protein that cannot regulate"
+  },
+  "answer": "B",
+  "explanation": {
+    "correct": "Late-occurring alteration resulting in loss of cell-to-cell contact, thereby enhancing metastases",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "Late-occurring alteration resulting in loss of cell-to-cell contact, thereby enhancing metastases",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "General Surgery",
+    "P_plan_for_improvement": "Late-occurring alteration resulting in loss of cell-to-cell contact, thereby enhancing metastases"
+  },
+  "supplementary_callouts": {
+    "guideline": "General Surgery",
+    "takeaway": "Late-occurring alteration resulting in loss of cell-to-cell contact, thereby enhancing metastases",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50301,
+  "specialty": "General Surgery",
+  "topic": "General",
+  "question": "Which of the following is true with regard to TNF-\u03b1 and IL-1?",
+  "options": {
+    "A": "Levels of soluble molecules that antagonize the effects of TNF-\u03b1 and IL-1 have been shown to be predictive of organ failure.",
+    "B": "Secretion of TNF-\u03b1 and IL-1 is conducive to a hypocoagulable state during acute injury.",
+    "C": "Secretion of TNF-\u03b1 and IL-1 in response to injury leads to downregulation of the synthesis of NO and subsequent vasoconstriction.",
+    "D": "TNF-\u03b1 and IL-1 have a long half-life, which makes them effective markers for determining the magnitude and severity of the inflammatory response.",
+    "E": "TNF-\u03b1 and IL-1 have no natural antagonists; rather, their systemic effects diminish because of natural cytokine degradation."
+  },
+  "answer": "B",
+  "explanation": {
+    "correct": "Secretion of TNF-\u03b1 and IL-1 is conducive to a hypocoagulable state during acute injury.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "Secretion of TNF-\u03b1 and IL-1 is conducive to a hypocoagulable state during acute injury.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "General Surgery",
+    "P_plan_for_improvement": "Secretion of TNF-\u03b1 and IL-1 is conducive to a hypocoagulable state during acute injury."
+  },
+  "supplementary_callouts": {
+    "guideline": "General Surgery",
+    "takeaway": "Secretion of TNF-\u03b1 and IL-1 is conducive to a hypocoagulable state during acute injury.",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 808,
+  "specialty": "General Surgery",
+  "topic": "Which of the following clinical situations can be associated with hypovolemic hyponatremia?",
+  "question": "Which of the following clinical situations can be associated with hypovolemic hyponatremia?",
+  "options": {
+    "A": "CHF",
+    "B": "SIADH",
+    "C": "Cirrhosis",
+    "D": "Hyperglycemia"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "CHF",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Which of the following clinical situations can be associated with hypovolemic hyponatremia?",
+    "H_highlight_excellence": "CHF",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ACS / surgical board principles",
+    "P_plan_for_improvement": "CHF"
+  },
+  "supplementary_callouts": {
+    "guideline": "ACS / surgical board principles",
+    "takeaway": "CHF",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 587,
+  "specialty": "General Surgery",
+  "topic": "Rush Review",
+  "question": "Which cell junction acts as a transmembrane linkage without an intracellular communication function?",
+  "options": {
+    "A": "Tight junction",
+    "B": "Gap junction",
+    "C": "Desmosome",
+    "D": "Connexon",
+    "E": "All of the above junctions have an intracellular communi cation function"
+  },
+  "answer": "C",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1264,
+  "specialty": "General Surgery",
+  "topic": "Worldwide, which of the following is the most common mode of transmission",
+  "question": "Worldwide, which of the following is the most common mode of transmission of HCV?",
+  "options": {
+    "A": "Fecal-oral",
+    "B": "Sexual",
+    "C": "ontaminated water",
+    "D": "Vertical (childbirth)"
+  },
+  "answer": "B",
+  "explanation": {
+    "correct": "Sexual",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Worldwide, which of the following is the most common mode of transmission",
+    "H_highlight_excellence": "Sexual",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ACS / surgical board principles",
+    "P_plan_for_improvement": "Sexual"
+  },
+  "supplementary_callouts": {
+    "guideline": "ACS / surgical board principles",
+    "takeaway": "Sexual",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 899,
+  "specialty": "General Surgery",
+  "topic": "Which of the following is not an acceptable treatment option for a",
+  "question": "Which of the following is not an acceptable treatment option for a patient with late aortic graft limb occlusion?",
+  "options": {
+    "A": "ortofemoral bypass reoperation",
+    "B": "Thrombolytic therapy",
+    "C": "Graft limb thrombectomy",
+    "D": "Femorofemoral bypass"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 90208,
+  "specialty": "General Surgery",
+  "topic": "MCQ Compilled TASH.docx",
+  "question": "Which of the following is/are absolute indication for operative management of Diverticular disease?",
+  "options": {
+    "A": "Diverticulitis",
+    "B": "Lower GI Bleeding",
+    "C": "Stricture seen on Barium enema",
+    "D": "Presence of persistent pain"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Diverticulitis",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "MCQ Compilled TASH.docx",
+    "H_highlight_excellence": "Diverticulitis",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "General Surgery",
+    "P_plan_for_improvement": "Diverticulitis"
+  },
+  "supplementary_callouts": {
+    "guideline": "MCQ Compilled TASH.docx",
+    "takeaway": "Diverticulitis",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 90430,
+  "specialty": "General Surgery",
+  "topic": "R2 Prep Exam_.docx",
+  "question": "A 30 year- old male patient was admitted with Fourier's gangrene for debridement. Which layers of testis & scrotum need to be debrided?",
+  "options": {
+    "A": "Scrotal skin only",
+    "B": "Scrotal skin & Dartos layer",
+    "C": "Scrotal skin, Dartos layer & external spermatic fascia",
+    "D": "Scrotal skin, Dartos layer, external cremasteric & internal spermatic fascia"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Scrotal skin only",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "R2 Prep Exam_.docx",
+    "H_highlight_excellence": "Scrotal skin only",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "General Surgery",
+    "P_plan_for_improvement": "Scrotal skin only"
+  },
+  "supplementary_callouts": {
+    "guideline": "R2 Prep Exam_.docx",
+    "takeaway": "Scrotal skin only",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 51113,
+  "specialty": "General Surgery",
+  "topic": "General",
+  "question": "Which of the following is true regarding varicocele?",
+  "options": {
+    "A": "Varicoceles occur more commonly on the right side.",
+    "B": "Varicoceles are associated with infertility.",
+    "C": "Varicoceles occur in about 40% of men.",
+    "D": "Varicoceles are often associated with testicular tumors.",
+    "E": "Varicoceles are not usually palpable on physical examination."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Varicoceles occur more commonly on the right side.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "Varicoceles occur more commonly on the right side.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "General Surgery",
+    "P_plan_for_improvement": "Varicoceles occur more commonly on the right side."
+  },
+  "supplementary_callouts": {
+    "guideline": "General Surgery",
+    "takeaway": "Varicoceles occur more commonly on the right side.",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 715,
+  "specialty": "General Surgery",
+  "topic": "The protein-sparing effect of glucose administration begins to be manifested after the",
+  "question": "The protein-sparing effect of glucose administration begins to be manifested after the administration of how much glucose?",
+  "options": {
+    "A": "1 L of 5% dextrose in water (D 5 W)",
+    "B": "2 L of D 5 W",
+    "C": "3 L of D 5 W",
+    "D": "4 L of D 5 W",
+    "E": "5 L of D 5 W"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "1 L of 5% dextrose in water (D 5 W)",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "The protein-sparing effect of glucose administration begins to be manifested after the",
+    "H_highlight_excellence": "1 L of 5% dextrose in water (D 5 W)",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ACS / surgical board principles",
+    "P_plan_for_improvement": "1 L of 5% dextrose in water (D 5 W)"
+  },
+  "supplementary_callouts": {
+    "guideline": "ACS / surgical board principles",
+    "takeaway": "1 L of 5% dextrose in water (D 5 W)",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1203,
+  "specialty": "General Surgery",
+  "topic": "With regard to PTH, which of the following statements is incorrect?",
+  "question": "With regard to PTH, which of the following statements is incorrect?",
+  "options": {
+    "A": "PTH directly stimulates increased intestinal absorption of calcium.",
+    "B": "PTH stimulates osteoclast resorption of calcium and phosphate.",
+    "C": "PTH cells express G protein\u2013coupled calcium-sensing receptors.",
+    "D": "PTH inhibits calcium excretion at the distal convoluted tubule of the kidney.",
+    "E": "PTH enhances renally mediated hydroxylation of 25-hydroxyvitamin D."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": "d07a5440",
+  "specialty": "general surgery",
+  "topic": "General",
+  "question": "A 6-hour male neonate was born with absent anal opening. Which of the following is true?",
+  "options": {
+    "A": "Urgent colostomy should be done right away",
+    "B": "Anoplasy without colostomy can be done if the anomaly is ARM with rectovesical fistula",
+    "C": "Continence after surgery is almost nil",
+    "D": "A divided descending colostomy is ideal for the management of anorectal malformations"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Urgent colostomy should be done right away",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "Urgent colostomy should be done right away",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "general surgery",
+    "P_plan_for_improvement": "Urgent colostomy should be done right away"
+  },
+  "supplementary_callouts": {
+    "guideline": "general surgery",
+    "takeaway": "Urgent colostomy should be done right away",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 90442,
+  "specialty": "General Surgery",
+  "topic": "R2 Prep Exam_.docx",
+  "question": "Which of the following statement is true about colorectal cancer?",
+  "options": {
+    "A": "Almost all arise from pre-existing adenoma",
+    "B": "Lymph node involvement would make it Stage-Ill disease irrespective of T stage",
+    "C": "Age is considered to be an important risk factor",
+    "D": "Rectum and sigmoid colon are still the frequently affected parts"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Almost all arise from pre-existing adenoma",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "R2 Prep Exam_.docx",
+    "H_highlight_excellence": "Almost all arise from pre-existing adenoma",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "General Surgery",
+    "P_plan_for_improvement": "Almost all arise from pre-existing adenoma"
+  },
+  "supplementary_callouts": {
+    "guideline": "R2 Prep Exam_.docx",
+    "takeaway": "Almost all arise from pre-existing adenoma",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 51237,
+  "specialty": "General Surgery",
+  "topic": "General",
+  "question": "Following cholecystectomy, an 82-year-old patient has an oxygen saturation of 88% on 2 L of oxygen by nasal cannula. Which of the following is not a probable explanation for this phenomenon?",
+  "options": {
+    "A": "Maximal breathing capacity is 50% of what the patient had at age 30.",
+    "B": "The cough mechanism is less effective in elderly patients.",
+    "C": "The pulse oximetry reading is spurious.",
+    "D": "The patient was recently repositioned from supine to a sitting position.",
+    "E": "The patient required conversion from laparoscopic to open cholecystectomy."
+  },
+  "answer": "D",
+  "explanation": {
+    "correct": "The patient was recently repositioned from supine to a sitting position.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "The patient was recently repositioned from supine to a sitting position.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "General Surgery",
+    "P_plan_for_improvement": "The patient was recently repositioned from supine to a sitting position."
+  },
+  "supplementary_callouts": {
+    "guideline": "General Surgery",
+    "takeaway": "The patient was recently repositioned from supine to a sitting position.",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 831,
+  "specialty": "General Surgery",
+  "topic": "Which of the following errors represents an error in prevention?",
+  "question": "Which of the following errors represents an error in prevention?",
+  "options": {
+    "A": "voidable delay in responding to an abnormal test result",
+    "B": "Failure to use indicated tests",
+    "C": "Use of outmoded tests or therapy",
+    "D": "Failure to act on results of monitoring or testing"
+  },
+  "answer": "C",
+  "explanation": {
+    "correct": "Use of outmoded tests or therapy",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Which of the following errors represents an error in prevention?",
+    "H_highlight_excellence": "Use of outmoded tests or therapy",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ACS / surgical board principles",
+    "P_plan_for_improvement": "Use of outmoded tests or therapy"
+  },
+  "supplementary_callouts": {
+    "guideline": "ACS / surgical board principles",
+    "takeaway": "Use of outmoded tests or therapy",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50917,
+  "specialty": "General Surgery",
+  "topic": "General",
+  "question": "Which of the following characterizes duplex ultrasound imaging?",
+  "options": {
+    "A": "lone.",
+    "B": "Lower frequencies (e.g., 3 MHz) are better suited for deep abdominal imaging, and higher frequencies (e.g., 7 MHz) are better for more superficial structures, such as in situ vein grafts.",
+    "C": "alcification within a diseased artery is usually severe enough to prevent an adequate vascular ultrasound examination.",
+    "D": "The diagnosis of deep venous thrombosis (DVT) is made with the use of color flow imaging",
+    "E": ""
+  },
+  "answer": "D",
+  "explanation": {
+    "correct": "The diagnosis of deep venous thrombosis (DVT) is made with the use of color flow imaging",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "The diagnosis of deep venous thrombosis (DVT) is made with the use of color flow imaging",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "General Surgery",
+    "P_plan_for_improvement": "The diagnosis of deep venous thrombosis (DVT) is made with the use of color flow imaging"
+  },
+  "supplementary_callouts": {
+    "guideline": "General Surgery",
+    "takeaway": "The diagnosis of deep venous thrombosis (DVT) is made with the use of color flow imaging",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 90637,
+  "specialty": "Orthopedics",
+  "topic": "good ortho mcq exam_2 conv.docx",
+  "question": "Mc Murray abduction osteotomy:",
+  "options": {
+    "A": "The operation of choice for coxa vara defonnity of hip.",
+    "B": "It consists of subtrochanteric osteotomy with abduction of the distal end of the femur.",
+    "C": "it corrects the deformity of the hip ..",
+    "D": "It relieves pain of the hip during walking. e. It avoids osteoarthritis of the hip joint."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "The operation of choice for coxa vara defonnity of hip.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "good ortho mcq exam_2 conv.docx",
+    "H_highlight_excellence": "The operation of choice for coxa vara defonnity of hip.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "Orthopedics",
+    "P_plan_for_improvement": "The operation of choice for coxa vara defonnity of hip."
+  },
+  "supplementary_callouts": {
+    "guideline": "good ortho mcq exam_2 conv.docx",
+    "takeaway": "The operation of choice for coxa vara defonnity of hip.",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1094,
+  "specialty": "General Surgery",
+  "topic": "Which of the following statements is true concerning sleeve gastrectomy?",
+  "question": "Which of the following statements is true concerning sleeve gastrectomy?",
+  "options": {
+    "A": "Long-term data show 50% to 70% loss of excess body weight.",
+    "B": "It works by restrictive and malabsorptive mechanisms.",
+    "C": "Postoperative gastric emptying is delayed.",
+    "D": "Postoperative plasma ghrelin levels are elevated.",
+    "E": "It is a component of DS."
+  },
+  "answer": "C",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": "701d9dbe",
+  "specialty": "general surgery",
+  "topic": "General",
+  "question": "Which of the following is not among recognized complication of open AAA repair?",
+  "options": {
+    "A": "Ischemic colitis",
+    "B": "Paraplegia",
+    "C": "Declamping shock",
+    "D": "Phlegmatica cerulean dolens",
+    "E": "None of the above"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Ischemic colitis",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "Ischemic colitis",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "general surgery",
+    "P_plan_for_improvement": "Ischemic colitis"
+  },
+  "supplementary_callouts": {
+    "guideline": "general surgery",
+    "takeaway": "Ischemic colitis",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1106,
+  "specialty": "General Surgery",
+  "topic": "Which of the following statements is/aretrue concerning the surgical management of colorectal",
+  "question": "Which of the following statements is/aretrue concerning the surgical management of colorectal cancer?",
+  "options": {
+    "A": "In general, the accepted safe margin to minimize anastomotic site recurrence in managing rectal cancer is 5 cm from the tumor margin",
+    "B": "In handling mid rectal cancer, margins >2cm do not influence survival or local recurrence rates",
+    "C": "Adequate lymphadenectomy (minimum of 12 LNs) plays important role in properly staging the tumor and effect cure",
+    "D": "The length of bowel resected in colon cancer depends on which vessels are supplying the segment involved with the cancer."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "In general, the accepted safe margin to minimize anastomotic site recurrence in managing rectal cancer is 5 cm",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Which of the following statements is/aretrue concerning the surgical management of colorectal",
+    "H_highlight_excellence": "In general, the accepted safe margin to minimize anastomotic site recurrence in managing rectal cancer is 5 cm",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ACS / surgical board principles",
+    "P_plan_for_improvement": "In general, the accepted safe margin to minimize anastomotic site recurrence in managing rectal cancer is"
+  },
+  "supplementary_callouts": {
+    "guideline": "ACS / surgical board principles",
+    "takeaway": "In general, the accepted safe margin to minimize anastomotic site recurrence in managing rectal cancer is 5 cm",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50742,
+  "specialty": "General Surgery",
+  "topic": "General",
+  "question": "The cytochrome P-450 system transforms compounds by all of following mechanisms except?",
+  "options": {
+    "A": "Oxidation",
+    "B": "oth A and C",
+    "C": "onjugation",
+    "D": "Reduction",
+    "E": ""
+  },
+  "answer": "C",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1256,
+  "specialty": "General Surgery",
+  "topic": "With regard to thyroid anatomy, which of the following statements is incorrect?",
+  "question": "With regard to thyroid anatomy, which of the following statements is incorrect?",
+  "options": {
+    "A": "The inferior thyroid artery arises directly from the external carotid artery.",
+    "B": "The thyroidea ima artery arises directly from the aorta in 1% to 4% of patients.",
+    "C": "The ligament of Berry is located near the entry point of the RLN.",
+    "D": "Venous drainage of the thyroid gland is via the superior, middle, and inferior branches.",
+    "E": "The superior and middle thyroid veins drain into the jugular vein."
+  },
+  "answer": "C",
+  "explanation": {
+    "correct": "The ligament of Berry is located near the entry point of the RLN.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "With regard to thyroid anatomy, which of the following statements is incorrect?",
+    "H_highlight_excellence": "The ligament of Berry is located near the entry point of the RLN.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ACS / surgical board principles",
+    "P_plan_for_improvement": "The ligament of Berry is located near the entry point of the RLN"
+  },
+  "supplementary_callouts": {
+    "guideline": "ACS / surgical board principles",
+    "takeaway": "The ligament of Berry is located near the entry point of the RLN",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50303,
+  "specialty": "General Surgery",
+  "topic": "General",
+  "question": "Which of the following with regard to metabolism during fasting is true?",
+  "options": {
+    "A": "The main source of fuel in short-term fasting (<5 days) is derived from hepatic glycogen stores.",
+    "B": "Norepinephrine, vasopressin, and angiotensin II promote the assembly of glycogen chains during fasting.",
+    "C": "In prolonged starvation, ketone bodies become the primary fuel source for the brain.",
+    "D": "Lipid stores in adipose tissue provide 80% of the caloric expenditure during starvation.",
+    "E": "Release of free fatty acids is stimulated by an increase in serum insulin levels."
+  },
+  "answer": "C",
+  "explanation": {
+    "correct": "In prolonged starvation, ketone bodies become the primary fuel source for the brain.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "In prolonged starvation, ketone bodies become the primary fuel source for the brain.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "General Surgery",
+    "P_plan_for_improvement": "In prolonged starvation, ketone bodies become the primary fuel source for the brain."
+  },
+  "supplementary_callouts": {
+    "guideline": "General Surgery",
+    "takeaway": "In prolonged starvation, ketone bodies become the primary fuel source for the brain.",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1273,
+  "specialty": "General Surgery",
+  "topic": "dyspnea. CXR revealed giant bulla & FEV1< 35% of predicted value. Which",
+  "question": "dyspnea. CXR revealed giant bulla & FEV1< 35% of predicted value. Which of the following is considered as a relative contraindication for surgically managing this patient?",
+  "options": {
+    "A": "The FEV1",
+    "B": "The size of the bulla",
+    "C": "The rapidly progressing dyspnea",
+    "D": "None of the above Research has suggested that FEV1 is an independent risk factor for surgery"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "The FEV1",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "dyspnea. CXR revealed giant bulla & FEV1< 35% of predicted value. Which",
+    "H_highlight_excellence": "The FEV1",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ACS / surgical board principles",
+    "P_plan_for_improvement": "The FEV1"
+  },
+  "supplementary_callouts": {
+    "guideline": "ACS / surgical board principles",
+    "takeaway": "The FEV1",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 51037,
+  "specialty": "General Surgery",
+  "topic": "General",
+  "question": "Which operation was first used extensively for the treatment of morbid obesity during the 1960s?",
+  "options": {
+    "A": "djustable gastric banding",
+    "B": "PD",
+    "C": "Jejunoileal bypass",
+    "D": "Vertical banded gastroplasty",
+    "E": ""
+  },
+  "answer": "D",
+  "explanation": {
+    "correct": "Vertical banded gastroplasty",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "Vertical banded gastroplasty",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "General Surgery",
+    "P_plan_for_improvement": "Vertical banded gastroplasty"
+  },
+  "supplementary_callouts": {
+    "guideline": "General Surgery",
+    "takeaway": "Vertical banded gastroplasty",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 51230,
+  "specialty": "General Surgery",
+  "topic": "General",
+  "question": "The leading cause of maternal morbidity and mortality in the developed world is:",
+  "options": {
+    "A": "Postpartum hemorrhage",
+    "B": "Thromboembolism",
+    "C": "Preeclampsia",
+    "D": "Uterine rupture",
+    "E": "Pneumonia"
+  },
+  "answer": "D",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 90601,
+  "specialty": "Orthopedics",
+  "topic": "good ortho mcq exam_2 conv.docx",
+  "question": "Volkman's ischemia commonly occurs following: a. Fracture shaft humerus.",
+  "options": {
+    "A": "Shaft.",
+    "B": "Surgical neck.",
+    "C": "Medial epicondyle. d. Lateral epieondyle.",
+    "D": "Lower third of humerus. 5 51)Fracture involving which part of humerus can cause delayed ulnar palsy:"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Shaft.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "good ortho mcq exam_2 conv.docx",
+    "H_highlight_excellence": "Shaft.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "Orthopedics",
+    "P_plan_for_improvement": "Shaft."
+  },
+  "supplementary_callouts": {
+    "guideline": "good ortho mcq exam_2 conv.docx",
+    "takeaway": "Shaft.",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 761,
+  "specialty": "General Surgery",
+  "topic": "What is the next step in treatment for the patient in Question",
+  "question": "What is the next step in treatment for the patient in Question 51?",
+  "options": {
+    "A": "Hold antibiotic coverage until culture-proven infection is noted.",
+    "B": "Start empirical broad-spectrum antibiotics based on risk factors and an antibiogram of the ICU.",
+    "C": "Perform bronchoscopy daily until the secretions have cleared.",
+    "D": "Start one antibiotic based on the most likely pathogen and escalate as needed.",
+    "E": "Intubate and place the patient on a low-volume, lung-protective ventilation protocol."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Hold antibiotic coverage until culture-proven infection is noted.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "What is the next step in treatment for the patient in Question",
+    "H_highlight_excellence": "Hold antibiotic coverage until culture-proven infection is noted.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ACS / surgical board principles",
+    "P_plan_for_improvement": "Hold antibiotic coverage until culture-proven infection is noted"
+  },
+  "supplementary_callouts": {
+    "guideline": "ACS / surgical board principles",
+    "takeaway": "Hold antibiotic coverage until culture-proven infection is noted",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 90408,
+  "specialty": "General Surgery",
+  "topic": "R2 1-110 Exam.docx",
+  "question": "Which of the following is not one of the complications of reperfusion of acute lower limb ischemia?",
+  "options": {
+    "A": "Rhabdomyolysis",
+    "B": "Metabolic alkalosis",
+    "C": "Myoglobinuria",
+    "D": "ATN"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Rhabdomyolysis",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "R2 1-110 Exam.docx",
+    "H_highlight_excellence": "Rhabdomyolysis",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "General Surgery",
+    "P_plan_for_improvement": "Rhabdomyolysis"
+  },
+  "supplementary_callouts": {
+    "guideline": "R2 1-110 Exam.docx",
+    "takeaway": "Rhabdomyolysis",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50593,
+  "specialty": "General Surgery",
+  "topic": "General",
+  "question": "With regard to Hashimoto thyroiditis, which of the following is true?",
+  "options": {
+    "A": "The majority of patients are transiently hypothyroid but with time return to a euthyroid state.",
+    "B": "It is primarily treated surgically.",
+    "C": "Radioactive iodine is useful in the treatment of Hashimoto thyroiditis.",
+    "D": "Thyroid microsomal antibodies are detected in the serum of patients.",
+    "E": "The incidence of hypothyroidism in Hashimoto thyroiditis is higher in women than in men."
+  },
+  "answer": "B",
+  "explanation": {
+    "correct": "It is primarily treated surgically.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "It is primarily treated surgically.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "General Surgery",
+    "P_plan_for_improvement": "It is primarily treated surgically."
+  },
+  "supplementary_callouts": {
+    "guideline": "General Surgery",
+    "takeaway": "It is primarily treated surgically.",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 641,
+  "specialty": "General Surgery",
+  "topic": "Select the most accurate statement regarding burn injury:",
+  "question": "Select the most accurate statement regarding burn injury:",
+  "options": {
+    "A": "rcing.",
+    "B": "Intoxication is infrequently associated with deep burn injury.",
+    "C": "ircumferential burns on both feet are seen in accidental bathing injuries in children.",
+    "D": "Flash burns are generated by brief, intense heat, and articles of clothing are frequently protective.",
+    "E": "lectrical burns are deeper than they appear because of the high flash temperatures generated by"
+  },
+  "answer": "D",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 261,
+  "specialty": "General Surgery",
+  "topic": "A patient with resolving ARDS requires a tracheostomy. The family wants to",
+  "question": "A patient with resolving ARDS requires a tracheostomy. The family wants to know the benefit of early tracheostomy compared with prolonged intubation. Which of the following is correct?",
+  "options": {
+    "A": "There is no difference in overall mortality between patients receiving prolonged endotracheal (ET) intubation and those receiving tracheostomy.",
+    "B": "There is increased sedation and pain requirement with a surgically placed tracheostomy.",
+    "C": "There is an increased risk of pneumonia with ET intubation.",
+    "D": "There is a decrease in the time required for mechanical ventilation with tracheostomy."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "There is no difference in overall mortality between patients receiving prolonged endotracheal (ET) intubation and those receiving tracheostomy.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "A patient with resolving ARDS requires a tracheostomy. The family wants to",
+    "H_highlight_excellence": "There is no difference in overall mortality between patients receiving prolonged endotracheal (ET) intubation and those receiving tracheostomy.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ACS / surgical board principles",
+    "P_plan_for_improvement": "There is no difference in overall mortality between patients receiving prolonged endotracheal (ET) intubation and those"
+  },
+  "supplementary_callouts": {
+    "guideline": "ACS / surgical board principles",
+    "takeaway": "There is no difference in overall mortality between patients receiving prolonged endotracheal (ET) intubation and those receiving tracheostomy",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 279,
+  "specialty": "General Surgery",
+  "topic": "All are true about hepatopulmonary syndrome except: (JIPMER GIS 2011)",
+  "question": "All are true about hepatopulmonary syndrome except: (JIPMER GIS 2011)",
+  "options": {
+    "A": "FrequencyinESLDisbetween8-29%",
+    "B": "Characterized by hypoxemia and anatomical shuntingofblood",
+    "C": "OnlyestablishedtreatmentatpresentisOLT",
+    "D": "Apre-operativeoxygentensionof<30mmHgalone isapredictorofdisease"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "FrequencyinESLDisbetween8-29%",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "All are true about hepatopulmonary syndrome except: (JIPMER GIS 2011)",
+    "H_highlight_excellence": "FrequencyinESLDisbetween8-29%",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ACS / surgical board principles",
+    "P_plan_for_improvement": "FrequencyinESLDisbetween8-29%"
+  },
+  "supplementary_callouts": {
+    "guideline": "ACS / surgical board principles",
+    "takeaway": "FrequencyinESLDisbetween8-29%",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 790,
+  "specialty": "General Surgery",
+  "topic": "Which is incorrect of trauma in pregnancy?",
+  "question": "Which is incorrect of trauma in pregnancy?",
+  "options": {
+    "A": "Fluid in vagina with pH of > 7.0 is suggestive of amniotic fluid.",
+    "B": "The Kleihaur-Betke test will indicate which Rh \u2013ve patients require anti-D.",
+    "C": "Ultrasound is less sensitive than CTG in identifying patients with placental abruption.",
+    "D": "Peri mortem C-section should be done at 4 mins into maternal arrest."
+  },
+  "answer": "B",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 625,
+  "specialty": "General Surgery",
+  "topic": "Rush Review",
+  "question": "Which one of the following is not associated with hypocalcemia?",
+  "options": {
+    "A": "Shortening of the QT interval",
+    "B": "Painful muscle spasms",
+    "C": "Perioral or fingertip tingling",
+    "D": "Seizures in children",
+    "E": "Prolongation of the QT interval"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Shortening of the QT interval",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Rush Review",
+    "H_highlight_excellence": "Shortening of the QT interval",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "Rush Review 6th Edition",
+    "P_plan_for_improvement": "See detailed explanation for key surgical concepts"
+  },
+  "supplementary_callouts": {
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1209,
+  "specialty": "General Surgery",
+  "topic": "With regard to acalculous cholecystitis, which of the following statements is true?",
+  "question": "With regard to acalculous cholecystitis, which of the following statements is true?",
+  "options": {
+    "A": "It most commonly affects elderly patients in an outpatient setting.",
+    "B": "The primary pathophysiologic feature involves gallbladder stasis.",
+    "C": "HIDA scan results are usually normal.",
+    "D": "Ultrasound imaging of the gallbladder is usually normal.",
+    "E": "Treatment requires cholecystectomy."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 90850,
+  "specialty": "General Surgery",
+  "topic": "rush.docx",
+  "question": "Due to multiple takebacks for \u201csecond-look\u201d procedures and attempts at extubation, the patient in the question above remains without enteral nutrition for 8 days. Which type of formula might be appropriate for a patient who has been NPO for more than 1 week and has a partially functioning gastrointestinal tract?",
+  "options": {
+    "A": "Elemental formula",
+    "B": "Concentrated formula",
+    "C": "Specialty formula",
+    "D": "Modular formula"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Elemental formula",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "rush.docx",
+    "H_highlight_excellence": "Elemental formula",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "General Surgery",
+    "P_plan_for_improvement": "Elemental formula"
+  },
+  "supplementary_callouts": {
+    "guideline": "rush.docx",
+    "takeaway": "Elemental formula",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1114,
+  "specialty": "General Surgery",
+  "topic": "Which of the following statements regarding TNF is true?",
+  "question": "Which of the following statements regarding TNF is true?",
+  "options": {
+    "A": "TNF is produced only by monocytes and macrophages.",
+    "B": "Release of TNF is stimulated by exotoxins.",
+    "C": "TNF is an anabolic stimulant to the host that results in the deposition of fat.",
+    "D": "TNF is responsible for the cachexia associated with metastatic disease.",
+    "E": "TNF-\u03b1 expression increases in response to glucocorticoid exposure."
+  },
+  "answer": "C",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1082,
+  "specialty": "General Surgery",
+  "topic": "Which of the following statements is false about ureteric stones?",
+  "question": "Which of the following statements is false about ureteric stones?",
+  "options": {
+    "A": "Mid ureteric ureteric stones are the most difficult to treat with hardest to treat with ESWL",
+    "B": "Nifidipine can facilitate stone passage",
+    "C": "Size of the stone is the most important predictor for spontaneous stone passage",
+    "D": "None of the above 21,4 24 wear old gravida-Hilady presented with wolithiasis. Which of"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 664,
+  "specialty": "General Surgery",
+  "topic": "The cytochrome P-450 system transforms compounds by all of following mechanisms except?",
+  "question": "The cytochrome P-450 system transforms compounds by all of following mechanisms except?",
+  "options": {
+    "A": "Oxidation",
+    "B": "oth A and C",
+    "C": "onjugation",
+    "D": "Reduction"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 90643,
+  "specialty": "Orthopedics",
+  "topic": "good ortho mcq exam_2 conv.docx",
+  "question": "Reduction and immobilization of Pott's fracture:",
+  "options": {
+    "A": "Closed reduction and external fixation in below knee plaster is done for first degree of Pott's fracture of any type.",
+    "B": "Open reduction and internal fixation are indicated in second and third degrees of Pott's fracture.",
+    "C": "External immobilization can be achieved by plaster or by traction.",
+    "D": "Internal immobilization can be achieved by screws or arthrodesis of the ankle joint."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Closed reduction and external fixation in below knee plaster is done for first degree of Pott's fracture of",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "good ortho mcq exam_2 conv.docx",
+    "H_highlight_excellence": "Closed reduction and external fixation in below knee plaster is done for first degree of Pott's fracture of",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "Orthopedics",
+    "P_plan_for_improvement": "Closed reduction and external fixation in below knee plaster is done for first degree of Pott's"
+  },
+  "supplementary_callouts": {
+    "guideline": "good ortho mcq exam_2 conv.docx",
+    "takeaway": "Closed reduction and external fixation in below knee plaster is done for first degree of Pott's fracture of",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 707,
+  "specialty": "General Surgery",
+  "topic": "The patient in Question 21 is found to have a perforated duodenal",
+  "question": "The patient in Question 21 is found to have a perforated duodenal ulcer. Which of the following",
+  "options": {
+    "A": "Suture closure of the perforation",
+    "B": "est describes the required operation? Omental patch of the perforation",
+    "C": "Repair of the perforation and highly selective vagotomy",
+    "D": "Repair of the perforation and truncal vagotomy",
+    "E": "Repair of the perforation and gastric resection"
+  },
+  "answer": "E",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50633,
+  "specialty": "General Surgery",
+  "topic": "General",
+  "question": "Which of the following most likely contributes to GERD?",
+  "options": {
+    "A": "ttachment of the phrenoesophageal ligament 4 cm above the GE junction",
+    "B": "LES resting pressure of 12 mm Hg",
+    "C": "Thirty percent tertiary waveforms",
+    "D": "Total LES length of 5 cm",
+    "E": ""
+  },
+  "answer": "C",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50956,
+  "specialty": "General Surgery",
+  "topic": "General",
+  "question": "Two days after uncomplicated open repair of an AAA, bloody diarrhea develops. The most likely",
+  "options": {
+    "A": "cute hepatic failure",
+    "B": "Ischemic colitis",
+    "C": "oagulopathy",
+    "D": "iverticulitis",
+    "E": ""
+  },
+  "answer": "B",
+  "explanation": {
+    "correct": "Ischemic colitis",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "Ischemic colitis",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "General Surgery",
+    "P_plan_for_improvement": "Ischemic colitis"
+  },
+  "supplementary_callouts": {
+    "guideline": "General Surgery",
+    "takeaway": "Ischemic colitis",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 90423,
+  "specialty": "General Surgery",
+  "topic": "R2 Prep Exam_.docx",
+  "question": "Which of the following is true about his disease?",
+  "options": {
+    "A": "It is a benign tumor of the bladder",
+    "B": "It is a precursor to low grade papillary tumor",
+    "C": "It is an invasive tumor",
+    "D": "It is not sensitive for chemotherapy"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Correct answer provided",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Benign bladder tumor identified",
+    "H_highlight_excellence": "Correct answer provided",
+    "A_address_the_gaps": "Further investigation needed",
+    "R_review_learning_points": "Tumor types and stages",
+    "P_plan_for_improvement": "Explore differential diagnoses"
+  },
+  "supplementary_callouts": {
+    "guideline": "Follow clinical protocols",
+    "takeaway": "Understanding tumor classifications",
+    "visualization": "Image-based diagnostic support"
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 90762,
+  "specialty": "General Surgery",
+  "topic": "rush.docx",
+  "question": "You are called by a PACU nurse for a patient who just underwent an elective splenectomy for idiopathic thrombotic purpura. The patient is afebrile, tachycardic, and hypotensive. What is your next step in management?",
+  "options": {
+    "A": "Check hemoglobin",
+    "B": "IV fluid resuscitation",
+    "C": "Electrocardiogram",
+    "D": "Antibiotics"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Check hemoglobin",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "rush.docx",
+    "H_highlight_excellence": "Check hemoglobin",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "General Surgery",
+    "P_plan_for_improvement": "Check hemoglobin"
+  },
+  "supplementary_callouts": {
+    "guideline": "rush.docx",
+    "takeaway": "Check hemoglobin",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50854,
+  "specialty": "General Surgery",
+  "topic": "General",
+  "question": "Hairy cell leukemia is diagnosed in a 58-year-old man with pancytopenia and palpable splenomegaly. He is referred to your office for a second opinion after another surgeon did not offer him a splenectomy. Which of the following is true regarding his condition?",
+  "options": {
+    "A": "It is a B-cell lymphoma characterized by cytoplasmic protrusions that first invade the thymus and then the spleen secondarily.",
+    "B": "The mainstay of treatment is methotrexate chemotherapy.",
+    "C": "It is associated with a two- to threefold risk for the development of a second malignancy, including prostate, skin, and lung cancers.",
+    "D": "Splenectomy may be palliative but is infrequently done because of the lack of sustained response.",
+    "E": "The 5-year survival rate is less than 20%."
+  },
+  "answer": "D",
+  "explanation": {
+    "correct": "Splenectomy may be palliative but is infrequently done because of the lack of sustained response.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "Splenectomy may be palliative but is infrequently done because of the lack of sustained response.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "General Surgery",
+    "P_plan_for_improvement": "Splenectomy may be palliative but is infrequently done because of the lack of sustained response."
+  },
+  "supplementary_callouts": {
+    "guideline": "General Surgery",
+    "takeaway": "Splenectomy may be palliative but is infrequently done because of the lack of sustained response.",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 90616,
+  "specialty": "Orthopedics",
+  "topic": "good ortho mcq exam_2 conv.docx",
+  "question": "The most characteristic feature of Volkmann's contracture is :",
+  "options": {
+    "A": "It is due to contraction of the palmar fascia which starts as an indurated nodule on the ulnar border of the hand.",
+    "B": "The ring and little fingers are severely affected. c. The deformity consists of flexion of the metacarprophalangeal and proximal interphalangeal joints with extension of the terminal joint.",
+    "C": "Extension of the metacarprophalangeal joints with flexion of the interphalangeal joints.",
+    "D": "The skin overlying the indurated fascia is often puckered and immobile."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "It is due to contraction of the palmar fascia which starts as an indurated nodule on the ulnar",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "good ortho mcq exam_2 conv.docx",
+    "H_highlight_excellence": "It is due to contraction of the palmar fascia which starts as an indurated nodule on the ulnar",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "Orthopedics",
+    "P_plan_for_improvement": "It is due to contraction of the palmar fascia which starts as an indurated nodule on"
+  },
+  "supplementary_callouts": {
+    "guideline": "good ortho mcq exam_2 conv.docx",
+    "takeaway": "It is due to contraction of the palmar fascia which starts as an indurated nodule on the ulnar",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1189,
+  "specialty": "General Surgery",
+  "topic": "Which statement is correct concerning intestinal polyposis syndromes?",
+  "question": "Which statement is correct concerning intestinal polyposis syndromes?",
+  "options": {
+    "A": "Hamartomas are found in patients with both juvenile polyps and Peutz-Jeghers syndrome.",
+    "B": "Familial polyposis syndrome often includes extraintestinal manifestations.",
+    "C": "Turcot syndrome often includes small bowel polyps.",
+    "D": "Peutz-Jeghers syndrome, Gardner syndrome, and Turcot syndrome are inherited in an autosomal recessive pattern.",
+    "E": "Familial polyposis and Turcot syndrome are benign conditions without malignant potential."
+  },
+  "answer": "D",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1221,
+  "specialty": "General Surgery",
+  "topic": "With regard to current therapy for stage I and stage II breast",
+  "question": "With regard to current therapy for stage I and stage II breast cancer, which statement is true?",
+  "options": {
+    "A": "The Halstead radical mastectomy has resulted in a cure rate superior to that of other surgical treatment options.",
+    "B": "Lumpectomy and radiation therapy are associated with a local recurrence rate of 25%.",
+    "C": "Oncotype DX assists in making decisions regarding chemotherapy in node-negative, ER- positive, HER-2/neu\u2013negative cancers.",
+    "D": "Node-negative patients who undergo modified radical mastectomy have a survival advantage over those who choose lumpectomy, sentinel lymph node biopsy, and radiation therapy.",
+    "E": "There is no role for skin-sparing mastectomy in the treatment of invasive cancers."
+  },
+  "answer": "C",
+  "explanation": {
+    "correct": "Oncotype DX assists in making decisions regarding chemotherapy in node-negative, ER- positive, HER-2/neu\u2013negative cancers.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "With regard to current therapy for stage I and stage II breast",
+    "H_highlight_excellence": "Oncotype DX assists in making decisions regarding chemotherapy in node-negative, ER- positive, HER-2/neu\u2013negative cancers.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ACS / surgical board principles",
+    "P_plan_for_improvement": "Oncotype DX assists in making decisions regarding chemotherapy in node-negative, ER- positive, HER-2/neu\u2013negative cancers"
+  },
+  "supplementary_callouts": {
+    "guideline": "ACS / surgical board principles",
+    "takeaway": "Oncotype DX assists in making decisions regarding chemotherapy in node-negative, ER- positive, HER-2/neu\u2013negative cancers",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1262,
+  "specialty": "General Surgery",
+  "topic": "With regard to von Willebrand disease, which of the following statements is",
+  "question": "With regard to von Willebrand disease, which of the following statements is true?",
+  "options": {
+    "A": "It is more common than hemophilia.",
+    "B": "It is best treated with cryoprecipitate plasma.",
+    "C": "Factor VIII levels are constant over time in a given patient.",
+    "D": "Bleeding after elective surgery is rare."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "It is more common than hemophilia.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "With regard to von Willebrand disease, which of the following statements is",
+    "H_highlight_excellence": "It is more common than hemophilia.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ACS / surgical board principles",
+    "P_plan_for_improvement": "It is more common than hemophilia"
+  },
+  "supplementary_callouts": {
+    "guideline": "ACS / surgical board principles",
+    "takeaway": "It is more common than hemophilia",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 930,
+  "specialty": "General Surgery",
+  "topic": "Which of the following is the most significant prognostic factor for patients",
+  "question": "Which of the following is the most significant prognostic factor for patients with node-positive (stage III) melanoma?",
+  "options": {
+    "A": "Nodal size",
+    "B": "Number of involved lymph nodes",
+    "C": "Tumor thickness",
+    "D": "Tumor ulceration",
+    "E": "Patient gender"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 51006,
+  "specialty": "General Surgery",
+  "topic": "General",
+  "question": "With regard to axillary-subclavian vein thrombosis (Paget-von Schroetter syndrome), which of the following is true?",
+  "options": {
+    "A": "It is rarely associated with thoracic outlet compression syndrome.",
+    "B": "Severe pain in the affected extremity is usually the initial symptom.",
+    "C": "Venography is the gold standard for making the diagnosis.",
+    "D": "Surgical thrombectomy is the treatment of choice for the management of acute disease.",
+    "E": "Patients treated with thrombolytic and anticoagulant therapy alone have a low rate of recurrence."
+  },
+  "answer": "E",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 428,
+  "specialty": "General Surgery",
+  "topic": "Regarding chemotherapeutic agents, which of the following statements is true?",
+  "question": "Regarding chemotherapeutic agents, which of the following statements is true?",
+  "options": {
+    "A": "Paclitaxel is a manmade taxane first manufactured in the polycarbon industry.",
+    "B": "Taxanes unwind DNA thus preventing transcription. CHAPTER 2 / Wound Healing and Cell Biology 15",
+    "C": "Vinca alkaloids inhibit cell division by disrupting the mitotic spindle.",
+    "D": "Doxirubicin intercalates between DNA base pairs thus disrupting transcription. COMMENTS: Taxanes function as mitotic inhibitors by inhibiting depolymerization of the mitotic spindle, which results in a \u201cfrozen\u201d mitosis. Paclitaxel is a natural taxane that prevents depolymeriza tion of cellular microtubules. The vinca alkaloids (e.g., vinblastine, vincristine) also inhibit cell division but by disrupting the mitotic spindle. Doxorubicin (Adriamycin) intercalates between DNA base pairs and impairs the progression of topoisomerase ii, which unwinds DNA for transcription. Ref.: 8, 16"
+  },
+  "answer": "C",
+  "explanation": {
+    "correct": "Vinca alkaloids inhibit cell division by disrupting the mitotic spindle.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Regarding chemotherapeutic agents, which of the following statements is true?",
+    "H_highlight_excellence": "Vinca alkaloids inhibit cell division by disrupting the mitotic spindle.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ACS / surgical board principles",
+    "P_plan_for_improvement": "Vinca alkaloids inhibit cell division by disrupting the mitotic spindle"
+  },
+  "supplementary_callouts": {
+    "guideline": "ACS / surgical board principles",
+    "takeaway": "Vinca alkaloids inhibit cell division by disrupting the mitotic spindle",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50842,
+  "specialty": "General Surgery",
+  "topic": "General",
+  "question": "When should gastrojejunostomy be performed at the time of biliary bypass in a patient with unresectable pancreatic cancer?",
+  "options": {
+    "A": "lways",
+    "B": "Never",
+    "C": "If the tumor is locally unresectable and there are no peritoneal metastases",
+    "D": "Only if symptomatic duodenal obstruction is present at the time of surgery",
+    "E": "Only if endoscopic stent placement is not available"
+  },
+  "answer": "D",
+  "explanation": {
+    "correct": "Only if symptomatic duodenal obstruction is present at the time of surgery",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "Only if symptomatic duodenal obstruction is present at the time of surgery",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "General Surgery",
+    "P_plan_for_improvement": "Only if symptomatic duodenal obstruction is present at the time of surgery"
+  },
+  "supplementary_callouts": {
+    "guideline": "General Surgery",
+    "takeaway": "Only if symptomatic duodenal obstruction is present at the time of surgery",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 446,
+  "specialty": "General Surgery",
+  "topic": "Regarding typhoid enteritis, which of the following statements is true?",
+  "question": "Regarding typhoid enteritis, which of the following statements is true?",
+  "options": {
+    "A": "The diagnosis can be made by culturing Salmonella typhi from blood or stool.",
+    "B": "leeding requiring operative intervention occurs in 10% to 20% of patients.",
+    "C": "hloramphenicol is the preferred treatment.",
+    "D": "Steroids have no use in treating typhoid enteritis.",
+    "E": "Hyperplasia and ulceration of Peyer patches and mesenteric lymphadenopathy are rare findings."
+  },
+  "answer": "C",
+  "explanation": {
+    "correct": "hloramphenicol is the preferred treatment.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Regarding typhoid enteritis, which of the following statements is true?",
+    "H_highlight_excellence": "hloramphenicol is the preferred treatment.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ACS / surgical board principles",
+    "P_plan_for_improvement": "hloramphenicol is the preferred treatment"
+  },
+  "supplementary_callouts": {
+    "guideline": "ACS / surgical board principles",
+    "takeaway": "hloramphenicol is the preferred treatment",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 90996,
+  "specialty": "General Surgery",
+  "topic": "General",
+  "question": "17. Which of the following statements is false regarding ventilation/perfusion relationship in a lateral decubitus position during spontaneous ventilation?",
+  "options": {
+    "A": "The ventilation/perfusion matching is preserved",
+    "B": "Contraction of dependent hemi diaphragm is more efficient",
+    "C": "Dependent lung is on a more favorable part of the compliance curve",
+    "D": "The lower lung receives less ventilation and more perfusion than the upper lung"
+  },
+  "answer": null,
+  "explanation": {
+    "correct": "17. Which of the following statements is false regarding ventilation/perfusion relationship in a lateral decubitus position during spontaneous",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "17. Which of the following statements is false regarding ventilation/perfusion relationship in a lateral decubitus position during spontaneous",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "General Surgery",
+    "P_plan_for_improvement": "Memorize the one-line takeaway for revision."
+  },
+  "supplementary_callouts": {
+    "guideline": "General Surgery",
+    "takeaway": "17. Which of the following statements is false regarding ventilation/perfusion relationship in a lateral decubitus position during spontaneous",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 51142,
+  "specialty": "General Surgery",
+  "topic": "General",
+  "question": "With regard to defects of the abdominal wall, which statement is correct?",
+  "options": {
+    "A": "In gastroschisis, the herniated bowel contents are covered by a membrane.",
+    "B": "Gastroschisis is frequently associated with cardiac malformations.",
+    "C": "hromosomal abnormalities are often present with omphalocele.",
+    "D": "Treatment of abdominal wall defects is immediate surgical closure of the fascial defect.",
+    "E": "In omphalocele, a silo bag is placed to cover the exposed intestine."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "In gastroschisis, the herniated bowel contents are covered by a membrane.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "In gastroschisis, the herniated bowel contents are covered by a membrane.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "General Surgery",
+    "P_plan_for_improvement": "In gastroschisis, the herniated bowel contents are covered by a membrane."
+  },
+  "supplementary_callouts": {
+    "guideline": "General Surgery",
+    "takeaway": "In gastroschisis, the herniated bowel contents are covered by a membrane.",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1166,
+  "specialty": "General Surgery",
+  "topic": "Which of the following would be the best treatment for a 2",
+  "question": "Which of the following would be the best treatment for a 2 cm thyroid nodule in a 50-years old man with FNAC revealing it to be a papillary carcinoma?(All India 2009) a. Hemithyroidectomy",
+  "options": {
+    "A": "Diffusenodularswelling(PGI Dec 96) b. Only lymphadenopathy",
+    "B": "Cells have intranuclear vacuolation c. Amyloid deposition seen",
+    "C": "Hormonal disturbance",
+    "D": "Single nodule + local lymph node"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Diffusenodularswelling(PGI Dec 96) b. Only lymphadenopathy",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Which of the following would be the best treatment for a 2",
+    "H_highlight_excellence": "Diffusenodularswelling(PGI Dec 96) b. Only lymphadenopathy",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ACS / surgical board principles",
+    "P_plan_for_improvement": "Diffusenodularswelling(PGI Dec 96) b"
+  },
+  "supplementary_callouts": {
+    "guideline": "ACS / surgical board principles",
+    "takeaway": "Diffusenodularswelling(PGI Dec 96) b",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 712,
+  "specialty": "General Surgery",
+  "topic": "The physiologic parameters used in the definition of SIRS include all of",
+  "question": "The physiologic parameters used in the definition of SIRS include all of the following except:",
+  "options": {
+    "A": "Temperature lower than 36\u00b0 C",
+    "B": "Respiratory rate greater than 20 breaths/min",
+    "C": "O 2 less than 32 mm Hg",
+    "D": "Systolic blood pressure lower than 90 mm Hg",
+    "E": "Heart rate greater than 90 beats/min"
+  },
+  "answer": "C",
+  "explanation": {
+    "correct": "O 2 less than 32 mm Hg",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "The physiologic parameters used in the definition of SIRS include all of",
+    "H_highlight_excellence": "O 2 less than 32 mm Hg",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ACS / surgical board principles",
+    "P_plan_for_improvement": "O 2 less than 32 mm Hg"
+  },
+  "supplementary_callouts": {
+    "guideline": "ACS / surgical board principles",
+    "takeaway": "O 2 less than 32 mm Hg",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 90188,
+  "specialty": "General Surgery",
+  "topic": "MCQ Compilled TASH.docx",
+  "question": "Which of the following is true about management of benign prostatic hyperplasia (BPH)?",
+  "options": {
+    "A": "IPSS score can determine the surgical outcome",
+    "B": "Urodynamic studies should be done in most patients",
+    "C": "Quality of life score is an important tool for decision making",
+    "D": "The global prostate size can predict severity of the problem"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "IPSS score can determine the surgical outcome",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "MCQ Compilled TASH.docx",
+    "H_highlight_excellence": "IPSS score can determine the surgical outcome",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "General Surgery",
+    "P_plan_for_improvement": "IPSS score can determine the surgical outcome"
+  },
+  "supplementary_callouts": {
+    "guideline": "MCQ Compilled TASH.docx",
+    "takeaway": "IPSS score can determine the surgical outcome",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1213,
+  "specialty": "General Surgery",
+  "topic": "With regard to asymptomatic, nonpalpable, mammographically detected breast masses, which of the",
+  "question": "With regard to asymptomatic, nonpalpable, mammographically detected breast masses, which of the following statements is true?",
+  "options": {
+    "A": "The mass should be excised if it is found in a woman older than 40 years.",
+    "B": "Unless the mass is painful, it can be followed with a mammogram in 6 months.",
+    "C": "Ultrasound is helpful in further defining breast lesions.",
+    "D": "Imaging-guided biopsy is contraindicated.",
+    "E": "Masses with a small, well-defined border and a \u201chalo\u201d sign around them are always benign."
+  },
+  "answer": "B",
+  "explanation": {
+    "correct": "Unless the mass is painful, it can be followed with a mammogram in 6 months.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "With regard to asymptomatic, nonpalpable, mammographically detected breast masses, which of the",
+    "H_highlight_excellence": "Unless the mass is painful, it can be followed with a mammogram in 6 months.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ACS / surgical board principles",
+    "P_plan_for_improvement": "Unless the mass is painful, it can be followed with a mammogram in 6 months"
+  },
+  "supplementary_callouts": {
+    "guideline": "ACS / surgical board principles",
+    "takeaway": "Unless the mass is painful, it can be followed with a mammogram in 6 months",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50407,
+  "specialty": "General Surgery",
+  "topic": "General",
+  "question": "Regarding the ACTH stimulation test in patients with suspected adrenal insufficiency, which of the following statements is true?",
+  "options": {
+    "A": "ll of the above.",
+    "B": "This test is based on the blood glucose response to a standard dose of ACTH.",
+    "C": "If the ACTH test result is abnormal, 6-week perioperative steroid coverage is indicated.",
+    "D": "This test is not indicated for a patient taking chronic topical steroid preparations.",
+    "E": ""
+  },
+  "answer": "E",
+  "explanation": {
+    "correct": "Correct answer selection",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "ACTH stimulation test overview",
+    "H_highlight_excellence": "Correct answer selection",
+    "A_address_the_gaps": "Consider alternative options",
+    "R_review_learning_points": "ACTH test interpretation",
+    "P_plan_for_improvement": "Further testing needed"
+  },
+  "supplementary_callouts": {
+    "guideline": "Adrenal insufficiency diagnosis",
+    "takeaway": "Test limitations acknowledged",
+    "visualization": "Test result analysis"
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 51196,
+  "specialty": "General Surgery",
+  "topic": "General",
+  "question": "With regard to ablative therapy for malignant tumors, which of the following is true?",
+  "options": {
+    "A": "cid.",
+    "B": "PEI is more efficacious for the treatment of septated HCC than is percutaneous injection of acetic",
+    "C": "Real-time ultrasound is the only imaging modality suitable for guiding percutaneous ablation.",
+    "D": "uring treatment with RFA, the ablation zone denoting the treated area is visualized accurately with real-time ultrasound.",
+    "E": ""
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "cid.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "cid.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "General Surgery",
+    "P_plan_for_improvement": "cid."
+  },
+  "supplementary_callouts": {
+    "guideline": "General Surgery",
+    "takeaway": "cid.",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 175,
+  "specialty": "General Surgery",
+  "topic": "A 2-year-old has a right side impalpable testis but normal left testis.",
+  "question": "A 2-year-old has a right side impalpable testis but normal left testis. Which of the following statement is true?",
+  "options": {
+    "A": "There is greater than 90% chance of finding the testis and or cord structures at right inguinal exploration",
+    "B": "There is greater than 10% chance of spontaneous decent of right testis in 12 months",
+    "C": "Orchidopexy will significantly improves the function of the right testis",
+    "D": "Orchidopexy will reduce the frequency of malignancy occurring in the right testis"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "There is greater than 90% chance of finding the testis and or cord structures at right inguinal exploration",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "A 2-year-old has a right side impalpable testis but normal left testis.",
+    "H_highlight_excellence": "There is greater than 90% chance of finding the testis and or cord structures at right inguinal exploration",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ACS / surgical board principles",
+    "P_plan_for_improvement": "There is greater than 90% chance of finding the testis and or cord structures at right"
+  },
+  "supplementary_callouts": {
+    "guideline": "ACS / surgical board principles",
+    "takeaway": "There is greater than 90% chance of finding the testis and or cord structures at right inguinal exploration",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1198,
+  "specialty": "General Surgery",
+  "topic": "While transporting an intubated patient from the OR to the intensive care",
+  "question": "While transporting an intubated patient from the OR to the intensive care unit, the pressure gauge on a completely filled size E compressed gas cylinder containing O 2 reads 2200 psi. How long can O 2",
+  "options": {
+    "A": "60 seconds",
+    "B": "e delivered at a flow rate of 5 L/min from an E cylinder whose pressure gauge reads 1100 psi? 5 minutes",
+    "C": "60 minutes",
+    "D": "125 minutes",
+    "E": "220 minutes"
+  },
+  "answer": "B",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 817,
+  "specialty": "General Surgery",
+  "topic": "Which of the following congenital abnormalities are correctly defined?",
+  "question": "Which of the following congenital abnormalities are correctly defined?",
+  "options": {
+    "A": "Omphalocele represents a defect in the abdominal wall lateral to the umbilical cord.",
+    "B": "The herniated viscera associated with omphaloceles are usually covered with a membranous sac.",
+    "C": "An umbilical polyp is a small excrescence of omphalomesenteric duct mucosa that is retained in the umbilicus.",
+    "D": "Meckel's diverticulum results when the intestinal end of the omphalomesenteric duct persists and represents a true diverticulum. Correct answer: BCD - 268 -"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Omphalocele represents a defect in the abdominal wall lateral to the umbilical cord.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Which of the following congenital abnormalities are correctly defined?",
+    "H_highlight_excellence": "Omphalocele represents a defect in the abdominal wall lateral to the umbilical cord.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ACS / surgical board principles",
+    "P_plan_for_improvement": "Omphalocele represents a defect in the abdominal wall lateral to the umbilical cord"
+  },
+  "supplementary_callouts": {
+    "guideline": "ACS / surgical board principles",
+    "takeaway": "Omphalocele represents a defect in the abdominal wall lateral to the umbilical cord",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 361,
+  "specialty": "General Surgery",
+  "topic": "In the United States, performance of human natural-orifice transluminal endoscopic surgery (NOTES)",
+  "question": "In the United States, performance of human natural-orifice transluminal endoscopic surgery (NOTES) procedures requires which of the following according to the Natural Orifice Surgery",
+  "options": {
+    "A": "ll of the above",
+    "B": "Institutional Review Board (IRB)-approved research protocol",
+    "C": "onsortium for Assessment and Research (NOSCAR)? Use of laparoscopy to confirm hemostasis and security of luminal closure",
+    "D": "Inclusion of cases in a national NOTES registry"
+  },
+  "answer": "B",
+  "explanation": {
+    "correct": "Institutional Review Board (IRB)-approved research protocol",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "In the United States, performance of human natural-orifice transluminal endoscopic surgery (NOTES)",
+    "H_highlight_excellence": "Institutional Review Board (IRB)-approved research protocol",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ACS / surgical board principles",
+    "P_plan_for_improvement": "Institutional Review Board (IRB)-approved research protocol"
+  },
+  "supplementary_callouts": {
+    "guideline": "ACS / surgical board principles",
+    "takeaway": "Institutional Review Board (IRB)-approved research protocol",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50521,
+  "specialty": "General Surgery",
+  "topic": "General",
+  "question": "Which of the following statements is false regarding the preperitoneal or posterior approach to repair of groin hernias?",
+  "options": {
+    "A": "It may be appropriate for repair of both direct and indirect hernias.",
+    "B": "It may be appropriate for repair of femoral hernias.",
+    "C": "It is the preferred approach for repair of obturator hernias.",
+    "D": "The preperitoneal approach is not indicated for bilateral or recurrent hernias.",
+    "E": "Laparoscopic hernioplasty is an extension of the preperitoneal approach."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1235,
+  "specialty": "General Surgery",
+  "topic": "With regard to left obstructive congenital heart lesions, which of the following",
+  "question": "With regard to left obstructive congenital heart lesions, which of the following statements is true?",
+  "options": {
+    "A": "and B",
+    "B": "Obstructive congenital heart lesions produce systolic pressure overloading and concentric hypertrophy.",
+    "C": "oncentric hypertrophy produces marked cardiac enlargement, which can be detected by physical examination and routine chest radiography.",
+    "D": "Myocardial oxygen demand will be unchanged if cardiac catheterization demonstrates normal-"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 90615,
+  "specialty": "Orthopedics",
+  "topic": "good ortho mcq exam_2 conv.docx",
+  "question": "The X-ray findings in tuberculosis of the hip include the following except :",
+  "options": {
+    "A": "There is congenital elevation & maldevelopment of scapula.",
+    "B": "An ugly prominence in the neck is produced by the superior angle.",
+    "C": "A band of fibrocartilage or bone anchors the medial border of the scapula to the spine.",
+    "D": "There is no limitation of shoulder movements."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "There is congenital elevation & maldevelopment of scapula.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "good ortho mcq exam_2 conv.docx",
+    "H_highlight_excellence": "There is congenital elevation & maldevelopment of scapula.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "Orthopedics",
+    "P_plan_for_improvement": "There is congenital elevation & maldevelopment of scapula."
+  },
+  "supplementary_callouts": {
+    "guideline": "good ortho mcq exam_2 conv.docx",
+    "takeaway": "There is congenital elevation & maldevelopment of scapula.",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 730,
+  "specialty": "General Surgery",
+  "topic": "Trauma deaths most commonly occur at three distinct time periods after injury.",
+  "question": "Trauma deaths most commonly occur at three distinct time periods after injury. Which of the following statement(s) is/are true concerning the time pattern of trauma mortality?",
+  "options": {
+    "A": "Only 10% of trauma deaths occur within seconds or minutes of the injury",
+    "B": "A second mortality peak occurs within hours of injury with deaths in this time period being markedly reduced with the development of trauma and rapid transport systems",
+    "C": "Death one day to weeks after the injury are almost entirely due to infection and multiple organ failure",
+    "D": "Late mortality in trauma patients, occurring days to weeks after the injury, has not been affected by better trauma delivery systems"
+  },
+  "answer": "B",
+  "explanation": {
+    "correct": "A second mortality peak occurs within hours of injury with deaths in this time period being markedly reduced",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Trauma deaths most commonly occur at three distinct time periods after injury.",
+    "H_highlight_excellence": "A second mortality peak occurs within hours of injury with deaths in this time period being markedly reduced",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ACS / surgical board principles",
+    "P_plan_for_improvement": "A second mortality peak occurs within hours of injury with deaths in this time period being"
+  },
+  "supplementary_callouts": {
+    "guideline": "ACS / surgical board principles",
+    "takeaway": "A second mortality peak occurs within hours of injury with deaths in this time period being markedly reduced",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1176,
+  "specialty": "General Surgery",
+  "topic": "Which one of the following is correct regarding rectal prolapsed and intucecception?",
+  "question": "Which one of the following is correct regarding rectal prolapsed and intucecception?",
+  "options": {
+    "A": "In rectal prolapse, a lubricated tongue blade can be passed along the side of protruding mass",
+    "B": "They can be differentiated based on clinical features",
+    "C": "Rectal prolapsed in children should always be operated on",
+    "D": "Hydrostatic reduction can be tried in infants with ileocecal intucception with features of small bowel obstruction"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "In rectal prolapse, a lubricated tongue blade can be passed along the side of protruding mass",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Which one of the following is correct regarding rectal prolapsed and intucecception?",
+    "H_highlight_excellence": "In rectal prolapse, a lubricated tongue blade can be passed along the side of protruding mass",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ACS / surgical board principles",
+    "P_plan_for_improvement": "In rectal prolapse, a lubricated tongue blade can be passed along the side of protruding mass"
+  },
+  "supplementary_callouts": {
+    "guideline": "ACS / surgical board principles",
+    "takeaway": "In rectal prolapse, a lubricated tongue blade can be passed along the side of protruding mass",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 634,
+  "specialty": "General Surgery",
+  "topic": "Rush Review",
+  "question": "A 70-kg man with pyloric obstruction secondary to ulcer disease is admitted to the hospital for resuscitation after 1 week of prolonged vomiting. What metabolic disturbance is expected?",
+  "options": {
+    "A": "Hypokalemic, hyperchloremic metabolic acidosis",
+    "B": "Hyperkalemic, hypochloremic metabolic alkalosis",
+    "C": "Hyperkalemic, hyperchloremic metabolic acidosis",
+    "D": "Hypokalemic, hypochloremic metabolic alkalosis",
+    "E": "None of the above"
+  },
+  "answer": "D",
+  "explanation": {
+    "correct": "Hypokalemic, hypochloremic metabolic alkalosis",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Rush Review",
+    "H_highlight_excellence": "Hypokalemic, hypochloremic metabolic alkalosis",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "Rush Review 6th Edition",
+    "P_plan_for_improvement": "See detailed explanation for key surgical concepts"
+  },
+  "supplementary_callouts": {
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 220,
+  "specialty": "General Surgery",
+  "topic": "A 55-year-old woman presents with pneumoperitoneum and is found to have a",
+  "question": "A 55-year-old woman presents with pneumoperitoneum and is found to have a perforated gastric ulcer with gross intraabdominal spillage. Subsequently, she has sepsis and a prolonged intubation, and tube feeds are started. Which of the following visceral proteins is the best indicator of her immediate nutritional status?",
+  "options": {
+    "A": "Prealbumin",
+    "B": "Albumin",
+    "C": "Transferrin",
+    "D": "Total protein"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Prealbumin",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "A 55-year-old woman presents with pneumoperitoneum and is found to have a",
+    "H_highlight_excellence": "Prealbumin",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ACS / surgical board principles",
+    "P_plan_for_improvement": "Prealbumin"
+  },
+  "supplementary_callouts": {
+    "guideline": "ACS / surgical board principles",
+    "takeaway": "Prealbumin",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 629,
+  "specialty": "General Surgery",
+  "topic": "Rush Review",
+  "question": "Which of the following statements regarding protein synthesis is not true?",
+  "options": {
+    "A": "Transcription of messenger RNA occurs in the nucleus.",
+    "B": "Messenger RNA moves from the nucleus to the cyto plasm and attaches to free ribosomes in the cytoplasm. CHAPTER 2 / Wound Healing and Cell Biology 19",
+    "C": "The enzyme RNA polymerase catalyzes the transcription of messenger RNA from DNA.",
+    "D": "Introns are placed into the DNA transcript by splicing.",
+    "E": "Posttranslational processing includes glycosylation and enzymatic cleavage."
+  },
+  "answer": "D",
+  "explanation": {
+    "correct": "Introns are placed into the DNA transcript by splicing.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Rush Review",
+    "H_highlight_excellence": "Introns are placed into the DNA transcript by splicing.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "Rush Review 6th Edition",
+    "P_plan_for_improvement": "See detailed explanation for key surgical concepts"
+  },
+  "supplementary_callouts": {
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": "c31a7f09",
+  "specialty": "general surgery",
+  "topic": "General",
+  "question": "Which of the following statement is true about fistula in ano?",
+  "options": {
+    "A": "Fistulography is very helpful to differentiate between low and high fistula in ano",
+    "B": "The most common type of fistula is intersphincteric",
+    "C": "Opening the entire fistulous tract is necessary to achieve cure",
+    "D": "Seton application achieves 80% cure in high fistulas",
+    "E": "All of the above"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Fistulography is very helpful to differentiate between low and high fistula in ano",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "Fistulography is very helpful to differentiate between low and high fistula in ano",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "general surgery",
+    "P_plan_for_improvement": "Fistulography is very helpful to differentiate between low and high fistula in ano"
+  },
+  "supplementary_callouts": {
+    "guideline": "general surgery",
+    "takeaway": "Fistulography is very helpful to differentiate between low and high fistula in ano",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 202,
+  "specialty": "General Surgery",
+  "topic": "A 35-years old woman has had recurrent episodes of headache and sweating.",
+  "question": "A 35-years old woman has had recurrent episodes of headache and sweating. Her mother had renal calculi and died of thyroid cancer. Physical observations revealed a thyroid nodule and ipsilateral enlarged cervical lymph nodes. Before performing thyroid surgery the woman\u2019s physician should order:(All India 2002)",
+  "options": {
+    "A": "Thyroid scan",
+    "B": "Estimation of hydroxyl indole acetic acid in urine",
+    "C": "Estimation of urinary metanephrines, VMA and catecholamines",
+    "D": "Estimation of TSH, and TRH levels in serum"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Thyroid scan",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "A 35-years old woman has had recurrent episodes of headache and sweating.",
+    "H_highlight_excellence": "Thyroid scan",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ACS / surgical board principles",
+    "P_plan_for_improvement": "Thyroid scan"
+  },
+  "supplementary_callouts": {
+    "guideline": "ACS / surgical board principles",
+    "takeaway": "Thyroid scan",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50501,
+  "specialty": "General Surgery",
+  "topic": "General",
+  "question": "Which of the following statements regarding genetic predisposition to skin cancer is not true?",
+  "options": {
+    "A": "bout 10% of cases of malignant melanoma are familial.",
+    "B": "Familial melanoma is characterized by an earlier age at onset, multiple primary tumors, and a frequent association with multiple dysplastic nevi.",
+    "C": "ases of familial melanoma.",
+    "D": "Mutations of PTC , a tumor suppressor gene, are responsible for most cases of basal cell nevus syndrome.",
+    "E": "The penetrance of p16/CDKN2A gene mutations exhibits geographic variation."
+  },
+  "answer": "D",
+  "explanation": {
+    "correct": "Mutations of PTC , a tumor suppressor gene, are responsible for most cases of basal cell nevus syndrome.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "Mutations of PTC , a tumor suppressor gene, are responsible for most cases of basal cell nevus syndrome.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "General Surgery",
+    "P_plan_for_improvement": "Mutations of PTC , a tumor suppressor gene, are responsible for most cases of basal cell"
+  },
+  "supplementary_callouts": {
+    "guideline": "General Surgery",
+    "takeaway": "Mutations of PTC , a tumor suppressor gene, are responsible for most cases of basal cell nevus syndrome.",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 626,
+  "specialty": "General Surgery",
+  "topic": "Rush Review",
+  "question": "Which of the following is true when considering the nutritional status of a geriatric patient?",
+  "options": {
+    "A": "Muscle wasting can be a pathologic process that is mistaken for normal aging.",
+    "B": "Liver function does not affect the selection of nutrition regimens.",
+    "C": "Enteral nutrition is not an option because of slowed gut function.",
+    "D": "Body mass index (BMI) is the best anthropometric measurement for determining the nutritional status in an elderly patient.",
+    "E": "Laboratory tests cannot be used to evaluate the nutritional status."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Muscle wasting can be a pathologic process that is mistaken for normal aging.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Rush Review",
+    "H_highlight_excellence": "Muscle wasting can be a pathologic process that is mistaken for normal aging.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "Rush Review 6th Edition",
+    "P_plan_for_improvement": "See detailed explanation for key surgical concepts"
+  },
+  "supplementary_callouts": {
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50886,
+  "specialty": "General Surgery",
+  "topic": "General",
+  "question": "Indications for coronary artery bypass graft (CABG) surgery include all of the following except:",
+  "options": {
+    "A": "cute myocardial infarction",
+    "B": "Stenosis of the left main coronary artery",
+    "C": "Persistent angina and changes on the ECG following percutaneous coronary stenting",
+    "D": "evelopment of complications during percutaneous transluminal coronary angioplasty (PTCA)",
+    "E": ""
+  },
+  "answer": "E",
+  "explanation": {
+    "correct": "Indications for coronary artery bypass graft (CABG) surgery include all of the following except:",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "Indications for coronary artery bypass graft (CABG) surgery include all of the following except:",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "General Surgery",
+    "P_plan_for_improvement": "Memorize the one-line takeaway for revision."
+  },
+  "supplementary_callouts": {
+    "guideline": "General Surgery",
+    "takeaway": "Indications for coronary artery bypass graft (CABG) surgery include all of the following except:",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 894,
+  "specialty": "General Surgery",
+  "topic": "Which of the following is not a sonographic characteristic of an inflamed",
+  "question": "Which of the following is not a sonographic characteristic of an inflamed gallbladder?",
+  "options": {
+    "A": "Gallbladder distention",
+    "B": "Pericholecystic fluid",
+    "C": "Wall thickness of 2 mm",
+    "D": "Sonographic Murphy sign",
+    "E": "Gallstones"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Gallbladder distention",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Which of the following is not a sonographic characteristic of an inflamed",
+    "H_highlight_excellence": "Gallbladder distention",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ACS / surgical board principles",
+    "P_plan_for_improvement": "Gallbladder distention"
+  },
+  "supplementary_callouts": {
+    "guideline": "ACS / surgical board principles",
+    "takeaway": "Gallbladder distention",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 90193,
+  "specialty": "General Surgery",
+  "topic": "MCQ Compilled TASH.docx",
+  "question": "A 6 year-old male child was admitted with suspected testicular torsion. Which of the following is true about surgical exploration?",
+  "options": {
+    "A": "It can be delayed till 24 hours and should be limited to affected side",
+    "B": "It can be delayed but should include the asymptomatic side as well",
+    "C": "It should be done immediately and should be limited to affected side",
+    "D": "It should be done immediately and should also include asymptomatic side"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "It can be delayed till 24 hours and should be limited to affected side",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "MCQ Compilled TASH.docx",
+    "H_highlight_excellence": "It can be delayed till 24 hours and should be limited to affected side",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "General Surgery",
+    "P_plan_for_improvement": "It can be delayed till 24 hours and should be limited to affected side"
+  },
+  "supplementary_callouts": {
+    "guideline": "MCQ Compilled TASH.docx",
+    "takeaway": "It can be delayed till 24 hours and should be limited to affected side",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 90654,
+  "specialty": "Orthopedics",
+  "topic": "good ortho mcq exam_2 conv.docx",
+  "question": "Night stars or night cries are characteristic of: a. acute haematogenous osteomyelitis.",
+  "options": {
+    "A": "large lipoma in white patient. b. amelanotic melanoma.",
+    "B": "chronic osteomyelitis. c. Brodie's abscess.",
+    "C": "tumour of white collagen fibers which is whitish on cut surface.",
+    "D": "pallor of skin of the joint with tuberculous arthritis due to empty capillaries and thickening of the synovial membrane of joint affected."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "large lipoma in white patient. b. amelanotic melanoma.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "good ortho mcq exam_2 conv.docx",
+    "H_highlight_excellence": "large lipoma in white patient. b. amelanotic melanoma.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "Orthopedics",
+    "P_plan_for_improvement": "large lipoma in white patient. b. amelanotic melanoma."
+  },
+  "supplementary_callouts": {
+    "guideline": "good ortho mcq exam_2 conv.docx",
+    "takeaway": "large lipoma in white patient. b. amelanotic melanoma.",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1310,
+  "specialty": "General Surgery",
+  "topic": "treatment a proache should you recommend? radiotherapy to begin shortly",
+  "question": "treatment a proache should you recommend? radiotherapy to begin shortly",
+  "options": {
+    "A": "Mesoblastic nephroma",
+    "B": "Vimentin",
+    "C": "Infantile hemangiopericytoma",
+    "D": "Keratin"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Mesoblastic nephroma",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "treatment a proache should you recommend? radiotherapy to begin shortly",
+    "H_highlight_excellence": "Mesoblastic nephroma",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ACS / surgical board principles",
+    "P_plan_for_improvement": "Mesoblastic nephroma"
+  },
+  "supplementary_callouts": {
+    "guideline": "ACS / surgical board principles",
+    "takeaway": "Mesoblastic nephroma",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50646,
+  "specialty": "General Surgery",
+  "topic": "General",
+  "question": "The final common pathway of acid secretion by parietal cells involves which of the following?",
+  "options": {
+    "A": "denylate cyclase",
+    "B": "Increased intracellular Ca 2+",
+    "C": "Hydrogen-potassium adenosine triphosphatase (H + ,K + -ATPase)",
+    "D": "Phosphorylase kinase",
+    "E": ""
+  },
+  "answer": "B",
+  "explanation": {
+    "correct": "Increased Ca2+ crucial role",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Acid secretion pathway details",
+    "H_highlight_excellence": "Increased Ca2+ crucial role",
+    "A_address_the_gaps": "Understand H+K+ ATPase",
+    "R_review_learning_points": "Parietal cell function",
+    "P_plan_for_improvement": "Further study pathway"
+  },
+  "supplementary_callouts": {
+    "guideline": "Focus on Ca2+ signaling",
+    "takeaway": "Ca2+ drives acid release",
+    "visualization": "Pathway diagram helpful"
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 535,
+  "specialty": "General Surgery",
+  "topic": "Rush Review",
+  "question": "Which of the following electrocardiographic (ECG) findings is associated with hyperkalemia?",
+  "options": {
+    "A": "Inverted T waves",
+    "B": "Shortened PR interval",
+    "C": "Peaked P waves",
+    "D": "Narrowing of the QRS complex",
+    "E": "T waves higher than R waves in more than one lead"
+  },
+  "answer": "E",
+  "explanation": {
+    "correct": "T waves higher than R waves in more than one lead",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Rush Review",
+    "H_highlight_excellence": "T waves higher than R waves in more than one lead",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "Rush Review 6th Edition",
+    "P_plan_for_improvement": "See detailed explanation for key surgical concepts"
+  },
+  "supplementary_callouts": {
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 843,
+  "specialty": "General Surgery",
+  "topic": "Which of the following humoral factors increases arterial vasodilation while not decreasing",
+  "question": "Which of the following humoral factors increases arterial vasodilation while not decreasing protein permeability in the capillary membranes?",
+  "options": {
+    "A": "Bradykinin",
+    "B": "Nitric oxide (NO)",
+    "C": "Atrial natriuretic factor",
+    "D": "Histamine"
+  },
+  "answer": "B",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1284,
+  "specialty": "General Surgery",
+  "topic": "is the next step in the management of the patient?",
+  "question": "is the next step in the management of the patient?",
+  "options": {
+    "A": "Chest CT",
+    "B": "FNAc from anterior neck mass",
+    "C": "Chemotherapy",
+    "D": "Transfuse & repeat bone marrow study"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Chest CT",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "is the next step in the management of the patient?",
+    "H_highlight_excellence": "Chest CT",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ACS / surgical board principles",
+    "P_plan_for_improvement": "Chest CT"
+  },
+  "supplementary_callouts": {
+    "guideline": "ACS / surgical board principles",
+    "takeaway": "Chest CT",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 830,
+  "specialty": "General Surgery",
+  "topic": "Which of the following endoscopic ulcer characteristics has the highest risk for",
+  "question": "Which of the following endoscopic ulcer characteristics has the highest risk for recurrent",
+  "options": {
+    "A": "Oozing ulcer",
+    "B": "leeding?",
+    "C": "lean based ulcer Nonbleeding \u201cvisible vessel\u201d",
+    "D": "ieulafoy ulcer"
+  },
+  "answer": "D",
+  "explanation": {
+    "correct": "ieulafoy ulcer",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Which of the following endoscopic ulcer characteristics has the highest risk for",
+    "H_highlight_excellence": "ieulafoy ulcer",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ACS / surgical board principles",
+    "P_plan_for_improvement": "ieulafoy ulcer"
+  },
+  "supplementary_callouts": {
+    "guideline": "ACS / surgical board principles",
+    "takeaway": "ieulafoy ulcer",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1139,
+  "specialty": "General Surgery",
+  "topic": "Which of the following statements regarding pulmonary artery banding is definitely not",
+  "question": "Which of the following statements regarding pulmonary artery banding is definitely not true?",
+  "options": {
+    "A": "May result in pulmonary artery distortion",
+    "B": "May result in pulmonary valve damage",
+    "C": "May result in the development of outflow tract narrowing by muscle band hypertrophy",
+    "D": "Results in volume loading of the ventricle",
+    "E": "May not result in adequate protection of the pulmonary vascular bed"
+  },
+  "answer": "B",
+  "explanation": {
+    "correct": "May result in pulmonary valve damage",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Which of the following statements regarding pulmonary artery banding is definitely not",
+    "H_highlight_excellence": "May result in pulmonary valve damage",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ACS / surgical board principles",
+    "P_plan_for_improvement": "May result in pulmonary valve damage"
+  },
+  "supplementary_callouts": {
+    "guideline": "ACS / surgical board principles",
+    "takeaway": "May result in pulmonary valve damage",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 561,
+  "specialty": "General Surgery",
+  "topic": "Rush Review",
+  "question": "Which of the following does not assist in hemostasis of massively bleeding trauma patients?",
+  "options": {
+    "A": "Permissive hypotension",
+    "B": "Crystalloid resuscitation",
+    "C": "Active warming",
+    "D": "Recombinant factor VII",
+    "E": "Balanced transfusion ratio (platelets:FFP:PRBC)"
+  },
+  "answer": "B",
+  "explanation": {
+    "correct": "Crystalloid resuscitation",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Rush Review",
+    "H_highlight_excellence": "Crystalloid resuscitation",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "Rush Review 6th Edition",
+    "P_plan_for_improvement": "See detailed explanation for key surgical concepts"
+  },
+  "supplementary_callouts": {
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 339,
+  "specialty": "General Surgery",
+  "topic": "He is now complaining of vague pains all over, anorexia, cough with",
+  "question": "He is now complaining of vague pains all over, anorexia, cough with thin white sputum, and malaise and has not had flatus or a bowel movement for 24 hours. Chest radiography shows bilateral haziness at the costophrenic angles. Physical examination showed the patient to not be in acute",
+  "options": {
+    "A": "calculous cholecystitis",
+    "B": "P of 128/75 mm Hg, and Sa O 2 of 96%. Laboratory findings included a WBC count of 18,500/mm 3 , sodium concentration of 140 mEq/L, potassium concentration of 4.3 mEq/L, BUN of 21 mg/dL, HAP",
+    "C": "atheter-related bloodstream infection",
+    "D": "istress. His lungs have some crackles in the bases bilaterally. His right arm is slightly swollen, and he has some redness around the right side of his neck and chest. His abdomen is soft, distended, tympanitic, and nontender. His vital signs include a temperature of 101.6\u00b0 F, HR of 100 beats/min, Perforated peptic ulcer",
+    "E": "Viral respiratory infection"
+  },
+  "answer": "B",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 259,
+  "specialty": "General Surgery",
+  "topic": "A patient with pheochromocytoma shows signs of an amino acid deficiency, with",
+  "question": "A patient with pheochromocytoma shows signs of an amino acid deficiency, with coarse hair, dry skin and nails, and constipation. Which of the amino acids is critical to the synthesis of catecholamines?",
+  "options": {
+    "A": "Tyrosine",
+    "B": "Phenylalanine",
+    "C": "Glutamate",
+    "D": "Aspartic acid"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50567,
+  "specialty": "General Surgery",
+  "topic": "General",
+  "question": "What additional treatment should a 42-year-old patient with a 2-cm focus of ER-positive DCIS transected at the margin by lumpectomy receive?",
+  "options": {
+    "A": "Radiation therapy alone",
+    "B": "Tamoxifen alone",
+    "C": "Surgical reexcision alone",
+    "D": "Surgical reexcision and tamoxifen alone",
+    "E": "Surgical reexcision, radiation therapy, and tamoxifen"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Radiation therapy alone",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "Radiation therapy alone",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "General Surgery",
+    "P_plan_for_improvement": "Radiation therapy alone"
+  },
+  "supplementary_callouts": {
+    "guideline": "General Surgery",
+    "takeaway": "Radiation therapy alone",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50406,
+  "specialty": "General Surgery",
+  "topic": "General",
+  "question": "When evaluating a patient with known or suspected adrenal insufficiency, which of the following statements is false.",
+  "options": {
+    "A": "ppropriate laboratory studies, including determinations of serum cortisol and electrolyte levels, should be conducted and interpreted before initiation of therapy.",
+    "B": "The signs and symptoms of acute adrenal insufficiency may mimic those of septic shock.",
+    "C": "Hyponatremia, hyperkalemia, and hypoglycemia are frequently present.",
+    "D": "The sudden development of hypotension in these patients should be treated immediately with 100 mg of hydrocortisone intravenously.",
+    "E": ""
+  },
+  "answer": "B",
+  "explanation": {
+    "correct": "The signs and symptoms of acute adrenal insufficiency may mimic those of septic shock.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "The signs and symptoms of acute adrenal insufficiency may mimic those of septic shock.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "General Surgery",
+    "P_plan_for_improvement": "The signs and symptoms of acute adrenal insufficiency may mimic those of septic shock."
+  },
+  "supplementary_callouts": {
+    "guideline": "General Surgery",
+    "takeaway": "The signs and symptoms of acute adrenal insufficiency may mimic those of septic shock.",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1080,
+  "specialty": "General Surgery",
+  "topic": "Which of the following statements is false about ureteric stones?",
+  "question": "Which of the following statements is false about ureteric stones?",
+  "options": {
+    "A": "Mid ureteric ureteric stones are the most difficult to treat with hardest to treat with ESWL",
+    "B": "Nifidipine can facilitate stone passage",
+    "C": "Size of the stone is the most important predictor for spontaneous stone passage",
+    "D": "None of the above"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Mid ureteric stones difficult",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Ureteric stone treatment challenges",
+    "H_highlight_excellence": "Mid ureteric stones difficult",
+    "A_address_the_gaps": "ESWL treatment options",
+    "R_review_learning_points": "Stone size predictors",
+    "P_plan_for_improvement": "Further investigation needed"
+  },
+  "supplementary_callouts": {
+    "guideline": "Stone management protocols",
+    "takeaway": "Stone size key factor",
+    "visualization": "Stone passage pathways"
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": "bd5a57e6",
+  "specialty": "general surgery",
+  "topic": "General",
+  "question": "Which of the following statement is true about prognosis of colon and rectal cancer?",
+  "options": {
+    "A": "Rectal cancer has better prognosis than colon cancer because of its good response to chemoradiation",
+    "B": "The prognosis is worse when lymph nodes are involved than mere adjacent organ involvement",
+    "C": "The prognosis is similar in all age groups",
+    "D": "Tumors related to LOH path way have better prognosis than those with microsatellite instability path way",
+    "E": "All of the above"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Rectal cancer has better prognosis than colon cancer because of its good response to chemoradiation",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "Rectal cancer has better prognosis than colon cancer because of its good response to chemoradiation",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "general surgery",
+    "P_plan_for_improvement": "Rectal cancer has better prognosis than colon cancer because of its good response to chemoradiation"
+  },
+  "supplementary_callouts": {
+    "guideline": "general surgery",
+    "takeaway": "Rectal cancer has better prognosis than colon cancer because of its good response to chemoradiation",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50781,
+  "specialty": "General Surgery",
+  "topic": "General",
+  "question": "Which of the following is an early event in the pathophysiology of acute calculous cholecystitis?",
+  "options": {
+    "A": "Increased biliary lysolecithin",
+    "B": "acterial infection",
+    "C": "CK receptor depletion",
+    "D": "Prostaglandin depletion",
+    "E": ""
+  },
+  "answer": "E",
+  "explanation": {
+    "correct": "Which of the following is an early event in the pathophysiology of acute calculous cholecystitis?",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "Which of the following is an early event in the pathophysiology of acute calculous cholecystitis?",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "General Surgery",
+    "P_plan_for_improvement": "Memorize the one-line takeaway for revision."
+  },
+  "supplementary_callouts": {
+    "guideline": "General Surgery",
+    "takeaway": "Which of the following is an early event in the pathophysiology of acute calculous cholecystitis?",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1101,
+  "specialty": "General Surgery",
+  "topic": "Which of the following statements is true regarding femoral hernias?",
+  "question": "Which of the following statements is true regarding femoral hernias?",
+  "options": {
+    "A": "Femoral hernias should not be repaired through an infrainguinal approach.",
+    "B": "Femoral hernias are more common in males than in females.",
+    "C": "Femoral hernias are more common than inguinal hernias in females.",
+    "D": "Large femoral hernias should always be repaired by the insertion of prosthetic material.",
+    "E": "Femoral hernias could lead to bowel obstruction, frequently as a Richter type of hernia."
+  },
+  "answer": "B",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 51177,
+  "specialty": "General Surgery",
+  "topic": "General",
+  "question": "Which of the following statements regarding peripheral nerve injury is false?",
+  "options": {
+    "A": "Nerve repair is progressively less effective if delayed beyond 2 months after surgery.",
+    "B": "Nerve repair is best performed under 4 to 15 times magnification.",
+    "C": "Nerve repair is best performed in a fashion that minimizes tension across the repair.",
+    "D": "Regeneration may be followed clinically by observing distal progression of the Tinel sign.",
+    "E": "The use of conduits can assist in nerve regeneration."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50265,
+  "specialty": "General Surgery",
+  "topic": "General",
+  "question": "Which of the following statements regarding loop diuretics is not true?",
+  "options": {
+    "A": "Loop diuretics act on the thick ascending limb of the loop of Henle in the nephron.",
+    "B": "Loop diuretics increase blood flow to the kidney.",
+    "C": "Magnesium and calcium are unaffected during diuresis.",
+    "D": "Loop diuretics increase venous capacitance.",
+    "E": "Loop diuretics inhibit the sodium-potassium-chloride cotransporter."
+  },
+  "answer": "D",
+  "explanation": {
+    "correct": "Loop diuretics increase venous capacitance.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "Loop diuretics increase venous capacitance.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "General Surgery",
+    "P_plan_for_improvement": "Loop diuretics increase venous capacitance."
+  },
+  "supplementary_callouts": {
+    "guideline": "General Surgery",
+    "takeaway": "Loop diuretics increase venous capacitance.",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 860,
+  "specialty": "General Surgery",
+  "topic": "Which of the following is an indication for expectant management of renal",
+  "question": "Which of the following is an indication for expectant management of renal calculi?",
+  "options": {
+    "A": "Progressive renal damage",
+    "B": "Intractable pain",
+    "C": "Persistent or progressive obstruction",
+    "D": "etection of any calculi"
+  },
+  "answer": "D",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 939,
+  "specialty": "General Surgery",
+  "topic": "Which of the following is true about occlusive disease of the femoral",
+  "question": "Which of the following is true about occlusive disease of the femoral artery?",
+  "options": {
+    "A": "It usually presents with thigh claudication",
+    "B": "It usually occurs at the level of the Adductor haitus",
+    "C": "It might cause impotence",
+    "D": "Stenting is the best treatment for lesions longer than 10cm",
+    "E": "None of the above"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 423,
+  "specialty": "General Surgery",
+  "topic": "Referring to Question 14, which of the following statements is not correct?",
+  "question": "Referring to Question 14, which of the following statements is not correct?",
+  "options": {
+    "A": "The sensitivity of the new influenza assay in group 1 is 90%.",
+    "B": "The accuracy of the new influenza assay in group 2 is 90%.",
+    "C": "The positive predictive value (PPV) of the assay in group 1 is 8%.",
+    "D": "The negative predictive value (NPV) of the assay in group 2 is 50%.",
+    "E": "Sensitivity and specificity are better intrinsic measures of a test than PPV and NPV."
+  },
+  "answer": "D",
+  "explanation": {
+    "correct": "The negative predictive value (NPV) of the assay in group 2 is 50%.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Referring to Question 14, which of the following statements is not correct?",
+    "H_highlight_excellence": "The negative predictive value (NPV) of the assay in group 2 is 50%.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ACS / surgical board principles",
+    "P_plan_for_improvement": "The negative predictive value (NPV) of the assay in group 2 is 50%"
+  },
+  "supplementary_callouts": {
+    "guideline": "ACS / surgical board principles",
+    "takeaway": "The negative predictive value (NPV) of the assay in group 2 is 50%",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1293,
+  "specialty": "General Surgery",
+  "topic": "of prostatic cancer (PCa)?",
+  "question": "of prostatic cancer (PCa)?",
+  "options": {
+    "A": "Survival is improved if it is started for localized disease",
+    "B": "There is no survival benefit if there is pelvic lymphadenopathy",
+    "C": "PSA can be used to detect biochemical relapse",
+    "D": "Anti-androgens are inferior to LHRH agonists in terms op"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Survival is improved if it is started for localized disease",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "of prostatic cancer (PCa)?",
+    "H_highlight_excellence": "Survival is improved if it is started for localized disease",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ACS / surgical board principles",
+    "P_plan_for_improvement": "Survival is improved if it is started for localized disease"
+  },
+  "supplementary_callouts": {
+    "guideline": "ACS / surgical board principles",
+    "takeaway": "Survival is improved if it is started for localized disease",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": "e6eaf673",
+  "specialty": "general surgery",
+  "topic": "General",
+  "question": "Which of the following statement is true about colorectal cancer?",
+  "options": {
+    "A": "Almost all arise from pre-existing adenoma",
+    "B": "Lymph node involvement would make it Stage-III disease irrespective of T stage",
+    "C": "Age is considered to be an important risk factor",
+    "D": "Rectum and sigmoid colon are still the frequently affected parts",
+    "E": "All of the above"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Almost all arise from pre-existing adenoma",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "Almost all arise from pre-existing adenoma",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "general surgery",
+    "P_plan_for_improvement": "Almost all arise from pre-existing adenoma"
+  },
+  "supplementary_callouts": {
+    "guideline": "general surgery",
+    "takeaway": "Almost all arise from pre-existing adenoma",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 145,
+  "specialty": "General Surgery",
+  "topic": "35.A common manifestation of Crohn\u2019s disease is perianal disease, including anal fistulas",
+  "question": "35.A common manifestation of Crohn\u2019s disease is perianal disease, including anal fistulas with extension to adjacent organs and soft tissue regions, fissures, and perirectal abscesses. Which of the following statement(s) is/are true concerning perianal disease with Crohn\u2019s disease?",
+  "options": {
+    "A": "Perianal disease is the initial mode of presentation in the majority of patients",
+    "B": "Cholelithiasis c.Arthritis",
+    "C": "Metronidazole has been shown to be effective in the treatment of perianal disease secondary to Crohn\u2019s",
+    "D": "An aggressive surgical approach is appropriate in most cases due to the frequent rapid progression of perianal disease 36.Nongastrointestinal complications of Crohn\u2019s disease include: a.Renal calculi"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Perianal disease is the initial mode of presentation in the majority of patients",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "35.A common manifestation of Crohn\u2019s disease is perianal disease, including anal fistulas",
+    "H_highlight_excellence": "Perianal disease is the initial mode of presentation in the majority of patients",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ACS / surgical board principles",
+    "P_plan_for_improvement": "Perianal disease is the initial mode of presentation in the majority of patients"
+  },
+  "supplementary_callouts": {
+    "guideline": "ACS / surgical board principles",
+    "takeaway": "Perianal disease is the initial mode of presentation in the majority of patients",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50346,
+  "specialty": "General Surgery",
+  "topic": "General",
+  "question": "Match each clinical characteristic or agent in the left-hand column with the correct infecting organism or organisms in the right-hand column.",
+  "options": {
+    "A": "ctinomyces israelii",
+    "B": "Amphotericin Nocardia asteroides",
+    "C": "neoformans",
+    "D": "Brain abscess",
+    "E": "Pelvic mass Histoplasma capsulatum"
+  },
+  "answer": "C",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 253,
+  "specialty": "General Surgery",
+  "topic": "A patient presents with complaints of weight loss and is found to",
+  "question": "A patient presents with complaints of weight loss and is found to have colon cancer. Which of the following regarding TNF-\u03b1 is true?",
+  "options": {
+    "A": "It is predominantly a local mediator that induces the classic inflammatory febrile response to injury by stimulating local prostaglandin activity in the anterior hypothalamus.",
+    "B": "It is effective in promoting the maturation/recruitment of functional leukocytes needed for a normal cytokine response and delays apoptosis of macrophages and neutrophils, which may contribute to organ injury.",
+    "C": "It has both a proinflammatory and antiinflammatory roles; is a mediator of the hepatic acute-phase response to injury; induces neutrophil activation but also delays disposal of neutrophils; and can attenuate TNF-\u03b1 and IL-1 activity, thereby curbing the inflammatory response.",
+    "D": "It is an inducer of muscle catabolism and cachexia during stress by shunting available amino acids to the hepatic circulation as fuel substrates; it also activates coagulation and promotes the expression/release of adhesion mol ecules, prostaglandin E2, platelet-activating factor, glucocorticoids, and eicosanoids."
+  },
+  "answer": "D",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": "0621fb2d",
+  "specialty": "general surgery",
+  "topic": "General",
+  "question": "What is the posterior fascia relation of the prostate?",
+  "options": {
+    "A": "Waldayer\u2019s fascia",
+    "B": "Denonvillier\u2019s fascia",
+    "C": "Endopelvic fascia",
+    "D": "Puboprostatic fascia"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Waldayer\u2019s fascia",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "Waldayer\u2019s fascia",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "general surgery",
+    "P_plan_for_improvement": "Waldayer\u2019s fascia"
+  },
+  "supplementary_callouts": {
+    "guideline": "general surgery",
+    "takeaway": "Waldayer\u2019s fascia",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 847,
+  "specialty": "General Surgery",
+  "topic": "Which of the following investigations is the most important to perform prior",
+  "question": "Which of the following investigations is the most important to perform prior to excision of a suspected thyroglossal cyst?",
+  "options": {
+    "A": "U/S of the cyst",
+    "B": "Chest X-ray",
+    "C": "TFT",
+    "D": "U/S of thyroid gland"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "U/S of the cyst",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Which of the following investigations is the most important to perform prior",
+    "H_highlight_excellence": "U/S of the cyst",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ACS / surgical board principles",
+    "P_plan_for_improvement": "U/S of the cyst"
+  },
+  "supplementary_callouts": {
+    "guideline": "ACS / surgical board principles",
+    "takeaway": "U/S of the cyst",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 90223,
+  "specialty": "General Surgery",
+  "topic": "MCQ Compilled TASH.docx",
+  "question": "Which of the following is useful in the diagnosis of posterior urethral valves (PUV)?",
+  "options": {
+    "A": "Antenatal diagnosis",
+    "B": "Postnatal ultrasonography",
+    "C": "Micturating cystourethrography",
+    "D": "DMSA scan"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Antenatal diagnosis",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "MCQ Compilled TASH.docx",
+    "H_highlight_excellence": "Antenatal diagnosis",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "General Surgery",
+    "P_plan_for_improvement": "Antenatal diagnosis"
+  },
+  "supplementary_callouts": {
+    "guideline": "MCQ Compilled TASH.docx",
+    "takeaway": "Antenatal diagnosis",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50859,
+  "specialty": "General Surgery",
+  "topic": "General",
+  "question": "With regard to left obstructive congenital heart lesions, which of the following statements is true?",
+  "options": {
+    "A": "and B",
+    "B": "Obstructive congenital heart lesions produce systolic pressure overloading and concentric hypertrophy.",
+    "C": "oncentric hypertrophy produces marked cardiac enlargement, which can be detected by physical examination and routine chest radiography.",
+    "D": "Myocardial oxygen demand will be unchanged if cardiac catheterization demonstrates normal-",
+    "E": ""
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 90438,
+  "specialty": "General Surgery",
+  "topic": "R2 Prep Exam_.docx",
+  "question": "Which of the following statement is false about obstructive uropathy?",
+  "options": {
+    "A": "In unilateral obstruction renal blood flow and GFR increases in the first 1-2 hrs.",
+    "B": "In bilateral ureteral obstruction ureteral pressure drops immediately.",
+    "C": "In bilateral obstruction there is an increased production of prostaglandin and nitric oxide.",
+    "D": "In bilateral obstruction there is an increased production of Atrial Natriuretic Peptide production."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 874,
+  "specialty": "General Surgery",
+  "topic": "Which of the following is false statement about surgery for gastroesophageal reflux",
+  "question": "Which of the following is false statement about surgery for gastroesophageal reflux disease?",
+  "options": {
+    "A": "Fundoplication should not increase the resistance above what the peristalsis of the esophagus can overcome (2em wrap)",
+    "B": "Fundoplication should be maintained in the abdomen by a crural repair",
+    "C": "The operation should restore the pressure of the LES to 10 times the resting gastric pressure",
+    "D": "Adequate amount of intra-abdominal esophagus (about 2 cm) must be obtained"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1186,
+  "specialty": "General Surgery",
+  "topic": "Which patient would not benefit from postmastectomy radiotherapy?",
+  "question": "Which patient would not benefit from postmastectomy radiotherapy?",
+  "options": {
+    "A": "49-year-old with inflammatory breast cancer",
+    "B": "25-year-old with 6 cm of DCIS",
+    "C": "57-year-old with a T1N2 infiltrating ductal carcinoma",
+    "D": "48-year-old with a 2.5-cm breast mass involving the underlying pectoral muscle",
+    "E": "xtension"
+  },
+  "answer": "B",
+  "explanation": {
+    "correct": "25-year-old with 6 cm of DCIS",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Which patient would not benefit from postmastectomy radiotherapy?",
+    "H_highlight_excellence": "25-year-old with 6 cm of DCIS",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ACS / surgical board principles",
+    "P_plan_for_improvement": "25-year-old with 6 cm of DCIS"
+  },
+  "supplementary_callouts": {
+    "guideline": "ACS / surgical board principles",
+    "takeaway": "25-year-old with 6 cm of DCIS",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 980,
+  "specialty": "General Surgery",
+  "topic": "Which of the following mechanisms is felt to play the most significant",
+  "question": "Which of the following mechanisms is felt to play the most significant role in the development of sarcomas?",
+  "options": {
+    "A": "Activation of cancer suppressor genes",
+    "B": "Chromosomal translocation with activation of oncogenes 489",
+    "C": "Gene fusion with expression of oncoproteins",
+    "D": "Germline mutation with suppression of oncogenes Cytogenetic analysis of soft tissue tumors has identified distinct chromosomal translocations that seem to encode for oncogenes associated with certain sarcoma histologic subtypes. These specific genetic changes result in the in-frame fusion of genes and fused product codes for the expression of onco-proteins functioning as transcriptional activators or repressors. The best characterized gene rearrangements are found in Ewing\u2019s sarcoma (EWS\u2013FLI-1 fusion), clear-cell sarcoma (EWS\u2013ATF1 fusion), myxoid liposarcoma (TLS\u2013CHOP fusion), alveolar rhabdomyosarcoma (PAX3\u2013FHKR fusion), desmoplastic small round-cell tumor (EWS\u2013WT1 fusion), and synovial sarcoma (SSX\u2013SYT fusion). It has been estimated that in aggregate, fusion gene-related sarcomas may account for up to 30% of all sarcomas. The oncogenic potential of many of these genes has been demonstrated in vitro and in vivo. These fusion genes provide not only specific diagnostic markers but encode chimeric proteins, both of which may be potential therapeutic targets. (See Schwartz 9th ed., p 1285.) CLINICAL QUESTIONS"
+  },
+  "answer": "C",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50584,
+  "specialty": "General Surgery",
+  "topic": "General",
+  "question": "With regard to the recurrent laryngeal nerve (RLN), which of the following is true?",
+  "options": {
+    "A": "The left RLN loops around the subclavian vein and ascends medially into the neck.",
+    "B": "The right RLN loops around the inferior thyroid artery, ascends laterally to medially, and enters the cricothyroid membrane.",
+    "C": "The laryngeal nerve is nonrecurrent in 0.5% of patients.",
+    "D": "The RLNs innervate the true vocal cords and the cricothyroid muscles.",
+    "E": "The medial branch of the RLN is primarily sensory."
+  },
+  "answer": "D",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 90631,
+  "specialty": "Orthopedics",
+  "topic": "good ortho mcq exam_2 conv.docx",
+  "question": "Ladder step deformity characteristic of fracture clavicle is:",
+  "options": {
+    "A": "Medial fragment is displaced downward below lateral fragment.",
+    "B": "Lateral fragment is displaced foreword while medial is displaced backward.",
+    "C": "Dislocation of sternoclavicular joint gives ladder step deformity.",
+    "D": "Dislocation of acromio-clavicular joint."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Correct ladder step sign",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Clavicle fracture deformity",
+    "H_highlight_excellence": "Correct ladder step sign",
+    "A_address_the_gaps": "Understand clavicle anatomy",
+    "R_review_learning_points": "Sternoclavicular joint dislocation",
+    "P_plan_for_improvement": "Further study fracture types"
+  },
+  "supplementary_callouts": {
+    "guideline": "Recognize key fracture signs",
+    "takeaway": "Ladder step = dislocation",
+    "visualization": "Clavicle fracture images"
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 523,
+  "specialty": "General Surgery",
+  "topic": "Rush Review",
+  "question": "In the patient above, you suspect transfusion-induced acute lung injury and intubate. The next day he has severe diffuse edema. Which of the following is true regarding the kallikrein\u2013kinin system?",
+  "options": {
+    "A": "Bradykinins are potent vasoconstrictors produced in ischemic tissues.",
+    "B": "Bradykinins are stored in macrophages and released in response to tissue injury.",
+    "C": "Bradykinin release and elevation are proportional to the magnitude of injury.",
+    "D": "Bradykinin antagonists have been shown to improve survival in septic trauma patients.",
+    "E": "Bradykinin release is actually decreased in sepsis."
+  },
+  "answer": "C",
+  "explanation": {
+    "correct": "Bradykinin release and elevation are proportional to the magnitude of injury.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Rush Review",
+    "H_highlight_excellence": "Bradykinin release and elevation are proportional to the magnitude of injury.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "Rush Review 6th Edition",
+    "P_plan_for_improvement": "See detailed explanation for key surgical concepts"
+  },
+  "supplementary_callouts": {
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": "8788b92f",
+  "specialty": "general surgery",
+  "topic": "General",
+  "question": "Which of the following is not a complication of hypospadias repair?",
+  "options": {
+    "A": "Mega prepuce",
+    "B": "Urethral stricture",
+    "C": "Urethral diverticulum and glans dehiscence",
+    "D": "Recurrent penile curvature"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Understanding complications is key",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Mega prepuce is normal",
+    "H_highlight_excellence": "Understanding complications is key",
+    "A_address_the_gaps": "Focus on hypospadias repair",
+    "R_review_learning_points": "Urethral issues are common",
+    "P_plan_for_improvement": "Further study recommended"
+  },
+  "supplementary_callouts": {
+    "guideline": "Assess repair outcomes closely",
+    "takeaway": "Normal prepuce is expected",
+    "visualization": "Diagram of hypospadias"
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 861,
+  "specialty": "General Surgery",
+  "topic": "Which of the following is an indicator of an advanced disease?",
+  "question": "Which of the following is an indicator of an advanced disease?",
+  "options": {
+    "A": "Painful lower limbs",
+    "B": "Cushing's syndrome",
+    "C": "Pleural effusion",
+    "D": "Hyponatremic seizure 119.A 55-year-old female patient presented with history of dysphagia of"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Painful limbs, advanced disease",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Lower limb pain indicator",
+    "H_highlight_excellence": "Painful limbs, advanced disease",
+    "A_address_the_gaps": "None identified, valid answer",
+    "R_review_learning_points": "Advanced disease indicators",
+    "P_plan_for_improvement": "Further investigation needed"
+  },
+  "supplementary_callouts": {
+    "guideline": "Clinical assessment protocols",
+    "takeaway": "Painful limbs, potential indicator",
+    "visualization": "Diagram of lower limbs"
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1062,
+  "specialty": "General Surgery",
+  "topic": "Which of the following statements about the causes of inguinal hernia is",
+  "question": "Which of the following statements about the causes of inguinal hernia is correct?",
+  "options": {
+    "A": "Excessive hydroxyproline has been demonstrated in the aponeuroses of hernia patients.",
+    "B": "Obliteration of the processus vaginalis is a contributing factor for the development of an indirect inguinal hernia.",
+    "C": "Physical activity and athletics have been shown to have a protective effect toward the development of inguinal hernias.",
+    "D": "Elevated levels of circulating serum elastalytic activity have been demonstrated in patients with direct herniation who smoke."
+  },
+  "answer": "D",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 176,
+  "specialty": "General Surgery",
+  "topic": "A 21-day-old male neonate presented with a compliant of persistent projectile non-bilious",
+  "question": "A 21-day-old male neonate presented with a compliant of persistent projectile non-bilious vomiting after each feed and hungry after each feed, physical examination revealed an olive shaped mass. Up on admission, Serum K level was 2.9. Which of the following is true regarding the management of this patient?",
+  "options": {
+    "A": "Peripheral uniform ring enhancement of a hypodense mass in arterial phase",
+    "B": "Early arterial enhancement with venous wash out",
+    "C": "Hypodense mass in arterial phase with capsular retraction and delayed enhancement",
+    "D": "Peripheral nodular enhancement in arterial phase with progressive filling in subsequent phases"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": "Manage potassium, imaging guidance"
+  },
+  "supplementary_callouts": {
+    "guideline": "Follow pediatric gastroenterology",
+    "takeaway": "Early diagnosis crucial",
+    "visualization": "Imaging findings important"
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50717,
+  "specialty": "General Surgery",
+  "topic": "General",
+  "question": "Which statement is correct concerning intestinal polyposis syndromes?",
+  "options": {
+    "A": "Hamartomas are found in patients with both juvenile polyps and Peutz-Jeghers syndrome.",
+    "B": "Familial polyposis syndrome often includes extraintestinal manifestations.",
+    "C": "Turcot syndrome often includes small bowel polyps.",
+    "D": "Peutz-Jeghers syndrome, Gardner syndrome, and Turcot syndrome are inherited in an autosomal recessive pattern.",
+    "E": "Familial polyposis and Turcot syndrome are benign conditions without malignant potential."
+  },
+  "answer": "D",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 90445,
+  "specialty": "General Surgery",
+  "topic": "R2 Prep Exam_.docx",
+  "question": "surgical management of colorectal cancer?",
+  "options": {
+    "A": "In general, the accepted safe margin to minimize anastomotic site recurrence in managing rectal cancer is 5 cm from the tumor margin",
+    "B": "In handling mid rectal cancer, margins >2em do not influence survival or local recurrence rates",
+    "C": "Adequate lymphadenectomy (minimum of 12 LNs) plays important role in properly staging the tumor and elfect cure",
+    "D": "The length of bowel resected in colon cancer depends on which vessels are supplying the segment involved with the cancer."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 464,
+  "specialty": "General Surgery",
+  "topic": "Rush Review",
+  "question": "Placement of an inferior vena cava (IVC) filter in patients with proximal lower extremity deep-vein thrombosis (DVT) is indicated in each of the following scenarios except:",
+  "options": {
+    "A": "Known large esophageal varices",
+    "B": "Pulmonary embolus despite therapeutic anticoagulation",
+    "C": "High-risk sonographic appearance of the proximal DVT",
+    "D": "Recurrent unprovoked DVT",
+    "E": "Severe congestive heart failure"
+  },
+  "answer": "D",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 978,
+  "specialty": "General Surgery",
+  "topic": "Which of the following items represents the optimal convalescent period required before",
+  "question": "Which of the following items represents the optimal convalescent period required before returning to manual labor after inguinal mesh herniorrhaphy?",
+  "options": {
+    "A": "6 to 8 weeks",
+    "B": "4 to 5 weeks",
+    "C": "2 to 3 weeks",
+    "D": "1 week",
+    "E": "Less than 1 week"
+  },
+  "answer": "C",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50525,
+  "specialty": "General Surgery",
+  "topic": "General",
+  "question": "Which of the following developments has not led to a decrease in recurrence rates after groin hernia repair?",
+  "options": {
+    "A": "Modifications of the Bassini repair",
+    "B": "Routine use of prosthetic material",
+    "C": "Widespread acceptance of the \u201ctension-free\u201d concept",
+    "D": "Use of the preperitoneal space for hernia repair",
+    "E": "Use of laparoscopy in hernia repair"
+  },
+  "answer": "E",
+  "explanation": {
+    "correct": "Use of laparoscopy in hernia repair",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "Use of laparoscopy in hernia repair",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "General Surgery",
+    "P_plan_for_improvement": "Use of laparoscopy in hernia repair"
+  },
+  "supplementary_callouts": {
+    "guideline": "General Surgery",
+    "takeaway": "Use of laparoscopy in hernia repair",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1156,
+  "specialty": "General Surgery",
+  "topic": "Which of the following statements regarding unusual hernias is incorrect?",
+  "question": "Which of the following statements regarding unusual hernias is incorrect?",
+  "options": {
+    "A": "An obturator hernia may produce nerve compression diagnosed by a positive Howship-Romberg sign.",
+    "B": "Grynfeltt's hernia appears through the superior lumbar triangle, whereas Petit's hernia occurs through the inferior lumbar triangle.",
+    "C": "Sciatic hernias usually present with a painful groin mass below the inguinal ligament.",
+    "D": "Littre's hernia is defined by a Meckel's diverticulum presenting as the sole component of the hernia sac."
+  },
+  "answer": "C",
+  "explanation": {
+    "correct": "Sciatic hernias usually present with a painful groin mass below the inguinal ligament.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Which of the following statements regarding unusual hernias is incorrect?",
+    "H_highlight_excellence": "Sciatic hernias usually present with a painful groin mass below the inguinal ligament.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ACS / surgical board principles",
+    "P_plan_for_improvement": "Sciatic hernias usually present with a painful groin mass below the inguinal ligament"
+  },
+  "supplementary_callouts": {
+    "guideline": "ACS / surgical board principles",
+    "takeaway": "Sciatic hernias usually present with a painful groin mass below the inguinal ligament",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 90618,
+  "specialty": "Orthopedics",
+  "topic": "good ortho mcq exam_2 conv.docx",
+  "question": "Regarding hallux valgus, the following statements are true except that it:",
+  "options": {
+    "A": "Overcrowding of the toes by ill-fitting shoes. b. Hallux valgus.",
+    "B": "Is usually due to badly fitting shoes. c. Is not progressive.",
+    "C": "Pes cavus.",
+    "D": "Talipes equinus."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Ill-fitting shoes key",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Hallux valgus causes",
+    "H_highlight_excellence": "Ill-fitting shoes key",
+    "A_address_the_gaps": "Progressive is incorrect",
+    "R_review_learning_points": "Foot structure review",
+    "P_plan_for_improvement": "Further study needed"
+  },
+  "supplementary_callouts": {
+    "guideline": "Shoe fit matters",
+    "takeaway": "Understand hallux valgus",
+    "visualization": "Foot anatomy diagram"
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1280,
+  "specialty": "General Surgery",
+  "topic": "hypertrophy with bladder neck obstruction?",
+  "question": "hypertrophy with bladder neck obstruction?",
+  "options": {
+    "A": "It always results in significant symptoms",
+    "B": "It is best diagnosed by endoscopy and urodynamic studies",
+    "C": "It is easily diagnosed by symptoms of poor stream & straining",
+    "D": "It always results in a residual urine volume of >100ml 15.A 60-year-old man was told to have renal adenocarcinoma. Which"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "It always results in significant symptoms",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "hypertrophy with bladder neck obstruction?",
+    "H_highlight_excellence": "It always results in significant symptoms",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ACS / surgical board principles",
+    "P_plan_for_improvement": "It always results in significant symptoms"
+  },
+  "supplementary_callouts": {
+    "guideline": "ACS / surgical board principles",
+    "takeaway": "It always results in significant symptoms",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": "825f7eed",
+  "specialty": "general surgery",
+  "topic": "General",
+  "question": "Which of the following statement is false about Buergers disease?",
+  "options": {
+    "A": "It is more common in males",
+    "B": "It causes foot claudication",
+    "C": "It will stabilize upon cessation of smoking",
+    "D": "It affects small vessels of the extremity",
+    "E": "The inflammation mainly affects the intima"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1000,
+  "specialty": "General Surgery",
+  "topic": "Which of the following roughly corresponds to the 24hours maintenance fluid, electrolyte",
+  "question": "Which of the following roughly corresponds to the 24hours maintenance fluid, electrolyte and dextrose requirement of 10kg infant?",
+  "options": {
+    "A": "1000ml water; 30meq of Nat; 30meq of K+; 30mmeq of CI- and 50gm of dextrose",
+    "B": "1000ml of water; 60meq of Nat; 20meq of K+; 30mmeq of Cl- and 500gm of dextrose",
+    "C": "1000ml of water; 30meq of Nat; 20meq of K+; 30mmeg of C- and 50gm of dextrose",
+    "D": "1000m of water; 30meg of Nat; 10meg of K+; 40mmeg of CI- and 5gm of dextrose"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "1000ml water; 30meq of Nat; 30meq of K+; 30mmeq of CI- and 50gm of dextrose",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Which of the following roughly corresponds to the 24hours maintenance fluid, electrolyte",
+    "H_highlight_excellence": "1000ml water; 30meq of Nat; 30meq of K+; 30mmeq of CI- and 50gm of dextrose",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ACS / surgical board principles",
+    "P_plan_for_improvement": "1000ml water; 30meq of Nat; 30meq of K+; 30mmeq of CI- and 50gm of dextrose"
+  },
+  "supplementary_callouts": {
+    "guideline": "ACS / surgical board principles",
+    "takeaway": "1000ml water; 30meq of Nat; 30meq of K+; 30mmeq of CI- and 50gm of dextrose",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 799,
+  "specialty": "General Surgery",
+  "topic": "Which of the following best describes the therapeutic approach to a child",
+  "question": "Which of the following best describes the therapeutic approach to a child with hypoplastic left heart syndrome (HLHS)?",
+  "options": {
+    "A": "Palliation is the only option, repair is not possible",
+    "B": "Reasonable palliation is not possible, repair must be attempted",
+    "C": "Either palliation or repair is possible in the newborn period and the decision is made based on the physiology of the child",
+    "D": "Palliation is possible in the newborn period with definitive repair later in childhood Hypoplastic left heart syndrome (HLHS) includes a spectrum of conditions in which there is underdevelopment of the left-sided heart structures. The left heart is therefore inadequate to support the systemic circulation. Does this really answer the question? Shouldn\u2019t the answer establish that the quote is about hypertrophic left heart syndrome? The traditional strategy of initial palliation followed by definitive correction at a later age, which had pervaded the thinking of most surgeons, began to evolve to one emphasizing early repair, even in the tiniest patients. Furthermore, some of the defects that were virtually uniformly fatal [such as hypoplastic left heart syndrome (HLHS)] now can be successfully treated with aggressive forms of palliation using cardiopulmonary bypass (CPB), resulting in outstanding survival for many of these children. 248 possible and for which palliation is the only option; and (c) defects that can either be repaired or palliated in infancy. It bears mentioning that all defects in the second category are those in which the appropriate anatomic components either are not present, as in HLHS, or cannot be created from existing structures. (See Schwartz 9th ed., p 592.)"
+  },
+  "answer": "B",
+  "explanation": {
+    "correct": "Reasonable palliation is not possible, repair must be attempted",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Which of the following best describes the therapeutic approach to a child",
+    "H_highlight_excellence": "Reasonable palliation is not possible, repair must be attempted",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ACS / surgical board principles",
+    "P_plan_for_improvement": "Reasonable palliation is not possible, repair must be attempted"
+  },
+  "supplementary_callouts": {
+    "guideline": "ACS / surgical board principles",
+    "takeaway": "Reasonable palliation is not possible, repair must be attempted",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 51093,
+  "specialty": "General Surgery",
+  "topic": "General",
+  "question": "Regarding spinal cord injury, which of the following incorrectly describes the syndrome listed?",
+  "options": {
+    "A": "In anterior spinal artery syndrome, bilateral loss of motor and pain sensation occurs with preservation of position and vibratory sensation.",
+    "B": "In posterior spinal artery syndrome, bilateral loss of position and vibration sensation occurs with preservation of motor and pain sensation.",
+    "C": "ontralateral pain and temperature sensation.",
+    "D": "istribution of multiple nerve roots, including bladder areflexia and stool incontinence.",
+    "E": "nds of extremities. In cauda equina syndrome, unilateral or bilateral loss of motor and sensory function occurs in the"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Correct description of ASAS",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Anterior spinal artery syndrome",
+    "H_highlight_excellence": "Correct description of ASAS",
+    "A_address_the_gaps": "Other options are inaccurate",
+    "R_review_learning_points": "Spinal cord syndrome variations",
+    "P_plan_for_improvement": "Understand spinal artery roles"
+  },
+  "supplementary_callouts": {
+    "guideline": "Refer to reliable medical sources",
+    "takeaway": "ASAS specifics are crucial",
+    "visualization": "Diagram of spinal cord"
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 212,
+  "specialty": "General Surgery",
+  "topic": "A 47-year-old male with Crohn\u2019s colitis maintained on 40 \u00e5mg prednisone daily",
+  "question": "A 47-year-old male with Crohn\u2019s colitis maintained on 40 \u00e5mg prednisone daily for the past year presents for elective colectomy. The procedure was uncomplicated, and he was adequately resuscitated. In the postanesthesia care unit (PACU) the patient is noted to be febrile and hypotensive with MAPs in the 50s. What is your next step in management?",
+  "options": {
+    "A": "IV dobutamine",
+    "B": "Hydrocortisone",
+    "C": "1 unit of packed red blood cells",
+    "D": "Antibiotics"
+  },
+  "answer": "B",
+  "explanation": {
+    "correct": "Hydrocortisone",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "A 47-year-old male with Crohn\u2019s colitis maintained on 40 \u00e5mg prednisone daily",
+    "H_highlight_excellence": "Hydrocortisone",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ACS / surgical board principles",
+    "P_plan_for_improvement": "Hydrocortisone"
+  },
+  "supplementary_callouts": {
+    "guideline": "ACS / surgical board principles",
+    "takeaway": "Hydrocortisone",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 51261,
+  "specialty": "General Surgery",
+  "topic": "General",
+  "question": "Residents are expected to develop certain skills and habits so that they can meet all of the following goals to satisfy the criteria for the practice-based learning and improvement core competency except:",
+  "options": {
+    "A": "Use an evidence-based approach to patient care.",
+    "B": "Participate in mortality and morbidity conferences that evaluate and analyze patient care outcomes.",
+    "C": "Use information technology to optimize learning.",
+    "D": "Locate, appraise, and assimilate evidence from scientific studies related to their patients\u2019 health problems.",
+    "E": "Promote the participation of their patients in a clinical trial."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50988,
+  "specialty": "General Surgery",
+  "topic": "General",
+  "question": "True statements regarding anterior tibial compartmental syndrome include which of the following?",
+  "options": {
+    "A": "It may be caused by severe exertion.",
+    "B": "Pain is the dominant symptom and is elicited on palpation of the calf.",
+    "C": "The dorsalis pedis pulse is always absent.",
+    "D": "Unlike the treatment of other compartment syndromes, fasciotomy is rarely needed.",
+    "E": "The presence of pulses does negate the diagnosis."
+  },
+  "answer": "B",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 90857,
+  "specialty": "General Surgery",
+  "topic": "rush.docx",
+  "question": "A 67-year-old male remains in the hospital 1 week after undergoing a pancreaticoduodenectomy. He has two intraab dominal closed-suction drains in place, as well as a left internal jugular triple lumen catheter; his Foley catheter was removed on the third postoperative day. On the seventh postoperative day, he becomes febrile to 101.5\u00b0F, and a fever workup reveals a growth of Enterococcus in two of two peripheral blood cultures. Which of the following is true regarding the diagnosis of a central line\u2013associated bloodstream infection (CLABSI)?",
+  "options": {
+    "A": "It is preferential to begin empiric antimicrobial therapy prior to obtaining cultures.",
+    "B": "Catheter-site exudate, if present, should not be cultured when there is concern for a line-related bloodstream infection.",
+    "C": "The subcutaneous portion of the central venous catheter should be cultured, rather than the tip.",
+    "D": "Paired blood samples (one from the catheter and one from a peripheral vein, or alternatively from greater than two lumens of the same central venous catheter) growing the same organism at levels that meet catheter-related bloodstream infection criteria are required to diagnose a CLABSI."
+  },
+  "answer": "D",
+  "explanation": {
+    "correct": "Paired blood samples (one from the catheter and one from a peripheral vein, or alternatively from greater than",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "rush.docx",
+    "H_highlight_excellence": "Paired blood samples (one from the catheter and one from a peripheral vein, or alternatively from greater than",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "General Surgery",
+    "P_plan_for_improvement": "Paired blood samples (one from the catheter and one from a peripheral vein, or alternatively from"
+  },
+  "supplementary_callouts": {
+    "guideline": "rush.docx",
+    "takeaway": "Paired blood samples (one from the catheter and one from a peripheral vein, or alternatively from greater than",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 51266,
+  "specialty": "General Surgery",
+  "topic": "General",
+  "question": "Identify the four steps in practice-based learning and improvement?",
+  "options": {
+    "A": "Identify areas for improvement, engage in learning, apply the new knowledge and skills to a practice, and check for improvement.",
+    "B": "Seek knowledge, identify areas of weakness in scientific knowledge, aim to add to the knowledge, and await constructive feedback.",
+    "C": "Learn about new techniques, apply new techniques, refine new techniques, and individualize techniques.",
+    "D": "Look for improvement in current practice, observe others with a better practice model, attempt a new model in the current paradigm, and teach others the new practice model.",
+    "E": "Identify areas that are innovative, learn innovation, apply innovation, and teach innovation."
+  },
+  "answer": "C",
+  "explanation": {
+    "correct": "Learn about new techniques, apply new techniques, refine new techniques, and individualize techniques.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "Learn about new techniques, apply new techniques, refine new techniques, and individualize techniques.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "General Surgery",
+    "P_plan_for_improvement": "Learn about new techniques, apply new techniques, refine new techniques, and individualize techniques."
+  },
+  "supplementary_callouts": {
+    "guideline": "General Surgery",
+    "takeaway": "Learn about new techniques, apply new techniques, refine new techniques, and individualize techniques.",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 500,
+  "specialty": "General Surgery",
+  "topic": "Rush Review",
+  "question": "The patient above is found to have marked rhabdomyolysis. Which of the following are effects of epinephrine in response to injury in this patient?",
+  "options": {
+    "A": "It enhances the adherence of leukocytes to vascular endothelial membranes.",
+    "B": "It stimulates the release of aldosterone.",
+    "C": "It inhibits the secretion of thyroid hormones.",
+    "D": "It increases glucagon secretion.",
+    "E": "It decreases lipolysis in adipose tissue."
+  },
+  "answer": "D",
+  "explanation": {
+    "correct": "It increases glucagon secretion.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Rush Review",
+    "H_highlight_excellence": "It increases glucagon secretion.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "Rush Review 6th Edition",
+    "P_plan_for_improvement": "See detailed explanation for key surgical concepts"
+  },
+  "supplementary_callouts": {
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": "ea019fc2",
+  "specialty": "general surgery",
+  "topic": "General",
+  "question": "Which of the following statement is true about hormonal treatment of prostatic cancer (PCa)?",
+  "options": {
+    "A": "Survival is improved if it is started for localized disease",
+    "B": "There is no survival benefit if there is pelvic lymphadenopathy",
+    "C": "PSA can be used to detect biochemical relapse",
+    "D": "Anti-androgens are inferior to LHRH agonists in terms of survival"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Survival is improved if it is started for localized disease",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "Survival is improved if it is started for localized disease",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "general surgery",
+    "P_plan_for_improvement": "Survival is improved if it is started for localized disease"
+  },
+  "supplementary_callouts": {
+    "guideline": "general surgery",
+    "takeaway": "Survival is improved if it is started for localized disease",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 638,
+  "specialty": "General Surgery",
+  "topic": "Rush Review",
+  "question": "This book is intended to address the needs of those preparing for the board examination as well as those who need to maintain an up to date knowledge for the maintenance of certification examination. We thank all of you for moti vating us to become better surgeons and for helping us to deliver the best care for our patients. We hope you benefit from this book.DEDICATIONS This book is dedicated to my wife, Beth, and my children, Jack and Megan, for their ongoing love and support and keeping me focused on the important things in life. Jonathan",
+  "options": {
+    "A": "Interleukin-6",
+    "B": "Interleukin-10",
+    "C": "Tumor necrosis factor-\u03b1",
+    "D": "Interleukin-1",
+    "E": "Interleukin-8"
+  },
+  "answer": "B",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 606,
+  "specialty": "General Surgery",
+  "topic": "Rush Review",
+  "question": "With regard to perioperative fluid management, which of the following statements is correct?",
+  "options": {
+    "A": "Insensible loss is approximately 600 mL/day.",
+    "B": "Intraoperative insensible losses from an open abdomen are less than 250 mL/h.",
+    "C": "About 200 to 300 mL of fluid is needed to excrete the catabolic end products of metabolism.",
+    "D": "Lost urine should be replaced milliliter for milliliter.",
+    "E": "Hypermetabolism and hyperventilation are not important factors in postoperative fluid loss or management."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Insensible loss is approximately 600 mL/day.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Rush Review",
+    "H_highlight_excellence": "Insensible loss is approximately 600 mL/day.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "Rush Review 6th Edition",
+    "P_plan_for_improvement": "See detailed explanation for key surgical concepts"
+  },
+  "supplementary_callouts": {
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 834,
+  "specialty": "General Surgery",
+  "topic": "Which of the following factors contribute to the development of duodenal ulcer?(PGI",
+  "question": "Which of the following factors contribute to the development of duodenal ulcer?(PGI 2001) a. I-131 b. I-125",
+  "options": {
+    "A": "Lingual thyroidb. Lingual tonsil (DPG 2007) c. Ranulad. Thyroglossal cyst 222.True about Struma Ovarii:(PGI June 2007) a. Ectopic thyroid b. Ectopic ovary",
+    "B": "Pendred syndrome c. Di-George syndrome",
+    "C": "Malignancyd. Benign lesion e. Included in teratoma 223.Absent parathyroid, thymic aplasia with immuno-deficiency and cardiac defects are features of:(MHPGMCET 2009) a. Autoimmune polyglandular syndrome",
+    "D": "Lesch-Nyhan syndrome http://vip.persianss.ir/ Thyroid 55 EXPLANATIONS PAPILLARY CARCINOMA"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Lingual thyroidb. Lingual tonsil (DPG 2007) c. Ranulad. Thyroglossal cyst 222.True about Struma Ovarii:(PGI June 2007) a. Ectopic",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Which of the following factors contribute to the development of duodenal ulcer?(PGI",
+    "H_highlight_excellence": "Lingual thyroidb. Lingual tonsil (DPG 2007) c. Ranulad. Thyroglossal cyst 222.True about Struma Ovarii:(PGI June 2007) a. Ectopic",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ACS / surgical board principles",
+    "P_plan_for_improvement": "Lingual thyroidb"
+  },
+  "supplementary_callouts": {
+    "guideline": "ACS / surgical board principles",
+    "takeaway": "Lingual thyroidb",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1214,
+  "specialty": "General Surgery",
+  "topic": "With regard to atheroembolic disease of the lower extremities, which of the",
+  "question": "With regard to atheroembolic disease of the lower extremities, which of the following is true?",
+  "options": {
+    "A": "ortofemoral bypass, femoropopliteal bypass, extra-anatomic bypass with aortic exclusion, and localized endarterectomy are not indicated for the management of atheroembolic disease.",
+    "B": "Normal pedal pulses are commonly found in patients with atheroembolic disease.",
+    "C": "The most common source of atheroemboli is superficial femoral artery atherosclerotic disease.",
+    "D": "Medical therapy is associated with a low rate of recurrence."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "ortofemoral bypass, femoropopliteal bypass, extra-anatomic bypass with aortic exclusion, and localized endarterectomy are not indicated for the management",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "With regard to atheroembolic disease of the lower extremities, which of the",
+    "H_highlight_excellence": "ortofemoral bypass, femoropopliteal bypass, extra-anatomic bypass with aortic exclusion, and localized endarterectomy are not indicated for the management",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ACS / surgical board principles",
+    "P_plan_for_improvement": "ortofemoral bypass, femoropopliteal bypass, extra-anatomic bypass with aortic exclusion, and localized endarterectomy are not indicated for"
+  },
+  "supplementary_callouts": {
+    "guideline": "ACS / surgical board principles",
+    "takeaway": "ortofemoral bypass, femoropopliteal bypass, extra-anatomic bypass with aortic exclusion, and localized endarterectomy are not indicated for the management",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 632,
+  "specialty": "General Surgery",
+  "topic": "Rush Review",
+  "question": "A 70-year-old man with sepsis has a pH of 7.18. Which of the following statements is true regarding his metabolic acidosis?",
+  "options": {
+    "A": "Tissue hypoxia leads to increased oxidative metabolism.",
+    "B": "Acute compensation for metabolic acidosis is primarily renal.",
+    "C": "Metabolic acidosis results from the loss of bicarbonate or the gain of fixed acids.",
+    "D": "The most common cause of excess acid is prolonged nasogastric suction.",
+    "E": "Restoration of blood pressure with vasopressors corrects the metabolic acidosis associated with circulatory failure."
+  },
+  "answer": "C",
+  "explanation": {
+    "correct": "Metabolic acidosis results from the loss of bicarbonate or the gain of fixed acids.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Rush Review",
+    "H_highlight_excellence": "Metabolic acidosis results from the loss of bicarbonate or the gain of fixed acids.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "Rush Review 6th Edition",
+    "P_plan_for_improvement": "See detailed explanation for key surgical concepts"
+  },
+  "supplementary_callouts": {
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50755,
+  "specialty": "General Surgery",
+  "topic": "General",
+  "question": "Which of the following clinical conditions is indicated by the presence of serum antibodies against hepatitis B surface antigen (anti-HBs) and anti-HBc in the absence of HBsAg?",
+  "options": {
+    "A": "symptomatic chronic carrier of HBV",
+    "B": "Normal response to vaccination with the hepatitis B vaccine",
+    "C": "hronic active hepatitis secondary to HBV",
+    "D": "Recovery with subsequent immunity following acute hepatitis B",
+    "E": ""
+  },
+  "answer": "C",
+  "explanation": {
+    "correct": "hronic active hepatitis secondary to HBV",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "hronic active hepatitis secondary to HBV",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "General Surgery",
+    "P_plan_for_improvement": "hronic active hepatitis secondary to HBV"
+  },
+  "supplementary_callouts": {
+    "guideline": "General Surgery",
+    "takeaway": "hronic active hepatitis secondary to HBV",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 886,
+  "specialty": "General Surgery",
+  "topic": "Which of the following is not a component of the Harris\u2013 Benedict",
+  "question": "Which of the following is not a component of the Harris\u2013 Benedict equation?",
+  "options": {
+    "A": "Weight",
+    "B": "Height",
+    "C": "Age",
+    "D": "Gender"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 517,
+  "specialty": "General Surgery",
+  "topic": "Rush Review",
+  "question": "A patient presents with an acute gastrointestinal bleed and receives multiple transfusions of packed red blood cells. The following day, hypoxemia and bilateral infiltrates are observed on his chest x-ray. Which of the following statements about eicosanoids is true?",
+  "options": {
+    "A": "Their synthesis is dependent on the enzymatic activation of phospholipase A2.",
+    "B": "They originate from lymphocytes around the site of injury.",
+    "C": "They are stored within inflammatory cells and released on tissue injury.",
+    "D": "The production of leukotrienes is dependent on the enzymatic activation of cyclooxygenase.",
+    "E": "The production of prostaglandins is dependent on the enzymatic activation of lipoxygenase."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Their synthesis is dependent on the enzymatic activation of phospholipase A2.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Rush Review",
+    "H_highlight_excellence": "Their synthesis is dependent on the enzymatic activation of phospholipase A2.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "Rush Review 6th Edition",
+    "P_plan_for_improvement": "See detailed explanation for key surgical concepts"
+  },
+  "supplementary_callouts": {
+    "guideline": "Rush Review 6th Edition",
+    "takeaway": "See detailed explanation for key surgical concepts",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
 ]);

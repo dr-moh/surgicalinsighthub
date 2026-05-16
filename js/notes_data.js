@@ -112,12 +112,12 @@ window.NOTES_DATA = {
     },
     {
       id: 'op-abdominal-trauma',
-      title: 'Splenic & Renal Trauma',
+      title: 'Personalized Surgical Monograph Series  SPLENIC & RENAL TRAUMA  Advanced Monograph',
       opKicker: 'Trauma · Emergency',
       description: 'Management of the most commonly injured solid organs. AAST grading, non-operative pathways, and the critical Gerota\'s fascia control sequence.',
       opBadge: 'Gold Standard',
       opMeta: 'Pillar 1-5 Monograph',
-      url: 'notes/Surgical Operative Approach/Abdominal Trauma.html'
+      url: 'notes/Surgical Operative Approach/Personalized Surgical Monograph Series  SPLENIC & RENAL TRAUMA  Advanced Monograph.html'
     },
     {
       id: 'op-damage-control',

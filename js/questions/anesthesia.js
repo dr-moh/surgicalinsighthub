@@ -4187,4 +4187,109 @@ window.QUESTIONS.push(...[
   },
   "discrepancy_flag": ""
 }
+,
+{
+  "id": 69,
+  "specialty": "Anesthesia",
+  "topic": "While performing an axillary brachial plexus blockade, the goal is to deposit",
+  "question": "While performing an axillary brachial plexus blockade, the goal is to deposit local anesthetic medications at what location of the brachial plexus and to target which specific nerve structures?",
+  "options": {
+    "A": "Level of the branches and targeting the radial, median, and ulnar peripheral nerves",
+    "B": "Level of the trunks and targeting the interscalene, radial, and ulnar peripheral nerves",
+    "C": "Level of the divisions and targeting the supraclavicular, median, and radial peripheral nerves",
+    "D": "Level of the cords and targeting the infraclavicular, ulnar, and radial peripheral nerves"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Level of the branches and targeting the radial, median, and ulnar peripheral nerves",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "While performing an axillary brachial plexus blockade, the goal is to deposit",
+    "H_highlight_excellence": "Level of the branches and targeting the radial, median, and ulnar peripheral nerves",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ASA practice guidelines",
+    "P_plan_for_improvement": "Level of the branches and targeting the radial, median, and ulnar peripheral nerves"
+  },
+  "supplementary_callouts": {
+    "guideline": "ASA practice guidelines",
+    "takeaway": "Level of the branches and targeting the radial, median, and ulnar peripheral nerves",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 65,
+  "specialty": "Anesthesia",
+  "topic": "Which of the following statements is true regarding fluid loss?",
+  "question": "Which of the following statements is true regarding fluid loss?",
+  "options": {
+    "A": "Substantial evaporative losses can be associated with large wounds and are directly proportionate to the surface area exposed",
+    "B": "Internal redistribution of fluids, \u201cthird spacing,\u201d cannot cause massive fluid shifts",
+    "C": "Traumatized, inflamed, or infected tissues can only sequester minimal amounts of fluid in the interstitial space",
+    "D": "Cellular dysfunction as a result of hypoxia usually produces a decrease in intracellular fluid volume"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Substantial evaporative losses can be associated with large wounds and are directly proportionate to the surface area exposed",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Which of the following statements is true regarding fluid loss?",
+    "H_highlight_excellence": "Substantial evaporative losses can be associated with large wounds and are directly proportionate to the surface area exposed",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ASA practice guidelines",
+    "P_plan_for_improvement": "Substantial evaporative losses can be associated with large wounds and are directly proportionate to the surface"
+  },
+  "supplementary_callouts": {
+    "guideline": "ASA practice guidelines",
+    "takeaway": "Substantial evaporative losses can be associated with large wounds and are directly proportionate to the surface area exposed",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 36,
+  "specialty": "Anesthesia",
+  "topic": "During performance of lumbar epidural anesthesia for labor analgesia, you experience free-flowing",
+  "question": "During performance of lumbar epidural anesthesia for labor analgesia, you experience free-flowing cerebrospinal fluid (CSF) from the advancing 17G Tuohy epidural needle. The epidural needle is removed and a second attempt is successfully performed with an epidural catheter placed at a different level. Which of the following you would not recommend for the patient to practice in the next 72 hours?",
+  "options": {
+    "A": "Bed rest",
+    "B": "Fluid restriction",
+    "C": "Increase caffeine intake",
+    "D": "Continue with daily stool softener"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Bed rest",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "During performance of lumbar epidural anesthesia for labor analgesia, you experience free-flowing",
+    "H_highlight_excellence": "Bed rest",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ASA practice guidelines",
+    "P_plan_for_improvement": "Bed rest"
+  },
+  "supplementary_callouts": {
+    "guideline": "ASA practice guidelines",
+    "takeaway": "Bed rest",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
 ]);

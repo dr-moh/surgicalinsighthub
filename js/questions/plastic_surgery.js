@@ -4877,4 +4877,144 @@ window.QUESTIONS.push(...[
   },
   "discrepancy_flag": ""
 }
+,
+{
+  "id": 1654,
+  "specialty": "Plastic Surgery",
+  "topic": "33Which one answer is true regarding osteomyelitis in the lower limb?",
+  "question": "33Which one answer is true regarding osteomyelitis in the lower limb?",
+  "options": {
+    "A": "Full thickness electrical burn to the left leg of 12% body surface area.",
+    "B": "Compartment pressures of 15mmHg. C.Compartment pressures of 20mmHg. D.Positive Homan\u2019s sign.",
+    "C": "Nephrotic syndrome.",
+    "D": "Everyday exercise activities such as cycling, horseriding.153 E.Giant lipoma. 37The following is the best indication for lower limb fasciotomy:"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Full thickness electrical burn to the left leg of 12% body surface area.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "33Which one answer is true regarding osteomyelitis in the lower limb?",
+    "H_highlight_excellence": "Full thickness electrical burn to the left leg of 12% body surface area.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "BSSH / reconstructive principles",
+    "P_plan_for_improvement": "Full thickness electrical burn to the left leg of 12% body surface area"
+  },
+  "supplementary_callouts": {
+    "guideline": "BSSH / reconstructive principles",
+    "takeaway": "Full thickness electrical burn to the left leg of 12% body surface area",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1633,
+  "specialty": "Plastic Surgery",
+  "topic": "16A 32-year-old woman has near complete paralysis of the lower portion of",
+  "question": "16A 32-year-old woman has near complete paralysis of the lower portion of the left side of the face 3 years after onset of Bell\u2019s palsy. There has been no return of nerve function for the past year. Examination shows adequate function of the orbicularis oculi muscle and a good Bell\u2019s reflex. Which of the following is the most appropriate management?",
+  "options": {
+    "A": "Continued observation.",
+    "B": "Hypoglossal nerve transfer.",
+    "C": "Placement of a gold weight in the eyelid and static brow lifting.",
+    "D": "Neurotized free muscle transfer using innervation from cross-face grafts."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Continued observation.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "16A 32-year-old woman has near complete paralysis of the lower portion of",
+    "H_highlight_excellence": "Continued observation.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "BSSH / reconstructive principles",
+    "P_plan_for_improvement": "Continued observation"
+  },
+  "supplementary_callouts": {
+    "guideline": "BSSH / reconstructive principles",
+    "takeaway": "Continued observation",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1686,
+  "specialty": "Plastic Surgery",
+  "topic": "Reconstructive head and neck surgery 12Maxillary sinus tumours:",
+  "question": "Reconstructive head and neck surgery 12Maxillary sinus tumours:",
+  "options": {
+    "A": "Long duration.",
+    "B": "Gender (women > men).",
+    "C": "Idiopathic leukoplakia (i.e. occurring in non-smokers). D.Presence of Candida albicans.",
+    "D": "A DCIA flap will not provide sufficient bony stock for restorative dentistry implant rehabilitation."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Correct answer for tumors",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Sinus tumors, long duration",
+    "H_highlight_excellence": "Correct answer for tumors",
+    "A_address_the_gaps": "Consider other risk factors",
+    "R_review_learning_points": "Tumor characteristics and treatment",
+    "P_plan_for_improvement": "Further investigation needed"
+  },
+  "supplementary_callouts": {
+    "guideline": "Referral for specialist advice",
+    "takeaway": "Duration is a key factor",
+    "visualization": "Image of maxillary sinus"
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1690,
+  "specialty": "Plastic Surgery",
+  "topic": "Regarding Integra\u00ae, which of the following statements is true?",
+  "question": "Regarding Integra\u00ae, which of the following statements is true?",
+  "options": {
+    "A": "A major drawback in the use in burns reconstruction is that Integra\u00ae contracts.",
+    "B": "Integra\u00ae is a biodegradable skin regeneration template.",
+    "C": "Integra\u00ae contains cross-linked Type I bovine tendon collagen and a shark-derived glycosaminoglycan (chondroitin-4-sulphate).",
+    "D": "Integra\u00ae is microbiologically inert and easily causes infection."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
 ]);
