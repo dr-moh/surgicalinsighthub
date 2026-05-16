@@ -527,13 +527,10 @@ function normalizeOptions(options) {
     options.forEach(function(opt, index) {
       var raw = cleanText(opt);
       if (!raw) return;
-      var parsed = raw.match(/^([A-E])[).:\s-]+(.+)$/);
-      if (parsed) {
-        mapped[parsed[1].toUpperCase()] = parsed[2].trim();
-        return;
-      }
       var letter = String.fromCharCode(65 + index);
-      if (letter <= 'E') mapped[letter] = raw;
+      if (letter > 'E') return;
+      var parsed = raw.match(/^[A-E][).:\s-]+(.+)$/);
+      mapped[letter] = parsed ? parsed[1].trim() : raw;
     });
     return mapped;
   }
@@ -664,7 +661,7 @@ function startSession() {
 
   // Count
   var count = state.qCount === 'all' ? pool.length : Math.min(parseInt(state.qCount), pool.length);
-  state.questions = pool.slice(0, count).map(normalizeQuestionForArena);
+  state.questions = pool.slice(0, count);
   state.current = 0;
   state.score = 0;
   state.answers = [];
@@ -687,6 +684,11 @@ function startSession() {
 
 function renderQuestion() {
   var q = state.questions[state.current];
+  if (!q._arenaNormalized) {
+    q = normalizeQuestionForArena(q);
+    q._arenaNormalized = true;
+    state.questions[state.current] = q;
+  }
   var total = state.questions.length;
   var idx = state.current;
 
@@ -836,7 +838,7 @@ function showSharp(q, selected, isCorrect) {
   ['A','B','C','D','E'].forEach(function(letter) {
     if (!q.options[letter] || letter === q.answer) return;
     var detail = String(explanation[letter] || '').trim();
-    if (!detail || detail === addressGaps) return;
+    if (!detail) return;
     aWrap.appendChild(createExplanationRow(letter, detail));
     aCount++;
   });
