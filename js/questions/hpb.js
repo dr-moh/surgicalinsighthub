@@ -7940,4 +7940,2895 @@ window.QUESTIONS.push(...[
   },
   "discrepancy_flag": ""
 }
+,
+{
+  "id": 1464,
+  "specialty": "HPB",
+  "topic": "What portal structures are in the sulcus of Rouviere?",
+  "question": "What portal structures are in the sulcus of Rouviere?",
+  "options": {
+    "A": "Right hepatic pedicle",
+    "B": "Right posterior sectoral triad",
+    "C": "Right anterior sectorial triad",
+    "D": "Left hepatic pedicle"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Right hepatic pedicle",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "What portal structures are in the sulcus of Rouviere?",
+    "H_highlight_excellence": "Right hepatic pedicle",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "HPB surgical guidelines",
+    "P_plan_for_improvement": "Right hepatic pedicle"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB surgical guidelines",
+    "takeaway": "Right hepatic pedicle",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50197,
+  "specialty": "HPB",
+  "topic": "General",
+  "question": "Why are these portal vein anatomical variants impor - tant?",
+  "options": {
+    "A": "Because the demarcation of the division between the right and left livers will vary",
+    "B": "Because the staged division is associated with a large right posterior sector",
+    "C": "Because the staged division is associated with a small right posterior sector",
+    "D": "Because the staged division is associated with a large right anterior sector",
+    "E": "xplanation: The fact that the volume of the right poste- rior sector is larger in a staged portal vein anatomy is useful when planning to perform an extended left hepatectomy.45"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Because the demarcation of the division between the right and left livers will vary",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "Because the demarcation of the division between the right and left livers will vary",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "HPB",
+    "P_plan_for_improvement": "Because the demarcation of the division between the right and left livers will vary"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB",
+    "takeaway": "Because the demarcation of the division between the right and left livers will vary",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50038,
+  "specialty": "HPB",
+  "topic": "General",
+  "question": "Which of the following statements about the cystic duct is true?",
+  "options": {
+    "A": "It most commonly inserts on the left lateral aspect of the common bile duct",
+    "B": "Low insertion is defined as its insertion at the lower third of the common hepatic duct",
+    "C": "A short cystic duct is defined as < 10 mm long",
+    "D": "None of the above"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "It most commonly inserts on the left lateral aspect of the common bile duct",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "It most commonly inserts on the left lateral aspect of the common bile duct",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "HPB",
+    "P_plan_for_improvement": "It most commonly inserts on the left lateral aspect of the common bile duct"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB",
+    "takeaway": "It most commonly inserts on the left lateral aspect of the common bile duct",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50137,
+  "specialty": "HPB",
+  "topic": "General",
+  "question": "Which of the following is the most common cause of neonatal cholestasis?",
+  "options": {
+    "A": "Alpha1-antitrypsin deficiency",
+    "B": "Biliary atresia",
+    "C": "Infectious",
+    "D": "Metabolic disorders"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Alpha1-antitrypsin deficiency",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "Alpha1-antitrypsin deficiency",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "HPB",
+    "P_plan_for_improvement": "Alpha1-antitrypsin deficiency"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB",
+    "takeaway": "Alpha1-antitrypsin deficiency",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1430,
+  "specialty": "HPB",
+  "topic": "What is a duct of Luschka?49",
+  "question": "What is a duct of Luschka?49",
+  "options": {
+    "A": "It is a segment I bile duct that drains directly in the",
+    "B": "It is a segment V aberrant duct draining directly into the common hepatic duct",
+    "C": "It is a hepaticocholecystic bile duct that always runs into the gallbladder",
+    "D": "It is a subvesical bile duct that either runs super- ficially close to or inserts in the gallbladder"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "It is a segment I bile duct that drains directly in the",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "What is a duct of Luschka?49",
+    "H_highlight_excellence": "It is a segment I bile duct that drains directly in the",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "HPB surgical guidelines",
+    "P_plan_for_improvement": "It is a segment I bile duct that drains directly in the"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB surgical guidelines",
+    "takeaway": "It is a segment I bile duct that drains directly in the",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50149,
+  "specialty": "HPB",
+  "topic": "General",
+  "question": "In a patient with normal vascular anatomy, what will hap- pen to the liver if the proper hepatic artery is ligated?",
+  "options": {
+    "A": "nd the liver subcapsular plexus may be sufficient to preserve liver function",
+    "B": "In most cases, supply from the gastroduodenal artery is sufficient to preserve liver function",
+    "C": "Extrinsic arteries along the common bile duct",
+    "D": "The portal blood supply alone is sufficient to pre - serve liver function"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "nd the liver subcapsular plexus may be sufficient to preserve liver function",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "nd the liver subcapsular plexus may be sufficient to preserve liver function",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "HPB",
+    "P_plan_for_improvement": "nd the liver subcapsular plexus may be sufficient to preserve liver function"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB",
+    "takeaway": "nd the liver subcapsular plexus may be sufficient to preserve liver function",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50071,
+  "specialty": "HPB",
+  "topic": "General",
+  "question": "What is the most frequent bacterial colonizer of the bile",
+  "options": {
+    "A": "Escherichia coli",
+    "B": "Staphylococcus aureus",
+    "C": "Klebsiella pneumoniae",
+    "D": "None, bile is sterile in normal conditions"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Escherichia coli",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "Escherichia coli",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "HPB",
+    "P_plan_for_improvement": "Escherichia coli"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB",
+    "takeaway": "Escherichia coli",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1416,
+  "specialty": "HPB",
+  "topic": "V enous drainage of the hepatic segments is through which hepatic veins?",
+  "question": "V enous drainage of the hepatic segments is through which hepatic veins?",
+  "options": {
+    "A": "Right, middle, left, and short hepatic veins",
+    "B": "Right, left, and center hepatic veins",
+    "C": "Right, left, and short hepatic veins",
+    "D": "Right, left, and long hepatic veins",
+    "E": "Right, middle, left, and long hepatic veins"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Right, middle, left, and short hepatic veins",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "V enous drainage of the hepatic segments is through which hepatic veins?",
+    "H_highlight_excellence": "Right, middle, left, and short hepatic veins",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "HPB surgical guidelines",
+    "P_plan_for_improvement": "Right, middle, left, and short hepatic veins"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB surgical guidelines",
+    "takeaway": "Right, middle, left, and short hepatic veins",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50212,
+  "specialty": "HPB",
+  "topic": "General",
+  "question": "What portal structures are in the sulcus of Rouviere? 62",
+  "options": {
+    "A": "Right hepatic pedicle",
+    "B": "Right posterior sectoral triad",
+    "C": "alled \u201cincisura dextra\u201d64 or \u201cincisura dextra of Gans.\u201d65 It is present in 90% of patients.66",
+    "D": "Left hepatic pedicle",
+    "E": "xplanation: The sulcus of Rouviere 63 has also been"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Right hepatic pedicle",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "Right hepatic pedicle",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "HPB",
+    "P_plan_for_improvement": "Right hepatic pedicle"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB",
+    "takeaway": "Right hepatic pedicle",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1436,
+  "specialty": "HPB",
+  "topic": "What is the definition of a left-sided gallbladder?47",
+  "question": "What is the definition of a left-sided gallbladder?47",
+  "options": {
+    "A": "The gallbladder located to the left of the ligamen- tum teres",
+    "B": "The gallbladder located to the left of the common bile",
+    "C": "The gallbladder located to the left of the portal vein",
+    "D": "The gallbladder located at the left upper quadrant"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "The gallbladder located to the left of the ligamen- tum teres",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "What is the definition of a left-sided gallbladder?47",
+    "H_highlight_excellence": "The gallbladder located to the left of the ligamen- tum teres",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "HPB surgical guidelines",
+    "P_plan_for_improvement": "The gallbladder located to the left of the ligamen- tum teres"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB surgical guidelines",
+    "takeaway": "The gallbladder located to the left of the ligamen- tum teres",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1406,
+  "specialty": "HPB",
+  "topic": "The portal vein is formed from confluence of which ve ins?",
+  "question": "The portal vein is formed from confluence of which ve ins?",
+  "options": {
+    "A": "Splenic vein and inferior mesenteric vein",
+    "B": "Splenic vein and superior mesenteric vein",
+    "C": "Splenic vein and gastric vein",
+    "D": "Superior mesenteric vein and inferior mesenteric vein",
+    "E": "None of the above"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Splenic vein and inferior mesenteric vein",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "The portal vein is formed from confluence of which ve ins?",
+    "H_highlight_excellence": "Splenic vein and inferior mesenteric vein",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "HPB surgical guidelines",
+    "P_plan_for_improvement": "Splenic vein and inferior mesenteric vein"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB surgical guidelines",
+    "takeaway": "Splenic vein and inferior mesenteric vein",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1548,
+  "specialty": "HPB",
+  "topic": "Who was the first to introduce intraoperative cholan- giography in surgical practice?",
+  "question": "Who was the first to introduce intraoperative cholan- giography in surgical practice?",
+  "options": {
+    "A": "Claude Couinaud",
+    "B": "Carl Hjortsjo",
+    "C": "Erich M\u00fche",
+    "D": "Pablo Mirizzi"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50144,
+  "specialty": "HPB",
+  "topic": "General",
+  "question": "Considering the marked area as the future liver rem- nant (FLR), what resection is to be performed?",
+  "options": {
+    "A": "Right hepatectomy",
+    "B": "Extended right hepatectomy/right trisectionectomy",
+    "C": "Left hepatectomy",
+    "D": "Extended left hepatectomy/left trisectionectomy"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Correct hepatectomy choice",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "FLR resection decision",
+    "H_highlight_excellence": "Correct hepatectomy choice",
+    "A_address_the_gaps": "Consider anatomical context",
+    "R_review_learning_points": "Hepatectomy types reviewed",
+    "P_plan_for_improvement": "Further anatomical study"
+  },
+  "supplementary_callouts": {
+    "guideline": "Assess FLR location precisely",
+    "takeaway": "Right hepatectomy is optimal",
+    "visualization": "FLR and resection area"
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 51308,
+  "specialty": "HPB",
+  "topic": "General",
+  "question": "The space passing behind the hepatoduodenal ligament to enter the lesser sac is known as:",
+  "options": {
+    "A": "Epiploic foramen",
+    "B": "Duodenal tunnel",
+    "C": "Foramen of Winslow",
+    "D": "Both A and B",
+    "E": "Both A and C"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1484,
+  "specialty": "HPB",
+  "topic": "Which is a requirement to achieve a critical view of safety during",
+  "question": "Which is a requirement to achieve a critical view of safety during laparoscopic cholecystectomy?45",
+  "options": {
+    "A": "The triangle of Calot cleared of fat and tissue",
+    "B": "The lowest part of the gallbladder should be separated from the cystic plate",
+    "C": "Two structures, and only two, should be seen enter- ing the gallbladder",
+    "D": "All of the above"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": "Thorough surgical assessment"
+  },
+  "supplementary_callouts": {
+    "guideline": "Ensure safe gallbladder removal",
+    "takeaway": "Calot clearance is key",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1534,
+  "specialty": "HPB",
+  "topic": "Which of the following structures is NOT part of the",
+  "question": "Which of the following structures is NOT part of the",
+  "options": {
+    "A": "Left hepatic duct",
+    "B": "Anterior sectoral right hepatic duct",
+    "C": "Gallbladder",
+    "D": "Common hepatic duct",
+    "E": "xtrahepatic biliary tree?3"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Correct answer identified",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Hepatic duct anatomy review",
+    "H_highlight_excellence": "Correct answer identified",
+    "A_address_the_gaps": "Review biliary system",
+    "R_review_learning_points": "Ductal structures",
+    "P_plan_for_improvement": "Further study needed"
+  },
+  "supplementary_callouts": {
+    "guideline": "Understand biliary tree",
+    "takeaway": "Hepatic ducts' roles",
+    "visualization": "Diagram of ducts"
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1335,
+  "specialty": "HPB",
+  "topic": "Aberrant biliary anatomy with the right anterior or pos- terior hepatic duct",
+  "question": "Aberrant biliary anatomy with the right anterior or pos- terior hepatic duct draining into left hepatic duct occurs what percent of time?",
+  "options": {
+    "A": "Is embryologically present 70% of time",
+    "B": "Contains the right posterior sectoral pedicle",
+    "C": "Is also referred to as Rouviere \u2019ss u l c u s",
+    "D": "All of the above",
+    "E": "None of the above"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Is embryologically present 70% of time",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Aberrant biliary anatomy with the right anterior or pos- terior hepatic duct",
+    "H_highlight_excellence": "Is embryologically present 70% of time",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "HPB surgical guidelines",
+    "P_plan_for_improvement": "Is embryologically present 70% of time"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB surgical guidelines",
+    "takeaway": "Is embryologically present 70% of time",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50094,
+  "specialty": "HPB",
+  "topic": "General",
+  "question": "Which of the following statements about gallbladder polyps is true?51\u201353",
+  "options": {
+    "A": "nd heterogeneous enhance pattern",
+    "B": "Factors that suggest malignancy are: > 50 years old, larger than 1.5 cm, growth, sessile, solitary,",
+    "C": "Small (< 1 cm), asymptomatic polyps should be moni- tored for 12 months with control ultrasound scans",
+    "D": "All of the above"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "nd heterogeneous enhance pattern",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "nd heterogeneous enhance pattern",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "HPB",
+    "P_plan_for_improvement": "nd heterogeneous enhance pattern"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB",
+    "takeaway": "nd heterogeneous enhance pattern",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1510,
+  "specialty": "HPB",
+  "topic": "Which of the following statements about the Makuuchi ligament is true?",
+  "question": "Which of the following statements about the Makuuchi ligament is true?",
+  "options": {
+    "A": "It has also been called the IVC ligament or hepato-",
+    "B": "It is present in 77% of patients",
+    "C": "audate lobe",
+    "D": "All of the above"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1322,
+  "specialty": "HPB",
+  "topic": "A central liver resection for gallbladder cancer typically involves removing all or",
+  "question": "A central liver resection for gallbladder cancer typically involves removing all or a portion of which hepatic segments?",
+  "options": {
+    "A": "5a n d4 B",
+    "B": "5a n d4 A",
+    "C": "5a n d6",
+    "D": "5a n d8",
+    "E": "6a n d7"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50161,
+  "specialty": "HPB",
+  "topic": "General",
+  "question": "What is the vascular structure indicated by the arrow - head? How can you differentiate the vessels from one",
+  "options": {
+    "A": "hyperechoic sheath.",
+    "B": "y a hyperechoic sheath.",
+    "C": "Hepatic artery. The hepatic artery is not surrounded",
+    "D": "Bile duct. The bile duct is not surrounded by a hyperechoic sheath."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1456,
+  "specialty": "HPB",
+  "topic": "What is the structure depicted by the yellow arrow?",
+  "question": "What is the structure depicted by the yellow arrow?",
+  "options": {
+    "A": "Right hepatic duct",
+    "B": "Segment VII bile duct",
+    "C": "Segment V bile duct",
+    "D": "Right anterior sectoral duct"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Correct identification of duct",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Anatomy of the biliary system",
+    "H_highlight_excellence": "Correct identification of duct",
+    "A_address_the_gaps": "Review bile duct pathways",
+    "R_review_learning_points": "Understand hepatic duct anatomy",
+    "P_plan_for_improvement": "Further study of biliary system"
+  },
+  "supplementary_callouts": {
+    "guideline": "Refer to anatomical diagrams",
+    "takeaway": "Ducts drain bile from liver",
+    "visualization": "Visualize duct connections"
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1480,
+  "specialty": "HPB",
+  "topic": "Which factor is associated with an increase in the com- mon bile",
+  "question": "Which factor is associated with an increase in the com- mon bile duct diameter without obstruction? 23,24",
+  "options": {
+    "A": "> 70 years old",
+    "B": "Previous cholecystectomy",
+    "C": "Opiate users",
+    "D": "All of the above"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50163,
+  "specialty": "HPB",
+  "topic": "General",
+  "question": "How many subsegments does segment VIII have? 6,7",
+  "options": {
+    "A": "nd lateral, and thus consists of the mentioned subsegments. 6,7",
+    "B": "Three",
+    "C": "Five",
+    "D": "Seven",
+    "E": "xplanation: Segment VIII is the largest segment in a normal liver (11.1\u201344.8% of the total liver volume),5 located in the anterosuperior portion of the right anterior sector. It is separated from segment V (inferiorly) by the right por - tal vein, from segment VII (dorsally) by the right hepatic vein, and from segment IVa (medially) by the middle hepatic vein.8 This segment most often receives its blood supply from three portal vein branches, which are ventral, dorsal,"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "nd lateral, and thus consists of the mentioned subsegments. 6,7",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "nd lateral, and thus consists of the mentioned subsegments. 6,7",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "HPB",
+    "P_plan_for_improvement": "nd lateral, and thus consists of the mentioned subsegments. 6,7"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB",
+    "takeaway": "nd lateral, and thus consists of the mentioned subsegments. 6,7",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1500,
+  "specialty": "HPB",
+  "topic": "Which of the following methods can be used intra- operatively to identify",
+  "question": "Which of the following methods can be used intra- operatively to identify the anatomical borders",
+  "options": {
+    "A": "Inflow occlusion",
+    "B": "Indigo carmine",
+    "C": "Intraoperative ultrasound",
+    "D": "All of the above"
+  },
+  "answer": "C",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1549,
+  "specialty": "HPB",
+  "topic": "Who was the first to introduce intraoperative cholangio- graphy in surgical practice?18",
+  "question": "Who was the first to introduce intraoperative cholangio- graphy in surgical practice?18",
+  "options": {
+    "A": "Claude Couinaud",
+    "B": "Carl Hjortsjo",
+    "C": "holecystectomy. This imaging study allowed physicians to intraoperatively diagnose and concurrently treat a bile",
+    "D": "uct injury or choledocholithiasis.",
+    "E": "xplanation: in 1932, Pablo Mirizzi reported the first series of routine intraoperative cholangiography during"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Claude Couinaud",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Who was the first to introduce intraoperative cholangio- graphy in surgical practice?18",
+    "H_highlight_excellence": "Claude Couinaud",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "HPB surgical guidelines",
+    "P_plan_for_improvement": "Claude Couinaud"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB surgical guidelines",
+    "takeaway": "Claude Couinaud",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50023,
+  "specialty": "HPB",
+  "topic": "General",
+  "question": "What is the structure depicted by the yellow arrow?",
+  "options": {
+    "A": "Right hepatic duct",
+    "B": "Segment VII bile duct",
+    "C": "Segment V bile duct",
+    "D": "Right anterior sectoral duct"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Right hepatic duct",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "Right hepatic duct",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "HPB",
+    "P_plan_for_improvement": "Right hepatic duct"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB",
+    "takeaway": "Right hepatic duct",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50151,
+  "specialty": "HPB",
+  "topic": "General",
+  "question": "Hepatocellular carcinoma (HCC) receives its blood supply mainly from:",
+  "options": {
+    "A": "Hepatic artery",
+    "B": "Hepatic vein",
+    "C": "Portal vein",
+    "D": "None of the above"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Portal vein correct",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "HCC blood supply origin",
+    "H_highlight_excellence": "Portal vein correct",
+    "A_address_the_gaps": "Hepatic artery primary",
+    "R_review_learning_points": "HCC vascular pathways",
+    "P_plan_for_improvement": "Further vascular study"
+  },
+  "supplementary_callouts": {
+    "guideline": "Understand HCC vessels",
+    "takeaway": "Portal vein crucial",
+    "visualization": "Vessel diagrams HCC"
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1362,
+  "specialty": "HPB",
+  "topic": "How many tributaries of the biliary tree drain segment I?",
+  "question": "How many tributaries of the biliary tree drain segment I?",
+  "options": {
+    "A": "1 or 2",
+    "B": "3 or 4",
+    "C": "7 or 8",
+    "D": "9 or 10"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "1 or 2",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "How many tributaries of the biliary tree drain segment I?",
+    "H_highlight_excellence": "1 or 2",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "HPB surgical guidelines",
+    "P_plan_for_improvement": "1 or 2"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB surgical guidelines",
+    "takeaway": "1 or 2",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1529,
+  "specialty": "HPB",
+  "topic": "Which of the following statements is true about the inferior right hepatic",
+  "question": "Which of the following statements is true about the inferior right hepatic vein (IRHV)?",
+  "options": {
+    "A": "On ultrasound, an IRHV is identified posterior to the right portal vein",
+    "B": "It is present in approximately 20% of patients",
+    "C": "It can be larger in caliber than the right hepatic vein",
+    "D": "All of the above"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 51347,
+  "specialty": "HPB",
+  "topic": "General",
+  "question": "Surgical strategies to enhance operability of liver tu- mors include:",
+  "options": {
+    "A": "R i g h tp o r t a lv e i ne m b o l i z a t i o n",
+    "B": "ALPPS",
+    "C": "Two-stage hepatectomy",
+    "D": "Combining liver resection with ablation",
+    "E": "All of the above"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "R i g h tp o r t a lv e i ne m b o l i",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "R i g h tp o r t a lv e i ne m b o l i",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "HPB",
+    "P_plan_for_improvement": "R i g h tp o r t a lv e i ne m b o"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB",
+    "takeaway": "R i g h tp o r t a lv e i ne m b o l i",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1325,
+  "specialty": "HPB",
+  "topic": "A left hepatic trisectionectomy (or trisegmentectomy) removes which segments?",
+  "question": "A left hepatic trisectionectomy (or trisegmentectomy) removes which segments?",
+  "options": {
+    "A": "1, 2, 3, 4, 7",
+    "B": "2, 3, 4, 5, 8",
+    "C": "1, 2, 3, 4, 6, 7",
+    "D": "Both A and B are correct.",
+    "E": "Both B and C are correct."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50127,
+  "specialty": "HPB",
+  "topic": "General",
+  "question": "Which porto-systemic collateral pathways can become patent with the development of portal hypertension?",
+  "options": {
+    "A": "Esophagogastric",
+    "B": "Parastomal",
+    "C": "Retroperitoneal",
+    "D": "All of the above"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Esophagogastric",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "Esophagogastric",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "HPB",
+    "P_plan_for_improvement": "Esophagogastric"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB",
+    "takeaway": "Esophagogastric",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50116,
+  "specialty": "HPB",
+  "topic": "General",
+  "question": "Which of the following statements is true about hepatic",
+  "options": {
+    "A": "rtery (LGA) in 25% of cases (10% replaced and 15% accessory)",
+    "B": "An accessory artery is one that arises entirely from",
+    "C": "The left hepatic artery arises from the left gastric",
+    "D": "A Michels type III variation consists of the left hepatic artery (LHA) arising from the LGA"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50183,
+  "specialty": "HPB",
+  "topic": "General",
+  "question": "Which porto-systemic collateral pathways can",
+  "options": {
+    "A": "Esophagogastric",
+    "B": "Parastomal",
+    "C": "Retroperitoneal",
+    "D": "All of the above"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Esophagogastric is correct",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Porto-systemic collateral pathways",
+    "H_highlight_excellence": "Esophagogastric is correct",
+    "A_address_the_gaps": "Other options are incorrect",
+    "R_review_learning_points": "Understanding collateral pathways",
+    "P_plan_for_improvement": "Further study of collaterals"
+  },
+  "supplementary_callouts": {
+    "guideline": "Assess patient anatomy",
+    "takeaway": "Collaterals bypass normal flow",
+    "visualization": "Diagram of collateral routes"
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1501,
+  "specialty": "HPB",
+  "topic": "Which of the following methods can be used intraopera- tively to identify",
+  "question": "Which of the following methods can be used intraopera- tively to identify the anatomical borders between the liver segments?",
+  "options": {
+    "A": "Inflow occlusion",
+    "B": "Indigo carmine",
+    "C": "Intraoperative ultrasound",
+    "D": "All of the above"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1370,
+  "specialty": "HPB",
+  "topic": "In a healthy adult, what is the minimum percent of future liver",
+  "question": "In a healthy adult, what is the minimum percent of future liver remnant typically needed to allow for extended lobectomy or trisectionectomy?",
+  "options": {
+    "A": "90%",
+    "B": "70%",
+    "C": "50%",
+    "D": "25%",
+    "E": "10%"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50215,
+  "specialty": "HPB",
+  "topic": "General",
+  "question": "A 73-year-old male patient with a history of resected",
+  "options": {
+    "A": "nd size and are arranged in a linear pattern. 69",
+    "B": "Enlarged lymph nodes",
+    "C": "Hyperenhancing resection site",
+    "D": "Imaging artifact On MRI, these round-shaped hyperintense lesions seen on the liver are, in fact, artifacts. The pulsation of the aorta is the reason for these mirror images to appear (also called \u201cghosting\u201d artifacts). They typically have the same shape"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Ghosting artifact explanation",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Aortic pulsation artifact",
+    "H_highlight_excellence": "Ghosting artifact explanation",
+    "A_address_the_gaps": "None identified",
+    "R_review_learning_points": "MRI artifact recognition",
+    "P_plan_for_improvement": "Further investigation needed"
+  },
+  "supplementary_callouts": {
+    "guideline": "Artifact interpretation",
+    "takeaway": "Aortic pulsation causes artifacts",
+    "visualization": "Mirror image appearance"
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 51341,
+  "specialty": "HPB",
+  "topic": "General",
+  "question": "The space passing behind the hepatoduodenal ligament to enter the lesser sac is known as:",
+  "options": {
+    "A": "Epiploic foramen",
+    "B": "Duodenal tunnel",
+    "C": "Foramen of Winslow",
+    "D": "Both A and B",
+    "E": "Both A and C"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50082,
+  "specialty": "HPB",
+  "topic": "General",
+  "question": "Which hepatic segments form the gallbladder bed?",
+  "options": {
+    "A": "IVa and V",
+    "B": "IVb and VI",
+    "C": "IVb and V",
+    "D": "IVa and V"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Correct segment identification",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Gallbladder anatomy review",
+    "H_highlight_excellence": "Correct segment identification",
+    "A_address_the_gaps": "Review hepatic segment maps",
+    "R_review_learning_points": "Understand biliary anatomy",
+    "P_plan_for_improvement": "Further segment exploration"
+  },
+  "supplementary_callouts": {
+    "guideline": "Refer to anatomical charts",
+    "takeaway": "Segments define gallbladder location",
+    "visualization": "Visualize hepatic segment layout"
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50098,
+  "specialty": "HPB",
+  "topic": "General",
+  "question": "What are the possible causes of the sign depicted in the image?",
+  "options": {
+    "A": "Air in the biliary tree caused by bile duct stenting",
+    "B": "Blood in the biliary tree caused by bile duct stenting",
+    "C": "Air in the biliary tree caused by a pancreatic head mass",
+    "D": "Blood in the biliary tree caused by tumoral inva - sion"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Air in the biliary tree caused by bile duct stenting",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "Air in the biliary tree caused by bile duct stenting",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "HPB",
+    "P_plan_for_improvement": "Air in the biliary tree caused by bile duct stenting"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB",
+    "takeaway": "Air in the biliary tree caused by bile duct stenting",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50077,
+  "specialty": "HPB",
+  "topic": "General",
+  "question": "Which type of choledochal cyst is depicted in the illus- tration? What is its relative frequency?34,35",
+  "options": {
+    "A": "fter 25 s of contrast infusion with gadolinium",
+    "B": "This is the common bile duct and is seen after",
+    "C": "Type I, it is the most common",
+    "D": "Type V, it is the most common"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1551,
+  "specialty": "HPB",
+  "topic": "Who was the first to perform a liver transplant? 22",
+  "question": "Who was the first to perform a liver transplant? 22",
+  "options": {
+    "A": "Claude Couinaud",
+    "B": "Thomas Starzl",
+    "C": "Erich M\u00fche",
+    "D": "Christiaan Barnard Thomas Starzl was the first to report his results on seven patients who underwent a successful liver transplantation in 1968.27"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Claude Couinaud",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Who was the first to perform a liver transplant? 22",
+    "H_highlight_excellence": "Claude Couinaud",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "HPB surgical guidelines",
+    "P_plan_for_improvement": "Claude Couinaud"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB surgical guidelines",
+    "takeaway": "Claude Couinaud",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1470,
+  "specialty": "HPB",
+  "topic": "What type of portal division is illustrated in the figure",
+  "question": "What type of portal division is illustrated in the figure",
+  "options": {
+    "A": "Independent right posterior portal vein",
+    "B": "Staged division",
+    "C": "Bifurcation",
+    "D": "Trifurcation"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50171,
+  "specialty": "HPB",
+  "topic": "General",
+  "question": "Which statement about the caudate lobe is true? 14",
+  "options": {
+    "A": "An average of three (one to six) portal branches sup- plies the entire caudate lobe",
+    "B": "Most of the caudate lobe drains directly into the inferior vena cava (IVC)",
+    "C": "The Spiegel lobe is mainly supplied by left-sided portal branches",
+    "D": "All of the above"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "An average of three (one to six) portal branches sup- plies the entire caudate lobe",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "An average of three (one to six) portal branches sup- plies the entire caudate lobe",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "HPB",
+    "P_plan_for_improvement": "An average of three (one to six) portal branches sup- plies the entire caudate lobe"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB",
+    "takeaway": "An average of three (one to six) portal branches sup- plies the entire caudate lobe",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50016,
+  "specialty": "HPB",
+  "topic": "General",
+  "question": "Which of the following is NOT a predisposing factor for the development of Mirizzi\u2019s syndrome?",
+  "options": {
+    "A": "Long cystic duct",
+    "B": "ile duct",
+    "C": "Low insertion of the cystic duct",
+    "D": "Gallstone > 1 cm"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50206,
+  "specialty": "HPB",
+  "topic": "General",
+  "question": "What will happen if the right hepatic vein is ligated with preserved portal and arterial inflow? 55",
+  "options": {
+    "A": "Liver necrosis",
+    "B": "Liver congestion harmful for preserving the liver function in the affected segments",
+    "C": "Liver function will be preserved due to the devel- opment of collaterals and vascular compensation",
+    "D": "None of the above"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1319,
+  "specialty": "HPB",
+  "topic": "A 64-year-old male presents a liver mass on CT (com- puted tomography)",
+  "question": "A 64-year-old male presents a liver mass on CT (com- puted tomography) scan. It reveals occlusion of the right portal vein and right-sided bile duct dilation. What most accurately describes the following two images?17",
+  "options": {
+    "A": "n extended right hepatectomy with hilar lymphadenectomy and portal vein reconstruction. Match the anatomic structures with the alphabetical labels shown in the figure:",
+    "B": "Congestive right liver",
+    "C": "Ischemia\u2013reperfusion injury",
+    "D": "Atrophy-hypertrophy complex With the image presented in the previous question, underwent"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "n extended right hepatectomy with hilar lymphadenectomy and portal vein reconstruction. Match the anatomic structures with the alphabetical",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "A 64-year-old male presents a liver mass on CT (com- puted tomography)",
+    "H_highlight_excellence": "n extended right hepatectomy with hilar lymphadenectomy and portal vein reconstruction. Match the anatomic structures with the alphabetical",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "HPB surgical guidelines",
+    "P_plan_for_improvement": "n extended right hepatectomy with hilar lymphadenectomy and portal vein reconstruction"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB surgical guidelines",
+    "takeaway": "n extended right hepatectomy with hilar lymphadenectomy and portal vein reconstruction",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50091,
+  "specialty": "HPB",
+  "topic": "General",
+  "question": "What is a duct of Luschka?49",
+  "options": {
+    "A": "It is a segment I bile duct that drains directly in the",
+    "B": "It is a segment V aberrant duct draining directly into the common hepatic duct",
+    "C": "It is a hepaticocholecystic bile duct that always runs into the gallbladder",
+    "D": "It is a subvesical bile duct that either runs super- ficially close to or inserts in the gallbladder"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "It is a segment I bile duct that drains directly in the",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "It is a segment I bile duct that drains directly in the",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "HPB",
+    "P_plan_for_improvement": "It is a segment I bile duct that drains directly in the"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB",
+    "takeaway": "It is a segment I bile duct that drains directly in the",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50044,
+  "specialty": "HPB",
+  "topic": "General",
+  "question": "Which of the following statements about gallbladder polyps is true?",
+  "options": {
+    "A": "Transabdominal ultrasound is the first-line imaging study for diagnosis, but in certain cases cross-sec- tional imaging is necessary",
+    "B": "Factors that suggest malignancy are: > 50 years old, larger than 1.5 cm, growth, sessile, solitary, and het-",
+    "C": "Small (< 1 cm), asymptomatic polyps should be moni- tored for 12 months with control ultrasound scans",
+    "D": "All of the above",
+    "E": "rogeneous enhance pattern"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Ultrasound imaging key",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Gallbladder polyp diagnosis",
+    "H_highlight_excellence": "Ultrasound imaging key",
+    "A_address_the_gaps": "Further investigation needed",
+    "R_review_learning_points": "Polyps, surveillance, malignancy",
+    "P_plan_for_improvement": "Follow-up imaging crucial"
+  },
+  "supplementary_callouts": {
+    "guideline": "Monitor small polyps",
+    "takeaway": "Ultrasound is primary",
+    "visualization": "Imaging polyp details"
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1365,
+  "specialty": "HPB",
+  "topic": "How much bile is produced in one day?4",
+  "question": "How much bile is produced in one day?4",
+  "options": {
+    "A": "650 ml per day",
+    "B": "850 ml per day",
+    "C": "1250 ml per day",
+    "D": "1550 ml per day"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Correct answer selected",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Bile production quantity question",
+    "H_highlight_excellence": "Correct answer selected",
+    "A_address_the_gaps": "Review understanding of bile",
+    "R_review_learning_points": "Digestive system processes",
+    "P_plan_for_improvement": "Further explore digestive health"
+  },
+  "supplementary_callouts": {
+    "guideline": "Choose the accurate volume",
+    "takeaway": "Bile plays a vital role",
+    "visualization": "Diagram of bile flow"
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1507,
+  "specialty": "HPB",
+  "topic": "Which of the following statements about portal vein",
+  "question": "Which of the following statements about portal vein",
+  "options": {
+    "A": "It is indicated in a normal liver with no exposure to",
+    "B": "etween 2 and 8 weeks after PVE",
+    "C": "Post-PVE liver volumetry should be performed",
+    "D": "All of the above",
+    "E": "mbolization (PVE) is true?"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50032,
+  "specialty": "HPB",
+  "topic": "General",
+  "question": "Which hepatic segments form the gallbladder bed?",
+  "options": {
+    "A": "IVa and V",
+    "B": "IVb and VI",
+    "C": "IVb and V",
+    "D": "IVa and V"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "IVa and V",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "IVa and V",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "HPB",
+    "P_plan_for_improvement": "IVa and V"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB",
+    "takeaway": "IVa and V",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1419,
+  "specialty": "HPB",
+  "topic": "What anatomical variation of the hepatic artery is shown in the illustration?",
+  "question": "What anatomical variation of the hepatic artery is shown in the illustration? 16,17",
+  "options": {
+    "A": "Replaced left hepatic artery",
+    "B": "Replaced right hepatic artery",
+    "C": "Accessory right hepatic artery",
+    "D": "Both replaced right and left hepatic artery"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Replaced left hepatic artery",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "What anatomical variation of the hepatic artery is shown in the illustration?",
+    "H_highlight_excellence": "Replaced left hepatic artery",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "HPB surgical guidelines",
+    "P_plan_for_improvement": "Replaced left hepatic artery"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB surgical guidelines",
+    "takeaway": "Replaced left hepatic artery",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 51288,
+  "specialty": "HPB",
+  "topic": "General",
+  "question": "The venous drainage of the caudate lobe is into which structure?",
+  "options": {
+    "A": "Left hepatic vein",
+    "B": "Middle hepatic vein",
+    "C": "Right hepatic vein",
+    "D": "Inferior vena cava",
+    "E": "Portal vein"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Left hepatic vein",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "Left hepatic vein",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "HPB",
+    "P_plan_for_improvement": "Left hepatic vein"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB",
+    "takeaway": "Left hepatic vein",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 51302,
+  "specialty": "HPB",
+  "topic": "General",
+  "question": "The right hepatic artery crosses:",
+  "options": {
+    "A": "nterior to common hepatic duct 88% of time",
+    "B": "Posterior to the common hepatic duct 12% of time and",
+    "C": "Posterior to the common hepatic duct 50% of the time",
+    "D": "Posterior to the common hepatic duct 100% of the time",
+    "E": "None of the above"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Correct answer identified",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Hepatic artery crossing relationship",
+    "H_highlight_excellence": "Correct answer identified",
+    "A_address_the_gaps": "Review duct relationships",
+    "R_review_learning_points": "Artery duct crossing",
+    "P_plan_for_improvement": "Further anatomical study"
+  },
+  "supplementary_callouts": {
+    "guideline": "Understand hepatic anatomy",
+    "takeaway": "Artery crosses anteriorly",
+    "visualization": "Diagram crossing pathway"
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50204,
+  "specialty": "HPB",
+  "topic": "General",
+  "question": "Which of the following methods can be used intra- operatively to identify the anatomical borders",
+  "options": {
+    "A": "Inflow occlusion",
+    "B": "Indigo carmine",
+    "C": "Intraoperative ultrasound",
+    "D": "All of the above"
+  },
+  "answer": "C",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50169,
+  "specialty": "HPB",
+  "topic": "General",
+  "question": "Between the portal system and the arteriobiliary sys- tem, which has more anatomic variations in their first order branches? 11",
+  "options": {
+    "A": "Portal system",
+    "B": "Arteriobiliary system",
+    "C": "Equal",
+    "D": "Depends on the patient\u2019s epidemiological back - ground"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1392,
+  "specialty": "HPB",
+  "topic": "The gallbladder is divided into38:",
+  "question": "The gallbladder is divided into38:",
+  "options": {
+    "A": "Fundus, infundibulum, neck",
+    "B": "Fundus, body, neck",
+    "C": "Fundus, body, infundibulum, Hartman\u2019s pouch, neck",
+    "D": "Fundus, body, infundibulum, neck, cystic duct"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Correct answer selection",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "Correct answer selection",
+    "A_address_the_gaps": "Review other options",
+    "R_review_learning_points": "Understand anatomical divisions",
+    "P_plan_for_improvement": "Further study anatomy"
+  },
+  "supplementary_callouts": {
+    "guideline": "Focus on key regions",
+    "takeaway": "Gallbladder has distinct parts",
+    "visualization": "Diagram of gallbladder"
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1435,
+  "specialty": "HPB",
+  "topic": "What is the definition of a left-sided gallbladder?",
+  "question": "What is the definition of a left-sided gallbladder?",
+  "options": {
+    "A": "The gallbladder located to the left of the ligamentum teres",
+    "B": "ile duct",
+    "C": "The gallbladder located to the left of the portal vein",
+    "D": "The gallbladder located at the left upper quadrant"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1544,
+  "specialty": "HPB",
+  "topic": "Who was the first to describe the sheaths surrounding the portal pedicles?",
+  "question": "Who was the first to describe the sheaths surrounding the portal pedicles?",
+  "options": {
+    "A": "Francis Glisson",
+    "B": "Johannes Walaeus",
+    "C": "J. E. Healey Jr",
+    "D": "Hugo Rex"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 51318,
+  "specialty": "HPB",
+  "topic": "General",
+  "question": "A replaced left hepatic artery originates from which structure?",
+  "options": {
+    "A": "Aorta",
+    "B": "Superior mesenteric artery",
+    "C": "Celiac axis",
+    "D": "Gastroduodenal artery",
+    "E": "Left gastric artery"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Correct answer selected",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Hepatic artery origin",
+    "H_highlight_excellence": "Correct answer selected",
+    "A_address_the_gaps": "Review anatomical pathways",
+    "R_review_learning_points": "Artery relationships",
+    "P_plan_for_improvement": "Further arterial study"
+  },
+  "supplementary_callouts": {
+    "guideline": "Consult anatomical atlases",
+    "takeaway": "Understand hepatic artery",
+    "visualization": "Diagram arterial flow"
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1376,
+  "specialty": "HPB",
+  "topic": "In which segments are the colorectal liver metastases located in the image",
+  "question": "In which segments are the colorectal liver metastases located in the image below?",
+  "options": {
+    "A": "IV and VII",
+    "B": "IV and V",
+    "C": "III and VIII",
+    "D": "I and VIII"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1431,
+  "specialty": "HPB",
+  "topic": "What is a \u201cPhrygian cap\u201d deformity of the gallblad -",
+  "question": "What is a \u201cPhrygian cap\u201d deformity of the gallblad -",
+  "options": {
+    "A": "ttached to the main one",
+    "B": "A partial folding of the fundus of the gallbladder",
+    "C": "An almost completely intrahepatic gallbladder with only the fundus exposed",
+    "D": "A benign circumferential tumor of the gallbladder"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "ttached to the main one",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "What is a \u201cPhrygian cap\u201d deformity of the gallblad -",
+    "H_highlight_excellence": "ttached to the main one",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "HPB surgical guidelines",
+    "P_plan_for_improvement": "ttached to the main one"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB surgical guidelines",
+    "takeaway": "ttached to the main one",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50002,
+  "specialty": "HPB",
+  "topic": "General",
+  "question": "How much bile is produced in one day?",
+  "options": {
+    "A": "650 ml per day",
+    "B": "850 ml per day",
+    "C": "1250 ml per day",
+    "D": "1550 ml per day"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Correct answer selected",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Bile production quantity question",
+    "H_highlight_excellence": "Correct answer selected",
+    "A_address_the_gaps": "Review understanding of bile",
+    "R_review_learning_points": "Digestive system processes",
+    "P_plan_for_improvement": "Assess knowledge accurately"
+  },
+  "supplementary_callouts": {
+    "guideline": "Choose best option",
+    "takeaway": "Bile volume is key",
+    "visualization": "Diagram of bile flow"
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1481,
+  "specialty": "HPB",
+  "topic": "Which hepatic segments does the left hepatic duct typi-",
+  "question": "Which hepatic segments does the left hepatic duct typi-",
+  "options": {
+    "A": "I, II, III, and IV",
+    "B": "II, III, IV, and V",
+    "C": "V, VI, VII, and VIII",
+    "D": "II and III"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50117,
+  "specialty": "HPB",
+  "topic": "General",
+  "question": "What anatomical variation of the hepatic artery is shown in the illustration?",
+  "options": {
+    "A": "Replaced left hepatic artery",
+    "B": "Replaced right hepatic artery",
+    "C": "Accessory right hepatic artery",
+    "D": "Both replaced right and left hepatic artery"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Correct answer selected",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Hepatic artery variation",
+    "H_highlight_excellence": "Correct answer selected",
+    "A_address_the_gaps": "Review artery types",
+    "R_review_learning_points": "Artery anatomy review",
+    "P_plan_for_improvement": "Further anatomical study"
+  },
+  "supplementary_callouts": {
+    "guideline": "Analyze artery images",
+    "takeaway": "Understand hepatic artery",
+    "visualization": "Hepatic artery diagram"
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50036,
+  "specialty": "HPB",
+  "topic": "General",
+  "question": "Which is a requirement to achieve a critical view of safety during laparoscopic cholecystectomy?",
+  "options": {
+    "A": "The triangle of Calot cleared of fat and tissue",
+    "B": "The lowest part of the gallbladder should be sepa- rated from the cystic plate",
+    "C": "Two structures, and only two, should be seen enter- ing the gallbladder",
+    "D": "All of the above"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 51289,
+  "specialty": "HPB",
+  "topic": "General",
+  "question": "For hepatic lobar anatomy, which of the following is",
+  "options": {
+    "A": "The falciform ligament separates the right and left lobes of the liver.",
+    "B": "The plane from the gallbladder bed to the IVC (Cantlie \u2019s line) separates the right and left lobes.",
+    "C": "The falciform ligament separates the left lateral and left medial segments.",
+    "D": "Both A and B are correct.",
+    "E": "Both B and C are correct."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "The falciform ligament separates the right and left lobes of the liver.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "The falciform ligament separates the right and left lobes of the liver.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "HPB",
+    "P_plan_for_improvement": "The falciform ligament separates the right and left lobes of the liver."
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB",
+    "takeaway": "The falciform ligament separates the right and left lobes of the liver.",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1347,
+  "specialty": "HPB",
+  "topic": "Considering the marked area as the future liver rem- nant (FLR), what",
+  "question": "Considering the marked area as the future liver rem- nant (FLR), what resection is to be performed?",
+  "options": {
+    "A": "Right hepatectomy",
+    "B": "Extended right hepatectomy/right trisectionectomy",
+    "C": "Left hepatectomy",
+    "D": "Extended left hepatectomy/left trisectionectomy"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Right hepatectomy",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Considering the marked area as the future liver rem- nant (FLR), what",
+    "H_highlight_excellence": "Right hepatectomy",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "HPB surgical guidelines",
+    "P_plan_for_improvement": "Right hepatectomy"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB surgical guidelines",
+    "takeaway": "Right hepatectomy",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50080,
+  "specialty": "HPB",
+  "topic": "General",
+  "question": "Which of the following statements best describes Caro- li\u2019s disease?36,37",
+  "options": {
+    "A": "It presents with multiple intrahepatic bile duct cysts",
+    "B": "It consists of rounded or oval intrahepatic bile duct",
+    "C": "Treatment consists of biliary drainage, resection, or liver transplant depending on its extension",
+    "D": "All of the above"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "It presents with multiple intrahepatic bile duct cysts",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "It presents with multiple intrahepatic bile duct cysts",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "HPB",
+    "P_plan_for_improvement": "It presents with multiple intrahepatic bile duct cysts"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB",
+    "takeaway": "It presents with multiple intrahepatic bile duct cysts",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1473,
+  "specialty": "HPB",
+  "topic": "When considering future liver remnant for hepatic trisectionectomy:",
+  "question": "When considering future liver remnant for hepatic trisectionectomy:",
+  "options": {
+    "A": "20\u201325% future liver remnant is usually adequate for nor- mal liver.",
+    "B": "> 30% future liver remnant is preferred in fatty liver.",
+    "C": "> 40% future liver remnant is recommended for severe fibrosis or cirrhotic liver.",
+    "D": "ICG clearance is helpful for cirrhotic livers.",
+    "E": "All of the above."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "20\u201325% future liver remnant is usually adequate for nor- mal liver.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "When considering future liver remnant for hepatic trisectionectomy:",
+    "H_highlight_excellence": "20\u201325% future liver remnant is usually adequate for nor- mal liver.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "HPB surgical guidelines",
+    "P_plan_for_improvement": "20\u201325% future liver remnant is usually adequate for nor- mal liver"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB surgical guidelines",
+    "takeaway": "20\u201325% future liver remnant is usually adequate for nor- mal liver",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1364,
+  "specialty": "HPB",
+  "topic": "How much bile is produced in one day?",
+  "question": "How much bile is produced in one day?",
+  "options": {
+    "A": "650 ml per day",
+    "B": "850 ml per day",
+    "C": "1250 ml per day",
+    "D": "1550 ml per day"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "650 ml per day",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "How much bile is produced in one day?",
+    "H_highlight_excellence": "650 ml per day",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "HPB surgical guidelines",
+    "P_plan_for_improvement": "650 ml per day"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB surgical guidelines",
+    "takeaway": "650 ml per day",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1518,
+  "specialty": "HPB",
+  "topic": "Which of the following statements best describes Caro- li\u2019s disease?36,37",
+  "question": "Which of the following statements best describes Caro- li\u2019s disease?36,37",
+  "options": {
+    "A": "It presents with multiple intrahepatic bile duct cysts",
+    "B": "It consists of rounded or oval intrahepatic bile duct",
+    "C": "Treatment consists of biliary drainage, resection, or liver transplant depending on its extension",
+    "D": "All of the above"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "It presents with multiple intrahepatic bile duct cysts",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Which of the following statements best describes Caro- li\u2019s disease?36,37",
+    "H_highlight_excellence": "It presents with multiple intrahepatic bile duct cysts",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "HPB surgical guidelines",
+    "P_plan_for_improvement": "It presents with multiple intrahepatic bile duct cysts"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB surgical guidelines",
+    "takeaway": "It presents with multiple intrahepatic bile duct cysts",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50010,
+  "specialty": "HPB",
+  "topic": "General",
+  "question": "Choose the artery that does NOT provide blood supply to the extrahepatic bile duct.",
+  "options": {
+    "A": "Right hepatic",
+    "B": "Posterior superior pancreaticoduodenal",
+    "C": "Retroportal",
+    "D": "Left gastric"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Right hepatic",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "Right hepatic",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "HPB",
+    "P_plan_for_improvement": "Right hepatic"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB",
+    "takeaway": "Right hepatic",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50210,
+  "specialty": "HPB",
+  "topic": "General",
+  "question": "Name the avascular space on the ventral side of the ret- rohepatic IVC, commonly used to perform the hanging maneuver.",
+  "options": {
+    "A": "Space of Courvoisier",
+    "B": "Space of Glisson",
+    "C": "Space of Couinaud",
+    "D": "Space of Rouviere \u201cI found constantly a loose space between vena cava and liver, limited superiorly by emergence on the right of the right hepatic vein, on the left of the common stem middle + left veins\u201d Couinaud. 43,59, 60"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Space of Courvoisier",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "Space of Courvoisier",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "HPB",
+    "P_plan_for_improvement": "Space of Courvoisier"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB",
+    "takeaway": "Space of Courvoisier",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50162,
+  "specialty": "HPB",
+  "topic": "General",
+  "question": "What fibrous structure encircles and follows the vasculo-",
+  "options": {
+    "A": "Walean sheath",
+    "B": "Glisson capsule",
+    "C": "Perivascular sheath",
+    "D": "r Glisson\u2019s description. The sheaths are hyperechoic on ultrasound.4 Match the following structures with their respective labels shown in the figure."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Walean sheath",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "Walean sheath",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "HPB",
+    "P_plan_for_improvement": "Walean sheath"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB",
+    "takeaway": "Walean sheath",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50058,
+  "specialty": "HPB",
+  "topic": "General",
+  "question": "Choose the artery that does NOT provide blood supply to the extrahepatic bile duct.1",
+  "options": {
+    "A": "Right hepatic",
+    "B": "Posterior superior pancreaticoduodenal",
+    "C": "Retroportal",
+    "D": "Left gastric"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Right hepatic",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "Right hepatic",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "HPB",
+    "P_plan_for_improvement": "Right hepatic"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB",
+    "takeaway": "Right hepatic",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50165,
+  "specialty": "HPB",
+  "topic": "General",
+  "question": "Which of the following statements is true about intersegmental planes? 5",
+  "options": {
+    "A": "The liver is divided by one transverse scissure and three longitudinal scissures",
+    "B": "The Rex-Cantlie line runs between segments IV and V/VIII",
+    "C": "In anatomic liver resections, the liver parenchyma is transected following intersegmental planes",
+    "D": "All of the above"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "The liver is divided by one transverse scissure and three longitudinal scissures",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "The liver is divided by one transverse scissure and three longitudinal scissures",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "HPB",
+    "P_plan_for_improvement": "The liver is divided by one transverse scissure and three longitudinal scissures"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB",
+    "takeaway": "The liver is divided by one transverse scissure and three longitudinal scissures",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50050,
+  "specialty": "HPB",
+  "topic": "General",
+  "question": "How much bile is produced in one day?4",
+  "options": {
+    "A": "650 ml per day",
+    "B": "850 ml per day",
+    "C": "1250 ml per day",
+    "D": "1550 ml per day"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "650 ml per day",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "650 ml per day",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "HPB",
+    "P_plan_for_improvement": "650 ml per day"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB",
+    "takeaway": "650 ml per day",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1444,
+  "specialty": "HPB",
+  "topic": "What is the importance of the right inferior phrenic vein?",
+  "question": "What is the importance of the right inferior phrenic vein?",
+  "options": {
+    "A": "It allows identification of the right hepatic vein (RHV) which runs into the inferior vena cava (IVC) just caudally",
+    "B": "It is a common cause of bleeding during liver mobi- lization",
+    "C": "It is frequently used for vascular reconstructions",
+    "D": "All of the above"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "It allows identification of the right hepatic vein (RHV) which runs into the inferior vena cava (IVC) just",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "What is the importance of the right inferior phrenic vein?",
+    "H_highlight_excellence": "It allows identification of the right hepatic vein (RHV) which runs into the inferior vena cava (IVC) just",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "HPB surgical guidelines",
+    "P_plan_for_improvement": "It allows identification of the right hepatic vein (RHV) which runs into the inferior vena cava"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB surgical guidelines",
+    "takeaway": "It allows identification of the right hepatic vein (RHV) which runs into the inferior vena cava (IVC) just",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50109,
+  "specialty": "HPB",
+  "topic": "General",
+  "question": "Which of the following statements is true about intersegmental planes?",
+  "options": {
+    "A": "The liver is divided by one transverse scissure and three longitudinal scissures",
+    "B": "The Rex-Cantlie line runs between segments IV and V/ VIII",
+    "C": "In anatomic liver resections, the liver parenchyma is transected following intersegmental planes",
+    "D": "All of the above"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "The liver is divided by one transverse scissure and three longitudinal scissures",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "The liver is divided by one transverse scissure and three longitudinal scissures",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "HPB",
+    "P_plan_for_improvement": "The liver is divided by one transverse scissure and three longitudinal scissures"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB",
+    "takeaway": "The liver is divided by one transverse scissure and three longitudinal scissures",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
 ]);

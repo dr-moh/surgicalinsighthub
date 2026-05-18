@@ -5157,4 +5157,424 @@ window.QUESTIONS.push(...[
   },
   "discrepancy_flag": ""
 }
+,
+{
+  "id": 1640,
+  "specialty": "Plastic Surgery",
+  "topic": "21Which of the following prognostic features of melanoma is not included in",
+  "question": "21Which of the following prognostic features of melanoma is not included in the AJCC staging system?",
+  "options": {
+    "A": "Ulceration.209",
+    "B": "Mitotic rate.",
+    "C": "Clarke\u2019s level of invasion.",
+    "D": "Micrometastasis to lymph nodes. E.Lactate dehydrogenase (LDH)."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Ulceration.209",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "21Which of the following prognostic features of melanoma is not included in",
+    "H_highlight_excellence": "Ulceration.209",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "BSSH / reconstructive principles",
+    "P_plan_for_improvement": "Ulceration"
+  },
+  "supplementary_callouts": {
+    "guideline": "BSSH / reconstructive principles",
+    "takeaway": "Ulceration",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1699,
+  "specialty": "Plastic Surgery",
+  "topic": "Which landmark publication related to free tissue transfer is correct?",
+  "question": "Which landmark publication related to free tissue transfer is correct?",
+  "options": {
+    "A": "The first successful thumb replantation was performed by Komatsu and Tamai in 1967.",
+    "B": "The first clinical series of free tissue transfers was published by Nakayama in 1969.",
+    "C": "Cobbett performed the first successful free great toe-to-hand transfer in humans in 1968.",
+    "D": "McLean and Buncke performed the first free omentum flap in 1971."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "The first successful thumb replantation was performed by Komatsu and Tamai in 1967.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Which landmark publication related to free tissue transfer is correct?",
+    "H_highlight_excellence": "The first successful thumb replantation was performed by Komatsu and Tamai in 1967.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "BSSH / reconstructive principles",
+    "P_plan_for_improvement": "The first successful thumb replantation was performed by Komatsu and Tamai in 1967"
+  },
+  "supplementary_callouts": {
+    "guideline": "BSSH / reconstructive principles",
+    "takeaway": "The first successful thumb replantation was performed by Komatsu and Tamai in 1967",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1666,
+  "specialty": "Plastic Surgery",
+  "topic": "75Which one of the following is a diagnostic criterion for rheumatoid arthritis",
+  "question": "75Which one of the following is a diagnostic criterion for rheumatoid arthritis according to the American Academy of Rheumatology?",
+  "options": {
+    "A": "Index - 5\u00b0 DIP joint, 40\u00b0 PIP joint, 25\u00b0 MCP joint. 58B.Index - 10\u00b0 DIP joint, 10\u00b0 PIP joint, neutral MCP joint. C.Thumb - neutral IP joint, neutral MCP joint.",
+    "B": "The ulnar collateral ligament is obstructed by extensor pollicis longus (EPL). Multiple Choice Questions in Plastic Surgery",
+    "C": "The ulnar collateral ligament is obstructed by extensor pollicis brevis (EPB).",
+    "D": "Thumb - neutral IP joint, 45\u00b0 MCP joint."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Index - 5\u00b0 DIP joint, 40\u00b0 PIP joint, 25\u00b0 MCP joint. 58B.Index - 10\u00b0 DIP joint, 10\u00b0 PIP",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "75Which one of the following is a diagnostic criterion for rheumatoid arthritis",
+    "H_highlight_excellence": "Index - 5\u00b0 DIP joint, 40\u00b0 PIP joint, 25\u00b0 MCP joint. 58B.Index - 10\u00b0 DIP joint, 10\u00b0 PIP",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "BSSH / reconstructive principles",
+    "P_plan_for_improvement": "Index - 5\u00b0 DIP joint, 40\u00b0 PIP joint, 25\u00b0 MCP joint"
+  },
+  "supplementary_callouts": {
+    "guideline": "BSSH / reconstructive principles",
+    "takeaway": "Index - 5\u00b0 DIP joint, 40\u00b0 PIP joint, 25\u00b0 MCP joint",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1658,
+  "specialty": "Plastic Surgery",
+  "topic": "41What method did Sushruta recommend for nasal 180reconstruction?",
+  "question": "41What method did Sushruta recommend for nasal 180reconstruction?",
+  "options": {
+    "A": "Boys. B. Girls.",
+    "B": "Forehead flap. C.Arm flap.",
+    "C": "On the right. D.On the left. E.Twins.",
+    "D": "Skin graft. E.Cheek flap. 42Microtia is more common in (choose two):"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Forehead flap recommended by Sushruta",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Sushruta's nasal reconstruction technique",
+    "H_highlight_excellence": "Forehead flap recommended by Sushruta",
+    "A_address_the_gaps": "Understanding surgical approaches",
+    "R_review_learning_points": "Sushruta's methods for reconstruction",
+    "P_plan_for_improvement": "Further study of ancient medicine"
+  },
+  "supplementary_callouts": {
+    "guideline": "Consult with medical professionals",
+    "takeaway": "Forehead flap for nasal repair",
+    "visualization": "Diagram of forehead flap"
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1630,
+  "specialty": "Plastic Surgery",
+  "topic": "12Which two of the following statements are true regarding pigmentary changes following",
+  "question": "12Which two of the following statements are true regarding pigmentary changes following burn injury? 145",
+  "options": {
+    "A": "Is common after chemical burns.",
+    "B": "Is fatal at concentrations of 1 part per million.",
+    "C": "Can be treated with amyl nitrite, sodium nitrite and sodium thiosulphate or hydroxycobalamin.",
+    "D": "Can be treated with ethyl chloride and alkalinisation of urine."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1668,
+  "specialty": "Plastic Surgery",
+  "topic": "Basic principles and basic science",
+  "question": "Basic principles and basic science",
+  "options": {
+    "A": "Groin flap.",
+    "B": "Thoracodorsal artery perforator flap. C.Anterolateral thigh flap.",
+    "C": "Reverse sural artery flap.11 D.Free or pedicled dorsalis pedis flap.",
+    "D": "First dorsal metacarpal artery flap. E.Deltopectoral flap."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Groin flap.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Basic principles and basic science",
+    "H_highlight_excellence": "Groin flap.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "BSSH / reconstructive principles",
+    "P_plan_for_improvement": "Groin flap"
+  },
+  "supplementary_callouts": {
+    "guideline": "BSSH / reconstructive principles",
+    "takeaway": "Groin flap",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1692,
+  "specialty": "Plastic Surgery",
+  "topic": "Regarding free tissue transfer:",
+  "question": "Regarding free tissue transfer:",
+  "options": {
+    "A": "According to Koshima, supramicrosurgery (or supermicrosurgery) is defined as microvascular dissection and anastomosis of vessels measuring less than 0.5mm.",
+    "B": "In 1960, Jacobson and Suarez reported successful experimental microvascular anastomoses as small as 0.9mm in diameter. Multiple Choice Questions in Plastic Surgery",
+    "C": "The first successful free tissue transfer in humans was performed in America.",
+    "D": "Taylor is credited with the first description of the free fibula osteocutaneous flap."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Koshima's supramicrosurgery definition",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Microvascular surgery definition",
+    "H_highlight_excellence": "Koshima's supramicrosurgery definition",
+    "A_address_the_gaps": "Other options are inaccurate",
+    "R_review_learning_points": "Understanding microvascular techniques",
+    "P_plan_for_improvement": "Further study of free flaps"
+  },
+  "supplementary_callouts": {
+    "guideline": "Refer to Koshima's work",
+    "takeaway": "Key definition for free transfer",
+    "visualization": "Vessel anastomosis process"
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1693,
+  "specialty": "Plastic Surgery",
+  "topic": "The following statements concerning the history of plastic surgery are true except:",
+  "question": "The following statements concerning the history of plastic surgery are true except:",
+  "options": {
+    "A": "Tagliacozzi was born in Bologna in 1545.",
+    "B": "Kilner was the Nuffield Professor of Plastic Surgery in Oxford.",
+    "C": "Tord Skoog was appointed Professor of Plastic Surgery in Uppsala in 1960.",
+    "D": "Sushruta is credited with being the first to perform nasal reconstruction."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Correct answer identified",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Tagliacozzi's birth details",
+    "H_highlight_excellence": "Correct answer identified",
+    "A_address_the_gaps": "Incorrect information noted",
+    "R_review_learning_points": "Plastic surgery history",
+    "P_plan_for_improvement": "Verify historical facts"
+  },
+  "supplementary_callouts": {
+    "guideline": "Focus on accurate data",
+    "takeaway": "Historical context matters",
+    "visualization": "Timeline of plastic surgery"
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1704,
+  "specialty": "Plastic Surgery",
+  "topic": "With regards to the eyes and eyelids, which 168statement is correct?",
+  "question": "With regards to the eyes and eyelids, which 168statement is correct?",
+  "options": {
+    "A": "The lacrimal gland secretes tears which are bilaminar, consisting of a superficial mucoprotein layer and a deep aqueous layer.",
+    "B": "The lacrimal gland has three lobes.",
+    "C": "Tears bend incoming light before it strikes the cornea with up to 2.0 diopters of refractile power.",
+    "D": "The superior tarsal plate is 8-10mm in vertical height and the inferior tarsal plate is smaller at 4-6mm."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Lacrimal gland details correct",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Tear gland function overview",
+    "H_highlight_excellence": "Lacrimal gland details correct",
+    "A_address_the_gaps": "Review other options briefly",
+    "R_review_learning_points": "Binarity, aqueous, mucoprotein",
+    "P_plan_for_improvement": "Further study of eye anatomy"
+  },
+  "supplementary_callouts": {
+    "guideline": "Focus on lacrimal gland",
+    "takeaway": "Tears' layered composition key",
+    "visualization": "Diagram of tear layers"
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1656,
+  "specialty": "Plastic Surgery",
+  "topic": "35Which of the following is not a useful nerve block for peri-orbital",
+  "question": "35Which of the following is not a useful nerve block for peri-orbital surgery?",
+  "options": {
+    "A": "Medial superior palpebral artery. B.Superior arcade.",
+    "B": "They should be excised directly with minimal margins.",
+    "C": "Angular artery. D.Facial artery.",
+    "D": "They can be treated with minimal-skin-excision lower lid blepharoplasty."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1653,
+  "specialty": "Plastic Surgery",
+  "topic": "33Which is correct in relation to replantation of a digit?",
+  "question": "33Which is correct in relation to replantation of a digit?",
+  "options": {
+    "A": "The intercostal nerves are often transferred to the median nerve.",
+    "B": "The phrenic nerve cannot be used because of the risk of respiratory compromise.",
+    "C": "The spinal accessory nerve causes complete paralysis of trapezius. D.The axillary nerve can be innervated by the nerves to triceps.",
+    "D": "Is not successful when cold ischaemia exceeds 24 hours. E.Is more successful with postoperative IV heparin. 34In nerve transfer for brachial plexus injury:"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "The intercostal nerves are often transferred to the median nerve.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "33Which is correct in relation to replantation of a digit?",
+    "H_highlight_excellence": "The intercostal nerves are often transferred to the median nerve.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "BSSH / reconstructive principles",
+    "P_plan_for_improvement": "The intercostal nerves are often transferred to the median nerve"
+  },
+  "supplementary_callouts": {
+    "guideline": "BSSH / reconstructive principles",
+    "takeaway": "The intercostal nerves are often transferred to the median nerve",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1708,
+  "specialty": "Plastic Surgery",
+  "topic": "reference to the dual plane breast augmentation technique?",
+  "question": "reference to the dual plane breast augmentation technique?",
+  "options": {
+    "A": "A pedicled TRAM flap. B.A free TRAM flap.",
+    "B": "Residual haematoma/seroma may contribute to capsule formation. C.Rinsing the pocket with antibacterial solution may reduce the capsular contracture rate.",
+    "C": "A pedicled DIEP flap. D.A free DIEP flap.",
+    "D": "Polyurethane (PU) implants have reduced capsular contracture rates."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "A pedicled TRAM flap. B.A free TRAM flap.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "reference to the dual plane breast augmentation technique?",
+    "H_highlight_excellence": "A pedicled TRAM flap. B.A free TRAM flap.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "BSSH / reconstructive principles",
+    "P_plan_for_improvement": "A pedicled TRAM flap"
+  },
+  "supplementary_callouts": {
+    "guideline": "BSSH / reconstructive principles",
+    "takeaway": "A pedicled TRAM flap",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
 ]);

@@ -4292,4 +4292,424 @@ window.QUESTIONS.push(...[
   },
   "discrepancy_flag": ""
 }
+,
+{
+  "id": 50,
+  "specialty": "Anesthesia",
+  "topic": "Regarding lung resection surgery, which of the following statements is false?",
+  "question": "Regarding lung resection surgery, which of the following statements is false?",
+  "options": {
+    "A": "Perioperative arrhythmias are common",
+    "B": "Supraventricular tachycardias (SVTs) are thought to result from surgical manipulation or distension of the right atrium",
+    "C": "Incidence of arrhythmia decreases with age due to the ageing of cardiac conduction system",
+    "D": "Postoperative hypoxemia and acidosis due to atelectasis and shallow breathing are common"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 26,
+  "specialty": "Anesthesia",
+  "topic": "All of the following qualities are advantages of crystalloid solutions, except",
+  "question": "All of the following qualities are advantages of crystalloid solutions, except",
+  "options": {
+    "A": "Nontoxic",
+    "B": "Reaction-free",
+    "C": "Relatively inexpensive",
+    "D": "Have the ability to remain in the intravascular space for a relatively long amount of time"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Nontoxic",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "All of the following qualities are advantages of crystalloid solutions, except",
+    "H_highlight_excellence": "Nontoxic",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ASA practice guidelines",
+    "P_plan_for_improvement": "Nontoxic"
+  },
+  "supplementary_callouts": {
+    "guideline": "ASA practice guidelines",
+    "takeaway": "Nontoxic",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 58,
+  "specialty": "Anesthesia",
+  "topic": "Which of the following patients is least likely to need calcium supplementation",
+  "question": "Which of the following patients is least likely to need calcium supplementation due to citrate-induced hypocalcemia related to blood transfusion?",
+  "options": {
+    "A": "A 30-year-old trauma patient receiving massive blood transfusion through a rapid transfuser at a rate of 75 mL/min",
+    "B": "A patient with end-stage liver disease undergoing a complicated open shunt procedure, who is hypothermic and has received greater than 2 blood volumes of transfusion",
+    "C": "A neonate undergoing congenital diaphragmatic hernia repair",
+    "D": "A 50-year-old patient with coronary artery disease undergoing an open femoral popliteal bypass procedure, who has received 3 units of packed red blood cells"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "A 30-year-old trauma patient receiving massive blood transfusion through a rapid transfuser at a rate of 75 mL/min",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Which of the following patients is least likely to need calcium supplementation",
+    "H_highlight_excellence": "A 30-year-old trauma patient receiving massive blood transfusion through a rapid transfuser at a rate of 75 mL/min",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ASA practice guidelines",
+    "P_plan_for_improvement": "A 30-year-old trauma patient receiving massive blood transfusion through a rapid transfuser at a rate of"
+  },
+  "supplementary_callouts": {
+    "guideline": "ASA practice guidelines",
+    "takeaway": "A 30-year-old trauma patient receiving massive blood transfusion through a rapid transfuser at a rate of 75 mL/min",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 40,
+  "specialty": "Anesthesia",
+  "topic": "In order to provide analgesia for all stages of labor, one must",
+  "question": "In order to provide analgesia for all stages of labor, one must accommodate the evolving and varied course of labor and delivery. The least accurate statement regarding the anatomy of labor is",
+  "options": {
+    "A": "Pain during labor and delivery is often described in two stages",
+    "B": "Somatic and visceral innervation of the uterus and cervix enters the spinal cord via T10 to L1",
+    "C": "Innervation of the perineum is primarily via the pudendal nerve",
+    "D": "Somatic and visceral afferent sensory fibers from the uterus and cervix travel with greater, lesser, and least splanchnic nerves via the celiac plexus"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Pain during labor and delivery is often described in two stages",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "In order to provide analgesia for all stages of labor, one must",
+    "H_highlight_excellence": "Pain during labor and delivery is often described in two stages",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ASA practice guidelines",
+    "P_plan_for_improvement": "Pain during labor and delivery is often described in two stages"
+  },
+  "supplementary_callouts": {
+    "guideline": "ASA practice guidelines",
+    "takeaway": "Pain during labor and delivery is often described in two stages",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 24,
+  "specialty": "Anesthesia",
+  "topic": "All of the following are true about diabetic patients, except",
+  "question": "All of the following are true about diabetic patients, except",
+  "options": {
+    "A": "Patients should take half or one-third of their insulin dose the morning of the surgery",
+    "B": "Patients should continue their oral hypoglycemic agents the morning of the surgery",
+    "C": "Finger-stick blood glucose should be tested before taking the patient to the operating room",
+    "D": "Patient with an insulin pump should continue the insulin at their basal rate"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 42,
+  "specialty": "Anesthesia",
+  "topic": "In surgical cases requiring lung isolation",
+  "question": "In surgical cases requiring lung isolation",
+  "options": {
+    "A": "Measurement of tracheal width from a posteroanterior chest radiograph is of no use in selecting the size of a double-lumen tube (DLT)",
+    "B": "More frequent use of left-sided DLT is based on the anatomy of tracheobronchial tree",
+    "C": "Uniform ventilation to all lobes is most likely achieved by a right-sided DLT because it has a ventilation slot in the bronchial tube",
+    "D": "Fiber\u2013optic confirmation of correct DLT placement is not required if you have good clinical confirmation"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Tracheal width measurement",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Lung isolation surgical needs",
+    "H_highlight_excellence": "Tracheal width measurement",
+    "A_address_the_gaps": "DLT size selection",
+    "R_review_learning_points": "Ventilation tube placement",
+    "P_plan_for_improvement": "Clinical confirmation crucial"
+  },
+  "supplementary_callouts": {
+    "guideline": "Radiographic assessment needed",
+    "takeaway": "Accurate DLT selection",
+    "visualization": "Chest radiograph analysis"
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 49,
+  "specialty": "Anesthesia",
+  "topic": "Pathological features of complex regional pain syndrome include all the following, except",
+  "question": "Pathological features of complex regional pain syndrome include all the following, except",
+  "options": {
+    "A": "It is sympathetically mediated",
+    "B": "It is often associated with documented nerve injury",
+    "C": "It is only associated with major injuries (never from minor procedures)",
+    "D": "It is not associated with evidence of skin color, hair, and temperature changes"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "It is sympathetically mediated",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Pathological features of complex regional pain syndrome include all the following, except",
+    "H_highlight_excellence": "It is sympathetically mediated",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ASA practice guidelines",
+    "P_plan_for_improvement": "It is sympathetically mediated"
+  },
+  "supplementary_callouts": {
+    "guideline": "ASA practice guidelines",
+    "takeaway": "It is sympathetically mediated",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 17,
+  "specialty": "Anesthesia",
+  "topic": "A nasal trumpet would be most appropriate for management of anesthetic-induced upper",
+  "question": "A nasal trumpet would be most appropriate for management of anesthetic-induced upper airway obstruction in one of the following patients:",
+  "options": {
+    "A": "A 25-year-old passenger ejected out of a motorcycle now with Glasgow Coma Scale of 13 and some periorbital bruising",
+    "B": "A 32-year-old term parturient, otherwise healthy except for gestational thrombocytopenia, who requires emergent cesarean section under general anesthesia",
+    "C": "A 45-year-old female with temporomandibular joint syndrome and breast cancer scheduled for bilateral mastectomy",
+    "D": "A 65-year-old male with a mechanical mitral valve on therapeutic anticoagulation undergoing emergent coronary catheterization for unstable angina"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "A 25-year-old passenger ejected out of a motorcycle now with Glasgow Coma Scale of 13 and some periorbital",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "A nasal trumpet would be most appropriate for management of anesthetic-induced upper",
+    "H_highlight_excellence": "A 25-year-old passenger ejected out of a motorcycle now with Glasgow Coma Scale of 13 and some periorbital",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ASA practice guidelines",
+    "P_plan_for_improvement": "A 25-year-old passenger ejected out of a motorcycle now with Glasgow Coma Scale of 13 and"
+  },
+  "supplementary_callouts": {
+    "guideline": "ASA practice guidelines",
+    "takeaway": "A 25-year-old passenger ejected out of a motorcycle now with Glasgow Coma Scale of 13 and some periorbital",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 45,
+  "specialty": "Anesthesia",
+  "topic": "Incorrect statement regarding treatment of complex regional pain syndrome (CRPS) is",
+  "question": "Incorrect statement regarding treatment of complex regional pain syndrome (CRPS) is",
+  "options": {
+    "A": "Efficacious treatment with multimodal therapy early in the diagnosis (within 1 month of symptom) is most effective",
+    "B": "It responds well to sympathetic blockade",
+    "C": "If not treated properly and in a timely fashion, CRPS can result in functional disability",
+    "D": "Patients need to refrain from physical therapy until the pain syndrome is resolved"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Efficacious treatment with multimodal therapy early in the diagnosis (within 1 month of symptom) is most effective",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Incorrect statement regarding treatment of complex regional pain syndrome (CRPS) is",
+    "H_highlight_excellence": "Efficacious treatment with multimodal therapy early in the diagnosis (within 1 month of symptom) is most effective",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ASA practice guidelines",
+    "P_plan_for_improvement": "Efficacious treatment with multimodal therapy early in the diagnosis (within 1 month of symptom) is most"
+  },
+  "supplementary_callouts": {
+    "guideline": "ASA practice guidelines",
+    "takeaway": "Efficacious treatment with multimodal therapy early in the diagnosis (within 1 month of symptom) is most effective",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 70,
+  "specialty": "Anesthesia",
+  "topic": "While performing the popliteal approach for a sciatic nerve block under ultrasound",
+  "question": "While performing the popliteal approach for a sciatic nerve block under ultrasound guidance, you are able to identify the popliteal artery adjacent to two hyperechoic nerve structures that appear to become one nerve structure upon proximal movement of the ultrasound probe placed within the popliteal fossa. The correct identity of the two nerve branches is",
+  "options": {
+    "A": "The nerve on the lateral side is the common peroneal nerve, and the nerve on the medial side is the tibial nerve (combined nerve is the sciatic nerve)",
+    "B": "The nerve on the lateral side is the sciatic nerve, and nerve on the medial side is the deep peroneal nerve (combined nerve is the femoral nerve)",
+    "C": "The nerve on the lateral side is the common tibial nerve, and nerve on the medial is the superficial peroneal nerve (combined nerve is the sciatic nerve)",
+    "D": "The nerve on the lateral side is the common posterior tibial nerve, and the nerve on the medial side is the superficial peroneal nerve (combined nerve is the femoral nerve)"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 35,
+  "specialty": "Anesthesia",
+  "topic": "Down syndrome is associated with all of the following, except",
+  "question": "Down syndrome is associated with all of the following, except",
+  "options": {
+    "A": "Large tongue",
+    "B": "Atlantooccipital instability",
+    "C": "Hyperthyroidism",
+    "D": "Increased incidence of seizures"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Large tongue",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Down syndrome is associated with all of the following, except",
+    "H_highlight_excellence": "Large tongue",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ASA practice guidelines",
+    "P_plan_for_improvement": "Large tongue"
+  },
+  "supplementary_callouts": {
+    "guideline": "ASA practice guidelines",
+    "takeaway": "Large tongue",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 37,
+  "specialty": "Anesthesia",
+  "topic": "During pregnancy, hepatic changes contribute to",
+  "question": "During pregnancy, hepatic changes contribute to",
+  "options": {
+    "A": "Decreased albumin levels contributing to higher free blood levels of highly protein-bound drugs",
+    "B": "Decreased liver function tests due to decreased blood flow",
+    "C": "Decreased concentration levels of coagulation factors leading to easy bruisability",
+    "D": "Decreased activity of plasma cholinesterase resulting in significantly longer duration of action of succinylcholine Questions 21 to 23 After 18 hours of laboring and adherence to a strict nonpharmacologic natural birth plan, the patient experiences late decelerations and fetal distress, requiring emergent cesarean section."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Decreased albumin levels contributing to higher free blood levels of highly protein-bound drugs",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "During pregnancy, hepatic changes contribute to",
+    "H_highlight_excellence": "Decreased albumin levels contributing to higher free blood levels of highly protein-bound drugs",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "ASA practice guidelines",
+    "P_plan_for_improvement": "Decreased albumin levels contributing to higher free blood levels of highly protein-bound drugs"
+  },
+  "supplementary_callouts": {
+    "guideline": "ASA practice guidelines",
+    "takeaway": "Decreased albumin levels contributing to higher free blood levels of highly protein-bound drugs",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
 ]);

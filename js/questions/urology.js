@@ -5025,4 +5025,887 @@ window.QUESTIONS.push(...[
   },
   "discrepancy_flag": ""
 }
+,
+{
+  "id": "2ae3ed80",
+  "specialty": "urology",
+  "topic": "General",
+  "question": "A 2-year-old has a right side impalpable testis but normal left testis. Which of the following statement is true?",
+  "options": {
+    "A": "There is greater than 90% chance of finding the testis and or cord structures at right inguinal exploration",
+    "B": "There is greater than 10% chance of spontaneous decent of right testis in 12 months",
+    "C": "Orchidopexy will significantly improves the function of the right testis",
+    "D": "Orchidopexy will reduce the frequency of malignancy occurring in the right testis"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "There is greater than 90% chance of finding the testis and or cord structures at right inguinal exploration",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "There is greater than 90% chance of finding the testis and or cord structures at right inguinal exploration",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "urology",
+    "P_plan_for_improvement": "There is greater than 90% chance of finding the testis and or cord structures at right"
+  },
+  "supplementary_callouts": {
+    "guideline": "urology",
+    "takeaway": "There is greater than 90% chance of finding the testis and or cord structures at right inguinal exploration",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": "65d40af9",
+  "specialty": "urology",
+  "topic": "General",
+  "question": "A 55-year-old male patient was told to have inverted papilloma. Which of the following is true about his disease?",
+  "options": {
+    "A": "It is a benign tumor of the bladder",
+    "B": "It is a precursor to low grade papillary tumor",
+    "C": "It is an invasive tumor",
+    "D": "It is not sensitive for chemotherapy"
+  },
+  "answer": "B",
+  "explanation": {
+    "correct": "Papillary tumor risk",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Inverted papilloma precursor",
+    "H_highlight_excellence": "Papillary tumor risk",
+    "A_address_the_gaps": "Further investigation needed",
+    "R_review_learning_points": "Understanding precursor states",
+    "P_plan_for_improvement": "Monitor for progression"
+  },
+  "supplementary_callouts": {
+    "guideline": "Regular surveillance crucial",
+    "takeaway": "Papilloma links to cancer",
+    "visualization": "Cellular transformation"
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": "2c0d5b42",
+  "specialty": "urology",
+  "topic": "General",
+  "question": "Which of the following statement is true about hormonal treatment of prostatic cancer (PCa)?",
+  "options": {
+    "A": "Survival is improved if it is started for localized disease",
+    "B": "There is no survival benefit if there is pelvic lymphadenopathy",
+    "C": "PSA can be used to detect biochemical relapse",
+    "D": "Anti-androgens are inferior to LHRH agonists in terms of survival"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Survival is improved if it is started for localized disease",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "Survival is improved if it is started for localized disease",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "urology",
+    "P_plan_for_improvement": "Survival is improved if it is started for localized disease"
+  },
+  "supplementary_callouts": {
+    "guideline": "urology",
+    "takeaway": "Survival is improved if it is started for localized disease",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1711,
+  "specialty": "Urology",
+  "topic": "The Tokyo guidelines severity grading for Acute Cholecystitis is sometimes used for",
+  "question": "The Tokyo guidelines severity grading for Acute Cholecystitis is sometimes used for acute cholecystitis. Which of the following Is correct?",
+  "options": {
+    "A": "Elevated WBC more than 18000 will be Grade 3",
+    "B": "Marked local inflammation with Biliary Peritonitis will make Grade 3",
+    "C": "Duration of symptoms more than 72 Hrs will Be Grade 1",
+    "D": "Palpable Tender GB will make Grade 2",
+    "E": "All are correct."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Elevated WBC more than 18000 will be Grade 3",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "The Tokyo guidelines severity grading for Acute Cholecystitis is sometimes used for",
+    "H_highlight_excellence": "Elevated WBC more than 18000 will be Grade 3",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "AUA / EAU urology guidelines",
+    "P_plan_for_improvement": "Elevated WBC more than 18000 will be Grade 3"
+  },
+  "supplementary_callouts": {
+    "guideline": "AUA / EAU urology guidelines",
+    "takeaway": "Elevated WBC more than 18000 will be Grade 3",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": "2365e32a",
+  "specialty": "urology",
+  "topic": "General",
+  "question": "Which of the following statement is true about benign prostatic hypertrophy with bladder neck obstruction?",
+  "options": {
+    "A": "It always results in significant symptoms",
+    "B": "It is best diagnosed by endoscopy and urodynamic studies",
+    "C": "It is easily diagnosed by symptoms of poor stream &amp; straining",
+    "D": "It always results in a residual urine volume of &gt;100ml"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "It always results in significant symptoms",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "It always results in significant symptoms",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "urology",
+    "P_plan_for_improvement": "It always results in significant symptoms"
+  },
+  "supplementary_callouts": {
+    "guideline": "urology",
+    "takeaway": "It always results in significant symptoms",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1710,
+  "specialty": "Urology",
+  "topic": "A 21-day-old male neonate presented with a compliant of persistent projectile non-bilious",
+  "question": "A 21-day-old male neonate presented with a compliant of persistent projectile non-bilious vomiting after each feed and hungry after each feed, physical examination revealed an olive shaped mass. Up on admission, Serum K level was 2.9. Which of the following is true regarding the management of this patient?",
+  "options": {
+    "A": "Serum carbon dioxide (&lt;30 mmol/L), chloride (&gt;100 mmol/L), and potassium (4.5-6.5 mmol/L) levels as markers of resuscitation.",
+    "B": "Postoperative emesis on the third operative day should raise a suspicion of incomplete myotomy and barium meal examination has to be ordered",
+    "C": "Postoperative feeding should be started after 12 hours",
+    "D": "On abdominal ultrasound pyloric channel length of 12 mm is diagnostic"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Serum carbon dioxide (&lt;30 mmol/L), chloride (&gt;100 mmol/L), and potassium (4.5-6.5 mmol/L) levels as markers of resuscitation.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "A 21-day-old male neonate presented with a compliant of persistent projectile non-bilious",
+    "H_highlight_excellence": "Serum carbon dioxide (&lt;30 mmol/L), chloride (&gt;100 mmol/L), and potassium (4.5-6.5 mmol/L) levels as markers of resuscitation.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "AUA / EAU urology guidelines",
+    "P_plan_for_improvement": "Serum carbon dioxide (&lt;30 mmol/L), chloride (&gt;100 mmol/L), and potassium (4"
+  },
+  "supplementary_callouts": {
+    "guideline": "AUA / EAU urology guidelines",
+    "takeaway": "Serum carbon dioxide (&lt;30 mmol/L), chloride (&gt;100 mmol/L), and potassium (4",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": "d0c0853a",
+  "specialty": "urology",
+  "topic": "General",
+  "question": "Which of the following statement is true about fistula in ano?",
+  "options": {
+    "A": "Fistulography is very helpful to differentiate between low and high fistula in ano",
+    "B": "The most common type of fistula is intersphincteric",
+    "C": "Opening the entire fistulous tract is necessary to achieve cure",
+    "D": "Seton application achieves 80% cure in high fistulas",
+    "E": "All of the above"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Key diagnostic technique utilized",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Fistulography differentiates fistula types",
+    "H_highlight_excellence": "Key diagnostic technique utilized",
+    "A_address_the_gaps": "Further exploration of options",
+    "R_review_learning_points": "Understanding fistula classifications",
+    "P_plan_for_improvement": "Continue learning about treatment"
+  },
+  "supplementary_callouts": {
+    "guideline": "Utilize imaging for diagnosis",
+    "takeaway": "Fistulography aids in distinction",
+    "visualization": "Illustrate fistula types clearly"
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": "d0c0853a",
+  "specialty": "urology",
+  "topic": "General",
+  "question": "Which of the following statement is true about fistula in ano?",
+  "options": {
+    "A": "Fistulography is very helpful to differentiate between low and high fistula in ano",
+    "B": "The most common type of fistula is intersphincteric",
+    "C": "Opening the entire fistulous tract is necessary to achieve cure",
+    "D": "Seton application achieves 80% cure in high fistulas",
+    "E": "All of the above"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Fistulography is very helpful to differentiate between low and high fistula in ano",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "Fistulography is very helpful to differentiate between low and high fistula in ano",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "urology",
+    "P_plan_for_improvement": "Fistulography is very helpful to differentiate between low and high fistula in ano"
+  },
+  "supplementary_callouts": {
+    "guideline": "urology",
+    "takeaway": "Fistulography is very helpful to differentiate between low and high fistula in ano",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": "49148744",
+  "specialty": "urology",
+  "topic": "General",
+  "question": "A 70-year-old male patient was found to have stage II mid sigmoid ca. What is the current recommended treatment?",
+  "options": {
+    "A": "Sigmoidectomy only",
+    "B": "Sigmoidectomy followed by Chemotherapy",
+    "C": "Noeadjuvant chemotherapy followed by sigmoidectomy",
+    "D": "Left hemicolectomy",
+    "E": "Left hemicolectomy followed by chemotherapy"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Mid sigmoid colorectal cancer",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "Sigmoidectomy is standard",
+    "takeaway": "Considered current treatment approach",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": "0a81b64e",
+  "specialty": "urology",
+  "topic": "General",
+  "question": "Which of the following is not an indication to repair AAA?",
+  "options": {
+    "A": "Diameter &gt;5.5cm",
+    "B": "Saccular aneurysm",
+    "C": "Aneurysm in females irrespective of the size",
+    "D": "Symptomatic aneurysm",
+    "E": "None of the above"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": "ed767c94",
+  "specialty": "urology",
+  "topic": "General",
+  "question": "Which of the following investigations is the most important to perform prior to excision of a suspected thyroglossal cyst?",
+  "options": {
+    "A": "U/S of the cyst",
+    "B": "Chest X-ray",
+    "C": "TFT",
+    "D": "U/S of thyroid gland"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Essential for diagnosis",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Ultrasound of the cyst",
+    "H_highlight_excellence": "Essential for diagnosis",
+    "A_address_the_gaps": "Rule out malignancy",
+    "R_review_learning_points": "Cysts vs. tumors",
+    "P_plan_for_improvement": "Further investigation needed"
+  },
+  "supplementary_callouts": {
+    "guideline": "Prioritize cyst imaging",
+    "takeaway": "Ultrasound is key",
+    "visualization": "Cystal imaging guidance"
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": "0e0686be",
+  "specialty": "urology",
+  "topic": "General",
+  "question": "Which of the following is true about occlusive disease of the femoral artery?",
+  "options": {
+    "A": "It usually presents with thigh claudication",
+    "B": "It usually occurs at the level of the Adductor haitus",
+    "C": "It might cause impotence",
+    "D": "Stenting is the best treatment for lesions longer than 10cm",
+    "E": "None of the above"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "It usually presents with thigh claudication",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "It usually presents with thigh claudication",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "urology",
+    "P_plan_for_improvement": "It usually presents with thigh claudication"
+  },
+  "supplementary_callouts": {
+    "guideline": "urology",
+    "takeaway": "It usually presents with thigh claudication",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": "0a81b64e",
+  "specialty": "urology",
+  "topic": "General",
+  "question": "Which of the following is not an indication to repair AAA?",
+  "options": {
+    "A": "Diameter &gt;5.5cm",
+    "B": "Saccular aneurysm",
+    "C": "Aneurysm in females irrespective of the size",
+    "D": "Symptomatic aneurysm",
+    "E": "None of the above"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": "8a745fd8",
+  "specialty": "urology",
+  "topic": "General",
+  "question": "Where is the most common site of perforation that occurs in Hirshsprung's disease?",
+  "options": {
+    "A": "Rectum",
+    "B": "Sigmoid",
+    "C": "Transverse colon",
+    "D": "Cecum"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": "2ae3ed80",
+  "specialty": "urology",
+  "topic": "General",
+  "question": "A 2-year-old has a right side impalpable testis but normal left testis. Which of the following statement is true?",
+  "options": {
+    "A": "There is greater than 90% chance of finding the testis and or cord structures at right inguinal exploration",
+    "B": "There is greater than 10% chance of spontaneous decent of right testis in 12 months",
+    "C": "Orchidopexy will significantly improves the function of the right testis",
+    "D": "Orchidopexy will reduce the frequency of malignancy occurring in the right testis"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "There is greater than 90% chance of finding the testis and or cord structures at right inguinal exploration",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "There is greater than 90% chance of finding the testis and or cord structures at right inguinal exploration",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "urology",
+    "P_plan_for_improvement": "There is greater than 90% chance of finding the testis and or cord structures at right"
+  },
+  "supplementary_callouts": {
+    "guideline": "urology",
+    "takeaway": "There is greater than 90% chance of finding the testis and or cord structures at right inguinal exploration",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": "54cc8037",
+  "specialty": "urology",
+  "topic": "General",
+  "question": "What percentage of patients with bladder tumor present with non-muscle invasive disease?",
+  "options": {
+    "A": "20%",
+    "B": "40%",
+    "C": "60%",
+    "D": "80%"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": "d4da3026",
+  "specialty": "urology",
+  "topic": "General",
+  "question": "What is the posterior fascia relation of the prostate?",
+  "options": {
+    "A": "Waldayer\u2019s fascia",
+    "B": "Denonvillier\u2019s fascia",
+    "C": "Endopelvic fascia",
+    "D": "Puboprostatic fascia"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Waldayer\u2019s fascia correct",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Prostate posterior fascia relation",
+    "H_highlight_excellence": "Waldayer\u2019s fascia correct",
+    "A_address_the_gaps": "Review other fascia options",
+    "R_review_learning_points": "Fascia layers around prostate",
+    "P_plan_for_improvement": "Further anatomical study"
+  },
+  "supplementary_callouts": {
+    "guideline": "Focus on pelvic fascia",
+    "takeaway": "Waldayer\u2019s fascia key",
+    "visualization": "Diagram of prostate fascia"
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": "d4da3026",
+  "specialty": "urology",
+  "topic": "General",
+  "question": "What is the posterior fascia relation of the prostate?",
+  "options": {
+    "A": "Waldayer\u2019s fascia",
+    "B": "Denonvillier\u2019s fascia",
+    "C": "Endopelvic fascia",
+    "D": "Puboprostatic fascia"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Waldayer\u2019s fascia",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "Waldayer\u2019s fascia",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "urology",
+    "P_plan_for_improvement": "Waldayer\u2019s fascia"
+  },
+  "supplementary_callouts": {
+    "guideline": "urology",
+    "takeaway": "Waldayer\u2019s fascia",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": "54cc8037",
+  "specialty": "urology",
+  "topic": "General",
+  "question": "What percentage of patients with bladder tumor present with non-muscle invasive disease?",
+  "options": {
+    "A": "20%",
+    "B": "40%",
+    "C": "60%",
+    "D": "80%"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": "348c66d8",
+  "specialty": "urology",
+  "topic": "General",
+  "question": "Which of the following is true regarding complications of inguinal hernia?",
+  "options": {
+    "A": "The incidence of testicular atrophy is higher in cases of emergency hernia surgery than elective cases",
+    "B": "The incidence of testicular atrophy following surgery is lower in premature infants",
+    "C": "The incidence of bowel incarceration in lower in premature infants",
+    "D": "Persistence of scrotal hydrocle following a high ligation of patent processes vaginalis indicates a recurrence"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Emergency surgery increases risk",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Testicular atrophy risk elevated",
+    "H_highlight_excellence": "Emergency surgery increases risk",
+    "A_address_the_gaps": "Consider premature infant factors",
+    "R_review_learning_points": "Hernia complications and timing",
+    "P_plan_for_improvement": "Further research needed always"
+  },
+  "supplementary_callouts": {
+    "guideline": "Assess surgical approach carefully",
+    "takeaway": "High ligation impacts recurrence",
+    "visualization": "Diagram inguinal hernia risks"
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": "b6ab95ec",
+  "specialty": "urology",
+  "topic": "General",
+  "question": "Which of the following patient does not need post mastectomy radiotherapy",
+  "options": {
+    "A": "3cm sized bilateral breast cancer",
+    "B": "Multiple matted axillary LNs fixed to the chest wall",
+    "C": "3cm breast cancer with postmastectomy of 6 lymph nodes positive for cancer",
+    "D": "2cm tumor fixed to the chest wall"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "3cm sized bilateral breast cancer",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "3cm sized bilateral breast cancer",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "urology",
+    "P_plan_for_improvement": "3cm sized bilateral breast cancer"
+  },
+  "supplementary_callouts": {
+    "guideline": "urology",
+    "takeaway": "3cm sized bilateral breast cancer",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": "d6a8557f",
+  "specialty": "urology",
+  "topic": "General",
+  "question": "Which of the following is/are absolute indication for operative management of Diverticular disease?",
+  "options": {
+    "A": "Diverticulitis",
+    "B": "Lower GI Bleeding",
+    "C": "Stricture seen on Barium enema",
+    "D": "Presence of persistent pain",
+    "E": "All of the above"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Diverticulitis",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "Diverticulitis",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "urology",
+    "P_plan_for_improvement": "Diverticulitis"
+  },
+  "supplementary_callouts": {
+    "guideline": "urology",
+    "takeaway": "Diverticulitis",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": "2365e32a",
+  "specialty": "urology",
+  "topic": "General",
+  "question": "Which of the following statement is true about benign prostatic hypertrophy with bladder neck obstruction?",
+  "options": {
+    "A": "It always results in significant symptoms",
+    "B": "It is best diagnosed by endoscopy and urodynamic studies",
+    "C": "It is easily diagnosed by symptoms of poor stream &amp; straining",
+    "D": "It always results in a residual urine volume of &gt;100ml"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "It always results in significant symptoms",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "It always results in significant symptoms",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "urology",
+    "P_plan_for_improvement": "It always results in significant symptoms"
+  },
+  "supplementary_callouts": {
+    "guideline": "urology",
+    "takeaway": "It always results in significant symptoms",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": "73a9ddf1",
+  "specialty": "urology",
+  "topic": "General",
+  "question": "Which of the following statement is true about diagnosis of obstructive uropahty?",
+  "options": {
+    "A": "Ultrasound has a high false positive rate in acute obstruction or dehydration.",
+    "B": "CT KUB has limited ability to evaluate non- stone chronic obstructions",
+    "C": "IVU is the preferred mode of investigation in the evaluation of the function of the kidneys.",
+    "D": "Renal isotope scanning is the only modality providing dynamic renal function."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Ultrasound has a high false positive rate in acute obstruction or dehydration.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "Ultrasound has a high false positive rate in acute obstruction or dehydration.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "urology",
+    "P_plan_for_improvement": "Ultrasound has a high false positive rate in acute obstruction or dehydration."
+  },
+  "supplementary_callouts": {
+    "guideline": "urology",
+    "takeaway": "Ultrasound has a high false positive rate in acute obstruction or dehydration.",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": "90198d02",
+  "specialty": "urology",
+  "topic": "General",
+  "question": "An 80-year-old man had routine health check up. PSA was determined to be 9Nmol/ml. Histology revealed adenocarcinoma with Gleason score of 3-4. What is the best treatment option for the patient?",
+  "options": {
+    "A": "Watchful waiting",
+    "B": "Radical prostatectomy",
+    "C": "Radiotherapy",
+    "D": "Hormonal therapy"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Watchful waiting",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "Watchful waiting",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "urology",
+    "P_plan_for_improvement": "Watchful waiting"
+  },
+  "supplementary_callouts": {
+    "guideline": "urology",
+    "takeaway": "Watchful waiting",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
 ]);

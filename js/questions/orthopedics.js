@@ -5528,4 +5528,599 @@ window.QUESTIONS.push(...[
   },
   "discrepancy_flag": ""
 }
+,
+{
+  "id": 1616,
+  "specialty": "Orthopedic",
+  "topic": "The signs of fractured shaft of a bone do not include: a.",
+  "question": "The signs of fractured shaft of a bone do not include: a. Swelling",
+  "options": {
+    "A": "Inadequate immobilization b. Interposition of soft parts c. Impaired blood supply",
+    "B": "Separation of the epiphysis with a triangular fragment of the metaphysic",
+    "C": "Tight plasters d. Septic infection",
+    "D": "Inpsction of the fragments"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Correct answer selected",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Fracture signs assessment",
+    "H_highlight_excellence": "Correct answer selected",
+    "A_address_the_gaps": "Review fracture symptoms",
+    "R_review_learning_points": "Bone fracture indicators",
+    "P_plan_for_improvement": "Further study needed"
+  },
+  "supplementary_callouts": {
+    "guideline": "Recognize fracture signs",
+    "takeaway": "Identify fracture symptoms",
+    "visualization": "Image review helpful"
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1597,
+  "specialty": "Orthopedic",
+  "topic": "Reimplantation of a traumatically amputated limb requires all of the following except:",
+  "question": "Reimplantation of a traumatically amputated limb requires all of the following except:",
+  "options": {
+    "A": "are often due to a fall on the outstretched hand b. are frequently associated with chest wall injury c. are often associated with dislocation of the acromioclavicular",
+    "B": "the radial nerve is frequently damaged",
+    "C": "delayed radial nerve palsy is usually due to edema d. late onset of radial nerve palsy is usually due to the involvement of the nerve with callus",
+    "D": "proximal fragment Is usually internally rotated e. distal fragment is usually adducted 24 www.mataryonline.com 9.In a fracture of the distal 1/3 of the shaft of the humerus a. the distal fragment is usually posteriorly angulated by"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "are often due to a fall on the outstretched hand b. are frequently associated with chest wall injury",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Reimplantation of a traumatically amputated limb requires all of the following except:",
+    "H_highlight_excellence": "are often due to a fall on the outstretched hand b. are frequently associated with chest wall injury",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "AAOS orthopedic guidelines",
+    "P_plan_for_improvement": "are often due to a fall on the outstretched hand b"
+  },
+  "supplementary_callouts": {
+    "guideline": "AAOS orthopedic guidelines",
+    "takeaway": "are often due to a fall on the outstretched hand b",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1574,
+  "specialty": "Orthopedic",
+  "topic": "Fracture of the lunate bone:",
+  "question": "Fracture of the lunate bone:",
+  "options": {
+    "A": "Commonly caused by fall on dorsi-flexed hand.",
+    "B": "It lies in the carpal tunnel compressing median nerve and flexor tendons.",
+    "C": "It is characterized clinically by swelling in front of the wrist and limitation of movements of the wrist joint.",
+    "D": "Extension of the fingers is pathognomic of lunate fr e. Recent cases are treated by closed reduction while neglected cases are treated by open reduction and or excision of the lunate bone if necessary."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Commonly caused by fall on dorsi-flexed hand.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Fracture of the lunate bone:",
+    "H_highlight_excellence": "Commonly caused by fall on dorsi-flexed hand.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "AAOS orthopedic guidelines",
+    "P_plan_for_improvement": "Commonly caused by fall on dorsi-flexed hand"
+  },
+  "supplementary_callouts": {
+    "guideline": "AAOS orthopedic guidelines",
+    "takeaway": "Commonly caused by fall on dorsi-flexed hand",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1589,
+  "specialty": "Orthopedic",
+  "topic": "Ladder step deformity characteristic of fracture clavicle is:",
+  "question": "Ladder step deformity characteristic of fracture clavicle is:",
+  "options": {
+    "A": "Medial fragment is displaced downward below lateral fragment.",
+    "B": "Lateral fragment is displaced foreword while medial is displaced backward.",
+    "C": "Dislocation of sternoclavicular joint gives ladder step deformity.",
+    "D": "Dislocation of acromio-clavicular joint."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Medial fragment is displaced downward below lateral fragment.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Ladder step deformity characteristic of fracture clavicle is:",
+    "H_highlight_excellence": "Medial fragment is displaced downward below lateral fragment.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "AAOS orthopedic guidelines",
+    "P_plan_for_improvement": "Medial fragment is displaced downward below lateral fragment"
+  },
+  "supplementary_callouts": {
+    "guideline": "AAOS orthopedic guidelines",
+    "takeaway": "Medial fragment is displaced downward below lateral fragment",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1601,
+  "specialty": "Orthopedic",
+  "topic": "Talipes equino-varus:",
+  "question": "Talipes equino-varus:",
+  "options": {
+    "A": "Adducted, inverted and plantarly flexed foot.",
+    "B": "It may be congenital or acquired on top of paralysis of lateral popliteal nerve.",
+    "C": "Congenital deformity can be corrected while acquired one can not.",
+    "D": "Acquired deformity is bilateral while congenitalis unilateral. e. In the acquired type sole of the foot i full of corrugation."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Adducted, inverted and plantarly flexed foot.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Talipes equino-varus:",
+    "H_highlight_excellence": "Adducted, inverted and plantarly flexed foot.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "AAOS orthopedic guidelines",
+    "P_plan_for_improvement": "Adducted, inverted and plantarly flexed foot"
+  },
+  "supplementary_callouts": {
+    "guideline": "AAOS orthopedic guidelines",
+    "takeaway": "Adducted, inverted and plantarly flexed foot",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1579,
+  "specialty": "Orthopedic",
+  "topic": "In a Monteggia fracture dislocation",
+  "question": "In a Monteggia fracture dislocation",
+  "options": {
+    "A": "the dislocation of the distal radio-ulnar joint brings the ulnar styloid process anterior to the capitulum",
+    "B": "the radial fracture is usually at the junction of the middle and distal thirds",
+    "C": "internal fixation is usually required in the adult",
+    "D": "the causative injury is often a blow on the extensor surface of the forearm with the elbow flexed"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Dislocation of ulnar styloid",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "Dislocation of ulnar styloid",
+    "A_address_the_gaps": "Consider other fracture aspects",
+    "R_review_learning_points": "Joint displacement, fracture patterns",
+    "P_plan_for_improvement": "Further assessment and imaging"
+  },
+  "supplementary_callouts": {
+    "guideline": "Referral for specialist care",
+    "takeaway": "Ulnar dislocation is key",
+    "visualization": "Radiographic findings crucial"
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1622,
+  "specialty": "Orthopedic",
+  "topic": "Volkmann's contracture a. affects the palmar fascia",
+  "question": "Volkmann's contracture a. affects the palmar fascia",
+  "options": {
+    "A": "a subperiosteal abscess due to infection of the mastoid air cells",
+    "B": "a type pf breast abscess",
+    "C": "a chronic abscess of the bone",
+    "D": "an abscess arising in the inguinal lymph nodes e. an abscess forming in an infected varicose vein"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Palmar fascia involvement key",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Volkmann's contracture pathology",
+    "H_highlight_excellence": "Palmar fascia involvement key",
+    "A_address_the_gaps": "Consider other related abscesses",
+    "R_review_learning_points": "Contracture, fascia, infection",
+    "P_plan_for_improvement": "Further study of related conditions"
+  },
+  "supplementary_callouts": {
+    "guideline": "Focus on anatomical relationships",
+    "takeaway": "Understand contracture mechanisms",
+    "visualization": "Diagram of palmar fascia"
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1559,
+  "specialty": "Orthopedic",
+  "topic": "A Pott's fracture is a type of fracture of the a. wrist",
+  "question": "A Pott's fracture is a type of fracture of the a. wrist",
+  "options": {
+    "A": "physiotherapy alone",
+    "B": "insertion of a figure-of-eight tension band c. patellectomy",
+    "C": "non-union of a fracture",
+    "D": "followed by pseudoarthrosis e. due to tuberculosis"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "",
+    "H_highlight_excellence": "",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1605,
+  "specialty": "Orthopedic",
+  "topic": "The commonest bones to be affected by multiple myelomatosis are:",
+  "question": "The commonest bones to be affected by multiple myelomatosis are:",
+  "options": {
+    "A": "Femur.",
+    "B": "Humerus.",
+    "C": "Ribs and clavicle.",
+    "D": "Vertebrae especially lower lumbar vertebrae. e. Skull, sternum, and scapula."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Femur.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "The commonest bones to be affected by multiple myelomatosis are:",
+    "H_highlight_excellence": "Femur.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "AAOS orthopedic guidelines",
+    "P_plan_for_improvement": "Femur"
+  },
+  "supplementary_callouts": {
+    "guideline": "AAOS orthopedic guidelines",
+    "takeaway": "Femur",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1580,
+  "specialty": "Orthopedic",
+  "topic": "In a case of congenital dislocation of the hip",
+  "question": "In a case of congenital dislocation of the hip",
+  "options": {
+    "A": "the defect cannot be detected until the third week of life",
+    "B": "there is a defect of the posterior rim of the acetabulum",
+    "C": "on bilateral hip abduction with the knees flexed there is often limited abduction on the diseased side",
+    "D": "reduction is sometimes hindered by a tight gluteus minimus muscle"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Correct answer for congenital hip",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Hip dislocation diagnosis timeline",
+    "H_highlight_excellence": "Correct answer for congenital hip",
+    "A_address_the_gaps": "Consider other acetabulum defects",
+    "R_review_learning_points": "Abduction limitations and muscle tightness",
+    "P_plan_for_improvement": "Further hip examination needed"
+  },
+  "supplementary_callouts": {
+    "guideline": "Follow orthopedic referral protocol",
+    "takeaway": "Congenital dislocation has early signs",
+    "visualization": "Hip joint anatomy and dislocation"
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1571,
+  "specialty": "Orthopedic",
+  "topic": "Fracture dislocation of cervical spine:",
+  "question": "Fracture dislocation of cervical spine:",
+  "options": {
+    "A": "forward displacement of one vertebra with overriding of articular surface, with compression of vertebra or fracture of neural arch.",
+    "B": "very stable fracture.",
+    "C": "associated with severe cord damage.",
+    "D": "it is reduced by skull traction under x-ray control. e. internal fixation is mandatory in presence of cord damage."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "forward displacement of one vertebra with overriding of articular surface, with compression of vertebra or fracture of neural",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Fracture dislocation of cervical spine:",
+    "H_highlight_excellence": "forward displacement of one vertebra with overriding of articular surface, with compression of vertebra or fracture of neural",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "AAOS orthopedic guidelines",
+    "P_plan_for_improvement": "forward displacement of one vertebra with overriding of articular surface, with compression of vertebra or fracture"
+  },
+  "supplementary_callouts": {
+    "guideline": "AAOS orthopedic guidelines",
+    "takeaway": "forward displacement of one vertebra with overriding of articular surface, with compression of vertebra or fracture of neural",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1608,
+  "specialty": "Orthopedic",
+  "topic": "The following statements about provisional amputation for infective gangrene are true except",
+  "question": "The following statements about provisional amputation for infective gangrene are true except that it:",
+  "options": {
+    "A": "May be urgently needed to control infection and toxemia.",
+    "B": "Should be made through the healthy limb above the infected area.",
+    "C": "Should be done as low as possible to allow reamputation at the optimum level.",
+    "D": "Should provide free drainage."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "May be urgently needed to control infection and toxemia.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "The following statements about provisional amputation for infective gangrene are true except",
+    "H_highlight_excellence": "May be urgently needed to control infection and toxemia.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "AAOS orthopedic guidelines",
+    "P_plan_for_improvement": "May be urgently needed to control infection and toxemia"
+  },
+  "supplementary_callouts": {
+    "guideline": "AAOS orthopedic guidelines",
+    "takeaway": "May be urgently needed to control infection and toxemia",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1603,
+  "specialty": "Orthopedic",
+  "topic": "The best line of treatment of fractures radius and ulna at different",
+  "question": "The best line of treatment of fractures radius and ulna at different levels is:",
+  "options": {
+    "A": "Closed reduction and above elbow plaster for 6-8 weeks.",
+    "B": "Intramedullary nailing of both radius and ulna.",
+    "C": "Open reduction of the ulna and closed reduction of radius.",
+    "D": "Open reduction and internal fixation by plate and screws."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Closed reduction and above elbow plaster for 6-8 weeks.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "The best line of treatment of fractures radius and ulna at different",
+    "H_highlight_excellence": "Closed reduction and above elbow plaster for 6-8 weeks.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "AAOS orthopedic guidelines",
+    "P_plan_for_improvement": "Closed reduction and above elbow plaster for 6-8 weeks"
+  },
+  "supplementary_callouts": {
+    "guideline": "AAOS orthopedic guidelines",
+    "takeaway": "Closed reduction and above elbow plaster for 6-8 weeks",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1576,
+  "specialty": "Orthopedic",
+  "topic": "Fractures which do not impact include a. fracture of tile vault of",
+  "question": "Fractures which do not impact include a. fracture of tile vault of the skull",
+  "options": {
+    "A": "reversed Colles' fracture",
+    "B": "fracture of the scaphoid bone in the wrist",
+    "C": "fracture of the radial styloid (chauffeur's fracture) d. fracture dislocation of the first metacarpal",
+    "D": "a fracture of the head of the radius e. fracture of die scaphoid 73)Bennett's fracture is"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "reversed Colles' fracture",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Fractures which do not impact include a. fracture of tile vault of",
+    "H_highlight_excellence": "reversed Colles' fracture",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "AAOS orthopedic guidelines",
+    "P_plan_for_improvement": "reversed Colles' fracture"
+  },
+  "supplementary_callouts": {
+    "guideline": "AAOS orthopedic guidelines",
+    "takeaway": "reversed Colles' fracture",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1558,
+  "specialty": "Orthopedic",
+  "topic": "'Tennis elbow' is the term used for a. olecranon bursitis",
+  "question": "'Tennis elbow' is the term used for a. olecranon bursitis",
+  "options": {
+    "A": "Carpal scaphoid b. Neck of the femur",
+    "B": "Joint involved in the fracture c. Proximal joint",
+    "C": "Lower third of the tibia d. Talus",
+    "D": "Both proximal and distal joints e. Distal joint 101)Non-union is common in fractures of the following bones except the:"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Carpal scaphoid b. Neck of the femur",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "'Tennis elbow' is the term used for a. olecranon bursitis",
+    "H_highlight_excellence": "Carpal scaphoid b. Neck of the femur",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "AAOS orthopedic guidelines",
+    "P_plan_for_improvement": "Carpal scaphoid b"
+  },
+  "supplementary_callouts": {
+    "guideline": "AAOS orthopedic guidelines",
+    "takeaway": "Carpal scaphoid b",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1575,
+  "specialty": "Orthopedic",
+  "topic": "Fractures of the cervical spine can be caused by one of the",
+  "question": "Fractures of the cervical spine can be caused by one of the following traumas:",
+  "options": {
+    "A": "flexion trauma.",
+    "B": "extension trauma.",
+    "C": "lateral flexion trauma.",
+    "D": "rotational flexion or extension trauma."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "flexion trauma.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Fractures of the cervical spine can be caused by one of the",
+    "H_highlight_excellence": "flexion trauma.",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "AAOS orthopedic guidelines",
+    "P_plan_for_improvement": "flexion trauma"
+  },
+  "supplementary_callouts": {
+    "guideline": "AAOS orthopedic guidelines",
+    "takeaway": "flexion trauma",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1607,
+  "specialty": "Orthopedic",
+  "topic": "The differential diagnosis of osteoid osteoma includes all the following except:",
+  "question": "The differential diagnosis of osteoid osteoma includes all the following except:",
+  "options": {
+    "A": "Brodies' abscess b. Ossifying fibroma c. Ewing's tumor",
+    "B": "Hyaluronidase",
+    "C": "Albumin and laucin",
+    "D": "Alpha and beta globulins e. Beta lipoproteins"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Brodies' abscess b. Ossifying fibroma c. Ewing's tumor",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "The differential diagnosis of osteoid osteoma includes all the following except:",
+    "H_highlight_excellence": "Brodies' abscess b. Ossifying fibroma c. Ewing's tumor",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "AAOS orthopedic guidelines",
+    "P_plan_for_improvement": "Brodies' abscess b"
+  },
+  "supplementary_callouts": {
+    "guideline": "AAOS orthopedic guidelines",
+    "takeaway": "Brodies' abscess b",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
 ]);
