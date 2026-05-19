@@ -53,7 +53,8 @@ jobs:
 
               for path in file_paths:
                   norm_path = path.replace("\\", "/")
-                  if any(segment in norm_path for segment in [".github/", ".git/", "node_modules/", ".kiro/"]):
+                  parts = Path(norm_path).parts
+                  if any(segment in parts for segment in [".github", ".git", "node_modules", ".kiro"]):
                       continue
                   if norm_path.endswith("master_mcq_arena.json"):
                       continue
@@ -263,7 +264,7 @@ jobs:
           EOF
 
       - name: Upload compiled MCQ artifact
-        if: always() && hashFiles(env.OUTPUT_FILE) != ''
+        if: always() && hashFiles(format('{0}', env.OUTPUT_FILE)) != ''
         uses: actions/upload-artifact@v4
         with:
           name: master-mcq-arena
