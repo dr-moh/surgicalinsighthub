@@ -9,6 +9,8 @@ on:
 jobs:
   compile_and_process_mcqs:
     runs-on: ubuntu-latest
+    env:
+      OUTPUT_FILE: master_mcq_arena.json
     steps:
       - name: Checkout Repository Code
         uses: actions/checkout@v4
@@ -39,7 +41,7 @@ jobs:
           import requests
 
 
-          OUTPUT_FILE = Path("master_mcq_arena.json")
+          OUTPUT_FILE = Path(os.getenv("OUTPUT_FILE", "master_mcq_arena.json"))
           LLM_TIMEOUT_SECONDS = 45
           CHUNK_SIZE = 50
 
@@ -91,7 +93,7 @@ jobs:
 
                       item_id = item.get("id")
                       dedupe_key = (
-                          str(item_id).strip() if item_id is not None else None,
+                          str(item_id).strip() if item_id is not None else "",
                           str(item.get("question", "")).strip().lower(),
                           tuple(lowered_values),
                       )
@@ -230,8 +232,8 @@ jobs:
                           f"Chunk {start + 1}-{start + len(chunk)} failed on all providers. "
                           "Using sanitized chunk."
                       )
-                      # Preserve progress even when providers fail; enrichment-dependent consumers
-                      # should treat these records as non-enriched fallback output.
+                      # Preserve workflow continuity and data progress when providers are
+                      # temporarily unavailable; this chunk remains valid but non-enriched.
                       chunk_processed = chunk
 
                   final_output.extend(chunk_processed)
@@ -261,8 +263,8 @@ jobs:
           EOF
 
       - name: Upload compiled MCQ artifact
-        if: always() && hashFiles('master_mcq_arena.json') != ''
+        if: always() && hashFiles(env.OUTPUT_FILE) != ''
         uses: actions/upload-artifact@v4
         with:
           name: master-mcq-arena
-          path: master_mcq_arena.json
+          path: ${{ env.OUTPUT_FILE }}
