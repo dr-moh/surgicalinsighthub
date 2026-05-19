@@ -41,7 +41,7 @@ jobs:
           import requests
 
 
-          OUTPUT_FILE = Path(os.getenv("OUTPUT_FILE", "master_mcq_arena.json"))
+          OUTPUT_FILE = Path(os.environ["OUTPUT_FILE"])
           LLM_TIMEOUT_SECONDS = 45
           CHUNK_SIZE = 50
 
@@ -220,9 +220,7 @@ jobs:
                           validated_json = json.loads(raw_output)
                           if not isinstance(validated_json, list):
                               raise RuntimeError(f"{provider['name']} output is not a JSON array.")
-                          print(
-                              f"Chunk {start + 1}-{start + len(chunk)} succeeded with {provider['name']}."
-                          )
+                          print(f"Chunk items {start + 1} to {start + len(chunk)} succeeded with {provider['name']}.")
                           chunk_processed = validated_json
                           break
                       except Exception as err:
@@ -230,7 +228,7 @@ jobs:
 
                   if chunk_processed is None:
                       print(
-                          f"Chunk {start + 1}-{start + len(chunk)} failed on all providers. "
+                          f"Chunk items {start + 1} to {start + len(chunk)} failed on all providers. "
                           "Using sanitized chunk."
                       )
                       # Preserve workflow continuity and data progress when providers are
@@ -264,8 +262,9 @@ jobs:
           EOF
 
       - name: Upload compiled MCQ artifact
-        if: always() && hashFiles(format('{0}', env.OUTPUT_FILE)) != ''
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: master-mcq-arena
           path: ${{ env.OUTPUT_FILE }}
+          if-no-files-found: ignore
