@@ -1,0 +1,182 @@
+name: MCQ Arena Multi-LLM Sanitizer & Compiler
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch: # Allows you to run this manually from the Actions tab
+
+jobs:
+  compile_and_process_mcqs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository Code
+        uses: actions/checkout@v4
+
+      - name: Set Up Python Environment
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+
+      - name: Run Resilient Multi-LLM Pipeline Script
+        env:
+          GEMINI_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GROQ_KEY: ${{ secrets.GROQ_API_KEY }}
+        run: |
+          python - << 'EOF'
+          import os
+          import json
+          import glob
+          import re
+          import requests
+
+          def load_and_sanitize_mcqs():
+              compiled_questions = []
+              file_paths = glob.glob("**/*.json", recursive=True)
+              
+              for path in file_paths:
+                  if "master_mcq_arena.json" in path or ".github" in path:
+                      continue
+                  try:
+                      with open(path, 'r', encoding='utf-8') as f:
+                          data = json.load(f)
+                          if isinstance(data, list):
+                              for item in data:
+                                  if not isinstance(item, dict):
+                                      continue
+                                  options = item.get("options", {})
+                                  if not options or not isinstance(options, dict):
+                                      continue
+                                  option_keys = [k for k in options.keys() if k in ["A", "B", "C", "D"]]
+                                  if len(option_keys) != 4:
+                                      continue
+                                  option_strings = [str(options[k]).strip().lower() for k in option_keys]
+                                  if len(set(option_strings)) != 4:
+                                      continue
+                                  correct_ans = item.get("answer")
+                                  if not correct_ans or str(correct_ans).upper() not in ["A", "B", "C", "D"]:
+                                      continue
+                                      
+                                  compiled_questions.append(item)
+                  except Exception as e:
+                      print(f"Skipping unparseable file {path}: {str(e)}")
+              return compiled_questions
+
+          SYSTEM_INSTRUCTION = (
+              "You are a senior surgical educator. Process ALL provided questions and return a single, valid JSON array. "
+              "CRITICAL: Return ONLY raw valid JSON text matching the schema. No chat commentary. No markdown code blocks.\n\n"
+              "SCHEMA FORMAT REQ:\n"
+              "{\n"
+              "  \"id\": \"<HEX_ID>\", \"specialty\": \"<SPECIALTY>\", \"topic\": \"<TOPIC>\", \"question\": \"<STEM>\",\n"
+              "  \"options\": {\"A\": \"text\", \"B\": \"text\", \"C\": \"text\", \"D\": \"text\"},\n"
+              "  \"answer\": \"<LETTER>\",\n"
+              "  \"explanation\": {\n"
+              "    \"correct\": \"### ⚙️ Surgical Mechanism\\n* **Pathophysiological pathway:** [Deep anatomy/pathophysiology under 10 words, bold starting term]\\n\\n### ⚡ Clinical Execution\\n* **Management strategy:** [Clinical choices, short punchy bullets]\",\n"
+              "    \"A\": \"**[Option A Assessment]:** [Reasoning, short and concise]\",\n"
+              "    \"B\": \"**[Option B Assessment]:** [Reasoning, short and concise]\",\n"
+              "    \"C\": \"**[Option C Assessment]:** [Reasoning, short and concise]\",\n"
+              "    \"D\": \"**[Option D Assessment]:** [Reasoning, short and concise]\", \"E\": \"\"\n"
+              "  },\n"
+              "  \"sharp_debrief\": {\n"
+              "    \"S_set_the_stage\": \"### 🎯 S (Set the Stage)\\n* **Verdict:** Correct option is **[Correct Letter]**.\\n* **The Pivot:** [Crux statement under 10 words, bold starting term]\",\n"
+              "    \"H_highlight_excellence\": \"### 🚀 H (Highlight Excellence)\\n* **Core Concept:** [Gold standard reason, short bolded fragment]\",\n"
+              "    \"A_address_the_gaps\": \"### ❌ A (Address the Gaps)\\n* **Option A (Incorrect):** [Reasoning under 10 words, bold start]\\n* **Option B (Incorrect):** [Reasoning under 10 words, bold start]\\n* **Option C (Incorrect):** [Reasoning under 10 words, bold start]\\n* **Option D (Incorrect):** [Reasoning under 10 words, bold start]\",\n"
+              "    \"R_review_learning_points\": \"### 📚 R (Review Learning Points)\\n* **Conceptual Overview:** [Summary sentence].\\n\\n#### 📊 Management Framework\\n| Variable | Clinical Triggers | Immediate Intervention |\\n| :--- | :--- | :--- |\\n| **Row** | • Criteria 1<br>• Criteria 2 | • Action 1<br>• Action 2 |\",\n"
+              "    \"P_plan_for_improvement\": \"### 💡 P (Plan for Improvement)\\n* **The Board Pearl:** *[Key takeaway in italics]*\\n\\n#### 🔧 Surgical Action Checklist\\n1. 🟥 **Step 1:** [Step text]\\n2. 🟨 **Step 2:** [Step text]\"\n"
+              "  },\n"
+              "  \"supplementary_callouts\": {\n"
+              "    \"guideline\": \"### 📋 Guideline Reference\\n* [Guideline citation, short]\",\n"
+              "    \"takeaway\": \"### 🔑 Core Takeaway\\n* **[High-Yield Point]:** [One sentence takeaway]\",\n"
+              "    \"visualization\": \"### 👁️ Operative Visualization\\n* **Field View:** [Anatomy description]\"\n"
+              "  },\n"
+              "  \"discrepancy_flag\": \"### ⚠️ CRITICAL FLAG\\n* [Empty if clean or statement of missing data]\"\n"
+              "}\n"
+              "CRITICAL RULES:\n"
+              "1. Bullets must use short sentence fragments under 10 words.\n"
+              "2. Always bold (** key term **) the beginning of a point.\n"
+              "3. Construct a standard Markdown table using | and <br> within cell items inside R_review_learning_points."
+          )
+
+          def clean_json_string(raw_text):
+              cleaned = raw_text.strip()
+              cleaned = re.sub(r'^```json\s*|```$', '', cleaned, flags=re.MULTILINE).strip()
+              return cleaned
+
+          def try_gemini(payload_text, key):
+              print("Attempting processing via Google Gemini Pro...")
+              url = f"https://googleapis.com{key}"
+              res = requests.post(url, json={"contents": [{"parts": [{"text": payload_text}]}]}, headers={"Content-Type": "application/json"}, timeout=60)
+              if res.status_code == 200:
+                  return clean_json_string(res.json()['candidates'][0]['content']['parts'][0]['text'])
+              raise RuntimeError(f"Gemini HTTP {res.status_code}: {res.text}")
+
+          def try_groq(payload_text, key):
+              print("Attempting processing via Groq Cloud (Llama-3-70b)...")
+              url = "https://groq.com"
+              headers = {"Authorization": f"Bearer {key}", "Content-Type": "application/json"}
+              data = {
+                  "model": "llama3-70b-8192",
+                  "messages": [
+                      {"role": "system", "content": "You are a JSON-only automation server. Output valid raw JSON arrays only."},
+                      {"role": "user", "content": payload_text}
+                  ],
+                  "temperature": 0.1
+              }
+              res = requests.post(url, json=data, headers=headers, timeout=60)
+              if res.status_code == 200:
+                  return clean_json_string(res.json()['choices'][0]['message']['content'])
+              raise RuntimeError(f"Groq HTTP {res.status_code}: {res.text}")
+
+          def process_with_failover(sanitized_batch):
+              prompt_payload = f"{SYSTEM_INSTRUCTION}\n\nHere is the raw input batch of questions to process:\n{json.dumps(sanitized_batch, indent=2)}"
+              
+              providers = [
+                  {"name": "Gemini", "key": os.environ.get("GEMINI_KEY"), "func": try_gemini},
+                  {"name": "Groq", "key": os.environ.get("GROQ_KEY"), "func": try_groq}
+              ]
+              
+              for provider in providers:
+                  if not provider["key"]:
+                      print(f"Skipping {provider['name']}: API key secret not supplied in settings.")
+                      continue
+                  try:
+                      raw_output = provider["func"](prompt_payload, provider["key"])
+                      validated_json = json.loads(raw_output)
+                      print(f"Success! Batch parsed smoothly using {provider['name']} endpoint.")
+                      return validated_json
+                  except Exception as err:
+                      print(f"Warning: {provider['name']} pipeline failed: {str(err)}. Dropping down to fallback provider...")
+              
+              raise RuntimeError("CRITICAL: All available free LLM providers failed or exhausted their token limits.")
+
+          try:
+              print("Initiating workspace MCQ extraction sweep...")
+              sanitized_batch = load_and_sanitize_mcqs()
+              print(f"Pre-processing completed. {len(sanitized_batch)} clean questions queued for processing.")
+              
+              if not sanitized_batch:
+                  print("No items met quality criteria. Exiting safely.")
+                  exit(0)
+                  
+              final_data = process_with_failover(sanitized_batch)
+              
+              with open("master_mcq_arena.json", "w", encoding="utf-8") as out_file:
+                  json.dump(final_data, out_file, indent=2, ensure_ascii=False)
+              print("Master file compilation complete.")
+          except Exception as error:
+              print(f"Execution Error: {str(error)}")
+              exit(1)
+          EOF
+
+      - name: Commit and Push Master Output to Repository
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add master_mcq_arena.json
+          git diff-index --quiet HEAD || git commit -m "docs: auto-compile sanitized master data array [skip ci]"
+          git push origin main
