@@ -229,6 +229,8 @@ jobs:
                           f"Chunk {start + 1}-{start + len(chunk)} failed on all providers. "
                           "Using sanitized chunk."
                       )
+                      # Preserve progress even when providers fail; enrichment-dependent consumers
+                      # should treat these records as non-enriched fallback output.
                       chunk_processed = chunk
 
                   final_output.extend(chunk_processed)
