@@ -39,6 +39,8 @@ jobs:
 
 
           OUTPUT_FILE = Path("master_mcq_arena.json")
+          LLM_TIMEOUT_SECONDS = 45
+          CHUNK_SIZE = 50
 
 
           def load_and_sanitize_mcqs():
@@ -160,7 +162,12 @@ jobs:
                   "contents": [{"parts": [{"text": payload_text}]}],
                   "generationConfig": {"temperature": 0.1},
               }
-              res = requests.post(url, json=body, headers={"Content-Type": "application/json"}, timeout=90)
+              res = requests.post(
+                  url,
+                  json=body,
+                  headers={"Content-Type": "application/json"},
+                  timeout=LLM_TIMEOUT_SECONDS,
+              )
               if res.status_code == 200:
                   return clean_json_string(res.json()["candidates"][0]["content"]["parts"][0]["text"])
               raise RuntimeError(f"Gemini HTTP {res.status_code}: {res.text}")
@@ -178,17 +185,16 @@ jobs:
                   ],
                   "temperature": 0.1,
               }
-              res = requests.post(url, json=data, headers=headers, timeout=90)
+              res = requests.post(url, json=data, headers=headers, timeout=LLM_TIMEOUT_SECONDS)
               if res.status_code == 200:
                   return clean_json_string(res.json()["choices"][0]["message"]["content"])
               raise RuntimeError(f"Groq HTTP {res.status_code}: {res.text}")
 
 
           def process_with_failover(sanitized_batch):
+              final_output = []
               prompt_payload = (
-                  f"{SYSTEM_INSTRUCTION}\n\n"
-                  "Here is the raw input batch of questions to process:\n"
-                  f"{json.dumps(sanitized_batch, ensure_ascii=False)}"
+                  f"{SYSTEM_INSTRUCTION}\n\nHere is the raw input batch of questions to process:\n"
               )
 
               providers = [
@@ -196,21 +202,38 @@ jobs:
                   {"name": "Groq", "key": os.environ.get("GROQ_KEY"), "func": try_groq},
               ]
 
-              for provider in providers:
-                  if not provider["key"]:
-                      print(f"Skipping {provider['name']}: missing API key secret.")
-                      continue
-                  try:
-                      raw_output = provider["func"](prompt_payload, provider["key"])
-                      validated_json = json.loads(raw_output)
-                      if not isinstance(validated_json, list):
-                          raise RuntimeError(f"{provider['name']} output is not a JSON array.")
-                      print(f"Success with {provider['name']}.")
-                      return validated_json
-                  except Exception as err:
-                      print(f"Warning: {provider['name']} failed: {err}")
+              for start in range(0, len(sanitized_batch), CHUNK_SIZE):
+                  chunk = sanitized_batch[start : start + CHUNK_SIZE]
+                  chunk_prompt = prompt_payload + json.dumps(chunk, ensure_ascii=False)
+                  chunk_processed = None
 
-              raise RuntimeError("All configured LLM providers failed.")
+                  for provider in providers:
+                      if not provider["key"]:
+                          print(f"Skipping {provider['name']}: missing API key secret.")
+                          continue
+                      try:
+                          raw_output = provider["func"](chunk_prompt, provider["key"])
+                          validated_json = json.loads(raw_output)
+                          if not isinstance(validated_json, list):
+                              raise RuntimeError(f"{provider['name']} output is not a JSON array.")
+                          print(
+                              f"Chunk {start + 1}-{start + len(chunk)} succeeded with {provider['name']}."
+                          )
+                          chunk_processed = validated_json
+                          break
+                      except Exception as err:
+                          print(f"Warning: {provider['name']} failed: {err}")
+
+                  if chunk_processed is None:
+                      print(
+                          f"Chunk {start + 1}-{start + len(chunk)} failed on all providers. "
+                          "Using sanitized chunk."
+                      )
+                      chunk_processed = chunk
+
+                  final_output.extend(chunk_processed)
+
+              return final_output
 
 
           def main():
@@ -222,11 +245,7 @@ jobs:
                   print("No valid JSON questions found matching criteria. Exiting cleanly.")
                   return 0
 
-              try:
-                  final_data = process_with_failover(sanitized_batch)
-              except Exception as err:
-                  print(f"LLM pipeline unavailable ({err}). Writing sanitized batch directly.")
-                  final_data = sanitized_batch
+              final_data = process_with_failover(sanitized_batch)
 
               with OUTPUT_FILE.open("w", encoding="utf-8") as out_file:
                   json.dump(final_data, out_file, indent=2, ensure_ascii=False)
