@@ -33,6 +33,7 @@ jobs:
           import json
           import os
           import re
+          import sys
           from pathlib import Path
 
           import requests
@@ -256,7 +257,7 @@ jobs:
 
 
           if __name__ == "__main__":
-              raise SystemExit(main())
+              sys.exit(main())
           EOF
 
       - name: Upload compiled MCQ artifact
