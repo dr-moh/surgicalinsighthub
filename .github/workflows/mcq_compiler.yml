@@ -86,8 +86,9 @@ jobs:
                       if correct_ans not in {"A", "B", "C", "D"}:
                           continue
 
+                      item_id = item.get("id")
                       dedupe_key = (
-                          str(item.get("id", "")).strip(),
+                          str(item_id).strip() if item_id is not None else None,
                           str(item.get("question", "")).strip().lower(),
                           tuple(lowered_values),
                       )
@@ -104,15 +105,44 @@ jobs:
 
 
           SYSTEM_INSTRUCTION = (
-              "You are a senior surgical educator. Process ALL provided questions and return one valid JSON array only. "
-              "Do not include markdown or commentary. "
-              "Preserve only 4 options (A-D), unique option text, and answer letters A-D."
+              "You are a senior surgical educator. Process ALL provided questions and return a single, valid JSON array. "
+              "CRITICAL: Return ONLY raw valid JSON text matching the schema. No chat commentary. No markdown code blocks.\n\n"
+              "SCHEMA FORMAT REQ:\n"
+              "{\n"
+              "  \"id\": \"<HEX_ID>\", \"specialty\": \"<SPECIALTY>\", \"topic\": \"<TOPIC>\", \"question\": \"<STEM>\",\n"
+              "  \"options\": {\"A\": \"text\", \"B\": \"text\", \"C\": \"text\", \"D\": \"text\"},\n"
+              "  \"answer\": \"<LETTER>\",\n"
+              "  \"explanation\": {\n"
+              "    \"correct\": \"### ⚙️ Surgical Mechanism\\n* **Pathophysiological pathway:** [Deep anatomy/pathophysiology under 10 words, bold starting term]\\n\\n### ⚡ Clinical Execution\\n* **Management strategy:** [Clinical choices, short punchy bullets]\",\n"
+              "    \"A\": \"**[Option A Assessment]:** [Reasoning, short and concise]\",\n"
+              "    \"B\": \"**[Option B Assessment]:** [Reasoning, short and concise]\",\n"
+              "    \"C\": \"**[Option C Assessment]:** [Reasoning, short and concise]\",\n"
+              "    \"D\": \"**[Option D Assessment]:** [Reasoning, short and concise]\", \"E\": \"\"\n"
+              "  },\n"
+              "  \"sharp_debrief\": {\n"
+              "    \"S_set_the_stage\": \"### 🎯 S (Set the Stage)\\n* **Verdict:** Correct option is **[Correct Letter]**.\\n* **The Pivot:** [Crux statement under 10 words, bold starting term]\",\n"
+              "    \"H_highlight_excellence\": \"### 🚀 H (Highlight Excellence)\\n* **Core Concept:** [Gold standard reason, short bolded fragment]\",\n"
+              "    \"A_address_the_gaps\": \"### ❌ A (Address the Gaps)\\n* **Option A (Incorrect):** [Reasoning under 10 words, bold start]\\n* **Option B (Incorrect):** [Reasoning under 10 words, bold start]\\n* **Option C (Incorrect):** [Reasoning under 10 words, bold start]\\n* **Option D (Incorrect):** [Reasoning under 10 words, bold start]\",\n"
+              "    \"R_review_learning_points\": \"### 📚 R (Review Learning Points)\\n* **Conceptual Overview:** [Summary sentence].\\n\\n#### 📊 Management Framework\\n| Variable | Clinical Triggers | Immediate Intervention |\\n| :--- | :--- | :--- |\\n| **Row** | • Criteria 1<br>• Criteria 2 | • Action 1<br>• Action 2 |\",\n"
+              "    \"P_plan_for_improvement\": \"### 💡 P (Plan for Improvement)\\n* **The Board Pearl:** *[Key takeaway in italics]*\\n\\n#### 🔧 Surgical Action Checklist\\n1. 🟥 **Step 1:** [Step text]\\n2. 🟨 **Step 2:** [Step text]\"\n"
+              "  },\n"
+              "  \"supplementary_callouts\": {\n"
+              "    \"guideline\": \"### 📋 Guideline Reference\\n* [Guideline citation, short]\",\n"
+              "    \"takeaway\": \"### 🔑 Core Takeaway\\n* **[High-Yield Point]:** [One sentence takeaway]\",\n"
+              "    \"visualization\": \"### 👁️ Operative Visualization\\n* **Field View:** [Anatomy description]\"\n"
+              "  },\n"
+              "  \"discrepancy_flag\": \"### ⚠️ CRITICAL FLAG\\n* [Empty if clean or statement of missing data]\"\n"
+              "}\n"
+              "CRITICAL RULES:\n"
+              "1. Bullets must use short sentence fragments under 10 words.\n"
+              "2. Always bold (** key term **) the beginning of a point.\n"
+              "3. Construct a standard Markdown table using | and <br> within cell items inside R_review_learning_points."
           )
 
 
           def clean_json_string(raw_text):
               cleaned = raw_text.strip()
-              cleaned = re.sub(r"^```json\\s*|```$", "", cleaned, flags=re.MULTILINE).strip()
+              cleaned = re.sub(r"^```json\s*|```$", "", cleaned, flags=re.MULTILINE).strip()
               start = cleaned.find("[")
               end = cleaned.rfind("]")
               if start != -1 and end != -1 and end >= start:
