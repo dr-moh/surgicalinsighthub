@@ -1,0 +1,539 @@
+[
+  {
+    "question": "Which of the following is CORRECT regarding the complications of pediatric inguinal hernias?",
+    "options": {
+      "A": "The incidence of testicular atrophy is higher in cases of emergency hernia surgery than in elective cases",
+      "B": "The incidence of testicular atrophy following surgery is lower in premature infants",
+      "C": "The incidence of bowel incarceration is lower in premature infants",
+      "D": "The persistence of a scrotal hydrocele following high ligation of a patent processus vaginalis indicates a recurrence"
+    },
+    "answer": "A) The incidence of testicular atrophy is higher in cases of emergency hernia surgery than in elective cases",
+    "specialty": "Pediatric Surgery",
+    "markdown_debrief": "### SHARP 3.0 Cognitive & Surgical Debrief\n\n* **S – Set the Stage (The Verdict & Diagnostic Pivot)**\n Verdict: Correct: A. The incidence of testicular atrophy is higher in cases of emergency hernia surgery than in elective cases.\n The Pivot: Incarcerated inguinal hernias can compress the spermatic cord vessels within the inguinal canal, reducing blood flow to the testis and leading to a significantly higher rate of testicular atrophy during emergency procedures compared to planned elective repairs.\n* **H – Highlight Excellence (The Surgical \"Why\" & Pathology)**\n  * **Surgical Mechanism:** Pediatric inguinal hernias are indirect hernias caused by a congenital failure of the processus vaginalis to close. When an acute bowel incarceration occurs, the herniated tissue swells within the rigid inguinal canal, compressing the adjacent low-pressure pampiniform plexus and the testicular artery. This venous stasis and reduced arterial inflow can cause ischemic injury to the testis, resulting in testicular atrophy if the pressure is not relieved promptly.\n  * **Clinical Execution:** Because emergency operations for incarcerated hernias carry higher risks of testicular injury and bowel necrosis, the initial approach for an incarcerated hernia without signs of peritonitis is an attempt at manual reduction using gentle pressure and sedation. If manual reduction is successful, the tissue can settle, allowing for a safer, planned elective repair during the same hospital stay. If reduction fails, immediate emergency surgery is required to prevent tissue loss.\n* **A – Address the Gaps (Systematic Distractor Demolition)**\n  * **Distractor Breakdown:**\n Option B (Incorrect): Premature infants have delicate tissues and a higher rate of hernia incarceration, which leads to a higher risk of postoperative testicular atrophy rather than a lower one.\n Option C (Incorrect): Premature infants have a significantly higher risk of bowel incarceration (up to 30%) due to weak abdominal wall structures and delayed closure of the processus vaginalis.\n Option D (Incorrect): A small amount of fluid remaining in the scrotum after high ligation represents a residual distal hydrocele that usually resorbs on its own within a few weeks; it does not mean the hernia has recurred unless a new cough impulse or swelling is found.\n* **R – Review Learning Points (Evidence-Based Framework)**\n Conceptual Overview: Pediatric hernias carry risks of incarceration and testicular ischemia, requiring timely elective repair to avoid the higher complications associated with emergency procedures.\n  * **Classification / Management Framework:**\nHernia Presentation Type\nIncarceration / Ischemia Risk Status\nInitial Clinical Strategy\nKey Complication Concerns\nReducible Inguinal\nLow risk for immediate loss\nSchedule a timely elective repair\nProgressing enlargement over time\nIncarcerated (Stable)\nHigh risk for cord compression\nAttempt manual reduction under sedation\n\nTesticular Atrophy / Cord Injury if prolonged \nStrangulated (Unstable)\nActive tissue necrosis present\nImmediate Emergency Laparotomy\nBowel gangrene, permanent testicular loss\n* **P – Plan for Improvement (The Exam Heuristic)**\n The Board Pearl: Remember that emergency surgery for an incarcerated pediatric hernia carries a higher risk of testicular atrophy due to preoperative pressure on the spermatic vessels. Elective repair should be scheduled early to prevent incarceration, especially in high-risk premature infants.\n\n---\n\n### Supplementary Callouts\n> **Society Guideline**\n> Section on Surgery of the AAP and APSA guidelines recommend scheduling an elective inguinal hernia repair shortly after diagnosis in infants to minimize the risk of acute incarceration and its associated ischemic complications.\n> **Key Takeaway**\n> Emergency surgery for incarcerated pediatric hernias is associated with higher rates of testicular atrophy due to vascular compression within the inguinal canal.\n> **Intraoperative / Imaging Visualization**\n>\nIn the operating room during an emergency repair, the surgeon carefully opens the hernia sac to inspect the trapped bowel loop and checks the color of the adjacent testis; if the testis appears dark or congested, warm saline is applied to assess for a return of perfusion before completing the high ligation."
+  },
+  {
+    "question": "A 6-hour-old male neonate was born with an absent anal opening. Which of the following statements is TRUE?",
+    "options": {
+      "A": "An urgent colostomy should be performed right away",
+      "B": "Anoplasty without a colostomy can be performed if the anomaly is an ARM with a rectovesical fistula",
+      "C": "Fecal continence after surgery is almost nil in all cases",
+      "D": "A divided descending/sigmoid colostomy is ideal for the management of high anorectal malformations"
+    },
+    "answer": "D) A divided descending/sigmoid colostomy is ideal for the management of high anorectal malformations",
+    "specialty": "Pediatric Surgery",
+    "markdown_debrief": "### SHARP 3.0 Cognitive & Surgical Debrief\n\n* **S – Set the Stage (The Verdict & Diagnostic Pivot)**\n Verdict: Correct: D. A divided descending/sigmoid colostomy is ideal for the management of high anorectal malformations.\n The Pivot: For high anorectal malformations (ARM), a completely divided descending or sigmoid colostomy is the preferred initial management. It provides effective bowel decompression and prevents spillover of feces into the distal mucous fistula, which reduces the risk of recurrent urinary tract infections from an associated urinary fistula.\n* **H – Highlight Excellence (The Surgical \"Why\" & Pathology)**\n  * **Surgical Mechanism:** Anorectal malformations result from abnormal development of the urorectal septum during early embryonic growth, often leaving a fistula between the blind-ending bowel and the urinary tract in males. A loop colostomy can allow stool to spill into the distal limb, leading to fecal compaction and bacterial tracking into the urinary system. A completely divided colostomy creates a physical separation that keeps the urinary tract clean and allows for safe distal contrast studies (distal colostogram) to map the fistula before definitive reconstruction.\n  * **Clinical Execution:** Management requires waiting 16–24 hours after birth before choosing a definitive procedure. This time allows intraluminal pressure to build, forcing gas down the tract so the exact level of the malformation can be assessed on an invertogram or ultrasound. High lesions with urinary fistulas are managed with a staged approach: an initial divided colostomy, followed later by a definitive Posterior Sagittal Anorectoplasty (PSARP/Pena procedure).\n* **A – Address the Gaps (Systematic Distractor Demolition)**\n  * **Distractor Breakdown:**\n Option A (Incorrect): Immediate surgery at 6 hours is premature. Waiting 16–24 hours allows gas to move down the distal tract, providing the anatomical information needed to choose the correct procedure.\n Option B (Incorrect): A rectovesical fistula is a high malformation; attempting a primary anoplasty without a protective colostomy is contraindicated, as it carries a high risk of field infection, breakdown, and damage to the pelvic structures.\n    * *Option C (Incorrect):* Postoperative bowel control depends heavily on the type of malformation and the quality of the sacral nerves and sphincter muscles. Low malformations generally have a good prognosis for continence ($>80–90\\%$), meaning it is incorrect to state control is low in all cases.\n* **R – Review Learning Points (Evidence-Based Framework)**\n Conceptual Overview: High anorectal malformations require a staged surgical approach, using a divided colostomy early on to protect the urinary tract and ensure safe decompression.\n  * **Classification / Management Framework:**\nARM Anomaly Level Type\nAssociated Fistula Type\nInitial Newborn Management\nDefinitive Reconstruction\nLow Malformation\nPerineal fistula\nPrimary Perineal Anoplasty\nNone required (Completed at birth)\n\nHigh Malformation\nRectovesical / Rectourethral\n\nDivided descending colostomy\nStaged PSARP (Pena Procedure)\nCloacal Malformation\nConfluent tract (Females)\nDivided colostomy + Total diversion\nComplex multi-specialty reconstruction\n* **P – Plan for Improvement (The Exam Heuristic)**\n The Board Pearl: For high anorectal malformations with urinary tract fistulas, select a completely divided descending or sigmoid colostomy as the initial step to keep the distal limb clean and minimize urinary tract infections.\n\n---\n\n### Supplementary Callouts\n> **Society Guideline**\n> The Krickenbeck consensus and APSA guidelines state that managing high ARMs requires a completely divided colostomy to ensure proper fecal diversion and allow for accurate distal colostogram mapping before reconstruction.\n> **Key Takeaway**\n> A divided colostomy is the standard initial treatment for high anorectal malformations to protect the urinary tract and enable safe future reconstruction.\n> **Intraoperative / Imaging Visualization**\n>\nBefore definitive surgery, the team performs a distal colostogram by injecting water-soluble contrast into the mucous fistula of the stoma under pressure, visualizing the tract to locate where the bowel connects to the urinary system."
+  },
+  {
+    "question": "Ladd's procedure for a neonate with malrotation and bilious vomiting includes which of the following steps?",
+    "options": {
+      "A": "Clockwise detorsion, division of Ladd's bands, and positioning the cecum on the left side",
+      "B": "Counter-clockwise derotation, division of Ladd’s bands, bowel fixation, and appendectomy",
+      "C": "Counter-clockwise detorsion, division of Ladd’s bands, broadening of the mesentery, and appendectomy",
+      "D": "Clockwise detorsion, division of Ladd’s bands, and positioning the cecum on the right side"
+    },
+    "answer": "C) Counter-clockwise detorsion, division of Ladd’s bands, broadening of the mesentery, and appendectomy",
+    "specialty": "Pediatric Surgery",
+    "markdown_debrief": "### SHARP 3.0 Cognitive & Surgical Debrief\n\n* **S – Set the Stage (The Verdict & Diagnostic Pivot)**\n Verdict: Correct: C. Counter-clockwise detorsion, division of Ladd’s bands, broadening of the mesentery, and appendectomy.\n The Pivot: Because a midgut volvulus almost always twists in a clockwise direction around the narrow mesenteric root, correcting it requires a manual counter-clockwise untwisting (detorsion), followed by dividing the compressing peritoneal bands and broadening the mesenteric base.\n* **H – Highlight Excellence (The Surgical \"Why\" & Pathology)**\n  * **Surgical Mechanism:** Ladd's procedure is designed to reduce the risk of recurrent volvulus by altering the internal anatomy, rather than trying to force a normal anatomy. The steps are sequential: 1) Evans or delivery of the midgut to untwist it in a counter-clockwise direction. 2) Division of the abnormal peritoneal folds (Ladd’s bands) that cross and compress the duodenum. 3) Straightening the duodenum and broadening the narrow mesenteric root to keep the vessels stable. 4) Performing an incidental appendectomy, because the cecum will be left in the left upper quadrant, which would make diagnosing appendicitis difficult later in life.\n  * **Clinical Execution:** Once the bowel is untwisted, the surgeon places the small bowel on the right side of the abdomen and the large colon on the left. No attempt is made to fix the bowel in place with sutures, as broadening the mesenteric base is sufficient to prevent the loops from twisting again.\n* **A – Address the Gaps (Systematic Distractor Demolition)**\n  * **Distractor Breakdown:**\n Option A & D (Incorrect): Twisting the bowel in a clockwise direction worsens the volvulus, as the primary twist is almost always clockwise; detorsion must be performed in a counter-clockwise direction.\n Option B (Incorrect): Active structural bowel fixation (pexy) is not a standard part of a Ladd's procedure. Forcing artificial attachments can create points for internal hernias or mechanical obstructions; broadening the mesentery is the correct method to stabilize the loops.\n* **R – Review Learning Points (Evidence-Based Framework)**\n Conceptual Overview: Ladd's procedure rearranges the abdominal anatomy into a stable non-rotated state to prevent recurrent midgut volvulus.\n  * **Classification / Management Framework:**\nOperative Step Component\nAnatomical Action Performed\nFunctional Target Purpose\nLong-term Clinical Rationale\nMidgut Untwisting\n\nCounter-clockwise rotation\nRestores blood flow through the SMA\nPrevents ischemic bowel necrosis\nLadd’s Bands Division\nIncising peritoneal folds over duodenum \nRelieves duodenal obstruction\nResolves bilious vomiting symptoms \nMesentery Broadening\nMobilizing the root of the mesentery \nWidens the base of the vascular pedicle\nPrevents future volvulus events \nIncidental Appendectomy\nRemoval of the appendix \nPrevents atypical diagnostic confusion\nAvoids delayed diagnosis of left-sided appendicitis\n* **P – Plan for Improvement (The Exam Heuristic)**\n The Board Pearl: Remember the key sequence of a Ladd's procedure: Counter-clockwise untwisting, divide the bands, broaden the mesentery, and perform an appendectomy, leaving the small bowel on the right and the colon on the left.\n\n---\n\n### Supplementary Callouts\n> **Society Guideline**\n> Pediatric surgery consensus statements emphasize that if the bowel remains dark or congested after counter-clockwise untwisting, the abdomen should be temporarily closed and a \"second-look\" laparotomy scheduled in 24 hours to reassess viability before performing extensive resections.\n> **Key Takeaway**\n> Ladd's procedure requires counter-clockwise untwisting, division of peritoneal bands, broadening of the mesentery, and an appendectomy to resolve a midgut volvulus safely.\n> **Intraoperative / Imaging Visualization**\n> Upon opening the peritoneum, the surgeon delivers the congested bowel loops, identifies the direction of the twist around the SMA base, and untwists it in a counter-clockwise direction until the duodenum can be seen running straight down the right side of the spine."
+  },
+  {
+    "question": "A 2-day-old male neonate is admitted with bile-stained (bilious) vomiting. An abdominal X-ray showed a dilated stomach and a few loops of bowel shifted to the left side of the abdomen. What is the most likely diagnosis?",
+    "options": {
+      "A": "Hirschsprung's disease",
+      "B": "Small bowel atresia",
+      "C": "Malrotation with midgut volvulus",
+      "D": "Hypertrophic pyloric stenosis"
+    },
+    "answer": "C) Malrotation with midgut volvulus",
+    "specialty": "Pediatric Surgery",
+    "markdown_debrief": "### SHARP 3.0 Cognitive & Surgical Debrief\n\n* **S – Set the Stage (The Verdict & Diagnostic Pivot)**\n Verdict: Correct: C. Malrotation with midgut volvulus.\n The Pivot: Any neonate presenting with sudden bilious vomiting must be assumed to have intestinal malrotation with an active midgut volvulus until proven otherwise. The X-ray finding of bowel loops shifted to the left side reflects an abnormal congenital rotation of the midgut.\n* **H – Highlight Excellence (The Surgical \"Why\" & Pathology)**\n  * **Surgical Mechanism:** Intestinal malrotation occurs when the midgut fails to complete its normal $270^\\circ$counter-clockwise rotation around the superior mesenteric artery (SMA) during embryonic development. This leaves the cecum in the upper abdomen and results in a narrow mesenteric base. Ladd's bands (peritoneal bands) cross and compress the duodenum. The narrow mesentery allows the entire midgut to twist around the SMA (midgut volvulus), causing a closed-loop obstruction and rapidly cutting off the blood supply to the small bowel.\n  * **Clinical Execution:** This presentation represents an absolute surgical emergency. Delaying treatment can lead to total midgut necrosis and short bowel syndrome. If the patient is stable, a Upper Gastrointestinal (UGI) Contrast Series is the diagnostic study of choice to confirm the position of the duodenojejunal flexure. If the patient shows signs of peritonitis or shock, they must proceed directly to an emergency laparotomy for a Ladd’s procedure.\n* **A – Address the Gaps (Systematic Distractor Demolition)**\n  * **Distractor Breakdown:**\n Option A (Incorrect): Hirschsprung's disease typically presents with delayed passage of meconium ($>24–48\\text{ hours}$), progressive abdominal distension, and diffuse dilated loops of large bowel on X-ray, rather than a rapid upper obstruction pattern.\n Option B (Incorrect): Small bowel atresia causes early bilious vomiting, but the X-ray usually shows multiple dilated air-fluid loops up to the point of the atresia, without the specific left-sided displacement pattern typical of malrotation.\n Option D (Incorrect): Hypertrophic pyloric stenosis presents later (3–6 weeks of life) with non-biliousprojectile vomiting and a palpable abdominal mass, as the obstruction is located proximal to the bile duct entry.\n* **R – Review Learning Points (Evidence-Based Framework)**\n Conceptual Overview: Neonatal bilious vomiting requires rapid assessment to rule out malrotation and midgut volvulus, protecting the bowel from ischemic injury.\n  * **Classification / Management Framework:**\nNeonatal Vomiting Character\nRadiographic Feature finding\nMost Likely Pathology\nImmediate Surgical / Clinical Step\n\nBilious (Green)\n\nAbnormal bowel position / Left shift\n\nMalrotation / Volvulus\nUrgent UGI series or Immediate Ladd's Laparotomy\n\nNon-Bilious (Clear/Milk)\nIndistinct gas / Single bubble\nPyloric Stenosis \nRehydrate, correct electrolytes, then Myotomy \nBilious (Green)\nMultiple dilated distal loops\nDistal Bowel Atresia \nResuscitate, taper bowel, primary anastomosis\n* **P – Plan for Improvement (The Exam Heuristic)**\n The Board Pearl: If a neonate presents with bilious vomiting, the answer is malrotation with midgut volvulus until proven otherwise. Proceed to a UGI series if the patient is stable, or go straight to the operating room if signs of ischemia or shock are present.\n\n---\n\n### Supplementary Callouts\n> **Society Guideline**\n> American Pediatric Surgical Association (APSA) guidelines emphasize that bilious emesis in a newborn is a true emergency, requiring immediate evaluation to rule out malrotation and prevent irreversible bowel necrosis.\n> **Key Takeaway**\n> Neonatal bilious vomiting is a sign of potential midgut volvulus from malrotation, requiring immediate diagnosis and surgical intervention.\n> **Intraoperative / Imaging Visualization**\n>\nOn an upper GI contrast series, the surgeon looks for an abnormal position of the ligament of Treitz (failing to cross the midline to the left) or a characteristic \"corkscrew\" appearance of the distal duodenum, confirming a midgut volvulus."
+  },
+  {
+    "question": "A 21-day-old male neonate presented with a complaint of persistent, projectile, non-bilious vomiting after each feed. He remains hungry after vomiting, and physical examination revealed a palpable olive-shaped mass. Upon admission, his serum potassium level was 2.9 mEq/L. Which of the following is TRUE regarding the management of this patient?",
+    "options": {
+      "A": "Serum carbon dioxide (<30 mmol/L), chloride (>100 mmol/L), and potassium (4.5–6.5 mmol/L) levels serve as indicators of adequate resuscitation",
+      "B": "Postoperative emesis on the third postoperative day should raise suspicion of an incomplete myotomy, and a barium meal examination should be ordered immediately",
+      "C": "Postoperative feeding should be started after 12 hours",
+      "D": "On abdominal ultrasound, a pyloric channel length of 12 mm is diagnostic"
+    },
+    "answer": "A) Serum carbon dioxide (<30 mmol/L), chloride (>100 mmol/L), and potassium (4.5–6.5 mmol/L) levels serve as indicators of adequate resuscitation",
+    "specialty": "Pediatric Surgery",
+    "markdown_debrief": "### SHARP 3.0 Cognitive & Surgical Debrief\n\n* **S – Set the Stage (The Verdict & Diagnostic Pivot)**\n Verdict: Correct: A. Serum carbon dioxide ($<30\\text{ mmol/L}$), chloride ($>100\\text{ mmol/L}$), and potassium ($3.5–5.0\\text{ mEq/L}$, note: value adapted to standard normokalemic ranges) serve as indicators of adequate resuscitation.\n The Pivot: Hypertrophic pyloric stenosis is a medical resuscitation emergency before it is a surgical one. Surgery must never be performed until the classic hypokalemic, hypochloremic metabolic alkalosis is fully corrected, as demonstrated by a normal serum bicarbonate/CO2 and normal electrolyte levels.\n* **H – Highlight Excellence (The Surgical \"Why\" & Pathology)**\n  * **Surgical Mechanism:** Persistent vomiting of gastric secretions leads to a loss of water, hydrochloric acid, and potassium. The kidneys attempt to preserve volume by retaining sodium in exchange for hydrogen ions, leading to a paradoxical aciduria that worsens the systemic metabolic alkalosis. Operating on an infant with uncorrected alkalosis significantly increases the risk of postoperative respiratory depression and apnea under general anesthesia.\n  * **Clinical Execution:** Initial management requires stopping oral intake and placing an IV line to infuse an initial fluid bolus followed by $0.45\\%$ or $0.9\\%$ Normal Saline with 5% Dextrose and added Potassium Chloride. Surgery—a Ramstedt Pyloromyotomy—is safely scheduled only after labs confirm that the serum chloride is $>100\\text{ mmol/L}$ and the total $\\text{CO}_2$ is $<30\\text{ mmol/L}$, indicating that the metabolic alkalosis has been corrected.\n* **A – Address the Gaps (Systematic Distractor Demolition)**\n  * **Distractor Breakdown:**\n Option B (Incorrect): Mild postoperative vomiting is common due to transient pyloric edema and gastritis. An immediate barium study on day 3 is premature; conservative management and slow re-feeding are tried first, as a barium meal will often show an altered channel early on even after a successful operation.\n Option C (Incorrect): Modern protocols favor starting ad-libitum or structured feeds early (typically within 2 to 6 hours after surgery), rather than delaying for 12 hours, which helps reduce hospital stays.\n Option D (Incorrect): On abdominal ultrasound, diagnostic criteria for pyloric stenosis require a pyloric muscle thickness $\\ge 3–4\\text{ mm}$ and a pyloric channel length $\\ge 14–17\\text{ mm}$. A length of 12 mm falls below the standard diagnostic cutoff.\nReview Learning Points (Evidence-Based Framework)\n Conceptual Overview: Pyloric stenosis requires careful fluid and electrolyte resuscitation to correct metabolic alkalosis before proceeding with a pyloromyotomy.\n  * **Classification / Management Framework:**\nDiagnostic Finding\nTarget Electrolyte Levels\nImmediate Resuscitation Goal\nDefinitive Surgical Maneuver\nPyloric Ultrasound\n\nThickness $\\ge 4$ mm\n\nLength $\\ge 14$mm\n\nCorrect Alkalosis First :\n\n$\\text{Cl}^- > 100$ , $\\text{HCO}_3^- < 30$\nRamstedt Pyloromyotomy (splits muscle, spares mucosa)\n* **P – Plan for Improvement (The Exam Heuristic)**\n The Board Pearl: If an infant with pyloric stenosis has abnormal labs (such as low chloride or high bicarbonate), the correct immediate step is always IV fluid resuscitation to correct the alkalosis, rather than going straight to the operating room.\n\n---\n\n### Supplementary Callouts\n> **Society Guideline**\n> Pediatric surgery consensus guidelines state that hypertrophic pyloric stenosis is an elective surgical condition that requires full correction of hypochloremic metabolic alkalosis beforehand to ensure a safe anesthetic induction.\n> **Key Takeaway**\n> Correcting the hypochloremic metabolic alkalosis is the priority in managing pyloric stenosis before performing a pyloromyotomy.\n> **Intraoperative / Imaging Visualization**\n>\nDuring a Ramstedt pyloromyotomy, the surgeon makes an incision through the hypertrophied pyloric muscle fibers down to the submucosal layer, gently separating the muscle until the intact, shiny mucosa bulges through, confirming the obstruction has been relieved."
+  },
+  {
+    "question": "Which of the following closely corresponds to the 24-hour maintenance fluid, electrolyte, and dextrose requirement of a 10 kg infant?",
+    "options": {
+      "A": "1000 ml water; 30 mEq of Na+; 30 mEq of K+; 30 mEq of Cl-; and 50 g of dextrose",
+      "B": "1000 ml of water; 60 mEq of Na+; 20 mEq of K+; 30 mEq of Cl-; and 500 g of dextrose",
+      "C": "1000 ml of water; 30 mEq of Na+; 20 mEq of K+; 30 mEq of Cl-; and 50 g of dextrose",
+      "D": "1000 ml of water; 30 mEq of Na+; 10 mEq of K+; 40 mEq of Cl-; and 5 g of dextrose"
+    },
+    "answer": "C) 1000 ml of water; 30 mEq of Na+; 20 mEq of K+; 30 mEq of Cl-; and 50 g of dextrose",
+    "specialty": "Pediatric Surgery",
+    "markdown_debrief": "### SHARP 3.0 Cognitive & Surgical Debrief\n\n* **S – Set the Stage (The Verdict & Diagnostic Pivot)**\n  * **Verdict:** Correct: C. 1000 ml of water; 30 mEq of Na+; 20 mEq of K+; 30 mEq of Cl-; and 50 g of dextrose.\n The Pivot: Using the standard Holliday-Segar method (4-2-1 rule) for a 10 kg infant yields a daily fluid requirement of 1000 ml. Standard maintenance requirements provide 3 mEq/100 ml of Sodium (30 mEq), 2 mEq/100 ml of Potassium (20 mEq), and 5% Dextrose (50 g), which matches option C exactly.\n* **H – Highlight Excellence (The Surgical \"Why\" & Pathology)**\n  * **Surgical Mechanism:** Pediatric maintenance calculations are based on caloric expenditure and metabolic needs. For an infant up to 10 kg, the fluid requirement is $100\\text{ mL/kg/day}$ ($1000\\text{ mL}$ total). Normal physiological requirements for electrolytes are $2–3\\text{ mEq/100 mL}$ for Sodium and $1–2\\text{ mEq/100 mL}$ for Potassium. Dextrose is delivered as a 5% solution ($5\\text{ g/100 mL}$, totaling $50\\text{ g}$ in $1000\\text{ mL}$), which provides the necessary glucose to prevent glycogen depletion and ketosis without causing serum osmolarity issues.\n  * **Clinical Execution:** In a postoperative pediatric patient, providing these calculated requirements helps maintain fluid and electrolyte balance. Using a solution like 5% Dextrose in $0.45\\%$ Normal Saline with $20\\text{ mEq/L}$ of Potassium Chloride at a rate of $40\\text{ mL/hr}$ delivers these requirements safely, helping prevent complications like hyponatremia.\n* **A – Address the Gaps (Systematic Distractor Demolition)**\n  * **Distractor Breakdown:**\n Option A (Incorrect): This option provides too much potassium ($30\\text{ mEq}$ is higher than the standard $2\\text{ mEq/100 mL}$ limit), which increases the risk of hyperkalemia in an infant with changing postoperative renal function.\n Option B (Incorrect): This option lists an incorrect carbohydrate calculation ($500\\text{ g}$ of dextrose in $1000\\text{ mL}$ would create an extremely hypertonic 50% solution, causing severe fluid shifts and vascular irritation).\n Option D (Incorrect): This option provides too little dextrose ($5\\text{ g}$ represents a 0.5% solution, which is insufficient to prevent muscle breakdown or maintain normal blood sugar levels).\n* **R – Review Learning Points (Evidence-Based Framework)**\n Conceptual Overview: Pediatric maintenance fluid management utilizes the Holliday-Segar model to calculate baseline daily requirements for water, sodium, potassium, and glucose.\n  * **Classification / Management Framework:**\nPatient Weight Segment\nHolliday-Segar Fluid Formula\nElectrolyte Standard Ratio\nDextrose Concentration\n$\\le$ 10 kg\n\n100 mL / kg / 24 hrs\n\nNa+: 3 mEq / 100 mL\n\nK+: 2 mEq / 100 mL\n\n5% Dextrose ($5\\text{ g/100 mL}$)\n11–20 kg\n1000 mL + 50 mL/kg for each kg over 10\nNa+: 3 mEq / 100 mL\n\nK+: 2 mEq / 100 mL\n5% Dextrose ($5\\text{ g/100 mL}$)\n$>20$ kg\n1500 mL + 20 mL/kg for each kg over 20\nNa+: 3 mEq / 100 mL\n\nK+: 2 mEq / 100 mL\n5% Dextrose ($5\\text{ g/100 mL}$)\n* **P – Plan for Improvement (The Exam Heuristic)**\n The Board Pearl: For a standard 10 kg child, remember the base numbers: 1000 ml of fluid, 30 mEq of Sodium, 20 mEq of Potassium, and 50 g of Dextrose over 24 hours. This matches a standard maintenance approach of 5% Dextrose in half-normal saline with $20\\text{ mEq/L}$ KCl.\n\n---\n\n### Supplementary Callouts\n> **Society Guideline**\n>\nAAP and pediatric surgical guidelines recommend using isotonic or near-isotonic maintenance fluids with dextrose in postoperative pediatric patients to reduce the risk of hospital-acquired hyponatremia.\n> **Key Takeaway**\n> A 10 kg infant requires approximately 1000 ml of water, 30 mEq of Sodium, 20 mEq of Potassium, and 50 g of Dextrose over 24 hours for maintenance.\n> **Intraoperative / Imaging Visualization**\n>\nWhen checking the patient's fluid orders on the ward, the clinician verifies the infusion pump is set to a maintenance rate of $40\\text{ mL/hour}$ for a 10 kg child, while monitoring urine output to ensure it stays above $1–2\\text{ mL/kg/hour}$."
+  },
+  {
+    "question": "Which of the following is CORRECT regarding rectal prolapse and intussusception?",
+    "options": {
+      "A": "In rectal prolapse, a lubricated tongue blade can be passed along the side of the protruding mass",
+      "B": "They can be reliably differentiated based on clinical features and physical examination",
+      "C": "Rectal prolapse in children should always be operated on immediately",
+      "D": "Hydrostatic reduction can be tried in infants with ileocecal intussusception showing signs of small bowel obstruction"
+    },
+    "answer": "B) They can be reliably differentiated based on clinical features and physical examination",
+    "specialty": "Pediatric Surgery",
+    "markdown_debrief": "### SHARP 3.0 Cognitive & Surgical Debrief\n\n* **S – Set the Stage (The Verdict & Diagnostic Pivot)**\n Verdict: Correct: B. They can be reliably differentiated based on clinical features and physical examination.\n The Pivot: A physical exam can differentiate a full rectal prolapse from an un-reduced intussusception protruding through the anus: in a rectal prolapse, the mucosal fold reflects directly onto the perianal skin, preventing a finger or tongue blade from passing into the rectum, whereas in an intussusception, a space exists around the mass that allows a probe to pass deep into the canal.\n* **H – Highlight Excellence (The Surgical \"Why\" & Pathology)**\n  * **Surgical Mechanism:** Rectal prolapse involves a full-thickness descent of the rectal wall through the anal sphincter, creating a continuous fold with the perianal skin. An intussusception that has tracked far enough to protrude through the anus represents a small bowel or proximal colon segment exiting through a patent anal canal. Because it originates from higher up, a space remains between the invaginated mass and the normal rectal wall.\n  * **Clinical Execution:** Performing this simple exam step helps avoid dangerous diagnostic errors. If a probe can pass deep into the canal alongside the protruding tissue, the diagnosis is an advanced intussusception rather than a simple prolapse, requiring immediate evaluation and intervention to address potential bowel compromise.\n* **A – Address the Gaps (Systematic Distractor Demolition)**\n  * **Distractor Breakdown:**\n Option A (Incorrect): In a true rectal prolapse, a tongue blade cannot be passed alongside the mass because the mucosa is directly continuous with the perianal skin. A probe can only pass if the mass is an intussusception originating from higher up.\n Option C (Incorrect): Pediatric rectal prolapse is initially managed conservatively with stool softeners, dietary adjustments, and manual reduction, as most cases resolve over time without surgery.\n Option D (Incorrect): While a mild mechanical back-up of gas is acceptable, attempting non-operative hydrostatic reduction in an infant with prolonged, complete small bowel obstruction or signs of peritonitis is risky due to a high likelihood of bowel ischemia and perforation.\n* **R – Review Learning Points (Evidence-Based Framework)**\n Conceptual Overview: Protruding anorectal masses in children require careful physical examination to differentiate between localized rectal prolapse and an advanced, descending intussusception.\n  * **Classification / Management Framework:**\nProtruding Mass Variant\nPhysical Exam Probe Finding\nMucosal Junction Status\nPrimary Clinical Approach\nRectal Prolapse\n\nProbe cannot passalongside mass \nContinuous with perianal skin edge\nConservative (Stool softeners, manual reduction) \nProtruding Intussusception\nProbe passes deeply into rectal lumen\nOriginates from higher bowel segment\n\nImmediate surgical / radiologic evaluation\n* **P – Plan for Improvement (The Exam Heuristic)**\n The Board Pearl: If a question asks how to tell a rectal prolapse apart from a protruding intussusception on physical exam, remember that a probe will pass deeply into the anus alongside an intussusception, but will be blocked by the continuous skin-mucosa fold of a rectal prolapse.\n\n---\n\n### Supplementary Callouts\n> **Society Guideline**\n> Pediatric surgery and gastroenterology consensus guidelines state that primary rectal prolapse in children should be managed non-operatively, while checking for potential underlying causes like cystic fibrosis or chronic parasitism.\n> **Key Takeaway**\n> Physical examination and the ability to pass a probe alongside the mass can differentiate a rectal prolapse from a protruding intussusception.\n> **Intraoperative / Imaging Visualization**\n>\nOn physical exam, the clinician inspects the tissue folds: a rectal prolapse shows concentric rings of mucosa reflecting directly onto the anal verge, while an intussusception appears as a separate, dark red, elongated mass exiting through the open sphincter lumen."
+  },
+  {
+    "question": "A 2-year-old female child presented with a large left-sided renal mass. Intraoperatively, there was a tumor rupture. Which of the following statements is TRUE?",
+    "options": {
+      "A": "Preoperative chemotherapy increases the risk of tumor rupture during surgical manipulation",
+      "B": "Rupture of the renal capsule or the presence of tumor spillage will upgrade the tumor stage",
+      "C": "Gerota’s fascia should not be touched in order to decrease the chances of rupture",
+      "D": "Peritoneal soiling is currently considered Stage II, which adds radiation and chemotherapy to the management"
+    },
+    "answer": "B) Rupture of the renal capsule or the presence of tumor spillage will upgrade the tumor stage",
+    "specialty": "Pediatric Surgery",
+    "markdown_debrief": "### SHARP 3.0 Cognitive & Surgical Debrief\n\n* **S – Set the Stage (The Verdict & Diagnostic Pivot)**\n Verdict: Correct: B. Rupture of the renal capsule or the presence of tumor spillage will upgrade the tumor stage.\n The Pivot: Under both the NWTSG/COG and SIOP staging systems for Wilms tumor (nephroblastoma), any intraoperative tumor rupture or spillage automatically upgrades the disease to Stage III, requiring changes to the postoperative treatment plan.\n* **H – Highlight Excellence (The Surgical \"Why\" & Pathology)**\n  * **Surgical Mechanism:** Wilms tumor is a delicate embryonic tumor derived from metanephric blastema cells. The tumor is enclosed by a renal capsule and Gerota's fascia. If the capsule ruptures during surgery, tumor cells spill into the peritoneal cavity. This transforms a localized disease into one with a high risk of diffuse peritoneal seeding, necessitating the addition of abdominal radiation therapy to control local recurrence.\n  * **Clinical Execution:** During a radical nephrectomy for a Wilms tumor, surgeons use a wide transperitoneal approach to achieve complete control of the renal vessels before manipulating the mass. Every effort is made to remove the tumor en bloc with its surrounding fat and Gerota's fascia intact. If a rupture occurs, the site must be thoroughly irrigated, the area documented, and the patient's staging upgraded to Stage III to initiate postoperative flank or whole-abdomen radiation alongside multi-agent chemotherapy.\n* **A – Address the Gaps (Systematic Distractor Demolition)**\n  * **Distractor Breakdown:**\n Option A (Incorrect): Preoperative chemotherapy (the SIOP approach) typically shrinks the tumor and hardens its pseudocapsule, decreasing the risk of intraoperative rupture during surgical handling rather than increasing it.\n Option C (Incorrect): Gerota’s fascia must be removed en bloc with the kidney tumor; leaving it untouched violates oncologic principles and increases the risk of positive margins and recurrence.\n Option D (Incorrect): Peritoneal soiling or tumor spillage upgrades the disease to Stage III (not Stage II), which modifies the treatment plan by requiring abdominal radiation therapy.\n* **R – Review Learning Points (Evidence-Based Framework)**\n Conceptual Overview: Staging for Wilms tumor is based on whether the capsule remains intact and whether the tumor can be completely removed without local contamination.\n  * **Classification / Management Framework:**\nNWTSG / COG Wilms Stage\nPathological Extension Criteria\nTumor Spillage Status\nPostoperative Management Pivot\nStage I\nLimited to kidney; intact capsule\nAbsent\nRoutine chemotherapy; no radiation\nStage II\nExtends beyond kidney but completely resected\nAbsent\nRoutine chemotherapy; no radiation\n\nStage III\nResidual tumor, positive nodes, or capsule breach\n\nPresent (Local or Diffuse)\nAdd Abdominal Radiation Therapy + Intensified Chemotherapy\nStage IV\nHematogenous metastases (Lung, Liver)\nVariable\nSystemic chemotherapy + Local therapies\n* **P – Plan for Improvement (The Exam Heuristic)**\n The Board Pearl: Remember that any intraoperative rupture, capsule breach, or fluid spillage during a Wilms tumor resection automatically upgrades the patient to Stage III, which requires adding postoperative abdominal radiation therapy.\n\n---\n\n### Supplementary Callouts\n> **Society Guideline**\n> Children's Oncology Group (COG) guidelines state that if a Wilms tumor ruptures during surgery, the patient must be managed under Stage III protocols, receiving abdominal radiation within 10–14 days of surgery to optimize local control.\n> **Key Takeaway**\n> Intraoperative tumor rupture or capsule breach upgrades a Wilms tumor to Stage III, requiring the addition of postoperative abdominal radiation.\n> **Intraoperative / Imaging Visualization**\n> In the operating room, the surgeon inspects the tumor capsule throughout the dissection; if a tear occurs, the area is marked with surgical clips to help the radiation oncologist accurately target the postoperative radiation field."
+  },
+  {
+    "question": "A 2-year-old child has a right-sided impalpable testis but a normal left testis. Which of the following statements is TRUE?",
+    "options": {
+      "A": "There is a greater than 90% chance of finding the testis or cord structures during a right inguinal exploration",
+      "B": "There is a greater than 10% chance of spontaneous descent of the right testis within 12 months",
+      "C": "Orchidopexy will significantly improve the long-term exocrine function of this right testis",
+      "D": "Orchidopexy will reduce the frequency of malignancy occurring in the right testis"
+    },
+    "answer": "D) Orchidopexy will reduce the frequency of malignancy occurring in the right testis",
+    "specialty": "Pediatric Surgery",
+    "markdown_debrief": "### SHARP 3.0 Cognitive & Surgical Debrief\n\n* **S – Set the Stage (The Verdict & Diagnostic Pivot)**\n Verdict: Correct: D. Orchidopexy will reduce the frequency of malignancy occurring in the right testis.\n The Pivot: Performing an orchidopexy helps lower the risk of testicular cancer by repositioning the testis into the cooler scrotal environment, and it makes the testis accessible for manual self-examinations to detect any future changes early.\n* **H – Highlight Excellence (The Surgical \"Why\" & Pathology)**\n  * **Surgical Mechanism:** Cryptorchidism exposes the germ cells of the testis to higher intra-abdominal temperatures ($37^\\circ\\text{C}$ vs. the optimal scrotal $33^\\circ\\text{C}$). This chronic heat exposure leads to progressive cell loss, dysgenesis, and an increased risk of malignant transformation into seminomas or non-seminomatous germ cell tumors. Moving the testis into the scrotum helps reduce this oncologic risk, though the baseline risk remains slightly higher than in the general population.\n  * **Clinical Execution:** For an impalpable testis, the initial diagnostic step is diagnostic laparoscopy rather than a blind inguinal incision, as up to 40% of impalpable testes are located within the abdomen. Orchidopexy should ideally be performed between 6 and 12 months of age to maximize its protective effects on fertility and cellular development.\n* **A – Address the Gaps (Systematic Distractor Demolition)**\n  * **Distractor Breakdown:**\n    * *Option A (Incorrect):* For truly impalpable testes, a standard inguinal incision will miss an intra-abdominal location in a significant number of cases. Laparoscopy is the preferred approach to locate the testis or confirm a vanished testis.\n Option B (Incorrect): Spontaneous descent of an undescended testis is rare after the age of 3 to 6 months. By age 2, the probability of spontaneous descent is nearly zero, making surgical correction necessary.\n Option C (Incorrect): While orchidopexy preserves remaining hormone production and assists with future fertility, performing the procedure late (at age 2) limits its ability to fully restore normal spermatogenesis (exocrine function) due to established tissue changes.\n* **R – Review Learning Points (Evidence-Based Framework)**\n Conceptual Overview: Managing cryptorchidism requires timely surgical repositioning to protect future fertility, reduce cancer risks, and enable regular clinical examinations.\n  * **Classification / Management Framework:**\nTesticular Palpability Status\nAnatomical Probability Location\nInitial Surgical Choice Approach\nPrimary Clinical Purpose\nPalpable Undescended\nInguinal canal / Ectopic site\nInguinal Orchidopexy route\nSecures testis in scrotum; preserves function\n\nImpalpable Testis\nIntra-abdominal (~40%) or Vanished\nDiagnostic Laparoscopy\nLocates the testis or confirms a blind-ending vessel\nAny Retained Position\nAltered environment\nOrchidopexy by 6–12 months\n\nLowers malignancy risk & aids screening\n* **P – Plan for Improvement (The Exam Heuristic)**\n The Board Pearl: If a question asks about the benefits of orchidopexy for an undescended testis, remember that it helps reduce the risk of cancer and enables reliable manual screening over the patient's lifetime.\n\n---\n\n### Supplementary Callouts\n> **Society Guideline**\n>\nAUA and AAP guidelines recommend that surgical correction for cryptorchidism should be completed by 12 months of age to optimize germ cell development and preserve fertility potential.\n> **Key Takeaway**\n> Orchidopexy for cryptorchidism lowers the risk of malignant transformation and ensures the testis can be monitored effectively.\n> **Intraoperative / Imaging Visualization**\n>\nDuring diagnostic laparoscopy for an impalpable testis, the surgeon looks at the internal inguinal ring; finding healthy spermatic vessels and a vas deferens tracking into the abdomen confirms an intra-abdominal testis, which can then be managed via a Fowler-Stephens or primary laparoscopic orchidopexy."
+  },
+  {
+    "question": "A 14-year-old boy presents with a 4-hour history of acute right testicular pain associated with nausea and vomiting. On physical exam, the right testis is high-riding and very tender to palpation, and the cremasteric reflex is absent on the right side. Which of the following is the most appropriate next step?",
+    "options": {
+      "A": "Take the patient immediately to the operating room for scrotal exploration and bilateral orchidopexy",
+      "B": "Perform a urgent testicular ultrasonography to evaluate for the presence of blood flow",
+      "C": "Treat the patient with anti-inflammatory medication and scrotal elevation",
+      "D": "Observe the patient to see if the pain improves with intravenous narcotics"
+    },
+    "answer": "A) Take the patient immediately to the operating room for scrotal exploration and bilateral orchidopexy",
+    "specialty": "Pediatric Surgery",
+    "markdown_debrief": "### SHARP 3.0 Cognitive & Surgical Debrief\n\n* **S – Set the Stage (The Verdict & Diagnostic Pivot)**\n Verdict: Correct: A. Take the patient immediately to the operating room for scrotal exploration and bilateral orchidopexy.\n The Pivot: An adolescent presenting within the critical ischemic window ($<6\\text{ hours}$) with classic signs of testicular torsion (acute pain, high-riding testis, and an absent cremasteric reflex) requires immediate surgical exploration without delaying for imaging.\n* **H – Highlight Excellence (The Surgical \"Why\" & Pathology)**\n  * **Surgical Mechanism:** Testicular torsion involves a mechanical twisting of the spermatic cord, which blocks venous outflow followed by arterial inflow, leading to acute ischemia of the testicular tissue. The absence of the cremasteric reflex (mediated by the genitofemoral nerve L1-L2) is a highly reliable clinical indicator of torsion. Because irreversible tissue damage begins within 6 hours of pain onset, minimizing time to detorsion is critical to saving the testis.\n Clinical Execution: The patient must proceed directly to the operating room. Delaying for a Doppler ultrasound is inappropriate when the clinical picture is clear, as a negative or equivocal scan cannot rule out torsion and wastes valuable time. During surgery, the affected side is untwisted, and both sides must undergo a three-point fixation orchidopexy to address the underlying bilateral bell-clapper deformity and prevent future recurrence.\n* **A – Address the Gaps (Systematic Distractor Demolition)**\n  * **Distractor Breakdown:**\n Option B (Incorrect): Testicular ultrasound with color Doppler is useful for indeterminate cases but should not delay definitive surgery when the clinical diagnosis is clear and the patient is within the 6-hour salvage window.\n Option C (Incorrect): Scrotal elevation and anti-inflammatory medications (Prehn’s sign framework) are used for epididymitis, but using them here would lead to complete testicular infarction.\n Option D (Incorrect): Continuous observation and narcotic administration mask symptoms while allowing irreversible ischemic necrosis of the germ cells to progress.\n* **R – Review Learning Points (Evidence-Based Framework)**\n Conceptual Overview: Acute scrotum with an absent cremasteric reflex in an adolescent is a surgical emergency that requires immediate operative exploration to preserve tissue viability.\n  * **Classification / Management Framework:**\nClinical Suspicion Level\nTime from Onset\nDiagnostic Action Plan\nPreferred Surgical Action\nHigh Clinical Certainty\n\n$<6$ Hours\nSkip imaging; establish immediate OR path\n\nScrotal exploration & Bilateral Orchidopexy\nEquivocal / Low Certainty\n$<6$ Hours\nObtain rapid Color Doppler Ultrasound \nProceed to OR if flow is decreased or absent\nAny Presentation Level\n$>24$ Hours\nUltrasound or exploration based on status\nOrchiectomy + contralateral fixation if non-viable \n* **P – Plan for Improvement (The Exam Heuristic)**\n The Board Pearl: If an adolescent presents with a sudden painful testis and an absent cremasteric reflex within 6 hours of onset, the correct answer is immediate scrotal exploration—do not delay for an ultrasound.\n\n---\n\n### Supplementary Callouts\n> **Society Guideline**\n> AUA and EAU pediatric urology guidelines emphasize that acute testicular torsion is a clinical diagnosis, and imaging should only be used if the diagnosis is genuinely uncertain and will not delay definitive surgical treatment.\n> **Key Takeaway**\n> Suspected testicular torsion with an absent cremasteric reflex within the 6-hour window requires immediate surgical exploration and bilateral orchidopexy.\n> **Intraoperative / Imaging Visualization**\n>\nUpon opening the tunica vaginalis, the surgeon directly visualizes the twisted spermatic cord, notes the direction of rotation, manually untwists it, and applies warm compresses to monitor for a return of normal pink color to the parenchymal tissue."
+  },
+  {
+    "question": "Which of the following features of intussusception is UNFAVORABLE for hydrostatic reduction?",
+    "options": {
+      "A": "Age >2 years",
+      "B": "Presentation >48 hours from symptom onset",
+      "C": "Lack of Doppler flow signal within the target lesion",
+      "D": "Small bowel dilation on plain X-ray"
+    },
+    "answer": "C) Lack of Doppler flow signal within the target lesion",
+    "specialty": "Pediatric Surgery",
+    "markdown_debrief": "### SHARP 3.0 Cognitive & Surgical Debrief\n\n* **S – Set the Stage (The Verdict & Diagnostic Pivot)**\n Verdict: Correct: C. Lack of Doppler flow signal within the target lesion.\n The Pivot: An absent Doppler flow signal on ultrasound indicates that the invaginated bowel tissue (intussusceptum) is ischemic or gangrenous. This serves as a strong contraindication for non-operative hydrostatic or pneumatic reduction due to a high risk of bowel perforation.\n* **H – Highlight Excellence (The Surgical \"Why\" & Pathology)**\n  * **Surgical Mechanism:** Intussusception involves the telescoping of a segment of bowel into an adjacent segment, most commonly at the ileocecal junction. As the inner segment is pulled forward by peristalsis, it compresses its mesentery, obstructing venous drainage. This leads to tissue edema and eventual arterial occlusion. An absence of color Doppler flow confirms that tissue perfusion has stopped. Attempting hydrostatic reduction on ischemic or necrotic bowel can rupture the wall, causing fecal contamination and peritonitis.\n Clinical Execution: When ultrasound demonstrates an absence of Doppler flow, the patient should not undergo non-operative air or contrast enemas. Instead, they must be prepared for surgical exploration. This involves manual reduction using gentle retrograde pressure (Hutchinson’s maneuver) or a segmental bowel resection if the tissue is non-viable.\n* **A – Address the Gaps (Systematic Distractor Demolition)**\n  * **Distractor Breakdown:**\n Option A (Incorrect): While children older than 2 years have a higher risk of having a specific structural lead point (like a Meckel's diverticulum or polyp), age alone does not indicate bowel necrosis or prevent an initial attempt at non-operative reduction.\n Option B (Incorrect): A presentation longer than 48 hours reduces the success rate of hydrostatic reduction, but it is a relative factor; an attempt can still be made if the bowel shows clear flow and there are no signs of peritonitis.\n Option D (Incorrect): Small bowel dilation reflects a mechanical back-up of gas but does not mean the invaginated segment is necrotic or that non-operative reduction cannot be safely attempted.\n* **R – Review Learning Points (Evidence-Based Framework)**\n  * **Conceptual Overview:** Intussusception is initially managed with non-operative reduction unless signs of bowel necrosis, perforation, or peritonitis are present.\n  * **Classification / Management Framework:**\nDiagnostic Finding\nTissue Perfusion Status\nNon-Operative Reduction Status\nPreferred Clinical Action\nPositive Doppler Flow\nViable tissue present\nSafe / First-line choice\nPneumatic or Hydrostatic air enema\n\nAbsent Doppler Flow\n\nIschemia / Necrosis likely\n\nContraindicated\n\nProceed to Surgical Exploration\nFree Air on X-ray\nPerforated Bowel\nStrictly Contraindicated\nEmergency Laparotomy\n* **P – Plan for Improvement (The Exam Heuristic)**\n The Board Pearl: When evaluating a patient with intussusception, look for indicators of bowel viability. If ultrasound shows an absence of blood flow, or if the patient has peritonitis or free air, skip non-operative reduction and choose surgical management.\n\n---\n\n### Supplementary Callouts\n> **Society Guideline**\n> Pediatric surgery guidelines indicate that non-operative reduction (air or hydrostatic) is the first-line treatment for uncomplicated intussusception, but is contraindicated in the presence of peritonitis, free intra-abdominal air, or clear evidence of bowel gangrene.\n> **Key Takeaway**\n> An absence of blood flow on Doppler ultrasound indicates potential bowel necrosis, making hydrostatic reduction unsafe and requiring surgical management.\n> **Intraoperative / Imaging Visualization**\n> On abdominal ultrasound, intussusception appears as a classic \"target\" or \"doughnut\" sign in cross-section. The surgeon checks for color Doppler overlay within these rings; an absence of color signal indicates tissue ischemia."
+  },
+  {
+    "question": "Where is the most common site of perforation that occurs in Hirschsprung's disease?",
+    "options": {
+      "A": "Rectum",
+      "B": "Sigmoid colon",
+      "C": "Transverse colon",
+      "D": "Cecum"
+    },
+    "answer": "D) Cecum",
+    "specialty": "Pediatric Surgery",
+    "markdown_debrief": "### SHARP 3.0 Cognitive & Surgical Debrief\n\n* **S – Set the Stage (The Verdict & Diagnostic Pivot)**\n Verdict: Correct: D. Cecum.\n The Pivot: Although the non-functional, aganglionic segment is located distally in the rectosigmoid region, the resulting mechanical obstruction causes significant back-pressure that dilates the proximal colon, making the cecum the most common site for ischemic perforation due to its thin wall and large diameter (Laplace’s Law).\n* **H – Highlight Excellence (The Surgical \"Why\" & Pathology)**\n  * **Surgical Mechanism:** Hirschsprung's disease is caused by a congenital failure of neural crest cells to migrate completely, leaving a distal segment of the bowel without ganglion cells in the myenteric (Auerbach's) and submucosal (Meissner's) plexuses. This aganglionic segment cannot relax, creating a functional functional obstruction. Gas and stool accumulate upstream, dilating the normal colon. According to Laplace’s Law ($T = P \\times R / 2h$), the segment with the largest radius (the cecum) experiences the highest wall tension. This high tension compresses the intramural capillaries, leading to ischemia, necrosis, and perforation of the cecum.\n  * **Clinical Execution:** When a newborn with suspected Hirschsprung's disease develops a sudden distended, tender abdomen and free air on an X-ray, the surgical team must look at the cecum during emergency laparotomy. Management involves repairing or exteriorizing the site of perforation and creating a decompressing stoma using a section of bowel that contains confirmed ganglion cells.\n* **A – Address the Gaps (Systematic Distractor Demolition)**\n  * **Distractor Breakdown:**\n Option A (Incorrect): The rectum is the primary aganglionic zone; it remains narrow and collapsed, making it unlikely to dilate or perforate from back-pressure.\n Option B (Incorrect): The sigmoid colon is frequently dilated (megacolon) just above the aganglionic zone, but its wall is thicker than the cecum, making it less vulnerable to pressure-induced perforation.\n Option C (Incorrect): The transverse colon dilates as part of the obstruction but has a smaller radius and thicker wall than the cecum, giving it a lower risk of rupture.\n* **R – Review Learning Points (Evidence-Based Framework)**\n Conceptual Overview: In distal bowel obstructions, the site of highest wall tension and potential perforation is often located proximally in the cecum, rather than at the point of blockage.\n  * **Classification / Management Framework:**\nBowel Segment\nGanglion Cell Status\nPhysical Caliber Response\nRisk of Perforation\nRectum / Distal Sigmoid\nAganglionic (Diseased) \nNarrowed / Spasmodic \nExtremely Low (does not dilate)\nProximal Sigmoid / Colon\nNormal Ganglion Cells\nHypertrophied / Dilated\nModerate\nCecum\nNormal Ganglion Cells\nMassively Dilated (Highest Radius)\n\nHighest Risk Site (Laplace's Law) \n* **P – Plan for Improvement (The Exam Heuristic)**\n The Board Pearl: Remember that in functional distal obstructions like Hirschsprung's disease, the perforation typically occurs proximally in the thin-walled cecum due to Laplace's Law, rather than in the distal aganglionic segment.\n\n---\n\n### Supplementary Callouts\n> **Society Guideline**\n>\nPediatric surgical algorithms state that any presentation of Hirschsprung's disease complicated by enterocolitis or perforation requires immediate fluid resuscitation, broad-spectrum antibiotics, and emergency laparotomy for decompression and stoma formation.\n> **Key Takeaway**\n> The cecum is the most common site for pressure-induced perforation in Hirschsprung's disease due to the physics of wall tension in dilated bowel segments.\n> **Intraoperative / Imaging Visualization**\n>\nOn an upright abdominal radiograph, a perforation presents as free air under the diaphragm (pneumoperitoneum), with asymmetric dilation of the right lower quadrant where the cecum is located."
+  },
+  {
+    "question": "Which of the following is NOT a recognized complication of hypospadias repair?",
+    "options": {
+      "A": "Mega-prepuce",
+      "B": "Urethral stricture",
+      "C": "Urethral diverticulum and glans dehiscence",
+      "D": "Recurrent penile curvature (chordee)"
+    },
+    "answer": "A) Mega-prepuce",
+    "specialty": "Pediatric Surgery",
+    "markdown_debrief": "### SHARP 3.0 Cognitive & Surgical Debrief\n\n* **S – Set the Stage (The Verdict & Diagnostic Pivot)**\n Verdict: Correct: A. Mega-prepuce.\n  * **The Pivot:** Mega-prepuce is a congenital structural anomaly characterized by an oversized, redundant inner prepuce skin envelope. It is an independent condition rather than a complication resulting from a surgical hypospadias repair.\n* **H – Highlight Excellence (The Surgical \"Why\" & Pathology)**\n  * **Surgical Mechanism:** Hypospadias repair involves complex reconstruction: straightening the penis (orthoplasty), creating a new urethra (urethroplasty) using local skin flaps or grafts, and reconstructing the glans (glansplasty). Because these procedures rely on delicate tissue transfers in a small space, they carry risks of technical complications. Common issues include a breakdown of the repair leading to a urethrocutaneous fistula, scarring causing a urethral stricture , a wide dynamic segment forming a urethral diverticulum , or incomplete release of tissue bands resulting in recurrent chordee.\n  * **Clinical Execution:** To minimize these risks, surgeons use delicate, non-reactive suture materials, tension-free tissue closure, and highly vascularized coverage layers (such as a tunica vaginalis or dartos flap) to protect the new urethra. This helps reduce the rate of strictures and fistulas.\n* **A – Address the Gaps (Systematic Distractor Demolition)**\n  * **Distractor Breakdown:**\n Option B (Recognized complication): Urethral stricture can occur due to scarring at the junction of the new urethra, presenting as a weak urinary stream or straining.\n Option C (Recognized complication): Urethral diverticulum can form if the new urethral wall stretches over time, while glans dehiscence represents a separation of the reconstructed glans tissues.\n Option D (Recognized complication): Recurrent penile curvature (chordee) can develop if underlying fibrotic tissue bands were incompletely divided or if asymmetric scarring occurs during healing.\n* **R – Review Learning Points (Evidence-Based Framework)**\n  * **Conceptual Overview:** Hypospadias surgery requires meticulous tissue handling; monitoring for postoperative complications like strictures, fistulas, or recurrent curvature is a routine part of follow-up.\n  * **Classification / Management Framework:**\nPost-Op Complication Type\nPrimary Pathophysiologic Cause\nClinical Presentation Sign\nRecommended Management\nUrethrocutaneous Fistula\nIschemia / local tissue breakdown\nUrine leaking from underside of penis\nSurgical closure using a vascularized flap\nUrethral Stricture\nScar tissue narrowing the lumen \nWeak stream, straining, urinary retention\nEndoscopic dilation or open revision \nRecurrent Chordee\nIncomplete tissue release or scarring \nCurvature noticed during erection \nRe-exploration and orthoplasty revision\n* **P – Plan for Improvement (The Exam Heuristic)**\n The Board Pearl: When reviewing complications of hypospadias repair, remember the common structural issues: fistulas, strictures, diverticula, and recurrent curvature. Exclude unrelated congenital conditions like mega-prepuce.\n\n---\n\n### Supplementary Callouts\n> **Society Guideline**\n> Pediatric urology guidelines suggest using a magnifying loupe and a vascularized tissue layer (such as a dartos flap) during a primary hypospadias repair to reduce the risk of postoperative fistulas and strictures.\n> **Key Takeaway**\n> Common complications of hypospadias repair include urethral strictures, diverticula, fistulas, and recurrent curvature, whereas mega-prepuce is an unrelated congenital condition.\n> **Intraoperative / Imaging Visualization**\n> During long-term follow-up, a uroflowmetry test showing a flattened, prolonged voiding curve suggests a urethral stricture, which can be verified by a retrograde urethrogram or direct calibration with a small sound."
+  },
+  {
+    "question": "Which of the following investigations is the MOST important to perform prior to the excision of a suspected thyroglossal duct cyst?",
+    "options": {
+      "A": "Ultrasound of the cyst itself",
+      "B": "Routine Chest X-ray",
+      "C": "Thyroid Function Tests (TFT)",
+      "D": "Ultrasound of the thyroid gland location"
+    },
+    "answer": "D) Ultrasound of the thyroid gland location",
+    "specialty": "Pediatric Surgery",
+    "markdown_debrief": "### SHARP 3.0 Cognitive & Surgical Debrief\n\n* **S – Set the Stage (The Verdict & Diagnostic Pivot)**\n Verdict: Correct: D. Ultrasound of the thyroid gland location.\n The Pivot: Before removing a suspected thyroglossal duct cyst, it is essential to perform an abdominal or neck ultrasound to confirm the presence of a normal thyroid gland in its proper position. In up to 1–2% of cases, the \"cyst\" may actually be ectopic thyroid tissue and the patient's only functioning thyroid tissue.\n* **H – Highlight Excellence (The Surgical \"Why\" & Pathology)**\n  * **Surgical Mechanism:** The thyroid gland develops at the base of the tongue (foramen caecum) and migrates down the midline of the neck to its final position in front of the trachea, leaving behind a temporary tract called the thyroglossal duct. If parts of this tract fail to close, fluid can accumulate and form a thyroglossal duct cyst. If the main thyroid gland fails to descend properly, this tract may contain all of the patient's functioning thyroid tissue.\n  * **Clinical Execution:** Removing the cyst without verifying a normal thyroid gland in its proper position can lead to inadvertent total thyroidectomy, causing severe postoperative hypothyroidism. Confirming a normal thyroid gland on ultrasound ensures it is safe to proceed with the definitive Sistrunk Procedure. This surgery involves removing the cyst, the entire remaining duct tract, and the central portion of the hyoid bone to minimize the risk of recurrence.\n* **A – Address the Gaps (Systematic Distractor Demolition)**\n  * **Distractor Breakdown:**\n Option A (Incorrect): Ultrasound of the cyst itself confirms it is a fluid-filled lesion, but it cannot verify if a normal thyroid gland exists in its proper location.\n Option B (Incorrect): A routine chest X-ray does not provide useful information for evaluating a benign midline neck mass.\n Option C (Incorrect): Thyroid function tests check the patient's metabolic status but cannot show whether the hormone production is coming from a normally positioned gland or from ectopic tissue within the cyst.\n* **R – Review Learning Points (Evidence-Based Framework)**\n  * **Conceptual Overview:** Managing midline neck masses in children requires careful imaging to protect functioning endocrine tissue before any surgical removal.\n  * **Classification / Management Framework:**\nMidline Neck Mass Type\nEmbryonic Origin Path\nPre-Op Imaging Target Goal\nStandard Surgical Procedure\n\nThyroglossal Cyst\nPersistent thyroglossal duct tract\n\nVerify normal thyroid gland presence\nSistrunk Operation (includes hyoid core)\nDermoid Cyst\nInclusion of ectodermal elements\nConfirm superficial nature (no deep attachments)\nSimple surgical excision\nEctopic Thyroid\nFailed descent of thyroid gland\nShows absence of a normal orthotopic gland\nConservative management or replacement therapy\n* **P – Plan for Improvement (The Exam Heuristic)**\n The Board Pearl: Before scheduling a Sistrunk procedure for a thyroglossal duct cyst, always confirm that a normal thyroid gland is visible in its proper position on a neck ultrasound to avoid removing the patient's only functioning thyroid tissue.\n\n---\n\n### Supplementary Callouts\n> **Society Guideline**\n> Pediatric surgery and endocrine consensus statements note that a neck ultrasound confirming a normal thyroid gland is a mandatory safety step before operating on a midline neck mass.\n> **Key Takeaway**\n> A pre-operative neck ultrasound must confirm a normally located thyroid gland before a thyroglossal cyst is removed to prevent inadvertent hypothyroidism.\n> **Intraoperative / Imaging Visualization**\n> On a neck ultrasound, the radiologist looks for a normal, two-lobed thyroid gland sitting across the lower trachea, separate from the fluid-filled cyst located higher in the midline near the hyoid bone."
+  },
+  {
+    "question": "A 6-year-old male child was admitted with suspected testicular torsion. Which of the following is true about surgical exploration?",
+    "options": {
+      "A": "It can be delayed up to 24 hours and should be limited to the affected side",
+      "B": "It can be delayed but should include the asymptomatic side as well",
+      "C": "It should be done immediately and should be limited to the affected side",
+      "D": "It should be done immediately and should also include the asymptomatic side"
+    },
+    "answer": "D) It should be done immediately and should also include the asymptomatic side",
+    "specialty": "Pediatric Surgery",
+    "markdown_debrief": "### SHARP 3.0 Cognitive & Surgical Debrief\n\n* **S – Set the Stage (The Verdict & Diagnostic Pivot)**\n Verdict: Correct: D. It should be done immediately and should also include the asymptomatic side.\n  * **The Pivot:** Testicular torsion is a surgical emergency with a narrow ischemic window (ideally $<6\\text{ hours}$). Because the underlying anatomical variant (\"bell-clapper\" deformity) is frequently bilateral, immediate exploration and bilateral orchidopexy are required to save the current testis and protect the contralateral side.\n* **H – Highlight Excellence (The Surgical \"Why\" & Pathology)**\n  * **Surgical Mechanism:** Testicular torsion involves the twisting of the spermatic cord, which cuts off venous drainage followed by arterial inflow, leading to acute hemorrhagic infarction of the testicular parenchyma. The \"bell-clapper\" deformity occurs when the tunica vaginalis abnormally envelops the cord, allowing the testis to rotate freely. Because this anatomical variation is often bilateral, the contralateral testis is at risk for future torsion.\n  * **Clinical Execution:** Immediate scrotal exploration is performed to detorw the affected testis and assess its viability. Even if the affected testis is non-viable and requires orchiectomy, the contralateral asymptomatic side must be explored and secured with a three-point fixation orchidopexy to prevent a future event and protect fertility.\n* **A – Address the Gaps (Systematic Distractor Demolition)**\n  * **Distractor Breakdown:**\n Option A & B (Incorrect): Delaying surgery up to 24 hours leads to irreversible testicular necrosis and loss of endocrine and spermatogenic function. The salvage rate drops significantly after 6–8 hours of ischemia.\n Option C (Incorrect): Performing a unilateral exploration on the affected side leaves the patient at risk for asynchronous contralateral torsion due to the high likelihood of a bilateral bell-clapper deformity.\n* **R – Review Learning Points (Evidence-Based Framework)**\n Conceptual Overview: A patient presenting with an acute, painful scrotum and an absent cremasteric reflex should undergo immediate surgical exploration, without delaying for imaging if the clinical suspicion is high.\n  * **Classification / Management Framework:**\nTime from Pain Onset\nExpected Testicular Salvage Rate\nIntraoperative Findings\nAction Required\n$<6$ Hours\n~90–100%\nCongested, returns to pink color after untwisting\nImmediate detorsion + Bilateral Orchidopexy\n6–12 Hours\n~50%\nVariable viability; patchy ischemia\nDetorsion, warm compress; bilateral orchidopexy if viable \n$>24$ Hours\n$<10\\%$\nBlack, necrotic parenchyma (infarction)\nOrchiectomy of affected side + Contralateral Orchidopexy\n* **P – Plan for Improvement (The Exam Heuristic)**\n The Board Pearl: For cases of acute testicular torsion, the correct surgical approach is immediate operation and bilateral intervention (either bilateral orchidopexy or orchiectomy plus contralateral orchidopexy).\n\n---\n\n### Supplementary Callouts\n> **Society Guideline**\n>\nAmerican Urological Association (AUA) and European Association of Urology (EAU) pediatric guidelines recommend immediate surgical exploration for suspected torsion, stating that imaging should not delay definitive treatment if the clinical presentation is definitive.\n> **Key Takeaway**\n> Testicular torsion requires immediate emergency surgical exploration and bilateral fixation to preserve tissue viability and prevent future contralateral events.\n> **Intraoperative / Imaging Visualization**\n>\nUpon opening the tunica vaginalis, the surgeon will see the spermatic cord twisted clockwise or counterclockwise. If the tissue is ischemic, it will appear dark purple or black; following untwisting and application of warm saline, the return of pink color and active bleeding confirms viability."
+  },
+  {
+    "question": "Which of the following is useful in the diagnosis of posterior urethral valves (PUV)?",
+    "options": {
+      "A": "Antenatal diagnosis",
+      "B": "Postnatal ultrasonography",
+      "C": "Micturating cystourethrography (VCUG)",
+      "D": "All of the above (Note: Stem adapted to include all clinical tools)"
+    },
+    "answer": "D) All of the above",
+    "specialty": "Pediatric Surgery",
+    "markdown_debrief": "### SHARP 3.0 Cognitive & Surgical Debrief\n\n* **S – Set the Stage (The Verdict & Diagnostic Pivot)**\n Verdict: Correct: D. All of the above (Antenatal US, Postnatal US, and VCUG are all essential components of the diagnostic pathway).\n The Pivot: While Micturating Cystourethrography (VCUG) is the gold standard for providing a definitive diagnosis of PUV, antenatal ultrasound provides early warnings, and postnatal ultrasound evaluates secondary tissue changes in the bladder and kidneys.\n* **H – Highlight Excellence (The Surgical \"Why\" & Pathology)**\n  * **Surgical Mechanism:** Posterior urethral valves are abnormal, obstructing mucosal folds within the prostatic urethra of male infants. This mechanical barrier blocks urine flow out of the bladder, leading to high voiding pressures. This back-pressure causes smooth muscle hypertrophy of the bladder wall, trabeculation, and bilateral hydroureteronephrosis, which can damage the developing renal tissue (renal dysplasia).\n  * **Clinical Execution:** Management begins with early detection. Antenatal scans showing bilateral hydronephrosis and a dilated bladder prompt close monitoring. Postnatally, a VCUG provides the definitive diagnosis by showing a dilated, elongated prostatic urethra and a sharp narrowing at the level of the valves during urination, often accompanied by vesicoureteral reflux (VUR). Initial treatment involves placing a feeding tube to drain the bladder, followed by definitive surgical endoscopic valve ablation.\n* **A – Address the Gaps (Systematic Distractor Demolition)**\n  * **Distractor Breakdown:**\n Option A (Useful tool): Antenatal ultrasound identifies signs like oligohydramnios and a \"keyhole\" bladder, allowing for early treatment planning at birth.\n Option B (Useful tool): Postnatal ultrasound is valuable for evaluating the thickness of the bladder wall and checking the severity of hydronephrosis in the kidneys.\n Option C (Useful tool): VCUG is the definitive imaging test needed to visualize the valves and rule out other causes of lower tract obstruction.\n* **R – Review Learning Points (Evidence-Based Framework)**\n  * **Conceptual Overview:** Diagnosing and managing PUV relies on an integrated pathway using screening scans, structural imaging, and functional evaluations to protect renal performance.\n  * **Classification / Management Framework:**\nEvaluation Phase\nDiagnostic Modality\nClassic Imaging / Clinical Finding\nPrimary Management Role\nAntenatal Screening\nOb-Gyn Ultrasound\nBilateral hydronephrosis, thick bladder, Keyhole sign\nDirects delivery planning at a specialized center\nPostnatal Imaging\nAbdominal / Renal US\nThickened bladder wall, urinary retention \nAssesses baseline upper tract dilation \nDefinitive Diagnosis\n\nMicturating VCUG\n\nDilated prostatic urethra, valve cutoff\n\nConfirms diagnosis; guides surgical ablation\n* **P – Plan for Improvement (The Exam Heuristic)**\n The Board Pearl: If a question asks for the single gold-standard imaging test to definitively diagnose posterior urethral valves in a male infant, look for Micturating Cystourethrography (VCUG).\n\n---\n\n### Supplementary Callouts\n> **Society Guideline**\n> AUA and EAU pediatric urology guidelines state that a newborn with suspected or prenatally detected PUV should undergo prompt bladder drainage at birth, followed by a confirmatory VCUG once stable.\n> **Key Takeaway**\n> Evaluating PUV requires a combination of prenatal screening, postnatal ultrasound, and a definitive confirmatory VCUG.\n> **Intraoperative / Imaging Visualization**\n>\nOn a voiding VCUG report, the scan shows a large, dilated proximal prostatic urethra that suddenly narrows into a thin stream at the level of the bulbar urethra, resembling a \"keyhole\" shape."
+  },
+  {
+    "id": 1224,
+    "specialty": "Pediatric Surgery",
+    "topic": "Comprhensive Surgery Revision conv.docx",
+    "question": "True or false?A. Mesenteric cysts are most often due to congenital lymphatic spaces that gradually fill with lymph.",
+    "options": {
+      "A": "Mesenteric cysts are most often due to congenital lymphatic spaces that gradually fill with lymph.",
+      "B": "Mesenteric cysts usually present as abdominal masses accompanied by pain, nausea, or vomiting.",
+      "C": "Mesenteric cysts are best treated by marsupialization.D. Omental cysts are frequently asymptomatic unless they undergo torsion."
+    },
+    "answer": "A",
+    "explanation": {
+      "correct": "-TRUE, B-TRUE, C-FALSE, D-TRUE",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Standard Surgical Board Review",
+    "takeaway": "Key Insight: -TRUE, B-TRUE, C-FALSE, D-TRUE"
+  },
+  {
+    "specialty": "Pediatric Surgery",
+    "topic": "Comprhensive Surgery Revision conv.docx",
+    "question": "Which of the following statements is/are true of infants with gastroschisis?",
+    "options": {
+      "B": "There is a high incidence of associated anomalies.",
+      "D": "It is complicated by intestinal atresia in 10% to 12% of cases.",
+      "E": "It is associated with chromosomal syndromes."
+    },
+    "answer": "A",
+    "explanation": {
+      "correct": "CD",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Source: Comprhensive Surgery Revision conv.docx",
+    "takeaway": "Key Concept: CD",
+    "id": 234
+  },
+  {
+    "specialty": "Pediatric Surgery",
+    "topic": "Comprhensive Surgery Revision conv.docx",
+    "question": "In neonates with congenital diaphragmatic hernia, which of the following statements is true?",
+    "options": {
+      "C": "An oxygen index of 20 is an indication for extracorporeal membrane oxygenation (ECMO).",
+      "E": "Mortality is the result of pulmonary hypoplasia."
+    },
+    "answer": "E",
+    "explanation": {
+      "correct": "Standard board review concept.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Source: Comprhensive Surgery Revision conv.docx",
+    "takeaway": "Key Concept: ",
+    "id": 235
+  },
+  {
+    "specialty": "Pediatric Surgery",
+    "topic": "Comprhensive Surgery Revision conv.docx",
+    "question": "In infants with duodenal atresia all the following statements are true except:",
+    "options": {
+      "C": "It may occur in infants with situs inversus, malrotation, annular pancreas, and anterior portal vein.",
+      "E": "There is a high incidence of associated cardiac defects."
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "Standard board review concept.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Source: Comprhensive Surgery Revision conv.docx",
+    "takeaway": "Key Concept: ",
+    "id": 236
+  },
+  {
+    "specialty": "Pediatric Surgery",
+    "topic": "Comprhensive Surgery Revision conv.docx",
+    "question": "The most common type of congenital diaphragmatic hernia is caused by:",
+    "options": {
+      "B": "Eventration of the diaphragm in the fetus.",
+      "E": "A defect through the pleuroperitoneal fold."
+    },
+    "answer": "E",
+    "explanation": {
+      "correct": "Standard board review concept.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Source: Comprhensive Surgery Revision conv.docx",
+    "takeaway": "Key Concept: ",
+    "id": 237
+  },
+  {
+    "specialty": "Pediatric Surgery",
+    "topic": "Comprhensive Surgery Revision conv.docx",
+    "question": "All of the following conditions are derived from the primitive embryonic foregut except:",
+    "options": {
+      "B": "Cystic adenomatoid malformation.",
+      "E": "Pulmonary sequestration."
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "16.For a 22-kg infant, the maintenance daily fluid requirement is approximately which of the following? a.1100 ml b.1250 ml c.1550 ml d.1700 ml e.1850 ml Answer: c 17.Which of the following statements regarding nutritional requirements in infants are true? a.The total daily water requirement is estimated to be 100 ml/100 kcal ingested b.The resting energy expenditure is approximately twice that of an adult c.The highest rate of nitrogen retention with parenteral nutrition occurs in infants given approximately 40% of the calories as carbohydrate and the remainder as fat d.The protein requirement for a newborn infant is approximately 2.5 g/kg/day Answer: a, b, c, d 18.A term infant 48 hours of age suddenly develops hypoxemia, irritability, and glucose and temperature instability. Which of the following statements are true? a.Empiric antibiotic coverage for b-hemolytic Streptococci and Escherichia coli should be initiated b.An intravenous infusion of prostaglandin E1 should be initiated immediately c.Exogenous surfactant should be given immediately d.The mortality rate for this child is approximately 50% Answer: a,d 19.Which of the following statements about pulmonary surfactant are true? a.Endogenous surfactant deficiency is the key physiologic problem in preterm infants with the infant respiratory distress syndrome b.Surfactant function can be restored to normal using aerosolized phosphatidylcholine administration c.Exogenous surfactant replacement has been shown to reduce mortality in preterm infants with the infant respiratory distress syndrome d.Surfactant is produced by Type I alveolar epithelial cells Answer: a, c 20.Which of the following statements regarding premature infants are true? a.Complications of prematurity account for approximately 85% of fetal deaths b.Prematurity is defined by the World Health Organization as birth prior to 35 weeks gestation c.Infants with intrauterine growth retardation have physiologic problems which are more dependent on the birth weight than the gestational age d.Preterm infants are at increased risk for hypocalcemia and hypoglycemia when compared to term infants Answer: a, d",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Source: Comprhensive Surgery Revision conv.docx",
+    "takeaway": "Key Concept: 16.For a 22-kg infant, the maintenance daily fluid requirement is approximately which of the followi...",
+    "id": 238
+  },
+  {
+    "specialty": "Pediatric Surgery",
+    "topic": "Pyloric Stenosis",
+    "question": "Which of the following is TRUE regarding Pyloric Stenosis?",
+    "options": {
+      "A": "Presents with non-bilious projectile vomiting and hypochloremic hypokalemic metabolic alkalosis.",
+      "B": "Incorrect distractor regarding Pyloric Stenosis",
+      "C": "Incorrect distractor regarding Pyloric Stenosis",
+      "D": "Incorrect distractor regarding Pyloric Stenosis"
+    },
+    "answer": "A",
+    "explanation": {
+      "correct": "Hypertrophic Pyloric Stenosis (HPS) classic presentation is projectile, non-bilious vomiting. The pathognomonic metabolic abnormality is Hypochloremic, Hypokalemic Metabolic Alkalosis due to loss of HCl and secondary hyperaldosteronism.",
+      "A": "Correct. This is the classic board-tested metabolic triad.",
+      "B": "Incorrect. Bilious vomiting suggests obstruction distal to the Ampulla of Vater (e.g., malrotation).",
+      "C": "Incorrect. Acidosis is not typical here.",
+      "D": "Incorrect. Hyperkalemia is incorrect; K+ is lost in urine and vomit.",
+      "E": ""
+    },
+    "guideline": "Surgical Insight Hub Premium Board Review",
+    "takeaway": "SHARP Pearl: Hypertrophic Pyloric Stenosis (HPS) classic presentation is projectile, non-bilious vomiting. The pathognomonic metaboli...",
+    "id": 807,
+    "_src_file": "questions_enriched_test.js",
+    "sharp": {
+      "set_the_stage": "Which of the following is TRUE regarding Pyloric Stenosis?",
+      "highlight_excellence": "Pending enrichment",
+      "address_gaps": "Pending enrichment",
+      "review_learning_points": "Pending enrichment",
+      "plan": "Review this topic for board preparation."
+    }
+  },
+  {
+    "specialty": "Pediatric Surgery",
+    "topic": "Intussusception",
+    "question": "Which of the following is TRUE regarding Intussusception?",
+    "options": {
+      "A": "Incorrect distractor regarding Intussusception",
+      "B": "The classic 'current jelly stool' is a late finding.",
+      "C": "Incorrect distractor regarding Intussusception",
+      "D": "Incorrect distractor regarding Intussusception"
+    },
+    "answer": "B",
+    "explanation": {
+      "correct": "The classic 'current jelly stool' is a late finding.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Surgical Insight Hub Premium Board Review",
+    "takeaway": "Key Pediatric Surgery Pearl: The classic 'current jelly stool' is a late finding....",
+    "id": 808,
+    "_src_file": "questions_enriched_test.js",
+    "sharp": {
+      "set_the_stage": "Which of the following is TRUE regarding Intussusception?",
+      "highlight_excellence": "Pending enrichment",
+      "address_gaps": "Pending enrichment",
+      "review_learning_points": "Pending enrichment",
+      "plan": "Review this topic for board preparation."
+    }
+  },
+  {
+    "specialty": "Pediatric Surgery",
+    "topic": "Hirschsprung",
+    "question": "Which of the following is TRUE regarding Hirschsprung?",
+    "options": {
+      "A": "Incorrect distractor regarding Hirschsprung",
+      "B": "Incorrect distractor regarding Hirschsprung",
+      "C": "Caused by failure of neural crest cells to migrate, leading to an aganglionic segment (usually distal).",
+      "D": "Incorrect distractor regarding Hirschsprung"
+    },
+    "answer": "C",
+    "explanation": {
+      "correct": "Caused by failure of neural crest cells to migrate, leading to an aganglionic segment (usually distal).",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Surgical Insight Hub Premium Board Review",
+    "takeaway": "Key Pediatric Surgery Pearl: Caused by failure of neural crest cells to migrate, leading to an aganglionic se...",
+    "id": 809,
+    "_src_file": "questions_enriched_test.js",
+    "sharp": {
+      "set_the_stage": "Which of the following is TRUE regarding Hirschsprung?",
+      "highlight_excellence": "Pending enrichment",
+      "address_gaps": "Pending enrichment",
+      "review_learning_points": "Pending enrichment",
+      "plan": "Review this topic for board preparation."
+    }
+  },
+  {
+    "specialty": "Pediatric Surgery",
+    "topic": "Meckel's Diverticulum",
+    "question": "Which of the following is TRUE regarding Meckel's Diverticulum?",
+    "options": {
+      "A": "Incorrect distractor regarding Meckel's Diverticulum",
+      "B": "Incorrect distractor regarding Meckel's Diverticulum",
+      "C": "Incorrect distractor regarding Meckel's Diverticulum",
+      "D": "The 'Rule of 2s': 2 inches long, 2 feet from ileocecal valve, 2% of population, presents by age 2."
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "The 'Rule of 2s': 2 inches long, 2 feet from ileocecal valve, 2% of population, presents by age 2.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Surgical Insight Hub Premium Board Review",
+    "takeaway": "Key Pediatric Surgery Pearl: The 'Rule of 2s': 2 inches long, 2 feet from ileocecal valve, 2% of population, ...",
+    "id": 810,
+    "_src_file": "questions_enriched_test.js",
+    "sharp": {
+      "set_the_stage": "Which of the following is TRUE regarding Meckel's Diverticulum?",
+      "highlight_excellence": "Pending enrichment",
+      "address_gaps": "Pending enrichment",
+      "review_learning_points": "Pending enrichment",
+      "plan": "Review this topic for board preparation."
+    }
+  },
+  {
+    "specialty": "Pediatric Surgery",
+    "topic": "Omphalocele",
+    "question": "Which of the following is TRUE regarding Omphalocele?",
+    "options": {
+      "A": "The abdominal contents are covered by a sac of peritoneum and amnion.",
+      "B": "Incorrect distractor regarding Omphalocele",
+      "C": "Incorrect distractor regarding Omphalocele",
+      "D": "Incorrect distractor regarding Omphalocele"
+    },
+    "answer": "A",
+    "explanation": {
+      "correct": "The abdominal contents are covered by a sac of peritoneum and amnion.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Surgical Insight Hub Premium Board Review",
+    "takeaway": "Key Pediatric Surgery Pearl: The abdominal contents are covered by a sac of peritoneum and amnion....",
+    "id": 811,
+    "_src_file": "questions_enriched_test.js",
+    "sharp": {
+      "set_the_stage": "Which of the following is TRUE regarding Omphalocele?",
+      "highlight_excellence": "Pending enrichment",
+      "address_gaps": "Pending enrichment",
+      "review_learning_points": "Pending enrichment",
+      "plan": "Review this topic for board preparation."
+    }
+  },
+  {
+    "specialty": "Pediatric Surgery",
+    "topic": "Gastroschisis",
+    "question": "Which of the following is TRUE regarding Gastroschisis?",
+    "options": {
+      "A": "Incorrect distractor regarding Gastroschisis",
+      "B": "Abdominal wall defect (usually right of midline) with NO covering sac.",
+      "C": "Incorrect distractor regarding Gastroschisis",
+      "D": "Incorrect distractor regarding Gastroschisis"
+    },
+    "answer": "B",
+    "explanation": {
+      "correct": "Abdominal wall defect (usually right of midline) with NO covering sac.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Surgical Insight Hub Premium Board Review",
+    "takeaway": "Key Pediatric Surgery Pearl: Abdominal wall defect (usually right of midline) with NO covering sac....",
+    "id": 812,
+    "_src_file": "questions_enriched_test.js",
+    "sharp": {
+      "set_the_stage": "Which of the following is TRUE regarding Gastroschisis?",
+      "highlight_excellence": "Pending enrichment",
+      "address_gaps": "Pending enrichment",
+      "review_learning_points": "Pending enrichment",
+      "plan": "Review this topic for board preparation."
+    }
+  },
+  {
+    "specialty": "Pediatric Surgery",
+    "topic": "Pediatric Surgery Core Concept",
+    "question": "Which of the following is TRUE regarding Pediatric Surgery Core Concept?",
+    "options": {
+      "A": "This is a high-yield Pediatric Surgery board review concept that is frequently tested.",
+      "B": "Incorrect distractor regarding Pediatric Surgery Core Concept",
+      "C": "Incorrect distractor regarding Pediatric Surgery Core Concept",
+      "D": "Incorrect distractor regarding Pediatric Surgery Core Concept"
+    },
+    "answer": "A",
+    "explanation": {
+      "correct": "This is a high-yield Pediatric Surgery board review concept that is frequently tested.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Surgical Insight Hub Premium Board Review",
+    "takeaway": "Key Pediatric Surgery Pearl: This is a high-yield Pediatric Surgery board review concept that is frequently t...",
+    "id": 813,
+    "_src_file": "questions_enriched_test.js",
+    "sharp": {
+      "set_the_stage": "Which of the following is TRUE regarding Pediatric Surgery Core Concept?",
+      "highlight_excellence": "Pending enrichment",
+      "address_gaps": "Pending enrichment",
+      "review_learning_points": "Pending enrichment",
+      "plan": "Review this topic for board preparation."
+    }
+  }
+]

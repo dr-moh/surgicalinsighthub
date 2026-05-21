@@ -3492,5 +3492,456 @@
       "D": "The standard management of Blauth 4 is reinforcement of the hypoplastic thumb by bone stabilisation and tendon transfer."
     },
     "answer": "A"
+  },
+  {
+    "specialty": "Plastic Surgery",
+    "topic": "Comprhensive Surgery Revision conv.docx",
+    "question": "True statements regarding patients with a mediastinal mass include:",
+    "options": {
+      "C": "In a patient with a chest film demonstrating a mediastinal mass, a Tru-cut needle biopsy is a safe procedure.",
+      "D": "Seminomas usually produce alpha-fetoprotein."
+    },
+    "answer": "A",
+    "explanation": {
+      "correct": "B 57.Which of the following would be the least appropriate in the management of acute suppurative mediastinitis? A. Wide débridement. B. Irrigation under pressure. C. Topical antibacterials. D. Long-term systemic antibacterials. E. Closure with muscle flaps.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Source: Comprhensive Surgery Revision conv.docx",
+    "takeaway": "Key Concept: B 57.Which of the following would be the least appropriate in the management of acute suppurative me...",
+    "id": 385
+  },
+  {
+    "specialty": "Plastic Surgery",
+    "topic": "Comprhensive Surgery Revision conv.docx",
+    "question": "Transplantation terminology contains terms to describe the relationship of the graft donor to the graft recipient. Historical terms such as ―homograft‖ and ―heterograft‖ have been replaced by less ambiguous terms. The correct modern terminology for a graft between genetically nonidentical members of the same species is:",
+    "options": {
+      "B": "Autogeneic graft.",
+      "C": "Isogeneic graft.",
+      "D": "Syngeneic graft.",
+      "E": "Xenogeneic graft."
+    },
+    "answer": "A",
+    "explanation": {
+      "correct": "Standard board review concept.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Source: Comprhensive Surgery Revision conv.docx",
+    "takeaway": "Key Concept: ",
+    "id": 386
+  },
+  {
+    "specialty": "Plastic Surgery",
+    "topic": "Comprhensive Surgery Revision conv.docx",
+    "question": "The unusual intensity of alloimmune responses reflects which of the following characteristics?",
+    "options": {
+      "D": "Stimulation of many T-cell receptors during the interaction of a T cell with an antigen-presenting cell.",
+      "E": "The high frequency of antigen-presenting cells able to be recognized by T cells."
+    },
+    "answer": "B",
+    "explanation": {
+      "correct": "CDE 9.Which of the following statements correctly characterize the role of histocompatibility typing in transplantation? A. Histocompatibility typing must be carried out before transplantation can safely be undertaken. B. The ―rules‖ of histocompatibility were established shortly after the advent of immunosuppressive therapy made transplantation feasible. C. Histocompatibility typing may involve serologic, cellular, and molecular procedures for typing. D. The role of histocompatibility matching in transplantation is controversial. E. The cross-match test is carried out to determine whether a potential graft recipient has antibodies against the donor.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Source: Comprhensive Surgery Revision conv.docx",
+    "takeaway": "Key Concept: CDE 9.Which of the following statements correctly characterize the role of histocompatibility typing...",
+    "id": 387
+  },
+  {
+    "specialty": "Plastic Surgery",
+    "topic": "Comprhensive Surgery Revision conv.docx",
+    "question": "Allograft rejection may involve which of the following?",
+    "options": {
+      "B": "Veto cells.",
+      "C": "Cytotoxicity.",
+      "E": "The Arthus reaction."
+    },
+    "answer": "A",
+    "explanation": {
+      "correct": "CD 142COMPRHENSIVE SURGERY REVISION200859690-21639 59690-21639 COMPRHENSIVE SURGERY REVISION2008-83565-43812 -83565-43812",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Source: Comprhensive Surgery Revision conv.docx",
+    "takeaway": "Key Concept: CD 142COMPRHENSIVE SURGERY REVISION200859690-21639 59690-21639 COMPRHENSIVE SURGERY REVISION2008-835...",
+    "id": 388
+  },
+  {
+    "specialty": "Plastic Surgery",
+    "topic": "Comprhensive Surgery Revision conv.docx",
+    "question": "Which of the following statements about allograft rejection are true?",
+    "options": {
+      "B": "Allograft rejection may be mediated by antibodies or by cells.",
+      "D": "Acute cellular rejection is the major cause for loss of clinical organ transplants.",
+      "E": "An individual with ―tolerance‖ is unable to reject an allograft."
+    },
+    "answer": "B",
+    "explanation": {
+      "correct": "Standard board review concept.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Source: Comprhensive Surgery Revision conv.docx",
+    "takeaway": "Key Concept: ",
+    "id": 389
+  },
+  {
+    "specialty": "Plastic Surgery",
+    "topic": "Comprhensive Surgery Revision conv.docx",
+    "question": "Survival rates for patients on dialysis are better than those for patients receiving renal allografts in the following circumstances:",
+    "options": {
+      "A": "A living related donor is available.",
+      "C": "The recipient's renal failure is secondary to diabetes.",
+      "D": "None of the above."
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "Standard board review concept.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Source: Comprhensive Surgery Revision conv.docx",
+    "takeaway": "Key Concept: ",
+    "id": 390
+  },
+  {
+    "specialty": "Plastic Surgery",
+    "topic": "Comprhensive Surgery Revision conv.docx",
+    "question": "One week after receiving a cadaver renal allograft, the recipient remains oliguric and dialysis dependent. Ultrasonography reveals a larger perigraft fluid collection. Your next step in management includes:",
+    "options": {
+      "C": "Angiography for localization of a bleeding site in the renal allograft.",
+      "D": "Aspiration of the perigraft fluid collection for chemical analysis."
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "Standard board review concept.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Source: Comprhensive Surgery Revision conv.docx",
+    "takeaway": "Key Concept: ",
+    "id": 391
+  },
+  {
+    "specialty": "Plastic Surgery",
+    "topic": "Comprhensive Surgery Revision conv.docx",
+    "question": "Advantages of split-thickness skin grafts over full-thickness skin grafts include:",
+    "options": {
+      "A": "Split-thickness grafts include only part of the epidermis and none of the dermis.",
+      "C": "Split-thickness grafts offer better resistance to contraction.",
+      "E": "Split-thickness grafts survive better on surfaces with compromised blood supply."
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "E",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Source: Comprhensive Surgery Revision conv.docx",
+    "takeaway": "Key Concept: E",
+    "id": 392
+  },
+  {
+    "specialty": "Plastic Surgery",
+    "topic": "Comprhensive Surgery Revision conv.docx",
+    "question": "Endocrine autografts were among the first successful transplantation procedures. The demonstration by Berkhold in 1849 that autotransplanted testes led to the acquisition of secondary sexual characteristics in castrated cocks marked the beginning of experimental endocrinology. Endocrine autografts used successfully in modern surgical practice include:",
+    "options": {
+      "A": "Adrenal medulla to the brain.",
+      "C": "Parathyroid to the forearm.",
+      "E": "Pancreatic islets to the liver."
+    },
+    "answer": "C",
+    "explanation": {
+      "correct": "DE 147COMPRHENSIVE SURGERY REVISION200859690-21611 59690-21611 COMPRHENSIVE SURGERY REVISION2008-83565-43812 -83565-43812",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Source: Comprhensive Surgery Revision conv.docx",
+    "takeaway": "Key Concept: DE 147COMPRHENSIVE SURGERY REVISION200859690-21611 59690-21611 COMPRHENSIVE SURGERY REVISION2008-835...",
+    "id": 393
+  },
+  {
+    "specialty": "Plastic Surgery",
+    "topic": "Comprhensive Surgery Revision conv.docx",
+    "question": "Several types of gastrointestinal autografts have been used to replace the esophagus after extirpation of carcinomas. Successful reconstructions have been achieved most frequently with:",
+    "options": {
+      "A": "Stomach.",
+      "B": "Jejunum.",
+      "D": "Ascending colon.",
+      "E": "Descending colon."
+    },
+    "answer": "A",
+    "explanation": {
+      "correct": "Standard board review concept.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Source: Comprhensive Surgery Revision conv.docx",
+    "takeaway": "Key Concept: ",
+    "id": 394
+  },
+  {
+    "specialty": "Plastic Surgery",
+    "topic": "Oncology MCQ.docx",
+    "question": "Which of the following statements is/are true of the epidemiology and etiology of melanoma?",
+    "options": {
+      "A": "Most patients are diagnosed after age 60 years.",
+      "B": "Skin color has no association with risk of melanoma.",
+      "C": "Sun exposure is the only risk factor for melanoma.",
+      "D": "The per capita incidence of melanoma is highest in Australia."
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "DISCUSSION: The median age at diagnosis is in the late forties; so, a minority of patients are diagnosed after age",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Source: Oncology MCQ.docx",
+    "takeaway": "Key Concept: DISCUSSION: The median age at diagnosis is in the late forties; so, a minority of patients are diagn...",
+    "id": 395
+  },
+  {
+    "specialty": "Plastic Surgery",
+    "topic": "Oncology MCQ.docx",
+    "question": "Which of the following variables best predicts prognosis for patients with a recent diagnosis of cutaneous melanoma and no clinical evidence of metastatic disease?",
+    "options": {
+      "A": "Breslow thickness.",
+      "B": "Clark's level.",
+      "C": "Ulceration.",
+      "D": "Gender.",
+      "E": "Celtic complexion."
+    },
+    "answer": "A",
+    "explanation": {
+      "correct": "DISCUSSION: The prognosis for melanoma is best predicted by the thickness, measured in millimeters (Breslow thickness). Clark's level and ulceration are also predictive, but less so. Gender is a secondary prognostic factor. Skin color may have a mild impact on outcome, but it is primarily a risk factor for developing melanoma.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Source: Oncology MCQ.docx",
+    "takeaway": "Key Concept: DISCUSSION: The prognosis for melanoma is best predicted by the thickness, measured in millimeters (...",
+    "id": 396
+  },
+  {
+    "specialty": "Plastic Surgery",
+    "topic": "Grafts",
+    "question": "Which of the following is TRUE regarding Grafts?",
+    "options": {
+      "A": "A split-thickness skin graft (STSG) relies on plasma imbibition in the first 24-48 hours.",
+      "B": "Incorrect distractor regarding Grafts",
+      "C": "Incorrect distractor regarding Grafts",
+      "D": "Incorrect distractor regarding Grafts"
+    },
+    "answer": "A",
+    "explanation": {
+      "correct": "A split-thickness skin graft (STSG) relies on plasma imbibition in the first 24-48 hours.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Surgical Insight Hub Premium Board Review",
+    "takeaway": "Key Plastic Surgery Pearl: A split-thickness skin graft (STSG) relies on plasma imbibition in the first 24-...",
+    "id": 1216,
+    "_src_file": "questions_enriched_test.js",
+    "sharp": {
+      "set_the_stage": "Which of the following is TRUE regarding Grafts?",
+      "highlight_excellence": "Pending enrichment",
+      "address_gaps": "Pending enrichment",
+      "review_learning_points": "Pending enrichment",
+      "plan": "Review this topic for board preparation."
+    }
+  },
+  {
+    "specialty": "Plastic Surgery",
+    "topic": "Flaps",
+    "question": "Which of the following is TRUE regarding Flaps?",
+    "options": {
+      "A": "Incorrect distractor regarding Flaps",
+      "B": "The difference between a graft and a flap is that a flap has its own blood supply.",
+      "C": "Incorrect distractor regarding Flaps",
+      "D": "Incorrect distractor regarding Flaps"
+    },
+    "answer": "B",
+    "explanation": {
+      "correct": "The difference between a graft and a flap is that a flap has its own blood supply.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Surgical Insight Hub Premium Board Review",
+    "takeaway": "Key Plastic Surgery Pearl: The difference between a graft and a flap is that a flap has its own blood suppl...",
+    "id": 1217,
+    "_src_file": "questions_enriched_test.js",
+    "sharp": {
+      "set_the_stage": "Which of the following is TRUE regarding Flaps?",
+      "highlight_excellence": "Pending enrichment",
+      "address_gaps": "Pending enrichment",
+      "review_learning_points": "Pending enrichment",
+      "plan": "Review this topic for board preparation."
+    }
+  },
+  {
+    "specialty": "Plastic Surgery",
+    "topic": "Melanoma",
+    "question": "Which of the following is TRUE regarding Melanoma?",
+    "options": {
+      "A": "Incorrect distractor regarding Melanoma",
+      "B": "Incorrect distractor regarding Melanoma",
+      "C": "Breslow thickness is the most important prognostic factor for localized disease.",
+      "D": "Incorrect distractor regarding Melanoma"
+    },
+    "answer": "C",
+    "explanation": {
+      "correct": "Breslow thickness is the most important prognostic factor for localized disease.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Surgical Insight Hub Premium Board Review",
+    "takeaway": "Key Plastic Surgery Pearl: Breslow thickness is the most important prognostic factor for localized disease....",
+    "id": 1218,
+    "_src_file": "questions_enriched_test.js",
+    "sharp": {
+      "set_the_stage": "Which of the following is TRUE regarding Melanoma?",
+      "highlight_excellence": "Pending enrichment",
+      "address_gaps": "Pending enrichment",
+      "review_learning_points": "Pending enrichment",
+      "plan": "Review this topic for board preparation."
+    }
+  },
+  {
+    "specialty": "Plastic Surgery",
+    "topic": "Basal Cell Ca",
+    "question": "Which of the following is TRUE regarding Basal Cell Ca?",
+    "options": {
+      "A": "Incorrect distractor regarding Basal Cell Ca",
+      "B": "Incorrect distractor regarding Basal Cell Ca",
+      "C": "Incorrect distractor regarding Basal Cell Ca",
+      "D": "The most common skin cancer; characterized by pearly borders and telangiectasia."
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "The most common skin cancer; characterized by pearly borders and telangiectasia.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Surgical Insight Hub Premium Board Review",
+    "takeaway": "Key Plastic Surgery Pearl: The most common skin cancer; characterized by pearly borders and telangiectasia....",
+    "id": 1219,
+    "_src_file": "questions_enriched_test.js",
+    "sharp": {
+      "set_the_stage": "Which of the following is TRUE regarding Basal Cell Ca?",
+      "highlight_excellence": "Pending enrichment",
+      "address_gaps": "Pending enrichment",
+      "review_learning_points": "Pending enrichment",
+      "plan": "Review this topic for board preparation."
+    }
+  },
+  {
+    "specialty": "Plastic Surgery",
+    "topic": "Plastic Surgery Core Concept",
+    "question": "Which of the following is TRUE regarding Plastic Surgery Core Concept?",
+    "options": {
+      "A": "This is a high-yield Plastic Surgery board review concept that is frequently tested.",
+      "B": "Incorrect distractor regarding Plastic Surgery Core Concept",
+      "C": "Incorrect distractor regarding Plastic Surgery Core Concept",
+      "D": "Incorrect distractor regarding Plastic Surgery Core Concept"
+    },
+    "answer": "A",
+    "explanation": {
+      "correct": "This is a high-yield Plastic Surgery board review concept that is frequently tested.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Surgical Insight Hub Premium Board Review",
+    "takeaway": "Key Plastic Surgery Pearl: This is a high-yield Plastic Surgery board review concept that is frequently tes...",
+    "id": 1220,
+    "_src_file": "questions_enriched_test.js",
+    "sharp": {
+      "set_the_stage": "Which of the following is TRUE regarding Plastic Surgery Core Concept?",
+      "highlight_excellence": "Pending enrichment",
+      "address_gaps": "Pending enrichment",
+      "review_learning_points": "Pending enrichment",
+      "plan": "Review this topic for board preparation."
+    }
+  },
+  {
+    "specialty": "Plastic Surgery",
+    "topic": "Burns",
+    "question": "Parkland formula for fluid resuscitation in a 70kg patient with 30% TBSA burns?",
+    "options": {
+      "A": "4.2 L in 24 hrs",
+      "B": "8.4 L in 24 hrs",
+      "C": "12.6 L in 24 hrs",
+      "D": "2.1 L in 24 hrs"
+    },
+    "answer": "B",
+    "explanation": {
+      "correct": "Parkland = 4ml x weight(kg) x %TBSA. 4 x 70 x 30 = 8400 ml (8.4 L). Half is given in first 8 hours.",
+      "A": "Based on 2ml (Modified Brooke).",
+      "B": "Correct calculation.",
+      "C": "Calculation error.",
+      "D": "Underestimate."
+    },
+    "guideline": "ABA Burn Care Guidelines",
+    "takeaway": "Fluid resuscitation is titrated based on urine output (0.5ml/kg/hr).",
+    "_src_file": "extra_questions.js",
+    "id": 272,
+    "sharp": {
+      "set_the_stage": "Parkland formula for fluid resuscitation in a 70kg patient with 30% TBSA burns?",
+      "highlight_excellence": "Pending enrichment",
+      "address_gaps": "Pending enrichment",
+      "review_learning_points": "Pending enrichment",
+      "plan": "Review this topic for board preparation."
+    }
   }
 ]

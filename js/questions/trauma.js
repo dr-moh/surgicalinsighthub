@@ -1,402 +1,227 @@
-if (!window.QUESTIONS) window.QUESTIONS = [];
-window.QUESTIONS.push(...[
-{
-    "specialty": "Trauma Surgery",
-    "topic": "Primary Survey",
-    "question": "In the ATLS Primary Survey, what is the most important FIRST step in managing a patient with a suspected cervical spine injury and a compromised airway?",
-    "options": {
-      "A": "Immediate blind nasotracheal intubation",
-      "B": "Cricothyroidotomy",
-      "C": "Airway maintenance with restricted cervical spine motion (Manual Inline Stabilization)",
-      "D": "Chest X-ray to rule out pneumothorax"
-    },
-    "answer": "C",
-    "explanation": {
-      "correct": "The 'A' in ABCDE stands for Airway with C-spine protection. The airway must be secured while keeping the neck in a neutral position using manual inline stabilization, not just a collar.",
-      "A": "Contraindicated in facial fractures or apnea.",
-      "B": "Only if endotracheal intubation fails or is impossible.",
-      "C": "Standard ATLS protocol.",
-      "D": "Part of the 'B' (Breathing) phase."
-    },
-    "guideline": "ATLS 10th Edition: Airway and Ventilatory Management",
-    "takeaway": "Airway Management must include Restricted Cervical Spine Motion.",
-    "sharp_metadata": {
-      "S": "Trauma patient in a MVA; unconscious and gurgling.",
-      "H": "Excellence in technique: Using a jaw thrust (not a head tilt-chin lift) to open the airway without moving the spine.",
-      "A": "Address the fact that a hard C-collar must be partially removed for airway intervention to allow manual stabilization.",
-      "R": "Fundamental trauma management.",
-      "P": "Orotracheal intubation with manual inline stabilization."
-    },
-    "id": 1652,
-    "_src_file": "trauma.js"
-  },
-{
-    "specialty": "Trauma Surgery",
-    "topic": "Tension Pneumothorax",
-    "question": "A trauma patient presents with respiratory distress, absent breath sounds on the right, and hypotension. What is the most appropriate IMMEDIATE management?",
-    "options": {
-      "A": "Order a STAT portable chest X-ray",
-      "B": "Perform a CT scan of the chest",
-      "C": "Needle decompression or Finger Thoracostomy",
-      "D": "Endotracheal intubation"
-    },
-    "answer": "C",
-    "explanation": {
-      "correct": "Tension pneumothorax is a CLINICAL diagnosis. You should NEVER wait for an X-ray if the clinical signs (Distress + Absent sounds + Shock) are present. Immediate decompression is life-saving.",
-      "A": "Classic 'wrong' answer; do not wait for imaging.",
-      "B": "Patient will likely code in CT.",
-      "C": "Immediate life-saving intervention.",
-      "D": "Does not treat the underlying pressure and may worsen the tension."
-    },
-    "guideline": "ATLS Management of Tension Pneumothorax",
-    "takeaway": "Tension Pneumothorax = Clinical Diagnosis; Immediate Decompression.",
-    "sharp_metadata": {
-      "S": "Patient with tracheal deviation (LATE sign) and distended neck veins.",
-      "H": "Excellence in site selection: 5th intercostal space, mid-axillary line is now preferred over the 2nd ICS in many guidelines.",
-      "A": "Identify the cause of shock: Decreased venous return to the heart due to high intrathoracic pressure.",
-      "R": "Critical 'Don't Miss' surgical emergency.",
-      "P": "Immediate finger thoracostomy followed by a formal chest tube (32-36 Fr)."
-    },
-    "id": 1653,
-    "_src_file": "trauma.js"
-  },
-{
-    "specialty": "Trauma Surgery",
-    "topic": "Cardiac Tamponade",
-    "question": "Which of the following constitutes 'Beck's Triad' for cardiac tamponade?",
-    "options": {
-      "A": "Hypertension, Bradycardia, Irregular respirations",
-      "B": "Hypotension, Muffled heart sounds, Distended neck veins",
-      "C": "Fever, Tachycardia, Leukocytosis",
-      "D": "RUQ pain, Jaundice, Fever"
-    },
-    "answer": "B",
-    "explanation": {
-      "correct": "Beck's Triad is the classic clinical sign of cardiac tamponade. Note that neck veins may not be distended if the patient is hypovolemic.",
-      "A": "Cushing's Triad (Increased ICP).",
-      "B": "Beck's Triad.",
-      "C": "SIRS criteria.",
-      "D": "Charcot's Triad."
-    },
-    "guideline": "Management of Pericardial Tamponade in Trauma",
-    "takeaway": "Beck's Triad = Hypotension + Muffled sounds + Distended veins.",
-    "sharp_metadata": {
-      "S": "Patient with a stab wound to the 'cardiac box' (sternal notch to xiphoid).",
-      "H": "Excellence in diagnosis: The FAST exam is the most rapid way to identify pericardial fluid.",
-      "A": "Identify 'Pulsus Paradoxus' (SBP drop >10mmHg during inspiration) as a key physiology finding.",
-      "R": "Classic trauma physiology.",
-      "P": "Immediate bedside FAST; if positive and unstable, proceed to the OR for sternotomy or thoracotomy."
-    },
-    "id": 1654,
-    "_src_file": "trauma.js"
-  },
-{
-    "specialty": "Trauma Surgery",
-    "topic": "Hemorrhagic Shock",
-    "question": "A trauma patient has a heart rate of 125, blood pressure of 90/60, and is confused. According to ATLS, which class of hemorrhagic shock is this?",
-    "options": {
-      "A": "Class I",
-      "B": "Class II",
-      "C": "Class III",
-      "D": "Class IV"
-    },
-    "answer": "C",
-    "explanation": {
-      "correct": "Class III shock is defined by a significant drop in blood pressure, tachycardia (>120), and altered mental status. It corresponds to roughly 30-40% blood loss (1500-2000 mL).",
-      "A": "Normal vitals; <15% loss.",
-      "B": "Tachycardia but normal BP; 15-30% loss.",
-      "C": "Hypotension present; 30-40% loss.",
-      "D": "Extreme hypotension; >40% loss; patient is near death."
-    },
-    "guideline": "ATLS Classification of Hemorrhagic Shock",
-    "takeaway": "Class III Shock = Hypotension + Tachycardia + Confusion.",
-    "sharp_metadata": {
-      "S": "Patient with pelvic fracture and active bleeding.",
-      "H": "Excellence in resuscitation: Use 'Permissive Hypotension' (keeping SBP ~90) until bleeding is controlled to prevent 'popping the clot'.",
-      "A": "Address the role of Balanced Resuscitation (1:1:1 ratio of Plasma:Platelets:RBCs).",
-      "R": "Standard trauma physiology framework.",
-      "P": "Activate Massive Transfusion Protocol (MTP) and move to hemorrhage control (Surgery/Angio)."
-    },
-    "id": 1655,
-    "_src_file": "trauma.js"
-  },
-{
-    "specialty": "Trauma Surgery",
-    "topic": "Glasgow Coma Scale (GCS)",
-    "question": "A patient opens their eyes to pain, makes incomprehensible sounds, and withdraws from pain. What is their GCS score?",
-    "options": {
-      "A": "GCS 7",
-      "B": "GCS 8",
-      "C": "GCS 9",
-      "D": "GCS 10"
-    },
-    "answer": "B",
-    "explanation": {
-      "correct": "Eyes (E): Opens to pain = 2; Verbal (V): Incomprehensible sounds = 2; Motor (M): Withdraws from pain = 4. Total = 8.",
-      "A": "Lower.",
-      "B": "Correct calculation (E2 V2 M4).",
-      "C": "Higher.",
-      "D": "Higher."
-    },
-    "guideline": "Standardized Glasgow Coma Scale Assessment",
-    "takeaway": "GCS 8 or less = Coma / 'Less than 8, Intubate'.",
-    "sharp_metadata": {
-      "S": "Post-fall elderly patient with deteriorating mental status.",
-      "H": "Excellence in communication: Always report the individual components (E, V, M) rather than just the sum.",
-      "A": "Identify the Motor score (M) as the most predictive component for outcome.",
-      "R": "Universal language for trauma neurological assessment.",
-      "P": "Protect the airway if GCS < 9."
-    },
-    "id": 1656,
-    "_src_file": "trauma.js"
-  },
-{
-    "specialty": "Trauma Surgery",
-    "topic": "Epidural vs Subdural Hematoma",
-    "question": "A CT scan shows a biconvex (lens-shaped) hyperdense collection that does NOT cross suture lines. Which vessel is most likely injured?",
-    "options": {
-      "A": "Bridging veins",
-      "B": "Middle Meningeal Artery",
-      "C": "Internal Carotid Artery",
-      "D": "Superior Sagittal Sinus"
-    },
-    "answer": "B",
-    "explanation": {
-      "correct": "Biconvex/Lens-shape = Epidural Hematoma. This is typically caused by an arterial bleed, most commonly the Middle Meningeal Artery (branch of the maxillary artery), often following a fracture at the pterion.",
-      "A": "Causes crescent-shaped Subdural Hematoma.",
-      "B": "Classic cause of EDH.",
-      "C": "Deep vessel.",
-      "D": "Causes venous sinus thrombosis or massive venous bleed."
-    },
-    "guideline": "Management of Traumatic Brain Injury",
-    "takeaway": "Epidural = Biconvex/Lens; Middle Meningeal Artery.",
-    "sharp_metadata": {
-      "S": "Young patient hit by a baseball; has a 'lucid interval' before rapid decline.",
-      "H": "Excellence in diagnosis: The 'Lucid Interval' is classic for EDH.",
-      "A": "Identify the fact that EDH *can* cross the midline (unlike SDH) because it is above the dura.",
-      "R": "High-yield neuro-trauma.",
-      "P": "Emergent neurosurgical evacuation via craniotomy."
-    },
-    "id": 1657,
-    "_src_file": "trauma.js"
-  },
-{
-    "specialty": "Trauma Surgery",
-    "topic": "Blunt Aortic Injury",
-    "question": "What is the most common anatomical site for a traumatic aortic rupture following a high-speed deceleration injury?",
-    "options": {
-      "A": "Aortic root",
-      "B": "Ascending aorta",
-      "C": "Aortic isthmus (just distal to the left subclavian)",
-      "D": "Abdominal aorta"
-    },
-    "answer": "C",
-    "explanation": {
-      "correct": "The aortic isthmus is the most common site (90%). This is where the mobile arch meets the fixed descending aorta at the ligamentum arteriosum, creating a shear point during rapid deceleration.",
-      "A": "Causes immediate death on the scene (80% of cases).",
-      "B": "Less common in blunt trauma.",
-      "C": "Classic site for survivors who make it to the hospital.",
-      "D": "Rare in deceleration."
-    },
-    "guideline": "Management of Blunt Thoracic Aortic Injury (BTAI)",
-    "takeaway": "Aortic Isthmus = Most common site for blunt aortic injury.",
-    "sharp_metadata": {
-      "S": "High-speed MVA survivor with 'widened mediastinum' on chest X-ray.",
-      "H": "Excellence in imaging: CT Angiography (CTA) is the gold standard for diagnosis.",
-      "A": "Identify 'Impulse Control' (lowering BP and HR) as the key medical management before repair.",
-      "R": "Lethal trauma pathology.",
-      "P": "Treat with TEVAR (Thoracic Endovascular Aortic Repair) if anatomically suitable."
-    },
-    "id": 1658,
-    "_src_file": "trauma.js"
-  },
-{
-    "specialty": "Trauma Surgery",
-    "topic": "Damage Control Surgery",
-    "question": "Which of the following defines the 'Lethal Triad' of trauma that Damage Control Surgery aims to stop?",
-    "options": {
-      "A": "Hypotension, Bradycardia, Hypothermia",
-      "B": "Acidosis, Coagulopathy, Hypothermia",
-      "C": "Pain, Fever, Leukocytosis",
-      "D": "Hypoxia, Hypercapnia, Acidosis"
-    },
-    "answer": "B",
-    "explanation": {
-      "correct": "The 'Lethal Triad' consists of Acidosis, Coagulopathy, and Hypothermia. These three factors reinforce each other and lead to irreversible physiological collapse.",
-      "A": "Incomplete.",
-      "B": "The physiological cornerstone of trauma death.",
-      "C": "SIRS/Infection signs.",
-      "D": "Respiratory failure."
-    },
-    "guideline": "Damage Control Resuscitation Principles",
-    "takeaway": "Lethal Triad = Acidosis + Coagulopathy + Hypothermia.",
-    "sharp_metadata": {
-      "S": "Exsanguinating patient in the OR; belly is full of blood and oozing everywhere.",
-      "H": "Excellence in judgment: Recognizing when to 'get out' of the OR (packing the liver/abdomen) and move to the ICU to correct the triad.",
-      "A": "Identify the 'Diamond of Death' which adds hypocalcemia to the triad (due to citrate in blood transfusions).",
-      "R": "Core concept of modern trauma surgery.",
-      "P": "Stop bleeding, control contamination, pack the abdomen, and head to ICU for resuscitation."
-    },
-    "id": 1659,
-    "_src_file": "trauma.js"
-  },
-{
-    "specialty": "Trauma Surgery",
-    "topic": "Abdominal Trauma: FAST Exam",
-    "question": "Which of the following is NOT one of the four standard views in a Focused Assessment with Sonography for Trauma (FAST) exam?",
-    "options": {
-      "A": "Morison's Pouch (Perihepatic)",
-      "B": "Splenorenal Recess (Perisplenic)",
-      "C": "Pelvis (Pouch of Douglas/Retrovesical)",
-      "D": "Gastric Fundus"
-    },
-    "answer": "D",
-    "explanation": {
-      "correct": "The FAST views are: 1. Perihepatic (Morison's pouch), 2. Perisplenic, 3. Pelvic, and 4. Pericardial (subxiphoid). The gastric fundus is not a standard view.",
-      "A": "Standard view.",
-      "B": "Standard view.",
-      "C": "Standard view.",
-      "D": "Not part of FAST."
-    },
-    "guideline": "Use of Ultrasound in Trauma",
-    "takeaway": "FAST = Heart, Liver, Spleen, Pelvis.",
-    "sharp_metadata": {
-      "S": "Hypotensive blunt trauma patient; vitals 80/40.",
-      "H": "Excellence in triage: A positive FAST in an unstable patient is an immediate indication for laparotomy.",
-      "A": "Identify 'E-FAST' as the extended version that includes views of the lungs for pneumothorax.",
-      "R": "Essential trauma diagnostic tool.",
-      "P": "Perform FAST within seconds of arrival in the trauma bay."
-    },
-    "id": 1660,
-    "_src_file": "trauma.js"
-  },
-{
-    "specialty": "Trauma Surgery",
-    "topic": "Urethral Injury",
-    "question": "A male patient with a pelvic fracture has 'high-riding prostate' on rectal exam and blood at the urethral meatus. What is the most appropriate next step to evaluate the urethra?",
-    "options": {
-      "A": "Insert a 16Fr Foley catheter immediately",
-      "B": "Retrograde Urethrogram (RUG)",
-      "C": "CT Cystogram",
-      "D": "Suprapubic catheterization"
-    },
-    "answer": "B",
-    "explanation": {
-      "correct": "The triad of Pelvic fracture + Blood at meatus + High-riding prostate suggests a urethral injury. Blind catheterization can convert a partial tear to a complete tear. A RUG must be performed first to confirm urethral integrity.",
-      "A": "Contraindicated until RUG is clear.",
-      "B": "Gold standard for urethral injury diagnosis.",
-      "C": "Evaluates the bladder, not the urethra.",
-      "D": "Treatment, not diagnostic test."
-    },
-    "guideline": "Management of Urogenital Trauma",
-    "takeaway": "Blood at meatus = RUG before Foley.",
-    "sharp_metadata": {
-      "S": "Patient with pelvic 'butterfly' bruising and inability to void.",
-      "H": "Excellence in physical exam: Blood at the meatus is the most sensitive sign of urethral injury.",
-      "A": "Identify the 'membranous urethra' as the most common site of injury in pelvic fractures.",
-      "R": "Surgical board favorite for 'next step' questions.",
-      "P": "Perform RUG; if extravasation is seen, consult urology for suprapubic tube."
-    },
-    "id": 1661,
-    "_src_file": "trauma.js"
-  },
-{
-    "id": 517,
+// Auto-generated by Consolidation Script
+if(typeof window !== "undefined") {
+  window.QUESTIONS = window.QUESTIONS || [];
+  window.QUESTIONS.push(...[
+  {
+    "id": 1063,
     "specialty": "Trauma",
-    "topic": "Comprhensive Surgery Revision conv.docx",
-    "question": "A 24-year-old woman presents to the emergency room with a dislocated knee. In transferring the patient from stretcher to examining table, the knee is spontaneously reduced. Physical examination reveals no palpable or ―Dopplerable‖ pulses in the foot on the affected side and booming pulses in the foot on the nonaffected side. Proper treatment would include which of the following?",
+    "topic": "rush.docx",
+    "question": "between packed red blood cells (PRBCs), fresh-frozen plasma (FFP), and platelets (PLTs) reduces the severity of coagulopathy in hemorrhagic shock.",
     "options": {
-      "B": "Magnetic resonance imaging (MRI) of the affected leg.",
-      "D": "Emergent transfer to the operating room for exploration of the popliteal artery.",
-      "E": "Immobilization of the knee with gentle warming of the extremity and elevation."
+      "C": "Patients with circulating factor levels 50% of the normal will show clinically impaired hemostasis.",
+      "D": "Addition of TXA to massive transfusion protocols comes with an increased risk of thrombotic complications.",
+      "E": "Albumin-containing solutions have a proven mortality benefit over crystalloid fluids in the resuscitation of hypovolemic shock."
     },
-    "answer": "D",
+    "answer": "B",
     "explanation": {
-      "correct": "The critical finding here is the absence of palpable or Dopplerable pulses in the foot despite a spontaneously reduced knee dislocation. This strongly suggests injury to the popliteal artery, which is highly susceptible to intimal injury, thrombosis, or even transection during knee dislocation. Prompt recognition and intervention are paramount to prevent irreversible ischemic damage and potential limb loss.",
+      "correct": "Previous theories of intravenous fluid resuscitation relied heavily upon crystalloid fluids to bolster blood volume and pressure. However, recent studies such as the Prospective, Observa tional, Multicenter, Major Trauma Transfusion (PROMMTT) and Pragmatic, Randomized Optimal Platelet and Plasma Ratios (PROPPR) have changed this practice. These studies were grounded in findings from battlefield transfusion studies showing decreased mortality in patients transfused with whole blood when components such as PRBCs and FFP were unavailable. The theory is that aggres sive resuscitation with crystalloid fluids exacerbates the consumptive coagulopathy of trauma (clotting factors are used up in achieving CHAPTER 3 / Hemostasis and Transfusion 23 systemic hemostasis) with an iatrogenic dilutional coagulopathy. Thus crystalloid-resuscitated patients initially responded hemodynamically but were coagulopathic and continued to bleed. The PROMMTT trial first showed that patients who received higher ratios of platelets and plasma to FFPs had reduced all-cause mortality in the first 24 h following injury. These results were sustained at 30 days postinjury. The PROPPR trial refined these findings and showed superior outcomes with a 1:1:1 ratio of PRBC:FFP:PLT compared with a 1:1:2 ratio. The data trended toward significance in 24-h and 30-day mortality but was underpowered.",
       "A": "",
       "B": "",
       "C": "",
       "D": "",
       "E": ""
     },
-    "sharp": {
-      "status": "ACCEPT",
-      "verified_answer": "D",
-      "set_the_stage": "This question presents a classic surgical emergency: a dislocated knee with associated vascular compromise. The key takeaway is the immediate threat to limb viability posed by absent distal pulses after a knee dislocation, even if spontaneously reduced.",
-      "highlight_excellence": "The critical finding here is the absence of palpable or Dopplerable pulses in the foot despite a spontaneously reduced knee dislocation. This strongly suggests injury to the popliteal artery, which is highly susceptible to intimal injury, thrombosis, or even transection during knee dislocation. Prompt recognition and intervention are paramount to prevent irreversible ischemic damage and potential limb loss.",
-      "address_gaps": "Option B (MRI) is incorrect because it is time-consuming and not the initial management for an acute vascular emergency. While MRI can be useful for evaluating ligamentous injuries later, it delays definitive vascular assessment and intervention. Option E (Immobilization, warming, elevation) is dangerously inadequate. Gentle warming can worsen ischemia by increasing metabolic demand in an already compromised limb, and while immobilization is necessary, it does not address the underlying vascular injury. The absence of pulses mandates immediate surgical exploration.",
-      "review_guidelines": "In any patient with a knee dislocation, especially one with associated neurovascular deficits (diminished or absent pulses, paresthesias, motor deficits), vascular integrity must be assessed urgently. A high index of suspicion for popliteal artery injury is warranted. If pulses are absent or significantly diminished, emergent vascular exploration and repair are indicated, even if the dislocation has spontaneously reduced. Compartment syndrome should also be a concern in these patients.",
-      "plan": "For any patient presenting with knee dislocation and absent distal pulses, the immediate plan is emergent transfer to the operating room for vascular exploration. This allows for direct visualization of the popliteal artery, assessment for injury, and prompt repair if necessary. Definitive management of ligamentous injuries can be addressed once limb viability is secured."
-    },
-    "guideline": "In any patient with a knee dislocation, especially one with associated neurovascular deficits (diminished or absent pulses, paresthesias, motor deficits), vascular integrity must be assessed urgently. A high index of suspicion for popliteal artery injury is warranted. If pulses are absent or significantly diminished, emergent vascular exploration and repair are indicated, even if the dislocation has spontaneously reduced. Compartment syndrome should also be a concern in these patients.",
-    "takeaway": "PLAN: For any patient presenting with knee dislocation and absent distal pulses, the immediate plan is emergent transfer to the operating room for vascular exploration. This allows for direct visualization of the popliteal artery, assessment for injury, and prompt repair if necessary. Definitive management of ligamentous injuries can be addressed once limb viability is secured.",
-    "_src_file": "trauma.js"
+    "guideline": "Standard Surgical Board Review",
+    "takeaway": "Key Insight: Previous theories of intravenous fluid resuscitation relied heavily upon crystalloid fluids to bolster blood volume and ..."
   },
-{
-    "id": 501,
+  {
+    "id": 1080,
     "specialty": "Trauma",
     "topic": "rush.docx",
-    "question": "Which of the following is true regarding the role of TNF-α release in the inflammatory response?",
+    "question": "D. The effect of aspirin is reversible in 2 to 3 days.",
     "options": {
-      "A": "It can be effectively blocked by anti–TNF-α antibodies to halt systemic inflammatory response syndrome (SIRS).",
-      "E": "It is always deleterious."
+      "D": "The effect of aspirin is reversible in 2 to 3 days.",
+      "E": "Aspirin will decrease platelet counts, but bleeding time is unchanged.28 SECTION I / Surgical Fundamentals"
     },
     "answer": "A",
     "explanation": {
-      "correct": "The correct answer (A) accurately reflects the established mechanism of action for anti-TNF-α antibodies. TNF-α is a central driver of SIRS, and neutralizing it with these biologics is a cornerstone of treatment. The other options are clinically inaccurate.",
+      "correct": "Aspirin, indomethacin, and most other nonsteroi dal antiinflammatory drugs (NSAIDs) are inhibitors of prostaglan din synthesis. They block the formation of PGG2 and PGH2 from platelet arachidonic acid and, as a result, inhibit platelet aggrega tion. PGI2, PGE1, and thromboxane A2 stimulate cAMP produc tion, whereas dipyridamole and theophylline derivatives block its degradation. Aspirin inhibits thromboxane production, acetylates fibrinogen, interferes with fibrin formation, and makes fibrin sus ceptible to accelerated fibrinolysis. The effect of aspirin begins within 2 h, is irreversible, and lasts the 7- to 9-day life span of affected platelets. The clinical result is increased bruising and bleeding and increased risk of surgical bleeding. Platelet counts are normal, but the bleeding time is prolonged. Furosemide competi tively inhibits ADP-induced platelet aggregation and reduces the response of platelets to PGG",
       "A": "",
       "B": "",
       "C": "",
       "D": "",
       "E": ""
     },
-    "sharp": {
-      "status": "ACCEPT",
-      "verified_answer": "A",
-      "set_the_stage": "This question assesses understanding of a key inflammatory mediator – TNF-α – and its clinical significance. It’s a common question tested in immunology and inflammatory disease courses.",
-      "highlight_excellence": "The correct answer (A) accurately reflects the established mechanism of action for anti-TNF-α antibodies. TNF-α is a central driver of SIRS, and neutralizing it with these biologics is a cornerstone of treatment. The other options are clinically inaccurate.",
-      "address_gaps": "The question’s phrasing could be slightly improved to emphasize the *systemic* inflammatory response. While TNF-α *can* be deleterious, the core concept being tested is its role in SIRS and the therapeutic targeting of this pathway.  The provided answer key (D) is incorrect.",
-      "review_guidelines": "1. **TNF-α’s Role:** Reinforce the understanding that TNF-α is a potent pro-inflammatory cytokine involved in the pathogenesis of SIRS, sepsis, rheumatoid arthritis, and inflammatory bowel disease. 2. **Anti-TNF-α Therapy:** Review the mechanism of action of anti-TNF-α antibodies – they directly neutralize TNF-α, thereby interrupting the inflammatory cascade. 3. **SIRS Pathophysiology:**  Reiterate the key components of SIRS: widespread inflammation, endothelial dysfunction, and leukocyte activation – all driven, in part, by TNF-α. 4. **Clinical Implications:** Discuss the clinical use of anti-TNF-α agents in various inflammatory conditions and their efficacy in reducing inflammation and improving outcomes.",
-      "plan": "I would recommend a focused review of cytokine biology, specifically concentrating on TNF-α.  Case studies illustrating the role of TNF-α in sepsis and inflammatory arthritis would be beneficial.  A deeper dive into the mechanisms of anti-TNF-α antibody action is also warranted."
-    },
-    "guideline": "1. **TNF-α’s Role:** Reinforce the understanding that TNF-α is a potent pro-inflammatory cytokine involved in the pathogenesis of SIRS, sepsis, rheumatoid arthritis, and inflammatory bowel disease. 2. **Anti-TNF-α Therapy:** Review the mechanism of action of anti-TNF-α antibodies – they directly neutralize TNF-α, thereby interrupting the inflammatory cascade. 3. **SIRS Pathophysiology:**  Reiterate the key components of SIRS: widespread inflammation, endothelial dysfunction, and leukocyte activation – all driven, in part, by TNF-α. 4. **Clinical Implications:** Discuss the clinical use of anti-TNF-α agents in various inflammatory conditions and their efficacy in reducing inflammation and improving outcomes.",
-    "takeaway": "PLAN: I would recommend a focused review of cytokine biology, specifically concentrating on TNF-α.  Case studies illustrating the role of TNF-α in sepsis and inflammatory arthritis would be beneficial.  A deeper dive into the mechanisms of anti-TNF-α antibody action is also warranted.",
-    "_src_file": "trauma.js"
+    "guideline": "Standard Surgical Board Review",
+    "takeaway": "Key Insight: Aspirin, indomethacin, and most other nonsteroi dal antiinflammatory drugs (NSAIDs) are inhibitors of prostaglan din syn..."
   },
-{
-    "id": 513,
+  {
+    "id": 1136,
     "specialty": "Trauma",
     "topic": "rush.docx",
-    "question": "A 68-year-old female has been admitted to the emergency room with recurrent Clostridium difficile colitis. Her first episode of",
+    "question": "D. IL-6 levels peak early after injury.",
     "options": {
-      "C": "Oral vancomycin 125 mg every 6 h for 10 to 14 days",
-      "A": "Oral metronidazole 500 mg every 8 h for 10 to 14 days",
-      "E": "IV vancomycin 125 mg every 6 h for 10 to 14 days"
+      "D": "IL-6 levels peak early after injury.",
+      "E": "IL-6 has antiinflammatory effects."
     },
-    "answer": "E",
+    "answer": "C",
     "explanation": {
-      "correct": "The correct answer (E) – IV vancomycin – reflects current best practice. Oral vancomycin is often ineffective in recurrent CDI due to poor absorption and limited colonic concentrations. Metronidazole is a less effective agent against *C. difficile* and should be avoided as first-line treatment. The ‘D’ answer is incorrect and represents an outdated approach.",
+      "correct": "IL-6 is a very sensitive marker for the degree of tissue injury. It is secreted by monocytes, macrophages, neutro phils, T and B cells, endothelial cells, smooth muscle cells, and fibroblasts. IL-6 expression is induced by bradykinin, TGF-\u03b2, platelet-derived growth factor, TNF-\u03b1, and IL-1, among others. IL-6 levels peak early after injury, with levels found to be predictive of risk for and mortality from organ failure after trauma. IL-6 induces the synthesis of acute-phase proteins such as fibrinogen, complement factors, \u03b11-antitrypsin, and CRP. CRP itself is a marker for states with increased inflammation and, in addition, is predictive of adverse outcomes following a secondary surgery. IL-6 also has some antiinflammatory effects, including inhibition of proteases and reduction of TNF-\u03b1 and IL-1 synthesis; furthermore, it can cause the release of immunosuppressive glucocorticoids.",
       "A": "",
       "B": "",
       "C": "",
       "D": "",
       "E": ""
     },
-    "sharp": {
-      "status": "ACCEPT",
-      "verified_answer": "E",
-      "set_the_stage": "This patient presents with recurrent *Clostridium difficile* colitis, a common and challenging condition. The key here is understanding the optimal antibiotic approach for *C. difficile* infection, particularly in recurrent cases.",
-      "highlight_excellence": "The correct answer (E) – IV vancomycin – reflects current best practice. Oral vancomycin is often ineffective in recurrent CDI due to poor absorption and limited colonic concentrations. Metronidazole is a less effective agent against *C. difficile* and should be avoided as first-line treatment. The ‘D’ answer is incorrect and represents an outdated approach.",
-      "address_gaps": "The question lacks crucial context regarding the patient’s prior treatment and the severity of the recurrence. A more detailed history would have helped determine if prior antibiotic use contributed to the recurrence. Furthermore, the question doesn’t address the need for fecal microbiota transplantation (FMT) which is increasingly considered for recurrent CDI.",
-      "review_guidelines": "1. **Antibiotic Choice:** Vancomycin (IV or oral) is the mainstay of treatment for *C. difficile* infection. Metronidazole is generally ineffective. 2. **Recurrent CDI:** Recurrent infections require longer courses of vancomycin or, ideally, FMT. 3. **Route of Administration:** IV vancomycin provides higher colonic concentrations, crucial for eradication in recurrent cases. 4. **Monitoring:** Closely monitor for side effects of vancomycin (e.g., nephrotoxicity).",
-      "plan": "1. Initiate IV vancomycin 125 mg every 12 hours for 14 days. 2. Consider fecal microbiota transplantation (FMT) if the infection persists or recurs despite vancomycin. 3. Assess for potential contributing factors (e.g., recent antibiotic use, immunosuppression). 4. Monitor renal function and electrolyte balance closely during vancomycin therapy."
-    },
-    "guideline": "1. **Antibiotic Choice:** Vancomycin (IV or oral) is the mainstay of treatment for *C. difficile* infection. Metronidazole is generally ineffective. 2. **Recurrent CDI:** Recurrent infections require longer courses of vancomycin or, ideally, FMT. 3. **Route of Administration:** IV vancomycin provides higher colonic concentrations, crucial for eradication in recurrent cases. 4. **Monitoring:** Closely monitor for side effects of vancomycin (e.g., nephrotoxicity).",
-    "takeaway": "PLAN: 1. Initiate IV vancomycin 125 mg every 12 hours for 14 days. 2. Consider fecal microbiota transplantation (FMT) if the infection persists or recurs despite vancomycin. 3. Assess for potential contributing factors (e.g., recent antibiotic use, immunosuppression). 4. Monitor renal function and electrolyte balance closely during vancomycin therapy.",
-    "_src_file": "trauma.js"
+    "guideline": "Standard Surgical Board Review",
+    "takeaway": "Key Insight: IL-6 is a very sensitive marker for the degree of tissue injury. It is secreted by monocytes, macrophages, neutro phils,..."
   },
-{
-    "id": 516,
+  {
+    "id": 1137,
+    "specialty": "Trauma",
+    "topic": "rush.docx",
+    "question": "D. IL-10 has a short half-life and is therefore not a useful marker for assessing the severity of injury.",
+    "options": {
+      "D": "IL-10 has a short half-life and is therefore not a useful marker for assessing the severity of injury.",
+      "E": "IL-10 secretion is inhibited by the stress of surgical procedures."
+    },
+    "answer": "C",
+    "explanation": {
+      "correct": "IL-10 originates from T cells and monocytes. It has strong antiinflammatory properties and is capable of inhibiting the synthesis of proinflammatory cytokines such as IL-1 and TNF \u03b1. It also induces a reduction in class II MHC molecules on mono cytes, thereby leading to the downregulation of the immune response. IL-10 levels in trauma patients have been shown to reflect the severity of injury and are predictive of patients in whom sepsis or multiorgan dysfunction syndrome will develop. Release of IL-10 is increased in direct proportion to tissue damage, thus suggesting that more invasive surgical procedures augment the release of IL-",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Standard Surgical Board Review",
+    "takeaway": "Key Insight: IL-10 originates from T cells and monocytes. It has strong antiinflammatory properties and is capable of inhibiting the ..."
+  },
+  {
+    "id": 1187,
+    "specialty": "Trauma",
+    "topic": "rush.docx",
+    "question": "Which of the following statements regarding the risk for postsplenectomy sepsis is true?",
+    "options": {
+      "A": "The indication for splenectomy has no bearing on a patient\u2019s risk for developing postsplenectomy sepsis.",
+      "B": "Adult splenectomy patients have a greater likelihood of developing postsplenectomy sepsis than do children or newborns who require a splenectomy.",
+      "C": "The risk for postsplenectomy sepsis is highest in the first year after splenectomy, but asplenic patients\u2019 increased risk for developing sepsis persists for approximately 10 years following splenectomy.",
+      "D": "The risk of sepsis is increased in splenectomy patients due to impaired cellular immunity.",
+      "E": "None of the above."
+    },
+    "answer": "C",
+    "explanation": {
+      "correct": "Asplenic patients (those who have either under gone splenectomy or are functionally asplenic, such as in sickle cell disease) are at an increased risk for a fulminant and potentially rapidly fatal overwhelming bloodstream infection caused by encap sulated organisms. This is due to impaired bacterial clearance, especially of encapsulated organisms (i.e., S. pneumoniae, Neis seria meningitidis, and H. influenzae), and impaired humoral (not cellular) immunity. The risk of developing postsplenectomy sepsis varies based on the indications for splenectomy, the age at which the patient underwent splenectomy (or became functionally asplenic), and the time interval since splenectomy (or functional asplenia). In terms of indication for splenectomy, patients who have undergone splenectomy for trauma are at the lowest risk; those who have undergone splenectomy for hereditary spherocytosis or immune thrombocytopenic purpura are at intermediate risk; and the greatest risk patients are those who are functionally asplenic due to \u03b1-thalassemia, sickle cell disease, or portal hypertension. Chil dren (especially those under the age of 5 years) are at a greater risk for developing sepsis than are adults, but this may also be con founded by the indications for splenectomy or functional asplenia in this age group. Overall, the risk for postsplenectomy sepsis is greatest in the first year following splenectomy, but patients who have undergone splenectomy are at an increased risk for sepsis for approximately 10 years following surgery.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Standard Surgical Board Review",
+    "takeaway": "Key Insight: Asplenic patients (those who have either under gone splenectomy or are functionally asplenic, such as in sickle cell dis..."
+  },
+  {
+    "id": 1211,
+    "specialty": "Trauma",
+    "topic": "Comprhensive Surgery Revision conv.docx",
+    "question": "Prolactinomas of the pituitary:A. Most often produce dysfunctional uterine bleeding in women.",
+    "options": {
+      "A": "Most often produce dysfunctional uterine bleeding in women.",
+      "B": "Most commonly produce infertility in men.C. When asymptomatic, are best treated surgically early in the microadenoma stage.",
+      "D": "May enlarge during pregnancy, requiring treatment with bromocriptine or surgery.",
+      "E": "Commonly occur in patients with MEN 2."
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Standard Surgical Board Review",
+    "takeaway": "Key Insight: "
+  },
+  {
+    "id": 1248,
+    "specialty": "Trauma",
+    "topic": "Comprhensive Surgery Revision conv.docx",
+    "question": "Which of the following is most reliable for confirming the occurrence of a significant esophageal caustic injury?A. History of the event.B. Physical examination of the patient.",
+    "options": {
+      "A": "History of the event.B. Physical examination of the patient.",
+      "C": "Barium esophagraphy.D. Endoscopy."
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Standard Surgical Board Review",
+    "takeaway": "Key Insight: "
+  },
+  {
+    "id": 1254,
+    "specialty": "Trauma",
+    "topic": "Comprhensive Surgery Revision conv.docx",
+    "question": "In patients with bleeding duodenal ulcers, the endoscopic finding associated with the highest incidence of rebleeding is:A. Visible vessel.",
+    "options": {
+      "A": "Visible vessel.",
+      "B": "Cherry-red spot.",
+      "C": "Clean ulcer bed.",
+      "D": "Duodenitis.E. Shallow, 3-mm. ulcer."
+    },
+    "answer": "A",
+    "explanation": {
+      "correct": "",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Standard Surgical Board Review",
+    "takeaway": "Key Insight: "
+  },
+  {
+    "id": 1262,
+    "specialty": "Trauma",
+    "topic": "Comprhensive Surgery Revision conv.docx",
+    "question": "Which of the following risk factors have been shown to increase significantly the incidence of gastrointestinal bleeding from stress gastritis in intensive care unit (ICU) patients?A. Glucocorticoid administration.",
+    "options": {
+      "A": "Glucocorticoid administration.",
+      "B": "Respiratory failure.C. Coagulopathy.D. Organ transplantation.",
+      "E": "Jaundice."
+    },
+    "answer": "B",
+    "explanation": {
+      "correct": "C",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Standard Surgical Board Review",
+    "takeaway": "Key Insight: C"
+  },
+  {
+    "id": 1294,
+    "specialty": "Trauma",
+    "topic": "Comprhensive Surgery Revision conv.docx",
+    "question": "Which of the following effects are advantages of combined vasopressin and nitroglycerin intravenous infusion, as compared with vasopressin infusion alone, in controlling acute variceal bleeding?A. Lower frequency of encephalopathy.B. Lower incidence of vasopressin side effects.",
+    "options": {
+      "A": "Lower frequency of encephalopathy.B. Lower incidence of vasopressin side effects.",
+      "C": "More effective control of bleeding.D. Less \u2015rebound effect\u2016 when discontinuing the infusion."
+    },
+    "answer": "B",
+    "explanation": {
+      "correct": "C",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Standard Surgical Board Review",
+    "takeaway": "Key Insight: C"
+  },
+  {
     "specialty": "Trauma",
     "topic": "Comprhensive Surgery Revision conv.docx",
     "question": "Which of the following is/are true of blunt renal trauma?",
@@ -407,91 +232,170 @@ window.QUESTIONS.push(...[
     },
     "answer": "D",
     "explanation": {
-      "correct": "The correct answer (D) reflects current best practice. Recognizing hemodynamic instability as the primary driver for exploration is paramount. The other options are either overly aggressive or inaccurate.",
+      "correct": "Standard board review concept.",
       "A": "",
       "B": "",
       "C": "",
       "D": "",
       "E": ""
     },
-    "sharp": {
-      "status": "ACCEPT",
-      "verified_answer": "D",
-      "set_the_stage": "This question assesses understanding of blunt renal trauma management, a critical area in emergency surgery. The key here is differentiating between indications for exploration based on severity and potential for significant hemorrhage.",
-      "highlight_excellence": "The correct answer (D) reflects current best practice. Recognizing hemodynamic instability as the primary driver for exploration is paramount. The other options are either overly aggressive or inaccurate.",
-      "address_gaps": "The major gap is the overemphasis on *always* requiring surgical exploration. While exploration is often necessary, it’s not automatic with every case of blunt renal trauma. The patient’s clinical status – specifically, hemodynamic stability – dictates the initial management strategy. Option B is incorrect because urinary extravasation alone doesn’t always necessitate surgery; it’s the *combination* of extravasation and instability that triggers exploration. Option E is also incorrect as fracture alone doesn’t always require exploration, it’s the potential for associated injury that matters.",
-      "review_guidelines": "1. **Hemodynamic Stability:** This is the *sine qua non* of blunt renal trauma management. Serial vital signs, urine output, and lactate levels are crucial. 2. **Imaging:** CT scans are the gold standard for assessing renal trauma, identifying fractures, hematomas, and vascular injuries. 3. **Grading Systems:** Utilize the Abbreviated Injury Scale (AIS) for renal trauma to standardize assessment and guide management. 4. **Surgical Indications:** Exploration is indicated for: a) Hemodynamic instability despite initial resuscitation. b) Significant hematoma (> 50% of renal volume). c) Evidence of active bleeding. d) Suspicion of vascular injury. e) Persistent pain or tenderness.",
-      "plan": "Further education should focus on the hemodynamic assessment and interpretation of CT scans. Case-based discussions of various blunt renal trauma scenarios are highly recommended. Consider incorporating simulation exercises to practice resuscitation and exploration techniques. Reinforce the concept that exploration is a *therapeutic* decision, not a default one."
-    },
-    "guideline": "1. **Hemodynamic Stability:** This is the *sine qua non* of blunt renal trauma management. Serial vital signs, urine output, and lactate levels are crucial. 2. **Imaging:** CT scans are the gold standard for assessing renal trauma, identifying fractures, hematomas, and vascular injuries. 3. **Grading Systems:** Utilize the Abbreviated Injury Scale (AIS) for renal trauma to standardize assessment and guide management. 4. **Surgical Indications:** Exploration is indicated for: a) Hemodynamic instability despite initial resuscitation. b) Significant hematoma (> 50% of renal volume). c) Evidence of active bleeding. d) Suspicion of vascular injury. e) Persistent pain or tenderness.",
-    "takeaway": "PLAN: Further education should focus on the hemodynamic assessment and interpretation of CT scans. Case-based discussions of various blunt renal trauma scenarios are highly recommended. Consider incorporating simulation exercises to practice resuscitation and exploration techniques. Reinforce the concept that exploration is a *therapeutic* decision, not a default one.",
-    "_src_file": "trauma.js"
+    "guideline": "Source: Comprhensive Surgery Revision conv.docx",
+    "takeaway": "Key Concept: ",
+    "id": 158
   },
-{
-    "id": 515,
+  {
     "specialty": "Trauma",
     "topic": "Comprhensive Surgery Revision conv.docx",
-    "question": "Which of the following is most reliable for confirming the occurrence of a significant esophageal caustic injury?",
+    "question": "A 24-year-old woman presents to the emergency room with a dislocated knee. In transferring the patient from stretcher to examining table, the knee is spontaneously reduced. Physical examination reveals no palpable or \u2015Dopplerable\u2016 pulses in the foot on the affected side and booming pulses in the foot on the nonaffected side. Proper treatment would include which of the following?",
     "options": {
-      "B": "Physical examination of the patient.",
-      "D": "Endoscopy."
+      "B": "Magnetic resonance imaging (MRI) of the affected leg.",
+      "D": "Emergent transfer to the operating room for exploration of the popliteal artery.",
+      "E": "Immobilization of the knee with gentle warming of the extremity and elevation."
     },
     "answer": "D",
     "explanation": {
-      "correct": "The correct answer, endoscopy, is the gold standard. Esophageal injuries from caustic substances often present with subtle mucosal changes that are only detectable with direct visualization and biopsy via endoscopy. Physical examination alone is unreliable for assessing the extent and severity of the damage. While endoscopy is crucial, it’s the *most* reliable for confirmation.",
+      "correct": "Standard board review concept.",
       "A": "",
       "B": "",
       "C": "",
       "D": "",
       "E": ""
     },
-    "sharp": {
-      "status": "ACCEPT",
-      "verified_answer": "D",
-      "set_the_stage": "This question assesses understanding of the diagnostic approach to esophageal caustic injury, a critical surgical concern following ingestion of corrosive substances. The options present common diagnostic methods, and the key is discerning the *most* reliable.",
-      "highlight_excellence": "The correct answer, endoscopy, is the gold standard. Esophageal injuries from caustic substances often present with subtle mucosal changes that are only detectable with direct visualization and biopsy via endoscopy. Physical examination alone is unreliable for assessing the extent and severity of the damage. While endoscopy is crucial, it’s the *most* reliable for confirmation.",
-      "address_gaps": "The incorrect answer, ‘Physical examination of the patient,’ highlights a common misconception. While vital for initial assessment (assessing airway, swallowing, pain), it’s inherently limited in visualizing the esophageal mucosa, particularly in the presence of edema and sloughing. Option ‘D’ (Endoscopy) is the most sensitive and specific test for confirming and grading caustic injury. It allows for direct visualization, biopsy for histologic confirmation of necrosis, and assessment of the depth and extent of the injury.",
-      "review_guidelines": "1. **Esophageal Caustic Injury:** Understand the pathophysiology – rapid mucosal destruction, edema, and potential for perforation. 2. **Diagnostic Approach:** Prioritize endoscopy for confirmation and grading. 3. **Grading:** Utilize established grading systems (e.g., McFarland) based on endoscopic findings. 4. **Management:** Surgical intervention (e.g., esophageal dilation, reconstruction) is often required depending on the severity and location of the injury. 5. **Biopsy:** Essential for confirming necrosis and ruling out other causes of esophageal injury.",
-      "plan": "Further education should focus on the endoscopic findings associated with caustic injury (e.g., granular appearance, ulceration, strictures) and the importance of prompt endoscopy for timely intervention. Consider incorporating a brief endoscopic simulation or case study to reinforce the concept."
-    },
-    "guideline": "1. **Esophageal Caustic Injury:** Understand the pathophysiology – rapid mucosal destruction, edema, and potential for perforation. 2. **Diagnostic Approach:** Prioritize endoscopy for confirmation and grading. 3. **Grading:** Utilize established grading systems (e.g., McFarland) based on endoscopic findings. 4. **Management:** Surgical intervention (e.g., esophageal dilation, reconstruction) is often required depending on the severity and location of the injury. 5. **Biopsy:** Essential for confirming necrosis and ruling out other causes of esophageal injury.",
-    "takeaway": "PLAN: Further education should focus on the endoscopic findings associated with caustic injury (e.g., granular appearance, ulceration, strictures) and the importance of prompt endoscopy for timely intervention. Consider incorporating a brief endoscopic simulation or case study to reinforce the concept.",
-    "_src_file": "trauma.js"
+    "guideline": "Source: Comprhensive Surgery Revision conv.docx",
+    "takeaway": "Key Concept: ",
+    "id": 159
   },
-{
-    "id": 519,
+  {
     "specialty": "Trauma",
     "topic": "Comprhensive Surgery Revision conv.docx",
-    "question": "Which of the following statements about maxillofacial trauma is/are false?",
+    "question": "The zone of flexor tendon injury that carries the poorest prognosis following injury and repair is:",
     "options": {
-      "A": "Asphyxia due to upper airway obstruction is the major cause of death from facial injuries.",
-      "C": "The Le Fort II fracture includes a horizontal fracture of the maxilla along with nasal bone fracture.",
-      "D": "Loss of upward gaze may indicate either an orbital floor or orbital roof fracture."
+      "B": "Zone II.",
+      "C": "Zone III.",
+      "D": "Zone IV.",
+      "E": "Zone V."
     },
-    "answer": "C",
+    "answer": "B",
     "explanation": {
-      "correct": "The correct answer (C) accurately describes the Le Fort II fracture – a critical classification in facial trauma. Recognizing the horizontal maxillary fracture and associated nasal bone involvement is paramount for surgical planning and management. The other options presented are clinically accurate.",
+      "correct": "Standard board review concept.",
       "A": "",
       "B": "",
       "C": "",
       "D": "",
       "E": ""
     },
-    "sharp": {
-      "status": "ACCEPT",
-      "verified_answer": "C",
-      "set_the_stage": "This question assesses understanding of key fracture classifications and anatomical considerations in maxillofacial trauma. It’s a common area of confusion for trainees.",
-      "highlight_excellence": "The correct answer (C) accurately describes the Le Fort II fracture – a critical classification in facial trauma. Recognizing the horizontal maxillary fracture and associated nasal bone involvement is paramount for surgical planning and management. The other options presented are clinically accurate.",
-      "address_gaps": "The incorrect answer (B) – ‘Asphyxia due to upper airway obstruction is the major cause of death from facial injuries’ – is a significant oversimplification and a common misconception. While airway compromise is a serious concern, it’s rarely the *primary* cause of death. Mortality in maxillofacial trauma is far more frequently due to hemorrhage, vascular injury, or neurological complications. The Le Fort II description is also correct; it involves a horizontal maxillary fracture and disruption of the nasal support.",
-      "review_guidelines": "1. **Le Fort Fractures:** Thoroughly review the classification of Le Fort fractures (I, II, and III) – their definitions, radiographic findings, and surgical implications. Understand the specific anatomical disruptions associated with each. 2. **Orbital Fractures:**  Recognize the potential for upward gaze limitation as a sign of orbital roof fractures, and also the possibility of orbital floor fractures causing different presentations. 3. **Hemorrhage Management:** Reinforce the importance of rapid hemorrhage control as the leading cause of mortality in facial trauma. 4. **Radiographic Interpretation:** Develop a keen eye for identifying fracture patterns on radiographs – particularly the nasal spine, orbital rims, and maxillary fractures.",
-      "plan": "I recommend a focused review of Le Fort fracture classification, orbital fracture management, and the pathophysiology of hemorrhage in maxillofacial trauma. Consider a case-based approach, analyzing radiographs and surgical reports to solidify understanding. Further, practice identifying fracture patterns on simulated radiographs."
-    },
-    "guideline": "1. **Le Fort Fractures:** Thoroughly review the classification of Le Fort fractures (I, II, and III) – their definitions, radiographic findings, and surgical implications. Understand the specific anatomical disruptions associated with each. 2. **Orbital Fractures:**  Recognize the potential for upward gaze limitation as a sign of orbital roof fractures, and also the possibility of orbital floor fractures causing different presentations. 3. **Hemorrhage Management:** Reinforce the importance of rapid hemorrhage control as the leading cause of mortality in facial trauma. 4. **Radiographic Interpretation:** Develop a keen eye for identifying fracture patterns on radiographs – particularly the nasal spine, orbital rims, and maxillary fractures.",
-    "takeaway": "PLAN: I recommend a focused review of Le Fort fracture classification, orbital fracture management, and the pathophysiology of hemorrhage in maxillofacial trauma. Consider a case-based approach, analyzing radiographs and surgical reports to solidify understanding. Further, practice identifying fracture patterns on simulated radiographs.",
-    "_src_file": "trauma.js"
+    "guideline": "Source: Comprhensive Surgery Revision conv.docx",
+    "takeaway": "Key Concept: ",
+    "id": 160
   },
-{
-    "id": 525,
+  {
+    "specialty": "Trauma",
+    "topic": "Comprhensive Surgery Revision conv.docx",
+    "question": "The intravenous fluid that a 60 kg., 30-year-old woman with an 80% burn should be given in the first 24 hours following burn injury is:",
+    "options": {
+      "A": "19.2 liters of 5% glucose in lactated Ringer's.",
+      "C": "9.6 liters of hypertonic salt solution (sodium concentration 200 mEq. per liter).",
+      "E": "5.5 liters of the pentafraction component of hydroxyethyl starch."
+    },
+    "answer": "B",
+    "explanation": {
+      "correct": "160COMPRHENSIVE SURGERY REVISION200859690-21546 59690-21546 COMPRHENSIVE SURGERY REVISION2008-83565-43812 -83565-43812",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Source: Comprhensive Surgery Revision conv.docx",
+    "takeaway": "Key Concept: 160COMPRHENSIVE SURGERY REVISION200859690-21546 59690-21546 COMPRHENSIVE SURGERY REVISION2008-83565-...",
+    "id": 162
+  },
+  {
+    "specialty": "Trauma",
+    "topic": "Comprhensive Surgery Revision conv.docx",
+    "question": "Indications for escharotomy of a circumferentially burned right lower limb include all of the following except:",
+    "options": {
+      "C": "A pressure of 40 mm. Hg in the anterior compartment of the distal right leg.",
+      "E": "Absence of pulsatile flow in the posterior tibial artery."
+    },
+    "answer": "B",
+    "explanation": {
+      "correct": "D",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Source: Comprhensive Surgery Revision conv.docx",
+    "takeaway": "Key Concept: D",
+    "id": 163
+  },
+  {
+    "specialty": "Trauma",
+    "topic": "Comprhensive Surgery Revision conv.docx",
+    "question": "The clinical and histologic signs of invasive burn wound infection include which of the following?",
+    "options": {
+      "D": "The presence of micro-organisms in the unburned subcutaneous tissue in a burn wound biopsy specimen.",
+      "E": "Perineural and perivascular microbial migration through the eschar with proliferation of micro-organisms in the subeschar space."
+    },
+    "answer": "A",
+    "explanation": {
+      "correct": "CD",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Source: Comprhensive Surgery Revision conv.docx",
+    "takeaway": "Key Concept: CD",
+    "id": 164
+  },
+  {
+    "specialty": "Trauma",
+    "topic": "Comprhensive Surgery Revision conv.docx",
+    "question": "The treatment of invasive burn wound infection may include which of the following?",
+    "options": {
+      "B": "Use of 0.5% silver nitrate soaks for topical therapy.",
+      "E": "Amputation when the infection has extended to involve underlying muscle."
+    },
+    "answer": "A",
+    "explanation": {
+      "correct": "CE 161COMPRHENSIVE SURGERY REVISION200859690-21643 59690-21643 COMPRHENSIVE SURGERY REVISION2008-83565-43812 -83565-43812",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Source: Comprhensive Surgery Revision conv.docx",
+    "takeaway": "Key Concept: CE 161COMPRHENSIVE SURGERY REVISION200859690-21643 59690-21643 COMPRHENSIVE SURGERY REVISION2008-835...",
+    "id": 165
+  },
+  {
+    "specialty": "Trauma",
+    "topic": "Comprhensive Surgery Revision conv.docx",
+    "question": "The treatment of patients with high-voltage electric injury differs from that of patients with conventional thermal injury with respect to the need for:",
+    "options": {
+      "A": "Fasciotomy.",
+      "B": "Hemodialysis.",
+      "E": "Prehospital cardiopulmonary resuscitation."
+    },
+    "answer": "A",
+    "explanation": {
+      "correct": "BCE",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Source: Comprhensive Surgery Revision conv.docx",
+    "takeaway": "Key Concept: BCE",
+    "id": 166
+  },
+  {
     "specialty": "Trauma",
     "topic": "Comprhensive Surgery Revision conv.docx",
     "question": "Characteristics of the hypermetabolic response to burn injury include:",
@@ -502,28 +406,943 @@ window.QUESTIONS.push(...[
     },
     "answer": "A",
     "explanation": {
-      "correct": "The selection of ‘Elevation of core temperature, skin temperature, and core-to-skin heat transfer’ as the correct answer is entirely accurate. This represents the fundamental hallmark of the hypermetabolic response – a dramatic increase in heat production and dissipation, attempting to maintain normothermia. The other options, while related to burn injury physiology, are not the *defining* characteristics of the hypermetabolic response itself.",
+      "correct": "CE",
       "A": "",
       "B": "",
       "C": "",
       "D": "",
       "E": ""
     },
-    "sharp": {
-      "status": "ACCEPT",
-      "verified_answer": "A",
-      "set_the_stage": "This question assesses understanding of the hypermetabolic response – a critical physiological reaction to burn injury. This response is characterized by a significant increase in metabolic demand, driving a cascade of compensatory mechanisms.",
-      "highlight_excellence": "The selection of ‘Elevation of core temperature, skin temperature, and core-to-skin heat transfer’ as the correct answer is entirely accurate. This represents the fundamental hallmark of the hypermetabolic response – a dramatic increase in heat production and dissipation, attempting to maintain normothermia. The other options, while related to burn injury physiology, are not the *defining* characteristics of the hypermetabolic response itself.",
-      "address_gaps": "The question could benefit from more explicit framing. While ‘A’ is correct, it doesn’t fully articulate *why* these changes occur. A stronger question might include a prompt asking for the underlying mechanism driving these changes. Furthermore, options C and E are related but not the core definition. Students need a deeper understanding of the thermoregulatory drive and the shift in energy metabolism.",
-      "review_guidelines": "1. **Understand Thermoregulation:** Reinforce the body’s primary mechanism for maintaining core temperature – primarily through cutaneous vasodilation and increased heat production. 2. **Hypermetabolic Response Definition:** Clearly define the hypermetabolic response as a state of dramatically increased metabolic rate and heat production in response to burn injury. 3. **Key Components:**  Focus on the interconnectedness of: (a) Increased metabolic rate (leading to heat production), (b) Cutaneous vasodilation (increasing heat dissipation), and (c) Core-to-skin heat transfer. 4. **Lipid Oxidation:** Acknowledge lipid oxidation as a *result* of the hypermetabolic state, not a defining characteristic of the response itself.  It’s a consequence of the increased energy demand.",
-      "plan": "I recommend a review of burn pathophysiology, specifically focusing on the hypothalamic response to noxious stimuli, the role of prostaglandins in vasodilation, and the shift from carbohydrate to lipid metabolism during critical illness. Case studies illustrating the clinical presentation of hypermetabolic response (e.g., flushed skin, elevated heart rate, rapid core temperature rise) would be beneficial. Further practice questions should test the ability to differentiate between the various compensatory mechanisms activated during burn injury."
-    },
-    "guideline": "1. **Understand Thermoregulation:** Reinforce the body’s primary mechanism for maintaining core temperature – primarily through cutaneous vasodilation and increased heat production. 2. **Hypermetabolic Response Definition:** Clearly define the hypermetabolic response as a state of dramatically increased metabolic rate and heat production in response to burn injury. 3. **Key Components:**  Focus on the interconnectedness of: (a) Increased metabolic rate (leading to heat production), (b) Cutaneous vasodilation (increasing heat dissipation), and (c) Core-to-skin heat transfer. 4. **Lipid Oxidation:** Acknowledge lipid oxidation as a *result* of the hypermetabolic state, not a defining characteristic of the response itself.  It’s a consequence of the increased energy demand.",
-    "takeaway": "PLAN: I recommend a review of burn pathophysiology, specifically focusing on the hypothalamic response to noxious stimuli, the role of prostaglandins in vasodilation, and the shift from carbohydrate to lipid metabolism during critical illness. Case studies illustrating the clinical presentation of hypermetabolic response (e.g., flushed skin, elevated heart rate, rapid core temperature rise) would be beneficial. Further practice questions should test the ability to differentiate between the various compensatory mechanisms activated during burn injury.",
-    "_src_file": "trauma.js"
+    "guideline": "Source: Comprhensive Surgery Revision conv.docx",
+    "takeaway": "Key Concept: CE",
+    "id": 167
   },
-{
-    "id": 522,
+  {
+    "specialty": "Trauma",
+    "topic": "ATLS",
+    "question": "Which of the following is TRUE regarding ATLS?",
+    "options": {
+      "A": "The primary survey follows ABCDE; Circulation includes controlling external hemorrhage.",
+      "B": "Incorrect distractor regarding ATLS",
+      "C": "Incorrect distractor regarding ATLS",
+      "D": "Incorrect distractor regarding ATLS"
+    },
+    "answer": "A",
+    "explanation": {
+      "correct": "The primary survey follows ABCDE; Circulation includes controlling external hemorrhage.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Surgical Insight Hub Premium Board Review",
+    "takeaway": "Key Trauma Pearl: The primary survey follows ABCDE; Circulation includes controlling external hemo...",
+    "id": 526,
+    "_src_file": "questions_enriched_test.js",
+    "sharp": {
+      "set_the_stage": "Which of the following is TRUE regarding ATLS?",
+      "highlight_excellence": "Pending enrichment",
+      "address_gaps": "Pending enrichment",
+      "review_learning_points": "Pending enrichment",
+      "plan": "Review this topic for board preparation."
+    }
+  },
+  {
+    "specialty": "Trauma",
+    "topic": "Shock",
+    "question": "Which of the following is TRUE regarding Shock?",
+    "options": {
+      "A": "Incorrect distractor regarding Shock",
+      "B": "The earliest sign of hypovolemic shock is tachycardia.",
+      "C": "Incorrect distractor regarding Shock",
+      "D": "Incorrect distractor regarding Shock"
+    },
+    "answer": "B",
+    "explanation": {
+      "correct": "The earliest sign of hypovolemic shock is tachycardia.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Surgical Insight Hub Premium Board Review",
+    "takeaway": "Key Trauma Pearl: The earliest sign of hypovolemic shock is tachycardia....",
+    "id": 527,
+    "_src_file": "questions_enriched_test.js",
+    "sharp": {
+      "set_the_stage": "Which of the following is TRUE regarding Shock?",
+      "highlight_excellence": "Pending enrichment",
+      "address_gaps": "Pending enrichment",
+      "review_learning_points": "Pending enrichment",
+      "plan": "Review this topic for board preparation."
+    }
+  },
+  {
+    "specialty": "Trauma",
+    "topic": "Splenic Trauma",
+    "question": "Which of the following is TRUE regarding Splenic Trauma?",
+    "options": {
+      "A": "Incorrect distractor regarding Splenic Trauma",
+      "B": "Incorrect distractor regarding Splenic Trauma",
+      "C": "The most commonly injured organ in blunt abdominal trauma.",
+      "D": "Incorrect distractor regarding Splenic Trauma"
+    },
+    "answer": "C",
+    "explanation": {
+      "correct": "The most commonly injured organ in blunt abdominal trauma.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Surgical Insight Hub Premium Board Review",
+    "takeaway": "Key Trauma Pearl: The most commonly injured organ in blunt abdominal trauma....",
+    "id": 528,
+    "_src_file": "questions_enriched_test.js",
+    "sharp": {
+      "set_the_stage": "Which of the following is TRUE regarding Splenic Trauma?",
+      "highlight_excellence": "Pending enrichment",
+      "address_gaps": "Pending enrichment",
+      "review_learning_points": "Pending enrichment",
+      "plan": "Review this topic for board preparation."
+    }
+  },
+  {
+    "specialty": "Trauma",
+    "topic": "FAST Scan",
+    "question": "Which of the following is TRUE regarding FAST Scan?",
+    "options": {
+      "A": "Incorrect distractor regarding FAST Scan",
+      "B": "Incorrect distractor regarding FAST Scan",
+      "C": "Incorrect distractor regarding FAST Scan",
+      "D": "Evaluates for free fluid in four areas: Perihepatic, Perisplenic, Pelvic, and Pericardial."
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "Evaluates for free fluid in four areas: Perihepatic, Perisplenic, Pelvic, and Pericardial.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Surgical Insight Hub Premium Board Review",
+    "takeaway": "Key Trauma Pearl: Evaluates for free fluid in four areas: Perihepatic, Perisplenic, Pelvic, and Pe...",
+    "id": 529,
+    "_src_file": "questions_enriched_test.js",
+    "sharp": {
+      "set_the_stage": "Which of the following is TRUE regarding FAST Scan?",
+      "highlight_excellence": "Pending enrichment",
+      "address_gaps": "Pending enrichment",
+      "review_learning_points": "Pending enrichment",
+      "plan": "Review this topic for board preparation."
+    }
+  },
+  {
+    "specialty": "Trauma",
+    "topic": "Trauma Core Concept",
+    "question": "Which of the following is TRUE regarding Trauma Core Concept?",
+    "options": {
+      "A": "This is a high-yield Trauma board review concept that is frequently tested.",
+      "B": "Incorrect distractor regarding Trauma Core Concept",
+      "C": "Incorrect distractor regarding Trauma Core Concept",
+      "D": "Incorrect distractor regarding Trauma Core Concept"
+    },
+    "answer": "A",
+    "explanation": {
+      "correct": "This is a high-yield Trauma board review concept that is frequently tested.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Surgical Insight Hub Premium Board Review",
+    "takeaway": "Key Trauma Pearl: This is a high-yield Trauma board review concept that is frequently tested....",
+    "id": 530,
+    "_src_file": "questions_enriched_test.js",
+    "sharp": {
+      "set_the_stage": "Which of the following is TRUE regarding Trauma Core Concept?",
+      "highlight_excellence": "Pending enrichment",
+      "address_gaps": "Pending enrichment",
+      "review_learning_points": "Pending enrichment",
+      "plan": "Review this topic for board preparation."
+    }
+  },
+  {
+    "id": 10105,
+    "specialty": "Trauma",
+    "topic": "Trauma",
+    "question": "Immune thrombocytopenia, hypersplenism, traumatic injury. E. None of the above.Answer: A3. Useful methods for detection of splenic injury, in descending order of sensitivity, are:",
+    "options": {
+      "A": "Diagnostic peritoneal lavage.",
+      "B": "CT.",
+      "C": "Ultrasonography.",
+      "D": "Isotope scan.",
+      "E": ""
+    },
+    "answer": "A",
+    "sharp": {
+      "S": "High-yield Trauma board question.",
+      "H": "Review each option carefully against the clinical stem.",
+      "A": "Eliminate options that don't fit the primary diagnosis or guideline principle.",
+      "R": "Refer to current Trauma guidelines for this topic.",
+      "P": "Remember the key fact and apply it to similar clinical scenarios."
+    },
+    "guideline": "Trauma board principles",
+    "takeaway": "Review Immune thrombocytopenia, hypersplenism, traumatic injury. E. None of the above.A...",
+    "source_tag": "Comprhensive Surgery Revision conv.docx.txt",
+    "needs_review": true
+  },
+  {
+    "id": 10166,
+    "specialty": "Trauma",
+    "topic": "Trauma",
+    "question": "Talocalcaneal dislocation. Answer: B33. The most common reason for surgical amputation in the general population is:",
+    "options": {
+      "A": "Trauma.",
+      "B": "Tumor.",
+      "C": "Infection.",
+      "D": "Congenital deformity.",
+      "E": ""
+    },
+    "answer": "A",
+    "sharp": {
+      "S": "High-yield Trauma board question.",
+      "H": "Review each option carefully against the clinical stem.",
+      "A": "Eliminate options that don't fit the primary diagnosis or guideline principle.",
+      "R": "Refer to current Trauma guidelines for this topic.",
+      "P": "Remember the key fact and apply it to similar clinical scenarios."
+    },
+    "guideline": "Trauma board principles",
+    "takeaway": "Review Talocalcaneal dislocation. Answer: B33. The most common reason for surgical ampu...",
+    "source_tag": "Comprhensive Surgery Revision conv.docx.txt",
+    "needs_review": true
+  },
+  {
+    "id": 10170,
+    "specialty": "Trauma",
+    "topic": "Trauma",
+    "question": "Flat bones.118COMPRHENSIVE SURGERY REVISION200859690-2180159690-21801COMPRHENSIVE SURGERY REVISION2008-83565-43812-83565-43812E. Cuboidal bones. Answer: C37. A 5-year-old child presents with a 2-day history of the atraumatic onset of pain, erythema, and swelling of the right knee joint. The child is febrile with an elevated white blood cell count. The differential diagnosis includes:",
+    "options": {
+      "A": "Acute rheumatic fever.",
+      "B": "Leukemia.",
+      "C": "Scurvy.",
+      "D": "Acute septic arthritis.",
+      "E": ""
+    },
+    "answer": "A",
+    "sharp": {
+      "S": "High-yield Trauma board question.",
+      "H": "Review each option carefully against the clinical stem.",
+      "A": "Eliminate options that don't fit the primary diagnosis or guideline principle.",
+      "R": "Refer to current Trauma guidelines for this topic.",
+      "P": "Remember the key fact and apply it to similar clinical scenarios."
+    },
+    "guideline": "Trauma board principles",
+    "takeaway": "Review Flat bones.118COMPRHENSIVE SURGERY REVISION200859690-2180159690-21801COMPRHENSIV...",
+    "source_tag": "Comprhensive Surgery Revision conv.docx.txt",
+    "needs_review": true
+  },
+  {
+    "id": 10181,
+    "specialty": "Trauma",
+    "topic": "Trauma",
+    "question": "Zone IV. E. Zone V. Answer: B48. The contraindications to primary repair of a flexor tendon injury are:",
+    "options": {
+      "A": "Contaminated wound.",
+      "B": "Severe soft tissue trauma.",
+      "C": "Inexperienced surgeon.",
+      "D": "Compromised general condition of the patient prohibiting prolonged anesthetic. BCD49."
+    },
+    "answer": "A",
+    "sharp": {
+      "S": "High-yield Trauma board question.",
+      "H": "Review each option carefully against the clinical stem.",
+      "A": "Eliminate options that don't fit the primary diagnosis or guideline principle.",
+      "R": "Refer to current Trauma guidelines for this topic.",
+      "P": "Remember the key fact and apply it to similar clinical scenarios."
+    },
+    "guideline": "Trauma board principles",
+    "takeaway": "Review Zone IV. E. Zone V. Answer: B48. The contraindications to primary repair of a fl...",
+    "source_tag": "Comprhensive Surgery Revision conv.docx.txt",
+    "needs_review": true
+  },
+  {
+    "id": 10186,
+    "specialty": "Trauma",
+    "topic": "Trauma",
+    "question": "For evaluating the bony detail of patients with facial trauma, CT is a better imaging modality than MRI.E. Decreased amount of N-acetyl aspartate (NAA) and increased amount of lactate can be shown in the MR spectroscopy (MRS) of a patient with acute stroke.Answer: ACDE5. Which of the following are true about intracranial tumors?",
+    "options": {
+      "A": "The most common location of brain tumors of childhood is the posterior cranial fossa.",
+      "B": "With few exceptions, examination of the CSF is of no value in the diagnosis of an intracranial tumor.",
+      "C": "Even the most malignant of primary brain tumors seldom spread outside the confines of the central nervous system (CNS).",
+      "D": "The majority of astrocytomas can be cured surgically.",
+      "E": ""
+    },
+    "answer": "A",
+    "sharp": {
+      "S": "High-yield Trauma board question.",
+      "H": "Review each option carefully against the clinical stem.",
+      "A": "Eliminate options that don't fit the primary diagnosis or guideline principle.",
+      "R": "Refer to current Trauma guidelines for this topic.",
+      "P": "Remember the key fact and apply it to similar clinical scenarios."
+    },
+    "guideline": "Trauma board principles",
+    "takeaway": "Review For evaluating the bony detail of patients with facial trauma, CT is a better im...",
+    "source_tag": "Comprhensive Surgery Revision conv.docx.txt",
+    "needs_review": true
+  },
+  {
+    "id": 10320,
+    "specialty": "Trauma",
+    "topic": "Trauma",
+    "question": "Demonstrate arrhythmia as the most common complication. Answer: BD3. According to the recommendations of the American College of Surgeons Committee on Trauma, which of the following patients should be transported to a trauma center?",
+    "options": {
+      "A": "Fifty-year-old female who fell 8 feet from a step ladder, with isolated hip fracture and normal vital signs.",
+      "B": "Fifteen-year-old bicyclist with closed head injury and Glasgow Coma Scale score of 12.",
+      "C": "Twenty-three-year-old male assault victim with stab wound to the back, normal vital signs, and respiratory distress.",
+      "D": "Three-year-old infant passenger (restrained) in motor vehicle accident with normal vital signs and no apparent injuries except abdominal wall contusion.CD4."
+    },
+    "answer": "A",
+    "sharp": {
+      "S": "High-yield Trauma board question.",
+      "H": "Review each option carefully against the clinical stem.",
+      "A": "Eliminate options that don't fit the primary diagnosis or guideline principle.",
+      "R": "Refer to current Trauma guidelines for this topic.",
+      "P": "Remember the key fact and apply it to similar clinical scenarios."
+    },
+    "guideline": "Trauma board principles",
+    "takeaway": "Review Demonstrate arrhythmia as the most common complication. Answer: BD3. According t...",
+    "source_tag": "Comprhensive Surgery Revision conv.docx.txt",
+    "needs_review": true
+  },
+  {
+    "id": 10322,
+    "specialty": "Trauma",
+    "topic": "Trauma",
+    "question": "Optimizing arterial oxygenation is part of initial therapy.Answer: B5. Which of the following statements about maxillofacial trauma is/are false?",
+    "options": {
+      "A": "Asphyxia due to upper airway obstruction is the major cause of death from facial injuries.",
+      "B": "The mandible is the most common site of facial fracture.",
+      "C": "The Le Fort II fracture includes a horizontal fracture of the maxilla along with nasal bone fracture.",
+      "D": "Loss of upward gaze may indicate either an orbital floor or orbital roof fracture.6."
+    },
+    "answer": "A",
+    "sharp": {
+      "S": "High-yield Trauma board question.",
+      "H": "Review each option carefully against the clinical stem.",
+      "A": "Eliminate options that don't fit the primary diagnosis or guideline principle.",
+      "R": "Refer to current Trauma guidelines for this topic.",
+      "P": "Remember the key fact and apply it to similar clinical scenarios."
+    },
+    "guideline": "Trauma board principles",
+    "takeaway": "Review Optimizing arterial oxygenation is part of initial therapy.Answer: B5. Which of ...",
+    "source_tag": "Comprhensive Surgery Revision conv.docx.txt",
+    "needs_review": true
+  },
+  {
+    "id": 10327,
+    "specialty": "Trauma",
+    "topic": "Trauma",
+    "question": "Obtain intravenous access and begin emergency type O blood transfusions. E. Obtain cross-table cervical spine film and chest film.Answer: C10. True or False?",
+    "options": {
+      "A": "Trauma is second only to congenital heart disease as the leading cause of death in children.",
+      "B": "Each year in the United States, approximately 50,000 people die from injuries.",
+      "C": "Motor vehicle accidents (MVAs) involving intoxicated drivers are responsible for 50% of all MVA fatalities.",
+      "D": "Active prevention strategies (e.g., seat belts, helmets) have not proved effective in reducing injuries and fatalities.",
+      "E": ""
+    },
+    "answer": "A",
+    "sharp": {
+      "S": "High-yield Trauma board question.",
+      "H": "Review each option carefully against the clinical stem.",
+      "A": "Eliminate options that don't fit the primary diagnosis or guideline principle.",
+      "R": "Refer to current Trauma guidelines for this topic.",
+      "P": "Remember the key fact and apply it to similar clinical scenarios."
+    },
+    "guideline": "Trauma board principles",
+    "takeaway": "Review Obtain intravenous access and begin emergency type O blood transfusions. E. Obta...",
+    "source_tag": "Comprhensive Surgery Revision conv.docx.txt",
+    "needs_review": true
+  },
+  {
+    "id": 9736,
+    "specialty": "Trauma",
+    "topic": "Trauma",
+    "question": "Gr a y area s , s o form e d be ca u s e o f the pro d u ction of platelet s . E. F ibrou s tr a b e c ul a e. Co rr e ct a ns w e r: A 1141780 1074 9. Duri n g t h e e vol u tio n of t h e un d er s ta nd i n g of h e m atologic d i s ea s e s , t h e i n d icatio ns for s p le n e c tomy h ave c h a n ge d . T h e mo s t com m o n i nd ic a tio ns for s plenec t omy ar e , i n d e s c e n d i n g o r d er of f r e q u e n cy:",
+    "options": {
+      "A": "Tr a umatic injury, i m mune thrombocytopeni a , hyper s pl e ni s m .",
+      "B": "I mmune thrombo c y t openic pu r pura, traumat i c injury, hyp e r s pleni s m.",
+      "C": "Hyper s pl e ni s m , tra u matic inju r y, i m mune thrombocytopenia.",
+      "D": "I mmune thrombo c y t openia, h y per s pl e ni s m , t r aumatic injury.",
+      "E": ""
+    },
+    "answer": "A",
+    "sharp": {
+      "S": "High-yield Trauma board question.",
+      "H": "Review each option carefully against the clinical stem.",
+      "A": "Eliminate options that don't fit the primary diagnosis or guideline principle.",
+      "R": "Refer to current Trauma guidelines for this topic.",
+      "P": "Remember the key fact and apply it to similar clinical scenarios."
+    },
+    "guideline": "Trauma board principles",
+    "takeaway": "Review Gr a y area s , s o form e d be ca u s e o f the pro d u ction of platelet s . E...",
+    "source_tag": "MCQgeneralsurgerybook (1) conv.docx.txt",
+    "needs_review": true
+  },
+  {
+    "id": 10083,
+    "specialty": "Trauma",
+    "topic": "Trauma",
+    "question": "Entero c o c c u s Corr ec t an s w er: A 10. W ate r y di s c h arge f r o m the ea r occur s in all of the following EXCE P T: a. C e r ebr a -sp i nal otorr h e a . b. Parotid f istu l a. c. Acu t e otitis med i a. d. E ndol y mphat i c sac sur g ery. Corr ec t an s w er: C 11. I n le s ion o f facial ne r ve a t verti c al part below t he n e rve o f s tap e diu s\" there i s : a. Loss of t aste. b. I m pair m ent of sali v a t i o n. c. I m p a i r m e nt of l a c rimat i on. - 3 3 0 - d. Hyp e racusis. Corr ec t an s w er: A 12. I n le s ion o f the fa c ial nerve a t h o rizontal part, the r e i s : a. Loss of t aste. b. I m pair m ent of sali v a t i o n. c. I m p a i r m e nt of l a c rimat i on. d. Hyp e racusis. e. All of the abov e . Corr ec t an s w er: E 13. I n le s ion o f the fa c ial nerve a t t he g eniculate g a n glion, there i s : a. Loss of t aste. b. I m pair m ent of sali v a t i o n. c. I m p a i r m e nt of l a c rimat i on. d. Hyp e racusis. e. All of the abov e . Corr ec t an s w er: E 14. I n U M NL of the fa c i al ne r ve, t h e re i s : a. Paralysis of t h e m us c l e s of the lower 1 / 2 of t h e fa c e on t h e opposi t e si d e. b. Par a lysis invo l v es the v oluntary but sp a res t h e e m otion a l a nd as s ocia t ive m o ve m ent. c. Hypoton i a. d. Hypor e flex i a. Corr ec t an s w er: A and B 15. I n L M NL of the fa c i a l nerv e , the r e i s : a. Paralysis of t h e m us c l e s of the lower 1 / 2 of t h e fa c e on t h e opposi t e si d e. b. Par a lysis invo l v es the v oluntary but sp a res t h e e m otion a l a nd as s ocia t ive m o ve m ent. c. Hypoton i a. d. Hypor e flex i a. e. Rea c tion of d ege n erati o n. Corr e c t a nswer: C; D and E . 16. I n L M NL of the fa c i a l nerv e , the r e i s : a. Paralysis of t h e m us c l e s of the lower a nd upp e r 1 / 2 of t he f a c e on t h e oppos i te sid e . b. Par a lysis invo l v es the v oluntary, e mot i onal a nd as s oc i a t ive movem e n t. c. Paralysis of t h e m us c l e s of the lower a nd upp e r 1 / 2 of t he f a c e on t h e s a me s ide. Corr e c t a nswer: B and C . 17. Bell 's pal s y i s L M NL at the lev e l of: a. Gen i cu l a t e gan g lion. b. In t er n al f acial aud i tory m e atus. c. Styl o mast o id for a m e n. d. C e re b e l lopon t ine ang l e. Corr ec t an s w er: C 18. The ca u s e of B e ll' s p al s y m ay b e one of t h e following EXCE P T: a. Vascu l ar i s ch e mi a . b. Virus infec t i on. c. Bac t e r i a l in f ection. - 3 3 1 - d. Auto i m mune. Corr e c t a nswer: A; B and D . 19. The e arly s ymp t om of Bell' s pal s y i s : a. Dropp i ng of ang l e of t h e af f ec t ed si d e. b. Obli t eration of the ang l e of t h e m o u th. c. Pa i n of a c u te on s et b ehind the e a r. d. In a b i lity to c lose the e y e. Corr ec t an s w er: C. 20. The e arlie s t m anif e s t ation of c avernou s s inu s thrombo s i s i s : a. Fev e r. b. Ptosi s . c. Proptosis. d. Ophth a lmop l egia. Corr ec t an s w er: d. 21. The p a thology in c a s e of B e l l 's pal s y i s : a. Facial n er v e t u mor. b. Cut i n the tym p an i c se g ment in t h e f a c i al n erve. c. E d ema of t h e facial n e r ve insi d e its bony cana l . d. Hemorr h age in t h e facial ne r ve n u cleus. Corr ec t an s w er: C. 22. The mo s t a c curate d i agno s tic te s t t o dete c t d e gen e r a tion of t h e facial n erv e : a. Nerve ex c i t ab i l ity test. b. El e c t r o myog r aphy. c. Electron e u rogr a ph y . d. Stape d i a l r e f lex. Corr ec t an s w er: C. 23. Fac i al pal s y i s mo s t common l y: a. Neop l ast i c. b. T r a u matic. c. Herp e t i c. d. B el l's p a lsy. Corr ec t an s w er: D. 24 . A f ter 4 week s of H e ad trauma, patient p r e s e n t s with fe a tur e s of i r ritabi l i t y and alter e d s e n s o rium. C om m one s t ca us e will be:",
+    "options": {
+      "A": "Chr o nic s ubdur a l h e matoma",
+      "B": "Extr a dur a l hematoma",
+      "C": "I ntr a p arenchymal bl e ed",
+      "D": "Electrolyte imbalance Corr ec t an s w er: A - 3 3 2 - 1495425 -118745 S u bara c h niod he m o r r h a ge a n d n eur o v a s c ular dise a s e s 1435735 -91551 Bra i n t u m o urs 1141780 796 1 . FA"
+    },
+    "answer": "A",
+    "sharp": {
+      "S": "High-yield Trauma board question.",
+      "H": "Review each option carefully against the clinical stem.",
+      "A": "Eliminate options that don't fit the primary diagnosis or guideline principle.",
+      "R": "Refer to current Trauma guidelines for this topic.",
+      "P": "Remember the key fact and apply it to similar clinical scenarios."
+    },
+    "guideline": "Trauma board principles",
+    "takeaway": "Review Entero c o c c u s Corr ec t an s w er: A 10. W ate r y di s c h arge f r o m th...",
+    "source_tag": "MCQgeneralsurgerybook (1) conv.docx.txt",
+    "needs_review": true
+  },
+  {
+    "id": 10108,
+    "specialty": "Trauma",
+    "topic": "Trauma",
+    "question": "Hi s t o log i c a l t ype Corr ec t an s w er: B 21 . M o s t c o mm o n ca u s e of p ai n le ss h e m at u ria -",
+    "options": {
+      "A": "Hypernephroma (R e n al cell c a r c inoma)",
+      "B": "B ulent trauma to abdomen",
+      "C": "T.B. of r e n a l pa r en c h yma",
+      "D": "Hydron e phro s i s Corr ec t an s w er: C 22 . T h e m o s t c ommo n r e n al va s c u lar a n o m aly i s -"
+    },
+    "answer": "A",
+    "sharp": {
+      "S": "High-yield Trauma board question.",
+      "H": "Review each option carefully against the clinical stem.",
+      "A": "Eliminate options that don't fit the primary diagnosis or guideline principle.",
+      "R": "Refer to current Trauma guidelines for this topic.",
+      "P": "Remember the key fact and apply it to similar clinical scenarios."
+    },
+    "guideline": "Trauma board principles",
+    "takeaway": "Review Hi s t o log i c a l t ype Corr ec t an s w er: B 21 . M o s t c o mm o n ca u s...",
+    "source_tag": "MCQgeneralsurgerybook (1) conv.docx.txt",
+    "needs_review": true
+  },
+  {
+    "id": 10228,
+    "specialty": "Trauma",
+    "topic": "Trauma",
+    "question": "Tr a u ma Corr ec t an s w er: C 10 . A h e modynamically s table p a tient wi t h blunt abdominal trauma, the be s t inve s t i gation i s ?",
+    "options": {
+      "A": "CECT abdomen",
+      "B": "M R I a bdomen",
+      "C": "D P L",
+      "D": "FAST Corr ec t an s w er: A 11 . A c hild pr e s e nt s i n c au s ality in s t able c ondi t ion after a blunt abdominal tr a uma a ss oci a ted with s plenic t r auma the tr e at m ent of c h oice i"
+    },
+    "answer": "A",
+    "sharp": {
+      "S": "High-yield Trauma board question.",
+      "H": "Review each option carefully against the clinical stem.",
+      "A": "Eliminate options that don't fit the primary diagnosis or guideline principle.",
+      "R": "Refer to current Trauma guidelines for this topic.",
+      "P": "Remember the key fact and apply it to similar clinical scenarios."
+    },
+    "guideline": "Trauma board principles",
+    "takeaway": "Review Tr a u ma Corr ec t an s w er: C 10 . A h e modynamically s table p a tient wi t...",
+    "source_tag": "MCQgeneralsurgerybook (1) conv.docx.txt",
+    "needs_review": true
+  },
+  {
+    "id": 10231,
+    "specialty": "Trauma",
+    "topic": "Trauma",
+    "question": "M C U s hould be done Corr ec t an s w er: B 13 . I n o rd e r to expo s e t h e c o e li a c a xi s , l eft r en a l a rt e ry, s up e rior me s enter i c a rtery and blood abdominal ao r ta in a ca s e o f tr a uma, w hich of the f ollowing i s per f orm e d -",
+    "options": {
+      "A": "Cr a nial vi s c e r al rotat i on",
+      "B": "C aud a l v i s c e r a l rotat i on",
+      "C": "L e ft medial vi s c e r al r otation",
+      "D": "R ight m edial vi s c e r a l rotation Corr ec t an s w er: C 14 . A p a tient d i ed a ft e r a blunt trauma to ch e s t m o s t common cau s e of dea t h in b l unt trauma to ch e s t i s -"
+    },
+    "answer": "A",
+    "sharp": {
+      "S": "High-yield Trauma board question.",
+      "H": "Review each option carefully against the clinical stem.",
+      "A": "Eliminate options that don't fit the primary diagnosis or guideline principle.",
+      "R": "Refer to current Trauma guidelines for this topic.",
+      "P": "Remember the key fact and apply it to similar clinical scenarios."
+    },
+    "guideline": "Trauma board principles",
+    "takeaway": "Review M C U s hould be done Corr ec t an s w er: B 13 . I n o rd e r to expo s e t h e...",
+    "source_tag": "MCQgeneralsurgerybook (1) conv.docx.txt",
+    "needs_review": true
+  },
+  {
+    "id": 10232,
+    "specialty": "Trauma",
+    "topic": "Trauma",
+    "question": "R ight m edial vi s c e r a l rotation Corr ec t an s w er: C 14 . A p a tient d i ed a ft e r a blunt trauma to ch e s t m o s t common cau s e of dea t h in b l unt trauma to ch e s t i s -",
+    "options": {
+      "A": "Oe s oph a g eal ruptu r e",
+      "B": "Tr ac h e o b ron c hial r u pture",
+      "C": "P ul m onary la ce r a tion",
+      "D": "P neumothor a x Corr ec t an s w er: B 15 . All exc e pt one are c or re ct r eg a rding r e n a l tra uma -"
+    },
+    "answer": "A",
+    "sharp": {
+      "S": "High-yield Trauma board question.",
+      "H": "Review each option carefully against the clinical stem.",
+      "A": "Eliminate options that don't fit the primary diagnosis or guideline principle.",
+      "R": "Refer to current Trauma guidelines for this topic.",
+      "P": "Remember the key fact and apply it to similar clinical scenarios."
+    },
+    "guideline": "Trauma board principles",
+    "takeaway": "Review R ight m edial vi s c e r a l rotation Corr ec t an s w er: C 14 . A p a tient d...",
+    "source_tag": "MCQgeneralsurgerybook (1) conv.docx.txt",
+    "needs_review": true
+  },
+  {
+    "id": 10233,
+    "specialty": "Trauma",
+    "topic": "Trauma",
+    "question": "P neumothor a x Corr ec t an s w er: B 15 . All exc e pt one are c or re ct r eg a rding r e n a l tra uma -",
+    "options": {
+      "A": "Ob s erv a tion i s be s t",
+      "B": "I VP i s ind i c a ted",
+      "C": "Explor a t i on ind i c a ted in all c a s e s",
+      "D": "Ha e matur i a i s a c ard i nal s i gn Corr ec t an s w er: C 16 . A f ter Acute trauma F luid r e placement i s be s t a ss e ss ed by whi c h:"
+    },
+    "answer": "A",
+    "sharp": {
+      "S": "High-yield Trauma board question.",
+      "H": "Review each option carefully against the clinical stem.",
+      "A": "Eliminate options that don't fit the primary diagnosis or guideline principle.",
+      "R": "Refer to current Trauma guidelines for this topic.",
+      "P": "Remember the key fact and apply it to similar clinical scenarios."
+    },
+    "guideline": "Trauma board principles",
+    "takeaway": "Review P neumothor a x Corr ec t an s w er: B 15 . All exc e pt one are c or re ct r eg...",
+    "source_tag": "MCQgeneralsurgerybook (1) conv.docx.txt",
+    "needs_review": true
+  },
+  {
+    "id": 10234,
+    "specialty": "Trauma",
+    "topic": "Trauma",
+    "question": "Ha e matur i a i s a c ard i nal s i gn Corr ec t an s w er: C 16 . A f ter Acute trauma F luid r e placement i s be s t a ss e ss ed by whi c h:",
+    "options": {
+      "A": "CVP",
+      "B": "Urine output",
+      "C": "P ul s e",
+      "D": "B P Corr ec t an s w er: A 17 . F AST s tand s for"
+    },
+    "answer": "A",
+    "sharp": {
+      "S": "High-yield Trauma board question.",
+      "H": "Review each option carefully against the clinical stem.",
+      "A": "Eliminate options that don't fit the primary diagnosis or guideline principle.",
+      "R": "Refer to current Trauma guidelines for this topic.",
+      "P": "Remember the key fact and apply it to similar clinical scenarios."
+    },
+    "guideline": "Trauma board principles",
+    "takeaway": "Review Ha e matur i a i s a c ard i nal s i gn Corr ec t an s w er: C 16 . A f ter Acut...",
+    "source_tag": "MCQgeneralsurgerybook (1) conv.docx.txt",
+    "needs_review": true
+  },
+  {
+    "id": 10239,
+    "specialty": "Trauma",
+    "topic": "Trauma",
+    "question": "Centr a l venou s p r e ss ure Corr ec t an s w er: C 21 . W hat i s the tr e atme n t for blunt trauma of kid n ey ?",
+    "options": {
+      "A": "Conserv a tive",
+      "B": "Nephr e ctomy",
+      "C": "Nephrotomy",
+      "D": "N e phro p lexy Corr ec t an s w er: A 22 . A 3 5 y ea r s man with blunt a bdominal tr a uma with h/o p e lvic f rac ture h a s pr e s ented to ER. H e h a s p a ss ed o n ly f e w drop s of blood pe"
+    },
+    "answer": "A",
+    "sharp": {
+      "S": "High-yield Trauma board question.",
+      "H": "Review each option carefully against the clinical stem.",
+      "A": "Eliminate options that don't fit the primary diagnosis or guideline principle.",
+      "R": "Refer to current Trauma guidelines for this topic.",
+      "P": "Remember the key fact and apply it to similar clinical scenarios."
+    },
+    "guideline": "Trauma board principles",
+    "takeaway": "Review Centr a l venou s p r e ss ure Corr ec t an s w er: C 21 . W hat i s the tr e at...",
+    "source_tag": "MCQgeneralsurgerybook (1) conv.docx.txt",
+    "needs_review": true
+  },
+  {
+    "id": 11241,
+    "specialty": "Trauma",
+    "topic": "Trauma",
+    "question": "T P I Corr ec t an s w er: C 916 . W h ic h of t h e followi n g i s the m o s t co m mo n ca us e of ac qu ir e d a r t er iove n o u s fi s tul a ?",
+    "options": {
+      "A": "Blu n t trauma",
+      "B": "P en e trating trauma",
+      "C": "B a c terial infe c tion",
+      "D": "Fung a l in f ection Corr ec t an s w er: B 917 . All t h e followi n g s tat e m e n t s a b o u t Pa n c r e atic Ca rc i n o m a i s tr u e, ex c e p t -"
+    },
+    "answer": "A",
+    "sharp": {
+      "S": "High-yield Trauma board question.",
+      "H": "Review each option carefully against the clinical stem.",
+      "A": "Eliminate options that don't fit the primary diagnosis or guideline principle.",
+      "R": "Refer to current Trauma guidelines for this topic.",
+      "P": "Remember the key fact and apply it to similar clinical scenarios."
+    },
+    "guideline": "Trauma board principles",
+    "takeaway": "Review T P I Corr ec t an s w er: C 916 . W h ic h of t h e followi n g i s the m o s t...",
+    "source_tag": "MCQgeneralsurgerybook (1) conv.docx.txt",
+    "needs_review": true
+  }
+]);
+} else {
+  module.exports = [
+  {
+    "id": 1063,
+    "specialty": "Trauma",
+    "topic": "rush.docx",
+    "question": "between packed red blood cells (PRBCs), fresh-frozen plasma (FFP), and platelets (PLTs) reduces the severity of coagulopathy in hemorrhagic shock.",
+    "options": {
+      "C": "Patients with circulating factor levels 50% of the normal will show clinically impaired hemostasis.",
+      "D": "Addition of TXA to massive transfusion protocols comes with an increased risk of thrombotic complications.",
+      "E": "Albumin-containing solutions have a proven mortality benefit over crystalloid fluids in the resuscitation of hypovolemic shock."
+    },
+    "answer": "B",
+    "explanation": {
+      "correct": "Previous theories of intravenous fluid resuscitation relied heavily upon crystalloid fluids to bolster blood volume and pressure. However, recent studies such as the Prospective, Observa tional, Multicenter, Major Trauma Transfusion (PROMMTT) and Pragmatic, Randomized Optimal Platelet and Plasma Ratios (PROPPR) have changed this practice. These studies were grounded in findings from battlefield transfusion studies showing decreased mortality in patients transfused with whole blood when components such as PRBCs and FFP were unavailable. The theory is that aggres sive resuscitation with crystalloid fluids exacerbates the consumptive coagulopathy of trauma (clotting factors are used up in achieving CHAPTER 3 / Hemostasis and Transfusion 23 systemic hemostasis) with an iatrogenic dilutional coagulopathy. Thus crystalloid-resuscitated patients initially responded hemodynamically but were coagulopathic and continued to bleed. The PROMMTT trial first showed that patients who received higher ratios of platelets and plasma to FFPs had reduced all-cause mortality in the first 24 h following injury. These results were sustained at 30 days postinjury. The PROPPR trial refined these findings and showed superior outcomes with a 1:1:1 ratio of PRBC:FFP:PLT compared with a 1:1:2 ratio. The data trended toward significance in 24-h and 30-day mortality but was underpowered.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Standard Surgical Board Review",
+    "takeaway": "Key Insight: Previous theories of intravenous fluid resuscitation relied heavily upon crystalloid fluids to bolster blood volume and ..."
+  },
+  {
+    "id": 1080,
+    "specialty": "Trauma",
+    "topic": "rush.docx",
+    "question": "D. The effect of aspirin is reversible in 2 to 3 days.",
+    "options": {
+      "D": "The effect of aspirin is reversible in 2 to 3 days.",
+      "E": "Aspirin will decrease platelet counts, but bleeding time is unchanged.28 SECTION I / Surgical Fundamentals"
+    },
+    "answer": "A",
+    "explanation": {
+      "correct": "Aspirin, indomethacin, and most other nonsteroi dal antiinflammatory drugs (NSAIDs) are inhibitors of prostaglan din synthesis. They block the formation of PGG2 and PGH2 from platelet arachidonic acid and, as a result, inhibit platelet aggrega tion. PGI2, PGE1, and thromboxane A2 stimulate cAMP produc tion, whereas dipyridamole and theophylline derivatives block its degradation. Aspirin inhibits thromboxane production, acetylates fibrinogen, interferes with fibrin formation, and makes fibrin sus ceptible to accelerated fibrinolysis. The effect of aspirin begins within 2 h, is irreversible, and lasts the 7- to 9-day life span of affected platelets. The clinical result is increased bruising and bleeding and increased risk of surgical bleeding. Platelet counts are normal, but the bleeding time is prolonged. Furosemide competi tively inhibits ADP-induced platelet aggregation and reduces the response of platelets to PGG",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Standard Surgical Board Review",
+    "takeaway": "Key Insight: Aspirin, indomethacin, and most other nonsteroi dal antiinflammatory drugs (NSAIDs) are inhibitors of prostaglan din syn..."
+  },
+  {
+    "id": 1136,
+    "specialty": "Trauma",
+    "topic": "rush.docx",
+    "question": "D. IL-6 levels peak early after injury.",
+    "options": {
+      "D": "IL-6 levels peak early after injury.",
+      "E": "IL-6 has antiinflammatory effects."
+    },
+    "answer": "C",
+    "explanation": {
+      "correct": "IL-6 is a very sensitive marker for the degree of tissue injury. It is secreted by monocytes, macrophages, neutro phils, T and B cells, endothelial cells, smooth muscle cells, and fibroblasts. IL-6 expression is induced by bradykinin, TGF-\u03b2, platelet-derived growth factor, TNF-\u03b1, and IL-1, among others. IL-6 levels peak early after injury, with levels found to be predictive of risk for and mortality from organ failure after trauma. IL-6 induces the synthesis of acute-phase proteins such as fibrinogen, complement factors, \u03b11-antitrypsin, and CRP. CRP itself is a marker for states with increased inflammation and, in addition, is predictive of adverse outcomes following a secondary surgery. IL-6 also has some antiinflammatory effects, including inhibition of proteases and reduction of TNF-\u03b1 and IL-1 synthesis; furthermore, it can cause the release of immunosuppressive glucocorticoids.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Standard Surgical Board Review",
+    "takeaway": "Key Insight: IL-6 is a very sensitive marker for the degree of tissue injury. It is secreted by monocytes, macrophages, neutro phils,..."
+  },
+  {
+    "id": 1137,
+    "specialty": "Trauma",
+    "topic": "rush.docx",
+    "question": "D. IL-10 has a short half-life and is therefore not a useful marker for assessing the severity of injury.",
+    "options": {
+      "D": "IL-10 has a short half-life and is therefore not a useful marker for assessing the severity of injury.",
+      "E": "IL-10 secretion is inhibited by the stress of surgical procedures."
+    },
+    "answer": "C",
+    "explanation": {
+      "correct": "IL-10 originates from T cells and monocytes. It has strong antiinflammatory properties and is capable of inhibiting the synthesis of proinflammatory cytokines such as IL-1 and TNF \u03b1. It also induces a reduction in class II MHC molecules on mono cytes, thereby leading to the downregulation of the immune response. IL-10 levels in trauma patients have been shown to reflect the severity of injury and are predictive of patients in whom sepsis or multiorgan dysfunction syndrome will develop. Release of IL-10 is increased in direct proportion to tissue damage, thus suggesting that more invasive surgical procedures augment the release of IL-",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Standard Surgical Board Review",
+    "takeaway": "Key Insight: IL-10 originates from T cells and monocytes. It has strong antiinflammatory properties and is capable of inhibiting the ..."
+  },
+  {
+    "id": 1187,
+    "specialty": "Trauma",
+    "topic": "rush.docx",
+    "question": "Which of the following statements regarding the risk for postsplenectomy sepsis is true?",
+    "options": {
+      "A": "The indication for splenectomy has no bearing on a patient\u2019s risk for developing postsplenectomy sepsis.",
+      "B": "Adult splenectomy patients have a greater likelihood of developing postsplenectomy sepsis than do children or newborns who require a splenectomy.",
+      "C": "The risk for postsplenectomy sepsis is highest in the first year after splenectomy, but asplenic patients\u2019 increased risk for developing sepsis persists for approximately 10 years following splenectomy.",
+      "D": "The risk of sepsis is increased in splenectomy patients due to impaired cellular immunity.",
+      "E": "None of the above."
+    },
+    "answer": "C",
+    "explanation": {
+      "correct": "Asplenic patients (those who have either under gone splenectomy or are functionally asplenic, such as in sickle cell disease) are at an increased risk for a fulminant and potentially rapidly fatal overwhelming bloodstream infection caused by encap sulated organisms. This is due to impaired bacterial clearance, especially of encapsulated organisms (i.e., S. pneumoniae, Neis seria meningitidis, and H. influenzae), and impaired humoral (not cellular) immunity. The risk of developing postsplenectomy sepsis varies based on the indications for splenectomy, the age at which the patient underwent splenectomy (or became functionally asplenic), and the time interval since splenectomy (or functional asplenia). In terms of indication for splenectomy, patients who have undergone splenectomy for trauma are at the lowest risk; those who have undergone splenectomy for hereditary spherocytosis or immune thrombocytopenic purpura are at intermediate risk; and the greatest risk patients are those who are functionally asplenic due to \u03b1-thalassemia, sickle cell disease, or portal hypertension. Chil dren (especially those under the age of 5 years) are at a greater risk for developing sepsis than are adults, but this may also be con founded by the indications for splenectomy or functional asplenia in this age group. Overall, the risk for postsplenectomy sepsis is greatest in the first year following splenectomy, but patients who have undergone splenectomy are at an increased risk for sepsis for approximately 10 years following surgery.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Standard Surgical Board Review",
+    "takeaway": "Key Insight: Asplenic patients (those who have either under gone splenectomy or are functionally asplenic, such as in sickle cell dis..."
+  },
+  {
+    "id": 1211,
+    "specialty": "Trauma",
+    "topic": "Comprhensive Surgery Revision conv.docx",
+    "question": "Prolactinomas of the pituitary:A. Most often produce dysfunctional uterine bleeding in women.",
+    "options": {
+      "A": "Most often produce dysfunctional uterine bleeding in women.",
+      "B": "Most commonly produce infertility in men.C. When asymptomatic, are best treated surgically early in the microadenoma stage.",
+      "D": "May enlarge during pregnancy, requiring treatment with bromocriptine or surgery.",
+      "E": "Commonly occur in patients with MEN 2."
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Standard Surgical Board Review",
+    "takeaway": "Key Insight: "
+  },
+  {
+    "id": 1248,
+    "specialty": "Trauma",
+    "topic": "Comprhensive Surgery Revision conv.docx",
+    "question": "Which of the following is most reliable for confirming the occurrence of a significant esophageal caustic injury?A. History of the event.B. Physical examination of the patient.",
+    "options": {
+      "A": "History of the event.B. Physical examination of the patient.",
+      "C": "Barium esophagraphy.D. Endoscopy."
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Standard Surgical Board Review",
+    "takeaway": "Key Insight: "
+  },
+  {
+    "id": 1254,
+    "specialty": "Trauma",
+    "topic": "Comprhensive Surgery Revision conv.docx",
+    "question": "In patients with bleeding duodenal ulcers, the endoscopic finding associated with the highest incidence of rebleeding is:A. Visible vessel.",
+    "options": {
+      "A": "Visible vessel.",
+      "B": "Cherry-red spot.",
+      "C": "Clean ulcer bed.",
+      "D": "Duodenitis.E. Shallow, 3-mm. ulcer."
+    },
+    "answer": "A",
+    "explanation": {
+      "correct": "",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Standard Surgical Board Review",
+    "takeaway": "Key Insight: "
+  },
+  {
+    "id": 1262,
+    "specialty": "Trauma",
+    "topic": "Comprhensive Surgery Revision conv.docx",
+    "question": "Which of the following risk factors have been shown to increase significantly the incidence of gastrointestinal bleeding from stress gastritis in intensive care unit (ICU) patients?A. Glucocorticoid administration.",
+    "options": {
+      "A": "Glucocorticoid administration.",
+      "B": "Respiratory failure.C. Coagulopathy.D. Organ transplantation.",
+      "E": "Jaundice."
+    },
+    "answer": "B",
+    "explanation": {
+      "correct": "C",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Standard Surgical Board Review",
+    "takeaway": "Key Insight: C"
+  },
+  {
+    "id": 1294,
+    "specialty": "Trauma",
+    "topic": "Comprhensive Surgery Revision conv.docx",
+    "question": "Which of the following effects are advantages of combined vasopressin and nitroglycerin intravenous infusion, as compared with vasopressin infusion alone, in controlling acute variceal bleeding?A. Lower frequency of encephalopathy.B. Lower incidence of vasopressin side effects.",
+    "options": {
+      "A": "Lower frequency of encephalopathy.B. Lower incidence of vasopressin side effects.",
+      "C": "More effective control of bleeding.D. Less \u2015rebound effect\u2016 when discontinuing the infusion."
+    },
+    "answer": "B",
+    "explanation": {
+      "correct": "C",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Standard Surgical Board Review",
+    "takeaway": "Key Insight: C"
+  },
+  {
+    "specialty": "Trauma",
+    "topic": "Comprhensive Surgery Revision conv.docx",
+    "question": "Which of the following is/are true of blunt renal trauma?",
+    "options": {
+      "B": "Blunt renal trauma with urinary extravasation always requires surgical exploration.",
+      "D": "Blunt renal trauma requires exploration only when the patient exhibits hemodynamic instability.",
+      "E": "Any kidney fractured by blunt renal trauma must be explored."
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "Standard board review concept.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Source: Comprhensive Surgery Revision conv.docx",
+    "takeaway": "Key Concept: ",
+    "id": 158
+  },
+  {
+    "specialty": "Trauma",
+    "topic": "Comprhensive Surgery Revision conv.docx",
+    "question": "A 24-year-old woman presents to the emergency room with a dislocated knee. In transferring the patient from stretcher to examining table, the knee is spontaneously reduced. Physical examination reveals no palpable or \u2015Dopplerable\u2016 pulses in the foot on the affected side and booming pulses in the foot on the nonaffected side. Proper treatment would include which of the following?",
+    "options": {
+      "B": "Magnetic resonance imaging (MRI) of the affected leg.",
+      "D": "Emergent transfer to the operating room for exploration of the popliteal artery.",
+      "E": "Immobilization of the knee with gentle warming of the extremity and elevation."
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "Standard board review concept.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Source: Comprhensive Surgery Revision conv.docx",
+    "takeaway": "Key Concept: ",
+    "id": 159
+  },
+  {
+    "specialty": "Trauma",
+    "topic": "Comprhensive Surgery Revision conv.docx",
+    "question": "The zone of flexor tendon injury that carries the poorest prognosis following injury and repair is:",
+    "options": {
+      "B": "Zone II.",
+      "C": "Zone III.",
+      "D": "Zone IV.",
+      "E": "Zone V."
+    },
+    "answer": "B",
+    "explanation": {
+      "correct": "Standard board review concept.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Source: Comprhensive Surgery Revision conv.docx",
+    "takeaway": "Key Concept: ",
+    "id": 160
+  },
+  {
+    "specialty": "Trauma",
+    "topic": "Comprhensive Surgery Revision conv.docx",
+    "question": "The intravenous fluid that a 60 kg., 30-year-old woman with an 80% burn should be given in the first 24 hours following burn injury is:",
+    "options": {
+      "A": "19.2 liters of 5% glucose in lactated Ringer's.",
+      "C": "9.6 liters of hypertonic salt solution (sodium concentration 200 mEq. per liter).",
+      "E": "5.5 liters of the pentafraction component of hydroxyethyl starch."
+    },
+    "answer": "B",
+    "explanation": {
+      "correct": "160COMPRHENSIVE SURGERY REVISION200859690-21546 59690-21546 COMPRHENSIVE SURGERY REVISION2008-83565-43812 -83565-43812",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Source: Comprhensive Surgery Revision conv.docx",
+    "takeaway": "Key Concept: 160COMPRHENSIVE SURGERY REVISION200859690-21546 59690-21546 COMPRHENSIVE SURGERY REVISION2008-83565-...",
+    "id": 162
+  },
+  {
+    "specialty": "Trauma",
+    "topic": "Comprhensive Surgery Revision conv.docx",
+    "question": "Indications for escharotomy of a circumferentially burned right lower limb include all of the following except:",
+    "options": {
+      "C": "A pressure of 40 mm. Hg in the anterior compartment of the distal right leg.",
+      "E": "Absence of pulsatile flow in the posterior tibial artery."
+    },
+    "answer": "B",
+    "explanation": {
+      "correct": "D",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Source: Comprhensive Surgery Revision conv.docx",
+    "takeaway": "Key Concept: D",
+    "id": 163
+  },
+  {
     "specialty": "Trauma",
     "topic": "Comprhensive Surgery Revision conv.docx",
     "question": "The clinical and histologic signs of invasive burn wound infection include which of the following?",
@@ -531,26 +1350,676 @@ window.QUESTIONS.push(...[
       "D": "The presence of micro-organisms in the unburned subcutaneous tissue in a burn wound biopsy specimen.",
       "E": "Perineural and perivascular microbial migration through the eschar with proliferation of micro-organisms in the subeschar space."
     },
-    "answer": "E",
+    "answer": "A",
     "explanation": {
-      "correct": "The correct answer (E) accurately reflects the key histologic and clinical findings. The presence of microbial migration *through the eschar* and proliferation in the subeschar space is the hallmark of IBWI. This distinguishes it from simple superficial infections. The inclusion of perineural and perivascular involvement is crucial, as these are common pathways for bacterial dissemination in burn wounds.",
+      "correct": "CD",
       "A": "",
       "B": "",
       "C": "",
       "D": "",
       "E": ""
     },
-    "sharp": {
-      "status": "ACCEPT",
-      "verified_answer": "E",
-      "set_the_stage": "This question assesses understanding of the pathophysiology and diagnostic criteria for invasive burn wound infections (IBWIs). IBWIs are a significant cause of morbidity and mortality following burns, often stemming from the compromised immune response and altered wound healing environment.",
-      "highlight_excellence": "The correct answer (E) accurately reflects the key histologic and clinical findings. The presence of microbial migration *through the eschar* and proliferation in the subeschar space is the hallmark of IBWI. This distinguishes it from simple superficial infections. The inclusion of perineural and perivascular involvement is crucial, as these are common pathways for bacterial dissemination in burn wounds.",
-      "address_gaps": "The incorrect answer (D) is a common misconception. While microbial presence in the unburned subcutaneous tissue can occur in *any* wound, it’s not specific to IBWI. The defining feature is the *pathological* migration and proliferation *within* the burn tissue itself – the eschar and surrounding areas. Option A is a red herring.",
-      "review_guidelines": "1. **Eschar Assessment:** Thoroughly evaluate the burn wound for signs of eschar breakdown, inflammation, and cellular infiltrate. 2. **Histological Examination:** Biopsy specimens should be examined for microbial migration, neutrophil predominance, and evidence of tissue destruction. 3. **Microbial Identification:** Culture and identify the causative organism(s). 4. **Deep Tissue Involvement:** Recognize that IBWI often extends beyond the superficial layers of the burn wound. 5. **Immunocompromised Patients:** Patients with underlying immune deficiencies are at higher risk for IBWI.",
-      "plan": "I would recommend a focused review of burn wound pathophysiology, specifically addressing the mechanisms of bacterial dissemination and the altered inflammatory response in burn wounds.  Case studies illustrating the histologic features of IBWI are invaluable. Further, emphasize the importance of early recognition and aggressive treatment, including source control, broad-spectrum antibiotics, and wound care."
+    "guideline": "Source: Comprhensive Surgery Revision conv.docx",
+    "takeaway": "Key Concept: CD",
+    "id": 164
+  },
+  {
+    "specialty": "Trauma",
+    "topic": "Comprhensive Surgery Revision conv.docx",
+    "question": "The treatment of invasive burn wound infection may include which of the following?",
+    "options": {
+      "B": "Use of 0.5% silver nitrate soaks for topical therapy.",
+      "E": "Amputation when the infection has extended to involve underlying muscle."
     },
-    "guideline": "1. **Eschar Assessment:** Thoroughly evaluate the burn wound for signs of eschar breakdown, inflammation, and cellular infiltrate. 2. **Histological Examination:** Biopsy specimens should be examined for microbial migration, neutrophil predominance, and evidence of tissue destruction. 3. **Microbial Identification:** Culture and identify the causative organism(s). 4. **Deep Tissue Involvement:** Recognize that IBWI often extends beyond the superficial layers of the burn wound. 5. **Immunocompromised Patients:** Patients with underlying immune deficiencies are at higher risk for IBWI.",
-    "takeaway": "PLAN: I would recommend a focused review of burn wound pathophysiology, specifically addressing the mechanisms of bacterial dissemination and the altered inflammatory response in burn wounds.  Case studies illustrating the histologic features of IBWI are invaluable. Further, emphasize the importance of early recognition and aggressive treatment, including source control, broad-spectrum antibiotics, and wound care.",
-    "_src_file": "trauma.js"
+    "answer": "A",
+    "explanation": {
+      "correct": "CE 161COMPRHENSIVE SURGERY REVISION200859690-21643 59690-21643 COMPRHENSIVE SURGERY REVISION2008-83565-43812 -83565-43812",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Source: Comprhensive Surgery Revision conv.docx",
+    "takeaway": "Key Concept: CE 161COMPRHENSIVE SURGERY REVISION200859690-21643 59690-21643 COMPRHENSIVE SURGERY REVISION2008-835...",
+    "id": 165
+  },
+  {
+    "specialty": "Trauma",
+    "topic": "Comprhensive Surgery Revision conv.docx",
+    "question": "The treatment of patients with high-voltage electric injury differs from that of patients with conventional thermal injury with respect to the need for:",
+    "options": {
+      "A": "Fasciotomy.",
+      "B": "Hemodialysis.",
+      "E": "Prehospital cardiopulmonary resuscitation."
+    },
+    "answer": "A",
+    "explanation": {
+      "correct": "BCE",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Source: Comprhensive Surgery Revision conv.docx",
+    "takeaway": "Key Concept: BCE",
+    "id": 166
+  },
+  {
+    "specialty": "Trauma",
+    "topic": "Comprhensive Surgery Revision conv.docx",
+    "question": "Characteristics of the hypermetabolic response to burn injury include:",
+    "options": {
+      "A": "Elevation of core temperature, skin temperature, and core-to-skin heat transfer.",
+      "C": "A marked increase of blood flow to the burn wound.",
+      "E": "Oxidation of stored lipid as the major source of metabolic energy."
+    },
+    "answer": "A",
+    "explanation": {
+      "correct": "CE",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Source: Comprhensive Surgery Revision conv.docx",
+    "takeaway": "Key Concept: CE",
+    "id": 167
+  },
+  {
+    "specialty": "Trauma",
+    "topic": "ATLS",
+    "question": "Which of the following is TRUE regarding ATLS?",
+    "options": {
+      "A": "The primary survey follows ABCDE; Circulation includes controlling external hemorrhage.",
+      "B": "Incorrect distractor regarding ATLS",
+      "C": "Incorrect distractor regarding ATLS",
+      "D": "Incorrect distractor regarding ATLS"
+    },
+    "answer": "A",
+    "explanation": {
+      "correct": "The primary survey follows ABCDE; Circulation includes controlling external hemorrhage.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Surgical Insight Hub Premium Board Review",
+    "takeaway": "Key Trauma Pearl: The primary survey follows ABCDE; Circulation includes controlling external hemo...",
+    "id": 526,
+    "_src_file": "questions_enriched_test.js",
+    "sharp": {
+      "set_the_stage": "Which of the following is TRUE regarding ATLS?",
+      "highlight_excellence": "Pending enrichment",
+      "address_gaps": "Pending enrichment",
+      "review_learning_points": "Pending enrichment",
+      "plan": "Review this topic for board preparation."
+    }
+  },
+  {
+    "specialty": "Trauma",
+    "topic": "Shock",
+    "question": "Which of the following is TRUE regarding Shock?",
+    "options": {
+      "A": "Incorrect distractor regarding Shock",
+      "B": "The earliest sign of hypovolemic shock is tachycardia.",
+      "C": "Incorrect distractor regarding Shock",
+      "D": "Incorrect distractor regarding Shock"
+    },
+    "answer": "B",
+    "explanation": {
+      "correct": "The earliest sign of hypovolemic shock is tachycardia.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Surgical Insight Hub Premium Board Review",
+    "takeaway": "Key Trauma Pearl: The earliest sign of hypovolemic shock is tachycardia....",
+    "id": 527,
+    "_src_file": "questions_enriched_test.js",
+    "sharp": {
+      "set_the_stage": "Which of the following is TRUE regarding Shock?",
+      "highlight_excellence": "Pending enrichment",
+      "address_gaps": "Pending enrichment",
+      "review_learning_points": "Pending enrichment",
+      "plan": "Review this topic for board preparation."
+    }
+  },
+  {
+    "specialty": "Trauma",
+    "topic": "Splenic Trauma",
+    "question": "Which of the following is TRUE regarding Splenic Trauma?",
+    "options": {
+      "A": "Incorrect distractor regarding Splenic Trauma",
+      "B": "Incorrect distractor regarding Splenic Trauma",
+      "C": "The most commonly injured organ in blunt abdominal trauma.",
+      "D": "Incorrect distractor regarding Splenic Trauma"
+    },
+    "answer": "C",
+    "explanation": {
+      "correct": "The most commonly injured organ in blunt abdominal trauma.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Surgical Insight Hub Premium Board Review",
+    "takeaway": "Key Trauma Pearl: The most commonly injured organ in blunt abdominal trauma....",
+    "id": 528,
+    "_src_file": "questions_enriched_test.js",
+    "sharp": {
+      "set_the_stage": "Which of the following is TRUE regarding Splenic Trauma?",
+      "highlight_excellence": "Pending enrichment",
+      "address_gaps": "Pending enrichment",
+      "review_learning_points": "Pending enrichment",
+      "plan": "Review this topic for board preparation."
+    }
+  },
+  {
+    "specialty": "Trauma",
+    "topic": "FAST Scan",
+    "question": "Which of the following is TRUE regarding FAST Scan?",
+    "options": {
+      "A": "Incorrect distractor regarding FAST Scan",
+      "B": "Incorrect distractor regarding FAST Scan",
+      "C": "Incorrect distractor regarding FAST Scan",
+      "D": "Evaluates for free fluid in four areas: Perihepatic, Perisplenic, Pelvic, and Pericardial."
+    },
+    "answer": "D",
+    "explanation": {
+      "correct": "Evaluates for free fluid in four areas: Perihepatic, Perisplenic, Pelvic, and Pericardial.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Surgical Insight Hub Premium Board Review",
+    "takeaway": "Key Trauma Pearl: Evaluates for free fluid in four areas: Perihepatic, Perisplenic, Pelvic, and Pe...",
+    "id": 529,
+    "_src_file": "questions_enriched_test.js",
+    "sharp": {
+      "set_the_stage": "Which of the following is TRUE regarding FAST Scan?",
+      "highlight_excellence": "Pending enrichment",
+      "address_gaps": "Pending enrichment",
+      "review_learning_points": "Pending enrichment",
+      "plan": "Review this topic for board preparation."
+    }
+  },
+  {
+    "specialty": "Trauma",
+    "topic": "Trauma Core Concept",
+    "question": "Which of the following is TRUE regarding Trauma Core Concept?",
+    "options": {
+      "A": "This is a high-yield Trauma board review concept that is frequently tested.",
+      "B": "Incorrect distractor regarding Trauma Core Concept",
+      "C": "Incorrect distractor regarding Trauma Core Concept",
+      "D": "Incorrect distractor regarding Trauma Core Concept"
+    },
+    "answer": "A",
+    "explanation": {
+      "correct": "This is a high-yield Trauma board review concept that is frequently tested.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "guideline": "Surgical Insight Hub Premium Board Review",
+    "takeaway": "Key Trauma Pearl: This is a high-yield Trauma board review concept that is frequently tested....",
+    "id": 530,
+    "_src_file": "questions_enriched_test.js",
+    "sharp": {
+      "set_the_stage": "Which of the following is TRUE regarding Trauma Core Concept?",
+      "highlight_excellence": "Pending enrichment",
+      "address_gaps": "Pending enrichment",
+      "review_learning_points": "Pending enrichment",
+      "plan": "Review this topic for board preparation."
+    }
+  },
+  {
+    "id": 10105,
+    "specialty": "Trauma",
+    "topic": "Trauma",
+    "question": "Immune thrombocytopenia, hypersplenism, traumatic injury. E. None of the above.Answer: A3. Useful methods for detection of splenic injury, in descending order of sensitivity, are:",
+    "options": {
+      "A": "Diagnostic peritoneal lavage.",
+      "B": "CT.",
+      "C": "Ultrasonography.",
+      "D": "Isotope scan.",
+      "E": ""
+    },
+    "answer": "A",
+    "sharp": {
+      "S": "High-yield Trauma board question.",
+      "H": "Review each option carefully against the clinical stem.",
+      "A": "Eliminate options that don't fit the primary diagnosis or guideline principle.",
+      "R": "Refer to current Trauma guidelines for this topic.",
+      "P": "Remember the key fact and apply it to similar clinical scenarios."
+    },
+    "guideline": "Trauma board principles",
+    "takeaway": "Review Immune thrombocytopenia, hypersplenism, traumatic injury. E. None of the above.A...",
+    "source_tag": "Comprhensive Surgery Revision conv.docx.txt",
+    "needs_review": true
+  },
+  {
+    "id": 10166,
+    "specialty": "Trauma",
+    "topic": "Trauma",
+    "question": "Talocalcaneal dislocation. Answer: B33. The most common reason for surgical amputation in the general population is:",
+    "options": {
+      "A": "Trauma.",
+      "B": "Tumor.",
+      "C": "Infection.",
+      "D": "Congenital deformity.",
+      "E": ""
+    },
+    "answer": "A",
+    "sharp": {
+      "S": "High-yield Trauma board question.",
+      "H": "Review each option carefully against the clinical stem.",
+      "A": "Eliminate options that don't fit the primary diagnosis or guideline principle.",
+      "R": "Refer to current Trauma guidelines for this topic.",
+      "P": "Remember the key fact and apply it to similar clinical scenarios."
+    },
+    "guideline": "Trauma board principles",
+    "takeaway": "Review Talocalcaneal dislocation. Answer: B33. The most common reason for surgical ampu...",
+    "source_tag": "Comprhensive Surgery Revision conv.docx.txt",
+    "needs_review": true
+  },
+  {
+    "id": 10170,
+    "specialty": "Trauma",
+    "topic": "Trauma",
+    "question": "Flat bones.118COMPRHENSIVE SURGERY REVISION200859690-2180159690-21801COMPRHENSIVE SURGERY REVISION2008-83565-43812-83565-43812E. Cuboidal bones. Answer: C37. A 5-year-old child presents with a 2-day history of the atraumatic onset of pain, erythema, and swelling of the right knee joint. The child is febrile with an elevated white blood cell count. The differential diagnosis includes:",
+    "options": {
+      "A": "Acute rheumatic fever.",
+      "B": "Leukemia.",
+      "C": "Scurvy.",
+      "D": "Acute septic arthritis.",
+      "E": ""
+    },
+    "answer": "A",
+    "sharp": {
+      "S": "High-yield Trauma board question.",
+      "H": "Review each option carefully against the clinical stem.",
+      "A": "Eliminate options that don't fit the primary diagnosis or guideline principle.",
+      "R": "Refer to current Trauma guidelines for this topic.",
+      "P": "Remember the key fact and apply it to similar clinical scenarios."
+    },
+    "guideline": "Trauma board principles",
+    "takeaway": "Review Flat bones.118COMPRHENSIVE SURGERY REVISION200859690-2180159690-21801COMPRHENSIV...",
+    "source_tag": "Comprhensive Surgery Revision conv.docx.txt",
+    "needs_review": true
+  },
+  {
+    "id": 10181,
+    "specialty": "Trauma",
+    "topic": "Trauma",
+    "question": "Zone IV. E. Zone V. Answer: B48. The contraindications to primary repair of a flexor tendon injury are:",
+    "options": {
+      "A": "Contaminated wound.",
+      "B": "Severe soft tissue trauma.",
+      "C": "Inexperienced surgeon.",
+      "D": "Compromised general condition of the patient prohibiting prolonged anesthetic. BCD49."
+    },
+    "answer": "A",
+    "sharp": {
+      "S": "High-yield Trauma board question.",
+      "H": "Review each option carefully against the clinical stem.",
+      "A": "Eliminate options that don't fit the primary diagnosis or guideline principle.",
+      "R": "Refer to current Trauma guidelines for this topic.",
+      "P": "Remember the key fact and apply it to similar clinical scenarios."
+    },
+    "guideline": "Trauma board principles",
+    "takeaway": "Review Zone IV. E. Zone V. Answer: B48. The contraindications to primary repair of a fl...",
+    "source_tag": "Comprhensive Surgery Revision conv.docx.txt",
+    "needs_review": true
+  },
+  {
+    "id": 10186,
+    "specialty": "Trauma",
+    "topic": "Trauma",
+    "question": "For evaluating the bony detail of patients with facial trauma, CT is a better imaging modality than MRI.E. Decreased amount of N-acetyl aspartate (NAA) and increased amount of lactate can be shown in the MR spectroscopy (MRS) of a patient with acute stroke.Answer: ACDE5. Which of the following are true about intracranial tumors?",
+    "options": {
+      "A": "The most common location of brain tumors of childhood is the posterior cranial fossa.",
+      "B": "With few exceptions, examination of the CSF is of no value in the diagnosis of an intracranial tumor.",
+      "C": "Even the most malignant of primary brain tumors seldom spread outside the confines of the central nervous system (CNS).",
+      "D": "The majority of astrocytomas can be cured surgically.",
+      "E": ""
+    },
+    "answer": "A",
+    "sharp": {
+      "S": "High-yield Trauma board question.",
+      "H": "Review each option carefully against the clinical stem.",
+      "A": "Eliminate options that don't fit the primary diagnosis or guideline principle.",
+      "R": "Refer to current Trauma guidelines for this topic.",
+      "P": "Remember the key fact and apply it to similar clinical scenarios."
+    },
+    "guideline": "Trauma board principles",
+    "takeaway": "Review For evaluating the bony detail of patients with facial trauma, CT is a better im...",
+    "source_tag": "Comprhensive Surgery Revision conv.docx.txt",
+    "needs_review": true
+  },
+  {
+    "id": 10320,
+    "specialty": "Trauma",
+    "topic": "Trauma",
+    "question": "Demonstrate arrhythmia as the most common complication. Answer: BD3. According to the recommendations of the American College of Surgeons Committee on Trauma, which of the following patients should be transported to a trauma center?",
+    "options": {
+      "A": "Fifty-year-old female who fell 8 feet from a step ladder, with isolated hip fracture and normal vital signs.",
+      "B": "Fifteen-year-old bicyclist with closed head injury and Glasgow Coma Scale score of 12.",
+      "C": "Twenty-three-year-old male assault victim with stab wound to the back, normal vital signs, and respiratory distress.",
+      "D": "Three-year-old infant passenger (restrained) in motor vehicle accident with normal vital signs and no apparent injuries except abdominal wall contusion.CD4."
+    },
+    "answer": "A",
+    "sharp": {
+      "S": "High-yield Trauma board question.",
+      "H": "Review each option carefully against the clinical stem.",
+      "A": "Eliminate options that don't fit the primary diagnosis or guideline principle.",
+      "R": "Refer to current Trauma guidelines for this topic.",
+      "P": "Remember the key fact and apply it to similar clinical scenarios."
+    },
+    "guideline": "Trauma board principles",
+    "takeaway": "Review Demonstrate arrhythmia as the most common complication. Answer: BD3. According t...",
+    "source_tag": "Comprhensive Surgery Revision conv.docx.txt",
+    "needs_review": true
+  },
+  {
+    "id": 10322,
+    "specialty": "Trauma",
+    "topic": "Trauma",
+    "question": "Optimizing arterial oxygenation is part of initial therapy.Answer: B5. Which of the following statements about maxillofacial trauma is/are false?",
+    "options": {
+      "A": "Asphyxia due to upper airway obstruction is the major cause of death from facial injuries.",
+      "B": "The mandible is the most common site of facial fracture.",
+      "C": "The Le Fort II fracture includes a horizontal fracture of the maxilla along with nasal bone fracture.",
+      "D": "Loss of upward gaze may indicate either an orbital floor or orbital roof fracture.6."
+    },
+    "answer": "A",
+    "sharp": {
+      "S": "High-yield Trauma board question.",
+      "H": "Review each option carefully against the clinical stem.",
+      "A": "Eliminate options that don't fit the primary diagnosis or guideline principle.",
+      "R": "Refer to current Trauma guidelines for this topic.",
+      "P": "Remember the key fact and apply it to similar clinical scenarios."
+    },
+    "guideline": "Trauma board principles",
+    "takeaway": "Review Optimizing arterial oxygenation is part of initial therapy.Answer: B5. Which of ...",
+    "source_tag": "Comprhensive Surgery Revision conv.docx.txt",
+    "needs_review": true
+  },
+  {
+    "id": 10327,
+    "specialty": "Trauma",
+    "topic": "Trauma",
+    "question": "Obtain intravenous access and begin emergency type O blood transfusions. E. Obtain cross-table cervical spine film and chest film.Answer: C10. True or False?",
+    "options": {
+      "A": "Trauma is second only to congenital heart disease as the leading cause of death in children.",
+      "B": "Each year in the United States, approximately 50,000 people die from injuries.",
+      "C": "Motor vehicle accidents (MVAs) involving intoxicated drivers are responsible for 50% of all MVA fatalities.",
+      "D": "Active prevention strategies (e.g., seat belts, helmets) have not proved effective in reducing injuries and fatalities.",
+      "E": ""
+    },
+    "answer": "A",
+    "sharp": {
+      "S": "High-yield Trauma board question.",
+      "H": "Review each option carefully against the clinical stem.",
+      "A": "Eliminate options that don't fit the primary diagnosis or guideline principle.",
+      "R": "Refer to current Trauma guidelines for this topic.",
+      "P": "Remember the key fact and apply it to similar clinical scenarios."
+    },
+    "guideline": "Trauma board principles",
+    "takeaway": "Review Obtain intravenous access and begin emergency type O blood transfusions. E. Obta...",
+    "source_tag": "Comprhensive Surgery Revision conv.docx.txt",
+    "needs_review": true
+  },
+  {
+    "id": 9736,
+    "specialty": "Trauma",
+    "topic": "Trauma",
+    "question": "Gr a y area s , s o form e d be ca u s e o f the pro d u ction of platelet s . E. F ibrou s tr a b e c ul a e. Co rr e ct a ns w e r: A 1141780 1074 9. Duri n g t h e e vol u tio n of t h e un d er s ta nd i n g of h e m atologic d i s ea s e s , t h e i n d icatio ns for s p le n e c tomy h ave c h a n ge d . T h e mo s t com m o n i nd ic a tio ns for s plenec t omy ar e , i n d e s c e n d i n g o r d er of f r e q u e n cy:",
+    "options": {
+      "A": "Tr a umatic injury, i m mune thrombocytopeni a , hyper s pl e ni s m .",
+      "B": "I mmune thrombo c y t openic pu r pura, traumat i c injury, hyp e r s pleni s m.",
+      "C": "Hyper s pl e ni s m , tra u matic inju r y, i m mune thrombocytopenia.",
+      "D": "I mmune thrombo c y t openia, h y per s pl e ni s m , t r aumatic injury.",
+      "E": ""
+    },
+    "answer": "A",
+    "sharp": {
+      "S": "High-yield Trauma board question.",
+      "H": "Review each option carefully against the clinical stem.",
+      "A": "Eliminate options that don't fit the primary diagnosis or guideline principle.",
+      "R": "Refer to current Trauma guidelines for this topic.",
+      "P": "Remember the key fact and apply it to similar clinical scenarios."
+    },
+    "guideline": "Trauma board principles",
+    "takeaway": "Review Gr a y area s , s o form e d be ca u s e o f the pro d u ction of platelet s . E...",
+    "source_tag": "MCQgeneralsurgerybook (1) conv.docx.txt",
+    "needs_review": true
+  },
+  {
+    "id": 10083,
+    "specialty": "Trauma",
+    "topic": "Trauma",
+    "question": "Entero c o c c u s Corr ec t an s w er: A 10. W ate r y di s c h arge f r o m the ea r occur s in all of the following EXCE P T: a. C e r ebr a -sp i nal otorr h e a . b. Parotid f istu l a. c. Acu t e otitis med i a. d. E ndol y mphat i c sac sur g ery. Corr ec t an s w er: C 11. I n le s ion o f facial ne r ve a t verti c al part below t he n e rve o f s tap e diu s\" there i s : a. Loss of t aste. b. I m pair m ent of sali v a t i o n. c. I m p a i r m e nt of l a c rimat i on. - 3 3 0 - d. Hyp e racusis. Corr ec t an s w er: A 12. I n le s ion o f the fa c ial nerve a t h o rizontal part, the r e i s : a. Loss of t aste. b. I m pair m ent of sali v a t i o n. c. I m p a i r m e nt of l a c rimat i on. d. Hyp e racusis. e. All of the abov e . Corr ec t an s w er: E 13. I n le s ion o f the fa c ial nerve a t t he g eniculate g a n glion, there i s : a. Loss of t aste. b. I m pair m ent of sali v a t i o n. c. I m p a i r m e nt of l a c rimat i on. d. Hyp e racusis. e. All of the abov e . Corr ec t an s w er: E 14. I n U M NL of the fa c i al ne r ve, t h e re i s : a. Paralysis of t h e m us c l e s of the lower 1 / 2 of t h e fa c e on t h e opposi t e si d e. b. Par a lysis invo l v es the v oluntary but sp a res t h e e m otion a l a nd as s ocia t ive m o ve m ent. c. Hypoton i a. d. Hypor e flex i a. Corr ec t an s w er: A and B 15. I n L M NL of the fa c i a l nerv e , the r e i s : a. Paralysis of t h e m us c l e s of the lower 1 / 2 of t h e fa c e on t h e opposi t e si d e. b. Par a lysis invo l v es the v oluntary but sp a res t h e e m otion a l a nd as s ocia t ive m o ve m ent. c. Hypoton i a. d. Hypor e flex i a. e. Rea c tion of d ege n erati o n. Corr e c t a nswer: C; D and E . 16. I n L M NL of the fa c i a l nerv e , the r e i s : a. Paralysis of t h e m us c l e s of the lower a nd upp e r 1 / 2 of t he f a c e on t h e oppos i te sid e . b. Par a lysis invo l v es the v oluntary, e mot i onal a nd as s oc i a t ive movem e n t. c. Paralysis of t h e m us c l e s of the lower a nd upp e r 1 / 2 of t he f a c e on t h e s a me s ide. Corr e c t a nswer: B and C . 17. Bell 's pal s y i s L M NL at the lev e l of: a. Gen i cu l a t e gan g lion. b. In t er n al f acial aud i tory m e atus. c. Styl o mast o id for a m e n. d. C e re b e l lopon t ine ang l e. Corr ec t an s w er: C 18. The ca u s e of B e ll' s p al s y m ay b e one of t h e following EXCE P T: a. Vascu l ar i s ch e mi a . b. Virus infec t i on. c. Bac t e r i a l in f ection. - 3 3 1 - d. Auto i m mune. Corr e c t a nswer: A; B and D . 19. The e arly s ymp t om of Bell' s pal s y i s : a. Dropp i ng of ang l e of t h e af f ec t ed si d e. b. Obli t eration of the ang l e of t h e m o u th. c. Pa i n of a c u te on s et b ehind the e a r. d. In a b i lity to c lose the e y e. Corr ec t an s w er: C. 20. The e arlie s t m anif e s t ation of c avernou s s inu s thrombo s i s i s : a. Fev e r. b. Ptosi s . c. Proptosis. d. Ophth a lmop l egia. Corr ec t an s w er: d. 21. The p a thology in c a s e of B e l l 's pal s y i s : a. Facial n er v e t u mor. b. Cut i n the tym p an i c se g ment in t h e f a c i al n erve. c. E d ema of t h e facial n e r ve insi d e its bony cana l . d. Hemorr h age in t h e facial ne r ve n u cleus. Corr ec t an s w er: C. 22. The mo s t a c curate d i agno s tic te s t t o dete c t d e gen e r a tion of t h e facial n erv e : a. Nerve ex c i t ab i l ity test. b. El e c t r o myog r aphy. c. Electron e u rogr a ph y . d. Stape d i a l r e f lex. Corr ec t an s w er: C. 23. Fac i al pal s y i s mo s t common l y: a. Neop l ast i c. b. T r a u matic. c. Herp e t i c. d. B el l's p a lsy. Corr ec t an s w er: D. 24 . A f ter 4 week s of H e ad trauma, patient p r e s e n t s with fe a tur e s of i r ritabi l i t y and alter e d s e n s o rium. C om m one s t ca us e will be:",
+    "options": {
+      "A": "Chr o nic s ubdur a l h e matoma",
+      "B": "Extr a dur a l hematoma",
+      "C": "I ntr a p arenchymal bl e ed",
+      "D": "Electrolyte imbalance Corr ec t an s w er: A - 3 3 2 - 1495425 -118745 S u bara c h niod he m o r r h a ge a n d n eur o v a s c ular dise a s e s 1435735 -91551 Bra i n t u m o urs 1141780 796 1 . FA"
+    },
+    "answer": "A",
+    "sharp": {
+      "S": "High-yield Trauma board question.",
+      "H": "Review each option carefully against the clinical stem.",
+      "A": "Eliminate options that don't fit the primary diagnosis or guideline principle.",
+      "R": "Refer to current Trauma guidelines for this topic.",
+      "P": "Remember the key fact and apply it to similar clinical scenarios."
+    },
+    "guideline": "Trauma board principles",
+    "takeaway": "Review Entero c o c c u s Corr ec t an s w er: A 10. W ate r y di s c h arge f r o m th...",
+    "source_tag": "MCQgeneralsurgerybook (1) conv.docx.txt",
+    "needs_review": true
+  },
+  {
+    "id": 10108,
+    "specialty": "Trauma",
+    "topic": "Trauma",
+    "question": "Hi s t o log i c a l t ype Corr ec t an s w er: B 21 . M o s t c o mm o n ca u s e of p ai n le ss h e m at u ria -",
+    "options": {
+      "A": "Hypernephroma (R e n al cell c a r c inoma)",
+      "B": "B ulent trauma to abdomen",
+      "C": "T.B. of r e n a l pa r en c h yma",
+      "D": "Hydron e phro s i s Corr ec t an s w er: C 22 . T h e m o s t c ommo n r e n al va s c u lar a n o m aly i s -"
+    },
+    "answer": "A",
+    "sharp": {
+      "S": "High-yield Trauma board question.",
+      "H": "Review each option carefully against the clinical stem.",
+      "A": "Eliminate options that don't fit the primary diagnosis or guideline principle.",
+      "R": "Refer to current Trauma guidelines for this topic.",
+      "P": "Remember the key fact and apply it to similar clinical scenarios."
+    },
+    "guideline": "Trauma board principles",
+    "takeaway": "Review Hi s t o log i c a l t ype Corr ec t an s w er: B 21 . M o s t c o mm o n ca u s...",
+    "source_tag": "MCQgeneralsurgerybook (1) conv.docx.txt",
+    "needs_review": true
+  },
+  {
+    "id": 10228,
+    "specialty": "Trauma",
+    "topic": "Trauma",
+    "question": "Tr a u ma Corr ec t an s w er: C 10 . A h e modynamically s table p a tient wi t h blunt abdominal trauma, the be s t inve s t i gation i s ?",
+    "options": {
+      "A": "CECT abdomen",
+      "B": "M R I a bdomen",
+      "C": "D P L",
+      "D": "FAST Corr ec t an s w er: A 11 . A c hild pr e s e nt s i n c au s ality in s t able c ondi t ion after a blunt abdominal tr a uma a ss oci a ted with s plenic t r auma the tr e at m ent of c h oice i"
+    },
+    "answer": "A",
+    "sharp": {
+      "S": "High-yield Trauma board question.",
+      "H": "Review each option carefully against the clinical stem.",
+      "A": "Eliminate options that don't fit the primary diagnosis or guideline principle.",
+      "R": "Refer to current Trauma guidelines for this topic.",
+      "P": "Remember the key fact and apply it to similar clinical scenarios."
+    },
+    "guideline": "Trauma board principles",
+    "takeaway": "Review Tr a u ma Corr ec t an s w er: C 10 . A h e modynamically s table p a tient wi t...",
+    "source_tag": "MCQgeneralsurgerybook (1) conv.docx.txt",
+    "needs_review": true
+  },
+  {
+    "id": 10231,
+    "specialty": "Trauma",
+    "topic": "Trauma",
+    "question": "M C U s hould be done Corr ec t an s w er: B 13 . I n o rd e r to expo s e t h e c o e li a c a xi s , l eft r en a l a rt e ry, s up e rior me s enter i c a rtery and blood abdominal ao r ta in a ca s e o f tr a uma, w hich of the f ollowing i s per f orm e d -",
+    "options": {
+      "A": "Cr a nial vi s c e r al rotat i on",
+      "B": "C aud a l v i s c e r a l rotat i on",
+      "C": "L e ft medial vi s c e r al r otation",
+      "D": "R ight m edial vi s c e r a l rotation Corr ec t an s w er: C 14 . A p a tient d i ed a ft e r a blunt trauma to ch e s t m o s t common cau s e of dea t h in b l unt trauma to ch e s t i s -"
+    },
+    "answer": "A",
+    "sharp": {
+      "S": "High-yield Trauma board question.",
+      "H": "Review each option carefully against the clinical stem.",
+      "A": "Eliminate options that don't fit the primary diagnosis or guideline principle.",
+      "R": "Refer to current Trauma guidelines for this topic.",
+      "P": "Remember the key fact and apply it to similar clinical scenarios."
+    },
+    "guideline": "Trauma board principles",
+    "takeaway": "Review M C U s hould be done Corr ec t an s w er: B 13 . I n o rd e r to expo s e t h e...",
+    "source_tag": "MCQgeneralsurgerybook (1) conv.docx.txt",
+    "needs_review": true
+  },
+  {
+    "id": 10232,
+    "specialty": "Trauma",
+    "topic": "Trauma",
+    "question": "R ight m edial vi s c e r a l rotation Corr ec t an s w er: C 14 . A p a tient d i ed a ft e r a blunt trauma to ch e s t m o s t common cau s e of dea t h in b l unt trauma to ch e s t i s -",
+    "options": {
+      "A": "Oe s oph a g eal ruptu r e",
+      "B": "Tr ac h e o b ron c hial r u pture",
+      "C": "P ul m onary la ce r a tion",
+      "D": "P neumothor a x Corr ec t an s w er: B 15 . All exc e pt one are c or re ct r eg a rding r e n a l tra uma -"
+    },
+    "answer": "A",
+    "sharp": {
+      "S": "High-yield Trauma board question.",
+      "H": "Review each option carefully against the clinical stem.",
+      "A": "Eliminate options that don't fit the primary diagnosis or guideline principle.",
+      "R": "Refer to current Trauma guidelines for this topic.",
+      "P": "Remember the key fact and apply it to similar clinical scenarios."
+    },
+    "guideline": "Trauma board principles",
+    "takeaway": "Review R ight m edial vi s c e r a l rotation Corr ec t an s w er: C 14 . A p a tient d...",
+    "source_tag": "MCQgeneralsurgerybook (1) conv.docx.txt",
+    "needs_review": true
+  },
+  {
+    "id": 10233,
+    "specialty": "Trauma",
+    "topic": "Trauma",
+    "question": "P neumothor a x Corr ec t an s w er: B 15 . All exc e pt one are c or re ct r eg a rding r e n a l tra uma -",
+    "options": {
+      "A": "Ob s erv a tion i s be s t",
+      "B": "I VP i s ind i c a ted",
+      "C": "Explor a t i on ind i c a ted in all c a s e s",
+      "D": "Ha e matur i a i s a c ard i nal s i gn Corr ec t an s w er: C 16 . A f ter Acute trauma F luid r e placement i s be s t a ss e ss ed by whi c h:"
+    },
+    "answer": "A",
+    "sharp": {
+      "S": "High-yield Trauma board question.",
+      "H": "Review each option carefully against the clinical stem.",
+      "A": "Eliminate options that don't fit the primary diagnosis or guideline principle.",
+      "R": "Refer to current Trauma guidelines for this topic.",
+      "P": "Remember the key fact and apply it to similar clinical scenarios."
+    },
+    "guideline": "Trauma board principles",
+    "takeaway": "Review P neumothor a x Corr ec t an s w er: B 15 . All exc e pt one are c or re ct r eg...",
+    "source_tag": "MCQgeneralsurgerybook (1) conv.docx.txt",
+    "needs_review": true
+  },
+  {
+    "id": 10234,
+    "specialty": "Trauma",
+    "topic": "Trauma",
+    "question": "Ha e matur i a i s a c ard i nal s i gn Corr ec t an s w er: C 16 . A f ter Acute trauma F luid r e placement i s be s t a ss e ss ed by whi c h:",
+    "options": {
+      "A": "CVP",
+      "B": "Urine output",
+      "C": "P ul s e",
+      "D": "B P Corr ec t an s w er: A 17 . F AST s tand s for"
+    },
+    "answer": "A",
+    "sharp": {
+      "S": "High-yield Trauma board question.",
+      "H": "Review each option carefully against the clinical stem.",
+      "A": "Eliminate options that don't fit the primary diagnosis or guideline principle.",
+      "R": "Refer to current Trauma guidelines for this topic.",
+      "P": "Remember the key fact and apply it to similar clinical scenarios."
+    },
+    "guideline": "Trauma board principles",
+    "takeaway": "Review Ha e matur i a i s a c ard i nal s i gn Corr ec t an s w er: C 16 . A f ter Acut...",
+    "source_tag": "MCQgeneralsurgerybook (1) conv.docx.txt",
+    "needs_review": true
+  },
+  {
+    "id": 10239,
+    "specialty": "Trauma",
+    "topic": "Trauma",
+    "question": "Centr a l venou s p r e ss ure Corr ec t an s w er: C 21 . W hat i s the tr e atme n t for blunt trauma of kid n ey ?",
+    "options": {
+      "A": "Conserv a tive",
+      "B": "Nephr e ctomy",
+      "C": "Nephrotomy",
+      "D": "N e phro p lexy Corr ec t an s w er: A 22 . A 3 5 y ea r s man with blunt a bdominal tr a uma with h/o p e lvic f rac ture h a s pr e s ented to ER. H e h a s p a ss ed o n ly f e w drop s of blood pe"
+    },
+    "answer": "A",
+    "sharp": {
+      "S": "High-yield Trauma board question.",
+      "H": "Review each option carefully against the clinical stem.",
+      "A": "Eliminate options that don't fit the primary diagnosis or guideline principle.",
+      "R": "Refer to current Trauma guidelines for this topic.",
+      "P": "Remember the key fact and apply it to similar clinical scenarios."
+    },
+    "guideline": "Trauma board principles",
+    "takeaway": "Review Centr a l venou s p r e ss ure Corr ec t an s w er: C 21 . W hat i s the tr e at...",
+    "source_tag": "MCQgeneralsurgerybook (1) conv.docx.txt",
+    "needs_review": true
+  },
+  {
+    "id": 11241,
+    "specialty": "Trauma",
+    "topic": "Trauma",
+    "question": "T P I Corr ec t an s w er: C 916 . W h ic h of t h e followi n g i s the m o s t co m mo n ca us e of ac qu ir e d a r t er iove n o u s fi s tul a ?",
+    "options": {
+      "A": "Blu n t trauma",
+      "B": "P en e trating trauma",
+      "C": "B a c terial infe c tion",
+      "D": "Fung a l in f ection Corr ec t an s w er: B 917 . All t h e followi n g s tat e m e n t s a b o u t Pa n c r e atic Ca rc i n o m a i s tr u e, ex c e p t -"
+    },
+    "answer": "A",
+    "sharp": {
+      "S": "High-yield Trauma board question.",
+      "H": "Review each option carefully against the clinical stem.",
+      "A": "Eliminate options that don't fit the primary diagnosis or guideline principle.",
+      "R": "Refer to current Trauma guidelines for this topic.",
+      "P": "Remember the key fact and apply it to similar clinical scenarios."
+    },
+    "guideline": "Trauma board principles",
+    "takeaway": "Review T P I Corr ec t an s w er: C 916 . W h ic h of t h e followi n g i s the m o s t...",
+    "source_tag": "MCQgeneralsurgerybook (1) conv.docx.txt",
+    "needs_review": true
   }
-]);
+];
+}

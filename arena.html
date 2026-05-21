@@ -463,6 +463,8 @@
         <div class="sharp-result" id="sharpResult"></div>
       </div>
       
+      <div id="sharpMarkdownWrap" class="markdown-body" style="display:none; padding: 0 18px 18px 18px; font-size: 15px; line-height: 1.6; color: #e2e8f0;"></div>
+
       <ul class="sharp-main-list" id="sharpMainList">
         <li>
           <strong>S – Set the Stage (The Verdict & Diagnostic Pivot)</strong>
@@ -964,6 +966,37 @@ function showSharp(q, selected, isCorrect) {
     isCorrect 
       ? '<span style="color:var(--correct-green);">✓ Correct! You selected ' + q.answer + '</span>'
       : '<span style="color:var(--wrong-red);">✗ Incorrect. The correct answer is ' + q.answer + '</span>';
+
+  // Check for new markdown pipeline output
+  var markdownWrap = document.getElementById('sharpMarkdownWrap');
+  var mainList = document.getElementById('sharpMainList');
+  var suppWrap = document.getElementById('sharpSuppWrap');
+  var discrepancyWrap = document.getElementById('sharpDiscrepancyWrap');
+
+  if (q.markdown_debrief && typeof marked !== 'undefined') {
+    // Strip the duplicate question/options block from the markdown if present, 
+    // since the UI already shows the question and options above the debrief.
+    // The markdown typically has "### SHARP 3.0 Cognitive & Surgical Debrief" as the start of the actual debrief
+    var debriefContent = q.markdown_debrief;
+    var splitIndex = debriefContent.indexOf('### SHARP 3.0 Cognitive & Surgical Debrief');
+    if (splitIndex !== -1) {
+       debriefContent = debriefContent.substring(splitIndex);
+    }
+    
+    markdownWrap.innerHTML = marked.parse(debriefContent);
+    markdownWrap.style.display = 'block';
+    mainList.style.display = 'none';
+    suppWrap.style.display = 'none';
+    discrepancyWrap.style.display = 'none';
+
+    setTimeout(function() { card.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 100);
+    return;
+  }
+
+  // Fallback to legacy JSON rendering
+  markdownWrap.style.display = 'none';
+  mainList.style.display = 'block';
+
   // S - Set the stage
   document.getElementById('sharpS').innerHTML = formatToListItems(sText);
 

@@ -57,6 +57,7 @@
             if (q && q.id) {
                 // Check if it has been enriched with the new debrief structure
                 const hasSharp = !!(
+                    q.markdown_debrief ||
                     q.sharp_3_debrief || 
                     q.S_set_the_stage || 
                     q.sharp_debrief || 
