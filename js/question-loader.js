@@ -57,12 +57,8 @@
             if (q && q.id) {
                 // Check if it has been enriched with the new debrief structure
                 const hasSharp = !!(
-                    q.markdown_debrief ||
-                    q.sharp_3_debrief || 
-                    q.S_set_the_stage || 
-                    q.sharp_debrief || 
-                    (q.sharp && q.sharp.set_the_stage) ||
-                    q.H_highlight_excellence
+                    q.markdown_debrief && 
+                    q.markdown_debrief !== "Failed to generate Markdown."
                 );
                 
                 // Exclude any questions explicitly marked as rejected by the pipeline
