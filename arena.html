@@ -12,6 +12,7 @@
   const savedTheme = localStorage.getItem('sih-theme') || 'light';
   if (savedTheme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
 </script>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <style>
   body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg-primary);color:var(--text-primary);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
 </style>
@@ -181,6 +182,15 @@
 .sharp-badge{width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg, var(--brand-gold), #b8922a);display:flex;align-items:center;justify-content:center;font-size:.9rem;font-weight:900;color:var(--brand-burgundy);flex-shrink:0;box-shadow:0 4px 8px rgba(0,0,0,0.2);}
 .sharp-row-title{font-size:.7rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:rgba(184,146,42,0.9);margin-bottom:6px;}
 .sharp-row-text{font-size:.95rem;color:rgba(255,255,255,0.95);line-height:1.7;font-weight:500;}
+.sharp-row-text table {width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.82rem; border-radius: 12px; overflow: hidden; border: 1px solid rgba(184, 146, 42, 0.25); background: rgba(0, 0, 0, 0.25);}
+.sharp-row-text th {background: rgba(184, 146, 42, 0.2); color: var(--brand-gold); font-weight: 800; text-align: left; padding: 10px 14px; border-bottom: 1.5px solid rgba(184, 146, 42, 0.35); text-transform: uppercase; font-size: 0.7rem; letter-spacing: 0.05em;}
+.sharp-row-text td {padding: 10px 14px; border-bottom: 1px solid rgba(184, 146, 42, 0.15); color: rgba(255, 255, 255, 0.85); line-height: 1.5; vertical-align: top;}
+.sharp-row-text tr:last-child td {border-bottom: none;}
+.sharp-row-text tr:hover td {background: rgba(255, 255, 255, 0.03);}
+.sharp-row-text ul, .sharp-row-text ol {margin: 10px 0 16px 20px; padding-left: 0;}
+.sharp-row-text li {margin-bottom: 8px; line-height: 1.6; color: rgba(255, 255, 255, 0.9);}
+.sharp-row-text strong {color: #f0d080; font-weight: 700;}
+.sharp-row-text em {color: rgba(255, 255, 255, 0.8); font-style: italic;}
 .sharp-divider{height:1px;background:rgba(184,146,42,0.15);margin:8px 0;}
 .opt-explanations{margin-top:14px;background:rgba(0,0,0,0.1);border-radius:16px;padding:12px;}
 .opt-exp{display:flex;gap:12px;align-items:flex-start;padding:10px 12px;border-bottom:1px solid rgba(184,146,42,0.1);}
@@ -727,7 +737,7 @@ function renderQuestion() {
     });
   }
 
-  document.getElementById('qText').textContent = q.question;
+  document.getElementById('qText').innerHTML = renderMarkdownSafely(q.question);
 
   // Image handling
   const imgWrap = document.getElementById('qImageWrap');
@@ -804,6 +814,25 @@ function submitAnswer() {
   showSharp(q, selected, isCorrect);
 }
 
+function renderMarkdownSafely(text) {
+  if (!text) return '';
+  if (window.marked && typeof window.marked.parse === 'function') {
+    try {
+      return marked.parse(text);
+    } catch (e) {
+      console.error("Markdown parsing failed, falling back to text:", e);
+    }
+  }
+  // Simple fallback replacement of newlines and bold markers if marked is not available
+  return String(text)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
+    .replace(/\*(.*?)\*/g, "<em>$1</em>")
+    .replace(/\n/g, "<br>");
+}
+
 function createExplanationRow(letter, text) {
   var row = document.createElement('div');
   row.className = 'opt-exp';
@@ -812,7 +841,7 @@ function createExplanationRow(letter, text) {
   rowLetter.textContent = letter;
   var rowBody = document.createElement('div');
   rowBody.className = 'opt-exp-text';
-  rowBody.textContent = text;
+  rowBody.innerHTML = renderMarkdownSafely(text);
   row.appendChild(rowLetter);
   row.appendChild(rowBody);
   return row;
@@ -835,7 +864,8 @@ function normalizeSharpDebrief(question) {
     toSharpObject(question.sharp),
     toSharpObject(question.sharp_debrief),
     toSharpObject(question.sharp_description),
-    toSharpObject(question.sharpDescription)
+    toSharpObject(question.sharpDescription),
+    toSharpObject(question.sharp_metadata)
   );
 
   var topLevelSharp = {
@@ -875,20 +905,20 @@ function showSharp(q, selected, isCorrect) {
   var sText = pickFirstText([sharp.S, sharp.set_the_stage, sharp.setTheStage, sharp.S_set_the_stage]);
   var highlight = pickFirstText([sharp.H, sharp.highlight_excellence, sharp.highlightExcellence, sharp.H_highlight_excellence, explanation.correct]);
   var addressGaps = pickFirstText([sharp.A, sharp.address_gaps, sharp.addressGaps, sharp.address_the_gaps, sharp.A_address_the_gaps]);
-  var reviewGuideline = pickFirstText([sharp.R, sharp.review_learning_points, sharp.reviewLearningPoints, sharp.review_guidelines, sharp.reviewGuidelines, sharp.R_review_learning_points, q.guideline]);
-  var takeHome = pickFirstText([sharp.P, sharp.plan, sharp.plan_for_improvement, sharp.planForImprovement, sharp.P_plan_for_improvement, q.takeaway]);
-  var guidelineCallout = String(callouts.guideline || q.guideline || reviewGuideline || '').trim();
-  var takeawayCallout = String(callouts.takeaway || q.takeaway || takeHome || '').trim();
-  var visualizationCallout = String(callouts.visualization || q.visualization || '').trim();
+  var reviewGuideline = pickFirstText([sharp.R, sharp.review_learning_points, sharp.reviewLearningPoints, sharp.review_guidelines, sharp.reviewGuidelines, sharp.R_review_learning_points, sharp.guideline, q.guideline]);
+  var takeHome = pickFirstText([sharp.P, sharp.plan, sharp.plan_for_improvement, sharp.planForImprovement, sharp.P_plan_for_improvement, sharp.takeaway, q.takeaway]);
+  var guidelineCallout = String(callouts.guideline || q.guideline || sharp.guideline || reviewGuideline || '').trim();
+  var takeawayCallout = String(callouts.takeaway || q.takeaway || sharp.takeaway || takeHome || '').trim();
+  var visualizationCallout = String(callouts.visualization || q.visualization || sharp.visualization || '').trim();
   var discrepancyFlag = String(q.discrepancy_flag || '').trim();
 
-  document.getElementById('sharpAnswer').textContent = answerLine;
+  document.getElementById('sharpAnswer').innerHTML = renderMarkdownSafely(answerLine);
 
   // S - Set the stage
-  document.getElementById('sharpS').textContent = sText || INSUFFICIENT_DATA_FALLBACK;
+  document.getElementById('sharpS').innerHTML = renderMarkdownSafely(sText || INSUFFICIENT_DATA_FALLBACK);
 
   // H - Highlight Excellence
-  document.getElementById('sharpH').textContent = highlight || INSUFFICIENT_DATA_FALLBACK;
+  document.getElementById('sharpH').innerHTML = renderMarkdownSafely(highlight || INSUFFICIENT_DATA_FALLBACK);
 
   // A - Address the Gaps
   var aWrap = document.getElementById('sharpA');
@@ -909,7 +939,7 @@ function showSharp(q, selected, isCorrect) {
   if (aCount === 0) aWrap.appendChild(createExplanationRow('Note', INSUFFICIENT_DATA_FALLBACK));
 
   // R - Review Learning Points
-  document.getElementById('sharpR').textContent = reviewGuideline || INSUFFICIENT_DATA_FALLBACK;
+  document.getElementById('sharpR').innerHTML = renderMarkdownSafely(reviewGuideline || INSUFFICIENT_DATA_FALLBACK);
   var rTag = document.getElementById('sharpRTag');
   if (guidelineCallout) {
     rTag.textContent = '📋 ' + guidelineCallout;
@@ -919,14 +949,14 @@ function showSharp(q, selected, isCorrect) {
   }
 
   // P - Plan for Improvement
-  document.getElementById('sharpP').textContent = takeHome || INSUFFICIENT_DATA_FALLBACK;
+  document.getElementById('sharpP').innerHTML = renderMarkdownSafely(takeHome || INSUFFICIENT_DATA_FALLBACK);
 
   // V - Visualization (New Integrated Row)
   var vText = visualizationCallout || q.visualization || '';
   var vRow = document.getElementById('sharpVRow');
   var vDiv = document.getElementById('sharpVDiv');
   if (vText) {
-    document.getElementById('sharpV').textContent = vText;
+    document.getElementById('sharpV').innerHTML = renderMarkdownSafely(vText);
     vRow.style.display = 'flex';
     vDiv.style.display = 'block';
   } else {
@@ -988,7 +1018,7 @@ function showSharp(q, selected, isCorrect) {
   // Discrepancy Protocol
   var discrepancyWrap = document.getElementById('sharpDiscrepancyWrap');
   if (discrepancyFlag) {
-    document.getElementById('sharpDiscrepancy').textContent = discrepancyFlag;
+    document.getElementById('sharpDiscrepancy').innerHTML = renderMarkdownSafely(discrepancyFlag);
     discrepancyWrap.style.display = 'block';
   } else {
     discrepancyWrap.style.display = 'none';

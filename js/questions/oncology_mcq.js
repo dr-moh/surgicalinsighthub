@@ -1,10 +1,6 @@
-// Auto-harvested from: Oncology MCQ.docx.txt
-// Generated: 2026-05-07T13:30:42.850Z
-// NOTE: Answers default to A — all questions need manual review.
-// Specialty: General Surgery | Questions: 18
 if (!window.QUESTIONS) window.QUESTIONS = [];
 window.QUESTIONS.push(...[
-  {
+{
     "id": 9100,
     "specialty": "General Surgery",
     "topic": "General Surgery",
@@ -29,7 +25,7 @@ window.QUESTIONS.push(...[
     "source_tag": "Oncology MCQ.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9101,
     "specialty": "General Surgery",
     "topic": "General Surgery",
@@ -54,7 +50,7 @@ window.QUESTIONS.push(...[
     "source_tag": "Oncology MCQ.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9102,
     "specialty": "HPB",
     "topic": "HPB",
@@ -78,7 +74,7 @@ window.QUESTIONS.push(...[
     "source_tag": "Oncology MCQ.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9103,
     "specialty": "General Surgery",
     "topic": "General Surgery",
@@ -102,7 +98,7 @@ window.QUESTIONS.push(...[
     "source_tag": "Oncology MCQ.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9104,
     "specialty": "General Surgery",
     "topic": "General Surgery",
@@ -127,7 +123,7 @@ window.QUESTIONS.push(...[
     "source_tag": "Oncology MCQ.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9105,
     "specialty": "Cardiothoracic",
     "topic": "Cardiothoracic",
@@ -152,7 +148,7 @@ window.QUESTIONS.push(...[
     "source_tag": "Oncology MCQ.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9106,
     "specialty": "Cardiothoracic",
     "topic": "Cardiothoracic",
@@ -177,7 +173,7 @@ window.QUESTIONS.push(...[
     "source_tag": "Oncology MCQ.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9107,
     "specialty": "General Surgery",
     "topic": "General Surgery",
@@ -202,7 +198,7 @@ window.QUESTIONS.push(...[
     "source_tag": "Oncology MCQ.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9108,
     "specialty": "General Surgery",
     "topic": "General Surgery",
@@ -227,7 +223,7 @@ window.QUESTIONS.push(...[
     "source_tag": "Oncology MCQ.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9109,
     "specialty": "HPB",
     "topic": "HPB",
@@ -252,7 +248,7 @@ window.QUESTIONS.push(...[
     "source_tag": "Oncology MCQ.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9110,
     "specialty": "Urology",
     "topic": "Urology",
@@ -277,7 +273,7 @@ window.QUESTIONS.push(...[
     "source_tag": "Oncology MCQ.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9111,
     "specialty": "Cardiothoracic",
     "topic": "Cardiothoracic",
@@ -302,7 +298,7 @@ window.QUESTIONS.push(...[
     "source_tag": "Oncology MCQ.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9112,
     "specialty": "Breast & Endocrine",
     "topic": "Breast & Endocrine",
@@ -327,7 +323,7 @@ window.QUESTIONS.push(...[
     "source_tag": "Oncology MCQ.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9113,
     "specialty": "Colorectal",
     "topic": "Colorectal",
@@ -352,7 +348,7 @@ window.QUESTIONS.push(...[
     "source_tag": "Oncology MCQ.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9114,
     "specialty": "Urology",
     "topic": "Urology",
@@ -377,7 +373,7 @@ window.QUESTIONS.push(...[
     "source_tag": "Oncology MCQ.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9115,
     "specialty": "Urology",
     "topic": "Urology",
@@ -402,7 +398,7 @@ window.QUESTIONS.push(...[
     "source_tag": "Oncology MCQ.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9116,
     "specialty": "Cardiothoracic",
     "topic": "Cardiothoracic",
@@ -427,7 +423,7 @@ window.QUESTIONS.push(...[
     "source_tag": "Oncology MCQ.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9117,
     "specialty": "Cardiothoracic",
     "topic": "Cardiothoracic",

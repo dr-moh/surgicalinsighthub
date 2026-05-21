@@ -1,7 +1,6 @@
 if (!window.QUESTIONS) window.QUESTIONS = [];
 window.QUESTIONS.push(...[
-[
-  {
+{
     "specialty": "Colorectal Surgery",
     "topic": "Hemorrhoids",
     "question": "Internal hemorrhoids are graded based on their degree of prolapse. Which grade describes a hemorrhoid that prolapses but can be manually reduced?",
@@ -31,7 +30,7 @@ window.QUESTIONS.push(...[
     "id": 1682,
     "_src_file": "colorectal.js"
   },
-  {
+{
     "specialty": "Colorectal Surgery",
     "topic": "Anal Fistula",
     "question": "According to Goodsall's Law, an external fistula opening that is ANTERIOR to a transverse line drawn through the anus will usually follow which path?",
@@ -61,7 +60,7 @@ window.QUESTIONS.push(...[
     "id": 1683,
     "_src_file": "colorectal.js"
   },
-  {
+{
     "specialty": "Colorectal Surgery",
     "topic": "Crohn's Disease",
     "question": "Which of the following pathological features is characteristic of Crohn's Disease but NOT Ulcerative Colitis (UC)?",
@@ -91,7 +90,7 @@ window.QUESTIONS.push(...[
     "id": 1684,
     "_src_file": "colorectal.js"
   },
-  {
+{
     "specialty": "Colorectal Surgery",
     "topic": "Rectal Cancer",
     "question": "What is the surgical 'Gold Standard' for the resection of rectal cancer to ensure the lowest risk of local recurrence?",
@@ -121,7 +120,7 @@ window.QUESTIONS.push(...[
     "id": 1685,
     "_src_file": "colorectal.js"
   },
-  {
+{
     "specialty": "Colorectal Surgery",
     "topic": "FAP / Genetic Syndromes",
     "question": "A 20-year-old patient is found to have hundreds of polyps on colonoscopy. Genetic testing reveals a mutation in the APC gene. What is the recommended management?",
@@ -151,7 +150,7 @@ window.QUESTIONS.push(...[
     "id": 1686,
     "_src_file": "colorectal.js"
   },
-  {
+{
     "specialty": "Colorectal Surgery",
     "topic": "Toxic Megacolon",
     "question": "A patient with Ulcerative Colitis presents with fever, tachycardia, and a dilated colon (>6 cm) on X-ray. What is the first-line MEDICAL management?",
@@ -181,7 +180,7 @@ window.QUESTIONS.push(...[
     "id": 1687,
     "_src_file": "colorectal.js"
   },
-  {
+{
     "specialty": "Colorectal Surgery",
     "topic": "Anal Fissure",
     "question": "What is the first-line treatment for a chronic anal fissure located in the posterior midline?",
@@ -211,7 +210,7 @@ window.QUESTIONS.push(...[
     "id": 1688,
     "_src_file": "colorectal.js"
   },
-  {
+{
     "specialty": "Colorectal Surgery",
     "topic": "Volvulus",
     "question": "A 'Coffee Bean' sign on abdominal X-ray in an elderly, constipated patient is characteristic of which condition?",
@@ -241,7 +240,7 @@ window.QUESTIONS.push(...[
     "id": 1689,
     "_src_file": "colorectal.js"
   },
-  {
+{
     "specialty": "Colorectal Surgery",
     "topic": "Colon Cancer Screening",
     "question": "According to the latest 2021 USPSTF and ACS guidelines, at what age should routine colorectal cancer screening begin for an average-risk individual?",
@@ -271,7 +270,7 @@ window.QUESTIONS.push(...[
     "id": 1690,
     "_src_file": "colorectal.js"
   },
-  {
+{
     "specialty": "Colorectal Surgery",
     "topic": "Ischemic Colitis",
     "question": "A patient presents with sudden LLQ pain followed by bloody diarrhea. Colonoscopy shows 'thumbprinting' and cyanotic mucosa at the splenic flexure. What is the most likely diagnosis?",
@@ -301,7 +300,7 @@ window.QUESTIONS.push(...[
     "id": 1691,
     "_src_file": "colorectal.js"
   },
-  {
+{
     "id": 202,
     "specialty": "Colorectal",
     "topic": "rush.docx",
@@ -333,7 +332,7 @@ window.QUESTIONS.push(...[
     "takeaway": "PLAN: For future questions on DI, ensure a comprehensive understanding of: 1. The role of ADH in water balance. 2. The distinction between central and nephrogenic DI. 3. Common etiologies for both types (e.g., head trauma, surgery, tumors for central; lithium, hypercalcemia for nephrogenic). 4. Key diagnostic tests (water deprivation test, ADH levels, response to desmopressin). 5. Important mimics like primary polydipsia and psychogenic polydipsia. 6. The impact on serum sodium and osmolality.",
     "_src_file": "colorectal.js"
   },
-  {
+{
     "id": 201,
     "specialty": "Colorectal",
     "topic": "rush.docx",
@@ -365,7 +364,7 @@ window.QUESTIONS.push(...[
     "takeaway": "PLAN: Implement a structured approach to volume assessment: 1. Initial Assessment: Quickly assess for signs of hypotension, tachycardia, and respiratory distress. 2. Fluid Resuscitation: Initiate with crystalloid solutions (e.g., normal saline, lactated Ringer's) based on the suspected volume deficit. 3. Monitor Response: Closely monitor vital signs, urine output, and serum electrolytes. 4. Adjust Fluid Rate: Adjust the fluid rate based on the patient's response and ongoing assessment. Consider adding albumin if hypovolemia persists despite crystalloid resuscitation.",
     "_src_file": "colorectal.js"
   },
-  {
+{
     "id": 203,
     "specialty": "Colorectal",
     "topic": "Infectious Colitis",
@@ -398,5 +397,4 @@ window.QUESTIONS.push(...[
     "visualization": "Colonoscopy shows multiple, raised, yellowish-white plaques (pseudomembranes) scattered over erythematous colonic mucosa.",
     "_src_file": "colorectal.js"
   }
-]
 ]);

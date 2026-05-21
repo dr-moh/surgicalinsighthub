@@ -1,6 +1,6 @@
-window.QUESTIONS = window.QUESTIONS || [];
+if (!window.QUESTIONS) window.QUESTIONS = [];
 window.QUESTIONS.push(...[
-  {
+{
     "id": 5000,
     "specialty": "Trauma Surgery",
     "topic": "Diaphragmatic Rupture",
@@ -24,7 +24,7 @@ window.QUESTIONS.push(...[
     "guideline": "Surgery PreTest 13th Ed",
     "takeaway": "An air-fluid level in the chest and a coiling nasogastric tube are diagnostic of diaphragmatic rupture, requiring urgent laparotomy."
   },
-  {
+{
     "id": 5001,
     "specialty": "Trauma Surgery",
     "topic": "Seatbelt Sign and Enteric Injury",
@@ -48,7 +48,7 @@ window.QUESTIONS.push(...[
     "guideline": "Surgery PreTest 13th Ed",
     "takeaway": "The presence of a seatbelt sign mandates observation for potential hollow viscus injury, even if initial CT imaging is negative."
   },
-  {
+{
     "id": 5002,
     "specialty": "Trauma Surgery",
     "topic": "Rib Fracture Management",
@@ -72,7 +72,7 @@ window.QUESTIONS.push(...[
     "guideline": "Surgery PreTest 13th Ed",
     "takeaway": "Epidural analgesia is preferred for managing multiple rib fractures in patients with pre-existing pulmonary disease to prevent respiratory failure."
   },
-  {
+{
     "id": 5003,
     "specialty": "Trauma Surgery",
     "topic": "Blunt Abdominal Trauma",
@@ -96,7 +96,7 @@ window.QUESTIONS.push(...[
     "guideline": "Surgery PreTest 13th Ed",
     "takeaway": "The spleen is the most common organ injured in blunt abdominal trauma, often presenting with left-sided signs and hemoperitoneum."
   },
-  {
+{
     "id": 5004,
     "specialty": "Trauma Surgery",
     "topic": "Vascular Injury Management",
@@ -120,7 +120,7 @@ window.QUESTIONS.push(...[
     "guideline": "Surgery PreTest 13th Ed",
     "takeaway": "In hemodynamically unstable trauma patients, venous ligation is an acceptable part of damage control surgery to expedite life-saving procedures."
   },
-  {
+{
     "id": 5005,
     "specialty": "Trauma Surgery",
     "topic": "Hard Signs of Vascular Injury",
@@ -144,7 +144,7 @@ window.QUESTIONS.push(...[
     "guideline": "Surgery PreTest 13th Ed",
     "takeaway": "Hard signs of vascular injury (ischemia, expanding hematoma, thrill/bruit) mandate immediate operative exploration and repair."
   },
-  {
+{
     "id": 5006,
     "specialty": "Trauma Surgery",
     "topic": "Tension Pneumothorax",
@@ -168,7 +168,7 @@ window.QUESTIONS.push(...[
     "guideline": "Surgery PreTest 13th Ed",
     "takeaway": "Tension pneumothorax is a clinical diagnosis requiring immediate needle decompression; do not wait for radiologic confirmation."
   },
-  {
+{
     "id": 5007,
     "specialty": "Trauma Surgery",
     "topic": "Penetrating Thoracoabdominal Trauma",
@@ -192,7 +192,7 @@ window.QUESTIONS.push(...[
     "guideline": "Surgery PreTest 13th Ed",
     "takeaway": "Diagnostic laparoscopy is the gold standard for evaluating potential diaphragmatic injury in stable patients with thoracoabdominal penetrating trauma."
   },
-  {
+{
     "id": 5008,
     "specialty": "Trauma Surgery",
     "topic": "Hormonal Response to Trauma",
@@ -216,7 +216,7 @@ window.QUESTIONS.push(...[
     "guideline": "Surgery PreTest 13th Ed",
     "takeaway": "Trauma induces a hypermetabolic state with increased levels of insulin, glucagon, catecholamines, aldosterone, and ADH."
   },
-  {
+{
     "id": 5009,
     "specialty": "Trauma Surgery",
     "topic": "Bile Duct Injury Management",
@@ -240,7 +240,7 @@ window.QUESTIONS.push(...[
     "guideline": "Surgery PreTest 13th Ed",
     "takeaway": "Complete bile duct transection with tissue loss is best managed with a Roux-en-Y choledochojejunostomy."
   },
-  {
+{
     "id": 5010,
     "specialty": "Trauma Surgery",
     "topic": "Neck Trauma Exploration",
@@ -264,7 +264,7 @@ window.QUESTIONS.push(...[
     "guideline": "Surgery PreTest 13th Ed",
     "takeaway": "Pneumothorax is a relative indication for neck exploration; focus on 'hard signs' like hematomas and aerodigestive symptoms."
   },
-  {
+{
     "id": 5011,
     "specialty": "Trauma Surgery",
     "topic": "Duodenal Hematoma",
@@ -288,7 +288,7 @@ window.QUESTIONS.push(...[
     "guideline": "Surgery PreTest 13th Ed",
     "takeaway": "The majority of duodenal hematomas should be managed conservatively with nasogastric suction and observation."
   },
-  {
+{
     "id": 5012,
     "specialty": "Trauma Surgery",
     "topic": "Blunt Carotid Dissection",
@@ -312,7 +312,7 @@ window.QUESTIONS.push(...[
     "guideline": "Surgery PreTest 13th Ed",
     "takeaway": "Systemic anticoagulation is the primary treatment for blunt carotid artery dissections in neurologically stable patients."
   },
-  {
+{
     "id": 5013,
     "specialty": "Trauma Surgery",
     "topic": "Increased Intracranial Pressure",
@@ -336,7 +336,7 @@ window.QUESTIONS.push(...[
     "guideline": "Surgery PreTest 13th Ed",
     "takeaway": "Altered mental status is the most common and earliest manifestation of rising intracranial pressure."
   },
-  {
+{
     "id": 5014,
     "specialty": "Trauma Surgery",
     "topic": "ICP Management",
@@ -360,7 +360,7 @@ window.QUESTIONS.push(...[
     "guideline": "Surgery PreTest 13th Ed",
     "takeaway": "Hyperventilation is the most rapid clinical intervention to lower intracranial pressure in an emergency."
   },
-  {
+{
     "id": 5015,
     "specialty": "Trauma Surgery",
     "topic": "Uncal Herniation",
@@ -384,7 +384,7 @@ window.QUESTIONS.push(...[
     "guideline": "Surgery PreTest 13th Ed",
     "takeaway": "An ipsilateral dilated pupil in a head-injured patient is pathognomonic for uncal herniation and oculomotor nerve compression."
   },
-  {
+{
     "id": 5016,
     "specialty": "Trauma Surgery",
     "topic": "Flail Chest",
@@ -408,7 +408,7 @@ window.QUESTIONS.push(...[
     "guideline": "Surgery PreTest 13th Ed",
     "takeaway": "Management of flail chest focuses on analgesia and pulmonary hygiene rather than routine mechanical ventilation."
   },
-  {
+{
     "id": 5017,
     "specialty": "Trauma Surgery",
     "topic": "Peripheral Nerve Injury",
@@ -432,7 +432,7 @@ window.QUESTIONS.push(...[
     "guideline": "Surgery PreTest 13th Ed",
     "takeaway": "Loss of flexion in the radial digits (thumb, index, middle) is characteristic of a proximal median nerve injury."
   },
-  {
+{
     "id": 5018,
     "specialty": "Trauma Surgery",
     "topic": "Carbon Monoxide Poisoning",
@@ -456,7 +456,7 @@ window.QUESTIONS.push(...[
     "guideline": "Surgery PreTest 13th Ed",
     "takeaway": "The immediate treatment for symptomatic carbon monoxide poisoning is 100% oxygen by face mask."
   },
-  {
+{
     "id": 5019,
     "specialty": "Trauma Surgery",
     "topic": "Cardiogenic Shock",
@@ -480,7 +480,7 @@ window.QUESTIONS.push(...[
     "guideline": "Surgery PreTest 13th Ed",
     "takeaway": "In cardiogenic shock (low BP, high CVP), inotropic support is the primary treatment after ensuring adequate preload."
   },
-  {
+{
     "id": 5020,
     "specialty": "General Surgery",
     "topic": "Gastrointestinal",
@@ -504,7 +504,7 @@ window.QUESTIONS.push(...[
     "guideline": "Surgery PreTest 13th Ed",
     "takeaway": "Omeprazole is a proton pump inhibitor that irreversibly inhibits the H+/K+ ATPase in gastric parietal cells, blocking the final step of acid secretion."
   },
-  {
+{
     "id": 5021,
     "specialty": "General Surgery",
     "topic": "Gastrointestinal",
@@ -528,7 +528,7 @@ window.QUESTIONS.push(...[
     "guideline": "Surgery PreTest 13th Ed",
     "takeaway": "Glucocorticoids are the first-line treatment for symptomatic ITP."
   },
-  {
+{
     "id": 5022,
     "specialty": "General Surgery",
     "topic": "Gastrointestinal",
@@ -552,7 +552,7 @@ window.QUESTIONS.push(...[
     "guideline": "Surgery PreTest 13th Ed",
     "takeaway": "Appendiceal adenocarcinoma larger than 2 cm requires a formal right hemicolectomy."
   },
-  {
+{
     "id": 5023,
     "specialty": "General Surgery",
     "topic": "Gastrointestinal",
@@ -576,7 +576,7 @@ window.QUESTIONS.push(...[
     "guideline": "Surgery PreTest 13th Ed",
     "takeaway": "Heller myotomy is the most effective treatment for achalasia."
   },
-  {
+{
     "id": 5024,
     "specialty": "General Surgery",
     "topic": "Gastrointestinal",
@@ -600,7 +600,7 @@ window.QUESTIONS.push(...[
     "guideline": "Surgery PreTest 13th Ed",
     "takeaway": "Total proctocolectomy with IPAA is the preferred elective surgical treatment for ulcerative colitis."
   },
-  {
+{
     "id": 5025,
     "specialty": "General Surgery",
     "topic": "Gastrointestinal",
@@ -624,7 +624,7 @@ window.QUESTIONS.push(...[
     "guideline": "Surgery PreTest 13th Ed",
     "takeaway": "Infected pancreatic pseudocysts require percutaneous drainage and antibiotic therapy."
   },
-  {
+{
     "id": 5026,
     "specialty": "General Surgery",
     "topic": "Gastrointestinal",
@@ -648,7 +648,7 @@ window.QUESTIONS.push(...[
     "guideline": "Surgery PreTest 13th Ed",
     "takeaway": "Pancreatic cystic lesions with elevated CEA levels should be surgically resected due to the high risk of malignancy."
   },
-  {
+{
     "id": 5027,
     "specialty": "General Surgery",
     "topic": "Gastrointestinal",
@@ -672,7 +672,7 @@ window.QUESTIONS.push(...[
     "guideline": "Surgery PreTest 13th Ed",
     "takeaway": "Parastomal hernia is the most common serious complication associated with end colostomies."
   },
-  {
+{
     "id": 5028,
     "specialty": "General Surgery",
     "topic": "Gastrointestinal",
@@ -696,7 +696,7 @@ window.QUESTIONS.push(...[
     "guideline": "Surgery PreTest 13th Ed",
     "takeaway": "Contrast-enhanced helical CT is the imaging of choice for evaluating and staging pancreatic adenocarcinoma."
   },
-  {
+{
     "id": 5029,
     "specialty": "General Surgery",
     "topic": "Gastrointestinal",
@@ -720,7 +720,7 @@ window.QUESTIONS.push(...[
     "guideline": "Surgery PreTest 13th Ed",
     "takeaway": "An omental (Graham) patch is the standard surgical treatment for a perforated peptic ulcer."
   },
-  {
+{
     "id": 5030,
     "specialty": "General Surgery",
     "topic": "Gastrointestinal",
@@ -744,7 +744,7 @@ window.QUESTIONS.push(...[
     "guideline": "Surgery PreTest 13th Ed",
     "takeaway": "Dumping syndrome is primarily managed with dietary changes and usually improves spontaneously within months."
   },
-  {
+{
     "id": 5031,
     "specialty": "General Surgery",
     "topic": "Gastrointestinal",
@@ -768,7 +768,7 @@ window.QUESTIONS.push(...[
     "guideline": "Surgery PreTest 13th Ed",
     "takeaway": "Octreotide is the primary pharmacological agent used to manage acute variceal hemorrhage."
   },
-  {
+{
     "id": 5032,
     "specialty": "General Surgery",
     "topic": "Gastrointestinal",
@@ -792,7 +792,7 @@ window.QUESTIONS.push(...[
     "guideline": "Surgery PreTest 13th Ed",
     "takeaway": "TIPS is the standard treatment for variceal bleeding refractory to endoscopic therapy."
   },
-  {
+{
     "id": 5033,
     "specialty": "General Surgery",
     "topic": "Gastrointestinal",
@@ -816,7 +816,7 @@ window.QUESTIONS.push(...[
     "guideline": "Surgery PreTest 13th Ed",
     "takeaway": "Definitive ulcer-reducing surgery may be considered for perforated ulcers in patients with a chronic history of disease."
   },
-  {
+{
     "id": 5034,
     "specialty": "General Surgery",
     "topic": "Gastrointestinal",
@@ -840,7 +840,7 @@ window.QUESTIONS.push(...[
     "guideline": "Surgery PreTest 13th Ed",
     "takeaway": "Small, peripheral liver metastases discovered during colon cancer surgery should be resected simultaneously."
   },
-  {
+{
     "id": 5035,
     "specialty": "General Surgery",
     "topic": "Gastrointestinal",
@@ -864,7 +864,7 @@ window.QUESTIONS.push(...[
     "guideline": "Surgery PreTest 13th Ed",
     "takeaway": "The urea breath test is the preferred noninvasive method for confirming H. pylori eradication."
   },
-  {
+{
     "id": 5036,
     "specialty": "General Surgery",
     "topic": "Gastrointestinal",
@@ -888,7 +888,7 @@ window.QUESTIONS.push(...[
     "guideline": "Surgery PreTest 13th Ed",
     "takeaway": "Indirect inguinal hernias follow the spermatic cord through the inguinal canal."
   },
-  {
+{
     "id": 5037,
     "specialty": "General Surgery",
     "topic": "Gastrointestinal",
@@ -912,7 +912,7 @@ window.QUESTIONS.push(...[
     "guideline": "Surgery PreTest 13th Ed",
     "takeaway": "The presence of pneumobilia in a patient with small bowel obstruction is pathognomonic for gallstone ileus."
   },
-  {
+{
     "id": 5038,
     "specialty": "General Surgery",
     "topic": "Gastrointestinal",
@@ -936,7 +936,7 @@ window.QUESTIONS.push(...[
     "guideline": "Surgery PreTest 13th Ed",
     "takeaway": "Multiple hamartomatous GI polyps are the hallmark of Peutz-Jeghers syndrome."
   },
-  {
+{
     "id": 5039,
     "specialty": "General Surgery",
     "topic": "Gastrointestinal",
@@ -960,7 +960,7 @@ window.QUESTIONS.push(...[
     "guideline": "Surgery PreTest 13th Ed",
     "takeaway": "Enterolithotomy is the required emergency treatment for small bowel obstruction caused by a gallstone."
   },
-  {
+{
     "id": 5040,
     "specialty": "General Surgery",
     "topic": "Gastrointestinal",
@@ -984,7 +984,7 @@ window.QUESTIONS.push(...[
     "guideline": "Surgery PreTest 13th Ed",
     "takeaway": "Complicated diverticulitis managed nonoperatively requires elective sigmoid resection to prevent future episodes."
   },
-  {
+{
     "id": 5041,
     "specialty": "General Surgery",
     "topic": "Gastrointestinal",
@@ -1008,7 +1008,7 @@ window.QUESTIONS.push(...[
     "guideline": "Surgery PreTest 13th Ed",
     "takeaway": "CCK-HIDA scan is used to evaluate gallbladder ejection fraction in suspected biliary dyskinesia."
   },
-  {
+{
     "id": 5042,
     "specialty": "General Surgery",
     "topic": "Gastrointestinal",
@@ -1032,7 +1032,7 @@ window.QUESTIONS.push(...[
     "guideline": "Surgery PreTest 13th Ed",
     "takeaway": "Asymptomatic gallbladder polyps smaller than 10 mm can be safely observed with serial ultrasound."
   },
-  {
+{
     "id": 5043,
     "specialty": "General Surgery",
     "topic": "Gastrointestinal",
@@ -1056,7 +1056,7 @@ window.QUESTIONS.push(...[
     "guideline": "Surgery PreTest 13th Ed",
     "takeaway": "Rectus sheath hematoma is a clinical mimic of appendicitis characterized by a persistent mass upon muscle contraction."
   },
-  {
+{
     "id": 5044,
     "specialty": "General Surgery",
     "topic": "Gastrointestinal",
@@ -1080,7 +1080,7 @@ window.QUESTIONS.push(...[
     "guideline": "Surgery PreTest 13th Ed",
     "takeaway": "Medical management with metronidazole is the first-line treatment for amebic liver abscesses."
   },
-  {
+{
     "id": 5045,
     "specialty": "General Surgery",
     "topic": "Endocrine",
@@ -1104,7 +1104,7 @@ window.QUESTIONS.push(...[
     "guideline": "Surgery PreTest 13th Ed",
     "takeaway": "A hot nodule on thyroid scan in a thyrotoxic patient suggests a hyperfunctioning adenoma."
   },
-  {
+{
     "id": 5046,
     "specialty": "General Surgery",
     "topic": "Endocrine",
@@ -1128,7 +1128,7 @@ window.QUESTIONS.push(...[
     "guideline": "Surgery PreTest 13th Ed",
     "takeaway": "Adrenal crisis presents with hypotension and electrolyte imbalance; it requires immediate steroid replacement."
   },
-  {
+{
     "id": 5047,
     "specialty": "General Surgery",
     "topic": "Endocrine",
@@ -1152,7 +1152,7 @@ window.QUESTIONS.push(...[
     "guideline": "Surgery PreTest 13th Ed",
     "takeaway": "Progressive neck swelling and stridor after thyroidectomy indicate a postoperative hematoma requiring immediate evacuation."
   },
-  {
+{
     "id": 5048,
     "specialty": "General Surgery",
     "topic": "Endocrine",
@@ -1176,7 +1176,7 @@ window.QUESTIONS.push(...[
     "guideline": "Surgery PreTest 13th Ed",
     "takeaway": "Dopamine agonists are the first-line treatment for prolactinomas."
   },
-  {
+{
     "id": 5049,
     "specialty": "General Surgery",
     "topic": "Endocrine",
@@ -1200,7 +1200,7 @@ window.QUESTIONS.push(...[
     "guideline": "Surgery PreTest 13th Ed",
     "takeaway": "Sestamibi scan is a localization tool, not a diagnostic test for hyperparathyroidism."
   },
-  {
+{
     "id": 5050,
     "specialty": "General Surgery",
     "topic": "Endocrine",
@@ -1224,7 +1224,7 @@ window.QUESTIONS.push(...[
     "guideline": "Surgery PreTest 13th Ed",
     "takeaway": "Glucagonoma presents with necrolytic migratory erythema and diabetes."
   },
-  {
+{
     "id": 5051,
     "specialty": "General Surgery",
     "topic": "Endocrine",
@@ -1248,7 +1248,7 @@ window.QUESTIONS.push(...[
     "guideline": "Surgery PreTest 13th Ed",
     "takeaway": "Cortisol suppression by high-dose dexamethasone indicates a pituitary source (Cushing disease)."
   },
-  {
+{
     "id": 5052,
     "specialty": "General Surgery",
     "topic": "Endocrine",
@@ -1272,7 +1272,7 @@ window.QUESTIONS.push(...[
     "guideline": "Surgery PreTest 13th Ed",
     "takeaway": "Papillary thyroid carcinoma has the best prognosis among common thyroid cancers."
   },
-  {
+{
     "id": 5053,
     "specialty": "General Surgery",
     "topic": "Endocrine",
@@ -1296,7 +1296,7 @@ window.QUESTIONS.push(...[
     "guideline": "Surgery PreTest 13th Ed",
     "takeaway": "Psammoma bodies are pathognomonic for papillary thyroid cancer."
   },
-  {
+{
     "id": 5054,
     "specialty": "General Surgery",
     "topic": "Endocrine",
@@ -1320,7 +1320,7 @@ window.QUESTIONS.push(...[
     "guideline": "Surgery PreTest 13th Ed",
     "takeaway": "Saline hydration is the first step in managing hypercalcemic crisis."
   },
-  {
+{
     "id": 5055,
     "specialty": "General Surgery",
     "topic": "Endocrine",
@@ -1344,7 +1344,7 @@ window.QUESTIONS.push(...[
     "guideline": "Surgery PreTest 13th Ed",
     "takeaway": "Nephrolithiasis is an indication for surgery in primary hyperparathyroidism."
   },
-  {
+{
     "id": 5056,
     "specialty": "General Surgery",
     "topic": "Endocrine",
@@ -1368,7 +1368,7 @@ window.QUESTIONS.push(...[
     "guideline": "Surgery PreTest 13th Ed",
     "takeaway": "Thyroid surgery in pregnancy is best performed in the second trimester."
   },
-  {
+{
     "id": 5057,
     "specialty": "General Surgery",
     "topic": "Endocrine",
@@ -1392,7 +1392,7 @@ window.QUESTIONS.push(...[
     "guideline": "Surgery PreTest 13th Ed",
     "takeaway": "Hashimoto thyroiditis is a risk factor for thyroid lymphoma."
   },
-  {
+{
     "id": 5058,
     "specialty": "General Surgery",
     "topic": "Endocrine",
@@ -1416,7 +1416,7 @@ window.QUESTIONS.push(...[
     "guideline": "Surgery PreTest 13th Ed",
     "takeaway": "MTC originates from calcitonin-secreting C cells."
   },
-  {
+{
     "id": 5059,
     "specialty": "General Surgery",
     "topic": "Endocrine",
@@ -1440,7 +1440,7 @@ window.QUESTIONS.push(...[
     "guideline": "Surgery PreTest 13th Ed",
     "takeaway": "MEN 2A consists of MTC, Pheochromocytoma, and Hyperparathyroidism."
   },
-  {
+{
     "id": 5060,
     "specialty": "General Surgery",
     "topic": "Vascular",
@@ -1464,7 +1464,7 @@ window.QUESTIONS.push(...[
     "guideline": "Surgery PreTest 13th Ed",
     "takeaway": "Amaurosis fugax is a classic symptom of carotid artery disease."
   },
-  {
+{
     "id": 5061,
     "specialty": "General Surgery",
     "topic": "Vascular",
@@ -1488,7 +1488,7 @@ window.QUESTIONS.push(...[
     "guideline": "Surgery PreTest 13th Ed",
     "takeaway": "AAA > 5.5 cm in men warrants repair."
   },
-  {
+{
     "id": 5062,
     "specialty": "General Surgery",
     "topic": "Vascular",
@@ -1512,7 +1512,7 @@ window.QUESTIONS.push(...[
     "guideline": "Surgery PreTest 13th Ed",
     "takeaway": "Immediate heparinization is the first step in managing acute arterial occlusion."
   },
-  {
+{
     "id": 5063,
     "specialty": "General Surgery",
     "topic": "Vascular",
@@ -1536,7 +1536,7 @@ window.QUESTIONS.push(...[
     "guideline": "Surgery PreTest 13th Ed",
     "takeaway": "Exercise is the first-line treatment for stable claudication."
   },
-  {
+{
     "id": 5064,
     "specialty": "General Surgery",
     "topic": "Vascular",
@@ -1560,7 +1560,7 @@ window.QUESTIONS.push(...[
     "guideline": "Surgery PreTest 13th Ed",
     "takeaway": "SFA at the adductor canal is the most frequent site of atherosclerosis."
   },
-  {
+{
     "id": 5065,
     "specialty": "General Surgery",
     "topic": "Vascular",
@@ -1584,7 +1584,7 @@ window.QUESTIONS.push(...[
     "guideline": "Surgery PreTest 13th Ed",
     "takeaway": "Ruptured AAA presents with a classic triad of pain, hypotension, and a pulsatile mass."
   },
-  {
+{
     "id": 5066,
     "specialty": "General Surgery",
     "topic": "Vascular",
@@ -1608,7 +1608,7 @@ window.QUESTIONS.push(...[
     "guideline": "Surgery PreTest 13th Ed",
     "takeaway": "Medial malleolar ulcers are characteristic of venous stasis disease."
   },
-  {
+{
     "id": 5067,
     "specialty": "General Surgery",
     "topic": "Vascular",
@@ -1632,7 +1632,7 @@ window.QUESTIONS.push(...[
     "guideline": "Surgery PreTest 13th Ed",
     "takeaway": "Buerger disease should be suspected in young smokers with digital ischemia."
   },
-  {
+{
     "id": 5068,
     "specialty": "General Surgery",
     "topic": "Vascular",
@@ -1656,7 +1656,7 @@ window.QUESTIONS.push(...[
     "guideline": "Surgery PreTest 13th Ed",
     "takeaway": "Duplex ultrasound is the gold standard for DVT diagnosis."
   },
-  {
+{
     "id": 5069,
     "specialty": "General Surgery",
     "topic": "Vascular",
@@ -1680,7 +1680,7 @@ window.QUESTIONS.push(...[
     "guideline": "Surgery PreTest 13th Ed",
     "takeaway": "Arterial TOS can lead to subclavian artery aneurysms and distal emboli."
   },
-  {
+{
     "id": 5070,
     "specialty": "General Surgery",
     "topic": "Vascular",
@@ -1704,7 +1704,7 @@ window.QUESTIONS.push(...[
     "guideline": "Surgery PreTest 13th Ed",
     "takeaway": "Atherosclerosis is the leading cause of renovascular hypertension."
   },
-  {
+{
     "id": 5071,
     "specialty": "General Surgery",
     "topic": "Vascular",
@@ -1728,7 +1728,7 @@ window.QUESTIONS.push(...[
     "guideline": "Surgery PreTest 13th Ed",
     "takeaway": "Postprandial pain and weight loss are hallmarks of chronic mesenteric ischemia."
   },
-  {
+{
     "id": 5072,
     "specialty": "General Surgery",
     "topic": "Vascular",
@@ -1752,7 +1752,7 @@ window.QUESTIONS.push(...[
     "guideline": "Surgery PreTest 13th Ed",
     "takeaway": "Large AV fistulas can cause high-output heart failure."
   },
-  {
+{
     "id": 5073,
     "specialty": "General Surgery",
     "topic": "Vascular",
@@ -1776,7 +1776,7 @@ window.QUESTIONS.push(...[
     "guideline": "Surgery PreTest 13th Ed",
     "takeaway": "Ischemic colitis is a serious complication following aortic reconstruction."
   },
-  {
+{
     "id": 5074,
     "specialty": "General Surgery",
     "topic": "Vascular",

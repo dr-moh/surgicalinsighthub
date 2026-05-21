@@ -1,6 +1,6 @@
-window.QUESTIONS = window.QUESTIONS || [];
+if (!window.QUESTIONS) window.QUESTIONS = [];
 window.QUESTIONS.push(...[
-  {
+{
     "id": 5075,
     "specialty": "Plastic Surgery",
     "topic": "Collagen",
@@ -24,7 +24,7 @@ window.QUESTIONS.push(...[
     "guideline": "MCQs in Plastic Surgery",
     "takeaway": "Glycine is essential for the triple helix structure of collagen."
   },
-  {
+{
     "id": 5076,
     "specialty": "Plastic Surgery",
     "topic": "Anticoagulants",
@@ -48,7 +48,7 @@ window.QUESTIONS.push(...[
     "guideline": "MCQs in Plastic Surgery",
     "takeaway": "LMWH and Fondaparinux are more selective for Factor Xa than unfractionated heparin."
   },
-  {
+{
     "id": 5077,
     "specialty": "Plastic Surgery",
     "topic": "Free Tissue Transfer History",
@@ -72,7 +72,7 @@ window.QUESTIONS.push(...[
     "guideline": "MCQs in Plastic Surgery",
     "takeaway": "John Cobbett performed the first successful toe-to-hand transfer in 1968."
   },
-  {
+{
     "id": 5078,
     "specialty": "Plastic Surgery",
     "topic": "Wound Healing",
@@ -96,7 +96,7 @@ window.QUESTIONS.push(...[
     "guideline": "MCQs in Plastic Surgery",
     "takeaway": "Hyaluronic acid is a key component of scarless fetal wound healing."
   },
-  {
+{
     "id": 5079,
     "specialty": "Plastic Surgery",
     "topic": "Local Anesthetics",
@@ -120,7 +120,7 @@ window.QUESTIONS.push(...[
     "guideline": "MCQs in Plastic Surgery",
     "takeaway": "Max dose of plain lidocaine is 4.5 mg/kg."
   },
-  {
+{
     "id": 5080,
     "specialty": "Plastic Surgery",
     "topic": "Flap Classification",
@@ -144,7 +144,7 @@ window.QUESTIONS.push(...[
     "guideline": "MCQs in Plastic Surgery",
     "takeaway": "Mathes and Nahai Type 2 flaps have a dominant pedicle and minor ones."
   },
-  {
+{
     "id": 5081,
     "specialty": "Plastic Surgery",
     "topic": "Hand Anatomy",
@@ -168,7 +168,7 @@ window.QUESTIONS.push(...[
     "guideline": "MCQs in Plastic Surgery",
     "takeaway": "Scaphoid blood supply is retrograde from the dorsal ridge."
   },
-  {
+{
     "id": 5082,
     "specialty": "Plastic Surgery",
     "topic": "Nerve Regeneration",
@@ -192,7 +192,7 @@ window.QUESTIONS.push(...[
     "guideline": "MCQs in Plastic Surgery",
     "takeaway": "Wallerian degeneration occurs distal to a nerve injury."
   },
-  {
+{
     "id": 5083,
     "specialty": "Plastic Surgery",
     "topic": "Tendon Repair",
@@ -216,7 +216,7 @@ window.QUESTIONS.push(...[
     "guideline": "MCQs in Plastic Surgery",
     "takeaway": "Zone 2 of the flexor tendons is between the A1 pulley and FDS insertion."
   },
-  {
+{
     "id": 5084,
     "specialty": "Plastic Surgery",
     "topic": "Dupuytren's Contracture",
@@ -240,7 +240,7 @@ window.QUESTIONS.push(...[
     "guideline": "MCQs in Plastic Surgery",
     "takeaway": "Myofibroblasts drive the contracture in Dupuytren's disease."
   },
-  {
+{
     "id": 5085,
     "specialty": "Plastic Surgery",
     "topic": "Brachial Plexus Injuries",
@@ -264,7 +264,7 @@ window.QUESTIONS.push(...[
     "guideline": "MCQs in Plastic Surgery",
     "takeaway": "Upper plexus lesions are the most common in obstetrical brachial plexus palsy."
   },
-  {
+{
     "id": 5086,
     "specialty": "Plastic Surgery",
     "topic": "Carpal Tunnel Syndrome",
@@ -288,7 +288,7 @@ window.QUESTIONS.push(...[
     "guideline": "MCQs in Plastic Surgery",
     "takeaway": "Carpal tunnel syndrome involves median nerve compression at the wrist."
   },
-  {
+{
     "id": 5087,
     "specialty": "Plastic Surgery",
     "topic": "Skin Grafts",
@@ -312,7 +312,7 @@ window.QUESTIONS.push(...[
     "guideline": "MCQs in Plastic Surgery",
     "takeaway": "Inosculation is the 'kissing' of host and graft blood vessels."
   },
-  {
+{
     "id": 5088,
     "specialty": "Plastic Surgery",
     "topic": "Melanoma",
@@ -336,7 +336,7 @@ window.QUESTIONS.push(...[
     "guideline": "MCQs in Plastic Surgery",
     "takeaway": "Breslow thickness is the gold standard for melanoma staging."
   },
-  {
+{
     "id": 5089,
     "specialty": "Plastic Surgery",
     "topic": "Burn Resuscitation",
@@ -360,7 +360,7 @@ window.QUESTIONS.push(...[
     "guideline": "MCQs in Plastic Surgery",
     "takeaway": "Parkland formula uses 4 mL/kg/%TBSA for burn resuscitation."
   },
-  {
+{
     "id": 5090,
     "specialty": "Plastic Surgery",
     "topic": "Craniofacial Surgery",
@@ -384,7 +384,7 @@ window.QUESTIONS.push(...[
     "guideline": "MCQs in Plastic Surgery",
     "takeaway": "Sagittal synostosis is the most common single-suture synostosis."
   },
-  {
+{
     "id": 5091,
     "specialty": "Plastic Surgery",
     "topic": "Rhinoplasty",
@@ -408,7 +408,7 @@ window.QUESTIONS.push(...[
     "guideline": "MCQs in Plastic Surgery",
     "takeaway": "The keystone area provides structural support to the middle vault of the nose."
   },
-  {
+{
     "id": 5092,
     "specialty": "Plastic Surgery",
     "topic": "Breast Reconstruction",
@@ -432,7 +432,7 @@ window.QUESTIONS.push(...[
     "guideline": "MCQs in Plastic Surgery",
     "takeaway": "Superior epigastric artery supplies the pedicled TRAM flap."
   },
-  {
+{
     "id": 5093,
     "specialty": "Plastic Surgery",
     "topic": "Liposuction",
@@ -456,7 +456,7 @@ window.QUESTIONS.push(...[
     "guideline": "MCQs in Plastic Surgery",
     "takeaway": "Super-wet liposuction uses a 1:1 infiltrate ratio."
   },
-  {
+{
     "id": 5094,
     "specialty": "Plastic Surgery",
     "topic": "Cleft Lip",
@@ -480,7 +480,7 @@ window.QUESTIONS.push(...[
     "guideline": "MCQs in Plastic Surgery",
     "takeaway": "Millard repair is the gold standard for unilateral cleft lip."
   },
-  {
+{
     "id": 5095,
     "specialty": "Plastic Surgery",
     "topic": "Filler Substances",
@@ -504,7 +504,7 @@ window.QUESTIONS.push(...[
     "guideline": "MCQs in Plastic Surgery",
     "takeaway": "Radiesse is the trade name for calcium hydroxyapatite filler."
   },
-  {
+{
     "id": 5096,
     "specialty": "Plastic Surgery",
     "topic": "Facelift",
@@ -528,7 +528,7 @@ window.QUESTIONS.push(...[
     "guideline": "MCQs in Plastic Surgery",
     "takeaway": "SMAS is a continuous fibro-muscular layer of the head and neck."
   },
-  {
+{
     "id": 5097,
     "specialty": "Plastic Surgery",
     "topic": "Pressure Sores",
@@ -552,7 +552,7 @@ window.QUESTIONS.push(...[
     "guideline": "MCQs in Plastic Surgery",
     "takeaway": "Grade 3 pressure sores involve subcutaneous tissue."
   },
-  {
+{
     "id": 5098,
     "specialty": "Plastic Surgery",
     "topic": "Microtia",
@@ -576,7 +576,7 @@ window.QUESTIONS.push(...[
     "guideline": "MCQs in Plastic Surgery",
     "takeaway": "Costal cartilage ear reconstruction is done when the child is large enough for a donor site."
   },
-  {
+{
     "id": 5099,
     "specialty": "Plastic Surgery",
     "topic": "Abdominoplasty",
@@ -600,7 +600,7 @@ window.QUESTIONS.push(...[
     "guideline": "MCQs in Plastic Surgery",
     "takeaway": "Seroma is the most common postoperative issue in abdominoplasty."
   },
-  {
+{
     "id": 5100,
     "specialty": "Plastic Surgery",
     "topic": "Botox",
@@ -624,7 +624,7 @@ window.QUESTIONS.push(...[
     "guideline": "MCQs in Plastic Surgery",
     "takeaway": "Botox causes muscle paralysis by blocking acetylcholine release."
   },
-  {
+{
     "id": 5101,
     "specialty": "Plastic Surgery",
     "topic": "Ptosis",
@@ -648,7 +648,7 @@ window.QUESTIONS.push(...[
     "guideline": "MCQs in Plastic Surgery",
     "takeaway": "Levator muscle damage or weakness causes ptosis."
   },
-  {
+{
     "id": 5102,
     "specialty": "Plastic Surgery",
     "topic": "Suture Materials",
@@ -672,7 +672,7 @@ window.QUESTIONS.push(...[
     "guideline": "MCQs in Plastic Surgery",
     "takeaway": "Prolene is a widely used non-absorbable suture."
   },
-  {
+{
     "id": 5103,
     "specialty": "Plastic Surgery",
     "topic": "Local Anesthetics",
@@ -696,7 +696,7 @@ window.QUESTIONS.push(...[
     "guideline": "MCQs in Plastic Surgery",
     "takeaway": "Bupivacaine provides prolonged local anesthesia."
   },
-  {
+{
     "id": 5104,
     "specialty": "Plastic Surgery",
     "topic": "Gynaecomastia",
@@ -720,7 +720,7 @@ window.QUESTIONS.push(...[
     "guideline": "MCQs in Plastic Surgery",
     "takeaway": "Simon classification guides surgical management of gynaecomastia."
   },
-  {
+{
     "id": 5105,
     "specialty": "Plastic Surgery",
     "topic": "Basal Cell Carcinoma",
@@ -744,7 +744,7 @@ window.QUESTIONS.push(...[
     "guideline": "MCQs in Plastic Surgery",
     "takeaway": "Morphoeic BCC requires wider margins due to its infiltrative nature."
   },
-  {
+{
     "id": 5106,
     "specialty": "Plastic Surgery",
     "topic": "Vascular Anomalies",
@@ -768,7 +768,7 @@ window.QUESTIONS.push(...[
     "guideline": "MCQs in Plastic Surgery",
     "takeaway": "Infantile haemangiomas typically follow a proliferation-involution cycle."
   },
-  {
+{
     "id": 5107,
     "specialty": "Plastic Surgery",
     "topic": "Keloids",
@@ -792,7 +792,7 @@ window.QUESTIONS.push(...[
     "guideline": "MCQs in Plastic Surgery",
     "takeaway": "Keloids feature disorganized, thick collagen bundles."
   },
-  {
+{
     "id": 5108,
     "specialty": "Plastic Surgery",
     "topic": "Hand Fractures",
@@ -816,7 +816,7 @@ window.QUESTIONS.push(...[
     "guideline": "MCQs in Plastic Surgery",
     "takeaway": "Bennett's fracture is a common thumb injury requiring stability."
   },
-  {
+{
     "id": 5109,
     "specialty": "Plastic Surgery",
     "topic": "Nerve Compression",
@@ -840,7 +840,7 @@ window.QUESTIONS.push(...[
     "guideline": "MCQs in Plastic Surgery",
     "takeaway": "Wartenberg's syndrome is a sensory neuropathy of the radial nerve."
   },
-  {
+{
     "id": 5110,
     "specialty": "Plastic Surgery",
     "topic": "Hypospadias",
@@ -864,7 +864,7 @@ window.QUESTIONS.push(...[
     "guideline": "MCQs in Plastic Surgery",
     "takeaway": "Hypospadias involves meatal malposition, chordee, and foreskin anomalies."
   },
-  {
+{
     "id": 5111,
     "specialty": "Plastic Surgery",
     "topic": "Breast Implants",
@@ -888,7 +888,7 @@ window.QUESTIONS.push(...[
     "guideline": "MCQs in Plastic Surgery",
     "takeaway": "Baker classification system stages capsular contracture."
   },
-  {
+{
     "id": 5112,
     "specialty": "Plastic Surgery",
     "topic": "Lasers",
@@ -912,7 +912,7 @@ window.QUESTIONS.push(...[
     "guideline": "MCQs in Plastic Surgery",
     "takeaway": "Selective photothermolysis is the foundation of medical laser therapy."
   },
-  {
+{
     "id": 5113,
     "specialty": "Plastic Surgery",
     "topic": "Head and Neck",
@@ -936,7 +936,7 @@ window.QUESTIONS.push(...[
     "guideline": "MCQs in Plastic Surgery",
     "takeaway": "Second branchial cleft cysts are the most common congenital neck masses."
   },
-  {
+{
     "id": 5114,
     "specialty": "Plastic Surgery",
     "topic": "Microvascular Surgery",
@@ -960,7 +960,7 @@ window.QUESTIONS.push(...[
     "guideline": "MCQs in Plastic Surgery",
     "takeaway": "No-reflow is a consequence of prolonged ischaemia and reperfusion injury."
   },
-  {
+{
     "id": 5115,
     "specialty": "Plastic Surgery",
     "topic": "Lower Limb Trauma",
@@ -984,7 +984,7 @@ window.QUESTIONS.push(...[
     "guideline": "MCQs in Plastic Surgery",
     "takeaway": "Gustilo 3b fractures mandate flap reconstruction."
   },
-  {
+{
     "id": 5116,
     "specialty": "Plastic Surgery",
     "topic": "Mandible Fractures",
@@ -1008,7 +1008,7 @@ window.QUESTIONS.push(...[
     "guideline": "MCQs in Plastic Surgery",
     "takeaway": "Condylar fractures are the most frequent mandibular injuries."
   },
-  {
+{
     "id": 5117,
     "specialty": "Plastic Surgery",
     "topic": "Eyelid Anatomy",
@@ -1032,7 +1032,7 @@ window.QUESTIONS.push(...[
     "guideline": "MCQs in Plastic Surgery",
     "takeaway": "The Gray Line divides the eyelid into anterior and posterior lamellae."
   },
-  {
+{
     "id": 5118,
     "specialty": "Plastic Surgery",
     "topic": "Surgical Anatomy",
@@ -1056,7 +1056,7 @@ window.QUESTIONS.push(...[
     "guideline": "MCQs in Plastic Surgery",
     "takeaway": "The neck's danger space is a route for mediastinitis."
   },
-  {
+{
     "id": 5119,
     "specialty": "Plastic Surgery",
     "topic": "Free Flap Monitoring",
@@ -1080,7 +1080,7 @@ window.QUESTIONS.push(...[
     "guideline": "MCQs in Plastic Surgery",
     "takeaway": "Rapid refill and purple hue are pathognomonic for venous flap failure."
   },
-  {
+{
     "id": 5120,
     "specialty": "Plastic Surgery",
     "topic": "Skin Anatomy",
@@ -1104,7 +1104,7 @@ window.QUESTIONS.push(...[
     "guideline": "MCQs in Plastic Surgery",
     "takeaway": "Stratum spinosum provides structural integrity to the skin."
   },
-  {
+{
     "id": 5121,
     "specialty": "Plastic Surgery",
     "topic": "Orbital Fractures",
@@ -1128,7 +1128,7 @@ window.QUESTIONS.push(...[
     "guideline": "MCQs in Plastic Surgery",
     "takeaway": "Orbital floor and medial wall are most susceptible to blow-out fractures."
   },
-  {
+{
     "id": 5122,
     "specialty": "Plastic Surgery",
     "topic": "Facial Nerve",
@@ -1152,7 +1152,7 @@ window.QUESTIONS.push(...[
     "guideline": "MCQs in Plastic Surgery",
     "takeaway": "The facial artery is a landmark for the marginal mandibular nerve."
   },
-  {
+{
     "id": 5123,
     "specialty": "Plastic Surgery",
     "topic": "Fat Grafting",
@@ -1176,7 +1176,7 @@ window.QUESTIONS.push(...[
     "guideline": "MCQs in Plastic Surgery",
     "takeaway": "Centrifugation is a key step in the Coleman fat grafting technique."
   },
-  {
+{
     "id": 5124,
     "specialty": "Plastic Surgery",
     "topic": "Ear Reconstruction",
@@ -1200,7 +1200,7 @@ window.QUESTIONS.push(...[
     "guideline": "MCQs in Plastic Surgery",
     "takeaway": "Prominent ear is easily corrected with otoplasty."
   },
-  {
+{
     "id": 5125,
     "specialty": "Plastic Surgery",
     "topic": "Fascial Layers",
@@ -1224,7 +1224,7 @@ window.QUESTIONS.push(...[
     "guideline": "MCQs in Plastic Surgery",
     "takeaway": "Scarpa's and Colles' fascia are continuous layers."
   },
-  {
+{
     "id": 5126,
     "specialty": "Plastic Surgery",
     "topic": "Hand Infections",
@@ -1248,7 +1248,7 @@ window.QUESTIONS.push(...[
     "guideline": "MCQs in Plastic Surgery",
     "takeaway": "Kanavel's signs indicate an emergency hand infection."
   },
-  {
+{
     "id": 5127,
     "specialty": "Plastic Surgery",
     "topic": "Scar Revision",
@@ -1272,7 +1272,7 @@ window.QUESTIONS.push(...[
     "guideline": "MCQs in Plastic Surgery",
     "takeaway": "Z-plasty reorients and lengthens scars."
   },
-  {
+{
     "id": 5128,
     "specialty": "Plastic Surgery",
     "topic": "Craniofacial",
@@ -1296,7 +1296,7 @@ window.QUESTIONS.push(...[
     "guideline": "MCQs in Plastic Surgery",
     "takeaway": "Syndactyly is the hallmark difference between Apert and Crouzon."
   },
-  {
+{
     "id": 5129,
     "specialty": "Plastic Surgery",
     "topic": "Breast Anatomy",
@@ -1320,7 +1320,7 @@ window.QUESTIONS.push(...[
     "guideline": "MCQs in Plastic Surgery",
     "takeaway": "Cooper's ligaments maintain the shape of the breast."
   },
-  {
+{
     "id": 5130,
     "specialty": "Plastic Surgery",
     "topic": "Laser Physics",
@@ -1344,7 +1344,7 @@ window.QUESTIONS.push(...[
     "guideline": "MCQs in Plastic Surgery",
     "takeaway": "CO2 lasers are high-power gas lasers used for cutting and ablation."
   },
-  {
+{
     "id": 5131,
     "specialty": "Plastic Surgery",
     "topic": "Hair Transplant",
@@ -1368,7 +1368,7 @@ window.QUESTIONS.push(...[
     "guideline": "MCQs in Plastic Surgery",
     "takeaway": "Donor dominance allows for successful hair transplantation in balding areas."
   },
-  {
+{
     "id": 5132,
     "specialty": "Plastic Surgery",
     "topic": "Chemical Peels",
@@ -1392,7 +1392,7 @@ window.QUESTIONS.push(...[
     "guideline": "MCQs in Plastic Surgery",
     "takeaway": "Phenol peels require systemic monitoring."
   },
-  {
+{
     "id": 5133,
     "specialty": "Plastic Surgery",
     "topic": "Maxillofacial Trauma",
@@ -1416,7 +1416,7 @@ window.QUESTIONS.push(...[
     "guideline": "MCQs in Plastic Surgery",
     "takeaway": "Le Fort II fractures involve the central midface in a pyramid shape."
   },
-  {
+{
     "id": 5134,
     "specialty": "Plastic Surgery",
     "topic": "Microbiology",
@@ -1440,7 +1440,7 @@ window.QUESTIONS.push(...[
     "guideline": "MCQs in Plastic Surgery",
     "takeaway": "Eikenella corrodens is a signature organism of human bite infections."
   },
-  {
+{
     "id": 5135,
     "specialty": "Plastic Surgery",
     "topic": "Skin Physiology",
@@ -1464,7 +1464,7 @@ window.QUESTIONS.push(...[
     "guideline": "MCQs in Plastic Surgery",
     "takeaway": "Melanocytes are neuroectodermal in origin."
   },
-  {
+{
     "id": 5136,
     "specialty": "Plastic Surgery",
     "topic": "Lymphedema",
@@ -1488,7 +1488,7 @@ window.QUESTIONS.push(...[
     "guideline": "MCQs in Plastic Surgery",
     "takeaway": "Stemmer's sign is a reliable clinical marker for chronic lymphedema."
   },
-  {
+{
     "id": 5137,
     "specialty": "Plastic Surgery",
     "topic": "Flap Anatomy",
@@ -1512,7 +1512,7 @@ window.QUESTIONS.push(...[
     "guideline": "MCQs in Plastic Surgery",
     "takeaway": "Surgical delay improves flap survival by reorganizing blood flow."
   },
-  {
+{
     "id": 5138,
     "specialty": "Plastic Surgery",
     "topic": "Craniofacial",
@@ -1536,7 +1536,7 @@ window.QUESTIONS.push(...[
     "guideline": "MCQs in Plastic Surgery",
     "takeaway": "Tessier 7 cleft involves the oral commissure."
   },
-  {
+{
     "id": 5139,
     "specialty": "Plastic Surgery",
     "topic": "Burn Surgery",
@@ -1560,7 +1560,7 @@ window.QUESTIONS.push(...[
     "guideline": "MCQs in Plastic Surgery",
     "takeaway": "Stress ulcer prophylaxis is essential in major burn patients."
   },
-  {
+{
     "id": 5140,
     "specialty": "Plastic Surgery",
     "topic": "Ear Anatomy",
@@ -1584,7 +1584,7 @@ window.QUESTIONS.push(...[
     "guideline": "MCQs in Plastic Surgery",
     "takeaway": "The ear receives multi-nerve sensory supply."
   },
-  {
+{
     "id": 5141,
     "specialty": "Plastic Surgery",
     "topic": "Hand Surgery",
@@ -1608,7 +1608,7 @@ window.QUESTIONS.push(...[
     "guideline": "MCQs in Plastic Surgery",
     "takeaway": "Mallet finger is a common athletic injury."
   },
-  {
+{
     "id": 5142,
     "specialty": "Plastic Surgery",
     "topic": "Vascular Surgery",
@@ -1632,7 +1632,7 @@ window.QUESTIONS.push(...[
     "guideline": "MCQs in Plastic Surgery",
     "takeaway": "Allen test is mandatory before radial artery harvest or cannulation."
   },
-  {
+{
     "id": 5143,
     "specialty": "Plastic Surgery",
     "topic": "Melanoma",
@@ -1656,7 +1656,7 @@ window.QUESTIONS.push(...[
     "guideline": "MCQs in Plastic Surgery",
     "takeaway": "Melanoma margins are based on Breslow thickness."
   },
-  {
+{
     "id": 5144,
     "specialty": "Plastic Surgery",
     "topic": "Suture Removal",

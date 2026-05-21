@@ -34,3 +34,5 @@ enrichment_progress.log
 # IDE files
 .vscode/
 .idea/
+.venv/
+scripts/

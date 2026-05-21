@@ -1,7 +1,6 @@
 if (!window.QUESTIONS) window.QUESTIONS = [];
 window.QUESTIONS.push(...[
-[
-  {
+{
     "id": 262,
     "specialty": "Plastic Surgery",
     "topic": "Burns",
@@ -22,7 +21,7 @@ window.QUESTIONS.push(...[
     "visualization": "The 'Eschar'—tough, non-elastic, burnt tissue that can cause compartment syndrome.",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "specialty": "Plastic Surgery",
     "topic": "Oncology",
     "question": "Which of the following variables best predicts prognosis for patients with localized cutaneous melanoma?",
@@ -45,7 +44,7 @@ window.QUESTIONS.push(...[
     "id": 1205,
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "specialty": "Plastic Surgery",
     "topic": "Skin Grafts",
     "question": "What is the correct sequence of phases for skin graft 'take'?",
@@ -75,7 +74,7 @@ window.QUESTIONS.push(...[
     "id": 1502,
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "specialty": "Plastic Surgery",
     "topic": "Parkland Formula",
     "question": "A 70 kg man has 30% TBSA burns. Using the Parkland formula, what is the total volume of Lactated Ringer's required in the first 24 hours?",
@@ -105,7 +104,7 @@ window.QUESTIONS.push(...[
     "id": 1503,
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "specialty": "Plastic Surgery",
     "topic": "Z-Plasty",
     "question": "In a standard Z-plasty with 60-degree limb angles, what is the theoretical percentage of length increase achieved along the central limb?",
@@ -135,7 +134,7 @@ window.QUESTIONS.push(...[
     "id": 1504,
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "specialty": "Plastic Surgery",
     "topic": "Hand Infections",
     "question": "A patient presents with a swollen 'sausage digit,' pain on passive extension, and tenderness along the flexor sheath. Which of the following is NOT one of Kanavel's cardinal signs for flexor tenosynovitis?",
@@ -165,7 +164,7 @@ window.QUESTIONS.push(...[
     "id": 1505,
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "specialty": "Plastic Surgery",
     "topic": "Melanoma Margins",
     "question": "For a melanoma with a Breslow thickness of 1.5 mm, what is the recommended wide local excision (WLE) margin?",
@@ -195,7 +194,7 @@ window.QUESTIONS.push(...[
     "id": 1506,
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "specialty": "Plastic Surgery",
     "topic": "Inhalation Injury",
     "question": "What is the most definitive diagnostic tool for identifying inhalation injury in a burn patient?",
@@ -225,7 +224,7 @@ window.QUESTIONS.push(...[
     "id": 1507,
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "specialty": "Plastic Surgery",
     "topic": "Dupuytren's Contracture",
     "question": "Which digit is most commonly affected in Dupuytren's contracture?",
@@ -255,7 +254,7 @@ window.QUESTIONS.push(...[
     "id": 1508,
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "specialty": "Plastic Surgery",
     "topic": "Flap Classification",
     "question": "According to the Mathes-Nahai classification, a Type II muscle flap is characterized by:",
@@ -285,7 +284,7 @@ window.QUESTIONS.push(...[
     "id": 1509,
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "specialty": "Plastic Surgery",
     "topic": "SCC vs BCC",
     "question": "Which characteristic is more typical of Squamous Cell Carcinoma (SCC) compared to Basal Cell Carcinoma (BCC)?",
@@ -315,7 +314,7 @@ window.QUESTIONS.push(...[
     "id": 1510,
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "specialty": "Plastic Surgery",
     "topic": "Z-Plasty Alignment",
     "question": "When designing a Z-plasty, how should the central limb be ideally oriented relative to the scar/contracture?",
@@ -345,7 +344,7 @@ window.QUESTIONS.push(...[
     "id": 1511,
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "specialty": "Plastic Surgery",
     "topic": "Flexor Tendon Zones",
     "question": "In the hand, 'No Man's Land' refers to which flexor tendon zone, traditionally known for poor surgical outcomes due to adhesions?",
@@ -375,7 +374,7 @@ window.QUESTIONS.push(...[
     "id": 1512,
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "specialty": "Plastic Surgery",
     "topic": "Cleft Lip Repair",
     "question": "The 'Rule of Tens' is often used to determine the timing of cleft lip repair. Which of the following is NOT part of this rule?",
@@ -405,7 +404,7 @@ window.QUESTIONS.push(...[
     "id": 1513,
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "specialty": "Plastic Surgery",
     "topic": "Breast Reconstruction",
     "question": "Which flap is a 'muscle-sparing' alternative to the traditional TRAM flap for breast reconstruction, relying only on the deep inferior epigastric perforators?",
@@ -435,7 +434,7 @@ window.QUESTIONS.push(...[
     "id": 1514,
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "specialty": "Plastic Surgery",
     "topic": "Facial Fractures",
     "question": "A 'Tripod Fracture' (Zygomaticomaxillary Complex fracture) involves disruptions at how many specific suture lines?",
@@ -465,7 +464,7 @@ window.QUESTIONS.push(...[
     "id": 1515,
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "specialty": "Plastic Surgery",
     "topic": "Skin Grafts",
     "question": "Which of the following is an advantage of a Full-Thickness Skin Graft (FTSG) compared to a Split-Thickness Skin Graft (STSG)?",
@@ -495,7 +494,7 @@ window.QUESTIONS.push(...[
     "id": 1516,
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "specialty": "Plastic Surgery",
     "topic": "Basal Cell Ca Treatment",
     "question": "For a 'high-risk' Basal Cell Carcinoma on the nose or eyelid, what is the treatment of choice to ensure the highest cure rate while sparing tissue?",
@@ -525,7 +524,7 @@ window.QUESTIONS.push(...[
     "id": 1517,
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "specialty": "Plastic Surgery",
     "topic": "Microvascular Monitoring",
     "question": "What is the most sensitive early sign of VENOUS congestion in a free flap?",
@@ -555,7 +554,7 @@ window.QUESTIONS.push(...[
     "id": 1518,
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "specialty": "Plastic Surgery",
     "topic": "Hand Fractures",
     "question": "A 'Boxer's Fracture' typically involves which bone?",
@@ -585,7 +584,7 @@ window.QUESTIONS.push(...[
     "id": 1519,
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "specialty": "Plastic Surgery",
     "topic": "Melanoma SLNB",
     "question": "Sentinel Lymph Node Biopsy (SLNB) is generally indicated for melanoma of what Breslow thickness?",
@@ -615,7 +614,7 @@ window.QUESTIONS.push(...[
     "id": 1520,
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "specialty": "Plastic Surgery",
     "topic": "Scar Maturation",
     "question": "Hypertrophic scars differ from keloids in that hypertrophic scars:",
@@ -645,7 +644,7 @@ window.QUESTIONS.push(...[
     "id": 1521,
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "specialty": "Plastic Surgery",
     "topic": "Tissue Expansion",
     "question": "What is the primary physiologic change in the skin during tissue expansion?",
@@ -675,7 +674,7 @@ window.QUESTIONS.push(...[
     "id": 1522,
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "specialty": "Plastic Surgery",
     "topic": "Hand Surgery: Bennett Fracture",
     "question": "A 'Bennett Fracture' is best described as:",
@@ -705,7 +704,7 @@ window.QUESTIONS.push(...[
     "id": 1523,
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "specialty": "Plastic Surgery",
     "topic": "Radiation and Wound Healing",
     "question": "Radiation therapy impairs wound healing primarily by:",
@@ -735,7 +734,7 @@ window.QUESTIONS.push(...[
     "id": 1524,
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "specialty": "Plastic Surgery",
     "topic": "Tendon Healing",
     "question": "During which phase of tendon healing is the repair at its WEAKEST, necessitating careful movement?",
@@ -765,7 +764,7 @@ window.QUESTIONS.push(...[
     "id": 1525,
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "specialty": "Plastic Surgery",
     "topic": "Ear Reconstruction",
     "question": "What is the preferred material for the structural framework in total ear reconstruction (microtia)?",
@@ -795,7 +794,7 @@ window.QUESTIONS.push(...[
     "id": 1526,
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "specialty": "Plastic Surgery",
     "topic": "Wound Contraction",
     "question": "Which cell type is primarily responsible for wound contraction in secondary intention healing?",
@@ -825,7 +824,7 @@ window.QUESTIONS.push(...[
     "id": 1527,
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "specialty": "Plastic Surgery",
     "topic": "Reconstructive Ladder",
     "question": "According to the 'Reconstructive Ladder,' what is the next step if primary closure is not possible and the wound cannot heal by secondary intention?",
@@ -855,7 +854,7 @@ window.QUESTIONS.push(...[
     "id": 1528,
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "specialty": "Plastic Surgery",
     "topic": "Local Anesthetic with Epi",
     "question": "What is the primary benefit of adding Epinephrine (1:100,000 or 1:200,000) to local anesthetics during plastic surgery procedures?",
@@ -885,7 +884,7 @@ window.QUESTIONS.push(...[
     "id": 1529,
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "specialty": "Plastic Surgery",
     "topic": "Burn Resuscitation Endpoint",
     "question": "What is the most reliable clinical indicator of adequate fluid resuscitation in a burn patient?",
@@ -915,7 +914,7 @@ window.QUESTIONS.push(...[
     "id": 1530,
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "specialty": "Plastic Surgery",
     "topic": "Hand Surgery: Scaphoid Fracture",
     "question": "A patient with pain in the 'anatomic snuffbox' after a fall should be treated as having which fracture until proven otherwise?",
@@ -945,7 +944,7 @@ window.QUESTIONS.push(...[
     "id": 1531,
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 1215,
     "specialty": "Plastic Surgery",
     "topic": "Comprhensive Surgery Revision conv.docx",
@@ -978,7 +977,7 @@ window.QUESTIONS.push(...[
     "takeaway": "PLAN: For future questions on esophageal reconstruction, focus on the specific indications and contraindications for each type of graft, as well as the common complications associated with their use. Consider the vascular anatomy of each segment and how it impacts its suitability for thoracic transposition.",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 1209,
     "specialty": "Plastic Surgery",
     "topic": "Comprhensive Surgery Revision conv.docx",
@@ -1010,7 +1009,7 @@ window.QUESTIONS.push(...[
     "takeaway": "PLAN: I recommend a focused review of immunology specifically related to transplantation. Case studies illustrating cytotoxic T cell-mediated rejection would be beneficial.  Consider using diagrams to visualize the inflammatory cascade and the interaction between graft endothelium and immune cells. Further questions should focus on differentiating rejection mechanisms and their clinical manifestations.",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 1210,
     "specialty": "Plastic Surgery",
     "topic": "Comprhensive Surgery Revision conv.docx",
@@ -1042,40 +1041,7 @@ window.QUESTIONS.push(...[
     "takeaway": "PLAN: Implement a targeted review of allograft rejection pathophysiology. Include case studies focusing on the clinical presentation and management of different rejection types. Consider utilizing flow diagrams to illustrate the sequential events in the rejection process. Further research into the mechanisms of tolerance is also recommended.",
     "_src_file": "plastic_surgery.js"
   },
-  {
-    "id": 1201,
-    "specialty": "Plastic Surgery",
-    "topic": "rush.docx",
-    "question": "A 34-year-old man sustained a gunshot wound to his abdomen that necessitated exploratory laparotomy and small bowel resection. Two weeks after the initial operation, he was reex plored for a large intraabdominal abscess. Which of the following will result in the most rapid gain in strength of the new incision?",
-    "options": {
-      "B": "The midline scar is excised with a 1-cm margin.",
-      "C": "The midline incision is reopened without excision of the scar.",
-      "D": "The midline incision is left to heal by secondary intention.",
-      "E": "The rate of gain in strength is not affected by the incision technique."
-    },
-    "answer": "C",
-    "explanation": {
-      "correct": "The correct answer (C) reflects the established principle of minimizing tension on the healing incision. Reopening without excision avoids further mechanical stress, which is a primary driver of delayed healing and scar weakening. The other options are less optimal: B – Excision creates a new wound edge and significantly increases tension; D – Secondary intention healing can be slow and prone to complications; E – Wound healing is profoundly influenced by surgical technique and tension.",
-      "A": "",
-      "B": "",
-      "C": "",
-      "D": "",
-      "E": ""
-    },
-    "sharp": {
-      "status": "ACCEPT",
-      "verified_answer": "C",
-      "set_the_stage": "This question assesses understanding of wound healing principles, specifically concerning incisional strength and scar management following abdominal surgery. The patient presents with a gunshot wound leading to resection and subsequent abscess formation, highlighting the complexities of post-operative wound care.",
-      "highlight_excellence": "The correct answer (C) reflects the established principle of minimizing tension on the healing incision. Reopening without excision avoids further mechanical stress, which is a primary driver of delayed healing and scar weakening. The other options are less optimal: B – Excision creates a new wound edge and significantly increases tension; D – Secondary intention healing can be slow and prone to complications; E – Wound healing is profoundly influenced by surgical technique and tension.",
-      "address_gaps": "A key gap in understanding is the concept of ‘mechanical tension’ on the incision. Students may struggle to differentiate between various closure techniques and their impact on scar strength. Furthermore, a deeper understanding of the inflammatory response and its role in wound healing is needed. The question also tests knowledge of the difference between primary and secondary intention healing.",
-      "review_guidelines": "1. **Wound Tension:** Emphasize that minimizing tension at the incision site is paramount for optimal healing. Tension leads to increased inflammation, breakdown of the granulation tissue, and ultimately, a weaker scar. 2. **Scar Management:** Review the different scar closure techniques (primary, secondary, tertiary) and their respective advantages and disadvantages. 3. **Inflammation & Healing:** Reinforce the inflammatory phase as a necessary but controlled process in wound healing. 4. **Re-exploration for Abscesses:** Understand the potential for abscess formation following abdominal surgery and the importance of meticulous wound care.",
-      "plan": "Further education should include a detailed discussion of wound biomechanics, the role of fibroblasts and collagen synthesis in scar formation, and the impact of infection on healing. Case studies illustrating the consequences of excessive tension on incisions would be beneficial. Consider incorporating a practical component – perhaps a simulated incision closure exercise – to reinforce these concepts."
-    },
-    "guideline": "1. **Wound Tension:** Emphasize that minimizing tension at the incision site is paramount for optimal healing. Tension leads to increased inflammation, breakdown of the granulation tissue, and ultimately, a weaker scar. 2. **Scar Management:** Review the different scar closure techniques (primary, secondary, tertiary) and their respective advantages and disadvantages. 3. **Inflammation & Healing:** Reinforce the inflammatory phase as a necessary but controlled process in wound healing. 4. **Re-exploration for Abscesses:** Understand the potential for abscess formation following abdominal surgery and the importance of meticulous wound care.",
-    "takeaway": "PLAN: Further education should include a detailed discussion of wound biomechanics, the role of fibroblasts and collagen synthesis in scar formation, and the impact of infection on healing. Case studies illustrating the consequences of excessive tension on incisions would be beneficial. Consider incorporating a practical component – perhaps a simulated incision closure exercise – to reinforce these concepts.",
-    "_src_file": "plastic_surgery.js"
-  },
-  {
+{
     "id": 1208,
     "specialty": "Plastic Surgery",
     "topic": "Comprhensive Surgery Revision conv.docx",
@@ -1106,7 +1072,7 @@ window.QUESTIONS.push(...[
     "takeaway": "PLAN: I recommend a focused review of dendritic cell biology, T-cell receptor diversity, and the mechanisms of allograft rejection.  Consider using flashcards or practice questions specifically targeting the factors that contribute to the intensity of alloimmune responses.  A deeper dive into the role of costimulatory signals during T cell activation would also be beneficial.",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 1213,
     "specialty": "Plastic Surgery",
     "topic": "Comprhensive Surgery Revision conv.docx",
@@ -1138,7 +1104,7 @@ window.QUESTIONS.push(...[
     "takeaway": "PLAN: I recommend a focused review of graft physiology, including the role of the epidermis and dermis, scar tissue formation, and factors influencing graft survival. Case-based discussions focusing on facial reconstruction, burn management, and other common reconstructive scenarios would be beneficial. Further, a review of the principles of wound healing and vascular assessment is warranted.",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 1211,
     "specialty": "Plastic Surgery",
     "topic": "Comprhensive Surgery Revision conv.docx",
@@ -1170,39 +1136,7 @@ window.QUESTIONS.push(...[
     "takeaway": "PLAN: Further review should focus on:  * Current dialysis technology and its impact on patient outcomes. * The immunological factors influencing allograft rejection and long-term survival. * The role of patient comorbidities (diabetes, hypertension, cardiovascular disease) in both dialysis and allograft outcomes. * The principles of shared decision-making in renal replacement therapy.",
     "_src_file": "plastic_surgery.js"
   },
-  {
-    "id": 1202,
-    "specialty": "Plastic Surgery",
-    "topic": "rush.docx",
-    "question": "A 30-year-old man is scheduled for definitive management of his open wounds after undergoing embolectomy and fasciotomies on his left lower extremity. Which of the following statements is true regarding the use of split- and full-thickness skin grafts?",
-    "options": {
-      "A": "A split-thickness skin graft undergoes approximately 40% shrinkage of its surface area immediately after harvesting.",
-      "B": "A full-thickness skin graft undergoes approximately 10% shrinkage of its surface area immediately after harvesting.",
-      "E": "Skin grafts may be exposed to moderate amounts of sunlight without changing pigmentation."
-    },
-    "answer": "A",
-    "explanation": {
-      "correct": "The correct answer (A) accurately reflects the typical shrinkage observed with split-thickness skin grafts (approximately 40%). This shrinkage is a fundamental characteristic driving the graft’s ability to cover a wound. Understanding this shrinkage is crucial for accurate wound bed assessment and graft sizing. The other options are incorrect.",
-      "A": "",
-      "B": "",
-      "C": "",
-      "D": "",
-      "E": ""
-    },
-    "sharp": {
-      "status": "ACCEPT",
-      "verified_answer": "A",
-      "set_the_stage": "This question assesses understanding of skin graft shrinkage, a critical factor in graft selection and management, particularly in complex wounds like those following embolectomy and fasciotomy. The patient’s history of extensive tissue damage necessitates careful consideration of graft options to achieve optimal coverage and minimize complications.",
-      "highlight_excellence": "The correct answer (A) accurately reflects the typical shrinkage observed with split-thickness skin grafts (approximately 40%). This shrinkage is a fundamental characteristic driving the graft’s ability to cover a wound. Understanding this shrinkage is crucial for accurate wound bed assessment and graft sizing. The other options are incorrect.",
-      "address_gaps": "Several areas represent gaps in understanding. Firstly, the question’s options are somewhat simplistic and don’t fully capture the nuances of graft shrinkage and its relationship to wound bed preparation. Secondly, the provided answer key (D) is incorrect. A more comprehensive understanding of graft types and their shrinkage profiles is needed.  Specifically, the student needs to understand that full-thickness grafts shrink less than split-thickness grafts.",
-      "review_guidelines": "1. **Graft Types & Shrinkage:** Reinforce the differences in shrinkage between split-thickness (STSG) and full-thickness (FTSG) skin grafts.  STSG typically shrinks 40-60% immediately post-harvest, while FTSG shrinks approximately 10-20%. This is due to the different collagen fiber depths and cellularity. 2. **Wound Bed Preparation:** Emphasize the importance of a meticulously prepared wound bed – debrided, granulation tissue, and appropriate moisture balance – to maximize graft take. 3. **Graft Sizing:**  Accurate graft sizing is paramount, considering the expected shrinkage. 4. **Post-operative Care:**  Discuss the importance of protecting grafts from excessive sunlight, which can cause hyperpigmentation, and maintaining a moist wound environment.",
-      "plan": "1. **Case Discussion:** Present similar case scenarios involving complex wounds and discuss the rationale for choosing between STSGs and FTSGs based on wound characteristics, patient factors, and desired cosmetic outcome. 2. **Simulation/Lab Exercise:** Utilize simulated wounds to demonstrate graft harvesting and application, highlighting shrinkage and its impact on coverage. 3. **Review Anatomy & Physiology:** Reinforce the understanding of skin structure, collagen fiber arrangement, and cellular response to injury, relating this to graft behavior."
-    },
-    "guideline": "1. **Graft Types & Shrinkage:** Reinforce the differences in shrinkage between split-thickness (STSG) and full-thickness (FTSG) skin grafts.  STSG typically shrinks 40-60% immediately post-harvest, while FTSG shrinks approximately 10-20%. This is due to the different collagen fiber depths and cellularity. 2. **Wound Bed Preparation:** Emphasize the importance of a meticulously prepared wound bed – debrided, granulation tissue, and appropriate moisture balance – to maximize graft take. 3. **Graft Sizing:**  Accurate graft sizing is paramount, considering the expected shrinkage. 4. **Post-operative Care:**  Discuss the importance of protecting grafts from excessive sunlight, which can cause hyperpigmentation, and maintaining a moist wound environment.",
-    "takeaway": "PLAN: 1. **Case Discussion:** Present similar case scenarios involving complex wounds and discuss the rationale for choosing between STSGs and FTSGs based on wound characteristics, patient factors, and desired cosmetic outcome. 2. **Simulation/Lab Exercise:** Utilize simulated wounds to demonstrate graft harvesting and application, highlighting shrinkage and its impact on coverage. 3. **Review Anatomy & Physiology:** Reinforce the understanding of skin structure, collagen fiber arrangement, and cellular response to injury, relating this to graft behavior.",
-    "_src_file": "plastic_surgery.js"
-  },
-  {
+{
     "id": 1204,
     "specialty": "Plastic Surgery",
     "topic": "Surgical Oncology",
@@ -1235,7 +1169,7 @@ window.QUESTIONS.push(...[
     "visualization": "A dark, asymmetrical lesion with irregular borders and varied colors (black, blue, red) on the sun-exposed shoulder of a young patient.",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 30,
     "specialty": "Plastic Surgery",
     "topic": "Wound Care & Grafts",
@@ -1270,40 +1204,7 @@ window.QUESTIONS.push(...[
     "visualization": "A thin, meshed STSG expanding like a fishnet over a large burn vs. a smooth, perfectly matched patch of FTSG placed seamlessly onto the nose.",
     "_src_file": "plastic_surgery.js"
   },
-  {
-    "id": 90666,
-    "specialty": "Plastic Surgery",
-    "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
-    "question": "With regards to anticoagulants in microsurgery:",
-    "options": {
-      "A": "Heparin and antithrombin III have similar mechanisms of action.",
-      "B": "Unfractionated and fractionated heparins have different proportions of anti-Factor Xa and antithrombin activity.",
-      "C": "Heparin-induced thrombocytopenia is a more frequent complication of unfractionated prophylactic heparin than of fractionated prophylactic heparin use.",
-      "D": "The antiplatelet drug aspirin is contraindicated in patients younger than 16 years of age."
-    },
-    "answer": "A",
-    "explanation": {
-      "correct": "Best answer: A Heparin and antithrombin III have similar mechanisms of action.",
-      "A": "",
-      "B": "",
-      "C": "",
-      "D": "",
-      "E": ""
-    },
-    "sharp": {
-      "set_the_stage": "With regards to anticoagulants in microsurgery:",
-      "highlight_excellence": "Best answer: A Heparin and antithrombin III have similar mechanisms of action.",
-      "address_gaps": "Discard distractors that do not fit the stem.",
-      "review_learning_points": "Focus on the main exam pearl behind the answer.",
-      "plan": "Memorize the key takeaway for revision.",
-      "plan_for_improvement": "Memorize the key takeaway for revision."
-    },
-    "guideline": "",
-    "takeaway": "Heparin and antithrombin III have similar mechanisms of action.",
-    "visualization": "",
-    "_src_file": "plastic_surgery.js"
-  },
-  {
+{
     "id": 90667,
     "specialty": "Plastic Surgery",
     "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
@@ -1336,7 +1237,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 90668,
     "specialty": "Plastic Surgery",
     "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
@@ -1369,7 +1270,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 90669,
     "specialty": "Plastic Surgery",
     "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
@@ -1402,7 +1303,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 90670,
     "specialty": "Plastic Surgery",
     "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
@@ -1435,7 +1336,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 90671,
     "specialty": "Plastic Surgery",
     "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
@@ -1468,7 +1369,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 90672,
     "specialty": "Plastic Surgery",
     "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
@@ -1501,7 +1402,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 90673,
     "specialty": "Plastic Surgery",
     "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
@@ -1534,7 +1435,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 90674,
     "specialty": "Plastic Surgery",
     "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
@@ -1567,7 +1468,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 90675,
     "specialty": "Plastic Surgery",
     "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
@@ -1600,7 +1501,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 90676,
     "specialty": "Plastic Surgery",
     "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
@@ -1633,7 +1534,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 90677,
     "specialty": "Plastic Surgery",
     "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
@@ -1666,7 +1567,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 90678,
     "specialty": "Plastic Surgery",
     "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
@@ -1699,7 +1600,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 90679,
     "specialty": "Plastic Surgery",
     "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
@@ -1732,7 +1633,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 90680,
     "specialty": "Plastic Surgery",
     "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
@@ -1765,7 +1666,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 90681,
     "specialty": "Plastic Surgery",
     "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
@@ -1798,7 +1699,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 90682,
     "specialty": "Plastic Surgery",
     "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
@@ -1831,7 +1732,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 90683,
     "specialty": "Plastic Surgery",
     "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
@@ -1864,7 +1765,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 90684,
     "specialty": "Plastic Surgery",
     "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
@@ -1897,7 +1798,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 90685,
     "specialty": "Plastic Surgery",
     "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
@@ -1930,7 +1831,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 90687,
     "specialty": "Plastic Surgery",
     "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
@@ -1963,7 +1864,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 90688,
     "specialty": "Plastic Surgery",
     "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
@@ -1996,7 +1897,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 90689,
     "specialty": "Plastic Surgery",
     "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
@@ -2029,7 +1930,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 90690,
     "specialty": "Plastic Surgery",
     "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
@@ -2062,7 +1963,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 90691,
     "specialty": "Plastic Surgery",
     "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
@@ -2095,7 +1996,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 90692,
     "specialty": "Plastic Surgery",
     "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
@@ -2128,7 +2029,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 90693,
     "specialty": "Plastic Surgery",
     "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
@@ -2161,7 +2062,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 90694,
     "specialty": "Plastic Surgery",
     "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
@@ -2194,7 +2095,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 90695,
     "specialty": "Plastic Surgery",
     "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
@@ -2227,7 +2128,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 90696,
     "specialty": "Plastic Surgery",
     "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
@@ -2260,7 +2161,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 90697,
     "specialty": "Plastic Surgery",
     "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
@@ -2293,7 +2194,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 90698,
     "specialty": "Plastic Surgery",
     "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
@@ -2326,7 +2227,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 90699,
     "specialty": "Plastic Surgery",
     "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
@@ -2359,7 +2260,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 90700,
     "specialty": "Plastic Surgery",
     "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
@@ -2392,7 +2293,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 90701,
     "specialty": "Plastic Surgery",
     "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
@@ -2425,7 +2326,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 90702,
     "specialty": "Plastic Surgery",
     "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
@@ -2458,7 +2359,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 90703,
     "specialty": "Plastic Surgery",
     "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
@@ -2491,7 +2392,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 90704,
     "specialty": "Plastic Surgery",
     "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
@@ -2524,7 +2425,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 90705,
     "specialty": "Plastic Surgery",
     "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
@@ -2557,7 +2458,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 90706,
     "specialty": "Plastic Surgery",
     "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
@@ -2590,7 +2491,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 90707,
     "specialty": "Plastic Surgery",
     "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
@@ -2623,7 +2524,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 90708,
     "specialty": "Plastic Surgery",
     "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
@@ -2656,7 +2557,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 90709,
     "specialty": "Plastic Surgery",
     "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
@@ -2689,7 +2590,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 90710,
     "specialty": "Plastic Surgery",
     "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
@@ -2722,7 +2623,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 90711,
     "specialty": "Plastic Surgery",
     "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
@@ -2755,7 +2656,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 90712,
     "specialty": "Plastic Surgery",
     "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
@@ -2788,7 +2689,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 90713,
     "specialty": "Plastic Surgery",
     "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
@@ -2821,7 +2722,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 90714,
     "specialty": "Plastic Surgery",
     "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
@@ -2854,7 +2755,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 90715,
     "specialty": "Plastic Surgery",
     "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
@@ -2887,7 +2788,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 90716,
     "specialty": "Plastic Surgery",
     "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
@@ -2920,7 +2821,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 90717,
     "specialty": "Plastic Surgery",
     "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
@@ -2953,7 +2854,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 90718,
     "specialty": "Plastic Surgery",
     "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
@@ -2986,7 +2887,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 90719,
     "specialty": "Plastic Surgery",
     "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
@@ -3019,7 +2920,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 90720,
     "specialty": "Plastic Surgery",
     "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
@@ -3052,7 +2953,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 90721,
     "specialty": "Plastic Surgery",
     "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
@@ -3085,7 +2986,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 90722,
     "specialty": "Plastic Surgery",
     "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
@@ -3118,7 +3019,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 90723,
     "specialty": "Plastic Surgery",
     "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
@@ -3151,7 +3052,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 90724,
     "specialty": "Plastic Surgery",
     "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
@@ -3184,7 +3085,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 90725,
     "specialty": "Plastic Surgery",
     "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
@@ -3217,7 +3118,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 90726,
     "specialty": "Plastic Surgery",
     "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
@@ -3250,7 +3151,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 90727,
     "specialty": "Plastic Surgery",
     "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
@@ -3283,7 +3184,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 90728,
     "specialty": "Plastic Surgery",
     "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
@@ -3316,7 +3217,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 90729,
     "specialty": "Plastic Surgery",
     "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
@@ -3349,7 +3250,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 90730,
     "specialty": "Plastic Surgery",
     "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
@@ -3382,7 +3283,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 90731,
     "specialty": "Plastic Surgery",
     "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
@@ -3415,7 +3316,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 90732,
     "specialty": "Plastic Surgery",
     "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
@@ -3448,7 +3349,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 90733,
     "specialty": "Plastic Surgery",
     "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
@@ -3481,7 +3382,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 90734,
     "specialty": "Plastic Surgery",
     "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
@@ -3514,7 +3415,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 90735,
     "specialty": "Plastic Surgery",
     "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
@@ -3547,7 +3448,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 90736,
     "specialty": "Plastic Surgery",
     "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
@@ -3580,7 +3481,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 90737,
     "specialty": "Plastic Surgery",
     "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
@@ -3613,40 +3514,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "plastic_surgery.js"
   },
-  {
-    "id": 90738,
-    "specialty": "Plastic Surgery",
-    "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
-    "question": "Which of the following statements is correct?",
-    "options": {
-      "A": "The hamstring muscles include semimembranosus, semitendinosus and gracilis.",
-      "B": "The dominant action of biceps femoris is to flex the hip joint.",
-      "C": "The sciatic nerve is accessible in the angle between the lower border of gluteus maximus and the medial border of the long head of biceps femoris.",
-      "D": "All but one of the motor branches of the sciatic nerve arises from its medial side, making the lateral side the safest side to dissect along."
-    },
-    "answer": "A",
-    "explanation": {
-      "correct": "Best answer: A The hamstring muscles include semimembranosus, semitendinosus and gracilis.",
-      "A": "",
-      "B": "",
-      "C": "",
-      "D": "",
-      "E": ""
-    },
-    "sharp": {
-      "set_the_stage": "Which of the following statements is correct?",
-      "highlight_excellence": "Best answer: A The hamstring muscles include semimembranosus, semitendinosus and gracilis.",
-      "address_gaps": "Discard distractors that do not fit the stem.",
-      "review_learning_points": "Focus on the main exam pearl behind the answer.",
-      "plan": "Memorize the key takeaway for revision.",
-      "plan_for_improvement": "Memorize the key takeaway for revision."
-    },
-    "guideline": "",
-    "takeaway": "The hamstring muscles include semimembranosus, semitendinosus and gracilis.",
-    "visualization": "",
-    "_src_file": "plastic_surgery.js"
-  },
-  {
+{
     "id": 90739,
     "specialty": "Plastic Surgery",
     "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
@@ -3679,7 +3547,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 90740,
     "specialty": "Plastic Surgery",
     "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
@@ -3712,7 +3580,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 90741,
     "specialty": "Plastic Surgery",
     "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
@@ -3745,7 +3613,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 90742,
     "specialty": "Plastic Surgery",
     "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
@@ -3778,7 +3646,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 90743,
     "specialty": "Plastic Surgery",
     "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
@@ -3811,7 +3679,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 90744,
     "specialty": "Plastic Surgery",
     "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
@@ -3844,7 +3712,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 90745,
     "specialty": "Plastic Surgery",
     "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
@@ -3877,7 +3745,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 90746,
     "specialty": "Plastic Surgery",
     "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
@@ -3910,7 +3778,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 90747,
     "specialty": "Plastic Surgery",
     "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
@@ -3943,7 +3811,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 90748,
     "specialty": "Plastic Surgery",
     "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
@@ -3976,7 +3844,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 90749,
     "specialty": "Plastic Surgery",
     "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
@@ -4009,7 +3877,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 90750,
     "specialty": "Plastic Surgery",
     "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
@@ -4042,7 +3910,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 90751,
     "specialty": "Plastic Surgery",
     "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
@@ -4075,7 +3943,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 90752,
     "specialty": "Plastic Surgery",
     "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
@@ -4108,7 +3976,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "plastic_surgery.js"
   },
-  {
+{
     "id": 90753,
     "specialty": "Plastic Surgery",
     "topic": "multiple_choice_questions_in_plastic_surgery_shokrollahi_kayvan conv.docx",
@@ -4140,44 +4008,7 @@ window.QUESTIONS.push(...[
     "takeaway": "Sun Lee’s portocaval shunt operation in the rat was the first published procedure initiating the development of experimental microsurgery.",
     "visualization": "",
     "_src_file": "plastic_surgery.js"
-  }
-]
-,
-{
-  "id": 1696,
-  "specialty": "Plastic Surgery",
-  "topic": "Thefollowingarehistopathologicalterms correctly matched with their meanings:",
-  "question": "Thefollowingarehistopathologicalterms correctly matched with their meanings:",
-  "options": {
-    "A": "Parakeratosis: where nucleated cells are found in the superficial epidermis.",
-    "B": "Maturation: where naevocellular naevi become more superficially cited in the epidermis.",
-    "C": "Peripheral pallisading: a feature of poorly differentiated squamous carcinoma.",
-    "D": "Erythroplakia - red lesions of the oral mucosa. E.Leukoplakia - white lesions of the oral mucosa."
   },
-  "answer": "A",
-  "explanation": {
-    "correct": "Parakeratosis: where nucleated cells are found in the superficial epidermis.",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "Thefollowingarehistopathologicalterms correctly matched with their meanings:",
-    "H_highlight_excellence": "Parakeratosis: where nucleated cells are found in the superficial epidermis.",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "BSSH / reconstructive principles",
-    "P_plan_for_improvement": "Parakeratosis: where nucleated cells are found in the superficial epidermis"
-  },
-  "supplementary_callouts": {
-    "guideline": "BSSH / reconstructive principles",
-    "takeaway": "Parakeratosis: where nucleated cells are found in the superficial epidermis",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
 {
   "id": 1667,
   "specialty": "Plastic Surgery",
@@ -4211,708 +4042,7 @@ window.QUESTIONS.push(...[
     "visualization": ""
   },
   "discrepancy_flag": ""
-}
-,
-{
-  "id": 1671,
-  "specialty": "Plastic Surgery",
-  "topic": "Basic principles and basic science 38Interleukin-1 (IL-1) is released from:",
-  "question": "Basic principles and basic science 38Interleukin-1 (IL-1) is released from:",
-  "options": {
-    "A": "The posterior radial collateral artery. B.The anterior radial collateral artery. C.The posterior ulnar collateral artery. D.The anterior ulnar collateral artery. E.The lateral circumflex humeral artery.",
-    "B": "The nuclei and cytoplasm decrease in size.",
-    "C": "Sebaceous gland content increases D.The dermis gradually thins.",
-    "D": "The presence of subendothelial damage will cause anastomotic thrombosis and failure."
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "The posterior radial collateral artery. B.The anterior radial collateral artery. C.The posterior ulnar collateral artery. D.The anterior ulnar",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "Basic principles and basic science 38Interleukin-1 (IL-1) is released from:",
-    "H_highlight_excellence": "The posterior radial collateral artery. B.The anterior radial collateral artery. C.The posterior ulnar collateral artery. D.The anterior ulnar",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "BSSH / reconstructive principles",
-    "P_plan_for_improvement": "The posterior radial collateral artery"
-  },
-  "supplementary_callouts": {
-    "guideline": "BSSH / reconstructive principles",
-    "takeaway": "The posterior radial collateral artery",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 1655,
-  "specialty": "Plastic Surgery",
-  "topic": "35A 43-year-old woman has a pinpoint area of tenderness at the base",
-  "question": "35A 43-year-old woman has a pinpoint area of tenderness at the base of the nail of the left ring finger. The area is painful to touch and sensitive to cold. Physical examination of the finger shows a deformity of the nail plate. Which of the following is the most likely diagnosis?",
-  "options": {
-    "A": "May present as Dupuytren\u2019s disease. B.May mimic infection.",
-    "B": "Embryonic rest.",
-    "C": "May mimic melanoma.",
-    "D": "Spreads to lymph nodes."
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "May present as Dupuytren\u2019s disease. B.May mimic infection.",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "35A 43-year-old woman has a pinpoint area of tenderness at the base",
-    "H_highlight_excellence": "May present as Dupuytren\u2019s disease. B.May mimic infection.",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "BSSH / reconstructive principles",
-    "P_plan_for_improvement": "May present as Dupuytren\u2019s disease"
-  },
-  "supplementary_callouts": {
-    "guideline": "BSSH / reconstructive principles",
-    "takeaway": "May present as Dupuytren\u2019s disease",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 1681,
-  "specialty": "Plastic Surgery",
-  "topic": "Paediatric plastic surgery 21Microtia is associated with all except:",
-  "question": "Paediatric plastic surgery 21Microtia is associated with all except:",
-  "options": {
-    "A": "Is a congenital defect of the primary palate posterior to the incisive foramen.",
-    "B": "Is a congenital defect of the hard palate anterior to the incisive foramen.",
-    "C": "Can occur as submucous clefts which often present only with speech abnormalities.",
-    "D": "Is twice as common in males."
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "Is a congenital defect of the primary palate posterior to the incisive foramen.",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "Paediatric plastic surgery 21Microtia is associated with all except:",
-    "H_highlight_excellence": "Is a congenital defect of the primary palate posterior to the incisive foramen.",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "BSSH / reconstructive principles",
-    "P_plan_for_improvement": "Is a congenital defect of the primary palate posterior to the incisive foramen"
-  },
-  "supplementary_callouts": {
-    "guideline": "BSSH / reconstructive principles",
-    "takeaway": "Is a congenital defect of the primary palate posterior to the incisive foramen",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 1649,
-  "specialty": "Plastic Surgery",
-  "topic": "27With respect to paediatric burns which of the following is true?",
-  "question": "27With respect to paediatric burns which of the following is true?",
-  "options": {
-    "A": "The lateral head of gastrocnemius is larger than the medial head. B.Use of the medial head of gastrocnemius leads to a significant functional deficit",
-    "B": "The technique of tangential excision was published by Janzekovic in 1970.",
-    "C": "Use of a proximally based soleus flap leads to a significant functional deficit.",
-    "D": "Scoring of the fascia of gastrocnemius can allow the flap to cover a larger area."
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "The lateral head of gastrocnemius is larger than the medial head. B.Use of the medial head of gastrocnemius",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "27With respect to paediatric burns which of the following is true?",
-    "H_highlight_excellence": "The lateral head of gastrocnemius is larger than the medial head. B.Use of the medial head of gastrocnemius",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "BSSH / reconstructive principles",
-    "P_plan_for_improvement": "The lateral head of gastrocnemius is larger than the medial head"
-  },
-  "supplementary_callouts": {
-    "guideline": "BSSH / reconstructive principles",
-    "takeaway": "The lateral head of gastrocnemius is larger than the medial head",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 1680,
-  "specialty": "Plastic Surgery",
-  "topic": "Paediatric plastic surgery",
-  "question": "Paediatric plastic surgery",
-  "options": {
-    "A": "Should ensure the antihelix marginally projects more than the helix. B.Can often be corrected with splitage at 2-3 years of age.",
-    "B": "The von Langenbeck technique involves raising a unipedicled flap. C.Intravelar veloplasty involves repair of the nasal mucosa.",
-    "C": "Is best undertaken at age 5.",
-    "D": "Using the Mustard\u00e9 and Chongchet (anterior scoring) techniques were both described in 1963 in the British Journal of Plastic Surgery."
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "Should ensure the antihelix marginally projects more than the helix. B.Can often be corrected with splitage at 2-3",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "Paediatric plastic surgery",
-    "H_highlight_excellence": "Should ensure the antihelix marginally projects more than the helix. B.Can often be corrected with splitage at 2-3",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "BSSH / reconstructive principles",
-    "P_plan_for_improvement": "Should ensure the antihelix marginally projects more than the helix"
-  },
-  "supplementary_callouts": {
-    "guideline": "BSSH / reconstructive principles",
-    "takeaway": "Should ensure the antihelix marginally projects more than the helix",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 1626,
-  "specialty": "Plastic Surgery",
-  "topic": "11Regarding hemifacial atrophy, which is correct?",
-  "question": "11Regarding hemifacial atrophy, which is correct?",
-  "options": {
-    "A": "Flip-flap (Mathieu) repair is a two-stage repair.",
-    "B": "Meatal advancement with glanuloplasty incorporated (MAGPI) and Snodgrass (tubularised incised plate [TIP]) repairs are BOTH single-stage repairs.",
-    "C": "Full thickness skin grafts must come from the buccal mucosa. D.Homan\u2019s test is critical before commencing surgery.",
-    "D": "Should be treated surgically within 6 months of diagnosis."
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "Flip-flap (Mathieu) repair is a two-stage repair.",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "11Regarding hemifacial atrophy, which is correct?",
-    "H_highlight_excellence": "Flip-flap (Mathieu) repair is a two-stage repair.",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "BSSH / reconstructive principles",
-    "P_plan_for_improvement": "Flip-flap (Mathieu) repair is a two-stage repair"
-  },
-  "supplementary_callouts": {
-    "guideline": "BSSH / reconstructive principles",
-    "takeaway": "Flip-flap (Mathieu) repair is a two-stage repair",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 1643,
-  "specialty": "Plastic Surgery",
-  "topic": "23With regards to forearm fasciotomies, which one149 is true?",
-  "question": "23With regards to forearm fasciotomies, which one149 is true?",
-  "options": {
-    "A": "A single, straight-line incision all the way along the ulnar and volar aspect of the forearm is a well-recognised approach for the volar fasciotomy.",
-    "B": "Mannitol must be used adjunctively because the risk of disabling contracture is so high.",
-    "C": "It is not possible to decompress both the carpal tunnel and Guyon\u2019s canal through the same palmar incision.",
-    "D": "Hyperbaric oxygen should never be used. E.None of the above is true."
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "A single, straight-line incision all the way along the ulnar and volar aspect of the forearm is a",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "23With regards to forearm fasciotomies, which one149 is true?",
-    "H_highlight_excellence": "A single, straight-line incision all the way along the ulnar and volar aspect of the forearm is a",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "BSSH / reconstructive principles",
-    "P_plan_for_improvement": "A single, straight-line incision all the way along the ulnar and volar aspect of the forearm"
-  },
-  "supplementary_callouts": {
-    "guideline": "BSSH / reconstructive principles",
-    "takeaway": "A single, straight-line incision all the way along the ulnar and volar aspect of the forearm is a",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 1676,
-  "specialty": "Plastic Surgery",
-  "topic": "Hypoplastic thumbs Type II of the Blauth classification can be treated successfully",
-  "question": "Hypoplastic thumbs Type II of the Blauth classification can be treated successfully by:",
-  "options": {
-    "A": "Releasing the contracted first web space, reconstruction of the ulnar collateral ligament, transposition flap to release the first web space, a full thickness skin graft and opponensplasty.",
-    "B": "Releasing the contracted first web space, reconstruction of the radial collateral ligament, transposition flap to release the first web space, a full thickness skin graft and opponensplasty.",
-    "C": "Amputation of the hypoplastic thumb and pollicisation of the index finger with use of a full thickness skin graft.",
-    "D": "Amputation of the hypoplastic thumb and pollicisation of the small finger with a split thickness skin graft."
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "Releasing the contracted first web space, reconstruction of the ulnar collateral ligament, transposition flap to release the first",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "Hypoplastic thumbs Type II of the Blauth classification can be treated successfully",
-    "H_highlight_excellence": "Releasing the contracted first web space, reconstruction of the ulnar collateral ligament, transposition flap to release the first",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "BSSH / reconstructive principles",
-    "P_plan_for_improvement": "Releasing the contracted first web space, reconstruction of the ulnar collateral ligament, transposition flap to release"
-  },
-  "supplementary_callouts": {
-    "guideline": "BSSH / reconstructive principles",
-    "takeaway": "Releasing the contracted first web space, reconstruction of the ulnar collateral ligament, transposition flap to release the first",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 1631,
-  "specialty": "Plastic Surgery",
-  "topic": "14Which one of the following statements do you think would have the",
-  "question": "14Which one of the following statements do you think would have the greatest consensus support from a panel of international burns experts?",
-  "options": {
-    "A": "Following a deep head and neck burn with loss of the ear and an extensive peri-auricular scar it is possible to use tissue expansion in combination with a superficial temporoparietal fascial turnover flap to create a reasonable ear reconstruction.",
-    "B": "When both upper and lower eyelids are involved in a scar, the lower lid should be replaced with a full thickness graft as it has less mobility and acts like a dam, while the upper lid is very mobile and a 146thin, split thickness graft should be used.",
-    "C": "Following deep perineal burns in the very young male child it may be more appropriate to consider gender reassignment than attempt genital reconstruction which is fraught with difficulties.",
-    "D": "The greatest challenge of the complex post-burn reconstruction is to match the reconstructive need with the potential donor tissue as every patient has a different pattern of scarring and deformity."
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "Following a deep head and neck burn with loss of the ear and an extensive peri-auricular scar it",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "14Which one of the following statements do you think would have the",
-    "H_highlight_excellence": "Following a deep head and neck burn with loss of the ear and an extensive peri-auricular scar it",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "BSSH / reconstructive principles",
-    "P_plan_for_improvement": "Following a deep head and neck burn with loss of the ear and an extensive peri-auricular"
-  },
-  "supplementary_callouts": {
-    "guideline": "BSSH / reconstructive principles",
-    "takeaway": "Following a deep head and neck burn with loss of the ear and an extensive peri-auricular scar it",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 1707,
-  "specialty": "Plastic Surgery",
-  "topic": "is correctly attributed?",
-  "question": "is correctly attributed?",
-  "options": {
-    "A": "The thickness of the dermis increases as the skin is expanded. B.The mitotic rate of skin stays static during expansion.",
-    "B": "Next day wound check and discharge.",
-    "C": "The thickness of the epidermis tends to increase. D.The stratum lucidum thickens by at least 75%.",
-    "D": "Winter (1962, Nature) - moist wounds heal better. E.Penn (1955) - ideal breast measurements. Multiple Choice Questions in Plastic Surgery 28The following is the appropriate treatment postoperatively for patients with split skin grafts to the lower limb:"
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "The thickness of the dermis increases as the skin is expanded. B.The mitotic rate of skin stays static",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "is correctly attributed?",
-    "H_highlight_excellence": "The thickness of the dermis increases as the skin is expanded. B.The mitotic rate of skin stays static",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "BSSH / reconstructive principles",
-    "P_plan_for_improvement": "The thickness of the dermis increases as the skin is expanded"
-  },
-  "supplementary_callouts": {
-    "guideline": "BSSH / reconstructive principles",
-    "takeaway": "The thickness of the dermis increases as the skin is expanded",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 1638,
-  "specialty": "Plastic Surgery",
-  "topic": "20Which one of the following statements regarding autologous breast reconstruction is incorrect?",
-  "question": "20Which one of the following statements regarding autologous breast reconstruction is incorrect?",
-  "options": {
-    "A": "Tissue expanders do not work well for irradiated chest wall breast reconstructions.",
-    "B": "The nipple must always be resected in cases of invasive breast cancer at less than 2.5cm of the areola.",
-    "C": "Primaryreconstructionisusuallybetterthansecondary reconstruction.",
-    "D": "Skin-sparing mastectomy yields more local recurrences."
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "Tissue expanders do not work well for irradiated chest wall breast reconstructions.",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "20Which one of the following statements regarding autologous breast reconstruction is incorrect?",
-    "H_highlight_excellence": "Tissue expanders do not work well for irradiated chest wall breast reconstructions.",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "BSSH / reconstructive principles",
-    "P_plan_for_improvement": "Tissue expanders do not work well for irradiated chest wall breast reconstructions"
-  },
-  "supplementary_callouts": {
-    "guideline": "BSSH / reconstructive principles",
-    "takeaway": "Tissue expanders do not work well for irradiated chest wall breast reconstructions",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 1661,
-  "specialty": "Plastic Surgery",
-  "topic": "49Which of the following statements is false regarding face transplantation?",
-  "question": "49Which of the following statements is false regarding face transplantation?",
-  "options": {
-    "A": "The composite flap could be based on the superficial temporal artery.",
-    "B": "The composite flap could be based on the facial artery.",
-    "C": "Tacrolimus has shown promising results in experimental studies linking it to faster neural regrowth.",
-    "D": "Partial face transplants have been performed in France, USA and China."
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "The composite flap could be based on the superficial temporal artery.",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "49Which of the following statements is false regarding face transplantation?",
-    "H_highlight_excellence": "The composite flap could be based on the superficial temporal artery.",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "BSSH / reconstructive principles",
-    "P_plan_for_improvement": "The composite flap could be based on the superficial temporal artery"
-  },
-  "supplementary_callouts": {
-    "guideline": "BSSH / reconstructive principles",
-    "takeaway": "The composite flap could be based on the superficial temporal artery",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 1688,
-  "specialty": "Plastic Surgery",
-  "topic": "Reconstructive head and neck surgery 36The male ear (choose 2):",
-  "question": "Reconstructive head and neck surgery 36The male ear (choose 2):",
-  "options": {
-    "A": "Infant - thyroglossal duct cyst - most frequent.",
-    "B": "Adolescent - thyroglossal duct cyst - most frequent. C.Adult - thyroglossal duct cyst - most frequent.",
-    "C": "Chondrodermatitis. D.Basal cell carcinoma. E.Gouty tophus. 39The following cystic tumours of the neck are not appropriately matched to their frequency of occurrence and age of occurrence:",
-    "D": "Adult - cervical thymic cyst - very uncommon."
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "Infant - thyroglossal duct cyst - most frequent.",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "Reconstructive head and neck surgery 36The male ear (choose 2):",
-    "H_highlight_excellence": "Infant - thyroglossal duct cyst - most frequent.",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "BSSH / reconstructive principles",
-    "P_plan_for_improvement": "Infant - thyroglossal duct cyst - most frequent"
-  },
-  "supplementary_callouts": {
-    "guideline": "BSSH / reconstructive principles",
-    "takeaway": "Infant - thyroglossal duct cyst - most frequent",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 1623,
-  "specialty": "Plastic Surgery",
-  "topic": "10Whenconsideringextensiveburnscarring restricting movement of all joints of both upper limbs, which should",
-  "question": "10Whenconsideringextensiveburnscarring restricting movement of all joints of both upper limbs, which should be the order of priority for surgical release?",
-  "options": {
-    "A": "Gross mobility of the tooth. B.Root fracture.",
-    "B": "The most severely deformed hand should be treated first, irrespective of dominance.",
-    "C": "Exposed apices. D.None of the above. E.All of the above.",
-    "D": "The axilla of the dominant hand should be treated first."
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "Gross mobility of the tooth. B.Root fracture.",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "10Whenconsideringextensiveburnscarring restricting movement of all joints of both upper limbs, which should",
-    "H_highlight_excellence": "Gross mobility of the tooth. B.Root fracture.",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "BSSH / reconstructive principles",
-    "P_plan_for_improvement": "Gross mobility of the tooth"
-  },
-  "supplementary_callouts": {
-    "guideline": "BSSH / reconstructive principles",
-    "takeaway": "Gross mobility of the tooth",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 1646,
-  "specialty": "Plastic Surgery",
-  "topic": "24With respect to sentinel lymph node biopsy in melanoma, which is the",
-  "question": "24With respect to sentinel lymph node biopsy in melanoma, which is the best answer?",
-  "options": {
-    "A": "The axillary vein lies lateral to the axillary artery.",
-    "B": "The average number of lymph nodes in each axilla is between 70 and 80.",
-    "C": "Tributaries of the axillary vein should all be divided.",
-    "D": "The thoracodorsal artery must be sacrificed to allow clearance of level 3 nodes."
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "The axillary vein lies lateral to the axillary artery.",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "24With respect to sentinel lymph node biopsy in melanoma, which is the",
-    "H_highlight_excellence": "The axillary vein lies lateral to the axillary artery.",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "BSSH / reconstructive principles",
-    "P_plan_for_improvement": "The axillary vein lies lateral to the axillary artery"
-  },
-  "supplementary_callouts": {
-    "guideline": "BSSH / reconstructive principles",
-    "takeaway": "The axillary vein lies lateral to the axillary artery",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 1694,
-  "specialty": "Plastic Surgery",
-  "topic": "The palmar aponeurosis:",
-  "question": "The palmar aponeurosis:",
-  "options": {
-    "A": "Single extremity involvement. B.Stiff elbow.",
-    "B": "Is inserted into the flexor digitorum profundus tendons.",
-    "C": "Stiff shoulder. D.Stiff fingers. E.Absent thumb.",
-    "D": "Is inserted mainly into the bases of the proximal phalanges and the flexor sheaths."
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "Single extremity involvement. B.Stiff elbow.",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "The palmar aponeurosis:",
-    "H_highlight_excellence": "Single extremity involvement. B.Stiff elbow.",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "BSSH / reconstructive principles",
-    "P_plan_for_improvement": "Single extremity involvement"
-  },
-  "supplementary_callouts": {
-    "guideline": "BSSH / reconstructive principles",
-    "takeaway": "Single extremity involvement",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 1700,
-  "specialty": "Plastic Surgery",
-  "topic": "Which of the following is incorrect about cutaneous squamous cell carcinoma?",
-  "question": "Which of the following is incorrect about cutaneous squamous cell carcinoma?",
-  "options": {
-    "A": "It is more common than BCC.",
-    "B": "It has a higher metastatic rate than BCC.",
-    "C": "It has an increased incidence in the immunosuppressed.",
-    "D": "SCC of the lip has a higher metastatic rate to lymph nodes."
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "It is more common than BCC.",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "Which of the following is incorrect about cutaneous squamous cell carcinoma?",
-    "H_highlight_excellence": "It is more common than BCC.",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "BSSH / reconstructive principles",
-    "P_plan_for_improvement": "It is more common than BCC"
-  },
-  "supplementary_callouts": {
-    "guideline": "BSSH / reconstructive principles",
-    "takeaway": "It is more common than BCC",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 1641,
-  "specialty": "Plastic Surgery",
-  "topic": "22In the finger, what is the usual relationship of the digital nerve",
-  "question": "22In the finger, what is the usual relationship of the digital nerve to the digital artery?",
-  "options": {
-    "A": "Elbow pain and stiffness of all digits.",
-    "B": "Night pain and delayed union of the callus. C.Pin tract infection.",
-    "C": "Brown pigment of the skin. D.Kidney malformation.",
-    "D": "A and C."
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "Elbow pain and stiffness of all digits.",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "22In the finger, what is the usual relationship of the digital nerve",
-    "H_highlight_excellence": "Elbow pain and stiffness of all digits.",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "BSSH / reconstructive principles",
-    "P_plan_for_improvement": "Elbow pain and stiffness of all digits"
-  },
-  "supplementary_callouts": {
-    "guideline": "BSSH / reconstructive principles",
-    "takeaway": "Elbow pain and stiffness of all digits",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 1662,
-  "specialty": "Plastic Surgery",
-  "topic": "50Which one of fundamental procedures? the following is experimental true regarding microsurgical",
-  "question": "50Which one of fundamental procedures? the following is experimental true regarding microsurgical",
-  "options": {
-    "A": "Sun Lee\u2019s portocaval shunt operation in the rat was the first published procedure initiating the development of experimental microsurgery.",
-    "B": "Kidney transplantation in a rat was the first published experimental microsurgical procedure.",
-    "C": "Anastomoses of microvessels can be performed by cuff technique only.",
-    "D": "Tissue transplantation can not be completed without vascular anastomoses."
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "Sun Lee\u2019s portocaval shunt operation in the rat was the first published procedure initiating the development of experimental",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "50Which one of fundamental procedures? the following is experimental true regarding microsurgical",
-    "H_highlight_excellence": "Sun Lee\u2019s portocaval shunt operation in the rat was the first published procedure initiating the development of experimental",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "BSSH / reconstructive principles",
-    "P_plan_for_improvement": "Sun Lee\u2019s portocaval shunt operation in the rat was the first published procedure initiating the development"
-  },
-  "supplementary_callouts": {
-    "guideline": "BSSH / reconstructive principles",
-    "takeaway": "Sun Lee\u2019s portocaval shunt operation in the rat was the first published procedure initiating the development of experimental",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 1654,
-  "specialty": "Plastic Surgery",
-  "topic": "33Which one answer is true regarding osteomyelitis in the lower limb?",
-  "question": "33Which one answer is true regarding osteomyelitis in the lower limb?",
-  "options": {
-    "A": "Full thickness electrical burn to the left leg of 12% body surface area.",
-    "B": "Compartment pressures of 15mmHg. C.Compartment pressures of 20mmHg. D.Positive Homan\u2019s sign.",
-    "C": "Nephrotic syndrome.",
-    "D": "Everyday exercise activities such as cycling, horseriding.153 E.Giant lipoma. 37The following is the best indication for lower limb fasciotomy:"
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "Full thickness electrical burn to the left leg of 12% body surface area.",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "33Which one answer is true regarding osteomyelitis in the lower limb?",
-    "H_highlight_excellence": "Full thickness electrical burn to the left leg of 12% body surface area.",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "BSSH / reconstructive principles",
-    "P_plan_for_improvement": "Full thickness electrical burn to the left leg of 12% body surface area"
-  },
-  "supplementary_callouts": {
-    "guideline": "BSSH / reconstructive principles",
-    "takeaway": "Full thickness electrical burn to the left leg of 12% body surface area",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
+},
 {
   "id": 1633,
   "specialty": "Plastic Surgery",
@@ -4946,43 +4076,7 @@ window.QUESTIONS.push(...[
     "visualization": ""
   },
   "discrepancy_flag": ""
-}
-,
-{
-  "id": 1686,
-  "specialty": "Plastic Surgery",
-  "topic": "Reconstructive head and neck surgery 12Maxillary sinus tumours:",
-  "question": "Reconstructive head and neck surgery 12Maxillary sinus tumours:",
-  "options": {
-    "A": "Long duration.",
-    "B": "Gender (women > men).",
-    "C": "Idiopathic leukoplakia (i.e. occurring in non-smokers). D.Presence of Candida albicans.",
-    "D": "A DCIA flap will not provide sufficient bony stock for restorative dentistry implant rehabilitation."
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "Correct answer for tumors",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "Sinus tumors, long duration",
-    "H_highlight_excellence": "Correct answer for tumors",
-    "A_address_the_gaps": "Consider other risk factors",
-    "R_review_learning_points": "Tumor characteristics and treatment",
-    "P_plan_for_improvement": "Further investigation needed"
-  },
-  "supplementary_callouts": {
-    "guideline": "Referral for specialist advice",
-    "takeaway": "Duration is a key factor",
-    "visualization": "Image of maxillary sinus"
-  },
-  "discrepancy_flag": ""
-}
-,
+},
 {
   "id": 1690,
   "specialty": "Plastic Surgery",
@@ -5016,22 +4110,21 @@ window.QUESTIONS.push(...[
     "visualization": ""
   },
   "discrepancy_flag": ""
-}
-,
+},
 {
-  "id": 1659,
+  "id": 1650,
   "specialty": "Plastic Surgery",
-  "topic": "44Trimming the margins and performing a straight line closure of the cleft",
-  "question": "44Trimming the margins and performing a straight line closure of the cleft lip was routine until this surgeon introduced his lateral triangular flap method. Who was he? 243",
+  "topic": "29A 65-year-old man who underwent three-vessel coronary artery bypass grafting (CABG) 5",
+  "question": "29A 65-year-old man who underwent three-vessel coronary artery bypass grafting (CABG) 5 weeks ago comes to the office because he has a draining lesion near the sternotomy incision. The CABG procedure included harvest of the patient\u2019s left internal mammary artery. Temperature is 38.7\u00b0C (101.7\u00b0). Physical examination shows a 3mm papule at the manubrium of the healed sternotomy incision. A CT scan of the chest shows a sinus tract leading to the internal sternal plate. In additiontoremovalofsternalwiresand debridement of the wound, which of the following is the most appropriate definitive management?",
   "options": {
-    "A": "50% of babies proceed to full spontaneous recovery within 3 months.",
-    "B": "Some elbow flexion is present.",
-    "C": "The branches of the posterior cord are unaffected. D.The Oberlin\u2019s transfer can be a useful procedure. E.Horner\u2019s sign is usually present. 244",
-    "D": "The pterygoid hamulus is absent."
+    "A": "The flap should be inset in the position of wherever the mastectomy scar was opened.",
+    "B": "The flap should be inset inferiorly in the IMF position and the skin between the new IMF and the mastectomy scar should in general be discarded.",
+    "C": "The flap should be inset inferiorly in the IMF position and the skin between the new IMF and the mastectomy scar should in general not be discarded.",
+    "D": "The most lateral position of the flap should be well behind the anterior axillary line."
   },
   "answer": "A",
   "explanation": {
-    "correct": "50% of babies proceed to full spontaneous recovery within 3 months.",
+    "correct": "The flap should be inset in the position of wherever the mastectomy scar was opened.",
     "A": "",
     "B": "",
     "C": "",
@@ -5039,34 +4132,33 @@ window.QUESTIONS.push(...[
     "E": ""
   },
   "sharp_debrief": {
-    "S_set_the_stage": "44Trimming the margins and performing a straight line closure of the cleft",
-    "H_highlight_excellence": "50% of babies proceed to full spontaneous recovery within 3 months.",
+    "S_set_the_stage": "29A 65-year-old man who underwent three-vessel coronary artery bypass grafting (CABG) 5",
+    "H_highlight_excellence": "The flap should be inset in the position of wherever the mastectomy scar was opened.",
     "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
     "R_review_learning_points": "BSSH / reconstructive principles",
-    "P_plan_for_improvement": "50% of babies proceed to full spontaneous recovery within 3 months"
+    "P_plan_for_improvement": "The flap should be inset in the position of wherever the mastectomy scar was opened"
   },
   "supplementary_callouts": {
     "guideline": "BSSH / reconstructive principles",
-    "takeaway": "50% of babies proceed to full spontaneous recovery within 3 months",
+    "takeaway": "The flap should be inset in the position of wherever the mastectomy scar was opened",
     "visualization": ""
   },
   "discrepancy_flag": ""
-}
-,
+},
 {
-  "id": 1636,
+  "id": 1652,
   "specialty": "Plastic Surgery",
-  "topic": "18A 7-year-old has cryptotia. Which of the following operative techniques is most",
-  "question": "18A 7-year-old has cryptotia. Which of the following operative techniques is most appropriate for173 correction?",
+  "topic": "31The following filler products are matched with various information. When quoted, the",
+  "question": "31The following filler products are matched with various information. When quoted, the estimated number of patients upon which each has been used is correct in all cases. Which one answer is incorrect? 96A.Product: collagen, brand name Zyderm\u00ae, persistence 6 months, patients 5 million, granuloma rates (manufacturers) 1:2500.",
   "options": {
-    "A": "A Bjork flap is an inferiorly-based U-shaped flap of anterior tracheal wall.",
-    "B": "It is best to enter the trachea above the first cartilaginous ring.",
-    "C": "The tracheal rings are located between the thyroid cartilage and the manubrium.",
-    "D": "The parathyroid glands need to be seen and preserved during the procedure."
+    "A": "Ruby (694) - black, blue and green.",
+    "B": "Alexandrite (755) - black, blue and green.",
+    "C": "Nd:YAG [KTP] (532) - black, blue and green. D.Nd:YAG (1064) - black, blue and green.",
+    "D": "A peri-areolar approach is a poor option through which to adjust the inframammary fold (IMF)."
   },
   "answer": "A",
   "explanation": {
-    "correct": "A Bjork flap is an inferiorly-based U-shaped flap of anterior tracheal wall.",
+    "correct": "Ruby (694) - black, blue and green.",
     "A": "",
     "B": "",
     "C": "",
@@ -5074,505 +4166,15 @@ window.QUESTIONS.push(...[
     "E": ""
   },
   "sharp_debrief": {
-    "S_set_the_stage": "18A 7-year-old has cryptotia. Which of the following operative techniques is most",
-    "H_highlight_excellence": "A Bjork flap is an inferiorly-based U-shaped flap of anterior tracheal wall.",
+    "S_set_the_stage": "31The following filler products are matched with various information. When quoted, the",
+    "H_highlight_excellence": "Ruby (694) - black, blue and green.",
     "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
     "R_review_learning_points": "BSSH / reconstructive principles",
-    "P_plan_for_improvement": "A Bjork flap is an inferiorly-based U-shaped flap of anterior tracheal wall"
+    "P_plan_for_improvement": "Ruby (694) - black, blue and green"
   },
   "supplementary_callouts": {
     "guideline": "BSSH / reconstructive principles",
-    "takeaway": "A Bjork flap is an inferiorly-based U-shaped flap of anterior tracheal wall",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 1645,
-  "specialty": "Plastic Surgery",
-  "topic": "24Which statement is false?",
-  "question": "24Which statement is false?",
-  "options": {
-    "A": "The parascapular flap is vascularised by the transverse branch of the circumflex scapular vessels.",
-    "B": "The anterolateral thigh flap is normally vascularised by the descending branch of the lateral circumflex femoral vessels.",
-    "C": "The skin island of the osteocutaneous fibula free flap is generally circulated by septocutaneous branches from the peroneal vessels running off posterior of the fibula.",
-    "D": "The venous outflow of the radial forearm flap can be based on either the concomitant veins of the radial artery or on the cephalic vein or on both."
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "The parascapular flap is vascularised by the transverse branch of the circumflex scapular vessels.",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "24Which statement is false?",
-    "H_highlight_excellence": "The parascapular flap is vascularised by the transverse branch of the circumflex scapular vessels.",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "BSSH / reconstructive principles",
-    "P_plan_for_improvement": "The parascapular flap is vascularised by the transverse branch of the circumflex scapular vessels"
-  },
-  "supplementary_callouts": {
-    "guideline": "BSSH / reconstructive principles",
-    "takeaway": "The parascapular flap is vascularised by the transverse branch of the circumflex scapular vessels",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 1624,
-  "specialty": "Plastic Surgery",
-  "topic": "10Who first described the anatomical structures which cause chordee?",
-  "question": "10Who first described the anatomical structures which cause chordee?",
-  "options": {
-    "A": "Carpue. B.Colley.",
-    "B": "Swift.",
-    "C": "Maharata. D.Kooma.",
-    "D": "Anger. E. Galen. 11Who wrote satirically about Tagliacozzi? 266A.Moli\u00e8re."
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "Carpue. B.Colley.",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "10Who first described the anatomical structures which cause chordee?",
-    "H_highlight_excellence": "Carpue. B.Colley.",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "BSSH / reconstructive principles",
-    "P_plan_for_improvement": "Carpue"
-  },
-  "supplementary_callouts": {
-    "guideline": "BSSH / reconstructive principles",
-    "takeaway": "Carpue",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 1640,
-  "specialty": "Plastic Surgery",
-  "topic": "21Which of the following prognostic features of melanoma is not included in",
-  "question": "21Which of the following prognostic features of melanoma is not included in the AJCC staging system?",
-  "options": {
-    "A": "Ulceration.209",
-    "B": "Mitotic rate.",
-    "C": "Clarke\u2019s level of invasion.",
-    "D": "Micrometastasis to lymph nodes. E.Lactate dehydrogenase (LDH)."
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "Ulceration.209",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "21Which of the following prognostic features of melanoma is not included in",
-    "H_highlight_excellence": "Ulceration.209",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "BSSH / reconstructive principles",
-    "P_plan_for_improvement": "Ulceration"
-  },
-  "supplementary_callouts": {
-    "guideline": "BSSH / reconstructive principles",
-    "takeaway": "Ulceration",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 1699,
-  "specialty": "Plastic Surgery",
-  "topic": "Which landmark publication related to free tissue transfer is correct?",
-  "question": "Which landmark publication related to free tissue transfer is correct?",
-  "options": {
-    "A": "The first successful thumb replantation was performed by Komatsu and Tamai in 1967.",
-    "B": "The first clinical series of free tissue transfers was published by Nakayama in 1969.",
-    "C": "Cobbett performed the first successful free great toe-to-hand transfer in humans in 1968.",
-    "D": "McLean and Buncke performed the first free omentum flap in 1971."
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "The first successful thumb replantation was performed by Komatsu and Tamai in 1967.",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "Which landmark publication related to free tissue transfer is correct?",
-    "H_highlight_excellence": "The first successful thumb replantation was performed by Komatsu and Tamai in 1967.",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "BSSH / reconstructive principles",
-    "P_plan_for_improvement": "The first successful thumb replantation was performed by Komatsu and Tamai in 1967"
-  },
-  "supplementary_callouts": {
-    "guideline": "BSSH / reconstructive principles",
-    "takeaway": "The first successful thumb replantation was performed by Komatsu and Tamai in 1967",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 1666,
-  "specialty": "Plastic Surgery",
-  "topic": "75Which one of the following is a diagnostic criterion for rheumatoid arthritis",
-  "question": "75Which one of the following is a diagnostic criterion for rheumatoid arthritis according to the American Academy of Rheumatology?",
-  "options": {
-    "A": "Index - 5\u00b0 DIP joint, 40\u00b0 PIP joint, 25\u00b0 MCP joint. 58B.Index - 10\u00b0 DIP joint, 10\u00b0 PIP joint, neutral MCP joint. C.Thumb - neutral IP joint, neutral MCP joint.",
-    "B": "The ulnar collateral ligament is obstructed by extensor pollicis longus (EPL). Multiple Choice Questions in Plastic Surgery",
-    "C": "The ulnar collateral ligament is obstructed by extensor pollicis brevis (EPB).",
-    "D": "Thumb - neutral IP joint, 45\u00b0 MCP joint."
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "Index - 5\u00b0 DIP joint, 40\u00b0 PIP joint, 25\u00b0 MCP joint. 58B.Index - 10\u00b0 DIP joint, 10\u00b0 PIP",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "75Which one of the following is a diagnostic criterion for rheumatoid arthritis",
-    "H_highlight_excellence": "Index - 5\u00b0 DIP joint, 40\u00b0 PIP joint, 25\u00b0 MCP joint. 58B.Index - 10\u00b0 DIP joint, 10\u00b0 PIP",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "BSSH / reconstructive principles",
-    "P_plan_for_improvement": "Index - 5\u00b0 DIP joint, 40\u00b0 PIP joint, 25\u00b0 MCP joint"
-  },
-  "supplementary_callouts": {
-    "guideline": "BSSH / reconstructive principles",
-    "takeaway": "Index - 5\u00b0 DIP joint, 40\u00b0 PIP joint, 25\u00b0 MCP joint",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 1658,
-  "specialty": "Plastic Surgery",
-  "topic": "41What method did Sushruta recommend for nasal 180reconstruction?",
-  "question": "41What method did Sushruta recommend for nasal 180reconstruction?",
-  "options": {
-    "A": "Boys. B. Girls.",
-    "B": "Forehead flap. C.Arm flap.",
-    "C": "On the right. D.On the left. E.Twins.",
-    "D": "Skin graft. E.Cheek flap. 42Microtia is more common in (choose two):"
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "Forehead flap recommended by Sushruta",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "Sushruta's nasal reconstruction technique",
-    "H_highlight_excellence": "Forehead flap recommended by Sushruta",
-    "A_address_the_gaps": "Understanding surgical approaches",
-    "R_review_learning_points": "Sushruta's methods for reconstruction",
-    "P_plan_for_improvement": "Further study of ancient medicine"
-  },
-  "supplementary_callouts": {
-    "guideline": "Consult with medical professionals",
-    "takeaway": "Forehead flap for nasal repair",
-    "visualization": "Diagram of forehead flap"
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 1630,
-  "specialty": "Plastic Surgery",
-  "topic": "12Which two of the following statements are true regarding pigmentary changes following",
-  "question": "12Which two of the following statements are true regarding pigmentary changes following burn injury? 145",
-  "options": {
-    "A": "Is common after chemical burns.",
-    "B": "Is fatal at concentrations of 1 part per million.",
-    "C": "Can be treated with amyl nitrite, sodium nitrite and sodium thiosulphate or hydroxycobalamin.",
-    "D": "Can be treated with ethyl chloride and alkalinisation of urine."
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "",
-    "H_highlight_excellence": "",
-    "A_address_the_gaps": "",
-    "R_review_learning_points": "",
-    "P_plan_for_improvement": ""
-  },
-  "supplementary_callouts": {
-    "guideline": "",
-    "takeaway": "",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 1668,
-  "specialty": "Plastic Surgery",
-  "topic": "Basic principles and basic science",
-  "question": "Basic principles and basic science",
-  "options": {
-    "A": "Groin flap.",
-    "B": "Thoracodorsal artery perforator flap. C.Anterolateral thigh flap.",
-    "C": "Reverse sural artery flap.11 D.Free or pedicled dorsalis pedis flap.",
-    "D": "First dorsal metacarpal artery flap. E.Deltopectoral flap."
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "Groin flap.",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "Basic principles and basic science",
-    "H_highlight_excellence": "Groin flap.",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "BSSH / reconstructive principles",
-    "P_plan_for_improvement": "Groin flap"
-  },
-  "supplementary_callouts": {
-    "guideline": "BSSH / reconstructive principles",
-    "takeaway": "Groin flap",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 1692,
-  "specialty": "Plastic Surgery",
-  "topic": "Regarding free tissue transfer:",
-  "question": "Regarding free tissue transfer:",
-  "options": {
-    "A": "According to Koshima, supramicrosurgery (or supermicrosurgery) is defined as microvascular dissection and anastomosis of vessels measuring less than 0.5mm.",
-    "B": "In 1960, Jacobson and Suarez reported successful experimental microvascular anastomoses as small as 0.9mm in diameter. Multiple Choice Questions in Plastic Surgery",
-    "C": "The first successful free tissue transfer in humans was performed in America.",
-    "D": "Taylor is credited with the first description of the free fibula osteocutaneous flap."
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "Koshima's supramicrosurgery definition",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "Microvascular surgery definition",
-    "H_highlight_excellence": "Koshima's supramicrosurgery definition",
-    "A_address_the_gaps": "Other options are inaccurate",
-    "R_review_learning_points": "Understanding microvascular techniques",
-    "P_plan_for_improvement": "Further study of free flaps"
-  },
-  "supplementary_callouts": {
-    "guideline": "Refer to Koshima's work",
-    "takeaway": "Key definition for free transfer",
-    "visualization": "Vessel anastomosis process"
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 1693,
-  "specialty": "Plastic Surgery",
-  "topic": "The following statements concerning the history of plastic surgery are true except:",
-  "question": "The following statements concerning the history of plastic surgery are true except:",
-  "options": {
-    "A": "Tagliacozzi was born in Bologna in 1545.",
-    "B": "Kilner was the Nuffield Professor of Plastic Surgery in Oxford.",
-    "C": "Tord Skoog was appointed Professor of Plastic Surgery in Uppsala in 1960.",
-    "D": "Sushruta is credited with being the first to perform nasal reconstruction."
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "Correct answer identified",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "Tagliacozzi's birth details",
-    "H_highlight_excellence": "Correct answer identified",
-    "A_address_the_gaps": "Incorrect information noted",
-    "R_review_learning_points": "Plastic surgery history",
-    "P_plan_for_improvement": "Verify historical facts"
-  },
-  "supplementary_callouts": {
-    "guideline": "Focus on accurate data",
-    "takeaway": "Historical context matters",
-    "visualization": "Timeline of plastic surgery"
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 1704,
-  "specialty": "Plastic Surgery",
-  "topic": "With regards to the eyes and eyelids, which 168statement is correct?",
-  "question": "With regards to the eyes and eyelids, which 168statement is correct?",
-  "options": {
-    "A": "The lacrimal gland secretes tears which are bilaminar, consisting of a superficial mucoprotein layer and a deep aqueous layer.",
-    "B": "The lacrimal gland has three lobes.",
-    "C": "Tears bend incoming light before it strikes the cornea with up to 2.0 diopters of refractile power.",
-    "D": "The superior tarsal plate is 8-10mm in vertical height and the inferior tarsal plate is smaller at 4-6mm."
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "Lacrimal gland details correct",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "Tear gland function overview",
-    "H_highlight_excellence": "Lacrimal gland details correct",
-    "A_address_the_gaps": "Review other options briefly",
-    "R_review_learning_points": "Binarity, aqueous, mucoprotein",
-    "P_plan_for_improvement": "Further study of eye anatomy"
-  },
-  "supplementary_callouts": {
-    "guideline": "Focus on lacrimal gland",
-    "takeaway": "Tears' layered composition key",
-    "visualization": "Diagram of tear layers"
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 1656,
-  "specialty": "Plastic Surgery",
-  "topic": "35Which of the following is not a useful nerve block for peri-orbital",
-  "question": "35Which of the following is not a useful nerve block for peri-orbital surgery?",
-  "options": {
-    "A": "Medial superior palpebral artery. B.Superior arcade.",
-    "B": "They should be excised directly with minimal margins.",
-    "C": "Angular artery. D.Facial artery.",
-    "D": "They can be treated with minimal-skin-excision lower lid blepharoplasty."
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "",
-    "H_highlight_excellence": "",
-    "A_address_the_gaps": "",
-    "R_review_learning_points": "",
-    "P_plan_for_improvement": ""
-  },
-  "supplementary_callouts": {
-    "guideline": "",
-    "takeaway": "",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 1653,
-  "specialty": "Plastic Surgery",
-  "topic": "33Which is correct in relation to replantation of a digit?",
-  "question": "33Which is correct in relation to replantation of a digit?",
-  "options": {
-    "A": "The intercostal nerves are often transferred to the median nerve.",
-    "B": "The phrenic nerve cannot be used because of the risk of respiratory compromise.",
-    "C": "The spinal accessory nerve causes complete paralysis of trapezius. D.The axillary nerve can be innervated by the nerves to triceps.",
-    "D": "Is not successful when cold ischaemia exceeds 24 hours. E.Is more successful with postoperative IV heparin. 34In nerve transfer for brachial plexus injury:"
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "The intercostal nerves are often transferred to the median nerve.",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "33Which is correct in relation to replantation of a digit?",
-    "H_highlight_excellence": "The intercostal nerves are often transferred to the median nerve.",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "BSSH / reconstructive principles",
-    "P_plan_for_improvement": "The intercostal nerves are often transferred to the median nerve"
-  },
-  "supplementary_callouts": {
-    "guideline": "BSSH / reconstructive principles",
-    "takeaway": "The intercostal nerves are often transferred to the median nerve",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 1708,
-  "specialty": "Plastic Surgery",
-  "topic": "reference to the dual plane breast augmentation technique?",
-  "question": "reference to the dual plane breast augmentation technique?",
-  "options": {
-    "A": "A pedicled TRAM flap. B.A free TRAM flap.",
-    "B": "Residual haematoma/seroma may contribute to capsule formation. C.Rinsing the pocket with antibacterial solution may reduce the capsular contracture rate.",
-    "C": "A pedicled DIEP flap. D.A free DIEP flap.",
-    "D": "Polyurethane (PU) implants have reduced capsular contracture rates."
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "A pedicled TRAM flap. B.A free TRAM flap.",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "reference to the dual plane breast augmentation technique?",
-    "H_highlight_excellence": "A pedicled TRAM flap. B.A free TRAM flap.",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "BSSH / reconstructive principles",
-    "P_plan_for_improvement": "A pedicled TRAM flap"
-  },
-  "supplementary_callouts": {
-    "guideline": "BSSH / reconstructive principles",
-    "takeaway": "A pedicled TRAM flap",
+    "takeaway": "Ruby (694) - black, blue and green",
     "visualization": ""
   },
   "discrepancy_flag": ""

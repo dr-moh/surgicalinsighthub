@@ -1,10 +1,6 @@
-// Auto-harvested from: MCQ Compilled TASH.docx.txt
-// Generated: 2026-05-07T13:29:47.564Z
-// NOTE: Answers default to A — all questions need manual review.
-// Specialty: General Surgery | Questions: 78
 if (!window.QUESTIONS) window.QUESTIONS = [];
 window.QUESTIONS.push(...[
-  {
+{
     "id": 9000,
     "specialty": "Urology",
     "topic": "Urology",
@@ -28,7 +24,7 @@ window.QUESTIONS.push(...[
     "source_tag": "MCQ Compilled TASH.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9001,
     "specialty": "Urology",
     "topic": "Urology",
@@ -52,7 +48,7 @@ window.QUESTIONS.push(...[
     "source_tag": "MCQ Compilled TASH.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9002,
     "specialty": "Urology",
     "topic": "Urology",
@@ -76,7 +72,7 @@ window.QUESTIONS.push(...[
     "source_tag": "MCQ Compilled TASH.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9003,
     "specialty": "Urology",
     "topic": "Urology",
@@ -100,7 +96,7 @@ window.QUESTIONS.push(...[
     "source_tag": "MCQ Compilled TASH.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9004,
     "specialty": "Urology",
     "topic": "Urology",
@@ -124,7 +120,7 @@ window.QUESTIONS.push(...[
     "source_tag": "MCQ Compilled TASH.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9005,
     "specialty": "Urology",
     "topic": "Urology",
@@ -148,7 +144,7 @@ window.QUESTIONS.push(...[
     "source_tag": "MCQ Compilled TASH.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9006,
     "specialty": "Urology",
     "topic": "Urology",
@@ -172,7 +168,7 @@ window.QUESTIONS.push(...[
     "source_tag": "MCQ Compilled TASH.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9007,
     "specialty": "Urology",
     "topic": "Urology",
@@ -196,7 +192,7 @@ window.QUESTIONS.push(...[
     "source_tag": "MCQ Compilled TASH.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9008,
     "specialty": "Urology",
     "topic": "Urology",
@@ -220,7 +216,7 @@ window.QUESTIONS.push(...[
     "source_tag": "MCQ Compilled TASH.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9009,
     "specialty": "Urology",
     "topic": "Urology",
@@ -244,7 +240,7 @@ window.QUESTIONS.push(...[
     "source_tag": "MCQ Compilled TASH.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9010,
     "specialty": "HPB",
     "topic": "HPB",
@@ -268,7 +264,7 @@ window.QUESTIONS.push(...[
     "source_tag": "MCQ Compilled TASH.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9011,
     "specialty": "Urology",
     "topic": "Urology",
@@ -292,7 +288,7 @@ window.QUESTIONS.push(...[
     "source_tag": "MCQ Compilled TASH.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9012,
     "specialty": "Urology",
     "topic": "Urology",
@@ -316,7 +312,7 @@ window.QUESTIONS.push(...[
     "source_tag": "MCQ Compilled TASH.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9013,
     "specialty": "Urology",
     "topic": "Urology",
@@ -340,7 +336,7 @@ window.QUESTIONS.push(...[
     "source_tag": "MCQ Compilled TASH.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9014,
     "specialty": "General Surgery",
     "topic": "General Surgery",
@@ -364,7 +360,7 @@ window.QUESTIONS.push(...[
     "source_tag": "MCQ Compilled TASH.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9015,
     "specialty": "Breast & Endocrine",
     "topic": "Breast & Endocrine",
@@ -388,7 +384,7 @@ window.QUESTIONS.push(...[
     "source_tag": "MCQ Compilled TASH.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9016,
     "specialty": "Urology",
     "topic": "Urology",
@@ -412,7 +408,7 @@ window.QUESTIONS.push(...[
     "source_tag": "MCQ Compilled TASH.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9017,
     "specialty": "Urology",
     "topic": "Urology",
@@ -436,7 +432,7 @@ window.QUESTIONS.push(...[
     "source_tag": "MCQ Compilled TASH.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9018,
     "specialty": "General Surgery",
     "topic": "General Surgery",
@@ -460,7 +456,7 @@ window.QUESTIONS.push(...[
     "source_tag": "MCQ Compilled TASH.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9019,
     "specialty": "Urology",
     "topic": "Urology",
@@ -484,7 +480,7 @@ window.QUESTIONS.push(...[
     "source_tag": "MCQ Compilled TASH.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9020,
     "specialty": "Urology",
     "topic": "Urology",
@@ -509,7 +505,7 @@ window.QUESTIONS.push(...[
     "source_tag": "MCQ Compilled TASH.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9021,
     "specialty": "Colorectal",
     "topic": "Colorectal",
@@ -534,7 +530,7 @@ window.QUESTIONS.push(...[
     "source_tag": "MCQ Compilled TASH.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9022,
     "specialty": "Colorectal",
     "topic": "Colorectal",
@@ -559,7 +555,7 @@ window.QUESTIONS.push(...[
     "source_tag": "MCQ Compilled TASH.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9023,
     "specialty": "Colorectal",
     "topic": "Colorectal",
@@ -584,7 +580,7 @@ window.QUESTIONS.push(...[
     "source_tag": "MCQ Compilled TASH.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9024,
     "specialty": "Colorectal",
     "topic": "Colorectal",
@@ -608,7 +604,7 @@ window.QUESTIONS.push(...[
     "source_tag": "MCQ Compilled TASH.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9025,
     "specialty": "Colorectal",
     "topic": "Colorectal",
@@ -633,7 +629,7 @@ window.QUESTIONS.push(...[
     "source_tag": "MCQ Compilled TASH.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9026,
     "specialty": "Colorectal",
     "topic": "Colorectal",
@@ -657,7 +653,7 @@ window.QUESTIONS.push(...[
     "source_tag": "MCQ Compilled TASH.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9027,
     "specialty": "Colorectal",
     "topic": "Colorectal",
@@ -682,7 +678,7 @@ window.QUESTIONS.push(...[
     "source_tag": "MCQ Compilled TASH.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9028,
     "specialty": "Colorectal",
     "topic": "Colorectal",
@@ -707,7 +703,7 @@ window.QUESTIONS.push(...[
     "source_tag": "MCQ Compilled TASH.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9029,
     "specialty": "Colorectal",
     "topic": "Colorectal",
@@ -732,7 +728,7 @@ window.QUESTIONS.push(...[
     "source_tag": "MCQ Compilled TASH.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9030,
     "specialty": "Colorectal",
     "topic": "Colorectal",
@@ -757,7 +753,7 @@ window.QUESTIONS.push(...[
     "source_tag": "MCQ Compilled TASH.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9031,
     "specialty": "Colorectal",
     "topic": "Colorectal",
@@ -782,7 +778,7 @@ window.QUESTIONS.push(...[
     "source_tag": "MCQ Compilled TASH.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9032,
     "specialty": "General Surgery",
     "topic": "General Surgery",
@@ -807,7 +803,7 @@ window.QUESTIONS.push(...[
     "source_tag": "MCQ Compilled TASH.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9033,
     "specialty": "Vascular",
     "topic": "Vascular",
@@ -832,7 +828,7 @@ window.QUESTIONS.push(...[
     "source_tag": "MCQ Compilled TASH.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9034,
     "specialty": "Vascular",
     "topic": "Vascular",
@@ -857,7 +853,7 @@ window.QUESTIONS.push(...[
     "source_tag": "MCQ Compilled TASH.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9035,
     "specialty": "Vascular",
     "topic": "Vascular",
@@ -882,7 +878,7 @@ window.QUESTIONS.push(...[
     "source_tag": "MCQ Compilled TASH.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9036,
     "specialty": "General Surgery",
     "topic": "General Surgery",
@@ -907,7 +903,7 @@ window.QUESTIONS.push(...[
     "source_tag": "MCQ Compilled TASH.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9037,
     "specialty": "Vascular",
     "topic": "Vascular",
@@ -932,7 +928,7 @@ window.QUESTIONS.push(...[
     "source_tag": "MCQ Compilled TASH.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9038,
     "specialty": "General Surgery",
     "topic": "General Surgery",
@@ -956,7 +952,7 @@ window.QUESTIONS.push(...[
     "source_tag": "MCQ Compilled TASH.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9039,
     "specialty": "General Surgery",
     "topic": "General Surgery",
@@ -980,7 +976,7 @@ window.QUESTIONS.push(...[
     "source_tag": "MCQ Compilled TASH.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9040,
     "specialty": "Colorectal",
     "topic": "Colorectal",
@@ -1004,7 +1000,7 @@ window.QUESTIONS.push(...[
     "source_tag": "MCQ Compilled TASH.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9041,
     "specialty": "General Surgery",
     "topic": "General Surgery",
@@ -1028,7 +1024,7 @@ window.QUESTIONS.push(...[
     "source_tag": "MCQ Compilled TASH.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9042,
     "specialty": "General Surgery",
     "topic": "General Surgery",
@@ -1052,7 +1048,7 @@ window.QUESTIONS.push(...[
     "source_tag": "MCQ Compilled TASH.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9043,
     "specialty": "Urology",
     "topic": "Urology",
@@ -1076,7 +1072,7 @@ window.QUESTIONS.push(...[
     "source_tag": "MCQ Compilled TASH.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9044,
     "specialty": "Urology",
     "topic": "Urology",
@@ -1100,7 +1096,7 @@ window.QUESTIONS.push(...[
     "source_tag": "MCQ Compilled TASH.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9045,
     "specialty": "General Surgery",
     "topic": "General Surgery",
@@ -1124,7 +1120,7 @@ window.QUESTIONS.push(...[
     "source_tag": "MCQ Compilled TASH.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9046,
     "specialty": "General Surgery",
     "topic": "General Surgery",
@@ -1148,7 +1144,7 @@ window.QUESTIONS.push(...[
     "source_tag": "MCQ Compilled TASH.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9047,
     "specialty": "Colorectal",
     "topic": "Colorectal",
@@ -1172,7 +1168,7 @@ window.QUESTIONS.push(...[
     "source_tag": "MCQ Compilled TASH.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9048,
     "specialty": "Urology",
     "topic": "Urology",
@@ -1196,7 +1192,7 @@ window.QUESTIONS.push(...[
     "source_tag": "MCQ Compilled TASH.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9049,
     "specialty": "Urology",
     "topic": "Urology",
@@ -1220,7 +1216,7 @@ window.QUESTIONS.push(...[
     "source_tag": "MCQ Compilled TASH.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9050,
     "specialty": "Urology",
     "topic": "Urology",
@@ -1244,7 +1240,7 @@ window.QUESTIONS.push(...[
     "source_tag": "MCQ Compilled TASH.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9051,
     "specialty": "General Surgery",
     "topic": "General Surgery",
@@ -1268,7 +1264,7 @@ window.QUESTIONS.push(...[
     "source_tag": "MCQ Compilled TASH.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9052,
     "specialty": "HPB",
     "topic": "HPB",
@@ -1292,7 +1288,7 @@ window.QUESTIONS.push(...[
     "source_tag": "MCQ Compilled TASH.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9053,
     "specialty": "Colorectal",
     "topic": "Colorectal",
@@ -1317,7 +1313,7 @@ window.QUESTIONS.push(...[
     "source_tag": "MCQ Compilled TASH.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9054,
     "specialty": "HPB",
     "topic": "HPB",
@@ -1342,7 +1338,7 @@ window.QUESTIONS.push(...[
     "source_tag": "MCQ Compilled TASH.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9055,
     "specialty": "Urology",
     "topic": "Urology",
@@ -1367,7 +1363,7 @@ window.QUESTIONS.push(...[
     "source_tag": "MCQ Compilled TASH.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9056,
     "specialty": "HPB",
     "topic": "HPB",
@@ -1392,7 +1388,7 @@ window.QUESTIONS.push(...[
     "source_tag": "MCQ Compilled TASH.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9057,
     "specialty": "General Surgery",
     "topic": "General Surgery",
@@ -1417,7 +1413,7 @@ window.QUESTIONS.push(...[
     "source_tag": "MCQ Compilled TASH.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9058,
     "specialty": "Urology",
     "topic": "Urology",
@@ -1441,7 +1437,7 @@ window.QUESTIONS.push(...[
     "source_tag": "MCQ Compilled TASH.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9059,
     "specialty": "Breast & Endocrine",
     "topic": "Breast & Endocrine",
@@ -1465,7 +1461,7 @@ window.QUESTIONS.push(...[
     "source_tag": "MCQ Compilled TASH.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9060,
     "specialty": "Breast & Endocrine",
     "topic": "Breast & Endocrine",
@@ -1489,7 +1485,7 @@ window.QUESTIONS.push(...[
     "source_tag": "MCQ Compilled TASH.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9061,
     "specialty": "Urology",
     "topic": "Urology",
@@ -1513,7 +1509,7 @@ window.QUESTIONS.push(...[
     "source_tag": "MCQ Compilled TASH.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9062,
     "specialty": "Cardiothoracic",
     "topic": "Cardiothoracic",
@@ -1537,7 +1533,7 @@ window.QUESTIONS.push(...[
     "source_tag": "MCQ Compilled TASH.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9063,
     "specialty": "Cardiothoracic",
     "topic": "Cardiothoracic",
@@ -1561,7 +1557,7 @@ window.QUESTIONS.push(...[
     "source_tag": "MCQ Compilled TASH.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9064,
     "specialty": "General Surgery",
     "topic": "General Surgery",
@@ -1585,7 +1581,7 @@ window.QUESTIONS.push(...[
     "source_tag": "MCQ Compilled TASH.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9065,
     "specialty": "Cardiothoracic",
     "topic": "Cardiothoracic",
@@ -1609,7 +1605,7 @@ window.QUESTIONS.push(...[
     "source_tag": "MCQ Compilled TASH.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9066,
     "specialty": "Cardiothoracic",
     "topic": "Cardiothoracic",
@@ -1633,7 +1629,7 @@ window.QUESTIONS.push(...[
     "source_tag": "MCQ Compilled TASH.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9067,
     "specialty": "Colorectal",
     "topic": "Colorectal",
@@ -1657,7 +1653,7 @@ window.QUESTIONS.push(...[
     "source_tag": "MCQ Compilled TASH.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9068,
     "specialty": "Colorectal",
     "topic": "Colorectal",
@@ -1681,7 +1677,7 @@ window.QUESTIONS.push(...[
     "source_tag": "MCQ Compilled TASH.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9069,
     "specialty": "Cardiothoracic",
     "topic": "Cardiothoracic",
@@ -1705,7 +1701,7 @@ window.QUESTIONS.push(...[
     "source_tag": "MCQ Compilled TASH.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9070,
     "specialty": "Cardiothoracic",
     "topic": "Cardiothoracic",
@@ -1729,7 +1725,7 @@ window.QUESTIONS.push(...[
     "source_tag": "MCQ Compilled TASH.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9071,
     "specialty": "Cardiothoracic",
     "topic": "Cardiothoracic",
@@ -1753,7 +1749,7 @@ window.QUESTIONS.push(...[
     "source_tag": "MCQ Compilled TASH.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9072,
     "specialty": "HPB",
     "topic": "HPB",
@@ -1777,7 +1773,7 @@ window.QUESTIONS.push(...[
     "source_tag": "MCQ Compilled TASH.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9073,
     "specialty": "Cardiothoracic",
     "topic": "Cardiothoracic",
@@ -1801,7 +1797,7 @@ window.QUESTIONS.push(...[
     "source_tag": "MCQ Compilled TASH.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9074,
     "specialty": "Cardiothoracic",
     "topic": "Cardiothoracic",
@@ -1825,7 +1821,7 @@ window.QUESTIONS.push(...[
     "source_tag": "MCQ Compilled TASH.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9075,
     "specialty": "Cardiothoracic",
     "topic": "Cardiothoracic",
@@ -1849,7 +1845,7 @@ window.QUESTIONS.push(...[
     "source_tag": "MCQ Compilled TASH.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9076,
     "specialty": "General Surgery",
     "topic": "General Surgery",
@@ -1873,7 +1869,7 @@ window.QUESTIONS.push(...[
     "source_tag": "MCQ Compilled TASH.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9077,
     "specialty": "Cardiothoracic",
     "topic": "Cardiothoracic",

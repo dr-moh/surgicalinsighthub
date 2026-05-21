@@ -1,7 +1,6 @@
 if (!window.QUESTIONS) window.QUESTIONS = [];
 window.QUESTIONS.push(...[
-[
-  {
+{
     "specialty": "Pediatric Surgery",
     "topic": "Hypertrophic Pyloric Stenosis",
     "question": "A 4-week-old male infant presents with non-bilious projectile vomiting. Examination reveals a palpable 'olive-shaped' mass in the epigastrium. What is the classic metabolic abnormality associated with this condition?",
@@ -31,7 +30,7 @@ window.QUESTIONS.push(...[
     "id": 1662,
     "_src_file": "pediatric_surgery.js"
   },
-  {
+{
     "specialty": "Pediatric Surgery",
     "topic": "Intussusception",
     "question": "Which of the following is the hallmark ultrasound finding and the standard initial treatment for uncomplicated pediatric intussusception?",
@@ -61,7 +60,7 @@ window.QUESTIONS.push(...[
     "id": 1663,
     "_src_file": "pediatric_surgery.js"
   },
-  {
+{
     "specialty": "Pediatric Surgery",
     "topic": "Hirschsprung Disease",
     "question": "What is the 'Gold Standard' for the diagnosis of Hirschsprung Disease?",
@@ -91,7 +90,7 @@ window.QUESTIONS.push(...[
     "id": 1664,
     "_src_file": "pediatric_surgery.js"
   },
-  {
+{
     "specialty": "Pediatric Surgery",
     "topic": "Malrotation and Volvulus",
     "question": "A 1-week-old infant presents with sudden-onset BILIOUS vomiting. An Upper GI series shows the 'corkscrew' appearance of the duodenum. what is the emergency surgical procedure required?",
@@ -121,7 +120,7 @@ window.QUESTIONS.push(...[
     "id": 1665,
     "_src_file": "pediatric_surgery.js"
   },
-  {
+{
     "specialty": "Pediatric Surgery",
     "topic": "Tracheoesophageal Fistula (TEF)",
     "question": "What is the most common anatomical type of Esophageal Atresia and Tracheoesophageal Fistula (EA/TEF)?",
@@ -151,7 +150,7 @@ window.QUESTIONS.push(...[
     "id": 1666,
     "_src_file": "pediatric_surgery.js"
   },
-  {
+{
     "specialty": "Pediatric Surgery",
     "topic": "Omphalocele vs Gastroschisis",
     "question": "Which of the following is TRUE regarding Gastroschisis compared to Omphalocele?",
@@ -181,7 +180,7 @@ window.QUESTIONS.push(...[
     "id": 1667,
     "_src_file": "pediatric_surgery.js"
   },
-  {
+{
     "specialty": "Pediatric Surgery",
     "topic": "Biliary Atresia",
     "question": "What is the preferred initial surgical procedure for a 6-week-old infant with confirmed Biliary Atresia?",
@@ -211,7 +210,7 @@ window.QUESTIONS.push(...[
     "id": 1668,
     "_src_file": "pediatric_surgery.js"
   },
-  {
+{
     "specialty": "Pediatric Surgery",
     "topic": "Necrotizing Enterocolitis (NEC)",
     "question": "Which radiographic finding is pathognomonic for Necrotizing Enterocolitis (NEC)?",
@@ -241,7 +240,7 @@ window.QUESTIONS.push(...[
     "id": 1669,
     "_src_file": "pediatric_surgery.js"
   },
-  {
+{
     "specialty": "Pediatric Surgery",
     "topic": "Pediatric Renal Tumors",
     "question": "A 3-year-old child presents with a large, asymptomatic abdominal mass. On CT, the mass is found to arise from the kidney but does NOT cross the midline. What is the most likely diagnosis?",
@@ -271,7 +270,7 @@ window.QUESTIONS.push(...[
     "id": 1670,
     "_src_file": "pediatric_surgery.js"
   },
-  {
+{
     "specialty": "Pediatric Surgery",
     "topic": "Diaphragmatic Hernia",
     "question": "A neonate with a scaphoid abdomen presents with immediate respiratory distress and cyanosis. Breath sounds are absent on the left. What is the most likely diagnosis?",
@@ -301,7 +300,7 @@ window.QUESTIONS.push(...[
     "id": 1671,
     "_src_file": "pediatric_surgery.js"
   },
-  {
+{
     "id": 803,
     "specialty": "Pediatric Surgery",
     "topic": "Comprhensive Surgery Revision conv.docx",
@@ -332,7 +331,7 @@ window.QUESTIONS.push(...[
     "takeaway": "PLAN: Further education should focus on reinforcing the pathophysiology of CDH, the criteria for ECMO, and the importance of a holistic clinical approach. Case studies and simulations involving CDH patients would be valuable. Consider incorporating a detailed discussion of the hemodynamic monitoring and management strategies specific to this condition.",
     "_src_file": "pediatric_surgery.js"
   },
-  {
+{
     "id": 806,
     "specialty": "Pediatric Surgery",
     "topic": "Comprhensive Surgery Revision conv.docx",
@@ -363,7 +362,7 @@ window.QUESTIONS.push(...[
     "takeaway": "PLAN: I recommend a focused review of embryological development of the lungs, emphasizing the origin of bronchial buds.  Case-based learning focusing on the clinical presentation and diagnostic workup of each congenital lung anomaly would be beneficial.  Specifically, students should be able to trace the developmental pathway from the foregut to the specific malformation.",
     "_src_file": "pediatric_surgery.js"
   },
-  {
+{
     "id": 805,
     "specialty": "Pediatric Surgery",
     "topic": "Comprhensive Surgery Revision conv.docx",
@@ -394,5 +393,4 @@ window.QUESTIONS.push(...[
     "takeaway": "PLAN: I recommend a review of embryologic development of the diaphragm, focusing on the formation and function of the pleuroperitoneal fold.  Case studies illustrating the clinical presentation and management of CDH are also beneficial.  Specifically, review the pathophysiology linking diaphragmatic defect to pulmonary hypertension.",
     "_src_file": "pediatric_surgery.js"
   }
-]
 ]);

@@ -1,34 +1,6 @@
-// Auto-harvested from: R2 1-110 Exam.docx.txt
-// Generated: 2026-05-07T13:33:55.230Z
-// NOTE: Answers default to A — all questions need manual review.
-// Specialty: General Surgery | Questions: 50
 if (!window.QUESTIONS) window.QUESTIONS = [];
 window.QUESTIONS.push(...[
-  {
-    "id": 9700,
-    "specialty": "Urology",
-    "topic": "Urology",
-    "question": "What percent of bladder cancer in males is caused by smoking?",
-    "options": {
-      "A": "5%",
-      "B": "20%",
-      "C": "40%",
-      "D": "60%2. A 55-year-old male patient was told to have inverted papilloma."
-    },
-    "answer": "A",
-    "sharp": {
-      "S": "High-yield Urology board question.",
-      "H": "Review each option carefully against the clinical stem.",
-      "A": "Eliminate options that don't fit the primary diagnosis or guideline principle.",
-      "R": "Refer to current Urology guidelines for this topic.",
-      "P": "Remember the key fact and apply it to similar clinical scenarios."
-    },
-    "guideline": "Urology board principles",
-    "takeaway": "Review What percent of bladder cancer in males is caused by smoking?...",
-    "source_tag": "R2 1-110 Exam.docx.txt",
-    "needs_review": true
-  },
-  {
+{
     "id": 9701,
     "specialty": "Urology",
     "topic": "Urology",
@@ -52,7 +24,7 @@ window.QUESTIONS.push(...[
     "source_tag": "R2 1-110 Exam.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9702,
     "specialty": "Urology",
     "topic": "Urology",
@@ -76,7 +48,7 @@ window.QUESTIONS.push(...[
     "source_tag": "R2 1-110 Exam.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9703,
     "specialty": "Urology",
     "topic": "Urology",
@@ -100,7 +72,7 @@ window.QUESTIONS.push(...[
     "source_tag": "R2 1-110 Exam.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9704,
     "specialty": "Urology",
     "topic": "Urology",
@@ -124,7 +96,7 @@ window.QUESTIONS.push(...[
     "source_tag": "R2 1-110 Exam.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9705,
     "specialty": "Urology",
     "topic": "Urology",
@@ -148,7 +120,7 @@ window.QUESTIONS.push(...[
     "source_tag": "R2 1-110 Exam.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9706,
     "specialty": "Urology",
     "topic": "Urology",
@@ -172,7 +144,7 @@ window.QUESTIONS.push(...[
     "source_tag": "R2 1-110 Exam.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9707,
     "specialty": "Urology",
     "topic": "Urology",
@@ -196,7 +168,7 @@ window.QUESTIONS.push(...[
     "source_tag": "R2 1-110 Exam.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9708,
     "specialty": "Urology",
     "topic": "Urology",
@@ -220,7 +192,7 @@ window.QUESTIONS.push(...[
     "source_tag": "R2 1-110 Exam.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9709,
     "specialty": "Urology",
     "topic": "Urology",
@@ -244,7 +216,7 @@ window.QUESTIONS.push(...[
     "source_tag": "R2 1-110 Exam.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9710,
     "specialty": "HPB",
     "topic": "HPB",
@@ -268,7 +240,7 @@ window.QUESTIONS.push(...[
     "source_tag": "R2 1-110 Exam.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9711,
     "specialty": "Urology",
     "topic": "Urology",
@@ -292,7 +264,7 @@ window.QUESTIONS.push(...[
     "source_tag": "R2 1-110 Exam.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9712,
     "specialty": "Urology",
     "topic": "Urology",
@@ -316,7 +288,7 @@ window.QUESTIONS.push(...[
     "source_tag": "R2 1-110 Exam.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9713,
     "specialty": "Urology",
     "topic": "Urology",
@@ -340,7 +312,7 @@ window.QUESTIONS.push(...[
     "source_tag": "R2 1-110 Exam.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9714,
     "specialty": "Urology",
     "topic": "Urology",
@@ -364,7 +336,7 @@ window.QUESTIONS.push(...[
     "source_tag": "R2 1-110 Exam.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9715,
     "specialty": "Urology",
     "topic": "Urology",
@@ -388,7 +360,7 @@ window.QUESTIONS.push(...[
     "source_tag": "R2 1-110 Exam.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9716,
     "specialty": "Urology",
     "topic": "Urology",
@@ -412,7 +384,7 @@ window.QUESTIONS.push(...[
     "source_tag": "R2 1-110 Exam.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9717,
     "specialty": "Urology",
     "topic": "Urology",
@@ -436,7 +408,7 @@ window.QUESTIONS.push(...[
     "source_tag": "R2 1-110 Exam.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9718,
     "specialty": "General Surgery",
     "topic": "General Surgery",
@@ -460,7 +432,7 @@ window.QUESTIONS.push(...[
     "source_tag": "R2 1-110 Exam.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9719,
     "specialty": "Urology",
     "topic": "Urology",
@@ -484,7 +456,7 @@ window.QUESTIONS.push(...[
     "source_tag": "R2 1-110 Exam.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9720,
     "specialty": "Urology",
     "topic": "Urology",
@@ -508,7 +480,7 @@ window.QUESTIONS.push(...[
     "source_tag": "R2 1-110 Exam.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9721,
     "specialty": "Colorectal",
     "topic": "Colorectal",
@@ -533,7 +505,7 @@ window.QUESTIONS.push(...[
     "source_tag": "R2 1-110 Exam.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9722,
     "specialty": "Colorectal",
     "topic": "Colorectal",
@@ -558,7 +530,7 @@ window.QUESTIONS.push(...[
     "source_tag": "R2 1-110 Exam.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9723,
     "specialty": "Colorectal",
     "topic": "Colorectal",
@@ -583,7 +555,7 @@ window.QUESTIONS.push(...[
     "source_tag": "R2 1-110 Exam.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9724,
     "specialty": "Colorectal",
     "topic": "Colorectal",
@@ -607,7 +579,7 @@ window.QUESTIONS.push(...[
     "source_tag": "R2 1-110 Exam.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9725,
     "specialty": "Colorectal",
     "topic": "Colorectal",
@@ -632,7 +604,7 @@ window.QUESTIONS.push(...[
     "source_tag": "R2 1-110 Exam.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9726,
     "specialty": "Colorectal",
     "topic": "Colorectal",
@@ -656,7 +628,7 @@ window.QUESTIONS.push(...[
     "source_tag": "R2 1-110 Exam.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9727,
     "specialty": "Colorectal",
     "topic": "Colorectal",
@@ -681,7 +653,7 @@ window.QUESTIONS.push(...[
     "source_tag": "R2 1-110 Exam.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9728,
     "specialty": "Colorectal",
     "topic": "Colorectal",
@@ -706,7 +678,7 @@ window.QUESTIONS.push(...[
     "source_tag": "R2 1-110 Exam.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9729,
     "specialty": "Colorectal",
     "topic": "Colorectal",
@@ -731,7 +703,7 @@ window.QUESTIONS.push(...[
     "source_tag": "R2 1-110 Exam.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9730,
     "specialty": "Colorectal",
     "topic": "Colorectal",
@@ -756,7 +728,7 @@ window.QUESTIONS.push(...[
     "source_tag": "R2 1-110 Exam.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9731,
     "specialty": "General Surgery",
     "topic": "General Surgery",
@@ -781,7 +753,7 @@ window.QUESTIONS.push(...[
     "source_tag": "R2 1-110 Exam.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9732,
     "specialty": "Vascular",
     "topic": "Vascular",
@@ -806,7 +778,7 @@ window.QUESTIONS.push(...[
     "source_tag": "R2 1-110 Exam.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9733,
     "specialty": "Vascular",
     "topic": "Vascular",
@@ -831,7 +803,7 @@ window.QUESTIONS.push(...[
     "source_tag": "R2 1-110 Exam.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9734,
     "specialty": "Vascular",
     "topic": "Vascular",
@@ -856,7 +828,7 @@ window.QUESTIONS.push(...[
     "source_tag": "R2 1-110 Exam.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9735,
     "specialty": "General Surgery",
     "topic": "General Surgery",
@@ -881,7 +853,7 @@ window.QUESTIONS.push(...[
     "source_tag": "R2 1-110 Exam.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9736,
     "specialty": "Vascular",
     "topic": "Vascular",
@@ -906,7 +878,7 @@ window.QUESTIONS.push(...[
     "source_tag": "R2 1-110 Exam.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9737,
     "specialty": "Vascular",
     "topic": "Vascular",
@@ -930,7 +902,7 @@ window.QUESTIONS.push(...[
     "source_tag": "R2 1-110 Exam.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9738,
     "specialty": "Colorectal",
     "topic": "Colorectal",
@@ -954,7 +926,7 @@ window.QUESTIONS.push(...[
     "source_tag": "R2 1-110 Exam.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9739,
     "specialty": "Urology",
     "topic": "Urology",
@@ -978,7 +950,7 @@ window.QUESTIONS.push(...[
     "source_tag": "R2 1-110 Exam.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9740,
     "specialty": "Urology",
     "topic": "Urology",
@@ -1002,7 +974,7 @@ window.QUESTIONS.push(...[
     "source_tag": "R2 1-110 Exam.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9741,
     "specialty": "Urology",
     "topic": "Urology",
@@ -1026,7 +998,7 @@ window.QUESTIONS.push(...[
     "source_tag": "R2 1-110 Exam.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9742,
     "specialty": "Urology",
     "topic": "Urology",
@@ -1050,7 +1022,7 @@ window.QUESTIONS.push(...[
     "source_tag": "R2 1-110 Exam.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9743,
     "specialty": "Vascular",
     "topic": "Vascular",
@@ -1074,7 +1046,7 @@ window.QUESTIONS.push(...[
     "source_tag": "R2 1-110 Exam.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9744,
     "specialty": "Urology",
     "topic": "Urology",
@@ -1098,7 +1070,7 @@ window.QUESTIONS.push(...[
     "source_tag": "R2 1-110 Exam.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9745,
     "specialty": "Cardiothoracic",
     "topic": "Cardiothoracic",
@@ -1122,7 +1094,7 @@ window.QUESTIONS.push(...[
     "source_tag": "R2 1-110 Exam.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9746,
     "specialty": "Cardiothoracic",
     "topic": "Cardiothoracic",
@@ -1146,7 +1118,7 @@ window.QUESTIONS.push(...[
     "source_tag": "R2 1-110 Exam.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9747,
     "specialty": "Cardiothoracic",
     "topic": "Cardiothoracic",
@@ -1170,7 +1142,7 @@ window.QUESTIONS.push(...[
     "source_tag": "R2 1-110 Exam.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9748,
     "specialty": "Cardiothoracic",
     "topic": "Cardiothoracic",
@@ -1194,7 +1166,7 @@ window.QUESTIONS.push(...[
     "source_tag": "R2 1-110 Exam.docx.txt",
     "needs_review": true
   },
-  {
+{
     "id": 9749,
     "specialty": "Cardiothoracic",
     "topic": "Cardiothoracic",

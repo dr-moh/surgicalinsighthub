@@ -1,40 +1,6 @@
 if (!window.QUESTIONS) window.QUESTIONS = [];
 window.QUESTIONS.push(...[
-[
-  {
-    "id": 511,
-    "specialty": "Trauma Surgery",
-    "topic": "Metabolic Response to Injury",
-    "question": "A 35-year-old woman presents to you after running her first marathon with complaints of muscle aches. Which of the following is not an action of cortisol in this metabolically stressed patient?",
-    "options": {
-      "A": "It stimulates release of insulin by the pancreas.",
-      "C": "It stimulates release of lactate from skeletal muscle.",
-      "D": "It induces release of glycerol from adipose tissue.",
-      "E": "It leads to immunosuppression."
-    },
-    "answer": "A",
-    "explanation": {
-      "correct": "Cortisol is a counter-regulatory hormone that opposes insulin; it causes insulin resistance and decreases insulin secretion.",
-      "A": "Correct (It is NOT an action); cortisol inhibits, rather than stimulates, insulin's anabolic effects.",
-      "C": "Incorrect; cortisol promotes muscle catabolism to supply lactate/amino acids for gluconeogenesis.",
-      "D": "Incorrect; cortisol induces lipolysis to mobilize energy.",
-      "E": "Incorrect; cortisol has potent immunosuppressive and anti-inflammatory properties."
-    },
-    "sharp": {
-      "status": "ACCEPT",
-      "verified_answer": "A",
-      "set_the_stage": "Cortisol is the primary glucocorticoid released from the adrenal cortex during the neuroendocrine response to physiological stress, trauma, or extreme exertion.",
-      "highlight_excellence": "Cortisol is a classic counter-regulatory hormone. Its primary function during stress is to mobilize energy stores and ensure adequate glucose supply to the brain and heart. It does this by promoting gluconeogenesis, lipolysis, and protein catabolism. Crucially, it acts as an *antagonist* to insulin, causing peripheral insulin resistance and inhibiting insulin secretion. Therefore, stating that it stimulates the release of insulin (A) is completely false.",
-      "address_gaps": "Cortisol promotes the release of lactate and amino acids from muscle (C) to serve as substrates for hepatic gluconeogenesis. It induces lipolysis to release glycerol and free fatty acids (D). At high, sustained levels, it also exhibits potent anti-inflammatory and immunosuppressive effects (E).",
-      "review_learning_points": "The metabolic response to injury is characterized by the 'ebb' and 'flow' phases. In the flow phase, catecholamines, glucagon, and cortisol act synergistically to create a hypermetabolic, catabolic state characterized by hyperglycemia and negative nitrogen balance.",
-      "plan_for_improvement": "Think of Cortisol as the 'Stress Sugar' hormone—it breaks down muscle and fat to make sugar, and it blocks insulin from storing that sugar away."
-    },
-    "guideline": "Critical care guidelines emphasize tight glycemic control in stressed surgical patients precisely because counter-regulatory hormones like cortisol drive dangerous stress-induced hyperglycemia.",
-    "takeaway": "Stress hyperglycemia in surgical and trauma patients is an expected physiological response driven directly by cortisol and catecholamines.",
-    "visualization": "A conceptual seesaw where Cortisol, Glucagon, and Epinephrine are heavy on one side, driving blood glucose levels sky-high, easily lifting a weakened Insulin molecule on the other side.",
-    "_src_file": "general_surgery.js"
-  },
-  {
+{
     "specialty": "Trauma Surgery",
     "topic": "Primary Survey",
     "question": "In the ATLS Primary Survey, what is the most important FIRST step in managing a patient with a suspected cervical spine injury and a compromised airway?",
@@ -64,7 +30,7 @@ window.QUESTIONS.push(...[
     "id": 1652,
     "_src_file": "trauma.js"
   },
-  {
+{
     "specialty": "Trauma Surgery",
     "topic": "Tension Pneumothorax",
     "question": "A trauma patient presents with respiratory distress, absent breath sounds on the right, and hypotension. What is the most appropriate IMMEDIATE management?",
@@ -94,7 +60,7 @@ window.QUESTIONS.push(...[
     "id": 1653,
     "_src_file": "trauma.js"
   },
-  {
+{
     "specialty": "Trauma Surgery",
     "topic": "Cardiac Tamponade",
     "question": "Which of the following constitutes 'Beck's Triad' for cardiac tamponade?",
@@ -124,7 +90,7 @@ window.QUESTIONS.push(...[
     "id": 1654,
     "_src_file": "trauma.js"
   },
-  {
+{
     "specialty": "Trauma Surgery",
     "topic": "Hemorrhagic Shock",
     "question": "A trauma patient has a heart rate of 125, blood pressure of 90/60, and is confused. According to ATLS, which class of hemorrhagic shock is this?",
@@ -154,7 +120,7 @@ window.QUESTIONS.push(...[
     "id": 1655,
     "_src_file": "trauma.js"
   },
-  {
+{
     "specialty": "Trauma Surgery",
     "topic": "Glasgow Coma Scale (GCS)",
     "question": "A patient opens their eyes to pain, makes incomprehensible sounds, and withdraws from pain. What is their GCS score?",
@@ -184,7 +150,7 @@ window.QUESTIONS.push(...[
     "id": 1656,
     "_src_file": "trauma.js"
   },
-  {
+{
     "specialty": "Trauma Surgery",
     "topic": "Epidural vs Subdural Hematoma",
     "question": "A CT scan shows a biconvex (lens-shaped) hyperdense collection that does NOT cross suture lines. Which vessel is most likely injured?",
@@ -214,7 +180,7 @@ window.QUESTIONS.push(...[
     "id": 1657,
     "_src_file": "trauma.js"
   },
-  {
+{
     "specialty": "Trauma Surgery",
     "topic": "Blunt Aortic Injury",
     "question": "What is the most common anatomical site for a traumatic aortic rupture following a high-speed deceleration injury?",
@@ -244,7 +210,7 @@ window.QUESTIONS.push(...[
     "id": 1658,
     "_src_file": "trauma.js"
   },
-  {
+{
     "specialty": "Trauma Surgery",
     "topic": "Damage Control Surgery",
     "question": "Which of the following defines the 'Lethal Triad' of trauma that Damage Control Surgery aims to stop?",
@@ -274,7 +240,7 @@ window.QUESTIONS.push(...[
     "id": 1659,
     "_src_file": "trauma.js"
   },
-  {
+{
     "specialty": "Trauma Surgery",
     "topic": "Abdominal Trauma: FAST Exam",
     "question": "Which of the following is NOT one of the four standard views in a Focused Assessment with Sonography for Trauma (FAST) exam?",
@@ -304,7 +270,7 @@ window.QUESTIONS.push(...[
     "id": 1660,
     "_src_file": "trauma.js"
   },
-  {
+{
     "specialty": "Trauma Surgery",
     "topic": "Urethral Injury",
     "question": "A male patient with a pelvic fracture has 'high-riding prostate' on rectal exam and blood at the urethral meatus. What is the most appropriate next step to evaluate the urethra?",
@@ -334,7 +300,7 @@ window.QUESTIONS.push(...[
     "id": 1661,
     "_src_file": "trauma.js"
   },
-  {
+{
     "id": 517,
     "specialty": "Trauma",
     "topic": "Comprhensive Surgery Revision conv.docx",
@@ -366,70 +332,7 @@ window.QUESTIONS.push(...[
     "takeaway": "PLAN: For any patient presenting with knee dislocation and absent distal pulses, the immediate plan is emergent transfer to the operating room for vascular exploration. This allows for direct visualization of the popliteal artery, assessment for injury, and prompt repair if necessary. Definitive management of ligamentous injuries can be addressed once limb viability is secured.",
     "_src_file": "trauma.js"
   },
-  {
-    "id": 510,
-    "specialty": "Trauma",
-    "topic": "rush.docx",
-    "question": "With regard to normal hemostasis, which of the following statements is true?",
-    "options": {
-      "B": "Platelet adhesion is mediated by fibrin monomers.",
-      "D": "Heparin inhibits ADP-stimulated platelet aggregation.",
-      "E": "A prolonged bleeding time may be due to thrombocyto penia, a qualitative platelet defect, or reduced amounts of vWF."
-    },
-    "answer": "E",
-    "explanation": {
-      "correct": "Option E is the high-yield, clinically relevant statement. A prolonged bleeding time is a direct indicator of impaired primary hemostasis. Thrombocytopenia (low platelet count), qualitative platelet defects (e.g., Glanzmann's thrombasthenia, Bernard-Soulier syndrome), and von Willebrand disease (vWD) are the classic triad of causes for a prolonged bleeding time. Recognizing this association is crucial for pre-operative assessment and management of bleeding disorders.",
-      "A": "",
-      "B": "",
-      "C": "",
-      "D": "",
-      "E": ""
-    },
-    "sharp": {
-      "status": "ACCEPT",
-      "verified_answer": "E",
-      "set_the_stage": "This question probes fundamental knowledge of hemostasis, a critical process for surgical success and patient safety. Understanding the interplay of platelets, coagulation factors, and vascular integrity is paramount for any surgeon.",
-      "highlight_excellence": "Option E is the high-yield, clinically relevant statement. A prolonged bleeding time is a direct indicator of impaired primary hemostasis. Thrombocytopenia (low platelet count), qualitative platelet defects (e.g., Glanzmann's thrombasthenia, Bernard-Soulier syndrome), and von Willebrand disease (vWD) are the classic triad of causes for a prolonged bleeding time. Recognizing this association is crucial for pre-operative assessment and management of bleeding disorders.",
-      "address_gaps": "Options B and D are incorrect and represent common misconceptions. Option B is wrong because platelet adhesion to the subendothelium is primarily mediated by von Willebrand factor (vWF) binding to the glycoprotein Ib (GPIb) receptor on platelets. Fibrin monomers are involved in the secondary hemostasis (coagulation cascade) and clot stabilization, not initial platelet adhesion. Option D is incorrect because heparin is an anticoagulant that primarily works by potentiating antithrombin III, which inhibits thrombin and Factor Xa. While heparin can have some indirect effects on platelets, it does not directly inhibit ADP-stimulated platelet aggregation. ADP is a potent platelet agonist, and drugs like aspirin and clopidogrel target this pathway.",
-      "review_guidelines": "When evaluating hemostasis questions, focus on the primary and secondary pathways. Primary hemostasis involves platelets and the vascular wall, leading to the formation of a platelet plug. Secondary hemostasis involves the coagulation cascade, leading to fibrin formation and clot stabilization. Clinical manifestations like bleeding time, PT, and PTT are direct correlates of these pathways.",
-      "plan": "For future study, reinforce the mechanisms of platelet adhesion and aggregation, the roles of key factors like vWF and fibrinogen, and the specific targets of common anticoagulants and antiplatelet agents. Practice associating clinical findings (e.g., prolonged bleeding time, PT, PTT) with specific hemostatic defects."
-    },
-    "guideline": "When evaluating hemostasis questions, focus on the primary and secondary pathways. Primary hemostasis involves platelets and the vascular wall, leading to the formation of a platelet plug. Secondary hemostasis involves the coagulation cascade, leading to fibrin formation and clot stabilization. Clinical manifestations like bleeding time, PT, and PTT are direct correlates of these pathways.",
-    "takeaway": "PLAN: For future study, reinforce the mechanisms of platelet adhesion and aggregation, the roles of key factors like vWF and fibrinogen, and the specific targets of common anticoagulants and antiplatelet agents. Practice associating clinical findings (e.g., prolonged bleeding time, PT, PTT) with specific hemostatic defects.",
-    "_src_file": "trauma.js"
-  },
-  {
-    "id": 503,
-    "specialty": "Trauma",
-    "topic": "rush.docx",
-    "question": "Which of the following statements regarding the role of collagen in wound healing is true?",
-    "options": {
-      "D": "Tensile strength of the wound increases gradually for up to 2 years after injury; however, it generally reaches a level of only about 80% of that of uninjured tissue.",
-      "E": "Tensile strength is the force necessary to reopen a wound."
-    },
-    "answer": "D",
-    "explanation": {
-      "correct": "Option D correctly describes the gradual increase in tensile strength of scar tissue following injury. This is a key characteristic of collagen deposition during wound repair. The timeframe (up to 2 years) and the approximate 80% strength comparison to uninjured tissue are clinically relevant and reflect the reality of scar formation. It’s important to note that scar tissue, while functional, is inherently weaker than native tissue.",
-      "A": "",
-      "B": "",
-      "C": "",
-      "D": "",
-      "E": ""
-    },
-    "sharp": {
-      "status": "ACCEPT",
-      "verified_answer": "D",
-      "set_the_stage": "This question assesses understanding of a fundamental aspect of wound healing – the role of collagen. Collagen is the primary structural protein responsible for wound strength and integrity. Let’s analyze the options to determine the most accurate statement.",
-      "highlight_excellence": "Option D correctly describes the gradual increase in tensile strength of scar tissue following injury. This is a key characteristic of collagen deposition during wound repair. The timeframe (up to 2 years) and the approximate 80% strength comparison to uninjured tissue are clinically relevant and reflect the reality of scar formation. It’s important to note that scar tissue, while functional, is inherently weaker than native tissue.",
-      "address_gaps": "Option E is incorrect and demonstrates a misunderstanding of tensile strength. Tensile strength refers to the force required to *stretch* or tear a material, not the force needed to reopen a wound. While reopening a wound does involve force, defining tensile strength in this context is inaccurate.  The other options are either overly simplistic or misleading.",
-      "review_guidelines": "1. **Collagen Synthesis:** Reinforce the understanding that collagen is the primary structural component of scar tissue. 2. **Time Course of Healing:** Emphasize the protracted nature of collagen deposition and the resulting reduction in tensile strength compared to uninjured tissue. 3. **Tensile Strength Definition:** Clearly define tensile strength as the force required to stretch or tear a material, differentiating it from the force required to reopen a wound. 4. **Scar Tissue Properties:** Discuss the inherent differences in mechanical properties between scar tissue and native tissue – weaker, less elastic, and often less organized.",
-      "plan": "I recommend a focused review of the cellular and molecular mechanisms of wound healing, with particular attention to the role of fibroblasts and collagen synthesis. Case studies illustrating the progression of scar tissue formation and the impact of tensile strength on functional outcomes would be beneficial. Further, a discussion on factors that influence scar quality (e.g., tension, infection, diabetes) is warranted."
-    },
-    "guideline": "1. **Collagen Synthesis:** Reinforce the understanding that collagen is the primary structural component of scar tissue. 2. **Time Course of Healing:** Emphasize the protracted nature of collagen deposition and the resulting reduction in tensile strength compared to uninjured tissue. 3. **Tensile Strength Definition:** Clearly define tensile strength as the force required to stretch or tear a material, differentiating it from the force required to reopen a wound. 4. **Scar Tissue Properties:** Discuss the inherent differences in mechanical properties between scar tissue and native tissue – weaker, less elastic, and often less organized.",
-    "takeaway": "PLAN: I recommend a focused review of the cellular and molecular mechanisms of wound healing, with particular attention to the role of fibroblasts and collagen synthesis. Case studies illustrating the progression of scar tissue formation and the impact of tensile strength on functional outcomes would be beneficial. Further, a discussion on factors that influence scar quality (e.g., tension, infection, diabetes) is warranted.",
-    "_src_file": "trauma.js"
-  },
-  {
+{
     "id": 501,
     "specialty": "Trauma",
     "topic": "rush.docx",
@@ -460,7 +363,7 @@ window.QUESTIONS.push(...[
     "takeaway": "PLAN: I would recommend a focused review of cytokine biology, specifically concentrating on TNF-α.  Case studies illustrating the role of TNF-α in sepsis and inflammatory arthritis would be beneficial.  A deeper dive into the mechanisms of anti-TNF-α antibody action is also warranted.",
     "_src_file": "trauma.js"
   },
-  {
+{
     "id": 513,
     "specialty": "Trauma",
     "topic": "rush.docx",
@@ -492,7 +395,7 @@ window.QUESTIONS.push(...[
     "takeaway": "PLAN: 1. Initiate IV vancomycin 125 mg every 12 hours for 14 days. 2. Consider fecal microbiota transplantation (FMT) if the infection persists or recurs despite vancomycin. 3. Assess for potential contributing factors (e.g., recent antibiotic use, immunosuppression). 4. Monitor renal function and electrolyte balance closely during vancomycin therapy.",
     "_src_file": "trauma.js"
   },
-  {
+{
     "id": 516,
     "specialty": "Trauma",
     "topic": "Comprhensive Surgery Revision conv.docx",
@@ -524,38 +427,7 @@ window.QUESTIONS.push(...[
     "takeaway": "PLAN: Further education should focus on the hemodynamic assessment and interpretation of CT scans. Case-based discussions of various blunt renal trauma scenarios are highly recommended. Consider incorporating simulation exercises to practice resuscitation and exploration techniques. Reinforce the concept that exploration is a *therapeutic* decision, not a default one.",
     "_src_file": "trauma.js"
   },
-  {
-    "id": 508,
-    "specialty": "Trauma",
-    "topic": "rush.docx",
-    "question": "Which of the following is most clearly diagnostic for lower extremity DVT in an ICU patient?",
-    "options": {
-      "B": "Venous duplex study with incompressibility and sluggish flow through the great saphenous vein below the knee",
-      "E": "Unilateral leg swelling"
-    },
-    "answer": "B",
-    "explanation": {
-      "correct": "The correct answer (B) – venous duplex study with incompressibility and sluggish flow through the great saphenous vein below the knee – represents the *definitive* diagnostic criterion. The presence of incompressibility and sluggish flow, particularly below the knee, is highly suggestive of a thrombus within the venous system. This is the key differentiator from simply unilateral leg swelling.",
-      "A": "",
-      "B": "",
-      "C": "",
-      "D": "",
-      "E": ""
-    },
-    "sharp": {
-      "status": "ACCEPT",
-      "verified_answer": "B",
-      "set_the_stage": "This question assesses understanding of the gold standard diagnostic tool for lower extremity DVT, particularly in the challenging setting of an ICU patient. The ICU environment often presents unique diagnostic hurdles due to patient instability, sedation, and limited access for invasive procedures.",
-      "highlight_excellence": "The correct answer (B) – venous duplex study with incompressibility and sluggish flow through the great saphenous vein below the knee – represents the *definitive* diagnostic criterion. The presence of incompressibility and sluggish flow, particularly below the knee, is highly suggestive of a thrombus within the venous system. This is the key differentiator from simply unilateral leg swelling.",
-      "address_gaps": "Option E, ‘Unilateral leg swelling,’ is a *nonspecific* finding. While swelling can be a symptom of DVT, it doesn’t confirm the diagnosis. It could be due to edema, compartment syndrome, or other causes. The duplex study provides objective evidence of venous obstruction.",
-      "review_guidelines": "1. **Duplex Ultrasound:** This is the *initial* diagnostic test of choice for suspected DVT. Key findings include: a) Incompressibility of the vein during compression b) Slow or absent venous blood flow, especially below the knee. c) Visualization of a thrombus. 2. **Clinical Context:** Always consider the patient’s clinical presentation (e.g., risk factors for DVT) alongside the ultrasound findings. 3. **Deep Vein Thrombosis (DVT) vs. Superficial Vein Thrombosis (SVT):** Duplex studies can differentiate between deep and superficial venous thrombosis. 4. **Contraindications:** Be aware of contraindications to ultrasound (e.g., metallic implants).",
-      "plan": "1. **Immediate Duplex Ultrasound:** In an ICU patient suspected of DVT, a venous duplex study should be performed *immediately* to confirm or rule out the diagnosis. 2. **Further Investigation:** If the duplex study is positive, further investigation (e.g., CT venogram, MRI venogram) may be warranted to assess the extent of the thrombosis and rule out alternative diagnoses. 3. **Anticoagulation:** Initiate anticoagulation therapy based on the clinical suspicion and diagnostic findings.  Close monitoring of the patient's response to anticoagulation is crucial."
-    },
-    "guideline": "1. **Duplex Ultrasound:** This is the *initial* diagnostic test of choice for suspected DVT. Key findings include: a) Incompressibility of the vein during compression b) Slow or absent venous blood flow, especially below the knee. c) Visualization of a thrombus. 2. **Clinical Context:** Always consider the patient’s clinical presentation (e.g., risk factors for DVT) alongside the ultrasound findings. 3. **Deep Vein Thrombosis (DVT) vs. Superficial Vein Thrombosis (SVT):** Duplex studies can differentiate between deep and superficial venous thrombosis. 4. **Contraindications:** Be aware of contraindications to ultrasound (e.g., metallic implants).",
-    "takeaway": "PLAN: 1. **Immediate Duplex Ultrasound:** In an ICU patient suspected of DVT, a venous duplex study should be performed *immediately* to confirm or rule out the diagnosis. 2. **Further Investigation:** If the duplex study is positive, further investigation (e.g., CT venogram, MRI venogram) may be warranted to assess the extent of the thrombosis and rule out alternative diagnoses. 3. **Anticoagulation:** Initiate anticoagulation therapy based on the clinical suspicion and diagnostic findings.  Close monitoring of the patient's response to anticoagulation is crucial.",
-    "_src_file": "trauma.js"
-  },
-  {
+{
     "id": 515,
     "specialty": "Trauma",
     "topic": "Comprhensive Surgery Revision conv.docx",
@@ -586,7 +458,7 @@ window.QUESTIONS.push(...[
     "takeaway": "PLAN: Further education should focus on the endoscopic findings associated with caustic injury (e.g., granular appearance, ulceration, strictures) and the importance of prompt endoscopy for timely intervention. Consider incorporating a brief endoscopic simulation or case study to reinforce the concept.",
     "_src_file": "trauma.js"
   },
-  {
+{
     "id": 519,
     "specialty": "Trauma",
     "topic": "Comprhensive Surgery Revision conv.docx",
@@ -618,7 +490,7 @@ window.QUESTIONS.push(...[
     "takeaway": "PLAN: I recommend a focused review of Le Fort fracture classification, orbital fracture management, and the pathophysiology of hemorrhage in maxillofacial trauma. Consider a case-based approach, analyzing radiographs and surgical reports to solidify understanding. Further, practice identifying fracture patterns on simulated radiographs.",
     "_src_file": "trauma.js"
   },
-  {
+{
     "id": 525,
     "specialty": "Trauma",
     "topic": "Comprhensive Surgery Revision conv.docx",
@@ -650,7 +522,7 @@ window.QUESTIONS.push(...[
     "takeaway": "PLAN: I recommend a review of burn pathophysiology, specifically focusing on the hypothalamic response to noxious stimuli, the role of prostaglandins in vasodilation, and the shift from carbohydrate to lipid metabolism during critical illness. Case studies illustrating the clinical presentation of hypermetabolic response (e.g., flushed skin, elevated heart rate, rapid core temperature rise) would be beneficial. Further practice questions should test the ability to differentiate between the various compensatory mechanisms activated during burn injury.",
     "_src_file": "trauma.js"
   },
-  {
+{
     "id": 522,
     "specialty": "Trauma",
     "topic": "Comprhensive Surgery Revision conv.docx",
@@ -680,37 +552,5 @@ window.QUESTIONS.push(...[
     "guideline": "1. **Eschar Assessment:** Thoroughly evaluate the burn wound for signs of eschar breakdown, inflammation, and cellular infiltrate. 2. **Histological Examination:** Biopsy specimens should be examined for microbial migration, neutrophil predominance, and evidence of tissue destruction. 3. **Microbial Identification:** Culture and identify the causative organism(s). 4. **Deep Tissue Involvement:** Recognize that IBWI often extends beyond the superficial layers of the burn wound. 5. **Immunocompromised Patients:** Patients with underlying immune deficiencies are at higher risk for IBWI.",
     "takeaway": "PLAN: I would recommend a focused review of burn wound pathophysiology, specifically addressing the mechanisms of bacterial dissemination and the altered inflammatory response in burn wounds.  Case studies illustrating the histologic features of IBWI are invaluable. Further, emphasize the importance of early recognition and aggressive treatment, including source control, broad-spectrum antibiotics, and wound care.",
     "_src_file": "trauma.js"
-  },
-  {
-    "id": 506,
-    "specialty": "Trauma",
-    "topic": "rush.docx",
-    "question": "Regarding polymorphonucleocytes (PMN) and macrophages, which statement is true?",
-    "options": {
-      "D": "M1 macrophages predominate in the proliferative phase.",
-      "E": "Macrophages are phenotypically stable."
-    },
-    "answer": "Letter E: \"Macrophages are phenotypically stable.\"",
-    "explanation": {
-      "correct": "The correct answer (E) reflects a fundamental principle of macrophage biology. Macrophages, particularly in the context of acute inflammation and wound healing, exhibit a remarkable ability to shift between distinct activation states (M1 and M2) depending on the local microenvironment. However, *once* polarized, they maintain a dominant phenotype for a period, exhibiting a degree of phenotypic stability. This stability is crucial for the coordinated response and resolution of inflammation.",
-      "A": "",
-      "B": "",
-      "C": "",
-      "D": "",
-      "E": ""
-    },
-    "sharp": {
-      "status": "ACCEPT",
-      "verified_answer": "Letter E: \"Macrophages are phenotypically stable.\"",
-      "set_the_stage": "This question assesses understanding of macrophage polarization and its role in inflammation, a critical concept in surgical immunology and wound healing. The MCQ presents a common misconception regarding macrophage plasticity.",
-      "highlight_excellence": "The correct answer (E) reflects a fundamental principle of macrophage biology. Macrophages, particularly in the context of acute inflammation and wound healing, exhibit a remarkable ability to shift between distinct activation states (M1 and M2) depending on the local microenvironment. However, *once* polarized, they maintain a dominant phenotype for a period, exhibiting a degree of phenotypic stability. This stability is crucial for the coordinated response and resolution of inflammation.",
-      "address_gaps": "The incorrect answer (D) – ‘M1 macrophages predominate in the proliferative phase’ – is a simplification and often an overstatement. While M1 macrophages are initially dominant, the inflammatory response is dynamic. The proliferative phase sees a shift towards M2 macrophages, driven by factors like IL-4 and IL-10, which promote tissue repair and resolution. Furthermore, the concept of a purely ‘proliferative phase’ is an oversimplification of the complex, overlapping phases of wound healing.",
-      "review_guidelines": "1. **Macrophage Polarization:** Reinforce understanding of M1 (pro-inflammatory, IFN-gamma) and M2 (anti-inflammatory, IL-4/IL-10) macrophage phenotypes. 2. **Dynamic Nature of Inflammation:** Emphasize that inflammatory responses are not static; they evolve through distinct phases with shifts in macrophage populations. 3. **Microenvironmental Influence:** Highlight the role of cytokines and growth factors in driving macrophage polarization. 4. **Wound Healing Phases:** Review the stages of wound healing (hemostasis, inflammation, proliferation, remodeling) and the corresponding macrophage roles.",
-      "plan": "Implement a focused review of macrophage biology, including polarization mechanisms, cytokine signaling, and the temporal changes in macrophage populations during inflammation and wound healing. Consider using diagrams and flowcharts to illustrate the dynamic interplay between M1 and M2 macrophages. Incorporate case studies demonstrating how manipulating macrophage polarization can impact surgical outcomes (e.g., chronic wounds, infection control)."
-    },
-    "guideline": "1. **Macrophage Polarization:** Reinforce understanding of M1 (pro-inflammatory, IFN-gamma) and M2 (anti-inflammatory, IL-4/IL-10) macrophage phenotypes. 2. **Dynamic Nature of Inflammation:** Emphasize that inflammatory responses are not static; they evolve through distinct phases with shifts in macrophage populations. 3. **Microenvironmental Influence:** Highlight the role of cytokines and growth factors in driving macrophage polarization. 4. **Wound Healing Phases:** Review the stages of wound healing (hemostasis, inflammation, proliferation, remodeling) and the corresponding macrophage roles.",
-    "takeaway": "PLAN: Implement a focused review of macrophage biology, including polarization mechanisms, cytokine signaling, and the temporal changes in macrophage populations during inflammation and wound healing. Consider using diagrams and flowcharts to illustrate the dynamic interplay between M1 and M2 macrophages. Incorporate case studies demonstrating how manipulating macrophage polarization can impact surgical outcomes (e.g., chronic wounds, infection control).",
-    "_src_file": "trauma.js"
   }
-]
 ]);

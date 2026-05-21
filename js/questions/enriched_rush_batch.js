@@ -1,6 +1,6 @@
-window.QUESTIONS = window.QUESTIONS || [];
+if (!window.QUESTIONS) window.QUESTIONS = [];
 window.QUESTIONS.push(...[
-  {
+{
     "id": 5145,
     "specialty": "General Surgery",
     "topic": "Gastric Anatomy",
@@ -24,7 +24,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "The left gastric artery often gives rise to an aberrant left hepatic artery; its ligation carries a risk of left-sided hepatic ischemia."
   },
-  {
+{
     "id": 5146,
     "specialty": "General Surgery",
     "topic": "Esophageal Surgery",
@@ -48,7 +48,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "The right gastroepiploic artery is the critical vessel for maintaining viability of a gastric conduit after esophagectomy."
   },
-  {
+{
     "id": 5147,
     "specialty": "General Surgery",
     "topic": "Vagotomy",
@@ -72,7 +72,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Truncal vagotomy denervates the entire stomach and most of the abdominal viscera by dividing the trunks above their major branches."
   },
-  {
+{
     "id": 5148,
     "specialty": "General Surgery",
     "topic": "Gastric Physiology",
@@ -96,7 +96,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Chief cells produce pepsinogen, the precursor to the proteolytic enzyme pepsin."
   },
-  {
+{
     "id": 5149,
     "specialty": "General Surgery",
     "topic": "Gastric Anatomy",
@@ -120,7 +120,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Parietal and ECL cells are concentrated in the body (corpus) and fundus, while G cells dominate the antrum."
   },
-  {
+{
     "id": 5150,
     "specialty": "General Surgery",
     "topic": "Gastric Physiology",
@@ -144,7 +144,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "The three primary secretagogues for acid are ACh, histamine, and gastrin; somatostatin is the main inhibitor."
   },
-  {
+{
     "id": 5151,
     "specialty": "General Surgery",
     "topic": "Gastric Physiology",
@@ -168,7 +168,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "The gastric phase is the dominant contributor to acid production during digestion."
   },
-  {
+{
     "id": 5152,
     "specialty": "General Surgery",
     "topic": "Gastric Physiology",
@@ -192,7 +192,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Vagal nerve activity stimulates acid production directly via ACh and indirectly via GRP-mediated gastrin release."
   },
-  {
+{
     "id": 5153,
     "specialty": "General Surgery",
     "topic": "Zollinger-Ellison Syndrome",
@@ -216,7 +216,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "The secretin stimulation test is the gold standard for diagnosing gastrinoma when basal gastrin is inconclusive."
   },
-  {
+{
     "id": 5154,
     "specialty": "General Surgery",
     "topic": "Gastrinoma",
@@ -240,7 +240,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Over 90% of gastrinomas are found within the Gastrinoma Triangle."
   },
-  {
+{
     "id": 5155,
     "specialty": "General Surgery",
     "topic": "Gastric Physiology",
@@ -264,7 +264,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "The cephalic phase is the 'psychic' phase of digestion, purely vagally mediated."
   },
-  {
+{
     "id": 5156,
     "specialty": "General Surgery",
     "topic": "Gastric Physiology",
@@ -288,7 +288,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Mechanical and chemical stimuli in the stomach are the hallmarks of the gastric phase."
   },
-  {
+{
     "id": 5157,
     "specialty": "General Surgery",
     "topic": "Gastric Physiology",
@@ -312,7 +312,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Loss of parietal cells (e.g., total gastrectomy) leads to pernicious anemia due to B12 malabsorption."
   },
-  {
+{
     "id": 5158,
     "specialty": "General Surgery",
     "topic": "Post-Gastrectomy Complications",
@@ -336,7 +336,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Diarrhea is a frequent and often disabling consequence of truncal vagotomy."
   },
-  {
+{
     "id": 5159,
     "specialty": "General Surgery",
     "topic": "Gastric Ulcers",
@@ -360,7 +360,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Type I gastric ulcers are the classic 'low acid' ulcers found at the incisura."
   },
-  {
+{
     "id": 5160,
     "specialty": "General Surgery",
     "topic": "Gastric Ulcers",
@@ -384,7 +384,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Type II and III gastric ulcers behave like duodenal ulcers and require acid-reducing procedures if surgery is needed."
   },
-  {
+{
     "id": 5161,
     "specialty": "General Surgery",
     "topic": "Peptic Ulcer Disease",
@@ -408,7 +408,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "H. pylori and NSAIDs are the 'big two' causes of peptic ulcer disease."
   },
-  {
+{
     "id": 5162,
     "specialty": "General Surgery",
     "topic": "Gastric Ulcers",
@@ -432,7 +432,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "For Type I ulcers, the focus is on ulcer excision (via antrectomy) rather than acid reduction."
   },
-  {
+{
     "id": 5163,
     "specialty": "General Surgery",
     "topic": "Gastric Ulcers",
@@ -456,7 +456,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Type IV ulcers are high-lying and present a technical challenge for resection."
   },
-  {
+{
     "id": 5164,
     "specialty": "General Surgery",
     "topic": "Gastric Pathology",
@@ -480,7 +480,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Mnemonic: 'C'urling = 'B'urns (Curling iron), 'C'ushing = 'C'NS."
   },
-  {
+{
     "id": 5165,
     "specialty": "General Surgery",
     "topic": "Gastric Physiology",
@@ -504,7 +504,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "High-fat meals stay in the stomach the longest due to hormonal feedback."
   },
-  {
+{
     "id": 5166,
     "specialty": "General Surgery",
     "topic": "Gastric Physiology",
@@ -528,7 +528,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Fundus = Liquid emptying; Antrum = Solid emptying."
   },
-  {
+{
     "id": 5167,
     "specialty": "General Surgery",
     "topic": "Upper GI Bleeding",
@@ -552,7 +552,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "PUD remains the #1 cause of life-threatening upper GI bleeding."
   },
-  {
+{
     "id": 5168,
     "specialty": "General Surgery",
     "topic": "Upper GI Bleeding",
@@ -576,7 +576,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Dieulafoy's = Caliber-persistent artery; often hard to find because the surrounding mucosa is normal."
   },
-  {
+{
     "id": 5169,
     "specialty": "General Surgery",
     "topic": "Upper GI Bleeding",
@@ -600,7 +600,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Focus endoscopic search on the proximal lesser curvature in cases of unexplained massive UGI bleed."
   },
-  {
+{
     "id": 5170,
     "specialty": "General Surgery",
     "topic": "Upper GI Bleeding",
@@ -624,7 +624,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Endoscopy is both diagnostic and therapeutic for Dieulafoy's lesions."
   },
-  {
+{
     "id": 5171,
     "specialty": "General Surgery",
     "topic": "Perforated Peptic Ulcer",
@@ -648,7 +648,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Sudden pain + Free air = Perforation (usually Duodenal Ulcer)."
   },
-  {
+{
     "id": 5172,
     "specialty": "General Surgery",
     "topic": "Duodenal Ulcers",
@@ -672,7 +672,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Anterior = Perforates; Posterior = Bleeds."
   },
-  {
+{
     "id": 5173,
     "specialty": "General Surgery",
     "topic": "Duodenal Ulcers",
@@ -696,7 +696,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "GDA erosion is the reason posterior duodenal ulcers are life-threatening."
   },
-  {
+{
     "id": 5174,
     "specialty": "General Surgery",
     "topic": "Perforated Peptic Ulcer",
@@ -720,7 +720,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Graham patch is the gold standard for acute duodenal perforation."
   },
-  {
+{
     "id": 5175,
     "specialty": "General Surgery",
     "topic": "Helicobacter Pylori",
@@ -744,7 +744,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "H. pylori causes ulcers and cancer, but generally not reflux."
   },
-  {
+{
     "id": 5176,
     "specialty": "General Surgery",
     "topic": "Gastric Cancer",
@@ -768,7 +768,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Gastric cancer often presents like benign dyspepsia, leading to delayed diagnosis."
   },
-  {
+{
     "id": 5177,
     "specialty": "General Surgery",
     "topic": "Gastric Cancer",
@@ -792,7 +792,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Physical exam signs in gastric cancer often represent advanced, incurable disease."
   },
-  {
+{
     "id": 5178,
     "specialty": "General Surgery",
     "topic": "Gastric Cancer",
@@ -816,7 +816,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Blumer's shelf indicates Stage IV disease."
   },
-  {
+{
     "id": 5179,
     "specialty": "General Surgery",
     "topic": "Gastric Cancer",
@@ -840,7 +840,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "The left supraclavicular node is the classic sentinel node for abdominal malignancy."
   },
-  {
+{
     "id": 5180,
     "specialty": "General Surgery",
     "topic": "Gastric Cancer",
@@ -864,7 +864,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Gastric cancer metastasizes to the ovary via transcoelomic (peritoneal) spread."
   },
-  {
+{
     "id": 5181,
     "specialty": "General Surgery",
     "topic": "Gastric Cancer",
@@ -888,7 +888,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "When one says 'gastric cancer,' they usually mean adenocarcinoma."
   },
-  {
+{
     "id": 5182,
     "specialty": "General Surgery",
     "topic": "Gastric Cancer",
@@ -912,7 +912,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Atrophic conditions of the stomach create a pro-carcinogenic environment."
   },
-  {
+{
     "id": 5183,
     "specialty": "General Surgery",
     "topic": "Gastric Lymphoma",
@@ -936,7 +936,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "MALT lymphoma is the only cancer that can be 'cured' with antibiotics in many patients."
   },
-  {
+{
     "id": 5184,
     "specialty": "General Surgery",
     "topic": "Gastrointestinal Stromal Tumors (GIST)",
@@ -960,7 +960,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "GIST = CD117 positive mesenchymal tumor from cells of Cajal."
   },
-  {
+{
     "id": 5185,
     "specialty": "General Surgery",
     "topic": "Gastric Carcinoids",
@@ -984,7 +984,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Gastric carcinoids often occur in the same location as parietal cells because they are driven by hypergastrinemia in Type I cases."
   },
-  {
+{
     "id": 5186,
     "specialty": "General Surgery",
     "topic": "Gastric Carcinoids",
@@ -1008,7 +1008,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Type I carcinoids are generally benign and can often be managed endoscopically."
   },
-  {
+{
     "id": 5187,
     "specialty": "General Surgery",
     "topic": "GIST",
@@ -1032,7 +1032,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "GIST surgery = Clear margins; No lymphadenectomy needed."
   },
-  {
+{
     "id": 5188,
     "specialty": "General Surgery",
     "topic": "Gastric Lymphoma",
@@ -1056,7 +1056,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "The stomach is the 'king' of extranodal lymphoma."
   },
-  {
+{
     "id": 5189,
     "specialty": "General Surgery",
     "topic": "Menetrier's Disease",
@@ -1080,7 +1080,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Menetrier's = Huge folds + Low acid + Low protein."
   },
-  {
+{
     "id": 5190,
     "specialty": "General Surgery",
     "topic": "Gastric Bezoars",
@@ -1104,7 +1104,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Post-vagotomy patients are prone to phytobezoars due to reduced motility and acid."
   },
-  {
+{
     "id": 5191,
     "specialty": "General Surgery",
     "topic": "Gastric Outlet Obstruction",
@@ -1128,7 +1128,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Chronic outlet obstruction in an adult is malignancy until proven otherwise."
   },
-  {
+{
     "id": 5192,
     "specialty": "General Surgery",
     "topic": "Gastric Volvulus",
@@ -1152,7 +1152,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Hiatal hernia is the 'setup' for gastric volvulus."
   },
-  {
+{
     "id": 5193,
     "specialty": "General Surgery",
     "topic": "Gastric Volvulus",
@@ -1176,7 +1176,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Remember Borchardt's Triad: Pain, Retching, No NG tube."
   },
-  {
+{
     "id": 5194,
     "specialty": "General Surgery",
     "topic": "Gastric Lymphoma",
@@ -1200,7 +1200,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Primary gastric lymphomas are almost always B-cell Non-Hodgkin's (MALT or DLBCL)."
   },
-  {
+{
     "id": 5195,
     "specialty": "General Surgery",
     "topic": "Liver",
@@ -1224,7 +1224,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Cantlie's line is the surgical landmark dividing the right and left liver."
   },
-  {
+{
     "id": 5196,
     "specialty": "General Surgery",
     "topic": "Liver",
@@ -1248,7 +1248,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "The SMA often gives rise to a replaced right hepatic artery."
   },
-  {
+{
     "id": 5197,
     "specialty": "General Surgery",
     "topic": "Liver",
@@ -1272,7 +1272,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "The liver buffers portal flow changes by adjusting arterial flow via adenosine."
   },
-  {
+{
     "id": 5198,
     "specialty": "General Surgery",
     "topic": "Liver",
@@ -1296,7 +1296,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Portal vein is the deepest structure in the portal triad."
   },
-  {
+{
     "id": 5199,
     "specialty": "General Surgery",
     "topic": "Liver",
@@ -1320,7 +1320,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Persistent bleeding after Pringle maneuver indicates hepatic vein or IVC injury."
   },
-  {
+{
     "id": 5200,
     "specialty": "General Surgery",
     "topic": "Liver",
@@ -1344,7 +1344,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Hepatic hemangiomas are typically silent and show 'fill-in' on contrast imaging."
   },
-  {
+{
     "id": 5201,
     "specialty": "General Surgery",
     "topic": "Liver",
@@ -1368,7 +1368,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "The umbilical fissure is the boundary for left lateral segmentectomy."
   },
-  {
+{
     "id": 5202,
     "specialty": "General Surgery",
     "topic": "Liver",
@@ -1392,7 +1392,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Right trisegmentectomy is a major resection leaving only segments II and III."
   },
-  {
+{
     "id": 5203,
     "specialty": "General Surgery",
     "topic": "Liver",
@@ -1416,7 +1416,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Pyogenic liver abscess typically presents with fever and pain, not jaundice."
   },
-  {
+{
     "id": 5204,
     "specialty": "General Surgery",
     "topic": "Liver",
@@ -1440,7 +1440,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Amebic liver abscess is a medical disease, not a surgical one."
   },
-  {
+{
     "id": 5205,
     "specialty": "General Surgery",
     "topic": "Liver",
@@ -1464,7 +1464,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Hydatid cysts require careful management to avoid life-threatening anaphylaxis."
   },
-  {
+{
     "id": 5206,
     "specialty": "General Surgery",
     "topic": "Liver",
@@ -1488,7 +1488,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Central stellate scar = FNH."
   },
-  {
+{
     "id": 5207,
     "specialty": "General Surgery",
     "topic": "Liver",
@@ -1512,7 +1512,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Hepatic adenoma = Estrogen + Risk of rupture/cancer."
   },
-  {
+{
     "id": 5208,
     "specialty": "General Surgery",
     "topic": "Spleen",
@@ -1536,7 +1536,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Pancreas tail injury is a risk during splenectomy due to its location in the splenorenal ligament."
   },
-  {
+{
     "id": 5209,
     "specialty": "General Surgery",
     "topic": "Spleen",
@@ -1560,7 +1560,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "The spleen is a critical immunological and hematological filter."
   },
-  {
+{
     "id": 5210,
     "specialty": "General Surgery",
     "topic": "Spleen",
@@ -1584,7 +1584,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "The splenic artery is the largest branch of the celiac trunk."
   },
-  {
+{
     "id": 5211,
     "specialty": "General Surgery",
     "topic": "Spleen",
@@ -1608,7 +1608,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Splenic trauma is the most frequent surgical indication for spleen removal."
   },
-  {
+{
     "id": 5212,
     "specialty": "General Surgery",
     "topic": "Spleen",
@@ -1632,7 +1632,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Grading of splenic injury guides the decision for operative vs. non-operative management."
   },
-  {
+{
     "id": 5213,
     "specialty": "General Surgery",
     "topic": "Pancreas",
@@ -1656,7 +1656,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Splenic artery supplies the body and tail, while the head is supplied by the SMA and GDA."
   },
-  {
+{
     "id": 5214,
     "specialty": "General Surgery",
     "topic": "Pancreas",
@@ -1680,7 +1680,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Splenic artery = Pancreatic body/tail supply."
   },
-  {
+{
     "id": 5215,
     "specialty": "General Surgery",
     "topic": "Pancreas",
@@ -1704,7 +1704,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "The pancreas is a retroperitoneal organ with complex vascular relations."
   },
-  {
+{
     "id": 5216,
     "specialty": "General Surgery",
     "topic": "Pancreas",
@@ -1728,7 +1728,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Congenital anomalies of the pancreas are common and often asymptomatic."
   },
-  {
+{
     "id": 5217,
     "specialty": "General Surgery",
     "topic": "Pancreas",
@@ -1752,7 +1752,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Pancreatic secretion is controlled by both neural and hormonal pathways."
   },
-  {
+{
     "id": 5218,
     "specialty": "General Surgery",
     "topic": "Pancreas",
@@ -1776,7 +1776,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Gallstone pancreatitis is a frequent surgical emergency."
   },
-  {
+{
     "id": 5219,
     "specialty": "General Surgery",
     "topic": "Pancreas",
@@ -1800,7 +1800,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Ranson's criteria assess severity based on physiological derangement."
   },
-  {
+{
     "id": 5220,
     "specialty": "General Surgery",
     "topic": "Pancreas",
@@ -1824,7 +1824,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Watchful waiting is appropriate for early pancreatic pseudocysts."
   },
-  {
+{
     "id": 5221,
     "specialty": "General Surgery",
     "topic": "Biliary",
@@ -1848,7 +1848,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Bile duct blood supply is fragile and purely arterial."
   },
-  {
+{
     "id": 5222,
     "specialty": "General Surgery",
     "topic": "Biliary",
@@ -1872,7 +1872,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Cholesterol stones are the predominant type in the West."
   },
-  {
+{
     "id": 5223,
     "specialty": "General Surgery",
     "topic": "Biliary",
@@ -1896,7 +1896,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Know the 'F' risk factors: Female, Forty, Fat, Fertile."
   },
-  {
+{
     "id": 5224,
     "specialty": "General Surgery",
     "topic": "Biliary",
@@ -1920,7 +1920,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Jaundice + Cholecystitis = CBD stone until proven otherwise."
   },
-  {
+{
     "id": 5225,
     "specialty": "General Surgery",
     "topic": "Pancreas",
@@ -1944,7 +1944,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "The uncinate process 'hooks' behind the mesenteric vessels."
   },
-  {
+{
     "id": 5226,
     "specialty": "General Surgery",
     "topic": "Pancreas",
@@ -1968,7 +1968,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Pancreas head blood supply comes from two major arterial trunks."
   },
-  {
+{
     "id": 5227,
     "specialty": "General Surgery",
     "topic": "Pancreas",
@@ -1992,7 +1992,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Ectopic pancreas is usually an incidental finding."
   },
-  {
+{
     "id": 5228,
     "specialty": "General Surgery",
     "topic": "Pancreas",
@@ -2016,7 +2016,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Management of chronic pancreatitis is largely symptomatic and medical."
   },
-  {
+{
     "id": 5229,
     "specialty": "General Surgery",
     "topic": "Pancreas",
@@ -2040,7 +2040,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Insulinoma is the 'most common' of the rare islet cell tumors."
   },
-  {
+{
     "id": 5230,
     "specialty": "General Surgery",
     "topic": "Pancreas",
@@ -2064,7 +2064,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Whipple's triad is the hallmark for diagnosing insulinoma."
   },
-  {
+{
     "id": 5231,
     "specialty": "General Surgery",
     "topic": "Pancreas",
@@ -2088,7 +2088,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Secretin stimulation is a paradoxical diagnostic test for ZES."
   },
-  {
+{
     "id": 5232,
     "specialty": "General Surgery",
     "topic": "Pancreas",
@@ -2112,7 +2112,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Pancreaticoduodenectomy is a complex but standard operation for head tumors."
   },
-  {
+{
     "id": 5233,
     "specialty": "General Surgery",
     "topic": "Pancreas",
@@ -2136,7 +2136,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Unexplained weight loss in an older patient is a major red flag."
   },
-  {
+{
     "id": 5234,
     "specialty": "General Surgery",
     "topic": "Pancreas",
@@ -2160,7 +2160,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Courvoisier's sign = Malignancy."
   },
-  {
+{
     "id": 5235,
     "specialty": "General Surgery",
     "topic": "Pancreas",
@@ -2184,7 +2184,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Cystic pancreatic lesions require careful differentiation between benign and malignant types."
   },
-  {
+{
     "id": 5236,
     "specialty": "General Surgery",
     "topic": "Pancreas",
@@ -2208,7 +2208,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Always look in the duodenum for the primary gastrinoma."
   },
-  {
+{
     "id": 5237,
     "specialty": "General Surgery",
     "topic": "Pancreas",
@@ -2232,7 +2232,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Sepsis from pancreatic necrosis is a major killer."
   },
-  {
+{
     "id": 5238,
     "specialty": "General Surgery",
     "topic": "Pancreas",
@@ -2256,7 +2256,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Fluids are the most important early treatment for pancreatitis."
   },
-  {
+{
     "id": 5239,
     "specialty": "General Surgery",
     "topic": "Pancreas",
@@ -2280,7 +2280,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Management of pancreatic trauma depends entirely on ductal integrity."
   },
-  {
+{
     "id": 5240,
     "specialty": "General Surgery",
     "topic": "Pancreas",
@@ -2304,7 +2304,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Pancreas divisum is a common cause of idiopathic pancreatitis."
   },
-  {
+{
     "id": 5241,
     "specialty": "General Surgery",
     "topic": "Pancreas",
@@ -2328,7 +2328,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Annular pancreas = Bypass, don't resect."
   },
-  {
+{
     "id": 5242,
     "specialty": "General Surgery",
     "topic": "Pancreas",
@@ -2352,7 +2352,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Chronic pancreatitis in a child should prompt testing for CF."
   },
-  {
+{
     "id": 5243,
     "specialty": "General Surgery",
     "topic": "Pancreas",
@@ -2376,7 +2376,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Puestow = Drainage for large duct chronic pancreatitis."
   },
-  {
+{
     "id": 5244,
     "specialty": "General Surgery",
     "topic": "Pancreas",
@@ -2400,7 +2400,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Somatostatinoma presents with the classic inhibitory triad."
   },
-  {
+{
     "id": 5245,
     "specialty": "Pediatric Surgery",
     "topic": "Daily fluid requirements",
@@ -2424,7 +2424,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Maintenance fluid requirements in children follow the 4-2-1 rule or the 100-50-20 rule based on body weight."
   },
-  {
+{
     "id": 5246,
     "specialty": "Pediatric Surgery",
     "topic": "Pediatric electrolyte and protein requirements",
@@ -2448,7 +2448,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Pediatric patients have higher protein and glucose requirements per kilogram compared to adults."
   },
-  {
+{
     "id": 5247,
     "specialty": "Pediatric Surgery",
     "topic": "Hypertrophic Pyloric Stenosis",
@@ -2472,7 +2472,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Pyloric stenosis presents with non-bilious projectile vomiting and requires medical stabilization before surgical pyloromyotomy."
   },
-  {
+{
     "id": 5248,
     "specialty": "Pediatric Surgery",
     "topic": "Pyloric Stenosis Electrolytes",
@@ -2496,7 +2496,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Severe vomiting in pyloric stenosis causes a unique metabolic pattern that must be corrected with IVF containing saline and potassium."
   },
-  {
+{
     "id": 5249,
     "specialty": "Pediatric Surgery",
     "topic": "Pyloric Stenosis Initial Therapy",
@@ -2520,7 +2520,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Isotonic saline is essential for correcting the hypochloremia and contraction alkalosis of pyloric stenosis."
   },
-  {
+{
     "id": 5250,
     "specialty": "Pediatric Surgery",
     "topic": "Meconium Ileus",
@@ -2544,7 +2544,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Meconium ileus is a distal small bowel obstruction highly specific for cystic fibrosis."
   },
-  {
+{
     "id": 5251,
     "specialty": "Pediatric Surgery",
     "topic": "Meconium Ileus Diagnosis",
@@ -2568,7 +2568,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Distinguishing between meconium ileus and Hirschsprung's is the first step in managing neonatal low bowel obstruction."
   },
-  {
+{
     "id": 5252,
     "specialty": "Pediatric Surgery",
     "topic": "ECMO Indications",
@@ -2592,7 +2592,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "ECMO is used for reversible, life-threatening neonatal respiratory and cardiac failure."
   },
-  {
+{
     "id": 5253,
     "specialty": "Pediatric Surgery",
     "topic": "Pediatric Trauma",
@@ -2616,7 +2616,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Non-operative management is the standard for hemodynamically stable children with solid organ injuries."
   },
-  {
+{
     "id": 5254,
     "specialty": "Pediatric Surgery",
     "topic": "Blood Transfusion",
@@ -2640,7 +2640,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Pediatric resuscitation uses weight-based boluses (20 mL/kg crystalloid, 10 mL/kg PRBC)."
   },
-  {
+{
     "id": 5255,
     "specialty": "Pediatric Surgery",
     "topic": "Testicular Torsion",
@@ -2664,7 +2664,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Testicular torsion is a surgical emergency; surgical exploration should not be delayed for imaging if the clinical suspicion is high."
   },
-  {
+{
     "id": 5256,
     "specialty": "Pediatric Surgery",
     "topic": "Hydrocele",
@@ -2688,7 +2688,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Pediatric hydroceles are managed expectantly until age 1, after which they are repaired via an inguinal approach."
   },
-  {
+{
     "id": 5257,
     "specialty": "Pediatric Surgery",
     "topic": "Intussusception",
@@ -2712,7 +2712,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "The classic triad is colicky pain, 'currant jelly' stool, and a sausage-shaped mass."
   },
-  {
+{
     "id": 5258,
     "specialty": "Pediatric Surgery",
     "topic": "Hirschsprung's Disease",
@@ -2736,7 +2736,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Hirschsprung's disease should be suspected in any neonate with delayed passage of meconium (>48 hours)."
   },
-  {
+{
     "id": 5259,
     "specialty": "Pediatric Surgery",
     "topic": "Duodenal Atresia",
@@ -2760,7 +2760,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Duodenal atresia is treated with a duodenoduodenostomy (Kimura procedure)."
   },
-  {
+{
     "id": 5260,
     "specialty": "Pediatric Surgery",
     "topic": "Omphalocele",
@@ -2784,7 +2784,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Omphalocele is associated with Beckwith-Wiedemann syndrome and Pentalogy of Cantrell."
   },
-  {
+{
     "id": 5261,
     "specialty": "Pediatric Surgery",
     "topic": "Gastroschisis",
@@ -2808,7 +2808,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Gastroschisis bowel appears 'matted' and thick due to exposure to amniotic fluid."
   },
-  {
+{
     "id": 5262,
     "specialty": "Pediatric Surgery",
     "topic": "Branchial Cleft Anomalies",
@@ -2832,7 +2832,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Branchial cleft anomalies are remnants of the embryonic branchial apparatus."
   },
-  {
+{
     "id": 5263,
     "specialty": "Pediatric Surgery",
     "topic": "Meckel's Diverticulum",
@@ -2856,7 +2856,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Meckel's is the most common congenital anomaly of the GI tract."
   },
-  {
+{
     "id": 5264,
     "specialty": "Pediatric Surgery",
     "topic": "Thyroglossal Duct Cyst",
@@ -2880,7 +2880,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "The Sistrunk procedure reduces the recurrence rate from 50% to <5%."
   },
-  {
+{
     "id": 5265,
     "specialty": "Pediatric Surgery",
     "topic": "Imperforate Anus",
@@ -2904,7 +2904,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Associated VACTERL anomalies should be screened for in all anorectal malformations."
   },
-  {
+{
     "id": 5266,
     "specialty": "Pediatric Surgery",
     "topic": "Neuroblastoma",
@@ -2928,7 +2928,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "N-myc amplification is a key negative prognostic factor in neuroblastoma."
   },
-  {
+{
     "id": 5267,
     "specialty": "Pediatric Surgery",
     "topic": "Wilms Tumor",
@@ -2952,7 +2952,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "WAGR syndrome (Wilms, Aniridia, Genitourinary anomalies, Retardation) is a known association."
   },
-  {
+{
     "id": 5268,
     "specialty": "Pediatric Surgery",
     "topic": "Congenital Diaphragmatic Hernia",
@@ -2976,7 +2976,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "The prognosis of CDH is determined by the degree of pulmonary hypoplasia and hypertension."
   },
-  {
+{
     "id": 5269,
     "specialty": "Pediatric Surgery",
     "topic": "Malrotation",
@@ -3000,7 +3000,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Midgut volvulus is 'the diagnosis that must not be missed' in a neonate with bilious vomiting."
   },
-  {
+{
     "id": 5270,
     "specialty": "Pediatric Surgery",
     "topic": "Biliary Atresia",
@@ -3024,7 +3024,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Biliary atresia is the leading indication for pediatric liver transplantation and is characterized by giant cell transformation."
   },
-  {
+{
     "id": 5271,
     "specialty": "Pediatric Surgery",
     "topic": "Biliary Atresia - Kasai Procedure",
@@ -3048,7 +3048,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "The Kasai procedure provides a bridge to liver transplantation, but progressive liver disease often continues."
   },
-  {
+{
     "id": 5272,
     "specialty": "Pediatric Surgery",
     "topic": "TEF/Esophageal Atresia",
@@ -3072,7 +3072,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Type C (Esophageal Atresia with distal TEF) is the most frequent variant encountered."
   },
-  {
+{
     "id": 5273,
     "specialty": "Pediatric Surgery",
     "topic": "Hirschsprung Disease",
@@ -3096,7 +3096,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Hirschsprung disease involves total aganglionosis of the distal bowel plexuses."
   },
-  {
+{
     "id": 5274,
     "specialty": "Pediatric Surgery",
     "topic": "Malrotation/Volvulus",
@@ -3120,7 +3120,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Bilious emesis in a newborn is a surgical emergency requiring immediate evaluation for malrotation."
   },
-  {
+{
     "id": 5275,
     "specialty": "Pediatric Surgery",
     "topic": "Malrotation - Diagnosis",
@@ -3144,7 +3144,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Upper GI series is the most reliable test for confirming intestinal malrotation."
   },
-  {
+{
     "id": 5276,
     "specialty": "Pediatric Surgery",
     "topic": "Ladd Procedure",
@@ -3168,7 +3168,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "The Ladd procedure involves counter-clockwise detorsion and lysis of bands to widen the mesentery."
   },
-  {
+{
     "id": 5277,
     "specialty": "Pediatric Surgery",
     "topic": "CDH - Location",
@@ -3192,7 +3192,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Bochdalek hernia is predominantly left-sided and posterolateral."
   },
-  {
+{
     "id": 5278,
     "specialty": "Pediatric Surgery",
     "topic": "Umbilical Hernia",
@@ -3216,7 +3216,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Most pediatric umbilical hernias close spontaneously; VP shunts are an indication for earlier repair."
   },
-  {
+{
     "id": 5279,
     "specialty": "Pediatric Surgery",
     "topic": "CDH - Prognosis",
@@ -3240,7 +3240,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Pulmonary development, not the surgical defect, determines survival in CDH."
   },
-  {
+{
     "id": 5280,
     "specialty": "Pediatric Surgery",
     "topic": "Duodenal Atresia - Imaging",
@@ -3264,7 +3264,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Double bubble = Complete proximal duodenal obstruction."
   },
-  {
+{
     "id": 5281,
     "specialty": "Pediatric Surgery",
     "topic": "Gastroschisis vs Omphalocele",
@@ -3288,7 +3288,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Always screen for cardiac defects in babies with an omphalocele."
   },
-  {
+{
     "id": 5282,
     "specialty": "Pediatric Surgery",
     "topic": "Pyloric Stenosis - Age",
@@ -3312,7 +3312,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Pyloric stenosis is a disease of the first few weeks of life."
   },
-  {
+{
     "id": 5283,
     "specialty": "Pediatric Surgery",
     "topic": "Intussusception - Lead Point",
@@ -3336,7 +3336,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Consider pathologic lead points in children outside the typical 3-18 month age range for intussusception."
   },
-  {
+{
     "id": 5284,
     "specialty": "Pediatric Surgery",
     "topic": "Meckel's Diverticulum - Presentation",
@@ -3360,7 +3360,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Meckel's is the most common cause of significant GI bleeding in children."
   },
-  {
+{
     "id": 5285,
     "specialty": "Trauma",
     "topic": "Colonic GSW",
@@ -3384,7 +3384,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Hemodynamically stable patients with minimal colonic contamination can often undergo primary repair of colon injuries."
   },
-  {
+{
     "id": 5286,
     "specialty": "Trauma",
     "topic": "Neck Trauma",
@@ -3408,7 +3408,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Zone III neck injuries in asymptomatic patients are managed selectively with thorough imaging and endoscopy."
   },
-  {
+{
     "id": 5287,
     "specialty": "Trauma",
     "topic": "Carotid Injury",
@@ -3432,7 +3432,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Acute neurologic deficits following carotid injury warrant immediate surgical repair if possible."
   },
-  {
+{
     "id": 5288,
     "specialty": "Trauma",
     "topic": "Pancreatic Trauma",
@@ -3456,7 +3456,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Transection of the pancreas to the left of the mesenteric vessels is best managed by distal pancreatectomy."
   },
-  {
+{
     "id": 5289,
     "specialty": "Trauma",
     "topic": "Urethral Injury",
@@ -3480,7 +3480,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Retrograde urethrography is the first step in suspected urethral injury before any catheterization."
   },
-  {
+{
     "id": 5290,
     "specialty": "Trauma",
     "topic": "TRALI",
@@ -3504,7 +3504,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "TRALI is a leading cause of transfusion-related mortality but usually resolves within a week."
   },
-  {
+{
     "id": 5291,
     "specialty": "Trauma",
     "topic": "Compartment Syndrome",
@@ -3528,7 +3528,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Fasciotomy in the leg must include all four compartments to be effective."
   },
-  {
+{
     "id": 5292,
     "specialty": "Trauma",
     "topic": "Rhabdomyolysis",
@@ -3552,7 +3552,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Myoglobinuria requires aggressive hydration and urine alkalinization to prevent ATN."
   },
-  {
+{
     "id": 5293,
     "specialty": "Trauma",
     "topic": "Abdominal Compartment Syndrome",
@@ -3576,7 +3576,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "ACS causes multi-system dysfunction, including decreased cardiac output and respiratory failure."
   },
-  {
+{
     "id": 5294,
     "specialty": "Trauma",
     "topic": "Pregnancy Trauma",
@@ -3600,7 +3600,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "The physiologic changes of pregnancy can mask signs of maternal hemorrhage until it is severe."
   },
-  {
+{
     "id": 5295,
     "specialty": "Trauma",
     "topic": "Blunt Abdominal Trauma",
@@ -3624,7 +3624,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "CT is essential for grading solid organ injuries in stable blunt trauma patients."
   },
-  {
+{
     "id": 5296,
     "specialty": "Trauma",
     "topic": "Splenic Trauma",
@@ -3648,7 +3648,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Splenic injury grade and patient age are key predictors of NOM success."
   },
-  {
+{
     "id": 5297,
     "specialty": "Trauma",
     "topic": "Splenic Trauma - Failure of NOM",
@@ -3672,7 +3672,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Hemodynamic instability is the most common reason for converting from NOM to surgery."
   },
-  {
+{
     "id": 5298,
     "specialty": "Trauma",
     "topic": "Diaphragmatic Rupture",
@@ -3696,7 +3696,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Diaphragmatic injury should be suspected in any major blunt thoracoabdominal trauma."
   },
-  {
+{
     "id": 5299,
     "specialty": "Trauma",
     "topic": "Liver Trauma",
@@ -3720,7 +3720,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Liver injuries are more successfully managed nonoperatively than splenic injuries."
   },
-  {
+{
     "id": 5300,
     "specialty": "Trauma",
     "topic": "Subclavian Injury",
@@ -3744,7 +3744,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Exposure of the subclavian artery depends on the segment injured (clavicular incision vs. sternotomy/thoracotomy)."
   },
-  {
+{
     "id": 5301,
     "specialty": "Trauma",
     "topic": "Penetrating Trauma - DPL",
@@ -3768,7 +3768,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "DPL thresholds differ between blunt (100k) and penetrating (10k) mechanisms."
   },
-  {
+{
     "id": 5302,
     "specialty": "Trauma",
     "topic": "Massive Hemothorax",
@@ -3792,7 +3792,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Massive hemothorax indicates a major vascular or pulmonary hilum injury."
   },
-  {
+{
     "id": 5303,
     "specialty": "Trauma",
     "topic": "GCS Calculation",
@@ -3816,7 +3816,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "GCS is a critical predictor of brain injury severity and airway safety."
   },
-  {
+{
     "id": 5304,
     "specialty": "Trauma",
     "topic": "Airway Management",
@@ -3840,7 +3840,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Airway protection is the first priority in patients with impaired consciousness."
   },
-  {
+{
     "id": 5305,
     "specialty": "Trauma",
     "topic": "Colonic Injury - GSW",
@@ -3864,7 +3864,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Stable patients with limited contamination can tolerate primary colon repair."
   },
-  {
+{
     "id": 5306,
     "specialty": "Trauma",
     "topic": "Neck Trauma - Zone III",
@@ -3888,7 +3888,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Mandatory exploration is no longer standard for asymptomatic penetrating neck injuries."
   },
-  {
+{
     "id": 5307,
     "specialty": "Trauma",
     "topic": "Pancreatico-Duodenal Injury",
@@ -3912,7 +3912,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Pyloric exclusion is ideal for complex duodenal injuries with concurrent pancreatic trauma."
   },
-  {
+{
     "id": 5308,
     "specialty": "Trauma",
     "topic": "Compartment Syndrome",
@@ -3936,7 +3936,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Never wait for 'textbook' pressures — clinical findings dictate fasciotomy."
   },
-  {
+{
     "id": 5309,
     "specialty": "Trauma",
     "topic": "Rhabdomyolysis",
@@ -3960,7 +3960,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Treat rhabdomyolysis with aggressive IVF and urine alkalinization to protect the kidneys."
   },
-  {
+{
     "id": 5310,
     "specialty": "Trauma",
     "topic": "Abdominal Compartment Syndrome",
@@ -3984,7 +3984,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "ACS causes multi-organ dysfunction; decompressive laparotomy is the treatment."
   },
-  {
+{
     "id": 5311,
     "specialty": "Trauma",
     "topic": "Pregnancy Trauma",
@@ -4008,7 +4008,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Maternal physiology changes can mask hemorrhage until severe."
   },
-  {
+{
     "id": 5312,
     "specialty": "Critical Care",
     "topic": "Sedation in ICU",
@@ -4032,7 +4032,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Fentanyl is preferred over morphine in renal failure for ICU analgesia."
   },
-  {
+{
     "id": 5313,
     "specialty": "Critical Care",
     "topic": "PA Catheter Complications",
@@ -4056,7 +4056,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "PA rupture is rare but catastrophic; lung isolation is the priority."
   },
-  {
+{
     "id": 5314,
     "specialty": "Critical Care",
     "topic": "Enteral Nutrition",
@@ -4080,7 +4080,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "If the gut works, use it — early EN is the gold standard."
   },
-  {
+{
     "id": 5315,
     "specialty": "Critical Care",
     "topic": "VAP Diagnosis",
@@ -4104,7 +4104,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Quantitative BAL cultures are the most accurate diagnostic tool for VAP."
   },
-  {
+{
     "id": 5316,
     "specialty": "Critical Care",
     "topic": "Oxygen Delivery",
@@ -4128,7 +4128,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "DO2 = Cardiac Output × Arterial O2 Content (Hb × SaO2 × 1.34 + 0.003 × PaO2)."
   },
-  {
+{
     "id": 5317,
     "specialty": "Critical Care",
     "topic": "Sepsis - Oxygen Demand",
@@ -4152,7 +4152,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Sepsis creates a profound supply-demand mismatch for oxygen at the cellular level."
   },
-  {
+{
     "id": 5318,
     "specialty": "Critical Care",
     "topic": "Ventilator Pressures",
@@ -4176,7 +4176,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Peak pressure = Resistance + Compliance; Plateau pressure = Compliance only."
   },
-  {
+{
     "id": 5319,
     "specialty": "Critical Care",
     "topic": "Septic Shock - Vasopressors",
@@ -4200,7 +4200,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Norepinephrine is superior to dopamine in septic shock (less arrhythmia, better survival)."
   },
-  {
+{
     "id": 5320,
     "specialty": "Critical Care",
     "topic": "Arterial Line",
@@ -4224,7 +4224,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Percutaneous arterial access is preferred for minimizing infection risk."
   },
-  {
+{
     "id": 5321,
     "specialty": "Trauma",
     "topic": "Massive Hemothorax",
@@ -4248,7 +4248,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "1500 mL immediate drainage or 200 mL/hr ongoing = Emergency thoracotomy."
   },
-  {
+{
     "id": 5322,
     "specialty": "Trauma",
     "topic": "Penetrating Trauma DPL",
@@ -4272,7 +4272,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "DPL thresholds differ: Penetrating (10k RBC) vs. Blunt (100k RBC)."
   },
-  {
+{
     "id": 5323,
     "specialty": "Critical Care",
     "topic": "ICU Sedation Agents",
@@ -4296,7 +4296,7 @@ window.QUESTIONS.push(...[
     "guideline": "Rush Review 5th Edition",
     "takeaway": "Propofol is short-acting, midazolam is intermediate, lorazepam is long-acting."
   },
-  {
+{
     "id": 5324,
     "specialty": "Critical Care",
     "topic": "ARDS Management",

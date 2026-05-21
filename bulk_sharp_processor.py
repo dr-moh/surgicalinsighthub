@@ -1,13 +1,21 @@
 import json
 import os
 import time
-# import requests (removed)
 import re
 import random
 import threading
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
-# Load API Key
+try:
+    from google import genai
+    from google.genai import types
+    vertex_client = genai.Client(vertexai=True, project="sih-mcq-pipeline", location="us-central1")
+    print("✅ Successfully connected to Google Cloud Vertex AI!")
+except Exception as e:
+    print(f"⚠️ Vertex AI initialization failed: {e}")
+    vertex_client = None
+
+# Load API Key for fallback
 if os.path.exists('.env'):
     with open('.env') as f:
         for line in f:
@@ -17,12 +25,15 @@ if os.path.exists('.env'):
 
 API_KEY = os.getenv("OPENROUTER_API_KEY")
 
-LOCAL_API_URL = os.getenv("LOCAL_API_URL", "http://localhost:11435/v1/chat/completions")
-LOCAL_MODEL = os.getenv("LOCAL_MODEL", "gemma3:4b") # Auto-detected local model
+LOCAL_API_URL = os.getenv("LOCAL_API_URL", os.getenv("LOCAL_OLLAMA_URL", "http://localhost:11434").rstrip('/') + "/v1/chat/completions")
+LOCAL_MODEL = os.getenv("LOCAL_MODEL", os.getenv("LOCAL_MODEL_NAME", "gemma3:4b")) # Auto-detected local model
 
 MODELS = [
+    "google/gemini-2.5-flash",
+    "meta-llama/llama-3-8b-instruct:free",
     "mistralai/mistral-7b-instruct-v0.1"
 ]
+
 
 file_lock = threading.Lock()
 
@@ -56,7 +67,7 @@ def normalize_sharp_payload(payload):
     if isinstance(payload.get('review_learning_points'), dict):
         payload['review_learning_points'] = json.dumps(payload['review_learning_points'], ensure_ascii=False)
 
-    for key in ['set_the_stage', 'highlight_excellence', 'address_gaps', 'review_learning_points', 'plan', 'guideline', 'takeaway', 'visualization']:
+    for key in ['set_the_stage', 'highlight_excellence', 'address_gaps', 'review_learning_points', 'plan', 'guideline', 'takeaway', 'visualization', 'discrepancy_flag', 'explanation_A', 'explanation_B', 'explanation_C', 'explanation_D']:
         value = payload.get(key, '')
         if isinstance(value, list):
             payload[key] = ' '.join(str(item).strip() for item in value if str(item).strip())
@@ -125,25 +136,31 @@ def get_sharp_debrief(question_obj):
     import urllib.error
 
     prompt = f"""
-        Return valid JSON only. No markdown. No reasoning.
+        Return valid JSON only. No markdown formatting around the JSON (e.g. do not wrap in ```json). No conversational preamble or postscript.
         If the question is invalid, return exactly {{"status": "REJECT"}}.
     
     Q: {question_obj.get('question', '')}
     Options: {json.dumps(question_obj.get('options', {}))}
     Provided Answer Key: {question_obj.get('answer', '')}
     
-        If valid, return ONLY JSON with very short fields, ideally 8 words or fewer each:
+    You must construct the pedagogical response using the strict SHARP 3.0 Cognitive & Surgical Debrief framework.
+    Return a single JSON object matching this schema:
     {{
       "status": "ACCEPT",
-      "verified_answer": "A",
-            "set_the_stage": "short phrase",
-            "highlight_excellence": "short phrase",
-            "address_gaps": "short phrase",
-            "review_learning_points": "short phrase",
-            "plan": "short phrase",
-            "guideline": "short phrase",
-            "takeaway": "short phrase",
-            "visualization": "short phrase"
+      "verified_answer": "{question_obj.get('answer', 'A')}",
+      "set_the_stage": "**Verdict:** Correct: [Correct Option Letter]. [Direct, active-voice confirmation of the correct clinical/operative choice].\\n**The Pivot:** [1-2 high-yield sentences identifying the exact clinical crux, timeline milestone, anatomical boundary, or physiological tipping point that eliminates all diagnostic ambiguity].",
+      "highlight_excellence": "**Surgical Mechanism:** [Deep dive into underlying surgical anatomy, tissue planes, structural relationships, or pathophysiology. High-density operative/clinical details].\\n**Clinical Execution:** [Nuanced clinical decision-making. Why immediate action or specific management is chosen. Focus on patient safety, staging, and critical pitfalls].",
+      "address_gaps": "**Distractor Breakdown:**\\n*Option A (Incorrect):* [Detailed surgical/clinical reasoning why Option A is incorrect in this scenario, what scenario it would be correct for, or its specific pitfall].\\n*Option B (Incorrect):* [Detailed reasoning for B].\\n*Option C (Incorrect):* [Detailed reasoning for C].\\n*Option D (Incorrect):* [Detailed reasoning for D].\\n*(Exclude the correct option from the breakdown list)*",
+      "explanation_A": "[Surgical/clinical reasoning why Option A is correct/incorrect, concise and board-focused]",
+      "explanation_B": "[Surgical/clinical reasoning why Option B is correct/incorrect, concise and board-focused]",
+      "explanation_C": "[Surgical/clinical reasoning why Option C is correct/incorrect, concise and board-focused]",
+      "explanation_D": "[Surgical/clinical reasoning why Option D is correct/incorrect, concise and board-focused]",
+      "review_learning_points": "**Conceptual Overview:** [1-2 summary sentences linking anatomy/physiology to clinical pathology].\\n**Management Framework (High-Yield Matrix):**\\n\\n[A beautiful, highly structured Markdown comparison matrix/table summarizing diagnostic criteria, staging, anatomy, or management protocols relevant to this topic].",
+      "plan": "**The Board Pearl:** *[Key high-yield takeaway in italics wrapped in single asterisks]*\\n**Surgical Action:**\\n1. [Actionable surgical/clinical checklist step 1]\\n2. [Actionable surgical/clinical checklist step 2]",
+      "guideline": "[Exact reference to major surgical guideline, e.g., 'SAGES Guidelines for laparoscopic cholecystectomy, 2022' or 'ATLS 10th Edition']",
+      "takeaway": "[Concise one-sentence board-style takeaway]",
+      "visualization": "[Operative description of what the surgeon sees or does first upon entering the surgical field/anatomy]",
+      "discrepancy_flag": ""
     }}
     """
     
@@ -154,10 +171,51 @@ def get_sharp_debrief(question_obj):
         "X-Title": "Surgical Insight Hub"
     }
 
-    # --- Local Primary (Zero Cost) ---
+    # --- Vertex AI Primary (High Speed & Quality) ---
+    if vertex_client:
+        try:
+            print(f"     [Processing Vertex AI]: Using gemini-2.5-flash...")
+            
+            def make_vertex_call():
+                return vertex_client.models.generate_content(
+                    model='gemini-2.5-flash',
+                    contents=prompt,
+                    config=types.GenerateContentConfig(
+                        response_mime_type="application/json",
+                        temperature=0.15
+                    )
+                )
+            
+            try:
+                response = make_vertex_call()
+            except Exception as call_err:
+                err_msg = str(call_err)
+                if "429" in err_msg or "RESOURCE_EXHAUSTED" in err_msg:
+                    wait_time = random.uniform(3.0, 7.0)
+                    print(f"     [Vertex AI 429] Rate limited. Retrying after {wait_time:.1f}s...")
+                    time.sleep(wait_time)
+                    response = make_vertex_call()
+                else:
+                    raise call_err
+            
+            content = response.text
+            match = re.search(r'\{.*\}', content, re.DOTALL)
+            if match:
+                try:
+                    res = normalize_sharp_payload(json.loads(match.group(0)))
+                    if res and res.get('status') == 'ACCEPT':
+                        return res
+                except Exception:
+                    recovered = recover_partial_sharp_payload(content)
+                    if recovered:
+                        return recovered
+        except Exception as e:
+            print(f"     [Vertex API Skip]: {e} (Falling back to Local...)")
+
+    # --- Local Fallback (Zero Cost) ---
     print(f"     [Processing Local]: Using {LOCAL_MODEL}...")
     try:
-        payload = {"model": LOCAL_MODEL, "messages": [{"role": "user", "content": prompt}], "temperature": 0.1, "max_tokens": 200}
+        payload = {"model": LOCAL_MODEL, "messages": [{"role": "user", "content": prompt}], "temperature": 0.1, "max_tokens": 2048}
         req = urllib.request.Request(LOCAL_API_URL, data=json.dumps(payload).encode('utf-8'), headers={"Content-Type": "application/json"}, method='POST')
         
         with urllib.request.urlopen(req, timeout=90) as response:
@@ -179,7 +237,7 @@ def get_sharp_debrief(question_obj):
     # --- OpenRouter Fallback ---
     for model in MODELS:
         try:
-            payload = {"model": model, "messages": [{"role": "user", "content": prompt}], "temperature": 0.1, "max_tokens": 200}
+            payload = {"model": model, "messages": [{"role": "user", "content": prompt}], "temperature": 0.1, "max_tokens": 2048}
             req = urllib.request.Request("https://openrouter.ai/api/v1/chat/completions", data=json.dumps(payload).encode('utf-8'), headers=headers, method='POST')
             
             with urllib.request.urlopen(req, timeout=45) as response:
@@ -203,6 +261,7 @@ def get_sharp_debrief(question_obj):
             continue
             
     return None
+
 
 def normalize_specialty(spec):
     mapping = {
@@ -232,7 +291,8 @@ def save_to_module(q):
         if os.path.exists(filepath):
             with open(filepath, 'r') as f:
                 raw = f.read()
-                if f'"id": {q["id"]}' in raw or f'"id":{q["id"]}' in raw:
+                id_str = json.dumps(q["id"])
+                if f'"id": {id_str}' in raw or f'"id":{id_str}' in raw:
                     return False
             
             # Append to existing file
@@ -278,7 +338,11 @@ def process_q(q):
             "answer": sharp_data.get('verified_answer', q.get('answer', 'A')),
             "explanation": {
                 "correct": sharp_data.get('highlight_excellence', ''),
-                "A": "", "B": "", "C": "", "D": "", "E": ""
+                "A": sharp_data.get('explanation_A', ''),
+                "B": sharp_data.get('explanation_B', ''),
+                "C": sharp_data.get('explanation_C', ''),
+                "D": sharp_data.get('explanation_D', ''),
+                "E": ""
             },
             "sharp_debrief": {
                 "S_set_the_stage": sharp_data.get('set_the_stage', ''),
@@ -292,7 +356,7 @@ def process_q(q):
                 "takeaway": sharp_data.get('takeaway', ''),
                 "visualization": sharp_data.get('visualization', '')
             },
-            "discrepancy_flag": ""
+            "discrepancy_flag": sharp_data.get('discrepancy_flag', '')
         }
         
         if save_to_module(final_q):
@@ -325,20 +389,25 @@ def main():
     random.shuffle(all_raw_questions)
     
     success_count = 0
-    target_count = 2000
+    target_count = 50000
     
-    # Use 4 parallel workers. This gives ~3-4x speedup 
-    # without instantly triggering Free Tier API rate limits.
-    with ThreadPoolExecutor(max_workers=4) as executor:
-        futures = {executor.submit(process_q, q): q for q in all_raw_questions}
+    # Vertex AI can handle massive concurrency. 
+    # Slicing the array ensures we don't hold 150k tasks in memory at once.
+    questions_to_process = all_raw_questions[:target_count + 5000]
+    
+    # Configure concurrency safely using environment variable MAX_WORKERS (default to 5).
+    max_workers = int(os.getenv("MAX_WORKERS", "5"))
+    print(f"⚡ Initializing ThreadPoolExecutor with {max_workers} concurrent workers...")
+    with ThreadPoolExecutor(max_workers=max_workers) as executor:
+        futures = {executor.submit(process_q, q): q for q in questions_to_process}
         for future in as_completed(futures):
             res = future.result()
             if res:
                 success_count += 1
-                print(f"[{success_count}/2000] Saved Q#{res['id']} to {normalize_specialty(res['specialty'])}.js")
+                print(f"[{success_count}/{target_count}] Saved Q#{res['id']} to {normalize_specialty(res['specialty'])}.js")
             
             if success_count >= target_count:
-                print("Reached target of 2000 questions!")
+                print(f"Reached target of {target_count} questions!")
                 break
 
 if __name__ == "__main__":

@@ -1,2452 +1,6 @@
 if (!window.QUESTIONS) window.QUESTIONS = [];
 window.QUESTIONS.push(...[
-[
-  {
-    "id": 90596,
-    "specialty": "Orthopedics",
-    "topic": "good ortho mcq exam_2 conv.docx",
-    "question": "Osteomalacia predominantly affects the: a. Spine.",
-    "options": {
-      "A": "Occurs chiefly in the elderly. b. Does not occur in children.",
-      "B": "It is a contracture of the palmar fascia. c. It may occur in the plantar fascia.",
-      "C": "Is a spiral fracture- of tubular bone.",
-      "D": "Is a fracture where part of the cortex is intact and part is crumpled or cracked."
-    },
-    "answer": "A",
-    "explanation": {
-      "correct": "Best answer: A Occurs chiefly in the elderly. b. Does not occur in children.",
-      "A": "",
-      "B": "",
-      "C": "",
-      "D": "",
-      "E": ""
-    },
-    "sharp": {
-      "set_the_stage": "Osteomalacia predominantly affects the: a. Spine.",
-      "highlight_excellence": "Best answer: A Occurs chiefly in the elderly. b. Does not occur in children.",
-      "address_gaps": "Discard distractors that do not fit the stem.",
-      "review_learning_points": "Focus on the main exam pearl behind the answer.",
-      "plan": "Memorize the key takeaway for revision.",
-      "plan_for_improvement": "Memorize the key takeaway for revision."
-    },
-    "guideline": "",
-    "takeaway": "Occurs chiefly in the elderly. b. Does not occur in children.",
-    "visualization": "",
-    "_src_file": "general_surgery.js"
-  },
-  {
-    "id": 90597,
-    "specialty": "Orthopedics",
-    "topic": "good ortho mcq exam_2 conv.docx",
-    "question": "Spiral fracture is due to: a. Blunt trauma.",
-    "options": {
-      "A": "Correct bone alignment. b. Accurate reduction.",
-      "B": "Axial compression. c. Twist.",
-      "C": "Immobilization.",
-      "D": "Organization of clot."
-    },
-    "answer": "A",
-    "explanation": {
-      "correct": "Best answer: A Correct bone alignment. b. Accurate reduction.",
-      "A": "",
-      "B": "",
-      "C": "",
-      "D": "",
-      "E": ""
-    },
-    "sharp": {
-      "set_the_stage": "Spiral fracture is due to: a. Blunt trauma.",
-      "highlight_excellence": "Best answer: A Correct bone alignment. b. Accurate reduction.",
-      "address_gaps": "Discard distractors that do not fit the stem.",
-      "review_learning_points": "Focus on the main exam pearl behind the answer.",
-      "plan": "Memorize the key takeaway for revision.",
-      "plan_for_improvement": "Memorize the key takeaway for revision."
-    },
-    "guideline": "",
-    "takeaway": "Correct bone alignment. b. Accurate reduction.",
-    "visualization": "",
-    "_src_file": "general_surgery.js"
-  },
-  {
-    "id": 90598,
-    "specialty": "Orthopedics",
-    "topic": "good ortho mcq exam_2 conv.docx",
-    "question": "Immobilization is not required in fracture involving: a. Scapula.",
-    "options": {
-      "A": "It is impossible to diagnose it.",
-      "B": "The sign of telescoping is the best way of diagnosing it. c. It is possible to diagnose it by the Van Rosen/Barlow Test.",
-      "C": "Pathological fracture. d. All of the above. 30)Which one of these statements is True in diagnosis of congenital hip dislocation in the first few days of life:",
-      "D": "The Trendelenberg test is the most useful."
-    },
-    "answer": "A",
-    "explanation": {
-      "correct": "Best answer: A It is impossible to diagnose it.",
-      "A": "",
-      "B": "",
-      "C": "",
-      "D": "",
-      "E": ""
-    },
-    "sharp": {
-      "set_the_stage": "Immobilization is not required in fracture involving: a. Scapula.",
-      "highlight_excellence": "Best answer: A It is impossible to diagnose it.",
-      "address_gaps": "Discard distractors that do not fit the stem.",
-      "review_learning_points": "Focus on the main exam pearl behind the answer.",
-      "plan": "Memorize the key takeaway for revision.",
-      "plan_for_improvement": "Memorize the key takeaway for revision."
-    },
-    "guideline": "",
-    "takeaway": "It is impossible to diagnose it.",
-    "visualization": "",
-    "_src_file": "general_surgery.js"
-  },
-  {
-    "id": 90599,
-    "specialty": "Orthopedics",
-    "topic": "good ortho mcq exam_2 conv.docx",
-    "question": "Trendelenburg's sign is used in the diagnosis of: a. Varicose veins.",
-    "options": {
-      "A": "Measuring for shortening of the leg. b. Palpation of the femoral head.",
-      "B": "A radiological feature of the pelvis applied to the diagnosis of congenital dislocation of the hip.",
-      "C": "A radiological feature of the lungs applied to the diagnosis of pulmonary vein thrombosis.",
-      "D": "A physical sign applied to the diagnosis of adrenal deficiency."
-    },
-    "answer": "A",
-    "explanation": {
-      "correct": "Best answer: A Measuring for shortening of the leg. b. Palpation of the femoral head.",
-      "A": "",
-      "B": "",
-      "C": "",
-      "D": "",
-      "E": ""
-    },
-    "sharp": {
-      "set_the_stage": "Trendelenburg's sign is used in the diagnosis of: a. Varicose veins.",
-      "highlight_excellence": "Best answer: A Measuring for shortening of the leg. b. Palpation of the femoral head.",
-      "address_gaps": "Discard distractors that do not fit the stem.",
-      "review_learning_points": "Focus on the main exam pearl behind the answer.",
-      "plan": "Memorize the key takeaway for revision.",
-      "plan_for_improvement": "Memorize the key takeaway for revision."
-    },
-    "guideline": "",
-    "takeaway": "Measuring for shortening of the leg. b. Palpation of the femoral head.",
-    "visualization": "",
-    "_src_file": "general_surgery.js"
-  },
-  {
-    "id": 90600,
-    "specialty": "Orthopedics",
-    "topic": "good ortho mcq exam_2 conv.docx",
-    "question": "The joint most likely to have recurrent dislocation is: a. Ankle.",
-    "options": {
-      "A": "Flexion.",
-      "B": "Extension.",
-      "C": "Combination of A & B d. None of the above.",
-      "D": "At all of the above locations. 46)The most common form of supracondylar fracture humerus in children is of which type:"
-    },
-    "answer": "A",
-    "explanation": {
-      "correct": "Best answer: A Flexion.",
-      "A": "",
-      "B": "",
-      "C": "",
-      "D": "",
-      "E": ""
-    },
-    "sharp": {
-      "set_the_stage": "The joint most likely to have recurrent dislocation is: a. Ankle.",
-      "highlight_excellence": "Best answer: A Flexion.",
-      "address_gaps": "Discard distractors that do not fit the stem.",
-      "review_learning_points": "Focus on the main exam pearl behind the answer.",
-      "plan": "Memorize the key takeaway for revision.",
-      "plan_for_improvement": "Memorize the key takeaway for revision."
-    },
-    "guideline": "",
-    "takeaway": "Flexion.",
-    "visualization": "",
-    "_src_file": "general_surgery.js"
-  },
-  {
-    "id": 90601,
-    "specialty": "Orthopedics",
-    "topic": "good ortho mcq exam_2 conv.docx",
-    "question": "Volkman's ischemia commonly occurs following: a. Fracture shaft humerus.",
-    "options": {
-      "A": "Shaft.",
-      "B": "Surgical neck.",
-      "C": "Medial epicondyle. d. Lateral epieondyle.",
-      "D": "Lower third of humerus. 5 51)Fracture involving which part of humerus can cause delayed ulnar palsy:"
-    },
-    "answer": "A",
-    "explanation": {
-      "correct": "Best answer: A Shaft.",
-      "A": "",
-      "B": "",
-      "C": "",
-      "D": "",
-      "E": ""
-    },
-    "sharp": {
-      "set_the_stage": "Volkman's ischemia commonly occurs following: a. Fracture shaft humerus.",
-      "highlight_excellence": "Best answer: A Shaft.",
-      "address_gaps": "Discard distractors that do not fit the stem.",
-      "review_learning_points": "Focus on the main exam pearl behind the answer.",
-      "plan": "Memorize the key takeaway for revision.",
-      "plan_for_improvement": "Memorize the key takeaway for revision."
-    },
-    "guideline": "",
-    "takeaway": "Shaft.",
-    "visualization": "",
-    "_src_file": "general_surgery.js"
-  },
-  {
-    "id": 90602,
-    "specialty": "Orthopedics",
-    "topic": "good ortho mcq exam_2 conv.docx",
-    "question": "Fracture femoral neck can be diagnosed from: a. Limb shortening.",
-    "options": {
-      "A": "Flexor digitorum profundus. b. Flexor digitorum superficials. c. Palmaris longus.",
-      "B": "Undiagnosed pathology within knee. c. Incomplete removal of the cyst.",
-      "C": "Knee stiffness. d. Fat embolism. 65)Spontaneous bleeding into joints in haemophilia occurs when factor VI level is less than:",
-      "D": "All of the above. 6 www.mataryonline.com"
-    },
-    "answer": "A",
-    "explanation": {
-      "correct": "Best answer: A Flexor digitorum profundus. b. Flexor digitorum superficials. c. Palmaris longus.",
-      "A": "",
-      "B": "",
-      "C": "",
-      "D": "",
-      "E": ""
-    },
-    "sharp": {
-      "set_the_stage": "Fracture femoral neck can be diagnosed from: a. Limb shortening.",
-      "highlight_excellence": "Best answer: A Flexor digitorum profundus. b. Flexor digitorum superficials. c. Palmaris longus.",
-      "address_gaps": "Discard distractors that do not fit the stem.",
-      "review_learning_points": "Focus on the main exam pearl behind the answer.",
-      "plan": "Memorize the key takeaway for revision.",
-      "plan_for_improvement": "Memorize the key takeaway for revision."
-    },
-    "guideline": "",
-    "takeaway": "Flexor digitorum profundus. b. Flexor digitorum superficials. c. Palmaris longus.",
-    "visualization": "",
-    "_src_file": "general_surgery.js"
-  },
-  {
-    "id": 90603,
-    "specialty": "Orthopedics",
-    "topic": "good ortho mcq exam_2 conv.docx",
-    "question": "Fractures which do not impact include a. fracture of tile vault of the skull",
-    "options": {
-      "A": "reversed Colles' fracture",
-      "B": "fracture of the scaphoid bone in the wrist",
-      "C": "fracture of the radial styloid (chauffeur's fracture) d. fracture dislocation of the first metacarpal",
-      "D": "a fracture of the head of the radius e. fracture of die scaphoid 73)Bennett's fracture is"
-    },
-    "answer": "A",
-    "explanation": {
-      "correct": "Best answer: A reversed Colles' fracture",
-      "A": "",
-      "B": "",
-      "C": "",
-      "D": "",
-      "E": ""
-    },
-    "sharp": {
-      "set_the_stage": "Fractures which do not impact include a. fracture of tile vault of the skull",
-      "highlight_excellence": "Best answer: A reversed Colles' fracture",
-      "address_gaps": "Discard distractors that do not fit the stem.",
-      "review_learning_points": "Focus on the main exam pearl behind the answer.",
-      "plan": "Memorize the key takeaway for revision.",
-      "plan_for_improvement": "Memorize the key takeaway for revision."
-    },
-    "guideline": "",
-    "takeaway": "reversed Colles' fracture",
-    "visualization": "",
-    "_src_file": "general_surgery.js"
-  },
-  {
-    "id": 90604,
-    "specialty": "Orthopedics",
-    "topic": "good ortho mcq exam_2 conv.docx",
-    "question": "A Pott's fracture is a type of fracture of the a. wrist",
-    "options": {
-      "A": "physiotherapy alone",
-      "B": "insertion of a figure-of-eight tension band c. patellectomy",
-      "C": "non-union of a fracture",
-      "D": "followed by pseudoarthrosis e. due to tuberculosis"
-    },
-    "answer": "A",
-    "explanation": {
-      "correct": "Best answer: A physiotherapy alone",
-      "A": "",
-      "B": "",
-      "C": "",
-      "D": "",
-      "E": ""
-    },
-    "sharp": {
-      "set_the_stage": "A Pott's fracture is a type of fracture of the a. wrist",
-      "highlight_excellence": "Best answer: A physiotherapy alone",
-      "address_gaps": "Discard distractors that do not fit the stem.",
-      "review_learning_points": "Focus on the main exam pearl behind the answer.",
-      "plan": "Memorize the key takeaway for revision.",
-      "plan_for_improvement": "Memorize the key takeaway for revision."
-    },
-    "guideline": "",
-    "takeaway": "physiotherapy alone",
-    "visualization": "",
-    "_src_file": "general_surgery.js"
-  },
-  {
-    "id": 90605,
-    "specialty": "Orthopedics",
-    "topic": "good ortho mcq exam_2 conv.docx",
-    "question": "Volkmann's contracture a. affects the palmar fascia",
-    "options": {
-      "A": "a subperiosteal abscess due to infection of the mastoid air cells",
-      "B": "a type pf breast abscess",
-      "C": "a chronic abscess of the bone",
-      "D": "an abscess arising in the inguinal lymph nodes e. an abscess forming in an infected varicose vein"
-    },
-    "answer": "A",
-    "explanation": {
-      "correct": "Best answer: A a subperiosteal abscess due to infection of the mastoid air cells",
-      "A": "",
-      "B": "",
-      "C": "",
-      "D": "",
-      "E": ""
-    },
-    "sharp": {
-      "set_the_stage": "Volkmann's contracture a. affects the palmar fascia",
-      "highlight_excellence": "Best answer: A a subperiosteal abscess due to infection of the mastoid air cells",
-      "address_gaps": "Discard distractors that do not fit the stem.",
-      "review_learning_points": "Focus on the main exam pearl behind the answer.",
-      "plan": "Memorize the key takeaway for revision.",
-      "plan_for_improvement": "Memorize the key takeaway for revision."
-    },
-    "guideline": "",
-    "takeaway": "a subperiosteal abscess due to infection of the mastoid air cells",
-    "visualization": "",
-    "_src_file": "general_surgery.js"
-  },
-  {
-    "id": 90606,
-    "specialty": "Orthopedics",
-    "topic": "good ortho mcq exam_2 conv.docx",
-    "question": "The initial abnormality in rheumatoid arthritis is a. fibrillation of cartilage",
-    "options": {
-      "A": "hematomyelia following trauma",
-      "B": "damage to the cord by a piece of bone when vertebrae collapse in tuberculosis of the spine",
-      "C": "tuberculous pus and angulation in tuberculosis of the spine",
-      "D": "damage to die corda equina after a fall e. fracture dislocation of cervical vertebrae"
-    },
-    "answer": "A",
-    "explanation": {
-      "correct": "Best answer: A hematomyelia following trauma",
-      "A": "",
-      "B": "",
-      "C": "",
-      "D": "",
-      "E": ""
-    },
-    "sharp": {
-      "set_the_stage": "The initial abnormality in rheumatoid arthritis is a. fibrillation of cartilage",
-      "highlight_excellence": "Best answer: A hematomyelia following trauma",
-      "address_gaps": "Discard distractors that do not fit the stem.",
-      "review_learning_points": "Focus on the main exam pearl behind the answer.",
-      "plan": "Memorize the key takeaway for revision.",
-      "plan_for_improvement": "Memorize the key takeaway for revision."
-    },
-    "guideline": "",
-    "takeaway": "hematomyelia following trauma",
-    "visualization": "",
-    "_src_file": "general_surgery.js"
-  },
-  {
-    "id": 90607,
-    "specialty": "Orthopedics",
-    "topic": "good ortho mcq exam_2 conv.docx",
-    "question": "'Tennis elbow' is the term used for a. olecranon bursitis",
-    "options": {
-      "A": "Carpal scaphoid b. Neck of the femur",
-      "B": "Joint involved in the fracture c. Proximal joint",
-      "C": "Lower third of the tibia d. Talus",
-      "D": "Both proximal and distal joints e. Distal joint 101)Non-union is common in fractures of the following bones except the:"
-    },
-    "answer": "A",
-    "explanation": {
-      "correct": "Best answer: A Carpal scaphoid b. Neck of the femur",
-      "A": "",
-      "B": "",
-      "C": "",
-      "D": "",
-      "E": ""
-    },
-    "sharp": {
-      "set_the_stage": "'Tennis elbow' is the term used for a. olecranon bursitis",
-      "highlight_excellence": "Best answer: A Carpal scaphoid b. Neck of the femur",
-      "address_gaps": "Discard distractors that do not fit the stem.",
-      "review_learning_points": "Focus on the main exam pearl behind the answer.",
-      "plan": "Memorize the key takeaway for revision.",
-      "plan_for_improvement": "Memorize the key takeaway for revision."
-    },
-    "guideline": "",
-    "takeaway": "Carpal scaphoid b. Neck of the femur",
-    "visualization": "",
-    "_src_file": "general_surgery.js"
-  },
-  {
-    "id": 90608,
-    "specialty": "Orthopedics",
-    "topic": "good ortho mcq exam_2 conv.docx",
-    "question": "The signs of fractured shaft of a bone do not include: a. Swelling",
-    "options": {
-      "A": "Inadequate immobilization b. Interposition of soft parts c. Impaired blood supply",
-      "B": "Separation of the epiphysis with a triangular fragment of the metaphysic",
-      "C": "Tight plasters d. Septic infection",
-      "D": "Inpsction of the fragments"
-    },
-    "answer": "A",
-    "explanation": {
-      "correct": "Best answer: A Inadequate immobilization b. Interposition of soft parts c. Impaired blood supply",
-      "A": "",
-      "B": "",
-      "C": "",
-      "D": "",
-      "E": ""
-    },
-    "sharp": {
-      "set_the_stage": "The signs of fractured shaft of a bone do not include: a. Swelling",
-      "highlight_excellence": "Best answer: A Inadequate immobilization b. Interposition of soft parts c. Impaired blood supply",
-      "address_gaps": "Discard distractors that do not fit the stem.",
-      "review_learning_points": "Focus on the main exam pearl behind the answer.",
-      "plan": "Memorize the key takeaway for revision.",
-      "plan_for_improvement": "Memorize the key takeaway for revision."
-    },
-    "guideline": "",
-    "takeaway": "Inadequate immobilization b. Interposition of soft parts c. Impaired blood supply",
-    "visualization": "",
-    "_src_file": "general_surgery.js"
-  },
-  {
-    "id": 90609,
-    "specialty": "Orthopedics",
-    "topic": "good ortho mcq exam_2 conv.docx",
-    "question": "The correct ttt of traumatic myositis ossificans is by: a. Prolonged immobilization",
-    "options": {
-      "A": "Rupture of anterior cruciate ligament b. Rupture of medial collateral ligament c. Avulsion of medial meniscus",
-      "B": "Fracture of the tibial spine",
-      "C": "Rupture of the medial ligament",
-      "D": "Bumper fracture of tibia e. All of the above"
-    },
-    "answer": "A",
-    "explanation": {
-      "correct": "Best answer: A Rupture of anterior cruciate ligament b. Rupture of medial collateral ligament c. Avulsion of medial meniscus",
-      "A": "",
-      "B": "",
-      "C": "",
-      "D": "",
-      "E": ""
-    },
-    "sharp": {
-      "set_the_stage": "The correct ttt of traumatic myositis ossificans is by: a. Prolonged immobilization",
-      "highlight_excellence": "Best answer: A Rupture of anterior cruciate ligament b. Rupture of medial collateral ligament c. Avulsion of medial meniscus",
-      "address_gaps": "Discard distractors that do not fit the stem.",
-      "review_learning_points": "Focus on the main exam pearl behind the answer.",
-      "plan": "Memorize the key takeaway for revision.",
-      "plan_for_improvement": "Memorize the key takeaway for revision."
-    },
-    "guideline": "",
-    "takeaway": "Rupture of anterior cruciate ligament b. Rupture of medial collateral ligament c. Avulsion of medial meniscus",
-    "visualization": "",
-    "_src_file": "general_surgery.js"
-  },
-  {
-    "id": 90610,
-    "specialty": "Orthopedics",
-    "topic": "good ortho mcq exam_2 conv.docx",
-    "question": "Intestinal absorption of calcium is dependent upon: a. Vitamin D",
-    "options": {
-      "A": "Infantile rickets b. Scurvy",
-      "B": "Parathoraone c. Calcitonin",
-      "C": "Hemophilia",
-      "D": "Hypoparathyroidism e. Hypervitaminosis A"
-    },
-    "answer": "A",
-    "explanation": {
-      "correct": "Best answer: A Infantile rickets b. Scurvy",
-      "A": "",
-      "B": "",
-      "C": "",
-      "D": "",
-      "E": ""
-    },
-    "sharp": {
-      "set_the_stage": "Intestinal absorption of calcium is dependent upon: a. Vitamin D",
-      "highlight_excellence": "Best answer: A Infantile rickets b. Scurvy",
-      "address_gaps": "Discard distractors that do not fit the stem.",
-      "review_learning_points": "Focus on the main exam pearl behind the answer.",
-      "plan": "Memorize the key takeaway for revision.",
-      "plan_for_improvement": "Memorize the key takeaway for revision."
-    },
-    "guideline": "",
-    "takeaway": "Infantile rickets b. Scurvy",
-    "visualization": "",
-    "_src_file": "general_surgery.js"
-  },
-  {
-    "id": 90611,
-    "specialty": "Orthopedics",
-    "topic": "good ortho mcq exam_2 conv.docx",
-    "question": "Osteoporosis is a deficiency in: a. Calcium metabolism",
-    "options": {
-      "A": "Has a normal serum concentration of 3-13 KA units b. Is present in high concentrations in liver cells",
-      "B": "Calcium deposition",
-      "C": "Is excreted in the bile",
-      "D": "Is elevated in the serum of patients with healing fractures"
-    },
-    "answer": "A",
-    "explanation": {
-      "correct": "Best answer: A Has a normal serum concentration of 3-13 KA units b. Is present in high concentrations in liver cells",
-      "A": "",
-      "B": "",
-      "C": "",
-      "D": "",
-      "E": ""
-    },
-    "sharp": {
-      "set_the_stage": "Osteoporosis is a deficiency in: a. Calcium metabolism",
-      "highlight_excellence": "Best answer: A Has a normal serum concentration of 3-13 KA units b. Is present in high concentrations in liver cells",
-      "address_gaps": "Discard distractors that do not fit the stem.",
-      "review_learning_points": "Focus on the main exam pearl behind the answer.",
-      "plan": "Memorize the key takeaway for revision.",
-      "plan_for_improvement": "Memorize the key takeaway for revision."
-    },
-    "guideline": "",
-    "takeaway": "Has a normal serum concentration of 3-13 KA units b. Is present in high concentrations in liver cells",
-    "visualization": "",
-    "_src_file": "general_surgery.js"
-  },
-  {
-    "id": 90612,
-    "specialty": "Orthopedics",
-    "topic": "good ortho mcq exam_2 conv.docx",
-    "question": "Concerning Ollier's disease, which of the following statements is incorrect:",
-    "options": {
-      "A": "There is a strong hereditary predisposition",
-      "B": "Multiple enchondromata occur in small long bones of hands and feet",
-      "C": "The affected bones are stunted",
-      "D": "Deformities may arise from unequal affection of metaphyses"
-    },
-    "answer": "A",
-    "explanation": {
-      "correct": "Best answer: A There is a strong hereditary predisposition",
-      "A": "",
-      "B": "",
-      "C": "",
-      "D": "",
-      "E": ""
-    },
-    "sharp": {
-      "set_the_stage": "Concerning Ollier's disease, which of the following statements is incorrect:",
-      "highlight_excellence": "Best answer: A There is a strong hereditary predisposition",
-      "address_gaps": "Discard distractors that do not fit the stem.",
-      "review_learning_points": "Focus on the main exam pearl behind the answer.",
-      "plan": "Memorize the key takeaway for revision.",
-      "plan_for_improvement": "Memorize the key takeaway for revision."
-    },
-    "guideline": "",
-    "takeaway": "There is a strong hereditary predisposition",
-    "visualization": "",
-    "_src_file": "general_surgery.js"
-  },
-  {
-    "id": 90613,
-    "specialty": "Orthopedics",
-    "topic": "good ortho mcq exam_2 conv.docx",
-    "question": "The radiological signs of osteoclastoma include the following except:",
-    "options": {
-      "A": "Abrupt expansion of the bone",
-      "B": "Characteristic soap-bubble appearance",
-      "C": "Presence of an operculum obliterating the medullary cavity",
-      "D": "Absence of any new-bone formation e. Presence of areas of bone destruction"
-    },
-    "answer": "A",
-    "explanation": {
-      "correct": "Best answer: A Abrupt expansion of the bone",
-      "A": "",
-      "B": "",
-      "C": "",
-      "D": "",
-      "E": ""
-    },
-    "sharp": {
-      "set_the_stage": "The radiological signs of osteoclastoma include the following except:",
-      "highlight_excellence": "Best answer: A Abrupt expansion of the bone",
-      "address_gaps": "Discard distractors that do not fit the stem.",
-      "review_learning_points": "Focus on the main exam pearl behind the answer.",
-      "plan": "Memorize the key takeaway for revision.",
-      "plan_for_improvement": "Memorize the key takeaway for revision."
-    },
-    "guideline": "",
-    "takeaway": "Abrupt expansion of the bone",
-    "visualization": "",
-    "_src_file": "general_surgery.js"
-  },
-  {
-    "id": 90614,
-    "specialty": "Orthopedics",
-    "topic": "good ortho mcq exam_2 conv.docx",
-    "question": "The differential diagnosis of osteoid osteoma includes all the following except:",
-    "options": {
-      "A": "Brodies' abscess b. Ossifying fibroma c. Ewing's tumor",
-      "B": "Hyaluronidase",
-      "C": "Albumin and laucin",
-      "D": "Alpha and beta globulins e. Beta lipoproteins"
-    },
-    "answer": "A",
-    "explanation": {
-      "correct": "Best answer: A Brodies' abscess b. Ossifying fibroma c. Ewing's tumor",
-      "A": "",
-      "B": "",
-      "C": "",
-      "D": "",
-      "E": ""
-    },
-    "sharp": {
-      "set_the_stage": "The differential diagnosis of osteoid osteoma includes all the following except:",
-      "highlight_excellence": "Best answer: A Brodies' abscess b. Ossifying fibroma c. Ewing's tumor",
-      "address_gaps": "Discard distractors that do not fit the stem.",
-      "review_learning_points": "Focus on the main exam pearl behind the answer.",
-      "plan": "Memorize the key takeaway for revision.",
-      "plan_for_improvement": "Memorize the key takeaway for revision."
-    },
-    "guideline": "",
-    "takeaway": "Brodies' abscess b. Ossifying fibroma c. Ewing's tumor",
-    "visualization": "",
-    "_src_file": "general_surgery.js"
-  },
-  {
-    "id": 90615,
-    "specialty": "Orthopedics",
-    "topic": "good ortho mcq exam_2 conv.docx",
-    "question": "The X-ray findings in tuberculosis of the hip include the following except :",
-    "options": {
-      "A": "There is congenital elevation & maldevelopment of scapula.",
-      "B": "An ugly prominence in the neck is produced by the superior angle.",
-      "C": "A band of fibrocartilage or bone anchors the medial border of the scapula to the spine.",
-      "D": "There is no limitation of shoulder movements."
-    },
-    "answer": "A",
-    "explanation": {
-      "correct": "Best answer: A There is congenital elevation & maldevelopment of scapula.",
-      "A": "",
-      "B": "",
-      "C": "",
-      "D": "",
-      "E": ""
-    },
-    "sharp": {
-      "set_the_stage": "The X-ray findings in tuberculosis of the hip include the following except :",
-      "highlight_excellence": "Best answer: A There is congenital elevation & maldevelopment of scapula.",
-      "address_gaps": "Discard distractors that do not fit the stem.",
-      "review_learning_points": "Focus on the main exam pearl behind the answer.",
-      "plan": "Memorize the key takeaway for revision.",
-      "plan_for_improvement": "Memorize the key takeaway for revision."
-    },
-    "guideline": "",
-    "takeaway": "There is congenital elevation & maldevelopment of scapula.",
-    "visualization": "",
-    "_src_file": "general_surgery.js"
-  },
-  {
-    "id": 90616,
-    "specialty": "Orthopedics",
-    "topic": "good ortho mcq exam_2 conv.docx",
-    "question": "The most characteristic feature of Volkmann's contracture is :",
-    "options": {
-      "A": "It is due to contraction of the palmar fascia which starts as an indurated nodule on the ulnar border of the hand.",
-      "B": "The ring and little fingers are severely affected. c. The deformity consists of flexion of the metacarprophalangeal and proximal interphalangeal joints with extension of the terminal joint.",
-      "C": "Extension of the metacarprophalangeal joints with flexion of the interphalangeal joints.",
-      "D": "The skin overlying the indurated fascia is often puckered and immobile."
-    },
-    "answer": "A",
-    "explanation": {
-      "correct": "Best answer: A It is due to contraction of the palmar fascia which starts as an indurated nodule on the ulnar border of the hand.",
-      "A": "",
-      "B": "",
-      "C": "",
-      "D": "",
-      "E": ""
-    },
-    "sharp": {
-      "set_the_stage": "The most characteristic feature of Volkmann's contracture is :",
-      "highlight_excellence": "Best answer: A It is due to contraction of the palmar fascia which starts as an indurated nodule on the ulnar border of the hand.",
-      "address_gaps": "Discard distractors that do not fit the stem.",
-      "review_learning_points": "Focus on the main exam pearl behind the answer.",
-      "plan": "Memorize the key takeaway for revision.",
-      "plan_for_improvement": "Memorize the key takeaway for revision."
-    },
-    "guideline": "",
-    "takeaway": "It is due to contraction of the palmar fascia which starts as an indurated nodule on the ulnar border of the hand.",
-    "visualization": "",
-    "_src_file": "general_surgery.js"
-  },
-  {
-    "id": 90617,
-    "specialty": "Orthopedics",
-    "topic": "good ortho mcq exam_2 conv.docx",
-    "question": "In congenital dislocation of the hip (CDH), the pathological changes include the following except :",
-    "options": {
-      "A": "Small shallow acetabulum.",
-      "B": "Snail flattened femoral head lying outside the acetabulum.",
-      "C": "Elongated femoral neck.",
-      "D": "Thickened adherent joint capsule with an hour-glass constriction."
-    },
-    "answer": "A",
-    "explanation": {
-      "correct": "Best answer: A Small shallow acetabulum.",
-      "A": "",
-      "B": "",
-      "C": "",
-      "D": "",
-      "E": ""
-    },
-    "sharp": {
-      "set_the_stage": "In congenital dislocation of the hip (CDH), the pathological changes include the following except :",
-      "highlight_excellence": "Best answer: A Small shallow acetabulum.",
-      "address_gaps": "Discard distractors that do not fit the stem.",
-      "review_learning_points": "Focus on the main exam pearl behind the answer.",
-      "plan": "Memorize the key takeaway for revision.",
-      "plan_for_improvement": "Memorize the key takeaway for revision."
-    },
-    "guideline": "",
-    "takeaway": "Small shallow acetabulum.",
-    "visualization": "",
-    "_src_file": "general_surgery.js"
-  },
-  {
-    "id": 90618,
-    "specialty": "Orthopedics",
-    "topic": "good ortho mcq exam_2 conv.docx",
-    "question": "Regarding hallux valgus, the following statements are true except that it:",
-    "options": {
-      "A": "Overcrowding of the toes by ill-fitting shoes. b. Hallux valgus.",
-      "B": "Is usually due to badly fitting shoes. c. Is not progressive.",
-      "C": "Pes cavus.",
-      "D": "Talipes equinus."
-    },
-    "answer": "A",
-    "explanation": {
-      "correct": "Best answer: A Overcrowding of the toes by ill-fitting shoes. b. Hallux valgus.",
-      "A": "",
-      "B": "",
-      "C": "",
-      "D": "",
-      "E": ""
-    },
-    "sharp": {
-      "set_the_stage": "Regarding hallux valgus, the following statements are true except that it:",
-      "highlight_excellence": "Best answer: A Overcrowding of the toes by ill-fitting shoes. b. Hallux valgus.",
-      "address_gaps": "Discard distractors that do not fit the stem.",
-      "review_learning_points": "Focus on the main exam pearl behind the answer.",
-      "plan": "Memorize the key takeaway for revision.",
-      "plan_for_improvement": "Memorize the key takeaway for revision."
-    },
-    "guideline": "",
-    "takeaway": "Overcrowding of the toes by ill-fitting shoes. b. Hallux valgus.",
-    "visualization": "",
-    "_src_file": "general_surgery.js"
-  },
-  {
-    "id": 90619,
-    "specialty": "Orthopedics",
-    "topic": "good ortho mcq exam_2 conv.docx",
-    "question": "The following statements about provisional amputation for infective gangrene are true except that it:",
-    "options": {
-      "A": "May be urgently needed to control infection and toxemia.",
-      "B": "Should be made through the healthy limb above the infected area.",
-      "C": "Should be done as low as possible to allow reamputation at the optimum level.",
-      "D": "Should provide free drainage."
-    },
-    "answer": "A",
-    "explanation": {
-      "correct": "Best answer: A May be urgently needed to control infection and toxemia.",
-      "A": "",
-      "B": "",
-      "C": "",
-      "D": "",
-      "E": ""
-    },
-    "sharp": {
-      "set_the_stage": "The following statements about provisional amputation for infective gangrene are true except that it:",
-      "highlight_excellence": "Best answer: A May be urgently needed to control infection and toxemia.",
-      "address_gaps": "Discard distractors that do not fit the stem.",
-      "review_learning_points": "Focus on the main exam pearl behind the answer.",
-      "plan": "Memorize the key takeaway for revision.",
-      "plan_for_improvement": "Memorize the key takeaway for revision."
-    },
-    "guideline": "",
-    "takeaway": "May be urgently needed to control infection and toxemia.",
-    "visualization": "",
-    "_src_file": "general_surgery.js"
-  },
-  {
-    "id": 90620,
-    "specialty": "Orthopedics",
-    "topic": "good ortho mcq exam_2 conv.docx",
-    "question": "Reimplantation of a traumatically amputated limb requires all of the following except:",
-    "options": {
-      "A": "are often due to a fall on the outstretched hand b. are frequently associated with chest wall injury c. are often associated with dislocation of the acromioclavicular",
-      "B": "the radial nerve is frequently damaged",
-      "C": "delayed radial nerve palsy is usually due to edema d. late onset of radial nerve palsy is usually due to the involvement of the nerve with callus",
-      "D": "proximal fragment Is usually internally rotated e. distal fragment is usually adducted 24 www.mataryonline.com 9.In a fracture of the distal 1/3 of the shaft of the humerus a. the distal fragment is usually posteriorly angulated by"
-    },
-    "answer": "A",
-    "explanation": {
-      "correct": "Best answer: A are often due to a fall on the outstretched hand b. are frequently associated with chest wall injury c. are often associated with dislocation of the acromioclavicular",
-      "A": "",
-      "B": "",
-      "C": "",
-      "D": "",
-      "E": ""
-    },
-    "sharp": {
-      "set_the_stage": "Reimplantation of a traumatically amputated limb requires all of the following except:",
-      "highlight_excellence": "Best answer: A are often due to a fall on the outstretched hand b. are frequently associated with chest wall injury c. are often associated with dislocation of the acromioclavicular",
-      "address_gaps": "Discard distractors that do not fit the stem.",
-      "review_learning_points": "Focus on the main exam pearl behind the answer.",
-      "plan": "Memorize the key takeaway for revision.",
-      "plan_for_improvement": "Memorize the key takeaway for revision."
-    },
-    "guideline": "",
-    "takeaway": "are often due to a fall on the outstretched hand b. are frequently associated with chest wall injury c. are often associated with dislocation of the acromioclavicular",
-    "visualization": "",
-    "_src_file": "general_surgery.js"
-  },
-  {
-    "id": 90621,
-    "specialty": "Orthopedics",
-    "topic": "good ortho mcq exam_2 conv.docx",
-    "question": "A supracondylar fracture of the humerus",
-    "options": {
-      "A": "is a fracture commonly seen in young adults",
-      "B": "is particularly subject to the complication of ischemic muscle contracture",
-      "C": "is held in the position of reduction by the tendon of brachioradialis",
-      "D": "when properly reduced has the index finger pointing approximately to the tip of shoulder of the same side"
-    },
-    "answer": "A",
-    "explanation": {
-      "correct": "Best answer: A is a fracture commonly seen in young adults",
-      "A": "",
-      "B": "",
-      "C": "",
-      "D": "",
-      "E": ""
-    },
-    "sharp": {
-      "set_the_stage": "A supracondylar fracture of the humerus",
-      "highlight_excellence": "Best answer: A is a fracture commonly seen in young adults",
-      "address_gaps": "Discard distractors that do not fit the stem.",
-      "review_learning_points": "Focus on the main exam pearl behind the answer.",
-      "plan": "Memorize the key takeaway for revision.",
-      "plan_for_improvement": "Memorize the key takeaway for revision."
-    },
-    "guideline": "",
-    "takeaway": "is a fracture commonly seen in young adults",
-    "visualization": "",
-    "_src_file": "general_surgery.js"
-  },
-  {
-    "id": 90622,
-    "specialty": "Orthopedics",
-    "topic": "good ortho mcq exam_2 conv.docx",
-    "question": "In a Monteggia fracture dislocation",
-    "options": {
-      "A": "the dislocation of the distal radio-ulnar joint brings the ulnar styloid process anterior to the capitulum",
-      "B": "the radial fracture is usually at the junction of the middle and distal thirds",
-      "C": "internal fixation is usually required in the adult",
-      "D": "the causative injury is often a blow on the extensor surface of the forearm with the elbow flexed"
-    },
-    "answer": "A",
-    "explanation": {
-      "correct": "Best answer: A the dislocation of the distal radio-ulnar joint brings the ulnar styloid process anterior to the capitulum",
-      "A": "",
-      "B": "",
-      "C": "",
-      "D": "",
-      "E": ""
-    },
-    "sharp": {
-      "set_the_stage": "In a Monteggia fracture dislocation",
-      "highlight_excellence": "Best answer: A the dislocation of the distal radio-ulnar joint brings the ulnar styloid process anterior to the capitulum",
-      "address_gaps": "Discard distractors that do not fit the stem.",
-      "review_learning_points": "Focus on the main exam pearl behind the answer.",
-      "plan": "Memorize the key takeaway for revision.",
-      "plan_for_improvement": "Memorize the key takeaway for revision."
-    },
-    "guideline": "",
-    "takeaway": "the dislocation of the distal radio-ulnar joint brings the ulnar styloid process anterior to the capitulum",
-    "visualization": "",
-    "_src_file": "general_surgery.js"
-  },
-  {
-    "id": 90623,
-    "specialty": "Orthopedics",
-    "topic": "good ortho mcq exam_2 conv.docx",
-    "question": "In rheumatoid arthritis the",
-    "options": {
-      "A": "principal lesion is an area of fibrinoid necrosis surrounded by fibroblasts",
-      "B": "synovial membrane characteristically undergoes marked hypertrophy",
-      "C": "fibrosis in the joint capsule and ligaments produces the main deforming forces in the early stages of the disease",
-      "D": "permanent deformity in the late stage of the disease is usually due to bone ankylosis"
-    },
-    "answer": "A",
-    "explanation": {
-      "correct": "Best answer: A principal lesion is an area of fibrinoid necrosis surrounded by fibroblasts",
-      "A": "",
-      "B": "",
-      "C": "",
-      "D": "",
-      "E": ""
-    },
-    "sharp": {
-      "set_the_stage": "In rheumatoid arthritis the",
-      "highlight_excellence": "Best answer: A principal lesion is an area of fibrinoid necrosis surrounded by fibroblasts",
-      "address_gaps": "Discard distractors that do not fit the stem.",
-      "review_learning_points": "Focus on the main exam pearl behind the answer.",
-      "plan": "Memorize the key takeaway for revision.",
-      "plan_for_improvement": "Memorize the key takeaway for revision."
-    },
-    "guideline": "",
-    "takeaway": "principal lesion is an area of fibrinoid necrosis surrounded by fibroblasts",
-    "visualization": "",
-    "_src_file": "general_surgery.js"
-  },
-  {
-    "id": 90624,
-    "specialty": "Orthopedics",
-    "topic": "good ortho mcq exam_2 conv.docx",
-    "question": "In tuberculosis of the bone",
-    "options": {
-      "A": "the local reaction is characterized by extensive new bone formation",
-      "B": "metaphysis of long bones is the commonest site of involvement",
-      "C": "the infection is usually secondary to a primary focus elsewhere in the body",
-      "D": "extension of the bone abscess into a joint is common e. the presentation is typically severe pain over the end of a long bone"
-    },
-    "answer": "A",
-    "explanation": {
-      "correct": "Best answer: A the local reaction is characterized by extensive new bone formation",
-      "A": "",
-      "B": "",
-      "C": "",
-      "D": "",
-      "E": ""
-    },
-    "sharp": {
-      "set_the_stage": "In tuberculosis of the bone",
-      "highlight_excellence": "Best answer: A the local reaction is characterized by extensive new bone formation",
-      "address_gaps": "Discard distractors that do not fit the stem.",
-      "review_learning_points": "Focus on the main exam pearl behind the answer.",
-      "plan": "Memorize the key takeaway for revision.",
-      "plan_for_improvement": "Memorize the key takeaway for revision."
-    },
-    "guideline": "",
-    "takeaway": "the local reaction is characterized by extensive new bone formation",
-    "visualization": "",
-    "_src_file": "general_surgery.js"
-  },
-  {
-    "id": 90625,
-    "specialty": "Orthopedics",
-    "topic": "good ortho mcq exam_2 conv.docx",
-    "question": "In osteoarthntis of the hip joint",
-    "options": {
-      "A": "is the commonest arthropathy",
-      "B": "is characterized by marginal osteophyte formation c. commonly presents with back pain",
-      "C": "the leg is usually adducted and externally rotated when the patient lies supine",
-      "D": "symptoms are least apparent in the morning e. commonly produces swelling of the distal interphalangeal joints"
-    },
-    "answer": "A",
-    "explanation": {
-      "correct": "Best answer: A is the commonest arthropathy",
-      "A": "",
-      "B": "",
-      "C": "",
-      "D": "",
-      "E": ""
-    },
-    "sharp": {
-      "set_the_stage": "In osteoarthntis of the hip joint",
-      "highlight_excellence": "Best answer: A is the commonest arthropathy",
-      "address_gaps": "Discard distractors that do not fit the stem.",
-      "review_learning_points": "Focus on the main exam pearl behind the answer.",
-      "plan": "Memorize the key takeaway for revision.",
-      "plan_for_improvement": "Memorize the key takeaway for revision."
-    },
-    "guideline": "",
-    "takeaway": "is the commonest arthropathy",
-    "visualization": "",
-    "_src_file": "general_surgery.js"
-  },
-  {
-    "id": 90626,
-    "specialty": "Orthopedics",
-    "topic": "good ortho mcq exam_2 conv.docx",
-    "question": "In a case of congenital dislocation of the hip",
-    "options": {
-      "A": "the defect cannot be detected until the third week of life",
-      "B": "there is a defect of the posterior rim of the acetabulum",
-      "C": "on bilateral hip abduction with the knees flexed there is often limited abduction on the diseased side",
-      "D": "reduction is sometimes hindered by a tight gluteus minimus muscle"
-    },
-    "answer": "A",
-    "explanation": {
-      "correct": "Best answer: A the defect cannot be detected until the third week of life",
-      "A": "",
-      "B": "",
-      "C": "",
-      "D": "",
-      "E": ""
-    },
-    "sharp": {
-      "set_the_stage": "In a case of congenital dislocation of the hip",
-      "highlight_excellence": "Best answer: A the defect cannot be detected until the third week of life",
-      "address_gaps": "Discard distractors that do not fit the stem.",
-      "review_learning_points": "Focus on the main exam pearl behind the answer.",
-      "plan": "Memorize the key takeaway for revision.",
-      "plan_for_improvement": "Memorize the key takeaway for revision."
-    },
-    "guideline": "",
-    "takeaway": "the defect cannot be detected until the third week of life",
-    "visualization": "",
-    "_src_file": "general_surgery.js"
-  },
-  {
-    "id": 90627,
-    "specialty": "Orthopedics",
-    "topic": "good ortho mcq exam_2 conv.docx",
-    "question": "In benign tumors of cartilage",
-    "options": {
-      "A": "of the base of the skull (spheric-occipital1 develop in the remnants of Rathke's pouch",
-      "B": "of the sacrococcygeal region develop in the remnants of the neural canal",
-      "C": "are characterized radiologically by central rarefaction of the bone and cortical thinning and expansion",
-      "D": "are commoner in females than in males e. usually present soon after puberty"
-    },
-    "answer": "A",
-    "explanation": {
-      "correct": "Best answer: A of the base of the skull (spheric-occipital1 develop in the remnants of Rathke's pouch",
-      "A": "",
-      "B": "",
-      "C": "",
-      "D": "",
-      "E": ""
-    },
-    "sharp": {
-      "set_the_stage": "In benign tumors of cartilage",
-      "highlight_excellence": "Best answer: A of the base of the skull (spheric-occipital1 develop in the remnants of Rathke's pouch",
-      "address_gaps": "Discard distractors that do not fit the stem.",
-      "review_learning_points": "Focus on the main exam pearl behind the answer.",
-      "plan": "Memorize the key takeaway for revision.",
-      "plan_for_improvement": "Memorize the key takeaway for revision."
-    },
-    "guideline": "",
-    "takeaway": "of the base of the skull (spheric-occipital1 develop in the remnants of Rathke's pouch",
-    "visualization": "",
-    "_src_file": "general_surgery.js"
-  },
-  {
-    "id": 90628,
-    "specialty": "Orthopedics",
-    "topic": "good ortho mcq exam_2 conv.docx",
-    "question": "In fractures involving the ankle joint",
-    "options": {
-      "A": "the stability of the tibio-fibular mortice determines the outcome",
-      "B": "if the mortice is disrupted it must be reconstructed",
-      "C": "in a third-degree external rotation injury the talus is free to slide beneath, and possibly fracture, the posterior margin of the tibia",
-      "D": "in an inversion (adduction) injury the media malieolus may be sheared from the tibia"
-    },
-    "answer": "A",
-    "explanation": {
-      "correct": "Best answer: A the stability of the tibio-fibular mortice determines the outcome",
-      "A": "",
-      "B": "",
-      "C": "",
-      "D": "",
-      "E": ""
-    },
-    "sharp": {
-      "set_the_stage": "In fractures involving the ankle joint",
-      "highlight_excellence": "Best answer: A the stability of the tibio-fibular mortice determines the outcome",
-      "address_gaps": "Discard distractors that do not fit the stem.",
-      "review_learning_points": "Focus on the main exam pearl behind the answer.",
-      "plan": "Memorize the key takeaway for revision.",
-      "plan_for_improvement": "Memorize the key takeaway for revision."
-    },
-    "guideline": "",
-    "takeaway": "the stability of the tibio-fibular mortice determines the outcome",
-    "visualization": "",
-    "_src_file": "general_surgery.js"
-  },
-  {
-    "id": 90629,
-    "specialty": "Orthopedics",
-    "topic": "good ortho mcq exam_2 conv.docx",
-    "question": "A positive Trendelenberg sign",
-    "options": {
-      "A": "known as talipes b. congenital",
-      "B": "occurs with paralysis of hip adductors c. occurs with coax vara",
-      "C": "most commonly of the equino-valgus variety d. a consequence of placenta praevia",
-      "D": "on both sides can make the gait appear normal"
-    },
-    "answer": "A",
-    "explanation": {
-      "correct": "Best answer: A known as talipes b. congenital",
-      "A": "",
-      "B": "",
-      "C": "",
-      "D": "",
-      "E": ""
-    },
-    "sharp": {
-      "set_the_stage": "A positive Trendelenberg sign",
-      "highlight_excellence": "Best answer: A known as talipes b. congenital",
-      "address_gaps": "Discard distractors that do not fit the stem.",
-      "review_learning_points": "Focus on the main exam pearl behind the answer.",
-      "plan": "Memorize the key takeaway for revision.",
-      "plan_for_improvement": "Memorize the key takeaway for revision."
-    },
-    "guideline": "",
-    "takeaway": "known as talipes b. congenital",
-    "visualization": "",
-    "_src_file": "general_surgery.js"
-  },
-  {
-    "id": 90630,
-    "specialty": "Orthopedics",
-    "topic": "good ortho mcq exam_2 conv.docx",
-    "question": "Factors predisposing to slipped femoral epiphysis include a. high normal loads",
-    "options": {
-      "A": "also known as medial epicondylitis",
-      "B": "characteristically associated with tenderness of the attachment of the extensor muscles of the forearm",
-      "C": "associated with the presence of bone chips d. treated by rest",
-      "D": "an epiphyseal plate not disposed at right angles to the line of action of the resultant force applied to it"
-    },
-    "answer": "A",
-    "explanation": {
-      "correct": "Best answer: A also known as medial epicondylitis",
-      "A": "",
-      "B": "",
-      "C": "",
-      "D": "",
-      "E": ""
-    },
-    "sharp": {
-      "set_the_stage": "Factors predisposing to slipped femoral epiphysis include a. high normal loads",
-      "highlight_excellence": "Best answer: A also known as medial epicondylitis",
-      "address_gaps": "Discard distractors that do not fit the stem.",
-      "review_learning_points": "Focus on the main exam pearl behind the answer.",
-      "plan": "Memorize the key takeaway for revision.",
-      "plan_for_improvement": "Memorize the key takeaway for revision."
-    },
-    "guideline": "",
-    "takeaway": "also known as medial epicondylitis",
-    "visualization": "",
-    "_src_file": "general_surgery.js"
-  },
-  {
-    "id": 90631,
-    "specialty": "Orthopedics",
-    "topic": "good ortho mcq exam_2 conv.docx",
-    "question": "Ladder step deformity characteristic of fracture clavicle is:",
-    "options": {
-      "A": "Medial fragment is displaced downward below lateral fragment.",
-      "B": "Lateral fragment is displaced foreword while medial is displaced backward.",
-      "C": "Dislocation of sternoclavicular joint gives ladder step deformity.",
-      "D": "Dislocation of acromio-clavicular joint."
-    },
-    "answer": "A",
-    "explanation": {
-      "correct": "Best answer: A Medial fragment is displaced downward below lateral fragment.",
-      "A": "",
-      "B": "",
-      "C": "",
-      "D": "",
-      "E": ""
-    },
-    "sharp": {
-      "set_the_stage": "Ladder step deformity characteristic of fracture clavicle is:",
-      "highlight_excellence": "Best answer: A Medial fragment is displaced downward below lateral fragment.",
-      "address_gaps": "Discard distractors that do not fit the stem.",
-      "review_learning_points": "Focus on the main exam pearl behind the answer.",
-      "plan": "Memorize the key takeaway for revision.",
-      "plan_for_improvement": "Memorize the key takeaway for revision."
-    },
-    "guideline": "",
-    "takeaway": "Medial fragment is displaced downward below lateral fragment.",
-    "visualization": "",
-    "_src_file": "general_surgery.js"
-  },
-  {
-    "id": 90633,
-    "specialty": "Orthopedics",
-    "topic": "good ortho mcq exam_2 conv.docx",
-    "question": "Greater tuberosity fracture (simple or fissure) is treated by:",
-    "options": {
-      "A": "Sling of the upper limb to the neck.",
-      "B": "Wrapping of the upper limb to the trunk by adhesive plaster.",
-      "C": "Above elbow plaster for 6-8 weeks.",
-      "D": "Immediate open reduction and internal fixation by a screw."
-    },
-    "answer": "A",
-    "explanation": {
-      "correct": "Best answer: A Sling of the upper limb to the neck.",
-      "A": "",
-      "B": "",
-      "C": "",
-      "D": "",
-      "E": ""
-    },
-    "sharp": {
-      "set_the_stage": "Greater tuberosity fracture (simple or fissure) is treated by:",
-      "highlight_excellence": "Best answer: A Sling of the upper limb to the neck.",
-      "address_gaps": "Discard distractors that do not fit the stem.",
-      "review_learning_points": "Focus on the main exam pearl behind the answer.",
-      "plan": "Memorize the key takeaway for revision.",
-      "plan_for_improvement": "Memorize the key takeaway for revision."
-    },
-    "guideline": "",
-    "takeaway": "Sling of the upper limb to the neck.",
-    "visualization": "",
-    "_src_file": "general_surgery.js"
-  },
-  {
-    "id": 90634,
-    "specialty": "Orthopedics",
-    "topic": "good ortho mcq exam_2 conv.docx",
-    "question": "The best line of treatment of fractures radius and ulna at different levels is:",
-    "options": {
-      "A": "Closed reduction and above elbow plaster for 6-8 weeks.",
-      "B": "Intramedullary nailing of both radius and ulna.",
-      "C": "Open reduction of the ulna and closed reduction of radius.",
-      "D": "Open reduction and internal fixation by plate and screws."
-    },
-    "answer": "A",
-    "explanation": {
-      "correct": "Best answer: A Closed reduction and above elbow plaster for 6-8 weeks.",
-      "A": "",
-      "B": "",
-      "C": "",
-      "D": "",
-      "E": ""
-    },
-    "sharp": {
-      "set_the_stage": "The best line of treatment of fractures radius and ulna at different levels is:",
-      "highlight_excellence": "Best answer: A Closed reduction and above elbow plaster for 6-8 weeks.",
-      "address_gaps": "Discard distractors that do not fit the stem.",
-      "review_learning_points": "Focus on the main exam pearl behind the answer.",
-      "plan": "Memorize the key takeaway for revision.",
-      "plan_for_improvement": "Memorize the key takeaway for revision."
-    },
-    "guideline": "",
-    "takeaway": "Closed reduction and above elbow plaster for 6-8 weeks.",
-    "visualization": "",
-    "_src_file": "general_surgery.js"
-  },
-  {
-    "id": 90635,
-    "specialty": "Orthopedics",
-    "topic": "good ortho mcq exam_2 conv.docx",
-    "question": "Fracture of the lunate bone:",
-    "options": {
-      "A": "Commonly caused by fall on dorsi-flexed hand.",
-      "B": "It lies in the carpal tunnel compressing median nerve and flexor tendons.",
-      "C": "It is characterized clinically by swelling in front of the wrist and limitation of movements of the wrist joint.",
-      "D": "Extension of the fingers is pathognomic of lunate fr e. Recent cases are treated by closed reduction while neglected cases are treated by open reduction and or excision of the lunate bone if necessary."
-    },
-    "answer": "A",
-    "explanation": {
-      "correct": "Best answer: A Commonly caused by fall on dorsi-flexed hand.",
-      "A": "",
-      "B": "",
-      "C": "",
-      "D": "",
-      "E": ""
-    },
-    "sharp": {
-      "set_the_stage": "Fracture of the lunate bone:",
-      "highlight_excellence": "Best answer: A Commonly caused by fall on dorsi-flexed hand.",
-      "address_gaps": "Discard distractors that do not fit the stem.",
-      "review_learning_points": "Focus on the main exam pearl behind the answer.",
-      "plan": "Memorize the key takeaway for revision.",
-      "plan_for_improvement": "Memorize the key takeaway for revision."
-    },
-    "guideline": "",
-    "takeaway": "Commonly caused by fall on dorsi-flexed hand.",
-    "visualization": "",
-    "_src_file": "general_surgery.js"
-  },
-  {
-    "id": 90636,
-    "specialty": "Orthopedics",
-    "topic": "good ortho mcq exam_2 conv.docx",
-    "question": "Coxa vara deformity:",
-    "options": {
-      "A": "Commoner than coxa valga.",
-      "B": "Neck-shaft angle is less than 120 degrees.",
-      "C": "Common to complicate adduction type fracture of neck femur.",
-      "D": "More serious than coxa valga."
-    },
-    "answer": "A",
-    "explanation": {
-      "correct": "Best answer: A Commoner than coxa valga.",
-      "A": "",
-      "B": "",
-      "C": "",
-      "D": "",
-      "E": ""
-    },
-    "sharp": {
-      "set_the_stage": "Coxa vara deformity:",
-      "highlight_excellence": "Best answer: A Commoner than coxa valga.",
-      "address_gaps": "Discard distractors that do not fit the stem.",
-      "review_learning_points": "Focus on the main exam pearl behind the answer.",
-      "plan": "Memorize the key takeaway for revision.",
-      "plan_for_improvement": "Memorize the key takeaway for revision."
-    },
-    "guideline": "",
-    "takeaway": "Commoner than coxa valga.",
-    "visualization": "",
-    "_src_file": "general_surgery.js"
-  },
-  {
-    "id": 90637,
-    "specialty": "Orthopedics",
-    "topic": "good ortho mcq exam_2 conv.docx",
-    "question": "Mc Murray abduction osteotomy:",
-    "options": {
-      "A": "The operation of choice for coxa vara defonnity of hip.",
-      "B": "It consists of subtrochanteric osteotomy with abduction of the distal end of the femur.",
-      "C": "it corrects the deformity of the hip ..",
-      "D": "It relieves pain of the hip during walking. e. It avoids osteoarthritis of the hip joint."
-    },
-    "answer": "A",
-    "explanation": {
-      "correct": "Best answer: A The operation of choice for coxa vara defonnity of hip.",
-      "A": "",
-      "B": "",
-      "C": "",
-      "D": "",
-      "E": ""
-    },
-    "sharp": {
-      "set_the_stage": "Mc Murray abduction osteotomy:",
-      "highlight_excellence": "Best answer: A The operation of choice for coxa vara defonnity of hip.",
-      "address_gaps": "Discard distractors that do not fit the stem.",
-      "review_learning_points": "Focus on the main exam pearl behind the answer.",
-      "plan": "Memorize the key takeaway for revision.",
-      "plan_for_improvement": "Memorize the key takeaway for revision."
-    },
-    "guideline": "",
-    "takeaway": "The operation of choice for coxa vara defonnity of hip.",
-    "visualization": "",
-    "_src_file": "general_surgery.js"
-  },
-  {
-    "id": 90638,
-    "specialty": "Orthopedics",
-    "topic": "good ortho mcq exam_2 conv.docx",
-    "question": "Avascular necrosis of head of femur:",
-    "options": {
-      "A": "Common complication of intracapsular fracture neck femur.",
-      "B": "it occurs due to cut of the blood supply of head which is mainly comes from the retinacular vessels and the nutrient artery of the femur.",
-      "C": "Head appears denser in the x -ray of the hip.",
-      "D": "The main blood supply of the head comes of artery of ligamentum teres."
-    },
-    "answer": "A",
-    "explanation": {
-      "correct": "Best answer: A Common complication of intracapsular fracture neck femur.",
-      "A": "",
-      "B": "",
-      "C": "",
-      "D": "",
-      "E": ""
-    },
-    "sharp": {
-      "set_the_stage": "Avascular necrosis of head of femur:",
-      "highlight_excellence": "Best answer: A Common complication of intracapsular fracture neck femur.",
-      "address_gaps": "Discard distractors that do not fit the stem.",
-      "review_learning_points": "Focus on the main exam pearl behind the answer.",
-      "plan": "Memorize the key takeaway for revision.",
-      "plan_for_improvement": "Memorize the key takeaway for revision."
-    },
-    "guideline": "",
-    "takeaway": "Common complication of intracapsular fracture neck femur.",
-    "visualization": "",
-    "_src_file": "general_surgery.js"
-  },
-  {
-    "id": 90639,
-    "specialty": "Orthopedics",
-    "topic": "good ortho mcq exam_2 conv.docx",
-    "question": "Fracture mid-shaft femur:",
-    "options": {
-      "A": "Commonly complicates direct trauma in form of car accidents.",
-      "B": "It may transverse, spiral or comminuted fracture.",
-      "C": "Over-riding, angulation and rotations are common in this fracture.",
-      "D": "Usually complicate with hypovolemic shock due to big size of its haematoma (may be up to one liter or more)."
-    },
-    "answer": "A",
-    "explanation": {
-      "correct": "Best answer: A Commonly complicates direct trauma in form of car accidents.",
-      "A": "",
-      "B": "",
-      "C": "",
-      "D": "",
-      "E": ""
-    },
-    "sharp": {
-      "set_the_stage": "Fracture mid-shaft femur:",
-      "highlight_excellence": "Best answer: A Commonly complicates direct trauma in form of car accidents.",
-      "address_gaps": "Discard distractors that do not fit the stem.",
-      "review_learning_points": "Focus on the main exam pearl behind the answer.",
-      "plan": "Memorize the key takeaway for revision.",
-      "plan_for_improvement": "Memorize the key takeaway for revision."
-    },
-    "guideline": "",
-    "takeaway": "Commonly complicates direct trauma in form of car accidents.",
-    "visualization": "",
-    "_src_file": "general_surgery.js"
-  },
-  {
-    "id": 90640,
-    "specialty": "Orthopedics",
-    "topic": "good ortho mcq exam_2 conv.docx",
-    "question": "Treatment of fracture mid-shaft include:",
-    "options": {
-      "A": "Birth fracture is treated by Crede's method.",
-      "B": "Mid shaft fracture of infants and children is treated by gallows's traction.",
-      "C": "Fracture from age of 5-15 years is treated by skin traction on Thomas's splint.",
-      "D": "Mid shaft fracture in adults is treated by skeletal traction using Kirschner-wire or Steinmann's pin."
-    },
-    "answer": "A",
-    "explanation": {
-      "correct": "Best answer: A Birth fracture is treated by Crede's method.",
-      "A": "",
-      "B": "",
-      "C": "",
-      "D": "",
-      "E": ""
-    },
-    "sharp": {
-      "set_the_stage": "Treatment of fracture mid-shaft include:",
-      "highlight_excellence": "Best answer: A Birth fracture is treated by Crede's method.",
-      "address_gaps": "Discard distractors that do not fit the stem.",
-      "review_learning_points": "Focus on the main exam pearl behind the answer.",
-      "plan": "Memorize the key takeaway for revision.",
-      "plan_for_improvement": "Memorize the key takeaway for revision."
-    },
-    "guideline": "",
-    "takeaway": "Birth fracture is treated by Crede's method.",
-    "visualization": "",
-    "_src_file": "general_surgery.js"
-  },
-  {
-    "id": 90642,
-    "specialty": "Orthopedics",
-    "topic": "good ortho mcq exam_2 conv.docx",
-    "question": "Second degree of abduction type of Pott's fracture:",
-    "options": {
-      "A": "Transverse fracture of medial malleolus and oblique fracture of lateral malleolus.",
-      "B": "Transverse fracture of lateral malleolus and oblique fracture of medial malleolus.",
-      "C": "Fracture of medial malleolus with oblique fracture of lateral malleolus and lateral displacement of the talus.",
-      "D": "Fracture of medial malleolus with fracture shaft of the lower end of fibula."
-    },
-    "answer": "A",
-    "explanation": {
-      "correct": "Best answer: A Transverse fracture of medial malleolus and oblique fracture of lateral malleolus.",
-      "A": "",
-      "B": "",
-      "C": "",
-      "D": "",
-      "E": ""
-    },
-    "sharp": {
-      "set_the_stage": "Second degree of abduction type of Pott's fracture:",
-      "highlight_excellence": "Best answer: A Transverse fracture of medial malleolus and oblique fracture of lateral malleolus.",
-      "address_gaps": "Discard distractors that do not fit the stem.",
-      "review_learning_points": "Focus on the main exam pearl behind the answer.",
-      "plan": "Memorize the key takeaway for revision.",
-      "plan_for_improvement": "Memorize the key takeaway for revision."
-    },
-    "guideline": "",
-    "takeaway": "Transverse fracture of medial malleolus and oblique fracture of lateral malleolus.",
-    "visualization": "",
-    "_src_file": "general_surgery.js"
-  },
-  {
-    "id": 90643,
-    "specialty": "Orthopedics",
-    "topic": "good ortho mcq exam_2 conv.docx",
-    "question": "Reduction and immobilization of Pott's fracture:",
-    "options": {
-      "A": "Closed reduction and external fixation in below knee plaster is done for first degree of Pott's fracture of any type.",
-      "B": "Open reduction and internal fixation are indicated in second and third degrees of Pott's fracture.",
-      "C": "External immobilization can be achieved by plaster or by traction.",
-      "D": "Internal immobilization can be achieved by screws or arthrodesis of the ankle joint."
-    },
-    "answer": "A",
-    "explanation": {
-      "correct": "Best answer: A Closed reduction and external fixation in below knee plaster is done for first degree of Pott's fracture of any type.",
-      "A": "",
-      "B": "",
-      "C": "",
-      "D": "",
-      "E": ""
-    },
-    "sharp": {
-      "set_the_stage": "Reduction and immobilization of Pott's fracture:",
-      "highlight_excellence": "Best answer: A Closed reduction and external fixation in below knee plaster is done for first degree of Pott's fracture of any type.",
-      "address_gaps": "Discard distractors that do not fit the stem.",
-      "review_learning_points": "Focus on the main exam pearl behind the answer.",
-      "plan": "Memorize the key takeaway for revision.",
-      "plan_for_improvement": "Memorize the key takeaway for revision."
-    },
-    "guideline": "",
-    "takeaway": "Closed reduction and external fixation in below knee plaster is done for first degree of Pott's fracture of any type.",
-    "visualization": "",
-    "_src_file": "general_surgery.js"
-  },
-  {
-    "id": 90644,
-    "specialty": "Orthopedics",
-    "topic": "good ortho mcq exam_2 conv.docx",
-    "question": "Fractures of the cervical spine can be caused by one of the following traumas:",
-    "options": {
-      "A": "flexion trauma.",
-      "B": "extension trauma.",
-      "C": "lateral flexion trauma.",
-      "D": "rotational flexion or extension trauma."
-    },
-    "answer": "A",
-    "explanation": {
-      "correct": "Best answer: A flexion trauma.",
-      "A": "",
-      "B": "",
-      "C": "",
-      "D": "",
-      "E": ""
-    },
-    "sharp": {
-      "set_the_stage": "Fractures of the cervical spine can be caused by one of the following traumas:",
-      "highlight_excellence": "Best answer: A flexion trauma.",
-      "address_gaps": "Discard distractors that do not fit the stem.",
-      "review_learning_points": "Focus on the main exam pearl behind the answer.",
-      "plan": "Memorize the key takeaway for revision.",
-      "plan_for_improvement": "Memorize the key takeaway for revision."
-    },
-    "guideline": "",
-    "takeaway": "flexion trauma.",
-    "visualization": "",
-    "_src_file": "general_surgery.js"
-  },
-  {
-    "id": 90645,
-    "specialty": "Orthopedics",
-    "topic": "good ortho mcq exam_2 conv.docx",
-    "question": "Fracture dislocation of cervical spine:",
-    "options": {
-      "A": "forward displacement of one vertebra with overriding of articular surface, with compression of vertebra or fracture of neural arch.",
-      "B": "very stable fracture.",
-      "C": "associated with severe cord damage.",
-      "D": "it is reduced by skull traction under x-ray control. e. internal fixation is mandatory in presence of cord damage."
-    },
-    "answer": "A",
-    "explanation": {
-      "correct": "Best answer: A forward displacement of one vertebra with overriding of articular surface, with compression of vertebra or fracture of neural arch.",
-      "A": "",
-      "B": "",
-      "C": "",
-      "D": "",
-      "E": ""
-    },
-    "sharp": {
-      "set_the_stage": "Fracture dislocation of cervical spine:",
-      "highlight_excellence": "Best answer: A forward displacement of one vertebra with overriding of articular surface, with compression of vertebra or fracture of neural arch.",
-      "address_gaps": "Discard distractors that do not fit the stem.",
-      "review_learning_points": "Focus on the main exam pearl behind the answer.",
-      "plan": "Memorize the key takeaway for revision.",
-      "plan_for_improvement": "Memorize the key takeaway for revision."
-    },
-    "guideline": "",
-    "takeaway": "forward displacement of one vertebra with overriding of articular surface, with compression of vertebra or fracture of neural arch.",
-    "visualization": "",
-    "_src_file": "general_surgery.js"
-  },
-  {
-    "id": 90647,
-    "specialty": "Orthopedics",
-    "topic": "good ortho mcq exam_2 conv.docx",
-    "question": "Metaphysis is the commonest site of acute osteomyelitis because:",
-    "options": {
-      "A": "most vascular area of the bone.",
-      "B": "special arrangement of blood vessels in the metaphysis.",
-      "C": "the weakest area of the bone.",
-      "D": "the site of muscular attachment (liable to trauma). e. the very rapid circulation in the metaphysis. 51 www.mataryonline.com"
-    },
-    "answer": "A",
-    "explanation": {
-      "correct": "Best answer: A most vascular area of the bone.",
-      "A": "",
-      "B": "",
-      "C": "",
-      "D": "",
-      "E": ""
-    },
-    "sharp": {
-      "set_the_stage": "Metaphysis is the commonest site of acute osteomyelitis because:",
-      "highlight_excellence": "Best answer: A most vascular area of the bone.",
-      "address_gaps": "Discard distractors that do not fit the stem.",
-      "review_learning_points": "Focus on the main exam pearl behind the answer.",
-      "plan": "Memorize the key takeaway for revision.",
-      "plan_for_improvement": "Memorize the key takeaway for revision."
-    },
-    "guideline": "",
-    "takeaway": "most vascular area of the bone.",
-    "visualization": "",
-    "_src_file": "general_surgery.js"
-  },
-  {
-    "id": 90648,
-    "specialty": "Orthopedics",
-    "topic": "good ortho mcq exam_2 conv.docx",
-    "question": "Treatment of chronic osteomyelitis:",
-    "options": {
-      "A": "medical treatment in form of antibiotics and blood transfusion.",
-      "B": "surgical treatment in form of sequestrectomy.",
-      "C": "sequestrectomy, and saucerization of bone cavity.",
-      "D": "sequestrectomy, saucerization, and filling of the bone cavity with antibiotic pills."
-    },
-    "answer": "A",
-    "explanation": {
-      "correct": "Best answer: A medical treatment in form of antibiotics and blood transfusion.",
-      "A": "",
-      "B": "",
-      "C": "",
-      "D": "",
-      "E": ""
-    },
-    "sharp": {
-      "set_the_stage": "Treatment of chronic osteomyelitis:",
-      "highlight_excellence": "Best answer: A medical treatment in form of antibiotics and blood transfusion.",
-      "address_gaps": "Discard distractors that do not fit the stem.",
-      "review_learning_points": "Focus on the main exam pearl behind the answer.",
-      "plan": "Memorize the key takeaway for revision.",
-      "plan_for_improvement": "Memorize the key takeaway for revision."
-    },
-    "guideline": "",
-    "takeaway": "medical treatment in form of antibiotics and blood transfusion.",
-    "visualization": "",
-    "_src_file": "general_surgery.js"
-  },
-  {
-    "id": 90649,
-    "specialty": "Orthopedics",
-    "topic": "good ortho mcq exam_2 conv.docx",
-    "question": "The most serious complication of Winnet-Orr techique in management of chronic osteomyelitis is:",
-    "options": {
-      "A": "septicemia and pyaemia.",
-      "B": "stiffness of the near by joint.",
-      "C": "deep vein thrombosis due to long stay in bed.",
-      "D": "anaerobic wound infection in form of gas gangrene and tetanus."
-    },
-    "answer": "A",
-    "explanation": {
-      "correct": "Best answer: A septicemia and pyaemia.",
-      "A": "",
-      "B": "",
-      "C": "",
-      "D": "",
-      "E": ""
-    },
-    "sharp": {
-      "set_the_stage": "The most serious complication of Winnet-Orr techique in management of chronic osteomyelitis is:",
-      "highlight_excellence": "Best answer: A septicemia and pyaemia.",
-      "address_gaps": "Discard distractors that do not fit the stem.",
-      "review_learning_points": "Focus on the main exam pearl behind the answer.",
-      "plan": "Memorize the key takeaway for revision.",
-      "plan_for_improvement": "Memorize the key takeaway for revision."
-    },
-    "guideline": "",
-    "takeaway": "septicemia and pyaemia.",
-    "visualization": "",
-    "_src_file": "general_surgery.js"
-  },
-  {
-    "id": 90651,
-    "specialty": "Orthopedics",
-    "topic": "good ortho mcq exam_2 conv.docx",
-    "question": "The most recent effective treatment of Pott's disease of the spine consists of the following steps:",
-    "options": {
-      "A": "antitubercolous treatment and immobilization of cervical spine by plaster of Minerva.",
-      "B": "anterior approach of vertebral column with removal of diseased bones.",
-      "C": "bridging of the bone cavity by bone grafts.",
-      "D": "immobilization of the vertebral column by plaster."
-    },
-    "answer": "A",
-    "explanation": {
-      "correct": "Best answer: A antitubercolous treatment and immobilization of cervical spine by plaster of Minerva.",
-      "A": "",
-      "B": "",
-      "C": "",
-      "D": "",
-      "E": ""
-    },
-    "sharp": {
-      "set_the_stage": "The most recent effective treatment of Pott's disease of the spine consists of the following steps:",
-      "highlight_excellence": "Best answer: A antitubercolous treatment and immobilization of cervical spine by plaster of Minerva.",
-      "address_gaps": "Discard distractors that do not fit the stem.",
-      "review_learning_points": "Focus on the main exam pearl behind the answer.",
-      "plan": "Memorize the key takeaway for revision.",
-      "plan_for_improvement": "Memorize the key takeaway for revision."
-    },
-    "guideline": "",
-    "takeaway": "antitubercolous treatment and immobilization of cervical spine by plaster of Minerva.",
-    "visualization": "",
-    "_src_file": "general_surgery.js"
-  },
-  {
-    "id": 90652,
-    "specialty": "Orthopedics",
-    "topic": "good ortho mcq exam_2 conv.docx",
-    "question": "Acute suppurative arthritis:",
-    "options": {
-      "A": "affects any age and any sex.",
-      "B": "complicates penetrating injuries.",
-      "C": "extension from osteomyelitis (intracapsular metaphysis).",
-      "D": "may complicate gonorrhea in adults."
-    },
-    "answer": "A",
-    "explanation": {
-      "correct": "Best answer: A affects any age and any sex.",
-      "A": "",
-      "B": "",
-      "C": "",
-      "D": "",
-      "E": ""
-    },
-    "sharp": {
-      "set_the_stage": "Acute suppurative arthritis:",
-      "highlight_excellence": "Best answer: A affects any age and any sex.",
-      "address_gaps": "Discard distractors that do not fit the stem.",
-      "review_learning_points": "Focus on the main exam pearl behind the answer.",
-      "plan": "Memorize the key takeaway for revision.",
-      "plan_for_improvement": "Memorize the key takeaway for revision."
-    },
-    "guideline": "",
-    "takeaway": "affects any age and any sex.",
-    "visualization": "",
-    "_src_file": "general_surgery.js"
-  },
-  {
-    "id": 90653,
-    "specialty": "Orthopedics",
-    "topic": "good ortho mcq exam_2 conv.docx",
-    "question": "Complications of tuberculous arthritis are: a. dislocation is very common.",
-    "options": {
-      "A": "loss of weight and night fever and night sweating. b. dull aching pain on exercise or at rest.",
-      "B": "cold abscess formation. c. sinus formation.",
-      "C": "sharp pain occurs at night. d. swelling of the joint affected.",
-      "D": "tuberculous lymphadenitis."
-    },
-    "answer": "A",
-    "explanation": {
-      "correct": "Best answer: A loss of weight and night fever and night sweating. b. dull aching pain on exercise or at rest.",
-      "A": "",
-      "B": "",
-      "C": "",
-      "D": "",
-      "E": ""
-    },
-    "sharp": {
-      "set_the_stage": "Complications of tuberculous arthritis are: a. dislocation is very common.",
-      "highlight_excellence": "Best answer: A loss of weight and night fever and night sweating. b. dull aching pain on exercise or at rest.",
-      "address_gaps": "Discard distractors that do not fit the stem.",
-      "review_learning_points": "Focus on the main exam pearl behind the answer.",
-      "plan": "Memorize the key takeaway for revision.",
-      "plan_for_improvement": "Memorize the key takeaway for revision."
-    },
-    "guideline": "",
-    "takeaway": "loss of weight and night fever and night sweating. b. dull aching pain on exercise or at rest.",
-    "visualization": "",
-    "_src_file": "general_surgery.js"
-  },
-  {
-    "id": 90654,
-    "specialty": "Orthopedics",
-    "topic": "good ortho mcq exam_2 conv.docx",
-    "question": "Night stars or night cries are characteristic of: a. acute haematogenous osteomyelitis.",
-    "options": {
-      "A": "large lipoma in white patient. b. amelanotic melanoma.",
-      "B": "chronic osteomyelitis. c. Brodie's abscess.",
-      "C": "tumour of white collagen fibers which is whitish on cut surface.",
-      "D": "pallor of skin of the joint with tuberculous arthritis due to empty capillaries and thickening of the synovial membrane of joint affected."
-    },
-    "answer": "A",
-    "explanation": {
-      "correct": "Best answer: A large lipoma in white patient. b. amelanotic melanoma.",
-      "A": "",
-      "B": "",
-      "C": "",
-      "D": "",
-      "E": ""
-    },
-    "sharp": {
-      "set_the_stage": "Night stars or night cries are characteristic of: a. acute haematogenous osteomyelitis.",
-      "highlight_excellence": "Best answer: A large lipoma in white patient. b. amelanotic melanoma.",
-      "address_gaps": "Discard distractors that do not fit the stem.",
-      "review_learning_points": "Focus on the main exam pearl behind the answer.",
-      "plan": "Memorize the key takeaway for revision.",
-      "plan_for_improvement": "Memorize the key takeaway for revision."
-    },
-    "guideline": "",
-    "takeaway": "large lipoma in white patient. b. amelanotic melanoma.",
-    "visualization": "",
-    "_src_file": "general_surgery.js"
-  },
-  {
-    "id": 90655,
-    "specialty": "Orthopedics",
-    "topic": "good ortho mcq exam_2 conv.docx",
-    "question": "Anterior dislocation of the hip joint:",
-    "options": {
-      "A": "Rare type of dislocation of the hip joint.",
-      "B": "It is caused by forcible abduction and lateral rotation of the hip.",
-      "C": "It is of two types (obturator and pubic types).",
-      "D": "Its deformity is flexion, abduction and lateral rotation. e. Only dislocation of body with lengthening of the limb."
-    },
-    "answer": "A",
-    "explanation": {
-      "correct": "Best answer: A Rare type of dislocation of the hip joint.",
-      "A": "",
-      "B": "",
-      "C": "",
-      "D": "",
-      "E": ""
-    },
-    "sharp": {
-      "set_the_stage": "Anterior dislocation of the hip joint:",
-      "highlight_excellence": "Best answer: A Rare type of dislocation of the hip joint.",
-      "address_gaps": "Discard distractors that do not fit the stem.",
-      "review_learning_points": "Focus on the main exam pearl behind the answer.",
-      "plan": "Memorize the key takeaway for revision.",
-      "plan_for_improvement": "Memorize the key takeaway for revision."
-    },
-    "guideline": "",
-    "takeaway": "Rare type of dislocation of the hip joint.",
-    "visualization": "",
-    "_src_file": "general_surgery.js"
-  },
-  {
-    "id": 90656,
-    "specialty": "Orthopedics",
-    "topic": "good ortho mcq exam_2 conv.docx",
-    "question": "Centeral dislocation of the hip joint:",
-    "options": {
-      "A": "Very rare type of dislocation of the hip.",
-      "B": "Caused by severe direct trauma on the greater trochanter.",
-      "C": "Head is displaced inside the pelvis.",
-      "D": "Broken shenton's line is diagnostic of dislocation."
-    },
-    "answer": "A",
-    "explanation": {
-      "correct": "Best answer: A Very rare type of dislocation of the hip.",
-      "A": "",
-      "B": "",
-      "C": "",
-      "D": "",
-      "E": ""
-    },
-    "sharp": {
-      "set_the_stage": "Centeral dislocation of the hip joint:",
-      "highlight_excellence": "Best answer: A Very rare type of dislocation of the hip.",
-      "address_gaps": "Discard distractors that do not fit the stem.",
-      "review_learning_points": "Focus on the main exam pearl behind the answer.",
-      "plan": "Memorize the key takeaway for revision.",
-      "plan_for_improvement": "Memorize the key takeaway for revision."
-    },
-    "guideline": "",
-    "takeaway": "Very rare type of dislocation of the hip.",
-    "visualization": "",
-    "_src_file": "general_surgery.js"
-  },
-  {
-    "id": 90657,
-    "specialty": "Orthopedics",
-    "topic": "good ortho mcq exam_2 conv.docx",
-    "question": "The common complications of centeral dislocation of the hip of the joint are:",
-    "options": {
-      "A": "All general complications like shock crush injury, paralytic ileus and complications of long stay in bed.",
-      "B": "Fracture of the acetabulum.",
-      "C": "Injury of the sacral plexus and or obturator nerves.",
-      "D": "Visceral complications in form of rupture of the rectum or the urinary bladder."
-    },
-    "answer": "A",
-    "explanation": {
-      "correct": "Best answer: A All general complications like shock crush injury, paralytic ileus and complications of long stay in bed.",
-      "A": "",
-      "B": "",
-      "C": "",
-      "D": "",
-      "E": ""
-    },
-    "sharp": {
-      "set_the_stage": "The common complications of centeral dislocation of the hip of the joint are:",
-      "highlight_excellence": "Best answer: A All general complications like shock crush injury, paralytic ileus and complications of long stay in bed.",
-      "address_gaps": "Discard distractors that do not fit the stem.",
-      "review_learning_points": "Focus on the main exam pearl behind the answer.",
-      "plan": "Memorize the key takeaway for revision.",
-      "plan_for_improvement": "Memorize the key takeaway for revision."
-    },
-    "guideline": "",
-    "takeaway": "All general complications like shock crush injury, paralytic ileus and complications of long stay in bed.",
-    "visualization": "",
-    "_src_file": "general_surgery.js"
-  },
-  {
-    "id": 90658,
-    "specialty": "Orthopedics",
-    "topic": "good ortho mcq exam_2 conv.docx",
-    "question": "Ivory osteoma of bones:",
-    "options": {
-      "A": "Hamartoma of compact bones.",
-      "B": "Common in children and young adults.",
-      "C": "Skull is the commonest bone to be affected.",
-      "D": "It causes pathological fracture of the bone from which it arises."
-    },
-    "answer": "A",
-    "explanation": {
-      "correct": "Best answer: A Hamartoma of compact bones.",
-      "A": "",
-      "B": "",
-      "C": "",
-      "D": "",
-      "E": ""
-    },
-    "sharp": {
-      "set_the_stage": "Ivory osteoma of bones:",
-      "highlight_excellence": "Best answer: A Hamartoma of compact bones.",
-      "address_gaps": "Discard distractors that do not fit the stem.",
-      "review_learning_points": "Focus on the main exam pearl behind the answer.",
-      "plan": "Memorize the key takeaway for revision.",
-      "plan_for_improvement": "Memorize the key takeaway for revision."
-    },
-    "guideline": "",
-    "takeaway": "Hamartoma of compact bones.",
-    "visualization": "",
-    "_src_file": "general_surgery.js"
-  },
-  {
-    "id": 90659,
-    "specialty": "Orthopedics",
-    "topic": "good ortho mcq exam_2 conv.docx",
-    "question": "The most diagnostic radiological picture of ecchondroma is:",
-    "options": {
-      "A": "Rare benign tumour of bones. b. May be single or multiple.",
-      "B": "Huge sized bone mass.",
-      "C": "Affects short-long bones like phalanges and carpal bones.",
-      "D": "It may affect long bones like femur or humerus. e. Common to affect young aged females."
-    },
-    "answer": "A",
-    "explanation": {
-      "correct": "Best answer: A Rare benign tumour of bones. b. May be single or multiple.",
-      "A": "",
-      "B": "",
-      "C": "",
-      "D": "",
-      "E": ""
-    },
-    "sharp": {
-      "set_the_stage": "The most diagnostic radiological picture of ecchondroma is:",
-      "highlight_excellence": "Best answer: A Rare benign tumour of bones. b. May be single or multiple.",
-      "address_gaps": "Discard distractors that do not fit the stem.",
-      "review_learning_points": "Focus on the main exam pearl behind the answer.",
-      "plan": "Memorize the key takeaway for revision.",
-      "plan_for_improvement": "Memorize the key takeaway for revision."
-    },
-    "guideline": "",
-    "takeaway": "Rare benign tumour of bones. b. May be single or multiple.",
-    "visualization": "",
-    "_src_file": "general_surgery.js"
-  },
-  {
-    "id": 90660,
-    "specialty": "Orthopedics",
-    "topic": "good ortho mcq exam_2 conv.docx",
-    "question": "Treatment of osteoclastoma:",
-    "options": {
-      "A": "Excision of bone affected (rib, fibula, or lower end of radius).",
-      "B": "Curettage of tumour and bone chips application (femur or tibia).",
-      "C": "Excision of bone tumour with bone graft application (mandible).",
-      "D": "Irradiation is the treatment of choice for osteoclastoma of the lower end of femur and upper end of tibia."
-    },
-    "answer": "A",
-    "explanation": {
-      "correct": "Best answer: A Excision of bone affected (rib, fibula, or lower end of radius).",
-      "A": "",
-      "B": "",
-      "C": "",
-      "D": "",
-      "E": ""
-    },
-    "sharp": {
-      "set_the_stage": "Treatment of osteoclastoma:",
-      "highlight_excellence": "Best answer: A Excision of bone affected (rib, fibula, or lower end of radius).",
-      "address_gaps": "Discard distractors that do not fit the stem.",
-      "review_learning_points": "Focus on the main exam pearl behind the answer.",
-      "plan": "Memorize the key takeaway for revision.",
-      "plan_for_improvement": "Memorize the key takeaway for revision."
-    },
-    "guideline": "",
-    "takeaway": "Excision of bone affected (rib, fibula, or lower end of radius).",
-    "visualization": "",
-    "_src_file": "general_surgery.js"
-  },
-  {
-    "id": 90661,
-    "specialty": "Orthopedics",
-    "topic": "good ortho mcq exam_2 conv.docx",
-    "question": "Santford technique used in treatment of osteosarcoma consists of:",
-    "options": {
-      "A": "Pre-operative irradiation by 9000 rads.",
-      "B": "Waiting for 6 months then x-ray chest is done.",
-      "C": "Amputation is done if there is no metastasis in the lungs.",
-      "D": "Post-operative irradiation after amputation. e. If there is metastasis in the lungs, palliative chemotherapeutics like adriamycin, vincristine and methotrexate are given."
-    },
-    "answer": "A",
-    "explanation": {
-      "correct": "Best answer: A Pre-operative irradiation by 9000 rads.",
-      "A": "",
-      "B": "",
-      "C": "",
-      "D": "",
-      "E": ""
-    },
-    "sharp": {
-      "set_the_stage": "Santford technique used in treatment of osteosarcoma consists of:",
-      "highlight_excellence": "Best answer: A Pre-operative irradiation by 9000 rads.",
-      "address_gaps": "Discard distractors that do not fit the stem.",
-      "review_learning_points": "Focus on the main exam pearl behind the answer.",
-      "plan": "Memorize the key takeaway for revision.",
-      "plan_for_improvement": "Memorize the key takeaway for revision."
-    },
-    "guideline": "",
-    "takeaway": "Pre-operative irradiation by 9000 rads.",
-    "visualization": "",
-    "_src_file": "general_surgery.js"
-  },
-  {
-    "id": 90662,
-    "specialty": "Orthopedics",
-    "topic": "good ortho mcq exam_2 conv.docx",
-    "question": "The commonest bones to be affected by multiple myelomatosis are:",
-    "options": {
-      "A": "Femur.",
-      "B": "Humerus.",
-      "C": "Ribs and clavicle.",
-      "D": "Vertebrae especially lower lumbar vertebrae. e. Skull, sternum, and scapula."
-    },
-    "answer": "A",
-    "explanation": {
-      "correct": "Best answer: A Femur.",
-      "A": "",
-      "B": "",
-      "C": "",
-      "D": "",
-      "E": ""
-    },
-    "sharp": {
-      "set_the_stage": "The commonest bones to be affected by multiple myelomatosis are:",
-      "highlight_excellence": "Best answer: A Femur.",
-      "address_gaps": "Discard distractors that do not fit the stem.",
-      "review_learning_points": "Focus on the main exam pearl behind the answer.",
-      "plan": "Memorize the key takeaway for revision.",
-      "plan_for_improvement": "Memorize the key takeaway for revision."
-    },
-    "guideline": "",
-    "takeaway": "Femur.",
-    "visualization": "",
-    "_src_file": "general_surgery.js"
-  },
-  {
-    "id": 90663,
-    "specialty": "Orthopedics",
-    "topic": "good ortho mcq exam_2 conv.docx",
-    "question": "Bence-john's proteinuria:",
-    "options": {
-      "A": "Abnormal gamma globulins.",
-      "B": "They undergo clotting at 80 degrees.",
-      "C": "They undergo clotting at 55˚C, dissolved at 80˚C and are reformed on cooling to 55˚C again.",
-      "D": "Diagnostic for multiple myelomatosis."
-    },
-    "answer": "A",
-    "explanation": {
-      "correct": "Best answer: A Abnormal gamma globulins.",
-      "A": "",
-      "B": "",
-      "C": "",
-      "D": "",
-      "E": ""
-    },
-    "sharp": {
-      "set_the_stage": "Bence-john's proteinuria:",
-      "highlight_excellence": "Best answer: A Abnormal gamma globulins.",
-      "address_gaps": "Discard distractors that do not fit the stem.",
-      "review_learning_points": "Focus on the main exam pearl behind the answer.",
-      "plan": "Memorize the key takeaway for revision.",
-      "plan_for_improvement": "Memorize the key takeaway for revision."
-    },
-    "guideline": "",
-    "takeaway": "Abnormal gamma globulins.",
-    "visualization": "",
-    "_src_file": "general_surgery.js"
-  },
-  {
-    "id": 90665,
-    "specialty": "Orthopedics",
-    "topic": "good ortho mcq exam_2 conv.docx",
-    "question": "Talipes equino-varus:",
-    "options": {
-      "A": "Adducted, inverted and plantarly flexed foot.",
-      "B": "It may be congenital or acquired on top of paralysis of lateral popliteal nerve.",
-      "C": "Congenital deformity can be corrected while acquired one can not.",
-      "D": "Acquired deformity is bilateral while congenitalis unilateral. e. In the acquired type sole of the foot i full of corrugation."
-    },
-    "answer": "A",
-    "explanation": {
-      "correct": "Best answer: A Adducted, inverted and plantarly flexed foot.",
-      "A": "",
-      "B": "",
-      "C": "",
-      "D": "",
-      "E": ""
-    },
-    "sharp": {
-      "set_the_stage": "Talipes equino-varus:",
-      "highlight_excellence": "Best answer: A Adducted, inverted and plantarly flexed foot.",
-      "address_gaps": "Discard distractors that do not fit the stem.",
-      "review_learning_points": "Focus on the main exam pearl behind the answer.",
-      "plan": "Memorize the key takeaway for revision.",
-      "plan_for_improvement": "Memorize the key takeaway for revision."
-    },
-    "guideline": "",
-    "takeaway": "Adducted, inverted and plantarly flexed foot.",
-    "visualization": "",
-    "_src_file": "general_surgery.js"
-  },
-  {
-    "specialty": "Orthopedic Surgery",
-    "topic": "Hip Fractures",
-    "question": "A 75-year-old woman with osteoporosis falls and sustains a displaced femoral neck fracture (intracapsular). What is the most appropriate management, considering the high risk of avascular necrosis?",
-    "options": {
-      "A": "Non-operative (bed rest)",
-      "B": "Cannulated screw fixation",
-      "C": "Hemiarthroplasty or Total Hip Arthroplasty",
-      "D": "Dynamic Hip Screw (DHS)"
-    },
-    "answer": "C",
-    "explanation": {
-      "correct": "Displaced intracapsular femoral neck fractures carry a high risk of damaging the medial circumflex femoral artery, leading to avascular necrosis (AVN) or non-union. In elderly patients, hip replacement (hemi or total) is the standard to allow immediate weight-bearing.",
-      "A": "High mortality and morbidity.",
-      "B": "Preferred for non-displaced or young patients.",
-      "C": "Definitive management for elderly displaced fractures.",
-      "D": "Used for extracapsular (intertrochanteric) fractures."
-    },
-    "guideline": "AAOS Clinical Practice Guideline on Hip Fractures in the Elderly",
-    "takeaway": "Displaced Femoral Neck (Elderly) = Hemiarthroplasty / THA.",
-    "sharp_metadata": {
-      "S": "Elderly patient with shortened, externally rotated leg after a fall.",
-      "H": "Excellence in perioperative care: Surgery within 24-48 hours reduces mortality and complications.",
-      "A": "Identify 'Avascular Necrosis' as the primary reason for choosing replacement over fixation in this subtype.",
-      "R": "Common orthopedic surgical case.",
-      "P": "Optimise for surgery (control heart failure/anemia) and proceed to arthroplasty."
-    },
-    "id": 1642,
-    "_src_file": "orthopedic.js"
-  },
-  {
-    "specialty": "Orthopedic Surgery",
-    "topic": "Fat Embolism Syndrome",
-    "question": "A patient with a bilateral femur fracture develops sudden respiratory distress, confusion, and a petechial rash on the chest 24 hours after the injury. What is the most likely diagnosis?",
-    "options": {
-      "A": "Pulmonary Embolism (Thromboembolic)",
-      "B": "Fat Embolism Syndrome (FES)",
-      "C": "Acute Respiratory Distress Syndrome (ARDS)",
-      "D": "Hypovolemic Shock"
-    },
-    "answer": "B",
-    "explanation": {
-      "correct": "Fat Embolism Syndrome classically follows long-bone or pelvic fractures. The 'classic triad' includes Respiratory distress, Neurological symptoms (AMS), and a Petechial rash (present in 20-50% of cases).",
-      "A": "Usually occurs later (>3 days) and lacks the petechial rash.",
-      "B": "Classic post-fracture presentation.",
-      "C": "Part of the FES spectrum, but FES is the specific syndrome.",
-      "D": "Occurs earlier (immediately after trauma)."
-    },
-    "guideline": "Management of Fat Embolism Syndrome",
-    "takeaway": "FES = Long bone fracture + Hypoxia + AMS + Petechiae.",
-    "sharp_metadata": {
-      "S": "Trauma patient with femur fracture, now hypoxic and confused.",
-      "H": "Excellence in prevention: Early surgical stabilization of long bone fractures reduces the incidence of FES.",
-      "A": "Identify 'Gurd's Criteria' as a diagnostic aid for FES.",
-      "R": "High-yield orthopedic trauma complication.",
-      "P": "Supportive care (oxygen, fluids); there is no specific treatment for the fat itself."
-    },
-    "id": 1643,
-    "_src_file": "orthopedic.js"
-  },
-  {
-    "specialty": "Orthopedic Surgery",
-    "topic": "Nerve Injury",
-    "question": "Which nerve is at highest risk of injury in a mid-shaft fracture of the humerus?",
-    "options": {
-      "A": "Axillary nerve",
-      "B": "Median nerve",
-      "C": "Radial nerve",
-      "D": "Ulnar nerve"
-    },
-    "answer": "C",
-    "explanation": {
-      "correct": "The radial nerve travels in the spiral groove directly against the mid-shaft of the humerus. Fractures in this area frequently cause 'wrist drop' due to radial nerve palsy.",
-      "A": "At risk in surgical neck fractures or shoulder dislocations.",
-      "B": "At risk in supracondylar humerus fractures (along with anterior interosseous).",
-      "C": "Classic association with mid-shaft fractures.",
-      "D": "At risk in medial epicondyle fractures."
-    },
-    "guideline": "Peripheral Nerve Injuries in Orthopedic Trauma",
-    "takeaway": "Mid-shaft Humerus Fracture = Radial Nerve (Wrist Drop).",
-    "sharp_metadata": {
-      "S": "Patient with obvious humerus deformity and inability to extend the wrist or fingers.",
-      "H": "Excellence in exam: Checking sensation in the 'first dorsal web space' (radial nerve territory).",
-      "A": "Address the Holstein-Lewis fracture: A distal 1/3 spiral humerus fracture with radial nerve palsy.",
-      "R": "Core orthopedic anatomy.",
-      "P": "Most radial nerve palsies from closed fractures are neurapraxias and resolve with observation."
-    },
-    "id": 1644,
-    "_src_file": "orthopedic.js"
-  },
-  {
-    "specialty": "Orthopedic Surgery",
-    "topic": "Salter-Harris Classification",
-    "question": "According to the Salter-Harris classification of physeal (growth plate) fractures, a 'Type II' fracture is defined as:",
-    "options": {
-      "A": "Fracture through the physis only",
-      "B": "Fracture through the physis and metaphysis",
-      "C": "Fracture through the physis and epiphysis",
-      "D": "Crush injury to the physis"
-    },
-    "answer": "B",
-    "explanation": {
-      "correct": "Salter-Harris Mnemonic: S (I: Straight across), A (II: Above/Metaphysis), L (III: Lower/Epiphysis), T (IV: Through everything), ER (V: ERasure/Crush).",
-      "A": "Type I.",
-      "B": "Type II (Most common type).",
-      "C": "Type III.",
-      "D": "Type V."
-    },
-    "guideline": "Pediatric Orthopedic Trauma Guidelines",
-    "takeaway": "Salter-Harris II = Physis + Metaphysis (Above).",
-    "sharp_metadata": {
-      "S": "Child with wrist pain after a fall; x-ray shows a 'Thurston Holland' fragment (metaphyseal triangle).",
-      "H": "Excellence in imaging: The 'Thurston Holland' sign is pathognomonic for a Type II fracture.",
-      "A": "Identify the risk of growth arrest, which increases from Type I to Type V.",
-      "R": "Essential pediatric orthopedics.",
-      "P": "Closed reduction and casting is usually sufficient for Type II."
-    },
-    "id": 1645,
-    "_src_file": "orthopedic.js"
-  },
-  {
-    "specialty": "Orthopedic Surgery",
-    "topic": "Septic Arthritis",
-    "question": "The 'Kocher Criteria' are used to differentiate Septic Arthritis of the hip from Transient Synovitis in children. Which of the following is NOT one of the four Kocher criteria?",
-    "options": {
-      "A": "Inability to bear weight",
-      "B": "ESR > 40 mm/hr",
-      "C": "Fever > 38.5°C",
-      "D": "Positive blood culture"
-    },
-    "answer": "D",
-    "explanation": {
-      "correct": "The four Kocher criteria are: 1. Non-weight bearing, 2. ESR > 40, 3. Fever > 38.5, 4. WBC > 12,000. 4/4 criteria gives a 99% probability of septic arthritis.",
-      "A": "Part of the criteria.",
-      "B": "Part of the criteria.",
-      "C": "Part of the criteria.",
-      "D": "Not part of the clinical criteria (though it may be present)."
-    },
-    "guideline": "Diagnosis of Pediatric Septic Hip",
-    "takeaway": "Kocher Criteria = Non-weight bearing + ESR + Fever + WBC.",
-    "sharp_metadata": {
-      "S": "Limping child with fever and elevated inflammatory markers.",
-      "H": "Excellence in urgency: Septic hip is a surgical emergency because pressure can cause AVN of the femoral head.",
-      "A": "Address the role of ultrasound in detecting a joint effusion.",
-      "R": "High-yield pediatric orthopedic case.",
-      "P": "Urgent joint aspiration and surgical washout."
-    },
-    "id": 1646,
-    "_src_file": "orthopedic.js"
-  },
-  {
-    "specialty": "Orthopedic Surgery",
-    "topic": "Bone Tumors",
-    "question": "A 15-year-old male presents with bone pain around the knee. X-ray shows a 'Sunburst' periosteal reaction and Codman's triangle. What is the most likely diagnosis?",
-    "options": {
-      "A": "Ewing Sarcoma",
-      "B": "Osteosarcoma",
-      "C": "Osteoid Osteoma",
-      "D": "Giant Cell Tumor"
-    },
-    "answer": "B",
-    "explanation": {
-      "correct": "Osteosarcoma is the most common primary malignant bone tumor in adolescents. The 'Sunburst' pattern and 'Codman's Triangle' (elevation of the periosteum) are classic radiographic features.",
-      "A": "Shows 'onion skin' periosteal reaction.",
-      "B": "Most common malignant bone tumor + classic X-ray.",
-      "C": "Benign; presents with pain relieved by Aspirin.",
-      "D": "Presents in adults (20-40); 'soap bubble' appearance."
-    },
-    "guideline": "NCCN Guidelines for Bone Cancer",
-    "takeaway": "Osteosarcoma = Sunburst pattern + Codman's Triangle.",
-    "sharp_metadata": {
-      "S": "Adolescent with night pain and swelling near the distal femur.",
-      "H": "Excellence in diagnosis: MRI is needed to assess the 'skip lesions' and extent of marrow involvement.",
-      "A": "Identify the distal femur and proximal tibia as the most common sites (around the knee).",
-      "R": "Classic orthopedic oncology.",
-      "P": "Biopsy, neoadjuvant chemotherapy, and limb-salvage surgery."
-    },
-    "id": 1647,
-    "_src_file": "orthopedic.js"
-  },
-  {
-    "specialty": "Orthopedic Surgery",
-    "topic": "Scaphoid Fracture",
-    "question": "A patient falls on an outstretched hand (FOOSH) and has tenderness in the 'anatomical snuffbox.' Initial X-rays are normal. What is the most appropriate next step?",
-    "options": {
-      "A": "Reassure the patient and encourage return to sport",
-      "B": "Thumb spica cast and repeat X-ray in 10-14 days",
-      "C": "Immediate ORIF",
-      "D": "Total wrist fusion"
-    },
-    "answer": "B",
-    "explanation": {
-      "correct": "Scaphoid fractures are notoriously 'occult' on initial X-rays. Because of the risk of non-union/AVN (due to retrograde blood supply), patients with snuffbox tenderness must be immobilized in a thumb spica and re-evaluated later.",
-      "A": "High risk of missing a fracture and causing long-term disability.",
-      "B": "Standard practice for suspected scaphoid injury.",
-      "C": "Only for displaced or proximal pole fractures.",
-      "D": "Salvage procedure."
-    },
-    "guideline": "Management of Carpal Fractures",
-    "takeaway": "Snuffbox Tenderness + Normal X-ray = Thumb Spica + Repeat Imaging.",
-    "sharp_metadata": {
-      "S": "Athlete with wrist pain after FOOSH.",
-      "H": "Excellence in anatomy: The scaphoid receives its blood supply from the distal pole (retrograde); proximal pole fractures are at highest risk for AVN.",
-      "A": "Identify MRI as the most sensitive early imaging if a diagnosis is needed immediately.",
-      "R": "Common orthopedic board scenario.",
-      "P": "Immobilize and re-image; consider MRI or CT if diagnosis remains uncertain."
-    },
-    "id": 1648,
-    "_src_file": "orthopedic.js"
-  },
-  {
-    "specialty": "Orthopedic Surgery",
-    "topic": "Achilles Tendon Rupture",
-    "question": "Which clinical test is most diagnostic for a complete rupture of the Achilles tendon?",
-    "options": {
-      "A": "Lachman Test",
-      "B": "Thompson Test (Squeeze Test)",
-      "C": "McMurray Test",
-      "D": "Phalen's Test"
-    },
-    "answer": "B",
-    "explanation": {
-      "correct": "The Thompson test involves squeezing the calf muscle while the patient is prone. A normal test results in plantarflexion of the foot. If the tendon is ruptured, the foot remains neutral (a 'positive' Thompson test).",
-      "A": "For ACL rupture.",
-      "B": "Diagnostic for Achilles rupture.",
-      "C": "For meniscal tears.",
-      "D": "For Carpal Tunnel Syndrome."
-    },
-    "guideline": "Management of Achilles Tendon Rupture",
-    "takeaway": "Positive Thompson Test = No plantarflexion on calf squeeze; Achilles Rupture.",
-    "sharp_metadata": {
-      "S": "Weekend warrior with sudden 'pop' in the heel while playing tennis.",
-      "H": "Excellence in exam: A palpable gap in the tendon and inability to perform a single-leg heel raise.",
-      "A": "Address the controversy: Non-operative vs. Operative management (both have similar long-term outcomes).",
-      "R": "Common sports medicine injury.",
-      "P": "Immobilize in equinus (plantarflexion) and discuss surgical vs. functional rehab."
-    },
-    "id": 1649,
-    "_src_file": "orthopedic.js"
-  },
-  {
-    "specialty": "Orthopedic Surgery",
-    "topic": "Open Fractures",
-    "question": "Which grade of the Gustilo-Anderson classification is assigned to an open fracture with extensive soft tissue damage and a wound size >10 cm?",
-    "options": {
-      "A": "Grade I",
-      "B": "Grade II",
-      "C": "Grade III",
-      "D": "Grade IV"
-    },
-    "answer": "C",
-    "explanation": {
-      "correct": "Gustilo-Anderson: I: <1cm; II: 1-10cm; III: >10cm or high-energy/contaminated. Type III is further divided into IIIA (coverage possible), IIIB (needs flap), and IIIC (vascular injury).",
-      "A": "<1cm wound.",
-      "B": "1-10cm wound.",
-      "C": ">10cm or extensive damage.",
-      "D": "Does not exist in Gustilo (max is III)."
-    },
-    "guideline": "Management of Open Fractures (BOAST Guidelines)",
-    "takeaway": "Gustilo III = Open fracture with >10cm wound or high-energy.",
-    "sharp_metadata": {
-      "S": "Motorcycle crash with exposed tibia and massive soil contamination.",
-      "H": "Excellence in timing: Antibiotics (e.g., Cefazolin/Gentamicin) should be given within 1 hour of injury.",
-      "A": "Address the 'Six-Hour Rule': Traditionally, debridement within 6 hours was the goal (though newer evidence allows for more flexibility).",
-      "R": "Critical trauma management standard.",
-      "P": "Gross debridement in ER, sterile dressing, antibiotics, and formal ORIF/ExFix in the OR."
-    },
-    "id": 1650,
-    "_src_file": "orthopedic.js"
-  },
-  {
-    "specialty": "Orthopedic Surgery",
-    "topic": "Radial Nerve Palsy",
-    "question": "Which of the following is the hallmark clinical finding in a patient with a Radial Nerve injury at the level of the humerus?",
-    "options": {
-      "A": "Claw hand",
-      "B": "Ape hand",
-      "C": "Wrist drop",
-      "D": "Hand of Benediction"
-    },
-    "answer": "C",
-    "explanation": {
-      "correct": "The radial nerve innervates the extensors of the wrist and fingers. Injury leads to the inability to extend the wrist, resulting in 'Wrist Drop.'",
-      "A": "Ulnar nerve injury.",
-      "B": "Median nerve injury (thenar atrophy).",
-      "C": "Radial nerve injury.",
-      "D": "Median nerve injury when trying to make a fist."
-    },
-    "guideline": "Peripheral Nerve Injuries",
-    "takeaway": "Radial Nerve Injury = Wrist Drop.",
-    "sharp_metadata": {
-      "S": "Patient waking up after a deep sleep with their arm draped over a chair ('Saturday Night Palsy').",
-      "H": "Excellence in exam: Differentiating radial nerve (wrist drop) from posterior interosseous nerve (finger drop but wrist extension usually preserved).",
-      "A": "Identify the 'sensory' branch which provides sensation to the dorsal web space.",
-      "R": "Foundational neurology for surgeons.",
-      "P": "Expectant management (observation) for most compression injuries; EMG if no recovery after 3-4 months."
-    },
-    "id": 1651,
-    "_src_file": "orthopedic.js"
-  },
-  {
+{
     "id": 994,
     "specialty": "Orthopedic",
     "topic": "good ortho mcq exam_2 conv.docx",
@@ -2480,7 +34,7 @@ window.QUESTIONS.push(...[
     "takeaway": "PLAN: The immediate plan for this patient would be: 1. Urgent orthopedic consultation. 2. Joint aspiration for synovial fluid analysis. 3. Blood cultures. 4. Empiric intravenous antibiotics covering common pathogens (e.g., *Staphylococcus aureus*, *Streptococcus pyogenes*). 5. Pain management and immobilization. 6. Further imaging as indicated (e.g., MRI if osteomyelitis is suspected or if the diagnosis remains unclear).",
     "_src_file": "orthopedics.js"
   },
-  {
+{
     "id": 917,
     "specialty": "Orthopedic",
     "topic": "Comprhensive Surgery Revision conv.docx",
@@ -2512,7 +66,7 @@ window.QUESTIONS.push(...[
     "takeaway": "PLAN: When faced with a displaced acetabular fracture, especially one involving both columns and the sciatic notch, prioritize CT imaging. This will provide the necessary detail for surgical planning. Avoid unnecessary investigations like V/Q scans unless clinically indicated for other reasons. Recognize that prolonged bed rest is not the definitive treatment for such injuries.",
     "_src_file": "orthopedics.js"
   },
-  {
+{
     "id": 978,
     "specialty": "Orthopedic",
     "topic": "good ortho mcq exam_2 conv.docx",
@@ -2546,7 +100,7 @@ window.QUESTIONS.push(...[
     "takeaway": "PLAN: For future encounters with myositis ossificans, remember the mantra: 'Active motion is motion.' Prioritize early, gentle, and progressive active exercises. Avoid prolonged immobilization and aggressive passive manipulation. If conservative measures fail and significant functional impairment persists, consider surgical excision, but only after the ossification has matured.",
     "_src_file": "orthopedics.js"
   },
-  {
+{
     "id": 928,
     "specialty": "Orthopedic",
     "topic": "good ortho mcq exam_2 conv.docx",
@@ -2580,7 +134,7 @@ window.QUESTIONS.push(...[
     "takeaway": "PLAN: Reinforce the understanding of metaphyseal vascular anatomy and its role in the pathogenesis of acute hematogenous osteomyelitis. Review the differences in vascular supply and infection patterns between neonates and older children. Consider reviewing imaging findings (e.g., X-ray, MRI) that are characteristic of osteomyelitis at different locations.",
     "_src_file": "orthopedics.js"
   },
-  {
+{
     "id": 910,
     "specialty": "Orthopedic",
     "topic": "Comprhensive Surgery Revision conv.docx",
@@ -2611,7 +165,7 @@ window.QUESTIONS.push(...[
     "takeaway": "PLAN: For future questions on this topic, remember that ORIF with compression plating is the cornerstone of treatment for displaced adult both-bone forearm fractures. Consider the indications for alternative methods like external fixation (severe soft tissue injury, temporary stabilization) and the limitations of closed reduction alone (high risk of malunion/nonunion). Always think about restoring anatomy and achieving stable fixation for early mobilization.",
     "_src_file": "orthopedics.js"
   },
-  {
+{
     "id": 1000,
     "specialty": "Orthopedic",
     "topic": "good ortho mcq exam_2 conv.docx",
@@ -2645,7 +199,7 @@ window.QUESTIONS.push(...[
     "takeaway": "PLAN: Review the management algorithms for common bone tumors, focusing on giant cell tumors. Understand the indications for curettage, wide excision, and amputation. Familiarize yourself with the role of adjuvant radiotherapy and the contraindications for chemotherapy in this context.",
     "_src_file": "orthopedics.js"
   },
-  {
+{
     "id": 969,
     "specialty": "Orthopedic",
     "topic": "good ortho mcq exam_2 conv.docx",
@@ -2679,7 +233,7 @@ window.QUESTIONS.push(...[
     "takeaway": "PLAN: For future questions on bone tumors, create a mental or physical flowchart. Start with benign vs. malignant. Then, for benign tumors, categorize them by matrix production: osteoid-producing (osteoma, osteoid osteoma, osteoblastoma), cartilage-producing (chondroma, osteochondroma, chondroblastoma, chondromyxoid fibroma), fibrous tissue-producing (fibrous dysplasia, non-ossifying fibroma), and others. This systematic approach will help differentiate between similar-sounding entities.",
     "_src_file": "orthopedics.js"
   },
-  {
+{
     "id": 967,
     "specialty": "Orthopedic",
     "topic": "good ortho mcq exam_2 conv.docx",
@@ -2713,7 +267,7 @@ window.QUESTIONS.push(...[
     "takeaway": "PLAN: For future questions on OA, focus on differentiating the primary insult from secondary changes. Consider the role of inflammatory mediators and matrix metalloproteinases originating from the synovium in initiating cartilage breakdown. Contrast the pathology of OA with other arthropathies like rheumatoid arthritis.",
     "_src_file": "orthopedics.js"
   },
-  {
+{
     "id": 989,
     "specialty": "Orthopedic",
     "topic": "good ortho mcq exam_2 conv.docx",
@@ -2746,7 +300,7 @@ window.QUESTIONS.push(...[
     "takeaway": "PLAN: 1. Reinforce the pathophysiology: repetitive quadriceps traction → inflammation of the tibial tubercle apophysis. 2. Review imaging timelines: normal X‑ray early vs. classic fragmentation later. 3. Practice with additional stem‑questions that ask for the most appropriate management step. 4. Assign reading from the AAOS pediatric knee pain module and a case‑based discussion on differentiating Osgood‑Schlatter from Sinding‑Larsen‑Johansson disease. 5. Use a visual aid (radiograph series) to solidify recognition of the characteristic bony changes.",
     "_src_file": "orthopedics.js"
   },
-  {
+{
     "id": 961,
     "specialty": "Orthopedic",
     "topic": "good ortho mcq exam_2 conv.docx",
@@ -2779,7 +333,7 @@ window.QUESTIONS.push(...[
     "takeaway": "PLAN: Reinforce the importance of the Trendelenburg sign in the differential diagnosis of hip pain.  Provide additional case studies focusing on the physical exam findings in femoral neck fracture patients.  Review imaging modalities used for diagnosis and their limitations.",
     "_src_file": "orthopedics.js"
   },
-  {
+{
     "id": 981,
     "specialty": "Orthopedic",
     "topic": "good ortho mcq exam_2 conv.docx",
@@ -2813,7 +367,7 @@ window.QUESTIONS.push(...[
     "takeaway": "PLAN: Implement a targeted review of bone physiology, focusing on the mechanisms of bone remodeling and the hormonal regulation of this process. Include case studies illustrating the clinical presentation and diagnostic workup of osteoporosis. Consider incorporating visual aids (diagrams of bone remodeling) to enhance understanding.",
     "_src_file": "orthopedics.js"
   },
-  {
+{
     "id": 953,
     "specialty": "Orthopedic",
     "topic": "good ortho mcq exam_2 conv.docx",
@@ -2847,7 +401,7 @@ window.QUESTIONS.push(...[
     "takeaway": "PLAN: Further education should focus on the anatomy of the forearm neurovascular bundle and the specific mechanisms leading to Volkman’s ischemia in supracondylar fractures. Clinical case studies and simulation exercises are recommended to improve recognition and management skills. Consider incorporating a brief review of the pathophysiology of vascular injury and nerve compression in orthopedic training.",
     "_src_file": "orthopedics.js"
   },
-  {
+{
     "id": 950,
     "specialty": "Orthopedic",
     "topic": "good ortho mcq exam_2 conv.docx",
@@ -2881,7 +435,7 @@ window.QUESTIONS.push(...[
     "takeaway": "PLAN: Further education should focus on the biomechanics of the clavicle, the rationale behind different fixation techniques, and the importance of meticulous reduction and post-operative management to minimize complications.  Clinical scenarios involving clavicle fractures should be reviewed, emphasizing the need for a thorough physical exam and radiographic assessment to guide treatment decisions.",
     "_src_file": "orthopedics.js"
   },
-  {
+{
     "id": 922,
     "specialty": "Orthopedic",
     "topic": "Comprhensive Surgery Revision conv.docx",
@@ -2913,7 +467,7 @@ window.QUESTIONS.push(...[
     "takeaway": "PLAN: Further education should focus on the biomechanics of the ankle joint, specifically the forces that lead to common fracture patterns. Clinical scenarios involving ankle trauma should be reviewed, emphasizing the elicitation of the mechanism of injury. Consider using models or animations to illustrate the forces involved in ankle fractures.",
     "_src_file": "orthopedics.js"
   },
-  {
+{
     "id": 991,
     "specialty": "Orthopedic",
     "topic": "good ortho mcq exam_2 conv.docx",
@@ -2945,7 +499,7 @@ window.QUESTIONS.push(...[
     "takeaway": "PLAN: Implement a targeted review of Paget’s disease, focusing on its etiology, clinical presentation, complications, and diagnostic approaches. Include case studies illustrating the diverse manifestations of the disease and its potential impact on surgical planning (e.g., tumor resection, fracture stabilization).",
     "_src_file": "orthopedics.js"
   },
-  {
+{
     "id": 931,
     "specialty": "Orthopedic",
     "topic": "good ortho mcq exam_2 conv.docx",
@@ -2979,7 +533,7 @@ window.QUESTIONS.push(...[
     "takeaway": "PLAN: Further review should focus on the microbiology of *M. tuberculosis*, the radiographic features of spinal TB, and the principles of surgical management, including stabilization techniques. Consider case studies illustrating the progression of spinal TB and the importance of early diagnosis and treatment.",
     "_src_file": "orthopedics.js"
   },
-  {
+{
     "id": 946,
     "specialty": "Orthopedic",
     "topic": "good ortho mcq exam_2 conv.docx",
@@ -3012,7 +566,7 @@ window.QUESTIONS.push(...[
     "takeaway": "PLAN: Further study should focus on detailed case studies of Perthes disease, including radiographic progression and clinical outcomes. Consider reviewing pediatric orthopedics textbooks and relevant journal articles. A key component of the plan is to regularly review the stages of Perthes disease and their expected timelines to ensure accurate diagnosis and treatment planning.",
     "_src_file": "orthopedics.js"
   },
-  {
+{
     "id": 948,
     "specialty": "Orthopedic",
     "topic": "good ortho mcq exam_2 conv.docx",
@@ -3046,7 +600,7 @@ window.QUESTIONS.push(...[
     "takeaway": "PLAN: Implement a focused review of dental radiology and odontogenesis. Include case studies illustrating sequestrum formation and radiographic findings. Consider a short quiz specifically targeting sequestrum identification.",
     "_src_file": "orthopedics.js"
   },
-  {
+{
     "id": 941,
     "specialty": "Orthopedic",
     "topic": "good ortho mcq exam_2 conv.docx",
@@ -3080,7 +634,7 @@ window.QUESTIONS.push(...[
     "takeaway": "PLAN: Further review should focus on the histology of basal cell neoplasms, specifically adamantinomas.  Case studies illustrating the variable cellular composition of these tumors are highly recommended.  Review of dermatopathologist reports of adamantinoma cases would be beneficial. Consider reviewing the role of immunohistochemistry in confirming the diagnosis.",
     "_src_file": "orthopedics.js"
   },
-  {
+{
     "id": 963,
     "specialty": "Orthopedic",
     "topic": "good ortho mcq exam_2 conv.docx",
@@ -3114,7 +668,7 @@ window.QUESTIONS.push(...[
     "takeaway": "PLAN: Further questions should focus on differentiating fracture types based on their mechanism of injury.  Include scenarios requiring the student to identify the likely impact force involved in a given fracture.  Consider incorporating images of various fracture types to reinforce visual recognition.",
     "_src_file": "orthopedics.js"
   },
-  {
+{
     "id": 995,
     "specialty": "Orthopedic",
     "topic": "good ortho mcq exam_2 conv.docx",
@@ -3148,41 +702,7 @@ window.QUESTIONS.push(...[
     "takeaway": "PLAN: Further review should focus on the epidemiology, radiographic characteristics, and management of solitary bone cysts. Case studies illustrating typical presentations and imaging findings are highly recommended. Consider exploring the etiology of SBCs (idiopathic, associated with other conditions). A quick review of bone tumors in children and adolescents is also warranted.",
     "_src_file": "orthopedics.js"
   },
-  {
-    "id": 999,
-    "specialty": "Orthopedic",
-    "topic": "good ortho mcq exam_2 conv.docx",
-    "question": "The radiological signs of osteoclastoma include the following except:",
-    "options": {
-      "A": "Abrupt expansion of the bone",
-      "B": "Characteristic soap-bubble appearance",
-      "C": "Presence of an operculum obliterating the medullary cavity",
-      "D": "Absence of any new-bone formation",
-      "E": "Presence of areas of bone destruction"
-    },
-    "answer": "B",
-    "explanation": {
-      "correct": "The correct answer – ‘Characteristic soap-bubble appearance’ – is the defining radiological feature of osteoclastoma. This appearance arises from the formation of haemosiderin crystals within the tumor, resulting from chronic hemorrhage and subsequent breakdown of red blood cells. This is a high-yield detail for surgical planning, as it strongly suggests a benign process.",
-      "A": "",
-      "B": "",
-      "C": "",
-      "D": "",
-      "E": ""
-    },
-    "sharp": {
-      "status": "ACCEPT",
-      "verified_answer": "B",
-      "set_the_stage": "This question tests knowledge of osteoclastoma, a rare benign bone tumor. Understanding the radiological hallmarks of this condition is crucial for accurate diagnosis and management. The distractors represent common findings in other bone tumors or conditions, while the correct answer reflects a key, distinctive feature of osteoclastoma.",
-      "highlight_excellence": "The correct answer – ‘Characteristic soap-bubble appearance’ – is the defining radiological feature of osteoclastoma. This appearance arises from the formation of haemosiderin crystals within the tumor, resulting from chronic hemorrhage and subsequent breakdown of red blood cells. This is a high-yield detail for surgical planning, as it strongly suggests a benign process.",
-      "address_gaps": "Several options are frequently confused. ‘Abrupt expansion of the bone’ is more typical of aggressive bone tumors like giant cell tumor. ‘Presence of an operculum’ is seen in aneurysmal bone cysts. ‘Absence of any new-bone formation’ is incorrect; osteoclastomas *do* exhibit new bone formation, albeit often disorganized. ‘Presence of areas of bone destruction’ is a general finding in many bone tumors, not specific to osteoclastoma. The question highlights the importance of recognizing specific imaging patterns.",
-      "review_guidelines": "1. **Imaging Interpretation:** Surgeons must be proficient in interpreting radiographs and CT scans for bone tumors. Pay close attention to the pattern of destruction, the presence of haemosiderin, and the formation of an operculum. 2. **Osteoclastoma Pathology:** Understand the histopathological features of osteoclastoma – typically a well-circumscribed mass with areas of bone destruction and haemosiderin deposition. 3. **Differential Diagnosis:** Always consider other bone tumors (giant cell tumor, aneurysmal bone cyst, Ewing’s sarcoma) when evaluating a bone lesion.  4. **Treatment:** Surgical resection is the mainstay of treatment, often curative.",
-      "plan": "Further review should focus on radiological findings of bone tumors, specifically the ‘soap-bubble appearance’ associated with osteoclastoma. Case studies illustrating the diagnostic process and surgical management of osteoclastoma would be beneficial. Consider reviewing the histopathology of osteoclastoma to reinforce the understanding of its characteristic features."
-    },
-    "guideline": "1. **Imaging Interpretation:** Surgeons must be proficient in interpreting radiographs and CT scans for bone tumors. Pay close attention to the pattern of destruction, the presence of haemosiderin, and the formation of an operculum. 2. **Osteoclastoma Pathology:** Understand the histopathological features of osteoclastoma – typically a well-circumscribed mass with areas of bone destruction and haemosiderin deposition. 3. **Differential Diagnosis:** Always consider other bone tumors (giant cell tumor, aneurysmal bone cyst, Ewing’s sarcoma) when evaluating a bone lesion.  4. **Treatment:** Surgical resection is the mainstay of treatment, often curative.",
-    "takeaway": "PLAN: Further review should focus on radiological findings of bone tumors, specifically the ‘soap-bubble appearance’ associated with osteoclastoma. Case studies illustrating the diagnostic process and surgical management of osteoclastoma would be beneficial. Consider reviewing the histopathology of osteoclastoma to reinforce the understanding of its characteristic features.",
-    "_src_file": "orthopedics.js"
-  },
-  {
+{
     "id": 925,
     "specialty": "Orthopedic",
     "topic": "Comprhensive Surgery Revision conv.docx",
@@ -3213,7 +733,7 @@ window.QUESTIONS.push(...[
     "takeaway": "PLAN: 1. **Immediate:** Obtain synovial fluid analysis (cell count, gram stain, culture) – this is *critical*.  Start broad-spectrum intravenous antibiotics pending culture results. 2. **Imaging:** Obtain radiographs of the affected joint to rule out osteomyelitis. 3. **Further Evaluation:**  Assess for systemic symptoms (e.g., rash, carditis) to evaluate for rheumatic fever.  Consider referral to rheumatology for JRA evaluation if infection is ruled out.",
     "_src_file": "orthopedics.js"
   },
-  {
+{
     "id": 903,
     "specialty": "Orthopedic",
     "topic": "Comprhensive Surgery Revision conv.docx",
@@ -3245,7 +765,7 @@ window.QUESTIONS.push(...[
     "takeaway": "PLAN: Further education should focus on the ‘why’ behind each step in open fracture management.  Clinical simulations and case studies are highly recommended to reinforce the importance of rapid assessment and aggressive surgical intervention.  Review of current surgical guidelines for open fracture management (e.g., those from the AO Foundation) is also essential.",
     "_src_file": "orthopedics.js"
   },
-  {
+{
     "id": 924,
     "specialty": "Orthopedic",
     "topic": "Comprhensive Surgery Revision conv.docx",
@@ -3276,7 +796,7 @@ window.QUESTIONS.push(...[
     "takeaway": "PLAN: Further review should focus on foot and ankle trauma specifically, with a strong emphasis on the Lisfranc injury. Detailed imaging interpretation (radiographs, CT scans) and understanding of surgical fixation techniques are essential for clinicians managing these complex fractures. Consider reviewing biomechanical principles of foot and ankle loading.",
     "_src_file": "orthopedics.js"
   },
-  {
+{
     "id": 944,
     "specialty": "Orthopedic",
     "topic": "good ortho mcq exam_2 conv.docx",
@@ -3310,7 +830,7 @@ window.QUESTIONS.push(...[
     "takeaway": "PLAN: This question requires a complete overhaul. The options must be clinically relevant and distinct. A better question would focus on a specific fracture type and ask about the *duration* or *type* of immobilization required, rather than a simple ‘yes/no’ question. Consider a question like: ‘Which of the following immobilization techniques is MOST critical in the initial management of a displaced proximal humerus fracture in an elderly patient?’ with options reflecting different immobilization methods (e.g., sling, spica cast, etc.).",
     "_src_file": "orthopedics.js"
   },
-  {
+{
     "id": 926,
     "specialty": "Orthopedic",
     "topic": "good ortho mcq exam_2 conv.docx",
@@ -3343,7 +863,7 @@ window.QUESTIONS.push(...[
     "takeaway": "PLAN: Further study should include detailed diagrams of embryonic skeletal development, focusing on the mesoderm’s role. Consider reviewing relevant textbooks (e.g., Gray’s Anatomy, Sobotta Atlas of Human Anatomy) and online resources like Osmosis or Kenhub.  Clinical correlation – understanding how genetic mutations affecting mesoderm development lead to skeletal abnormalities – would be a valuable next step.",
     "_src_file": "orthopedics.js"
   },
-  {
+{
     "id": 985,
     "specialty": "Orthopedic",
     "topic": "good ortho mcq exam_2 conv.docx",
@@ -3377,7 +897,7 @@ window.QUESTIONS.push(...[
     "takeaway": "PLAN: Further review should focus on the genetic basis of achondroplasia, the skeletal manifestations, and the neurological implications. Case studies involving patients with achondroplasia would be beneficial for solidifying understanding. Consider reviewing FGFR3 pathway and its role in bone development.",
     "_src_file": "orthopedics.js"
   },
-  {
+{
     "id": 923,
     "specialty": "Orthopedic",
     "topic": "Comprhensive Surgery Revision conv.docx",
@@ -3408,7 +928,7 @@ window.QUESTIONS.push(...[
     "takeaway": "PLAN: I recommend a focused review of foot vascular anatomy using anatomical atlases and relevant surgical textbooks. Case studies illustrating osteonecrosis of the navicular would be particularly beneficial. Further, a discussion of diagnostic imaging techniques (e.g., angiography, MRI) for evaluating vascular compromise in the foot is warranted.",
     "_src_file": "orthopedics.js"
   },
-  {
+{
     "id": 930,
     "specialty": "Orthopedic",
     "topic": "good ortho mcq exam_2 conv.docx",
@@ -3441,7 +961,7 @@ window.QUESTIONS.push(...[
     "takeaway": "PLAN: I recommend a review of infectious bone diseases, specifically focusing on the pathogenesis and clinical presentation of Brodie’s abscess.  Case studies illustrating the typical radiographic and clinical features would be beneficial.  Reinforce the understanding that Brodie’s abscess is an acute process, and chronic osteomyelitis is a distinct entity.",
     "_src_file": "orthopedics.js"
   },
-  {
+{
     "id": 973,
     "specialty": "Orthopedic",
     "topic": "good ortho mcq exam_2 conv.docx",
@@ -3475,7 +995,7 @@ window.QUESTIONS.push(...[
     "takeaway": "PLAN: Further assessment should include a thorough physical examination, including SI joint provocation tests (FABER, Gaenslen), and imaging (X-ray, MRI) to rule out other pathology. Patient education regarding brace wear, activity modification, and physical therapy is essential for optimal outcomes.",
     "_src_file": "orthopedics.js"
   },
-  {
+{
     "id": 990,
     "specialty": "Orthopedic",
     "topic": "good ortho mcq exam_2 conv.docx",
@@ -3509,7 +1029,7 @@ window.QUESTIONS.push(...[
     "takeaway": "PLAN: I recommend a focused review of the *MEN1* gene and its associated pathophysiology. Case studies illustrating the clinical presentation of GOFC, including radiographic findings and biochemical abnormalities, would be beneficial. Additionally, a comparison of GOFC with other hypercalcemic conditions is warranted to reinforce the key diagnostic features.",
     "_src_file": "orthopedics.js"
   },
-  {
+{
     "id": 974,
     "specialty": "Orthopedic",
     "topic": "Pediatric Orthopedics",
@@ -3545,7 +1065,7 @@ window.QUESTIONS.push(...[
     "visualization": "X-ray showing a small, dense, flattened femoral head compared to the normal contralateral side.",
     "_src_file": "orthopedics.js"
   },
-  {
+{
     "id": 971,
     "specialty": "Orthopedic",
     "topic": "Foot & Ankle",
@@ -3581,7 +1101,7 @@ window.QUESTIONS.push(...[
     "visualization": "A newborn with the sole of the foot facing medially and the toes pointing downward (Equinus).",
     "_src_file": "orthopedics.js"
   },
-  {
+{
     "id": 932,
     "specialty": "Orthopedic",
     "topic": "Spine",
@@ -3617,7 +1137,7 @@ window.QUESTIONS.push(...[
     "visualization": "A lateral X-ray showing collapse of the anterior part of two adjacent vertebrae leading to an angular kyphosis (Gibbus).",
     "_src_file": "orthopedics.js"
   },
-  {
+{
     "id": 972,
     "specialty": "Orthopedic",
     "topic": "Bone Pathology",
@@ -3653,7 +1173,7 @@ window.QUESTIONS.push(...[
     "visualization": "Radiograph of the femur showing a 'shepherd's crook' deformity and ground-glass bone matrix characteristic of fibrous dysplasia.",
     "_src_file": "orthopedics.js"
   },
-  {
+{
     "id": 954,
     "specialty": "Orthopedic",
     "topic": "Trauma",
@@ -3689,7 +1209,7 @@ window.QUESTIONS.push(...[
     "visualization": "Clinical photo of a wrist with a prominent dorsal bump and a 'step-off' just proximal to the joint line.",
     "_src_file": "orthopedics.js"
   },
-  {
+{
     "id": 964,
     "specialty": "Orthopedic",
     "topic": "Pediatric Trauma",
@@ -3725,7 +1245,7 @@ window.QUESTIONS.push(...[
     "visualization": "An S-shaped deformity of the elbow with significant swelling and the 'pucker sign' (skin dimpling) indicating the proximal fragment is piercing the brachialis muscle.",
     "_src_file": "orthopedics.js"
   },
-  {
+{
     "id": 970,
     "specialty": "Orthopedic",
     "topic": "Pediatric Orthopedics",
@@ -3761,7 +1281,7 @@ window.QUESTIONS.push(...[
     "visualization": "An infant with asymmetric thigh skin folds and a positive Galeazzi sign (unequal knee heights when hips/knees are flexed).",
     "_src_file": "orthopedics.js"
   },
-  {
+{
     "id": 956,
     "specialty": "Orthopedic",
     "topic": "good ortho mcq exam_2 conv.docx",
@@ -3795,7 +1315,7 @@ window.QUESTIONS.push(...[
     "takeaway": "PLAN: I recommend a focused review of vascular bone diseases, emphasizing the link between vascular compromise and bone remodeling. Case-based discussions focusing on radiographic findings and clinical presentation would be beneficial. Consider a review of cervical sympathectomy indications and potential complications.",
     "_src_file": "orthopedics.js"
   },
-  {
+{
     "id": 934,
     "specialty": "Orthopedic",
     "topic": "good ortho mcq exam_2 conv.docx",
@@ -3829,7 +1349,7 @@ window.QUESTIONS.push(...[
     "takeaway": "PLAN: Further investigation should include: a) Thorough patient history (exposure to TB, immunosuppression). b) Blood tests (TB screening, ESR, CRP). c) Imaging (repeat X-rays, MRI – MRI is superior for detecting early granuloma formation). d) Treatment involves both anti-TB therapy and supportive care (joint aspiration, analgesia).",
     "_src_file": "orthopedics.js"
   },
-  {
+{
     "id": 912,
     "specialty": "Orthopedic",
     "topic": "Comprhensive Surgery Revision conv.docx",
@@ -3860,7 +1380,7 @@ window.QUESTIONS.push(...[
     "takeaway": "PLAN: 1. **Repeat Radiographs:** Order repeat radiographs in 6-8 weeks, including oblique views to specifically assess the scaphoid. 2. **Scaphoid Stress Test:** Perform the scaphoid stress test to further evaluate for fracture. 3. **Splinting:** If there is significant pain or instability, consider a splinting the wrist initially while awaiting further imaging. 4. **Patient Education:** Educate the patient on the importance of adherence to immobilization and follow-up.",
     "_src_file": "orthopedics.js"
   },
-  {
+{
     "id": 942,
     "specialty": "Orthopedic",
     "topic": "Metabolic Bone Disease",
@@ -3894,7 +1414,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "orthopedics.js"
   },
-  {
+{
     "id": 965,
     "specialty": "Orthopedic",
     "topic": "Trauma",
@@ -3930,7 +1450,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "orthopedics.js"
   },
-  {
+{
     "id": 940,
     "specialty": "Orthopedic",
     "topic": "Bone Oncology",
@@ -3964,7 +1484,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "orthopedics.js"
   },
-  {
+{
     "id": 938,
     "specialty": "Orthopedic",
     "topic": "Oncology",
@@ -3998,7 +1518,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "orthopedics.js"
   },
-  {
+{
     "id": 959,
     "specialty": "Orthopedic",
     "topic": "Trauma",
@@ -4032,7 +1552,7 @@ window.QUESTIONS.push(...[
     "visualization": "",
     "_src_file": "orthopedics.js"
   },
-  {
+{
     "id": 980,
     "specialty": "Orthopedic",
     "topic": "Metabolic Bone Disease",
@@ -4067,7 +1587,7 @@ window.QUESTIONS.push(...[
     "visualization": "Visualize Calcitriol acting as a 'key' on the enterocyte nucleus, transcribing 'calbindin' shuttles that carry calcium from the lumen into the blood.",
     "_src_file": "orthopedics.js"
   },
-  {
+{
     "id": 955,
     "specialty": "Orthopedic",
     "topic": "Trauma",
@@ -4100,7 +1620,7 @@ window.QUESTIONS.push(...[
     "visualization": "The frayed tendon ends retracted proximally, requiring the surgeon to 'borrow' the index finger's extra extensor tendon to restore function.",
     "_src_file": "orthopedics.js"
   },
-  {
+{
     "id": 945,
     "specialty": "Orthopedic",
     "topic": "Pediatric Orthopedics",
@@ -4133,7 +1653,7 @@ window.QUESTIONS.push(...[
     "visualization": "The patient stands on the affected leg, and the opposite buttock sags downward instead of rising.",
     "_src_file": "orthopedics.js"
   },
-  {
+{
     "id": 996,
     "specialty": "Orthopedic",
     "topic": "Bone Tumors",
@@ -4168,7 +1688,7 @@ window.QUESTIONS.push(...[
     "visualization": "X-ray shows a well-defined, radiolucent lesion centrally located in the proximal phalanx with stippled 'popcorn-like' intralesional calcifications.",
     "_src_file": "orthopedics.js"
   },
-  {
+{
     "id": 982,
     "specialty": "Orthopedic",
     "topic": "Joint Disease",
@@ -4202,7 +1722,7 @@ window.QUESTIONS.push(...[
     "visualization": "An AP radiograph of the knee showing medial compartment narrowing and dense, thickened 'ivory-like' bone directly beneath the tibial plateau.",
     "_src_file": "orthopedics.js"
   },
-  {
+{
     "id": 975,
     "specialty": "Orthopedic",
     "topic": "Metabolic Bone Disease",
@@ -4237,7 +1757,7 @@ window.QUESTIONS.push(...[
     "visualization": "A DEXA scan showing a severely negative T-score (<-2.5) in a patient with an iatrogenic 'Cushingoid' appearance.",
     "_src_file": "orthopedics.js"
   },
-  {
+{
     "id": 992,
     "specialty": "Orthopedic",
     "topic": "Bone Pathology",
@@ -4272,7 +1792,7 @@ window.QUESTIONS.push(...[
     "visualization": "X-ray of the skull reveals massive thickening of the calvarium with patchy sclerosis giving a 'cotton wool' appearance.",
     "_src_file": "orthopedics.js"
   },
-  {
+{
     "id": 976,
     "specialty": "Orthopedic",
     "topic": "Sports Medicine",
@@ -4307,7 +1827,7 @@ window.QUESTIONS.push(...[
     "visualization": "Point tenderness precisely over the lateral epicondyle, worsened when the patient tries to rev a motorcycle grip.",
     "_src_file": "orthopedics.js"
   },
-  {
+{
     "id": 947,
     "specialty": "Orthopedic",
     "topic": "Pediatric Orthopedics",
@@ -4342,7 +1862,7 @@ window.QUESTIONS.push(...[
     "visualization": "A child walking with an antalgic, externally rotated gait; when lying supine, rolling the leg inward (internal rotation) elicits guarding and restricted motion.",
     "_src_file": "orthopedics.js"
   },
-  {
+{
     "id": 997,
     "specialty": "Orthopedic",
     "topic": "Bone Tumors",
@@ -4377,7 +1897,7 @@ window.QUESTIONS.push(...[
     "visualization": "An X-ray of a finger showing a central radiolucent lesion in the proximal phalanx with stippled, 'popcorn' calcifications and a thinned cortex.",
     "_src_file": "orthopedics.js"
   },
-  {
+{
     "id": 979,
     "specialty": "Orthopedic",
     "topic": "Trauma",
@@ -4412,7 +1932,7 @@ window.QUESTIONS.push(...[
     "visualization": "A subtle periosteal reaction (a small bump of new bone) on the shaft of the 2nd metatarsal seen on an X-ray taken 3 weeks after symptom onset.",
     "_src_file": "orthopedics.js"
   },
-  {
+{
     "id": 933,
     "specialty": "Orthopedic",
     "topic": "Joint Infections",
@@ -4447,7 +1967,7 @@ window.QUESTIONS.push(...[
     "visualization": "During arthroscopy, hundreds of small, white, glistening, cartilaginous-looking oval bodies float freely in the joint fluid.",
     "_src_file": "orthopedics.js"
   },
-  {
+{
     "id": 935,
     "specialty": "Orthopedic",
     "topic": "Joint Infections",
@@ -4482,7 +2002,7 @@ window.QUESTIONS.push(...[
     "visualization": "X-ray shows a narrow joint space with irregular articular margins, but no bony trabeculae crossing the joint line.",
     "_src_file": "orthopedics.js"
   },
-  {
+{
     "id": 988,
     "specialty": "Orthopedic",
     "topic": "Bone Pathology",
@@ -4517,7 +2037,7 @@ window.QUESTIONS.push(...[
     "visualization": "X-rays showing broad, widened metaphyses (Erlenmeyer flask deformity) with multiple bony projections pointing away from the joints.",
     "_src_file": "orthopedics.js"
   },
-  {
+{
     "id": 936,
     "specialty": "Orthopedic",
     "topic": "Bone Tumors",
@@ -4552,7 +2072,7 @@ window.QUESTIONS.push(...[
     "visualization": "CT scan shows a tiny, 5mm radiolucent circle (the nidus) surrounded by a massive, thick halo of dense white bone in the cortex of the femur.",
     "_src_file": "orthopedics.js"
   },
-  {
+{
     "id": 952,
     "specialty": "Orthopedic",
     "topic": "Trauma",
@@ -4586,7 +2106,7 @@ window.QUESTIONS.push(...[
     "visualization": "X-ray showing a fluffy, calcified mass within the soft tissues anterior to the elbow joint, separated from the humerus by a thin radiolucent cleft.",
     "_src_file": "orthopedics.js"
   },
-  {
+{
     "id": 984,
     "specialty": "Orthopedic",
     "topic": "Metabolic Bone Disease",
@@ -4621,7 +2141,7 @@ window.QUESTIONS.push(...[
     "visualization": "A patient bedbound for a year has thin, brittle bones on X-ray, but no 'Looser's zones' or pseudofractures, which would indicate osteomalacia.",
     "_src_file": "orthopedics.js"
   },
-  {
+{
     "id": 966,
     "specialty": "Orthopedic",
     "topic": "Trauma",
@@ -4656,7 +2176,7 @@ window.QUESTIONS.push(...[
     "visualization": "A pale, thin forearm with a rigid, tightly flexed wrist and fingers that cannot be straightened even with force.",
     "_src_file": "orthopedics.js"
   },
-  {
+{
     "id": 960,
     "specialty": "Orthopedic",
     "topic": "Anatomy / Hip",
@@ -4689,7 +2209,7 @@ window.QUESTIONS.push(...[
     "visualization": "An AP X-ray of the femur where a line drawn down the center of the femoral neck intersects a line drawn down the center of the femoral shaft at approximately 130 degrees.",
     "_src_file": "orthopedics.js"
   },
-  {
+{
     "id": 968,
     "specialty": "Orthopedic",
     "topic": "Joint Disease",
@@ -4722,7 +2242,7 @@ window.QUESTIONS.push(...[
     "visualization": "During joint exploration, the normally thin, smooth synovial lining is transformed into thick, red, angry, frond-like 'seaweed' (pannus) creeping over the joint surface.",
     "_src_file": "orthopedics.js"
   },
-  {
+{
     "id": 993,
     "specialty": "Orthopedic",
     "topic": "Pediatric Orthopedics",
@@ -4755,7 +2275,7 @@ window.QUESTIONS.push(...[
     "visualization": "An AP pelvis X-ray showing a flattened, dense, fragmented femoral head on the right compared to a perfectly round head on the left.",
     "_src_file": "orthopedics.js"
   },
-  {
+{
     "id": 958,
     "specialty": "Orthopedic",
     "topic": "Anatomy / Hip",
@@ -4790,7 +2310,7 @@ window.QUESTIONS.push(...[
     "visualization": "Draw a mental line connecting the prominent bone at the front of the pelvis (ASIS) to the 'sit bone' (ischial tuberosity); the hard bump on the side of the hip (trochanter) should not cross above it.",
     "_src_file": "orthopedics.js"
   },
-  {
+{
     "id": 977,
     "specialty": "Orthopedic",
     "topic": "Trauma",
@@ -4824,45 +2344,7 @@ window.QUESTIONS.push(...[
     "takeaway": "If a patient with a broken arm cannot move their fingers, you have a neurovascular emergency, not just a broken bone.",
     "visualization": "A visibly angulated leg with a large tense hematoma, but the patient is still able to wiggle their toes upon request.",
     "_src_file": "orthopedics.js"
-  }
-]
-,
-{
-  "id": 987,
-  "specialty": "Orthopedic",
-  "topic": "good ortho mcq exam_2 conv.docx",
-  "question": "Concerning Ollier's disease, which of the following statements is incorrect:",
-  "options": {
-    "A": "There is a strong hereditary predisposition",
-    "B": "Multiple enchondromata occur in small long bones of hands and feet",
-    "C": "The affected bones are stunted",
-    "D": "Deformities may arise from unequal affection of metaphyses",
-    "E": "Chonrosarcoma may develop in one of the enchonromata"
   },
-  "answer": "D",
-  "explanation": {
-    "correct": "Deformities may arise from unequal affection of metaphyses",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "good ortho mcq exam_2 conv.docx",
-    "H_highlight_excellence": "Deformities may arise from unequal affection of metaphyses",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "Source: good ortho mcq exam_2 conv.docx",
-    "P_plan_for_improvement": "Key Concept: Detailed concept reviewed in standard orthopedic textbooks."
-  },
-  "supplementary_callouts": {
-    "guideline": "Source: good ortho mcq exam_2 conv.docx",
-    "takeaway": "Key Concept: Detailed concept reviewed in standard orthopedic textbooks.",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
 {
   "id": 986,
   "specialty": "Orthopedic",
@@ -4896,8 +2378,7 @@ window.QUESTIONS.push(...[
     "visualization": ""
   },
   "discrepancy_flag": ""
-}
-,
+},
 {
   "id": 929,
   "specialty": "Orthopedic",
@@ -4929,1196 +2410,6 @@ window.QUESTIONS.push(...[
   "supplementary_callouts": {
     "guideline": "Source: good ortho mcq exam_2 conv.docx",
     "takeaway": "Key Concept: Detailed concept reviewed in standard orthopedic textbooks.",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 1609,
-  "specialty": "Orthopedic",
-  "topic": "The initial abnormality in rheumatoid arthritis is a. fibrillation of cartilage",
-  "question": "The initial abnormality in rheumatoid arthritis is a. fibrillation of cartilage",
-  "options": {
-    "A": "hematomyelia following trauma",
-    "B": "damage to the cord by a piece of bone when vertebrae collapse in tuberculosis of the spine",
-    "C": "tuberculous pus and angulation in tuberculosis of the spine",
-    "D": "damage to die corda equina after a fall e. fracture dislocation of cervical vertebrae"
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "hematomyelia following trauma",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "The initial abnormality in rheumatoid arthritis is a. fibrillation of cartilage",
-    "H_highlight_excellence": "hematomyelia following trauma",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "AAOS orthopedic guidelines",
-    "P_plan_for_improvement": "hematomyelia following trauma"
-  },
-  "supplementary_callouts": {
-    "guideline": "AAOS orthopedic guidelines",
-    "takeaway": "hematomyelia following trauma",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 1618,
-  "specialty": "Orthopedic",
-  "topic": "Treatment of fracture mid-shaft include:",
-  "question": "Treatment of fracture mid-shaft include:",
-  "options": {
-    "A": "Birth fracture is treated by Crede's method.",
-    "B": "Mid shaft fracture of infants and children is treated by gallows's traction.",
-    "C": "Fracture from age of 5-15 years is treated by skin traction on Thomas's splint.",
-    "D": "Mid shaft fracture in adults is treated by skeletal traction using Kirschner-wire or Steinmann's pin."
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "Birth fracture is treated by Crede's method.",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "Treatment of fracture mid-shaft include:",
-    "H_highlight_excellence": "Birth fracture is treated by Crede's method.",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "AAOS orthopedic guidelines",
-    "P_plan_for_improvement": "Birth fracture is treated by Crede's method"
-  },
-  "supplementary_callouts": {
-    "guideline": "AAOS orthopedic guidelines",
-    "takeaway": "Birth fracture is treated by Crede's method",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 1564,
-  "specialty": "Orthopedic",
-  "topic": "Avascular necrosis of head of femur:",
-  "question": "Avascular necrosis of head of femur:",
-  "options": {
-    "A": "Common complication of intracapsular fracture neck femur.",
-    "B": "it occurs due to cut of the blood supply of head which is mainly comes from the retinacular vessels and the nutrient artery of the femur.",
-    "C": "Head appears denser in the x -ray of the hip.",
-    "D": "The main blood supply of the head comes of artery of ligamentum teres."
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "Common complication of intracapsular fracture neck femur.",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "Avascular necrosis of head of femur:",
-    "H_highlight_excellence": "Common complication of intracapsular fracture neck femur.",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "AAOS orthopedic guidelines",
-    "P_plan_for_improvement": "Common complication of intracapsular fracture neck femur"
-  },
-  "supplementary_callouts": {
-    "guideline": "AAOS orthopedic guidelines",
-    "takeaway": "Common complication of intracapsular fracture neck femur",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 1568,
-  "specialty": "Orthopedic",
-  "topic": "Concerning Ollier's disease, which of the following statements is incorrect:",
-  "question": "Concerning Ollier's disease, which of the following statements is incorrect:",
-  "options": {
-    "A": "There is a strong hereditary predisposition",
-    "B": "Multiple enchondromata occur in small long bones of hands and feet",
-    "C": "The affected bones are stunted",
-    "D": "Deformities may arise from unequal affection of metaphyses"
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "There is a strong hereditary predisposition",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "Concerning Ollier's disease, which of the following statements is incorrect:",
-    "H_highlight_excellence": "There is a strong hereditary predisposition",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "AAOS orthopedic guidelines",
-    "P_plan_for_improvement": "There is a strong hereditary predisposition"
-  },
-  "supplementary_callouts": {
-    "guideline": "AAOS orthopedic guidelines",
-    "takeaway": "There is a strong hereditary predisposition",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 1582,
-  "specialty": "Orthopedic",
-  "topic": "In congenital dislocation of the hip (CDH), the pathological changes include the",
-  "question": "In congenital dislocation of the hip (CDH), the pathological changes include the following except :",
-  "options": {
-    "A": "Small shallow acetabulum.",
-    "B": "Snail flattened femoral head lying outside the acetabulum.",
-    "C": "Elongated femoral neck.",
-    "D": "Thickened adherent joint capsule with an hour-glass constriction."
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "Small shallow acetabulum.",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "In congenital dislocation of the hip (CDH), the pathological changes include the",
-    "H_highlight_excellence": "Small shallow acetabulum.",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "AAOS orthopedic guidelines",
-    "P_plan_for_improvement": "Small shallow acetabulum"
-  },
-  "supplementary_callouts": {
-    "guideline": "AAOS orthopedic guidelines",
-    "takeaway": "Small shallow acetabulum",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 1614,
-  "specialty": "Orthopedic",
-  "topic": "The most serious complication of Winnet-Orr techique in management of chronic osteomyelitis",
-  "question": "The most serious complication of Winnet-Orr techique in management of chronic osteomyelitis is:",
-  "options": {
-    "A": "septicemia and pyaemia.",
-    "B": "stiffness of the near by joint.",
-    "C": "deep vein thrombosis due to long stay in bed.",
-    "D": "anaerobic wound infection in form of gas gangrene and tetanus."
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "septicemia and pyaemia.",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "The most serious complication of Winnet-Orr techique in management of chronic osteomyelitis",
-    "H_highlight_excellence": "septicemia and pyaemia.",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "AAOS orthopedic guidelines",
-    "P_plan_for_improvement": "septicemia and pyaemia"
-  },
-  "supplementary_callouts": {
-    "guideline": "AAOS orthopedic guidelines",
-    "takeaway": "septicemia and pyaemia",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 1572,
-  "specialty": "Orthopedic",
-  "topic": "Fracture femoral neck can be diagnosed from: a. Limb shortening.",
-  "question": "Fracture femoral neck can be diagnosed from: a. Limb shortening.",
-  "options": {
-    "A": "Flexor digitorum profundus. b. Flexor digitorum superficials. c. Palmaris longus.",
-    "B": "Undiagnosed pathology within knee. c. Incomplete removal of the cyst.",
-    "C": "Knee stiffness. d. Fat embolism. 65)Spontaneous bleeding into joints in haemophilia occurs when factor VI level is less than:",
-    "D": "All of the above. 6 www.mataryonline.com"
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "Flexor digitorum profundus. b. Flexor digitorum superficials. c. Palmaris longus.",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "Fracture femoral neck can be diagnosed from: a. Limb shortening.",
-    "H_highlight_excellence": "Flexor digitorum profundus. b. Flexor digitorum superficials. c. Palmaris longus.",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "AAOS orthopedic guidelines",
-    "P_plan_for_improvement": "Flexor digitorum profundus"
-  },
-  "supplementary_callouts": {
-    "guideline": "AAOS orthopedic guidelines",
-    "takeaway": "Flexor digitorum profundus",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 1563,
-  "specialty": "Orthopedic",
-  "topic": "Anterior dislocation of the hip joint:",
-  "question": "Anterior dislocation of the hip joint:",
-  "options": {
-    "A": "Rare type of dislocation of the hip joint.",
-    "B": "It is caused by forcible abduction and lateral rotation of the hip.",
-    "C": "It is of two types (obturator and pubic types).",
-    "D": "Its deformity is flexion, abduction and lateral rotation. e. Only dislocation of body with lengthening of the limb."
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "Rare type of dislocation of the hip joint.",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "Anterior dislocation of the hip joint:",
-    "H_highlight_excellence": "Rare type of dislocation of the hip joint.",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "AAOS orthopedic guidelines",
-    "P_plan_for_improvement": "Rare type of dislocation of the hip joint"
-  },
-  "supplementary_callouts": {
-    "guideline": "AAOS orthopedic guidelines",
-    "takeaway": "Rare type of dislocation of the hip joint",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 1584,
-  "specialty": "Orthopedic",
-  "topic": "In osteoarthntis of the hip joint",
-  "question": "In osteoarthntis of the hip joint",
-  "options": {
-    "A": "is the commonest arthropathy",
-    "B": "is characterized by marginal osteophyte formation c. commonly presents with back pain",
-    "C": "the leg is usually adducted and externally rotated when the patient lies supine",
-    "D": "symptoms are least apparent in the morning e. commonly produces swelling of the distal interphalangeal joints"
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "is the commonest arthropathy",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "In osteoarthntis of the hip joint",
-    "H_highlight_excellence": "is the commonest arthropathy",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "AAOS orthopedic guidelines",
-    "P_plan_for_improvement": "is the commonest arthropathy"
-  },
-  "supplementary_callouts": {
-    "guideline": "AAOS orthopedic guidelines",
-    "takeaway": "is the commonest arthropathy",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 1583,
-  "specialty": "Orthopedic",
-  "topic": "In fractures involving the ankle joint",
-  "question": "In fractures involving the ankle joint",
-  "options": {
-    "A": "the stability of the tibio-fibular mortice determines the outcome",
-    "B": "if the mortice is disrupted it must be reconstructed",
-    "C": "in a third-degree external rotation injury the talus is free to slide beneath, and possibly fracture, the posterior margin of the tibia",
-    "D": "in an inversion (adduction) injury the media malieolus may be sheared from the tibia"
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "the stability of the tibio-fibular mortice determines the outcome",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "In fractures involving the ankle joint",
-    "H_highlight_excellence": "the stability of the tibio-fibular mortice determines the outcome",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "AAOS orthopedic guidelines",
-    "P_plan_for_improvement": "the stability of the tibio-fibular mortice determines the outcome"
-  },
-  "supplementary_callouts": {
-    "guideline": "AAOS orthopedic guidelines",
-    "takeaway": "the stability of the tibio-fibular mortice determines the outcome",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 1594,
-  "specialty": "Orthopedic",
-  "topic": "Osteoporosis is a deficiency in: a. Calcium metabolism",
-  "question": "Osteoporosis is a deficiency in: a. Calcium metabolism",
-  "options": {
-    "A": "Has a normal serum concentration of 3-13 KA units b. Is present in high concentrations in liver cells",
-    "B": "Calcium deposition",
-    "C": "Is excreted in the bile",
-    "D": "Is elevated in the serum of patients with healing fractures"
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "Has a normal serum concentration of 3-13 KA units b. Is present in high concentrations in liver cells",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "Osteoporosis is a deficiency in: a. Calcium metabolism",
-    "H_highlight_excellence": "Has a normal serum concentration of 3-13 KA units b. Is present in high concentrations in liver cells",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "AAOS orthopedic guidelines",
-    "P_plan_for_improvement": "Has a normal serum concentration of 3-13 KA units b"
-  },
-  "supplementary_callouts": {
-    "guideline": "AAOS orthopedic guidelines",
-    "takeaway": "Has a normal serum concentration of 3-13 KA units b",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 1581,
-  "specialty": "Orthopedic",
-  "topic": "In benign tumors of cartilage",
-  "question": "In benign tumors of cartilage",
-  "options": {
-    "A": "of the base of the skull (spheric-occipital1 develop in the remnants of Rathke's pouch",
-    "B": "of the sacrococcygeal region develop in the remnants of the neural canal",
-    "C": "are characterized radiologically by central rarefaction of the bone and cortical thinning and expansion",
-    "D": "are commoner in females than in males e. usually present soon after puberty"
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "of the base of the skull (spheric-occipital1 develop in the remnants of Rathke's pouch",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "In benign tumors of cartilage",
-    "H_highlight_excellence": "of the base of the skull (spheric-occipital1 develop in the remnants of Rathke's pouch",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "AAOS orthopedic guidelines",
-    "P_plan_for_improvement": "of the base of the skull (spheric-occipital1 develop in the remnants of Rathke's pouch"
-  },
-  "supplementary_callouts": {
-    "guideline": "AAOS orthopedic guidelines",
-    "takeaway": "of the base of the skull (spheric-occipital1 develop in the remnants of Rathke's pouch",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 1567,
-  "specialty": "Orthopedic",
-  "topic": "Complications of tuberculous arthritis are: a. dislocation is very common.",
-  "question": "Complications of tuberculous arthritis are: a. dislocation is very common.",
-  "options": {
-    "A": "loss of weight and night fever and night sweating. b. dull aching pain on exercise or at rest.",
-    "B": "cold abscess formation. c. sinus formation.",
-    "C": "sharp pain occurs at night. d. swelling of the joint affected.",
-    "D": "tuberculous lymphadenitis."
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "loss of weight and night fever and night sweating. b. dull aching pain on exercise or at rest.",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "Complications of tuberculous arthritis are: a. dislocation is very common.",
-    "H_highlight_excellence": "loss of weight and night fever and night sweating. b. dull aching pain on exercise or at rest.",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "AAOS orthopedic guidelines",
-    "P_plan_for_improvement": "loss of weight and night fever and night sweating"
-  },
-  "supplementary_callouts": {
-    "guideline": "AAOS orthopedic guidelines",
-    "takeaway": "loss of weight and night fever and night sweating",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 1596,
-  "specialty": "Orthopedic",
-  "topic": "Regarding hallux valgus, the following statements are true except that it:",
-  "question": "Regarding hallux valgus, the following statements are true except that it:",
-  "options": {
-    "A": "Overcrowding of the toes by ill-fitting shoes. b. Hallux valgus.",
-    "B": "Is usually due to badly fitting shoes. c. Is not progressive.",
-    "C": "Pes cavus.",
-    "D": "Talipes equinus."
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "Overcrowding of the toes by ill-fitting shoes. b. Hallux valgus.",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "Regarding hallux valgus, the following statements are true except that it:",
-    "H_highlight_excellence": "Overcrowding of the toes by ill-fitting shoes. b. Hallux valgus.",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "AAOS orthopedic guidelines",
-    "P_plan_for_improvement": "Overcrowding of the toes by ill-fitting shoes"
-  },
-  "supplementary_callouts": {
-    "guideline": "AAOS orthopedic guidelines",
-    "takeaway": "Overcrowding of the toes by ill-fitting shoes",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 1569,
-  "specialty": "Orthopedic",
-  "topic": "Coxa vara deformity:",
-  "question": "Coxa vara deformity:",
-  "options": {
-    "A": "Commoner than coxa valga.",
-    "B": "Neck-shaft angle is less than 120 degrees.",
-    "C": "Common to complicate adduction type fracture of neck femur.",
-    "D": "More serious than coxa valga."
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "Commoner than coxa valga.",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "Coxa vara deformity:",
-    "H_highlight_excellence": "Commoner than coxa valga.",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "AAOS orthopedic guidelines",
-    "P_plan_for_improvement": "Commoner than coxa valga"
-  },
-  "supplementary_callouts": {
-    "guideline": "AAOS orthopedic guidelines",
-    "takeaway": "Commoner than coxa valga",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 1619,
-  "specialty": "Orthopedic",
-  "topic": "Treatment of osteoclastoma:",
-  "question": "Treatment of osteoclastoma:",
-  "options": {
-    "A": "Excision of bone affected (rib, fibula, or lower end of radius).",
-    "B": "Curettage of tumour and bone chips application (femur or tibia).",
-    "C": "Excision of bone tumour with bone graft application (mandible).",
-    "D": "Irradiation is the treatment of choice for osteoclastoma of the lower end of femur and upper end of tibia."
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "Correct surgical approach",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "Bone excision for osteoclastoma",
-    "H_highlight_excellence": "Correct surgical approach",
-    "A_address_the_gaps": "Consider other options",
-    "R_review_learning_points": "Tumor removal techniques",
-    "P_plan_for_improvement": "Further investigation needed"
-  },
-  "supplementary_callouts": {
-    "guideline": "Surgical intervention primary",
-    "takeaway": "Excision is often key",
-    "visualization": "Surgical bone removal"
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 1617,
-  "specialty": "Orthopedic",
-  "topic": "Treatment of chronic osteomyelitis:",
-  "question": "Treatment of chronic osteomyelitis:",
-  "options": {
-    "A": "medical treatment in form of antibiotics and blood transfusion.",
-    "B": "surgical treatment in form of sequestrectomy.",
-    "C": "sequestrectomy, and saucerization of bone cavity.",
-    "D": "sequestrectomy, saucerization, and filling of the bone cavity with antibiotic pills."
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "medical treatment in form of antibiotics and blood transfusion.",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "Treatment of chronic osteomyelitis:",
-    "H_highlight_excellence": "medical treatment in form of antibiotics and blood transfusion.",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "AAOS orthopedic guidelines",
-    "P_plan_for_improvement": "medical treatment in form of antibiotics and blood transfusion"
-  },
-  "supplementary_callouts": {
-    "guideline": "AAOS orthopedic guidelines",
-    "takeaway": "medical treatment in form of antibiotics and blood transfusion",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 1616,
-  "specialty": "Orthopedic",
-  "topic": "The signs of fractured shaft of a bone do not include: a.",
-  "question": "The signs of fractured shaft of a bone do not include: a. Swelling",
-  "options": {
-    "A": "Inadequate immobilization b. Interposition of soft parts c. Impaired blood supply",
-    "B": "Separation of the epiphysis with a triangular fragment of the metaphysic",
-    "C": "Tight plasters d. Septic infection",
-    "D": "Inpsction of the fragments"
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "Correct answer selected",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "Fracture signs assessment",
-    "H_highlight_excellence": "Correct answer selected",
-    "A_address_the_gaps": "Review fracture symptoms",
-    "R_review_learning_points": "Bone fracture indicators",
-    "P_plan_for_improvement": "Further study needed"
-  },
-  "supplementary_callouts": {
-    "guideline": "Recognize fracture signs",
-    "takeaway": "Identify fracture symptoms",
-    "visualization": "Image review helpful"
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 1597,
-  "specialty": "Orthopedic",
-  "topic": "Reimplantation of a traumatically amputated limb requires all of the following except:",
-  "question": "Reimplantation of a traumatically amputated limb requires all of the following except:",
-  "options": {
-    "A": "are often due to a fall on the outstretched hand b. are frequently associated with chest wall injury c. are often associated with dislocation of the acromioclavicular",
-    "B": "the radial nerve is frequently damaged",
-    "C": "delayed radial nerve palsy is usually due to edema d. late onset of radial nerve palsy is usually due to the involvement of the nerve with callus",
-    "D": "proximal fragment Is usually internally rotated e. distal fragment is usually adducted 24 www.mataryonline.com 9.In a fracture of the distal 1/3 of the shaft of the humerus a. the distal fragment is usually posteriorly angulated by"
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "are often due to a fall on the outstretched hand b. are frequently associated with chest wall injury",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "Reimplantation of a traumatically amputated limb requires all of the following except:",
-    "H_highlight_excellence": "are often due to a fall on the outstretched hand b. are frequently associated with chest wall injury",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "AAOS orthopedic guidelines",
-    "P_plan_for_improvement": "are often due to a fall on the outstretched hand b"
-  },
-  "supplementary_callouts": {
-    "guideline": "AAOS orthopedic guidelines",
-    "takeaway": "are often due to a fall on the outstretched hand b",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 1574,
-  "specialty": "Orthopedic",
-  "topic": "Fracture of the lunate bone:",
-  "question": "Fracture of the lunate bone:",
-  "options": {
-    "A": "Commonly caused by fall on dorsi-flexed hand.",
-    "B": "It lies in the carpal tunnel compressing median nerve and flexor tendons.",
-    "C": "It is characterized clinically by swelling in front of the wrist and limitation of movements of the wrist joint.",
-    "D": "Extension of the fingers is pathognomic of lunate fr e. Recent cases are treated by closed reduction while neglected cases are treated by open reduction and or excision of the lunate bone if necessary."
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "Commonly caused by fall on dorsi-flexed hand.",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "Fracture of the lunate bone:",
-    "H_highlight_excellence": "Commonly caused by fall on dorsi-flexed hand.",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "AAOS orthopedic guidelines",
-    "P_plan_for_improvement": "Commonly caused by fall on dorsi-flexed hand"
-  },
-  "supplementary_callouts": {
-    "guideline": "AAOS orthopedic guidelines",
-    "takeaway": "Commonly caused by fall on dorsi-flexed hand",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 1589,
-  "specialty": "Orthopedic",
-  "topic": "Ladder step deformity characteristic of fracture clavicle is:",
-  "question": "Ladder step deformity characteristic of fracture clavicle is:",
-  "options": {
-    "A": "Medial fragment is displaced downward below lateral fragment.",
-    "B": "Lateral fragment is displaced foreword while medial is displaced backward.",
-    "C": "Dislocation of sternoclavicular joint gives ladder step deformity.",
-    "D": "Dislocation of acromio-clavicular joint."
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "Medial fragment is displaced downward below lateral fragment.",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "Ladder step deformity characteristic of fracture clavicle is:",
-    "H_highlight_excellence": "Medial fragment is displaced downward below lateral fragment.",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "AAOS orthopedic guidelines",
-    "P_plan_for_improvement": "Medial fragment is displaced downward below lateral fragment"
-  },
-  "supplementary_callouts": {
-    "guideline": "AAOS orthopedic guidelines",
-    "takeaway": "Medial fragment is displaced downward below lateral fragment",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 1601,
-  "specialty": "Orthopedic",
-  "topic": "Talipes equino-varus:",
-  "question": "Talipes equino-varus:",
-  "options": {
-    "A": "Adducted, inverted and plantarly flexed foot.",
-    "B": "It may be congenital or acquired on top of paralysis of lateral popliteal nerve.",
-    "C": "Congenital deformity can be corrected while acquired one can not.",
-    "D": "Acquired deformity is bilateral while congenitalis unilateral. e. In the acquired type sole of the foot i full of corrugation."
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "Adducted, inverted and plantarly flexed foot.",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "Talipes equino-varus:",
-    "H_highlight_excellence": "Adducted, inverted and plantarly flexed foot.",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "AAOS orthopedic guidelines",
-    "P_plan_for_improvement": "Adducted, inverted and plantarly flexed foot"
-  },
-  "supplementary_callouts": {
-    "guideline": "AAOS orthopedic guidelines",
-    "takeaway": "Adducted, inverted and plantarly flexed foot",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 1579,
-  "specialty": "Orthopedic",
-  "topic": "In a Monteggia fracture dislocation",
-  "question": "In a Monteggia fracture dislocation",
-  "options": {
-    "A": "the dislocation of the distal radio-ulnar joint brings the ulnar styloid process anterior to the capitulum",
-    "B": "the radial fracture is usually at the junction of the middle and distal thirds",
-    "C": "internal fixation is usually required in the adult",
-    "D": "the causative injury is often a blow on the extensor surface of the forearm with the elbow flexed"
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "Dislocation of ulnar styloid",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "",
-    "H_highlight_excellence": "Dislocation of ulnar styloid",
-    "A_address_the_gaps": "Consider other fracture aspects",
-    "R_review_learning_points": "Joint displacement, fracture patterns",
-    "P_plan_for_improvement": "Further assessment and imaging"
-  },
-  "supplementary_callouts": {
-    "guideline": "Referral for specialist care",
-    "takeaway": "Ulnar dislocation is key",
-    "visualization": "Radiographic findings crucial"
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 1622,
-  "specialty": "Orthopedic",
-  "topic": "Volkmann's contracture a. affects the palmar fascia",
-  "question": "Volkmann's contracture a. affects the palmar fascia",
-  "options": {
-    "A": "a subperiosteal abscess due to infection of the mastoid air cells",
-    "B": "a type pf breast abscess",
-    "C": "a chronic abscess of the bone",
-    "D": "an abscess arising in the inguinal lymph nodes e. an abscess forming in an infected varicose vein"
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "Palmar fascia involvement key",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "Volkmann's contracture pathology",
-    "H_highlight_excellence": "Palmar fascia involvement key",
-    "A_address_the_gaps": "Consider other related abscesses",
-    "R_review_learning_points": "Contracture, fascia, infection",
-    "P_plan_for_improvement": "Further study of related conditions"
-  },
-  "supplementary_callouts": {
-    "guideline": "Focus on anatomical relationships",
-    "takeaway": "Understand contracture mechanisms",
-    "visualization": "Diagram of palmar fascia"
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 1559,
-  "specialty": "Orthopedic",
-  "topic": "A Pott's fracture is a type of fracture of the a. wrist",
-  "question": "A Pott's fracture is a type of fracture of the a. wrist",
-  "options": {
-    "A": "physiotherapy alone",
-    "B": "insertion of a figure-of-eight tension band c. patellectomy",
-    "C": "non-union of a fracture",
-    "D": "followed by pseudoarthrosis e. due to tuberculosis"
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "",
-    "H_highlight_excellence": "",
-    "A_address_the_gaps": "",
-    "R_review_learning_points": "",
-    "P_plan_for_improvement": ""
-  },
-  "supplementary_callouts": {
-    "guideline": "",
-    "takeaway": "",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 1605,
-  "specialty": "Orthopedic",
-  "topic": "The commonest bones to be affected by multiple myelomatosis are:",
-  "question": "The commonest bones to be affected by multiple myelomatosis are:",
-  "options": {
-    "A": "Femur.",
-    "B": "Humerus.",
-    "C": "Ribs and clavicle.",
-    "D": "Vertebrae especially lower lumbar vertebrae. e. Skull, sternum, and scapula."
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "Femur.",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "The commonest bones to be affected by multiple myelomatosis are:",
-    "H_highlight_excellence": "Femur.",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "AAOS orthopedic guidelines",
-    "P_plan_for_improvement": "Femur"
-  },
-  "supplementary_callouts": {
-    "guideline": "AAOS orthopedic guidelines",
-    "takeaway": "Femur",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 1580,
-  "specialty": "Orthopedic",
-  "topic": "In a case of congenital dislocation of the hip",
-  "question": "In a case of congenital dislocation of the hip",
-  "options": {
-    "A": "the defect cannot be detected until the third week of life",
-    "B": "there is a defect of the posterior rim of the acetabulum",
-    "C": "on bilateral hip abduction with the knees flexed there is often limited abduction on the diseased side",
-    "D": "reduction is sometimes hindered by a tight gluteus minimus muscle"
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "Correct answer for congenital hip",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "Hip dislocation diagnosis timeline",
-    "H_highlight_excellence": "Correct answer for congenital hip",
-    "A_address_the_gaps": "Consider other acetabulum defects",
-    "R_review_learning_points": "Abduction limitations and muscle tightness",
-    "P_plan_for_improvement": "Further hip examination needed"
-  },
-  "supplementary_callouts": {
-    "guideline": "Follow orthopedic referral protocol",
-    "takeaway": "Congenital dislocation has early signs",
-    "visualization": "Hip joint anatomy and dislocation"
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 1571,
-  "specialty": "Orthopedic",
-  "topic": "Fracture dislocation of cervical spine:",
-  "question": "Fracture dislocation of cervical spine:",
-  "options": {
-    "A": "forward displacement of one vertebra with overriding of articular surface, with compression of vertebra or fracture of neural arch.",
-    "B": "very stable fracture.",
-    "C": "associated with severe cord damage.",
-    "D": "it is reduced by skull traction under x-ray control. e. internal fixation is mandatory in presence of cord damage."
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "forward displacement of one vertebra with overriding of articular surface, with compression of vertebra or fracture of neural",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "Fracture dislocation of cervical spine:",
-    "H_highlight_excellence": "forward displacement of one vertebra with overriding of articular surface, with compression of vertebra or fracture of neural",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "AAOS orthopedic guidelines",
-    "P_plan_for_improvement": "forward displacement of one vertebra with overriding of articular surface, with compression of vertebra or fracture"
-  },
-  "supplementary_callouts": {
-    "guideline": "AAOS orthopedic guidelines",
-    "takeaway": "forward displacement of one vertebra with overriding of articular surface, with compression of vertebra or fracture of neural",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 1608,
-  "specialty": "Orthopedic",
-  "topic": "The following statements about provisional amputation for infective gangrene are true except",
-  "question": "The following statements about provisional amputation for infective gangrene are true except that it:",
-  "options": {
-    "A": "May be urgently needed to control infection and toxemia.",
-    "B": "Should be made through the healthy limb above the infected area.",
-    "C": "Should be done as low as possible to allow reamputation at the optimum level.",
-    "D": "Should provide free drainage."
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "May be urgently needed to control infection and toxemia.",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "The following statements about provisional amputation for infective gangrene are true except",
-    "H_highlight_excellence": "May be urgently needed to control infection and toxemia.",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "AAOS orthopedic guidelines",
-    "P_plan_for_improvement": "May be urgently needed to control infection and toxemia"
-  },
-  "supplementary_callouts": {
-    "guideline": "AAOS orthopedic guidelines",
-    "takeaway": "May be urgently needed to control infection and toxemia",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 1603,
-  "specialty": "Orthopedic",
-  "topic": "The best line of treatment of fractures radius and ulna at different",
-  "question": "The best line of treatment of fractures radius and ulna at different levels is:",
-  "options": {
-    "A": "Closed reduction and above elbow plaster for 6-8 weeks.",
-    "B": "Intramedullary nailing of both radius and ulna.",
-    "C": "Open reduction of the ulna and closed reduction of radius.",
-    "D": "Open reduction and internal fixation by plate and screws."
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "Closed reduction and above elbow plaster for 6-8 weeks.",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "The best line of treatment of fractures radius and ulna at different",
-    "H_highlight_excellence": "Closed reduction and above elbow plaster for 6-8 weeks.",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "AAOS orthopedic guidelines",
-    "P_plan_for_improvement": "Closed reduction and above elbow plaster for 6-8 weeks"
-  },
-  "supplementary_callouts": {
-    "guideline": "AAOS orthopedic guidelines",
-    "takeaway": "Closed reduction and above elbow plaster for 6-8 weeks",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 1576,
-  "specialty": "Orthopedic",
-  "topic": "Fractures which do not impact include a. fracture of tile vault of",
-  "question": "Fractures which do not impact include a. fracture of tile vault of the skull",
-  "options": {
-    "A": "reversed Colles' fracture",
-    "B": "fracture of the scaphoid bone in the wrist",
-    "C": "fracture of the radial styloid (chauffeur's fracture) d. fracture dislocation of the first metacarpal",
-    "D": "a fracture of the head of the radius e. fracture of die scaphoid 73)Bennett's fracture is"
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "reversed Colles' fracture",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "Fractures which do not impact include a. fracture of tile vault of",
-    "H_highlight_excellence": "reversed Colles' fracture",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "AAOS orthopedic guidelines",
-    "P_plan_for_improvement": "reversed Colles' fracture"
-  },
-  "supplementary_callouts": {
-    "guideline": "AAOS orthopedic guidelines",
-    "takeaway": "reversed Colles' fracture",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 1558,
-  "specialty": "Orthopedic",
-  "topic": "'Tennis elbow' is the term used for a. olecranon bursitis",
-  "question": "'Tennis elbow' is the term used for a. olecranon bursitis",
-  "options": {
-    "A": "Carpal scaphoid b. Neck of the femur",
-    "B": "Joint involved in the fracture c. Proximal joint",
-    "C": "Lower third of the tibia d. Talus",
-    "D": "Both proximal and distal joints e. Distal joint 101)Non-union is common in fractures of the following bones except the:"
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "Carpal scaphoid b. Neck of the femur",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "'Tennis elbow' is the term used for a. olecranon bursitis",
-    "H_highlight_excellence": "Carpal scaphoid b. Neck of the femur",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "AAOS orthopedic guidelines",
-    "P_plan_for_improvement": "Carpal scaphoid b"
-  },
-  "supplementary_callouts": {
-    "guideline": "AAOS orthopedic guidelines",
-    "takeaway": "Carpal scaphoid b",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 1575,
-  "specialty": "Orthopedic",
-  "topic": "Fractures of the cervical spine can be caused by one of the",
-  "question": "Fractures of the cervical spine can be caused by one of the following traumas:",
-  "options": {
-    "A": "flexion trauma.",
-    "B": "extension trauma.",
-    "C": "lateral flexion trauma.",
-    "D": "rotational flexion or extension trauma."
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "flexion trauma.",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "Fractures of the cervical spine can be caused by one of the",
-    "H_highlight_excellence": "flexion trauma.",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "AAOS orthopedic guidelines",
-    "P_plan_for_improvement": "flexion trauma"
-  },
-  "supplementary_callouts": {
-    "guideline": "AAOS orthopedic guidelines",
-    "takeaway": "flexion trauma",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 1607,
-  "specialty": "Orthopedic",
-  "topic": "The differential diagnosis of osteoid osteoma includes all the following except:",
-  "question": "The differential diagnosis of osteoid osteoma includes all the following except:",
-  "options": {
-    "A": "Brodies' abscess b. Ossifying fibroma c. Ewing's tumor",
-    "B": "Hyaluronidase",
-    "C": "Albumin and laucin",
-    "D": "Alpha and beta globulins e. Beta lipoproteins"
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "Brodies' abscess b. Ossifying fibroma c. Ewing's tumor",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "The differential diagnosis of osteoid osteoma includes all the following except:",
-    "H_highlight_excellence": "Brodies' abscess b. Ossifying fibroma c. Ewing's tumor",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "AAOS orthopedic guidelines",
-    "P_plan_for_improvement": "Brodies' abscess b"
-  },
-  "supplementary_callouts": {
-    "guideline": "AAOS orthopedic guidelines",
-    "takeaway": "Brodies' abscess b",
     "visualization": ""
   },
   "discrepancy_flag": ""

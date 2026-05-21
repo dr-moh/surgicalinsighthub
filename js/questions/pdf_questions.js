@@ -1,97 +1,6 @@
 if (!window.QUESTIONS) window.QUESTIONS = [];
 window.QUESTIONS.push(...[
-  {
-    "id": 50000,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 1,
-    "source_question_number": 1,
-    "question": "What are the most common locations of the common",
-    "options": {
-      "A": "Anterior and posterior (12 and 6 o’clock)",
-      "B": "Left and right (3 and 9 o’clock)",
-      "C": "hoose the anatomic structure that matches what is shown in the illustration:",
-      "D": "Just right (9 o’clock)"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50001,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 2,
-    "source_question_number": 20,
-    "question": "Which of the following structures is NOT part of the",
-    "options": {
-      "A": "Left hepatic duct",
-      "B": "Anterior sectoral right hepatic duct",
-      "C": "Gallbladder",
-      "D": "Common hepatic duct",
-      "E": "xtrahepatic biliary tree?"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50002,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 2,
-    "source_question_number": 21,
-    "question": "How much bile is produced in one day?",
-    "options": {
-      "A": "650 ml per day",
-      "B": "850 ml per day",
-      "C": "1250 ml per day",
-      "D": "1550 ml per day"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50003,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 2,
-    "source_question_number": 22,
-    "question": "What is the arterial blood supply to the retropancreatic",
-    "options": {
-      "A": "Dorsal pancreatic artery",
-      "B": "Right gastric artery",
-      "C": "Gastroduodenal artery",
-      "D": "Retroduodenal artery"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50004,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 2,
-    "source_question_number": 23,
-    "question": "The left hepatic duct is consistently present in most patients. However, in what proportion is the left hepatic duct completely absent?",
-    "options": {
-      "A": "0.05%",
-      "B": "3%",
-      "C": "15%",
-      "D": "41%"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50005,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 2,
-    "source_question_number": 24,
-    "question": "Which segments does the anterior sectoral right hepatic",
-    "options": {
-      "A": "V and VI",
-      "B": "V and VIII",
-      "C": "VI and VII",
-      "D": "VII and VIII"
-    },
-    "answer": "A"
-  },
-  {
+{
     "id": 50006,
     "specialty": "HPB",
     "source_file": "Biliary anatomy 2.0.pdf",
@@ -105,37 +14,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
-    "id": 50007,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 2,
-    "source_question_number": 26,
-    "question": "What is the embryologic origin of the extrahepatic bile",
-    "options": {
-      "A": "Mesoderm",
-      "B": "Ectoderm",
-      "C": "Endoderm",
-      "D": "uct?"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50008,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 3,
-    "source_question_number": 27,
-    "question": "How frequently does the cystic duct drain to the right hepatic duct?",
-    "options": {
-      "A": "Less than 1%",
-      "B": "14%",
-      "C": "27%",
-      "D": "48%"
-    },
-    "answer": "A"
-  },
-  {
+{
     "id": 50009,
     "specialty": "HPB",
     "source_file": "Biliary anatomy 2.0.pdf",
@@ -150,82 +29,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
-    "id": 50010,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 3,
-    "source_question_number": 29,
-    "question": "Choose the artery that does NOT provide blood supply to the extrahepatic bile duct.",
-    "options": {
-      "A": "Right hepatic",
-      "B": "Posterior superior pancreaticoduodenal",
-      "C": "Retroportal",
-      "D": "Left gastric"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50011,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 3,
-    "source_question_number": 30,
-    "question": "How many tributaries of the biliary tree drain segment I?",
-    "options": {
-      "A": "1 or 2",
-      "B": "3 or 4",
-      "C": "7 or 8",
-      "D": "9 or 10"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50012,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 3,
-    "source_question_number": 31,
-    "question": "Choose the correct statement about the retroportal",
-    "options": {
-      "A": "It originates from the proper hepatic artery",
-      "B": "ile duct",
-      "C": "It can originate from either the coeliac axis or the superior mesenteric artery",
-      "D": "It is a fickle artery"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50013,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 3,
-    "source_question_number": 32,
-    "question": "Which hepatic segments does the left hepatic duct typi-",
-    "options": {
-      "A": "I, II, III, and IV",
-      "B": "II, III, IV, and V",
-      "C": "V, VI, VII, and VIII",
-      "D": "II and III"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50014,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 5,
-    "source_question_number": 45,
-    "question": "Who was the first to introduce intraoperative cholan- giography in surgical practice?",
-    "options": {
-      "A": "Claude Couinaud",
-      "B": "Carl Hjortsjo",
-      "C": "Erich Mühe",
-      "D": "Pablo Mirizzi"
-    },
-    "answer": "A"
-  },
-  {
+{
     "id": 50015,
     "specialty": "HPB",
     "source_file": "Biliary anatomy 2.0.pdf",
@@ -240,7 +44,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
+{
     "id": 50016,
     "specialty": "HPB",
     "source_file": "Biliary anatomy 2.0.pdf",
@@ -255,127 +59,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
-    "id": 50017,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 5,
-    "source_question_number": 48,
-    "question": "Select the correct statement:",
-    "options": {
-      "A": "Bile from the caudate lobe drains into both the right and left hepatic ducts near the confluence",
-      "B": "Hilar cholangiocarcinoma rarely invades segment I",
-      "C": "The caudate lobe forms part of the anterior limit of the hilar plate",
-      "D": "The caudate process is the most readily identified portion of segment I"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50018,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 5,
-    "source_question_number": 49,
-    "question": "What common bile duct width is highly indicative of",
-    "options": {
-      "A": "> 8 mm",
-      "B": "> 10 mm",
-      "C": "> 12 mm",
-      "D": "> 14 mm"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50019,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 5,
-    "source_question_number": 50,
-    "question": "Which factor is associated with an increase in the com- mon bile duct diameter without obstruction?",
-    "options": {
-      "A": "> 70 years old",
-      "B": "Previous cholecystectomy",
-      "C": "Opiate users",
-      "D": "All of the above"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50020,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 5,
-    "source_question_number": 51,
-    "question": "What is the most frequent bacterial colonizer of the",
-    "options": {
-      "A": "Escherichia coli",
-      "B": "Staphylococcus aureus",
-      "C": "Klebsiella pneumoniae",
-      "D": "None, bile is sterile in normal conditions"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50021,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 5,
-    "source_question_number": 52,
-    "question": "Intraoperatively, which is an essential study to assess",
-    "options": {
-      "A": "Magnetic resonance cholangiopancreatography (MRCP)",
-      "B": "Cholangiography",
-      "C": "Endoscopic retrograde cholangiopancreatography (ERCP)",
-      "D": "Ultrasound"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50022,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 5,
-    "source_question_number": 53,
-    "question": "Who was the first to describe the sheaths surrounding the portal pedicles?",
-    "options": {
-      "A": "Francis Glisson",
-      "B": "Johannes Walaeus",
-      "C": "J. E. Healey Jr",
-      "D": "Hugo Rex"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50023,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 6,
-    "source_question_number": 54,
-    "question": "What is the structure depicted by the yellow arrow?",
-    "options": {
-      "A": "Right hepatic duct",
-      "B": "Segment VII bile duct",
-      "C": "Segment V bile duct",
-      "D": "Right anterior sectoral duct"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50024,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 6,
-    "source_question_number": 55,
-    "question": "What is the double duct sign in radiographic imaging",
-    "options": {
-      "A": "djacent to each other. This signifies an anatomic variation of the cystic duct",
-      "B": "It shows both the common bile duct and cystic duct",
-      "C": "It shows the dilation of both the main and acces- sory pancreatic duct, and signifies a mass in the pancreatic head",
-      "D": "It shows and signifies dissected common bile duct wall"
-    },
-    "answer": "A"
-  },
-  {
+{
     "id": 50025,
     "specialty": "HPB",
     "source_file": "Biliary anatomy 2.0.pdf",
@@ -388,68 +72,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
-    "id": 50026,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 6,
-    "source_question_number": 57,
-    "question": "Which is the most frequently observed anatomical vari-",
-    "options": {
-      "A": "mpulla is present (85%)",
-      "B": "Both ducts enter together, but the common chan- nel is short, and no true ampulla is present (85%)",
-      "C": "There is a long common channel that may or may not be dilated to form an ampulla (85%)",
-      "D": "Junction of the ducts take place at the third portion of the duodenum, and the common channel always pre- sents an ampulla (85%)"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50027,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 7,
-    "source_question_number": 58,
-    "question": "Which of the following statements about choledochal",
-    "options": {
-      "A": "Most of them are diagnosed within the first decade of life",
-      "B": "They are most common in females and Asian popu- lation",
-      "C": "Pancreaticobiliary maljunction is the most common",
-      "D": "All of the above",
-      "E": "tiology of this entity"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50028,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 7,
-    "source_question_number": 59,
-    "question": "Which type of choledochal cyst is depicted in the illus- tration? What is its relative frequency?",
-    "options": {
-      "A": "Type II, it is the least common",
-      "B": "Type IVb, it is the least common",
-      "C": "Type I, it is the most common",
-      "D": "Type V, it is the most common"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50029,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 7,
-    "source_question_number": 60,
-    "question": "What should be the correct treatment strategy for this type of choledochal cyst?",
-    "options": {
-      "A": "ERCP with stent placement",
-      "B": "Extrahepatic bile duct cyst excision, cholecystec- tomy, and bilioenteric reconstruction",
-      "C": "Cystenterostomy",
-      "D": "All of the above"
-    },
-    "answer": "A"
-  },
-  {
+{
     "id": 50030,
     "specialty": "HPB",
     "source_file": "Biliary anatomy 2.0.pdf",
@@ -464,234 +87,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
-    "id": 50031,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 7,
-    "source_question_number": 62,
-    "question": "The gallbladder is divided into:",
-    "options": {
-      "A": "Fundus, infundibulum, neck",
-      "B": "Fundus, body, neck",
-      "C": "Fundus, body, infundibulum, Hartman’s pouch, neck",
-      "D": "Fundus, body, infundibulum, neck, cystic duct"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50032,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 7,
-    "source_question_number": 63,
-    "question": "Which hepatic segments form the gallbladder bed?",
-    "options": {
-      "A": "IVa and V",
-      "B": "IVb and VI",
-      "C": "IVb and V",
-      "D": "IVa and V"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50033,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 7,
-    "source_question_number": 64,
-    "question": "Choose the layer that is absent in the gallbladder wall:",
-    "options": {
-      "A": "Mucosa",
-      "B": "Submucosa",
-      "C": "Muscular",
-      "D": "Serosa"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50034,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 7,
-    "source_question_number": 65,
-    "question": "What is the triangle of Calot?",
-    "options": {
-      "A": "nd the inferior surface of the liver superiorly",
-      "B": "It is the liver surface that is in touch with the duode- num",
-      "C": "It is the deperitonized liver surface",
-      "D": "It is an anatomic space bordered by the right hepatic"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50035,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 8,
-    "source_question_number": 66,
-    "question": "The triangle of Calot contains which of the following structures:",
-    "options": {
-      "A": "Cystic artery",
-      "B": "Cystic lymph node of Lund",
-      "C": "Right hepatic artery",
-      "D": "All of the above"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50036,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 8,
-    "source_question_number": 67,
-    "question": "Which is a requirement to achieve a critical view of safety during laparoscopic cholecystectomy?",
-    "options": {
-      "A": "The triangle of Calot cleared of fat and tissue",
-      "B": "The lowest part of the gallbladder should be sepa- rated from the cystic plate",
-      "C": "Two structures, and only two, should be seen enter- ing the gallbladder",
-      "D": "All of the above"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50037,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 8,
-    "source_question_number": 68,
-    "question": "A normal non-inflamed gallbladder has:",
-    "options": {
-      "A": "A wall thickness of 8 mm or less",
-      "B": "Pericholecystic fluid",
-      "C": "Its anteroposterior diameter of less than 40 mm",
-      "D": "Sludge"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50038,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 8,
-    "source_question_number": 69,
-    "question": "Which of the following statements about the cystic duct is true?",
-    "options": {
-      "A": "It most commonly inserts on the left lateral aspect of the common bile duct",
-      "B": "Low insertion is defined as its insertion at the lower third of the common hepatic duct",
-      "C": "A short cystic duct is defined as < 10 mm long",
-      "D": "None of the above"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50039,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 8,
-    "source_question_number": 70,
-    "question": "What is the definition of a left-sided gallbladder?",
-    "options": {
-      "A": "The gallbladder located to the left of the ligamentum teres",
-      "B": "ile duct",
-      "C": "The gallbladder located to the left of the portal vein",
-      "D": "The gallbladder located at the left upper quadrant"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50040,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 8,
-    "source_question_number": 71,
-    "question": "Who was the first to ever perform a laparoscopic chol-",
-    "options": {
-      "A": "Claude Couinaud",
-      "B": "Carl Hjortsjo",
-      "C": "Erich Mühe",
-      "D": "Pablo Mirizzi",
-      "E": "cystectomy?"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50041,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 8,
-    "source_question_number": 72,
-    "question": "What is a duct of Luschka?",
-    "options": {
-      "A": "It is a segment I bile duct that drains directly in the",
-      "B": "It is a segment V aberrant duct draining directly into the common hepatic duct",
-      "C": "ially close to or inserts in the gallbladder",
-      "D": "It is a subvesical bile duct that either runs superfi-"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50042,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 8,
-    "source_question_number": 73,
-    "question": "The gallbladder is in contact with which of the follow- ing organs?",
-    "options": {
-      "A": "Liver",
-      "B": "Duodenum",
-      "C": "Transverse colon",
-      "D": "All of the above"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50043,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 8,
-    "source_question_number": 74,
-    "question": "Which of the following statements about the duplicated gallbladders is true?",
-    "options": {
-      "A": "gallbladder diverticulum, a choledochal cyst, per- icholecystic fluid, and focal adenomyomatosis",
-      "B": "They always share a common cystic duct",
-      "C": "Differential diagnosis includes folded gallbladder,",
-      "D": "A and C are correct"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50044,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 8,
-    "source_question_number": 75,
-    "question": "Which of the following statements about gallbladder polyps is true?",
-    "options": {
-      "A": "Transabdominal ultrasound is the first-line imaging study for diagnosis, but in certain cases cross-sec- tional imaging is necessary",
-      "B": "Factors that suggest malignancy are: > 50 years old, larger than 1.5 cm, growth, sessile, solitary, and het-",
-      "C": "Small (< 1 cm), asymptomatic polyps should be moni- tored for 12 months with control ultrasound scans",
-      "D": "All of the above",
-      "E": "rogeneous enhance pattern"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50045,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 8,
-    "source_question_number": 76,
-    "question": "Which of the following about the cystic artery and its frequency of variants is true?",
-    "options": {
-      "A": "74.7% of the time the cystic artery arises from the right hepatic artery",
-      "B": "2.5% of the time the cystic artery arises from the gastroduodenal artery",
-      "C": "20.5% of the time the cystic artery arises from the left hepatic artery",
-      "D": "All of the above"
-    },
-    "answer": "A"
-  },
-  {
+{
     "id": 50046,
     "specialty": "HPB",
     "source_file": "Biliary anatomy 2.0.pdf",
@@ -706,157 +102,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
-    "id": 50047,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 9,
-    "source_question_number": 78,
-    "question": "What is the diagnosis associated with the imaging pre- sented below?",
-    "options": {
-      "A": "This is a “beads on a string” appearance of the bile",
-      "B": "This is a “beads on a string” appearance of the bile",
-      "C": "This is onion skinning appearance, and it signifies primary sclerosing cholangitis.",
-      "D": "This is onion skinning appearance, and it signifies primary biliary cholangitis"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50048,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 9,
-    "source_question_number": 79,
-    "question": "What are the possible causes of the sign depicted in the image?",
-    "options": {
-      "A": "Air in the biliary tree caused by bile duct stenting",
-      "B": "Blood in the biliary tree caused by bile duct stenting",
-      "C": "Air in the biliary tree caused by a pancreatic head mass",
-      "D": "Blood in the biliary tree caused by tumoral invasion"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50049,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 10,
-    "source_question_number": 20,
-    "question": "Which of the following structures is NOT part of the",
-    "options": {
-      "A": "Left hepatic duct",
-      "B": "Anterior sectoral right hepatic duct",
-      "C": "Gallbladder",
-      "D": "Common hepatic duct",
-      "E": "xtrahepatic biliary tree?3"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50050,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 10,
-    "source_question_number": 21,
-    "question": "How much bile is produced in one day?4",
-    "options": {
-      "A": "650 ml per day",
-      "B": "850 ml per day",
-      "C": "1250 ml per day",
-      "D": "1550 ml per day"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50051,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 10,
-    "source_question_number": 22,
-    "question": "What is the arterial blood supply to the retropancreatic",
-    "options": {
-      "A": "Dorsal pancreatic artery",
-      "B": "Right gastric artery",
-      "C": "Gastroduodenal artery",
-      "D": "Retroduodenal artery"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50052,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 10,
-    "source_question_number": 23,
-    "question": "The left hepatic duct is consistently present in most patients. However, in what proportion of patients is the left hepatic duct completely absent?5,6",
-    "options": {
-      "A": "0.05%",
-      "B": "3%",
-      "C": "15%",
-      "D": "41%"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50053,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 10,
-    "source_question_number": 24,
-    "question": "Which segments does the anterior sectoral right hepatic",
-    "options": {
-      "A": "V and VI",
-      "B": "V and VIII",
-      "C": "VI and VII",
-      "D": "VII and VIII"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50054,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 10,
-    "source_question_number": 25,
-    "question": "Which hepatic duct is more frequently associated with",
-    "options": {
-      "A": "Right",
-      "B": "Left",
-      "C": "Both have a similar incidence of anatomic variations"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50055,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 11,
-    "source_question_number": 26,
-    "question": "What is the embryologic origin of the extrahepatic bile",
-    "options": {
-      "A": "Mesoderm",
-      "B": "Ectoderm",
-      "C": "Endoderm",
-      "D": "Hindgut"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50056,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 11,
-    "source_question_number": 27,
-    "question": "How frequently does the cystic duct drain to the right hepatic duct?9",
-    "options": {
-      "A": "Less than 1%",
-      "B": "14%",
-      "C": "27%",
-      "D": "48%"
-    },
-    "answer": "A"
-  },
-  {
+{
     "id": 50057,
     "specialty": "HPB",
     "source_file": "Biliary anatomy 2.0.pdf",
@@ -871,68 +117,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
-    "id": 50058,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 11,
-    "source_question_number": 29,
-    "question": "Choose the artery that does NOT provide blood supply to the extrahepatic bile duct.1",
-    "options": {
-      "A": "Right hepatic",
-      "B": "Posterior superior pancreaticoduodenal",
-      "C": "Retroportal",
-      "D": "Left gastric"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50059,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 11,
-    "source_question_number": 30,
-    "question": "How many tributaries of the biliary tree drain segment I?11",
-    "options": {
-      "A": "1 or 2",
-      "B": "3 or 4",
-      "C": "7 or 8",
-      "D": "9 or 10"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50060,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 11,
-    "source_question_number": 31,
-    "question": "Choose the correct statement about the retroportal",
-    "options": {
-      "A": "It originates from the proper hepatic artery",
-      "B": "lood supply to the supraduodenal bile duct. It originates from either the superior mesenteric artery or the celiac trunk and passes posterior to the portal vein to reach the lower end of the supraduodenal duct. 1 It is present in 90% of patients.2",
-      "C": "It can originate from either the coeliac axis or the superior mesenteric artery",
-      "D": "It is a fickle artery",
-      "E": "xplanation in reference to the retroportal artery: it provides"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50061,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 11,
-    "source_question_number": 32,
-    "question": "Which hepatic segments does the left hepatic duct typi-",
-    "options": {
-      "A": "I, II, III, and IV",
-      "B": "II, III, IV, and V",
-      "C": "V, VI, VII, and VIII",
-      "D": "II and III"
-    },
-    "answer": "A"
-  },
-  {
+{
     "id": 50062,
     "specialty": "HPB",
     "source_file": "Biliary anatomy 2.0.pdf",
@@ -947,53 +132,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
-    "id": 50063,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 13,
-    "source_question_number": 38,
-    "question": "A 64-year-old male presents a liver mass on CT (com- puted tomography) scan. It reveals occlusion of the right portal vein and right-sided bile duct dilation. What most accurately describes the following two images?17",
-    "options": {
-      "A": "n extended right hepatectomy with hilar lymphadenectomy and portal vein reconstruction. Match the anatomic structures with the alphabetical labels shown in the figure:",
-      "B": "Congestive right liver",
-      "C": "Ischemia–reperfusion injury",
-      "D": "Atrophy-hypertrophy complex With the image presented in the previous question, underwent"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50064,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 13,
-    "source_question_number": 44,
-    "question": "In the following images, which segments do NOT show bile duct dilation?",
-    "options": {
-      "A": "II, III",
-      "B": "VI, VII",
-      "C": "V, VIII",
-      "D": "IV, V"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50065,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 13,
-    "source_question_number": 45,
-    "question": "Who was the first to introduce intraoperative cholangio- graphy in surgical practice?18",
-    "options": {
-      "A": "Claude Couinaud",
-      "B": "Carl Hjortsjo",
-      "C": "holecystectomy. This imaging study allowed physicians to intraoperatively diagnose and concurrently treat a bile",
-      "D": "uct injury or choledocholithiasis.",
-      "E": "xplanation: in 1932, Pablo Mirizzi reported the first series of routine intraoperative cholangiography during"
-    },
-    "answer": "A"
-  },
-  {
+{
     "id": 50066,
     "specialty": "HPB",
     "source_file": "Biliary anatomy 2.0.pdf",
@@ -1008,7 +147,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
+{
     "id": 50067,
     "specialty": "HPB",
     "source_file": "Biliary anatomy 2.0.pdf",
@@ -1023,191 +162,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
-    "id": 50068,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 14,
-    "source_question_number": 48,
-    "question": "Select the correct statement21:",
-    "options": {
-      "A": "Bile from the caudate lobe drains into both the right and left hepatic ducts near the confluence",
-      "B": "Hilar cholangiocarcinoma rarely invades segment I",
-      "C": "The caudate lobe forms part of the anterior limit of the hilar plate",
-      "D": "The caudate process is the most readily identified portion of segment I"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50069,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 14,
-    "source_question_number": 49,
-    "question": "What common bile duct width is highly indicative of",
-    "options": {
-      "A": "> 8 mm",
-      "B": "> 10 mm",
-      "C": "> 12 mm",
-      "D": "> 14 mm"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50070,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 14,
-    "source_question_number": 50,
-    "question": "Which factor is associated with an increase in the com- mon bile duct diameter without obstruction? 23,24",
-    "options": {
-      "A": "> 70 years old",
-      "B": "Previous cholecystectomy",
-      "C": "Opiate users",
-      "D": "All of the above"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50071,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 14,
-    "source_question_number": 51,
-    "question": "What is the most frequent bacterial colonizer of the bile",
-    "options": {
-      "A": "Escherichia coli",
-      "B": "Staphylococcus aureus",
-      "C": "Klebsiella pneumoniae",
-      "D": "None, bile is sterile in normal conditions"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50072,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 14,
-    "source_question_number": 52,
-    "question": "Intraoperatively, which is an essential study to assess",
-    "options": {
-      "A": "te usage.23 The armamentarium used to assess the presence, level, and",
-      "B": "ladder in situ. 22,27 However, this value increases with older",
-      "C": "ause of obstruction is diverse, but each imaging study has its pros and cons that make it suitable for a specific context.28",
-      "D": "ebate on the average normal common bile duct diameter. Studies suggest that it is approximately 3–7 mm with a gall-",
-      "E": "xplanation to questions 49, 50, and 51: there is some"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50073,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 14,
-    "source_question_number": 53,
-    "question": "Who was the first to describe the sheaths surrounding the portal pedicles?29",
-    "options": {
-      "A": "Francis Glisson",
-      "B": "Johannes Walaeus",
-      "C": "J. E. Healey Jr",
-      "D": "escribed this finding. 29",
-      "E": "xplanation: Francis Glisson described a sheath sur - rounding the portal triad in 1659. 30 However, in 1640, the Dutch physician Johannes Walaeus had originally"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50074,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 14,
-    "source_question_number": 54,
-    "question": "What is the structure depicted by the yellow arrow?",
-    "options": {
-      "A": "llowing for visualization of the intrahepatic biliary tree on a CT scan",
-      "B": "Segment VII bile duct",
-      "C": "Segment V bile duct",
-      "D": "Right anterior sectoral duct",
-      "E": "xplanation: this patient has bilateral biliary tract dilation,"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50075,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 15,
-    "source_question_number": 1,
-    "question": "3",
-    "options": {
-      "A": "It shows simultaneous dilation of the common",
-      "B": "It shows both the common bile duct and cystic",
-      "C": "reatic duct, and signifies a mass in the pancreatic head",
-      "D": "It shows and signifies dissected common bile duct wall"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50076,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 15,
-    "source_question_number": 58,
-    "question": "Which of the following statements about choledochal",
-    "options": {
-      "A": "Most of them are diagnosed within the first decade of life",
-      "B": "They are most common in females and Asian popu- lation",
-      "C": "Pancreaticobiliary maljunction is the most common",
-      "D": "All of the above",
-      "E": "tiology of this entity"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50077,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 15,
-    "source_question_number": 59,
-    "question": "Which type of choledochal cyst is depicted in the illus- tration? What is its relative frequency?34,35",
-    "options": {
-      "A": "fter 25 s of contrast infusion with gadolinium",
-      "B": "This is the common bile duct and is seen after",
-      "C": "Type I, it is the most common",
-      "D": "Type V, it is the most common"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50078,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 15,
-    "source_question_number": 57,
-    "question": "Which is the most frequently observed anatomical vari-",
-    "options": {
-      "A": "mpulla is present (85%)",
-      "B": "Both ducts enter together, but the common channel is short, and no true ampulla is present (85%)",
-      "C": "There is a long common channel that may or may not be dilated to form an ampulla (85%)",
-      "D": "Junction of the ducts take place at the third portion of the duodenum, and the common channel always presents an ampulla (85%)"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50079,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 16,
-    "source_question_number": 60,
-    "question": "What should be the correct treatment strategy for this type of choledochal cyst?35",
-    "options": {
-      "A": "ERCP with stent placement",
-      "B": "Extrahepatic bile duct cyst excision, cholecystec- tomy, and bilioenteric reconstruction",
-      "C": "Cystenterostomy",
-      "D": "All of the above"
-    },
-    "answer": "A"
-  },
-  {
+{
     "id": 50080,
     "specialty": "HPB",
     "source_file": "Biliary anatomy 2.0.pdf",
@@ -1222,204 +177,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
-    "id": 50081,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 16,
-    "source_question_number": 62,
-    "question": "The gallbladder is divided into38:",
-    "options": {
-      "A": "Fundus, infundibulum, neck",
-      "B": "Fundus, body, neck",
-      "C": "Fundus, body, infundibulum, Hartman’s pouch, neck",
-      "D": "Fundus, body, infundibulum, neck, cystic duct"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50082,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 16,
-    "source_question_number": 63,
-    "question": "Which hepatic segments form the gallbladder bed?",
-    "options": {
-      "A": "IVa and V",
-      "B": "IVb and VI",
-      "C": "IVb and V",
-      "D": "IVa and V"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50083,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 16,
-    "source_question_number": 64,
-    "question": "Choose the layer that is absent in the gallbladder wall39:",
-    "options": {
-      "A": "Mucosa",
-      "B": "Submucosa",
-      "C": "Muscular",
-      "D": "ivided this into T2a (tumor on the peritoneal side) and T2b (tumor on the hepatic side). The latter was associated with worse overall survival.",
-      "E": "gy for T1a tumors.40 On the other hand, T1b tumors are the motive of discussion. Some argue radical cholecystectomy is the treatment of choice; however, others oppose this.41,42 Moreover, T2 (tumor that reached the subserosal layer) has been associated with worse 5-year overall survival com- pared to T1 (56.1% vs 85.9%).43 Shindoh et al. further sub-"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50084,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 16,
-    "source_question_number": 65,
-    "question": "What is the triangle of Calot?44",
-    "options": {
-      "A": "nd the inferior surface of the liver superiorly",
-      "B": "It is the liver surface that is in touch with the duode- num",
-      "C": "It is the deperitonized liver surface",
-      "D": "It is an anatomic space bordered by the right hepatic"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50085,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 16,
-    "source_question_number": 66,
-    "question": "The triangle of Calot contains which of the following structures44:",
-    "options": {
-      "A": "Cystic artery",
-      "B": "Cystic lymph node of Lund",
-      "C": "Right hepatic artery",
-      "D": "All of the above"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50086,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 16,
-    "source_question_number": 67,
-    "question": "Which is a requirement to achieve a critical view of safety during laparoscopic cholecystectomy?45",
-    "options": {
-      "A": "The triangle of Calot cleared of fat and tissue",
-      "B": "The lowest part of the gallbladder should be separated from the cystic plate",
-      "C": "Two structures, and only two, should be seen enter- ing the gallbladder",
-      "D": "All of the above"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50087,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 16,
-    "source_question_number": 68,
-    "question": "A normal non-inflamed gallbladder has46:",
-    "options": {
-      "A": "A wall thickness of 8 mm or less",
-      "B": "Pericholecystic fluid",
-      "C": "Its anteroposterior diameter of less than 40 mm",
-      "D": "Sludge"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50088,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 17,
-    "source_question_number": 69,
-    "question": "Which of the following statements about the cystic duct is true?9",
-    "options": {
-      "A": "It most commonly inserts on the left lateral aspect of the common bile duct",
-      "B": "Low insertion is defined as joining at the lower third of the common hepatic duct",
-      "C": "A short cystic duct is defined as < 10 mm long",
-      "D": "None of the above"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50089,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 17,
-    "source_question_number": 70,
-    "question": "What is the definition of a left-sided gallbladder?47",
-    "options": {
-      "A": "The gallbladder located to the left of the ligamen- tum teres",
-      "B": "The gallbladder located to the left of the common bile",
-      "C": "The gallbladder located to the left of the portal vein",
-      "D": "The gallbladder located at the left upper quadrant"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50090,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 17,
-    "source_question_number": 71,
-    "question": "Who was the first to ever perform a laparoscopic chol-",
-    "options": {
-      "A": "Claude Couinaud",
-      "B": "Carl Hjortsjo",
-      "C": "Erich Mühe",
-      "D": "Pablo Mirizzi",
-      "E": "cystectomy?48"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50091,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 17,
-    "source_question_number": 72,
-    "question": "What is a duct of Luschka?49",
-    "options": {
-      "A": "It is a segment I bile duct that drains directly in the",
-      "B": "It is a segment V aberrant duct draining directly into the common hepatic duct",
-      "C": "It is a hepaticocholecystic bile duct that always runs into the gallbladder",
-      "D": "It is a subvesical bile duct that either runs super- ficially close to or inserts in the gallbladder"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50092,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 17,
-    "source_question_number": 73,
-    "question": "The gallbladder is in contact with which of the follow- ing organs?",
-    "options": {
-      "A": "Liver",
-      "B": "Duodenum",
-      "C": "Transverse colon",
-      "D": "All of the above"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50093,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 17,
-    "source_question_number": 74,
-    "question": "Which of the following statements about the duplicated gallbladders is true?50.",
-    "options": {
-      "A": "gallbladder diverticulum, a choledochal cyst, pericholecystic fluid, and focal adenomyomatosis",
-      "B": "They always share a common cystic duct",
-      "C": "Differential diagnosis includes folded gallbladder,",
-      "D": "A and C are correct"
-    },
-    "answer": "A"
-  },
-  {
+{
     "id": 50094,
     "specialty": "HPB",
     "source_file": "Biliary anatomy 2.0.pdf",
@@ -1434,22 +192,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
-    "id": 50095,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 17,
-    "source_question_number": 76,
-    "question": "Which of the following about the cystic artery and its frequency of variants is true?3,32",
-    "options": {
-      "A": "74.7% of the time the cystic artery arises from the right hepatic artery",
-      "B": "2.5% of the time the cystic artery arises from the gastroduodenal artery",
-      "C": "20.5% of the time the cystic artery arises from the left hepatic artery",
-      "D": "All of the above"
-    },
-    "answer": "A"
-  },
-  {
+{
     "id": 50096,
     "specialty": "HPB",
     "source_file": "Biliary anatomy 2.0.pdf",
@@ -1464,51 +207,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
-    "id": 50097,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 18,
-    "source_question_number": 78,
-    "question": "What is the diagnosis associated with the imaging pre- sented below?55",
-    "options": {
-      "A": "This is a “beads on a string” appearance of the bile",
-      "B": "This is a “beads on a string” appearance of the bile",
-      "C": "This is onion skinning appearance, and it signifies primary sclerosing cholangitis.",
-      "D": "This is onion skinning appearance, and it signifies primary biliary cholangitis"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50098,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 18,
-    "source_question_number": 79,
-    "question": "What are the possible causes of the sign depicted in the image?",
-    "options": {
-      "A": "Air in the biliary tree caused by bile duct stenting",
-      "B": "Blood in the biliary tree caused by bile duct stenting",
-      "C": "Air in the biliary tree caused by a pancreatic head mass",
-      "D": "Blood in the biliary tree caused by tumoral inva - sion"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50099,
-    "specialty": "HPB",
-    "source_file": "Biliary anatomy 2.0.pdf",
-    "source_page": 19,
-    "source_question_number": 1,
-    "question": "3",
-    "options": {
-      "A": "nderson Cancer Center Support Grant CA016672.",
-      "C": "onflict of Interest The authors declare no competing interests. References",
-      "D": "eclarations"
-    },
-    "answer": "A"
-  },
-  {
+{
     "id": 50100,
     "specialty": "HPB",
     "source_file": "Biliary anatomy 2.0.pdf",
@@ -1521,7 +220,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
+{
     "id": 50101,
     "specialty": "HPB",
     "source_file": "Biliary anatomy 2.0.pdf",
@@ -1534,7 +233,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
+{
     "id": 50102,
     "specialty": "HPB",
     "source_file": "Biliary anatomy 2.0.pdf",
@@ -1547,7 +246,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
+{
     "id": 50103,
     "specialty": "HPB",
     "source_file": "Biliary anatomy 2.0.pdf",
@@ -1560,7 +259,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
+{
     "id": 50104,
     "specialty": "HPB",
     "source_file": "Biliary anatomy 2.0.pdf",
@@ -1573,127 +272,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
-    "id": 50105,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 1,
-    "source_question_number": 2,
-    "question": "What is the vascular structure indicated by the arrow - head? How can you differentiate the vessels from one",
-    "options": {
-      "A": "Portal vein. The hepatic vein is surrounded by a hyperechoic sheath.",
-      "B": "y a hyperechoic sheath.",
-      "C": "Hepatic artery. The hepatic artery is not surrounded",
-      "D": "Bile duct. The bile duct is not surrounded by a hyperechoic sheath."
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50106,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 2,
-    "source_question_number": 13,
-    "question": "What is the largest anatomical segment in a normal liver?",
-    "options": {
-      "A": "IV",
-      "B": "VI",
-      "C": "VII",
-      "D": "VIII"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50107,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 2,
-    "source_question_number": 14,
-    "question": "How many subsegments does segment VIII have?",
-    "options": {
-      "A": "One",
-      "B": "Three",
-      "C": "Five",
-      "D": "Seven"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50108,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 2,
-    "source_question_number": 15,
-    "question": "According to the Brisbane 2000 Terminology 1, which of the following statements is true?",
-    "options": {
-      "A": "Right anterior sectorectomy corresponds to resection of segments VI and VII",
-      "B": "Extended right hepatectomy corresponds to resec - tion of right hemiliver and left lateral sector",
-      "C": "Right posterior sectorectomy corresponds to resec- tion of segments VI and VII",
-      "D": "Extended left hepatectomy corresponds to resection of left hemiliver and segment IV"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50109,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 2,
-    "source_question_number": 16,
-    "question": "Which of the following statements is true about intersegmental planes?",
-    "options": {
-      "A": "The liver is divided by one transverse scissure and three longitudinal scissures",
-      "B": "The Rex-Cantlie line runs between segments IV and V/ VIII",
-      "C": "In anatomic liver resections, the liver parenchyma is transected following intersegmental planes",
-      "D": "All of the above"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50110,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 2,
-    "source_question_number": 17,
-    "question": "What is the importance of the right inferior phrenic vein?",
-    "options": {
-      "A": "It allows identification of the right hepatic vein (RHV) which runs into the inferior vena cava (IVC) just caudally",
-      "B": "It is a common cause of bleeding during liver mobi- lization",
-      "C": "It is frequently used for vascular reconstructions",
-      "D": "All of the above"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50111,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 2,
-    "source_question_number": 18,
-    "question": "During liver surgery, which extrahepatic landmark(s)",
-    "options": {
-      "A": "Common bile duct confluence",
-      "B": "Gallbladder fossa and inferior vena cava (IVC)",
-      "C": "Falciform ligament",
-      "D": "All of the above"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50112,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 3,
-    "source_question_number": 19,
-    "question": "Between the portal system and the arteriobiliary sys- tem, which has more anatomic variations in their first order branches?",
-    "options": {
-      "A": "Portal system",
-      "B": "Arteriobiliary system",
-      "C": "Equal",
-      "D": "Depends on the patient’s epidemiological back - ground"
-    },
-    "answer": "A"
-  },
-  {
+{
     "id": 50113,
     "specialty": "HPB",
     "source_file": "Liver Anatomy quizz 2.0.pdf",
@@ -1708,187 +287,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
-    "id": 50114,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 3,
-    "source_question_number": 25,
-    "question": "Which statement about the caudate lobe is true?",
-    "options": {
-      "A": "An average of three (one to six) portal branches sup- plies the entire caudate lobe",
-      "B": "Most of the caudate lobe drains directly into the inferior vena cava (IVC)",
-      "C": "The Spiegel lobe is mainly supplied by left-sided portal branches",
-      "D": "All of the above"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50115,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 3,
-    "source_question_number": 26,
-    "question": "What is the location of the proper hepatic artery in the hepatoduodenal ligament?",
-    "options": {
-      "A": "Medial to the common bile duct",
-      "B": "Lateral to the common bile duct",
-      "C": "Ventral to the portal vein",
-      "D": "A and C are correct Match the following anatomic structures with their respective labels in the figure:"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50116,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 3,
-    "source_question_number": 36,
-    "question": "Which of the following statements is true about hepatic",
-    "options": {
-      "A": "rtery (LGA) in 25% of cases (10% replaced and 15% accessory)",
-      "B": "An accessory artery is one that arises entirely from",
-      "C": "The left hepatic artery arises from the left gastric",
-      "D": "A Michels type III variation consists of the left hepatic artery (LHA) arising from the LGA"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50117,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 4,
-    "source_question_number": 37,
-    "question": "What anatomical variation of the hepatic artery is shown in the illustration?",
-    "options": {
-      "A": "Replaced left hepatic artery",
-      "B": "Replaced right hepatic artery",
-      "C": "Accessory right hepatic artery",
-      "D": "Both replaced right and left hepatic artery"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50118,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 4,
-    "source_question_number": 38,
-    "question": "What is the incidence of hepatic artery anatomic vari-",
-    "options": {
-      "A": "25%",
-      "B": "45%",
-      "C": "65%",
-      "D": "85%"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50119,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 4,
-    "source_question_number": 39,
-    "question": "What should be done if one of the hepatic arteries (left or right) is accidentally ligated during surgery?",
-    "options": {
-      "A": "Arterial reconstruction is necessary",
-      "B": "ar hepatic artery is preserved",
-      "C": "Arterial reconstruction is unnecessary if the interlo-",
-      "D": "None of the above"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50120,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 4,
-    "source_question_number": 40,
-    "question": "What are the borders of the foramen of Winslow?20",
-    "options": {
-      "A": "The caudate lobe",
-      "B": "Gastrohepatic ligament",
-      "C": "The peritoneum covering the first portion of the duo-",
-      "D": "All of the above"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50121,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 4,
-    "source_question_number": 41,
-    "question": "Who was the first to perform a successful liver resec- tion?",
-    "options": {
-      "A": "Carl Langenbuch",
-      "B": "Francis Glisson",
-      "C": "Hogarth Pringle",
-      "D": "Hugo Rex"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50122,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 4,
-    "source_question_number": 42,
-    "question": "Which of the following statements is true?",
-    "options": {
-      "A": "The hepatic artery is the last structure in the hilum to be formed during embryogenesis",
-      "B": "The Rex-Cantlie line represents the anatomical mid- line of the liver, thus dividing the liver into left and right liver",
-      "C": "The portal vein develops from the primitive paired vitelline veins that arise on the yolk sac",
-      "D": "All of the above"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50123,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 4,
-    "source_question_number": 43,
-    "question": "Who was the first to perform a liver transplant?",
-    "options": {
-      "A": "Claude Couinaud",
-      "B": "Thomas Starzl",
-      "C": "Erich Mühe",
-      "D": "Christiaan Barnard"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50124,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 4,
-    "source_question_number": 44,
-    "question": "Which of the following statements is true about the blood supply to the liver?",
-    "options": {
-      "A": "The portal vein provides 75% of the blood supply to the liver",
-      "B": "The hepatic artery provides 75% of the blood supply to the liver",
-      "C": "Blood supply to the intrahepatic bile ducts is mainly through the portal vein",
-      "D": "The portal vein provides 50% of the blood supply to the liver"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50125,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 5,
-    "source_question_number": 46,
-    "question": "What anatomic variation is present in this patient with",
-    "options": {
-      "A": "Replaced right hepatic artery",
-      "B": "Accessory spleen",
-      "C": "Inferior right hepatic vein (IRHV)",
-      "D": "Independent right posterior portal vein"
-    },
-    "answer": "A"
-  },
-  {
+{
     "id": 50126,
     "specialty": "HPB",
     "source_file": "Liver Anatomy quizz 2.0.pdf",
@@ -1903,308 +302,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
-    "id": 50127,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 5,
-    "source_question_number": 48,
-    "question": "Which porto-systemic collateral pathways can become patent with the development of portal hypertension?",
-    "options": {
-      "A": "Esophagogastric",
-      "B": "Parastomal",
-      "C": "Retroperitoneal",
-      "D": "All of the above"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50128,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 5,
-    "source_question_number": 49,
-    "question": "Which of the following structures is not a component of the portal triad?",
-    "options": {
-      "A": "Hepatic arteriole",
-      "B": "Bile ductule",
-      "C": "Lymphatic vessels",
-      "D": "Hepatic venules"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50129,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 5,
-    "source_question_number": 50,
-    "question": "How many arterial branches provide blood supply to segment IV in most patients?",
-    "options": {
-      "A": "1",
-      "B": "2",
-      "C": "3",
-      "D": "4"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50130,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 5,
-    "source_question_number": 51,
-    "question": "Which of the following statements is true about the hepatic veins?",
-    "options": {
-      "A": "Their course divides the liver into four segments",
-      "B": "In more than half of patients, the left and middle hepatic veins join into one vein before draining into the IVC",
-      "C": "The left hepatic vein only drains the left lateral sec- tor",
-      "D": "All of the above"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50131,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 5,
-    "source_question_number": 52,
-    "question": "Which of the following organs is not in contact with the liver surface?",
-    "options": {
-      "A": "Stomach",
-      "B": "Duodenum",
-      "C": "Transverse colon",
-      "D": "Aorta"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50132,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 6,
-    "source_question_number": 53,
-    "question": "The falciform ligament connects dorsally to which liga- ments?",
-    "options": {
-      "A": "Triangular ligaments",
-      "B": "Coronary ligaments",
-      "C": "Gastrohepatic and gastroduodenal ligaments",
-      "D": "None of the above"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50133,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 6,
-    "source_question_number": 54,
-    "question": "When the falciform ligament sheaths divide, which structure is contained within the left bare area?",
-    "options": {
-      "A": "IVC and hepatic veins",
-      "B": "Portal vein",
-      "C": "Gallbladder",
-      "D": "None of the above"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50134,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 6,
-    "source_question_number": 55,
-    "question": "Which of the following statements about the Makuuchi ligament is true?",
-    "options": {
-      "A": "It has also been called the IVC ligament or hepato-",
-      "B": "It is present in 77% of patients",
-      "C": "audate lobe",
-      "D": "All of the above"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50135,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 6,
-    "source_question_number": 56,
-    "question": "What is the most common course of the right posterior hepatic artery (RPHA) relative to the right portal vein?",
-    "options": {
-      "A": "Supraportal",
-      "B": "Infraportal",
-      "C": "Combined infraportal and supraportal",
-      "D": "None of the above"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50136,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 6,
-    "source_question_number": 57,
-    "question": "Which embryologic structures are the predecessors of the portal vein?",
-    "options": {
-      "A": "Umbilical veins",
-      "B": "Umbilical arteries",
-      "C": "Vitelline veins",
-      "D": "None of the above"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50137,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 6,
-    "source_question_number": 58,
-    "question": "Which of the following is the most common cause of neonatal cholestasis?",
-    "options": {
-      "A": "Alpha1-antitrypsin deficiency",
-      "B": "Biliary atresia",
-      "C": "Infectious",
-      "D": "Metabolic disorders"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50138,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 6,
-    "source_question_number": 59,
-    "question": "Which of the following statements about the portal vein is true?",
-    "options": {
-      "A": "nterior to said structures",
-      "B": "It originates posterior to the IVC",
-      "C": "The left portal vein is longer than the right",
-      "D": "Ligation of the right portal vein would cause hyper- trophy of the right liver"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50139,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 6,
-    "source_question_number": 60,
-    "question": "What type of portal division is illustrated in the figure",
-    "options": {
-      "A": "Independent right posterior portal vein",
-      "B": "Staged division",
-      "C": "Bifurcation",
-      "D": "Trifurcation"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50140,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 7,
-    "source_question_number": 61,
-    "question": "What is the type of portal division shown below?",
-    "options": {
-      "A": "Independent left posterior portal vein",
-      "B": "Bifurcation",
-      "C": "Staged division",
-      "D": "Trifurcation"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50141,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 7,
-    "source_question_number": 62,
-    "question": "Why are these portal vein anatomical variants impor - tant?",
-    "options": {
-      "A": "Because the demarcation of the division between the right and left livers will vary",
-      "B": "Because the staged division is associated with a large right posterior sector",
-      "C": "Because the staged division is associated with a small right posterior sector",
-      "D": "Because the staged division is associated with a large right anterior sector"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50142,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 7,
-    "source_question_number": 63,
-    "question": "In Greek mythology, which deity was chained to a rock",
-    "options": {
-      "A": "Prometheus",
-      "B": "Hares",
-      "C": "Theseus",
-      "D": "Hermes"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50143,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 7,
-    "source_question_number": 64,
-    "question": "Which of the following statements about portal vein",
-    "options": {
-      "A": "It is indicated in a normal liver with no exposure to",
-      "B": "etween 2 and 8 weeks after PVE",
-      "C": "Post-PVE liver volumetry should be performed",
-      "D": "All of the above",
-      "E": "mbolization (PVE) is true?"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50144,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 7,
-    "source_question_number": 65,
-    "question": "Considering the marked area as the future liver rem- nant (FLR), what resection is to be performed?",
-    "options": {
-      "A": "Right hepatectomy",
-      "B": "Extended right hepatectomy/right trisectionectomy",
-      "C": "Left hepatectomy",
-      "D": "Extended left hepatectomy/left trisectionectomy"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50145,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 7,
-    "source_question_number": 66,
-    "question": "Which is the average volume of the left liver?",
-    "options": {
-      "A": "56%",
-      "B": "50%",
-      "C": "45%",
-      "D": "33%"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50146,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 8,
-    "source_question_number": 67,
-    "question": "Which of the following statements is true about the inferior right hepatic vein (IRHV)?",
-    "options": {
-      "A": "On ultrasound, an IRHV is identified posterior to the right portal vein",
-      "B": "It is present in approximately 20% of patients",
-      "C": "It can be larger in caliber than the right hepatic vein",
-      "D": "All of the above"
-    },
-    "answer": "A"
-  },
-  {
+{
     "id": 50147,
     "specialty": "HPB",
     "source_file": "Liver Anatomy quizz 2.0.pdf",
@@ -2219,188 +317,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
-    "id": 50148,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 8,
-    "source_question_number": 69,
-    "question": "Which of the following methods can be used intraopera- tively to identify the anatomical borders between the liver segments?",
-    "options": {
-      "A": "Inflow occlusion",
-      "B": "Indigo carmine",
-      "C": "Intraoperative ultrasound",
-      "D": "All of the above"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50149,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 8,
-    "source_question_number": 70,
-    "question": "In a patient with normal vascular anatomy, what will hap- pen to the liver if the proper hepatic artery is ligated?",
-    "options": {
-      "A": "nd the liver subcapsular plexus may be sufficient to preserve liver function",
-      "B": "In most cases, supply from the gastroduodenal artery is sufficient to preserve liver function",
-      "C": "Extrinsic arteries along the common bile duct",
-      "D": "The portal blood supply alone is sufficient to pre - serve liver function"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50150,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 8,
-    "source_question_number": 71,
-    "question": "What will happen if the right hepatic vein is ligated with preserved portal and arterial inflow?",
-    "options": {
-      "A": "Liver necrosis",
-      "B": "Liver congestion harmful for preserving the liver function in the affected segments",
-      "C": "Liver function will be preserved due to the develop- ment of collaterals and vascular compensation",
-      "D": "None of the above"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50151,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 8,
-    "source_question_number": 72,
-    "question": "Hepatocellular carcinoma (HCC) receives its blood supply mainly from:",
-    "options": {
-      "A": "Hepatic artery",
-      "B": "Hepatic vein",
-      "C": "Portal vein",
-      "D": "None of the above"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50152,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 9,
-    "source_question_number": 73,
-    "question": "A 64-year-old male patient presents with hypoenhanc- ing liver lesions on a CT scan. Where in the liver are these tumors located?",
-    "options": {
-      "A": "Segments IV and VIII",
-      "B": "Segments II and VI",
-      "C": "Segments III and V",
-      "D": "Segments IV and VI"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50153,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 9,
-    "source_question_number": 74,
-    "question": "In which segments are the colorectal liver metastases located in the image below?",
-    "options": {
-      "A": "IV and VII",
-      "B": "IV and V",
-      "C": "III and VIII",
-      "D": "I and VIII"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50154,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 9,
-    "source_question_number": 75,
-    "question": "Name the avascular space on the ventral side of the ret- rohepatic IVC, commonly used to perform the hanging maneuver.",
-    "options": {
-      "A": "Space of Courvoisier",
-      "B": "Space of Glisson",
-      "C": "Space of Couinaud",
-      "D": "Space of Rouviere"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50155,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 9,
-    "source_question_number": 76,
-    "question": "Which of the following statements is true about the",
-    "options": {
-      "A": "It is also called congenital extrahepatic portosys- temic shunt",
-      "B": "It is categorized into two types based on the pres-",
-      "C": "A differential diagnosis is an acquired extrahepatic portosystemic shunt, as seen in cirrhotic patients",
-      "D": "All of the above",
-      "E": "nce or absence of portal inflow to the liver"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50156,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 9,
-    "source_question_number": 77,
-    "question": "What portal structures are in the sulcus of Rouviere?",
-    "options": {
-      "A": "Right hepatic pedicle",
-      "B": "Right posterior sectoral triad",
-      "C": "Right anterior sectorial triad",
-      "D": "Left hepatic pedicle"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50157,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 9,
-    "source_question_number": 78,
-    "question": "A hilar cholangiocarcinoma invades the hepatic duct",
-    "options": {
-      "A": "Right hepatectomy",
-      "B": "Right hepatectomy+caudate lobe resection",
-      "C": "Extended left hepatectomy",
-      "D": "No liver resection at all"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50158,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 9,
-    "source_question_number": 79,
-    "question": "Which of the following are criteria for technical resect-",
-    "options": {
-      "A": "Two contiguous preservable segments",
-      "B": "Preserved vascular inflow, outflow, and biliary drainage",
-      "C": "Adequate remnant volume and function",
-      "D": "All of the above"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50159,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 10,
-    "source_question_number": 80,
-    "question": "A 73-year-old male patient with a history of resected",
-    "options": {
-      "A": "NSWERS",
-      "B": "Enlarged lymph nodes",
-      "C": "Hyperenhancing resection site",
-      "D": "Imaging artifact"
-    },
-    "answer": "A"
-  },
-  {
+{
     "id": 50160,
     "specialty": "HPB",
     "source_file": "Liver Anatomy quizz 2.0.pdf",
@@ -2413,143 +330,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
-    "id": 50161,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 10,
-    "source_question_number": 2,
-    "question": "What is the vascular structure indicated by the arrow - head? How can you differentiate the vessels from one",
-    "options": {
-      "A": "hyperechoic sheath.",
-      "B": "y a hyperechoic sheath.",
-      "C": "Hepatic artery. The hepatic artery is not surrounded",
-      "D": "Bile duct. The bile duct is not surrounded by a hyperechoic sheath."
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50162,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 11,
-    "source_question_number": 3,
-    "question": "What fibrous structure encircles and follows the vasculo-",
-    "options": {
-      "A": "Walean sheath",
-      "B": "Glisson capsule",
-      "C": "Perivascular sheath",
-      "D": "r Glisson’s description. The sheaths are hyperechoic on ultrasound.4 Match the following structures with their respective labels shown in the figure."
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50163,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 11,
-    "source_question_number": 14,
-    "question": "How many subsegments does segment VIII have? 6,7",
-    "options": {
-      "A": "nd lateral, and thus consists of the mentioned subsegments. 6,7",
-      "B": "Three",
-      "C": "Five",
-      "D": "Seven",
-      "E": "xplanation: Segment VIII is the largest segment in a normal liver (11.1–44.8% of the total liver volume),5 located in the anterosuperior portion of the right anterior sector. It is separated from segment V (inferiorly) by the right por - tal vein, from segment VII (dorsally) by the right hepatic vein, and from segment IVa (medially) by the middle hepatic vein.8 This segment most often receives its blood supply from three portal vein branches, which are ventral, dorsal,"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50164,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 11,
-    "source_question_number": 15,
-    "question": "According to the Brisbane 2000 Terminology 1, which of the following statements is true?",
-    "options": {
-      "A": "Right anterior sectorectomy corresponds to resection of segments VI and VII",
-      "B": "Extended right hepatectomy corresponds to resec - tion of right hemiliver and left lateral sector",
-      "C": "Right posterior sectorectomy corresponds to resection of segments VI and VII",
-      "D": "Extended left hepatectomy corresponds to resection of left hemiliver and segment IV"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50165,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 11,
-    "source_question_number": 16,
-    "question": "Which of the following statements is true about intersegmental planes? 5",
-    "options": {
-      "A": "The liver is divided by one transverse scissure and three longitudinal scissures",
-      "B": "The Rex-Cantlie line runs between segments IV and V/VIII",
-      "C": "In anatomic liver resections, the liver parenchyma is transected following intersegmental planes",
-      "D": "All of the above"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50166,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 11,
-    "source_question_number": 17,
-    "question": "What is the importance of the right inferior phrenic vein? 9",
-    "options": {
-      "A": "It allows identification of the right hepatic vein (RHV) which runs into the inferior vena cava (IVC) just caudally",
-      "B": "It is a common cause of bleeding during liver mobi- lization",
-      "C": "It is frequently used for vascular reconstructions",
-      "D": "All of the above"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50167,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 11,
-    "source_question_number": 13,
-    "question": "What is the largest anatomical segment in a normal liver? 5",
-    "options": {
-      "A": "IV",
-      "B": "VI",
-      "C": "VII",
-      "D": "VIII"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50168,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 12,
-    "source_question_number": 18,
-    "question": "During liver surgery, which extrahepatic landmark(s)",
-    "options": {
-      "A": "Common bile duct confluence",
-      "B": "Gallbladder fossa and inferior vena cava (IVC)",
-      "C": "Falciform ligament",
-      "D": "All of the above"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50169,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 12,
-    "source_question_number": 19,
-    "question": "Between the portal system and the arteriobiliary sys- tem, which has more anatomic variations in their first order branches? 11",
-    "options": {
-      "A": "Portal system",
-      "B": "Arteriobiliary system",
-      "C": "Equal",
-      "D": "Depends on the patient’s epidemiological back - ground"
-    },
-    "answer": "A"
-  },
-  {
+{
     "id": 50170,
     "specialty": "HPB",
     "source_file": "Liver Anatomy quizz 2.0.pdf",
@@ -2564,176 +345,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
-    "id": 50171,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 12,
-    "source_question_number": 25,
-    "question": "Which statement about the caudate lobe is true? 14",
-    "options": {
-      "A": "An average of three (one to six) portal branches sup- plies the entire caudate lobe",
-      "B": "Most of the caudate lobe drains directly into the inferior vena cava (IVC)",
-      "C": "The Spiegel lobe is mainly supplied by left-sided portal branches",
-      "D": "All of the above"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50172,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 12,
-    "source_question_number": 26,
-    "question": "What is the location of the proper hepatic artery in the hepatoduodenal ligament? 15",
-    "options": {
-      "A": "Medial to the common bile duct",
-      "B": "Lateral to the common bile duct",
-      "C": "Ventral to the portal vein",
-      "D": "A and C are correct"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50173,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 13,
-    "source_question_number": 36,
-    "question": "Which of the following statements is true about hepatic artery anatomical variations? 15,16",
-    "options": {
-      "A": "rtery (LGA) in 25% of cases (10% replaced and 15% accessory)",
-      "B": "An accessory artery is one that arises entirely from",
-      "C": "The left hepatic artery arises from the left gastric",
-      "D": "A Michels type III variation consists of the left hepatic artery (LHA) arising from the LGA"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50174,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 13,
-    "source_question_number": 37,
-    "question": "What anatomical variation of the hepatic artery is shown in the illustration? 16,17",
-    "options": {
-      "A": "Replaced left hepatic artery",
-      "B": "Replaced right hepatic artery",
-      "C": "Accessory right hepatic artery",
-      "D": "Both replaced right and left hepatic artery"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50175,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 13,
-    "source_question_number": 38,
-    "question": "What is the incidence of hepatic artery anatomic variants? 18",
-    "options": {
-      "A": "rtery originated from an aberrant source and was additive to the normal lobar branch derived from the celiac arterial",
-      "B": "ranch originated entirely from anomalous origin. On the other hand, the term “accessory” was used if an additional",
-      "C": "ies.16 He used the term “replaced” when the hepatic arterial",
-      "D": "istribution.15",
-      "E": "xplanation regarding the anatomical variations of the hepatic artery: In 1955, Michels classified the anatomical variations of the hepatic artery and reported their frequen-"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50176,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 14,
-    "source_question_number": 39,
-    "question": "What should be done if one of the hepatic arteries (left or right) is accidentally ligated during surgery?",
-    "options": {
-      "A": "Arterial reconstruction is necessary",
-      "B": "oth left and right arterial blood supply",
-      "C": "Arterial reconstruction is unnecessary if the interlobar hepatic artery is preserved",
-      "D": "None of the above",
-      "E": "xplanation: The interlobar hepatic artery runs into the Walean sheath around the hepatic duct confluence. When it is identified and preserved, it provides alternate blood supply when one of the main hepatic arterial branches is uninten- tionally ligated.19"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50177,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 14,
-    "source_question_number": 40,
-    "question": "What are the borders of the foramen of Winslow? 20",
-    "options": {
-      "A": "lthough rare, this foramen can be a site for the development of an internal hernia.20",
-      "B": "lood loss during liver resections. This is called the Pringle maneuver.21",
-      "C": "The peritoneum covering the first portion of the duo-",
-      "D": "All of the above",
-      "E": "xplanation: Winslow’s foramen allows us to safely place"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50178,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 14,
-    "source_question_number": 41,
-    "question": "Who was the first to perform a successful liver resec- tion?22",
-    "options": {
-      "A": "Carl Langenbuch",
-      "B": "Francis Glisson",
-      "C": "Hogarth Pringle",
-      "D": "Hugo Rex In 1888, the German surgeon Carl Johann August Lan- genbuch performed the first successful liver resection. He is also recognized for having performed the first open chol-",
-      "E": "cystectomy in 1882.23"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50179,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 14,
-    "source_question_number": 42,
-    "question": "Which of the following statements is true? 2,15, 24, 25",
-    "options": {
-      "A": "The hepatic artery is the last structure in the hilum to",
-      "B": "The Rex-Cantlie line represents the anatomical mid- line of the liver, thus dividing the liver into left and right liver",
-      "C": "The portal vein develops from the primitive paired vitelline veins that arise on the yolk sac",
-      "D": "All of the above The Rex-Cantlie line divides the liver into two hemilivers. It was first described by Hugo Rex in 1888, 26 and, 9 years later, James Cantlie described it. 25 The left liver includes segments I, II, III, and IV, and the right liver includes seg- ments V, VI, VII, and VIII."
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50180,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 14,
-    "source_question_number": 43,
-    "question": "Who was the first to perform a liver transplant? 22",
-    "options": {
-      "A": "Claude Couinaud",
-      "B": "Thomas Starzl",
-      "C": "Erich Mühe",
-      "D": "Christiaan Barnard Thomas Starzl was the first to report his results on seven patients who underwent a successful liver transplantation in 1968.27"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50181,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 14,
-    "source_question_number": 44,
-    "question": "Which of the following statements is true about the",
-    "options": {
-      "A": "The portal vein provides 75% of the blood supply to the liver",
-      "B": "The hepatic artery provides 75% of the blood supply to the liver",
-      "C": "Blood supply to the intrahepatic bile ducts is mainly through the portal vein",
-      "D": "The portal vein provides 50% of the blood supply to the liver"
-    },
-    "answer": "A"
-  },
-  {
+{
     "id": 50182,
     "specialty": "HPB",
     "source_file": "Liver Anatomy quizz 2.0.pdf",
@@ -2749,513 +361,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
-    "id": 50183,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 15,
-    "source_question_number": 48,
-    "question": "Which porto-systemic collateral pathways can",
-    "options": {
-      "A": "Esophagogastric",
-      "B": "Parastomal",
-      "C": "Retroperitoneal",
-      "D": "All of the above"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50184,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 15,
-    "source_question_number": 49,
-    "question": "Which of the following structures is not a component of the portal triad? 34",
-    "options": {
-      "A": "Hepatic arteriole",
-      "B": "Bile ductule",
-      "C": "Lymphatic vessels",
-      "D": "Hepatic venules"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50185,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 15,
-    "source_question_number": 50,
-    "question": "How many arterial branches provide blood supply to segment IV in most patients?",
-    "options": {
-      "A": "Replaced right hepatic artery",
-      "B": "Accessory spleen",
-      "C": "ourses between the IRHV and main right hepatic vein; thus, it serves as a good landmark to differentiate a hyptertrophic IRHV from the main right hepatic vein. The main right hepatic vein is cranial to the right posterior portal vein, while the IRHV is located below the right posterior portal vein.29",
-      "D": "Independent right posterior portal vein The inferior right hepatic vein (IRHV) is an accessory vein that drains the postero-inferior sector of the liver. It is present in 20% of patients, and it can be wider than the main right hepatic vein in 10% of cases. The right posterior portal vein",
-      "E": "xplanation: In 70% of cases, segment IV receives blood supply from two main arterial branches (superior and infe- rior segment branches). Each branch can subsequently"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50186,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 16,
-    "source_question_number": 51,
-    "question": "Which of the following statements is true about the hepatic veins? 15",
-    "options": {
-      "A": "Their course divides the liver into four segments",
-      "B": "In more than half of patients, the left and middle hepatic veins join into one vein before draining into the IVC",
-      "C": "The left hepatic vein only drains the left lateral sector",
-      "D": "All of the above"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50187,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 16,
-    "source_question_number": 52,
-    "question": "Which of the following organs is not in contact with the liver surface? 15",
-    "options": {
-      "A": "Stomach",
-      "B": "Duodenum",
-      "C": "Transverse colon",
-      "D": "Aorta"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50188,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 16,
-    "source_question_number": 53,
-    "question": "The falciform ligament connects dorsally to which ligament? 37",
-    "options": {
-      "A": "dapted from Gray’s “ Anatomy of the Human",
-      "B": "ody,” 20th Ed., 191838",
-      "C": "Gastrohepatic and gastroduodenal ligaments",
-      "D": "None of the above"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50189,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 16,
-    "source_question_number": 54,
-    "question": "When the falciform ligament sheaths divide, which structure is contained within the left bare area? 37",
-    "options": {
-      "A": "IVC and hepatic veins",
-      "B": "Portal vein",
-      "C": "Gallbladder",
-      "D": "None of the above"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50190,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 16,
-    "source_question_number": 55,
-    "question": "Which of the following statements about the Maku- uchi ligament is true? 39,40",
-    "options": {
-      "A": "It has also been called the IVC ligament or hepato-",
-      "B": "It is present in 77% of patients",
-      "C": "audate lobe",
-      "D": "All of the above"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50191,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 16,
-    "source_question_number": 56,
-    "question": "What is the most common course of the right pos- terior hepatic artery (RPHA) relative to the right portal vein? 41",
-    "options": {
-      "A": "Supraportal",
-      "B": "Infraportal",
-      "C": "ourses include those that run cranially to the right por - tal vein (supraportal) and those that combine both. When portal anatomy is not normal, these variant courses of the RPHA are not present.",
-      "D": "ally to the right portal vein (infraportal, 85%). Variant",
-      "E": "xplanation: The RPHA most frequently runs cau-"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50192,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 17,
-    "source_question_number": 57,
-    "question": "Which embryologic structures are the predecessors of the portal vein? 15",
-    "options": {
-      "A": "Umbilical veins",
-      "B": "Umbilical arteries",
-      "C": "Vitelline veins",
-      "D": "None of the above"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50193,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 17,
-    "source_question_number": 58,
-    "question": "Which of the following is the most common cause of neonatal cholestasis? 42",
-    "options": {
-      "A": "Alpha1-antitrypsin deficiency",
-      "B": "Biliary atresia",
-      "C": "Infectious",
-      "D": "Metabolic disorders"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50194,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 17,
-    "source_question_number": 59,
-    "question": "Which of the following statements about the portal vein is true? 15",
-    "options": {
-      "A": "nterior to said structures",
-      "B": "It originates posterior to the IVC",
-      "C": "The left portal vein is longer than the right",
-      "D": "Ligation of the right portal vein would cause hyper- trophy of the right liver"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50195,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 17,
-    "source_question_number": 60,
-    "question": "What type of portal division is illustrated in the figure",
-    "options": {
-      "A": "Independent right posterior portal vein",
-      "B": "Staged division",
-      "C": "Bifurcation",
-      "D": "Trifurcation"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50196,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 17,
-    "source_question_number": 61,
-    "question": "What is the type of portal division shown below?",
-    "options": {
-      "A": "Independent left posterior portal vein",
-      "B": "Bifurcation",
-      "C": "Staged division",
-      "D": "Trifurcation",
-      "E": "xplanation: Couinaud was the first to describe and clas- sify portal vein variations.43 Watanabe et al. further classified these variations into three types without including two rare variants described by Couinaud.41 Additionally, he exposed the relationship of the bile ducts with these portal vein variants. These are important concepts for performing a safe extended left hepatectomy. In the figure below, we show the portal vein variations as described by Couinaud and Watanabe.44"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50197,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 18,
-    "source_question_number": 62,
-    "question": "Why are these portal vein anatomical variants impor - tant?",
-    "options": {
-      "A": "Because the demarcation of the division between the right and left livers will vary",
-      "B": "Because the staged division is associated with a large right posterior sector",
-      "C": "Because the staged division is associated with a small right posterior sector",
-      "D": "Because the staged division is associated with a large right anterior sector",
-      "E": "xplanation: The fact that the volume of the right poste- rior sector is larger in a staged portal vein anatomy is useful when planning to perform an extended left hepatectomy.45"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50198,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 18,
-    "source_question_number": 63,
-    "question": "In Greek mythology, which deity was chained to a rock",
-    "options": {
-      "A": "ncient times.",
-      "B": "Hares",
-      "C": "Theseus",
-      "D": "Hermes",
-      "E": "rate. Being immortal, Prometheus could not die and was subjected to this excruciating pain daily.22 Thus, the unique"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50199,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 18,
-    "source_question_number": 64,
-    "question": "Which of the following statements about portal vein",
-    "options": {
-      "A": "It is indicated in a normal liver with no exposure to",
-      "B": "etween 2 and 8 weeks after PVE",
-      "C": "Post-PVE liver volumetry should be performed",
-      "D": "All of the above",
-      "E": "mbolization (PVE) is true? 46–49"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50200,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 18,
-    "source_question_number": 65,
-    "question": "Considering the marked area as the future liver rem- nant (FLR), what resection is to be performed?",
-    "options": {
-      "A": "Right hepatectomy",
-      "B": "Extended right hepatectomy/right trisectionec- tomy",
-      "C": "Left hepatectomy",
-      "D": "Extended left hepatectomy/left trisectionectomy"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50201,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 18,
-    "source_question_number": 66,
-    "question": "What is the average volume of the left liver? 50",
-    "options": {
-      "A": "56%",
-      "B": "50%",
-      "C": "45%",
-      "D": "33%"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50202,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 19,
-    "source_question_number": 67,
-    "question": "Which of the following statements is true about the inferior right hepatic vein (IRHV)? 29,51",
-    "options": {
-      "A": "On ultrasound, an IRHV is identified posterior to the right portal vein",
-      "B": "It is present in approximately 20% of patients",
-      "C": "It can be of a larger caliber than the right hepatic vein",
-      "D": "All of the above"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50203,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 19,
-    "source_question_number": 68,
-    "question": "In which segment is the colorectal liver metastasis located in the image below?",
-    "options": {
-      "A": "II",
-      "B": "III",
-      "C": "IV",
-      "D": "V"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50204,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 19,
-    "source_question_number": 69,
-    "question": "Which of the following methods can be used intra- operatively to identify the anatomical borders",
-    "options": {
-      "A": "Inflow occlusion",
-      "B": "Indigo carmine",
-      "C": "Intraoperative ultrasound",
-      "D": "All of the above"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50205,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 19,
-    "source_question_number": 70,
-    "question": "In a patient with normal vascular anatomy, what will happen to the liver if the proper hepatic artery is ligated? 54",
-    "options": {
-      "A": "nd the liver subcapsular plexus may be sufficient to preserve liver function",
-      "B": "In most cases, supply from the gastroduodenal artery is sufficient to preserve liver function",
-      "C": "Extrinsic arteries along the common bile duct",
-      "D": "The portal blood supply alone is sufficient to pre - serve liver function"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50206,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 19,
-    "source_question_number": 71,
-    "question": "What will happen if the right hepatic vein is ligated with preserved portal and arterial inflow? 55",
-    "options": {
-      "A": "Liver necrosis",
-      "B": "Liver congestion harmful for preserving the liver function in the affected segments",
-      "C": "Liver function will be preserved due to the devel- opment of collaterals and vascular compensation",
-      "D": "None of the above"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50207,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 19,
-    "source_question_number": 72,
-    "question": "Hepatocellular carcinoma (HCC) receives its blood supply mainly from:56",
-    "options": {
-      "A": "Hepatic artery",
-      "B": "Hepatic vein",
-      "C": "Portal vein",
-      "D": "None of the above",
-      "E": "xplanation: This is the rationale for using trans-arte- rial chemoembolization 57 or Y90 radioembolization 58 in HCC and other liver-directed trans-arterial therapies."
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50208,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 20,
-    "source_question_number": 73,
-    "question": "A 64-year-old male patient presents with three liver lesions on a CT scan. Where in the liver are these located?",
-    "options": {
-      "A": "Segments IV and VIII",
-      "B": "Segments II and VI",
-      "C": "are cystic, and lesion b is a neuroendocrine tumor. The anatomic location of the lesions relative to the hepatic veins shows that the two cystic lesions (a and c) are located in segments IV and VIII, respectively.",
-      "D": "etermining the precise anatomical location of the tumor (b) may prove to be a challenging task. According to Shindoh",
-      "E": "t al., 5 it has been observed that a dorsolateral protrusion of segment VIII, located above the right hepatic vein, tends to occupy the right subphrenic region of the liver. As a result, we can infer that the tumor is located in segment VIII."
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50209,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 20,
-    "source_question_number": 74,
-    "question": "In which liver segments are the colorectal liver metas- tases located in the image below?",
-    "options": {
-      "A": "IV and VII",
-      "B": "IV and V",
-      "C": "III and VIII",
-      "D": "I and VIII"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50210,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 20,
-    "source_question_number": 75,
-    "question": "Name the avascular space on the ventral side of the ret- rohepatic IVC, commonly used to perform the hanging maneuver.",
-    "options": {
-      "A": "Space of Courvoisier",
-      "B": "Space of Glisson",
-      "C": "Space of Couinaud",
-      "D": "Space of Rouviere “I found constantly a loose space between vena cava and liver, limited superiorly by emergence on the right of the right hepatic vein, on the left of the common stem middle + left veins” Couinaud. 43,59, 60"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50211,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 21,
-    "source_question_number": 76,
-    "question": "Which of the following statements is true about the",
-    "options": {
-      "A": "It is also called congenital extrahepatic portosys- temic shunt",
-      "B": "It is categorized into two types based on the pres-",
-      "C": "losing the shunt. 61",
-      "D": "All of the above",
-      "E": "xplanation: The Abernethy malformation is also called"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50212,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 21,
-    "source_question_number": 77,
-    "question": "What portal structures are in the sulcus of Rouviere? 62",
-    "options": {
-      "A": "Right hepatic pedicle",
-      "B": "Right posterior sectoral triad",
-      "C": "alled “incisura dextra”64 or “incisura dextra of Gans.”65 It is present in 90% of patients.66",
-      "D": "Left hepatic pedicle",
-      "E": "xplanation: The sulcus of Rouviere 63 has also been"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50213,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 21,
-    "source_question_number": 78,
-    "question": "A hilar cholangiocarcinoma invades the hepatic duct",
-    "options": {
-      "A": "lso known as Klatskin tumor, invades the bile ducts of the",
-      "B": "ranches.13 In almost all cases, hilar cholangiocarcinoma,",
-      "C": "audate lobe. Therefore, a curative-intent resection of this",
-      "D": "isease most frequently requires liver resection associated with bile duct resection.67",
-      "E": "xplanation: Biliary drainage from the caudate lobe is highly variable. It can flow into the right or left hepatic"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50214,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 21,
-    "source_question_number": 79,
-    "question": "Which of the following are criteria for technical resectability of liver tumors? 68",
-    "options": {
-      "A": "ge",
-      "B": "Preserved vascular inflow, outflow, and biliary drain-",
-      "C": "Adequate remnant volume and function",
-      "D": "All of the above"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50215,
-    "specialty": "HPB",
-    "source_file": "Liver Anatomy quizz 2.0.pdf",
-    "source_page": 21,
-    "source_question_number": 80,
-    "question": "A 73-year-old male patient with a history of resected",
-    "options": {
-      "A": "nd size and are arranged in a linear pattern. 69",
-      "B": "Enlarged lymph nodes",
-      "C": "Hyperenhancing resection site",
-      "D": "Imaging artifact On MRI, these round-shaped hyperintense lesions seen on the liver are, in fact, artifacts. The pulsation of the aorta is the reason for these mirror images to appear (also called “ghosting” artifacts). They typically have the same shape"
-    },
-    "answer": "A"
-  },
-  {
+{
     "id": 50216,
     "specialty": "HPB",
     "source_file": "Liver Anatomy quizz 2.0.pdf",
@@ -3269,7 +375,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
+{
     "id": 50217,
     "specialty": "HPB",
     "source_file": "Liver Anatomy quizz 2.0.pdf",
@@ -3282,7 +388,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
+{
     "id": 50218,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -3297,7 +403,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
+{
     "id": 50219,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -3311,7 +417,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
+{
     "id": 50220,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -3326,7 +432,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
+{
     "id": 50221,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -3342,7 +448,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
+{
     "id": 50222,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -3358,7 +464,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
+{
     "id": 50223,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -3374,7 +480,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
+{
     "id": 50224,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -3390,7 +496,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
+{
     "id": 50225,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -3406,55 +512,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
-    "id": 50226,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 52,
-    "source_question_number": 13,
-    "question": "Which one of the following may suggest an acute adrenal crisis:",
-    "options": {
-      "A": "Random cortisol level of 34 mcg/dL",
-      "B": "Hypothermia",
-      "C": "Hyperglycemia",
-      "D": "Hypokalemia",
-      "E": "Increase in cortisol of 5 mcg/dL after stimulation with cosyntropin"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50227,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 56,
-    "source_question_number": 15,
-    "question": "Stress-related hyperglycemia is thought to be due to increased release of all of the following",
-    "options": {
-      "A": "Glucocorticoids",
-      "B": "Growth hormone",
-      "C": "Thyroid-stimulating hormone (TSH)",
-      "D": "Glucagon",
-      "E": "pinephrine"
-    },
-    "answer": "B"
-  },
-  {
-    "id": 50228,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 58,
-    "source_question_number": 16,
-    "question": "The physiologic parameters used in the definition of SIRS include all of the following except:",
-    "options": {
-      "A": "Temperature lower than 36° C",
-      "B": "Respiratory rate greater than 20 breaths/min",
-      "C": "O 2 less than 32 mm Hg",
-      "D": "Systolic blood pressure lower than 90 mm Hg",
-      "E": "Heart rate greater than 90 beats/min"
-    },
-    "answer": "C"
-  },
-  {
+{
     "id": 50229,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -3470,7 +528,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
+{
     "id": 50230,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -3486,7 +544,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
+{
     "id": 50231,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -3502,23 +560,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
-    "id": 50232,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 74,
-    "source_question_number": 22,
-    "question": "Strategies that have been suggested to decrease the risk for postoperative pulmonary",
-    "options": {
-      "A": "Routine nasogastric tube decompression",
-      "B": "Lung expansion maneuvers",
-      "C": "omplications include all of the following except: Preoperative smoking cessation",
-      "D": "Postoperative epidural anesthesia",
-      "E": "Use of intraoperative short-acting neuromuscular blocking agents"
-    },
-    "answer": "D"
-  },
-  {
+{
     "id": 50233,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -3534,7 +576,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
+{
     "id": 50234,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -3549,7 +591,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
+{
     "id": 50235,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -3565,55 +607,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
-    "id": 50236,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 125,
-    "source_question_number": 22,
-    "question": "Which of the following statements regarding lysosomes is true?",
-    "options": {
-      "A": "Primary lysosomes usually contain extracellular material targeted for digestion.",
-      "B": "Lysosomal enzymes work effectively in the acidic pH of the cytoplasm.",
-      "C": "Serum levels of lysosomal acid phosphatases may have prognostic value in diseases such as prostate cancer.",
-      "D": "Lysosomal storage diseases such as Tay-Sachs result from unregulated activity of lysosomal",
-      "E": "nzymes. To better isolate their hydrolytic enzymes, lysosomes are resistant to fusion with other cell membranes."
-    },
-    "answer": "C"
-  },
-  {
-    "id": 50237,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 129,
-    "source_question_number": 24,
-    "question": "Inflammatory breast cancer is diagnosed in a 36-year-old woman. A decision is made to treat the patient with radiation, along with paclitaxel and doxorubicin. Which of the following statements regarding cellular motility and contractility is true?",
-    "options": {
-      "A": "long the microtubules.",
-      "B": "The interactions between actin and myosin that underlie the contraction of skeletal muscle require calcium but not ATP.",
-      "C": "Intermediate filaments extend from the centrosome to the nucleus.",
-      "D": "The proteins kinesin and dynein are required for directional transport of cellular components",
-      "E": "The microtubules used to form the spindle apparatus are synthesized de novo before each mitosis."
-    },
-    "answer": "D"
-  },
-  {
-    "id": 50238,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 139,
-    "source_question_number": 29,
-    "question": "Which of the following methods is most useful for determining the RNA content of a sample?",
-    "options": {
-      "A": "Southern blotting",
-      "B": "Northern blotting",
-      "C": "Western blotting",
-      "D": "PCR",
-      "E": "None of the above"
-    },
-    "answer": "D"
-  },
-  {
+{
     "id": 50239,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -3629,23 +623,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
-    "id": 50240,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 143,
-    "source_question_number": 31,
-    "question": "In DNA replication, what type of mutation is specifically associated with the generation of a stop",
-    "options": {
-      "A": "Point mutation",
-      "B": "Missense mutation",
-      "C": "odon? Nonsense mutation",
-      "D": "Frameshift mutation",
-      "E": "Neutral mutation"
-    },
-    "answer": "C"
-  },
-  {
+{
     "id": 50241,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -3660,23 +638,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
-    "id": 50242,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 149,
-    "source_question_number": 2,
-    "question": "With regard to drug effects and platelet function, which of the following statements is true?",
-    "options": {
-      "A": "spirin and indomethacin interfere with platelet release of ADP and inhibit aggregation.",
-      "B": "Vasodilators such as prostaglandin E 1 (PGE 1 ), prostacyclin (PGI 2 ), theophylline, and",
-      "C": "",
-      "D": "ipyridamole elevate cAMP levels and block platelet aggregation. Furosemide competitively inhibits PGE 2 .",
-      "E": "The effect of aspirin is reversible in 2 to 3 days."
-    },
-    "answer": "E"
-  },
-  {
+{
     "id": 50243,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -3692,55 +654,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
-    "id": 50244,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 153,
-    "source_question_number": 4,
-    "question": "With regard to fibrinolysis, which of the following statements is true?",
-    "options": {
-      "A": "Plasmin is not a significant factor in fibrinolysis.",
-      "B": "Plasminogen deficiency results in a clinical bleeding disorder.",
-      "C": "Plasmin acts only on cross-linked fibrin polymers.",
-      "D": "Ischemia is a potent activator of the fibrinolytic system.",
-      "E": "Physiologic fibrinolysis does not occur."
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50245,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 155,
-    "source_question_number": 5,
-    "question": "With regard to measurement of bleeding times, which of the following statements is true?",
-    "options": {
-      "A": "dequate surgical hemostasis.",
-      "B": "leeding time is a predictor of surgical bleeding.",
-      "C": "",
-      "D": "Platelet counts higher than 50,000/µl are usually associated with a normal bleeding time and",
-      "E": "Normal bleeding time excludes von Willebrand disease as a potential factor affecting surgical hemostasis."
-    },
-    "answer": "D"
-  },
-  {
-    "id": 50246,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 157,
-    "source_question_number": 6,
-    "question": "Which of the following conditions is associated with an isolated prothrombin time (PT) prolongation?",
-    "options": {
-      "A": "von Willebrand disease",
-      "B": "Factor VIII deficiency (hemophilia A)",
-      "C": "ommon pathway factor deficiencies (factors II, V, and X and fibrinogen)",
-      "D": "Therapeutic anticoagulation with warfarin (Coumadin)",
-      "E": "Therapeutic anticoagulation with heparin"
-    },
-    "answer": "D"
-  },
-  {
+{
     "id": 50247,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -3756,7 +670,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
+{
     "id": 50248,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -3772,7 +686,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
+{
     "id": 50249,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -3788,23 +702,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
-    "id": 50250,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 169,
-    "source_question_number": 12,
-    "question": "With regard to von Willebrand disease, which of the following statements is true?",
-    "options": {
-      "A": "It is more common than hemophilia.",
-      "B": "leeding after elective surgery is rare.",
-      "C": "Factor VIII levels are constant over time in a given patient.",
-      "D": "There is an associated platelet abnormality in 30% of patients.",
-      "E": ""
-    },
-    "answer": "D"
-  },
-  {
+{
     "id": 50251,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -3820,55 +718,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
-    "id": 50252,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 173,
-    "source_question_number": 14,
-    "question": "True statements regarding acquired hypofibrinogenemia include which of the following?",
-    "options": {
-      "A": "The thrombin time aids in differentiating primary fibrinolysis from DIC.",
-      "B": "Release of excessive plasminogen activators causes pathologic fibrinolysis.",
-      "C": "Primary fibrinolysis can be differentiated from DIC on the basis of the PT, PTT, and thrombin time.",
-      "D": "The most important aspect of the treatment of DIC is adequate heparinization.",
-      "E": "Thrombocytopenia is common with pure fibrinolysis."
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50253,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 177,
-    "source_question_number": 15,
-    "question": "With regard to polycythemia vera, which of the following statements is not true?",
-    "options": {
-      "A": "n elective operation is performed on a patient with polycythemia vera.",
-      "B": "Spontaneous hemorrhage is a possible complication of polycythemia vera.",
-      "C": "The reason for bleeding is a deficit in platelet function.",
-      "D": "",
-      "E": "Postoperative complication rates may be as high as 60%."
-    },
-    "answer": "B"
-  },
-  {
-    "id": 50254,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 179,
-    "source_question_number": 16,
-    "question": "With regard to anticoagulation, which of the following statements is not true?",
-    "options": {
-      "A": "n INR of 1.5 or less is considered safe for surgery.",
-      "B": "Heparin enhances the effect of antithrombin on thrombin-mediated conversion of fibrinogen to fibrin.",
-      "C": "Theoretically, 1.28 mg of protamine neutralizes 1 mg of heparin.",
-      "D": "The effects of vitamin K reversal take 48 hours.",
-      "E": ""
-    },
-    "answer": "E"
-  },
-  {
+{
     "id": 50255,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -3884,39 +734,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
-    "id": 50256,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 183,
-    "source_question_number": 18,
-    "question": "In cirrhotic patients who are actively bleeding, the coagulopathy of end-stage liver disease can be",
-    "options": {
-      "A": "Factor II",
-      "B": "Factor V",
-      "C": "Factor VII",
-      "D": "ifferentiated from DIC most readily by estimation of which of the following factors? Factor VIII:C",
-      "E": "Factor X"
-    },
-    "answer": "C"
-  },
-  {
-    "id": 50257,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 185,
-    "source_question_number": 19,
-    "question": "With regard to leukocytes in cellular blood components (red blood cells and platelets), which of the following statements is true?",
-    "options": {
-      "A": "Febrile reactions occur in 10% of all transfusions.",
-      "B": "Washing red blood cells with saline solution is the best way to remove leukocytes.",
-      "C": "Leukocyte reduction lowers the rate of febrile reactions to cellular components from 10% to 1%.",
-      "D": "Leukocyte reduction of cellular components lowers the risk of alloimmunization to HLA antigens in transfusion recipients.",
-      "E": "Leukocyte reduction of cellular components lowers the risk of wound infection in transfused surgical patients."
-    },
-    "answer": "D"
-  },
-  {
+{
     "id": 50258,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -3932,7 +750,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
+{
     "id": 50259,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -3945,7 +763,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
+{
     "id": 50260,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -3961,55 +779,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
-    "id": 50261,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 194,
-    "source_question_number": 3,
-    "question": "Which of the following statements regarding changes in volume status of the ECF compartment is true?",
-    "options": {
-      "A": "Hyponatremia is diagnostic of excess ECF volume.",
-      "B": "Hypernatremia is diagnostic of depletion of ECF volume",
-      "C": "entral nervous system symptoms appear after tissue signs with acute volume loss.",
-      "D": "",
-      "E": "xcess extracellular volume is usually iatrogenic or due to renal or cardiac failure. The concentration of serum sodium is directly related to extracellular volume."
-    },
-    "answer": "D"
-  },
-  {
-    "id": 50262,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 196,
-    "source_question_number": 4,
-    "question": "Which one of the following is not a stimulus for ECF expansion?",
-    "options": {
-      "A": "Hemorrhage leading to a reduction in blood volume",
-      "B": "Increased capillary permeability after major surgery",
-      "C": "olloid oncotic pressure",
-      "D": "Negative interstitial fluid hydrostatic pressure",
-      "E": ""
-    },
-    "answer": "C"
-  },
-  {
-    "id": 50263,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 198,
-    "source_question_number": 5,
-    "question": "Which of the following humoral factors increases arterial vasodilation while not decreasing protein permeability in the capillary membranes?",
-    "options": {
-      "A": "trial natriuretic factor",
-      "B": "radykinin Nitric oxide (NO)",
-      "C": "",
-      "D": "Histamine",
-      "E": "Platelet-activating factor"
-    },
-    "answer": "C"
-  },
-  {
+{
     "id": 50264,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -4025,23 +795,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
-    "id": 50265,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 202,
-    "source_question_number": 7,
-    "question": "Which of the following statements regarding loop diuretics is not true?",
-    "options": {
-      "A": "Loop diuretics act on the thick ascending limb of the loop of Henle in the nephron.",
-      "B": "Loop diuretics increase blood flow to the kidney.",
-      "C": "Magnesium and calcium are unaffected during diuresis.",
-      "D": "Loop diuretics increase venous capacitance.",
-      "E": "Loop diuretics inhibit the sodium-potassium-chloride cotransporter."
-    },
-    "answer": "D"
-  },
-  {
+{
     "id": 50266,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -4057,55 +811,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
-    "id": 50267,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 206,
-    "source_question_number": 9,
-    "question": "Which of the following statements concerning the sodium concentration of various fluids is incorrect?",
-    "options": {
-      "A": "Pancreatic secretions, 140 mEq/L",
-      "B": "Sweat, 40 mEq/L",
-      "C": "Gastric secretions, 50 mEq/L",
-      "D": "Saliva, 100 mEq/L",
-      "E": "Ileostomy output, 125 mEq/L"
-    },
-    "answer": "B"
-  },
-  {
-    "id": 50268,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 208,
-    "source_question_number": 10,
-    "question": "With regard to distributional shifts during an operation, which of the following statements is true?",
-    "options": {
-      "A": "major stimulus to ECF expansion is peripheral vasoconstriction.",
-      "B": "lood is replaced as it is lost, without modification of the basal operative fluid replacement rate.",
-      "C": "",
-      "D": "Sequestered ECF is predominantly hypotonic.",
-      "E": ""
-    },
-    "answer": "D"
-  },
-  {
-    "id": 50269,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 210,
-    "source_question_number": 11,
-    "question": "With regard to intraoperative management of fluids, which of the following statements is true?",
-    "options": {
-      "A": "dministration of albumin plays an important role in the replacement of functional ECF volume loss.",
-      "B": "",
-      "C": "Functional ECF losses should be replaced with plasma.",
-      "D": "uring an operation, functional ECF volume is directly related to the volume lost to suction.",
-      "E": "Operative blood loss is usually overestimated by the surgeon."
-    },
-    "answer": "C"
-  },
-  {
+{
     "id": 50270,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -4121,23 +827,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
-    "id": 50271,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 214,
-    "source_question_number": 13,
-    "question": "With regard to abnormalities in serum sodium concentration, which of the following statements is true?",
-    "options": {
-      "A": "",
-      "B": "The chloride ion is the main determinant of the osmolarity of the ECF space.",
-      "C": "hanges in serum sodium concentration usually produce changes in the status of ECF volume.",
-      "D": "ry, sticky mucous membranes are characteristic of hyponatremia.",
-      "E": "xtracellular hyponatremia leads to depletion of intracellular water. Preservation of normal ECF has higher precedence than does maintenance of normal osmolality."
-    },
-    "answer": "D"
-  },
-  {
+{
     "id": 50272,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -4153,7 +843,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
+{
     "id": 50273,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -4169,71 +859,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
-    "id": 50274,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 221,
-    "source_question_number": 16,
-    "question": "Which of the following clinical situations can be associated with hypovolemic hyponatremia?",
-    "options": {
-      "A": "",
-      "B": "SIADH",
-      "C": "irrhosis",
-      "D": "Hyperglycemia",
-      "E": "Gastrointestinal losses"
-    },
-    "answer": "B"
-  },
-  {
-    "id": 50275,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 223,
-    "source_question_number": 17,
-    "question": "With regard to diabetes insipidus, which of the following statements is true?",
-    "options": {
-      "A": "lcohol intoxication can mimic diabetes insipidus.",
-      "B": "",
-      "C": "entral diabetes insipidus cannot be corrected by the administration of desmopressin. Treatment of diabetes insipidus requires correction of hypernatremia at a rate faster than 12 mEq/day.",
-      "D": "iabetes insipidus causes hypervolemic hyponatremia.",
-      "E": "Lithium administration could induce central diabetes insipidus."
-    },
-    "answer": "E"
-  },
-  {
-    "id": 50276,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 229,
-    "source_question_number": 20,
-    "question": "With regard to postoperative hyponatremia, which of the following statements is not true?",
-    "options": {
-      "A": "It may easily occur when water is used to replace sodium-containing fluids or when the water given exceeds the water lost.",
-      "B": "y occult renal dysfunction.",
-      "C": "In oliguric patients, cellular catabolism with resultant metabolic acidosis increases cellular release of water and can contribute to hyponatremia.",
-      "D": "Hyperglycemia may be a cause of hyponatremia.",
-      "E": "Patients with salt-wasting nephropathy could have normal blood urea nitrogen and creatinine values."
-    },
-    "answer": "C"
-  },
-  {
-    "id": 50277,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 233,
-    "source_question_number": 22,
-    "question": "Which one of the following clinical signs or symptoms is not associated with serum sodium",
-    "options": {
-      "A": "Headache",
-      "B": "radycardia",
-      "C": "oncentrations below 125 mEq/L?",
-      "D": "Hypoventilation",
-      "E": "Hyperthermia"
-    },
-    "answer": "B"
-  },
-  {
+{
     "id": 50278,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -4249,119 +875,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
-    "id": 50279,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 237,
-    "source_question_number": 24,
-    "question": "Which of the following electrocardiographic (ECG) findings is not associated with hyperkalemia?",
-    "options": {
-      "A": "Peaked T waves",
-      "B": "Prolonged PR interval",
-      "C": "Loss of the P wave",
-      "D": "Narrowing of the QRS complex",
-      "E": "T waves higher than R waves in more than one lead"
-    },
-    "answer": "C"
-  },
-  {
-    "id": 50280,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 239,
-    "source_question_number": 25,
-    "question": "Which one of the following is least useful in the immediate treatment of hyperkalemia?",
-    "options": {
-      "A": "",
-      "B": "Sodium bicarbonate",
-      "C": "alcium salts Potassium-binding resins",
-      "D": "Glucose and insulin",
-      "E": "Hemodialysis"
-    },
-    "answer": "D"
-  },
-  {
-    "id": 50281,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 241,
-    "source_question_number": 26,
-    "question": "With regard to hypokalemia, which of the following statements is not true?",
-    "options": {
-      "A": "Potassium and hydrogen ions are exchanged for sodium in the renal tubule.",
-      "B": "Respiratory acidosis is associated with increased renal potassium loss.",
-      "C": "Hypokalemia can cause decreased deep tendon reflexes.",
-      "D": "Flattened T waves and a prolonged QT interval are associated with hypokalemia.",
-      "E": "Intravenous potassium administration should not exceed 40 to 60 mEq/h."
-    },
-    "answer": "C"
-  },
-  {
-    "id": 50282,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 243,
-    "source_question_number": 27,
-    "question": "Which one of the following is not associated with hypocalcemia?",
-    "options": {
-      "A": "Shortening of the QT interval",
-      "B": "Painful muscle spasms",
-      "C": "Perioral or fingertip tingling",
-      "D": "Seizures in children",
-      "E": "Prolongation of the QT interval"
-    },
-    "answer": "B"
-  },
-  {
-    "id": 50283,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 245,
-    "source_question_number": 28,
-    "question": "Which one of the following clinical scenarios is not associated with acute hypocalcemia?",
-    "options": {
-      "A": "cute pancreatitis",
-      "B": "Rapid infusion of blood products",
-      "C": "Improper administration of phosphates",
-      "D": "Vitamin D–deficient diets",
-      "E": ""
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50284,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 247,
-    "source_question_number": 29,
-    "question": "Which of the following disturbances is not associated with tumor lysis syndrome?",
-    "options": {
-      "A": "Hypocalcemia",
-      "B": "Hyperuricemia",
-      "C": "Hyperkalemia",
-      "D": "Hypermagnesemia",
-      "E": "Hyperphosphatemia"
-    },
-    "answer": "D"
-  },
-  {
-    "id": 50285,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 260,
-    "source_question_number": null,
-    "question": "1 Mullins RJ. Schock, electrolytes, and fluid. In Townsend CM, Beauchamp RD, Evers BM, et al,",
-    "options": {
-      "A": "The flow phase of Cuthbertson’s two-phase model of the metabolic response to injury is",
-      "B": "asis of surgery , ed 4, Philadelphia: Lippincott Williams & Wilkins, 2008. 4 Jan BV, Lowry SF. Systemic response to injury and metabolic support. In Brunicardi FC, Andersen The Endocrine and Metabolic Response to Stress Roderick M. Quiros, M.D., F.A.C.S. 1 Which of the following is true with regard to the metabolic response to stress as described by The ebb phase begins once the patient is successfully resuscitated.",
-      "C": "haracterized by physiologic responses designed to restore tissue perfusion and circulating volume. The ebb phase entails both a catabolic and an anabolic period.",
-      "D": "K, Billiar TR, et al, editors: Schwartz’s principles of surgery , ed 9, New York: McGraw-Hill, 2010. The flow phase occurs initially after traumatic injury.",
-      "E": "ditors: Sabiston textbook of surgery: the biological basis of modern surgical practice , ed 18, Philadelphia: WB Saunders, 2008. 2 Shires GT. Fluid and electrolyte management of the surgical patient. In Brunicardi FC, Andersen The anabolic phase starts after wounds have closed and is characterized by the return of normal homeostasis."
-    },
-    "answer": "D"
-  },
-  {
+{
     "id": 50286,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -4377,7 +891,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
+{
     "id": 50287,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -4393,87 +907,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
-    "id": 50288,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 272,
-    "source_question_number": 7,
-    "question": "Which of the following is not an action of cortisol in a metabolically stressed patient?",
-    "options": {
-      "A": "It stimulates release of insulin by the pancreas.",
-      "B": "It induces insulin resistance in muscles and adipose tissue.",
-      "C": "It stimulates release of lactate from skeletal muscle.",
-      "D": "It induces release of glycerol from adipose tissue.",
-      "E": "It leads to immunosuppression."
-    },
-    "answer": "D"
-  },
-  {
-    "id": 50289,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 274,
-    "source_question_number": 8,
-    "question": "Which of the following are effects of epinephrine in response to injury?",
-    "options": {
-      "A": "It enhances the adherence of leukocytes to vascular endothelial membranes.",
-      "B": "It stimulates the release of aldosterone.",
-      "C": "It inhibits the secretion of thyroid hormones.",
-      "D": "It increases glucagon secretion.",
-      "E": "It decreases lipolysis in adipose tissue."
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50290,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 276,
-    "source_question_number": 9,
-    "question": "Which of the following substances has been shown to be useful as a measurable marker of the response to injury?",
-    "options": {
-      "A": "Tumor necrosis factor-α (TNF-α)",
-      "B": "Interleukin-2 (IL-2)",
-      "C": "reactive protein (CRP)",
-      "D": "IL-10",
-      "E": ""
-    },
-    "answer": "D"
-  },
-  {
-    "id": 50291,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 278,
-    "source_question_number": 10,
-    "question": "Which of the following is true regarding reactive oxygen metabolites:",
-    "options": {
-      "A": "Reactive oxygen metabolites are synthesized and stored within leukocytes before being released in response to injury.",
-      "B": "Reactive oxygen metabolites cause injury by oxidation of unsaturated fatty acids within cell membranes.",
-      "C": "ells secreting reactive oxygen metabolites are immune to damage after release of these metabolites.",
-      "D": "ownregulated.",
-      "E": "Reactive oxygen metabolites are quenched by inhibitory cytokines."
-    },
-    "answer": "E"
-  },
-  {
-    "id": 50292,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 280,
-    "source_question_number": 11,
-    "question": "Which of the following statements about eicosanoids is true?",
-    "options": {
-      "A": "Their synthesis is dependent on enzymatic activation of phospholipase A 2 .",
-      "B": "They originate from lymphocytes around the site of injury.",
-      "C": "They are stored within inflammatory cells and released on tissue injury.",
-      "D": "The production of leukotrienes is dependent on enzymatic activation of cyclooxygenase.",
-      "E": "The production of prostaglandins is dependent on enzymatic activation of lipoxygenase."
-    },
-    "answer": "B"
-  },
-  {
+{
     "id": 50293,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -4489,7 +923,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
+{
     "id": 50294,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -4505,23 +939,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
-    "id": 50295,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 286,
-    "source_question_number": 14,
-    "question": "Which of the following is true with regard to the inflammatory response?",
-    "options": {
-      "A": "naphylatoxins C3a and C5a.",
-      "B": "Migration of neutrophils to the site of injury is inhibited by the release of serotonin.",
-      "C": "ells.",
-      "D": "Surgical or traumatic injury is associated with upregulation of cell-mediated immunity via type 1 helper T (T H 1) cells and downregulation of antibody-mediated immunity via type 2 helper T (T H 2)",
-      "E": "osinophils involved in the inflammatory response are inactivated by the complement"
-    },
-    "answer": "B"
-  },
-  {
+{
     "id": 50296,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -4537,39 +955,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
-    "id": 50297,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 290,
-    "source_question_number": 16,
-    "question": "Which of the following regarding macrophages/monocytes is true?",
-    "options": {
-      "A": "Macrophages and monocytes become hyperresponsive to",
-      "B": "Functional impairment in macrophage/monocyte capability may persist for a week and is overcome with the development and growth of newer, more immature monocytes.",
-      "C": "ytotoxic T lymphocytes.",
-      "D": "Human leukocyte antigen/MHC II expression on monocytes increases after major injury.",
-      "E": "Macrophages present peptides in association with MHC class I molecules to prime CD4 + helper T lymphocytes."
-    },
-    "answer": "C"
-  },
-  {
-    "id": 50298,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 292,
-    "source_question_number": 17,
-    "question": "Which of the following is true regarding NO?",
-    "options": {
-      "A": "NO is inhibited by acetylcholine stimulation.",
-      "B": "NO is expressed constitutively.",
-      "C": "NO can induce platelet adhesion and thus lead to microthrombosis.",
-      "D": "NO has a half-life of 5 minutes.",
-      "E": "NO is formed from the oxidation of L -alanine."
-    },
-    "answer": "B"
-  },
-  {
+{
     "id": 50299,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -4585,71 +971,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
-    "id": 50300,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 296,
-    "source_question_number": 19,
-    "question": "Which of the following is considered an antiinflammatory cytokine?",
-    "options": {
-      "A": "IL-1",
-      "B": "IL-4",
-      "C": "IL-6",
-      "D": "IL-8",
-      "E": "Interferon-γ (IFN-γ)"
-    },
-    "answer": "D"
-  },
-  {
-    "id": 50301,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 298,
-    "source_question_number": 20,
-    "question": "Which of the following is true with regard to TNF-α and IL-1?",
-    "options": {
-      "A": "Levels of soluble molecules that antagonize the effects of TNF-α and IL-1 have been shown to be predictive of organ failure.",
-      "B": "Secretion of TNF-α and IL-1 is conducive to a hypocoagulable state during acute injury.",
-      "C": "Secretion of TNF-α and IL-1 in response to injury leads to downregulation of the synthesis of NO and subsequent vasoconstriction.",
-      "D": "TNF-α and IL-1 have a long half-life, which makes them effective markers for determining the magnitude and severity of the inflammatory response.",
-      "E": "TNF-α and IL-1 have no natural antagonists; rather, their systemic effects diminish because of natural cytokine degradation."
-    },
-    "answer": "B"
-  },
-  {
-    "id": 50302,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 304,
-    "source_question_number": 23,
-    "question": "Which of the following with regard to IL-10 is true?",
-    "options": {
-      "A": "IL-10 is a strong proinflammatory cytokine.",
-      "B": "IL-10 is secreted primarily by platelets in response to injury.",
-      "C": "IL-10 inhibits some proinflammatory cytokines such as IL-1.",
-      "D": "IL-10 has a short half-life and is therefore not a useful marker for assessing the severity of injury.",
-      "E": "IL-10 secretion is inhibited by the stress of surgical procedures."
-    },
-    "answer": "B"
-  },
-  {
-    "id": 50303,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 306,
-    "source_question_number": 24,
-    "question": "Which of the following with regard to metabolism during fasting is true?",
-    "options": {
-      "A": "The main source of fuel in short-term fasting (<5 days) is derived from hepatic glycogen stores.",
-      "B": "Norepinephrine, vasopressin, and angiotensin II promote the assembly of glycogen chains during fasting.",
-      "C": "In prolonged starvation, ketone bodies become the primary fuel source for the brain.",
-      "D": "Lipid stores in adipose tissue provide 80% of the caloric expenditure during starvation.",
-      "E": "Release of free fatty acids is stimulated by an increase in serum insulin levels."
-    },
-    "answer": "C"
-  },
-  {
+{
     "id": 50304,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -4665,23 +987,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
-    "id": 50305,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 312,
-    "source_question_number": 27,
-    "question": "Which of the following is correct with respect to the respiratory quotient (RQ)?",
-    "options": {
-      "A": "RQ = 1: greater oxidation of protein for fuel",
-      "B": "RQ > 1: overfeeding/greater carbohydrate oxidation",
-      "C": "RQ = 0.7: greater oxidation of carbohydrate for fuel",
-      "D": "RQ = 0.85: greater oxidation of fatty acid for fuel",
-      "E": "RQ < 1: excess breakdown of proteins for fuel"
-    },
-    "answer": "C"
-  },
-  {
+{
     "id": 50306,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -4697,71 +1003,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
-    "id": 50307,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 316,
-    "source_question_number": 2,
-    "question": "The gastrointestinal tract can secrete and reabsorb how much water in the form of gastric juices per",
-    "options": {
-      "A": "1 to 2 L/day",
-      "B": "4 to 5 L/day",
-      "C": "6 to 7 L/day",
-      "D": "ay (in a 70-kg adult male)? 8 to 10 L/day",
-      "E": "50 L/day"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50308,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 318,
-    "source_question_number": 3,
-    "question": "Glucagon mobilizes which of the following:",
-    "options": {
-      "A": "Glycogen from muscle tissue",
-      "B": "Liver glycogen",
-      "C": "Insulin to improve cellular uptake of glucose",
-      "D": "Glucose to the liver for storage",
-      "E": "None of the above"
-    },
-    "answer": "D"
-  },
-  {
-    "id": 50309,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 320,
-    "source_question_number": 4,
-    "question": "The protein-sparing effect of glucose administration begins to be manifested after the administration of how much glucose?",
-    "options": {
-      "A": "1 L of 5% dextrose in water (D 5 W)",
-      "B": "2 L of D 5 W",
-      "C": "3 L of D 5 W",
-      "D": "4 L of D 5 W",
-      "E": "5 L of D 5 W"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50310,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 323,
-    "source_question_number": 5,
-    "question": "Glutamine is an amino acid that:",
-    "options": {
-      "A": "Is categorized as an essential amino acid",
-      "B": "Is found only in muscle tissue",
-      "C": "an be eliminated from the diet during times of stress",
-      "D": "Maintains stable levels in plasma during stress",
-      "E": ""
-    },
-    "answer": "B"
-  },
-  {
+{
     "id": 50311,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -4777,23 +1019,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
-    "id": 50312,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 327,
-    "source_question_number": 7,
-    "question": "What are the dietary protein recommendations for a 60-kg woman with intact protein stores?",
-    "options": {
-      "A": "0.7 to 0.8 g/kg/day (30 to 45 g/day)",
-      "B": "0.8 to 1.0 g/kg/day (48 to 60 g/day)",
-      "C": "1.2 to 1.5 g/kg/day (72 to 90 g/day)",
-      "D": "2 to 4 g/kg/day (120 to 240 g/day)",
-      "E": "5 to 6 g/kg/day (300 to 360 g/day)"
-    },
-    "answer": "A"
-  },
-  {
+{
     "id": 50313,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -4809,7 +1035,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
+{
     "id": 50314,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -4825,7 +1051,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
+{
     "id": 50315,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -4841,23 +1067,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
-    "id": 50316,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 335,
-    "source_question_number": 11,
-    "question": "Which of the following vitamins is water soluble?",
-    "options": {
-      "A": "Vitamin A",
-      "B": "Vitamin D",
-      "C": "Vitamin E",
-      "D": "Vitamin C",
-      "E": "Vitamin K"
-    },
-    "answer": "B"
-  },
-  {
+{
     "id": 50317,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -4873,7 +1083,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
+{
     "id": 50318,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -4889,55 +1099,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
-    "id": 50319,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 341,
-    "source_question_number": 14,
-    "question": "Which of the following information would not be a typical component of the Subjective Global",
-    "options": {
-      "A": "ssessment tool? Weight changes",
-      "B": "Serum albumin level",
-      "C": "hanges in muscle mass",
-      "D": "ietary changes",
-      "E": "valuation of gastrointestinal symptoms"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50320,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 344,
-    "source_question_number": 15,
-    "question": "The decreased insulin-glucagon ratio seen during simple starvation allows:",
-    "options": {
-      "A": "Increased lipogenesis",
-      "B": "Increased lipolysis",
-      "C": "Increased protein synthesis",
-      "D": "ecreased lipolysis",
-      "E": ""
-    },
-    "answer": "B"
-  },
-  {
-    "id": 50321,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 346,
-    "source_question_number": 16,
-    "question": "Which amino acid is released in large amounts to be used by the liver during simple starvation?",
-    "options": {
-      "A": "Valine",
-      "B": "Serine",
-      "C": "ysteine",
-      "D": "",
-      "E": "Homocysteine"
-    },
-    "answer": "B"
-  },
-  {
+{
     "id": 50322,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -4953,7 +1115,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
+{
     "id": 50323,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -4969,23 +1131,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
-    "id": 50324,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 354,
-    "source_question_number": 20,
-    "question": "Which of the following can lead to errors in information obtained from indirect calorimetry when using the metabolic cart?",
-    "options": {
-      "A": "M test.",
-      "B": "The patient is ventilator dependent.",
-      "C": "The patient is losing weight after 2 weeks of a nutrition support regimen.",
-      "D": "The patient underwent hemodialysis 2 days before being tested.",
-      "E": "The experience of the personnel administering the test is limited."
-    },
-    "answer": "C"
-  },
-  {
+{
     "id": 50325,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -5001,55 +1147,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
-    "id": 50326,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 363,
-    "source_question_number": 24,
-    "question": "Which of the following is one of the most common food allergies that must be considered when",
-    "options": {
-      "A": "Rice allergy",
-      "B": "Soy allergy",
-      "C": "itrus fruit allergy",
-      "D": "eciding on a tube feeding formula?",
-      "E": ""
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50327,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 367,
-    "source_question_number": 26,
-    "question": "How many calories are provided in one 500-mL bottle of 20% intravenous fat solution?",
-    "options": {
-      "A": "150 kcal",
-      "B": "550 kcal",
-      "C": "800 kcal",
-      "D": "1000 kcal",
-      "E": "4000 kcal"
-    },
-    "answer": "C"
-  },
-  {
-    "id": 50328,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 369,
-    "source_question_number": 27,
-    "question": "Refeeding syndrome is characterized by which of the following electrolyte abnormalities?",
-    "options": {
-      "A": "Hyponatremia, hypokalemia, and hypercalcemia",
-      "B": "Hyperphosphatemia, hypokalemia, and hypocalcemia",
-      "C": "Hypokalemia, hypomagnesemia, and hypophosphatemia",
-      "D": "Hypocalcemia, hyponatremia, and hypomagnesemia",
-      "E": "Hyperkalemia, hypernatremia, and hypercalcemia"
-    },
-    "answer": "D"
-  },
-  {
+{
     "id": 50329,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -5065,7 +1163,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
+{
     "id": 50330,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -5081,39 +1179,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
-    "id": 50331,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 377,
-    "source_question_number": 31,
-    "question": "Which of the following is true when considering the nutritional status of a geriatric patient?",
-    "options": {
-      "A": "Muscle wasting can be a pathologic process that is mistaken for normal aging.",
-      "B": "ody mass index (BMI) is the best anthropometric measurement for determining nutritional status in an elderly patient.",
-      "C": "",
-      "D": "",
-      "E": "nteral nutrition is not an option because of slowed gut function. Laboratory tests cannot be used to evaluate nutritional status."
-    },
-    "answer": "C"
-  },
-  {
-    "id": 50332,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 379,
-    "source_question_number": null,
-    "question": "1",
-    "options": {
-      "A": "SPEN Board of Directors and the Clinical Guideline Task Force. Guidelines for the use of parenteral and enteral nutrition in adult and pediatric patients. JPEN J Parenter Enteral Nutr .",
-      "B": "erg JM, Tymoczko JL, Stryer L, editors. Biochemistry. New York: WH Freeman, 2002. 4 Saito H, Furukawa S, Matsuda T. Glutamine as an immunoenhancing nutrient. JPEN J Parenter",
-      "C": "hioléro R, Revelly J, Tappy L. Energy metabolism in sepsis and injury. Nutrition . 1997;13(Suppl 9):S45-S51. 13 Holdy KE. Monitoring energy metabolism with indirect calorimetry: Instruments, interpretation,",
-      "D": "ietary reference intakes for vitamin C, vitamin",
-      "E": ", selenium, and carotenoids . Washington, DC: National Academy Press; 2004. 9 Frankenfield DC, Rowe WA, Smith JS, et al. Validation of several established equations for resting metabolic rate in obese and nonobese people. J Am Diet Assoc . 2003;103:1152-1159. 10 Fuhrman MP, Charney P, Mueller CM. Hepatic proteins and nutritional assessment. J Am Diet"
-    },
-    "answer": "A"
-  },
-  {
+{
     "id": 50333,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -5129,23 +1195,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
-    "id": 50334,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 399,
-    "source_question_number": 10,
-    "question": "Which of the following statements regarding anaerobic bacterial infections is true?",
-    "options": {
-      "A": "ll of the above.",
-      "B": "acteroides spp. are the most common isolates in intraabdominal anaerobic infections.",
-      "C": "If appropriate cultures are obtained, anaerobes are found in more than 75% of intraabdominal",
-      "D": "Proper treatment of anaerobic infections consists of surgical drainage, débridement of necrotic tissue, and appropriate antibiotic therapy.",
-      "E": ""
-    },
-    "answer": "E"
-  },
-  {
+{
     "id": 50335,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -5161,7 +1211,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
+{
     "id": 50336,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -5177,23 +1227,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
-    "id": 50337,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 405,
-    "source_question_number": 13,
-    "question": "Match each agent in the left-hand column with one or more mechanisms of antimicrobial action in the right-hand column.",
-    "options": {
-      "A": "Impairment of bacterial DNA synthesis",
-      "B": "Inhibition of cell wall synthesis",
-      "C": "Disruption of ribosomal protein synthesis",
-      "D": "Disruption of cell wall cation homeostasis",
-      "E": "Disruption of the cytoplasmic membrane"
-    },
-    "answer": "C"
-  },
-  {
+{
     "id": 50338,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -5209,7 +1243,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
+{
     "id": 50339,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -5225,39 +1259,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
-    "id": 50340,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 413,
-    "source_question_number": 17,
-    "question": "For which of the following conditions are perioperative antibiotics not indicated?",
-    "options": {
-      "A": "Perforated appendix",
-      "B": "Open fracture of the humerus",
-      "C": "holecystectomy for acute cholecystitis",
-      "D": "Traumatic colonic perforation",
-      "E": ""
-    },
-    "answer": "E"
-  },
-  {
-    "id": 50341,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 415,
-    "source_question_number": 18,
-    "question": "Which of the following statements regarding clostridial infections is true?",
-    "options": {
-      "A": "frozen section of soft tissue without polymorphonuclear infiltrates rules out the diagnosis of",
-      "B": "The oxidation-reduction potential in contaminated tissues is a significant factor in the",
-      "C": "lostridial myonecrosis.",
-      "D": "espite the potentially fulminant course of clostridial infections, the skin overlying clostridial",
-      "E": ""
-    },
-    "answer": "C"
-  },
-  {
+{
     "id": 50342,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -5273,7 +1275,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
+{
     "id": 50343,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -5289,7 +1291,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
+{
     "id": 50344,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -5305,7 +1307,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
+{
     "id": 50345,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -5321,23 +1323,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
-    "id": 50346,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 425,
-    "source_question_number": 23,
-    "question": "Match each clinical characteristic or agent in the left-hand column with the correct infecting organism or organisms in the right-hand column.",
-    "options": {
-      "A": "ctinomyces israelii",
-      "B": "Amphotericin Nocardia asteroides",
-      "C": "neoformans",
-      "D": "Brain abscess",
-      "E": "Pelvic mass Histoplasma capsulatum"
-    },
-    "answer": "C"
-  },
-  {
+{
     "id": 50347,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -5353,23 +1339,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
-    "id": 50348,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 429,
-    "source_question_number": 25,
-    "question": "Which of the following patients with cirrhosis benefit from prophylactic antibiotic therapy to",
-    "options": {
-      "A": "Patients awaiting liver transplantation",
-      "B": "Patients hospitalized with acute gastrointestinal bleeding",
-      "C": "Patients with ascitic fluid protein levels of greater than 1 g/100 mL",
-      "D": "ecrease the risk for SBP? Patients who have recovered from a previous episode of SBP",
-      "E": "Patients with ascitic fluid protein levels of less than 1 g/100 mL"
-    },
-    "answer": "E"
-  },
-  {
+{
     "id": 50349,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -5385,7 +1355,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
+{
     "id": 50350,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -5401,7 +1371,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
+{
     "id": 50351,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -5417,7 +1387,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
+{
     "id": 50352,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -5433,23 +1403,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
-    "id": 50353,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 445,
-    "source_question_number": 33,
-    "question": "Which of the following statements about HIV-positive patients with gastrointestinal bleeding is incorrect?",
-    "options": {
-      "A": "The most common cause of lower gastrointestinal bleeding is CMV colitis.",
-      "B": "Ganciclovir therapy prevents rebleeding in patients with documented CMV disease.",
-      "C": "Kaposi sarcoma is the most frequent AIDS-associated cause of upper gastrointestinal bleeding.",
-      "D": "Upper gastrointestinal bleeding is usually secondary to infection.",
-      "E": "Lower gastrointestinal bleeding is less common than upper gastrointestinal bleeding."
-    },
-    "answer": "E"
-  },
-  {
+{
     "id": 50354,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -5465,23 +1419,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
-    "id": 50355,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 449,
-    "source_question_number": 35,
-    "question": "Which of the following statements regarding CMV infection and solid organ transplantation is false?",
-    "options": {
-      "A": "Symptomatic infection occurs 2 to 6 months after transplantation.",
-      "B": "Patients being treated for acute rejection are at increased risk for the development of symptomatic CMV infection.",
-      "C": "MV infection may be associated with premature atherosclerosis in cardiac transplant patients.",
-      "D": "isease.",
-      "E": ""
-    },
-    "answer": "C"
-  },
-  {
+{
     "id": 50356,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -5497,7 +1435,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
+{
     "id": 50357,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -5513,23 +1451,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
-    "id": 50358,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 459,
-    "source_question_number": 40,
-    "question": "Which statement about M. tuberculosis treatment and prophylaxis is true?",
-    "options": {
-      "A": "Two-drug treatment with isoniazid (INH) and rifampin (RIF) for 9 months is standard therapy for active pulmonary TB.",
-      "B": "Treatment failure can be due to drug resistance or nonadherence.",
-      "C": "HIV-infected individuals require prolonged therapy for active TB.",
-      "D": "erivative (PPD)-negative to PPD-positive status.",
-      "E": "INH prophylaxis should not be given to individuals with recent conversion from purified protein"
-    },
-    "answer": "C"
-  },
-  {
+{
     "id": 50359,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -5545,7 +1467,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
+{
     "id": 50360,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -5561,7 +1483,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
+{
     "id": 50361,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -5577,7 +1499,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
+{
     "id": 50362,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -5593,39 +1515,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
-    "id": 50363,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 471,
-    "source_question_number": null,
-    "question": "1 Mandell GL, Bennett JE, Dolin R. Principles and practice of infectious diseases , ed 5. Philadelphia: Churchill Livingstone; 2000. 2",
-    "options": {
-      "A": "naya DA, Dellinger EP. Surgical infections and choice antibiotics. In Townsend CM,",
-      "B": "eauchamp RD, Evers BM, et al, editors: Sabiston textbook of surgery: the biological basis of modern surgical practice , ed 18, Philadelphia: WB Saunders, 2008. 14 Lipsky BA, Berendt AR, Deery HG, et al. Diagnosis and treatment of diabetic foot infections.",
-      "C": "lin Infect Dis . 2004;39:885-910.",
-      "D": "olin R, Masur H, Saag MS.",
-      "E": "scherichia coli"
-    },
-    "answer": "E"
-  },
-  {
-    "id": 50364,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 477,
-    "source_question_number": 3,
-    "question": "Which of the following statements regarding MRSA is false?",
-    "options": {
-      "A": "MRSA is a common nosocomial pathogen, but it can also be detected in the community.",
-      "B": "The treatment of choice is vancomycin.",
-      "C": "Treatment of surgical patients with intranasal mupirocin decreases wound infection rates with MRSA.",
-      "D": "Hospitalized patients colonized with MRSA require contact isolation.",
-      "E": "MRSA is less virulent than methicillin-sensitive S. aureus ."
-    },
-    "answer": "A"
-  },
-  {
+{
     "id": 50365,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -5641,7 +1531,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
+{
     "id": 50366,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -5657,39 +1547,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
-    "id": 50367,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 489,
-    "source_question_number": 9,
-    "question": "Worldwide, which of the following is the most common mode of transmission of HCV?",
-    "options": {
-      "A": "Fecal-oral",
-      "B": "Sexual",
-      "C": "ontaminated water",
-      "D": "Vertical (childbirth)",
-      "E": ""
-    },
-    "answer": "B"
-  },
-  {
-    "id": 50368,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 491,
-    "source_question_number": 10,
-    "question": "What is the prevalence of HCV infection in the United States?",
-    "options": {
-      "A": "0.2%",
-      "B": "2%",
-      "C": "5%",
-      "D": "10%",
-      "E": "20%"
-    },
-    "answer": "C"
-  },
-  {
+{
     "id": 50369,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -5705,7 +1563,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
+{
     "id": 50370,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -5721,23 +1579,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
-    "id": 50371,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 499,
-    "source_question_number": 14,
-    "question": "Which of the following is an important risk factor for transmission of HIV to the surgeon after a percutaneous injury?",
-    "options": {
-      "A": "ll of the above.",
-      "B": "lood was visible on the sharp object causing the injury.",
-      "C": "ells/mm 3 .",
-      "D": "The injury was caused by a device that had entered a blood vessel of the source patient before injury.",
-      "E": ""
-    },
-    "answer": "A"
-  },
-  {
+{
     "id": 50372,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -5753,23 +1595,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
-    "id": 50373,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 509,
-    "source_question_number": 19,
-    "question": "Which of the following clinical conditions is identified by the presence of antibodies in the serum",
-    "options": {
-      "A": "nd hepatitis B surface antigen (HBsAg)? The patient is susceptible to HBV infection.",
-      "B": "The patient is immune because of HBV vaccination.",
-      "C": "The patient has an active acute infection with HBV.",
-      "D": "The patient has chronic active hepatitis with HBV.",
-      "E": "The patient has recovered from an HBV infection with subsequent natural immunity."
-    },
-    "answer": "E"
-  },
-  {
+{
     "id": 50374,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -5785,7 +1611,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
+{
     "id": 50375,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -5801,7 +1627,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
+{
     "id": 50376,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -5817,39 +1643,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
-    "id": 50377,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 525,
-    "source_question_number": 27,
-    "question": "Laparotomy is performed on a 26-year-old, HIV-positive man who has been hospitalized with",
-    "options": {
-      "A": "bdominal colectomy with ileostomy and a Hartmann procedure",
-      "B": "Primary repair of the perforation with a diverting ileostomy",
-      "C": "Ileocecal resection with primary anastomosis",
-      "D": "Ileocecal resection with primary anastomosis and a diverting ileostomy",
-      "E": ""
-    },
-    "answer": "E"
-  },
-  {
-    "id": 50378,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 531,
-    "source_question_number": 30,
-    "question": "Select the true statement regarding splenectomy in HIV-infected patients.",
-    "options": {
-      "A": "ll of the above.",
-      "B": "HIV-associated thrombocytopenia is the primary indication.",
-      "C": "It is associated with a 30% risk for overwhelming postsplenectomy infection.",
-      "D": "Splenectomy may accelerate progression to AIDS.",
-      "E": ""
-    },
-    "answer": "B"
-  },
-  {
+{
     "id": 50379,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -5865,22 +1659,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
-    "id": 50380,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 545,
-    "source_question_number": null,
-    "question": "1",
-    "options": {
-      "A": "IDS therapy , ed 2. Philadelphia: Churchill Livingstone; 2003. 12 Mandell GL, Bennett JE, Dolin R. Principles and practice of infectious diseases , ed 5. Philadelphia: Churchill Livingstone; 2000. 13 U.S. Public Health Service. Updated U.S. Public Health Service guidelines for the management of occupational exposures to HBV, HCV, and HIV and recommendations for postexposure prophylaxis.",
-      "B": "artlett JG. Occupational exposure to HIV and other blood-borne pathogens. In Cameron JL, editor:",
-      "C": "urrent surgical therapy , ed 9, Philadelphia: CV Mosby, 2008. 10 Recommendations for prevention and control of hepatitis C (HCV) virus and HCV-related chronic",
-      "D": "olin R, Masur H, Saag MS."
-    },
-    "answer": "D"
-  },
-  {
+{
     "id": 50381,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -5894,7 +1673,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
+{
     "id": 50382,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -5910,23 +1689,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
-    "id": 50383,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 559,
-    "source_question_number": 7,
-    "question": "Which of the following would exclude a patient from whole-organ pancreatic transplantation?",
-    "options": {
-      "A": "History of hypoglycemic unawareness without end-organ damage",
-      "B": "History of coronary artery bypass grafting",
-      "C": "History of diabetic neuropathy",
-      "D": "History of lower extremity peripheral vascular disease",
-      "E": "None of the above"
-    },
-    "answer": "C"
-  },
-  {
+{
     "id": 50384,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -5942,7 +1705,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
+{
     "id": 50385,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -5958,7 +1721,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
+{
     "id": 50386,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -5974,7 +1737,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
+{
     "id": 50387,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -5990,7 +1753,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
+{
     "id": 50388,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -6006,7 +1769,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
+{
     "id": 50389,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -6022,7 +1785,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
+{
     "id": 50390,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -6038,23 +1801,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
-    "id": 50391,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 587,
-    "source_question_number": 21,
-    "question": "Six months after renal transplantation, a 56-year-old woman is admitted to the hospital with high fever, an elevated serum creatinine level, disseminated varicella skin lesions, and bilateral pulmonary infiltrates. Which of the following statements is true?",
-    "options": {
-      "A": "The treatment of choice is intravenous acyclovir with or without hyperimmunoglobulin.",
-      "B": "ronchoscopic examination is unnecessary.",
-      "C": "The patient does not need to be placed in isolation.",
-      "D": "The immunosuppressive drug regimen should maintained to decrease the risk of rejection.",
-      "E": "The peak incidence of this disease is 3 years after transplantation."
-    },
-    "answer": "D"
-  },
-  {
+{
     "id": 50392,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -6070,23 +1817,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
-    "id": 50393,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 593,
-    "source_question_number": 24,
-    "question": "The incidence of primary nonfunction of a liver allograft following transplantation ranges from 2% to 10%. Immediately after the liver transplantation procedure, which of the following is not",
-    "options": {
-      "A": "ssociated with this clinical syndrome? Metabolic alkalosis",
-      "B": "Hyperkalemia",
-      "C": "Reduced mental status",
-      "D": "Marked elevation in liver enzyme levels",
-      "E": "Minimal bile output (if a T-tube biliary drainage catheter is in place)"
-    },
-    "answer": "C"
-  },
-  {
+{
     "id": 50394,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -6102,7 +1833,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
+{
     "id": 50395,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -6118,7 +1849,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
+{
     "id": 50396,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -6134,7 +1865,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
+{
     "id": 50397,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -6150,55 +1881,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
-    "id": 50398,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 607,
-    "source_question_number": 31,
-    "question": "Which of the following statements regarding interleukins is true?",
-    "options": {
-      "A": "ll interleukins will only upregulate the immune system.",
-      "B": "IL-8 is a neutrophil chemotactic factor.",
-      "C": "Interleukins are produced only by leukocytes.",
-      "D": "IL-10 produces fever and inflammation.",
-      "E": "Prednisone upregulates the effect of IL-1."
-    },
-    "answer": "B"
-  },
-  {
-    "id": 50399,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 609,
-    "source_question_number": 32,
-    "question": "Which of the following statements regarding the cytokine IL-1 is false?",
-    "options": {
-      "A": "The major cells that produce IL-1 are monocytes and macrophages.",
-      "B": "IL-1 may induce fever.",
-      "C": "T-lymphocyte production of IL-2 is inhibited by IL-1.",
-      "D": "IL-1 may augment wound healing by increasing fibroblast proliferation and collagen synthesis.",
-      "E": "IL-1 binds to CD121."
-    },
-    "answer": "B"
-  },
-  {
-    "id": 50400,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 611,
-    "source_question_number": 33,
-    "question": "Which of the following statements regarding TNF is true?",
-    "options": {
-      "A": "TNF is produced only by monocytes and macrophages.",
-      "B": "Release of TNF is stimulated by exotoxins.",
-      "C": "TNF is an anabolic stimulant to the host that results in the deposition of fat.",
-      "D": "TNF is responsible for the cachexia associated with metastatic disease.",
-      "E": "TNF-α expression increases in response to glucocorticoid exposure."
-    },
-    "answer": "C"
-  },
-  {
+{
     "id": 50401,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -6214,23 +1897,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
-    "id": 50402,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 615,
-    "source_question_number": 35,
-    "question": "Which of the following statements regarding rejection of solid organ transplants is true?",
-    "options": {
-      "A": "Hyperacute rejection begins in the operating room with reperfusion of the transplanted organ.",
-      "B": "Liver transplants are especially susceptible to hyperacute rejection.",
-      "C": "hronic rejection is characterized histologically by lymphocyte infiltration.",
-      "D": "The major cause of graft failure is acute rejection.",
-      "E": ""
-    },
-    "answer": "C"
-  },
-  {
+{
     "id": 50403,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -6245,7 +1912,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
+{
     "id": 50404,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -6261,55 +1928,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
-    "id": 50405,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 624,
-    "source_question_number": 3,
-    "question": "Regarding diabetic patients, which of the following statements is false?",
-    "options": {
-      "A": "Glycosylated hemoglobin (HbA 1c ) accounts for 4% to 7% of the total hemoglobin.",
-      "B": "lood glucose control.",
-      "C": "Long-acting insulin should be replaced with intermediate-acting insulin preoperatively.",
-      "D": "Operations commonly result in elevated blood glucose levels and higher ketone body levels.",
-      "E": "Short-acting insulin and 5% to 10% glucose should be administered in separate bags to optimize"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50406,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 626,
-    "source_question_number": 4,
-    "question": "When evaluating a patient with known or suspected adrenal insufficiency, which of the following statements is false.",
-    "options": {
-      "A": "ppropriate laboratory studies, including determinations of serum cortisol and electrolyte levels, should be conducted and interpreted before initiation of therapy.",
-      "B": "The signs and symptoms of acute adrenal insufficiency may mimic those of septic shock.",
-      "C": "Hyponatremia, hyperkalemia, and hypoglycemia are frequently present.",
-      "D": "The sudden development of hypotension in these patients should be treated immediately with 100 mg of hydrocortisone intravenously.",
-      "E": ""
-    },
-    "answer": "B"
-  },
-  {
-    "id": 50407,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 628,
-    "source_question_number": 5,
-    "question": "Regarding the ACTH stimulation test in patients with suspected adrenal insufficiency, which of the following statements is true?",
-    "options": {
-      "A": "ll of the above.",
-      "B": "This test is based on the blood glucose response to a standard dose of ACTH.",
-      "C": "If the ACTH test result is abnormal, 6-week perioperative steroid coverage is indicated.",
-      "D": "This test is not indicated for a patient taking chronic topical steroid preparations.",
-      "E": ""
-    },
-    "answer": "E"
-  },
-  {
+{
     "id": 50408,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -6325,7 +1944,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
+{
     "id": 50409,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -6341,7 +1960,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
+{
     "id": 50410,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -6357,71 +1976,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
-    "id": 50411,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 640,
-    "source_question_number": 11,
-    "question": "Regarding the use of epidural anesthesia in patients with severe chronic obstructive pulmonary",
-    "options": {
-      "A": "ll of the above.",
-      "B": "The use of epidural anesthesia has consistently led to a decreased incidence of postoperative pulmonary complications.",
-      "C": "Postoperative epidural analgesia leads to a higher incidence of postoperative respiratory",
-      "D": "epression than does patient-controlled analgesia with morphine. None of the above.",
-      "E": "pidural anesthesia is preferred to avoid the respiratory depressant effects of general"
-    },
-    "answer": "D"
-  },
-  {
-    "id": 50412,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 642,
-    "source_question_number": 12,
-    "question": "Regarding preoperative pulmonary function tests (PFTs), which of the following statements is false?",
-    "options": {
-      "A": "ll of the above.",
-      "B": "PFTs conducted before and after bronchodilator therapy are useful in determining optimal management.",
-      "C": "The history and physical examination are more useful than PFTs in predicting postoperative pulmonary complications.",
-      "D": "Patients with a functional residual capacity of less than 50% of forced vital capacity should undergo ventilation-perfusion testing before pneumonectomy.",
-      "E": ""
-    },
-    "answer": "D"
-  },
-  {
-    "id": 50413,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 648,
-    "source_question_number": 15,
-    "question": "In morbidly obese patients, obstructive sleep apnea often results in all but which of the following",
-    "options": {
-      "A": "Right ventricular failure",
-      "B": "Hypoxemia",
-      "C": "onditions? Hypercapnia",
-      "D": "Polycythemia",
-      "E": "Left ventricular failure"
-    },
-    "answer": "E"
-  },
-  {
-    "id": 50414,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 650,
-    "source_question_number": 16,
-    "question": "Obese patients have an increased risk for deep venous thrombosis for all but which of the following reasons?",
-    "options": {
-      "A": "Increased abdominal weight and venous stasis",
-      "B": "Polycythemia",
-      "C": "Infrequent ambulation",
-      "D": "Increased incidence of ischemic heart disease",
-      "E": "Lengthy operations because of difficult exposure"
-    },
-    "answer": "E"
-  },
-  {
+{
     "id": 50415,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -6437,7 +1992,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
+{
     "id": 50416,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -6453,7 +2008,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
+{
     "id": 50417,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -6469,7 +2024,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
+{
     "id": 50418,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -6485,7 +2040,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
+{
     "id": 50419,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -6501,7 +2056,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
+{
     "id": 50420,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -6517,7 +2072,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
+{
     "id": 50421,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -6533,23 +2088,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
-    "id": 50422,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 678,
-    "source_question_number": 30,
-    "question": "Which statement about postoperative nausea and vomiting (PONV) after ambulatory surgery is false.",
-    "options": {
-      "A": "PONV is associated with opioid use.",
-      "B": "PONV occurs less frequently following anesthetic induction with propofol than with thiopental.",
-      "C": "PONV prophylaxis should be administered to all patients before ambulatory surgery.",
-      "D": "PONV is increased in adults who are not required to ingest oral fluids before discharge.",
-      "E": "PONV is one of the most prevalent factors leading to delay in discharge after outpatient procedures."
-    },
-    "answer": "E"
-  },
-  {
+{
     "id": 50423,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -6565,39 +2104,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
-    "id": 50424,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 682,
-    "source_question_number": 32,
-    "question": "Regarding the risk associated with surgery in patients with liver disease, which of the following is not true?",
-    "options": {
-      "A": "cirrhosis.",
-      "B": "Hypercapnia increases portal blood flow.",
-      "C": "Fentanyl, not morphine or meperidine, is the preferred narcotic agent.",
-      "D": "Patients with Child class B cirrhosis undergoing cardiac operations have a high mortality rate.",
-      "E": "Laparoscopic cholecystectomy can be performed safely in patients with compensated Child class"
-    },
-    "answer": "D"
-  },
-  {
-    "id": 50425,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 684,
-    "source_question_number": null,
-    "question": "1 Neumayer L, Vargo D. Principles of preoperative and operative surgery. In Townsend CM,",
-    "options": {
-      "A": "bbott TR. Anaesthesia in untreated myxoedema: report of two cases.",
-      "B": "r J Anaesth . 1967;39:510- 514.",
-      "C": "ardiothorac Vasc Anesth . 2002;16:359-369. 10 Steinsapir J, Carr AA, Prisant LM, et al. Metyrosine and pheochromocytoma.",
-      "D": "andona P, Thusu K, Hafeez R, et al. Effect of hydrocortisone on oxygen free radical generation by mononuclear cells. Metabolism . 1998;47:788-791. 6 Wiener RS, Wiener DC, Larson RJ. Benefits and risks of tight glucose control in critically ill",
-      "E": "tomidate in critically ill patients. Intensive Care Med . 2008;34:714-719. 9 Kinney MA, Narr BJ, Warner MA. Perioperative management of pheochromocytoma. J"
-    },
-    "answer": "B"
-  },
-  {
+{
     "id": 50426,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -6613,23 +2120,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
-    "id": 50427,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 693,
-    "source_question_number": 4,
-    "question": "For a trauma patient with suspected intracranial hypertension, which intravenous anesthetic agent is",
-    "options": {
-      "A": "Midazolam",
-      "B": "Methohexital",
-      "C": "ontraindicated, even when mechanical ventilation is controlled? Thiopental",
-      "D": "Ketamine",
-      "E": "Morphine"
-    },
-    "answer": "A"
-  },
-  {
+{
     "id": 50428,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -6645,7 +2136,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
+{
     "id": 50429,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -6661,119 +2152,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
-    "id": 50430,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 699,
-    "source_question_number": 7,
-    "question": "Which of the following determines the spread of local anesthetics in cerebrospinal fluid?",
-    "options": {
-      "A": "nesthetic volume",
-      "B": "aricity of the local anesthetic",
-      "C": "Patient’s body surface area",
-      "D": "ose of the agent administered",
-      "E": ""
-    },
-    "answer": "B"
-  },
-  {
-    "id": 50431,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 701,
-    "source_question_number": 8,
-    "question": "Which of the following is true regarding malignant hyperthermia (MH)?",
-    "options": {
-      "A": "Unusually low end-tidal carbon dioxide may be an early sign of MH.",
-      "B": "MH may be triggered by halogenated anesthetic agents, as well as by nitrous oxide.",
-      "C": "MH may be triggered by succinylcholine.",
-      "D": "Increased core temperature is an early sign of MH.",
-      "E": "MH is common and rarely results in significant morbidity."
-    },
-    "answer": "B"
-  },
-  {
-    "id": 50432,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 703,
-    "source_question_number": 9,
-    "question": "Which of the following statements regarding the toxicity of local anesthetics is false?",
-    "options": {
-      "A": "Neurologic symptoms almost always precede those of cardiac toxicity.",
-      "B": "upivacaine, and tetracaine.",
-      "C": "The addition of a 1 : 100,000 epinephrine solution allows the administration of higher doses of local anesthetics.",
-      "D": "The relative toxicity of local anesthetics, in decreasing order, is procaine, lidocaine,",
-      "E": "Pregnancy reduces the risk for toxicity because hormones induce resistance to local anesthetics."
-    },
-    "answer": "C"
-  },
-  {
-    "id": 50433,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 705,
-    "source_question_number": 10,
-    "question": "Which of the following statements regarding propofol is false?",
-    "options": {
-      "A": "Induction and sedation doses for children are higher than those for adults after adjusting for weight.",
-      "B": "Propofol is a white, milky emulsion that may be contraindicated in patients with egg allergy.",
-      "C": "Unlike other induction agents, propofol does not suppress the respiratory system.",
-      "D": "The incidence of nausea and vomiting is lower with propofol-based anesthesia than with thiopental/isoflurane anesthesia.",
-      "E": "The hemodynamic changes seen with equianesthetic doses are frequently greater with propofol than with thiopental."
-    },
-    "answer": "E"
-  },
-  {
-    "id": 50434,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 707,
-    "source_question_number": 11,
-    "question": "Which of the following statements regarding midazolam is true?",
-    "options": {
-      "A": "Midazolam is a highly lipid-soluble agent that typically causes pain on injection.",
-      "B": "y the concomitant use of other sedatives or opioids.",
-      "C": "The respiratory depression caused by midazolam is usually minor but can be greatly exacerbated",
-      "D": "Midazolam has no active metabolites, which makes it ideal for use in outpatients.",
-      "E": "Midazolam is renally metabolized."
-    },
-    "answer": "C"
-  },
-  {
-    "id": 50435,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 709,
-    "source_question_number": 12,
-    "question": "Which of the following statements regarding neuromuscular blockade by nondepolarizing agents is false?",
-    "options": {
-      "A": "The effects are prolonged by aminoglycosides.",
-      "B": "Vagolytic side effects occur with pancuronium.",
-      "C": "Nondepolarizing agents may trigger MH.",
-      "D": "Vecuronium undergoes mostly hepatic metabolism.",
-      "E": "Train-of-four monitoring effectively predicts the degree of blockade."
-    },
-    "answer": "C"
-  },
-  {
-    "id": 50436,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 711,
-    "source_question_number": 13,
-    "question": "Which of the following statements regarding flumazenil is true?",
-    "options": {
-      "A": "It is a benzodiazepine antagonist that acts by competitive inhibition.",
-      "B": "It has been used successfully to reverse the clinical effects of narcotic overdose.",
-      "C": "It is indicated for patients with suspected cyclic antidepressant overdoses.",
-      "D": "It reverses the respiratory depressant actions but not the sedative effects of all benzodiazepines.",
-      "E": "It is unlikely to improve the encephalopathy associated with hepatic failure."
-    },
-    "answer": "C"
-  },
-  {
+{
     "id": 50437,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -6789,7 +2168,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
+{
     "id": 50438,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -6805,39 +2184,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
-    "id": 50439,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 717,
-    "source_question_number": 16,
-    "question": "While transporting an intubated patient from the OR to the intensive care unit, the pressure gauge on a completely filled size E compressed gas cylinder containing O 2 reads 2200 psi. How long can O 2",
-    "options": {
-      "A": "60 seconds",
-      "B": "e delivered at a flow rate of 5 L/min from an E cylinder whose pressure gauge reads 1100 psi? 5 minutes",
-      "C": "60 minutes",
-      "D": "125 minutes",
-      "E": "220 minutes"
-    },
-    "answer": "B"
-  },
-  {
-    "id": 50440,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 721,
-    "source_question_number": 18,
-    "question": "Which of the following is least likely to occur in conjunction with a surgically induced stress response?",
-    "options": {
-      "A": "Increased metabolic rate",
-      "B": "Hypercoagulability",
-      "C": "Suppression of the immune response",
-      "D": "Increased secretion of ACTH",
-      "E": "Increased secretion of thyroid-stimulating hormone"
-    },
-    "answer": "A"
-  },
-  {
+{
     "id": 50441,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -6853,7 +2200,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
+{
     "id": 50442,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -6868,7 +2215,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
+{
     "id": 50443,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -6884,7 +2231,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
+{
     "id": 50444,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -6900,39 +2247,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
-    "id": 50445,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 737,
-    "source_question_number": 5,
-    "question": "Regarding peritoneal fluids, which of the following statements is true?",
-    "options": {
-      "A": "The abdominal cavity normally contains 150 to 200 mL (3 g/dL of isotonic fluid).",
-      "B": "acteria contaminating the peritoneum enter the systemic circulation through the subdiaphragmatic lymphatics.",
-      "C": "Mesothelial cells absorb solutes via gradient-driven passive osmosis.",
-      "D": "Inflammation of the peritoneum decreases its permeability.",
-      "E": ""
-    },
-    "answer": "E"
-  },
-  {
-    "id": 50446,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 739,
-    "source_question_number": 6,
-    "question": "Which of the following will not alter the natural flow of peritoneal fluid?",
-    "options": {
-      "A": "Fibrin",
-      "B": "owel obstruction",
-      "C": "irrhosis",
-      "D": "Positive pressure ventilation",
-      "E": "Previous appendectomy"
-    },
-    "answer": "E"
-  },
-  {
+{
     "id": 50447,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -6948,7 +2263,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
+{
     "id": 50448,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -6964,39 +2279,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
-    "id": 50449,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 747,
-    "source_question_number": 10,
-    "question": "Regarding patients with a rigid abdomen and free air on plain film, which of the following statements is true?",
-    "options": {
-      "A": "No further radiologic work-up is required.",
-      "B": "edside sonographic imaging is preferred over CT imaging to confirm the diagnosis of free air.",
-      "C": "T scanning with contrast enhancement is required to confirm the diagnosis.",
-      "D": "Narcotics are contraindicated in patients with an acute abdomen.",
-      "E": "Preoperative prophylactic steroids are indicated in patients with free air."
-    },
-    "answer": "C"
-  },
-  {
-    "id": 50450,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 765,
-    "source_question_number": 19,
-    "question": "Regarding peritonitis, which of the following statements is not true?",
-    "options": {
-      "A": "Primary peritonitis is more common in children with nephrosis and adults with cirrhosis than in patients without such conditions.",
-      "B": "Primary peritonitis is usually monomicrobial.",
-      "C": "hemical peritonitis often precedes bacterial contamination.",
-      "D": "Multiple organisms are commonly cultured from peritoneal dialysis catheters.",
-      "E": "Tuberculous peritonitis has an insidious onset."
-    },
-    "answer": "A"
-  },
-  {
+{
     "id": 50451,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -7010,55 +2293,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
-    "id": 50452,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 768,
-    "source_question_number": 129,
-    "question": "beats/min, blood pressure (BP) of 220/90 mm Hg, respiratory rate (RR) of 30 breaths/min, and oxygen saturation in arterial blood (Sa O 2 ) of 90%. The patient is agitated and trying to pull his drains",
-    "options": {
-      "A": "Lorazepam, 5 mg intravenously",
-      "B": "Four-point restraints while trying to reason with the patient",
-      "C": "Morphine delivered by patient-controlled anesthesia (PCA) with settings of 1 mg every 6 minutes and a 30-mg 4-hour lockout",
-      "D": "Propofol and fentanyl drip",
-      "E": "Placement of an epidural catheter for analgesia Ref.: 1 - 3"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50453,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 772,
-    "source_question_number": 3,
-    "question": "Which of the following statements concerning radial artery cannulation is true?",
-    "options": {
-      "A": "ortic systolic pressure is higher than radial systolic pressure.",
-      "B": "The Allen test is an outdated mode of assessing collateral flow of the ulnar and radial arteries.",
-      "C": "The incidence of infection is higher with catheters placed by surgical cutdown.",
-      "D": "The catheter should be replaced every 3 days.",
-      "E": "Intermittent flushing to keep the catheter free of clots is desirable."
-    },
-    "answer": "B"
-  },
-  {
-    "id": 50454,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 776,
-    "source_question_number": 5,
-    "question": "Which of the following statements is not correct with regard to cardiac output (CO)?",
-    "options": {
-      "A": "trial contraction contributes up to 30% of EDV.",
-      "B": "Ventricular end-diastolic volume (EDV), vascular resistance, and myocardial contractility",
-      "C": "O varies directly with a pulse rate of up to 160 beats/min in sinus rhythm, after which it",
-      "D": "ecreases.",
-      "E": ""
-    },
-    "answer": "B"
-  },
-  {
+{
     "id": 50455,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -7074,23 +2309,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
-    "id": 50456,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 782,
-    "source_question_number": 8,
-    "question": "The patient is taken to the operating room (OR) and found to have perforated colon cancer with fecal peritonitis. On postoperative day 2 he becomes septic, acute renal failure (ARF) develops, and he has high FI O 2 requirements to keep Sa O 2 greater than 90%. With regard to tissue utilization of oxygen, which one of the following statements is false?",
-    "options": {
-      "A": "The brain requires 15% of the resting CO and 20% of the total basal oxygen consumption ( ).",
-      "B": "The kidneys receive 25% of CO but can tolerate a reduction to a third of their normal blood flow for up to 1 hour.",
-      "C": "The heart extracts 70% of the available oxygen from its arterial supply.",
-      "D": "uring acute hypoxia, blood is preferentially shunted to the heart and liver.",
-      "E": "The arterial-venous oxygen difference is a measure of the extent to which blood flow matches the metabolic demand for oxygen."
-    },
-    "answer": "B"
-  },
-  {
+{
     "id": 50457,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -7106,55 +2325,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
-    "id": 50458,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 794,
-    "source_question_number": 14,
-    "question": "The alarm on the cardiac monitor continues to go off on a 73-year-old man with CHF and diabetes mellitus who was recently transferred to the ICU. He appears calm and is sitting up in bed watching a",
-    "options": {
-      "A": "nticoagulation with a heparin drip",
-      "B": "reaths/min, and Sa O 2 of 96%. An ECG taken 7 days ago is normal. A most recent one, taken 24 hours previously, shows that his previously distinct P waves have been replaced with rapid, polymorphic, irregular P waves that are irregular and occurring at a rate greater than 300/min. The",
-      "C": "ardioversion with paddles and settings at 260 J up to 3 times Repeat ECG in 48 hours",
-      "D": "Restoration of sinus rhythm by pharmacologic means such as amiodarone or diltiazem",
-      "E": "CG is repeated and confirms the presence of an arrhythmia. At this point, which is the best initial intervention for this patient? Morphine, 4 mg by intravenous push, to alleviate the pain"
-    },
-    "answer": "B"
-  },
-  {
-    "id": 50459,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 800,
-    "source_question_number": 17,
-    "question": "Which of the following conditions is not usually associated with elevated dead space ventilation?",
-    "options": {
-      "A": "42-year-old female after MI with CHF and a CO of 1.5 L/min",
-      "B": "28-year-old woman on partum day 1 with shortness of breath, a Pa O 2 of 60 mm Hg, and segmental clots bilaterally in the pulmonary arteries",
-      "C": "52-year-old Hispanic immigrant with a long-standing ventricular septal defect and PA pressure of 80/52 mm Hg",
-      "D": "22-year-old man after multiple gunshot wounds, massive transfusions, and a mean arterial to inspired oxygen ratio (PaO 2 /FIO 2 ) of 180",
-      "E": "62-year-old woman smoker with the following ventilator settings: controlled mandatory ventilation (CMV) at a rate of 12 breaths/min, F IO 2 of 60%, V T of 600 mL, and PEEP of 5 cm H 2 O"
-    },
-    "answer": "D"
-  },
-  {
-    "id": 50460,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 804,
-    "source_question_number": 19,
-    "question": "The intensivist in the ICU is called to evaluate multiple patients with respiratory difficulty. The respiratory therapist has been busy collecting data on each of them. Which of the following patients",
-    "options": {
-      "A": "47-year-old woman with bilateral pneumonia and an RR of 55 breaths/min",
-      "B": "72-year-old man after quadruple bypass with a Pa",
-      "C": "O 2 of 67 mm Hg 64-year-old mechanic after colectomy for ulcerative colitis with an alveolar-arterial oxygen",
-      "D": "S /V T ) of 0.7",
-      "E": "28-year-old postal worker after a dog bite to the arm and fasciitis with a shunt fraction greater than 5%"
-    },
-    "answer": "D"
-  },
-  {
+{
     "id": 50461,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -7170,7 +2341,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
+{
     "id": 50462,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -7186,7 +2357,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
+{
     "id": 50463,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -7202,23 +2373,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
-    "id": 50464,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 832,
-    "source_question_number": 33,
-    "question": "In which of the following patients is hypermagnesemia unlikely to be present?",
-    "options": {
-      "A": "38-year-old woman with metastatic breast cancer, anorexia, and an HR of 38 beats/min",
-      "B": "reaths/min",
-      "C": "73-year-old man after exploratory laparotomy for an incarcerated ventral hernia with an RR of 5",
-      "D": "20-year-old woman with headache, elevated liver enzymes, and loss of the patellar reflexes",
-      "E": "44-year-old woman with severe diarrhea and hypotension"
-    },
-    "answer": "D"
-  },
-  {
+{
     "id": 50465,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -7234,7 +2389,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
+{
     "id": 50466,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -7250,23 +2405,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
-    "id": 50467,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 852,
-    "source_question_number": 43,
-    "question": "The patient from Questions 41 and 42 wants to know whether there are any types of blood substitutes that could be given if he does need a transfusion. You discuss the options and",
-    "options": {
-      "A": "Universal compatibility",
-      "B": "Long-term storage capability",
-      "C": "apability of volume expansion",
-      "D": "ecreases physiologic loading and unloading of O 2",
-      "E": "Freedom from disease transmission"
-    },
-    "answer": "E"
-  },
-  {
+{
     "id": 50468,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -7282,102 +2421,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
-    "id": 50469,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 864,
-    "source_question_number": 49,
-    "question": "With regard to MOF, which of the following statement is false?",
-    "options": {
-      "A": "n increase in the gastrointestinal barrier is often present.",
-      "B": "Injury to the microvascular endothelium is uniformly present.",
-      "C": "Neutrophil-mediated injury is dependent on adherence to the microvascular endothelium.",
-      "D": "There is a bimodal pattern to the development of MOF.",
-      "E": ""
-    },
-    "answer": "C"
-  },
-  {
-    "id": 50470,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 870,
-    "source_question_number": 52,
-    "question": "What is the next step in treatment for the patient in Question 51?",
-    "options": {
-      "A": "Hold antibiotic coverage until culture-proven infection is noted.",
-      "B": "Start empirical broad-spectrum antibiotics based on risk factors and an antibiogram of the ICU.",
-      "C": "Perform bronchoscopy daily until the secretions have cleared.",
-      "D": "Start one antibiotic based on the most likely pathogen and escalate as needed.",
-      "E": "Intubate and place the patient on a low-volume, lung-protective ventilation protocol."
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50471,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 874,
-    "source_question_number": 54,
-    "question": "He is now complaining of vague pains all over, anorexia, cough with thin white sputum, and malaise and has not had flatus or a bowel movement for 24 hours. Chest radiography shows bilateral haziness at the costophrenic angles. Physical examination showed the patient to not be in acute",
-    "options": {
-      "A": "calculous cholecystitis",
-      "B": "P of 128/75 mm Hg, and Sa O 2 of 96%. Laboratory findings included a WBC count of 18,500/mm 3 , sodium concentration of 140 mEq/L, potassium concentration of 4.3 mEq/L, BUN of 21 mg/dL, HAP",
-      "C": "atheter-related bloodstream infection",
-      "D": "istress. His lungs have some crackles in the bases bilaterally. His right arm is slightly swollen, and he has some redness around the right side of his neck and chest. His abdomen is soft, distended, tympanitic, and nontender. His vital signs include a temperature of 101.6° F, HR of 100 beats/min, Perforated peptic ulcer",
-      "E": "Viral respiratory infection"
-    },
-    "answer": "B"
-  },
-  {
-    "id": 50472,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 878,
-    "source_question_number": 56,
-    "question": "Which of the following statements is true concerning the condition described in the previous question?",
-    "options": {
-      "A": "nerve biopsy often shows demyelinization or inflammation.",
-      "B": "Failure to wean from the ventilator is due to phrenic nerve involvement.",
-      "C": "orticosteroids are the treatment of choice.",
-      "D": "Serum antibodies against acetylcholine receptors are always present.",
-      "E": "Plasmapheresis is the initial treatment of choice."
-    },
-    "answer": "E"
-  },
-  {
-    "id": 50473,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 882,
-    "source_question_number": null,
-    "question": "1",
-    "options": {
-      "A": "dams CA, Biffl WL, Cioffi WG. Surgical critical care. In Townsend CM, Beauchamp RD, Evers",
-      "B": "M, et al, editors: Sabiston textbook of surgery: the biological basis of modern surgical practice ,",
-      "C": "amm J, Savelieva I. Supraventricular arrhythmias. In Fink MP, Abraham E, Vincent JL, et al,",
-      "E": "ditors: Textbook of critical care , ed 5, Philadelphia: WB Saunders, 2005."
-    },
-    "answer": "D"
-  },
-  {
-    "id": 50474,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 891,
-    "source_question_number": 3,
-    "question": "Soon after the patient in Question 2 arrives in the emergency department, left hemiparesis and",
-    "options": {
-      "A": "phasia develop. At this time, which of the following treatments should be provided?",
-      "B": "Repair of the carotid artery injury",
-      "C": "ontinued observation Ligation of the carotid artery injury",
-      "D": "Repair of the vertebral artery injury",
-      "E": "Systemic anticoagulation"
-    },
-    "answer": "B"
-  },
-  {
+{
     "id": 50475,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -7393,7 +2437,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
+{
     "id": 50476,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -7409,7 +2453,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
+{
     "id": 50477,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -7425,23 +2469,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
-    "id": 50478,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 918,
-    "source_question_number": 15,
-    "question": "For the patient in Question 14, what is the most appropriate next step in management?",
-    "options": {
-      "A": "FAST",
-      "B": "Laparotomy",
-      "C": "T scan",
-      "D": "Thoracotomy",
-      "E": "Laparoscopy"
-    },
-    "answer": "D"
-  },
-  {
+{
     "id": 50479,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -7457,7 +2485,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
+{
     "id": 50480,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -7473,23 +2501,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
-    "id": 50481,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 930,
-    "source_question_number": 21,
-    "question": "For the patient in Question 19, head CT shows a 2-cm subdural hematoma without a midline shift. The patient is taken to the operating room and the hematoma is evacuated. Postoperatively, he is",
-    "options": {
-      "A": "dmitted to the ICU intubated and sedated with an ICP monitor in place. Which of the following treatment measures can be used to maintain adequate CPP? Hyperventilation to a P",
-      "B": "Mannitol, 1 g/kg intravenously for 3 days",
-      "C": "O 2 of 25 mm Hg Hydrocortisone, 100 mg intravenously every 8 hours for 3 days",
-      "D": "Strict blood pressure control to a systolic range of 90 to 100 mm Hg",
-      "E": "Reverse Trendelenburg positioning of the bed at all times"
-    },
-    "answer": "E"
-  },
-  {
+{
     "id": 50482,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -7505,7 +2517,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
+{
     "id": 50483,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -7521,7 +2533,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
+{
     "id": 50484,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -7537,7 +2549,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
+{
     "id": 50485,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -7553,55 +2565,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
-    "id": 50486,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 962,
-    "source_question_number": 37,
-    "question": "Which of the following statements regarding blunt aortic injury is true?",
-    "options": {
-      "A": "pproximately 20% of chest radiographs are falsely negative.",
-      "B": "The proximal descending aorta is the most commonly injured and involves approximately 80% of all cases.",
-      "C": "Overall operative mortality after repair is between 30% and 40%.",
-      "D": "Paraplegia occurs after operative repair in less than 5% of patients.",
-      "E": ""
-    },
-    "answer": "E"
-  },
-  {
-    "id": 50487,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 966,
-    "source_question_number": 39,
-    "question": "Select the correct statement regarding flail chest:",
-    "options": {
-      "A": "It occurs when three or more adjacent ribs are fractured in one place.",
-      "B": "Work of breathing is increased secondary to paradoxical chest wall motion.",
-      "C": "Patients with flail chest should be aggressively resuscitated because of the probable",
-      "D": "evelopment of a pulmonary contusion. Patients with this condition should be prophylactically intubated secondary to a high likelihood of respiratory failure.",
-      "E": "xpiratory pressure."
-    },
-    "answer": "D"
-  },
-  {
-    "id": 50488,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 970,
-    "source_question_number": 41,
-    "question": "Which of the following statements regarding FAST is true?",
-    "options": {
-      "A": "2.5-MHz convex-array transducer should be used.",
-      "B": "The hepatorenal space, known as the Morison pouch, is viewed between the eleventh and twelfth ribs in the right midaxillary line.",
-      "C": "The splenorenal space is evaluated between the ninth and eleventh ribs in the left midaxillary line.",
-      "D": "The bladder should preferentially by emptied before examination to allow better visualization of fluid in the pelvis.",
-      "E": "FAST is an important part of the primary survey."
-    },
-    "answer": "A"
-  },
-  {
+{
     "id": 50489,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -7617,38 +2581,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
-    "id": 50490,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 986,
-    "source_question_number": null,
-    "question": "1",
-    "options": {
-      "A": "dams CA, Biffle WL, Cioffi WG. Surgical critical care. In Townsend CM, Beauchamp RD,",
-      "B": "ritt LD, Rushing GD. Penetrating abdominal trauma. In Cameron JL, editor:",
-      "C": "urrent surgical therapy , ed 9, Philadelphia: CV Mosby, 2008. 11",
-      "E": "ditors: Trauma , ed 6, New York: McGraw-Hill, 2008. 13 Mikami DJ, Beery PR, Ellison EC. Surgery in the pregnant patient. In Townsend CM, Beauchamp"
-    },
-    "answer": "E"
-  },
-  {
-    "id": 50491,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 991,
-    "source_question_number": 2,
-    "question": "Which of the following regarding burn wound depth is true?",
-    "options": {
-      "A": "First-degree burns heal rapidly but contribute significantly to the total body surface area (TBSA)",
-      "B": "urned in large, mixed-depth wounds. Second-degree burns characteristically cause erythema, pain, and blistering.",
-      "C": "Third-degree burns are generally painful and extremely sensitive to touch.",
-      "D": "Fourth-degree burns mandate amputation of the involved extremities.",
-      "E": "Superficial partial-thickness burn is the contemporary term for first-degree burns."
-    },
-    "answer": "D"
-  },
-  {
+{
     "id": 50492,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -7664,23 +2597,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
-    "id": 50493,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 995,
-    "source_question_number": 4,
-    "question": "Select the most accurate statement regarding burn injury:",
-    "options": {
-      "A": "rcing.",
-      "B": "Intoxication is infrequently associated with deep burn injury.",
-      "C": "ircumferential burns on both feet are seen in accidental bathing injuries in children.",
-      "D": "Flash burns are generated by brief, intense heat, and articles of clothing are frequently protective.",
-      "E": "lectrical burns are deeper than they appear because of the high flash temperatures generated by"
-    },
-    "answer": "D"
-  },
-  {
+{
     "id": 50494,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -7696,39 +2613,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
-    "id": 50495,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1005,
-    "source_question_number": 9,
-    "question": "Which of the following is correct regarding inhalation injury in burn patients?",
-    "options": {
-      "A": "The admission chest radiograph is useful for ruling out inhalation injury on admission.",
-      "B": "Supraglottic inhalation injury may necessitate intubation even if gas exchange is initially unaffected.",
-      "C": "With proper pulmonary toilet, pneumonia is an unusual complication of smoke inhalation.",
-      "D": "aily bronchoscopy is mandatory to monitor the evolution of inhalation injury.",
-      "E": ""
-    },
-    "answer": "D"
-  },
-  {
-    "id": 50496,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1007,
-    "source_question_number": 10,
-    "question": "Select the true statement regarding inhalation of toxic gases.",
-    "options": {
-      "A": "Hydrogen cyanide is not a component of smoke in most house fires in the United States.",
-      "B": "urn-injured patients with significant carboxyhemoglobin levels are best treated at a center with hyperbaric oxygen (HBO) capabilities.",
-      "C": "O poisoning should be treated until carboxyhemoglobin levels are less than 10% and the patient is asymptomatic.",
-      "D": "HBO can be administered via endotracheal tube by a high-pressure ventilator in a general intensive care unit bed at many facilities.",
-      "E": ""
-    },
-    "answer": "B"
-  },
-  {
+{
     "id": 50497,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -7744,7 +2629,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
+{
     "id": 50498,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -7760,7 +2645,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
+{
     "id": 50499,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -7776,7 +2661,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
+{
     "id": 50500,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -7792,87 +2677,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
-    "id": 50501,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1030,
-    "source_question_number": 2,
-    "question": "Which of the following statements regarding genetic predisposition to skin cancer is not true?",
-    "options": {
-      "A": "bout 10% of cases of malignant melanoma are familial.",
-      "B": "Familial melanoma is characterized by an earlier age at onset, multiple primary tumors, and a frequent association with multiple dysplastic nevi.",
-      "C": "ases of familial melanoma.",
-      "D": "Mutations of PTC , a tumor suppressor gene, are responsible for most cases of basal cell nevus syndrome.",
-      "E": "The penetrance of p16/CDKN2A gene mutations exhibits geographic variation."
-    },
-    "answer": "D"
-  },
-  {
-    "id": 50502,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1034,
-    "source_question_number": 4,
-    "question": "Which of the following is true regarding benign cystic lesions of the skin?",
-    "options": {
-      "A": "pilonidal cyst results from infection in a congenital coccygeal sinus.",
-      "B": "The wall of a trichilemmal cyst, usually located on the scalp, is characterized by an epidermal lining that includes a granular cell layer.",
-      "C": "The most common location of a ganglion cyst is on the dorsal aspect of the wrist.",
-      "D": "Malignant degeneration may occur in a dermoid cyst.",
-      "E": ""
-    },
-    "answer": "E"
-  },
-  {
-    "id": 50503,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1038,
-    "source_question_number": 6,
-    "question": "Risk factors for the development of soft tissue sarcoma include all of the following except:",
-    "options": {
-      "A": "Retinoblastoma",
-      "B": "Li-Fraumeni syndrome",
-      "C": "von Hippel-Lindau syndrome",
-      "D": "Lymphedema",
-      "E": "xternal beam radiation"
-    },
-    "answer": "B"
-  },
-  {
-    "id": 50504,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1044,
-    "source_question_number": 9,
-    "question": "With regard to basal cell carcinoma, which of the following statements is true?",
-    "options": {
-      "A": "It originates from the deep dermal appendages.",
-      "B": "Intermittent intense exposure to UV light is a greater risk factor than exposure at a low dose per",
-      "C": "Fifty percent occur on the head and neck.",
-      "D": "The risk for a second basal cell carcinoma is lower for men with index tumors on the trunk.",
-      "E": "pisode of a similar total dose. Superficial basal cell carcinoma is the most common type."
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50505,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1053,
-    "source_question_number": 12,
-    "question": "Which of the following is a potential premalignant precursor of melanoma?",
-    "options": {
-      "A": "ctinic keratosis",
-      "B": "owen disease",
-      "C": "Seborrheic keratosis",
-      "D": "ysplastic nevus",
-      "E": ""
-    },
-    "answer": "C"
-  },
-  {
+{
     "id": 50506,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -7888,23 +2693,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
-    "id": 50507,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1061,
-    "source_question_number": 15,
-    "question": "Which of the following is not a risk factor for melanoma?",
-    "options": {
-      "A": "Total nevus count",
-      "B": "Fair skin",
-      "C": "igarette smoking",
-      "D": "Prior blistering sunburn",
-      "E": ""
-    },
-    "answer": "B"
-  },
-  {
+{
     "id": 50508,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -7920,39 +2709,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
-    "id": 50509,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1065,
-    "source_question_number": 17,
-    "question": "Which of the following is a component of current American Joint Commission for Cancer (AJCC) tumor staging for melanoma:",
-    "options": {
-      "A": "Presence or absence of regression",
-      "B": "Presence or absence of lymphovascular invasion",
-      "C": "Level of invasion",
-      "D": "Tumor diameter",
-      "E": "Tumor mitotic rate"
-    },
-    "answer": "D"
-  },
-  {
-    "id": 50510,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1067,
-    "source_question_number": 18,
-    "question": "The most common histologic type of melanoma is:",
-    "options": {
-      "A": "cral lentiginous",
-      "B": "Nodular",
-      "C": "Lentigo maligna",
-      "D": "esmoplastic",
-      "E": ""
-    },
-    "answer": "E"
-  },
-  {
+{
     "id": 50511,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -7968,71 +2725,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
-    "id": 50512,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1082,
-    "source_question_number": 22,
-    "question": "Whether a deep (pelvic) lymph node dissection is performed with inguinofemoral lymph node",
-    "options": {
-      "A": "Findings on pelvic CT or PET-CT",
-      "B": "Palpable versus micrometastatic nodal disease",
-      "C": "The number of positive nodes in the superficial compartment",
-      "D": "issection may be based on all of the following except: Primary tumor ulceration",
-      "E": "The status of Cloquet’s node"
-    },
-    "answer": "E"
-  },
-  {
-    "id": 50513,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1086,
-    "source_question_number": 24,
-    "question": "Which of the following is the most significant prognostic factor for patients with node-positive (stage III) melanoma?",
-    "options": {
-      "A": "Nodal size",
-      "B": "Number of involved lymph nodes",
-      "C": "Tumor thickness",
-      "D": "Tumor ulceration",
-      "E": "Patient gender"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50514,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1090,
-    "source_question_number": 26,
-    "question": "Which of the following is not indicated for the initial treatment of in transit metastasis from",
-    "options": {
-      "A": "mputation",
-      "B": "Injection",
-      "C": "utaneous melanoma? Laser treatment",
-      "D": "Heated limb perfusion",
-      "E": "xcision"
-    },
-    "answer": "D"
-  },
-  {
-    "id": 50515,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1094,
-    "source_question_number": null,
-    "question": "1 Tran TT, Schulman J, Fisher DE. UV and pigmentation: molecular mechanisms and social",
-    "options": {
-      "A": "ccessed January 31, 2010 12",
-      "B": "enz MR, Czernin J, Dry SM, et al. Quantitative F18-fluorodeoxyglucose positron emission tomography accurately characterizes peripheral nerve sheath tumors as malignant or benign.",
-      "C": "ancer . 2010;116:451-458. 11 Pletcher BA. Neurofibromatosis Type 1. In eMedicine Clinical Knowledge Base, Neurology. Updated December 2009 www.emedicine.com",
-      "D": "as Gupta TK, Chaudhuri PK, editors. Tumors of the soft tissues, ed 2, Norwalk, Conn: Appleton & Lange, 1998.",
-      "E": "vers BM, et al, editors: Sabiston textbook of surgery: the biological basis of modern surgical practice , ed 18, Philadelphia: WB Saunders, 2008. 3 Tyrrell RM. Ultraviolet protection. In: Lejeuene FJ, Chaudhuri PK, Das Gupta TK, editors. Malignant melanoma: medical and surgical treatment . New York: McGraw-Hill, 1994. 4"
-    },
-    "answer": "A"
-  },
-  {
+{
     "id": 50516,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -8048,23 +2741,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
-    "id": 50517,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1101,
-    "source_question_number": 3,
-    "question": "Which of the following statements is false regarding the incidence of abdominal wall hernias?",
-    "options": {
-      "A": "Two thirds of all inguinal hernias are classified as indirect.",
-      "B": "Femoral hernias are more common in females than in males.",
-      "C": "Indirect hernias are common in females.",
-      "D": "Hernias generally occur with equal frequency in males and females.",
-      "E": "Premature babies have a 10% incidence of inguinal hernia."
-    },
-    "answer": "C"
-  },
-  {
+{
     "id": 50518,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -8080,23 +2757,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
-    "id": 50519,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1109,
-    "source_question_number": 7,
-    "question": "Which of the following statements is true regarding femoral hernias?",
-    "options": {
-      "A": "Femoral hernias should not be repaired through an infrainguinal approach.",
-      "B": "Femoral hernias are more common in males than in females.",
-      "C": "Femoral hernias are more common than inguinal hernias in females.",
-      "D": "Large femoral hernias should always be repaired by the insertion of prosthetic material.",
-      "E": "Femoral hernias could lead to bowel obstruction, frequently as a Richter type of hernia."
-    },
-    "answer": "B"
-  },
-  {
+{
     "id": 50520,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -8112,23 +2773,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
-    "id": 50521,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1115,
-    "source_question_number": 10,
-    "question": "Which of the following statements is false regarding the preperitoneal or posterior approach to repair of groin hernias?",
-    "options": {
-      "A": "It may be appropriate for repair of both direct and indirect hernias.",
-      "B": "It may be appropriate for repair of femoral hernias.",
-      "C": "It is the preferred approach for repair of obturator hernias.",
-      "D": "The preperitoneal approach is not indicated for bilateral or recurrent hernias.",
-      "E": "Laparoscopic hernioplasty is an extension of the preperitoneal approach."
-    },
-    "answer": "E"
-  },
-  {
+{
     "id": 50522,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -8144,7 +2789,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
+{
     "id": 50523,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -8160,7 +2805,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
+{
     "id": 50524,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -8176,39 +2821,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
-    "id": 50525,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1125,
-    "source_question_number": 15,
-    "question": "Which of the following developments has not led to a decrease in recurrence rates after groin hernia repair?",
-    "options": {
-      "A": "Modifications of the Bassini repair",
-      "B": "Routine use of prosthetic material",
-      "C": "Widespread acceptance of the “tension-free” concept",
-      "D": "Use of the preperitoneal space for hernia repair",
-      "E": "Use of laparoscopy in hernia repair"
-    },
-    "answer": "E"
-  },
-  {
-    "id": 50526,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1127,
-    "source_question_number": 16,
-    "question": "Which of the following is not true regarding laparoscopic hernia repair?",
-    "options": {
-      "A": "Local anesthesia with sedation is the most common form of anesthesia used.",
-      "B": "It could lead injury to the genitofemoral nerve and the lateral femoral cutaneous nerve.",
-      "C": "Transabdominal preperitoneal or total extraperitoneal approaches are commonly used.",
-      "D": "Fixation devices for the mesh should not be placed below the iliopubic tract.",
-      "E": "It is best suited for recurrent and bilateral hernias."
-    },
-    "answer": "A"
-  },
-  {
+{
     "id": 50527,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -8224,71 +2837,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
-    "id": 50528,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1131,
-    "source_question_number": 18,
-    "question": "Which of the following is a true statement regarding umbilical hernias?",
-    "options": {
-      "A": "They are the embryonic equivalent of a small omphalocele.",
-      "B": "Repair in infants is usually deferred until approximately 1 years of age.",
-      "C": "Repair in adults is generally indicated.",
-      "D": "The “vest-over-pants” type of repair is stronger than simple approximation of fascial margins.",
-      "E": "They are most common in white infants."
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50529,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1133,
-    "source_question_number": 19,
-    "question": "Which of the following hernias represent incarceration of a limited portion of the small bowel?",
-    "options": {
-      "A": "Spigelian hernia",
-      "B": "Grynfeltt hernia",
-      "C": "Petit hernia",
-      "D": "Richter hernia",
-      "E": "Littre hernia"
-    },
-    "answer": "C"
-  },
-  {
-    "id": 50530,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1135,
-    "source_question_number": 20,
-    "question": "Which of the following statements is false with regard to the Kugel mesh repair for inguinal hernias?",
-    "options": {
-      "A": "Less than a 1% recurrence rate has been documented.",
-      "B": "The mesh is placed in the preperitoneal space.",
-      "C": "The mesh is usually sutured to the conjoined tendon and the inguinal ligament.",
-      "D": "The repair can be performed on all varieties of inguinal hernias.",
-      "E": "The procedure is best performed with the patient under local anesthesia."
-    },
-    "answer": "D"
-  },
-  {
-    "id": 50531,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1137,
-    "source_question_number": 21,
-    "question": "Which of the following items represents the optimal convalescent period required before returning to manual labor after inguinal mesh herniorrhaphy?",
-    "options": {
-      "A": "6 to 8 weeks",
-      "B": "4 to 5 weeks",
-      "C": "2 to 3 weeks",
-      "D": "1 week",
-      "E": "Less than 1 week"
-    },
-    "answer": "C"
-  },
-  {
+{
     "id": 50532,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -8304,7 +2853,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
+{
     "id": 50533,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -8320,23 +2869,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
-    "id": 50534,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1143,
-    "source_question_number": 24,
-    "question": "The separation-of-components technique:",
-    "options": {
-      "A": "Is best for hernias with fascial defects of 3 cm or less",
-      "B": "Has a recurrence rate of approximately 10%",
-      "C": "May be used when there is contamination or bowel surgery is required",
-      "D": "Is contraindicated for recurrent incisional hernias",
-      "E": "Ideally it avoids the use of mesh"
-    },
-    "answer": "C"
-  },
-  {
+{
     "id": 50535,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -8350,103 +2883,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
-    "id": 50536,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1157,
-    "source_question_number": 2,
-    "question": "With regard to the natural history of breast cancer, which of the following statements is true?",
-    "options": {
-      "A": "On average, a 1-cm breast cancer has been present subclinically for approximately 1 year.",
-      "B": "",
-      "C": "Skin edema in breast cancer is only a result of direct skin invasion by tumor.",
-      "D": "impling of the skin occurs as a result of glandular fibrosis and shortening of the Cooper ligaments. Lymph node metastasis first occurs in levels II and III of the axilla up to 20% of the time.",
-      "E": "Ipsilateral lung involvement occurs most often as a result of direct chest wall invasion."
-    },
-    "answer": "C"
-  },
-  {
-    "id": 50537,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1159,
-    "source_question_number": 3,
-    "question": "With regard to the natural history of breast cancer, which of the following statements is true?",
-    "options": {
-      "A": "Virtually all patients with untreated breast cancer die within 2 years of their diagnosis.",
-      "B": "The likelihood of distant metastasis is related to the size of the primary tumor and involvement of the axillary nodes.",
-      "C": "onservation for stage I and II breast carcinoma.",
-      "D": "Stage for stage, the survival rate for breast cancer in males is lower than that in females.",
-      "E": "Survival is longer in patients who undergo mastectomy than in patients who undergo breast"
-    },
-    "answer": "B"
-  },
-  {
-    "id": 50538,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1165,
-    "source_question_number": 6,
-    "question": "Which of the following is not a characteristic of medullary breast cancer?",
-    "options": {
-      "A": "Lymphocytic infiltrate",
-      "B": "enign appearance on ultrasound",
-      "C": "High rate of lymph node metastasis",
-      "D": "Statistically better than average prognosis",
-      "E": "Usually manifested as a palpable mass"
-    },
-    "answer": "C"
-  },
-  {
-    "id": 50539,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1169,
-    "source_question_number": 8,
-    "question": "Which characteristic of a positive axillary sentinel lymph node is not associated with additional positive nodes and distant recurrence?",
-    "options": {
-      "A": "Node diameter greater than 1 cm",
-      "B": "Firmness on palpation",
-      "C": "Isolated tumor cells",
-      "D": "Nodal micrometastases",
-      "E": "Grossly irregular nodal border"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50540,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1175,
-    "source_question_number": 11,
-    "question": "Which of the following is not an indication for postmastectomy radiotherapy?",
-    "options": {
-      "A": "T3 tumors",
-      "B": "Multicentric DCIS larger than 6 cm",
-      "C": "Four or more positive axillary lymph nodes",
-      "D": "Inflammatory breast cancer",
-      "E": "Gross extranodal extension"
-    },
-    "answer": "C"
-  },
-  {
-    "id": 50541,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1177,
-    "source_question_number": 12,
-    "question": "Which of the following 5-year survival rates by stage for treated breast cancer is incorrect?",
-    "options": {
-      "A": "Stage I: 95% to 100%",
-      "B": "Stage II: 80% to 90%",
-      "C": "Stage III: 50% to 70%",
-      "D": "Stage IV: 1% to 5%",
-      "E": "Stage Tis: 98% to 100%"
-    },
-    "answer": "B"
-  },
-  {
+{
     "id": 50542,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -8462,7 +2899,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
+{
     "id": 50543,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -8478,39 +2915,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
-    "id": 50544,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1189,
-    "source_question_number": 18,
-    "question": "Which of the following is not true regarding magnetic resonance imaging (MRI) for evaluation of",
-    "options": {
-      "A": "It is useful for finding the primary breast lesion in patients with positive axillary nodes but no mammographic evidence of a breast tumor.",
-      "B": "reast abnormalities? It is more accurate than mammography in diagnosing invasive lobular cancer.",
-      "C": "It is more accurate than mammography in assessing tumor extent in older women.",
-      "D": "Its sensitivity in detecting invasive cancer is greater than 90%.",
-      "E": "Its use as a screening tool is still under investigation."
-    },
-    "answer": "B"
-  },
-  {
-    "id": 50545,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1191,
-    "source_question_number": 19,
-    "question": "With regard to current therapy for stage I and stage II breast cancer, which statement is true?",
-    "options": {
-      "A": "The Halstead radical mastectomy has resulted in a cure rate superior to that of other surgical treatment options.",
-      "B": "Lumpectomy and radiation therapy are associated with a local recurrence rate of 25%.",
-      "C": "Oncotype DX assists in making decisions regarding chemotherapy in node-negative, ER- positive, HER-2/neu–negative cancers.",
-      "D": "Node-negative patients who undergo modified radical mastectomy have a survival advantage over those who choose lumpectomy, sentinel lymph node biopsy, and radiation therapy.",
-      "E": "There is no role for skin-sparing mastectomy in the treatment of invasive cancers."
-    },
-    "answer": "C"
-  },
-  {
+{
     "id": 50546,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -8526,23 +2931,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
-    "id": 50547,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1195,
-    "source_question_number": 21,
-    "question": "Which of the following is not true regarding skin-sparing mastectomy?",
-    "options": {
-      "A": "Involves the removal of 30% to 50% of breast skin",
-      "B": "May be appropriate for a central tumor that would require removal of the nipple/areola complex",
-      "C": "May be used for multifocal, minimal breast cancers",
-      "D": "Includes skin excision with 1-cm margins around the previous biopsy site or scar overlying the index neoplasm",
-      "E": "Requires skin excision (marginal only) of the nipple/areola complex"
-    },
-    "answer": "D"
-  },
-  {
+{
     "id": 50548,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -8558,39 +2947,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
-    "id": 50549,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1199,
-    "source_question_number": 23,
-    "question": "With regard to breast carcinoma in men, which statement is true?",
-    "options": {
-      "A": "It is detected most commonly in men 60 to 70 years old.",
-      "B": "RCA1 gene.",
-      "C": "It is commonly associated with a mutation in the",
-      "D": "The prognosis is worse stage for stage than for women.",
-      "E": "Sentinel lymph node biopsy is contraindicated."
-    },
-    "answer": "E"
-  },
-  {
-    "id": 50550,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1201,
-    "source_question_number": 24,
-    "question": "With regard to breast cancer screening, which of the following is not a current recommendation of the ACS?",
-    "options": {
-      "A": "Monthly breast self-examinations are strongly encouraged and should be performed the week",
-      "B": "efore menses. Screening mammograms should be performed yearly in women older than 40 years.",
-      "C": "Women 20 to 30 years of age should undergo clinical breast examinations at least every 3 years.",
-      "D": "Women with greater than a 20% lifetime risk for the development of breast cancer should undergo MRI and mammographic screening yearly.",
-      "E": "Women 40 years and older should have yearly clinical breast examinations."
-    },
-    "answer": "A"
-  },
-  {
+{
     "id": 50551,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -8606,7 +2963,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
+{
     "id": 50552,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -8622,55 +2979,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
-    "id": 50553,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1225,
-    "source_question_number": 36,
-    "question": "With regard to pure tubular carcinoma, which of the following is true?",
-    "options": {
-      "A": "Lymph node involvement is seen in 25% of cases.",
-      "B": "It is a highly aggressive, frequently fatal carcinoma.",
-      "C": "It tends to be ER negative.",
-      "D": "Neoadjuvant chemotherapy should be strongly considered.",
-      "E": "Stage for stage, it has a more favorable prognosis than other forms of ductal carcinoma."
-    },
-    "answer": "C"
-  },
-  {
-    "id": 50554,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1229,
-    "source_question_number": 38,
-    "question": "Which of the following statements is true regarding breast conservation surgery?",
-    "options": {
-      "A": "nd radiotherapy to be completed in one sitting.",
-      "B": "Intraoperative radiotherapy (IORT) targeted to the tumor bed permits breast-conserving surgery",
-      "C": "ancer. IORT is significantly more expensive than MammoSite balloon catheter brachytherapy.",
-      "D": "One known disadvantage of delivering radiotherapy at the time of breast cancer resection is increased toxicity to adjacent tissues.",
-      "E": "IORT can be repeated as needed."
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50555,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1231,
-    "source_question_number": 39,
-    "question": "With regard to asymptomatic, nonpalpable, mammographically detected breast masses, which of the following statements is true?",
-    "options": {
-      "A": "The mass should be excised if it is found in a woman older than 40 years.",
-      "B": "Unless the mass is painful, it can be followed with a mammogram in 6 months.",
-      "C": "Ultrasound is helpful in further defining breast lesions.",
-      "D": "Imaging-guided biopsy is contraindicated.",
-      "E": "Masses with a small, well-defined border and a “halo” sign around them are always benign."
-    },
-    "answer": "B"
-  },
-  {
+{
     "id": 50556,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -8686,71 +2995,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
-    "id": 50557,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1239,
-    "source_question_number": 43,
-    "question": "Which of the following is not a germline mutation associated with a higher incidence of breast",
-    "options": {
-      "A": "PC",
-      "B": "RCA2",
-      "C": "ancer?",
-      "D": "p53",
-      "E": "PTEN"
-    },
-    "answer": "B"
-  },
-  {
-    "id": 50558,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1245,
-    "source_question_number": 46,
-    "question": "Which of the following statements regarding the human epidermal growth factor receptor-2 (HER- 2) gene is false?",
-    "options": {
-      "A": "It controls normal cell growth.",
-      "B": "It is amplified in 25% of breast cancers.",
-      "C": "Trastuzumab is an antibody against the HER-2/neu receptor.",
-      "D": "It is an independent predictor of poor outcome in breast cancer.",
-      "E": "HER-2 status is hereditary."
-    },
-    "answer": "C"
-  },
-  {
-    "id": 50559,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1247,
-    "source_question_number": 47,
-    "question": "Which of the following is false regarding breast reconstruction following mastectomy for breast",
-    "options": {
-      "A": "utogenous tissue usually provides better symmetry than an implant.",
-      "B": "Immediate reconstruction has a detrimental effect on local recurrence rates.",
-      "C": "ancer? Reconstruction is often delayed in patients who might require postmastectomy radiation therapy.",
-      "D": "Multiple factors are considered when choosing reconstruction procedures, including age, obesity, smoking history, concomitant disease, and the patient’s psychological/emotional state.",
-      "E": ""
-    },
-    "answer": "E"
-  },
-  {
-    "id": 50560,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1249,
-    "source_question_number": 48,
-    "question": "Which patient would not benefit from postmastectomy radiotherapy?",
-    "options": {
-      "A": "49-year-old with inflammatory breast cancer",
-      "B": "25-year-old with 6 cm of DCIS",
-      "C": "57-year-old with a T1N2 infiltrating ductal carcinoma",
-      "D": "48-year-old with a 2.5-cm breast mass involving the underlying pectoral muscle",
-      "E": "xtension"
-    },
-    "answer": "B"
-  },
-  {
+{
     "id": 50561,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -8766,7 +3011,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
+{
     "id": 50562,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -8782,39 +3027,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
-    "id": 50563,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1259,
-    "source_question_number": 53,
-    "question": "Which statement is false regarding radial scars?",
-    "options": {
-      "A": "Usually detected as a stellate lesion on mammography",
-      "B": "enign proliferative disease of the breast",
-      "C": "May be associated with or contain atypical ductal hyperplasia or DCIS",
-      "D": "Increases the risk for the future development of breast cancer by 40%",
-      "E": "xtensive elastosis is common"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50564,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1267,
-    "source_question_number": 57,
-    "question": "What is the incidence of lymphedema after axillary node dissection (levels I and II)?",
-    "options": {
-      "A": "5%",
-      "B": "10%",
-      "C": "20%",
-      "D": "40%",
-      "E": "50%"
-    },
-    "answer": "C"
-  },
-  {
+{
     "id": 50565,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -8830,7 +3043,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
+{
     "id": 50566,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -8846,23 +3059,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
-    "id": 50567,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1273,
-    "source_question_number": 60,
-    "question": "What additional treatment should a 42-year-old patient with a 2-cm focus of ER-positive DCIS transected at the margin by lumpectomy receive?",
-    "options": {
-      "A": "Radiation therapy alone",
-      "B": "Tamoxifen alone",
-      "C": "Surgical reexcision alone",
-      "D": "Surgical reexcision and tamoxifen alone",
-      "E": "Surgical reexcision, radiation therapy, and tamoxifen"
-    },
-    "answer": "A"
-  },
-  {
+{
     "id": 50568,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -8878,7 +3075,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
+{
     "id": 50569,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -8894,23 +3091,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
-    "id": 50570,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1279,
-    "source_question_number": 63,
-    "question": "What is the approximate false-negative rate for sentinel lymph node biopsy?",
-    "options": {
-      "A": "1%",
-      "B": "8%",
-      "C": "15%",
-      "D": "20%",
-      "E": "25%"
-    },
-    "answer": "A"
-  },
-  {
+{
     "id": 50571,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -8926,7 +3107,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
+{
     "id": 50572,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -8942,23 +3123,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
-    "id": 50573,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1287,
-    "source_question_number": null,
-    "question": "1",
-    "options": {
-      "A": "l, editors: Sabiston textbook of surgery: the biological basis of modern surgical practice , ed 18, Philadelphia: WB Saunders, 2008.",
-      "B": "reast cancer patients?",
-      "C": "hagpar AB, McMasters KM, Edwards MJ. Can sentinel node biopsy be avoided in some elderly",
-      "D": "isorders, ed 3, St. Louis: WB Saunders, 2004. 8 Fisher B, Jeong JH, Anderson S, et al. Twenty-five-year follow-up of a randomized trial comparing radical mastectomy, total mastectomy, and total mastectomy followed by irradiation. N Engl J Med . 2002;347:567-575. 9 Reed J, Rosman M, Verbanac KM, et al. Prognostic implications of isolated tumor cells and micrometastases in sentinel nodes of patients with invasive breast cancer: 10-year analysis of patients enrolled in the prospective East Carolina University/Anne Arundel Medical Center Sentinel Node Multicenter Study. J Am Coll Surg . 2009;208:333-340. 10",
-      "E": "ditors: Sabiston textbook of surgery: the biological basis of modern surgical practice , ed 18, Philadelphia: WB Saunders, 2008. 6 Hunt KK, Newman LA, Copeland EM, et al. The breast. In Brunicardi FC, Anderson DK, Billiar TR, et al, editors: Schwartz’s principles of surgery , ed 9, New York: McGraw-Hill, 2010. 7"
-    },
-    "answer": "E"
-  },
-  {
+{
     "id": 50574,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -8974,39 +3139,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
-    "id": 50575,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1296,
-    "source_question_number": 3,
-    "question": "Which statement is most accurate regarding the histology of the head and neck?",
-    "options": {
-      "A": "The pharynx is lined exclusively by nonkeratinizing stratified squamous epithelium.",
-      "B": "The minor salivary glands lie in the submucosa of the oral cavity and pharynx.",
-      "C": "The Waldeyer ring consists of only two structures: the palatine tonsils and adenoids.",
-      "D": "The adenoids have crypts lined by stratified squamous epithelium.",
-      "E": "The nasal cavity consists entirely of ciliated respiratory epithelium."
-    },
-    "answer": "C"
-  },
-  {
-    "id": 50576,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1302,
-    "source_question_number": 6,
-    "question": "Which of the following statements is true regarding head and neck carcinogenesis and molecular therapy?",
-    "options": {
-      "A": "nd neck cancers.",
-      "B": "Human papillomavirus (HPV) has been shown to be a factor in the development of certain head",
-      "C": "etuximab (IMC-C225) is a monoclonal antibody therapy targeted against transforming growth factor-β.",
-      "D": "p53 is commonly underexpressed in head and neck cancer.",
-      "E": "The most frequently mutated tumor suppressor gene in head and neck cancer is cyclin D1."
-    },
-    "answer": "B"
-  },
-  {
+{
     "id": 50577,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -9022,23 +3155,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
-    "id": 50578,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1320,
-    "source_question_number": 15,
-    "question": "Which of the following statements is true regarding cancer of the oropharynx?",
-    "options": {
-      "A": "HPV is a risk factor.",
-      "B": "Oropharyngeal cancer commonly metastasizes to level I of the neck.",
-      "C": "oncurrent treatment with chemotherapy and radiation therapy has little role in the management of advanced-stage oropharyngeal cancer.",
-      "D": "Subsites of the oropharynx include the base of the tongue, tonsils, soft palate, and adenoids.",
-      "E": "xtensive resection of the base of the tongue increases the possibility of postoperative velopharyngeal insufficiency."
-    },
-    "answer": "E"
-  },
-  {
+{
     "id": 50579,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -9054,23 +3171,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
-    "id": 50580,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1324,
-    "source_question_number": 17,
-    "question": "Which of the following statements is most accurate regarding the management of SCC of the hypopharynx?",
-    "options": {
-      "A": "Hypopharyngeal carcinoma is most commonly initially seen at an early stage.",
-      "B": "The hypopharynx includes the piriform sinuses, posterior pharyngeal wall, and arytenoid",
-      "C": "artilages. Ten percent of patients with hypopharyngeal carcinoma have palpable lymphadenopathy.",
-      "D": "Surgical therapy for advanced-staged hypopharyngeal carcinoma usually consists of total laryngopharyngectomy.",
-      "E": "Overall survival rates for patients with hypopharyngeal carcinoma compare favorably with those in patients with carcinoma of the glottis."
-    },
-    "answer": "D"
-  },
-  {
+{
     "id": 50581,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -9086,7 +3187,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
+{
     "id": 50582,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -9102,7 +3203,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
+{
     "id": 50583,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -9117,71 +3218,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
-    "id": 50584,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1357,
-    "source_question_number": 2,
-    "question": "With regard to the recurrent laryngeal nerve (RLN), which of the following is true?",
-    "options": {
-      "A": "The left RLN loops around the subclavian vein and ascends medially into the neck.",
-      "B": "The right RLN loops around the inferior thyroid artery, ascends laterally to medially, and enters the cricothyroid membrane.",
-      "C": "The laryngeal nerve is nonrecurrent in 0.5% of patients.",
-      "D": "The RLNs innervate the true vocal cords and the cricothyroid muscles.",
-      "E": "The medial branch of the RLN is primarily sensory."
-    },
-    "answer": "D"
-  },
-  {
-    "id": 50585,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1359,
-    "source_question_number": 3,
-    "question": "With regard to thyroid anatomy, which of the following statements is incorrect?",
-    "options": {
-      "A": "The inferior thyroid artery arises directly from the external carotid artery.",
-      "B": "The thyroidea ima artery arises directly from the aorta in 1% to 4% of patients.",
-      "C": "The ligament of Berry is located near the entry point of the RLN.",
-      "D": "Venous drainage of the thyroid gland is via the superior, middle, and inferior branches.",
-      "E": "The superior and middle thyroid veins drain into the jugular vein."
-    },
-    "answer": "C"
-  },
-  {
-    "id": 50586,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1361,
-    "source_question_number": 4,
-    "question": "Routine work-up of thyroid function includes all of the following except:",
-    "options": {
-      "A": "Thyroid-stimulating hormone (TSH)",
-      "B": "Total thyroxine (T 4 )",
-      "C": "Free triiodothyronine (T 3 )",
-      "D": "Thyroglobulin",
-      "E": "T 3 resin uptake"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50587,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1363,
-    "source_question_number": 5,
-    "question": "With regard to thyroid hormone synthesis, which of the following is true?",
-    "options": {
-      "A": "Iodine trapping involves endocytosis of circulating iodine particles.",
-      "B": "In the euthyroid state, T 3 is the main hormone produced by the thyroid.",
-      "C": "Thyroid peroxidase is responsible for the peripheral conversion of T 4 to T 3 .",
-      "D": "Thyroglobulin is a glycoprotein synthesized in the rough endoplasmic reticulum of the thyrocyte.",
-      "E": "The primary site of peripheral deiodination of T 4 to the active form T 3 occurs in the adrenal gland."
-    },
-    "answer": "D"
-  },
-  {
+{
     "id": 50588,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -9197,7 +3234,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
+{
     "id": 50589,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -9213,7 +3250,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
+{
     "id": 50590,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -9229,23 +3266,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
-    "id": 50591,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1379,
-    "source_question_number": 13,
-    "question": "With regard to the pharmacologic treatment of hyperthyroidism, which of the following is not true?",
-    "options": {
-      "A": "PTU works by inhibiting organic binding of iodine and coupling of iodotyrosines.",
-      "B": "PTU is associated with agranulocytosis.",
-      "C": "PTU is the preferred treatment in pregnant patients.",
-      "D": "Methimazole can worsen exophthalmos in patients with Graves disease.",
-      "E": "Methimazole has longer half-life and requires once-daily dosing."
-    },
-    "answer": "B"
-  },
-  {
+{
     "id": 50592,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -9261,23 +3282,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
-    "id": 50593,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1383,
-    "source_question_number": 15,
-    "question": "With regard to Hashimoto thyroiditis, which of the following is true?",
-    "options": {
-      "A": "The majority of patients are transiently hypothyroid but with time return to a euthyroid state.",
-      "B": "It is primarily treated surgically.",
-      "C": "Radioactive iodine is useful in the treatment of Hashimoto thyroiditis.",
-      "D": "Thyroid microsomal antibodies are detected in the serum of patients.",
-      "E": "The incidence of hypothyroidism in Hashimoto thyroiditis is higher in women than in men."
-    },
-    "answer": "B"
-  },
-  {
+{
     "id": 50594,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -9293,7 +3298,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
+{
     "id": 50595,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -9309,7 +3314,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
+{
     "id": 50596,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -9325,7 +3330,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
+{
     "id": 50597,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -9341,7 +3346,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
+{
     "id": 50598,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -9357,7 +3362,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
+{
     "id": 50599,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -9373,7 +3378,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
+{
     "id": 50600,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -9386,7 +3391,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
+{
     "id": 50601,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -9402,39 +3407,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
-    "id": 50602,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1420,
-    "source_question_number": 4,
-    "question": "With regard to PTH, which of the following statements is incorrect?",
-    "options": {
-      "A": "PTH directly stimulates increased intestinal absorption of calcium.",
-      "B": "PTH stimulates osteoclast resorption of calcium and phosphate.",
-      "C": "PTH cells express G protein–coupled calcium-sensing receptors.",
-      "D": "PTH inhibits calcium excretion at the distal convoluted tubule of the kidney.",
-      "E": "PTH enhances renally mediated hydroxylation of 25-hydroxyvitamin D."
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50603,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1424,
-    "source_question_number": 6,
-    "question": "Routine work-up of a patient with suspected primary hyperparathyroidism (PHPT) includes all of the following except:",
-    "options": {
-      "A": "Serum 1,25-dihydroxyvitamin D levels",
-      "B": "24-hour urine calcium",
-      "C": "Intact PTH (iPTH)",
-      "D": "etailed physical examination and history",
-      "E": ""
-    },
-    "answer": "D"
-  },
-  {
+{
     "id": 50604,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -9450,7 +3423,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
+{
     "id": 50605,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -9466,7 +3439,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
+{
     "id": 50606,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -9482,7 +3455,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
+{
     "id": 50607,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -9498,7 +3471,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
+{
     "id": 50608,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -9514,7 +3487,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
+{
     "id": 50609,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -9530,23 +3503,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
-    "id": 50610,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1458,
-    "source_question_number": 23,
-    "question": "Which of the following is not part of the standard work-up of a patient with persistent or recurrent hyperparathyroidism?",
-    "options": {
-      "A": "Selective venous sampling",
-      "B": "SPECT",
-      "C": "Technetium-Tc-99m-sestamibi scanning",
-      "D": "Ultrasound",
-      "E": "Positron emission tomography (PET)"
-    },
-    "answer": "C"
-  },
-  {
+{
     "id": 50611,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -9560,23 +3517,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
-    "id": 50612,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1463,
-    "source_question_number": 2,
-    "question": "What enzyme is responsible for the conversion of norepinephrine to epinephrine?",
-    "options": {
-      "A": "Tyrosine hydroxylase",
-      "B": "Monamine oxidase",
-      "C": "atechol O -methyltransferase",
-      "D": "opamine β-hydroxylase.",
-      "E": ""
-    },
-    "answer": "D"
-  },
-  {
+{
     "id": 50613,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -9592,55 +3533,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
-    "id": 50614,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1471,
-    "source_question_number": 6,
-    "question": "What is the most common cause of primary adrenal insufficiency (Addison disease)?",
-    "options": {
-      "A": "utoimmune disorder",
-      "B": "Kaposi sarcoma",
-      "C": "ytomegalovirus",
-      "D": "Lymphoma",
-      "E": ""
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50615,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1475,
-    "source_question_number": 8,
-    "question": "The patient described in Question 7 has worsening hypotension despite escalation in intravenous norepinephrine. What should be the immediate next step in the management of this patient?",
-    "options": {
-      "A": "ddition of vasopressin",
-      "B": "lood transfusion",
-      "C": "osyntropin stimulation test",
-      "D": "Hydrocortisone injection",
-      "E": ""
-    },
-    "answer": "C"
-  },
-  {
-    "id": 50616,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1479,
-    "source_question_number": 10,
-    "question": "The initial biochemical screening tests for incidentally discovered adrenal nodules include all of the following except:",
-    "options": {
-      "A": "CTH",
-      "B": "Low-dose dexamethasone test",
-      "C": "Serum aldosterone",
-      "D": "Serum renin",
-      "E": "Late-night salivary cortisol level"
-    },
-    "answer": "B"
-  },
-  {
+{
     "id": 50617,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -9656,7 +3549,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
+{
     "id": 50618,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -9672,7 +3565,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
+{
     "id": 50619,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -9688,7 +3581,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
+{
     "id": 50620,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -9704,7 +3597,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
+{
     "id": 50621,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -9720,7 +3613,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
+{
     "id": 50622,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -9736,23 +3629,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
-    "id": 50623,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1511,
-    "source_question_number": 26,
-    "question": "Which of the following biochemical tests for the work-up of pheochromocytomas has the highest sensitivity?",
-    "options": {
-      "A": "Urinary norepinephrine",
-      "B": "Urinary vanillylmandelic acid",
-      "C": "Urinary total metanephrines",
-      "D": "Plasma free metanephrines and normetanephrine",
-      "E": "Urinary epinephrine"
-    },
-    "answer": "A"
-  },
-  {
+{
     "id": 50624,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -9768,7 +3645,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
+{
     "id": 50625,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -9782,39 +3659,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
-    "id": 50626,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1521,
-    "source_question_number": 2,
-    "question": "Which of the following is true of the esophageal sphincters?",
-    "options": {
-      "A": "The upper esophageal sphincter (UES) is mainly composed of the inferior constrictor muscle.",
-      "B": "The mean resting pressure of the UES is approximately 20 to 30 mm Hg.",
-      "C": "The lower esophageal sphincter (LES) is approximately 2 to 5 cm in length.",
-      "D": "The LES can be identified by an area of hypertrophic muscle.",
-      "E": "LES resting pressure is between 6 and 26 mm Hg and can be overcome by normal peristalsis."
-    },
-    "answer": "B"
-  },
-  {
-    "id": 50627,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1523,
-    "source_question_number": 3,
-    "question": "Which of the following is not true regarding esophageal motility?",
-    "options": {
-      "A": "Primary waveforms are initiated after swallowing and are peristaltic along the length of the",
-      "B": "Primary waveforms can generate pressures from 40 to 80 mm Hg.",
-      "C": "Secondary waveforms are initiated by voluntary mechanisms and are peristaltic.",
-      "D": "Tertiary waveforms are nonprogressive and nonperistaltic.",
-      "E": "sophagus. Tertiary waveforms represent uncoordinated contractions of smooth muscle and are responsible for esophageal spasm."
-    },
-    "answer": "C"
-  },
-  {
+{
     "id": 50628,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -9830,7 +3675,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
+{
     "id": 50629,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -9846,7 +3691,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
+{
     "id": 50630,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -9862,7 +3707,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
+{
     "id": 50631,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -9878,39 +3723,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
-    "id": 50632,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1535,
-    "source_question_number": 9,
-    "question": "Which of the following is not true of hiatal hernias and hernia repair?",
-    "options": {
-      "A": "n antireflux procedure is usually added to the hernia repair after extensive hiatal dissection.",
-      "B": "The use of mesh is associated with a lower recurrence rate than primary cruroplasty is.",
-      "C": "Patients may initially be found to have iron deficiency anemia.",
-      "D": "The gastroesophageal (GE) junction is above the diaphragm in type II hiatal hernias.",
-      "E": ""
-    },
-    "answer": "B"
-  },
-  {
-    "id": 50633,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1539,
-    "source_question_number": 11,
-    "question": "Which of the following most likely contributes to GERD?",
-    "options": {
-      "A": "ttachment of the phrenoesophageal ligament 4 cm above the GE junction",
-      "B": "LES resting pressure of 12 mm Hg",
-      "C": "Thirty percent tertiary waveforms",
-      "D": "Total LES length of 5 cm",
-      "E": ""
-    },
-    "answer": "C"
-  },
-  {
+{
     "id": 50634,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -9926,7 +3739,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
+{
     "id": 50635,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -9942,23 +3755,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
-    "id": 50636,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1556,
-    "source_question_number": 18,
-    "question": "Which of the following is true of treatment options for the patient from Question 17?",
-    "options": {
-      "A": "Observation is the first-line treatment in symptomatic patients.",
-      "B": "For diverticula 3 cm or smaller, surgical repair is superior to endoscopic repair in eliminating symptoms.",
-      "C": "For diverticula larger than 3 cm, endoscopic repair is superior to surgical repair in eliminating symptoms.",
-      "D": "Myotomy alone is usually sufficient to treat diverticula larger than 5 cm.",
-      "E": "Length of hospital stay and inanition are equivalent in endoscopic and surgical repair."
-    },
-    "answer": "D"
-  },
-  {
+{
     "id": 50637,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -9974,7 +3771,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
+{
     "id": 50638,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -9990,23 +3787,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
-    "id": 50639,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1570,
-    "source_question_number": 25,
-    "question": "The patient in Question 24 underwent EUS that showed a T2 lesion. The biopsy specimen is positive for adenocarcinoma of the esophagus. His chance of having a positive lymph node is:",
-    "options": {
-      "A": "20%",
-      "B": "40%",
-      "C": "60%",
-      "D": "80%",
-      "E": "100%"
-    },
-    "answer": "E"
-  },
-  {
+{
     "id": 50640,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -10022,7 +3803,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
+{
     "id": 50641,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -10038,7 +3819,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
+{
     "id": 50642,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -10054,7 +3835,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
+{
     "id": 50643,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -10069,7 +3850,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
+{
     "id": 50644,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -10085,7 +3866,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
+{
     "id": 50645,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -10101,39 +3882,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
-    "id": 50646,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1594,
-    "source_question_number": 7,
-    "question": "The final common pathway of acid secretion by parietal cells involves which of the following?",
-    "options": {
-      "A": "denylate cyclase",
-      "B": "Increased intracellular Ca 2+",
-      "C": "Hydrogen-potassium adenosine triphosphatase (H + ,K + -ATPase)",
-      "D": "Phosphorylase kinase",
-      "E": ""
-    },
-    "answer": "B"
-  },
-  {
-    "id": 50647,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1598,
-    "source_question_number": 9,
-    "question": "Which intestinal hormone is matched with the correct function?",
-    "options": {
-      "A": "Secretin/acts as a universal “on” switch",
-      "B": "Gastrin-releasing peptide/acts as a universal “off” switch",
-      "C": "Somatostatin/stimulates intestinal secretion and motility",
-      "D": "Motilin/acts as a universal “on” switch",
-      "E": "Vasoactive intestinal peptide (VIP)/stimulates intestinal secretion and motility"
-    },
-    "answer": "E"
-  },
-  {
+{
     "id": 50648,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -10149,7 +3898,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
+{
     "id": 50649,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -10165,23 +3914,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
-    "id": 50650,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1604,
-    "source_question_number": 12,
-    "question": "Which of the following clinical conditions is not associated with delayed gastric emptying?",
-    "options": {
-      "A": "Hypocalcaemia",
-      "B": "Scleroderma",
-      "C": "Hyperglycemia",
-      "D": "Myxedema",
-      "E": "Zollinger-Ellison syndrome"
-    },
-    "answer": "B"
-  },
-  {
+{
     "id": 50651,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -10197,7 +3930,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
+{
     "id": 50652,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -10213,7 +3946,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
+{
     "id": 50653,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -10229,7 +3962,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
+{
     "id": 50654,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -10245,7 +3978,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
+{
     "id": 50655,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -10261,39 +3994,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
-    "id": 50656,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1620,
-    "source_question_number": 20,
-    "question": "Which operation for duodenal ulcer is least likely to produce undesirable postoperative symptoms?",
-    "options": {
-      "A": "Subtotal gastrectomy",
-      "B": "Truncal vagotomy and pyloroplasty",
-      "C": "Truncal vagotomy and antrectomy",
-      "D": "Selective vagotomy",
-      "E": "Highly selective vagotomy"
-    },
-    "answer": "C"
-  },
-  {
-    "id": 50657,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1624,
-    "source_question_number": 22,
-    "question": "The patient in Question 21 is found to have a perforated duodenal ulcer. Which of the following",
-    "options": {
-      "A": "Suture closure of the perforation",
-      "B": "est describes the required operation? Omental patch of the perforation",
-      "C": "Repair of the perforation and highly selective vagotomy",
-      "D": "Repair of the perforation and truncal vagotomy",
-      "E": "Repair of the perforation and gastric resection"
-    },
-    "answer": "E"
-  },
-  {
+{
     "id": 50658,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -10309,7 +4010,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
+{
     "id": 50659,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -10325,87 +4026,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
-    "id": 50660,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1632,
-    "source_question_number": 26,
-    "question": "Which of the following endoscopic ulcer characteristics has the highest risk for recurrent",
-    "options": {
-      "A": "Oozing ulcer",
-      "B": "leeding?",
-      "C": "lean based ulcer Nonbleeding “visible vessel”",
-      "D": "ieulafoy ulcer",
-      "E": ""
-    },
-    "answer": "D"
-  },
-  {
-    "id": 50661,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1636,
-    "source_question_number": 28,
-    "question": "Which type of gastric ulcer corresponds with the correct anatomic location?",
-    "options": {
-      "A": "Type I/prepyloric region",
-      "B": "Type II/lesser curvature of the stomach near the GE junction",
-      "C": "Type III/body of the stomach along the lesser curvature",
-      "D": "Type IV/lesser curvature of the stomach near the GE junction",
-      "E": "Type IV/prepyloric region"
-    },
-    "answer": "B"
-  },
-  {
-    "id": 50662,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1638,
-    "source_question_number": 29,
-    "question": "Which type of gastric ulcer corresponds with the associated acid secretion?",
-    "options": {
-      "A": "ll of the above",
-      "B": "Type II/high acid secretion",
-      "C": "Type III/normal or low acid secretion",
-      "D": "Type IV/high acid secretion",
-      "E": ""
-    },
-    "answer": "D"
-  },
-  {
-    "id": 50663,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1640,
-    "source_question_number": 30,
-    "question": "Which gastric ulcer corresponds with the correct recommended surgical management?",
-    "options": {
-      "A": "Type I/Billroth I or II reconstruction",
-      "B": "illroth I reconstruction",
-      "C": "Type III/Csendes gastrectomy with Roux-en-Y gastrojejunostomy or Pauchet gastrectomy and",
-      "D": "Type IV/Billroth I or II reconstruction with truncal vagotomy",
-      "E": "Type IV/total gastrectomy"
-    },
-    "answer": "B"
-  },
-  {
-    "id": 50664,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1644,
-    "source_question_number": 32,
-    "question": "With regard to the epidemiologic characteristics of gastric cancer, which of the following statements is false?",
-    "options": {
-      "A": "The highest incidence is found in Japan.",
-      "B": "Gastric cancer is twice as common in males as in females.",
-      "C": "The incidence of gastric adenocarcinoma of the distal portion of the stomach has increased in the past several decades.",
-      "D": "There is a higher incidence in patients with blood group A.",
-      "E": "There is a higher incidence in patients who have undergone gastric resection for duodenal ulcer."
-    },
-    "answer": "A"
-  },
-  {
+{
     "id": 50665,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -10421,71 +4042,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
-    "id": 50666,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1650,
-    "source_question_number": 35,
-    "question": "With regard to gastric volvulus, which of the following statements is true?",
-    "options": {
-      "A": "Symptoms consist of severe nausea with an inability to vomit.",
-      "B": "The Borchardt triad includes acute epigastric pain, nausea, and bilious vomiting.",
-      "C": "It is frequently relieved simply by passage of a nasogastric tube.",
-      "D": "Gastric volvulus should always be managed conservatively.",
-      "E": "It is associated with an increased incidence of sigmoid volvulus."
-    },
-    "answer": "B"
-  },
-  {
-    "id": 50667,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1652,
-    "source_question_number": 36,
-    "question": "With regard to GISTs, which of the following statements is incorrect?",
-    "options": {
-      "A": "fter the small intestine, the stomach is the second most common location for GISTs, followed",
-      "B": "y the colon and rectum.",
-      "C": "omplete surgical resection is the standard of treatment.",
-      "D": "GISTs are usually resistant to conventional chemotherapy and radiation therapy.",
-      "E": ""
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50668,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1654,
-    "source_question_number": 37,
-    "question": "Which of the following statements is not true regarding gastric MALT lymphoma?",
-    "options": {
-      "A": "Gastric MALT lymphomas result from the monoclonal proliferation of B cells as a result of stimulation of a specific infecting strain of H. pylori .",
-      "B": "Unresponsive gastric MALT lymphoma can usually be salvaged by gastric resection.",
-      "C": "hromosomal translocations and genetic mutations can predict failure of H. pylori treatment.",
-      "D": "Less than 10% of gastric lymphomas have no associated H. pylori infection.",
-      "E": "xternal beam radiation is used to treat refractory MALT lymphoma."
-    },
-    "answer": "B"
-  },
-  {
-    "id": 50669,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1656,
-    "source_question_number": 38,
-    "question": "With regard to the diagnosis and treatment of MALT lymphoma, which of the following statements is correct?",
-    "options": {
-      "A": "moxicillin, and a proton pump inhibitor.",
-      "B": "iopsy are required for complete staging.",
-      "C": "omputed tomography of the abdomen, lymphangiography, chest radiography, and bone marrow H. pylori serology is sufficient to document remission.",
-      "D": "H. pylori –negative gastric MALT lymphoma should initially be treated with clarithromycin,",
-      "E": "H. pylori Gram stain is sufficient to make the diagnosis alone."
-    },
-    "answer": "B"
-  },
-  {
+{
     "id": 50670,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -10501,7 +4058,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
+{
     "id": 50671,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -10517,7 +4074,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
+{
     "id": 50672,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -10532,23 +4089,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
-    "id": 50673,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1673,
-    "source_question_number": 2,
-    "question": "Which of the following statements about small bowel motility is true?",
-    "options": {
-      "A": "Oral feeding stimulates the production of migrating motor complexes (MMCs).",
-      "B": "If motility is impaired, absorption of nutrients is similarly affected.",
-      "C": "MMCs are peristaltic contractions occurring at 10- to 20-minute intervals.",
-      "D": "Vagotomy-induced diarrhea is the result of increased secretion secondary to denervation.",
-      "E": "Segmental bowel resection causes a temporary interruption of MMCs, but the clinical results are usually insignificant."
-    },
-    "answer": "D"
-  },
-  {
+{
     "id": 50674,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -10564,7 +4105,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
+{
     "id": 50675,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -10580,7 +4121,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
+{
     "id": 50676,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -10596,23 +4137,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
-    "id": 50677,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1701,
-    "source_question_number": 11,
-    "question": "For patients with inflammatory bowel disease refractory to medical treatment, nutritional support may influence the course of disease. Which of the following statements is true?",
-    "options": {
-      "A": "n elemental diet is the primary therapy for exacerbation of Crohn’s disease.",
-      "B": "owel rest and parenteral nutrition are the primary therapy for Crohn’s colitis. Total parenteral nutrition (TPN) helps prevent the need for total colectomy in patients with ulcerative colitis.",
-      "C": "aloric replacement.",
-      "D": "In those with Crohn’s disease and a high-output fistula, TPN promotes closure of the fistula.",
-      "E": ""
-    },
-    "answer": "E"
-  },
-  {
+{
     "id": 50678,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -10628,7 +4153,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
+{
     "id": 50679,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -10644,7 +4169,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
+{
     "id": 50680,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -10660,23 +4185,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
-    "id": 50681,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1731,
-    "source_question_number": 22,
-    "question": "What is the most common benign small bowel tumor?",
-    "options": {
-      "A": "denoma",
-      "B": "Gastrointestinal stromal tumor (GIST)",
-      "C": "Hamartoma",
-      "D": "Hemangioma",
-      "E": ""
-    },
-    "answer": "C"
-  },
-  {
+{
     "id": 50682,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -10692,7 +4201,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
+{
     "id": 50683,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -10708,39 +4217,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
-    "id": 50684,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1741,
-    "source_question_number": 27,
-    "question": "On abdominal exploration for a suspected carcinoid tumor, a 2 cm mass is found at the terminal ileum. No liver lesions were detected on preoperative imaging or with intraoperative palpation. What is the best treatment option for this patient?",
-    "options": {
-      "A": "Segmental resection",
-      "B": "Medical therapy with octreotide",
-      "C": "Resection of the terminal ileum with preservation of the ileocecal valve",
-      "D": "Right hemicolectomy with wide resection of the terminal ileum",
-      "E": "Neoadjuvant therapy with streptozotocin and 5-fluorouracil"
-    },
-    "answer": "B"
-  },
-  {
-    "id": 50685,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1743,
-    "source_question_number": 28,
-    "question": "Somatostatin has emerged as a safe and effective agent with a broad range of applications. Which of the following is true for patients with carcinoid tumors?",
-    "options": {
-      "A": "dministration of somatostatin can be used as a provocative diagnostic test.",
-      "B": "Somatostatin receptor scintigraphy is more effective than CT or magnetic resonance imaging (MRI) in localizing primary and metastatic carcinoid tumors.",
-      "C": "Somatostatin is ineffective for the management of carcinoid crisis.",
-      "D": "Somatostatin therapy improves survival in patients with carcinoid syndrome.",
-      "E": ""
-    },
-    "answer": "D"
-  },
-  {
+{
     "id": 50686,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -10756,23 +4233,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
-    "id": 50687,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1753,
-    "source_question_number": 32,
-    "question": "For the patient described in Question 31, which of the following is the most appropriate initial management?",
-    "options": {
-      "A": "ntibiotic and wet-to-dry dressing changes",
-      "B": "Packing of subcutaneous tissue with dry, absorbent dressings",
-      "C": "Immediate return to the operating room for exploration",
-      "D": "Protecting the skin around the fistula with Stomahesive karaya powder, aluminum paste, or zinc oxide and collecting the drainage fluid in an attached plastic bag",
-      "E": ""
-    },
-    "answer": "C"
-  },
-  {
+{
     "id": 50688,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -10788,7 +4249,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
+{
     "id": 50689,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -10804,39 +4265,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
-    "id": 50690,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1761,
-    "source_question_number": 36,
-    "question": "With regard to tuberculous enteritis, which of the following statements is incorrect?",
-    "options": {
-      "A": "pproximately one half of the patients with colonic or ileocolonic disease may be treated medically without surgery.",
-      "B": "Secondary infection results from the ingestion of bacilli contained in contaminated sputum.",
-      "C": "The duodenum is the site of involvement in 85% of patients.",
-      "D": "Infection may be indistinguishable from Crohn’s disease or cancer.",
-      "E": ""
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50691,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1763,
-    "source_question_number": 37,
-    "question": "Regarding typhoid enteritis, which of the following statements is true?",
-    "options": {
-      "A": "The diagnosis can be made by culturing Salmonella typhi from blood or stool.",
-      "B": "leeding requiring operative intervention occurs in 10% to 20% of patients.",
-      "C": "hloramphenicol is the preferred treatment.",
-      "D": "Steroids have no use in treating typhoid enteritis.",
-      "E": "Hyperplasia and ulceration of Peyer patches and mesenteric lymphadenopathy are rare findings."
-    },
-    "answer": "C"
-  },
-  {
+{
     "id": 50692,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -10852,23 +4281,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
-    "id": 50693,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1767,
-    "source_question_number": null,
-    "question": "1 Gordon PH, Nivatvongs SH. Principles and practice of surgery for the colon, rectum, and anus . St. Louis: Quality Medical; 1999. 2 Memon MA, Nelson H. Gastrointestinal carcinoid tumors: current management strategies.",
-    "options": {
-      "A": "fter the fifth gestational month of pregnancy, the appendix is shifted posteriorly and laterally by the gravid uterus.",
-      "B": "illiar TR, et al, editors: Schwartz’s principles of surgery , ed 9, New York: McGraw-Hill, 2010. 5 Sleisenger MH, Fordtran JS. Gastrointestinal and liver disease: pathophysiology, diagnosis, management , ed 4. Philadelphia: WB Saunders; 1989. 6 Wilson JD, Braunwald E, Isselbacher KJ, et al. Harrison’s principles of internal medicine , ed 12. New York: McGraw-Hill; 1991. 7 Marinis A, Yiallourou A, Samanides L, et al. Intussusception of the bowel in adults: a review. World J Gastroenterol . 2009;15:407-411. 8 Greenson JK. Gastrointestinal stromal tumors and other mesenchymal lesions of the gut. Mod Pathol . 2003;16:366-375. 9 Green PHR, Jabri B. Celiac disease and other precursors to small-bowel malignancy. Gastroenterol Clin North Am . 2002;31:625-639. 10 In the majority of the cases, the tip of the appendix is found in the pelvis.",
-      "C": "olon and rectal surgery , ed 5. Philadelphia: JB Lippincott; 2005. 11 Rossini FP, Pennazio M. Small-bowel endoscopy. The appendix is often retrocecal and extraperitoneal.",
-      "D": "is",
-      "E": "ndoscopy . 2002;34:13-20."
-    },
-    "answer": "D"
-  },
-  {
+{
     "id": 50694,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -10884,23 +4297,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
-    "id": 50695,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1772,
-    "source_question_number": 3,
-    "question": "Which of the following statements regarding the pathogenesis of appendicitis is false?",
-    "options": {
-      "A": "The antimesenteric border has the poorest blood supply and is usually the site of the perforation.",
-      "B": "Fecaliths are commonly responsible for appendicitis in children.",
-      "C": "Viral or bacterial infections can precede an episode of appendicitis.",
-      "D": "Obstruction of venous outflow and then arterial inflow results in gangrene.",
-      "E": "Obstruction of the lumen may occur as a result of lymphoid hyperplasia, inspissated stool, or a foreign body."
-    },
-    "answer": "B"
-  },
-  {
+{
     "id": 50696,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -10916,7 +4313,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
+{
     "id": 50697,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -10932,7 +4329,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
+{
     "id": 50698,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -10948,23 +4345,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
-    "id": 50699,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1787,
-    "source_question_number": 10,
-    "question": "With regard to appendicitis in immunocompromised patients, which of the following statements is false?",
-    "options": {
-      "A": "Immunocompromised patients with appendicitis often have a fever, a normal white blood cell (WBC) count, and nonspecific abdominal pain.",
-      "B": "Typhlitis often mimics acute appendicitis.",
-      "C": "ause acute appendicitis.",
-      "D": "Unusual infections such as those caused by mycobacteria, protozoa, and fungi do not usually mimic appendicitis.",
-      "E": ""
-    },
-    "answer": "C"
-  },
-  {
+{
     "id": 50700,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -10980,7 +4361,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
+{
     "id": 50701,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -10996,7 +4377,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
+{
     "id": 50702,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -11012,7 +4393,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
+{
     "id": 50703,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -11028,7 +4409,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
+{
     "id": 50704,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -11044,7 +4425,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
+{
     "id": 50705,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -11060,39 +4441,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
-    "id": 50706,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1815,
-    "source_question_number": 5,
-    "question": "Which disease is correctly matched to the appropriate treatment?",
-    "options": {
-      "A": "ctinomycosis: penicillin and drainage",
-      "B": "Lymphogranuloma venereum: penicillin and steroids",
-      "C": "Tuberculous enteritis: isoniazid and colectomy",
-      "D": "Yersinia infections: metronidazole and appendectomy",
-      "E": "tamocha histolytica : metronidazole and right hemicolectomy"
-    },
-    "answer": "B"
-  },
-  {
-    "id": 50707,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1817,
-    "source_question_number": 6,
-    "question": "With regard to ischemic colitis, which of the following statements is true?",
-    "options": {
-      "A": "The most common symptoms are lower abdominal pain and bright red rectal bleeding.",
-      "B": "Occlusion of the major mesenteric vessels is responsible for producing the ischemia in most",
-      "C": "ases. The splenic flexure and hepatic flexure are the most vulnerable areas, although any segment of the colon may be involved.",
-      "D": "Nonoperative management is not justified because in a significant percentage of such patients, perforation and peritonitis eventually develop.",
-      "E": "The Griffith point is the vulnerable area at the rectosigmoid junction."
-    },
-    "answer": "A"
-  },
-  {
+{
     "id": 50708,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -11108,7 +4457,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
+{
     "id": 50709,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -11124,23 +4473,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
-    "id": 50710,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1835,
-    "source_question_number": 14,
-    "question": "Which of the following is true regarding rectal prolapse?",
-    "options": {
-      "A": "The extruded mucosa has radially orientated folds.",
-      "B": "Rectal prolapse occurs mostly in men with a male-to-female ratio of 6 : 1.",
-      "C": "The Altemeier procedure involves full-thickness resection of the prolapsed rectum through a perineal incision.",
-      "D": "Fecal incontinence is not a predominant symptomatic feature in rectal prolapse.",
-      "E": "Rectal prolapse is commonly attributed to intussusception of the rectum as a result of a neoplasm forming a lead point."
-    },
-    "answer": "D"
-  },
-  {
+{
     "id": 50711,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -11156,7 +4489,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
+{
     "id": 50712,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -11172,7 +4505,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
+{
     "id": 50713,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -11188,7 +4521,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
+{
     "id": 50714,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -11204,7 +4537,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
+{
     "id": 50715,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -11220,7 +4553,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
+{
     "id": 50716,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -11236,23 +4569,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
-    "id": 50717,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1868,
-    "source_question_number": 30,
-    "question": "Which statement is correct concerning intestinal polyposis syndromes?",
-    "options": {
-      "A": "Hamartomas are found in patients with both juvenile polyps and Peutz-Jeghers syndrome.",
-      "B": "Familial polyposis syndrome often includes extraintestinal manifestations.",
-      "C": "Turcot syndrome often includes small bowel polyps.",
-      "D": "Peutz-Jeghers syndrome, Gardner syndrome, and Turcot syndrome are inherited in an autosomal recessive pattern.",
-      "E": "Familial polyposis and Turcot syndrome are benign conditions without malignant potential."
-    },
-    "answer": "D"
-  },
-  {
+{
     "id": 50718,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -11268,71 +4585,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
-    "id": 50719,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1872,
-    "source_question_number": 32,
-    "question": "The following statements are true about HNPCC syndrome (Lynch syndrome) except:",
-    "options": {
-      "A": "It is inherited as an autosomal dominant trait.",
-      "B": "Most cancers in patients with HNPCC involve the right colon.",
-      "C": "olorectal cancers develop within 10 years.",
-      "D": "In up to 40% of patients who undergo segmental (rather than total) colectomy, metachronous",
-      "E": "There is a high frequency of endometrial, ovarian, breast, and gastric cancers."
-    },
-    "answer": "E"
-  },
-  {
-    "id": 50720,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1874,
-    "source_question_number": 33,
-    "question": "Match the gene in the left column with the applicable statement in the right column:",
-    "options": {
-      "A": "PC ]) located on",
-      "B": "Late-occurring alteration resulting in loss of cell-to-cell contact, thereby enhancing metastases",
-      "C": "ell growth and differentiation",
-      "D": "Most common mutation found in patients with HNPCC",
-      "E": "Oncogene that when mutated, codes for a protein that cannot regulate"
-    },
-    "answer": "B"
-  },
-  {
-    "id": 50721,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1878,
-    "source_question_number": 35,
-    "question": "Which of the following statements is true regarding colorectal polyps?",
-    "options": {
-      "A": "Tubular adenoma is the most common type of colon polyp, and mitosis occurs at the surfaces of",
-      "B": "Hyperplastic polyps are the most common type of colon polyp, and mitosis occurs at the depths of crypts.",
-      "C": "rypts. Tubular adenomas are usually pedunculated and differentiate into mature goblet cells.",
-      "D": "The malignant potential of colorectal polyps is related to both size and location of the polyp.",
-      "E": "The most common location for hyperplastic polyps is the ascending colon."
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50722,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1885,
-    "source_question_number": 38,
-    "question": "With regard to screening for colorectal cancer, which of the following is true?",
-    "options": {
-      "A": "t the age of 20.",
-      "B": "arium enema alone is the most cost-effective means of screening asymptomatic patients. Screening in the general population should begin at 60 years of age.",
-      "C": "Fecal occult blood testing (FOBT) is an adequate screening tool for colon cancer.",
-      "D": "When combined with flexible sigmoidoscopy, FOBT is an acceptable screening option in",
-      "E": "For patients with familial polyposis, colonoscopy should be performed every 6 months beginning"
-    },
-    "answer": "C"
-  },
-  {
+{
     "id": 50723,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -11348,39 +4601,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
-    "id": 50724,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1889,
-    "source_question_number": 40,
-    "question": "Which of the following is the most important prognostic determinant of survival after treatment of",
-    "options": {
-      "A": "Lymph node involvement",
-      "B": "Transmural extension",
-      "C": "olorectal cancer? Tumor size",
-      "D": "NA content",
-      "E": ""
-    },
-    "answer": "B"
-  },
-  {
-    "id": 50725,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1894,
-    "source_question_number": 42,
-    "question": "Which of the following is the appropriate operation for a sigmoid cancer that has not metastasized",
-    "options": {
-      "A": "Segmental resection of the sigmoid",
-      "B": "Resection of the entire sigmoid and distal descending colon, sparing the main left colic artery",
-      "C": "Resection of the sigmoid and the descending colon, including the inferior mesenteric artery at its origin",
-      "D": "istantly? Resection of the entire colon proximal to the lesion with ileorectostomy",
-      "E": "Including routine concomitant oophorectomy at the time of colectomy"
-    },
-    "answer": "C"
-  },
-  {
+{
     "id": 50726,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -11396,54 +4617,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
-    "id": 50727,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1904,
-    "source_question_number": 47,
-    "question": "Which of the following is true regarding anorectal ultrasound imaging?",
-    "options": {
-      "A": "Sedation is required.",
-      "B": "The bowel must be prepared as that for colonoscopy or colectomy.",
-      "C": "Scanning is best performed with a 3.0-MHz crystal.",
-      "D": "Imaging of lesions more than 10 cm from the anus is not possible.",
-      "E": "Image-guided needle biopsy of extraluminal nodules is safe."
-    },
-    "answer": "C"
-  },
-  {
-    "id": 50728,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1910,
-    "source_question_number": 49,
-    "question": "The patient from Question 48 undergoes a complete evaluation that shows a rectal",
-    "options": {
-      "A": "PR",
-      "B": "Transanal microscopic excision",
-      "C": "arcinoembryonic antigen (CEA) level is normal. The transrectal ultrasound is shown: Select the most appropriate treatment for this patient:",
-      "D": "Preoperative chemotherapy and radiation therapy"
-    },
-    "answer": "C"
-  },
-  {
-    "id": 50729,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1913,
-    "source_question_number": 50,
-    "question": "With regard to radiation-induced enterocolitis, which of the following statements is true?",
-    "options": {
-      "A": "Histologically, subintimal foam cells are pathognomonic, and additional changes include progressive vasculitis of the submucosal arteries.",
-      "B": "The splenic flexure is the most common site of injury.",
-      "C": "Rectovaginal fistulas secondary to irradiation can be treated only by fecal diversion.",
-      "D": "Long segments of strictured small bowel are best treated by resection.",
-      "E": "The prevalence of rectal cancer in patients who have previously received pelvic radiation therapy is similar to that in patients without previous exposure to radiation."
-    },
-    "answer": "D"
-  },
-  {
+{
     "id": 50730,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -11459,7 +4633,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
+{
     "id": 50731,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -11474,7 +4648,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
+{
     "id": 50732,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -11490,22 +4664,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
-    "id": 50733,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1954,
-    "source_question_number": null,
-    "question": "1",
-    "options": {
-      "A": "yscue JM, Smith LE. Tumors of the anal region. In Cameron JL, editor:",
-      "B": "ullard KM, Rothenberger DA. Colon, rectum and anus. In Brunicardi FC, Andersen DK, Billiar TR, et al, editors: Schwartz’s principles of surgery , ed 9, New York: McGraw-Hill, 2010. 2 Nelson H, Cima RR. Anus. In Townsend CM, Beauchamp RD, Evers BM, et al, editors: Sabiston textbook of surgery: the biological basis of modern surgical practice , ed 18, Philadelphia: WB Saunders, 2008. 3 Saclarides TJ. Anorectal ultrasound. In Machi J, Staren ED, editors: Ultrasound for surgeons , ed 2, Philadelphia: Lippincott Williams & Wilkins, 2005. 4 Glasgow SC, Dietz DW. Anorectal abscess and fistula. In Cameron JL, editor:",
-      "C": "olon and rectal surgery . Philadelphia: JB Lippincott; 2005. 10 Gordon PH, Nivatvongs S. Principles and practice of surgery for the colon, rectum and anus . St. Louis: Quality Medical; 1999.",
-      "E": "d 9, Philadelphia: Mosby, 2008. 8 Tran NA, Thorson AG. Rectovaginal fistula. In Cameron JL, editor:"
-    },
-    "answer": "A"
-  },
-  {
+{
     "id": 50734,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -11521,55 +4680,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
-    "id": 50735,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1960,
-    "source_question_number": 3,
-    "question": "Which of the following statements about the anatomy of the hepatic veins is true?",
-    "options": {
-      "A": "The left hepatic vein drains the entire left lobe.",
-      "B": "Veins from the caudate lobe enter the inferior vena cava directly.",
-      "C": "The middle hepatic vein usually drains into the right hepatic vein.",
-      "D": "There are valves in the hepatic venous system.",
-      "E": "Hepatic veins have prominent hyperechoic walls on ultrasound imaging."
-    },
-    "answer": "C"
-  },
-  {
-    "id": 50736,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1962,
-    "source_question_number": 4,
-    "question": "Which of the following statements is true about the portal vein?",
-    "options": {
-      "A": "It is formed by the junction of the inferior mesenteric vein and splenic vein.",
-      "B": "It is the most dorsal structure in the hepatoduodenal ligament.",
-      "C": "It contains the valves of Mirizzi.",
-      "D": "The right portal vein typically branches later than the left portal vein.",
-      "E": "It carries deoxygenated blood and provides only 10% of the liver’s oxygenation"
-    },
-    "answer": "B"
-  },
-  {
-    "id": 50737,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1964,
-    "source_question_number": 5,
-    "question": "Which of the following hepatic resections involves dissection in the plane of the falciform ligament or umbilical fissure?",
-    "options": {
-      "A": "Right lobectomy",
-      "B": "Right trisegmentectomy",
-      "C": "Left lobectomy",
-      "D": "Left lateral segmentectomy",
-      "E": "None of the above"
-    },
-    "answer": "B"
-  },
-  {
+{
     "id": 50738,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -11585,103 +4696,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
-    "id": 50739,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1970,
-    "source_question_number": 8,
-    "question": "Which of the following is true regarding the hepatic functional unit?",
-    "options": {
-      "A": "The center of the hepatic lobule is the portal triad.",
-      "B": "ile flows toward the centrilobular hepatic venule.",
-      "C": "Zone III is the most susceptible to hypoxic injury.",
-      "D": "Hepatocytes in zone I have the lowest oxygen tension.",
-      "E": ""
-    },
-    "answer": "C"
-  },
-  {
-    "id": 50740,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1976,
-    "source_question_number": 11,
-    "question": "The reticuloendothelial function of the liver is primarily dependent on which of the following",
-    "options": {
-      "A": "ll of the above",
-      "B": "Kupffer cells",
-      "C": "ells? Histiocytes",
-      "D": "Ito cells",
-      "E": ""
-    },
-    "answer": "B"
-  },
-  {
-    "id": 50741,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1978,
-    "source_question_number": 12,
-    "question": "Which of the following proteins is not primarily synthesized in the liver?",
-    "options": {
-      "A": "lbumin",
-      "B": "Fibrinogen",
-      "C": "von Willebrand factor",
-      "D": "Transferrin",
-      "E": "Factor VII"
-    },
-    "answer": "B"
-  },
-  {
-    "id": 50742,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1980,
-    "source_question_number": 13,
-    "question": "The cytochrome P-450 system transforms compounds by all of following mechanisms except?",
-    "options": {
-      "A": "Oxidation",
-      "B": "oth A and C",
-      "C": "onjugation",
-      "D": "Reduction",
-      "E": ""
-    },
-    "answer": "C"
-  },
-  {
-    "id": 50743,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1982,
-    "source_question_number": 14,
-    "question": "The liver is integral to which of the following steps in vitamin D metabolism?",
-    "options": {
-      "A": "Intestinal absorption",
-      "B": "oth A and C",
-      "C": "25-Hydroxylation",
-      "D": "Formation of cholecalciferol",
-      "E": ""
-    },
-    "answer": "C"
-  },
-  {
-    "id": 50744,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1984,
-    "source_question_number": 15,
-    "question": "In a patient with obstructive jaundice, which of the following enzymes is usually elevated?",
-    "options": {
-      "A": "ll of the above",
-      "B": "Leucine aminopeptidase",
-      "C": "γ-Glutamyltransferase (GGT)",
-      "D": "5′-Nucleotidase",
-      "E": ""
-    },
-    "answer": "E"
-  },
-  {
+{
     "id": 50745,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -11697,7 +4712,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
+{
     "id": 50746,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -11713,39 +4728,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
-    "id": 50747,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 1998,
-    "source_question_number": 22,
-    "question": "Right upper quadrant abdominal pain develops in a 25-year-old woman taking oral contraceptives.",
-    "options": {
-      "A": "rterial embolization",
-      "B": "Percutaneous needle biopsy",
-      "C": "T demonstrates a hypodense, 6-cm mass in the right lobe of the liver. A 99m Tc-labeled scan reveals Hepatic resection",
-      "D": "iscontinuation of oral contraceptives and observation with serial CT",
-      "E": "Radiation therapy"
-    },
-    "answer": "C"
-  },
-  {
-    "id": 50748,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2002,
-    "source_question_number": 24,
-    "question": "Hepatocellular carcinoma is epidemiologically associated with all of the following except:",
-    "options": {
-      "A": "lcoholic cirrhosis",
-      "B": "Hepatitis B virus (HBV) infection",
-      "C": "Hepatitis C virus (HCV) infection",
-      "D": "Wilson disease",
-      "E": ""
-    },
-    "answer": "B"
-  },
-  {
+{
     "id": 50749,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -11761,7 +4744,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
+{
     "id": 50750,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -11777,7 +4760,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
+{
     "id": 50751,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -11793,7 +4776,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
+{
     "id": 50752,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -11809,87 +4792,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
-    "id": 50753,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2018,
-    "source_question_number": 32,
-    "question": "With regard to hernias in patients with ascites, which of the following statements is true?",
-    "options": {
-      "A": "ll of the above.",
-      "B": "Umbilical hernia recurrence rates for patients with and without ascites are the same.",
-      "C": "Patients with asymptomatic groin hernias should be treated surgically.",
-      "D": "Preoperative paracentesis is not a helpful strategy for electively repairing these hernias.",
-      "E": ""
-    },
-    "answer": "D"
-  },
-  {
-    "id": 50754,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2020,
-    "source_question_number": 33,
-    "question": "Which of the following is a contraindication to radiofrequency ablation (RFA) of liver tumors?",
-    "options": {
-      "A": "Proximity of the tumor to major vascular structures",
-      "B": "Multiple lesions",
-      "C": "In conjunction with liver resection",
-      "D": "Metastatic colon cancer",
-      "E": "None of the above"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50755,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2024,
-    "source_question_number": 35,
-    "question": "Which of the following clinical conditions is indicated by the presence of serum antibodies against hepatitis B surface antigen (anti-HBs) and anti-HBc in the absence of HBsAg?",
-    "options": {
-      "A": "symptomatic chronic carrier of HBV",
-      "B": "Normal response to vaccination with the hepatitis B vaccine",
-      "C": "hronic active hepatitis secondary to HBV",
-      "D": "Recovery with subsequent immunity following acute hepatitis B",
-      "E": ""
-    },
-    "answer": "C"
-  },
-  {
-    "id": 50756,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2026,
-    "source_question_number": null,
-    "question": "1",
-    "options": {
-      "A": "m J Surg . 2001;182:552-557.",
-      "B": "lumgart LH. Surgery of the liver, biliary tract and pancreas , ed 4. Edinburgh: Churchill- Livingstone; 2006. 8 Roayaie S, Guarrera JV, Ye MQ, et al. Aggressive surgical treatment of intrahepatic",
-      "C": "urley SA, Izzo F, Ellis LM, et al. Radiofrequency ablation of hepatocellular cancer in 110 patients with cirrhosis.",
-      "D": "eziel DJ. Hepatobiliary ultrasound. Probl Gen Surg . 1997;14:13-24. 5 Mulvihill SJ. Liver, biliary tract and pancreas. In O’Leary JP, Tabuenca A, editors: The physiologic basis of surgery , ed 4, Philadelphia: Lippincott Williams & Wilkins, 2008. 6 Melendez JA, Arslan V, Fischer ME, et al. Perioperative outcomes of major hepatic resections under low central venous pressure anesthesia: blood loss, blood transfusion and the risk of postoperative renal dysfunction. J Am Coll Surg . 1998;187:620-625. 7",
-      "E": "t al, editors: Greenfield’s surgery: scientific principles and practice , ed 4, Philadelphia: Lippincott Williams & Wilkins, 2006. 4"
-    },
-    "answer": "D"
-  },
-  {
-    "id": 50757,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2031,
-    "source_question_number": 3,
-    "question": "Which of the following an anatomic features may contribute to stricture formation after injury to the",
-    "options": {
-      "A": "The blood supply to the supraduodenal bile duct has a longitudinal pattern.",
-      "B": "The blood supply to the supraduodenal bile duct has a lateral pattern.",
-      "C": "ommon bile duct? The blood supply to the supraduodenal bile duct has a segmental end-artery arrangement.",
-      "D": "The blood supply to the common bile duct is derived primarily from the common hepatic artery.",
-      "E": "The blood supply to the common bile duct has a fragile anastomotic network."
-    },
-    "answer": "C"
-  },
-  {
+{
     "id": 50758,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -11905,7 +4808,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
+{
     "id": 50759,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -11921,7 +4824,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
+{
     "id": 50760,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -11937,7 +4840,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
+{
     "id": 50761,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -11953,7 +4856,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
+{
     "id": 50762,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -11969,7 +4872,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
+{
     "id": 50763,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -11985,7 +4888,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
+{
     "id": 50764,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -12001,23 +4904,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
-    "id": 50765,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2053,
-    "source_question_number": 13,
-    "question": "Which of the following is true regarding gallbladder emptying in between meals?",
-    "options": {
-      "A": "It does not occur.",
-      "B": "It is stimulated by CCK.",
-      "C": "It is inhibited by CCK.",
-      "D": "It depends on peristalsis of the common bile duct.",
-      "E": "It is stimulated by motilin."
-    },
-    "answer": "D"
-  },
-  {
+{
     "id": 50766,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -12033,7 +4920,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
+{
     "id": 50767,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -12049,7 +4936,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
+{
     "id": 50768,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -12065,7 +4952,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
+{
     "id": 50769,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -12081,7 +4968,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
+{
     "id": 50770,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -12097,7 +4984,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
+{
     "id": 50771,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -12113,7 +5000,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
+{
     "id": 50772,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -12129,7 +5016,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
+{
     "id": 50773,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -12145,23 +5032,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
-    "id": 50774,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2075,
-    "source_question_number": 23,
-    "question": "Ultrasound imaging reveals gallstones in an asymptomatic 50-year-old woman. Which of the following is the recommended treatment?",
-    "options": {
-      "A": "Observation",
-      "B": "Laparoscopic cholecystectomy",
-      "C": "Open cholecystectomy",
-      "D": "Ursodeoxycholic acid",
-      "E": "xtracorporeal shock wave lithotripsy (ESWL)"
-    },
-    "answer": "D"
-  },
-  {
+{
     "id": 50775,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -12177,7 +5048,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
+{
     "id": 50776,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -12193,7 +5064,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
+{
     "id": 50777,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -12209,7 +5080,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
+{
     "id": 50778,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -12225,7 +5096,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
+{
     "id": 50779,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -12241,55 +5112,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
-    "id": 50780,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2096,
-    "source_question_number": 32,
-    "question": "Which of the following is true regarding the use of intraoperative cholangiography (IOC) and bile",
-    "options": {
-      "A": "Selective use of IOC effectively prevents bile duct injury.",
-      "B": "Routine use of IOC effectively prevents bile duct injury.",
-      "C": "Selective use of IOC is associated with a higher rate of bile duct injury.",
-      "D": "uct injury during laparoscopic cholecystectomy? The severity of bile duct injury is independent of the use of IOC.",
-      "E": "Use of IOC increases the intraoperative diagnosis of injury."
-    },
-    "answer": "B"
-  },
-  {
-    "id": 50781,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2098,
-    "source_question_number": 33,
-    "question": "Which of the following is an early event in the pathophysiology of acute calculous cholecystitis?",
-    "options": {
-      "A": "Increased biliary lysolecithin",
-      "B": "acterial infection",
-      "C": "CK receptor depletion",
-      "D": "Prostaglandin depletion",
-      "E": ""
-    },
-    "answer": "E"
-  },
-  {
-    "id": 50782,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2100,
-    "source_question_number": 34,
-    "question": "Which of the following is most accurate in the diagnosis of acute cholecystitis?",
-    "options": {
-      "A": "Plain abdominal radiographs",
-      "B": "Ultrasound imaging",
-      "C": "Oral cholecystography",
-      "D": "Technetium-99m pertechnetate and HIDA scans",
-      "E": "Leukocytosis with elevated transaminases"
-    },
-    "answer": "A"
-  },
-  {
+{
     "id": 50783,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -12305,23 +5128,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
-    "id": 50784,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2106,
-    "source_question_number": 37,
-    "question": "With regard to acalculous cholecystitis, which of the following statements is true?",
-    "options": {
-      "A": "It most commonly affects elderly patients in an outpatient setting.",
-      "B": "The primary pathophysiologic feature involves gallbladder stasis.",
-      "C": "HIDA scan results are usually normal.",
-      "D": "Ultrasound imaging of the gallbladder is usually normal.",
-      "E": "Treatment requires cholecystectomy."
-    },
-    "answer": "A"
-  },
-  {
+{
     "id": 50785,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -12337,39 +5144,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
-    "id": 50786,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2118,
-    "source_question_number": 42,
-    "question": "When compared with standard three- or four-port laparoscopic cholecystectomy, single-incision laparoscopic surgery (SILS) is associated with which of the following?",
-    "options": {
-      "A": "Lower rate of trocar site hernias",
-      "B": "Increased rate of bile duct injury",
-      "C": "Increased rate of retained common bile duct stones",
-      "D": "Increased rate of gallbladder perforation",
-      "E": "None of the above"
-    },
-    "answer": "D"
-  },
-  {
-    "id": 50787,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2120,
-    "source_question_number": 43,
-    "question": "To date, cholecystectomy using natural-orifice transluminal endoscopic surgery (NOTES) has most commonly been performed by which of the following approaches?",
-    "options": {
-      "A": "Hybrid transgastric",
-      "B": "Hybrid transvaginal",
-      "C": "Hybrid transcolonic",
-      "D": "Pure endoscopic transvaginal",
-      "E": "Pure endoscopic transgastric"
-    },
-    "answer": "E"
-  },
-  {
+{
     "id": 50788,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -12385,7 +5160,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
+{
     "id": 50789,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -12401,7 +5176,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
+{
     "id": 50790,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -12417,7 +5192,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
+{
     "id": 50791,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -12433,7 +5208,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
+{
     "id": 50792,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -12449,39 +5224,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
-    "id": 50793,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2134,
-    "source_question_number": 50,
-    "question": "Two weeks following hepaticojejunostomy for the treatment of a benign bile duct stricture, a patient has a serum bilirubin level of 6 mg/dL. The patient was jaundiced for 4 weeks before the operation and had a preoperative serum bilirubin level of 12 mg/dL. Which of the following is the most likely explanation for this current serum bilirubin level?",
-    "options": {
-      "A": "nastomotic stricture",
-      "B": "Persistent delta-bilirubinemia",
-      "C": "Postoperative hepatitis",
-      "D": "Normal expected decline after relief of any obstructive jaundice",
-      "E": "Renal failure"
-    },
-    "answer": "B"
-  },
-  {
-    "id": 50794,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2136,
-    "source_question_number": 51,
-    "question": "Which of the following is the most likely explanation for a serum bilirubin level of 40 mg/dL in a patient with obstructive jaundice?",
-    "options": {
-      "A": "The patient has complete biliary obstruction.",
-      "B": "The duration of obstruction has exceeded 2 weeks.",
-      "C": "The patient has associated renal dysfunction.",
-      "D": "The patient has malignant biliary obstruction.",
-      "E": "The patient also has Gilbert disease"
-    },
-    "answer": "B"
-  },
-  {
+{
     "id": 50795,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -12497,23 +5240,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
-    "id": 50796,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2140,
-    "source_question_number": 53,
-    "question": "Which of the following conditions is usually associated with the highest incidence of positive bile",
-    "options": {
-      "A": "cute cholecystitis",
-      "B": "ile duct malignancy",
-      "C": "holedocholithiasis",
-      "D": "Postoperative bile duct stricture",
-      "E": ""
-    },
-    "answer": "D"
-  },
-  {
+{
     "id": 50797,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -12529,23 +5256,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
-    "id": 50798,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2144,
-    "source_question_number": 55,
-    "question": "Which of the following is the most common mechanism leading to bacteria in bile?",
-    "options": {
-      "A": "scending infection from the duodenum",
-      "B": "Hematogenous portal venous spread",
-      "C": "Hematogenous arterial spread",
-      "D": "Lymphatic spread",
-      "E": "Systemic immunosuppression"
-    },
-    "answer": "A"
-  },
-  {
+{
     "id": 50799,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -12561,7 +5272,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
+{
     "id": 50800,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -12577,7 +5288,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
+{
     "id": 50801,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -12593,7 +5304,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
+{
     "id": 50802,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -12609,23 +5320,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
-    "id": 50803,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2154,
-    "source_question_number": 60,
-    "question": "With regard to adenomyomatosis of the gallbladder, which of the following statements is true?",
-    "options": {
-      "A": "It is a premalignant lesion.",
-      "B": "It results from chronic inflammation.",
-      "C": "It may cause right upper quadrant pain in the absence of gallstones.",
-      "D": "It is rarely associated with cholelithiasis and cholecystitis.",
-      "E": "It is not an indication for cholecystectomy in asymptomatic patients."
-    },
-    "answer": "B"
-  },
-  {
+{
     "id": 50804,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -12641,7 +5336,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
+{
     "id": 50805,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -12657,7 +5352,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
+{
     "id": 50806,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -12673,7 +5368,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
+{
     "id": 50807,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -12689,7 +5384,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
+{
     "id": 50808,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -12705,7 +5400,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
+{
     "id": 50809,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -12721,54 +5416,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
-    "id": 50810,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2172,
-    "source_question_number": 69,
-    "question": "Which of the following is a contraindication to resection of an adenocarcinoma of the bile duct?",
-    "options": {
-      "A": "Tumor location in the distal common bile duct",
-      "B": "Tumor location at the bifurcation of the bile duct",
-      "C": "Peritoneal metastases",
-      "D": "Invasion of the right portal vein and right hepatic artery",
-      "E": "None of the above"
-    },
-    "answer": "B"
-  },
-  {
-    "id": 50811,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2174,
-    "source_question_number": 70,
-    "question": "How is a contusion of the gallbladder from blunt abdominal trauma best managed?",
-    "options": {
-      "A": "Observation",
-      "B": "Placement of a percutaneous cholecystostomy tube",
-      "C": "holecystectomy",
-      "D": "Suture imbrication of the contusion",
-      "E": ""
-    },
-    "answer": "C"
-  },
-  {
-    "id": 50812,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2176,
-    "source_question_number": null,
-    "question": "1",
-    "options": {
-      "A": "nn Surg . 1997;225:459-471. 15 Woods MS, Traverso LW, Kozarek RA, et al. Biliary tract complications of laparoscopic",
-      "B": "r J Surg . 2008;95:403-405. 12",
-      "C": "holecystectomy.",
-      "D": "eziel DJ. Complications of cholecystectomy. Surg Clin North Am . 1994;74:809-823. 13 Stewart L, Way LW. Bile duct injuries during laparoscopic cholecystectomy: factors that influence the results of treatment."
-    },
-    "answer": "E"
-  },
-  {
+{
     "id": 50813,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -12784,23 +5432,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
-    "id": 50814,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2184,
-    "source_question_number": 4,
-    "question": "The uncinate process of the pancreas is adjacent and dorsal to which of the following?",
-    "options": {
-      "A": "Splenic vein",
-      "B": "Inferior vena cava",
-      "C": "Superior mesenteric artery",
-      "D": "Left renal vein",
-      "E": "Fourth portion of the duodenum"
-    },
-    "answer": "B"
-  },
-  {
+{
     "id": 50815,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -12816,7 +5448,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
+{
     "id": 50816,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -12832,7 +5464,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
+{
     "id": 50817,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -12848,7 +5480,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
+{
     "id": 50818,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -12864,7 +5496,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
+{
     "id": 50819,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -12880,39 +5512,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
-    "id": 50820,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2196,
-    "source_question_number": 10,
-    "question": "The bicarbonate concentration of pancreatic secretions is:",
-    "options": {
-      "A": "Primarily increased by cholecystokinin (CCK)",
-      "B": "Primarily decreased by secretin",
-      "C": "Independent of acinar cell secretion",
-      "D": "Reciprocally related to the chloride concentration",
-      "E": "Reciprocally related to the sodium concentration"
-    },
-    "answer": "B"
-  },
-  {
-    "id": 50821,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2198,
-    "source_question_number": 11,
-    "question": "Normally, activation of pancreatic trypsinogen involves which of the following?",
-    "options": {
-      "A": "Pancreatic amylase",
-      "B": "pH greater than 7.0",
-      "C": "Lysosomal hydrolase",
-      "D": "uodenal enterokinase",
-      "E": ""
-    },
-    "answer": "D"
-  },
-  {
+{
     "id": 50822,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -12928,7 +5528,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
+{
     "id": 50823,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -12944,7 +5544,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
+{
     "id": 50824,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -12960,7 +5560,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
+{
     "id": 50825,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -12976,23 +5576,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
-    "id": 50826,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2208,
-    "source_question_number": 16,
-    "question": "Which of the following events occurs in acinar cells with acute pancreatitis?",
-    "options": {
-      "A": "ccelerated extrusion of zymogen granules",
-      "B": "Impaired synthesis of zymogen granules",
-      "C": "Fusion of lysosomes and zymogen granules",
-      "D": "Fusion of mitochondria and zymogen granules",
-      "E": "Impaired protein synthesis"
-    },
-    "answer": "A"
-  },
-  {
+{
     "id": 50827,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -13008,7 +5592,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
+{
     "id": 50828,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -13024,7 +5608,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
+{
     "id": 50829,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -13040,7 +5624,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
+{
     "id": 50830,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -13056,23 +5640,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
-    "id": 50831,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2220,
-    "source_question_number": 22,
-    "question": "Which of the following complications of acute pancreatitis is associated with the highest mortality rate?",
-    "options": {
-      "A": "Peripancreatic abscess",
-      "B": "ile duct obstruction",
-      "C": "Infected pancreatic necrosis",
-      "D": "Sterile pancreatic necrosis",
-      "E": ""
-    },
-    "answer": "C"
-  },
-  {
+{
     "id": 50832,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -13088,23 +5656,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
-    "id": 50833,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2231,
-    "source_question_number": 27,
-    "question": "Which of the following is the preferred nutritional support for a patient with severe pancreatitis?",
-    "options": {
-      "A": "Nasogastric feeding",
-      "B": "Feeding via percutaneous endoscopic gastrostomy",
-      "C": "Nasojejunal feeding",
-      "D": "Parenteral amino acids and glucose",
-      "E": "Parenteral amino acids, glucose, and lipids"
-    },
-    "answer": "C"
-  },
-  {
+{
     "id": 50834,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -13120,23 +5672,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
-    "id": 50835,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2235,
-    "source_question_number": 29,
-    "question": "With regard to the histologic characteristics of chronic pancreatitis, all but which of the following is observed?",
-    "options": {
-      "A": "Increased interstitial connective tissue",
-      "B": "Loss of acinar cells",
-      "C": "Loss of islet cells",
-      "D": "amaged perineurium",
-      "E": ""
-    },
-    "answer": "E"
-  },
-  {
+{
     "id": 50836,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -13152,7 +5688,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
+{
     "id": 50837,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -13168,7 +5704,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
+{
     "id": 50838,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -13184,7 +5720,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
+{
     "id": 50839,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -13200,23 +5736,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
-    "id": 50840,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2259,
-    "source_question_number": 40,
-    "question": "In which of the following situations is resection of a ductal carcinoma of the pancreas",
-    "options": {
-      "A": "ge older than 80 years",
-      "B": "Tumor located in the body of the pancreas",
-      "C": "ontraindicated? Inability to verify malignancy histologically before resection",
-      "D": "Presence of small peritoneal metastases",
-      "E": "Tumor invading the portal vein"
-    },
-    "answer": "C"
-  },
-  {
+{
     "id": 50841,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -13232,23 +5752,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
-    "id": 50842,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2265,
-    "source_question_number": 43,
-    "question": "When should gastrojejunostomy be performed at the time of biliary bypass in a patient with unresectable pancreatic cancer?",
-    "options": {
-      "A": "lways",
-      "B": "Never",
-      "C": "If the tumor is locally unresectable and there are no peritoneal metastases",
-      "D": "Only if symptomatic duodenal obstruction is present at the time of surgery",
-      "E": "Only if endoscopic stent placement is not available"
-    },
-    "answer": "D"
-  },
-  {
+{
     "id": 50843,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -13264,39 +5768,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
-    "id": 50844,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2273,
-    "source_question_number": 47,
-    "question": "Which of the following would you recommend to a 60-year-old woman with an established",
-    "options": {
-      "A": "Mammography",
-      "B": "Transvaginal ultrasound",
-      "C": "olonoscopy",
-      "D": "iagnosis of IPMN? Genetic testing",
-      "E": "Screening CT for first-degree relatives"
-    },
-    "answer": "B"
-  },
-  {
-    "id": 50845,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2275,
-    "source_question_number": 48,
-    "question": "Which of the following is true regarding the diagnosis of insulinoma?",
-    "options": {
-      "A": "n oral glucose tolerance test permits differentiation from reactive hypoglycemia.",
-      "B": "The serum insulin-to-glucose ratio is less than 0.3.",
-      "C": "T is the most accurate preoperative method for tumor localization.",
-      "D": "The tolbutamide test is useful for excluding factitious hyperinsulinemia.",
-      "E": ""
-    },
-    "answer": "C"
-  },
-  {
+{
     "id": 50846,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -13312,7 +5784,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
+{
     "id": 50847,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -13328,7 +5800,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
+{
     "id": 50848,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -13344,7 +5816,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
+{
     "id": 50849,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -13360,54 +5832,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
-    "id": 50850,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2287,
-    "source_question_number": null,
-    "question": "1 Steer ML. Exocrine pancreas. In Townsend CM, Beauchamp RD, Evers BM, et al, editors: Sabiston textbook of surgery: the biological basis of modern surgical practice , ed 18, Philadelphia: WB Saunders, 2008. 2 Fisher WE, Andersen DK, Bell RH, et al. Pancreas. In Brunicardi FC, Andersen DK, Billar TR, et",
-    "options": {
-      "A": "m J Gastroenterol . 1999;94:3211-3214. 10 McClave SA, Chang WK, Dhaliwal R, et al. Nutrition support in acute pancreatitis: a systematic review of the literature. J Parenter Enteral Nutr . 2006;30:143-156. 11 Prinz RA, Deziel DJ. Chronic pancreatitis. Probl Gen Surg . 15, 1998. 12",
-      "B": "uchler M, Malfertheiner P, Freiss H, et al. Human pancreatic tissue concentration of bactericidal",
-      "C": "lin Gastroenterol Hepatol . 2007;5:489-495.",
-      "D": "ig Surg . 1996;13:101-108. 13 Pais SA, Attasaranya S, Leblanc JK, et al. Role of endoscopic ultrasound in the diagnosis of intraductal papillary mucinous neoplasms: correlation with surgical histopathology."
-    },
-    "answer": "B"
-  },
-  {
-    "id": 50851,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2291,
-    "source_question_number": 2,
-    "question": "Which statement regarding the segments and function of the spleen is true?",
-    "options": {
-      "A": "The white pulp consists of lymphatic sheaths surrounding vessels and is where B-lymphocyte precursors mature before migrating to the red pulp.",
-      "B": "The white pulp usually constitutes 50% of the normal spleen.",
-      "C": "The major function of the red pulp is to store old or defective erythrocytes for future use.",
-      "D": "The marginal zone is the zone usually absent except in the presence of lymphoma.",
-      "E": "The spleen can act as a large reservoir of platelets, erythrocytes, and other lymphatic cells."
-    },
-    "answer": "B"
-  },
-  {
-    "id": 50852,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2301,
-    "source_question_number": 7,
-    "question": "The patient described in Question 6 undergoes a complete work-up and ITP is diagnosed. Which of the following about the treatment of ITP is true?",
-    "options": {
-      "A": "Platelet transfusions are best given before ligation of the splenic artery.",
-      "B": "Initial medical therapy includes steroid therapy with the possible addition of intravenous IgG.",
-      "C": "Initial response rates to medical therapy in adults are as high as 75%, with permanent cure from medical therapy being achieved in greater than 50%.",
-      "D": "Spontaneous resolution is rare in children.",
-      "E": "Splenectomy is indicated if ITP does not improve after 1 year of steroid therapy or if thrombocytopenia recurs following steroid taper."
-    },
-    "answer": "E"
-  },
-  {
+{
     "id": 50853,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -13423,37 +5848,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
-    "id": 50854,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2313,
-    "source_question_number": 13,
-    "question": "Hairy cell leukemia is diagnosed in a 58-year-old man with pancytopenia and palpable splenomegaly. He is referred to your office for a second opinion after another surgeon did not offer him a splenectomy. Which of the following is true regarding his condition?",
-    "options": {
-      "A": "It is a B-cell lymphoma characterized by cytoplasmic protrusions that first invade the thymus and then the spleen secondarily.",
-      "B": "The mainstay of treatment is methotrexate chemotherapy.",
-      "C": "It is associated with a two- to threefold risk for the development of a second malignancy, including prostate, skin, and lung cancers.",
-      "D": "Splenectomy may be palliative but is infrequently done because of the lack of sustained response.",
-      "E": "The 5-year survival rate is less than 20%."
-    },
-    "answer": "D"
-  },
-  {
-    "id": 50855,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2333,
-    "source_question_number": null,
-    "question": "1",
-    "options": {
-      "B": "r J Surg . 2008;95:273-280. 6 Gonzalez G, Eichner R. Spherocytosis, hereditary: treatment & medication. Available at. Besa E,",
-      "C": "urrent surgical therapy , ed 9, Philadelphia: CV Mosby, 2008.",
-      "E": "ditor:"
-    },
-    "answer": "D"
-  },
-  {
+{
     "id": 50856,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -13469,55 +5864,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
-    "id": 50857,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2339,
-    "source_question_number": 3,
-    "question": "With regard to increased pulmonary blood flow (left-to-right shunts), which of the following statements is true?",
-    "options": {
-      "A": "shunt becomes physiologically important when pulmonary blood flow is five times as great as systemic flow.",
-      "B": "High pulmonary artery pressures preclude surgical correction of the defect.",
-      "C": "rucial information for determining whether the patient is an operative candidate.",
-      "D": "elivery of 100% oxygen to the patient during transesophageal echocardiography may provide The rapidity with which pulmonary vascular disease develops depends on the magnitude of the shunt regardless of the anatomic location of the defect.",
-      "E": "Increased fixed pulmonary vascular resistance precludes surgical correction of the defect."
-    },
-    "answer": "B"
-  },
-  {
-    "id": 50858,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2341,
-    "source_question_number": 4,
-    "question": "Resolution of congestive heart failure without surgical correction in a patient who has had a large left-to-right shunt:",
-    "options": {
-      "A": "Indicates increased pulmonary vascular resistance",
-      "B": "Is a sign of increased left-to-right shunting",
-      "C": "Is a sign of unchanged left-to-right shunting",
-      "D": "Indicates reversible pulmonary vascular resistance",
-      "E": "Is a harbinger for early death in the fourth decade of life"
-    },
-    "answer": "E"
-  },
-  {
-    "id": 50859,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2343,
-    "source_question_number": 5,
-    "question": "With regard to left obstructive congenital heart lesions, which of the following statements is true?",
-    "options": {
-      "A": "and B",
-      "B": "Obstructive congenital heart lesions produce systolic pressure overloading and concentric hypertrophy.",
-      "C": "oncentric hypertrophy produces marked cardiac enlargement, which can be detected by physical examination and routine chest radiography.",
-      "D": "Myocardial oxygen demand will be unchanged if cardiac catheterization demonstrates normal-",
-      "E": ""
-    },
-    "answer": "A"
-  },
-  {
+{
     "id": 50860,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -13533,7 +5880,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
+{
     "id": 50861,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -13549,7 +5896,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
+{
     "id": 50862,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -13565,7 +5912,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
+{
     "id": 50863,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -13581,23 +5928,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
-    "id": 50864,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2353,
-    "source_question_number": 10,
-    "question": "Treatment strategies for repair of the tetralogy of Fallot during infancy are:",
-    "options": {
-      "A": "ll of the above",
-      "B": "Staged approach with palliative surgery first followed by complete repair",
-      "C": "Selective use of palliative surgery in early cyanosis and when small pulmonary arteries are present",
-      "D": "Staged approach with balloon valvuloplasty first followed by complete repair",
-      "E": ""
-    },
-    "answer": "B"
-  },
-  {
+{
     "id": 50865,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -13613,7 +5944,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
+{
     "id": 50866,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -13629,39 +5960,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
-    "id": 50867,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2359,
-    "source_question_number": 13,
-    "question": "With regard to echocardiography for the evaluation of congenital heart disease, which of the following statements is true?",
-    "options": {
-      "A": ", B, and C",
-      "B": "It may indicate the gradient across a valve.",
-      "C": "It may indicate whether right ventricular pressure is at or well below systemic pressure.",
-      "D": "It may precisely define pulmonary artery anatomy.",
-      "E": ""
-    },
-    "answer": "D"
-  },
-  {
-    "id": 50868,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2361,
-    "source_question_number": 14,
-    "question": "With regard to pulmonic stenosis, which of the following statements is true?",
-    "options": {
-      "A": "The most common morphologic feature is hypoplasia of the pulmonic valve annulus.",
-      "B": "The physiologic abnormality is obstruction of flow from the right ventricle with hypoplasia.",
-      "C": "The intervention of choice is surgical commissurotomy.",
-      "D": "The most common symptom is dyspnea at rest.",
-      "E": "chocardiography best delineates the anatomy and severity of obstruction."
-    },
-    "answer": "E"
-  },
-  {
+{
     "id": 50869,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -13677,7 +5976,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
+{
     "id": 50870,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -13693,7 +5992,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
+{
     "id": 50871,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -13709,7 +6008,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
+{
     "id": 50872,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -13725,7 +6024,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
+{
     "id": 50873,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -13741,55 +6040,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
-    "id": 50874,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2373,
-    "source_question_number": 20,
-    "question": "Which of the following statements is true regarding TAPVR?",
-    "options": {
-      "A": "VSD must be present for survival.",
-      "B": "The pathologic condition occurs when the pulmonary veins fail to empty into the right atrium and, instead, connect directly to the left atrium.",
-      "C": "The connection between the pulmonary veins and the systemic veins may be obstructed with",
-      "D": "When a patient has obstructed TAPVR, there is reduced pulmonary blood flow, which leaves the lungs relatively dark on a chest radiograph.",
-      "E": "qual frequency, regardless of whether the connection is supracardiac, cardiac, or infracardiac."
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50875,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2375,
-    "source_question_number": 21,
-    "question": "Which of the following statements is true for ASDs?",
-    "options": {
-      "A": "Secundum ASDs rarely cause symptoms during infancy.",
-      "B": "Secundum ASDs rarely cause residual problems after closure.",
-      "C": "Secundum ASDs are part of the spectrum of AV canal defects.",
-      "D": "Left ventricular outflow tract obstruction typically develops with secundum ASDs.",
-      "E": "Secundum ASDs are typically associated with left axis deviation."
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50876,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2377,
-    "source_question_number": 22,
-    "question": "With regard to VSDs, which of the following statements is true?",
-    "options": {
-      "A": "Multiple muscular VSDs (“Swiss cheese”) with a large left-to-right shunt may become symptomatic within 1 year of age.",
-      "B": "anding of the pulmonary artery is the operation of choice in infants younger than 2 years.",
-      "C": "Irreversible pulmonary vascular obstructive disease is relatively common before 1 year of age.",
-      "D": "efects less than 2 cm in diameter are generally well tolerated.",
-      "E": "Subaortic VSDs will close spontaneously."
-    },
-    "answer": "B"
-  },
-  {
+{
     "id": 50877,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -13805,7 +6056,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
+{
     "id": 50878,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -13821,7 +6072,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
+{
     "id": 50879,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -13837,39 +6088,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
-    "id": 50880,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2387,
-    "source_question_number": 27,
-    "question": "Which of the following statements regarding extracorporeal membrane oxygenation (ECMO) is true?",
-    "options": {
-      "A": "The survival rate is less than 50% when used for neonatal respiratory support.",
-      "B": "Survival is equal in adults and children.",
-      "C": "Survival with cardiac ECMO is greater than that with respiratory ECMO.",
-      "D": "The overall survival rate is 40%.",
-      "E": "The lowest survival rate occurs in neonates with meconium aspiration syndrome."
-    },
-    "answer": "C"
-  },
-  {
-    "id": 50881,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2389,
-    "source_question_number": 28,
-    "question": "With regard to transposition of the great vessels, which of the following statements is not true?",
-    "options": {
-      "A": "The aorta arises from the right ventricle and carries unoxygenated blood to the body.",
-      "B": "The pulmonary artery arises from the left ventricle and carries unoxygenated blood to the lungs.",
-      "C": "PDA, VSD, or ASD is necessary for survival (before definitive correction).",
-      "D": "Pulmonary stenosis occurs in approximately 10% of patients.",
-      "E": "VSD occurs in approximately 25% of patients."
-    },
-    "answer": "D"
-  },
-  {
+{
     "id": 50882,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -13885,103 +6104,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
-    "id": 50883,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2393,
-    "source_question_number": 30,
-    "question": "Which of the following statements regarding pulmonary artery banding is definitely not true?",
-    "options": {
-      "A": "May result in pulmonary artery distortion",
-      "B": "May result in pulmonary valve damage",
-      "C": "May result in the development of outflow tract narrowing by muscle band hypertrophy",
-      "D": "Results in volume loading of the ventricle",
-      "E": "May not result in adequate protection of the pulmonary vascular bed"
-    },
-    "answer": "B"
-  },
-  {
-    "id": 50884,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2395,
-    "source_question_number": null,
-    "question": "1",
-    "options": {
-      "A": "utomatic implantable cardioverter-defibrillator (AICD) in patients whose ventricular tachycardia cannot be mapped or medically/surgically controlled",
-      "B": "aue AE, Geha AS, Hammond GL, et al, editors. Glenn’s thoracic and cardiovascular surgery. Stamford, Conn.: Appleton & Lange, 1996. 2 Kirklin JW, Barratt-Boyes BG, editors. Cardiac surgery. New York: Churchill Livingstone, 1993. 3 Sellke FW, del Nido PJ, Swanson SJ, editors. Sabiston and Spencer: surgery of the chest, ed 8, Philadelphia: WB Saunders, 2010. If significant coronary stenosis or a left ventricular aneurysm is identified, surgical intervention",
-      "C": "ardiac catheterization and coronary angiography",
-      "D": "irected at these targets to achieve satisfactory control of the arrhythmia",
-      "E": "PS-directed resection"
-    },
-    "answer": "D"
-  },
-  {
-    "id": 50885,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2397,
-    "source_question_number": 2,
-    "question": "Which of the following is the maximum amount of time that extracorporeal circulation can be tolerated before significant risk for physiologic injury and metabolic defects occurs?",
-    "options": {
-      "A": "2 to 4 hours",
-      "B": "6 to 8 hours",
-      "C": "10 to 12 hours",
-      "D": "14 to 16 hours",
-      "E": "18 to 20 hours"
-    },
-    "answer": "B"
-  },
-  {
-    "id": 50886,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2403,
-    "source_question_number": 5,
-    "question": "Indications for coronary artery bypass graft (CABG) surgery include all of the following except:",
-    "options": {
-      "A": "cute myocardial infarction",
-      "B": "Stenosis of the left main coronary artery",
-      "C": "Persistent angina and changes on the ECG following percutaneous coronary stenting",
-      "D": "evelopment of complications during percutaneous transluminal coronary angioplasty (PTCA)",
-      "E": ""
-    },
-    "answer": "E"
-  },
-  {
-    "id": 50887,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2405,
-    "source_question_number": 6,
-    "question": "With regard to the surgical treatment of atrial fibrillation with the maze procedure, which of the following is true?",
-    "options": {
-      "A": "More than 90% of cases of paroxysmal atrial fibrillation arise from an ectopic focus in the sinoatrial node.",
-      "B": "The need for mitral valve repair represents a contraindication.",
-      "C": "The maze procedure results in a greater than 90% long-term cure rate of atrial fibrillation without antiarrhythmic medications.",
-      "D": "The majority of patients will require permanent pacemaker implantation within 1 year of the procedure.",
-      "E": "Pulmonary artery ablation alone will reduce the incidence of atrial fibrillation by 50%."
-    },
-    "answer": "D"
-  },
-  {
-    "id": 50888,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2409,
-    "source_question_number": 8,
-    "question": "Refractory angina develops in a 70-year-old woman in the coronary care unit 2 days after being hospitalized for acute myocardial infarction. With regard to coronary artery bypass in this situation, which of the following statements is true?",
-    "options": {
-      "A": "It should be performed only if left main coronary disease is present.",
-      "B": "Operative mortality and long-term survival rates are poor in comparison with those in patients who have unstable angina not precipitated by myocardial infarction.",
-      "C": "It should be preceded by thrombolytic therapy if multivessel disease is also present.",
-      "D": "The operative mortality rate is less than 5%.",
-      "E": "The preoperative work-up should include dobutamine stress echocardiography to assess viability."
-    },
-    "answer": "E"
-  },
-  {
+{
     "id": 50889,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -13997,7 +6120,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
+{
     "id": 50890,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -14013,55 +6136,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
-    "id": 50891,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2417,
-    "source_question_number": 12,
-    "question": "Treatment of acute pyogenic pericarditis may require which of the following?",
-    "options": {
-      "A": "nterior (phrenic-to-phrenic) pericardiectomy",
-      "B": "Initial pericardial aspiration followed by pericardial stripping if there is a recurrence",
-      "C": "Subxiphoid pericardiotomy",
-      "D": "Radical pericardiectomy",
-      "E": ""
-    },
-    "answer": "D"
-  },
-  {
-    "id": 50892,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2419,
-    "source_question_number": 13,
-    "question": "With regard to chronic constrictive pericarditis, which of the following statements is true?",
-    "options": {
-      "A": "It is usually caused by a previous streptococcal infection.",
-      "B": "It is characterized by equalization of right- and left-sided pressure.",
-      "C": "It is best treated with a combination of diuretics and β-blocking agents.",
-      "D": "Pericardiectomy is successful in 50% of patients.",
-      "E": "The “RSR sign” on pulmonary artery catheterization during systole is pathognomonic."
-    },
-    "answer": "C"
-  },
-  {
-    "id": 50893,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2421,
-    "source_question_number": 14,
-    "question": "Following open heart surgery, a patient experiences chest pain, fever, tachycardia, and a pericardial friction rub. Which of the following statements is true?",
-    "options": {
-      "A": "The most likely diagnosis is postoperative mediastinitis.",
-      "B": "Primary treatment should include surgical exploration.",
-      "C": "The patient most likely responds well to antibiotics.",
-      "D": "There is usually an associated leukocytosis or lymphocytosis.",
-      "E": "This syndrome is generally accompanied by pleural effusion and shortness of breath."
-    },
-    "answer": "B"
-  },
-  {
+{
     "id": 50894,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -14077,7 +6152,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
+{
     "id": 50895,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -14093,7 +6168,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
+{
     "id": 50896,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -14109,7 +6184,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
+{
     "id": 50897,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -14125,7 +6200,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
+{
     "id": 50898,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -14141,7 +6216,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
+{
     "id": 50899,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -14157,7 +6232,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
+{
     "id": 50900,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -14173,55 +6248,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
-    "id": 50901,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2445,
-    "source_question_number": 26,
-    "question": "Indications for operative intervention to correct aortic insufficiency include which of the following?",
-    "options": {
-      "A": "ge of the patient",
-      "B": "Loudness and length of the diastolic murmur",
-      "C": "Left ventricular end-diastolic volume of 40 mL/m 2",
-      "D": "Magnitude of the regurgitation",
-      "E": ""
-    },
-    "answer": "B"
-  },
-  {
-    "id": 50902,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2451,
-    "source_question_number": 29,
-    "question": "Which cardiac chamber is most frequently injured by penetrating trauma?",
-    "options": {
-      "A": "Left ventricle",
-      "B": "Right ventricle",
-      "C": "Left atrium",
-      "D": "Right atrium",
-      "E": "quivalent incidence in all four chambers"
-    },
-    "answer": "C"
-  },
-  {
-    "id": 50903,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2453,
-    "source_question_number": 30,
-    "question": "Which of the following is the most common primary cardiac neoplasm?",
-    "options": {
-      "A": "Myxoma",
-      "B": "Rhabdomyoma",
-      "C": "Sarcoma",
-      "D": "Lymphoma",
-      "E": "Metastatic sarcoma"
-    },
-    "answer": "B"
-  },
-  {
+{
     "id": 50904,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -14237,7 +6264,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
+{
     "id": 50905,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -14253,7 +6280,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
+{
     "id": 50906,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -14269,7 +6296,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
+{
     "id": 50907,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -14285,7 +6312,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
+{
     "id": 50908,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -14301,7 +6328,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
+{
     "id": 50909,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -14317,7 +6344,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
+{
     "id": 50910,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -14330,23 +6357,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
-    "id": 50911,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2470,
-    "source_question_number": 2,
-    "question": "Which of the following statements regarding claudication is true?",
-    "options": {
-      "A": "The term",
-      "B": "Without intervention, the risk for limb loss approaches 15% at 5 years.",
-      "C": "ases.",
-      "D": "It can be managed successfully without arteriography, balloon angioplasty, or surgery in most",
-      "E": "The optimal treatment is limited exercise and minimal walking per day."
-    },
-    "answer": "E"
-  },
-  {
+{
     "id": 50912,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -14362,7 +6373,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
+{
     "id": 50913,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -14378,23 +6389,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
-    "id": 50914,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2476,
-    "source_question_number": 5,
-    "question": "Which of the following characteristics of leg swelling from venous insufficiency or lymphedema is true?",
-    "options": {
-      "A": "nd results in late lymphedema with fibrosis.",
-      "B": "Venous insufficiency causes pigmentation and hypertrophic changes in the skin over the ankle",
-      "C": "Lymphedema can be diagnosed by ultrasound imaging.",
-      "D": "Operative intervention can treat venous insufficiency and is commonly used for lymphedema.",
-      "E": "dema forms when hydrostatic pressure in the interstitium is higher than that in the lymphatics or venules. Lymphedema may be pitting in form."
-    },
-    "answer": "D"
-  },
-  {
+{
     "id": 50915,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -14410,71 +6405,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
-    "id": 50916,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2482,
-    "source_question_number": 8,
-    "question": "In a low-resistance arterial vascular system, at which percent reduction in diameter does a stenosis",
-    "options": {
-      "A": "10%",
-      "B": "ecome flow limiting? 20%",
-      "C": "40%",
-      "D": "50%",
-      "E": "80%"
-    },
-    "answer": "C"
-  },
-  {
-    "id": 50917,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2484,
-    "source_question_number": 9,
-    "question": "Which of the following characterizes duplex ultrasound imaging?",
-    "options": {
-      "A": "lone.",
-      "B": "Lower frequencies (e.g., 3 MHz) are better suited for deep abdominal imaging, and higher frequencies (e.g., 7 MHz) are better for more superficial structures, such as in situ vein grafts.",
-      "C": "alcification within a diseased artery is usually severe enough to prevent an adequate vascular ultrasound examination.",
-      "D": "The diagnosis of deep venous thrombosis (DVT) is made with the use of color flow imaging",
-      "E": ""
-    },
-    "answer": "D"
-  },
-  {
-    "id": 50918,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2486,
-    "source_question_number": 10,
-    "question": "The advantages of lower extremity arterial Doppler examinations performed with waveform",
-    "options": {
-      "A": "nalysis versus the ankle-brachial index (ABI) alone include which of the following?",
-      "B": "Inflow disease can be recognized by the delay in the downstroke of the waveform.",
-      "C": "alcification of the artery by diseases such as diabetes mellitus and chronic renal failure makes the arterial wall incompressible, thereby causing the ABI to be artificially decreased and unreliable. Loss of reversal of flow when the arterial waveform transforms from triphasic to biphasic is observed with exercise or with moderate atherosclerosis.",
-      "D": "The ABI can be used to diagnose an arteriovenous fistula (AVF).",
-      "E": "The ABI can be used to diagnose DVT."
-    },
-    "answer": "B"
-  },
-  {
-    "id": 50919,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2488,
-    "source_question_number": 11,
-    "question": "When performing duplex ultrasound imaging of the carotid arteries, what factors help distinguish the external carotid artery from the internal carotid artery?",
-    "options": {
-      "A": "The internal carotid artery has continuous forward flow, and the external carotid artery exhibits reversal of flow during diastole.",
-      "B": "The external carotid artery is larger.",
-      "C": "The internal carotid artery is generally seen first.",
-      "D": "The superior thyroid artery is the first branch of the internal carotid artery and aids in identifying the internal carotid artery.",
-      "E": "The internal carotid artery has triphasic flow with flow reversal."
-    },
-    "answer": "C"
-  },
-  {
+{
     "id": 50920,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -14490,7 +6421,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
+{
     "id": 50921,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -14506,7 +6437,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
+{
     "id": 50922,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -14522,7 +6453,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
+{
     "id": 50923,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -14538,7 +6469,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
+{
     "id": 50924,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -14554,23 +6485,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
-    "id": 50925,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2502,
-    "source_question_number": 2,
-    "question": "What percentage of patients with cerebral ischemia have a surgically accessible lesion?",
-    "options": {
-      "A": "95%",
-      "B": "75%",
-      "C": "50%",
-      "D": "25%",
-      "E": "5%"
-    },
-    "answer": "C"
-  },
-  {
+{
     "id": 50926,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -14586,7 +6501,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
+{
     "id": 50927,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -14602,23 +6517,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
-    "id": 50928,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2508,
-    "source_question_number": 5,
-    "question": "Which of the following is the best screening test for significant carotid stenosis in a patient with an",
-    "options": {
-      "A": "symptomatic bruit? Magnetic resonance angiography",
-      "B": "Four-vessel cerebral angiography",
-      "C": "T of the brain with infusion",
-      "D": "uplex ultrasound scanning",
-      "E": ""
-    },
-    "answer": "B"
-  },
-  {
+{
     "id": 50929,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -14634,7 +6533,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
+{
     "id": 50930,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -14650,39 +6549,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
-    "id": 50931,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2518,
-    "source_question_number": 10,
-    "question": "With regard to the long-term results of carotid endarterectomy, which of the following statements is true?",
-    "options": {
-      "A": "symptomatic disease.",
-      "B": "Restenosis is most commonly manifested as stroke.",
-      "C": "Ischemic cerebral events are the main cause of late death.",
-      "D": "Restenosis rates are higher when endarterectomy is performed for symptomatic disease than for",
-      "E": "The combined operative morbidity and mortality rate for carotid endarterectomy is 7%."
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50932,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2520,
-    "source_question_number": 11,
-    "question": "With regard to symptoms of ischemia secondary to vertebral basilar insufficiency, which of the following statements is correct?",
-    "options": {
-      "A": "They include diplopia, ataxia, vertigo, and tinnitus.",
-      "B": "They are usually indistinguishable from those of carotid insufficiency.",
-      "C": "They usually reflect unilateral vertebral disease.",
-      "D": "They are most commonly caused by emboli.",
-      "E": "They are caused by diffuse, ulcerated stenosis of the artery"
-    },
-    "answer": "A"
-  },
-  {
+{
     "id": 50933,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -14698,7 +6565,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
+{
     "id": 50934,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -14714,55 +6581,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
-    "id": 50935,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2530,
-    "source_question_number": null,
-    "question": "1 Riles TS, Rockman CB. Cerebrovascular disease. In Townsend CMJr, Beauchamp RD, Evers BM,",
-    "options": {
-      "A": "They are most often caused by connective tissue abnormalities.",
-      "B": "They are not related to earlier venereal disease.",
-      "C": "urrent therapy in vascular surgery , ed 4. St. Louis: CV Mosby; 2001. Thoracic Aorta Muhammad Asad Khan, M.D. 1 With regard to ascending aortic aneurysms, which of the following statements is true? Primary tumors of the aorta are common.",
-      "D": "eath is generally caused by rupture with resulting hemothorax.",
-      "E": "rnst CB, Stanley JC."
-    },
-    "answer": "D"
-  },
-  {
-    "id": 50936,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2532,
-    "source_question_number": 2,
-    "question": "With regard to the clinical characteristics and management of ascending aortic aneurysms, which of the following statements is true?",
-    "options": {
-      "A": "nd extent of an aortic aneurysm.",
-      "B": "Valvar murmurs are rare.",
-      "C": "T with contrast enhancement is a good noninvasive modality with which to delineate the size",
-      "D": "Operative management with placement of a composite graft of aortic conduit and aortic valve is the treatment of choice for all ascending aortic aneurysms.",
-      "E": ""
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50937,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2534,
-    "source_question_number": 3,
-    "question": "Superior vena cava (SVC) syndrome is characterized by which of the following?",
-    "options": {
-      "A": "cute obstruction of the SVC is seldom clinically significant because of the large number of",
-      "B": "ronchogenic carcinoma with invasion into the mediastinum is the leading cause of SVC syndrome. Venous pressure in the SVC rarely exceeds 15 mm Hg.",
-      "C": "ollateral vessels available.",
-      "D": "Occlusion of the SVC between the azygos vein and the right atrium is more symptomatic than an occlusion above the azygos vein.",
-      "E": "Surgical correction is usually indicated."
-    },
-    "answer": "E"
-  },
-  {
+{
     "id": 50938,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -14778,7 +6597,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
+{
     "id": 50939,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -14794,7 +6613,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
+{
     "id": 50940,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -14810,39 +6629,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
-    "id": 50941,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2542,
-    "source_question_number": 7,
-    "question": "Regarding treatment of acute Stanford type B aortic dissections, which of the following statements is true?",
-    "options": {
-      "A": "The most important initial treatment is control of hypertension to prevent proximal extension of the dissection.",
-      "B": "Surgical treatment is required for all patients with limb, renal, or mesenteric ischemia.",
-      "C": "ardiopulmonary bypass has no role in reducing complications during replacement of the",
-      "D": "escending thoracic aorta.",
-      "E": "ndovascular techniques have no role in these patients."
-    },
-    "answer": "C"
-  },
-  {
-    "id": 50942,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2544,
-    "source_question_number": 8,
-    "question": "With regard to blunt traumatic rupture of the aorta, which of the following statements is correct?",
-    "options": {
-      "A": "fter injury.",
-      "B": "ypass support is mandatory for its correction.",
-      "C": "The intima provides nearly 60% of the strength of the thoracic aorta and must remain intact for the patient to survive.",
-      "D": "There is still a high risk for free aortic rupture, even in patients who survive the first 6 weeks",
-      "E": ""
-    },
-    "answer": "A"
-  },
-  {
+{
     "id": 50943,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -14858,55 +6645,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
-    "id": 50944,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2548,
-    "source_question_number": 10,
-    "question": "With regard to transverse aortic arch aneurysms, which of the following statements is true?",
-    "options": {
-      "A": "ll of the above.",
-      "B": "Repair is associated with the highest operative mortality rate of any of the aortic aneurysms.",
-      "C": "ystic medial necrosis is a major cause.",
-      "D": "eep hypothermia with circulatory arrest and cardiopulmonary bypass is rarely used.",
-      "E": ""
-    },
-    "answer": "B"
-  },
-  {
-    "id": 50945,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2550,
-    "source_question_number": 11,
-    "question": "Radiographic signs of aortic injury secondary to blunt chest trauma include all of the following",
-    "options": {
-      "A": "Widening of the mediastinum",
-      "B": "lunting of the aortic knob",
-      "C": "Right apical capping",
-      "D": "eviation of the trachea to the right",
-      "E": "xcept"
-    },
-    "answer": "B"
-  },
-  {
-    "id": 50946,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2552,
-    "source_question_number": 12,
-    "question": "With regard to diagnosis and treatment of aortic dissection, which of the following statements is true?",
-    "options": {
-      "A": "ortography and coronary angiography are essential before surgery for type A acute aortic",
-      "B": "Transesophageal echocardiography is not useful for diagnosing acute aortic dissection.",
-      "C": "Type B acute aortic dissection is treated primarily by surgery.",
-      "D": "issection. Surgical treatment of acute type A dissection is similar in patients with or without Marfan syndrome.",
-      "E": "With chronic type B dissection, the indications for surgery are related to the size of the aneurysm, symptoms of pain, and development of visceral, renal, and neurologic ischemia."
-    },
-    "answer": "C"
-  },
-  {
+{
     "id": 50947,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -14922,23 +6661,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
-    "id": 50948,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2558,
-    "source_question_number": null,
-    "question": "1 Safi HJ, Estrera AL, Miller CC, et al. Thoracic vasculature with emphasis on the thoracic aorta. In Townsend CMJr, Beauchamp RD, Evers BM, et al, editors: Sabiston textbook of surgery: the",
-    "options": {
-      "A": "xillofemoral bypass",
-      "B": "iological basis of modern surgical practice , ed 18, Philadelphia: WB Saunders, 2008. 2 LeMaire SA, Sharma K, Coselli JS. Thoracic aneurysms and aortic dissection. In Brunicardi FC,",
-      "C": "rawford ES, Crawford JL, Safi HJ, et al. Thoracoabdominal aortic aneurysms: preoperative and intraoperative factors determining immediate and long-term results of operations in 605 patients. J Vasc Surg . 1986;3:389-404.",
-      "D": "oherty GM, et al, editors: Greenfield’s surgery: scientific principles and practice , ed 4, Philadelphia: Lippincott Williams & Wilkins, 2006. 4 Percutaneous balloon angioplasty",
-      "E": "Percutaneous atherectomy"
-    },
-    "answer": "D"
-  },
-  {
+{
     "id": 50949,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -14954,7 +6677,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
+{
     "id": 50950,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -14970,7 +6693,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
+{
     "id": 50951,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -14986,7 +6709,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
+{
     "id": 50952,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -15002,7 +6725,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
+{
     "id": 50953,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -15018,7 +6741,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
+{
     "id": 50954,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -15034,7 +6757,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
+{
     "id": 50955,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -15050,55 +6773,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
-    "id": 50956,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2574,
-    "source_question_number": 9,
-    "question": "Two days after uncomplicated open repair of an AAA, bloody diarrhea develops. The most likely",
-    "options": {
-      "A": "cute hepatic failure",
-      "B": "Ischemic colitis",
-      "C": "oagulopathy",
-      "D": "iverticulitis",
-      "E": ""
-    },
-    "answer": "B"
-  },
-  {
-    "id": 50957,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2576,
-    "source_question_number": 10,
-    "question": "With regard to rupture of an AAA, which of the following statements is true?",
-    "options": {
-      "A": "It is the most common cause of death in patients with an untreated AAA.",
-      "B": "The operative mortality rate of patients with a ruptured AAA is 5%.",
-      "C": "ontrol of the proximal aorta cannot be accomplished endoluminally.",
-      "D": "The lowest mortality rates occur in patients with preexisting coronary artery disease.",
-      "E": "Female patients with ruptured AAAs have a better chance of survival than males."
-    },
-    "answer": "B"
-  },
-  {
-    "id": 50958,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2578,
-    "source_question_number": 11,
-    "question": "Which one of the following complications occurs most commonly after successful repair of an",
-    "options": {
-      "A": "AA in a 58-year-old man? Sexual dysfunction",
-      "B": "Ischemic colitis",
-      "C": "Renal failure",
-      "D": "Peripheral embolization",
-      "E": "Leg paralysis"
-    },
-    "answer": "A"
-  },
-  {
+{
     "id": 50959,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -15114,7 +6789,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
+{
     "id": 50960,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -15130,7 +6805,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
+{
     "id": 50961,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -15146,71 +6821,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
-    "id": 50962,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2588,
-    "source_question_number": 16,
-    "question": "With regard to infected (mycotic) AAAs, which of the following statements is true?",
-    "options": {
-      "A": "Infected aneurysms account for 5% of all AAAs.",
-      "B": "Most infected aneurysms develop when they are caused by an aortoenteric fistula.",
-      "C": "Salmonella is the most commonly isolated bacterial pathogen.",
-      "D": "Negative results of intraoperative Gram staining exclude the diagnosis of an infected AAA.",
-      "E": "Most patients are treated by excision of the aneurysm and in situ aortic reconstruction."
-    },
-    "answer": "C"
-  },
-  {
-    "id": 50963,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2590,
-    "source_question_number": 17,
-    "question": "With regard to prosthetic aortic graft infections, which of the following statements is true?",
-    "options": {
-      "A": "ortoiliac bypass.",
-      "B": "Salmonella is the pathogen most commonly isolated from infected prosthetic aortic grafts.",
-      "C": "Ultrasound is the preferred diagnostic modality for confirming prosthetic aortic graft infection.",
-      "D": "Most prosthetic aortic graft infections are diagnosed within 1 year after implantation.",
-      "E": "Graft excision, secure aortic stump closure, and extraanatomic reconstruction are required for all infected prosthetic aortic grafts."
-    },
-    "answer": "C"
-  },
-  {
-    "id": 50964,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2592,
-    "source_question_number": 18,
-    "question": "Which of the following is not an acceptable treatment option for a patient with late aortic graft limb occlusion?",
-    "options": {
-      "A": "ortofemoral bypass reoperation",
-      "B": "Thrombolytic therapy",
-      "C": "Graft limb thrombectomy",
-      "D": "Femorofemoral bypass",
-      "E": ""
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50965,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2594,
-    "source_question_number": null,
-    "question": "1 Reddy DJ, Shepard AD. Aortoiliac disease. In Mullholland MW, Lillemoe KD, Doherty GM, et al,",
-    "options": {
-      "A": "rterial ulcerations, such as those of venous insufficiency, characteristically begin near the malleoli.",
-      "B": "y dependent positioning of the affected extremity.",
-      "C": "laudication.",
-      "D": "Tissue necrosis is more likely in the presence of multilevel distal arterial disease.",
-      "E": "xtremities?"
-    },
-    "answer": "A"
-  },
-  {
+{
     "id": 50966,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -15226,23 +6837,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
-    "id": 50967,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2598,
-    "source_question_number": 3,
-    "question": "With regard to aortoiliac atherosclerotic occlusive disease, which of the following statements is",
-    "options": {
-      "A": "therosclerotic emboli is occasionally present.",
-      "B": "Thigh or buttock claudication (or both) is typical, and toe ulceration or gangrene secondary to",
-      "C": "orrect? Lower extremity hair loss and nail brittleness occur in 60% of patients.",
-      "D": "Hemorrhage and sepsis are the principal causes of death after aortoiliac reconstruction.",
-      "E": "Percutaneous angioplasty with stenting of iliac lesions only occasionally relieves symptoms."
-    },
-    "answer": "E"
-  },
-  {
+{
     "id": 50968,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -15258,7 +6853,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
+{
     "id": 50969,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -15274,7 +6869,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
+{
     "id": 50970,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -15290,23 +6885,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
-    "id": 50971,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2608,
-    "source_question_number": 8,
-    "question": "With regard to femoropopliteal bypass, which of the following statements is true?",
-    "options": {
-      "A": "bove- and below-knee bypasses.",
-      "B": "Patency rates are higher when bypass is performed for claudication than when done for limb salvage.",
-      "C": "oronary artery disease adversely affects graft patency.",
-      "D": "iabetes adversely affects graft patency.",
-      "E": "Patency rates are unaffected by vein size."
-    },
-    "answer": "D"
-  },
-  {
+{
     "id": 50972,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -15322,7 +6901,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
+{
     "id": 50973,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -15338,39 +6917,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
-    "id": 50974,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2614,
-    "source_question_number": 11,
-    "question": "Long-term patency of bypass grafts to the tibioperoneal vessels is influenced by which of the following?",
-    "options": {
-      "A": "ll of the above",
-      "B": "Previous attempts at revascularization",
-      "C": "Presence of a patent pedal arch",
-      "D": "iabetes Level of distal anastomosis",
-      "E": ""
-    },
-    "answer": "D"
-  },
-  {
-    "id": 50975,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2616,
-    "source_question_number": 12,
-    "question": "Sudden pain and weakness in the left leg develop in a patient with a history of coronary artery",
-    "options": {
-      "A": "ortic dissection",
-      "B": "elow the groin and a normal contralateral leg. Which of the following is the most likely diagnosis?",
-      "C": "erebrovascular accident",
-      "D": "isease and atrial fibrillation. Examination reveals a cool, pale extremity with an absence of pulses",
-      "E": ""
-    },
-    "answer": "C"
-  },
-  {
+{
     "id": 50976,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -15386,23 +6933,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
-    "id": 50977,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2620,
-    "source_question_number": 14,
-    "question": "If the patient described in Question 12 had a history of intermittent left calf claudication and if",
-    "options": {
-      "A": "rteriographic findings are unlikely to help plan the appropriate surgical approach.",
-      "B": "ilaterally, which of the following would be true? Venography is mandatory for ruling out phlegmasia alba dolens.",
-      "C": "Indications for surgical intervention are unchanged.",
-      "D": "The anticipated surgical procedure is unchanged.",
-      "E": "xamination showed, in addition, diminished pulses in the contralateral leg and trophic skin changes Irreversible muscular necrosis may occur after 24 to 48 hours."
-    },
-    "answer": "A"
-  },
-  {
+{
     "id": 50978,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -15418,7 +6949,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
+{
     "id": 50979,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -15434,7 +6965,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
+{
     "id": 50980,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -15450,39 +6981,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
-    "id": 50981,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2630,
-    "source_question_number": 19,
-    "question": "Most arterial emboli originate from which one of the following sites?",
-    "options": {
-      "A": "bdominal aorta",
-      "B": "Left atrium",
-      "C": "ardiac valves Left ventricle",
-      "D": "Thoracic aorta",
-      "E": ""
-    },
-    "answer": "C"
-  },
-  {
-    "id": 50982,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2636,
-    "source_question_number": 22,
-    "question": "Which of the following is the most common symptom of thoracic outlet syndrome?",
-    "options": {
-      "A": "rm edema caused by venous obstruction",
-      "B": "Pain or paresthesia in the C8-T1 nerve distribution",
-      "C": "Pain or paresthesia in the radial nerve distribution",
-      "D": "Ischemia or pain caused by arterial compression",
-      "E": ""
-    },
-    "answer": "D"
-  },
-  {
+{
     "id": 50983,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -15498,7 +6997,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
+{
     "id": 50984,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -15514,23 +7013,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
-    "id": 50985,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2642,
-    "source_question_number": 25,
-    "question": "With regard to Raynaud disease or phenomenon, which of the following statements is correct?",
-    "options": {
-      "A": "It is characterized by sequential phases of pallor, cyanosis, and rubor in the upper extremities that are initiated by exposure to heat or emotional stress.",
-      "B": "It is seen most frequently in elderly women.",
-      "C": "ervical sympathectomy is usually the primary therapy.",
-      "D": "ermal circulation. β-Blockers often yield symptomatic control.",
-      "E": ""
-    },
-    "answer": "D"
-  },
-  {
+{
     "id": 50986,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -15546,55 +7029,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
-    "id": 50987,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2648,
-    "source_question_number": 28,
-    "question": "With regard to atheroembolic disease of the lower extremities, which of the following is true?",
-    "options": {
-      "A": "ortofemoral bypass, femoropopliteal bypass, extra-anatomic bypass with aortic exclusion, and localized endarterectomy are not indicated for the management of atheroembolic disease.",
-      "B": "Normal pedal pulses are commonly found in patients with atheroembolic disease.",
-      "C": "The most common source of atheroemboli is superficial femoral artery atherosclerotic disease.",
-      "D": "Medical therapy is associated with a low rate of recurrence.",
-      "E": ""
-    },
-    "answer": "A"
-  },
-  {
-    "id": 50988,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2650,
-    "source_question_number": 29,
-    "question": "True statements regarding anterior tibial compartmental syndrome include which of the following?",
-    "options": {
-      "A": "It may be caused by severe exertion.",
-      "B": "Pain is the dominant symptom and is elicited on palpation of the calf.",
-      "C": "The dorsalis pedis pulse is always absent.",
-      "D": "Unlike the treatment of other compartment syndromes, fasciotomy is rarely needed.",
-      "E": "The presence of pulses does negate the diagnosis."
-    },
-    "answer": "B"
-  },
-  {
-    "id": 50989,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2652,
-    "source_question_number": null,
-    "question": "1",
-    "options": {
-      "A": "28-year-old overweight woman comes to the emergency department with a slightly reddened, painful “knot” 8 cm above the medial malleolus. Examination in the standing position demonstrates a palpable vein above and below a tender nonfluctuant 2-cm mass. The patient is afebrile and has no other abnormalities on physical examination. Which of the following is the most likely diagnosis?",
-      "B": "enjamin Lind, M.D. 1 Superficial venous thrombosis",
-      "C": "ellulitis",
-      "D": "",
-      "E": "arly DVT Insect bite"
-    },
-    "answer": "A"
-  },
-  {
+{
     "id": 50990,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -15610,7 +7045,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
+{
     "id": 50991,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -15626,7 +7061,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
+{
     "id": 50992,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -15642,7 +7077,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
+{
     "id": 50993,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -15658,23 +7093,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
-    "id": 50994,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2662,
-    "source_question_number": 6,
-    "question": "Which of the following is true?",
-    "options": {
-      "A": "The calf muscle pump has minimal importance in regard to the venous flow rate.",
-      "B": "Post-thrombotic syndrome may occur in more than one half of patients after an episode of DVT.",
-      "C": "Veins are less stiff than arteries per unit of cross-sectional area.",
-      "D": "evelopment of venous stasis ulcers.",
-      "E": "Venous pressure at the foot is greatly increased while walking."
-    },
-    "answer": "A"
-  },
-  {
+{
     "id": 50995,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -15690,23 +7109,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
-    "id": 50996,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2666,
-    "source_question_number": 8,
-    "question": "Which of the following statements is true?",
-    "options": {
-      "A": "The major indication for deep venous thrombectomy is recurrent pulmonary embolism (PE).",
-      "B": "Thrombectomy for ileofemoral DVT rarely results in less swelling, pain, and venous stasis than",
-      "C": "aval interruption should always precede ileofemoral thrombectomy.",
-      "D": "Ileofemoral thrombosis from a pelvic infection is best treated by thrombectomy.",
-      "E": ""
-    },
-    "answer": "E"
-  },
-  {
+{
     "id": 50997,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -15722,7 +7125,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
+{
     "id": 50998,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -15738,7 +7141,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
+{
     "id": 50999,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -15754,23 +7157,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
-    "id": 51000,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2678,
-    "source_question_number": 14,
-    "question": "The therapeutic plan for the patient in Question 12 should include which of the following measures?",
-    "options": {
-      "A": "voidance of prolonged sitting or standing",
-      "B": "Ligation of the medial perforating veins as soon as possible",
-      "C": "Initial treatment consisting of appropriate leg wraps, leg elevation, and ambulation with",
-      "D": "Ulcer débridement, vein stripping, and skin grafting",
-      "E": "Laser ablation"
-    },
-    "answer": "D"
-  },
-  {
+{
     "id": 51001,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -15786,7 +7173,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
+{
     "id": 51002,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -15802,7 +7189,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
+{
     "id": 51003,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -15818,7 +7205,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
+{
     "id": 51004,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -15834,7 +7221,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
+{
     "id": 51005,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -15850,39 +7237,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
-    "id": 51006,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2692,
-    "source_question_number": 21,
-    "question": "With regard to axillary-subclavian vein thrombosis (Paget-von Schroetter syndrome), which of the following is true?",
-    "options": {
-      "A": "It is rarely associated with thoracic outlet compression syndrome.",
-      "B": "Severe pain in the affected extremity is usually the initial symptom.",
-      "C": "Venography is the gold standard for making the diagnosis.",
-      "D": "Surgical thrombectomy is the treatment of choice for the management of acute disease.",
-      "E": "Patients treated with thrombolytic and anticoagulant therapy alone have a low rate of recurrence."
-    },
-    "answer": "E"
-  },
-  {
-    "id": 51007,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2694,
-    "source_question_number": 22,
-    "question": "Left lower extremity pain and swelling developed in a 53-year-old woman who underwent resection of a brain tumor 4 days earlier. A venous duplex scan was performed, and DVT of the femoral and popliteal vein on the left was diagnosed. Which treatment is most appropriate?",
-    "options": {
-      "A": "dministration.",
-      "B": "egin ambulation and discontinue bed rest. Order emergency venography, and if the results are abnormal, begin intravenous heparin",
-      "C": "Order spiral CT to rule out PE.",
-      "D": "Use intermittent leg compression and graduated compression stockings.",
-      "E": "Place an IVC filter."
-    },
-    "answer": "C"
-  },
-  {
+{
     "id": 51008,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -15898,23 +7253,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
-    "id": 51009,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2708,
-    "source_question_number": null,
-    "question": "1 Freischlag JA, Heller JA. Venous disease. In Townsend CMJr, Beauchamp RD, Evers BM, et al,",
-    "options": {
-      "A": "ntagonist muscles are sutured across the end of the bone.",
-      "B": "one.",
-      "C": "hest . 2004;126:338S-400S. 5 Pipinos II, Baxter BT. The lymphatics. In Townsend CMJr, Beauchamp RD, Evers BM, et al, Transected muscles are attached to bone by suturing through drill holes placed in the distal end of the bone.",
-      "D": "Tissues are cut circularly and allowed to retract initially, and the wound may be closed secondarily or approximated with skin traction.",
-      "E": "rnst EB, Stanley JE, editors. Current therapy in vascular surgery, ed 3, St. Louis: CV Mosby, 1995. G It is used when the extremity is grossly infected and the patient is septic."
-    },
-    "answer": "E"
-  },
-  {
+{
     "id": 51010,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -15930,7 +7269,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
+{
     "id": 51011,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -15946,39 +7285,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
-    "id": 51012,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2716,
-    "source_question_number": 5,
-    "question": "Which of the following statements regarding toe amputation is true?",
-    "options": {
-      "A": "mputation.",
-      "B": "When the entire toe must be removed, disarticulation is preferred over transmetatarsal",
-      "C": "Toe amputations should not be attempted in patients who do not have pedal pulses.",
-      "D": "Rehabilitation after transmetatarsal amputation of all five toes is improved by a shoe filler prosthesis.",
-      "E": "mpirical selection and clinical judgment are associated with a 95% healing rate regardless of the presence of pedal pulses. None of the above."
-    },
-    "answer": "B"
-  },
-  {
-    "id": 51013,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2720,
-    "source_question_number": 7,
-    "question": "Knee disarticulation has which of the following advantages?",
-    "options": {
-      "A": "For adults, it is used to preserve bone length when severe ischemia contraindicates a below- knee amputation.",
-      "B": "For children, it is useful for maintaining the epiphysis for bone growth.",
-      "C": "It provides maximal length but poor end-weight-bearing characteristics.",
-      "D": "It is easily fitted with a simple prosthesis.",
-      "E": "None of the above."
-    },
-    "answer": "A"
-  },
-  {
+{
     "id": 51014,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -15994,39 +7301,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
-    "id": 51015,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2724,
-    "source_question_number": 9,
-    "question": "Indications for an above-knee amputation do not include which of the following?",
-    "options": {
-      "A": "bsent popliteal pulses",
-      "B": "Gangrene at the tibial tuberosity",
-      "C": "alf muscle rigor",
-      "D": "Knee or hip contractures",
-      "E": "Patient with minimal potential for rehabilitation and ambulation"
-    },
-    "answer": "D"
-  },
-  {
-    "id": 51016,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2726,
-    "source_question_number": 10,
-    "question": "Which of the following statements regarding hip disarticulation and hemipelvectomy is true?",
-    "options": {
-      "A": "Prostheses are unavailable for ambulation.",
-      "B": "The usual indications are bone tumors, soft tissue tumors, and occasionally, extensive trauma.",
-      "C": "Flaps are brought together posteriorly after hip disarticulation.",
-      "D": "The entire ilium must be removed during hemipelvectomy.",
-      "E": "None of the above."
-    },
-    "answer": "A"
-  },
-  {
+{
     "id": 51017,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -16042,7 +7317,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
+{
     "id": 51018,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -16058,7 +7333,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
+{
     "id": 51019,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -16074,23 +7349,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
-    "id": 51020,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2734,
-    "source_question_number": 14,
-    "question": "Which of the following statements regarding wrist disarticulation is true?",
-    "options": {
-      "A": "The stump is stronger than that left when the amputation is through the carpal bones.",
-      "B": "It provides better prosthesis control than does a long forearm amputation.",
-      "C": "The severed tendons and ligaments of the hand must be shortened to allow retraction of them.",
-      "D": "Preservation of the styloid processes is necessary for prosthetic fitting.",
-      "E": "None of the above."
-    },
-    "answer": "E"
-  },
-  {
+{
     "id": 51021,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -16106,7 +7365,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
+{
     "id": 51022,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -16122,23 +7381,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
-    "id": 51023,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2745,
-    "source_question_number": 3,
-    "question": "Hoarseness has developed in a 55-year-old woman following transhiatal esophagectomy. Which of the following is true about her complication?",
-    "options": {
-      "A": "It is the result of injury to the superior laryngeal nerve.",
-      "B": "It is the result of injury to the recurrent laryngeal nerve.",
-      "C": "The nerve on the right side is more susceptible to injury.",
-      "D": "Seventy percent of bilateral nerve injuries are related to tracheal surgery.",
-      "E": "The most common mechanism of injury to the nerve is thermal from cautery burn."
-    },
-    "answer": "D"
-  },
-  {
+{
     "id": 51024,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -16154,7 +7397,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
+{
     "id": 51025,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -16170,7 +7413,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
+{
     "id": 51026,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -16186,7 +7429,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
+{
     "id": 51027,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -16202,7 +7445,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
+{
     "id": 51028,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -16218,7 +7461,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
+{
     "id": 51029,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -16234,23 +7477,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
-    "id": 51030,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2789,
-    "source_question_number": 24,
-    "question": "Regarding the diagnosis and management of thoracic outlet syndrome:",
-    "options": {
-      "A": "nterior and middle scalene muscles.",
-      "B": "It is recognized in approximately 2% of the population.",
-      "C": "Neurogenic symptoms primarily result from compression of the phrenic nerve between the",
-      "D": "ecreased nerve conduction velocity of the median nerve at the elbow is strongly suggestive.",
-      "E": ""
-    },
-    "answer": "D"
-  },
-  {
+{
     "id": 51031,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -16266,7 +7493,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
+{
     "id": 51032,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -16280,7 +7507,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
+{
     "id": 51033,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -16296,23 +7523,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
-    "id": 51034,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2825,
-    "source_question_number": 3,
-    "question": "Which of the following statements concerning the hormone ghrelin is true?",
-    "options": {
-      "A": "It is produced mainly by the arcuate nucleus of the hypothalamus.",
-      "B": "Plasma levels increase after meals.",
-      "C": "Plasma levels are increased after gastric bypass.",
-      "D": "Plasma levels are increased in individuals following a low-calorie diet.",
-      "E": "Plasma levels are unchanged after sleeve gastrectomy."
-    },
-    "answer": "C"
-  },
-  {
+{
     "id": 51035,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -16328,39 +7539,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
-    "id": 51036,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2833,
-    "source_question_number": 7,
-    "question": "Which of the following statements regarding bariatric operations is not correct?",
-    "options": {
-      "A": "Laparoscopic adjustable gastric banding (LAGB) is a restrictive procedure.",
-      "B": "iliopancreatic diversion (BPD) is mainly a malabsorptive procedure.",
-      "C": "omponent.",
-      "D": "Vertical sleeve gastrectomy is a malabsorptive procedure.",
-      "E": "Vertical banded gastroplasty is a restrictive procedure."
-    },
-    "answer": "B"
-  },
-  {
-    "id": 51037,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2835,
-    "source_question_number": 8,
-    "question": "Which operation was first used extensively for the treatment of morbid obesity during the 1960s?",
-    "options": {
-      "A": "djustable gastric banding",
-      "B": "PD",
-      "C": "Jejunoileal bypass",
-      "D": "Vertical banded gastroplasty",
-      "E": ""
-    },
-    "answer": "D"
-  },
-  {
+{
     "id": 51038,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -16376,7 +7555,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
+{
     "id": 51039,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -16392,7 +7571,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
+{
     "id": 51040,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -16408,7 +7587,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
+{
     "id": 51041,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -16424,7 +7603,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
+{
     "id": 51042,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -16440,39 +7619,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
-    "id": 51043,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2864,
-    "source_question_number": 19,
-    "question": "Which of the following statements is true concerning sleeve gastrectomy?",
-    "options": {
-      "A": "Long-term data show 50% to 70% loss of excess body weight.",
-      "B": "It works by restrictive and malabsorptive mechanisms.",
-      "C": "Postoperative gastric emptying is delayed.",
-      "D": "Postoperative plasma ghrelin levels are elevated.",
-      "E": "It is a component of DS."
-    },
-    "answer": "C"
-  },
-  {
-    "id": 51044,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2866,
-    "source_question_number": 20,
-    "question": "The most common indication for revision surgery after gastric bypass is:",
-    "options": {
-      "A": "nastomotic bleeding",
-      "B": "Protein deficiency",
-      "C": "Failure to lose weight",
-      "D": "umping syndrome",
-      "E": ""
-    },
-    "answer": "E"
-  },
-  {
+{
     "id": 51045,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -16488,7 +7635,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
+{
     "id": 51046,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -16501,7 +7648,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
+{
     "id": 51047,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -16517,7 +7664,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
+{
     "id": 51048,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -16533,7 +7680,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
+{
     "id": 51049,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -16549,7 +7696,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
+{
     "id": 51050,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -16565,23 +7712,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
-    "id": 51051,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2883,
-    "source_question_number": 7,
-    "question": "For the patient in Question 5, what would have been the appropriate work-up preoperatively if a pelvic mass and ascites were noted on pelvic examination and ultrasound?",
-    "options": {
-      "A": "ll of the above",
-      "B": "Tumor markers such as CA 125, carcinoembryonic antigen (CEA), CA 19-9, and HE4",
-      "C": "olonoscopy",
-      "D": "PPD and chest radiograph",
-      "E": ""
-    },
-    "answer": "C"
-  },
-  {
+{
     "id": 51052,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -16597,7 +7728,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
+{
     "id": 51053,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -16613,7 +7744,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
+{
     "id": 51054,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -16629,23 +7760,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
-    "id": 51055,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2893,
-    "source_question_number": 12,
-    "question": "Which of the following is not a risk factor for endometrial cancer?",
-    "options": {
-      "A": "Obesity",
-      "B": "Smoking",
-      "C": "Unopposed estrogen use",
-      "D": "iabetes",
-      "E": ""
-    },
-    "answer": "D"
-  },
-  {
+{
     "id": 51056,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -16661,7 +7776,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
+{
     "id": 51057,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -16677,7 +7792,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
+{
     "id": 51058,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -16693,7 +7808,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
+{
     "id": 51059,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -16709,7 +7824,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
+{
     "id": 51060,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -16725,7 +7840,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
+{
     "id": 51061,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -16741,23 +7856,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
-    "id": 51062,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2915,
-    "source_question_number": 23,
-    "question": "One year after the patient underwent pelvic radiation therapy, she began having symptoms of",
-    "options": {
-      "A": "Terminal ileum",
-      "B": "owel obstruction. Which segment of bowel is most commonly affected?",
-      "C": "ecum Sigmoid colon",
-      "D": "Rectum",
-      "E": "None of the above"
-    },
-    "answer": "B"
-  },
-  {
+{
     "id": 51063,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -16773,7 +7872,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
+{
     "id": 51064,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -16789,7 +7888,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
+{
     "id": 51065,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -16805,55 +7904,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
-    "id": 51066,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2925,
-    "source_question_number": 28,
-    "question": "Regarding vaginal cancer, which of the following is not true?",
-    "options": {
-      "A": "ll of the above are true.",
-      "B": "Tumor extending to the pelvic side wall is considered stage II disease.",
-      "C": "Primary vaginal cancer involving the upper third of the vagina should be treated as though it were cervical cancer.",
-      "D": "It is predominantly a disease of older women.",
-      "E": ""
-    },
-    "answer": "E"
-  },
-  {
-    "id": 51067,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2927,
-    "source_question_number": 29,
-    "question": "Which of the following vulvar abnormalities is not considered a risk factor for invasive malignancy?",
-    "options": {
-      "A": "ll of the above are risk factors",
-      "B": "Paget disease",
-      "C": "Lichen sclerosis",
-      "D": "Hypertrophic dystrophy without atypia",
-      "E": ""
-    },
-    "answer": "B"
-  },
-  {
-    "id": 51068,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2929,
-    "source_question_number": 30,
-    "question": "Regarding vulvar carcinoma, which of the following is false?",
-    "options": {
-      "A": "Squamos cell cancer is the most common type.",
-      "B": "There is an association with HPV infection in young patients.",
-      "C": "Pruritus is one of the most common symptoms.",
-      "D": "The disease is staged clinically.",
-      "E": "Ulceration lesion is one of the common initial complaints."
-    },
-    "answer": "D"
-  },
-  {
+{
     "id": 51069,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -16869,182 +7920,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
-    "id": 51070,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2933,
-    "source_question_number": 32,
-    "question": "Potential sites for ureteral injury during abdominal hysterectomy with bilateral salpingo- oophorectomy include all of the following except:",
-    "options": {
-      "A": "ll are potential sites of injury",
-      "B": "Transection of the uterine arteries",
-      "C": "Transection of the cardinal ligaments",
-      "D": "Transection of the infundibulopelvic ligaments",
-      "E": ""
-    },
-    "answer": "B"
-  },
-  {
-    "id": 51071,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2935,
-    "source_question_number": 33,
-    "question": "Regarding menopause, which of the following is false?",
-    "options": {
-      "A": "ll of the above are true.",
-      "B": "It occurs as result of gradual depletion of functional ovarian follicles.",
-      "C": "Unopposed estrogen is acceptable therapy for women with a uterus and vasomotor symptoms.",
-      "D": "Vaginal atrophy, vasomotor symptoms, and osteoporosis are sequelae.",
-      "E": ""
-    },
-    "answer": "A"
-  },
-  {
-    "id": 51072,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2937,
-    "source_question_number": 34,
-    "question": "Regarding pelvic inflammatory disease (PID), which of the following is true?",
-    "options": {
-      "A": "Neisseria gonorrhoeae is the most common causative organism.",
-      "B": "Physical examination is considered the gold standard for diagnosis.",
-      "C": "T scan of the pelvis should be done routinely.",
-      "D": "It should initially be treated with parenteral antibiotics.",
-      "E": ""
-    },
-    "answer": "C"
-  },
-  {
-    "id": 51073,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2939,
-    "source_question_number": 35,
-    "question": "Regarding TOAs, which of the following is false?",
-    "options": {
-      "A": "Initial outpatient oral antibiotic therapy is currently considered suboptimal treatment.",
-      "B": "Initial therapy should be nonsurgical.",
-      "C": "TOAs are present in approximately 50% of patients with PID.",
-      "D": "Unilateral removal can be used as conservative therapy for women desiring fertility.",
-      "E": "None of the above."
-    },
-    "answer": "C"
-  },
-  {
-    "id": 51074,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2941,
-    "source_question_number": null,
-    "question": "1",
-    "options": {
-      "A": "m J Med . 1996;100:179-185. 13 Mullholland MW, Lillemoe KD, Doherty GM, et al, editors. Greenfield’s surgery: scientific principles and practice, ed 4, Philadelphia: Lippincott Williams & Wilkins, 2006. 14 Petignat P, Vajda D, Joris F, et al. Surgical management of epithelial ovarian cancer at community hospitals: a population-based study. J Surg Oncol . 2000;75:19-23.",
-      "B": "RCA mutation testing for breast and ovarian cancer susceptibility: recommendation statement.",
-      "C": "ompilation of risk assessment criteria. J Med Genet . 2004;41:81-91. 11 Sanai FM, Bzeizi KI. Systematic review. Tuberculous peritonitis: presenting features, diagnostic strategies and treatment.",
-      "E": "vid Rep Technol"
-    },
-    "answer": "C"
-  },
-  {
-    "id": 51075,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2944,
-    "source_question_number": 2,
-    "question": "Which of the following statements regarding scalp injuries is true?",
-    "options": {
-      "A": "The blood supply to the scalp lies between the periosteum and the galea.",
-      "B": "Most scalp laceration hemorrhages can be controlled by applying direct pressure.",
-      "C": "Subgaleal hematomas must be drained to avoid abscess formation and extensive scalp elevation.",
-      "D": "If a scalp laceration extends below the zygoma, facial weakness may result from damage to the ipsilateral trigeminal nerve.",
-      "E": "The scalp consists of two layers: the skin and the subcutaneous tissue."
-    },
-    "answer": "D"
-  },
-  {
-    "id": 51076,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2946,
-    "source_question_number": 3,
-    "question": "Which of the following statements regarding hydrocephalus is the most accurate?",
-    "options": {
-      "A": "It represents a primary process in up to two thirds of patients.",
-      "B": "It is classified as communicating or noncommunicating, depending on where the obstruction to",
-      "C": "linical signs of hydrocephalus are manifested the same ways in all age groups.",
-      "D": "Hydrocephalus ex vacuo is more common in the young.",
-      "E": ""
-    },
-    "answer": "B"
-  },
-  {
-    "id": 51077,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2948,
-    "source_question_number": 4,
-    "question": "Which of the following statements regarding ICP monitoring is false?",
-    "options": {
-      "A": "Ventricular pressure catheters are the reference standard for ICP monitoring.",
-      "B": "ICP monitoring should be performed in salvageable patients with a Glasgow Coma Scale (GCS) score of 3 to 8 after resuscitation and an abnormal findings on head CT.",
-      "C": "isterns on CT, and systolic blood pressure higher than 90 mm Hg.",
-      "D": "Normal ICP is 0 to 15 mm Hg or 0 to 20 cm H 2 O.",
-      "E": "ICP can be measured with either an intraparenchymal or ventriculostomy monitor."
-    },
-    "answer": "B"
-  },
-  {
-    "id": 51078,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2950,
-    "source_question_number": 5,
-    "question": "Which of the following is true regarding neurogenic shock?",
-    "options": {
-      "A": "First-line therapy consists of repetitive fluid boluses with crystalloids.",
-      "B": "Pure α-adrenergic sympathomimetics are the vasopressor drugs of choice.",
-      "C": "Tachycardia and hypotension are pathognomonic signs of neurogenic shock.",
-      "D": "opamine is the preferred vasopressor agent.",
-      "E": ""
-    },
-    "answer": "C"
-  },
-  {
-    "id": 51079,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2952,
-    "source_question_number": 6,
-    "question": "Which of the following is true regarding cervical trauma?",
-    "options": {
-      "A": "The mortality associated with atlanto-occipital dislocation is 100%.",
-      "B": "Most mortality in cervical trauma is not the direct result of neural compression.",
-      "C": "ervical trauma, regardless of the findings on neurologic examination or the time of injury.",
-      "D": "In a neurologically intact patient with neck pain, the cervical spine can be cleared immediately with normal findings on plain cervical radiographs.",
-      "E": "Methylprednisolone should be started immediately in any trauma patient suspected of having"
-    },
-    "answer": "E"
-  },
-  {
-    "id": 51080,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2954,
-    "source_question_number": 7,
-    "question": "Which of the following statements regarding traumatic CSF leaks is false?",
-    "options": {
-      "A": "ntibiotic coverage.",
-      "B": "The risk for infection is greater with rhinorrhea than with otorrhea.",
-      "C": "They often do not require immediate surgical repair to avert infection.",
-      "D": "They may be observed for up to 14 days if there is no evidence of infection.",
-      "E": "The presence of a traumatic CSF leak mandates the use of prophylactic broad-spectrum"
-    },
-    "answer": "B"
-  },
-  {
+{
     "id": 51081,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -17060,23 +7936,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
-    "id": 51082,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2958,
-    "source_question_number": 9,
-    "question": "Which of the following is true regarding brain death?",
-    "options": {
-      "A": "Neurosurgical evaluation is required for proper determination of brain death.",
-      "B": "Once the patient demonstrates no functional neurologic findings, including loss of all cranial nerves and reflexes, brain death can be pronounced.",
-      "C": "onfirmation with electroencephalography (EEG) is not required to pronounce brain death.",
-      "D": "If while performing a brain death examination the patient becomes cardiovascularly unstable, the",
-      "E": "xaminer should finish quickly to pronounce brain death without delay."
-    },
-    "answer": "C"
-  },
-  {
+{
     "id": 51083,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -17092,23 +7952,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
-    "id": 51084,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2962,
-    "source_question_number": 11,
-    "question": "Which of the following is true regarding the management of elevated ICP?",
-    "options": {
-      "A": "Hemicraniectomy is first-line therapy for elevated ICP.",
-      "B": "rain for long periods.",
-      "C": "Prolonged hyperventilation is a benign method for lowering elevated ICP.",
-      "D": "Maintenance of elevated cerebral perfusion pressure (CPP) may be more important in improved neurologic outcome at the expense of high ICP.",
-      "E": "Persistent hyperventilation is a terrific method to sustain alkalization and combat acidosis in the"
-    },
-    "answer": "C"
-  },
-  {
+{
     "id": 51085,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -17124,39 +7968,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
-    "id": 51086,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2966,
-    "source_question_number": 13,
-    "question": "Which of the following statements regarding cerebral edema caused by head injury is the most",
-    "options": {
-      "A": "ccurate?",
-      "B": "efore starting therapy.",
-      "C": "erebral edema caused by head injury is vasogenic and not cytotoxic in origin. Steroids are useful for the treatment of head trauma.",
-      "D": "Hypercapnia induces cerebral vasoconstriction and is useful for decreasing intracerebral blood volume.",
-      "E": "Within a few hours (1 to 3 hours) after injury, maximal cerebral edema has already formed, so further monitoring is unnecessary if the patient is clinically stable."
-    },
-    "answer": "C"
-  },
-  {
-    "id": 51087,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2968,
-    "source_question_number": 14,
-    "question": "Which of the following statements regarding subarachnoid hemorrhage (SAH) is the most",
-    "options": {
-      "A": "neurysms are the most common cause of SAH.",
-      "B": "lockers is contraindicated for the treatment of vasospasm.",
-      "C": "Surgical or endovascular treatment is recommended for patients who are neurologically intact",
-      "D": "The use of hypertension, hypervolemia, hemodilution (triple-H therapy), and calcium channel",
-      "E": ""
-    },
-    "answer": "A"
-  },
-  {
+{
     "id": 51088,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -17172,7 +7984,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
+{
     "id": 51089,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -17188,7 +8000,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
+{
     "id": 51090,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -17204,71 +8016,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
-    "id": 51091,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2977,
-    "source_question_number": 18,
-    "question": "Which of the following is false regarding brain and spine tumors?",
-    "options": {
-      "A": "Intracranial schwannomas most commonly arise from the eighth cranial nerve, and spinal schwannomas are most commonly found in the intradural and extramedullary space on sensory nerves.",
-      "B": "Spinal cord ependymomas are the most common primary adult spinal cord tumors and are",
-      "C": "ommonly found in the cervical cord. Most intracranial tumors are benign.",
-      "D": "Meningiomas arise from the arachnoid layer of the brain, as opposed to the brain tissue itself.",
-      "E": "Glioblastoma multiforme (GBM) is the most common primary brain tumor and carries the worst prognosis."
-    },
-    "answer": "D"
-  },
-  {
-    "id": 51092,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2979,
-    "source_question_number": 19,
-    "question": "Which of the following myotome and dermatome distributions is correct?",
-    "options": {
-      "A": "ll of the above.",
-      "B": "T4 has a myotome distribution to the intercostal muscles and a dermatome distribution to the nipple area.",
-      "C": "1 has a myotome distribution as part of the ansa cervicalis with supply to the neck “strap muscles,” but no dermatome distribution. L1 has a myotome distribution to the iliopsoas muscle and a dermatome distribution to the inguinal area.",
-      "D": "ermatome distribution to the lateral aspect of the calf and foot.",
-      "E": ""
-    },
-    "answer": "C"
-  },
-  {
-    "id": 51093,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2981,
-    "source_question_number": 20,
-    "question": "Regarding spinal cord injury, which of the following incorrectly describes the syndrome listed?",
-    "options": {
-      "A": "In anterior spinal artery syndrome, bilateral loss of motor and pain sensation occurs with preservation of position and vibratory sensation.",
-      "B": "In posterior spinal artery syndrome, bilateral loss of position and vibration sensation occurs with preservation of motor and pain sensation.",
-      "C": "ontralateral pain and temperature sensation.",
-      "D": "istribution of multiple nerve roots, including bladder areflexia and stool incontinence.",
-      "E": "nds of extremities. In cauda equina syndrome, unilateral or bilateral loss of motor and sensory function occurs in the"
-    },
-    "answer": "E"
-  },
-  {
-    "id": 51094,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2983,
-    "source_question_number": 21,
-    "question": "Which of the following statements regarding brain abscesses is false?",
-    "options": {
-      "A": "The brain is resistant to infection despite its high glucose content.",
-      "B": "rain abscesses are classified as acute, subacute, and chronic.",
-      "C": "orticosteroids may be useful in treating this type of infection.",
-      "D": "Prompt drainage is indicated for all types of brain abscesses.",
-      "E": ""
-    },
-    "answer": "C"
-  },
-  {
+{
     "id": 51095,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -17284,55 +8032,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
-    "id": 51096,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2987,
-    "source_question_number": 23,
-    "question": "Which of the following is true regarding brain metastases?",
-    "options": {
-      "A": "More than 75% of patients who die of cancer have intracranial metastasis on autopsy.",
-      "B": "The most common primary malignancies from which brain metastases arise are lung, breast, and prostate cancers.",
-      "C": "Melanoma, colorectal, and renal carcinoma are extremely sensitive to whole-brain radiation therapy (WBRT).",
-      "D": "Patients with a single metastasis and good prognostic features often benefit from surgery followed by WBRT.",
-      "E": "Most brain metastases are chemosensitive."
-    },
-    "answer": "D"
-  },
-  {
-    "id": 51097,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2989,
-    "source_question_number": null,
-    "question": "1 Kandel ER, Schwartz JH, editors. Principles of neural sciences, Part II. London: Edward Arnold, 1981. 2 Schwartz SI, Shires GT, Spencer FC. Principles of surgery , ed 7. New York: McGraw-Hill; 1999. 3 Sabiston DCJr. Textbook of surgery , ed 15. Philadelphia: WB Saunders; 1997. 4 Ross JS, Masaryk TJ, Modic MT, et al. Intracranial aneurysms: evaluation of MR angiography.",
-    "options": {
-      "A": "tlas SW. Magnetic resonance imaging of the brain and spine . New York: Raven Press; 1991. 13 Sciubba DM, Dorsi MJ, Kretzler R, et al. Computed tomography reconstruction artifact suggesting",
-      "B": "racken MB, Shepard MJ, Collins WF, et al. A randomized controlled trail of methylprednisolone or naloxone in the treatment of acute spinal cord injury. N Engl J Med . 1990;322:1405-1411.",
-      "C": "oexistent traumatic locked facets of the cervical spine and disc herniation. J Neurosurg . 1993;79:341-345. 15",
-      "D": "oran SE, Papadopoulos SM, Ducker TB, et al. Magnetic resonance imaging documentation of",
-      "E": "ditor’s Commentary. J Neurotrauma . 2007;24(Suppl 1):2. 10 Way LW."
-    },
-    "answer": "D"
-  },
-  {
-    "id": 51098,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2992,
-    "source_question_number": 2,
-    "question": "Which of the following statements is true regarding renal vascular anatomy?",
-    "options": {
-      "A": "Solitary renal arteries are seen in approximately 20% to 30% of patients.",
-      "B": "The right renal artery usually crosses ventral to the vena cava.",
-      "C": "The left renal vein usually crosses dorsal to the aorta.",
-      "D": "The right adrenal and gonadal veins typically empty into the right renal vein.",
-      "E": "The renal arteries are end arteries."
-    },
-    "answer": "A"
-  },
-  {
+{
     "id": 51099,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -17348,23 +8048,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
-    "id": 51100,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 2996,
-    "source_question_number": 4,
-    "question": "Transitional cell cancers of the renal pelvis are best treated by which of the following?",
-    "options": {
-      "A": "Nephrectomy",
-      "B": "Nephroureterectomy with excision of the ureter to the level of the bladder",
-      "C": "Nephroureterectomy with excision of the bladder cuff",
-      "D": "Nephroureterectomy and total cystectomy",
-      "E": "Radiotherapy"
-    },
-    "answer": "C"
-  },
-  {
+{
     "id": 51101,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -17380,7 +8064,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
+{
     "id": 51102,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -17396,119 +8080,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
-    "id": 51103,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3006,
-    "source_question_number": 9,
-    "question": "Which of the following is an indication for expectant management of renal calculi?",
-    "options": {
-      "A": "Progressive renal damage",
-      "B": "Intractable pain",
-      "C": "Persistent or progressive obstruction",
-      "D": "etection of any calculi",
-      "E": ""
-    },
-    "answer": "D"
-  },
-  {
-    "id": 51104,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3008,
-    "source_question_number": 10,
-    "question": "Resection of a sigmoid cancer necessitates excision of a segment of the left pelvic ureter, with the specimen extending 3 cm distal to the bifurcation of the common iliac artery. Possible options for reconstruction include which of the following?",
-    "options": {
-      "A": "Ileal substitution",
-      "B": "Ureteroneocystostomy",
-      "C": "Nephrectomy",
-      "D": "Psoas bladder hitch ligatures",
-      "E": "Renal autotransplantation"
-    },
-    "answer": "E"
-  },
-  {
-    "id": 51105,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3010,
-    "source_question_number": 11,
-    "question": "Which of the following is not a principle of repair of an intraoperative ureteral injury?",
-    "options": {
-      "A": "Use of nonabsorbable suture material",
-      "B": "Spatulation of the transected ends",
-      "C": "Foley catheter drainage",
-      "D": "rainage",
-      "E": "Intraureteral stent"
-    },
-    "answer": "D"
-  },
-  {
-    "id": 51106,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3014,
-    "source_question_number": 13,
-    "question": "The preferred treatment of muscle-invasive bladder cancer involves which of the following?",
-    "options": {
-      "A": "Radical cystectomy",
-      "B": "Preoperative irradiation and radical cystectomy",
-      "C": "Preoperative chemotherapy and radical cystectomy",
-      "D": "Radiation therapy alone",
-      "E": "Intravesical chemotherapy"
-    },
-    "answer": "D"
-  },
-  {
-    "id": 51107,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3016,
-    "source_question_number": 14,
-    "question": "In a male patient with a pelvic fracture secondary to blunt trauma, retrograde urethrographic",
-    "options": {
-      "A": "ppropriate initial treatment? Passage of a transurethral catheter",
-      "B": "Suprapubic cystostomy",
-      "C": "Urethrostomy",
-      "D": "Retropubic repair",
-      "E": "xamination demonstrates disruption of the membranous urethra. Which of the following constitutes Percutaneous nephrostomy tubes"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 51108,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3018,
-    "source_question_number": 15,
-    "question": "Regarding bladder trauma, which of the following statements is true?",
-    "options": {
-      "A": "single-view retrograde cystogram in the emergency department demonstrates most significant",
-      "B": "ladder injuries.",
-      "C": "Primary closure is generally indicated for extraperitoneal ruptures.",
-      "D": "Intraoperative injury usually requires repair with a suprapubic cystostomy.",
-      "E": "Injuries at the dome of the bladder are typically extraperitoneal."
-    },
-    "answer": "B"
-  },
-  {
-    "id": 51109,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3020,
-    "source_question_number": 16,
-    "question": "Which of the following is true regarding the management of a patient with benign prostatic hyperplasia (BPH)?",
-    "options": {
-      "A": "ll patients with complaints of prostatism should undergo therapy.",
-      "B": "Patients with BPH have an increased risk for prostate cancer.",
-      "C": "Initial therapy usually consists of nonoperative therapy.",
-      "D": "Surgery is indicated only in patients who fail medical management.",
-      "E": "The disease arises from the peripheral zone of the prostate."
-    },
-    "answer": "A"
-  },
-  {
+{
     "id": 51110,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -17524,23 +8096,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
-    "id": 51111,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3024,
-    "source_question_number": 18,
-    "question": "One hour after a prolonged transurethral resection of the prostate (TURP), a 70-year-old man with mild coronary artery disease experiences bradycardia, hypertension, confusion, nausea, and headache. What is the most likely cause?",
-    "options": {
-      "A": "nemia",
-      "B": "Hypokalemia",
-      "C": "Hypernatremia",
-      "D": "Hyponatremia",
-      "E": ""
-    },
-    "answer": "E"
-  },
-  {
+{
     "id": 51112,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -17556,23 +8112,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
-    "id": 51113,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3036,
-    "source_question_number": 24,
-    "question": "Which of the following is true regarding varicocele?",
-    "options": {
-      "A": "Varicoceles occur more commonly on the right side.",
-      "B": "Varicoceles are associated with infertility.",
-      "C": "Varicoceles occur in about 40% of men.",
-      "D": "Varicoceles are often associated with testicular tumors.",
-      "E": "Varicoceles are not usually palpable on physical examination."
-    },
-    "answer": "A"
-  },
-  {
+{
     "id": 51114,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -17588,7 +8128,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
+{
     "id": 51115,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -17604,39 +8144,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
-    "id": 51116,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3050,
-    "source_question_number": 31,
-    "question": "Which of the following matches a layer of the scrotum with its corresponding fascial layer in the",
-    "options": {
-      "A": "bdominal wall:",
-      "B": "Tunica vaginalis—External oblique fascia",
-      "C": "remasteric fascia—Internal oblique muscle",
-      "D": "artos fascia—Transversalis fascia",
-      "E": "xternal spermatic fascia—Scarpa fascia Internal spermatic fascia—Peritoneum"
-    },
-    "answer": "B"
-  },
-  {
-    "id": 51117,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3052,
-    "source_question_number": 32,
-    "question": "Which of the following is true regarding circumcision?",
-    "options": {
-      "A": "It is protective against penile cancer",
-      "B": "It may increase HIV transmission",
-      "C": "It decreases penile sensation",
-      "D": "The fascia of Buck must be closed before skin closure",
-      "E": "Hypospadias is a contraindication"
-    },
-    "answer": "A"
-  },
-  {
+{
     "id": 51118,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -17652,55 +8160,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
-    "id": 51119,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3056,
-    "source_question_number": null,
-    "question": "1 McAninch JW, Santucci RA. Renal and ureteral trauma. In Wein AR, Kavoussi LR, Novick AC, et",
-    "options": {
-      "A": "R, Kavoussi LR, Novick AC, et al, editors:",
-      "B": "hayani SB, Siegel CL. Urinary tract imaging: basic principles. In Wein AR, Kavoussi LR, Novick",
-      "C": "ampbell-Walsh urology , ed 9, Philadelphia: WB Saunders, 2007. 11 Olumi AF, Richie JP. Urologic surgery. In Townsend CM, Beauchamp RD, Evers BM, et al,",
-      "D": "ahl DM, McDougal WS. Use of intestinal segments in urinary diversion. In Wein AR, Kavoussi LR, Novick AC, et al, editors:",
-      "E": "ditors: Sabiston textbook of surgery: the biological basis of modern surgical practice , ed 18, Philadelphia: Saunders, 2008."
-    },
-    "answer": "C"
-  },
-  {
-    "id": 51120,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3061,
-    "source_question_number": 2,
-    "question": "Which of the following is true in the pediatric population?",
-    "options": {
-      "A": "The daily sodium requirement is 8 mEq/kg.",
-      "B": "The daily potassium requirement is 4 mEq/kg.",
-      "C": "The daily protein requirement is 2 to 3.5 g/kg/day in infants.",
-      "D": "The minimum daily carbohydrate requirement is 2 to 3 mg/kg/min in neonates.",
-      "E": "Fat infusions should be started at 1.5 g/kg/day and titrated up to 3.5 to 4 g/kg/day."
-    },
-    "answer": "C"
-  },
-  {
-    "id": 51121,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3065,
-    "source_question_number": 4,
-    "question": "For the infant in Question 3, which of the following is the most common electrolyte abnormality?",
-    "options": {
-      "A": "Hypokalemia",
-      "B": "Hyperkalemia",
-      "C": "Hypocalcemia",
-      "D": "Hyperchloremia",
-      "E": "Hypercalcemia"
-    },
-    "answer": "A"
-  },
-  {
+{
     "id": 51122,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -17716,7 +8176,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
+{
     "id": 51123,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -17732,7 +8192,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
+{
     "id": 51124,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -17748,39 +8208,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
-    "id": 51125,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3077,
-    "source_question_number": 10,
-    "question": "Which of the following is the indicated treatment for a noncommunicating hydrocele in a 2-month- old infant?",
-    "options": {
-      "A": "Observation",
-      "B": "Needle aspiration",
-      "C": "Hydrocelectomy through a groin incision",
-      "D": "Hydrocelectomy through a scrotal incision",
-      "E": "Repair of the hernia and hydrocelectomy"
-    },
-    "answer": "D"
-  },
-  {
-    "id": 51126,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3079,
-    "source_question_number": 11,
-    "question": "The following are true of inguinal hernias in the pediatric population except:",
-    "options": {
-      "A": "Inguinal hernias are more common in females than in males.",
-      "B": "The most common structure found in an incarcerated inguinal hernia in girls are the ovaries.",
-      "C": "Laparoscopic evaluation of the contralateral groin is not always needed.",
-      "D": "High ligation of the hernia sac without repair of the inguinal floor is appropriate.",
-      "E": "Routine contralateral exploration is not indicated."
-    },
-    "answer": "A"
-  },
-  {
+{
     "id": 51127,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -17796,103 +8224,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
-    "id": 51128,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3083,
-    "source_question_number": 13,
-    "question": "Which of the following statements is most accurate regarding branchial cleft anomalies?",
-    "options": {
-      "A": "Third arch anomalies are common.",
-      "B": "Type II first arch branchial anomalies are the most common overall.",
-      "C": "The glossopharyngeal nerve is associated with the third branchial arch.",
-      "D": "Second arch anomalies end in the piriform sinus.",
-      "E": "Second arch anomalies travel deep to the internal carotid artery."
-    },
-    "answer": "B"
-  },
-  {
-    "id": 51129,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3087,
-    "source_question_number": 15,
-    "question": "Which of the following is the most common malignancy found in children?",
-    "options": {
-      "A": "Lymphoma",
-      "B": "Leukemia",
-      "C": "Neuroblastoma",
-      "D": "Nephroblastoma",
-      "E": "Rhabdomyosarcoma"
-    },
-    "answer": "B"
-  },
-  {
-    "id": 51130,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3089,
-    "source_question_number": 16,
-    "question": "Which of the following statements concerning biliary atresia is true?",
-    "options": {
-      "A": "tresia.",
-      "B": "iliary atresia is the third most common indication for pediatric liver transplantation.",
-      "C": "The Kasai procedure typically includes a choledochojejunostomy anastomosis.",
-      "D": "Ultrasound of the liver and gallbladder is an integral part of the diagnostic work-up for biliary",
-      "E": ""
-    },
-    "answer": "B"
-  },
-  {
-    "id": 51131,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3091,
-    "source_question_number": 17,
-    "question": "With regard to the Kasai procedure for the treatment of biliary atresia, which of the following statements is true?",
-    "options": {
-      "A": "It is most successfully performed after 3 months of age.",
-      "B": "",
-      "C": "holangitis is an infrequent late complication.",
-      "D": "If hepatic transplantation is needed, an initial Kasai enterostomy is not indicated.",
-      "E": ""
-    },
-    "answer": "D"
-  },
-  {
-    "id": 51132,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3093,
-    "source_question_number": 18,
-    "question": "Which of the following always requires surgical correction during infancy?",
-    "options": {
-      "A": "ll of the above",
-      "B": "Umbilical hernia",
-      "C": "Meconium plug",
-      "D": "Hirschsprung disease",
-      "E": ""
-    },
-    "answer": "C"
-  },
-  {
-    "id": 51133,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3095,
-    "source_question_number": 19,
-    "question": "Which of the following is true concerning Hirschsprung disease?",
-    "options": {
-      "A": "trophy of submucosal nerve endings seen on rectal biopsy specimens",
-      "B": "est diagnosed by lower gastrointestinal contrast-enhanced study",
-      "C": "Failure to pass meconium in the first 48 hours of life",
-      "D": "",
-      "E": ""
-    },
-    "answer": "D"
-  },
-  {
+{
     "id": 51134,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -17908,23 +8240,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
-    "id": 51135,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3103,
-    "source_question_number": 23,
-    "question": "Which of the following is the most common anatomic type of tracheoesophageal malformations?",
-    "options": {
-      "A": "Proximal atresia and distal tracheoesophageal fistula",
-      "B": "",
-      "C": "omplete esophageal atresia without fistula H-type esophageal fistula",
-      "D": "Proximal fistula and distal esophageal atresia",
-      "E": "Proximal and distal tracheoesophageal fistulas"
-    },
-    "answer": "A"
-  },
-  {
+{
     "id": 51136,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -17940,7 +8256,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
+{
     "id": 51137,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -17956,7 +8272,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
+{
     "id": 51138,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -17972,23 +8288,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
-    "id": 51139,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3119,
-    "source_question_number": 31,
-    "question": "Which of the following statements concerning necrotizing enterocolitis (NEC) is true?",
-    "options": {
-      "A": "The initial insult in NEC is to the intestinal mucosa.",
-      "B": "The jejunum is the most frequently involved site.",
-      "C": "Operative intervention is indicated after resuscitation.",
-      "D": "Progression of NEC is halted after surgical therapy.",
-      "E": "The cecum is frequently not involved."
-    },
-    "answer": "C"
-  },
-  {
+{
     "id": 51140,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -18004,39 +8304,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
-    "id": 51141,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3125,
-    "source_question_number": 34,
-    "question": "Which of the following statement concerning the physiology of the newborn is true?",
-    "options": {
-      "A": "dequate capillary refill is less than 5 seconds.",
-      "B": "Newborns preferentially breathe through their mouths rather than their noses.",
-      "C": "omplement.",
-      "D": "Newborns have normal levels but are functionally deficient in immunoglobulins and C3b",
-      "E": ""
-    },
-    "answer": "C"
-  },
-  {
-    "id": 51142,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3133,
-    "source_question_number": 38,
-    "question": "With regard to defects of the abdominal wall, which statement is correct?",
-    "options": {
-      "A": "In gastroschisis, the herniated bowel contents are covered by a membrane.",
-      "B": "Gastroschisis is frequently associated with cardiac malformations.",
-      "C": "hromosomal abnormalities are often present with omphalocele.",
-      "D": "Treatment of abdominal wall defects is immediate surgical closure of the fascial defect.",
-      "E": "In omphalocele, a silo bag is placed to cover the exposed intestine."
-    },
-    "answer": "A"
-  },
-  {
+{
     "id": 51143,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -18052,7 +8320,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
+{
     "id": 51144,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -18068,7 +8336,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
+{
     "id": 51145,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -18084,7 +8352,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
+{
     "id": 51146,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -18100,7 +8368,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
+{
     "id": 51147,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -18116,7 +8384,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
+{
     "id": 51148,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -18132,7 +8400,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
+{
     "id": 51149,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -18148,7 +8416,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
+{
     "id": 51150,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -18162,7 +8430,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
+{
     "id": 51151,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -18178,39 +8446,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
-    "id": 51152,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3166,
-    "source_question_number": 4,
-    "question": "Which of the following statements regarding wound healing is true?",
-    "options": {
-      "A": "granulating wound is considered to be in the proliferative stage of wound healing.",
-      "B": "Lymphocytes are the cells most critical to wound healing.",
-      "C": "Platelets are the first cells to populate the wound, followed by lymphocytes, macrophages, and then neutrophils.",
-      "D": "",
-      "E": "Rising transforming growth factor-α (TGF-α) levels indicate that the wound is in the proliferative stage."
-    },
-    "answer": "D"
-  },
-  {
-    "id": 51153,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3168,
-    "source_question_number": 5,
-    "question": "Regarding free flaps and their vascular supply, all of the following are true except:",
-    "options": {
-      "A": "rtery.",
-      "B": "The predominant blood supply to a free latissimus dorsi myocutaneous flap is the thoracodorsal",
-      "C": "The predominant blood supply to a free fibular osteocutaneous flap is the peroneal artery.",
-      "D": "The predominant blood supply to a free dorsalis pedis fasciocutaneous flap is the anterior tibial",
-      "E": "Preoperative angiograms are avoided because of risk for capillary runoff."
-    },
-    "answer": "D"
-  },
-  {
+{
     "id": 51154,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -18226,7 +8462,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
+{
     "id": 51155,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -18242,7 +8478,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
+{
     "id": 51156,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -18258,39 +8494,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
-    "id": 51157,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3184,
-    "source_question_number": 13,
-    "question": "Which of the following statements regarding skin incisions and excisions is false?",
-    "options": {
-      "A": "Skin incisions should usually be oriented parallel to the long axis of the underlying muscle.",
-      "B": "Lines of minimal tension parallel skin lines.",
-      "C": "The long axis of underlying muscles is usually perpendicular to skin lines.",
-      "D": "uring an elliptical excision, the long axis should be four times the length of the short axis.",
-      "E": "The dog-ear deformity is a result of infection after incision."
-    },
-    "answer": "B"
-  },
-  {
-    "id": 51158,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3188,
-    "source_question_number": 15,
-    "question": "Which of the following statements regarding techniques of breast reconstruction is true?",
-    "options": {
-      "A": "free TRAM flap is anastomosed to the subclavian artery.",
-      "B": "reast reconstruction with a tissue expander involves placement of the expander in a submuscular pocket, closure of the wound, and immediate full expansion to match the size of the opposite breast.",
-      "C": "When a latissimus dorsi myocutaneous flap is used for breast reconstruction, placement of an implant is not usually necessary.",
-      "D": "ehiscence.",
-      "E": ""
-    },
-    "answer": "A"
-  },
-  {
+{
     "id": 51159,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -18306,7 +8510,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
+{
     "id": 51160,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -18322,23 +8526,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
-    "id": 51161,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3194,
-    "source_question_number": 18,
-    "question": "Which of the following regarding reconstruction of lip defects is false?",
-    "options": {
-      "A": "Proper alignment of the vermilion border is one of the most important cosmetic aspects of primary closure of lip defects.",
-      "B": "Upper lip defects involving less than one third of the upper lip can be repaired by primary",
-      "C": "heek advancement flaps are used to avoid microstomia.",
-      "D": "Lip defects involving the commissure can be reconstructed with an Abbe flap.",
-      "E": ""
-    },
-    "answer": "D"
-  },
-  {
+{
     "id": 51162,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -18354,7 +8542,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
+{
     "id": 51163,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -18370,7 +8558,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
+{
     "id": 51164,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -18386,23 +8574,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
-    "id": 51165,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3202,
-    "source_question_number": 22,
-    "question": "Which of the following wounds would most likely require free flap reconstruction?",
-    "options": {
-      "A": "Open wound of the knee with an exposed total knee prosthesis",
-      "B": "Open wound with exposed sternum following coronary artery bypass surgery",
-      "C": "Full-thickness resection of the chest wall for tumor with exposed lung",
-      "D": "Fracture of the distal third of the tibia with an open wound and exposed bone without hardware in the wound",
-      "E": "Pen fractures of the midhumerus"
-    },
-    "answer": "B"
-  },
-  {
+{
     "id": 51166,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -18418,23 +8590,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
-    "id": 51167,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3208,
-    "source_question_number": 25,
-    "question": "Which of the following statements is true?",
-    "options": {
-      "A": "Women with breast augmentation implants have a significantly increased risk for the",
-      "B": "When breast cancer is diagnosed in a patient with silicone breast augmentation implants, it is more likely to be at an advanced stage than when diagnosed in nonaugmented breasts.",
-      "C": "Patients with silicone breast implants require a modification of conventional mammographic techniques to obtain optimal visualization of the breast parenchyma.",
-      "D": "evelopment of breast carcinoma in comparison with those with nonaugmented breasts. The concentration of silicone in the breast milk of women with silicone implants is slightly greater than that in the breast milk of women without implants.",
-      "E": "pidemiologic studies have clearly demonstrated a cause-and-effect relationship between breast implants and the development of collagen vascular disease."
-    },
-    "answer": "B"
-  },
-  {
+{
     "id": 51168,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -18450,7 +8606,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
+{
     "id": 51169,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -18466,23 +8622,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
-    "id": 51170,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3214,
-    "source_question_number": 28,
-    "question": "Which of the following statements regarding the placement of hand incisions is true?",
-    "options": {
-      "A": "Palm incisions should be placed in the skin creases.",
-      "B": "It is better to err on the volar aspect than the dorsal aspect when placing incisions on the side of the digit.",
-      "C": "Incisions on the volar side of the digit must cross the interphalangeal (IP) flexion creases transversely.",
-      "D": "orsal skin incisions should cross skin creases transversely or obliquely.",
-      "E": "The key principle in planning hand incisions is to maximize motion to avoid contractures."
-    },
-    "answer": "A"
-  },
-  {
+{
     "id": 51171,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -18498,23 +8638,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
-    "id": 51172,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3220,
-    "source_question_number": 31,
-    "question": "Which of the following statements regarding the most common metacarpal fractures is true?",
-    "options": {
-      "A": "They are commonly known as Bennett fractures.",
-      "B": "They are commonly known as boxer’s fractures.",
-      "C": "They most often involve the distal metacarpal of the index and long fingers.",
-      "D": "Physical examination is the most effective means of assessing the degree of angulation.",
-      "E": "They usually require open reduction and internal fixation."
-    },
-    "answer": "C"
-  },
-  {
+{
     "id": 51173,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -18530,23 +8654,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
-    "id": 51174,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3226,
-    "source_question_number": 34,
-    "question": "Which of the following statements is true?",
-    "options": {
-      "A": "felon is an infection around the margin of the nail bed.",
-      "B": "",
-      "C": "Finger felon, or paronychia, has the potential to cause tenosynovitis.",
-      "D": "The deep structures of the hand are protected from subcutaneous abscesses of the palm by the superficial palmar fascia.",
-      "E": "The versatile “fish mouth” incision is used for draining both pulp and paronychial infections."
-    },
-    "answer": "A"
-  },
-  {
+{
     "id": 51175,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -18562,7 +8670,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
+{
     "id": 51176,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -18578,69 +8686,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
-    "id": 51177,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3232,
-    "source_question_number": 37,
-    "question": "Which of the following statements regarding peripheral nerve injury is false?",
-    "options": {
-      "A": "Nerve repair is progressively less effective if delayed beyond 2 months after surgery.",
-      "B": "Nerve repair is best performed under 4 to 15 times magnification.",
-      "C": "Nerve repair is best performed in a fashion that minimizes tension across the repair.",
-      "D": "Regeneration may be followed clinically by observing distal progression of the Tinel sign.",
-      "E": "The use of conduits can assist in nerve regeneration."
-    },
-    "answer": "E"
-  },
-  {
-    "id": 51178,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3240,
-    "source_question_number": 41,
-    "question": "Which of the following statements is false?",
-    "options": {
-      "A": "Jersey finger refers to an intra-articular fracture of the DIP joint.",
-      "B": "Mallet finger results from traumatic avulsion of the extensor tendon insertion into the distal phalanx.",
-      "C": "Skier’s (ski pole injury) thumb results from disruption of the ulnar collateral ligament at the thumb MCP joint.",
-      "D": "Kienböck disease refers to idiopathic lunatomalacia.",
-      "E": "Rolando and Bennett fractures are fractures of the base of the thumb metacarpal."
-    },
-    "answer": "B"
-  },
-  {
-    "id": 51179,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3242,
-    "source_question_number": 42,
-    "question": "Which of the following statements regarding burns of the hands is false?",
-    "options": {
-      "A": "Full-thickness dorsal burns cause scarring, which prevents flexion contractures.",
-      "B": "Loss of the extensor tendons is often treated by joint fusion to prevent contractures from unopposed flexion forces.",
-      "C": "Partial superficial-thickness burns are best treated by sterile débridement, splinting, and occupational therapy.",
-      "D": "eep partial-thickness burns require early débridement and grafting with sheet grafts.",
-      "E": "Splinting in a safe position should be performed whenever possible."
-    },
-    "answer": "A"
-  },
-  {
-    "id": 51180,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3246,
-    "source_question_number": null,
-    "question": "1",
-    "options": {
-      "A": "CS surgery: principles & practice . New York: WebMD, 2007. 10 Khosla RK. Augmentation mammaplasty, Volume 10, Number 21. Texas. Kenkel JM, editor. Selected readings in plastic surgery, 2008. 11 U.S. Food and Drug Administration. Breast Implant Questions & Answers. Online at http://www.fda.gov/MedicalDevices/ProductsandMedicalProcedures/ImplantsandProsthetics/BreastImplants/UCM063719 12 Myers WT, Phillips LG. Pressure sores. In: Guyuron B, Eriksson E, Persing JA, et al, editors.",
-      "B": "M, et al, editors: Sabiston textbook of surgery: the biological basis of modern surgical practice ,",
-      "E": "t al, editors."
-    },
-    "answer": "D"
-  },
-  {
+{
     "id": 51181,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -18656,7 +8702,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
+{
     "id": 51182,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -18672,7 +8718,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
+{
     "id": 51183,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -18688,7 +8734,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
+{
     "id": 51184,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -18704,7 +8750,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
+{
     "id": 51185,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -18720,7 +8766,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
+{
     "id": 51186,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -18736,23 +8782,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
-    "id": 51187,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3268,
-    "source_question_number": 9,
-    "question": "Which of the following is not a sonographic characteristic of an inflamed gallbladder?",
-    "options": {
-      "A": "Gallbladder distention",
-      "B": "Pericholecystic fluid",
-      "C": "Wall thickness of 2 mm",
-      "D": "Sonographic Murphy sign",
-      "E": "Gallstones"
-    },
-    "answer": "A"
-  },
-  {
+{
     "id": 51188,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -18768,23 +8798,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
-    "id": 51189,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3272,
-    "source_question_number": 11,
-    "question": "Which of the following statements regarding focused abdominal sonography for trauma (FAST) is true?",
-    "options": {
-      "A": "It can reliably evaluate the retroperitoneum.",
-      "B": "It can quickly detect the presence of pericardial fluid or a pleural effusion.",
-      "C": "It is useful in detecting a cardiac contusion.",
-      "D": "It is considered a replacement for computed tomography (CT).",
-      "E": "It can reliably detect diaphragmatic injuries."
-    },
-    "answer": "B"
-  },
-  {
+{
     "id": 51190,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -18800,215 +8814,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
-    "id": 51191,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3276,
-    "source_question_number": 13,
-    "question": "Which of the following statements best describes the use of breast ultrasound imaging?",
-    "options": {
-      "A": "It should be used instead of breast biopsy.",
-      "B": "It can be used to distinguish between cystic and solid masses.",
-      "C": "It is considered an initial screening test to evaluate the entire breast.",
-      "D": "It can be used to define microcalcifications.",
-      "E": "It should not be used in lieu of stereotactically guided biopsies even if the lesion is detected ultrasonographically."
-    },
-    "answer": "D"
-  },
-  {
-    "id": 51192,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3278,
-    "source_question_number": 14,
-    "question": "Regarding intraoperative ultrasound, which of the following statements is true?",
-    "options": {
-      "A": "It is very accurate in determining vessel encasement by tumor.",
-      "B": "It necessitates the presence of a board-certified radiologist in the operating room.",
-      "C": "It generally doubles the operative time.",
-      "D": "It is less sensitive than CT in locating small pancreatic tumors.",
-      "E": "Open intraoperative ultrasound is confounded by more artifacts than laparoscopic ultrasound is."
-    },
-    "answer": "B"
-  },
-  {
-    "id": 51193,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3282,
-    "source_question_number": 16,
-    "question": "Which of the following statements regarding the safety of diagnostic ultrasound and possible",
-    "options": {
-      "A": "s sound propagates, energy is converted to heat.",
-      "B": "one absorbs sound; therefore, an elevation in temperature is more likely at a bone-tissue interface.",
-      "C": "Significant tissue damage can occur with an increase of 2.5° C (4.5° F).",
-      "D": "Fetal tissue is less tolerant than adult tissue.",
-      "E": "None of the above."
-    },
-    "answer": "E"
-  },
-  {
-    "id": 51194,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3284,
-    "source_question_number": 17,
-    "question": "Which of the following is not true regarding radiofrequency ablation (RFA)?",
-    "options": {
-      "A": "It may be used for benign conditions such as neuralgia and cardiac arrhythmias.",
-      "B": "It cannot be applied topically for the treatment of metastatic cutaneous tumors.",
-      "C": "It may be used endoscopically to treat gastroesophageal reflux disease.",
-      "D": "It results in coagulation necrosis, protein denaturation, and tissue desiccation from thermal injury.",
-      "E": "It is synonymous with microwave ablation."
-    },
-    "answer": "E"
-  },
-  {
-    "id": 51195,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3286,
-    "source_question_number": 18,
-    "question": "Regarding cryotherapy, which of the following is true?",
-    "options": {
-      "A": "It is not associated with significant risk for coagulopathy.",
-      "B": "It is a relatively inexpensive modality.",
-      "C": "It is usually performed with the patient under local anesthesia.",
-      "D": "It is used for interstitial applications only.",
-      "E": "It is less efficacious for lesions adjacent to major blood vessels."
-    },
-    "answer": "E"
-  },
-  {
-    "id": 51196,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3288,
-    "source_question_number": 19,
-    "question": "With regard to ablative therapy for malignant tumors, which of the following is true?",
-    "options": {
-      "A": "cid.",
-      "B": "PEI is more efficacious for the treatment of septated HCC than is percutaneous injection of acetic",
-      "C": "Real-time ultrasound is the only imaging modality suitable for guiding percutaneous ablation.",
-      "D": "uring treatment with RFA, the ablation zone denoting the treated area is visualized accurately with real-time ultrasound.",
-      "E": ""
-    },
-    "answer": "A"
-  },
-  {
-    "id": 51197,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3294,
-    "source_question_number": 22,
-    "question": "Which of the following ablative modalities is approved by the Food and Drug Administration (FDA) for the treatment of biopsy-proved breast fibroadenomas?",
-    "options": {
-      "A": "RFA",
-      "B": "High-frequency ultrasound ablation",
-      "C": "ryoablation",
-      "D": "Laser ablation",
-      "E": "Microwave ablation"
-    },
-    "answer": "D"
-  },
-  {
-    "id": 51198,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3296,
-    "source_question_number": 23,
-    "question": "With regard to ablative therapy for breast cancer, which of the following is true?",
-    "options": {
-      "A": "RFA, cryotherapy, and laser ablation can all be performed with ultrasound guidance.",
-      "B": "Laser ablation and RFA create similar-size zones of ablation.",
-      "C": "Similar information regarding margin status and tumor size and histology can be obtained after treatment with ablation alone or surgical excision.",
-      "D": "The ablation zone created by RFA cannot be distinguished from residual carcinoma on postablation MRI.",
-      "E": "In the majority of cases, no viable tumor cells are found after complete RFA."
-    },
-    "answer": "C"
-  },
-  {
-    "id": 51199,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3298,
-    "source_question_number": null,
-    "question": "1 Machi J, Staren ED. Ultrasound for surgeons , ed 2. Philadelphia: Lippincott Williams & Wilkins; 2005. 2 Prasad P, Wittmann J, Pereira SP. Endoscopic ultrasound of the upper gastrointestinal tract and mediastinum: diagnosis and therapy.",
-    "options": {
-      "A": "nn Surg Oncol . 2009;16:3279-3288. 10 Wong S, Mangu PB, Choti MA, et al. American Society of Clinical Oncology, 2009 clinical",
-      "B": "ilchik AJ. Colorectal cancer metastatic to the liver: radiofrequency ablation. In Cameron JL,",
-      "C": "urrent surgical therapy , ed 9, St. Louis: CV Mosby, 2007.",
-      "D": "’Angelica M, Fong Y. The liver. In Townsend CM, Beauchamp RD, Evers M, et al, editors: Sabiston textbook of surgery: the biological basis of modern surgical practice , ed 18, Philadelphia: WB Saunders, 2008. 8 Santambrogio R, Opocher E, Zuin M, et al. Surgical resection versus laparoscopic radiofrequency",
-      "E": "vidence review on radiofrequency ablation of hepatic metastases from colorectal cancer. J Clin Oncol . 2010;28:493-508. 11 Klimberg VS. Ablative techniques in the treatment of benign and malignant breast disease. In"
-    },
-    "answer": "E"
-  },
-  {
-    "id": 51200,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3301,
-    "source_question_number": 2,
-    "question": "Which of the following insufflation gases should not be used with electrocautery?",
-    "options": {
-      "A": "rgon",
-      "B": "Nitrous oxide",
-      "C": "O 2",
-      "D": "Helium",
-      "E": "None of the above"
-    },
-    "answer": "C"
-  },
-  {
-    "id": 51201,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3303,
-    "source_question_number": 3,
-    "question": "Which body compartment is the largest reservoir for CO 2 ?",
-    "options": {
-      "A": "dipose tissue",
-      "B": "one Skeletal muscle",
-      "C": "Lungs",
-      "D": "Peritoneum",
-      "E": ""
-    },
-    "answer": "B"
-  },
-  {
-    "id": 51202,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3305,
-    "source_question_number": 4,
-    "question": "Which of the following hemodynamic parameters decreases during laparoscopy with CO 2 pneumoperitoneum?",
-    "options": {
-      "A": "Mean arterial pressure",
-      "B": "Pulmonary vascular resistance",
-      "C": "Systemic vascular resistance",
-      "D": "Heart rate",
-      "E": "Peripheral blood flow"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 51203,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3307,
-    "source_question_number": 5,
-    "question": "Which of the following does not routinely increase during laparoscopic surgery?",
-    "options": {
-      "A": "irway pressure",
-      "B": "Pulmonary capillary wedge pressure",
-      "C": "Vital capacity",
-      "D": "iaphragmatic excursion",
-      "E": "Intrathoracic pressure"
-    },
-    "answer": "E"
-  },
-  {
+{
     "id": 51204,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -19024,7 +8830,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
+{
     "id": 51205,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -19040,23 +8846,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
-    "id": 51206,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3313,
-    "source_question_number": 8,
-    "question": "Which of the following conditions represents a contraindication to advanced laparoscopic operations?",
-    "options": {
-      "A": "Pregnancy",
-      "B": "Morbid obesity",
-      "C": "irrhosis",
-      "D": "Previous laparotomy",
-      "E": ""
-    },
-    "answer": "B"
-  },
-  {
+{
     "id": 51207,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -19072,7 +8862,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
+{
     "id": 51208,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -19088,7 +8878,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
+{
     "id": 51209,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -19104,23 +8894,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
-    "id": 51210,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3321,
-    "source_question_number": 12,
-    "question": "Select the most appropriate site for initial trocar placement in a patient undergoing laparoscopic Nissen fundoplication with a previous midline scar from the xiphoid to the pubis:",
-    "options": {
-      "A": "Umbilical",
-      "B": "Suprapubic",
-      "C": "Left upper quadrant",
-      "D": "Left lower quadrant",
-      "E": "Right upper quadrant"
-    },
-    "answer": "B"
-  },
-  {
+{
     "id": 51211,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -19136,7 +8910,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
+{
     "id": 51212,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -19152,39 +8926,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
-    "id": 51213,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3329,
-    "source_question_number": 16,
-    "question": "Which of the following is not a potential advantage of robotic systems versus standard laparoscopy?",
-    "options": {
-      "A": "Improved ergonomics",
-      "B": "Reduced operative times",
-      "C": "Increased manual dexterity",
-      "D": "Reduced fatigue of assistants",
-      "E": "limination of tremor"
-    },
-    "answer": "B"
-  },
-  {
-    "id": 51214,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3331,
-    "source_question_number": 17,
-    "question": "In the United States, performance of human natural-orifice transluminal endoscopic surgery (NOTES) procedures requires which of the following according to the Natural Orifice Surgery",
-    "options": {
-      "A": "ll of the above",
-      "B": "Institutional Review Board (IRB)-approved research protocol",
-      "C": "onsortium for Assessment and Research (NOSCAR)? Use of laparoscopy to confirm hemostasis and security of luminal closure",
-      "D": "Inclusion of cases in a national NOTES registry",
-      "E": ""
-    },
-    "answer": "B"
-  },
-  {
+{
     "id": 51215,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -19198,7 +8940,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
+{
     "id": 51216,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -19214,7 +8956,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
+{
     "id": 51217,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -19230,7 +8972,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
+{
     "id": 51218,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -19246,7 +8988,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
+{
     "id": 51219,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -19259,7 +9001,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
+{
     "id": 51220,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -19275,7 +9017,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
+{
     "id": 51221,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -19291,7 +9033,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
+{
     "id": 51222,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -19307,23 +9049,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
-    "id": 51223,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3355,
-    "source_question_number": 11,
-    "question": "Which of the following is true with respect to the management of appendicitis in pregnancy?",
-    "options": {
-      "A": "n appendectomy during pregnancy increases the risk for congenital malformations and stillbirth.",
-      "B": "Fetal mortality can approach 35% for a ruptured appendix.",
-      "C": "Negative laparotomy rates of 50% are considered acceptable in the pregnant population.",
-      "D": "To decrease the risk for congenital malformations, antibiotics should not be given.",
-      "E": "Laparoscopic appendectomy is contraindicated during pregnancy."
-    },
-    "answer": "B"
-  },
-  {
+{
     "id": 51224,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -19339,23 +9065,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
-    "id": 51225,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3363,
-    "source_question_number": 15,
-    "question": "When performing laparoscopic operations in a pregnant patient, which of the following is recommended?",
-    "options": {
-      "A": "ntibiotic prophylaxis with a fluoroquinolone (e.g., levofloxacin)",
-      "B": "Right lateral decubitus positioning",
-      "C": "Limiting carbon dioxide pneumoperitoneum to 12 mm Hg for laparoscopy",
-      "D": "Using an umbilical entry site for laparoscopy for gestational ages beyond 24 weeks",
-      "E": "Performing open rather than laparoscopic procedures after 24 weeks’ gestation"
-    },
-    "answer": "C"
-  },
-  {
+{
     "id": 51226,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -19371,7 +9081,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
+{
     "id": 51227,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -19387,7 +9097,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
+{
     "id": 51228,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -19400,39 +9110,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
-    "id": 51229,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3373,
-    "source_question_number": 20,
-    "question": "Many unplanned pregnancies occur after bariatric surgery, in part because of improved fertility rates in patients who were infertile before the procedure. Most experts recommend waiting between",
-    "options": {
-      "A": "2 to 3 months",
-      "B": "ariatric surgery procedures and pregnancy. Select the most appropriate time frame: 6 to 8 months",
-      "C": "12 to 14 months",
-      "D": "18 to 24 months",
-      "E": ">2 years"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 51230,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3375,
-    "source_question_number": 21,
-    "question": "The leading cause of maternal morbidity and mortality in the developed world is:",
-    "options": {
-      "A": "Postpartum hemorrhage",
-      "B": "Thromboembolism",
-      "C": "Preeclampsia",
-      "D": "Uterine rupture",
-      "E": "Pneumonia"
-    },
-    "answer": "D"
-  },
-  {
+{
     "id": 51231,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -19448,39 +9126,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
-    "id": 51232,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3403,
-    "source_question_number": 34,
-    "question": "Which of the following should not be included in the initial approach to a profoundly neutropenic patient with fever?",
-    "options": {
-      "A": "Skin, mucous membrane, and ophthalmoscopic examination",
-      "B": "Inspection and cultures from central venous access",
-      "C": "hest radiograph",
-      "D": "igital rectal examination",
-      "E": "Initiation of empirical antibiotic therapy"
-    },
-    "answer": "B"
-  },
-  {
-    "id": 51233,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3405,
-    "source_question_number": 35,
-    "question": "Which of the following strategies is least useful for improving surgical outcomes in geriatric patients?",
-    "options": {
-      "A": "Preoperative evaluation of medical physiologic status",
-      "B": "Optimization of physical and cognitive function",
-      "C": "Minimization of perioperative nutritional deficiency",
-      "D": "Postoperative assessment for rehabilitation options",
-      "E": "Surgical risk assessment based on a specific diagnosis"
-    },
-    "answer": "C"
-  },
-  {
+{
     "id": 51234,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -19496,23 +9142,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
-    "id": 51235,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3409,
-    "source_question_number": 37,
-    "question": "Following small bowel resection, a 75-year-old patient is agitated and calling out for his",
-    "options": {
-      "A": "Postoperative delirium may occur in up to 15% of patients 70 years or older.",
-      "B": "Postoperative delirium increases the risk for other complications.",
-      "C": "ondition? Preoperative assessment of cognitive function should be routine in patients older than 75 years for major elective surgery.",
-      "D": "elirium than general anesthesia is.",
-      "E": "In geriatric patients, regional anesthesia is associated with a lower incidence of postoperative"
-    },
-    "answer": "A"
-  },
-  {
+{
     "id": 51236,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -19528,39 +9158,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
-    "id": 51237,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3413,
-    "source_question_number": 39,
-    "question": "Following cholecystectomy, an 82-year-old patient has an oxygen saturation of 88% on 2 L of oxygen by nasal cannula. Which of the following is not a probable explanation for this phenomenon?",
-    "options": {
-      "A": "Maximal breathing capacity is 50% of what the patient had at age 30.",
-      "B": "The cough mechanism is less effective in elderly patients.",
-      "C": "The pulse oximetry reading is spurious.",
-      "D": "The patient was recently repositioned from supine to a sitting position.",
-      "E": "The patient required conversion from laparoscopic to open cholecystectomy."
-    },
-    "answer": "D"
-  },
-  {
-    "id": 51238,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3415,
-    "source_question_number": 40,
-    "question": "Which of the following statements regarding age-related changes in the cardiovascular system is not correct?",
-    "options": {
-      "A": "Ventricular contractility decreases.",
-      "B": "Sympathetic nervous system activity decreases.",
-      "C": "Mean arterial pressure increases.",
-      "D": "Left ventricular afterload increases.",
-      "E": "Myocardial contraction is prolonged."
-    },
-    "answer": "D"
-  },
-  {
+{
     "id": 51239,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -19575,7 +9173,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
+{
     "id": 51240,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -19590,21 +9188,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
-    "id": 51241,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3455,
-    "source_question_number": null,
-    "question": "1",
-    "options": {
-      "A": "nd celiac plexus neurolysis for managing abdominal pain associated with chronic pancreatitis and pancreatic cancer. J Clin Gastroenterol . 2010;44:127-134. 11 Khorana AA, Fine RL. Pancreatic cancer and thromboembolic disease. Lancet Oncol . 2004;5:655-663. 12 Lee AY, Levine MN, Baker RI, et al. Low-molecular-weight heparin versus a coumarin for the prevention of recurrent venous thromboembolism in patient with cancer. N Engl J Med . 2003;349:146-153. 13 Universal protocol for preventing wrong site, wrong procedure, and wrong person surgery. The",
-      "C": "ancer. Surg Oncol . 2007;16:249-257. 2",
-      "E": "valuation of chemotherapeutic agents . Columbia: Univ Press; 1949:196. 5 Lau F, Downing M, Lesperance M, et al. Using the palliative performance scale to provide meaningful survival estimates. J Pain Symptom Manage . 2009;38:134-144. 6 Lau F, Maida V, Downing M, et al. Use of palliative performance scale in end-of-life prognostication in a palliative medicine consultation service. J Pain Symptom Manage . 2009;37:965-972. 7 Lee KF, Ennis WJ, Dunn GP. Surgical palliative care of advanced wounds."
-    },
-    "answer": "E"
-  },
-  {
+{
     "id": 51242,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -19620,39 +9204,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
-    "id": 51243,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3466,
-    "source_question_number": 4,
-    "question": "Which of the following is true?",
-    "options": {
-      "A": "Variance is the sum of the absolute differences between each sample point and the mean.",
-      "B": "The sample SD will be small if the sample size is large.",
-      "C": "The standard error of the mean (SEM) is independent of sample size.",
-      "D": "SEM can be obtained by dividing the sample SD by the square of the sample size (N 2 ).",
-      "E": "SD is better than SEM for describing scatter in the data. Ref: 1, 3, 5"
-    },
-    "answer": "D"
-  },
-  {
-    "id": 51244,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3468,
-    "source_question_number": 5,
-    "question": "Which of the following is correct about descriptions and estimations of populations?",
-    "options": {
-      "A": "The 95% reference range will contain all of the data 95% of the time.",
-      "B": "To calculate a 95% confidence interval (CI), the sample must contain 95% of the population.",
-      "C": "Nonparametric statistics are most useful if the population distribution is normal and the sample size is large.",
-      "D": "The 95% CI of the mean becomes smaller as the dispersion of the data decreases or the sample size increases.",
-      "E": "The number of degrees of freedom is inversely proportional to the sample size."
-    },
-    "answer": "E"
-  },
-  {
+{
     "id": 51245,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -19668,23 +9220,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
-    "id": 51246,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3472,
-    "source_question_number": 7,
-    "question": "Which of the following is true about hypothesis testing?",
-    "options": {
-      "A": "type II error is the probability of concluding that a difference exists when it does not.",
-      "B": "etween groups when multiple comparisons are made.",
-      "C": "The Bonferroni adjustment attempts to minimize the risk of incorrectly finding differences",
-      "D": "Power increases with sample size and effect size but decreases as type I error (alpha) increases.",
-      "E": "Underpowered studies often show statistically significant differences when in fact none exist."
-    },
-    "answer": "C"
-  },
-  {
+{
     "id": 51247,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -19700,55 +9236,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
-    "id": 51248,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3478,
-    "source_question_number": 10,
-    "question": "Which of the following is true about nonparametric statistics?",
-    "options": {
-      "A": "They have greater power than the corresponding parametric tests.",
-      "B": "They require fewer assumptions about the form of the population from which the data are obtained.",
-      "C": "They are generally more sensitive to outliers.",
-      "D": "They are usually less robust than corresponding parametric statistics.",
-      "E": "One example is the unpaired t -test."
-    },
-    "answer": "D"
-  },
-  {
-    "id": 51249,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3482,
-    "source_question_number": 12,
-    "question": "Many of the obese diabetic patients also had gastroesophageal reflux disease (GERD). The investigators decided to assess whether gastric bypass surgery decreased the incidence of GERD.",
-    "options": {
-      "A": "Unpaired t -test",
-      "B": "efore surgery, 46 (of 64) patients reported GERD. After surgery, only 32 of the patients reported GERD symptoms. What test would be most appropriate for determining whether the decrease in GERD was caused by chance? Paired t -test",
-      "C": "One-way ANOVA",
-      "D": "Mann-Whitney U test",
-      "E": "McNemar test"
-    },
-    "answer": "B"
-  },
-  {
-    "id": 51250,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3484,
-    "source_question_number": 13,
-    "question": "Which of the following is true about regression and correlation?",
-    "options": {
-      "A": "The dependent variable is used to predict the independent variable.",
-      "B": "Multiple regression generally refers to more than one outcome variable.",
-      "C": "orrelation usually implies causation.",
-      "D": "Two variables are uncorrelated if they have a negative correlation coefficient.",
-      "E": ""
-    },
-    "answer": "E"
-  },
-  {
+{
     "id": 51251,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -19764,55 +9252,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
-    "id": 51252,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3488,
-    "source_question_number": 15,
-    "question": "Referring to Question 14, which of the following statements is not correct?",
-    "options": {
-      "A": "The sensitivity of the new influenza assay in group 1 is 90%.",
-      "B": "The accuracy of the new influenza assay in group 2 is 90%.",
-      "C": "The positive predictive value (PPV) of the assay in group 1 is 8%.",
-      "D": "The negative predictive value (NPV) of the assay in group 2 is 50%.",
-      "E": "Sensitivity and specificity are better intrinsic measures of a test than PPV and NPV."
-    },
-    "answer": "D"
-  },
-  {
-    "id": 51253,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3490,
-    "source_question_number": 16,
-    "question": "Which of the following is true of a screening test?",
-    "options": {
-      "A": "If the prevalence of the disease is low, the test must be highly sensitive.",
-      "B": "Increasing the sensitivity of the test also usually increases its specificity.",
-      "C": "Treatment before the development of clinical disease should reduce the morbidity and mortality of the disease more than treatment initiated after clinical manifestations of disease are present.",
-      "D": "Length-time bias occurs when a new test diagnoses the disease earlier but there is no effect on the disease outcome.",
-      "E": "The best studies for assessing whether a screening test will increase a population’s health are well-designed case-control studies."
-    },
-    "answer": "D"
-  },
-  {
-    "id": 51254,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3492,
-    "source_question_number": 17,
-    "question": "Which of the following is true?",
-    "options": {
-      "A": "Type I errors are associated mainly with tests with poor sensitivity.",
-      "B": "ias is best addressed by increasing the size of each group in the study.",
-      "C": "",
-      "D": "Selection bias occurs when the researcher spends more time supervising the care of patients in the treatment group than those in the control group.",
-      "E": "None of the above."
-    },
-    "answer": "C"
-  },
-  {
+{
     "id": 51255,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -19828,23 +9268,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
-    "id": 51256,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3496,
-    "source_question_number": 19,
-    "question": "Which of the following is true about interventional studies (randomized controlled trials)?",
-    "options": {
-      "A": "Randomization and large sample size generally reduce the effects of confounding variables.",
-      "B": "Randomization serves to eliminate observational bias.",
-      "C": "The effects of poor compliance with therapy can be eliminated with an “intention-to-treat”",
-      "D": "esign. Interventional studies are usually cheaper than observational studies such as case-control studies.",
-      "E": "Randomized controlled trials are less subject to ethics concerns than observational studies."
-    },
-    "answer": "D"
-  },
-  {
+{
     "id": 51257,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -19860,39 +9284,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
-    "id": 51258,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3506,
-    "source_question_number": null,
-    "question": "1",
-    "options": {
-      "A": "m J Prev Med . 2001;20(Suppl 3):21-35. 14 45 CFR 46.116(a) retrieved 10/14/09 from the U.S. Department of Health and Human Services, Office for Human Research Protections www.hhs.gov/ohrp/humansubjects/guidance/45cfr46.htm",
-      "B": "ewick V, Cheek L, Ball J. Statistics review 12: survival analysis.",
-      "C": "rit Care . 2004;8:389-394. 13 Harris RP, Helfand M, Woolf SH, et al. Current methods of the U.S. Preventive Services Task Force: a review of the process.",
-      "D": "avis AT. Biostatistics. In O’Leary JP, editor: The physiologic basis of surgery , ed 4, Philadelphia: JB Lippincott, 2008. 2 Shott S. Statistics for health professionals . Philadelphia: WB Saunders; 1990. 3 Guller U, DeLong ER. Interpreting statistics in medical literature: a vade mecum for surgeons. J Am",
-      "E": "pidemiology in medicine . Boston: Little Brown; 1987. 12"
-    },
-    "answer": "D"
-  },
-  {
-    "id": 51259,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3509,
-    "source_question_number": 2,
-    "question": "Which of the following specific statements is part of the patient care core competency requirement?",
-    "options": {
-      "A": "Set learning and improvement goals.",
-      "B": "Incorporate formative evaluation feedback into daily practice.",
-      "C": "ommunicate effectively with patients, families, and the public.",
-      "D": "emonstrate manual dexterity appropriate for the resident’s level. Participate in the education of patients and families.",
-      "E": ""
-    },
-    "answer": "E"
-  },
-  {
+{
     "id": 51260,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -19908,23 +9300,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "C"
   },
-  {
-    "id": 51261,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3513,
-    "source_question_number": 4,
-    "question": "Residents are expected to develop certain skills and habits so that they can meet all of the following goals to satisfy the criteria for the practice-based learning and improvement core competency except:",
-    "options": {
-      "A": "Use an evidence-based approach to patient care.",
-      "B": "Participate in mortality and morbidity conferences that evaluate and analyze patient care outcomes.",
-      "C": "Use information technology to optimize learning.",
-      "D": "Locate, appraise, and assimilate evidence from scientific studies related to their patients’ health problems.",
-      "E": "Promote the participation of their patients in a clinical trial."
-    },
-    "answer": "D"
-  },
-  {
+{
     "id": 51262,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -19940,7 +9316,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
+{
     "id": 51263,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -19956,7 +9332,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
+{
     "id": 51264,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -19972,39 +9348,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
-    "id": 51265,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3525,
-    "source_question_number": 10,
-    "question": "Regarding the format of a journal club, which of the following statements is true?",
-    "options": {
-      "A": "It is not actually helpful in teaching residents to critically review scientific information.",
-      "B": "It is a useful adjunct in surgical education, but not one of its key components.",
-      "C": "Participation in it can lead to improved reading habits.",
-      "D": "It allows the acquisition of knowledge in residency that rarely needs updating once in practice.",
-      "E": "Participation maintains medical knowledge in participants relative to their peer group."
-    },
-    "answer": "B"
-  },
-  {
-    "id": 51266,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3527,
-    "source_question_number": 11,
-    "question": "Identify the four steps in practice-based learning and improvement?",
-    "options": {
-      "A": "Identify areas for improvement, engage in learning, apply the new knowledge and skills to a practice, and check for improvement.",
-      "B": "Seek knowledge, identify areas of weakness in scientific knowledge, aim to add to the knowledge, and await constructive feedback.",
-      "C": "Learn about new techniques, apply new techniques, refine new techniques, and individualize techniques.",
-      "D": "Look for improvement in current practice, observe others with a better practice model, attempt a new model in the current paradigm, and teach others the new practice model.",
-      "E": "Identify areas that are innovative, learn innovation, apply innovation, and teach innovation."
-    },
-    "answer": "C"
-  },
-  {
+{
     "id": 51267,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -20020,7 +9364,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
+{
     "id": 51268,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -20036,7 +9380,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
+{
     "id": 51269,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -20052,39 +9396,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
-    "id": 51270,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3535,
-    "source_question_number": 15,
-    "question": "Which of the following errors represents an error in prevention?",
-    "options": {
-      "A": "voidable delay in responding to an abnormal test result",
-      "B": "Failure to use indicated tests",
-      "C": "Use of outmoded tests or therapy",
-      "D": "Failure to act on results of monitoring or testing",
-      "E": ""
-    },
-    "answer": "C"
-  },
-  {
-    "id": 51271,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3539,
-    "source_question_number": 17,
-    "question": "Learning how to teach and become facile in systems-based practice competency can be achieved",
-    "options": {
-      "A": "voiding the inclusion of residents in hospital committees because of limited tenure at the hospital, a need to fulfill service requirements, and an obligation to uphold work hour limitations.",
-      "B": "y various methods. Which of the following is an example of a method used? Using a single format (didactic or group discussion) to deliver public health policy messages.",
-      "C": "Leading by example in developing cost-containment efforts in the hospital in the hope that others will participate.",
-      "D": "Identifying problems within a specific hospital, discovering the root cause, and not ceasing until these problematic issues are resolved.",
-      "E": ""
-    },
-    "answer": "B"
-  },
-  {
+{
     "id": 51272,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -20100,7 +9412,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
+{
     "id": 51273,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -20116,7 +9428,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
+{
     "id": 51274,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -20132,7 +9444,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "B"
   },
-  {
+{
     "id": 51275,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -20148,23 +9460,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "D"
   },
-  {
-    "id": 51276,
-    "specialty": "General Surgery",
-    "source_file": "Rush Review 5th Edition.pdf",
-    "source_page": 3551,
-    "source_question_number": 23,
-    "question": "The Surgical Care Improvement Project (SCIP) differs from the NSQIP in what major difference?",
-    "options": {
-      "A": "The SCIP does not partner with the ACS, but rather the JCAHO.",
-      "B": "The NSQIP focuses on individual providers of care, whereas the SCIP does not.",
-      "C": "The NSQIP focuses primarily on process measures.",
-      "D": "The SCIP focuses primarily on surgical outcomes.",
-      "E": "The SCIP focuses primarily on process measures."
-    },
-    "answer": "E"
-  },
-  {
+{
     "id": 51277,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -20180,7 +9476,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "E"
   },
-  {
+{
     "id": 51278,
     "specialty": "General Surgery",
     "source_file": "Rush Review 5th Edition.pdf",
@@ -20194,39 +9490,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
-    "id": 51279,
-    "specialty": "HPB",
-    "source_file": "liver anatomy QUIZZ.pdf",
-    "source_page": 1,
-    "source_question_number": 1,
-    "question": "Liver segmental anatomy is named after which physician that defined the hepatic segments in the 1950s:",
-    "options": {
-      "A": "Giulio Arantius",
-      "B": "JC a n t l i e",
-      "C": "Claude Couinaud",
-      "D": "Thomas Starzl",
-      "E": "Henri Bismuth"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 51280,
-    "specialty": "HPB",
-    "source_file": "liver anatomy QUIZZ.pdf",
-    "source_page": 1,
-    "source_question_number": 2,
-    "question": "Current liver resection terminology was coined at which IHPBA meeting/consensus?",
-    "options": {
-      "A": "1998 Madrid",
-      "B": "2000 Brisbane",
-      "C": "2002 Tokyo",
-      "D": "2004 Washington D.C.",
-      "E": "2006 Edinburgh"
-    },
-    "answer": "A"
-  },
-  {
+{
     "id": 51281,
     "specialty": "HPB",
     "source_file": "liver anatomy QUIZZ.pdf",
@@ -20239,260 +9503,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
-    "id": 51282,
-    "specialty": "HPB",
-    "source_file": "liver anatomy QUIZZ.pdf",
-    "source_page": 1,
-    "source_question_number": 4,
-    "question": "A replaced right hepatic artery originates from which structure?",
-    "options": {
-      "A": "Aorta",
-      "B": "Superior mesenteric artery",
-      "C": "Celiac axis",
-      "D": "Splenic artery",
-      "E": "Left gastric artery"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 51283,
-    "specialty": "HPB",
-    "source_file": "liver anatomy QUIZZ.pdf",
-    "source_page": 1,
-    "source_question_number": 5,
-    "question": "A replaced left hepatic artery originates from which structure?",
-    "options": {
-      "A": "Aorta",
-      "B": "Superior mesenteric artery",
-      "C": "Celiac axis",
-      "D": "Gastroduodenal artery",
-      "E": "Left gastric artery"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 51284,
-    "specialty": "HPB",
-    "source_file": "liver anatomy QUIZZ.pdf",
-    "source_page": 1,
-    "source_question_number": 6,
-    "question": "V enous drainage of the hepatic segments is through which hepatic veins?",
-    "options": {
-      "A": "Right, middle, left, and short hepatic veins",
-      "B": "Right, left, and center hepatic veins",
-      "C": "Right, left, and short hepatic veins",
-      "D": "Right, left, and long hepatic veins",
-      "E": "Right, middle, left, and long hepatic veins"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 51285,
-    "specialty": "HPB",
-    "source_file": "liver anatomy QUIZZ.pdf",
-    "source_page": 1,
-    "source_question_number": 7,
-    "question": "The right lobe of the liver includes which segments?",
-    "options": {
-      "A": "2, 3, 4",
-      "B": "1, 2, 3, 4",
-      "C": "5, 6, 7, 8 * David A. Geller gellerda@upmc.edu"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 51286,
-    "specialty": "HPB",
-    "source_file": "liver anatomy QUIZZ.pdf",
-    "source_page": 2,
-    "source_question_number": 8,
-    "question": "The left lobe liver includes which segments?",
-    "options": {
-      "A": "2, 3, 4",
-      "B": "1, 2, 3, 4",
-      "C": "5, 6, 7, 8",
-      "D": "3, 4, 5, 6",
-      "E": "1, 2, 7, 8"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 51287,
-    "specialty": "HPB",
-    "source_file": "liver anatomy QUIZZ.pdf",
-    "source_page": 2,
-    "source_question_number": 9,
-    "question": "Regarding segmental hepatic anatomy, which of the fol- lowing is the most accurate statement?",
-    "options": {
-      "A": "The right lobe is divided into medial and lateral segments.",
-      "B": "The right lobe is divided into anterior and posterior segments.",
-      "C": "The left lobe is divided into medial and lateral segments.",
-      "D": "The left lobe is divided into anterior and posterior segments.",
-      "E": "Both A and D are true. F. Both B and C are true."
-    },
-    "answer": "A"
-  },
-  {
-    "id": 51288,
-    "specialty": "HPB",
-    "source_file": "liver anatomy QUIZZ.pdf",
-    "source_page": 2,
-    "source_question_number": 10,
-    "question": "The venous drainage of the caudate lobe is into which structure?",
-    "options": {
-      "A": "Left hepatic vein",
-      "B": "Middle hepatic vein",
-      "C": "Right hepatic vein",
-      "D": "Inferior vena cava",
-      "E": "Portal vein"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 51289,
-    "specialty": "HPB",
-    "source_file": "liver anatomy QUIZZ.pdf",
-    "source_page": 2,
-    "source_question_number": 11,
-    "question": "For hepatic lobar anatomy, which of the following is",
-    "options": {
-      "A": "The falciform ligament separates the right and left lobes of the liver.",
-      "B": "The plane from the gallbladder bed to the IVC (Cantlie ’s line) separates the right and left lobes.",
-      "C": "The falciform ligament separates the left lateral and left medial segments.",
-      "D": "Both A and B are correct.",
-      "E": "Both B and C are correct."
-    },
-    "answer": "A"
-  },
-  {
-    "id": 51290,
-    "specialty": "HPB",
-    "source_file": "liver anatomy QUIZZ.pdf",
-    "source_page": 2,
-    "source_question_number": 12,
-    "question": "The portal vein is formed from confluence of which veins?",
-    "options": {
-      "A": "Splenic vein and inferior mesenteric vein",
-      "B": "Splenic vein and superior mesenteric vein",
-      "C": "Splenic vein and gastric vein",
-      "D": "Superior mesenteric vein and inferior mesenteric vein",
-      "E": "None of the above"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 51291,
-    "specialty": "HPB",
-    "source_file": "liver anatomy QUIZZ.pdf",
-    "source_page": 2,
-    "source_question_number": 13,
-    "question": "With severe portal HTN, portal blood flow is often:",
-    "options": {
-      "A": "Hepatofugal.",
-      "B": "Hepatopetal.",
-      "C": "Diverted through the coronary vein.",
-      "D": "Both A and C are correct.",
-      "E": "Both B and C are correct."
-    },
-    "answer": "A"
-  },
-  {
-    "id": 51292,
-    "specialty": "HPB",
-    "source_file": "liver anatomy QUIZZ.pdf",
-    "source_page": 2,
-    "source_question_number": 14,
-    "question": "The left medial hepatic segment is also known as:",
-    "options": {
-      "A": "Segment IV",
-      "B": "Quadrate lobe",
-      "C": "Caudate lobe",
-      "D": "Both A and C",
-      "E": "Both A and B"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 51293,
-    "specialty": "HPB",
-    "source_file": "liver anatomy QUIZZ.pdf",
-    "source_page": 2,
-    "source_question_number": 15,
-    "question": "A replaced right hepatic artery typically courses:",
-    "options": {
-      "A": "Posterior to the portal vein",
-      "B": "Anterior to the portal vein",
-      "C": "In the gastrohepatic ligament",
-      "D": "B oth A and C are correct",
-      "E": "Both B and C are correct"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 51294,
-    "specialty": "HPB",
-    "source_file": "liver anatomy QUIZZ.pdf",
-    "source_page": 2,
-    "source_question_number": 16,
-    "question": "Conventional or normal hepatic artery blood flow is which of the following:",
-    "options": {
-      "A": "rtery proper to R/L hepatic arteries",
-      "B": "Aorta to celiac axis to common hepatic artery to hepatic",
-      "C": "Aorta to common hepatic artery to celiac axis to hepatic",
-      "D": "None of the above"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 51295,
-    "specialty": "HPB",
-    "source_file": "liver anatomy QUIZZ.pdf",
-    "source_page": 2,
-    "source_question_number": 17,
-    "question": "A central liver resection for gallbladder cancer typically involves removing all or a portion of which hepatic segments?",
-    "options": {
-      "A": "5a n d4 B",
-      "B": "5a n d4 A",
-      "C": "5a n d6",
-      "D": "5a n d8",
-      "E": "6a n d7"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 51296,
-    "specialty": "HPB",
-    "source_file": "liver anatomy QUIZZ.pdf",
-    "source_page": 2,
-    "source_question_number": 18,
-    "question": "A right hepatic trisectionectomy (or trisegmentectomy) removes which segments?",
-    "options": {
-      "A": "1, 2, 3, 4, 5",
-      "B": "2, 3, 4, 5, 6",
-      "C": "2, 3, 4, 5, 8",
-      "D": "1, 5, 6, 7, 8",
-      "E": "4, 5, 6, 7, 8"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 51297,
-    "specialty": "HPB",
-    "source_file": "liver anatomy QUIZZ.pdf",
-    "source_page": 3,
-    "source_question_number": 19,
-    "question": "A left hepatic trisectionectomy (or trisegmentectomy) removes which segments?",
-    "options": {
-      "A": "1, 2, 3, 4, 7",
-      "B": "2, 3, 4, 5, 8",
-      "C": "1, 2, 3, 4, 6, 7",
-      "D": "Both A and B are correct.",
-      "E": "Both B and C are correct."
-    },
-    "answer": "A"
-  },
-  {
+{
     "id": 51298,
     "specialty": "HPB",
     "source_file": "liver anatomy QUIZZ.pdf",
@@ -20508,7 +9519,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
+{
     "id": 51299,
     "specialty": "HPB",
     "source_file": "liver anatomy QUIZZ.pdf",
@@ -20524,71 +9535,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
-    "id": 51300,
-    "specialty": "HPB",
-    "source_file": "liver anatomy QUIZZ.pdf",
-    "source_page": 3,
-    "source_question_number": 22,
-    "question": "Aberrant biliary anatomy with the right anterior or pos- terior hepatic duct draining into left hepatic duct occurs what percent of time?",
-    "options": {
-      "A": "5%",
-      "B": "10%",
-      "C": "25%",
-      "D": "60%",
-      "E": "80%"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 51301,
-    "specialty": "HPB",
-    "source_file": "liver anatomy QUIZZ.pdf",
-    "source_page": 3,
-    "source_question_number": 23,
-    "question": "The fissure of Gans:",
-    "options": {
-      "A": "Is embryologically present 70% of time",
-      "B": "Contains the right posterior sectoral pedicle",
-      "C": "Is also referred to as Rouviere ’ss u l c u s",
-      "D": "All of the above",
-      "E": "None of the above"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 51302,
-    "specialty": "HPB",
-    "source_file": "liver anatomy QUIZZ.pdf",
-    "source_page": 3,
-    "source_question_number": 24,
-    "question": "The right hepatic artery crosses:",
-    "options": {
-      "A": "nterior to common hepatic duct 88% of time",
-      "B": "Posterior to the common hepatic duct 12% of time and",
-      "C": "Posterior to the common hepatic duct 50% of the time",
-      "D": "Posterior to the common hepatic duct 100% of the time",
-      "E": "None of the above"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 51303,
-    "specialty": "HPB",
-    "source_file": "liver anatomy QUIZZ.pdf",
-    "source_page": 3,
-    "source_question_number": 25,
-    "question": "The left and middle hepatic veins form a common trunk",
-    "options": {
-      "A": "20%",
-      "B": "40%",
-      "C": "60%",
-      "D": "80%",
-      "E": "95%"
-    },
-    "answer": "A"
-  },
-  {
+{
     "id": 51304,
     "specialty": "HPB",
     "source_file": "liver anatomy QUIZZ.pdf",
@@ -20604,7 +9551,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
+{
     "id": 51305,
     "specialty": "HPB",
     "source_file": "liver anatomy QUIZZ.pdf",
@@ -20619,183 +9566,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
-    "id": 51306,
-    "specialty": "HPB",
-    "source_file": "liver anatomy QUIZZ.pdf",
-    "source_page": 5,
-    "source_question_number": 49,
-    "question": "In a healthy adult, what is the minimum percent of future liver remnant typically needed to allow for extended lobectomy or trisectionectomy?",
-    "options": {
-      "A": "90%",
-      "B": "70%",
-      "C": "50%",
-      "D": "25%",
-      "E": "10%"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 51307,
-    "specialty": "HPB",
-    "source_file": "liver anatomy QUIZZ.pdf",
-    "source_page": 5,
-    "source_question_number": 50,
-    "question": "The hepatoduodenal ligament contains which structures?",
-    "options": {
-      "A": "Portal vein",
-      "B": "Hepatic artery",
-      "C": "Common Bile duct",
-      "D": "All of the above",
-      "E": "Aa n dBo n l y"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 51308,
-    "specialty": "HPB",
-    "source_file": "liver anatomy QUIZZ.pdf",
-    "source_page": 5,
-    "source_question_number": 51,
-    "question": "The space passing behind the hepatoduodenal ligament to enter the lesser sac is known as:",
-    "options": {
-      "A": "Epiploic foramen",
-      "B": "Duodenal tunnel",
-      "C": "Foramen of Winslow",
-      "D": "Both A and B",
-      "E": "Both A and C"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 51309,
-    "specialty": "HPB",
-    "source_file": "liver anatomy QUIZZ.pdf",
-    "source_page": 5,
-    "source_question_number": 52,
-    "question": "The round ligament is also known as:",
-    "options": {
-      "A": "Ligamentum teres",
-      "B": "Arantius ligament",
-      "C": "Ductus venosum",
-      "D": "Left triangular ligament",
-      "E": "Falciform ligament"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 51310,
-    "specialty": "HPB",
-    "source_file": "liver anatomy QUIZZ.pdf",
-    "source_page": 5,
-    "source_question_number": 53,
-    "question": "The cystic artery most commonly arises from the:",
-    "options": {
-      "A": "Hepatic artery proper",
-      "B": "Common hepatic artery",
-      "C": "Right hepatic artery",
-      "D": "Left hepatic artery",
-      "E": "Gastroduodenal artery"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 51311,
-    "specialty": "HPB",
-    "source_file": "liver anatomy QUIZZ.pdf",
-    "source_page": 5,
-    "source_question_number": 54,
-    "question": "Suspensory ligaments of the liver include:",
-    "options": {
-      "A": "Falciform ligament",
-      "B": "Left triangular ligament",
-      "C": "Right triangular ligament",
-      "D": "Round ligament",
-      "E": "All of the above"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 51312,
-    "specialty": "HPB",
-    "source_file": "liver anatomy QUIZZ.pdf",
-    "source_page": 5,
-    "source_question_number": 55,
-    "question": "The left lateral segment/section is made up of which hepatic segments?",
-    "options": {
-      "A": "1a n d2",
-      "B": "2a n d3",
-      "C": "3a n d4",
-      "D": "4a n d5",
-      "E": "5a n d8"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 51313,
-    "specialty": "HPB",
-    "source_file": "liver anatomy QUIZZ.pdf",
-    "source_page": 5,
-    "source_question_number": 56,
-    "question": "When placing a hepatic artery infusion (HAI) pump, the tip of the catheter tubing should be in the:",
-    "options": {
-      "A": "Right hepatic artery",
-      "B": "Hepatic artery proper",
-      "C": "Common hepatic artery",
-      "D": "Gastroduodenal artery",
-      "E": "Celiac axis"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 51314,
-    "specialty": "HPB",
-    "source_file": "liver anatomy QUIZZ.pdf",
-    "source_page": 5,
-    "source_question_number": 57,
-    "question": "Surgical strategies to enhance operability of liver tu- mors include:",
-    "options": {
-      "A": "R i g h tp o r t a lv e i ne m b o l i z a t i o n",
-      "B": "ALPPS",
-      "C": "Two-stage hepatectomy",
-      "D": "Combining liver resection with ablation",
-      "E": "All of the above"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 51315,
-    "specialty": "HPB",
-    "source_file": "liver anatomy QUIZZ.pdf",
-    "source_page": 5,
-    "source_question_number": 58,
-    "question": "In Budd-Chiari syndrome:",
-    "options": {
-      "A": "T he portal veins are thrombosed.",
-      "B": "The hepatic veins are thrombosed.",
-      "C": "Ascites is rarely present.",
-      "D": "A hypercoagulable work-up should be done.",
-      "E": "Both B and D are correct."
-    },
-    "answer": "A"
-  },
-  {
-    "id": 51316,
-    "specialty": "HPB",
-    "source_file": "liver anatomy QUIZZ.pdf",
-    "source_page": 5,
-    "source_question_number": 59,
-    "question": "When considering future liver remnant for hepatic trisectionectomy:",
-    "options": {
-      "A": "20–25% future liver remnant is usually adequate for nor- mal liver.",
-      "B": "> 30% future liver remnant is preferred in fatty liver.",
-      "C": "> 40% future liver remnant is recommended for severe fibrosis or cirrhotic liver.",
-      "D": "ICG clearance is helpful for cirrhotic livers.",
-      "E": "All of the above."
-    },
-    "answer": "A"
-  },
-  {
+{
     "id": 51317,
     "specialty": "HPB",
     "source_file": "liver anatomy QUIZZ.pdf",
@@ -20811,326 +9582,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
-    "id": 51318,
-    "specialty": "HPB",
-    "source_file": "liver anatomy QUIZZ.pdf",
-    "source_page": 7,
-    "source_question_number": 5,
-    "question": "A replaced left hepatic artery originates from which structure?",
-    "options": {
-      "A": "Aorta",
-      "B": "Superior mesenteric artery",
-      "C": "Celiac axis",
-      "D": "Gastroduodenal artery",
-      "E": "Left gastric artery"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 51319,
-    "specialty": "HPB",
-    "source_file": "liver anatomy QUIZZ.pdf",
-    "source_page": 7,
-    "source_question_number": 6,
-    "question": "V enous drainage of the hepatic segments are through which hepatic veins;",
-    "options": {
-      "A": "Right, middle, left, and short hepatic veins",
-      "B": "Right, left, and center hepatic veins",
-      "C": "Right, left, and short hepatic veins",
-      "D": "Right, left, and long hepatic veins.",
-      "E": "Right, middle, left, and long hepatic veins."
-    },
-    "answer": "A"
-  },
-  {
-    "id": 51320,
-    "specialty": "HPB",
-    "source_file": "liver anatomy QUIZZ.pdf",
-    "source_page": 7,
-    "source_question_number": 7,
-    "question": "The right lobe of the liver includes which segments?",
-    "options": {
-      "A": "2, 3, 4",
-      "B": "1, 2, 3, 4",
-      "C": "5, 6, 7, 8",
-      "D": "3, 4, 5, 6",
-      "E": "1, 2, 7, 8"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 51321,
-    "specialty": "HPB",
-    "source_file": "liver anatomy QUIZZ.pdf",
-    "source_page": 7,
-    "source_question_number": 8,
-    "question": "The left lobe liver includes which segments?",
-    "options": {
-      "A": "2, 3, 4",
-      "B": "1, 2, 3, 4",
-      "C": "5, 6, 7, 8",
-      "D": "3,4,5,6",
-      "E": "1,2,7,8"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 51322,
-    "specialty": "HPB",
-    "source_file": "liver anatomy QUIZZ.pdf",
-    "source_page": 7,
-    "source_question_number": 9,
-    "question": "Regarding segmental hepatic anatomy, which of the fol- lowing is the most accurate statement?",
-    "options": {
-      "A": "The right lobe is divided into medial and lateral segments.",
-      "B": "The right lobe is divided into anterior and posterior segments.",
-      "C": "The left lobe is divided into medial and lateral segments.",
-      "D": "The left lobe is divided into anterior and posterior segments.",
-      "E": "Both A and D are true F. Both B and C are true."
-    },
-    "answer": "A"
-  },
-  {
-    "id": 51323,
-    "specialty": "HPB",
-    "source_file": "liver anatomy QUIZZ.pdf",
-    "source_page": 7,
-    "source_question_number": 10,
-    "question": "The venous drainage of the caudate lobe is into which structure?",
-    "options": {
-      "A": "Left hepatic vein",
-      "B": "Middle hepatic vein",
-      "C": "Right hepatic vein",
-      "D": "Inferior vena cava",
-      "E": "Portal vein"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 51324,
-    "specialty": "HPB",
-    "source_file": "liver anatomy QUIZZ.pdf",
-    "source_page": 7,
-    "source_question_number": 11,
-    "question": "For hepatic lobar anatomy, which of the following is",
-    "options": {
-      "A": "The falciform ligament separates the right and left lobes of the liver.",
-      "B": "The plane from the gallbladder bed to the IVC (Cantlie ’s line) separates the right and left lobes.",
-      "C": "The falciform ligament separates the left lateral and left medial segments.",
-      "D": "Both A and B are correct.",
-      "E": "Both B and C are correct."
-    },
-    "answer": "A"
-  },
-  {
-    "id": 51325,
-    "specialty": "HPB",
-    "source_file": "liver anatomy QUIZZ.pdf",
-    "source_page": 7,
-    "source_question_number": 12,
-    "question": "The portal vein is formed from confluence of which ve ins?",
-    "options": {
-      "A": "Splenic vein and inferior mesenteric vein",
-      "B": "Splenic vein and superior mesenteric vein",
-      "C": "Splenic vein and gastric vein",
-      "D": "Superior mesenteric vein and inferior mesenteric vein",
-      "E": "None of the above"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 51326,
-    "specialty": "HPB",
-    "source_file": "liver anatomy QUIZZ.pdf",
-    "source_page": 7,
-    "source_question_number": 13,
-    "question": "With severe portal HTN, portal blood flow is often:",
-    "options": {
-      "A": "nd portal hypertension, blood flow reverses away from the liver (hepatofugal flow) and often passes through the dilated coronary vein and/or re-canalized umbilical vein.",
-      "B": "Hepatopetal.",
-      "C": "Diverted through the coronary vein.",
-      "D": "Both A and C are correct.",
-      "E": "Both B and C are correct. Normal blood flow is from the portal vein through the liver (hepatopetal flow). In the setting of cirrhosis"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 51327,
-    "specialty": "HPB",
-    "source_file": "liver anatomy QUIZZ.pdf",
-    "source_page": 7,
-    "source_question_number": 14,
-    "question": "The left medial hepatic segment is also known as:",
-    "options": {
-      "A": "Segment IV",
-      "B": "Quadrate lobe",
-      "C": "Caudate lobe",
-      "D": "Both A and C",
-      "E": "Both A and B 1099J Gastrointest Surg (2021) 25:1093–1104"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 51328,
-    "specialty": "HPB",
-    "source_file": "liver anatomy QUIZZ.pdf",
-    "source_page": 8,
-    "source_question_number": 15,
-    "question": "A replaced right hepatic artery typically courses;",
-    "options": {
-      "A": "Posterior to the portal vein",
-      "B": "Anterior to the portal vein",
-      "C": "In the gastrohepatic ligament",
-      "D": "Both A and C are correct",
-      "E": "Both B and C are correct"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 51329,
-    "specialty": "HPB",
-    "source_file": "liver anatomy QUIZZ.pdf",
-    "source_page": 8,
-    "source_question_number": 16,
-    "question": "Conventional or normal hepatic artery blood flow is which of the following:",
-    "options": {
-      "A": "rtery proper to R/L hepatic arteries",
-      "B": "Aorta to celiac axis to common hepatic artery to he- patic artery proper to R/L hepatic arteries",
-      "C": "Aorta to common hepatic artery to celiac axis to hepatic",
-      "D": "None of the above"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 51330,
-    "specialty": "HPB",
-    "source_file": "liver anatomy QUIZZ.pdf",
-    "source_page": 8,
-    "source_question_number": 17,
-    "question": "A central liver resection for gallbladder cancer typically involves removing all or a portion of which hepatic segments?",
-    "options": {
-      "A": "5a n d4 B",
-      "B": "5a n d4 A",
-      "C": "5a n d6",
-      "D": "5a n d8",
-      "E": "6a n d7"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 51331,
-    "specialty": "HPB",
-    "source_file": "liver anatomy QUIZZ.pdf",
-    "source_page": 8,
-    "source_question_number": 18,
-    "question": "A right hepatic trisectionectomy (or trisegmentectomy) removes which segments?",
-    "options": {
-      "A": "1, 2, 3, 4, 5",
-      "B": "2, 3, 4, 5, 6",
-      "C": "2, 3, 4, 5, 8",
-      "D": "1, 5, 6, 7, 8",
-      "E": "4, 5, 6, 7, 8"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 51332,
-    "specialty": "HPB",
-    "source_file": "liver anatomy QUIZZ.pdf",
-    "source_page": 8,
-    "source_question_number": 19,
-    "question": "A left hepatic trisectionectomy (or trisegmentectomy) removes which segments?",
-    "options": {
-      "A": "1, 2, 3, 4, 7",
-      "B": "2, 3, 4, 5, 8",
-      "C": "1, 2, 3, 4, 6, 7",
-      "D": "Both A and B are correct",
-      "E": "Both B and C are correct."
-    },
-    "answer": "A"
-  },
-  {
-    "id": 51333,
-    "specialty": "HPB",
-    "source_file": "liver anatomy QUIZZ.pdf",
-    "source_page": 8,
-    "source_question_number": 20,
-    "question": "The liver has how many segments?",
-    "options": {
-      "A": "5",
-      "B": "6",
-      "C": "ouinaud in 1954.",
-      "D": "8",
-      "E": "10 Liver segmental anatomy was described by Claude"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 51334,
-    "specialty": "HPB",
-    "source_file": "liver anatomy QUIZZ.pdf",
-    "source_page": 8,
-    "source_question_number": 21,
-    "question": "Arantius’ ligament is the:",
-    "options": {
-      "A": "Ligamentum venosum",
-      "B": "Obliterated ductus venosus",
-      "C": "Obliterated hepatic vein",
-      "D": "Both A and B",
-      "E": "Both A and C"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 51335,
-    "specialty": "HPB",
-    "source_file": "liver anatomy QUIZZ.pdf",
-    "source_page": 8,
-    "source_question_number": 22,
-    "question": "Aberrant biliary anatomy with the right anterior or pos- terior hepatic duct draining into left hepatic duct occurs what percent of time?",
-    "options": {
-      "A": "Is embryologically present 70% of time",
-      "B": "Contains the right posterior sectoral pedicle",
-      "C": "Is also referred to as Rouviere ’ss u l c u s",
-      "D": "All of the above",
-      "E": "None of the above"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 51336,
-    "specialty": "HPB",
-    "source_file": "liver anatomy QUIZZ.pdf",
-    "source_page": 8,
-    "source_question_number": 24,
-    "question": "The right hepatic artery crosses:",
-    "options": {
-      "A": "nterior to common hepatic duct 88% of time",
-      "B": "Posterior to the common hepatic duct 12% of time and",
-      "C": "Posterior to the common hepatic duct 50% of the time",
-      "D": "Posterior to the common hepatic duct 100% of the time",
-      "E": "None of the above"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 51337,
-    "specialty": "HPB",
-    "source_file": "liver anatomy QUIZZ.pdf",
-    "source_page": 8,
-    "source_question_number": 25,
-    "question": "The left and middle hepatic veins form a common trunk",
-    "options": {
-      "A": "20%",
-      "B": "40%",
-      "C": "60%",
-      "D": "80%",
-      "E": "95%"
-    },
-    "answer": "A"
-  },
-  {
+{
     "id": 51338,
     "specialty": "HPB",
     "source_file": "liver anatomy QUIZZ.pdf",
@@ -21145,199 +9597,7 @@ window.QUESTIONS.push(...[
     },
     "answer": "A"
   },
-  {
-    "id": 51339,
-    "specialty": "HPB",
-    "source_file": "liver anatomy QUIZZ.pdf",
-    "source_page": 10,
-    "source_question_number": 49,
-    "question": "In a healthy adult, what is the minimum percent of future liver remnant typically needed to allow for extended lobectomy or trisectionectomy?",
-    "options": {
-      "A": "90%",
-      "B": "70%",
-      "C": "50%",
-      "D": "25%",
-      "E": "10%"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 51340,
-    "specialty": "HPB",
-    "source_file": "liver anatomy QUIZZ.pdf",
-    "source_page": 10,
-    "source_question_number": 50,
-    "question": "The hepatoduodenal ligament contains which structures?",
-    "options": {
-      "A": "Portal vein",
-      "B": "Hepatic artery",
-      "C": "Common Bile duct",
-      "D": "All of the above",
-      "E": "Aa n dBo n l y"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 51341,
-    "specialty": "HPB",
-    "source_file": "liver anatomy QUIZZ.pdf",
-    "source_page": 10,
-    "source_question_number": 51,
-    "question": "The space passing behind the hepatoduodenal ligament to enter the lesser sac is known as:",
-    "options": {
-      "A": "Epiploic foramen",
-      "B": "Duodenal tunnel",
-      "C": "Foramen of Winslow",
-      "D": "Both A and B",
-      "E": "Both A and C"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 51342,
-    "specialty": "HPB",
-    "source_file": "liver anatomy QUIZZ.pdf",
-    "source_page": 10,
-    "source_question_number": 52,
-    "question": "The round ligament is also known as:",
-    "options": {
-      "A": "Ligamentum teres",
-      "B": "Arantius ligament",
-      "C": "Ductus venosum",
-      "D": "Left triangular ligament",
-      "E": "Falciform ligament"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 51343,
-    "specialty": "HPB",
-    "source_file": "liver anatomy QUIZZ.pdf",
-    "source_page": 10,
-    "source_question_number": 53,
-    "question": "The cystic artery most commonly arises from the:",
-    "options": {
-      "A": "Hepatic artery proper",
-      "B": "Common hepatic artery",
-      "C": "Right hepatic artery",
-      "D": "Left hepatic artery",
-      "E": "Gastroduodenal artery"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 51344,
-    "specialty": "HPB",
-    "source_file": "liver anatomy QUIZZ.pdf",
-    "source_page": 10,
-    "source_question_number": 54,
-    "question": "Suspensory ligaments of the liver include:",
-    "options": {
-      "A": "Falciform ligament",
-      "B": "Left triangular ligament",
-      "C": "Right triangular ligament",
-      "D": "Round ligament",
-      "E": "All of the above"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 51345,
-    "specialty": "HPB",
-    "source_file": "liver anatomy QUIZZ.pdf",
-    "source_page": 10,
-    "source_question_number": 55,
-    "question": "The left lateral segment/section is made up of which hepatic segments?",
-    "options": {
-      "A": "1a n d2",
-      "B": "2a n d3",
-      "C": "3a n d4",
-      "D": "4a n d5",
-      "E": "5a n d8"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 51346,
-    "specialty": "HPB",
-    "source_file": "liver anatomy QUIZZ.pdf",
-    "source_page": 10,
-    "source_question_number": 56,
-    "question": "When placing a hepatic artery infusion (HAI) pump, the tip of the catheter tubing should be in the:",
-    "options": {
-      "A": "",
-      "B": "",
-      "C": "",
-      "D": "enum which can lead to ulceration/bleeding.",
-      "E": "Celiac axis When placing a hepatic artery infusion (HAI) pump, the tip of the catheter tubing should be in the gastroduodenal artery just prior to the hepatic artery. The goal is to perfuse the entire liver via the hepatic artery proper and right/left hepatic artery"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 51347,
-    "specialty": "HPB",
-    "source_file": "liver anatomy QUIZZ.pdf",
-    "source_page": 11,
-    "source_question_number": 57,
-    "question": "Surgical strategies to enhance operability of liver tu- mors include:",
-    "options": {
-      "A": "R i g h tp o r t a lv e i ne m b o l i z a t i o n",
-      "B": "ALPPS",
-      "C": "Two-stage hepatectomy",
-      "D": "Combining liver resection with ablation",
-      "E": "All of the above"
-    },
-    "answer": "A"
-  },
-  {
-    "id": 51348,
-    "specialty": "HPB",
-    "source_file": "liver anatomy QUIZZ.pdf",
-    "source_page": 11,
-    "source_question_number": 58,
-    "question": "In Budd-Chiari syndrome:",
-    "options": {
-      "A": "The portal veins are thrombosed.",
-      "B": "The hepatic veins are thrombosed.",
-      "C": "Ascites is rarely present.",
-      "D": "A hypercoagulable work-up should be done.",
-      "E": "Both B and D are correct."
-    },
-    "answer": "A"
-  },
-  {
-    "id": 51349,
-    "specialty": "HPB",
-    "source_file": "liver anatomy QUIZZ.pdf",
-    "source_page": 11,
-    "source_question_number": 59,
-    "question": "When considering future liver remnant for hepatic trisectionectomy:",
-    "options": {
-      "A": "20–25% future liver remnant is usually adequate for nor- mal liver.",
-      "B": "> 30% future liver remnant is preferred in fatty liver.",
-      "C": "> 40% future liver remnant is recommended for severe fibrosis or cirrhotic liver.",
-      "D": "ICG clearance is helpful for cirrhotic livers.",
-      "E": "All of the above."
-    },
-    "answer": "A"
-  },
-  {
-    "id": 51350,
-    "specialty": "HPB",
-    "source_file": "liver anatomy QUIZZ.pdf",
-    "source_page": 11,
-    "source_question_number": 60,
-    "question": "Gilbert’s disease:",
-    "options": {
-      "A": "",
-      "B": "",
-      "C": "",
-      "D": "G",
-      "E": "Segment #"
-    },
-    "answer": "A"
-  },
-  {
+{
     "id": 51351,
     "specialty": "HPB",
     "source_file": "liver anatomy QUIZZ.pdf",

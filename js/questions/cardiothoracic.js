@@ -1,7 +1,6 @@
 if (!window.QUESTIONS) window.QUESTIONS = [];
 window.QUESTIONS.push(...[
-[
-  {
+{
     "specialty": "Cardiothoracic Surgery",
     "topic": "Lung Cancer",
     "question": "A patient with a 2cm Non-Small Cell Lung Cancer (NSCLC) in the periphery of the right upper lobe has no evidence of nodal involvement or metastasis (T1bN0M0). What is the preferred surgical treatment?",
@@ -31,7 +30,7 @@ window.QUESTIONS.push(...[
     "id": 1672,
     "_src_file": "cardiothoracic.js"
   },
-  {
+{
     "specialty": "Cardiothoracic Surgery",
     "topic": "Pleural Effusion",
     "question": "According to Light's Criteria, which of the following findings classifies a pleural effusion as an EXUDATE?",
@@ -61,7 +60,7 @@ window.QUESTIONS.push(...[
     "id": 1673,
     "_src_file": "cardiothoracic.js"
   },
-  {
+{
     "specialty": "Cardiothoracic Surgery",
     "topic": "Empyema",
     "question": "What is the surgical management of choice for a patient with a 'Stage III' (Organizing) empyema with a thick, restrictive pleural peel?",
@@ -91,7 +90,7 @@ window.QUESTIONS.push(...[
     "id": 1674,
     "_src_file": "cardiothoracic.js"
   },
-  {
+{
     "specialty": "Cardiothoracic Surgery",
     "topic": "Aortic Valve Stenosis",
     "question": "Which classic 'triad' of symptoms indicates a poor prognosis and the need for urgent valve replacement in a patient with severe Aortic Stenosis?",
@@ -121,7 +120,7 @@ window.QUESTIONS.push(...[
     "id": 1675,
     "_src_file": "cardiothoracic.js"
   },
-  {
+{
     "specialty": "Cardiothoracic Surgery",
     "topic": "Aortic Dissection",
     "question": "A Stanford Type A aortic dissection is defined by the involvement of which part of the aorta?",
@@ -151,7 +150,7 @@ window.QUESTIONS.push(...[
     "id": 1676,
     "_src_file": "cardiothoracic.js"
   },
-  {
+{
     "specialty": "Cardiothoracic Surgery",
     "topic": "CABG vs PCI",
     "question": "In which clinical scenario is Coronary Artery Bypass Grafting (CABG) generally preferred over Percutaneous Coronary Intervention (PCI)?",
@@ -181,7 +180,7 @@ window.QUESTIONS.push(...[
     "id": 1677,
     "_src_file": "cardiothoracic.js"
   },
-  {
+{
     "specialty": "Cardiothoracic Surgery",
     "topic": "Mediastinal Tumors",
     "question": "Which of the following is NOT one of the '4 Ts' of the ANTERIOR mediastinum?",
@@ -211,7 +210,7 @@ window.QUESTIONS.push(...[
     "id": 1678,
     "_src_file": "cardiothoracic.js"
   },
-  {
+{
     "specialty": "Cardiothoracic Surgery",
     "topic": "Mitral Regurgitation",
     "question": "What is the most common cause of primary Mitral Regurgitation requiring surgery in developed countries?",
@@ -241,7 +240,7 @@ window.QUESTIONS.push(...[
     "id": 1679,
     "_src_file": "cardiothoracic.js"
   },
-  {
+{
     "specialty": "Cardiothoracic Surgery",
     "topic": "Thoracic Trauma",
     "question": "A 'Flail Chest' is defined by which of the following criteria?",
@@ -271,7 +270,7 @@ window.QUESTIONS.push(...[
     "id": 1680,
     "_src_file": "cardiothoracic.js"
   },
-  {
+{
     "specialty": "Cardiothoracic Surgery",
     "topic": "Pancoast Tumor",
     "question": "A Pancoast tumor (Superior Sulcus tumor) classically presents with Horner's syndrome. What are the three components of Horner's syndrome?",
@@ -301,7 +300,7 @@ window.QUESTIONS.push(...[
     "id": 1681,
     "_src_file": "cardiothoracic.js"
   },
-  {
+{
     "id": 731,
     "specialty": "Cardiothoracic",
     "topic": "Comprhensive Surgery Revision conv.docx",
@@ -332,7 +331,7 @@ window.QUESTIONS.push(...[
     "takeaway": "PLAN: For future questions on trauma, prioritize understanding the epidemiology and common presentations of injuries. Differentiate between the incidence of the injury and the incidence of its complications. Remember that while arrhythmias are common, the contusion itself occurs in a significant percentage of patients with major thoracic trauma.",
     "_src_file": "cardiothoracic.js"
   },
-  {
+{
     "id": 724,
     "specialty": "Cardiothoracic",
     "topic": "Comprhensive Surgery Revision conv.docx",
@@ -363,7 +362,7 @@ window.QUESTIONS.push(...[
     "takeaway": "PLAN: For future questions involving mediastinal masses, particularly in young males, recall the differential diagnosis for the anterosuperior compartment: Thymoma, Teratoma/Germ Cell Tumors, Thyroid, Terrible Lymphoma (the '4 Ts'). For germ cell tumors, remember to order AFP and beta-hCG. For other mediastinal masses, consider CT imaging and biopsy as primary diagnostic tools.",
     "_src_file": "cardiothoracic.js"
   },
-  {
+{
     "id": 725,
     "specialty": "Cardiothoracic",
     "topic": "Comprhensive Surgery Revision conv.docx",
@@ -394,7 +393,7 @@ window.QUESTIONS.push(...[
     "takeaway": "PLAN: Proceed with an operative approach—median sternotomy or left anterolateral thoracotomy—to obtain generous tumor biopsies and assess the extent of pericardial invasion. Send specimens for histopathology, immunohistochemistry, and molecular studies. Post‑operative staging should include serum tumor markers and possibly PET‑CT. Convene a multidisciplinary tumor board to determine definitive management (e.g., complete surgical resection, neoadjuvant chemotherapy, or radiotherapy) based on the final pathology.",
     "_src_file": "cardiothoracic.js"
   },
-  {
+{
     "id": 707,
     "specialty": "Cardiothoracic",
     "topic": "Oncology MCQ.docx",
@@ -428,7 +427,7 @@ window.QUESTIONS.push(...[
     "takeaway": "PLAN: In clinical practice, obtain a baseline CYFRA 21‑1 level at diagnosis of NSCLC. Repeat the assay at regular intervals (e.g., every 2–3 treatment cycles) to track trends. A rising level should prompt imaging to evaluate for progression, while a declining level supports therapeutic response. Educate patients that the marker is adjunctive and not definitive, and integrate results with multidisciplinary tumor board discussions.",
     "_src_file": "cardiothoracic.js"
   },
-  {
+{
     "id": 703,
     "specialty": "Cardiothoracic",
     "topic": "rush.docx",
@@ -460,7 +459,7 @@ window.QUESTIONS.push(...[
     "takeaway": "PLAN: Further assessment should include: 1. Confirmation of aldosteronoma via imaging (CT or MRI). 2. Monitoring blood pressure and electrolytes. 3. Consideration of treatment options (surgery, medication – mineralocorticoid receptor antagonists).",
     "_src_file": "cardiothoracic.js"
   },
-  {
+{
     "id": 715,
     "specialty": "Cardiothoracic",
     "topic": "Comprhensive Surgery Revision conv.docx",
@@ -491,7 +490,7 @@ window.QUESTIONS.push(...[
     "takeaway": "PLAN: Further review should focus on the epidemiology, pathogenesis, and treatment options for malignant mesothelioma.  Specifically, delve into the role of biomarkers, molecular diagnostics, and the evolving landscape of immunotherapy in this disease. Consider a review of asbestos exposure statistics and the impact of occupational exposure.",
     "_src_file": "cardiothoracic.js"
   },
-  {
+{
     "id": 720,
     "specialty": "Cardiothoracic",
     "topic": "Comprhensive Surgery Revision conv.docx",
@@ -522,7 +521,7 @@ window.QUESTIONS.push(...[
     "takeaway": "PLAN: Further review should focus on the pathogenesis of paraneoplastic syndromes, the distinct histological features of SCL, and the clinical presentation of common paraneoplastic syndromes associated with lung cancer. Consider case studies illustrating the early onset of these syndromes in SCL patients.",
     "_src_file": "cardiothoracic.js"
   },
-  {
+{
     "id": 716,
     "specialty": "Cardiothoracic",
     "topic": "Comprhensive Surgery Revision conv.docx",
@@ -553,7 +552,7 @@ window.QUESTIONS.push(...[
     "takeaway": "PLAN: 1. **Further Investigation:** Obtain high-resolution CT scan to precisely delineate the extent and severity of bronchiectasis in each lobe. 2. **Bronchoscopic Evaluation:** Assess for inflammation, mucus plugging, and potential sources of infection. 3. **Wedge Resection:** Perform wedge resection of the left lower lobe. 4. **Post-operative Monitoring:** Closely monitor for complications (pneumonia, bleeding, respiratory failure). 5. **Re-evaluation:** After resection, reassess symptoms and CT scan findings to determine if further surgical intervention is necessary. Consider a staged approach if the initial resection is insufficient.",
     "_src_file": "cardiothoracic.js"
   },
-  {
+{
     "id": 711,
     "specialty": "Cardiothoracic",
     "topic": "Comprhensive Surgery Revision conv.docx",
@@ -584,7 +583,7 @@ window.QUESTIONS.push(...[
     "takeaway": "PLAN: Further review should include a detailed discussion of postoperative pulmonary assessment, atelectasis management algorithms, and the role of minimally invasive therapies in lung cancer treatment. Consider reviewing case studies illustrating appropriate and inappropriate use of bronchoscopy in the postoperative setting.",
     "_src_file": "cardiothoracic.js"
   },
-  {
+{
     "id": 710,
     "specialty": "Cardiothoracic",
     "topic": "Comprhensive Surgery Revision conv.docx",
@@ -615,7 +614,7 @@ window.QUESTIONS.push(...[
     "takeaway": "PLAN: Further review should focus on the mechanisms of airflow obstruction in chronic bronchitis, the clinical presentation of hypoxemia, and the interpretation of pulmonary function tests (specifically DLCO).  A good approach would be to review the role of mucociliary clearance and its disruption in this disease state.",
     "_src_file": "cardiothoracic.js"
   },
-  {
+{
     "id": 723,
     "specialty": "Cardiothoracic",
     "topic": "Comprhensive Surgery Revision conv.docx",
@@ -646,7 +645,7 @@ window.QUESTIONS.push(...[
     "takeaway": "PLAN: I would recommend a focused review of the anatomy of the thoracic outlet, specifically the nerves (brachial plexus) and vessels ( subclavian artery and vein) and their relationship to the surrounding structures.  A practical exercise would be to have the student demonstrate proper postural correction techniques and explain how these exercises address the underlying compression.  Further, a discussion of the progression of conservative management (e.g., adding heat/ice, manual therapy) would be beneficial.",
     "_src_file": "cardiothoracic.js"
   },
-  {
+{
     "id": 702,
     "specialty": "Cardiothoracic",
     "topic": "rush.docx",
@@ -678,7 +677,7 @@ window.QUESTIONS.push(...[
     "takeaway": "PLAN: Further education should focus on the indications and contraindications for IVC filter placement, the importance of accurate anticoagulation management, and the potential complications associated with filter use. Case-based discussions and simulation exercises would be beneficial for reinforcing this knowledge.",
     "_src_file": "cardiothoracic.js"
   },
-  {
+{
     "id": 701,
     "specialty": "Cardiothoracic",
     "topic": "rush.docx",
@@ -710,7 +709,7 @@ window.QUESTIONS.push(...[
     "takeaway": "PLAN: The attending surgeon should review the patient’s chest imaging and consider further diagnostic tests (e.g., sputum cultures, AFB smear) to confirm or rule out TB. The patient’s case highlights the importance of considering atypical presentations of infectious diseases, particularly in individuals with risk factors (e.g., incarceration). Further investigation into the patient’s immune status and potential comorbidities is warranted.",
     "_src_file": "cardiothoracic.js"
   },
-  {
+{
     "id": 718,
     "specialty": "Cardiothoracic",
     "topic": "Surgical Oncology",
@@ -744,9 +743,7 @@ window.QUESTIONS.push(...[
     "takeaway": "Hilar/peribronchial node involvement (N1) generally pushes lung cancer into Stage II, requiring adjuvant chemotherapy.",
     "visualization": "A right lung specimen showing a 2 cm mass in the main bronchus and enlarged, firm lymph nodes clinging to the bronchus immediately outside the lung parenchyma.",
     "_src_file": "cardiothoracic.js"
-  }
-]
-,
+  },
 {
   "id": 705,
   "specialty": "Cardiothoracic",

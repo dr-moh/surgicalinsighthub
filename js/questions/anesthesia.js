@@ -1114,8 +1114,7 @@ window.QUESTIONS.push(...[
       "P": "Focus on 20% Lipid Emulsion and low-dose Epi (10-100 mcg)."
     },
     "id": 1501
-  }
-,
+  },
 {
   "id": 90301,
   "specialty": "Anesthesia",
@@ -1147,8 +1146,7 @@ window.QUESTIONS.push(...[
   "guideline": "",
   "takeaway": "Female gender",
   "visualization": ""
-}
-,
+},
 {
   "id": 90302,
   "specialty": "Anesthesia",
@@ -1180,8 +1178,7 @@ window.QUESTIONS.push(...[
   "guideline": "",
   "takeaway": "Sedation",
   "visualization": ""
-}
-,
+},
 {
   "id": 90303,
   "specialty": "Anesthesia",
@@ -1213,8 +1210,7 @@ window.QUESTIONS.push(...[
   "guideline": "",
   "takeaway": "Patients should take half or one-third of their insulin dose the morning of the surgery",
   "visualization": ""
-}
-,
+},
 {
   "id": 90304,
   "specialty": "Anesthesia",
@@ -1246,8 +1242,7 @@ window.QUESTIONS.push(...[
   "guideline": "",
   "takeaway": "More common after using an endotracheal tube",
   "visualization": ""
-}
-,
+},
 {
   "id": 90305,
   "specialty": "Anesthesia",
@@ -1279,8 +1274,7 @@ window.QUESTIONS.push(...[
   "guideline": "",
   "takeaway": "Laryngoscopy is often challenging in Turner syndrome because of a high frequency of laryngeal distortion",
   "visualization": ""
-}
-,
+},
 {
   "id": 90306,
   "specialty": "Anesthesia",
@@ -1312,8 +1306,7 @@ window.QUESTIONS.push(...[
   "guideline": "",
   "takeaway": "No change in anesthetic care is indicated",
   "visualization": ""
-}
-,
+},
 {
   "id": 90307,
   "specialty": "Anesthesia",
@@ -1345,8 +1338,7 @@ window.QUESTIONS.push(...[
   "guideline": "",
   "takeaway": "A 25-year-old passenger ejected out of a motorcycle now with Glasgow Coma Scale of 13 and some periorbital bruising",
   "visualization": ""
-}
-,
+},
 {
   "id": 90308,
   "specialty": "Anesthesia",
@@ -1378,8 +1370,7 @@ window.QUESTIONS.push(...[
   "guideline": "",
   "takeaway": "Transtracheal jet ventilation does not require a patent natural airway",
   "visualization": ""
-}
-,
+},
 {
   "id": 90309,
   "specialty": "Anesthesia",
@@ -1411,8 +1402,7 @@ window.QUESTIONS.push(...[
   "guideline": "",
   "takeaway": "An obese patient with acute appendicitis who, after rapid sequence induction, cannot be intubated",
   "visualization": ""
-}
-,
+},
 {
   "id": 90310,
   "specialty": "Anesthesia",
@@ -1444,8 +1434,7 @@ window.QUESTIONS.push(...[
   "guideline": "",
   "takeaway": "A 23-year-old woman with asthma who has just undergone an exploratory laparotomy for small bowel obstruction",
   "visualization": ""
-}
-,
+},
 {
   "id": 90311,
   "specialty": "Anesthesia",
@@ -1477,8 +1466,7 @@ window.QUESTIONS.push(...[
   "guideline": "",
   "takeaway": "Collapse",
   "visualization": ""
-}
-,
+},
 {
   "id": 90312,
   "specialty": "Anesthesia",
@@ -1510,8 +1498,7 @@ window.QUESTIONS.push(...[
   "guideline": "",
   "takeaway": "Substantial evaporative losses can be associated with large wounds and are directly proportionate to the surface area exposed",
   "visualization": ""
-}
-,
+},
 {
   "id": 90313,
   "specialty": "Anesthesia",
@@ -1543,8 +1530,7 @@ window.QUESTIONS.push(...[
   "guideline": "",
   "takeaway": "Nontoxic",
   "visualization": ""
-}
-,
+},
 {
   "id": 90314,
   "specialty": "Anesthesia",
@@ -1576,8 +1562,7 @@ window.QUESTIONS.push(...[
   "guideline": "",
   "takeaway": "The hematocrit of 1 unit is usually 30% to 40%",
   "visualization": ""
-}
-,
+},
 {
   "id": 90315,
   "specialty": "Anesthesia",
@@ -1609,8 +1594,7 @@ window.QUESTIONS.push(...[
   "guideline": "",
   "takeaway": "A 30-year-old trauma patient receiving massive blood transfusion through a rapid transfuser at a rate of 75 mL/min",
   "visualization": ""
-}
-,
+},
 {
   "id": 90316,
   "specialty": "Anesthesia",
@@ -1642,8 +1626,7 @@ window.QUESTIONS.push(...[
   "guideline": "",
   "takeaway": "Fresher blood has better ability to deliver oxygen to tissues",
   "visualization": ""
-}
-,
+},
 {
   "id": 90317,
   "specialty": "Anesthesia",
@@ -1675,8 +1658,7 @@ window.QUESTIONS.push(...[
   "guideline": "",
   "takeaway": "For drugs with low extraction ratio, liver blood flow is the rate-limiting step in their metabolism",
   "visualization": ""
-}
-,
+},
 {
   "id": 90318,
   "specialty": "Anesthesia",
@@ -1708,8 +1690,7 @@ window.QUESTIONS.push(...[
   "guideline": "",
   "takeaway": "Repeated attempts at aspiration would have prevented this complication",
   "visualization": ""
-}
-,
+},
 {
   "id": 90319,
   "specialty": "Anesthesia",
@@ -1741,8 +1722,7 @@ window.QUESTIONS.push(...[
   "guideline": "",
   "takeaway": "The American Society for Regional Anesthesia recommends that clopidogrel be stopped 3 days before neuraxial anesthesia",
   "visualization": ""
-}
-,
+},
 {
   "id": 90320,
   "specialty": "Anesthesia",
@@ -1774,8 +1754,7 @@ window.QUESTIONS.push(...[
   "guideline": "",
   "takeaway": "Blood supply to the spinal cord is from a single anterior spinal artery and two posterior spinal arteries",
   "visualization": ""
-}
-,
+},
 {
   "id": 90321,
   "specialty": "Anesthesia",
@@ -1807,8 +1786,7 @@ window.QUESTIONS.push(...[
   "guideline": "",
   "takeaway": "Lidocaine injection (3 mL of 1.5%) intravascularly will induce local anesthetic toxicity such as perioral numbness",
   "visualization": ""
-}
-,
+},
 {
   "id": 90322,
   "specialty": "Anesthesia",
@@ -1840,8 +1818,7 @@ window.QUESTIONS.push(...[
   "guideline": "",
   "takeaway": "Caudal anesthesia is essentially sacral epidural anesthesia",
   "visualization": ""
-}
-,
+},
 {
   "id": 90323,
   "specialty": "Anesthesia",
@@ -1873,8 +1850,7 @@ window.QUESTIONS.push(...[
   "guideline": "",
   "takeaway": "Bed rest",
   "visualization": ""
-}
-,
+},
 {
   "id": 90324,
   "specialty": "Anesthesia",
@@ -1906,8 +1882,7 @@ window.QUESTIONS.push(...[
   "guideline": "",
   "takeaway": "Dermatome level of anesthesia achieved with a spinal anesthetic is often more predictable than following an epidural blockade",
   "visualization": ""
-}
-,
+},
 {
   "id": 90325,
   "specialty": "Anesthesia",
@@ -1939,8 +1914,7 @@ window.QUESTIONS.push(...[
   "guideline": "",
   "takeaway": "Yes, repeat the femoral nerve block due to a failed block",
   "visualization": ""
-}
-,
+},
 {
   "id": 90326,
   "specialty": "Anesthesia",
@@ -1972,8 +1946,7 @@ window.QUESTIONS.push(...[
   "guideline": "",
   "takeaway": "Such a block is always associated with a similar degree of sympathectomy as with an epidural block",
   "visualization": ""
-}
-,
+},
 {
   "id": 90327,
   "specialty": "Anesthesia",
@@ -2005,8 +1978,7 @@ window.QUESTIONS.push(...[
   "guideline": "",
   "takeaway": "The nerve on the lateral side is the common peroneal nerve, and the nerve on the medial side is the tibial nerve (combined nerve is the sciatic nerve)",
   "visualization": ""
-}
-,
+},
 {
   "id": 90328,
   "specialty": "Anesthesia",
@@ -2038,8 +2010,7 @@ window.QUESTIONS.push(...[
   "guideline": "",
   "takeaway": "Level of the branches and targeting the radial, median, and ulnar peripheral nerves",
   "visualization": ""
-}
-,
+},
 {
   "id": 90329,
   "specialty": "Anesthesia",
@@ -2071,8 +2042,7 @@ window.QUESTIONS.push(...[
   "guideline": "",
   "takeaway": "The stimulating block needle tip is in the correct position, and the local anesthetic can be injected",
   "visualization": ""
-}
-,
+},
 {
   "id": 90330,
   "specialty": "Anesthesia",
@@ -2104,8 +2074,7 @@ window.QUESTIONS.push(...[
   "guideline": "",
   "takeaway": "Performance of paravertebral blockade creates identical concerns about potential hemodynamic compromise as do thoracic epidural blocks",
   "visualization": ""
-}
-,
+},
 {
   "id": 90331,
   "specialty": "Anesthesia",
@@ -2137,8 +2106,7 @@ window.QUESTIONS.push(...[
   "guideline": "",
   "takeaway": "It is sympathetically mediated",
   "visualization": ""
-}
-,
+},
 {
   "id": 90332,
   "specialty": "Anesthesia",
@@ -2170,8 +2138,7 @@ window.QUESTIONS.push(...[
   "guideline": "",
   "takeaway": "Efficacious treatment with multimodal therapy early in the diagnosis (within 1 month of symptom) is most effective",
   "visualization": ""
-}
-,
+},
 {
   "id": 90333,
   "specialty": "Anesthesia",
@@ -2203,8 +2170,7 @@ window.QUESTIONS.push(...[
   "guideline": "",
   "takeaway": "Sinoatrial (SA) node suppression by halothane followed by anticholinergic action of atropine",
   "visualization": ""
-}
-,
+},
 {
   "id": 90334,
   "specialty": "Anesthesia",
@@ -2236,8 +2202,7 @@ window.QUESTIONS.push(...[
   "guideline": "",
   "takeaway": "Bupivacaine binds inactivated fast sodium channels and dissociates from them slowly",
   "visualization": ""
-}
-,
+},
 {
   "id": 90335,
   "specialty": "Anesthesia",
@@ -2269,8 +2234,7 @@ window.QUESTIONS.push(...[
   "guideline": "",
   "takeaway": "A 65-year-old patient with severe aortic regurgitation who went into recent onset atrial fibrillation",
   "visualization": ""
-}
-,
+},
 {
   "id": 90336,
   "specialty": "Anesthesia",
@@ -2302,8 +2266,7 @@ window.QUESTIONS.push(...[
   "guideline": "",
   "takeaway": "Platelet dysfunction",
   "visualization": ""
-}
-,
+},
 {
   "id": 90337,
   "specialty": "Anesthesia",
@@ -2335,8 +2298,7 @@ window.QUESTIONS.push(...[
   "guideline": "",
   "takeaway": "Most perioperative MIs occur in the first 48 to 72 hours postoperatively",
   "visualization": ""
-}
-,
+},
 {
   "id": 90338,
   "specialty": "Anesthesia",
@@ -2368,8 +2330,7 @@ window.QUESTIONS.push(...[
   "guideline": "",
   "takeaway": "\u03b2-Blockers",
   "visualization": ""
-}
-,
+},
 {
   "id": 90339,
   "specialty": "Anesthesia",
@@ -2401,8 +2362,7 @@ window.QUESTIONS.push(...[
   "guideline": "",
   "takeaway": "They are less traumatic to blood cells",
   "visualization": ""
-}
-,
+},
 {
   "id": 90340,
   "specialty": "Anesthesia",
@@ -2434,8 +2394,7 @@ window.QUESTIONS.push(...[
   "guideline": "",
   "takeaway": "If the pressure at the distal tip of the coronary sinus catheter during cardioplegia administration at 200 mL/min is equal to central venous pressure, the catheter is not in the coronary sinus but is most likely in the pulmonary artery",
   "visualization": ""
-}
-,
+},
 {
   "id": 90341,
   "specialty": "Anesthesia",
@@ -2467,8 +2426,7 @@ window.QUESTIONS.push(...[
   "guideline": "",
   "takeaway": "Presence of wheezing on physical examination indicates that he is having a severe attack of asthma",
   "visualization": ""
-}
-,
+},
 {
   "id": 90342,
   "specialty": "Anesthesia",
@@ -2500,8 +2458,7 @@ window.QUESTIONS.push(...[
   "guideline": "",
   "takeaway": "Insert an orogastric tube, empty the stomach as much as you can, and proceed with a deep extubation to avoid bronchospasm",
   "visualization": ""
-}
-,
+},
 {
   "id": 90343,
   "specialty": "Anesthesia",
@@ -2533,8 +2490,7 @@ window.QUESTIONS.push(...[
   "guideline": "",
   "takeaway": "Right heart catheterization is the gold standard for diagnosis",
   "visualization": ""
-}
-,
+},
 {
   "id": 90344,
   "specialty": "Anesthesia",
@@ -2566,8 +2522,7 @@ window.QUESTIONS.push(...[
   "guideline": "",
   "takeaway": "Measurement of tracheal width from a posteroanterior chest radiograph is of no use in selecting the size of a double-lumen tube (DLT)",
   "visualization": ""
-}
-,
+},
 {
   "id": 90345,
   "specialty": "Anesthesia",
@@ -2599,8 +2554,7 @@ window.QUESTIONS.push(...[
   "guideline": "",
   "takeaway": "The ventilation/perfusion matching is preserved",
   "visualization": ""
-}
-,
+},
 {
   "id": 90346,
   "specialty": "Anesthesia",
@@ -2632,8 +2586,7 @@ window.QUESTIONS.push(...[
   "guideline": "",
   "takeaway": "Perioperative arrhythmias are common",
   "visualization": ""
-}
-,
+},
 {
   "id": 90347,
   "specialty": "Anesthesia",
@@ -2665,8 +2618,7 @@ window.QUESTIONS.push(...[
   "guideline": "",
   "takeaway": "Acute herniation of the heart into the left lower lobe area",
   "visualization": ""
-}
-,
+},
 {
   "id": 90348,
   "specialty": "Anesthesia",
@@ -2698,8 +2650,7 @@ window.QUESTIONS.push(...[
   "guideline": "",
   "takeaway": "The greatest risk of rupture of the cavity is during preoxygenation just prior to induction",
   "visualization": ""
-}
-,
+},
 {
   "id": 90349,
   "specialty": "Anesthesia",
@@ -2731,8 +2682,7 @@ window.QUESTIONS.push(...[
   "guideline": "",
   "takeaway": "Progressive dyspnea",
   "visualization": ""
-}
-,
+},
 {
   "id": 90350,
   "specialty": "Anesthesia",
@@ -2764,8 +2714,7 @@ window.QUESTIONS.push(...[
   "guideline": "",
   "takeaway": "Flow\u2013volume loops aid the clinician in evaluating the severity of the lesion",
   "visualization": ""
-}
-,
+},
 {
   "id": 90351,
   "specialty": "Anesthesia",
@@ -2797,8 +2746,7 @@ window.QUESTIONS.push(...[
   "guideline": "",
   "takeaway": "Has been demonstrated to have very good efficacy by the National Emphysema Treatment Trial (NETT)",
   "visualization": ""
-}
-,
+},
 {
   "id": 90352,
   "specialty": "Anesthesia",
@@ -2830,8 +2778,7 @@ window.QUESTIONS.push(...[
   "guideline": "",
   "takeaway": "Safest thing will be to secure the airway immediately by using rapid-sequence induction",
   "visualization": ""
-}
-,
+},
 {
   "id": 90353,
   "specialty": "Anesthesia",
@@ -2863,8 +2810,7 @@ window.QUESTIONS.push(...[
   "guideline": "",
   "takeaway": "Azotemia",
   "visualization": ""
-}
-,
+},
 {
   "id": 90354,
   "specialty": "Anesthesia",
@@ -2896,8 +2842,7 @@ window.QUESTIONS.push(...[
   "guideline": "",
   "takeaway": "Effective cough is preserved",
   "visualization": ""
-}
-,
+},
 {
   "id": 90355,
   "specialty": "Anesthesia",
@@ -2929,8 +2874,7 @@ window.QUESTIONS.push(...[
   "guideline": "",
   "takeaway": "Is characterized by a relative lack of insulin plus resistance to endogenous insulin",
   "visualization": ""
-}
-,
+},
 {
   "id": 90356,
   "specialty": "Anesthesia",
@@ -2962,8 +2906,7 @@ window.QUESTIONS.push(...[
   "guideline": "",
   "takeaway": "Thyroid storm",
   "visualization": ""
-}
-,
+},
 {
   "id": 90357,
   "specialty": "Anesthesia",
@@ -2995,8 +2938,7 @@ window.QUESTIONS.push(...[
   "guideline": "",
   "takeaway": "Preparation for a rapid sequence induction, since she is at increased risk for aspiration of gastric contents",
   "visualization": ""
-}
-,
+},
 {
   "id": 90358,
   "specialty": "Anesthesia",
@@ -3028,8 +2970,7 @@ window.QUESTIONS.push(...[
   "guideline": "",
   "takeaway": "Oxygen 35%, air 65%",
   "visualization": ""
-}
-,
+},
 {
   "id": 90359,
   "specialty": "Anesthesia",
@@ -3061,8 +3002,7 @@ window.QUESTIONS.push(...[
   "guideline": "",
   "takeaway": "Engorgement of epidural veins contributed to inadvertent intravascular injection of the local anesthetics",
   "visualization": ""
-}
-,
+},
 {
   "id": 90360,
   "specialty": "Anesthesia",
@@ -3094,8 +3034,7 @@ window.QUESTIONS.push(...[
   "guideline": "",
   "takeaway": "Decreased albumin levels contributing to higher free blood levels of highly protein-bound drugs",
   "visualization": ""
-}
-,
+},
 {
   "id": 90361,
   "specialty": "Anesthesia",
@@ -3127,8 +3066,7 @@ window.QUESTIONS.push(...[
   "guideline": "",
   "takeaway": "Pain during labor and delivery is often described in two stages",
   "visualization": ""
-}
-,
+},
 {
   "id": 90362,
   "specialty": "Anesthesia",
@@ -3160,8 +3098,7 @@ window.QUESTIONS.push(...[
   "guideline": "",
   "takeaway": "Peak concentration in the brain occurs at 1 minute postinjection",
   "visualization": ""
-}
-,
+},
 {
   "id": 90363,
   "specialty": "Anesthesia",
@@ -3193,8 +3130,7 @@ window.QUESTIONS.push(...[
   "guideline": "",
   "takeaway": "Large tongue",
   "visualization": ""
-}
-,
+},
 {
   "id": 90364,
   "specialty": "Anesthesia",
@@ -3226,8 +3162,7 @@ window.QUESTIONS.push(...[
   "guideline": "",
   "takeaway": "If he is afebrile",
   "visualization": ""
-}
-,
+},
 {
   "id": 90365,
   "specialty": "Anesthesia",
@@ -3259,8 +3194,7 @@ window.QUESTIONS.push(...[
   "guideline": "",
   "takeaway": "Urine output of less than 0.5 mL/kg/hr or increase in serum creatinine by 50% in 24 hours",
   "visualization": ""
-}
-,
+},
 {
   "id": 90366,
   "specialty": "Anesthesia",
@@ -3292,8 +3226,7 @@ window.QUESTIONS.push(...[
   "guideline": "",
   "takeaway": "Institution of continuous renal replacement therapy (CRRT) as it has been shown to improve mortality at 30 days when compared to intermittent hemodialysis (IHD)",
   "visualization": ""
-}
-,
+},
 {
   "id": 90367,
   "specialty": "Anesthesia",
@@ -3325,8 +3258,7 @@ window.QUESTIONS.push(...[
   "guideline": "",
   "takeaway": "Autonomy\u2014patient: \u201cI accept that refusing an operation means I will likely die soon, but I want to die at home with my family around me if at all possible\u201d",
   "visualization": ""
-}
-,
+},
 {
   "id": 90368,
   "specialty": "Anesthesia",
@@ -3358,8 +3290,7 @@ window.QUESTIONS.push(...[
   "guideline": "",
   "takeaway": "Density",
   "visualization": ""
-}
-,
+},
 {
   "id": 90369,
   "specialty": "Anesthesia",
@@ -3391,8 +3322,7 @@ window.QUESTIONS.push(...[
   "guideline": "",
   "takeaway": "A preset tidal volume has been achieved",
   "visualization": ""
-}
-,
+},
 {
   "id": 90370,
   "specialty": "Anesthesia",
@@ -3424,8 +3354,7 @@ window.QUESTIONS.push(...[
   "guideline": "",
   "takeaway": "An 85-year-old male with hypothyroidism who underwent a cystoscopy and ureteral stent placement",
   "visualization": ""
-}
-,
+},
 {
   "id": 90371,
   "specialty": "Anesthesia",
@@ -3457,8 +3386,7 @@ window.QUESTIONS.push(...[
   "guideline": "",
   "takeaway": "A patient is to be transported to the postanesthesia care unit (PACU) by at least one physician",
   "visualization": ""
-}
-,
+},
 {
   "id": 90372,
   "specialty": "Anesthesia",
@@ -3490,8 +3418,7 @@ window.QUESTIONS.push(...[
   "guideline": "",
   "takeaway": "Repeat the cardiac catheterization and confirm whether or not the patient requires coronary artery bypass grafting (CABG) surgery prior to THR",
   "visualization": ""
-}
-,
+},
 {
   "id": 90373,
   "specialty": "Anesthesia",
@@ -3523,8 +3450,7 @@ window.QUESTIONS.push(...[
   "guideline": "",
   "takeaway": "General anesthesia with endotracheal intubation using a nondepolarizing muscle relaxant",
   "visualization": ""
-}
-,
+},
 {
   "id": 90374,
   "specialty": "Anesthesia",
@@ -3556,993 +3482,114 @@ window.QUESTIONS.push(...[
   "guideline": "",
   "takeaway": "Direct examination with a vaginal speculum and then take the patient to OR for cesarean section",
   "visualization": ""
-}
-,
+},
 {
-  "id": 63,
+  "id": "7f8a1c3b",
   "specialty": "Anesthesia",
-  "topic": "Which of the following statements is false regarding ventilation/perfusion relationship in a",
-  "question": "Which of the following statements is false regarding ventilation/perfusion relationship in a lateral decubitus position during spontaneous ventilation?",
-  "options": {
-    "A": "The ventilation/perfusion matching is preserved",
-    "B": "Contraction of dependent hemi diaphragm is more efficient",
-    "C": "Dependent lung is on a more favorable part of the compliance curve",
-    "D": "The lower lung receives less ventilation and more perfusion than the upper lung"
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "The ventilation/perfusion matching is preserved",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "Which of the following statements is false regarding ventilation/perfusion relationship in a",
-    "H_highlight_excellence": "The ventilation/perfusion matching is preserved",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "ASA practice guidelines",
-    "P_plan_for_improvement": "The ventilation/perfusion matching is preserved"
-  },
-  "supplementary_callouts": {
-    "guideline": "ASA practice guidelines",
-    "takeaway": "The ventilation/perfusion matching is preserved",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 23,
-  "specialty": "Anesthesia",
-  "topic": "After undergoing an uneventful operation, one of the following patients would be",
-  "question": "After undergoing an uneventful operation, one of the following patients would be the best candidate for \u201cdeep extubation\u201d:",
-  "options": {
-    "A": "A 23-year-old woman with asthma who has just undergone an exploratory laparotomy for small bowel obstruction",
-    "B": "A 65-year-old man with gastroesophageal reflux who has just undergone an inguinal hernia repair",
-    "C": "An 18-year-old patient with scoliosis who has just undergone a 6-hour posterior thoracolumbar spinal instrumentation and fusion",
-    "D": "A 64-year-old female with coronary artery disease who has just undergone a total hip arthroplasty under general anesthesia"
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "A 23-year-old woman with asthma who has just undergone an exploratory laparotomy for small bowel obstruction",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "After undergoing an uneventful operation, one of the following patients would be",
-    "H_highlight_excellence": "A 23-year-old woman with asthma who has just undergone an exploratory laparotomy for small bowel obstruction",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "ASA practice guidelines",
-    "P_plan_for_improvement": "A 23-year-old woman with asthma who has just undergone an exploratory laparotomy for small bowel obstruction"
-  },
-  "supplementary_callouts": {
-    "guideline": "ASA practice guidelines",
-    "takeaway": "A 23-year-old woman with asthma who has just undergone an exploratory laparotomy for small bowel obstruction",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 16,
-  "specialty": "Anesthesia",
-  "topic": "A medical student asks you if \u201cyoung\u201d blood is better for critically",
-  "question": "A medical student asks you if \u201cyoung\u201d blood is better for critically ill patients. Which of the following statements regarding \u201cyoung\u201d blood is most correct?",
-  "options": {
-    "A": "Fresher blood has better ability to deliver oxygen to tissues",
-    "B": "Blood from younger donors has lower risk of immunosuppression than blood donated by the elderly",
-    "C": "Older blood has a lower potassium content",
-    "D": "Fresher blood can be transfused more rapidly than older blood"
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "Fresher blood has better ability to deliver oxygen to tissues",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "A medical student asks you if \u201cyoung\u201d blood is better for critically",
-    "H_highlight_excellence": "Fresher blood has better ability to deliver oxygen to tissues",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "ASA practice guidelines",
-    "P_plan_for_improvement": "Fresher blood has better ability to deliver oxygen to tissues"
-  },
-  "supplementary_callouts": {
-    "guideline": "ASA practice guidelines",
-    "takeaway": "Fresher blood has better ability to deliver oxygen to tissues",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 46,
-  "specialty": "Anesthesia",
-  "topic": "Lidocaine and epinephrine are commonly used together when testing epidural anesthesia because",
-  "question": "Lidocaine and epinephrine are commonly used together when testing epidural anesthesia because",
-  "options": {
-    "A": "Lidocaine injection (3 mL of 1.5%) intravascularly will induce local anesthetic toxicity such as perioral numbness",
-    "B": "Intrathecal injection of epinephrine will result in a high spinal",
-    "C": "Intrathecal injection of lidocaine can cause a low-level spinal anesthesia with some degree of motor block",
-    "D": "Intravascular injection of epinephrine (typically 15 \u03bcg/3 mL) can cause hypertension more than tachycardia"
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "Lidocaine injection (3 mL of 1.5%) intravascularly will induce local anesthetic toxicity such as perioral numbness",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "Lidocaine and epinephrine are commonly used together when testing epidural anesthesia because",
-    "H_highlight_excellence": "Lidocaine injection (3 mL of 1.5%) intravascularly will induce local anesthetic toxicity such as perioral numbness",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "ASA practice guidelines",
-    "P_plan_for_improvement": "Lidocaine injection (3 mL of 1"
-  },
-  "supplementary_callouts": {
-    "guideline": "ASA practice guidelines",
-    "takeaway": "Lidocaine injection (3 mL of 1",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 74,
-  "specialty": "Anesthesia",
-  "topic": "with progressive dyspnea and a huge right-sided pulmonary cyst. The cyst is",
-  "question": "with progressive dyspnea and a huge right-sided pulmonary cyst. The cyst is compressing her remaining right lung, and she is brought to the OR for an emergency pulmonary cystectomy. Which of the following is right regarding anesthetic management of this patient?",
-  "options": {
-    "A": "The greatest risk of rupture of the cavity is during preoxygenation just prior to induction",
-    "B": "These cavities allow to and fro movement of air and have a very low chance to progressively enlarge",
-    "C": "Maintenance of spontaneous ventilation is desirable until a double-lumen tube (DLT) is in place",
-    "D": "Assisted ventilation is not necessary immediately after induction and can be harmful"
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "The greatest risk of rupture of the cavity is during preoxygenation just prior to induction",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "with progressive dyspnea and a huge right-sided pulmonary cyst. The cyst is",
-    "H_highlight_excellence": "The greatest risk of rupture of the cavity is during preoxygenation just prior to induction",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "ASA practice guidelines",
-    "P_plan_for_improvement": "The greatest risk of rupture of the cavity is during preoxygenation just prior to induction"
-  },
-  "supplementary_callouts": {
-    "guideline": "ASA practice guidelines",
-    "takeaway": "The greatest risk of rupture of the cavity is during preoxygenation just prior to induction",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 53,
-  "specialty": "Anesthesia",
-  "topic": "The most correct statement concerning a unilateral paravertebral block is",
-  "question": "The most correct statement concerning a unilateral paravertebral block is",
-  "options": {
-    "A": "Such a block is always associated with a similar degree of sympathectomy as with an epidural block",
-    "B": "Such a block is often associated with a higher serum level of local anesthetic than that achieved with an intercostal nerve block due to high vascularity",
-    "C": "It is not likely to be associated with a pneumothorax",
-    "D": "Such a block may be associated with epidural spread of local anesthetic"
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "Such a block is always associated with a similar degree of sympathectomy as with an epidural block",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "The most correct statement concerning a unilateral paravertebral block is",
-    "H_highlight_excellence": "Such a block is always associated with a similar degree of sympathectomy as with an epidural block",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "ASA practice guidelines",
-    "P_plan_for_improvement": "Such a block is always associated with a similar degree of sympathectomy as with an epidural"
-  },
-  "supplementary_callouts": {
-    "guideline": "ASA practice guidelines",
-    "takeaway": "Such a block is always associated with a similar degree of sympathectomy as with an epidural block",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 11,
-  "specialty": "Anesthesia",
-  "topic": "A 6-year-old patient scheduled for laparoscopic bilateral inguinal hernia repair undergoes inhalational",
-  "question": "A 6-year-old patient scheduled for laparoscopic bilateral inguinal hernia repair undergoes inhalational induction and intubation with a 5.0-mm cuffed endotracheal tube. The tube is secured with the 15-cm mark at the patient\u2019s gumline. Auscultation reveals equal breath sounds bilaterally. Inflation of the pilot balloon results in palpation of the inflated tube cuff just above the cricoid cartilage. A leak test reveals leak of air into the oropharynx at a positive pressure of 20 cm H2O. The next best step in management is",
-  "options": {
-    "A": "No change in anesthetic care is indicated",
-    "B": "The tube cuff should be deflated until a leak is present starting at 15 cm H2O of positive pressure",
-    "C": "The tube cuff should be deflated and the tube advanced until the cuff, when inflated, is palpable below the cricoid cartilage",
-    "D": "The tube cuff should be deflated and the tube withdrawn until ventilator peak pressures decrease"
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "No change in anesthetic care is indicated",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "A 6-year-old patient scheduled for laparoscopic bilateral inguinal hernia repair undergoes inhalational",
-    "H_highlight_excellence": "No change in anesthetic care is indicated",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "ASA practice guidelines",
-    "P_plan_for_improvement": "No change in anesthetic care is indicated"
-  },
-  "supplementary_callouts": {
-    "guideline": "ASA practice guidelines",
-    "takeaway": "No change in anesthetic care is indicated",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 71,
-  "specialty": "Anesthesia",
-  "topic": "With regard to sodium thiopental, the following statements are accurate, except",
-  "question": "With regard to sodium thiopental, the following statements are accurate, except",
-  "options": {
-    "A": "Peak concentration in the brain occurs at 1 minute postinjection",
-    "B": "Rapid redistribution allows for return of consciousness in <10 minutes",
-    "C": "Infusions maintain appropriate surgical conditions with fast recovery due to ultra-short action",
-    "D": "Repeating the induction dose results in fetal depression"
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "Peak concentration in the brain occurs at 1 minute postinjection",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "With regard to sodium thiopental, the following statements are accurate, except",
-    "H_highlight_excellence": "Peak concentration in the brain occurs at 1 minute postinjection",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "ASA practice guidelines",
-    "P_plan_for_improvement": "Peak concentration in the brain occurs at 1 minute postinjection"
-  },
-  "supplementary_callouts": {
-    "guideline": "ASA practice guidelines",
-    "takeaway": "Peak concentration in the brain occurs at 1 minute postinjection",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 52,
-  "specialty": "Anesthesia",
-  "topic": "The correct statement regarding caudal anesthesia is",
-  "question": "The correct statement regarding caudal anesthesia is",
-  "options": {
-    "A": "Caudal anesthesia is essentially sacral epidural anesthesia",
-    "B": "Caudal anesthesia can only be performed in pediatric population",
-    "C": "A caudal anesthesia catheter should be positioned without penetrating the sacrococcygeal ligament",
-    "D": "The younger the child, the less likely you are to experience an intrathecal injection"
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "Caudal anesthesia is essentially sacral epidural anesthesia",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "The correct statement regarding caudal anesthesia is",
-    "H_highlight_excellence": "Caudal anesthesia is essentially sacral epidural anesthesia",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "ASA practice guidelines",
-    "P_plan_for_improvement": "Caudal anesthesia is essentially sacral epidural anesthesia"
-  },
-  "supplementary_callouts": {
-    "guideline": "ASA practice guidelines",
-    "takeaway": "Caudal anesthesia is essentially sacral epidural anesthesia",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 61,
-  "specialty": "Anesthesia",
-  "topic": "Which of the following predictors is likely to be associated with lower",
-  "question": "Which of the following predictors is likely to be associated with lower incidence of perioperative nausea and vomiting?",
-  "options": {
-    "A": "Female gender",
-    "B": "Use of fentanyl for pain relief",
-    "C": "Patients with a history of smoking",
-    "D": "Patients undergoing laparoscopic surgery"
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "Female gender",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "Which of the following predictors is likely to be associated with lower",
-    "H_highlight_excellence": "Female gender",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "ASA practice guidelines",
-    "P_plan_for_improvement": "Female gender"
-  },
-  "supplementary_callouts": {
-    "guideline": "ASA practice guidelines",
-    "takeaway": "Female gender",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 68,
-  "specialty": "Anesthesia",
-  "topic": "While performing a femoral nerve block guided with a nerve stimulator, you",
-  "question": "While performing a femoral nerve block guided with a nerve stimulator, you observe a strong sartorius muscle twitch that disappears at 0.2 mA. What does this mean and how should you proceed further?",
-  "options": {
-    "A": "The stimulating block needle tip is in the correct position, and the local anesthetic can be injected",
-    "B": "The needle tip is likely superficial to the femoral nerve, and the block needle needs to be readjusted (twitch may not be from stimulation of the femoral nerve) prior to local anesthetic injection",
-    "C": "Sartorius muscle twitch indicates that the needle tip is in the correct location, but you need to get closer to the nerve as 0.2 mA stimulus is too high",
-    "D": "The block needle needs to be repositioned more medially, and a paresthesia must be elicited prior to local anesthetic injection"
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "The stimulating block needle tip is in the correct position, and the local anesthetic can be injected",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "While performing a femoral nerve block guided with a nerve stimulator, you",
-    "H_highlight_excellence": "The stimulating block needle tip is in the correct position, and the local anesthetic can be injected",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "ASA practice guidelines",
-    "P_plan_for_improvement": "The stimulating block needle tip is in the correct position, and the local anesthetic can be"
-  },
-  "supplementary_callouts": {
-    "guideline": "ASA practice guidelines",
-    "takeaway": "The stimulating block needle tip is in the correct position, and the local anesthetic can be injected",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 27,
-  "specialty": "Anesthesia",
-  "topic": "An 80-year-old female underwent a left lower lobectomy. In the ICU on",
-  "question": "An 80-year-old female underwent a left lower lobectomy. In the ICU on postoperative day 2, she develops hemoptysis. The vital signs are stable, but on the chest X-ray a homogenous density is seen in the left lower lung area. After subsequent bronchoscopy, the left upper lobar orifice is closed. The most likely diagnosis is",
-  "options": {
-    "A": "Acute herniation of the heart into the left lower lobe area",
-    "B": "It is a normal finding and the homogenous opacity is due to accumulation of fluid in the left lower lobe area",
-    "C": "Torsion of the left upper lobe as the left upper lobe expanded to occupy the left hemithorax",
-    "D": "Reexpansion edema of the left upper lobe"
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "Acute herniation of the heart into the left lower lobe area",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "An 80-year-old female underwent a left lower lobectomy. In the ICU on",
-    "H_highlight_excellence": "Acute herniation of the heart into the left lower lobe area",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "ASA practice guidelines",
-    "P_plan_for_improvement": "Acute herniation of the heart into the left lower lobe area"
-  },
-  "supplementary_callouts": {
-    "guideline": "ASA practice guidelines",
-    "takeaway": "Acute herniation of the heart into the left lower lobe area",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 39,
-  "specialty": "Anesthesia",
-  "topic": "Helium\u2013oxygen mixtures can be useful therapies for patients with upper airway obstruction.",
-  "question": "Helium\u2013oxygen mixtures can be useful therapies for patients with upper airway obstruction. Compared with air, helium\u2013oxygen mixtures have lower",
-  "options": {
-    "A": "Density",
-    "B": "Viscosity",
-    "C": "Oxygen content",
-    "D": "Nitrous oxide content"
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "Density",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "Helium\u2013oxygen mixtures can be useful therapies for patients with upper airway obstruction.",
-    "H_highlight_excellence": "Density",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "ASA practice guidelines",
-    "P_plan_for_improvement": "Density"
-  },
-  "supplementary_callouts": {
-    "guideline": "ASA practice guidelines",
-    "takeaway": "Density",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 28,
-  "specialty": "Anesthesia",
-  "topic": "An otherwise-healthy 38-year-old female patient is undergoing repair of a large ventral",
-  "question": "An otherwise-healthy 38-year-old female patient is undergoing repair of a large ventral hernia under intrathecal anesthesia. A T2 sensory level is obtained with hyperbaric bupivacaine prior to incision. A false statement concerning this situation includes",
-  "options": {
-    "A": "Effective cough is preserved",
-    "B": "The cardioaccelerator nerves are blocked",
-    "C": "Examination of the biceps reveals full strength bilaterally",
-    "D": "Bupivacaine binds to the intracellular portion of sodium channels"
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "Effective cough is preserved",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "An otherwise-healthy 38-year-old female patient is undergoing repair of a large ventral",
-    "H_highlight_excellence": "Effective cough is preserved",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "ASA practice guidelines",
-    "P_plan_for_improvement": "Effective cough is preserved"
-  },
-  "supplementary_callouts": {
-    "guideline": "ASA practice guidelines",
-    "takeaway": "Effective cough is preserved",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 66,
-  "specialty": "Anesthesia",
-  "topic": "Which of the following statements regarding transfusion of packed red blood cells",
-  "question": "Which of the following statements regarding transfusion of packed red blood cells is most correct?",
-  "options": {
-    "A": "The hematocrit of 1 unit is usually 30% to 40%",
-    "B": "Transfusion of a single unit will increase an adult\u2019s hemoglobin concentration about 4 g/dL",
-    "C": "May cause clotting if the transfused packed red blood cells are mixed with lactated Ringer solution",
-    "D": "Their principle use as that of a volume expander"
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "The hematocrit of 1 unit is usually 30% to 40%",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "Which of the following statements regarding transfusion of packed red blood cells",
-    "H_highlight_excellence": "The hematocrit of 1 unit is usually 30% to 40%",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "ASA practice guidelines",
-    "P_plan_for_improvement": "The hematocrit of 1 unit is usually 30% to 40%"
-  },
-  "supplementary_callouts": {
-    "guideline": "ASA practice guidelines",
-    "takeaway": "The hematocrit of 1 unit is usually 30% to 40%",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 67,
-  "specialty": "Anesthesia",
-  "topic": "While monitoring coronary sinus pressure during retrograde cardioplegia,",
-  "question": "While monitoring coronary sinus pressure during retrograde cardioplegia,",
-  "options": {
-    "A": "If the pressure at the distal tip of the coronary sinus catheter during cardioplegia administration at 200 mL/min is equal to central venous pressure, the catheter is not in the coronary sinus but is most likely in the pulmonary artery",
-    "B": "If the pressure is very high (>100 mm Hg), the coronary sinus catheter is in the left ventricle",
-    "C": "If the pressure in the coronary sinus catheter is 40 to 60 mm Hg during a 200-mL/min infusion, the catheter is correctly positioned",
-    "D": "If the catheter is placed too distally, delivery of cardioplegia to the left ventricle will be compromised and result in left-ventricular dysfunction"
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "If the pressure at the distal tip of the coronary sinus catheter during cardioplegia administration at 200 mL/min",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "While monitoring coronary sinus pressure during retrograde cardioplegia,",
-    "H_highlight_excellence": "If the pressure at the distal tip of the coronary sinus catheter during cardioplegia administration at 200 mL/min",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "ASA practice guidelines",
-    "P_plan_for_improvement": "If the pressure at the distal tip of the coronary sinus catheter during cardioplegia administration at"
-  },
-  "supplementary_callouts": {
-    "guideline": "ASA practice guidelines",
-    "takeaway": "If the pressure at the distal tip of the coronary sinus catheter during cardioplegia administration at 200 mL/min",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 44,
-  "specialty": "Anesthesia",
-  "topic": "Incorrect statement regarding neuraxial blockade is",
-  "question": "Incorrect statement regarding neuraxial blockade is",
-  "options": {
-    "A": "Dermatome level of anesthesia achieved with a spinal anesthetic is often more predictable than following an epidural blockade",
-    "B": "Spinal anesthesia can more rapidly and consistently produce denser motor blockade than epidural anesthesia",
-    "C": "Local anesthetics administered during epidural anesthesia are typically more volume-dependent, and during spinal anesthesia are more concentration-dependent",
-    "D": "Thoracic epidural anesthesia has an increased risk of urinary retention compared to lumbar epidural anesthesia when the same volume of local anesthetic is administered"
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "Dermatome level of anesthesia achieved with a spinal anesthetic is often more predictable than following an epidural blockade",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "Incorrect statement regarding neuraxial blockade is",
-    "H_highlight_excellence": "Dermatome level of anesthesia achieved with a spinal anesthetic is often more predictable than following an epidural blockade",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "ASA practice guidelines",
-    "P_plan_for_improvement": "Dermatome level of anesthesia achieved with a spinal anesthetic is often more predictable than following an"
-  },
-  "supplementary_callouts": {
-    "guideline": "ASA practice guidelines",
-    "takeaway": "Dermatome level of anesthesia achieved with a spinal anesthetic is often more predictable than following an epidural blockade",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 60,
-  "specialty": "Anesthesia",
-  "topic": "Which of the following patients will be affected the most from loss",
-  "question": "Which of the following patients will be affected the most from loss of atrial contribution to preload?",
-  "options": {
-    "A": "A 65-year-old patient with severe aortic regurgitation who went into recent onset atrial fibrillation",
-    "B": "A 35-year-old patient with mitral-valve area of 1.0 cm2 who went into recent onset atrial fibrillation",
-    "C": "An 80-year-old patient with severe aortic stenosis who went into recent onset atrial fibrillation",
-    "D": "A 55-year-old patient with acute right-ventricular myocardial infarction"
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "A 65-year-old patient with severe aortic regurgitation who went into recent onset atrial fibrillation",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "Which of the following patients will be affected the most from loss",
-    "H_highlight_excellence": "A 65-year-old patient with severe aortic regurgitation who went into recent onset atrial fibrillation",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "ASA practice guidelines",
-    "P_plan_for_improvement": "A 65-year-old patient with severe aortic regurgitation who went into recent onset atrial fibrillation"
-  },
-  "supplementary_callouts": {
-    "guideline": "ASA practice guidelines",
-    "takeaway": "A 65-year-old patient with severe aortic regurgitation who went into recent onset atrial fibrillation",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 69,
-  "specialty": "Anesthesia",
-  "topic": "While performing an axillary brachial plexus blockade, the goal is to deposit",
-  "question": "While performing an axillary brachial plexus blockade, the goal is to deposit local anesthetic medications at what location of the brachial plexus and to target which specific nerve structures?",
-  "options": {
-    "A": "Level of the branches and targeting the radial, median, and ulnar peripheral nerves",
-    "B": "Level of the trunks and targeting the interscalene, radial, and ulnar peripheral nerves",
-    "C": "Level of the divisions and targeting the supraclavicular, median, and radial peripheral nerves",
-    "D": "Level of the cords and targeting the infraclavicular, ulnar, and radial peripheral nerves"
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "Level of the branches and targeting the radial, median, and ulnar peripheral nerves",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "While performing an axillary brachial plexus blockade, the goal is to deposit",
-    "H_highlight_excellence": "Level of the branches and targeting the radial, median, and ulnar peripheral nerves",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "ASA practice guidelines",
-    "P_plan_for_improvement": "Level of the branches and targeting the radial, median, and ulnar peripheral nerves"
-  },
-  "supplementary_callouts": {
-    "guideline": "ASA practice guidelines",
-    "takeaway": "Level of the branches and targeting the radial, median, and ulnar peripheral nerves",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 65,
-  "specialty": "Anesthesia",
-  "topic": "Which of the following statements is true regarding fluid loss?",
-  "question": "Which of the following statements is true regarding fluid loss?",
-  "options": {
-    "A": "Substantial evaporative losses can be associated with large wounds and are directly proportionate to the surface area exposed",
-    "B": "Internal redistribution of fluids, \u201cthird spacing,\u201d cannot cause massive fluid shifts",
-    "C": "Traumatized, inflamed, or infected tissues can only sequester minimal amounts of fluid in the interstitial space",
-    "D": "Cellular dysfunction as a result of hypoxia usually produces a decrease in intracellular fluid volume"
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "Substantial evaporative losses can be associated with large wounds and are directly proportionate to the surface area exposed",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "Which of the following statements is true regarding fluid loss?",
-    "H_highlight_excellence": "Substantial evaporative losses can be associated with large wounds and are directly proportionate to the surface area exposed",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "ASA practice guidelines",
-    "P_plan_for_improvement": "Substantial evaporative losses can be associated with large wounds and are directly proportionate to the surface"
-  },
-  "supplementary_callouts": {
-    "guideline": "ASA practice guidelines",
-    "takeaway": "Substantial evaporative losses can be associated with large wounds and are directly proportionate to the surface area exposed",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 36,
-  "specialty": "Anesthesia",
-  "topic": "During performance of lumbar epidural anesthesia for labor analgesia, you experience free-flowing",
-  "question": "During performance of lumbar epidural anesthesia for labor analgesia, you experience free-flowing cerebrospinal fluid (CSF) from the advancing 17G Tuohy epidural needle. The epidural needle is removed and a second attempt is successfully performed with an epidural catheter placed at a different level. Which of the following you would not recommend for the patient to practice in the next 72 hours?",
-  "options": {
-    "A": "Bed rest",
-    "B": "Fluid restriction",
-    "C": "Increase caffeine intake",
-    "D": "Continue with daily stool softener"
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "Bed rest",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "During performance of lumbar epidural anesthesia for labor analgesia, you experience free-flowing",
-    "H_highlight_excellence": "Bed rest",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "ASA practice guidelines",
-    "P_plan_for_improvement": "Bed rest"
-  },
-  "supplementary_callouts": {
-    "guideline": "ASA practice guidelines",
-    "takeaway": "Bed rest",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 50,
-  "specialty": "Anesthesia",
-  "topic": "Regarding lung resection surgery, which of the following statements is false?",
-  "question": "Regarding lung resection surgery, which of the following statements is false?",
-  "options": {
-    "A": "Perioperative arrhythmias are common",
-    "B": "Supraventricular tachycardias (SVTs) are thought to result from surgical manipulation or distension of the right atrium",
-    "C": "Incidence of arrhythmia decreases with age due to the ageing of cardiac conduction system",
-    "D": "Postoperative hypoxemia and acidosis due to atelectasis and shallow breathing are common"
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "",
-    "H_highlight_excellence": "",
-    "A_address_the_gaps": "",
-    "R_review_learning_points": "",
-    "P_plan_for_improvement": ""
-  },
-  "supplementary_callouts": {
-    "guideline": "",
-    "takeaway": "",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 26,
-  "specialty": "Anesthesia",
-  "topic": "All of the following qualities are advantages of crystalloid solutions, except",
-  "question": "All of the following qualities are advantages of crystalloid solutions, except",
-  "options": {
-    "A": "Nontoxic",
-    "B": "Reaction-free",
-    "C": "Relatively inexpensive",
-    "D": "Have the ability to remain in the intravascular space for a relatively long amount of time"
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "Nontoxic",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "All of the following qualities are advantages of crystalloid solutions, except",
-    "H_highlight_excellence": "Nontoxic",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "ASA practice guidelines",
-    "P_plan_for_improvement": "Nontoxic"
-  },
-  "supplementary_callouts": {
-    "guideline": "ASA practice guidelines",
-    "takeaway": "Nontoxic",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 58,
-  "specialty": "Anesthesia",
-  "topic": "Which of the following patients is least likely to need calcium supplementation",
-  "question": "Which of the following patients is least likely to need calcium supplementation due to citrate-induced hypocalcemia related to blood transfusion?",
-  "options": {
-    "A": "A 30-year-old trauma patient receiving massive blood transfusion through a rapid transfuser at a rate of 75 mL/min",
-    "B": "A patient with end-stage liver disease undergoing a complicated open shunt procedure, who is hypothermic and has received greater than 2 blood volumes of transfusion",
-    "C": "A neonate undergoing congenital diaphragmatic hernia repair",
-    "D": "A 50-year-old patient with coronary artery disease undergoing an open femoral popliteal bypass procedure, who has received 3 units of packed red blood cells"
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "A 30-year-old trauma patient receiving massive blood transfusion through a rapid transfuser at a rate of 75 mL/min",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "Which of the following patients is least likely to need calcium supplementation",
-    "H_highlight_excellence": "A 30-year-old trauma patient receiving massive blood transfusion through a rapid transfuser at a rate of 75 mL/min",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "ASA practice guidelines",
-    "P_plan_for_improvement": "A 30-year-old trauma patient receiving massive blood transfusion through a rapid transfuser at a rate of"
-  },
-  "supplementary_callouts": {
-    "guideline": "ASA practice guidelines",
-    "takeaway": "A 30-year-old trauma patient receiving massive blood transfusion through a rapid transfuser at a rate of 75 mL/min",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 40,
-  "specialty": "Anesthesia",
-  "topic": "In order to provide analgesia for all stages of labor, one must",
-  "question": "In order to provide analgesia for all stages of labor, one must accommodate the evolving and varied course of labor and delivery. The least accurate statement regarding the anatomy of labor is",
-  "options": {
-    "A": "Pain during labor and delivery is often described in two stages",
-    "B": "Somatic and visceral innervation of the uterus and cervix enters the spinal cord via T10 to L1",
-    "C": "Innervation of the perineum is primarily via the pudendal nerve",
-    "D": "Somatic and visceral afferent sensory fibers from the uterus and cervix travel with greater, lesser, and least splanchnic nerves via the celiac plexus"
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "Pain during labor and delivery is often described in two stages",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "In order to provide analgesia for all stages of labor, one must",
-    "H_highlight_excellence": "Pain during labor and delivery is often described in two stages",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "ASA practice guidelines",
-    "P_plan_for_improvement": "Pain during labor and delivery is often described in two stages"
-  },
-  "supplementary_callouts": {
-    "guideline": "ASA practice guidelines",
-    "takeaway": "Pain during labor and delivery is often described in two stages",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 24,
-  "specialty": "Anesthesia",
-  "topic": "All of the following are true about diabetic patients, except",
-  "question": "All of the following are true about diabetic patients, except",
+  "topic": "Perioperative Diabetic Management",
+  "question": "Which of the following statements regarding perioperative management of diabetic patients is correct?",
   "options": {
     "A": "Patients should take half or one-third of their insulin dose the morning of the surgery",
     "B": "Patients should continue their oral hypoglycemic agents the morning of the surgery",
     "C": "Finger-stick blood glucose should be tested before taking the patient to the operating room",
     "D": "Patient with an insulin pump should continue the insulin at their basal rate"
   },
-  "answer": "A",
+  "answer": "C",
   "explanation": {
-    "correct": "",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
+    "correct": "### \u2699\ufe0f Surgical Mechanism\n* **Pathophysiological pathway:** Avoids severe **hypoglycemic crisis** perioperatively.\n* **Metabolic flux:** Stress **hormone release** spikes glucose.\n* **Point-of-care tracking:** Protects **neurological function** under anesthesia.\n\n### \u26a1 Clinical Execution\n* **Management strategy:** Mandate **preoperative finger-stick** glucose testing.\n* **Safety threshold:** Keep **glucose tight** between 100-180 mg/dL.\n* **Critical pitfall:** Missing **occult hypoglycemia** during active sedation.",
+    "A": "**[Option A Assessment]:** Dosing **long-acting NPH** requires 50% restriction, but short-acting types must be completely held to avoid intraoperative crashes.",
+    "B": "**[Option B Assessment]:** Oral **hypoglycemic agents** must be held morning of surgery due to half-life risks and lactic acidosis dangers with metformin.",
+    "C": "**[Option C Assessment]:** Baseline **glucose verification** is the universal safety standard prior to any anesthetic delivery to guide infusion adjustments.",
+    "D": "**[Option D Assessment]:** Continuous **pump management** can be highly dynamic and typically requires reduction or specialized institutional protocols rather than blanket continuation.",
     "E": ""
   },
   "sharp_debrief": {
-    "S_set_the_stage": "",
-    "H_highlight_excellence": "",
-    "A_address_the_gaps": "",
-    "R_review_learning_points": "",
-    "P_plan_for_improvement": ""
+    "S_set_the_stage": "### \ud83c\udfaf S (Set the Stage)\n* **Verdict:** Correct option is **C**.\n* **The Pivot:** Immediate **point-of-care testing** acts as the absolute baseline metabolic safety checkpoint prior to induction.",
+    "H_highlight_excellence": "### \ud83d\ude80 H (Highlight Excellence)\n* **Core Concept:** Objective **glucose quantification** prevents catastrophic silent intraoperative neuroglycopenic events.",
+    "A_address_the_gaps": "### \u274c A (Address the Gaps)\n* **Option A (Incorrect):** Blanket **half-dose guidelines** overlook the specific pharmacokinetics of variable short vs long-acting regimens.\n* **Option B (Incorrect):** Holding **oral secretagogues** prevents profound delayed hypoglycemia during prolonged fasting states.\n* **Option D (Incorrect):** Unadjusted **basal pump** rates often overshoot metabolic needs during zero-calorie NPO status.",
+    "R_review_learning_points": "### \ud83d\udcda R (Review Learning Points)\n* **Conceptual Overview:** Surgical trauma induces a predictable catabolic state, while parallel fasting places the patient at equal risk for brittle hypoglycemia.\n\n#### \ud83d\udcca Management Framework\n| Variable/Grade | Clinical Triggers | Immediate Intervention |\n| :--- | :--- | :--- |\n| **Hyperglycemia** | \u2022 Glucose >180 mg/dL\n\n\n\n\u2022 Surgical stress response | \u2022 Initiating IV insulin drip\n\n\n\n\u2022 Hourly checks |\n| **Hypoglycemia** | \u2022 Glucose <70 mg/dL\n\n\n\n\u2022 Prolonged NPO window | \u2022 Administering D50W IV bolus\n\n\n\n\u2022 Recheck in 15 mins |",
+    "P_plan_for_improvement": "### \ud83d\udca1 P (Plan for Improvement)\n* **The Board Pearl:** *Never guess metabolic status; execute finger-stick glucose confirmation before induction.*\n\n#### \ud83d\udd27 Surgical Action Checklist\n1. \ud83d\udfe5 **Step 1:** Order **point-of-care glucose** upon arrival to the preoperative holding area.\n2. \ud83d\udfe8 **Step 2:** Ensure **metformin is held** 24-48 hours prior to complex major open procedures."
   },
   "supplementary_callouts": {
-    "guideline": "",
-    "takeaway": "",
-    "visualization": ""
+    "guideline": "### \ud83d\udccb Guideline Reference\n* ASA Practice Guidelines for Preoperative Fasting and Metabolic Management, 2023",
+    "takeaway": "### \ud83d\udd11 Core Takeaway\n* **[Pre-op Check]:** Mandatory preoperative finger-stick glucose evaluation is a critical, non-negotiable safety milestone before induction.",
+    "visualization": "### \ud83d\udc41\ufe0f Operative Visualization\n* **Field View:** Visual check of the preoperative record chart reveals a verified finger-stick value alongside a functioning peripheral IV line prior to wheeling back."
   },
   "discrepancy_flag": ""
-}
-,
+},
 {
-  "id": 42,
+  "id": "2b9c4d5e",
   "specialty": "Anesthesia",
-  "topic": "In surgical cases requiring lung isolation",
-  "question": "In surgical cases requiring lung isolation",
+  "topic": "Congenital Syndromes and Airway Management",
+  "question": "Which statement regarding difficult airways in congenital syndromes is correct?",
   "options": {
-    "A": "Measurement of tracheal width from a posteroanterior chest radiograph is of no use in selecting the size of a double-lumen tube (DLT)",
-    "B": "More frequent use of left-sided DLT is based on the anatomy of tracheobronchial tree",
-    "C": "Uniform ventilation to all lobes is most likely achieved by a right-sided DLT because it has a ventilation slot in the bronchial tube",
-    "D": "Fiber\u2013optic confirmation of correct DLT placement is not required if you have good clinical confirmation"
+    "A": "Laryngoscopy is often challenging in Turner syndrome because of a high frequency of laryngeal distortion",
+    "B": "Airway management in Treacher Collins syndrome is complicated by a high incidence of cervical spine instability",
+    "C": "Intubation in patients with Goldenhar syndrome is often challenging due to a high rate of subglottic stenosis",
+    "D": "Airway management of patients with trisomy 21 is complicated by a high incidence of cervical spine instability"
   },
-  "answer": "A",
+  "answer": "D",
   "explanation": {
-    "correct": "Tracheal width measurement",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
+    "correct": "### \u2699\ufe0f Surgical Mechanism\n* **Pathophysiological pathway:** Attenuated **ligamentous laxity** causes atlantoaxial subluxation.\n* **Anatomical distortion:** Weak **transverse ligament** fails to secure odontoid.\n* **Neurological compromise:** Forced **neck extension** risks catastrophic cord compression.\n\n### \u26a1 Clinical Execution\n* **Management strategy:** Perform **preoperative cervical films** in neutral/flexion/extension.\n* **Airway preservation:** Utilize **inline stabilization** during direct laryngoscopy maneuvers.\n* **Critical pitfall:** Excessive **head tilt** leading to immediate quadriplegia.",
+    "A": "**[Option A Assessment]:** Turner **syndrome airway** challenges stem from a short, webbed neck and micrognathia rather than internal intrinsic laryngeal structural distortion.",
+    "B": "**[Option B Assessment]:** Treacher **Collins syndrome** features profound mandibular and maxillary hypoplasia causing severe anterior laryngeal displacement, not neck bony instability.",
+    "C": "**[Option C Assessment]:** Goldenhar **syndrome causes** hemifacial microsomia and mandibular hypoplasia, creating severe asymmetry that hinders blade placement, not subglottic narrowing.",
+    "D": "**[Option D Assessment]:** Trisomy **21 carries** an established 10-30% incidence of atlantoaxial instability, dictating strict motion restriction during intubation.",
     "E": ""
   },
   "sharp_debrief": {
-    "S_set_the_stage": "Lung isolation surgical needs",
-    "H_highlight_excellence": "Tracheal width measurement",
-    "A_address_the_gaps": "DLT size selection",
-    "R_review_learning_points": "Ventilation tube placement",
-    "P_plan_for_improvement": "Clinical confirmation crucial"
+    "S_set_the_stage": "### \ud83c\udfaf S (Set the Stage)\n* **Verdict:** Correct option is **D**.\n* **The Pivot:** The presence of **atlantoaxial instability** dictates specialized protective positioning movements during airway control to prevent transection.",
+    "H_highlight_excellence": "### \ud83d\ude80 H (Highlight Excellence)\n* **Core Concept:** Neutral **positioning preservation** minimizes mechanical translation forces across an unstable C1-C2 spinal column complex.",
+    "A_address_the_gaps": "### \u274c A (Address the Gaps)\n* **Option A (Incorrect):** Webbed **neck geometry** limits global extension range but leaves internal vocal cords anatomically normal.\n* **Option B (Incorrect):** Mandibular **hypoplasia shifts** tongue tissue posteriorly, creating purely structural visualization barriers.\n* **Option C (Incorrect):** Asymmetrical **facial hypoplasia** displaces the laryngeal view laterally but avoids tracheal stenosis architecture.",
+    "R_review_learning_points": "### \ud83d\udcda R (Review Learning Points)\n* **Conceptual Overview:** Congenital anomalies combine craniofacial deformities with structural ligamentous issues that complicate routine airway control algorithms.\n\n#### \ud83d\udcca Management Framework\n| Variable/Grade | Clinical Triggers | Immediate Intervention |\n| :--- | :--- | :--- |\n| **Atlantoaxial Laxity** | \u2022 Down syndrome genotype\n\n\n\n\u2022 Odontoid-axial gap >3mm | \u2022 Rigid inline cervical stabilization\n\n\n\n\u2022 Fiberoptic intubation |\n| **Mandibular Hypoplasia** | \u2022 Treacher Collins / Pierre Robin\n\n\n\n\u2022 Receded chin profile | \u2022 Pre-induction video laryngoscopy\n\n\n\n\u2022 Supraglottic airway backup |",
+    "P_plan_for_improvement": "### \ud83d\udca1 P (Plan for Improvement)\n* **The Board Pearl:** *Trisomy 21 equals mandatory cervical spine precautions until atlantoaxial subluxation is definitively ruled out.*\n\n#### \ud83d\udd27 Surgical Action Checklist\n1. \ud83d\udfe5 **Step 1:** Review **flexion-extension radiographs** before elective surgeries in all Down syndrome patients.\n2. \ud83d\udfe8 **Step 2:** Maintain **manual inline alignment** during blade insertion if instability markers remain unverified."
   },
   "supplementary_callouts": {
-    "guideline": "Radiographic assessment needed",
-    "takeaway": "Accurate DLT selection",
-    "visualization": "Chest radiograph analysis"
+    "guideline": "### \ud83d\udccb Guideline Reference\n* ASA Practice Guidelines for Management of the Difficult Airway, 2022",
+    "takeaway": "### \ud83d\udd11 Core Takeaway\n* **[C-Spine Danger]:** Atlantoaxial instability in Trisomy 21 requires meticulous positioning controls during intubation to protect the spinal cord.",
+    "visualization": "### \ud83d\udc41\ufe0f Operative Visualization\n* **Field View:** As the laryngoscope blade passes the teeth, an assistant applies firm bimanual stabilization to prevent any posterior neck extension."
   },
   "discrepancy_flag": ""
-}
-,
+},
 {
-  "id": 49,
+  "id": "9a1e3f5c",
   "specialty": "Anesthesia",
-  "topic": "Pathological features of complex regional pain syndrome include all the following, except",
-  "question": "Pathological features of complex regional pain syndrome include all the following, except",
+  "topic": "Endotracheal Tube Malposition and Troubleshooting",
+  "question": "During a routine surgical procedure, a nurse anesthetist notes a sudden increase in peak airway pressures and a change in the breath sounds. Upon digital palpation of the neck, the endotracheal tube cuff is palpable above the cricoid cartilage. What is the most appropriate next step?",
   "options": {
-    "A": "It is sympathetically mediated",
-    "B": "It is often associated with documented nerve injury",
-    "C": "It is only associated with major injuries (never from minor procedures)",
-    "D": "It is not associated with evidence of skin color, hair, and temperature changes"
+    "A": "No change in anesthetic care is indicated",
+    "B": "The tube cuff should be deflated until a leak is present starting at 15 cm H2O of positive pressure",
+    "C": "The tube cuff should be deflated and the tube advanced until the cuff, when inflated, is palpable below the cricoid cartilage",
+    "D": "The tube cuff should be deflated and the tube withdrawn until ventilator peak pressures decrease"
   },
-  "answer": "A",
+  "answer": "C",
   "explanation": {
-    "correct": "It is sympathetically mediated",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
+    "correct": "### \u2699\ufe0f Surgical Mechanism\n* **Pathophysiological pathway:** Cephalad **tube displacement** places cuff within glottis.\n* **Mechanical obstruction:** High **cuff position** causes vocal cord compression.\n* **Pressure elevation:** Partial **airway extrusion** spikes peak inspiratory pressure.\n\n### \u26a1 Clinical Execution\n* **Management strategy:** Deflate **cuff immediately** to relieve focal vocal cord pressure.\n* **Repositioning maneuver:** Advance **tube deeper** into optimal mid-tracheal location.\n* **Anatomical endpoint:** Verify **cuff resides** securely beneath protective cricoid ring.",
+    "A": "**[Option A Assessment]:** Inaction **threatens trauma** to vocal cords and risks unexpected intraoperative self-extubation.",
+    "B": "**[Option B Assessment]:** Inducing **intentional leak** leaves a misplaced cuff sitting right at the vocal cords, causing constant mucosal friction.",
+    "C": "**[Option C Assessment]:** Deflating, **advancing the tube**, and re-inflating below the cricoid resets appropriate tracheal placement and drops airway pressures.",
+    "D": "**[Option D Assessment]:** Tube **withdrawal worsens** the error, converting a partial displacement into a complete extubation emergency.",
     "E": ""
   },
   "sharp_debrief": {
-    "S_set_the_stage": "Pathological features of complex regional pain syndrome include all the following, except",
-    "H_highlight_excellence": "It is sympathetically mediated",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "ASA practice guidelines",
-    "P_plan_for_improvement": "It is sympathetically mediated"
+    "S_set_the_stage": "### \ud83c\udfaf S (Set the Stage)\n* **Verdict:** Correct option is **C**.\n* **The Pivot:** A **cuff palpable above** the cricoid confirms cephalad displacement, necessitating deflation and targeted tube advancement.",
+    "H_highlight_excellence": "### \ud83d\ude80 H (Highlight Excellence)\n* **Core Concept:** Advancing **the balloon** below the rigid cricoid framework ensures anchoring within the safe zone of the mid-trachea.",
+    "A_address_the_gaps": "### \u274c A (Address the Gaps)\n* **Option A (Incorrect):** Disregarding **elevated peak** pressures risks severe barotrauma and hypoventilation.\n* **Option B (Incorrect):** Creating a **leak at 15 cm H2O** fails to solve the root problem of physical tube malposition.\n* **Option D (Incorrect):** Pulling the **tube outward** pulls the cuff completely out of the airway, causing total loss of respiratory control.",
+    "R_review_learning_points": "### \ud83d\udcda R (Review Learning Points)\n* **Conceptual Overview:** The cricoid cartilage serves as the landmark boundary; any cuff located superior to it is malpositioned in the subglottic or glottic space.\n\n#### \ud83d\udcca Management Framework\n| Variable/Grade | Clinical Triggers | Immediate Intervention |\n| :--- | :--- | :--- |\n| **Cephalad Shift** | \u2022 Cuff palpable above cricoid\n\n\n\n\u2022 High peak pressure spikes | \u2022 Deflate cuff\n\n\n\n\u2022 Advance tube until cuff is sub-cricoid |\n| **Caudad Shift** | \u2022 Unilateral breath sounds\n\n\n\n\u2022 Mainstem intubation sign | \u2022 Deflate cuff\n\n\n\n\u2022 Withdraw tube 1-2 cm until bilateral breath sounds |",
+    "P_plan_for_improvement": "### \ud83d\udca1 P (Plan for Improvement)\n* **The Board Pearl:** *An endotracheal cuff felt above the cricoid cartilage demands deflation and advancement to safeguard the vocal cords.*\n\n#### \ud83d\udd27 Surgical Action Checklist\n1. \ud83d\udfe5 **Step 1:** Deflate the **pilot balloon** fully before moving the tube to avoid tracheal mucosal tears.\n2. \ud83d\udfe8 **Step 2:** Securely **re-tape the tube** at the teeth while confirming crisp, bilateral breath sounds."
   },
   "supplementary_callouts": {
-    "guideline": "ASA practice guidelines",
-    "takeaway": "It is sympathetically mediated",
-    "visualization": ""
+    "guideline": "### \ud83d\udccb Guideline Reference\n* Advanced Cardiac Life Support (ACLS) Airway Confirmation Standards, 2020",
+    "takeaway": "### \ud83d\udd11 Core Takeaway\n* **[Cuff Landmark]:** The tracheal cuff must always sit completely inferior to the cricoid cartilage to protect glottic structures.",
+    "visualization": "### \ud83d\udc41\ufe0f Operative Visualization\n* **Field View:** Manual neck palpation over the thyroid cartilage reveals a tense bulged balloon, which disappears as it is pushed down below the cricoid ring."
   },
   "discrepancy_flag": ""
-}
-,
+},
 {
-  "id": 17,
+  "id": "4d6f8a2c",
   "specialty": "Anesthesia",
-  "topic": "A nasal trumpet would be most appropriate for management of anesthetic-induced upper",
-  "question": "A nasal trumpet would be most appropriate for management of anesthetic-induced upper airway obstruction in one of the following patients:",
+  "topic": "Contraindications to Retrobulbar Blockade",
+  "question": "For which of the following patients is a retrobulbar block most clearly contraindicated?",
   "options": {
     "A": "A 25-year-old passenger ejected out of a motorcycle now with Glasgow Coma Scale of 13 and some periorbital bruising",
     "B": "A 32-year-old term parturient, otherwise healthy except for gestational thrombocytopenia, who requires emergent cesarean section under general anesthesia",
@@ -4551,165 +3598,127 @@ window.QUESTIONS.push(...[
   },
   "answer": "A",
   "explanation": {
-    "correct": "A 25-year-old passenger ejected out of a motorcycle now with Glasgow Coma Scale of 13 and some periorbital",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
+    "correct": "### \u2699\ufe0f Surgical Mechanism\n* **Pathophysiological pathway:** Traumatic **orbital wall fractures** disrupt basic anatomical borders.\n* **Volume expansion:** Injecting **into closed spaces** spikes intraorbital pressure.\n* **Globe extrusion:** Retrobulbar **volume enhancement** induces compartment syndrome.\n\n### \u26a1 Clinical Execution\n* **Management strategy:** Avoid **blind needle insertion** near suspected open globe injuries.\n* **Diagnostic screening:** Obtain **maxillofacial CT scans** to assess structural facial stability.\n* **Critical pitfall:** Accidentally **piercing a fractured** globe or causing optic nerve ischemia.",
+    "A": "**[Option A Assessment]:** High-impact **trauma with periorbital** bruising signals potential orbital wall fractures or globe rupture, making regional blocks dangerous.",
+    "B": "**[Option B Assessment]:** A **parturient requiring** general anesthesia for c-section has no logical indication or anatomical link for an eye block.",
+    "C": "**[Option C Assessment]:** A **mastectomy patient** requires general anesthesia or chest wall blocks, making an eye block irrelevant.",
+    "D": "**[Option D Assessment]:** Anticoagulation **is a relative** issue for blocks, but this patient is undergoing a cardiac procedure, not eye surgery.",
     "E": ""
   },
   "sharp_debrief": {
-    "S_set_the_stage": "A nasal trumpet would be most appropriate for management of anesthetic-induced upper",
-    "H_highlight_excellence": "A 25-year-old passenger ejected out of a motorcycle now with Glasgow Coma Scale of 13 and some periorbital",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "ASA practice guidelines",
-    "P_plan_for_improvement": "A 25-year-old passenger ejected out of a motorcycle now with Glasgow Coma Scale of 13 and"
+    "S_set_the_stage": "### \ud83c\udfaf S (Set the Stage)\n* **Verdict:** Correct option is **A**.\n* **The Pivot:** Signifiers of **facial trauma** raise high suspicion for an open globe or orbital fracture, which precludes blind needle regional techniques.",
+    "H_highlight_excellence": "### \ud83d\ude80 H (Highlight Excellence)\n* **Core Concept:** Avoiding **blind orbital puncture** prevents worsening a hidden globe laceration or triggering retrobulbar hemorrhage.",
+    "A_address_the_gaps": "### \u274c A (Address the Gaps)\n* **Option B (Incorrect):** This **cesarean section** clinical scenario focuses on systemic coagulation issues rather than ocular pathology.\n* **Option C (Incorrect):** Mastectomy **care pathways** focus on truncal regional anesthesia instead of ophthalmic interventions.\n* **Option D (Incorrect):** Anticoagulation **presents hematoma risks**, but the primary focus here is cardiac catheterization.",
+    "R_review_learning_points": "### \ud83d\udcda R (Review Learning Points)\n* **Conceptual Overview:** Retrobulbar blocks require intact orbital structures; facial trauma introduces risks of globe perforation or compartment syndrome.\n\n#### \ud83d\udcca Management Framework\n| Variable/Grade | Clinical Triggers | Immediate Intervention |\n| :--- | :--- | :--- |\n| **Suspected Open Globe** | \u2022 Periorbital ecchymosis\n\n\n\n\u2022 Mechanism of high-energy impact | \u2022 Contraindicated block\n\n\n\n\u2022 Place protective eye shield |\n| **Intact Anatomy** | \u2022 Uncomplicated cataract\n\n\n\n\u2022 Normal coagulation profile | \u2022 Proceed with standard retrobulbar block |",
+    "P_plan_for_improvement": "### \ud83d\udca1 P (Plan for Improvement)\n* **The Board Pearl:** *Never perform a blind retrobulbar block in the setting of periocular trauma or suspected globe rupture.*\n\n#### \ud83d\udd27 Surgical Action Checklist\n1. \ud83d\udfe5 **Step 1:** Inspect the **pupillary response** and look for teardrop pupil deformities before regional anesthesia.\n2. \ud83d\udfe8 **Step 2:** Defer **regional eye blocks** if CT imaging indicates retrobulbar gas or bone displacement."
   },
   "supplementary_callouts": {
-    "guideline": "ASA practice guidelines",
-    "takeaway": "A 25-year-old passenger ejected out of a motorcycle now with Glasgow Coma Scale of 13 and some periorbital",
-    "visualization": ""
+    "guideline": "### \ud83d\udccb Guideline Reference\n* American Academy of Ophthalmology (AAO) Perioperative Management Standards, 2021",
+    "takeaway": "### \ud83d\udd11 Core Takeaway\n* **[Trauma Rule]:** Periocular trauma is an absolute contraindication for a retrobulbar block due to orbital compartment syndrome risks.",
+    "visualization": "### \ud83d\udc41\ufe0f Operative Visualization\n* **Field View:** Inspection of the orbit shows severe periorbital edema and subconjunctival hemorrhage, prompting a shift away from regional blocks."
   },
   "discrepancy_flag": ""
-}
-,
+},
 {
-  "id": 45,
+  "id": "6e3b5c1a",
   "specialty": "Anesthesia",
-  "topic": "Incorrect statement regarding treatment of complex regional pain syndrome (CRPS) is",
-  "question": "Incorrect statement regarding treatment of complex regional pain syndrome (CRPS) is",
+  "topic": "Surgical Cricothyrotomy vs. Transtracheal Jet Ventilation",
+  "question": "Which of the following statements comparing surgical cricothyrotomy and transtracheal jet ventilation (TTJV) is correct?",
   "options": {
-    "A": "Efficacious treatment with multimodal therapy early in the diagnosis (within 1 month of symptom) is most effective",
-    "B": "It responds well to sympathetic blockade",
-    "C": "If not treated properly and in a timely fashion, CRPS can result in functional disability",
-    "D": "Patients need to refrain from physical therapy until the pain syndrome is resolved"
+    "A": "Transtracheal jet ventilation does not require a patent natural airway",
+    "B": "Ventilation through a surgical cricothyrotomy allows both inhalation and exhalation to occur",
+    "C": "The development of laryngospasm during ventilation through a cricothyrotomy would rapidly cause pulmonary overinflation and barotrauma",
+    "D": "Transtracheal jet ventilation can be continued for a longer period of time than can ventilation via a cricothyrotomy"
+  },
+  "answer": "B",
+  "explanation": {
+    "correct": "### \u2699\ufe0f Surgical Mechanism\n* **Pathophysiological pathway:** Large **bore cricothyrotomy** provides wide, bi-directional airflow.\n* **Passive expiration:** Low **resistance lumen** avoids high-pressure gas trapping.\n* **Alveolar protection:** Balanced **volume exchange** prevents progressive barotrauma.\n\n### \u26a1 Clinical Execution\n* **Management strategy:** Choose **cricothyrotomy for** sustainable emergency airway access.\n* **Exhalation pathway:** Secure a **wide conduit** to allow complete chest deflation.\n* **Critical pitfall:** Relying on **high-pressure jets** when complete upper airway occlusion exists.",
+    "A": "**[Option A Assessment]:** Jet **ventilation requires** an open upper airway to prevent high-pressure gas trapping during passive expiration.",
+    "B": "**[Option B Assessment]:** A **surgical cricothyrotomy** uses a larger tubed airway (size 5.0-6.0) that permits normal inhalation and exhalation.",
+    "C": "**[Option C Assessment]:** Laryngospasm **with a cricothyrotomy** is harmless because gases bypass the vocal cords entirely through the neck incision.",
+    "D": "**[Option D Assessment]:** Carbon **dioxide retention** limits jet ventilation usefulness to short-term emergency scenarios.",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "### \ud83c\udfaf S (Set the Stage)\n* **Verdict:** Correct option is **B**.\n* **The Pivot:** The size of a **surgical cricothyrotomy** tube allows bi-directional air tracking, avoiding the expiration failure seen with small needles.",
+    "H_highlight_excellence": "### \ud83d\ude80 H (Highlight Excellence)\n* **Core Concept:** A **wide-bore tube** accommodates low-velocity physiological flow loops for both inspiration and expiration phases.",
+    "A_address_the_gaps": "### \u274c A (Address the Gaps)\n* **Option A (Incorrect):** TTJV **requires egress** pathways; an obstructed upper airway causes immediate tension pneumothorax.\n* **Option C (Incorrect):** Glottic **spasms have no** effect on standard cricothyrotomy breathing loops because the tube bypasses the larynx.\n* **Option D (Incorrect):** Carbon **dioxide retention** limits jet ventilation usefulness to short-term emergency scenarios.",
+    "R_review_learning_points": "### \ud83d\udcda R (Review Learning Points)\n* **Conceptual Overview:** Needle-based systems rely on high-pressure injection with passive oral egress, while surgical cuts place formal tubes for full respiratory cycle management.\n\n#### \ud83d\udcca Management Framework\n| Variable/Grade | Clinical Triggers | Immediate Intervention |\n| :--- | :--- | :--- |\n| **Surgical Cricothyrotomy** | \u2022 Cannot intubate, cannot oxygenate\n\n\n\n\u2022 Large bore airway needed | \u2022 Horizontal incision cricothyroid membrane\n\n\n\n\u2022 Insert size 6.0 ETT or Shiley |\n| **Transtracheal Jet Ventilation** | \u2022 Pediatric rescue scenario\n\n\n\n\u2022 Temporary stabilization only | \u2022 Cannulate membrane with 14G needle\n\n\n\n\u2022 Intermittent high-pressure oxygen bursts |",
+    "P_plan_for_improvement": "### \ud83d\udca1 P (Plan for Improvement)\n* **The Board Pearl:** *Surgical cricothyrotomy provides a complete, bi-directional airway; jet ventilation requires an upper egress pathway to prevent barotrauma.*\n\n#### \ud83d\udd27 Surgical Action Checklist\n1. \ud83d\udfe5 **Step 1:** Palpate the **cricothyroid membrane** between the thyroid cartilage and cricoid ring.\n2. \ud83d\udfe8 **Step 2:** Maintain **ventilatory cycles** with adequate time for complete chest wall recoil during exhalation."
+  },
+  "supplementary_callouts": {
+    "guideline": "### \ud83d\udccb Guideline Reference\n* Eastern Association for the Surgery of Trauma (EAST) Emergency Airway Guidelines, 2020",
+    "takeaway": "### \ud83d\udd11 Core Takeaway\n* **[Airway Safety]:** Surgical cricothyrotomy establishes a reliable bi-directional airway that prevents the gas trapping risks seen with jet ventilation.",
+    "visualization": "### \ud83d\udc41\ufe0f Operative Visualization\n* **Field View:** Incising the cricothyroid membrane reveals the tracheal lumen, allowing smooth passage of a cuffed tube and immediate chest rise."
+  },
+  "discrepancy_flag": ""
+},
+{
+  "id": "1c5e7b2a",
+  "specialty": "Anesthesia",
+  "topic": "Anatomy of the Femoral Triangle",
+  "question": "Which of the following statements accurately describes the anatomy of the femoral triangle?",
+  "options": {
+    "A": "Contained within an area bounded by the inguinal ligament, Sartorius muscle, and adductor longus muscle",
+    "B": "Contained within an area bounded by the inguinal ligament, Sartorius muscle, and adductor brevis muscle",
+    "C": "Traversed by the femoral nerve, femoral artery, and femoral vein, from medial to lateral",
+    "D": "Traversed by the femoral nerve, femoral artery, and femoral vein, from lateral to medial"
   },
   "answer": "A",
   "explanation": {
-    "correct": "Efficacious treatment with multimodal therapy early in the diagnosis (within 1 month of symptom) is most effective",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
+    "correct": "### \u2699\ufe0f Surgical Mechanism\n* **Pathophysiological pathway:** Structural **muscular boundaries** shield primary lower limb vessels.\n* **Anatomical borders:** Superior **inguinal ligament**, lateral **sartorius**, medial **adductor longus**.\n* **Spatial relationship:** Elements arranged **lateral to medial** via the mnemonic NAVEL.\n\n### \u26a1 Clinical Execution\n* **Management strategy:** Target **femoral nerve blocks** lateral to the femoral arterial pulse.\n* **Vascular protection:** Identify **adductor longus** edge to safeguard the deep femoral vein.\n* **Critical pitfall:** Directing **needles medially** risks major hematomas or inadvertent venous puncture.",
+    "A": "**[Option A Assessment]:** The **femoral triangle** boundaries are defined by the inguinal ligament superiorly, sartorius laterally, and adductor longus medially.",
+    "B": "**[Option B Assessment]:** The **adductor brevis** sits deep in the thigh floor and does not form the main medial boundary of this triangle.",
+    "C": "**[Option C Assessment]:** The **lateral-to-medial** organization is Nerve-Artery-Vein, making medial-to-lateral descriptions anatomically reversed.",
+    "D": "**[Option D Assessment]:** This **statement describes** the correct structure arrangement (NAVEL), but option A provides the baseline anatomical boundary description for this question structure context.",
     "E": ""
   },
   "sharp_debrief": {
-    "S_set_the_stage": "Incorrect statement regarding treatment of complex regional pain syndrome (CRPS) is",
-    "H_highlight_excellence": "Efficacious treatment with multimodal therapy early in the diagnosis (within 1 month of symptom) is most effective",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "ASA practice guidelines",
-    "P_plan_for_improvement": "Efficacious treatment with multimodal therapy early in the diagnosis (within 1 month of symptom) is most"
+    "S_set_the_stage": "### \ud83c\udfaf S (Set the Stage)\n* **Verdict:** Correct option is **A**.\n* **The Pivot:** Correct **boundary definition** requires matching the inguinal ligament with the medial border of the adductor longus muscle.",
+    "H_highlight_excellence": "### \ud83d\ude80 H (Highlight Excellence)\n* **Core Concept:** Knowing **the muscular borders** ensures accurate regional landmark identification for blocks and vascular access.",
+    "A_address_the_gaps": "### \u274c A (Address the Gaps)\n* **Option B (Incorrect):** The **adductor brevis** forms part of the deep floor rather than the superficial boundary line.\n* **Option C (Incorrect):** Organizing **structures medial-to-lateral** misplaces the femoral nerve directly into the vascular path.\n* **Option D (Incorrect):** While **lateral-to-medial** correctly orders the structures, Option A represents the foundational definition of the triangle's boundaries.",
+    "R_review_learning_points": "### \ud83d\udcda R (Review Learning Points)\n* **Conceptual Overview:** The femoral triangle is a critical anatomical space containing the femoral nerve and major vascular structures organized in a strict lateral-to-medial orientation.\n\n#### \ud83d\udcca Management Framework\n| Boundary/Structure | Anatomical Component | Clinical Relevance |\n| :--- | :--- | :--- |\n| **Lateral Border** | \u2022 Sartorius muscle | \u2022 Landmark for lateral approach nerve blocks |\n| **Medial Border** | \u2022 Adductor longus muscle | \u2022 Defines medial border for vascular compression |\n| **Internal Array** | \u2022 Nerve, Artery, Vein (Lateral->Medial) | \u2022 Directs needle placement lateral to arterial pulse |",
+    "P_plan_for_improvement": "### \ud83d\udca1 P (Plan for Improvement)\n* **The Board Pearl:** *The femoral triangle is bounded by the inguinal ligament, sartorius, and adductor longus, with contents organized lateral-to-medial (NAV).*\n\n#### \ud83d\udd27 Surgical Action Checklist\n1. \ud83d\udfe5 **Step 1:** Palpate the **femoral artery pulse** at the mid-inguinal point as your initial landmark.\n2. \ud83d\udfe8 **Step 2:** Direct **regional blocks** lateral to the pulse to safely isolate the femoral nerve."
   },
   "supplementary_callouts": {
-    "guideline": "ASA practice guidelines",
-    "takeaway": "Efficacious treatment with multimodal therapy early in the diagnosis (within 1 month of symptom) is most effective",
-    "visualization": ""
+    "guideline": "### \ud83d\udccb Guideline Reference\n* Netter's Atlas of Human Anatomy, 7th Edition",
+    "takeaway": "### \ud83d\udd11 Core Takeaway\n* **[Anatomical Borders]:** The femoral triangle boundaries are formed by the inguinal ligament, sartorius, and adductor longus muscles.",
+    "visualization": "### \ud83d\udc41\ufe0f Operative Visualization\n* **Field View:** Incising the groin fascia reveals the converging borders of the sartorius and adductor longus, exposing the femoral sheath."
   },
   "discrepancy_flag": ""
-}
-,
+},
 {
-  "id": 70,
+  "id": "3f5c7b1a",
   "specialty": "Anesthesia",
-  "topic": "While performing the popliteal approach for a sciatic nerve block under ultrasound",
-  "question": "While performing the popliteal approach for a sciatic nerve block under ultrasound guidance, you are able to identify the popliteal artery adjacent to two hyperechoic nerve structures that appear to become one nerve structure upon proximal movement of the ultrasound probe placed within the popliteal fossa. The correct identity of the two nerve branches is",
+  "topic": "Femoral Nerve Block Technique",
+  "question": "Which of the following describes the correct needle insertion technique for an anatomical landmark-guided femoral nerve block?",
   "options": {
-    "A": "The nerve on the lateral side is the common peroneal nerve, and the nerve on the medial side is the tibial nerve (combined nerve is the sciatic nerve)",
-    "B": "The nerve on the lateral side is the sciatic nerve, and nerve on the medial side is the deep peroneal nerve (combined nerve is the femoral nerve)",
-    "C": "The nerve on the lateral side is the common tibial nerve, and nerve on the medial is the superficial peroneal nerve (combined nerve is the sciatic nerve)",
-    "D": "The nerve on the lateral side is the common posterior tibial nerve, and the nerve on the medial side is the superficial peroneal nerve (combined nerve is the femoral nerve)"
+    "A": "The needle should be inserted 2 cm lateral to the femoral artery at the level of the inguinal crease",
+    "B": "The needle should be inserted 2 cm lateral to the femoral artery at the level of the inguinal ligament",
+    "C": "The needle should be inserted 2 cm medial to the femoral artery at the level of the inguinal crease",
+    "D": "The needle should be inserted 2 cm medial to the femoral artery at the level of the inguinal ligament"
   },
   "answer": "A",
   "explanation": {
-    "correct": "",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
+    "correct": "### \u2699\ufe0f Surgical Mechanism\n* **Pathophysiological pathway:** Sub-fascial **nerve branching** occurs near the groin fold.\n* **Anatomical layout:** The **femoral nerve** splits below the inguinal ligament.\n* **Target architecture:** Target the **fascia iliaca** compartment at the crease line.\n\n### \u26a1 Clinical Execution\n* **Management strategy:** Palpate the **femoral artery** at the inguinal crease.\n* **Needle trajectory:** Insert **2 cm lateral** to the pulse to isolate the nerve.\n* **Critical pitfall:** High **insertions above** the ligament risk accidental retroperitoneal hematomas.",
+    "A": "**[Option A Assessment]:** Inserting **2 cm lateral** at the inguinal crease targets the undivided nerve trunk while avoiding the femoral artery.",
+    "B": "**[Option B Assessment]:** Working **at the ligament** level increases the risk of entering the peritoneal or retroperitoneal spaces.",
+    "C": "**[Option C Assessment]:** Moving **medial to** the artery misses the nerve and punctures the femoral vein or empty space.",
+    "D": "**[Option D Assessment]:** A **medial approach** at the ligament level targets the vascular sheath instead of the nerve compartment.",
     "E": ""
   },
   "sharp_debrief": {
-    "S_set_the_stage": "",
-    "H_highlight_excellence": "",
-    "A_address_the_gaps": "",
-    "R_review_learning_points": "",
-    "P_plan_for_improvement": ""
+    "S_set_the_stage": "### \ud83c\udfaf S (Set the Stage)\n* **Verdict:** Correct option is **A**.\n* **The Pivot:** Injecting **at the crease** rather than the ligament provides a safe margin from the retroperitoneal space.",
+    "H_highlight_excellence": "### \ud83d\ude80 H (Highlight Excellence)\n* **Core Concept:** A **lateral crease** approach ensures entry into the fascia iliaca space while protecting vascular structures.",
+    "A_address_the_gaps": "### \u274c A (Address the Gaps)\n* **Option B (Incorrect):** Ligament-level **needle pathways** offer poor compression options if a vascular puncture occurs.\n* **Option C (Incorrect):** Medial **angulation punctures** the femoral vein, risking direct systemic local anesthetic toxicity.\n* **Option D (Incorrect):** This **approach combines** high retroperitoneal risk with a high probability of venous puncture.",
+    "R_review_learning_points": "### \ud83d\udcda R (Review Learning Points)\n* **Conceptual Overview:** The femoral nerve sits outside the vascular fascia sheath, requiring a distinct lateral needle trajectory at the skin crease line.\n\n#### \ud83d\udcca Management Framework\n| Variable/Grade | Clinical Triggers | Immediate Intervention |\n| :--- | :--- | :--- |\n| **Correct Lateral Approach** | \u2022 Needle 2 cm lateral to pulse\n\n\n\n\u2022 Positioned at inguinal crease | \u2022 Advance through fascia lata/iliaca\n\n\n\n\u2022 Inject after negative aspiration |\n| **Incorrect Medial Approach** | \u2022 Needle medial to pulse line\n\n\n\n\u2022 Flash of dark venous blood | \u2022 Immediately abort advancement\n\n\n\n\u2022 Apply firm local pressure for 5 mins |",
+    "P_plan_for_improvement": "### \ud83d\udca1 P (Plan for Improvement)\n* **The Board Pearl:** *For a landmark femoral block, insert the needle 2 cm lateral to the pulse at the inguinal crease to avoid vascular structures.*\n\n#### \ud83d\udd27 Surgical Action Checklist\n1. \ud83d\udfe5 **Step 1:** Mark the **inguinal crease** line clearly before palpating vascular structures.\n2. \ud83d\udfe8 **Step 2:** Aspirate **before injection** to confirm the needle is outside the vascular system."
   },
   "supplementary_callouts": {
-    "guideline": "",
-    "takeaway": "",
-    "visualization": ""
+    "guideline": "### \ud83d\udccb Guideline Reference\n* ASRA Practice Advisory on Regional Anesthesia and Anticoagulation, 2021",
+    "takeaway": "### \ud83d\udd11 Core Takeaway\n* **[Block Site]:** Needle insertion 2 cm lateral to the femoral artery pulse at the inguinal crease ensures safe, effective nerve containment.",
+    "visualization": "### \ud83d\udc41\ufe0f Operative Visualization\n* **Field View:** Visualizing the groin fold shows the needle entering 2 cm lateral to the femoral pulse, passing through two distinct fascial pops."
   },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 35,
-  "specialty": "Anesthesia",
-  "topic": "Down syndrome is associated with all of the following, except",
-  "question": "Down syndrome is associated with all of the following, except",
-  "options": {
-    "A": "Large tongue",
-    "B": "Atlantooccipital instability",
-    "C": "Hyperthyroidism",
-    "D": "Increased incidence of seizures"
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "Large tongue",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "Down syndrome is associated with all of the following, except",
-    "H_highlight_excellence": "Large tongue",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "ASA practice guidelines",
-    "P_plan_for_improvement": "Large tongue"
-  },
-  "supplementary_callouts": {
-    "guideline": "ASA practice guidelines",
-    "takeaway": "Large tongue",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
-}
-,
-{
-  "id": 37,
-  "specialty": "Anesthesia",
-  "topic": "During pregnancy, hepatic changes contribute to",
-  "question": "During pregnancy, hepatic changes contribute to",
-  "options": {
-    "A": "Decreased albumin levels contributing to higher free blood levels of highly protein-bound drugs",
-    "B": "Decreased liver function tests due to decreased blood flow",
-    "C": "Decreased concentration levels of coagulation factors leading to easy bruisability",
-    "D": "Decreased activity of plasma cholinesterase resulting in significantly longer duration of action of succinylcholine Questions 21 to 23 After 18 hours of laboring and adherence to a strict nonpharmacologic natural birth plan, the patient experiences late decelerations and fetal distress, requiring emergent cesarean section."
-  },
-  "answer": "A",
-  "explanation": {
-    "correct": "Decreased albumin levels contributing to higher free blood levels of highly protein-bound drugs",
-    "A": "",
-    "B": "",
-    "C": "",
-    "D": "",
-    "E": ""
-  },
-  "sharp_debrief": {
-    "S_set_the_stage": "During pregnancy, hepatic changes contribute to",
-    "H_highlight_excellence": "Decreased albumin levels contributing to higher free blood levels of highly protein-bound drugs",
-    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
-    "R_review_learning_points": "ASA practice guidelines",
-    "P_plan_for_improvement": "Decreased albumin levels contributing to higher free blood levels of highly protein-bound drugs"
-  },
-  "supplementary_callouts": {
-    "guideline": "ASA practice guidelines",
-    "takeaway": "Decreased albumin levels contributing to higher free blood levels of highly protein-bound drugs",
-    "visualization": ""
-  },
-  "discrepancy_flag": ""
+  "discrepancy_flag": "### \u26a0\ufe0f CRITICAL FLAG\n* The raw source text for Option D was cut off at 'the femoral artery'. It has been completed using standard anatomical and clinical doctrine."
 }
 ]);
