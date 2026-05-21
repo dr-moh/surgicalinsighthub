@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "🚀 Initializing SHARP 2.0 MCQ Enrichment Pipeline Environment..."
+echo "🚀 Initializing SHARP 3.0 MCQ Enrichment Pipeline Environment..."
 
 # 1. Create a virtual environment if it doesn't exist
 if [ ! -d "venv" ]; then

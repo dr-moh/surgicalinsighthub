@@ -1,14 +1,20 @@
 import json
+print("Imports loaded: json")
 import os
+print("Imports loaded: os")
 import time
 import re
 import random
 import threading
+print("Imports loaded: threading")
 from concurrent.futures import ThreadPoolExecutor, as_completed
+print("Imports loaded: concurrent")
 
+print("Initializing GenAI client...")
 try:
     from google import genai
     from google.genai import types
+    print("GenAI imported")
     vertex_client = genai.Client(vertexai=True, project="sih-mcq-pipeline", location="us-central1")
     print("✅ Successfully connected to Google Cloud Vertex AI!")
 except Exception as e:
@@ -136,32 +142,72 @@ def get_sharp_debrief(question_obj):
     import urllib.error
 
     prompt = f"""
-        Return valid JSON only. No markdown formatting around the JSON (e.g. do not wrap in ```json). No conversational preamble or postscript.
-        If the question is invalid, return exactly {{"status": "REJECT"}}.
-    
-    Q: {question_obj.get('question', '')}
-    Options: {json.dumps(question_obj.get('options', {}))}
-    Provided Answer Key: {question_obj.get('answer', '')}
-    
-    You must construct the pedagogical response using the strict SHARP 3.0 Cognitive & Surgical Debrief framework.
-    Return a single JSON object matching this schema:
+You are a world-class surgical educator and medical board examiner. Your task is to process the following medical MCQ and format it strictly into the SHARP 3.0 Cognitive & Surgical Debriefing Schema.
+
+OUTPUT FORMAT:
+Return ONLY a valid JSON object with the key "questions". No markdown wrappers, no conversational text, no trailing explanations.
+
+SCHEMA FOR THE OUTPUT JSON:
+{{
+  "questions": [
     {{
-      "status": "ACCEPT",
-      "verified_answer": "{question_obj.get('answer', 'A')}",
-      "set_the_stage": "**Verdict:** Correct: [Correct Option Letter]. [Direct, active-voice confirmation of the correct clinical/operative choice].\\n**The Pivot:** [1-2 high-yield sentences identifying the exact clinical crux, timeline milestone, anatomical boundary, or physiological tipping point that eliminates all diagnostic ambiguity].",
-      "highlight_excellence": "**Surgical Mechanism:** [Deep dive into underlying surgical anatomy, tissue planes, structural relationships, or pathophysiology. High-density operative/clinical details].\\n**Clinical Execution:** [Nuanced clinical decision-making. Why immediate action or specific management is chosen. Focus on patient safety, staging, and critical pitfalls].",
-      "address_gaps": "**Distractor Breakdown:**\\n*Option A (Incorrect):* [Detailed surgical/clinical reasoning why Option A is incorrect in this scenario, what scenario it would be correct for, or its specific pitfall].\\n*Option B (Incorrect):* [Detailed reasoning for B].\\n*Option C (Incorrect):* [Detailed reasoning for C].\\n*Option D (Incorrect):* [Detailed reasoning for D].\\n*(Exclude the correct option from the breakdown list)*",
-      "explanation_A": "[Surgical/clinical reasoning why Option A is correct/incorrect, concise and board-focused]",
-      "explanation_B": "[Surgical/clinical reasoning why Option B is correct/incorrect, concise and board-focused]",
-      "explanation_C": "[Surgical/clinical reasoning why Option C is correct/incorrect, concise and board-focused]",
-      "explanation_D": "[Surgical/clinical reasoning why Option D is correct/incorrect, concise and board-focused]",
-      "review_learning_points": "**Conceptual Overview:** [1-2 summary sentences linking anatomy/physiology to clinical pathology].\\n**Management Framework (High-Yield Matrix):**\\n\\n[A beautiful, highly structured Markdown comparison matrix/table summarizing diagnostic criteria, staging, anatomy, or management protocols relevant to this topic].",
-      "plan": "**The Board Pearl:** *[Key high-yield takeaway in italics wrapped in single asterisks]*\\n**Surgical Action:**\\n1. [Actionable surgical/clinical checklist step 1]\\n2. [Actionable surgical/clinical checklist step 2]",
-      "guideline": "[Exact reference to major surgical guideline, e.g., 'SAGES Guidelines for laparoscopic cholecystectomy, 2022' or 'ATLS 10th Edition']",
-      "takeaway": "[Concise one-sentence board-style takeaway]",
-      "visualization": "[Operative description of what the surgeon sees or does first upon entering the surgical field/anatomy]",
-      "discrepancy_flag": ""
+      "specialty": "Primary medical/surgical specialty",
+      "topic": "Core anatomical or disease system",
+  "sub_topic": "Specific pathology or operation",
+  "question": "The clinical stem or technical question. High-yield, board-style. Strip out all leaked answers, tracking indicators, or source index markers completely.",
+  "options": [
+    "A) Option 1",
+    "B) Option 2",
+    "C) Option 3",
+    "D) Option 4"
+  ],
+  "correct_answer": "The full text of the correct option (e.g., 'A) Option 1')",
+  "sharp_3_debrief": {{
+    "S_set_the_stage": {{
+      "verdict": "Correct: [Letter]. [Direct answer confirmation].",
+      "pivot": "[1-2 punchy sentences identifying the exact clinical crux, timeline milestone, anatomical boundary, or physiological tipping point that eliminates all diagnostic ambiguity]."
+    }},
+    "H_highlight_excellence": {{
+      "surgical_mechanism": "[Deep dive into underlying surgical anatomy, tissue planes, structural relationships, or pathophysiology. Use precise, expert-level terminology].",
+      "clinical_execution": "[Explain why this specific mechanism dictates the selected surgical maneuver, medical management, or diagnostic path forward for an operating surgeon]."
+    }},
+    "A_address_the_gaps": {{
+      "distractor_breakdown": [
+        {{
+          "option": "Wrong Option Letter (e.g., A)",
+          "reason": "[Specific anatomical, physiological, or clinical reason this option fails. State exactly how the stem would need to change for this option to become the correct choice]."
+        }}
+      ]
+    }},
+    "R_review_learning_points": {{
+      "conceptual_overview": "[Macro-level clinical summary of the overarching disease process, anatomical system, or surgical principles involved].",
+      "matrix_headers": ["Classification/System/Criteria", "Key Diagnostic/Imaging Finding", "Immediate Surgical/Clinical Pivot", "Core Guideline/Surgical Society Consensus"],
+      "matrix_rows": [
+        ["Type/Stage/Grade A", "Pathognomonic clue or threshold", "First-line maneuver or intervention", "e.g., SAGES, ASCRS, ATLS, ASA, Tokyo"],
+        ["Type/Stage/Grade B", "Pathognomonic clue or threshold", "First-line maneuver or intervention", "e.g., SAGES, ASCRS, ATLS, ASA, Tokyo"]
+      ]
+    }},
+    "P_plan_for_improvement": {{
+      "board_pearl": "[A single, high-density, conditional 'if/then' rule or unforgettable mental heuristic optimized for rapid recall under exam pressure]."
     }}
+  }},
+  "supplementary_callouts": {{
+    "society_guideline": "[The primary, most current society guideline or consensus statement referenced].",
+    "key_takeaway": "[A one-sentence, razor-sharp summary of the core clinical fact tested by this item].",
+    "visualization": "[Describe exactly what the surgeon must 'see' on cross-sectional imaging, endoscopic evaluation, or when dissecting the tissue plane in the OR to visually confirm this answer]."
+  }}
+  ]
+}}
+
+QUALITY CONTROLS:
+- Vary sentence structures aggressively: mix ultra-short diagnostic fragments with dense anatomical explanations.
+- Eliminate corporate/AI filler (e.g., 'It is crucial to note', 'In conclusion', 'foster', 'delve'). Go straight to the anatomy and tissue planes.
+- If source text contains insufficient data for the classification matrix rows, output a generalized breakdown based on standard surgical knowledge rather than leaving it blank.
+
+Provided MCQ Text:
+Q: {question_obj.get('question', '')}
+Options: {json.dumps(question_obj.get('options', dict()))}
+Answer Key: {question_obj.get('answer', '')}
     """
     
     headers = {
@@ -202,13 +248,15 @@ def get_sharp_debrief(question_obj):
             match = re.search(r'\{.*\}', content, re.DOTALL)
             if match:
                 try:
-                    res = normalize_sharp_payload(json.loads(match.group(0)))
-                    if res and res.get('status') == 'ACCEPT':
-                        return res
+                    res = json.loads(match.group(0))
+                    if res.get('status') == 'REJECT':
+                        return {'status': 'REJECT'}
+                    if 'questions' in res and len(res['questions']) > 0:
+                        q_data = res['questions'][0]
+                        q_data['status'] = 'ACCEPT'
+                        return q_data
                 except Exception:
-                    recovered = recover_partial_sharp_payload(content)
-                    if recovered:
-                        return recovered
+                    pass
         except Exception as e:
             print(f"     [Vertex API Skip]: {e} (Falling back to Local...)")
 
@@ -224,13 +272,13 @@ def get_sharp_debrief(question_obj):
             match = re.search(r'\{.*\}', content, re.DOTALL)
             if match:
                 try:
-                    res = normalize_sharp_payload(json.loads(match.group(0)))
-                    if res and res.get('status') == 'ACCEPT':
-                        return res
+                    res = json.loads(match.group(0))
+                    if 'questions' in res and len(res['questions']) > 0:
+                        q_data = res['questions'][0]
+                        q_data['status'] = 'ACCEPT'
+                        return q_data
                 except Exception:
-                    recovered = recover_partial_sharp_payload(content)
-                    if recovered:
-                        return recovered
+                    pass
     except Exception as e:
         print(f"     [Local API Skip]: {e} (Falling back to OpenRouter...)")
 
@@ -246,11 +294,13 @@ def get_sharp_debrief(question_obj):
                 match = re.search(r'\{.*\}', content, re.DOTALL)
                 if match:
                     try:
-                        return normalize_sharp_payload(json.loads(match.group(0)))
+                        res = json.loads(match.group(0))
+                        if 'questions' in res and len(res['questions']) > 0:
+                            q_data = res['questions'][0]
+                            q_data['status'] = 'ACCEPT'
+                            return q_data
                     except Exception:
-                        recovered = recover_partial_sharp_payload(content)
-                        if recovered:
-                            return recovered
+                        pass
             time.sleep(0.5) 
         except urllib.error.HTTPError as e:
             if e.code == 429:
@@ -329,32 +379,108 @@ def process_q(q):
         sharp_data = build_fallback_sharp(q, q.get('answer', 'A'))
     
     if sharp_data and sharp_data.get('status') == 'ACCEPT':
+        try:
+            # Handle SHARP 3.0 new schema vs fallback old schema
+            s3 = sharp_data.get('sharp_3_debrief')
+            if s3 and isinstance(s3, dict):
+                s_obj = s3.get('S_set_the_stage', {})
+                if not isinstance(s_obj, dict): s_obj = {}
+                s_text = f"**Verdict:** {s_obj.get('verdict', '')}\\n\\n**The Pivot:** {s_obj.get('pivot', '')}".strip()
+                
+                h_obj = s3.get('H_highlight_excellence', {})
+                if not isinstance(h_obj, dict): h_obj = {}
+                h_text = f"**Surgical Mechanism:** {h_obj.get('surgical_mechanism', '')}\\n\\n**Clinical Execution:** {h_obj.get('clinical_execution', '')}".strip()
+                
+                a_obj = s3.get('A_address_the_gaps', {})
+                if not isinstance(a_obj, dict): a_obj = {}
+                distractors = a_obj.get('distractor_breakdown', [])
+                if not isinstance(distractors, list): distractors = []
+                expl_A = next((d.get('reason', '') for d in distractors if isinstance(d, dict) and str(d.get('option', '')).strip().upper().startswith('A')), '')
+                expl_B = next((d.get('reason', '') for d in distractors if isinstance(d, dict) and str(d.get('option', '')).strip().upper().startswith('B')), '')
+                expl_C = next((d.get('reason', '') for d in distractors if isinstance(d, dict) and str(d.get('option', '')).strip().upper().startswith('C')), '')
+                expl_D = next((d.get('reason', '') for d in distractors if isinstance(d, dict) and str(d.get('option', '')).strip().upper().startswith('D')), '')
+                
+                r_obj = s3.get('R_review_learning_points', {})
+                if not isinstance(r_obj, dict): r_obj = {}
+                r_text = f"**Conceptual Overview:** {r_obj.get('conceptual_overview', '')}\\n\\n"
+                headers = r_obj.get('matrix_headers', [])
+                if isinstance(headers, list) and headers:
+                    r_text += "| " + " | ".join(str(h) for h in headers) + " |\\n"
+                    r_text += "| " + " | ".join(["---"] * len(headers)) + " |\\n"
+                    rows = r_obj.get('matrix_rows', [])
+                    if isinstance(rows, list):
+                        for row in rows:
+                            if isinstance(row, list):
+                                r_text += "| " + " | ".join(str(c) for c in row) + " |\\n"
+                r_text = r_text.strip()
+                
+                p_obj = s3.get('P_plan_for_improvement', {})
+                if not isinstance(p_obj, dict): p_obj = {}
+                p_text = f"**The Board Pearl:** *{p_obj.get('board_pearl', '')}*".strip()
+                
+                supp = sharp_data.get('supplementary_callouts', {})
+                if not isinstance(supp, dict): supp = {}
+                g_text = supp.get('society_guideline', '')
+                t_text = supp.get('key_takeaway', '')
+                v_text = supp.get('visualization', '')
+                
+                ca_raw = str(sharp_data.get('correct_answer', 'A')).strip()
+                ca_letter = ca_raw[0] if ca_raw else q.get('answer', 'A')
+                spec = sharp_data.get('specialty', q.get('specialty', 'General Surgery'))
+                top = sharp_data.get('topic', q.get('topic', 'General'))
+                q_text = sharp_data.get('question', q['question'])
+                
+                opts = sharp_data.get('options', [])
+                opt_dict = q.get('options', {})
+                if isinstance(opts, list) and len(opts) >= 4:
+                    opt_dict = {'A': opts[0], 'B': opts[1], 'C': opts[2], 'D': opts[3]}
+            else:
+                s_text = sharp_data.get('set_the_stage', '')
+                h_text = sharp_data.get('highlight_excellence', '')
+                expl_A = sharp_data.get('explanation_A', '')
+                expl_B = sharp_data.get('explanation_B', '')
+                expl_C = sharp_data.get('explanation_C', '')
+                expl_D = sharp_data.get('explanation_D', '')
+                r_text = sharp_data.get('review_learning_points', '')
+                p_text = sharp_data.get('plan_for_improvement', '')
+                ca_letter = sharp_data.get('correct_answer', q.get('answer', 'A'))
+                spec = sharp_data.get('specialty', q.get('specialty', 'General Surgery'))
+                top = sharp_data.get('topic', q.get('topic', 'General'))
+                q_text = sharp_data.get('question', q['question'])
+                opt_dict = sharp_data.get('options', q.get('options', {}))
+                g_text = ''
+                t_text = ''
+                v_text = ''
+        except Exception as e:
+            print(f"Error parsing SHARP schema: {e}")
+            return None
+            
         final_q = {
             "id": q.get('id', random.randint(10000, 99999)),
-            "specialty": q.get('specialty', 'General Surgery'),
-            "topic": q.get('topic', 'General'),
-            "question": q['question'],
-            "options": q.get('options', {}),
-            "answer": sharp_data.get('verified_answer', q.get('answer', 'A')),
+            "specialty": spec,
+            "topic": top,
+            "question": q_text,
+            "options": opt_dict,
+            "answer": ca_letter,
             "explanation": {
-                "correct": sharp_data.get('highlight_excellence', ''),
-                "A": sharp_data.get('explanation_A', ''),
-                "B": sharp_data.get('explanation_B', ''),
-                "C": sharp_data.get('explanation_C', ''),
-                "D": sharp_data.get('explanation_D', ''),
+                "correct": h_text,
+                "A": expl_A,
+                "B": expl_B,
+                "C": expl_C,
+                "D": expl_D,
                 "E": ""
             },
             "sharp_debrief": {
-                "S_set_the_stage": sharp_data.get('set_the_stage', ''),
-                "H_highlight_excellence": sharp_data.get('highlight_excellence', ''),
-                "A_address_the_gaps": sharp_data.get('address_gaps', ''),
-                "R_review_learning_points": sharp_data.get('review_learning_points', ''),
-                "P_plan_for_improvement": sharp_data.get('plan', sharp_data.get('plan_for_improvement', ''))
+                "S_set_the_stage": s_text,
+                "H_highlight_excellence": h_text,
+                "A_address_the_gaps": "",
+                "R_review_learning_points": r_text,
+                "P_plan_for_improvement": p_text
             },
             "supplementary_callouts": {
-                "guideline": sharp_data.get('guideline', ''),
-                "takeaway": sharp_data.get('takeaway', ''),
-                "visualization": sharp_data.get('visualization', '')
+                "guideline": g_text,
+                "takeaway": t_text,
+                "visualization": v_text
             },
             "discrepancy_flag": sharp_data.get('discrepancy_flag', '')
         }
@@ -384,6 +510,29 @@ def main():
         all_raw_questions.extend(valid_data)
         
     print(f"Total valid raw questions loaded: {len(all_raw_questions)}")
+    
+    # Fast deduplication: Scan existing JS files for IDs
+    existing_ids = set()
+    questions_dir = 'js/questions'
+    if os.path.exists(questions_dir):
+        import glob
+        for file in glob.glob(f"{questions_dir}/*.js"):
+            with open(file, 'r') as f:
+                content = f.read()
+                # Find all "id": 12345 or "id": "12345"
+                import re
+                matches = re.findall(r'"id"\s*:\s*([^,\}\s]+)', content)
+                for m in matches:
+                    existing_ids.add(m.strip('"').strip("'"))
+    
+    print(f"Found {len(existing_ids)} already processed questions.")
+    
+    # Filter out already processed
+    def get_q_id(q):
+        return str(q.get('id', ''))
+        
+    all_raw_questions = [q for q in all_raw_questions if get_q_id(q) not in existing_ids or not get_q_id(q)]
+    print(f"Remaining questions to process: {len(all_raw_questions)}")
     
     # Shuffle so we get a good mix
     random.shuffle(all_raw_questions)

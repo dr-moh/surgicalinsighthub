@@ -3721,4 +3721,634 @@ window.QUESTIONS.push(...[
   },
   "discrepancy_flag": "### \u26a0\ufe0f CRITICAL FLAG\n* The raw source text for Option D was cut off at 'the femoral artery'. It has been completed using standard anatomical and clinical doctrine."
 }
+,
+{
+  "id": 4,
+  "specialty": "Anesthesia",
+  "topic": "A 2-year-old is scheduled for elective tonsillectomy and adenoidectomy. His mother tells",
+  "question": "A 2-year-old is scheduled for elective tonsillectomy and adenoidectomy. His mother tells you he has runny nose. Your decision whether to proceed will be based on all the following, except",
+  "options": {
+    "A": "If he is afebrile",
+    "B": "If he is not actively wheezing",
+    "C": "Cancel the surgery since it is elective",
+    "D": "Reluctance of parent for admitting the child, if needed"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "**Surgical Mechanism:** Pediatric patients, especially those under 3 years old, are at increased risk for perioperative respiratory complications (e.g., laryngospasm, bronchospasm, desaturation, post-extubation stridor, pneumonia) when undergoing general anesthesia with an active upper respiratory infection (URI). The decision to proceed with elective surgery must weigh these risks against the benefits of the procedure.\n**Clinical Execution:** A \"runny nose\" can range from clear rhinorrhea (often benign) to purulent discharge with systemic symptoms (indicating active infection). While a clear runny nose in an otherwise healthy, afebrile child might be acceptable for some elective procedures in some centers, a more conservative approach considers any URI symptom as a reason for postponement to minimize anesthetic risk. The elective nature of tonsillectomy and adenoidectomy allows for such postponement without immediate harm.",
+    "A": "In a highly conservative clinical approach, if the presence of *any* runny nose is considered a sufficient reason to postpone an elective tonsillectomy and adenoidectomy in a 2-year-old, then whether the child is afebrile or not becomes irrelevant to the decision to *proceed*. The decision to postpone would already be made based on the runny nose itself, making the afebrile status not a discriminating basis for proceeding.",
+    "B": "The absence of active wheezing is a critical factor in deciding whether to proceed with elective surgery in a child with a runny nose. Wheezing indicates lower airway involvement, which significantly increases anesthetic risk. Therefore, the absence of wheezing is a direct basis for the decision to proceed.",
+    "C": "The elective nature of the surgery is a fundamental consideration that *allows* for postponement if any concerns (like a runny nose) are present. While \"cancel the surgery\" is an action, the *electiveness* is a basis for the flexibility in decision-making regarding proceeding or postponing, making it a relevant factor.",
+    "D": "Parental willingness to comply with post-operative care, including potential admission for complications, is a crucial patient safety and ethical consideration. If parents are reluctant or unwilling, this is a strong basis for cancelling the surgery, making it a direct factor in the decision.",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "**Verdict:** Correct: A. In a highly conservative approach to pediatric elective surgery, the presence of a runny nose itself may be considered a sufficient reason to postpone, rendering the child's afebrile status a non-discriminating factor for proceeding.\n**The Pivot:** This question tests the nuanced interpretation of pre-operative assessment for minor upper respiratory symptoms in pediatric elective surgery, specifically identifying which factor becomes irrelevant if a strict \"any URI symptom equals postponement\" policy is applied.",
+    "H_highlight_excellence": "**Surgical Mechanism:** Pediatric patients, especially those under 3 years old, are at increased risk for perioperative respiratory complications (e.g., laryngospasm, bronchospasm, desaturation, post-extubation stridor, pneumonia) when undergoing general anesthesia with an active upper respiratory infection (URI). The decision to proceed with elective surgery must weigh these risks against the benefits of the procedure.\n**Clinical Execution:** A \"runny nose\" can range from clear rhinorrhea (often benign) to purulent discharge with systemic symptoms (indicating active infection). While a clear runny nose in an otherwise healthy, afebrile child might be acceptable for some elective procedures in some centers, a more conservative approach considers any URI symptom as a reason for postponement to minimize anesthetic risk. The elective nature of tonsillectomy and adenoidectomy allows for such postponement without immediate harm.",
+    "A_address_the_gaps": "**Distractor Breakdown:**\n*Option B (Incorrect):* If he is not actively wheezing. The absence of active wheezing is a critical factor in deciding whether to proceed. Wheezing indicates lower airway involvement, which significantly increases anesthetic risk. Therefore, the presence or absence of wheezing is a direct basis for the decision.\n*Option C (Incorrect):* Cancel the surgery since it is elective. The elective nature of the surgery is a fundamental consideration that *allows* for postponement if any concerns (like a runny nose) are present. While \"cancel the surgery\" is an action, the *electiveness* is a basis for the flexibility in decision-making regarding proceeding or postponing.\n*Option D (Incorrect):* Reluctance of parent for admitting the child, if needed. Parental willingness to comply with post-operative care, including potential admission for complications, is a crucial patient safety and ethical consideration. Unwillingness would be a strong basis for cancelling the surgery.",
+    "R_review_learning_points": "**Conceptual Overview:** Pre-operative assessment for upper respiratory infections (URIs) in pediatric patients undergoing elective surgery is paramount due to increased anesthetic risks. The decision to proceed or postpone balances patient safety with the elective nature of the procedure.\n**Management Framework (High-Yield Matrix):**\n\n| URI Symptom/Factor | Decision to Proceed (General Guidelines) | Rationale |\n| :----------------- | :--------------------------------------- | :-------- |\n| **Clear Rhinorrhea (isolated)** | Often acceptable if afebrile, no cough, otherwise well | Low risk of complications |\n| **Purulent Rhinorrhea** | Postpone (typically 2-4 weeks) | Suggests bacterial infection, higher risk |\n| **Fever (>38.0\u00b0C)** | Postpone (typically 2-4 weeks post-resolution) | Indicates active infection, systemic inflammation, increased anesthetic risk |\n| **Productive Cough** | Postpone (typically 2-4 weeks post-resolution) | Suggests lower airway involvement, increased risk |\n| **Wheezing/Bronchospasm** | Postpone (until resolved and stable) | Significant lower airway reactivity, high anesthetic risk |\n| **Parental Reluctance for Admission** | Postpone/Cancel | Patient safety concern, inability to ensure post-op care |\n| **Elective Nature of Surgery** | Allows for postponement without immediate harm | Flexibility to prioritize safety over schedule |",
+    "P_plan_for_improvement": "**The Board Pearl:** *For elective pediatric surgery, a conservative approach to URI symptoms prioritizes patient safety, often postponing procedures even for minor symptoms if there's any doubt.*\n**Surgical Action:**\n1. Thorough pre-operative history and physical examination to assess the nature and severity of URI symptoms.\n2. Communicate clearly with parents regarding anesthetic risks associated with URIs and the rationale for postponement if indicated."
+  },
+  "supplementary_callouts": {
+    "guideline": "American Society of Anesthesiologists (ASA) Guidelines for Preanesthesia Evaluation",
+    "takeaway": "The presence of a runny nose in a 2-year-old for elective surgery necessitates careful risk assessment, and in some contexts, even minor URI symptoms may lead to postponement regardless of fever status.",
+    "visualization": "A 2-year-old child, sitting on the exam table, with clear nasal discharge, but otherwise playful and interactive, while the anesthesiologist discusses the risks and benefits of proceeding with the parents."
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 36,
+  "specialty": "Anesthesia",
+  "topic": "During performance of lumbar epidural anesthesia for labor analgesia, you experience free-flowing",
+  "question": "During performance of lumbar epidural anesthesia for labor analgesia, you experience free-flowing cerebrospinal fluid (CSF) from the advancing 17G Tuohy epidural needle. The epidural needle is removed and a second attempt is successfully performed with an epidural catheter placed at a different level. Which of the following you would not recommend for the patient to practice in the next 72 hours?",
+  "options": {
+    "A": "Bed rest",
+    "B": "Fluid restriction",
+    "C": "Increase caffeine intake",
+    "D": "Continue with daily stool softener"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Bed rest",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "During performance of lumbar epidural anesthesia for labor analgesia, you experience free-flowing",
+    "H_highlight_excellence": "Bed rest",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "ASA practice guidelines",
+    "P_plan_for_improvement": "Bed rest"
+  },
+  "supplementary_callouts": {
+    "guideline": "ASA practice guidelines",
+    "takeaway": "Bed rest",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 16,
+  "specialty": "Anesthesia",
+  "topic": "A medical student asks you if \u201cyoung\u201d blood is better for critically",
+  "question": "A medical student asks you if \u201cyoung\u201d blood is better for critically ill patients. Which of the following statements regarding \u201cyoung\u201d blood is most correct?",
+  "options": {
+    "A": "Fresher blood has better ability to deliver oxygen to tissues",
+    "B": "Blood from younger donors has lower risk of immunosuppression than blood donated by the elderly",
+    "C": "Older blood has a lower potassium content",
+    "D": "Fresher blood can be transfused more rapidly than older blood"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Fresher blood has better ability to deliver oxygen to tissues",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "A medical student asks you if \u201cyoung\u201d blood is better for critically",
+    "H_highlight_excellence": "Fresher blood has better ability to deliver oxygen to tissues",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "ASA practice guidelines",
+    "P_plan_for_improvement": "Fresher blood has better ability to deliver oxygen to tissues"
+  },
+  "supplementary_callouts": {
+    "guideline": "ASA practice guidelines",
+    "takeaway": "Fresher blood has better ability to deliver oxygen to tissues",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 41,
+  "specialty": "Anesthesia",
+  "topic": "In pressure-support ventilation (PSV), inspiration ends (and expiration begins) when",
+  "question": "In pressure-support ventilation (PSV), inspiration ends (and expiration begins) when",
+  "options": {
+    "A": "A preset tidal volume has been achieved",
+    "B": "A preset airway pressure has been achieved",
+    "C": "Flow decreases to a preset level",
+    "D": "A preset amount of time has passed"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "A preset tidal volume has been achieved",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "In pressure-support ventilation (PSV), inspiration ends (and expiration begins) when",
+    "H_highlight_excellence": "A preset tidal volume has been achieved",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "ASA practice guidelines",
+    "P_plan_for_improvement": "A preset tidal volume has been achieved"
+  },
+  "supplementary_callouts": {
+    "guideline": "ASA practice guidelines",
+    "takeaway": "A preset tidal volume has been achieved",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 58,
+  "specialty": "Anesthesia",
+  "topic": "Which of the following patients is least likely to need calcium supplementation",
+  "question": "Which of the following patients is least likely to need calcium supplementation due to citrate-induced hypocalcemia related to blood transfusion?",
+  "options": {
+    "A": "A 30-year-old trauma patient receiving massive blood transfusion through a rapid transfuser at a rate of 75 mL/min",
+    "B": "A patient with end-stage liver disease undergoing a complicated open shunt procedure, who is hypothermic and has received greater than 2 blood volumes of transfusion",
+    "C": "A neonate undergoing congenital diaphragmatic hernia repair",
+    "D": "A 50-year-old patient with coronary artery disease undergoing an open femoral popliteal bypass procedure, who has received 3 units of packed red blood cells"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "A 30-year-old trauma patient receiving massive blood transfusion through a rapid transfuser at a rate of 75 mL/min",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Which of the following patients is least likely to need calcium supplementation",
+    "H_highlight_excellence": "A 30-year-old trauma patient receiving massive blood transfusion through a rapid transfuser at a rate of 75 mL/min",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "ASA practice guidelines",
+    "P_plan_for_improvement": "A 30-year-old trauma patient receiving massive blood transfusion through a rapid transfuser at a rate of"
+  },
+  "supplementary_callouts": {
+    "guideline": "ASA practice guidelines",
+    "takeaway": "A 30-year-old trauma patient receiving massive blood transfusion through a rapid transfuser at a rate of 75 mL/min",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50,
+  "specialty": "Anesthesia",
+  "topic": "Regarding lung resection surgery, which of the following statements is false?",
+  "question": "Regarding lung resection surgery, which of the following statements is false?",
+  "options": {
+    "A": "Perioperative arrhythmias are common",
+    "B": "Supraventricular tachycardias (SVTs) are thought to result from surgical manipulation or distension of the right atrium",
+    "C": "Incidence of arrhythmia decreases with age due to the ageing of cardiac conduction system",
+    "D": "Postoperative hypoxemia and acidosis due to atelectasis and shallow breathing are common"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Perioperative arrhythmias are common",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Regarding lung resection surgery, which of the following statements is false?",
+    "H_highlight_excellence": "Perioperative arrhythmias are common",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "ASA practice guidelines",
+    "P_plan_for_improvement": "Perioperative arrhythmias are common"
+  },
+  "supplementary_callouts": {
+    "guideline": "ASA practice guidelines",
+    "takeaway": "Perioperative arrhythmias are common",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 13,
+  "specialty": "Anesthesia",
+  "topic": "A 66-year-old patient with a history of severe tracheal stenosis is presenting",
+  "question": "A 66-year-old patient with a history of severe tracheal stenosis is presenting for a tracheal resection. The most unlikely clinical finding is",
+  "options": {
+    "A": "Progressive dyspnea",
+    "B": "Wheezing evident on exertion",
+    "C": "Dyspnea worse on sitting up and leaning forward",
+    "D": "Patient may have a history of blunt/penetrating tracheal trauma"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Progressive dyspnea",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "A 66-year-old patient with a history of severe tracheal stenosis is presenting",
+    "H_highlight_excellence": "Progressive dyspnea",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "ASA practice guidelines",
+    "P_plan_for_improvement": "Progressive dyspnea"
+  },
+  "supplementary_callouts": {
+    "guideline": "ASA practice guidelines",
+    "takeaway": "Progressive dyspnea",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 74,
+  "specialty": "Anesthesia",
+  "topic": "with progressive dyspnea and a huge right-sided pulmonary cyst. The cyst is",
+  "question": "with progressive dyspnea and a huge right-sided pulmonary cyst. The cyst is compressing her remaining right lung, and she is brought to the OR for an emergency pulmonary cystectomy. Which of the following is right regarding anesthetic management of this patient?",
+  "options": {
+    "A": "The greatest risk of rupture of the cavity is during preoxygenation just prior to induction",
+    "B": "These cavities allow to and fro movement of air and have a very low chance to progressively enlarge",
+    "C": "Maintenance of spontaneous ventilation is desirable until a double-lumen tube (DLT) is in place",
+    "D": "Assisted ventilation is not necessary immediately after induction and can be harmful"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "The greatest risk of rupture of the cavity is during preoxygenation just prior to induction",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "with progressive dyspnea and a huge right-sided pulmonary cyst. The cyst is",
+    "H_highlight_excellence": "The greatest risk of rupture of the cavity is during preoxygenation just prior to induction",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "ASA practice guidelines",
+    "P_plan_for_improvement": "The greatest risk of rupture of the cavity is during preoxygenation just prior to induction"
+  },
+  "supplementary_callouts": {
+    "guideline": "ASA practice guidelines",
+    "takeaway": "The greatest risk of rupture of the cavity is during preoxygenation just prior to induction",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 67,
+  "specialty": "Anesthesia",
+  "topic": "While monitoring coronary sinus pressure during retrograde cardioplegia,",
+  "question": "While monitoring coronary sinus pressure during retrograde cardioplegia,",
+  "options": {
+    "A": "If the pressure at the distal tip of the coronary sinus catheter during cardioplegia administration at 200 mL/min is equal to central venous pressure, the catheter is not in the coronary sinus but is most likely in the pulmonary artery",
+    "B": "If the pressure is very high (>100 mm Hg), the coronary sinus catheter is in the left ventricle",
+    "C": "If the pressure in the coronary sinus catheter is 40 to 60 mm Hg during a 200-mL/min infusion, the catheter is correctly positioned",
+    "D": "If the catheter is placed too distally, delivery of cardioplegia to the left ventricle will be compromised and result in left-ventricular dysfunction"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "If the pressure at the distal tip of the coronary sinus catheter during cardioplegia administration at 200 mL/min",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "While monitoring coronary sinus pressure during retrograde cardioplegia,",
+    "H_highlight_excellence": "If the pressure at the distal tip of the coronary sinus catheter during cardioplegia administration at 200 mL/min",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "ASA practice guidelines",
+    "P_plan_for_improvement": "If the pressure at the distal tip of the coronary sinus catheter during cardioplegia administration at"
+  },
+  "supplementary_callouts": {
+    "guideline": "ASA practice guidelines",
+    "takeaway": "If the pressure at the distal tip of the coronary sinus catheter during cardioplegia administration at 200 mL/min",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 38,
+  "specialty": "Anesthesia",
+  "topic": "Glycopyrrolate causes all of the following, except",
+  "question": "Glycopyrrolate causes all of the following, except",
+  "options": {
+    "A": "Sedation",
+    "B": "Tachycardia",
+    "C": "Antisialagogue effect",
+    "D": "Lowers lower esophageal sphincter tone"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Sedation",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Glycopyrrolate causes all of the following, except",
+    "H_highlight_excellence": "Sedation",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "ASA practice guidelines",
+    "P_plan_for_improvement": "Sedation"
+  },
+  "supplementary_callouts": {
+    "guideline": "ASA practice guidelines",
+    "takeaway": "Sedation",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 33,
+  "specialty": "Anesthesia",
+  "topic": "Centrifugal pumps are superior to roller pumps because of all, except",
+  "question": "Centrifugal pumps are superior to roller pumps because of all, except",
+  "options": {
+    "A": "They are less traumatic to blood cells",
+    "B": "They do not pump air bubbles secondary to air being less dense than blood",
+    "C": "They are afterload-dependent, and avoid the risk of line rupture with clamping of the arterial inflow circuit",
+    "D": "Roller pumps compress the fluid-filled tubing between the roller and curved metal back plate and hence avoid air"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "They are less traumatic to blood cells",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Centrifugal pumps are superior to roller pumps because of all, except",
+    "H_highlight_excellence": "They are less traumatic to blood cells",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "ASA practice guidelines",
+    "P_plan_for_improvement": "They are less traumatic to blood cells"
+  },
+  "supplementary_callouts": {
+    "guideline": "ASA practice guidelines",
+    "takeaway": "They are less traumatic to blood cells",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 19,
+  "specialty": "Anesthesia",
+  "topic": "According to the ASA Standards for Postanesthesia Care, which of the following",
+  "question": "According to the ASA Standards for Postanesthesia Care, which of the following statements is correct?",
+  "options": {
+    "A": "A patient is to be transported to the postanesthesia care unit (PACU) by at least one physician",
+    "B": "A patient must be monitored by continuous pulse oximetry during transport to the PACU",
+    "C": "A patient who solely received regional anesthesia may routinely bypass the PACU",
+    "D": "A patient must be discharged from the PACU by a physician"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "A patient is to be transported to the postanesthesia care unit (PACU) by at least one physician",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "According to the ASA Standards for Postanesthesia Care, which of the following",
+    "H_highlight_excellence": "A patient is to be transported to the postanesthesia care unit (PACU) by at least one physician",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "ASA practice guidelines",
+    "P_plan_for_improvement": "A patient is to be transported to the postanesthesia care unit (PACU) by at least one"
+  },
+  "supplementary_callouts": {
+    "guideline": "ASA practice guidelines",
+    "takeaway": "A patient is to be transported to the postanesthesia care unit (PACU) by at least one physician",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 68,
+  "specialty": "Anesthesia",
+  "topic": "While performing a femoral nerve block guided with a nerve stimulator, you",
+  "question": "While performing a femoral nerve block guided with a nerve stimulator, you observe a strong sartorius muscle twitch that disappears at 0.2 mA. What does this mean and how should you proceed further?",
+  "options": {
+    "A": "The stimulating block needle tip is in the correct position, and the local anesthetic can be injected",
+    "B": "The needle tip is likely superficial to the femoral nerve, and the block needle needs to be readjusted (twitch may not be from stimulation of the femoral nerve) prior to local anesthetic injection",
+    "C": "Sartorius muscle twitch indicates that the needle tip is in the correct location, but you need to get closer to the nerve as 0.2 mA stimulus is too high",
+    "D": "The block needle needs to be repositioned more medially, and a paresthesia must be elicited prior to local anesthetic injection"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "The stimulating block needle tip is in the correct position, and the local anesthetic can be injected",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "While performing a femoral nerve block guided with a nerve stimulator, you",
+    "H_highlight_excellence": "The stimulating block needle tip is in the correct position, and the local anesthetic can be injected",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "ASA practice guidelines",
+    "P_plan_for_improvement": "The stimulating block needle tip is in the correct position, and the local anesthetic can be"
+  },
+  "supplementary_callouts": {
+    "guideline": "ASA practice guidelines",
+    "takeaway": "The stimulating block needle tip is in the correct position, and the local anesthetic can be injected",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 55,
+  "specialty": "Anesthesia",
+  "topic": "Treatment of patients with prolonged QT interval include all, except",
+  "question": "Treatment of patients with prolonged QT interval include all, except",
+  "options": {
+    "A": "\u03b2-Blockers",
+    "B": "Right stellate ganglion block",
+    "C": "Avoidance of drugs that prolong the QT interval",
+    "D": "Availability of electrical cardioversion while the patients are undergoing surgical procedures"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "\u03b2-Blockers",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Treatment of patients with prolonged QT interval include all, except",
+    "H_highlight_excellence": "\u03b2-Blockers",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "ASA practice guidelines",
+    "P_plan_for_improvement": "\u03b2-Blockers"
+  },
+  "supplementary_callouts": {
+    "guideline": "ASA practice guidelines",
+    "takeaway": "\u03b2-Blockers",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 71,
+  "specialty": "Anesthesia",
+  "topic": "With regard to sodium thiopental, the following statements are accurate, except",
+  "question": "With regard to sodium thiopental, the following statements are accurate, except",
+  "options": {
+    "A": "Peak concentration in the brain occurs at 1 minute postinjection",
+    "B": "Rapid redistribution allows for return of consciousness in <10 minutes",
+    "C": "Infusions maintain appropriate surgical conditions with fast recovery due to ultra-short action",
+    "D": "Repeating the induction dose results in fetal depression"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Peak concentration in the brain occurs at 1 minute postinjection",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "With regard to sodium thiopental, the following statements are accurate, except",
+    "H_highlight_excellence": "Peak concentration in the brain occurs at 1 minute postinjection",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "ASA practice guidelines",
+    "P_plan_for_improvement": "Peak concentration in the brain occurs at 1 minute postinjection"
+  },
+  "supplementary_callouts": {
+    "guideline": "ASA practice guidelines",
+    "takeaway": "Peak concentration in the brain occurs at 1 minute postinjection",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 49,
+  "specialty": "Anesthesia",
+  "topic": "Pathological features of complex regional pain syndrome include all the following, except",
+  "question": "Pathological features of complex regional pain syndrome include all the following, except",
+  "options": {
+    "A": "It is sympathetically mediated",
+    "B": "It is often associated with documented nerve injury",
+    "C": "It is only associated with major injuries (never from minor procedures)",
+    "D": "It is not associated with evidence of skin color, hair, and temperature changes"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "It is sympathetically mediated",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Pathological features of complex regional pain syndrome include all the following, except",
+    "H_highlight_excellence": "It is sympathetically mediated",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "ASA practice guidelines",
+    "P_plan_for_improvement": "It is sympathetically mediated"
+  },
+  "supplementary_callouts": {
+    "guideline": "ASA practice guidelines",
+    "takeaway": "It is sympathetically mediated",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 61,
+  "specialty": "Anesthesia",
+  "topic": "Which of the following predictors is likely to be associated with lower",
+  "question": "Which of the following predictors is likely to be associated with lower incidence of perioperative nausea and vomiting?",
+  "options": {
+    "A": "Female gender",
+    "B": "Use of fentanyl for pain relief",
+    "C": "Patients with a history of smoking",
+    "D": "Patients undergoing laparoscopic surgery"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Female gender",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Which of the following predictors is likely to be associated with lower",
+    "H_highlight_excellence": "Female gender",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "ASA practice guidelines",
+    "P_plan_for_improvement": "Female gender"
+  },
+  "supplementary_callouts": {
+    "guideline": "ASA practice guidelines",
+    "takeaway": "Female gender",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 21,
+  "specialty": "Anesthesia",
+  "topic": "Adverse effects of hypothermia include all the following, except",
+  "question": "Adverse effects of hypothermia include all the following, except",
+  "options": {
+    "A": "Platelet dysfunction",
+    "B": "Irreversible coagulopathy",
+    "C": "Potentiation of citrate toxicity",
+    "D": "Depression of myocardial contractility"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Platelet dysfunction",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Adverse effects of hypothermia include all the following, except",
+    "H_highlight_excellence": "Platelet dysfunction",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "ASA practice guidelines",
+    "P_plan_for_improvement": "Platelet dysfunction"
+  },
+  "supplementary_callouts": {
+    "guideline": "ASA practice guidelines",
+    "takeaway": "Platelet dysfunction",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
 ]);

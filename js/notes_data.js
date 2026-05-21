@@ -26,6 +26,18 @@ window.NOTES_DATA = {
   /* ── HIGH-YIELD NOTES ── */
   highjield: [
     {
+      id: 'hy-anastomotic-complications',
+      title: 'Anastomotic Complications',
+      kicker: 'Colorectal High-Yield Notes',
+      specialty: ['colorectal', 'emergency'],
+      description: 'Comprehensive clinical guide covering risk stratification, biomechanical markers, minor/major hemostasis, intraperitoneal/extraperitoneal leaks, ICG fluorescence angiography, EVT, and fistula timelines.',
+      tags: ['red:Colorectal', 'red:Complications', 'ICG Angiography', 'EVT', 'ABSITE'],
+      pages: '5 Pillars',
+      type: 'web',
+      url: 'notes/Surgical High-Yield Notes/anastomotic_complications.html',
+      isNew: true
+    },
+    {
       id: 'hy-ortho-trauma',
       title: 'Orthopaedic Trauma',
       kicker: 'Surgical High-Yield Notes',
@@ -49,18 +61,7 @@ window.NOTES_DATA = {
       url: 'notes/Surgical High-Yield Notes/appendicitis_2025_notebook.html',
       isNew: true
     },
-    {
-      id: 'hy-anastomotic-complications',
-      title: 'Anastomotic Complications',
-      kicker: 'Colorectal High-Yield Notes',
-      specialty: ['colorectal', 'emergency'],
-      description: 'Comprehensive clinical guide covering risk stratification, biomechanical markers, minor/major hemostasis, intraperitoneal/extraperitoneal leaks, ICG fluorescence angiography, EVT, and fistula timelines.',
-      tags: ['red:Colorectal', 'red:Complications', 'ICG Angiography', 'EVT', 'ABSITE'],
-      pages: '5 Pillars',
-      type: 'web',
-      url: 'notes/Surgical High-Yield Notes/anastomotic_complications.html',
-      isNew: true
-    },
+
     {
       id: 'hy-anesthesia',
       title: 'Anesthesia & Perioperative Care',

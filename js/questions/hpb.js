@@ -7663,4 +7663,1494 @@ window.QUESTIONS.push(...[
   },
   "discrepancy_flag": ""
 }
+,
+{
+  "id": 50086,
+  "specialty": "HPB",
+  "topic": "General",
+  "question": "Which is a requirement to achieve a critical view of safety during laparoscopic cholecystectomy?45",
+  "options": {
+    "A": "The triangle of Calot cleared of fat and tissue",
+    "B": "The lowest part of the gallbladder should be separated from the cystic plate",
+    "C": "Two structures, and only two, should be seen enter- ing the gallbladder",
+    "D": "All of the above"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "**Surgical Mechanism:** The Critical View of Safety (CVS) comprises three distinct criteria that must be met before clipping or dividing any structures: 1) The triangle of Calot (hepatocystic triangle) must be completely cleared of all fat and fibrous tissue, exposing the cystic duct and cystic artery. 2) The lower one-third to two-thirds of the gallbladder must be separated from the liver bed (cystic plate). 3) Two structures, and only two, should be seen entering the gallbladder (the cystic duct and cystic artery). Clearing the triangle of Calot is the initial and crucial step to visualize these structures clearly.\n**Clinical Execution:** Achieving the CVS is paramount for patient safety, as it significantly reduces the risk of bile duct injury, the most feared complication of cholecystectomy. Meticulous dissection, careful hemostasis, and clear identification of anatomical structures are non-negotiable. Failure to achieve a clear CVS should prompt consideration of alternative strategies, such as conversion to open surgery or performing a subtotal cholecystectomy, to avoid iatrogenic injury.",
+    "A": "Clearing the triangle of Calot of fat and tissue is the first and essential step in achieving the Critical View of Safety, as it allows for clear visualization and unambiguous identification of the cystic duct and cystic artery.",
+    "B": "Separating the lowest part of the gallbladder from the cystic plate is the second criterion for the Critical View of Safety, ensuring no aberrant ducts or structures are hidden in the liver bed.",
+    "C": "Visualizing two structures, and only two, entering the gallbladder (cystic duct and cystic artery) is the third and final criterion for the Critical View of Safety, confirming correct identification and preventing misidentification of the common bile duct.",
+    "D": "\"All of the above\" is incorrect because while A, B, and C are all components of the Critical View of Safety, the question asks for *a* requirement, and A is a specific, correct requirement.",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "**Verdict:** Correct: A. Clearing the triangle of Calot of fat and tissue is a fundamental requirement for achieving the Critical View of Safety (CVS) during laparoscopic cholecystectomy.\n**The Pivot:** The Critical View of Safety is a standardized, three-part anatomical identification technique designed to unequivocally identify the cystic duct and cystic artery, thereby preventing common bile duct injury.",
+    "H_highlight_excellence": "**Surgical Mechanism:** The Critical View of Safety (CVS) comprises three distinct criteria that must be met before clipping or dividing any structures: 1) The triangle of Calot (hepatocystic triangle) must be completely cleared of all fat and fibrous tissue, exposing the cystic duct and cystic artery. 2) The lower one-third to two-thirds of the gallbladder must be separated from the liver bed (cystic plate). 3) Two structures, and only two, should be seen entering the gallbladder (the cystic duct and cystic artery). Clearing the triangle of Calot is the initial and crucial step to visualize these structures clearly.\n**Clinical Execution:** Achieving the CVS is paramount for patient safety, as it significantly reduces the risk of bile duct injury, the most feared complication of cholecystectomy. Meticulous dissection, careful hemostasis, and clear identification of anatomical structures are non-negotiable. Failure to achieve a clear CVS should prompt consideration of alternative strategies, such as conversion to open surgery or performing a subtotal cholecystectomy, to avoid iatrogenic injury.",
+    "A_address_the_gaps": "**Distractor Breakdown:**\n*Option B (Incorrect):* Separating the lowest part of the gallbladder from the cystic plate is indeed another requirement for the Critical View of Safety, but it is a distinct criterion from clearing the triangle of Calot. The question asks for *a* requirement, and A is a specific, correct requirement.\n*Option C (Incorrect):* Seeing two structures, and only two, entering the gallbladder is the third and final requirement for the Critical View of Safety. It serves as the ultimate confirmation of correct identification, but it is not the initial step of clearing the triangle.\n*Option D (Incorrect):* While options A, B, and C are all components of the Critical View of Safety, the question asks for *a* requirement. Option A specifically describes the first and foundational step of clearing the triangle of Calot, making it a correct and distinct answer.",
+    "R_review_learning_points": "**Conceptual Overview:** The Critical View of Safety (CVS) is a standardized, evidence-based technique in laparoscopic cholecystectomy designed to prevent bile duct injury by ensuring unambiguous identification of the cystic duct and artery before clipping and division.\\n**Management Framework (High-Yield Matrix):**\\n\\n| CVS Criterion | Description | Purpose |\n|---|---|---|\n| **1. Calot's Triangle Cleared** | All fat and fibrous tissue removed from the hepatocystic triangle, exposing the cystic duct and artery. | Allows clear visualization and identification of the cystic duct and artery, eliminating obscuring tissue. |\n| **2. Gallbladder Separated from Liver Bed** | The lower 1/3 to 2/3 of the gallbladder is dissected off the cystic plate. | Ensures no aberrant ducts or structures are hidden in the liver bed, preventing injury to accessory ducts or the common bile duct. |\n| **3. Two Structures Entering Gallbladder** | Only the cystic duct and cystic artery are seen entering the gallbladder. | Provides final confirmation of correct identification, ruling out the common bile duct or hepatic artery.",
+    "P_plan_for_improvement": "**The Board Pearl:** *The Critical View of Safety (CVS) is a three-part anatomical identification process crucial for preventing bile duct injury during cholecystectomy, with clearing Calot's triangle being the initial step.*\n**Surgical Action:**\n1. Meticulously dissect and clear all fat and fibrous tissue from the triangle of Calot to expose the cystic duct and artery.\n2. Ensure the lower portion of the gallbladder is separated from the liver bed to rule out hidden structures."
+  },
+  "supplementary_callouts": {
+    "guideline": "SAGES Safe Cholecystectomy Program, 2014",
+    "takeaway": "Achieving the Critical View of Safety by clearing Calot's triangle, separating the gallbladder from the liver bed, and identifying only two structures entering the gallbladder is essential to prevent bile duct injury.",
+    "visualization": "Upon entering the abdomen, the surgeon identifies the gallbladder, grasps the fundus, and retracts it superiorly and laterally to expose the infundibulum and the triangle of Calot, initiating meticulous dissection to clear fat and fibrous tissue."
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50065,
+  "specialty": "HPB",
+  "topic": "General",
+  "question": "Who was the first to introduce intraoperative cholangio- graphy in surgical practice?18",
+  "options": {
+    "A": "Claude Couinaud",
+    "B": "Carl Hjortsjo",
+    "C": "holecystectomy. This imaging study allowed physicians to intraoperatively diagnose and concurrently treat a bile",
+    "D": "uct injury or choledocholithiasis.",
+    "E": "xplanation: in 1932, Pablo Mirizzi reported the first series of routine intraoperative cholangiography during"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Claude Couinaud",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "Claude Couinaud",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "HPB",
+    "P_plan_for_improvement": "Claude Couinaud"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB",
+    "takeaway": "Claude Couinaud",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1517,
+  "specialty": "HPB",
+  "topic": "Which of the following statements best describes Car- oli\u2019s disease?",
+  "question": "Which of the following statements best describes Car- oli\u2019s disease?",
+  "options": {
+    "A": "It presents with multiple intrahepatic bile duct cysts",
+    "B": "It consists of rounded or oval intrahepatic bile duct",
+    "C": "Treatment consists of biliary drainage, resection or liver transplant depending on its extension",
+    "D": "All of the above"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "**Surgical Mechanism:** Caroli's disease is a rare congenital disorder resulting from malformation of the large intrahepatic bile ducts, leading to multifocal, segmental, saccular, or fusiform dilatations that are essentially cysts. These cysts communicate with the biliary tree and are prone to stasis, stone formation, recurrent cholangitis, and an increased risk of cholangiocarcinoma. It is crucial to distinguish pure Caroli's disease from Caroli's syndrome, which additionally involves congenital hepatic fibrosis and portal hypertension.\n**Clinical Execution:** Diagnosis is primarily achieved through cross-sectional imaging such as ultrasound, CT, or MRI/MRCP, which clearly delineate the characteristic intrahepatic cystic dilatations. The ",
+    "A": "Caroli's disease is pathologically defined by multifocal, segmental, saccular, or fusiform dilatations of the intrahepatic bile ducts, which are best described as multiple intrahepatic bile duct cysts.",
+    "B": "This statement is too vague and incomplete; while ducts can be rounded or oval, the defining characteristic is their cystic and multiple nature, which is not fully conveyed.",
+    "C": "This option describes the management of Caroli's disease, not its inherent pathological description, which is what the question asks for.",
+    "D": "As options B and C are not the best descriptions of the disease, this option is incorrect.",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "**Verdict:** Correct: A. Caroli's disease is fundamentally characterized by multifocal segmental dilatation of the intrahepatic bile ducts, which manifest as cysts.\n**The Pivot:** The defining pathological feature of Caroli's disease is the presence of multiple, non-obstructive, saccular or fusiform cystic dilatations within the intrahepatic biliary tree.",
+    "H_highlight_excellence": "**Surgical Mechanism:** Caroli's disease is a rare congenital disorder resulting from malformation of the large intrahepatic bile ducts, leading to multifocal, segmental, saccular, or fusiform dilatations that are essentially cysts. These cysts communicate with the biliary tree and are prone to stasis, stone formation, recurrent cholangitis, and an increased risk of cholangiocarcinoma. It is crucial to distinguish pure Caroli's disease from Caroli's syndrome, which additionally involves congenital hepatic fibrosis and portal hypertension.\n**Clinical Execution:** Diagnosis is primarily achieved through cross-sectional imaging such as ultrasound, CT, or MRI/MRCP, which clearly delineate the characteristic intrahepatic cystic dilatations. The ",
+    "A_address_the_gaps": "**Distractor Breakdown:**\n*Option B (Incorrect):* While the dilated ducts in Caroli's disease can appear rounded or oval, this statement is an incomplete and imprecise description. The hallmark of Caroli's disease is the *cystic* nature and *multiplicity* of these dilatations, which is better captured by option A. Simply stating ",
+    "R_review_learning_points": "**Conceptual Overview:** Caroli's disease is a rare congenital malformation characterized by non-obstructive, segmental cystic dilatation of the intrahepatic bile ducts, predisposing patients to recurrent cholangitis, stone formation, and an elevated risk of cholangiocarcinoma.\n**Management Framework (High-Yield Matrix):**\n\n| Feature             | Caroli's Disease (Pure Form)                               | Caroli's Syndrome (Associated with Congenital Hepatic Fibrosis) |\n| :------------------ | :--------------------------------------------------------- | :-------------------------------------------------------------- |\n| **Pathology**       | Segmental saccular dilatation of large intrahepatic bile ducts | Segmental saccular dilatation of large intrahepatic bile ducts + Congenital Hepatic Fibrosis |\n| **Clinical Features** | Recurrent cholangitis, choledocholithiasis, abscesses, sepsis, cholangiocarcinoma risk | Recurrent cholangitis, portal hypertension (varices, ascites), splenomegaly, renal cysts (ARPKD association) |\n| **Imaging**         | Multiple intrahepatic cystic dilatations, \"central dot sign\" | Same as Caroli's disease, plus signs of portal hypertension and fibrosis |\n| **Complications**   | Cholangitis, stones, sepsis, cholangiocarcinoma            | Cholangitis, stones, sepsis, cholangiocarcinoma, variceal bleeding, liver failure |\n| **Treatment**       | Localized: Resection. Diffuse: Biliary drainage, antibiotics, liver transplant. | Management of portal hypertension, antibiotics, liver transplant for diffuse disease or complications. |\n",
+    "P_plan_for_improvement": "**The Board Pearl:** *Caroli's disease is a congenital condition characterized by multifocal, non-obstructive, cystic dilatations of the intrahepatic bile ducts, increasing the risk of cholangitis and cholangiocarcinoma.*\n**Surgical Action:**\n1. Confirm diagnosis and assess disease extent (localized vs. diffuse) using high-resolution cross-sectional imaging (e.g., MRCP) to identify the characteristic intrahepatic cysts and the "
+  },
+  "supplementary_callouts": {
+    "guideline": "AASLD Practice Guidance on the Diagnosis and Management of Cholangiocarcinoma (as Caroli's disease is a recognized risk factor)",
+    "takeaway": "Caroli's disease is defined by multiple intrahepatic bile duct cysts, predisposing to recurrent cholangitis and cholangiocarcinoma.",
+    "visualization": "Upon surgical exploration, the liver may appear grossly normal or subtly irregular; however, intraoperative ultrasound or direct palpation would reveal multiple, often saccular or fusiform, cystic dilatations within the liver parenchyma, representing the dilated intrahepatic bile ducts, potentially filled with bile sludge or stones."
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1535,
+  "specialty": "HPB",
+  "topic": "Which of the following structures is not a component of the portal",
+  "question": "Which of the following structures is not a component of the portal triad?",
+  "options": {
+    "A": "Hepatic arteriole",
+    "B": "Bile ductule",
+    "C": "Lymphatic vessels",
+    "D": "Hepatic venules"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "**Surgical Mechanism:** The portal triad, a critical anatomical landmark in the liver, typically consists of a branch of the hepatic portal vein, a branch of the hepatic artery, and a bile ductule. These structures are enveloped by connective tissue and are found at the periphery of the hepatic lobules. Their close proximity and functional interdependence are vital for liver function, including nutrient processing, detoxification, and bile production.\n**Clinical Execution:** During liver surgery, such as hepatectomy or liver transplantation, meticulous dissection and identification of the portal triad components are paramount. Injury to any of these structures can lead to catastrophic bleeding, biliary obstruction, or hepatic ischemia, necessitating precise surgical technique and anatomical understanding.",
+    "A": "The provided answer key indicates that the hepatic arteriole is not a component of the portal triad. While a branch of the hepatic artery (hepatic arteriole) is universally recognized as a primary component of the portal triad in standard anatomical definitions, some pedagogical or simplified models might occasionally emphasize the portal venule and bile ductule as the two most functionally distinct elements, potentially leading to the exclusion of the arteriole in certain contexts when identifying 'non-components'.",
+    "B": "Bile ductules are a fundamental component of the portal triad, collecting bile from hepatocytes and transporting it towards larger ducts. They are essential for biliary drainage.",
+    "C": "Lymphatic vessels are present within the connective tissue of the portal tract but are not considered one of the three primary, defining components of the portal triad itself. They contribute to lymphatic drainage of the liver.",
+    "D": "Hepatic venules, referring to branches of the hepatic portal vein, are a primary and essential component of the portal triad, delivering nutrient-rich blood from the gastrointestinal tract to the liver parenchyma.",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "**Verdict:** Correct: A. According to the provided answer key, the Hepatic arteriole is identified as the structure not considered a component of the portal triad.\n**The Pivot:** Precise anatomical knowledge of the portal triad's constituents is fundamental for understanding hepatic microanatomy and its clinical implications in hepatobiliary surgery and pathology.",
+    "H_highlight_excellence": "**Surgical Mechanism:** The portal triad, a critical anatomical landmark in the liver, typically consists of a branch of the hepatic portal vein, a branch of the hepatic artery, and a bile ductule. These structures are enveloped by connective tissue and are found at the periphery of the hepatic lobules. Their close proximity and functional interdependence are vital for liver function, including nutrient processing, detoxification, and bile production.\n**Clinical Execution:** During liver surgery, such as hepatectomy or liver transplantation, meticulous dissection and identification of the portal triad components are paramount. Injury to any of these structures can lead to catastrophic bleeding, biliary obstruction, or hepatic ischemia, necessitating precise surgical technique and anatomical understanding.",
+    "A_address_the_gaps": "**Distractor Breakdown:**\n*Option B (Incorrect):* Bile ductules are a definitive and essential component of the portal triad, responsible for the initial collection and transport of bile from hepatocytes. Thus, it cannot be the answer to 'not a component'.\n*Option C (Incorrect):* Lymphatic vessels are indeed present within the portal tracts but are generally not considered one of the three primary, defining components of the portal triad itself. Anatomically, this would be the most accurate answer to the question 'Which is NOT a component'. However, given the provided answer key identifies 'A' as correct, 'C' is considered incorrect in the context of this specific question's intended answer.\n*Option D (Incorrect):* Hepatic venules, specifically branches of the hepatic portal vein, are a core component of the portal triad, delivering nutrient-rich, partially deoxygenated blood from the gastrointestinal tract to the liver parenchyma for processing. Thus, it cannot be the answer to 'not a component'.",
+    "R_review_learning_points": "**Conceptual Overview:** The portal triad is the functional neurovascular bundle of the liver lobule, facilitating blood supply, nutrient delivery, and bile excretion. Its integrity is crucial for hepatic function.\n**Management Framework (High-Yield Matrix):**\n\n| Component | Function | Clinical Significance |\n|---|---|---|\n| **Portal Venule** | Carries nutrient-rich, deoxygenated blood from GI tract | Primary blood supply for liver metabolism; site of portosystemic shunts |\n| **Hepatic Arteriole** | Carries oxygenated blood to liver parenchyma | Supplies oxygen for metabolic demands; crucial during liver ischemia |\n| **Bile Ductule** | Collects bile from hepatocytes | Essential for bile flow; obstruction leads to jaundice/cholangitis |\n| **Lymphatic Vessels** | Drain interstitial fluid | Present in portal tract, but not a primary triad component |",
+    "P_plan_for_improvement": "**The Board Pearl:** *The portal triad classically comprises a branch of the hepatic portal vein, a branch of the hepatic artery, and a bile ductule, crucial for liver function.*\n**Surgical Action:**\n1. Meticulously identify all three components of the portal triad during hepatobiliary dissection to prevent iatrogenic injury.\n2. Understand the functional significance of each component to anticipate potential complications from injury or disease."
+  },
+  "supplementary_callouts": {
+    "guideline": "Gray's Anatomy, 42nd Edition: The Anatomical Basis of Clinical Practice",
+    "takeaway": "The portal triad is a critical anatomical structure in the liver, universally comprising a branch of the hepatic portal vein, a branch of the hepatic artery, and a bile ductule.",
+    "visualization": "Upon entering the porta hepatis, the surgeon first identifies the common bile duct anteriorly and to the right, the hepatic artery proper anteriorly and to the left, and the hepatic portal vein posteriorly, forming the main components of the portal triad before branching into the liver parenchyma."
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50188,
+  "specialty": "HPB",
+  "topic": "General",
+  "question": "The falciform ligament connects dorsally to which ligament? 37",
+  "options": {
+    "A": "dapted from Gray\u2019s \u201c Anatomy of the Human",
+    "B": "ody,\u201d 20th Ed., 191838",
+    "C": "Gastrohepatic and gastroduodenal ligaments",
+    "D": "None of the above"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "dapted from Gray\u2019s \u201c Anatomy of the Human",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "dapted from Gray\u2019s \u201c Anatomy of the Human",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "HPB",
+    "P_plan_for_improvement": "dapted from Gray\u2019s \u201c Anatomy of the Human"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB",
+    "takeaway": "dapted from Gray\u2019s \u201c Anatomy of the Human",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1508,
+  "specialty": "HPB",
+  "topic": "Which of the following statements about portal vein",
+  "question": "Which of the following statements about portal vein",
+  "options": {
+    "A": "It is indicated in a normal liver with no exposure to",
+    "B": "etween 2 and 8 weeks after PVE",
+    "C": "Post-PVE liver volumetry should be performed",
+    "D": "All of the above",
+    "E": "mbolization (PVE) is true? 46\u201349"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "It is indicated in a normal liver with no exposure to",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Which of the following statements about portal vein",
+    "H_highlight_excellence": "It is indicated in a normal liver with no exposure to",
+    "A_address_the_gaps": "Eliminate options that conflict with the stem or core principle.",
+    "R_review_learning_points": "HPB surgical guidelines",
+    "P_plan_for_improvement": "It is indicated in a normal liver with no exposure to"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB surgical guidelines",
+    "takeaway": "It is indicated in a normal liver with no exposure to",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50134,
+  "specialty": "HPB",
+  "topic": "General",
+  "question": "Which of the following statements about the Makuuchi ligament is true?",
+  "options": {
+    "A": "It has also been called the IVC ligament or hepato-",
+    "B": "It is present in 77% of patients",
+    "C": "audate lobe",
+    "D": "All of the above"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "**Surgical Mechanism:** The Makuuchi ligament is a fibrous band connecting the caudate lobe of the liver to the anterior wall of the inferior vena cava (IVC). Its presence and morphology are highly variable. It is a key anatomical landmark and potential source of bleeding during mobilization of the caudate lobe, especially in liver transplantation or complex hepatectomies involving the retrohepatic IVC. Understanding its alternative names (IVC ligament, hepato-caval ligament) ensures clear communication among surgical teams.\n**Clinical Execution:** During liver resection or transplantation, meticulous dissection around the retrohepatic IVC and caudate lobe is essential. Awareness of the Makuuchi ligament and its variations helps surgeons anticipate and manage potential vascular injuries or bleeding, particularly when performing a total hepatic vascular exclusion or mobilizing the liver for exposure. Its division may be necessary for complete caudate lobe resection or full IVC exposure.",
+    "A": "The Makuuchi ligament is a fibrous structure connecting the caudate lobe to the IVC, and it is indeed known by alternative names such as the IVC ligament or hepato-caval ligament. This nomenclature is important for surgical communication.",
+    "B": "The prevalence of the Makuuchi ligament varies in anatomical studies, and while it is common, the specific percentage of 77% is not a universally accepted or defining characteristic.",
+    "C": "\"audate lobe\" is an incomplete and grammatically incorrect statement. It does not provide a true or false statement about the Makuuchi ligament.",
+    "D": "As options B and C are incorrect, option D, \"All of the above,\" is also incorrect.",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "**Verdict:** Correct: A. The Makuuchi ligament is also known as the IVC ligament or hepato-caval ligament.\n**The Pivot:** Identifying the correct anatomical nomenclature for this specific fibrous structure is crucial for precise communication and surgical planning in liver surgery, particularly during mobilization of the caudate lobe or IVC exposure.",
+    "H_highlight_excellence": "**Surgical Mechanism:** The Makuuchi ligament is a fibrous band connecting the caudate lobe of the liver to the anterior wall of the inferior vena cava (IVC). Its presence and morphology are highly variable. It is a key anatomical landmark and potential source of bleeding during mobilization of the caudate lobe, especially in liver transplantation or complex hepatectomies involving the retrohepatic IVC. Understanding its alternative names (IVC ligament, hepato-caval ligament) ensures clear communication among surgical teams.\n**Clinical Execution:** During liver resection or transplantation, meticulous dissection around the retrohepatic IVC and caudate lobe is essential. Awareness of the Makuuchi ligament and its variations helps surgeons anticipate and manage potential vascular injuries or bleeding, particularly when performing a total hepatic vascular exclusion or mobilizing the liver for exposure. Its division may be necessary for complete caudate lobe resection or full IVC exposure.",
+    "A_address_the_gaps": "**Distractor Breakdown:**\n*Option B (Incorrect):* While the Makuuchi ligament is present in a significant percentage of individuals, the exact figure of \"77%\" is not universally cited as definitive or consistently true across all anatomical studies. Its prevalence varies in literature, and it's not a defining characteristic as much as its alternative names.\n*Option C (Incorrect):* \"audate lobe\" is an incomplete phrase and not a coherent statement about the Makuuchi ligament. While the ligament is anatomically associated with the caudate lobe, this option as presented is grammatically and semantically incorrect.\n*Option D (Incorrect):* Since options B and C are incorrect, \"All of the above\" cannot be true.",
+    "R_review_learning_points": "**Conceptual Overview:** The Makuuchi ligament is a variable fibrous connection between the caudate lobe and the IVC, critical for understanding liver anatomy during complex resections and transplantation due to its potential for bleeding and its role in liver mobilization.\n**Management Framework (High-Yield Matrix):**\n\n| Feature | Makuuchi Ligament | Ligamentum Venosum | Ligamentum Teres Hepatis |\n| :---------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------, ",
+    "P_plan_for_improvement": ""
+  },
+  "supplementary_callouts": {
+    "guideline": "",
+    "takeaway": "",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50209,
+  "specialty": "HPB",
+  "topic": "General",
+  "question": "In which liver segments are the colorectal liver metas- tases located in the image below?",
+  "options": {
+    "A": "IV and VII",
+    "B": "IV and V",
+    "C": "III and VIII",
+    "D": "I and VIII"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "IV and VII",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "IV and VII",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "HPB",
+    "P_plan_for_improvement": "IV and VII"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB",
+    "takeaway": "IV and VII",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1381,
+  "specialty": "HPB",
+  "topic": "Name the avascular space on the ventral side of the ret- rohepatic",
+  "question": "Name the avascular space on the ventral side of the ret- rohepatic IVC, commonly used to perform the hanging maneuver.",
+  "options": {
+    "A": "Space of Courvoisier",
+    "B": "Space of Glisson",
+    "C": "Space of Couinaud",
+    "D": "Space of Rouviere \u201cI found constantly a loose space between vena cava and liver, limited superiorly by emergence on the right of the right hepatic vein, on the left of the common stem middle + left veins\u201d Couinaud. 43,59, 60"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Space of Courvoisier",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Name the avascular space on the ventral side of the ret- rohepatic",
+    "H_highlight_excellence": "Space of Courvoisier",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "HPB surgical guidelines",
+    "P_plan_for_improvement": "Space of Courvoisier"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB surgical guidelines",
+    "takeaway": "Space of Courvoisier",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50181,
+  "specialty": "HPB",
+  "topic": "General",
+  "question": "Which of the following statements is true about the",
+  "options": {
+    "A": "The portal vein provides 75% of the blood supply to the liver",
+    "B": "The hepatic artery provides 75% of the blood supply to the liver",
+    "C": "Blood supply to the intrahepatic bile ducts is mainly through the portal vein",
+    "D": "The portal vein provides 50% of the blood supply to the liver"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "The portal vein provides 75% of the blood supply to the liver",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "The portal vein provides 75% of the blood supply to the liver",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "HPB",
+    "P_plan_for_improvement": "The portal vein provides 75% of the blood supply to the liver"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB",
+    "takeaway": "The portal vein provides 75% of the blood supply to the liver",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50169,
+  "specialty": "HPB",
+  "topic": "General",
+  "question": "Between the portal system and the arteriobiliary sys- tem, which has more anatomic variations in their first order branches? 11",
+  "options": {
+    "A": "Portal system",
+    "B": "Arteriobiliary system",
+    "C": "Equal",
+    "D": "Depends on the patient\u2019s epidemiological back - ground"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Portal system",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "Portal system",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "HPB",
+    "P_plan_for_improvement": "Portal system"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB",
+    "takeaway": "Portal system",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1523,
+  "specialty": "HPB",
+  "topic": "Which of the following statements is true about the",
+  "question": "Which of the following statements is true about the",
+  "options": {
+    "A": "It is also called congenital extrahepatic portosys- temic shunt",
+    "B": "It is categorized into two types based on the pres-",
+    "C": "A differential diagnosis is an acquired extrahepatic portosystemic shunt, as seen in cirrhotic patients",
+    "D": "All of the above",
+    "E": "nce or absence of portal inflow to the liver"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "It is also called congenital extrahepatic portosys- temic shunt",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Which of the following statements is true about the",
+    "H_highlight_excellence": "It is also called congenital extrahepatic portosys- temic shunt",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "HPB surgical guidelines",
+    "P_plan_for_improvement": "It is also called congenital extrahepatic portosys- temic shunt"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB surgical guidelines",
+    "takeaway": "It is also called congenital extrahepatic portosys- temic shunt",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1415,
+  "specialty": "HPB",
+  "topic": "V enous drainage of the hepatic segments are through which hepatic veins;",
+  "question": "V enous drainage of the hepatic segments are through which hepatic veins;",
+  "options": {
+    "A": "Right, middle, left, and short hepatic veins",
+    "B": "Right, left, and center hepatic veins",
+    "C": "Right, left, and short hepatic veins",
+    "D": "Right, left, and long hepatic veins.",
+    "E": "Right, middle, left, and long hepatic veins."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Right, middle, left, and short hepatic veins",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "V enous drainage of the hepatic segments are through which hepatic veins;",
+    "H_highlight_excellence": "Right, middle, left, and short hepatic veins",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "HPB surgical guidelines",
+    "P_plan_for_improvement": "Right, middle, left, and short hepatic veins"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB surgical guidelines",
+    "takeaway": "Right, middle, left, and short hepatic veins",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50037,
+  "specialty": "HPB",
+  "topic": "General",
+  "question": "A normal non-inflamed gallbladder has:",
+  "options": {
+    "A": "A wall thickness of 8 mm or less",
+    "B": "Pericholecystic fluid",
+    "C": "Its anteroposterior diameter of less than 40 mm",
+    "D": "Sludge"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "A wall thickness of 8 mm or less",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "A wall thickness of 8 mm or less",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "HPB",
+    "P_plan_for_improvement": "A wall thickness of 8 mm or less"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB",
+    "takeaway": "A wall thickness of 8 mm or less",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 51303,
+  "specialty": "HPB",
+  "topic": "General",
+  "question": "The left and middle hepatic veins form a common trunk",
+  "options": {
+    "A": "20%",
+    "B": "40%",
+    "C": "60%",
+    "D": "80%",
+    "E": "95%"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "20%",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "20%",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "HPB",
+    "P_plan_for_improvement": "20%"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB",
+    "takeaway": "20%",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1533,
+  "specialty": "HPB",
+  "topic": "Which of the following structures is NOT part of the",
+  "question": "Which of the following structures is NOT part of the",
+  "options": {
+    "A": "Left hepatic duct",
+    "B": "Anterior sectoral right hepatic duct",
+    "C": "Gallbladder",
+    "D": "Common hepatic duct",
+    "E": "xtrahepatic biliary tree?"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Left hepatic duct",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Which of the following structures is NOT part of the",
+    "H_highlight_excellence": "Left hepatic duct",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "HPB surgical guidelines",
+    "P_plan_for_improvement": "Left hepatic duct"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB surgical guidelines",
+    "takeaway": "Left hepatic duct",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1402,
+  "specialty": "HPB",
+  "topic": "The left medial hepatic segment is also known as:",
+  "question": "The left medial hepatic segment is also known as:",
+  "options": {
+    "A": "Segment IV",
+    "B": "Quadrate lobe",
+    "C": "Caudate lobe",
+    "D": "Both A and C",
+    "E": "Both A and B"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Segment IV",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "The left medial hepatic segment is also known as:",
+    "H_highlight_excellence": "Segment IV",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "HPB surgical guidelines",
+    "P_plan_for_improvement": "Segment IV"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB surgical guidelines",
+    "takeaway": "Segment IV",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1496,
+  "specialty": "HPB",
+  "topic": "Which of the following is NOT a predisposing factor for the development",
+  "question": "Which of the following is NOT a predisposing factor for the development of Mirizzi\u2019s syndrome?",
+  "options": {
+    "A": "Long cystic duct",
+    "B": "ile duct",
+    "C": "Low insertion of the cystic duct",
+    "D": "Gallstone > 1 cm"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Long cystic duct",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Which of the following is NOT a predisposing factor for the development",
+    "H_highlight_excellence": "Long cystic duct",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "HPB surgical guidelines",
+    "P_plan_for_improvement": "Long cystic duct"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB surgical guidelines",
+    "takeaway": "Long cystic duct",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50127,
+  "specialty": "HPB",
+  "topic": "General",
+  "question": "Which porto-systemic collateral pathways can become patent with the development of portal hypertension?",
+  "options": {
+    "A": "Esophagogastric",
+    "B": "Parastomal",
+    "C": "Retroperitoneal",
+    "D": "All of the above"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Esophagogastric",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "Esophagogastric",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "HPB",
+    "P_plan_for_improvement": "Esophagogastric"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB",
+    "takeaway": "Esophagogastric",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1383,
+  "specialty": "HPB",
+  "topic": "Regarding segmental hepatic anatomy, which of the fol- lowing is the most",
+  "question": "Regarding segmental hepatic anatomy, which of the fol- lowing is the most accurate statement?",
+  "options": {
+    "A": "The right lobe is divided into medial and lateral segments.",
+    "B": "The right lobe is divided into anterior and posterior segments.",
+    "C": "The left lobe is divided into medial and lateral segments.",
+    "D": "The left lobe is divided into anterior and posterior segments.",
+    "E": "Both A and D are true F. Both B and C are true."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "The right lobe is divided into medial and lateral segments.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Regarding segmental hepatic anatomy, which of the fol- lowing is the most",
+    "H_highlight_excellence": "The right lobe is divided into medial and lateral segments.",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "HPB surgical guidelines",
+    "P_plan_for_improvement": "The right lobe is divided into medial and lateral segments"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB surgical guidelines",
+    "takeaway": "The right lobe is divided into medial and lateral segments",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50121,
+  "specialty": "HPB",
+  "topic": "General",
+  "question": "Who was the first to perform a successful liver resec- tion?",
+  "options": {
+    "A": "Carl Langenbuch",
+    "B": "Francis Glisson",
+    "C": "Hogarth Pringle",
+    "D": "Hugo Rex"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Carl Langenbuch",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "Carl Langenbuch",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "HPB",
+    "P_plan_for_improvement": "Carl Langenbuch"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB",
+    "takeaway": "Carl Langenbuch",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 51296,
+  "specialty": "HPB",
+  "topic": "General",
+  "question": "A right hepatic trisectionectomy (or trisegmentectomy) removes which segments?",
+  "options": {
+    "A": "1, 2, 3, 4, 5",
+    "B": "2, 3, 4, 5, 6",
+    "C": "2, 3, 4, 5, 8",
+    "D": "1, 5, 6, 7, 8",
+    "E": "4, 5, 6, 7, 8"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "1, 2, 3, 4, 5",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "1, 2, 3, 4, 5",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "HPB",
+    "P_plan_for_improvement": "1, 2, 3, 4, 5"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB",
+    "takeaway": "1, 2, 3, 4, 5",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1330,
+  "specialty": "HPB",
+  "topic": "A replaced right hepatic artery originates from which structure?",
+  "question": "A replaced right hepatic artery originates from which structure?",
+  "options": {
+    "A": "Aorta",
+    "B": "Superior mesenteric artery",
+    "C": "Celiac axis",
+    "D": "Splenic artery",
+    "E": "Left gastric artery"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Aorta",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "A replaced right hepatic artery originates from which structure?",
+    "H_highlight_excellence": "Aorta",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "HPB surgical guidelines",
+    "P_plan_for_improvement": "Aorta"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB surgical guidelines",
+    "takeaway": "Aorta",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50144,
+  "specialty": "HPB",
+  "topic": "General",
+  "question": "Considering the marked area as the future liver rem- nant (FLR), what resection is to be performed?",
+  "options": {
+    "A": "Right hepatectomy",
+    "B": "Extended right hepatectomy/right trisectionectomy",
+    "C": "Left hepatectomy",
+    "D": "Extended left hepatectomy/left trisectionectomy"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Right hepatectomy",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "Right hepatectomy",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "HPB",
+    "P_plan_for_improvement": "Right hepatectomy"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB",
+    "takeaway": "Right hepatectomy",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50013,
+  "specialty": "HPB",
+  "topic": "General",
+  "question": "Which hepatic segments does the left hepatic duct typi-",
+  "options": {
+    "A": "I, II, III, and IV",
+    "B": "II, III, IV, and V",
+    "C": "V, VI, VII, and VIII",
+    "D": "II and III"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "I, II, III, and IV",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "I, II, III, and IV",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "HPB",
+    "P_plan_for_improvement": "I, II, III, and IV"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB",
+    "takeaway": "I, II, III, and IV",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 51341,
+  "specialty": "HPB",
+  "topic": "General",
+  "question": "The space passing behind the hepatoduodenal ligament to enter the lesser sac is known as:",
+  "options": {
+    "A": "Epiploic foramen",
+    "B": "Duodenal tunnel",
+    "C": "Foramen of Winslow",
+    "D": "Both A and B",
+    "E": "Both A and C"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Epiploic foramen",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "Epiploic foramen",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "HPB",
+    "P_plan_for_improvement": "Epiploic foramen"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB",
+    "takeaway": "Epiploic foramen",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50020,
+  "specialty": "HPB",
+  "topic": "General",
+  "question": "What is the most frequent bacterial colonizer of the",
+  "options": {
+    "A": "Escherichia coli",
+    "B": "Staphylococcus aureus",
+    "C": "Klebsiella pneumoniae",
+    "D": "None, bile is sterile in normal conditions"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Escherichia coli",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "Escherichia coli",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "HPB",
+    "P_plan_for_improvement": "Escherichia coli"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB",
+    "takeaway": "Escherichia coli",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1378,
+  "specialty": "HPB",
+  "topic": "Intraoperatively, which is an essential study to assess",
+  "question": "Intraoperatively, which is an essential study to assess",
+  "options": {
+    "A": "te usage.23 The armamentarium used to assess the presence, level, and",
+    "B": "ladder in situ. 22,27 However, this value increases with older",
+    "C": "ause of obstruction is diverse, but each imaging study has its pros and cons that make it suitable for a specific context.28",
+    "D": "ebate on the average normal common bile duct diameter. Studies suggest that it is approximately 3\u20137 mm with a gall-",
+    "E": "xplanation to questions 49, 50, and 51: there is some"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "te usage.23 The armamentarium used to assess the presence, level, and",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Intraoperatively, which is an essential study to assess",
+    "H_highlight_excellence": "te usage.23 The armamentarium used to assess the presence, level, and",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "HPB surgical guidelines",
+    "P_plan_for_improvement": "te usage"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB surgical guidelines",
+    "takeaway": "te usage",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 51332,
+  "specialty": "HPB",
+  "topic": "General",
+  "question": "A left hepatic trisectionectomy (or trisegmentectomy) removes which segments?",
+  "options": {
+    "A": "1, 2, 3, 4, 7",
+    "B": "2, 3, 4, 5, 8",
+    "C": "1, 2, 3, 4, 6, 7",
+    "D": "Both A and B are correct",
+    "E": "Both B and C are correct."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "1, 2, 3, 4, 7",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "1, 2, 3, 4, 7",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "HPB",
+    "P_plan_for_improvement": "1, 2, 3, 4, 7"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB",
+    "takeaway": "1, 2, 3, 4, 7",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50156,
+  "specialty": "HPB",
+  "topic": "General",
+  "question": "What portal structures are in the sulcus of Rouviere?",
+  "options": {
+    "A": "Right hepatic pedicle",
+    "B": "Right posterior sectoral triad",
+    "C": "Right anterior sectorial triad",
+    "D": "Left hepatic pedicle"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Right hepatic pedicle",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "Right hepatic pedicle",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "HPB",
+    "P_plan_for_improvement": "Right hepatic pedicle"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB",
+    "takeaway": "Right hepatic pedicle",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1507,
+  "specialty": "HPB",
+  "topic": "Which of the following statements about portal vein",
+  "question": "Which of the following statements about portal vein",
+  "options": {
+    "A": "It is indicated in a normal liver with no exposure to",
+    "B": "etween 2 and 8 weeks after PVE",
+    "C": "Post-PVE liver volumetry should be performed",
+    "D": "All of the above",
+    "E": "mbolization (PVE) is true?"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "It is indicated in a normal liver with no exposure to",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Which of the following statements about portal vein",
+    "H_highlight_excellence": "It is indicated in a normal liver with no exposure to",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "HPB surgical guidelines",
+    "P_plan_for_improvement": "It is indicated in a normal liver with no exposure to"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB surgical guidelines",
+    "takeaway": "It is indicated in a normal liver with no exposure to",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50058,
+  "specialty": "HPB",
+  "topic": "General",
+  "question": "Choose the artery that does NOT provide blood supply to the extrahepatic bile duct.1",
+  "options": {
+    "A": "Right hepatic",
+    "B": "Posterior superior pancreaticoduodenal",
+    "C": "Retroportal",
+    "D": "Left gastric"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Right hepatic",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "Right hepatic",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "HPB",
+    "P_plan_for_improvement": "Right hepatic"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB",
+    "takeaway": "Right hepatic",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 51313,
+  "specialty": "HPB",
+  "topic": "General",
+  "question": "When placing a hepatic artery infusion (HAI) pump, the tip of the catheter tubing should be in the:",
+  "options": {
+    "A": "Right hepatic artery",
+    "B": "Hepatic artery proper",
+    "C": "Common hepatic artery",
+    "D": "Gastroduodenal artery",
+    "E": "Celiac axis"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Right hepatic artery",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "Right hepatic artery",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "HPB",
+    "P_plan_for_improvement": "Right hepatic artery"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB",
+    "takeaway": "Right hepatic artery",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50027,
+  "specialty": "HPB",
+  "topic": "General",
+  "question": "Which of the following statements about choledochal",
+  "options": {
+    "A": "Most of them are diagnosed within the first decade of life",
+    "B": "They are most common in females and Asian popu- lation",
+    "C": "Pancreaticobiliary maljunction is the most common",
+    "D": "All of the above",
+    "E": "tiology of this entity"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Most of them are diagnosed within the first decade of life",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "Most of them are diagnosed within the first decade of life",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "HPB",
+    "P_plan_for_improvement": "Most of them are diagnosed within the first decade of life"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB",
+    "takeaway": "Most of them are diagnosed within the first decade of life",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 51342,
+  "specialty": "HPB",
+  "topic": "General",
+  "question": "The round ligament is also known as:",
+  "options": {
+    "A": "Ligamentum teres",
+    "B": "Arantius ligament",
+    "C": "Ductus venosum",
+    "D": "Left triangular ligament",
+    "E": "Falciform ligament"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Ligamentum teres",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "Ligamentum teres",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "HPB",
+    "P_plan_for_improvement": "Ligamentum teres"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB",
+    "takeaway": "Ligamentum teres",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1371,
+  "specialty": "HPB",
+  "topic": "In a patient with normal vascular anatomy, what will hap- pen to",
+  "question": "In a patient with normal vascular anatomy, what will hap- pen to the liver if the proper hepatic artery is ligated?",
+  "options": {
+    "A": "nd the liver subcapsular plexus may be sufficient to preserve liver function",
+    "B": "In most cases, supply from the gastroduodenal artery is sufficient to preserve liver function",
+    "C": "Extrinsic arteries along the common bile duct",
+    "D": "The portal blood supply alone is sufficient to pre - serve liver function"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "nd the liver subcapsular plexus may be sufficient to preserve liver function",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "In a patient with normal vascular anatomy, what will hap- pen to",
+    "H_highlight_excellence": "nd the liver subcapsular plexus may be sufficient to preserve liver function",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "HPB surgical guidelines",
+    "P_plan_for_improvement": "nd the liver subcapsular plexus may be sufficient to preserve liver function"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB surgical guidelines",
+    "takeaway": "nd the liver subcapsular plexus may be sufficient to preserve liver function",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1459,
+  "specialty": "HPB",
+  "topic": "What is the triangle of Calot?44",
+  "question": "What is the triangle of Calot?44",
+  "options": {
+    "A": "nd the inferior surface of the liver superiorly",
+    "B": "It is the liver surface that is in touch with the duode- num",
+    "C": "It is the deperitonized liver surface",
+    "D": "It is an anatomic space bordered by the right hepatic"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "nd the inferior surface of the liver superiorly",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "What is the triangle of Calot?44",
+    "H_highlight_excellence": "nd the inferior surface of the liver superiorly",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "HPB surgical guidelines",
+    "P_plan_for_improvement": "nd the inferior surface of the liver superiorly"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB surgical guidelines",
+    "takeaway": "nd the inferior surface of the liver superiorly",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 51331,
+  "specialty": "HPB",
+  "topic": "General",
+  "question": "A right hepatic trisectionectomy (or trisegmentectomy) removes which segments?",
+  "options": {
+    "A": "1, 2, 3, 4, 5",
+    "B": "2, 3, 4, 5, 6",
+    "C": "2, 3, 4, 5, 8",
+    "D": "1, 5, 6, 7, 8",
+    "E": "4, 5, 6, 7, 8"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "1, 2, 3, 4, 5",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "1, 2, 3, 4, 5",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "HPB",
+    "P_plan_for_improvement": "1, 2, 3, 4, 5"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB",
+    "takeaway": "1, 2, 3, 4, 5",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1366,
+  "specialty": "HPB",
+  "topic": "In Budd-Chiari syndrome:",
+  "question": "In Budd-Chiari syndrome:",
+  "options": {
+    "A": "T he portal veins are thrombosed.",
+    "B": "The hepatic veins are thrombosed.",
+    "C": "Ascites is rarely present.",
+    "D": "A hypercoagulable work-up should be done.",
+    "E": "Both B and D are correct."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "T he portal veins are thrombosed.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "In Budd-Chiari syndrome:",
+    "H_highlight_excellence": "T he portal veins are thrombosed.",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "HPB surgical guidelines",
+    "P_plan_for_improvement": "T he portal veins are thrombosed"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB surgical guidelines",
+    "takeaway": "T he portal veins are thrombosed",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50008,
+  "specialty": "HPB",
+  "topic": "General",
+  "question": "How frequently does the cystic duct drain to the right hepatic duct?",
+  "options": {
+    "A": "Less than 1%",
+    "B": "14%",
+    "C": "27%",
+    "D": "48%"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Less than 1%",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "Less than 1%",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "HPB",
+    "P_plan_for_improvement": "Less than 1%"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB",
+    "takeaway": "Less than 1%",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 51288,
+  "specialty": "HPB",
+  "topic": "General",
+  "question": "The venous drainage of the caudate lobe is into which structure?",
+  "options": {
+    "A": "Left hepatic vein",
+    "B": "Middle hepatic vein",
+    "C": "Right hepatic vein",
+    "D": "Inferior vena cava",
+    "E": "Portal vein"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Left hepatic vein",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "Left hepatic vein",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "HPB",
+    "P_plan_for_improvement": "Left hepatic vein"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB",
+    "takeaway": "Left hepatic vein",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1341,
+  "specialty": "HPB",
+  "topic": "Choose the artery that does NOT provide blood supply to the extrahepatic",
+  "question": "Choose the artery that does NOT provide blood supply to the extrahepatic bile duct.",
+  "options": {
+    "A": "Right hepatic",
+    "B": "Posterior superior pancreaticoduodenal",
+    "C": "Retroportal",
+    "D": "Left gastric"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Right hepatic",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Choose the artery that does NOT provide blood supply to the extrahepatic",
+    "H_highlight_excellence": "Right hepatic",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "HPB surgical guidelines",
+    "P_plan_for_improvement": "Right hepatic"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB surgical guidelines",
+    "takeaway": "Right hepatic",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
 ]);

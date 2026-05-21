@@ -2414,4 +2414,494 @@ window.QUESTIONS.push(...[
   },
   "discrepancy_flag": ""
 }
+,
+{
+  "id": 1599,
+  "specialty": "Orthopedic",
+  "topic": "Second degree of abduction type of Pott's fracture:",
+  "question": "Second degree of abduction type of Pott's fracture:",
+  "options": {
+    "A": "Transverse fracture of medial malleolus and oblique fracture of lateral malleolus.",
+    "B": "Transverse fracture of lateral malleolus and oblique fracture of medial malleolus.",
+    "C": "Fracture of medial malleolus with oblique fracture of lateral malleolus and lateral displacement of the talus.",
+    "D": "Fracture of medial malleolus with fracture shaft of the lower end of fibula."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "**Surgical Mechanism:** Abduction injuries of the ankle involve an eversion force, causing the talus to rotate externally and abduct. This stresses the deltoid ligament medially, leading to an avulsion fracture of the medial malleolus, which is typically transverse. Concurrently, the fibula is subjected to bending and external rotation forces, resulting in an oblique fracture of the lateral malleolus. The integrity of the syndesmosis and posterior malleolus determines higher degrees of injury.\n**Clinical Execution:** Accurate classification of ankle fractures (e.g., Lauge-Hansen, Danis-Weber, or Pott's classification) guides treatment. A second-degree abduction Pott's fracture is a bimalleolar injury, often requiring surgical stabilization to restore ankle mortise stability and prevent post-traumatic arthritis.",
+    "A": "Correct. A second-degree abduction Pott's fracture involves a transverse avulsion fracture of the medial malleolus and an oblique fracture of the lateral malleolus due to eversion and external rotation forces.",
+    "B": "Incorrect. This option incorrectly describes a transverse lateral malleolus fracture and an oblique medial malleolus fracture, which are not characteristic of a second-degree abduction injury.",
+    "C": "Incorrect. While it includes the correct malleolar fractures, the \"lateral displacement of the talus\" signifies a higher degree of instability and injury (e.g., third-degree abduction fracture) than a second-degree classification.",
+    "D": "Incorrect. \"Fracture shaft of the lower end of fibula\" is imprecise and does not specify the characteristic oblique pattern of the lateral malleolus in an abduction injury.",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "**Verdict:** Correct: A. The second degree of an abduction type Pott's fracture is characterized by a transverse fracture of the medial malleolus and an oblique fracture of the lateral malleolus.\n**The Pivot:** Differentiating the specific fracture patterns of the medial and lateral malleoli based on the abduction mechanism is crucial for accurate classification and management of Pott's fractures.",
+    "H_highlight_excellence": "**Surgical Mechanism:** Abduction injuries of the ankle involve an eversion force, causing the talus to rotate externally and abduct. This stresses the deltoid ligament medially, leading to an avulsion fracture of the medial malleolus, which is typically transverse. Concurrently, the fibula is subjected to bending and external rotation forces, resulting in an oblique fracture of the lateral malleolus. The integrity of the syndesmosis and posterior malleolus determines higher degrees of injury.\n**Clinical Execution:** Accurate classification of ankle fractures (e.g., Lauge-Hansen, Danis-Weber, or Pott's classification) guides treatment. A second-degree abduction Pott's fracture is a bimalleolar injury, often requiring surgical stabilization to restore ankle mortise stability and prevent post-traumatic arthritis.",
+    "A_address_the_gaps": "**Distractor Breakdown:**\n*Option B (Incorrect):* This option reverses the typical fracture patterns for abduction injuries. A transverse fracture of the lateral malleolus is less common in pure abduction, and an oblique fracture of the medial malleolus is atypical for deltoid ligament avulsion.\n*Option C (Incorrect):* While it includes the correct malleolar fractures, the addition of \"lateral displacement of the talus\" indicates a more severe, unstable injury, typically classified as a third-degree abduction fracture or a bimalleolar fracture with significant syndesmotic disruption, implying a higher degree of injury than \"second degree.\"\n*Option D (Incorrect):* \"Fracture shaft of the lower end of fibula\" is too general. While the lateral malleolus is part of the fibula, the specific oblique pattern is characteristic of abduction injuries. This description could also encompass a Maisonneuve fracture, which involves a high fibular fracture and syndesmotic disruption, a different injury pattern.",
+    "R_review_learning_points": "**Conceptual Overview:** Pott's fractures classify ankle injuries based on the mechanism of injury, with abduction forces leading to specific patterns of medial and lateral malleolar fractures, progressing in severity with increasing degrees.\n**Management Framework (High-Yield Matrix):**\n\n| Pott's Abduction Degree | Medial Malleolus | Lateral Malleolus | Talus Displacement | Stability | Management |\n| :-------------------- | :--------------- | :---------------- | :----------------- | :-------- | :--------- |\n| First Degree          | Transverse       | Intact            | None               | Stable    | Non-op     |\n| Second Degree         | Transverse       | Oblique           | None               | Unstable  | Often ORIF |\n| Third Degree          | Transverse       | Oblique           | Lateral/Posterior  | Unstable  | ORIF       |",
+    "P_plan_for_improvement": "**The Board Pearl:** *Abduction Pott's fractures progress from isolated medial malleolus (1st degree) to bimalleolar (2nd degree) to bimalleolar with talar displacement (3rd degree), with specific fracture patterns for each malleolus.*\n**Surgical Action:**\n1. Assess ankle stability clinically and radiographically (stress views) to confirm the degree of injury.\n2. Plan open reduction and internal fixation (ORIF) for unstable bimalleolar fractures (second and third degree) to restore anatomical alignment and stability."
+  },
+  "supplementary_callouts": {
+    "guideline": "Lauge-Hansen Classification of Ankle Fractures (often used in conjunction with Pott's or Danis-Weber)",
+    "takeaway": "A second-degree abduction Pott's fracture is a bimalleolar injury with a transverse medial malleolus fracture and an oblique lateral malleolus fracture.",
+    "visualization": "Upon initial radiographic assessment, observe a transverse fracture line across the medial malleolus and an oblique fracture line extending superiorly and laterally from the distal fibula."
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1598,
+  "specialty": "Orthopedic",
+  "topic": "Santford technique used in treatment of osteosarcoma consists of:",
+  "question": "Santford technique used in treatment of osteosarcoma consists of:",
+  "options": {
+    "A": "Pre-operative irradiation by 9000 rads.",
+    "B": "Waiting for 6 months then x-ray chest is done.",
+    "C": "Amputation is done if there is no metastasis in the lungs.",
+    "D": "Post-operative irradiation after amputation. e. If there is metastasis in the lungs, palliative chemotherapeutics like adriamycin, vincristine and methotrexate are given."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Pre-operative irradiation by 9000 rads.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Santford technique used in treatment of osteosarcoma consists of:",
+    "H_highlight_excellence": "Pre-operative irradiation by 9000 rads.",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "AAOS orthopedic guidelines",
+    "P_plan_for_improvement": "Pre-operative irradiation by 9000 rads"
+  },
+  "supplementary_callouts": {
+    "guideline": "AAOS orthopedic guidelines",
+    "takeaway": "Pre-operative irradiation by 9000 rads",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1579,
+  "specialty": "Orthopedic",
+  "topic": "In a Monteggia fracture dislocation",
+  "question": "In a Monteggia fracture dislocation",
+  "options": {
+    "A": "the dislocation of the distal radio-ulnar joint brings the ulnar styloid process anterior to the capitulum",
+    "B": "the radial fracture is usually at the junction of the middle and distal thirds",
+    "C": "internal fixation is usually required in the adult",
+    "D": "the causative injury is often a blow on the extensor surface of the forearm with the elbow flexed"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "the dislocation of the distal radio-ulnar joint brings the ulnar styloid process anterior to the capitulum",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "In a Monteggia fracture dislocation",
+    "H_highlight_excellence": "the dislocation of the distal radio-ulnar joint brings the ulnar styloid process anterior to the capitulum",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "AAOS orthopedic guidelines",
+    "P_plan_for_improvement": "the dislocation of the distal radio-ulnar joint brings the ulnar styloid process anterior to the capitulum"
+  },
+  "supplementary_callouts": {
+    "guideline": "AAOS orthopedic guidelines",
+    "takeaway": "the dislocation of the distal radio-ulnar joint brings the ulnar styloid process anterior to the capitulum",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1581,
+  "specialty": "Orthopedic",
+  "topic": "In benign tumors of cartilage",
+  "question": "In benign tumors of cartilage",
+  "options": {
+    "A": "of the base of the skull (spheric-occipital1 develop in the remnants of Rathke's pouch",
+    "B": "of the sacrococcygeal region develop in the remnants of the neural canal",
+    "C": "are characterized radiologically by central rarefaction of the bone and cortical thinning and expansion",
+    "D": "are commoner in females than in males e. usually present soon after puberty"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "of the base of the skull (spheric-occipital1 develop in the remnants of Rathke's pouch",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "In benign tumors of cartilage",
+    "H_highlight_excellence": "of the base of the skull (spheric-occipital1 develop in the remnants of Rathke's pouch",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "AAOS orthopedic guidelines",
+    "P_plan_for_improvement": "of the base of the skull (spheric-occipital1 develop in the remnants of Rathke's pouch"
+  },
+  "supplementary_callouts": {
+    "guideline": "AAOS orthopedic guidelines",
+    "takeaway": "of the base of the skull (spheric-occipital1 develop in the remnants of Rathke's pouch",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1605,
+  "specialty": "Orthopedic",
+  "topic": "The commonest bones to be affected by multiple myelomatosis are:",
+  "question": "The commonest bones to be affected by multiple myelomatosis are:",
+  "options": {
+    "A": "Femur.",
+    "B": "Humerus.",
+    "C": "Ribs and clavicle.",
+    "D": "Vertebrae especially lower lumbar vertebrae. e. Skull, sternum, and scapula."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Femur.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "The commonest bones to be affected by multiple myelomatosis are:",
+    "H_highlight_excellence": "Femur.",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "AAOS orthopedic guidelines",
+    "P_plan_for_improvement": "Femur"
+  },
+  "supplementary_callouts": {
+    "guideline": "AAOS orthopedic guidelines",
+    "takeaway": "Femur",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1558,
+  "specialty": "Orthopedic",
+  "topic": "'Tennis elbow' is the term used for a. olecranon bursitis",
+  "question": "'Tennis elbow' is the term used for a. olecranon bursitis",
+  "options": {
+    "A": "Carpal scaphoid b. Neck of the femur",
+    "B": "Joint involved in the fracture c. Proximal joint",
+    "C": "Lower third of the tibia d. Talus",
+    "D": "Both proximal and distal joints e. Distal joint 101)Non-union is common in fractures of the following bones except the:"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Carpal scaphoid b. Neck of the femur",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "'Tennis elbow' is the term used for a. olecranon bursitis",
+    "H_highlight_excellence": "Carpal scaphoid b. Neck of the femur",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "AAOS orthopedic guidelines",
+    "P_plan_for_improvement": "Carpal scaphoid b"
+  },
+  "supplementary_callouts": {
+    "guideline": "AAOS orthopedic guidelines",
+    "takeaway": "Carpal scaphoid b",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1585,
+  "specialty": "Orthopedic",
+  "topic": "In rheumatoid arthritis the",
+  "question": "In rheumatoid arthritis the",
+  "options": {
+    "A": "principal lesion is an area of fibrinoid necrosis surrounded by fibroblasts",
+    "B": "synovial membrane characteristically undergoes marked hypertrophy",
+    "C": "fibrosis in the joint capsule and ligaments produces the main deforming forces in the early stages of the disease",
+    "D": "permanent deformity in the late stage of the disease is usually due to bone ankylosis"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "principal lesion is an area of fibrinoid necrosis surrounded by fibroblasts",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "In rheumatoid arthritis the",
+    "H_highlight_excellence": "principal lesion is an area of fibrinoid necrosis surrounded by fibroblasts",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "AAOS orthopedic guidelines",
+    "P_plan_for_improvement": "principal lesion is an area of fibrinoid necrosis surrounded by fibroblasts"
+  },
+  "supplementary_callouts": {
+    "guideline": "AAOS orthopedic guidelines",
+    "takeaway": "principal lesion is an area of fibrinoid necrosis surrounded by fibroblasts",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1582,
+  "specialty": "Orthopedic",
+  "topic": "In congenital dislocation of the hip (CDH), the pathological changes include the",
+  "question": "In congenital dislocation of the hip (CDH), the pathological changes include the following except :",
+  "options": {
+    "A": "Small shallow acetabulum.",
+    "B": "Snail flattened femoral head lying outside the acetabulum.",
+    "C": "Elongated femoral neck.",
+    "D": "Thickened adherent joint capsule with an hour-glass constriction."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Small shallow acetabulum.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "In congenital dislocation of the hip (CDH), the pathological changes include the",
+    "H_highlight_excellence": "Small shallow acetabulum.",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "AAOS orthopedic guidelines",
+    "P_plan_for_improvement": "Small shallow acetabulum"
+  },
+  "supplementary_callouts": {
+    "guideline": "AAOS orthopedic guidelines",
+    "takeaway": "Small shallow acetabulum",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1583,
+  "specialty": "Orthopedic",
+  "topic": "In fractures involving the ankle joint",
+  "question": "In fractures involving the ankle joint",
+  "options": {
+    "A": "the stability of the tibio-fibular mortice determines the outcome",
+    "B": "if the mortice is disrupted it must be reconstructed",
+    "C": "in a third-degree external rotation injury the talus is free to slide beneath, and possibly fracture, the posterior margin of the tibia",
+    "D": "in an inversion (adduction) injury the media malieolus may be sheared from the tibia"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "the stability of the tibio-fibular mortice determines the outcome",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "In fractures involving the ankle joint",
+    "H_highlight_excellence": "the stability of the tibio-fibular mortice determines the outcome",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "AAOS orthopedic guidelines",
+    "P_plan_for_improvement": "the stability of the tibio-fibular mortice determines the outcome"
+  },
+  "supplementary_callouts": {
+    "guideline": "AAOS orthopedic guidelines",
+    "takeaway": "the stability of the tibio-fibular mortice determines the outcome",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1617,
+  "specialty": "Orthopedic",
+  "topic": "Treatment of chronic osteomyelitis:",
+  "question": "Treatment of chronic osteomyelitis:",
+  "options": {
+    "A": "medical treatment in form of antibiotics and blood transfusion.",
+    "B": "surgical treatment in form of sequestrectomy.",
+    "C": "sequestrectomy, and saucerization of bone cavity.",
+    "D": "sequestrectomy, saucerization, and filling of the bone cavity with antibiotic pills."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "medical treatment in form of antibiotics and blood transfusion.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Treatment of chronic osteomyelitis:",
+    "H_highlight_excellence": "medical treatment in form of antibiotics and blood transfusion.",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "AAOS orthopedic guidelines",
+    "P_plan_for_improvement": "medical treatment in form of antibiotics and blood transfusion"
+  },
+  "supplementary_callouts": {
+    "guideline": "AAOS orthopedic guidelines",
+    "takeaway": "medical treatment in form of antibiotics and blood transfusion",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1603,
+  "specialty": "Orthopedic",
+  "topic": "The best line of treatment of fractures radius and ulna at different",
+  "question": "The best line of treatment of fractures radius and ulna at different levels is:",
+  "options": {
+    "A": "Closed reduction and above elbow plaster for 6-8 weeks.",
+    "B": "Intramedullary nailing of both radius and ulna.",
+    "C": "Open reduction of the ulna and closed reduction of radius.",
+    "D": "Open reduction and internal fixation by plate and screws."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Closed reduction and above elbow plaster for 6-8 weeks.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "The best line of treatment of fractures radius and ulna at different",
+    "H_highlight_excellence": "Closed reduction and above elbow plaster for 6-8 weeks.",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "AAOS orthopedic guidelines",
+    "P_plan_for_improvement": "Closed reduction and above elbow plaster for 6-8 weeks"
+  },
+  "supplementary_callouts": {
+    "guideline": "AAOS orthopedic guidelines",
+    "takeaway": "Closed reduction and above elbow plaster for 6-8 weeks",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1572,
+  "specialty": "Orthopedic",
+  "topic": "Fracture femoral neck can be diagnosed from: a. Limb shortening.",
+  "question": "Fracture femoral neck can be diagnosed from: a. Limb shortening.",
+  "options": {
+    "A": "Flexor digitorum profundus. b. Flexor digitorum superficials. c. Palmaris longus.",
+    "B": "Undiagnosed pathology within knee. c. Incomplete removal of the cyst.",
+    "C": "Knee stiffness. d. Fat embolism. 65)Spontaneous bleeding into joints in haemophilia occurs when factor VI level is less than:",
+    "D": "All of the above. 6 www.mataryonline.com"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Flexor digitorum profundus. b. Flexor digitorum superficials. c. Palmaris longus.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Fracture femoral neck can be diagnosed from: a. Limb shortening.",
+    "H_highlight_excellence": "Flexor digitorum profundus. b. Flexor digitorum superficials. c. Palmaris longus.",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "AAOS orthopedic guidelines",
+    "P_plan_for_improvement": "Flexor digitorum profundus"
+  },
+  "supplementary_callouts": {
+    "guideline": "AAOS orthopedic guidelines",
+    "takeaway": "Flexor digitorum profundus",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1618,
+  "specialty": "Orthopedic",
+  "topic": "Treatment of fracture mid-shaft include:",
+  "question": "Treatment of fracture mid-shaft include:",
+  "options": {
+    "A": "Birth fracture is treated by Crede's method.",
+    "B": "Mid shaft fracture of infants and children is treated by gallows's traction.",
+    "C": "Fracture from age of 5-15 years is treated by skin traction on Thomas's splint.",
+    "D": "Mid shaft fracture in adults is treated by skeletal traction using Kirschner-wire or Steinmann's pin."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Birth fracture is treated by Crede's method.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Treatment of fracture mid-shaft include:",
+    "H_highlight_excellence": "Birth fracture is treated by Crede's method.",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "AAOS orthopedic guidelines",
+    "P_plan_for_improvement": "Birth fracture is treated by Crede's method"
+  },
+  "supplementary_callouts": {
+    "guideline": "AAOS orthopedic guidelines",
+    "takeaway": "Birth fracture is treated by Crede's method",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1584,
+  "specialty": "Orthopedic",
+  "topic": "In osteoarthntis of the hip joint",
+  "question": "In osteoarthntis of the hip joint",
+  "options": {
+    "A": "is the commonest arthropathy",
+    "B": "is characterized by marginal osteophyte formation c. commonly presents with back pain",
+    "C": "the leg is usually adducted and externally rotated when the patient lies supine",
+    "D": "symptoms are least apparent in the morning e. commonly produces swelling of the distal interphalangeal joints"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "is the commonest arthropathy",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "In osteoarthntis of the hip joint",
+    "H_highlight_excellence": "is the commonest arthropathy",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "AAOS orthopedic guidelines",
+    "P_plan_for_improvement": "is the commonest arthropathy"
+  },
+  "supplementary_callouts": {
+    "guideline": "AAOS orthopedic guidelines",
+    "takeaway": "is the commonest arthropathy",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
 ]);

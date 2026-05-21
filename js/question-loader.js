@@ -51,17 +51,31 @@
     }
 
     function finalizeLoading() {
-        // Remove duplicates based on ID
+        // Remove duplicates based on ID and filter for SHARP 3.0
         const uniqueMap = new Map();
         window.QUESTIONS.forEach(q => {
             if (q && q.id) {
-                uniqueMap.set(q.id, q);
+                // Check if it has been enriched with the new debrief structure
+                const hasSharp = !!(
+                    q.sharp_3_debrief || 
+                    q.S_set_the_stage || 
+                    q.sharp_debrief || 
+                    (q.sharp && q.sharp.set_the_stage) ||
+                    q.H_highlight_excellence
+                );
+                
+                // Exclude any questions explicitly marked as rejected by the pipeline
+                const notRejected = q.status !== 'REJECT';
+
+                if (hasSharp && notRejected) {
+                    uniqueMap.set(q.id, q);
+                }
             }
         });
         window.QUESTIONS = Array.from(uniqueMap.values());
         
         window.QUESTIONS_LOADED = true;
-        console.log(`[Loader] Success! ${window.QUESTIONS.length} unique questions ready.`);
+        console.log(`[Loader] Success! ${window.QUESTIONS.length} SHARP-enriched unique questions ready.`);
         
         // Trigger UI update if function exists
         if (typeof window.initArena === 'function') {
