@@ -9546,4 +9546,284 @@ window.QUESTIONS.push(...[
   },
   "discrepancy_flag": ""
 }
+,
+{
+  "id": 1530,
+  "specialty": "HPB",
+  "topic": "Which of the following statements is true about the inferior right hepatic",
+  "question": "Which of the following statements is true about the inferior right hepatic vein (IRHV)? 29,51",
+  "options": {
+    "A": "On ultrasound, an IRHV is identified posterior to the right portal vein",
+    "B": "It is present in approximately 20% of patients",
+    "C": "It can be of a larger caliber than the right hepatic vein",
+    "D": "All of the above"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "On ultrasound, an IRHV is identified posterior to the right portal vein",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Which of the following statements is true about the inferior right hepatic",
+    "H_highlight_excellence": "On ultrasound, an IRHV is identified posterior to the right portal vein",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "HPB surgical guidelines",
+    "P_plan_for_improvement": "On ultrasound, an IRHV is identified posterior to the right portal vein"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB surgical guidelines",
+    "takeaway": "On ultrasound, an IRHV is identified posterior to the right portal vein",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1434,
+  "specialty": "HPB",
+  "topic": "What is the average volume of the left liver? 50",
+  "question": "What is the average volume of the left liver? 50",
+  "options": {
+    "A": "56%",
+    "B": "50%",
+    "C": "45%",
+    "D": "33%"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "56%",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "What is the average volume of the left liver? 50",
+    "H_highlight_excellence": "56%",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "HPB surgical guidelines",
+    "P_plan_for_improvement": "56%"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB surgical guidelines",
+    "takeaway": "56%",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50138,
+  "specialty": "HPB",
+  "topic": "General",
+  "question": "Which of the following statements about the portal vein is true?",
+  "options": {
+    "A": "nterior to said structures",
+    "B": "It originates posterior to the IVC",
+    "C": "The left portal vein is longer than the right",
+    "D": "Ligation of the right portal vein would cause hyper- trophy of the right liver"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "nterior to said structures",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "nterior to said structures",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "HPB",
+    "P_plan_for_improvement": "nterior to said structures"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB",
+    "takeaway": "nterior to said structures",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1518,
+  "specialty": "HPB",
+  "topic": "Which of the following statements best describes Caro- li\u2019s disease?36,37",
+  "question": "Which of the following statements best describes Caro- li\u2019s disease?36,37",
+  "options": {
+    "A": "It presents with multiple intrahepatic bile duct cysts",
+    "B": "It consists of rounded or oval intrahepatic bile duct",
+    "C": "Treatment consists of biliary drainage, resection, or liver transplant depending on its extension",
+    "D": "All of the above"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "It presents with multiple intrahepatic bile duct cysts",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Which of the following statements best describes Caro- li\u2019s disease?36,37",
+    "H_highlight_excellence": "It presents with multiple intrahepatic bile duct cysts",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "HPB surgical guidelines",
+    "P_plan_for_improvement": "It presents with multiple intrahepatic bile duct cysts"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB surgical guidelines",
+    "takeaway": "It presents with multiple intrahepatic bile duct cysts",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1337,
+  "specialty": "HPB",
+  "topic": "According to the Brisbane 2000 Terminology 1, which of the following statements",
+  "question": "According to the Brisbane 2000 Terminology 1, which of the following statements is true?",
+  "options": {
+    "A": "Right anterior sectorectomy corresponds to resection of segments VI and VII",
+    "B": "Extended right hepatectomy corresponds to resec - tion of right hemiliver and left lateral sector",
+    "C": "Right posterior sectorectomy corresponds to resection of segments VI and VII",
+    "D": "Extended left hepatectomy corresponds to resection of left hemiliver and segment IV"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Right anterior sectorectomy corresponds to resection of segments VI and VII",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "According to the Brisbane 2000 Terminology 1, which of the following statements",
+    "H_highlight_excellence": "Right anterior sectorectomy corresponds to resection of segments VI and VII",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "HPB surgical guidelines",
+    "P_plan_for_improvement": "Right anterior sectorectomy corresponds to resection of segments VI and VII"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB surgical guidelines",
+    "takeaway": "Right anterior sectorectomy corresponds to resection of segments VI and VII",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1524,
+  "specialty": "HPB",
+  "topic": "Which of the following statements is true about the",
+  "question": "Which of the following statements is true about the",
+  "options": {
+    "A": "The portal vein provides 75% of the blood supply to the liver",
+    "B": "The hepatic artery provides 75% of the blood supply to the liver",
+    "C": "Blood supply to the intrahepatic bile ducts is mainly through the portal vein",
+    "D": "The portal vein provides 50% of the blood supply to the liver"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "The portal vein provides 75% of the blood supply to the liver",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Which of the following statements is true about the",
+    "H_highlight_excellence": "The portal vein provides 75% of the blood supply to the liver",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "HPB surgical guidelines",
+    "P_plan_for_improvement": "The portal vein provides 75% of the blood supply to the liver"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB surgical guidelines",
+    "takeaway": "The portal vein provides 75% of the blood supply to the liver",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1453,
+  "specialty": "HPB",
+  "topic": "What is the most common course of the right posterior hepatic artery",
+  "question": "What is the most common course of the right posterior hepatic artery (RPHA) relative to the right portal vein?",
+  "options": {
+    "A": "Supraportal",
+    "B": "Infraportal",
+    "C": "Combined infraportal and supraportal",
+    "D": "None of the above"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Supraportal",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "What is the most common course of the right posterior hepatic artery",
+    "H_highlight_excellence": "Supraportal",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "HPB surgical guidelines",
+    "P_plan_for_improvement": "Supraportal"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB surgical guidelines",
+    "takeaway": "Supraportal",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1435,
+  "specialty": "HPB",
+  "topic": "What is the definition of a left-sided gallbladder?",
+  "question": "What is the definition of a left-sided gallbladder?",
+  "options": {
+    "A": "The gallbladder located to the left of the ligamentum teres",
+    "B": "ile duct",
+    "C": "The gallbladder located to the left of the portal vein",
+    "D": "The gallbladder located at the left upper quadrant"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "The gallbladder located to the left of the ligamentum teres",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "What is the definition of a left-sided gallbladder?",
+    "H_highlight_excellence": "The gallbladder located to the left of the ligamentum teres",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "HPB surgical guidelines",
+    "P_plan_for_improvement": "The gallbladder located to the left of the ligamentum teres"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB surgical guidelines",
+    "takeaway": "The gallbladder located to the left of the ligamentum teres",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
 ]);

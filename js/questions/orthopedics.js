@@ -3044,4 +3044,74 @@ window.QUESTIONS.push(...[
   },
   "discrepancy_flag": ""
 }
+,
+{
+  "id": 1608,
+  "specialty": "Orthopedic",
+  "topic": "The following statements about provisional amputation for infective gangrene are true except",
+  "question": "The following statements about provisional amputation for infective gangrene are true except that it:",
+  "options": {
+    "A": "May be urgently needed to control infection and toxemia.",
+    "B": "Should be made through the healthy limb above the infected area.",
+    "C": "Should be done as low as possible to allow reamputation at the optimum level.",
+    "D": "Should provide free drainage."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "May be urgently needed to control infection and toxemia.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "The following statements about provisional amputation for infective gangrene are true except",
+    "H_highlight_excellence": "May be urgently needed to control infection and toxemia.",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "AAOS orthopedic guidelines",
+    "P_plan_for_improvement": "May be urgently needed to control infection and toxemia"
+  },
+  "supplementary_callouts": {
+    "guideline": "AAOS orthopedic guidelines",
+    "takeaway": "May be urgently needed to control infection and toxemia",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1594,
+  "specialty": "Orthopedic",
+  "topic": "Osteoporosis is a deficiency in: a. Calcium metabolism",
+  "question": "Osteoporosis is a deficiency in: a. Calcium metabolism",
+  "options": {
+    "A": "Has a normal serum concentration of 3-13 KA units b. Is present in high concentrations in liver cells",
+    "B": "Calcium deposition",
+    "C": "Is excreted in the bile",
+    "D": "Is elevated in the serum of patients with healing fractures"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Has a normal serum concentration of 3-13 KA units b. Is present in high concentrations in liver cells",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Osteoporosis is a deficiency in: a. Calcium metabolism",
+    "H_highlight_excellence": "Has a normal serum concentration of 3-13 KA units b. Is present in high concentrations in liver cells",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "AAOS orthopedic guidelines",
+    "P_plan_for_improvement": "Has a normal serum concentration of 3-13 KA units b"
+  },
+  "supplementary_callouts": {
+    "guideline": "AAOS orthopedic guidelines",
+    "takeaway": "Has a normal serum concentration of 3-13 KA units b",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
 ]);

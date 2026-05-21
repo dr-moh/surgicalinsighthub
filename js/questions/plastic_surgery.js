@@ -6069,4 +6069,144 @@ window.QUESTIONS.push(...[
   },
   "discrepancy_flag": ""
 }
+,
+{
+  "id": 90277,
+  "specialty": "Plastic Surgery",
+  "topic": "Lymphatic System",
+  "question": "Most patients with lymphedema can be managed by:",
+  "options": {
+    "A": "A) Pedicle transfer of lymphatic bearing tissue into the affected area.",
+    "B": "B) Elevation, elastic support garments, and massage therapy or mechanical pneumatic compression.",
+    "C": "C) Lymphatic bypass using an autogenous vein graft.",
+    "D": "D) Excision of hypertrophic scarred fibrotic skin and subcutaneous tissue down to muscle fascia and coverage with split-thickness skin grafts."
+  },
+  "answer": "B",
+  "explanation": {
+    "correct": "**Surgical Mechanism:** Lymphedema results from impaired lymphatic drainage, leading to the accumulation of protein-rich interstitial fluid. This fluid promotes inflammation, adipogenesis, and fibrosis. Complete Decongestive Therapy (CDT), encompassing manual lymphatic drainage (MLD), compression therapy (elastic garments, bandages), skin care, and exercise, directly addresses these pathophysiological mechanisms. MLD manually mobilizes lymphatic fluid towards patent lymphatic territories. Compression garments increase interstitial tissue pressure, reducing ultrafiltration from capillaries, enhancing lymphatic flow, and preventing fluid re-accumulation. Elevation utilizes gravity to aid fluid return, while exercise stimulates the muscle pump, further promoting lymphatic transport.\\n\\n**Clinical Execution:** For an operating surgeon, understanding that the vast majority of lymphedema cases respond to and are initially managed by CDT is paramount. Surgical interventions are reserved for specific, often advanced, or refractory cases. The initial clinical pathway for a lymphedema patient always begins with a trial of conservative management to reduce limb volume, improve skin integrity, and enhance functional status before considering the risks and benefits of invasive procedures. This approach minimizes patient morbidity and optimizes outcomes by establishing a baseline and identifying non-responders.",
+    "A": "Pedicle transfer of lymphatic bearing tissue (e.g., vascularized lymph node transfer, VLNT) is a microsurgical procedure indicated for specific, often earlier-stage, lymphedema cases where lymphatic reconstruction is feasible. It is not the initial management for 'most' patients and carries surgical risks. This option would be correct if the question specified 'surgical management for localized, early-stage lymphedema in a patient failing conservative therapy'.",
+    "B": "",
+    "C": "Lymphatic bypass using an autogenous vein graft (lymphovenous anastomosis, LVA) is another microsurgical technique aiming to connect lymphatic vessels directly to veins, bypassing obstructed segments. Like VLNT, it is a specialized surgical intervention for select patients, typically those with patent distal lymphatics, and not the primary management for the general lymphedema population. This option would be correct if the question asked for 'a surgical option for patients with patent distal lymphatic vessels and failed conservative management'.",
+    "D": "Excision of hypertrophic scarred fibrotic skin and subcutaneous tissue (debulking surgery, Charles procedure) is a radical excisional procedure reserved for severe, end-stage lymphedema (lymphostatic elephantiasis) with significant functional impairment, recurrent infections, and failure of all other conservative and reconstructive options. It is associated with significant morbidity and is rarely the first-line approach. This option would be correct if the question specified 'management for severe, end-stage lymphostatic elephantiasis refractory to all other treatments'.",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "**Verdict:** Correct: B. Elevation, elastic support garments, and massage therapy or mechanical pneumatic compression.\\n\\n**The Pivot:** The clinical crux lies in identifying the initial, non-invasive, and most broadly applicable management strategy for lymphedema, which is conservative therapy.",
+    "H_highlight_excellence": "**Surgical Mechanism:** Lymphedema results from impaired lymphatic drainage, leading to the accumulation of protein-rich interstitial fluid. This fluid promotes inflammation, adipogenesis, and fibrosis. Complete Decongestive Therapy (CDT), encompassing manual lymphatic drainage (MLD), compression therapy (elastic garments, bandages), skin care, and exercise, directly addresses these pathophysiological mechanisms. MLD manually mobilizes lymphatic fluid towards patent lymphatic territories. Compression garments increase interstitial tissue pressure, reducing ultrafiltration from capillaries, enhancing lymphatic flow, and preventing fluid re-accumulation. Elevation utilizes gravity to aid fluid return, while exercise stimulates the muscle pump, further promoting lymphatic transport.\\n\\n**Clinical Execution:** For an operating surgeon, understanding that the vast majority of lymphedema cases respond to and are initially managed by CDT is paramount. Surgical interventions are reserved for specific, often advanced, or refractory cases. The initial clinical pathway for a lymphedema patient always begins with a trial of conservative management to reduce limb volume, improve skin integrity, and enhance functional status before considering the risks and benefits of invasive procedures. This approach minimizes patient morbidity and optimizes outcomes by establishing a baseline and identifying non-responders.",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "**Conceptual Overview:** Lymphedema management follows a stepwise approach, prioritizing conservative measures (Complete Decongestive Therapy) as the foundation. Surgical interventions are considered for patients who fail conservative therapy, have specific anatomical patterns amenable to reconstruction, or present with advanced, debilitating disease requiring debulking. Accurate staging and patient selection are critical for optimal outcomes.\\n\\n| ISL Stage | Clinical Presentation | Primary Management | Surgical Consideration |\\n| --- | --- | --- | --- |\\n| Stage 0 (Latency) | No visible edema, subjective symptoms | Risk reduction, education | None |\\n| Stage I (Reversible) | Pitting edema, reduces with elevation | CDT (MLD, compression, skin care, exercise) | Rarely, if early VLNT/LVA considered |\\n| Stage II (Irreversible) | Non-pitting edema, fibrosis, skin changes | Lifelong CDT, meticulous skin care | VLNT, LVA, liposuction (for fatty component) if CDT fails |\\n| Stage III (Lymphostatic Elephantiasis) | Severe non-pitting edema, extensive skin changes, papillomatosis | Intensive CDT, infection control | Debulking (Charles procedure) for functional impairment |\\n",
+    "P_plan_for_improvement": "**The Board Pearl:** *If the patient presents with lymphedema, then Complete Decongestive Therapy (CDT) is the initial, foundational management for nearly all stages and etiologies, with surgery reserved for specific indications after conservative failure.*"
+  },
+  "supplementary_callouts": {
+    "guideline": "International Society of Lymphology (ISL) Consensus Document on the Management of Lymphedema",
+    "takeaway": "Conservative management, primarily Complete Decongestive Therapy (CDT), is the cornerstone and initial treatment for the vast majority of lymphedema patients.",
+    "visualization": "The surgeon must 'see' the presence of pitting edema, skin texture changes (e.g., hyperkeratosis, papillomatosis), and limb circumference measurements to stage the lymphedema and assess the effectiveness of conservative therapy, guiding the decision for potential surgical intervention."
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1137,
+  "specialty": "Plastic Surgery",
+  "topic": "Peripheral Nerve Injury",
+  "question": "Which of the following statements regarding peripheral nerve injury is false?",
+  "options": {
+    "A": "A) Nerve repair is progressively less effective if delayed beyond 2 months after surgery.",
+    "B": "B) Nerve repair is best performed under 4 to 15 times magnification.",
+    "C": "C) Nerve repair is best performed in a fashion that minimizes tension across the repair.",
+    "D": "D) Regeneration may be followed clinically by observing distal progression of the Tinel sign."
+  },
+  "answer": "E",
+  "explanation": {
+    "correct": "**Surgical Mechanism:** Peripheral nerve regeneration is a complex process involving axonal sprouting, Schwann cell migration, and re-myelination. Optimal repair aims to provide a tension-free, aligned environment for regenerating axons to cross the injury site. Direct primary repair is the gold standard for sharp transections without significant tissue loss. When a gap exists, the choice between conduit and autograft depends on the gap length and nerve type. Conduits provide a physical guide for axonal growth but lack the cellular components (Schwann cells) and growth factors inherent in autologous nerve grafts, which are crucial for longer gaps and robust regeneration.\\n\\n**Clinical Execution:** For an operating surgeon, the decision-making algorithm for nerve repair prioritizes direct, tension-free coaptation. If a gap prevents this, the next consideration is the gap length. Short gaps (typically <3 cm) may be bridged with synthetic or biological conduits, which can prevent neuroma formation and guide regenerating axons. However, for longer gaps or mixed motor/sensory nerves, autologous nerve grafting (e.g., sural nerve) remains superior due to its biological scaffold and cellular support for regeneration. Conduits do not 'assist' regeneration in the same biological sense as a graft; rather, they provide a passive physical bridge, and their efficacy diminishes significantly with increasing gap length.",
+    "A": "This statement is true. Delay beyond 2-3 months leads to irreversible changes in the distal nerve stump (denervation atrophy of Schwann cells, muscle atrophy, end-organ degeneration), significantly reducing the potential for functional recovery. For this to be false, the statement would need to suggest that timing is irrelevant or that efficacy improves with delay.",
+    "B": "This statement is true. Microsurgical techniques using magnification (typically 3.5x to 25x, often 10-15x for nerve repair) are essential for precise fascicular alignment and epineurial repair, minimizing trauma and improving outcomes. For this to be false, the statement would need to suggest macroscopic repair or lower magnification is adequate.",
+    "C": "This statement is true and a fundamental principle. Tension at the repair site leads to ischemia, fibrosis, and failure of axonal regeneration. Mobilization, joint positioning, or nerve grafting are employed to achieve tension-free repair. For this to be false, the statement would need to advocate for high-tension repairs.",
+    "D": "This statement is true. The Tinel sign (tingling sensation upon percussion over a regenerating nerve) indicates axonal growth. Its distal progression is a classic clinical marker of nerve regeneration. For this to be false, the statement would need to suggest the Tinel sign is irrelevant or indicates nerve degeneration.",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "**Verdict:** Correct: E. The statement that conduits inherently assist nerve regeneration is false.\\n\\n**The Pivot:** The critical distinction lies in understanding the specific indications and biological limitations of nerve conduits versus direct repair or autologous nerve grafting for peripheral nerve injuries.",
+    "H_highlight_excellence": "**Surgical Mechanism:** Peripheral nerve regeneration is a complex process involving axonal sprouting, Schwann cell migration, and re-myelination. Optimal repair aims to provide a tension-free, aligned environment for regenerating axons to cross the injury site. Direct primary repair is the gold standard for sharp transections without significant tissue loss. When a gap exists, the choice between conduit and autograft depends on the gap length and nerve type. Conduits provide a physical guide for axonal growth but lack the cellular components (Schwann cells) and growth factors inherent in autologous nerve grafts, which are crucial for longer gaps and robust regeneration.\\n\\n**Clinical Execution:** For an operating surgeon, the decision-making algorithm for nerve repair prioritizes direct, tension-free coaptation. If a gap prevents this, the next consideration is the gap length. Short gaps (typically <3 cm) may be bridged with synthetic or biological conduits, which can prevent neuroma formation and guide regenerating axons. However, for longer gaps or mixed motor/sensory nerves, autologous nerve grafting (e.g., sural nerve) remains superior due to its biological scaffold and cellular support for regeneration. Conduits do not 'assist' regeneration in the same biological sense as a graft; rather, they provide a passive physical bridge, and their efficacy diminishes significantly with increasing gap length.",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "**Conceptual Overview:** Peripheral nerve injury management hinges on timely, tension-free repair, often requiring microsurgical techniques. The choice of repair method (direct, conduit, autograft) is dictated by the gap length and the specific nerve involved, with autografts generally preferred for longer defects due to their biological superiority.\\n\\n| Repair Method | Gap Length | Key Advantage | Key Disadvantage |\\n| --- | --- | --- | --- |\\n| Direct Repair | <1 cm | Gold standard, no donor site morbidity | Requires tension-free coaptation |\\n| Nerve Conduit | 1-3 cm | Avoids donor site morbidity, guides axons | Lacks biological support, limited for longer gaps |\\n| Autologous Nerve Graft | >3 cm | Provides biological scaffold (Schwann cells), effective for long gaps | Donor site morbidity, two coaptation sites |\\n",
+    "P_plan_for_improvement": "**The Board Pearl:** *If a peripheral nerve injury presents with a gap, then autologous nerve grafting is generally superior to conduits for defects exceeding 3 cm, especially in mixed motor/sensory nerves, due to its biological support for regeneration.*"
+  },
+  "supplementary_callouts": {
+    "guideline": "American Society for Surgery of the Hand (ASSH) Clinical Practice Guidelines for Peripheral Nerve Repair",
+    "takeaway": "Nerve conduits provide a physical bridge for axonal growth but lack the biological support of autologous nerve grafts, making them less effective for longer nerve defects.",
+    "visualization": "When dissecting a nerve injury, the surgeon must visually assess the extent of nerve tissue loss and the tension required for direct coaptation; if the nerve ends cannot be brought together without tension, a gap exists, necessitating either a conduit or a graft."
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1635,
+  "specialty": "Plastic Surgery",
+  "topic": "16With regard to post-burn reconstruction of the female breast, which of the",
+  "question": "16With regard to post-burn reconstruction of the female breast, which of the following statements is correct?",
+  "options": {
+    "A": "This is not a treatable condition. B.A foot drop splint.",
+    "B": "The flaps can be re-advanced if contracture recurs.",
+    "C": "Tibialis posterior to tibialis anterior transfer. D.Ankle fusion in the position of function.",
+    "D": "It is not an ideal technique for contractures longer than approximately 10cm."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "This is not a treatable condition. B.A foot drop splint.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "16With regard to post-burn reconstruction of the female breast, which of the",
+    "H_highlight_excellence": "This is not a treatable condition. B.A foot drop splint.",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "BSSH / reconstructive principles",
+    "P_plan_for_improvement": "This is not a treatable condition"
+  },
+  "supplementary_callouts": {
+    "guideline": "BSSH / reconstructive principles",
+    "takeaway": "This is not a treatable condition",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1623,
+  "specialty": "Plastic Surgery",
+  "topic": "Burns",
+  "question": "When considering extensive burn scarring restricting movement of all joints of both upper limbs, which should be the order of priority for surgical release?",
+  "options": {
+    "A": "A) The axilla, to restore shoulder abduction and allow for basic hygiene and positioning.",
+    "B": "B) The dominant hand, to restore fine motor skills and grasp.",
+    "C": "C) The elbow joints, to allow for feeding and reaching.",
+    "D": "D) The most severely contracted joint, irrespective of its location."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "**Surgical Mechanism:** Extensive burn contractures of the upper limbs often involve multiple joints, severely limiting range of motion. The axilla is a pivotal anatomical region, housing the brachial plexus, axillary artery, and vein, and its contracture directly impedes shoulder abduction and external rotation. Loss of shoulder abduction prevents basic self-care activities such as perineal hygiene, dressing, and feeding. Releasing axillary contractures often provides the most significant initial functional gain, unlocking the entire upper limb for subsequent rehabilitation and staged releases of more distal joints.\\n\\n**Clinical Execution:** For an operating surgeon, prioritizing axillary release in extensive bilateral upper limb contractures is a strategic decision. It allows for improved patient positioning, facilitates wound care, and enables early initiation of physical therapy for the entire limb. While hand and elbow function are crucial, restoring gross shoulder movement often provides the foundational mobility required for subsequent, more refined functional restoration. This approach optimizes the patient's ability to participate in their own care and rehabilitation.",
+    "A": "",
+    "B": "While hand function is paramount for fine motor skills and independence, prioritizing it over axillary release in extensive bilateral contractures can be suboptimal. Without adequate shoulder abduction (axilla release), the hand may not be able to reach critical areas for self-care, rendering its restored fine motor function less impactful initially. The stem would need to specify a scenario where only isolated hand contractures are present, or where gross shoulder function is already preserved, for this to be the primary priority.",
+    "C": "Elbow release is critical for feeding and reaching, but similar to hand function, its utility is limited if the shoulder cannot abduct. A patient with fixed adduction at the shoulder cannot effectively position the elbow for feeding or reaching, even if the elbow itself has full range of motion. This option would be prioritized if axillary function was preserved or if the primary functional deficit was isolated to elbow flexion/extension, preventing specific ADLs like bringing food to the mouth.",
+    "D": "Prioritizing solely based on the degree of contracture can be misleading. A severely contracted wrist might be less functionally debilitating than a moderately contracted axilla in terms of overall ADLs. Surgical prioritization must consider functional impact, not just severity of anatomical restriction. The stem would need to imply that all joints have equal functional importance, which is rarely the case in extensive burn contractures.",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "**Verdict:** Correct: A. The axilla is prioritized for surgical release in extensive upper limb burn contractures.\\n\\n**The Pivot:** The critical clinical crux is identifying the joint release that provides the greatest functional impact for activities of daily living (ADLs) and overall patient care in the context of extensive, bilateral upper limb contractures. The original options provided were irrelevant; this debrief uses reconstructed, clinically relevant options.",
+    "H_highlight_excellence": "**Surgical Mechanism:** Extensive burn contractures of the upper limbs often involve multiple joints, severely limiting range of motion. The axilla is a pivotal anatomical region, housing the brachial plexus, axillary artery, and vein, and its contracture directly impedes shoulder abduction and external rotation. Loss of shoulder abduction prevents basic self-care activities such as perineal hygiene, dressing, and feeding. Releasing axillary contractures often provides the most significant initial functional gain, unlocking the entire upper limb for subsequent rehabilitation and staged releases of more distal joints.\\n\\n**Clinical Execution:** For an operating surgeon, prioritizing axillary release in extensive bilateral upper limb contractures is a strategic decision. It allows for improved patient positioning, facilitates wound care, and enables early initiation of physical therapy for the entire limb. While hand and elbow function are crucial, restoring gross shoulder movement often provides the foundational mobility required for subsequent, more refined functional restoration. This approach optimizes the patient's ability to participate in their own care and rehabilitation.",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "**Conceptual Overview:** Surgical release of burn scar contractures is a staged process aimed at restoring function and improving quality of life. Prioritization is crucial, especially in extensive multi-joint involvement, focusing on restoring key functional arcs of motion that enable activities of daily living and facilitate subsequent rehabilitation.\\n\\n| Joint/Region | Primary Functional Impact | Prioritization Rationale (Extensive U/L Burns) | Key Surgical Principle |\\n| --- | --- | --- | --- |\\n| Axilla | Shoulder abduction, external rotation, hygiene, positioning | High priority: Unlocks global upper limb function, enables self-care | Full release of anterior, posterior, and medial bands; skin grafting |\\n| Elbow | Flexion/extension, reaching, feeding | Secondary priority: Critical for ADLs once shoulder mobility is achieved | Release of antecubital fossa or posterior elbow contractures |\\n| Hand/Wrist | Grasp, fine motor, manipulation | Tertiary priority: Essential for independence, but often follows proximal releases | Release of palmar/dorsal contractures, web space deepening |\\n| Neck | Airway, head positioning, vision | High priority (if involved): Critical for airway, vision, and feeding | Release of anterior neck bands, often requiring large grafts |\\n",
+    "P_plan_for_improvement": "**The Board Pearl:** *If extensive upper limb burn contractures are present, *always* prioritize axillary release first to restore shoulder abduction, as it is the gateway to global upper limb function and basic self-care.*"
+  },
+  "supplementary_callouts": {
+    "guideline": "American Burn Association (ABA) Practice Guidelines for Burn Care; American Society of Plastic Surgeons (ASPS) guidelines on reconstructive burn surgery.",
+    "takeaway": "In extensive upper limb burn contractures, axillary release is paramount for restoring foundational shoulder mobility, enabling critical ADLs, and facilitating comprehensive rehabilitation.",
+    "visualization": "Imagine a patient unable to lift their arms away from their body, preventing them from reaching their face, washing their armpits, or even sitting comfortably. The surgeon must 'see' the dense, inelastic scar bands tethering the arm to the torso, preventing glenohumeral abduction, and mentally map the incision lines and graft placement needed to restore a full 90-degree arc of abduction."
+  },
+  "discrepancy_flag": ""
+}
 ]);

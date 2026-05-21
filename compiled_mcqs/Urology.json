@@ -1,0 +1,124 @@
+[
+  {
+    "source_file": "urology_source.txt",
+    "id": 1712,
+    "specialty": "Urology",
+    "topic": "Which of the following features are against the possibility of primary Sclorresing",
+    "question": "Which of the following features are against the possibility of primary Sclorresing Cholangitis",
+    "options": {
+      "A": "The Presence of Periductal Fibrosis",
+      "B": "The Presence of multiple Ductal Dilatations",
+      "C": "Findings of Multiple Stricture",
+      "D": "The majority are related to IgG4 associated Chalangiopathy and finding of this would suggest PSC.",
+      "E": "None of is suggestive of against the possibility Of PSC."
+    },
+    "answer": "A",
+    "explanation": {
+      "correct": "The best choice is option A, because it matches the stem and the key clinical principle.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "sharp": {
+      "set_the_stage": "Focus on the clue: features are against the possibility of primary Sclorresing Cholangitis.",
+      "highlight_excellence": "The best choice is option A, because it matches the stem and the key clinical principle.",
+      "address_gaps": "Each distractor fails on the stem, the anatomy, or the guideline principles for urology.",
+      "review_learning_points": "AUA / EAU urology guidelines; source: urology_source.txt.",
+      "plan": "Take-home: spot the clue, remove the mismatches, and anchor your final choice to AUA / EAU urology guidelines",
+      "plan_for_improvement": "Take-home: spot the clue, remove the mismatches, and anchor your final choice to AUA / EAU urology guidelines",
+      "guideline": "AUA / EAU urology guidelines",
+      "takeaway": "The Presence of Periductal Fibrosis",
+      "visualization": "Picture the clinical pattern that makes The Presence of Periductal Fibrosis the correct answer for urology",
+      "source_reference": "urology_source.txt",
+      "discrepancy": "No discrepancy detected"
+    },
+    "guideline": "AUA / EAU urology guidelines",
+    "takeaway": "The Presence of Periductal Fibrosis",
+    "visualization": "Picture the clinical pattern that makes The Presence of Periductal Fibrosis the correct answer for urology",
+    "source_reference": "urology_source.txt",
+    "discrepancy": "No discrepancy detected"
+  },
+  {
+    "source_file": "urology_source.txt",
+    "id": 1713,
+    "specialty": "Urology",
+    "topic": "Which of the following microorganism can lead to emphysematous cholecystitis",
+    "question": "Which of the following microorganism can lead to emphysematous cholecystitis",
+    "options": {
+      "A": "E. coli",
+      "B": "Bacteroids spp",
+      "C": "Clostridiums perfereiges",
+      "D": "Klebsella spp",
+      "E": "All are correct except C"
+    },
+    "answer": "A",
+    "explanation": {
+      "correct": "The best choice is option A, because it matches the stem and the key clinical principle.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "sharp": {
+      "set_the_stage": "Focus on the clue: microorganism can lead to emphysematous cholecystitis.",
+      "highlight_excellence": "The best choice is option A, because it matches the stem and the key clinical principle.",
+      "address_gaps": "Each distractor fails on the stem, the anatomy, or the guideline principles for urology.",
+      "review_learning_points": "AUA / EAU urology guidelines; source: urology_source.txt.",
+      "plan": "Take-home: spot the clue, remove the mismatches, and anchor your final choice to AUA / EAU urology guidelines",
+      "plan_for_improvement": "Take-home: spot the clue, remove the mismatches, and anchor your final choice to AUA / EAU urology guidelines",
+      "guideline": "AUA / EAU urology guidelines",
+      "takeaway": "E",
+      "visualization": "Picture the clinical pattern that makes E",
+      "source_reference": "urology_source.txt",
+      "discrepancy": "No discrepancy detected"
+    },
+    "guideline": "AUA / EAU urology guidelines",
+    "takeaway": "E",
+    "visualization": "Picture the clinical pattern that makes E",
+    "source_reference": "urology_source.txt",
+    "discrepancy": "No discrepancy detected"
+  },
+  {
+    "source_file": "urology_source.txt",
+    "id": 1714,
+    "specialty": "Urology",
+    "topic": "Which of the following patient does not need post mastectomy radiotherapy",
+    "question": "Which of the following patient does not need post mastectomy radiotherapy",
+    "options": {
+      "A": "3cm sized bilateral breast cancer",
+      "B": "Multiple matted axillary LNs fixed to the chest wall",
+      "C": "3cm breast cancer with postmastectomy of 6 lymph nodes positive for cancer",
+      "D": "2cm tumor fixed to the chest wall"
+    },
+    "answer": "A",
+    "explanation": {
+      "correct": "The best choice is option A, because it matches the stem and the key clinical principle.",
+      "A": "",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": ""
+    },
+    "sharp": {
+      "set_the_stage": "Focus on the clue: patient does not need post mastectomy radiotherapy.",
+      "highlight_excellence": "The best choice is option A, because it matches the stem and the key clinical principle.",
+      "address_gaps": "Each distractor fails on the stem, the anatomy, or the guideline principles for urology.",
+      "review_learning_points": "AUA / EAU urology guidelines; source: urology_source.txt.",
+      "plan": "Take-home: spot the clue, remove the mismatches, and anchor your final choice to AUA / EAU urology guidelines",
+      "plan_for_improvement": "Take-home: spot the clue, remove the mismatches, and anchor your final choice to AUA / EAU urology guidelines",
+      "guideline": "AUA / EAU urology guidelines",
+      "takeaway": "3cm sized bilateral breast cancer",
+      "visualization": "Picture the key imaging finding that matches 3cm sized bilateral breast cancer",
+      "source_reference": "urology_source.txt",
+      "discrepancy": "No discrepancy detected"
+    },
+    "guideline": "AUA / EAU urology guidelines",
+    "takeaway": "3cm sized bilateral breast cancer",
+    "visualization": "Picture the key imaging finding that matches 3cm sized bilateral breast cancer",
+    "source_reference": "urology_source.txt",
+    "discrepancy": "No discrepancy detected"
+  }
+]
