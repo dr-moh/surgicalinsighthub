@@ -182,8 +182,8 @@
 .sharp-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;}
 .sharp-title{font-size:1.1rem;font-weight:700;color:#ffffff;}
 .sharp-result{display:flex;align-items:center;gap:8px;font-size:.9rem;font-weight:900;padding:8px 16px;border-radius:12px;background:rgba(255,255,255,0.05);}
-.sharp-result.correct{color:var(--brand-green);border:1px solid rgba(34,197,94,0.3);}
-.sharp-result.wrong{color:var(--brand-red);border:1px solid rgba(239,68,68,0.3);}
+.sharp-result.correct{color:var(--correct-green);border:1px solid var(--correct-green);background:rgba(34,197,94,0.05);}
+.sharp-result.wrong{color:var(--wrong-red);border:1px solid var(--wrong-red);background:rgba(239,68,68,0.05);}
 
 .sharp-main-list {
   list-style-type: disc;
@@ -962,10 +962,14 @@ function showSharp(q, selected, isCorrect) {
   var visualizationCallout = String(callouts.visualization || q.visualization || sharp.visualization || '').trim();
   var discrepancyFlag = String(q.discrepancy_flag || '').trim();
 
-  document.getElementById('sharpResult').innerHTML = 
-    isCorrect 
-      ? '<span style="color:var(--correct-green);">✓ Correct! You selected ' + q.answer + '</span>'
-      : '<span style="color:var(--wrong-red);">✗ Incorrect. The correct answer is ' + q.answer + '</span>';
+  var res = document.getElementById('sharpResult');
+  if (isCorrect) {
+    res.className = 'sharp-result correct';
+    res.innerHTML = '✓ Correct! You selected ' + q.answer;
+  } else {
+    res.className = 'sharp-result wrong';
+    res.innerHTML = '✗ Incorrect. The correct answer is ' + q.answer;
+  }
 
   // Check for new markdown pipeline output
   var markdownWrap = document.getElementById('sharpMarkdownWrap');
@@ -1094,11 +1098,6 @@ function showSharp(q, selected, isCorrect) {
   } else {
     discrepancyWrap.style.display = 'none';
   }
-
-  // Result badge
-  var res = document.getElementById('sharpResult');
-  if (isCorrect) { res.className = 'sharp-result correct'; res.textContent = '✓ Correct'; }
-  else { res.className = 'sharp-result wrong'; res.textContent = '✗ You selected ' + selected + ' — Answer is ' + q.answer; }
 
   // Scroll to debrief
   setTimeout(function() { card.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 100);
