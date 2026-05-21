@@ -9826,4 +9826,109 @@ window.QUESTIONS.push(...[
   },
   "discrepancy_flag": ""
 }
+,
+{
+  "id": 1433,
+  "specialty": "HPB",
+  "topic": "What is the arterial blood supply to the retropancreatic",
+  "question": "What is the arterial blood supply to the retropancreatic",
+  "options": {
+    "A": "Dorsal pancreatic artery",
+    "B": "Right gastric artery",
+    "C": "Gastroduodenal artery",
+    "D": "Retroduodenal artery"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Dorsal pancreatic artery",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "What is the arterial blood supply to the retropancreatic",
+    "H_highlight_excellence": "Dorsal pancreatic artery",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "HPB surgical guidelines",
+    "P_plan_for_improvement": "Dorsal pancreatic artery"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB surgical guidelines",
+    "takeaway": "Dorsal pancreatic artery",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50210,
+  "specialty": "HPB",
+  "topic": "General",
+  "question": "Name the avascular space on the ventral side of the ret- rohepatic IVC, commonly used to perform the hanging maneuver.",
+  "options": {
+    "A": "Space of Courvoisier",
+    "B": "Space of Glisson",
+    "C": "Space of Couinaud",
+    "D": "Space of Rouviere \u201cI found constantly a loose space between vena cava and liver, limited superiorly by emergence on the right of the right hepatic vein, on the left of the common stem middle + left veins\u201d Couinaud. 43,59, 60"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Space of Courvoisier",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "Space of Courvoisier",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "HPB",
+    "P_plan_for_improvement": "Space of Courvoisier"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB",
+    "takeaway": "Space of Courvoisier",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50174,
+  "specialty": "HPB",
+  "topic": "General",
+  "question": "What anatomical variation of the hepatic artery is shown in the illustration? 16,17",
+  "options": {
+    "A": "Replaced left hepatic artery",
+    "B": "Replaced right hepatic artery",
+    "C": "Accessory right hepatic artery",
+    "D": "Both replaced right and left hepatic artery"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Replaced left hepatic artery",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "Replaced left hepatic artery",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "HPB",
+    "P_plan_for_improvement": "Replaced left hepatic artery"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB",
+    "takeaway": "Replaced left hepatic artery",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
 ]);

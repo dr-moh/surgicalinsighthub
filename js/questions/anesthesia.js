@@ -4456,4 +4456,74 @@ window.QUESTIONS.push(...[
   },
   "discrepancy_flag": ""
 }
+,
+{
+  "id": 34,
+  "specialty": "Anesthesia",
+  "topic": "Correct statement about metabolism of drugs by the liver is",
+  "question": "Correct statement about metabolism of drugs by the liver is",
+  "options": {
+    "A": "For drugs with low extraction ratio, liver blood flow is the rate-limiting step in their metabolism",
+    "B": "For drugs with high extraction ratio, the capacity of the liver to metabolize the drug is the rate-limiting step",
+    "C": "Cytochrome P450 system is highly drug-specific",
+    "D": "Removal of the drug from the blood by hepatic clearance is directly proportional to hepatic blood flow and intrinsic clearance"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "For drugs with low extraction ratio, liver blood flow is the rate-limiting step in their metabolism",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Correct statement about metabolism of drugs by the liver is",
+    "H_highlight_excellence": "For drugs with low extraction ratio, liver blood flow is the rate-limiting step in their metabolism",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "ASA practice guidelines",
+    "P_plan_for_improvement": "For drugs with low extraction ratio, liver blood flow is the rate-limiting step in their metabolism"
+  },
+  "supplementary_callouts": {
+    "guideline": "ASA practice guidelines",
+    "takeaway": "For drugs with low extraction ratio, liver blood flow is the rate-limiting step in their metabolism",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 46,
+  "specialty": "Anesthesia",
+  "topic": "Lidocaine and epinephrine are commonly used together when testing epidural anesthesia because",
+  "question": "Lidocaine and epinephrine are commonly used together when testing epidural anesthesia because",
+  "options": {
+    "A": "Lidocaine injection (3 mL of 1.5%) intravascularly will induce local anesthetic toxicity such as perioral numbness",
+    "B": "Intrathecal injection of epinephrine will result in a high spinal",
+    "C": "Intrathecal injection of lidocaine can cause a low-level spinal anesthesia with some degree of motor block",
+    "D": "Intravascular injection of epinephrine (typically 15 \u03bcg/3 mL) can cause hypertension more than tachycardia"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Lidocaine injection (3 mL of 1.5%) intravascularly will induce local anesthetic toxicity such as perioral numbness",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Lidocaine and epinephrine are commonly used together when testing epidural anesthesia because",
+    "H_highlight_excellence": "Lidocaine injection (3 mL of 1.5%) intravascularly will induce local anesthetic toxicity such as perioral numbness",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "ASA practice guidelines",
+    "P_plan_for_improvement": "Lidocaine injection (3 mL of 1"
+  },
+  "supplementary_callouts": {
+    "guideline": "ASA practice guidelines",
+    "takeaway": "Lidocaine injection (3 mL of 1",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
 ]);
