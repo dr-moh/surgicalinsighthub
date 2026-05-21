@@ -2904,4 +2904,144 @@ window.QUESTIONS.push(...[
   },
   "discrepancy_flag": ""
 }
+,
+{
+  "id": 1621,
+  "specialty": "Orthopedic",
+  "topic": "Volkman's ischemia commonly occurs following: a. Fracture shaft humerus.",
+  "question": "Volkman's ischemia commonly occurs following: a. Fracture shaft humerus.",
+  "options": {
+    "A": "Shaft.",
+    "B": "Surgical neck.",
+    "C": "Medial epicondyle. d. Lateral epieondyle.",
+    "D": "Lower third of humerus. 5 51)Fracture involving which part of humerus can cause delayed ulnar palsy:"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Shaft.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Volkman's ischemia commonly occurs following: a. Fracture shaft humerus.",
+    "H_highlight_excellence": "Shaft.",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "AAOS orthopedic guidelines",
+    "P_plan_for_improvement": "Shaft"
+  },
+  "supplementary_callouts": {
+    "guideline": "AAOS orthopedic guidelines",
+    "takeaway": "Shaft",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1607,
+  "specialty": "Orthopedic",
+  "topic": "The differential diagnosis of osteoid osteoma includes all the following except:",
+  "question": "The differential diagnosis of osteoid osteoma includes all the following except:",
+  "options": {
+    "A": "Brodies' abscess b. Ossifying fibroma c. Ewing's tumor",
+    "B": "Hyaluronidase",
+    "C": "Albumin and laucin",
+    "D": "Alpha and beta globulins e. Beta lipoproteins"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Brodies' abscess b. Ossifying fibroma c. Ewing's tumor",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "The differential diagnosis of osteoid osteoma includes all the following except:",
+    "H_highlight_excellence": "Brodies' abscess b. Ossifying fibroma c. Ewing's tumor",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "AAOS orthopedic guidelines",
+    "P_plan_for_improvement": "Brodies' abscess b"
+  },
+  "supplementary_callouts": {
+    "guideline": "AAOS orthopedic guidelines",
+    "takeaway": "Brodies' abscess b",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1562,
+  "specialty": "Orthopedic",
+  "topic": "Acute suppurative arthritis:",
+  "question": "Acute suppurative arthritis:",
+  "options": {
+    "A": "affects any age and any sex.",
+    "B": "complicates penetrating injuries.",
+    "C": "extension from osteomyelitis (intracapsular metaphysis).",
+    "D": "may complicate gonorrhea in adults."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "affects any age and any sex.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Acute suppurative arthritis:",
+    "H_highlight_excellence": "affects any age and any sex.",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "AAOS orthopedic guidelines",
+    "P_plan_for_improvement": "affects any age and any sex"
+  },
+  "supplementary_callouts": {
+    "guideline": "AAOS orthopedic guidelines",
+    "takeaway": "affects any age and any sex",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1614,
+  "specialty": "Orthopedic",
+  "topic": "The most serious complication of Winnet-Orr techique in management of chronic osteomyelitis",
+  "question": "The most serious complication of Winnet-Orr techique in management of chronic osteomyelitis is:",
+  "options": {
+    "A": "septicemia and pyaemia.",
+    "B": "stiffness of the near by joint.",
+    "C": "deep vein thrombosis due to long stay in bed.",
+    "D": "anaerobic wound infection in form of gas gangrene and tetanus."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "septicemia and pyaemia.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "The most serious complication of Winnet-Orr techique in management of chronic osteomyelitis",
+    "H_highlight_excellence": "septicemia and pyaemia.",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "AAOS orthopedic guidelines",
+    "P_plan_for_improvement": "septicemia and pyaemia"
+  },
+  "supplementary_callouts": {
+    "guideline": "AAOS orthopedic guidelines",
+    "takeaway": "septicemia and pyaemia",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
 ]);

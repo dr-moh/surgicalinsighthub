@@ -1,729 +1,431 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Surgical Insight Hub — Fracture Management Monograph</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../css/shared.css">
-<link rel="stylesheet" href="../../css/theme.css">
-<style>
-:root {
-  /* Orthopaedic Steel Blue & Slate Aesthetic */
-  --primary:   #1E3A8A; 
-  --primary-dk:#0F172A;
-  --primary-lt:#F8FAFC;
-  --accent:    #2563EB;
-  --accent2:   #64748B;
-  --gold:      #94A3B8;
-  --gold-lt:   #F1F5F9;
-  --s1:        #1E3A8A;
-  --s2:        #334155;
-  --s3:        #2563EB;
-  --s4:        #475569;
-  --s5:        #1D4ED8;
-  --s1-lt:     #EFF6FF;
-  --s2-lt:     #F8FAFC;
-  --s3-lt:     #DBEAFE;
-  --s4-lt:     #F1F5F9;
-  --s5-lt:     #EFF6FF;
-  --red:       #B91C1C;
-  --red-lt:    #FEF2F2;
-  --amber:     #D97706;
-  --amber-lt:  #FFFBEB;
-  --blue:      #1D4ED8;
-  --blue-lt:   #EFF6FF;
-  --bg:        var(--bg-primary, #FAFAFA);
-  --bg2:       var(--bg-secondary, #F4F4F5);
-  --border:    var(--border-color, #E2E8F0);
-  --text:      var(--text-primary, #0F172A);
-  --muted:     var(--text-secondary, #64748B);
-  --white:     var(--surface-color, #FFFFFF);
-  --sidebar-w: 320px;
-}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-html{scroll-behavior:smooth;}
-body{font-family:'Source Serif 4',Georgia,serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.75;}
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="../../css/shared.css" rel="stylesheet"/>
+<link href="../../css/theme.css" rel="stylesheet"/>
 
-/* SLIDE-OVER SIDEBAR */
-#sidebar {
-  position: fixed; top: 0; left: 0; width: var(--sidebar-w); height: 100vh;
-  background: var(--primary-dk); color: #F8FAFC;
-  display: flex; flex-direction: column;
-  z-index: 3000; overflow: hidden;
-  transform: translateX(-100%);
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 4px 0 24px rgba(0,0,0,0.4);
-}
-body.sidebar-open #sidebar {
-  transform: translateX(0);
-}
-
-/* OVERLAY */
-#sidebar-overlay {
-  position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
-  background: rgba(15, 23, 42, 0.7); backdrop-filter: blur(3px);
-  z-index: 2950; opacity: 0; pointer-events: none;
-  transition: opacity 0.3s ease;
-}
-body.sidebar-open #sidebar-overlay {
-  opacity: 1; pointer-events: auto;
-}
-
-/* TOGGLE BUTTON - TOP LEFT */
-#sidebar-toggle {
-  position: fixed; top: 104px; left: 28px; z-index: 900;
-  background: var(--primary); color: white;
-  border: none; border-radius: 30px;
-  padding: 10px 18px; font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600;
-  letter-spacing: 0.05em; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-  display: flex; align-items: center; gap: 8px; transition: all 0.2s;
-}
-#sidebar-toggle:hover {
-  background: var(--accent); transform: translateY(-2px);
-}
-
-#sidebar-header{padding:20px 20px 14px;border-bottom:1px solid rgba(255,255,255,0.08);flex-shrink:0;}
-#sidebar-header .logo{font-family:'Playfair Display',serif;font-size:13px;font-weight:700;color:var(--accent2);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;}
-#sidebar-header .sub{font-size:10.5px;color:rgba(248,250,252,0.6);letter-spacing:0.04em;}
-#sidebar-search{padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.05);flex-shrink:0;}
-#sidebar-search input{width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:6px;color:#F8FAFC;padding:6px 10px;font-size:12px;font-family:'Source Serif 4',serif;outline:none;transition:border-color 0.2s;}
-#sidebar-search input::placeholder{color:rgba(248,250,252,0.4);}
-#sidebar-search input:focus{border-color:var(--accent2);}
-#sidebar-nav{flex:1;overflow-y:auto;padding:8px 0 20px;}
-#sidebar-nav::-webkit-scrollbar{width:4px;}
-#sidebar-nav::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.15);border-radius:2px;}
-.vol-label{font-size:9.5px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent2);padding:14px 18px 4px;}
-.nav-item{display:block;padding:8px 18px 8px 22px;font-size:12.5px;color:rgba(248,250,252,0.75);text-decoration:none;border-left:2px solid transparent;transition:all 0.15s;line-height:1.4;}
-.nav-item:hover{color:#fff;background:rgba(255,255,255,0.03);border-left-color:rgba(59,130,246,0.5);}
-.nav-item.active{color:#fff;background:rgba(255,255,255,0.06);border-left-color:var(--accent2);font-weight:600;}
-.nav-item .num{font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(248,250,252,0.4);margin-right:6px;}
-
-/* MAIN */
-#main{margin-left:0; min-height:100vh;}
-
-/* HERO */
-#hero{background:linear-gradient(135deg,var(--primary-dk) 0%,#1E3A8A 60%,#0F172A 100%);color:white;padding:120px 72px 60px;position:relative;overflow:hidden;}
-#hero::before{content:'';position:absolute;top:-60px;right:-60px;width:380px;height:380px;background:radial-gradient(circle,rgba(59,130,246,0.15) 0%,transparent 70%);pointer-events:none;}
-#hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent2),var(--gold),transparent);}
-#hero .eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.16em;color:var(--accent2);text-transform:uppercase;margin-bottom:14px;}
-#hero h1{font-family:'Playfair Display',serif;font-size:46px;font-weight:700;line-height:1.15;margin-bottom:10px;color:#fff;}
-#hero .subtitle{font-size:18px;color:rgba(255,255,255,0.8);font-style:italic;margin-bottom:28px;}
-#hero .badges{display:flex;gap:10px;flex-wrap:wrap;}
-#hero .badge{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:4px 14px;font-size:12px;color:rgba(255,255,255,0.95);font-family:'JetBrains Mono',monospace;}
-
-/* CONTENT */
-.content-wrap{max-width:900px;margin:0 auto;padding:0 48px 80px;}
-
-/* SECTION HEADER */
-.sec-header{margin-top:60px;margin-bottom:8px;padding:28px 36px;border-radius:10px;display:flex;align-items:center;gap:20px;}
-.sec-header.s1{background:linear-gradient(135deg,#1E3A8A0A,#1E3A8A1A);border-left:4px solid var(--s1);}
-.sec-header.s2{background:linear-gradient(135deg,#3341550A,#3341551A);border-left:4px solid var(--s2);}
-.sec-header.s3{background:linear-gradient(135deg,#2563EB0A,#2563EB1A);border-left:4px solid var(--s3);}
-.sec-header.s4{background:linear-gradient(135deg,#4755690A,#4755691A);border-left:4px solid var(--s4);}
-.sec-header.s5{background:linear-gradient(135deg,#1D4ED80A,#1D4ED81A);border-left:4px solid var(--s5);}
-.sec-badge{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;letter-spacing:0.1em;padding:4px 12px;border-radius:4px;white-space:nowrap;flex-shrink:0;}
-.s1 .sec-badge{background:var(--s1);color:white;}
-.s2 .sec-badge{background:var(--s2);color:white;}
-.s3 .sec-badge{background:var(--s3);color:white;}
-.s4 .sec-badge{background:var(--s4);color:white;}
-.s5 .sec-badge{background:var(--s5);color:white;}
-.sec-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;}
-.s1 .sec-title{color:var(--s1);}
-.s2 .sec-title{color:var(--s2);}
-.s3 .sec-title{color:var(--s3);}
-.s4 .sec-title{color:var(--s4);}
-.s5 .sec-title{color:var(--s5);}
-
-/* TOPIC */
-.topic{margin-top:48px;padding-top:48px;border-top:1px solid var(--border);}
-.topic:first-of-type{border-top:none;}
-.topic-header{display:flex;align-items:flex-start;gap:16px;margin-bottom:24px;}
-.topic-num{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;padding:3px 10px;border-radius:4px;margin-top:4px;flex-shrink:0;}
-.s1 .topic-num{background:var(--s1-lt);color:var(--s1);}
-.s2 .topic-num{background:var(--s2-lt);color:var(--s2);}
-.s3 .topic-num{background:var(--s3-lt);color:var(--s3);}
-.s4 .topic-num{background:var(--s4-lt);color:var(--s4);}
-.s5 .topic-num{background:var(--s5-lt);color:var(--s5);}
-.topic h2{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;line-height:1.2;}
-.s1 .topic h2{color:var(--s1);}
-.s2 .topic h2{color:var(--s2);}
-.s3 .topic h2{color:var(--s3);}
-.s4 .topic h2{color:var(--s4);}
-.s5 .topic h2{color:var(--s5);}
-.topic h3{font-family:'Playfair Display',serif;font-size:17px;font-weight:600;color:var(--muted);margin:26px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--border);}
-.topic p{margin-bottom:12px;color:var(--text);}
-.topic ul,.topic ol{margin:8px 0 14px 20px;color:var(--text);}
-.topic li{margin-bottom:6px;line-height:1.65;}
-.topic li::marker{color:var(--accent2);}
-.topic strong{color:var(--text);font-weight:600;}
-
-/* TABLES */
-.table-wrap{overflow-x:auto;margin:16px 0 20px;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.04);}
-table{width:100%;border-collapse:collapse;font-size:13.5px;background:var(--white);}
-thead tr{background:var(--s1);}
-thead th{color:white;padding:10px 14px;text-align:left;font-family:'Source Serif 4',serif;font-weight:600;font-size:13px; text-transform: uppercase;}
-tbody tr:nth-child(even){background:var(--bg2);}
-tbody tr:hover{background:var(--s1-lt);transition:background 0.15s;}
-tbody td{padding:9px 14px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.5;}
-.s2-tbl thead tr{background:var(--s2);}
-.s3-tbl thead tr{background:var(--s3);}
-.s4-tbl thead tr{background:var(--s4);}
-.s5-tbl thead tr{background:var(--s5);}
-
-/* CALLOUTS */
-.callout{margin:18px 0;padding:14px 18px;border-radius:0 8px 8px 0;border-left:4px solid;font-size:14px;line-height:1.65;}
-.callout .label{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;display:block;margin-bottom:4px;}
-.callout.pearl{background:var(--amber-lt);border-color:var(--amber);}
-.callout.pearl .label{color:var(--amber);}
-.callout.warn{background:var(--red-lt);border-color:var(--red);}
-.callout.warn .label{color:var(--red);}
-.callout.clin{background:var(--s1-lt);border-color:var(--s1);}
-.callout.clin .label{color:var(--s1);}
-
-/* DIAGRAM PLACEHOLDERS */
-.diagram-wrap{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:18px;margin:20px 0;box-shadow:0 1px 4px rgba(0,0,0,0.03);text-align:center;}
-.diagram-title{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--s1);margin-bottom:12px;text-align:left;}
-.diagram-wrap img { max-width: 100%; height: auto; display: block; margin: 0 auto; border-radius: 4px; }
-
-/* RAPID REFERENCE */
-.rapid-ref{background:var(--primary-dk);color:var(--primary-lt);border-radius:10px;padding:28px 32px;margin:30px 0;}
-.rapid-ref h3{font-family:'Playfair Display',serif;font-size:20px;color:var(--accent2);margin-bottom:16px;}
-.rapid-ref table{font-size:12.5px; background: transparent;} 
-.rapid-ref thead tr{background:rgba(100,116,139,0.15);}
-.rapid-ref thead th{color:var(--accent2);padding:8px 12px;font-size:11px;}
-.rapid-ref tbody tr:nth-child(even){background:rgba(255,255,255,0.03);}
-.rapid-ref tbody tr:hover{background:rgba(255,255,255,0.06);}
-.rapid-ref tbody td{color:var(--primary-lt);padding:7px 12px;border-bottom:1px solid rgba(255,255,255,0.05);}
-.rapid-ref tbody td strong{color:var(--gold);}
-
-/* PROGRESS */
-#progress-bar{position:fixed;top:80px;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent2),var(--gold));transform-origin:left;transform:scaleX(0);transition:transform 0.1s;z-index:1050;}
-
-/* TOP BTN */
-#top-btn{position:fixed;bottom:28px;right:28px;background:var(--primary);color:white;border:none;border-radius:50%;width:44px;height:44px;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,0.2);transition:all 0.2s;opacity:0;pointer-events:none;}
-#top-btn.show{opacity:1;pointer-events:auto;}
-#top-btn:hover{background:var(--accent2);transform:translateY(-2px);}
-
-/* ANIMATION */
-.topic{animation:fadeUp 0.4s ease both;}
-@keyframes fadeUp{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
-
-@media(max-width:900px){
-  .content-wrap{padding:0 20px 60px;}
-  #hero{padding:100px 20px 40px;}
-  #hero h1{font-size:30px;}
-  #sidebar-toggle{
-    top: auto;
-    bottom: 24px;
-    left: 24px;
-    z-index: 400;
-    padding: 8px 16px;
-    font-size: 12px;
-  }
-}
-@media print{
-  #sidebar-toggle, #sidebar-overlay, #sidebar, #top-btn, #progress-bar{display:none!important;}
-  .topic{page-break-inside:avoid;}
-  .sec-header{page-break-before:always;}
-}
-</style>
 </head>
 <body>
-
-  <!-- Standardized SIH Navbar -->
-  <nav class="nav" id="mainNav">
-    <div class="nav-left">
-      <a href="../../index.html" class="nav-pill">
-        <div class="nav-logo-img">
-          <img src="../../assets/images/Surgical_Insight_Hub_Logo.png" alt="SIH Logo">
-        </div>
-        <div>
-          <div class="nav-brand-text">Surgical Insight Hub</div>
-          <div class="nav-brand-sub">The Residency Journal</div>
-        </div>
-      </a>
-    </div>
-
-    <div class="nav-links-pill">
-      <a href="../../index.html">Home</a>
-      <a href="../../notes.html" class="active">Notes</a>
-      <a href="../operative_approach.html">Playbook</a>
-      <a href="../../arena.html">MCQ Arena</a>
-      <a href="../../podcast.html">Podcast</a>
-      <a href="../../surgery-talk.html">Surgery Talk</a>
-      <a href="../../about.html">About</a>
-    </div>
-
-    <div class="nav-right">
-      <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
-        <svg id="moonIcon" viewBox="0 0 24 24" width="18" height="18"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-        <svg id="sunIcon" style="display:none;" viewBox="0 0 24 24" width="18" height="18"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-      </button>
-      <a href="https://t.me/sugicalInsightHub" target="_blank" class="nav-tg-btn" title="Join Telegram" style="background: var(--brand-burgundy); color: #f0d080; padding: 8px 12px; border-radius: 8px; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: all 0.3s ease;">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="#f0d080"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.89 8.22l-1.97 9.28c-.15.66-.54.82-1.08.51l-3-2.21-1.45 1.39c-.16.16-.3.3-.61.3l.21-3.05 5.56-5.02c.24-.21-.05-.33-.37-.12l-6.87 4.33-2.96-.92c-.64-.2-.66-.64.14-.95l11.57-4.46c.54-.19 1.01.13.83.94z"/></svg>
-      </a>
-      <a href="../../arena.html" class="nav-btn arena-btn">MCQ Arena</a>
-      <button class="mob-nav-toggle" onclick="openMobNav()" aria-label="Menu">
-        <div class="hamburger"><span></span><span></span><span></span></div>
-      </button>
-    </div>
-  </nav>
-
-  <div class="mob-nav-overlay" id="mobNavOverlay" onclick="closeMobNav()"></div>
-  <div class="mob-nav-sheet" id="mobNavSheet">
-    <div class="mob-nav-handle"></div>
-    <a href="../../index.html" onclick="closeMobNav()">Home</a>
-    <a href="../../notes.html" class="active" onclick="closeMobNav()">Notes</a>
-    <a href="../operative_approach.html" onclick="closeMobNav()">Playbook</a>
-    <a href="../../arena.html" onclick="closeMobNav()">MCQ Arena</a>
-    <a href="../../podcast.html" onclick="closeMobNav()">Podcast</a>
-    <a href="../../surgery-talk.html" onclick="closeMobNav()">Surgery Talk</a>
-    <a href="../../about.html" onclick="closeMobNav()">About</a>
-    <a href="https://t.me/sugicalInsightHub" target="_blank" rel="noopener" onclick="closeMobNav()" style="color: var(--brand-gold); font-weight: 800;">Join Telegram Community</a>
-  </div>
-
-<div id="progress-bar"></div>
-
-<div id="sidebar-overlay" onclick="closeSidebar()"></div>
-
-<button id="sidebar-toggle" onclick="toggleSidebar()">
-  <span>☰</span> Contents
+<!-- Standardized SIH Navbar -->
+<nav class="nav" id="mainNav">
+<div class="nav-left">
+<a class="nav-pill" href="../../index.html">
+<div class="nav-logo-img">
+<img alt="SIH Logo" src="../../assets/images/Surgical_Insight_Hub_Logo.png"/>
+</div>
+<div>
+<div class="nav-brand-text">Surgical Insight Hub</div>
+<div class="nav-brand-sub">The Residency Journal</div>
+</div>
+</a>
+</div>
+<div class="nav-links-pill">
+<a href="../../index.html">Home</a>
+<a class="active" href="../../notes.html">Notes</a>
+<a href="../operative_approach.html">Playbook</a>
+<a href="../../arena.html">MCQ Arena</a>
+<a href="../../podcast.html">Podcast</a>
+<a href="../../surgery-talk.html">Surgery Talk</a>
+<a href="../../about.html">About</a>
+</div>
+<div class="nav-right">
+<button aria-label="Toggle Theme" class="theme-toggle" id="themeToggle">
+<svg height="18" id="moonIcon" viewbox="0 0 24 24" width="18"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+<svg height="18" id="sunIcon" style="display:none;" viewbox="0 0 24 24" width="18"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line><line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line><line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line></svg>
 </button>
-
-<nav id="sidebar">
-  <div id="sidebar-header">
-    <div class="logo">Surgical Insight Hub</div>
-    <div class="sub">Fracture Management Monograph</div>
-  </div>
-  <div id="sidebar-search">
-    <input type="text" id="search-input" placeholder="Search topics…" oninput="filterNav(this.value)">
-  </div>
-  <div id="sidebar-nav">
-    <div class="vol-label">Pillar 1: Pre-Op Optimization</div>
-    <a class="nav-item" href="#p1a"><span class="num">1.1</span>Clinical Workup</a>
-    <a class="nav-item" href="#p1b"><span class="num">1.2</span>Mandatory Investigations</a>
-    <a class="nav-item" href="#p1c"><span class="num">1.3</span>Risk Stratification (DCO)</a>
-    <a class="nav-item" href="#p1d"><span class="num">1.4</span>Immediate Preparation</a>
-    
-    <div class="vol-label">Pillar 2: The Operative Game Plan</div>
-    <a class="nav-item" href="#p2a"><span class="num">2.1</span>Closed Reduction &amp; Casting</a>
-    <a class="nav-item" href="#p2b"><span class="num">2.2</span>ORIF: Femur</a>
-    <a class="nav-item" href="#p2c"><span class="num">2.3</span>ORIF: Tibia</a>
-    <a class="nav-item" href="#p2d"><span class="num">2.4</span>ORIF: Humerus</a>
-    <a class="nav-item" href="#p2e"><span class="num">2.5</span>ORIF: Forearm</a>
-    <a class="nav-item" href="#p2f"><span class="num">2.6</span>ORIF: Ankle</a>
-    <a class="nav-item" href="#p2g"><span class="num">2.7</span>Intramedullary Nailing</a>
-    <a class="nav-item" href="#p2h"><span class="num">2.8</span>External Fixation</a>
-    <a class="nav-item" href="#p2i"><span class="num">2.9</span>Skeletal Traction</a>
-    <a class="nav-item" href="#p2j"><span class="num">2.10</span>The Critical View</a>
-    
-    <div class="vol-label">Pillar 3: Pearls &amp; Bail-Outs</div>
-    <a class="nav-item" href="#p3a"><span class="num">3.1</span>Consultant Pearls</a>
-    <a class="nav-item" href="#p3b"><span class="num">3.2</span>The Bail-Out Point</a>
-    
-    <div class="vol-label">Pillar 4: Post-Op Care</div>
-    <a class="nav-item" href="#p4a"><span class="num">4.1</span>Immediate Recovery</a>
-    <a class="nav-item" href="#p4b"><span class="num">4.2</span>Clinic Follow-up</a>
-    
-    <div class="vol-label">Pillar 5: Complications</div>
-    <a class="nav-item" href="#p5a"><span class="num">5.1</span>Compartment Syndrome</a>
-    <a class="nav-item" href="#p5b"><span class="num">5.2</span>Non-union</a>
-    <a class="nav-item" href="#p5c"><span class="num">5.3</span>Malunion</a>
-    
-    <div class="vol-label">Quick Reference</div>
-    <a class="nav-item" href="#rapid">High-Yield Board Facts</a>
-  </div>
+<a class="nav-tg-btn" href="https://t.me/sugicalInsightHub" style="background: var(--brand-burgundy); color: #f0d080; padding: 8px 12px; border-radius: 8px; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: all 0.3s ease;" target="_blank" title="Join Telegram">
+<svg fill="#f0d080" height="18" viewbox="0 0 24 24" width="18"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.89 8.22l-1.97 9.28c-.15.66-.54.82-1.08.51l-3-2.21-1.45 1.39c-.16.16-.3.3-.61.3l.21-3.05 5.56-5.02c.24-.21-.05-.33-.37-.12l-6.87 4.33-2.96-.92c-.64-.2-.66-.64.14-.95l11.57-4.46c.54-.19 1.01.13.83.94z"></path></svg>
+</a>
+<a class="nav-btn arena-btn" href="../../arena.html">MCQ Arena</a>
+<button aria-label="Menu" class="mob-nav-toggle" onclick="openMobNav()">
+<div class="hamburger"><span></span><span></span><span></span></div>
+</button>
+</div>
 </nav>
-
-<main id="main">
+<div class="mob-nav-overlay" id="mobNavOverlay" onclick="closeMobNav()"></div>
+<div class="mob-nav-sheet" id="mobNavSheet">
+<div class="mob-nav-handle"></div>
+<a href="../../index.html" onclick="closeMobNav()">Home</a>
+<a class="active" href="../../notes.html" onclick="closeMobNav()">Notes</a>
+<a href="../operative_approach.html" onclick="closeMobNav()">Playbook</a>
+<a href="../../arena.html" onclick="closeMobNav()">MCQ Arena</a>
+<a href="../../podcast.html" onclick="closeMobNav()">Podcast</a>
+<a href="../../surgery-talk.html" onclick="closeMobNav()">Surgery Talk</a>
+<a href="../../about.html" onclick="closeMobNav()">About</a>
+<a href="https://t.me/sugicalInsightHub" onclick="closeMobNav()" rel="noopener" style="color: var(--brand-gold); font-weight: 800;" target="_blank">Join Telegram Community</a>
+</div>
+<div id="progress-bar"></div>
+<div id="sidebar-overlay" onclick="closeSidebar()"></div>
+<button id="sidebar-toggle" onclick="toggleSidebar()">
+<span>☰</span> Contents
+</button>
+<nav id="sidebar">
+<div id="sidebar-header">
+<div class="logo">Surgical Insight Hub</div>
+<div class="sub">Fracture Management Monograph</div>
+</div>
+<div id="sidebar-search">
+<input id="search-input" oninput="filterNav(this.value)" placeholder="Search topics…" type="text"/>
+</div>
+<div id="sidebar-nav">
+<div class="vol-label">Pillar 1: Pre-Op Optimization</div>
+<a class="nav-item" href="#p1a"><span class="num">1.1</span>Clinical Workup</a>
+<a class="nav-item" href="#p1b"><span class="num">1.2</span>Mandatory Investigations</a>
+<a class="nav-item" href="#p1c"><span class="num">1.3</span>Risk Stratification (DCO)</a>
+<a class="nav-item" href="#p1d"><span class="num">1.4</span>Immediate Preparation</a>
+<div class="vol-label">Pillar 2: The Operative Game Plan</div>
+<a class="nav-item" href="#p2a"><span class="num">2.1</span>Closed Reduction &amp; Casting</a>
+<a class="nav-item" href="#p2b"><span class="num">2.2</span>ORIF: Femur</a>
+<a class="nav-item" href="#p2c"><span class="num">2.3</span>ORIF: Tibia</a>
+<a class="nav-item" href="#p2d"><span class="num">2.4</span>ORIF: Humerus</a>
+<a class="nav-item" href="#p2e"><span class="num">2.5</span>ORIF: Forearm</a>
+<a class="nav-item" href="#p2f"><span class="num">2.6</span>ORIF: Ankle</a>
+<a class="nav-item" href="#p2g"><span class="num">2.7</span>Intramedullary Nailing</a>
+<a class="nav-item" href="#p2h"><span class="num">2.8</span>External Fixation</a>
+<a class="nav-item" href="#p2i"><span class="num">2.9</span>Skeletal Traction</a>
+<a class="nav-item" href="#p2j"><span class="num">2.10</span>The Critical View</a>
+<div class="vol-label">Pillar 3: Pearls &amp; Bail-Outs</div>
+<a class="nav-item" href="#p3a"><span class="num">3.1</span>Consultant Pearls</a>
+<a class="nav-item" href="#p3b"><span class="num">3.2</span>The Bail-Out Point</a>
+<div class="vol-label">Pillar 4: Post-Op Care</div>
+<a class="nav-item" href="#p4a"><span class="num">4.1</span>Immediate Recovery</a>
+<a class="nav-item" href="#p4b"><span class="num">4.2</span>Clinic Follow-up</a>
+<div class="vol-label">Pillar 5: Complications</div>
+<a class="nav-item" href="#p5a"><span class="num">5.1</span>Compartment Syndrome</a>
+<a class="nav-item" href="#p5b"><span class="num">5.2</span>Non-union</a>
+<a class="nav-item" href="#p5c"><span class="num">5.3</span>Malunion</a>
+<div class="vol-label">Quick Reference</div>
+<a class="nav-item" href="#rapid">High-Yield Board Facts</a>
+</div>
+</nav>
+<main class="editorial-content" id="main">
 <section id="hero">
-  <div class="eyebrow">Surgical Insight Hub · Monograph Series · ABSITE · PGY-3 Framework</div>
-  <h1>Fracture Management</h1>
-  <p class="subtitle">ORIF, Closed Reduction, Nailing, External Fixation, and Skeletal Traction</p>
-  <div class="badges">
-    <span class="badge">Orthopaedic Trauma</span>
-    <span class="badge">Damage Control</span>
-    <span class="badge">Biomechanics</span>
-  </div>
+<div class="eyebrow">Surgical Insight Hub · Monograph Series · ABSITE · PGY-3 Framework</div>
+<h1>Fracture Management</h1>
+<p class="subtitle">ORIF, Closed Reduction, Nailing, External Fixation, and Skeletal Traction</p>
+<div class="badges">
+<span class="badge">Orthopaedic Trauma</span>
+<span class="badge">Damage Control</span>
+<span class="badge">Biomechanics</span>
+</div>
 </section>
-
 <div class="content-wrap">
-
 <div class="callout warn" style="margin-top: 40px;">
-  <span class="label">Upfront Philosophy</span>
-  <p>Fracture management sits at the intersection of general surgery and orthopaedics. In resource-limited settings where orthopaedic coverage is variable and the general surgeon is the first responder, this knowledge is not academic. It is immediately applicable. You will reduce fractures, apply casts, place skeletal traction, and assist with or perform external fixation. You will manage compartment syndrome. You will make the decision between operative and non-operative management. You will recognise when a fracture that appears straightforward is about to kill someone.</p>
-  <p>Five treatment modalities are covered across multiple locations. Master the principles first. The techniques are applications of the principles.</p>
+<span class="label">Upfront Philosophy</span>
+<p>Fracture management sits at the intersection of general surgery and orthopaedics. In resource-limited settings where orthopaedic coverage is variable and the general surgeon is the first responder, this knowledge is not academic. It is immediately applicable. You will reduce fractures, apply casts, place skeletal traction, and assist with or perform external fixation. You will manage compartment syndrome. You will make the decision between operative and non-operative management. You will recognise when a fracture that appears straightforward is about to kill someone.</p>
+<p>Five treatment modalities are covered across multiple locations. Master the principles first. The techniques are applications of the principles.</p>
 </div>
-
 <div class="sec-header s1">
-  <span class="sec-badge">PILLAR 1</span>
-  <span class="sec-title">Pre-operative Optimization &amp; Preparation</span>
+<span class="sec-badge">PILLAR 1</span>
+<span class="sec-title">Pre-operative Optimization &amp; Preparation</span>
 </div>
-
 <section class="topic s1" id="p1a">
-  <div class="topic-header"><span class="topic-num">1.1</span><h2>Clinical Workup</h2></div>
-  
-  <p>The history and mechanism of injury dictate the urgency and breadth of your workup before any imaging is ordered.</p>
-
-  <h3>Mechanism of Injury</h3>
-  <ul>
-    <li><strong>High-energy (MVC, falls, crush, gunshot):</strong> Presume associated injuries until proven otherwise. A femoral shaft fracture in a high-energy mechanism has a 10-15% rate of associated ipsilateral hip injury (femoral neck fracture, missed in up to 30% of cases on initial assessment). Always image the joint above and below the fracture.</li>
-    <li><strong>Low-energy (simple fall):</strong> In a young patient, this is a pathological fracture until proven otherwise. Healthy bone does not fracture from low-energy trauma. Obtain a staging CT and perform a biopsy before fixation if malignancy is suspected.</li>
-    <li><strong>Rotational mechanism:</strong> Ligamentous injury is common. Assess joint stability separately from the fracture itself.</li>
-  </ul>
-
-  <h3>Timing and Neurovascular Status</h3>
-  <ul>
-    <li><strong>Timing:</strong> Open fracture grading and compartment syndrome risk are time-dependent. The clock starts at injury, not arrival. Debride highly contaminated wounds within 6 hours. Compartment syndrome typically sets in 2-6 hours post-injury.</li>
-    <li><strong>Neurovascular status:</strong> Document distal pulses (Doppler if needed), capillary refill (&lt;2 seconds), sensation (two-point discrimination in specific nerve distributions), and motor function before and after every manipulation. A new neurological deficit after reduction is an iatrogenic nerve injury until proven otherwise.</li>
-  </ul>
-
-  <h3>Open vs. Closed Fractures</h3>
-  <p>Any breach in the skin overlying a fracture is an open fracture. Do not be reassured by a 2mm puncture over a tibial shaft; the bone has punched through and retracted.</p>
-  
-  <div class="diagram-wrap">
-    <div class="diagram-title">Gustilo-Anderson Classification for Open Fractures</div>
-    
-  </div>
-
-  <div class="table-wrap s1-tbl"><table>
-    <thead><tr><th>Type</th><th>Description</th><th>Management</th></tr></thead>
-    <tbody>
-      <tr><td><strong>I</strong></td><td>Clean wound &lt;1cm; minimal contamination; simple pattern</td><td>IV cefazolin; debridement + definitive fixation within 24h</td></tr>
-      <tr><td><strong>II</strong></td><td>Wound 1-10cm; moderate contamination and tissue damage</td><td>IV cefazolin; debridement within 6-24h; temporary or definitive fixation</td></tr>
-      <tr><td><strong>IIIA</strong></td><td>Wound &gt;10cm; extensive soft tissue damage; adequate coverage possible</td><td>IV cefazolin + gentamicin; debridement within 6h; external fixation</td></tr>
-      <tr><td><strong>IIIB</strong></td><td>Extensive soft tissue loss; bone exposed; requires flap coverage</td><td>IV cefazolin + gentamicin + metronidazole (farm); debridement + external fixation; plastic surgery</td></tr>
-      <tr><td><strong>IIIC</strong></td><td>Vascular injury requiring repair</td><td>Add metronidazole; vascular repair first; external fixation; amputation if non-reconstructable</td></tr>
-    </tbody>
-  </table></div>
-</section>
-
-<section class="topic s1" id="p1b">
-  <div class="topic-header"><span class="topic-num">1.2</span><h2>Mandatory Pre-operative Investigations</h2></div>
-  
-  <h3>Imaging</h3>
-  <ul>
-    <li><strong>Plain X-ray:</strong> Mandatory. Two views at 90° to each other (AP and lateral). Include the joint above and below the fracture. Define location, pattern (transverse, oblique, comminuted), and displacement (translation, angulation, shortening).</li>
-    <li><strong>CT scan:</strong> Mandatory for periarticular fractures (tibial plateau, pilon, acetabulum), comminuted shafts, occult fractures, and pelvic ring injuries. Defines 3D anatomy for plate positioning.</li>
-    <li><strong>MRI:</strong> For soft tissue injury characterisation (ligaments, meniscus) and stress fractures.</li>
-    <li><strong>Vascular imaging:</strong> Doppler or CTA for any fracture with an absent distal pulse, expanding haematoma, ABI &lt;0.9, or Gustilo IIIC.</li>
-  </ul>
-
-  <h3>Compartment Pressure Measurement</h3>
-  <p>If compartment syndrome is clinically suspected, take the patient to theatre immediately. Do not delay for pressure measurements. If the diagnosis is uncertain in an obtunded patient, measure pressures using a Stryker device or arterial line setup.</p>
-  <ul>
-    <li><strong>Absolute pressure:</strong> &gt;30mmHg indicates fasciotomy.</li>
-    <li><strong>Delta pressure:</strong> Diastolic BP minus compartment pressure &lt;30mmHg is a more sensitive indicator for fasciotomy in hypotensive patients.</li>
-  </ul>
-</section>
-
-<section class="topic s1" id="p1c">
-  <div class="topic-header"><span class="topic-num">1.3</span><h2>Risk Stratification & Damage Control Orthopaedics</h2></div>
-  
-  <div class="table-wrap s1-tbl"><table>
-    <thead><tr><th>Factor</th><th>Risk</th><th>Management</th></tr></thead>
-    <tbody>
-      <tr><td>Open fracture (IIIB/IIIC)</td><td>Infection, non-union, amputation</td><td>Emergency debridement; staged fixation; flap coverage</td></tr>
-      <tr><td>Compartment syndrome</td><td>Muscle necrosis, Volkmann's contracture</td><td>Fasciotomy within 6 hours of onset</td></tr>
-      <tr><td>Polytrauma</td><td>Fat embolism, ARDS, coagulopathy</td><td>Damage Control Orthopaedics (DCO); definitive ORIF later</td></tr>
-      <tr><td>Osteoporosis</td><td>Implant failure, re-fracture</td><td>Augmented fixation with bone cement; specific implants</td></tr>
-    </tbody>
-  </table></div>
-
-  <h3>Damage Control Orthopaedics (DCO) vs. Early Total Care (ETC)</h3>
-  <p>In polytrauma, the decision between immediate definitive fixation (ETC) and temporary external fixation with delayed ORIF (DCO) is based on physiology, not anatomy. DCO is indicated when the patient exhibits the lethal triad (pH &lt;7.25, base deficit &lt;-8, lactate &gt;2.5, coagulopathy, hypothermia). DCO stabilizes the fracture and controls haemorrhage without adding the massive physiological stress of intramedullary reaming to a dying patient.</p>
-</section>
-
-<section class="topic s1" id="p1d">
-  <div class="topic-header"><span class="topic-num">1.4</span><h2>Immediate Pre-operative Preparation</h2></div>
-  <ul>
-    <li><strong>Antibiotics:</strong> Cefazolin 2g IV within 60 minutes. Add gentamicin for Gustilo III, and metronidazole for severe farm contamination.</li>
-    <li><strong>DVT Prophylaxis:</strong> Apply mechanical compression to the uninjured limbs pre-induction. Start LMWH 12-24 hours post-operatively once haemostasis is confirmed.</li>
-    <li><strong>Tourniquet:</strong> Used for tibial, forearm, and ankle ORIF. NOT used for femoral ORIF/Nailing. Pressures: 100mmHg above systolic for legs, 50-75mmHg above systolic for arms. Maximum 90 minutes (lower limb) or 60 minutes (upper limb).</li>
-    <li><strong>Consent must-mentions:</strong> Infection (requiring hardware removal), non-union, malunion, nerve/vessel injury, compartment syndrome, and hardware failure.</li>
-  </ul>
-</section>
-
-<div class="sec-header s2">
-  <span class="sec-badge">PILLAR 2</span>
-  <span class="sec-title">The Operative Game Plan</span>
+<div class="topic-header"><span class="topic-num">1.1</span><h2>Clinical Workup</h2></div>
+<p>The history and mechanism of injury dictate the urgency and breadth of your workup before any imaging is ordered.</p>
+<h3>Mechanism of Injury</h3>
+<ul>
+<li><strong>High-energy (MVC, falls, crush, gunshot):</strong> Presume associated injuries until proven otherwise. A femoral shaft fracture in a high-energy mechanism has a 10-15% rate of associated ipsilateral hip injury (femoral neck fracture, missed in up to 30% of cases on initial assessment). Always image the joint above and below the fracture.</li>
+<li><strong>Low-energy (simple fall):</strong> In a young patient, this is a pathological fracture until proven otherwise. Healthy bone does not fracture from low-energy trauma. Obtain a staging CT and perform a biopsy before fixation if malignancy is suspected.</li>
+<li><strong>Rotational mechanism:</strong> Ligamentous injury is common. Assess joint stability separately from the fracture itself.</li>
+</ul>
+<h3>Timing and Neurovascular Status</h3>
+<ul>
+<li><strong>Timing:</strong> Open fracture grading and compartment syndrome risk are time-dependent. The clock starts at injury, not arrival. Debride highly contaminated wounds within 6 hours. Compartment syndrome typically sets in 2-6 hours post-injury.</li>
+<li><strong>Neurovascular status:</strong> Document distal pulses (Doppler if needed), capillary refill (&lt;2 seconds), sensation (two-point discrimination in specific nerve distributions), and motor function before and after every manipulation. A new neurological deficit after reduction is an iatrogenic nerve injury until proven otherwise.</li>
+</ul>
+<h3>Open vs. Closed Fractures</h3>
+<p>Any breach in the skin overlying a fracture is an open fracture. Do not be reassured by a 2mm puncture over a tibial shaft; the bone has punched through and retracted.</p>
+<div class="diagram-wrap">
+<div class="diagram-title">Gustilo-Anderson Classification for Open Fractures</div>
 </div>
-
+<div class="table-wrap s1-tbl"><table>
+<thead><tr><th>Type</th><th>Description</th><th>Management</th></tr></thead>
+<tbody>
+<tr><td><strong>I</strong></td><td>Clean wound &lt;1cm; minimal contamination; simple pattern</td><td>IV cefazolin; debridement + definitive fixation within 24h</td></tr>
+<tr><td><strong>II</strong></td><td>Wound 1-10cm; moderate contamination and tissue damage</td><td>IV cefazolin; debridement within 6-24h; temporary or definitive fixation</td></tr>
+<tr><td><strong>IIIA</strong></td><td>Wound &gt;10cm; extensive soft tissue damage; adequate coverage possible</td><td>IV cefazolin + gentamicin; debridement within 6h; external fixation</td></tr>
+<tr><td><strong>IIIB</strong></td><td>Extensive soft tissue loss; bone exposed; requires flap coverage</td><td>IV cefazolin + gentamicin + metronidazole (farm); debridement + external fixation; plastic surgery</td></tr>
+<tr><td><strong>IIIC</strong></td><td>Vascular injury requiring repair</td><td>Add metronidazole; vascular repair first; external fixation; amputation if non-reconstructable</td></tr>
+</tbody>
+</table></div>
+</section>
+<section class="topic s1" id="p1b">
+<div class="topic-header"><span class="topic-num">1.2</span><h2>Mandatory Pre-operative Investigations</h2></div>
+<h3>Imaging</h3>
+<ul>
+<li><strong>Plain X-ray:</strong> Mandatory. Two views at 90° to each other (AP and lateral). Include the joint above and below the fracture. Define location, pattern (transverse, oblique, comminuted), and displacement (translation, angulation, shortening).</li>
+<li><strong>CT scan:</strong> Mandatory for periarticular fractures (tibial plateau, pilon, acetabulum), comminuted shafts, occult fractures, and pelvic ring injuries. Defines 3D anatomy for plate positioning.</li>
+<li><strong>MRI:</strong> For soft tissue injury characterisation (ligaments, meniscus) and stress fractures.</li>
+<li><strong>Vascular imaging:</strong> Doppler or CTA for any fracture with an absent distal pulse, expanding haematoma, ABI &lt;0.9, or Gustilo IIIC.</li>
+</ul>
+<h3>Compartment Pressure Measurement</h3>
+<p>If compartment syndrome is clinically suspected, take the patient to theatre immediately. Do not delay for pressure measurements. If the diagnosis is uncertain in an obtunded patient, measure pressures using a Stryker device or arterial line setup.</p>
+<ul>
+<li><strong>Absolute pressure:</strong> &gt;30mmHg indicates fasciotomy.</li>
+<li><strong>Delta pressure:</strong> Diastolic BP minus compartment pressure &lt;30mmHg is a more sensitive indicator for fasciotomy in hypotensive patients.</li>
+</ul>
+</section>
+<section class="topic s1" id="p1c">
+<div class="topic-header"><span class="topic-num">1.3</span><h2>Risk Stratification &amp; Damage Control Orthopaedics</h2></div>
+<div class="table-wrap s1-tbl"><table>
+<thead><tr><th>Factor</th><th>Risk</th><th>Management</th></tr></thead>
+<tbody>
+<tr><td>Open fracture (IIIB/IIIC)</td><td>Infection, non-union, amputation</td><td>Emergency debridement; staged fixation; flap coverage</td></tr>
+<tr><td>Compartment syndrome</td><td>Muscle necrosis, Volkmann's contracture</td><td>Fasciotomy within 6 hours of onset</td></tr>
+<tr><td>Polytrauma</td><td>Fat embolism, ARDS, coagulopathy</td><td>Damage Control Orthopaedics (DCO); definitive ORIF later</td></tr>
+<tr><td>Osteoporosis</td><td>Implant failure, re-fracture</td><td>Augmented fixation with bone cement; specific implants</td></tr>
+</tbody>
+</table></div>
+<h3>Damage Control Orthopaedics (DCO) vs. Early Total Care (ETC)</h3>
+<p>In polytrauma, the decision between immediate definitive fixation (ETC) and temporary external fixation with delayed ORIF (DCO) is based on physiology, not anatomy. DCO is indicated when the patient exhibits the lethal triad (pH &lt;7.25, base deficit &lt;-8, lactate &gt;2.5, coagulopathy, hypothermia). DCO stabilizes the fracture and controls haemorrhage without adding the massive physiological stress of intramedullary reaming to a dying patient.</p>
+</section>
+<section class="topic s1" id="p1d">
+<div class="topic-header"><span class="topic-num">1.4</span><h2>Immediate Pre-operative Preparation</h2></div>
+<ul>
+<li><strong>Antibiotics:</strong> Cefazolin 2g IV within 60 minutes. Add gentamicin for Gustilo III, and metronidazole for severe farm contamination.</li>
+<li><strong>DVT Prophylaxis:</strong> Apply mechanical compression to the uninjured limbs pre-induction. Start LMWH 12-24 hours post-operatively once haemostasis is confirmed.</li>
+<li><strong>Tourniquet:</strong> Used for tibial, forearm, and ankle ORIF. NOT used for femoral ORIF/Nailing. Pressures: 100mmHg above systolic for legs, 50-75mmHg above systolic for arms. Maximum 90 minutes (lower limb) or 60 minutes (upper limb).</li>
+<li><strong>Consent must-mentions:</strong> Infection (requiring hardware removal), non-union, malunion, nerve/vessel injury, compartment syndrome, and hardware failure.</li>
+</ul>
+</section>
+<div class="sec-header s2">
+<span class="sec-badge">PILLAR 2</span>
+<span class="sec-title">The Operative Game Plan</span>
+</div>
 <section class="topic s2" id="p2a">
-  <div class="topic-header"><span class="topic-num">2.1</span><h2>PROCEDURE A: Closed Reduction and Casting</h2></div>
-  
-  <p>Fracture displacement consists of translation, angulation, and rotation. The universal reduction maneuver involves adequate analgesia (haematoma block or procedural sedation), applying longitudinal traction to disengage fragments, briefly re-creating the deformity to unlock cortices, and applying corrective force in the opposite direction.</p>
-
-  <div class="diagram-wrap">
-    <div class="diagram-title">Principles of Fracture Displacement and Reduction</div>
+<div class="topic-header"><span class="topic-num">2.1</span><h2>PROCEDURE A: Closed Reduction and Casting</h2></div>
+<p>Fracture displacement consists of translation, angulation, and rotation. The universal reduction maneuver involves adequate analgesia (haematoma block or procedural sedation), applying longitudinal traction to disengage fragments, briefly re-creating the deformity to unlock cortices, and applying corrective force in the opposite direction.</p>
+<div class="diagram-wrap">
+<div class="diagram-title">Principles of Fracture Displacement and Reduction</div>
     [Image illustrating translation angulation and rotation in bone fractures]
   </div>
-
-  <h3>Acceptable Reduction Parameters</h3>
-  <div class="table-wrap s2-tbl"><table>
-    <thead><tr><th>Fracture</th><th>Acceptable Angulation</th><th>Acceptable Translation</th><th>Acceptable Shortening</th></tr></thead>
-    <tbody>
-      <tr><td>Distal radius (adult)</td><td>&lt;10° dorsal tilt; &lt;20° radial inclination</td><td>&lt;50% width</td><td>&lt;2mm</td></tr>
-      <tr><td>Both-bone forearm (adult)</td><td>0° (any angulation unacceptable)</td><td>&lt;50% width</td><td>None</td></tr>
-      <tr><td>Humeral shaft</td><td>&lt;20° anterior; &lt;30° varus; &lt;15° rotation</td><td>&lt;3cm</td><td>&lt;3cm</td></tr>
-      <tr><td>Tibial shaft</td><td>&lt;5° varus/valgus; &lt;10° anterior/posterior</td><td>&lt;50%</td><td>&lt;1cm</td></tr>
-      <tr><td>Ankle (bimalleolar)</td><td>0° (any talar shift = unacceptable)</td><td>&lt;2mm talar shift</td><td>N/A</td></tr>
-    </tbody>
-  </table></div>
-
-  <h3>Casting Technique & The Three-Point Mold</h3>
-  <p>Never apply a circumferential cast to an acutely swollen fracture. Use a backslab first. A well-applied cast maintains reduction through three-point pressure: two points on one side of the fracture, one point on the other. Moulding must be applied while the plaster is setting. Once set, it cannot be reshaped.</p>
-  <ul>
-    <li><strong>Colles' fracture:</strong> Below-elbow cast. Wrist in slight flexion and ulnar deviation (Cotton-Loder position).</li>
-    <li><strong>Tibial shaft:</strong> Long leg cast. Knee at 10-15° flexion. Ankle strictly in neutral dorsiflexion to prevent equinus contracture.</li>
-  </ul>
+<h3>Acceptable Reduction Parameters</h3>
+<div class="table-wrap s2-tbl"><table>
+<thead><tr><th>Fracture</th><th>Acceptable Angulation</th><th>Acceptable Translation</th><th>Acceptable Shortening</th></tr></thead>
+<tbody>
+<tr><td>Distal radius (adult)</td><td>&lt;10° dorsal tilt; &lt;20° radial inclination</td><td>&lt;50% width</td><td>&lt;2mm</td></tr>
+<tr><td>Both-bone forearm (adult)</td><td>0° (any angulation unacceptable)</td><td>&lt;50% width</td><td>None</td></tr>
+<tr><td>Humeral shaft</td><td>&lt;20° anterior; &lt;30° varus; &lt;15° rotation</td><td>&lt;3cm</td><td>&lt;3cm</td></tr>
+<tr><td>Tibial shaft</td><td>&lt;5° varus/valgus; &lt;10° anterior/posterior</td><td>&lt;50%</td><td>&lt;1cm</td></tr>
+<tr><td>Ankle (bimalleolar)</td><td>0° (any talar shift = unacceptable)</td><td>&lt;2mm talar shift</td><td>N/A</td></tr>
+</tbody>
+</table></div>
+<h3>Casting Technique &amp; The Three-Point Mold</h3>
+<p>Never apply a circumferential cast to an acutely swollen fracture. Use a backslab first. A well-applied cast maintains reduction through three-point pressure: two points on one side of the fracture, one point on the other. Moulding must be applied while the plaster is setting. Once set, it cannot be reshaped.</p>
+<ul>
+<li><strong>Colles' fracture:</strong> Below-elbow cast. Wrist in slight flexion and ulnar deviation (Cotton-Loder position).</li>
+<li><strong>Tibial shaft:</strong> Long leg cast. Knee at 10-15° flexion. Ankle strictly in neutral dorsiflexion to prevent equinus contracture.</li>
+</ul>
 </section>
-
 <section class="topic s2" id="p2b">
-  <div class="topic-header"><span class="topic-num">2.2</span><h2>PROCEDURE B: ORIF — Femur</h2></div>
-  <p>Intramedullary nailing is the standard for femoral shafts. Plate fixation (Locking Compression Plate - LCP) is reserved for periprosthetic fractures, paediatric cases, or fractures near existing hardware.</p>
-  
-  <ul>
-    <li><strong>Approach:</strong> Lateral approach splitting the vastus lateralis. Protect perforating branches of the profunda femoris.</li>
-    <li><strong>Reduction:</strong> Direct reduction with clamps, or indirect using Schanz pins as joysticks. Confirm rotation by comparing the lesser trochanter profile on fluoroscopy to the uninjured side.</li>
-    <li><strong>Plate Application:</strong> Span at least 3 cortical diameters above and below. Use locking screws near fracture ends in osteoporotic bone. Leave a working length gap of 2-3 empty screw holes directly over the fracture to distribute stress.</li>
-    <li><strong>Distal Femur:</strong> Intercondylar components must be anatomically reduced and lag-screwed first to recreate the articular block before fixing the metaphysis to the shaft.</li>
-  </ul>
+<div class="topic-header"><span class="topic-num">2.2</span><h2>PROCEDURE B: ORIF — Femur</h2></div>
+<p>Intramedullary nailing is the standard for femoral shafts. Plate fixation (Locking Compression Plate - LCP) is reserved for periprosthetic fractures, paediatric cases, or fractures near existing hardware.</p>
+<ul>
+<li><strong>Approach:</strong> Lateral approach splitting the vastus lateralis. Protect perforating branches of the profunda femoris.</li>
+<li><strong>Reduction:</strong> Direct reduction with clamps, or indirect using Schanz pins as joysticks. Confirm rotation by comparing the lesser trochanter profile on fluoroscopy to the uninjured side.</li>
+<li><strong>Plate Application:</strong> Span at least 3 cortical diameters above and below. Use locking screws near fracture ends in osteoporotic bone. Leave a working length gap of 2-3 empty screw holes directly over the fracture to distribute stress.</li>
+<li><strong>Distal Femur:</strong> Intercondylar components must be anatomically reduced and lag-screwed first to recreate the articular block before fixing the metaphysis to the shaft.</li>
+</ul>
 </section>
-
 <section class="topic s2" id="p2c">
-  <div class="topic-header"><span class="topic-num">2.3</span><h2>PROCEDURE C: ORIF — Tibia</h2></div>
-  
-  <h3>Tibial Plateau (Schatzker II — Lateral Split-Depression)</h3>
-  <p>The depressed articular cartilage lies below subchondral bone and cannot be visualised without an osteotomy.</p>
-  
-  <div class="diagram-wrap">
-    <div class="diagram-title">Schatzker Classification of Tibial Plateau Fractures</div>
-    
-  </div>
-  
-  <ul>
-    <li><strong>Articular Elevation:</strong> Create a cortical window in the lateral metaphysis. Use a bone tamp to push the depressed cartilage upward to the level of the intact plateau.</li>
-    <li><strong>Bone Graft:</strong> Pack the underlying void with cancellous autograft or substitute. It must support the cartilage from below.</li>
-    <li><strong>Plate Fixation:</strong> Apply a lateral locking plate with subchondral "rafting screws" placed just below the cartilage to prevent re-depression.</li>
-  </ul>
-
-  <h3>Tibial Pilon Fractures</h3>
-  <p>These are "closed open fractures" with severe soft tissue injury. A staged approach is mandatory to prevent catastrophic wound breakdown (30-40% infection rate if plated acutely).</p>
-  <ul>
-    <li><strong>Stage 1 (Acute):</strong> Spanning external fixator to restore length, plus fibular plating. Wait 10-21 days for swelling to resolve (wrinkle sign present).</li>
-    <li><strong>Stage 2 (Definitive):</strong> Anteromedial or anterolateral ORIF. Reduce articular block first, then plate the metaphysis.</li>
-  </ul>
+<div class="topic-header"><span class="topic-num">2.3</span><h2>PROCEDURE C: ORIF — Tibia</h2></div>
+<h3>Tibial Plateau (Schatzker II — Lateral Split-Depression)</h3>
+<p>The depressed articular cartilage lies below subchondral bone and cannot be visualised without an osteotomy.</p>
+<div class="diagram-wrap">
+<div class="diagram-title">Schatzker Classification of Tibial Plateau Fractures</div>
+</div>
+<ul>
+<li><strong>Articular Elevation:</strong> Create a cortical window in the lateral metaphysis. Use a bone tamp to push the depressed cartilage upward to the level of the intact plateau.</li>
+<li><strong>Bone Graft:</strong> Pack the underlying void with cancellous autograft or substitute. It must support the cartilage from below.</li>
+<li><strong>Plate Fixation:</strong> Apply a lateral locking plate with subchondral "rafting screws" placed just below the cartilage to prevent re-depression.</li>
+</ul>
+<h3>Tibial Pilon Fractures</h3>
+<p>These are "closed open fractures" with severe soft tissue injury. A staged approach is mandatory to prevent catastrophic wound breakdown (30-40% infection rate if plated acutely).</p>
+<ul>
+<li><strong>Stage 1 (Acute):</strong> Spanning external fixator to restore length, plus fibular plating. Wait 10-21 days for swelling to resolve (wrinkle sign present).</li>
+<li><strong>Stage 2 (Definitive):</strong> Anteromedial or anterolateral ORIF. Reduce articular block first, then plate the metaphysis.</li>
+</ul>
 </section>
-
 <section class="topic s2" id="p2d">
-  <div class="topic-header"><span class="topic-num">2.4</span><h2>PROCEDURE D: ORIF — Humerus</h2></div>
-  
-  <h3>Proximal Humerus (PHILOS Plating)</h3>
-  <p>Based on the Neer classification of displacement. Deltopectoral approach. Protect the cephalic vein. Use sutures through the rotator cuff to pull the tuberosities down to the plate. Place subchondral "rafting screws" in the head to prevent varus collapse.</p>
-
-  <h3>Humeral Shaft (Non-Operative Management)</h3>
-  <p>The humerus is non-weight-bearing, and gravity assists reduction. Up to 20° of angulation and 3cm of shortening is acceptable. Treat initially with a U-slab, then a Sarmiento functional brace. ORIF is reserved for polytrauma, open fractures, or new-onset radial nerve palsy.</p>
+<div class="topic-header"><span class="topic-num">2.4</span><h2>PROCEDURE D: ORIF — Humerus</h2></div>
+<h3>Proximal Humerus (PHILOS Plating)</h3>
+<p>Based on the Neer classification of displacement. Deltopectoral approach. Protect the cephalic vein. Use sutures through the rotator cuff to pull the tuberosities down to the plate. Place subchondral "rafting screws" in the head to prevent varus collapse.</p>
+<h3>Humeral Shaft (Non-Operative Management)</h3>
+<p>The humerus is non-weight-bearing, and gravity assists reduction. Up to 20° of angulation and 3cm of shortening is acceptable. Treat initially with a U-slab, then a Sarmiento functional brace. ORIF is reserved for polytrauma, open fractures, or new-onset radial nerve palsy.</p>
 </section>
-
 <section class="topic s2" id="p2e">
-  <div class="topic-header"><span class="topic-num">2.5</span><h2>PROCEDURE E: ORIF — Forearm</h2></div>
-  <p>The forearm is a ring structure. Any displacement disrupts pronation and supination. Anatomical reduction is absolutely mandatory; no angulation or rotation is acceptable.</p>
-  <ul>
-    <li><strong>Approaches:</strong> Volar Henry approach for the radius (protect posterior interosseous nerve). Direct subcutaneous approach for the ulna.</li>
-    <li><strong>Reduction:</strong> Restoring the "radial bow" is critical to preserve rotational function.</li>
-    <li><strong>Fixation:</strong> 3.5mm dynamic compression plates (DCP) applied to both bones with minimum 6 cortices above and below the fracture. Evaluate passive rotation on the table before closing.</li>
-  </ul>
+<div class="topic-header"><span class="topic-num">2.5</span><h2>PROCEDURE E: ORIF — Forearm</h2></div>
+<p>The forearm is a ring structure. Any displacement disrupts pronation and supination. Anatomical reduction is absolutely mandatory; no angulation or rotation is acceptable.</p>
+<ul>
+<li><strong>Approaches:</strong> Volar Henry approach for the radius (protect posterior interosseous nerve). Direct subcutaneous approach for the ulna.</li>
+<li><strong>Reduction:</strong> Restoring the "radial bow" is critical to preserve rotational function.</li>
+<li><strong>Fixation:</strong> 3.5mm dynamic compression plates (DCP) applied to both bones with minimum 6 cortices above and below the fracture. Evaluate passive rotation on the table before closing.</li>
+</ul>
 </section>
-
 <section class="topic s2" id="p2f">
-  <div class="topic-header"><span class="topic-num">2.6</span><h2>PROCEDURE F: ORIF — Ankle</h2></div>
-  <p>The critical question is mortise stability. If the talus is shifted laterally (&gt;2mm) or the medial clear space is widened, ORIF is indicated regardless of the fracture pattern.</p>
-  <ul>
-    <li><strong>Fibular Fixation:</strong> Fix the fibula first to restore length. For oblique fractures, place a lag screw followed by a posterior anti-glide plate to resist superior migration.</li>
-    <li><strong>Syndesmosis Assessment:</strong> Perform the Cotton hook test. If unstable, place a syndesmotic screw across 4 cortices with the ankle in maximum dorsiflexion to prevent over-tightening. Counsel the patient that this screw must be removed at 8-12 weeks before weight-bearing.</li>
-    <li><strong>Medial Malleolus:</strong> Clear periosteum from the joint, reduce with a hook, and fix with two parallel 4.0mm cancellous screws.</li>
-  </ul>
+<div class="topic-header"><span class="topic-num">2.6</span><h2>PROCEDURE F: ORIF — Ankle</h2></div>
+<p>The critical question is mortise stability. If the talus is shifted laterally (&gt;2mm) or the medial clear space is widened, ORIF is indicated regardless of the fracture pattern.</p>
+<ul>
+<li><strong>Fibular Fixation:</strong> Fix the fibula first to restore length. For oblique fractures, place a lag screw followed by a posterior anti-glide plate to resist superior migration.</li>
+<li><strong>Syndesmosis Assessment:</strong> Perform the Cotton hook test. If unstable, place a syndesmotic screw across 4 cortices with the ankle in maximum dorsiflexion to prevent over-tightening. Counsel the patient that this screw must be removed at 8-12 weeks before weight-bearing.</li>
+<li><strong>Medial Malleolus:</strong> Clear periosteum from the joint, reduce with a hook, and fix with two parallel 4.0mm cancellous screws.</li>
+</ul>
 </section>
-
 <section class="topic s2" id="p2g">
-  <div class="topic-header"><span class="topic-num">2.7</span><h2>PROCEDURE G: Intramedullary Nailing (IMN)</h2></div>
-  <p>The gold standard for femoral and tibial shaft fractures. Highly stable, load-sharing devices that allow early weight-bearing.</p>
-  
-  <div class="diagram-wrap">
-    <div class="diagram-title">Intramedullary Nailing: Entry Points and Locking</div>
-    
-  </div>
-
-  <ul>
-    <li><strong>Femur Entry Point:</strong> The most critical step. Piriformis fossa or greater trochanter tip. Incorrect entry causes severe malreduction.</li>
-    <li><strong>Reaming:</strong> Generates heat and emboli, but enlarges the canal for a thicker nail, provides autograft to the fracture site, and speeds union.</li>
-    <li><strong>Tibial Entry Point:</strong> Superior edge of the tibial tubercle. Flex the knee past 120° to avoid apex-anterior malreduction. Use Poller (blocking) screws in proximal fractures to guide the nail.</li>
-    <li><strong>Distal Locking:</strong> Freehand technique requires achieving a "perfect circle" (bullseye) on fluoroscopy. Do not drill if the hole appears as an ellipse.</li>
-    <li><strong>Dynamisation:</strong> Removing the proximal static screw at 6 weeks allows the nail to telescope, generating micro-motion that stimulates delayed callus formation.</li>
-  </ul>
+<div class="topic-header"><span class="topic-num">2.7</span><h2>PROCEDURE G: Intramedullary Nailing (IMN)</h2></div>
+<p>The gold standard for femoral and tibial shaft fractures. Highly stable, load-sharing devices that allow early weight-bearing.</p>
+<div class="diagram-wrap">
+<div class="diagram-title">Intramedullary Nailing: Entry Points and Locking</div>
+</div>
+<ul>
+<li><strong>Femur Entry Point:</strong> The most critical step. Piriformis fossa or greater trochanter tip. Incorrect entry causes severe malreduction.</li>
+<li><strong>Reaming:</strong> Generates heat and emboli, but enlarges the canal for a thicker nail, provides autograft to the fracture site, and speeds union.</li>
+<li><strong>Tibial Entry Point:</strong> Superior edge of the tibial tubercle. Flex the knee past 120° to avoid apex-anterior malreduction. Use Poller (blocking) screws in proximal fractures to guide the nail.</li>
+<li><strong>Distal Locking:</strong> Freehand technique requires achieving a "perfect circle" (bullseye) on fluoroscopy. Do not drill if the hole appears as an ellipse.</li>
+<li><strong>Dynamisation:</strong> Removing the proximal static screw at 6 weeks allows the nail to telescope, generating micro-motion that stimulates delayed callus formation.</li>
+</ul>
 </section>
-
 <section class="topic s2" id="p2h">
-  <div class="topic-header"><span class="topic-num">2.8</span><h2>PROCEDURE H: External Fixation</h2></div>
-  <p>The ultimate damage control tool. Stabilises fractures rapidly without massive physiological stress.</p>
-  <ul>
-    <li><strong>Pin Placement:</strong> Identify safe corridors (anteromedial tibia, anterolateral femur). Make stab incisions to prevent skin tethering. Pre-drill and insert Schanz pins bicortically.</li>
-    <li><strong>Frame Construction:</strong> Connect pins to rods. Reduce manually under fluoroscopy, then tighten clamps sequentially. Use Delta frames for periarticular stability.</li>
-    <li><strong>Pin Site Care:</strong> Clean daily. Loose pins must be removed and replaced elsewhere; a loose pin guarantees infection.</li>
-  </ul>
+<div class="topic-header"><span class="topic-num">2.8</span><h2>PROCEDURE H: External Fixation</h2></div>
+<p>The ultimate damage control tool. Stabilises fractures rapidly without massive physiological stress.</p>
+<ul>
+<li><strong>Pin Placement:</strong> Identify safe corridors (anteromedial tibia, anterolateral femur). Make stab incisions to prevent skin tethering. Pre-drill and insert Schanz pins bicortically.</li>
+<li><strong>Frame Construction:</strong> Connect pins to rods. Reduce manually under fluoroscopy, then tighten clamps sequentially. Use Delta frames for periarticular stability.</li>
+<li><strong>Pin Site Care:</strong> Clean daily. Loose pins must be removed and replaced elsewhere; a loose pin guarantees infection.</li>
+</ul>
 </section>
-
 <section class="topic s2" id="p2i">
-  <div class="topic-header"><span class="topic-num">2.9</span><h2>PROCEDURE I: Skeletal Traction</h2></div>
-  <p>A vital temporising measure for femoral shafts before definitive nailing.</p>
-  <ul>
-    <li><strong>Distal Femoral Pin:</strong> Inserted medial-to-lateral, 2cm proximal to the patella. Medial insertion protects the common peroneal nerve.</li>
-    <li><strong>Proximal Tibial Pin:</strong> Inserted lateral-to-medial, 2.5cm posterior and distal to the tibial tubercle to avoid the peroneal nerve.</li>
-    <li><strong>Calcaneal Pin:</strong> Inserted medial-to-lateral. Placing it too superiorly injures the posterior tibial nerve.</li>
-    <li><strong>Weight:</strong> Start with 10% of body weight for femoral fractures. Over-distraction delays callus formation.</li>
-  </ul>
+<div class="topic-header"><span class="topic-num">2.9</span><h2>PROCEDURE I: Skeletal Traction</h2></div>
+<p>A vital temporising measure for femoral shafts before definitive nailing.</p>
+<ul>
+<li><strong>Distal Femoral Pin:</strong> Inserted medial-to-lateral, 2cm proximal to the patella. Medial insertion protects the common peroneal nerve.</li>
+<li><strong>Proximal Tibial Pin:</strong> Inserted lateral-to-medial, 2.5cm posterior and distal to the tibial tubercle to avoid the peroneal nerve.</li>
+<li><strong>Calcaneal Pin:</strong> Inserted medial-to-lateral. Placing it too superiorly injures the posterior tibial nerve.</li>
+<li><strong>Weight:</strong> Start with 10% of body weight for femoral fractures. Over-distraction delays callus formation.</li>
+</ul>
 </section>
-
 <section class="topic s2" id="p2j">
-  <div class="topic-header"><span class="topic-num">2.10</span><h2>The Critical View in Fracture Management</h2></div>
-  <p>Non-negotiable confirmations before leaving theatre:</p>
-  <ul>
-    <li>Fracture reduction confirmed on two orthogonal fluoroscopic views (AP and Lateral).</li>
-    <li>Implant position confirmed: plates not impinging joints, screws not penetrating articular surfaces.</li>
-    <li>Neurovascular status documented post-reduction compared to baseline.</li>
-    <li>Compartments assessed clinically post-closure.</li>
-    <li>Casts assessed for three-point moulding and adequate padding.</li>
-    <li>Ankle mortise confirmed perfectly concentric.</li>
-  </ul>
+<div class="topic-header"><span class="topic-num">2.10</span><h2>The Critical View in Fracture Management</h2></div>
+<p>Non-negotiable confirmations before leaving theatre:</p>
+<ul>
+<li>Fracture reduction confirmed on two orthogonal fluoroscopic views (AP and Lateral).</li>
+<li>Implant position confirmed: plates not impinging joints, screws not penetrating articular surfaces.</li>
+<li>Neurovascular status documented post-reduction compared to baseline.</li>
+<li>Compartments assessed clinically post-closure.</li>
+<li>Casts assessed for three-point moulding and adequate padding.</li>
+<li>Ankle mortise confirmed perfectly concentric.</li>
+</ul>
 </section>
-
 <div class="sec-header s3">
-  <span class="sec-badge">PILLAR 3</span>
-  <span class="sec-title">Technical Pearls &amp; Bail-Out Strategies</span>
+<span class="sec-badge">PILLAR 3</span>
+<span class="sec-title">Technical Pearls &amp; Bail-Out Strategies</span>
 </div>
-
 <section class="topic s3" id="p3a">
-  <div class="topic-header"><span class="topic-num">3.1</span><h2>Consultant Pearls</h2></div>
-  
-  <div class="callout pearl">
-    <span class="label">Consultant Pearl #1: The Fluoroscopy Image That Looks Acceptable Is Not Always Acceptable</span>
-    <p>Fluoroscopy provides a 2D snapshot of a 3D structure. Rotational malalignment cannot be detected on AP/Lateral fluoro. A femoral nail may look perfectly aligned but be locked in 20° of external rotation, leading to a crippling gait. Check rotation clinically before locking.</p>
-  </div>
-
-  <div class="callout pearl">
-    <span class="label">Consultant Pearl #2: Compartment Syndrome — You Have One Chance</span>
-    <p>Compartment syndrome is a clinical diagnosis. The "6 Ps" do not arrive together. Pain out of proportion, and pain on passive stretch, are the earliest and most reliable signs. If paraesthesia or pulselessness is present, irreversible necrosis has already occurred. When in doubt, perform a fasciotomy.</p>
-  </div>
-
-  <div class="callout pearl">
-    <span class="label">Consultant Pearl #3: Anterior Knee Pain in Tibial Nailing Is Preventable</span>
-    <p>Up to 60% of patients experience chronic knee pain after tibial nailing. Prevent it by using a paratendon approach rather than splitting the tendon, countersinking the nail deep into the metaphysis so it does not rub the tendon, and ensuring the knee is flexed &gt;120° during insertion to achieve the correct trajectory.</p>
-  </div>
+<div class="topic-header"><span class="topic-num">3.1</span><h2>Consultant Pearls</h2></div>
+<div class="callout pearl">
+<span class="label">Consultant Pearl #1: The Fluoroscopy Image That Looks Acceptable Is Not Always Acceptable</span>
+<p>Fluoroscopy provides a 2D snapshot of a 3D structure. Rotational malalignment cannot be detected on AP/Lateral fluoro. A femoral nail may look perfectly aligned but be locked in 20° of external rotation, leading to a crippling gait. Check rotation clinically before locking.</p>
+</div>
+<div class="callout pearl">
+<span class="label">Consultant Pearl #2: Compartment Syndrome — You Have One Chance</span>
+<p>Compartment syndrome is a clinical diagnosis. The "6 Ps" do not arrive together. Pain out of proportion, and pain on passive stretch, are the earliest and most reliable signs. If paraesthesia or pulselessness is present, irreversible necrosis has already occurred. When in doubt, perform a fasciotomy.</p>
+</div>
+<div class="callout pearl">
+<span class="label">Consultant Pearl #3: Anterior Knee Pain in Tibial Nailing Is Preventable</span>
+<p>Up to 60% of patients experience chronic knee pain after tibial nailing. Prevent it by using a paratendon approach rather than splitting the tendon, countersinking the nail deep into the metaphysis so it does not rub the tendon, and ensuring the knee is flexed &gt;120° during insertion to achieve the correct trajectory.</p>
+</div>
 </section>
-
 <section class="topic s3" id="p3b">
-  <div class="topic-header"><span class="topic-num">3.2</span><h2>The Bail-Out Point</h2></div>
-  <p>Stop and escalate when:</p>
-  <ul>
-    <li><strong>Compartment syndrome is suspected:</strong> Perform fasciotomy immediately. It takes precedence over implant placement.</li>
-    <li><strong>Guidewire exits the cortex:</strong> A nail that exits the bone will destroy the soft tissue. Pull back and redirect.</li>
-    <li><strong>Acceptable reduction for ORIF cannot be achieved:</strong> A plate applied to a malreduced fracture will fail. Convert to an external fixator and plan a staged reconstruction.</li>
-    <li><strong>Distal locking screws will not align:</strong> If you cannot get a perfect circle on fluoro, do not repeatedly drill blind. Open the skin and perform direct visualisation locking.</li>
-    <li><strong>Intraoperative vascular injury identified:</strong> Apply direct pressure, call vascular surgery, and place an external fixator to stabilise the bone before vascular repair.</li>
-  </ul>
+<div class="topic-header"><span class="topic-num">3.2</span><h2>The Bail-Out Point</h2></div>
+<p>Stop and escalate when:</p>
+<ul>
+<li><strong>Compartment syndrome is suspected:</strong> Perform fasciotomy immediately. It takes precedence over implant placement.</li>
+<li><strong>Guidewire exits the cortex:</strong> A nail that exits the bone will destroy the soft tissue. Pull back and redirect.</li>
+<li><strong>Acceptable reduction for ORIF cannot be achieved:</strong> A plate applied to a malreduced fracture will fail. Convert to an external fixator and plan a staged reconstruction.</li>
+<li><strong>Distal locking screws will not align:</strong> If you cannot get a perfect circle on fluoro, do not repeatedly drill blind. Open the skin and perform direct visualisation locking.</li>
+<li><strong>Intraoperative vascular injury identified:</strong> Apply direct pressure, call vascular surgery, and place an external fixator to stabilise the bone before vascular repair.</li>
+</ul>
 </section>
-
 <div class="sec-header s4">
-  <span class="sec-badge">PILLAR 4</span>
-  <span class="sec-title">Post-operative Care &amp; Longitudinal Follow-up</span>
+<span class="sec-badge">PILLAR 4</span>
+<span class="sec-title">Post-operative Care &amp; Longitudinal Follow-up</span>
 </div>
-
 <section class="topic s4" id="p4a">
-  <div class="topic-header"><span class="topic-num">4.1</span><h2>Immediate Post-op (First 24-72 Hours)</h2></div>
-  
-  <ul>
-    <li><strong>Neurovascular Assessment:</strong> The absolute first priority in recovery. Any new deficit is an iatrogenic injury or evolving compartment syndrome until proven otherwise.</li>
-    <li><strong>Compartment Surveillance:</strong> Hourly clinical checks for the first 24 hours. Split all post-operative casts to the skin to accommodate swelling.</li>
-    <li><strong>Pain Management:</strong> Scheduled acetaminophen and short-term NSAIDs (do not use NSAIDs long-term as they may impair bone healing). Utilize regional blocks (femoral, sciatic) for 24-hour opioid-sparing analgesia.</li>
-    <li><strong>Weight-Bearing:</strong> Femoral/Tibial IMN patients weight-bear immediately as tolerated. Periarticular plate fixations (plateau, pilon) are strictly non-weight-bearing for 6-8 weeks.</li>
-    <li><strong>DVT Prophylaxis:</strong> Start LMWH 12-24 hours post-op and continue for 28-35 days for lower limb fractures.</li>
-  </ul>
+<div class="topic-header"><span class="topic-num">4.1</span><h2>Immediate Post-op (First 24-72 Hours)</h2></div>
+<ul>
+<li><strong>Neurovascular Assessment:</strong> The absolute first priority in recovery. Any new deficit is an iatrogenic injury or evolving compartment syndrome until proven otherwise.</li>
+<li><strong>Compartment Surveillance:</strong> Hourly clinical checks for the first 24 hours. Split all post-operative casts to the skin to accommodate swelling.</li>
+<li><strong>Pain Management:</strong> Scheduled acetaminophen and short-term NSAIDs (do not use NSAIDs long-term as they may impair bone healing). Utilize regional blocks (femoral, sciatic) for 24-hour opioid-sparing analgesia.</li>
+<li><strong>Weight-Bearing:</strong> Femoral/Tibial IMN patients weight-bear immediately as tolerated. Periarticular plate fixations (plateau, pilon) are strictly non-weight-bearing for 6-8 weeks.</li>
+<li><strong>DVT Prophylaxis:</strong> Start LMWH 12-24 hours post-op and continue for 28-35 days for lower limb fractures.</li>
+</ul>
 </section>
-
 <section class="topic s4" id="p4b">
-  <div class="topic-header"><span class="topic-num">4.2</span><h2>Clinic Follow-up</h2></div>
-  <ul>
-    <li><strong>2-week visit:</strong> Suture removal. X-ray to ensure reduction is maintained as swelling resolves. This is critical for fractures managed in casts.</li>
-    <li><strong>6-week visit:</strong> Check for early callus formation. Advance weight-bearing status. Remove syndesmotic screws before full weight-bearing.</li>
-    <li><strong>3-month visit:</strong> Assess for clinical and radiological union (bridging callus on 3 of 4 cortices). Remove symptomatic hardware no earlier than 12-18 months.</li>
-    <li><strong>6-month visit:</strong> Assess for delayed union. If no progression by 9-12 months, declare non-union.</li>
-  </ul>
+<div class="topic-header"><span class="topic-num">4.2</span><h2>Clinic Follow-up</h2></div>
+<ul>
+<li><strong>2-week visit:</strong> Suture removal. X-ray to ensure reduction is maintained as swelling resolves. This is critical for fractures managed in casts.</li>
+<li><strong>6-week visit:</strong> Check for early callus formation. Advance weight-bearing status. Remove syndesmotic screws before full weight-bearing.</li>
+<li><strong>3-month visit:</strong> Assess for clinical and radiological union (bridging callus on 3 of 4 cortices). Remove symptomatic hardware no earlier than 12-18 months.</li>
+<li><strong>6-month visit:</strong> Assess for delayed union. If no progression by 9-12 months, declare non-union.</li>
+</ul>
 </section>
-
 <div class="sec-header s5">
-  <span class="sec-badge">PILLAR 5</span>
-  <span class="sec-title">Complication Management</span>
+<span class="sec-badge">PILLAR 5</span>
+<span class="sec-title">Complication Management</span>
 </div>
-
 <section class="topic s5" id="p5a">
-  <div class="topic-header"><span class="topic-num">5.1</span><h2>Complication 1: Compartment Syndrome</h2></div>
-  <ul>
-    <li><strong>Recognition:</strong> Pain out of proportion, pain on passive stretch, tense/woody compartment. Delta pressure &lt;30mmHg.</li>
-    <li><strong>Correction (Lower Leg):</strong> Two-incision four-compartment fasciotomy. Lateral incision to release anterior and lateral compartments. Medial incision (detaching soleus origin) to release superficial and deep posterior compartments.</li>
-    <li><strong>Correction (Forearm):</strong> Volar incision crossing the elbow in a Z-plasty, extending to the palm. Carpal tunnel release. Dorsal fasciotomy via separate incision.</li>
-    <li><strong>Wound Care:</strong> Apply VAC. Do not close acutely. Return at 48-72 hours for delayed primary closure or split-thickness skin graft. Never close under tension.</li>
-  </ul>
+<div class="topic-header"><span class="topic-num">5.1</span><h2>Complication 1: Compartment Syndrome</h2></div>
+<ul>
+<li><strong>Recognition:</strong> Pain out of proportion, pain on passive stretch, tense/woody compartment. Delta pressure &lt;30mmHg.</li>
+<li><strong>Correction (Lower Leg):</strong> Two-incision four-compartment fasciotomy. Lateral incision to release anterior and lateral compartments. Medial incision (detaching soleus origin) to release superficial and deep posterior compartments.</li>
+<li><strong>Correction (Forearm):</strong> Volar incision crossing the elbow in a Z-plasty, extending to the palm. Carpal tunnel release. Dorsal fasciotomy via separate incision.</li>
+<li><strong>Wound Care:</strong> Apply VAC. Do not close acutely. Return at 48-72 hours for delayed primary closure or split-thickness skin graft. Never close under tension.</li>
+</ul>
 </section>
-
 <section class="topic s5" id="p5b">
-  <div class="topic-header"><span class="topic-num">5.2</span><h2>Complication 2: Non-union</h2></div>
-  
-  <div class="diagram-wrap">
-    <div class="diagram-title">Types of Fracture Non-Union</div>
-    
-  </div>
-
-  <ul>
-    <li><strong>Hypertrophic Non-union:</strong> "Elephant foot" appearance on X-ray. The bone is biologically active but mechanically unstable. Correct by revising fixation to a stiffer construct (e.g., exchange nailing with a larger reamed nail). No bone graft required.</li>
-    <li><strong>Atrophic Non-union:</strong> Tapered, sclerotic bone ends. Biologically inactive due to poor blood supply. Correct by revising fixation AND applying biological augmentation (autologous iliac crest bone graft, BMAC, or BMP-2).</li>
-    <li><strong>Septic Non-union:</strong> Elevated CRP/WBC. Must remove all hardware, thoroughly debride, treat with targeted antibiotics for 6 weeks (using external fixation), and bone graft later once sterile.</li>
-  </ul>
-</section>
-
-<section class="topic s5" id="p5c">
-  <div class="topic-header"><span class="topic-num">5.3</span><h2>Complication 3: Malunion</h2></div>
-  <ul>
-    <li><strong>Recognition:</strong> Fracture heals with unacceptable angulation, shortening, or rotation. Causes altered joint mechanics and gait.</li>
-    <li><strong>Correction (Mild):</strong> Observe in children (remodelling corrects up to 20°). Physical therapy for adults.</li>
-    <li><strong>Correction (Severe):</strong> Corrective osteotomy. Opening wedge (requires bone graft) or closing wedge. Complex deformities are corrected gradually using a Taylor Spatial Frame to prevent neurovascular stretch injury. Rotational malunions require derotational osteotomy and nailing.</li>
-  </ul>
-</section>
-
-<div class="rapid-ref" id="rapid">
-  <h3>Rapid Reference — High-Yield Board Facts</h3>
-  <table>
-    <thead><tr><th>Topic</th><th>Key Fact</th></tr></thead>
-    <tbody>
-      <tr><td>Compartment Syndrome Trigger</td><td>Delta pressure (Diastolic BP - Compartment Pressure) <strong>&lt;30mmHg</strong> mandates fasciotomy.</td></tr>
-      <tr><td>Damage Control Orthopaedics</td><td>Apply external fixation instead of IMN if patient presents with <strong>lactate &gt;2.5, pH &lt;7.25, or massive transfusion</strong>.</td></tr>
-      <tr><td>Femoral Shaft Traction Pin</td><td>Place <strong>medial to lateral</strong> to avoid the common peroneal nerve.</td></tr>
-      <tr><td>Tibial Pilon Fractures</td><td>Require a <strong>staged approach</strong> (spanning ex-fix first) due to a 30-40% infection rate if plated acutely.</td></tr>
-      <tr><td>Schatzker II Plateau Fixation</td><td>Requires an osteotomy window to elevate cartilage, followed by <strong>bone grafting</strong> to support the joint surface.</td></tr>
-      <tr><td>Syndesmotic Screw Removal</td><td>Must be removed at <strong>8-12 weeks</strong> before weight-bearing, or it will break.</td></tr>
-      <tr><td>Hypertrophic Non-Union Rx</td><td>Mechanically unstable but biologically active. Treat by <strong>increasing fixation stiffness</strong> (exchange nailing). No graft needed.</td></tr>
-      <tr><td>Atrophic Non-Union Rx</td><td>Biologically inactive. Treat by revising fixation <strong>AND applying autologous bone graft</strong>.</td></tr>
-      <tr><td>Open Fracture Gustilo IIIB</td><td>Extensive soft tissue loss with exposed bone. Mandates <strong>flap coverage</strong> (plastic surgery) after ex-fix.</td></tr>
-      <tr><td>Distal Locking Fluoroscopy</td><td>The C-arm must display a <strong>perfect circle ("bullseye")</strong>. Never drill through an ellipse.</td></tr>
-    </tbody>
-  </table>
+<div class="topic-header"><span class="topic-num">5.2</span><h2>Complication 2: Non-union</h2></div>
+<div class="diagram-wrap">
+<div class="diagram-title">Types of Fracture Non-Union</div>
 </div>
-
+<ul>
+<li><strong>Hypertrophic Non-union:</strong> "Elephant foot" appearance on X-ray. The bone is biologically active but mechanically unstable. Correct by revising fixation to a stiffer construct (e.g., exchange nailing with a larger reamed nail). No bone graft required.</li>
+<li><strong>Atrophic Non-union:</strong> Tapered, sclerotic bone ends. Biologically inactive due to poor blood supply. Correct by revising fixation AND applying biological augmentation (autologous iliac crest bone graft, BMAC, or BMP-2).</li>
+<li><strong>Septic Non-union:</strong> Elevated CRP/WBC. Must remove all hardware, thoroughly debride, treat with targeted antibiotics for 6 weeks (using external fixation), and bone graft later once sterile.</li>
+</ul>
+</section>
+<section class="topic s5" id="p5c">
+<div class="topic-header"><span class="topic-num">5.3</span><h2>Complication 3: Malunion</h2></div>
+<ul>
+<li><strong>Recognition:</strong> Fracture heals with unacceptable angulation, shortening, or rotation. Causes altered joint mechanics and gait.</li>
+<li><strong>Correction (Mild):</strong> Observe in children (remodelling corrects up to 20°). Physical therapy for adults.</li>
+<li><strong>Correction (Severe):</strong> Corrective osteotomy. Opening wedge (requires bone graft) or closing wedge. Complex deformities are corrected gradually using a Taylor Spatial Frame to prevent neurovascular stretch injury. Rotational malunions require derotational osteotomy and nailing.</li>
+</ul>
+</section>
+<div class="rapid-ref" id="rapid">
+<h3>Rapid Reference — High-Yield Board Facts</h3>
+<table>
+<thead><tr><th>Topic</th><th>Key Fact</th></tr></thead>
+<tbody>
+<tr><td>Compartment Syndrome Trigger</td><td>Delta pressure (Diastolic BP - Compartment Pressure) <strong>&lt;30mmHg</strong> mandates fasciotomy.</td></tr>
+<tr><td>Damage Control Orthopaedics</td><td>Apply external fixation instead of IMN if patient presents with <strong>lactate &gt;2.5, pH &lt;7.25, or massive transfusion</strong>.</td></tr>
+<tr><td>Femoral Shaft Traction Pin</td><td>Place <strong>medial to lateral</strong> to avoid the common peroneal nerve.</td></tr>
+<tr><td>Tibial Pilon Fractures</td><td>Require a <strong>staged approach</strong> (spanning ex-fix first) due to a 30-40% infection rate if plated acutely.</td></tr>
+<tr><td>Schatzker II Plateau Fixation</td><td>Requires an osteotomy window to elevate cartilage, followed by <strong>bone grafting</strong> to support the joint surface.</td></tr>
+<tr><td>Syndesmotic Screw Removal</td><td>Must be removed at <strong>8-12 weeks</strong> before weight-bearing, or it will break.</td></tr>
+<tr><td>Hypertrophic Non-Union Rx</td><td>Mechanically unstable but biologically active. Treat by <strong>increasing fixation stiffness</strong> (exchange nailing). No graft needed.</td></tr>
+<tr><td>Atrophic Non-Union Rx</td><td>Biologically inactive. Treat by revising fixation <strong>AND applying autologous bone graft</strong>.</td></tr>
+<tr><td>Open Fracture Gustilo IIIB</td><td>Extensive soft tissue loss with exposed bone. Mandates <strong>flap coverage</strong> (plastic surgery) after ex-fix.</td></tr>
+<tr><td>Distal Locking Fluoroscopy</td><td>The C-arm must display a <strong>perfect circle ("bullseye")</strong>. Never drill through an ellipse.</td></tr>
+</tbody>
+</table>
+</div>
 </div></main>
-
 <button id="top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
-
 <script>
 const progressBar = document.getElementById('progress-bar');
 const topBtn = document.getElementById('top-btn');
@@ -764,6 +466,7 @@ navItems.forEach(item => {
 
 document.querySelectorAll('.topic').forEach((el, i) => { el.style.animationDelay = `${i * 0.03}s`; });
 </script>
+<script src="../../js/nav-pill.js"></script>
 <script src="../../js/navigation.js"></script>
 </body>
 </html>

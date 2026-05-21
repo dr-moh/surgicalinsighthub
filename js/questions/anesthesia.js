@@ -4351,4 +4351,109 @@ window.QUESTIONS.push(...[
   },
   "discrepancy_flag": ""
 }
+,
+{
+  "id": 44,
+  "specialty": "Anesthesia",
+  "topic": "Incorrect statement regarding neuraxial blockade is",
+  "question": "Incorrect statement regarding neuraxial blockade is",
+  "options": {
+    "A": "Dermatome level of anesthesia achieved with a spinal anesthetic is often more predictable than following an epidural blockade",
+    "B": "Spinal anesthesia can more rapidly and consistently produce denser motor blockade than epidural anesthesia",
+    "C": "Local anesthetics administered during epidural anesthesia are typically more volume-dependent, and during spinal anesthesia are more concentration-dependent",
+    "D": "Thoracic epidural anesthesia has an increased risk of urinary retention compared to lumbar epidural anesthesia when the same volume of local anesthetic is administered"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Dermatome level of anesthesia achieved with a spinal anesthetic is often more predictable than following an epidural blockade",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Incorrect statement regarding neuraxial blockade is",
+    "H_highlight_excellence": "Dermatome level of anesthesia achieved with a spinal anesthetic is often more predictable than following an epidural blockade",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "ASA practice guidelines",
+    "P_plan_for_improvement": "Dermatome level of anesthesia achieved with a spinal anesthetic is often more predictable than following an"
+  },
+  "supplementary_callouts": {
+    "guideline": "ASA practice guidelines",
+    "takeaway": "Dermatome level of anesthesia achieved with a spinal anesthetic is often more predictable than following an epidural blockade",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 53,
+  "specialty": "Anesthesia",
+  "topic": "The most correct statement concerning a unilateral paravertebral block is",
+  "question": "The most correct statement concerning a unilateral paravertebral block is",
+  "options": {
+    "A": "Such a block is always associated with a similar degree of sympathectomy as with an epidural block",
+    "B": "Such a block is often associated with a higher serum level of local anesthetic than that achieved with an intercostal nerve block due to high vascularity",
+    "C": "It is not likely to be associated with a pneumothorax",
+    "D": "Such a block may be associated with epidural spread of local anesthetic"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Such a block is always associated with a similar degree of sympathectomy as with an epidural block",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "The most correct statement concerning a unilateral paravertebral block is",
+    "H_highlight_excellence": "Such a block is always associated with a similar degree of sympathectomy as with an epidural block",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "ASA practice guidelines",
+    "P_plan_for_improvement": "Such a block is always associated with a similar degree of sympathectomy as with an epidural"
+  },
+  "supplementary_callouts": {
+    "guideline": "ASA practice guidelines",
+    "takeaway": "Such a block is always associated with a similar degree of sympathectomy as with an epidural block",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 43,
+  "specialty": "Anesthesia",
+  "topic": "In the anesthetic management of the above patient, which of the following",
+  "question": "In the anesthetic management of the above patient, which of the following statements is correct?",
+  "options": {
+    "A": "Flow\u2013volume loops aid the clinician in evaluating the severity of the lesion",
+    "B": "Right radial artery blood pressure monitoring is preferred over the left side for lower tracheal resection",
+    "C": "Slow-inhalation induction is not advisable and a rapid-sequence induction should be used",
+    "D": "Early extubation is not advisable at the end of the procedure for risk of rupturing the suture lines"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Flow\u2013volume loops aid the clinician in evaluating the severity of the lesion",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "In the anesthetic management of the above patient, which of the following",
+    "H_highlight_excellence": "Flow\u2013volume loops aid the clinician in evaluating the severity of the lesion",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "ASA practice guidelines",
+    "P_plan_for_improvement": "Flow\u2013volume loops aid the clinician in evaluating the severity of the lesion"
+  },
+  "supplementary_callouts": {
+    "guideline": "ASA practice guidelines",
+    "takeaway": "Flow\u2013volume loops aid the clinician in evaluating the severity of the lesion",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
 ]);

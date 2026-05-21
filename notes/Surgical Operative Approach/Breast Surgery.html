@@ -1,808 +1,507 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Surgical Insight Hub — Breast Surgery Monograph</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../css/theme.css">
-<link rel="stylesheet" href="../../css/shared.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="../../css/theme.css" rel="stylesheet"/>
+<link href="../../css/shared.css" rel="stylesheet"/>
 <script>
   const savedTheme = localStorage.getItem('sih-theme') || 'light';
   if (savedTheme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
 </script>
-<style>
-:root {
-  /* Blush Pink & Charcoal Aesthetic (Breast Surgery) */
-  --primary:   #BE185D; 
-  --primary-dk:#4C0519;
-  --primary-lt:#FDF2F8;
-  --accent:    #9D174D;
-  --accent2:   #F43F5E;
-  --gold:      #F59E0B;
-  --gold-lt:   #FEF3C7;
-  --s1:        #BE185D;
-  --s2:        #831843;
-  --s3:        #9D174D;
-  --s4:        #4C0519;
-  --s5:        #E11D48;
-  --s1-lt:     #FDF2F8;
-  --s2-lt:     #FFF1F2;
-  --s3-lt:     #FCE7F3;
-  --s4-lt:     #FFF1F2;
-  --s5-lt:     #FFE4E6;
-  --red:       #E11D48;
-  --red-lt:    #FFF1F2;
-  --amber:     #D97706;
-  --amber-lt:  #FFFBEB;
-  --blue:      #2563EB;
-  --blue-lt:   #EFF6FF;
-  --bg:        #FAFAFA;
-  --bg2:       #F4F4F5;
-  --border:    #E5E7EB;
-  --text:      #111827;
-  --muted:     #6B7280;
-  --white:     #FFFFFF;
-  --sidebar-w: 320px;
-}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-html{scroll-behavior:smooth;}
-body{font-family:'Source Serif 4',Georgia,serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.75;}
 
-/* SLIDE-OVER SIDEBAR */
-#sidebar {
-  position: fixed; top: 0; left: 0; width: var(--sidebar-w); height: 100vh;
-  background: var(--primary-dk); color: #FDF2F8;
-  display: flex; flex-direction: column;
-  z-index: 1000; overflow: hidden;
-  transform: translateX(-100%);
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 4px 0 24px rgba(0,0,0,0.4);
-}
-body.sidebar-open #sidebar {
-  transform: translateX(0);
-}
-
-/* OVERLAY */
-#sidebar-overlay {
-  position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
-  background: rgba(76, 5, 25, 0.7); backdrop-filter: blur(3px);
-  z-index: 950; opacity: 0; pointer-events: none;
-  transition: opacity 0.3s ease;
-}
-body.sidebar-open #sidebar-overlay {
-  opacity: 1; pointer-events: auto;
-}
-
-/* TOGGLE BUTTON - TOP LEFT */
-#sidebar-toggle {
-  position: fixed; top: 24px; left: 28px; z-index: 900;
-  background: var(--primary); color: white;
-  border: none; border-radius: 30px;
-  padding: 10px 18px; font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600;
-  letter-spacing: 0.05em; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-  display: flex; align-items: center; gap: 8px; transition: all 0.2s;
-}
-#sidebar-toggle:hover {
-  background: var(--accent2); transform: translateY(-2px);
-}
-
-#sidebar-header{padding:20px 20px 14px;border-bottom:1px solid rgba(255,255,255,0.08);flex-shrink:0;}
-#sidebar-header .logo{font-family:'Playfair Display',serif;font-size:13px;font-weight:700;color:var(--accent2);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;}
-#sidebar-header .sub{font-size:10.5px;color:rgba(253,242,248,0.6);letter-spacing:0.04em;}
-#sidebar-search{padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.05);flex-shrink:0;}
-#sidebar-search input{width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:6px;color:#FDF2F8;padding:6px 10px;font-size:12px;font-family:'Source Serif 4',serif;outline:none;transition:border-color 0.2s;}
-#sidebar-search input::placeholder{color:rgba(253,242,248,0.4);}
-#sidebar-search input:focus{border-color:var(--accent2);}
-#sidebar-nav{flex:1;overflow-y:auto;padding:8px 0 20px;}
-#sidebar-nav::-webkit-scrollbar{width:4px;}
-#sidebar-nav::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.15);border-radius:2px;}
-.vol-label{font-size:9.5px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent2);padding:14px 18px 4px;}
-.nav-item{display:block;padding:8px 18px 8px 22px;font-size:12.5px;color:rgba(253,242,248,0.8);text-decoration:none;border-left:2px solid transparent;transition:all 0.15s;line-height:1.4;}
-.nav-item:hover{color:#fff;background:rgba(255,255,255,0.03);border-left-color:rgba(244,63,94,0.5);}
-.nav-item.active{color:#fff;background:rgba(255,255,255,0.06);border-left-color:var(--accent2);font-weight:600;}
-.nav-item .num{font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(253,242,248,0.4);margin-right:6px;}
-
-/* MAIN */
-#main{margin-left:0; min-height:100vh;}
-
-/* HERO */
-#hero{background:linear-gradient(135deg,var(--primary-dk) 0%,#BE185D 60%,#831843 100%);color:white;padding:90px 72px 60px;position:relative;overflow:hidden;}
-#hero::before{content:'';position:absolute;top:-60px;right:-60px;width:380px;height:380px;background:radial-gradient(circle,rgba(244,63,94,0.15) 0%,transparent 70%);pointer-events:none;}
-#hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent2),var(--gold),transparent);}
-#hero .eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.16em;color:var(--accent2);text-transform:uppercase;margin-bottom:14px;}
-#hero h1{font-family:'Playfair Display',serif;font-size:46px;font-weight:700;line-height:1.15;margin-bottom:10px;color:#fff;}
-#hero .subtitle{font-size:18px;color:rgba(255,255,255,0.8);font-style:italic;margin-bottom:28px;}
-#hero .badges{display:flex;gap:10px;flex-wrap:wrap;}
-#hero .badge{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:4px 14px;font-size:12px;color:rgba(255,255,255,0.95);font-family:'JetBrains Mono',monospace;}
-
-/* CONTENT */
-.content-wrap{max-width:900px;margin:0 auto;padding:0 48px 80px;}
-
-/* SECTION HEADER */
-.sec-header{margin-top:60px;margin-bottom:16px;padding:28px 36px;border-radius:10px;display:flex;align-items:center;gap:20px;}
-.sec-header.s1{background:linear-gradient(135deg,#BE185D0A,#BE185D1A);border-left:4px solid var(--s1);}
-.sec-header.s2{background:linear-gradient(135deg,#8318430A,#8318431A);border-left:4px solid var(--s2);}
-.sec-header.s3{background:linear-gradient(135deg,#9D174D0A,#9D174D1A);border-left:4px solid var(--s3);}
-.sec-header.s4{background:linear-gradient(135deg,#4C05190A,#4C05191A);border-left:4px solid var(--s4);}
-.sec-header.s5{background:linear-gradient(135deg,#E11D480A,#E11D481A);border-left:4px solid var(--s5);}
-.sec-badge{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;letter-spacing:0.1em;padding:4px 12px;border-radius:4px;white-space:nowrap;flex-shrink:0;}
-.s1 .sec-badge{background:var(--s1);color:white;}
-.s2 .sec-badge{background:var(--s2);color:white;}
-.s3 .sec-badge{background:var(--s3);color:white;}
-.s4 .sec-badge{background:var(--s4);color:white;}
-.s5 .sec-badge{background:var(--s5);color:white;}
-.sec-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;margin:0;}
-.s1 .sec-title{color:var(--s1);}
-.s2 .sec-title{color:var(--s2);}
-.s3 .sec-title{color:var(--s3);}
-.s4 .sec-title{color:var(--s4);}
-.s5 .sec-title{color:var(--s5);}
-
-/* TOPIC */
-.topic{margin-top:48px;padding-top:24px;border-top:1px solid var(--border);}
-.topic:first-of-type{border-top:none; padding-top:0;}
-.topic-header{display:flex;align-items:flex-start;gap:16px;margin-bottom:24px;}
-.topic-num{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;padding:3px 10px;border-radius:4px;margin-top:4px;flex-shrink:0;}
-.s1 .topic-num{background:var(--s1-lt);color:var(--s1);}
-.s2 .topic-num{background:var(--s2-lt);color:var(--s2);}
-.s3 .topic-num{background:var(--s3-lt);color:var(--s3);}
-.s4 .topic-num{background:var(--s4-lt);color:var(--s4);}
-.s5 .topic-num{background:var(--s5-lt);color:var(--s5);}
-.topic h2{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;line-height:1.2;margin:0;}
-.s1 .topic h2{color:var(--s1);}
-.s2 .topic h2{color:var(--s2);}
-.s3 .topic h2{color:var(--s3);}
-.s4 .topic h2{color:var(--s4);}
-.s5 .topic h2{color:var(--s5);}
-.topic h3{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--text);margin:26px 0 12px;padding-bottom:6px;border-bottom:1px solid var(--border);}
-.topic h4{font-size:15px;font-weight:700;color:var(--text);margin:18px 0 8px;}
-.topic p{margin-bottom:16px;color:var(--text);}
-.topic ul, .topic ol{margin:0 0 16px 24px;color:var(--text);}
-.topic li{margin-bottom:8px;line-height:1.65;}
-.topic li::marker{color:var(--accent2); font-weight:bold;}
-.topic li > ul{margin-top:8px; margin-bottom:8px;}
-.topic strong{color:var(--text);font-weight:700;}
-
-/* TABLES */
-.table-wrap{overflow-x:auto;margin:24px 0;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.05); border: 1px solid var(--border);}
-table{width:100%;border-collapse:collapse;font-size:14px;background:white;}
-thead tr{background:var(--s1);}
-thead th{color:white;padding:12px 16px;text-align:left;font-family:'Source Serif 4',serif;font-weight:600;font-size:14px; text-transform: uppercase; letter-spacing: 0.05em;}
-tbody tr:nth-child(even){background:var(--bg2);}
-tbody tr:hover{background:var(--s1-lt);transition:background 0.15s;}
-tbody td{padding:12px 16px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.5;}
-.s2-tbl thead tr{background:var(--s2);}
-.s3-tbl thead tr{background:var(--s3);}
-.s4-tbl thead tr{background:var(--s4);}
-.s5-tbl thead tr{background:var(--s5);}
-
-/* CALLOUTS */
-.callout{margin:24px 0;padding:16px 20px;border-radius:0 8px 8px 0;border-left:4px solid;font-size:15px;line-height:1.65; background:var(--bg2);}
-.callout .label{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;display:block;margin-bottom:8px;}
-.callout.pearl{background:var(--amber-lt);border-color:var(--amber);}
-.callout.pearl .label{color:var(--amber);}
-.callout.warn{background:var(--red-lt);border-color:var(--red);}
-.callout.warn .label{color:var(--red);}
-.callout.clin{background:var(--s1-lt);border-color:var(--s1);}
-.callout.clin .label{color:var(--s1);}
-
-/* DIAGRAM PLACEHOLDERS */
-.diagram-wrap{background:white;border:1px solid var(--border);border-radius:8px;padding:20px;margin:24px 0;box-shadow:0 2px 8px rgba(0,0,0,0.05);text-align:center;}
-.diagram-title{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--s1);margin-bottom:16px;text-align:left; border-bottom: 1px solid var(--border); padding-bottom: 8px;}
-.diagram-wrap img { max-width: 100%; height: auto; display: block; margin: 0 auto; border-radius: 4px; border: 1px solid var(--border); }
-
-/* RAPID REFERENCE */
-.rapid-ref{background:var(--primary-dk);color:var(--primary-lt);border-radius:12px;padding:32px 40px;margin:40px 0; box-shadow: 0 10px 30px rgba(0,0,0,0.15);}
-.rapid-ref h3{font-family:'Playfair Display',serif;font-size:24px;color:var(--accent2);margin-bottom:20px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px;}
-.rapid-ref table{font-size:14px; background: transparent; border: none; box-shadow: none;} 
-.rapid-ref thead tr{background:rgba(244,63,94,0.2);}
-.rapid-ref thead th{color:var(--accent2);padding:12px 16px;font-size:12px;}
-.rapid-ref tbody tr:nth-child(even){background:rgba(255,255,255,0.02);}
-.rapid-ref tbody tr:hover{background:rgba(255,255,255,0.05);}
-.rapid-ref tbody td{color:var(--primary-lt);padding:12px 16px;border-bottom:1px solid rgba(255,255,255,0.05);}
-.rapid-ref tbody td strong{color:var(--gold-lt);}
-
-/* PROGRESS */
-#progress-bar{position:fixed;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--accent2),var(--gold));transform-origin:left;transform:scaleX(0);transition:transform 0.1s;z-index:50;}
-
-/* TOP BTN */
-#top-btn{position:fixed;bottom:28px;right:28px;background:var(--primary);color:white;border:none;border-radius:50%;width:48px;height:48px;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,0.3);transition:all 0.2s;opacity:0;pointer-events:none;}
-#top-btn.show{opacity:1;pointer-events:auto;}
-#top-btn:hover{background:var(--accent2);transform:translateY(-3px); box-shadow:0 6px 16px rgba(0,0,0,0.4);}
-
-@media(max-width:900px){
-  .content-wrap{padding:0 24px 60px;}
-  #hero{padding:80px 24px 40px;}
-  #hero h1{font-size:32px;}
-  .rapid-ref{padding: 24px;}
-  #sidebar-toggle {
-    top: auto;
-    bottom: 24px;
-    left: 24px;
-    z-index: 1200;
-    padding: 8px 16px;
-    font-size: 12px;
-  }
-}
-@media print{
-  #sidebar-toggle, #sidebar-overlay, #sidebar, #top-btn, #progress-bar{display:none!important;}
-  .topic{page-break-inside:avoid;}
-  .sec-header{page-break-before:always;}
-  body {background: white; color: black;}
-}
-</style>
 </head>
 <body>
-
-  <nav class="nav" id="mainNav">
-    <div class="nav-left">
-      <a href="../../index.html" class="nav-pill">
-        <div class="nav-logo-img">
-          <img src="../../assets/images/Surgical_Insight_Hub_Logo.png" alt="SIH Logo">
-        </div>
-        <div>
-          <div class="nav-brand-text">Surgical Insight Hub</div>
-          <div class="nav-brand-sub">The Residency Journal</div>
-        </div>
-      </a>
-    </div>
-
-    <div class="nav-links-pill">
-      <a href="../../index.html">Home</a>
-      <a href="../../notes.html" class="active">Notes</a>
-      <a href="../operative_approach.html">Playbook</a>
-      <a href="../../arena.html">MCQ Arena</a>
-      <a href="../../podcast.html">Podcast</a>
-      <a href="../../surgery-talk.html">Surgery Talk</a>
-      <a href="../../about.html">About</a>
-    </div>
-
-    <div class="nav-right">
-      <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
-        <svg id="moonIcon" viewBox="0 0 24 24" width="18" height="18"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-        <svg id="sunIcon" style="display:none;" viewBox="0 0 24 24" width="18" height="18"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-      </button>
-      <a href="https://t.me/sugicalInsightHub" target="_blank" rel="noopener" class="nav-tg-btn" title="Join Telegram" style="background: var(--brand-burgundy); color: #f0d080; padding: 8px 12px; border-radius: 8px; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: all 0.3s ease;">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="#f0d080"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.89 8.22l-1.97 9.28c-.15.66-.54.82-1.08.51l-3-2.21-1.45 1.39c-.16.16-.3.3-.61.3l.21-3.05 5.56-5.02c.24-.21-.05-.33-.37-.12l-6.87 4.33-2.96-.92c-.64-.2-.66-.64.14-.95l11.57-4.46c.54-.19 1.01.13.83.94z"/></svg>
-      </a>
-      <a href="../../arena.html" class="nav-btn arena-btn">MCQ Arena</a>
-      <button class="mob-nav-toggle" onclick="openMobNav()" aria-label="Menu">
-        <div class="hamburger"><span></span><span></span><span></span></div>
-      </button>
-    </div>
-  </nav>
-
-  <div class="mob-nav-overlay" id="mobNavOverlay" onclick="closeMobNav()"></div>
-  <div class="mob-nav-sheet" id="mobNavSheet">
-    <div class="mob-nav-handle"></div>
-    <a href="../../index.html" onclick="closeMobNav()">Home</a>
-    <a href="../../notes.html" class="active" onclick="closeMobNav()">Notes</a>
-    <a href="../operative_approach.html" onclick="closeMobNav()">Playbook</a>
-    <a href="../../arena.html" onclick="closeMobNav()">MCQ Arena</a>
-    <a href="../../podcast.html" onclick="closeMobNav()">Podcast</a>
-    <a href="../../surgery-talk.html" onclick="closeMobNav()">Surgery Talk</a>
-    <a href="../../about.html" onclick="closeMobNav()">About</a>
-    <a href="https://t.me/sugicalInsightHub" target="_blank" rel="noopener" onclick="closeMobNav()" style="color: var(--brand-gold); font-weight: 800;">Join Telegram Community</a>
-  </div>
-
-<div id="progress-bar"></div>
-
-<div id="sidebar-overlay" onclick="closeSidebar()"></div>
-
-<button id="sidebar-toggle" onclick="toggleSidebar()">
-  <span>☰</span> Contents
+<nav class="nav" id="mainNav">
+<div class="nav-left">
+<a class="nav-pill" href="../../index.html">
+<div class="nav-logo-img">
+<img alt="SIH Logo" src="../../assets/images/Surgical_Insight_Hub_Logo.png"/>
+</div>
+<div>
+<div class="nav-brand-text">Surgical Insight Hub</div>
+<div class="nav-brand-sub">The Residency Journal</div>
+</div>
+</a>
+</div>
+<div class="nav-links-pill">
+<a href="../../index.html">Home</a>
+<a class="active" href="../../notes.html">Notes</a>
+<a href="../operative_approach.html">Playbook</a>
+<a href="../../arena.html">MCQ Arena</a>
+<a href="../../podcast.html">Podcast</a>
+<a href="../../surgery-talk.html">Surgery Talk</a>
+<a href="../../about.html">About</a>
+</div>
+<div class="nav-right">
+<button aria-label="Toggle Theme" class="theme-toggle" id="themeToggle">
+<svg height="18" id="moonIcon" viewbox="0 0 24 24" width="18"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+<svg height="18" id="sunIcon" style="display:none;" viewbox="0 0 24 24" width="18"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line><line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line><line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line></svg>
 </button>
-
-<nav id="sidebar">
-  <div id="sidebar-header">
-    <div class="logo">Surgical Insight Hub</div>
-    <div class="sub">Breast Surgery Monograph</div>
-  </div>
-  <div id="sidebar-search">
-    <input type="text" id="search-input" placeholder="Search topics…" oninput="filterNav(this.value)">
-  </div>
-  <div id="sidebar-nav">
-    <div class="vol-label">Pillar 1: Pre-Op Optimization</div>
-    <a class="nav-item" href="#p1a"><span class="num">1.1</span>Clinical Workup</a>
-    <a class="nav-item" href="#p1b"><span class="num">1.2</span>The Triple Assessment</a>
-    <a class="nav-item" href="#p1c"><span class="num">1.3</span>Staging Investigations</a>
-    <a class="nav-item" href="#p1d"><span class="num">1.4</span>Neoadjuvant Implications</a>
-    <a class="nav-item" href="#p1e"><span class="num">1.5</span>Immediate Preparation</a>
-    
-    <div class="vol-label">Pillar 2: The Operative Game Plan</div>
-    <a class="nav-item" href="#p2a"><span class="num">2.1</span>Surgical Anatomy</a>
-    <a class="nav-item" href="#p2b"><span class="num">2.2</span>Wide Local Excision (WLE)</a>
-    <a class="nav-item" href="#p2c"><span class="num">2.3</span>Mastectomy</a>
-    <a class="nav-item" href="#p2d"><span class="num">2.4</span>Sentinel Lymph Node Biopsy (SLNB)</a>
-    <a class="nav-item" href="#p2e"><span class="num">2.5</span>Axillary Lymph Node Dissection</a>
-    <a class="nav-item" href="#p2f"><span class="num">2.6</span>Oncoplastic Principles</a>
-    <a class="nav-item" href="#p2g"><span class="num">2.7</span>Benign &amp; Male Breast Disease</a>
-    <a class="nav-item" href="#p2h"><span class="num">2.8</span>The Critical View</a>
-    
-    <div class="vol-label">Pillar 3: Pearls &amp; Bail-Outs</div>
-    <a class="nav-item" href="#p3a"><span class="num">3.1</span>Consultant Pearls</a>
-    <a class="nav-item" href="#p3b"><span class="num">3.2</span>The Bail-Out Point</a>
-    
-    <div class="vol-label">Pillar 4: Post-Op Care</div>
-    <a class="nav-item" href="#p4a"><span class="num">4.1</span>Immediate Recovery</a>
-    <a class="nav-item" href="#p4b"><span class="num">4.2</span>Clinic Follow-up</a>
-    
-    <div class="vol-label">Pillar 5: Complications</div>
-    <a class="nav-item" href="#p5a"><span class="num">5.1</span>Haematoma</a>
-    <a class="nav-item" href="#p5b"><span class="num">5.2</span>Lymphoedema</a>
-    <a class="nav-item" href="#p5c"><span class="num">5.3</span>Local Recurrence</a>
-    
-    <div class="vol-label">Quick Reference</div>
-    <a class="nav-item" href="#rapid">High-Yield Board Facts</a>
-  </div>
+<a class="nav-tg-btn" href="https://t.me/sugicalInsightHub" rel="noopener" style="background: var(--brand-burgundy); color: #f0d080; padding: 8px 12px; border-radius: 8px; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: all 0.3s ease;" target="_blank" title="Join Telegram">
+<svg fill="#f0d080" height="18" viewbox="0 0 24 24" width="18"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.89 8.22l-1.97 9.28c-.15.66-.54.82-1.08.51l-3-2.21-1.45 1.39c-.16.16-.3.3-.61.3l.21-3.05 5.56-5.02c.24-.21-.05-.33-.37-.12l-6.87 4.33-2.96-.92c-.64-.2-.66-.64.14-.95l11.57-4.46c.54-.19 1.01.13.83.94z"></path></svg>
+</a>
+<a class="nav-btn arena-btn" href="../../arena.html">MCQ Arena</a>
+<button aria-label="Menu" class="mob-nav-toggle" onclick="openMobNav()">
+<div class="hamburger"><span></span><span></span><span></span></div>
+</button>
+</div>
 </nav>
-
-<main id="main">
+<div class="mob-nav-overlay" id="mobNavOverlay" onclick="closeMobNav()"></div>
+<div class="mob-nav-sheet" id="mobNavSheet">
+<div class="mob-nav-handle"></div>
+<a href="../../index.html" onclick="closeMobNav()">Home</a>
+<a class="active" href="../../notes.html" onclick="closeMobNav()">Notes</a>
+<a href="../operative_approach.html" onclick="closeMobNav()">Playbook</a>
+<a href="../../arena.html" onclick="closeMobNav()">MCQ Arena</a>
+<a href="../../podcast.html" onclick="closeMobNav()">Podcast</a>
+<a href="../../surgery-talk.html" onclick="closeMobNav()">Surgery Talk</a>
+<a href="../../about.html" onclick="closeMobNav()">About</a>
+<a href="https://t.me/sugicalInsightHub" onclick="closeMobNav()" rel="noopener" style="color: var(--brand-gold); font-weight: 800;" target="_blank">Join Telegram Community</a>
+</div>
+<div id="progress-bar"></div>
+<div id="sidebar-overlay" onclick="closeSidebar()"></div>
+<button id="sidebar-toggle" onclick="toggleSidebar()">
+<span>☰</span> Contents
+</button>
+<nav id="sidebar">
+<div id="sidebar-header">
+<div class="logo">Surgical Insight Hub</div>
+<div class="sub">Breast Surgery Monograph</div>
+</div>
+<div id="sidebar-search">
+<input id="search-input" oninput="filterNav(this.value)" placeholder="Search topics…" type="text"/>
+</div>
+<div id="sidebar-nav">
+<div class="vol-label">Pillar 1: Pre-Op Optimization</div>
+<a class="nav-item" href="#p1a"><span class="num">1.1</span>Clinical Workup</a>
+<a class="nav-item" href="#p1b"><span class="num">1.2</span>The Triple Assessment</a>
+<a class="nav-item" href="#p1c"><span class="num">1.3</span>Staging Investigations</a>
+<a class="nav-item" href="#p1d"><span class="num">1.4</span>Neoadjuvant Implications</a>
+<a class="nav-item" href="#p1e"><span class="num">1.5</span>Immediate Preparation</a>
+<div class="vol-label">Pillar 2: The Operative Game Plan</div>
+<a class="nav-item" href="#p2a"><span class="num">2.1</span>Surgical Anatomy</a>
+<a class="nav-item" href="#p2b"><span class="num">2.2</span>Wide Local Excision (WLE)</a>
+<a class="nav-item" href="#p2c"><span class="num">2.3</span>Mastectomy</a>
+<a class="nav-item" href="#p2d"><span class="num">2.4</span>Sentinel Lymph Node Biopsy (SLNB)</a>
+<a class="nav-item" href="#p2e"><span class="num">2.5</span>Axillary Lymph Node Dissection</a>
+<a class="nav-item" href="#p2f"><span class="num">2.6</span>Oncoplastic Principles</a>
+<a class="nav-item" href="#p2g"><span class="num">2.7</span>Benign &amp; Male Breast Disease</a>
+<a class="nav-item" href="#p2h"><span class="num">2.8</span>The Critical View</a>
+<div class="vol-label">Pillar 3: Pearls &amp; Bail-Outs</div>
+<a class="nav-item" href="#p3a"><span class="num">3.1</span>Consultant Pearls</a>
+<a class="nav-item" href="#p3b"><span class="num">3.2</span>The Bail-Out Point</a>
+<div class="vol-label">Pillar 4: Post-Op Care</div>
+<a class="nav-item" href="#p4a"><span class="num">4.1</span>Immediate Recovery</a>
+<a class="nav-item" href="#p4b"><span class="num">4.2</span>Clinic Follow-up</a>
+<div class="vol-label">Pillar 5: Complications</div>
+<a class="nav-item" href="#p5a"><span class="num">5.1</span>Haematoma</a>
+<a class="nav-item" href="#p5b"><span class="num">5.2</span>Lymphoedema</a>
+<a class="nav-item" href="#p5c"><span class="num">5.3</span>Local Recurrence</a>
+<div class="vol-label">Quick Reference</div>
+<a class="nav-item" href="#rapid">High-Yield Board Facts</a>
+</div>
+</nav>
+<main class="editorial-content" id="main">
 <section id="hero">
-  <div class="eyebrow">Surgical Insight Hub · Monograph Series · ABSITE · PGY-3 Framework</div>
-  <h1>Breast Surgery</h1>
-  <p class="subtitle">Diagnostic Workup, Oncologic Resection, and Reconstructive Principles</p>
-  <div class="badges">
-    <span class="badge">Surgical Oncology</span>
-    <span class="badge">Oncoplastic Surgery</span>
-    <span class="badge">Endocrine Surgery</span>
-  </div>
+<div class="eyebrow">Surgical Insight Hub · Monograph Series · ABSITE · PGY-3 Framework</div>
+<h1>Breast Surgery</h1>
+<p class="subtitle">Diagnostic Workup, Oncologic Resection, and Reconstructive Principles</p>
+<div class="badges">
+<span class="badge">Surgical Oncology</span>
+<span class="badge">Oncoplastic Surgery</span>
+<span class="badge">Endocrine Surgery</span>
+</div>
 </section>
-
 <div class="content-wrap">
-
 <div class="callout warn" style="margin-top: 40px;">
-  <span class="label">Upfront Philosophy</span>
-  <p>Breast surgery sits precisely at the intersection of oncology, reconstructive surgery, and endocrine surgery. It demands a level of pre-operative multidisciplinary team (MDT) coordination that most general surgical procedures do not. The operation itself is rarely the most complex technical element of the case.</p>
-  <p>The true complexity lies in the workup: establishing the diagnosis precisely, staging the disease accurately, selecting the correct surgical procedure for the specific patient, timing surgery relative to systemic therapy, and seamlessly integrating reconstruction planning into the primary procedure. A mastectomy performed without pre-operative MDT discussion, without oncoplastic planning, and without discussion of reconstruction options is not just a technical shortfall; it is a profound failure of care.</p>
+<span class="label">Upfront Philosophy</span>
+<p>Breast surgery sits precisely at the intersection of oncology, reconstructive surgery, and endocrine surgery. It demands a level of pre-operative multidisciplinary team (MDT) coordination that most general surgical procedures do not. The operation itself is rarely the most complex technical element of the case.</p>
+<p>The true complexity lies in the workup: establishing the diagnosis precisely, staging the disease accurately, selecting the correct surgical procedure for the specific patient, timing surgery relative to systemic therapy, and seamlessly integrating reconstruction planning into the primary procedure. A mastectomy performed without pre-operative MDT discussion, without oncoplastic planning, and without discussion of reconstruction options is not just a technical shortfall; it is a profound failure of care.</p>
 </div>
-
-<hr>
-
+<hr/>
 <div class="sec-header s1">
-  <span class="sec-badge">PILLAR 1</span>
-  <span class="sec-title">Pre-operative Optimization &amp; Preparation</span>
+<span class="sec-badge">PILLAR 1</span>
+<span class="sec-title">Pre-operative Optimization &amp; Preparation</span>
 </div>
-
 <section class="topic s1" id="p1a">
-  <div class="topic-header"><span class="topic-num">1.1</span><h2>Clinical Workup</h2></div>
-  <p>The history governs diagnosis, staging, and operative planning.</p>
-  
-  <h3>Presenting Complaint Characterisation</h3>
-  <ul>
-    <li><strong>Breast lump:</strong> Note duration and changes with the menstrual cycle. Benign lumps are often cyclical and tender. Malignant lumps are classically painless, but <strong>10-15% of breast cancers present with pain</strong>; pain does not exclude malignancy.</li>
-    <li><strong>Nipple discharge:</strong> Categorize as unilateral vs. bilateral; spontaneous vs. expressed; blood-stained vs. clear.
+<div class="topic-header"><span class="topic-num">1.1</span><h2>Clinical Workup</h2></div>
+<p>The history governs diagnosis, staging, and operative planning.</p>
+<h3>Presenting Complaint Characterisation</h3>
+<ul>
+<li><strong>Breast lump:</strong> Note duration and changes with the menstrual cycle. Benign lumps are often cyclical and tender. Malignant lumps are classically painless, but <strong>10-15% of breast cancers present with pain</strong>; pain does not exclude malignancy.</li>
+<li><strong>Nipple discharge:</strong> Categorize as unilateral vs. bilateral; spontaneous vs. expressed; blood-stained vs. clear.
       <ul>
-        <li><strong>Blood-stained unilateral single-duct discharge</strong> = Intraductal papilloma or DCIS until proven otherwise. Requires microdochectomy or formal duct excision.</li>
-        <li><strong>Bilateral milky discharge</strong> = Hyperprolactinaemia. This is not a surgical diagnosis; refer to endocrinology.</li>
-      </ul>
-    </li>
-    <li><strong>Nipple changes:</strong> Retraction indicates malignancy pulling on Cooper's ligaments. Eczematous change indicates Paget's disease of the nipple (DCIS or invasive cancer involving the nipple-areola complex); biopsy is mandatory.</li>
-    <li><strong>Skin changes:</strong> Dimpling indicates Cooper's ligament involvement. <em>Peau d'orange</em> indicates dermal lymphatic invasion and locally advanced disease. Erythema and warmth suggest inflammatory breast cancer vs. mastitis.</li>
-  </ul>
-
-  <h3>Risk Stratification for Breast Cancer</h3>
-  <ul>
-    <li><strong>Age:</strong> Incidence increases sharply after 40, peaking at 60-70 in the developed world. However, presentation often occurs at a younger age in resource-limited settings due to systemic delays in presentation.</li>
-    <li><strong>Family history:</strong> First-degree relative with breast cancer, bilateral disease, early onset (&lt;50), male breast cancer in a relative, or concurrent ovarian cancer all raise the probability of <strong>BRCA1/BRCA2</strong> or other hereditary mutations.</li>
-    <li><strong>Genetics:</strong> BRCA1 carries a lifetime breast cancer risk of 60-72%; BRCA2 carries a 45-69% risk. Both increase ovarian cancer risk. Genetic counselling is indicated for patients meeting clinical criteria.</li>
-    <li><strong>Prior chest wall radiation:</strong> Such as for childhood Hodgkin's lymphoma, this substantially increases lifetime breast cancer risk.</li>
-  </ul>
-
-  <h3>Symptom Duration and Trajectory</h3>
-  <ul>
-    <li>A lump present for 2 years without change is likely benign.</li>
-    <li><strong>Red Flag:</strong> Inflammatory breast cancer can present with only weeks of skin change and no discrete lump. Any woman with unilateral breast erythema, skin thickening, and breast oedema (even without a palpable lump) must undergo a full triple assessment.</li>
-  </ul>
+<li><strong>Blood-stained unilateral single-duct discharge</strong> = Intraductal papilloma or DCIS until proven otherwise. Requires microdochectomy or formal duct excision.</li>
+<li><strong>Bilateral milky discharge</strong> = Hyperprolactinaemia. This is not a surgical diagnosis; refer to endocrinology.</li>
+</ul>
+</li>
+<li><strong>Nipple changes:</strong> Retraction indicates malignancy pulling on Cooper's ligaments. Eczematous change indicates Paget's disease of the nipple (DCIS or invasive cancer involving the nipple-areola complex); biopsy is mandatory.</li>
+<li><strong>Skin changes:</strong> Dimpling indicates Cooper's ligament involvement. <em>Peau d'orange</em> indicates dermal lymphatic invasion and locally advanced disease. Erythema and warmth suggest inflammatory breast cancer vs. mastitis.</li>
+</ul>
+<h3>Risk Stratification for Breast Cancer</h3>
+<ul>
+<li><strong>Age:</strong> Incidence increases sharply after 40, peaking at 60-70 in the developed world. However, presentation often occurs at a younger age in resource-limited settings due to systemic delays in presentation.</li>
+<li><strong>Family history:</strong> First-degree relative with breast cancer, bilateral disease, early onset (&lt;50), male breast cancer in a relative, or concurrent ovarian cancer all raise the probability of <strong>BRCA1/BRCA2</strong> or other hereditary mutations.</li>
+<li><strong>Genetics:</strong> BRCA1 carries a lifetime breast cancer risk of 60-72%; BRCA2 carries a 45-69% risk. Both increase ovarian cancer risk. Genetic counselling is indicated for patients meeting clinical criteria.</li>
+<li><strong>Prior chest wall radiation:</strong> Such as for childhood Hodgkin's lymphoma, this substantially increases lifetime breast cancer risk.</li>
+</ul>
+<h3>Symptom Duration and Trajectory</h3>
+<ul>
+<li>A lump present for 2 years without change is likely benign.</li>
+<li><strong>Red Flag:</strong> Inflammatory breast cancer can present with only weeks of skin change and no discrete lump. Any woman with unilateral breast erythema, skin thickening, and breast oedema (even without a palpable lump) must undergo a full triple assessment.</li>
+</ul>
 </section>
-
 <section class="topic s1" id="p1b">
-  <div class="topic-header"><span class="topic-num">1.2</span><h2>The Triple Assessment</h2></div>
-  <p>The foundation of breast diagnosis. Every patient with a breast lump or suspicious symptom must undergo triple assessment before any operative decision is made. A negative result from any single component does not exclude malignancy.</p>
-
-  <h3>Component 1: Clinical Examination</h3>
-  <ul>
-    <li>Examine with the patient sitting upright with arms raised (exposes the upper outer quadrant and highlights skin dimpling) and lying supine with the ipsilateral arm raised.</li>
-    <li><strong>Describe the lump:</strong>
+<div class="topic-header"><span class="topic-num">1.2</span><h2>The Triple Assessment</h2></div>
+<p>The foundation of breast diagnosis. Every patient with a breast lump or suspicious symptom must undergo triple assessment before any operative decision is made. A negative result from any single component does not exclude malignancy.</p>
+<h3>Component 1: Clinical Examination</h3>
+<ul>
+<li>Examine with the patient sitting upright with arms raised (exposes the upper outer quadrant and highlights skin dimpling) and lying supine with the ipsilateral arm raised.</li>
+<li><strong>Describe the lump:</strong>
+<ul>
+<li><strong>Location:</strong> Quadrant and distance from nipple in cm using clock-face notation.</li>
+<li><strong>Size:</strong> Measure in cm with a ruler or callipers. Do not estimate.</li>
+<li><strong>Consistency:</strong> Soft, firm, hard. A stony-hard consistency strongly suggests malignancy.</li>
+<li><strong>Edge:</strong> Smooth and well-defined (fibroadenoma) vs. irregular and poorly defined. Spiculate edges suggest infiltration.</li>
+<li><strong>Mobility:</strong> Freely mobile (benign) vs. tethered to skin (Cooper's ligament involvement) vs. fixed to pectoral fascia or chest wall (locally advanced).</li>
+</ul>
+</li>
+<li><strong>Axillary examination:</strong> Assess for lymphadenopathy (size, consistency, fixed vs. mobile). Examine supraclavicular and infraclavicular nodes.</li>
+</ul>
+<h3>Component 2: Imaging</h3>
+<ul>
+<li><strong>Mammography:</strong> Standard two-view (craniocaudal and mediolateral oblique) for all patients ≥40 years. Sensitivity falls from 90% in fatty breasts to 50% in dense breasts.
       <ul>
-        <li><strong>Location:</strong> Quadrant and distance from nipple in cm using clock-face notation.</li>
-        <li><strong>Size:</strong> Measure in cm with a ruler or callipers. Do not estimate.</li>
-        <li><strong>Consistency:</strong> Soft, firm, hard. A stony-hard consistency strongly suggests malignancy.</li>
-        <li><strong>Edge:</strong> Smooth and well-defined (fibroadenoma) vs. irregular and poorly defined. Spiculate edges suggest infiltration.</li>
-        <li><strong>Mobility:</strong> Freely mobile (benign) vs. tethered to skin (Cooper's ligament involvement) vs. fixed to pectoral fascia or chest wall (locally advanced).</li>
-      </ul>
-    </li>
-    <li><strong>Axillary examination:</strong> Assess for lymphadenopathy (size, consistency, fixed vs. mobile). Examine supraclavicular and infraclavicular nodes.</li>
-  </ul>
-
-  <h3>Component 2: Imaging</h3>
-  <ul>
-    <li><strong>Mammography:</strong> Standard two-view (craniocaudal and mediolateral oblique) for all patients ≥40 years. Sensitivity falls from 90% in fatty breasts to 50% in dense breasts.
+<li><strong>Microcalcifications:</strong> Clustered, pleomorphic, casting calcifications carry high suspicion for DCIS.</li>
+<li><strong>BI-RADS Classification:</strong>
+<ul>
+<li><strong>1:</strong> Negative; routine screening.</li>
+<li><strong>2:</strong> Benign finding; routine screening.</li>
+<li><strong>3:</strong> Probably benign; 6-month follow-up.</li>
+<li><strong>4:</strong> Suspicious; biopsy recommended (4A to 4C).</li>
+<li><strong>5:</strong> Highly suggestive of malignancy; biopsy mandatory.</li>
+<li><strong>6:</strong> Known biopsy-proven malignancy.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Ultrasound:</strong> First-line for all patients &lt;40 years (denser breasts reduce mammographic sensitivity). Also used to characterize lesions and guide Core Needle Biopsy (CNB).
       <ul>
-        <li><strong>Microcalcifications:</strong> Clustered, pleomorphic, casting calcifications carry high suspicion for DCIS.</li>
-        <li><strong>BI-RADS Classification:</strong>
-          <ul>
-            <li><strong>1:</strong> Negative; routine screening.</li>
-            <li><strong>2:</strong> Benign finding; routine screening.</li>
-            <li><strong>3:</strong> Probably benign; 6-month follow-up.</li>
-            <li><strong>4:</strong> Suspicious; biopsy recommended (4A to 4C).</li>
-            <li><strong>5:</strong> Highly suggestive of malignancy; biopsy mandatory.</li>
-            <li><strong>6:</strong> Known biopsy-proven malignancy.</li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li><strong>Ultrasound:</strong> First-line for all patients &lt;40 years (denser breasts reduce mammographic sensitivity). Also used to characterize lesions and guide Core Needle Biopsy (CNB).
+<li><strong>Suspicious nodes:</strong> Cortical thickness &gt;3mm or loss of fatty hilum warrants US-guided CNB.</li>
+</ul>
+</li>
+<li><strong>MRI Breast:</strong> Not a routine first-line investigation. Indicated for:
       <ul>
-        <li><strong>Suspicious nodes:</strong> Cortical thickness &gt;3mm or loss of fatty hilum warrants US-guided CNB.</li>
-      </ul>
-    </li>
-    <li><strong>MRI Breast:</strong> Not a routine first-line investigation. Indicated for:
+<li>BRCA1/BRCA2 carriers (annual screening from age 25).</li>
+<li>Locally advanced staging (multifocal vs. multicentric disease).</li>
+<li>Mammographically occult breast cancer presenting with axillary nodes.</li>
+<li>Monitoring response to neoadjuvant chemotherapy.</li>
+</ul>
+</li>
+</ul>
+<h3>Component 3: Tissue Diagnosis</h3>
+<ul>
+<li><strong>Core Needle Biopsy (CNB):</strong> The absolute standard. 14- or 16-gauge automated gun taking 3-6 cores under ultrasound guidance. Provides histological diagnosis (invasive vs. in situ), tumor grade, and determines ER/PR/HER2 and Ki-67 receptor status before MDT discussion.
       <ul>
-        <li>BRCA1/BRCA2 carriers (annual screening from age 25).</li>
-        <li>Locally advanced staging (multifocal vs. multicentric disease).</li>
-        <li>Mammographically occult breast cancer presenting with axillary nodes.</li>
-        <li>Monitoring response to neoadjuvant chemotherapy.</li>
-      </ul>
-    </li>
-  </ul>
-
-  <h3>Component 3: Tissue Diagnosis</h3>
-  <ul>
-    <li><strong>Core Needle Biopsy (CNB):</strong> The absolute standard. 14- or 16-gauge automated gun taking 3-6 cores under ultrasound guidance. Provides histological diagnosis (invasive vs. in situ), tumor grade, and determines ER/PR/HER2 and Ki-67 receptor status before MDT discussion.
-      <ul>
-        <li><strong>CNB Reporting:</strong> B1 (insufficient), B2 (benign), B3 (benign but uncertain malignant potential; requires excision), B4 (suspicious; requires excision), B5a (DCIS), B5b (invasive carcinoma).</li>
-      </ul>
-    </li>
-    <li><strong>Vacuum-Assisted Biopsy (VAB):</strong> Used for microcalcifications not visible on ultrasound (stereotactic guidance). Removes larger tissue volumes to prevent undersampling. Specimen X-ray confirms calcifications were retrieved.</li>
-    <li><strong>Fine Needle Aspiration Cytology (FNAC):</strong> Rapid and cheap. Reports as C1-C5. Only provides cytological diagnosis; cannot distinguish invasive from in situ disease, nor provide receptor status. Acceptable as primary tool only in severely resource-limited settings where CNB is unavailable.</li>
-  </ul>
-
-  <div class="callout clin">
-    <span class="label">Triple Assessment Concordance</span>
-    <p>All three components must be concordant. If results are discordant (e.g., clinically suspicious lump + BI-RADS 2 + B2 benign biopsy), the most suspicious result drives management. Repeat biopsy or surgical excision is strictly required.</p>
-  </div>
+<li><strong>CNB Reporting:</strong> B1 (insufficient), B2 (benign), B3 (benign but uncertain malignant potential; requires excision), B4 (suspicious; requires excision), B5a (DCIS), B5b (invasive carcinoma).</li>
+</ul>
+</li>
+<li><strong>Vacuum-Assisted Biopsy (VAB):</strong> Used for microcalcifications not visible on ultrasound (stereotactic guidance). Removes larger tissue volumes to prevent undersampling. Specimen X-ray confirms calcifications were retrieved.</li>
+<li><strong>Fine Needle Aspiration Cytology (FNAC):</strong> Rapid and cheap. Reports as C1-C5. Only provides cytological diagnosis; cannot distinguish invasive from in situ disease, nor provide receptor status. Acceptable as primary tool only in severely resource-limited settings where CNB is unavailable.</li>
+</ul>
+<div class="callout clin">
+<span class="label">Triple Assessment Concordance</span>
+<p>All three components must be concordant. If results are discordant (e.g., clinically suspicious lump + BI-RADS 2 + B2 benign biopsy), the most suspicious result drives management. Repeat biopsy or surgical excision is strictly required.</p>
+</div>
 </section>
-
 <section class="topic s1" id="p1c">
-  <div class="topic-header"><span class="topic-num">1.3</span><h2>Staging Investigations</h2></div>
-  
-  <h3>Local Staging</h3>
-  <ul>
-    <li>Defined by the triple assessment.</li>
-    <li>Mammography of the contralateral breast is mandatory. Synchronous contralateral breast cancer occurs in 2-5% of cases.</li>
-  </ul>
-
-  <h3>Systemic Staging</h3>
-  <ul>
-    <li><strong>Stage I-II (T1-2, N0-1):</strong> CT chest/abdomen/pelvis and bone scans are not routine. The yield for metastatic disease in early-stage breast cancer is &lt;3%.</li>
-    <li><strong>Stage III (Locally Advanced / Clinically Node-Positive):</strong> Mandatory CT chest/abdomen/pelvis (liver, lung metastases) and bone scan or PET-CT.</li>
-    <li><strong>Inflammatory Breast Cancer:</strong> Full systemic staging is always required (CT + bone scan + brain MRI). This is de facto locally advanced disease.</li>
-  </ul>
-
-  <h3>Molecular Subtyping (From CNB)</h3>
-  <div class="table-wrap s1-tbl"><table>
-    <thead><tr><th>Subtype</th><th>ER</th><th>PR</th><th>HER2</th><th>Ki-67</th><th>Clinical Implications</th></tr></thead>
-    <tbody>
-      <tr><td><strong>Luminal A</strong></td><td>+</td><td>+</td><td>-</td><td>Low</td><td>Best prognosis; endocrine therapy; low benefit from chemotherapy</td></tr>
-      <tr><td><strong>Luminal B</strong></td><td>+</td><td>+/-</td><td>-</td><td>High</td><td>Intermediate prognosis; endocrine therapy + consider chemotherapy</td></tr>
-      <tr><td><strong>Luminal B HER2</strong></td><td>+</td><td>+/-</td><td>+</td><td>Any</td><td>Endocrine + anti-HER2 + chemotherapy</td></tr>
-      <tr><td><strong>HER2-enriched</strong></td><td>-</td><td>-</td><td>+</td><td>High</td><td>Anti-HER2 therapy + chemotherapy; no endocrine therapy</td></tr>
-      <tr><td><strong>Triple negative</strong></td><td>-</td><td>-</td><td>-</td><td>High</td><td>Chemotherapy only; no targeted therapy (except PARP inhibitors in BRCA mutants)</td></tr>
-    </tbody>
-  </table></div>
+<div class="topic-header"><span class="topic-num">1.3</span><h2>Staging Investigations</h2></div>
+<h3>Local Staging</h3>
+<ul>
+<li>Defined by the triple assessment.</li>
+<li>Mammography of the contralateral breast is mandatory. Synchronous contralateral breast cancer occurs in 2-5% of cases.</li>
+</ul>
+<h3>Systemic Staging</h3>
+<ul>
+<li><strong>Stage I-II (T1-2, N0-1):</strong> CT chest/abdomen/pelvis and bone scans are not routine. The yield for metastatic disease in early-stage breast cancer is &lt;3%.</li>
+<li><strong>Stage III (Locally Advanced / Clinically Node-Positive):</strong> Mandatory CT chest/abdomen/pelvis (liver, lung metastases) and bone scan or PET-CT.</li>
+<li><strong>Inflammatory Breast Cancer:</strong> Full systemic staging is always required (CT + bone scan + brain MRI). This is de facto locally advanced disease.</li>
+</ul>
+<h3>Molecular Subtyping (From CNB)</h3>
+<div class="table-wrap s1-tbl"><table>
+<thead><tr><th>Subtype</th><th>ER</th><th>PR</th><th>HER2</th><th>Ki-67</th><th>Clinical Implications</th></tr></thead>
+<tbody>
+<tr><td><strong>Luminal A</strong></td><td>+</td><td>+</td><td>-</td><td>Low</td><td>Best prognosis; endocrine therapy; low benefit from chemotherapy</td></tr>
+<tr><td><strong>Luminal B</strong></td><td>+</td><td>+/-</td><td>-</td><td>High</td><td>Intermediate prognosis; endocrine therapy + consider chemotherapy</td></tr>
+<tr><td><strong>Luminal B HER2</strong></td><td>+</td><td>+/-</td><td>+</td><td>Any</td><td>Endocrine + anti-HER2 + chemotherapy</td></tr>
+<tr><td><strong>HER2-enriched</strong></td><td>-</td><td>-</td><td>+</td><td>High</td><td>Anti-HER2 therapy + chemotherapy; no endocrine therapy</td></tr>
+<tr><td><strong>Triple negative</strong></td><td>-</td><td>-</td><td>-</td><td>High</td><td>Chemotherapy only; no targeted therapy (except PARP inhibitors in BRCA mutants)</td></tr>
+</tbody>
+</table></div>
 </section>
-
 <section class="topic s1" id="p1d">
-  <div class="topic-header"><span class="topic-num">1.4</span><h2>Neoadjuvant Therapy: Operative Implications</h2></div>
-  <p>Neoadjuvant chemotherapy (NACT) or endocrine therapy (NET) is administered before surgery to downstage locally advanced disease, achieve pathological complete response (pCR) in HER2+ or Triple-Negative cancers, or downstage large tumors to allow breast conservation (WLE) instead of mastectomy.</p>
-  
-  <ul>
-    <li><strong>Tumour marking:</strong> A radio-opaque clip MUST be placed in the tumour under ultrasound guidance before starting chemotherapy. This marks the site if the tumour completely responds. The clip must be excised even if pCR occurs.</li>
-    <li><strong>Axillary staging after NACT:</strong> If a patient converts from clinically node-positive to node-negative, <strong>Targeted Axillary Dissection</strong> (removal of the clipped positive node + SLNB) is performed instead of a full ALND.</li>
-    <li><strong>Timing of surgery:</strong> Typically 3-4 weeks after the last chemotherapy cycle to allow bone marrow recovery.</li>
-  </ul>
+<div class="topic-header"><span class="topic-num">1.4</span><h2>Neoadjuvant Therapy: Operative Implications</h2></div>
+<p>Neoadjuvant chemotherapy (NACT) or endocrine therapy (NET) is administered before surgery to downstage locally advanced disease, achieve pathological complete response (pCR) in HER2+ or Triple-Negative cancers, or downstage large tumors to allow breast conservation (WLE) instead of mastectomy.</p>
+<ul>
+<li><strong>Tumour marking:</strong> A radio-opaque clip MUST be placed in the tumour under ultrasound guidance before starting chemotherapy. This marks the site if the tumour completely responds. The clip must be excised even if pCR occurs.</li>
+<li><strong>Axillary staging after NACT:</strong> If a patient converts from clinically node-positive to node-negative, <strong>Targeted Axillary Dissection</strong> (removal of the clipped positive node + SLNB) is performed instead of a full ALND.</li>
+<li><strong>Timing of surgery:</strong> Typically 3-4 weeks after the last chemotherapy cycle to allow bone marrow recovery.</li>
+</ul>
 </section>
-
 <section class="topic s1" id="p1e">
-  <div class="topic-header"><span class="topic-num">1.5</span><h2>Immediate Pre-operative Preparation</h2></div>
-  
-  <h3>Prophylaxis &amp; Risk Stratification</h3>
-  <ul>
-    <li><strong>Antibiotics:</strong> Cefazolin 2g IV within 60 minutes of incision for mastectomy and axillary surgery. Continue for 24 hours if implant reconstruction is performed. WLE requires only a single prophylactic dose.</li>
-    <li><strong>DVT Prophylaxis:</strong> Mechanical compression pre-induction. LMWH for intermediate/high-risk patients. Breast cancer is a pro-thrombotic state.</li>
-    <li><strong>Smoking:</strong> Cessation 4-6 weeks pre-operatively is strictly required if mastectomy flaps or reconstruction are planned. Nicotine causes devastating flap necrosis.</li>
-  </ul>
-
-  <h3>Localisation Techniques (For Non-Palpable Lesions)</h3>
-  <ul>
-    <li><strong>Wire localisation:</strong> Hooked guidewire inserted under US/stereotactic guidance on the morning of surgery. The surgeon excises the tissue around the wire tip.</li>
-    <li><strong>Radioactive seed localisation (RSL):</strong> Iodine-125 seed placed in advance; identified intraoperatively with a gamma probe.</li>
-    <li><strong>Magnetic seed (Magseed):</strong> Non-radioactive magnetic seed detected with a handheld magnetometer (Sentimag). Avoids scheduling constraints of radiology wires.</li>
-    <li><strong>Specimen X-ray:</strong> Absolutely mandatory after excision of any non-palpable lesion to confirm the target lesion (calcifications/clip) is within the specimen before the patient leaves the OR.</li>
-  </ul>
+<div class="topic-header"><span class="topic-num">1.5</span><h2>Immediate Pre-operative Preparation</h2></div>
+<h3>Prophylaxis &amp; Risk Stratification</h3>
+<ul>
+<li><strong>Antibiotics:</strong> Cefazolin 2g IV within 60 minutes of incision for mastectomy and axillary surgery. Continue for 24 hours if implant reconstruction is performed. WLE requires only a single prophylactic dose.</li>
+<li><strong>DVT Prophylaxis:</strong> Mechanical compression pre-induction. LMWH for intermediate/high-risk patients. Breast cancer is a pro-thrombotic state.</li>
+<li><strong>Smoking:</strong> Cessation 4-6 weeks pre-operatively is strictly required if mastectomy flaps or reconstruction are planned. Nicotine causes devastating flap necrosis.</li>
+</ul>
+<h3>Localisation Techniques (For Non-Palpable Lesions)</h3>
+<ul>
+<li><strong>Wire localisation:</strong> Hooked guidewire inserted under US/stereotactic guidance on the morning of surgery. The surgeon excises the tissue around the wire tip.</li>
+<li><strong>Radioactive seed localisation (RSL):</strong> Iodine-125 seed placed in advance; identified intraoperatively with a gamma probe.</li>
+<li><strong>Magnetic seed (Magseed):</strong> Non-radioactive magnetic seed detected with a handheld magnetometer (Sentimag). Avoids scheduling constraints of radiology wires.</li>
+<li><strong>Specimen X-ray:</strong> Absolutely mandatory after excision of any non-palpable lesion to confirm the target lesion (calcifications/clip) is within the specimen before the patient leaves the OR.</li>
+</ul>
 </section>
-
-<hr>
-
+<hr/>
 <div class="sec-header s2">
-  <span class="sec-badge">PILLAR 2</span>
-  <span class="sec-title">The Operative Game Plan</span>
+<span class="sec-badge">PILLAR 2</span>
+<span class="sec-title">The Operative Game Plan</span>
 </div>
-
 <section class="topic s2" id="p2a">
-  <div class="topic-header"><span class="topic-num">2.1</span><h2>Surgical Anatomy</h2></div>
-  
-  <h3>The Breast</h3>
-  <ul>
-    <li>Lies on the anterior chest wall from the 2nd to 6th ribs vertically, and from the sternal edge to the anterior axillary line horizontally.</li>
-    <li>The <strong>axillary tail of Spence</strong> extends through the clavipectoral fascia into the axilla. It must be included in mastectomy specimens.</li>
-    <li>Skin flap viability depends entirely on the subdermal plexus. Preserve 5-8mm of subcutaneous fat on the skin flap during mastectomy. Too thin = ischemic necrosis; too thick = residual breast tissue leaving oncologic risk.</li>
-  </ul>
-
-  <h3>The Axilla</h3>
-  <ul>
-    <li><strong>Level I:</strong> Lateral/inferior to the pectoralis minor muscle (low axilla).</li>
-    <li><strong>Level II:</strong> Behind the pectoralis minor muscle (mid-axilla).</li>
-    <li><strong>Level III:</strong> Medial/superior to the pectoralis minor (apex).</li>
-    <li>Standard ALND removes Levels I and II (approx. 15-25 nodes). Level III clearance is added only for proven macroscopic disease at the apex.</li>
-  </ul>
-
-  <h3>Nerves at Risk in Axillary Surgery</h3>
-  <ul>
-    <li><strong>Long thoracic nerve (Nerve of Bell):</strong> Runs vertically on the serratus anterior along the medial axillary wall. Injury causes a winged scapula.</li>
-    <li><strong>Thoracodorsal nerve:</strong> Runs with the subscapular pedicle to the latissimus dorsi. Injury causes weakness in shoulder adduction and internal rotation. Crucial to preserve if an LD flap reconstruction is planned.</li>
-    <li><strong>Intercostobrachial nerve:</strong> Crosses the axilla to supply skin sensation to the medial upper arm. Often sacrificed, leading to permanent numbness. Warn the patient pre-operatively.</li>
-  </ul>
+<div class="topic-header"><span class="topic-num">2.1</span><h2>Surgical Anatomy</h2></div>
+<h3>The Breast</h3>
+<ul>
+<li>Lies on the anterior chest wall from the 2nd to 6th ribs vertically, and from the sternal edge to the anterior axillary line horizontally.</li>
+<li>The <strong>axillary tail of Spence</strong> extends through the clavipectoral fascia into the axilla. It must be included in mastectomy specimens.</li>
+<li>Skin flap viability depends entirely on the subdermal plexus. Preserve 5-8mm of subcutaneous fat on the skin flap during mastectomy. Too thin = ischemic necrosis; too thick = residual breast tissue leaving oncologic risk.</li>
+</ul>
+<h3>The Axilla</h3>
+<ul>
+<li><strong>Level I:</strong> Lateral/inferior to the pectoralis minor muscle (low axilla).</li>
+<li><strong>Level II:</strong> Behind the pectoralis minor muscle (mid-axilla).</li>
+<li><strong>Level III:</strong> Medial/superior to the pectoralis minor (apex).</li>
+<li>Standard ALND removes Levels I and II (approx. 15-25 nodes). Level III clearance is added only for proven macroscopic disease at the apex.</li>
+</ul>
+<h3>Nerves at Risk in Axillary Surgery</h3>
+<ul>
+<li><strong>Long thoracic nerve (Nerve of Bell):</strong> Runs vertically on the serratus anterior along the medial axillary wall. Injury causes a winged scapula.</li>
+<li><strong>Thoracodorsal nerve:</strong> Runs with the subscapular pedicle to the latissimus dorsi. Injury causes weakness in shoulder adduction and internal rotation. Crucial to preserve if an LD flap reconstruction is planned.</li>
+<li><strong>Intercostobrachial nerve:</strong> Crosses the axilla to supply skin sensation to the medial upper arm. Often sacrificed, leading to permanent numbness. Warn the patient pre-operatively.</li>
+</ul>
 </section>
-
 <section class="topic s2" id="p2b">
-  <div class="topic-header"><span class="topic-num">2.2</span><h2>Wide Local Excision (WLE / Lumpectomy)</h2></div>
-  
-  <h3>Indications vs. Contraindications</h3>
-  <ul>
-    <li><strong>Indications:</strong> Unifocal invasive cancer or limited DCIS where tumor-to-breast ratio allows an acceptable cosmetic result. The patient MUST be willing to undergo adjuvant whole breast radiotherapy.</li>
-    <li><strong>Contraindications:</strong> Multicentric disease, diffuse microcalcifications, inability to achieve clear margins after two re-excisions, prior chest wall radiation, or large tumors in small breasts.</li>
-  </ul>
-
-  <h3>Step-by-Step: WLE</h3>
-  <ol>
-    <li><strong>Incision Planning:</strong> Mark the incision with the patient awake and upright. Follow Langer's lines (curvilinear in upper quadrants). Avoid radial incisions in the upper half of the breast.</li>
-    <li><strong>Excision:</strong> For palpable lesions, excise with a 1cm macroscopic margin using electrocautery. For wire/seed localized lesions, excise the tissue surrounding the device.</li>
-    <li><strong>Margin Marking:</strong> Immediately orient the specimen with marking sutures or multi-coloured ink (superior, lateral, deep). This is critical for targeted re-excision if pathology returns a positive margin.</li>
-    <li><strong>Specimen X-ray:</strong> Verify the target lesion or clip is within the specimen before closing.</li>
-    <li><strong>Cavity Management:</strong> Achieve meticulous hemostasis. Place 4-6 titanium clips in the cavity walls (anterior, posterior, medial, lateral, superior, inferior) to guide the radiotherapy boost dose. Do not routinely close the cavity with sutures; this distorts the breast. Allow it to fill with seroma.</li>
-  </ol>
-
-  <h3>Surgical Margins: The Oncological Principle</h3>
-  <ul>
-    <li><strong>Invasive Cancer:</strong> "No ink on tumor." A margin of any measurable distance with no tumor at the inked margin is adequate when combined with radiotherapy.</li>
-    <li><strong>DCIS:</strong> Requires a wider margin. A ≥2mm margin is the current standard. DCIS at &lt;2mm strongly correlates with local recurrence and requires re-excision.</li>
-  </ul>
+<div class="topic-header"><span class="topic-num">2.2</span><h2>Wide Local Excision (WLE / Lumpectomy)</h2></div>
+<h3>Indications vs. Contraindications</h3>
+<ul>
+<li><strong>Indications:</strong> Unifocal invasive cancer or limited DCIS where tumor-to-breast ratio allows an acceptable cosmetic result. The patient MUST be willing to undergo adjuvant whole breast radiotherapy.</li>
+<li><strong>Contraindications:</strong> Multicentric disease, diffuse microcalcifications, inability to achieve clear margins after two re-excisions, prior chest wall radiation, or large tumors in small breasts.</li>
+</ul>
+<h3>Step-by-Step: WLE</h3>
+<ol>
+<li><strong>Incision Planning:</strong> Mark the incision with the patient awake and upright. Follow Langer's lines (curvilinear in upper quadrants). Avoid radial incisions in the upper half of the breast.</li>
+<li><strong>Excision:</strong> For palpable lesions, excise with a 1cm macroscopic margin using electrocautery. For wire/seed localized lesions, excise the tissue surrounding the device.</li>
+<li><strong>Margin Marking:</strong> Immediately orient the specimen with marking sutures or multi-coloured ink (superior, lateral, deep). This is critical for targeted re-excision if pathology returns a positive margin.</li>
+<li><strong>Specimen X-ray:</strong> Verify the target lesion or clip is within the specimen before closing.</li>
+<li><strong>Cavity Management:</strong> Achieve meticulous hemostasis. Place 4-6 titanium clips in the cavity walls (anterior, posterior, medial, lateral, superior, inferior) to guide the radiotherapy boost dose. Do not routinely close the cavity with sutures; this distorts the breast. Allow it to fill with seroma.</li>
+</ol>
+<h3>Surgical Margins: The Oncological Principle</h3>
+<ul>
+<li><strong>Invasive Cancer:</strong> "No ink on tumor." A margin of any measurable distance with no tumor at the inked margin is adequate when combined with radiotherapy.</li>
+<li><strong>DCIS:</strong> Requires a wider margin. A ≥2mm margin is the current standard. DCIS at &lt;2mm strongly correlates with local recurrence and requires re-excision.</li>
+</ul>
 </section>
-
 <section class="topic s2" id="p2c">
-  <div class="topic-header"><span class="topic-num">2.3</span><h2>Mastectomy</h2></div>
-  
-  <div class="table-wrap s2-tbl"><table>
-    <thead><tr><th>Type</th><th>Skin Removed</th><th>NAC</th><th>Indication</th></tr></thead>
-    <tbody>
-      <tr><td>Simple / Total</td><td>Ellipse including NAC</td><td>Removed</td><td>Most invasive cancers; prophylactic; extensive DCIS</td></tr>
-      <tr><td>Skin-sparing (SSM)</td><td>NAC only</td><td>Removed</td><td>Immediate reconstruction; uninvolved skin envelope</td></tr>
-      <tr><td>Nipple-sparing (NSM)</td><td>None</td><td>Preserved</td><td>Small peripheral tumors; strict criteria (must be &gt;2cm from NAC)</td></tr>
-    </tbody>
-  </table></div>
-
-  <h3>Step-by-Step: Simple Mastectomy</h3>
-  <ol>
-    <li><strong>Skin Flap Elevation:</strong> Incise the ellipse. Elevate the skin flap in the plane between the subcutaneous fat and the breast capsule. Leave 5-8mm of subcutaneous fat. Extend flaps superiorly to the clavicle, medially to the sternal edge, inferiorly to the inframammary fold, and laterally to the latissimus dorsi.</li>
-    <li><strong>Deep Dissection:</strong> Sweep the breast off the pectoral fascia using electrocautery. Preserve the pectoral fascia unless the tumor directly invades it. Identify and protect the medial and lateral pectoral nerves to prevent pectoralis muscle atrophy.</li>
-    <li><strong>Axillary Tail:</strong> Ensure the axillary tail of Spence is fully excised as the dissection proceeds laterally.</li>
-    <li><strong>Hemostasis &amp; Drains:</strong> Meticulously clip or ligate internal mammary perforators medially. Place two closed suction drains (one across the chest wall, one in the axilla).</li>
-    <li><strong>Closure:</strong> Close the skin ellipse with subcuticular 3-0 Monocryl. The closure must be completely tension-free.</li>
-  </ol>
+<div class="topic-header"><span class="topic-num">2.3</span><h2>Mastectomy</h2></div>
+<div class="table-wrap s2-tbl"><table>
+<thead><tr><th>Type</th><th>Skin Removed</th><th>NAC</th><th>Indication</th></tr></thead>
+<tbody>
+<tr><td>Simple / Total</td><td>Ellipse including NAC</td><td>Removed</td><td>Most invasive cancers; prophylactic; extensive DCIS</td></tr>
+<tr><td>Skin-sparing (SSM)</td><td>NAC only</td><td>Removed</td><td>Immediate reconstruction; uninvolved skin envelope</td></tr>
+<tr><td>Nipple-sparing (NSM)</td><td>None</td><td>Preserved</td><td>Small peripheral tumors; strict criteria (must be &gt;2cm from NAC)</td></tr>
+</tbody>
+</table></div>
+<h3>Step-by-Step: Simple Mastectomy</h3>
+<ol>
+<li><strong>Skin Flap Elevation:</strong> Incise the ellipse. Elevate the skin flap in the plane between the subcutaneous fat and the breast capsule. Leave 5-8mm of subcutaneous fat. Extend flaps superiorly to the clavicle, medially to the sternal edge, inferiorly to the inframammary fold, and laterally to the latissimus dorsi.</li>
+<li><strong>Deep Dissection:</strong> Sweep the breast off the pectoral fascia using electrocautery. Preserve the pectoral fascia unless the tumor directly invades it. Identify and protect the medial and lateral pectoral nerves to prevent pectoralis muscle atrophy.</li>
+<li><strong>Axillary Tail:</strong> Ensure the axillary tail of Spence is fully excised as the dissection proceeds laterally.</li>
+<li><strong>Hemostasis &amp; Drains:</strong> Meticulously clip or ligate internal mammary perforators medially. Place two closed suction drains (one across the chest wall, one in the axilla).</li>
+<li><strong>Closure:</strong> Close the skin ellipse with subcuticular 3-0 Monocryl. The closure must be completely tension-free.</li>
+</ol>
 </section>
-
 <section class="topic s2" id="p2d">
-  <div class="topic-header"><span class="topic-num">2.4</span><h2>Sentinel Lymph Node Biopsy (SLNB)</h2></div>
-  
-  <p>The Sentinel Lymph Node (SLN) is the first node to receive drainage from the primary tumor. If it is negative, the remaining axillary nodes are assumed negative (false-negative rate 5-10%). SLNB avoids the 20-30% lymphedema rate of full ALND.</p>
-
-  <h3>Tracers &amp; Identification</h3>
-  <ul>
-    <li><strong>Radioisotope (Tc-99m):</strong> Injected pre-operatively. Gamma probe locates the "hot" node.</li>
-    <li><strong>Patent Blue V Dye:</strong> Injected at induction. Trace the blue lymphatic channel to the first blue node. Watch for anaphylaxis (0.1-1%).</li>
-    <li><strong>Combined Technique:</strong> The gold standard. Sensitivity 95-98%.</li>
-  </ul>
-
-  <h3>The Z0011 Trial Implications</h3>
-  <ul>
-    <li>A practice-changing trial. If a patient with T1/T2 invasive cancer has 1-2 positive SLNs, and is undergoing WLE plus whole breast radiotherapy, <strong>ALND provides no survival benefit</strong> and is omitted.</li>
-    <li>Z0011 does NOT apply to patients undergoing mastectomy, patients with 3+ positive nodes, or patients not receiving radiotherapy. In these cases, convert to full ALND.</li>
-  </ul>
+<div class="topic-header"><span class="topic-num">2.4</span><h2>Sentinel Lymph Node Biopsy (SLNB)</h2></div>
+<p>The Sentinel Lymph Node (SLN) is the first node to receive drainage from the primary tumor. If it is negative, the remaining axillary nodes are assumed negative (false-negative rate 5-10%). SLNB avoids the 20-30% lymphedema rate of full ALND.</p>
+<h3>Tracers &amp; Identification</h3>
+<ul>
+<li><strong>Radioisotope (Tc-99m):</strong> Injected pre-operatively. Gamma probe locates the "hot" node.</li>
+<li><strong>Patent Blue V Dye:</strong> Injected at induction. Trace the blue lymphatic channel to the first blue node. Watch for anaphylaxis (0.1-1%).</li>
+<li><strong>Combined Technique:</strong> The gold standard. Sensitivity 95-98%.</li>
+</ul>
+<h3>The Z0011 Trial Implications</h3>
+<ul>
+<li>A practice-changing trial. If a patient with T1/T2 invasive cancer has 1-2 positive SLNs, and is undergoing WLE plus whole breast radiotherapy, <strong>ALND provides no survival benefit</strong> and is omitted.</li>
+<li>Z0011 does NOT apply to patients undergoing mastectomy, patients with 3+ positive nodes, or patients not receiving radiotherapy. In these cases, convert to full ALND.</li>
+</ul>
 </section>
-
 <section class="topic s2" id="p2e">
-  <div class="topic-header"><span class="topic-num">2.5</span><h2>Axillary Lymph Node Dissection (ALND)</h2></div>
-  <p>Target: Clearance of Level I and II nodes.</p>
-
-  <ol>
-    <li><strong>Identification of the Axillary Vein:</strong> This is the strict superior boundary of the dissection. Retract the pectoralis major superiorly, identify the vein, and clear the areolar tissue off its inferior surface.</li>
-    <li><strong>Nerve Identification (Crucial):</strong> Before clearing any fat, identify the long thoracic nerve (medial wall) and thoracodorsal pedicle (posterolateral). Place vessel loops to protect them.</li>
-    <li><strong>Nodal Clearance:</strong> Sweep the axillary contents en bloc from lateral to medial. Ligate and divide all lymphatic channels with clips or ties to reduce postoperative lymphocele formation. Energy devices do not reliably seal large lymphatics.</li>
-  </ol>
+<div class="topic-header"><span class="topic-num">2.5</span><h2>Axillary Lymph Node Dissection (ALND)</h2></div>
+<p>Target: Clearance of Level I and II nodes.</p>
+<ol>
+<li><strong>Identification of the Axillary Vein:</strong> This is the strict superior boundary of the dissection. Retract the pectoralis major superiorly, identify the vein, and clear the areolar tissue off its inferior surface.</li>
+<li><strong>Nerve Identification (Crucial):</strong> Before clearing any fat, identify the long thoracic nerve (medial wall) and thoracodorsal pedicle (posterolateral). Place vessel loops to protect them.</li>
+<li><strong>Nodal Clearance:</strong> Sweep the axillary contents en bloc from lateral to medial. Ligate and divide all lymphatic channels with clips or ties to reduce postoperative lymphocele formation. Energy devices do not reliably seal large lymphatics.</li>
+</ol>
 </section>
-
 <section class="topic s2" id="p2f">
-  <div class="topic-header"><span class="topic-num">2.6</span><h2>Oncoplastic Principles</h2></div>
-  <p>Combines cancer resection with immediate breast reshaping. Even if not performing complex flaps, general surgeons must understand the principles to avoid foreclosing future reconstruction options.</p>
-
-  <ul>
-    <li><strong>Level 1 Oncoplastic (General Surgeon):</strong> Volume displacement techniques allowing excision of up to 20% of breast volume. Includes round block mastopexy or lateral advancement flaps.</li>
-    <li><strong>Reconstruction Options post-Mastectomy:</strong>
-      <ul>
-        <li><strong>Immediate vs. Delayed:</strong> Immediate yields better cosmesis but requires coordination. If post-mastectomy radiation is planned, delayed reconstruction is strongly recommended for implants due to severe capsular contracture risks.</li>
-        <li><strong>Implant-based:</strong> Two-stage tissue expanders or direct-to-implant (DTI). Acellular dermal matrix (ADM) is often used to support the lower pole.</li>
-        <li><strong>Autologous:</strong> Latissimus dorsi (LD) flap or TRAM/DIEP flaps. The gold standard for natural feel, but requires specialized microsurgical training.</li>
-      </ul>
-    </li>
-  </ul>
+<div class="topic-header"><span class="topic-num">2.6</span><h2>Oncoplastic Principles</h2></div>
+<p>Combines cancer resection with immediate breast reshaping. Even if not performing complex flaps, general surgeons must understand the principles to avoid foreclosing future reconstruction options.</p>
+<ul>
+<li><strong>Level 1 Oncoplastic (General Surgeon):</strong> Volume displacement techniques allowing excision of up to 20% of breast volume. Includes round block mastopexy or lateral advancement flaps.</li>
+<li><strong>Reconstruction Options post-Mastectomy:</strong>
+<ul>
+<li><strong>Immediate vs. Delayed:</strong> Immediate yields better cosmesis but requires coordination. If post-mastectomy radiation is planned, delayed reconstruction is strongly recommended for implants due to severe capsular contracture risks.</li>
+<li><strong>Implant-based:</strong> Two-stage tissue expanders or direct-to-implant (DTI). Acellular dermal matrix (ADM) is often used to support the lower pole.</li>
+<li><strong>Autologous:</strong> Latissimus dorsi (LD) flap or TRAM/DIEP flaps. The gold standard for natural feel, but requires specialized microsurgical training.</li>
+</ul>
+</li>
+</ul>
 </section>
-
 <section class="topic s2" id="p2g">
-  <div class="topic-header"><span class="topic-num">2.7</span><h2>Benign &amp; Male Breast Disease</h2></div>
-  
-  <h3>Benign Excision &amp; Abscesses</h3>
-  <ul>
-    <li><strong>Fibroadenoma &amp; Phyllodes:</strong> Enucleate fibroadenomas through circumareolar incisions. Phyllodes tumors must be excised with a definitive 1cm margin; simple enucleation results in a 20-30% recurrence rate.</li>
-    <li><strong>Abscesses:</strong> First-line for lactational abscesses is ultrasound-guided aspiration. I&amp;D is reserved for large, multiloculated cases. Non-lactational abscesses (periductal mastitis) heavily involve anaerobic bacteria and are strongly linked to smoking. They carry a 30-50% recurrence rate without formal total duct excision.</li>
-  </ul>
-
-  <h3>Male Breast Cancer</h3>
-  <ul>
-    <li>&lt;1% of breast cancers. BRCA2 mutation is the strongest genetic driver (5-10%).</li>
-    <li>Presents late as a retroareolar mass with skin/nipple involvement.</li>
-    <li><strong>Management:</strong> Modified radical mastectomy is the standard. WLE is technically difficult due to small breast volume. Adjuvant tamoxifen is used for ER+ tumors (90%); aromatase inhibitors are ineffective in men.</li>
-  </ul>
+<div class="topic-header"><span class="topic-num">2.7</span><h2>Benign &amp; Male Breast Disease</h2></div>
+<h3>Benign Excision &amp; Abscesses</h3>
+<ul>
+<li><strong>Fibroadenoma &amp; Phyllodes:</strong> Enucleate fibroadenomas through circumareolar incisions. Phyllodes tumors must be excised with a definitive 1cm margin; simple enucleation results in a 20-30% recurrence rate.</li>
+<li><strong>Abscesses:</strong> First-line for lactational abscesses is ultrasound-guided aspiration. I&amp;D is reserved for large, multiloculated cases. Non-lactational abscesses (periductal mastitis) heavily involve anaerobic bacteria and are strongly linked to smoking. They carry a 30-50% recurrence rate without formal total duct excision.</li>
+</ul>
+<h3>Male Breast Cancer</h3>
+<ul>
+<li>&lt;1% of breast cancers. BRCA2 mutation is the strongest genetic driver (5-10%).</li>
+<li>Presents late as a retroareolar mass with skin/nipple involvement.</li>
+<li><strong>Management:</strong> Modified radical mastectomy is the standard. WLE is technically difficult due to small breast volume. Adjuvant tamoxifen is used for ER+ tumors (90%); aromatase inhibitors are ineffective in men.</li>
+</ul>
 </section>
-
 <section class="topic s2" id="p2h">
-  <div class="topic-header"><span class="topic-num">2.8</span><h2>The Critical View in Breast Surgery</h2></div>
-  <p>Non-negotiable confirmations before leaving the operating theatre:</p>
-  <ul>
-    <li><strong>Specimen orientation:</strong> Marked with sutures or multi-colored ink and documented in the operative note.</li>
-    <li><strong>Specimen X-ray reviewed:</strong> Target lesion confirmed inside the WLE specimen.</li>
-    <li><strong>Cavity clips placed:</strong> Titanium clips secured to the WLE cavity walls for radiotherapy targeting.</li>
-    <li><strong>SLNB gamma count:</strong> The removed node has the highest ex vivo count, and residual axillary radioactivity is clear.</li>
-    <li><strong>ALND nerves intact:</strong> Long thoracic and thoracodorsal nerves directly visualized and verified intact.</li>
-  </ul>
+<div class="topic-header"><span class="topic-num">2.8</span><h2>The Critical View in Breast Surgery</h2></div>
+<p>Non-negotiable confirmations before leaving the operating theatre:</p>
+<ul>
+<li><strong>Specimen orientation:</strong> Marked with sutures or multi-colored ink and documented in the operative note.</li>
+<li><strong>Specimen X-ray reviewed:</strong> Target lesion confirmed inside the WLE specimen.</li>
+<li><strong>Cavity clips placed:</strong> Titanium clips secured to the WLE cavity walls for radiotherapy targeting.</li>
+<li><strong>SLNB gamma count:</strong> The removed node has the highest ex vivo count, and residual axillary radioactivity is clear.</li>
+<li><strong>ALND nerves intact:</strong> Long thoracic and thoracodorsal nerves directly visualized and verified intact.</li>
+</ul>
 </section>
-
-<hr>
-
+<hr/>
 <div class="sec-header s3">
-  <span class="sec-badge">PILLAR 3</span>
-  <span class="sec-title">Technical Pearls &amp; Bail-Out Strategies</span>
+<span class="sec-badge">PILLAR 3</span>
+<span class="sec-title">Technical Pearls &amp; Bail-Out Strategies</span>
 </div>
-
 <section class="topic s3" id="p3a">
-  <div class="topic-header"><span class="topic-num">3.1</span><h2>Consultant Pearls</h2></div>
-  
-  <div class="callout pearl">
-    <span class="label">Consultant Pearl #1: The Margin Is Not Just a Distance — It Is a Direction</span>
-    <p>Positive margins after WLE are not random. Surgeons consistently underestimate depth. The lateral excision may be generous, but the deep margin (toward the pectoral fascia) is often insufficient. For tumors &gt;2cm deep, explicitly excise a disc of pectoral fascia and include it as the deep margin. Mark the specimen in three planes with colored ink. This teaches you your own systematic error over time.</p>
-  </div>
-
-  <div class="callout pearl">
-    <span class="label">Consultant Pearl #2: The Seroma Is Not a Complication</span>
-    <p>Seroma affects 30-50% of mastectomy patients. It is an expected accumulation of lymphatic fluid. To reduce it: utilize <strong>quilting (flap) sutures</strong> to obliterate dead space, do not remove drains until output is genuinely &lt;30ml/24h, and use electrocautery to seal lymphatics. Do not panic over small seromas; aspirate in the clinic only if symptomatic.</p>
-  </div>
-
-  <div class="callout pearl">
-    <span class="label">Consultant Pearl #3: Identify All Three Axillary Nerves First</span>
-    <p>Every functional ALND complication is preventable. Open the fat, find the axillary vein (the ceiling). Look medially for the long thoracic nerve. Look posterolaterally for the thoracodorsal pedicle. Look horizontally for the intercostobrachial nerve. Only after all three are identified does the fat clearance begin. A surgeon who sweeps fat blindly will injure a nerve.</p>
-  </div>
+<div class="topic-header"><span class="topic-num">3.1</span><h2>Consultant Pearls</h2></div>
+<div class="callout pearl">
+<span class="label">Consultant Pearl #1: The Margin Is Not Just a Distance — It Is a Direction</span>
+<p>Positive margins after WLE are not random. Surgeons consistently underestimate depth. The lateral excision may be generous, but the deep margin (toward the pectoral fascia) is often insufficient. For tumors &gt;2cm deep, explicitly excise a disc of pectoral fascia and include it as the deep margin. Mark the specimen in three planes with colored ink. This teaches you your own systematic error over time.</p>
+</div>
+<div class="callout pearl">
+<span class="label">Consultant Pearl #2: The Seroma Is Not a Complication</span>
+<p>Seroma affects 30-50% of mastectomy patients. It is an expected accumulation of lymphatic fluid. To reduce it: utilize <strong>quilting (flap) sutures</strong> to obliterate dead space, do not remove drains until output is genuinely &lt;30ml/24h, and use electrocautery to seal lymphatics. Do not panic over small seromas; aspirate in the clinic only if symptomatic.</p>
+</div>
+<div class="callout pearl">
+<span class="label">Consultant Pearl #3: Identify All Three Axillary Nerves First</span>
+<p>Every functional ALND complication is preventable. Open the fat, find the axillary vein (the ceiling). Look medially for the long thoracic nerve. Look posterolaterally for the thoracodorsal pedicle. Look horizontally for the intercostobrachial nerve. Only after all three are identified does the fat clearance begin. A surgeon who sweeps fat blindly will injure a nerve.</p>
+</div>
 </section>
-
 <section class="topic s3" id="p3b">
-  <div class="topic-header"><span class="topic-num">3.2</span><h2>The Bail-Out Point</h2></div>
-  <p>Stop and escalate when:</p>
-  <ul>
-    <li><strong>Specimen X-ray fails to confirm the lesion:</strong> Re-excise immediately. Do not send the patient to recovery. Use the remaining wire/probe signal to guide the excision.</li>
-    <li><strong>Intraoperative frozen margins are uniformly positive:</strong> Do not blindly chase margins until the breast is deformed. Stop, discuss with senior, and consider conversion to a mastectomy.</li>
-    <li><strong>Axillary vein injury during ALND:</strong> Apply direct swab pressure. Do NOT apply clips blindly in a bleeding field. Use 5-0 Prolene for repair under direct vision, or call vascular assistance.</li>
-    <li><strong>Mastectomy skin flaps are ischemic:</strong> Do not close under tension. The necrotic skin will dehisce. Call plastic surgery for soft tissue coverage planning.</li>
-  </ul>
+<div class="topic-header"><span class="topic-num">3.2</span><h2>The Bail-Out Point</h2></div>
+<p>Stop and escalate when:</p>
+<ul>
+<li><strong>Specimen X-ray fails to confirm the lesion:</strong> Re-excise immediately. Do not send the patient to recovery. Use the remaining wire/probe signal to guide the excision.</li>
+<li><strong>Intraoperative frozen margins are uniformly positive:</strong> Do not blindly chase margins until the breast is deformed. Stop, discuss with senior, and consider conversion to a mastectomy.</li>
+<li><strong>Axillary vein injury during ALND:</strong> Apply direct swab pressure. Do NOT apply clips blindly in a bleeding field. Use 5-0 Prolene for repair under direct vision, or call vascular assistance.</li>
+<li><strong>Mastectomy skin flaps are ischemic:</strong> Do not close under tension. The necrotic skin will dehisce. Call plastic surgery for soft tissue coverage planning.</li>
+</ul>
 </section>
-
-<hr>
-
+<hr/>
 <div class="sec-header s4">
-  <span class="sec-badge">PILLAR 4</span>
-  <span class="sec-title">Post-operative Care &amp; Longitudinal Follow-up</span>
+<span class="sec-badge">PILLAR 4</span>
+<span class="sec-title">Post-operative Care &amp; Longitudinal Follow-up</span>
 </div>
-
 <section class="topic s4" id="p4a">
-  <div class="topic-header"><span class="topic-num">4.1</span><h2>Immediate Recovery</h2></div>
-  
-  <ul>
-    <li><strong>WLE:</strong> Same-day surgery target. Pain managed with acetaminophen and NSAIDs; opioids rarely needed. Patient can shower the next day. No arm movement restriction.</li>
-    <li><strong>Mastectomy:</strong> POD1-2 target discharge. Drains removed strictly based on output (&lt;30ml/24h for two consecutive days), not time. <strong>Crucial:</strong> Encourage early active shoulder range of motion. Restricting movement leads to rapid and severe shoulder stiffness.</li>
-    <li><strong>ALND Specifics:</strong> Refer immediately to physiotherapy for axillary stretching. Institute lifelong lymphedema precautions: avoid blood pressure cuffs, venipuncture, and injections in the ipsilateral arm. Treat any cellulitis aggressively.</li>
-  </ul>
+<div class="topic-header"><span class="topic-num">4.1</span><h2>Immediate Recovery</h2></div>
+<ul>
+<li><strong>WLE:</strong> Same-day surgery target. Pain managed with acetaminophen and NSAIDs; opioids rarely needed. Patient can shower the next day. No arm movement restriction.</li>
+<li><strong>Mastectomy:</strong> POD1-2 target discharge. Drains removed strictly based on output (&lt;30ml/24h for two consecutive days), not time. <strong>Crucial:</strong> Encourage early active shoulder range of motion. Restricting movement leads to rapid and severe shoulder stiffness.</li>
+<li><strong>ALND Specifics:</strong> Refer immediately to physiotherapy for axillary stretching. Institute lifelong lymphedema precautions: avoid blood pressure cuffs, venipuncture, and injections in the ipsilateral arm. Treat any cellulitis aggressively.</li>
+</ul>
 </section>
-
 <section class="topic s4" id="p4b">
-  <div class="topic-header"><span class="topic-num">4.2</span><h2>Clinic Follow-up</h2></div>
-  <ul>
-    <li><strong>2-Week Visit:</strong> Inspect the wound and assess for seroma (aspirate if tight/symptomatic). Review final pathology. Identify positive margins requiring re-excision or positive nodes failing Z0011 criteria requiring full ALND.</li>
-    <li><strong>4-6 Week Visit (Adjuvant Planning):</strong> 
-      <ul>
-        <li><strong>Radiotherapy:</strong> Mandatory after WLE (whole breast RT + tumor bed boost). Fast-Forward protocol allows 26Gy in 5 fractions.</li>
-        <li><strong>Endocrine Therapy:</strong> Tamoxifen (premenopausal) or aromatase inhibitors (postmenopausal) for 5-10 years for ER+ tumors.</li>
-        <li><strong>Chemotherapy/Targeted:</strong> Anthracycline/taxane regimens for triple-negative or high-risk tumors. Trastuzumab/pertuzumab for HER2+ disease.</li>
-      </ul>
-    </li>
-    <li><strong>Annual Surveillance:</strong> Clinical breast exam and annual mammography. Routine CT or bone scans are not indicated for asymptomatic early-stage disease.</li>
-  </ul>
+<div class="topic-header"><span class="topic-num">4.2</span><h2>Clinic Follow-up</h2></div>
+<ul>
+<li><strong>2-Week Visit:</strong> Inspect the wound and assess for seroma (aspirate if tight/symptomatic). Review final pathology. Identify positive margins requiring re-excision or positive nodes failing Z0011 criteria requiring full ALND.</li>
+<li><strong>4-6 Week Visit (Adjuvant Planning):</strong>
+<ul>
+<li><strong>Radiotherapy:</strong> Mandatory after WLE (whole breast RT + tumor bed boost). Fast-Forward protocol allows 26Gy in 5 fractions.</li>
+<li><strong>Endocrine Therapy:</strong> Tamoxifen (premenopausal) or aromatase inhibitors (postmenopausal) for 5-10 years for ER+ tumors.</li>
+<li><strong>Chemotherapy/Targeted:</strong> Anthracycline/taxane regimens for triple-negative or high-risk tumors. Trastuzumab/pertuzumab for HER2+ disease.</li>
+</ul>
+</li>
+<li><strong>Annual Surveillance:</strong> Clinical breast exam and annual mammography. Routine CT or bone scans are not indicated for asymptomatic early-stage disease.</li>
+</ul>
 </section>
-
-<hr>
-
+<hr/>
 <div class="sec-header s5">
-  <span class="sec-badge">PILLAR 5</span>
-  <span class="sec-title">Complication Management</span>
+<span class="sec-badge">PILLAR 5</span>
+<span class="sec-title">Complication Management</span>
 </div>
-
 <section class="topic s5" id="p5a">
-  <div class="topic-header"><span class="topic-num">5.1</span><h2>Haematoma</h2></div>
-  <ul>
-    <li><strong>Recognition:</strong> Occurs within 24-48 hours. Presents as an expanding, tense swelling under the mastectomy flap or WLE cavity, with disproportionate pain. Drain output may suddenly spike to &gt;200ml/hour of frank blood.</li>
-    <li><strong>Correction (Small &lt;50ml):</strong> Conservative management with warm compresses. Most resorb in 4-6 weeks. Can be aspirated under ultrasound at 5-7 days when liquefied.</li>
-    <li><strong>Correction (Expanding/Large):</strong> Return to theatre. Open the incision, evacuate the organized clot, and ligate the bleeding vessel (often a missed internal mammary perforator or lateral thoracic branch). Re-drain and close.</li>
-  </ul>
+<div class="topic-header"><span class="topic-num">5.1</span><h2>Haematoma</h2></div>
+<ul>
+<li><strong>Recognition:</strong> Occurs within 24-48 hours. Presents as an expanding, tense swelling under the mastectomy flap or WLE cavity, with disproportionate pain. Drain output may suddenly spike to &gt;200ml/hour of frank blood.</li>
+<li><strong>Correction (Small &lt;50ml):</strong> Conservative management with warm compresses. Most resorb in 4-6 weeks. Can be aspirated under ultrasound at 5-7 days when liquefied.</li>
+<li><strong>Correction (Expanding/Large):</strong> Return to theatre. Open the incision, evacuate the organized clot, and ligate the bleeding vessel (often a missed internal mammary perforator or lateral thoracic branch). Re-drain and close.</li>
+</ul>
 </section>
-
 <section class="topic s5" id="p5b">
-  <div class="topic-header"><span class="topic-num">5.2</span><h2>Lymphoedema</h2></div>
-  <ul>
-    <li><strong>Recognition:</strong> Acute pitting or chronic non-pitting brawny edema in the ipsilateral arm following ALND. Carries a 20-30% lifetime risk.</li>
-    <li><strong>Workup:</strong> Measure limb circumference at standard intervals. Exclude acute DVT if painful.</li>
-    <li><strong>Correction:</strong> Complex Decongestive Physiotherapy (CDT) is the cornerstone. Involves manual lymphatic drainage, multilayer bandaging, and lifelong compression garments. <strong>Cellulitis control is paramount:</strong> a single episode causes massive progression. Treat with prompt IV flucloxacillin. Surgical options (LVA, VLNT) are reserved for highly specialized centers.</li>
-  </ul>
+<div class="topic-header"><span class="topic-num">5.2</span><h2>Lymphoedema</h2></div>
+<ul>
+<li><strong>Recognition:</strong> Acute pitting or chronic non-pitting brawny edema in the ipsilateral arm following ALND. Carries a 20-30% lifetime risk.</li>
+<li><strong>Workup:</strong> Measure limb circumference at standard intervals. Exclude acute DVT if painful.</li>
+<li><strong>Correction:</strong> Complex Decongestive Physiotherapy (CDT) is the cornerstone. Involves manual lymphatic drainage, multilayer bandaging, and lifelong compression garments. <strong>Cellulitis control is paramount:</strong> a single episode causes massive progression. Treat with prompt IV flucloxacillin. Surgical options (LVA, VLNT) are reserved for highly specialized centers.</li>
+</ul>
 </section>
-
 <section class="topic s5" id="p5c">
-  <div class="topic-header"><span class="topic-num">5.3</span><h2>Local Recurrence</h2></div>
-  <ul>
-    <li><strong>Recognition:</strong> Ipsilateral Breast Tumor Recurrence (IBTR). Must distinguish between a <strong>true recurrence</strong> (within 3cm of original site, representing regrowth) and a <strong>new primary</strong> (different quadrant).</li>
-    <li><strong>Workup:</strong> Triple assessment of the new lesion. Staging CT to rule out concurrent distant metastasis, as IBTR carries a 3-4x increased risk of systemic spread.</li>
-    <li><strong>Correction:</strong> True local recurrence in a previously irradiated breast mandates a <strong>Salvage Mastectomy</strong>. Re-irradiation is generally unsafe, and a second WLE carries unacceptable failure rates. Re-evaluate receptor status to guide new systemic therapy.</li>
-  </ul>
+<div class="topic-header"><span class="topic-num">5.3</span><h2>Local Recurrence</h2></div>
+<ul>
+<li><strong>Recognition:</strong> Ipsilateral Breast Tumor Recurrence (IBTR). Must distinguish between a <strong>true recurrence</strong> (within 3cm of original site, representing regrowth) and a <strong>new primary</strong> (different quadrant).</li>
+<li><strong>Workup:</strong> Triple assessment of the new lesion. Staging CT to rule out concurrent distant metastasis, as IBTR carries a 3-4x increased risk of systemic spread.</li>
+<li><strong>Correction:</strong> True local recurrence in a previously irradiated breast mandates a <strong>Salvage Mastectomy</strong>. Re-irradiation is generally unsafe, and a second WLE carries unacceptable failure rates. Re-evaluate receptor status to guide new systemic therapy.</li>
+</ul>
 </section>
-
 <div class="rapid-ref" id="rapid">
-  <h3>Rapid Reference — High-Yield Board Facts</h3>
-  <table>
-    <thead><tr><th>Topic</th><th>Key Fact</th></tr></thead>
-    <tbody>
-      <tr><td>Unilateral Bloody Discharge</td><td>Rule out <strong>Intraductal Papilloma</strong> or <strong>DCIS</strong>. Microdochectomy is required.</td></tr>
-      <tr><td>Triple Assessment Discordance</td><td>If clinical and imaging conflict with a "benign" biopsy, <strong>the most suspicious result dictates action</strong>. Excise.</td></tr>
-      <tr><td>Z0011 Trial Criteria</td><td>T1/T2 cancer, WLE + RT planned. If <strong>1-2 positive SLNs</strong> are found, ALND is omitted with no survival penalty.</td></tr>
-      <tr><td>Long Thoracic Nerve Injury</td><td>Runs on the serratus anterior. Injury causes a <strong>winged scapula</strong>.</td></tr>
-      <tr><td>Radiotherapy &amp; WLE</td><td>WLE without whole breast radiotherapy carries a <strong>30-40% local recurrence rate</strong>. It is oncologically unacceptable.</td></tr>
-      <tr><td>Specimen X-Ray</td><td>Absolutely <strong>mandatory</strong> for wire/seed localized non-palpable lesions to confirm retrieval before closing.</td></tr>
-      <tr><td>Male Breast Cancer Risk</td><td><strong>BRCA2 mutation</strong> is the strongest genetic driver (5-10%). Treat with Modified Radical Mastectomy.</td></tr>
-      <tr><td>Salvage Mastectomy</td><td>The standard treatment for a <strong>true local recurrence</strong> in a previously irradiated breast.</td></tr>
-    </tbody>
-  </table>
+<h3>Rapid Reference — High-Yield Board Facts</h3>
+<table>
+<thead><tr><th>Topic</th><th>Key Fact</th></tr></thead>
+<tbody>
+<tr><td>Unilateral Bloody Discharge</td><td>Rule out <strong>Intraductal Papilloma</strong> or <strong>DCIS</strong>. Microdochectomy is required.</td></tr>
+<tr><td>Triple Assessment Discordance</td><td>If clinical and imaging conflict with a "benign" biopsy, <strong>the most suspicious result dictates action</strong>. Excise.</td></tr>
+<tr><td>Z0011 Trial Criteria</td><td>T1/T2 cancer, WLE + RT planned. If <strong>1-2 positive SLNs</strong> are found, ALND is omitted with no survival penalty.</td></tr>
+<tr><td>Long Thoracic Nerve Injury</td><td>Runs on the serratus anterior. Injury causes a <strong>winged scapula</strong>.</td></tr>
+<tr><td>Radiotherapy &amp; WLE</td><td>WLE without whole breast radiotherapy carries a <strong>30-40% local recurrence rate</strong>. It is oncologically unacceptable.</td></tr>
+<tr><td>Specimen X-Ray</td><td>Absolutely <strong>mandatory</strong> for wire/seed localized non-palpable lesions to confirm retrieval before closing.</td></tr>
+<tr><td>Male Breast Cancer Risk</td><td><strong>BRCA2 mutation</strong> is the strongest genetic driver (5-10%). Treat with Modified Radical Mastectomy.</td></tr>
+<tr><td>Salvage Mastectomy</td><td>The standard treatment for a <strong>true local recurrence</strong> in a previously irradiated breast.</td></tr>
+</tbody>
+</table>
 </div>
-
 </div></main>
-
 <button id="top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
-
 <script>
 const progressBar = document.getElementById('progress-bar');
 const topBtn = document.getElementById('top-btn');
@@ -843,6 +542,7 @@ navItems.forEach(item => {
 
 document.querySelectorAll('.topic').forEach((el, i) => { el.style.animationDelay = `${i * 0.03}s`; });
 </script>
+<script src="../../js/nav-pill.js"></script>
 <script src="../../js/navigation.js"></script>
 </body>
 </html>

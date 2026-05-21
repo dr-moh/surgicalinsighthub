@@ -88,9 +88,9 @@
   will-change: transform;
 }
 .fcard:hover {
-  transform: scale(1.02) !important;
+  transform: scale(1.04) !important;
   box-shadow: var(--shadow-lg);
-  border-color: var(--border-hover);
+  border-color: var(--brand-gold);
   z-index: 10;
 }
 .fc-tl { top: 110px; left: 28px; width: 215px; padding: 14px; }
@@ -193,9 +193,9 @@ h1 { font-size: clamp(3rem, 6.5vw, 5.4rem); font-weight: 900; color: var(--text-
 
 
 /* FEATURES */
-.features { max-width: 1040px; margin: 0 auto; padding: 80px 24px 0; }
-.feat-full { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 22px; padding: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; margin-bottom: 24px; overflow: hidden; box-shadow: var(--shadow-sm); transition: transform 0.3s ease, box-shadow 0.3s ease; }
-.feat-full:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: var(--border-hover); }
+.features { max-width: 1040px; margin: 0 auto; padding: clamp(60px, 8vw, 100px) clamp(20px, 4vw, 40px) 0; }
+.feat-full { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 24px; padding: clamp(30px, 5vw, 40px); display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; margin-bottom: 24px; overflow: hidden; box-shadow: var(--shadow-sm); transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease; }
+.feat-full:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: var(--brand-gold); }
 .feat-full.flip { direction: rtl; }
 .feat-full.flip > * { direction: ltr; }
 .feat-kicker { font-size: .62rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--brand-gold); margin-bottom: 10px; }
@@ -224,9 +224,9 @@ h1 { font-size: clamp(3rem, 6.5vw, 5.4rem); font-weight: 900; color: var(--text-
 .pm-play svg { fill: var(--brand-gold); width: 8px; height: 8px; margin-left: 1px; }
 
 /* BENTO */
-.bento { max-width: 1040px; margin: 0 auto; padding: 0 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px; }
-.bento-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 22px; padding: 32px; overflow: hidden; box-shadow: var(--shadow-sm); transition: transform 0.3s ease, box-shadow 0.3s ease; }
-.bento-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: var(--border-hover); }
+.bento { max-width: 1040px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 40px); display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px; }
+.bento-card { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 24px; padding: clamp(24px, 4vw, 32px); overflow: hidden; box-shadow: var(--shadow-sm); transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease; }
+.bento-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: var(--brand-gold); }
 .bento-card h3 { font-size: 1.15rem; font-weight: 800; color: var(--text-primary); letter-spacing: -.03em; line-height: 1.2; margin-bottom: 8px; }
 .bento-card p { font-size: .8rem; color: var(--text-secondary); line-height: 1.6; }
 
@@ -238,16 +238,16 @@ h1 { font-size: clamp(3rem, 6.5vw, 5.4rem); font-weight: 900; color: var(--text-
 .mcq-opt:hover:not(.correct) { border-color: var(--text-primary); }
 
 /* TOPICS */
-.topics-wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px 80px; }
+.topics-wrap { max-width: 1040px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 40px) clamp(60px, 8vw, 100px); }
 .topics-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 24px; }
-.topic-chip { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 14px; padding: 16px; transition: all .2s; box-shadow: var(--shadow-sm); }
-.topic-chip:hover { transform: translateY(-4px); background: var(--bg-card-alt); border-color: var(--brand-gold); box-shadow: var(--shadow-md); }
+.topic-chip { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 16px; padding: 16px; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); box-shadow: var(--shadow-sm); }
+.topic-chip:hover { transform: translateY(-4px) scale(1.02); background: var(--bg-card-alt); border-color: var(--brand-gold); box-shadow: var(--shadow-md); }
 .tc-n { font-size: .58rem; font-weight: 700; color: var(--brand-gold); letter-spacing: .08em; margin-bottom: 7px; }
 .tc-t { font-size: .8rem; font-weight: 700; color: var(--text-primary); line-height: 1.25; margin-bottom: 3px; }
 .tc-s { font-size: .62rem; color: var(--text-muted); }
 
 /* CTA */
-.cta-section { background: var(--bg-card-alt); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); padding: 80px 24px; text-align: center; position: relative; overflow: hidden; }
+.cta-section { background: var(--bg-card-alt); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); padding: clamp(60px, 8vw, 100px) clamp(20px, 4vw, 40px); text-align: center; position: relative; overflow: hidden; }
 .cta-inner { position: relative; z-index: 2; }
 .cta-section h2 { font-size: clamp(2.2rem, 4.5vw, 3.5rem); font-weight: 900; color: var(--text-primary); letter-spacing: -.045em; line-height: 1.02; margin-bottom: 12px; max-width: 520px; margin-left: auto; margin-right: auto; }
 .cta-section p { font-size: .9rem; color: var(--text-secondary); max-width: 380px; margin: 0 auto 32px; line-height: 1.6; }
@@ -279,7 +279,7 @@ h1 { font-size: clamp(3rem, 6.5vw, 5.4rem); font-weight: 900; color: var(--text-
 
 
 /* LINKEDIN FEED */
-.tg-section { padding: 80px 24px; background: var(--bg-primary); border-top: 1px solid var(--border-color); }
+.tg-section { padding: clamp(60px, 8vw, 100px) clamp(20px, 4vw, 40px); background: var(--bg-primary); border-top: 1px solid var(--border-color); }
 .tg-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 32px; flex-wrap: wrap; gap: 1rem; }
 .tg-header-left .tg-kicker { font-size: .62rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--brand-gold); margin-bottom: 10px; }
 .tg-header-left h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 900; color: var(--text-primary); letter-spacing: -.04em; line-height: 1.1; }

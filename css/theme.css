@@ -20,37 +20,35 @@
   --border-hover: rgba(184, 146, 42, 0.4);
   
   /* Glassmorphism / Shadows */
-  --glass-bg: rgba(250, 247, 242, 0.7);
-  --glass-border: rgba(184, 146, 42, 0.15);
-  --shadow-sm: 0 2px 10px rgba(43, 24, 16, 0.05);
-  --shadow-md: 0 6px 24px rgba(43, 24, 16, 0.08);
-  --shadow-lg: 0 12px 32px rgba(43, 24, 16, 0.12);
-  
-  --nav-backdrop-filter: blur(24px) saturate(160%);
+  --nav-backdrop-filter: blur(28px) saturate(180%);
   --card-backdrop-filter: blur(16px);
-  --glass-bg: rgba(245, 240, 232, 0.35);
+  --glass-bg: rgba(250, 247, 242, 0.75);
   --glass-border: rgba(184, 146, 42, 0.15);
+  
+  --shadow-sm: 0 4px 16px rgba(43, 24, 16, 0.04);
+  --shadow-md: 0 12px 32px rgba(43, 24, 16, 0.06);
+  --shadow-lg: 0 24px 48px rgba(43, 24, 16, 0.08);
 }
 
 [data-theme="dark"] {
   /* Core SIH Palette (Dark) */
-  --bg-primary: #0f0a05;
-  --bg-secondary: #1a1208;
-  --bg-card: #1f140e;
-  --bg-card-alt: #2b1810;
+  --bg-primary: #080504;
+  --bg-secondary: #120b08;
+  --bg-card: #160e0a;
+  --bg-card-alt: #1e130c;
   
-  --text-primary: #f7f3ec;
+  --text-primary: #fdfbf7;
   --text-secondary: #dcc89a;
   --text-muted: #8c7a66;
   
-  --border-color: rgba(184, 146, 42, 0.15);
-  --border-hover: rgba(184, 146, 42, 0.5);
+  --border-color: rgba(184, 146, 42, 0.12);
+  --border-hover: rgba(184, 146, 42, 0.35);
   
-  --glass-bg: rgba(20, 15, 10, 0.5);
-  --glass-border: rgba(184, 146, 42, 0.2);
-  --shadow-sm: 0 2px 12px rgba(0, 0, 0, 0.4);
-  --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.5);
-  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.7);
+  --glass-bg: rgba(12, 8, 6, 0.65);
+  --glass-border: rgba(184, 146, 42, 0.15);
+  --shadow-sm: 0 4px 16px rgba(0, 0, 0, 0.6);
+  --shadow-md: 0 12px 40px rgba(0, 0, 0, 0.7);
+  --shadow-lg: 0 24px 64px rgba(0, 0, 0, 0.8);
 }
 
 * {
@@ -160,8 +158,8 @@ a:hover {
 
 .nav.scrolled {
   height: 64px;
-  background: var(--bg-primary);
-  box-shadow: var(--shadow-md);
+  background: var(--glass-bg);
+  box-shadow: var(--shadow-sm);
   border-bottom: 1px solid var(--border-color);
 }
 

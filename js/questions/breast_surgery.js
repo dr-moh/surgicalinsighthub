@@ -955,4 +955,39 @@ window.QUESTIONS.push(...[
   },
   "discrepancy_flag": ""
 }
+,
+{
+  "id": 1243,
+  "specialty": "Breast Surgery",
+  "topic": "Breast Cancer",
+  "question": "With regard to pure tubular carcinoma, which of the following is true?",
+  "options": {
+    "A": "A) Lymph node involvement is seen in 25% of cases.",
+    "B": "B) It is a highly aggressive, frequently fatal carcinoma.",
+    "C": "C) It tends to be ER negative.",
+    "D": "D) Neoadjuvant chemotherapy should be strongly considered."
+  },
+  "answer": "E",
+  "explanation": {
+    "correct": "**Surgical Mechanism:** Pure tubular carcinoma is a distinct histological subtype of invasive breast carcinoma, comprising less than 2% of all invasive breast cancers. Histologically, it presents as well-formed tubules lined by a single layer of epithelial cells, often with characteristic apical snouts, infiltrating a desmoplastic stroma. These tumors consistently exhibit low nuclear grade, minimal pleomorphism, and a very low mitotic index. Immunohistochemically, they are almost universally estrogen receptor (ER) and progesterone receptor (PR) positive, and HER2 negative. This favorable biological profile underpins its excellent prognosis and low metastatic potential.\\n\\n**Clinical Execution:** The indolent nature and favorable prognosis of pure tubular carcinoma dictate a less aggressive treatment approach. Axillary lymph node metastasis is rare, typically occurring in less than 10% of cases, often obviating extensive axillary dissection if sentinel lymph node biopsy is negative. Given the high rates of ER/PR positivity, endocrine therapy is the cornerstone of adjuvant systemic treatment. Neoadjuvant chemotherapy is rarely indicated unless the tumor is exceptionally large or there is evidence of nodal involvement, which is uncommon. The superior prognosis influences patient counseling, follow-up strategies, and often allows for de-escalation of therapy.",
+    "A": "This is incorrect. Lymph node metastasis in pure tubular carcinoma is rare, typically occurring in less than 10% of cases, often closer to 0-5%. The stem would need to specify 'invasive ductal carcinoma, no special type' or a higher-grade tumor for this rate of nodal involvement to be accurate.",
+    "B": "This is fundamentally incorrect. Pure tubular carcinoma is known for its indolent behavior, low metastatic potential, and excellent prognosis, making it one of the least aggressive forms of invasive breast cancer. The stem would need to describe 'triple-negative breast cancer' or 'inflammatory breast cancer' for this statement to be true.",
+    "C": "This is incorrect. Pure tubular carcinomas are overwhelmingly estrogen receptor (ER) and progesterone receptor (PR) positive (typically >90% of cases). This high rate of hormone receptor positivity is a key feature contributing to their favorable prognosis and responsiveness to endocrine therapy. The stem would need to describe 'triple-negative breast cancer' or a specific subset of basal-like tumors for this statement to be true.",
+    "D": "This is incorrect. Due to its low-grade nature, high hormone receptor positivity, and excellent prognosis, pure tubular carcinoma typically does not benefit from neoadjuvant chemotherapy. Endocrine therapy is the preferred systemic treatment. Neoadjuvant chemotherapy might only be considered in rare cases of very large tumors or confirmed nodal disease, but it is not 'strongly considered' as a routine approach. The stem would need to describe a larger, higher-grade, or hormone receptor-negative tumor for neoadjuvant chemotherapy to be a strong consideration.",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "**Verdict:** Correct: E. Pure tubular carcinoma of the breast is characterized by an exceptionally favorable prognosis, superior to invasive ductal carcinomas of no special type (NST) when matched for stage.\\n\\n**The Pivot:** The defining characteristic of pure tubular carcinoma is its indolent clinical course and excellent long-term outcomes, driven by its low histological grade, low mitotic activity, and high rates of hormone receptor positivity, which fundamentally differentiates its management from more aggressive breast cancer subtypes.",
+    "H_highlight_excellence": "**Surgical Mechanism:** Pure tubular carcinoma is a distinct histological subtype of invasive breast carcinoma, comprising less than 2% of all invasive breast cancers. Histologically, it presents as well-formed tubules lined by a single layer of epithelial cells, often with characteristic apical snouts, infiltrating a desmoplastic stroma. These tumors consistently exhibit low nuclear grade, minimal pleomorphism, and a very low mitotic index. Immunohistochemically, they are almost universally estrogen receptor (ER) and progesterone receptor (PR) positive, and HER2 negative. This favorable biological profile underpins its excellent prognosis and low metastatic potential.\\n\\n**Clinical Execution:** The indolent nature and favorable prognosis of pure tubular carcinoma dictate a less aggressive treatment approach. Axillary lymph node metastasis is rare, typically occurring in less than 10% of cases, often obviating extensive axillary dissection if sentinel lymph node biopsy is negative. Given the high rates of ER/PR positivity, endocrine therapy is the cornerstone of adjuvant systemic treatment. Neoadjuvant chemotherapy is rarely indicated unless the tumor is exceptionally large or there is evidence of nodal involvement, which is uncommon. The superior prognosis influences patient counseling, follow-up strategies, and often allows for de-escalation of therapy.",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "**Conceptual Overview:** Pure tubular carcinoma is a distinct, low-grade invasive breast cancer subtype characterized by well-differentiated tubules, high hormone receptor expression, and an exceptionally favorable prognosis. Its unique biological profile dictates a less aggressive surgical and systemic treatment paradigm compared to other invasive breast cancer types.\\n\\n| Feature | Pure Tubular Carcinoma | Invasive Ductal Carcinoma (NST) |\\n| --- | --- | --- |\\n| Histological Grade | Grade 1 (well-differentiated) | Variable (Grade 1-3) |\\n| ER/PR Status | Typically >90% positive | Variable (50-80% positive) |\\n| HER2 Status | Typically negative | Variable (15-20% positive) |\\n| Lymph Node Metastasis | <10% (often 0-5%) | 20-40% |\\n| Prognosis (Stage-matched) | Excellent | Good to Poor (depending on grade/stage) |\\n| Adjuvant Systemic Therapy | Endocrine therapy (if ER/PR+) | Endocrine, Chemo, Anti-HER2 (based on profile) |\\n",
+    "P_plan_for_improvement": "**The Board Pearl:** *If a breast cancer is described as 'pure tubular carcinoma,' immediately think 'excellent prognosis, ER/PR positive, HER2 negative, low nodal involvement, and endocrine therapy as primary systemic treatment.'*"
+  },
+  "supplementary_callouts": {
+    "guideline": "National Comprehensive Cancer Network (NCCN) Guidelines for Breast Cancer",
+    "takeaway": "Pure tubular carcinoma is a low-grade, hormone receptor-positive breast cancer with an exceptionally favorable prognosis, requiring a de-escalated treatment approach.",
+    "visualization": "On pathology, the surgeon must 'see' uniform, angulated tubules with open lumina, lined by a single layer of bland epithelial cells, often with characteristic apical snouts, infiltrating a desmoplastic stroma, without significant pleomorphism or mitotic activity, to confirm the diagnosis of pure tubular carcinoma."
+  },
+  "discrepancy_flag": ""
+}
 ]);

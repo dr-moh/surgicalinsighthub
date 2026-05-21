@@ -1,327 +1,170 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Colorectal & Anal Surgery — SIH Residency Journal</title>
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Overpass:wght@400;600;700;900&family=Overpass+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../css/theme.css">
-<link rel="stylesheet" href="../../css/shared.css">
-<style>
-*{margin:0;padding:0;box-sizing:border-box;}
-:root{
-  --paper:#f7f3ec;--ink:#1a1410;--deep:#0d2b1f;
-  --acc:#1b4332;--gold:#b8860b;--tab-bg:#123524;
-  --border:#c8ddd4;--muted:#3a5a47;--rule:rgba(180,165,140,0.17);
-}
-body{background:#5a6e63;font-family:'Overpass',sans-serif;padding:100px 0 2rem;
-     display:flex;flex-direction:column;align-items:center;gap:1.5rem; min-height: 100vh;}
-     
-/* TABS NAV */
-.tabs-container {
-  width: 210mm;
-  position: sticky;
-  top: 80px;
-  z-index: 1000;
-  display: flex;
-  background: var(--deep);
-  border: 1px solid var(--border);
-  border-bottom: 2.5px solid var(--gold);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-}
-.tab {
-  flex: 1;
-  padding: 12px;
-  color: rgba(255,255,255,0.4);
-  text-align: center;
-  font-family: 'Overpass Mono', monospace;
-  font-size: 0.7rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  border-right: 1px solid rgba(255,255,255,0.05);
-}
-.tab:hover { color: var(--gold); background: rgba(255,255,255,0.05); }
-.tab.active {
-  background: var(--tab-bg);
-  color: var(--gold);
-  border-bottom: 3px solid var(--gold);
-}
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Colorectal &amp; Anal Surgery — SIH Residency Journal</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,400;1,500&amp;family=Overpass:wght@400;600;700;900&amp;family=Overpass+Mono:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="../../css/theme.css" rel="stylesheet"/>
+<link href="../../css/shared.css" rel="stylesheet"/>
 
-/* PAGE SYSTEM */
-.page-group { display: none; width: 210mm; flex-direction: column; gap: 20px; }
-.page-group.active { display: flex; }
-
-.page{width:210mm; min-height:297mm; background:var(--paper);display:flex;flex-direction:column;
-      box-shadow:2px 2px 0 #3a4a40,5px 5px 0 #2a3a30,0 20px 60px rgba(0,0,0,.45);
-      border:1px solid var(--border); position: relative;}
-
-.hdr{background:var(--deep);padding:6mm 9mm 5mm;display:flex;align-items:center;
-     justify-content:space-between;border-bottom:2.5px solid var(--gold);flex-shrink:0;}
-.hdr h1{font-family:'EB Garamond',serif;font-size:1.8rem;font-weight:700;color:#fff;line-height:1;}
-.hsub{font-size:.65rem;color:rgba(255,255,255,0.46);letter-spacing:.1em;text-transform:uppercase;margin-top:4px;}
-.hdr-logo{width:56px;height:56px;border-radius:50%;border:2.5px solid var(--gold);
-          overflow:hidden;flex-shrink:0;margin-right:14px;box-shadow:0 0 15px rgba(184,146,42,.3);}
-.hdr-logo img{width:100%;height:100%;object-fit:cover;}
-.hdr-meta{font-size:.65rem;color:rgba(255,255,255,.38);font-family:'Overpass Mono',monospace;
-          text-align:right;line-height:1.6;}
-
-.cont-hdr{background:var(--deep);padding:3mm 9mm;display:flex;align-items:center;
-          justify-content:space-between;border-bottom:2px solid var(--gold);flex-shrink:0;}
-.cont-hdr h2{font-family:'EB Garamond',serif;font-size:1.15rem;font-weight:700;color:#fff;}
-.cont-hdr .pg{font-size:.65rem;color:var(--gold);font-family:'Overpass Mono',monospace;}
-
-.body{flex:1;padding:8mm 12mm;
-      background-image:repeating-linear-gradient(to bottom,transparent 0,transparent 23px,
-        var(--rule) 23px,var(--rule) 24px);background-position:0 0;}
-
-.brutal{background:var(--tab-bg);border-left:5px solid var(--gold);padding:10px 15px;
-        margin-bottom:8mm;border-radius:0 4px 4px 0;}
-.brutal .lbl{font-size:.6rem;letter-spacing:.15em;color:var(--gold);font-weight:700;
-             text-transform:uppercase;margin-bottom:4px;font-family:'Overpass Mono',monospace;}
-.brutal .rule{font-family:'EB Garamond',serif;font-size:1.15rem;font-weight:700;
-              color:#fff;font-style:italic;line-height:1.35;}
-.brutal .sub{font-size:.8rem;color:rgba(255,255,255,.73);line-height:1.45;margin-top:5px;}
-
-.sh{display:flex;align-items:center;gap:8px;margin-bottom:3mm;margin-top:8mm;}
-.sh:first-child{margin-top:0;}
-.sh .n{background:var(--acc);color:#fff;font-family:'Overpass Mono',monospace;
-       font-size:.65rem;padding:3px 7px;border-radius:2px;flex-shrink:0;}
-.sh h3{font-family:'EB Garamond',serif;font-size:1.1rem;font-weight:700;
-       color:var(--deep);border-bottom:1.5px solid var(--gold);flex:1;padding-bottom:2px;}
-
-.desc{font-family:'EB Garamond',serif;font-size:0.95rem;color:#3a3020;line-height:1.6;
-      margin-bottom:4mm;padding:8px 12px;border-left:3px solid var(--gold);
-      background:rgba(184,146,42,0.055);font-style:italic;}
-.desc strong{font-style:normal;color:var(--deep);font-weight:700;}
-
-table{width:100%;border-collapse:collapse;margin-bottom:5mm;font-size:0.85rem;}
-th{background:var(--deep);color:rgba(255,255,255,.92);padding:6px 10px;text-align:left;
-   font-size:.7rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;}
-td{padding:6px 10px;border-bottom:1px solid rgba(195,180,155,.38);
-   vertical-align:top;line-height:1.5;color:var(--ink);}
-tr:nth-child(even) td{background:rgba(43,24,16,.028);}
-
-.note{border-left:3.5px solid var(--gold);background:rgba(184,146,42,.07);padding:8px 12px;
-      margin-bottom:4mm;font-size:0.85rem;line-height:1.5;border-radius:0 3px 3px 0;color:var(--ink);}
-.warnbox{border-left:3.5px solid var(--acc);background:rgba(163,21,21,.05);padding:10px 15px;
-         margin-bottom:5mm;font-size:0.85rem;border-radius:0 3px 3px 0;}
-.warnbox .wh{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.09em;
-             color:var(--acc);margin-bottom:4px;font-family:'Overpass Mono',monospace;}
-
-ul.nb{list-style:none;padding:0;margin:0 0 5mm 0;}
-ul.nb li{padding:4px 0 4px 20px;font-size:0.85rem;line-height:1.5;position:relative;color:var(--ink);}
-ul.nb li::before{content:'◆';position:absolute;left:2px;color:var(--acc);font-size:.5rem;top:8px;}
-
-ol.steps{list-style:none;padding:0;margin:0 0 5mm 0;counter-reset:s;}
-ol.steps li{counter-increment:s;padding:5px 0 5px 28px;font-size:0.85rem;line-height:1.5;
-            position:relative;color:var(--ink);border-bottom:1px solid rgba(195,180,155,0.25);}
-ol.steps li::before{content:counter(s);position:absolute;left:2px;top:7px;background:var(--deep);
-                    color:var(--gold);font-size:.65rem;width:18px;height:18px;border-radius:2px;
-                    display:flex;align-items:center;justify-content:center;
-                    font-family:'Overpass Mono',monospace;}
-
-.foot{background:var(--deep);padding:4mm 9mm;display:flex;justify-content:space-between;
-      font-size:.65rem;color:rgba(255,255,255,.42);letter-spacing:.07em;text-transform:uppercase;
-      font-family:'Overpass Mono',monospace;flex-shrink:0;border-top:2px solid var(--gold);
-      margin-top:auto;}
-.foot span:nth-child(2){color:var(--gold);}
-
-/* MCQ Arena local styles */
-.mcq-section { background: var(--paper); border: 2px solid var(--deep); border-radius: 8px; padding: 25px; margin-top: 20px; }
-.q-text { font-size: 1rem; font-weight: 700; color: var(--deep); margin-bottom: 1.2rem; line-height: 1.5; }
-.options-grid { display: flex; flex-direction: column; gap: 10px; }
-.option-btn { background: #fff; border: 1.5px solid var(--border); padding: 12px 18px; border-radius: 6px; 
-              text-align: left; font-family: inherit; font-size: 0.9rem; cursor: pointer; transition: all 0.2s; }
-.option-btn:hover { border-color: var(--gold); background: var(--paper); transform: translateX(5px); }
-.option-btn.correct { background: #d4edda; border-color: #28a745; color: #155724; font-weight: 700; }
-.option-btn.wrong { background: #f8d7da; border-color: #dc3545; color: #721c24; }
-.rationale { display: none; margin-top: 15px; padding: 12px; background: #e9ecef; border-left: 4px solid var(--gold); font-size: 0.85rem; line-height: 1.5; }
-.rationale.show { display: block; }
-.next-btn { display: none; margin-top: 15px; background: var(--deep); color: var(--gold); border: none; padding: 10px 20px; border-radius: 4px; font-weight: 700; cursor: pointer; }
-
-@media(max-width:768px){
-  body{background:#f7f3ec;padding:0;display:block;}
-  .tabs-container { width: 100%; top: 72px; position: fixed; }
-  .page-group { width: 100%; margin-top: 115px; }
-  .page{width:100%!important;min-height:0!important;padding:0!important;
-        box-shadow:none!important;border:none!important;border-radius:0!important;
-        margin:0!important;}
-  .body{padding:15px!important;}
-  .hdr { padding: 15px !important; flex-direction: column; text-align: center; gap: 10px; }
-  .hdr-logo { margin: 0 auto; }
-  .hdr-meta { text-align: center; }
-}
-</style>
 </head>
 <body>
-  <!-- Standardized SIH Navbar -->
-  <nav class="nav" id="mainNav">
-    <div class="nav-left">
-      <a href="../../index.html" class="nav-pill">
-        <div class="nav-logo-img">
-          <img src="../../assets/images/Surgical_Insight_Hub_Logo.png" alt="SIH Logo">
-        </div>
-        <div>
-          <div class="nav-brand-text">Surgical Insight Hub</div>
-          <div class="nav-brand-sub">The Residency Journal</div>
-        </div>
-      </a>
-    </div>
-
-    <div class="nav-links-pill">
-      <a href="../../index.html">Home</a>
-      <a href="../../notes.html" class="active">Notes</a>
-      <a href="../operative_approach.html">Playbook</a>
-      <a href="../../arena.html">MCQ Arena</a>
-      <a href="../../podcast.html">Podcast</a>
-      <a href="../../surgery-talk.html">Surgery Talk</a>
-      <a href="../../about.html">About</a>
-    </div>
-
-    <div class="nav-right">
-      <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
-        <svg id="moonIcon" viewBox="0 0 24 24" width="18" height="18"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-        <svg id="sunIcon" style="display:none;" viewBox="0 0 24 24" width="18" height="18"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-      </button>
-      <a href="https://t.me/sugicalInsightHub" target="_blank" class="nav-tg-btn" title="Join Telegram" style="background: var(--brand-burgundy); color: #f0d080; padding: 8px 12px; border-radius: 8px; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: all 0.3s ease;">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="#f0d080"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.89 8.22l-1.97 9.28c-.15.66-.54.82-1.08.51l-3-2.21-1.45 1.39c-.16.16-.3.3-.61.3l.21-3.05 5.56-5.02c.24-.21-.05-.33-.37-.12l-6.87 4.33-2.96-.92c-.64-.2-.66-.64.14-.95l11.57-4.46c.54-.19 1.01.13.83.94z"/></svg>
-      </a>
-      <a href="../../arena.html" class="nav-btn arena-btn">MCQ Arena</a>
-      <button class="mob-nav-toggle" onclick="openMobNav()" aria-label="Menu">
-        <div class="hamburger"><span></span><span></span><span></span></div>
-      </button>
-    </div>
-  </nav>
-
-  <div class="mob-nav-overlay" id="mobNavOverlay" onclick="closeMobNav()"></div>
-  <div class="mob-nav-sheet" id="mobNavSheet">
-    <div class="mob-nav-handle"></div>
-    <a href="../../index.html">Home</a>
-    <a href="../../notes.html" class="active">Notes</a>
-    <a href="../operative_approach.html">Playbook</a>
-    <a href="../../arena.html">MCQ Arena</a>
-    <a href="../../podcast.html">Podcast</a>
-    <a href="../../surgery-talk.html">Surgery Talk</a>
-    <a href="../../about.html">About</a>
-    <a href="https://t.me/sugicalInsightHub" target="_blank" rel="noopener" onclick="closeMobNav()" style="color: var(--brand-gold); font-weight: 800;">Join Telegram Community</a>
-  </div>
-
-  <div class="tabs-container">
-    <div class="tab active" onclick="switchTab(0)">Foundations</div>
-    <div class="tab" onclick="switchTab(1)">Malignant Atlas</div>
-    <div class="tab" onclick="switchTab(2)">Advanced Oncology</div>
-    <div class="tab" onclick="switchTab(3)">MCQ Arena</div>
-  </div>
-
-  <!-- FOUNDATIONS -->
-  <div id="tab-0" class="page-group active">
-    <div class="page">
-      <div class="hdr">
-        <div style="display:flex;align-items:center;">
-          <div class="hdr-logo"><img src="../../assets/images/Surgical_Insight_Hub_Logo.png" alt="SIH Logo"></div>
-          <div>
-            <h1>Colorectal Foundations</h1>
-            <div class="hsub">Residency Journal &nbsp;·&nbsp; Benign & Molecular &nbsp;·&nbsp; 2026 Edition</div>
-          </div>
-        </div>
-        <div class="hdr-meta">Page 1 / 15</div>
-      </div>
-      <div class="body">
-        <div class="brutal">
-          <div class="lbl">Brutal Rule</div>
-          <div class="rule">Haggitt Level 4, Kikuchi Sm3, or LVI+ in a T1 polyp means the local resection was insufficient. You must proceed to formal oncological resection to avoid an unmanageable recurrence.</div>
-        </div>
-        <div class="sh"><span class="n">1.1</span><h3>Polyposis Syndromes</h3></div>
-        <table>
-          <tr><th>Syndrome</th><th>Gene</th><th>Key Feature</th></tr>
-          <tr><td><b>FAP</b></td><td>APC (5q21)</td><td>100+ polyps; CHRPE; Desmoids</td></tr>
-          <tr><td><b>Lynch</b></td><td>MMR (MLH1/MSH2)</td><td>Amsterdam II Criteria; Right-sided</td></tr>
-          <tr><td><b>PJS</b></td><td>STK11</td><td>Mucocutaneous pigmentation; Hamartomas</td></tr>
-          <tr><td><b>MAP</b></td><td>MUTYH</td><td>Autosomal Recessive; 10-100 polyps</td></tr>
-        </table>
-        
-        <div class="sh"><span class="n">1.2</span><h3>The Paris Classification</h3></div>
-        <ul class="nb">
-          <li><strong>0-Ip:</strong> Pedunculated (Haggitt staging applies).</li>
-          <li><strong>0-Is:</strong> Sessile (Kikuchi staging applies).</li>
-          <li><strong>0-IIc:</strong> Depressed (Highest risk of submucosal invasion).</li>
-        </ul>
-      </div>
-      <div class="foot"><span>Page 1</span><span>SIH Residency Journal</span></div>
-    </div>
-  </div>
-
-  <!-- MALIGNANT ATLAS -->
-  <div id="tab-1" class="page-group">
-    <div class="page">
-      <div class="cont-hdr"><h2>CME & TME Architecture</h2><span class="pg">Page 4 / 15</span></div>
-      <div class="body">
-        <div class="sh"><span class="n">2.1</span><h3>Complete Mesocolic Excision (CME)</h3></div>
-        <div class="desc">Principle: Intact mesocolic envelope + central vascular ligation. Dissection strictly in <strong>Toldt's fascia</strong>.</div>
-        <div class="sh"><span class="n">2.2</span><h3>The "Holy Plane" of TME</h3></div>
-        <ul class="nb">
-          <li><strong>Waldeyer's Fascia:</strong> Must be divided at S4 to avoid presacral haemorrhage.</li>
-          <li><strong>Denonvilliers' Fascia:</strong> Dissect anterior to it for anterior tumours.</li>
-          <li><strong>CRM:</strong> Positive if tumour ≤ <span class="hi">1mm</span> from fascia.</li>
-        </ul>
-      </div>
-      <div class="foot"><span>Page 4</span><span>SIH Residency Journal</span></div>
-    </div>
-  </div>
-
-  <!-- ADVANCED ONCOLOGY -->
-  <div id="tab-2" class="page-group">
-    <div class="page">
-      <div class="cont-hdr"><h2>TNT & Metastatic Trials</h2><span class="pg">Page 7 / 15</span></div>
-      <div class="body">
-        <div class="sh"><span class="n">3.1</span><h3>The RAPIDO Trial</h3></div>
-        <div class="desc">Short-course RT (5x5Gy) + Consolidation Chemo → Surgery. Resulted in higher pCR (28%) and lower treatment failure.</div>
-        <div class="sh"><span class="n">3.2</span><h3>Lynch Tumour Algorithm</h3></div>
-        <div class="note">
+<!-- Standardized SIH Navbar -->
+<nav class="nav" id="mainNav">
+<div class="nav-left">
+<a class="nav-pill" href="../../index.html">
+<div class="nav-logo-img">
+<img alt="SIH Logo" src="../../assets/images/Surgical_Insight_Hub_Logo.png"/>
+</div>
+<div>
+<div class="nav-brand-text">Surgical Insight Hub</div>
+<div class="nav-brand-sub">The Residency Journal</div>
+</div>
+</a>
+</div>
+<div class="nav-links-pill">
+<a href="../../index.html">Home</a>
+<a class="active" href="../../notes.html">Notes</a>
+<a href="../operative_approach.html">Playbook</a>
+<a href="../../arena.html">MCQ Arena</a>
+<a href="../../podcast.html">Podcast</a>
+<a href="../../surgery-talk.html">Surgery Talk</a>
+<a href="../../about.html">About</a>
+</div>
+<div class="nav-right">
+<button aria-label="Toggle Theme" class="theme-toggle" id="themeToggle">
+<svg height="18" id="moonIcon" viewbox="0 0 24 24" width="18"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+<svg height="18" id="sunIcon" style="display:none;" viewbox="0 0 24 24" width="18"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line><line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line><line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line></svg>
+</button>
+<a class="nav-tg-btn" href="https://t.me/sugicalInsightHub" style="background: var(--brand-burgundy); color: #f0d080; padding: 8px 12px; border-radius: 8px; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: all 0.3s ease;" target="_blank" title="Join Telegram">
+<svg fill="#f0d080" height="18" viewbox="0 0 24 24" width="18"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.89 8.22l-1.97 9.28c-.15.66-.54.82-1.08.51l-3-2.21-1.45 1.39c-.16.16-.3.3-.61.3l.21-3.05 5.56-5.02c.24-.21-.05-.33-.37-.12l-6.87 4.33-2.96-.92c-.64-.2-.66-.64.14-.95l11.57-4.46c.54-.19 1.01.13.83.94z"></path></svg>
+</a>
+<a class="nav-btn arena-btn" href="../../arena.html">MCQ Arena</a>
+<button aria-label="Menu" class="mob-nav-toggle" onclick="openMobNav()">
+<div class="hamburger"><span></span><span></span><span></span></div>
+</button>
+</div>
+</nav>
+<div class="mob-nav-overlay" id="mobNavOverlay" onclick="closeMobNav()"></div>
+<div class="mob-nav-sheet" id="mobNavSheet">
+<div class="mob-nav-handle"></div>
+<a href="../../index.html">Home</a>
+<a class="active" href="../../notes.html">Notes</a>
+<a href="../operative_approach.html">Playbook</a>
+<a href="../../arena.html">MCQ Arena</a>
+<a href="../../podcast.html">Podcast</a>
+<a href="../../surgery-talk.html">Surgery Talk</a>
+<a href="../../about.html">About</a>
+<a href="https://t.me/sugicalInsightHub" onclick="closeMobNav()" rel="noopener" style="color: var(--brand-gold); font-weight: 800;" target="_blank">Join Telegram Community</a>
+</div>
+<div class="tabs-container">
+<div class="tab active" onclick="switchTab(0)">Foundations</div>
+<div class="tab" onclick="switchTab(1)">Malignant Atlas</div>
+<div class="tab" onclick="switchTab(2)">Advanced Oncology</div>
+<div class="tab" onclick="switchTab(3)">MCQ Arena</div>
+</div>
+<!-- FOUNDATIONS -->
+<div class="page-group active" id="tab-0">
+<div class="page">
+<div class="hdr">
+<div style="display:flex;align-items:center;">
+<div class="hdr-logo"><img alt="SIH Logo" src="../../assets/images/Surgical_Insight_Hub_Logo.png"/></div>
+<div>
+<h1>Colorectal Foundations</h1>
+<div class="hsub">Residency Journal  ·  Benign &amp; Molecular  ·  2026 Edition</div>
+</div>
+</div>
+<div class="hdr-meta">Page 1 / 15</div>
+</div>
+<div class="body">
+<div class="brutal">
+<div class="lbl">Brutal Rule</div>
+<div class="rule">Haggitt Level 4, Kikuchi Sm3, or LVI+ in a T1 polyp means the local resection was insufficient. You must proceed to formal oncological resection to avoid an unmanageable recurrence.</div>
+</div>
+<div class="sh"><span class="n">1.1</span><h3>Polyposis Syndromes</h3></div>
+<table>
+<tr><th>Syndrome</th><th>Gene</th><th>Key Feature</th></tr>
+<tr><td><b>FAP</b></td><td>APC (5q21)</td><td>100+ polyps; CHRPE; Desmoids</td></tr>
+<tr><td><b>Lynch</b></td><td>MMR (MLH1/MSH2)</td><td>Amsterdam II Criteria; Right-sided</td></tr>
+<tr><td><b>PJS</b></td><td>STK11</td><td>Mucocutaneous pigmentation; Hamartomas</td></tr>
+<tr><td><b>MAP</b></td><td>MUTYH</td><td>Autosomal Recessive; 10-100 polyps</td></tr>
+</table>
+<div class="sh"><span class="n">1.2</span><h3>The Paris Classification</h3></div>
+<ul class="nb">
+<li><strong>0-Ip:</strong> Pedunculated (Haggitt staging applies).</li>
+<li><strong>0-Is:</strong> Sessile (Kikuchi staging applies).</li>
+<li><strong>0-IIc:</strong> Depressed (Highest risk of submucosal invasion).</li>
+</ul>
+</div>
+<div class="foot"><span>Page 1</span><span>SIH Residency Journal</span></div>
+</div>
+</div>
+<!-- MALIGNANT ATLAS -->
+<div class="page-group" id="tab-1">
+<div class="page">
+<div class="cont-hdr"><h2>CME &amp; TME Architecture</h2><span class="pg">Page 4 / 15</span></div>
+<div class="body">
+<div class="sh"><span class="n">2.1</span><h3>Complete Mesocolic Excision (CME)</h3></div>
+<div class="desc">Principle: Intact mesocolic envelope + central vascular ligation. Dissection strictly in <strong>Toldt's fascia</strong>.</div>
+<div class="sh"><span class="n">2.2</span><h3>The "Holy Plane" of TME</h3></div>
+<ul class="nb">
+<li><strong>Waldeyer's Fascia:</strong> Must be divided at S4 to avoid presacral haemorrhage.</li>
+<li><strong>Denonvilliers' Fascia:</strong> Dissect anterior to it for anterior tumours.</li>
+<li><strong>CRM:</strong> Positive if tumour ≤ <span class="hi">1mm</span> from fascia.</li>
+</ul>
+</div>
+<div class="foot"><span>Page 4</span><span>SIH Residency Journal</span></div>
+</div>
+</div>
+<!-- ADVANCED ONCOLOGY -->
+<div class="page-group" id="tab-2">
+<div class="page">
+<div class="cont-hdr"><h2>TNT &amp; Metastatic Trials</h2><span class="pg">Page 7 / 15</span></div>
+<div class="body">
+<div class="sh"><span class="n">3.1</span><h3>The RAPIDO Trial</h3></div>
+<div class="desc">Short-course RT (5x5Gy) + Consolidation Chemo → Surgery. Resulted in higher pCR (28%) and lower treatment failure.</div>
+<div class="sh"><span class="n">3.2</span><h3>Lynch Tumour Algorithm</h3></div>
+<div class="note">
           IHC for MMR → if MLH1 absent → BRAF V600E testing → if BRAF negative → Germline testing.
         </div>
-      </div>
-      <div class="foot"><span>Page 7</span><span>SIH Residency Journal</span></div>
-    </div>
-  </div>
-
-  <!-- MCQ -->
-  <div id="tab-3" class="page-group">
-    <div class="page">
-      <div class="cont-hdr"><h2>Board Arena</h2><span class="pg">Page 14 / 15</span></div>
-      <div class="body">
-        <div id="quiz-container" class="mcq-section">
-          <div id="q1" class="question-block active">
-            <div class="q-text">1. A 62-year-old male has a T1 sessile polyp removed via EMR. Pathology shows Kikuchi Sm3 invasion with moderate differentiation and 2mm clear margins. What is the next step?</div>
-            <div class="options-grid">
-              <button class="option-btn" onclick="handleMcq(1, false, 'Sm1/Sm2 with clear margins might be watched, but Sm3 has high nodal risk.')">A. Surveillance colonoscopy in 3 months.</button>
-              <button class="option-btn" onclick="handleMcq(1, true, 'Correct. Kikuchi Sm3 invasion in a sessile polyp carries a 15-25% risk of lymph node metastasis, necessitating formal oncological resection.')">B. Formal oncological resection (e.g., Hemicolectomy).</button>
-              <button class="option-btn" onclick="handleMcq(1, false, 'TAMIS is for local excision, but we already have invasion into Sm3; we need nodes.')">C. TAMIS for deeper clearance.</button>
-            </div>
-            <div class="rationale" id="rat1"></div>
-            <button class="next-btn" id="next1" onclick="nextQ(1)">Next Question</button>
-          </div>
-
-          <div id="q2" class="question-block">
-            <div class="q-text">2. Which molecular feature in Stage II colon cancer suggests that 5-FU monotherapy should be AVOIDED?</div>
-            <div class="options-grid">
-              <button class="option-btn" onclick="handleMcq(2, false, 'KRAS mutant affects anti-EGFR choice, not 5-FU utility in Stage II.')">A. KRAS mutation.</button>
-              <button class="option-btn" onclick="handleMcq(2, true, 'Correct. MSI-H (dMMR) Stage II tumours have a very good prognosis but do not benefit from 5-FU monotherapy, which may even be harmful.')">B. MSI-High (dMMR).</button>
-              <button class="option-btn" onclick="handleMcq(2, false, 'TP53 is common but doesn\'t drive this specific decision.')">C. TP53 mutation.</button>
-            </div>
-            <div class="rationale" id="rat2"></div>
-            <button class="next-btn" id="next2" onclick="finishQuiz()">Finish</button>
-          </div>
-        </div>
-      </div>
-      <div class="foot"><span>Page 14</span><span>SIH Residency Journal</span></div>
-    </div>
-  </div>
-
-  <script>
+</div>
+<div class="foot"><span>Page 7</span><span>SIH Residency Journal</span></div>
+</div>
+</div>
+<!-- MCQ -->
+<div class="page-group" id="tab-3">
+<div class="page">
+<div class="cont-hdr"><h2>Board Arena</h2><span class="pg">Page 14 / 15</span></div>
+<div class="body">
+<div class="mcq-section" id="quiz-container">
+<div class="question-block active" id="q1">
+<div class="q-text">1. A 62-year-old male has a T1 sessile polyp removed via EMR. Pathology shows Kikuchi Sm3 invasion with moderate differentiation and 2mm clear margins. What is the next step?</div>
+<div class="options-grid">
+<button class="option-btn" onclick="handleMcq(1, false, 'Sm1/Sm2 with clear margins might be watched, but Sm3 has high nodal risk.')">A. Surveillance colonoscopy in 3 months.</button>
+<button class="option-btn" onclick="handleMcq(1, true, 'Correct. Kikuchi Sm3 invasion in a sessile polyp carries a 15-25% risk of lymph node metastasis, necessitating formal oncological resection.')">B. Formal oncological resection (e.g., Hemicolectomy).</button>
+<button class="option-btn" onclick="handleMcq(1, false, 'TAMIS is for local excision, but we already have invasion into Sm3; we need nodes.')">C. TAMIS for deeper clearance.</button>
+</div>
+<div class="rationale" id="rat1"></div>
+<button class="next-btn" id="next1" onclick="nextQ(1)">Next Question</button>
+</div>
+<div class="question-block" id="q2">
+<div class="q-text">2. Which molecular feature in Stage II colon cancer suggests that 5-FU monotherapy should be AVOIDED?</div>
+<div class="options-grid">
+<button class="option-btn" onclick="handleMcq(2, false, 'KRAS mutant affects anti-EGFR choice, not 5-FU utility in Stage II.')">A. KRAS mutation.</button>
+<button class="option-btn" onclick="handleMcq(2, true, 'Correct. MSI-H (dMMR) Stage II tumours have a very good prognosis but do not benefit from 5-FU monotherapy, which may even be harmful.')">B. MSI-High (dMMR).</button>
+<button class="option-btn" onclick="handleMcq(2, false, 'TP53 is common but doesn\'t drive this specific decision.')">C. TP53 mutation.</button>
+</div>
+<div class="rationale" id="rat2"></div>
+<button class="next-btn" id="next2" onclick="finishQuiz()">Finish</button>
+</div>
+</div>
+</div>
+<div class="foot"><span>Page 14</span><span>SIH Residency Journal</span></div>
+</div>
+</div>
+<script>
     function switchTab(index) {
       document.querySelectorAll('.tab').forEach((t, i) => t.classList.toggle('active', i === index));
       document.querySelectorAll('.page-group').forEach((g, i) => g.classList.toggle('active', i === index));
@@ -351,6 +194,7 @@ ol.steps li::before{content:counter(s);position:absolute;left:2px;top:7px;backgr
 
     
   </script>
-  <script src="../../js/navigation.js"></script>
+<script src="../../js/nav-pill.js"></script>
+<script src="../../js/navigation.js"></script>
 </body>
 </html>

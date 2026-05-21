@@ -17,31 +17,8 @@
   const savedTheme = localStorage.getItem('sih-theme') || 'light';
   if (savedTheme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
 </script>
-
-<style>
-  /* Add any specific note styling here */
-  .note-content-area {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 30px;
-    box-shadow: var(--shadow-sm);
-  }
-  .note-content-area h2 {
-    color: var(--text-primary);
-    margin-bottom: 20px;
-    font-size: 1.8rem;
-  }
-  .note-content-area p {
-    color: var(--text-secondary);
-    font-size: 1.05rem;
-    line-height: 1.6;
-    margin-bottom: 15px;
-  }
-</style>
 </head>
 <body>
-
 
   <!-- Standardized SIH Navbar -->
   <nav class="nav" id="mainNav">
@@ -96,16 +73,43 @@
   </div>
 
 
-
-<div class="main-container">
-  <div class="note-content-area mt-5">
-    <h2>Your Technical Note Title Here</h2>
-    
-    <p>This is your specific HTML note section. Because this file is inside the <code>notes/</code> directory, it inherits the entire website's global navigation, dark mode, and UI style, but gives you a blank canvas here.</p>
-    
-    <p>You can add paragraphs, images, tables, bullet points, and clinical algorithms however you like!</p>
+<header class="editorial-hero">
+  <div class="ed-kicker">Topic Category</div>
+  <h1>Your Technical Note Title Here</h1>
+  <div class="ed-meta">
+    <span>Level: General</span>
+    <span>Time: [10 mins]</span>
   </div>
+</header>
+
+<div class="editorial-grid">
+  <main class="editorial-content">
+    <section>
+      <h2>Section Header</h2>
+      <p>This is your specific HTML note section. Because this file is inside the <code>notes/</code> directory, it inherits the entire website's global navigation, dark mode, and UI style, but gives you a blank canvas here.</p>
+      
+      <p>You can add paragraphs, images, tables, bullet points, and clinical algorithms however you like!</p>
+
+      <div class="pearl-box">
+        <h5>Clinical Pearl</h5>
+        <p>A beautifully styled callout box for high-yield facts.</p>
+      </div>
+    </section>
+  </main>
+  
+  <aside class="editorial-sidebar">
+    <div class="sidebar-box">
+      <h4>Contents</h4>
+      <ul class="sidebar-list">
+        <li><a href="#">Section Header</a></li>
+      </ul>
+    </div>
+  </aside>
 </div>
+
+<footer style="padding: 60px 5%; border-top: 1px solid var(--border-color); text-align: center;">
+  <p style="color: var(--text-muted); font-size: 0.85rem;">© 2026 Surgical Insight Hub</p>
+</footer>
 
 <script src="../js/nav-pill.js"></script>
 <script src="../js/navigation.js"></script>

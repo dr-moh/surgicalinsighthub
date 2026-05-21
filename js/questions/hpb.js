@@ -9153,4 +9153,397 @@ window.QUESTIONS.push(...[
   },
   "discrepancy_flag": ""
 }
+,
+{
+  "id": 1511,
+  "specialty": "HPB",
+  "topic": "Which of the following statements about the cystic duct is true?",
+  "question": "Which of the following statements about the cystic duct is true?",
+  "options": {
+    "A": "It most commonly inserts on the left lateral aspect of the common bile duct",
+    "B": "Low insertion is defined as its insertion at the lower third of the common hepatic duct",
+    "C": "A short cystic duct is defined as < 10 mm long",
+    "D": "None of the above"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "It most commonly inserts on the left lateral aspect of the common bile duct",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Which of the following statements about the cystic duct is true?",
+    "H_highlight_excellence": "It most commonly inserts on the left lateral aspect of the common bile duct",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "HPB surgical guidelines",
+    "P_plan_for_improvement": "It most commonly inserts on the left lateral aspect of the common bile duct"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB surgical guidelines",
+    "takeaway": "It most commonly inserts on the left lateral aspect of the common bile duct",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1359,
+  "specialty": "HPB",
+  "topic": "How many arterial branches provide blood supply to segment IV in most",
+  "question": "How many arterial branches provide blood supply to segment IV in most patients?",
+  "options": {
+    "A": "Replaced right hepatic artery",
+    "B": "Accessory spleen",
+    "C": "ourses between the IRHV and main right hepatic vein; thus, it serves as a good landmark to differentiate a hyptertrophic IRHV from the main right hepatic vein. The main right hepatic vein is cranial to the right posterior portal vein, while the IRHV is located below the right posterior portal vein.29",
+    "D": "Independent right posterior portal vein The inferior right hepatic vein (IRHV) is an accessory vein that drains the postero-inferior sector of the liver. It is present in 20% of patients, and it can be wider than the main right hepatic vein in 10% of cases. The right posterior portal vein",
+    "E": "xplanation: In 70% of cases, segment IV receives blood supply from two main arterial branches (superior and infe- rior segment branches). Each branch can subsequently"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Replaced right hepatic artery",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "How many arterial branches provide blood supply to segment IV in most",
+    "H_highlight_excellence": "Replaced right hepatic artery",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "HPB surgical guidelines",
+    "P_plan_for_improvement": "Replaced right hepatic artery"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB surgical guidelines",
+    "takeaway": "Replaced right hepatic artery",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1461,
+  "specialty": "HPB",
+  "topic": "What is the type of portal division shown below?",
+  "question": "What is the type of portal division shown below?",
+  "options": {
+    "A": "Independent left posterior portal vein",
+    "B": "Bifurcation",
+    "C": "Staged division",
+    "D": "Trifurcation",
+    "E": "xplanation: Couinaud was the first to describe and clas- sify portal vein variations.43 Watanabe et al. further classified these variations into three types without including two rare variants described by Couinaud.41 Additionally, he exposed the relationship of the bile ducts with these portal vein variants. These are important concepts for performing a safe extended left hepatectomy. In the figure below, we show the portal vein variations as described by Couinaud and Watanabe.44"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Independent left posterior portal vein",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "What is the type of portal division shown below?",
+    "H_highlight_excellence": "Independent left posterior portal vein",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "HPB surgical guidelines",
+    "P_plan_for_improvement": "Independent left posterior portal vein"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB surgical guidelines",
+    "takeaway": "Independent left posterior portal vein",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50044,
+  "specialty": "HPB",
+  "topic": "General",
+  "question": "Which of the following statements about gallbladder polyps is true?",
+  "options": {
+    "A": "Transabdominal ultrasound is the first-line imaging study for diagnosis, but in certain cases cross-sec- tional imaging is necessary",
+    "B": "Factors that suggest malignancy are: > 50 years old, larger than 1.5 cm, growth, sessile, solitary, and het-",
+    "C": "Small (< 1 cm), asymptomatic polyps should be moni- tored for 12 months with control ultrasound scans",
+    "D": "All of the above",
+    "E": "rogeneous enhance pattern"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Transabdominal ultrasound is the first-line imaging study for diagnosis, but in certain cases cross-sec- tional imaging is necessary",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "Transabdominal ultrasound is the first-line imaging study for diagnosis, but in certain cases cross-sec- tional imaging is necessary",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "HPB",
+    "P_plan_for_improvement": "Transabdominal ultrasound is the first-line imaging study for diagnosis, but in certain cases cross-sec- tional imaging"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB",
+    "takeaway": "Transabdominal ultrasound is the first-line imaging study for diagnosis, but in certain cases cross-sec- tional imaging is necessary",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 51299,
+  "specialty": "HPB",
+  "topic": "General",
+  "question": "Arantius\u2019 ligament is the:",
+  "options": {
+    "A": "Ligamentum venosum",
+    "B": "Obliterated ductus venosus",
+    "C": "Obliterated hepatic vein",
+    "D": "Both A and B",
+    "E": "Both A and C"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Ligamentum venosum",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "Ligamentum venosum",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "HPB",
+    "P_plan_for_improvement": "Ligamentum venosum"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB",
+    "takeaway": "Ligamentum venosum",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 50136,
+  "specialty": "HPB",
+  "topic": "General",
+  "question": "Which embryologic structures are the predecessors of the portal vein?",
+  "options": {
+    "A": "Umbilical veins",
+    "B": "Umbilical arteries",
+    "C": "Vitelline veins",
+    "D": "None of the above"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Umbilical veins",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "Umbilical veins",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "HPB",
+    "P_plan_for_improvement": "Umbilical veins"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB",
+    "takeaway": "Umbilical veins",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 51316,
+  "specialty": "HPB",
+  "topic": "General",
+  "question": "When considering future liver remnant for hepatic trisectionectomy:",
+  "options": {
+    "A": "20\u201325% future liver remnant is usually adequate for nor- mal liver.",
+    "B": "> 30% future liver remnant is preferred in fatty liver.",
+    "C": "> 40% future liver remnant is recommended for severe fibrosis or cirrhotic liver.",
+    "D": "ICG clearance is helpful for cirrhotic livers.",
+    "E": "All of the above."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "20\u201325% future liver remnant is usually adequate for nor- mal liver.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Review the stem and choose the best option.",
+    "H_highlight_excellence": "20\u201325% future liver remnant is usually adequate for nor- mal liver.",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "HPB",
+    "P_plan_for_improvement": "20\u201325% future liver remnant is usually adequate for nor- mal liver."
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB",
+    "takeaway": "20\u201325% future liver remnant is usually adequate for nor- mal liver.",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1470,
+  "specialty": "HPB",
+  "topic": "What type of portal division is illustrated in the figure",
+  "question": "What type of portal division is illustrated in the figure",
+  "options": {
+    "A": "Independent right posterior portal vein",
+    "B": "Staged division",
+    "C": "Bifurcation",
+    "D": "Trifurcation"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Independent right posterior portal vein",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "What type of portal division is illustrated in the figure",
+    "H_highlight_excellence": "Independent right posterior portal vein",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "HPB surgical guidelines",
+    "P_plan_for_improvement": "Independent right posterior portal vein"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB surgical guidelines",
+    "takeaway": "Independent right posterior portal vein",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1399,
+  "specialty": "HPB",
+  "topic": "The left lateral segment/section is made up of which hepatic segments?",
+  "question": "The left lateral segment/section is made up of which hepatic segments?",
+  "options": {
+    "A": "1a n d2",
+    "B": "2a n d3",
+    "C": "3a n d4",
+    "D": "4a n d5",
+    "E": "5a n d8"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "1a n d2",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "The left lateral segment/section is made up of which hepatic segments?",
+    "H_highlight_excellence": "1a n d2",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "HPB surgical guidelines",
+    "P_plan_for_improvement": "1a n d2"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB surgical guidelines",
+    "takeaway": "1a n d2",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1534,
+  "specialty": "HPB",
+  "topic": "Which of the following structures is NOT part of the",
+  "question": "Which of the following structures is NOT part of the",
+  "options": {
+    "A": "Left hepatic duct",
+    "B": "Anterior sectoral right hepatic duct",
+    "C": "Gallbladder",
+    "D": "Common hepatic duct",
+    "E": "xtrahepatic biliary tree?3"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Left hepatic duct",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "Which of the following structures is NOT part of the",
+    "H_highlight_excellence": "Left hepatic duct",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "HPB surgical guidelines",
+    "P_plan_for_improvement": "Left hepatic duct"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB surgical guidelines",
+    "takeaway": "Left hepatic duct",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
+,
+{
+  "id": 1367,
+  "specialty": "HPB",
+  "topic": "In Budd-Chiari syndrome:",
+  "question": "In Budd-Chiari syndrome:",
+  "options": {
+    "A": "The portal veins are thrombosed.",
+    "B": "The hepatic veins are thrombosed.",
+    "C": "Ascites is rarely present.",
+    "D": "A hypercoagulable work-up should be done.",
+    "E": "Both B and D are correct."
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "The portal veins are thrombosed.",
+    "A": "",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": ""
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "In Budd-Chiari syndrome:",
+    "H_highlight_excellence": "The portal veins are thrombosed.",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "HPB surgical guidelines",
+    "P_plan_for_improvement": "The portal veins are thrombosed"
+  },
+  "supplementary_callouts": {
+    "guideline": "HPB surgical guidelines",
+    "takeaway": "The portal veins are thrombosed",
+    "visualization": ""
+  },
+  "discrepancy_flag": ""
+}
 ]);
