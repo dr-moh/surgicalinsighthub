@@ -30,13 +30,16 @@ OPENROUTER_API_KEY = ENV.get("OPENROUTER_API_KEY", [""])[0]
 OLLAMA_ENDPOINTS = ENV.get("LOCAL_OLLAMA_URL", ["http://localhost:11434"])
 OLLAMA_MODEL = ENV.get("LOCAL_MODEL_NAME", ["llama3"])[0]
 
-SYSTEM_INSTRUCTION = """You are a world-class surgical educator and medical board examiner. Your task is to extract high-yield medical MCQs from the provided surgical text and format them strictly into the SHARP 3.0 Cognitive & Surgical Debriefing Schema 
-Output format should be 
-### Surgical Board Practice Item
+SYSTEM_INSTRUCTION = """You are a world-class surgical educator and medical board examiner. Your task is to extract high-yield medical MCQs from the provided surgical text and format them strictly into the SHARP 4.0 Cognitive & Surgical Debriefing Schema.
 
-**Tags:** [Specialty] | [Topic] | [Sub-topic]
+Output format should be:
 
-### Question [X]
+### 🩺 Surgical Board Practice Item
+
+**Metadata:** [Specialty] | [Topic] | [Sub-topic]
+**Target Level:** [medical_student / resident / attending]
+
+**📝 The Clinical Vignette**
 [The clinical stem or technical question. High-yield, board-style. Ensure all leaked answers, tracking indicators, or source index markers are completely stripped out.]
 
 * A) [Option 1]
@@ -48,79 +51,45 @@ Output format should be
 
 ---
 
-### SHARP 3.0 Cognitive & Surgical Debrief
+### ⚡ SHARP 4.0 Cognitive & Surgical Debrief
 
-* **S – Set the Stage (The Verdict & Diagnostic Pivot)**
-  * **Verdict:** Correct: [Letter]. [Direct answer confirmation].
-  * **The Pivot:** [1–2 punchy sentences identifying the exact clinical crux, timeline milestone, anatomical boundary, or physiological tipping point that eliminates all diagnostic ambiguity].
+**📌 S – Set the Stage (The Verdict & Diagnostic Pivot)**
+* **The Verdict:** Correct: [Letter]. [Direct answer confirmation].
+* **The Diagnostic Pivot:** [The exact 1–2 pathognomonic clinical, laboratory, or imaging triggers in the vignette that unlock the diagnosis].
 
-* **H – Highlight Excellence (The Surgical "Why" & Pathology)**
-  * **Surgical Mechanism:** [Deep dive into underlying surgical anatomy, tissue planes, structural relationships, or pathophysiology. Use precise, expert-level terminology].
-  * **Clinical Execution:** [Explain why this specific mechanism dictates the selected surgical maneuver, medical management, or diagnostic path forward for an operating surgeon].
+**🎯 H – Highlight Excellence (The Surgical "Why" & Pathology)**
+* **Surgical Mechanism:** [The underlying anatomical, cellular, or pathophysiological flaw].
+* **Clinical Execution:** [Why this is the single best management path to optimize survival or avoid catastrophe].
+* **👁️ Mental Operative Theatre:** [A vivid description of the pathognomonic radiological or intraoperative findings. What does the surgeon see, feel, or encounter?]
 
-* **A – Address the Gaps (Systematic Distractor Demolition)**
-  * **Distractor Breakdown:**
-    * *Option [Wrong Letter] (Incorrect):* [Specific anatomical, physiological, or clinical reason this option fails. State exactly how the stem would need to change for this option to become the correct choice].
-    * *Option [Wrong Letter] (Incorrect):* [Reasoning].
-    * *Option [Wrong Letter] (Incorrect):* [Reasoning].
+**❌ A – Address the Gaps (Systematic Distractor Demolition)**
+* **Option [Wrong Letter] (Incorrect):** [Explains why it fails here, but identifies the exact clinical scenario where this option WOULD be the correct choice].
+* **Option [Wrong Letter] (Incorrect):** [Reasoning].
+* **Option [Wrong Letter] (Incorrect):** [Reasoning].
 
-* **R – Review Learning Points (Evidence-Based Framework)**
-  * **Conceptual Overview:** [Macro-level clinical summary of the overarching disease process, anatomical system, or surgical principles involved].
-  * **Classification / Management Framework:** 
+**📊 R – Review Learning Points (Evidence-Based Framework)**
+* **Conceptual Overview:** [Cites the specific source section or textbook chapter].
 
 | [Classification / System / Criteria] | [Key Diagnostic / Imaging Finding] | [Immediate Surgical / Clinical Pivot] | [Core Guideline / Surgical Society Consensus] |
 | :--- | :--- | :--- | :--- |
 | **[Type / Stage / Grade A]** | [Pathognomonic clue or threshold] | [First-line maneuver or intervention] | [e.g., SAGES, ASCRS, ATLS, ASA, Tokyo] |
 | **[Type / Stage / Grade B]** | [Pathognomonic clue or threshold] | [First-line maneuver or intervention] | [e.g., SAGES, ASCRS, ATLS, ASA, Tokyo] |
-| **[Type / Stage / Grade C]** | [Pathognomonic clue or threshold] | [First-line maneuver or intervention] | [e.g., SAGES, ASCRS, ATLS, ASA, Tokyo] |
 
-* **P – Plan for Improvement (The Exam Heuristic)**
-  * **The Board Pearl:** [A single, high-density, conditional "if/then" rule or unforgettable mental heuristic optimized for rapid recall under exam pressure].
+**⚠️ Critical Guideline Updates & Textbook Conflicts**
+* **Standard Textbooks (Bailey & Love / Sabiston / Schwartz):** [Standard text teaching]
+* **Society Guidelines (ATLS / SAGES / NCCN / EAES):** [Current guideline teaching]
+* **The Discrepancy:** [Flags if the exam answer differs from real-world practice or if guidelines conflict].
 
----
+**💡 P – Plan for Improvement (The Exam Heuristic)**
+* **The Board Pearl:** [A 1-sentence, high-yield "If X, then do Y" rule for rapid retention].
+"""
 
-### Supplementary Callouts
-
-> **Society Guideline**
-> [The primary, most current society guideline or consensus statement referenced—e.g., Tokyo Guidelines, ATLS 10th Edition, SAGES Guidelines, ASCRS Consensus Documents].
-
-> **Key Takeaway**
-> [A one-sentence, razor-sharp summary of the core clinical fact tested by this item].
-
-> **Intraoperative / Imaging Visualization**
-> [Describe exactly what the surgeon must "see" on cross-sectional imaging, endoscopic evaluation, or when dissecting the tissue plane in the OR to visually confirm this answer]."""
-
-def call_groq(prompt):
-    if not GROQ_API_KEY: raise Exception("No GROQ_API_KEY")
-    url = "https://api.groq.com/openai/v1/chat/completions"
-    headers = {"Authorization": f"Bearer {GROQ_API_KEY}", "Content-Type": "application/json"}
+def call_atxp(prompt):
+    ATXP_CONNECTION = "https://accounts.atxp.ai?connection_token=I8ybZQAMDOfH42JDuv76M&account_id=atxp_acct_TyqIFldoHcKLRF4gA0gE0"
+    url = "https://llm.atxp.ai/v1/chat/completions"
+    headers = {"Authorization": f"Bearer {ATXP_CONNECTION}", "Content-Type": "application/json"}
     payload = {
-        "model": "llama-3.3-70b-versatile",
-        "messages": [{"role": "system", "content": SYSTEM_INSTRUCTION}, {"role": "user", "content": prompt}],
-        "temperature": 0.2
-    }
-    resp = requests.post(url, headers=headers, json=payload, timeout=30)
-    resp.raise_for_status()
-    return resp.json()["choices"][0]["message"]["content"]
-
-def call_gemini(prompt):
-    if not GEMINI_API_KEY: raise Exception("No GEMINI_API_KEY")
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={GEMINI_API_KEY}"
-    headers = {"Content-Type": "application/json"}
-    payload = {
-        "contents": [{"parts": [{"text": SYSTEM_INSTRUCTION + "\n\n" + prompt}]}],
-        "generationConfig": {"temperature": 0.2, "topP": 0.8}
-    }
-    resp = requests.post(url, headers=headers, json=payload, timeout=60)
-    resp.raise_for_status()
-    return resp.json()["candidates"][0]["content"]["parts"][0]["text"]
-
-def call_openrouter(prompt):
-    if not OPENROUTER_API_KEY: raise Exception("No OPENROUTER_API_KEY")
-    url = "https://openrouter.ai/api/v1/chat/completions"
-    headers = {"Authorization": f"Bearer {OPENROUTER_API_KEY}", "Content-Type": "application/json"}
-    payload = {
-        "model": "meta-llama/llama-3.1-8b-instruct:free",
+        "model": "google-ai-studio/gemini-3.5-flash",
         "messages": [{"role": "system", "content": SYSTEM_INSTRUCTION}, {"role": "user", "content": prompt}],
         "temperature": 0.2
     }
@@ -146,28 +115,14 @@ def call_ollama(prompt):
 def process_question(q_obj):
     prompt_text = f"Question:\n{q_obj.get('question')}\n\nOptions:\n{json.dumps(q_obj.get('options', {}), indent=2)}\n\nCorrect Answer:\n{q_obj.get('answer', q_obj.get('correct_answer', 'Unknown'))}\n\nSpecialty:\n{q_obj.get('specialty', 'Unknown')}\n"
     
-    # Tier 1: Groq
+    # Tier 1: ATXP Premium Gateway (Blazing Fast)
     try:
-        res = call_groq(prompt_text)
+        res = call_atxp(prompt_text)
         if res: return res
     except Exception as e:
-        print(f"⚠️ Groq failed: {e}. Falling back to Gemini...")
+        print(f"⚠️ ATXP failed: {e}. Falling back to Ollama...")
         
-    # Tier 2: Gemini
-    try:
-        res = call_gemini(prompt_text)
-        if res: return res
-    except Exception as e:
-        print(f"⚠️ Gemini failed: {e}. Falling back to OpenRouter...")
-        
-    # Tier 3: OpenRouter
-    try:
-        res = call_openrouter(prompt_text)
-        if res: return res
-    except Exception as e:
-        print(f"⚠️ OpenRouter failed: {e}. Falling back to Ollama...")
-        
-    # Tier 4: Ollama
+    # Tier 2: Ollama Local
     try:
         res = call_ollama(prompt_text)
         if res: return res
@@ -211,11 +166,9 @@ def process_file(file_path):
         else:
             q['markdown_debrief'] = "Failed to generate Markdown."
         
-        # Free-tier rate limiter: 4.5 seconds per question = ~13 RPM
-        time.sleep(4.5)
         return q
         
-    with ThreadPoolExecutor(max_workers=1) as executor:
+    with ThreadPoolExecutor(max_workers=20) as executor:
         futures = {executor.submit(worker, q): q for q in pending}
         
         count = 0

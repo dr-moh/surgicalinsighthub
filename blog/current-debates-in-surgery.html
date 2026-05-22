@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Current Debates in Surgery: What Do Surgeons Actually Prefer? — Surgical Insight Hub</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Shared Styles -->
+  <link rel="stylesheet" href="../css/theme.css">
+  <link rel="stylesheet" href="../css/shared.css">
+  <link rel="stylesheet" href="blog.css">
+  
+  <script>
+    const savedTheme = localStorage.getItem('sih-theme') || 'light';
+    if (savedTheme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+  </script>
+</head>
+<body>
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="mainNav">
+    <div class="nav-left">
+      <a href="../index.html" class="nav-pill">
+        <div class="nav-logo-img">
+          <img src="../assets/images/Surgical_Insight_Hub_Logo.png" alt="SIH">
+        </div>
+        <div>
+          <div class="nav-brand-text">Surgical Insight Hub</div>
+          <div class="nav-brand-sub">Advanced Surgical Learning</div>
+        </div>
+      </a>
+      <div class="nav-links-pill">
+        <a href="../index.html">Home</a>
+        <a href="../notes.html">Notes</a>
+        <a href="../notes/operative_approach.html">Playbook</a>
+        <a href="../podcast.html">Podcast</a>
+        <a href="../surgery-talk.html" class="active">Surgery Talk</a>
+        <a href="../about.html">About</a>
+      </div>
+    </div>
+
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <svg id="moonIcon" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/></svg>
+        <svg id="sunIcon" style="display:none;" viewBox="0 0 24 24"><path d="M12 7a5 5 0 1 0 5 5 5.006 5.006 0 0 0-5-5zm0 8a3 3 0 1 1 3-3 3.003 3.003 0 0 1-3 3zm0-13a1 1 0 0 0-1 1v2a1 1 0 0 0 2 0V3a1 1 0 0 0-1-1zm0 18a1 1 0 0 0-1 1v2a1 1 0 0 0 2 0v-2a1 1 0 0 0-1-1zm8-11h-2a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2zm-16 0H2a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2zm13.657-5.657a1 1 0 0 0-1.414 0l-1.414 1.414a1 1 0 0 0 1.414 1.414l1.414-1.414a1 1 0 0 0 0-1.414zm-11.314 0a1 1 0 0 0 0 1.414l1.414 1.414a1 1 0 0 0 1.414-1.414L4.929 5.757a1 1 0 0 0-1.414 0zm11.314 11.314a1 1 0 0 0 0 1.414l1.414 1.414a1 1 0 0 0 1.414-1.414l-1.414-1.414a1 1 0 0 0-1.414 0zm-11.314 0a1 1 0 0 0-1.414 1.414l1.414 1.414a1 1 0 0 0 1.414-1.414l-1.414-1.414a1 1 0 0 0 0-1.414z"/></svg>
+      </button>
+      <a href="../arena.html" class="nav-btn arena-btn">MCQ Arena</a>
+      <button class="mob-nav-toggle" onclick="openMobNav()">
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mob-nav-overlay" id="mobNavOverlay" onclick="closeMobNav()"></div>
+  <div class="mob-nav-sheet" id="mobNavSheet">
+    <div class="mob-nav-handle"></div>
+    <a href="../index.html" onclick="closeMobNav()">Home</a>
+    <a href="../notes.html" onclick="closeMobNav()">Notes</a>
+    <a href="../notes/operative_approach.html" onclick="closeMobNav()">Playbook</a>
+    <a href="../podcast.html" onclick="closeMobNav()">Podcast</a>
+    <a href="../surgery-talk.html" class="active" onclick="closeMobNav()">Surgery Talk</a>
+    <a href="../arena.html" onclick="closeMobNav()">MCQ Arena</a>
+    <a href="../about.html" onclick="closeMobNav()">About</a>
+  </div>
+
+  <article>
+    <header class="blog-hero">
+      <div class="blog-meta">
+        <span class="blog-badge" style="background: rgba(184, 146, 42, 0.1); color: #b8922a;">Debates</span>
+        <span class="blog-date">May 23, 2026</span>
+      </div>
+      <h1 class="blog-title">Current Debates in Surgery: What Do Surgeons Actually Prefer?</h1>
+      <p class="blog-subtitle">A fascinating dive into a cross-sectional study of 778 Indian surgeons, revealing the stark contrast between standard guidelines and what surgeons would choose for themselves.</p>
+    </header>
+
+    <div class="blog-container">
+      <main class="blog-main blog-content">
+        <p>Surgery is an ever-evolving field where "standard of care" is frequently challenged by rapid technological advancements. However, are these advancements driven by genuine evidence, or are they fueled by market hype?</p>
+
+        <p>In a landmark 2012 cross-sectional survey authored by <strong>Chintamani, Rohan Khandelwal, et al.</strong>, 778 Indian surgeons were polled on some of the most contentious issues in modern surgical practice. The results paint a fascinating picture of the dichotomy between what is offered to patients and what surgeons would actually prefer if they were on the operating table themselves.</p>
+
+        <div class="info-card" style="margin: 2.5rem 0;">
+          <h4 style="margin-top:0; color:#1a1208;">📚 Original Publications</h4>
+          <p style="margin-bottom:0.5rem; font-size:0.95rem;">You can read the original cross-sectional survey in full detail here:</p>
+          <ul style="margin-bottom:0; font-size:0.9rem;">
+            <li><strong>PMC Database:</strong> <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3397184/" target="_blank" rel="noopener noreferrer">Current Debates in Surgery – A Cross Sectional Study amongst Indian Surgeons</a></li>
+            <li><strong>Springer Link:</strong> <a href="https://link.springer.com/article/10.1007/s12262-012-0585-6" target="_blank" rel="noopener noreferrer">Indian Journal of Surgery Publication (DOI: 10.1007/s12262-012-0585-6)</a></li>
+          </ul>
+        </div>
+
+        <hr>
+
+        <h2>🤖 Robotic Surgery: Hype or Hope?</h2>
+        <p>Robotic surgery has been heralded as the future of the operating room. But do surgeons on the ground agree?</p>
+        <p>According to the survey, a staggering <strong>74.3%</strong> of surgeons believe robotic surgery is "a hope for some surgeries and hype for most." Only 12% felt it was likely to replace open and laparoscopic surgery in the near future. This aligns closely with market data—despite the hype, the vast majority of robotic procedures remain concentrated in very specific niches, such as radical prostatectomies and complex pelvic surgeries, rather than general surgery.</p>
+
+        <h2>🩺 Breast Conservation Surgery vs. MRM</h2>
+        <p>While guidelines strictly define the role of Breast Conservation Surgery (BCS), <strong>47%</strong> of surveyed surgeons felt that Modified Radical Mastectomy (MRM) should still remain the gold standard in setups lacking adequate infrastructure or training. Furthermore, <strong>43.3%</strong> of respondents noted that both patients and surgeons are poorly informed about BCS, highlighting a critical gap between textbook oncology and ground reality.</p>
+
+        <h2>🔪 Hernia Repair: What Would the Surgeon Choose?</h2>
+        <p>Perhaps the most revealing part of the survey was asking surgeons what they would choose for <em>themselves</em>.</p>
+        <ul>
+          <li><strong>Unilateral Inguinal Hernia:</strong> Despite the popularity of laparoscopic repairs, <strong>70.1%</strong> of surgeons stated they would prefer an <em>Open Lichtenstein’s tension-free mesh repair</em> for their own unilateral hernia.</li>
+          <li><strong>Bilateral Inguinal Hernia:</strong> Here, the preference flips. <strong>45.6%</strong> would choose a Laparoscopic TEP, while 36.9% would still stick to bilateral open Lichtenstein repairs.</li>
+          <li><strong>Incisional Hernia (5x5 cm):</strong> The vote was split, with <strong>46.3%</strong> favoring Laparoscopic mesh hernioplasty over open onlay repair.</li>
+        </ul>
+
+        <h2>📱 Social Media & Patient Transparency</h2>
+        <p>As the world digitizes, how much transparency is too much?</p>
+        <ul>
+          <li><strong>Surgical Videos:</strong> Over <strong>40%</strong> of surgeons believed patients should be given video recordings of their surgeries on demand, and 34.8% thought videos should become standard medical records to mitigate litigation.</li>
+          <li><strong>Social Media as an Academic Tool:</strong> Surgeons were skeptical about platforms like Facebook. <strong>36.8%</strong> felt social media acts more as a "propaganda tool" rather than an academic one, shifting the paradigm from <em>evidence-based</em> to <em>eminence-based</em> medicine.</li>
+        </ul>
+
+        <h2>⚖️ The Verdict</h2>
+        <p>This cross-sectional study masterfully highlights that the practice of surgery is not just pure science—it is a complex interplay of patient expectations, surgeon training, and aggressive market forces.</p>
+        <p>As technologies like Single Incision Laparoscopic Surgery (SILS) and robotics continue to evolve, it is vital that surgeons occasionally pause, look past the hype, and ask themselves: <em>"What does the evidence actually support, and what would I choose for myself?"</em></p>
+
+        <div class="info-card" style="margin: 2.5rem 0; background: rgba(37,99,235,0.05); border-left: 4px solid #2563eb;">
+          <h4 style="margin-top:0; color:#1a1208;">🌍 Editor's Take: The Global Reality & The African Perspective</h4>
+          <p style="margin-bottom:0.5rem; font-size:0.95rem;">While debates over robotic surgery and Single-Incision Laparoscopy dominate conferences in high-income countries, the reality in developing nations—particularly across Africa—demands a starkly different focus.</p>
+          <ul style="margin-bottom:0; font-size:0.9rem;">
+            <li><strong>Resource Allocation vs. Hype:</strong> In regions where basic surgical infrastructure, reliable electricity, and sterilized instruments remain challenges, multimillion-dollar robotic systems are not just "hype"—they are a massive misallocation of scarce healthcare resources. The focus in Africa must remain on mastering safe, open, and conventional laparoscopic techniques.</li>
+            <li><strong>The "Gold Standard" is Context-Dependent:</strong> The survey noted that 47% of Indian surgeons felt Modified Radical Mastectomy (MRM) should remain the standard when adequate oncology infrastructure is lacking. This rings even truer for African nations. Breast Conservation Surgery (BCS) requires rigorous pre-operative imaging, impeccable margins, and mandatory post-operative radiation therapy—luxuries that are often unavailable or unaffordable in rural or underfunded settings. In these environments, MRM is not "outdated"; it is lifesaving and practical.</li>
+            <li><strong>Surgical Training & Evidence over Eminence:</strong> Developing nations cannot afford to fall victim to "eminence-based" medicine driven by social media propaganda. Training programs in Africa must rigorously prioritize evidence-based, cost-effective interventions (like the Open Lichtenstein repair, which the surveyed surgeons preferred for themselves) over chasing the latest, unproven surgical fads.</li>
+          </ul>
+          <p style="margin-top:0.5rem; margin-bottom:0; font-size:0.95rem;"><strong>The Takeaway:</strong> True surgical excellence is not defined by the use of the most expensive technology, but by the ability to deliver safe, effective, and context-appropriate care to the population at hand.</p>
+        </div>
+
+      </main>
+
+      <!-- Sidebar -->
+      <aside class="blog-sidebar">
+        <div class="sidebar-block sticky">
+          <h3 class="sidebar-title">Survey Highlights</h3>
+          <ul class="sb-links">
+            <li>
+              <div style="font-size:1.4rem; font-weight:800; color:#a31515; line-height:1;">74.3%</div>
+              <div style="font-size:0.85rem; color:var(--text-secondary); margin-top:4px;">Believe Robotics is mostly "hype" for general surgery.</div>
+            </li>
+            <li>
+              <div style="font-size:1.4rem; font-weight:800; color:#a31515; line-height:1; margin-top:1rem;">70.1%</div>
+              <div style="font-size:0.85rem; color:var(--text-secondary); margin-top:4px;">Prefer Open Lichtenstein for their own unilateral hernia.</div>
+            </li>
+            <li>
+              <div style="font-size:1.4rem; font-weight:800; color:#a31515; line-height:1; margin-top:1rem;">79.5%</div>
+              <div style="font-size:0.85rem; color:var(--text-secondary); margin-top:4px;">Prefer 4-port Lap Cholecystectomy over SILS.</div>
+            </li>
+          </ul>
+
+          <h3 class="sidebar-title" style="margin-top:2rem;">Related Playbooks</h3>
+          <ul class="sb-links">
+            <li><a href="../notes/Surgical Operative Approach/Cholecystectomy Monograph.html">Lap Cholecystectomy Playbook</a></li>
+            <li><a href="../notes/Surgical Operative Approach/Inguinal Hernia Monograph.html">Inguinal Hernia Masterclass</a></li>
+          </ul>
+
+          <div class="sb-card" style="margin-top:2rem;">
+            <h4>Join the Community</h4>
+            <p>Discuss the latest surgical debates, landmark trials, and operative strategies with thousands of surgeons worldwide.</p>
+            <a href="https://t.me/sugicalInsightHub" target="_blank" class="sb-btn">Join Telegram Channel</a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </article>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="nav-logo-img" style="width:36px; height:36px; margin-bottom:.8rem;">
+          <img src="../assets/images/Surgical_Insight_Hub_Logo.png" alt="SIH">
+        </div>
+        <div style="font-weight:800; font-size:1.1rem; color:var(--text-primary);">Surgical Insight Hub</div>
+        <p style="font-size:.85rem; color:var(--text-secondary); margin-top:.5rem; line-height:1.5;">Elevating surgical education through evidence-based monographs, interactive arenas, and dynamic clinical discussions.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Platform</h4>
+        <a href="../notes.html">Clinical Notes</a>
+        <a href="../notes/operative_approach.html">Operative Playbook</a>
+        <a href="../arena.html">MCQ Arena</a>
+        <a href="../surgery-talk.html">Surgery Talk</a>
+      </div>
+      <div class="footer-links">
+        <h4>Connect</h4>
+        <a href="https://t.me/sugicalInsightHub" target="_blank">Telegram Channel</a>
+        <a href="https://www.youtube.com/@SurgicalInsightHub" target="_blank">YouTube Library</a>
+        <a href="../about.html">About Us</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 Surgical Insight Hub. All rights reserved. Not medical advice.
+    </div>
+  </footer>
+
+  <script src="../js/navigation.js"></script>
+</body>
+</html>
