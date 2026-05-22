@@ -427,3 +427,381 @@ a:hover {
 @media(max-width: 480px) {
   .mono-sidebar-toggle { bottom: 16px; left: 16px; padding: 8px 16px; font-size: 0.75rem; }
 }
+
+/* ── SIH TELEMETRY & TRAFFIC SYSTEM ── */
+.sih-pulse-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--brand-green, #16a34a);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--brand-green, #16a34a);
+  animation: sihPulseGreen 2s infinite;
+  flex-shrink: 0;
+  display: inline-block;
+}
+
+@keyframes sihPulseGreen {
+  0% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.7); }
+  70% { transform: scale(1.1); box-shadow: 0 0 0 6px rgba(22, 163, 74, 0); }
+  100% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(22, 163, 74, 0); }
+}
+
+.sih-traffic-footer {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 16px;
+  margin: 32px 0 20px 0;
+  padding: 20px 24px;
+  background: rgba(184, 146, 42, 0.04);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  font-family: inherit;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .sih-traffic-footer {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding: 16px;
+  }
+}
+
+.sih-traffic-footer-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sih-traffic-footer-item.ticker {
+  border-right: 1px solid var(--border-color);
+  padding-right: 16px;
+}
+
+.sih-traffic-footer-item.views {
+  border-right: 1px solid var(--border-color);
+  padding-right: 16px;
+  padding-left: 8px;
+}
+
+.sih-traffic-footer-item.personal {
+  padding-left: 8px;
+}
+
+@media (max-width: 768px) {
+  .sih-traffic-footer-item.ticker,
+  .sih-traffic-footer-item.views {
+    border-right: none;
+    padding-right: 0;
+    padding-left: 0;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 12px;
+  }
+  .sih-traffic-footer-item.personal {
+    padding-left: 0;
+  }
+}
+
+.sih-traffic-footer-val {
+  font-family: 'Overpass Mono', monospace;
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sih-traffic-footer-label {
+  font-size: 0.64rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  font-weight: 700;
+}
+
+.sih-ticker-text {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+  height: 20px;
+  overflow: hidden;
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* Floating Pill styling */
+.sih-traffic-pill {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1999;
+  background: var(--glass-bg, rgba(250, 247, 242, 0.85));
+  backdrop-filter: var(--nav-backdrop-filter, blur(20px));
+  -webkit-backdrop-filter: var(--nav-backdrop-filter, blur(20px));
+  border: 1.5px solid var(--border-color);
+  border-radius: 100px;
+  padding: 9px 18px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: var(--shadow-md);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+  user-select: none;
+}
+
+.sih-traffic-pill:hover {
+  transform: translateY(-3px) scale(1.03);
+  border-color: var(--brand-gold);
+  box-shadow: var(--shadow-lg);
+}
+
+.sih-traffic-pill-txt {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Modal Overlay styling */
+.sih-telemetry-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(8, 5, 4, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.sih-telemetry-modal.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.sih-telemetry-content {
+  background: var(--bg-card, #ffffff);
+  border: 1.5px solid var(--border-color);
+  border-radius: 24px;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  position: relative;
+  transform: translateY(20px);
+  transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  display: flex;
+  flex-direction: column;
+  max-height: 90vh;
+}
+
+.sih-telemetry-modal.open .sih-telemetry-content {
+  transform: translateY(0);
+}
+
+.sih-telemetry-header {
+  background: var(--brand-burgundy, #2b1810);
+  padding: 18px 24px;
+  color: #f0d080;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid var(--brand-gold, #b8922a);
+}
+
+.sih-telemetry-title {
+  font-family: 'EB Garamond', 'Georgia', serif;
+  font-size: 1.35rem;
+  font-style: italic;
+  font-weight: 800;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.sih-telemetry-close {
+  background: transparent;
+  border: none;
+  color: rgba(240, 208, 128, 0.7);
+  font-size: 1.6rem;
+  cursor: pointer;
+  transition: color 0.2s, transform 0.2s;
+  line-height: 1;
+}
+
+.sih-telemetry-close:hover {
+  color: #ffffff;
+  transform: scale(1.1);
+}
+
+.sih-telemetry-body {
+  padding: 24px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: var(--bg-primary);
+}
+
+.sih-telemetry-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+@media (max-width: 480px) {
+  .sih-telemetry-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+
+.sih-telemetry-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  padding: 14px;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.sih-telemetry-val {
+  font-family: 'Overpass Mono', monospace;
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--brand-gold, #b8922a);
+  margin-bottom: 4px;
+}
+
+.sih-telemetry-label {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-secondary);
+  font-weight: 700;
+}
+
+.sih-telemetry-section-title {
+  font-family: 'Overpass Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+  border-bottom: 1.5px solid var(--border-color);
+  padding-bottom: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sih-telemetry-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sih-telemetry-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.76rem;
+  padding: 8px 12px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+}
+
+.sih-telemetry-row-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sih-telemetry-dot {
+  width: 6px;
+  height: 6px;
+  background-color: var(--brand-gold);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.sih-telemetry-city {
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.sih-telemetry-desc {
+  color: var(--text-secondary);
+}
+
+.sih-telemetry-time {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  font-family: 'Overpass Mono', monospace;
+  flex-shrink: 0;
+  margin-left: 8px;
+}
+
+/* Telemetry Chart */
+.sih-telemetry-chart-wrap {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  padding: 16px 20px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sih-telemetry-chart-title {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+
+.sih-telemetry-personal {
+  background: rgba(184, 146, 42, 0.035);
+  border: 1.5px dashed var(--brand-gold);
+  border-radius: 14px;
+  padding: 14px 18px;
+  font-size: 0.78rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+.sih-telemetry-personal-title {
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
