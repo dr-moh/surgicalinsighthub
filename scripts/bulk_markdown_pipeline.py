@@ -95,7 +95,7 @@ def call_groq(prompt):
     url = "https://api.groq.com/openai/v1/chat/completions"
     headers = {"Authorization": f"Bearer {GROQ_API_KEY}", "Content-Type": "application/json"}
     payload = {
-        "model": "llama3-70b-8192",
+        "model": "llama-3.3-70b-versatile",
         "messages": [{"role": "system", "content": SYSTEM_INSTRUCTION}, {"role": "user", "content": prompt}],
         "temperature": 0.2
     }
@@ -120,7 +120,7 @@ def call_openrouter(prompt):
     url = "https://openrouter.ai/api/v1/chat/completions"
     headers = {"Authorization": f"Bearer {OPENROUTER_API_KEY}", "Content-Type": "application/json"}
     payload = {
-        "model": "meta-llama/llama-3-70b-instruct:free",
+        "model": "meta-llama/llama-3.1-8b-instruct:free",
         "messages": [{"role": "system", "content": SYSTEM_INSTRUCTION}, {"role": "user", "content": prompt}],
         "temperature": 0.2
     }
@@ -210,9 +210,12 @@ def process_file(file_path):
             q['markdown_debrief'] = md
         else:
             q['markdown_debrief'] = "Failed to generate Markdown."
+        
+        # Free-tier rate limiter: 4.5 seconds per question = ~13 RPM
+        time.sleep(4.5)
         return q
         
-    with ThreadPoolExecutor(max_workers=5) as executor:
+    with ThreadPoolExecutor(max_workers=1) as executor:
         futures = {executor.submit(worker, q): q for q in pending}
         
         count = 0
