@@ -4,33 +4,33 @@ import time
 import glob
 import random
 import requests
+import itertools
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from dotenv import load_dotenv
 
-def load_env():
-    env_vars = {}
-    env_file = "AI Provider API keys.env.txt"
-    if os.path.exists(env_file):
-        with open(env_file, 'r', encoding='utf-8') as f:
-            for line in f:
-                line = line.strip()
-                if line.startswith('#'):
-                    line = line[1:].strip()
-                if '=' in line:
-                    key, val = line.split('=', 1)
-                    if key not in env_vars:
-                        env_vars[key.strip()] = []
-                    env_vars[key.strip()].append(val.strip())
-    return env_vars
+load_dotenv()
 
-ENV = load_env()
-
-GROQ_API_KEY = ENV.get("GROQ_API_KEY", [""])[0]
-GEMINI_API_KEY = ENV.get("GEMINI_API_KEY", [""])[0]
-OPENROUTER_API_KEY = ENV.get("OPENROUTER_API_KEY", [""])[0]
-OLLAMA_ENDPOINTS = ENV.get("LOCAL_OLLAMA_URL", ["http://localhost:11434"])
-OLLAMA_MODEL = ENV.get("LOCAL_MODEL_NAME", ["llama3"])[0]
+OPENROUTER_API_KEY = os.environ.get("OPENROUTER_API_KEY")
+OLLAMA_ENDPOINTS = [os.environ.get("LOCAL_OLLAMA_URL", "http://localhost:11434")]
+OLLAMA_MODEL = os.environ.get("LOCAL_MODEL_NAME", "llama3")
 
 SYSTEM_INSTRUCTION = """You are a world-class surgical educator and medical board examiner. Your task is to extract high-yield medical MCQs from the provided surgical text and format them strictly into the SHARP 4.0 Cognitive & Surgical Debriefing Schema.
+
+Please format all output according to the following strict layout and structural rules:
+
+1. STRUCTURE & FORMATTING:
+   - Create a clear informational hierarchy.
+   - Use horizontal rules (---) to clearly separate major sections or pillars.
+   - Format any structured lists, criteria, scoring, or grading systems into clean Markdown tables with distinct column headers.
+
+2. BULLET POINT NESTING RULES:
+   - Break down dense paragraphs into bullet points.
+   - Never combine multiple separate facts or steps into a single bullet point.
+   - If a point introduces a sub-concept, sub-type, or consequence, immediately indent it as a nested sub-bullet.
+
+3. WRITING STYLE:
+   - Use bullets.
+   - Use bold text for key clinical or technical terms at the start of a point to maximize visual scannability.
 
 Output format should be:
 
@@ -47,55 +47,83 @@ Output format should be:
 * C) [Option 3]
 * D) [Option 4]
 
-**Correct Answer:** [The full text of the correct option (e.g., 'A) Option 1')]
+**Correct Answer:** Option [Letter]
 
 ---
 
-### ⚡ SHARP 4.0 Cognitive & Surgical Debrief
+### ⚡ SHARP 4.0 High-Yield Surgical Debrief
 
-**📌 S – Set the Stage (The Verdict & Diagnostic Pivot)**
-* **The Verdict:** Correct: [Letter]. [Direct answer confirmation].
-* **The Diagnostic Pivot:** [The exact 1–2 pathognomonic clinical, laboratory, or imaging triggers in the vignette that unlock the diagnosis].
+**📌 S – Set the Stage (The Diagnostic Pivot)**
+- **The Verdict:** Option [Letter] ([Answer Text]) is correct because [Direct answer confirmation].
+- **The Pivot Point:** [The exact 1–2 pathognomonic clinical, laboratory, or imaging triggers in the vignette that unlock the diagnosis].
 
-**🎯 H – Highlight Excellence (The Surgical "Why" & Pathology)**
-* **Surgical Mechanism:** [The underlying anatomical, cellular, or pathophysiological flaw].
-* **Clinical Execution:** [Why this is the single best management path to optimize survival or avoid catastrophe].
-* **👁️ Mental Operative Theatre:** [A vivid description of the pathognomonic radiological or intraoperative findings. What does the surgeon see, feel, or encounter?]
+**🎯 H – Highlight Excellence (The Surgical Mechanism)**
+- **Pathophysiology:** [The underlying anatomical, cellular, or pathophysiological flaw].
+- **Gold-Standard Execution:** [Why this is the single best management path to optimize survival or avoid catastrophe].
+- **👁️ Mental Operative Theatre:** [A vivid description of the pathognomonic radiological or intraoperative findings. What does the surgeon see, feel, or encounter?]
 
-**❌ A – Address the Gaps (Systematic Distractor Demolition)**
-* **Option [Wrong Letter] (Incorrect):** [Explains why it fails here, but identifies the exact clinical scenario where this option WOULD be the correct choice].
-* **Option [Wrong Letter] (Incorrect):** [Reasoning].
-* **Option [Wrong Letter] (Incorrect):** [Reasoning].
+**❌ A – Address the Gaps (Distractor Demolition)**
+- **Option [Wrong Letter] (Incorrect):** [Explains why it fails here, but identifies the exact clinical scenario where this option WOULD be the correct choice].
+- **Option [Wrong Letter] (Incorrect):** [Reasoning].
+- **Option [Wrong Letter] (Incorrect):** [Reasoning].
 
-**📊 R – Review Learning Points (Evidence-Based Framework)**
-* **Conceptual Overview:** [Cites the specific source section or textbook chapter].
+**📊 R – Review Learning Points (The Evidence-Based Matrix)**
+- **Core Principle:** [Cites the specific conceptual core principle or rule].
+- **Classification / Decision Tree:**
 
 | [Classification / System / Criteria] | [Key Diagnostic / Imaging Finding] | [Immediate Surgical / Clinical Pivot] | [Core Guideline / Surgical Society Consensus] |
 | :--- | :--- | :--- | :--- |
 | **[Type / Stage / Grade A]** | [Pathognomonic clue or threshold] | [First-line maneuver or intervention] | [e.g., SAGES, ASCRS, ATLS, ASA, Tokyo] |
 | **[Type / Stage / Grade B]** | [Pathognomonic clue or threshold] | [First-line maneuver or intervention] | [e.g., SAGES, ASCRS, ATLS, ASA, Tokyo] |
 
-**⚠️ Critical Guideline Updates & Textbook Conflicts**
-* **Standard Textbooks (Bailey & Love / Sabiston / Schwartz):** [Standard text teaching]
-* **Society Guidelines (ATLS / SAGES / NCCN / EAES):** [Current guideline teaching]
-* **The Discrepancy:** [Flags if the exam answer differs from real-world practice or if guidelines conflict].
+> **⚠️ Guideline Consensus & Discrepancies**
+> - **Standard Textbooks (Bailey & Love / Sabiston):** [Standard text teaching]
+> - **Society Guidelines (ATLS / SAGES / NCCN):** [Current guideline teaching]
+> - **The Conflict:** [Flags if the exam answer differs from real-world practice or if guidelines conflict].
 
-**💡 P – Plan for Improvement (The Exam Heuristic)**
-* **The Board Pearl:** [A 1-sentence, high-yield "If X, then do Y" rule for rapid retention].
+**💡 P – Plan for Improvement (The Rapid-Fire Heuristic)**
+- **The Board Pearl:** [A 1-sentence, high-yield "If X, then do Y" rule for rapid retention].
 """
+
+PREMIUM_MODELS = [
+    "openai/gpt-4o-mini",
+    "anthropic/claude-3-5-haiku-20241022",
+    "google-ai-studio/gemini-flash-1.5",
+    "mistral/ministral-8b",
+    "groq/llama-3.1-8b-instant"
+]
+model_cycle = itertools.cycle(PREMIUM_MODELS)
 
 def call_atxp(prompt):
     ATXP_CONNECTION = "https://accounts.atxp.ai?connection_token=I8ybZQAMDOfH42JDuv76M&account_id=atxp_acct_TyqIFldoHcKLRF4gA0gE0"
     url = "https://llm.atxp.ai/v1/chat/completions"
     headers = {"Authorization": f"Bearer {ATXP_CONNECTION}", "Content-Type": "application/json"}
+    
+    current_model = next(model_cycle)
     payload = {
-        "model": "google-ai-studio/gemini-3.5-flash",
+        "model": current_model,
         "messages": [{"role": "system", "content": SYSTEM_INSTRUCTION}, {"role": "user", "content": prompt}],
         "temperature": 0.2
     }
-    resp = requests.post(url, headers=headers, json=payload, timeout=60)
-    resp.raise_for_status()
-    return resp.json()["choices"][0]["message"]["content"]
+    
+    max_retries = 10
+    for attempt in range(max_retries):
+        try:
+            resp = requests.post(url, headers=headers, json=payload, timeout=60)
+            resp.raise_for_status()
+            return resp.json()["choices"][0]["message"]["content"]
+        except requests.exceptions.HTTPError as e:
+            if resp.status_code == 429:
+                print(f"⚠️ ATXP 429 Rate Limit. Backing off for {2 ** attempt}s...")
+                time.sleep(2 ** attempt)
+            else:
+                raise e
+        except Exception as e:
+            if attempt == max_retries - 1:
+                raise e
+            time.sleep(2 ** attempt)
+            
+    raise Exception("Max retries exceeded for ATXP")
 
 def call_ollama(prompt):
     if not OLLAMA_ENDPOINTS: raise Exception("No OLLAMA_ENDPOINTS")
@@ -168,7 +196,7 @@ def process_file(file_path):
         
         return q
         
-    with ThreadPoolExecutor(max_workers=20) as executor:
+    with ThreadPoolExecutor(max_workers=5) as executor:
         futures = {executor.submit(worker, q): q for q in pending}
         
         count = 0

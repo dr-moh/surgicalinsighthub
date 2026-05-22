@@ -36,3 +36,4 @@ enrichment_progress.log
 .idea/
 .venv/
 scripts/
+*.env

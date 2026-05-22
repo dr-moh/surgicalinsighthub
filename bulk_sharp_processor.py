@@ -142,10 +142,15 @@ def get_sharp_debrief(question_obj):
     import urllib.error
 
     prompt = f"""
-You are a world-class surgical educator and medical board examiner. Your task is to process the following medical MCQ and format it strictly into the SHARP 3.0 Cognitive & Surgical Debriefing Schema.
+You are a world-class surgical educator and medical board examiner. Your task is to process the following medical MCQ and format it strictly into the SHARP 4.0 Cognitive & Surgical Debriefing Schema.
+
+SHARP 4.0 FORMATTING RULES:
+1. STRUCTURE & FORMATTING: Create a clear informational hierarchy. Use horizontal rules to clearly separate major sections. Format any structured lists or classification systems into clean Markdown tables with distinct column headers.
+2. BULLET POINT NESTING RULES: Break down dense paragraphs into bullet points. NEVER combine multiple separate facts or steps into a single bullet point. If a point introduces a sub-concept, sub-type, or consequence, immediately indent it as a nested sub-bullet.
+3. WRITING STYLE: Use bullets heavily. Use **bold text** for key clinical or technical terms at the start of a point to maximize visual scannability.
 
 OUTPUT FORMAT:
-Return ONLY a valid JSON object with the key "questions". No markdown wrappers, no conversational text, no trailing explanations.
+Return ONLY a valid JSON object with the key "questions". No markdown wrappers, no conversational text.
 
 SCHEMA FOR THE OUTPUT JSON:
 {{
@@ -153,56 +158,57 @@ SCHEMA FOR THE OUTPUT JSON:
     {{
       "specialty": "Primary medical/surgical specialty",
       "topic": "Core anatomical or disease system",
-  "sub_topic": "Specific pathology or operation",
-  "question": "The clinical stem or technical question. High-yield, board-style. Strip out all leaked answers, tracking indicators, or source index markers completely.",
-  "options": [
-    "A) Option 1",
-    "B) Option 2",
-    "C) Option 3",
-    "D) Option 4"
-  ],
-  "correct_answer": "The full text of the correct option (e.g., 'A) Option 1')",
-  "sharp_3_debrief": {{
-    "S_set_the_stage": {{
-      "verdict": "Correct: [Letter]. [Direct answer confirmation].",
-      "pivot": "[1-2 punchy sentences identifying the exact clinical crux, timeline milestone, anatomical boundary, or physiological tipping point that eliminates all diagnostic ambiguity]."
-    }},
-    "H_highlight_excellence": {{
-      "surgical_mechanism": "[Deep dive into underlying surgical anatomy, tissue planes, structural relationships, or pathophysiology. Use precise, expert-level terminology].",
-      "clinical_execution": "[Explain why this specific mechanism dictates the selected surgical maneuver, medical management, or diagnostic path forward for an operating surgeon]."
-    }},
-    "A_address_the_gaps": {{
-      "distractor_breakdown": [
-        {{
-          "option": "Wrong Option Letter (e.g., A)",
-          "reason": "[Specific anatomical, physiological, or clinical reason this option fails. State exactly how the stem would need to change for this option to become the correct choice]."
+      "sub_topic": "Specific pathology or operation",
+      "question": "The clinical stem or technical question. High-yield, board-style. Strip out all leaked answers completely.",
+      "options": [
+        "A) Option 1",
+        "B) Option 2",
+        "C) Option 3",
+        "D) Option 4"
+      ],
+      "correct_answer": "The full text of the correct option",
+      "sharp_3_debrief": {{
+        "S_set_the_stage": {{
+          "verdict": "Correct: [Letter]. [Direct answer confirmation].",
+          "pivot": "[1-2 punchy sentences identifying the exact clinical crux]."
+        }},
+        "H_highlight_excellence": {{
+          "surgical_mechanism": "[Deep dive into underlying surgical anatomy/pathophysiology using strict **bold-prefixed bullets**].",
+          "clinical_execution": "[Explain why this specific mechanism dictates the selected maneuver using strict **bold-prefixed bullets**]."
+        }},
+        "A_address_the_gaps": {{
+          "distractor_breakdown": [
+            {{
+              "option": "Wrong Option Letter (e.g., A)",
+              "reason": "[Specific reason this option fails using strict bullet point rules]."
+            }}
+          ]
+        }},
+        "R_review_learning_points": {{
+          "conceptual_overview": "[Macro-level clinical summary].",
+          "matrix_headers": ["Classification/System/Criteria", "Key Diagnostic/Imaging Finding", "Immediate Surgical/Clinical Pivot", "Core Guideline/Surgical Society Consensus"],
+          "matrix_rows": [
+            ["Type/Stage/Grade A", "Pathognomonic clue or threshold", "First-line maneuver or intervention", "e.g., SAGES, ASCRS, ATLS, ASA, Tokyo"],
+            ["Type/Stage/Grade B", "Pathognomonic clue or threshold", "First-line maneuver or intervention", "e.g., SAGES, ASCRS, ATLS, ASA, Tokyo"]
+          ]
+        }},
+        "P_plan_for_improvement": {{
+          "board_pearl": "[A single, high-density, conditional 'if/then' rule optimized for rapid recall]."
         }}
-      ]
-    }},
-    "R_review_learning_points": {{
-      "conceptual_overview": "[Macro-level clinical summary of the overarching disease process, anatomical system, or surgical principles involved].",
-      "matrix_headers": ["Classification/System/Criteria", "Key Diagnostic/Imaging Finding", "Immediate Surgical/Clinical Pivot", "Core Guideline/Surgical Society Consensus"],
-      "matrix_rows": [
-        ["Type/Stage/Grade A", "Pathognomonic clue or threshold", "First-line maneuver or intervention", "e.g., SAGES, ASCRS, ATLS, ASA, Tokyo"],
-        ["Type/Stage/Grade B", "Pathognomonic clue or threshold", "First-line maneuver or intervention", "e.g., SAGES, ASCRS, ATLS, ASA, Tokyo"]
-      ]
-    }},
-    "P_plan_for_improvement": {{
-      "board_pearl": "[A single, high-density, conditional 'if/then' rule or unforgettable mental heuristic optimized for rapid recall under exam pressure]."
+      }},
+      "supplementary_callouts": {{
+        "society_guideline": "[The primary, most current society guideline or consensus statement referenced].",
+        "key_takeaway": "[A one-sentence, razor-sharp summary of the core clinical fact tested by this item].",
+        "visualization": "[Describe exactly what the surgeon must 'see']."
+      }}
     }}
-  }},
-  "supplementary_callouts": {{
-    "society_guideline": "[The primary, most current society guideline or consensus statement referenced].",
-    "key_takeaway": "[A one-sentence, razor-sharp summary of the core clinical fact tested by this item].",
-    "visualization": "[Describe exactly what the surgeon must 'see' on cross-sectional imaging, endoscopic evaluation, or when dissecting the tissue plane in the OR to visually confirm this answer]."
-  }}
   ]
 }}
 
 QUALITY CONTROLS:
-- Vary sentence structures aggressively: mix ultra-short diagnostic fragments with dense anatomical explanations.
-- Eliminate corporate/AI filler (e.g., 'It is crucial to note', 'In conclusion', 'foster', 'delve'). Go straight to the anatomy and tissue planes.
-- If source text contains insufficient data for the classification matrix rows, output a generalized breakdown based on standard surgical knowledge rather than leaving it blank.
+- Apply the SHARP 4.0 bullet point nesting rules rigorously to the `surgical_mechanism`, `clinical_execution`, and `reason` fields.
+- Use bolded keywords at the start of bullets.
+- Do NOT output dense paragraphs.
 
 Provided MCQ Text:
 Q: {question_obj.get('question', '')}

@@ -1,100 +1,153 @@
-#!/usr/bin/env python3
 import json
+import os
+import time
+import random
 import re
-import subprocess
-from pathlib import Path
-import importlib.util
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
-ROOT = Path(__file__).resolve().parents[1]
-CANONICAL = ROOT / 'MCQ Bank' / 'canonical_questions.json'
-CANONICAL_JS = ROOT / 'js' / 'questions' / 'canonical_questions.js'
+try:
+    from google import genai
+    from google.genai import types
+    vertex_client = genai.Client(vertexai=True, project="sih-mcq-pipeline", location="us-central1")
+except Exception as e:
+    print(f"Vertex AI failed to initialize: {e}")
+    vertex_client = None
 
+SHARP_4_PROMPT = """You are an expert medical educator and data engineer. 
+I will provide you with a severely corrupted Multiple Choice Question (MCQ).
+The text has suffered extreme OCR damage (e.g. spaces between every letter) and the correct answer or explanation has been leaked directly into the question text or options.
 
-def load_pipeline_module():
-    path = ROOT / 'scripts' / 'mcq_pipeline.py'
-    spec = importlib.util.spec_from_file_location('mcq_pipeline', str(path))
-    mod = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(mod)
-    return mod
+Your job is to read the garbled text, reconstruct the actual question, the 4 or 5 options, the correct answer, AND generate a SHARP 4.0 Debrief.
 
+SHARP 4.0 FORMATTING RULES:
+1. STRUCTURE: Create a clear informational hierarchy.
+2. BULLETS: Break down all dense paragraphs into bullet points. NEVER combine multiple separate facts into a single bullet. If a point introduces a sub-concept, indent it as a nested sub-bullet.
+3. SCANNABILITY: Use **bold text** for key clinical or technical terms at the start of a point.
 
-def repair_record(mod, rec):
-    changed = []
-    # Ensure options A-D present and coherent
-    options = rec.get('options', {}) if isinstance(rec.get('options', {}), dict) else {}
-    normalized_options = {letter: mod.compact(options.get(letter, '')) for letter in ['A', 'B', 'C', 'D', 'E']}
-    completed = mod.complete_options(rec, normalized_options)
-    if completed != options:
-        rec['options'] = completed
-        changed.append('options_filled')
+OUTPUT JSON ONLY. Do not wrap in markdown blocks, just output the raw JSON object.
+Use this exact JSON format:
+{
+  "question": "The reconstructed question text without any answer leaks?",
+  "options": {
+    "A": "Option A text",
+    "B": "Option B text",
+    "C": "Option C text",
+    "D": "Option D text"
+  },
+  "answer": "A",
+  "explanation": {
+    "correct": "Why the correct answer is right",
+    "A": "Why A is right/wrong",
+    "B": "Why B is right/wrong",
+    "C": "Why C is right/wrong",
+    "D": "Why D is right/wrong"
+  },
+  "sharp_debrief": {
+    "S_set_the_stage": "**Verdict:** Correct: A.\\n\\n**The Pivot:** 1-2 punchy sentences identifying the exact clinical crux.",
+    "H_highlight_excellence": "**Surgical Mechanism:** Deep dive into pathophysiology using strict bullets.\\n\\n**Clinical Execution:** Explain specific maneuvers using strict bullets.",
+    "A_address_the_gaps": "",
+    "R_review_learning_points": "**Conceptual Overview:** Macro summary.\\n\\n| Classification | Key Finding | Immediate Pivot | Guideline |\\n|---|---|---|---|\\n| Type A | Finding | Action | Guideline |",
+    "P_plan_for_improvement": "**The Board Pearl:** *A single unforgettable heuristic.*"
+  },
+  "supplementary_callouts": {
+    "guideline": "Primary society guideline referenced",
+    "takeaway": "One-sentence takeaway",
+    "visualization": "What the surgeon must 'see'"
+  },
+  "specialty": "General Surgery",
+  "topic": "General"
+}
+Ensure the output is clean JSON."""
 
-    # Ensure answer points to non-empty option
-    ans = mod.normalize_answer(rec)
-    if rec.get('answer') != ans:
-        rec['answer'] = ans
-        changed.append('answer_fixed')
-
-    # Fix short explanation
-    expl = (rec.get('explanation') or {}).get('correct', '')
-    if len(str(expl).split()) < 6:
-        sharp_h = (rec.get('sharp') or {}).get('highlight_excellence')
-        if sharp_h:
-            rec.setdefault('explanation', {})['correct'] = sharp_h
-            changed.append('explanation_from_sharp')
-        else:
-            guideline = rec.get('guideline') or ''
-            rec.setdefault('explanation', {})['correct'] = (guideline and f"See guideline: {guideline}") or 'See source reference.'
-            changed.append('explanation_from_guideline')
-
-    # Replace placeholder takeaways/guideline language
-    takeaway = rec.get('takeaway', '') or ''
-    if re.search(r'correct answer from|remember the core principle|board-style clue|refer to specialty guidance', takeaway, flags=re.I):
-        new_take = (rec.get('sharp') or {}).get('takeaway') or ''
-        if new_take:
-            rec['takeaway'] = new_take
-            changed.append('takeaway_replaced')
-
-    # Clean visualization placeholder
-    vis = rec.get('visualization', '') or ''
-    if vis.lower().startswith('picture') or vis.lower().startswith('envision'):
-        # keep as-is but shorten
-        rec['visualization'] = vis[:200]
-
-    return changed
-
+def call_vertex_repair(corrupted_text):
+    if not vertex_client:
+        return None
+        
+    prompt = f"{SHARP_4_PROMPT}\n\nCORRUPTED TEXT TO REPAIR:\n{corrupted_text}"
+    
+    max_retries = 8
+    for attempt in range(max_retries):
+        try:
+            response = vertex_client.models.generate_content(
+                model='gemini-2.5-flash',
+                contents=prompt,
+                config=types.GenerateContentConfig(
+                    response_mime_type="application/json",
+                    temperature=0.1
+                )
+            )
+            content = response.text.strip()
+            return json.loads(content)
+        except Exception as e:
+            err_msg = str(e)
+            if attempt == max_retries - 1:
+                print(f"Failed to repair: {err_msg}")
+                return None
+            if "429" in err_msg or "RESOURCE_EXHAUSTED" in err_msg:
+                wait_time = random.uniform(3.0, 7.0)
+                time.sleep(wait_time)
+            else:
+                time.sleep(1)
+            
+def process_question(item):
+    corrupted_text = item.get("question", "") + "\n" + "\n".join(item.get("options", [])) if isinstance(item.get("options"), list) else item.get("question", "") + "\n" + str(item.get("options", ""))
+    
+    repaired_json = call_vertex_repair(corrupted_text)
+    if repaired_json:
+        repaired_json["id"] = item.get("id")
+        return repaired_json
+    return None
 
 def main():
-    mod = load_pipeline_module()
-    arr = json.loads(CANONICAL.read_text(encoding='utf-8'))
-    repaired = 0
-    detail = {}
-    for rec in arr:
-        ch = repair_record(mod, rec)
-        if ch:
-            repaired += 1
-            detail[rec.get('id')] = ch
+    bad_mcqs_path = "compiled_mcqs/removed_bad_mcqs.json"
+    recovered_path = "compiled_mcqs/Recovered.json"
+    
+    if not os.path.exists(bad_mcqs_path):
+        print("No bad MCQs found to process.")
+        return
+        
+    with open(bad_mcqs_path, "r", encoding="utf-8") as f:
+        bad_mcqs = json.load(f)
+        
+    print(f"Loaded {len(bad_mcqs)} corrupted questions.")
+    
+    recovered_mcqs = []
+    if os.path.exists(recovered_path):
+        with open(recovered_path, "r", encoding="utf-8") as f:
+            try:
+                recovered_mcqs = json.load(f)
+            except:
+                pass
+                
+    recovered_ids = {str(q.get("id")) for q in recovered_mcqs}
+    to_process = [q for q in bad_mcqs if str(q.get("id")) not in recovered_ids]
+    print(f"Skipping {len(recovered_mcqs)} already recovered. Processing {len(to_process)} questions...")
+    
+    limit = len(to_process)
+    success_count = 0
+    fail_count = 0
+    
+    print(f"Processing in background using Vertex AI...", flush=True)
+    with ThreadPoolExecutor(max_workers=20) as executor:
+        futures = {executor.submit(process_question, q): q for q in to_process[:limit]}
+        
+        for i, future in enumerate(as_completed(futures)):
+            result = future.result()
+            if result:
+                recovered_mcqs.append(result)
+                success_count += 1
+            else:
+                fail_count += 1
+                
+            if i > 0 and i % 50 == 0:
+                print(f"Progress: {i}/{limit} | Success: {success_count} | Failed: {fail_count}", flush=True)
+                with open(recovered_path, "w", encoding="utf-8") as f:
+                    json.dump(recovered_mcqs, f, indent=4)
+                    
+    with open(recovered_path, "w", encoding="utf-8") as f:
+        json.dump(recovered_mcqs, f, indent=4)
+        
+    print(f"\nFinished! Successfully recovered {success_count} out of {limit}. Failed {fail_count}.")
 
-    # Dedupe and reassign ids
-    final = mod.dedupe_records(arr)
-
-    # Write out final canonical files (overwrite)
-    with open(CANONICAL, 'w', encoding='utf-8') as f:
-        json.dump(final, f, indent=2, ensure_ascii=False)
-
-    CANONICAL_JS.parent.mkdir(parents=True, exist_ok=True)
-    with open(CANONICAL_JS, 'w', encoding='utf-8') as f:
-        f.write('if (!window.QUESTIONS) window.QUESTIONS = []\n')
-        f.write('window.QUESTIONS = ' + json.dumps(final, indent=2, ensure_ascii=False) + ';\n')
-        f.write('window.QUESTIONS_LOADED = true;\n')
-
-    print('Total canonical before:', len(arr))
-    print('Repaired records count:', repaired)
-    print('Total canonical after dedupe:', len(final))
-
-    # Run validation
-    proc = subprocess.run(['node', str(ROOT / 'scripts' / 'validate_mcq_standard.js'), str(CANONICAL_JS)])
-    print('Validation return code:', proc.returncode)
-
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

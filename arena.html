@@ -980,14 +980,54 @@ function showSharp(q, selected, isCorrect) {
   if (q.markdown_debrief && typeof marked !== 'undefined') {
     // Strip the duplicate question/options block from the markdown if present, 
     // since the UI already shows the question and options above the debrief.
-    // The markdown typically has "### SHARP 3.0 Cognitive & Surgical Debrief" as the start of the actual debrief
+    // The markdown typically has "### SHARP 3.0 Cognitive & Surgical Debrief" or "### ⚡ SHARP 4.0..."
     var debriefContent = q.markdown_debrief;
-    var splitIndex = debriefContent.indexOf('### SHARP 3.0 Cognitive & Surgical Debrief');
-    if (splitIndex !== -1) {
-       debriefContent = debriefContent.substring(splitIndex);
+    var match = debriefContent.match(/###\s*(?:⚡\s*)?SHARP\s+(3\.0|4\.0)\s+Cognitive\s+&\s+Surgical\s+Debrief/i);
+    if (match) {
+       debriefContent = debriefContent.substring(match.index);
     }
     
-    markdownWrap.innerHTML = marked.parse(debriefContent);
+    var rawHtml = marked.parse(debriefContent);
+    
+    // Golden Design HTML Interceptor
+    var tempDiv = document.createElement('div');
+    tempDiv.innerHTML = rawHtml;
+    
+    // Inject premium classes into top-level list items (S.H.A.R.P.)
+    // We target direct children of the top-level ul to avoid nested lists.
+    var topLists = tempDiv.querySelectorAll(':scope > ul');
+    topLists.forEach(function(ul) {
+      var listItems = ul.querySelectorAll(':scope > li');
+      listItems.forEach(function(li) {
+        var firstTextNode = li.textContent.trim();
+        if (/S\s*[–-]\s*Set the Stage/i.test(firstTextNode)) {
+          li.classList.add('sharp-golden-card', 'sharp-s-card');
+        } else if (/H\s*[–-]\s*Highlight Excellence/i.test(firstTextNode)) {
+          li.classList.add('sharp-golden-card', 'sharp-h-card');
+        } else if (/A\s*[–-]\s*Address the Gaps/i.test(firstTextNode)) {
+          li.classList.add('sharp-golden-card', 'sharp-a-card');
+        } else if (/R\s*[–-]\s*Review Learning Points/i.test(firstTextNode)) {
+          li.classList.add('sharp-golden-card', 'sharp-r-card');
+        } else if (/P\s*[–-]\s*Plan for Improvement/i.test(firstTextNode) || /Board Pearl/i.test(firstTextNode)) {
+          li.classList.add('sharp-golden-card', 'sharp-p-card');
+        } else {
+          // General fallback for other top-level lists (like Supplementary Callouts)
+          li.classList.add('sharp-golden-card', 'sharp-general-card');
+        }
+      });
+    });
+
+    // Style the main headers and sub-headers
+    var headings = tempDiv.querySelectorAll('h3, h4');
+    headings.forEach(function(h) {
+      if (h.textContent.includes('SHARP')) {
+        h.classList.add('sharp-golden-header');
+      } else if (h.textContent.includes('Supplementary')) {
+        h.classList.add('sharp-golden-subheader');
+      }
+    });
+
+    markdownWrap.innerHTML = tempDiv.innerHTML;
     markdownWrap.style.display = 'block';
     mainList.style.display = 'none';
     suppWrap.style.display = 'none';
