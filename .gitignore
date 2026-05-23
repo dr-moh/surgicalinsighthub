@@ -37,3 +37,10 @@ enrichment_progress.log
 .venv/
 scripts/
 *.env
+
+# Backend data files - too large for Cloudflare Pages
+compiled_mcqs/removed_bad_mcqs.json
+compiled_mcqs/Recovered.json
+js/questions/removed_bad_mcqs.js
+test_*.py
+*.env
