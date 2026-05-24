@@ -17,6 +17,511 @@
     const savedTheme = localStorage.getItem('sih-theme') || 'light';
     if (savedTheme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
   </script>
+  
+  <style>
+    /* Premium Interactive Post Dashboard Styles */
+    .data-wrapper {
+      margin: 3rem 0;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+    
+    .data-wrapper:hover {
+      box-shadow: var(--shadow-lg);
+      border-color: rgba(37, 99, 235, 0.2);
+    }
+    
+    .data-toggle-bar {
+      display: flex;
+      justify-content: flex-end;
+      background: var(--bg-secondary);
+      padding: 10px 16px;
+      border-bottom: 1px solid var(--border-color);
+      gap: 10px;
+    }
+    
+    .toggle-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 8px;
+      border: 1px solid transparent;
+      background: transparent;
+      color: var(--text-secondary);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    
+    .toggle-btn svg {
+      width: 16px;
+      height: 16px;
+      stroke: currentColor;
+      transition: stroke 0.2s ease;
+    }
+    
+    .toggle-btn:hover {
+      color: var(--text-primary);
+      background: rgba(37, 99, 235, 0.05);
+    }
+    
+    .toggle-btn.active {
+      background: var(--bg-card);
+      color: #2563eb;
+      border-color: var(--border-color);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    
+    [data-theme="dark"] .toggle-btn.active {
+      color: #3b82f6;
+      background: var(--bg-secondary);
+    }
+    
+    .data-content {
+      display: none;
+      padding: 24px;
+    }
+    
+    .data-content.active {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(5px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    /* Interactive Flowchart Styles */
+    .flow-chart-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      font-family: 'Inter', sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .flow-node {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 16px 20px;
+      width: 100%;
+      max-width: 500px;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+      position: relative;
+      transition: all 0.2s ease;
+    }
+    
+    .flow-node:hover {
+      transform: translateY(-2px);
+      border-color: #2563eb;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.08);
+    }
+    
+    .flow-node-title {
+      font-weight: 700;
+      color: var(--text-primary);
+      font-size: 0.95rem;
+      margin-bottom: 4px;
+    }
+    
+    .flow-node-desc {
+      color: var(--text-secondary);
+      font-size: 0.8rem;
+    }
+    
+    .flow-badge {
+      display: inline-block;
+      margin-top: 6px;
+      padding: 2px 8px;
+      background: rgba(37, 99, 235, 0.1);
+      color: #2563eb;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+    
+    .flow-arrow {
+      width: 2px;
+      height: 24px;
+      background: var(--border-color);
+      position: relative;
+    }
+    
+    .flow-arrow::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-top: 6px solid var(--border-color);
+    }
+    
+    .flow-split-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      width: 100%;
+      position: relative;
+    }
+    
+    .flow-side-branch {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    @media(max-width: 600px) {
+      .flow-split-row {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+    }
+    
+    /* Interactive Table Styles */
+    .table-header-tools {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      gap: 12px;
+    }
+    
+    .table-tabs {
+      display: flex;
+      gap: 6px;
+      background: var(--bg-secondary);
+      padding: 4px;
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+    }
+    
+    .table-tab-btn {
+      padding: 6px 12px;
+      border-radius: 6px;
+      border: none;
+      background: transparent;
+      color: var(--text-secondary);
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    
+    .table-tab-btn.active {
+      background: var(--bg-card);
+      color: var(--text-primary);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    
+    .table-search-input {
+      padding: 8px 14px;
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+      background: var(--bg-card);
+      color: var(--text-primary);
+      font-size: 0.85rem;
+      width: 220px;
+      font-family: 'Inter', sans-serif;
+      transition: all 0.2s ease;
+    }
+    
+    .table-search-input:focus {
+      outline: none;
+      border-color: #2563eb;
+      box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
+    }
+    
+    .table-scroll {
+      overflow-x: auto;
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+    }
+    
+    .interactive-data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      text-align: left;
+    }
+    
+    .interactive-data-table th {
+      background: var(--bg-secondary);
+      color: var(--text-primary);
+      font-weight: 700;
+      padding: 12px 16px;
+      border-bottom: 2px solid var(--border-color);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    
+    .interactive-data-table td {
+      padding: 12px 16px;
+      color: var(--text-secondary);
+      border-bottom: 1px solid var(--border-color);
+      vertical-align: middle;
+      transition: background 0.15s ease;
+    }
+    
+    .interactive-data-table tr:hover td {
+      background: rgba(37, 99, 235, 0.02) !important;
+    }
+    
+    .interactive-data-table tr.highlight-danger td {
+      background: rgba(220, 38, 38, 0.02);
+    }
+    
+    .interactive-data-table tr.highlight-danger:hover td {
+      background: rgba(220, 38, 38, 0.04) !important;
+    }
+    
+    .sig-badge {
+      display: inline-block;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.7rem;
+      font-weight: 700;
+    }
+    
+    .sig-badge.danger {
+      background: rgba(220, 38, 38, 0.1);
+      color: #dc2626;
+    }
+    
+    .sig-badge.neutral {
+      background: var(--bg-secondary);
+      color: var(--text-muted);
+    }
+    
+    .info-tooltip {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--border-color);
+      color: var(--text-secondary);
+      font-size: 0.65rem;
+      font-weight: 700;
+      margin-left: 4px;
+      cursor: help;
+    }
+    
+    .info-tooltip:hover::after {
+      content: attr(data-tip);
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      margin-bottom: 6px;
+      padding: 6px 10px;
+      background: #1e293b;
+      color: #fff;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      white-space: normal;
+      width: 180px;
+      z-index: 10;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      text-align: center;
+      font-weight: 400;
+    }
+    
+    /* Interactive Forest Plot Styles */
+    .forest-plot {
+      font-family: 'Inter', sans-serif;
+      margin: 10px auto;
+      max-width: 900px;
+    }
+    
+    .forest-header {
+      display: grid;
+      grid-template-columns: 200px 1fr 240px;
+      gap: 16px;
+      padding: 10px;
+      border-bottom: 2px solid var(--border-color);
+      font-weight: 700;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-primary);
+    }
+    
+    .forest-row {
+      display: grid;
+      grid-template-columns: 200px 1fr 240px;
+      gap: 16px;
+      padding: 14px 10px;
+      border-bottom: 1px solid var(--border-color);
+      align-items: center;
+      transition: background 0.15s ease;
+    }
+    
+    .forest-row:hover {
+      background: rgba(37, 99, 235, 0.02);
+    }
+    
+    .forest-label {
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: var(--text-primary);
+    }
+    
+    .forest-axis-container {
+      position: relative;
+      height: 40px;
+      background: var(--bg-secondary);
+      border-radius: 6px;
+      border: 1px solid var(--border-color);
+      overflow: hidden;
+    }
+    
+    .forest-no-difference {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 6.25%; /* RR = 1.0 (1 * 6.25%) */
+      border-left: 2px dashed #b91c1c;
+      z-index: 1;
+    }
+    
+    .forest-no-diff-label {
+      position: absolute;
+      top: 2px;
+      left: 7%;
+      font-size: 0.6rem;
+      color: #b91c1c;
+      font-weight: 700;
+      z-index: 2;
+    }
+    
+    .forest-ci-line {
+      position: absolute;
+      top: 50%;
+      height: 2px;
+      background: #2563eb;
+      transform: translateY(-50%);
+      z-index: 2;
+    }
+    
+    .forest-ci-line.has-arrow::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      border-top: 4px solid transparent;
+      border-bottom: 4px solid transparent;
+      border-left: 6px solid #2563eb;
+    }
+    
+    .forest-rr-dot {
+      position: absolute;
+      top: 50%;
+      width: 10px;
+      height: 10px;
+      background: #1e293b;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 3;
+      box-shadow: 0 0 0 2px #fff;
+    }
+    
+    [data-theme="dark"] .forest-rr-dot {
+      background: #f8fafc;
+      box-shadow: 0 0 0 2px #0f172a;
+    }
+    
+    .forest-not-calculable {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-style: italic;
+      color: var(--text-muted);
+      z-index: 2;
+    }
+    
+    .forest-stats {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      line-height: 1.4;
+    }
+    
+    .forest-stats-rr {
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+    
+    .forest-x-scale {
+      display: grid;
+      grid-template-columns: repeat(9, 1fr);
+      padding: 4px 10px 0;
+      margin-left: 200px;
+      margin-right: 240px;
+      font-size: 0.65rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      border-top: 1px solid var(--border-color);
+    }
+    
+    .forest-scale-label {
+      text-align: center;
+      margin-top: 6px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--text-secondary);
+    }
+    
+    @media(max-width: 800px) {
+      .forest-header, .forest-row {
+        grid-template-columns: 140px 1fr 160px;
+      }
+      .forest-x-scale {
+        margin-left: 140px;
+        margin-right: 160px;
+      }
+    }
+    
+    @media(max-width: 600px) {
+      .forest-header, .forest-row {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        padding: 12px;
+      }
+      .forest-x-scale {
+        display: none;
+      }
+      .forest-axis-container {
+        height: 30px;
+      }
+      .forest-scale-label {
+        display: none;
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="blob blob-1"></div>
@@ -86,7 +591,7 @@
       <main class="blog-main blog-content">
         <p>The "difficult gallbladder" remains one of the most treacherous encounters in general surgery. When faced with severe inflammation, distorted anatomy, or dense adhesions that obscure the critical view of safety, surgical dogma and SAGES guidelines point to a reliable bailout: the <strong>partial (subtotal) cholecystectomy</strong>.</p>
 
-        <p>While this technique undeniably mitigates the catastrophic risk of major bile duct injury, it brings its own distinct complication profile. A new 2026 study in the <em>Journal of Surgical Research</em> by Nigam et al. leverages Natural Language Processing (NLP) to cut through coding ambiguities and provide a rigorous, propensity-matched look at just how significant that morbidity actually is.</p>
+        <p>While this technique undeniably mitigates the catastrophic risk of major bile duct injury, it brings its own distinct complication profile. A new study in the <em>Journal of Surgical Research</em> by Nigam et al. leverages Natural Language Processing (NLP) to cut through coding ambiguities and provide a rigorous, propensity-matched look at just how significant that morbidity actually is.</p>
 
         <hr>
 
@@ -94,17 +599,289 @@
         
         <p>Because partial cholecystectomy lacks specific CPT and ICD-10 codes in clinical practice, capturing accurate data has historically been a challenge. To solve this, the researchers applied a validated BioClinicalBERT NLP classifier to over 15,000 operative reports across 14 hospitals from 2010 to 2025.</p>
 
-        <p>This AI-driven approach achieved a 95.9% accuracy rate, successfully identifying 107 partial cholecystectomies. To control for selection bias (as partial cases inherently involve sicker patients and worse pathology), they utilized a 4:1 propensity score matching based on age, sex, race, ethnicity, and comorbidities. The final analytic cohort consisted of 518 patients.</p>
+        <p>This AI-driven approach achieved a 95.9% accuracy rate, successfully identifying 107 partial cholecystectomies. To control for selection bias (as partial cases inherently involve sicker patients and worse pathology), they utilized a ~4:1 propensity score matching based on age, sex, race, ethnicity, and comorbidities. The final analytic cohort consisted of 518 patients.</p>
 
-        <figure class="blog-image">
-          <img src="../assets/images/report_fig1.png" alt="Figure 1: Flow Diagram of Patient Selection" style="width:100%; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-          <figcaption>Figure 1: Flow diagram showing the NLP classification and propensity score matching process.</figcaption>
-        </figure>
+        <!-- Figure 1 Interactive Dashboard -->
+        <div class="data-wrapper" id="wrapper-fig1">
+          <div class="data-toggle-bar">
+            <button class="toggle-btn active" onclick="switchView('fig1', 'interactive')">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+              Interactive Flowchart
+            </button>
+            <button class="toggle-btn" onclick="switchView('fig1', 'screenshot')">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              Original Report Fig. 1
+            </button>
+          </div>
+          <div class="data-content interactive-view active">
+            <div class="flow-chart-container">
+              <div class="flow-node">
+                <div class="flow-node-title">Operative Reports Screened</div>
+                <div class="flow-node-desc">October 2010 – January 2025</div>
+                <span class="flow-badge">n = 15,905</span>
+              </div>
+              
+              <div class="flow-arrow"></div>
+              
+              <div class="flow-node" style="border-color: #ef4444; background: rgba(239, 68, 68, 0.02);">
+                <div class="flow-node-title" style="color: #b91c1c;">Excluded Reports</div>
+                <div class="flow-node-desc">Incomplete, non-primary, or duplicate records</div>
+                <span class="flow-badge" style="background: rgba(239, 68, 68, 0.1); color: #b91c1c;">n = 783</span>
+              </div>
+              
+              <div class="flow-arrow"></div>
+              
+              <div class="flow-node">
+                <div class="flow-node-title">Eligible Cholecystectomy Cases</div>
+                <span class="flow-badge">n = 15,122</span>
+              </div>
+              
+              <div class="flow-arrow"></div>
+              
+              <div class="flow-node" style="border-color: #10b981; background: rgba(16, 185, 129, 0.02);">
+                <div class="flow-node-title" style="color: #047857;">NLP Classification</div>
+                <div class="flow-node-desc">BioClinicalBERT Model (Manual verification validated)</div>
+                <span class="flow-badge" style="background: rgba(16, 185, 129, 0.1); color: #047857;">95.9% Test Set Accuracy</span>
+              </div>
+              
+              <div class="flow-arrow"></div>
+              
+              <div class="flow-split-row">
+                <div class="flow-side-branch">
+                  <div class="flow-node" style="max-width: 100%;">
+                    <div class="flow-node-title">Partial Cholecystectomies</div>
+                    <div class="flow-node-desc">0.7% of overall cohort</div>
+                    <span class="flow-badge">n = 107 (104 matched, 3 beyond caliper)</span>
+                  </div>
+                  <div class="flow-arrow"></div>
+                  <div class="flow-node" style="max-width: 100%;">
+                    <div class="flow-node-title">Matched Group</div>
+                    <span class="flow-badge">n = 104</span>
+                  </div>
+                </div>
+                
+                <div class="flow-side-branch">
+                  <div class="flow-node" style="max-width: 100%;">
+                    <div class="flow-node-title">Complete Cholecystectomies</div>
+                    <div class="flow-node-desc">99.3% of overall cohort</div>
+                    <span class="flow-badge">n = 15,015</span>
+                  </div>
+                  <div class="flow-arrow"></div>
+                  <div class="flow-node" style="max-width: 100%;">
+                    <div class="flow-node-title">Matched Group (~4:1 ratio)</div>
+                    <span class="flow-badge">n = 414</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div style="display: flex; gap: 40px; justify-content: center; width: 100%; margin-top: 10px;">
+                <div class="flow-arrow" style="height: 20px;"></div>
+                <div class="flow-arrow" style="height: 20px;"></div>
+              </div>
+              
+              <div class="flow-node" style="border-color: #2563eb; background: rgba(37, 99, 235, 0.02);">
+                <div class="flow-node-title" style="color: #1d4ed8;">Final Analytic Cohort</div>
+                <div class="flow-node-desc">Propensity-matched research dataset</div>
+                <span class="flow-badge" style="background: rgba(37, 99, 235, 0.15); color: #1d4ed8;">Total n = 518</span>
+              </div>
+            </div>
+          </div>
+          <div class="data-content screenshot-view">
+            <figure class="blog-image">
+              <img src="../assets/images/report_fig1.png" alt="Figure 1: Flow Diagram of Patient Selection" style="width:100%; border-radius: 8px;">
+              <figcaption>Figure 1: Flow diagram showing the patient selection and matching process (original report image).</figcaption>
+            </figure>
+          </div>
+        </div>
 
-        <figure class="blog-image">
-          <img src="../assets/images/report_table1.png" alt="Table 1: Baseline Demographics" style="width:100%; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-          <figcaption>Table 1: Baseline demographics showing excellent balance across the propensity-matched cohort.</figcaption>
-        </figure>
+        <!-- Table 1 Interactive Dashboard -->
+        <div class="data-wrapper" id="wrapper-table1">
+          <div class="data-toggle-bar">
+            <button class="toggle-btn active" onclick="switchView('table1', 'interactive')">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h18v18H3zM21 9H3M21 15H3M12 3v18"/></svg>
+              Interactive Table
+            </button>
+            <button class="toggle-btn" onclick="switchView('table1', 'screenshot')">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              Original Report Table 1
+            </button>
+          </div>
+          <div class="data-content interactive-view active">
+            <div class="table-header-tools">
+              <div class="table-tabs">
+                <button class="table-tab-btn active" onclick="filterTable1('all')">All</button>
+                <button class="table-tab-btn" onclick="filterTable1('demographics')">Demographics</button>
+                <button class="table-tab-btn" onclick="filterTable1('comorbidities')">Comorbidities</button>
+              </div>
+              <input type="text" class="table-search-input" id="table1-search" placeholder="Search characteristics..." onkeyup="searchTable1()">
+            </div>
+            
+            <div class="table-scroll">
+              <table class="interactive-data-table" id="table1-data">
+                <thead>
+                  <tr>
+                    <th>Characteristic</th>
+                    <th>Overall (n = 518)</th>
+                    <th>Complete Cholecystectomy (n = 414)</th>
+                    <th>Partial Cholecystectomy (n = 104)</th>
+                    <th>P value <span class="info-tooltip" data-tip="P > 0.05 indicates no statistically significant difference, demonstrating excellent baseline balance after propensity matching.">?</span></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Age Group -->
+                  <tr class="group-header" data-category="demographics" style="background: var(--bg-secondary); font-weight: 700;">
+                    <td colspan="5" style="color: var(--text-primary);">Age, y</td>
+                  </tr>
+                  <tr data-category="demographics">
+                    <td style="padding-left: 24px;">Mean ± SD</td>
+                    <td>63.8 ± 16.3</td>
+                    <td>64.1 ± 16.4</td>
+                    <td>62.7 ± 16.3</td>
+                    <td>0.352 <span class="sig-badge neutral">Balanced</span></td>
+                  </tr>
+                  <tr data-category="demographics">
+                    <td style="padding-left: 24px;">Median [IQR]</td>
+                    <td>66 [54-76]</td>
+                    <td>67 [54-76]</td>
+                    <td>64 [53-75]</td>
+                    <td>—</td>
+                  </tr>
+                  
+                  <!-- Sex Group -->
+                  <tr class="group-header" data-category="demographics" style="background: var(--bg-secondary); font-weight: 700;">
+                    <td colspan="5" style="color: var(--text-primary);">Sex, n (%)</td>
+                  </tr>
+                  <tr data-category="demographics">
+                    <td style="padding-left: 24px;">Male</td>
+                    <td>353 (68.1%)</td>
+                    <td>285 (68.8%)</td>
+                    <td>68 (65.4%)</td>
+                    <td rowspan="2" style="vertical-align: middle;">0.576 <span class="sig-badge neutral">Balanced</span></td>
+                  </tr>
+                  <tr data-category="demographics">
+                    <td style="padding-left: 24px;">Female</td>
+                    <td>165 (31.9%)</td>
+                    <td>129 (31.2%)</td>
+                    <td>36 (34.6%)</td>
+                  </tr>
+                  
+                  <!-- Race Group -->
+                  <tr class="group-header" data-category="demographics" style="background: var(--bg-secondary); font-weight: 700;">
+                    <td colspan="5" style="color: var(--text-primary);">Race, n (%)</td>
+                  </tr>
+                  <tr data-category="demographics">
+                    <td style="padding-left: 24px;">White</td>
+                    <td>409 (78.8%)</td>
+                    <td>331 (80.0%)</td>
+                    <td>78 (75.0%)</td>
+                    <td rowspan="5" style="vertical-align: middle;">0.624 <span class="sig-badge neutral">Balanced</span></td>
+                  </tr>
+                  <tr data-category="demographics">
+                    <td style="padding-left: 24px;">Asian</td>
+                    <td>37 (7.1%)</td>
+                    <td>28 (6.8%)</td>
+                    <td>9 (8.7%)</td>
+                  </tr>
+                  <tr data-category="demographics">
+                    <td style="padding-left: 24px;">Black</td>
+                    <td>31 (6.0%)</td>
+                    <td>24 (5.8%)</td>
+                    <td>7 (6.7%)</td>
+                  </tr>
+                  <tr data-category="demographics">
+                    <td style="padding-left: 24px;">American Indian</td>
+                    <td>11 (2.1%)</td>
+                    <td>7 (1.7%)</td>
+                    <td>4 (3.8%)</td>
+                  </tr>
+                  <tr data-category="demographics">
+                    <td style="padding-left: 24px;">Other</td>
+                    <td>30 (5.8%)</td>
+                    <td>24 (5.8%)</td>
+                    <td>6 (5.8%)</td>
+                  </tr>
+
+                  <!-- Ethnicity Group -->
+                  <tr class="group-header" data-category="demographics" style="background: var(--bg-secondary); font-weight: 700;">
+                    <td colspan="5" style="color: var(--text-primary);">Ethnicity, n (%)</td>
+                  </tr>
+                  <tr data-category="demographics">
+                    <td style="padding-left: 24px;">Hispanic or Latino</td>
+                    <td>16 (3.1%)</td>
+                    <td>14 (3.4%)</td>
+                    <td>2 (1.9%)</td>
+                    <td rowspan="3" style="vertical-align: middle;">0.484 <span class="sig-badge neutral">Balanced</span></td>
+                  </tr>
+                  <tr data-category="demographics">
+                    <td style="padding-left: 24px;">Not Hispanic or Latino</td>
+                    <td>377 (72.8%)</td>
+                    <td>304 (73.4%)</td>
+                    <td>73 (70.2%)</td>
+                  </tr>
+                  <tr data-category="demographics">
+                    <td style="padding-left: 24px;">Unknown</td>
+                    <td>125 (24.1%)</td>
+                    <td>96 (23.2%)</td>
+                    <td>29 (27.9%)</td>
+                  </tr>
+                  
+                  <!-- Comorbidities Group -->
+                  <tr class="group-header" data-category="comorbidities" style="background: var(--bg-secondary); font-weight: 700;">
+                    <td colspan="5" style="color: var(--text-primary);">Comorbidities, n (%)</td>
+                  </tr>
+                  <tr data-category="comorbidities">
+                    <td style="padding-left: 24px;">Type two diabetes mellitus</td>
+                    <td>235 (45.4%)</td>
+                    <td>192 (46.4%)</td>
+                    <td>43 (41.3%)</td>
+                    <td>0.417 <span class="sig-badge neutral">Balanced</span></td>
+                  </tr>
+                  <tr data-category="comorbidities">
+                    <td style="padding-left: 24px;">Hypertension</td>
+                    <td>346 (66.8%)</td>
+                    <td>279 (67.4%)</td>
+                    <td>67 (64.4%)</td>
+                    <td>0.647 <span class="sig-badge neutral">Balanced</span></td>
+                  </tr>
+                  <tr data-category="comorbidities">
+                    <td style="padding-left: 24px;">Coronary artery disease</td>
+                    <td>147 (28.4%)</td>
+                    <td>116 (28.0%)</td>
+                    <td>31 (29.8%)</td>
+                    <td>0.818 <span class="sig-badge neutral">Balanced</span></td>
+                  </tr>
+                  <tr data-category="comorbidities">
+                    <td style="padding-left: 24px;">Heart failure</td>
+                    <td>75 (14.5%)</td>
+                    <td>57 (13.8%)</td>
+                    <td>18 (17.3%)</td>
+                    <td>0.447 <span class="sig-badge neutral">Balanced</span></td>
+                  </tr>
+                  <tr data-category="comorbidities">
+                    <td style="padding-left: 24px;">COPD</td>
+                    <td>20 (3.9%)</td>
+                    <td>17 (4.1%)</td>
+                    <td>3 (2.9%)</td>
+                    <td>0.777 <span class="sig-badge neutral">Balanced</span></td>
+                  </tr>
+                  <tr data-category="comorbidities">
+                    <td style="padding-left: 24px;">Chronic kidney disease</td>
+                    <td>120 (23.2%)</td>
+                    <td>94 (22.7%)</td>
+                    <td>26 (25.0%)</td>
+                    <td>0.714 <span class="sig-badge neutral">Balanced</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="data-content screenshot-view">
+            <figure class="blog-image">
+              <img src="../assets/images/report_table1.png" alt="Table 1: Baseline Demographics" style="width:100%; border-radius: 8px;">
+              <figcaption>Table 1: Baseline demographics and clinical characteristics of the propensity-matched cohort (original report image).</figcaption>
+            </figure>
+          </div>
+        </div>
 
         <hr>
 
@@ -114,28 +891,362 @@
         <div class="callout callout-warning" style="background: rgba(220, 38, 38, 0.05); border-left: 4px solid #dc2626; padding: 1.5rem; margin: 2rem 0; border-radius: 4px;">
           <h4 style="color: #dc2626; margin-top: 0;">Key Findings (Partial vs. Complete)</h4>
           <ul style="margin-bottom: 0;">
-            <li><strong>30-Day Mortality:</strong> 3.8% vs 0.7% (5x higher, P = 0.033)</li>
-            <li><strong>Overall Complications:</strong> 75.0% vs 26.6% (2.8x higher, P < 0.001)</li>
-            <li><strong>ICU Admission:</strong> 8.7% vs 2.7% (3.3x higher, P = 0.009)</li>
-            <li><strong>Postoperative ERCP:</strong> 13.5% vs 1.4% (P < 0.001)</li>
-            <li><strong>Drain Placement:</strong> 68.3% vs 19.8% (P < 0.001)</li>
+            <li><strong>30-Day Mortality:</strong> 3.8% vs 0.7% (5.08x higher, P = 0.033)</li>
+            <li><strong>Overall Complications:</strong> 75.0% vs 26.6% (2.81x higher, P &lt; 0.001)</li>
+            <li><strong>ICU Admission:</strong> 8.7% vs 2.7% (3.26x higher, P = 0.009)</li>
+            <li><strong>Postoperative ERCP:</strong> 13.5% vs 1.4% (8.82x higher, P &lt; 0.001)</li>
+            <li><strong>Drain Placement:</strong> 68.3% vs 19.8% (3.43x higher, P &lt; 0.001)</li>
           </ul>
         </div>
 
-        <figure class="blog-image">
-          <img src="../assets/images/report_table2.png" alt="Table 2: Primary and Secondary Outcomes" style="width:100%; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-          <figcaption>Table 2: Primary and secondary outcomes showing significantly elevated complication rates in the partial cohort.</figcaption>
-        </figure>
+        <!-- Table 2 Interactive Dashboard -->
+        <div class="data-wrapper" id="wrapper-table2">
+          <div class="data-toggle-bar">
+            <button class="toggle-btn active" onclick="switchView('table2', 'interactive')">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h18v18H3zM21 9H3M21 15H3M12 3v18"/></svg>
+              Interactive Outcomes Table
+            </button>
+            <button class="toggle-btn" onclick="switchView('table2', 'screenshot')">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              Original Report Table 2
+            </button>
+          </div>
+          <div class="data-content interactive-view active">
+            <div class="table-header-tools">
+              <div class="table-tabs">
+                <button class="table-tab-btn active" onclick="filterTable2('all')">All Outcomes</button>
+                <button class="table-tab-btn" onclick="filterTable2('primary')">Primary</button>
+                <button class="table-tab-btn" onclick="filterTable2('secondary')">Secondary</button>
+              </div>
+            </div>
+            
+            <div class="table-scroll">
+              <table class="interactive-data-table" id="table2-data">
+                <thead>
+                  <tr>
+                    <th>Outcome</th>
+                    <th>Overall (n = 518)</th>
+                    <th>Partial Cholecystectomy (n = 104)</th>
+                    <th>Complete Cholecystectomy (n = 414)</th>
+                    <th>Risk Ratio (95% CI)</th>
+                    <th>P value</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Primary Outcomes -->
+                  <tr class="group-header" data-category="primary" style="background: var(--bg-secondary); font-weight: 700;">
+                    <td colspan="6" style="color: var(--text-primary);">Primary Outcomes</td>
+                  </tr>
+                  <tr class="highlight-danger" data-category="primary">
+                    <td style="font-weight: 600; padding-left: 24px;">Any complication</td>
+                    <td>36.3% (188)</td>
+                    <td style="font-weight: 700; color: #b91c1c;">75.0% (78)</td>
+                    <td>26.6% (110)</td>
+                    <td style="font-weight: 700;">2.81 (2.31-3.41)</td>
+                    <td><span class="sig-badge danger">&lt;0.001</span></td>
+                  </tr>
+                  <tr class="highlight-danger" data-category="primary">
+                    <td style="font-weight: 600; padding-left: 24px;">30-d mortality</td>
+                    <td>1.4% (7)</td>
+                    <td style="font-weight: 700; color: #b91c1c;">3.8% (4)</td>
+                    <td>0.7% (3)</td>
+                    <td style="font-weight: 700;">5.08 (1.28-20.21)</td>
+                    <td><span class="sig-badge danger">0.033</span></td>
+                  </tr>
+                  <tr class="highlight-danger" data-category="primary">
+                    <td style="font-weight: 600; padding-left: 24px;">ICU admission</td>
+                    <td>3.9% (20)</td>
+                    <td style="font-weight: 700; color: #b91c1c;">8.7% (9)</td>
+                    <td>2.7% (11)</td>
+                    <td style="font-weight: 700;">3.26 (1.39-7.65)</td>
+                    <td><span class="sig-badge danger">0.009</span></td>
+                  </tr>
+                  
+                  <!-- Secondary Outcomes -->
+                  <tr class="group-header" data-category="secondary" style="background: var(--bg-secondary); font-weight: 700;">
+                    <td colspan="6" style="color: var(--text-primary);">Secondary Outcomes</td>
+                  </tr>
+                  <tr class="highlight-danger" data-category="secondary">
+                    <td style="font-weight: 600; padding-left: 24px;">Bile duct injury</td>
+                    <td>0.6% (3)</td>
+                    <td style="font-weight: 700; color: #b91c1c;">2.9% (3)</td>
+                    <td>0.0% (0)</td>
+                    <td>N/A <span class="info-tooltip" data-tip="Risk ratio is not calculable due to zero occurrences of BDI in the complete group.">?</span></td>
+                    <td><span class="sig-badge danger">0.008</span></td>
+                  </tr>
+                  <tr class="highlight-danger" data-category="secondary">
+                    <td style="font-weight: 600; padding-left: 24px;">Drain placement</td>
+                    <td>29.5% (153)</td>
+                    <td style="font-weight: 700; color: #b91c1c;">68.3% (71)</td>
+                    <td>19.8% (82)</td>
+                    <td style="font-weight: 700;">3.43 (2.71-4.33)</td>
+                    <td><span class="sig-badge danger">&lt;0.001</span></td>
+                  </tr>
+                  <tr class="highlight-danger" data-category="secondary">
+                    <td style="font-weight: 600; padding-left: 24px;">Postoperative ERCP</td>
+                    <td>3.9% (20)</td>
+                    <td style="font-weight: 700; color: #b91c1c;">13.5% (14)</td>
+                    <td>1.4% (6)</td>
+                    <td style="font-weight: 700;">8.82 (3.58-21.69)</td>
+                    <td><span class="sig-badge danger">&lt;0.001</span></td>
+                  </tr>
+                  <tr class="highlight-danger" data-category="secondary">
+                    <td style="font-weight: 600; padding-left: 24px;">Postoperative ileus</td>
+                    <td>5.8% (30)</td>
+                    <td style="font-weight: 700; color: #b91c1c;">17.3% (18)</td>
+                    <td>2.9% (12)</td>
+                    <td style="font-weight: 700;">5.95 (2.95-11.60)</td>
+                    <td><span class="sig-badge danger">&lt;0.001</span></td>
+                  </tr>
+                  <tr data-category="secondary">
+                    <td style="padding-left: 24px;">Postoperative bleeding</td>
+                    <td>0.6% (3)</td>
+                    <td>1.0% (1)</td>
+                    <td>0.5% (2)</td>
+                    <td>2.37 (0.32-17.75)</td>
+                    <td><span class="sig-badge neutral">1.000</span></td>
+                  </tr>
+                  <tr data-category="secondary">
+                    <td style="padding-left: 24px;">Surgical site infection</td>
+                    <td>3.5% (18)</td>
+                    <td>4.8% (5)</td>
+                    <td>3.1% (13)</td>
+                    <td>1.61 (0.61-4.24)</td>
+                    <td><span class="sig-badge neutral">0.596</span></td>
+                  </tr>
+                  <tr data-category="secondary">
+                    <td style="padding-left: 24px;">Pancreatitis</td>
+                    <td>6.4% (33)</td>
+                    <td>5.8% (6)</td>
+                    <td>6.5% (27)</td>
+                    <td>0.93 (0.41-2.11)</td>
+                    <td><span class="sig-badge neutral">0.955</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="data-content screenshot-view">
+            <figure class="blog-image">
+              <img src="../assets/images/report_table2.png" alt="Table 2: Primary and Secondary Outcomes" style="width:100%;">
+              <figcaption>Table 2: Primary and secondary outcomes in the propensity-matched cohort (original report image).</figcaption>
+            </figure>
+          </div>
+        </div>
 
-        <figure class="blog-image">
-          <img src="../assets/images/report_fig2.png" alt="Figure 2: Risk Ratios" style="width:100%; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-          <figcaption>Figure 2: Forest plot comparing risk ratios for postoperative outcomes.</figcaption>
-        </figure>
+        <!-- Figure 2 Forest Plot Interactive Dashboard -->
+        <div class="data-wrapper" id="wrapper-fig2">
+          <div class="data-toggle-bar">
+            <button class="toggle-btn active" onclick="switchView('fig2', 'interactive')">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+              Interactive Forest Plot
+            </button>
+            <button class="toggle-btn" onclick="switchView('fig2', 'screenshot')">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              Original Report Fig. 2
+            </button>
+          </div>
+          <div class="data-content interactive-view active">
+            <div class="forest-plot">
+              <div class="forest-header">
+                <div>Outcome</div>
+                <div style="text-align: center;">Risk Ratio (95% CI) Graphic</div>
+                <div style="text-align: right;">Statistics</div>
+              </div>
+              
+              <!-- Ileus -->
+              <div class="forest-row">
+                <div class="forest-label">Postoperative Ileus</div>
+                <div class="forest-axis-container">
+                  <div class="forest-no-difference"></div>
+                  <!-- Left: 2.95 * 6.25 = 18.44%, Width: (11.60 - 2.95) * 6.25 = 54.06% -->
+                  <div class="forest-ci-line" style="left: 18.44%; width: 54.06%;"></div>
+                  <!-- Dot: 5.95 * 6.25 = 37.19% -->
+                  <div class="forest-rr-dot" style="left: 37.19%;"></div>
+                </div>
+                <div class="forest-stats" style="text-align: right;">
+                  <span class="forest-stats-rr">RR 5.95</span> (2.95–11.60)<br>
+                  <small>17.3% vs 2.9% | P &lt; 0.001</small>
+                </div>
+              </div>
+              
+              <!-- Postoperative ERCP -->
+              <div class="forest-row">
+                <div class="forest-label">Postoperative ERCP</div>
+                <div class="forest-axis-container">
+                  <div class="forest-no-difference"></div>
+                  <!-- Left: 3.58 * 6.25 = 22.38%, Width: 77.6% (ends with arrow due to limit) -->
+                  <div class="forest-ci-line has-arrow" style="left: 22.38%; width: 77.62%;"></div>
+                  <!-- Dot: 8.82 * 6.25 = 55.13% -->
+                  <div class="forest-rr-dot" style="left: 55.13%;"></div>
+                </div>
+                <div class="forest-stats" style="text-align: right;">
+                  <span class="forest-stats-rr">RR 8.82</span> (3.58–21.69)<br>
+                  <small>13.5% vs 1.4% | P &lt; 0.001</small>
+                </div>
+              </div>
+              
+              <!-- Drain Placement -->
+              <div class="forest-row">
+                <div class="forest-label">Drain Placement</div>
+                <div class="forest-axis-container">
+                  <div class="forest-no-difference"></div>
+                  <!-- Left: 2.71 * 6.25 = 16.94%, Width: 10.13% -->
+                  <div class="forest-ci-line" style="left: 16.94%; width: 10.13%;"></div>
+                  <!-- Dot: 3.43 * 6.25 = 21.44% -->
+                  <div class="forest-rr-dot" style="left: 21.44%;"></div>
+                </div>
+                <div class="forest-stats" style="text-align: right;">
+                  <span class="forest-stats-rr">RR 3.43</span> (2.71–4.33)<br>
+                  <small>68.3% vs 19.8% | P &lt; 0.001</small>
+                </div>
+              </div>
+              
+              <!-- Bile Duct Injury -->
+              <div class="forest-row">
+                <div class="forest-label">Bile Duct Injury</div>
+                <div class="forest-axis-container">
+                  <div class="forest-no-difference"></div>
+                  <div class="forest-not-calculable">RR Not Calculable (0 events in complete group)</div>
+                </div>
+                <div class="forest-stats" style="text-align: right;">
+                  <span class="forest-stats-rr">P = 0.008</span><br>
+                  <small>2.9% vs 0.0%</small>
+                </div>
+              </div>
+              
+              <!-- ICU Admission -->
+              <div class="forest-row">
+                <div class="forest-label">ICU Admission</div>
+                <div class="forest-axis-container">
+                  <div class="forest-no-difference"></div>
+                  <!-- Left: 1.39 * 6.25 = 8.69%, Width: 39.13% -->
+                  <div class="forest-ci-line" style="left: 8.69%; width: 39.13%;"></div>
+                  <!-- Dot: 3.26 * 6.25 = 20.38% -->
+                  <div class="forest-rr-dot" style="left: 20.38%;"></div>
+                </div>
+                <div class="forest-stats" style="text-align: right;">
+                  <span class="forest-stats-rr">RR 3.26</span> (1.39–7.65)<br>
+                  <small>8.7% vs 2.7% | P = 0.009</small>
+                </div>
+              </div>
+              
+              <!-- Overall 30-Day Complications -->
+              <div class="forest-row">
+                <div class="forest-label">Overall 30-d Complications</div>
+                <div class="forest-axis-container">
+                  <div class="forest-no-difference"></div>
+                  <!-- Left: 2.31 * 6.25 = 14.44%, Width: 6.88% -->
+                  <div class="forest-ci-line" style="left: 14.44%; width: 6.88%;"></div>
+                  <!-- Dot: 2.81 * 6.25 = 17.56% -->
+                  <div class="forest-rr-dot" style="left: 17.56%;"></div>
+                </div>
+                <div class="forest-stats" style="text-align: right;">
+                  <span class="forest-stats-rr">RR 2.81</span> (2.31–3.41)<br>
+                  <small>75.0% vs 26.6% | P &lt; 0.001</small>
+                </div>
+              </div>
+              
+              <!-- 30-Day Mortality -->
+              <div class="forest-row" style="border-bottom: 2px solid var(--border-color);">
+                <div class="forest-label">30-Day Mortality</div>
+                <div class="forest-axis-container">
+                  <div class="forest-no-difference"></div>
+                  <div class="forest-no-diff-label">No Difference</div>
+                  <!-- Left: 1.28 * 6.25 = 8.00%, Width: 92% (ends with arrow) -->
+                  <div class="forest-ci-line has-arrow" style="left: 8.00%; width: 92.00%;"></div>
+                  <!-- Dot: 5.08 * 6.25 = 31.75% -->
+                  <div class="forest-rr-dot" style="left: 31.75%;"></div>
+                </div>
+                <div class="forest-stats" style="text-align: right;">
+                  <span class="forest-stats-rr">RR 5.08</span> (1.28–20.21)<br>
+                  <small>3.8% vs 0.7% | P = 0.033</small>
+                </div>
+              </div>
+              
+              <!-- Axis scale labels -->
+              <div class="forest-x-scale">
+                <div style="text-align: left;">0</div>
+                <div style="text-align: center;">2</div>
+                <div style="text-align: center;">4</div>
+                <div style="text-align: center;">6</div>
+                <div style="text-align: center;">8</div>
+                <div style="text-align: center;">10</div>
+                <div style="text-align: center;">12</div>
+                <div style="text-align: center;">14</div>
+                <div style="text-align: right;">16</div>
+              </div>
+              <div class="forest-scale-label">Risk Ratio (95% Confidence Interval)</div>
+            </div>
+          </div>
+          <div class="data-content screenshot-view">
+            <figure class="blog-image">
+              <img src="../assets/images/report_fig2.png" alt="Figure 2: Risk Ratios Plot" style="width:100%;">
+              <figcaption>Figure 2: Risk ratios for postoperative outcomes. Forest plot comparing partial versus complete cholecystectomy (original report image).</figcaption>
+            </figure>
+          </div>
+        </div>
         
-        <figure class="blog-image">
-          <img src="../assets/images/report_table3.png" alt="Table 3: Risk Ratios for Primary Outcomes" style="width:100%; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-          <figcaption>Table 3: Risk ratios for primary outcomes detailing the five-fold increase in 30-day mortality.</figcaption>
-        </figure>
+        <!-- Table 3 Interactive Dashboard -->
+        <div class="data-wrapper" id="wrapper-table3">
+          <div class="data-toggle-bar">
+            <button class="toggle-btn active" onclick="switchView('table3', 'interactive')">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h18v18H3zM21 9H3M21 15H3M12 3v18"/></svg>
+              Interactive Table 3
+            </button>
+            <button class="toggle-btn" onclick="switchView('table3', 'screenshot')">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              Original Report Table 3
+            </button>
+          </div>
+          <div class="data-content interactive-view active">
+            <div class="table-scroll">
+              <table class="interactive-data-table">
+                <thead>
+                  <tr>
+                    <th>Outcome</th>
+                    <th>Complete Cholecystectomy (n = 414)</th>
+                    <th>Partial Cholecystectomy (n = 104)</th>
+                    <th>Risk Ratio (95% CI)</th>
+                    <th>P value</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="highlight-danger">
+                    <td style="font-weight: 600;">30-d mortality</td>
+                    <td>0.7% (3/414)</td>
+                    <td style="font-weight: 700; color: #b91c1c;">3.8% (4/104)</td>
+                    <td style="font-weight: 700;">5.08 (1.28-20.21)</td>
+                    <td><span class="sig-badge danger">0.033</span></td>
+                  </tr>
+                  <tr class="highlight-danger">
+                    <td style="font-weight: 600;">ICU admission</td>
+                    <td>2.7% (11/414)</td>
+                    <td style="font-weight: 700; color: #b91c1c;">8.7% (9/104)</td>
+                    <td style="font-weight: 700;">3.26 (1.39-7.65)</td>
+                    <td><span class="sig-badge danger">0.009</span></td>
+                  </tr>
+                  <tr class="highlight-danger">
+                    <td style="font-weight: 600;">Any complication</td>
+                    <td>26.6% (110/414)</td>
+                    <td style="font-weight: 700; color: #b91c1c;">75.0% (78/104)</td>
+                    <td style="font-weight: 700;">2.81 (2.31-3.41)</td>
+                    <td><span class="sig-badge danger">&lt;0.001</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 10px; line-height: 1.4; font-family: 'Inter', sans-serif;">
+              Risk ratios calculated using Fisher's exact test with 95% confidence intervals. Reference group is complete cholecystectomy. Risk ratio &gt; 1 indicates higher risk in the partial cholecystectomy group. Statistical significance defined as P &lt; 0.05 (two-tailed). All analyses were conducted on the propensity score-matched cohort (~4:1 matching ratio) adjusting for age, sex, race, ethnicity, and comorbidities.
+            </p>
+          </div>
+          <div class="data-content screenshot-view">
+            <figure class="blog-image">
+              <img src="../assets/images/report_table3.png" alt="Table 3: Risk Ratios for Primary Outcomes" style="width:100%;">
+              <figcaption>Table 3: Risk ratios for primary outcomes detailing the five-fold increase in 30-day mortality (original report image).</figcaption>
+            </figure>
+          </div>
+        </div>
 
         <hr>
 
@@ -206,6 +1317,7 @@
       localStorage.setItem('sih-theme', next);
       updateIcons(next);
     });
+    
     function openMobNav() {
       document.getElementById('mobNavOverlay').classList.add('active');
       document.getElementById('mobNavSheet').classList.add('active');
@@ -223,6 +1335,100 @@
       const y = e.touches[0].clientY;
       if (y > startY + 50) closeMobNav();
     });
+
+    /* Dashboard Tab Switcher Logic */
+    function switchView(wrapperId, viewType) {
+      const wrapper = document.getElementById('wrapper-' + wrapperId);
+      if (!wrapper) return;
+      
+      // Update buttons
+      const btns = wrapper.querySelectorAll('.toggle-btn');
+      btns.forEach(btn => btn.classList.remove('active'));
+      
+      // Update content panels
+      const panels = wrapper.querySelectorAll('.data-content');
+      panels.forEach(panel => panel.classList.remove('active'));
+      
+      if (viewType === 'interactive') {
+        btns[0].classList.add('active');
+        wrapper.querySelector('.interactive-view').classList.add('active');
+      } else {
+        btns[1].classList.add('active');
+        wrapper.querySelector('.screenshot-view').classList.add('active');
+      }
+    }
+    
+    /* Table 1 Filter Logic */
+    function filterTable1(category) {
+      const table = document.getElementById('table1-data');
+      const btns = document.querySelectorAll('#wrapper-table1 .table-tab-btn');
+      
+      // Update active tab button styling
+      btns.forEach(btn => btn.classList.remove('active'));
+      if (category === 'all') btns[0].classList.add('active');
+      else if (category === 'demographics') btns[1].classList.add('active');
+      else if (category === 'comorbidities') btns[2].classList.add('active');
+      
+      const rows = table.querySelectorAll('tbody tr');
+      rows.forEach(row => {
+        const cat = row.getAttribute('data-category');
+        if (category === 'all' || cat === category) {
+          row.style.display = '';
+        } else {
+          row.style.display = 'none';
+        }
+      });
+    }
+    
+    /* Table 1 Search Logic */
+    function searchTable1() {
+      const query = document.getElementById('table1-search').value.toLowerCase();
+      const table = document.getElementById('table1-data');
+      const rows = table.querySelectorAll('tbody tr');
+      
+      // Reset tabs if searching
+      if (query !== '') {
+        const btns = document.querySelectorAll('#wrapper-table1 .table-tab-btn');
+        btns.forEach(btn => btn.classList.remove('active'));
+        btns[0].classList.add('active'); // set "All" active
+      }
+      
+      rows.forEach(row => {
+        // Skip header rows if searching
+        if (row.classList.contains('group-header')) {
+          row.style.display = query === '' ? '' : 'none';
+          return;
+        }
+        
+        const label = row.querySelector('td').textContent.toLowerCase();
+        if (label.includes(query)) {
+          row.style.display = '';
+        } else {
+          row.style.display = 'none';
+        }
+      });
+    }
+    
+    /* Table 2 Filter Logic */
+    function filterTable2(category) {
+      const table = document.getElementById('table2-data');
+      const btns = document.querySelectorAll('#wrapper-table2 .table-tab-btn');
+      
+      btns.forEach(btn => btn.classList.remove('active'));
+      if (category === 'all') btns[0].classList.add('active');
+      else if (category === 'primary') btns[1].classList.add('active');
+      else if (category === 'secondary') btns[2].classList.add('active');
+      
+      const rows = table.querySelectorAll('tbody tr');
+      rows.forEach(row => {
+        const cat = row.getAttribute('data-category');
+        if (category === 'all' || cat === category) {
+          row.style.display = '';
+        } else {
+          row.style.display = 'none';
+        }
+      });
+    }
   </script>
 </body>
 </html>

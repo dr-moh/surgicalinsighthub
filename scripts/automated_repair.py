@@ -31,6 +31,8 @@ ATXP_MODELS = [
 
 GROQ_API_KEY = os.environ.get("GROQ_API_KEY", "")
 MODEL = "llama-3.3-70b-versatile"
+GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "")
+gemini_lock = threading.Lock()
 
 SHARP_4_PROMPT = """You are an expert medical educator and data engineer. 
 I will provide you with a severely corrupted Multiple Choice Question (MCQ).
@@ -126,16 +128,45 @@ def call_groq_repair(prompt):
             print(f"Groq fallback failed: {e}")
             return None
 
+def call_gemini_repair(prompt):
+    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={GEMINI_API_KEY}"
+    payload = {
+        "contents": [{"parts": [{"text": prompt}]}],
+        "systemInstruction": {"parts": [{"text": "Output clean JSON only."}]},
+        "generationConfig": {
+            "temperature": 0.1,
+            "responseMimeType": "application/json"
+        }
+    }
+    
+    with gemini_lock:
+        time.sleep(4.1) # Respect Gemini free tier 15 RPM
+        try:
+            resp = requests.post(url, headers={"Content-Type": "application/json"}, json=payload, timeout=60)
+            resp.raise_for_status()
+            content = resp.json()["candidates"][0]["content"]["parts"][0]["text"].strip()
+            if content.startswith("```json"): content = content[7:]
+            if content.endswith("```"): content = content[:-3]
+            return json.loads(content.strip())
+        except Exception as e:
+            print(f"Gemini fallback failed: {e}")
+            return None
+
 def process_question(item):
     corrupted_text = item.get("question", "") + "\n" + "\n".join(item.get("options", [])) if isinstance(item.get("options"), list) else item.get("question", "") + "\n" + str(item.get("options", ""))
     
-    # Try all 15+ ATXP models first
     prompt = f"{SHARP_4_PROMPT}\n\nCORRUPTED TEXT TO REPAIR:\n{corrupted_text}"
+    
+    # Try all 15+ ATXP models first
     repaired_json = call_atxp_repair(prompt)
     
     # If ATXP is totally exhausted, fall back to Groq
     if not repaired_json:
         repaired_json = call_groq_repair(prompt)
+        
+    # If Groq also fails, fall back to Gemini directly
+    if not repaired_json:
+        repaired_json = call_gemini_repair(prompt)
 
     if repaired_json:
         repaired_json["id"] = item.get("id")
