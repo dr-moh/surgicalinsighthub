@@ -37,6 +37,7 @@
     
     .data-toggle-bar {
       display: flex;
+      flex-wrap: wrap;
       justify-content: flex-end;
       background: var(--bg-secondary);
       padding: 10px 16px;
@@ -194,6 +195,7 @@
     /* Interactive Table Styles */
     .table-header-tools {
       display: flex;
+      flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
       margin-bottom: 16px;
@@ -202,6 +204,7 @@
     
     .table-tabs {
       display: flex;
+      flex-wrap: wrap;
       gap: 6px;
       background: var(--bg-secondary);
       padding: 4px;
@@ -234,7 +237,8 @@
       background: var(--bg-card);
       color: var(--text-primary);
       font-size: 0.85rem;
-      width: 220px;
+      width: 100%;
+      max-width: 220px;
       font-family: 'Inter', sans-serif;
       transition: all 0.2s ease;
     }
