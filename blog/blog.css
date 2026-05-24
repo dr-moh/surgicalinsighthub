@@ -84,6 +84,8 @@ img, svg {
   font-size: 1.15rem;
   line-height: 1.8;
   color: var(--text-primary);
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .blog-sidebar {
@@ -373,7 +375,8 @@ img, svg {
 .blog-table-container {
   margin: 40px 0;
   border-radius: 12px;
-  overflow: hidden;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
   border: 1px solid var(--border-color);
   background: var(--bg-card);
   box-shadow: var(--shadow-sm);

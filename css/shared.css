@@ -916,6 +916,7 @@ footer {
   color: #e2e8f0;
   font-family: 'Inter', sans-serif;
   line-height: 1.6;
+  word-break: break-word;
 }
 .markdown-body h1, .markdown-body h2, .markdown-body h3, .markdown-body h4 {
   color: #ffffff;
@@ -944,9 +945,9 @@ footer {
 .markdown-body table {
   display: block;
   width: 100%;
-  width: max-content;
   max-width: 100%;
-  overflow: auto;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
   margin-top: 0;
   margin-bottom: 16px;
   border-spacing: 0;
@@ -1004,6 +1005,8 @@ footer {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   list-style: none; /* remove bullet */
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  word-break: break-word;
+  overflow: hidden;
 }
 
 .sharp-golden-card:hover {
@@ -1074,6 +1077,17 @@ footer {
     grid-template-columns: 1fr;
     gap: 14px;
     padding: 16px;
+  }
+  .sih-traffic-footer-item.ticker,
+  .sih-traffic-footer-item.views {
+    border-right: none;
+    padding-right: 0;
+    padding-left: 0;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 12px;
+  }
+  .sih-traffic-footer-item.personal {
+    padding-left: 0;
   }
 }
 
