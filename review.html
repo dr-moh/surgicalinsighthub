@@ -14,7 +14,7 @@
 </script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
-html,body{height:100%;overflow:hidden;background:var(--bg-primary);color:var(--text-primary);font-family:'Inter',-apple-system,sans-serif;font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased;}
+html,body{height:100%;background:var(--bg-primary);color:var(--text-primary);font-family:'Inter',-apple-system,sans-serif;font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased;}
 
 /* ── NAV ── */
 .nav{position:fixed;top:0;left:0;right:0;height:52px;display:flex;align-items:center;justify-content:space-between;padding:0 16px;z-index:300;background:var(--glass-bg);backdrop-filter:blur(16px);border-bottom:1px solid var(--border-color);}
@@ -31,7 +31,7 @@ html,body{height:100%;overflow:hidden;background:var(--bg-primary);color:var(--t
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
 
 /* ── LAYOUT ── */
-.page{display:flex;flex-direction:column;height:100vh;padding-top:52px;}
+.page{display:flex;flex-direction:column;height:100vh;padding-top:52px;overflow:hidden;}
 .layout{display:flex;flex:1;min-height:0;overflow:hidden;}
 
 /* ── SIDEBAR ── */
@@ -162,8 +162,8 @@ code{font-family:'IBM Plex Mono',monospace;background:var(--bg-secondary);color:
 /* ── MOBILE HAMBURGER NAV ── */
 .mob-nav-toggle{display:none;background:var(--brand-burgundy);border:1.5px solid var(--brand-gold);color:#f0d080;border-radius:8px;padding:7px 12px;font-size:12px;cursor:pointer;align-items:center;gap:6px;font-family:inherit;font-weight:700;z-index:500;}
 .mob-nav-overlay{display:none;position:fixed;inset:0;background:rgba(43,24,16,0.55);z-index:480;backdrop-filter:blur(4px);}
-.mob-nav-sheet{display:none;position:fixed;bottom:0;left:0;right:0;background:var(--brand-burgundy);border-radius:20px 20px 0 0;border-top:2px solid var(--brand-gold);padding:20px 20px 40px;z-index:490;transform:translateY(100%);transition:transform .28s ease;}
-.mob-nav-sheet.open{transform:translateY(0);}
+.mob-nav-sheet{display:flex;flex-direction:column;position:fixed;bottom:0;left:0;right:0;background:var(--brand-burgundy);border-radius:20px 20px 0 0;border-top:2px solid var(--brand-gold);padding:20px 20px 40px;z-index:490;transform:translateY(100%);transition:transform .28s ease, visibility 0s .28s;visibility:hidden;max-height: 70vh; overflow-y: auto;}
+.mob-nav-sheet.open{transform:translateY(0);visibility:visible;transition:transform .28s ease, visibility 0s;}
 .mob-nav-sheet a{display:block;color:rgba(255,255,255,0.7);text-decoration:none;font-size:.92rem;font-weight:600;padding:11px 0;border-bottom:1px solid var(--border-color);}
 .mob-nav-sheet a:last-child{border-bottom:none;}
 .mob-nav-sheet a:hover,.mob-nav-sheet a.active{color:#f0d080;}
@@ -730,46 +730,7 @@ document.getElementById('topicInput').addEventListener('input', function() {
     }
   });
 
-  function openMobNav() {
-    document.getElementById('mobNavSheet').classList.add('open');
-    document.getElementById('mobNavOverlay').style.display = 'block';
-    document.body.style.overflow = 'hidden';
-  }
-  function closeMobNav() {
-    document.getElementById('mobNavSheet').classList.remove('open');
-    document.getElementById('mobNavOverlay').style.display = 'none';
-    document.body.style.overflow = '';
-  }
 
-  // Dark Mode Toggle Logic
-  const themeToggle = document.getElementById('themeToggle');
-  const moonIcon = document.getElementById('moonIcon');
-  const sunIcon = document.getElementById('sunIcon');
-
-  function applyTheme(theme) {
-    if (theme === 'dark') {
-      document.documentElement.setAttribute('data-theme', 'dark');
-      if(moonIcon) moonIcon.style.display = 'none';
-      if(sunIcon) sunIcon.style.display = 'block';
-    } else {
-      document.documentElement.removeAttribute('data-theme');
-      if(sunIcon) sunIcon.style.display = 'none';
-      if(moonIcon) moonIcon.style.display = 'block';
-    }
-  }
-
-  const currentTheme = localStorage.getItem('sih-theme') || 'light';
-  applyTheme(currentTheme);
-
-  if(themeToggle) {
-    themeToggle.addEventListener('click', () => {
-      const isDark = document.documentElement.hasAttribute('data-theme');
-      const newTheme = isDark ? 'light' : 'dark';
-      applyTheme(newTheme);
-      localStorage.setItem('sih-theme', newTheme);
-    });
-  }
-</script>
 
 <div class="mob-nav-overlay" id="mobNavOverlay" onclick="closeMobNav()"></div>
 <div class="mob-nav-sheet" id="mobNavSheet">
@@ -784,5 +745,6 @@ document.getElementById('topicInput').addEventListener('input', function() {
 </div>
 
 <script src="js/nav-pill.js"></script>
+<script src="js/navigation.js"></script>
 </body>
 </html>

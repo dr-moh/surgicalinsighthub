@@ -408,39 +408,6 @@
 </div>
 
 <script>
-  // Scroll Listener for Premium Nav
-  const mainNav = document.getElementById('mainNav');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-      mainNav.classList.add('scrolled');
-    } else {
-      mainNav.classList.remove('scrolled');
-    }
-  });
-
-  function openMobNav() {
-    document.getElementById('mobNavSheet').classList.add('open');
-    document.getElementById('mobNavOverlay').style.display = 'block';
-    document.body.style.overflow = 'hidden';
-  }
-  function closeMobNav() {
-    document.getElementById('mobNavSheet').classList.remove('open');
-    document.getElementById('mobNavOverlay').style.display = 'none';
-    document.body.style.overflow = '';
-  }
-
-  const currentTheme = localStorage.getItem('sih-theme') || 'light';
-  applyTheme(currentTheme);
-
-  if(themeToggle) {
-    themeToggle.addEventListener('click', () => {
-      const isDark = document.documentElement.hasAttribute('data-theme');
-      const newTheme = isDark ? 'light' : 'dark';
-      applyTheme(newTheme);
-      localStorage.setItem('sih-theme', newTheme);
-    });
-  }
-
   const SUPA_URL = 'https://sxushsvvmyokoknnsbuj.supabase.co';
   const SUPA_KEY = 'sb_publishable_Kl4RNEOxvmBewUToRv7HHw_2epulGkp';
 
@@ -498,20 +465,9 @@
     btn.innerHTML = '<span>Send Feedback</span> <span class="btn-icon">🚀</span>';
     document.querySelector('.feedback-form').reset();
   }
-
-  const currentTheme = localStorage.getItem('sih-theme') || 'light';
-  applyTheme(currentTheme);
-
-  if(themeToggle) {
-    themeToggle.addEventListener('click', () => {
-      const isDark = document.documentElement.hasAttribute('data-theme');
-      const newTheme = isDark ? 'light' : 'dark';
-      applyTheme(newTheme);
-      localStorage.setItem('sih-theme', newTheme);
-    });
-  }
 </script>
 
 <script src="js/nav-pill.js"></script>
+<script src="js/navigation.js"></script>
 </body>
 </html>

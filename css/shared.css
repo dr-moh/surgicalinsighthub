@@ -425,6 +425,14 @@
   margin-top: 48px;
   flex-wrap: wrap;
 }
+
+@media(max-width: 520px) {
+  .cta-bar, .cta-strip {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+}
 .cta-bar h3, .cta-strip h3 {
   font-size: 1.3rem;
   font-weight: 800;
@@ -675,9 +683,10 @@ footer {
   align-items: start;
 }
 
-.editorial-content {
+.editorial-content, .content {
   max-width: 780px;
   margin: 0 auto;
+  word-break: break-word;
 }
 
 /* Premium Typography for Content */
