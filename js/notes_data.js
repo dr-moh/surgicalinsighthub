@@ -127,6 +127,15 @@ window.NOTES_DATA = {
   /* ── OPERATIVE PLAYBOOKS ── */
   operative: [
     {
+      id: 'op-crohns-disease',
+      title: 'Surgical Monograph: Crohn\'s Disease',
+      opKicker: 'Colorectal · Basics',
+      description: 'Comprehensive PGY-3 surgical framework covering pre-operative optimization, surgical indications, step-by-step ileocaecal resection, strictureplasty, perianal Seton drainage, and Rutgeerts score post-op management.',
+      opBadge: 'PGY-3 Framework',
+      opMeta: '5 Pillars',
+      url: 'notes/Surgical Operative Approach/crohns_disease_operative.html'
+    },
+    {
       id: 'op-arm',
       title: 'Anorectal Malformation (PSARP)',
       opKicker: 'Paediatric Surgery · Colorectal',

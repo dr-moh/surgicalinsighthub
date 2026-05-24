@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Surgical Insight Hub — Crohn's Disease Operative Monograph</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="../../css/shared.css" rel="stylesheet"/>
+<link href="../../css/theme.css" rel="stylesheet"/>
+<style>
+:root {
+  --primary:   #4F46E5;      /* Royal Blue / Indigo */
+  --primary-dk:#312E81;      /* Midnight Blue */
+  --primary-lt:#EEF2F6;      /* Light Grey-Blue */
+  --accent:    #0EA5E9;      /* Cyan / Sky Blue */
+  --accent2:   #F43F5E;      /* Rose / Pink */
+  --gold:      #B45309;      /* Amber / Gold */
+  --gold-lt:   #FEF3C7;      /* Light Gold */
+  --s1:        #4F46E5;      /* Pillar 1 */
+  --s2:        #0D9488;      /* Pillar 2 (Teal) */
+  --s3:        #C27803;      /* Pillar 3 (Amber) */
+  --s4:        #2563EB;      /* Pillar 4 (Blue) */
+  --s5:        #BE185D;      /* Pillar 5 (Magenta) */
+  --s1-lt:     #EEF2F6;
+  --s2-lt:     #F0FDFA;
+  --s3-lt:     #FEF3C7;
+  --s4-lt:     #EFF6FF;
+  --s5-lt:     #FDF2F8;
+  --red:       #B91C1C;
+  --red-lt:    #FEF2F2;
+  --bg:        #FBFBFC;
+  --bg2:       #F4F4F6;
+  --border:    #E5E7EB;
+  --text:      #1F2937;
+  --muted:     #4B5563;
+  --white:     #FFFFFF;
+  --sidebar-w: 300px;
+}
+
+[data-theme="dark"] {
+  --bg: #0B0F19;
+  --bg2: #141B2D;
+  --text: #E2E8F0;
+  --muted: #94A3B8;
+  --border: rgba(255,255,255,0.08);
+  --primary-lt: #141B2D;
+  --s1-lt: #121A2E;
+  --s2-lt: #0F2421;
+  --s3-lt: #2C220E;
+  --s4-lt: #112240;
+  --s5-lt: #2E1220;
+  --white: #141B2D;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--bg);color:var(--text);font-size:16.5px;line-height:1.8;}
+
+/* ── SIDEBAR & OVERLAY ── */
+#sidebar {
+  position: fixed; top: 0; left: 0; width: var(--sidebar-w); height: 100vh;
+  background: var(--primary-dk); color: #E2DEE9;
+  display: flex; flex-direction: column;
+  z-index: 1300; overflow: hidden;
+  transform: translateX(-100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 4px 0 24px rgba(0,0,0,0.3);
+}
+body.sidebar-open #sidebar { transform: translateX(0); }
+
+#sidebar-overlay {
+  position: fixed; inset: 0;
+  background: rgba(49, 46, 129, 0.5); backdrop-filter: blur(3px);
+  z-index: 1250; opacity: 0; pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+body.sidebar-open #sidebar-overlay { opacity: 1; pointer-events: auto; }
+
+#sidebar-toggle {
+  position: fixed; top: 72px; left: 24px; z-index: 1200;
+  background: var(--primary); color: white;
+  border: none; border-radius: 30px;
+  padding: 10px 18px; font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 600;
+  letter-spacing: 0.05em; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  display: flex; align-items: center; gap: 8px; transition: all 0.2s;
+}
+#sidebar-toggle:hover { background: var(--accent); transform: translateY(-2px); }
+
+#progress-bar {
+  position: fixed; top: 52px; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  transform-origin: left; transform: scaleX(0); transition: transform 0.1s; z-index: 1105;
+}
+
+#sidebar-header{padding:20px 20px 14px;border-bottom:1px solid rgba(255,255,255,0.1);flex-shrink:0;}
+#sidebar-header .logo{font-family:'Playfair Display',serif;font-size:13px;font-weight:700;color:#93C5FD;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;}
+#sidebar-header .sub{font-size:10.5px;color:rgba(226,222,233,0.6);letter-spacing:0.04em;}
+#sidebar-search{padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.08);flex-shrink:0;}
+#sidebar-search input{width:100%;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:6px;color:#E2DEE9;padding:6px 10px;font-size:12px;font-family:'Source Serif 4',serif;outline:none;transition:border-color 0.2s;}
+#sidebar-search input::placeholder{color:rgba(226,222,233,0.4);}
+#sidebar-search input:focus{border-color:#93C5FD;}
+#sidebar-nav{flex:1;overflow-y:auto;padding:8px 0 20px;}
+#sidebar-nav::-webkit-scrollbar{width:4px;}
+#sidebar-nav::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.15);border-radius:2px;}
+.vol-label{font-size:9.5px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#93C5FD;padding:14px 18px 4px;}
+.nav-item{display:block;padding:8px 18px 8px 22px;font-size:12.5px;color:rgba(226,222,233,0.75);text-decoration:none;border-left:2px solid transparent;transition:all 0.15s;line-height:1.4;}
+.nav-item:hover{color:#fff;background:rgba(255,255,255,0.05);border-left-color:rgba(147,197,253,0.5);}
+.nav-item.active{color:#fff;background:rgba(255,255,255,0.08);border-left-color:#93C5FD;font-weight:600;}
+.nav-item .num{font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(226,222,233,0.4);margin-right:6px;}
+
+/* HERO */
+#hero{background:linear-gradient(135deg,var(--primary-dk) 0%,#1E1B4B 60%,#0F0E17 100%);color:white;padding:120px 72px 60px;position:relative;overflow:hidden;}
+#hero::before{content:'';position:absolute;top:-60px;right:-60px;width:380px;height:380px;background:radial-gradient(circle,rgba(79,70,229,0.18) 0%,transparent 70%);pointer-events:none;}
+#hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--primary),var(--accent2),transparent);}
+#hero .eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.16em;color:#93C5FD;text-transform:uppercase;margin-bottom:14px;}
+#hero h1{font-family:'Playfair Display',serif;font-size:38px;font-weight:700;line-height:1.15;margin-bottom:10px;color:#fff;}
+#hero .subtitle{font-size:18px;color:rgba(255,255,255,0.65);font-style:italic;margin-bottom:28px;}
+#hero .badges{display:flex;gap:10px;flex-wrap:wrap;}
+#hero .badge{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:4px 14px;font-size:12px;color:rgba(255,255,255,0.8);font-family:'JetBrains Mono',monospace;}
+
+/* CONTENT */
+.content-wrap{max-width:900px;margin:0 auto;padding:0 48px 80px;}
+
+/* SECTION HEADER */
+.sec-header{margin-top:60px;margin-bottom:8px;padding:28px 36px;border-radius:10px;display:flex;align-items:center;gap:20px;}
+.sec-header.s1{background:linear-gradient(135deg,#4F46E508,#4F46E518);border-left:4px solid var(--s1);}
+.sec-header.s2{background:linear-gradient(135deg,#0D948808,#0D948818);border-left:4px solid var(--s2);}
+.sec-header.s3{background:linear-gradient(135deg,#C2780308,#C2780318);border-left:4px solid var(--s3);}
+.sec-header.s4{background:linear-gradient(135deg,#2563EB08,#2563EB18);border-left:4px solid var(--s4);}
+.sec-header.s5{background:linear-gradient(135deg,#BE185D08,#BE185D18);border-left:4px solid var(--s5);}
+.sec-badge{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;letter-spacing:0.1em;padding:4px 12px;border-radius:4px;white-space:nowrap;flex-shrink:0;}
+.s1 .sec-badge{background:var(--s1);color:white;}
+.s2 .sec-badge{background:var(--s2);color:white;}
+.s3 .sec-badge{background:var(--s3);color:white;}
+.s4 .sec-badge{background:var(--s4);color:white;}
+.s5 .sec-badge{background:var(--s5);color:white;}
+.sec-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;}
+.s1 .sec-title{color:var(--s1);}
+.s2 .sec-title{color:var(--s2);}
+.s3 .sec-title{color:var(--s3);}
+.s4 .sec-title{color:var(--s4);}
+.s5 .sec-title{color:var(--s5);}
+
+/* TOPIC */
+.topic{margin-top:48px;padding-top:48px;border-top:1px solid var(--border);}
+.topic:first-of-type{border-top:none;}
+.topic-header{display:flex;align-items:flex-start;gap:16px;margin-bottom:24px;}
+.topic-num{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;padding:3px 10px;border-radius:4px;margin-top:4px;flex-shrink:0;}
+.s1 .topic-num{background:var(--s1-lt);color:var(--s1);}
+.s2 .topic-num{background:var(--s2-lt);color:var(--s2);}
+.s3 .topic-num{background:var(--s3-lt);color:var(--s3);}
+.s4 .topic-num{background:var(--s4-lt);color:var(--s4);}
+.s5 .topic-num{background:var(--s5-lt);color:var(--s5);}
+.topic h2{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;line-height:1.2;}
+.s1 .topic h2{color:var(--s1);}
+.s2 .topic h2{color:var(--s2);}
+.s3 .topic h2{color:var(--s3);}
+.s4 .topic h2{color:var(--s4);}
+.s5 .topic h2{color:var(--s5);}
+.topic h3{font-family:'Playfair Display',serif;font-size:17px;font-weight:600;color:var(--muted);margin:26px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--border);}
+.topic h4{font-size:13px;font-weight:600;color:var(--muted);letter-spacing:0.06em;text-transform:uppercase;margin:18px 0 8px;font-family:'JetBrains Mono',monospace;}
+.topic p{margin-bottom:12px;color:var(--text);}
+.topic ul,.topic ol{margin:8px 0 14px 20px;color:var(--text);}
+.topic li{margin-bottom:6px;line-height:1.65;}
+.topic li::marker{color:var(--accent2);}
+.topic strong{color:var(--text);font-weight:600;}
+
+/* TABLES */
+.table-wrap{overflow-x:auto;margin:16px 0 20px;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.06);}
+table{width:100%;border-collapse:collapse;font-size:13.5px;background:var(--white);}
+thead tr{background:var(--s1);}
+thead th{color:white;padding:10px 14px;text-align:left;font-family:'Source Serif 4',serif;font-weight:600;font-size:13px;}
+tbody tr:nth-child(even){background:var(--bg2);}
+tbody tr:hover{background:var(--s1-lt);transition:background 0.15s;}
+tbody td{padding:9px 14px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.5;}
+.s2-tbl thead tr{background:var(--s2);}
+.s3-tbl thead tr{background:var(--s3);}
+.s4-tbl thead tr{background:var(--s4);}
+.s5-tbl thead tr{background:var(--s5);}
+
+/* CALLOUTS */
+.callout{margin:18px 0;padding:14px 18px;border-radius:0 8px 8px 0;border-left:4px solid;font-size:14px;line-height:1.65;}
+.callout .label{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;display:block;margin-bottom:4px;}
+.callout.pearl{background:var(--gold-lt);border-color:var(--gold);}
+.callout.pearl .label{color:var(--gold);}
+.callout.warn{background:var(--red-lt);border-color:var(--red);}
+.callout.warn .label{color:var(--red);}
+.callout.clin{background:var(--s1-lt);border-color:var(--s1);}
+.callout.clin .label{color:var(--s1);}
+.callout.exam{background:var(--s4-lt);border-color:var(--s4);}
+.callout.exam .label{color:var(--s4);}
+
+/* DIAGRAM & CLINICAL GALLERY */
+.diagram-wrap{background:var(--s1-lt);border:1px solid var(--border);border-radius:8px;padding:18px;margin:20px 0;text-align:center;}
+.diagram-title{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--s1);margin-bottom:12px;text-align:left;}
+.diagram-wrap img{max-width:100%;height:auto;border-radius:6px;box-shadow:0 4px 12px rgba(0,0,0,0.1);max-height:400px;object-fit:contain;background:#fff;}
+
+.gallery-grid {display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:24px 0;}
+@media (max-width:768px) {.gallery-grid {grid-template-columns:1fr;}}
+.gallery-item {background:var(--white);border:1px solid var(--border);border-radius:8px;padding:16px;display:flex;flex-direction:column;gap:12px;transition:box-shadow 0.2s;}
+.gallery-item img {max-width:100%;height:auto;border-radius:6px;box-shadow:0 2px 8px rgba(0,0,0,0.08);max-height:280px;object-fit:contain;background:#fff;}
+
+#top-btn{position:fixed;bottom:24px;right:24px;width:44px;height:44px;background:var(--primary);color:white;border:none;border-radius:50%;font-size:18px;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,0.3);z-index:1100;opacity:0;pointer-events:none;transition:all 0.3s;display:flex;align-items:center;justify-content:center;}
+#top-btn.show{opacity:1;pointer-events:auto;}
+#top-btn:hover{background:var(--accent);transform:translateY(-3px);}
+
+.rapid-ref{margin-top:60px;padding:36px;background:var(--primary-dk);color:white;border-radius:12px;box-shadow:var(--shadow-lg);}
+.rapid-ref h3{font-family:'Playfair Display',serif;font-size:24px;margin-bottom:18px;color:#fff;border-bottom:1px solid rgba(255,255,255,0.15);padding-bottom:10px;}
+.rapid-ref table{background:transparent;}
+.rapid-ref thead tr{background:rgba(255,255,255,0.08);}
+.rapid-ref thead th{color:#93C5FD;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;}
+.rapid-ref tbody tr:nth-child(even){background:rgba(255,255,255,0.03);}
+.rapid-ref tbody tr:hover{background:rgba(255,255,255,0.07);}
+.rapid-ref tbody td{border-bottom:1px solid rgba(255,255,255,0.08);color:rgba(255,255,255,0.85);font-size:13px;}
+.rapid-ref strong{color:#fff;}
+</style>
+</head>
+<body>
+
+  <!-- Standardized SIH Navbar -->
+  <nav class="nav" id="mainNav">
+    <div class="nav-left">
+      <a href="../../index.html" class="nav-pill">
+        <div class="nav-logo-img">
+          <img src="../../assets/images/Surgical_Insight_Hub_Logo.png" alt="SIH Logo">
+        </div>
+        <div>
+          <div class="nav-brand-text">Surgical Insight Hub</div>
+          <div class="nav-brand-sub">The Residency Journal</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="nav-links-pill">
+      <a href="../../index.html">Home</a>
+      <a href="../../notes.html" class="active">Notes</a>
+      <a href="../operative_approach.html">Playbook</a>
+      <a href="../../arena.html">MCQ Arena</a>
+      <a href="../../podcast.html">Podcast</a>
+      <a href="../../surgery-talk.html">Surgery Talk</a>
+      <a href="../../about.html">About</a>
+    </div>
+
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+        <svg id="moonIcon" viewBox="0 0 24 24" width="18" height="18"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        <svg id="sunIcon" style="display:none;" viewBox="0 0 24 24" width="18" height="18"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+      </button>
+      <a href="https://t.me/sugicalInsightHub" target="_blank" class="nav-tg-btn" title="Join Telegram" style="background: var(--brand-burgundy); color: #f0d080; padding: 8px 12px; border-radius: 8px; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: all 0.3s ease;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="#f0d080"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.89 8.22l-1.97 9.28c-.15.66-.54.82-1.08.51l-3-2.21-1.45 1.39c-.16.16-.3.3-.61.3l.21-3.05 5.56-5.02c.24-.21-.05-.33-.37-.12l-6.87 4.33-2.96-.92c-.64-.2-.66-.64.14-.95l11.57-4.46c.54-.19 1.01.13.83.94z"/></svg>
+      </a>
+      <a href="../../arena.html" class="nav-btn arena-btn">MCQ Arena</a>
+      <button class="mob-nav-toggle" onclick="openMobNav()" aria-label="Menu">
+        <div class="hamburger"><span></span><span></span><span></span></div>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mob-nav-overlay" id="mobNavOverlay" onclick="closeMobNav()"></div>
+  <div class="mob-nav-sheet" id="mobNavSheet">
+    <div class="mob-nav-handle"></div>
+    <a href="../../index.html" onclick="closeMobNav()">Home</a>
+    <a href="../../notes.html" class="active" onclick="closeMobNav()">Notes</a>
+    <a href="../operative_approach.html" onclick="closeMobNav()">Playbook</a>
+    <a href="../../arena.html" onclick="closeMobNav()">MCQ Arena</a>
+    <a href="../../podcast.html" onclick="closeMobNav()">Podcast</a>
+    <a href="../../surgery-talk.html" onclick="closeMobNav()">Surgery Talk</a>
+    <a href="../../about.html" onclick="closeMobNav()">About</a>
+    <a href="https://t.me/sugicalInsightHub" target="_blank" rel="noopener" onclick="closeMobNav()" style="color: var(--brand-gold); font-weight: 800;">Join Telegram Community</a>
+  </div>
+
+  <div id="progress-bar"></div>
+
+  <!-- ── SIDEBAR TRIGGER ── -->
+  <button id="sidebar-toggle" onclick="toggleSidebar()">
+    <span>📜</span> Table of Contents
+  </button>
+
+  <div id="sidebar-overlay" onclick="closeSidebar()"></div>
+
+  <!-- ── SIDEBAR ── -->
+  <aside id="sidebar">
+    <div id="sidebar-header">
+      <div class="logo">Surgical Insight Hub</div>
+      <div class="sub">Crohn's Disease · Operative Monograph</div>
+    </div>
+    <div id="sidebar-search">
+      <input type="text" placeholder="Search sections..." oninput="filterNav(this.value)">
+    </div>
+    <nav id="sidebar-nav">
+      <div class="vol-label">Pillar 1: Pre-Op Optimization</div>
+      <a href="#clinical-workup" class="nav-item"><span class="num">1.1</span>Clinical Workup</a>
+      <a href="#indications" class="nav-item"><span class="num">1.2</span>Surgical Indications</a>
+      <a href="#investigations" class="nav-item"><span class="num">1.3</span>Mandatory Investigations</a>
+      <a href="#stratification" class="nav-item"><span class="num">1.4</span>Risk Stratification</a>
+      <a href="#prep" class="nav-item"><span class="num">1.5</span>Immediate Pre-Op Prep</a>
+      
+      <div class="vol-label">Pillar 2: The Operative Game Plan</div>
+      <a href="#ileocaecal" class="nav-item"><span class="num">2.1</span>Ileocaecal Resection</a>
+      <a href="#strictureplasty-tech" class="nav-item"><span class="num">2.2</span>Strictureplasty Techniques</a>
+      <a href="#colonic-crohns" class="nav-item"><span class="num">2.3</span>Colonic Crohn's Options</a>
+      <a href="#perianal-crohns" class="nav-item"><span class="num">2.4</span>Perianal Crohn's Surgery</a>
+      
+      <div class="vol-label">Pillar 3: Pearls &amp; Bail-Outs</div>
+      <a href="#pearls" class="nav-item"><span class="num">3.1</span>Consultant Pearls</a>
+      <a href="#bailouts" class="nav-item"><span class="num">3.2</span>The Bail-Out Points</a>
+      
+      <div class="vol-label">Pillar 4: Post-Op Care</div>
+      <a href="#recovery" class="nav-item"><span class="num">4.1</span>Immediate Post-op & ERAS</a>
+      <a href="#recurrence-prevention" class="nav-item"><span class="num">4.2</span>Recurrence Prevention</a>
+      <a href="#followup" class="nav-item"><span class="num">4.3</span>Clinic Follow-up</a>
+      
+      <div class="vol-label">Pillar 5: Complications</div>
+      <a href="#leak" class="nav-item"><span class="num">5.1</span>Anastomotic Leak</a>
+      <a href="#abscess" class="nav-item"><span class="num">5.2</span>Intra-abdominal Abscess</a>
+      <a href="#short-bowel" class="nav-item"><span class="num">5.3</span>Short Bowel Syndrome</a>
+      
+      <div class="vol-label">Board Review</div>
+      <a href="#rapid" class="nav-item"><span class="num">12</span>ABSITE Quick-Review</a>
+    </nav>
+  </aside>
+
+  <!-- ── MAIN CONTENT ── -->
+  <main id="main">
+    <header id="hero">
+      <div class="eyebrow">Surgical Insight Hub · Monograph Series · ABSITE · PGY-3 Framework</div>
+      <h1>Crohn's Disease</h1>
+      <p class="subtitle">Medical Management, Surgical Indications, Ileocaecal Resection, Strictureplasty, Perianal Crohn's, and Post-operative Management</p>
+      <div class="badges">
+        <span class="badge">Ileocaecal Resection</span>
+        <span class="badge">Strictureplasty</span>
+        <span class="badge">Perianal Setons</span>
+        <span class="badge">Rutgeerts Score</span>
+        <span class="badge">PGY-3 Framework</span>
+      </div>
+    </header>
+
+    <div class="content-wrap">
+      
+      <div class="callout warn" style="margin-top: 40px;">
+        <span class="label">⚠ Upfront Surgical Philosophy</span>
+        <strong>Crohn's disease is not primarily a surgical disease</strong> — but surgery is inevitable in the majority of patients over the course of their disease. By 10 years after diagnosis, 40-50% of Crohn's patients will have had at least one operation; by 20 years, that figure approaches 70-80%. The surgeon's role is not to cure Crohn's — resection does not cure it; the disease recurs at the anastomosis in 50% within 5 years. 
+        <br><br>
+        The surgeon's role is to manage complications that cannot be controlled medically, to restore bowel continuity where possible, and above all to **conserve bowel length**. Every centimetre of small bowel resected is a centimetre that cannot be replaced. A patient who has had three operations for Crohn's and is left with 80cm of small bowel is now a short bowel patient — a state that is far more debilitating than the original disease.
+        <br><br>
+        *This is the philosophy that governs every decision in Crohn's surgery: minimum resection, maximum conservation, minimum stoma, maximum function.*
+      </div>
+
+      <!-- ════════════════════════════════════════════════════════════ -->
+      <!-- PILLAR 1: PRE-OPERATIVE OPTIMIZATION & PREPARATION ═════════ -->
+      <!-- ════════════════════════════════════════════════════════════ -->
+      <div class="sec-header s1">
+        <span class="sec-badge">PILLAR 1</span>
+        <h2 class="sec-title">Pre-operative Optimization &amp; Preparation</h2>
+      </div>
+
+      <section class="topic s1" id="clinical-workup">
+        <div class="topic-header">
+          <span class="topic-num">1.1</span>
+          <h2>Clinical Workup &amp; Staging</h2>
+        </div>
+        <p>Crohn's disease is highly heterogeneous. Before any operative planning, you must know three things about the patient's disease: where it is (**location**), what it is doing (**behaviour**), and what it has done before (**prior surgery &amp; medical therapy**).</p>
+        
+        <h4>Disease Staging (Montreal Classification):</h4>
+        <ul>
+          <li><strong>Disease Location (L):</strong> 
+            <ul>
+              <li>*L1:* Terminal ileum (most common — 45%).</li>
+              <li>*L2:* Colon only (20%).</li>
+              <li>*L3:* Ileocolon (terminal ileum + colon) (25%).</li>
+              <li>*L4:* Upper gastrointestinal tract (modifier added to L1-L3).</li>
+            </ul>
+          </li>
+          <li><strong>Disease Behaviour (B):</strong>
+            <ul>
+              <li>*B1:* Inflammatory (non-stricturing, non-penetrating) — standard early pattern. Responsive to medical therapy.</li>
+              <li>*B2:* Stricturing — luminal narrowing causing obstructive symptoms; the primary surgical indication in small bowel Crohn's.</li>
+              <li>*B3:* Penetrating — deep transmural tracts resulting in fistulas, phlegmons, or abscesses. Often mandates staged operations.</li>
+              <li>*p:* Perianal modifier (e.g., B2p) — tracks aggressive perineal tissue destruction.</li>
+            </ul>
+          </li>
+        </ul>
+
+        <h4>Prior Surgical History &amp; Small Bowel Estimate:</h4>
+        <p>You must document the number of prior resections, estimated length of bowel resected, prior strictureplasty sites, and any history of temporary or permanent stomas. If the patient is approaching <strong>&lt; 200 cm of remaining functional small bowel</strong>, small bowel preservation overrides all other technical considerations.</p>
+        
+        <h4>Current Medical Therapy Implications:</h4>
+        <ul>
+          <li><strong>Biologics (Anti-TNF, Integrins, IL-12/23):</strong> Associated with moderate post-operative infection risks. However, active guidelines do *not* support pre-operative biologic withdrawal; continue therapy and monitor closely post-op.</li>
+          <li><strong>Corticosteroids:</strong> The most significant medication affecting surgical risk. Prednisolone **&gt; 20 mg/day for &gt; 6 weeks** increases anastomotic leak, wound infection, and pelvic sepsis rates. Taper steroids to &lt; 20 mg/day pre-operatively if feasible, or perform a defunctioning stoma.</li>
+          <li><strong>Immunomodulators (Azathioprine, 6-MP, Methotrexate):</strong> Associated with myelosuppression. Check full blood count; does not require pre-operative stoppage.</li>
+        </ul>
+      </section>
+
+      <section class="topic s1" id="indications">
+        <div class="topic-header">
+          <span class="topic-num">1.2</span>
+          <h2>Surgical Indications in Crohn's Disease</h2>
+        </div>
+        <p>The core principle of Crohn's surgery is to **operate only for complications** that cannot be controlled medically.</p>
+
+        <div class="table-wrap s1-tbl">
+          <table>
+            <thead>
+              <tr>
+                <th>Category</th>
+                <th>Indications</th>
+                <th>Clinical Presentation &amp; Surgical Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td rowspan="4"><strong>Absolute / Emergency</strong></td>
+                <td><strong>Free Perforation</strong></td>
+                <td>Rare due to contiguous phlegmonous sealing. Presents as rigid peritonitis. Requires emergency laparotomy and resection; primary anastomosis is strictly contraindicated.</td>
+              </tr>
+              <tr>
+                <td><strong>Toxic Megacolon</strong></td>
+                <td>Colonic Crohn's with distension &gt; 6 cm + systemic toxicity. If unresponsive to 24-48 hours of maximal medical therapy, perform subtotal colectomy + end ileostomy.</td>
+              </tr>
+              <tr>
+                <td><strong>Massive Haemorrhage</strong></td>
+                <td>Uncontrolled, life-threatening mucosal bleeding refractory to endoscopic haemostasis. Requires segment-targeted resection.</td>
+              </tr>
+              <tr>
+                <td><strong>Strangulated SBO</strong></td>
+                <td>Bowel ischemia secondary to stricturing herniation or volvulus. Immediate exploration.</td>
+              </tr>
+              <tr>
+                <td rowspan="4"><strong>Strong / Elective</strong></td>
+                <td><strong>Symptomatic Strictures (B2)</strong></td>
+                <td>Recurrent SBO unresponsive to medical therapy. Balloon dilation is first-line for short (&lt; 5 cm) accessible segments; strictureplasty or resection for longer, multiple, or inaccessible strictures.</td>
+              </tr>
+              <tr>
+                <td><strong>Intra-abdominal Abscess</strong></td>
+                <td>Bridge with percutaneous drain + IV antibiotics. Perform staged surgical resection of the actively diseased "generator" segment once sepsis is controlled.</td>
+              </tr>
+              <tr>
+                <td><strong>Enteric Fistulas (B3)</strong></td>
+                <td>Operate only if symptomatic (e.g., enteroenteral causing malabsorption, enterovesical causing recurrent UTIs, enterocutaneous, or rectovaginal).</td>
+              </tr>
+              <tr>
+                <td><strong>Medical Refractoriness</strong></td>
+                <td>Failure of optimized medical therapy to control mucosal inflammation, causing unacceptable quality of life.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="topic s1" id="investigations">
+        <div class="topic-header">
+          <span class="topic-num">1.3</span>
+          <h2>Mandatory Pre-operative Investigations</h2>
+        </div>
+        <ul>
+          <li><strong>Optical Endoscopy:</strong> Colonoscopy with terminal ileal intubation and biopsy is mandatory before elective surgery. Defines colonic extent, excludes mucosal dysplasia, and confirms index diagnosis.</li>
+          <li><strong>MR Enterography (MRE):</strong> The gold standard for small bowel assessment. Differentiates active mucosal inflammation (high T2 mural signal, wall oedema, diffusion restriction, hyperenhancement) from inactive fibrotic stricturing (low T2 signal, minimal enhancement). Fibrotic strictures mandate surgery. MRE avoids cumulative lifetime radiation.</li>
+          <li><strong>CT Enterography (CTE):</strong> Outstanding for acute sepsis, gas-forming fistulous tracts, and pelvic abscess collections.</li>
+          <li><strong>Pelvic MRI:</strong> Absolute prerequisite for perianal Crohn's disease to map fistula tracts relative to the sphincters (Parks classification).</li>
+          <li><strong>Laboratory Profile:</strong> Complete blood count (anaemia, neutropenia), albumin (nutritional predictor), CRP/ESR (inflammation load), fecal calprotectin (baseline mucosal inflammation), Vitamin B12, and Vitamin D.</li>
+        </ul>
+      </section>
+
+      <section class="topic s1" id="stratification">
+        <div class="topic-header">
+          <span class="topic-num">1.4</span>
+          <h2>Risk Stratification &amp; Pre-Op Nutrition</h2>
+        </div>
+        <p>Pre-operative malnutrition is present in up to 75% of Crohn's patients requiring major surgery. **Albumin &lt; 30 g/L** is a massive predictor of anastomotic breakdown, delayed wound healing, and post-operative sepsis.</p>
+        
+        <p><strong>Nutritional Optimization Protocol:</strong> If albumin is &lt; 30 g/L, delay elective resection and institute **7 to 14 days of pre-operative nutritional support**. Exclusive Enteral Nutrition (EEN) using elemental or polymeric diets is highly preferred over TPN as EEN directly reduces mucosal inflammatory cytokines and promotes mucosal healing.</p>
+
+        <div class="table-wrap s1-tbl">
+          <table>
+            <thead>
+              <tr>
+                <th>Risk Factor</th>
+                <th>Surgical Complication Risk</th>
+                <th>Mitigation &amp; Management Protocol</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Prednisolone &gt; 20 mg/day</strong></td>
+                <td>High risk of anastomotic leak, delayed wound healing, and fascial dehiscence.</td>
+                <td>Taper to &lt; 20 mg/day pre-operatively if feasible. Implement perioperative stress-dose hydrocortisone. Lower the threshold for a defunctioning loop stoma.</td>
+              </tr>
+              <tr>
+                <td><strong>Albumin &lt; 30 g/L</strong></td>
+                <td>Impaired collagen synthesis, high anastomotic breakdown rate.</td>
+                <td>Delay surgery for 7–14 days of EEN or TPN. Optimize protein intake to 1.5 g/kg/day.</td>
+              </tr>
+              <tr>
+                <td><strong>Active Septic Phlegmon/Abscess</strong></td>
+                <td>Infection spread, severe localized tissue fragility.</td>
+                <td>Perform image-guided percutaneous drainage + IV antibiotics. Settle local sepsis for 4–6 weeks before performing elective resection.</td>
+              </tr>
+              <tr>
+                <td><strong>Active Tobacco Smoking</strong></td>
+                <td>Doubles the risk of recurrence and stricture formation.</td>
+                <td>Mandatory pre-operative smoking cessation support. Smoking is the strongest modifiable postoperative recurrence factor.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="topic s1" id="prep">
+        <div class="topic-header">
+          <span class="topic-num">1.5</span>
+          <h2>Immediate Pre-operative Preparation</h2>
+        </div>
+        <ul>
+          <li><strong>Bowel Preparation:</strong> For elective ileocaecal resection, standard mechanical bowel prep + oral antibiotics (neomycin + metronidazole) is preferred. *Caution:* Omit mechanical prep in patients with high-grade, tight proximal strictures to prevent acute colicky bowel obstruction.</li>
+          <li><strong>Perioperative Steroid Cover:</strong> Adrenally suppressed patients on long-term steroids must receive **hydrocortisone cover**:
+            <ul>
+              <li>*At induction:* Hydrocortisone 100 mg IV stat.</li>
+              <li>*Post-op:* Hydrocortisone 50 mg IV Q8H for the first 24–48 hours, followed by rapid taper back to their baseline oral prednisone dose.</li>
+            </ul>
+          </li>
+          <li><strong>DVT Prophylaxis:</strong> Active Crohn's flares present a highly pro-thrombotic state. Institute pre-operative LMWH (12 hours prior to incision) and extend post-operative LMWH prophylaxis to **28 days** post-discharge.</li>
+          <li><strong>Consent Non-Negotiables:</strong> Recurrence at the anastomosis (50% endoscopic recurrence at 12 months), temporary/permanent defunctioning stoma, short bowel syndrome, risk of pelvic nerve injury, and lifelong postoperative medical monitoring.</li>
+        </ul>
+      </section>
+
+      <!-- ════════════════════════════════════════════════════════════ -->
+      <!-- PILLAR 2: THE OPERATIVE GAME PLAN ══════════════════════════ -->
+      <!-- ════════════════════════════════════════════════════════════ -->
+      <div class="sec-header s2">
+        <span class="sec-badge">PILLAR 2</span>
+        <h2 class="sec-title">The Operative Game Plan</h2>
+      </div>
+
+      <section class="topic s2" id="ileocaecal">
+        <div class="topic-header">
+          <span class="topic-num">2.1</span>
+          <h2>PROCEDURE A: Step-by-Step Ileocaecal Resection</h2>
+        </div>
+        <p>Ileocaecal resection is the workhorse of Crohn's surgery, accounting for 70% of abdominal operations. The core principle is a **narrow, non-oncological dissection** conserving every millimeter of healthy bowel.</p>
+
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <div class="diagram-title">CTE Target Scan: Comb Sign &amp; Thickened Wall</div>
+            <img src="../../assets/images/crohns/clinical_manifestations,_diagnosis,_and_prognosis_of_crohn_disease_in_adults_p36_11.png" alt="CTE active segmental ileitis">
+            <p style="font-size:12px;color:var(--muted);line-height:1.4;">Pre-operative CT Enterography confirming localized active segmental ileitis with severe terminal ileal wall thickening, mucosal hyperenhancement, and Comb sign.</p>
+          </div>
+          <div class="gallery-item">
+            <div class="diagram-title">Creeping Fat Wrapping (Fat Creep)</div>
+            <img src="../../assets/images/crohns/surgical_management_of_crohn_disease_p27_1.png" alt="CT Enterography Crohn's disease creeping fat">
+            <p style="font-size:12px;color:var(--muted);line-height:1.4;">CTE illustrating fibrofatty proliferation ("creeping fat") wrapping around the inflamed ileal loop, correlating with active transmural inflammation.</p>
+          </div>
+        </div>
+
+        <h4>Step-by-Step Open Technique:</h4>
+        <ol>
+          <li><strong>Access &amp; Run the Bowel:</strong> Perform a lower midline laparotomy. Deliver the small bowel and **run the entire small intestine** from the Ligament of Treitz to the terminal ileum. Document all skip lesions. Estimate and record the remaining functional bowel length.</li>
+          <li><strong>Mobilisation:</strong> Mobilize the terminal ileum and right colon from lateral-to-medial. Delineate retroperitoneal structures; identify and protect the right ureter and gonadal vessels. *Note:* Mesentery in Crohn's is heavily thickened, friable, and vascular.</li>
+          <li><strong>Narrow Mesenteric Division:</strong> Perform mesenteric division **close to the bowel wall** (non-oncological). Do not perform high vascular ligation at the origin of the ileocolic artery. Control vessels individually with energy devices or suture ties; mass ligation is strictly avoided due to tissue friability.</li>
+          <li><strong>Bowel Division:</strong> Divide the ascending colon just above the caecal pole and the proximal ileum **2 cm proximal to macroscopic disease**. Microscopic disease at the margin is acceptable; do not resect excessive healthy bowel to obtain microscopically clear margins.</li>
+          <li><strong>Anastomosis:</strong> Establish a **side-to-side (functional end-to-end) stapled ileocolic anastomosis**. Stapled side-to-side anastomoses have a wider calibre, which significantly reduces the risk of postoperative anastomotic recurrence compared to end-to-end handsewn configurations.</li>
+          <li><strong>Mesenteric Defect:</strong> Close the mesenteric defect with interrupted absorbable sutures to prevent internal herniation.</li>
+        </ol>
+
+        <h4>Laparoscopic Approach:</h4>
+        <p>Laparoscopic resection is the elective standard of care. Port placement involves an umbilical camera port, plus working ports in the RLQ, LLQ, and suprapubic regions. *Technical Pearl:* Highly thickened, vascular mesentery is the main challenge. Utilize advanced bipolar/ultrasonic energy devices. Convert to open if pelvic phlegmon or deep dense retroperitoneal scarring precludes safe anatomical visualization.</p>
+      </section>
+
+      <section class="topic s2" id="strictureplasty-tech">
+        <div class="topic-header">
+          <span class="topic-num">2.2</span>
+          <h2>PROCEDURE B: Bowel-Sparing Strictureplasty</h2>
+        </div>
+        <p>Strictureplasty is the gold standard bowel-preserving operation. It is indicated for multiple fibrotic small bowel strictures in patients at high risk of short bowel syndrome. The diseased segment is opened longitudinally and closed transversely, widening the lumen without resecting bowel.</p>
+
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <div class="diagram-title">1. Heineke-Mikulicz Strictureplasty</div>
+            <img src="../../assets/images/crohns/surgical_management_of_crohn_disease_p28_2.jpg" alt="Heineke-Mikulicz Strictureplasty">
+            <p style="font-size:12px;color:var(--muted);line-height:1.4;">Indicated for short fibrotic strictures <strong>&le; 5 – 7 cm</strong>. Antimesenteric longitudinal enterotomy closed transversely. Accounts for 85% of strictureplasties.</p>
+          </div>
+          <div class="gallery-item">
+            <div class="diagram-title">2. Finney Strictureplasty</div>
+            <img src="../../assets/images/crohns/surgical_management_of_crohn_disease_p29_3.jpg" alt="Finney Strictureplasty">
+            <p style="font-size:12px;color:var(--muted);line-height:1.4;">Indicated for medium strictures <strong>10 – 20 cm</strong>. Bowel loop folded into a U-shape, opened, and anastomosed side-to-side to create a wide diverticular pouch.</p>
+          </div>
+        </div>
+
+        <div class="diagram-wrap" style="max-width: 600px; margin: 20px auto;">
+          <div class="diagram-title">3. Side-to-Side Isoperistaltic Strictureplasty (SSIS - Michelassi)</div>
+          <img src="../../assets/images/crohns/surgical_management_of_crohn_disease_p30_4.jpg" alt="Michelassi Strictureplasty">
+          <p style="font-size:12px;color:var(--muted);margin-top:6px;line-height:1.4;">Indicated for long diffuse strictures <strong>&gt; 20 cm</strong>. Bowel loop is cut at the midpoint, aligned side-to-side isoperistaltically, and opened to perform a long side-to-side bypass.</p>
+        </div>
+
+        <h4>Contraindications to Strictureplasty:</h4>
+        <ul>
+          <li>Active perforation or hemorrhage at the stricture site.</li>
+          <li>Local pelvic/abdominal abscess or active fistulous tract originating from the stricture.</li>
+          <li>Suspicion of small bowel malignancy (always biopsy strictureplasty sites).</li>
+          <li>Severe localized acute inflammatory thickening (risk of suture pullout; Heineke-Mikulicz requires pliable, fibrotic tissue).</li>
+        </ul>
+
+        <h4>The Kono-S Anastomosis (The Anti-Recurrence Standard):</h4>
+        <p>In patients requiring segmental resection where primary strictureplasty is contraindicated, the **Kono-S Anastomosis** is a highly specialized, handsewn, side-to-side antimesenteric functional end-to-end anastomosis. By placing the mesentery completely away from the suture line, it dramatically reduces anastomotic recurrence.</p>
+
+        <div class="diagram-wrap" style="max-width: 600px; margin: 20px auto;">
+          <div class="diagram-title">Kono-S Anastomosis Technical Steps</div>
+          <img src="../../assets/images/crohns/surgical_management_of_crohn_disease_p32_6.jpg" alt="Kono-S Anastomosis Steps">
+          <p style="font-size:12px;color:var(--muted);margin-top:6px;line-height:1.4;">Kono-S execution: (A) perpendicular stapled resection. (B) Back-to-back stump suturing to create a central support column. (C) Longitudinal antimesenteric cuts. (D/E) Single-layer transverse closure, excluding the mesentery.</p>
+        </div>
+      </section>
+
+      <section class="topic s2" id="colonic-crohns">
+        <div class="topic-header">
+          <span class="topic-num">2.3</span>
+          <h2>PROCEDURE C: Colonic Crohn's Surgical Options</h2>
+        </div>
+        <p>The management of colonic Crohn's differs significantly from ulcerative colitis. Because Crohn's is pan-enteric, segment-preserving strategies are highly utilized.</p>
+        <ul>
+          <li><strong>Segmental Colonic Resection:</strong> Indicated for localized Crohn's colitis (e.g., isolated sigmoiditis or right-sided colitis) with a completely disease-free rectum. Preserves colonic length and stool-storing capacity. Associated with a moderate recurrence risk in remaining colonic segments.</li>
+          <li><strong>Subtotal Colectomy + End Ileostomy:</strong> The procedure of choice in the emergency setting for medically refractory pancolitis, colonic free perforation, or toxic megacolon. Leaves the rectal stump in situ. The rectum can be evaluated later for an ileorectal anastomosis (IRA) if it remains disease-free.</li>
+          <li><strong>Total Proctocolectomy + Permanent End Ileostomy:</strong> Indicated for diffuse colonic Crohn's with severe rectum destruction, severe perianal sepsis (B3p) destroying the sphincter complex, or multifocal colorectal cancer. *Warning:* The **Ileal Pouch-Anal Anastomosis (IPAA) is strictly contraindicated in Crohn's disease** due to a 50% pouch failure rate from localized stricturing, pouchitis, and complex pouch-vaginal/perineal fistulization.</li>
+          <li><strong>Ileorectal Anastomosis (IRA):</strong> Restores intestinal continuity after subtotal colectomy. Requires a completely healthy rectum with excellent capacity, normal rectal compliance, and normal anal sphincter function.</li>
+        </ul>
+      </section>
+
+      <section class="topic s2" id="perianal-crohns">
+        <div class="topic-header">
+          <span class="topic-num">2.4</span>
+          <h2>PROCEDURE D: Perianal Crohn's Surgery &amp; Setons</h2>
+        </div>
+        <p>Approximately 33% of Crohn's patients develop perianal disease. Perianal disease represents a high-risk progressive phenotype that requires aggressive combined medical and surgical coordination.</p>
+        
+        <p><strong>The Cardinal Rule: Never perform an aggressive cutting fistulotomy in Crohn's.</strong> Sphincter muscles do not heal predictably; dividing the sphincter risks permanent fecal incontinence. The surgical goal is strictly **sepsis control and drainage**, not cure of the fistula.</p>
+
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <div class="diagram-title">Fig. K: Anterior Fistulas &amp; Abscess</div>
+            <img src="../../assets/images/crohns/perianal_crohn_disease_p29_2.jpg" alt="Anterior Perianal Fistulas Crohn's">
+            <p style="font-size:12px;color:var(--muted);line-height:1.4;">Anterior perianal fistulas involving the vulva and anterior perineum, accompanied by erythematous skin induration and an active perineal abscess.</p>
+          </div>
+          <div class="gallery-item">
+            <div class="diagram-title">Fig. L: Chronic Fistulous Scarring</div>
+            <img src="../../assets/images/crohns/perianal_crohn_disease_p30_3.jpg" alt="Perianal Fistulous Deformity">
+            <p style="font-size:12px;color:var(--muted);line-height:1.4;">Severe chronic scarring, fibrosis, and anatomical deformity of the perineum resulting from recurrent fistulous tracts and multiple prior drainages.</p>
+          </div>
+          <div class="gallery-item">
+            <div class="diagram-title">Fig. M: Thrombosed External Hemorrhoid</div>
+            <img src="../../assets/images/crohns/perianal_crohn_disease_p31_4.jpg" alt="Thrombosed External Hemorrhoid">
+            <p style="font-size:12px;color:var(--muted);line-height:1.4;">Large, tense, painful thrombosed external hemorrhoid. *Note: Hemorrhoidectomy is strictly avoided in Crohn's patients due to extremely poor healing.*</p>
+          </div>
+          <div class="gallery-item">
+            <div class="diagram-title">Fig. N: Chronic Anal Fissure</div>
+            <img src="../../assets/images/crohns/perianal_crohn_disease_p32_5.jpg" alt="Chronic Anal Fissure Crohn's">
+            <p style="font-size:12px;color:var(--muted);line-height:1.4;">Posterior midline chronic anal fissure exhibiting raised, fibrotic, indurated margins and a prominent hypertrophic sentinel skin tag (sentinel pile).</p>
+          </div>
+        </div>
+
+        <div class="gallery-grid" style="margin-top: 20px;">
+          <div class="gallery-item">
+            <div class="diagram-title">Fig. O: Bilateral Posterior Fistulas</div>
+            <img src="../../assets/images/crohns/perianal_crohn_disease_p33_6.jpg" alt="Bilateral Posterior Fistulas">
+            <p style="font-size:12px;color:var(--muted);line-height:1.4;">Bilateral posterior draining fistulous openings (arrows) with adjacent deep painful perianal mucosal ulcerations (arrowheads).</p>
+          </div>
+          <div class="gallery-item">
+            <div class="diagram-title">Fig. P: Fluctuant Perianal Abscess</div>
+            <img src="../../assets/images/crohns/perianal_crohn_disease_p43_15.jpg" alt="Fluctuant Perianal Abscess">
+            <p style="font-size:12px;color:var(--muted);line-height:1.4;">Erythematous, fluctuant bulge with marked surrounding inflammatory edema in the left buttock/perineal region, signifying an acute abscess.</p>
+          </div>
+        </div>
+
+        <div class="diagram-wrap" style="max-width: 600px; margin: 20px auto;">
+          <div class="diagram-title">Fig. Q: Large Posterior Perianal Ulcer</div>
+          <img src="../../assets/images/crohns/perianal_crohn_disease_p44_16.jpg" alt="Large Posterior Ulcer">
+          <p style="font-size:12px;color:var(--muted);margin-top:6px;line-height:1.4;">Severe perineal tissue destruction showing a very large, deep posterior ulcer (arrow) coupled with a painful, edematous anterior fissure (arrowhead).</p>
+        </div>
+
+        <h4>The EUA and Loose Draining Seton Protocol:</h4>
+        <ol>
+          <li><strong>EUA &amp; Proctoscopy First:</strong> Every perianal exploration must begin with a formal proctoscopy. Assessing the rectal mucosa is critical; active rectal inflammation at the internal opening is a absolute contraindication to any local repair.</li>
+          <li><strong>Sepsis Drainage:</strong> Incise and drain any fluctuant abscess cavity.</li>
+          <li><strong>Loose Draining Seton:</strong> Identify the fistula tract. Thread a silastic or vessel loop seton through the tract, tying it loosely. The seton maintains tract patency, preventing superficial closing that locks in acute sepsis. Loose setons are left in place for months or years.</li>
+          <li><strong>Combined Medical Induction:</strong> Initiate high-dose Anti-TNF biologic therapy (Infliximab target trough **&ge; 10 mcg/mL** for active fistulae) combined with thiopurines and metronidazole/ciprofloxacin. Setons are removed only when mucosal healing is confirmed on pelvic MRI.</li>
+        </ol>
+
+        <div class="diagram-wrap" style="max-width: 650px; margin: 20px auto;">
+          <div class="diagram-title">Complex Perianal Fistula Management Algorithm</div>
+          <img src="../../assets/images/crohns/perianal_crohn_disease_p40_13.png" alt="Management of Complex Perianal Fistula in Crohn's">
+          <p style="font-size:12px;color:var(--muted);margin-top:6px;line-height:1.4;">Landmark UpToDate treatment algorithm: (1) Sepsis control via EUA, abscess drainage, and non-cutting Seton placement. (2) Concomitant Metronidazole/Ciprofloxacin. (3) Rapid induction of anti-TNF biologics (Infliximab target trough &ge;10 mcg/mL) with thiopurines. (4) Maintenance and delayed Seton removal.</p>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════════════════════════════════ -->
+      <!-- PILLAR 3: PEARLS & BAIL-OUTS ═══════════════════════════════ -->
+      <!-- ════════════════════════════════════════════════════════════ -->
+      <div class="sec-header s3">
+        <span class="sec-badge">PILLAR 3</span>
+        <h2 class="sec-title">Technical Pearls &amp; Bail-Out Strategies</h2>
+      </div>
+
+      <section class="topic s3" id="pearls">
+        <div class="topic-header">
+          <span class="topic-num">3.1</span>
+          <h2>Consultant Pearls</h2>
+        </div>
+        <div class="callout pearl">
+          <span class="label">Consultant Pearl #1: The Creeping Fat Is Telling You Something</span>
+          The fat-wrapping ("creeping fat") that is pathognomonic of Crohn's disease on intraoperative examination is not just an aesthetic finding — it is a direct indicator of underlying transmural inflammation at that site. When you see a segment of bowel with creeping fat extending more than halfway around its circumference, that segment is actively inflamed. It will not heal reliably. If you are planning to anastomose adjacent to it, plan a wider resection margin than you think you need, or plan a strictureplasty on the affected segment before it causes your anastomosis to fail.
+          <br><br>
+          The creeping fat also makes the mesentery unforgiving — thickened, vascular, and prone to haemorrhage. Control vessels individually; do not mass-ligate inflamed Crohn's mesentery.
+        </div>
+        <div class="callout pearl">
+          <span class="label">Consultant Pearl #2: Run the Bowel Before You Resect — Skip Lesions Are Not Optional Findings</span>
+          The most common surgical error in ileocaecal Crohn's resection is failure to run the entire small bowel before committing to the resection. The terminal ileum is the obvious culprit — and you deal with it. Then the patient returns 18 months later with a small bowel obstruction from a mid-ileal stricture that was visible at the first operation if anyone had looked.
+          <br><br>
+          Before you make your proximal ileal division: run 150cm of small bowel proximal to it. Systematically. Every 10cm. Palpate each segment between thumb and forefinger — feel for the characteristic woody firmness of a fibrotic Crohn's stricture. Mark any strictures with a suture. Decide whether they need strictureplasty at this operation.
+        </div>
+        <div class="callout pearl">
+          <span class="label">Consultant Pearl #3: The Perianal Crohn's Fistula That You Are Tempted to Cut Is the One That Will Make the Patient Incontinent</span>
+          The appearance of a perianal fistula in Crohn's disease is often identical to a cryptoglandular fistula. The difference is invisible on examination. In a non-IBD patient, a low trans-sphincteric fistula dividing 30% of the external sphincter is a reasonable and safe fistulotomy. In a Crohn's patient — it is not. The Crohn's-affected sphincter does not heal predictably; the internal sphincter is often already compromised by rectal inflammation.
+          <br><br>
+          The rule: in any patient with a known or suspected diagnosis of Crohn's disease, do not perform a fistulotomy. When in doubt: EUA + seton + MRI + gastroenterology review before any definitive sphincter surgery.
+        </div>
+      </section>
+
+      <section class="topic s3" id="bailouts">
+        <div class="topic-header">
+          <span class="topic-num">3.2</span>
+          <h2>The Bail-Out Points</h2>
+        </div>
+        <p>Stop and escalate when:</p>
+        <ul>
+          <li><strong>The bowel at the planned anastomotic margin is thickened, oedematous, or has creeping fat:</strong> Do not anastomose to diseased bowel; extend the resection 2cm further. If extension is not feasible without sacrificing too much bowel, defunction and close; plan anastomosis at a second stage in a better nutritional state.</li>
+          <li><strong>The mesentery is too thickened and inflamed to safely divide near the bowel wall without bleeding:</strong> Control the haemorrhage; call senior; do not create a mesenteric haematoma in inflamed Crohn's mesentery by pulling blindly on poorly controlled vessels.</li>
+          <li><strong>The residual bowel length after the planned resection would be &lt; 150 cm:</strong> Stop; reassess; every additional strictureplasty that avoids resection is worth the technical complexity. Call a senior Crohn's specialist.</li>
+          <li><strong>You find a pericaecal or intra-abdominal abscess that was not fully characterised pre-operatively:</strong> Do not resect and anastomose in the same field as an undrained abscess. Drain the abscess; bring out a defunctioning stoma if needed; plan anastomosis at a second stage in a clean field.</li>
+          <li><strong>Frozen section of a strictureplasty biopsy returns dysplasia or carcinoma:</strong> Convert to segmental resection with adequate margins. Dysplasia in a Crohn's stricture is treated the same as colorectal carcinoma; call senior.</li>
+        </ul>
+      </section>
+
+      <!-- ════════════════════════════════════════════════════════════ -->
+      <!-- PILLAR 4: POST-OPERATIVE CARE & SURVEILLANCE ══════════════ -->
+      <!-- ════════════════════════════════════════════════════════════ -->
+      <div class="sec-header s4">
+        <span class="sec-badge">PILLAR 4</span>
+        <h2 class="sec-title">Post-operative Care &amp; Longitudinal Follow-up</h2>
+      </div>
+
+      <section class="topic s4" id="recovery">
+        <div class="topic-header">
+          <span class="topic-num">4.1</span>
+          <h2>Immediate Post-op &amp; ERAS Protocol</h2>
+        </div>
+        <ul>
+          <li><strong>Fluids:</strong> Goal-directed intraoperative fluid restriction. Post-op restrict crystalloids to 1.0–1.5 L/day. Excess fluid exacerbates anastomotic oedema, increasing leak rates. Early sips same evening, free fluids POD1, soft diet POD2.</li>
+          <li><strong>Steroid Management:</strong> Maintain stress-dose IV hydrocortisone cover for 24–48 hours before reverting to their pre-operative oral prednisone dose. Never abruptly withdraw steroids to prevent an Addisonian crisis.</li>
+          <li><strong>Nutritional Support:</strong> Initiate supplemental oral enteral nutrition for 4–6 weeks post-operatively in severely malnourished patients to facilitate anastomotic healing.</li>
+          <li><strong>Anastomotic Complications Monitoring:</strong> Serum CRP is the gold standard. CRP should peak on POD2-3 and decline thereafter. A rising CRP from POD3 onward (**&gt; 150 mg/L**) indicates an anastomotic leak or pelvic fluid collection; order CT abdomen/pelvis with rectal contrast immediately.</li>
+          <li><strong>VTE Prophylaxis:</strong> Resume LMWH 12 hours post-operatively. Prescribe a mandatory **28-day course** of extended post-discharge LMWH prophylaxis due to their highly pro-thrombotic baseline state.</li>
+        </ul>
+      </section>
+
+      <section class="topic s4" id="recurrence-prevention">
+        <div class="topic-header">
+          <span class="topic-num">4.2</span>
+          <h2>Post-operative Medical Prophylaxis (Rutgeerts)</h2>
+        </div>
+        <p>Endoscopic recurrence in the neoterminal ileum proximal to the anastomosis occurs in **50–70% of patients within 12 months** if untreated. Aggressive post-operative medical prophylaxis is mandatory.</p>
+        
+        <p><strong>Rutgeerts Post-op Recurrence Score (6-Month Colonoscopy):</strong>
+          <ul>
+            <li>*i0:* No mucosal lesions. Perfect healing.</li>
+            <li>*i1:* &lt; 5 aphthous ulcers. Minimal inflammation.</li>
+            <li>*i2:* &gt; 5 aphthous ulcers with normal intervening mucosa, or lesions confined purely to the anastomosis. Requires therapy escalation (thiopurines or anti-TNFs).</li>
+            <li>*i3:* Diffuse aphthous ileitis with diffusely inflamed mucosa.</li>
+            <li>*i4:* Diffuse ileal inflammation with large ulcers, nodules, and/or stricturing.</li>
+          </ul>
+        </p>
+
+        <p><strong>Post-operative Medical Prophylaxis Pathway:</strong>
+          <ul>
+            <li>*Low-Risk Patients:* First resection, long disease-free interval, non-smoker. Initiate Azathioprine (2.0–2.5 mg/kg/day) within 2–4 weeks.</li>
+            <li>*High-Risk Patients:* History of multiple resections, penetrating disease (B3), perianal disease (B3p), or active tobacco smoker. Start **Anti-TNF biologic therapy (Infliximab/Adalimumab) within 2 to 4 weeks of surgery**.</li>
+          </ul>
+        </p>
+
+        <div class="diagram-wrap" style="max-width: 600px; margin: 20px auto;">
+          <div class="diagram-title">Post-Operative Medical Prophylaxis &amp; Surveillance Algorithm</div>
+          <img src="../../assets/images/crohns/management_of_crohn_disease_after_surgical_resection_p22_1.png" alt="Post-Operative Prophylaxis Crohn's Disease">
+          <p style="font-size:12px;color:var(--muted);margin-top:6px;line-height:1.4;">Algorithm for postsurgical Crohn's: (1) Risk stratification immediately post-op. (2) High-risk patients (smokers, penetrating B3 phenotype, recurrent resections) start **biologic therapy (anti-TNF Infliximab/Adalimumab) within 2 to 4 weeks of surgery**. (3) Low-risk patients can undergo clinical surveillance with fecal calprotectin every 3 months. (4) All patients undergo ileocolonoscopy at 6 months to guide treatment escalation based on the Rutgeerts score.</p>
+        </div>
+      </section>
+
+      <section class="topic s4" id="followup">
+        <div class="topic-header">
+          <span class="topic-num">4.3</span>
+          <h2>Clinic Follow-up Timeline</h2>
+        </div>
+        <ul>
+          <li><strong>2-Week Visit:</strong> Wound inspection (stoma site hernia, SSI, purse-string healing). Bowel function assessment (set realistic expectations for early impairment).</li>
+          <li><strong>6-Week Visit:</strong> Functional assessment. Investigate persistent difficulty (anastomotic stricture is common and amenable to endoscopic dilatation). Early hernias detected should be referred for elective repair.</li>
+          <li><strong>3-6 Month Visit:</strong> Long-term functional outcome assessment. Colonoscopy at 1 year for malignancy cases. Reversal discussion for loop stomas.</li>
+        </ul>
+      </section>
+
+      <!-- ════════════════════════════════════════════════════════════ -->
+      <!-- PILLAR 5: COMPLICATION MANAGEMENT ══════════════════════════ -->
+      <!-- ════════════════════════════════════════════════════════════ -->
+      <div class="sec-header s5">
+        <span class="sec-badge">PILLAR 5</span>
+        <h2 class="sec-title">Complication Management</h2>
+      </div>
+
+      <section class="topic s5" id="leak">
+        <div class="topic-header">
+          <span class="topic-num">5.1</span>
+          <h2>Complication 1: Anastomotic Leak</h2>
+        </div>
+        <p>Anastomotic leak peaks on POD3-5. Because Crohn's patients are often immunosuppressed (on steroids/biologics), typical peritonitis signs (guarding, rigidity) are blunted. Fever may be absent. Rising CRP is the most sensitive marker.</p>
+        <ul>
+          <li><strong>Contained Leak (Stable Patient):</strong> Managed with bowel rest, TPN, IV antibiotics, and CT-guided percutaneous drain placement.</li>
+          <li><strong>Free Leak (Unstable/Septic Patient):</strong> Requires emergency re-laparotomy and washout. *Warning:* Do *not* attempt primary re-anastomosis or repair in an actively leaking, infected field. Dismantle the anastomosis, create an end stoma, and plan staged reconstruction later when the patient is nutritionally and immunologically optimized.</li>
+        </ul>
+      </section>
+
+      <section class="topic s5" id="abscess">
+        <div class="topic-header">
+          <span class="topic-num">5.2</span>
+          <h2>Complication 2: Post-operative Intra-abdominal Abscess</h2>
+        </div>
+        <p>Intra-abdominal abscess typically presents on POD5-14 with fever, abdominal pain, leukocytosis, and rising CRP. Must be differentiated from a mucosal flare via CT abdomen/pelvis with oral/rectal/IV contrast.</p>
+        <ul>
+          <li><strong>Anastomosis-related phlegmon (No fluid collection):</strong> Manage conservatively with bowel rest, IV antibiotics, and TPN.</li>
+          <li><strong>Discrete fluid collection (&gt; 3 cm):</strong> Perform first-line **CT-guided percutaneous drainage**. If associated with a localized minor anastomotic leak, place a defunctioning loop ileostomy to divert the fecal stream. Remove the drain only when output is &lt; 10 mL/24h and clinical sepsis has fully resolved.</li>
+          <li><strong>Failed drainage or multilocular abscess:</strong> Requires operative exploration, breakdown of loculations, extensive washout, and formal wide drain placement.</li>
+        </ul>
+      </section>
+
+      <section class="topic s5" id="short-bowel">
+        <div class="topic-header">
+          <span class="topic-num">5.3</span>
+          <h2>Complication 3: Short Bowel Syndrome</h2>
+        </div>
+        <p>Short Bowel Syndrome (SBS) is a catastrophic complication resulting from cumulative small bowel resections.</p>
+        <ul>
+          <li><strong>Functional SBS:</strong> **&lt; 200 cm** of remaining functional small bowel, causing chronic malabsorptive diarrhoea, steatorrhea, and weight loss.</li>
+          <li><strong>Anatomical SBS:</strong> **&lt; 100 cm** of remaining small bowel; permanent parenteral nutrition (TPN) dependence is highly likely.</li>
+          <li><strong>Management Protocol:</strong> 
+            <ul>
+              <li>*Anti-motility agents:* Loperamide or diphenoxylate/atropine taken 30 minutes before meals.</li>
+              <li>*Bile acid binders:* Cholestyramine (if ileal resection &lt; 100 cm; cholerrheic diarrhea). Avoid cholestyramine in resections &gt; 100 cm as it further depletes the bile salt pool, worsening fat malabsorption.</li>
+              <li>*Antiscretory agents:* PPIs to reduce gastric acid hypersecretion.</li>
+              <li>*GLP-2 Analogue:* Teduglutide (stimulates mucosal hypertrophy and increases small bowel absorptive capacity).</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!-- ════════════════════════════════════════════════════════════ -->
+      <!-- RAPID REFERENCE TABLE ══════════════════════════════════════ -->
+      <!-- ════════════════════════════════════════════════════════════ -->
+      <div class="rapid-ref" id="rapid">
+        <h3>Crohn's Disease Board-Review Rapid Reference</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Clinical Topic</th>
+              <th>Critical Board-Relevant Threshold / Fact</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Distal Limb Assessment</strong></td>
+              <td>Mandatory before reversal. Requires <strong>Water-soluble contrast enema</strong> + Flexible sigmoidoscopy.</td>
+            </tr>
+            <tr>
+              <td><strong>Calprotectin Endoscopy Cutoff</strong></td>
+              <td>Fecal Calprotectin <strong>&gt; 150 – 250 mcg/g</strong> warrants diagnostic ileocolonoscopy.</td>
+            </tr>
+            <tr>
+              <td><strong>Enteral Resection Threshold</strong></td>
+              <td>Resection of <strong>&gt; 100 cm</strong> of terminal ileum destroys bile salt pool, causing fat malabsorption.</td>
+            </tr>
+            <tr>
+              <td><strong>Cholerrheic Diarrhea Resection</strong></td>
+              <td>Resection of <strong>&lt; 100 cm</strong> of terminal ileum, treated with bile-acid binding resins (cholestyramine).</td>
+            </tr>
+            <tr>
+              <td><strong>Heineke-Mikulicz Length</strong></td>
+              <td>Indicated for small bowel strictures <strong>&le; 5 – 7 cm</strong>. Accountable for 85% of cases.</td>
+            </tr>
+            <tr>
+              <td><strong>Finney Strictureplasty Length</strong></td>
+              <td>Indicated for medium small bowel strictures <strong>10 – 20 cm</strong>.</td>
+            </tr>
+            <tr>
+              <td><strong>Michelassi Strictureplasty Length</strong></td>
+              <td>Side-to-Side Isoperistaltic strictureplasty, indicated for long strictured segments <strong>&gt; 20 cm</strong>.</td>
+            </tr>
+            <tr>
+              <td><strong>Active Fistula Infliximab Trough</strong></td>
+              <td>Higher target trough of <strong>&ge; 10 mcg/mL</strong> is preferred to promote fistula healing (normal target &ge; 5).</td>
+            </tr>
+            <tr>
+              <td><strong>Seton Placement Principle</strong></td>
+              <td>Setons must be <strong>non-cutting</strong> to maintain drainage. Avoid cutting Setons in IBD to preserve continence.</td>
+            </tr>
+            <tr>
+              <td><strong>Rutgeerts Surveillance Interval</strong></td>
+              <td>Perform ileocolonoscopy <strong>6 to 12 months</strong> post-op. Grade i2 or higher warrants immediate treatment.</td>
+            </tr>
+            <tr>
+              <td><strong>Post-op Biologic Prophylaxis</strong></td>
+              <td>Start Anti-TNF <strong>within 2 to 4 weeks</strong> post-operatively for patients with high-risk recurrence modifiers.</td>
+            </tr>
+            <tr>
+              <td><strong>Strongest Modifiable Risk Factor</strong></td>
+              <td><strong>Tobacco Smoking</strong> — doubles the risk of disease flares, strictures, and post-operative recurrence.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div><!-- end content-wrap -->
+  </main>
+
+  <button id="top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+  <script>
+    // Sidebar, Progress Bar, and Scroll-to-Top Logic
+    (function() {
+      const progressBar = document.getElementById('progress-bar');
+      const topBtn = document.getElementById('top-btn');
+      const navItems = document.querySelectorAll('.nav-item');
+      const sections = document.querySelectorAll('.topic[id], .rapid-ref[id]');
+      
+      window.toggleSidebar = function() { document.body.classList.toggle('sidebar-open'); };
+      window.closeSidebar = function() { document.body.classList.remove('sidebar-open'); };
+
+      window.addEventListener('scroll', () => {
+        const st = window.scrollY;
+        const dh = document.documentElement.scrollHeight - window.innerHeight;
+        if (progressBar) progressBar.style.transform = `scaleX(${st / dh})`;
+        if (topBtn) topBtn.classList.toggle('show', st > 400);
+        
+        let current = '';
+        sections.forEach(s => {
+          if (st >= s.offsetTop - 120) current = s.id;
+        });
+        navItems.forEach(n => {
+          n.classList.toggle('active', n.getAttribute('href') === '#' + current);
+        });
+      });
+
+      window.filterNav = function(query) {
+        const q = query.toLowerCase();
+        navItems.forEach(item => {
+          item.style.display = (!q || item.textContent.toLowerCase().includes(q)) ? 'block' : 'none';
+        });
+        document.querySelectorAll('.vol-label').forEach(l => {
+          l.style.display = 'block';
+        });
+      };
+
+      navItems.forEach(item => {
+        item.addEventListener('click', e => {
+          e.preventDefault();
+          closeSidebar();
+          const target = document.querySelector(item.getAttribute('href'));
+          if (target) {
+            window.scrollTo({
+              top: target.getBoundingClientRect().top + window.scrollY - 80,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+    })();
+  </script>
+  <script src="../../js/navigation.js"></script>
+</body>
+</html>
