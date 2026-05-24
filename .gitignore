@@ -46,3 +46,5 @@ test_*.py
 *.env
 js/questions/general_surgery.js
 compiled_mcqs/*.json
+js/questions/recovered.js
+
