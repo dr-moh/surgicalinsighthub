@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Partial vs. Complete Cholecystectomy: A Propensity-Matched Reality Check — Surgical Insight Hub</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Shared Styles -->
+  <link rel="stylesheet" href="../css/theme.css">
+  <link rel="stylesheet" href="../css/shared.css">
+  <link rel="stylesheet" href="blog.css">
+  
+  <script>
+    const savedTheme = localStorage.getItem('sih-theme') || 'light';
+    if (savedTheme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+  </script>
+</head>
+<body>
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="mainNav">
+    <div class="nav-left">
+      <a href="../index.html" class="nav-pill">
+        <div class="nav-logo-img">
+          <img src="../assets/images/Surgical_Insight_Hub_Logo.png" alt="SIH">
+        </div>
+        <div>
+          <div class="nav-brand-text">Surgical Insight Hub</div>
+          <div class="nav-brand-sub">Advanced Surgical Learning</div>
+        </div>
+      </a>
+      <div class="nav-links-pill">
+        <a href="../index.html">Home</a>
+        <a href="../notes.html">Notes</a>
+        <a href="../notes/operative_approach.html">Playbook</a>
+        <a href="../podcast.html">Podcast</a>
+        <a href="../surgery-talk.html" class="active">Surgery Talk</a>
+        <a href="../about.html">About</a>
+      </div>
+    </div>
+
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <svg id="moonIcon" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/></svg>
+        <svg id="sunIcon" style="display:none;" viewBox="0 0 24 24"><path d="M12 7a5 5 0 1 0 5 5 5.006 5.006 0 0 0-5-5zm0 8a3 3 0 1 1 3-3 3.003 3.003 0 0 1-3 3zm0-13a1 1 0 0 0-1 1v2a1 1 0 0 0 2 0V3a1 1 0 0 0-1-1zm0 18a1 1 0 0 0-1 1v2a1 1 0 0 0 2 0v-2a1 1 0 0 0-1-1zm8-11h-2a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2zm-16 0H2a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2zm13.657-5.657a1 1 0 0 0-1.414 0l-1.414 1.414a1 1 0 0 0 1.414 1.414l1.414-1.414a1 1 0 0 0 0-1.414zm-11.314 0a1 1 0 0 0 0 1.414l1.414 1.414a1 1 0 0 0 1.414-1.414L4.929 5.757a1 1 0 0 0-1.414 0zm11.314 11.314a1 1 0 0 0 0 1.414l1.414 1.414a1 1 0 0 0 1.414-1.414l-1.414-1.414a1 1 0 0 0-1.414 0zm-11.314 0a1 1 0 0 0-1.414 1.414l1.414 1.414a1 1 0 0 0 1.414-1.414l-1.414-1.414a1 1 0 0 0 0-1.414z"/></svg>
+      </button>
+      <a href="../arena.html" class="nav-btn arena-btn">MCQ Arena</a>
+      <button class="mob-nav-toggle" onclick="openMobNav()">
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mob-nav-overlay" id="mobNavOverlay" onclick="closeMobNav()"></div>
+  <div class="mob-nav-sheet" id="mobNavSheet">
+    <div class="mob-nav-handle"></div>
+    <a href="../index.html" onclick="closeMobNav()">Home</a>
+    <a href="../notes.html" onclick="closeMobNav()">Notes</a>
+    <a href="../notes/operative_approach.html" onclick="closeMobNav()">Playbook</a>
+    <a href="../podcast.html" onclick="closeMobNav()">Podcast</a>
+    <a href="../surgery-talk.html" class="active" onclick="closeMobNav()">Surgery Talk</a>
+    <a href="../arena.html" onclick="closeMobNav()">MCQ Arena</a>
+    <a href="../about.html" onclick="closeMobNav()">About</a>
+  </div>
+
+  <article>
+    <header class="blog-hero">
+      <h1 class="blog-title">Partial vs. Complete Cholecystectomy: A Propensity-Matched Reality Check</h1>
+      <div class="blog-meta" style="margin-top: 1rem;">
+        <span class="blog-badge" style="background: rgba(220, 38, 38, 0.1); color: #dc2626;">Clinical Evidence</span>
+        <span class="blog-date">May 24, 2026</span>
+      </div>
+      <p class="blog-subtitle">An NLP analysis of 15,000+ cases reveals 5x higher mortality and 3x higher complication rates for partial cholecystectomies. A vital bailout, but at what cost?</p>
+    </header>
+
+    <div class="blog-container">
+      <main class="blog-main blog-content">
+        <p>The "difficult gallbladder" remains one of the most treacherous encounters in general surgery. When faced with severe inflammation, distorted anatomy, or dense adhesions that obscure the critical view of safety, surgical dogma and SAGES guidelines point to a reliable bailout: the <strong>partial (subtotal) cholecystectomy</strong>.</p>
+
+        <p>While this technique undeniably mitigates the catastrophic risk of major bile duct injury, it brings its own distinct complication profile. A new 2026 study in the <em>Journal of Surgical Research</em> by Nigam et al. leverages Natural Language Processing (NLP) to cut through coding ambiguities and provide a rigorous, propensity-matched look at just how significant that morbidity actually is.</p>
+
+        <hr>
+
+        <h2>The Methodology: NLP and Propensity Matching</h2>
+        
+        <p>Because partial cholecystectomy lacks specific CPT and ICD-10 codes in clinical practice, capturing accurate data has historically been a challenge. To solve this, the researchers applied a validated BioClinicalBERT NLP classifier to over 15,000 operative reports across 14 hospitals from 2010 to 2025.</p>
+
+        <p>This AI-driven approach achieved a 95.9% accuracy rate, successfully identifying 107 partial cholecystectomies. To control for selection bias (as partial cases inherently involve sicker patients and worse pathology), they utilized a 4:1 propensity score matching based on age, sex, race, ethnicity, and comorbidities. The final analytic cohort consisted of 518 patients.</p>
+
+        <figure class="blog-image">
+          <img src="../assets/images/report_fig1.png" alt="Figure 1: Flow Diagram of Patient Selection" style="width:100%; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+          <figcaption>Figure 1: Flow diagram showing the NLP classification and propensity score matching process.</figcaption>
+        </figure>
+
+        <figure class="blog-image">
+          <img src="../assets/images/report_table1.png" alt="Table 1: Baseline Demographics" style="width:100%; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+          <figcaption>Table 1: Baseline demographics showing excellent balance across the propensity-matched cohort.</figcaption>
+        </figure>
+
+        <hr>
+
+        <h2>The Data: The Hard Truth</h2>
+        <p>The propensity-matched outcomes were sobering. Even after adjusting for baseline patient factors, the partial cholecystectomy cohort experienced drastically higher complication rates across nearly every metric.</p>
+
+        <div class="callout callout-warning" style="background: rgba(220, 38, 38, 0.05); border-left: 4px solid #dc2626; padding: 1.5rem; margin: 2rem 0; border-radius: 4px;">
+          <h4 style="color: #dc2626; margin-top: 0;">Key Findings (Partial vs. Complete)</h4>
+          <ul style="margin-bottom: 0;">
+            <li><strong>30-Day Mortality:</strong> 3.8% vs 0.7% (5x higher, P = 0.033)</li>
+            <li><strong>Overall Complications:</strong> 75.0% vs 26.6% (2.8x higher, P < 0.001)</li>
+            <li><strong>ICU Admission:</strong> 8.7% vs 2.7% (3.3x higher, P = 0.009)</li>
+            <li><strong>Postoperative ERCP:</strong> 13.5% vs 1.4% (P < 0.001)</li>
+            <li><strong>Drain Placement:</strong> 68.3% vs 19.8% (P < 0.001)</li>
+          </ul>
+        </div>
+
+        <figure class="blog-image">
+          <img src="../assets/images/report_table2.png" alt="Table 2: Primary and Secondary Outcomes" style="width:100%; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+          <figcaption>Table 2: Primary and secondary outcomes showing significantly elevated complication rates in the partial cohort.</figcaption>
+        </figure>
+
+        <figure class="blog-image">
+          <img src="../assets/images/report_fig2.png" alt="Figure 2: Risk Ratios" style="width:100%; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+          <figcaption>Figure 2: Forest plot comparing risk ratios for postoperative outcomes.</figcaption>
+        </figure>
+        
+        <figure class="blog-image">
+          <img src="../assets/images/report_table3.png" alt="Table 3: Risk Ratios for Primary Outcomes" style="width:100%; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+          <figcaption>Table 3: Risk ratios for primary outcomes detailing the five-fold increase in 30-day mortality.</figcaption>
+        </figure>
+
+        <hr>
+
+        <h2>The Takeaway</h2>
+        
+        <p>The five-fold higher mortality after propensity matching suggests that unmeasured intraoperative complexity variables—such as the severity of inflammation, adhesions, and Calot's triangle obliteration—heavily contribute to postoperative risk. </p>
+
+        <p>This does <em>not</em> mean partial cholecystectomy should be abandoned. It remains a crucial, potentially life-saving maneuver to avoid devastating biliary and vascular injuries when the critical view of safety is unattainable. However, this data underscores that partial cholecystectomy is a marker of a highly perilous clinical scenario with profound postoperative consequences.</p>
+
+        <p>For the surgical practitioner, these findings highlight the absolute necessity of explicit preoperative counseling. Patients presenting with complex gallbladder disease must be informed of the significantly increased risks of bile leak, drain placement, ERCP, and mortality should a partial cholecystectomy become necessary.</p>
+
+        <div style="margin-top: 3rem; padding: 2rem; background: var(--bg-secondary); border-radius: 12px; text-align: center;">
+          <h3 style="margin-top: 0;">Read the Full Publication</h3>
+          <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">For full details on the NLP methodology, complete data tables, and in-depth discussion, review the original article.</p>
+          <a href="https://experts.umn.edu/en/publications/partial-versus-complete-cholecystectomy-a-propensity-score-matche/" target="_blank" style="display: inline-block; padding: 0.75rem 1.5rem; background: #2563eb; color: white; text-decoration: none; border-radius: 6px; font-weight: 500; transition: background 0.2s;">View on Experts@Minnesota</a>
+        </div>
+      </main>
+    </div>
+  </article>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="../assets/images/Surgical_Insight_Hub_Logo.png" alt="SIH">
+        </div>
+        <div class="footer-text">
+          <div class="footer-title">Surgical Insight Hub</div>
+          <div class="footer-sub">Advanced Surgical Learning</div>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="../index.html">Home</a>
+        <a href="../notes.html">Notes</a>
+        <a href="../notes/operative_approach.html">Playbook</a>
+        <a href="../podcast.html">Podcast</a>
+        <a href="../arena.html">MCQ Arena</a>
+        <a href="../about.html">About</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; <span id="year"></span> Surgical Insight Hub. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const toggle = document.getElementById('themeToggle');
+    const root = document.documentElement;
+    const moon = document.getElementById('moonIcon');
+    const sun = document.getElementById('sunIcon');
+
+    function updateIcons(theme) {
+      if(theme === 'dark') {
+        moon.style.display = 'none';
+        sun.style.display = 'block';
+      } else {
+        moon.style.display = 'block';
+        sun.style.display = 'none';
+      }
+    }
+    updateIcons(savedTheme);
+
+    toggle.addEventListener('click', () => {
+      const current = root.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      localStorage.setItem('sih-theme', next);
+      updateIcons(next);
+    });
+    function openMobNav() {
+      document.getElementById('mobNavOverlay').classList.add('active');
+      document.getElementById('mobNavSheet').classList.add('active');
+    }
+    function closeMobNav() {
+      document.getElementById('mobNavOverlay').classList.remove('active');
+      document.getElementById('mobNavSheet').classList.remove('active');
+    }
+    let startY = 0;
+    const sheet = document.getElementById('mobNavSheet');
+    sheet.addEventListener('touchstart', e => {
+      startY = e.touches[0].clientY;
+    });
+    sheet.addEventListener('touchmove', e => {
+      const y = e.touches[0].clientY;
+      if (y > startY + 50) closeMobNav();
+    });
+  </script>
+</body>
+</html>

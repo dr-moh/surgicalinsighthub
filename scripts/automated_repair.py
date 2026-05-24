@@ -5,13 +5,11 @@ import random
 import re
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
-try:
-    from google import genai
-    from google.genai import types
-    vertex_client = genai.Client(vertexai=True, project="sih-mcq-pipeline", location="us-central1")
-except Exception as e:
-    print(f"Vertex AI failed to initialize: {e}")
-    vertex_client = None
+import requests
+import itertools
+
+GROQ_API_KEY = os.environ.get("GROQ_API_KEY", "")
+MODEL = "llama-3.3-70b-versatile"
 
 SHARP_4_PROMPT = """You are an expert medical educator and data engineer. 
 I will provide you with a severely corrupted Multiple Choice Question (MCQ).
@@ -59,40 +57,65 @@ Use this exact JSON format:
 }
 Ensure the output is clean JSON."""
 
-def call_vertex_repair(corrupted_text):
-    if not vertex_client:
-        return None
-        
-    prompt = f"{SHARP_4_PROMPT}\n\nCORRUPTED TEXT TO REPAIR:\n{corrupted_text}"
+def call_atxp_repair(prompt):
+    url = "https://llm.atxp.ai/v1/chat/completions"
+    headers = {"Authorization": f"Bearer {ATXP_CONNECTION}", "Content-Type": "application/json"}
     
-    max_retries = 8
-    for attempt in range(max_retries):
+    for model in ATXP_MODELS:
+        payload = {
+            "model": model,
+            "messages": [{"role": "system", "content": "Output clean JSON only."}, {"role": "user", "content": prompt}],
+            "temperature": 0.1,
+            "response_format": {"type": "json_object"}
+        }
         try:
-            response = vertex_client.models.generate_content(
-                model='gemini-2.5-flash',
-                contents=prompt,
-                config=types.GenerateContentConfig(
-                    response_mime_type="application/json",
-                    temperature=0.1
-                )
-            )
-            content = response.text.strip()
-            return json.loads(content)
-        except Exception as e:
-            err_msg = str(e)
-            if attempt == max_retries - 1:
-                print(f"Failed to repair: {err_msg}")
-                return None
-            if "429" in err_msg or "RESOURCE_EXHAUSTED" in err_msg:
-                wait_time = random.uniform(3.0, 7.0)
-                time.sleep(wait_time)
-            else:
-                time.sleep(1)
+            resp = requests.post(url, headers=headers, json=payload, timeout=15)
+            if resp.status_code == 429:
+                continue # Try next model
+            resp.raise_for_status()
+            content = resp.json()["choices"][0]["message"]["content"].strip()
+            if content.startswith("```json"): content = content[7:]
+            if content.endswith("```"): content = content[:-3]
+            return json.loads(content.strip())
+        except Exception:
+            continue # Try next model
             
+    return None # All ATXP models exhausted
+
+def call_groq_repair(prompt):
+    url = "https://api.groq.com/openai/v1/chat/completions"
+    headers = {"Authorization": f"Bearer {GROQ_API_KEY}", "Content-Type": "application/json"}
+    payload = {
+        "model": MODEL,
+        "messages": [{"role": "system", "content": "Output clean JSON only."}, {"role": "user", "content": prompt}],
+        "temperature": 0.1,
+        "response_format": {"type": "json_object"}
+    }
+    
+    with groq_lock:
+        time.sleep(2.1) # Strictly respect 30 RPM
+        try:
+            resp = requests.post(url, headers=headers, json=payload, timeout=60)
+            resp.raise_for_status()
+            content = resp.json()["choices"][0]["message"]["content"].strip()
+            if content.startswith("```json"): content = content[7:]
+            if content.endswith("```"): content = content[:-3]
+            return json.loads(content.strip())
+        except Exception as e:
+            print(f"Groq fallback failed: {e}")
+            return None
+
 def process_question(item):
     corrupted_text = item.get("question", "") + "\n" + "\n".join(item.get("options", [])) if isinstance(item.get("options"), list) else item.get("question", "") + "\n" + str(item.get("options", ""))
     
-    repaired_json = call_vertex_repair(corrupted_text)
+    # Try all 15+ ATXP models first
+    prompt = f"{SHARP_4_PROMPT}\n\nCORRUPTED TEXT TO REPAIR:\n{corrupted_text}"
+    repaired_json = call_atxp_repair(prompt)
+    
+    # If ATXP is totally exhausted, fall back to Groq
+    if not repaired_json:
+        repaired_json = call_groq_repair(prompt)
+
     if repaired_json:
         repaired_json["id"] = item.get("id")
         return repaired_json
@@ -127,7 +150,7 @@ def main():
     success_count = 0
     fail_count = 0
     
-    print(f"Processing in background using Vertex AI...", flush=True)
+    print(f"Processing in background using ATXP (15 models) with Groq fallback. 20 workers...", flush=True)
     with ThreadPoolExecutor(max_workers=20) as executor:
         futures = {executor.submit(process_question, q): q for q in to_process[:limit]}
         

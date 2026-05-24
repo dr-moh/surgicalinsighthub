@@ -45,3 +45,4 @@ js/questions/removed_bad_mcqs.js
 test_*.py
 *.env
 js/questions/general_surgery.js
+compiled_mcqs/*.json

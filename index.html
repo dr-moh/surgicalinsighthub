@@ -633,6 +633,14 @@
 const SURGERY_TALK_POSTS = [
   {
     type: 'blog',
+    category: 'Clinical Evidence',
+    date: 'May 24, 2026',
+    title: 'Partial vs. Complete Cholecystectomy: A Propensity-Matched Reality Check',
+    desc: 'An NLP analysis of 15,000+ cases reveals 5x higher mortality and 3x higher complication rates for partial cholecystectomies. A vital bailout, but at what cost?',
+    href: 'blog/partial-vs-complete-cholecystectomy.html'
+  },
+  {
+    type: 'blog',
     category: 'Career Guide',
     date: 'May 23, 2026',
     title: 'Why 52% of Retired Surgeons Regret Their Career Choices',
@@ -730,11 +738,11 @@ const SURGERY_TALK_POSTS = [
 
     return `<a href="${p.href}" class="st-mini-card${isBlog ? ' blog-type' : ''}" 
               style="animation: fadeInUp .4s ease both; animation-delay: ${i * 0.08}s">
-      <div class="st-mini-meta">
+      <p class="st-mini-title">${p.title}</p>
+      <div class="st-mini-meta" style="margin: 0.5rem 0;">
         ${typeBadge}${catBadge}
         <span class="st-mini-date">${p.date}</span>
       </div>
-      <p class="st-mini-title">${p.title}</p>
       <p class="st-mini-desc">${p.desc}</p>
       <div class="st-mini-footer">${footerText}</div>
     </a>`;
