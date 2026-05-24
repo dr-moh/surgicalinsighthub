@@ -361,6 +361,63 @@
   .mob-nav-toggle{display:flex;}
 }
 
+/* SHARP 4.0 Template 2: Modern Glassmorphism */
+.sharp4-distractor {
+  background: rgba(201, 58, 58, 0.05);
+  border: 1px solid rgba(201, 58, 58, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 16px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  list-style: none;
+}
+.sharp4-distractor strong { color: #ff6b6b; font-weight: 600; }
+
+.sharp4-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  margin: 16px 0;
+  font-size: 0.85rem;
+}
+.sharp4-table th {
+  background: rgba(229, 179, 106, 0.1);
+  color: #e5b36a;
+  padding: 16px;
+  text-align: left;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.sharp4-table td {
+  padding: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.sharp4-pearl {
+  background: linear-gradient(135deg, rgba(229,179,106,0.1) 0%, rgba(229,179,106,0.02) 100%);
+  border: 1px solid rgba(229, 179, 106, 0.3);
+  border-radius: 12px;
+  padding: 20px 20px 20px 48px;
+  position: relative;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  font-family: 'Merriweather', serif;
+}
+.sharp4-pearl::before {
+  content: "💡";
+  position: absolute;
+  top: 18px;
+  left: 16px;
+  font-size: 20px;
+  filter: drop-shadow(0 0 8px rgba(229,179,106,0.5));
+}
 </style>
 
 <!-- SETUP SCREEN -->
@@ -989,34 +1046,10 @@ function showSharp(q, selected, isCorrect) {
     
     var rawHtml = marked.parse(debriefContent);
     
-    // Golden Design HTML Interceptor
+    // Golden Design HTML Interceptor (SHARP 4.0 Template 2)
     var tempDiv = document.createElement('div');
     tempDiv.innerHTML = rawHtml;
     
-    // Inject premium classes into top-level list items (S.H.A.R.P.)
-    // We target direct children of the top-level ul to avoid nested lists.
-    var topLists = tempDiv.querySelectorAll(':scope > ul');
-    topLists.forEach(function(ul) {
-      var listItems = ul.querySelectorAll(':scope > li');
-      listItems.forEach(function(li) {
-        var firstTextNode = li.textContent.trim();
-        if (/S\s*[–-]\s*Set the Stage/i.test(firstTextNode)) {
-          li.classList.add('sharp-golden-card', 'sharp-s-card');
-        } else if (/H\s*[–-]\s*Highlight Excellence/i.test(firstTextNode)) {
-          li.classList.add('sharp-golden-card', 'sharp-h-card');
-        } else if (/A\s*[–-]\s*Address the Gaps/i.test(firstTextNode)) {
-          li.classList.add('sharp-golden-card', 'sharp-a-card');
-        } else if (/R\s*[–-]\s*Review Learning Points/i.test(firstTextNode)) {
-          li.classList.add('sharp-golden-card', 'sharp-r-card');
-        } else if (/P\s*[–-]\s*Plan for Improvement/i.test(firstTextNode) || /Board Pearl/i.test(firstTextNode)) {
-          li.classList.add('sharp-golden-card', 'sharp-p-card');
-        } else {
-          // General fallback for other top-level lists (like Supplementary Callouts)
-          li.classList.add('sharp-golden-card', 'sharp-general-card');
-        }
-      });
-    });
-
     // Style the main headers and sub-headers
     var headings = tempDiv.querySelectorAll('h3, h4');
     headings.forEach(function(h) {
@@ -1024,6 +1057,42 @@ function showSharp(q, selected, isCorrect) {
         h.classList.add('sharp-golden-header');
       } else if (h.textContent.includes('Supplementary')) {
         h.classList.add('sharp-golden-subheader');
+      }
+    });
+
+    // 1. Style Tables
+    var tables = tempDiv.querySelectorAll('table');
+    tables.forEach(function(tbl) {
+      tbl.classList.add('sharp4-table');
+    });
+
+    // 2. Style Distractors & Pearls based on adjacent paragraphs
+    var paragraphs = tempDiv.querySelectorAll('p');
+    paragraphs.forEach(function(p) {
+      var text = p.textContent.trim();
+      
+      // Address the Gaps -> Distractors
+      if (/A\s*[–-]\s*Address the Gaps/i.test(text) || /Distractor Demolition/i.test(text)) {
+        var nextEl = p.nextElementSibling;
+        if (nextEl && nextEl.tagName.toLowerCase() === 'ul') {
+          var listItems = nextEl.querySelectorAll(':scope > li');
+          listItems.forEach(function(li) {
+            li.classList.add('sharp4-distractor');
+          });
+        }
+      }
+      
+      // Plan for Improvement -> Pearl
+      if (/P\s*[–-]\s*Plan for Improvement/i.test(text) || /Exam Heuristic/i.test(text)) {
+        var nextEl = p.nextElementSibling;
+        if (nextEl && nextEl.tagName.toLowerCase() === 'ul') {
+          var listItems = nextEl.querySelectorAll(':scope > li');
+          listItems.forEach(function(li) {
+            li.classList.add('sharp4-pearl');
+          });
+        } else if (nextEl && nextEl.tagName.toLowerCase() === 'p') {
+           nextEl.classList.add('sharp4-pearl');
+        }
       }
     });
 
