@@ -26,6 +26,18 @@ window.NOTES_DATA = {
   /* ── HIGH-YIELD NOTES ── */
   highjield: [
     {
+      id: 'hy-crohns-disease',
+      title: 'Crohn\'s Disease Staging & Interventions',
+      kicker: 'IBD Master Series',
+      specialty: ['colorectal', 'basics'],
+      description: 'Evidence-based clinical guidelines on Crohn\'s disease: Montreal classification, diagnostic biomarkers, medical step-up/top-down biologics, strictureplasty models, perianal Seton drainage, and the Rutgeerts recurrence score.',
+      tags: ['red:IBD', 'red:Staging', 'Strictureplasty', 'Biologics', 'Rutgeerts', 'ABSITE'],
+      pages: '5 Pillars',
+      type: 'web',
+      url: 'notes/Surgical High-Yield Notes/crohns_disease.html',
+      isNew: true
+    },
+    {
       id: 'hy-anastomotic-complications',
       title: 'Anastomotic Complications',
       kicker: 'Colorectal High-Yield Notes',

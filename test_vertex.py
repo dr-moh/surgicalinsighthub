@@ -4,10 +4,10 @@ import re
 from google import genai
 from google.genai import types
 
-with open('MCQ Bank/rush_questions.json', 'r') as f:
+with open('compiled_mcqs/removed_bad_mcqs.json', 'r') as f:
     data = json.load(f)
 
-q = data[100]
+q = data[0]
 
 vertex_client = genai.Client(vertexai=True, project="sih-mcq-pipeline", location="us-central1")
 

@@ -1,0 +1,6 @@
+# OpenProvider provider keys export
+# Generated 2026-05-24T17:44:39.090Z
+# Paste these values into .env.local or .env before running: npm run status:models
+
+# ATXP LLM Gateway
+ATXP_CONNECTION="https://accounts.atxp.ai?connection_token=I8ybZQAMDOfH42JDuv76M&account_id=atxp_acct_TyqIFldoHcKLRF4gA0gE0"

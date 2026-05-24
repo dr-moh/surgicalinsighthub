@@ -143,42 +143,57 @@ def call_groq_repair(prompt):
         "response_format": {"type": "json_object"}
     }
     
-    with groq_lock:
+    acquired = groq_lock.acquire(timeout=45)
+    if not acquired:
+        print("Groq lock acquisition timed out. Skipping Groq fallback.")
+        return None
+    try:
         time.sleep(2.1) # Strictly respect 30 RPM
-        try:
-            resp = requests.post(url, headers=headers, json=payload, timeout=60)
-            resp.raise_for_status()
-            content = resp.json()["choices"][0]["message"]["content"].strip()
-            if content.startswith("```json"): content = content[7:]
-            if content.endswith("```"): content = content[:-3]
-            return json.loads(content.strip(), strict=False)
-        except Exception as e:
-            print(f"Groq fallback failed: {e}")
-            return None
+        resp = requests.post(url, headers=headers, json=payload, timeout=60)
+        resp.raise_for_status()
+        content = resp.json()["choices"][0]["message"]["content"].strip()
+        if content.startswith("```json"): content = content[7:]
+        if content.endswith("```"): content = content[:-3]
+        return json.loads(content.strip(), strict=False)
+    except Exception as e:
+        print(f"Groq fallback failed: {e}")
+        return None
+    finally:
+        groq_lock.release()
 
 vertex_client = None
 def call_vertex_repair(prompt):
     global vertex_client
-    with vertex_lock:
-        try:
-            if vertex_client is None:
-                vertex_client = genai.Client(vertexai=True, project="sih-mcq-pipeline", location="us-central1")
-            response = vertex_client.models.generate_content(
-                model='gemini-2.5-flash',
-                contents=prompt,
-                config=types.GenerateContentConfig(
-                    system_instruction="Output clean JSON only.",
-                    response_mime_type="application/json",
-                    temperature=0.1
-                )
+    acquired = vertex_lock.acquire(timeout=45)
+    if not acquired:
+        print("Vertex AI lock acquisition timed out. Skipping Vertex fallback.")
+        return None
+    try:
+        if vertex_client is None:
+            vertex_client = genai.Client(
+                vertexai=True, 
+                project="sih-mcq-pipeline", 
+                location="us-central1",
+                http_options=types.HttpOptions(timeout=30_000)
             )
-            content = response.text.strip()
-            if content.startswith("```json"): content = content[7:]
-            if content.endswith("```"): content = content[:-3]
-            return json.loads(content.strip(), strict=False)
-        except Exception as e:
-            print(f"Vertex AI fallback failed: {e}")
-            return None
+        response = vertex_client.models.generate_content(
+            model='gemini-2.5-flash',
+            contents=prompt,
+            config=types.GenerateContentConfig(
+                system_instruction="Output clean JSON only.",
+                response_mime_type="application/json",
+                temperature=0.1
+            )
+        )
+        content = response.text.strip()
+        if content.startswith("```json"): content = content[7:]
+        if content.endswith("```"): content = content[:-3]
+        return json.loads(content.strip(), strict=False)
+    except Exception as e:
+        print(f"Vertex AI fallback failed: {e}")
+        return None
+    finally:
+        vertex_lock.release()
 
 def call_gemini_repair(prompt):
     url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={GEMINI_API_KEY}"
@@ -191,18 +206,23 @@ def call_gemini_repair(prompt):
         }
     }
     
-    with gemini_lock:
+    acquired = gemini_lock.acquire(timeout=45)
+    if not acquired:
+        print("Gemini lock acquisition timed out. Skipping Gemini fallback.")
+        return None
+    try:
         time.sleep(4.1) # Respect Gemini free tier 15 RPM
-        try:
-            resp = requests.post(url, headers={"Content-Type": "application/json"}, json=payload, timeout=60)
-            resp.raise_for_status()
-            content = resp.json()["candidates"][0]["content"]["parts"][0]["text"].strip()
-            if content.startswith("```json"): content = content[7:]
-            if content.endswith("```"): content = content[:-3]
-            return json.loads(content.strip(), strict=False)
-        except Exception as e:
-            print(f"Gemini fallback failed: {e}")
-            return None
+        resp = requests.post(url, headers={"Content-Type": "application/json"}, json=payload, timeout=60)
+        resp.raise_for_status()
+        content = resp.json()["candidates"][0]["content"]["parts"][0]["text"].strip()
+        if content.startswith("```json"): content = content[7:]
+        if content.endswith("```"): content = content[:-3]
+        return json.loads(content.strip(), strict=False)
+    except Exception as e:
+        print(f"Gemini fallback failed: {e}")
+        return None
+    finally:
+        gemini_lock.release()
 
 def process_question(item):
     corrupted_text = item.get("question", "") + "\n" + "\n".join(item.get("options", [])) if isinstance(item.get("options"), list) else item.get("question", "") + "\n" + str(item.get("options", ""))
@@ -254,12 +274,13 @@ def main():
     to_process = [q for q in bad_mcqs if str(q.get("id")) not in recovered_ids]
     print(f"Skipping {len(recovered_mcqs)} already recovered. Processing {len(to_process)} questions...")
     
-    limit = len(to_process)
+    limit = int(os.environ.get("LIMIT", len(to_process)))
     success_count = 0
     fail_count = 0
     
-    print(f"Processing in background using 4-tier waterfall: ATXP (models), Groq, Vertex AI, Gemini AI Studio. 20 workers...", flush=True)
-    with ThreadPoolExecutor(max_workers=20) as executor:
+    max_workers = int(os.environ.get("MAX_WORKERS", "2"))
+    print(f"Processing in background using 4-tier waterfall: ATXP (models), Groq, Vertex AI, Gemini AI Studio. {max_workers} workers...", flush=True)
+    with ThreadPoolExecutor(max_workers=max_workers) as executor:
         futures = {executor.submit(process_question, q): q for q in to_process[:limit]}
         
         for i, future in enumerate(as_completed(futures)):

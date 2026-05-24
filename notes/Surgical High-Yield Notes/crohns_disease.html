@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Surgical Insight Hub — Crohn's Disease Master Monograph</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
+
+<link rel="stylesheet" href="../../css/theme.css">
+<link rel="stylesheet" href="../../css/shared.css">
+
+<script>
+  const savedTheme = localStorage.getItem('sih-theme') || 'light';
+  if (savedTheme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+</script>
+
+<style>
+:root {
+  --primary:   #5B21B6;      /* Royal Indigo */
+  --primary-dk:#2E1065;      /* Midnight Purple */
+  --primary-lt:#F5F3FF;      /* Light Lavender */
+  --accent:    #7C3AED;      /* Medium Purple */
+  --accent2:   #EC4899;      /* Pink / Magenta */
+  --gold:      #b8922a;      /* Gold */
+  --gold-lt:   #FEF3C7;      /* Light Gold */
+  --s1:        #5B21B6;      /* Pillar 1 */
+  --s2:        #0D9488;      /* Pillar 2 (Teal) */
+  --s3:        #C27803;      /* Pillar 3 (Amber) */
+  --s4:        #2563EB;      /* Pillar 4 (Blue) */
+  --s5:        #BE185D;      /* Pillar 5 (Magenta) */
+  --s1-lt:     #F5F3FF;
+  --s2-lt:     #F0FDFA;
+  --s3-lt:     #FEF3C7;
+  --s4-lt:     #EFF6FF;
+  --s5-lt:     #FDF2F8;
+  --red:       #B91C1C;
+  --red-lt:    #FEF2F2;
+  --amber:     #D97706;
+  --amber-lt:  #FFFBEB;
+  --blue:      #1D4ED8;
+  --blue-lt:   #EFF6FF;
+  --bg:        #FBFBFC;
+  --bg2:       #F4F4F6;
+  --border:    #E5E7EB;
+  --text:      #1F2937;
+  --muted:     #4B5563;
+  --white:     #FFFFFF;
+  --sidebar-w: 300px;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--bg);color:var(--text);font-size:16.5px;line-height:1.8;}
+
+/* ── DARK MODE OVERRIDES ── */
+[data-theme="dark"] {
+  --bg: #09060F;
+  --bg2: #120D1D;
+  --text: #E2DEE9;
+  --muted: #A78BFA;
+  --border: rgba(255,255,255,0.08);
+  --primary-lt: #120D1D;
+  --s1-lt: #160D26;
+  --s2-lt: #0B1D19;
+  --s3-lt: #221B0B;
+  --s4-lt: #0F172A;
+  --s5-lt: #2A0B1A;
+  --white: #120D1D;
+}
+
+/* ── SIDEBAR & OVERLAY ── */
+#sidebar {
+  position: fixed; top: 0; left: 0; width: var(--sidebar-w); height: 100vh;
+  background: var(--primary-dk); color: #E2DEE9;
+  display: flex; flex-direction: column;
+  z-index: 1300; overflow: hidden;
+  transform: translateX(-100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 4px 0 24px rgba(0,0,0,0.3);
+}
+body.sidebar-open #sidebar { transform: translateX(0); }
+
+#sidebar-overlay {
+  position: fixed; inset: 0;
+  background: rgba(46, 16, 101, 0.5); backdrop-filter: blur(3px);
+  z-index: 1250; opacity: 0; pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+body.sidebar-open #sidebar-overlay { opacity: 1; pointer-events: auto; }
+
+#sidebar-toggle {
+  position: fixed; top: 72px; left: 24px; z-index: 1200;
+  background: var(--primary); color: white;
+  border: none; border-radius: 30px;
+  padding: 10px 18px; font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 600;
+  letter-spacing: 0.05em; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  display: flex; align-items: center; gap: 8px; transition: all 0.2s;
+}
+#sidebar-toggle:hover { background: var(--accent); transform: translateY(-2px); }
+
+#progress-bar {
+  position: fixed; top: 52px; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  transform-origin: left; transform: scaleX(0); transition: transform 0.1s; z-index: 1105;
+}
+
+#sidebar-header{padding:20px 20px 14px;border-bottom:1px solid rgba(255,255,255,0.1);flex-shrink:0;}
+#sidebar-header .logo{font-family:'Playfair Display',serif;font-size:13px;font-weight:700;color:#C084FC;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;}
+#sidebar-header .sub{font-size:10.5px;color:rgba(226,222,233,0.6);letter-spacing:0.04em;}
+#sidebar-search{padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.08);flex-shrink:0;}
+#sidebar-search input{width:100%;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:6px;color:#E2DEE9;padding:6px 10px;font-size:12px;font-family:'Source Serif 4',serif;outline:none;transition:border-color 0.2s;}
+#sidebar-search input::placeholder{color:rgba(226,222,233,0.4);}
+#sidebar-search input:focus{border-color:#C084FC;}
+#sidebar-nav{flex:1;overflow-y:auto;padding:8px 0 20px;}
+#sidebar-nav::-webkit-scrollbar{width:4px;}
+#sidebar-nav::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.15);border-radius:2px;}
+.vol-label{font-size:9.5px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#C084FC;padding:14px 18px 4px;}
+.nav-item{display:block;padding:8px 18px 8px 22px;font-size:12.5px;color:rgba(226,222,233,0.75);text-decoration:none;border-left:2px solid transparent;transition:all 0.15s;line-height:1.4;}
+.nav-item:hover{color:#fff;background:rgba(255,255,255,0.05);border-left-color:rgba(192,132,252,0.5);}
+.nav-item.active{color:#fff;background:rgba(255,255,255,0.08);border-left-color:#C084FC;font-weight:600;}
+.nav-item .num{font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(226,222,233,0.4);margin-right:6px;}
+
+/* MAIN */
+#main{margin-left:0; min-height:100vh;}
+
+/* HERO */
+#hero{background:linear-gradient(135deg,var(--primary-dk) 0%,#1E0A3F 60%,#090314 100%);color:white;padding:120px 72px 60px;position:relative;overflow:hidden;}
+#hero::before{content:'';position:absolute;top:-60px;right:-60px;width:380px;height:380px;background:radial-gradient(circle,rgba(124,58,237,0.18) 0%,transparent 70%);pointer-events:none;}
+#hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--primary),var(--accent2),transparent);}
+#hero .eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.16em;color:#C084FC;text-transform:uppercase;margin-bottom:14px;}
+#hero h1{font-family:'Playfair Display',serif;font-size:38px;font-weight:700;line-height:1.15;margin-bottom:10px;color:#fff;}
+#hero .subtitle{font-size:18px;color:rgba(255,255,255,0.65);font-style:italic;margin-bottom:28px;}
+#hero .badges{display:flex;gap:10px;flex-wrap:wrap;}
+#hero .badge{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:4px 14px;font-size:12px;color:rgba(255,255,255,0.8);font-family:'JetBrains Mono',monospace;}
+
+/* CONTENT */
+.content-wrap{max-width:900px;margin:0 auto;padding:0 48px 80px;}
+
+/* SECTION HEADER */
+.sec-header{margin-top:60px;margin-bottom:8px;padding:28px 36px;border-radius:10px;display:flex;align-items:center;gap:20px;}
+.sec-header.s1{background:linear-gradient(135deg,#5B21B608,#5B21B618);border-left:4px solid var(--s1);}
+.sec-header.s2{background:linear-gradient(135deg,#0D948808,#0D948818);border-left:4px solid var(--s2);}
+.sec-header.s3{background:linear-gradient(135deg,#C2780308,#C2780318);border-left:4px solid var(--s3);}
+.sec-header.s4{background:linear-gradient(135deg,#2563EB08,#2563EB18);border-left:4px solid var(--s4);}
+.sec-header.s5{background:linear-gradient(135deg,#BE185D08,#BE185D18);border-left:4px solid var(--s5);}
+.sec-badge{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;letter-spacing:0.1em;padding:4px 12px;border-radius:4px;white-space:nowrap;flex-shrink:0;}
+.s1 .sec-badge{background:var(--s1);color:white;}
+.s2 .sec-badge{background:var(--s2);color:white;}
+.s3 .sec-badge{background:var(--s3);color:white;}
+.s4 .sec-badge{background:var(--s4);color:white;}
+.s5 .sec-badge{background:var(--s5);color:white;}
+.sec-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;}
+.s1 .sec-title{color:var(--s1);}
+.s2 .sec-title{color:var(--s2);}
+.s3 .sec-title{color:var(--s3);}
+.s4 .sec-title{color:var(--s4);}
+.s5 .sec-title{color:var(--s5);}
+
+/* TOPIC */
+.topic{margin-top:48px;padding-top:48px;border-top:1px solid var(--border);}
+.topic:first-of-type{border-top:none;}
+.topic-header{display:flex;align-items:flex-start;gap:16px;margin-bottom:24px;}
+.topic-num{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;padding:3px 10px;border-radius:4px;margin-top:4px;flex-shrink:0;}
+.s1 .topic-num{background:var(--s1-lt);color:var(--s1);}
+.s2 .topic-num{background:var(--s2-lt);color:var(--s2);}
+.s3 .topic-num{background:var(--s3-lt);color:var(--s3);}
+.s4 .topic-num{background:var(--s4-lt);color:var(--s4);}
+.s5 .topic-num{background:var(--s5-lt);color:var(--s5);}
+.topic h2{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;line-height:1.2;}
+.s1 .topic h2{color:var(--s1);}
+.s2 .topic h2{color:var(--s2);}
+.s3 .topic h2{color:var(--s3);}
+.s4 .topic h2{color:var(--s4);}
+.s5 .topic h2{color:var(--s5);}
+.topic h3{font-family:'Playfair Display',serif;font-size:17px;font-weight:600;color:var(--muted);margin:26px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--border);}
+.topic h4{font-size:13px;font-weight:600;color:var(--muted);letter-spacing:0.06em;text-transform:uppercase;margin:18px 0 8px;font-family:'JetBrains Mono',monospace;}
+.topic p{margin-bottom:12px;color:var(--text);}
+.topic ul,.topic ol{margin:8px 0 14px 20px;color:var(--text);}
+.topic li{margin-bottom:6px;line-height:1.65;}
+.topic li::marker{color:var(--accent2);}
+.topic strong{color:var(--text);font-weight:600;}
+
+/* TABLES */
+.table-wrap{overflow-x:auto;margin:16px 0 20px;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.06);}
+table{width:100%;border-collapse:collapse;font-size:13.5px;background:var(--white);}
+thead tr{background:var(--s1);}
+thead th{color:white;padding:10px 14px;text-align:left;font-family:'Source Serif 4',serif;font-weight:600;font-size:13px;}
+tbody tr:nth-child(even){background:var(--bg2);}
+tbody tr:hover{background:var(--s1-lt);transition:background 0.15s;}
+tbody td{padding:9px 14px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.5;}
+[data-theme="dark"] table { background: #120D1D; }
+.s2-tbl thead tr{background:var(--s2);}
+.s3-tbl thead tr{background:var(--s3);}
+.s4-tbl thead tr{background:var(--s4);}
+.s5-tbl thead tr{background:var(--s5);}
+
+/* CALLOUTS */
+.callout{margin:18px 0;padding:14px 18px;border-radius:0 8px 8px 0;border-left:4px solid;font-size:14px;line-height:1.65;}
+.callout .label{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;display:block;margin-bottom:4px;}
+.callout.pearl{background:var(--gold-lt);border-color:var(--gold);}
+.callout.pearl .label{color:var(--gold);}
+.callout.warn{background:var(--red-lt);border-color:var(--red);}
+.callout.warn .label{color:var(--red);}
+.callout.clin{background:var(--s1-lt);border-color:var(--s1);}
+.callout.clin .label{color:var(--s1);}
+.callout.exam{background:var(--s4-lt);border-color:var(--s4);}
+.callout.exam .label{color:var(--s4);}
+[data-theme="dark"] .callout.pearl { background: rgba(184, 146, 42, 0.08); }
+[data-theme="dark"] .callout.warn { background: rgba(185, 28, 28, 0.08); }
+
+/* VIVA BOXES */
+.viva{background:var(--s1-lt);border:1px solid var(--border);border-left:4px solid var(--s1);border-radius:0 8px 8px 0;padding:16px 20px;margin:20px 0;}
+.viva .vq{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;color:var(--s1);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:8px;}
+.viva .vscenario{font-size:14px;font-weight:600;color:var(--text);margin-bottom:10px;line-height:1.5;}
+.viva .vanswer{font-size:13.5px;color:var(--muted);line-height:1.65;}
+.viva .vanswer ul{margin:6px 0 0 18px;}
+.viva .vanswer li{margin-bottom:4px;}
+
+/* KEY GRID */
+.key-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:10px;margin:14px 0 20px;}
+.key-card{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:12px 14px;font-size:13px;line-height:1.55;}
+.key-card .kc-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;font-weight:600;color:var(--s1);}
+.key-card .kc-val{font-weight:700;font-size:15px;color:var(--text);}
+.key-card.g2 .kc-label{color:var(--s2);}
+.key-card.g3 .kc-label{color:var(--s3);}
+.key-card.red .kc-label{color:var(--red);}
+.key-card.amb .kc-label{color:var(--amber);}
+
+/* CHIPS */
+.chip-row{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 16px;}
+.chip{background:var(--white);border:1px solid var(--border);border-radius:20px;padding:4px 12px;font-size:13px;color:var(--muted);}
+.chip strong{color:var(--text);font-weight:600;}
+
+/* DIAGRAM & CLINICAL GALLERY */
+.diagram-wrap{background:var(--s1-lt);border:1px solid var(--border);border-radius:8px;padding:18px;margin:20px 0;text-align:center;}
+.diagram-title{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--s1);margin-bottom:12px;text-align:left;}
+.diagram-wrap img{max-width:100%;height:auto;border-radius:6px;box-shadow:0 4px 12px rgba(0,0,0,0.1);max-height:400px;object-fit:contain;background:#fff;}
+[data-theme="dark"] .diagram-wrap img { background: #fff; }
+
+.gallery-grid {display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:24px 0;}
+@media (max-width:768px) {.gallery-grid {grid-template-columns:1fr;}}
+.gallery-item {background:var(--white);border:1px solid var(--border);border-radius:8px;padding:16px;display:flex;flex-direction:column;gap:12px;transition:box-shadow 0.2s;}
+.gallery-item img {max-width:100%;height:auto;border-radius:6px;box-shadow:0 2px 8px rgba(0,0,0,0.08);max-height:280px;object-fit:contain;background:#fff;}
+
+/* CALCULATOR CARD */
+.calc-card {background:linear-gradient(135deg,var(--white) 0%,var(--bg2) 100%);border:2px solid var(--primary);border-radius:12px;padding:24px;margin:24px 0;box-shadow:var(--shadow-md);}
+.calc-header {display:flex;justify-content:between;align-items:center;margin-bottom:18px;border-bottom:1.5px solid var(--primary);padding-bottom:10px;}
+.calc-title {font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--primary);}
+.calc-grid {display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:18px;}
+@media (max-width:640px) {.calc-grid {grid-template-columns:1fr;}}
+.calc-group {display:flex;flex-direction:column;gap:6px;}
+.calc-group label {font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;color:var(--text);text-transform:uppercase;}
+.calc-group select, .calc-group input {padding:8px 12px;border:1px solid var(--border);border-radius:6px;font-family:'Source Serif 4',serif;background:var(--white);color:var(--text);outline:none;font-size:14px;}
+.calc-group select:focus, .calc-group input:focus {border-color:var(--primary);}
+.calc-comps {grid-column:1/-1;border-top:1px dashed var(--border);padding-top:12px;}
+.calc-comps-title {font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;margin-bottom:8px;text-transform:uppercase;color:var(--muted);}
+.calc-checkboxes {display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+@media (max-width:640px) {.calc-checkboxes {grid-template-columns:1fr;}}
+.calc-checkbox {display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--text);cursor:pointer;}
+.calc-checkbox input {width:14px;height:14px;cursor:pointer;}
+.calc-result {background:var(--primary-dk);color:white;border-radius:8px;padding:16px;text-align:center;}
+.calc-score-row {display:flex;justify-content:center;align-items:baseline;gap:8px;}
+.calc-score-val {font-size:32px;font-weight:800;font-family:'JetBrains Mono',monospace;color:#C084FC;}
+.calc-cat {font-family:'Playfair Display',serif;font-size:18px;font-weight:600;margin-top:4px;color:#fff;}
+.calc-desc-correlation {font-size:12.5px;color:rgba(226,222,233,0.7);margin-top:4px;line-height:1.4;}
+
+/* RAPID REFERENCE */
+.rapid-ref{margin-top:60px;padding:36px;background:var(--primary-dk);color:white;border-radius:12px;box-shadow:var(--shadow-lg);}
+.rapid-ref h3{font-family:'Playfair Display',serif;font-size:24px;margin-bottom:18px;color:#fff;border-bottom:1px solid rgba(255,255,255,0.15);padding-bottom:10px;}
+.rapid-ref table{background:transparent;}
+.rapid-ref thead tr{background:rgba(255,255,255,0.08);}
+.rapid-ref thead th{color:#C084FC;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;}
+.rapid-ref tbody tr:nth-child(even){background:rgba(255,255,255,0.03);}
+.rapid-ref tbody tr:hover{background:rgba(255,255,255,0.07);}
+.rapid-ref tbody td{border-bottom:1px solid rgba(255,255,255,0.08);color:rgba(255,255,255,0.85);font-size:13px;}
+.rapid-ref strong{color:#fff;}
+
+#top-btn{position:fixed;bottom:24px;right:24px;width:44px;height:44px;background:var(--primary);color:white;border:none;border-radius:50%;font-size:18px;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,0.3);z-index:1100;opacity:0;pointer-events:none;transition:all 0.3s;display:flex;align-items:center;justify-content:center;}
+#top-btn.show{opacity:1;pointer-events:auto;}
+#top-btn:hover{background:var(--accent);transform:translateY(-3px);}
+
+.animate-on-scroll{opacity:0;transform:translateY(20px);transition:all 0.5s cubic-bezier(0.4, 0, 0.2, 1);}
+.animate-on-scroll.visible{opacity:1;transform:translateY(0);}
+</style>
+</head>
+<body>
+
+  <!-- Standardized SIH Navbar -->
+  <nav class="nav" id="mainNav">
+    <div class="nav-left">
+      <a href="../../index.html" class="nav-pill">
+        <div class="nav-logo-img">
+          <img src="../../assets/images/Surgical_Insight_Hub_Logo.png" alt="SIH Logo">
+        </div>
+        <div>
+          <div class="nav-brand-text">Surgical Insight Hub</div>
+          <div class="nav-brand-sub">The Residency Journal</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="nav-links-pill">
+      <a href="../../index.html">Home</a>
+      <a href="../../notes.html" class="active">Notes</a>
+      <a href="../operative_approach.html">Playbook</a>
+      <a href="../../arena.html">MCQ Arena</a>
+      <a href="../../podcast.html">Podcast</a>
+      <a href="../../surgery-talk.html">Surgery Talk</a>
+      <a href="../../about.html">About</a>
+    </div>
+
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+        <svg id="moonIcon" viewBox="0 0 24 24" width="18" height="18"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        <svg id="sunIcon" style="display:none;" viewBox="0 0 24 24" width="18" height="18"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+      </button>
+      <a href="https://t.me/sugicalInsightHub" target="_blank" class="nav-tg-btn" title="Join Telegram" style="background: var(--brand-burgundy); color: #f0d080; padding: 8px 12px; border-radius: 8px; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: all 0.3s ease;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="#f0d080"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.89 8.22l-1.97 9.28c-.15.66-.54.82-1.08.51l-3-2.21-1.45 1.39c-.16.16-.3.3-.61.3l.21-3.05 5.56-5.02c.24-.21-.05-.33-.37-.12l-6.87 4.33-2.96-.92c-.64-.2-.66-.64.14-.95l11.57-4.46c.54-.19 1.01.13.83.94z"/></svg>
+      </a>
+      <a href="../../arena.html" class="nav-btn arena-btn">MCQ Arena</a>
+      <button class="mob-nav-toggle" onclick="openMobNav()" aria-label="Menu">
+        <div class="hamburger"><span></span><span></span><span></span></div>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mob-nav-overlay" id="mobNavOverlay" onclick="closeMobNav()"></div>
+  <div class="mob-nav-sheet" id="mobNavSheet">
+    <div class="mob-nav-handle"></div>
+    <a href="../../index.html" onclick="closeMobNav()">Home</a>
+    <a href="../../notes.html" class="active" onclick="closeMobNav()">Notes</a>
+    <a href="../operative_approach.html" onclick="closeMobNav()">Playbook</a>
+    <a href="../../arena.html" onclick="closeMobNav()">MCQ Arena</a>
+    <a href="../../podcast.html" onclick="closeMobNav()">Podcast</a>
+    <a href="../../surgery-talk.html" onclick="closeMobNav()">Surgery Talk</a>
+    <a href="../../about.html" onclick="closeMobNav()">About</a>
+    <a href="https://t.me/sugicalInsightHub" target="_blank" rel="noopener" onclick="closeMobNav()" style="color: var(--brand-gold); font-weight: 800;">Join Telegram Community</a>
+  </div>
+
+  <!-- ── PROGRESS BAR ── -->
+  <div id="progress-bar"></div>
+
+  <!-- ── SIDEBAR TRIGGER ── -->
+  <button id="sidebar-toggle" onclick="toggleSidebar()">
+    <span>📜</span> Table of Contents
+  </button>
+
+  <!-- ── SIDEBAR OVERLAY ── -->
+  <div id="sidebar-overlay" onclick="closeSidebar()"></div>
+
+  <!-- ── SIDEBAR ── -->
+  <aside id="sidebar">
+    <div id="sidebar-header">
+      <div class="logo">Surgical Insight Hub</div>
+      <div class="sub">Crohn's Disease Monograph</div>
+    </div>
+    <div id="sidebar-search">
+      <input type="text" placeholder="Search sections..." oninput="filterNav(this.value)">
+    </div>
+    <nav id="sidebar-nav">
+      <div class="vol-label">Pillar 1: Classification & Staging</div>
+      <a href="#montreal" class="nav-item"><span class="num">01</span>Montreal Staging Matrix</a>
+      <a href="#manifestations" class="nav-item"><span class="num">02</span>Clinical Features & EIMs</a>
+      <a href="#pathology" class="nav-item"><span class="num">03</span>Gross & Micro Pathology</a>
+      
+      <div class="vol-label">Pillar 2: Diagnostic Evaluation</div>
+      <a href="#biomarkers" class="nav-item"><span class="num">04</span>Blood & Fecal Calprotectin</a>
+      <a href="#imaging" class="nav-item"><span class="num">05</span>CTE & MRE Radiologic Signs</a>
+      
+      <div class="vol-label">Pillar 3: Medical Management</div>
+      <a href="#severity" class="nav-item"><span class="num">06</span>CDAI/HBI Scoring Calculator</a>
+      <a href="#medical-rx" class="nav-item"><span class="num">07</span>Biologic & Combination Rx</a>
+      
+      <div class="vol-label">Pillar 4: Surgical Principles</div>
+      <a href="#surgical-indications" class="nav-item"><span class="num">08</span>Surgical Indications</a>
+      <a href="#strictureplasty" class="nav-item"><span class="num">09</span>Bowel-Sparing Strictureplasty</a>
+      
+      <div class="vol-label">Pillar 5: Perianal & Post-Op</div>
+      <a href="#perianal" class="nav-item"><span class="num">10</span>Parks Fistulas & Seton Drainage</a>
+      <a href="#post-op" class="nav-item"><span class="num">11</span>Rutgeerts Recurrence Score</a>
+      
+      <div class="vol-label">Board Review</div>
+      <a href="#rapid" class="nav-item"><span class="num">12</span>ABSITE Quick-Review</a>
+    </nav>
+  </aside>
+
+  <!-- ── MAIN CONTENT ── -->
+  <main id="main">
+    <header id="hero">
+      <div class="eyebrow">IBD Master Series · Clinical Monograph</div>
+      <h1>Crohn's Disease: Staging, Medical Algorithms, and Surgical Interventions</h1>
+      <p class="subtitle">A comprehensive cognitive task analysis and evidence-based guideline for the surgical resident.</p>
+      <div class="badges">
+        <span class="badge">Montreal Classification</span>
+        <span class="badge">Strictureplasty Models</span>
+        <span class="badge">Seton Drainage</span>
+        <span class="badge">Rutgeerts Score</span>
+        <span class="badge">ABSITE Core</span>
+      </div>
+    </header>
+
+    <div class="content-wrap">
+
+      <!-- ════════════════════════════════════════════════════════════ -->
+      <!-- PILLAR 1: PATHOPHYSIOLOGY, PRESENTATION & MONTREAL STAGING ══ -->
+      <!-- ════════════════════════════════════════════════════════════ -->
+      <div class="sec-header s1">
+        <span class="sec-badge">PILLAR 1</span>
+        <h2 class="sec-title">Pathophysiology, Presentation & Montreal Staging</h2>
+      </div>
+
+      <section class="topic" id="montreal">
+        <div class="topic-header">
+          <span class="topic-num">01</span>
+          <h2>Montreal Staging Matrix</h2>
+        </div>
+        <p>Crohn's disease (CD) is a chronic, immune-mediated inflammatory bowel disease characterized by <strong>transmural inflammation</strong> that can involve any part of the gastrointestinal tract from the mouth to the anus. Unlike ulcerative colitis, which is confined to the mucosa, CD is characterized by <strong>skip lesions</strong> (segmented areas of disease interspersed with normal mucosa) and rectal sparing in 50% of colonic presentations.</p>
+        
+        <p>The standard clinical framework used worldwide to classify Crohn's disease epidemiology and guide therapeutic options is the <strong>Montreal Classification</strong>. It categorizes the disease based on three parameters: age of onset (A), location (L), and disease behavior (B).</p>
+
+        <div class="table-wrap s1-tbl">
+          <table>
+            <thead>
+              <tr>
+                <th>Category</th>
+                <th>Classification Parameter</th>
+                <th>Clinical Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td rowspan="3"><strong>Age of Onset (A)</strong></td>
+                <td><strong>A1</strong></td>
+                <td>Diagnosis at &lt; 16 years of age</td>
+              </tr>
+              <tr>
+                <td><strong>A2</strong></td>
+                <td>Diagnosis between 17 and 40 years of age</td>
+              </tr>
+              <tr>
+                <td><strong>A3</strong></td>
+                <td>Diagnosis at &gt; 40 years of age</td>
+              </tr>
+              <tr>
+                <td rowspan="4"><strong>Location (L)</strong><br><small style="color:var(--muted);">(Maximum extent before first surgery)</small></td>
+                <td><strong>L1</strong></td>
+                <td>Terminal ileum (isolated ileal disease; ~30% of patients)</td>
+              </tr>
+              <tr>
+                <td><strong>L2</strong></td>
+                <td>Colon (isolated colonic disease; ~20% of patients)</td>
+              </tr>
+              <tr>
+                <td><strong>L3</strong></td>
+                <td>Ileocolon (involvement of both ileum and colon; ~50% of patients)</td>
+              </tr>
+              <tr>
+                <td><strong>L4</strong></td>
+                <td>Isolated upper GI tract modifier (added to L1-L3 as a suffix, eg. L3+L4)</td>
+              </tr>
+              <tr>
+                <td rowspan="4"><strong>Disease Behavior (B)</strong></td>
+                <td><strong>B1</strong></td>
+                <td>Non-stricturing, non-penetrating (purely inflammatory)</td>
+              </tr>
+              <tr>
+                <td><strong>B2</strong></td>
+                <td>Stricturing (fibrotic narrowing causing obstructive symptoms)</td>
+              </tr>
+              <tr>
+                <td><strong>B3</strong></td>
+                <td>Penetrating (sinus tracts, fistulas, inflammatory masses, or abscesses)</td>
+              </tr>
+              <tr>
+                <td><strong>p</strong></td>
+                <td>Perianal disease modifier (added to B1-B3 as a suffix, eg. B2p)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout exam">
+          <span class="label">🎓 ABSITE Grand Rounds</span>
+          Montreal classification replaced the older Wingspread classification. On boards, never refer to Crohn's behavior simply as "mild" or "severe" when discussing long-term staging — utilize Montreal classifications. A behavior score of <strong>B2</strong> or <strong>B3</strong> represents a progressive disease state that heavily influences the surgical strategy.
+        </div>
+      </section>
+
+      <section class="topic" id="manifestations">
+        <div class="topic-header">
+          <span class="topic-num">02</span>
+          <h2>Clinical Features & Extraintestinal Manifestations (EIMs)</h2>
+        </div>
+        <p>The cardinal clinical presentation of Crohn's disease includes chronic crampy abdominal pain (frequently localized to the right lower quadrant due to terminal ileitis L1), chronic non-bloody diarrhea (though colonic CD can cause hematochezia), fatigue, and weight loss (often due to food-fear or malabsorption).</p>
+        
+        <p>Because Crohn's is a systemic immunologic condition, approximately 25% of patients develop at least one **extraintestinal manifestation (EIM)**. EIMs are divided into those that track bowel disease activity and those that run an independent clinical course.</p>
+
+        <div class="key-grid">
+          <div class="key-card">
+            <span class="kc-label">Peripheral Arthritis</span>
+            <span class="kc-val">20% of Patients</span>
+            <p style="font-size:11.5px;color:var(--muted);margin-top:4px;">Large joint, asymmetric, non-destructive. Tracks bowel disease activity.</p>
+          </div>
+          <div class="key-card g2">
+            <span class="kc-label">Dermatologic EIMs</span>
+            <span class="kc-val">10% of Patients</span>
+            <p style="font-size:11.5px;color:var(--muted);margin-top:4px;">Erythema Nodosum (tracks bowel activity) and Pyoderma Gangrenosum (independent).</p>
+          </div>
+          <div class="key-card g3">
+            <span class="kc-label">Ocular EIMs</span>
+            <span class="kc-val">5% of Patients</span>
+            <p style="font-size:11.5px;color:var(--muted);margin-top:4px;">Uveitis (anterior chamber pain/photophobia) and Episcleritis (painless scleral redness).</p>
+          </div>
+          <div class="key-card red">
+            <span class="kc-label">Biliary / PSC</span>
+            <span class="kc-val">5% of Patients</span>
+            <p style="font-size:11.5px;color:var(--muted);margin-top:4px;">Primary Sclerosing Cholangitis. Leads to bile duct strictures and cholangiocarcinoma. Independent of bowel resection.</p>
+          </div>
+        </div>
+
+        <div class="callout warn">
+          <span class="label">⚠ Warning Zone</span>
+          <strong>Malabsorption Pitfall:</strong> Disease or resection involving &gt; 100 cm of the terminal ileum destroys the enterohepatic circulation of bile salts. The liver cannot synthesize bile acids quickly enough, leading to fat malabsorption (steatorrhea) and lipid-soluble vitamin deficiencies (A, D, E, K). Shorter resections (&lt; 100 cm) lead to "cholerrheic diarrhea" due to unabsorbed bile acids stimulating colonic water secretion, treated with bile-acid binders (cholestyramine).
+        </div>
+      </section>
+
+      <section class="topic" id="pathology">
+        <div class="topic-header">
+          <span class="topic-num">03</span>
+          <h2>Gross & Micro Pathology</h2>
+        </div>
+        <p>Definitive diagnosis of Crohn's disease combines macroscopic visual patterns with key microscopic histologic details:</p>
+        <ul>
+          <li><strong>Macroscopic (Gross) Pathology:</strong> Segmental skip lesions, deep serpiginous or aphthous ulcerations, mucosal cobblestoning (islands of intact mucosa between ulcerating clefts), fibrofatty proliferation of the mesentery (known as <strong>"creeping fat"</strong> or <strong>"fat wrapping"</strong>), and thick, rigid bowel walls leading to luminal strictures (resulting in the radiologic "string sign").</li>
+          <li><strong>Microscopic (Histologic) Pathology:</strong> Transmural inflammatory infiltrate (extending through mucosa, submucosa, muscularis propria, and serosa), submucosal thickening, lymphoid aggregates in the submucosa/serosa, and <strong>non-caseating epithelial granulomas</strong>. Granulomas are noted in only 30% of surgical specimens; their absence does <em>not</em> rule out Crohn's disease.</li>
+        </ul>
+
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <div class="diagram-title">Fig. 1: Endoscopic Cobblestoning</div>
+            <img src="../../assets/images/crohns/clinical_manifestations,_diagnosis,_and_prognosis_of_crohn_disease_in_adults_p30_5.png" alt="Endoscopic Cobblestoning in Crohn's Disease">
+            <p style="font-size:12px;color:var(--muted);line-height:1.4;">Focal ulcerations running longitudinally and transversely surrounding islands of normal-appearing, hyperplastic mucosa creating a cobblestone look.</p>
+          </div>
+          <div class="gallery-item">
+            <div class="diagram-title">Fig. 2: Histologic Non-Caseating Granuloma</div>
+            <img src="../../assets/images/crohns/clinical_manifestations,_diagnosis,_and_prognosis_of_crohn_disease_in_adults_p31_6.png" alt="Non-Caseating Granuloma Histology">
+            <p style="font-size:12px;color:var(--muted);line-height:1.4;">A classic non-caseating multinucleated giant-cell granuloma within the submucosa, diagnostic for CD when present (identified in ~30% of biopsies).</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════════════════════════════════ -->
+      <!-- PILLAR 2: DIAGNOSTIC STAGING & BIOMARKER THRESHOLDS ════════ -->
+      <!-- ════════════════════════════════════════════════════════════ -->
+      <div class="sec-header s2">
+        <span class="sec-badge">PILLAR 2</span>
+        <h2 class="sec-title">Diagnostic Staging & Biomarker Thresholds</h2>
+      </div>
+
+      <section class="topic" id="biomarkers">
+        <div class="topic-header">
+          <span class="topic-num">04</span>
+          <h2>Blood & Fecal Calprotectin</h2>
+        </div>
+        <p>No single blood test can diagnose Crohn's disease. Laboratory testing is complementary, serving to confirm active systemic inflammation, exclude enteric infections, and identify malabsorptive deficiencies.</p>
+        
+        <p>Serum C-Reactive Protein (CRP) tracks disease activity, but fecal inflammatory biomarkers have revolutionized non-invasive screening and disease flare surveillance. Fecal Calprotectin (a calcium-binding protein complex derived from neutrophils) provides extremely high sensitivity for mucosal inflammation.</p>
+
+        <div class="table-wrap s2-tbl">
+          <table>
+            <thead>
+              <tr>
+                <th>Biomarker</th>
+                <th>Clinical Cutoff</th>
+                <th>Diagnostic / Management Significance</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td rowspan="2"><strong>Fecal Calprotectin</strong></td>
+                <td><strong>&lt; 40 – 50 mcg/g</strong></td>
+                <td>High Negative Predictive Value (&gt;99%). Safely rules out inflammatory bowel disease, pointing to functional disorders (IBS) instead. Endoscopy can be avoided.</td>
+              </tr>
+              <tr>
+                <td><strong>&gt; 150 – 250 mcg/g</strong></td>
+                <td>Indicates active mucosal inflammation. Highly warrants progress to diagnostic optical ileocolonoscopy and biopsy.</td>
+              </tr>
+              <tr>
+                <td><strong>C-Reactive Protein (CRP)</strong></td>
+                <td><strong>Elevated (&gt; 5 – 10 mg/L)</strong></td>
+                <td>Confirms active systemic inflammation. Used to differentiate inflammatory flares from functional symptoms, although some patients with isolated ileal disease can have a normal serum CRP.</td>
+              </tr>
+              <tr>
+                <td><strong>Vitamin B12</strong></td>
+                <td><strong>Decreased (&lt; 200 pg/mL)</strong></td>
+                <td>Direct indicator of terminal ileal malabsorption (failure of intrinsic factor-B12 complex absorption). Mandates subcutaneous replacement.</td>
+              </tr>
+              <tr>
+                <td><strong>Fecal Pathogens</strong></td>
+                <td><strong>Negative</strong></td>
+                <td>Stool culture, microscopy for ova/parasites, and <em>C. difficile</em> PCR are mandatory to rule out acute infectious colitis before concluding a Crohn's flare.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout clin">
+          <span class="label">💡 Clinical Principle</span>
+          <strong>Flares vs. IBS:</strong> When a patient with known, established Crohn's disease presents with a sudden onset of symptoms resembling a flare (abdominal pain, increased stools), never initiate glucocorticoids or advanced immunosuppressants based on clinical symptoms alone. Measure a <strong>fecal calprotectin</strong> first. If it is within normal limits, evaluate for bacterial overgrowth or functional irritable bowel syndrome before exposing the patient to the risks of immunosuppression.
+        </div>
+      </section>
+
+      <section class="topic" id="imaging">
+        <div class="topic-header">
+          <span class="topic-num">05</span>
+          <h2>CTE & MRE Radiologic Signs</h2>
+        </div>
+        <p>Because direct optical endoscopy can only visualize the terminal ileum, cross-sectional small bowel imaging is mandatory to evaluate the L1/L3/L4 segments, check stricturing severity, and identify occult penetrating disease.</p>
+        
+        <p><strong>Computed Tomography Enterography (CTE)</strong> and <strong>Magnetic Resonance Enterography (MRE)</strong> are the gold standards. Both require the ingestion of 1.5 to 2.0 liters of neutral oral contrast to fully distend the small bowel loops.</p>
+
+        <ul class="nb">
+          <li><strong>Wall Thickening:</strong> Normal bowel wall is &lt; 2 mm. Segmental wall thickness **&gt; 3 mm** with luminal narrowing indicates active disease.</li>
+          <li><strong>Comb Sign:</strong> Hyperemia and engorgement of the mesenteric vasa recta feeding the inflamed bowel loop, resembling the teeth of a comb on coronal views. Indicates high inflammatory activity.</li>
+          <li><strong>Creeping Fat ("Fat Wrapping"):</strong> Visualized as a separation of bowel loops due to inflammatory proliferation of mesenteric fat creeping over the serosa of the diseased loop.</li>
+          <li><strong>Target / Stratified Enhancement:</strong> Altered enhancement of the bowel wall with mucosal hyperenhancement and submucosal edema (creating a dark middle ring and bright inner/outer rings).</li>
+          <li><strong>Fistulas & Abscesses:</strong> CTE is superior for identifying acute sepsis, fluid collections with extraluminal gas, and complex sinus tracts. MRE is highly preferred for patients &lt; 35 years old to avoid radiation, and is the gold standard for pelvic perianal tract mapping.</li>
+        </ul>
+
+        <div class="diagram-wrap">
+          <div class="diagram-title">Fig. 3: CT Enterography Showing Comb Sign & Creeping Fat</div>
+          <img src="../../assets/images/crohns/surgical_management_of_crohn_disease_p27_1.png" alt="CT Enterography Crohn's disease Comb Sign">
+          <p style="font-size:12.5px;color:var(--muted);margin-top:6px;line-height:1.4;">Coronal CTE slice illustrating thick-walled ileal loops, associated creeping fat wrapping, and prominent, engorged vasa recta vessel loops creating the classic <strong>Comb Sign</strong> (arrows).</p>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════════════════════════════════ -->
+      <!-- PILLAR 3: MEDICAL MANAGEMENT & BIOLOGIC TROUGH TARGETS ═════ -->
+      <!-- ════════════════════════════════════════════════════════════ -->
+      <div class="sec-header s3">
+        <span class="sec-badge">PILLAR 3</span>
+        <h2 class="sec-title">Medical Management & Biologic Trough Targets</h2>
+      </div>
+
+      <section class="topic" id="severity">
+        <div class="topic-header">
+          <span class="topic-num">06</span>
+          <h2>Clinical Staging & Interactive Severity Calculator</h2>
+        </div>
+        <p>Clinicians utilize clinical staging tools to guide the initiation of medical therapy. The **Crohn's Disease Activity Index (CDAI)** is the standard research index (incorporating 8 variables), while the **Harvey-Bradshaw Index (HBI)** is a simplified, highly correlated derivative designed for routine clinic use.</p>
+
+        <!-- INTERACTIVE CALCULATOR -->
+        <div class="calc-card">
+          <div class="calc-header">
+            <span class="calc-title">Interactive HBI & CDAI Severity Tool</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--primary);font-weight:600;letter-spacing:0.1em;text-transform:uppercase;">Resident Utility</span>
+          </div>
+          <div class="calc-grid">
+            <div class="calc-group">
+              <label for="wellbeing">General Well-being</label>
+              <select id="wellbeing" onchange="calculateHBI()">
+                <option value="0">0 — Very Well</option>
+                <option value="1">1 — Slightly under par</option>
+                <option value="2">2 — Poor</option>
+                <option value="3">3 — Very Poor</option>
+                <option value="4">4 — Terrible</option>
+              </select>
+            </div>
+            <div class="calc-group">
+              <label for="pain">Abdominal Pain</label>
+              <select id="pain" onchange="calculateHBI()">
+                <option value="0">0 — None</option>
+                <option value="1">1 — Mild</option>
+                <option value="2">2 — Moderate</option>
+                <option value="3">3 — Severe</option>
+              </select>
+            </div>
+            <div class="calc-group">
+              <label for="stools">Liquid Stools (Per Day)</label>
+              <input type="number" id="stools" min="0" value="0" oninput="calculateHBI()">
+            </div>
+            <div class="calc-group">
+              <label for="mass">Abdominal Mass</label>
+              <select id="mass" onchange="calculateHBI()">
+                <option value="0">0 — None</option>
+                <option value="1">1 — Dubious</option>
+                <option value="2">2 — Definite</option>
+                <option value="3">3 — Definite and Tender</option>
+              </select>
+            </div>
+            
+            <div class="calc-comps">
+              <span class="calc-comps-title">Complications (1 point each)</span>
+              <div class="calc-checkboxes">
+                <label class="calc-checkbox"><input type="checkbox" id="c1" onchange="calculateHBI()"> Arthralgia / Arthritis</label>
+                <label class="calc-checkbox"><input type="checkbox" id="c2" onchange="calculateHBI()"> Uveitis / Episcleritis</label>
+                <label class="calc-checkbox"><input type="checkbox" id="c3" onchange="calculateHBI()"> Erythema Nodosum / PG</label>
+                <label class="calc-checkbox"><input type="checkbox" id="c4" onchange="calculateHBI()"> Aphthous Stomatitis</label>
+                <label class="calc-checkbox"><input type="checkbox" id="c5" onchange="calculateHBI()"> Anal Fissure / Fistula</label>
+                <label class="calc-checkbox"><input type="checkbox" id="c6" onchange="calculateHBI()"> Pelvic or Bowel Abscess</label>
+              </div>
+            </div>
+          </div>
+          
+          <div class="calc-result">
+            <div class="calc-score-row">
+              <span>HBI Score:</span>
+              <span class="calc-score-val" id="hbi-score">0</span>
+              <span style="color:rgba(255,255,255,0.4);font-family:'JetBrains Mono',monospace;">| Approx CDAI:</span>
+              <span class="calc-score-val" id="cdai-score">~150</span>
+            </div>
+            <div class="calc-cat" id="severity-cat">Clinical Remission</div>
+            <div class="calc-desc-correlation" id="severity-desc">Patient is in clinical remission. High-yield medical treatment focuses on maintenance.</div>
+          </div>
+        </div>
+
+        <script>
+          function calculateHBI() {
+            const wellbeing = parseInt(document.getElementById('wellbeing').value);
+            const pain = parseInt(document.getElementById('pain').value);
+            const stools = Math.max(0, parseInt(document.getElementById('stools').value) || 0);
+            const mass = parseInt(document.getElementById('mass').value);
+            
+            let comps = 0;
+            for(let i=1; i<=6; i++) {
+              if(document.getElementById('c' + i).checked) comps++;
+            }
+            
+            const hbi = wellbeing + pain + stools + mass + comps;
+            document.getElementById('hbi-score').textContent = hbi;
+            
+            // HBI to CDAI rough mapping: CDAI = HBI * 33.3 + 100
+            let cdai = Math.round(hbi * 33.3 + 50);
+            if (hbi === 0) cdai = 50;
+            document.getElementById('cdai-score').textContent = `~${cdai}`;
+            
+            let cat = '';
+            let desc = '';
+            
+            if (hbi < 4) {
+              cat = "Clinical Remission (CDAI < 150)";
+              desc = "Patient is in clinical remission. High-yield medical treatment focuses on steroid-free maintenance (monotherapy or immunomodulators).";
+            } else if (hbi >= 4 && hbi <= 7) {
+              cat = "Mild Crohn's Disease (CDAI 150 - 220)";
+              desc = "Mild active disease. budesonide 9 mg daily is preferred first-line for terminal ileal/right colon disease.";
+            } else if (hbi >= 8 && hbi <= 16) {
+              cat = "Moderate Crohn's Disease (CDAI 220 - 450)";
+              desc = "Moderate to severe active disease. Initiate Biologic agents (Anti-TNF like Infliximab) combined with an immunomodulator (combination therapy).";
+            } else {
+              cat = "Severe / Fulminant Crohn's (CDAI > 450)";
+              desc = "High risk of bowel loss. Mandates parenteral corticosteroids, urgent surgical consultation, and immediate bowel rest.";
+            }
+            
+            document.getElementById('severity-cat').textContent = cat;
+            document.getElementById('severity-desc').textContent = desc;
+          }
+        </script>
+      </section>
+
+      <section class="topic" id="medical-rx">
+        <div class="topic-header">
+          <span class="topic-num">07</span>
+          <h2>Biologic & Combination Therapy Algorithms</h2>
+        </div>
+        <p>Medical management has shifted from a rigid "step-up" approach to early "top-down" therapy for high-risk patients to prevent irreversible bowel stricturing (B2) or penetration (B3).</p>
+        
+        <ul class="nb">
+          <li><strong>Mild / Low-Risk Crohn's (L1 or small L3, HBI &lt; 5):</strong> First-line induction utilizes **Budesonide (controlled-release 9 mg daily)**. Budesonide is an oral glucocorticoid with high affinity for receptors in the terminal ileum and ascending colon. Because of <strong>&gt;90% first-pass hepatic metabolism</strong>, it has minimal systemic glucocorticoid side effects. 5-ASAs (mesalamine) have weak efficacy in CD and are generally avoided.</li>
+          <li><strong>Moderate to Severe / High-Risk (HBI &gt; 8, penetrating B3 behavior, or perianal modifier):</strong> Indicated for **Combination Therapy** consisting of a biologic agent and an immunomodulator:
+            <ul>
+              <li><strong>Anti-TNF Biologics:</strong> **Infliximab (Remicade)** (5 mg/kg IV infusion at weeks 0, 2, 6, then every 8 weeks) or **Adalimumab (Humira)** (160 mg subQ loading, 80 mg at week 2, then 40 mg every other week).</li>
+              <li><strong>Immunomodulators:</strong> Thiopurines (Azathioprine 1.5 - 2.5 mg/kg or 6-Mercaptopurine 1.0 - 1.5 mg/kg) or Methotrexate (15 - 25 mg subQ weekly). Combination therapy is superior as the immunomodulator suppresses anti-drug antibody formation, maintaining high trough levels.</li>
+            </ul>
+          </li>
+          <li><strong>Therapeutic Drug Monitoring (TDM) Targets:</strong> For patients in remission or with loss of response, check biologic trough levels:
+            <ul>
+              <li><strong>Infliximab Target Trough:</strong> **&ge; 5 mcg/mL** (Standard target); **&ge; 10 mcg/mL** for active fistulizing Crohn's disease to promote tissue healing.</li>
+              <li><strong>Adalimumab Target Trough:</strong> **&ge; 7.5 mcg/mL**.</li>
+            </ul>
+          </li>
+        </ul>
+
+        <div class="callout pearl">
+          <span class="label">💡 Board Viva Pearl</span>
+          <strong>SONIC Trial (2010):</strong> The landmark SONIC trial demonstrated that in patients with moderate-to-severe Crohn's disease naïve to biologics, combination therapy with <strong>Infliximab + Azathioprine</strong> was significantly superior in achieving glucocorticoid-free clinical remission (56.8%) compared with Infliximab monotherapy (44.4%) or Azathioprine monotherapy (30.0%) at week 26, establishing the modern standard of care.
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════════════════════════════════ -->
+      <!-- PILLAR 4: SURGICAL MANAGEMENT & STRICTUREPLASTY ════════════ -->
+      <!-- ════════════════════════════════════════════════════════════ -->
+      <div class="sec-header s4">
+        <span class="sec-badge">PILLAR 4</span>
+        <h2 class="sec-title">Surgical Management & Strictureplasty</h2>
+      </div>
+
+      <section class="topic" id="surgical-indications">
+        <div class="topic-header">
+          <span class="topic-num">08</span>
+          <h2>Surgical Indications</h2>
+        </div>
+        <p>Despite advances in biologic therapies, the 10-year risk of surgical intervention for Crohn's disease remains nearly **50%**. Because Crohn's is a chronic disease and is <em>not</em> cured by resection, the primary goal of surgery is **symptom control and bowel preservation**, avoiding short bowel syndrome.</p>
+        
+        <h4>Core Surgical Indications:</h4>
+        <ol>
+          <li><strong>Bowel Obstruction (Stricture B2):</strong> Most common surgical indication. Fibrotic strictures are unresponsive to medical anti-inflammatory therapies and require intervention.</li>
+          <li><strong>Intra-abdominal Abscess / Sepsis:</strong> Indicated for image-guided percutaneous drainage first. Bowel resection is delayed until sepsis is fully controlled.</li>
+          <li><strong>Fistulizing Disease (Penetrating B3):</strong> Refractory enteroenteric, enterocutaneous, or enterovesical fistulas. Surgery consists of resecting the actively diseased "generator" segment and primarily closing or patching the healthy adjacent recipient organ.</li>
+          <li><strong>Free Perforation:</strong> An absolute emergency. Requires resection and loop stoma creation. Primary anastomosis is strictly contraindicated in the setting of fecal peritonitis and purulent sepsis.</li>
+        </ol>
+      </section>
+
+      <section class="topic" id="strictureplasty">
+        <div class="topic-header">
+          <span class="topic-num">09</span>
+          <h2>Bowel-Sparing Strictureplasty</h2>
+        </div>
+        <p>In patients with diffuse jejunoileitis or recurrent small bowel strictures who are at risk of developing **Short Bowel Syndrome** (&lt; 200 cm of viable small bowel remaining), small bowel resection must be avoided. **Strictureplasty** is the gold standard bowel-sparing technique.</p>
+        
+        <p>Strictureplasty is performed by opening the bowel wall longitudinally across the strictured segment and closing it transversely, maintaining bowel continuity without resecting any absorptive surface area.</p>
+
+        <h4>Contraindications to Strictureplasty:</h4>
+        <ul>
+          <li>Active perforation or bleeding at the target site.</li>
+          <li>Local intra-abdominal abscess or fistula involving the stricture.</li>
+          <li>Suspicion of malignancy (adenocarcinoma of the small bowel).</li>
+          <li>Severe malnutrition or systemic sepsis (impedes anastomotic healing).</li>
+        </ul>
+
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <div class="diagram-title">1. Heineke-Mikulicz Strictureplasty</div>
+            <img src="../../assets/images/crohns/surgical_management_of_crohn_disease_p28_2.jpg" alt="Heineke-Mikulicz Strictureplasty">
+            <p style="font-size:12px;color:var(--muted);line-height:1.4;">Indicated for short strictures <strong>&le; 5 – 7 cm</strong>. The bowel is opened longitudinally extending 1-2 cm into normal proximal/distal bowel, and closed transversely. Accountable for 85% of strictureplasties.</p>
+          </div>
+          <div class="gallery-item">
+            <div class="diagram-title">2. Finney Strictureplasty</div>
+            <img src="../../assets/images/crohns/surgical_management_of_crohn_disease_p29_3.jpg" alt="Finney Strictureplasty">
+            <p style="font-size:12px;color:var(--muted);line-height:1.4;">Indicated for medium strictures <strong>10 – 20 cm</strong>. The strictured segment is folded into a U-loop, opened longitudinally across the loop, and anastomosed in a side-to-side fashion (creating a wide diverticular pouch).</p>
+          </div>
+        </div>
+
+        <div class="diagram-wrap" style="max-width: 600px; margin: 20px auto;">
+          <div class="diagram-title">3. Side-to-Side Isoperistaltic Strictureplasty (SSIS - Michelassi)</div>
+          <img src="../../assets/images/crohns/surgical_management_of_crohn_disease_p30_4.jpg" alt="Michelassi Strictureplasty">
+          <p style="font-size:12px;color:var(--muted);margin-top:6px;line-height:1.4;">Indicated for long, diffuse strictures <strong>&gt; 20 cm</strong> (often jejunoileitis). The bowel loop is transected at its midpoint, aligned side-to-side, opened longitudinally along their opposing borders, and sutured back together. Minimizes bowel bypass and preserves absorption.</p>
+        </div>
+
+        <div class="viva">
+          <div class="vq">ABSITE Viva Scenario</div>
+          <div class="vscenario">A 34-year-old male with recurrent Crohn's disease and two prior small bowel resections presents with small bowel obstruction. Workup reveals a 4 cm stricture in the mid-jejunum and a 14 cm stricture in the distal ileum. Remaining small bowel length is estimated at 120 cm. What is the surgical management?</div>
+          <div class="vanswer">
+            Due to the patient's existing short bowel state (&lt; 200 cm), a small bowel resection is contraindicated. Management requires bowel-sparing strictureplasty:
+            <ul>
+              <li><strong>Mid-jejunum stricture (4 cm):</strong> Heineke-Mikulicz strictureplasty (longitudinal incision, transverse closure).</li>
+              <li><strong>Distal ileum stricture (14 cm):</strong> Finney strictureplasty (side-to-side loop folding).</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════════════════════════════════ -->
+      <!-- PILLAR 5: PERIANAL CROHN'S & POST-RESHECTION RECURRENCE ═════ -->
+      <!-- ════════════════════════════════════════════════════════════ -->
+      <div class="sec-header s5">
+        <span class="sec-badge">PILLAR 5</span>
+        <h2 class="sec-title">Perianal Crohn's & Post-Resection Recurrence</h2>
+      </div>
+
+      <section class="topic" id="perianal">
+        <div class="topic-header">
+          <span class="topic-num">10</span>
+          <h2>Perianal Fistulas & Seton Drainage</h2>
+        </div>
+        <p>Approximately **one-third of Crohn's patients** will develop perianal disease (fistulas, abscesses, skin tags). Perianal disease represents a high-risk progressive phenotype that requires aggressive combined medical and surgical coordination.</p>
+        
+        <p>Anatomically, fistulas are classified using the <strong>Parks Classification</strong> (Intersphincteric, Transsphincteric, Suprasphincteric, Extrasphincteric) and divided into Simple vs. Complex:</p>
+
+        <div class="table-wrap s5-tbl">
+          <table>
+            <thead>
+              <tr>
+                <th>Fistula Category</th>
+                <th>Anatomical Description</th>
+                <th>Associated Complications</th>
+                <th>Surgical Strategy</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Simple Perianal Fistula</strong></td>
+                <td>Low fistula (superficial or low intersphincteric/transsphincteric). Single external opening.</td>
+                <td>No active rectal inflammation, no pain, no abscess.</td>
+                <td>Antibiotics + Anti-TNF. Subcutaneous tracts can undergo simple fistulotomy (cutting muscle is strictly avoided if high).</td>
+              </tr>
+              <tr>
+                <td><strong>Complex Perianal Fistula</strong></td>
+                <td>High fistula (high transsphincteric, suprasphincteric, or extrasphincteric). Multiple external openings.</td>
+                <td>Rectal mucosal inflammation, rectovaginal/rectovesical tract, active abscess.</td>
+                <td>Mandates EUA + non-cutting Seton placement. Never perform a fistulotomy (leads to high fecal incontinence!).</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <div class="diagram-title">Fig. 4: Parks Classification of Anal Fistulas</div>
+            <img src="../../assets/images/crohns/perianal_crohn_disease_p26_1.jpg" alt="Parks Classification of Anal Fistulas">
+            <p style="font-size:12px;color:var(--muted);line-height:1.4;">Classifies tracts relative to the internal/external anal sphincters. Type 1: Intersphincteric, Type 2: Transsphincteric, Type 3: Suprasphincteric, Type 4: Extrasphincteric.</p>
+          </div>
+          <div class="gallery-item">
+            <div class="diagram-title">Fig. 5: Pelvic MRI mapping Perianal Fistula</div>
+            <img src="../../assets/images/crohns/clinical_manifestations,_diagnosis,_and_prognosis_of_crohn_disease_in_adults_p45_16.png" alt="Pelvic MRI Perianal Fistula Crohn's">
+            <p style="font-size:12px;color:var(--muted);line-height:1.4;">T2-weighted axial pelvic MRI scan (Image 6) depicting a prominent transsphincteric fistula tract with high signal intensity (arrows) in relation to the sphincters.</p>
+          </div>
+        </div>
+
+        <div class="callout warn">
+          <span class="label">⚠ Warning Zone</span>
+          <strong>Abscess Sepsis Lock:</strong> Never initiate anti-TNF biologics (Infliximab) in a patient with a complex perianal fistula until an <strong>Examination Under Anesthesia (EUA)</strong> has been performed, sepsis is drained, and a <strong>non-cutting Seton</strong> is placed. Setons maintain tract patency and prevent superficial healing from locking in active infection, which leads to recurrent perianal sepsis and deep tissue destruction.
+        </div>
+      </section>
+
+      <section class="topic" id="post-op">
+        <div class="topic-header">
+          <span class="topic-num">11</span>
+          <h2>Rutgeerts Post-Operative Recurrence Score</h2>
+        </div>
+        <p>Although surgical resection (eg. ileocecal resection) resolves local complications, Crohn's recurrence is nearly universal, usually manifesting in the **neoterminal ileum** immediately proximal to the anastomosis. Postoperative surveillance and prophylaxis are key clinical priorities.</p>
+        
+        <p>Surgeons perform an ileocolonoscopy **6 to 12 months post-resection** to evaluate the neoterminal ileum and grade endoscopic recurrence using the **Rutgeerts Score**.</p>
+
+        <div class="table-wrap s5-tbl">
+          <table>
+            <thead>
+              <tr>
+                <th>Rutgeerts Grade</th>
+                <th>Endoscopic Visual Presentation (Neoterminal Ileum)</th>
+                <th>Recurrence Risk</th>
+                <th>Post-op Prophylaxis Strategy</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>i0</strong></td>
+                <td>No mucosal lesions. Perfect healing.</td>
+                <td style="color:var(--accent);font-weight:600;">Low Risk</td>
+                <td rowspan="2">Monitor clinically and with serial fecal calprotectin levels every 3 months.</td>
+              </tr>
+              <tr>
+                <td><strong>i1</strong></td>
+                <td>Fewer than 5 aphthous ulcers. Minimal inflammation.</td>
+                <td style="color:var(--accent);font-weight:600;">Low Risk</td>
+              </tr>
+              <tr>
+                <td><strong>i2</strong></td>
+                <td>More than 5 aphthous ulcers with normal intervening mucosa, OR larger lesions confined purely to the anastomosis.</td>
+                <td style="color:var(--amber);font-weight:600;">Moderate Risk</td>
+                <td>Initiate post-op prophylaxis. Thiopurines or low-dose biologics.</td>
+              </tr>
+              <tr>
+                <td><strong>i3</strong></td>
+                <td>Diffuse aphthous ileitis with diffusely inflamed mucosa.</td>
+                <td style="color:var(--red);font-weight:600;">High Risk</td>
+                <td rowspan="2">Initiate aggressive post-op prophylaxis immediately. **Anti-TNF (Infliximab)** is the first-line gold standard, initiated within 2-4 weeks post-op.</td>
+              </tr>
+              <tr>
+                <td><strong>i4</strong></td>
+                <td>Diffuse ileal inflammation with large ulcers, nodules, and/or luminal stricture/narrowing.</td>
+                <td style="color:var(--red);font-weight:600;">High Risk</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout clin">
+          <span class="label">💡 Clinical Principle</span>
+          <strong>Post-op Prophylaxis Criteria:</strong> High-risk clinical features for post-op recurrence include: **tobacco smoking (strongest modifier)**, history of penetrating disease behavior (B3), prior bowel resections, and short time to recurrence. High-risk patients should start **biologic prophylaxis (Infliximab) within 2 to 4 weeks of surgery**, rather than waiting for the 6-month colonoscopy, to preserve the anastomosis.
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════════════════════════════════ -->
+      <!-- RAPID REFERENCE TABLE ══════════════════════════════════════ -->
+      <!-- ════════════════════════════════════════════════════════════ -->
+      <div class="rapid-ref" id="rapid">
+        <h3>Crohn's Disease Board-Review Rapid Reference</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Clinical Topic</th>
+              <th>Critical Board-Relevant Threshold / Fact</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Calprotectin IBD Rule-out</strong></td>
+              <td>Fecal Calprotectin <strong>&lt; 40 – 50 mcg/g</strong> yields a &gt;99% NPV ruling out IBD.</td>
+            </tr>
+            <tr>
+              <td><strong>Calprotectin Endoscopy Cutoff</strong></td>
+              <td>Fecal Calprotectin <strong>&gt; 150 – 250 mcg/g</strong> warrants diagnostic ileocolonoscopy.</td>
+            </tr>
+            <tr>
+              <td><strong>Enteral Resection Threshold</strong></td>
+              <td>Resection of <strong>&gt; 100 cm</strong> of terminal ileum destroys bile salt pool, causing fat malabsorption.</td>
+            </tr>
+            <tr>
+              <td><strong>Cholerrheic Diarrhea Resection</strong></td>
+              <td>Resection of <strong>&lt; 100 cm</strong> of terminal ileum, treated with bile-acid binding resins (cholestyramine).</td>
+            </tr>
+            <tr>
+              <td><strong>Heineke-Mikulicz Length</strong></td>
+              <td>Indicated for small bowel strictures <strong>&le; 5 – 7 cm</strong>. Accountable for 85% of cases.</td>
+            </tr>
+            <tr>
+              <td><strong>Finney Strictureplasty Length</strong></td>
+              <td>Indicated for medium small bowel strictures <strong>10 – 20 cm</strong>.</td>
+            </tr>
+            <tr>
+              <td><strong>Michelassi Strictureplasty Length</strong></td>
+              <td>Side-to-Side Isoperistaltic strictureplasty, indicated for long strictured segments <strong>&gt; 20 cm</strong>.</td>
+            </tr>
+            <tr>
+              <td><strong>Active Fistula Infliximab Trough</strong></td>
+              <td>Higher target trough of <strong>&ge; 10 mcg/mL</strong> is preferred to promote fistula healing (normal target &ge; 5).</td>
+            </tr>
+            <tr>
+              <td><strong>Seton Placement Principle</strong></td>
+              <td>Setons must be <strong>non-cutting</strong> to maintain drainage. Avoid cutting Setons in IBD to preserve continence.</td>
+            </tr>
+            <tr>
+              <td><strong>Rutgeerts Surveillance Interval</strong></td>
+              <td>Perform ileocolonoscopy <strong>6 to 12 months</strong> post-op. Grade i2 or higher warrants immediate treatment.</td>
+            </tr>
+            <tr>
+              <td><strong>Post-op Biologic Prophylaxis</strong></td>
+              <td>Start Anti-TNF <strong>within 2 to 4 weeks</strong> post-operatively for patients with high-risk recurrence modifiers.</td>
+            </tr>
+            <tr>
+              <td><strong>Strongest Modifiable Risk Factor</strong></td>
+              <td><strong>Tobacco Smoking</strong> — doubles the risk of disease flares, strictures, and post-operative recurrence.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div><!-- end content-wrap -->
+  </main>
+
+  <button id="top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+  <script>
+    // Sidebar, Progress Bar, and Scroll-to-Top Logic
+    (function() {
+      const progressBar = document.getElementById('progress-bar');
+      const topBtn = document.getElementById('top-btn');
+      const navItems = document.querySelectorAll('.nav-item');
+      const sections = document.querySelectorAll('.topic[id], .rapid-ref[id]');
+      
+      window.toggleSidebar = function() { document.body.classList.toggle('sidebar-open'); };
+      window.closeSidebar = function() { document.body.classList.remove('sidebar-open'); };
+
+      window.addEventListener('scroll', () => {
+        const st = window.scrollY;
+        const dh = document.documentElement.scrollHeight - window.innerHeight;
+        if (progressBar) progressBar.style.transform = `scaleX(${st / dh})`;
+        if (topBtn) topBtn.classList.toggle('show', st > 400);
+        
+        let current = '';
+        sections.forEach(s => {
+          if (st >= s.offsetTop - 120) current = s.id;
+        });
+        navItems.forEach(n => {
+          n.classList.toggle('active', n.getAttribute('href') === '#' + current);
+        });
+      });
+
+      window.filterNav = function(query) {
+        const q = query.toLowerCase();
+        navItems.forEach(item => {
+          item.style.display = (!q || item.textContent.toLowerCase().includes(q)) ? 'block' : 'none';
+        });
+        document.querySelectorAll('.vol-label').forEach(l => {
+          l.style.display = 'block';
+        });
+      };
+
+      navItems.forEach(item => {
+        item.addEventListener('click', e => {
+          e.preventDefault();
+          closeSidebar();
+          const target = document.querySelector(item.getAttribute('href'));
+          if (target) {
+            window.scrollTo({
+              top: target.getBoundingClientRect().top + window.scrollY - 80,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+
+      // Topic Animation
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll('.topic, .sec-header, .viva, .callout, .calc-card').forEach(el => {
+        el.classList.add('animate-on-scroll');
+        observer.observe(el);
+      });
+      
+      // Calculate initial HBI score
+      calculateHBI();
+    })();
+  </script>
+  <script src="../../js/navigation.js"></script>
+</body>
+</html>
