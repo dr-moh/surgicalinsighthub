@@ -8,31 +8,59 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 
 import requests
 import itertools
+from google import genai
+from google.genai import types
 
-ATXP_CONNECTION = os.environ.get("ATXP_CONNECTION", "")
+# Helper to load key-value pairs from .env-like files
+def load_env_file(filepath):
+    if not os.path.exists(filepath):
+        return
+    with open(filepath, "r", encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            # Try to parse even if commented out with # but contains a valid key=value pattern
+            if line.startswith("#"):
+                # strip the hash and try to match a pattern like "KEY=VALUE"
+                candidate = line[1:].strip()
+                if "=" in candidate and not candidate.startswith("Use this") and not candidate.startswith("AI Provider"):
+                    line = candidate
+                else:
+                    continue
+            if "=" in line:
+                key, val = line.split("=", 1)
+                key = key.strip()
+                val = val.strip()
+                if (val.startswith('"') and val.endswith('"')) or (val.startswith("'") and val.endswith("'")):
+                    val = val[1:-1]
+                if key and val:
+                    os.environ[key] = val
+
+# Load all env files
+load_env_file(".env")
+load_env_file("openprovider-provider-keys-2026-05-22.env")
+load_env_file("AI Provider API keys.env.txt")
+
+ATXP_CONNECTION = os.environ.get("ATXP_CONNECTION") or ""
+GROQ_API_KEY = os.environ.get("GROQ_API_KEY") or ""
+GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY") or ""
+
 groq_lock = threading.Lock()
+gemini_lock = threading.Lock()
+vertex_lock = threading.Lock()
+
 ATXP_MODELS = [
-    "openai/gpt-4o",
+    "google-ai-studio/gemini-3.5-flash",
+    "google-ai-studio/gemini-2.5-flash",
+    "google-ai-studio/gemini-2.5-pro",
     "openai/gpt-4o-mini",
+    "openai/gpt-4o",
     "anthropic/claude-3-5-sonnet-20241022",
     "anthropic/claude-3-5-haiku-20241022",
-    "google-ai-studio/gemini-3.5-flash",
-    "google/gemini-2.5-pro",
-    "google/gemini-2.5-flash",
-    "google/gemini-1.5-flash",
-    "meta-llama/llama-3.3-70b-instruct",
-    "meta-llama/llama-3.1-8b-instruct",
-    "mistral/ministral-8b",
-    "deepseek/deepseek-chat",
-    "deepseek/deepseek-coder",
-    "qwen/qwen-2.5-72b-instruct",
-    "cohere/command-r-plus"
+    "google-ai-studio/gemini-1.5-flash",
+    "deepseek/deepseek-chat-v3"
 ]
 
-GROQ_API_KEY = os.environ.get("GROQ_API_KEY", "")
 MODEL = "llama-3.3-70b-versatile"
-GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "")
-gemini_lock = threading.Lock()
 
 SHARP_4_PROMPT = """You are an expert medical educator and data engineer. 
 I will provide you with a severely corrupted Multiple Choice Question (MCQ).
@@ -99,7 +127,7 @@ def call_atxp_repair(prompt):
             content = resp.json()["choices"][0]["message"]["content"].strip()
             if content.startswith("```json"): content = content[7:]
             if content.endswith("```"): content = content[:-3]
-            return json.loads(content.strip())
+            return json.loads(content.strip(), strict=False)
         except Exception:
             continue # Try next model
             
@@ -123,9 +151,33 @@ def call_groq_repair(prompt):
             content = resp.json()["choices"][0]["message"]["content"].strip()
             if content.startswith("```json"): content = content[7:]
             if content.endswith("```"): content = content[:-3]
-            return json.loads(content.strip())
+            return json.loads(content.strip(), strict=False)
         except Exception as e:
             print(f"Groq fallback failed: {e}")
+            return None
+
+vertex_client = None
+def call_vertex_repair(prompt):
+    global vertex_client
+    with vertex_lock:
+        try:
+            if vertex_client is None:
+                vertex_client = genai.Client(vertexai=True, project="sih-mcq-pipeline", location="us-central1")
+            response = vertex_client.models.generate_content(
+                model='gemini-2.5-flash',
+                contents=prompt,
+                config=types.GenerateContentConfig(
+                    system_instruction="Output clean JSON only.",
+                    response_mime_type="application/json",
+                    temperature=0.1
+                )
+            )
+            content = response.text.strip()
+            if content.startswith("```json"): content = content[7:]
+            if content.endswith("```"): content = content[:-3]
+            return json.loads(content.strip(), strict=False)
+        except Exception as e:
+            print(f"Vertex AI fallback failed: {e}")
             return None
 
 def call_gemini_repair(prompt):
@@ -147,7 +199,7 @@ def call_gemini_repair(prompt):
             content = resp.json()["candidates"][0]["content"]["parts"][0]["text"].strip()
             if content.startswith("```json"): content = content[7:]
             if content.endswith("```"): content = content[:-3]
-            return json.loads(content.strip())
+            return json.loads(content.strip(), strict=False)
         except Exception as e:
             print(f"Gemini fallback failed: {e}")
             return None
@@ -157,14 +209,18 @@ def process_question(item):
     
     prompt = f"{SHARP_4_PROMPT}\n\nCORRUPTED TEXT TO REPAIR:\n{corrupted_text}"
     
-    # Try all 15+ ATXP models first
+    # Try all ATXP models first
     repaired_json = call_atxp_repair(prompt)
     
     # If ATXP is totally exhausted, fall back to Groq
     if not repaired_json:
         repaired_json = call_groq_repair(prompt)
         
-    # If Groq also fails, fall back to Gemini directly
+    # If Groq also fails, fall back to Enterprise Vertex AI
+    if not repaired_json:
+        repaired_json = call_vertex_repair(prompt)
+        
+    # If Vertex AI fails, fall back to Gemini Developer API
     if not repaired_json:
         repaired_json = call_gemini_repair(prompt)
 
@@ -202,7 +258,7 @@ def main():
     success_count = 0
     fail_count = 0
     
-    print(f"Processing in background using ATXP (15 models) with Groq fallback. 20 workers...", flush=True)
+    print(f"Processing in background using 4-tier waterfall: ATXP (models), Groq, Vertex AI, Gemini AI Studio. 20 workers...", flush=True)
     with ThreadPoolExecutor(max_workers=20) as executor:
         futures = {executor.submit(process_question, q): q for q in to_process[:limit]}
         
