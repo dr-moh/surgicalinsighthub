@@ -589,17 +589,38 @@
 
     <div class="blog-container">
       <main class="blog-main blog-content">
-        <p>The "difficult gallbladder" remains one of the most treacherous encounters in general surgery. When faced with severe inflammation, distorted anatomy, or dense adhesions that obscure the critical view of safety, surgical dogma and SAGES guidelines point to a reliable bailout: the <strong>partial (subtotal) cholecystectomy</strong>.</p>
+        <p>The "difficult gallbladder" remains one of the most treacherous encounters in general surgery. When faced with severe inflammation, gangrenous necrosis, dense fibrotic scarring, or Mirizzi syndrome that obliterates anatomical landmarks and obscures the <strong>Critical View of Safety (CVS)</strong>, proceeding with standard total cholecystectomy is a setup for catastrophe. Under these hostile conditions, the dissection of Calot’s triangle carries an unacceptable risk of major vasculobiliary injury.</p>
 
-        <p>While this technique undeniably mitigates the catastrophic risk of major bile duct injury, it brings its own distinct complication profile. A new study in the <em>Journal of Surgical Research</em> by Nigam et al. leverages Natural Language Processing (NLP) to cut through coding ambiguities and provide a rigorous, propensity-matched look at just how significant that morbidity actually is.</p>
+        <p>To avoid severing the common bile duct or right hepatic artery, surgical dogma and society guidelines (e.g., SAGES Safe Cholecystectomy Program and the Tokyo Guidelines 2018) dictate a vital fallback maneuver: the <strong>partial (subtotal) cholecystectomy</strong>. By dividing the gallbladder body and leaving the posterior wall adherent to the liver bed, the surgeon successfully escapes the "zone of attrition."</p>
+
+        <p>However, this crucial bailout is not a consequence-free escape hatch. It exchanges a potential intraoperative catastrophe for a highly complex postoperative course. A landmark study in the <em>Journal of Surgical Research</em> by Nigam et al. utilizes Natural Language Processing (NLP) to cut through coding ambiguities, providing a rigorous, propensity-score-matched look at just how significant this postoperative morbidity actually is.</p>
 
         <hr>
 
-        <h2>The Methodology: NLP and Propensity Matching</h2>
+        <h2>Surgical Mechanics: Subtotal Fenestrating vs. Reconstituting</h2>
         
-        <p>Because partial cholecystectomy lacks specific CPT and ICD-10 codes in clinical practice, capturing accurate data has historically been a challenge. To solve this, the researchers applied a validated BioClinicalBERT NLP classifier to over 15,000 operative reports across 14 hospitals from 2010 to 2025.</p>
+        <p>Before diving into the clinical data, it is critical to distinguish between the two primary techniques of subtotal cholecystectomy, as they lead to vastly different complications:</p>
+        
+        <ul>
+          <li><strong>Subtotal Fenestrating Cholecystectomy:</strong> The surgeon cuts open the gallbladder body, evacuates all gallstones, and leaves the gallbladder remnant fully open. The mucosa of the remaining gallbladder wall is typically ablated (using electrocautery or argon plasma coagulation), and a closed-suction drain is placed in the subhepatic space. 
+            <ul>
+              <li><em>Clinical Trade-off:</em> This method is associated with a significantly higher rate of postoperative <strong>low-grade or high-grade bile leaks</strong> (often requiring ERCP and stenting) but carries a negligible risk of long-term recurrent cholecystitis or stone formation, as no closed cavity remains.</li>
+            </ul>
+          </li>
+          <li><strong>Subtotal Reconstituting Cholecystectomy:</strong> The gallbladder body is similarly divided and stones are evacuated, but the surgeon subsequently sutures or staples the lower gallbladder remnant closed, effectively creating a "neogallbladder."
+            <ul>
+              <li><em>Clinical Trade-off:</em> While this approach significantly minimizes immediate postoperative bile leaks, it leaves a closed cavity lined with functioning mucosa. Over months or years, this neogallbladder is prone to mucus secretion, stone recurrence, and recurrent acute cholecystitis, often necessitating a highly challenging completion cholecystectomy.</li>
+            </ul>
+          </li>
+        </ul>
 
-        <p>This AI-driven approach achieved a 95.9% accuracy rate, successfully identifying 107 partial cholecystectomies. To control for selection bias (as partial cases inherently involve sicker patients and worse pathology), they utilized a ~4:1 propensity score matching based on age, sex, race, ethnicity, and comorbidities. The final analytic cohort consisted of 518 patients.</p>
+        <hr>
+
+        <h2>The Methodology: Leveraging NLP and Propensity Matching</h2>
+        
+        <p>Because clinical registries lack specific ICD-10 or CPT billing codes to accurately differentiate partial from complete cholecystectomies, historical data on subtotal outcomes has been highly fractured and prone to underreporting. To solve this, the researchers deployed a validated <strong>BioClinicalBERT NLP classifier</strong> to screen over 15,905 operative reports across 14 hospitals from October 2010 to January 2025.</p>
+
+        <p>This machine-learning model achieved an outstanding <strong>95.9% test set accuracy</strong>, identifying 107 partial cholecystectomies. To control for the massive selection bias inherent to these cases—since partial cholecystectomies are exclusively performed on sicker patients with extreme local pathology—they utilized a rigorous <strong>propensity score matching algorithm</strong> (~4:1 ratio) based on age, sex, race, ethnicity, and a wide array of active comorbidities (including diabetes, hypertension, coronary artery disease, heart failure, COPD, and chronic kidney disease). The final matched analytic cohort consisted of 518 patients (104 partial and 414 complete).</p>
 
         <!-- Figure 1 Interactive Dashboard -->
         <div class="data-wrapper" id="wrapper-fig1">
@@ -693,6 +714,8 @@
             </figure>
           </div>
         </div>
+
+        <p>The demographics in Table 1 highlight the success of the propensity score matching. Confounders such as age (mean ~63 years), sex (predominantly male at ~68%), and high-risk comorbidities—including Type 2 Diabetes (~41-46%), Hypertension (~64-67%), Coronary Artery Disease (~28-30%), and Chronic Kidney Disease (~23-25%)—were perfectly balanced between the partial and complete groups (all P-values &gt; 0.05). This statistical alignment ensures that the observed differences in clinical outcomes are directly attributable to the surgical pathology and the intervention itself, rather than baseline patient frailty.</p>
 
         <!-- Table 1 Interactive Dashboard -->
         <div class="data-wrapper" id="wrapper-table1">
@@ -885,19 +908,15 @@
 
         <hr>
 
-        <h2>The Data: The Hard Truth</h2>
-        <p>The propensity-matched outcomes were sobering. Even after adjusting for baseline patient factors, the partial cholecystectomy cohort experienced drastically higher complication rates across nearly every metric.</p>
+        <h2>The Outcomes: A Deep Dive into Biliary Morbidity</h2>
+        <p>The propensity-matched outcomes were sobering. Even after mathematically neutralizing patient-level systemic confounders, the partial cholecystectomy cohort experienced drastically elevated complication rates across almost all metrics. The data strongly suggests that the severe local inflammatory microenvironment that prompts a partial cholecystectomy is itself an independent driver of profound postoperative morbidity.</p>
 
-        <div class="callout callout-warning" style="background: rgba(220, 38, 38, 0.05); border-left: 4px solid #dc2626; padding: 1.5rem; margin: 2rem 0; border-radius: 4px;">
-          <h4 style="color: #dc2626; margin-top: 0;">Key Findings (Partial vs. Complete)</h4>
-          <ul style="margin-bottom: 0;">
-            <li><strong>30-Day Mortality:</strong> 3.8% vs 0.7% (5.08x higher, P = 0.033)</li>
-            <li><strong>Overall Complications:</strong> 75.0% vs 26.6% (2.81x higher, P &lt; 0.001)</li>
-            <li><strong>ICU Admission:</strong> 8.7% vs 2.7% (3.26x higher, P = 0.009)</li>
-            <li><strong>Postoperative ERCP:</strong> 13.5% vs 1.4% (8.82x higher, P &lt; 0.001)</li>
-            <li><strong>Drain Placement:</strong> 68.3% vs 19.8% (3.43x higher, P &lt; 0.001)</li>
-          </ul>
-        </div>
+        <h3>Primary Outcomes (Table 3 &amp; Table 2)</h3>
+        <ul>
+          <li><strong>30-Day Mortality:</strong> A highly concerning <strong>3.8% (4/104)</strong> in the partial group vs. <strong>0.7% (3/414)</strong> in the complete group. This represents a <strong>five-fold (5.08x) increase in mortality</strong> (P = 0.033). This severe finding highlights that the clinical scenario requiring subtotal cholecystectomy is highly dangerous.</li>
+          <li><strong>Overall Complications:</strong> An astronomical <strong>75.0% (78/104)</strong> in the partial group compared to <strong>26.6% (110/414)</strong> in the complete group (P &lt; 0.001). This represents a nearly three-fold (2.81x) increase in the overall hazard of complications.</li>
+          <li><strong>ICU Admission:</strong> A rate of <strong>8.7% (9/104)</strong> vs. <strong>2.7% (11/414)</strong>, marking a 3.26x increase in critical care requirements (P = 0.009).</li>
+        </ul>
 
         <!-- Table 2 Interactive Dashboard -->
         <div class="data-wrapper" id="wrapper-table2">
@@ -1034,6 +1053,17 @@
           </div>
         </div>
 
+        <h3>Secondary Outcomes and Biliary Interventions (Figure 2)</h3>
+        
+        <p>A granular look at the secondary endpoints reveals the exact clinical drivers behind the elevated morbidity in subtotal cholecystectomy cases:</p>
+        
+        <ul>
+          <li><strong>Postoperative ERCP (RR 8.82, P &lt; 0.001):</strong> A staggering <strong>13.5% (14/104)</strong> of partial cholecystectomy patients required a postoperative endoscopic retrograde cholangiopancreatography, compared to only 1.4% of total cholecystectomy patients. Biliary stenting is frequently required to manage persistent bile leaks from the gallbladder bed or the cystic duct remnant, which are highly common in subtotal fenestrating procedures.</li>
+          <li><strong>Drain Placement (RR 3.43, P &lt; 0.001):</strong> Closed-suction drains were left in <strong>68.3% (71/104)</strong> of subtotal cases vs. 19.8% of total cases. Drains are left to proactively control the high rate of expected postoperative biliary leaks.</li>
+          <li><strong>Postoperative Ileus (RR 5.95, P &lt; 0.001):</strong> A rate of <strong>17.3% (18/104)</strong> vs. <strong>2.9% (12/414)</strong>. The extensive local tissue dissection and localized chemical peritonitis (caused by bile and inflammatory exudates) lead to prolonged bowel paralysis.</li>
+          <li><strong>Bile Duct Injury (BDI) (P = 0.008):</strong> Crucially, there were <strong>3 cases of BDI (2.9%)</strong> in the subtotal group, compared to <strong>0 cases (0.0%)</strong> in the matched complete group. This finding is of immense clinical significance. While subtotal cholecystectomy is specifically performed as a bailout to <em>avoid</em> BDI, the rate remains 2.9% because the severe inflammation and anatomical distortion that prompted the subtotal are highly dangerous, increasing BDI risk even when attempting to halt dissection.</li>
+        </ul>
+
         <!-- Figure 2 Forest Plot Interactive Dashboard -->
         <div class="data-wrapper" id="wrapper-fig2">
           <div class="data-toggle-bar">
@@ -1059,9 +1089,7 @@
                 <div class="forest-label">Postoperative Ileus</div>
                 <div class="forest-axis-container">
                   <div class="forest-no-difference"></div>
-                  <!-- Left: 2.95 * 6.25 = 18.44%, Width: (11.60 - 2.95) * 6.25 = 54.06% -->
                   <div class="forest-ci-line" style="left: 18.44%; width: 54.06%;"></div>
-                  <!-- Dot: 5.95 * 6.25 = 37.19% -->
                   <div class="forest-rr-dot" style="left: 37.19%;"></div>
                 </div>
                 <div class="forest-stats" style="text-align: right;">
@@ -1075,9 +1103,7 @@
                 <div class="forest-label">Postoperative ERCP</div>
                 <div class="forest-axis-container">
                   <div class="forest-no-difference"></div>
-                  <!-- Left: 3.58 * 6.25 = 22.38%, Width: 77.6% (ends with arrow due to limit) -->
                   <div class="forest-ci-line has-arrow" style="left: 22.38%; width: 77.62%;"></div>
-                  <!-- Dot: 8.82 * 6.25 = 55.13% -->
                   <div class="forest-rr-dot" style="left: 55.13%;"></div>
                 </div>
                 <div class="forest-stats" style="text-align: right;">
@@ -1091,9 +1117,7 @@
                 <div class="forest-label">Drain Placement</div>
                 <div class="forest-axis-container">
                   <div class="forest-no-difference"></div>
-                  <!-- Left: 2.71 * 6.25 = 16.94%, Width: 10.13% -->
                   <div class="forest-ci-line" style="left: 16.94%; width: 10.13%;"></div>
-                  <!-- Dot: 3.43 * 6.25 = 21.44% -->
                   <div class="forest-rr-dot" style="left: 21.44%;"></div>
                 </div>
                 <div class="forest-stats" style="text-align: right;">
@@ -1120,9 +1144,7 @@
                 <div class="forest-label">ICU Admission</div>
                 <div class="forest-axis-container">
                   <div class="forest-no-difference"></div>
-                  <!-- Left: 1.39 * 6.25 = 8.69%, Width: 39.13% -->
                   <div class="forest-ci-line" style="left: 8.69%; width: 39.13%;"></div>
-                  <!-- Dot: 3.26 * 6.25 = 20.38% -->
                   <div class="forest-rr-dot" style="left: 20.38%;"></div>
                 </div>
                 <div class="forest-stats" style="text-align: right;">
@@ -1136,9 +1158,7 @@
                 <div class="forest-label">Overall 30-d Complications</div>
                 <div class="forest-axis-container">
                   <div class="forest-no-difference"></div>
-                  <!-- Left: 2.31 * 6.25 = 14.44%, Width: 6.88% -->
                   <div class="forest-ci-line" style="left: 14.44%; width: 6.88%;"></div>
-                  <!-- Dot: 2.81 * 6.25 = 17.56% -->
                   <div class="forest-rr-dot" style="left: 17.56%;"></div>
                 </div>
                 <div class="forest-stats" style="text-align: right;">
@@ -1153,9 +1173,7 @@
                 <div class="forest-axis-container">
                   <div class="forest-no-difference"></div>
                   <div class="forest-no-diff-label">No Difference</div>
-                  <!-- Left: 1.28 * 6.25 = 8.00%, Width: 92% (ends with arrow) -->
                   <div class="forest-ci-line has-arrow" style="left: 8.00%; width: 92.00%;"></div>
-                  <!-- Dot: 5.08 * 6.25 = 31.75% -->
                   <div class="forest-rr-dot" style="left: 31.75%;"></div>
                 </div>
                 <div class="forest-stats" style="text-align: right;">
@@ -1250,13 +1268,19 @@
 
         <hr>
 
-        <h2>The Takeaway</h2>
+        <h2>Clinical Synthesis: Deciding to Bailout</h2>
         
-        <p>The five-fold higher mortality after propensity matching suggests that unmeasured intraoperative complexity variables—such as the severity of inflammation, adhesions, and Calot's triangle obliteration—heavily contribute to postoperative risk. </p>
-
-        <p>This does <em>not</em> mean partial cholecystectomy should be abandoned. It remains a crucial, potentially life-saving maneuver to avoid devastating biliary and vascular injuries when the critical view of safety is unattainable. However, this data underscores that partial cholecystectomy is a marker of a highly perilous clinical scenario with profound postoperative consequences.</p>
-
-        <p>For the surgical practitioner, these findings highlight the absolute necessity of explicit preoperative counseling. Patients presenting with complex gallbladder disease must be informed of the significantly increased risks of bile leak, drain placement, ERCP, and mortality should a partial cholecystectomy become necessary.</p>
+        <p>The core clinical puzzle of this data lies in the paradox of the <strong>Bile Duct Injury (BDI)</strong> rate. Subtotal cholecystectomy is specifically designed as the ultimate escape hatch to avoid devastating Strasberg Class E vasculobiliary injuries when inflammation obliterates Calot's triangle. Yet, even in this propensity-matched dataset, the BDI rate was <strong>2.9%</strong> in the subtotal group vs. <strong>0.0%</strong> in the total group.</p>
+        
+        <p>This does <em>not</em> mean that subtotal cholecystectomy is a failure. Rather, it indicates that the local inflammatory microenvironment (characterized by gangrenous tissue, woody induration, or dense fibrotic remodeling) is highly treacherous. By the time a surgeon decides to convert to a subtotal cholecystectomy, they are already navigating a highly complex anatomical scenario. Halting the dissection and transitioning to a subtotal procedure is a protective measure that likely prevents a far worse, complex biliary reconstruction.</p>
+        
+        <p>However, the significant risk of postoperative bile leak (13.5% requiring ERCP) and the five-fold higher 30-day mortality emphasize that partial cholecystectomy is a marker of a highly perilous clinical scenario. This has major implications for clinical practice:</p>
+        
+        <ol>
+          <li><strong>Explicit Preoperative Counseling:</strong> When consenting patients for a cholecystectomy—especially those presenting with acute cholecystitis, Mirizzi syndrome, or risk factors for a difficult gallbladder—surgeons must explicitly counsel patients on the possibility of a partial cholecystectomy. Patients must understand that should a subtotal procedure be required, their postoperative risk of bile leaks, drain retention, ERCP interventions, and intensive care requirements increases significantly.</li>
+          <li><strong>Early Bailout Decisions:</strong> SAGES guidelines advocate for early recognition of the difficult gallbladder. Continuing dissection in the "zone of attrition" when landmarks are obscured is a leading cause of BDI. Turning to a subtotal cholecystectomy early—rather than as a desperate last resort after structural damage has already occurred—is crucial.</li>
+          <li><strong>Remnant Management:</strong> When bailing out, the surgeon should carefully consider the anatomy. If a subtotal fenestrating approach is chosen, the cystic duct orifice should be closed internally if possible, and a drain is mandatory. If a reconstituting approach is utilized, the surgeon must be aware of the long-term risk of recurrent gallstones and neogallbladder cholecystitis.</li>
+        </ol>
 
         <div style="margin-top: 3rem; padding: 2rem; background: var(--bg-secondary); border-radius: 12px; text-align: center;">
           <h3 style="margin-top: 0;">Read the Full Publication</h3>
@@ -1264,34 +1288,109 @@
           <a href="https://experts.umn.edu/en/publications/partial-versus-complete-cholecystectomy-a-propensity-score-matche/" target="_blank" style="display: inline-block; padding: 0.75rem 1.5rem; background: #2563eb; color: white; text-decoration: none; border-radius: 6px; font-weight: 500; transition: background 0.2s;">View on Experts@Minnesota</a>
         </div>
       </main>
+
+      <!-- Sidebar Matching Other Blogs -->
+      <aside class="blog-sidebar">
+        <div class="sidebar-card" style="border-top: 4px solid #dc2626; text-align: left;">
+          <h3>⚡ Safe Cholecystectomy Pathway</h3>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 15px;">SAGES program workflow for navigating the difficult gallbladder.</p>
+          <div style="font-family:'Inter',sans-serif; font-size:0.8rem; display:flex; flex-direction:column; gap:10px;">
+            <div style="background:var(--bg-secondary); padding:10px; border-radius:6px; border:1px solid var(--border-color);">
+              <strong style="color: #dc2626; display:block; margin-bottom:2px;">Step 1: Achieve CVS</strong>
+              Attempt the Critical View of Safety. Clear the hepatocystic triangle completely.
+            </div>
+            <div style="text-align:center; color: var(--text-muted); font-weight:700;">↓</div>
+            <div style="background:var(--bg-secondary); padding:10px; border-radius:6px; border:1px solid var(--border-color);">
+              <strong style="color: var(--text-primary); display:block; margin-bottom:2px;">Step 2: Recognize CVS Failure</strong>
+              If landmarks are obscured or severe scarring prevents safe dissection, stop immediately.
+            </div>
+            <div style="text-align:center; color: var(--text-muted); font-weight:700;">↓</div>
+            <div style="background:rgba(220, 38, 38, 0.08); padding:10px; border-radius:6px; border:1px solid rgba(220, 38, 38, 0.2);">
+              <strong style="color: #dc2626; display:block; margin-bottom:2px;">Step 3: Bailout Maneuver</strong>
+              Convert to subtotal cholecystectomy (fenestrating or reconstituting). Focus on avoiding vasculobiliary structures.
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar-card">
+          <h3>📊 Critical View of Safety (CVS)</h3>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 20px;">Strasberg criteria required before dividing any biliary structures.</p>
+          <div style="text-align: left; font-family: 'Inter', sans-serif; font-size: 0.85rem; display: flex; flex-direction: column; gap: 12px;">
+            <div style="border-bottom: 1px solid var(--border-color); padding-bottom: 8px;">
+              <strong style="color: var(--text-primary); display: block;">1. Clear Calot's Triangle</strong>
+              <span style="color: var(--text-secondary); line-height: 1.4;">Hepatocystic triangle must be completely cleared of fat and fibrous tissue.</span>
+            </div>
+            <div style="border-bottom: 1px solid var(--border-color); padding-bottom: 8px;">
+              <strong style="color: var(--text-primary); display: block;">2. Expose Gallbladder Bed</strong>
+              <span style="color: var(--text-secondary); line-height: 1.4;">The lower third of the gallbladder must be dissected off the liver bed.</span>
+            </div>
+            <div>
+              <strong style="color: var(--text-primary); display: block;">3. Identify Two Structures</strong>
+              <span style="color: var(--text-secondary); line-height: 1.4;">Only two structures (cystic duct and cystic artery) should enter the gallbladder.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar-card">
+          <h3>📖 Related Monographs</h3>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 20px;">Review crucial biliary strategies and emergency procedures in our notes.</p>
+          <div class="sidebar-book-list" style="gap: 15px; text-align: left;">
+            <a href="post-cholecystectomy-bile-leak.html" class="sb-book" style="border: 1px solid var(--border-color); padding: 12px; border-radius: 8px; background: var(--bg-secondary); transition: all 0.2s ease;">
+              <strong style="font-family:'Inter',sans-serif; font-size:0.85rem; color: var(--text-primary); display: block; margin-bottom: 4px;">Post-Cholecystectomy Bile Leak</strong>
+              <span style="font-size: 0.75rem; color: var(--text-secondary); line-height: 1.3;">A comprehensive guide to managing biliary fistulas, classifying leaks, and coordinating ERCP/stenting pathways.</span>
+            </a>
+            
+            <a href="../notes/operative_approach.html" class="sb-book" style="border: 1px solid var(--border-color); padding: 12px; border-radius: 8px; background: var(--bg-secondary); transition: all 0.2s ease;">
+              <strong style="font-family:'Inter',sans-serif; font-size:0.85rem; color: var(--text-primary); display: block; margin-bottom: 4px;">Laparoscopic Cholecystectomy</strong>
+              <span style="font-size: 0.75rem; color: var(--text-secondary); line-height: 1.3;">Step-by-step operative notes, vascular anatomy, and Strasberg safe dissection techniques in the playbook.</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="sidebar-card" style="border-left: 4px solid var(--brand-gold);">
+          <h3>📢 Join Surgical Insight Hub</h3>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 20px;">Get real-time emergency clinical pearls, trial updates, and high-yield MCQs direct to your phone.</p>
+          <a href="https://t.me/sugicalInsightHub" target="_blank" class="download-tg" style="width: 100%; justify-content: center; margin-top: 10px;">
+            <svg viewBox="0 0 24 24" style="width:18px; height:18px; fill:currentColor; margin-right:6px;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.91-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+            Join Telegram Channel
+          </a>
+        </div>
+      </aside>
     </div>
   </article>
 
+  <!-- Footer -->
   <footer class="footer">
-    <div class="footer-content">
+    <div class="footer-grid">
       <div class="footer-brand">
-        <div class="footer-logo">
+        <div class="nav-logo-img" style="width:36px; height:36px; margin-bottom:.8rem;">
           <img src="../assets/images/Surgical_Insight_Hub_Logo.png" alt="SIH">
         </div>
-        <div class="footer-text">
-          <div class="footer-title">Surgical Insight Hub</div>
-          <div class="footer-sub">Advanced Surgical Learning</div>
-        </div>
+        <div style="font-weight:800; font-size:1.1rem; color:var(--text-primary);">Surgical Insight Hub</div>
+        <p style="font-size:.85rem; color:var(--text-secondary); margin-top:.5rem; line-height:1.5;">Elevating surgical education through evidence-based monographs, interactive arenas, and dynamic clinical discussions.</p>
       </div>
       <div class="footer-links">
-        <a href="../index.html">Home</a>
-        <a href="../notes.html">Notes</a>
-        <a href="../notes/operative_approach.html">Playbook</a>
-        <a href="../podcast.html">Podcast</a>
+        <h4>Platform</h4>
+        <a href="../notes.html">Clinical Notes</a>
+        <a href="../notes/operative_approach.html">Operative Playbook</a>
         <a href="../arena.html">MCQ Arena</a>
-        <a href="../about.html">About</a>
+        <a href="../surgery-talk.html">Surgery Talk</a>
+      </div>
+      <div class="footer-links">
+        <h4>Connect</h4>
+        <a href="https://t.me/sugicalInsightHub" target="_blank">Telegram Channel</a>
+        <a href="https://www.youtube.com/@SurgicalInsightHub" target="_blank">YouTube Library</a>
+        <a href="../about.html">About Us</a>
       </div>
     </div>
     <div class="footer-bottom">
-      &copy; <span id="year"></span> Surgical Insight Hub. All rights reserved.
+      &copy; <span id="year"></span> Surgical Insight Hub. All rights reserved. Not medical advice.
     </div>
   </footer>
 
+  <script src="../js/navigation.js"></script>
+  <script src="../js/nav-pill.js"></script>
+  
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
     const toggle = document.getElementById('themeToggle');
