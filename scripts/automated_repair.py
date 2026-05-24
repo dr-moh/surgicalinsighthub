@@ -3,10 +3,31 @@ import os
 import time
 import random
 import re
+import threading
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 import requests
 import itertools
+
+ATXP_CONNECTION = os.environ.get("ATXP_CONNECTION", "")
+groq_lock = threading.Lock()
+ATXP_MODELS = [
+    "openai/gpt-4o",
+    "openai/gpt-4o-mini",
+    "anthropic/claude-3-5-sonnet-20241022",
+    "anthropic/claude-3-5-haiku-20241022",
+    "google-ai-studio/gemini-3.5-flash",
+    "google/gemini-2.5-pro",
+    "google/gemini-2.5-flash",
+    "google/gemini-1.5-flash",
+    "meta-llama/llama-3.3-70b-instruct",
+    "meta-llama/llama-3.1-8b-instruct",
+    "mistral/ministral-8b",
+    "deepseek/deepseek-chat",
+    "deepseek/deepseek-coder",
+    "qwen/qwen-2.5-72b-instruct",
+    "cohere/command-r-plus"
+]
 
 GROQ_API_KEY = os.environ.get("GROQ_API_KEY", "")
 MODEL = "llama-3.3-70b-versatile"
