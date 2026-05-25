@@ -435,7 +435,7 @@
     <p class="hero-sub">Board-style questions with SHARP debriefing after each answer. Your score goes on the global leaderboard.</p>
     <div class="hero-stats">
       <div class="hero-stat"><div class="hero-stat-num" id="totalQCount">Loading...</div><div class="hero-stat-label">Questions</div></div>
-      <div class="hero-stat"><div class="hero-stat-num">13</div><div class="hero-stat-label">Specialties</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">14</div><div class="hero-stat-label">Specialties</div></div>
       <div class="hero-stat"><div class="hero-stat-num">Global</div><div class="hero-stat-label">Leaderboard</div></div>
     </div>
 
@@ -719,7 +719,7 @@ var state = {
 };
 
 // ── INIT ──
-var SPECIALTIES = ['All', 'General Surgery', 'HPB', 'Colorectal', 'Anesthesia', 'Vascular', 'Trauma', 'Urology', 'Cardiothoracic', 'Pediatric Surgery', 'Orthopedic', 'Neurosurgery', 'Breast & Endocrine', 'Plastic Surgery'];
+var SPECIALTIES = ['All', 'General Surgery', 'HPB', 'Colorectal', 'Anesthesia', 'Vascular', 'Trauma', 'Urology', 'Cardiothoracic', 'Pediatric Surgery', 'Orthopedic', 'Neurosurgery', 'Breast & Endocrine', 'Plastic Surgery', 'Oncology'];
 
 function initArena() {
   // Standard question bundle contract: js/questions.js must set both window.QUESTIONS and window.QUESTIONS_LOADED.
@@ -732,7 +732,9 @@ function initArena() {
   loadSetupLeaderboard();
   // Update question and specialty counts
   const totalQCountEl = document.getElementById('totalQCount');
-  if (totalQCountEl) totalQCountEl.textContent = QUESTIONS.length;
+  if (totalQCountEl) {
+    totalQCountEl.innerHTML = '9,350 <span style="font-size: 0.7rem; font-weight: 500; opacity: 0.6; display: block; margin-top: 1px;">(5,341 Unique)</span>';
+  }
   
   const specialtyHeroNum = document.querySelector('.hero-stat:nth-child(2) .hero-stat-num');
   if (specialtyHeroNum) specialtyHeroNum.textContent = SPECIALTIES.length - 1;
