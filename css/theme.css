@@ -393,7 +393,7 @@ a:hover {
   /* Homepage overrides: hide hamburger, show arena-btn */
   .page-home .mob-nav-toggle { display: none !important; }
   .page-home .nav-right .arena-btn { display: inline-flex !important; }
-  
+
   .nav-right .nav-btn:not(.arena-btn) { display: none; }
 }
 
