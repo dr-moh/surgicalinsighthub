@@ -154,7 +154,7 @@ jobs:
               
               raise RuntimeError("CRITICAL: All available free LLM providers failed or exhausted their token limits.")
 
-                    try:
+          try:
               print("Initiating workspace MCQ extraction sweep...")
               sanitized_batch = load_and_sanitize_mcqs()
               print(f"Pre-processing completed. {len(sanitized_batch)} clean questions queued for processing.")
