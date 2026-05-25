@@ -86,6 +86,7 @@ img, svg {
   color: var(--text-primary);
   word-break: break-word;
   overflow-wrap: break-word;
+  min-width: 0; /* Prevent grid blowout */
 }
 
 .blog-sidebar {
@@ -94,6 +95,7 @@ img, svg {
   display: flex;
   flex-direction: column;
   gap: 30px;
+  min-width: 0; /* Prevent grid blowout */
 }
 
 .sidebar-card {
