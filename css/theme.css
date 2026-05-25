@@ -277,28 +277,32 @@ a:hover {
   box-shadow: 0 6px 15px rgba(163, 21, 21, 0.3);
 }
 
-.theme-toggle {
-  width: 40px;
-  height: 40px;
-  border-radius: 12px;
-  background: rgba(184, 146, 42, 0.1);
-  border: 1px solid var(--glass-border);
+.theme-toggle, .nav-tg-btn, .nav-li-btn {
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 12px !important;
+  background: rgba(184, 146, 42, 0.1) !important;
+  border: 1px solid var(--glass-border) !important;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
   transition: all 0.3s ease;
+  padding: 0 !important;
+  box-sizing: border-box;
 }
 
-.theme-toggle:hover {
-  background: rgba(184, 146, 42, 0.2);
-  transform: rotate(15deg);
+.theme-toggle:hover, .nav-tg-btn:hover, .nav-li-btn:hover {
+  background: rgba(184, 146, 42, 0.2) !important;
+  transform: translateY(-2px) rotate(8deg);
+  box-shadow: 0 4px 12px rgba(184, 146, 42, 0.15);
 }
 
-.theme-toggle svg {
-  width: 18px;
-  height: 18px;
-  fill: var(--brand-gold);
+.theme-toggle svg, .nav-tg-btn svg, .nav-li-btn svg {
+  width: 18px !important;
+  height: 18px !important;
+  fill: var(--brand-gold) !important;
+  transition: fill 0.3s ease;
 }
 
 /* Mobile Nav Styles */
