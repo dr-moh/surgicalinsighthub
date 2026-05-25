@@ -47,34 +47,38 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 3. Mobile Navigation Global Functions
-    window.openMobNav = function() {
-        if (mobNavSheet) mobNavSheet.classList.add('open');
-        if (mobNavOverlay) mobNavOverlay.style.display = 'block';
-        document.body.style.overflow = 'hidden';
-    };
-
-    window.closeMobNav = function() {
-        if (mobNavSheet) mobNavSheet.classList.remove('open');
-        if (mobNavOverlay) mobNavOverlay.style.display = 'none';
-        document.body.style.overflow = '';
-    };
-
-    // 4. Sidebar Toggle Logic (for Monographs)
-    window.toggleSidebar = function() {
-        document.body.classList.toggle('sidebar-open');
-    };
-
-    window.closeSidebar = function() {
-        document.body.classList.remove('sidebar-open');
-    };
-
     // 5. Handle window resize to clean up mobile nav state
     window.addEventListener('resize', () => {
         if (window.innerWidth > 950) {
             window.closeMobNav();
         }
     }, { passive: true });
+
+// 3. Mobile Navigation Global Functions (Defined outside to prevent timing issues)
+window.openMobNav = function() {
+    const mobNavSheet = document.getElementById('mobNavSheet');
+    const mobNavOverlay = document.getElementById('mobNavOverlay');
+    if (mobNavSheet) mobNavSheet.classList.add('open');
+    if (mobNavOverlay) mobNavOverlay.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+};
+
+window.closeMobNav = function() {
+    const mobNavSheet = document.getElementById('mobNavSheet');
+    const mobNavOverlay = document.getElementById('mobNavOverlay');
+    if (mobNavSheet) mobNavSheet.classList.remove('open');
+    if (mobNavOverlay) mobNavOverlay.style.display = 'none';
+    document.body.style.overflow = '';
+};
+
+// 4. Sidebar Toggle Logic (for Monographs)
+window.toggleSidebar = function() {
+    document.body.classList.toggle('sidebar-open');
+};
+
+window.closeSidebar = function() {
+    document.body.classList.remove('sidebar-open');
+};
 
     // ── 6. CLINICAL TELEMETRY & WEBSITE TRAFFIC SYSTEM ──
 
