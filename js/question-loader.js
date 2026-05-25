@@ -24,9 +24,10 @@
         "hpb.js",
         "neurosurgery.js",
         "oncology_mcq.js",
-        "orthopedics.js",
+        "orthopedic.js",
         "pediatric_surgery.js",
         "plastic_surgery.js",
+        "recovered.js",
         "trauma.js",
         "urology.js",
         "vascular.js",
@@ -37,7 +38,7 @@
 
     function loadModule(name) {
         const script = document.createElement('script');
-        script.src = `js/questions/${name}`;
+        script.src = `js/questions/${name}?v=4.0.0`;
         script.async = true;
         script.onload = () => {
             loadedCount++;
