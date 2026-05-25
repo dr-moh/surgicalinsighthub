@@ -394,8 +394,8 @@ a:hover {
   .nav-brand-text { font-size: .8rem; }
   .nav-brand-sub { display: none; }
   .nav-logo-img { width: 36px; height: 36px; border-radius: 10px; }
-  .nav-right .nav-btn { padding: 6px 14px; font-size: .7rem; }
-  .nav-right .arena-btn { display: none; }
+  .nav-right .nav-btn { padding: 5px 10px; font-size: .7rem; }
+  .nav-right .nav-tg-btn, .nav-right .nav-li-btn { padding: 5px 8px !important; margin-right: 4px !important; }
 }
 
 /* Monograph Mobile Sidebar Toggle */
