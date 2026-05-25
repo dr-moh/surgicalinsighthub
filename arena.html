@@ -1072,7 +1072,7 @@ function showSharp(q, selected, isCorrect) {
     });
 
     // 2. Style Distractors & Pearls based on adjacent paragraphs
-    var paragraphs = tempDiv.querySelectorAll('p');
+    var paragraphs = tempDiv.querySelectorAll('p, h3, h4');
     paragraphs.forEach(function(p) {
       var text = p.textContent.trim();
       
