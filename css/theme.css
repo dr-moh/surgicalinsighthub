@@ -385,7 +385,15 @@ a:hover {
 @media(max-width: 950px) {
   .nav { padding: 0 20px; }
   .nav-links-pill { display: none; }
+  
+  /* Default for all pages: show hamburger, hide arena-btn */
   .mob-nav-toggle { display: block; }
+  .nav-right .arena-btn { display: none !important; }
+  
+  /* Homepage overrides: hide hamburger, show arena-btn */
+  .page-home .mob-nav-toggle { display: none !important; }
+  .page-home .nav-right .arena-btn { display: inline-flex !important; }
+  
   .nav-right .nav-btn:not(.arena-btn) { display: none; }
 }
 
