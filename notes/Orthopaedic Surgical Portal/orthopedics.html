@@ -533,9 +533,9 @@
 
   <header class="editorial-hero">
     <div class="ed-kicker">Specialty Surgical Portal</div>
-    <h1>Orthopaedic Surgical Approaches</h1>
+    <h1>Orthopaedic Surgical Approaches & Procedures</h1>
     <p style="color: var(--text-secondary); max-width: 700px; margin: 15px auto 0; font-size: 0.98rem; line-height: 1.6;">
-      An interactive, board-calibrated index of critical orthopedic approaches by anatomical region. Explores internervous planes, landmarks, and surgical step-by-step dissection, referenced against OrthoFixar and AO principles.
+      An interactive, board-calibrated index of critical orthopedic approaches and procedures. Explores internervous planes, landmarks, and surgical step-by-step dissection, referenced against OrthoFixar and AO principles.
     </p>
   </header>
 
@@ -550,6 +550,7 @@
       <button class="fb" onclick="filterCategory('knee', this)">Knee</button>
       <button class="fb" onclick="filterCategory('tibia-fibula', this)">Tibia & Fibula</button>
       <button class="fb" onclick="filterCategory('ankle-foot', this)">Ankle & Foot</button>
+      <button class="fb" onclick="filterCategory('procedures', this)" style="border-left: 2px solid rgba(240, 208, 128, 0.3); padding-left: 14px; margin-left: 6px; color: var(--brand-gold);">Orthopedic Procedures</button>
     </div>
   </div>
 
@@ -1647,7 +1648,350 @@
           caution: 'The lateral skin flap has a delicate terminal vascular supply. Retractor placement must utilize "K-wire retractor" technique rather than metal retractors to prevent skin necrosis. The sural nerve lies in the flap; do not dissect it out.'
         },
         extensions: 'None.'
-      }
+      },
+      {
+        "id": "proc-bier-block",
+        "category": "procedures",
+        "kicker": "Regional Anesthesia",
+        "title": "Bier Block Anesthesia",
+        "summary": "Intravenous Regional Anesthesia (IVRA) is a simple and reliable method for providing rapid regional anesthesia of the upper or lower limb during short surgical interventions.",
+        "image": "https://orthofixar.com/wp-content/uploads/Bier-Block-Anesthesia.webp",
+        "imagesList": [
+                "https://orthofixar.com/wp-content/uploads/Bier-Block-Anesthesia.webp",
+                "https://orthofixar.com/wp-content/uploads/Bier-Block-Technique-1.webp",
+                "https://orthofixar.com/wp-content/uploads/Bier-Block-Technique-2.webp",
+                "https://orthofixar.com/wp-content/uploads/Nerve-block-for-wrist-surgery.png",
+                "https://orthofixar.com/wp-content/uploads/De-Quervains-Injection-1.png",
+                "https://orthofixar.com/wp-content/uploads/Trigger-Finger-Injection-1.png",
+                "https://orthofixar.com/wp-content/uploads/Proximal-Row-Carpectomy.png"
+        ],
+        "indications": [
+                "Short surgical procedures on the forearm, wrist, and hand (under 60 minutes).",
+                "Closed reduction of fractures or joint dislocations in the upper extremity.",
+                "Debridement of lacerations and wound management in the distal extremities."
+        ],
+        "positioning": "Patient supine. Establish two IV lines: one 22G cannula in the distal dorsal aspect of the operative hand/foot (for anesthetic injection), and one in the opposite non-operative limb for general emergency access.",
+        "landmarks": "Dorsal venous arch of hand, antecubital fossa for double tourniquet placement. Securely wrap a double-cuffed tourniquet around the upper arm.",
+        "internervous": {
+                "interval": "None (Non-exposure intervention)",
+                "muscles": []
+        },
+        "techniqueSteps": [
+                "Insert a 22G cannula in a vein on the dorsum of the operative hand/foot as distally as possible.",
+                "Apply a soft cotton sleeve and then wrap the double-cuffed tourniquet securely around the upper arm.",
+                "Elevate the limb for 2-3 minutes to allow passive venous drainage. Wrap an Esmarch elastic bandage spirally from fingers to the lower border of the tourniquet to completely exsanguinate the limb.",
+                "Inflate the proximal (upper) tourniquet cuff to 100-150 mmHg above the patient's systolic blood pressure (minimum 250 mmHg). Remove the Esmarch bandage and verify the absence of radial pulse.",
+                "Slowly inject 30-40 ml of 0.5% preservative-free lidocaine (3 mg/kg) through the indwelling cannula. Anesthesia develops within 5-10 minutes.",
+                "If tourniquet pain develops (usually after 20-30 minutes), inflate the distal (lower) cuff over the anesthetized area, then deflate the proximal cuff."
+        ],
+        "superficialDissection": [],
+        "deepDissection": [],
+        "redZone": {
+                "name": "Local Anesthetic Systemic Toxicity (LAST)",
+                "caution": "Do NOT deflate the tourniquet within 20 minutes of anesthetic injection to avoid massive systemic bolus of lidocaine leading to seizures, cardiac arrest, or death. Deflate in cycles (deflate 5s, inflate 10s, repeat) if deflating between 20-40 minutes."
+        },
+        "extensions": "Useful for hand surgery and closed reduction of forearm/wrist fractures. Post-deflation monitor patient for 30 minutes for signs of systemic toxicity (tinnitus, metallic taste, perioral numbness)."
+},
+      {
+        "id": "proc-ac-joint-inj",
+        "category": "procedures",
+        "kicker": "Shoulder Injections",
+        "title": "AC Joint Injection Technique",
+        "summary": "Diagnostic and therapeutic corticosteroid injection for acromioclavicular joint pathology, including arthrosis and distal clavicle osteolysis.",
+        "image": "https://orthofixar.com/wp-content/uploads/AC-Joint-Injection.png",
+        "imagesList": [
+                "https://orthofixar.com/wp-content/uploads/AC-Joint-Injection.png",
+                "https://orthofixar.com/wp-content/uploads/AC-Joint-Injection-Equipment-Needed.png",
+                "https://orthofixar.com/wp-content/uploads/Acromioclavicular-Joint-Injection.png",
+                "https://orthofixar.com/wp-content/uploads/AC-Joint-Injection-Technique.png",
+                "https://orthofixar.com/wp-content/uploads/Frozen-Shoulder-Injection.png",
+                "https://orthofixar.com/wp-content/uploads/Subscapular-Injection.png",
+                "https://orthofixar.com/wp-content/uploads/Shoulder-Reduction-Techniques.png",
+                "https://orthofixar.com/wp-content/uploads/Shoulder-Injection.png"
+        ],
+        "indications": [
+                "Acromioclavicular (AC) joint osteoarthritis causing persistent shoulder pain.",
+                "Distal clavicle osteolysis (weightlifter's shoulder).",
+                "Diagnostic confirmation of AC joint pain origin."
+        ],
+        "positioning": "Patient sitting upright with arms hanging comfortably at their sides. This posture opens the AC joint interval. Setup: 1 ml syringe, 25G 5/8-inch (16mm) needle, 10mg Kenalog, 0.5ml 1% Lidocaine.",
+        "landmarks": "Acromioclavicular joint line. Palpate the distal clavicle and follow it laterally until a small dip is felt between the clavicle and the acromion process.",
+        "internervous": {
+                "interval": "None (Non-exposure intervention)",
+                "muscles": []
+        },
+        "techniqueSteps": [
+                "Position the patient sitting with their arm hanging down. Identify the joint line by palpating the clavicle laterally to the acromion.",
+                "Locate the small indentation marking the acromioclavicular joint space, which is typically found on top of the shoulder.",
+                "Cleanse the skin thoroughly with antiseptic solution and apply sterile drapes.",
+                "Prepare a syringe with 10mg Kenalog and 0.5ml 1% lidocaine. Using a 25G needle, insert it from the superior or anterior-superior direction directly into the palpated joint line.",
+                "Advance the needle down into the narrow joint space. You should feel a slight give as it penetrates the superior AC ligament.",
+                "Inject the steroid mixture. It should flow with minimal resistance. If resistance is high, withdraw slightly or adjust needle angle.",
+                "Apply pressure, clean the site, and place an adhesive dressing."
+        ],
+        "superficialDissection": [],
+        "deepDissection": [],
+        "redZone": {
+                "name": "Intra-tendinous and Deep Vascular Structure Risks",
+                "caution": "Avoid direct needle contact with the articular cartilage or injecting directly into the surrounding deltoid or trapezius muscle fibers. Watch out for deep neurovascular bundle pathways in the subacromial space directly below the clavicle."
+        },
+        "extensions": "Pain relief immediately following injection confirms AC origin. Advise relative arm rest for 48 hours to minimize steroid flare."
+},
+      {
+        "id": "proc-elbow-inj",
+        "category": "procedures",
+        "kicker": "Elbow Injections",
+        "title": "Elbow Joint Injection Technique",
+        "summary": "Therapeutic intra-articular corticosteroid infiltration for acute or chronic elbow synovitis, inflammatory arthropathies, or advanced osteoarthritis.",
+        "image": "https://orthofixar.com/wp-content/uploads/Elbow-Injection.png",
+        "imagesList": [
+                "https://orthofixar.com/wp-content/uploads/Elbow-Injection.png",
+                "https://orthofixar.com/wp-content/uploads/Elbow-steroid-Injection.png",
+                "https://orthofixar.com/wp-content/uploads/biceps-injection.png",
+                "https://orthofixar.com/wp-content/uploads/bicep-steroid-injection.png",
+                "https://orthofixar.com/wp-content/uploads/Tennis-Elbow-Surgery.png",
+                "https://orthofixar.com/wp-content/uploads/Tennis-Elbow-Injection.png",
+                "https://orthofixar.com/wp-content/uploads/Olecranon-Bursitis-Aspiration.png",
+                "https://orthofixar.com/wp-content/uploads/Golfer-Elbow-Surgery.png"
+        ],
+        "indications": [
+                "Acute or chronic elbow capsulitis or synovitis (e.g., Rheumatoid Arthritis).",
+                "Severe osteoarthritis of the humeroulnar joint causing painful restriction.",
+                "Aspiration of painful joint effusion or hemarthrosis."
+        ],
+        "positioning": "Patient seated with the elbow flexed to 90 degrees and the forearm pronated resting flat on a table. Setup: 2.5 ml syringe, 23G 1.25-inch (30mm) needle, 30mg Kenalog, 1.75ml 2% Lidocaine.",
+        "landmarks": "The 'Soft Spot' Triangle. Locate the lateral epicondyle of the humerus, the head of the radius, and the lateral tip of the olecranon. The soft spot is located in the center of this triangular region.",
+        "internervous": {
+                "interval": "None (Non-exposure intervention)",
+                "muscles": []
+        },
+        "techniqueSteps": [
+                "Seat the patient with their elbow flexed to 90 degrees and the forearm pronated resting flat on a sterile draped arm table.",
+                "Identify the lateral epicondyle, the head of the radius, and the lateral tip of the olecranon process.",
+                "Palpate the triangular 'soft spot' in the center of these three bony landmarks. The joint capsule is highly superficial here.",
+                "Prepare a syringe containing 30mg Kenalog and 1.75ml 2% lidocaine. Apply sterile prep to the lateral elbow.",
+                "Insert a 23G needle perpendicular to the skin directly through the center of the soft spot triangle.",
+                "Advance the needle medially and slightly distally into the humeroradial joint space. You should feel a loss of resistance.",
+                "Aspirate any joint effusion first (if present), then slowly inject the steroid-anesthetic solution under light pressure."
+        ],
+        "superficialDissection": [],
+        "deepDissection": [],
+        "redZone": {
+                "name": "Radial Nerve Protection",
+                "caution": "The radial nerve passes directly anterior to the radial head/neck. Placing the entry point too far anteriorly or tilting the needle anteriorly can cause direct neural laceration or perineural infiltration leading to transient wrist drop."
+        },
+        "extensions": "Technique can be modified for Olecranon Bursitis aspiration: enter directly into the bursa posteriorly, aspirate fluid, and compress. Do not inject corticosteroids into infected bursae."
+},
+      {
+        "id": "proc-pes-anserine-inj",
+        "category": "procedures",
+        "kicker": "Knee Injections",
+        "title": "Pes Anserine Bursa Injection",
+        "summary": "Targeted anti-inflammatory infiltration for pes anserine bursitis, a common cause of medial-sided knee pain in runners, athletes, and osteoarthritic patients.",
+        "image": "https://orthofixar.com/wp-content/uploads/Pes-Anserine-Bursa-Injection-1.png",
+        "imagesList": [
+                "https://orthofixar.com/wp-content/uploads/Pes-Anserine-Bursa-Injection-1.png",
+                "https://orthofixar.com/wp-content/uploads/Pes-Anserine-Bursa-Injection-2.png",
+                "https://orthofixar.com/wp-content/uploads/Osteochondral-Allograft-Transplantation-1.png",
+                "https://orthofixar.com/wp-content/uploads/Infrapatellar-Bursa-Injection-1.png",
+                "https://orthofixar.com/wp-content/uploads/Knee-Meniscal-Transplantation-2.png",
+                "https://orthofixar.com/wp-content/uploads/Knee-Injection-Technique.png"
+        ],
+        "indications": [
+                "Pes anserine bursitis refractory to conservative management.",
+                "Medial knee pain mimicking medial collateral ligament (MCL) strain or medial meniscal tear."
+        ],
+        "positioning": "Patient supine with the knee extended or slightly flexed over a small bolster. Setup: 2.5 ml syringe, 23G 1.25-inch (30mm) needle, 40mg Kenalog, 1.5ml 1% Lidocaine.",
+        "landmarks": "Medial tibial condyle and insertion of conjoined tendons. Palpate approximately 2-3 cm distal and medial to the anteromedial joint line, identifying the point of maximum tenderness.",
+        "internervous": {
+                "interval": "None (Non-exposure intervention)",
+                "muscles": []
+        },
+        "techniqueSteps": [
+                "Place the patient supine on the exam table with the operative leg fully extended or supported by a small pillow under the knee.",
+                "Palpate the medial aspect of the tibia. Identify the tibial tubercle anteriorly, then move 2-3 cm distal and medial to find the tendon insertion site.",
+                "Find the point of maximum tenderness directly over the pes anserine bursa (where the sartorius, gracilis, and semitendinosus insert).",
+                "Cleanse the skin with chlorhexidine and drape. Prepare a syringe with 40mg Kenalog and 1.5ml 1% lidocaine.",
+                "Using a 23G needle, insert it perpendicular to the skin directly into the center of the tender area.",
+                "Advance the needle until it gently touches the medial tibial cortex, then withdraw the needle approximately 1-2 mm.",
+                "Inject the steroid solution in a fan-like distribution to fully infiltrate the bursal space around the conjoined tendons."
+        ],
+        "superficialDissection": [],
+        "deepDissection": [],
+        "redZone": {
+                "name": "Saphenous Nerve and Tendon Infiltration",
+                "caution": "The saphenous nerve and great saphenous vein run vertically immediately posterior to the pes anserine insertion; avoid posterior needle angulation. Do not inject directly into the tendon substances (sartorius, gracilis, semitendinosus) to prevent tendon rupture."
+        },
+        "extensions": "A successful diagnostic injection provides immediate pain relief during clinical tests (e.g., resisted flexion/internal rotation), confirming the bursitis diagnosis."
+},
+      {
+        "id": "proc-im-femoral-nail",
+        "category": "procedures",
+        "kicker": "Trauma Procedures",
+        "title": "Antegrade Intramedullary Femoral Nailing",
+        "summary": "The gold-standard surgical technique for the stabilization of femoral shaft fractures (AO 32), utilizing locked intramedullary nail systems to allow early functional loading.",
+        "image": "https://orthofixar.com/wp-content/uploads/Intramedullary-Femoral-Nailing.png",
+        "imagesList": [
+                "https://orthofixar.com/wp-content/uploads/Intramedullary-Femoral-Nailing.png",
+                "https://orthofixar.com/wp-content/uploads/Intramedullary-Femoral-Nailing-entry-point-2.png",
+                "https://orthofixar.com/wp-content/uploads/Intramedullary-Femoral-Nailing-entry-point.png",
+                "https://orthofixar.com/wp-content/uploads/Intramedullary-Femoral-Nailing-procedure.png",
+                "https://orthofixar.com/wp-content/uploads/Intramedullary-Femoral-Nailing-antegrade.png",
+                "https://orthofixar.com/wp-content/uploads/Retrograde-Femoral-Nailing.png",
+                "https://orthofixar.com/wp-content/uploads/Transfemoral-Amputation.png"
+        ],
+        "indications": [
+                "Femoral shaft fractures (segmental, comminuted, transverse, oblique).",
+                "Subtrochanteric fractures (with specialized proximal reconstruction locking).",
+                "Pathological or impending femoral shaft fractures."
+        ],
+        "positioning": "Patient supine on a traction table or lateral decubitus. Apply skeletal traction or manual traction to achieve fracture reduction under fluoroscopic C-arm guidance. Adduct the torso to expose the greater trochanter entry portal.",
+        "landmarks": "Greater trochanter tip. Make a 3-5 cm longitudinal skin incision starting 1-2 cm proximal to the tip of the greater trochanter, extending proximally in line with the gluteus medius fibers.",
+        "internervous": {
+                "interval": "None (Non-exposure intervention)",
+                "muscles": []
+        },
+        "techniqueSteps": [
+                "Position the patient supine or lateral on a traction table. Apply traction and check reduction on anteroposterior (AP) and lateral views under C-arm fluoroscopy.",
+                "Make a 5 cm skin incision proximal to the greater trochanter. Split the gluteus medius fascia longitudinally.",
+                "Determine the entry point: for standard nails, enter at the tip of the greater trochanter or pyriform fossa. Insert an entry guidewire under fluoroscopic guidance.",
+                "Use an opening reamer to prepare the entry portal. Insert a long ball-tipped reduction guidewire across the fracture site into the distal metaphysis.",
+                "Perform sequential canal reaming over the guidewire in 0.5 mm increments until the canal is reamed 1.0 - 1.5 mm larger than the selected nail diameter.",
+                "Assemble the nail to the proximal targeting guide. Push the nail over the guidewire, bypassing the fracture, and seat it proximal to the distal epiphyseal scar.",
+                "Perform proximal locking using the mounted jig, and distal locking freehand under fluoroscopy using perfect-circle drills."
+        ],
+        "superficialDissection": [],
+        "deepDissection": [],
+        "redZone": {
+                "name": "Pudendal Nerve and Ascending Femoral Artery Risks",
+                "caution": "Aggressive perineal post traction can compress the pudendal nerve, causing transient erectile dysfunction or perineal numbness. During entry, avoid pyriform fossa damage in young patients to protect the ascending branch of the lateral femoral circumflex artery."
+        },
+        "extensions": "Distal locking can be performed using an electromagnetic targeting system or freehand 'perfect circle' fluoroscopic techniques."
+},
+      {
+        "id": "proc-retrograde-femoral-nail",
+        "category": "procedures",
+        "kicker": "Trauma Procedures",
+        "title": "Retrograde Femoral Nailing",
+        "summary": "An alternative intramedullary stabilization technique entering through the knee joint, particularly indicated for distal femur fractures and polytrauma cases.",
+        "image": "https://orthofixar.com/wp-content/uploads/Retrograde-Femoral-Nailing.png",
+        "imagesList": [
+                "https://orthofixar.com/wp-content/uploads/Retrograde-Femoral-Nailing.png",
+                "https://orthofixar.com/wp-content/uploads/Retrograde-Femoral-Nailing-procedures.png",
+                "https://orthofixar.com/wp-content/uploads/Retrograde-nailing-of-femoral-fractures.png",
+                "https://orthofixar.com/wp-content/uploads/Transfemoral-Amputation.png",
+                "https://orthofixar.com/wp-content/uploads/Intramedullary-Femoral-Nailing.png"
+        ],
+        "indications": [
+                "Distal third femoral shaft fractures and supracondylar fractures.",
+                "Ipsilateral femoral shaft and femoral neck/hip fractures (allows retrograde shaft nail and anterograde hip screw).",
+                "Polytrauma patients where supine traction table setup is contraindicated."
+        ],
+        "positioning": "Patient supine on a radiolucent operating table. Flex the knee 30-40 degrees over a sterile bolster to relax the gastrocnemius muscle and expose the intercondylar notch.",
+        "landmarks": "Patellar tendon and femoral intercondylar notch. Make a 3 cm vertical midline skin incision through the patellar tendon (transpatellar) or medial parapatellar.",
+        "internervous": {
+                "interval": "None (Non-exposure intervention)",
+                "muscles": []
+        },
+        "techniqueSteps": [
+                "Place the patient supine on a radiolucent operating table. Flex the operative knee 30-40 degrees over a sterile bolster.",
+                "Make a 3-4 cm vertical midline skin incision over the patellar tendon, splitting the tendon longitudinally, or perform a medial parapatellar approach.",
+                "Expose the femoral intercondylar notch. Identify the entry point: directly in line with the femoral canal, just anterior to the origin of the PCL (at the level of Blumensaat's line).",
+                "Insert an entry guidewire into the notch and verify its position on both AP and lateral fluoroscopic views.",
+                "Drill the distal femur entry cortex using the opening reamer. Insert a ball-tipped guidewire and pass it proximally across the fracture site into the proximal femur.",
+                "Ream the femoral canal sequentially in 0.5 mm increments over the guidewire.",
+                "Attach the retrograde nail to the insertion handle, slide it over the guidewire into the femoral canal, and sink the distal end 2 mm below the joint cartilage.",
+                "Lock distally through the guide arm, and lock proximally freehand under fluoroscopy."
+        ],
+        "superficialDissection": [],
+        "deepDissection": [],
+        "redZone": {
+                "name": "Popliteal Neurovascular Bundle",
+                "caution": "The popliteal artery and vein lie directly behind the posterior cortex of the distal femur. During posterior cortex drilling or distal interlocking screw placement, drill bit penetration beyond the far cortex can lacerate these major vessels."
+        },
+        "extensions": "Ensure the proximal tip of the retrograde nail is sunk below the articular cartilage of the knee notch to avoid patellofemoral impingement or arthrofibrosis."
+},
+      {
+        "id": "proc-forearm-fasciotomy",
+        "category": "procedures",
+        "kicker": "Emergency Procedures",
+        "title": "Forearm Compartment Fasciotomy",
+        "summary": "Emergent surgical decompression of all forearm compartments to prevent tissue necrosis and Volkmann's ischemic contracture in acute compartment syndrome.",
+        "image": "https://orthofixar.com/wp-content/uploads/Forearm-Fasciotomy-procedure.png",
+        "imagesList": [
+                "https://orthofixar.com/wp-content/uploads/Forearm-Fasciotomy-procedure.png",
+                "https://orthofixar.com/wp-content/uploads/Bier-Block-Anesthesia.webp"
+        ],
+        "indications": [
+                "Clinical signs of acute compartment syndrome: tense swelling, severe pain on passive stretch of fingers, paresthesia, pulselessness.",
+                "Intracompartmental pressure measurements within 30 mmHg of diastolic blood pressure (delta pressure)."
+        ],
+        "positioning": "Patient supine with the operative arm abducted 90 degrees on a hand table, supinated, prepped and draped fully. Setup: major surgical tray, fasciotomy knives.",
+        "landmarks": "Medial epicondyle, radial styloid, carpal tunnel. Incision starts proximal to the elbow, curves medial to the biceps tendon, extends down the volar forearm in a lazy-S curve, and ends at the carpal tunnel.",
+        "internervous": {
+                "interval": "None (Non-exposure intervention)",
+                "muscles": []
+        },
+        "techniqueSteps": [
+                "Place the patient supine with the operative arm abducted on a hand table, supinated, and sterilely prepped.",
+                "Identify the medial epicondyle, radial styloid, and the carpal tunnel path on the volar forearm.",
+                "Make a curvilinear skin incision starting proximal to the elbow joint, curving medial to the biceps tendon, extending distally along the ulnar border of the forearm, and curving across the wrist joint into the palm.",
+                "Split the skin and subcutaneous fat. Identify and protect the lacertus fibrosus proximally and incise it fully to decompress the proximal muscle bellies.",
+                "Incise the fascia of the superficial compartment (FDS, FCU, FCR) along the length of the incision.",
+                "Develop the interval between the flexor carpi ulnaris and flexor digitorum superficialis to expose and incise the deep compartment fascia (FDP, FPL, PQ).",
+                "Extend the volar incision distally across the wrist and decompress the carpal tunnel by dividing the transverse carpal ligament.",
+                "Make a straight dorsal incision 2 cm lateral to the subcutaneous border of the ulna to split the fascia of the extensor compartments if dorsal compartment pressures are elevated."
+        ],
+        "superficialDissection": [],
+        "deepDissection": [],
+        "redZone": {
+                "name": "Median Nerve and Radial/Ulnar Vessels",
+                "caution": "The median nerve runs directly beneath the flexor digitorum superficialis and must be identified and protected during deep fascial splitting. Radial and ulnar arteries are susceptible to direct laceration if surgical blades are angled blindly."
+        },
+        "extensions": "Must combine with dorsal compartment release if dorsal compartment remains tense: make a straight longitudinal incision 2 cm lateral to the subcutaneous border of the ulna."
+},
+      {
+        "id": "proc-nursemaid-elbow",
+        "category": "procedures",
+        "kicker": "Pediatric Procedures",
+        "title": "Nursemaid Elbow Reduction Maneuvers",
+        "summary": "Rapid, non-operative manual reduction of subluxation of the radial head (pulled elbow) in pediatric patients.",
+        "image": "https://orthofixar.com/wp-content/uploads/Nursemaid-Elbow-Reduction-Maneuvers.png",
+        "imagesList": [
+                "https://orthofixar.com/wp-content/uploads/Nursemaid-Elbow-Reduction-Maneuvers.png",
+                "https://orthofixar.com/wp-content/uploads/Nursemaid-Elbow.png",
+                "https://orthofixar.com/wp-content/uploads/pulled-elbow-reduction.png",
+                "https://orthofixar.com/wp-content/uploads/Nursemaid-Elbow-Reduction-with-hyperpronation.png",
+                "https://orthofixar.com/wp-content/uploads/Tennis-Elbow-Surgery.png",
+                "https://orthofixar.com/wp-content/uploads/Elbow-Injection.png",
+                "https://orthofixar.com/wp-content/uploads/Elbow-UCL-Repair-Surgery.png",
+                "https://orthofixar.com/wp-content/uploads/Olecranon-Bursitis-Aspiration.png"
+        ],
+        "indications": [
+                "Acute subluxation of the radial head in children aged 1-4 years following a sudden traction pull on an extended, pronated arm.",
+                "Child presenting with arm held flexed, pronated, and refusing to use the extremity."
+        ],
+        "positioning": "Child sits comfortably on their parent's lap. The clinician sits facing the parent and child, gently holding the child's elbow and wrist.",
+        "landmarks": "Lateral radial head and elbow joint line. Place your thumb directly over the lateral aspect of the radial head, providing light pressure.",
+        "internervous": {
+                "interval": "None (Non-exposure intervention)",
+                "muscles": []
+        },
+        "techniqueSteps": [
+                "Seat the child on their parent's lap facing the clinician. Gently grasp the child's elbow with one hand, placing your thumb directly over the radial head.",
+                "Grasp the child's wrist with your other hand, holding the arm flexed to 90 degrees at the elbow.",
+                "Hyperpronation Maneuver: In a swift, firm motion, pronate the child's forearm fully while maintaining gentle pressure on the radial head with your thumb. A palpable click is felt as the annular ligament slips back into place.",
+                "Alternative Supination-Flexion Maneuver: If hyperpronation fails, supinate the forearm fully in a swift motion, and then immediately flex the elbow so that the child's hand touches their shoulder.",
+                "Observe the child for 10-15 minutes. The child will typically begin using the arm spontaneously (reaching for toys/objects) once reduction is successful."
+        ],
+        "superficialDissection": [],
+        "deepDissection": [],
+        "redZone": {
+                "name": "Madiastinal Fracture Mimics",
+                "caution": "Do not attempt reduction maneuvers if there is any swelling, ecchymosis, or severe localized bone tenderness suggesting a supracondylar humerus fracture or radial neck fracture. Obtain radiographs first if trauma was direct."
+        },
+        "extensions": "Perform either: 1) Hyperpronation Maneuver (pronate forearm while flexing elbow 90 degrees) - shown to be more effective; or 2) Supination-Flexion Maneuver. A click confirms success."
+}
     ];
 
     // Exact mappings to original OrthoFixar web articles for source credibility and copyright compliance
@@ -1963,9 +2307,10 @@
           <p>${item.landmarks}</p>
         </div>
         
+        ${item.internervous && item.internervous.muscles && item.internervous.muscles.length > 0 ? `
         <div class="drawer-content-section">
           <h3>Internervous Plane</h3>
-          <p>The safe interval is developed through the following plane:</p>
+          <p>${item.internervous.interval ? `The safe interval is developed through the following plane: <strong>${item.internervous.interval}</strong>` : 'The safe interval plane:'}</p>
           <div class="int-table-wrap">
             <table class="int-table">
               <thead>
@@ -1985,7 +2330,16 @@
             </table>
           </div>
         </div>
+        ` : ''}
         
+        ${item.category === 'procedures' || item.techniqueSteps ? `
+        <div class="drawer-content-section">
+          <h3>Procedure Steps & Technique</h3>
+          <ol>
+            ${(item.techniqueSteps || []).map(step => `<li>${step}</li>`).join('')}
+          </ol>
+        </div>
+        ` : `
         <div class="drawer-content-section">
           <h3>Superficial Dissection</h3>
           <ol>
@@ -1999,6 +2353,7 @@
             ${item.deepDissection.map(step => `<li>${step}</li>`).join('')}
           </ol>
         </div>
+        `}
         
         <div class="callout warn">
           <span class="label">⚠️ RED ZONE DANGER</span>
