@@ -390,15 +390,16 @@ a:hover {
   .nav { padding: 0 20px; }
   .nav-links-pill { display: none; }
   
-  /* Default for all pages: show hamburger, hide arena-btn */
-  .mob-nav-toggle { display: block; }
-  .nav-right .arena-btn { display: none !important; }
+  /* Show hamburger menu on all pages */
+  .mob-nav-toggle { display: block !important; }
   
-  /* Homepage overrides: hide hamburger, show arena-btn */
-  .page-home .mob-nav-toggle { display: none !important; }
+  /* Hide Telegram and LinkedIn icons on mobile to save space */
+  .nav-right .nav-tg-btn, 
+  .nav-right .nav-li-btn { display: none !important; }
+  
+  /* Hide arena-btn by default on other pages, show only on homepage */
+  .nav-right .arena-btn { display: none !important; }
   .page-home .nav-right .arena-btn { display: inline-flex !important; }
-
-  .nav-right .nav-btn:not(.arena-btn) { display: none; }
 }
 
 @media(max-width: 480px) {
@@ -407,7 +408,6 @@ a:hover {
   .nav-brand-sub { display: none; }
   .nav-logo-img { width: 36px; height: 36px; border-radius: 10px; }
   .nav-right .nav-btn { padding: 5px 10px; font-size: .7rem; }
-  .nav-right .nav-tg-btn, .nav-right .nav-li-btn { padding: 5px 8px !important; margin-right: 4px !important; }
 }
 
 /* Monograph Mobile Sidebar Toggle */
