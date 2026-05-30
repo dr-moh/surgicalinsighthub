@@ -8,6 +8,7 @@
     window.QUESTIONS_LOADED = false;
 
     const modules = [
+        // ── Core specialties (original) ──
         "anesthesia.js",
         "breast_endocrine.js",
         "breast_surgery.js",
@@ -31,7 +32,14 @@
         "trauma.js",
         "urology.js",
         "vascular.js",
-        "tash_surgery.js"
+        "tash_surgery.js",
+        // ── Newly unlocked SHARP 3.0 banks ──
+        "breast__endocrine.js",        // +302 breast & endocrine Qs
+        "colorectal_surgery.js",       // +24  colorectal Qs (incl. UC/hemorrhoidectomy)
+        "orthopedics.js",              // +358 orthopedic Qs
+        "vascular_surgery.js",         // +10  vascular Qs
+        "hepatopancreatobiliary_hpb.js", // +2  HPB Qs
+        "general_surgery.js"           // +5417 general surgery Qs (largest bank)
     ];
 
     let loadedCount = 0;
