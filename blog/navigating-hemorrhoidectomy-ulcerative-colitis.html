@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navigating Hemorrhoidectomy in Patients with Ulcerative Colitis — Surgical Insight Hub</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Shared Styles -->
+  <link rel="stylesheet" href="../css/theme.css">
+  <link rel="stylesheet" href="../css/shared.css">
+  <link rel="stylesheet" href="blog.css">
+  
+  <script>
+    const savedTheme = localStorage.getItem('sih-theme') || 'light';
+    if (savedTheme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+  </script>
+  
+  <style>
+    /* Stepwise Flowchart Styles */
+    .step-flow-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      margin: 2rem 0;
+      font-family: 'Inter', sans-serif;
+    }
+    
+    .step-flow-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      width: 100%;
+      flex-wrap: wrap;
+    }
+    
+    .step-flow-box {
+      background: var(--bg-card);
+      border: 2px solid var(--border-color);
+      border-radius: 12px;
+      padding: 14px 18px;
+      text-align: center;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      box-shadow: var(--shadow-sm);
+      min-width: 180px;
+      transition: all 0.2s ease;
+      cursor: default;
+    }
+    
+    .step-flow-box:hover {
+      transform: translateY(-2px);
+      border-color: #2563eb;
+      box-shadow: 0 4px 12px rgba(37,99,235,0.08);
+    }
+    
+    .step-flow-box.active {
+      border-color: #2563eb;
+      background: rgba(37, 99, 235, 0.02);
+      color: #2563eb;
+    }
+    
+    .step-flow-arrow {
+      color: var(--text-muted);
+      font-weight: 800;
+      font-size: 1.2rem;
+    }
+    
+    @media(max-width: 768px) {
+      .step-flow-row {
+        flex-direction: column;
+        gap: 10px;
+      }
+      .step-flow-arrow {
+        transform: rotate(90deg);
+        margin: 4px 0;
+      }
+    }
+    
+    /* Checklist Box */
+    .checklist-box {
+      background: rgba(37, 99, 235, 0.02);
+      border: 1px dashed #2563eb;
+      border-radius: 12px;
+      padding: 24px;
+      margin: 2.5rem 0;
+      font-family: 'Inter', sans-serif;
+    }
+    
+    .checklist-title {
+      font-weight: 800;
+      font-size: 1rem;
+      color: #2563eb;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .checklist-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    
+    .checklist-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+    
+    .checklist-item svg {
+      color: #2563eb;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    
+    @media(max-width: 600px) {
+      .checklist-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    /* Interactive Tabbed Monographs Styles */
+    .monograph-section {
+      margin-top: 4rem;
+      padding-top: 3rem;
+      border-top: 2px solid var(--border-color);
+      font-family: 'Inter', sans-serif;
+    }
+    
+    .monograph-section h2 {
+      font-size: 1.8rem;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+      margin-bottom: 8px !important;
+    }
+    
+    .monograph-section-subtitle {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      margin-bottom: 24px;
+    }
+    
+    .monograph-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      background: var(--bg-secondary);
+      padding: 6px;
+      border-radius: 14px;
+      border: 1px solid var(--border-color);
+      margin-bottom: 30px;
+    }
+    
+    .monograph-tab-btn {
+      padding: 10px 18px;
+      border-radius: 10px;
+      border: none;
+      background: transparent;
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-family: 'Inter', sans-serif;
+    }
+    
+    .monograph-tab-btn:hover {
+      color: var(--text-primary);
+      background: rgba(37, 99, 235, 0.04);
+    }
+    
+    .monograph-tab-btn.active {
+      background: var(--bg-card);
+      color: #2563eb;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    
+    [data-theme="dark"] .monograph-tab-btn.active {
+      color: #3b82f6;
+      background: var(--bg-secondary);
+    }
+    
+    .monograph-content {
+      display: none;
+    }
+    
+    .monograph-content.active {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+    
+    /* Academic Sub-sections styling */
+    .academy-heading {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      border-left: 4px solid #2563eb;
+      padding-left: 12px;
+      margin: 2rem 0 1rem 0;
+    }
+    
+    .step-list {
+      list-style-type: none;
+      padding-left: 0 !important;
+    }
+    
+    .step-item {
+      display: flex;
+      gap: 16px;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 12px;
+      transition: transform 0.2s ease;
+    }
+    
+    .step-item:hover {
+      transform: translateX(4px);
+      border-color: #2563eb;
+    }
+    
+    .step-num {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #2563eb;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 0.85rem;
+      flex-shrink: 0;
+    }
+    
+    .step-body {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--text-secondary);
+    }
+    
+    .step-title {
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+    
+    /* Board scenario cards */
+    .scenario-card {
+      background: rgba(184, 146, 42, 0.03);
+      border: 1px solid rgba(184, 146, 42, 0.2);
+      border-radius: 12px;
+      padding: 20px;
+      margin: 1.5rem 0;
+    }
+    
+    .scenario-title {
+      color: #b8922a;
+      font-weight: 800;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="mainNav">
+    <div class="nav-left">
+      <a href="../index.html" class="nav-pill">
+        <div class="nav-logo-img">
+          <img src="../assets/images/Surgical_Insight_Hub_Logo.png" alt="SIH">
+        </div>
+        <div>
+          <div class="nav-brand-text">Surgical Insight Hub</div>
+          <div class="nav-brand-sub">Advanced Surgical Learning</div>
+        </div>
+      </a>
+      <div class="nav-links-pill">
+        <a href="../index.html">Home</a>
+        <a href="../notes.html">Notes</a>
+        <a href="../notes/operative_approach.html">Playbook</a>
+        <a href="../podcast.html">Podcast</a>
+        <a href="../surgery-talk.html" class="active">Surgery Talk</a>
+        <a href="../about.html">About</a>
+      </div>
+    </div>
+
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <svg id="moonIcon" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/></svg>
+        <svg id="sunIcon" style="display:none;" viewBox="0 0 24 24"><path d="M12 7a5 5 0 1 0 5 5 5.006 5.006 0 0 0-5-5zm0 8a3 3 0 1 1 3-3 3.003 3.003 0 0 1-3 3zm0-13a1 1 0 0 0-1 1v2a1 1 0 0 0 2 0V3a1 1 0 0 0-1-1zm0 18a1 1 0 0 0-1 1v2a1 1 0 0 0 2 0v-2a1 1 0 0 0-1-1zm8-11h-2a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2zm-16 0H2a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2zm13.657-5.657a1 1 0 0 0-1.414 0l-1.414 1.414a1 1 0 0 0 1.414 1.414l1.414-1.414a1 1 0 0 0 0-1.414zm-11.314 0a1 1 0 0 0 0 1.414l1.414 1.414a1 1 0 0 0 1.414-1.414L4.929 5.757a1 1 0 0 0-1.414 0zm11.314 11.314a1 1 0 0 0 0 1.414l1.414 1.414a1 1 0 0 0 1.414-1.414l-1.414-1.414a1 1 0 0 0-1.414 0zm-11.314 0a1 1 0 0 0-1.414 1.414l1.414 1.414a1 1 0 0 0 1.414-1.414l-1.414-1.414a1 1 0 0 0 0-1.414z"/></svg>
+      </button>
+      <a href="../arena.html" class="nav-btn arena-btn">MCQ Arena</a>
+      <button class="mob-nav-toggle" onclick="openMobNav()">
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mob-nav-overlay" id="mobNavOverlay" onclick="closeMobNav()"></div>
+  <div class="mob-nav-sheet" id="mobNavSheet">
+    <div class="mob-nav-handle"></div>
+    <a href="../index.html" onclick="closeMobNav()">Home</a>
+    <a href="../notes.html" onclick="closeMobNav()">Notes</a>
+    <a href="../notes/operative_approach.html" onclick="closeMobNav()">Playbook</a>
+    <a href="../podcast.html" onclick="closeMobNav()">Podcast</a>
+    <a href="../surgery-talk.html" class="active" onclick="closeMobNav()">Surgery Talk</a>
+    <a href="../arena.html" onclick="closeMobNav()">MCQ Arena</a>
+    <a href="../about.html" onclick="closeMobNav()">About</a>
+  </div>
+
+  <article>
+    <header class="blog-hero">
+      <h1 class="blog-title">Navigating Hemorrhoidectomy in Patients with Ulcerative Colitis: A Clinical Practice Guide</h1>
+      <div class="blog-meta" style="margin-top: 1rem;">
+        <span class="blog-badge" style="background: rgba(16, 185, 129, 0.1); color: #10b981;">Clinical Practice</span>
+        <span class="blog-date">May 30, 2026</span>
+      </div>
+      <p class="blog-subtitle">Excisional hemorrhoidectomy in an unprimed UC patient can lead to severe postoperative morbidity. Here is the clinical playbook for safe colorectal management.</p>
+    </header>
+
+    <div class="blog-container">
+      <main class="blog-main blog-content">
+        <p>Benign anorectal disorders like hemorrhoids affect a significant proportion of the global population, including patients diagnosed with <strong>Inflammatory Bowel Disease (IBD)</strong>. However, when a patient with active or inactive <strong>Ulcerative Colitis (UC)</strong> presents with severe hemorrhoidal complaints, standard surgical algorithms must be immediately set aside.</p>
+
+        <p>Excisional hemorrhoidectomy in an unprimed UC patient is a highly perilous clinical encounter that can result in profound, non-healing mucosal defects, local sepsis, or trigger a severe systemic flare of the colitis. This clinical practice guide outlines the essential general principles, pre-operative requirements, and surgical techniques needed to safely navigate this challenging clinical scenario.</p>
+
+        <hr>
+
+        <h2>General Principles of Management</h2>
+        
+        <p>The underlying pathophysiological status of the colonic and rectal mucosa dictates every stage of the clinical decision-making matrix:</p>
+        
+        <ul>
+          <li><strong>Active Ulcerative Colitis:</strong> In the presence of an active clinical flare or active macroscopic/microscopic mucosal inflammation, surgical hemorrhoidectomy is <strong>strictly contraindicated</strong>. Inflicting surgical trauma on actively inflamed anorectal tissue triggers profound local mucosal breakdown, sphincter exposures, and severe systemic disease exacerbation.</li>
+          <li><strong>UC in Stable Remission:</strong> Even when the patient is in documented remission, excisional surgery should not be offered routinely. It must be reserved exclusively as a last resort for individuals with sustained, long-term remission who experience severe, refractory symptoms that significantly impair their quality of life.</li>
+        </ul>
+
+        <h2>The Stepwise Therapeutic Hierarchy</h2>
+        
+        <p>Colorectal guidelines mandate a careful, stepwise escalation pathway before any operative intervention is planned:</p>
+
+        <div class="step-flow-container">
+          <div class="step-flow-row">
+            <div class="step-flow-box active">1. Optimize UC Control</div>
+            <div class="step-flow-arrow">──►</div>
+            <div class="step-flow-box">2. Maximize Conservative</div>
+            <div class="step-flow-arrow">──►</div>
+            <div class="step-flow-box">3. Cautious Office Procedures</div>
+            <div class="step-flow-arrow">──►</div>
+            <div class="step-flow-box">4. Limited Surgery</div>
+          </div>
+        </div>
+
+        <ol>
+          <li><strong>Optimize Ulcerative Colitis Control:</strong> The foundational step is always to maximize medical anti-inflammatory regimens (e.g., mesalamine, biologics, immunomodulators) under the direct supervision of a gastroenterologist to ensure complete mucosal stability.</li>
+          <li><strong>Maximize Conservative Therapy:</strong> Implement high-fiber diets, systematic stool softeners, topical anti-inflammatory or anesthetic ointments, and regular warm sitz baths to alleviate acute venous congestion and thrombotic episodes.</li>
+          <li><strong>Office-Based Procedures with Caution:</strong> If conservative measures fail, minimally invasive office therapies—such as low-pressure rubber band ligation or infrared photocoagulation/sclerotherapy—may be cautiously considered. However, these are safe <strong>only if the surrounding rectal mucosa is completely clear of macroscopic disease</strong>.</li>
+          <li><strong>Limited Surgery as a Last Resort:</strong> Formal operative intervention is contemplated only when all less invasive office-based and medical modalities have been completely exhausted.</li>
+        </ol>
+
+        <div class="checklist-box">
+          <div class="checklist-title">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Mandatory Pre-Operative Requirements
+          </div>
+          <div class="checklist-grid">
+            <div class="checklist-item">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Complete Remission:</strong> Documented clinical, endoscopic, and histological quiescent disease state.</span>
+            </div>
+            <div class="checklist-item">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>No Active Proctitis:</strong> Flexible sigmoidoscopy confirming the distal 10–15 cm of the rectum is entirely free of inflammation.</span>
+            </div>
+            <div class="checklist-item">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Optimal Healing Capacity:</strong> Verified normal serum albumin/prealbumin levels and minimal systemic immunosuppressive burden.</span>
+            </div>
+            <div class="checklist-item">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Multidisciplinary Consent:</strong> Formal consensus documented between the colorectal surgical team and the managing gastroenterology team.</span>
+            </div>
+          </div>
+        </div>
+
+        <h2>Surgical Principles: Minimizing Mucosal Trauma</h2>
+        <p>When formal surgery is unavoidable within a pelvic field impacted by a history of IBD, standard excisional hemorrhoidectomy techniques must be significantly modified:</p>
+        
+        <ul>
+          <li><strong>Limited (Targeted) Hemorrhoidectomy:</strong> Excision should be strictly restricted to the specific primary prolapsing or bleeding quadrant(s) responsible for the symptoms. Never attempt a circumferential or three-quadrant clearance in a single setting.</li>
+          <li><strong>Preserve Wide Mucosal Bridges:</strong> Leave wide, completely pristine mucosal and anoderm bridges between any excised areas. This is vital to promote rapid epithelialization and prevent severe anal stenosis.</li>
+          <li><strong>Meticulous Sphincter Preservation:</strong> Utilize precise dissection methods (e.g., sharp cold-knife scalpel or fine bipolar energy devices) to carefully separate the hemorrhoidal pedicle from the underlying internal anal sphincter fibers. Avoid deep thermal or mechanical collateral injury.</li>
+        </ul>
+
+        <div class="callout callout-warning" style="background: rgba(220, 38, 38, 0.03); border-left: 4px solid #dc2626; padding: 20px 24px; border-radius: 8px; margin: 2rem 0;">
+          <h4 style="color: #dc2626; margin-top: 0; margin-bottom: 8px; font-family:'Inter',sans-serif; font-weight:800; font-size:0.95rem; text-transform:uppercase; letter-spacing:0.05em;">Recognizing the High Postoperative Risks</h4>
+          <ul style="margin-bottom: 0; padding-left: 20px;">
+            <li><strong>Delayed Wound Healing:</strong> Due to systemic mucosal immune dysregulation, raw surgical sites can lead to chronic, non-healing perineal ulcers.</li>
+            <li><strong>Secondary Perianal Sepsis:</strong> Slow-healing, raw perineal surfaces are highly vulnerable to bacterial contamination, abscess development, and localized soft tissue necrosis.</li>
+            <li><strong>Anal Canal Stenosis:</strong> Inadequate preservation of mucosal bridges combined with compromised tissue remodeling can cause rigid, highly symptomatic anal strictures.</li>
+            <li><strong>Iatrogenic Fistula Formation:</strong> Uncontrolled inflammation or deep thermal suture placement can lead to chronic fistula-in-ano.</li>
+            <li><strong>Disease Exacerbation:</strong> The physiological stress of perianal surgery can trigger a systemic, severe recurrence of the underlying colitis.</li>
+          </ul>
+        </div>
+
+        <!-- ACADEMY CORE MONOGRAPHS -->
+        <section class="monograph-section">
+          <h2>📘 Colorectal Surgery Board Review Monograph Series</h2>
+          <p class="monograph-section-subtitle">A high-yield, comprehensive clinical curriculum designed for advanced board examinations and surgical vivas.</p>
+          
+          <div class="monograph-tabs">
+            <button class="monograph-tab-btn active" onclick="showMonoTab(1)">Monograph 1</button>
+            <button class="monograph-tab-btn" onclick="showMonoTab(2)">Monograph 2</button>
+            <button class="monograph-tab-btn" onclick="showMonoTab(3)">Monograph 3</button>
+            <button class="monograph-tab-btn" onclick="showMonoTab(4)">Monograph 4</button>
+            <button class="monograph-tab-btn" onclick="showMonoTab(5)">Monograph 5</button>
+            <button class="monograph-tab-btn" onclick="showMonoTab(6)">Quick-Review</button>
+          </div>
+          
+          <!-- MONOGRAPH 1 -->
+          <div class="monograph-content active" id="mono-tab-1">
+            <h3 class="academy-heading">Colorectal Polyps, Polyposis Syndromes &amp; Lynch Syndrome</h3>
+            
+            <h4>1. Endoscopic Resection Techniques Step-by-Step</h4>
+            <ul class="step-list">
+              <li class="step-item">
+                <div class="step-num">1</div>
+                <div class="step-body">
+                  <div class="step-title">Cold Snare Polypectomy (CSP)</div>
+                  Position the colonoscopy tip to place the polyp at the 5 o'clock position for optimal stability. Advance the thin-wire snare sheath, open the loop completely over the lesion, and capture the polyp along with a 1–2 mm rim of normal surrounding mucosa to ensure complete resection margins. Close the snare quickly and firmly to mechanically transect the tissue without electrocautery.
+                </div>
+              </li>
+              <li class="step-item">
+                <div class="step-num">2</div>
+                <div class="step-body">
+                  <div class="step-title">Hot Snare Polypectomy</div>
+                  For thick stalks (&gt;10 mm), place a detachable nylon loop (Endoloop) at the base of the stalk first to prevent arterial hemorrhage. Encircle the mid-stalk of the polyp with the hot snare loop, elevate the polyp away from the underlying bowel wall into the lumen to create a thermal safety margin, and apply a blended electrocautery current while closing.
+                </div>
+              </li>
+              <li class="step-item">
+                <div class="step-num">3</div>
+                <div class="step-body">
+                  <div class="step-title">Endoscopic Mucosal Resection (EMR)</div>
+                  For flat/sessile polyps (10–20 mm), inject a submucosal lifting solution (normal saline + epinephrine + methylene blue) at the proximal edge. Assess for the "lifting sign" to rule out deep invasive cancers. Pass the snare over the elevated mucosal dome, catch the tissue, and apply pure coagulation current for resection.
+                </div>
+              </li>
+              <li class="step-item">
+                <div class="step-num">4</div>
+                <div class="step-body">
+                  <div class="step-title">Endoscopic Submucosal Dissection (ESD)</div>
+                  Identify large (&gt;20 mm) flat or scarred lesions. Circumferentially mark safety margins around the lesion using a specialized endoscopic knife. Inject a high-viscosity solution (e.g., hyaluronic acid) to create a sustained fluid cushion. Perform a circumferential mucosal incision and dissect submucosal fibers directly beneath the lesion en bloc from the muscularis propria.
+                </div>
+              </li>
+              <li class="step-item">
+                <div class="step-num">5</div>
+                <div class="step-body">
+                  <div class="step-title">TAMIS / TEM (Transanal Minimally Invasive Surgery)</div>
+                  Lithotomy or prone position based on rectal tumor location. Insert a specialized transanal port and establish low-pressure CO2 pneumorectum (10–12 mmHg). Use laparoscopic instruments to score a 1 cm clear margin around the tumor. Perform a full-thickness excision down through perirectal fat, extract the specimen, and close the rectal wall defect primarily using absorbable barbed sutures.
+                </div>
+              </li>
+            </ul>
+
+            <h4>2. Surgical Resection Techniques</h4>
+            <ul>
+              <li><strong>Laparoscopic Right Hemicolectomy:</strong> Place ports in a standard 5-port diamond array. Isolate and ligate the ileocolic vascular pedicle at its origin using a medial-to-lateral approach. Mobilize the right colon by incising the retroperitoneal fusion line of Toldt up to the hepatic flexure, and perform an extracorporeal or intracorporeal functional end-to-end stapled ileocolic anastomosis.</li>
+              <li><strong>Total Proctocolectomy + IPAA (J-Pouch):</strong> Complete abdominal colectomy and mobilize the rectum down to the pelvic floor. Divide the rectum at the anorectal junction, leaving a short 1–2 cm mucosal cuff above the dentate line. Construct a J-shaped pouch using two loops of terminal ileum (15–20 cm each) mapped together with a linear cutter stapler. Perform a hand-sewn or circular stapled pouch-anal anastomosis and protect with a temporary loop ileostomy.</li>
+            </ul>
+
+            <h4>3. Polyposis Syndromes &amp; Lynch Syndrome Genetics</h4>
+            <div class="table-scroll" style="margin: 1.5rem 0;">
+              <table class="interactive-data-table">
+                <thead>
+                  <tr>
+                    <th>Syndrome</th>
+                    <th>Gene / Inheritance</th>
+                    <th>Primary Phenotype</th>
+                    <th>Cancer Risk</th>
+                    <th>Management Strategy</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Classic FAP</strong></td>
+                    <td>APC / Autosomal Dominant</td>
+                    <td>&gt;100 colonic adenomas; fundic gland polyps, CHRPE.</td>
+                    <td>100% risk of CRC by age 40.</td>
+                    <td>Prophylactic colectomy (IPAA vs IRA) in late teens/early 20s.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Gardner Syndrome</strong></td>
+                    <td>APC / Autosomal Dominant</td>
+                    <td>FAP presentation with extraintestinal features.</td>
+                    <td>100% risk of CRC; desmoid tumors, osteomas.</td>
+                    <td>Standard FAP colectomy; close tracking of desmoid tumors.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Turcot Syndrome</strong></td>
+                    <td>APC or MMR / AD</td>
+                    <td>FAP or Lynch phenotype combined with CNS tumors.</td>
+                    <td>High CRC risk; Medulloblastoma (APC) / Glioblastoma (MMR).</td>
+                    <td>Guided screening of both the GI tract and central nervous system.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>MAP</strong></td>
+                    <td>MUTYH / Autosomal Recessive</td>
+                    <td>10 to hundreds of adenomas; sebaceous skin lesions.</td>
+                    <td>~80% lifetime risk of CRC.</td>
+                    <td>Surveillance colonoscopy; surgery when polyps are unmanageable.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Peutz-Jeghers</strong></td>
+                    <td>STK11 / Autosomal Dominant</td>
+                    <td>Hamartomatous polyps throughout GI tract; lip melanosis.</td>
+                    <td>39% CRC, 13% gastric, 54% breast cancer risk.</td>
+                    <td>Endoscopy, colonoscopy, and capsule imaging starting at age 8.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h4>4. Mismatch Repair (MMR) Profiles &amp; Guidelines</h4>
+            <ul>
+              <li><strong>MLH1 / MSH2:</strong> High penetrance profiles carrying a 40–80% lifetime risk of CRC. Loss of MSH2 is associated with Muir-Torre syndrome (sebaceous skin tumors).</li>
+              <li><strong>MSH6 / PMS2:</strong> Lower penetrance profiles. MSH6 mutations exhibit a strong, predominant risk for endometrial carcinoma rather than early-onset colon cancer.</li>
+              <li><strong>Universal IHC Algorithm:</strong> Perform universal IHC staining for all newly diagnosed CRCs. If MLH1 expression is absent, order reflex testing for BRAF V600E mutations and MLH1 promoter hypermethylation to differentiate a sporadic tumor from a germline mutation. If both are negative, proceed to germline genetic testing.</li>
+              <li><strong>Aspirin Prophylaxis (CAPP2/CAPP3):</strong> Long-term follow-up from the CAPP2 trial confirmed that daily aspirin (600 mg) reduces CRC incidence by over 40% in Lynch carriers. CAPP3 is mapping out lower doses (100 mg vs 300 mg) to preserve chemoprevention while mitigating GI bleeding profiles.</li>
+              <li><strong>Universal Immunotherapy:</strong> Front-line single-agent immunotherapy is now the gold standard for advanced dMMR/MSI-H colorectal cancer.</li>
+            </ul>
+
+            <div class="scenario-card">
+              <div class="scenario-title">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                Viva Scenario 1: Piecemeal EMR with HGD
+              </div>
+              <p style="font-size: 0.9rem; margin-bottom: 8px;"><strong>Scenario:</strong> A 45-year-old man undergoes a piecemeal EMR for a 25 mm flat sigmoid polyp. Pathology reports tubulovillous adenoma with focal high-grade dysplasia and clear deep margins. Next step?</p>
+              <p style="font-size: 0.9rem; color: var(--text-primary); margin-bottom: 0;"><strong>Answer:</strong> High-grade dysplasia alone (without invasive submucosal carcinoma) does not justify formal surgical resection. Because the lesion was resected piece-by-piece, schedule a repeat surveillance colonoscopy at 3–6 months to examine the scar site for local recurrence. If it is clear, perform another follow-up at 1 year.</p>
+            </div>
+
+            <div class="scenario-card">
+              <div class="scenario-title">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                Viva Scenario 2: Low-Risk vs. High-Risk T1 Carcinomas
+              </div>
+              <p style="font-size: 0.9rem; margin-bottom: 8px;"><strong>Scenario:</strong> A polyp pathology report returns as T1 adenocarcinoma, Kikuchi Sm2, moderately differentiated, negative for LVI, with a deep resection margin of 1.5 mm. Management?</p>
+              <p style="font-size: 0.9rem; color: var(--text-primary); margin-bottom: 0;"><strong>Answer:</strong> This is a low-risk T1 lesion because the submucosal invasion is intermediate (Sm2), the deep margin is clear (&gt;1 mm), and there are no aggressive features like LVI or poor differentiation. Manage with endoscopic surveillance (colonoscopy at 3 months, then 1 year). If it demonstrated Kikuchi Sm3 invasion, positive LVI, or a margin &lt;1 mm, it would be a high-risk lesion requiring formal oncological resection.</p>
+            </div>
+            
+            <h4>5. ERAS Colectomy Protocol</h4>
+            <ul>
+              <li><strong>Pre-operative Phase:</strong> Mechanical bowel preparation (MBP) combined with oral antibiotics (Metronidazole + Neomycin) to lower surgical site infections (SSI). Clear carbohydrate load drinks up to 2 hours before surgery to mitigate post-operative insulin resistance.</li>
+              <li><strong>Intra-operative Phase:</strong> Goal-Directed Fluid Therapy (GDFT) via stroke volume optimization; maintain a laparoscopic default approach; avoid routine nasogastric tube placement.</li>
+              <li><strong>Post-operative Phase:</strong> Early mobilization and clear oral fluids within 4 hours of surgery (Day 0). Discontinue IV fluids within 24 hours if oral intake is tolerated. Schedule multi-modal non-opioid analgesia.</li>
+            </ul>
+          </div>
+          
+          <!-- MONOGRAPH 2 -->
+          <div class="monograph-content" id="mono-tab-2">
+            <h3 class="academy-heading">Colon Cancer (Right-Sided, Left-Sided &amp; Sigmoid)</h3>
+            
+            <h4>1. CME Resection Techniques Step-by-Step</h4>
+            <ul class="step-list">
+              <li class="step-item">
+                <div class="step-num">1</div>
+                <div class="step-body">
+                  <div class="step-title">Laparoscopic Right Hemicolectomy (CME Approach)</div>
+                  Access abdomen via 5-port diamond configuration; position patient in steep Trendelenburg with a left lateral tilt. Elevate terminal ileum and enter the avascular embryonic plane of Toldt's fascia beneath the ileocolic pedicle. Dissect retroperitoneally to drop the duodenum and right ureter posteriorly. Expose the anterior wall of the SMV. Isolate, clip, and divide the ileocolic artery and vein flush with the SMV wall (D3 Lymphadenectomy). Isolate and divide the right colic and right middle colic vessels at their roots, preserving the left middle colic branch. Mobilize lateral attachment, deliver specimen, and perform a functional stapled side-to-side anastomosis. Close the mesenteric defect.
+                </div>
+              </li>
+              <li class="step-item">
+                <div class="step-num">2</div>
+                <div class="step-body">
+                  <div class="step-title">Laparoscopic Left Hemicolectomy (CME Approach)</div>
+                  Identify the origin of the Inferior Mesenteric Artery (IMA) along the aorta. Locate and isolate the left ureter as it crosses the pelvic brim posterior to the IMA pedicle before firing any vascular staplers. Perform a central ligation: a high tie (division at aortic origin for D3 lymphadenectomy) or low tie (dividing distal to the left colic artery origin). Ligate the Inferior Mesenteric Vein (IMV) near the inferior border of the pancreas to ensure a tension-free splenic flexure mobilization. Perform a circular stapled end-to-end colorectal anastomosis.
+                </div>
+              </li>
+            </ul>
+
+            <h4>2. TNM Staging Framework &amp; High-Risk Features</h4>
+            <ul>
+              <li><strong>Staging:</strong> T1: Invades submucosa | T2: Invades muscularis propria | T3: Invades through muscularis propria into adipose tissue | T4a: Penetrates visceral peritoneum | T4b: Directly invades adjacent organs. N1a: 1 positive node | N1b: 2–3 positive nodes | N1c: Isolated tumor deposits without nodal metastasis. N2a: 4–6 regional nodes | N2b: &ge;7 regional nodes.</li>
+              <li><strong>High-Risk Stage II Features:</strong> T4 stage, clinical presentation with bowel obstruction or perforation, &lt;12 lymph nodes examined, lymphovascular/perineural invasion (LVI/PNI), poor/undifferentiated histology, or close/positive surgical margins.</li>
+            </ul>
+
+            <h4>3. Guidelines &amp; Treatment Updates</h4>
+            <ul>
+              <li><strong>The IDEA Collaboration Impact:</strong> For low-risk Stage III colon cancer (T1-3, N1), 3 months of adjuvant CAPOX is established as non-inferior to 6 months, dramatically reducing neurotoxicity profiles. High-risk Stage III (T4 or N2) still mandates a full 6-month course of FOLFOX.</li>
+              <li><strong>Neoadjuvant Immunotherapy (NICHE-II Trial):</strong> Evaluated neoadjuvant Nivolumab + Ipilimumab for non-metastatic dMMR colon cancer. It demonstrated a staggering 95% pathological response rate (with 67% achieving a pathological complete response), shifting protocols toward neoadjuvant immune checkpoint inhibition in early dMMR disease.</li>
+            </ul>
+
+            <div class="scenario-card">
+              <div class="scenario-title">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                Viva Scenario: Acute Malignant Large Bowel Obstruction
+              </div>
+              <p style="font-size: 0.9rem; margin-bottom: 8px;"><strong>Scenario:</strong> A 64-year-old presents with a completely obstructing cecal mass. Staging reveals localized disease without distant metastases. Strategy?</p>
+              <p style="font-size: 0.9rem; color: var(--text-primary); margin-bottom: 0;"><strong>Answer:</strong> For acute right-sided obstructions, an upfront laparoscopic right hemicolectomy with a primary ileocolic anastomosis is safe and remains the standard of care because liquid small bowel content does not compromise the healing of the anastomosis. Self-expanding metal stents (SEMS) are technically difficult and carry a high perforation risk in the proximal colon and are not recommended. For acute left-sided malignant obstructions, options include a Hartmann’s procedure, on-table colonic lavage followed by subtotal colectomy, or placing a SEMS as a temporary bridge to an elective, oncological one-stage resection.</p>
+            </div>
+
+            <h4>4. Anastomotic Leak Management Matrix</h4>
+            <div class="table-scroll">
+              <table class="interactive-data-table">
+                <thead>
+                  <tr>
+                    <th>Leak Severity</th>
+                    <th>Clinical Presentation</th>
+                    <th>Clinical Management Protocol</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Grade A Leak</strong></td>
+                    <td>Minimal, asymptomatic radiological leak without clinical signs of infection or peritonitis.</td>
+                    <td>Expectant observation, transition to a low-residue diet, no active intervention required.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Grade B Leak</strong></td>
+                    <td>Localized pelvic or abdominal collection, hemodynamic stability, mild localized tenderness.</td>
+                    <td>Initiate intravenous antibiotics, place patient NPO (nothing by mouth), and perform an image-guided (CT) percutaneous transabdominal or transrectal drain insertion.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Grade C Leak</strong></td>
+                    <td>Generalized peritonitis, hemodynamic instability, severe sepsis or septic shock.</td>
+                    <td style="color: #b91c1c; font-weight: 700;">Proceed to an urgent re-laparotomy or laparoscopy, perform thorough abdominal washout, dismantle the anastomosis or construct a Hartmann’s pouch / diverting loop stoma.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          
+          <!-- MONOGRAPH 3 -->
+          <div class="monograph-content" id="mono-tab-3">
+            <h3 class="academy-heading">Rectal Cancer (TME, Neoadjuvant Therapy, Lateral Pelvic Nodes, Watch-and-Wait)</h3>
+            
+            <h4>1. Laparoscopic Total Mesorectal Excision (TME) Step-by-Step</h4>
+            <ul class="step-list">
+              <li class="step-item">
+                <div class="step-num">1</div>
+                <div class="step-body">
+                  <div class="step-title">Vascular Ligation &amp; Exposure</div>
+                  Isolate the origin of the IMA, identify and protect the left ureter, and perform a high tie. Divide the IMV near the lower border of the pancreas to allow for full mobilization of the splenic flexure.
+                </div>
+              </li>
+              <li class="step-item">
+                <div class="step-num">2</div>
+                <div class="step-body">
+                  <div class="step-title">Posterior Pelvic Dissection</div>
+                  Enter Heald's "Holy Plane" at the sacral promontory using sharp scissors or energy dissection. Gently sweep the hypogastric nerve cords laterally and continue dissection down through Waldeyer's fascia at S4 to access the pre-coccygeal space.
+                </div>
+              </li>
+              <li class="step-item">
+                <div class="step-num">3</div>
+                <div class="step-body">
+                  <div class="step-title">Anterior &amp; Lateral Dissection</div>
+                  Incise the anterior peritoneal reflection shelf. For anterior rectal lesions, dissect anterior to Denonvilliers' fascia to ensure a negative circumferential resection margin (CRM). Divide lateral attachments while keeping the dissection medial to the pelvic splanchnic nerves to preserve urinary and sexual function.
+                </div>
+              </li>
+              <li class="step-item">
+                <div class="step-num">4</div>
+                <div class="step-body">
+                  <div class="step-title">Transection &amp; Anastomosis</div>
+                  Maintain a 1 cm distal clearance margin below the tumor edge (0.5 cm is acceptable after neoadjuvant chemoradiotherapy). Transect rectum with a laparoscopic linear stapler, construct a circular stapled colorectal or coloanal anastomosis, and perform a mandatory air-leak test. Protect with a low low-diverting loop ileostomy.
+                </div>
+              </li>
+            </ul>
+
+            <h4>2. Total Neoadjuvant Therapy (TNT) Landmark Trials</h4>
+            <ul>
+              <li><strong>RAPIDO Trial:</strong> Short-Course Radiotherapy (SCRT, 5 x 5 Gy) followed by 6 cycles of consolidation CAPOX/FOLFOX and surgery vs. standard long-course chemoradiotherapy (LCRT). The TNT arm demonstrated a significant reduction in disease-related treatment failure and doubled the pathological complete response (pCR) rate (28% vs 14%).</li>
+              <li><strong>PRODIGE 23 Trial:</strong> Induction mFOLFIRINOX chemotherapy followed by standard LCRT, surgery, and adjuvant chemotherapy. TNT demonstrated significant improvements in 3-year disease-free survival (DFS) and a doubled pCR rate (27.5% vs 12%).</li>
+              <li><strong>OPRA Trial:</strong> Sequencing of TNT for organ preservation, comparing induction chemotherapy before LCRT against consolidation chemotherapy after LCRT. Consolidation chemotherapy achieved higher 3-year clinical complete response (cCR) rates, allowing for successful organ preservation in 58% of patients.</li>
+            </ul>
+
+            <h4>3. Guidelines &amp; Treatment Updates</h4>
+            <ul>
+              <li><strong>Neoadjuvant Dostarlimab in dMMR/MSI-H:</strong> Single-agent PD-1 blockade (Dostarlimab) demonstrated an unprecedented 100% clinical complete response (cCR) rate in locally advanced dMMR rectal cancer, shifting guidelines to upfront PD-1 inhibitors, bypassing chemoradiation and surgery entirely in responders.</li>
+              <li><strong>Organ Preservation Sequence:</strong> Per recent global clinical consensus updates, when TNT is used to maximize organ preservation, consolidation chemotherapy (chemotherapy after radiation) is preferred over induction chemotherapy due to superior long-term cCR and pouch-preservation rates.</li>
+            </ul>
+
+            <div class="scenario-card">
+              <div class="scenario-title">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                Viva Scenario: Clinical Complete Response (cCR) and "Watch-and-Wait"
+              </div>
+              <p style="font-size: 0.9rem; margin-bottom: 8px;"><strong>Scenario:</strong> A 48-year-old completes a consolidation TNT protocol for a mid-rectal tumor. Follow-up evaluation demonstrates a normal CEA level, a smooth, white mucosal scar on flexible endoscopy, and regular fibrosis without residual tumor signal on pelvic MRI. What options can you offer?</p>
+              <p style="font-size: 0.9rem; color: var(--text-primary); margin-bottom: 0;"><strong>Answer:</strong> The patient has achieved a clinical complete response (cCR) based on Habr-Gama criteria. Offer a non-operative "Watch-and-Wait" protocol for organ preservation. This requires intensive surveillance: digital rectal exam (DRE) and flexible sigmoidoscopy every 3 months for the first 2 years, combined with pelvic MRI every 6 months. Approximately 25–30% of these patients experience a local luminal regrowth, but over 95% of these occur within the bowel wall and can be successfully treated with salvage TME surgery without compromising overall survival.</p>
+            </div>
+
+            <h4>4. Low Anterior Resection Syndrome (LARS) Clinical Spectrum</h4>
+            <ul>
+              <li><strong>Frequency &amp; Urgency:</strong> Caused by the loss of rectal reservoir volume and compliance.</li>
+              <li><strong>Clustering Phenotype:</strong> Fragmented, repetitive bowel movements over a short period.</li>
+              <li><strong>Fecal Incontinence:</strong> Due to sphincteric injury or impaired compliance.</li>
+              <li><strong>LARS Management:</strong> First-line treatments include dietary adjustments and anti-diarrheal medications (Loperamide). Second-line therapies involve pelvic floor physical therapy and biofeedback. For refractory symptoms, transanal irrigation systems or sacral nerve stimulation can be effective.</li>
+            </ul>
+          </div>
+          
+          <!-- MONOGRAPH 4 -->
+          <div class="monograph-content" id="mono-tab-4">
+            <h3 class="academy-heading">Colorectal Liver Metastases (CRLM) &amp; Peritoneal Disease</h3>
+            
+            <h4>1. Strategic Resection Approaches for Synchronous Resectable CRLM</h4>
+            <ul class="step-list">
+              <li class="step-item">
+                <div class="step-num">A</div>
+                <div class="step-body">
+                  <div class="step-title">Simultaneous Resection</div>
+                  Perform coordinated multi-specialty exposure of the abdomen. Complete the primary colorectal resection, and immediately transition to the hepatic field to perform atypical wedge resections or formal lobectomies during the same operative window. Indicated for fit patients with low-volume, peripheral liver disease.
+                </div>
+              </li>
+              <li class="step-item">
+                <div class="step-num">B</div>
+                <div class="step-body">
+                  <div class="step-title">Staged Primary-First Approach</div>
+                  Resect the symptomatic primary bowel tumor first to eliminate risks of obstruction or bleeding. Recover the patient, administer systemic chemotherapy (4–6 cycles), and perform a secondary, planned delayed hepatectomy to clear liver metastases.
+                </div>
+              </li>
+              <li class="step-item">
+                <div class="step-num">C</div>
+                <div class="step-body">
+                  <div class="step-title">Staged Liver-First Approach (Reverse Strategy)</div>
+                  Leave an asymptomatic primary bowel tumor in place and initiate intensive systemic chemotherapy to target a high-volume hepatic tumor burden. Perform the hepatectomy first to clear the liver disease while hepatic parenchymal volume is optimal. Complete a secondary, delayed colorectal resection of the primary bowel tumor in a final stage.
+                </div>
+              </li>
+            </ul>
+
+            <h4>2. Technical Resectability Criteria &amp; Downstaging Strategies</h4>
+            <ul>
+              <li><strong>Resectability Definition:</strong> Resectability is no longer determined by the absolute number or size of metastases. The core technical requirements are achieving pathologically negative surgical margins (R0 resection, with a &ge;1 mm margin preferred) while preserving at least two contiguous hepatic segments with adequate, patent arterial, portal venous, and biliary inflow and outflow.</li>
+              <li><strong>Future Liver Remnant (FLR):</strong> Maintaining a functional FLR volume of at least 20–25% in healthy parenchymal livers, or &gt;30–40% in livers damaged by oxaliplatin- (sinusoidal obstruction syndrome) or irinotecan-induced (steatohepatitis) chemotherapy.</li>
+              <li><strong>Two-Stage Hepatectomy with ALPPS Protocol:</strong>
+                <ul>
+                  <li><em>Stage 1:</em> Perform formal ligation of the right portal vein branch and partition the hepatic parenchyma along the future transection line (leaving the left lateral segments intact) to induce rapid hypertrophy of the left FLR.</li>
+                  <li><em>Stage 2:</em> Perform a repeat laparotomy 1–2 weeks later once volumetric imaging confirms adequate left FLR growth (&gt;30%) to complete the formal excision of the diseased right lobe.</li>
+                </ul>
+              </li>
+              <li><strong>The CAIRO6 Guideline Shift (Lancet Oncology):</strong> Confirmed that perioperative triplet/doublet systemic regimens combined with targeted biologics significantly improve survival flanking Cytoreductive Surgery (CRS) and HIPEC, confirming aggressive systemic therapy remains a mandatory cornerstone.</li>
+            </ul>
+
+            <div class="scenario-card">
+              <div class="scenario-title">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                Viva Scenario: Clinical Impact of the PRODIGE 7 Trial Outcomes
+              </div>
+              <p style="font-size: 0.9rem; margin-bottom: 8px;"><strong>Scenario:</strong> A patient presents with isolated, resectable peritoneal carcinomatosis secondary to colon cancer. Discuss the clinical implications of the PRODIGE 7 trial on your surgical decision-making.</p>
+              <p style="font-size: 0.9rem; color: var(--text-primary); margin-bottom: 0;"><strong>Answer:</strong> The PRODIGE 7 trial randomized patients with colorectal peritoneal carcinomatosis to receive either Cytoreductive Surgery (CRS) alone or CRS combined with oxaliplatin-based HIPEC. The trial demonstrated that adding a short, 30-minute oxaliplatin HIPEC did not improve overall survival compared to complete CRS alone, while it significantly increased post-operative morbidity. Consequently, the standard of care emphasizes achieving a complete, high-quality macroscopic surgical cytoreduction (CC-0).</p>
+            </div>
+
+            <h4>3. Chemotherapy-Induced Liver Injury Phenotypes</h4>
+            <ul>
+              <li><strong>Oxaliplatin Toxicity:</strong> Associated with Sinusoidal Obstruction Syndrome (SOS), which can cause "blue liver syndrome," splenomegaly, and portal hypertension.</li>
+              <li><strong>Irinotecan Toxicity:</strong> Associated with Chemotherapy-Associated Steatohepatitis (CASH), which causes "yellow liver syndrome" and increases the risk of post-operative hepatic insufficiency.</li>
+            </ul>
+          </div>
+          
+          <!-- MONOGRAPH 5 -->
+          <div class="monograph-content" id="mono-tab-5">
+            <h3 class="academy-heading">Anal Canal Tumors (SCC, AIN/HSIL, Melanoma, Adenocarcinoma &amp; Rare Subtypes)</h3>
+            
+            <h4>1. Anatomical Landmarks &amp; Diagnostic Boundaries</h4>
+            <ul>
+              <li><strong>Anal Verge:</strong> The external squamocutaneous junction marking the transition from perineal skin to the specialized modified squamous epithelium of the anoderm.</li>
+              <li><strong>Dentate (Pectinate) Line:</strong> The internal anatomical junction located approximately 2 cm proximal to the anal verge, separating proximal endodermal columnar epithelium from distal ectodermal squamous anoderm.</li>
+              <li><strong>Anal Margin Tumors:</strong> Maligancies arising distal to the anal verge within the perianal skin. Behave biologically like non-melanoma skin cancers; amenable to wide local excision with 1 cm clear margins if sphincters are uninvolved.</li>
+              <li><strong>Anal Canal Tumors:</strong> Malignant lesions arising proximal to the anal verge. Predominantly squamous cell carcinomas driven by HPV infection; require primary non-operative chemoradiotherapy rather than surgery.</li>
+            </ul>
+
+            <h4>2. Squamous Cell Carcinoma (SCC) &amp; The Nigro Protocol</h4>
+            <ul>
+              <li><strong>Primary Management:</strong> Upfront definitive surgical resection is not the standard of care for anal canal SCC. Primary management consists of the non-operative Nigro Protocol.</li>
+              <li><strong>Regimen Components:</strong> External Beam Radiation Therapy (EBRT, 45–54 Gy to primary anal tumor and regional inguinal/pelvic nodal basins) combined with concurrent chemotherapy infusions of 5-Fluorouracil (5-FU) and Mitomycin C.</li>
+              <li><strong>Clinical Efficacy:</strong> Achieves complete clinical cure and sphincter preservation in 70–80% of patients, reserving highly morbid surgeries for specific refractory scenarios.</li>
+            </ul>
+
+            <h4>3. Highly Lethal Non-SCC Variants</h4>
+            <ul>
+              <li><strong>Anal Melanoma:</strong> A rare, highly aggressive non-cutaneous melanoma variant. Presents as a bleeding, often amelanotic mass that can mimic a benign hemorrhoid. Extremely poor prognosis due to early hematogenous spread. Treatment includes wide local excision or APR for local disease control (though survival is unchanged; systemic immunotherapy is crucial).</li>
+              <li><strong>Anal Canal Adenocarcinoma:</strong> Arises from rectal mucosa proximal to dentate line or chronic anal gland fistulae. Untreated by the Nigro protocol. Treated like low rectal adenocarcinoma with neoadjuvant LCRT followed by TME or APR.</li>
+            </ul>
+
+            <div class="scenario-card">
+              <div class="scenario-title">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                Viva Scenario: Persistent vs. Recurrent Anal SCC
+              </div>
+              <p style="font-size: 0.9rem; margin-bottom: 8px;"><strong>Scenario:</strong> A 55-year-old undergoes a full Nigro protocol for T2N1 anal canal SCC. At a 12-week post-treatment evaluation, a persistent 1 cm indurated ulceration is palpated. What is your management strategy?</p>
+              <p style="font-size: 0.9rem; color: var(--text-primary); margin-bottom: 0;"><strong>Answer:</strong> A definitive tissue biopsy is required to confirm the presence of viable tumor cells. Tissue regression after chemoradiotherapy can take up to 24 weeks; if a biopsy confirms persistence or if a biopsy-proven recurrence occurs after achieving a complete response, the patient requires a Salvage Abdominoperineal Resection (APR). This involves radical excision of the sphincter complex, permanent colostomy, and mandatory reconstruction of the pelvic floor using a vascularized tissue flap (e.g., VRAM flap) due to poor healing capacity of the irradiated perineal field.</p>
+            </div>
+
+            <h4>4. Anal Cancer Paradigm Summary</h4>
+            <div class="table-scroll">
+              <table class="interactive-data-table">
+                <thead>
+                  <tr>
+                    <th>Disease Process</th>
+                    <th>Primary Mode of Therapy</th>
+                    <th>Role of Surgical Intervention</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Anal Canal SCC</strong></td>
+                    <td>Non-operative Nigro Protocol (EBRT + 5-FU/Mitomycin)</td>
+                    <td>Restricted to Salvage APR for biopsy-proven persistent or recurrent disease.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Anal Margin SCC</strong></td>
+                    <td>Wide Local Excision (1 cm clear margins)</td>
+                    <td>Definitive primary care option if anal sphincter function can be preserved.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Anal Melanoma</strong></td>
+                    <td>Systemic Immunotherapy + Local Control</td>
+                    <td>Wide Local Excision or APR used for local symptom palliation; poor survival impact.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Anal Adenocarcinoma</strong></td>
+                    <td>Neoadjuvant LCRT followed by surgery</td>
+                    <td>Mandates formal radical oncological surgery (TME / APR with node clearance).</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Anal HSIL (AIN 2/3)</strong></td>
+                    <td>Targeted mucosal ablation / Topical agents</td>
+                    <td>Directed HRA-guided destruction; formal mapping or skin margin resections are avoided.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          
+          <!-- MONOGRAPH 6 -->
+          <div class="monograph-content" id="mono-tab-6">
+            <h3 class="academy-heading">Board Exam Quick-Review Checklist</h3>
+            <div class="checklist-box" style="border-style: solid; background: transparent;">
+              <div class="checklist-grid" style="grid-template-columns: 1fr;">
+                <div class="checklist-item">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><polyline points="9 11 12 14 22 4"/></svg>
+                  <span><strong>Hemorrhoidectomy in UC:</strong> Never do it during an active flare. Ensure full endoscopic confirmation of quiescent rectal mucosa before considering surgery.</span>
+                </div>
+                <div class="checklist-item">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><polyline points="9 11 12 14 22 4"/></svg>
+                  <span><strong>Malignant Polyp:</strong> Identify Kikuchi Sm3, Haggitt 4, or positive margins; these require formal oncological resection within 4 weeks.</span>
+                </div>
+                <div class="checklist-item">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><polyline points="9 11 12 14 22 4"/></svg>
+                  <span><strong>Lynch Genetics:</strong> Memorize the Amsterdam II criteria and know that MLH1 loss requires ruling out sporadic cases via BRAF and methylation testing.</span>
+                </div>
+                <div class="checklist-item">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><polyline points="9 11 12 14 22 4"/></svg>
+                  <span><strong>CME vs TME:</strong> Focus on the structural boundaries—the SMV wall forms the medial dissection limit for a right-sided CME; the glistening parietal presacral fascia forms the posterior border for a rectal TME.</span>
+                </div>
+                <div class="checklist-item">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><polyline points="9 11 12 14 22 4"/></svg>
+                  <span><strong>TNT Benefits:</strong> Total Neoadjuvant Therapy significantly doubles the pathological complete response (pCR) rates and provides early systemic control for high-risk rectal cancers.</span>
+                </div>
+                <div class="checklist-item">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><polyline points="9 11 12 14 22 4"/></svg>
+                  <span><strong>CRLM Resectability:</strong> Focus on the functional future liver remnant (FLR)—ensure a &gt;20% remnant in healthy livers, and &gt;30–40% in chemotherapy-damaged tissue.</span>
+                </div>
+                <div class="checklist-item">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><polyline points="9 11 12 14 22 4"/></svg>
+                  <span><strong>Anal Canal SCC:</strong> Always state that the Nigro protocol is the primary treatment; never recommend an upfront APR unless the lesion is a non-squamous adenocarcinoma or true refractory disease.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- Sidebar Matching Other Blogs -->
+      <aside class="blog-sidebar">
+        <div class="sidebar-card" style="border-top: 4px solid #10b981; text-align: left;">
+          <h3>⚡ UC Hemorrhoidectomy Checklist</h3>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 15px;">Safety limits before scheduling excisional surgery in colonic patients.</p>
+          <div style="font-family:'Inter',sans-serif; font-size:0.8rem; display:flex; flex-direction:column; gap:10px;">
+            <div style="background:var(--bg-secondary); padding:10px; border-radius:6px; border:1px solid var(--border-color);">
+              <strong style="color: #10b981; display:block; margin-bottom:2px;">Endoscopic Clearance</strong>
+              The rectal mucosa must show zero erythema, friability, or ulcerations.
+            </div>
+            <div style="text-align:center; color: var(--text-muted); font-weight:700;">↓</div>
+            <div style="background:var(--bg-secondary); padding:10px; border-radius:6px; border:1px solid var(--border-color);">
+              <strong style="color: var(--text-primary); display:block; margin-bottom:2px;">Nutritional Adequacy</strong>
+              Verify normal albumin to prevent chronic perianal wound defects.
+            </div>
+            <div style="text-align:center; color: var(--text-muted); font-weight:700;">↓</div>
+            <div style="background:rgba(16, 185, 129, 0.08); padding:10px; border-radius:6px; border:1px solid rgba(16, 185, 129, 0.2);">
+              <strong style="color: #10b981; display:block; margin-bottom:2px;">Multidisciplinary Sign-off</strong>
+              Documented gastroenterology consent prior to operating room booking.
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar-card">
+          <h3>📊 Amsterdam II Criteria (Lynch)</h3>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 20px;">Lynch syndrome clinical surveillance criteria cuts.</p>
+          <div style="text-align: left; font-family: 'Inter', sans-serif; font-size: 0.85rem; display: flex; flex-direction: column; gap: 12px;">
+            <div style="border-bottom: 1px solid var(--border-color); padding-bottom: 8px;">
+              <strong style="color: var(--text-primary); display: block;">&ge;3 Relatives</strong>
+              <span style="color: var(--text-secondary); line-height: 1.4;">At least 3 relatives with Lynch-associated cancers.</span>
+            </div>
+            <div style="border-bottom: 1px solid var(--border-color); padding-bottom: 8px;">
+              <strong style="color: var(--text-primary); display: block;">2 Generations</strong>
+              <span style="color: var(--text-secondary); line-height: 1.4;">Associated cancers must span at least 2 successive generations.</span>
+            </div>
+            <div>
+              <strong style="color: var(--text-primary); display: block;">1 Diagnosed &lt; 50y</strong>
+              <span style="color: var(--text-secondary); line-height: 1.4;">At least one relative diagnosed before the age of 50 years. FAP ruled out.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar-card">
+          <h3>📖 Related Playbook Notes</h3>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 20px;">Deep dive into standard operations and inflammatory procedures.</p>
+          <div class="sidebar-book-list" style="gap: 15px; text-align: left;">
+            <a href="post-cholecystectomy-bile-leak.html" class="sb-book" style="border: 1px solid var(--border-color); padding: 12px; border-radius: 8px; background: var(--bg-secondary); transition: all 0.2s ease;">
+              <strong style="font-family:'Inter',sans-serif; font-size:0.85rem; color: var(--text-primary); display: block; margin-bottom: 4px;">Post-Cholecystectomy Bile Leak</strong>
+              <span style="font-size: 0.75rem; color: var(--text-secondary); line-height: 1.3;">Compare biliary fistula leaks, classify leak locations, and coordinate endoscopic interventions.</span>
+            </a>
+            
+            <a href="../notes/operative_approach.html" class="sb-book" style="border: 1px solid var(--border-color); padding: 12px; border-radius: 8px; background: var(--bg-secondary); transition: all 0.2s ease;">
+              <strong style="font-family:'Inter',sans-serif; font-size:0.85rem; color: var(--text-primary); display: block; margin-bottom: 4px;">Operative Playbook</strong>
+              <span style="font-size: 0.75rem; color: var(--text-secondary); line-height: 1.3;">Read complete hemicolectomy, TME, and IPAA/J-pouch procedural guidelines.</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="sidebar-card" style="border-left: 4px solid var(--brand-gold);">
+          <h3>📢 Join Surgical Insight Hub</h3>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 20px;">Get real-time emergency clinical pearls, trial updates, and high-yield MCQs direct to your phone.</p>
+          <a href="https://t.me/sugicalInsightHub" target="_blank" class="download-tg" style="width: 100%; justify-content: center; margin-top: 10px;">
+            <svg viewBox="0 0 24 24" style="width:18px; height:18px; fill:currentColor; margin-right:6px;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.91-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+            Join Telegram Channel
+          </a>
+        </div>
+      </aside>
+    </div>
+  </article>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="nav-logo-img" style="width:36px; height:36px; margin-bottom:.8rem;">
+          <img src="../assets/images/Surgical_Insight_Hub_Logo.png" alt="SIH">
+        </div>
+        <div style="font-weight:800; font-size:1.1rem; color:var(--text-primary);">Surgical Insight Hub</div>
+        <p style="font-size:.85rem; color:var(--text-secondary); margin-top:.5rem; line-height:1.5;">Elevating surgical education through evidence-based monographs, interactive arenas, and dynamic clinical discussions.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Platform</h4>
+        <a href="../notes.html">Clinical Notes</a>
+        <a href="../notes/operative_approach.html">Operative Playbook</a>
+        <a href="../arena.html">MCQ Arena</a>
+        <a href="../surgery-talk.html">Surgery Talk</a>
+      </div>
+      <div class="footer-links">
+        <h4>Connect</h4>
+        <a href="https://t.me/sugicalInsightHub" target="_blank">Telegram Channel</a>
+        <a href="https://www.youtube.com/@SurgicalInsightHub" target="_blank">YouTube Library</a>
+        <a href="../about.html">About Us</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; <span id="year"></span> Surgical Insight Hub. All rights reserved. Not medical advice.
+    </div>
+  </footer>
+
+  <script src="../js/navigation.js"></script>
+  <script src="../js/nav-pill.js"></script>
+  
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const toggle = document.getElementById('themeToggle');
+    const root = document.documentElement;
+    const moon = document.getElementById('moonIcon');
+    const sun = document.getElementById('sunIcon');
+
+    function updateIcons(theme) {
+      if(theme === 'dark') {
+        moon.style.display = 'none';
+        sun.style.display = 'block';
+      } else {
+        moon.style.display = 'block';
+        sun.style.display = 'none';
+      }
+    }
+    updateIcons(savedTheme);
+
+    toggle.addEventListener('click', () => {
+      const current = root.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      localStorage.setItem('sih-theme', next);
+      updateIcons(next);
+    });
+    
+    function openMobNav() {
+      document.getElementById('mobNavOverlay').classList.add('active');
+      document.getElementById('mobNavSheet').classList.add('active');
+    }
+    function closeMobNav() {
+      document.getElementById('mobNavOverlay').classList.remove('active');
+      document.getElementById('mobNavSheet').classList.remove('active');
+    }
+    let startY = 0;
+    const sheet = document.getElementById('mobNavSheet');
+    sheet.addEventListener('touchstart', e => {
+      startY = e.touches[0].clientY;
+    });
+    sheet.addEventListener('touchmove', e => {
+      const y = e.touches[0].clientY;
+      if (y > startY + 50) closeMobNav();
+    });
+
+    /* Monograph Tab Switcher Logic */
+    function showMonoTab(tabIdx) {
+      const tabs = document.querySelectorAll('.monograph-tab-btn');
+      tabs.forEach((tab, idx) => {
+        if (idx === tabIdx - 1) tab.classList.add('active');
+        else tab.classList.remove('active');
+      });
+      
+      const contents = document.querySelectorAll('.monograph-content');
+      contents.forEach((content, idx) => {
+        if (idx === tabIdx - 1) content.classList.add('active');
+        else content.classList.remove('active');
+      });
+    }
+  </script>
+</body>
+</html>
