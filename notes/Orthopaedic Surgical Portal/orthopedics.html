@@ -253,12 +253,37 @@
     align-items: center;
     justify-content: center;
     box-shadow: var(--shadow-sm);
+    position: relative;
   }
   .drawer-image-wrap img {
     width: 100%;
     height: 100%;
     object-fit: contain;
     display: block;
+  }
+  
+  /* Classmorphic source credit overlay badge */
+  .img-credit-badge {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    background: rgba(18, 11, 8, 0.65);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: rgba(240, 208, 128, 0.95);
+    border: 1px solid rgba(240, 208, 128, 0.25);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    pointer-events: none;
+    z-index: 10;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    transition: opacity 0.3s ease-in-out;
   }
 
   .drawer-content-section {
@@ -1463,7 +1488,7 @@
       `;
     }
 
-    // Grid Renderer - Loads Premium self-contained SVGs preventing any external copyright hotlinking
+    // Grid Renderer - Loads Premium self-contained SVGs with OrthoFixar images layered on top + attribution badge
     function renderGrid(filter = 'all') {
       const grid = document.getElementById('approachesGrid');
       grid.innerHTML = '';
@@ -1478,8 +1503,10 @@
         card.onclick = () => openDrawer(item.id);
         
         card.innerHTML = `
-          <div class="ac-img-wrap">
+          <div class="ac-img-wrap" style="position: relative; overflow: hidden; background: var(--bg-secondary);">
             ${getSurgicalPortalSVG(item.category, item.title)}
+            <img src="${item.image}" alt="${item.title}" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 0.4s ease-in-out;" onload="this.style.opacity='1'; this.nextElementSibling.style.opacity='1';" onerror="this.style.display='none';">
+            <span class="img-credit-badge" style="opacity: 0;">📷 orthofixar.com</span>
           </div>
           <div class="ac-content">
             <div>
@@ -1512,9 +1539,15 @@
       document.getElementById('drawerKicker').innerText = item.kicker;
       document.getElementById('drawerTitle').innerText = item.title;
       
-      // Setup image section with regional SVG
+      // Setup image section with seamless fallback and overlay attribution
       const imgWrap = document.getElementById('drawerImageWrap');
-      imgWrap.innerHTML = getSurgicalPortalSVG(item.category, item.title);
+      imgWrap.innerHTML = `
+        <div style="position: relative; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+          ${getSurgicalPortalSVG(item.category, item.title)}
+          <img id="drawerImage" src="${item.image}" alt="${item.title}" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; opacity: 0; transition: opacity 0.4s ease-in-out;" onload="this.style.opacity='1'; this.nextElementSibling.style.opacity='1';" onerror="this.style.display='none';">
+          <span class="img-credit-badge" style="opacity: 0;">📷 orthofixar.com</span>
+        </div>
+      `;
       
       const originalUrl = APPROACH_URLS[id] || 'https://orthofixar.com/approach/';
       
