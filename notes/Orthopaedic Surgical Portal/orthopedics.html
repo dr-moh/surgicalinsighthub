@@ -244,23 +244,14 @@
   
   .drawer-image-wrap {
     width: 100%;
-    max-height: 320px;
+    height: 320px;
     border-radius: 16px;
     overflow: hidden;
     border: 1px solid var(--border-color);
     background: var(--bg-card);
     margin-bottom: 28px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     box-shadow: var(--shadow-sm);
     position: relative;
-  }
-  .drawer-image-wrap img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    display: block;
   }
   
   /* Classmorphic source credit overlay badge */
@@ -285,6 +276,98 @@
     align-items: center;
     gap: 4px;
     transition: opacity 0.3s ease-in-out;
+  }
+
+  /* Premium Image Carousel Styles */
+  .carousel-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+  .carousel-track {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .carousel-slide {
+    min-width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-secondary);
+  }
+  .carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    z-index: 2;
+  }
+  .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(18, 11, 8, 0.6);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    color: var(--brand-gold);
+    border: 1px solid rgba(240, 208, 128, 0.25);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: 800;
+    transition: all 0.2s ease-in-out;
+    z-index: 12;
+  }
+  .carousel-btn:hover {
+    background: var(--brand-gold);
+    color: #120b08;
+    border-color: var(--brand-gold);
+    box-shadow: 0 0 10px rgba(240, 208, 128, 0.35);
+  }
+  .carousel-btn.prev { left: 12px; }
+  .carousel-btn.next { right: 12px; }
+  .carousel-btn:disabled {
+    opacity: 0.3;
+    pointer-events: none;
+  }
+  .carousel-dots {
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 6px;
+    z-index: 12;
+    background: rgba(18, 11, 8, 0.55);
+    padding: 5px 10px;
+    border-radius: 20px;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border: 1px solid rgba(240, 208, 128, 0.15);
+  }
+  .carousel-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(240, 208, 128, 0.35);
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .carousel-dot.active {
+    background: var(--brand-gold);
+    width: 14px;
+    border-radius: 4px;
   }
 
   .drawer-content-section {
@@ -515,7 +598,6 @@
         title: 'Shoulder Deltopectoral Approach',
         summary: 'The classic workhorse approach to the shoulder. Provides excellent exposure of the glenohumeral joint, proximal humerus, and rotator cuff.',
         image: 'https://orthofixar.com/wp-content/uploads/2021/06/Shoulder-Deltopectoral-Approach.jpg',
-        ,
         imagesList: [
           'https://orthofixar.com/wp-content/uploads/Deltopectoral-Approach-to-the-Shoulder-1.jpg',
           'https://orthofixar.com/wp-content/uploads/Deltopectoral-Approach-to-the-Shoulder-2.jpg',
@@ -564,7 +646,6 @@
         title: 'Lateral Approach (Deltoid Split)',
         summary: 'Direct lateral exposure to access the subacromial space and the proximal humerus. Stay alert to the axillary nerve path.',
         image: 'https://orthofixar.com/wp-content/uploads/2021/06/Lateral-Approach-to-the-shoulder.jpg',
-        ,
         imagesList: [
           'https://orthofixar.com/wp-content/uploads/Lateral-Approach-to-the-shoulder-2.webp',
           'https://orthofixar.com/wp-content/uploads/Lateral-Approach-to-the-shoulder-3.webp',
@@ -606,7 +687,6 @@
         title: 'Anterior Approach to the Clavicle',
         summary: 'Direct exposure of the subcutaneous border of the clavicle for fixation or osteotomy.',
         image: 'https://orthofixar.com/wp-content/uploads/2021/06/Clavicle-Anatomy.jpg',
-        ,
         imagesList: [
           'https://orthofixar.com/wp-content/uploads/Clavicle-Fractures-1024x576.jpg',
           'https://orthofixar.com/wp-content/uploads/Anterior-Approach-to-the-Clavicle-1.png',
@@ -646,7 +726,6 @@
         title: 'Posterior Approach (Judet Approach)',
         summary: 'An extensive posterior exposure of the scapular blade and posterior glenohumeral joint.',
         image: 'https://orthofixar.com/wp-content/uploads/2021/06/Posterior-Approach-to-the-shoulder.jpg',
-        ,
         imagesList: [
           'https://orthofixar.com/wp-content/uploads/Posterior-Approach-to-the-shoulder-2.png',
           'https://orthofixar.com/wp-content/uploads/Posterior-Approach-to-the-shoulder-3.png',
@@ -696,7 +775,6 @@
         title: 'Posterior Approach (Olecranon Osteotomy)',
         summary: 'The standard extensile approach to the distal humerus articular surface. Employs a controlled bony osteotomy.',
         image: 'https://orthofixar.com/wp-content/uploads/2021/06/Posterior-Approach-to-the-Elbow.jpg',
-        ,
         imagesList: [
           'https://orthofixar.com/wp-content/uploads/Posterior-Approach-to-the-Elbow-2-1024x576.jpg',
           'https://orthofixar.com/wp-content/uploads/Posterior-Approach-to-the-Elbow-3-1024x576.jpg',
@@ -739,7 +817,6 @@
         title: 'Lateral Approach (Kocher Approach)',
         summary: 'Direct lateral exposure to access the radial head, capitellum, and lateral ligament complex.',
         image: 'https://orthofixar.com/wp-content/uploads/2021/06/Lateral-Approach-to-the-Elbow.jpg',
-        ,
         imagesList: [
           'https://orthofixar.com/wp-content/uploads/Posterolateral-Approach-to-the-Elbow-2-1024x576.png',
           'https://orthofixar.com/wp-content/uploads/Posterolateral-Approach-to-the-Elbow-3-1024x576.png',
@@ -783,7 +860,6 @@
         title: 'Medial Approach to the Elbow',
         summary: 'Access to the medial collateral ligament, ulnar nerve, and coronoid process.',
         image: 'https://orthofixar.com/wp-content/uploads/2021/06/Medial-Approach-to-the-Elbow.jpg',
-        ,
         imagesList: [
           'https://orthofixar.com/wp-content/uploads/Medial-Approach-to-the-Elbow-2-1024x576.png',
           'https://orthofixar.com/wp-content/uploads/Medial-Approach-to-the-Elbow-3-1024x576.png',
@@ -831,7 +907,6 @@
         title: 'Henry\'s Volar Approach to Forearm',
         summary: 'The standard anterior approach to the radius. Offers extensive visibility from the radial neck down to the wrist joint.',
         image: 'https://orthofixar.com/wp-content/uploads/2021/06/Volar-Approach-to-the-Wrist.jpg',
-        ,
         imagesList: [
           'https://orthofixar.com/wp-content/uploads/Volar-Approach-to-Radius-Henry-approach-2-1024x576.png',
           'https://orthofixar.com/wp-content/uploads/Volar-Approach-to-Radius-Henry-approach-3-1024x576.png',
@@ -881,7 +956,6 @@
         title: 'Thompson\'s Dorsal Approach',
         summary: 'Excellent exposure of the posterior and middle thirds of the radial shaft. PIN protection is mandatory.',
         image: 'https://orthofixar.com/wp-content/uploads/2021/06/Dorsal-Approach-to-the-Wrist.jpg',
-        ,
         imagesList: [
           'https://orthofixar.com/wp-content/uploads/Dorsal-Approach-to-Radius-patient-position-1024x576.webp',
           'https://orthofixar.com/wp-content/uploads/thompson-approach-Incision-1024x576.webp',
@@ -927,7 +1001,6 @@
         title: 'Subcutaneous Approach to Ulnar Shaft',
         summary: 'A direct approach to the ulna, utilizing its subcutaneously palpable posterior border.',
         image: 'https://orthofixar.com/wp-content/uploads/2021/06/Ulna-Subcutaneous-Border.jpg',
-        ,
         imagesList: [
           'https://orthofixar.com/wp-content/uploads/Subcutaneous-Approach-to-Ulnar-Shaft-2-1024x576.jpg',
           'https://orthofixar.com/wp-content/uploads/Subcutaneous-Approach-to-Ulnar-Shaft-3-1024x576.jpg',
@@ -971,7 +1044,6 @@
         title: 'Volar Approach to the Wrist',
         summary: 'Excellent exposure for distal radius fixation and median nerve decompression.',
         image: 'https://orthofixar.com/wp-content/uploads/2021/06/Volar-Approach-to-the-Wrist.jpg',
-        ,
         imagesList: [
           'https://orthofixar.com/wp-content/uploads/Volar-Approach-to-the-Wrist-2-1024x576.jpg',
           'https://orthofixar.com/wp-content/uploads/Volar-Approach-to-the-Wrist-3-1024x576.jpg',
@@ -1020,7 +1092,6 @@
         title: 'Smith-Petersen Anterior Approach',
         summary: 'The classic anterior approach to the hip joint. Exploits a true double internervous plane, minimizing muscle damage.',
         image: 'https://orthofixar.com/wp-content/uploads/2021/04/Anterolateral-hip-approach.jpg',
-        ,
         imagesList: [
           'https://orthofixar.com/wp-content/uploads/Anterior-Approach-to-Hip-Joint-2-1024x576.jpg',
           'https://orthofixar.com/wp-content/uploads/Anterior-Approach-to-Hip-Joint-3-1024x576.jpg',
@@ -1070,7 +1141,6 @@
         title: 'Watson-Jones Anterolateral Approach',
         summary: 'Excellent exposure for hip hemiarthroplasty and primary THA. Safer than direct lateral.',
         image: 'https://orthofixar.com/wp-content/uploads/2021/04/Watson-Jones-Approach.jpg',
-        ,
         imagesList: [
           'https://orthofixar.com/wp-content/uploads/Anterolateral-Approach-to-the-Hip-2-1024x576.jpg',
           'https://orthofixar.com/wp-content/uploads/Anterolateral-Approach-to-the-Hip-3-1024x576.jpg',
@@ -1121,7 +1191,6 @@
         title: 'Hardinge Direct Lateral Approach',
         summary: 'Provides unparalleled access to the hip joint with an extremely low dislocation rate. Involves splitting the gluteus medius.',
         image: 'https://orthofixar.com/wp-content/uploads/2021/04/Direct-Lateral-Hip-Approach.jpg',
-        ,
         imagesList: [
           'https://orthofixar.com/wp-content/uploads/Hardinge-Approach-to-Hip-Joint-Direct-Lateral-Approach-2-1024x576.jpg',
           'https://orthofixar.com/wp-content/uploads/Hardinge-Approach-to-Hip-Joint-Direct-Lateral-Approach-3-1024x576.jpg',
@@ -1163,7 +1232,6 @@
         title: 'Kocher-Langenbeck Posterior Approach',
         summary: 'The most commonly utilized approach for total hip arthroplasty and acetabular fracture fixation. Provides excellent visibility of the posterior wall.',
         image: 'https://orthofixar.com/wp-content/uploads/2021/04/Posterior-hip-approach.jpg',
-        ,
         imagesList: [
           'https://orthofixar.com/wp-content/uploads/Posterior-Approach-to-Hip-Joint-Moore-Approach-2-1024x576.jpg',
           'https://orthofixar.com/wp-content/uploads/Posterior-Approach-to-Hip-Joint-Moore-Approach-3-1024x576.jpg',
@@ -1209,7 +1277,6 @@
         title: 'Anterior Approach to Pubic Symphysis',
         summary: 'Direct exposure of the pubic symphysis for unstable pelvic ring injuries.',
         image: 'https://orthofixar.com/wp-content/uploads/2021/04/Anterior-Approach-to-Pubic-Symphysis.jpg',
-        ,
         imagesList: [
           'https://orthofixar.com/wp-content/uploads/Anterior-Approach-to-Pubic-Symphysis-2.jpg',
           'https://orthofixar.com/wp-content/uploads/Anterior-Approach-to-Pubic-Symphysis-3.jpg',
@@ -1252,7 +1319,6 @@
         title: 'Anteromedial Parapatellar Approach',
         summary: 'The universal workhorse approach for Total Knee Arthroplasty (TKA). Excellent extensile exposure.',
         image: 'https://orthofixar.com/wp-content/uploads/2021/06/Anteromedial-Approach-to-the-Knee.jpg',
-        ,
         imagesList: [
           'https://orthofixar.com/wp-content/uploads/Medial-Approach-to-Knee-Joint-2-1024x576.jpg',
           'https://orthofixar.com/wp-content/uploads/Medial-Approach-to-Knee-Joint-3-1024x576.jpg',
@@ -1297,7 +1363,6 @@
         title: 'Lateral Approach to Knee Joint',
         summary: 'Excellent exposure for valgus knee total arthroplasty and PLC reconstructions.',
         image: 'https://orthofixar.com/wp-content/uploads/2021/06/Lateral-Approach-to-Knee-Joint.jpg',
-        ,
         imagesList: [
           'https://orthofixar.com/wp-content/uploads/Lateral-Approach-to-Knee-Joint-2-1-1024x576.jpg',
           'https://orthofixar.com/wp-content/uploads/Lateral-Approach-to-Knee-Joint-3-1024x576.jpg',
@@ -1341,7 +1406,6 @@
         title: 'Approach to the Fibula',
         summary: 'A classic extensile exposure providing access to the entire length of the fibula. Commonly indicated for ORIF of fibular fractures, bone grafting, and leg compartment release.',
         image: 'https://orthofixar.com/wp-content/uploads/2021/04/Approach-to-the-Fibula.jpg',
-        ,
         imagesList: [
           'https://orthofixar.com/wp-content/uploads/Approach-to-the-Fibula-2-1024x576.jpg',
           'https://orthofixar.com/wp-content/uploads/Approach-to-the-Fibula-3-1024x576.jpg',
@@ -1388,7 +1452,6 @@
         title: 'Posteromedial Approach to Tibia',
         summary: 'Excellent exposure for posteromedial plating of tibial plateau fractures and osteotomies.',
         image: 'https://orthofixar.com/wp-content/uploads/2021/04/Posteromedial-Approach-to-Tibia.jpg',
-        ,
         imagesList: [
           'https://orthofixar.com/wp-content/uploads/Anterior-Approach-to-Tibia-2-1024x576.jpg',
           'https://orthofixar.com/wp-content/uploads/Anterior-Approach-to-Tibia-3-1024x576.jpg',
@@ -1430,7 +1493,6 @@
         title: 'Posterolateral Approach to Ankle Joint',
         summary: 'The gold standard approach for open reduction and internal fixation of posterior malleolar tibial fractures, subtalar arthrodesis, and posterior capsulotomy.',
         image: 'https://orthofixar.com/wp-content/uploads/2021/04/Posterolateral-approach-to-ankle-joint.jpg',
-        ,
         imagesList: [
           'https://orthofixar.com/wp-content/uploads/Posterolateral-Approach-to-Ankle-Joint-2.jpg',
           'https://orthofixar.com/wp-content/uploads/Posterolateral-Approach-to-Ankle-Joint-4.jpg',
@@ -1476,7 +1538,6 @@
         title: 'Anterolateral Approach to Ankle Joint',
         summary: 'Provides excellent exposure of the lateral ankle joint, talus, and lateral ligaments.',
         image: 'https://orthofixar.com/wp-content/uploads/2021/04/Anterolateral-Approach-to-Ankle.jpg',
-        ,
         imagesList: [
           'https://orthofixar.com/wp-content/uploads/Anterolateral-Approach-to-Ankle-Joint-2-1024x576.jpg',
           'https://orthofixar.com/wp-content/uploads/Anterolateral-Approach-to-Ankle-Joint-3-1024x576.jpg',
@@ -1519,7 +1580,6 @@
         title: 'Ollier Approach to Sinus Tarsi',
         summary: 'Excellent exposure for triple arthrodesis and calcaneal osteotomies. Minimal skin complications.',
         image: 'https://orthofixar.com/wp-content/uploads/2021/10/Ollier-Approach-to-the-Tarsus.jpg',
-        ,
         imagesList: [
           'https://orthofixar.com/wp-content/uploads/Ollier-Approach-to-the-Tarsus-2-1024x576.jpg',
           'https://orthofixar.com/wp-content/uploads/Ollier-Approach-to-the-Tarsus-3-1024x576.jpg'
@@ -1558,7 +1618,6 @@
         title: 'Lateral Approach to Calcaneus',
         summary: 'The extensile lateral gold standard for open reduction and internal fixation of displaced calcaneus fractures.',
         image: 'https://orthofixar.com/wp-content/uploads/2021/08/Lateral-Approach-to-Calcaneus.jpg',
-        ,
         imagesList: [
           'https://orthofixar.com/wp-content/uploads/Lateral-Approach-to-Calcaneus-2-1024x576.jpg',
           'https://orthofixar.com/wp-content/uploads/Lateral-Approach-to-Calcaneus-3-1024x576.jpg',
@@ -1770,6 +1829,40 @@
       renderGrid(cat);
     }
 
+    // Carousel state and control functions
+    let currentSlide = 0;
+    let totalSlides = 0;
+
+    function updateCarousel() {
+      const track = document.getElementById('carouselTrack');
+      if (!track) return;
+      track.style.transform = `translateX(-${currentSlide * 100}%)`;
+      
+      const prevBtn = document.getElementById('carouselPrevBtn');
+      const nextBtn = document.getElementById('carouselNextBtn');
+      if (prevBtn) prevBtn.disabled = (currentSlide === 0);
+      if (nextBtn) nextBtn.disabled = (currentSlide === totalSlides - 1);
+      
+      const dots = document.querySelectorAll('.carousel-dot');
+      dots.forEach((dot, idx) => {
+        if (idx === currentSlide) {
+          dot.classList.add('active');
+        } else {
+          dot.classList.remove('active');
+        }
+      });
+    }
+
+    function moveCarousel(direction) {
+      currentSlide = Math.max(0, Math.min(totalSlides - 1, currentSlide + direction));
+      updateCarousel();
+    }
+
+    function setCarouselSlide(index) {
+      currentSlide = index;
+      updateCarousel();
+    }
+
     // Open Drawer & Populate Content Dynamically
     function openDrawer(id) {
       const item = APPROACHES_DATA.find(x => x.id === id);
@@ -1780,13 +1873,55 @@
       
       // Setup image section with seamless fallback and overlay attribution
       const imgWrap = document.getElementById('drawerImageWrap');
-      imgWrap.innerHTML = `
-        <div style="position: relative; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; overflow: hidden;">
-          ${getSurgicalPortalSVG(item.category, item.title)}
-          <img id="drawerImage" src="${item.image}" alt="${item.title}" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; opacity: 0; transition: opacity 0.4s ease-in-out;" onload="this.style.opacity='1'; this.nextElementSibling.style.opacity='1';" onerror="this.style.display='none';">
-          <span class="img-credit-badge" style="opacity: 0;">📷 orthofixar.com</span>
-        </div>
-      `;
+      
+      let images = [];
+      if (item.imagesList && item.imagesList.length > 0) {
+        images = item.imagesList;
+      } else if (item.image) {
+        images = [item.image];
+      }
+      
+      currentSlide = 0;
+      totalSlides = images.length;
+      
+      if (totalSlides === 0) {
+        imgWrap.innerHTML = `
+          <div style="position: relative; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; overflow: hidden; background: var(--bg-secondary);">
+            ${getSurgicalPortalSVG(item.category, item.title)}
+          </div>
+        `;
+      } else {
+        let slidesHtml = '';
+        let dotsHtml = '';
+        
+        images.forEach((imgUrl, idx) => {
+          slidesHtml += `
+            <div class="carousel-slide">
+              ${getSurgicalPortalSVG(item.category, item.title)}
+              <img src="${imgUrl}" alt="${item.title} - Image ${idx + 1}" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; opacity: 0; transition: opacity 0.4s ease-in-out;" onload="this.style.opacity='1'; this.nextElementSibling.style.opacity='1';" onerror="this.style.display='none';">
+              <span class="img-credit-badge" style="opacity: 0;">📷 orthofixar.com</span>
+            </div>
+          `;
+          dotsHtml += `<span class="carousel-dot ${idx === 0 ? 'active' : ''}" onclick="setCarouselSlide(${idx})"></span>`;
+        });
+        
+        const showControls = totalSlides > 1;
+        
+        imgWrap.innerHTML = `
+          <div class="carousel-container">
+            <div class="carousel-track" id="carouselTrack" style="transform: translateX(0%);">
+              ${slidesHtml}
+            </div>
+            ${showControls ? `
+              <button class="carousel-btn prev" id="carouselPrevBtn" onclick="moveCarousel(-1)" disabled>&larr;</button>
+              <button class="carousel-btn next" id="carouselNextBtn" onclick="moveCarousel(1)">&rarr;</button>
+              <div class="carousel-dots" id="carouselDots">
+                ${dotsHtml}
+              </div>
+            ` : ''}
+          </div>
+        `;
+      }
       
       const originalUrl = APPROACH_URLS[id] || 'https://orthofixar.com/approach/';
       
