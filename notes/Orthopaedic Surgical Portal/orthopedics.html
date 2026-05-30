@@ -467,7 +467,10 @@
   </div>
 
   <footer style="padding: 60px 5%; border-top: 1px solid var(--border-color); text-align: center; background: var(--bg-secondary);">
-    <p style="color: var(--text-muted); font-size: 0.85rem; font-weight: 700;">© 2026 Surgical Insight Hub · Orthopaedic Specialty Series</p>
+    <p style="color: var(--text-muted); font-size: 0.85rem; font-weight: 700; margin-bottom: 8px;">© 2026 Surgical Insight Hub · Orthopaedic Specialty Series</p>
+    <p style="color: var(--text-secondary); font-size: 0.82rem; max-width: 600px; margin: 0 auto 12px; line-height: 1.6;">
+      Specialty orthopedic surgical approaches in this portal are summarized for high-yield educational reference. We gratefully credit the excellent clinical guides from <a href="https://orthofixar.com" target="_blank" style="color: var(--brand-gold); text-decoration: none; font-weight: 700;">OrthoFixar</a> and their official Telegram community <a href="https://t.me/ortho_ar" target="_blank" style="color: var(--brand-gold); text-decoration: none; font-weight: 700;">@ortho_ar</a>. Please visit their official platforms for full textbooks, diagrams, and reference materials.
+    </p>
     <a href="../../notes.html" style="color: var(--brand-gold); font-weight: 700; text-decoration: none; font-size: 0.85rem; display: inline-block; margin-top: 12px;">← Back to Main Library</a>
   </footer>
 
@@ -1324,29 +1327,143 @@
       }
     ];
 
-    // Image loader error fallback handler
-    function handleImageError(img) {
-      const parent = img.parentElement;
-      img.style.display = 'none';
+    // Exact mappings to original OrthoFixar web articles for source credibility and copyright compliance
+    const APPROACH_URLS = {
+      'shoulder-deltopectoral': 'https://orthofixar.com/approach/deltopectoral-approach-to-the-shoulder/',
+      'shoulder-deltoid-split': 'https://orthofixar.com/approach/lateral-approach-to-the-shoulder/',
+      'clavicle-anterior': 'https://orthofixar.com/approach/anterior-approach-to-the-clavicle/',
+      'shoulder-judet': 'https://orthofixar.com/approach/posterior-approach-to-the-shoulder/',
+      'elbow-posterior': 'https://orthofixar.com/approach/posterior-approach-to-the-elbow/',
+      'elbow-kocher': 'https://orthofixar.com/approach/posterolateral-approach-to-the-elbow/',
+      'elbow-medial': 'https://orthofixar.com/approach/medial-approach-to-the-elbow-joint/',
+      'henry-volar-forearm': 'https://orthofixar.com/approach/volar-approach-to-radius/',
+      'forearm-thompson': 'https://orthofixar.com/approach/dorsal-approach-to-radius/',
+      'forearm-ulna': 'https://orthofixar.com/approach/subcutaneous-approach-to-ulnar-shaft/',
+      'wrist-volar': 'https://orthofixar.com/approach/volar-approach-to-the-wrist/',
+      'hip-anterior-sp': 'https://orthofixar.com/approach/anterior-approach-to-hip-joint/',
+      'hip-anterolateral-wj': 'https://orthofixar.com/approach/anterolateral-approach-to-hip-joint/',
+      'hip-direct-lateral-hardinge': 'https://orthofixar.com/approach/hardinge-approach-direct-lateral-approach/',
+      'hip-posterior-kl': 'https://orthofixar.com/approach/posterior-approach-to-hip-moore-approach/',
+      'pelvis-pubic-symphysis': 'https://orthofixar.com/approach/anterior-approach-to-pubic-symphysis/',
+      'knee-anteromedial': 'https://orthofixar.com/approach/medial-approach-to-knee-joint/',
+      'knee-lateral': 'https://orthofixar.com/approach/lateral-approach-to-knee-joint/',
+      'approach-to-the-fibula': 'https://orthofixar.com/approach/approach-to-the-fibula/',
+      'tibia-posteromedial': 'https://orthofixar.com/approach/posteromedial-approach-to-tibia/',
+      'posterolateral-ankle': 'https://orthofixar.com/approach/posterolateral-approach-to-ankle-joint/',
+      'ankle-anterolateral': 'https://orthofixar.com/approach/anterolateral-approach-to-ankle-joint/',
+      'ankle-ollier': 'https://orthofixar.com/approach/ollier-approach-to-the-tarsus/',
+      'calcaneus-lateral': 'https://orthofixar.com/approach/lateral-approach-to-calcaneus/'
+    };
+
+    // Returns a stunning, premium, responsive anatomical vector SVG based on surgical region
+    function getSurgicalPortalSVG(category, title) {
+      const gradientId = `grad-${category}-${Math.random().toString(36).substr(2, 9)}`;
+      const secondaryColor = "var(--brand-gold)";
+      const label = category.toUpperCase().replace('-', ' & ');
       
-      // Remove any old fallbacks
-      const oldFallback = parent.querySelector('.anatomy-placeholder-svg');
-      if (oldFallback) oldFallback.remove();
+      let pathData = "";
+      let detailCircles = "";
       
-      const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-      svg.setAttribute("viewBox", "0 0 200 120");
-      svg.setAttribute("class", "anatomy-placeholder-svg");
-      svg.innerHTML = `
-        <rect width="100%" height="100%" fill="var(--bg-secondary)"/>
-        <text x="50%" y="42%" dominant-baseline="middle" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="800" fill="var(--text-secondary)">ANATOMY GUIDE</text>
-        <text x="50%" y="60%" dominant-baseline="middle" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" font-weight="600" fill="var(--brand-gold)">[ Illustration Preview ]</text>
-        <path d="M50 85 Q100 45 150 85" stroke="var(--border-hover)" stroke-width="1.5" fill="none" stroke-dasharray="3 3"/>
-        <circle cx="100" cy="65" r="5" fill="var(--brand-gold)"/>
+      if (category === 'shoulder') {
+        pathData = `
+          M 40 45 Q 60 25 80 45 
+          T 120 45 
+          M 120 45 Q 140 35 160 55 
+          Q 170 75 150 95 
+          Q 130 105 110 90 
+          Z 
+          M 90 45 Q 100 65 95 85
+        `;
+        detailCircles = `<circle cx="150" cy="55" r="4" fill="${secondaryColor}" opacity="0.8"/>`;
+      } else if (category === 'elbow') {
+        pathData = `
+          M 50 35 L 70 75 L 100 75 L 120 35
+          M 70 75 Q 85 105 100 75
+          M 85 75 Q 85 115 85 115
+        `;
+        detailCircles = `<circle cx="85" cy="75" r="4" fill="${secondaryColor}" opacity="0.8"/>`;
+      } else if (category === 'wrist-hand') {
+        pathData = `
+          M 70 110 Q 75 80 80 60
+          Q 90 60 100 65
+          Q 110 65 115 110
+          M 80 60 Q 65 40 60 20
+          M 90 60 Q 90 35 90 15
+          M 100 65 Q 115 45 125 25
+        `;
+        detailCircles = `<circle cx="90" cy="60" r="3" fill="${secondaryColor}"/>`;
+      } else if (category === 'hip-pelvis') {
+        pathData = `
+          M 50 35 Q 100 20 150 35
+          Q 135 70 150 105
+          M 50 35 Q 65 70 50 105
+          M 100 25 Q 100 115 100 115
+          M 75 65 A 25 25 0 1 0 125 65
+        `;
+        detailCircles = `<circle cx="100" cy="65" r="5" fill="${secondaryColor}" opacity="0.85"/>`;
+      } else if (category === 'knee') {
+        pathData = `
+          M 70 25 L 70 65 Q 70 90 85 90 Q 100 90 100 65
+          M 100 65 Q 100 90 115 90 Q 130 90 130 25
+          M 100 25 A 15 20 0 1 0 100 65
+        `;
+        detailCircles = `<circle cx="100" cy="45" r="4" fill="${secondaryColor}"/>`;
+      } else if (category === 'tibia-fibula') {
+        pathData = `
+          M 85 20 L 85 110
+          M 115 20 L 115 110
+          M 85 20 Q 100 15 115 20
+          M 85 110 Q 100 115 115 110
+        `;
+        detailCircles = `<circle cx="85" cy="65" r="3" fill="${secondaryColor}"/><circle cx="115" cy="50" r="3" fill="${secondaryColor}"/>`;
+      } else if (category === 'ankle-foot') {
+        pathData = `
+          M 80 20 L 80 75 Q 80 95 100 95 L 150 95 Q 160 95 160 110 L 50 110 Z
+        `;
+        detailCircles = `<circle cx="80" cy="75" r="4" fill="${secondaryColor}"/>`;
+      } else {
+        pathData = `
+          M 100 25 L 160 85 L 140 105 L 60 105 L 40 85 Z
+          M 100 25 L 100 105
+        `;
+        detailCircles = `<circle cx="100" cy="65" r="5" fill="${secondaryColor}"/>`;
+      }
+
+      return `
+        <svg viewBox="0 0 200 120" class="anatomy-placeholder-svg" style="width: 100%; height: 100%; display: block; background: linear-gradient(135deg, #1f0b12 0%, #0d0407 100%);">
+          <defs>
+            <linearGradient id="${gradientId}" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#4a1525" stop-opacity="0.2"/>
+              <stop offset="100%" stop-color="#1f0b12" stop-opacity="0.8"/>
+            </linearGradient>
+            <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
+              <path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(240, 208, 128, 0.03)" stroke-width="0.5"/>
+            </pattern>
+          </defs>
+          
+          <rect width="100%" height="100%" fill="url(#grid)" />
+          <circle cx="100" cy="60" r="50" fill="var(--brand-burgundy)" opacity="0.1" filter="blur(10px)" />
+          
+          <g stroke="rgba(240, 208, 128, 0.25)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="${pathData}" />
+          </g>
+          
+          <g>
+            ${detailCircles}
+            <path d="M 30 85 Q 100 45 170 85" stroke="var(--brand-gold)" stroke-width="1.5" stroke-dasharray="3 3" fill="none" opacity="0.6"/>
+          </g>
+          
+          <rect x="10" y="10" width="180" height="100" fill="none" stroke="rgba(240, 208, 128, 0.08)" stroke-width="1" rx="4" />
+          
+          <text x="16" y="24" font-family="'Inter', sans-serif" font-size="6" font-weight="900" fill="var(--brand-gold)" letter-spacing="0.12em" opacity="0.85">${label} PORTAL</text>
+          <text x="16" y="32" font-family="'Inter', sans-serif" font-size="5" font-weight="600" fill="var(--text-muted)" letter-spacing="0.05em" opacity="0.6">SIH BOARD PREP</text>
+          
+          <path d="M 175 16 L 185 16 M 180 11 L 180 21" stroke="rgba(240, 208, 128, 0.2)" stroke-width="0.75" />
+        </svg>
       `;
-      parent.appendChild(svg);
     }
 
-    // Grid Renderer
+    // Grid Renderer - Loads Premium self-contained SVGs preventing any external copyright hotlinking
     function renderGrid(filter = 'all') {
       const grid = document.getElementById('approachesGrid');
       grid.innerHTML = '';
@@ -1362,7 +1479,7 @@
         
         card.innerHTML = `
           <div class="ac-img-wrap">
-            <img src="${item.image}" alt="${item.title}" onerror="handleImageError(this)">
+            ${getSurgicalPortalSVG(item.category, item.title)}
           </div>
           <div class="ac-content">
             <div>
@@ -1395,13 +1512,33 @@
       document.getElementById('drawerKicker').innerText = item.kicker;
       document.getElementById('drawerTitle').innerText = item.title;
       
-      // Setup image section
+      // Setup image section with regional SVG
       const imgWrap = document.getElementById('drawerImageWrap');
-      imgWrap.innerHTML = `<img id="drawerImage" src="${item.image}" alt="${item.title}" onerror="handleImageError(this)">`;
+      imgWrap.innerHTML = getSurgicalPortalSVG(item.category, item.title);
       
-      // Setup detailed sections
+      const originalUrl = APPROACH_URLS[id] || 'https://orthofixar.com/approach/';
+      
+      // Setup detailed sections with prominent credit citations to avoid copyright issues
       const content = document.getElementById('drawerContent');
       content.innerHTML = `
+        <!-- Premium Source & Credit Citation Box -->
+        <div class="callout pearl" style="margin-top: 0; margin-bottom: 28px; padding: 18px; border-radius: 12px; border-left: 5px solid var(--brand-gold); background: rgba(184, 146, 42, 0.05); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-top: 1px solid rgba(240,208,128,0.1); border-right: 1px solid rgba(240,208,128,0.1); border-bottom: 1px solid rgba(240,208,128,0.1);">
+          <span class="label" style="font-size: 0.7rem; font-weight: 800; color: var(--brand-gold); letter-spacing: 0.05em; margin-bottom: 6px; display: block;">🎓 SOURCE & CREDIT CITATION</span>
+          <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5; margin: 0 0 14px 0;">
+            This high-yield board review monograph is summarized from the excellent, original clinical database of <strong>OrthoFixar</strong>. For complete unabridged text bodies, full surgical figures, and extensive study materials, visit their official resources:
+          </p>
+          <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+            <a href="${originalUrl}" target="_blank" class="fb active" style="padding: 6px 14px; font-size: 0.75rem; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; font-weight: 700; border-radius: 20px; transition: all 0.2s;">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              OrthoFixar Article
+            </a>
+            <a href="https://t.me/ortho_ar" target="_blank" class="fb" style="padding: 6px 14px; font-size: 0.75rem; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; font-weight: 700; border-radius: 20px; transition: all 0.2s; background: rgba(0, 136, 204, 0.08); border-color: rgba(0, 136, 204, 0.3); color: #0088cc;">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.89 8.22l-1.97 9.28c-.15.66-.54.82-1.08.51l-3-2.21-1.45 1.39c-.16.16-.3.3-.61.3l.21-3.05 5.56-5.02c.24-.21-.05-.33-.37-.12l-6.87 4.33-2.96-.92c-.64-.2-.66-.64.14-.95l11.57-4.46c.54-.19 1.01.13.83.94z"/></svg>
+              Telegram Channel
+            </a>
+          </div>
+        </div>
+
         <div class="drawer-content-section">
           <h3>Indications</h3>
           <ul>

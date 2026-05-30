@@ -224,7 +224,7 @@
   
   .big-tabs-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: 24px;
     max-width: 1200px;
     margin: 0 auto 48px;
@@ -433,6 +433,29 @@
       <div class="fc-btn">Open Playbook →</div>
     </div>
   </div>
+
+  <!-- Tab 3 Trigger -->
+  <div class="feature-card tab-trigger" id="trigger-specialty" onclick="switchTab('specialty')">
+    <div class="fc-top">
+      <div class="fc-kicker-row">
+        <div class="fc-kicker">Master Series</div>
+        <div class="fc-badge" style="background:#1B6B45">Interactive Hubs</div>
+      </div>
+      <h2 class="fc-title">Specialty Surgical Portals</h2>
+      <p class="fc-desc">Highly interactive, standalone portals mapping complete surgical approaches and anatomical guides for specific specialties, starting with Orthopaedic Surgical Approaches.</p>
+      <div class="fc-tags">
+        <span class="fc-tag dark">Specialty Portals</span>
+        <span class="fc-tag gold-lt">Interactive SPAs</span>
+        <span class="fc-tag gold-lt">Anatomy Mapping</span>
+        <span class="fc-tag gold-lt">OrthoFixar Standard</span>
+        <span class="fc-tag gold-lt">Surgical Intervals</span>
+      </div>
+    </div>
+    <div class="fc-foot">
+      <div class="fc-foot-text">Specialty Hubs</div>
+      <div class="fc-btn">Open Portals →</div>
+    </div>
+  </div>
 </div>
 
 <!-- ══ TAB 1: HIGH-YIELD NOTES ══ -->
@@ -451,6 +474,16 @@
     More procedures being added. <a href="notes/operative_approach.html" style="color:var(--brand-gold); font-weight:700;">View Full Playbook →</a>
   </div>
 </div><!-- end pane-operative -->
+
+<!-- ══ TAB 3: SPECIALTY PORTALS ══ -->
+<div class="tab-pane" id="pane-specialty">
+  <div class="op-grid" id="specialty-grid">
+    <!-- Cards rendered by js/notes_data.js + renderNotes() below -->
+  </div>
+  <div style="text-align:center; margin: 48px 0 20px; color: var(--text-muted); font-size: 0.85rem;">
+    More specialty portals being added.
+  </div>
+</div><!-- end pane-specialty -->
 
 <!-- REQUEST TOPIC BOX -->
 <section class="request-box-section" style="margin: 80px auto; padding: 0 24px; width: 100%; box-sizing: border-box;">
@@ -600,6 +633,14 @@
         opGrid.appendChild(buildOpCard(note));
       });
     }
+
+    // Specialty portals grid
+    var specialtyGrid = document.getElementById('specialty-grid');
+    if (specialtyGrid && data.specialty) {
+      data.specialty.forEach(function (note) {
+        specialtyGrid.appendChild(buildOpCard(note));
+      });
+    }
   }
 
   if (document.readyState === 'loading') {
@@ -626,7 +667,7 @@ function switchTab(id) {
   document.getElementById('pane-' + id).classList.add('active');
   var fb = document.querySelector('.filter-bar');
   var leg = document.querySelector('.notes-legend');
-  if (id === 'operative') {
+  if (id === 'operative' || id === 'specialty') {
     if (fb) fb.style.display = 'none';
     if (leg) leg.style.display = 'none';
   } else {
