@@ -279,5 +279,18 @@ window.NOTES_DATA = {
       opMeta: 'Core Skills',
       url: 'notes/Surgical Operative Approach/Fracture Management Monograph.html'
     }
+  ],
+
+  /* ── SPECIALTY PORTALS ── */
+  specialty: [
+    {
+      id: 'op-ortho-approaches',
+      title: 'Orthopaedic Surgical Approaches',
+      opKicker: 'Orthopaedics · Specialty Portal',
+      description: 'Standalone interactive portal mapping board-critical orthopedic approaches: Deltopectoral, Henry\'s volar forearm, Smith-Petersen anterior hip, Watson-Jones, Posterior hip, lateral fibula, and posterolateral ankle. Full anatomy diagrams, internervous planes, and Red Zones.',
+      opBadge: 'OrthoFixar Standard',
+      opMeta: 'Standalone Interactive SPA',
+      url: 'notes/Orthopaedic Surgical Portal/orthopedics.html'
+    }
   ]
 };

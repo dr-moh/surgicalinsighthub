@@ -1,0 +1,1529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Orthopaedic Surgical Approaches — Surgical Insight Hub</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/theme.css?v=4.0.0">
+<link rel="stylesheet" href="../../css/shared.css">
+<script>
+  const savedTheme = localStorage.getItem('sih-theme') || 'light';
+  if (savedTheme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+</script>
+<style>
+  /* Local Overrides for Standalone Orthopedics Hub */
+  .editorial-hero {
+    padding: 130px 5% 50px;
+    background: linear-gradient(180deg, rgba(43, 24, 16, 0.05) 0%, transparent 100%);
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  .filter-bar {
+    background: var(--glass-bg);
+    backdrop-filter: var(--nav-backdrop-filter);
+    -webkit-backdrop-filter: var(--nav-backdrop-filter);
+    border-bottom: 1px solid var(--glass-border);
+    position: sticky;
+    top: 72px;
+    z-index: 1000;
+    padding: 12px 0;
+    transition: top 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  .filter-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .filter-inner::-webkit-scrollbar { display: none; }
+  
+  .fb {
+    background: rgba(184, 146, 42, 0.05);
+    border: 1px solid var(--glass-border);
+    color: var(--text-secondary);
+    padding: 8px 20px;
+    border-radius: 100px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .fb:hover { background: rgba(184,146,42,0.15); border-color: var(--brand-gold); color: var(--text-primary); }
+  .fb.active { background: var(--brand-burgundy); color: #fff; border-color: var(--brand-burgundy); }
+  
+  [data-theme="dark"] .fb.active {
+    background: var(--brand-gold);
+    color: #120b08;
+    border-color: var(--brand-gold);
+  }
+
+  .approaches-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 28px;
+    max-width: 1200px;
+    margin: 40px auto 80px;
+    padding: 0 5%;
+  }
+
+  .approach-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: pointer;
+  }
+  .approach-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--brand-gold);
+    box-shadow: var(--shadow-md);
+  }
+
+  .ac-img-wrap {
+    width: 100%;
+    height: 180px;
+    background: var(--bg-secondary);
+    overflow: hidden;
+    position: relative;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .ac-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+  }
+  .approach-card:hover .ac-img-wrap img {
+    transform: scale(1.04);
+  }
+
+  .ac-content {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: space-between;
+  }
+  .ac-kicker {
+    font-size: 0.65rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--brand-gold);
+    margin-bottom: 8px;
+  }
+  .ac-title {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    line-height: 1.25;
+    margin-bottom: 10px;
+    letter-spacing: -0.03em;
+  }
+  .ac-desc {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+  .ac-foot {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--brand-gold);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: auto;
+  }
+
+  /* Drawer / Slide-over UI */
+  .drawer-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(8, 5, 4, 0.4);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    z-index: 2500;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .drawer-overlay.open {
+    display: block;
+    opacity: 1;
+  }
+  .drawer-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 45%;
+    min-width: 480px;
+    max-width: 720px;
+    height: 100vh;
+    background: var(--bg-primary);
+    border-left: 2px solid var(--brand-gold);
+    box-shadow: var(--shadow-lg);
+    z-index: 2600;
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+  }
+  @media(max-width: 768px) {
+    .drawer-container {
+      width: 100%;
+      min-width: 100%;
+      border-left: none;
+    }
+  }
+  .drawer-container.open {
+    transform: translateX(0);
+  }
+  
+  .drawer-header {
+    background: var(--brand-burgundy);
+    border-bottom: 2.5px solid var(--brand-gold);
+    padding: 24px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+  }
+  .drawer-kicker {
+    font-size: 0.65rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--brand-gold);
+    margin-bottom: 6px;
+  }
+  .drawer-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: -0.03em;
+    line-height: 1.2;
+    margin: 0;
+  }
+  .drawer-close {
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 2.2rem;
+    cursor: pointer;
+    line-height: 1;
+    transition: all 0.2s;
+    padding: 5px;
+  }
+  .drawer-close:hover {
+    color: var(--brand-gold);
+    transform: scale(1.1);
+  }
+  
+  .drawer-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 32px 30px;
+  }
+  
+  .drawer-image-wrap {
+    width: 100%;
+    max-height: 320px;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    background: var(--bg-card);
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-sm);
+  }
+  .drawer-image-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+
+  .drawer-content-section {
+    margin-bottom: 28px;
+  }
+  .drawer-content-section h3 {
+    font-size: 1.15rem;
+    font-weight: 800;
+    border-bottom: 1.5px solid var(--border-color);
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+  }
+  .drawer-content-section p {
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+  .drawer-content-section ul, .drawer-content-section ol {
+    margin-left: 20px;
+    margin-top: 8px;
+  }
+  .drawer-content-section li {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    margin-bottom: 8px;
+  }
+
+  /* Internervous plane table */
+  .int-table-wrap {
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    margin-top: 10px;
+  }
+  .int-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+    background: var(--bg-card);
+  }
+  .int-table th {
+    background: var(--brand-burgundy);
+    color: #fff;
+    padding: 10px 14px;
+    text-align: left;
+    font-weight: 700;
+    font-size: 0.8rem;
+  }
+  .int-table td {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-secondary);
+  }
+  .int-table tr:last-child td {
+    border-bottom: none;
+  }
+  .int-val-highlight {
+    font-weight: 700;
+    color: var(--brand-gold);
+  }
+
+  /* Styled SVG fallback illustration */
+  .anatomy-placeholder-svg {
+    width: 100%;
+    height: 100%;
+    background: var(--bg-secondary);
+    display: block;
+  }
+
+  /* Custom Callout Box matching main site */
+  .callout {
+    margin: 20px 0;
+    padding: 16px 20px;
+    border-radius: 0 12px 12px 0;
+    border-left: 4px solid;
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+  .callout .label {
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 6px;
+  }
+  .callout.warn {
+    background: rgba(163, 21, 21, 0.04);
+    border-color: var(--brand-red);
+  }
+  .callout.warn .label {
+    color: var(--brand-red);
+  }
+  .callout.pearl {
+    background: rgba(184, 146, 42, 0.04);
+    border-color: var(--brand-gold);
+  }
+  .callout.pearl .label {
+    color: var(--brand-gold);
+  }
+</style>
+</head>
+<body>
+
+  <!-- Standardized SIH Navbar -->
+  <nav class="nav" id="mainNav">
+    <div class="nav-left">
+      <a href="../../index.html" class="nav-pill">
+        <div class="nav-logo-img">
+          <img src="../../assets/images/Surgical_Insight_Hub_Logo.png" alt="SIH Logo">
+        </div>
+        <div>
+          <div class="nav-brand-text">Surgical Insight Hub</div>
+          <div class="nav-brand-sub">The Residency Journal</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="nav-links-pill">
+      <a href="../../index.html">Home</a>
+      <a href="../../notes.html" class="active">Notes</a>
+      <a href="../operative_approach.html">Playbook</a>
+      <a href="../../arena.html?v=4.0.0">MCQ Arena</a>
+      <a href="../../podcast.html">Podcast</a>
+      <a href="../../surgery-talk.html">Surgery Talk</a>
+      <a href="../../about.html">About</a>
+    </div>
+
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+        <svg id="moonIcon" viewBox="0 0 24 24" width="18" height="18"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        <svg id="sunIcon" style="display:none;" viewBox="0 0 24 24" width="18" height="18"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+      </button>
+      <a href="https://t.me/sugicalInsightHub" target="_blank" class="nav-tg-btn" title="Join Telegram">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="#f0d080"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.89 8.22l-1.97 9.28c-.15.66-.54.82-1.08.51l-3-2.21-1.45 1.39c-.16.16-.3.3-.61.3l.21-3.05 5.56-5.02c.24-.21-.05-.33-.37-.12l-6.87 4.33-2.96-.92c-.64-.2-.66-.64.14-.95l11.57-4.46c.54-.19 1.01.13.83.94z"/></svg>
+      </a>
+      <a href="../../arena.html?v=4.0.0" class="nav-btn arena-btn">MCQ Arena</a>
+      <button class="mob-nav-toggle" onclick="openMobNav()" aria-label="Menu">
+        <div class="hamburger"><span></span><span></span><span></span></div>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mob-nav-overlay" id="mobNavOverlay" onclick="closeMobNav()"></div>
+  <div class="mob-nav-sheet" id="mobNavSheet">
+    <div class="mob-nav-handle"></div>
+    <a href="../../index.html">Home</a>
+    <a href="../../notes.html" class="active">Notes</a>
+    <a href="../operative_approach.html">Playbook</a>
+    <a href="../../arena.html?v=4.0.0">MCQ Arena</a>
+    <a href="../../podcast.html">Podcast</a>
+    <a href="../../surgery-talk.html">Surgery Talk</a>
+    <a href="../../about.html">About</a>
+    <a href="https://t.me/sugicalInsightHub" target="_blank" rel="noopener" onclick="closeMobNav()" style="color: var(--brand-gold); font-weight: 800;">Join Telegram Community</a>
+  </div>
+
+  <header class="editorial-hero">
+    <div class="ed-kicker">Specialty Surgical Portal</div>
+    <h1>Orthopaedic Surgical Approaches</h1>
+    <p style="color: var(--text-secondary); max-width: 700px; margin: 15px auto 0; font-size: 0.98rem; line-height: 1.6;">
+      An interactive, board-calibrated index of critical orthopedic approaches by anatomical region. Explores internervous planes, landmarks, and surgical step-by-step dissection, referenced against OrthoFixar and AO principles.
+    </p>
+  </header>
+
+  <div class="filter-bar">
+    <div class="filter-inner">
+      <span class="filter-label">Region:</span>
+      <button class="fb active" onclick="filterCategory('all', this)">All Regions</button>
+      <button class="fb" onclick="filterCategory('shoulder', this)">Shoulder</button>
+      <button class="fb" onclick="filterCategory('elbow', this)">Elbow</button>
+      <button class="fb" onclick="filterCategory('wrist-hand', this)">Wrist & Hand</button>
+      <button class="fb" onclick="filterCategory('hip-pelvis', this)">Hip & Pelvis</button>
+      <button class="fb" onclick="filterCategory('knee', this)">Knee</button>
+      <button class="fb" onclick="filterCategory('tibia-fibula', this)">Tibia & Fibula</button>
+      <button class="fb" onclick="filterCategory('ankle-foot', this)">Ankle & Foot</button>
+    </div>
+  </div>
+
+  <div class="approaches-grid" id="approachesGrid">
+    <!-- Generated Dynamically via JS -->
+  </div>
+
+  <!-- Interactive Slide-over Panel -->
+  <div class="drawer-overlay" id="drawerOverlay" onclick="closeDrawer()"></div>
+  
+  <div class="drawer-container" id="drawerContainer">
+    <div class="drawer-header">
+      <div>
+        <div class="drawer-kicker" id="drawerKicker">Lateral Extensile Exposure</div>
+        <h2 class="drawer-title" id="drawerTitle">Approach to the Fibula</h2>
+      </div>
+      <button class="drawer-close" onclick="closeDrawer()" aria-label="Close Panel">&times;</button>
+    </div>
+    <div class="drawer-body">
+      <div class="drawer-image-wrap" id="drawerImageWrap">
+        <!-- Rendered dynamically -->
+      </div>
+      <div class="drawer-content-sections" id="drawerContent">
+        <!-- Rendered dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <footer style="padding: 60px 5%; border-top: 1px solid var(--border-color); text-align: center; background: var(--bg-secondary);">
+    <p style="color: var(--text-muted); font-size: 0.85rem; font-weight: 700;">© 2026 Surgical Insight Hub · Orthopaedic Specialty Series</p>
+    <a href="../../notes.html" style="color: var(--brand-gold); font-weight: 700; text-decoration: none; font-size: 0.85rem; display: inline-block; margin-top: 12px;">← Back to Main Library</a>
+  </footer>
+
+  <!-- Database & Drawer Logic -->
+  <script>
+    // Complete, specific OrthoFixar database for Orthopedics subpage (25+ approaches across all pages)
+    const APPROACHES_DATA = [
+      // ── SHOULDER & CLAVICLE ──
+      {
+        id: 'shoulder-deltopectoral',
+        category: 'shoulder',
+        kicker: 'Anterior Shoulder Exposure',
+        title: 'Shoulder Deltopectoral Approach',
+        summary: 'The classic workhorse approach to the shoulder. Provides excellent exposure of the glenohumeral joint, proximal humerus, and rotator cuff.',
+        image: 'https://orthofixar.com/wp-content/uploads/2021/06/Shoulder-Deltopectoral-Approach.jpg',
+        indications: [
+          'Total shoulder arthroplasty (TSA) and hemiarthroplasty.',
+          'ORIF of proximal humerus fractures.',
+          'Anterior glenohumeral stabilization (e.g., Bankart or Latarjet procedure).',
+          'Synovectomy or biopsy of the shoulder joint.'
+        ],
+        positioning: 'Beach chair position or supine with the upper body elevated 30-45 degrees, and the arm prepped and draped to allow free mobilization.',
+        landmarks: 'Coracoid process and the deltopectoral groove. A 10-12 cm skin incision is made starting at the tip of the coracoid process, extending down the deltopectoral groove toward the deltoid insertion.',
+        internervous: {
+          interval: 'Deltoid vs. Pectoralis Major',
+          muscles: [
+            { name: 'Deltoid (Laterally)', nerve: 'Axillary Nerve (C5-C6)' },
+            { name: 'Pectoralis Major (Medially)', nerve: 'Medial and Lateral Pectoral Nerves (C5-T1)' }
+          ]
+        },
+        superficialDissection: [
+          'Incise skin and subcutaneous fat. Identify the deltopectoral interval, marked by the fat stripe surrounding the cephalic vein.',
+          'Mobilize and retract the cephalic vein (typically medially with pectoralis major or laterally with deltoid).',
+          'Open the clavipectoral fascia longitudinally along the lateral border of the conjoined tendon.'
+        ],
+        deepDissection: [
+          'Identify and retract the conjoined tendon (coracobrachialis and short head of biceps) medially.',
+          'Externally rotate the arm to expose the subscapularis tendon. Place stay sutures in the subscapularis and divide it 1 cm medial to its insertion at the lesser tuberosity to expose the anterior joint capsule.'
+        ],
+        redZone: {
+          name: 'Musculocutaneous & Axillary Nerves',
+          caution: 'The musculocutaneous nerve enters the coracobrachialis 5 cm distal to the coracoid process; aggressive retraction of the conjoined tendon can cause traction injury. The axillary nerve runs anterior to the subscapularis and inferior to the glenohumeral capsule, putting it at risk during subscapularis tenotomy.'
+        },
+        extensions: 'Distally, the approach can be extended along the lateral aspect of the arm by developing the interval between the brachialis and brachioradialis to expose the humeral shaft.'
+      },
+      {
+        id: 'shoulder-deltoid-split',
+        category: 'shoulder',
+        kicker: 'Lateral Humerus Exposure',
+        title: 'Lateral Approach (Deltoid Split)',
+        summary: 'Direct lateral exposure to access the subacromial space and the proximal humerus. Stay alert to the axillary nerve path.',
+        image: 'https://orthofixar.com/wp-content/uploads/2021/06/Lateral-Approach-to-the-shoulder.jpg',
+        indications: [
+          'ORIF of proximal humerus fractures.',
+          'Subacromial decompression and rotator cuff repair.',
+          'Humeral head core decompression.'
+        ],
+        positioning: 'Beach chair or supine with a bolster under the shoulder blade.',
+        landmarks: 'Acromion process and lateral humeral shaft. A 5 cm longitudinal incision is made downward from the lateral border of the acromion.',
+        internervous: {
+          interval: 'None (Splits the Deltoid muscle)',
+          muscles: [
+            { name: 'Deltoid fibers are split longitudinally (No true plane)', nerve: 'Axillary Nerve (C5-C6)' }
+          ]
+        },
+        superficialDissection: [
+          'Split the deltoid muscle in line with its muscle fibers starting from the lateral acromion.',
+          'Do NOT extend the muscle split more than 5 cm distal to the acromion border.'
+        ],
+        deepDissection: [
+          'Identify the subacromial bursa and incise it to expose the rotator cuff and greater tuberosity.',
+          'Palpate the axillary nerve running horizontally across the deep surface of the deltoid.'
+        ],
+        redZone: {
+          name: 'Axillary Nerve (5 cm Safety Zone)',
+          caution: 'The axillary nerve runs horizontally from posterior to anterior around the humeral neck, located exactly 5 cm distal to the lateral acromion border. Splitting the deltoid beyond this point will tear the nerve, causing permanent deltoid paralysis.'
+        },
+        extensions: 'Cannot be extended distally. If distal extension is required, a deltopectoral approach should be selected.'
+      },
+      {
+        id: 'clavicle-anterior',
+        category: 'shoulder',
+        kicker: 'Subcutaneous Clavicle Exposure',
+        title: 'Anterior Approach to the Clavicle',
+        summary: 'Direct exposure of the subcutaneous border of the clavicle for fixation or osteotomy.',
+        image: 'https://orthofixar.com/wp-content/uploads/2021/06/Clavicle-Anatomy.jpg',
+        indications: [
+          'ORIF of midshaft and distal clavicle fractures.',
+          'Debridement of clavicular osteomyelitis.'
+        ],
+        positioning: 'Beach chair position or supine with a towel roll between the scapulae.',
+        landmarks: 'Sternoclavicular joint, clavicle shaft, and acromioclavicular joint. Skin incision is horizontal along the anterior-inferior border of the clavicle.',
+        internervous: {
+          interval: 'None (Direct subcutaneous bone)',
+          muscles: [
+            { name: 'Direct subcutaneous bone exposure', nerve: 'Subcutaneous sensory nerves only' }
+          ]
+        },
+        superficialDissection: [
+          'Incise skin, subcutaneous tissues, and the thin platysma muscle sheet.',
+          'Identify and protect the supraclavicular sensory nerves crossing the clavicle.'
+        ],
+        deepDissection: [
+          'Incise the periosteum along the anterior border of the clavicle.',
+          'Strip the deltoid (inferiorly) and pectoralis major/trapezius (superiorly) subperiosteally to expose the bone.'
+        ],
+        redZone: {
+          name: 'Subclavian Vessels & Brachial Plexus',
+          caution: 'The subclavian artery, subclavian vein, and the brachial plexus cords lie directly posterior to the middle third of the clavicle. Retractors placed over the posterior border of the clavicle must remain strictly subperiosteal to prevent catastrophic vascular lacerations.'
+        },
+        extensions: 'Can be extended laterally to the acromioclavicular joint or medially to the sternoclavicular joint.'
+      },
+      {
+        id: 'shoulder-judet',
+        category: 'shoulder',
+        kicker: 'Posterior Glenoid Exposure',
+        title: 'Posterior Approach (Judet Approach)',
+        summary: 'An extensive posterior exposure of the scapular blade and posterior glenohumeral joint.',
+        image: 'https://orthofixar.com/wp-content/uploads/2021/06/Posterior-Approach-to-the-shoulder.jpg',
+        indications: [
+          'ORIF of scapular neck and glenoid fractures.',
+          'Posterior shoulder stabilization and bone blocking.',
+          'Resection of posterior scapular tumors.'
+        ],
+        positioning: 'Prone or lateral decubitus with the affected arm draped free.',
+        landmarks: 'Spine of the scapula, medial border of the scapula, and the posterior acromion. L-shaped incision running along the spine of the scapula to the medial border, then distally.',
+        internervous: {
+          interval: 'Infraspinatus vs. Teres Minor',
+          muscles: [
+            { name: 'Infraspinatus (Superiorly)', nerve: 'Suprascapular Nerve (C5-C6)' },
+            { name: 'Teres Minor (Inferiorly)', nerve: 'Axillary Nerve (C5-C6)' }
+          ]
+        },
+        superficialDissection: [
+          'Reflect the deltoid muscle laterally from its origin along the scapular spine.',
+          'Reflect the infraspinatus muscle laterally off the infraspinous fossa of the scapula.'
+        ],
+        deepDissection: [
+          'Develop the interval between the infraspinatus and teres minor.',
+          'Incise the posterior joint capsule to expose the posterior glenoid neck.'
+        ],
+        redZone: {
+          name: 'Suprascapular Nerve & Circumflex Scapular Artery',
+          caution: 'The suprascapular nerve and artery exit the spinoglenoid notch and enter the infraspinatus muscle. Aggressive traction or dissection too close to the spinoglenoid notch will damage the nerve, resulting in permanent infraspinatus muscle wasting.'
+        },
+        extensions: 'Can be extended medially to expose the entire scapular body.'
+      },
+
+      // ── ELBOW ──
+      {
+        id: 'elbow-posterior',
+        category: 'elbow',
+        kicker: 'Distal Humerus Exposure',
+        title: 'Posterior Approach (Olecranon Osteotomy)',
+        summary: 'The standard extensile approach to the distal humerus articular surface. Employs a controlled bony osteotomy.',
+        image: 'https://orthofixar.com/wp-content/uploads/2021/06/Posterior-Approach-to-the-Elbow.jpg',
+        indications: [
+          'ORIF of intra-articular distal humerus fractures.',
+          'Total elbow arthroplasty.',
+          'Excision of posterior elbow capsule.'
+        ],
+        positioning: 'Prone or lateral decubitus with the arm resting over a padded post.',
+        landmarks: 'Olecranon tip and the medial/lateral epicondyles. Skin incision is posterior midline, curving laterally around the olecranon.',
+        internervous: {
+          interval: 'None (Controlled Bony Osteotomy of the Olecranon)',
+          muscles: [
+            { name: 'Olecranon bone is divided (No true plane)', nerve: 'Ulnar and Radial nerves at risk' }
+          ]
+        },
+        superficialDissection: [
+          'Isolate, mobilize, and protect the ulnar nerve in the medial cubital tunnel.',
+          'Perform a chevron-shaped osteotomy of the olecranon 2 cm distal to its tip using a microsaw.'
+        ],
+        deepDissection: [
+          'Reflect the osteotomized olecranon tip and triceps muscle proximally to expose the distal humerus articular surface.',
+          'Incise the posterior joint capsule.'
+        ],
+        redZone: {
+          name: 'Ulnar Nerve',
+          caution: 'The ulnar nerve runs directly posterior to the medial epicondyle. It must be isolated and mobilised with a vessel loop at the beginning of the procedure to prevent accidental traction or transaction during osteotomy or distal humerus plating.'
+        },
+        extensions: 'Proximally, it can be extended up the posterior humeral shaft by splitting the triceps.'
+      },
+      {
+        id: 'elbow-kocher',
+        category: 'elbow',
+        kicker: 'Lateral Joint Exposure',
+        title: 'Lateral Approach (Kocher Approach)',
+        summary: 'Direct lateral exposure to access the radial head, capitellum, and lateral ligament complex.',
+        image: 'https://orthofixar.com/wp-content/uploads/2021/06/Lateral-Approach-to-the-Elbow.jpg',
+        indications: [
+          'ORIF or replacement of radial head fractures.',
+          'ORIF of capitellum fractures.',
+          'Lateral collateral ligament (LCL) repair.'
+        ],
+        positioning: 'Supine with the arm resting across the chest.',
+        landmarks: 'Lateral epicondyle and the radial head. A 5 cm incision is made from the lateral supracondylar ridge down over the radial head.',
+        internervous: {
+          interval: 'Anconeus vs. Extensor Carpi Ulnaris (ECU)',
+          muscles: [
+            { name: 'Anconeus (Posteriorly)', nerve: 'Radial Nerve (C7-C8)' },
+            { name: 'Extensor Carpi Ulnaris (Anteriorly)', nerve: 'Deep Radial Nerve / PIN (C7-C8)' }
+          ]
+        },
+        superficialDissection: [
+          'Incise skin and fascia. Identify the interval between the ECU and the anconeus.',
+          'Develop the interval down to the lateral joint capsule.'
+        ],
+        deepDissection: [
+          'Incise the joint capsule anterior to the LCL to expose the radial head and capitellum.',
+          'Keep the forearm pronated during dissection to protect the PIN.'
+        ],
+        redZone: {
+          name: 'Posterior Interosseous Nerve (PIN)',
+          caution: 'The PIN crosses the anterior aspect of the radial neck. Pronating the forearm pulls the nerve anteriorly and away from the surgical field, significantly reducing the risk of accidental PIN damage.'
+        },
+        extensions: 'Can be extended proximally along the lateral supracondylar ridge.'
+      },
+      {
+        id: 'elbow-medial',
+        category: 'elbow',
+        kicker: 'Medial Joint Exposure',
+        title: 'Medial Approach to the Elbow',
+        summary: 'Access to the medial collateral ligament, ulnar nerve, and coronoid process.',
+        image: 'https://orthofixar.com/wp-content/uploads/2021/06/Medial-Approach-to-the-Elbow.jpg',
+        indications: [
+          'Medial collateral ligament (MCL) reconstruction.',
+          'ORIF of coronoid process fractures.',
+          'Ulnar nerve anterior transposition.'
+        ],
+        positioning: 'Supine with the arm abducted and externally rotated on a hand table.',
+        landmarks: 'Medial epicondyle and medial forearm. A 8-10 cm longitudinal incision centered over the medial epicondyle.',
+        internervous: {
+          interval: 'Brachialis vs. Pronator Teres',
+          muscles: [
+            { name: 'Brachialis (Anteriorly)', nerve: 'Musculocutaneous Nerve (C5-C6)' },
+            { name: 'Pronator Teres (Posteriorly)', nerve: 'Median Nerve (C6-C7)' }
+          ]
+        },
+        superficialDissection: [
+          'Isolate the ulnar nerve immediately. Elevate the medial intermuscular septum.',
+          'Develop the interval between the brachialis and the pronator teres.'
+        ],
+        deepDissection: [
+          'Elevate the flexor-pronator muscle mass off the medial epicondyle.',
+          'Incise the medial joint capsule to expose the medial joint and coronoid.'
+        ],
+        redZone: {
+          name: 'Ulnar & Median Nerves',
+          caution: 'The ulnar nerve is highly vulnerable at the medial epicondyle. The median nerve lies just anterior to the elbow joint under the pronator teres; anterior retractor placement must be cautious.'
+        },
+        extensions: 'Proximally, it can be extended along the medial humerus; distally, along the ulnar border.'
+      },
+
+      // ── FOREARM ──
+      {
+        id: 'henry-volar-forearm',
+        category: 'wrist-hand',
+        kicker: 'Volar Extensile Exposure',
+        title: 'Henry\'s Volar Approach to Forearm',
+        summary: 'The standard anterior approach to the radius. Offers extensive visibility from the radial neck down to the wrist joint.',
+        image: 'https://orthofixar.com/wp-content/uploads/2021/06/Volar-Approach-to-the-Wrist.jpg',
+        indications: [
+          'ORIF of radial shaft fractures (Galeazzi fractures).',
+          'Decompression of forearm compartment syndrome.',
+          'Resection of volar radius tumors or osteomyelitis.',
+          'Volar radial osteotomy.'
+        ],
+        positioning: 'Supine with the arm abducted 90 degrees on a padded hand table, with the forearm fully supinated.',
+        landmarks: 'Biceps tendon insertion and the radial styloid. Skin incision is a straight line from the lateral side of the biceps tendon down to the radial styloid.',
+        internervous: {
+          interval: 'Brachioradialis vs. Pronator Teres / FCR',
+          muscles: [
+            { name: 'Brachioradialis (Laterally)', nerve: 'Radial Nerve (C5-C6)' },
+            { name: 'Pronator Teres & Flexor Carpi Radialis (Medially)', nerve: 'Median Nerve (C6-C7)' }
+          ]
+        },
+        superficialDissection: [
+          'Incise the skin and subcutaneous tissue. Identify and open the fascia between the brachioradialis and the flexor carpi radialis (or pronator teres proximally).',
+          'Gently retract the brachioradialis laterally, exposing the superficial radial nerve and the radial artery.',
+          'Ligate and divide the recurrent radial vascular branches that tether the radial artery.'
+        ],
+        deepDissection: [
+          'Expose the supinator muscle in the proximal third. Supinate the forearm fully to move the posterior interosseous nerve (PIN) laterally.',
+          'Incise the supinator subperiosteally along its insertion on the radius and peel it laterally to expose the anterior radial shaft.'
+        ],
+        redZone: {
+          name: 'Posterior Interosseous Nerve (PIN)',
+          caution: 'The PIN winds around the neck of the radius within the supinator muscle. The muscle must be detached from the radius ONLY when the forearm is fully supinated. Retracting the supinator without full supination risks direct mechanical PIN laceration or severe neuropraxia, leading to finger drop.'
+        },
+        extensions: 'Proximally, it can be extended into the anterolateral approach to the elbow joint. Distally, it can be carried across the wrist joint into the carpal tunnel.'
+      },
+      {
+        id: 'forearm-thompson',
+        category: 'wrist-hand',
+        kicker: 'Dorsal Radius Exposure',
+        title: 'Thompson\'s Dorsal Approach',
+        summary: 'Excellent exposure of the posterior and middle thirds of the radial shaft. PIN protection is mandatory.',
+        image: 'https://orthofixar.com/wp-content/uploads/2021/06/Dorsal-Approach-to-the-Wrist.jpg',
+        indications: [
+          'ORIF of middle and proximal third radius fractures.',
+          'Dorsal radial osteotomies.',
+          'Resection of posterior radial bone tumors.'
+        ],
+        positioning: 'Supine with the arm abducted on a hand table, forearm pronated.',
+        landmarks: 'Lateral epicondyle and the dorsal radial styloid. Skin incision is a straight line from the lateral epicondyle to the dorsal ulnar-radial joint.',
+        internervous: {
+          interval: 'ECRB vs. Extensor Digitorum Communis (EDC)',
+          muscles: [
+            { name: 'Extensor Carpi Radialis Brevis (Laterally)', nerve: 'Radial Nerve (C6-C7)' },
+            { name: 'Extensor Digitorum Communis (Medially)', nerve: 'Posterior Interosseous Nerve / PIN (C7-C8)' }
+          ]
+        },
+        superficialDissection: [
+          'Incise skin. Develop the interval between ECRB and EDC.',
+          'Identify and protect the PIN as it exits the posterior edge of the supinator muscle.'
+        ],
+        deepDissection: [
+          'Incise the supinator muscle along its radial attachment while the forearm is pronated.',
+          'Strip the supinator laterally off the radius to expose the posterior shaft.'
+        ],
+        redZone: {
+          name: 'Posterior Interosseous Nerve (PIN)',
+          caution: 'The PIN exits the supinator muscle in the proximal third of the forearm. In this dorsal approach, the nerve lies directly across the supinator; identify it clearly before stripping any muscle off the bone.'
+        },
+        extensions: 'Proximally, can be extended into the lateral elbow approach.'
+      },
+      {
+        id: 'forearm-ulna',
+        category: 'wrist-hand',
+        kicker: 'Subcutaneous Ulnar Exposure',
+        title: 'Subcutaneous Approach to Ulnar Shaft',
+        summary: 'A direct approach to the ulna, utilizing its subcutaneously palpable posterior border.',
+        image: 'https://orthofixar.com/wp-content/uploads/2021/06/Ulna-Subcutaneous-Border.jpg',
+        indications: [
+          'ORIF of isolated ulnar shaft fractures ("Nightstick" fractures).',
+          'ORIF of Monteggia fracture-dislocations.'
+        ],
+        positioning: 'Supine, arm abducted on a hand table, elbow flexed 90 degrees across the chest.',
+        landmarks: 'Olecranon process and the ulnar styloid. Incision is a longitudinal line over the palpable posterior border of the ulna.',
+        internervous: {
+          interval: 'Flexor Carpi Ulnaris (FCU) vs. Extensor Carpi Ulnaris (ECU)',
+          muscles: [
+            { name: 'Flexor Carpi Ulnaris (Volar)', nerve: 'Ulnar Nerve (C8-T1)' },
+            { name: 'Extensor Carpi Ulnaris (Dorsal)', nerve: 'Posterior Interosseous Nerve (C7-C8)' }
+          ]
+        },
+        superficialDissection: [
+          'Incise skin and subcutaneous tissue. Locate the intermuscular septum between the FCU and ECU.',
+          'Open the deep fascia along the subcutaneous ulnar border.'
+        ],
+        deepDissection: [
+          'Incise the periosteum directly over the subcutaneous border.',
+          'Elevate the FCU and ECU subperiosteally to expose the ulnar shaft.'
+        ],
+        redZone: {
+          name: 'Ulnar Nerve & Artery',
+          caution: 'The ulnar nerve and artery run along the deep surface of the FCU. As long as dissection remains strictly subperiosteal on the ulna, these structures are completely protected.'
+        },
+        extensions: 'Proximally, can be extended to the posterior olecranon approach.'
+      },
+
+      // ── WRIST & HAND ──
+      {
+        id: 'wrist-volar',
+        category: 'wrist-hand',
+        kicker: 'Volar Wrist Exposure',
+        title: 'Volar Approach to the Wrist',
+        summary: 'Excellent exposure for distal radius fixation and median nerve decompression.',
+        image: 'https://orthofixar.com/wp-content/uploads/2021/06/Volar-Approach-to-the-Wrist.jpg',
+        indications: [
+          'ORIF of volar-displaced distal radius fractures (Smith\'s fractures).',
+          'Carpal tunnel syndrome decompression.',
+          'Excision of volar wrist ganglions.'
+        ],
+        positioning: 'Supine, arm abducted on hand table, supinated.',
+        landmarks: 'FCR tendon and radial styloid. Skin incision is longitudinal over the FCR tendon, extending across the wrist flexion crease in a zig-zag.',
+        internervous: {
+          interval: 'FCR vs. Flexor Digitorum Superficialis (FDS)',
+          muscles: [
+            { name: 'Flexor Carpi Radialis (Laterally)', nerve: 'Median Nerve (C6-C7)' },
+            { name: 'Flexor Digitorum Superficialis (Medially)', nerve: 'Median Nerve (C7-T1) - No true plane, intermuscular split' }
+          ]
+        },
+        superficialDissection: [
+          'Incise skin. Split the fascia over the FCR tendon.',
+          'Retract FCR laterally and the FDS/median nerve medially.'
+        ],
+        deepDissection: [
+          'Expose the pronator quadratus muscle (PQ) over the distal radius.',
+          'Incise the PQ along its lateral border and peel it medially to expose the distal radius.'
+        ],
+        redZone: {
+          name: 'Median Nerve & Palmar Cutaneous Branch',
+          caution: 'The median nerve lies directly medial to the FCR tendon. The palmar cutaneous branch exits the median nerve 5 cm proximal to the wrist joint; stay close to the FCR tendon to avoid cutting this sensory branch.'
+        },
+        extensions: 'Can be extended proximally into Henry\'s forearm approach.'
+      },
+
+      // ── HIP & PELVIS ──
+      {
+        id: 'hip-anterior-sp',
+        category: 'hip-pelvis',
+        kicker: 'True Internervous Interval',
+        title: 'Smith-Petersen Anterior Approach',
+        summary: 'The classic anterior approach to the hip joint. Exploits a true double internervous plane, minimizing muscle damage.',
+        image: 'https://orthofixar.com/wp-content/uploads/2021/04/Anterolateral-hip-approach.jpg',
+        indications: [
+          'Open reduction of congenital hip dislocations (DDH).',
+          'Hemiarthroplasty or total hip arthroplasty (THA).',
+          'Synovial biopsy or joint debridement.'
+        ],
+        positioning: 'Supine on a standard operating table. Draping should allow for full hip extension and rotation.',
+        landmarks: 'Anterior Superior Iliac Spine (ASIS) and the anterior border of the tensor fasciae latae. Skin incision starts at the anterior half of the iliac crest, runs over the ASIS, and extends distally toward the lateral patella.',
+        internervous: {
+          interval: 'Sartorius / Rectus vs. TFL / Gluteus Medius',
+          muscles: [
+            { name: 'Sartorius & Rectus Femoris (Medially)', nerve: 'Femoral Nerve (L2-L4)' },
+            { name: 'Tensor Fasciae Latae & Gluteus Medius (Laterally)', nerve: 'Superior Gluteal Nerve (L4-S1)' }
+          ]
+        },
+        superficialDissection: [
+          'Incise the skin and subcutaneous tissue. Identify the fascial interval between the sartorius and the tensor fasciae latae.',
+          'Gently incise the fascia and retract the sartorius medially and the TFL laterally.'
+        ],
+        deepDissection: [
+          'Identify the rectus femoris muscle medially and the gluteus medius laterally. Develop the deep interval.',
+          'Ligate the ascending branch of the lateral femoral circumflex artery.',
+          'Incise the anterior hip joint capsule in a T-shape to expose the femoral head and neck.'
+        ],
+        redZone: {
+          name: 'Lateral Femoral Cutaneous Nerve (LFCN)',
+          caution: 'The LFCN crosses the sartorius 1-2 cm distal to the ASIS. Dissection too close to the medial side of the ASIS or aggressive retraction can result in injury, causing painful meralgia paresthetica (numbness/burning of the lateral thigh).'
+        },
+        extensions: 'Proximally, the incision can be extended along the iliac crest to perform a pelvic osteotomy. Distally, it can be extended along the anterolateral thigh to expose the femoral shaft.'
+      },
+      {
+        id: 'hip-anterolateral-wj',
+        category: 'hip-pelvis',
+        kicker: 'Intermuscular Hip Interval',
+        title: 'Watson-Jones Anterolateral Approach',
+        summary: 'Excellent exposure for hip hemiarthroplasty and primary THA. Safer than direct lateral.',
+        image: 'https://orthofixar.com/wp-content/uploads/2021/04/Watson-Jones-Approach.jpg',
+        indications: [
+          'Total Hip Arthroplasty (THA).',
+          'Femoral neck fracture hemiarthroplasty.',
+          'Synovectomy of the hip joint.'
+        ],
+        positioning: 'Supine or lateral decubitus.',
+        landmarks: 'Greater trochanter and ASIS. Incision starts 2 cm posterior and distal to the ASIS, extending over the anterior greater trochanter.',
+        internervous: {
+          interval: 'Gluteus Medius vs. Tensor Fasciae Latae (TFL)',
+          muscles: [
+            { name: 'Gluteus Medius (Postero-superiorly)', nerve: 'Superior Gluteal Nerve (L4-S1)' },
+            { name: 'Tensor Fasciae Latae (Antero-inferiorly)', nerve: 'Superior Gluteal Nerve (L4-S1) - No true plane' }
+          ]
+        },
+        superficialDissection: [
+          'Incise skin. Locate the interval between the gluteus medius and TFL.',
+          'Retract TFL anteriorly and gluteus medius posteriorly.'
+        ],
+        deepDissection: [
+          'Externally rotate the femur to expose the anterior hip capsule.',
+          'Ligate ascending branches of lateral femoral circumflex artery. Incise joint capsule.'
+        ],
+        redZone: {
+          name: 'Superior Gluteal Nerve',
+          caution: 'The superior gluteal nerve exits the greater sciatic notch and enters the gluteus medius. Dissection extended more than 5 cm proximal to the greater trochanter tip can damage this nerve, causing permanent Trendelenburg gait.'
+        },
+        extensions: 'Can be extended distally along the lateral femur.'
+      },
+      {
+        id: 'hip-direct-lateral-hardinge',
+        category: 'hip-pelvis',
+        kicker: 'Transgluteal Joint Exposure',
+        title: 'Hardinge Direct Lateral Approach',
+        summary: 'Provides unparalleled access to the hip joint with an extremely low dislocation rate. Involves splitting the gluteus medius.',
+        image: 'https://orthofixar.com/wp-content/uploads/2021/04/Direct-Lateral-Hip-Approach.jpg',
+        indications: [
+          'Primary and revision Total Hip Arthroplasty.',
+          'ORIF of femoral neck and intertrochanteric fractures.'
+        ],
+        positioning: 'Lateral decubitus or supine.',
+        landmarks: 'Greater trochanter. Incision is a longitudinal line over the center of the greater trochanter.',
+        internervous: {
+          interval: 'None (Splits Gluteus Medius and Vastus Lateralis)',
+          muscles: [
+            { name: 'Gluteus Medius split / Vastus split (Sleeve split)', nerve: 'Superior Gluteal and Femoral nerves' }
+          ]
+        },
+        superficialDissection: [
+          'Incise skin. Incise the tensor fasciae latae in line with the skin incision.',
+          'Identify the greater trochanter.'
+        ],
+        deepDissection: [
+          'Split the anterior one-third of the gluteus medius and carry the split distally into the vastus lateralis.',
+          'Reflect this muscle sleeve anteriorly off the greater trochanter to expose the joint capsule.'
+        ],
+        redZone: {
+          name: 'Superior Gluteal Nerve',
+          caution: 'The gluteus medius split must not extend more than 4 cm proximal to the tip of the greater trochanter to avoid severing the superior gluteal nerve branch.'
+        },
+        extensions: 'Can be extended distally along the femoral shaft.'
+      },
+      {
+        id: 'hip-posterior-kl',
+        category: 'hip-pelvis',
+        kicker: 'Posterior Hip Exposure',
+        title: 'Kocher-Langenbeck Posterior Approach',
+        summary: 'The most commonly utilized approach for total hip arthroplasty and acetabular fracture fixation. Provides excellent visibility of the posterior wall.',
+        image: 'https://orthofixar.com/wp-content/uploads/2021/04/Posterior-hip-approach.jpg',
+        indications: [
+          'Primary and revision total hip arthroplasty (THA).',
+          'ORIF of posterior wall and posterior column acetabular fractures.',
+          'Excision of posterior hip tumors.'
+        ],
+        positioning: 'Lateral decubitus position with the pelvis secured using pelvic stabilizers. The knee is flexed 90 degrees and the hip prepped to allow mobilization.',
+        landmarks: 'Greater trochanter and the posterior border of the gluteus medius. Incision is a curved line starting 10 cm posterior to the greater trochanter, running distally along the femoral shaft.',
+        internervous: {
+          interval: 'None (Gluteus Maximus split)',
+          muscles: [
+            { name: 'Gluteus Maximus split along its fibers', nerve: 'Inferior Gluteal Nerve (L5-S2)' }
+          ]
+        },
+        superficialDissection: [
+          'Incise skin and subcutaneous fat. Identify and split the gluteus maximus fascia in line with its muscle fibers.',
+          'Retract the split gluteus maximus to expose the underlying deep structures, including the sciatic nerve.'
+        ],
+        deepDissection: [
+          'Identify and protect the sciatic nerve, which lies directly on the short external rotators.',
+          'Divide the piriformis, obturator internus, and gemelli tendons at their insertion on the greater trochanter.',
+          'Retract the short rotators medially to protect the sciatic nerve. Incise the posterior capsule to expose the hip joint.'
+        ],
+        redZone: {
+          name: 'Sciatic Nerve',
+          caution: 'The sciatic nerve runs vertically down the posterior thigh, exiting the pelvis beneath the piriformis muscle. It is highly vulnerable. The short external rotators must be tagged and retracted medially over the nerve to act as a protective shield during exposure.'
+        },
+        extensions: 'Proximally, the approach can be extended into the ilium to expose the posterior pelvic wall. Distally, it can be extended along the lateral femur.'
+      },
+      {
+        id: 'pelvis-pubic-symphysis',
+        category: 'hip-pelvis',
+        kicker: 'Anterior Pelvic Approach',
+        title: 'Anterior Approach to Pubic Symphysis',
+        summary: 'Direct exposure of the pubic symphysis for unstable pelvic ring injuries.',
+        image: 'https://orthofixar.com/wp-content/uploads/2021/04/Anterior-Approach-to-Pubic-Symphysis.jpg',
+        indications: [
+          'ORIF of pubic symphysis diastasis ("Open Book" pelvic fractures).',
+          'Debridement of osteitis pubis.'
+        ],
+        positioning: 'Supine position. Foley catheter is mandatory to deflate the bladder.',
+        landmarks: 'Pubic tubercles. Skin incision is horizontal Pfannenstiel or longitudinal midline directly over the pubic symphysis.',
+        internervous: {
+          interval: 'None (Direct subcutaneous bone)',
+          muscles: [
+            { name: 'Direct subcutaneous bone exposure', nerve: 'Subcutaneous sensory nerves only' }
+          ]
+        },
+        superficialDissection: [
+          'Incise skin and fat. Identify the rectus abdominis insertion.',
+          'Incise the fascia of the rectus abdominis over the pubis.'
+        ],
+        deepDissection: [
+          'Release rectus abdominis tendon fibers subperiosteally off the superior pubis.',
+          'Expose the anterior pubic symphysis, taking care to remain subperiosteal posterior to the pubis.'
+        ],
+        redZone: {
+          name: 'Urinary Bladder & Dorsal Vein of Clitoris/Penis',
+          caution: 'The urinary bladder lies directly posterior to the pubic symphysis. Catheterization is mandatory to deflate the bladder. Retractors placed posterior to the pubis must remain strictly subperiosteal to prevent bladder perforation.'
+        },
+        extensions: 'Can be extended laterally into the modified Stoppa approach.'
+      },
+
+      // ── KNEE ──
+      {
+        id: 'knee-anteromedial',
+        category: 'knee',
+        kicker: 'Anteromedial Joint Exposure',
+        title: 'Anteromedial Parapatellar Approach',
+        summary: 'The universal workhorse approach for Total Knee Arthroplasty (TKA). Excellent extensile exposure.',
+        image: 'https://orthofixar.com/wp-content/uploads/2021/06/Anteromedial-Approach-to-the-Knee.jpg',
+        indications: [
+          'Primary and revision Total Knee Arthroplasty (TKA).',
+          'Synovectomy of the knee joint.',
+          'ORIF of patella fractures.'
+        ],
+        positioning: 'Supine with a foot bolster to allow flexion of the knee.',
+        landmarks: 'Patella, tibial tubercle, and quadriceps tendon. A longitudinal midline incision is made over the knee joint.',
+        internervous: {
+          interval: 'None (splits Extensor Mechanism)',
+          muscles: [
+            { name: 'Quadriceps tendon / Parapatellar split', nerve: 'Femoral Nerve (L2-L4)' }
+          ]
+        },
+        superficialDissection: [
+          'Incise skin and subcutaneous tissues. Expose the prepatellar bursa.',
+          'Incise the quadriceps tendon longitudinally 5 mm medial to its border, extend the incision medially around the patella, and continue down the medial side of the patellar ligament.'
+        ],
+        deepDissection: [
+          'Open the synovium. Sublux or evert the patella laterally.',
+          'Flex the knee joint to expose the entire distal femur, proximal tibia, and menisci.'
+        ],
+        redZone: {
+          name: 'Infrapatellar Branch of Saphenous Nerve',
+          caution: 'The infrapatellar branch of the saphenous nerve crosses the anteromedial aspect of the knee subcutaneously. Laceration leads to a numb zone over the anterolateral skin of the knee/shin.'
+        },
+        extensions: 'Proximally, can be extended into the quadriceps snip or rectus turndown.'
+      },
+      {
+        id: 'knee-lateral',
+        category: 'knee',
+        kicker: 'Lateral Joint Exposure',
+        title: 'Lateral Approach to Knee Joint',
+        summary: 'Excellent exposure for valgus knee total arthroplasty and PLC reconstructions.',
+        image: 'https://orthofixar.com/wp-content/uploads/2021/06/Lateral-Approach-to-Knee-Joint.jpg',
+        indications: [
+          'Valgus total knee arthroplasty.',
+          'Posterolateral corner (PLC) reconstruction.',
+          'ORIF of lateral femoral condyle fractures.'
+        ],
+        positioning: 'Supine with knee flexed 90 degrees.',
+        landmarks: 'Lateral parapatellar groove and fibular head. Incision is longitudinal 1 cm lateral to the patella.',
+        internervous: {
+          interval: 'Iliotibial (IT) Band vs. Biceps Femoris',
+          muscles: [
+            { name: 'Iliotibial Band (Anteriorly)', nerve: 'Superior Gluteal Nerve (L4-S1)' },
+            { name: 'Biceps Femoris (Posteriorly)', nerve: 'Common Peroneal Nerve (L5-S2)' }
+          ]
+        },
+        superficialDissection: [
+          'Incise skin. Locate the IT band.',
+          'Develop the interval between the posterior border of the IT band and the anterior border of the biceps femoris.'
+        ],
+        deepDissection: [
+          'Perform a lateral parapatellar arthrotomy.',
+          'Retract the lateral structures to expose the lateral femoral condyle and lateral joint cavity.'
+        ],
+        redZone: {
+          name: 'Common Peroneal Nerve',
+          caution: 'The common peroneal nerve runs posterior to the biceps femoris tendon and wraps around the fibular neck. Identify the nerve before PLC reconstruction or posterior joint capsule release.'
+        },
+        extensions: 'Proximally, can be extended along the lateral supracondylar ridge.'
+      },
+
+      // ── TIBIA & FIBULA ──
+      {
+        id: 'approach-to-the-fibula',
+        category: 'tibia-fibula',
+        kicker: 'Lateral Extensile Exposure',
+        title: 'Approach to the Fibula',
+        summary: 'A classic extensile exposure providing access to the entire length of the fibula. Commonly indicated for ORIF of fibular fractures, bone grafting, and leg compartment release.',
+        image: 'https://orthofixar.com/wp-content/uploads/2021/04/Approach-to-the-Fibula.jpg',
+        indications: [
+          'Open reduction and internal fixation (ORIF) of fibular fractures.',
+          'Partial or complete resection of the fibula (e.g., for tumors, osteomyelitis).',
+          'Decompression of the four compartments of the leg for compartment syndrome.',
+          'Harvesting vascularized or non-vascularized bone grafts.'
+        ],
+        positioning: 'Lateral decubitus position with the affected leg uppermost, resting on a padded bolster, with the knee slightly flexed. Alternatively, placing the patient supine with a large sandbag under the ipsilateral buttock to internally rotate the leg and expose the lateral side.',
+        landmarks: 'Head of the fibula proximally, and the tip of the lateral malleolus distally. The incision is a straight longitudinal line made just posterior to the fibula, starting 2 cm proximal to the lateral malleolus tip and extending up to the level of the fibular neck/head.',
+        internervous: {
+          interval: 'Peroneal muscles vs. Posterior compartment muscles',
+          muscles: [
+            { name: 'Peroneus Longus & Brevis (Anteriorly)', nerve: 'Superficial Peroneal Nerve (L5-S1)' },
+            { name: 'Soleus & Flexor Hallucis Longus (Posteriorly)', nerve: 'Tibial Nerve (S1-S2)' }
+          ]
+        },
+        superficialDissection: [
+          'Incise the skin and subcutaneous fat in line with the skin incision.',
+          'Identify and incise the deep fascia of the leg in line with the posterior border of the peroneal muscles.',
+          'Develop the interval between the peroneal muscles (retracted anteriorly) and the soleus or flexor hallucis longus muscle (retracted posteriorly).'
+        ],
+        deepDissection: [
+          'Incise the periosteum along the posterolateral aspect of the fibula.',
+          'Using a Cobb elevator, perform subperiosteal elevation to strip the musculature from the fibular shaft, staying strictly subperiosteal to protect the surrounding neurovascular bundles.'
+        ],
+        redZone: {
+          name: 'Common Peroneal Nerve (CPN)',
+          caution: 'The common peroneal nerve winds subcutaneously around the lateral side of the fibular neck from posterior to anterior. During proximal dissection or proximal extensions, the nerve must be identified, mobilized, and protected. Avoid aggressive retraction at the fibular neck to prevent traction neuropraxia.'
+        },
+        extensions: 'Proximally, the approach can be extended in line with the biceps femoris tendon, exposing the proximal fibular head and common peroneal nerve. Distally, it can be extended along the lateral side of the ankle joint.'
+      },
+      {
+        id: 'tibia-posteromedial',
+        category: 'tibia-fibula',
+        kicker: 'Posteromedial Tibia Exposure',
+        title: 'Posteromedial Approach to Tibia',
+        summary: 'Excellent exposure for posteromedial plating of tibial plateau fractures and osteotomies.',
+        image: 'https://orthofixar.com/wp-content/uploads/2021/04/Posteromedial-Approach-to-Tibia.jpg',
+        indications: [
+          'ORIF of posterior column tibial plateau fractures.',
+          'Decompression of deep posterior compartment in leg compartment syndrome.',
+          'Posteromedial tibial osteotomy.'
+        ],
+        positioning: 'Supine with the knee flexed 30 degrees and hip abducted/externally rotated.',
+        landmarks: 'Posteromedial border of the tibia. A longitudinal incision made 1 cm posterior to the posteromedial border of the tibia.',
+        internervous: {
+          interval: 'None (Subcutaneous tibia exposure)',
+          muscles: [
+            { name: 'No true muscle interval (bone is subcutaneous)', nerve: 'Tibial Nerve / Great Saphenous Vein' }
+          ]
+        },
+        superficialDissection: [
+          'Incise skin. Locate and protect the **Great Saphenous Vein** and **Saphenous Nerve** crossing the field.',
+          'Incise deep fascia to access the posteromedial tibial border.'
+        ],
+        deepDissection: [
+          'Peel the medial gastrocnemius and soleus origins subperiosteally off the posterior tibia to expose the posterior tibial shaft.'
+        ],
+        redZone: {
+          name: 'Saphenous Nerve & Posterior Tibial Bundle',
+          caution: 'The saphenous nerve runs with the saphenous vein. Retracting the posterior muscle mass too aggressively can pull on the posterior tibial artery and tibial nerve lying deeper in the posterior compartment.'
+        },
+        extensions: 'Proximally, can be extended into posteromedial knee approach.'
+      },
+
+      // ── ANKLE & FOOT ──
+      {
+        id: 'posterolateral-ankle',
+        category: 'ankle-foot',
+        kicker: 'Posterior Malleolar Exposure',
+        title: 'Posterolateral Approach to Ankle Joint',
+        summary: 'The gold standard approach for open reduction and internal fixation of posterior malleolar tibial fractures, subtalar arthrodesis, and posterior capsulotomy.',
+        image: 'https://orthofixar.com/wp-content/uploads/2021/04/Posterolateral-approach-to-ankle-joint.jpg',
+        indications: [
+          'Open reduction and internal fixation (ORIF) of posterior malleolar fractures of the distal tibia.',
+          'Arthrodesis of the posterior facet of the subtalar joint.',
+          'Posterior ankle capsulotomy and syndesmotomy of the ankle joint.',
+          'Excision of posterior ankle osteophytes or benign tumors.'
+        ],
+        positioning: 'Patient is placed in the prone position. A padded bolster is placed under the contralateral hip to control rotation, and a sandbag under the distal tibia/ankle to allow for ankle dorsiflexion and plantarflexion.',
+        landmarks: 'Tip of the lateral malleolus and the lateral border of the Achilles tendon. A 10 cm longitudinal incision is made halfway between the posterior border of the lateral malleolus and the lateral border of the Achilles tendon, extending down to the tip of the fibula.',
+        internervous: {
+          interval: 'Peroneus Brevis vs. Flexor Hallucis Longus',
+          muscles: [
+            { name: 'Peroneus Brevis (Laterally)', nerve: 'Superficial Peroneal Nerve (L5-S1)' },
+            { name: 'Flexor Hallucis Longus (Medially)', nerve: 'Tibial Nerve (S1-S2)' }
+          ]
+        },
+        superficialDissection: [
+          'Incise the skin and subcutaneous tissue. Carefully locate and isolate the sural nerve and the small saphenous vein, which cross the incision site.',
+          'Incise the deep fascia. Develop the interval between the peroneus brevis laterally and the flexor hallucis longus muscle medially.'
+        ],
+        deepDissection: [
+          'Expose the fat pad over the flexor hallucis longus (FHL) muscle belly. Split the fascia over the FHL.',
+          'Retract the FHL muscle belly medially and the peroneal tendons laterally to fully expose the posterior aspect of the distal tibia and the posterior ankle joint capsule.'
+        ],
+        redZone: {
+          name: 'Sural Nerve & Small Saphenous Vein',
+          caution: 'The sural nerve crosses the lateral border of the Achilles tendon and runs along the lateral ankle. Direct retractor placement on the nerve or excessive traction must be strictly avoided. Accidental transaction or neuroma formation causes intense pain and lateral foot numbness.'
+        },
+        extensions: 'Proximally, the approach can be extended along the lateral border of the Achilles tendon. Distally, the incision can be carried along the lateral calcaneus to expose the subtalar joint.'
+      },
+      {
+        id: 'ankle-anterolateral',
+        category: 'ankle-foot',
+        kicker: 'Anterolateral Joint Exposure',
+        title: 'Anterolateral Approach to Ankle Joint',
+        summary: 'Provides excellent exposure of the lateral ankle joint, talus, and lateral ligaments.',
+        image: 'https://orthofixar.com/wp-content/uploads/2021/04/Anterolateral-Approach-to-Ankle.jpg',
+        indications: [
+          'Ankle joint arthroscopy and debridement.',
+          'Lateral ligament complex reconstruction.',
+          'ORIF of talar neck fractures.'
+        ],
+        positioning: 'Supine with a sandbag under the ipsilateral buttock to internally rotate the ankle.',
+        landmarks: 'Anterior fibular border and extensor tendons. Longitudinal incision made 2 cm anterior to the anterior border of the fibula.',
+        internervous: {
+          interval: 'Peroneus Extensors vs. Tibialis Anterior',
+          muscles: [
+            { name: 'Peroneus Tertius & EDL (Laterally)', nerve: 'Deep Peroneal Nerve (L5-S1)' },
+            { name: 'Tibialis Anterior (Medially)', nerve: 'Deep Peroneal Nerve (L4-L5) - Splits the anterior compartment' }
+          ]
+        },
+        superficialDissection: [
+          'Incise skin. Locate and retract the superficial peroneal nerve branch crossing the lateral field.',
+          'Develop the interval between peroneus tertius/EDL and tibialis anterior.'
+        ],
+        deepDissection: [
+          'Retract EDL and the anterior tibial bundle medially.',
+          'Incise the anterior joint capsule to expose the anterior tibia-talus joint.'
+        ],
+        redZone: {
+          name: 'Superficial Peroneal Nerve',
+          caution: 'The superficial peroneal nerve branches cross the anterolateral ankle subcutaneously. Laceration results in a numb zone over the dorsum of the foot.'
+        },
+        extensions: 'Distally, can be extended across the tarsus into the sinus tarsi (Ollier approach).'
+      },
+      {
+        id: 'ankle-ollier',
+        category: 'ankle-foot',
+        kicker: 'Sinus Tarsi Exposure',
+        title: 'Ollier Approach to Sinus Tarsi',
+        summary: 'Excellent exposure for triple arthrodesis and calcaneal osteotomies. Minimal skin complications.',
+        image: 'https://orthofixar.com/wp-content/uploads/2021/10/Ollier-Approach-to-the-Tarsus.jpg',
+        indications: [
+          'Triple arthrodesis of the hindfoot.',
+          'Subtalar joint fusion.',
+          'ORIF of calcaneal fractures (minimally invasive).'
+        ],
+        positioning: 'Supine with sandbag under the ipsilateral hip.',
+        landmarks: 'Lateral malleolus tip and the talonavicular joint. Incision starts at the lateral malleolus and curves anteriorly over the sinus tarsi toward the talonavicular joint.',
+        internervous: {
+          interval: 'None (Intermuscular/Interosseous interval)',
+          muscles: [
+            { name: 'Developed over the Sinus Tarsi', nerve: 'Extensor Digitorum Brevis split' }
+          ]
+        },
+        superficialDissection: [
+          'Incise skin. Identify and elevate the extensor digitorum brevis (EDB) muscle origin.',
+          'Retract EDB anteriorly to expose the sinus tarsi.'
+        ],
+        deepDissection: [
+          'Evacuate the fat pad inside the sinus tarsi.',
+          'Expose the posterior and middle subtalar joint facets, and the calcaneocuboid joint.'
+        ],
+        redZone: {
+          name: 'Superficial Peroneal Nerve & Peroneal Tendons',
+          caution: 'The peroneal tendons run immediately inferior to the incision border. Keep incision proximal to the peroneal tendons to prevent tendon damage.'
+        },
+        extensions: 'Proximally, can be extended to the lateral malleolus.'
+      },
+      {
+        id: 'calcaneus-lateral',
+        category: 'ankle-foot',
+        kicker: 'Extensile Calcaneal Exposure',
+        title: 'Lateral Approach to Calcaneus',
+        summary: 'The extensile lateral gold standard for open reduction and internal fixation of displaced calcaneus fractures.',
+        image: 'https://orthofixar.com/wp-content/uploads/2021/08/Lateral-Approach-to-Calcaneus.jpg',
+        indications: [
+          'ORIF of displaced intra-articular calcaneus fractures.',
+          'Subtalar arthrodesis (revision).'
+        ],
+        positioning: 'Lateral decubitus position (affected side up) or prone.',
+        landmarks: 'Tip of the lateral malleolus, Achilles tendon, base of the 5th metatarsal. A vertical incision is made along the posterior border of the fibula, meeting a horizontal incision running forward to the 5th metatarsal base.',
+        internervous: {
+          interval: 'None (Extensile flap reflection)',
+          muscles: [
+            { name: 'Full thick subperiosteal flap reflected', nerve: 'Sural nerve reflected inside the flap' }
+          ]
+        },
+        superficialDissection: [
+          'Incise skin directly down to the bone. The incision must be "no-touch" subperiosteal to elevate a single, full-thickness flap.',
+          'Keep the sural nerve inside the thick anterior skin flap.'
+        ],
+        deepDissection: [
+          'Reflect the lateral flap superiorly and anteriorly, exposing the entire lateral wall of the calcaneus, peroneal tendons, and subtalar joint.'
+        ],
+        redZone: {
+          name: 'Flap Necrosis & Sural Nerve Injury',
+          caution: 'The lateral skin flap has a delicate terminal vascular supply. Retractor placement must utilize "K-wire retractor" technique rather than metal retractors to prevent skin necrosis. The sural nerve lies in the flap; do not dissect it out.'
+        },
+        extensions: 'None.'
+      }
+    ];
+
+    // Image loader error fallback handler
+    function handleImageError(img) {
+      const parent = img.parentElement;
+      img.style.display = 'none';
+      
+      // Remove any old fallbacks
+      const oldFallback = parent.querySelector('.anatomy-placeholder-svg');
+      if (oldFallback) oldFallback.remove();
+      
+      const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+      svg.setAttribute("viewBox", "0 0 200 120");
+      svg.setAttribute("class", "anatomy-placeholder-svg");
+      svg.innerHTML = `
+        <rect width="100%" height="100%" fill="var(--bg-secondary)"/>
+        <text x="50%" y="42%" dominant-baseline="middle" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="800" fill="var(--text-secondary)">ANATOMY GUIDE</text>
+        <text x="50%" y="60%" dominant-baseline="middle" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" font-weight="600" fill="var(--brand-gold)">[ Illustration Preview ]</text>
+        <path d="M50 85 Q100 45 150 85" stroke="var(--border-hover)" stroke-width="1.5" fill="none" stroke-dasharray="3 3"/>
+        <circle cx="100" cy="65" r="5" fill="var(--brand-gold)"/>
+      `;
+      parent.appendChild(svg);
+    }
+
+    // Grid Renderer
+    function renderGrid(filter = 'all') {
+      const grid = document.getElementById('approachesGrid');
+      grid.innerHTML = '';
+      
+      const filtered = filter === 'all' 
+        ? APPROACHES_DATA 
+        : APPROACHES_DATA.filter(item => item.category === filter);
+        
+      filtered.forEach(item => {
+        const card = document.createElement('div');
+        card.className = 'approach-card fade-in-up';
+        card.onclick = () => openDrawer(item.id);
+        
+        card.innerHTML = `
+          <div class="ac-img-wrap">
+            <img src="${item.image}" alt="${item.title}" onerror="handleImageError(this)">
+          </div>
+          <div class="ac-content">
+            <div>
+              <div class="ac-kicker">${item.kicker}</div>
+              <h3 class="ac-title">${item.title}</h3>
+              <p class="ac-desc">${item.summary}</p>
+            </div>
+            <div class="ac-foot">
+              <span>Read Full Entry</span>
+              <span>→</span>
+            </div>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    // Filter Logic
+    function filterCategory(cat, btn) {
+      document.querySelectorAll('.fb').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderGrid(cat);
+    }
+
+    // Open Drawer & Populate Content Dynamically
+    function openDrawer(id) {
+      const item = APPROACHES_DATA.find(x => x.id === id);
+      if (!item) return;
+      
+      document.getElementById('drawerKicker').innerText = item.kicker;
+      document.getElementById('drawerTitle').innerText = item.title;
+      
+      // Setup image section
+      const imgWrap = document.getElementById('drawerImageWrap');
+      imgWrap.innerHTML = `<img id="drawerImage" src="${item.image}" alt="${item.title}" onerror="handleImageError(this)">`;
+      
+      // Setup detailed sections
+      const content = document.getElementById('drawerContent');
+      content.innerHTML = `
+        <div class="drawer-content-section">
+          <h3>Indications</h3>
+          <ul>
+            ${item.indications.map(ind => `<li>${ind}</li>`).join('')}
+          </ul>
+        </div>
+        
+        <div class="drawer-content-section">
+          <h3>Patient Positioning</h3>
+          <p>${item.positioning}</p>
+        </div>
+        
+        <div class="drawer-content-section">
+          <h3>Surgical Landmarks & Incision</h3>
+          <p>${item.landmarks}</p>
+        </div>
+        
+        <div class="drawer-content-section">
+          <h3>Internervous Plane</h3>
+          <p>The safe interval is developed through the following plane:</p>
+          <div class="int-table-wrap">
+            <table class="int-table">
+              <thead>
+                <tr>
+                  <th>Surgical Interval Muscle</th>
+                  <th>Nervous Innervation</th>
+                </tr>
+              </thead>
+              <tbody>
+                ${item.internervous.muscles.map(musc => `
+                  <tr>
+                    <td><span class="int-val-highlight">${musc.name}</span></td>
+                    <td>${musc.nerve}</td>
+                  </tr>
+                `).join('')}
+              </tbody>
+            </table>
+          </div>
+        </div>
+        
+        <div class="drawer-content-section">
+          <h3>Superficial Dissection</h3>
+          <ol>
+            ${item.superficialDissection.map(step => `<li>${step}</li>`).join('')}
+          </ol>
+        </div>
+        
+        <div class="drawer-content-section">
+          <h3>Deep Dissection</h3>
+          <ol>
+            ${item.deepDissection.map(step => `<li>${step}</li>`).join('')}
+          </ol>
+        </div>
+        
+        <div class="callout warn">
+          <span class="label">⚠️ RED ZONE DANGER</span>
+          <strong>${item.redZone.name}:</strong> ${item.redZone.caution}
+        </div>
+        
+        <div class="drawer-content-section">
+          <h3>Surgical Extensions</h3>
+          <p>${item.extensions}</p>
+        </div>
+      `;
+      
+      document.getElementById('drawerOverlay').classList.add('open');
+      document.getElementById('drawerContainer').classList.add('open');
+      document.body.style.overflow = 'hidden'; // Lock main scroll
+    }
+
+    // Close Drawer
+    function closeDrawer() {
+      document.getElementById('drawerOverlay').classList.remove('open');
+      document.getElementById('drawerContainer').classList.remove('open');
+      document.body.style.overflow = ''; // Restore scroll
+    }
+
+    // Dark Mode Toggle Logic
+    const themeToggle = document.getElementById('themeToggle');
+    const moonIcon = document.getElementById('moonIcon');
+    const sunIcon = document.getElementById('sunIcon');
+
+    function applyTheme(theme) {
+      if (theme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        if (moonIcon) moonIcon.style.display = 'none';
+        if (sunIcon) sunIcon.style.display = 'block';
+      } else {
+        document.documentElement.removeAttribute('data-theme');
+        if (sunIcon) sunIcon.style.display = 'none';
+        if (moonIcon) moonIcon.style.display = 'block';
+      }
+    }
+
+    themeToggle.addEventListener('click', () => {
+      const isDark = document.documentElement.hasAttribute('data-theme');
+      const newTheme = isDark ? 'light' : 'dark';
+      applyTheme(newTheme);
+      localStorage.setItem('sih-theme', newTheme);
+    });
+
+    // Mobile navigation drawers
+    function openMobNav() {
+      document.getElementById('mobNavSheet').classList.add('open');
+      document.getElementById('mobNavOverlay').style.display = 'block';
+      document.body.style.overflow = 'hidden';
+    }
+    function closeMobNav() {
+      document.getElementById('mobNavSheet').classList.remove('open');
+      document.getElementById('mobNavOverlay').style.display = 'none';
+      document.body.style.overflow = '';
+    }
+
+    // Initialize Grid
+    document.addEventListener('DOMContentLoaded', () => {
+      const currentTheme = localStorage.getItem('sih-theme') || 'light';
+      applyTheme(currentTheme);
+      renderGrid();
+    });
+  </script>
+
+  <script src="../../js/navigation.js"></script>
+  <script src="../../js/nav-pill.js"></script>
+</body>
+</html>
