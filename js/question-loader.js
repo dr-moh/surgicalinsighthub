@@ -39,7 +39,8 @@
         "orthopedics.js",              // +358 orthopedic Qs
         "vascular_surgery.js",         // +10  vascular Qs
         "hepatopancreatobiliary_hpb.js", // +2  HPB Qs
-        "general_surgery.js"           // +5417 general surgery Qs (largest bank)
+        "general_surgery.js",           // +5417 general surgery Qs (largest bank)
+        "competency_2500.js"             // +2176 competency-based surgery MCQs (U. Santosh Pai, CBS 2022)
     ];
 
     let loadedCount = 0;
