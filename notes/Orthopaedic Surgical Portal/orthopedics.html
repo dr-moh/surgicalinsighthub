@@ -191,6 +191,20 @@
       min-width: 100%;
       border-left: none;
     }
+    .drawer-body {
+      padding: 20px 16px;
+    }
+    .drawer-image-wrap {
+      height: 220px;
+      margin-bottom: 20px;
+    }
+    .approaches-grid {
+      grid-template-columns: 1fr !important;
+      gap: 20px;
+    }
+    .filter-inner {
+      padding: 0 16px;
+    }
   }
   .drawer-container.open {
     transform: translateX(0);
@@ -4410,7 +4424,7 @@
         card.innerHTML = `
           <div class="ac-img-wrap" style="position: relative; overflow: hidden; background: var(--bg-secondary);">
             ${getSurgicalPortalSVG(item.category, item.title)}
-            <img src="${item.image}" alt="${item.title}" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 0.4s ease-in-out;" onload="this.style.opacity='1'; this.nextElementSibling.style.opacity='1';" onerror="this.style.display='none';">
+            <img src="${item.image}" referrerpolicy="no-referrer" alt="${item.title}" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 0.4s ease-in-out;" onload="this.style.opacity='1'; this.nextElementSibling.style.opacity='1';" onerror="this.style.display='none';">
             <span class="img-credit-badge" style="opacity: 0;">📷 Clinical Illustration</span>
           </div>
           <div class="ac-content">
@@ -4505,7 +4519,7 @@
           slidesHtml += `
             <div class="carousel-slide">
               ${getSurgicalPortalSVG(item.category, item.title)}
-              <img src="${imgUrl}" alt="${item.title} - Image ${idx + 1}" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; opacity: 0; transition: opacity 0.4s ease-in-out;" onload="this.style.opacity='1'; this.nextElementSibling.style.opacity='1';" onerror="this.style.display='none';">
+              <img src="${imgUrl}" referrerpolicy="no-referrer" alt="${item.title} - Image ${idx + 1}" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; opacity: 0; transition: opacity 0.4s ease-in-out;" onload="this.style.opacity='1'; this.nextElementSibling.style.opacity='1';" onerror="this.style.display='none';">
               <span class="img-credit-badge" style="opacity: 0;">📷 Clinical Illustration</span>
             </div>
           `;
