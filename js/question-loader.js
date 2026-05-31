@@ -40,7 +40,8 @@
         "vascular_surgery.js",         // +10  vascular Qs
         "hepatopancreatobiliary_hpb.js", // +2  HPB Qs
         "general_surgery.js",           // +5417 general surgery Qs (largest bank)
-        "competency_2500.js"             // +2176 competency-based surgery MCQs (U. Santosh Pai, CBS 2022)
+        "competency_2500.js",            // +2176 competency-based surgery MCQs (U. Santosh Pai, CBS 2022)
+        "surgery_essence_4850.js"        // +4850 MCQs extracted from Surgery Essence by Pritesh
     ];
 
     let loadedCount = 0;
