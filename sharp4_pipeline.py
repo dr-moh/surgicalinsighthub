@@ -36,7 +36,7 @@ MAX_WORKERS = 3
 SAVE_EVERY  = 25
 RATE_LIMIT  = 0.3
 
-file_lock = threading.Lock()
+file_lock = threading.RLock()
 
 # ── Prompt Builder (avoids quote collision) ───────────────────────────────────
 def build_prompt(q):
@@ -301,18 +301,18 @@ def main():
 
         return qid
 
-    print("🚀 Starting enrichment...\n")
+    print("🚀 Starting enrichment (Sequential Mode)...\n")
 
-    with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
-        futures = {executor.submit(worker, q): q for q in pending}
-        for i, fut in enumerate(as_completed(futures), 1):
-            fut.result()
-            if i % 100 == 0:
-                elapsed = time.time() - start
-                rate = i / elapsed if elapsed > 0 else 1
-                eta = (len(pending) - i) / rate / 60
-                print(f"  [{i}/{len(pending)}] ✅{enriched} ❌{failed} "
-                      f"| Rate:{rate:.1f} Q/s | ETA:{eta:.0f}min")
+    for i, q in enumerate(pending, 1):
+        print(f"  -> Processing Q{q.get('id')}...", end=" ")
+        qid = worker(q)
+        print("Done.")
+        if i % 100 == 0:
+            elapsed = time.time() - start
+            rate = i / elapsed if elapsed > 0 else 1
+            eta = (len(pending) - i) / rate / 60
+            print(f"  [{i}/{len(pending)}] ✅{enriched} ❌{failed} "
+                  f"| Rate:{rate:.1f} Q/s | ETA:{eta:.0f}min")
 
     # Final save
     save_questions(questions)
