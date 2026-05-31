@@ -1,136 +1,143 @@
 """
-SHARP 4.0 Enrichment Pipeline
-==============================
-Upgrades every question in competency_2500.js from basic placeholder
-debriefs to full SHARP 4.0 Cognitive & Surgical Debriefs using Gemini 2.5 Flash.
+SHARP 4.0 Enrichment Pipeline — Production Version
+====================================================
+Upgrades every question in competency_2500.js to full SHARP 4.0 debriefs.
 
-SHARP 4.0 adds over SHARP 3.0:
-  ✅ S – Set the Stage (Verdict + Diagnostic Pivot)
-  ✅ H – Highlight Excellence (Surgical Why + Pathophysiology)
-  ✅ A – Address the Gaps (Full distractor demolition, each option explained)
-  ✅ R – Review Learning Points (Comparison table + evidence framework)
-  ✅ P – Plan for Improvement (Board Pearl + exam heuristic)
-  🆕 I – Imaging & Intraoperative Pearl (NEW in 4.0)
-  🆕 G – Guideline Anchor (Named guideline + year, NEW in 4.0)
-  🆕 T – Takeaway in One Line (Tweet-length memorization hook, NEW in 4.0)
+SHARP 4.0 Sections:
+  S – Set the Stage (Verdict + Diagnostic Pivot)
+  H – Highlight Excellence (Surgical Mechanism + Pathophysiology)
+  A – Address the Gaps (Each wrong option explained individually)
+  R – Review Learning Points (Markdown comparison table)
+  P – Plan (Board Pearl exam heuristic)
+  I – Imaging & Intraoperative Pearl [NEW]
+  G – Guideline Anchor (Named society guideline + year) [NEW]
+  T – One-Line Takeaway (≤20-word memorization hook) [NEW]
+  + Difficulty rating [NEW]
 
-Run: python3 sharp4_pipeline.py
-Output: js/questions/competency_2500.js (updated in-place)
+Run:  python3 sharp4_pipeline.py
 """
 
-import json, os, re, time, threading
+import json, os, re, time, threading, warnings
+warnings.filterwarnings("ignore")
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
-print("Loading Vertex AI client...")
 from google import genai
 from google.genai import types
-import warnings
-warnings.filterwarnings("ignore")
 
+print("Connecting to Vertex AI...")
 client = genai.Client(vertexai=True, project="sih-mcq-pipeline", location="us-central1")
-print("✅ Vertex AI connected — Gemini 2.5 Flash ready\n")
+print("✅ Vertex AI — Gemini 2.5 Flash ready\n")
 
 # ── Config ────────────────────────────────────────────────────────────────────
 INPUT_FILE  = "js/questions/competency_2500.js"
 OUTPUT_FILE = "js/questions/competency_2500.js"
 CHECKPOINT  = "sharp4_checkpoint.json"
-MAX_WORKERS = 4        # Parallel threads
-BATCH_SIZE  = 20       # Questions per save checkpoint
-RATE_LIMIT  = 0.5      # Seconds between requests per thread
+MAX_WORKERS = 3
+SAVE_EVERY  = 25
+RATE_LIMIT  = 0.3
 
 file_lock = threading.Lock()
 
-# ── SHARP 4.0 Prompt ─────────────────────────────────────────────────────────
-SHARP4_PROMPT = """You are a world-class surgical educator, board examiner, and clinical teacher.
+# ── Prompt Builder (avoids quote collision) ───────────────────────────────────
+def build_prompt(q):
+    opts = q.get("options", {})
+    lines = [
+        "You are a world-class surgical board examiner. Write a SHARP 4.0 debrief.",
+        "",
+        f"QUESTION: {q.get('question', '')}",
+        f"OPTION_A: {opts.get('A', '')}",
+        f"OPTION_B: {opts.get('B', '')}",
+        f"OPTION_C: {opts.get('C', '')}",
+        f"OPTION_D: {opts.get('D', '')}",
+        f"ANSWER_KEY: {q.get('answer', '')}",
+        f"CHAPTER: {q.get('chapter', '')}",
+        f"SPECIALTY: {q.get('specialty', 'General Surgery')}",
+        "",
+        "Return ONLY a JSON object with these exact keys.",
+        "All string values must be on one line — no literal line breaks inside strings.",
+        "Use \\n for newlines within strings.",
+        "",
+        "{",
+        '  "status": "ACCEPT",',
+        '  "verified_answer": "<single letter: A B C or D>",',
+        '  "verified_answer_text": "<exact text of the correct option>",',
+        '  "set_the_stage": "<2-3 sentences: restate the verdict and explain WHY this answer is correct — the clinical/anatomical logic>",',
+        '  "highlight_excellence": "<3-5 sentences: the surgical mechanism, anatomical basis, or physiology that makes the answer correct. Be specific and educational>",',
+        '  "address_gaps": "<For each WRONG option write: Option X (Incorrect): [why wrong in 1-2 sentences]. Separate with \\n>",',
+        '  "review_learning_points": "<A markdown table comparing 3-4 related items. Must include | header | header | format with a separator row>",',
+        '  "plan": "Board Pearl: <one memorable exam heuristic under 20 words>",',
+        '  "imaging_intraoperative_pearl": "<What you would see on CT/X-ray/US/endoscopy OR in the OR for this topic. Name the specific sign or finding if one exists>",',
+        '  "guideline_anchor": "<Name the most relevant society guideline (ASCRS/WSES/ACS/NICE/ESMO etc) with year. State what it recommends relevant to this question>",',
+        '  "takeaway": "<One memorable line under 20 words. Make it witty and impossible to forget>",',
+        '  "difficulty": "<Easy or Medium or Hard or Very Hard>"',
+        "}",
+    ]
+    return "\n".join(lines)
 
-Your task: Write a complete SHARP 4.0 Cognitive & Surgical Debrief for the MCQ below.
+# ── Robust JSON Parser ────────────────────────────────────────────────────────
+def safe_parse(text):
+    """Parse JSON with multiple fallback strategies."""
+    if not text:
+        return None
 
-MCQ:
-Question: {question}
-Options:
-  A) {A}
-  B) {B}
-  C) {C}
-  D) {D}
-Answer Key: {answer}
-Chapter: {chapter}
-Specialty: {specialty}
+    # Strategy 1: Direct parse
+    try:
+        return json.loads(text)
+    except Exception:
+        pass
 
-SHARP 4.0 FORMAT — Return ONLY this JSON, no extra text:
-{{
-  "status": "ACCEPT",
-  "verified_answer": "<single letter A/B/C/D>",
-  "verified_answer_text": "<full text of the correct option>",
-  "set_the_stage": "<2-3 sentences: restate the verdict, explain the diagnostic pivot — WHY this is the answer, what clinical logic locks it in>",
-  "highlight_excellence": "<3-5 sentences: the surgical/anatomical/physiological MECHANISM that makes the answer correct. Include the pathophysiology chain. Be precise and educational>",
-  "address_gaps": "<For EACH wrong option (A, B, C, D — skip the correct one), write 1-2 sentences explaining exactly WHY it is wrong. Label each: 'Option X (Incorrect): ...' Format as a single string with newlines between each>",
-  "review_learning_points": "<Build a 3-5 row comparison or classification table in Markdown format with column headers, comparing related conditions, classifications, or management steps relevant to this question>",
-  "plan": "<The Board Pearl: ONE memorable exam heuristic. Start with 'Board Pearl:' — give the pattern/trigger word that maps to this answer>",
-  "imaging_intraoperative_pearl": "<NEW in 4.0> What would you see on imaging (X-ray/CT/US/endoscopy) OR in the operating room relevant to this question? Be specific: describe the finding, the view, the name of the sign if one exists>",
-  "guideline_anchor": "<NEW in 4.0> Cite the most relevant society guideline (e.g., ACS, ASCRS, WSES, ESMO, ACOG, BSS, NICE) with guideline name and most recent year. State what it recommends relevant to this question. If no specific guideline, cite the most authoritative textbook chapter>",
-  "takeaway": "<NEW in 4.0> One-line memorization hook. Must be under 25 words. Witty, precise, and impossible to forget. Format as a bold statement>",
-  "difficulty": "<Easy|Medium|Hard|Very Hard — based on the specificity and clinical reasoning required>"
-}}"""
+    # Strategy 2: Strip markdown code fence
+    cleaned = re.sub(r"^```(?:json)?\s*", "", text.strip())
+    cleaned = re.sub(r"\s*```$", "", cleaned)
+    try:
+        return json.loads(cleaned)
+    except Exception:
+        pass
 
-# ── Load questions ─────────────────────────────────────────────────────────────
-def load_questions():
-    with open(INPUT_FILE, "r", encoding="utf-8") as f:
-        content = f.read()
-    # Strip the JS wrapper
-    m = re.search(r"window\.QUESTIONS\.push\(\.\.\.(.*)\);", content, re.DOTALL)
-    if not m:
-        raise ValueError("Could not parse question array from JS file")
-    return json.loads(m.group(1))
+    # Strategy 3: Extract first complete JSON object
+    try:
+        m = re.search(r"\{[\s\S]*\}", cleaned)
+        if m:
+            return json.loads(m.group(0))
+    except Exception:
+        pass
 
-# ── Save questions ─────────────────────────────────────────────────────────────
-def save_questions(questions):
-    header = (
-        "// Auto-generated by sharp4_pipeline.py\n"
-        "// Source: Competency-Based 2500 MCQs in Surgery — U. Santosh Pai (CBS, 2022)\n"
-        f"// Total: {len(questions)} questions | SHARP 4.0 Enriched\n"
-        "// SHARP 4.0 adds: Imaging Pearl, Guideline Anchor, One-Line Takeaway\n"
-        "if(!window.QUESTIONS) window.QUESTIONS = [];\n"
-        f"window.QUESTIONS.push(...{json.dumps(questions, indent=2, ensure_ascii=False)});\n"
-    )
-    with file_lock:
-        with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-            f.write(header)
+    # Strategy 4: Fix common issues (unescaped newlines inside strings)
+    try:
+        # Replace literal newlines inside quoted strings with \n
+        fixed = re.sub(r'(?<!\\)\n(?=[^"]*")', r"\\n", cleaned)
+        return json.loads(fixed)
+    except Exception:
+        pass
 
-# ── Load checkpoint ────────────────────────────────────────────────────────────
-def load_checkpoint():
-    if os.path.exists(CHECKPOINT):
-        with open(CHECKPOINT, "r") as f:
-            return set(json.load(f))
-    return set()
+    return None
 
-def save_checkpoint(done_ids):
-    with file_lock:
-        with open(CHECKPOINT, "w") as f:
-            json.dump(list(done_ids), f)
-
-# ── Build markdown_debrief from SHARP 4.0 payload ────────────────────────────
-def build_markdown(q, payload):
-    va  = payload.get("verified_answer", "?")
-    vat = payload.get("verified_answer_text", "")
-    sts = payload.get("set_the_stage", "")
-    he  = payload.get("highlight_excellence", "")
-    ag  = payload.get("address_gaps", "")
-    rl  = payload.get("review_learning_points", "")
-    pl  = payload.get("plan", "")
-    img = payload.get("imaging_intraoperative_pearl", "")
-    gl  = payload.get("guideline_anchor", "")
-    tw  = payload.get("takeaway", "")
-    diff= payload.get("difficulty", "Medium")
+# ── Build SHARP 4.0 Markdown ──────────────────────────────────────────────────
+def build_markdown(q, p):
+    va   = p.get("verified_answer", "?")
+    vat  = p.get("verified_answer_text", "")
+    sts  = p.get("set_the_stage", "").replace("\\n", "\n")
+    he   = p.get("highlight_excellence", "").replace("\\n", "\n")
+    ag   = p.get("address_gaps", "").replace("\\n", "\n")
+    rl   = p.get("review_learning_points", "").replace("\\n", "\n")
+    pl   = p.get("plan", "").replace("\\n", "\n")
+    img  = p.get("imaging_intraoperative_pearl", "").replace("\\n", "\n")
+    gl   = p.get("guideline_anchor", "").replace("\\n", "\n")
+    tw   = p.get("takeaway", "")
+    diff = p.get("difficulty", "Medium")
 
     opts = q.get("options", {})
-    opt_rows = "\n".join(
-        f"| {k} | {v[:70]} | {'✅ Correct' if k == va else '❌ Incorrect'} |"
+    rows = "\n".join(
+        f"| {k} | {v[:75]} | {'✅ Correct' if k == va else '❌ Incorrect'} |"
         for k, v in opts.items()
     )
 
+    chapter = q.get("chapter", "").title()
+    specialty = q.get("specialty", "")
+
     return f"""### SHARP 4.0 Cognitive & Surgical Debrief
 
-> **{tw}**
+> **💡 {tw}**
 
 ---
 
@@ -141,9 +148,11 @@ def build_markdown(q, payload):
 {he}
 
 ## A — Address the Gaps
+
 {ag}
 
 ## R — Review Learning Points
+
 {rl}
 
 ## P — Plan (Board Pearl)
@@ -151,153 +160,172 @@ def build_markdown(q, payload):
 
 ---
 
-## 🔬 I — Imaging & Intraoperative Pearl *(New in SHARP 4.0)*
+## 🔬 Imaging & Intraoperative Pearl
 {img}
 
-## 📋 G — Guideline Anchor *(New in SHARP 4.0)*
+## 📋 Guideline Anchor
 {gl}
 
 ---
 
-### Answer Summary
+### Answer Breakdown
 | Option | Text | Status |
 |--------|------|--------|
-{opt_rows}
+{rows}
 
-**Verified Answer: {va}) {vat}** | **Difficulty: {diff}** | **Chapter: {q.get('chapter', '')}**
+**✅ Answer: {va}) {vat}** &nbsp;|&nbsp; **Difficulty: {diff}** &nbsp;|&nbsp; **Chapter: {chapter}** &nbsp;|&nbsp; **Specialty: {specialty}**
 """
 
-# ── Enrich a single question ───────────────────────────────────────────────────
-def enrich_question(q):
-    opts = q.get("options", {})
-    prompt = SHARP4_PROMPT.format(
-        question  = q.get("question", ""),
-        A = opts.get("A", ""),
-        B = opts.get("B", ""),
-        C = opts.get("C", ""),
-        D = opts.get("D", ""),
-        answer    = q.get("answer", ""),
-        chapter   = q.get("chapter", ""),
-        specialty = q.get("specialty", "General Surgery"),
-    )
-
-    try:
-        response = client.models.generate_content(
-            model="gemini-2.5-flash",
-            contents=prompt,
-            config=types.GenerateContentConfig(
-                response_mime_type="application/json",
-                temperature=0.15,
-                max_output_tokens=2048,
+# ── Call Gemini ───────────────────────────────────────────────────────────────
+def enrich_one(q):
+    prompt = build_prompt(q)
+    for attempt in range(3):
+        try:
+            resp = client.models.generate_content(
+                model="gemini-2.5-flash",
+                contents=prompt,
+                config=types.GenerateContentConfig(
+                    response_mime_type="application/json",
+                    temperature=0.15,
+                    max_output_tokens=2000,
+                )
             )
-        )
-        text = response.text.strip()
-        # Strip markdown wrappers if any
-        text = re.sub(r"^```json\s*", "", text)
-        text = re.sub(r"\s*```$", "", text)
-        payload = json.loads(text)
+            payload = safe_parse(resp.text)
+            if payload and payload.get("status", "").upper() in (
+                "ACCEPT", "ACCEPTED", "OK", "VERIFIED"
+            ):
+                return payload
+        except Exception as e:
+            time.sleep(2 ** attempt)
+    return None
 
-        if payload.get("status", "").upper() not in ("ACCEPT", "ACCEPTED", "OK", "VERIFIED"):
-            return None
+# ── Load / Save helpers ───────────────────────────────────────────────────────
+def load_questions():
+    with open(INPUT_FILE, "r", encoding="utf-8") as f:
+        content = f.read()
+    m = re.search(r"window\.QUESTIONS\.push\(\.\.\.(.*)\);", content, re.DOTALL)
+    if not m:
+        raise ValueError("Cannot find question array in JS file")
+    return json.loads(m.group(1))
 
-        return payload
-    except Exception as e:
-        return None
+def save_questions(questions):
+    header = (
+        "// Auto-generated by sharp4_pipeline.py\n"
+        "// Source: Competency-Based 2500 MCQs in Surgery — U. Santosh Pai (CBS, 2022)\n"
+        f"// Total: {len(questions)} questions | SHARP 4.0 Enriched\n"
+        "// SHARP 4.0: Imaging Pearl + Guideline Anchor + One-Line Takeaway + Difficulty\n"
+        "if(!window.QUESTIONS) window.QUESTIONS = [];\n"
+        f"window.QUESTIONS.push(...{json.dumps(questions, indent=2, ensure_ascii=False)});\n"
+    )
+    with file_lock:
+        with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+            f.write(header)
 
-# ── Main pipeline ──────────────────────────────────────────────────────────────
+def load_checkpoint():
+    if os.path.exists(CHECKPOINT):
+        with open(CHECKPOINT, "r") as f:
+            return set(json.load(f))
+    return set()
+
+def save_checkpoint(done_ids):
+    with file_lock:
+        with open(CHECKPOINT, "w") as f:
+            json.dump(sorted(list(done_ids)), f)
+
+# ── Main ──────────────────────────────────────────────────────────────────────
 def main():
-    print("=" * 60)
-    print("  SHARP 4.0 Enrichment Pipeline")
-    print("  Source: Competency-Based 2500 MCQs in Surgery")
-    print("=" * 60)
+    print("=" * 65)
+    print("  SHARP 4.0 Pipeline — Competency-Based 2500 MCQs")
+    print("=" * 65)
 
-    questions = load_questions()
-    done_ids  = load_checkpoint()
-    total     = len(questions)
-    pending   = [q for q in questions if str(q.get("id")) not in done_ids]
+    questions  = load_questions()
+    done_ids   = load_checkpoint()
+    total      = len(questions)
+    pending    = [q for q in questions
+                  if str(q.get("id")) not in done_ids
+                  and "See textbook" not in q.get("answer", "")]
 
-    print(f"\n📊 Total questions : {total}")
-    print(f"✅ Already done    : {len(done_ids)}")
-    print(f"⏳ To enrich       : {len(pending)}")
-    print(f"🧵 Workers         : {MAX_WORKERS}")
-    print(f"💾 Checkpoint file : {CHECKPOINT}\n")
+    print(f"\n  Total questions : {total}")
+    print(f"  Already done    : {len(done_ids)}")
+    print(f"  To enrich       : {len(pending)}")
+    print(f"  Skipped (no ans): {total - len(done_ids) - len(pending)}")
+    print(f"  Workers         : {MAX_WORKERS}")
+    print(f"  Save every      : {SAVE_EVERY} questions\n")
 
     if not pending:
-        print("All questions already enriched! ✅")
+        print("✅ All questions already enriched!")
         return
 
-    enriched_count = 0
-    failed_count   = 0
-    batch_count    = 0
+    enriched  = 0
+    failed    = 0
+    batch_n   = 0
+    start     = time.time()
 
-    def process(q):
-        nonlocal enriched_count, failed_count, batch_count
-        time.sleep(RATE_LIMIT)  # Rate limit per thread
-
+    def worker(q):
+        nonlocal enriched, failed, batch_n
+        time.sleep(RATE_LIMIT)
         qid = str(q.get("id"))
-        payload = enrich_question(q)
 
+        payload = enrich_one(q)
         if payload:
             md = build_markdown(q, payload)
+            va = payload.get("verified_answer", "")
+            vat = payload.get("verified_answer_text", "")
+
             with file_lock:
-                # Update the question in-place
                 for i, orig in enumerate(questions):
                     if str(orig.get("id")) == qid:
                         questions[i]["markdown_debrief"] = md
                         questions[i]["difficulty"]       = payload.get("difficulty", "Medium")
-                        questions[i]["verified_answer"]  = payload.get("verified_answer")
-                        # Update answer if pipeline found discrepancy
-                        va = payload.get("verified_answer")
-                        vat = payload.get("verified_answer_text", "")
                         if va:
+                            questions[i]["verified_answer"]  = va
                             questions[i]["answer"] = f"{va}) {vat}"
                         break
-
+                enriched += 1
                 done_ids.add(qid)
-                enriched_count += 1
-                batch_count    += 1
-
-                # Save checkpoint every BATCH_SIZE questions
-                if batch_count % BATCH_SIZE == 0:
+                batch_n  += 1
+                if batch_n % SAVE_EVERY == 0:
                     save_questions(questions)
                     save_checkpoint(done_ids)
-                    pct = (len(done_ids) / total) * 100
-                    print(f"  💾 Checkpoint saved — {len(done_ids)}/{total} ({pct:.1f}%) enriched")
+                    pct = len(done_ids) / total * 100
+                    elapsed = time.time() - start
+                    rate = enriched / elapsed if elapsed > 0 else 1
+                    eta_min = (len(pending) - enriched) / rate / 60
+                    print(f"  💾 [{len(done_ids)}/{total} | {pct:.0f}%] "
+                          f"✅{enriched} ❌{failed} | "
+                          f"Rate:{rate:.1f} Q/s | ETA:{eta_min:.0f}min")
         else:
             with file_lock:
-                failed_count += 1
-                done_ids.add(qid)  # Mark as done to skip on retry
+                failed += 1
+                done_ids.add(qid)
 
         return qid
 
     print("🚀 Starting enrichment...\n")
-    start_time = time.time()
 
     with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
-        futures = {executor.submit(process, q): q for q in pending}
-        for i, future in enumerate(as_completed(futures)):
-            qid = future.result()
-            if (i + 1) % 50 == 0:
-                elapsed = time.time() - start_time
-                rate    = (i + 1) / elapsed
-                remaining = (len(pending) - i - 1) / rate if rate > 0 else 0
-                print(f"  Progress: {i+1}/{len(pending)} | "
-                      f"Rate: {rate:.1f} Q/s | "
-                      f"ETA: {remaining/60:.1f} min | "
-                      f"✅ {enriched_count} OK | ❌ {failed_count} fail")
+        futures = {executor.submit(worker, q): q for q in pending}
+        for i, fut in enumerate(as_completed(futures), 1):
+            fut.result()
+            if i % 100 == 0:
+                elapsed = time.time() - start
+                rate = i / elapsed if elapsed > 0 else 1
+                eta = (len(pending) - i) / rate / 60
+                print(f"  [{i}/{len(pending)}] ✅{enriched} ❌{failed} "
+                      f"| Rate:{rate:.1f} Q/s | ETA:{eta:.0f}min")
 
     # Final save
     save_questions(questions)
     save_checkpoint(done_ids)
 
-    elapsed = time.time() - start_time
-    print(f"\n{'='*60}")
-    print(f"✅ SHARP 4.0 Enrichment Complete!")
-    print(f"   Enriched : {enriched_count}")
-    print(f"   Failed   : {failed_count}")
-    print(f"   Time     : {elapsed/60:.1f} minutes")
-    print(f"   Output   : {OUTPUT_FILE}")
-    print(f"{'='*60}")
+    elapsed = time.time() - start
+    print(f"\n{'='*65}")
+    print(f"  ✅ SHARP 4.0 Complete!")
+    print(f"     Enriched : {enriched}")
+    print(f"     Failed   : {failed}")
+    print(f"     Time     : {elapsed/60:.1f} minutes")
+    print(f"     Output   : {OUTPUT_FILE}")
+    print(f"{'='*65}")
 
 if __name__ == "__main__":
     main()
