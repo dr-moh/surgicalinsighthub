@@ -1,11 +1,11 @@
 """
-Surgery Essence SHARP 4.0 Pipeline
-==================================
-Reads raw_essence.json (Phase 1 output), sends to Vertex AI for extraction + SHARP 4.0 generation,
+Surgery Essence SHARP 4.0 Pipeline (Async)
+==========================================
+Reads raw_essence.json, sends to Vertex AI concurrently using AsyncIO,
 and saves the result to surgery_essence_4850.js.
 """
 
-import json, os, re, time, warnings
+import json, os, re, time, warnings, asyncio
 warnings.filterwarnings("ignore")
 
 from google import genai
@@ -13,12 +13,13 @@ from google.genai import types
 
 print("Connecting to Vertex AI...")
 client = genai.Client(vertexai=True, project="sih-mcq-pipeline", location="us-central1")
-print("✅ Vertex AI — Gemini 2.5 Flash ready\n")
+print("✅ Vertex AI — Gemini 2.5 Flash ready (Async)\n")
 
 INPUT_FILE  = "/Users/dr.moh/Documents/SIH/sih_project/MCQ Bank/extracted/raw_essence.json"
 OUTPUT_FILE = "/Users/dr.moh/Documents/SIH/sih_project/js/questions/surgery_essence_4850.js"
 CHECKPOINT  = "/Users/dr.moh/Documents/SIH/sih_project/MCQ Bank/extracted/surgery_essence_checkpoint.json"
-SAVE_EVERY  = 25
+SAVE_EVERY  = 50
+CONCURRENCY = 20
 
 def build_prompt(q):
     lines = [
@@ -91,70 +92,32 @@ def build_markdown(p):
     opts = p.get("options", {})
     rows = "\n".join(f"| {k} | {v[:75]} | {'✅ Correct' if k == va else '❌ Incorrect'} |" for k, v in opts.items())
 
-    return f"""### SHARP 4.0 Cognitive & Surgical Debrief
+    return f"### SHARP 4.0 Cognitive & Surgical Debrief\n\n> **💡 {tw}**\n\n---\n\n## S — Set the Stage\n{sts}\n\n## H — Highlight Excellence\n{he}\n\n## A — Address the Gaps\n\n{ag}\n\n## R — Review Learning Points\n\n{rl}\n\n## P — Plan (Board Pearl)\n{pl}\n\n---\n\n## 🔬 Imaging & Intraoperative Pearl\n{img}\n\n## 📋 Guideline Anchor\n{gl}\n\n---\n\n### Answer Breakdown\n| Option | Text | Status |\n|--------|------|--------|\n{rows}\n\n**✅ Answer: {va}) {vat}** &nbsp;|&nbsp; **Difficulty: {diff}** &nbsp;|&nbsp; **Source: Surgery Essence**\n"
 
-> **💡 {tw}**
-
----
-
-## S — Set the Stage
-{sts}
-
-## H — Highlight Excellence
-{he}
-
-## A — Address the Gaps
-
-{ag}
-
-## R — Review Learning Points
-
-{rl}
-
-## P — Plan (Board Pearl)
-{pl}
-
----
-
-## 🔬 Imaging & Intraoperative Pearl
-{img}
-
-## 📋 Guideline Anchor
-{gl}
-
----
-
-### Answer Breakdown
-| Option | Text | Status |
-|--------|------|--------|
-{rows}
-
-**✅ Answer: {va}) {vat}** &nbsp;|&nbsp; **Difficulty: {diff}** &nbsp;|&nbsp; **Source: Surgery Essence**
-"""
-
-def enrich_one(q):
-    prompt = build_prompt(q)
-    for attempt in range(3):
-        try:
-            resp = client.models.generate_content(
-                model="gemini-2.5-flash",
-                contents=prompt,
-                config=types.GenerateContentConfig(
-                    response_mime_type="application/json",
-                    temperature=0.15,
-                    max_output_tokens=2500,
+async def enrich_one(q, semaphore):
+    async with semaphore:
+        prompt = build_prompt(q)
+        for attempt in range(2):
+            try:
+                resp = await client.aio.models.generate_content(
+                    model="gemini-2.5-flash",
+                    contents=prompt,
+                    config=types.GenerateContentConfig(
+                        response_mime_type="application/json",
+                        temperature=0.15,
+                        max_output_tokens=2500,
+                    )
                 )
-            )
-            payload = safe_parse(resp.text)
-            if payload and payload.get("status", "").upper() in ("ACCEPT", "ACCEPTED", "OK", "VERIFIED"):
-                return payload
-        except Exception as e:
-            time.sleep(2 ** attempt)
-    return None
+                payload = safe_parse(resp.text)
+                if payload and payload.get("status", "").upper() in ("ACCEPT", "ACCEPTED", "OK", "VERIFIED"):
+                    return payload
+            except Exception as e:
+                await asyncio.sleep(1 + attempt)
+        return None
 
-def main():
+async def main():
     print("=" * 65)
-    print("  Phase 2: Extract & SHARP 4.0 Enrichment — Surgery Essence")
+    print("  Phase 2: Extract & SHARP 4.0 Enrichment — Surgery Essence (ASYNC)")
     print("=" * 65)
     
     with open(INPUT_FILE, "r") as f:
@@ -167,10 +130,7 @@ def main():
             
     done_ids = {item["id"] for item in checkpoint}
     
-    # We assign persistent IDs to these questions based on their original numbering + offset
-    # Let's say Surgery Essence starts at ID 100000 to keep it distinct from the 92000 block
     START_ID = 100000
-    
     pending = []
     for i, raw in enumerate(raw_items):
         qid = START_ID + i
@@ -189,20 +149,21 @@ def main():
     start_time = time.time()
     enriched = 0
     failed = 0
+    processed = 0
     
-    # Pre-populate the final list with already done items to maintain order
     final_questions = {item["id"]: item for item in checkpoint}
+    semaphore = asyncio.Semaphore(CONCURRENCY)
     
-    print("\n🚀 Starting sequential processing...\n")
+    print(f"\n🚀 Starting async processing with concurrency {CONCURRENCY}...\n")
     
-    for count, (qid, raw) in enumerate(pending, 1):
-        payload = enrich_one(raw)
+    async def process_task(qid, raw):
+        nonlocal enriched, failed, processed
+        payload = await enrich_one(raw, semaphore)
         if payload:
             md = build_markdown(payload)
             va = payload.get("verified_answer", "")
             vat = payload.get("verified_answer_text", "")
-            
-            final_item = {
+            final_questions[qid] = {
                 "id": qid,
                 "question": payload.get("question", raw["raw_question"]),
                 "options": payload.get("options", {}),
@@ -213,19 +174,16 @@ def main():
                 "markdown_debrief": md,
                 "verified_answer": va
             }
-            final_questions[qid] = final_item
             enriched += 1
-            done_ids.add(qid)
         else:
             failed += 1
-            
-        if count % SAVE_EVERY == 0:
-            # Save Checkpoint
+        
+        processed += 1
+        
+        if processed % SAVE_EVERY == 0:
             sorted_q = [final_questions[k] for k in sorted(final_questions.keys())]
             with open(CHECKPOINT, "w") as f:
                 json.dump(sorted_q, f)
-            
-            # Save JS file
             header = (
                 "// Auto-generated by surgery_essence_pipeline.py\\n"
                 "// Source: Surgery Essence by Pritesh\\n"
@@ -237,9 +195,12 @@ def main():
                 f.write(header)
                 
             elapsed = time.time() - start_time
-            rate = enriched / elapsed if elapsed > 0 else 1
-            eta = (len(pending) - count) / rate / 60
+            rate = processed / elapsed if elapsed > 0 else 1
+            eta = (len(pending) - processed) / rate / 60
             print(f"  💾 Saved [{len(sorted_q)}/{total}] | ✅ {enriched} ❌ {failed} | Rate: {rate:.1f} Q/s | ETA: {eta:.0f} min")
+
+    tasks = [process_task(qid, raw) for qid, raw in pending]
+    await asyncio.gather(*tasks)
 
     # Final Save
     sorted_q = [final_questions[k] for k in sorted(final_questions.keys())]
@@ -258,4 +219,4 @@ def main():
     print(f"\n✅ Finished! Enriched {enriched}, Failed {failed}.")
 
 if __name__ == "__main__":
-    main()
+    asyncio.run(main())
