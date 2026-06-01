@@ -774,19 +774,22 @@ var state = {
 var SPECIALTIES = ['All', 'General Surgery', 'HPB', 'Colorectal', 'Anesthesia', 'Vascular', 'Trauma', 'Urology', 'Cardiothoracic', 'Pediatric Surgery', 'Orthopedic', 'Neurosurgery', 'Breast & Endocrine', 'Plastic Surgery', 'Oncology'];
 
 function initArena() {
-  // Standard question bundle contract: js/questions.js must set both window.QUESTIONS and window.QUESTIONS_LOADED.
-  if (window.QUESTIONS_LOADED !== true || !Array.isArray(window.QUESTIONS)) {
-    console.log('MCQ Bank: Still loading questions...');
-    setTimeout(initArena, 200);
-    return;
-  }
-  console.log('MCQ Bank: Loading complete. Updating UI with ' + QUESTIONS.length + ' questions.');
   loadSetupLeaderboard();
-  // Update question and specialty counts
-  const totalQCountEl = document.getElementById('totalQCount');
-  if (totalQCountEl) {
-    totalQCountEl.innerHTML = window.QUESTIONS.length.toLocaleString() + ' <span style="font-size: 0.7rem; font-weight: 500; opacity: 0.6; display: block; margin-top: 1px;">Questions</span>';
-  }
+  
+  // Fetch total question count efficiently
+  fetch(SUPA_URL + '/rest/v1/mcq_questions?select=id', {
+    method: 'HEAD',
+    headers: { 'apikey': SUPA_KEY, 'Authorization': 'Bearer ' + SUPA_KEY, 'Prefer': 'count=exact' }
+  }).then(res => {
+    var range = res.headers.get('content-range');
+    if (range) {
+      var count = range.split('/')[1];
+      var totalQCountEl = document.getElementById('totalQCount');
+      if (totalQCountEl) {
+        totalQCountEl.innerHTML = parseInt(count).toLocaleString() + ' <span style="font-size: 0.7rem; font-weight: 500; opacity: 0.6; display: block; margin-top: 1px;">Questions</span>';
+      }
+    }
+  }).catch(e => console.error(e));
   
   const specialtyHeroNum = document.querySelector('.hero-stat:nth-child(2) .hero-stat-num');
   if (specialtyHeroNum) specialtyHeroNum.textContent = SPECIALTIES.length - 1;
@@ -800,7 +803,7 @@ function initArena() {
       chip.className = 'spec-chip' + (s === 'All' ? ' active' : '');
       chip.textContent = s;
       chip.onclick = function() {
-        document.querySelectorAll('.spec-chip').forEach(function(c) { c.classList.remove('active'); });
+        document.querySelectorAll('.spec-chip').forEach(function(c){ c.classList.remove('active'); });
         chip.classList.add('active');
         state.specialty = s;
       };
@@ -808,19 +811,27 @@ function initArena() {
     });
   }
 
-  // Q count buttons
-  document.querySelectorAll('.qcount-btn').forEach(function(btn) {
-    btn.onclick = function() {
-      document.querySelectorAll('.qcount-btn').forEach(function(b) { b.classList.remove('active'); });
-      btn.classList.add('active');
-      state.qCount = btn.dataset.count;
-    };
-  });
+  // Build qCount chips
+  var qc = document.getElementById('qCountGrid');
+  if (qc) {
+    qc.innerHTML = '';
+    [5, 10, 20, 50, 'all'].forEach(function(v) {
+      var chip = document.createElement('div');
+      chip.className = 'spec-chip' + (state.qCount == v ? ' active' : '');
+      chip.textContent = v === 'all' ? 'All (Marathon)' : v;
+      chip.onclick = function() {
+        document.querySelectorAll('#qCountGrid .spec-chip').forEach(function(c){ c.classList.remove('active'); });
+        chip.classList.add('active');
+        state.qCount = v;
+      };
+      qc.appendChild(chip);
+    });
+  }
 }
 
 document.addEventListener('DOMContentLoaded', initArena);
 
-function startSession() {
+async function startSession() {
   var name = document.getElementById('setupName').value.trim();
   var school = document.getElementById('setupSchool').value.trim();
   if (!name || !school) { alert('Please enter your name and school/hospital.'); return; }
@@ -829,35 +840,59 @@ function startSession() {
   state.school = school;
   state.startTime = Date.now();
 
-  // Filter questions
-  var pool = state.specialty === 'All' ? QUESTIONS : QUESTIONS.filter(function(q) { return q.specialty === state.specialty; });
-  if (pool.length === 0) { alert('No questions found for this specialty. Choose "All" or another specialty.'); return; }
+  var btn = document.getElementById('startBtn');
+  var oldText = btn.innerHTML;
+  btn.innerHTML = 'Entering Arena...';
+  btn.disabled = true;
 
-  // Shuffle
-  pool = pool.slice().sort(function() { return Math.random() - 0.5; });
+  try {
+    var count = state.qCount === 'all' ? 100 : parseInt(state.qCount);
+    
+    // Call our RPC function to get random MCQs
+    var res = await fetch(SUPA_URL + '/rest/v1/rpc/get_random_mcqs', {
+      method: 'POST',
+      headers: { 'apikey': SUPA_KEY, 'Authorization': 'Bearer ' + SUPA_KEY, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ p_specialty: state.specialty, p_limit: count })
+    });
+    
+    if (!res.ok) throw new Error('Network response was not ok');
+    
+    state.questions = await res.json();
+    
+    if (!state.questions || state.questions.length === 0) {
+      alert('No questions found for this specialty.');
+      btn.innerHTML = oldText;
+      btn.disabled = false;
+      return;
+    }
+    
+    state.current = 0;
+    state.score = 0;
+    state.answers = [];
+    state.normalizedQuestionIndexes = {};
 
-  // Count
-  var count = state.qCount === 'all' ? pool.length : Math.min(parseInt(state.qCount), pool.length);
-  state.questions = pool.slice(0, count);
-  state.current = 0;
-  state.score = 0;
-  state.answers = [];
-  state.normalizedQuestionIndexes = {};
+    // Build step indicators
+    var steps = document.getElementById('qSteps');
+    steps.innerHTML = '';
+    state.questions.forEach(function(_, i) {
+      var s = document.createElement('div');
+      s.className = 'q-step' + (i === 0 ? ' current' : '');
+      s.id = 'step-' + i;
+      steps.appendChild(s);
+    });
 
-  // Build step indicators
-  var steps = document.getElementById('qSteps');
-  steps.innerHTML = '';
-  state.questions.forEach(function(_, i) {
-    var s = document.createElement('div');
-    s.className = 'q-step' + (i === 0 ? ' current' : '');
-    s.id = 'step-' + i;
-    steps.appendChild(s);
-  });
+    document.getElementById('setupScreen').style.display = 'none';
+    document.getElementById('arenaScreen').style.display = 'block';
+    window.scrollTo(0, 0);
+    renderQuestion();
 
-  document.getElementById('setupScreen').style.display = 'none';
-  document.getElementById('arenaScreen').style.display = 'block';
-  window.scrollTo(0, 0);
-  renderQuestion();
+  } catch (error) {
+    console.error('Error starting session:', error);
+    alert('Failed to connect to the MCQ Arena Database. Please try again.');
+  } finally {
+    btn.innerHTML = oldText;
+    btn.disabled = false;
+  }
 }
 
 function renderQuestion() {
