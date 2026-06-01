@@ -48,3 +48,4 @@ js/questions/general_surgery.js
 compiled_mcqs/*.json
 js/questions/recovered.js
 
+archive/raw_question_backup/
