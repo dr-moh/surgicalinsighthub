@@ -785,7 +785,7 @@ function initArena() {
   // Update question and specialty counts
   const totalQCountEl = document.getElementById('totalQCount');
   if (totalQCountEl) {
-    totalQCountEl.innerHTML = '9,350 <span style="font-size: 0.7rem; font-weight: 500; opacity: 0.6; display: block; margin-top: 1px;">(5,341 Unique)</span>';
+    totalQCountEl.innerHTML = window.QUESTIONS.length.toLocaleString() + ' <span style="font-size: 0.7rem; font-weight: 500; opacity: 0.6; display: block; margin-top: 1px;">Questions</span>';
   }
   
   const specialtyHeroNum = document.querySelector('.hero-stat:nth-child(2) .hero-stat-num');
