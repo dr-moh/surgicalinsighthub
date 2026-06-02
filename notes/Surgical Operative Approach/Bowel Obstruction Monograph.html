@@ -1,202 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Surgical Insight Hub — Bowel Obstruction Monograph</title>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" media="print" onload="this.media='all'" rel="stylesheet"/>
-<noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/></noscript>
-<link href="../../css/theme.css?v=4.0.0" rel="stylesheet"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bowel Obstruction | SIH Residency Journal</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Overpass:wght@400;600;700;900&family=Overpass+Mono:wght@400;600&display=swap" rel="stylesheet">
 <link href="../../css/shared.css" rel="stylesheet"/>
-<script>
-  const savedTheme = localStorage.getItem('sih-theme') || 'light';
-  if (savedTheme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
-</script>
+<link href="../../css/theme.css?v=4.0.0" rel="stylesheet"/>
 <style>
-:root {
-  --primary:   #4F46E5;      /* Royal Blue / Indigo */
-  --primary-dk:#1E1B4B;      /* Midnight Blue */
-  --primary-lt:#EEF2F6;      /* Light Grey-Blue */
-  --accent:    #0EA5E9;      /* Cyan / Sky Blue */
-  --accent2:   #F43F5E;      /* Rose / Pink */
-  --gold:      #B45309;      /* Amber / Gold */
-  --gold-lt:   #FEF3C7;      /* Light Gold */
-  --red:       #B91C1C;
-  --red-lt:    #FEF2F2;
-  --sidebar-w: 260px;
-  --s1:        #4F46E5;      /* Pillar 1 */
-  --s2:        #0D9488;      /* Pillar 2 */
-  --s3:        #C27803;      /* Pillar 3 */
-  --s4:        #2563EB;      /* Pillar 4 */
-  --s5:        #BE185D;      /* Pillar 5 */
-  --s1-lt:     #EEF2F6;
-  --s2-lt:     #F0FDFA;
-  --s3-lt:     #FEF3C7;
-  --s4-lt:     #EFF6FF;
-  --s5-lt:     #FDF2F8;
-  --bg:        var(--bg-card, #ffffff);
-  --bg2:       var(--bg-card-alt, #f9fafb);
-  --text:      var(--text-primary, #111827);
-  --muted:     var(--text-secondary, #4b5563);
-  --border:    var(--border-color, #e5e7eb);
-  --white:     var(--bg-card, #ffffff);
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --paper:#f7f3ec;--ink:#1a1410;--deep:#2b1810;
+  --acc:#a31515;--gold:#b8922a;--tab-bg:#3b2314;
+  --border:#d5c8b0;--muted:#6b5a48;--rule:rgba(180,165,140,0.17);
+}
+body{
+  background:#7a7060;
+  font-family:'Overpass',sans-serif;
+  padding:100px 0 2rem 0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:1.5rem;
+}
+.page{
+  width:210mm;
+  height:297mm;
+  background:var(--paper);
+  display:flex;
+  flex-direction:column;
+  box-shadow:2px 2px 0 #5a5040,5px 5px 0 #4a4030,0 20px 60px rgba(0,0,0,.45);
+  border:1px solid var(--border);
+  overflow:hidden;
+}
+.tabs{display:flex;height:8mm;flex-shrink:0;}
+.tab{flex:1;display:flex;align-items:center;justify-content:center;font-size:.54rem;
+     font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+     font-family:'Overpass Mono',monospace;border-right:1px solid rgba(255,255,255,.07);}
+.tab.on{background:var(--tab-bg);color:var(--gold);border-bottom:3px solid var(--gold);}
+.tab.off{background:rgba(43,24,16,.72);color:rgba(255,255,255,.3);border-bottom:3px solid transparent;}
+.hdr{background:var(--deep);padding:4.5mm 9mm 4mm;display:flex;align-items:center;
+     justify-content:space-between;border-bottom:2.5px solid var(--gold);flex-shrink:0;}
+.hdr h1{font-family:'EB Garamond',serif;font-size:1.55rem;font-weight:700;color:#fff;line-height:1;}
+.hsub{font-size:.62rem;color:rgba(255,255,255,.46);letter-spacing:.1em;text-transform:uppercase;margin-top:3px;}
+.hdr-logo{width:48px;height:48px;border-radius:50%;border:2.5px solid var(--gold);
+          overflow:hidden;flex-shrink:0;margin-right:11px;box-shadow:0 0 10px rgba(184,146,42,.28);}
+.hdr-logo img{width:100%;height:100%;object-fit:cover;}
+.hdr-meta{font-size:.6rem;color:rgba(255,255,255,.38);font-family:'Overpass Mono',monospace;
+          text-align:right;line-height:1.6;}
+.cont-hdr{background:var(--deep);padding:3mm 9mm;display:flex;align-items:center;
+          justify-content:space-between;border-bottom:2px solid var(--gold);flex-shrink:0;}
+.cont-hdr h2{font-family:'EB Garamond',serif;font-size:1.05rem;font-weight:700;color:#fff;}
+.cont-hdr .pg{font-size:.6rem;color:var(--gold);font-family:'Overpass Mono',monospace;}
+.body{flex:1;padding:5mm 9mm;overflow:hidden;
+      background-image:repeating-linear-gradient(to bottom,transparent 0,transparent 21px,
+        var(--rule) 21px,var(--rule) 22px);background-position:0 0;}
+.brutal{background:var(--tab-bg);border-left:5px solid var(--gold);padding:7px 11px;
+        margin-bottom:5mm;border-radius:0 4px 4px 0;}
+.brutal .lbl{font-size:.57rem;letter-spacing:.15em;color:var(--gold);font-weight:700;
+             text-transform:uppercase;margin-bottom:2px;font-family:'Overpass Mono',monospace;}
+.brutal .rule{font-family:'EB Garamond',serif;font-size:1.05rem;font-weight:700;
+              color:#fff;font-style:italic;line-height:1.35;}
+.brutal .sub{font-size:.71rem;color:rgba(255,255,255,.73);line-height:1.45;margin-top:3px;}
+.sh{display:flex;align-items:center;gap:5px;margin-bottom:2mm;margin-top:5mm;}
+.sh:first-child{margin-top:0;}
+.sh .n{background:var(--acc);color:#fff;font-family:'Overpass Mono',monospace;
+       font-size:.57rem;padding:2px 5px;border-radius:2px;flex-shrink:0;}
+.sh h3{font-family:'EB Garamond',serif;font-size:.97rem;font-weight:700;
+       color:var(--deep);border-bottom:1.5px solid var(--gold);flex:1;padding-bottom:1px;}
+.desc{font-family:'EB Garamond',serif;font-size:.82rem;color:#3a3020;line-height:1.55;
+      margin-bottom:2.5mm;padding:4px 8px;border-left:2.5px solid var(--gold);
+      background:rgba(184,146,42,.055);font-style:italic;}
+.desc strong{font-style:normal;color:var(--deep);font-weight:700;}
+.desc em{font-style:italic;color:var(--acc);}
+table{width:100%;border-collapse:collapse;margin-bottom:3mm;font-size:.71rem;}
+th{background:var(--deep);color:rgba(255,255,255,.92);padding:4px 8px;text-align:left;
+   font-size:.61rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;}
+td{padding:4.5px 8px;border-bottom:1px solid rgba(195,180,155,.38);
+   vertical-align:top;line-height:1.43;color:var(--ink);}
+tr:nth-child(even) td{background:rgba(43,24,16,.028);}
+td strong{color:var(--acc);font-weight:700;}
+td em{font-style:italic;color:var(--muted);}
+td b{color:var(--deep);font-weight:700;}
+.hi{color:var(--acc);font-weight:700;font-family:'Overpass Mono',monospace;font-size:.67rem;}
+.ok{color:#1a5c1a;font-weight:600;}
+.bad{color:var(--acc);font-weight:700;}
+.warn-td{color:#7a4000;font-weight:600;}
+.note{border-left:3px solid var(--gold);background:rgba(184,146,42,.07);padding:4px 9px;
+      margin-bottom:3mm;font-size:.71rem;line-height:1.43;border-radius:0 2px 2px 0;color:var(--ink);}
+.note strong{color:var(--deep);font-weight:700;}
+.note em{font-style:italic;color:var(--acc);}
+.warnbox{border-left:3px solid var(--acc);background:rgba(163,21,21,.05);padding:5px 9px;
+         margin-bottom:3mm;font-size:.71rem;border-radius:0 2px 2px 0;}
+.warnbox .wh{font-size:.59rem;font-weight:700;text-transform:uppercase;letter-spacing:.09em;
+             color:var(--acc);margin-bottom:2px;font-family:'Overpass Mono',monospace;}
+ul.nb{list-style:none;padding:0;margin:0 0 3mm 0;}
+ul.nb li{padding:2px 0 2px 14px;font-size:.73rem;line-height:1.43;position:relative;color:var(--ink);}
+ul.nb li::before{content:'◆';position:absolute;left:1px;color:var(--acc);font-size:.42rem;top:5px;}
+ul.nb li strong{color:var(--acc);font-weight:700;}
+ul.nb li em{font-style:italic;color:var(--muted);}
+ul.nb li b{color:var(--deep);font-weight:700;}
+ol.steps{list-style:none;padding:0;margin:0 0 3mm 0;counter-reset:s;}
+ol.steps li{counter-increment:s;padding:3px 0 3px 22px;font-size:.73rem;line-height:1.43;
+            position:relative;color:var(--ink);border-bottom:1px solid rgba(195,180,155,.25);}
+ol.steps li::before{content:counter(s);position:absolute;left:2px;top:5px;background:var(--deep);
+                    color:var(--gold);font-size:.57rem;width:13px;height:13px;border-radius:2px;
+                    display:flex;align-items:center;justify-content:center;
+                    font-family:'Overpass Mono',monospace;}
+ol.steps li strong{color:var(--acc);font-weight:700;}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:5mm;}
+.badge{display:inline-block;background:var(--acc);color:#fff;font-size:.57rem;font-weight:600;
+       padding:1px 5px;border-radius:2px;vertical-align:middle;margin-right:2px;}
+.badge-g{display:inline-block;background:var(--gold);color:var(--deep);font-size:.57rem;
+         font-weight:700;padding:1px 5px;border-radius:2px;vertical-align:middle;margin-right:2px;}
+.divider{border:none;border-top:1px dashed rgba(184,146,42,.35);margin:3mm 0;}
+.foot{background:var(--deep);padding:2.5mm 9mm;display:flex;justify-content:space-between;
+      font-size:.57rem;color:rgba(255,255,255,.42);letter-spacing:.07em;text-transform:uppercase;
+      font-family:'Overpass Mono',monospace;flex-shrink:0;border-top:2px solid var(--gold);
+      margin-top:auto;}
+.foot span:nth-child(2){color:var(--gold);}
+@media print{
+  body{background:none;padding:0;}
+  .page{box-shadow:none;page-break-after:always;}
+  .no-print{display:none!important;}
+  *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important;}
 }
 
-/* ── SIDEBAR & OVERLAY ── */
-#sidebar {
-  position: fixed; top: 0; left: 0; width: var(--sidebar-w); height: 100vh;
-  background: #1E1B4B; color: #E2DEE9;
-  display: flex; flex-direction: column;
-  z-index: 1300; overflow: hidden;
-  transform: translateX(-100%);
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 4px 0 24px rgba(0,0,0,0.3);
-}
-body.sidebar-open #sidebar { transform: translateX(0); }
-
-#sidebar-overlay {
-  position: fixed; inset: 0;
-  background: rgba(49, 46, 129, 0.5); backdrop-filter: blur(3px);
-  z-index: 1250; opacity: 0; pointer-events: none;
-  transition: opacity 0.3s ease;
-}
-body.sidebar-open #sidebar-overlay { opacity: 1; pointer-events: auto; }
-
-#sidebar-toggle {
-  position: fixed; top: 72px; left: 24px; z-index: 1200;
-  background: var(--primary); color: white;
-  border: none; border-radius: 30px;
-  padding: 10px 18px; font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 600;
-  letter-spacing: 0.05em; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  display: flex; align-items: center; gap: 8px; transition: all 0.2s;
-}
-#sidebar-toggle:hover { background: var(--accent); transform: translateY(-2px); }
-
-#progress-bar {
-  position: fixed; top: 52px; left: 0; right: 0; height: 3px;
-  background: linear-gradient(90deg, var(--accent), var(--accent2));
-  transform-origin: left; transform: scaleX(0); transition: transform 0.1s; z-index: 1105;
-}
-
-#sidebar-header{padding:20px 20px 14px;border-bottom:1px solid rgba(255,255,255,0.1);flex-shrink:0;}
-#sidebar-header .logo{font-family:'Playfair Display',serif;font-size:13px;font-weight:700;color:#93C5FD;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;}
-#sidebar-header .sub{font-size:10.5px;color:rgba(226,222,233,0.6);letter-spacing:0.04em;}
-#sidebar-search{padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.08);flex-shrink:0;}
-#sidebar-search input{width:100%;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:6px;color:#E2DEE9;padding:6px 10px;font-size:12px;font-family:'Source Serif 4',serif;outline:none;transition:border-color 0.2s;}
-#sidebar-search input::placeholder{color:rgba(226,222,233,0.4);}
-#sidebar-search input:focus{border-color:#93C5FD;}
-#sidebar-nav{flex:1;overflow-y:auto;padding:8px 0 20px;}
-#sidebar-nav::-webkit-scrollbar{width:4px;}
-#sidebar-nav::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.15);border-radius:2px;}
-.vol-label{font-size:9.5px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#93C5FD;padding:14px 18px 4px;}
-.nav-item{display:block;padding:8px 18px 8px 22px;font-size:12.5px;color:rgba(226,222,233,0.75);text-decoration:none;border-left:2px solid transparent;transition:all 0.15s;line-height:1.4;}
-.nav-item:hover{color:#fff;background:rgba(255,255,255,0.05);border-left-color:rgba(147,197,253,0.5);}
-.nav-item.active{color:#fff;background:rgba(255,255,255,0.08);border-left-color:#93C5FD;font-weight:600;}
-.nav-item .num{font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(226,222,233,0.4);margin-right:6px;}
-
-/* CONTENT & HERO & CALLOUTS */
-.content-wrap{max-width:900px;margin:0 auto;padding:0 48px 80px;}
-#hero{background:linear-gradient(135deg,#1E1B4B 0%,#0F0E17 100%);color:white;padding:120px 72px 60px;position:relative;overflow:hidden;}
-#hero::before{content:'';position:absolute;top:-60px;right:-60px;width:380px;height:380px;background:radial-gradient(circle,rgba(79,70,229,0.18) 0%,transparent 70%);pointer-events:none;}
-#hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--primary),var(--accent2),transparent);}
-#hero .eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.16em;color:#93C5FD;text-transform:uppercase;margin-bottom:14px;}
-#hero h1{font-family:'Playfair Display',serif;font-size:38px;font-weight:700;line-height:1.15;margin-bottom:10px;color:#fff;}
-#hero .subtitle{font-size:18px;color:rgba(255,255,255,0.65);font-style:italic;margin-bottom:28px;}
-#hero .badges{display:flex;gap:10px;flex-wrap:wrap;}
-#hero .badge{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:4px 14px;font-size:12px;color:rgba(255,255,255,0.8);font-family:'JetBrains Mono',monospace;}
-
-.sec-header{margin-top:60px;margin-bottom:8px;padding:28px 36px;border-radius:10px;display:flex;align-items:center;gap:20px;}
-.sec-header.s1{background:linear-gradient(135deg,#4F46E508,#4F46E518);border-left:4px solid var(--s1);}
-.sec-header.s2{background:linear-gradient(135deg,#0D948808,#0D948818);border-left:4px solid var(--s2);}
-.sec-header.s3{background:linear-gradient(135deg,#C2780308,#C2780318);border-left:4px solid var(--s3);}
-.sec-header.s4{background:linear-gradient(135deg,#2563EB08,#2563EB18);border-left:4px solid var(--s4);}
-.sec-header.s5{background:linear-gradient(135deg,#BE185D08,#BE185D18);border-left:4px solid var(--s5);}
-.sec-badge{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;letter-spacing:0.1em;padding:4px 12px;border-radius:4px;white-space:nowrap;flex-shrink:0;}
-.s1 .sec-badge{background:var(--s1);color:white;}
-.s2 .sec-badge{background:var(--s2);color:white;}
-.s3 .sec-badge{background:var(--s3);color:white;}
-.s4 .sec-badge{background:var(--s4);color:white;}
-.s5 .sec-badge{background:var(--s5);color:white;}
-.sec-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;}
-.s1 .sec-title{color:var(--s1);}
-.s2 .sec-title{color:var(--s2);}
-.s3 .sec-title{color:var(--s3);}
-.s4 .sec-title{color:var(--s4);}
-.s5 .sec-title{color:var(--s5);}
-
-.topic{margin-top:48px;padding-top:48px;border-top:1px solid var(--border);}
-.topic:first-of-type{border-top:none;}
-.topic-header{display:flex;align-items:flex-start;gap:16px;margin-bottom:24px;}
-.topic-num{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;padding:3px 10px;border-radius:4px;margin-top:4px;flex-shrink:0;}
-.s1 .topic-num{background:var(--s1-lt);color:var(--s1);}
-.s2 .topic-num{background:var(--s2-lt);color:var(--s2);}
-.s3 .topic-num{background:var(--s3-lt);color:var(--s3);}
-.s4 .topic-num{background:var(--s4-lt);color:var(--s4);}
-.s5 .topic-num{background:var(--s5-lt);color:var(--s5);}
-.topic h2{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;line-height:1.2;}
-.s1 .topic h2{color:var(--s1);}
-.s2 .topic h2{color:var(--s2);}
-.s3 .topic h2{color:var(--s3);}
-.s4 .topic h2{color:var(--s4);}
-.s5 .topic h2{color:var(--s5);}
-.topic h3{font-family:'Playfair Display',serif;font-size:17px;font-weight:600;color:var(--muted);margin:26px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--border);}
-.topic h4{font-size:13px;font-weight:600;color:var(--muted);letter-spacing:0.06em;text-transform:uppercase;margin:18px 0 8px;font-family:'JetBrains Mono',monospace;}
-.topic p{margin-bottom:12px;color:var(--text);line-height:1.75;}
-.topic ul,.topic ol{margin:8px 0 14px 20px;color:var(--text);}
-.topic li{margin-bottom:6px;line-height:1.65;}
-.topic li::marker{color:var(--accent2);}
-.topic strong{color:var(--text);font-weight:600;}
-
-.table-wrap{overflow-x:auto;margin:16px 0 20px;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.06);border:1px solid var(--border);}
-table{width:100%;border-collapse:collapse;font-size:13.5px;background:var(--white);}
-thead tr{background:var(--s1);}
-thead th{color:white;padding:10px 14px;text-align:left;font-family:'Source Serif 4',serif;font-weight:600;font-size:13px;}
-tbody tr:nth-child(even){background:var(--bg2);}
-tbody tr:hover{background:var(--s1-lt);transition:background 0.15s;}
-tbody td{padding:9px 14px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.5;color:var(--text);}
-.s2-tbl thead tr{background:var(--s2);}
-.s3-tbl thead tr{background:var(--s3);}
-.s4-tbl thead tr{background:var(--s4);}
-.s5-tbl thead tr{background:var(--s5);}
-
-.callout{margin:18px 0;padding:14px 18px;border-radius:0 8px 8px 0;border-left:4px solid;font-size:14px;line-height:1.65;}
-.callout .label{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;display:block;margin-bottom:4px;}
-.callout.pearl{background:var(--gold-lt);border-color:var(--gold);}
-.callout.pearl .label{color:var(--gold);}
-.callout.warn{background:var(--red-lt);border-color:var(--red);}
-.callout.warn .label{color:var(--red);}
-.callout.clin{background:var(--s1-lt);border-color:var(--s1);}
-.callout.clin .label{color:var(--s1);}
-.callout.exam{background:var(--s4-lt);border-color:var(--s4);}
-.callout.exam .label{color:var(--s4);}
-
-#top-btn{position:fixed;bottom:24px;right:24px;width:44px;height:44px;background:var(--primary);color:white;border:none;border-radius:50%;font-size:18px;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,0.3);z-index:1100;opacity:0;pointer-events:none;transition:all 0.3s;display:flex;align-items:center;justify-content:center;}
-#top-btn.show{opacity:1;pointer-events:auto;}
-#top-btn:hover{background:var(--accent);transform:translateY(-3px);}
-
-.rapid-ref{margin-top:60px;padding:36px;background:#1E1B4B;color:white;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,0.25);}
-.rapid-ref h3{font-family:'Playfair Display',serif;font-size:24px;margin-bottom:18px;color:#fff;border-bottom:1px solid rgba(255,255,255,0.15);padding-bottom:10px;}
-.rapid-ref table{background:transparent;}
-.rapid-ref thead tr{background:rgba(255,255,255,0.08);}
-.rapid-ref thead th{color:#93C5FD;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;}
-.rapid-ref tbody tr:nth-child(even){background:rgba(255,255,255,0.03);}
-.rapid-ref tbody tr:hover{background:rgba(255,255,255,0.07);}
-.rapid-ref tbody td{border-bottom:1px solid rgba(255,255,255,0.08);color:rgba(255,255,255,0.85);font-size:13px;}
-.rapid-ref strong{color:#fff;}
-
-.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
-@media (max-width:768px) {
-  .cols {grid-template-columns:1fr;}
-  .content-wrap {padding:0 20px 60px;}
-  #hero {padding:100px 24px 40px;}
-  #hero h1 {font-size:28px;}
-  #sidebar-toggle {top:64px;left:16px;}
+/* ── MOBILE RESPONSIVE ── */
+@media(max-width:768px){
+  body{
+    background:#f7f3ec;
+    padding:72px 0 0 0 !important;
+    display:block;
+  }
+  .page{
+    width:100% !important;
+    height:auto !important;
+    min-height:0 !important;
+    padding:14px !important;
+    box-shadow:none !important;
+    border:none !important;
+    border-radius:0 !important;
+    margin:0 !important;
+    page-break-after:auto !important;
+  }
+  .body{
+    overflow:visible !important;
+    flex:none !important;
+  }
+  .grid,.two-col,.col-2,.columns{
+    grid-template-columns:1fr !important;
+    display:flex !important;
+    flex-direction:column !important;
+  }
+  table{
+    font-size:11px !important;
+    display:block;
+    overflow-x:auto;
+    white-space:nowrap;
+  }
+  th,td{
+    padding:5px 8px !important;
+    font-size:11px !important;
+  }
+  .tab-strip,.tabs{
+    overflow-x:auto;
+    white-space:nowrap;
+    -webkit-overflow-scrolling:touch;
+  }
+  .tab-strip .tab,.tabs .tab{
+    font-size:9px !important;
+    padding:6px 10px !important;
+  }
+  h1,.title{font-size:1.1rem !important;}
+  h2,.section-title{font-size:.95rem !important;}
+  h3{font-size:.85rem !important;}
+  .foot,.footer{margin-top:16px !important;}
+  .brutal-rule,.callout,.description{
+    font-size:.78rem !important;
+    line-height:1.6 !important;
+  }
+  li{font-size:.78rem !important;}
+  .badge{font-size:9px !important;}
 }
 </style>
 </head>
 <body>
+
 <!-- Standardized SIH Navbar -->
 <nav class="nav" id="mainNav">
   <div class="nav-left">
@@ -212,7 +202,7 @@ tbody td{padding:9px 14px;border-bottom:1px solid var(--border);vertical-align:t
   </div>
   <div class="nav-links-pill">
     <a href="../../index.html">Home</a>
-    <a href="../../notes.html">Notes</a>
+    <a class="active" href="../../notes.html">Notes</a>
     <a href="../operative_approach.html">Playbook</a>
     <a href="../../arena.html?v=4.0.0">MCQ Arena</a>
     <a href="../../podcast.html">Podcast</a>
@@ -248,991 +238,1070 @@ tbody td{padding:9px 14px;border-bottom:1px solid var(--border);vertical-align:t
   <a href="https://www.linkedin.com/company/surgical-insight-hub" target="_blank" rel="noopener" onclick="closeMobNav()" style="color: var(--brand-gold); font-weight: 800;">LinkedIn Community</a>
 </div>
 
-<div id="progress-bar"></div>
-<div id="sidebar-overlay" onclick="closeSidebar()"></div>
-<button id="sidebar-toggle" onclick="toggleSidebar()">
-  <span>☰</span> Contents
-</button>
-
-<nav id="sidebar">
-  <div id="sidebar-header">
-    <div class="logo">Surgical Insight Hub</div>
-    <div class="sub">Bowel Obstruction · Monograph Series</div>
+<!-- PAGE 1: Foundations -->
+<div class="page">
+  <div class="tabs">
+    <div class="tab on">Foundations</div>
+    <div class="tab off">Presentation</div>
+    <div class="tab off">Management</div>
+    <div class="tab off">MCQ</div>
   </div>
-  <div id="sidebar-search">
-    <input id="search-input" oninput="filterNav(this.value)" placeholder="Search topics…" type="text"/>
-  </div>
-  <div id="sidebar-nav">
-    <div class="vol-label">Pillar 1: Foundations &amp; Presentation</div>
-    <a class="nav-item" href="#p1a"><span class="num">1.1</span>Pathophysiology &amp; Classification</a>
-    <a class="nav-item" href="#p1b"><span class="num">1.2</span>SBO &amp; LBO Aetiology</a>
-    <a class="nav-item" href="#p1c"><span class="num">1.3</span>Clinical Presentation</a>
-    <a class="nav-item" href="#p1d"><span class="num">1.4</span>Strangulation &amp; Special Cases</a>
-    
-    <div class="vol-label">Pillar 2: Initial Resuscitation &amp; Workup</div>
-    <a class="nav-item" href="#p2a"><span class="num">2.1</span>Bedside Actions &amp; Targets</a>
-    <a class="nav-item" href="#p2b"><span class="num">2.2</span>Electrolyte Disturbances</a>
-    <a class="nav-item" href="#p2c"><span class="num">2.3</span>Investigations &amp; AXR Patterns</a>
-    
-    <div class="vol-label">Pillar 3: Management Playbook</div>
-    <a class="nav-item" href="#p3a"><span class="num">3.1</span>Non-operative &amp; Gastrografin</a>
-    <a class="nav-item" href="#p3b"><span class="num">3.2</span>Operative Adhesiolysis (Laparoscopic &amp; Open)</a>
-    <a class="nav-item" href="#p3c"><span class="num">3.3</span>Small Bowel Resection &amp; Anastomosis</a>
-    <a class="nav-item" href="#p3d"><span class="num">3.4</span>Sigmoid &amp; Caecal Volvulus</a>
-    <a class="nav-item" href="#p3e"><span class="num">3.5</span>Malignant LBO &amp; Ogilvie's</a>
-    
-    <div class="vol-label">Pillar 4: Post-Op Care &amp; Eponyms</div>
-    <a class="nav-item" href="#p4a"><span class="num">4.1</span>Post-op Care &amp; Stomas</a>
-    <a class="nav-item" href="#p4b"><span class="num">4.2</span>Follow-up &amp; Eponyms</a>
-    
-    <div class="vol-label">Pillar 5: Board Review &amp; MCQ</div>
-    <a class="nav-item" href="#p5a"><span class="num">5.1</span>High-Yield Numbers</a>
-    <a class="nav-item" href="#p5b"><span class="num">5.2</span>Distinctions That Fail People</a>
-  </div>
-</nav>
-
-<main class="editorial-content" id="main">
-  <section id="hero">
-    <div class="eyebrow">Surgical Insight Hub · Monograph Series · ABSITE · PGY-3 Framework</div>
-    <h1>Bowel Obstruction</h1>
-    <p class="subtitle">Pathophysiology, Diagnostic Workup, and Operative Decision-Making</p>
-    <div class="badges">
-      <span class="badge">Emergency GI</span>
-      <span class="badge">Bologna Guidelines</span>
-      <span class="badge">Closed-Loop Obstruction</span>
+  <div class="hdr">
+    <div>
+      <h1>Bowel Obstruction</h1>
+      <div class="hsub">Pathophysiology, Diagnostic Workup, and Operative Decision-Making</div>
     </div>
-  </section>
-
-  <div class="content-wrap">
-    <div class="callout warn" style="margin-top: 40px;">
-      <span class="label">The Brutal Rule</span>
-      <strong>"When colicky pain goes constant — that bowel is dying. Stop waiting. Operate."</strong>
-      <br/><br/>
-      The shift from intermittent colic to constant pain is strangulation until proven otherwise. Miss this sign once and you will bury someone. Every minute after that shift is necrosis accruing.
+    <div class="hdr-logo">
+      <img alt="SIH Logo" src="../../assets/images/Surgical_Insight_Hub_Logo.png"/>
+    </div>
+    <div class="hdr-meta">
+      Surgical Insight Hub<br>
+      Monograph Series · ABSITE<br>
+      PGY-3 Framework · Page 1 / 9
+    </div>
+  </div>
+  <div class="body">
+    <div class="brutal">
+      <div class="lbl">The Brutal Rule</div>
+      <div class="rule">"When colicky pain goes constant, that bowel is dying. Stop waiting. Operate."</div>
+      <div class="sub">The shift from intermittent colic to constant pain is strangulation until proven otherwise. Miss this sign once and you will bury someone. Every minute after that shift is necrosis accruing.</div>
     </div>
 
-    <!-- PILLAR 1 -->
-    <div class="sec-header s1">
-      <span class="sec-badge">PILLAR 1</span>
-      <span class="sec-title">Foundations &amp; Presentation</span>
+    <div class="sh"><span class="n">01</span><h3>Pathophysiology &amp; Classification</h3></div>
+    <p class="desc">Obstruction creates a one-way trap: secretions accumulate, intraluminal pressure rises, and the bowel wall fails in a predictable sequence: <strong>distension → ischaemia → necrosis → perforation.</strong> Strangulation cuts off <em>venous return first,</em> then arterial inflow. This is why a patient can look deceptively well while bowel is already dying.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Mechanism</th>
+          <th>Consequence</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Luminal block → 7–9 L/day secretions accumulate</td>
+          <td>Distension, ↑ intraluminal pressure</td>
+        </tr>
+        <tr>
+          <td>Third-spacing into bowel wall + peritoneum</td>
+          <td>Hypovolaemia, AKI, haemoconcentration</td>
+        </tr>
+        <tr>
+          <td>Vomiting (proximal SBO): H⁺, Cl⁻, K⁺ loss</td>
+          <td><strong>Hypochloraemic, hypokalaemic metabolic alkalosis</strong></td>
+        </tr>
+        <tr>
+          <td>Bacterial stasis → gram-neg + anaerobe overgrowth</td>
+          <td>Endotoxin production → bacterial translocation</td>
+        </tr>
+        <tr>
+          <td>Venous outflow blocked <em>first</em> → arterial inflow cut</td>
+          <td>Strangulation cascade → necrosis → perforation</td>
+        </tr>
+        <tr>
+          <td>Closed-loop: both limbs occluded (volvulus/hernia)</td>
+          <td><strong>No decompression possible.</strong> Fastest progression to necrosis.</td>
+        </tr>
+        <tr>
+          <td>Laplace's Law: wall tension = (P × r) / thickness</td>
+          <td>Caecum perforates <em>first</em> (largest diameter in the colon)</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="note"><strong>Caecal Thresholds:</strong> Concern at <span class="hi">9 cm</span>; critical at <span class="hi">12 cm</span> (perforation risk rises sharply beyond this).</div>
+
+    <div class="sh"><span class="n">02</span><h3>Classification Matrix</h3></div>
+    <p class="desc">Vascular status is the most clinically critical axis: it determines theatre urgency, not just the management pathway. A closed-loop SBO is an absolute emergency.</p>
+    <div class="cols">
+      <div>
+        <table>
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>Definition</th>
+              <th>Urgency</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Simple</strong></td>
+              <td>Lumen blocked; blood supply intact</td>
+              <td><span class="warn-td">Urgent</span></td>
+            </tr>
+            <tr>
+              <td><strong>Strangulated</strong></td>
+              <td>Blood compromised; ischaemia/necrosis</td>
+              <td><span class="bad">Emergency</span></td>
+            </tr>
+            <tr>
+              <td><strong>Closed-loop</strong></td>
+              <td>Both limbs occluded (volvulus or hernia)</td>
+              <td><span class="bad" style="font-weight:900;">IMMEDIATE</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <table>
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>Examples</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="badge">Intraluminal</span></td>
+              <td>Gallstone, bezoar, intussusception</td>
+            </tr>
+            <tr>
+              <td><span class="badge">Intramural</span></td>
+              <td>Crohn's/radiation stricture, malignancy</td>
+            </tr>
+            <tr>
+              <td><span class="badge">Extramural</span></td>
+              <td>Adhesions, hernias, volvulus, abscess</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <span>Surgical Insight Hub</span>
+    <span>Bowel Obstruction | Residency Journal</span>
+    <span>Page 1 / 9 &nbsp;·&nbsp; @sugicalInsightHub</span>
+  </div>
+</div>
+
+<!-- PAGE 2: Foundations -->
+<div class="page">
+  <div class="tabs">
+    <div class="tab on">Foundations</div>
+    <div class="tab off">Presentation</div>
+    <div class="tab off">Management</div>
+    <div class="tab off">MCQ</div>
+  </div>
+  <div class="cont-hdr">
+    <h2>Aetiology &amp; Presentation</h2>
+    <span class="pg">Page 2 / 9</span>
+  </div>
+  <div class="body">
+    <div class="sh"><span class="n">03</span><h3>SBO Aetiology</h3></div>
+    <p class="desc">Adhesions from prior surgery account for nearly <strong>three-quarters of all SBO.</strong> In a patient with <em>no prior abdominal surgery</em> (virgin abdomen), think hernia first. Femoral hernias carry the highest strangulation risk of any hernia type.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Cause</th>
+          <th>Freq</th>
+          <th>Key Point</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Adhesions</strong></td>
+          <td><span class="hi">60–75%</span></td>
+          <td>Post-op. <strong>#1 overall cause</strong> of SBO.</td>
+        </tr>
+        <tr>
+          <td>Hernia (incarcerated)</td>
+          <td><span class="hi">10–15%</span></td>
+          <td><strong>Femoral = highest strangulation risk.</strong> Always examine the groin.</td>
+        </tr>
+        <tr>
+          <td>Neoplasm</td>
+          <td><span class="hi">5–10%</span></td>
+          <td>Primary small bowel tumour or extrinsic compression</td>
+        </tr>
+        <tr>
+          <td>Crohn's stricture</td>
+          <td><span class="hi">5%</span></td>
+          <td>Chronic transmural inflammation → fibrotic stricture</td>
+        </tr>
+        <tr>
+          <td>Intussusception</td>
+          <td><span class="hi">1–3%</span></td>
+          <td>Adults: <em>always</em> exclude malignant lead point</td>
+        </tr>
+        <tr>
+          <td>Gallstone ileus</td>
+          <td><span class="hi">&lt;1%</span></td>
+          <td>Bouveret's syndrome or Rigler's triad on AXR</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="note"><strong>Virgin abdomen SBO:</strong> <em>Hernia until proven otherwise.</em> Adhesions cannot form without a prior surgical insult or peritonitis.</div>
+
+    <div class="sh"><span class="n">04</span><h3>LBO Aetiology</h3></div>
+    <p class="desc">Colorectal carcinoma dominates, most commonly at the <strong>sigmoid colon</strong> where the lumen is narrowest. Volvulus demographics differ starkly by age and chronic constipation status.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Cause</th>
+          <th>Freq</th>
+          <th>Key Point</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Colorectal carcinoma</strong></td>
+          <td><span class="hi">60–70%</span></td>
+          <td>Sigmoid most common site. Often presents late.</td>
+        </tr>
+        <tr>
+          <td>Sigmoid volvulus</td>
+          <td><span class="hi">10–15%</span></td>
+          <td>Elderly, institutionalised, chronic constipation</td>
+        </tr>
+        <tr>
+          <td>Caecal volvulus</td>
+          <td><span class="hi">5%</span></td>
+          <td>Younger patients; incomplete peritoneal fixation</td>
+        </tr>
+        <tr>
+          <td>Diverticular stricture</td>
+          <td><span class="hi">5–10%</span></td>
+          <td>Chronic diverticulitis → fibrotic narrowing</td>
+        </tr>
+        <tr>
+          <td>Ogilvie's syndrome</td>
+          <td><span class="hi">Functional</span></td>
+          <td>No mechanical cause; colonic atony in ICU/post-op</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="note"><strong>LBO with competent ileocaecal valve:</strong> closed-loop obstruction of the colon. The caecum takes the full pressure load and <em>will perforate first</em> (Laplace's Law).</div>
+
+    <div class="sh"><span class="n">05</span><h3>Clinical Presentation: SBO vs LBO</h3></div>
+    <p class="desc">The four cardinal features (<strong>pain, vomiting, distension, constipation</strong>) vary in timing by obstruction level. <em>Proximal obstruction vomits early and distends minimally; distal obstruction distends massively and vomits late.</em></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th>SBO</th>
+          <th>LBO</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Pain</strong></td>
+          <td>Colicky, central, periumbilical</td>
+          <td>Colicky, lower abdominal / hypogastric</td>
+        </tr>
+        <tr>
+          <td><strong>Vomiting</strong></td>
+          <td><strong>Early, profuse</strong> (bilious → faeculent)</td>
+          <td>Late, faeculent</td>
+        </tr>
+        <tr>
+          <td><strong>Distension</strong></td>
+          <td>Less prominent (minimal if proximal)</td>
+          <td><strong>Prominent, tympanic</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Constipation</strong></td>
+          <td>Late sign</td>
+          <td><strong>Early</strong> presenting feature</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="foot">
+    <span>Surgical Insight Hub</span>
+    <span>Bowel Obstruction | Residency Journal</span>
+    <span>Page 2 / 9 &nbsp;·&nbsp; @sugicalInsightHub</span>
+  </div>
+</div>
+
+<!-- PAGE 3: Presentation -->
+<div class="page">
+  <div class="tabs">
+    <div class="tab off">Foundations</div>
+    <div class="tab on">Presentation</div>
+    <div class="tab off">Management</div>
+    <div class="tab off">MCQ</div>
+  </div>
+  <div class="cont-hdr">
+    <h2>Presentation &amp; Assessment</h2>
+    <span class="pg">Page 3 / 9</span>
+  </div>
+  <div class="body">
+    <div class="sh"><span class="n">06</span><h3>Strangulation Red Flags</h3></div>
+    <p class="desc">The clinical exam is <strong>unreliable in early strangulation</strong>: a patient can look deceptively well while bowel is already non-viable on CT. <em>Lactate is your best single biochemical marker.</em></p>
+    <div class="warnbox">
+      <div class="wh">Operate, Do Not Wait</div>
+      <ul class="nb">
+        <li><strong>Colicky pain shifting to constant pain</strong>: <em>the single most important clinical sign</em></li>
+        <li>Localised tenderness or peritonism / guarding</li>
+        <li>Fever <strong>&gt;38.5°C</strong> combined with tachycardia <strong>&gt;100 bpm</strong></li>
+        <li>Serum lactate <strong>&gt;2 mmol/L</strong> or WBC <strong>&gt;15 × 10⁹/L</strong></li>
+        <li>CT: <strong>pneumatosis intestinalis, portal venous gas,</strong> absent bowel wall enhancement</li>
+      </ul>
     </div>
 
-    <section class="topic s1" id="p1a">
-      <div class="topic-header"><span class="topic-num">1.1</span><h2>Pathophysiology &amp; Classification</h2></div>
-      <p>Obstruction creates a one-way trap — secretions accumulate, intraluminal pressure rises, and the bowel wall fails in a predictable sequence: <strong>distension → ischaemia → necrosis → perforation.</strong> Strangulation accelerates the cascade by cutting off <em>venous return first,</em> then arterial inflow — this is why a patient can look deceptively well while bowel is already dying inside.</p>
-      
-      <div class="table-wrap s1-tbl">
+    <div class="sh"><span class="n">07</span><h3>Special Presentations</h3></div>
+    <p class="desc">Each entity below has a <strong>pathognomonic AXR or CT finding</strong>; recognise these instantly. Gallstone ileus and volvulus are classic traps.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Condition</th>
+          <th>Classic Signs &amp; Pathophysiology</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Gallstone ileus</strong></td>
+          <td><em>Rigler's triad:</em> pneumobilia + SBO + ectopic calcified gallstone. Cholecystoduodenal fistula.</td>
+        </tr>
+        <tr>
+          <td><strong>Sigmoid volvulus</strong></td>
+          <td><em>Coffee bean / omega loop</em> sign. Apex pointing to <strong>RUQ.</strong> Elderly, institutionalised.</td>
+        </tr>
+        <tr>
+          <td><strong>Caecal volvulus</strong></td>
+          <td><em>Kidney bean sign.</em> Caecum displaced to <strong>LUQ.</strong> Younger patient.</td>
+        </tr>
+        <tr>
+          <td><strong>Ogilvie's syndrome</strong></td>
+          <td>Post-op or ICU. Massive colonic distension. <em>No transition point on CT.</em></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="sh"><span class="n">08</span><h3>Bedside: Do These First</h3></div>
+    <ol class="steps">
+      <li>IV access &times;2 + <strong>Hartmann's</strong> resuscitation immediately</li>
+      <li>NG tube to free drainage: <em>decompress, prevent aspiration</em></li>
+      <li>Urinary catheter: target UO <strong>&ge;0.5 mL/kg/h</strong></li>
+      <li>Nil by mouth</li>
+      <li>Serial abdominal exam every <strong>4–6 hours</strong> to detect early strangulation</li>
+      <li>Examine <em>all</em> hernial orifices + PR examination: <strong>mandatory every time</strong></li>
+    </ol>
+
+    <div class="cols">
+      <div>
+        <div class="sh"><span class="n">09</span><h3>Resuscitation Targets</h3></div>
         <table>
           <thead>
             <tr>
-              <th>Mechanism</th>
-              <th>Consequence</th>
+              <th>Parameter</th>
+              <th>Target</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>Luminal block → 7–9 L/day secretions accumulate</td>
-              <td>Distension, ↑ intraluminal pressure</td>
+              <td>MAP</td>
+              <td><span class="hi">≥65 mmHg</span></td>
             </tr>
             <tr>
-              <td>Third-spacing into bowel wall + peritoneum</td>
-              <td>Hypovolaemia, AKI, haemoconcentration</td>
+              <td>Urine output</td>
+              <td><span class="hi">≥0.5 mL/kg/h</span></td>
             </tr>
             <tr>
-              <td>Vomiting (proximal SBO): H⁺, Cl⁻, K⁺ loss</td>
-              <td><strong>Hypochloraemic, hypokalaemic metabolic alkalosis</strong></td>
+              <td>Lactate</td>
+              <td><span class="hi">&lt;2 mmol/L</span></td>
             </tr>
             <tr>
-              <td>Bacterial stasis → gram-neg + anaerobe overgrowth</td>
-              <td>Endotoxin production → bacterial translocation</td>
-            </tr>
-            <tr>
-              <td>Venous outflow blocked <em>first</em> → arterial inflow cut</td>
-              <td>Strangulation cascade → necrosis → perforation</td>
-            </tr>
-            <tr>
-              <td>Closed-loop: both limbs occluded (volvulus/hernia)</td>
-              <td><strong>No decompression possible.</strong> Fastest progression to necrosis.</td>
-            </tr>
-            <tr>
-              <td>Laplace's Law: wall tension = (P × r) / thickness</td>
-              <td>Caecum perforates <em>first</em> — largest diameter in the colon</td>
+              <td>Preferred fluid</td>
+              <td><strong>Hartmann's (Ringer's lactate)</strong></td>
             </tr>
           </tbody>
         </table>
       </div>
-
-      <div class="callout pearl">
-        <span class="label">Caecal Thresholds</span>
-        Concern at <strong>9 cm</strong>; critical at <strong>12 cm</strong> — perforation risk rises sharply beyond this.
-      </div>
-
-      <h3>Classification Matrix</h3>
-      <p>Vascular status is the most clinically critical axis — it determines theatre urgency, not just the management pathway. A closed-loop obstruction is the worst scenario: both limbs blocked, no decompression possible, ischaemia develops rapidly and silently.</p>
-      
-      <div class="cols">
-        <div>
-          <div class="table-wrap s1-tbl">
-            <table>
-              <thead>
-                <tr>
-                  <th>Type</th>
-                  <th>Definition</th>
-                  <th>Urgency</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><strong>Simple</strong></td>
-                  <td>Lumen blocked; blood supply intact</td>
-                  <td><span class="warn-td">Urgent</span></td>
-                </tr>
-                <tr>
-                  <td><strong>Strangulated</strong></td>
-                  <td>Blood supply compromised; ischaemia/necrosis</td>
-                  <td><span class="bad">Emergency</span></td>
-                </tr>
-                <tr>
-                  <td><strong>Closed-loop</strong></td>
-                  <td>Both limbs occluded — volvulus or hernia</td>
-                  <td><span class="bad" style="font-weight:900;">IMMEDIATE</span></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-        <div>
-          <div class="table-wrap s1-tbl">
-            <table>
-              <thead>
-                <tr>
-                  <th>Mechanical Category</th>
-                  <th>Examples</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><span class="badge">Intraluminal</span></td>
-                  <td>Gallstone, bezoar, intussusception, faecal impaction</td>
-                </tr>
-                <tr>
-                  <td><span class="badge">Intramural</span></td>
-                  <td>Malignancy, Crohn's stricture, radiation stricture, haematoma</td>
-                </tr>
-                <tr>
-                  <td><span class="badge">Extramural</span></td>
-                  <td>Adhesions, hernias, volvulus, extrinsic tumour or abscess</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="topic s1" id="p1b">
-      <div class="topic-header"><span class="topic-num">1.2</span><h2>SBO &amp; LBO Aetiology</h2></div>
-      <h3>Small Bowel Obstruction (SBO)</h3>
-      <p>Adhesions from prior surgery account for nearly <strong>three-quarters of all SBO.</strong> In a patient with <em>no prior abdominal surgery</em> (virgin abdomen), think hernia first. Femoral hernias are small, easily missed in the groin crease, and carry the highest strangulation risk of any hernia type.</p>
-      
-      <div class="table-wrap s1-tbl">
+      <div>
+        <div class="sh"><span class="n">10</span><h3>Electrolyte Disturbances</h3></div>
         <table>
           <thead>
             <tr>
-              <th>Cause</th>
-              <th>Frequency</th>
-              <th>Key Point</th>
+              <th>Situation</th>
+              <th>Disturbance</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td><strong>Adhesions</strong></td>
-              <td><span class="hi">60–75%</span></td>
-              <td>Post-op. <strong>#1 overall cause</strong> of SBO.</td>
+              <td>Proximal SBO + vomiting</td>
+              <td>Hypochloraemic, hypokalaemic <strong>metabolic alkalosis</strong></td>
             </tr>
             <tr>
-              <td>Hernia (incarcerated)</td><td><span class="hi">10–15%</span></td>
-              <td><strong>Femoral = highest strangulation risk.</strong> Always examine the groin.</td>
+              <td>Strangulation / late SBO</td>
+              <td>Lactic <strong>metabolic acidosis</strong> (more sinister)</td>
             </tr>
             <tr>
-              <td>Neoplasm</td>
-              <td><span class="hi">5–10%</span></td>
-              <td>Primary small bowel tumour or extrinsic compression</td>
-            </tr>
-            <tr>
-              <td>Crohn's stricture</td>
-              <td><span class="hi">5%</span></td>
-              <td>Chronic transmural inflammation → fibrotic stricture</td>
-            </tr>
-            <tr>
-              <td>Intussusception</td>
-              <td><span class="hi">1–3%</span></td>
-              <td>Adults: <em>always</em> exclude malignant lead point</td>
-            </tr>
-            <tr>
-              <td>Gallstone ileus</td>
-              <td><span class="hi">&lt;1%</span></td>
-              <td>Bouveret's syndrome or Rigler's triad on AXR</td>
+              <td>0.9% NaCl resuscitation</td>
+              <td>Hyperchloraemic metabolic acidosis (avoid)</td>
             </tr>
           </tbody>
         </table>
       </div>
+    </div>
+  </div>
+  <div class="foot">
+    <span>Surgical Insight Hub</span>
+    <span>Bowel Obstruction | Residency Journal</span>
+    <span>Page 3 / 9 &nbsp;·&nbsp; @sugicalInsightHub</span>
+  </div>
+</div>
 
-      <h3>Large Bowel Obstruction (LBO)</h3>
-      <p>Colorectal carcinoma dominates — most commonly at the <strong>sigmoid colon</strong> where the lumen is narrowest. Volvulus demographics differ starkly: <em>sigmoid volvulus</em> in elderly, institutionalised patients; <em>caecal volvulus</em> in younger adults with incomplete peritoneal fixation.</p>
-      
-      <div class="table-wrap s1-tbl">
-        <table>
-          <thead>
-            <tr>
-              <th>Cause</th>
-              <th>Frequency</th>
-              <th>Key Point</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>Colorectal carcinoma</strong></td>
-              <td><span class="hi">60–70%</span></td>
-              <td>Sigmoid most common site. Often presents late.</td>
-            </tr>
-            <tr>
-              <td>Sigmoid volvulus</td>
-              <td><span class="hi">10–15%</span></td>
-              <td>Elderly, institutionalised, chronic constipation</td>
-            </tr>
-            <tr>
-              <td>Caecal volvulus</td>
-              <td><span class="hi">5%</span></td>
-              <td>Younger patients; incomplete peritoneal fixation</td>
-            </tr>
-            <tr>
-              <td>Diverticular stricture</td>
-              <td><span class="hi">5–10%</span></td>
-              <td>Chronic diverticulitis → fibrotic narrowing</td>
-            </tr>
-            <tr>
-              <td>Ogilvie's syndrome</td>
-              <td><span class="hi">Functional</span></td>
-              <td>No mechanical cause; colonic atony in ICU/post-op</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
+<!-- PAGE 4: Presentation -->
+<div class="page">
+  <div class="tabs">
+    <div class="tab off">Foundations</div>
+    <div class="tab on">Presentation</div>
+    <div class="tab off">Management</div>
+    <div class="tab off">MCQ</div>
+  </div>
+  <div class="cont-hdr">
+    <h2>Investigations &amp; AXR Patterns</h2>
+    <span class="pg">Page 4 / 9</span>
+  </div>
+  <div class="body">
+    <div class="sh"><span class="n">11</span><h3>Investigations</h3></div>
+    <p class="desc"><strong>CT abdomen with IV contrast is the gold standard</strong> and must be obtained whenever there is diagnostic uncertainty or concern for strangulation. AXR is fast but misses the cause in 50% of SBO.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Test</th>
+          <th>Key Finding / Role</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="badge-g">★ GOLD</span> <strong>CT Abd/Pelvis IV contrast</strong></td>
+          <td>Transition point, cause, strangulation signs. Sensitivity <strong>&gt;95%.</strong> Identifies cause in 90%.</td>
+        </tr>
+        <tr>
+          <td>AXR (Erect + Supine)</td>
+          <td>Dilated loops, volvulus patterns, Rigler's triad. <em>Rapid first-line imaging.</em></td>
+        </tr>
+        <tr>
+          <td>Erect CXR</td>
+          <td>Free air under diaphragm = perforation. <strong>Always obtain.</strong></td>
+        </tr>
+        <tr>
+          <td>Serum Lactate</td>
+          <td><strong>&gt;2 mmol/L</strong> = hypoperfusion. <strong>&gt;4</strong> = shock. <em>Best single strangulation marker.</em></td>
+        </tr>
+        <tr>
+          <td>FBC / U&amp;Es</td>
+          <td>WBC <strong>&gt;15</strong> = strangulation. Correct K⁺ before anaesthesia.</td>
+        </tr>
+        <tr>
+          <td>Gastrografin challenge</td>
+          <td>100 mL oral/NG. Contrast in colon at <strong>24 h</strong> = partial SBO.</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="note">Never delay CT when you suspect strangulation. The exam and bloods can mislead, but <em>CT rarely does.</em></div>
 
-    <section class="topic s1" id="p1c">
-      <div class="topic-header"><span class="topic-num">1.3</span><h2>Clinical Presentation</h2></div>
-      <p>The four cardinal features — <strong>pain, vomiting, distension, constipation</strong> — vary in timing and severity by obstruction level. <em>Proximal SBO presents with early, severe vomiting and minimal distension; distal SBO/LBO presents with prominent distension and late vomiting.</em> Absolute constipation means no flatus <em>and</em> no stool.</p>
-      
-      <div class="table-wrap s1-tbl">
-        <table>
-          <thead>
-            <tr>
-              <th>Feature</th>
-              <th>SBO</th>
-              <th>LBO</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>Pain</strong></td>
-              <td>Colicky, central, periumbilical</td>
-              <td>Colicky, lower abdominal / hypogastric</td>
-            </tr>
-            <tr>
-              <td><strong>Vomiting</strong></td>
-              <td><strong>Early, profuse</strong> — bilious → faeculent</td>
-              <td>Late, faeculent</td>
-            </tr>
-            <tr>
-              <td><strong>Distension</strong></td>
-              <td>Less prominent (minimal if proximal)</td>
-              <td><strong>Prominent, tympanic</strong></td>
-            </tr>
-            <tr>
-              <td><strong>Constipation</strong></td>
-              <td>Late sign</td>
-              <td><strong>Early</strong> presenting feature</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
+    <div class="sh"><span class="n">12</span><h3>AXR Patterns: Memorise These</h3></div>
+    <p class="desc"><em>Valvulae conniventes</em> cross the <strong>full width</strong> of the small bowel lumen, <em>haustra</em> do not. Volvulus signs are pathognomonic and require immediate action.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Sign</th>
+          <th>Pattern</th>
+          <th>Diagnosis</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><em>Valvulae conniventes</em></td>
+          <td>Central loops, lines cross full lumen width</td>
+          <td>SBO</td>
+        </tr>
+        <tr>
+          <td><em>Haustra</em></td>
+          <td>Peripheral, incomplete septa, large calibre</td>
+          <td>LBO</td>
+        </tr>
+        <tr>
+          <td><strong>Coffee bean / omega loop</strong></td>
+          <td>Apex → RUQ; bent inner tube appearance</td>
+          <td><strong>Sigmoid volvulus</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Kidney bean sign</strong></td>
+          <td>Caecum displaced to LUQ</td>
+          <td><strong>Caecal volvulus</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Rigler's triad</strong></td>
+          <td>Pneumobilia + SBO + ectopic calcified gallstone</td>
+          <td><strong>Gallstone ileus</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Pneumatosis intestinalis</strong></td>
+          <td>Gas within the bowel wall</td>
+          <td><span class="bad">Strangulation: theatre now</span></td>
+        </tr>
+        <tr>
+          <td><strong>Portal venous gas</strong></td>
+          <td>Branching intrahepatic gas on CT/AXR</td>
+          <td><span class="bad">Advanced ischaemia: grave sign</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="foot">
+    <span>Surgical Insight Hub</span>
+    <span>Bowel Obstruction | Residency Journal</span>
+    <span>Page 4 / 9 &nbsp;·&nbsp; @sugicalInsightHub</span>
+  </div>
+</div>
 
-    <section class="topic s1" id="p1d">
-      <div class="topic-header"><span class="topic-num">1.4</span><h2>Strangulation &amp; Special Cases</h2></div>
-      <div class="callout warn">
-        <span class="label">Organ Failure &amp; Strangulation Red Flags</span>
-        The clinical exam is <strong>unreliable in early strangulation</strong> — a patient can look deceptively well while bowel is already non-viable. Escalation markers include:
-        <ul>
-          <li><strong>Colicky pain shifting to constant pain</strong> — the single most important clinical sign</li>
-          <li>Localised tenderness, rebound, or guarding</li>
-          <li>Fever <strong>&gt;38.5°C</strong> combined with tachycardia <strong>&gt;100 bpm</strong></li>
-          <li>Serum lactate <strong>&gt;2 mmol/L</strong> or WBC <strong>&gt;15 × 10⁹/L</strong></li>
-          <li>CT findings: pneumatosis intestinalis, portal venous gas, absent bowel wall enhancement</li>
+<!-- PAGE 5: Management SBO Protocols -->
+<div class="page">
+  <div class="tabs">
+    <div class="tab off">Foundations</div>
+    <div class="tab off">Presentation</div>
+    <div class="tab on">Management</div>
+    <div class="tab off">MCQ</div>
+  </div>
+  <div class="cont-hdr">
+    <h2>Management: SBO Protocols</h2>
+    <span class="pg">Page 5 / 9</span>
+  </div>
+  <div class="body">
+    <div class="sh"><span class="n">13</span><h3>SBO: Non-operative Management</h3></div>
+    <p class="desc">Appropriate <em>only</em> for <strong>partial adhesive SBO</strong> without strangulation. The window is <strong>48–72 hours maximum</strong>. Beyond that, failure to improve mandates operative intervention.</p>
+    <div class="cols">
+      <div>
+        <div class="note"><strong>Indications:</strong> Partial SBO, stable, no peritonitis.</div>
+        <ul class="nb">
+          <li>NG tube to free drainage</li>
+          <li>IV <strong>Hartmann's</strong> + electrolyte replacement</li>
+          <li>Nil by mouth</li>
+          <li>Serial exam every <strong>4–6 hours</strong></li>
         </ul>
       </div>
-
-      <h3>Special Clinical Entities</h3>
-      <div class="table-wrap s1-tbl">
-        <table>
-          <thead>
-            <tr>
-              <th>Condition</th>
-              <th>Classic Signs &amp; Pathophysiology</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>Gallstone ileus</strong></td>
-              <td><em>Rigler's triad:</em> pneumobilia + SBO + ectopic gallstone. Occurs via cholecystoduodenal fistula.</td>
-            </tr>
-            <tr>
-              <td><strong>Sigmoid volvulus</strong></td>
-              <td><em>Coffee bean / omega loop</em> sign. Apex pointing to <strong>RUQ.</strong> Common in elderly.</td>
-            </tr>
-            <tr>
-              <td><strong>Caecal volvulus</strong></td>
-              <td><em>Kidney bean sign.</em> Caecum displaced to <strong>LUQ.</strong> Younger patients.</td>
-            </tr>
-            <tr>
-              <td><strong>Intussusception</strong></td>
-              <td>Redcurrant jelly stool + sausage-shaped RIF mass. Peak age 3m–3y in children; adult cases indicate malignancy.</td>
-            </tr>
-            <tr>
-              <td><strong>Ogilvie's syndrome</strong></td>
-              <td>Massive colonic distension without mechanical obstruction on CT. Common in ICU or post-op.</td>
-            </tr>
-          </tbody>
-        </table>
+      <div>
+        <div class="note"><strong>Window:</strong> Up to <strong>72 h</strong>. Abandon immediately if strangulation signs, deterioration, or no improvement at 72 h.</div>
+        <div class="warnbox">
+          <div class="wh">Bail-out Marker</div>
+          Abandon trial immediately if patient develops fever, worsening pain, leukocytosis, metabolic acidosis, or signs of localized peritonitis.
+        </div>
       </div>
-    </section>
-
-    <!-- PILLAR 2 -->
-    <div class="sec-header s2">
-      <span class="sec-badge">PILLAR 2</span>
-      <span class="sec-title">Initial Resuscitation &amp; Workup</span>
     </div>
 
-    <section class="topic s2" id="p2a">
-      <div class="topic-header"><span class="topic-num">2.1</span><h2>Bedside Actions &amp; Targets</h2></div>
-      <p>Immediate management must precede diagnostic imaging. Time is bowel — protect the gut and decompress immediately.</p>
-      <ol class="steps">
-        <li><strong>IV Access &amp; Resuscitation:</strong> Establish two large-bore IVs; start **Hartmann's** fluid immediately.</li>
-        <li><strong>NG Tube Decompression:</strong> Insert wide-bore Ryles tube to free drainage. Prevents aspiration and decompresses stomach.</li>
-        <li><strong>Urinary Catheterization:</strong> Place Foley catheter to monitor output strictly.</li>
-        <li><strong>Nil By Mouth:</strong> Restrict all oral intake immediately.</li>
-        <li><strong>Serial Evaluation:</strong> Re-examine abdomen every **4–6 hours** by same surgical team to detect strangulation early.</li>
-        <li><strong>Analgesia:</strong> Administer IV opioids; do not withhold analgesia as it does not mask peritonitis.</li>
-      </ol>
+    <div class="sh"><span class="n">14</span><h3>Gastrografin Protocol (Bologna Guidelines)</h3></div>
+    <p class="desc">Gastrografin is both diagnostic and therapeutic in adhesive SBO. Its hyperosmolar properties draw fluid into the bowel lumen, reducing mural oedema and potentially resolving SBO.</p>
+    <ol class="steps">
+      <li>Administer <strong>100 mL</strong> gastrografin orally or via NG tube</li>
+      <li>Obtain AXR or CT at <strong>24 hours</strong></li>
+      <li>Contrast <em>in colon</em> at 24 h = SBO resolved → continue non-operative management</li>
+      <li>Contrast <em>NOT in colon</em> at 24 h = complete SBO → <strong>operative management</strong></li>
+    </ol>
+    <div class="note">Mechanism: hyperosmolar → draws fluid into lumen → reduces bowel wall oedema. Reduces operative rate by <strong>~20%</strong> in SBO.</div>
 
-      <div class="cols">
-        <div>
-          <h3>Resuscitation Targets</h3>
-          <div class="table-wrap s2-tbl">
-            <table>
-              <thead>
-                <tr>
-                  <th>Parameter</th>
-                  <th>Target Value</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>MAP</td>
-                  <td><span class="hi">≥65 mmHg</span></td>
-                </tr>
-                <tr>
-                  <td>Urine Output</td>
-                  <td><span class="hi">≥0.5 mL/kg/h</span></td>
-                </tr>
-                <tr>
-                  <td>Serum Lactate</td>
-                  <td><span class="hi">&lt;2 mmol/L</span></td>
-                </tr>
-                <tr>
-                  <td>K⁺ pre-op</td>
-                  <td><strong>Correct if &lt;3.5 mmol/L</strong></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-        <div>
-          <div class="callout pearl">
-            <span class="label">Fluid of Choice</span>
-            <strong>Hartmann's solution is preferred</strong> over 0.9% Normal Saline. Normal Saline causes a hyperchloraemic metabolic acidosis, worsening the patient's biochemical profile.
-          </div>
-        </div>
-      </div>
-    </section>
+    <div class="sh"><span class="n">15</span><h3>Bowel Viability: Intraoperative Assessment</h3></div>
+    <p class="desc">Viability assessment is a <strong>clinical skill</strong>: four criteria (pink colour, active peristalsis, arterial pulsations, and bleeding when cut). When in doubt after a warm wrap, <strong>resect</strong>.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Status</th>
+          <th>Signs</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="ok"><strong>Viable</strong></span></td>
+          <td><em>Pink, peristalsis, pulsations, bleeds when cut</em></td>
+          <td><span class="ok">Preserve</span></td>
+        </tr>
+        <tr>
+          <td><span class="bad"><strong>Non-viable</strong></span></td>
+          <td><em>Black or green, no peristalsis, no pulsations</em></td>
+          <td><span class="bad">Resect immediately</span></td>
+        </tr>
+        <tr>
+          <td><span class="warn-td"><strong>Doubtful</strong></span></td>
+          <td>Borderline colour, sluggish peristalsis</td>
+          <td><span class="warn-td">Warm wrap × 5 min. <strong>Still doubtful &rarr; resect.</strong></span></td>
+        </tr>
+        <tr>
+          <td><strong>Extensive uncertain</strong></td>
+          <td>Large segment questionable viability</td>
+          <td><em>Second look laparotomy</em> at 24–48 h</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="foot">
+    <span>Surgical Insight Hub</span>
+    <span>Bowel Obstruction | Residency Journal</span>
+    <span>Page 5 / 9 &nbsp;·&nbsp; @sugicalInsightHub</span>
+  </div>
+</div>
 
-    <section class="topic s2" id="p2b">
-      <div class="topic-header"><span class="topic-num">2.2</span><h2>Electrolyte Disturbances</h2></div>
-      <p>Electrolyte shifts reflect the level and duration of bowel obstruction. Recognising these patterns is high-yield for clinical management and board examinations.</p>
-      
-      <div class="table-wrap s2-tbl">
-        <table>
-          <thead>
-            <tr>
-              <th>Clinical Scenario</th>
-              <th>Electrolyte &amp; Acid-Base Profile</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>Proximal SBO (Profuse vomiting)</strong></td>
-              <td><strong>Hypochloraemic, hypokalaemic metabolic alkalosis</strong> (loss of HCl and K⁺ in gastric secretions).</td>
-            </tr>
-            <tr>
-              <td><strong>Late Strangulated Obstruction</strong></td>
-              <td><strong>Lactic metabolic acidosis</strong> (tissue hypoperfusion and anaerobic metabolism in ischemic bowel).</td>
-            </tr>
-            <tr>
-              <td><strong>Aggressive 0.9% NaCl Infusion</strong></td>
-              <td>Hyperchloraemic metabolic acidosis (renal bicarbonate wasting due to high chloride load).</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <section class="topic s2" id="p2c">
-      <div class="topic-header"><span class="topic-num">2.3</span><h2>Investigations &amp; AXR Patterns</h2></div>
-      <p>CT with IV contrast is the undisputed gold standard for bowel obstruction. While plain radiography is useful for quick screening, it misses the etiology in half of SBO cases.</p>
-      
-      <div class="table-wrap s2-tbl">
-        <table>
-          <thead>
-            <tr>
-              <th>Investigation</th>
-              <th>Clinical Role / Finding</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><span class="badge-g">★ GOLD</span> <strong>CT Abd/Pelvis with IV contrast</strong></td>
-              <td>Identifies transition point, cause, and vascular compromise. Sensitivity <strong>&gt;95%.</strong></td>
-            </tr>
-            <tr>
-              <td>AXR (Erect + Supine)</td>
-              <td>Screening for dilated loops, gas patterns, and volvulus. Misses cause in 50%.</td>
-            </tr>
-            <tr>
-              <td>Erect CXR</td>
-              <td>Routinely ordered to exclude pneumoperitoneum (free air under diaphragm).</td>
-            </tr>
-            <tr>
-              <td>Serum Lactate</td>
-              <td>Best single marker for ischemia. <strong>&gt;2 mmol/L</strong> indicates hypoperfusion.</td>
-            </tr>
-            <tr>
-              <td>Gastrografin Challenge</td>
-              <td>100 mL oral/NG. Read at <strong>24 h.</strong> Contrast in colon = partial SBO; predicts resolution.</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <h3>Pathognomonic AXR &amp; CT Patterns</h3>
-      <p>Plain film distinctions are board-critical: <strong>valvulae conniventes</strong> cross the full width of the lumen, whereas <strong>haustra</strong> do not.</p>
-      
-      <div class="table-wrap s2-tbl">
-        <table>
-          <thead>
-            <tr>
-              <th>AXR Sign</th>
-              <th>Radiological Pattern</th>
-              <th>Diagnosis</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>Valvulae conniventes</strong></td>
-              <td>Central loops, lines cross full lumen width</td>
-              <td>Small Bowel Obstruction (SBO)</td>
-            </tr>
-            <tr>
-              <td><strong>Haustra</strong></td>
-              <td>Peripheral loops, incomplete septa</td>
-              <td>Large Bowel Obstruction (LBO)</td>
-            </tr>
-            <tr>
-              <td><strong>Coffee bean / Omega loop</strong></td>
-              <td>Bent inner tube appearance pointing to <strong>RUQ</strong></td>
-              <td><strong>Sigmoid Volvulus</strong></td>
-            </tr>
-            <tr>
-              <td><strong>Kidney bean sign</strong></td>
-              <td>Dilated caecum displaced to <strong>LUQ</strong></td>
-              <td><strong>Caecal Volvulus</strong></td>
-            </tr>
-            <tr>
-              <td><strong>Rigler's triad</strong></td>
-              <td>Pneumobilia + SBO + ectopic gallstone</td>
-              <td><strong>Gallstone Ileus</strong></td>
-            </tr>
-            <tr>
-              <td><strong>Pneumatosis intestinalis</strong></td>
-              <td>Gas bubbles within the bowel wall</td>
-              <td><span class="bad">Strangulation — urgent theatre</span></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <!-- PILLAR 3 -->
-    <div class="sec-header s3">
-      <span class="sec-badge">PILLAR 3</span>
-      <span class="sec-title">Management Playbook</span>
+<!-- PAGE 6: Management SBO Operative Playbook -->
+<div class="page">
+  <div class="tabs">
+    <div class="tab off">Foundations</div>
+    <div class="tab off">Presentation</div>
+    <div class="tab on">Management</div>
+    <div class="tab off">MCQ</div>
+  </div>
+  <div class="cont-hdr">
+    <h2>Management: SBO Operative Playbook</h2>
+    <span class="pg">Page 6 / 9</span>
+  </div>
+  <div class="body">
+    <div class="sh"><span class="n">16</span><h3>Operative Adhesiolysis (Laparoscopic &amp; Open)</h3></div>
+    <p class="desc">Operative intervention is mandatory for complete SBO or suspected strangulation. In prior abdominal surgeries, enter with caution.</p>
+    <div class="warnbox">
+      <div class="wh">Critical Access Rules for Prior Laparotomy Scars</div>
+      <ul class="nb">
+        <li><strong>Hasson Entry (Open Technique):</strong> Make incision at least <strong>5 cm away</strong> from prior laparotomy scars. Enter under direct vision.</li>
+        <li><strong>Palmer's Point Access:</strong> If prior extensive midline scars exist, establish entry at left upper quadrant (Palmer's point).</li>
+      </ul>
     </div>
+    <ol class="steps">
+      <li><strong>Pneumoperitoneum:</strong> Establish pneumoperitoneum at a safe pressure (12 mmHg). Inspect for sub-umbilical adhesions.</li>
+      <li><strong>Initial Port Placement &amp; Exposure:</strong> Place working ports under direct vision. Elevate abdominal wall to expose loops.</li>
+      <li><strong>Systematic Inspection:</strong> Work systematically from known normal zone to the abnormal zone. Start at the <strong>ileocaecal valve</strong> and follow collapsed terminal ileum retrogradely.</li>
+      <li><strong>Bowel Retraction Pearl:</strong> Retract dilated loops gently using graspers. Grasp <em>only</em> the mesentery. <strong>Never grasp the distended, friable bowel wall directly</strong>: it tears easily.</li>
+      <li><strong>Dissection Method:</strong> Perform "cold" dissection with sharp scissors or harmonic shears near the bowel wall. <strong>Avoid hot diathermy</strong> near the gut wall to eliminate thermal spread.</li>
+      <li><strong>Bail-out Strategy:</strong> If loops are fused in a dense "cocoon" and planes are unidentifiable, perform immediate conversion to open laparotomy to prevent unrecognized enterotomies.</li>
+    </ol>
 
-    <section class="topic s3" id="p3a">
-      <div class="topic-header"><span class="topic-num">3.1</span><h2>Non-operative &amp; Gastrografin</h2></div>
-      <p>Non-operative trial is indicated **only for partial adhesive SBO** in the absence of strangulation. The window of trial is strictly **48 to 72 hours**.</p>
-      
-      <div class="cols">
-        <div>
-          <h3>Trial Protocol</h3>
-          <ul>
-            <li>NG tube to free drainage + strict fluid balance</li>
-            <li>Aggressive Hartmann's hydration</li>
-            <li>Serial abdominal examinations every 4 hours</li>
-            <li>Serial biochemical checks (WBC, CRP, Lactate)</li>
-          </ul>
-        </div>
-        <div>
-          <div class="callout warn">
-            <span class="label">Bail-out Marker</span>
-            Abandon non-operative management immediately if the patient develops fever, worsening pain, leukocytosis, metabolic acidosis, or signs of localized peritonitis.
-          </div>
-        </div>
-      </div>
+    <div class="sh"><span class="n">17</span><h3>Small Bowel Resection &amp; Anastomosis</h3></div>
+    <p class="desc">When bowel viability is compromised, resection is mandatory. A stable resident must master both stapled and handsewn techniques.</p>
+    <ol class="steps">
+      <li><strong>Margin Selection:</strong> Select resection margins <strong>at least 5–10 cm proximal and distal</strong> to the necrotic/non-viable border in clearly viable tissue.</li>
+      <li><strong>Mesenteric Division:</strong> Create windows in the mesentery. Divide mesentery in a V-shape. Ligate mesenteric vessels securely using 3-0 Silk ties.</li>
+      <li><strong>Bowel Division:</strong> Apply linear cutting staplers (e.g. GIA 60 or 80 mm, blue load/3.5mm staples) across margins. Fire and divide. Remove specimen.</li>
+      <li><strong>Functional Side-to-Side Anastomosis (Stapled):</strong>
+        - Align proximal and distal loops in isoperistaltic or antiperistaltic side-to-side configuration. Place 3-0 Silk stay sutures.
+        - Exise small corners of staple lines at antimesenteric borders of both loops (enterotomies). Insert forks of linear cutting stapler fully into both. Align and fire.
+        - Close the common enterotomy opening in two layers: an inner continuous transmural layer (3-0 Vicryl or PDS) and an outer interrupted seromuscular layer (3-0 Silk Lembert sutures).
+      </li>
+      <li><strong>Alternative: Handsewn Two-Layer Anastomosis (End-to-End):</strong>
+        - Inner Layer: running continuous 3-0 Vicryl or PDS, starting at posterior wall and progressing anteriorly using Connell/Cushing stitch to ensure mucosal inversion.
+        - Outer Layer: reinforce with interrupted 3-0 Silk Lembert sutures placed 2-3 mm apart, fully invaginating the inner layer.
+      </li>
+      <li><strong>Mesenteric Defect Closure:</strong> Close mesenteric defect securely using continuous 3-0 Silk or Vicryl suture. <strong>This is mandatory</strong> to prevent internal herniation.</li>
+    </ol>
+  </div>
+  <div class="foot">
+    <span>Surgical Insight Hub</span>
+    <span>Bowel Obstruction | Residency Journal</span>
+    <span>Page 6 / 9 &nbsp;·&nbsp; @sugicalInsightHub</span>
+  </div>
+</div>
 
-      <h3>Gastrografin Protocol (Bologna Guidelines)</h3>
-      <p>Gastrografin is a water-soluble, hyperosmolar contrast medium that is both diagnostic and therapeutic in adhesive partial SBO. By drawing fluid into the lumen, it reduces bowel wall edema and stimulates peristalsis.</p>
-      <ol class="steps">
-        <li>Administer **100 mL** of Gastrografin orally or via NG tube.</li>
-        <li>Obtain an abdominal X-ray or CT scan at **24 hours**.</li>
-        <li><strong>Contrast in the colon:</strong> Predicts successful resolution of SBO without surgery.</li>
-        <li><strong>No contrast in the colon:</strong> Predicts failure of conservative trial; proceed to <strong>operative management</strong>.</li>
-      </ol>
-      <div class="callout pearl">
-        <span class="label">Efficacy</span>
-        The Gastrografin protocol reduces the overall emergency operative rate by approximately <strong>20%</strong> in adhesive partial SBO.
-      </div>
-    </section>
-
-    <section class="topic s3" id="p3b">
-      <div class="topic-header"><span class="topic-num">3.2</span><h2>Operative Adhesiolysis (Laparoscopic &amp; Open)</h2></div>
-      <p>Operative intervention is mandatory for complete mechanical SBO, hernias, tumors, volvulus, or whenever strangulation is clinically suspected. In prior abdominal surgeries, enter with caution.</p>
-
-      <div class="callout warn">
-        <span class="label">Critical Access Rules for Prior Laparotomy Scars</span>
-        <ul>
-          <li><strong>Hasson Entry (Open Technique):</strong> Make incision at least <strong>5 cm away</strong> from prior laparotomy scars. Enter under direct vision.</li>
-          <li><strong>Palmer's Point Access:</strong> If prior extensive midline scars exist, establish entry at Palmer's Point (left upper quadrant, 3 cm below left costal margin in midclavicular line).</li>
-        </ul>
-      </div>
-
-      <h3>Step-by-Step Laparoscopic Adhesiolysis Technique</h3>
-      <div class="steps-box">
+<!-- PAGE 7: Management LBO & Volvulus -->
+<div class="page">
+  <div class="tabs">
+    <div class="tab off">Foundations</div>
+    <div class="tab off">Presentation</div>
+    <div class="tab on">Management</div>
+    <div class="tab off">MCQ</div>
+  </div>
+  <div class="cont-hdr">
+    <h2>Management: LBO &amp; Volvulus</h2>
+    <span class="pg">Page 7 / 9</span>
+  </div>
+  <div class="body">
+    <div class="sh"><span class="n">18</span><h3>Sigmoid &amp; Caecal Volvulus Resections</h3></div>
+    <p class="desc">Sigmoid and caecal volvulus represent distinct clinical and technical entities requiring different operative maneuvers.</p>
+    <div class="cols">
+      <div>
+        <h4>Sigmoid Volvulus Resection</h4>
+        <p class="desc">Indicated when endoscopic decompression fails or as definitive elective surgery during same admission.</p>
         <ol class="steps">
-          <li><strong>Pneumoperitoneum:</strong> Establish pneumoperitoneum at a safe pressure (12 mmHg). Inspect for immediate sub-umbilical adhesions.</li>
-          <li><strong>Initial Port Placement &amp; Exposure:</strong> Place working ports under direct vision. Elevate abdominal wall to expose loops.</li>
-          <li><strong>Systematic Inspection:</strong> Work systematically from the known normal zone to the abnormal zone. Start at the **ileocaecal valve** and follow the collapsed terminal ileum retrogradely.</li>
-          <li><strong>Bowel Retraction Pearl:</strong> Retract dilated loops gently using atraumatic grasper forceps. Grasp *only* the mesentery or use a gauze-covered grasper. **Never grasp the distended, friable bowel wall directly** — it tears easily, causing catastrophic enterotomies.</li>
-          <li><strong>Dissection Method:</strong> Perform "cold" dissection with sharp scissors or harmonic shear devices when near the bowel wall. **Avoid monopolar electrosurgery (hot diathermy)** near the gut wall to eliminate thermal spread and delayed post-op bowel necrosis/fistulisation.</li>
-          <li><strong>Bail-out Strategy:</strong> If loops are fused in a dense "cocoon" and planes are unidentifiable, perform immediate conversion to open laparotomy to prevent multiple unrecognized enterotomies.</li>
+          <li><strong>Mobilization:</strong> Mobilize dilated sigmoid loop by dividing lateral peritoneal reflection (white line of Toldt).</li>
+          <li><strong>Ureteric Identification:</strong> Identify and protect left ureter and gonadal vessels.</li>
+          <li><strong>Resection:</strong> Dissect and divide mesosigmoid. Ligate branches. Resect loop using staplers.</li>
+          <li><strong>Reconstruction:</strong> Perform Hartmann's procedure (end colostomy) or primary stapled end-to-end colorectal anastomosis.</li>
         </ol>
       </div>
-    </section>
-
-    <section class="topic s3" id="p3c">
-      <div class="topic-header"><span class="topic-num">3.3</span><h2>Small Bowel Resection &amp; Anastomosis</h2></div>
-      <p>When bowel viability is compromised, resection is mandatory. A stable resident must master both stapled and handsewn techniques.</p>
-
-      <h3>Step-by-Step Operative Technique</h3>
-      <ol class="steps">
-        <li><strong>Margin Selection:</strong> Trace the compromised bowel. Select resection margins **at least 5–10 cm proximal and distal** to the necrotic/non-viable border in clearly viable, healthy-looking tissue.</li>
-        <li><strong>Mesenteric Division:</strong> Create windows in the mesentery at the resection margins. Divide the mesentery in a V-shaped pattern down toward the root. Ligate mesenteric vessels securely using 3-0 Silk ties or an advanced energy device.</li>
-        <li><strong>Bowel Division:</strong> Apply linear cutting staplers (e.g. GIA 60 or 80 mm, blue load/3.5mm staples) across the proximal and distal resection margins. Fire and divide. Remove the specimen.</li>
-        <li><strong>Functional Side-to-Side Anastomosis (Stapled):</strong>
-          <ul>
-            <li>Align the proximal and distal bowel loops in an **isoperistaltic or antiperistaltic side-to-side** configuration.</li>
-            <li>Place a 3-0 Silk traction suture at the antimesenteric borders to hold the loops together.</li>
-            <li>Exise a small corner of the staple lines at the antimesenteric borders of both loops (enterotomies).</li>
-            <li>Insert the forks of the linear cutting stapler (GIA 60 or 80) fully into both enterotomies. Ensure no mesentery is caught.</li>
-            <li>Align the bowel walls and fire the stapler to create the common anastomotic channel.</li>
-            <li>Withdraw the stapler and inspect the internal staple line closely for bleeding. Apply 3-0 Vicryl/Prolene suture to control any active mucosal bleeding.</li>
-            <li>Close the common enterotomy opening in two layers: an inner continuous transmural layer (3-0 Vicryl or PDS) and an outer interrupted seromuscular layer (3-0 Silk Lembert sutures), or fire a linear stapler (TA 60) across it.</li>
-          </ul>
-        </li>
-        <li><strong>Alternative: Handsewn Two-Layer Anastomosis (End-to-End):</strong>
-          <ul>
-            <li>Align the open ends of the bowel loops. Place interrupted stay sutures at the mesenteric and antimesenteric borders.</li>
-            <li><strong>Inner Layer (Transmural):</strong> Perform a running continuous 3-0 Vicryl or PDS suture, starting at the posterior wall and progressing anteriorly using a Connell or Cushing stitch to ensure mucosal inversion.</li>
-            <li><strong>Outer Layer (Seromuscular):</strong> Reinforce the anastomosis with interrupted 3-0 Silk Lembert sutures placed 2-3 mm apart, fully invaginating the inner layer.</li>
-          </ul>
-        </li>
-        <li><strong>Mesenteric Defect Closure:</strong> Close the mesenteric defect securely using a continuous 3-0 Silk or Vicryl suture. **This is mandatory** to prevent internal herniation, which is a classic cause of recurrent SBO.</li>
-      </ol>
-    </section>
-
-    <section class="topic s3" id="p3d">
-      <div class="topic-header"><span class="topic-num">3.4</span><h2>Sigmoid &amp; Caecal Volvulus</h2></div>
-      <p>Sigmoid and caecal volvulus represent distinct clinical and technical entities requiring different operative maneuvers.</p>
-
-      <div class="cols">
-        <div>
-          <h3>Sigmoid Volvulus Resection</h3>
-          <p>Indicated when endoscopic decompression fails, or as definitive elective surgery during the same admission.</p>
-          <ol class="steps">
-            <li><strong>Mobilization:</strong> Mobilize the dilated sigmoid loop by dividing the lateral peritoneal reflection (white line of Toldt).</li>
-            <li><strong>Ureteric Identification:</strong> Identify and protect the left ureter and gonadal vessels as they cross the iliac bifurcation.</li>
-            <li><strong>Mesosigmoid Division:</strong> Dissect and divide the mesosigmoid. Ligate the sigmoid branches of the inferior mesenteric artery.</li>
-            <li><strong>Resection:</strong> Resect the redundant loop using staplers.</li>
-            <li><strong>Reconstruction:</strong>
-              <ul>
-                <li><strong>Hartmann's Procedure (Emergency):</strong> Close the rectal stump. Mobilize the proximal descending colon and bring it out through the left lower quadrant as an end colostomy.</li>
-                <li><strong>Primary Anastomosis:</strong> If the patient is stable and bowel is viable, perform a primary stapled end-to-end colorectal anastomosis. Consider on-table colonic lavage if heavy fecal loading is present.</li>
-              </ul>
-            </li>
-          </ol>
-        </div>
-        <div>
-          <h3>Caecal Volvulus Resection</h3>
-          <p>Always requires surgical intervention. Endoscopic decompression has no role.</p>
-          <ol class="steps">
-            <li><strong>Exposure:</strong> Perform a midline laparotomy or right paramedian incision. Elevate the mobile caecum and ascending colon.</li>
-            <li><strong>Hemicolectomy:</strong> Mobilize the right colon. Divide the terminal ileum (10 cm proximal to caecum) and the transverse colon (distal to hepatic flexure).</li>
-            <li><strong>Vascular Control:</strong> Ligate the ileocolic and right colic arteries.</li>
-            <li><strong>Anastomosis:</strong> Re-establish continuity via a stapled side-to-side ileotransverse anastomosis. Close the mesenteric defect.</li>
-          </ol>
-        </div>
+      <div>
+        <h4>Caecal Volvulus Resection</h4>
+        <p class="desc">Always requires surgical intervention. Endoscopic decompression has no role.</p>
+        <ol class="steps">
+          <li><strong>Exposure:</strong> Midline laparotomy. Elevate mobile caecum and ascending colon.</li>
+          <li><strong>Hemicolectomy:</strong> Mobilize right colon. Divide terminal ileum and transverse colon.</li>
+          <li><strong>Vascular Control:</strong> Ligate ileocolic and right colic arteries.</li>
+          <li><strong>Anastomosis:</strong> Re-establish continuity via stapled side-to-side ileotransverse anastomosis. Close defect.</li>
+        </ol>
       </div>
-    </section>
-
-    <section class="topic s3" id="p3e">
-      <div class="topic-header"><span class="topic-num">3.5</span><h2>Malignant LBO &amp; Ogilvie's</h2></div>
-      <h3>Malignant Large Bowel Obstruction</h3>
-      <p>In stable patients presenting with left-sided colorectal cancer obstruction, a Self-Expanding Metal Stent (SEMS) acts as a bridge to elective surgery. This avoids emergency stoma operations and allows for standard staging.</p>
-      
-      <div class="table-wrap s3-tbl">
-        <table>
-          <thead>
-            <tr>
-              <th>Clinical Scenario</th>
-              <th>Surgical Management</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>Stable, left-sided obstruction</strong></td>
-              <td>Deploy <strong>SEMS</strong> under fluoroscopy → elective resection in <strong>4–8 weeks</strong>.</td>
-            </tr>
-            <tr>
-              <td><strong>Right-sided malignant obstruction</strong></td>
-              <td>Emergency right hemicolectomy + primary ileocolic anastomosis.</td>
-            </tr>
-            <tr>
-              <td><strong>Perforation / Peritonitis</strong></td>
-              <td>Emergency resection + end stoma (<strong>Hartmann's procedure</strong>).</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <h3>Ogilvie's Syndrome: Neostigmine Rescue Protocol</h3>
-      <p>Neostigmine is a reversible acetylcholinesterase inhibitor that enhances parasympathetic activity, stimulating colonic motility.</p>
-      
-      <div class="table-wrap s3-tbl">
-        <table>
-          <thead>
-            <tr>
-              <th>Caecal Diameter</th>
-              <th>Therapeutic Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>&lt;9 cm</strong></td>
-              <td>Conservative: IV fluids, stop opioids, correct electrolytes, mobilize.</td>
-            </tr>
-            <tr>
-              <td><strong>9–12 cm</strong></td>
-              <td><strong>IV Neostigmine 2 mg slow</strong> over 3–5 mins. <em>Atropine must be at bedside.</em></td>
-            </tr>
-            <tr>
-              <td><strong>&gt;12 cm (No peritonitis)</strong></td>
-              <td>Colonoscopic decompression with decompression tube insertion.</td>
-            </tr>
-            <tr>
-              <td><strong>Perforation / Ischemia</strong></td>
-              <td>Emergency resection + stoma or caecostomy.</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="callout warn">
-        <span class="label">Neostigmine Administration &amp; Safety Checklist</span>
-        Neostigmine can cause profound bronchospasm and symptomatic bradycardia.
-        <ul>
-          <li>Ensure a **12-lead ECG** is completed before administration.</li>
-          <li>Have **Atropine (0.6–1.0 mg IV)** pre-drawn and immediately available at the bedside.</li>
-          <li>Infuse **Neostigmine 2.0 mg IV slowly** over a minimum of 3 to 5 minutes. Keep patient supine and monitor vitals for 30 minutes.</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- PILLAR 4 -->
-    <div class="sec-header s4">
-      <span class="sec-badge">PILLAR 4</span>
-      <span class="sec-title">Post-Op Care &amp; Eponyms</span>
     </div>
 
-    <section class="topic s4" id="p4a">
-      <div class="topic-header"><span class="topic-num">4.1</span><h2>Post-op Care &amp; Stomas</h2></div>
-      <p>Post-operative care is guided by ERAS (Enhanced Recovery After Surgery) protocols. Close monitoring is required to detect early anastomotic leak and ileus.</p>
-      
-      <div class="table-wrap s4-tbl">
+    <div class="sh"><span class="n">19</span><h3>Malignant LBO: CRC</h3></div>
+    <p class="desc">In a stable patient with left-sided colorectal cancer obstruction, a Self-Expanding Metal Stent (SEMS) acts as a bridge to elective surgery.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Clinical Scenario</th>
+          <th>Surgical Management</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Stable, left-sided obstruction</strong></td>
+          <td>Deploy <strong>SEMS</strong> under fluoroscopy → elective resection in <strong>4–8 weeks</strong>.</td>
+        </tr>
+        <tr>
+          <td><strong>Right-sided malignant obstruction</strong></td>
+          <td>Emergency right hemicolectomy + primary ileocolic anastomosis.</td>
+        </tr>
+        <tr>
+          <td><strong>Perforation / Peritonitis</strong></td>
+          <td>Emergency resection + end stoma (<strong>Hartmann's procedure</strong>).</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="sh"><span class="n">20</span><h3>Ogilvie's Syndrome: Neostigmine Protocol</h3></div>
+    <p class="desc">Neostigmine restores parasympathetic tone to the colon. Have atropine drawn up before you inject it.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Caecal Diameter</th>
+          <th>Therapeutic Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>&lt;9 cm</strong></td>
+          <td>Conservative: IV fluids, stop opioids, correct electrolytes, mobilize.</td>
+        </tr>
+        <tr>
+          <td><strong>9–12 cm</strong></td>
+          <td><strong>IV Neostigmine 2 mg slow</strong> over 3–5 mins. *Atropine must be at bedside.*</td>
+        </tr>
+        <tr>
+          <td><strong>&gt;12 cm</strong></td>
+          <td>Colonoscopic decompression with decompression tube insertion.</td>
+        </tr>
+        <tr>
+          <td><strong>Perforation / Ischemia</strong></td>
+          <td>Emergency resection + stoma.</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="warnbox">
+      <div class="wh">Neostigmine Safety Checklist</div>
+      Ensure a <strong>12-lead ECG</strong> is completed before administration. Have <strong>Atropine (0.6–1.0 mg IV)</strong> pre-drawn and available at bedside. Infuse <strong>Neostigmine 2.0 mg IV slowly</strong> over a minimum of 3 to 5 minutes. Keep patient supine and monitor vitals.
+    </div>
+  </div>
+  <div class="foot">
+    <span>Surgical Insight Hub</span>
+    <span>Bowel Obstruction | Residency Journal</span>
+    <span>Page 7 / 9 &nbsp;·&nbsp; @sugicalInsightHub</span>
+  </div>
+</div>
+
+<!-- PAGE 8: Post-op Care & Eponyms -->
+<div class="page">
+  <div class="tabs">
+    <div class="tab off">Foundations</div>
+    <div class="tab off">Presentation</div>
+    <div class="tab off">Management</div>
+    <div class="tab on">MCQ</div>
+  </div>
+  <div class="cont-hdr">
+    <h2>Post-op Care &amp; Eponyms</h2>
+    <span class="pg">Page 8 / 9</span>
+  </div>
+  <div class="body">
+    <div class="sh"><span class="n">21</span><h3>Intussusception</h3></div>
+    <p class="desc">In children, intussusception is idiopathic in the vast majority; air enema reduction is first-line. In adults, there is almost always a malignant lead point requiring operative resection.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Group</th>
+          <th>Cause</th>
+          <th>Management</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Children</strong> (peak 3m–3y)</td>
+          <td><em>Idiopathic</em> (lead point rare)</td>
+          <td>Air-enema reduction first-line. Success <strong>75–90%</strong>. Avoids surgery.</td>
+        </tr>
+        <tr>
+          <td><strong>Adults</strong></td>
+          <td><em>Malignant lead point</em> in majority</td>
+          <td><strong>Operate.</strong> No role for radiological reduction. Always resect.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="sh"><span class="n">22</span><h3>Post-op Care (0–72 h)</h3></div>
+    <p class="desc">Management centres on four pillars: adequate resuscitation, early detection of anastomotic leak, VTE prevention, and ERAS-driven early recovery. Avoid NSAIDs after any anastomosis.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Domain</th>
+          <th>Post-operative Action Plan</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>NG Tube Exit</strong></td>
+          <td>Remove when output is <strong>&lt;200 mL/day</strong> and bowel sounds / flatus return.</td>
+        </tr>
+        <tr>
+          <td><strong>Analgesia</strong></td>
+          <td>IV PCA (opioids) transitioned to paracetamol. <strong>Avoid NSAIDs</strong> due to leak risk.</td>
+        </tr>
+        <tr>
+          <td><strong>VTE Prophylaxis</strong></td>
+          <td>Enoxaparin <strong>40 mg subcut OD</strong> starting night of surgery + compression stockings.</td>
+        </tr>
+        <tr>
+          <td><strong>ERAS Pathway</strong></td>
+          <td>Early mobilization day 1; sips of water day 1; advance diet as tolerated.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="cols">
+      <div>
+        <div class="sh"><span class="n">23</span><h3>Stoma Management</h3></div>
         <table>
           <thead>
             <tr>
-              <th>Clinical Domain</th>
-              <th>Post-operative Action Plan</th>
+              <th>Problem</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td><strong>NG Tube Exit</strong></td>
-              <td>Remove when output is <strong>&lt;200 mL/day</strong> and bowel sounds / flatus return.</td>
+              <td>High-output <strong>(&gt;1000 mL/day)</strong></td>
+              <td>ORS + loperamide + codeine.</td>
             </tr>
             <tr>
-              <td><strong>Analgesia</strong></td>
-              <td>IV PCA (opioids) transitioned to paracetamol. <strong>Avoid NSAIDs</strong> due to anastomotic leak risk.</td>
+              <td>Hartmann's Reversal</td>
+              <td>Assess at <strong>3–6 months</strong> with CT + colonoscopy rectal stump.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="sh"><span class="n">24</span><h3>Follow-up Schedule</h3></div>
+        <table>
+          <thead>
+            <tr>
+              <th>Timing</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>10–14 days</td>
+              <td>Wound review, staple/suture removal</td>
             </tr>
             <tr>
-              <td><strong>VTE Prophylaxis</strong></td>
-              <td>Enoxaparin <strong>40 mg subcut OD</strong> starting night of surgery + compression stockings.</td>
+              <td>4–6 weeks</td>
+              <td>Oncology MDT for malignant cases</td>
             </tr>
             <tr>
-              <td><strong>ERAS Pathway</strong></td>
-              <td>Early mobilization day 1; sips of water day 1; advance diet as tolerated.</td>
+              <td>4–8 weeks</td>
+              <td>Elective resection if SEMS was used</td>
             </tr>
           </tbody>
         </table>
       </div>
-
-      <h3>Stoma Management Playbook</h3>
-      <ul>
-        <li><strong>High-output ileostomy (&gt;1000 mL/day):</strong> Risk of severe dehydration and AKI. Treat with oral rehydration salts (ORS), loperamide, codeine, or octreotide.</li>
-        <li><strong>Hartmann's Reversal:</strong> Typically planned at **3 to 6 months** post-operatively. Must evaluate the rectal stump via contrast enema and colonoscopy first to ensure healing.</li>
-      </ul>
-    </section>
-
-    <section class="topic s4" id="p4b">
-      <div class="topic-header"><span class="topic-num">4.2</span><h2>Follow-up &amp; Eponyms</h2></div>
-      <h3>Longitudinal Follow-up Schedule</h3>
-      <ul>
-        <li><strong>10–14 Days:</strong> Clinic visit for surgical wound inspection and suture/staple removal.</li>
-        <li><strong>4–6 Weeks:</strong> Multidisciplinary Team (MDT) oncology referral if the obstruction was due to CRC.</li>
-        <li><strong>4–8 Weeks:</strong> Plan elective resection if SEMS was successfully deployed as a bridge.</li>
-      </ul>
-
-      <h3>Classical Board Eponyms</h3>
-      <div class="table-wrap s4-tbl">
+      <div>
+        <div class="sh"><span class="n">25</span><h3>Eponyms</h3></div>
+        <p class="desc">Know the person and the exact clinical definition: these appear in MCQs and vivas.</p>
         <table>
           <thead>
             <tr>
               <th>Eponym</th>
-              <th>Surgical / Pathological Definition</th>
+              <th>Definition</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td><strong>Bouveret's syndrome</strong></td>
-              <td>Gastric outlet obstruction caused by a gallstone impacted in the duodenum.</td>
+              <td>Gallstone impacted in the <em>duodenum</em> → gastric outlet obstruction</td>
             </tr>
             <tr>
               <td><strong>Rigler's triad</strong></td>
-              <td>Pneumobilia + small bowel obstruction + ectopic gallstone (diagnostic of gallstone ileus).</td>
+              <td>Pneumobilia + SBO + ectopic calcified gallstone = gallstone ileus</td>
             </tr>
             <tr>
               <td><strong>Ogilvie's syndrome</strong></td>
-              <td>Acute colonic pseudo-obstruction in the absence of a mechanical blockage.</td>
+              <td>Acute colonic pseudo-obstruction: <em>Sir William Heneage Ogilvie, 1948</em></td>
             </tr>
             <tr>
               <td><strong>Laplace's Law</strong></td>
-              <td>Wall tension = (Pressure × radius) / wall thickness. Explains caecal perforation risk.</td>
+              <td>Wall tension = (P × r) / thickness → caecum perforates first</td>
             </tr>
             <tr>
               <td><strong>Hartmann's procedure</strong></td>
-              <td>Sigmoidectomy + end colostomy + closure of the rectal stump.</td>
+              <td>Sigmoid colectomy + end colostomy + rectal stump closure</td>
             </tr>
           </tbody>
         </table>
       </div>
-    </section>
-
-    <!-- PILLAR 5 -->
-    <div class="sec-header s5">
-      <span class="sec-badge">PILLAR 5</span>
-      <span class="sec-title">Board Review &amp; MCQ</span>
     </div>
-
-    <section class="topic s5" id="p5a">
-      <div class="topic-header"><span class="topic-num">5.1</span><h2>High-Yield Numbers</h2></div>
-      <p>These numbers appear repeatedly in board examinations (ABSITE, FRCS, MRCS). Memorize them cold.</p>
-      
-      <div class="table-wrap s5-tbl">
-        <table>
-          <thead>
-            <tr>
-              <th>Board-Critical Statistic</th>
-              <th>Correct Value</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Percentage of SBO caused by adhesions</td>
-              <td><span class="hi">60–75%</span></td>
-            </tr>
-            <tr>
-              <td>Percentage of LBO caused by colorectal cancer</td>
-              <td><span class="hi">60–70%</span></td>
-            </tr>
-            <tr>
-              <td>Highest strangulation risk hernia type</td>
-              <td><strong>Femoral hernia</strong></td>
-            </tr>
-            <tr>
-              <td>Caecal diameter concern threshold</td>
-              <td><span class="hi">9 cm</span></td>
-            </tr>
-            <tr>
-              <td>Caecal diameter critical/perforation threshold</td>
-              <td><span class="hi">12 cm</span></td>
-            </tr>
-            <tr>
-              <td>Neostigmine dose for Ogilvie's</td>
-              <td><span class="hi">2 mg IV slow</span> over 3–5 mins</td>
-            </tr>
-            <tr>
-              <td>Sigmoid volvulus recurrence rate without surgery</td>
-              <td><span class="hi">50–90%</span></td>
-            </tr>
-            <tr>
-              <td>Decrease in SBO surgery rate via Gastrografin</td>
-              <td><span class="hi">~20%</span></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <section class="topic s5" id="p5b">
-      <div class="topic-header"><span class="topic-num">5.2</span><h2>Distinctions That Fail People</h2></div>
-      <div class="table-wrap s5-tbl">
-        <table>
-          <thead>
-            <tr>
-              <th>Typical Exam / Viva Question</th>
-              <th>High-Yield Answer &amp; Rationale</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>What is the most common cause of SBO in a virgin abdomen?</td>
-              <td><strong>Hernia.</strong> Adhesions cannot form without previous abdominal surgery.</td>
-            </tr>
-            <tr>
-              <td>What is the earliest clinical sign of bowel strangulation?</td>
-              <td><strong>Colicky pain shifting to constant, localized pain.</strong></td>
-            </tr>
-            <tr>
-              <td>Why does the caecum perforate first in a distal LBO?</td>
-              <td><strong>Laplace's Law.</strong> The caecum has the largest resting radius in the colon, generating the highest wall tension.</td>
-            </tr>
-            <tr>
-              <td>Can you decompress a caecal volvulus endoscopically?</td>
-              <td><span class="bad"><strong>NO.</strong> Endoscopic untwisting is contraindicated. Go straight to theatre.</span></td>
-            </tr>
-            <tr>
-              <td>How do you manage adult intussusception conservatively?</td>
-              <td><span class="bad"><strong>You don't.</strong> Adults require resection due to a highly likely malignant lead point.</span></td>
-            </tr>
-            <tr>
-              <td>What must you have drawn up at the bedside before neostigmine?</td>
-              <td><strong>Atropine.</strong> Profound symptomatic bradycardia is a predictable side effect of neostigmine.</td>
-            </tr>
-            <tr>
-              <td>What is the IV fluid of choice in bowel obstruction?</td>
-              <td><strong>Hartmann's.</strong> 0.9% NaCl causes a hyperchloraemic acidosis.</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="callout warn">
-        <span class="label">Ward Round Safety Checklist</span>
-        <ul>
-          <li><strong>groin examination:</strong> Always examine the groin of an elderly woman presenting with SBO to rule out a femoral hernia.</li>
-          <li><strong>Sigmoid volvulus:</strong> Decompress endoscopically but book their elective sigmoidectomy before discharge (recurrence is 50-90%).</li>
-          <li><strong>Pneumatosis intestinalis:</strong> If seen on CT, prepare the patient for theatre regardless of how clinically well they appear.</li>
-        </ul>
-      </div>
-    </section>
   </div>
-</main>
+  <div class="foot">
+    <span>Surgical Insight Hub</span>
+    <span>Bowel Obstruction | Residency Journal</span>
+    <span>Page 8 / 9 &nbsp;·&nbsp; @sugicalInsightHub</span>
+  </div>
+</div>
 
-<button id="top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<!-- PAGE 9: MCQ Rapid Revision -->
+<div class="page">
+  <div class="tabs">
+    <div class="tab off">Foundations</div>
+    <div class="tab off">Presentation</div>
+    <div class="tab off">Management</div>
+    <div class="tab on">MCQ</div>
+  </div>
+  <div class="cont-hdr">
+    <h2>MCQ Rapid Revision</h2>
+    <span class="pg">Page 9 / 9</span>
+  </div>
+  <div class="body">
+    <div class="sh"><span class="n">26</span><h3>MCQ Numbers: Know Cold</h3></div>
+    <table>
+      <thead>
+        <tr>
+          <th>Fact</th>
+          <th>Answer</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Adhesions → SBO</td>
+          <td><span class="hi">60–75%</span></td>
+        </tr>
+        <tr>
+          <td>CRC → LBO</td>
+          <td><span class="hi">60–70%</span></td>
+        </tr>
+        <tr>
+          <td>Highest strangulation risk hernia</td>
+          <td><strong>Femoral hernia</strong></td>
+        </tr>
+        <tr>
+          <td>Caecal diameter concern threshold</td>
+          <td><span class="hi">9 cm</span></td>
+        </tr>
+        <tr>
+          <td>Caecal diameter critical/perforation threshold</td>
+          <td><span class="hi">12 cm</span></td>
+        </tr>
+        <tr>
+          <td>Neostigmine dose for Ogilvie's</td>
+          <td><span class="hi">2 mg IV slow</span> over 3–5 mins</td>
+        </tr>
+        <tr>
+          <td>Sigmoid volvulus recurrence rate without surgery</td>
+          <td><span class="hi">50–90%</span></td>
+        </tr>
+        <tr>
+          <td>Decrease in SBO surgery rate via Gastrografin</td>
+          <td><span class="hi">~20%</span></td>
+        </tr>
+        <tr>
+          <td>Conservative SBO trial max window</td>
+          <td><span class="hi">72 hours</span></td>
+        </tr>
+        <tr>
+          <td>SEMS to surgery timing</td>
+          <td><span class="hi">4–8 weeks</span></td>
+        </tr>
+      </tbody>
+    </table>
 
-<script>
-const progressBar = document.getElementById('progress-bar');
-const topBtn = document.getElementById('top-btn');
-const sidebarToggle = document.getElementById('sidebar-toggle');
-const sidebarOverlay = document.getElementById('sidebar-overlay');
-const navItems = document.querySelectorAll('.nav-item');
-const sections = document.querySelectorAll('.topic[id]');
-const body = document.body;
+    <div class="sh"><span class="n">27</span><h3>Distinctions That Fail People</h3></div>
+    <table>
+      <thead>
+        <tr>
+          <th>Typical Exam / Viva Question</th>
+          <th>High-Yield Answer &amp; Rationale</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>SBO in a virgin abdomen</td>
+          <td><strong>Hernia.</strong> Adhesions cannot form without prior surgery.</td>
+        </tr>
+        <tr>
+          <td>First sign of strangulation</td>
+          <td><strong>Colicky pain shifting to constant, localized pain.</strong></td>
+        </tr>
+        <tr>
+          <td>Why the caecum perforates first in LBO</td>
+          <td><strong>Laplace's Law.</strong> Largest radius = highest wall tension.</td>
+        </tr>
+        <tr>
+          <td>Caecal volvulus: endoscopic decompression?</td>
+          <td><span class="bad"><strong>NO.</strong> Right colon inaccessible. Operate immediately.</span></td>
+        </tr>
+        <tr>
+          <td>Adult intussusception: non-operative?</td>
+          <td><span class="bad"><strong>NO.</strong> Operate. Always exclude malignant lead point.</span></td>
+        </tr>
+        <tr>
+          <td>Neostigmine: what to have at bedside</td>
+          <td><strong>Atropine</strong> drawn up (bradycardia is predictable).</td>
+        </tr>
+        <tr>
+          <td>IV fluid of choice in bowel obstruction</td>
+          <td><strong>Hartmann's.</strong> 0.9% NaCl causes hyperchloraemic acidosis.</td>
+        </tr>
+      </tbody>
+    </table>
 
-function toggleSidebar() { body.classList.toggle('sidebar-open'); }
-function closeSidebar() { body.classList.remove('sidebar-open'); }
+    <div class="sh"><span class="n">28</span><h3>Ward Round: Never Miss</h3></div>
+    <div class="warnbox">
+      <div class="wh">Never-Miss Safety Checklist</div>
+      <ul class="nb">
+        <li><strong>Femoral hernia</strong> in SBO: <em>examine the groin every time</em>, never rely on admission notes.</li>
+        <li>Sigmoid volvulus decompressed &rarr; <strong>book elective colectomy before discharge</strong> (50–90% recurrence).</li>
+        <li><strong>Pneumatosis intestinalis</strong> on CT &rarr; operate <em>regardless of how clinically well the patient appears</em>.</li>
+        <li><strong>Portal venous gas</strong> on CT &rarr; prepare for bowel resection immediately (advanced bowel necrosis).</li>
+        <li>Constant pain in obstruction = <strong>strangulation until proven otherwise</strong> = immediate theatre.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot">
+    <span>Surgical Insight Hub</span>
+    <span>Bowel Obstruction | Residency Journal</span>
+    <span>Page 9 / 9 &nbsp;·&nbsp; @sugicalInsightHub</span>
+  </div>
+</div>
 
-window.addEventListener('scroll', () => {
-  const st = window.scrollY;
-  const dh = document.documentElement.scrollHeight - window.innerHeight;
-  progressBar.style.transform = `scaleX(${st / dh})`;
-  topBtn.classList.toggle('show', st > 400);
-  
-  let current = '';
-  sections.forEach(s => { if (st >= s.offsetTop - 120) current = s.id; });
-  navItems.forEach(n => { n.classList.toggle('active', n.getAttribute('href') === '#' + current); });
-});
-
-function filterNav(query) {
-  const q = query.toLowerCase();
-  navItems.forEach(item => { item.style.display = (!q || item.textContent.toLowerCase().includes(q)) ? 'block' : 'none'; });
-  document.querySelectorAll('.vol-label').forEach(l => { l.style.display = 'block'; });
-}
-
-navItems.forEach(item => {
-  item.addEventListener('click', e => {
-    e.preventDefault();
-    closeSidebar();
-    const target = document.querySelector(item.getAttribute('href'));
-    if (target) window.scrollTo({ top: target.getBoundingClientRect().top - 80, behavior: 'smooth' });
-  });
-});
-
-document.querySelectorAll('.topic').forEach((el, i) => { el.style.animationDelay = `${i * 0.03}s`; });
-</script>
+<div class="no-print" style="position:fixed;bottom:2rem;right:2rem;z-index:9999;">
+  <button onclick="window.print()" style="background:#2b1810;color:#b8922a;border:2px solid #b8922a;
+  padding:10px 24px;border-radius:30px;font-weight:700;font-size:.9rem;cursor:pointer;
+  box-shadow:0 4px 20px rgba(0,0,0,.5);">Print to PDF</button>
+</div>
 
 <script src="../../js/nav-pill.js"></script>
 <script src="../../js/navigation.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const pages = document.querySelectorAll('.page');
+    document.querySelectorAll('.tab').forEach(tab => {
+      tab.style.cursor = 'pointer';
+      tab.addEventListener('click', function(e) {
+        const text = this.textContent.trim();
+        let targetPage = null;
+        if (text === 'Foundations') {
+          targetPage = pages[0];
+        } else if (text === 'Presentation') {
+          targetPage = pages[2]; // Page 3 is 0-indexed index 2
+        } else if (text === 'Management') {
+          targetPage = pages[4]; // Page 5 is 0-indexed index 4
+        } else if (text === 'MCQ') {
+          targetPage = pages[7]; // Page 8 is 0-indexed index 7
+        }
+        if (targetPage) {
+          targetPage.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  });
+</script>
 </body>
 </html>
