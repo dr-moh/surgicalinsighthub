@@ -14,6 +14,187 @@
   const savedTheme = localStorage.getItem('sih-theme') || 'light';
   if (savedTheme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
 </script>
+<style>
+:root {
+  --primary:   #4F46E5;      /* Royal Blue / Indigo */
+  --primary-dk:#1E1B4B;      /* Midnight Blue */
+  --primary-lt:#EEF2F6;      /* Light Grey-Blue */
+  --accent:    #0EA5E9;      /* Cyan / Sky Blue */
+  --accent2:   #F43F5E;      /* Rose / Pink */
+  --gold:      #B45309;      /* Amber / Gold */
+  --gold-lt:   #FEF3C7;      /* Light Gold */
+  --red:       #B91C1C;
+  --red-lt:    #FEF2F2;
+  --sidebar-w: 260px;
+  --s1:        #4F46E5;      /* Pillar 1 */
+  --s2:        #0D9488;      /* Pillar 2 */
+  --s3:        #C27803;      /* Pillar 3 */
+  --s4:        #2563EB;      /* Pillar 4 */
+  --s5:        #BE185D;      /* Pillar 5 */
+  --s1-lt:     #EEF2F6;
+  --s2-lt:     #F0FDFA;
+  --s3-lt:     #FEF3C7;
+  --s4-lt:     #EFF6FF;
+  --s5-lt:     #FDF2F8;
+  --bg:        var(--bg-card, #ffffff);
+  --bg2:       var(--bg-card-alt, #f9fafb);
+  --text:      var(--text-primary, #111827);
+  --muted:     var(--text-secondary, #4b5563);
+  --border:    var(--border-color, #e5e7eb);
+  --white:     var(--bg-card, #ffffff);
+}
+
+/* ── SIDEBAR & OVERLAY ── */
+#sidebar {
+  position: fixed; top: 0; left: 0; width: var(--sidebar-w); height: 100vh;
+  background: #1E1B4B; color: #E2DEE9;
+  display: flex; flex-direction: column;
+  z-index: 1300; overflow: hidden;
+  transform: translateX(-100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 4px 0 24px rgba(0,0,0,0.3);
+}
+body.sidebar-open #sidebar { transform: translateX(0); }
+
+#sidebar-overlay {
+  position: fixed; inset: 0;
+  background: rgba(49, 46, 129, 0.5); backdrop-filter: blur(3px);
+  z-index: 1250; opacity: 0; pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+body.sidebar-open #sidebar-overlay { opacity: 1; pointer-events: auto; }
+
+#sidebar-toggle {
+  position: fixed; top: 72px; left: 24px; z-index: 1200;
+  background: var(--primary); color: white;
+  border: none; border-radius: 30px;
+  padding: 10px 18px; font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 600;
+  letter-spacing: 0.05em; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  display: flex; align-items: center; gap: 8px; transition: all 0.2s;
+}
+#sidebar-toggle:hover { background: var(--accent); transform: translateY(-2px); }
+
+#progress-bar {
+  position: fixed; top: 52px; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  transform-origin: left; transform: scaleX(0); transition: transform 0.1s; z-index: 1105;
+}
+
+#sidebar-header{padding:20px 20px 14px;border-bottom:1px solid rgba(255,255,255,0.1);flex-shrink:0;}
+#sidebar-header .logo{font-family:'Playfair Display',serif;font-size:13px;font-weight:700;color:#93C5FD;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;}
+#sidebar-header .sub{font-size:10.5px;color:rgba(226,222,233,0.6);letter-spacing:0.04em;}
+#sidebar-search{padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.08);flex-shrink:0;}
+#sidebar-search input{width:100%;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:6px;color:#E2DEE9;padding:6px 10px;font-size:12px;font-family:'Source Serif 4',serif;outline:none;transition:border-color 0.2s;}
+#sidebar-search input::placeholder{color:rgba(226,222,233,0.4);}
+#sidebar-search input:focus{border-color:#93C5FD;}
+#sidebar-nav{flex:1;overflow-y:auto;padding:8px 0 20px;}
+#sidebar-nav::-webkit-scrollbar{width:4px;}
+#sidebar-nav::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.15);border-radius:2px;}
+.vol-label{font-size:9.5px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#93C5FD;padding:14px 18px 4px;}
+.nav-item{display:block;padding:8px 18px 8px 22px;font-size:12.5px;color:rgba(226,222,233,0.75);text-decoration:none;border-left:2px solid transparent;transition:all 0.15s;line-height:1.4;}
+.nav-item:hover{color:#fff;background:rgba(255,255,255,0.05);border-left-color:rgba(147,197,253,0.5);}
+.nav-item.active{color:#fff;background:rgba(255,255,255,0.08);border-left-color:#93C5FD;font-weight:600;}
+.nav-item .num{font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(226,222,233,0.4);margin-right:6px;}
+
+/* CONTENT & HERO & CALLOUTS */
+.content-wrap{max-width:900px;margin:0 auto;padding:0 48px 80px;}
+#hero{background:linear-gradient(135deg,#1E1B4B 0%,#0F0E17 100%);color:white;padding:120px 72px 60px;position:relative;overflow:hidden;}
+#hero::before{content:'';position:absolute;top:-60px;right:-60px;width:380px;height:380px;background:radial-gradient(circle,rgba(79,70,229,0.18) 0%,transparent 70%);pointer-events:none;}
+#hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--primary),var(--accent2),transparent);}
+#hero .eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.16em;color:#93C5FD;text-transform:uppercase;margin-bottom:14px;}
+#hero h1{font-family:'Playfair Display',serif;font-size:38px;font-weight:700;line-height:1.15;margin-bottom:10px;color:#fff;}
+#hero .subtitle{font-size:18px;color:rgba(255,255,255,0.65);font-style:italic;margin-bottom:28px;}
+#hero .badges{display:flex;gap:10px;flex-wrap:wrap;}
+#hero .badge{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:4px 14px;font-size:12px;color:rgba(255,255,255,0.8);font-family:'JetBrains Mono',monospace;}
+
+.sec-header{margin-top:60px;margin-bottom:8px;padding:28px 36px;border-radius:10px;display:flex;align-items:center;gap:20px;}
+.sec-header.s1{background:linear-gradient(135deg,#4F46E508,#4F46E518);border-left:4px solid var(--s1);}
+.sec-header.s2{background:linear-gradient(135deg,#0D948808,#0D948818);border-left:4px solid var(--s2);}
+.sec-header.s3{background:linear-gradient(135deg,#C2780308,#C2780318);border-left:4px solid var(--s3);}
+.sec-header.s4{background:linear-gradient(135deg,#2563EB08,#2563EB18);border-left:4px solid var(--s4);}
+.sec-header.s5{background:linear-gradient(135deg,#BE185D08,#BE185D18);border-left:4px solid var(--s5);}
+.sec-badge{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;letter-spacing:0.1em;padding:4px 12px;border-radius:4px;white-space:nowrap;flex-shrink:0;}
+.s1 .sec-badge{background:var(--s1);color:white;}
+.s2 .sec-badge{background:var(--s2);color:white;}
+.s3 .sec-badge{background:var(--s3);color:white;}
+.s4 .sec-badge{background:var(--s4);color:white;}
+.s5 .sec-badge{background:var(--s5);color:white;}
+.sec-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;}
+.s1 .sec-title{color:var(--s1);}
+.s2 .sec-title{color:var(--s2);}
+.s3 .sec-title{color:var(--s3);}
+.s4 .sec-title{color:var(--s4);}
+.s5 .sec-title{color:var(--s5);}
+
+.topic{margin-top:48px;padding-top:48px;border-top:1px solid var(--border);}
+.topic:first-of-type{border-top:none;}
+.topic-header{display:flex;align-items:flex-start;gap:16px;margin-bottom:24px;}
+.topic-num{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;padding:3px 10px;border-radius:4px;margin-top:4px;flex-shrink:0;}
+.s1 .topic-num{background:var(--s1-lt);color:var(--s1);}
+.s2 .topic-num{background:var(--s2-lt);color:var(--s2);}
+.s3 .topic-num{background:var(--s3-lt);color:var(--s3);}
+.s4 .topic-num{background:var(--s4-lt);color:var(--s4);}
+.s5 .topic-num{background:var(--s5-lt);color:var(--s5);}
+.topic h2{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;line-height:1.2;}
+.s1 .topic h2{color:var(--s1);}
+.s2 .topic h2{color:var(--s2);}
+.s3 .topic h2{color:var(--s3);}
+.s4 .topic h2{color:var(--s4);}
+.s5 .topic h2{color:var(--s5);}
+.topic h3{font-family:'Playfair Display',serif;font-size:17px;font-weight:600;color:var(--muted);margin:26px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--border);}
+.topic h4{font-size:13px;font-weight:600;color:var(--muted);letter-spacing:0.06em;text-transform:uppercase;margin:18px 0 8px;font-family:'JetBrains Mono',monospace;}
+.topic p{margin-bottom:12px;color:var(--text);line-height:1.75;}
+.topic ul,.topic ol{margin:8px 0 14px 20px;color:var(--text);}
+.topic li{margin-bottom:6px;line-height:1.65;}
+.topic li::marker{color:var(--accent2);}
+.topic strong{color:var(--text);font-weight:600;}
+
+.table-wrap{overflow-x:auto;margin:16px 0 20px;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.06);border:1px solid var(--border);}
+table{width:100%;border-collapse:collapse;font-size:13.5px;background:var(--white);}
+thead tr{background:var(--s1);}
+thead th{color:white;padding:10px 14px;text-align:left;font-family:'Source Serif 4',serif;font-weight:600;font-size:13px;}
+tbody tr:nth-child(even){background:var(--bg2);}
+tbody tr:hover{background:var(--s1-lt);transition:background 0.15s;}
+tbody td{padding:9px 14px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.5;color:var(--text);}
+.s2-tbl thead tr{background:var(--s2);}
+.s3-tbl thead tr{background:var(--s3);}
+.s4-tbl thead tr{background:var(--s4);}
+.s5-tbl thead tr{background:var(--s5);}
+
+.callout{margin:18px 0;padding:14px 18px;border-radius:0 8px 8px 0;border-left:4px solid;font-size:14px;line-height:1.65;}
+.callout .label{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;display:block;margin-bottom:4px;}
+.callout.pearl{background:var(--gold-lt);border-color:var(--gold);}
+.callout.pearl .label{color:var(--gold);}
+.callout.warn{background:var(--red-lt);border-color:var(--red);}
+.callout.warn .label{color:var(--red);}
+.callout.clin{background:var(--s1-lt);border-color:var(--s1);}
+.callout.clin .label{color:var(--s1);}
+.callout.exam{background:var(--s4-lt);border-color:var(--s4);}
+.callout.exam .label{color:var(--s4);}
+
+#top-btn{position:fixed;bottom:24px;right:24px;width:44px;height:44px;background:var(--primary);color:white;border:none;border-radius:50%;font-size:18px;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,0.3);z-index:1100;opacity:0;pointer-events:none;transition:all 0.3s;display:flex;align-items:center;justify-content:center;}
+#top-btn.show{opacity:1;pointer-events:auto;}
+#top-btn:hover{background:var(--accent);transform:translateY(-3px);}
+
+.rapid-ref{margin-top:60px;padding:36px;background:#1E1B4B;color:white;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,0.25);}
+.rapid-ref h3{font-family:'Playfair Display',serif;font-size:24px;margin-bottom:18px;color:#fff;border-bottom:1px solid rgba(255,255,255,0.15);padding-bottom:10px;}
+.rapid-ref table{background:transparent;}
+.rapid-ref thead tr{background:rgba(255,255,255,0.08);}
+.rapid-ref thead th{color:#93C5FD;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;}
+.rapid-ref tbody tr:nth-child(even){background:rgba(255,255,255,0.03);}
+.rapid-ref tbody tr:hover{background:rgba(255,255,255,0.07);}
+.rapid-ref tbody td{border-bottom:1px solid rgba(255,255,255,0.08);color:rgba(255,255,255,0.85);font-size:13px;}
+.rapid-ref strong{color:#fff;}
+
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+@media (max-width:768px) {
+  .cols {grid-template-columns:1fr;}
+  .content-wrap {padding:0 20px 60px;}
+  #hero {padding:100px 24px 40px;}
+  #hero h1 {font-size:28px;}
+  #sidebar-toggle {top:64px;left:16px;}
+}
+</style>
 </head>
 <body>
 <!-- Standardized SIH Navbar -->
@@ -95,9 +276,10 @@
     
     <div class="vol-label">Pillar 3: Management Playbook</div>
     <a class="nav-item" href="#p3a"><span class="num">3.1</span>Non-operative &amp; Gastrografin</a>
-    <a class="nav-item" href="#p3b"><span class="num">3.2</span>Operative Procedures &amp; Viability</a>
-    <a class="nav-item" href="#p3c"><span class="num">3.3</span>Sigmoid &amp; Caecal Volvulus</a>
-    <a class="nav-item" href="#p3d"><span class="num">3.4</span>Malignant LBO &amp; Ogilvie's</a>
+    <a class="nav-item" href="#p3b"><span class="num">3.2</span>Operative Adhesiolysis (Laparoscopic &amp; Open)</a>
+    <a class="nav-item" href="#p3c"><span class="num">3.3</span>Small Bowel Resection &amp; Anastomosis</a>
+    <a class="nav-item" href="#p3d"><span class="num">3.4</span>Sigmoid &amp; Caecal Volvulus</a>
+    <a class="nav-item" href="#p3e"><span class="num">3.5</span>Malignant LBO &amp; Ogilvie's</a>
     
     <div class="vol-label">Pillar 4: Post-Op Care &amp; Eponyms</div>
     <a class="nav-item" href="#p4a"><span class="num">4.1</span>Post-op Care &amp; Stomas</a>
@@ -644,113 +826,97 @@
     </section>
 
     <section class="topic s3" id="p3b">
-      <div class="topic-header"><span class="topic-num">3.2</span><h2>Operative Procedures &amp; Viability</h2></div>
-      <p>Operative intervention is mandatory for complete mechanical obstruction, hernias, tumors, volvulus, or whenever strangulation is suspected.</p>
-      
-      <div class="table-wrap s3-tbl">
-        <table>
-          <thead>
-            <tr>
-              <th>Procedure</th>
-              <th>Indication</th>
-              <th>Technical Pearls</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>Adhesiolysis</strong></td>
-              <td>Adhesive SBO</td>
-              <td>Laparoscopic preferred. Open entry via Hasson technique if prior midline laparotomy.</td>
-            </tr>
-            <tr>
-              <td><strong>Hernia reduction &amp; repair</strong></td>
-              <td>Incarcerated hernia</td>
-              <td>Assess viability of herniated bowel *before* reducing it into the abdomen.</td>
-            </tr>
-            <tr>
-              <td><strong>Resection &amp; Anastomosis</strong></td>
-              <td>Necrotic bowel; stable patient</td>
-              <td>Ensure healthy, bleeding margins with good vascularity.</td>
-            </tr>
-            <tr>
-              <td><strong>Resection &amp; Stoma</strong></td>
-              <td>Necrotic bowel; unstable patient</td>
-              <td>Perform stoma (e.g. Hartmann's) in gross contamination or hemodynamic instability.</td>
-            </tr>
-            <tr>
-              <td><strong>Enterotomy &amp; Lithotomy</strong></td>
-              <td>Gallstone ileus</td>
-              <td>Extract stone through enterotomy proximal to obstruction. Close transversely.</td>
-            </tr>
-          </tbody>
-        </table>
+      <div class="topic-header"><span class="topic-num">3.2</span><h2>Operative Adhesiolysis (Laparoscopic &amp; Open)</h2></div>
+      <p>Operative intervention is mandatory for complete mechanical SBO, hernias, tumors, volvulus, or whenever strangulation is clinically suspected. In prior abdominal surgeries, enter with caution.</p>
+
+      <div class="callout warn">
+        <span class="label">Critical Access Rules for Prior Laparotomy Scars</span>
+        <ul>
+          <li><strong>Hasson Entry (Open Technique):</strong> Make incision at least <strong>5 cm away</strong> from prior laparotomy scars. Enter under direct vision.</li>
+          <li><strong>Palmer's Point Access:</strong> If prior extensive midline scars exist, establish entry at Palmer's Point (left upper quadrant, 3 cm below left costal margin in midclavicular line).</li>
+        </ul>
       </div>
 
-      <h3>Intraoperative Bowel Viability Assessment</h3>
-      <p>Assessing bowel viability is a clinical skill that determines whether to resect or preserve. Never base resection decisions on pre-operative imaging alone.</p>
-      
-      <div class="table-wrap s3-tbl">
-        <table>
-          <thead>
-            <tr>
-              <th>Bowel Viability Status</th>
-              <th>Clinical Signs</th>
-              <th>Intraoperative Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><span class="ok"><strong>Viable</strong></span></td>
-              <td>Pink color, active peristalsis, visible arterial pulsations, bleeds when cut.</td>
-              <td><span class="ok">Preserve and close.</span></td>
-            </tr>
-            <tr>
-              <td><span class="bad"><strong>Non-viable</strong></span></td>
-              <td>Black, green, or dull gray color; flaccid; no peristalsis; no pulsations.</td>
-              <td><span class="bad">Resect immediately.</span></td>
-            </tr>
-            <tr>
-              <td><span class="warn-td"><strong>Doubtful / Questionable</strong></span></td>
-              <td>Dusky color, sluggish peristalsis, weak pulsations.</td>
-              <td><span class="warn-td">Apply warm saline packs for <strong>5 minutes</strong> + 100% O₂. Still doubtful → resect.</span></td>
-            </tr>
-            <tr>
-              <td><strong>Extensive doubtful segment</strong></td>
-              <td>Questionable viability over a very long segment.</td>
-              <td>Keep in situ + plan a <strong>second-look laparotomy</strong> in 24–48 hours.</td>
-            </tr>
-          </tbody>
-        </table>
+      <h3>Step-by-Step Laparoscopic Adhesiolysis Technique</h3>
+      <div class="steps-box">
+        <ol class="steps">
+          <li><strong>Pneumoperitoneum:</strong> Establish pneumoperitoneum at a safe pressure (12 mmHg). Inspect for immediate sub-umbilical adhesions.</li>
+          <li><strong>Initial Port Placement &amp; Exposure:</strong> Place working ports under direct vision. Elevate abdominal wall to expose loops.</li>
+          <li><strong>Systematic Inspection:</strong> Work systematically from the known normal zone to the abnormal zone. Start at the **ileocaecal valve** and follow the collapsed terminal ileum retrogradely.</li>
+          <li><strong>Bowel Retraction Pearl:</strong> Retract dilated loops gently using atraumatic grasper forceps. Grasp *only* the mesentery or use a gauze-covered grasper. **Never grasp the distended, friable bowel wall directly** — it tears easily, causing catastrophic enterotomies.</li>
+          <li><strong>Dissection Method:</strong> Perform "cold" dissection with sharp scissors or harmonic shear devices when near the bowel wall. **Avoid monopolar electrosurgery (hot diathermy)** near the gut wall to eliminate thermal spread and delayed post-op bowel necrosis/fistulisation.</li>
+          <li><strong>Bail-out Strategy:</strong> If loops are fused in a dense "cocoon" and planes are unidentifiable, perform immediate conversion to open laparotomy to prevent multiple unrecognized enterotomies.</li>
+        </ol>
       </div>
     </section>
 
     <section class="topic s3" id="p3c">
-      <div class="topic-header"><span class="topic-num">3.3</span><h2>Volvulus Management</h2></div>
-      <p>Sigmoid and caecal volvulus require entirely different surgical pathways. Sigmoid volvulus can often be managed endoscopically first, while caecal volvulus is an immediate operative emergency.</p>
-      
+      <div class="topic-header"><span class="topic-num">3.3</span><h2>Small Bowel Resection &amp; Anastomosis</h2></div>
+      <p>When bowel viability is compromised, resection is mandatory. A stable resident must master both stapled and handsewn techniques.</p>
+
+      <h3>Step-by-Step Operative Technique</h3>
+      <ol class="steps">
+        <li><strong>Margin Selection:</strong> Trace the compromised bowel. Select resection margins **at least 5–10 cm proximal and distal** to the necrotic/non-viable border in clearly viable, healthy-looking tissue.</li>
+        <li><strong>Mesenteric Division:</strong> Create windows in the mesentery at the resection margins. Divide the mesentery in a V-shaped pattern down toward the root. Ligate mesenteric vessels securely using 3-0 Silk ties or an advanced energy device.</li>
+        <li><strong>Bowel Division:</strong> Apply linear cutting staplers (e.g. GIA 60 or 80 mm, blue load/3.5mm staples) across the proximal and distal resection margins. Fire and divide. Remove the specimen.</li>
+        <li><strong>Functional Side-to-Side Anastomosis (Stapled):</strong>
+          <ul>
+            <li>Align the proximal and distal bowel loops in an **isoperistaltic or antiperistaltic side-to-side** configuration.</li>
+            <li>Place a 3-0 Silk traction suture at the antimesenteric borders to hold the loops together.</li>
+            <li>Exise a small corner of the staple lines at the antimesenteric borders of both loops (enterotomies).</li>
+            <li>Insert the forks of the linear cutting stapler (GIA 60 or 80) fully into both enterotomies. Ensure no mesentery is caught.</li>
+            <li>Align the bowel walls and fire the stapler to create the common anastomotic channel.</li>
+            <li>Withdraw the stapler and inspect the internal staple line closely for bleeding. Apply 3-0 Vicryl/Prolene suture to control any active mucosal bleeding.</li>
+            <li>Close the common enterotomy opening in two layers: an inner continuous transmural layer (3-0 Vicryl or PDS) and an outer interrupted seromuscular layer (3-0 Silk Lembert sutures), or fire a linear stapler (TA 60) across it.</li>
+          </ul>
+        </li>
+        <li><strong>Alternative: Handsewn Two-Layer Anastomosis (End-to-End):</strong>
+          <ul>
+            <li>Align the open ends of the bowel loops. Place interrupted stay sutures at the mesenteric and antimesenteric borders.</li>
+            <li><strong>Inner Layer (Transmural):</strong> Perform a running continuous 3-0 Vicryl or PDS suture, starting at the posterior wall and progressing anteriorly using a Connell or Cushing stitch to ensure mucosal inversion.</li>
+            <li><strong>Outer Layer (Seromuscular):</strong> Reinforce the anastomosis with interrupted 3-0 Silk Lembert sutures placed 2-3 mm apart, fully invaginating the inner layer.</li>
+          </ul>
+        </li>
+        <li><strong>Mesenteric Defect Closure:</strong> Close the mesenteric defect securely using a continuous 3-0 Silk or Vicryl suture. **This is mandatory** to prevent internal herniation, which is a classic cause of recurrent SBO.</li>
+      </ol>
+    </section>
+
+    <section class="topic s3" id="p3d">
+      <div class="topic-header"><span class="topic-num">3.4</span><h2>Sigmoid &amp; Caecal Volvulus</h2></div>
+      <p>Sigmoid and caecal volvulus represent distinct clinical and technical entities requiring different operative maneuvers.</p>
+
       <div class="cols">
         <div>
-          <h3>Sigmoid Volvulus</h3>
-          <p>Endoscopic decompression is the first-line treatment for uncomplicated cases.</p>
-          <ol>
-            <li><strong>Endoscopic Decompression:</strong> Insert sigmoidoscope/colonoscopy to untwist. Success rate **70–85%**. Leave a flatus tube in situ for 24–48 h.</li>
-            <li><strong>Elective Resection:</strong> Elective sigmoid colectomy must be performed **during the same admission**. Recurrence without surgery is 50–90%.</li>
+          <h3>Sigmoid Volvulus Resection</h3>
+          <p>Indicated when endoscopic decompression fails, or as definitive elective surgery during the same admission.</p>
+          <ol class="steps">
+            <li><strong>Mobilization:</strong> Mobilize the dilated sigmoid loop by dividing the lateral peritoneal reflection (white line of Toldt).</li>
+            <li><strong>Ureteric Identification:</strong> Identify and protect the left ureter and gonadal vessels as they cross the iliac bifurcation.</li>
+            <li><strong>Mesosigmoid Division:</strong> Dissect and divide the mesosigmoid. Ligate the sigmoid branches of the inferior mesenteric artery.</li>
+            <li><strong>Resection:</strong> Resect the redundant loop using staplers.</li>
+            <li><strong>Reconstruction:</strong>
+              <ul>
+                <li><strong>Hartmann's Procedure (Emergency):</strong> Close the rectal stump. Mobilize the proximal descending colon and bring it out through the left lower quadrant as an end colostomy.</li>
+                <li><strong>Primary Anastomosis:</strong> If the patient is stable and bowel is viable, perform a primary stapled end-to-end colorectal anastomosis. Consider on-table colonic lavage if heavy fecal loading is present.</li>
+              </ul>
+            </li>
           </ol>
         </div>
         <div>
-          <h3>Caecal Volvulus</h3>
-          <p>Endoscopic decompression is **completely contraindicated** due to high perforation risk and technical failure.</p>
-          <ul>
-            <li>Proceed directly to **emergency laparotomic right hemicolectomy**.</li>
-            <li>Perform primary ileocolic anastomosis in stable patients; end stoma in unstable patients.</li>
-            <li>Caecopexy is associated with high recurrence and is rarely recommended.</li>
-          </ul>
+          <h3>Caecal Volvulus Resection</h3>
+          <p>Always requires surgical intervention. Endoscopic decompression has no role.</p>
+          <ol class="steps">
+            <li><strong>Exposure:</strong> Perform a midline laparotomy or right paramedian incision. Elevate the mobile caecum and ascending colon.</li>
+            <li><strong>Hemicolectomy:</strong> Mobilize the right colon. Divide the terminal ileum (10 cm proximal to caecum) and the transverse colon (distal to hepatic flexure).</li>
+            <li><strong>Vascular Control:</strong> Ligate the ileocolic and right colic arteries.</li>
+            <li><strong>Anastomosis:</strong> Re-establish continuity via a stapled side-to-side ileotransverse anastomosis. Close the mesenteric defect.</li>
+          </ol>
         </div>
       </div>
     </section>
 
-    <section class="topic s3" id="p3d">
-      <div class="topic-header"><span class="topic-num">3.4</span><h2>Malignant LBO &amp; Ogilvie's</h2></div>
+    <section class="topic s3" id="p3e">
+      <div class="topic-header"><span class="topic-num">3.5</span><h2>Malignant LBO &amp; Ogilvie's</h2></div>
       <h3>Malignant Large Bowel Obstruction</h3>
       <p>In stable patients presenting with left-sided colorectal cancer obstruction, a Self-Expanding Metal Stent (SEMS) acts as a bridge to elective surgery. This avoids emergency stoma operations and allows for standard staging.</p>
       
@@ -779,8 +945,8 @@
         </table>
       </div>
 
-      <h3>Ogilvie's Syndrome (Acute Colonic Pseudo-obstruction)</h3>
-      <p>A functional colonic atony without mechanical cause. A **diagnosis of exclusion** — CT must rule out mechanical obstruction first.</p>
+      <h3>Ogilvie's Syndrome: Neostigmine Rescue Protocol</h3>
+      <p>Neostigmine is a reversible acetylcholinesterase inhibitor that enhances parasympathetic activity, stimulating colonic motility.</p>
       
       <div class="table-wrap s3-tbl">
         <table>
@@ -810,9 +976,15 @@
           </tbody>
         </table>
       </div>
+
       <div class="callout warn">
-        <span class="label">Neostigmine Contraindications</span>
-        Do not administer neostigmine in mechanical LBO, severe bradycardia, active bronchospasm, or unstable coronary ischemia.
+        <span class="label">Neostigmine Administration &amp; Safety Checklist</span>
+        Neostigmine can cause profound bronchospasm and symptomatic bradycardia.
+        <ul>
+          <li>Ensure a **12-lead ECG** is completed before administration.</li>
+          <li>Have **Atropine (0.6–1.0 mg IV)** pre-drawn and immediately available at the bedside.</li>
+          <li>Infuse **Neostigmine 2.0 mg IV slowly** over a minimum of 3 to 5 minutes. Keep patient supine and monitor vitals for 30 minutes.</li>
+        </ul>
       </div>
     </section>
 
