@@ -14,6 +14,10 @@
   const savedTheme = localStorage.getItem('sih-theme') || 'light';
   if (savedTheme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
 </script>
+<style>
+#hero .badges{display:flex;gap:10px;flex-wrap:wrap;}
+#hero .badge{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:4px 14px;font-size:12px;color:rgba(255,255,255,0.8);font-family:'JetBrains Mono',monospace;}
+</style>
 </head>
 <body>
 <!-- Standardized SIH Navbar -->
@@ -110,16 +114,15 @@
 </nav>
 <!-- MAIN -->
 <main class="editorial-content" id="main">
-<section id="hero">
-<div class="eyebrow">Surgical Insight Hub · Monograph Series · ABSITE · PGY-3 Framework</div>
+<header id="hero">
+<div class="eyebrow">Colorectal · Proctology</div>
 <h1>Anal Surgical Procedures</h1>
-<p class="subtitle">Haemorrhoidectomy, Fistula, Fissure, Abscess, and Pilonidal Disease</p>
+<p class="subtitle">Hemorrhoidectomy, fistula-in-ano management (LIFT, Seton), and anal fissure repair. The technical atlas for high-volume proctology.</p>
 <div class="badges">
-<span class="badge">Colorectal Surgery</span>
-<span class="badge">Sphincter Preservation</span>
-<span class="badge">Perineal Anatomy</span>
+<span class="badge">Essential</span>
+<span class="badge">Technical Atlas</span>
 </div>
-</section>
+</header>
 <div class="content-wrap">
 <div class="callout warn" style="margin-top: 40px;">
 <span class="label">Upfront Philosophy</span>

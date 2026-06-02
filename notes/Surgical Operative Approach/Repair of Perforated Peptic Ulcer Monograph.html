@@ -12,6 +12,10 @@
   const savedTheme = localStorage.getItem('sih-theme') || 'light';
   if (savedTheme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
 </script>
+<style>
+#hero .badges{display:flex;gap:10px;flex-wrap:wrap;}
+#hero .badge{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:4px 14px;font-size:12px;color:rgba(255,255,255,0.8);font-family:'JetBrains Mono',monospace;}
+</style>
 </head>
 <body>
 <div id="progress-bar"></div>
@@ -102,17 +106,16 @@
 </div>
 </nav>
 <div id="sidebar-overlay" onclick="closeSidebar()"></div>
-<main class="editorial-content" id="main" style="padding-top: 70px;">
-<section id="hero">
-<div class="eyebrow">Surgical Insight Hub · Monograph Series · ABSITE · PGY-3 Framework</div>
+<main id="main">
+<header id="hero">
+<div class="eyebrow">Emergency · Upper GI</div>
 <h1>Repair of Perforated Peptic Ulcer</h1>
-<p class="subtitle">Graham Patch, Omentopexy, and Laparoscopic Salvage</p>
+<p class="subtitle">The Graham Patch and beyond. Resuscitation game plan, operative identification of the perforation, and decision making for conservative management.</p>
 <div class="badges">
-<span class="badge">Upper GI</span>
-<span class="badge">Emergency Surgery</span>
-<span class="badge">Omental Patch</span>
+<span class="badge">Essential</span>
+<span class="badge">Pillar 1-5 Monograph</span>
 </div>
-</section>
+</header>
 <div class="content-wrap">
 <div class="callout warn" style="margin-top: 40px;">
 <span class="label">Upfront Philosophy</span>

@@ -12,6 +12,10 @@
   const savedTheme = localStorage.getItem('sih-theme') || 'light';
   if (savedTheme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
 </script>
+<style>
+#hero .badges{display:flex;gap:10px;flex-wrap:wrap;}
+#hero .badge{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:4px 14px;font-size:12px;color:rgba(255,255,255,0.8);font-family:'JetBrains Mono',monospace;}
+</style>
 </head>
 <body>
 <!-- Standardized SIH Navbar -->
@@ -106,16 +110,15 @@
 </nav>
 <!-- MAIN -->
 <main class="editorial-content" id="main">
-<section id="hero">
-<div class="eyebrow">Surgical Insight Hub · Monograph Series · ABSITE · PGY-3 Framework</div>
-<h1>Disarticulation</h1>
-<p class="subtitle">Shoulder, Hip, Knee, and Digit Disarticulation</p>
+<header id="hero">
+<div class="eyebrow">Orthopaedics · Trauma</div>
+<h1>Lower Limb Disarticulation</h1>
+<p class="subtitle">Operative approach to hip and knee disarticulations. Vascular control, flap design for optimal healing, and functional outcomes.</p>
 <div class="badges">
-<span class="badge">Amputation Surgery</span>
-<span class="badge">Vascular &amp; Trauma</span>
-<span class="badge">Oncological Resection</span>
+<span class="badge">Advanced</span>
+<span class="badge">Technical Playbook</span>
 </div>
-</section>
+</header>
 <div class="content-wrap">
 <div class="callout warn" style="margin-top: 40px;">
 <span class="label">Upfront Philosophy</span>
