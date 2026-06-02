@@ -1,12 +1,13 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Surgical Insight Hub — Splenic & Renal Trauma</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../css/shared.css">
-<link rel="stylesheet" href="../../css/theme.css?v=4.0.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Surgical Insight Hub | Splenic &amp; Renal Trauma</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="../../css/shared.css" rel="stylesheet"/>
+<link href="../../css/theme.css?v=4.0.0" rel="stylesheet"/>
 <style>
 :root {
   /* Blood Red & Slate Aesthetic */
@@ -241,577 +242,512 @@ tbody td{padding:9px 14px;border-bottom:1px solid var(--border);vertical-align:t
 </style>
 </head>
 <body>
-
-  <!-- Standardized SIH Navbar -->
-  <nav class="nav" id="mainNav">
-    <div class="nav-left">
-      <a href="../../index.html" class="nav-pill">
-        <div class="nav-logo-img">
-          <img src="../../assets/images/Surgical_Insight_Hub_Logo.png" alt="SIH Logo">
-        </div>
-        <div>
-          <div class="nav-brand-text">Surgical Insight Hub</div>
-          <div class="nav-brand-sub">The Residency Journal</div>
-        </div>
-      </a>
-    </div>
-
-    <div class="nav-links-pill">
-      <a href="../../index.html">Home</a>
-      <a href="../../notes.html" class="active">Notes</a>
-      <a href="../operative_approach.html">Playbook</a>
-      <a href="../../arena.html?v=4.0.0">MCQ Arena</a>
-      <a href="../../podcast.html">Podcast</a>
-      <a href="../../surgery-talk.html">Surgery Talk</a>
-      <a href="../../about.html">About</a>
-    </div>
-
-    <div class="nav-right">
-      <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
-        <svg id="moonIcon" viewBox="0 0 24 24" width="18" height="18"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-        <svg id="sunIcon" style="display:none;" viewBox="0 0 24 24" width="18" height="18"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-      </button>
-      <a href="https://t.me/sugicalInsightHub" target="_blank" class="nav-tg-btn" title="Join Telegram">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="#f0d080"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.89 8.22l-1.97 9.28c-.15.66-.54.82-1.08.51l-3-2.21-1.45 1.39c-.16.16-.3.3-.61.3l.21-3.05 5.56-5.02c.24-.21-.05-.33-.37-.12l-6.87 4.33-2.96-.92c-.64-.2-.66-.64.14-.95l11.57-4.46c.54-.19 1.01.13.83.94z"/></svg>
-      </a>
-      <a href="../../arena.html?v=4.0.0" class="nav-btn arena-btn">MCQ Arena</a>
-      <button class="mob-nav-toggle" onclick="openMobNav()" aria-label="Menu">
-        <div class="hamburger"><span></span><span></span><span></span></div>
-      </button>
-    </div>
-  </nav>
-
+<!-- Standardized SIH Navbar -->
+<nav class="nav" id="mainNav">
+<div class="nav-left">
+<a class="nav-pill" href="../../index.html">
+<div class="nav-logo-img">
+<img alt="SIH Logo" src="../../assets/images/Surgical_Insight_Hub_Logo.png"/>
+</div>
+<div>
+<div class="nav-brand-text">Surgical Insight Hub</div>
+<div class="nav-brand-sub">The Residency Journal</div>
+</div>
+</a>
+</div>
+<div class="nav-links-pill">
+<a href="../../index.html">Home</a>
+<a class="active" href="../../notes.html">Notes</a>
+<a href="../operative_approach.html">Playbook</a>
+<a href="../../arena.html?v=4.0.0">MCQ Arena</a>
+<a href="../../podcast.html">Podcast</a>
+<a href="../../surgery-talk.html">Surgery Talk</a>
+<a href="../../about.html">About</a>
+</div>
+<div class="nav-right">
+<button aria-label="Toggle Theme" class="theme-toggle" id="themeToggle">
+<svg height="18" id="moonIcon" viewbox="0 0 24 24" width="18"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+<svg height="18" id="sunIcon" style="display:none;" viewbox="0 0 24 24" width="18"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line><line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line><line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line></svg>
+</button>
+<a class="nav-tg-btn" href="https://t.me/sugicalInsightHub" target="_blank" title="Join Telegram">
+<svg fill="#f0d080" height="18" viewbox="0 0 24 24" width="18"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.89 8.22l-1.97 9.28c-.15.66-.54.82-1.08.51l-3-2.21-1.45 1.39c-.16.16-.3.3-.61.3l.21-3.05 5.56-5.02c.24-.21-.05-.33-.37-.12l-6.87 4.33-2.96-.92c-.64-.2-.66-.64.14-.95l11.57-4.46c.54-.19 1.01.13.83.94z"></path></svg>
+</a>
+<a class="nav-btn arena-btn" href="../../arena.html?v=4.0.0">MCQ Arena</a>
+<button aria-label="Menu" class="mob-nav-toggle" onclick="openMobNav()">
+<div class="hamburger"><span></span><span></span><span></span></div>
+</button>
+</div>
+</nav>
 <div class="mob-nav-overlay" id="mobNavOverlay" onclick="closeMobNav()"></div>
 <div class="mob-nav-sheet" id="mobNavSheet">
-  <div class="mob-nav-handle"></div>
-  <a href="../../index.html" onclick="closeMobNav()">Home</a>
-  <a href="../../notes.html" onclick="closeMobNav()">Notes</a>
-  <a href="../../notes/operative_approach.html" onclick="closeMobNav()">Playbook</a>
-  <a href="../../podcast.html" onclick="closeMobNav()">Podcast</a>
-  <a href="../../surgery-talk.html" onclick="closeMobNav()">Surgery Talk</a>
-  <a href="../../arena.html" onclick="closeMobNav()">MCQ Arena</a>
-  <a href="../../about.html" onclick="closeMobNav()">About</a>
-  <a href="https://t.me/sugicalInsightHub" target="_blank" rel="noopener" onclick="closeMobNav()" style="color: var(--brand-gold); font-weight: 800;">Join Telegram Community</a>
-  <a href="https://www.linkedin.com/company/surgical-insight-hub" target="_blank" rel="noopener" onclick="closeMobNav()" style="color: var(--brand-gold); font-weight: 800;">LinkedIn Community</a>
+<div class="mob-nav-handle"></div>
+<a href="../../index.html" onclick="closeMobNav()">Home</a>
+<a href="../../notes.html" onclick="closeMobNav()">Notes</a>
+<a href="../../notes/operative_approach.html" onclick="closeMobNav()">Playbook</a>
+<a href="../../podcast.html" onclick="closeMobNav()">Podcast</a>
+<a href="../../surgery-talk.html" onclick="closeMobNav()">Surgery Talk</a>
+<a href="../../arena.html" onclick="closeMobNav()">MCQ Arena</a>
+<a href="../../about.html" onclick="closeMobNav()">About</a>
+<a href="https://t.me/sugicalInsightHub" onclick="closeMobNav()" rel="noopener" style="color: var(--brand-gold); font-weight: 800;" target="_blank">Join Telegram Community</a>
+<a href="https://www.linkedin.com/company/surgical-insight-hub" onclick="closeMobNav()" rel="noopener" style="color: var(--brand-gold); font-weight: 800;" target="_blank">LinkedIn Community</a>
 </div>
-    <a href="https://t.me/sugicalInsightHub" target="_blank" rel="noopener" onclick="closeMobNav()" style="color: var(--brand-gold); font-weight: 800;">Join Telegram Community</a>
-  </div>
+<a href="https://t.me/sugicalInsightHub" onclick="closeMobNav()" rel="noopener" style="color: var(--brand-gold); font-weight: 800;" target="_blank">Join Telegram Community</a>
 
 <div id="progress-bar"></div>
-
 <!-- OVERLAY -->
 <div id="sidebar-overlay" onclick="closeSidebar()"></div>
-
 <!-- TOGGLE BUTTON -->
 <button id="sidebar-toggle" onclick="toggleSidebar()">
-  <span>☰</span> Contents
+<span>☰</span> Contents
 </button>
-
 <!-- SIDEBAR -->
 <nav id="sidebar">
-  <div id="sidebar-header">
-    <div class="logo">Surgical Insight Hub</div>
-    <div class="sub">Splenic & Renal Trauma Monograph</div>
-  </div>
-  <div id="sidebar-search">
-    <input type="text" id="search-input" placeholder="Search topics…" oninput="filterNav(this.value)">
-  </div>
-  <div id="sidebar-nav">
-    <div class="vol-label">Pillar 1: Core Foundations</div>
-    <a class="nav-item" href="#p1a"><span class="num">1.1</span>Pathophysiology & Clinical Framework</a>
-    <a class="nav-item" href="#p1b"><span class="num">1.2</span>Key Learning Objectives</a>
-    <a class="nav-item" href="#p1c"><span class="num">1.3</span>Seminal Trials</a>
-    <a class="nav-item" href="#p1d"><span class="num">1.4</span>The Consultant's Debate</a>
-    
-    <div class="vol-label">Pillar 2: Clinical Protocol</div>
-    <a class="nav-item" href="#p2a"><span class="num">2.1</span>Advanced Diagnostics</a>
-    <a class="nav-item" href="#p2b"><span class="num">2.2</span>Resuscitation & Perioperative Care</a>
-    <a class="nav-item" href="#p2c"><span class="num">2.3</span>Complications (Clavien-Dindo)</a>
-    
-    <div class="vol-label">Pillar 3: The Operative Atlas</div>
-    <a class="nav-item" href="#p3a"><span class="num">3.1</span>Surgical Anatomy & Danger Zones</a>
-    <a class="nav-item" href="#p3b"><span class="num">3.2</span>Operative Procedures (Spleen & Kidney)</a>
-    <a class="nav-item" href="#p3c"><span class="num">3.3</span>The Difficult Case</a>
-    
-    <div class="vol-label">Pillar 4: Spatial Awareness</div>
-    <a class="nav-item" href="#p4a"><span class="num">4.1</span>Operative 3D Spatial Awareness</a>
-    <a class="nav-item" href="#p4b"><span class="num">4.2</span>Radiological Correlation</a>
-    
-    <div class="vol-label">Pillar 5: Senior Fellowship</div>
-    <a class="nav-item" href="#p5a"><span class="num">5.1</span>High-Order Viva Scenarios</a>
-    <a class="nav-item" href="#p5b"><span class="num">5.2</span>Classifications & Scoring Systems</a>
-    
-    <div class="vol-label">Quick Reference</div>
-    <a class="nav-item" href="#rapid">Cheat Sheet</a>
-  </div>
+<div id="sidebar-header">
+<div class="logo">Surgical Insight Hub</div>
+<div class="sub">Splenic &amp; Renal Trauma Monograph</div>
+</div>
+<div id="sidebar-search">
+<input id="search-input" oninput="filterNav(this.value)" placeholder="Search topics…" type="text"/>
+</div>
+<div id="sidebar-nav">
+<div class="vol-label">Pillar 1: Core Foundations</div>
+<a class="nav-item" href="#p1a"><span class="num">1.1</span>Pathophysiology &amp; Clinical Framework</a>
+<a class="nav-item" href="#p1b"><span class="num">1.2</span>Key Learning Objectives</a>
+<a class="nav-item" href="#p1c"><span class="num">1.3</span>Seminal Trials</a>
+<a class="nav-item" href="#p1d"><span class="num">1.4</span>The Consultant's Debate</a>
+<div class="vol-label">Pillar 2: Clinical Protocol</div>
+<a class="nav-item" href="#p2a"><span class="num">2.1</span>Advanced Diagnostics</a>
+<a class="nav-item" href="#p2b"><span class="num">2.2</span>Resuscitation &amp; Perioperative Care</a>
+<a class="nav-item" href="#p2c"><span class="num">2.3</span>Complications (Clavien-Dindo)</a>
+<div class="vol-label">Pillar 3: The Operative Atlas</div>
+<a class="nav-item" href="#p3a"><span class="num">3.1</span>Surgical Anatomy &amp; Danger Zones</a>
+<a class="nav-item" href="#p3b"><span class="num">3.2</span>Operative Procedures (Spleen &amp; Kidney)</a>
+<a class="nav-item" href="#p3c"><span class="num">3.3</span>The Difficult Case</a>
+<div class="vol-label">Pillar 4: Spatial Awareness</div>
+<a class="nav-item" href="#p4a"><span class="num">4.1</span>Operative 3D Spatial Awareness</a>
+<a class="nav-item" href="#p4b"><span class="num">4.2</span>Radiological Correlation</a>
+<div class="vol-label">Pillar 5: Senior Fellowship</div>
+<a class="nav-item" href="#p5a"><span class="num">5.1</span>High-Order Viva Scenarios</a>
+<a class="nav-item" href="#p5b"><span class="num">5.2</span>Classifications &amp; Scoring Systems</a>
+<div class="vol-label">Quick Reference</div>
+<a class="nav-item" href="#rapid">Cheat Sheet</a>
+</div>
 </nav>
-
 <!-- MAIN -->
 <main id="main">
 <section id="hero">
-  <div class="eyebrow">Personalized Surgical Monograph Series</div>
-  <h1>Splenic & Renal Trauma</h1>
-  <p class="subtitle">Advanced Monograph | ABSITE · MRCS/FRCS Board Review Edition</p>
-  <div class="badges">
-    <span class="badge">Trauma Surgery</span>
-    <span class="badge">Non-Operative Management</span>
-    <span class="badge">Organ Injury Scaling</span>
-  </div>
+<div class="eyebrow">Personalized Surgical Monograph Series</div>
+<h1>Splenic &amp; Renal Trauma</h1>
+<p class="subtitle">Advanced Monograph | ABSITE · MRCS/FRCS Board Review Edition</p>
+<div class="badges">
+<span class="badge">Trauma Surgery</span>
+<span class="badge">Non-Operative Management</span>
+<span class="badge">Organ Injury Scaling</span>
+</div>
 </section>
-
 <div class="content-wrap">
-
 <!-- ══════════════ SECTION 1 ══════════════ -->
 <div class="sec-header s1">
-  <span class="sec-badge">SECTION 1</span>
-  <span class="sec-title">Core Foundations & The Evidence Base</span>
+<span class="sec-badge">SECTION 1</span>
+<span class="sec-title">Core Foundations &amp; The Evidence Base</span>
 </div>
-
 <section class="topic s1" id="p1a">
-  <div class="topic-header"><span class="topic-num">1.1</span><h2>Pathophysiology & Clinical Framework</h2></div>
-  
-  <h3>The Spleen</h3>
-  <p>The spleen is the most commonly injured solid organ in blunt abdominal trauma, accounting for 25–30% of all solid organ injuries. Incidence peaks in males aged 15–40. Motor vehicle collisions dominate the mechanism, followed by direct left-sided blows, falls from height, and sporting injuries. Left lower rib fractures (ribs 9–11) are a classical associated finding, present in 20–40% of splenic injuries, and should immediately raise your index of suspicion even with a negative initial FAST.</p>
-  <p>The spleen weighs 150–200g in the adult and sits in the left subphrenic space, protected posterolaterally by the rib cage. It is tethered by four ligaments: the gastrosplenic (containing the short gastric vessels), the lienorenal (containing the splenic vessels and tail of pancreas), the phrenocolic, and the splenocolic. These ligaments matter operatively. The splenic artery runs a tortuous course along the superior border of the pancreas before entering the hilum; the splenic vein runs posterior and inferior. The tail of the pancreas is within 1cm of the splenic hilum in 75% of people; a fact that has ended more than one splenorrhaphy attempt badly.</p>
-  <p>The physiological consequence of splenic injury is haemorrhage, pure and simple. The spleen receives 5% of cardiac output. A Grade IV–V disruption with hilar involvement can exsanguinate a patient within minutes. The capsule initially tamponades bleeding. This is why patients with Grade II–III injuries can appear deceptively stable in the resuscitation bay, then deteriorate catastrophically hours later; the classical bimodal presentation of delayed splenic rupture.</p>
-  <p>Post-splenectomy physiology is equally important. The spleen filters encapsulated bacteria and produces IgM and tuftsin. Loss of this function produces Overwhelming Post-Splenectomy Infection (OPSI): a fulminant bacteraemia most commonly from Streptococcus pneumoniae (50–90%), Neisseria meningitidis, and Haemophilus influenzae. Lifetime risk of OPSI after splenectomy is 3–5%. Mortality when it occurs exceeds 50%, often within 24 hours of symptom onset. This single fact is why splenic salvage, when physiologically safe, is the modern standard.</p>
-
-  <h3>The Kidney</h3>
-  <p>The kidneys are the most frequently injured genitourinary organ in trauma, accounting for approximately 8–10% of all abdominal injuries. They are injured in roughly 1–5% of all trauma admissions. Blunt trauma (MVA, falls, contact sport, direct blow) accounts for 80–85%; penetrating injury for 15–20%.</p>
-  <p>The kidney sits in the retroperitoneal space at T12–L3, cushioned by perirenal fat within Gerota's fascia, protected posteriorly by the lumbar paraspinal musculature and the lower ribs. This retroperitoneal location provides substantial protection. It also means that bleeding from renal injuries is largely retroperitoneal, does not appear on FAST in the early phase, and can be clinically silent until the haematoma is very large.</p>
-  <p>The renal pedicle; renal artery and vein; is the critical anatomical danger zone. The right renal vein is short (2–3cm) and enters the IVC directly; the left renal vein is longer (6–7cm) and crosses the aorta anteriorly before entering the IVC. Avulsion of the renal pedicle in high-speed deceleration injuries produces immediate and massive retroperitoneal haemorrhage. The kidney tolerates warm ischaemia for approximately 30–60 minutes before irreversible tubular damage begins; beyond 6 hours of warm ischaemia, functional recovery is unlikely.</p>
-  <p>Haematuria is the cardinal clinical sign, present in 80–90% of significant renal injuries. However, the severity of haematuria does not correlate reliably with injury grade. Microscopic haematuria with haemodynamic stability is typically managed conservatively. Gross haematuria mandates CT urography. The absence of haematuria does not exclude renal pedicle injury; up to 25% of Grade V pedicle avulsions present without haematuria because there is no urinary continuity to produce it.</p>
+<div class="topic-header"><span class="topic-num">1.1</span><h2>Pathophysiology &amp; Clinical Framework</h2></div>
+<h3>The Spleen</h3>
+<p>The spleen is the most commonly injured solid organ in blunt abdominal trauma, accounting for 25–30% of all solid organ injuries. Incidence peaks in males aged 15–40. Motor vehicle collisions dominate the mechanism, followed by direct left-sided blows, falls from height, and sporting injuries. Left lower rib fractures (ribs 9–11) are a classical associated finding, present in 20–40% of splenic injuries, and should immediately raise your index of suspicion even with a negative initial FAST.</p>
+<p>The spleen weighs 150–200g in the adult and sits in the left subphrenic space, protected posterolaterally by the rib cage. It is tethered by four ligaments: the gastrosplenic (containing the short gastric vessels), the lienorenal (containing the splenic vessels and tail of pancreas), the phrenocolic, and the splenocolic. These ligaments matter operatively. The splenic artery runs a tortuous course along the superior border of the pancreas before entering the hilum; the splenic vein runs posterior and inferior. The tail of the pancreas is within 1cm of the splenic hilum in 75% of people; a fact that has ended more than one splenorrhaphy attempt badly.</p>
+<p>The physiological consequence of splenic injury is haemorrhage, pure and simple. The spleen receives 5% of cardiac output. A Grade IV–V disruption with hilar involvement can exsanguinate a patient within minutes. The capsule initially tamponades bleeding. This is why patients with Grade II–III injuries can appear deceptively stable in the resuscitation bay, then deteriorate catastrophically hours later; the classical bimodal presentation of delayed splenic rupture.</p>
+<p>Post-splenectomy physiology is equally important. The spleen filters encapsulated bacteria and produces IgM and tuftsin. Loss of this function produces Overwhelming Post-Splenectomy Infection (OPSI): a fulminant bacteraemia most commonly from Streptococcus pneumoniae (50–90%), Neisseria meningitidis, and Haemophilus influenzae. Lifetime risk of OPSI after splenectomy is 3–5%. Mortality when it occurs exceeds 50%, often within 24 hours of symptom onset. This single fact is why splenic salvage, when physiologically safe, is the modern standard.</p>
+<h3>The Kidney</h3>
+<p>The kidneys are the most frequently injured genitourinary organ in trauma, accounting for approximately 8–10% of all abdominal injuries. They are injured in roughly 1–5% of all trauma admissions. Blunt trauma (MVA, falls, contact sport, direct blow) accounts for 80–85%; penetrating injury for 15–20%.</p>
+<p>The kidney sits in the retroperitoneal space at T12–L3, cushioned by perirenal fat within Gerota's fascia, protected posteriorly by the lumbar paraspinal musculature and the lower ribs. This retroperitoneal location provides substantial protection. It also means that bleeding from renal injuries is largely retroperitoneal, does not appear on FAST in the early phase, and can be clinically silent until the haematoma is very large.</p>
+<p>The renal pedicle; renal artery and vein; is the critical anatomical danger zone. The right renal vein is short (2–3cm) and enters the IVC directly; the left renal vein is longer (6–7cm) and crosses the aorta anteriorly before entering the IVC. Avulsion of the renal pedicle in high-speed deceleration injuries produces immediate and massive retroperitoneal haemorrhage. The kidney tolerates warm ischaemia for approximately 30–60 minutes before irreversible tubular damage begins; beyond 6 hours of warm ischaemia, functional recovery is unlikely.</p>
+<p>Haematuria is the cardinal clinical sign, present in 80–90% of significant renal injuries. However, the severity of haematuria does not correlate reliably with injury grade. Microscopic haematuria with haemodynamic stability is typically managed conservatively. Gross haematuria mandates CT urography. The absence of haematuria does not exclude renal pedicle injury; up to 25% of Grade V pedicle avulsions present without haematuria because there is no urinary continuity to produce it.</p>
 </section>
-
 <section class="topic s1" id="p1b">
-  <div class="topic-header"><span class="topic-num">1.2</span><h2>Key Learning Objectives</h2></div>
-  <ul>
-    <li>Apply the AAST OIS grading system for splenic and renal injuries and immediately translate each grade into a management decision.</li>
-    <li>Define and execute the NOM pathway for blunt splenic injury, including angioembolisation indications, monitoring parameters, and NOM failure recognition.</li>
-    <li>Describe the operative anatomy for splenectomy and splenorrhaphy, including splenic mobilisation, hilar control, and relation to the pancreatic tail.</li>
-    <li>Apply the haematuria-based decision algorithm for renal trauma, distinguishing microscopic from gross haematuria and correlating with CT findings.</li>
-    <li>Outline the operative approach to renal exploration: indications, Gerota's fascia access, vascular control sequence, and nephrectomy vs. nephron-sparing repair decision.</li>
-    <li>Manage post-splenectomy prophylaxis correctly: vaccine timing, antibiotic prophylaxis duration, and OPSI recognition.</li>
-    <li>Identify the clinical and radiological signs of NOM failure in both splenic and renal injuries and execute the appropriate rescue strategy.</li>
-  </ul>
+<div class="topic-header"><span class="topic-num">1.2</span><h2>Key Learning Objectives</h2></div>
+<ul>
+<li>Apply the AAST OIS grading system for splenic and renal injuries and immediately translate each grade into a management decision.</li>
+<li>Define and execute the NOM pathway for blunt splenic injury, including angioembolisation indications, monitoring parameters, and NOM failure recognition.</li>
+<li>Describe the operative anatomy for splenectomy and splenorrhaphy, including splenic mobilisation, hilar control, and relation to the pancreatic tail.</li>
+<li>Apply the haematuria-based decision algorithm for renal trauma, distinguishing microscopic from gross haematuria and correlating with CT findings.</li>
+<li>Outline the operative approach to renal exploration: indications, Gerota's fascia access, vascular control sequence, and nephrectomy vs. nephron-sparing repair decision.</li>
+<li>Manage post-splenectomy prophylaxis correctly: vaccine timing, antibiotic prophylaxis duration, and OPSI recognition.</li>
+<li>Identify the clinical and radiological signs of NOM failure in both splenic and renal injuries and execute the appropriate rescue strategy.</li>
+</ul>
 </section>
-
 <section class="topic s1" id="p1c">
-  <div class="topic-header"><span class="topic-num">1.3</span><h2>Practice-Changing Evidence: Seminal Trials</h2></div>
-  <div class="table-wrap s1-tbl"><table>
-    <thead><tr><th>Study / Guideline</th><th>Year</th><th>Key Findings</th><th>Board Relevance</th></tr></thead>
-    <tbody>
-      <tr><td>EAST NOM Guidelines — Splenic Injury (Revision)</td><td>2024</td><td>NOM first-line in haemodynamically stable blunt splenic injury regardless of grade. Angioembolisation for Grade III with blush, all Grade IV, and selected Grade V. NOM failure rate with embolisation: Grade IV reduced from 35% to &lt;10%.</td><td>NOM criteria, angioembolisation indications by grade</td></tr>
-      <tr><td>WSES Renal Trauma Guidelines</td><td>2023</td><td>Grade I–III blunt renal injury: NOM regardless of haematuria severity. Grade IV with collecting system injury: ureteric stent or percutaneous drainage first, operative last. Grade V pedicle: nephrectomy or attempted revascularisation &lt;6h only.</td><td>Renal NOM algorithm, stent vs. operative threshold</td></tr>
-      <tr><td>Angioembolisation vs. Splenectomy for Grade IV–V (Annals of Surgery)</td><td>2023</td><td>Proximal splenic artery embolisation in Grade IV–V: splenic salvage rate 72% at 1 year. 30-day re-intervention rate 18%. Comparable survival to splenectomy in stable patients.</td><td>Embolisation technique: proximal vs. selective</td></tr>
-      <tr><td>OPSI Prevention — BCSH/BSPGHAN Guidelines</td><td>2022</td><td>Pneumococcal, meningococcal ACWY/B, and Hib vaccines at 14 days post-splenectomy (not earlier — immune response impaired acutely). Penicillin V prophylaxis lifelong.</td><td>Vaccine timing and antibiotic prophylaxis post-splenectomy</td></tr>
-      <tr><td>Selective Renal Artery Embolisation for Grade IV Renal Laceration (JAMA Surgery)</td><td>2024</td><td>Selective renal artery embolisation for Grade IV injuries with arterial blush: technical success 94%, nephrectomy avoidance 88% at 30 days. Comparable renal function at 6 months.</td><td>Role of IR in Grade IV renal injury — replaces operative exploration in stable patients</td></tr>
-    </tbody>
-  </table></div>
+<div class="topic-header"><span class="topic-num">1.3</span><h2>Practice-Changing Evidence: Seminal Trials</h2></div>
+<div class="table-wrap s1-tbl"><table>
+<thead><tr><th>Study / Guideline</th><th>Year</th><th>Key Findings</th><th>Board Relevance</th></tr></thead>
+<tbody>
+<tr><td>EAST NOM Guidelines: Splenic Injury (Revision)</td><td>2024</td><td>NOM first-line in haemodynamically stable blunt splenic injury regardless of grade. Angioembolisation for Grade III with blush, all Grade IV, and selected Grade V. NOM failure rate with embolisation: Grade IV reduced from 35% to &lt;10%.</td><td>NOM criteria, angioembolisation indications by grade</td></tr>
+<tr><td>WSES Renal Trauma Guidelines</td><td>2023</td><td>Grade I–III blunt renal injury: NOM regardless of haematuria severity. Grade IV with collecting system injury: ureteric stent or percutaneous drainage first, operative last. Grade V pedicle: nephrectomy or attempted revascularisation &lt;6h only.</td><td>Renal NOM algorithm, stent vs. operative threshold</td></tr>
+<tr><td>Angioembolisation vs. Splenectomy for Grade IV–V (Annals of Surgery)</td><td>2023</td><td>Proximal splenic artery embolisation in Grade IV–V: splenic salvage rate 72% at 1 year. 30-day re-intervention rate 18%. Comparable survival to splenectomy in stable patients.</td><td>Embolisation technique: proximal vs. selective</td></tr>
+<tr><td>OPSI Prevention: BCSH/BSPGHAN Guidelines</td><td>2022</td><td>Pneumococcal, meningococcal ACWY/B, and Hib vaccines at 14 days post-splenectomy (not earlier, immune response impaired acutely). Penicillin V prophylaxis lifelong.</td><td>Vaccine timing and antibiotic prophylaxis post-splenectomy</td></tr>
+<tr><td>Selective Renal Artery Embolisation for Grade IV Renal Laceration (JAMA Surgery)</td><td>2024</td><td>Selective renal artery embolisation for Grade IV injuries with arterial blush: technical success 94%, nephrectomy avoidance 88% at 30 days. Comparable renal function at 6 months.</td><td>Role of IR in Grade IV renal injury, replaces operative exploration in stable patients</td></tr>
+</tbody>
+</table></div>
 </section>
-
 <section class="topic s1" id="p1d">
-  <div class="topic-header"><span class="topic-num">1.4</span><h2>The Consultant's Debate</h2></div>
-  <h3>CONTROVERSY: Splenic Artery Embolisation: Proximal vs. Selective Technique</h3>
-  <p>This is a genuinely contested technical question that examiners love. Two IR approaches exist.</p>
-  <ul>
-    <li><strong>FOR Proximal (Main Splenic Artery) Embolisation:</strong> Coiling the main splenic artery proximal to the pancreatic branches reduces splenic perfusion pressure by 50–60% while preserving collateral flow via the short gastric vessels and left gastroepiploic artery. This maintains sufficient perfusion to prevent infarction while allowing haemostasis. Technically simpler, faster, and avoids selective catheterisation into a damaged spleen. Better for high-grade injuries where the bleeding source is not precisely localised.</li>
-    <li><strong>FOR Selective (Distal) Embolisation:</strong> Superselective catheterisation of the specific bleeding vessel or pseudoaneurysm provides targeted occlusion. Preserves more splenic parenchyma and function. Superior for isolated pseudoaneurysms or focal arteriovenous fistulae. Risk: misses co-existing blush from collateral supply.</li>
-  </ul>
-  <div class="callout pearl">
-    <span class="label">The Consultant's Position</span>
+<div class="topic-header"><span class="topic-num">1.4</span><h2>The Consultant's Debate</h2></div>
+<h3>CONTROVERSY: Splenic Artery Embolisation: Proximal vs. Selective Technique</h3>
+<p>This is a genuinely contested technical question that examiners love. Two IR approaches exist.</p>
+<ul>
+<li><strong>FOR Proximal (Main Splenic Artery) Embolisation:</strong> Coiling the main splenic artery proximal to the pancreatic branches reduces splenic perfusion pressure by 50–60% while preserving collateral flow via the short gastric vessels and left gastroepiploic artery. This maintains sufficient perfusion to prevent infarction while allowing haemostasis. Technically simpler, faster, and avoids selective catheterisation into a damaged spleen. Better for high-grade injuries where the bleeding source is not precisely localised.</li>
+<li><strong>FOR Selective (Distal) Embolisation:</strong> Superselective catheterisation of the specific bleeding vessel or pseudoaneurysm provides targeted occlusion. Preserves more splenic parenchyma and function. Superior for isolated pseudoaneurysms or focal arteriovenous fistulae. Risk: misses co-existing blush from collateral supply.</li>
+</ul>
+<div class="callout pearl">
+<span class="label">The Consultant's Position</span>
     Grade III with focal blush or pseudoaneurysm; selective. Grade IV–V with diffuse injury or multiple blush points; proximal, or combined proximal + selective. The evidence does not clearly favour one technique for all situations. What matters is getting the right patient to IR fast, not debating technique in the resus bay.
   </div>
 </section>
-
 <!-- ══════════════ SECTION 2 ══════════════ -->
 <div class="sec-header s2">
-  <span class="sec-badge">SECTION 2</span>
-  <span class="sec-title">Clinical Protocol & Perioperative Care</span>
+<span class="sec-badge">SECTION 2</span>
+<span class="sec-title">Clinical Protocol &amp; Perioperative Care</span>
 </div>
-
 <section class="topic s2" id="p2a">
-  <div class="topic-header"><span class="topic-num">2.1</span><h2>Advanced Diagnostics</h2></div>
-  
-  <h3>Splenic Injury Imaging</h3>
-  <div class="table-wrap s2-tbl"><table>
-    <thead><tr><th>Modality</th><th>Sensitivity</th><th>Specificity</th><th>Utility</th></tr></thead>
-    <tbody>
-      <tr><td>FAST (spleen)</td><td>55–70%</td><td>95%</td><td>Detect free fluid in splenorenal recess. Poor for parenchymal grading. Operator-dependent.</td></tr>
-      <tr><td>CT Abdomen with IV Contrast (portal venous phase)</td><td>96–98%</td><td>97%</td><td>Gold standard. Grades injury, detects blush, assesses vascular anatomy, identifies associated injuries.</td></tr>
-      <tr><td>CT Angiography (arterial phase added)</td><td>98–99%</td><td>98%</td><td>Essential for Grade III+ injuries to detect pseudoaneurysm and active blush. Must include arterial phase.</td></tr>
-      <tr><td>CEUS (Contrast-Enhanced Ultrasound)</td><td>89–95%</td><td>91%</td><td>Follow-up tool for NOM monitoring. Avoids radiation. Not for acute triage.</td></tr>
-      <tr><td>Angiography (diagnostic + therapeutic)</td><td>99% (DSA)</td><td>99%</td><td>Definitive detection and treatment of arterial injury. Therapeutic once diagnostic.</td></tr>
-    </tbody>
-  </table></div>
-  <p><strong>Splenic-specific CT findings to report:</strong></p>
-  <ul>
-    <li>Active arterial blush (&gt;150 HU on arterial phase, enlarging on delayed = active extravasation)</li>
-    <li>Pseudoaneurysm (saccular, same density as aorta, does NOT enlarge between phases)</li>
-    <li>Subcapsular haematoma extent (% surface area)</li>
-    <li>Laceration depth and involvement of hilar vessels</li>
-    <li>Devascularisation (wedge-shaped non-enhancing parenchyma)</li>
-  </ul>
-
-  <h3>Renal Injury Imaging & The Haematuria Algorithm</h3>
-  <p>The decision to image in renal trauma is based on a simple and examinable algorithm:</p>
-  <ul>
-    <li><strong>Blunt trauma:</strong> Image with CT urography if gross haematuria OR microscopic haematuria + haemodynamic instability OR high-energy mechanism (rapid deceleration, direct flank blow) even without haematuria.</li>
-    <li><strong>Penetrating trauma:</strong> CT urography for ALL penetrating injuries in proximity to the kidney, regardless of haematuria.</li>
-  </ul>
-  <div class="table-wrap s2-tbl"><table>
-    <thead><tr><th>Modality</th><th>Sensitivity</th><th>Specificity</th><th>Utility</th></tr></thead>
-    <tbody>
-      <tr><td>CT with IV contrast + delayed phase (7–10 min)</td><td>97–98%</td><td>97%</td><td>Gold standard. Grades parenchymal injury, assesses collecting system (delayed phase), identifies vascular pedicle injury (non-enhancement = vascular disruption).</td></tr>
-      <tr><td>IVP (Intravenous Pyelogram)</td><td>70–85%</td><td>80%</td><td>Historical. Single-shot IVP in OR still used to confirm contralateral renal function before nephrectomy. Simple: 2mL/kg IV contrast, KUB at 10 minutes.</td></tr>
-      <tr><td>FAST</td><td>&lt;30%</td><td>&gt;90%</td><td>Cannot grade renal injury. Retroperitoneal haematoma not seen on FAST. Only detects intraperitoneal extension of haematoma.</td></tr>
-    </tbody>
-  </table></div>
-  <p><strong>Key CT signs for renal injury:</strong></p>
-  <ul>
-    <li>Non-enhancement of entire kidney = renal artery thrombosis or avulsion (Grade V)</li>
-    <li>Medial haematoma + no ureteric opacification on delayed phase = renal pedicle injury</li>
-    <li>Contrast extravasation on delayed phase (urinoma) = collecting system disruption (Grade IV)</li>
-    <li>Perirenal haematoma size and fascial containment within Gerota = Grade I–II</li>
-    <li>Retroperitoneal extension beyond Gerota's fascia = Grade III+</li>
-  </ul>
+<div class="topic-header"><span class="topic-num">2.1</span><h2>Advanced Diagnostics</h2></div>
+<h3>Splenic Injury Imaging</h3>
+<div class="table-wrap s2-tbl"><table>
+<thead><tr><th>Modality</th><th>Sensitivity</th><th>Specificity</th><th>Utility</th></tr></thead>
+<tbody>
+<tr><td>FAST (spleen)</td><td>55–70%</td><td>95%</td><td>Detect free fluid in splenorenal recess. Poor for parenchymal grading. Operator-dependent.</td></tr>
+<tr><td>CT Abdomen with IV Contrast (portal venous phase)</td><td>96–98%</td><td>97%</td><td>Gold standard. Grades injury, detects blush, assesses vascular anatomy, identifies associated injuries.</td></tr>
+<tr><td>CT Angiography (arterial phase added)</td><td>98–99%</td><td>98%</td><td>Essential for Grade III+ injuries to detect pseudoaneurysm and active blush. Must include arterial phase.</td></tr>
+<tr><td>CEUS (Contrast-Enhanced Ultrasound)</td><td>89–95%</td><td>91%</td><td>Follow-up tool for NOM monitoring. Avoids radiation. Not for acute triage.</td></tr>
+<tr><td>Angiography (diagnostic + therapeutic)</td><td>99% (DSA)</td><td>99%</td><td>Definitive detection and treatment of arterial injury. Therapeutic once diagnostic.</td></tr>
+</tbody>
+</table></div>
+<p><strong>Splenic-specific CT findings to report:</strong></p>
+<ul>
+<li>Active arterial blush (&gt;150 HU on arterial phase, enlarging on delayed = active extravasation)</li>
+<li>Pseudoaneurysm (saccular, same density as aorta, does NOT enlarge between phases)</li>
+<li>Subcapsular haematoma extent (% surface area)</li>
+<li>Laceration depth and involvement of hilar vessels</li>
+<li>Devascularisation (wedge-shaped non-enhancing parenchyma)</li>
+</ul>
+<h3>Renal Injury Imaging &amp; The Haematuria Algorithm</h3>
+<p>The decision to image in renal trauma is based on a simple and examinable algorithm:</p>
+<ul>
+<li><strong>Blunt trauma:</strong> Image with CT urography if gross haematuria OR microscopic haematuria + haemodynamic instability OR high-energy mechanism (rapid deceleration, direct flank blow) even without haematuria.</li>
+<li><strong>Penetrating trauma:</strong> CT urography for ALL penetrating injuries in proximity to the kidney, regardless of haematuria.</li>
+</ul>
+<div class="table-wrap s2-tbl"><table>
+<thead><tr><th>Modality</th><th>Sensitivity</th><th>Specificity</th><th>Utility</th></tr></thead>
+<tbody>
+<tr><td>CT with IV contrast + delayed phase (7–10 min)</td><td>97–98%</td><td>97%</td><td>Gold standard. Grades parenchymal injury, assesses collecting system (delayed phase), identifies vascular pedicle injury (non-enhancement = vascular disruption).</td></tr>
+<tr><td>IVP (Intravenous Pyelogram)</td><td>70–85%</td><td>80%</td><td>Historical. Single-shot IVP in OR still used to confirm contralateral renal function before nephrectomy. Simple: 2mL/kg IV contrast, KUB at 10 minutes.</td></tr>
+<tr><td>FAST</td><td>&lt;30%</td><td>&gt;90%</td><td>Cannot grade renal injury. Retroperitoneal haematoma not seen on FAST. Only detects intraperitoneal extension of haematoma.</td></tr>
+</tbody>
+</table></div>
+<p><strong>Key CT signs for renal injury:</strong></p>
+<ul>
+<li>Non-enhancement of entire kidney = renal artery thrombosis or avulsion (Grade V)</li>
+<li>Medial haematoma + no ureteric opacification on delayed phase = renal pedicle injury</li>
+<li>Contrast extravasation on delayed phase (urinoma) = collecting system disruption (Grade IV)</li>
+<li>Perirenal haematoma size and fascial containment within Gerota = Grade I–II</li>
+<li>Retroperitoneal extension beyond Gerota's fascia = Grade III+</li>
+</ul>
 </section>
-
 <section class="topic s2" id="p2b">
-  <div class="topic-header"><span class="topic-num">2.2</span><h2>Resuscitation & Perioperative Care</h2></div>
-  <p>For NOM of both splenic and renal injuries, the monitoring protocol is standardised:</p>
-  <ul>
-    <li>ICU admission for Grade III+ splenic and Grade III+ renal injuries</li>
-    <li>Serial haemoglobin every 4–6 hours for the first 24 hours, then 12-hourly if stable</li>
-    <li>Strict bed rest: Grade III splenic; 5 days. Grade IV; 7 days. Resume activity at 4–6 weeks (return-to-contact sport at 3 months)</li>
-    <li>Nil by mouth for 24 hours in Grade III+ (anticipate potential operative failure)</li>
-    <li>Urinary catheter: monitor for haematuria resolution in renal injury</li>
-    <li>Blood pressure control: target SBP 90–120 mmHg in splenic NOM (avoid hypertension driving re-bleeding)</li>
-    <li>DVT prophylaxis: withhold pharmacological prophylaxis for 48–72 hours in Grade III+ NOM. Sequential compression devices from admission. Restart enoxaparin when Hb stable over two consecutive measurements.</li>
-  </ul>
-
-  <h3>Post-splenectomy Vaccines (Mandatory)</h3>
-  <div class="table-wrap s2-tbl"><table>
-    <thead><tr><th>Vaccine</th><th>Organism</th><th>Timing</th><th>Notes</th></tr></thead>
-    <tbody>
-      <tr><td>Pneumococcal conjugate (PCV13) + Polysaccharide (PPSV23)</td><td>Streptococcus pneumoniae</td><td>Day 14 post-op</td><td>NOT before Day 14; acute immune suppression prevents response. Booster PPSV23 at 5 years.</td></tr>
-      <tr><td>Meningococcal ACWY</td><td>Neisseria meningitidis</td><td>Day 14</td><td>MenB separate dose</td></tr>
-      <tr><td>Hib (Haemophilus influenzae type B)</td><td>H. influenzae</td><td>Day 14</td><td>Single dose if not previously vaccinated</td></tr>
-      <tr><td>Influenza</td><td>Influenza A/B</td><td>Annual</td><td>Reduces secondary bacterial pneumonia risk</td></tr>
-      <tr><td>Antibiotic prophylaxis</td><td>All encapsulated</td><td>Lifelong in many guidelines</td><td>Penicillin V 250–500mg BD. Amoxicillin alternative. Erythromycin if penicillin-allergic.</td></tr>
-    </tbody>
-  </table></div>
+<div class="topic-header"><span class="topic-num">2.2</span><h2>Resuscitation &amp; Perioperative Care</h2></div>
+<p>For NOM of both splenic and renal injuries, the monitoring protocol is standardised:</p>
+<ul>
+<li>ICU admission for Grade III+ splenic and Grade III+ renal injuries</li>
+<li>Serial haemoglobin every 4–6 hours for the first 24 hours, then 12-hourly if stable</li>
+<li>Strict bed rest: Grade III splenic; 5 days. Grade IV; 7 days. Resume activity at 4–6 weeks (return-to-contact sport at 3 months)</li>
+<li>Nil by mouth for 24 hours in Grade III+ (anticipate potential operative failure)</li>
+<li>Urinary catheter: monitor for haematuria resolution in renal injury</li>
+<li>Blood pressure control: target SBP 90–120 mmHg in splenic NOM (avoid hypertension driving re-bleeding)</li>
+<li>DVT prophylaxis: withhold pharmacological prophylaxis for 48–72 hours in Grade III+ NOM. Sequential compression devices from admission. Restart enoxaparin when Hb stable over two consecutive measurements.</li>
+</ul>
+<h3>Post-splenectomy Vaccines (Mandatory)</h3>
+<div class="table-wrap s2-tbl"><table>
+<thead><tr><th>Vaccine</th><th>Organism</th><th>Timing</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td>Pneumococcal conjugate (PCV13) + Polysaccharide (PPSV23)</td><td>Streptococcus pneumoniae</td><td>Day 14 post-op</td><td>NOT before Day 14; acute immune suppression prevents response. Booster PPSV23 at 5 years.</td></tr>
+<tr><td>Meningococcal ACWY</td><td>Neisseria meningitidis</td><td>Day 14</td><td>MenB separate dose</td></tr>
+<tr><td>Hib (Haemophilus influenzae type B)</td><td>H. influenzae</td><td>Day 14</td><td>Single dose if not previously vaccinated</td></tr>
+<tr><td>Influenza</td><td>Influenza A/B</td><td>Annual</td><td>Reduces secondary bacterial pneumonia risk</td></tr>
+<tr><td>Antibiotic prophylaxis</td><td>All encapsulated</td><td>Lifelong in many guidelines</td><td>Penicillin V 250–500mg BD. Amoxicillin alternative. Erythromycin if penicillin-allergic.</td></tr>
+</tbody>
+</table></div>
 </section>
-
 <section class="topic s2" id="p2c">
-  <div class="topic-header"><span class="topic-num">2.3</span><h2>Complications: Clavien-Dindo Grade IIIB–V</h2></div>
-  <div class="table-wrap s2-tbl"><table>
-    <thead><tr><th>Complication</th><th>Incidence</th><th>CD Grade</th><th>Presentation</th><th>Management</th></tr></thead>
-    <tbody>
-      <tr><td>NOM failure; splenic</td><td>5–15% Grade III, 20–35% Grade IV (w/o embolisation), 8–12% w/ embolisation</td><td>IIIB</td><td>Falling Hb, haemodynamic deterioration, increasing abdominal pain 24–72h post-admission</td><td>Urgent angioembolisation if not yet performed. Splenectomy if embolisation fails or patient unstable.</td></tr>
-      <tr><td>Delayed splenic rupture</td><td>0.5–5%</td><td>IIIB–IVA</td><td>Day 4–14: sudden deterioration, Kehr's sign, falling Hb</td><td>CT-angio: embolisation if stable, splenectomy if unstable.</td></tr>
-      <tr><td>Splenic pseudoaneurysm</td><td>2–15% Grade III+</td><td>IIIA</td><td>Often asymptomatic; incidental on follow-up imaging. Risk of rupture 30–50%.</td><td>Selective angioembolisation. Surveillance CT at 48–72h and Day 7 for Grade III+ injuries.</td></tr>
-      <tr><td>Pancreatic tail injury post-splenectomy</td><td>2–5%</td><td>IIIA</td><td>Drain amylase &gt;3x upper limit, peripancreatic collection</td><td>Conservative drain management. ERCP + stent if main duct involved.</td></tr>
-      <tr><td>Renal urinoma</td><td>5–10% Grade IV</td><td>IIIA</td><td>Flank pain, fever, rising creatinine Day 3–7. CT: perirenal fluid collection.</td><td>Ureteric JJ stent (ERCP-equivalent: ureteroscopy). Percutaneous nephrostomy if stent fails. Most resolve in 4–6 weeks.</td></tr>
-      <tr><td>Renovascular hypertension (Page kidney)</td><td>1–5% post-renal trauma</td><td>IVA (chronic)</td><td>New-onset hypertension weeks–months post-injury. Subcapsular haematoma compresses kidney, activating RAAS.</td><td>CT/MRI: subcapsular haematoma. Angioplasty / drainage. Nephrectomy if refractory.</td></tr>
-      <tr><td>Post-nephrectomy renal failure</td><td>2–8% (if solitary/contralateral impaired)</td><td>IVA–IVB</td><td>Rising creatinine post-operatively</td><td>Always confirm contralateral function before nephrectomy (one-shot IVP). Renal replacement therapy if bilateral impairment.</td></tr>
-    </tbody>
-  </table></div>
+<div class="topic-header"><span class="topic-num">2.3</span><h2>Complications: Clavien-Dindo Grade IIIB–V</h2></div>
+<div class="table-wrap s2-tbl"><table>
+<thead><tr><th>Complication</th><th>Incidence</th><th>CD Grade</th><th>Presentation</th><th>Management</th></tr></thead>
+<tbody>
+<tr><td>NOM failure; splenic</td><td>5–15% Grade III, 20–35% Grade IV (w/o embolisation), 8–12% w/ embolisation</td><td>IIIB</td><td>Falling Hb, haemodynamic deterioration, increasing abdominal pain 24–72h post-admission</td><td>Urgent angioembolisation if not yet performed. Splenectomy if embolisation fails or patient unstable.</td></tr>
+<tr><td>Delayed splenic rupture</td><td>0.5–5%</td><td>IIIB–IVA</td><td>Day 4–14: sudden deterioration, Kehr's sign, falling Hb</td><td>CT-angio: embolisation if stable, splenectomy if unstable.</td></tr>
+<tr><td>Splenic pseudoaneurysm</td><td>2–15% Grade III+</td><td>IIIA</td><td>Often asymptomatic; incidental on follow-up imaging. Risk of rupture 30–50%.</td><td>Selective angioembolisation. Surveillance CT at 48–72h and Day 7 for Grade III+ injuries.</td></tr>
+<tr><td>Pancreatic tail injury post-splenectomy</td><td>2–5%</td><td>IIIA</td><td>Drain amylase &gt;3x upper limit, peripancreatic collection</td><td>Conservative drain management. ERCP + stent if main duct involved.</td></tr>
+<tr><td>Renal urinoma</td><td>5–10% Grade IV</td><td>IIIA</td><td>Flank pain, fever, rising creatinine Day 3–7. CT: perirenal fluid collection.</td><td>Ureteric JJ stent (ERCP-equivalent: ureteroscopy). Percutaneous nephrostomy if stent fails. Most resolve in 4–6 weeks.</td></tr>
+<tr><td>Renovascular hypertension (Page kidney)</td><td>1–5% post-renal trauma</td><td>IVA (chronic)</td><td>New-onset hypertension weeks–months post-injury. Subcapsular haematoma compresses kidney, activating RAAS.</td><td>CT/MRI: subcapsular haematoma. Angioplasty / drainage. Nephrectomy if refractory.</td></tr>
+<tr><td>Post-nephrectomy renal failure</td><td>2–8% (if solitary/contralateral impaired)</td><td>IVA–IVB</td><td>Rising creatinine post-operatively</td><td>Always confirm contralateral function before nephrectomy (one-shot IVP). Renal replacement therapy if bilateral impairment.</td></tr>
+</tbody>
+</table></div>
 </section>
-
 <!-- ══════════════ SECTION 3 ══════════════ -->
 <div class="sec-header s3">
-  <span class="sec-badge">SECTION 3</span>
-  <span class="sec-title">The Operative Atlas</span>
+<span class="sec-badge">SECTION 3</span>
+<span class="sec-title">The Operative Atlas</span>
 </div>
-
 <section class="topic s3" id="p3a">
-  <div class="topic-header"><span class="topic-num">3.1</span><h2>Surgical Anatomy & Danger Zones</h2></div>
-  
-  <h3>Splenic Anatomy: The Operative Perspective</h3>
-  <p>The spleen is a deeply placed, fragile organ. From the surgeon's perspective standing at the patient's right, the spleen lies in the left subphrenic space under the diaphragm, largely hidden by the costal margin. You cannot safely operate on the spleen without fully understanding its ligamentous attachments.</p>
-  <p>Four ligaments to divide for mobilisation:</p>
-  <ul>
-    <li><strong>Phrenocolic ligament:</strong> runs from the splenic flexure of the colon to the diaphragm, forming the inferior support of the spleen. Divide this first; it takes the tension off the other structures.</li>
-    <li><strong>Splenocolic ligament:</strong> between the spleen and the transverse colon. Short, divide carefully to avoid colonic injury.</li>
-    <li><strong>Lienorenal (splenorenal) ligament:</strong> from the spleen to the anterior surface of the left kidney, contains the splenic vessels (artery and vein) and the tail of the pancreas. The critical ligament. Divide lateral to the hilum, not medially, to avoid entering the pancreatic tail.</li>
-    <li><strong>Gastrosplenic ligament:</strong> between the greater curve of the stomach and the superior pole of the spleen, containing the short gastric vessels (4–6 in number). Divide between ligatures or with LigaSure. Inadvertent division of the left gastroepiploic artery here can devascularise the greater curve of the stomach.</li>
-  </ul>
-  <p>Danger zones:</p>
-  <ul>
-    <li><strong>Pancreatic tail at splenic hilum:</strong> unrecognised entry into the pancreatic tail during hilar division = pancreatic fistula rate 10–20%</li>
-    <li><strong>Short gastric vessels:</strong> excessive traction during mobilisation = avulsion from fundus of stomach</li>
-    <li><strong>Left colic flexure:</strong> taken down during phrenocolic ligament division if not careful</li>
-  </ul>
-
-  <h3>Renal Anatomy: The Operative Perspective</h3>
-  <p>The kidney lies retroperitoneally in the perinephric space, enclosed by Gerota's fascia. The renal fascia contains the kidney, adrenal gland, and perirenal fat. The key principle of renal exploration: control the vascular pedicle before opening Gerota's fascia.</p>
-  <p>Vascular anatomy differences; the board trap:</p>
-  <ul>
-    <li><strong>Right renal artery:</strong> runs posterior to the IVC, posterior to the right renal vein, posterior to the duodenum. Long course posterior to large vessels makes control from the right difficult without medial rotation.</li>
-    <li><strong>Right renal vein:</strong> short, 2–3cm. Directly enters IVC. Very little length for clamping.</li>
-    <li><strong>Left renal artery:</strong> shorter intrabdominal course. Passes posterior to the left renal vein.</li>
-    <li><strong>Left renal vein:</strong> long, 6–7cm. Crosses aorta anteriorly. Receives the left gonadal, left adrenal, and lumbar veins. Can be ligated at the IVC if the left adrenal and gonadal tributaries are preserved (maintains venous drainage via collaterals).</li>
-  </ul>
-  <p>Danger zones:</p>
-  <ul>
-    <li><strong>Right renal vein avulsion from IVC:</strong> the single most dangerous step in right renal exploration</li>
-    <li><strong>Inadvertent adrenal injury:</strong> at upper pole during renal mobilisation (if exploration of upper pole haematoma)</li>
-    <li><strong>Ureter:</strong> (medial and inferior to kidney): at risk during lower pole dissection</li>
-  </ul>
+<div class="topic-header"><span class="topic-num">3.1</span><h2>Surgical Anatomy &amp; Danger Zones</h2></div>
+<h3>Splenic Anatomy: The Operative Perspective</h3>
+<p>The spleen is a deeply placed, fragile organ. From the surgeon's perspective standing at the patient's right, the spleen lies in the left subphrenic space under the diaphragm, largely hidden by the costal margin. You cannot safely operate on the spleen without fully understanding its ligamentous attachments.</p>
+<p>Four ligaments to divide for mobilisation:</p>
+<ul>
+<li><strong>Phrenocolic ligament:</strong> runs from the splenic flexure of the colon to the diaphragm, forming the inferior support of the spleen. Divide this first; it takes the tension off the other structures.</li>
+<li><strong>Splenocolic ligament:</strong> between the spleen and the transverse colon. Short, divide carefully to avoid colonic injury.</li>
+<li><strong>Lienorenal (splenorenal) ligament:</strong> from the spleen to the anterior surface of the left kidney, contains the splenic vessels (artery and vein) and the tail of the pancreas. The critical ligament. Divide lateral to the hilum, not medially, to avoid entering the pancreatic tail.</li>
+<li><strong>Gastrosplenic ligament:</strong> between the greater curve of the stomach and the superior pole of the spleen, containing the short gastric vessels (4–6 in number). Divide between ligatures or with LigaSure. Inadvertent division of the left gastroepiploic artery here can devascularise the greater curve of the stomach.</li>
+</ul>
+<p>Danger zones:</p>
+<ul>
+<li><strong>Pancreatic tail at splenic hilum:</strong> unrecognised entry into the pancreatic tail during hilar division = pancreatic fistula rate 10–20%</li>
+<li><strong>Short gastric vessels:</strong> excessive traction during mobilisation = avulsion from fundus of stomach</li>
+<li><strong>Left colic flexure:</strong> taken down during phrenocolic ligament division if not careful</li>
+</ul>
+<h3>Renal Anatomy: The Operative Perspective</h3>
+<p>The kidney lies retroperitoneally in the perinephric space, enclosed by Gerota's fascia. The renal fascia contains the kidney, adrenal gland, and perirenal fat. The key principle of renal exploration: control the vascular pedicle before opening Gerota's fascia.</p>
+<p>Vascular anatomy differences; the board trap:</p>
+<ul>
+<li><strong>Right renal artery:</strong> runs posterior to the IVC, posterior to the right renal vein, posterior to the duodenum. Long course posterior to large vessels makes control from the right difficult without medial rotation.</li>
+<li><strong>Right renal vein:</strong> short, 2–3cm. Directly enters IVC. Very little length for clamping.</li>
+<li><strong>Left renal artery:</strong> shorter intrabdominal course. Passes posterior to the left renal vein.</li>
+<li><strong>Left renal vein:</strong> long, 6–7cm. Crosses aorta anteriorly. Receives the left gonadal, left adrenal, and lumbar veins. Can be ligated at the IVC if the left adrenal and gonadal tributaries are preserved (maintains venous drainage via collaterals).</li>
+</ul>
+<p>Danger zones:</p>
+<ul>
+<li><strong>Right renal vein avulsion from IVC:</strong> the single most dangerous step in right renal exploration</li>
+<li><strong>Inadvertent adrenal injury:</strong> at upper pole during renal mobilisation (if exploration of upper pole haematoma)</li>
+<li><strong>Ureter:</strong> (medial and inferior to kidney): at risk during lower pole dissection</li>
+</ul>
 </section>
-
 <section class="topic s3" id="p3b">
-  <div class="topic-header"><span class="topic-num">3.2</span><h2>Step-by-Step Operative Procedures</h2></div>
-  
-  <h3>SPLENECTOMY — Operative Steps (Open Approach)</h3>
-  <p>Indication: Grade IV–V with haemodynamic instability, NOM failure, intraoperative haemorrhage not controlled by splenorrhaphy, physiological compromise precluding splenorrhaphy.</p>
-  <ul>
-    <li><strong>Step 1: Position & Access.</strong> Supine. Midline laparotomy (fastest access in trauma). Some centres prefer left subcostal extension but midline is standard in trauma; it allows full abdominal survey.</li>
-    <li><strong>Step 2: Manual Compression & Packing.</strong> On entering the abdomen, immediately place the left hand over the spleen and compress it against the diaphragm. Pack the left upper quadrant with two or three laparotomy pads around the spleen to tamponade bleeding while you proceed.</li>
-    <li><strong>Step 3: Mobilise the Spleen — Divide the Lateral Peritoneum.</strong> Incise the peritoneal reflection lateral and posterior to the spleen (the splenophrenic / splenorenal peritoneum). Sweep the left hand behind the spleen from the lateral side, and deliver the spleen into the wound. This is the critical step; done correctly, the entire spleen comes up into the incision. Done incorrectly (too medial, too hasty), you tear the hilum.</li>
-    <li><strong>Step 4: Divide the Phrenocolic and Splenocolic Ligaments.</strong> With the spleen delivered medially, these inferior attachments become visible. Divide between clips or with energy device.</li>
-    <li><strong>Step 5: Divide the Short Gastric Vessels.</strong> Expose the gastrosplenic ligament. Divide the short gastric vessels sequentially between ties (2-0 silk or Vicryl) from inferior to superior, or use LigaSure / Harmonic. Keep the ligatures on the gastric side generous; the stomach wall here is thin.</li>
-    <li><strong>Step 6: Vascular Control at the Hilum.</strong> Once the spleen is delivered and the short gastrics are divided, the splenic hilum is accessible. Identify the splenic artery and vein. In damage control, mass-ligate the hilum with a single large tie or apply a vascular stapler (GIA/TA) across the hilum. In a more controlled setting, individually ligate the artery first (reduces engorgement), then the vein. Confirm the pancreatic tail is NOT included in the staple line; palpate for it before firing.</li>
-    <li><strong>Step 7: Remove the Spleen.</strong> Divide the remaining posterior attachments. Pass the spleen off the table.</li>
-    <li><strong>Step 8: Check the Tail of Pancreas.</strong> Directly inspect and palpate the pancreatic tail. If there is doubt about integrity: place a drain. Amylase from the drain on Day 1 and 3 will guide management.</li>
-    <li><strong>Step 9: Haemostasis & Closure.</strong> Inspect the splenic bed, left diaphragm, greater curve of stomach (ensure short gastric ligation sites are secure), and the splenic flexure of colon. Jackson-Pratt drain in the left subphrenic space in Grade IV–V injury or if pancreatic tail is at risk.</li>
-  </ul>
-
-  <h3>SPLENORRHAPHY — Splenic Preservation (Grade I–III Selected)</h3>
-  <p>Splenorrhaphy is appropriate when the patient is haemodynamically stable, the injury is Grade I–III, and there is no lethal triad. It is rarely performed in trauma today because NOM and angioembolisation have replaced most operative splenic salvage. But the board wants you to know it.</p>
-  <ul>
-    <li><strong>Topical haemostatic agents:</strong> Oxidised cellulose (Surgicel), fibrin glue, thrombin-soaked gelatin (Floseal). For Grade I–II surface lacerations. Applied with direct pressure.</li>
-    <li><strong>Mattress sutures:</strong> 0-chromic or 0-Vicryl horizontal mattress sutures across the laceration, with or without pledgets (omentum or oxidised cellulose used as bolsters).</li>
-    <li><strong>Mesh wrapping:</strong> Polyglycolic acid mesh wrapped around the spleen and tied at the hilum (the "splenic mesh wrap"). Provides compression tamponade of the entire organ.</li>
-    <li><strong>Partial splenectomy:</strong> For a polar injury; ligate the segmental hilar vessel to the involved pole, resect the devascularised segment, oversew the cut surface.</li>
-  </ul>
-  <div class="callout warn">
-    <span class="label">CAUTION</span>
+<div class="topic-header"><span class="topic-num">3.2</span><h2>Step-by-Step Operative Procedures</h2></div>
+<h3>SPLENECTOMY: Operative Steps (Open Approach)</h3>
+<p>Indication: Grade IV–V with haemodynamic instability, NOM failure, intraoperative haemorrhage not controlled by splenorrhaphy, physiological compromise precluding splenorrhaphy.</p>
+<ul>
+<li><strong>Step 1: Position &amp; Access.</strong> Supine. Midline laparotomy (fastest access in trauma). Some centres prefer left subcostal extension but midline is standard in trauma; it allows full abdominal survey.</li>
+<li><strong>Step 2: Manual Compression &amp; Packing.</strong> On entering the abdomen, immediately place the left hand over the spleen and compress it against the diaphragm. Pack the left upper quadrant with two or three laparotomy pads around the spleen to tamponade bleeding while you proceed.</li>
+<li><strong>Step 3: Mobilise the Spleen, Divide the Lateral Peritoneum.</strong> Incise the peritoneal reflection lateral and posterior to the spleen (the splenophrenic / splenorenal peritoneum). Sweep the left hand behind the spleen from the lateral side, and deliver the spleen into the wound. This is the critical step; done correctly, the entire spleen comes up into the incision. Done incorrectly (too medial, too hasty), you tear the hilum.</li>
+<li><strong>Step 4: Divide the Phrenocolic and Splenocolic Ligaments.</strong> With the spleen delivered medially, these inferior attachments become visible. Divide between clips or with energy device.</li>
+<li><strong>Step 5: Divide the Short Gastric Vessels.</strong> Expose the gastrosplenic ligament. Divide the short gastric vessels sequentially between ties (2-0 silk or Vicryl) from inferior to superior, or use LigaSure / Harmonic. Keep the ligatures on the gastric side generous; the stomach wall here is thin.</li>
+<li><strong>Step 6: Vascular Control at the Hilum.</strong> Once the spleen is delivered and the short gastrics are divided, the splenic hilum is accessible. Identify the splenic artery and vein. In damage control, mass-ligate the hilum with a single large tie or apply a vascular stapler (GIA/TA) across the hilum. In a more controlled setting, individually ligate the artery first (reduces engorgement), then the vein. Confirm the pancreatic tail is NOT included in the staple line; palpate for it before firing.</li>
+<li><strong>Step 7: Remove the Spleen.</strong> Divide the remaining posterior attachments. Pass the spleen off the table.</li>
+<li><strong>Step 8: Check the Tail of Pancreas.</strong> Directly inspect and palpate the pancreatic tail. If there is doubt about integrity: place a drain. Amylase from the drain on Day 1 and 3 will guide management.</li>
+<li><strong>Step 9: Haemostasis &amp; Closure.</strong> Inspect the splenic bed, left diaphragm, greater curve of stomach (ensure short gastric ligation sites are secure), and the splenic flexure of colon. Jackson-Pratt drain in the left subphrenic space in Grade IV–V injury or if pancreatic tail is at risk.</li>
+</ul>
+<h3>SPLENORRHAPHY: Splenic Preservation (Grade I–III Selected)</h3>
+<p>Splenorrhaphy is appropriate when the patient is haemodynamically stable, the injury is Grade I–III, and there is no lethal triad. It is rarely performed in trauma today because NOM and angioembolisation have replaced most operative splenic salvage. But the board wants you to know it.</p>
+<ul>
+<li><strong>Topical haemostatic agents:</strong> Oxidised cellulose (Surgicel), fibrin glue, thrombin-soaked gelatin (Floseal). For Grade I–II surface lacerations. Applied with direct pressure.</li>
+<li><strong>Mattress sutures:</strong> 0-chromic or 0-Vicryl horizontal mattress sutures across the laceration, with or without pledgets (omentum or oxidised cellulose used as bolsters).</li>
+<li><strong>Mesh wrapping:</strong> Polyglycolic acid mesh wrapped around the spleen and tied at the hilum (the "splenic mesh wrap"). Provides compression tamponade of the entire organ.</li>
+<li><strong>Partial splenectomy:</strong> For a polar injury; ligate the segmental hilar vessel to the involved pole, resect the devascularised segment, oversew the cut surface.</li>
+</ul>
+<div class="callout warn">
+<span class="label">CAUTION</span>
     The single most important rule in splenorrhaphy: if haemostasis is not achieved within 10–15 minutes and the patient is deteriorating, convert to splenectomy without hesitation.
   </div>
-
-  <h3>RENAL EXPLORATION — Operative Steps</h3>
-  <p>Indications for operative renal exploration:</p>
-  <ul>
-    <li>Haemodynamic instability from renal injury</li>
-    <li>Expanding or pulsatile Zone II retroperitoneal haematoma in penetrating trauma</li>
-    <li>Grade V pedicle injury with salvageable kidney (&lt;6h warm ischaemia)</li>
-    <li>NOM failure (persistent bleeding despite embolisation)</li>
-    <li>Associated bowel injury requiring laparotomy (assess kidney at same time)</li>
-    <li>Ureteropelvic junction avulsion</li>
-  </ul>
-  <ul>
-    <li><strong>Step 1: Midline Laparotomy and Exposure.</strong> Standard trauma laparotomy. Identify the retroperitoneum. Inspect the Zone II haematoma. Note: in blunt trauma with stable haematoma, you may elect NOT to explore Gerota's.</li>
-    <li><strong>Step 2: Early Vascular Control — The Key Step.</strong> Before opening Gerota's fascia, control the renal vessels in the retroperitoneum at the aorta. This is the single most important operative principle in renal trauma. Opening Gerota's fascia without proximal vascular control in a high-grade injury results in massive uncontrolled haemorrhage.
-      <br>Access to renal vessels: Lift the small bowel and transverse colon superiorly. Incise the posterior peritoneum over the aorta at the base of the mesentery, just inferior to the inferior mesenteric vein. Identify the left renal vein crossing the aorta; this is your landmark. Place a vascular loop or soft clamp on the renal artery (found just superior/posterior to the left renal vein). Control the vein separately.</li>
-    <li><strong>Step 3: Open Gerota's Fascia.</strong> Once proximal vascular control is achieved, incise Gerota's fascia laterally. Evacuate the haematoma. Deliver the kidney into the wound.</li>
-    <li><strong>Step 4: Assess — Nephron-Sparing vs. Nephrectomy Decision.</strong>
-      <div class="table-wrap s3-tbl"><table>
-        <thead><tr><th>Finding</th><th>Decision</th></tr></thead>
-        <tbody>
-          <tr><td>Grade I–III parenchymal laceration, controlled bleeding</td><td>Repair; haemostatic sutures, topical agents, bolster</td></tr>
-          <tr><td>Grade IV — laceration to collecting system</td><td>Repair collecting system with 4-0 Vicryl, watertight. Omentum buttress. Drain.</td></tr>
-          <tr><td>Grade V — shattered, non-viable</td><td>Nephrectomy. Confirm contralateral function first (one-shot IVP).</td></tr>
-          <tr><td>Grade V — pedicle avulsion, &lt;6h warm ischaemia</td><td>Attempted repair: end-to-end anastomosis or saphenous vein interposition. Success rate &lt;20% but attempt if solitary kidney or bilateral injury.</td></tr>
-          <tr><td>Grade V — pedicle, &gt;6h warm ischaemia</td><td>Nephrectomy. Functional recovery after &gt;6h ischaemia is negligible.</td></tr>
-        </tbody>
-      </table></div>
-    </li>
-    <li><strong>Step 5: Renal Repair Technique (Nephron-Sparing).</strong>
-      <ul>
-        <li>Debride non-viable parenchyma sharply</li>
-        <li>Achieve haemostasis with horizontal mattress sutures (0-chromic) on bleeding segmental vessels</li>
-        <li>Close the collecting system with 4-0 Vicryl (interrupted, watertight; leak = urinoma)</li>
-        <li>Approximate renal parenchyma with 0-chromic horizontal mattress sutures over a bolster of omentum or oxidised cellulose</li>
-        <li>Wrap with omental pedicle for additional support</li>
-      </ul>
-    </li>
-    <li><strong>Step 6: Nephrectomy Technique.</strong> Divide the renal artery between ties (or vascular stapler). Divide the renal vein. Divide the ureter at the pelviureteric junction (ligate distal end; prevents urine leak). Remove the kidney within Gerota's fascia if oncologically appropriate (penetrating trauma with suspected tumour), or outside for haemorrhage control. Place a drain in the renal fossa.</li>
-    <li><strong>Step 7: Drain & Closure.</strong> Jackson-Pratt drain in the renal fossa if collecting system repair performed or if haematoma significant. Close retroperitoneum to prevent small bowel herniation into the retroperitoneal space.</li>
-  </ul>
+<h3>RENAL EXPLORATION: Operative Steps</h3>
+<p>Indications for operative renal exploration:</p>
+<ul>
+<li>Haemodynamic instability from renal injury</li>
+<li>Expanding or pulsatile Zone II retroperitoneal haematoma in penetrating trauma</li>
+<li>Grade V pedicle injury with salvageable kidney (&lt;6h warm ischaemia)</li>
+<li>NOM failure (persistent bleeding despite embolisation)</li>
+<li>Associated bowel injury requiring laparotomy (assess kidney at same time)</li>
+<li>Ureteropelvic junction avulsion</li>
+</ul>
+<ul>
+<li><strong>Step 1: Midline Laparotomy and Exposure.</strong> Standard trauma laparotomy. Identify the retroperitoneum. Inspect the Zone II haematoma. Note: in blunt trauma with stable haematoma, you may elect NOT to explore Gerota's.</li>
+<li><strong>Step 2: Early Vascular Control, The Key Step.</strong> Before opening Gerota's fascia, control the renal vessels in the retroperitoneum at the aorta. This is the single most important operative principle in renal trauma. Opening Gerota's fascia without proximal vascular control in a high-grade injury results in massive uncontrolled haemorrhage.
+      <br/>Access to renal vessels: Lift the small bowel and transverse colon superiorly. Incise the posterior peritoneum over the aorta at the base of the mesentery, just inferior to the inferior mesenteric vein. Identify the left renal vein crossing the aorta; this is your landmark. Place a vascular loop or soft clamp on the renal artery (found just superior/posterior to the left renal vein). Control the vein separately.</li>
+<li><strong>Step 3: Open Gerota's Fascia.</strong> Once proximal vascular control is achieved, incise Gerota's fascia laterally. Evacuate the haematoma. Deliver the kidney into the wound.</li>
+<li><strong>Step 4: Assess: Nephron-Sparing vs. Nephrectomy Decision.</strong>
+<div class="table-wrap s3-tbl"><table>
+<thead><tr><th>Finding</th><th>Decision</th></tr></thead>
+<tbody>
+<tr><td>Grade I–III parenchymal laceration, controlled bleeding</td><td>Repair; haemostatic sutures, topical agents, bolster</td></tr>
+<tr><td>Grade IV: laceration to collecting system</td><td>Repair collecting system with 4-0 Vicryl, watertight. Omentum buttress. Drain.</td></tr>
+<tr><td>Grade V: shattered, non-viable</td><td>Nephrectomy. Confirm contralateral function first (one-shot IVP).</td></tr>
+<tr><td>Grade V: pedicle avulsion, &lt;6h warm ischaemia</td><td>Attempted repair: end-to-end anastomosis or saphenous vein interposition. Success rate &lt;20% but attempt if solitary kidney or bilateral injury.</td></tr>
+<tr><td>Grade V: pedicle, &gt;6h warm ischaemia</td><td>Nephrectomy. Functional recovery after &gt;6h ischaemia is negligible.</td></tr>
+</tbody>
+</table></div>
+</li>
+<li><strong>Step 5: Renal Repair Technique (Nephron-Sparing).</strong>
+<ul>
+<li>Debride non-viable parenchyma sharply</li>
+<li>Achieve haemostasis with horizontal mattress sutures (0-chromic) on bleeding segmental vessels</li>
+<li>Close the collecting system with 4-0 Vicryl (interrupted, watertight; leak = urinoma)</li>
+<li>Approximate renal parenchyma with 0-chromic horizontal mattress sutures over a bolster of omentum or oxidised cellulose</li>
+<li>Wrap with omental pedicle for additional support</li>
+</ul>
+</li>
+<li><strong>Step 6: Nephrectomy Technique.</strong> Divide the renal artery between ties (or vascular stapler). Divide the renal vein. Divide the ureter at the pelviureteric junction (ligate distal end; prevents urine leak). Remove the kidney within Gerota's fascia if oncologically appropriate (penetrating trauma with suspected tumour), or outside for haemorrhage control. Place a drain in the renal fossa.</li>
+<li><strong>Step 7: Drain &amp; Closure.</strong> Jackson-Pratt drain in the renal fossa if collecting system repair performed or if haematoma significant. Close retroperitoneum to prevent small bowel herniation into the retroperitoneal space.</li>
+</ul>
 </section>
-
 <section class="topic s3" id="p3c">
-  <div class="topic-header"><span class="topic-num">3.3</span><h2>The Difficult Case</h2></div>
-  
-  <h3>Scenario: Intraoperative haemorrhage from the splenic hilum with the pancreatic tail stuck in the staple line.</h3>
-  <p>You fire the vascular stapler across the splenic hilum and the jaws do not fully close. You have partially transected both the splenic vessels and the tail of the pancreas. Blood is everywhere.</p>
-  <p><strong>Immediate action:</strong> compress the staple line with a sponge stick. Do not pull on the stapler; you will complete the tear. Re-apply a vascular clamp proximally on the splenic artery. Cut across the staple line cleanly with scissors. Ligate the splenic vessels individually. Then address the pancreatic injury: if the cut surface is clean and the duct is not clearly visible, oversew it with 3-0 Prolene mattress sutures and place a drain. If there is clear main duct transection and more than 1–2cm of tail is involved, complete the distal pancreatectomy formally.</p>
-
-  <h3>Scenario: Zone II haematoma is opened without prior vascular control — torrential haemorrhage.</h3>
-  <p>This happens when a trainee opens Gerota's fascia before controlling the hilum. </p>
-  <p><strong>The fix:</strong> immediate bimanual compression of the renal hilum between thumb and forefinger. Shout for the vascular clamp. Identify the renal artery by feel; pulsatile cord at the hilum. Clamp it. Now you have time to get control. If the kidney is beyond salvage: nephrectomy. The lesson: always, always control the pedicle before opening Gerota's.</p>
+<div class="topic-header"><span class="topic-num">3.3</span><h2>The Difficult Case</h2></div>
+<h3>Scenario: Intraoperative haemorrhage from the splenic hilum with the pancreatic tail stuck in the staple line.</h3>
+<p>You fire the vascular stapler across the splenic hilum and the jaws do not fully close. You have partially transected both the splenic vessels and the tail of the pancreas. Blood is everywhere.</p>
+<p><strong>Immediate action:</strong> compress the staple line with a sponge stick. Do not pull on the stapler; you will complete the tear. Re-apply a vascular clamp proximally on the splenic artery. Cut across the staple line cleanly with scissors. Ligate the splenic vessels individually. Then address the pancreatic injury: if the cut surface is clean and the duct is not clearly visible, oversew it with 3-0 Prolene mattress sutures and place a drain. If there is clear main duct transection and more than 1–2cm of tail is involved, complete the distal pancreatectomy formally.</p>
+<h3>Scenario: Zone II haematoma is opened without prior vascular control, torrential haemorrhage.</h3>
+<p>This happens when a trainee opens Gerota's fascia before controlling the hilum. </p>
+<p><strong>The fix:</strong> immediate bimanual compression of the renal hilum between thumb and forefinger. Shout for the vascular clamp. Identify the renal artery by feel; pulsatile cord at the hilum. Clamp it. Now you have time to get control. If the kidney is beyond salvage: nephrectomy. The lesson: always, always control the pedicle before opening Gerota's.</p>
 </section>
-
 <!-- ══════════════ SECTION 4 ══════════════ -->
 <div class="sec-header s4">
-  <span class="sec-badge">SECTION 4</span>
-  <span class="sec-title">Spatial Awareness & Radiological Correlation</span>
+<span class="sec-badge">SECTION 4</span>
+<span class="sec-title">Spatial Awareness &amp; Radiological Correlation</span>
 </div>
-
 <section class="topic s4" id="p4a">
-  <div class="topic-header"><span class="topic-num">4.1</span><h2>Operative 3D Spatial Awareness</h2></div>
-  
-  <h3>The Spleen — The Surgeon's Left-Hand View</h3>
-  <p>Standing at the patient's right, looking to your left: the spleen is initially invisible. The left costal margin forms the anterior border. The left lobe of the liver occupies the epigastrium between you and the spleen. The stomach sits medially, fundus up against the diaphragm and the superior pole of the spleen.</p>
-  <p>When you retract the left costal margin upward with your retractor and pack the small bowel to the right, the left subphrenic space opens. The spleen becomes visible; a dark reddish-purple organ, roughly the size of your fist, sitting deep in the left hypochondrium. In a ruptured spleen, you will see dark clot in the perisplenic space and potentially active ooze from the capsular tear. The diaphragm curves over its superior surface. Posterolaterally, you may see a small window of the left kidney below the spleen, separated by the lienorenal ligament.</p>
-  <p>The hilum faces medially and slightly anteriorly. You cannot see the hilum without delivering the spleen. The pancreatic tail is not directly visible until you are deep in the hilus dissection; it is palpable as a firm cylindrical structure 0.5–1.5cm in diameter running toward the hilum from medially.</p>
-
-  <h3>The Kidney — The Retroperitoneal View</h3>
-  <p>After mobilising the right or left colon medially (or retracting the small bowel), the posterior peritoneum is exposed. The perirenal Gerota's fascia appears as a thickened yellowish layer of fascia. In significant haematoma, the retroperitoneum bulges anteriorly with a bluish discolouration, lifting the peritoneum toward you.</p>
-  <p>Before opening Gerota's, you are at the aorta. The left renal vein is your anatomical landmark; it is the first large blue venous structure you see crossing the aorta from left to right at the level of L2. The renal artery lies posterior and slightly superior to the left renal vein. For the right kidney, the right renal artery is deep, posterior to the IVC and right renal vein; you must retract the IVC medially to access it.</p>
+<div class="topic-header"><span class="topic-num">4.1</span><h2>Operative 3D Spatial Awareness</h2></div>
+<h3>The Spleen, The Surgeon's Left-Hand View</h3>
+<p>Standing at the patient's right, looking to your left: the spleen is initially invisible. The left costal margin forms the anterior border. The left lobe of the liver occupies the epigastrium between you and the spleen. The stomach sits medially, fundus up against the diaphragm and the superior pole of the spleen.</p>
+<p>When you retract the left costal margin upward with your retractor and pack the small bowel to the right, the left subphrenic space opens. The spleen becomes visible; a dark reddish-purple organ, roughly the size of your fist, sitting deep in the left hypochondrium. In a ruptured spleen, you will see dark clot in the perisplenic space and potentially active ooze from the capsular tear. The diaphragm curves over its superior surface. Posterolaterally, you may see a small window of the left kidney below the spleen, separated by the lienorenal ligament.</p>
+<p>The hilum faces medially and slightly anteriorly. You cannot see the hilum without delivering the spleen. The pancreatic tail is not directly visible until you are deep in the hilus dissection; it is palpable as a firm cylindrical structure 0.5–1.5cm in diameter running toward the hilum from medially.</p>
+<h3>The Kidney, The Retroperitoneal View</h3>
+<p>After mobilising the right or left colon medially (or retracting the small bowel), the posterior peritoneum is exposed. The perirenal Gerota's fascia appears as a thickened yellowish layer of fascia. In significant haematoma, the retroperitoneum bulges anteriorly with a bluish discolouration, lifting the peritoneum toward you.</p>
+<p>Before opening Gerota's, you are at the aorta. The left renal vein is your anatomical landmark; it is the first large blue venous structure you see crossing the aorta from left to right at the level of L2. The renal artery lies posterior and slightly superior to the left renal vein. For the right kidney, the right renal artery is deep, posterior to the IVC and right renal vein; you must retract the IVC medially to access it.</p>
 </section>
-
 <section class="topic s4" id="p4b">
-  <div class="topic-header"><span class="topic-num">4.2</span><h2>Radiological Correlation: The Consultant's Read</h2></div>
-  
-  <h3>Splenic CT Read Protocol</h3>
-  <p>Read splenic CT in this order, every time:</p>
-  <ul>
-    <li><strong>Arterial phase first:</strong> Look for active blush (high density, 150–200+ HU, within or adjacent to spleen). Distinguish from pseudoaneurysm (same density as aorta, contained, no enlargement on delayed phase). A blush that fades on delayed = venous bleeding. A blush that persists or enlarges = arterial.</li>
-    <li><strong>Portal venous phase:</strong> Assess parenchymal laceration depth. Measure subcapsular haematoma (% surface area). Identify devascularisation (wedge-shaped non-enhancement).</li>
-    <li><strong>Coronal reconstructions:</strong> Essential for hilar vessel involvement and extent of the laceration running from superior to inferior pole.</li>
-    <li><strong>Look for associated injuries:</strong> Left lower rib fractures, left renal contusion, splenic flexure haematoma, diaphragmatic injury (rare but present in high-grade splenic trauma).</li>
-  </ul>
-
-  <h3>The AAST Grade on CT — Rapid Correlation:</h3>
-  <div class="table-wrap s4-tbl"><table>
-    <thead><tr><th>CT Finding</th><th>AAST Grade</th><th>Management</th></tr></thead>
-    <tbody>
-      <tr><td>Subcapsular haematoma &lt;10%, hairline laceration</td><td>I</td><td>NOM, ward monitoring</td></tr>
-      <tr><td>Haematoma 10–50%, laceration 1–3cm, no blush</td><td>II</td><td>NOM, ICU if Grade II+</td></tr>
-      <tr><td>Haematoma &gt;50% or expanding, laceration &gt;3cm, blush present</td><td>III</td><td>NOM + angioembolisation</td></tr>
-      <tr><td>Segmental devascularisation &gt;25%, hilar vessel involvement, blush</td><td>IV</td><td>Embolisation (stable) or OR (unstable)</td></tr>
-      <tr><td>Shattered spleen, hilar avulsion, &gt;75% devascularisation</td><td>V</td><td>Splenectomy (usually)</td></tr>
-    </tbody>
-  </table></div>
-
-  <h3>Renal CT Read Protocol</h3>
-  <ul>
-    <li><strong>Corticomedullary phase (arterial):</strong> Renal parenchymal enhancement pattern. Non-enhancement of an entire kidney = vascular pedicle injury (Grade V) until proven otherwise.</li>
-    <li><strong>Nephrographic phase (portal venous, 70 sec):</strong> Parenchymal laceration depth. Subcapsular vs. perirenal haematoma. Gerota's fascia integrity.</li>
-    <li><strong>Delayed phase (7–10 minutes):</strong> Collecting system opacification. Contrast extravasation into perinephric space on this phase = collecting system disruption (Grade IV). Compare density of perinephric fluid on delayed vs. earlier phase; increasing density = active urine leak.</li>
-    <li><strong>Coronal reconstructions:</strong> Entire ureter from renal pelvis to bladder. Look for UPJ avulsion (gap in opacification at the pelviureteric junction; water hammer sign).</li>
-  </ul>
-
-  <h3>Critical Renal CT Signs:</h3>
-  <ul>
-    <li><strong>Rim sign:</strong> Thin rim of enhancing renal cortex around a non-enhancing kidney. Indicates capsular collateral supply is maintaining the cortex despite complete pedicle disruption. The kidney is technically salvageable if revascularised quickly.</li>
-    <li><strong>Medial perirenal haematoma + absent opacification on delayed phase:</strong> Renal vein or artery injury. Zone II haematoma medially located = vascular injury until proven otherwise.</li>
-    <li><strong>Urine extravasation sign:</strong> Increasing hyperdensity in the perirenal space from the portal venous phase to the delayed phase. Urine is mixing with contrast in the collecting system injury.</li>
-    <li><strong>Page Kidney on follow-up CT:</strong> Large subcapsular haematoma compressing renal parenchyma circumferentially. No active blush. Leads to renovascular hypertension (Goldblatt mechanism; renin-angiotensin activation).</li>
-  </ul>
+<div class="topic-header"><span class="topic-num">4.2</span><h2>Radiological Correlation: The Consultant's Read</h2></div>
+<h3>Splenic CT Read Protocol</h3>
+<p>Read splenic CT in this order, every time:</p>
+<ul>
+<li><strong>Arterial phase first:</strong> Look for active blush (high density, 150–200+ HU, within or adjacent to spleen). Distinguish from pseudoaneurysm (same density as aorta, contained, no enlargement on delayed phase). A blush that fades on delayed = venous bleeding. A blush that persists or enlarges = arterial.</li>
+<li><strong>Portal venous phase:</strong> Assess parenchymal laceration depth. Measure subcapsular haematoma (% surface area). Identify devascularisation (wedge-shaped non-enhancement).</li>
+<li><strong>Coronal reconstructions:</strong> Essential for hilar vessel involvement and extent of the laceration running from superior to inferior pole.</li>
+<li><strong>Look for associated injuries:</strong> Left lower rib fractures, left renal contusion, splenic flexure haematoma, diaphragmatic injury (rare but present in high-grade splenic trauma).</li>
+</ul>
+<h3>The AAST Grade on CT, Rapid Correlation:</h3>
+<div class="table-wrap s4-tbl"><table>
+<thead><tr><th>CT Finding</th><th>AAST Grade</th><th>Management</th></tr></thead>
+<tbody>
+<tr><td>Subcapsular haematoma &lt;10%, hairline laceration</td><td>I</td><td>NOM, ward monitoring</td></tr>
+<tr><td>Haematoma 10–50%, laceration 1–3cm, no blush</td><td>II</td><td>NOM, ICU if Grade II+</td></tr>
+<tr><td>Haematoma &gt;50% or expanding, laceration &gt;3cm, blush present</td><td>III</td><td>NOM + angioembolisation</td></tr>
+<tr><td>Segmental devascularisation &gt;25%, hilar vessel involvement, blush</td><td>IV</td><td>Embolisation (stable) or OR (unstable)</td></tr>
+<tr><td>Shattered spleen, hilar avulsion, &gt;75% devascularisation</td><td>V</td><td>Splenectomy (usually)</td></tr>
+</tbody>
+</table></div>
+<h3>Renal CT Read Protocol</h3>
+<ul>
+<li><strong>Corticomedullary phase (arterial):</strong> Renal parenchymal enhancement pattern. Non-enhancement of an entire kidney = vascular pedicle injury (Grade V) until proven otherwise.</li>
+<li><strong>Nephrographic phase (portal venous, 70 sec):</strong> Parenchymal laceration depth. Subcapsular vs. perirenal haematoma. Gerota's fascia integrity.</li>
+<li><strong>Delayed phase (7–10 minutes):</strong> Collecting system opacification. Contrast extravasation into perinephric space on this phase = collecting system disruption (Grade IV). Compare density of perinephric fluid on delayed vs. earlier phase; increasing density = active urine leak.</li>
+<li><strong>Coronal reconstructions:</strong> Entire ureter from renal pelvis to bladder. Look for UPJ avulsion (gap in opacification at the pelviureteric junction; water hammer sign).</li>
+</ul>
+<h3>Critical Renal CT Signs:</h3>
+<ul>
+<li><strong>Rim sign:</strong> Thin rim of enhancing renal cortex around a non-enhancing kidney. Indicates capsular collateral supply is maintaining the cortex despite complete pedicle disruption. The kidney is technically salvageable if revascularised quickly.</li>
+<li><strong>Medial perirenal haematoma + absent opacification on delayed phase:</strong> Renal vein or artery injury. Zone II haematoma medially located = vascular injury until proven otherwise.</li>
+<li><strong>Urine extravasation sign:</strong> Increasing hyperdensity in the perirenal space from the portal venous phase to the delayed phase. Urine is mixing with contrast in the collecting system injury.</li>
+<li><strong>Page Kidney on follow-up CT:</strong> Large subcapsular haematoma compressing renal parenchyma circumferentially. No active blush. Leads to renovascular hypertension (Goldblatt mechanism; renin-angiotensin activation).</li>
+</ul>
 </section>
-
 <!-- ══════════════ SECTION 5 ══════════════ -->
 <div class="sec-header s5">
-  <span class="sec-badge">SECTION 5</span>
-  <span class="sec-title">Senior Fellowship & Board Review</span>
+<span class="sec-badge">SECTION 5</span>
+<span class="sec-title">Senior Fellowship &amp; Board Review</span>
 </div>
-
 <section class="topic s5" id="p5a">
-  <div class="topic-header"><span class="topic-num">5.1</span><h2>High-Order Viva Scenarios — The Hot Seat</h2></div>
-  
-  <div class="callout exam">
-    <span class="label">HOT SEAT 1</span>
-    <p><strong>Q:</strong> A 34-year-old cyclist is brought in after being hit by a car. HR 115, BP 96/60. FAST shows free fluid in the splenorenal recess. CT (obtained because BP transiently improved to 105/70 with 1L saline) shows a Grade IV splenic laceration with a 2cm active arterial blush and 1L estimated haemoperitoneum. He is now HR 122, BP 88/58 on repeat assessment. What is your plan?</p>
-    <p><strong>A:</strong> He was stable enough for CT. He is not stable now. This is NOM failure before NOM has even started; or more accurately, this is a patient whose transient response to resuscitation was mistaken for true stability. The blush is there. The physiology is telling you the spleen is actively bleeding. The answer is NOT angioembolisation. He is deteriorating haemodynamically. The answer is operative splenectomy, now. Activate MTP. Take him to OR. The board trap here is being seduced by the blush on CT into ordering IR; a haemodynamically deteriorating patient does not go to the IR suite. They go to OR. Angioembolisation in an unstable patient is a diagnostic and therapeutic delay that costs lives.</p>
-  </div>
-
-  <div class="callout exam">
-    <span class="label">HOT SEAT 2</span>
-    <p><strong>Q:</strong> You perform a splenectomy. On table the patient is stable. Post-operatively Day 2, the drain output is 80mL of clear yellow fluid. Drain amylase comes back at 4,200 U/L (serum amylase 120 U/L). What happened and what do you do?</p>
-    <p><strong>A:</strong> You have a post-splenectomy pancreatic fistula; the pancreatic tail was injured during hilar stapling. Drain amylase &gt;3x serum amylase is diagnostic of a pancreatic fistula (ISGPF definition). The first step is to classify it: output &lt;200mL/day and clinically well = Grade A fistula, managed by leaving the drain in situ, optimising nutrition (enteral if tolerated, TPN if not), and octreotide 100mcg TDS to reduce pancreatic output. If output is &gt;500mL/day or the patient develops fever and sepsis = Grade B–C. Obtain a CT: if there is a collection, it needs either drain repositioning or a new percutaneous drain. An ERCP with pancreatic stent should be arranged if there is main duct injury (stenting bridges the disruption). Operative intervention is rarely required but includes distal pancreatectomy if all else fails. Lesson: always check the staple line at the hilum for pancreatic tissue before firing.</p>
-  </div>
-
-  <div class="callout exam">
-    <span class="label">HOT SEAT 3</span>
-    <p><strong>Q:</strong> A 22-year-old male presents 10 days after a blunt abdominal injury (admitted briefly then discharged with Grade II splenic injury managed conservatively). He now presents with sudden severe left upper quadrant pain, Kehr's sign, HR 132, BP 88/62. FAST: large free fluid.</p>
-    <p><strong>A:</strong> This is delayed splenic rupture. The mechanism: a subcapsular haematoma or contained perihepatic clot gradually expands, then the capsule gives way, releasing the contained haemorrhage into the peritoneum. This is haemodynamic instability with free haemoperitoneum. No time for CT. Activate MTP. Take to OR. Exploratory laparotomy and splenectomy. The board lesson: Grade II injuries can still rupture late. Delayed rupture peaks at Day 4–14 but has been described as late as 6 weeks. Discharge instructions after blunt splenic NOM must include a clear return-to-hospital protocol. Kehr's sign (left shoulder tip pain) in this context is pathognomonic: subphrenic blood irritates the diaphragm, which refers via C3–C5 (phrenic nerve) to the left shoulder tip.</p>
-  </div>
-
-  <div class="callout exam">
-    <span class="label">HOT SEAT 4</span>
-    <p><strong>Q:</strong> A 45-year-old man is stabbed in the left flank. He is haemodynamically stable. CT shows a Grade III renal laceration (&gt;1cm depth, no collecting system involvement) with a moderate perirenal haematoma contained within Gerota's fascia. No active blush. No other injuries. His urinalysis shows frank haematuria. What is your management?</p>
-    <p><strong>A:</strong> This is straightforward NOM. Grade III blunt or penetrating renal injury without vascular involvement, haemodynamic stability, contained haematoma, no active blush = non-operative. Admit to ICU, strict bed rest, serial haemoglobin every 6 hours, urinary catheter for urine monitoring. The haematuria will settle. Follow-up CT at 48–72h if clinically concerned. No antibiotics required prophylactically. The key board distinction: penetrating renal injury is NOT an automatic operative indication if the patient is stable and the injury is Grade III or below. The old teaching that all penetrating renal injuries require exploration is obsolete. NOM is safe and appropriate here.</p>
-  </div>
-
-  <div class="callout exam">
-    <span class="label">HOT SEAT 5</span>
-    <p><strong>Q:</strong> Intraoperatively for trauma laparotomy following GSW to the abdomen, you open the retroperitoneum and find a pulsatile Zone II haematoma on the right. You open Gerota's fascia. Torrential haemorrhage erupts from the renal hilum.</p>
-    <p><strong>A:</strong> You should not have opened Gerota's fascia without vascular control. That is the lesson, but now you have to fix the problem. Bimanual compression of the hilum immediately. Shout for a vascular clamp and sucker. Identify the renal artery; it is the pulsatile structure at the hilum. Apply a soft vascular clamp. Now you have time to get control. Assess the kidney: if the right renal vein is avulsed from the IVC, you need IVC control as well; apply a side-biting Satinsky clamp to the IVC at the renal vein orifice. If the kidney is shattered and the patient is coagulopathic; nephrectomy. If the kidney appears viable and warm ischaemia has been minimal; attempt repair. Confirm the left kidney exists and functions before completing nephrectomy (one-shot IVP: 2mL/kg contrast, abdominal XR at 10 minutes). A nephrectomy on a patient with a single kidney = renal failure = dialysis = preventable catastrophe.</p>
-  </div>
-
-  <div class="callout exam">
-    <span class="label">HOT SEAT 6</span>
-    <p><strong>Q:</strong> You are 3 months post-splenectomy in a 28-year-old patient who had emergency splenectomy for Grade V injury. She presents to the emergency department febrile (40.1°C), rigor, confused, BP 80/50, HR 142. No obvious source found on examination. What is your diagnosis and immediate management?</p>
-    <p><strong>A:</strong> This is Overwhelming Post-Splenectomy Infection (OPSI) until proven otherwise. This is a haematological emergency with mortality &gt;50% if treatment is delayed even by hours. Immediate management: blood cultures (two sets), then empirical antibiotics immediately; do not wait for culture results. Ceftriaxone 2g IV (covers pneumococcus, meningococcus, H. influenzae). If penicillin-allergic: vancomycin + aztreonam. Aggressive fluid resuscitation. ICU admission. Vasopressors if required. Ask: was she vaccinated? Is she on penicillin prophylaxis? If she missed her vaccines or has not been taking penicillin V; these are care failures that must be documented and addressed. The responsible organism is S. pneumoniae in 50–90% of cases. Check for disseminated intravascular coagulation (DIC): FBC, clotting, fibrinogen. OPSI can progress to DIC and multi-organ failure within 24 hours. This is the single most serious late complication of splenectomy.</p>
-  </div>
+<div class="topic-header"><span class="topic-num">5.1</span><h2>High-Order Viva Scenarios: The Hot Seat</h2></div>
+<div class="callout exam">
+<span class="label">HOT SEAT 1</span>
+<p><strong>Q:</strong> A 34-year-old cyclist is brought in after being hit by a car. HR 115, BP 96/60. FAST shows free fluid in the splenorenal recess. CT (obtained because BP transiently improved to 105/70 with 1L saline) shows a Grade IV splenic laceration with a 2cm active arterial blush and 1L estimated haemoperitoneum. He is now HR 122, BP 88/58 on repeat assessment. What is your plan?</p>
+<p><strong>A:</strong> He was stable enough for CT. He is not stable now. This is NOM failure before NOM has even started; or more accurately, this is a patient whose transient response to resuscitation was mistaken for true stability. The blush is there. The physiology is telling you the spleen is actively bleeding. The answer is NOT angioembolisation. He is deteriorating haemodynamically. The answer is operative splenectomy, now. Activate MTP. Take him to OR. The board trap here is being seduced by the blush on CT into ordering IR; a haemodynamically deteriorating patient does not go to the IR suite. They go to OR. Angioembolisation in an unstable patient is a diagnostic and therapeutic delay that costs lives.</p>
+</div>
+<div class="callout exam">
+<span class="label">HOT SEAT 2</span>
+<p><strong>Q:</strong> You perform a splenectomy. On table the patient is stable. Post-operatively Day 2, the drain output is 80mL of clear yellow fluid. Drain amylase comes back at 4,200 U/L (serum amylase 120 U/L). What happened and what do you do?</p>
+<p><strong>A:</strong> You have a post-splenectomy pancreatic fistula; the pancreatic tail was injured during hilar stapling. Drain amylase &gt;3x serum amylase is diagnostic of a pancreatic fistula (ISGPF definition). The first step is to classify it: output &lt;200mL/day and clinically well = Grade A fistula, managed by leaving the drain in situ, optimising nutrition (enteral if tolerated, TPN if not), and octreotide 100mcg TDS to reduce pancreatic output. If output is &gt;500mL/day or the patient develops fever and sepsis = Grade B–C. Obtain a CT: if there is a collection, it needs either drain repositioning or a new percutaneous drain. An ERCP with pancreatic stent should be arranged if there is main duct injury (stenting bridges the disruption). Operative intervention is rarely required but includes distal pancreatectomy if all else fails. Lesson: always check the staple line at the hilum for pancreatic tissue before firing.</p>
+</div>
+<div class="callout exam">
+<span class="label">HOT SEAT 3</span>
+<p><strong>Q:</strong> A 22-year-old male presents 10 days after a blunt abdominal injury (admitted briefly then discharged with Grade II splenic injury managed conservatively). He now presents with sudden severe left upper quadrant pain, Kehr's sign, HR 132, BP 88/62. FAST: large free fluid.</p>
+<p><strong>A:</strong> This is delayed splenic rupture. The mechanism: a subcapsular haematoma or contained perihepatic clot gradually expands, then the capsule gives way, releasing the contained haemorrhage into the peritoneum. This is haemodynamic instability with free haemoperitoneum. No time for CT. Activate MTP. Take to OR. Exploratory laparotomy and splenectomy. The board lesson: Grade II injuries can still rupture late. Delayed rupture peaks at Day 4–14 but has been described as late as 6 weeks. Discharge instructions after blunt splenic NOM must include a clear return-to-hospital protocol. Kehr's sign (left shoulder tip pain) in this context is pathognomonic: subphrenic blood irritates the diaphragm, which refers via C3–C5 (phrenic nerve) to the left shoulder tip.</p>
+</div>
+<div class="callout exam">
+<span class="label">HOT SEAT 4</span>
+<p><strong>Q:</strong> A 45-year-old man is stabbed in the left flank. He is haemodynamically stable. CT shows a Grade III renal laceration (&gt;1cm depth, no collecting system involvement) with a moderate perirenal haematoma contained within Gerota's fascia. No active blush. No other injuries. His urinalysis shows frank haematuria. What is your management?</p>
+<p><strong>A:</strong> This is straightforward NOM. Grade III blunt or penetrating renal injury without vascular involvement, haemodynamic stability, contained haematoma, no active blush = non-operative. Admit to ICU, strict bed rest, serial haemoglobin every 6 hours, urinary catheter for urine monitoring. The haematuria will settle. Follow-up CT at 48–72h if clinically concerned. No antibiotics required prophylactically. The key board distinction: penetrating renal injury is NOT an automatic operative indication if the patient is stable and the injury is Grade III or below. The old teaching that all penetrating renal injuries require exploration is obsolete. NOM is safe and appropriate here.</p>
+</div>
+<div class="callout exam">
+<span class="label">HOT SEAT 5</span>
+<p><strong>Q:</strong> Intraoperatively for trauma laparotomy following GSW to the abdomen, you open the retroperitoneum and find a pulsatile Zone II haematoma on the right. You open Gerota's fascia. Torrential haemorrhage erupts from the renal hilum.</p>
+<p><strong>A:</strong> You should not have opened Gerota's fascia without vascular control. That is the lesson, but now you have to fix the problem. Bimanual compression of the hilum immediately. Shout for a vascular clamp and sucker. Identify the renal artery; it is the pulsatile structure at the hilum. Apply a soft vascular clamp. Now you have time to get control. Assess the kidney: if the right renal vein is avulsed from the IVC, you need IVC control as well; apply a side-biting Satinsky clamp to the IVC at the renal vein orifice. If the kidney is shattered and the patient is coagulopathic; nephrectomy. If the kidney appears viable and warm ischaemia has been minimal; attempt repair. Confirm the left kidney exists and functions before completing nephrectomy (one-shot IVP: 2mL/kg contrast, abdominal XR at 10 minutes). A nephrectomy on a patient with a single kidney = renal failure = dialysis = preventable catastrophe.</p>
+</div>
+<div class="callout exam">
+<span class="label">HOT SEAT 6</span>
+<p><strong>Q:</strong> You are 3 months post-splenectomy in a 28-year-old patient who had emergency splenectomy for Grade V injury. She presents to the emergency department febrile (40.1°C), rigor, confused, BP 80/50, HR 142. No obvious source found on examination. What is your diagnosis and immediate management?</p>
+<p><strong>A:</strong> This is Overwhelming Post-Splenectomy Infection (OPSI) until proven otherwise. This is a haematological emergency with mortality &gt;50% if treatment is delayed even by hours. Immediate management: blood cultures (two sets), then empirical antibiotics immediately; do not wait for culture results. Ceftriaxone 2g IV (covers pneumococcus, meningococcus, H. influenzae). If penicillin-allergic: vancomycin + aztreonam. Aggressive fluid resuscitation. ICU admission. Vasopressors if required. Ask: was she vaccinated? Is she on penicillin prophylaxis? If she missed her vaccines or has not been taking penicillin V; these are care failures that must be documented and addressed. The responsible organism is S. pneumoniae in 50–90% of cases. Check for disseminated intravascular coagulation (DIC): FBC, clotting, fibrinogen. OPSI can progress to DIC and multi-organ failure within 24 hours. This is the single most serious late complication of splenectomy.</p>
+</div>
 </section>
-
 <section class="topic s5" id="p5b">
-  <div class="topic-header"><span class="topic-num">5.2</span><h2>Classifications & Scoring Systems</h2></div>
-  
-  <h3>AAST Organ Injury Scale: Spleen & Kidney (Full Grade Table)</h3>
-  <div class="table-wrap s5-tbl"><table>
-    <thead><tr><th>Grade</th><th>Spleen</th><th>Kidney</th></tr></thead>
-    <tbody>
-      <tr><td><strong>I</strong></td><td>Subcapsular haematoma &lt;10% surface area; capsular laceration &lt;1cm depth</td><td>Microscopic/gross haematuria, urological studies normal; subcapsular non-expanding haematoma without parenchymal laceration</td></tr>
-      <tr><td><strong>II</strong></td><td>Subcapsular haematoma 10–50%; laceration 1–3cm depth, not involving trabecular vessels</td><td>Non-expanding perinephric haematoma confined to renal retroperitoneum; laceration &lt;1cm depth without collecting system rupture</td></tr>
-      <tr><td><strong>III</strong></td><td>Subcapsular haematoma &gt;50% surface area or expanding; laceration &gt;3cm depth or involving trabecular vessels</td><td>Laceration &gt;1cm depth without collecting system rupture or urinary extravasation</td></tr>
-      <tr><td><strong>IV</strong></td><td>Laceration involving segmental or hilar vessels, producing &gt;25% devascularisation</td><td>Laceration involving cortex, medulla, and collecting system; renal artery/vein injury with contained haemorrhage</td></tr>
-      <tr><td><strong>V</strong></td><td>Shattered spleen; hilar vascular injury devascularising the spleen</td><td>Completely shattered kidney; avulsion of renal hilum devascularising the kidney</td></tr>
-    </tbody>
-  </table></div>
-
-  <h3>WSES Splenic Injury Classification (Physiological Overlay):</h3>
-  <div class="table-wrap s5-tbl"><table>
-    <thead><tr><th>WSES Class</th><th>AAST Grade</th><th>Haemodynamic Status</th><th>Management</th></tr></thead>
-    <tbody>
-      <tr><td>Minor</td><td>I–II</td><td>Stable</td><td>NOM</td></tr>
-      <tr><td>Moderate</td><td>III</td><td>Stable</td><td>NOM ± embolisation</td></tr>
-      <tr><td>Severe</td><td>IV–V</td><td>Stable</td><td>Embolisation or OR</td></tr>
-      <tr><td>Severe</td><td>I–V</td><td>Unstable</td><td>Immediate OR</td></tr>
-    </tbody>
-  </table></div>
-
-  <h3>NOM Failure Criteria (EAST 2024):</h3>
-  <ul>
-    <li>Haemoglobin fall &gt;2g/dL over 6 hours despite transfusion</li>
-    <li>Persistent tachycardia (HR &gt;120) after adequate resuscitation</li>
-    <li>Hypotension (SBP &lt;90) not responding to 2 units pRBC</li>
-    <li>Peritonism developing during observation</li>
-    <li>Transfusion requirement &gt;4 units pRBC within 24 hours of NOM initiation</li>
-    <li>New or enlarging blush on repeat CT-angio</li>
-  </ul>
+<div class="topic-header"><span class="topic-num">5.2</span><h2>Classifications &amp; Scoring Systems</h2></div>
+<h3>AAST Organ Injury Scale: Spleen &amp; Kidney (Full Grade Table)</h3>
+<div class="table-wrap s5-tbl"><table>
+<thead><tr><th>Grade</th><th>Spleen</th><th>Kidney</th></tr></thead>
+<tbody>
+<tr><td><strong>I</strong></td><td>Subcapsular haematoma &lt;10% surface area; capsular laceration &lt;1cm depth</td><td>Microscopic/gross haematuria, urological studies normal; subcapsular non-expanding haematoma without parenchymal laceration</td></tr>
+<tr><td><strong>II</strong></td><td>Subcapsular haematoma 10–50%; laceration 1–3cm depth, not involving trabecular vessels</td><td>Non-expanding perinephric haematoma confined to renal retroperitoneum; laceration &lt;1cm depth without collecting system rupture</td></tr>
+<tr><td><strong>III</strong></td><td>Subcapsular haematoma &gt;50% surface area or expanding; laceration &gt;3cm depth or involving trabecular vessels</td><td>Laceration &gt;1cm depth without collecting system rupture or urinary extravasation</td></tr>
+<tr><td><strong>IV</strong></td><td>Laceration involving segmental or hilar vessels, producing &gt;25% devascularisation</td><td>Laceration involving cortex, medulla, and collecting system; renal artery/vein injury with contained haemorrhage</td></tr>
+<tr><td><strong>V</strong></td><td>Shattered spleen; hilar vascular injury devascularising the spleen</td><td>Completely shattered kidney; avulsion of renal hilum devascularising the kidney</td></tr>
+</tbody>
+</table></div>
+<h3>WSES Splenic Injury Classification (Physiological Overlay):</h3>
+<div class="table-wrap s5-tbl"><table>
+<thead><tr><th>WSES Class</th><th>AAST Grade</th><th>Haemodynamic Status</th><th>Management</th></tr></thead>
+<tbody>
+<tr><td>Minor</td><td>I–II</td><td>Stable</td><td>NOM</td></tr>
+<tr><td>Moderate</td><td>III</td><td>Stable</td><td>NOM ± embolisation</td></tr>
+<tr><td>Severe</td><td>IV–V</td><td>Stable</td><td>Embolisation or OR</td></tr>
+<tr><td>Severe</td><td>I–V</td><td>Unstable</td><td>Immediate OR</td></tr>
+</tbody>
+</table></div>
+<h3>NOM Failure Criteria (EAST 2024):</h3>
+<ul>
+<li>Haemoglobin fall &gt;2g/dL over 6 hours despite transfusion</li>
+<li>Persistent tachycardia (HR &gt;120) after adequate resuscitation</li>
+<li>Hypotension (SBP &lt;90) not responding to 2 units pRBC</li>
+<li>Peritonism developing during observation</li>
+<li>Transfusion requirement &gt;4 units pRBC within 24 hours of NOM initiation</li>
+<li>New or enlarging blush on repeat CT-angio</li>
+</ul>
 </section>
-
 <!-- ══════════════ RAPID REFERENCE ══════════════ -->
 <div class="rapid-ref" id="rapid">
-  <h3>Rapid Board Review: Splenic & Renal Injury Cheat Sheet</h3>
-  <table>
-    <thead><tr><th>Fact #</th><th>Key Fact</th></tr></thead>
-    <tbody>
-      <tr><td>1</td><td>Spleen = most commonly injured solid organ in blunt trauma (25–30%). <strong>Left ribs 9–11 fractures: always image for splenic injury.</strong> FAST sensitivity for spleen is only 55–70%.</td></tr>
-      <tr><td>2</td><td>AAST Grade drives management. Grade I–II = NOM, ward level. Grade III = NOM + CT-angio, embolise the blush. Grade IV = embolisation in stable patients, OR in unstable. Grade V = splenectomy in almost all cases. Haemodynamic instability at any grade = OR.</td></tr>
-      <tr><td>3</td><td>Active blush on CT = arterial extravasation. Pseudoaneurysm = same density as aorta, does not enlarge between phases. Both require angioembolisation. Blush in an unstable patient = OR, not IR.</td></tr>
-      <tr><td>4</td><td>Delayed splenic rupture peaks Day 4–14, up to 6 weeks. Kehr's sign (left shoulder tip pain) = subphrenic free blood via phrenic nerve (C3–C5). After discharge from NOM, strict return precautions are mandatory.</td></tr>
-      <tr><td>5</td><td>Post-splenectomy vaccines at Day 14 (not acutely). Pneumococcal (PCV13 + PPSV23), Meningococcal ACWY + B, Hib. Penicillin V prophylaxis lifelong. OPSI = 3–5% lifetime risk, &gt;50% mortality from S. pneumoniae in 50–90%.</td></tr>
-      <tr><td>6</td><td>Pancreatic tail is within 1cm of the splenic hilum in 75% of people. Mass stapling the splenic hilum without checking = pancreatic tail injury = pancreatic fistula. Always palpate before firing the stapler.</td></tr>
-      <tr><td>7</td><td>Haematuria guides renal imaging but NOT injury severity. Up to 25% of Grade V pedicle avulsions present WITHOUT haematuria. Any high-energy mechanism + renal proximity = CT with delayed phase regardless.</td></tr>
-      <tr><td>8</td><td><strong>Control the renal vascular pedicle BEFORE opening Gerota's fascia.</strong> Access the vessels at the aorta via the posterior peritoneum, using the left renal vein crossing the aorta as the landmark. This is the most examinable operative principle in renal trauma.</td></tr>
-      <tr><td>9</td><td>Right renal vein is short (2–3cm), enters IVC directly. Left renal vein is long (6–7cm), crosses the aorta, receives left gonadal + adrenal tributaries. Left renal vein can be ligated at the IVC if its tributaries are preserved (venous drainage maintained via collaterals).</td></tr>
-      <tr><td>10</td><td>Before nephrectomy, always confirm contralateral renal function. One-shot IVP: 2mL/kg IV contrast, KUB film at 10 minutes. A nephrectomy on a solitary kidney = obligate dialysis. Warm ischaemia tolerance for repair = 30–60 minutes (functional recovery unlikely beyond 6 hours).</td></tr>
-    </tbody>
-  </table>
+<h3>Rapid Board Review: Splenic &amp; Renal Injury Cheat Sheet</h3>
+<table>
+<thead><tr><th>Fact #</th><th>Key Fact</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>Spleen = most commonly injured solid organ in blunt trauma (25–30%). <strong>Left ribs 9–11 fractures: always image for splenic injury.</strong> FAST sensitivity for spleen is only 55–70%.</td></tr>
+<tr><td>2</td><td>AAST Grade drives management. Grade I–II = NOM, ward level. Grade III = NOM + CT-angio, embolise the blush. Grade IV = embolisation in stable patients, OR in unstable. Grade V = splenectomy in almost all cases. Haemodynamic instability at any grade = OR.</td></tr>
+<tr><td>3</td><td>Active blush on CT = arterial extravasation. Pseudoaneurysm = same density as aorta, does not enlarge between phases. Both require angioembolisation. Blush in an unstable patient = OR, not IR.</td></tr>
+<tr><td>4</td><td>Delayed splenic rupture peaks Day 4–14, up to 6 weeks. Kehr's sign (left shoulder tip pain) = subphrenic free blood via phrenic nerve (C3–C5). After discharge from NOM, strict return precautions are mandatory.</td></tr>
+<tr><td>5</td><td>Post-splenectomy vaccines at Day 14 (not acutely). Pneumococcal (PCV13 + PPSV23), Meningococcal ACWY + B, Hib. Penicillin V prophylaxis lifelong. OPSI = 3–5% lifetime risk, &gt;50% mortality from S. pneumoniae in 50–90%.</td></tr>
+<tr><td>6</td><td>Pancreatic tail is within 1cm of the splenic hilum in 75% of people. Mass stapling the splenic hilum without checking = pancreatic tail injury = pancreatic fistula. Always palpate before firing the stapler.</td></tr>
+<tr><td>7</td><td>Haematuria guides renal imaging but NOT injury severity. Up to 25% of Grade V pedicle avulsions present WITHOUT haematuria. Any high-energy mechanism + renal proximity = CT with delayed phase regardless.</td></tr>
+<tr><td>8</td><td><strong>Control the renal vascular pedicle BEFORE opening Gerota's fascia.</strong> Access the vessels at the aorta via the posterior peritoneum, using the left renal vein crossing the aorta as the landmark. This is the most examinable operative principle in renal trauma.</td></tr>
+<tr><td>9</td><td>Right renal vein is short (2–3cm), enters IVC directly. Left renal vein is long (6–7cm), crosses the aorta, receives left gonadal + adrenal tributaries. Left renal vein can be ligated at the IVC if its tributaries are preserved (venous drainage maintained via collaterals).</td></tr>
+<tr><td>10</td><td>Before nephrectomy, always confirm contralateral renal function. One-shot IVP: 2mL/kg IV contrast, KUB film at 10 minutes. A nephrectomy on a solitary kidney = obligate dialysis. Warm ischaemia tolerance for repair = 30–60 minutes (functional recovery unlikely beyond 6 hours).</td></tr>
+</tbody>
+</table>
 </div>
-
 </div><!-- end content-wrap -->
 </main>
-
 <button id="top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
-
 <script>
 const progressBar = document.getElementById('progress-bar');
 const topBtn = document.getElementById('top-btn');

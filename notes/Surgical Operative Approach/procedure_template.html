@@ -1,193 +1,172 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Procedure Template — Operative Playbook</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../css/theme.css?v=4.0.0">
-<link rel="stylesheet" href="../../css/shared.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Procedure Template | Operative Playbook</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../../css/theme.css?v=4.0.0" rel="stylesheet"/>
+<link href="../../css/shared.css" rel="stylesheet"/>
 </head>
 <body>
-
-  <!-- Standardized SIH Navbar -->
-  <nav class="nav" id="mainNav">
-    <div class="nav-left">
-      <a href="../../index.html" class="nav-pill">
-        <div class="nav-logo-img">
-          <img src="../../assets/images/Surgical_Insight_Hub_Logo.png" alt="SIH Logo">
-        </div>
-        <div>
-          <div class="nav-brand-text">Surgical Insight Hub</div>
-          <div class="nav-brand-sub">The Residency Journal</div>
-        </div>
-      </a>
-    </div>
-
-    <div class="nav-links-pill">
-      <a href="../../index.html">Home</a>
-      <a href="../../notes.html">Notes</a>
-      <a href="../operative_approach.html" class="active">Playbook</a>
-      <a href="../../arena.html?v=4.0.0">MCQ Arena</a>
-      <a href="../../podcast.html">Podcast</a>
-      <a href="../../surgery-talk.html">Surgery Talk</a>
-      <a href="../../about.html">About</a>
-    </div>
-
-    <div class="nav-right">
-      <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
-        <svg id="moonIcon" viewBox="0 0 24 24" width="18" height="18"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-        <svg id="sunIcon" style="display:none;" viewBox="0 0 24 24" width="18" height="18"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-      </button>
-      <a href="https://t.me/sugicalInsightHub" target="_blank" class="nav-tg-btn" title="Join Telegram">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="#f0d080"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.89 8.22l-1.97 9.28c-.15.66-.54.82-1.08.51l-3-2.21-1.45 1.39c-.16.16-.3.3-.61.3l.21-3.05 5.56-5.02c.24-.21-.05-.33-.37-.12l-6.87 4.33-2.96-.92c-.64-.2-.66-.64.14-.95l11.57-4.46c.54-.19 1.01.13.83.94z"/></svg>
-      </a>
-      <a href="../../arena.html?v=4.0.0" class="nav-btn arena-btn">MCQ Arena</a>
-      <button class="mob-nav-toggle" onclick="openMobNav()" aria-label="Menu">
-        <div class="hamburger"><span></span><span></span><span></span></div>
-      </button>
-    </div>
-  </nav>
-
+<!-- Standardized SIH Navbar -->
+<nav class="nav" id="mainNav">
+<div class="nav-left">
+<a class="nav-pill" href="../../index.html">
+<div class="nav-logo-img">
+<img alt="SIH Logo" src="../../assets/images/Surgical_Insight_Hub_Logo.png"/>
+</div>
+<div>
+<div class="nav-brand-text">Surgical Insight Hub</div>
+<div class="nav-brand-sub">The Residency Journal</div>
+</div>
+</a>
+</div>
+<div class="nav-links-pill">
+<a href="../../index.html">Home</a>
+<a href="../../notes.html">Notes</a>
+<a class="active" href="../operative_approach.html">Playbook</a>
+<a href="../../arena.html?v=4.0.0">MCQ Arena</a>
+<a href="../../podcast.html">Podcast</a>
+<a href="../../surgery-talk.html">Surgery Talk</a>
+<a href="../../about.html">About</a>
+</div>
+<div class="nav-right">
+<button aria-label="Toggle Theme" class="theme-toggle" id="themeToggle">
+<svg height="18" id="moonIcon" viewbox="0 0 24 24" width="18"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+<svg height="18" id="sunIcon" style="display:none;" viewbox="0 0 24 24" width="18"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line><line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line><line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line></svg>
+</button>
+<a class="nav-tg-btn" href="https://t.me/sugicalInsightHub" target="_blank" title="Join Telegram">
+<svg fill="#f0d080" height="18" viewbox="0 0 24 24" width="18"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.89 8.22l-1.97 9.28c-.15.66-.54.82-1.08.51l-3-2.21-1.45 1.39c-.16.16-.3.3-.61.3l.21-3.05 5.56-5.02c.24-.21-.05-.33-.37-.12l-6.87 4.33-2.96-.92c-.64-.2-.66-.64.14-.95l11.57-4.46c.54-.19 1.01.13.83.94z"></path></svg>
+</a>
+<a class="nav-btn arena-btn" href="../../arena.html?v=4.0.0">MCQ Arena</a>
+<button aria-label="Menu" class="mob-nav-toggle" onclick="openMobNav()">
+<div class="hamburger"><span></span><span></span><span></span></div>
+</button>
+</div>
+</nav>
 <div class="mob-nav-overlay" id="mobNavOverlay" onclick="closeMobNav()"></div>
 <div class="mob-nav-sheet" id="mobNavSheet">
-  <div class="mob-nav-handle"></div>
-  <a href="../../index.html" onclick="closeMobNav()">Home</a>
-  <a href="../../notes.html" onclick="closeMobNav()">Notes</a>
-  <a href="../../notes/operative_approach.html" onclick="closeMobNav()">Playbook</a>
-  <a href="../../podcast.html" onclick="closeMobNav()">Podcast</a>
-  <a href="../../surgery-talk.html" onclick="closeMobNav()">Surgery Talk</a>
-  <a href="../../arena.html" onclick="closeMobNav()">MCQ Arena</a>
-  <a href="../../about.html" onclick="closeMobNav()">About</a>
-  <a href="https://t.me/sugicalInsightHub" target="_blank" rel="noopener" onclick="closeMobNav()" style="color: var(--brand-gold); font-weight: 800;">Join Telegram Community</a>
-  <a href="https://www.linkedin.com/company/surgical-insight-hub" target="_blank" rel="noopener" onclick="closeMobNav()" style="color: var(--brand-gold); font-weight: 800;">LinkedIn Community</a>
+<div class="mob-nav-handle"></div>
+<a href="../../index.html" onclick="closeMobNav()">Home</a>
+<a href="../../notes.html" onclick="closeMobNav()">Notes</a>
+<a href="../../notes/operative_approach.html" onclick="closeMobNav()">Playbook</a>
+<a href="../../podcast.html" onclick="closeMobNav()">Podcast</a>
+<a href="../../surgery-talk.html" onclick="closeMobNav()">Surgery Talk</a>
+<a href="../../arena.html" onclick="closeMobNav()">MCQ Arena</a>
+<a href="../../about.html" onclick="closeMobNav()">About</a>
+<a href="https://t.me/sugicalInsightHub" onclick="closeMobNav()" rel="noopener" style="color: var(--brand-gold); font-weight: 800;" target="_blank">Join Telegram Community</a>
+<a href="https://www.linkedin.com/company/surgical-insight-hub" onclick="closeMobNav()" rel="noopener" style="color: var(--brand-gold); font-weight: 800;" target="_blank">LinkedIn Community</a>
 </div>
-    <a href="https://t.me/sugicalInsightHub" target="_blank" rel="noopener" onclick="closeMobNav()" style="color: var(--brand-gold); font-weight: 800;">Join Telegram Community</a>
-  </div>
-
+<a href="https://t.me/sugicalInsightHub" onclick="closeMobNav()" rel="noopener" style="color: var(--brand-gold); font-weight: 800;" target="_blank">Join Telegram Community</a>
 
 <header class="editorial-hero">
-  <div class="ed-kicker">Procedure Mastery</div>
-  <h1>[Procedure Name Here]</h1>
-  <div class="ed-meta">
-    <span>Level: Senior Resident</span>
-    <span>Specialty: [General Surgery]</span>
-    <span>Time: [60-90 mins]</span>
-  </div>
-</header>
-
-<div class="editorial-grid">
-  <main class="editorial-content">
-    <!-- 1. PRE-OP -->
-    <section id="preop">
-      <h2>1. Pre-operative Optimization & Preparation</h2>
-      <p>Before making the skin incision, the patient must be optimized. Key considerations include:</p>
-      <ul>
-        <li><strong>Optimization:</strong> [E.g., Fluid resuscitation, correction of coagulopathy]</li>
-        <li><strong>Preparation:</strong> [E.g., Bowel prep, antibiotics, DVT prophylaxis]</li>
-        <li><strong>Positioning:</strong> [E.g., Supine, Lithotomy, Reverse Trendelenburg]</li>
-      </ul>
-    </section>
-
-    <!-- 2. GAME PLAN -->
-    <section id="plan">
-      <h2>2. The Operative "Game Plan"</h2>
-      
-      <div class="step-row">
-        <div class="step-num">1</div>
-        <div class="step-content">
-          <h4>Access & Exposure</h4>
-          <p>[Describe port placement or incision type. Anatomical landmarks to identify.]</p>
-        </div>
-      </div>
-      
-      <div class="step-row">
-        <div class="step-num">2</div>
-        <div class="step-content">
-          <h4>Primary Objective</h4>
-          <p>[The core technical maneuver of the procedure.]</p>
-        </div>
-      </div>
-      
-      <div class="step-row">
-        <div class="step-num">3</div>
-        <div class="step-content">
-          <h4>Closure & Final Safety Check</h4>
-          <p>[Specimen retrieval, drain placement, and systematic cavity inspection.]</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- 3. PEARLS & BAILOUT -->
-    <section id="pearls">
-      <h2>3. Technical Pearls & "Bail-out" Strategies</h2>
-      
-      <div class="pearl-box">
-        <h5>The "Senior Pearl"</h5>
-        <p>[A specific technical tip that makes the procedure easier or safer.]</p>
-      </div>
-      
-      <div class="bailout-box">
-        <h5>Bail-out Strategy: [Difficult Case Scenario]</h5>
-        <p>If you encounter [specific difficulty], the safest exit strategy is:
-        <br>1. [Step 1]
-        <br>2. [Step 2]</p>
-      </div>
-    </section>
-
-    <!-- 4. POST-OP -->
-    <section id="postop">
-      <h2>4. Post-operative Care & Longitudinal Follow-up</h2>
-      <p>Immediate postoperative goals and long-term milestones:</p>
-      <ul>
-        <li><strong>Day 0-1:</strong> [Diet advancement, mobilization goals]</li>
-        <li><strong>Discharge Criteria:</strong> [Pain control, bowel function]</li>
-        <li><strong>Longitudinal:</strong> [Follow-up timeline and pathology review]</li>
-      </ul>
-    </section>
-
-    <!-- 5. COMPLICATIONS -->
-    <section id="complications">
-      <h2>5. Complication Management</h2>
-      <p>Identification and management of procedure-specific complications:</p>
-      
-      <div class="step-row" style="background:var(--bg-secondary);">
-        <div class="step-content">
-          <h4>Early Complications</h4>
-          <p>[Bleeding, Infection, Leak]</p>
-        </div>
-      </div>
-      
-      <div class="step-row" style="background:var(--bg-secondary);">
-        <div class="step-content">
-          <h4>Late Complications</h4>
-          <p>[Stricture, Incisional Hernia]</p>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <aside class="editorial-sidebar">
-    <div class="sidebar-box">
-      <h4>Anatomic Landmarks</h4>
-      <ul class="sidebar-list">
-        <li><a href="#preop">[Landmark 1]</a></li>
-        <li><a href="#plan">[Landmark 2]</a></li>
-        <li><a href="#pearls">[Landmark 3]</a></li>
-      </ul>
-    </div>
-    
-    <div class="sidebar-box" style="border-color: rgba(220, 38, 38, 0.3);">
-      <h4 style="color: #dc2626;">Critical Zones</h4>
-      <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6;">Identifying the [specific structure] is mandatory to avoid [specific injury].</p>
-    </div>
-  </aside>
+<div class="ed-kicker">Procedure Mastery</div>
+<h1>[Procedure Name Here]</h1>
+<div class="ed-meta">
+<span>Level: Senior Resident</span>
+<span>Specialty: [General Surgery]</span>
+<span>Time: [60-90 mins]</span>
 </div>
-
+</header>
+<div class="editorial-grid">
+<main class="editorial-content">
+<!-- 1. PRE-OP -->
+<section id="preop">
+<h2>1. Pre-operative Optimization &amp; Preparation</h2>
+<p>Before making the skin incision, the patient must be optimized. Key considerations include:</p>
+<ul>
+<li><strong>Optimization:</strong> [E.g., Fluid resuscitation, correction of coagulopathy]</li>
+<li><strong>Preparation:</strong> [E.g., Bowel prep, antibiotics, DVT prophylaxis]</li>
+<li><strong>Positioning:</strong> [E.g., Supine, Lithotomy, Reverse Trendelenburg]</li>
+</ul>
+</section>
+<!-- 2. GAME PLAN -->
+<section id="plan">
+<h2>2. The Operative "Game Plan"</h2>
+<div class="step-row">
+<div class="step-num">1</div>
+<div class="step-content">
+<h4>Access &amp; Exposure</h4>
+<p>[Describe port placement or incision type. Anatomical landmarks to identify.]</p>
+</div>
+</div>
+<div class="step-row">
+<div class="step-num">2</div>
+<div class="step-content">
+<h4>Primary Objective</h4>
+<p>[The core technical maneuver of the procedure.]</p>
+</div>
+</div>
+<div class="step-row">
+<div class="step-num">3</div>
+<div class="step-content">
+<h4>Closure &amp; Final Safety Check</h4>
+<p>[Specimen retrieval, drain placement, and systematic cavity inspection.]</p>
+</div>
+</div>
+</section>
+<!-- 3. PEARLS & BAILOUT -->
+<section id="pearls">
+<h2>3. Technical Pearls &amp; "Bail-out" Strategies</h2>
+<div class="pearl-box">
+<h5>The "Senior Pearl"</h5>
+<p>[A specific technical tip that makes the procedure easier or safer.]</p>
+</div>
+<div class="bailout-box">
+<h5>Bail-out Strategy: [Difficult Case Scenario]</h5>
+<p>If you encounter [specific difficulty], the safest exit strategy is:
+        <br/>1. [Step 1]
+        <br/>2. [Step 2]</p>
+</div>
+</section>
+<!-- 4. POST-OP -->
+<section id="postop">
+<h2>4. Post-operative Care &amp; Longitudinal Follow-up</h2>
+<p>Immediate postoperative goals and long-term milestones:</p>
+<ul>
+<li><strong>Day 0-1:</strong> [Diet advancement, mobilization goals]</li>
+<li><strong>Discharge Criteria:</strong> [Pain control, bowel function]</li>
+<li><strong>Longitudinal:</strong> [Follow-up timeline and pathology review]</li>
+</ul>
+</section>
+<!-- 5. COMPLICATIONS -->
+<section id="complications">
+<h2>5. Complication Management</h2>
+<p>Identification and management of procedure-specific complications:</p>
+<div class="step-row" style="background:var(--bg-secondary);">
+<div class="step-content">
+<h4>Early Complications</h4>
+<p>[Bleeding, Infection, Leak]</p>
+</div>
+</div>
+<div class="step-row" style="background:var(--bg-secondary);">
+<div class="step-content">
+<h4>Late Complications</h4>
+<p>[Stricture, Incisional Hernia]</p>
+</div>
+</div>
+</section>
+</main>
+<aside class="editorial-sidebar">
+<div class="sidebar-box">
+<h4>Anatomic Landmarks</h4>
+<ul class="sidebar-list">
+<li><a href="#preop">[Landmark 1]</a></li>
+<li><a href="#plan">[Landmark 2]</a></li>
+<li><a href="#pearls">[Landmark 3]</a></li>
+</ul>
+</div>
+<div class="sidebar-box" style="border-color: rgba(220, 38, 38, 0.3);">
+<h4 style="color: #dc2626;">Critical Zones</h4>
+<p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6;">Identifying the [specific structure] is mandatory to avoid [specific injury].</p>
+</div>
+</aside>
+</div>
 <footer style="padding: 60px 5%; border-top: 1px solid var(--border-color); text-align: center;">
-  <p style="color: var(--text-muted); font-size: 0.85rem;">© 2026 Surgical Insight Hub · Operative Playbook Series</p>
+<p style="color: var(--text-muted); font-size: 0.85rem;">© 2026 Surgical Insight Hub · Operative Playbook Series</p>
 </footer>
-
 <script src="../../js/nav-pill.js"></script>
 <script src="../../js/navigation.js"></script>
 </body>
