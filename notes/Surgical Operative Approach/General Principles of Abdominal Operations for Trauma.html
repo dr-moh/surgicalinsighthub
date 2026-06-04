@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Surgical Insight Hub | General Principles of Abdominal Operations for Trauma</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="../../css/shared.css" rel="stylesheet"/>
+<link href="../../css/theme.css?v=4.0.0" rel="stylesheet"/>
+<style>
+:root {
+  --primary:   #7F1D1D;
+  --primary-dk:#450A0A;
+  --primary-lt:#FEF2F2;
+  --accent:    #991B1B;
+  --accent2:   #DC2626;
+  --gold:      #B45309;
+  --gold-lt:   #FEF3C7;
+  --s1:        #7F1D1D;
+  --s2:        #1F2937;
+  --s3:        #991B1B;
+  --s4:        #374151;
+  --s5:        #450A0A;
+  --s1-lt:     #FEF2F2;
+  --s2-lt:     #F3F4F6;
+  --s3-lt:     #FEE2E2;
+  --s4-lt:     #E5E7EB;
+  --s5-lt:     #FFD8D8;
+  --red:       #B91C1C;
+  --red-lt:    #FEF2F2;
+  --bg:        #FBFBFC;
+  --bg2:       #F4F4F6;
+  --border:    #E5E7EB;
+  --text:      #1F2937;
+  --muted:     #4B5563;
+  --white:     #FFFFFF;
+  --sidebar-w: 300px;
+}
+
+[data-theme="dark"] {
+  --bg: #0B0F19;
+  --bg2: #141B2D;
+  --text: #E2E8F0;
+  --muted: #94A3B8;
+  --border: rgba(255,255,255,0.08);
+  --primary-lt: #2B0707;
+  --s1-lt: #2B0707;
+  --s2-lt: #1F2937;
+  --s3-lt: #3C0A0A;
+  --s4-lt: #1C2533;
+  --s5-lt: #180303;
+  --white: #141B2D;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--bg);color:var(--text);font-size:16.5px;line-height:1.8;}
+
+/* ── SIDEBAR & OVERLAY ── */
+#sidebar {
+  position: fixed; top: 0; left: 0; width: var(--sidebar-w); height: 100vh;
+  background: var(--primary-dk); color: #E2DEE9;
+  display: flex; flex-direction: column;
+  z-index: 1300; overflow: hidden;
+  transform: translateX(-100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 4px 0 24px rgba(0,0,0,0.3);
+}
+body.sidebar-open #sidebar { transform: translateX(0); }
+
+#sidebar-overlay {
+  position: fixed; inset: 0;
+  background: rgba(69, 10, 10, 0.5); backdrop-filter: blur(3px);
+  z-index: 1250; opacity: 0; pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+body.sidebar-open #sidebar-overlay { opacity: 1; pointer-events: auto; }
+
+#sidebar-toggle {
+  position: fixed; top: 72px; left: 24px; z-index: 1200;
+  background: var(--primary); color: white;
+  border: none; border-radius: 30px;
+  padding: 10px 18px; font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 600;
+  letter-spacing: 0.05em; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  display: flex; align-items: center; gap: 8px; transition: all 0.2s;
+}
+#sidebar-toggle:hover { background: var(--accent); transform: translateY(-2px); }
+
+#progress-bar {
+  position: fixed; top: 52px; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  transform-origin: left; transform: scaleX(0); transition: transform 0.1s; z-index: 1105;
+}
+
+#sidebar-header{padding:20px 20px 14px;border-bottom:1px solid rgba(255,255,255,0.1);flex-shrink:0;}
+#sidebar-header .logo{font-family:'Playfair Display',serif;font-size:13px;font-weight:700;color:var(--accent2);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;}
+#sidebar-header .sub{font-size:10.5px;color:rgba(226,222,233,0.6);letter-spacing:0.04em;}
+#sidebar-search{padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.08);flex-shrink:0;}
+#sidebar-search input{width:100%;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:6px;color:#E2DEE9;padding:6px 10px;font-size:12px;font-family:'Source Serif 4',serif;outline:none;transition:border-color 0.2s;}
+#sidebar-search input::placeholder{color:rgba(226,222,233,0.4);}
+#sidebar-search input:focus{border-color:var(--accent2);}
+#sidebar-nav{flex:1;overflow-y:auto;padding:8px 0 20px;}
+#sidebar-nav::-webkit-scrollbar{width:4px;}
+#sidebar-nav::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.15);border-radius:2px;}
+.vol-label{font-size:9.5px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent2);padding:14px 18px 4px;}
+.nav-item{display:block;padding:8px 18px 8px 22px;font-size:12.5px;color:rgba(226,222,233,0.75);text-decoration:none;border-left:2px solid transparent;transition:all 0.15s;line-height:1.4;}
+.nav-item:hover{color:#fff;background:rgba(255,255,255,0.05);border-left-color:rgba(239,68,68,0.5);}
+.nav-item.active{color:#fff;background:rgba(255,255,255,0.08);border-left-color:var(--accent2);font-weight:600;}
+.nav-item .num{font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(226,222,233,0.4);margin-right:6px;}
+
+/* HERO */
+#hero{background:linear-gradient(135deg,var(--primary-dk) 0%,#310808 60%,#0F0505 100%);color:white;padding:120px 72px 60px;position:relative;overflow:hidden;}
+#hero::before{content:'';position:absolute;top:-60px;right:-60px;width:380px;height:380px;background:radial-gradient(circle,rgba(220,38,38,0.18) 0%,transparent 70%);pointer-events:none;}
+#hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--primary),var(--accent2),transparent);}
+#hero .eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.16em;color:var(--accent2);text-transform:uppercase;margin-bottom:14px;}
+#hero h1{font-family:'Playfair Display',serif;font-size:38px;font-weight:700;line-height:1.15;margin-bottom:10px;color:#fff;}
+#hero .subtitle{font-size:18px;color:rgba(255,255,255,0.65);font-style:italic;margin-bottom:28px;}
+#hero .badges{display:flex;gap:10px;flex-wrap:wrap;}
+#hero .badge{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:4px 14px;font-size:12px;color:rgba(255,255,255,0.8);font-family:'JetBrains Mono',monospace;}
+
+/* CONTENT */
+.content-wrap{max-width:900px;margin:0 auto;padding:0 48px 80px;}
+
+/* SECTION HEADER */
+.sec-header{margin-top:60px;margin-bottom:8px;padding:28px 36px;border-radius:10px;display:flex;align-items:center;gap:20px;}
+.sec-header.s1{background:linear-gradient(135deg,#7F1D1D08,#7F1D1D18);border-left:4px solid var(--s1);}
+.sec-header.s2{background:linear-gradient(135deg,#1F293708,#1F293718);border-left:4px solid var(--s2);}
+.sec-header.s3{background:linear-gradient(135deg,#991B1B08,#991B1B18);border-left:4px solid var(--s3);}
+.sec-header.s4{background:linear-gradient(135deg,#37415108,#37415118);border-left:4px solid var(--s4);}
+.sec-header.s5{background:linear-gradient(135deg,#450A0A08,#450A0A18);border-left:4px solid var(--s5);}
+
+.sec-badge{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;letter-spacing:0.1em;padding:4px 12px;border-radius:4px;white-space:nowrap;flex-shrink:0;}
+.s1 .sec-badge{background:var(--s1);color:white;}
+.s2 .sec-badge{background:var(--s2);color:white;}
+.s3 .sec-badge{background:var(--s3);color:white;}
+.s4 .sec-badge{background:var(--s4);color:white;}
+.s5 .sec-badge{background:var(--s5);color:white;}
+.sec-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;}
+.s1 .sec-title{color:var(--s1);}
+.s2 .sec-title{color:var(--s2);}
+.s3 .sec-title{color:var(--s3);}
+.s4 .sec-title{color:var(--s4);}
+.s5 .sec-title{color:var(--s5);}
+
+/* TOPIC */
+.topic{margin-top:48px;padding-top:48px;border-top:1px solid var(--border);}
+.topic:first-of-type{border-top:none;}
+.topic-header{display:flex;align-items:flex-start;gap:16px;margin-bottom:24px;}
+.topic-num{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;padding:3px 10px;border-radius:4px;margin-top:4px;flex-shrink:0;}
+.s1 .topic-num{background:var(--s1-lt);color:var(--s1);}
+.s2 .topic-num{background:var(--s2-lt);color:var(--s2);}
+.s3 .topic-num{background:var(--s3-lt);color:var(--s3);}
+.s4 .topic-num{background:var(--s4-lt);color:var(--s4);}
+.s5 .topic-num{background:var(--s5-lt);color:var(--s5);}
+.topic h2{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;line-height:1.2;}
+.s1 .topic h2{color:var(--s1);}
+.s2 .topic h2{color:var(--s2);}
+.s3 .topic h2{color:var(--s3);}
+.s4 .topic h2{color:var(--s4);}
+.s5 .topic h2{color:var(--s5);}
+.topic h3{font-family:'Playfair Display',serif;font-size:17px;font-weight:600;color:var(--muted);margin:26px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--border);}
+.topic h4{font-size:13px;font-weight:600;color:var(--muted);letter-spacing:0.06em;text-transform:uppercase;margin:18px 0 8px;font-family:'JetBrains Mono',monospace;}
+.topic ul,.topic ol{margin:8px 0 14px 20px;color:var(--text);}
+.topic li{margin-bottom:6px;line-height:1.65;}
+.topic li::marker{color:var(--accent2);}
+.topic strong{color:var(--text);font-weight:600;}
+
+/* TABLES */
+.table-wrap{overflow-x:auto;margin:16px 0 20px;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.06);}
+table{width:100%;border-collapse:collapse;font-size:13.5px;background:var(--white);}
+thead tr{background:var(--s1);}
+thead th{color:white;padding:10px 14px;text-align:left;font-family:'Source Serif 4',serif;font-weight:600;font-size:13px;}
+tbody tr:nth-child(even){background:var(--bg2);}
+tbody tr:hover{background:var(--s1-lt);transition:background 0.15s;}
+tbody td{padding:9px 14px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.5;}
+.s2-tbl thead tr{background:var(--s2);}
+.s3-tbl thead tr{background:var(--s3);}
+.s4-tbl thead tr{background:var(--s4);}
+.s5-tbl thead tr{background:var(--s5);}
+
+/* CALLOUTS */
+.callout{margin:18px 0;padding:14px 18px;border-radius:0 8px 8px 0;border-left:4px solid;font-size:14px;line-height:1.65;}
+.callout .label{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;display:block;margin-bottom:4px;}
+.callout.pearl{background:var(--gold-lt);border-color:var(--gold);}
+.callout.pearl .label{color:var(--gold);}
+.callout.warn{background:var(--red-lt);border-color:var(--red);}
+.callout.warn .label{color:var(--red);}
+.callout.clin{background:var(--s1-lt);border-color:var(--s1);}
+.callout.clin .label{color:var(--s1);}
+.callout.exam{background:var(--s4-lt);border-color:var(--s4);}
+.callout.exam .label{color:var(--s4);}
+
+/* DIAGRAM & CLINICAL GALLERY */
+.diagram-wrap{background:var(--s1-lt);border:1px solid var(--border);border-radius:8px;padding:18px;margin:20px 0;text-align:center;}
+.diagram-title{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--s1);margin-bottom:12px;text-align:left;}
+.diagram-wrap img{max-width:100%;height:auto;border-radius:6px;box-shadow:0 4px 12px rgba(0,0,0,0.1);max-height:400px;object-fit:contain;background:#fff;}
+
+.gallery-grid {display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:24px 0;}
+@media (max-width:768px) {.gallery-grid {grid-template-columns:1fr;}}
+.gallery-item {background:var(--white);border:1px solid var(--border);border-radius:8px;padding:16px;display:flex;flex-direction:column;gap:12px;transition:box-shadow 0.2s;}
+.gallery-item img {max-width:100%;height:auto;border-radius:6px;box-shadow:0 2px 8px rgba(0,0,0,0.08);max-height:280px;object-fit:contain;background:#fff;}
+.gallery-item-title{font-family:'JetBrains Mono',monospace;font-size:9.5px;font-weight:600;letter-spacing:0.08em;color:var(--muted);margin-top:auto;}
+
+#top-btn{position:fixed;bottom:24px;right:24px;width:44px;height:44px;background:var(--primary);color:white;border:none;border-radius:50%;font-size:18px;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,0.3);z-index:1100;opacity:0;pointer-events:none;transition:all 0.3s;display:flex;align-items:center;justify-content:center;}
+#top-btn.show{opacity:1;pointer-events:auto;}
+#top-btn:hover{background:var(--accent);transform:translateY(-3px);}
+
+.rapid-ref{margin-top:60px;padding:36px;background:var(--primary-dk);color:white;border-radius:12px;box-shadow:var(--shadow-lg);}
+.rapid-ref h3{font-family:'Playfair Display',serif;font-size:24px;margin-bottom:18px;color:#fff;border-bottom:1px solid rgba(255,255,255,0.15);padding-bottom:10px;}
+.rapid-ref table{background:transparent;}
+.rapid-ref thead tr{background:rgba(255,255,255,0.08);}
+.rapid-ref thead th{color:#FEF2F2;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;}
+.rapid-ref tbody tr:nth-child(even){background:rgba(255,255,255,0.03);}
+.rapid-ref tbody tr:hover{background:rgba(255,255,255,0.07);}
+.rapid-ref tbody td{border-bottom:1px solid rgba(255,255,255,0.08);color:rgba(255,255,255,0.85);font-size:13px;}
+.rapid-ref strong{color:#fff;}
+
+@media(max-width:900px) {
+  .content-wrap { padding: 0 20px 60px; }
+  #hero { padding: 80px 20px 40px; }
+  #hero h1 { font-size: 30px; }
+  #sidebar-toggle { top: 64px; left: 16px; }
+}
+@media print {
+  #sidebar-toggle, #sidebar-overlay, #sidebar, #top-btn, #progress-bar, #mainNav { display: none !important; }
+  .topic { page-break-inside: avoid; }
+  .sec-header { page-break-before: always; }
+}
+</style>
+</head>
+<body>
+<!-- Standardized SIH Navbar -->
+<nav class="nav" id="mainNav">
+<div class="nav-left">
+<a class="nav-pill" href="../../index.html">
+<div class="nav-logo-img">
+<img alt="SIH Logo" src="../../assets/images/Surgical_Insight_Hub_Logo.png"/>
+</div>
+<div>
+<div class="nav-brand-text">Surgical Insight Hub</div>
+<div class="nav-brand-sub">The Residency Journal</div>
+</div>
+</a>
+</div>
+<div class="nav-links-pill">
+<a href="../../index.html">Home</a>
+<a class="active" href="../../notes.html">Notes</a>
+<a href="../operative_approach.html">Playbook</a>
+<a href="../../arena.html?v=4.0.0">MCQ Arena</a>
+<a href="../../podcast.html">Podcast</a>
+<a href="../../surgery-talk.html">Surgery Talk</a>
+<a href="../../about.html">About</a>
+</div>
+<div class="nav-right">
+<button aria-label="Toggle Theme" class="theme-toggle" id="themeToggle">
+<svg height="18" id="moonIcon" viewbox="0 0 24 24" width="18"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+<svg height="18" id="sunIcon" style="display:none;" viewbox="0 0 24 24" width="18"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line><line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line><line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line></svg>
+</button>
+<a class="nav-tg-btn" href="https://t.me/sugicalInsightHub" target="_blank" title="Join Telegram">
+<svg fill="#f0d080" height="18" viewbox="0 0 24 24" width="18"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.89 8.22l-1.97 9.28c-.15.66-.54.82-1.08.51l-3-2.21-1.45 1.39c-.16.16-.3.3-.61.3l.21-3.05 5.56-5.02c.24-.21-.05-.33-.37-.12l-6.87 4.33-2.96-.92c-.64-.2-.66-.64.14-.95l11.57-4.46c.54-.19 1.01.13.83.94z"></path></svg>
+</a>
+<a class="nav-btn arena-btn" href="../../arena.html?v=4.0.0">MCQ Arena</a>
+<button aria-label="Menu" class="mob-nav-toggle" onclick="openMobNav()">
+<div class="hamburger"><span></span><span></span><span></span></div>
+</button>
+</div>
+</nav>
+<div class="mob-nav-overlay" id="mobNavOverlay" onclick="closeMobNav()"></div>
+<div class="mob-nav-sheet" id="mobNavSheet">
+<div class="mob-nav-handle"></div>
+<a href="../../index.html" onclick="closeMobNav()">Home</a>
+<a href="../../notes.html" onclick="closeMobNav()">Notes</a>
+<a href="../../notes/operative_approach.html" onclick="closeMobNav()">Playbook</a>
+<a href="../../podcast.html" onclick="closeMobNav()">Podcast</a>
+<a href="../../surgery-talk.html" onclick="closeMobNav()">Surgery Talk</a>
+<a href="../../arena.html" onclick="closeMobNav()">MCQ Arena</a>
+<a href="../../about.html" onclick="closeMobNav()">About</a>
+<a href="https://t.me/sugicalInsightHub" onclick="closeMobNav()" rel="noopener" style="color: var(--brand-gold); font-weight: 800;" target="_blank">Join Telegram Community</a>
+<a href="https://www.linkedin.com/company/surgical-insight-hub" onclick="closeMobNav()" rel="noopener" style="color: var(--brand-gold); font-weight: 800;" target="_blank">LinkedIn Community</a>
+</div>
+
+<div id="progress-bar"></div>
+<!-- ── SIDEBAR TRIGGER ── -->
+<button id="sidebar-toggle" onclick="toggleSidebar()">
+<span>📜</span> Table of Contents
+</button>
+<div id="sidebar-overlay" onclick="closeSidebar()"></div>
+<!-- ── SIDEBAR ── -->
+<aside id="sidebar">
+<div id="sidebar-header">
+<div class="logo">Surgical Insight Hub</div>
+<div class="sub">Trauma Operations · General Principles</div>
+</div>
+<div id="sidebar-search">
+<input oninput="filterNav(this.value)" placeholder="Search sections..." type="text"/>
+</div>
+<nav id="sidebar-nav">
+<div class="vol-label">Pillar 1: Pre-Op Optimization</div>
+<a class="nav-item" href="#indications"><span class="num">1.1</span>Indications &amp; Principles</a>
+<a class="nav-item" href="#anatomy"><span class="num">1.2</span>Surgical Anatomy (Zones)</a>
+<a class="nav-item" href="#positioning"><span class="num">1.3</span>Positioning &amp; Preparation</a>
+<div class="vol-label">Pillar 2: Operative Game Plan</div>
+<a class="nav-item" href="#midline-lap"><span class="num">2.1</span>Midline Laparotomy Entry</a>
+<a class="nav-item" href="#extensions"><span class="num">2.2</span>Incision Extensions</a>
+<a class="nav-item" href="#instruments"><span class="num">2.3</span>Special Instruments</a>
+<a class="nav-item" href="#visceral-rotation"><span class="num">2.4</span>Medial Visceral Rotation</a>
+<a class="nav-item" href="#exploration"><span class="num">2.5</span>Systematic Exploration</a>
+<div class="vol-label">Pillar 3: Pearls &amp; Bail-Outs</div>
+<a class="nav-item" href="#pearls"><span class="num">3.1</span>Consultant Pearls</a>
+<a class="nav-item" href="#bailouts"><span class="num">3.2</span>The Bail-Out Points</a>
+<div class="vol-label">Pillar 4: Post-Op Care</div>
+<a class="nav-item" href="#resuscitation"><span class="num">4.1</span>ICU Targets &amp; Monitoring</a>
+<a class="nav-item" href="#anastomosis"><span class="num">4.2</span>Intestinal Anastomosis Rules</a>
+<a class="nav-item" href="#closure-drainage"><span class="num">4.3</span>Closure and Drainage</a>
+<div class="vol-label">Pillar 5: Complications</div>
+<a class="nav-item" href="#compartment-syndrome"><span class="num">5.1</span>Compartment Syndrome</a>
+<a class="nav-item" href="#wound-dehiscence"><span class="num">5.2</span>Dehiscence &amp; Infection</a>
+<div class="vol-label">Board Review</div>
+<a class="nav-item" href="#board-review-section"><span class="num">6.1</span>ABSITE Board Review</a>
+</nav>
+</aside>
+
+<!-- ── MAIN CONTENT ── -->
+<main id="main">
+<header id="hero">
+<div class="eyebrow">Trauma · Emergency</div>
+<h1>General Principles of Abdominal Operations for Trauma</h1>
+<p class="subtitle">Standardized PGY-3 trauma monograph covering vascular zones, surgical incisions, extensions, medial visceral rotation, systematic exploration, and damage control principles.</p>
+<div class="badges">
+<span class="badge">PGY-3 Monograph</span>
+<span class="badge">Trauma Core</span>
+<span class="badge">5 Pillars</span>
+</div>
+</header>
+<div class="content-wrap">
+<div class="callout warn" style="margin-top: 40px;">
+<span class="label">⚠ Upfront Surgical Philosophy (Brutal Rule)</span>
+<strong>If damage control packing does not stop the bleeding, do not terminate the operation; re-explore, identify, and control surgical bleeding immediately.</strong>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- PILLAR 1: PRE-OPERATIVE OPTIMIZATION & PREPARATION ═════════ -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<div class="sec-header s1">
+<span class="sec-badge">PILLAR 1</span>
+<h2 class="sec-title">Pre-operative Optimization &amp; Preparation</h2>
+</div>
+
+<section class="topic s1" id="indications">
+<div class="topic-header"><span class="topic-num">1.1</span><h2>Indications &amp; General Principles</h2></div>
+<h4>Clinical Decision Points</h4>
+<ul>
+<li><strong>Laparotomy for bleeding vs peritonitis:</strong> Bleeding laparotomy demands immediate, rapid vascular control. Peritonitis laparotomy focuses on contamination control and source clearance.</li>
+<li><strong>Primary priority:</strong> Arrest active bleeding first. Methodical exploration of all structures to identify and repair other non-life-threatening injuries occurs only after hemorrhage control is established.</li>
+<li><strong>Damage control threshold:</strong> Initiate abbreviated laparotomy before physiological depletion (coagulopathy, hypothermia, acidosis) occurs. Consider injury severity, patient physiological reserves, facility limits, and surgeon skillset.</li>
+<li><strong>Organ salvage limits:</strong> Removal versus repair of organs (spleen, kidney) is determined by injury scale and patient physiologic stability. Splenectomy is standard in hemodynamically unstable patients.</li>
+<li><strong>Open abdomen mandate:</strong> In damage control, leave the abdomen open using temporary closure techniques to prevent intra-abdominal hypertension and abdominal compartment syndrome.</li>
+</ul>
+</section>
+
+<section class="topic s1" id="anatomy">
+<div class="topic-header"><span class="topic-num">1.2</span><h2>Surgical Anatomy (Retroperitoneal Zones)</h2></div>
+<h4>Anatomical Landmarks</h4>
+<ul>
+<li><strong>Linea alba:</strong> Midline aponeurosis extending from xiphoid to pubic symphysis, separating the rectus muscles. Widest 2-3 cm above the umbilicus, making it the safest entry site.</li>
+<li><strong>Abdominal wall layers:</strong> External oblique, internal oblique, transversus abdominis, and rectus abdominis. Rectus sheath is formed by the aponeuroses of the first three muscles.</li>
+</ul>
+
+<h4>Retroperitoneal Vascular Zones Classification</h4>
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>Zone</th>
+<th>Anatomical Limits</th>
+<th>Major Contents</th>
+<th>Exploration Mandate (Blunt)</th>
+<th>Exploration Mandate (Penetrating)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Zone 1</strong> (Midline)</td>
+<td>Aortic hiatus to sacral promontory. Divided into supramesocolic and inframesocolic.</td>
+<td>Suprarenal/infrarenal aorta and IVC, celiac axis, SMA, SMV, renal vessels.</td>
+<td><strong>Mandatory exploration</strong> (High-risk exsanguination).</td>
+<td><strong>Mandatory exploration</strong> (Vascular injury highly probable).</td>
+</tr>
+<tr>
+<td><strong>Zone 2</strong> (Flank)</td>
+<td>Paracolic gutters, kidneys, renal vessels, ureters.</td>
+<td>Kidneys, renal arteries/veins, ureters.</td>
+<td><strong>Observe</strong> if stable and non-expanding.</td>
+<td><strong>Mandatory exploration</strong> (Ureteral/vascular leaks).</td>
+</tr>
+<tr>
+<td><strong>Zone 3</strong> (Pelvis)</td>
+<td>Pelvic retroperitoneum.</td>
+<td>Iliac arteries and veins, ureters.</td>
+<td><strong>Observe</strong> unless expanding/pulsatile (loss of pelvic tamponade).</td>
+<td><strong>Mandatory exploration</strong> (Iliac vascular injury control).</td>
+</tr>
+<tr>
+<td><strong>Zone 4</strong> (Perihepatic)</td>
+<td>Perihepatic space and porta hepatis.</td>
+<td>Hepatic artery, portal vein, retrohepatic IVC, hepatic veins.</td>
+<td><strong>Observe</strong> stable hematomas (high mortality in opening).</td>
+<td><strong>Observe stable retrohepatic hematomas</strong>; open only if actively bleeding.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="diagram-wrap">
+<div class="diagram-title">Figure 22.1: Retroperitoneal Vascular Zones</div>
+<img alt="Retroperitoneal Vascular Zones" src="General Principles of Abdominal Operations for Trauma/trauma_fig_1.jpeg"/>
+</div>
+</section>
+
+<section class="topic s1" id="positioning">
+<div class="topic-header"><span class="topic-num">1.3</span><h2>Patient Positioning &amp; Preparation</h2></div>
+<h4>Positioning Protocols</h4>
+<ul>
+<li><strong>Supine positioning:</strong> Arms abducted to 90 degrees to facilitate bilateral large-bore intravenous access for rapid resuscitation.</li>
+<li><strong>Lithotomy option:</strong> Indicated if there is suspicion of rectal, distal sigmoid, or anal canal injuries to permit transanal assessment.</li>
+<li><strong>Operating table setup:</strong> Keep bed rails completely exposed and free of drapes to allow secure mounting of fixed retractors (e.g., Bookwalter).</li>
+</ul>
+
+<h4>Preparation and Draping Boundary</h4>
+<ul>
+<li><strong>Prep boundaries:</strong> Extend skin prep from the chin to the knees, and laterally to the operating table surface (posterior axillary lines).</li>
+<li><strong>Groin exposure:</strong> Groins must be prepped in the sterile field because saphenous vein harvest may be required for vascular grafts.</li>
+</ul>
+
+<div class="diagram-wrap">
+<div class="diagram-title">Figure 22.2: Positioning and Skin Preparation</div>
+<img alt="Positioning and Skin Prep" src="General Principles of Abdominal Operations for Trauma/trauma_fig_2.jpeg"/>
+</div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- PILLAR 2: THE OPERATIVE GAME PLAN ══════════════════════════ -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<div class="sec-header s2">
+<span class="sec-badge">PILLAR 2</span>
+<h2 class="sec-title">The Operative Game Plan (Access &amp; Exploration)</h2>
+</div>
+
+<section class="topic s2" id="midline-lap">
+<div class="topic-header"><span class="topic-num">2.1</span><h2>Midline Laparotomy &amp; Entry</h2></div>
+<h4>Incision Selection</h4>
+<ul>
+<li><strong>Standard incision:</strong> Full midline laparotomy between the xiphoid process and the pubic symphysis.</li>
+<li><strong>Indication:</strong> Hemodynamically unstable patients with blunt trauma, penetrating trauma, and unknown missile trajectories. Routine xiphoid-to-pubis incision is not advised if a localized injury is confirmed.</li>
+</ul>
+
+<h4>Step-by-Step Peritoneal Entry</h4>
+<ol>
+<li><strong>Skin &amp; Subcutis:</strong> Perform rapid incision with scalpel. Do not waste time with subcutaneous hemostasis in unstable patients.</li>
+<li><strong>Fascial Identification:</strong> Identify the linea alba 2-3 cm above the umbilicus. This is the widest section, reducing the risk of entering the rectus sheath.</li>
+<li><strong>Linea Alba Division:</strong> Divide the linea alba sharply. Sweep preperitoneal fat away to expose the underlying peritoneum.</li>
+<li><strong>Peritoneal Entry:</strong> Perform entry sharply or bluntly using a finger just superior to the umbilicus, which is the thinnest point.</li>
+<li><strong>Extension:</strong> Extend the peritoneal incision superiorly and inferiorly using scissors under direct finger guidance.</li>
+</ol>
+
+<div class="diagram-wrap">
+<div class="diagram-title">Figure 22.3: Midline Laparotomy Boundary</div>
+<img alt="Midline Laparotomy boundary" src="General Principles of Abdominal Operations for Trauma/trauma_fig_3.jpeg"/>
+</div>
+
+<h4>Surgical Steps Gallery: Midline Entry</h4>
+<div class="gallery-grid">
+<div class="gallery-item">
+<img alt="Skin and subcutaneous incision" src="General Principles of Abdominal Operations for Trauma/trauma_fig_4.jpeg"/>
+<div class="gallery-item-title">(a) Incision exposing the linea alba</div>
+</div>
+<div class="gallery-item">
+<img alt="Linea alba division above umbilicus" src="General Principles of Abdominal Operations for Trauma/trauma_fig_5.jpeg"/>
+<div class="gallery-item-title">(b) Fascial incision 2-3 cm above umbilicus</div>
+</div>
+<div class="gallery-item">
+<img alt="Midline sharp division" src="General Principles of Abdominal Operations for Trauma/trauma_fig_6.jpeg"/>
+<div class="gallery-item-title">(c) Sharp midline dissection avoiding rectus sheath</div>
+</div>
+<div class="gallery-item">
+<img alt="Peritoneal identification" src="General Principles of Abdominal Operations for Trauma/trauma_fig_7.jpeg"/>
+<div class="gallery-item-title">(d) Preperitoneal fat swept and peritoneum entered</div>
+</div>
+<div class="gallery-item">
+<img alt="Sharp extension of peritoneum" src="General Principles of Abdominal Operations for Trauma/trauma_fig_8.jpeg"/>
+<div class="gallery-item-title">(e) Extension along the line of incision</div>
+</div>
+<div class="gallery-item">
+<img alt="Completed entry view" src="General Principles of Abdominal Operations for Trauma/trauma_fig_9.jpeg"/>
+<div class="gallery-item-title">(f) Linea alba and peritoneum divided, omentum exposed</div>
+</div>
+</div>
+</section>
+
+<section class="topic s2" id="extensions">
+<div class="topic-header"><span class="topic-num">2.2</span><h2>Incision Extensions</h2></div>
+<h4>Right Subcostal Extension</h4>
+<ul>
+<li><strong>Indication:</strong> Complex posterior liver or retrohepatic major venous injuries requiring superior, right-sided exposure.</li>
+<li><strong>Technique:</strong> Incise 1-2 fingerbreadths below the right costal margin, extending from the midline laparotomy.</li>
+<li><strong>Skin Necrosis Prevention:</strong> Avoid an acute angle between the midline and subcostal incisions to preserve blood supply.</li>
+<li><strong>Muscle Division:</strong> Divide the rectus abdominis, external oblique, internal oblique, and transversus abdominis. Ensure ligation/control of the superior and inferior epigastric arteries.</li>
+</ul>
+
+<h4>Surgical Steps Gallery: Right Subcostal Extension</h4>
+<div class="gallery-grid">
+<div class="gallery-item">
+<img alt="Right subcostal diagram" src="General Principles of Abdominal Operations for Trauma/trauma_fig_10.jpeg"/>
+<div class="gallery-item-title">(a) Midline laparotomy with subcostal extension plan</div>
+</div>
+<div class="gallery-item">
+<img alt="Subcostal surgical division" src="General Principles of Abdominal Operations for Trauma/trauma_fig_11.jpeg"/>
+<div class="gallery-item-title">(b-c) Right subcostal muscle division</div>
+</div>
+<div class="gallery-item">
+<img alt="Midline exposure limits" src="General Principles of Abdominal Operations for Trauma/trauma_fig_12.jpeg"/>
+<div class="gallery-item-title">(d) Midline entry providing limited hepatic exposure</div>
+</div>
+<div class="gallery-item">
+<img alt="Subcostal extension exposure" src="General Principles of Abdominal Operations for Trauma/trauma_fig_13.jpeg"/>
+<div class="gallery-item-title">(e) Extension providing wide exposure of posterior liver</div>
+</div>
+</div>
+
+<h4>Median Sternotomy Extension</h4>
+<ul>
+<li><strong>Indication:</strong> Associated intrathoracic injuries or severe liver injuries requiring atriocaval shunting or total hepatic vascular isolation.</li>
+<li><strong>Technique:</strong> Extend the midline incision superiorly through the sternum to the sternal notch.</li>
+</ul>
+
+<h4>Surgical Steps Gallery: Median Sternotomy Extension</h4>
+<div class="gallery-grid">
+<div class="gallery-item">
+<img alt="Median sternotomy diagram" src="General Principles of Abdominal Operations for Trauma/trauma_fig_14.jpeg"/>
+<div class="gallery-item-title">(a) Incision pathway from midline to sternal notch</div>
+</div>
+<div class="gallery-item">
+<img alt="Sternotomy split" src="General Principles of Abdominal Operations for Trauma/trauma_fig_15.jpeg"/>
+<div class="gallery-item-title">(b) Sternal division and thoracic cavity entry</div>
+</div>
+<div class="gallery-item">
+<img alt="Mediastinal exposure" src="General Principles of Abdominal Operations for Trauma/trauma_fig_16.jpeg"/>
+<div class="gallery-item-title">(c) Exposure of the heart, pericardium, and supradiaphragmatic IVC</div>
+</div>
+</div>
+</section>
+
+<section class="topic s2" id="instruments">
+<div class="topic-header"><span class="topic-num">2.3</span><h2>Special Instruments &amp; Retractors</h2></div>
+<ul>
+<li><strong>Bookwalter Retractor:</strong> Fixed surgical retractor. Mount to exposed bed rails to provide hands-free retraction and exposure in deep pelvic or upper abdominal zones.</li>
+<li><strong>Headlights:</strong> Essential equipment to provide directed illumination into deep anatomical recesses.</li>
+<li><strong>Vessel Sealing System (LigaSure):</strong> Electrothermal bipolar device. Accelerates division of the bowel mesentery during resection and assists in non-anatomic liver and spleen mobilizations.</li>
+</ul>
+
+<div class="diagram-wrap">
+<div class="diagram-title">Figure 22.7: Bookwalter Retractor Setup</div>
+<img alt="Bookwalter Retractor Setup" src="General Principles of Abdominal Operations for Trauma/trauma_fig_17.jpeg"/>
+</div>
+
+<h4>Surgical Steps Gallery: Vessel Sealing System</h4>
+<div class="gallery-grid">
+<div class="gallery-item">
+<img alt="LigaSure device" src="General Principles of Abdominal Operations for Trauma/trauma_fig_18.jpeg"/>
+<div class="gallery-item-title">(a) Electrothermal bipolar vessel sealer</div>
+</div>
+<div class="gallery-item">
+<img alt="Mesenteric division" src="General Principles of Abdominal Operations for Trauma/trauma_fig_19.jpeg"/>
+<div class="gallery-item-title">(b) Rapid mesenteric division in bowel resection</div>
+</div>
+</div>
+</section>
+
+<section class="topic s2" id="visceral-rotation">
+<div class="topic-header"><span class="topic-num">2.4</span><h2>Medial Visceral Rotation Maneuvers</h2></div>
+<h4>Right Medial Visceral Rotation (Cattell-Braasch)</h4>
+<ul>
+<li><strong>Indication:</strong> Exposure of the retroperitoneum, infrarenal aorta, inferior vena cava (IVC), and right renal vessels.</li>
+<li><strong>Technique:</strong> Incise the peritoneal reflection along the white line of Toldt from the cecum to the right hepatic flexure.</li>
+<li><strong>Mesenteric Dissection:</strong> Continue dissection beneath the root of the small bowel mesentery, incising the retroperitoneum from the ileocecal junction to the ligament of Treitz.</li>
+<li><strong>Mobilization:</strong> Rotate the right colon and small bowel superiorly and to the left, exposing the vena cava and aorta.</li>
+</ul>
+
+<h4>Kocher Maneuver</h4>
+<ul>
+<li><strong>Indication:</strong> Mobilization of the duodenum to expose the second and third portions, the infrahepatic IVC, renal vessels, and posterior pancreatic head.</li>
+<li><strong>Technique:</strong> Incise the peritoneal reflection lateral to the duodenum, rotating it medially.</li>
+</ul>
+
+<h4>Surgical Steps Gallery: Right Medial Visceral Rotation</h4>
+<div class="gallery-grid">
+<div class="gallery-item">
+<img alt="Line of Toldt incision" src="General Principles of Abdominal Operations for Trauma/trauma_fig_20.jpeg"/>
+<div class="gallery-item-title">(a) Incision along the white line of Toldt</div>
+</div>
+<div class="gallery-item">
+<img alt="Duodenal mobilization" src="General Principles of Abdominal Operations for Trauma/trauma_fig_21.jpeg"/>
+<div class="gallery-item-title">(b) Kocher maneuver exposing the IVC and Gerota's fascia</div>
+</div>
+<div class="gallery-item">
+<img alt="Mesenteric root incision" src="General Principles of Abdominal Operations for Trauma/trauma_fig_22.jpeg"/>
+<div class="gallery-item-title">(c-d) Incising the retroperitoneum along the small bowel mesentery root</div>
+</div>
+<div class="gallery-item">
+<img alt="Visceral rotation completed" src="General Principles of Abdominal Operations for Trauma/trauma_fig_23.jpeg"/>
+<div class="gallery-item-title">(e-f) Evisceration of small bowel and right colon to the left chest</div>
+</div>
+</div>
+</section>
+
+<section class="topic s2" id="exploration">
+<div class="topic-header"><span class="topic-num">2.5</span><h2>Systematic Exploration</h2></div>
+<h4>Directed packing</h4>
+<ul>
+<li><strong>Bleeding Control:</strong> Upon entering the abdomen, immediately control major bleeding via directed packing and compression.</li>
+<li><strong>Avoid Blind Packing:</strong> Blind four-quadrant packing is less effective than directed compression. Do not pack uninvolved quadrants (e.g., in isolated left upper quadrant stab wounds).</li>
+<li><strong>Bowel Protection:</strong> Completely eviscerate the small bowel to expose the retroperitoneum, keeping it wrapped in warm, moist towels.</li>
+</ul>
+
+<h4>Systematic Exploration Protocol</h4>
+<ol>
+<li><strong>Small Bowel:</strong> Inspect from the ligament of Treitz to the rectum. Retract the transverse colon superiorly to expose the ligament of Treitz. Examine both sides of the bowel and the mesenteric border.</li>
+<li><strong>Colon:</strong> Eviscerate the small bowel to inspect the right and left colon. Explore any paracolic hematomas in penetrating injuries.</li>
+<li><strong>Stomach &amp; Proximal Duodenum:</strong> Inspect the anterior stomach wall by pulling the transverse colon inferiorly. Inspect the posterior stomach wall and pancreas by dividing the gastrocolic ligament to enter the lesser sac.</li>
+<li><strong>Solid Organs &amp; Diaphragm:</strong> Palpate the liver and spleen. Place laparotomy pads behind them to elevate them into the wound. Palpate the diaphragm and verify the presence and size of both kidneys.</li>
+</ol>
+
+<h4>Surgical Steps Gallery: Intestinal &amp; Lesser Sac Exploration</h4>
+<div class="gallery-grid">
+<div class="gallery-item">
+<img alt="Ligament of Treitz view" src="General Principles of Abdominal Operations for Trauma/trauma_fig_24.jpeg"/>
+<div class="gallery-item-title">(a-b) Identification of Treitz ligament at the transverse mesocolon base</div>
+</div>
+<div class="gallery-item">
+<img alt="Stomach anterior wall inspection" src="General Principles of Abdominal Operations for Trauma/trauma_fig_25.jpeg"/>
+<div class="gallery-item-title">Figure 22.11: Downward retraction of greater omentum and stomach</div>
+</div>
+<div class="gallery-item">
+<img alt="Gastrocolic ligament division" src="General Principles of Abdominal Operations for Trauma/trauma_fig_26.jpeg"/>
+<div class="gallery-item-title">Figure 22.12(a-b): Division of gastrocolic ligament to enter lesser sac</div>
+</div>
+<div class="gallery-item">
+<img alt="Lesser sac inspection" src="General Principles of Abdominal Operations for Trauma/trauma_fig_27.jpeg"/>
+<div class="gallery-item-title">Figure 22.12(c): Visualizing posterior stomach and pancreas</div>
+</div>
+</div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- PILLAR 3: TECHNICAL PEARLS & BAIL-OUT STRATEGIES ═══════════ -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<div class="sec-header s3">
+<span class="sec-badge">PILLAR 3</span>
+<h2 class="sec-title">Technical Pearls &amp; Bail-Out Strategies</h2>
+</div>
+
+<section class="topic s3" id="pearls">
+<div class="topic-header"><span class="topic-num">3.1</span><h2>Consultant Pearls</h2></div>
+<div class="callout pearl">
+<span class="label">Pearl #1: Temporary Aortic Occlusion</span>
+For severe, non-compressible infradiaphragmatic bleeding, perform manual compression of the aorta at the diaphragm. Aortic cross-clamping can be facilitated by dividing the left crus of the diaphragm at the 2 o'clock position (avascular plane). If a supramesocolic hematoma prevents this, perform a left thoracotomy for thoracic aortic clamping, or utilize REBOA.
+</div>
+
+<div class="callout pearl">
+<span class="label">Pearl #2: Hematoma Exploration Rules</span>
+<ul>
+<li><strong>Penetrating Trauma:</strong> Always explore all retroperitoneal hematomas. Exception: Stable retrohepatic hematomas (Zone 4) should not be opened because exposure carries a high risk of catastrophic hemorrhage from the retrohepatic IVC or hepatic veins.</li>
+<li><strong>Blunt Trauma:</strong> Do not explore stable hematomas. Exception: Paraduodenal hematomas, or any large, rapidly expanding, or leaking hematomas must be explored.</li>
+</ul>
+</div>
+
+<div class="callout pearl">
+<span class="label">Pearl #3: Venous Access Site Restriction</span>
+In penetrating pelvic or abdominal trauma with hemodynamic instability, avoid placing venous access lines in the lower extremities. If a major iliac vein or inferior vena cava injury is present, resuscitation fluids will escape through the vascular injury into the retroperitoneum.
+</div>
+</section>
+
+<section class="topic s3" id="bailouts">
+<div class="topic-header"><span class="topic-num">3.2</span><h2>The Bail-Out Points</h2></div>
+<ul>
+<li><strong>Failure of packing:</strong> Gauze packing is a temporary compression maneuver. If packing does not arrest hemorrhage, do not proceed with closure or leave the operating room. Re-explore, isolate the bleeding vessel, and secure control.</li>
+<li><strong>Multiple bowel perforations:</strong> In cases of multiple perforations located in close proximity, resecting the entire involved segment and performing a single anastomosis is faster and safer than performing multiple separate repairs. Perform resection only after all perforations are mapped.</li>
+<li><strong>Ongoing coagulopathy:</strong> If the patient becomes hypothermic (<35°C), acidotic, and coagulopathic, immediately abort definitive repairs. Apply a temporary abdominal closure device and transfer the patient to the ICU.</li>
+</ul>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- PILLAR 4: POST-OPERATIVE CARE & LONGITUDINAL FOLLOW-UP ═════ -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<div class="sec-header s4">
+<span class="sec-badge">PILLAR 4</span>
+<h2 class="sec-title">Post-operative Care &amp; Longitudinal Follow-up</h2>
+</div>
+
+<section class="topic s4" id="resuscitation">
+<div class="topic-header"><span class="topic-num">4.1</span><h2>ICU Resuscitation Targets &amp; Monitoring</h2></div>
+<h4>Structured ICU Resuscitation Goals</h4>
+<ul>
+<li><strong>Temperature:</strong> Maintain patient temperature >35°C using active warming blankets and warmed ventilators.</li>
+<li><strong>Acid-Base Balance:</strong> Resolve metabolic acidosis (correct base deficit to <4 mmol/L, clear lactate).</li>
+<li><strong>Coagulopathy Correction:</strong> Guided by viscoelastic assays (TEG/ROTEM). Administer platelets, cryoprecipitate, and fresh frozen plasma.</li>
+</ul>
+
+<h4>Longitudinal Monitoring</h4>
+<ul>
+<li><strong>Intra-abdominal Pressure (IAP):</strong> Monitor bladder pressures every 4 hours if the fascia is closed or tight.</li>
+<li><strong>Airway Pressures:</strong> Watch for rising peak airway pressures, which indicate diaphragm elevation due to visceral edema.</li>
+<li><strong>Fluid Balance:</strong> Limit crystalloid infusions. Maintain MAP >65 mmHg using vasopressors to prevent worsening tissue edema.</li>
+</ul>
+</section>
+
+<section class="topic s4" id="anastomosis">
+<div class="topic-header"><span class="topic-num">4.2</span><h2>Intestinal Anastomosis Rules</h2></div>
+<ul>
+<li><strong>Technique Outcomes:</strong> Outcomes are equivalent for hand-sewn versus stapled anastomoses in trauma settings.</li>
+<li><strong>Layer Configuration:</strong> One-layer versus two-layer techniques show similar leak rates. Continuous versus interrupted sutures show equivalent performance.</li>
+<li><strong>Pediatric Considerations:</strong> A single-layer anastomosis is recommended in pediatric cases to minimize the risk of anastomotic stenosis.</li>
+</ul>
+</section>
+
+<section class="topic s4" id="closure-drainage">
+<div class="topic-header"><span class="topic-num">4.3</span><h2>Abdominal Closure &amp; Drainage</h2></div>
+<ul>
+<li><strong>Closed Drainage:</strong> Indicated only in selected cases, such as complex liver or pancreatic head injuries where bile or pancreatic duct leaks are anticipated. Avoid routine prophylactic drainage.</li>
+<li><strong>Fascial Closure:</strong> Attempt primary fascial closure when visceral edema allows. If the patient is at risk of abdominal compartment syndrome, leave the fascia open.</li>
+<li><strong>Skin Management:</strong> Leave the skin open in contaminated cases (e.g., hollow viscus spills) to prevent surgical site infections, fascial dehiscence, or evisceration.</li>
+</ul>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- PILLAR 5: COMPLICATION MANAGEMENT ══════════════════════════ -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<div class="sec-header s5">
+<span class="sec-badge">PILLAR 5</span>
+<h2 class="sec-title">Complication Management</h2>
+</div>
+
+<section class="topic s5" id="compartment-syndrome">
+<div class="topic-header"><span class="topic-num">5.1</span><h2>Intra-abdominal Hypertension &amp; Compartment Syndrome</h2></div>
+<ul>
+<li><strong>Intra-abdominal Hypertension (IAH):</strong> Defined as a sustained intra-abdominal pressure >12 mmHg.</li>
+<li><strong>Abdominal Compartment Syndrome (ACS):</strong> Defined as a sustained IAP >20 mmHg associated with new organ dysfunction (e.g., oliguria, rising peak airway pressures, hypotension).</li>
+<li><strong>Surgical Decompression:</strong> Perform emergency decompressive laparotomy if ACS develops. Open the fascia and establish a temporary vacuum closure system.</li>
+<li><strong>Medical Adjuncts:</strong> Optimize sedation, administer neuromuscular blockers, perform nasogastric and rectal tube decompression, and utilize fluid restriction/diuresis.</li>
+</ul>
+</section>
+
+<section class="topic s5" id="wound-dehiscence">
+<div class="topic-header"><span class="topic-num">5.2</span><h2>Wound Dehiscence and Surgical Site Infections</h2></div>
+<ul>
+<li><strong>Early Recognition:</strong> Indicated by erythematous wound margins, purulent drainage, or fascial separation.</li>
+<li><strong>Management:</strong> Open the wound, obtain cultures, debride non-viable tissue, and initiate negative pressure wound therapy or wet-to-dry dressings.</li>
+<li><strong>Delayed Reconstruction:</strong> Plan reconstruction for ventral hernias at 6-12 months after the initial trauma insult.</li>
+</ul>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- BOARD REVIEW SECTION ══════════════════════════════════════ -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<div class="rapid-ref" id="board-review-section">
+<h3>ABSITE Board Review &amp; Eponyms</h3>
+
+<h4>Clinical Eponyms Table</h4>
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>Eponym</th>
+<th>Description / Surgical Maneuver</th>
+<th>Key Indication</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Cattell-Braasch</strong></td>
+<td>Right medial visceral rotation. Mobilization of the right colon and small bowel root to the ligament of Treitz.</td>
+<td>Exposes Zone 1 inframesocolic vessels (IVC, infrarenal aorta, right renal vessels).</td>
+</tr>
+<tr>
+<td><strong>Kocher Maneuver</strong></td>
+<td>Duodenal mobilization by dividing its lateral peritoneal attachments.</td>
+<td>Exposes the head of the pancreas, duodenum, and infrahepatic vena cava.</td>
+</tr>
+<tr>
+<td><strong>Mattox Maneuver</strong></td>
+<td>Left medial visceral rotation. Mobilization of the left colon, spleen, left kidney, and pancreas medially.</td>
+<td>Exposes the suprarenal aorta and left renal vessels.</td>
+</tr>
+<tr>
+<td><strong>Pringle Maneuver</strong></td>
+<td>Temporary digital or vascular clamp occlusion of the hepatoduodenal ligament.</td>
+<td>Controls hepatic arterial and portal venous inflow in severe liver hemorrhage. Limit clamp time to 20-30 minutes.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<h4>MCQ High-Yield Numbers</h4>
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Threshold Value</th>
+<th>Clinical Significance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Fascial Incision Site</strong></td>
+<td><strong>2 to 3 cm</strong> above the umbilicus</td>
+<td>Aponeurosis is at its widest, minimizing the risk of rectus sheath entry.</td>
+</tr>
+<tr>
+<td><strong>Lethal Triad: Temp</strong></td>
+<td><strong>&lt;35°C</strong></td>
+<td>Hypothermia threshold where coagulation cascade enzyme kinetics degrade rapidly.</td>
+</tr>
+<tr>
+<td><strong>Lethal Triad: Acidosis</strong></td>
+<td>Base Deficit <strong>&gt;15 mmol/L</strong></td>
+<td>Severe acidosis marker indicating tissue hypoperfusion; threshold for damage control.</td>
+</tr>
+<tr>
+<td><strong>Intra-abdominal Hypertension</strong></td>
+<td><strong>&gt;12 mmHg</strong></td>
+<td>Sustained elevated pressure threshold. Requires clinical monitoring.</td>
+</tr>
+<tr>
+<td><strong>Abdominal Compartment Syndrome</strong></td>
+<td><strong>&gt;20 mmHg</strong></td>
+<td>Sustained pressure threshold associated with new organ dysfunction. Requires decompression.</td>
+</tr>
+<tr>
+<td><strong>Re-look Laparotomy Timing</strong></td>
+<td><strong>24 to 48 hours</strong></td>
+<td>Standard interval in damage control to achieve physiological stabilization in the ICU.</td>
+</tr>
+<tr>
+<td><strong>Post-Splenectomy Vaccines</strong></td>
+<td><strong>14 days</strong> post-operative</td>
+<td>Optimal immunological response timing to vaccinate against encapsulated organisms.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+</div><!-- end content-wrap -->
+</main>
+<button id="top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script src="../../js/nav-pill.js"></script>
+<script src="../../js/navigation.js"></script>
+<script>
+const progressBar = document.getElementById('progress-bar');
+const topBtn = document.getElementById('top-btn');
+const navItems = document.querySelectorAll('.nav-item');
+const sections = document.querySelectorAll('.topic[id], .rapid-ref[id]');
+
+window.addEventListener('scroll', () => {
+  const st = window.scrollY;
+  const dh = document.documentElement.scrollHeight - window.innerHeight;
+  if (progressBar) progressBar.style.transform = `scaleX(${st / dh})`;
+  if (topBtn) topBtn.classList.toggle('show', st > 400);
+  
+  let current = '';
+  sections.forEach(s => { if (st >= s.offsetTop - 120) current = s.id; });
+  navItems.forEach(n => { n.classList.toggle('active', n.getAttribute('href') === '#' + current); });
+});
+
+function filterNav(query) {
+  const q = query.toLowerCase();
+  navItems.forEach(item => { item.style.display = (!q || item.textContent.toLowerCase().includes(q)) ? 'block' : 'none'; });
+}
+
+navItems.forEach(item => {
+  item.addEventListener('click', e => {
+    e.preventDefault();
+    if(typeof closeSidebar === 'function') closeSidebar();
+    const target = document.querySelector(item.getAttribute('href'));
+    if (target) window.scrollTo({ top: target.getBoundingClientRect().top - 80, behavior: 'smooth' });
+  });
+});
+
+document.querySelectorAll('.topic').forEach((el, i) => { el.style.animationDelay = `${el * 0.03}s`; });
+</script>
+</body>
+</html>
