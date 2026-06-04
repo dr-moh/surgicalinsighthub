@@ -305,3 +305,51 @@ Run this before delivering any note:
 - [ ] Both HTML and PDF delivered?
 - [ ] PDF verified: page count matches, footer correct on all pages?
 - [x] LinkedIn integration
+
+---
+
+## 12. WEB PLAYBOOK / OPERATIVE MONOGRAPH TEMPLATE
+
+This is the standard UI design template for the web-based interactive monographs inside `notes/Surgical Operative Approach/`.
+
+### 12.1 Layout Architecture
+* **Sidebar Navigation (`#sidebar`):** A fixed slide-over sidebar of width `300px` (or `320px` depending on content density) containing the `logo`, `search-input`, and structured navigation links grouped under `vol-label` and `nav-item` classes. Activated via `sidebar-open` class on `body`.
+* **Main Container (`#main`):** Wraps the content. Margins are handled cleanly for responsive behavior.
+* **Progress Indicator (`#progress-bar`):** Pinned at the top of the viewport (`52px` height/position) to show read progress dynamically.
+* **Back-to-Top Button (`#top-btn`):** Pinned at bottom right, visible only after scrolling down `400px`.
+
+### 12.2 Curated Color Themes (7 Approved Palettes)
+Each monograph must specify one of the following color configurations in its `<style>` block `:root` variables:
+
+1. **Indigo & Teal** (General/Basic GI focus):
+   * `--primary`: `#4F46E5`, `--primary-dk`: `#312E81`, `--primary-lt`: `#EEF2F6`, `--accent`: `#0EA5E9`, `--accent2`: `#F43F5E`
+   * `s1`–`s5` borders/badges: `#4F46E5`, `#0D9488`, `#C27803`, `#2563EB`, `#BE185D`
+2. **Crimson & Gold** (Pediatric Surgery focus):
+   * `--primary`: `#A31515`, `--primary-dk`: `#2B1810`, `--primary-lt`: `#FDF8ED`, `--accent`: `#B8922A`, `--accent2`: `#D97706`
+   * `s1`–`s5` borders/badges: `#A31515`, `#B8922A`, `#3B2314`, `#A31515`, `#2B1810`
+3. **Blood Red & Slate** (Trauma / Orthopaedics focus):
+   * `--primary`: `#7F1D1D`, `--primary-dk`: `#450A0A`, `--primary-lt`: `#FEF2F2`, `--accent`: `#991B1B`, `--accent2`: `#DC2626`
+   * `s1`–`s5` borders/badges: `#7F1D1D`, `#1F2937`, `#991B1B`, `#374151`, `#450A0A`
+4. **Deep Orange / Rust** (Emergency Trauma / General / HPB focus):
+   * `--primary`: `#6F3023`, `--primary-dk`: `#291410`, `--primary-lt`: `#FDF6F5`, `--accent`: `#D4806A`, `--accent2`: `#8C6746`
+   * `s1`–`s5` borders/badges: `#6F3023`, `#44383D`, `#3B4A43`, `#8C6746`, `#293642`
+5. **Forest & Sage** (Colorectal Specialty focus):
+   * `--primary`: `#1B4332`, `--primary-dk`: `#0D2B1F`, `--primary-lt`: `#E6F2EE`, `--accent`: `#2D6A4F`, `--accent2`: `#40916C`
+   * `s1`–`s5` borders/badges: `#1B4332`, `#2D6A4F`, `#40916C`, `#52B788`, `#1A3050`
+6. **Maroon & Plum** (Endocrine / Head & Neck focus):
+   * `--primary`: `#4A1525`, `--primary-dk`: `#200B11`, `--primary-lt`: `#FDF5F7`, `--accent`: `#7A2240`, `--accent2`: `#A3385B`
+   * `s1`–`s5` borders/badges: `#4A1525`, `#3A2430`, `#2B3A42`, `#42362B`, `#1E293B`
+7. **Emerald & Deep Slate** (Upper GI focus):
+   * `--primary`: `#064E3B`, `--primary-dk`: `#022C22`, `--primary-lt`: `#ECFDF5`, `--accent`: `#059669`, `--accent2`: `#34D399`
+   * `s1`–`s5` borders/badges: `#064E3B`, `#065F46`, `#047857`, `#059669`, `#10B981`
+
+### 12.3 Monograph CSS Layout Elements
+Always maintain standard class-level overrides in the `<style>` tag:
+* `.sec-header`: Margin top `60px`, margin bottom `8px`, padding `28px 36px`, border-radius `10px`, border-left `4px solid var(--sX)`.
+* `.sec-badge`: Badge mapping for Pillar 1-5 (`background: var(--sX)`).
+* `.topic`: Margin top `48px`, padding top `48px`, border-top `1px solid var(--border)`.
+* `.callout`: Margin `18px 0`, padding `14px 18px`, border-radius `0 8px 8px 0`, border-left `4px solid`. Support for `.pearl` (gold), `.warn` (red), `.clin` (s1), and `.exam` (s4) variants.
+* `.table-wrap`: Rounded table container with box shadow and custom column headers styled matching the pillar themes.
+* `.gallery-grid` / `.gallery-item`: Responsive flex/grid block for anatomical and diagnostic imaging inserts.
+* **Media Queries:** Ensure complete responsiveness for smaller devices under `@media(max-width:900px)` and print rules under `@media print`.
+
