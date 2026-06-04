@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beyond the Textbook: The Narrative Medicine Reading List for Surgical Trainees — Surgical Insight Hub</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Shared Styles -->
+  <link rel="stylesheet" href="../css/theme.css">
+  <link rel="stylesheet" href="../css/shared.css">
+  <link rel="stylesheet" href="blog.css">
+  
+  <script>
+    const savedTheme = localStorage.getItem('sih-theme') || 'light';
+    if (savedTheme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+  </script>
+  
+  <style>
+    .attribution-card {
+      background: rgba(37,99,235,0.02);
+      border: 1px dashed rgba(37,99,235,0.3);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 2.5rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      font-family: 'Inter', sans-serif;
+    }
+    
+    [data-theme="dark"] .attribution-card {
+      background: rgba(59, 130, 246, 0.03);
+      border-color: rgba(59, 130, 246, 0.2);
+    }
+    
+    .attribution-card svg {
+      color: #2563eb;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    
+    [data-theme="dark"] .attribution-card svg {
+      color: #3b82f6;
+    }
+    
+    .book-review-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 24px;
+      margin: 2.5rem 0;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.2s ease;
+      font-family: 'Inter', sans-serif;
+    }
+    
+    .book-review-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+      border-color: #2563eb;
+    }
+    
+    [data-theme="dark"] .book-review-card:hover {
+      border-color: #3b82f6;
+    }
+    
+    .book-review-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 16px;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 12px;
+    }
+    
+    .book-review-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      margin: 0;
+    }
+    
+    .book-review-author {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+      margin-top: 2px;
+    }
+    
+    .book-tag {
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 30px;
+      background: rgba(37, 99, 235, 0.08);
+      color: #2563eb;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    
+    [data-theme="dark"] .book-tag {
+      background: rgba(59, 130, 246, 0.12);
+      color: #3b82f6;
+    }
+    
+    .original-recommendation {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+    }
+    
+    .surgical-perspective {
+      background: rgba(16, 185, 129, 0.03);
+      border-left: 4px solid #10b981;
+      padding: 16px 20px;
+      border-radius: 0 12px 12px 0;
+      font-size: 0.9rem;
+      line-height: 1.55;
+      color: var(--text-primary);
+    }
+    
+    .surgical-perspective strong {
+      color: #10b981;
+      display: block;
+      margin-bottom: 6px;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 800;
+    }
+    
+    .wellbeing-box {
+      background: rgba(184, 146, 42, 0.03);
+      border: 1px solid rgba(184, 146, 42, 0.15);
+      border-radius: 12px;
+      padding: 20px;
+      margin: 3rem 0;
+      font-family: 'Inter', sans-serif;
+    }
+    
+    .wellbeing-title {
+      font-weight: 800;
+      font-size: 1rem;
+      color: #b8922a;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .wellbeing-text {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="mainNav">
+    <div class="nav-left">
+      <a href="../index.html" class="nav-pill">
+        <div class="nav-logo-img">
+          <img src="../assets/images/Surgical_Insight_Hub_Logo.png" alt="SIH">
+        </div>
+        <div>
+          <div class="nav-brand-text">Surgical Insight Hub</div>
+          <div class="nav-brand-sub">Advanced Surgical Learning</div>
+        </div>
+      </a>
+      <div class="nav-links-pill">
+        <a href="../index.html">Home</a>
+        <a href="../notes.html">Notes</a>
+        <a href="../notes/operative_approach.html">Playbook</a>
+        <a href="../podcast.html">Podcast</a>
+        <a href="../surgery-talk.html" class="active">Surgery Talk</a>
+        <a href="../about.html">About</a>
+      </div>
+    </div>
+
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <svg id="moonIcon" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/></svg>
+        <svg id="sunIcon" style="display:none;" viewBox="0 0 24 24"><path d="M12 7a5 5 0 1 0 5 5 5.006 5.006 0 0 0-5-5zm0 8a3 3 0 1 1 3-3 3.003 3.003 0 0 1-3 3zm0-13a1 1 0 0 0-1 1v2a1 1 0 0 0 2 0V3a1 1 0 0 0-1-1zm0 18a1 1 0 0 0-1 1v2a1 1 0 0 0 2 0v-2a1 1 0 0 0-1-1zm8-11h-2a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2zm-16 0H2a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2zm13.657-5.657a1 1 0 0 0-1.414 0l-1.414 1.414a1 1 0 0 0 1.414 1.414l1.414-1.414a1 1 0 0 0 0-1.414zm-11.314 0a1 1 0 0 0 0 1.414l1.414 1.414a1 1 0 0 0 1.414-1.414L4.929 5.757a1 1 0 0 0-1.414 0zm11.314 11.314a1 1 0 0 0 0 1.414l1.414 1.414a1 1 0 0 0 1.414-1.414l-1.414-1.414a1 1 0 0 0-1.414 0zm-11.314 0a1 1 0 0 0-1.414 1.414l1.414 1.414a1 1 0 0 0 1.414-1.414l-1.414-1.414a1 1 0 0 0 0-1.414z"/></svg>
+      </button>
+      <a href="../arena.html" class="nav-btn arena-btn">MCQ Arena</a>
+      <button class="mob-nav-toggle" onclick="openMobNav()">
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mob-nav-overlay" id="mobNavOverlay" onclick="closeMobNav()"></div>
+  <div class="mob-nav-sheet" id="mobNavSheet">
+    <div class="mob-nav-handle"></div>
+    <a href="../index.html" onclick="closeMobNav()">Home</a>
+    <a href="../notes.html" onclick="closeMobNav()">Notes</a>
+    <a href="../notes/operative_approach.html" onclick="closeMobNav()">Playbook</a>
+    <a href="../podcast.html" onclick="closeMobNav()">Podcast</a>
+    <a href="../surgery-talk.html" class="active" onclick="closeMobNav()">Surgery Talk</a>
+    <a href="../arena.html" onclick="closeMobNav()">MCQ Arena</a>
+    <a href="../about.html" onclick="closeMobNav()">About</a>
+  </div>
+
+  <article>
+    <header class="blog-hero">
+      <h1 class="blog-title">Beyond the Textbook: The Narrative Medicine Reading List for Surgical Trainees</h1>
+      <div class="blog-meta" style="margin-top: 1rem;">
+        <span class="blog-badge" style="background: rgba(37, 99, 235, 0.1); color: #2563eb;">Literature Review</span>
+        <span class="blog-badge" style="background: rgba(16, 185, 129, 0.1); color: #10b981;">Resident Well-being</span>
+        <span class="blog-date">June 4, 2026</span>
+      </div>
+      <p class="blog-subtitle">Cultivating empathy, decision-making clarity, and psychological resilience through non-academic literature during surgical training.</p>
+    </header>
+
+    <div class="blog-container">
+      <main class="blog-main blog-content">
+        
+        <!-- Attribution Card -->
+        <div class="attribution-card">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+          <div style="font-size: 0.9rem; line-height: 1.5;">
+            <strong style="color: var(--text-primary); font-size: 0.95rem; display: block; margin-bottom: 4px;">Editorial Review &amp; Clinical Commentary</strong>
+            This article is an expanded review and surgical commentary on the original essay <a href="https://opmed.doximity.com/articles/a-resident-shares-his-must-read-books-for-fellow-residents" target="_blank" style="color: #2563eb; font-weight: 700; text-decoration: underline;">"A Resident Shares His Must-Read Books for Fellow Residents"</a> written by <strong>Dr. Brent Schnipke, MD</strong> and originally published on <a href="https://opmed.doximity.com/" target="_blank" style="color: #2563eb; font-weight: 700; text-decoration: underline;">Doximity Op-Med</a>. In compliance with copyright guidelines, we summarize Dr. Schnipke's core recommendations while adding professional training insights from the <em>Surgical Insight Hub</em> editorial staff.
+          </div>
+        </div>
+
+        <p>Medical residency is an intense, transformative period in the development of a physician. Having graduated from medical school and earned the title of "Doctor," trainees find themselves at the very beginning of practical clinical practice. This period is marked by a challenging dichotomy: residents possess access to vast medical knowledge but often lack the practical experience to apply it confidently in high-stakes environments.</p>
+
+        <p>This challenge is further compounded by the structured obligations of training—lectures, mandatory readings, case preparation, research, and board examinations. Yet, relying solely on textbooks and academic journals can lead to cognitive exhaustion and emotional isolation. Grounded in the principles of <strong>Narrative Medicine</strong> (originally established by Dr. Rita Charon at Columbia University), clinical outcomes improve when physicians learn to listen, process, and engage with stories. Non-academic literature provides a softer, reflective language that expands a resident's capacity for empathy, decision-making, and coping with the daily weight of patient care.</p>
+
+        <p>Furthermore, under the <strong>ACGME Common Program Requirements (Section VI.C)</strong>, sponsoring institutions are mandated to provide resources that support resident well-being. Augmenting technical studies with narrative reading is a highly effective, personal wellness practice. Below is an expanded review of the 10 books recommended by Dr. Brent Schnipke for residents, followed by our dedicated surgical training commentary for each.</p>
+
+        <hr>
+
+        <!-- BOOK 1 -->
+        <div class="book-review-card">
+          <div class="book-review-header">
+            <div>
+              <h3 class="book-review-title">1. When Breath Becomes Air</h3>
+              <div class="book-review-author">by Paul Kalanithi, MD</div>
+            </div>
+            <span class="book-tag">Memoir</span>
+          </div>
+          <p class="original-recommendation"><strong>Summary of Recommendation:</strong> Dr. Schnipke identifies this short, poignant memoir as a modern staple. It follows the life of a neurosurgery fellow who faces a terminal lung cancer diagnosis just as his training is concluding. The book provides a profound look at mortality and the patient experience from the perspective of an elite surgical trainee.</p>
+          <div class="surgical-perspective">
+            <strong>Surgical Insight Perspective:</strong>
+            In surgical fields, we are trained to intervene, repair, and control outcomes. Kalanithi's memoir is a vital reminder of the limits of surgery. For junior residents, it shifts the focus from purely technical success (e.g., "resection margins") to holistic patient goals. It is a masterclass in learning how to have honest, empathetic discussions about prognosis and end-of-life care with patients and their families.
+          </div>
+        </div>
+
+        <!-- BOOK 2 -->
+        <div class="book-review-card">
+          <div class="book-review-header">
+            <div>
+              <h3 class="book-review-title">2. Better: A Surgeon's Notes on Performance</h3>
+              <div class="book-review-author">by Atul Gawande, MD</div>
+            </div>
+            <span class="book-tag">Essays</span>
+          </div>
+          <p class="original-recommendation"><strong>Summary of Recommendation:</strong> Dr. Schnipke highlights this book for its focus on the core values—diligence, doing right, and ingenuity—that allow clinicians to improve their practice. While Gawande’s essays center on surgical practice, his insights into human behavior and systemic improvement are universal.</p>
+          <div class="surgical-perspective">
+            <strong>Surgical Insight Perspective:</strong>
+            Diligence is the absolute cornerstone of surgical safety. Gawande's focus on micro-level practices (such as the mechanics of hand hygiene or surgical check-lists) demonstrates how small, repetitive actions directly prevent major post-operative complications. It is an essential read for interns to understand that the tedious tasks of floor work and patient preparation are critical safety barriers.
+          </div>
+        </div>
+
+        <!-- BOOK 3 -->
+        <div class="book-review-card">
+          <div class="book-review-header">
+            <div>
+              <h3 class="book-review-title">3. The House of God</h3>
+              <div class="book-review-author">by Samuel Shem, MD</div>
+            </div>
+            <span class="book-tag">Satire</span>
+          </div>
+          <p class="original-recommendation"><strong>Summary of Recommendation:</strong> Dr. Schnipke includes this classic satire with caveats, noting that much of the content is outdated and gratuitous. However, the book captures a universal psychological truth about the stress of caregiving, utilizing dark humor to expose the coping mechanisms of sleep-deprived trainees.</p>
+          <div class="surgical-perspective">
+            <strong>Surgical Insight Perspective:</strong>
+            While Shem’s depiction of residency is extreme, the "laws" of the House of God reflect the raw, defensive psychology of clinical overload. In surgical residency, where physical exhaustion is combined with high patient acuity, recognizing the line between healthy humor and destructive cynicism is key to long-term survival and preventing empathy fatigue.
+          </div>
+        </div>
+
+        <!-- BOOK 4 -->
+        <div class="book-review-card">
+          <div class="book-review-header">
+            <div>
+              <h3 class="book-review-title">4. Intern</h3>
+              <div class="book-review-author">by Sandeep Jauhar, MD</div>
+            </div>
+            <span class="book-tag">Memoir</span>
+          </div>
+          <p class="original-recommendation"><strong>Summary of Recommendation:</strong> Dr. Schnipke recommends this book as a realistic, grounding memoir of a cardiology fellow navigating the clinical hierarchy, sleeplessness, and profound self-doubt of early training. It offers solidarity to residents facing similar transitions.</p>
+          <div class="surgical-perspective">
+            <strong>Surgical Insight Perspective:</strong>
+            Imposter syndrome is common in surgical programs, particularly when residents first take trauma calls or lead minor procedures. Jauhar’s honesty about making mistakes and questioning his own competence helps normalize the anxiety of training. It reinforces that confidence and safe execution are built through structured supervision and deliberate practice.
+          </div>
+        </div>
+
+        <!-- BOOK 5 -->
+        <div class="book-review-card">
+          <div class="book-review-header">
+            <div>
+              <h3 class="book-review-title">5. Hot Lights, Cold Steel</h3>
+              <div class="book-review-author">by Michael J. Collins, MD</div>
+            </div>
+            <span class="book-tag">Surgical Memoir</span>
+          </div>
+          <p class="original-recommendation"><strong>Summary of Recommendation:</strong> Dr. Schnipke commends this best-selling memoir of an orthopedic surgery resident at the Mayo Clinic. The book uses humor, wit, and engaging anecdotes to capture the rigors of surgical training and the deep privilege of operating and healing.</p>
+          <div class="surgical-perspective">
+            <strong>Surgical Insight Perspective:</strong>
+            This is the ultimate surgical memoir. Collins describes the extreme physical demands and operational hours of surgical training. His reflections on working under demanding attendings, performing late-night reductions, and facing personal limits illustrate the grit and resilience required in surgical programs, while maintaining a love for the craft.
+          </div>
+        </div>
+
+        <!-- BOOK 6 -->
+        <div class="book-review-card">
+          <div class="book-review-header">
+            <div>
+              <h3 class="book-review-title">6. Bellevue</h3>
+              <div class="book-review-author">by David Oshinsky</div>
+            </div>
+            <span class="book-tag">History</span>
+          </div>
+          <p class="original-recommendation"><strong>Summary of Recommendation:</strong> Dr. Schnipke recommends this historical account of Bellevue Hospital to provide critical system context. The book traces three centuries of medicine in America, illustrating how modern medical education and hospital structures were established.</p>
+          <div class="surgical-perspective">
+            <strong>Surgical Insight Perspective:</strong>
+            Surgical systems did not develop in a vacuum. Bellevue's history details the emergence of modern trauma care, sterile techniques, and public health initiatives. Understanding how the Halstedian model of surgical training evolved helps residents navigate modern hospital hierarchies and appreciate the systems designed to ensure patient safety.
+          </div>
+        </div>
+
+        <!-- BOOK 7 -->
+        <div class="book-review-card">
+          <div class="book-review-header">
+            <div>
+              <h3 class="book-review-title">7. Becoming a Doctor</h3>
+              <div class="book-review-author">by Lee Gutkind</div>
+            </div>
+            <span class="book-tag">Anthology</span>
+          </div>
+          <p class="original-recommendation"><strong>Summary of Recommendation:</strong> Dr. Schnipke suggests this collection of creative nonfiction essays for its diversity of voices. Written by medical students and junior physicians, it highlights the shared challenges and milestones of medical training, helping to counter the isolation of residency.</p>
+          <div class="surgical-perspective">
+            <strong>Surgical Insight Perspective:</strong>
+            Surgical training can often feel like a silo. Reading about the challenges faced by colleagues in emergency medicine, pediatrics, and internal medicine builds interdisciplinary empathy. It also reminds surgical trainees that the anxiety of transitioning from an observer to an active operator is a universal experience.
+          </div>
+        </div>
+
+        <!-- BOOK 8 -->
+        <div class="book-review-card">
+          <div class="book-review-header">
+            <div>
+              <h3 class="book-review-title">8. How Doctors Think</h3>
+              <div class="book-review-author">by Jerome Groopman, MD</div>
+            </div>
+            <span class="book-tag">Cognitive Science</span>
+          </div>
+          <p class="original-recommendation"><strong>Summary of Recommendation:</strong> Dr. Schnipke highlights this book for its investigation into the cognitive processes and biases of physicians. Groopman illustrates how heuristics, anchoring, and premature closure can lead to diagnostic errors, and offers tools to prevent these cognitive traps.</p>
+          <div class="surgical-perspective">
+            <strong>Surgical Insight Perspective:</strong>
+            In surgical emergency settings (such as assessing an acute abdomen), diagnostic anchoring can lead to disastrous delays. Assuming a post-operative fever is always atelectasis, for example, can result in a missed anastomotic leak. Groopman's cognitive frameworks help surgeons remain open-minded, challenge initial assumptions, and systematically evaluate differential diagnoses.
+          </div>
+        </div>
+
+        <!-- BOOK 9 -->
+        <div class="book-review-card">
+          <div class="book-review-header">
+            <div>
+              <h3 class="book-review-title">9. The Man Who Mistook His Wife for a Hat</h3>
+              <div class="book-review-author">by Oliver Sacks, MD</div>
+            </div>
+            <span class="book-tag">Case Studies</span>
+          </div>
+          <p class="original-recommendation"><strong>Summary of Recommendation:</strong> Dr. Schnipke frequently recommends this classic by Oliver Sacks. The vignettes treat patients with deep respect, exploring complex neurological deficits while highlighting the human capacity for adaptation and dignity.</p>
+          <div class="surgical-perspective">
+            <strong>Surgical Insight Perspective:</strong>
+            Sacks demonstrates the peak of narrative case reporting. Instead of presenting diseases as mere lists of diagnostic criteria, he focuses on how the pathology alters the patient's daily life. This teaches surgical residents to look beyond clinical imaging and lab results, ensuring they treat the person rather than just the disease.
+          </div>
+        </div>
+
+        <!-- BOOK 10 -->
+        <div class="book-review-card">
+          <div class="book-review-header">
+            <div>
+              <h3 class="book-review-title">10. What Patients Say, What Doctors Hear</h3>
+              <div class="book-review-author">by Danielle Ofri, MD</div>
+            </div>
+            <span class="book-tag">Communication</span>
+          </div>
+          <p class="original-recommendation"><strong>Summary of Recommendation:</strong> Dr. Schnipke recommends this practical guide to doctor-patient communication. Ofri demonstrates how active listening and clear communication are key to accurate diagnosis, treatment compliance, and building trust.</p>
+          <div class="surgical-perspective">
+            <strong>Surgical Insight Perspective:</strong>
+            Effective communication is a vital surgical safety tool. A significant portion of surgical malpractice claims stem not from technical errors, but from communication failures during pre-operative planning and informed consent. Ofri’s strategies help surgical residents actively listen, manage expectations, and establish trust before operating.
+          </div>
+        </div>
+
+        <hr>
+
+        <h2>📊 Comparative Book Evaluation Matrix</h2>
+        <p>This comparison matrix organizes the 10 recommendations by their primary clinical focus, relevance to surgical milestones, and reading compatibility with typical shift patterns:</p>
+        
+        <div class="blog-table-container">
+          <table class="blog-table">
+            <thead>
+              <tr>
+                <th>Title</th>
+                <th>Core Theme</th>
+                <th>Surgical Training Utility</th>
+                <th>Best Reading Window</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Better</strong></td>
+                <td>Diligence &amp; Quality</td>
+                <td>Post-op complication reduction &amp; system loops</td>
+                <td>Shift Breaks (Bite-sized essays)</td>
+              </tr>
+              <tr>
+                <td><strong>Hot Lights, Cold Steel</strong></td>
+                <td>Surgical Grit</td>
+                <td>Survival of surgical work hours &amp; team hierarchy</td>
+                <td>Off-Duty Hours (Engaging memoir)</td>
+              </tr>
+              <tr>
+                <td><strong>How Doctors Think</strong></td>
+                <td>Cognitive Bias</td>
+                <td>Reducing diagnostic error &amp; surgical anchoring</td>
+                <td>Focused Study (Structured concepts)</td>
+              </tr>
+              <tr>
+                <td><strong>When Breath Becomes Air</strong></td>
+                <td>Empathy &amp; Mortality</td>
+                <td>Discussing surgical prognosis &amp; palliation limits</td>
+                <td>Off-Duty Hours (Short, intense memoir)</td>
+              </tr>
+              <tr>
+                <td><strong>What Patients Say...</strong></td>
+                <td>Communication</td>
+                <td>Enhancing informed consent &amp; avoiding claims</td>
+                <td>Shift Breaks (Anecdotal chapters)</td>
+              </tr>
+              <tr>
+                <td><strong>Bellevue</strong></td>
+                <td>Medical History</td>
+                <td>Understanding trauma systems &amp; training history</td>
+                <td>Vacation Reading (Detailed history)</td>
+              </tr>
+              <tr>
+                <td><strong>Intern</strong></td>
+                <td>Residency Stress</td>
+                <td>Normalizing imposter syndrome &amp; acute calls</td>
+                <td>Off-Duty Hours (Reflective memoir)</td>
+              </tr>
+              <tr>
+                <td><strong>House of God</strong></td>
+                <td>Satirical Coping</td>
+                <td>Processing burnout &amp; recognizing systemic cynicism</td>
+                <td>Off-Duty Hours (Humorous satire)</td>
+              </tr>
+              <tr>
+                <td><strong>Becoming a Doctor</strong></td>
+                <td>Shared Experience</td>
+                <td>Building interdisciplinary empathy on wards</td>
+                <td>Shift Breaks (Short essay format)</td>
+              </tr>
+              <tr>
+                <td><strong>The Man Who...</strong></td>
+                <td>Narrative Medicine</td>
+                <td>Preserving humanistic focus beyond pathology</td>
+                <td>Anytime (Independent clinical cases)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="wellbeing-box">
+          <div class="wellbeing-title">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+            ACGME Section VI.C: Sponsoring Institution Mandate
+          </div>
+          <p class="wellbeing-text">
+            Under the ACGME Common Program Requirements, residency programs must provide a professional, respectful, and supportive environment. Sponsoring institutions must guarantee that trainees have access to mental health support, fatigue mitigation resources, and tools that promote physical and emotional well-being. Incorporating narrative medicine reading into your off-duty routine is a validated method to combat emotional exhaustion and maintain clinical empathy.
+          </p>
+        </div>
+
+      </main>
+
+      <!-- Sidebar -->
+      <aside class="blog-sidebar">
+        <div class="sidebar-card" style="border-top: 4px solid #2563eb;">
+          <h3>⚡ Reading for Well-being</h3>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 15px;">Tips for busy surgical residents to integrate narrative reading into their schedules:</p>
+          <div style="font-family:'Inter',sans-serif; font-size:0.8rem; display:flex; flex-direction:column; gap:10px;">
+            <div style="background:var(--bg-secondary); padding:10px; border-radius:6px; border:1px solid var(--border-color);">
+              <strong style="color: #2563eb; display:block; margin-bottom:2px;">The 15-Minute Rule</strong>
+              Read just 15 minutes of non-medical literature before sleep to promote cognitive detachment from hospital stress.
+            </div>
+            <div style="background:var(--bg-secondary); padding:10px; border-radius:6px; border:1px solid var(--border-color);">
+              <strong style="color: var(--text-primary); display:block; margin-bottom:2px;">Audiobook Integration</strong>
+              Listen to memoirs or narrative history during your daily commute or post-call walks.
+            </div>
+            <div style="background:var(--bg-secondary); padding:10px; border-radius:6px; border:1px solid var(--border-color);">
+              <strong style="color: #10b981; display:block; margin-bottom:2px;">Read Short Forms First</strong>
+              Start with essays (like Gawande's) or short case vignettes (like Sacks') during shift breaks.
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar-card">
+          <h3>📖 Related Book Guides</h3>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 20px;">Explore our detailed list of technical textbooks and digital tools for surgical training:</p>
+          <div class="sidebar-book-list" style="gap: 15px; text-align: left;">
+            <a href="residency-books-and-tools.html" class="sb-book" style="border: 1px solid var(--border-color); padding: 12px; border-radius: 8px; background: var(--bg-secondary); transition: all 0.2s ease;">
+              <strong style="font-family:'Inter',sans-serif; font-size:0.85rem; color: var(--text-primary); display: block; margin-bottom: 4px;">Surgical Books &amp; Tools</strong>
+              <span style="font-size: 0.75rem; color: var(--text-secondary); line-height: 1.3;">Read our guide on technical atlases, textbooks, and simulation apps for surgical residents.</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="sidebar-card" style="border-left: 4px solid var(--brand-gold);">
+          <h3>📢 Join Surgical Insight Hub</h3>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 20px;">Get real-time emergency clinical pearls, trial updates, and high-yield MCQs direct to your phone.</p>
+          <a href="https://t.me/sugicalInsightHub" target="_blank" class="download-tg" style="width: 100%; justify-content: center; margin-top: 10px;">
+            <svg viewBox="0 0 24 24" style="width:18px; height:18px; fill:currentColor; margin-right:6px;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.91-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+            Join Telegram Channel
+          </a>
+        </div>
+      </aside>
+    </div>
+  </article>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="nav-logo-img" style="width:36px; height:36px; margin-bottom:.8rem;">
+          <img src="../assets/images/Surgical_Insight_Hub_Logo.png" alt="SIH">
+        </div>
+        <div style="font-weight:800; font-size:1.1rem; color:var(--text-primary);">Surgical Insight Hub</div>
+        <p style="font-size:.85rem; color:var(--text-secondary); margin-top:.5rem; line-height:1.5;">Elevating surgical education through evidence-based monographs, interactive arenas, and dynamic clinical discussions.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Platform</h4>
+        <a href="../notes.html">Clinical Notes</a>
+        <a href="../notes/operative_approach.html">Operative Playbook</a>
+        <a href="../arena.html">MCQ Arena</a>
+        <a href="../surgery-talk.html">Surgery Talk</a>
+      </div>
+      <div class="footer-links">
+        <h4>Connect</h4>
+        <a href="https://t.me/sugicalInsightHub" target="_blank">Telegram Channel</a>
+        <a href="https://www.youtube.com/@SurgicalInsightHub" target="_blank">YouTube Library</a>
+        <a href="../about.html">About Us</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; <span id="year"></span> Surgical Insight Hub. All rights reserved. Not medical advice.
+    </div>
+  </footer>
+
+  <script src="../js/navigation.js"></script>
+  <script src="../js/nav-pill.js"></script>
+  
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const toggle = document.getElementById('themeToggle');
+    const root = document.documentElement;
+    const moon = document.getElementById('moonIcon');
+    const sun = document.getElementById('sunIcon');
+
+    function updateIcons(theme) {
+      if(theme === 'dark') {
+        moon.style.display = 'none';
+        sun.style.display = 'block';
+      } else {
+        moon.style.display = 'block';
+        sun.style.display = 'none';
+      }
+    }
+    updateIcons(savedTheme);
+
+    toggle.addEventListener('click', () => {
+      const current = root.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      localStorage.setItem('sih-theme', next);
+      updateIcons(next);
+    });
+    
+    function openMobNav() {
+      document.getElementById('mobNavOverlay').classList.add('active');
+      document.getElementById('mobNavSheet').classList.add('active');
+    }
+    function closeMobNav() {
+      document.getElementById('mobNavOverlay').classList.remove('active');
+      document.getElementById('mobNavSheet').classList.remove('active');
+    }
+    let startY = 0;
+    const sheet = document.getElementById('mobNavSheet');
+    sheet.addEventListener('touchstart', e => {
+      startY = e.touches[0].clientY;
+    });
+    sheet.addEventListener('touchmove', e => {
+      const y = e.touches[0].clientY;
+      if (y > startY + 50) closeMobNav();
+    });
+  </script>
+</body>
+</html>
