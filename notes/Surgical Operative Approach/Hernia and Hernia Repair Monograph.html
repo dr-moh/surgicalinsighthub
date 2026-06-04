@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Surgical Insight Hub | Hernia and Hernia Repair Monograph</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="../../css/shared.css" rel="stylesheet"/>
+<link href="../../css/theme.css?v=4.0.0" rel="stylesheet"/>
+<style>
+:root {
+  --primary:   #1B4332;
+  --primary-dk:#0D2B1F;
+  --primary-lt:#E6F2EE;
+  --accent:    #2D6A4F;
+  --accent2:   #40916C;
+  --gold:      #B8860B;
+  --gold-lt:   #FFF8E8;
+  --s1:        #1B4332;
+  --s2:        #2D6A4F;
+  --s3:        #40916C;
+  --s4:        #52B788;
+  --s5:        #1A3050;
+  --s1-lt:     #E6F2EE;
+  --s2-lt:     #ECF5F0;
+  --s3-lt:     #F0F8F4;
+  --s4-lt:     #F4FAF7;
+  --s5-lt:     #E6EEF8;
+  --red:       #B91C1C;
+  --red-lt:    #FEF2F2;
+  --bg:        #F5FAF7;
+  --bg2:       #EBF4EF;
+  --border:    #C8DDD4;
+  --text:      #12241A;
+  --muted:     #3A5A47;
+  --white:     #FFFFFF;
+  --sidebar-w: 320px;
+}
+
+[data-theme="dark"] {
+  --bg: #0A140F;
+  --bg2: #122119;
+  --text: #E5ECE9;
+  --muted: #95AFA0;
+  --border: rgba(255,255,255,0.08);
+  --primary-lt: #122119;
+  --s1-lt: #0B2117;
+  --s2-lt: #132A1F;
+  --s3-lt: #1C3628;
+  --s4-lt: #224231;
+  --s5-lt: #0F1D2F;
+  --white: #122119;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--bg);color:var(--text);font-size:16.5px;line-height:1.8;}
+
+/* ── SIDEBAR & OVERLAY ── */
+#sidebar {
+  position: fixed; top: 0; left: 0; width: var(--sidebar-w); height: 100vh;
+  background: var(--primary-dk); color: #E2DEE9;
+  display: flex; flex-direction: column;
+  z-index: 1300; overflow: hidden;
+  transform: translateX(-100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 4px 0 24px rgba(0,0,0,0.3);
+}
+body.sidebar-open #sidebar { transform: translateX(0); }
+
+#sidebar-overlay {
+  position: fixed; inset: 0;
+  background: rgba(49, 46, 129, 0.5); backdrop-filter: blur(3px);
+  z-index: 1250; opacity: 0; pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+body.sidebar-open #sidebar-overlay { opacity: 1; pointer-events: auto; }
+
+#sidebar-toggle {
+  position: fixed; top: 72px; left: 24px; z-index: 1200;
+  background: var(--primary); color: white;
+  border: none; border-radius: 30px;
+  padding: 10px 18px; font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 600;
+  letter-spacing: 0.05em; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  display: flex; align-items: center; gap: 8px; transition: all 0.2s;
+}
+#sidebar-toggle:hover { background: var(--accent); transform: translateY(-2px); }
+
+#progress-bar {
+  position: fixed; top: 52px; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  transform-origin: left; transform: scaleX(0); transition: transform 0.1s; z-index: 1105;
+}
+
+#sidebar-header{padding:20px 20px 14px;border-bottom:1px solid rgba(255,255,255,0.1);flex-shrink:0;}
+#sidebar-header .logo{font-family:'Playfair Display',serif;font-size:13px;font-weight:700;color:var(--accent2);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;}
+#sidebar-header .sub{font-size:10.5px;color:rgba(226,222,233,0.6);letter-spacing:0.04em;}
+#sidebar-search{padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.08);flex-shrink:0;}
+#sidebar-search input{width:100%;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:6px;color:#E2DEE9;padding:6px 10px;font-size:12px;font-family:'Source Serif 4',serif;outline:none;transition:border-color 0.2s;}
+#sidebar-search input::placeholder{color:rgba(226,222,233,0.4);}
+#sidebar-search input:focus{border-color:var(--accent2);}
+#sidebar-nav{flex:1;overflow-y:auto;padding:8px 0 20px;}
+#sidebar-nav::-webkit-scrollbar{width:4px;}
+#sidebar-nav::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.15);border-radius:2px;}
+.vol-label{font-size:9.5px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent2);padding:14px 18px 4px;}
+.nav-item{display:block;padding:8px 18px 8px 22px;font-size:12.5px;color:rgba(226,222,233,0.75);text-decoration:none;border-left:2px solid transparent;transition:all 0.15s;line-height:1.4;}
+.nav-item:hover{color:#fff;background:rgba(255,255,255,0.05);border-left-color:rgba(147,197,253,0.5);}
+.nav-item.active{color:#fff;background:rgba(255,255,255,0.08);border-left-color:var(--accent2);font-weight:600;}
+.nav-item .num{font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(226,222,233,0.4);margin-right:6px;}
+
+/* HERO */
+#hero{background:linear-gradient(135deg,var(--primary-dk) 0%,#1E1B4B 60%,#0F0E17 100%);color:white;padding:120px 72px 60px;position:relative;overflow:hidden;}
+#hero::before{content:'';position:absolute;top:-60px;right:-60px;width:380px;height:380px;background:radial-gradient(circle,rgba(79,70,229,0.18) 0%,transparent 70%);pointer-events:none;}
+#hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--primary),var(--accent2),transparent);}
+#hero .eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.16em;color:var(--accent2);text-transform:uppercase;margin-bottom:14px;}
+#hero h1{font-family:'Playfair Display',serif;font-size:38px;font-weight:700;line-height:1.15;margin-bottom:10px;color:#fff;}
+#hero .subtitle{font-size:18px;color:rgba(255,255,255,0.65);font-style:italic;margin-bottom:28px;}
+#hero .badges{display:flex;gap:10px;flex-wrap:wrap;}
+#hero .badge{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:4px 14px;font-size:12px;color:rgba(255,255,255,0.8);font-family:'JetBrains Mono',monospace;}
+
+/* CONTENT */
+.content-wrap{max-width:900px;margin:0 auto;padding:0 48px 80px;}
+
+/* SECTION HEADER */
+.sec-header{margin-top:60px;margin-bottom:8px;padding:28px 36px;border-radius:10px;display:flex;align-items:center;gap:20px;}
+.sec-header.s1{background:linear-gradient(135deg,#1B433208,#1B433218);border-left:4px solid var(--s1);}
+.sec-header.s2{background:linear-gradient(135deg,#2D6A4F08,#2D6A4F18);border-left:4px solid var(--s2);}
+.sec-header.s3{background:linear-gradient(135deg,#40916C08,#40916C18);border-left:4px solid var(--s3);}
+.sec-header.s4{background:linear-gradient(135deg,#52B78808,#52B78818);border-left:4px solid var(--s4);}
+.sec-header.s5{background:linear-gradient(135deg,#1A305008,#1A305018);border-left:4px solid var(--s5);}
+
+.sec-badge{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;letter-spacing:0.1em;padding:4px 12px;border-radius:4px;white-space:nowrap;flex-shrink:0;}
+.s1 .sec-badge{background:var(--s1);color:white;}
+.s2 .sec-badge{background:var(--s2);color:white;}
+.s3 .sec-badge{background:var(--s3);color:white;}
+.s4 .sec-badge{background:var(--s4);color:white;}
+.s5 .sec-badge{background:var(--s5);color:white;}
+.sec-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;}
+.s1 .sec-title{color:var(--s1);}
+.s2 .sec-title{color:var(--s2);}
+.s3 .sec-title{color:var(--s3);}
+.s4 .sec-title{color:var(--s4);}
+.s5 .sec-title{color:var(--s5);}
+
+/* TOPIC */
+.topic{margin-top:48px;padding-top:48px;border-top:1px solid var(--border);}
+.topic:first-of-type{border-top:none;}
+.topic-header{display:flex;align-items:flex-start;gap:16px;margin-bottom:24px;}
+.topic-num{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;padding:3px 10px;border-radius:4px;margin-top:4px;flex-shrink:0;}
+.s1 .topic-num{background:var(--s1-lt);color:var(--s1);}
+.s2 .topic-num{background:var(--s2-lt);color:var(--s2);}
+.s3 .topic-num{background:var(--s3-lt);color:var(--s3);}
+.s4 .topic-num{background:var(--s4-lt);color:var(--s4);}
+.s5 .topic-num{background:var(--s5-lt);color:var(--s5);}
+.topic h2{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;line-height:1.2;}
+.s1 .topic h2{color:var(--s1);}
+.s2 .topic h2{color:var(--s2);}
+.s3 .topic h2{color:var(--s3);}
+.s4 .topic h2{color:var(--s4);}
+.s5 .topic h2{color:var(--s5);}
+.topic h3{font-family:'Playfair Display',serif;font-size:17px;font-weight:600;color:var(--muted);margin:26px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--border);}
+.topic h4{font-size:13px;font-weight:600;color:var(--muted);letter-spacing:0.06em;text-transform:uppercase;margin:18px 0 8px;font-family:'JetBrains Mono',monospace;}
+.topic p{margin-bottom:12px;color:var(--text);}
+.topic ul,.topic ol{margin:8px 0 14px 20px;color:var(--text);}
+.topic li{margin-bottom:6px;line-height:1.65;}
+.topic li::marker{color:var(--accent2);}
+.topic strong{color:var(--text);font-weight:600;}
+
+/* TABLES */
+.table-wrap{overflow-x:auto;margin:16px 0 20px;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.06);}
+table{width:100%;border-collapse:collapse;font-size:13.5px;background:var(--white);}
+thead tr{background:var(--s1);}
+thead th{color:white;padding:10px 14px;text-align:left;font-family:'Source Serif 4',serif;font-weight:600;font-size:13px;}
+tbody tr:nth-child(even){background:var(--bg2);}
+tbody tr:hover{background:var(--s1-lt);transition:background 0.15s;}
+tbody td{padding:9px 14px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.5;}
+.s2-tbl thead tr{background:var(--s2);}
+.s3-tbl thead tr{background:var(--s3);}
+.s4-tbl thead tr{background:var(--s4);}
+.s5-tbl thead tr{background:var(--s5);}
+
+/* CALLOUTS */
+.callout{margin:18px 0;padding:14px 18px;border-radius:0 8px 8px 0;border-left:4px solid;font-size:14px;line-height:1.65;}
+.callout .label{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;display:block;margin-bottom:4px;}
+.callout.pearl{background:var(--gold-lt);border-color:var(--gold);}
+.callout.pearl .label{color:var(--gold);}
+.callout.warn{background:var(--red-lt);border-color:var(--red);}
+.callout.warn .label{color:var(--red);}
+.callout.clin{background:var(--s1-lt);border-color:var(--s1);}
+.callout.clin .label{color:var(--s1);}
+.callout.exam{background:var(--s4-lt);border-color:var(--s4);}
+.callout.exam .label{color:var(--s4);}
+
+/* RESEARCH INSIGHT CARD (Peptic Ulcer Specialty) */
+.research-insight { margin: 32px 0; background: linear-gradient(145deg, var(--white), var(--s1-lt)); border: 1px solid rgba(6, 78, 59, 0.15); border-radius: 16px; padding: 24px; box-shadow: 0 10px 30px rgba(6, 78, 59, 0.05); position: relative; overflow: hidden; }
+.research-insight::before { content: 'LIVE RESEARCH'; position: absolute; top: 12px; right: -30px; background: var(--gold); color: white; font-family: 'JetBrains Mono', monospace; font-size: 9px; font-weight: 700; padding: 4px 40px; transform: rotate(45deg); }
+.research-insight h4 { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--primary); margin-bottom: 12px; display: flex; align-items: center; gap: 10px; text-transform: none; }
+.research-insight .source-tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; background: var(--primary-lt); color: var(--primary); padding: 2px 8px; border-radius: 4px; }
+.research-insight p { font-size: 14.5px; line-height: 1.6; color: var(--text); margin-bottom: 16px; }
+.research-insight ul { list-style: none; margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.research-insight li { font-size: 13px; padding-left: 20px; position: relative; }
+.research-insight li::before { content: '→'; position: absolute; left: 0; color: var(--gold); font-weight: bold; }
+[data-theme="dark"] .research-insight { border-color: rgba(255, 255, 255, 0.1); }
+
+/* DIAGRAM & CLINICAL GALLERY */
+.diagram-wrap{background:var(--s1-lt);border:1px solid var(--border);border-radius:8px;padding:18px;margin:20px 0;text-align:center;}
+.diagram-title{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--s1);margin-bottom:12px;text-align:left;}
+.diagram-wrap img{max-width:100%;height:auto;border-radius:6px;box-shadow:0 4px 12px rgba(0,0,0,0.1);max-height:400px;object-fit:contain;background:#fff;}
+
+.gallery-grid {display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:24px 0;}
+@media (max-width:768px) {.gallery-grid {grid-template-columns:1fr;}}
+.gallery-item {background:var(--white);border:1px solid var(--border);border-radius:8px;padding:16px;display:flex;flex-direction:column;gap:12px;transition:box-shadow 0.2s;}
+.gallery-item img {max-width:100%;height:auto;border-radius:6px;box-shadow:0 2px 8px rgba(0,0,0,0.08);max-height:280px;object-fit:contain;background:#fff;}
+
+#top-btn{position:fixed;bottom:24px;right:24px;width:44px;height:44px;background:var(--primary);color:white;border:none;border-radius:50%;font-size:18px;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,0.3);z-index:1100;opacity:0;pointer-events:none;transition:all 0.3s;display:flex;align-items:center;justify-content:center;}
+#top-btn.show{opacity:1;pointer-events:auto;}
+#top-btn:hover{background:var(--accent);transform:translateY(-3px);}
+
+.rapid-ref{margin-top:60px;padding:36px;background:var(--primary-dk);color:white;border-radius:12px;box-shadow:var(--shadow-lg);}
+.rapid-ref h3{font-family:'Playfair Display',serif;font-size:24px;margin-bottom:18px;color:#fff;border-bottom:1px solid rgba(255,255,255,0.15);padding-bottom:10px;}
+.rapid-ref table{background:transparent;}
+.rapid-ref thead tr{background:rgba(255,255,255,0.08);}
+.rapid-ref thead th{color:#93C5FD;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;}
+.rapid-ref tbody tr:nth-child(even){background:rgba(255,255,255,0.03);}
+.rapid-ref tbody tr:hover{background:rgba(255,255,255,0.07);}
+.rapid-ref tbody td{border-bottom:1px solid rgba(255,255,255,0.08);color:rgba(255,255,255,0.85);font-size:13px;}
+.rapid-ref strong{color:#fff;}
+
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+
+@media(max-width:900px) {
+  .content-wrap { padding: 0 20px 60px; }
+  #hero { padding: 80px 20px 40px; }
+  #hero h1 { font-size: 30px; }
+  #sidebar-toggle { top: 64px; left: 16px; }
+}
+@media print {
+  #sidebar-toggle, #sidebar-overlay, #sidebar, #top-btn, #progress-bar, #mainNav { display: none !important; }
+  .topic { page-break-inside: avoid; }
+  .sec-header { page-break-before: always; }
+}
+</style>
+</head>
+<body>
+<!-- Standardized SIH Navbar -->
+<nav class="nav" id="mainNav">
+<div class="nav-left">
+<a class="nav-pill" href="../../index.html">
+<div class="nav-logo-img">
+<img alt="SIH Logo" src="../../assets/images/Surgical_Insight_Hub_Logo.png"/>
+</div>
+<div>
+<div class="nav-brand-text">Surgical Insight Hub</div>
+<div class="nav-brand-sub">The Residency Journal</div>
+</div>
+</a>
+</div>
+<div class="nav-links-pill">
+<a href="../../index.html">Home</a>
+<a class="active" href="../../notes.html">Notes</a>
+<a href="../operative_approach.html">Playbook</a>
+<a href="../../arena.html?v=4.0.0">MCQ Arena</a>
+<a href="../../podcast.html">Podcast</a>
+<a href="../../surgery-talk.html">Surgery Talk</a>
+<a href="../../about.html">About</a>
+</div>
+<div class="nav-right">
+<button aria-label="Toggle Theme" class="theme-toggle" id="themeToggle">
+<svg height="18" id="moonIcon" viewbox="0 0 24 24" width="18"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+<svg height="18" id="sunIcon" style="display:none;" viewbox="0 0 24 24" width="18"><circle cx="12" cy="12" r="5"></circle><line x1="12" x2="12" y1="1" y2="3"></line><line x1="12" x2="12" y1="21" y2="23"></line><line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line><line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line><line x1="1" x2="3" y1="12" y2="12"></line><line x1="21" x2="23" y1="12" y2="12"></line><line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line><line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line></svg>
+</button>
+<a class="nav-tg-btn" href="https://t.me/sugicalInsightHub" target="_blank" title="Join Telegram">
+<svg fill="#f0d080" height="18" viewbox="0 0 24 24" width="18"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.89 8.22l-1.97 9.28c-.15.66-.54.82-1.08.51l-3-2.21-1.45 1.39c-.16.16-.3.3-.61.3l.21-3.05 5.56-5.02c.24-.21-.05-.33-.37-.12l-6.87 4.33-2.96-.92c-.64-.2-.66-.64.14-.95l11.57-4.46c.54-.19 1.01.13.83.94z"></path></svg>
+</a>
+<a class="nav-btn arena-btn" href="../../arena.html?v=4.0.0">MCQ Arena</a>
+<button aria-label="Menu" class="mob-nav-toggle" onclick="openMobNav()">
+<div class="hamburger"><span></span><span></span><span></span></div>
+</button>
+</div>
+</nav>
+<div class="mob-nav-overlay" id="mobNavOverlay" onclick="closeMobNav()"></div>
+<div class="mob-nav-sheet" id="mobNavSheet">
+<div class="mob-nav-handle"></div>
+<a href="../../index.html" onclick="closeMobNav()">Home</a>
+<a href="../../notes.html" onclick="closeMobNav()">Notes</a>
+<a href="../../notes/operative_approach.html" onclick="closeMobNav()">Playbook</a>
+<a href="../../podcast.html" onclick="closeMobNav()">Podcast</a>
+<a href="../../surgery-talk.html" onclick="closeMobNav()">Surgery Talk</a>
+<a href="../../arena.html" onclick="closeMobNav()">MCQ Arena</a>
+<a href="../../about.html" onclick="closeMobNav()">About</a>
+<a href="https://t.me/sugicalInsightHub" onclick="closeMobNav()" rel="noopener" style="color: var(--brand-gold); font-weight: 800;" target="_blank">Join Telegram Community</a>
+<a href="https://www.linkedin.com/company/surgical-insight-hub" onclick="closeMobNav()" rel="noopener" style="color: var(--brand-gold); font-weight: 800;" target="_blank">LinkedIn Community</a>
+</div>
+
+<div id="progress-bar"></div>
+<div id="sidebar-overlay" onclick="closeSidebar()"></div>
+<button id="sidebar-toggle" onclick="toggleSidebar()">
+<span>☰</span> Contents
+</button>
+
+<nav id="sidebar">
+<div id="sidebar-header">
+<div class="logo">Surgical Insight Hub</div>
+<div class="sub">Hernia Repair · Monograph Series</div>
+</div>
+<div id="sidebar-search">
+<input id="search-input" oninput="filterNav(this.value)" placeholder="Search topics…" type="text"/>
+</div>
+<div id="sidebar-nav">
+<div class="vol-label">Pillar 1: Pre-Op Optimization</div>
+<a class="nav-item" href="#p1a"><span class="num">1.1</span>Clinical Workup</a>
+<a class="nav-item" href="#p1b"><span class="num">1.2</span>Hernia Examination</a>
+<a class="nav-item" href="#p1c"><span class="num">1.3</span>Investigations</a>
+<a class="nav-item" href="#p1d"><span class="num">1.4</span>Risk Stratification</a>
+<a class="nav-item" href="#p1e"><span class="num">1.5</span>General Principles</a>
+<a class="nav-item" href="#p1f"><span class="num">1.6</span>Immediate Pre-Op</a>
+
+<div class="vol-label">Pillar 2: The Operative Game Plan</div>
+<a class="nav-item" href="#p2a"><span class="num">2.1</span>Inguinal Hernia</a>
+<a class="nav-item" href="#p2b"><span class="num">2.2</span>Femoral Hernia</a>
+<a class="nav-item" href="#p2c"><span class="num">2.3</span>Umbilical Hernia</a>
+<a class="nav-item" href="#p2d"><span class="num">2.4</span>Epigastric Hernia</a>
+<a class="nav-item" href="#p2e"><span class="num">2.5</span>Incisional Hernia</a>
+<a class="nav-item" href="#p2f"><span class="num">2.6</span>Parastomal Hernia</a>
+<a class="nav-item" href="#p2g"><span class="num">2.7</span>Obturator Hernia</a>
+<a class="nav-item" href="#p2h"><span class="num">2.8</span>Spigelian Hernia</a>
+<a class="nav-item" href="#p2i"><span class="num">2.9</span>Lumbar Hernia</a>
+<a class="nav-item" href="#p2j"><span class="num">2.10</span>Internal Hernia</a>
+<a class="nav-item" href="#p2k"><span class="num">2.11</span>Strangulated Hernia</a>
+
+<div class="vol-label">Pillar 3: Pearls &amp; Bail-Outs</div>
+<a class="nav-item" href="#p3a"><span class="num">3.1</span>Surgical Pearls</a>
+<a class="nav-item" href="#p3b"><span class="num">3.2</span>The Bail-Out Point</a>
+
+<div class="vol-label">Pillar 4: Post-Op Care</div>
+<a class="nav-item" href="#p4a"><span class="num">4.1</span>Immediate Recovery</a>
+<a class="nav-item" href="#p4b"><span class="num">4.2</span>Clinic Follow-up</a>
+
+<div class="vol-label">Pillar 5: Complications</div>
+<a class="nav-item" href="#p5a"><span class="num">5.1</span>Seroma &amp; Infection</a>
+<a class="nav-item" href="#p5b"><span class="num">5.2</span>Chronic Pain &amp; Recurrence</a>
+
+<div class="vol-label">Quick Reference</div>
+<a class="nav-item" href="#rapid">High-Yield Board Facts</a>
+</div>
+</nav>
+
+<main class="editorial-content" id="main">
+<header id="hero">
+<div class="eyebrow">General Surgery · Abdominal Wall</div>
+<h1>Surgical Monograph: Hernia and Hernia Repair</h1>
+<p class="subtitle">Complete framework covering groin, ventral, incisional, and rare pelvic floor hernias. Rives-Stoppa dissection, TAR component separation, and emergency management of strangulation.</p>
+<div class="badges">
+<span class="badge">PGY-3 Framework</span>
+<span class="badge">Technical Playbook</span>
+</div>
+</header>
+<div class="content-wrap">
+
+<div class="callout warn" style="margin-top: 40px;">
+<span class="label">⚠ Ruthless Reality</span>
+Hernia surgery is the highest-volume operation in general surgery worldwide. It is also the operation most frequently performed inadequately — not because the techniques are complex, but because the decisions before and after the operation are made without rigour. Which hernia needs repair? Which technique is correct for this patient? What mesh is appropriate? When is mesh contraindicated? What do you do with the obstructed hernia? What do you do with the strangulated one? These are the questions that define outcomes.
+</div>
+
+<div class="sec-header s1">
+<span class="sec-badge">PILLAR 1</span>
+<span class="sec-title">Pre-operative Optimization &amp; Preparation</span>
+</div>
+
+<section class="topic s1" id="p1a">
+<div class="topic-header"><span class="topic-num">1.1</span><h2>Clinical Workup</h2></div>
+<h3>History: Key Urgency and Approach Markers</h3>
+<ul>
+<li><strong>Duration and change over time:</strong> A hernia present for years without change differs fundamentally from one enlarging rapidly over weeks. Rapid expansion suggests elevated intra-abdominal pressure (ascites, masses, chronic cough) — resolve the driver before repairing the hernia. A previously reducible hernia that is now irreducible is an emergency until proven otherwise.</li>
+<li><strong>Reducibility categories:</strong>
+  <ul>
+    <li><em>Fully reducible:</em> Contents return completely to the abdomen with gentle pressure in the supine position; proceed to elective repair.</li>
+    <li><em>Partially reducible:</em> Some contents reduce while some do not. Often indicates incarcerated omentum adherent to the sac. Not necessarily strangulated, but requires urgent assessment.</li>
+    <li><em>Irreducible (incarcerated):</em> Contents are trapped within the sac; requires urgent surgical evaluation.</li>
+    <li><em>Strangulated:</em> Contents suffer ischemic compromise due to constriction at the hernia neck; surgical emergency.</li>
+  </ul>
+</li>
+<li><strong>Symptoms of obstruction or strangulation:</strong> Colicky pain, bilious vomiting, and absolute constipation suggest bowel obstruction due to the hernia. Constant, severe pain at the site accompanied by systemic sepsis (tachycardia, fever, hypotension) indicates strangulation.</li>
+<li><strong>Intra-abdominal pressure drivers:</strong>
+  <ul>
+    <li><em>Chronic cough:</em> Repairing a hernia without addressing a chronic cough (COPD, smoking) guarantees recurrence. Perform smoking cessation and respiratory optimization first.</li>
+    <li><em>Constipation:</em> Optimize bowel habits with fiber and laxatives prior to repair.</li>
+    <li><em>Urinary obstruction:</em> Address BPH medically before hernia repair to prevent straining.</li>
+    <li><em>Ascites:</em> Uncontrolled ascites causes extremely high recurrence rates. Manage the underlying cirrhosis or malignancy first.</li>
+    <li><em>Obesity:</em> BMI >35 significantly increases recurrence rates. Weight loss is strongly advised prior to elective repair.</li>
+  </ul>
+</li>
+<li><strong>Prior hernia surgery:</strong> Prior mesh repairs alter anatomy and tissue planes. A failed mesh repair requires a pre-operative CT to map the anatomy and plan the revision.</li>
+</ul>
+</section>
+
+<section class="topic s1" id="p1b">
+<div class="topic-header"><span class="topic-num">1.2</span><h2>Hernia Examination</h2></div>
+<h3>Physical Exam Protocol</h3>
+<ul>
+<li><strong>Dynamic Assessment:</strong> Examine the patient both standing and coughing. A hernia that disappears when supine may emerge immediately upon standing. A true hernia demonstrates an expansile cough impulse.</li>
+<li><strong>Systematic Exam:</strong> Document precise anatomical location, size (longest dimension × width), reducibility, and contents (soft omentum vs. firm bowel). Transilluminate scrotal swelling in pediatric patients to differentiate a hernia from a hydrocele (hydroceles transilluminate, hernias do not). Check the overlying skin for erythema or discoloration (signs of strangulation).</li>
+<li><strong>Taxis (Manual Reduction):</strong> Only attempt manual reduction on a non-tender, non-strangulated hernia after providing adequate analgesia, placing the patient in the Trendelenburg position. Do NOT attempt forceful taxis on a tender, irreducible hernia; this risks reducing ischemic bowel back into the abdominal cavity (*en masse* reduction), delaying diagnosis and causing intra-abdominal peritonitis.</li>
+</ul>
+</section>
+
+<section class="topic s1" id="p1c">
+<div class="topic-header"><span class="topic-num">1.3</span><h2>Mandatory Investigations</h2></div>
+<div class="cols">
+<div>
+<h3>Elective Panel</h3>
+<ul>
+<li><strong>Blood Panel:</strong> FBC, BMP, coagulation profile.</li>
+<li><strong>Urinalysis:</strong> Mandatory in older males to screen for BPH/urinary obstruction.</li>
+<li><strong>BMI:</strong> Documented BMI >35 requires pre-op counseling due to increased infection risks.</li>
+</ul>
+</div>
+<div>
+<h3>Emergency Panel</h3>
+<ul>
+<li><strong>Lactate (ABG):</strong> Lactate >4 mmol/L indicates bowel ischemia.</li>
+<li><strong>FBC:</strong> Leucocytosis (WBC elevation) indicates strangulation or tissue necrosis.</li>
+<li><strong>BMP:</strong> Severe vomiting causes hypokalemic hypochloremic metabolic alkalosis and dehydration-induced renal impairment.</li>
+</ul>
+</div>
+</div>
+<h3>Imaging Modality Selection</h3>
+<ul>
+<li><strong>Ultrasound:</strong> First-line for groin masses with diagnostic uncertainty (differentiating direct vs. indirect inguinal hernias, lymph nodes, or lipomas). Useful dynamically with a Valsalva maneuver for occult hernias in athletes.</li>
+<li><strong>CT Abdomen/Pelvis:</strong> The gold standard for complex incisional hernias (defining defect size, loss of domain, and contents) and for diagnosing internal, obturator, Spigelian, and lumbar hernias. In emergencies, CT confirms obstruction transition points and ischemia (mesenteric edema, free fluid, bowel wall enhancement failure).</li>
+<li><strong>Loss of Domain (LOD) Assessment:</strong> If the hernia volume exceeds 50% of the abdominal cavity volume on CT, returning contents directly during surgery will cause abdominal compartment syndrome (ACS). Requires pre-operative progressive pneumoperitoneum (PPP) or lateral muscle Botulinum toxin injections.</li>
+</ul>
+</section>
+
+<section class="topic s1" id="p1d">
+<div class="topic-header"><span class="topic-num">1.4</span><h2>Risk Stratification</h2></div>
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>Classification / Tool</th>
+<th>Clinical Application</th>
+<th>Surgical Impact</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ASA Class</strong></td>
+<td>Global operative risk assessment</td>
+<td>ASA IV warrants local anesthesia or conservative management</td>
+</tr>
+<tr>
+<td><strong>EHS Inguinal Classification</strong></td>
+<td>Groin hernia categorization</td>
+<td>Defines defect size (small &lt;1.5cm, medium 1.5-3cm, large &gt;3cm) and location (lateral, medial, femoral)</td>
+</tr>
+<tr>
+<td><strong>EHS Ventral Classification</strong></td>
+<td>Standardized midline (M1-M5) / lateral (L1-L4) defects</td>
+<td>Categorizes width (W1 &lt;4cm, W2 4-10cm, W3 &gt;10cm) to guide component separation decisions</td>
+</tr>
+<tr>
+<td><strong>Loss of Domain (CT)</strong></td>
+<td>Hernia volume vs. abdominal cavity volume</td>
+<td>Ratio &gt;50% requires pre-operative PPP or Botulinum toxin optimization</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section class="topic s1" id="p1e">
+<div class="topic-header"><span class="topic-num">1.5</span><h2>General Principles &amp; Mesh Selection</h2></div>
+<h3>Mesh vs. Tissue Repair</h3>
+<ul>
+<li><strong>Indications for Mesh:</strong> Adult patients with fascial defects &gt;2 cm or high-tension tissue repairs.</li>
+<li><strong>Contraindications:</strong> Active local infection, gross peritoneal contamination (perforated bowel), or pediatric repairs (where mesh restricts abdominal wall growth).</li>
+</ul>
+<h3>Mesh Materials Framework</h3>
+<ul>
+<li><strong>Heavyweight Polypropylene (PP):</strong> Rigid with high tensile strength but triggers a strong inflammatory response. High risk of chronic post-operative pain; largely replaced by lightweight PP.</li>
+<li><strong>Lightweight Polypropylene:</strong> Large pore size, less foreign material, lower inflammatory response, and reduced chronic pain. The standard for Lichtenstein and laparoscopic groin repairs.</li>
+<li><strong>ePTFE &amp; Composite Mesh:</strong> ePTFE is highly smooth and non-adherent. Composite mesh combines PP (strength) with a barrier layer (ePTFE or hydrogel) to prevent bowel adhesions in intraperitoneal onlay mesh (IPOM) repairs.</li>
+<li><strong>Biological Mesh:</strong> Derived from human/animal dermis or pericardium. Resists infection and undergoes tissue remodeling, but carries high costs and higher recurrence rates. Reserved for contaminated fields or infected mesh salvage.</li>
+<li><strong>Biosynthetic (Absorbable) Mesh:</strong> Slowly absorbed over months (e.g., poly-4-hydroxybutyrate). Provides temporary structural support, reducing long-term mesh infection risks. Useful in clean-contaminated fields.</li>
+</ul>
+<h3>Fixation Choices</h3>
+<ul>
+<li><strong>Suture:</strong> Gold standard. Use permanent monofilament (polypropylene) for permanent mesh, absorbable (PDS) for temporary settings.</li>
+<li><strong>Tackers:</strong> Spiral tacks used in laparoscopic repairs. Absorbable tackers reduce chronic pain compared to metal tacks.</li>
+<li><strong>Fibrin Glue:</strong> Avoids mechanical nerve entrapment. Indicated for laparoscopic repairs with low recurrence rates and minimal chronic pain.</li>
+</ul>
+</section>
+
+<section class="topic s1" id="p1f">
+<div class="topic-header"><span class="topic-num">1.6</span><h2>Immediate Pre-operative Preparation</h2></div>
+<ul>
+<li><strong>Antibiotic Prophylaxis:</strong> Cefazolin 1-2g IV within 60 minutes of incision. Clean mesh repairs require single-dose prophylaxis to reduce surgical site infections (SSI). In emergency contaminated cases, utilize Piperacillin-Tazobactam 4.5g IV.</li>
+<li><strong>Venous Thromboembolism (VTE) Prophylaxis:</strong> Mechanical compression devices for all GA cases. Low Molecular Weight Heparin (LMWH) for high-risk patients. In emergency strangulations, initiate LMWH 12-24 hours post-operatively once hematoma risk has stabilized.</li>
+<li><strong>Consent Imperatives:</strong> Discuss recurrence rates (inguinal 1-5%, ventral/incisional 10-20%), chronic post-operative groin pain (10-12% incidence, 2% disabling), nerve injury, seroma/hematoma, mesh infection, and the risk of bowel resection or stoma formation in emergency cases.</li>
+</ul>
+</section>
+
+<div class="sec-header s2">
+<span class="sec-badge">PILLAR 2</span>
+<span class="sec-title">The Operative Game Plan</span>
+</div>
+
+<section class="topic s2" id="p2a">
+<div class="topic-header"><span class="topic-num">2.1</span><h2>PROCEDURE A: Laparoscopic Inguinal Hernia Repair</h2></div>
+<h3>Laparoscopic Approaches</h3>
+<ul>
+<li><strong>TAPP (Transabdominal Preperitoneal):</strong> Peritoneum is entered first to access the preperitoneal space. Excellent for bilateral hernias and recurrent cases after prior open repairs. Allows direct inspection of abdominal organs. Requires peritoneal suture closure.</li>
+<li><strong>TEP (Totally Extraperitoneal):</strong> Preperitoneal space is dissected directly without entering the peritoneal cavity. Minimizes bowel injury and adhesion risks. Steep learning curve; space is lost if the peritoneum is breached.</li>
+<li><strong>Critical Anatomy (Bogros/Retzius):</strong>
+  <ul>
+    <li><em>Space of Retzius:</em> Preperitoneal space behind the pubic symphysis.</li>
+    <li><em>Space of Bogros:</em> Lateral preperitoneal space containing the iliac vessels and cord structures.</li>
+    <li><em>Triangle of Doom:</em> Bounded medially by the vas deferens and laterally by the gonadal vessels; contains the external iliac artery and vein. Do NOT place tacks or sutures here.</li>
+    <li><em>Triangle of Pain:</em> Lateral to the gonadal vessels; contains the femoral nerve, lateral femoral cutaneous nerve, and genitofemoral nerve. Avoid mechanical fixation.</li>
+    <li><em>Corona Mortis:</em> Anastomosis between the external iliac and obturator vessels crossing Cooper's ligament. High bleeding risk during direct tacking.</li>
+  </ul>
+</li>
+</ul>
+<h3>Step-by-Step TAPP Protocol</h3>
+<ol>
+<li><strong>Access:</strong> Umbilical 10mm camera port and two lateral 5mm working ports. Inspect the groin anatomy.</li>
+<li><strong>Peritoneal Flap:</strong> Incise the peritoneum transversely 3-4 cm above the hernia defect, extending from the medial umbilical ligament laterally to the ASIS. Expose Cooper's ligament, the pubic symphysis, and the iliac vessels.</li>
+<li><strong>Dissection:</strong> Reduce direct sacs cleanly. For indirect hernias, dissect the sac off the gonadal vessels and vas deferens (parietalization).</li>
+<li><strong>Mesh:</strong> Place a 15x10 cm lightweight PP mesh covering the direct, indirect, and femoral spaces. Fix Cooper's ligament medially using fibrin glue or absorbable tacks.</li>
+<li><strong>Peritoneal Closure:</strong> Close the flap completely using a running absorbable suture. Any gap allows bowel herniation and obstruction.</li>
+</ol>
+</section>
+
+<section class="topic s2" id="p2b">
+<div class="topic-header"><span class="topic-num">2.2</span><h2>PROCEDURE B: Femoral Hernia Repair</h2></div>
+<h3>Surgical Approaches</h3>
+<ul>
+<li><strong>Lockwood (Low) Approach:</strong> Direct incision below the inguinal ligament. Best for elective repair or direct sac reduction.</li>
+<li><strong>McEvedy (High) Approach:</strong> Vertical incision above the inguinal ligament, entering the preperitoneal space. Ideal for strangulated femoral hernias as it allows direct access to the bowel and the femoral ring.</li>
+<li><strong>The Femoral Ring:</strong> Inelastic boundaries (inguinal, Cooper's, lacunar ligaments, and the femoral vein). The Gimbernat (lacunar) ligament must be incised medially to reduce an incarcerated hernia. Beware the corona mortis.</li>
+</ul>
+<h3>Step-by-Step McEvedy Repair</h3>
+<ol>
+<li><strong>Access:</strong> Vertical incision medial to the epigastric vessels. Enter the space of Retzius.</li>
+<li><strong>Reduction:</strong> Apply gentle traction on the sac from above. If constricting, incise the lacunar ligament medially. Open the sac to confirm bowel viability.</li>
+<li><strong>Repair:</strong> Close the femoral canal by suturing the inguinal ligament to the pectineal (Cooper's) ligament with interrupted 0-polypropylene sutures. Leave sufficient lateral space to avoid compressing the femoral vein.</li>
+</ol>
+</section>
+
+<section class="topic s2" id="p2c">
+<div class="topic-header"><span class="topic-num">2.3</span><h2>PROCEDURE C: Umbilical Hernia Repair</h2></div>
+<h3>Operative Techniques</h3>
+<ul>
+<li><strong>Mayo Tissue Repair:</strong> Fascial edges are overlapped in a double-breasted ("vest-over-pants") fashion. Appropriate only for small defects (&lt;2 cm) or pediatric hernias.</li>
+<li><strong>Ventral Sublay (Retromuscular) Mesh:</strong> Mesh is placed behind the posterior rectus sheath or preperitoneally. Offers the lowest recurrence rate.</li>
+<li><strong>IPOM (Intraperitoneal Onlay Mesh):</strong> Laparoscopic repair placing composite mesh directly against the peritoneum, secured with transfascial sutures and tacks.</li>
+</ul>
+<h3>Step-by-Step Open Sublay Repair</h3>
+<ol>
+<li><strong>Dissection:</strong> Semicircular incision, isolating the hernia sac. Clean the fascial defect edges.</li>
+<li><strong>Space Entry:</strong> Enter the retro-rectus space on both sides. Dissect 3-4 cm around the defect.</li>
+<li><strong>Posterior Closure:</strong> Close the posterior rectus sheath and peritoneum using a running absorbable suture.</li>
+<li><strong>Mesh:</strong> Place a midweight PP mesh in the retromuscular space with 3-5 cm of overlap, securing it with interrupted sutures.</li>
+<li><strong>Anterior Closure:</strong> Close the anterior fascia primarily over the mesh.</li>
+</ol>
+</section>
+
+<section class="topic s2" id="p2d">
+<div class="topic-header"><span class="topic-num">2.4</span><h2>PROCEDURE D: Epigastric Hernia Repair</h2></div>
+<ul>
+<li><strong>Anatomy:</strong> Linea alba defects between the xiphoid and umbilicus. Frequently contain only ischemic preperitoneal fat. Epigastric hernias are often multiple; inspect the entire midline.</li>
+<li><strong>Technique:</strong> For small defects (&lt;4 cm), primary suture closure (0-PDS) is acceptable. Larger or multiple defects require a sublay mesh spanning all fascial openings.</li>
+</ul>
+</section>
+
+<section class="topic s2" id="p2e">
+<div class="topic-header"><span class="topic-num">2.5</span><h2>PROCEDURE E: Incisional Hernia Repair</h2></div>
+<h3>Component Separation &amp; Mesh Position</h3>
+<ul>
+<li><strong>Loss of Domain:</strong> If the hernia volume exceeds 50% of the abdominal volume, component separation or pre-operative Botulinum toxin muscle paralyzing injections are mandatory to prevent abdominal compartment syndrome.</li>
+<li><strong>Anterior Component Separation (Ramirez):</strong> Incision of the external oblique aponeurosis lateral to the semilunar line. Gians 8-10 cm of medial advancement. Disadvantage: extensive skin flaps lead to high seroma and wound infection rates.</li>
+<li><strong>Posterior Component Separation (TAR - Transversus Abdominis Release):</strong> Release of the transversus abdominis muscle medially, exposing the preperitoneal space laterally. Avoids raising subcutaneous flaps. The preferred technique for large midline defects.</li>
+</ul>
+<h3>Step-by-Step Rives-Stoppa retromuscular Repair</h3>
+<ol>
+<li><strong>scar Excision:</strong> Complete excision of the old midline scar. Enter the peritoneal cavity safely.</li>
+<li><strong>Adhesiolysis:</strong> Free all bowel and omental adhesions. Measure the defect.</li>
+<li><strong>Space Entry:</strong> Incise the posterior rectus sheath. Dissect the space between the rectus muscle and posterior sheath laterally to the semilunar line.</li>
+<li><strong>Posterior Closure:</strong> Approximate the posterior rectus sheaths/peritoneum in the midline.</li>
+<li><strong>Mesh Placement:</strong> Position a large heavyweight PP mesh in the retromuscular space, overlapping the defect by at least 5 cm. Secure with transfascial sutures.</li>
+<li><strong>Anterior Closure:</strong> Close the anterior rectus sheath primarily over the mesh using loop PDS. Place retromuscular and subcutaneous drains.</li>
+</ol>
+</section>
+
+<section class="topic s2" id="p2f">
+<div class="topic-header"><span class="topic-num">2.6</span><h2>PROCEDURE F: Parastomal Hernia Repair</h2></div>
+<ul>
+<li><strong>Surgical Challenge:</strong> Parastomal repairs carry high recurrence rates (up to 50%). Local tissue repair is obsolete.</li>
+<li><strong>Sugarbaker Technique:</strong> The standard laparoscopic/robotic approach. The stoma bowel is lateralized against the abdominal wall, and a large composite mesh is placed over the defect, trapping the bowel loop underneath. Reduces recurrence compared to keyhole designs.</li>
+</ul>
+</section>
+
+<section class="topic s2" id="p2g">
+<div class="topic-header"><span class="topic-num">2.7</span><h2>PROCEDURE G: Obturator Hernia</h2></div>
+<ul>
+<li><strong>Demographics:</strong> The "little old lady's hernia." Occurs in elderly, thin, multiparous females presenting with small bowel obstruction.</li>
+<li><strong>Howship-Romberg Sign:</strong> Pain along the medial thigh extending to the knee on hip extension/abduction due to obturator nerve compression.</li>
+<li><strong>Management:</strong> Lower midline laparotomy. Reduce the trapped bowel loop. If necessary, incise the obturator membrane medially (watch for the obturator artery). Perform bowel resection for gangrenous segments and close the obturator canal with interrupted sutures.</li>
+</ul>
+</section>
+
+<section class="topic s2" id="p2h">
+<div class="topic-header"><span class="topic-num">2.8</span><h2>PROCEDURE H: Spigelian Hernia</h2></div>
+<ul>
+<li><strong>Anatomy:</strong> Occurs through the Spigelian aponeurosis along the semilunar line, typically below the arcuate line. Often interparietal (contained beneath the external oblique aponeurosis), making it impalpable.</li>
+<li><strong>Repair:</strong> Transverse incision over the defect. Open the external oblique, reduce the sac, and perform primary fascial suture closure or place a preperitoneal mesh.</li>
+</ul>
+</section>
+
+<section class="topic s2" id="p2i">
+<div class="topic-header"><span class="topic-num">2.9</span><h2>PROCEDURE I: Lumbar Hernia</h2></div>
+<ul>
+<li><strong>Anatomical Spaces:</strong>
+  <ul>
+    <li><em>Grynfeltt (Superior) Triangle:</em> Bounded by the 12th rib, sacrospinalis, and internal oblique. The most common site.</li>
+    <li><em>Petit (Inferior) Triangle:</em> Bounded by the iliac crest, latissimus dorsi, and external oblique.</li>
+  </ul>
+</li>
+<li><strong>Repair:</strong> Flank incision, reduction of fat/colon contents, and placement of a preperitoneal mesh secured to the surrounding muscular borders.</li>
+</ul>
+</section>
+
+<section class="topic s2" id="p2j">
+<div class="topic-header"><span class="topic-num">2.10</span><h2>PROCEDURE J: Internal Hernia</h2></div>
+<ul>
+<li><strong>Pathology:</strong> Herniation through congenital recesses or acquired mesenteric defects (common after Roux-en-Y gastric bypass - Petersen's space). High risk of rapid closed-loop obstruction.</li>
+<li><strong>Management:</strong> Emergency laparoscopy/laparotomy. Reduce the bowel loop, resect if ischemic, and close the mesenteric defects with non-absorbable sutures, avoiding compromise to the mesenteric blood supply.</li>
+</ul>
+</section>
+
+<section class="topic s2" id="p2k">
+<div class="topic-header"><span class="topic-num">2.11</span><h2>The Strangulated Hernia — Emergency Protocol</h2></div>
+<ul>
+<li><strong>Recognition:</strong> An irreducible, tender groin or ventral mass with overlying skin erythema and systemic sepsis.</li>
+<li><strong>Resuscitation:</strong> Insert NGT, Urinary catheter, start IV fluids, and administer Piperacillin-Tazobactam 4.5g IV immediately. Do not delay surgery for imaging if signs of strangulation are clear.</li>
+<li><strong>Safety Rule:</strong> Never reduce strangulated hernia contents blindly. Open the hernia sac first. Dissect the neck to release constriction, inspect the loop directly, and assess viability.</li>
+<li><strong>Bowel Resection:</strong>
+  <ul>
+    <li><em>Primary Anastomosis:</em> Feasible in stable patients with minimal contamination.</li>
+    <li><em>Stoma Formation:</em> Indicated if the patient is unstable, has gross fecal contamination, or demonstrates severe bowel wall edema.</li>
+    <li><em>Physiological Limit:</em> If the patient's physiology dictates a rapid closure, perform a temporary abdominal closure and plan a re-look in 24-48 hours.</li>
+  </ul>
+</li>
+<li><strong>Mesh Selection:</strong> Synthetic mesh is contraindicated in contaminated fields. Perform primary tissue repair (Cooper's suture, Mayo, or suture bridge) or utilize a biological/biosynthetic mesh. Plan a staged reconstruction if a large defect remains.</li>
+</ul>
+</section>
+
+<div class="sec-header s3">
+<span class="sec-badge">PILLAR 3</span>
+<span class="sec-title">Pearls &amp; Bail-Outs</span>
+</div>
+
+<section class="topic s3" id="p3a">
+<div class="topic-header"><span class="topic-num">3.1</span><h2>Surgical Pearls</h2></div>
+<ul>
+<li><strong>Cooper's Ligament Suturing:</strong> When suturing the pectineal ligament, take deep, solid bites of the periosteum. Do not place sutures too laterally to prevent compression or injury to the external iliac vein.</li>
+<li><strong>Recurrent Hernia Dissection:</strong> Never dissect directly through the scarred midline. Access the abdominal cavity through a virgin incision superior or inferior to the old scar, establish the safe peritoneal space, and dissect the hernia neck from the inside out.</li>
+<li><strong>The Incarcerated Bladder:</strong> In direct or medial inguinal hernias, the bladder wall frequently forms the medial wall of the sac. If you see a fleshy, vascular structure, do not cut it. Instill 200ml of saline into the bladder through the Foley catheter to define the boundaries.</li>
+</ul>
+</section>
+
+<section class="topic s3" id="p3b">
+<div class="topic-header"><span class="topic-num">3.2</span><h2>The Bail-Out Point</h2></div>
+<ul>
+<li><strong>The Untensionable Defect:</strong> If the fascial edges cannot be approximated after component separation, do not force a repair. Perform a "bridged" repair using a biosynthetic or composite mesh. Approximating fascia under high tension guarantees postoperative necrosis, pain, and early recurrence.</li>
+<li><strong>Abdominal Compartment Syndrome (ACS):</strong> If returning large hernia contents causes Peak Inspiratory Pressures to exceed 30 cm H2O or urinary bladder pressures to rise above 20 mmHg, stop. Perform a temporary closure using a silastic sheet or negative pressure dressing. Optimize the patient in the ICU before returning for definitive closure.</li>
+</ul>
+</section>
+
+<div class="sec-header s4">
+<span class="sec-badge">PILLAR 4</span>
+<span class="sec-title">Post-operative Care</span>
+</div>
+
+<section class="topic s4" id="p4a">
+<div class="topic-header"><span class="topic-num">4.1</span><h2>Immediate Recovery</h2></div>
+<ul>
+<li><strong>Activity Restrictions:</strong> Strictly limit heavy lifting (&gt;5 kg) for 4-6 weeks to allow fascial healing and mesh integration.</li>
+<li><strong>Pain Control:</strong> Schedule scheduled acetaminophen and NSAIDs. Minimize opioids to prevent postoperative constipation and straining.</li>
+<li><strong>Bowel Protocol:</strong> Initiate scheduled stool softeners (Lactulose or Polyethylene Glycol) for 2-3 weeks. Straining at stool directly threatens the repair.</li>
+</ul>
+</section>
+
+<section class="topic s4" id="p4b">
+<div class="topic-header"><span class="topic-num">4.2</span><h2>Clinic Follow-up</h2></div>
+<ul>
+<li><strong>2-Week Visit:</strong> Inspect the wound for SSIs and check for seromas. Seromas are highly common after large retromuscular repairs; do NOT aspirate a sterile seroma. Aspiration introduces bacteria, converting a benign fluid collection into a catastrophic mesh infection.</li>
+<li><strong>6-Week Visit:</strong> Re-assess abdominal wall integrity. Gradually clear the patient to return to full physical activity and athletic training if the repair is stable.</li>
+</ul>
+</section>
+
+<div class="sec-header s5">
+<span class="sec-badge">PILLAR 5</span>
+<span class="sec-title">Complication Management</span>
+</div>
+
+<section class="topic s5" id="p5a">
+<div class="topic-header"><span class="topic-num">5.1</span><h2>Seroma &amp; Infection</h2></div>
+<ul>
+<li><strong>Seroma Management:</strong> Fluid collections in the dead space are expected. Treat with binders and reassurance. Only aspirate under strict sterile conditions if the seroma causes skin necrosis or is actively infected.</li>
+<li><strong>Mesh Infection:</strong> Presents with localized erythema, wound breakdown, or a chronic sinus tract. If the mesh is microporous or heavy synthetic PP, conservative therapy will fail. Complete surgical excision of the infected mesh is mandatory for source control.</li>
+</ul>
+</section>
+
+<section class="topic s5" id="p5b">
+<div class="topic-header"><span class="topic-num">5.2</span><h2>Chronic Pain &amp; Recurrence</h2></div>
+<ul>
+<li><strong>Chronic Groin Pain (CPHP):</strong> Defined as pain persisting &gt;3 months post-herniorrhaphy. Most commonly neuropathic (ilioinguinal, iliohypogastric, or genitofemoral nerve entrapment). Manage with scheduled neuropathic agents (Gabapentin) and targeted local anesthetic blocks. Surgical neurectomy is indicated only for refractory pain after 6-12 months of conservative failure.</li>
+<li><strong>Hernia Recurrence:</strong> Typically manifests within 1-2 years. If the primary repair was open, perform the revision laparoscopically to utilize a virgin preperitoneal dissection plane, and vice-versa.</li>
+</ul>
+</section>
+
+<div class="rapid-ref" id="rapid">
+<h3>Rapid Reference — High-Yield Board Facts</h3>
+<table>
+<thead>
+<tr>
+<th>Groin / Ventral Topic</th>
+<th>Critical Exam &amp; Viva Fact</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Howship-Romberg Sign</strong></td>
+<td>Medial thigh pain on extension/abduction; indicates <strong>obturator nerve compression</strong>.</td>
+</tr>
+<tr>
+<td><strong>Corona Mortis</strong></td>
+<td>Vascular connection crossing Cooper's ligament; major risk of life-threatening bleeding during tacking.</td>
+</tr>
+<tr>
+<td><strong>Space of Bogros</strong></td>
+<td>Lateral preperitoneal space containing iliac vessels; target for mesh placement in laparoscopic repairs.</td>
+</tr>
+<tr>
+<td><strong>Rives-Stoppa Plane</strong></td>
+<td>The <strong>retromuscular space</strong> (behind the rectus muscle, anterior to the posterior sheath/peritoneum).</td>
+</tr>
+<tr>
+<td><strong>McEvedy Approach</strong></td>
+<td>High preperitoneal incision above the inguinal ligament; preferred for <strong>strangulated femoral hernias</strong> requiring resection.</td>
+</tr>
+<tr>
+<td><strong>Mesh Infection Resolution</strong></td>
+<td>Macroporous/heavy PP mesh infections require <strong>complete surgical mesh excision</strong>; antibiotics alone are inadequate.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</div>
+</main>
+
+<button id="top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+const progressBar = document.getElementById('progress-bar');
+const topBtn = document.getElementById('top-btn');
+const navItems = document.querySelectorAll('.nav-item');
+const sections = document.querySelectorAll('.topic[id], .rapid-ref[id]');
+const body = document.body;
+
+function toggleSidebar() { body.classList.toggle('sidebar-open'); }
+function closeSidebar() { body.classList.remove('sidebar-open'); }
+
+window.addEventListener('scroll', () => {
+  const st = window.scrollY;
+  const dh = document.documentElement.scrollHeight - window.innerHeight;
+  progressBar.style.transform = `scaleX(${st / dh})`;
+  topBtn.classList.toggle('show', st > 400);
+  
+  let current = '';
+  sections.forEach(s => { if (st >= s.offsetTop - 120) current = s.id; });
+  navItems.forEach(n => { n.classList.toggle('active', n.getAttribute('href') === '#' + current); });
+});
+
+function filterNav(query) {
+  const q = query.toLowerCase();
+  navItems.forEach(item => { item.style.display = (!q || item.textContent.toLowerCase().includes(q)) ? 'block' : 'none'; });
+  document.querySelectorAll('.vol-label').forEach(l => { l.style.display = 'block'; });
+}
+
+navItems.forEach(item => {
+  item.addEventListener('click', e => {
+    e.preventDefault();
+    closeSidebar();
+    const target = document.querySelector(item.getAttribute('href'));
+    if (target) window.scrollTo({ top: target.offsetTop - 100, behavior: 'smooth' });
+  });
+});
+
+document.querySelectorAll('.topic').forEach((el, i) => { el.style.animationDelay = `${i * 0.03}s`; });
+</script>
+
+<script src="../../js/nav-pill.js"></script>
+<script src="../../js/navigation.js"></script>
+</body>
+</html>
