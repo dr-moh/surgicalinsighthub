@@ -133,6 +133,30 @@ window.NOTES_DATA = {
       type: 'web',
       url: 'blog/residency-books-and-tools.html',
       isNew: true
+    },
+    {
+      id: 'hy-abdominal-trauma-general',
+      title: 'General Principles of Abdominal Operations for Trauma',
+      kicker: 'Surgical High-Yield Notes',
+      specialty: ['emergency', 'basics'],
+      description: 'Standardized PGY-3 trauma monograph covering exposure, systematic exploration, retroperitoneal vascular zones, medial visceral rotation, and temporary abdominal closure.',
+      tags: ['red:Trauma', 'red:Emergency', 'Midline Laparotomy', 'Visceral Rotation', 'ABSITE'],
+      pages: 'Monograph',
+      type: 'web',
+      url: 'notes/Surgical Operative Approach/General Principles of Abdominal Operations for Trauma.html',
+      isNew: true
+    },
+    {
+      id: 'hy-hernia-monograph',
+      title: 'Surgical Monograph: Hernia & Hernia Repair',
+      kicker: 'Surgical High-Yield Notes',
+      specialty: ['basics'],
+      description: 'Comprehensive guide to groin, ventral, incisional, and pelvic hernias. Rives-Stoppa retromuscular repair, transversus abdominis release (TAR), and emergency strangulation management.',
+      tags: ['red:Hernia', 'General Surgery', 'Rives-Stoppa', 'TAR', 'ABSITE'],
+      pages: 'Monograph',
+      type: 'web',
+      url: 'notes/Surgical Operative Approach/Hernia and Hernia Repair Monograph.html',
+      isNew: true
     }
   ],
 
