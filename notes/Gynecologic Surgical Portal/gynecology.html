@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Gynecologic Surgical Approaches & Procedures — Surgical Insight Hub</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/theme.css?v=4.0.0">
+<link rel="stylesheet" href="../../css/shared.css">
+<script>
+  const savedTheme = localStorage.getItem('sih-theme') || 'light';
+  if (savedTheme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+</script>
+<style>
+  .editorial-hero {
+    padding: 130px 5% 50px;
+    background: linear-gradient(180deg, rgba(43, 24, 16, 0.05) 0%, transparent 100%);
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+  }
+  .filter-bar {
+    background: var(--glass-bg);
+    backdrop-filter: var(--nav-backdrop-filter);
+    -webkit-backdrop-filter: var(--nav-backdrop-filter);
+    border-bottom: 1px solid var(--glass-border);
+    position: sticky;
+    top: 72px;
+    z-index: 1000;
+    padding: 12px 0;
+  }
+  .filter-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .filter-inner::-webkit-scrollbar { display: none; }
+  .fb {
+    background: rgba(184, 146, 42, 0.05);
+    border: 1px solid var(--glass-border);
+    color: var(--text-secondary);
+    padding: 8px 20px;
+    border-radius: 100px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.25s;
+  }
+  .fb:hover { background: rgba(184,146,42,0.15); border-color: var(--brand-gold); color: var(--text-primary); }
+  .fb.active { background: var(--brand-burgundy); color: #fff; border-color: var(--brand-burgundy); }
+  [data-theme="dark"] .fb.active { background: var(--brand-gold); color: #120b08; border-color: var(--brand-gold); }
+
+  /* ── Search Bar Styling ── */
+  .search-container {
+    max-width: 1200px;
+    margin: 0 auto 16px;
+    padding: 0 5%;
+    position: relative;
+  }
+  .search-box-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 100px;
+    padding: 6px 16px 6px 44px;
+    transition: all 0.3s ease;
+  }
+  .search-box-wrap:focus-within {
+    border-color: var(--brand-gold);
+    box-shadow: 0 0 0 3px rgba(184, 146, 42, 0.15);
+    background: var(--bg-card);
+  }
+  .search-icon {
+    position: absolute;
+    left: 18px;
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    pointer-events: none;
+  }
+  .search-input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    font-family: inherit;
+  }
+  .search-input::placeholder {
+    color: var(--text-muted);
+    opacity: 0.8;
+  }
+  .search-clear {
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    font-size: 1.4rem;
+    cursor: pointer;
+    padding: 0 4px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s;
+  }
+  .search-clear:hover {
+    color: var(--brand-gold);
+  }
+
+  .approaches-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 28px;
+    max-width: 1200px;
+    margin: 40px auto 80px;
+    padding: 0 5%;
+  }
+  .approach-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: pointer;
+  }
+  .approach-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--brand-gold);
+    box-shadow: var(--shadow-md);
+  }
+  .ac-img-wrap {
+    width: 100%;
+    height: 180px;
+    background: var(--bg-secondary);
+    overflow: hidden;
+    position: relative;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .ac-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+  }
+  .approach-card:hover .ac-img-wrap img { transform: scale(1.04); }
+  .ac-content {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: space-between;
+  }
+  .ac-kicker {
+    font-size: 0.65rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--brand-gold);
+    margin-bottom: 8px;
+  }
+  .ac-title {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    line-height: 1.25;
+    margin-bottom: 10px;
+    letter-spacing: -0.03em;
+  }
+  .ac-desc {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin-bottom: 20px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .ac-foot {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--brand-gold);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: auto;
+  }
+
+  /* ── Drawer ────────────────────────────────────────────────── */
+  .drawer-overlay {
+    position: fixed; inset: 0;
+    background: rgba(8, 5, 4, 0.4);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    z-index: 2500;
+    display: none; opacity: 0;
+    transition: opacity 0.35s;
+  }
+  .drawer-overlay.open { display: block; opacity: 1; }
+  .drawer-container {
+    position: fixed; top: 0; right: 0;
+    width: 52%; min-width: 520px; max-width: 780px;
+    height: 100vh;
+    background: var(--bg-primary);
+    border-left: 2px solid var(--brand-gold);
+    box-shadow: var(--shadow-lg);
+    z-index: 2600;
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex; flex-direction: column;
+  }
+  .drawer-container.open { transform: translateX(0); }
+  @media(max-width: 768px) {
+    .drawer-container { width: 100%; min-width: 100%; border-left: none; }
+    .approaches-grid { grid-template-columns: 1fr !important; gap: 20px; }
+  }
+  .drawer-header {
+    background: var(--brand-burgundy);
+    border-bottom: 2.5px solid var(--brand-gold);
+    padding: 24px 30px;
+    display: flex; align-items: center; justify-content: space-between;
+    color: #fff;
+  }
+  .drawer-kicker {
+    font-size: 0.65rem; font-weight: 800;
+    text-transform: uppercase; letter-spacing: 0.12em;
+    color: var(--brand-gold); margin-bottom: 6px;
+  }
+  .drawer-title {
+    font-size: 1.5rem; font-weight: 800;
+    color: #fff; letter-spacing: -0.03em;
+    line-height: 1.2; margin: 0;
+  }
+  .drawer-close {
+    background: transparent; border: none;
+    color: rgba(255,255,255,0.7); font-size: 2.2rem;
+    cursor: pointer; line-height: 1; transition: all 0.2s; padding: 5px;
+  }
+  .drawer-close:hover { color: var(--brand-gold); transform: scale(1.1); }
+  .drawer-body {
+    flex: 1; overflow-y: auto; padding: 32px 30px;
+  }
+
+  /* ── Image Carousel ─────────────────────────────────────── */
+  .drawer-image-wrap {
+    width: 100%; height: 320px;
+    border-radius: 16px; overflow: hidden;
+    border: 1px solid var(--border-color);
+    background: var(--bg-card);
+    margin-bottom: 28px; position: relative;
+  }
+  .carousel-container { width: 100%; height: 100%; position: relative; overflow: hidden; }
+  .carousel-track { display: flex; width: 100%; height: 100%; transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1); }
+  .carousel-slide {
+    min-width: 100%; height: 100%;
+    overflow: hidden; display: flex;
+    align-items: center; justify-content: center;
+    background: var(--bg-secondary);
+  }
+  .carousel-slide img { width: 100%; height: 100%; object-fit: contain; display: block; }
+  .carousel-btn {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    background: rgba(18,11,8,0.6); backdrop-filter: blur(6px);
+    color: var(--brand-gold); border: 1px solid rgba(240,208,128,0.25);
+    width: 36px; height: 36px; border-radius: 50%; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem; font-weight: 800; z-index: 12; transition: all 0.2s;
+  }
+  .carousel-btn:hover { background: var(--brand-gold); color: #120b08; }
+  .carousel-btn.prev { left: 12px; }
+  .carousel-btn.next { right: 12px; }
+  .carousel-btn:disabled { opacity: 0.3; pointer-events: none; }
+  .carousel-dots {
+    position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%);
+    display: flex; gap: 6px; z-index: 12;
+    background: rgba(18,11,8,0.55); padding: 5px 10px; border-radius: 20px;
+    backdrop-filter: blur(6px);
+  }
+  .carousel-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: rgba(240,208,128,0.35); cursor: pointer; transition: all 0.2s;
+  }
+  .carousel-dot.active { background: var(--brand-gold); width: 14px; border-radius: 4px; }
+
+  /* ── Drawer Content Sections ──────────────────────────── */
+  .drawer-content-section { margin-bottom: 28px; }
+  .drawer-content-section h3 {
+    font-size: 1.15rem; font-weight: 800;
+    border-bottom: 1.5px solid var(--border-color);
+    padding-bottom: 8px; margin-bottom: 12px;
+    color: var(--text-primary); letter-spacing: -0.02em;
+  }
+  .drawer-content-section p {
+    font-size: 0.92rem; color: var(--text-secondary); line-height: 1.6;
+  }
+  
+  /* ── Nested Bullet CSS Rules ── */
+  .markdown-content {
+    color: var(--text-secondary);
+    font-size: 0.92rem;
+    line-height: 1.65;
+  }
+  .markdown-content ul, .drawer-content-section ul {
+    padding-left: 20px;
+    margin: 8px 0;
+    list-style-type: disc;
+  }
+  .markdown-content ul.nested-list, .drawer-content-section ul.nested-list {
+    padding-left: 24px;
+    margin: 6px 0;
+    list-style-type: circle;
+  }
+  .markdown-content li.main-bullet, .drawer-content-section li.main-bullet {
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+  }
+  .markdown-content li.sub-bullet, .drawer-content-section li.sub-bullet {
+    font-size: 0.88rem;
+    line-height: 1.55;
+    color: var(--text-secondary);
+    margin-bottom: 6px;
+    margin-top: 4px;
+  }
+  .para-content {
+    font-size: 0.92rem;
+    line-height: 1.6;
+    margin-bottom: 12px;
+  }
+
+  /* ── Step-by-Step Figure Cards ────────────────────────── */
+  .step-card {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 20px;
+    padding: 16px;
+    border-radius: 14px;
+    border: 1px solid var(--border-color);
+    background: var(--bg-secondary);
+    transition: border-color 0.2s;
+  }
+  .step-card:hover {
+    border-color: var(--brand-gold);
+  }
+  .step-card-img {
+    width: 140px;
+    min-width: 140px;
+    height: 120px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    background: #ffffff;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+  }
+  .step-card-img img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+  .step-card-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .step-card-num {
+    font-size: 0.65rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--brand-gold);
+    margin-bottom: 8px;
+  }
+  .step-card-text {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    line-height: 1.55;
+    flex: 1;
+  }
+  .step-card-text ul {
+    padding-left: 18px;
+    margin: 4px 0;
+    list-style-type: disc;
+  }
+  .step-card-text ul.nested-list {
+    padding-left: 20px;
+    margin: 4px 0;
+    list-style-type: circle;
+  }
+  .step-card-text li.main-bullet {
+    font-size: 0.88rem;
+    line-height: 1.5;
+    margin-bottom: 6px;
+  }
+  .step-card-text li.sub-bullet {
+    font-size: 0.84rem;
+    line-height: 1.45;
+    margin-bottom: 4px;
+    margin-top: 2px;
+  }
+  
+  @media (max-width: 768px) {
+    .step-card {
+      flex-direction: column;
+    }
+    .step-card-img {
+      width: 100%;
+      min-width: unset;
+      height: 160px;
+    }
+  }
+
+  /* ── Callouts ────────────────────────────────────────── */
+  .callout {
+    margin: 20px 0; padding: 16px 20px;
+    border-radius: 0 12px 12px 0;
+    border-left: 4px solid; font-size: 0.9rem; line-height: 1.6;
+  }
+  .callout .label {
+    font-size: 0.65rem; font-weight: 800;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    display: block; margin-bottom: 6px;
+  }
+  .callout.warn { background: rgba(163,21,21,0.04); border-color: var(--brand-red); }
+  .callout.warn .label { color: var(--brand-red); }
+  .callout.pearl { background: rgba(184,146,42,0.04); border-color: var(--brand-gold); }
+  .callout.pearl .label { color: var(--brand-gold); }
+
+  .img-credit-badge {
+    position: absolute; bottom: 12px; right: 12px;
+    background: rgba(18,11,8,0.65); backdrop-filter: blur(8px);
+    color: rgba(240,208,128,0.95);
+    border: 1px solid rgba(240,208,128,0.25);
+    padding: 4px 10px; border-radius: 6px;
+    font-size: 0.62rem; font-weight: 700;
+    pointer-events: none; z-index: 10;
+    text-transform: uppercase;
+  }
+
+  /* ── Lightbox Overlay (NEW) ── */
+  .lightbox-overlay {
+    position: fixed; inset: 0;
+    background: rgba(10, 6, 5, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    z-index: 3000;
+    display: none; align-items: center; justify-content: center;
+    opacity: 0; transition: opacity 0.3s ease;
+    overflow: auto;
+    padding: 40px 20px;
+  }
+  .lightbox-overlay.open {
+    display: flex; opacity: 1;
+  }
+  .lightbox-content-wrap {
+    position: relative; max-width: 90%; max-height: 90%;
+    display: flex; flex-direction: column; align-items: center;
+    transition: max-width 0.3s, max-height 0.3s;
+  }
+  .lightbox-img {
+    max-width: 100%; max-height: 80vh;
+    object-fit: contain; border-radius: 12px;
+    border: 2.5px solid var(--brand-gold);
+    box-shadow: var(--shadow-lg);
+    background: #ffffff;
+    transform: scale(0.95);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), max-width 0.3s, max-height 0.3s;
+    cursor: zoom-in;
+  }
+  .lightbox-img.zoomed {
+    max-width: 250%;
+    max-height: none;
+    transform: scale(1) !important;
+    cursor: zoom-out;
+  }
+  .lightbox-overlay.zoomed-state {
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .lightbox-overlay.zoomed-state .lightbox-content-wrap {
+    margin: auto;
+    max-width: 100%;
+    max-height: none;
+  }
+  .lightbox-overlay.open .lightbox-img {
+    transform: scale(1);
+  }
+  .lightbox-caption {
+    color: #fff; margin-top: 16px;
+    font-size: 0.95rem; font-weight: 600;
+    text-align: center; font-family: 'Inter', sans-serif;
+  }
+  .lightbox-close {
+    position: absolute; top: -48px; right: 0;
+    background: transparent; border: none;
+    color: rgba(255, 255, 255, 0.8); font-size: 2.5rem;
+    cursor: pointer; line-height: 1; transition: color 0.2s;
+    z-index: 10;
+  }
+  .lightbox-close:hover {
+    color: var(--brand-gold);
+  }
+</style>
+</head>
+<body>
+
+  <nav class="nav" id="mainNav">
+    <div class="nav-left">
+      <a href="../../index.html" class="nav-pill">
+        <div class="nav-logo-img"><img src="../../assets/images/Surgical_Insight_Hub_Logo.png" alt="SIH Logo"></div>
+        <div>
+          <div class="nav-brand-text">Surgical Insight Hub</div>
+          <div class="nav-brand-sub">The Residency Journal</div>
+        </div>
+      </a>
+    </div>
+    <div class="nav-links-pill">
+      <a href="../../index.html">Home</a>
+      <a href="../../notes.html" class="active">Notes</a>
+      <a href="../operative_approach.html">Playbook</a>
+      <a href="../../arena.html?v=4.0.0">MCQ Arena</a>
+      <a href="../../podcast.html">Podcast</a>
+      <a href="../../surgery-talk.html">Surgery Talk</a>
+      <a href="../../about.html">About</a>
+    </div>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+        <svg id="moonIcon" viewBox="0 0 24 24" width="18" height="18"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        <svg id="sunIcon" style="display:none;" viewBox="0 0 24 24" width="18" height="18"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+      </button>
+      <a href="https://t.me/sugicalInsightHub" target="_blank" class="nav-tg-btn" title="Join Telegram">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="#f0d080"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.89 8.22l-1.97 9.28c-.15.66-.54.82-1.08.51l-3-2.21-1.45 1.39c-.16.16-.3.3-.61.3l.21-3.05 5.56-5.02c.24-.21-.05-.33-.37-.12l-6.87 4.33-2.96-.92c-.64-.2-.66-.64.14-.95l11.57-4.46c.54-.19 1.01.13.83.94z"/></svg>
+      </a>
+      <a href="../../arena.html?v=4.0.0" class="nav-btn arena-btn">MCQ Arena</a>
+      <button class="mob-nav-toggle" onclick="openMobNav()" aria-label="Menu">
+        <div class="hamburger"><span></span><span></span><span></span></div>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mob-nav-overlay" id="mobNavOverlay" onclick="closeMobNav()"></div>
+  <div class="mob-nav-sheet" id="mobNavSheet">
+    <div class="mob-nav-handle"></div>
+    <a href="../../index.html" onclick="closeMobNav()">Home</a>
+    <a href="../../notes.html" onclick="closeMobNav()">Notes</a>
+    <a href="../operative_approach.html" onclick="closeMobNav()">Playbook</a>
+    <a href="../../podcast.html" onclick="closeMobNav()">Podcast</a>
+    <a href="../../surgery-talk.html" onclick="closeMobNav()">Surgery Talk</a>
+    <a href="../../arena.html" onclick="closeMobNav()">MCQ Arena</a>
+    <a href="../../about.html" onclick="closeMobNav()">About</a>
+    <a href="https://t.me/sugicalInsightHub" target="_blank" rel="noopener" onclick="closeMobNav()" style="color: var(--brand-gold); font-weight: 800;">Join Telegram Community</a>
+  </div>
+
+  <header class="editorial-hero">
+    <div class="ed-kicker">Gynecologic Surgery Portal</div>
+    <h1>Gynecologic Surgical Approaches & Procedures</h1>
+    <p style="color: var(--text-secondary); max-width: 700px; margin: 15px auto 0; font-size: 0.98rem; line-height: 1.6;">An interactive index of gynecologic surgical procedures including hysterectomy, adnexal surgery, and vaginal procedures — referenced against Zollinger's Atlas, 9th Edition.</p>
+  </header>
+
+  <div class="filter-bar">
+    <div class="search-container">
+      <div class="search-box-wrap">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="searchBar" class="search-input" placeholder="Search from 7 procedures by keyword or title..." oninput="onSearchChange(this.value)">
+        <button id="searchClear" class="search-clear" onclick="clearSearch()">&times;</button>
+      </div>
+    </div>
+    <div class="filter-inner">
+      <span class="filter-label">Category:</span>
+      <button class="fb active" onclick="filterCategory('all', this)">All Procedures</button>
+      <button class="fb" onclick="filterCategory('uterus-cervix', this)">Uterus & Cervix</button>
+      <button class="fb" onclick="filterCategory('adnexa', this)">Adnexa</button>
+      <button class="fb" onclick="filterCategory('vaginal-procedures', this)">Vaginal Procedures</button>
+      <button class="fb" onclick="filterCategory('gynecologic-general', this)">General Gynecologic</button>
+    </div>
+  </div>
+
+  <div class="approaches-grid" id="approachesGrid"></div>
+
+  <div class="drawer-overlay" id="drawerOverlay" onclick="closeDrawer()"></div>
+  <div class="drawer-container" id="drawerContainer">
+    <div class="drawer-header">
+      <div>
+        <div class="drawer-kicker" id="drawerKicker"></div>
+        <h2 class="drawer-title" id="drawerTitle"></h2>
+      </div>
+      <button class="drawer-close" onclick="closeDrawer()" aria-label="Close Panel">&times;</button>
+    </div>
+    <div class="drawer-body">
+      <div class="drawer-image-wrap" id="drawerImageWrap"></div>
+      <div class="drawer-content-sections" id="drawerContent"></div>
+    </div>
+  </div>
+
+  <footer style="padding: 60px 5%; border-top: 1px solid var(--border-color); text-align: center; background: var(--bg-secondary);">
+    <p style="color: var(--text-muted); font-size: 0.85rem; font-weight: 700; margin-bottom: 8px;">&copy; 2026 Surgical Insight Hub &middot; Gynecologic Surgical Approaches & Procedures</p>
+    <p style="color: var(--text-secondary); font-size: 0.82rem; max-width: 700px; margin: 0 auto 12px; line-height: 1.6;">
+      Specialty surgical approaches and illustrations in this portal are summarized for high-yield educational, non-commercial, and residency training purposes from <strong>Zollinger's Atlas of Surgical Operations, 9th Edition</strong>. All original illustrations and primary copyrights belong to McGraw-Hill Education and the original authors. Compilation and review materials are presented under the Fair Use doctrine (17 U.S.C. § 107) for medical education and research. Access is restricted to registered surgical residents and clinical study groups.
+    </p>
+    <a href="../../notes.html" style="color: var(--brand-gold); font-weight: 700; text-decoration: none; font-size: 0.85rem; display: inline-block; margin-top: 12px;">&larr; Back to Main Library</a>
+  </footer>
+
+  <script>
+    const APPROACHES_DATA = [
+    {
+      "id": "agynecologic-procedures-overview",
+      "chapter": 93,
+      "category": "gynecologic-general",
+      "kicker": "Chapter 93",
+      "title": "AGynecologic Procedures Overview",
+      "summary": "Surgical treatment as indicated by clinical guidelines.",
+      "image": "",
+      "imagesList": [],
+      "indications": ["<li class=\"main-bullet\"><strong>Surgical Treatment Indicated</strong>: Surgical treatment as indicated by clinical guidelines..</li>"],
+      "anesthesia": "<li class=\"main-bullet\"><strong>General Anesthetic Satisfactory</strong>: A general anesthetic is satisfactory.</li>\n<li class=\"main-bullet\"><strong>Spinal Continuous Spinal</strong>: Spinal or continuous spinal anesthesia may be used if desired..</li>",
+      "positioning": "<li class=\"main-bullet\"><strong>Moderate-sized Smooth Retractor</strong>: A moderate-sized smooth retractor is sometimes placed in the midline at the umbilical end of the wound.</li>\n<li class=\"main-bullet\"><strong>Closure Abdominal</strong>: Closure before the abdominal.</li>",
+      "landmarks": "<li class=\"main-bullet\"><strong>Many Major Gynecologic</strong>: Many major gynecologic procedures can now be performed via minimally invasive techniques, which include laparoscopic and robotic approaches.</li>\n<li class=\"main-bullet\"><strong>Lower Midline Incision</strong>: A lower midline incision is made, and the lower angle of the wound is held open with a superficial retractor to permit a free dissection of the fascia until the location of the midline is absolutely ascertained.</li>\n<li class=\"main-bullet\"><strong>Operators Prefer Transverse</strong>: Some operators prefer the transverse incision (P annenstiel), which is a convex incision following the lines of skin cleavage just above the symphysis.</li>\n<li class=\"main-bullet\"><strong>Upper Skin Dissected</strong>: The upper skin ap may be dissected from the underlying rectus muscles, and the usual midline incision of.</li>",
+      "techniqueSteps": [{"figure":1,"text":"<li class=\"main-bullet\"><strong>Gynecologic Procedures General</strong>: Gynecologic procedures, in general, carry less risk than other abdominal surgical procedures because of the minimal amount of manipulative trauma to the alimentary tract and the patient’s generally good condition.</li>\n<li class=\"main-bullet\"><strong>General Principles Apply</strong>: However, the same general principles apply here as in any major surgical operation, and the patient’s condition must be appraised care fully.</li>\n<li class=\"main-bullet\"><strong>Preoperative Preparat Obese</strong>: Preoperative pRepARAt io n The obese patient should diet su - ciently to obtain a more normal weigh.</li>","image":""}],
+      "redZone": {"name": "Critical Anatomy", "caution": "<li class=\"main-bullet\"><strong>Bleeding Points Encountered</strong>: Although ew bleeding points are encountered in the midline, all must be clamped and tied or controlled by electrocoagulation..</li>\n<li class=\"main-bullet\"><strong>Large Ovarian Cysts</strong>: Large ovarian cysts, if benign and not grossly adherent, may be reduced in size by aspirating their contents through a trocar, great caution being used to avoid contamination from their contents..</li>\n<li class=\"main-bullet\"><strong>Closure Abdominal Closure</strong>: Closure before the abdominal closure is started, the site of operation is finally inspected or evidence of bleeding, and the appendix may be removed...</li>"},
+      "closure": "<li class=\"main-bullet\"><strong>Started Site Operation</strong>: Is started, the site of operation is finally inspected or evidence of bleeding, and the appendix may be removed.</li>\n<li class=\"main-bullet\"><strong>Search Made Needles</strong>: A search is made or needles, instruments, and sponges, and a correct count is reported before closure is started.</li>\n<li class=\"main-bullet\"><strong>Sigmoid Omentum Returned</strong>: The sigmoid and omentum are returned to the pelvis.</li>\n<li class=\"main-bullet\"><strong>Peritoneum Closed Patient</strong>: After the peritoneum has been closed, the patient is gradually returned from the rendelenburg position to horizontal to release.</li>",
+      "extensions": ""
+    },
+    {
+      "id": "total-abdominal-hysterectomy",
+      "chapter": 94,
+      "category": "uterus-cervix",
+      "kicker": "Chapter 94",
+      "title": "Total Abdominal Hysterectomy",
+      "summary": "A total abdominal hysterectomy is most commonly perormed or benign conditions o the uterus including leiomyoma, adenomyosis, endometriosis, pelvic in ammatory disease, and dys unctional uterine bleedi.",
+      "image": "../../assets/images/zollinger9/ch94_plate1.png",
+      "imagesList": ["../../assets/images/zollinger9/ch94_plate1.png","../../assets/images/zollinger9/ch94_plate2.png"],
+      "indications": ["<li class=\"main-bullet\"><strong>Total Abdominal Hysterectomy</strong>: A total abdominal hysterectomy is most commonly perormed or benign conditions of the uterus including leiomyoma, adenomyosis, endometriosis, pelvic in ammatory disease, and dys unctional uterine bleeding..</li>","<li class=\"main-bullet\"><strong>Indications Include Malignancies</strong>: Other indications include malignancies of the cervix, uterus, and ovaries..</li>"],
+      "anesthesia": "",
+      "positioning": "<li class=\"main-bullet\"><strong>See Chapter Perioperative</strong>: See Chapter 93. Perioperative preparation Routine vaginal and abdominal preparation is given.</li>\n<li class=\"main-bullet\"><strong>Patient Catheterized Indwelling</strong>: The patient is catheterized, and an indwelling Foley catheter, No.</li>\n<li class=\"main-bullet\"><strong>French Inserted Inflation</strong>: 16–18 French, is inserted with inflation of the balloon and then anchored to the inner thigh.</li>\n<li class=\"main-bullet\"><strong>Access Vagina Anus</strong>: If access to the vagina and or anus is required, then the patient should be places in the low lithotomy position..</li>",
+      "landmarks": "<li class=\"main-bullet\"><strong>Incision Exposure</strong>: Incision and exposure...</li>\n<li class=\"main-bullet\"><strong>See Chapter</strong>: See Chapter 93..</li>",
+      "techniqueSteps": [{"figure":1,"text":"<li class=\"main-bullet\"><strong>Surgeon Anticipate Course</strong>: The surgeon should anticipate the course of the ureters.</li>\n<li class=\"main-bullet\"><strong>Round Ligaments Ligated</strong>: The round ligaments are ligated or incised with an electrosurgical unit (ESU) which enhances the surgeon’s ability to dissect the retroperitoneal tissue planes.</li>\n<li class=\"main-bullet\"><strong>Loose Layer Peritoneum</strong>: The loose layer of peritoneum is picked up with atraumatic forceps and incised transversely with scissors, or the ESU, close to its attachment to the uterus.</li>","image":"../../assets/images/zollinger9/ch94_plate1_fig1.png"},{"figure":2,"text":"<li class=\"main-bullet\"><strong>Indications Remove Tubes</strong>: If there are indications to remove the tubes and ovaries, the ovarian vessels are clamped proximal to the ovaries with a Heaney or curved Zeppelin clamp and doubly ligated with 2-0 delayed absorbable suture.</li>\n<li class=\"main-bullet\"><strong>Prior Applying Clamp</strong>: Prior to applying the clamp the surgeon should insure that the ureter is out of the field of dissection.</li>\n<li class=\"main-bullet\"><strong>Ureters Identified Along</strong>: The ureters are identified along the medial leaf of the broad ligament to insure that they are out of the field of dissection.</li>\n<li class=\"main-bullet\"><strong>Adnexa Mobilized Away</strong>: The adnexa is mobilized away from the pelvic sidewall structures.</li>","image":"../../assets/images/zollinger9/ch94_plate1_fig2.png"},{"figure":3,"text":"<li class=\"main-bullet\"><strong>Adnexa Spared Uterine-ovarian</strong>: If the adnexa are to be spared, the uterine-ovarian ligament is clamped and ligated (Figure 3).</li>\n<li class=\"main-bullet\"><strong>Operator Uses Sharp</strong>: The operator uses sharp dissection to open the cervicovesical space and to dissect the areolar tissue between the bladder and the lower uterine segment.</li>\n<li class=\"main-bullet\"><strong>Blunt Dissection Used</strong>: Blunt dissection should be used.</li>\n<li class=\"main-bullet\"><strong>Ovarian Vessels Ligated</strong>: After the ovarian vessels have been ligated, the surgeon can palpate the region of the cervix with two fingers to determine its length and the position of the bladder.</li>\n<li class=\"main-bullet\"><strong>Bladder Sharply Dissected</strong>: The bladder is sharply dissected of of the lower uterine segment and cervix.</li>","image":"../../assets/images/zollinger9/ch94_plate1_fig3.png"},{"figure":4,"text":"<li class=\"main-bullet\"><strong>Advantageous Divide Tissue</strong>: It is advantageous to divide the tissue over the cervix with sharp dissection until a de nite avascular cleavage plane is established.</li>\n<li class=\"main-bullet\"><strong>Blunt Dissection Used</strong>: Blunt dissection should be used sparingly and only in the midline directly over the cervix, or troublesome bleeding will be induced from tearing vessels in the broad ligament.</li>\n<li class=\"main-bullet\"><strong>Sharp Dissection Permit</strong>: Sharp dissection will permit the bladder to be directed orward and downward until the operator’s thumb and index finger can compress the vaginal wall below the cervix.</li>","image":"../../assets/images/zollinger9/ch94_plate1_fig4.png"},{"figure":5,"text":"<li class=\"main-bullet\"><strong>Ava Hyst Rhe</strong>: Su pr ava g in a l HySt e rhe c t of my details of f procedure For supravaginal hysterectomy, the operation proceeds as in total abdominal hysterectomy except that the uterine arteries may be ligated higher on the cervix.</li>\n<li class=\"main-bullet\"><strong>Procedure Shown</strong>: This procedure is shown in.</li>","image":"../../assets/images/zollinger9/ch94_plate1_fig5.png"},{"figure":6,"text":"<li class=\"main-bullet\"><strong>Figure Echnically Easier</strong>: Figure 6. echnically, this is an easier and safer operation to perform, as the uterine artery suture ligatures are placed further away from the ureters.</li>\n<li class=\"main-bullet\"><strong>Requires Patient Compliant</strong>: It requires, however, that the patient be compliant with li elong gynecologic examinations that include cervical Pap tests.</li>\n<li class=\"main-bullet\"><strong>Posterior Lea Broad</strong>: The posterior lea of the broad ligament is incised down the level of the lower uterine segment and then the uterine vessels are skeletonized.</li>\n<li class=\"main-bullet\"><strong>Cervix Kept Position</strong>: The cervix is kept in position by eale or similar forceps at the lateral margins and is divided at the level of the internal os, or lower uterine segment (Figure 6).</li>\n<li class=\"main-bullet\"><strong>Cervical Stump</strong>: The cervical stump.</li>","image":"../../assets/images/zollinger9/ch94_plate1_fig6.png"},{"figure":7,"text":"<li class=\"main-bullet\"><strong>Ureter Mobilized Out</strong>: The ureter is mobilized out of the field of dissection by mobilizing the bladder of of the lower uterine segment and cervix, and skeletonizing the uterine vessels.</li>\n<li class=\"main-bullet\"><strong>Surgeon Skeletonize Anterior</strong>: The surgeon can also skeletonize the anterior bladder pillars when necessary.</li>\n<li class=\"main-bullet\"><strong>Once Relative Position</strong>: Once the relative position of the ureter is established, the slightly curved clamp is applied from the side at a 90-degree angle to the cervix (Figure 7a ).</li>\n<li class=\"main-bullet\"><strong>Necessary Include Cervical</strong>: It is not necessary to include cervical tissue in the clamp.</li>\n<li class=\"main-bullet\"><strong>Now Uterine Vessels</strong>: Now the uterine vessels are divided with curved scissors (Figure 7).</li>\n<li class=\"main-bullet\"><strong>Uterus Quite Large</strong>: If the uterus is quite large, a half -length clamp may be af xed.</li>","image":""},{"figure":8,"text":"<li class=\"main-bullet\"><strong>Failure Carry Incision</strong>: Failure to carry the incision beyond the tip of the distal clamp hinders accurate ligation of the uterine vessel pedicle, and troublesome bleeding results.</li>\n<li class=\"main-bullet\"><strong>Trans Xing Suture</strong>: A trans xing suture, a, of 2-0 delayed absorbable suture is tied as the clamp is slowly withdrawn (Figure 8).</li>\n<li class=\"main-bullet\"><strong>Development Easily Tied</strong>: The development of an easily tied pedicle that includes the uterine artery is one of the most important steps in abdominal hysterectomy.</li>\n<li class=\"main-bullet\"><strong>Similar Procedure Concluded</strong>: After a similar procedure has been concluded on the opposite side, a series of straight clamps are applied to the paracervical tissue and the uterosacral ligaments between the cervix and the.</li>","image":""},{"figure":9,"text":"<li class=\"main-bullet\"><strong>Modestsized Pedicles Taken</strong>: Modestsized pedicles are taken with the straight clamps until the surgeon reaches the lower portion of the cervix which can be con rmed by palpation.</li>\n<li class=\"main-bullet\"><strong>Point Curved Clamps</strong>: At this point curved clamps are placed at each angle of the vagina just below the level of the cervix and then the tissue is cut with curved scissors.</li>\n<li class=\"main-bullet\"><strong>Remaining Attachments Vagina</strong>: Any remaining attachments of the vagina to the cervix are incised with the scissors..</li>","image":""},{"figure":10,"text":"<li class=\"main-bullet\"><strong>Cervix Reed Vaginal</strong>: As the cervix is reed from the vaginal vault, the anterior and posterior vaginal walls are approximated with eale forceps to include the full thickness of the vaginal wall as well as its posterior peritoneal surace.</li>","image":""},{"figure":11,"text":"<li class=\"main-bullet\"><strong>Lateral Angles Vaginal</strong>: The lateral angles of the vaginal vault are first closed with trans xing sutures of 2-0 absorbable suture.</li>","image":""},{"figure":12,"text":"<li class=\"main-bullet\"><strong>Figure Following One</strong>: (Figure 12), following which one or more sutures are placed at the middle portion to ensure complete.</li>","image":""}],
+      "redZone": {"name": "Critical Anatomy", "caution": "<li class=\"main-bullet\"><strong>374 Fit Abd</strong>: 374 to fit a l Abd of min a l H yst er ec t of my Ch a pt e r 94 In d Ic at Io n s A total abdominal hysterectomy is most commonly perormed or benign conditions of the uterus including leiomyoma, adenomyosis, endometriosis, pelvic in ammatory disease, and dys unctional uterine bleeding..</li>\n<li class=\"main-bullet\"><strong>Blunt Dissection Used</strong>: Blunt dissection should be used sparingly and only in the midline directly over the cervix, or troublesome bleeding will be induced from tearing vessels in the broad ligament..</li>\n<li class=\"main-bullet\"><strong>Echnically Easier Safer</strong>: Echnically, this is an easier and safer operation to perform, as the uterine artery suture ligatures are placed further away from the ureters...</li>"},
+      "closure": "<li class=\"main-bullet\"><strong>Hemostasis</strong>: And hemostasis.</li>\n<li class=\"main-bullet\"><strong>Most Likely Place</strong>: The most likely place or troublesome bleeding is at the outer angles of the vagina near the ligated uterine vessels.</li>\n<li class=\"main-bullet\"><strong>Accurate Closure Angles</strong>: Accurate and rm closure of the angles is imperative (Figure 12).</li>\n<li class=\"main-bullet\"><strong>Upward Traction Vaginal</strong>: Upward traction on the vaginal vault is released to determine whether any bleeding occurs.</li>\n<li class=\"main-bullet\"><strong>Closure Sigmoid Omentum</strong>: Closure The sigmoid and omentum are returned to the pouch of Douglas.</li>\n<li class=\"main-bullet\"><strong>Necessary Close Perit</strong>: It is not necessary to close the perit.</li>",
+      "extensions": ""
+    },
+    {
+      "id": "salpingectomy--oophorectomy",
+      "chapter": 95,
+      "category": "adnexa",
+      "kicker": "Chapter 95",
+      "title": "Salpingectomy— Oophorectomy",
+      "summary": "Removal o the allopian tubes and/or ovaries is indicated or in ammatory involvement o the adnexa that cannot be relieved by the use o conservative measures including antibiotics, or ovarian cysts, neo.",
+      "image": "../../assets/images/zollinger9/ch95_plate1.png",
+      "imagesList": ["../../assets/images/zollinger9/ch95_plate1.png"],
+      "indications": ["<li class=\"main-bullet\"><strong>Removal Fallopian Tubes</strong>: Removal of the fallopian tubes and/or ovaries is indicated or in ammatory involvement of the adnexa that cannot be relieved by the use of conservative measures including antibiotics, or ovarian cysts, neoplasms, ectopic pregnancies, and endometriosis..</li>","<li class=\"main-bullet\"><strong>Bilateral Oophorectomy Advised</strong>: Bilateral oophorectomy is advised by some as a desirable procedure in extensive carcinoma of the rectum because of the susceptibility of the ovaries to tumor transplantation from lesions of the gastrointestinal tract..</li>","<li class=\"main-bullet\"><strong>Absence Malignancy Effort</strong>: In the absence of malignancy every effort should be made to conserve even remnants of unctioning ovarian tissue especially in the younger patients, but recently conservation has also been recommended or menopausal patients without other indications or ovarian removal..</li>","<li class=\"main-bullet\"><strong>Per Epa See</strong>: Pr eo Per at Iv e Pr ePa r at Io n See Chapter 93. Perioperative preparation The skin is prepared in the routine manner..</li>"],
+      "anesthesia": "",
+      "positioning": "<li class=\"main-bullet\"><strong>Loops Small Bowel</strong>: But loops of small bowel may be needed to be care fully ipped into the upper abdomen with blunt atraumatic instruments.</li>\n<li class=\"main-bullet\"><strong>During Laparotomy Intestines</strong>: During a laparotomy, the intestines are care fully packed away with warm, moist gauze pads, or placed in a plastic bag and moistened with warm saline.</li>\n<li class=\"main-bullet\"><strong>Free Adnexa Held</strong>: The free adnexa are then held upward with a half -length clamp (Figure 1).</li>\n<li class=\"main-bullet\"><strong>Salpingectomy</strong>: Salpingectomy.</li>",
+      "landmarks": "<li class=\"main-bullet\"><strong>Incision Exposure</strong>: Incision and exposure...</li>\n<li class=\"main-bullet\"><strong>See Chapter Presence</strong>: See Chapter 93. In the presence of extensive pelvic in ammation, the intestines are of en attached to the adnexa by adhesions that must be separated by sharp dissection.</li>\n<li class=\"main-bullet\"><strong>Meticulous Dissection Careful</strong>: Meticulous dissection and careful handling of the tissue is important.</li>\n<ul class=\"nested-list\">\n  <li class=\"sub-bullet\"><strong>Avoid Unintentional Injury</strong>: Avoid unintentional injury to the bowel.</li>\n</ul>\n<li class=\"main-bullet\"><strong>Placing Adhesions Tension</strong>: By placing the adhesions on tension as they are cut, the cautious surgeon can almost always develop a cleavage plane between the diseased adnexa and the other structures.</li>\n<li class=\"main-bullet\"><strong>Minimally Invasive Surgery</strong>: In minimally invasive surgery, the bowel (except for the pelvic sigmoid colon) will usually all out of the pelvis secondary.</li>",
+      "techniqueSteps": [{"figure":1,"text":"<li class=\"main-bullet\"><strong>Mesosalpinx Clamped Sufficient</strong>: The mesosalpinx is clamped with a sufficient number of half -length clamps, usually three pairs, to include its entire length (Figures 1 and 2).</li>\n<li class=\"main-bullet\"><strong>Avoid Possible Interference</strong>: To avoid possible interference with the blood supply of the ovary, the line of incision is kept near the fallopian tube (Figure 1).</li>\n<li class=\"main-bullet\"><strong>Clamps Ligated Transfixing</strong>: The clamps are then ligated with transfixing sutures using 2-0 absorbable suture.</li>\n<li class=\"main-bullet\"><strong>Alternatively Bipolar Electrosurgical</strong>: Alternatively, a bipolar electrosurgical unit (ESU) can be applied in sequential bites along the mesosalpinx to the level of the cornu of the uterus.</li>","image":"../../assets/images/zollinger9/ch95_plate1_fig1.png"},{"figure":3,"text":"<li class=\"main-bullet\"><strong>Proximal Aspect Fallopian</strong>: The proximal aspect of the fallopian tube is then excised from the cornu.</li>","image":"../../assets/images/zollinger9/ch95_plate1_fig3.png"},{"figure":4,"text":"<li class=\"main-bullet\"><strong>Figure Ligated Level</strong>: (Figure 4) and ligated at the level of the uterine fundus with a transfixing suture.</li>","image":"../../assets/images/zollinger9/ch95_plate1_fig4.png"},{"figure":5,"text":"<li class=\"main-bullet\"><strong>Figure Bipolar Esu</strong>: (Figure 5) or with the bipolar ESU.</li>\n<li class=\"main-bullet\"><strong>Tube Ovary Removed</strong>: When both the tube and ovary are to be removed, a peritoneal incision is made parallel and lateral to the fallopian tube and the ovarian vessels as shown in.</li>","image":"../../assets/images/zollinger9/ch95_plate1_fig5.png"},{"figure":6,"text":"<li class=\"main-bullet\"><strong>Figure Prior Ligating</strong>: Figure 6. Prior to ligating the ovarian vessels the pararectal space should be opened and the ureter identified at the level of the bifurcation of the common iliac artery (Figure 6).</li>\n<li class=\"main-bullet\"><strong>Establishing Ureter Out</strong>: After establishing that the ureter is out of the field of dissection, curved Heaney clamps are applied to the infundibulopelvic ligament, which includes the ovarian vessels (Figure 6).</li>\n<li class=\"main-bullet\"><strong>Vessels Divided Doubly</strong>: The vessels are divided and doubly tied with 2-0 delayed-absorbable sutures.</li>\n<li class=\"main-bullet\"><strong>Medial Leaf Broad</strong>: The medial leaf of the broad ligament is then incised with scissors or the ESU down to the level of the uterine vessels while staying above the level of the u.</li>","image":"../../assets/images/zollinger9/ch95_plate1_fig6.png"},{"figure":7,"text":"<li class=\"main-bullet\"><strong>Figure Possible Necessary</strong>: (Figure 7) and a possible, but not necessary, partial suspension is shown.</li>","image":"../../assets/images/zollinger9/ch95_plate1_fig7.png"},{"figure":8,"text":"<li class=\"main-bullet\"><strong>Anti-adhesive Barriers Applied</strong>: Anti-adhesive barriers may be applied, when indicated, in cases where fertility preservation is a concern.</li>\n<li class=\"main-bullet\"><strong>Closure See Chapter</strong>: Closure See Chapter 93. Postoperative care See Chapter 93. ■.</li>","image":"../../assets/images/zollinger9/ch95_plate1_fig8.png"}],
+      "redZone": {"name": "Critical Anatomy", "caution": "<li class=\"main-bullet\"><strong>Meticulous Dissection Careful</strong>: Meticulous dissection and careful handling of the tissue is important.</li>\n<ul class=\"nested-list\">\n  <li class=\"sub-bullet\"><strong>Avoid Unintentional Injury</strong>: Avoid unintentional injury to the bowel..</li>\n</ul>\n<li class=\"main-bullet\"><strong>Avoid Possible Interference</strong>: To avoid possible interference with the blood supply of the ovary, the line of incision is kept near the fallopian tube (Figure 1)..</li>\n<li class=\"main-bullet\"><strong>Prior Ligating Ovarian</strong>: Prior to ligating the ovarian vessels the pararectal space should be opened and the ureter identified at the level of the bifurcation of the common iliac artery (Figure 6)...</li>"},
+      "closure": "",
+      "extensions": ""
+    },
+    {
+      "id": "gynecologic-system--routinefor-vaginal-procedures",
+      "chapter": 96,
+      "category": "vaginal-procedures",
+      "kicker": "Chapter 96",
+      "title": "Gynecologic System— Routine for Vaginal Procedures",
+      "summary": "Surgical treatment as indicated by clinical guidelines.",
+      "image": "",
+      "imagesList": [],
+      "indications": ["<li class=\"main-bullet\"><strong>Surgical Treatment Indicated</strong>: Surgical treatment as indicated by clinical guidelines..</li>"],
+      "anesthesia": "<li class=\"main-bullet\"><strong>Satisfactory</strong>: Is satisfactory..</li>",
+      "positioning": "<li class=\"main-bullet\"><strong>Vaginal Procedures Carried</strong>: Vaginal procedures are carried out in the lithotomy position.</li>\n<li class=\"main-bullet\"><strong>Induction Anesthesia Patient</strong>: After the induction of anesthesia, the patient’s buttocks are brought to the edge of the table.</li>\n<li class=\"main-bullet\"><strong>Legs Raised Simultaneously</strong>: The legs are raised simultaneously to avoid straining the sacroiliac joints and are xed in stirrups with the knees f flexed.</li>\n<li class=\"main-bullet\"><strong>Whenever Possible Legs</strong>: Whenever possible, the legs are elevated upward and backward to permit the assistant to be nearer the field of operation.</li>",
+      "landmarks": "",
+      "techniqueSteps": [{"figure":1,"text":"<li class=\"main-bullet\"><strong>Majority Instances Preoperative</strong>: In the majority of instances, no Preoperative douches are used.</li>\n<li class=\"main-bullet\"><strong>Symphysis Perineum Adjacent</strong>: The symphysis, perineum, and adjacent surfaces are not shaved but may be clipped care fully before operation.</li>\n<li class=\"main-bullet\"><strong>Preoperative Cleansing Enema</strong>: A Preoperative cleansing enema is optional.</li>\n<li class=\"main-bullet\"><strong>Prophylactic Antibiotics Administered</strong>: Prophylactic antibiotics are administered.</li>\n<li class=\"main-bullet\"><strong>Anesthesia General Regional</strong>: Anesthesia: General or regional anesthesia is satisfactory.</li>\n<li class=\"main-bullet\"><strong>Positioning Vaginal Procedures</strong>: Positioning: Vaginal procedures are carried out in the lithotomy position.</li>\n<li class=\"main-bullet\"><strong>Induction Anesthesia Patient</strong>: After the induction of anesthesia, the patient’s buttocks are brought to the.</li>","image":""}],
+      "redZone": {"name": "Critical Anatomy", "caution": "<li class=\"main-bullet\"><strong>Legs Raised Simultaneously</strong>: The legs are raised simultaneously to avoid straining the sacroiliac joints and are xed in stirrups with the knees f flexed..</li>\n<li class=\"main-bullet\"><strong>Excessive Hip Flexion</strong>: Excessive hip flexion, abduction, and external rotation should be avoided..</li>\n<li class=\"main-bullet\"><strong>Immediate Postoperative Care</strong>: The immediate Postoperative care is similar to that following abdominal procedures, with certain added perineal precautions...</li>"},
+      "closure": "",
+      "extensions": "<li class=\"main-bullet\"><strong>Similar Following Abdominal</strong>: Is similar to that following abdominal procedures, with certain added perineal precautions.</li>\n<li class=\"main-bullet\"><strong>Indwelling Catheters Necessary</strong>: Indwelling catheters are not necessary.</li>\n<li class=\"main-bullet\"><strong>Patient Catheterized Hours</strong>: The patient may be catheterized every 4 to 6 hours, depending on the f fluid intake, until she voids voluntarily.</li>\n<li class=\"main-bullet\"><strong>Postvoiding Residuals Checked</strong>: Postvoiding residuals should be checked.</li>\n<li class=\"main-bullet\"><strong>Values Less Usually</strong>: Values less than 50 mL usually indicate satisfactory emptying.</li>\n<li class=\"main-bullet\"><strong>Patients Take Extra</strong>: These patients should take in extra oral liquids to encourage voiding..</li>"
+    },
+    {
+      "id": "diagnostic-techniquesfor-cervical-lesions--dilatationand-cur",
+      "chapter": 97,
+      "category": "gynecologic-general",
+      "kicker": "Chapter 97",
+      "title": "Diagnostic Techniques for Cervical Lesions— Dilatation and Curettage",
+      "summary": "Cervical conization is indicated or suspicious lesions o the uterine cervix to con rm or exclude the diagnosis o cervical cancer.",
+      "image": "../../assets/images/zollinger9/ch97_plate1.png",
+      "imagesList": ["../../assets/images/zollinger9/ch97_plate1.png"],
+      "indications": ["<li class=\"main-bullet\"><strong>Cervical Conization Indicated</strong>: Cervical conization is indicated or suspicious lesions of the uterine cervix to con rm or exclude the diagnosis of cervical cancer..</li>","<li class=\"main-bullet\"><strong>Therapeutic Procedure Preinvasive</strong>: It is also a therapeutic procedure or preinvasive lesions of the cervix..</li>","<li class=\"main-bullet\"><strong>Certain Outpatient Procedures</strong>: Certain outpatient procedures, such as colposcopy, usually precede conization and are use ul in the investigation of cervical lesions and/or an abnormal pap smear..</li>","<li class=\"main-bullet\"><strong>Grossly Apparent Lesion</strong>: A grossly apparent lesion that is suspicious or neoplasia should be biopsied regardless of Pap smear results..</li>","<li class=\"main-bullet\"><strong>Punch Biopsy Usual</strong>: A punch biopsy is the usual approach in this situation (Figure 1)..</li>","<li class=\"main-bullet\"><strong>Exposure Cervix Punch</strong>: After exposure of the cervix, the punch biopsy forceps is introduced, and a piece of cervical tissue is removed with inclusion of a small bite of surrounding healthy tissue..</li>","<li class=\"main-bullet\"><strong>Alternatively Many Surgeons</strong>: Alternatively, many surgeons now stain the cervix with acetic acid and perform the biopsies via colposcopic guidance..</li>","<li class=\"main-bullet\"><strong>Suspicious Positive Papanicolaou</strong>: A suspicious or positive Papanicolaou smear and/or positive punch biopsy may necessitate operation with cold knife conization, the de nitive diagnostic procedure or malignant lesions of the cervix..</li>"],
+      "anesthesia": "<li class=\"main-bullet\"><strong>Given</strong>: Is given..</li>",
+      "positioning": "<li class=\"main-bullet\"><strong>Patient Placed Dorsal</strong>: The patient is placed in a dorsal lithotomy position.</li>\n<li class=\"main-bullet\"><strong>Operative Procedure Usual</strong>: Operative procedure The usual preparation of the perineum and vagina is carried out.</li>\n<li class=\"main-bullet\"><strong>Following Pelvic Examination</strong>: Following a pelvic examination under anesthesia, a speculum is inserted into the vagina and the anterior lip of the cervix is grasped with a single-toothed tenaculum.</li>\n<li class=\"main-bullet\"><strong>Dilatation Curettage Performed</strong>: Dilatation and curettage is not performed before conization because it inter eres with.</li>",
+      "landmarks": "<li class=\"main-bullet\"><strong>Made</strong>: Is made with a No.</li>\n<li class=\"main-bullet\"><strong>Triangular-shaped Blade 45-degree</strong>: 11 triangular-shaped blade at a 45-degree angle toward the endocervical canal.</li>\n<li class=\"main-bullet\"><strong>Involved Portion Cervix</strong>: The involved portion of the cervix is excised (Figure 3A).</li>\n<li class=\"main-bullet\"><strong>Proximal Endocervix Removed</strong>: The proximal 1.5 to 2.5 cm of the endocervix is also removed (Figure 4).</li>\n<li class=\"main-bullet\"><strong>Removed Tissue Appears</strong>: The removed tissue, which appears as a cone, is immediately placed in a xative to avoid loss of diagnostic epithelium through contact with gauze and so forth.</li>\n<li class=\"main-bullet\"><strong>Length Width Conization</strong>: The length and width of the conization procedure can be tailored to the size and location of the lesion, and to the age of the patient.</li>\n<li class=\"main-bullet\"><strong>Alternatively Co2 Laser</strong>: Alternatively, a CO2 laser or electrocautery wire (LEEP) may be used in place.</li>",
+      "techniqueSteps": [{"figure":1,"text":"<li class=\"main-bullet\"><strong>Cervix Sprayed Iodine</strong>: The cervix may be sprayed with a 7% iodine solution or evidence of possible carcinoma.</li>\n<li class=\"main-bullet\"><strong>Cervix Circumferentially Injected</strong>: The cervix is circumferentially injected with a vasoconstrictive solution such as diluted Pitressin or lidocaine with epinephrine.</li>\n<li class=\"main-bullet\"><strong>Surgeon Maintains Traction</strong>: The surgeon maintains traction on the tenaculum as an.</li>","image":"../../assets/images/zollinger9/ch97_plate1_fig1.png"}],
+      "redZone": {"name": "Critical Anatomy", "caution": "<li class=\"main-bullet\"><strong>Removed Tissue Appears</strong>: The removed tissue, which appears as a cone, is immediately placed in a xative to avoid loss of diagnostic epithelium through contact with gauze and so forth..</li>\n<li class=\"main-bullet\"><strong>Following Curettage Uterus</strong>: Following curettage of the uterus, persistent bleeding from the coldkni e conization is controlled with Figure-of-eight sutures...</li>"},
+      "closure": "",
+      "extensions": "<li class=\"main-bullet\"><strong>Cervical Conization Most</strong>: In a cervical conization is most important.</li>\n<li class=\"main-bullet\"><strong>Wide Deep Conizations</strong>: Wide and deep conizations of the internal os may be the source of cervical stenosis.</li>\n<li class=\"main-bullet\"><strong>Postconization Stenosis Associated</strong>: Postconization stenosis may be associated with the development of dysmenorrhea as well as sterility, early pregnancy loss and/or pre-term labor.</li>\n<li class=\"main-bullet\"><strong>Postconization Patients Seen</strong>: Postconization patients should be seen in the of ce in 6 weeks or dilatation of the cervix if necessary.</li>\n<li class=\"main-bullet\"><strong>Under Circumstances Sho</strong>: Under no circumstances sho.</li>"
+    },
+    {
+      "id": "ureteral-injury-repair",
+      "chapter": 98,
+      "category": "gynecologic-general",
+      "kicker": "Chapter 98",
+      "title": "Ureteral Injury Repair",
+      "summary": "The le ureter is at risk or injury during hysterectomy, hemicolectomy, and any procedure per ormed in the pelvis.",
+      "image": "../../assets/images/zollinger9/ch98_plate1.png",
+      "imagesList": ["../../assets/images/zollinger9/ch98_plate1.png"],
+      "indications": ["<li class=\"main-bullet\"><strong>Left Ureter Risk</strong>: The left ureter is at risk or injury during hysterectomy, hemicolectomy, and any procedure performed in the pelvis..</li>","<li class=\"main-bullet\"><strong>Recognition Repair Injury</strong>: Recognition and repair of the injury limits post-operative morbidity..</li>","<li class=\"main-bullet\"><strong>Once Injury Recognized</strong>: Once the injury is recognized, a number of repairs are possible..</li>","<li class=\"main-bullet\"><strong>Repairs Water-tight</strong>: In all repairs, a water-tight.</li>"],
+      "anesthesia": "",
+      "positioning": "<li class=\"main-bullet\"><strong>Anastomosis Necessary</strong>: Of the anastomosis is necessary.</li>\n<li class=\"main-bullet\"><strong>Location Injury Determines</strong>: The location of the injury of en determines the type of repair utilized.</li>\n<li class=\"main-bullet\"><strong>More Commonly Injuries</strong>: More commonly, injuries occur outside the pelvis.</li>\n<li class=\"main-bullet\"><strong>Cases Ureteroureterostomy Performed</strong>: In these cases, a ureteroureterostomy can be performed to restore continuity of the urinary tract.</li>\n<li class=\"main-bullet\"><strong>Injuries Pelvis Commonly</strong>: For injuries in the pelvis, commonly a simple ureteral reimplantation into the bladder is the most effective option.</li>\n<li class=\"main-bullet\"><strong>Ureter Spatulated New</strong>: The ureter is spatulated and a new.</li>",
+      "landmarks": "<li class=\"main-bullet\"><strong>Facilitate Clean Incision</strong>: Facilitate a clean incision.</li>\n<li class=\"main-bullet\"><strong>Incision Ultimately Closed</strong>: This incision will ultimately be closed vertically and can be opened to approximately half of the bladder equator or maximal length.</li>\n<li class=\"main-bullet\"><strong>Superior Portion Bladder</strong>: The superior portion of the bladder is then elevated toward the psoas tendon.</li>\n<li class=\"main-bullet\"><strong>Allows Elevation Above</strong>: This of en allows elevation above the iliac vessels.</li>\n<li class=\"main-bullet\"><strong>Overlap Ureter Bladder</strong>: An overlap of the ureter and bladder dome ensures there is no tension on the closure.</li>\n<li class=\"main-bullet\"><strong>Further Distance Needed</strong>: If further distance is needed, the contralateral superior vesical artery and vein may be ligated.</li>\n<li class=\"main-bullet\"><strong>Done Vascular Stapler</strong>: This may be done with a vascular stapler or suture ligation.</li>\n<li class=\"main-bullet\"><strong>Additiona Contralateral Endopelvic</strong>: In additiona, the contralateral endopelvic fascia can be incised to all.</li>",
+      "techniqueSteps": [{"figure":1,"text":"<li class=\"main-bullet\"><strong>Proximal Ureter Around</strong>: The proximal ureter around the injury is mobilized or a short segment.</li>\n<li class=\"main-bullet\"><strong>Performed Blunt Dissection</strong>: This can of en be performed with blunt dissection that preserves the periureteral vascular supply.</li>\n<li class=\"main-bullet\"><strong>Completed Distal Segment</strong>: The same is then completed or the distal segment.</li>\n<li class=\"main-bullet\"><strong>Two Ends Meet</strong>: The two ends should meet, excluding the injured portion, without tension.</li>\n<li class=\"main-bullet\"><strong>Healthy Portion Ureter</strong>: A healthy portion of the ureter needs to be identified and used for the anastomosis on each end.</li>\n<li class=\"main-bullet\"><strong>Injured Portion Ureter</strong>: The injured portion of the ureter can of en be removed.</li>\n<li class=\"main-bullet\"><strong>Once Two Ends</strong>: Once the two ends are able to reach without tension, spatulation longitudinally is performed to widen the region of anastomosis.</li>","image":"../../assets/images/zollinger9/ch98_plate1_fig1.png"},{"figure":2,"text":"<li class=\"main-bullet\"><strong>Figure</strong>: (Figure 2a and b).</li>\n<li class=\"main-bullet\"><strong>Allow Minor Contraction</strong>: This will allow minor contraction without narrowing the lumen.</li>\n<li class=\"main-bullet\"><strong>Stay Stitch Used</strong>: A stay stitch may be used in each end to minimize tissue handling.</li>\n<li class=\"main-bullet\"><strong>Mucosa Manipulated Forceps</strong>: The mucosa should not be manipulated with forceps.</li>\n<li class=\"main-bullet\"><strong>Using 4-0 5-0</strong>: Using a 4-0 or 5-0 synthetic absorbable suture, the apex of one end is anastomosed to the spatulated portion of the other (Figure 2c).</li>\n<li class=\"main-bullet\"><strong>Full Thickness Suture</strong>: A full thickness suture is placed with the knot on the outside of the mucosal apposition.</li>\n<li class=\"main-bullet\"><strong>Interrupted Sutures Placed</strong>: Interrupted sutures are placed approximately every 2 to 3 mm to ensure a water tight closure.</li>\n<li class=\"main-bullet\"><strong>Once Half Anastomosis</strong>: Once half the anastomosis is completed, a ureteral stent may be placed to facilitate drainage..</li>","image":"../../assets/images/zollinger9/ch98_plate1_fig2.png"},{"figure":3,"text":"<li class=\"main-bullet\"><strong>Injuries Occurring Lower</strong>: Injuries occurring in the lower third of the ureter can be repaired with primary ureteral reimplantation with or without a psoas hitch.</li>\n<li class=\"main-bullet\"><strong>Prepare Proximal Ureteral</strong>: Of prepare the proximal ureteral segment, gentle mobilization of the peritoneum medially is accomplished using a vessel loop around the ureter and bluntly dissecting proximally.</li>\n<li class=\"main-bullet\"><strong>Ureteral Segment Transected</strong>: The ureteral segment is transected at 90 degrees, followed by a longitudinal spatulation of approximately 5 mm.</li>","image":"../../assets/images/zollinger9/ch98_plate1_fig3.png"},{"figure":4,"text":"<li class=\"main-bullet\"><strong>Stay Stitch Placed</strong>: A stay stitch is placed in the apex to allow manipulation of the ureter.</li>\n<li class=\"main-bullet\"><strong>Bladder Lled Saline</strong>: The bladder is then lled with saline through a sterile Foley catheter.</li>\n<li class=\"main-bullet\"><strong>Allows Surgeon Assess</strong>: This allows the surgeon to assess overall bladder volume and if the ureter will reach without tension.</li>\n<li class=\"main-bullet\"><strong>Psoas Hitch Figure</strong>: If it does not, a psoas hitch (Figure 4) is performed to gain additional length to reach the proximal ureter.</li>\n<li class=\"main-bullet\"><strong>Psoas Hitch Brings</strong>: A psoas hitch brings the bladder to the ureter and anchors it to the psoas muscle.</li>\n<li class=\"main-bullet\"><strong>Peritoneum Over Dome</strong>: The peritoneum over the dome of the bladder is ref ected.</li>\n<li class=\"main-bullet\"><strong>Men Vas Need</strong>: In men, the vas may need to be ligated and the round ligament may need to be divided in wom.</li>","image":"../../assets/images/zollinger9/ch98_plate1_fig4.png"},{"figure":5,"text":"<li class=\"main-bullet\"><strong>Made Cutting Cautery</strong>: This can be made with the cutting cautery current and stay sutures placed on either side of the.</li>","image":"../../assets/images/zollinger9/ch98_plate1_fig5.png"}],
+      "redZone": {"name": "Critical Anatomy", "caution": "<li class=\"main-bullet\"><strong>384 Repa Left</strong>: 384 Ur et er a l In ju r y Repa ir Ch a pt e r 98 In d Ic at Io n s The left ureter is at risk or injury during hysterectomy, hemicolectomy, and any procedure performed in the pelvis..</li>\n<li class=\"main-bullet\"><strong>Recognition Repair Injury</strong>: Recognition and repair of the injury limits post-operative morbidity..</li>\n<li class=\"main-bullet\"><strong>Once Injury Recognized</strong>: Once the injury is recognized, a number of repairs are possible...</li>"},
+      "closure": "<li class=\"main-bullet\"><strong>Mucosa-to-mucosa</strong>: And mucosa-to-mucosa ap.</li>",
+      "extensions": ""
+    },
+    {
+      "id": "donor-nephrectomy--laparoscopic",
+      "chapter": 99,
+      "category": "gynecologic-general",
+      "kicker": "Chapter 99",
+      "title": "Donor Nephrectomy, Laparoscopic",
+      "summary": "Only persons who have voluntarily re erred themselves as willing kidney donors are considered or this operation.",
+      "image": "../../assets/images/zollinger9/ch99_plate1.png",
+      "imagesList": ["../../assets/images/zollinger9/ch99_plate1.png","../../assets/images/zollinger9/ch99_plate2.png"],
+      "indications": ["<li class=\"main-bullet\"><strong>Persons Voluntarily Erred</strong>: Only persons who have voluntarily re erred themselves as willing kidney donors are considered or this operation..</li>","<li class=\"main-bullet\"><strong>Donor Candidates Undergo</strong>: Donor candidates undergo psychosocial and medical evaluation to determine their suitability or donation..</li>","<li class=\"main-bullet\"><strong>General Donor Candidates</strong>: In general these donor candidates must be of sound mind and in good health, nondiabetic, normotensive, nonobese, and with preserved renal function..</li>","<li class=\"main-bullet\"><strong>Per Epa Candidates</strong>: Pr eo Per at Iv e Pr ePa r at Io n Candidates that have been deemed suitable or donation undergo abdominal imaging with CA scan angiography, magnetic resonant angiography, or less commonly bilateral renal artery arteriography..</li>","<li class=\"main-bullet\"><strong>Imaging Verify Presence</strong>: Imaging must verify the presence of two kidneys..</li>","<li class=\"main-bullet\"><strong>Patients Multiple Renal</strong>: In patients with multiple renal arteries, determination of kidney suitability or donation is based upon the experience and com ort of the donor, as well as the recipient and surgeon..</li>","<li class=\"main-bullet\"><strong>Intravenous Access Obtained</strong>: Intravenous access is obtained prior to administration of general anesthesia and endotracheal intubation..</li>","<li class=\"main-bullet\"><strong>Antibiotics Administered Intravenously</strong>: Antibiotics are administered intravenously within 1 hour prior to procedure commencement..</li>"],
+      "anesthesia": "<li class=\"main-bullet\"><strong>Required</strong>: Is required..</li>",
+      "positioning": "<li class=\"main-bullet\"><strong>Patient Placed Lateral</strong>: The patient is placed in the lateral decubitus position with the left side up or left -sided nephrectomy and right side up or right donor nephrectomy.</li>\n<li class=\"main-bullet\"><strong>Kidney Rest Centered</strong>: A kidney rest is centered under the patient’s ank and axillary roll under the dependent axilla.</li>\n<li class=\"main-bullet\"><strong>Bean Bag Used</strong>: A bean bag may be used or holding the patient in place.</li>\n<li class=\"main-bullet\"><strong>Lower Arm Placed</strong>: The lower arm is placed on an arm board and the upper arm is supported on stacked padding or an eleva.</li>",
+      "landmarks": "<li class=\"main-bullet\"><strong>Obviates Compromised Renal</strong>: This obviates compromised renal blood ow during abdominal insufflation which can result in acute tubular necrosis of the donated kidney after reperusion in the recipient.</li>\n<li class=\"main-bullet\"><strong>Following Intubation Urinary</strong>: Following intubation a urinary catheter is placed or bladder decompression and continuous urine output monitoring.</li>\n<li class=\"main-bullet\"><strong>Oral Gastric Tube</strong>: An oral gastric tube is placed and kept on suction to evacuate and decompress the stomach.</li>\n<li class=\"main-bullet\"><strong>Deep Venous Thrombosis</strong>: Deep venous thrombosis prophylaxis should be employed.</li>\n<li class=\"main-bullet\"><strong>Anesthesia General Endotracheal</strong>: Anesthesia: General and endotracheal.</li>",
+      "techniqueSteps": [{"figure":3,"text":"<li class=\"main-bullet\"><strong>Ureter Next Identified</strong>: The ureter is next identified.</li>\n<li class=\"main-bullet\"><strong>Ureter Found Caudal</strong>: The ureter will be found 8 to 10 cm caudal to the tip of the inferior pole of the kidney anterior to the psoas muscle and lateral to the aorta (left side) or vena cava (right side) in close proximity and posterior to the gonadal vein.</li>","image":"../../assets/images/zollinger9/ch99_plate1_fig3.png"},{"figure":4,"text":"<li class=\"main-bullet\"><strong>Gonadal Vein Good</strong>: The gonadal vein is a good anatomic landmark to help identify the ureter.</li>\n<li class=\"main-bullet\"><strong>Ureter Mobilized Away</strong>: The ureter is mobilized away from the gonadal vein leaving adequate soft tissue around the ureter to avoid stripping of its blood supply, resulting in ureteral ischemia which could lead to urine leakage in the recipient.</li>\n<li class=\"main-bullet\"><strong>Alternatively Gonadal Vein</strong>: Alternatively, the gonadal vein and ureter can be mobilized and removed together to ensure integrity of the ureteral blood supply.</li>\n<li class=\"main-bullet\"><strong>Dissection Proceeds Cephalad</strong>: Dissection proceeds in a cephalad direction along the gonadal vein until reaching the renal vein (left side) or the vena cava (right side).</li>\n<li class=\"main-bullet\"><strong>Left Side Gonadal</strong>: On the left side, the gonadal.</li>","image":"../../assets/images/zollinger9/ch99_plate1_fig4.png"},{"figure":6,"text":"<li class=\"main-bullet\"><strong>Bipolar Energy Device</strong>: A bipolar energy device may also be used to transect the gonadal vein.</li>\n<li class=\"main-bullet\"><strong>Gonadal Vein Removed</strong>: If the gonadal vein is removed with the ureter, the vein will be similarly clipped more caudally, at the same level that the ureter is eventually divided.</li>\n<li class=\"main-bullet\"><strong>Right Side Gonadal</strong>: On the right side, the gonadal vein is kept intact unless it is removed with the ureter, in which case it is secured with vascular clips and sharply divided adjacent to its termination at the vena cava as well as at the level that the ureter is eventually divided.</li>\n<li class=\"main-bullet\"><strong>Kidney Next Mobilized</strong>: The kidney is next mobilized.</li>\n<li class=\"main-bullet\"><strong>Mobilization Begin Inferiorly</strong>: Mobilization may begin inferiorly, as shown in the accompanying gur.</li>","image":"../../assets/images/zollinger9/ch99_plate1_fig6.png"},{"figure":5,"text":"<li class=\"main-bullet\"><strong>Figure Adrenal Gland</strong>: (Figure 5) and the adrenal gland is retracted medially and dissected away with a bipolar energy device from the upper pole as shown in Chapter 118.</li>","image":"../../assets/images/zollinger9/ch99_plate1_fig5.png"},{"figure":7,"text":"<li class=\"main-bullet\"><strong>Dissection Renal Artery</strong>: In this dissection renal artery branches to the upper pole may be identified and care should be taken not to injure them.</li>\n<li class=\"main-bullet\"><strong>Upper Pole Kidney</strong>: After the upper pole of the kidney is released then the lateral and posterior attachments are divided.</li>\n<li class=\"main-bullet\"><strong>Kidney Rotated Medial</strong>: The kidney may be rotated in the medial direction to facilitate dissection and identify any posterior attachments to the renal artery and vein.</li>\n<li class=\"main-bullet\"><strong>Pre Erable Divide</strong>: It is pre erable to divide all the branches of the left renal vein prior to complete mobilization of the kidney or ease to exposure during their dissection.</li>\n<li class=\"main-bullet\"><strong>Left Side Adrenal</strong>: On the left side, the adrenal vein is dissected at its insertion into th.</li>","image":""},{"figure":8,"text":"<li class=\"main-bullet\"><strong>Renal Vein Stapled</strong>: The renal vein is stapled ≥2 cm proximal to the adrenal vein stump (left side,.</li>","image":""},{"figure":9,"text":"<li class=\"main-bullet\"><strong>Figure Vena Cava</strong>: Figure 9) or at the vena cava (right side).</li>\n<li class=\"main-bullet\"><strong>Kidney Extracted Through</strong>: The kidney is extracted through the hand port.</li>\n<li class=\"main-bullet\"><strong>Heparin Reversed Protamine</strong>: The heparin is reversed with protamine.</li>\n<li class=\"main-bullet\"><strong>Surgical Site Inspected</strong>: The surgical site is inspected to assure hemostasis.</li>","image":""},{"figure":10,"text":"<li class=\"main-bullet\"><strong>Previously Mobilized Colon</strong>: The previously mobilized colon is placed back in its in situ position and port sites are closed in standard fashion and sterile dressing applied.</li>\n<li class=\"main-bullet\"><strong>Postoperative Care Oral</strong>: Postoperative care The oral gastric tube is removed by the anesthesiologist.</li>\n<li class=\"main-bullet\"><strong>Oral Fluids Begun</strong>: Oral fluids are begun the day of surgery and the diet is advanced as tolerated.</li>\n<li class=\"main-bullet\"><strong>Cough Deep Breathing</strong>: Cough and deep breathing are encouraged immediately.</li>\n<li class=\"main-bullet\"><strong>Patient Ambulated First</strong>: The patient is ambulated on the first day after surgery, and the sterile dressing is changed on the second day.</li>","image":""}],
+      "redZone": {"name": "Critical Anatomy", "caution": "<li class=\"main-bullet\"><strong>Per Epa Candidates</strong>: Pr eo Per at Iv e Pr ePa r at Io n Candidates that have been deemed suitable or donation undergo abdominal imaging with CA scan angiography, magnetic resonant angiography, or less commonly bilateral renal artery arteriography..</li>\n<li class=\"main-bullet\"><strong>Head Supported Avoid</strong>: The head should be supported to avoid lateral cervical exion (Figure 1a )..</li>\n<li class=\"main-bullet\"><strong>Ureter Mobilized Away</strong>: The ureter is mobilized away from the gonadal vein leaving adequate soft tissue around the ureter to avoid stripping of its blood supply, resulting in ureteral ischemia which could lead to urine leakage in the recipient...</li>"},
+      "closure": "",
+      "extensions": ""
+    }
+  ];
+
+    let currentSlide = 0;
+    let totalSlides = 0;
+
+    function updateCarousel() {
+      const track = document.getElementById('carouselTrack');
+      if (!track) return;
+      track.style.transform = `translateX(-${currentSlide * 100}%)`;
+      const prevBtn = document.getElementById('carouselPrevBtn');
+      const nextBtn = document.getElementById('carouselNextBtn');
+      if (prevBtn) prevBtn.disabled = (currentSlide === 0);
+      if (nextBtn) nextBtn.disabled = (currentSlide === totalSlides - 1);
+      document.querySelectorAll('.carousel-dot').forEach((dot, idx) => {
+        dot.classList.toggle('active', idx === currentSlide);
+      });
+    }
+    function moveCarousel(d) { currentSlide = Math.max(0, Math.min(totalSlides-1, currentSlide+d)); updateCarousel(); }
+    function setCarouselSlide(i) { currentSlide = i; updateCarousel(); }
+
+    let activeCategory = 'all';
+    let searchQuery = '';
+
+    function onSearchChange(val) {
+      searchQuery = val.trim().toLowerCase();
+      const clearBtn = document.getElementById('searchClear');
+      if (clearBtn) {
+        clearBtn.style.display = searchQuery ? 'flex' : 'none';
+      }
+      applyFilters();
+    }
+
+    function clearSearch() {
+      const input = document.getElementById('searchBar');
+      if (input) input.value = '';
+      searchQuery = '';
+      const clearBtn = document.getElementById('searchClear');
+      if (clearBtn) clearBtn.style.display = 'none';
+      applyFilters();
+    }
+
+    function filterCategory(cat, btn) {
+      document.querySelectorAll('.fb').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeCategory = cat;
+      applyFilters();
+    }
+
+    function applyFilters() {
+      const grid = document.getElementById('approachesGrid');
+      grid.innerHTML = '';
+      
+      const filtered = APPROACHES_DATA.filter(item => {
+        // 1. Category filter
+        const matchesCategory = (activeCategory === 'all' || item.category === activeCategory);
+        
+        // 2. Search query filter
+        let matchesSearch = true;
+        if (searchQuery) {
+          const title = item.title.toLowerCase();
+          const kicker = item.kicker.toLowerCase();
+          const summary = item.summary.toLowerCase();
+          matchesSearch = title.includes(searchQuery) || 
+                          kicker.includes(searchQuery) || 
+                          summary.includes(searchQuery);
+        }
+        
+        return matchesCategory && matchesSearch;
+      });
+
+      if (filtered.length === 0) {
+        grid.innerHTML = `
+          <div style="grid-column: 1/-1; text-align: center; padding: 60px 20px; background: var(--bg-card); border: 1px dashed var(--border-color); border-radius: 20px;">
+            <div style="font-size: 2rem; margin-bottom: 12px;">🔍</div>
+            <h3 style="color: var(--text-primary); margin-bottom: 8px;">No Procedures Found</h3>
+            <p style="color: var(--text-secondary); font-size: 0.9rem; max-width: 400px; margin: 0 auto;">No procedure matches your search term "${searchQuery}" in this category.</p>
+          </div>`;
+        return;
+      }
+
+      filtered.forEach(item => {
+        const card = document.createElement('div');
+        card.className = 'approach-card fade-in-up';
+        card.onclick = () => openDrawer(item.id);
+        card.innerHTML = `
+          <div class="ac-img-wrap" style="position: relative;">
+            <img src="${item.image}" alt="${item.title}" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';">
+            <span class="img-credit-badge">Zollinger 9th Ed.</span>
+          </div>
+          <div class="ac-content">
+            <div>
+              <div class="ac-kicker">${item.kicker}</div>
+              <h3 class="ac-title">${item.title}</h3>
+              <p class="ac-desc">${item.summary}</p>
+            </div>
+            <div class="ac-foot"><span>Read Full Entry</span><span>&rarr;</span></div>
+          </div>`;
+        grid.appendChild(card);
+      });
+    }
+
+    function openDrawer(id) {
+      const item = APPROACHES_DATA.find(x => x.id === id);
+      if (!item) return;
+
+      document.getElementById('drawerKicker').innerText = item.kicker;
+      document.getElementById('drawerTitle').innerText = item.title;
+
+      // Carousel
+      const imgWrap = document.getElementById('drawerImageWrap');
+      let images = item.imagesList && item.imagesList.length > 0 ? item.imagesList : (item.image ? [item.image] : []);
+      currentSlide = 0;
+      totalSlides = images.length;
+      if (totalSlides === 0) {
+        imgWrap.innerHTML = '<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:var(--bg-secondary);color:var(--text-muted);font-weight:700;">No Illustration Available</div>';
+      } else {
+        let slidesHtml = '';
+        let dotsHtml = '';
+        images.forEach((url, idx) => {
+          slidesHtml += `<div class="carousel-slide"><img src="${url}" alt="${item.title} - Plate ${idx+1}" onclick="openLightbox(this.src, this.alt)" style="cursor: zoom-in;" onerror="this.style.display='none'"></div>`;
+          dotsHtml += `<span class="carousel-dot ${idx===0?'active':''}" onclick="setCarouselSlide(${idx})"></span>`;
+        });
+        const showCtrl = totalSlides > 1;
+        imgWrap.innerHTML = `
+          <div class="carousel-container">
+            <div class="carousel-track" id="carouselTrack">${slidesHtml}</div>
+            ${showCtrl ? `
+              <button class="carousel-btn prev" id="carouselPrevBtn" onclick="moveCarousel(-1)" disabled>&larr;</button>
+              <button class="carousel-btn next" id="carouselNextBtn" onclick="moveCarousel(1)">&rarr;</button>
+              <div class="carousel-dots">${dotsHtml}</div>` : ''}
+          </div>`;
+      }
+
+      // Content
+      const content = document.getElementById('drawerContent');
+
+      // Build step cards
+      let stepsHtml = '';
+      if (item.techniqueSteps && item.techniqueSteps.length > 0) {
+        item.techniqueSteps.forEach(step => {
+          const imgBlock = step.image
+            ? `<div class="step-card-img"><img src="${step.image}" alt="Figure ${step.figure} - Step Technique" onclick="openLightbox(this.src, this.alt)" style="cursor: zoom-in;" onerror="this.parentElement.style.display='none'"></div>`
+            : '';
+          stepsHtml += `
+            <div class="step-card">
+              ${imgBlock}
+              <div class="step-card-body">
+                <div class="step-card-num">Figure ${step.figure}</div>
+                <div class="step-card-text">${step.text}</div>
+              </div>
+            </div>`;
+        });
+      }
+
+      // Join indications inside a main list element
+      let indicationsHtml = '';
+      if (item.indications && item.indications.length > 0) {
+        // Filter out empty bullet elements
+        const validInds = item.indications.filter(i => i.trim().length > 0);
+        indicationsHtml = `<ul class="main-list">${validInds.join('')}</ul>`;
+      } else {
+        indicationsHtml = '<p class="para-content">No specific indications documented.</p>';
+      }
+
+      content.innerHTML = `
+        <div class="callout pearl" style="margin-top: 0; margin-bottom: 28px;">
+          <span class="label">\ud83c\udf93 SOURCE & CREDIT</span>
+          <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5; margin: 0;">
+            This high-yield board review monograph is summarized from <strong>Zollinger's Atlas of Surgical Operations (9th Edition)</strong>. For complete unabridged text, refer to the official volume.
+          </p>
+        </div>
+
+        <div class="drawer-content-section">
+          <h3>Indications</h3>
+          ${indicationsHtml}
+        </div>
+
+        ${item.anesthesia ? '<div class="drawer-content-section"><h3>Anesthesia</h3><div class="markdown-content">' + item.anesthesia + '</div></div>' : ''}
+
+        <div class="drawer-content-section">
+          <h3>Patient Positioning</h3>
+          <div class="markdown-content">${item.positioning}</div>
+        </div>
+
+        <div class="drawer-content-section">
+          <h3>Incision & Exposure</h3>
+          <div class="markdown-content">${item.landmarks}</div>
+        </div>
+
+        <div class="drawer-content-section">
+          <h3>Details of Procedure — Step-by-Step</h3>
+          ${stepsHtml || '<p class="para-content">Perform the surgical dissection and reconstruction in a systematic manner as shown in the illustrations.</p>'}
+        </div>
+
+        <div class="callout warn">
+          <span class="label">\u26a0\ufe0f RED ZONE DANGER</span>
+          <strong>${item.redZone.name}:</strong>
+          <div class="markdown-content" style="margin-top: 8px;">${item.redZone.caution}</div>
+        </div>
+
+        ${item.closure ? '<div class="drawer-content-section"><h3>Closure</h3><div class="markdown-content">' + item.closure + '</div></div>' : ''}
+
+        <div class="drawer-content-section">
+          <h3>Postoperative Care</h3>
+          <div class="markdown-content">${item.extensions}</div>
+        </div>`;
+
+      document.getElementById('drawerOverlay').classList.add('open');
+      document.getElementById('drawerContainer').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeDrawer() {
+      document.getElementById('drawerOverlay').classList.remove('open');
+      document.getElementById('drawerContainer').classList.remove('open');
+      document.body.style.overflow = '';
+      closeLightbox(); // Safety close lightbox if open
+    }
+
+    /* ── Lightbox JS Handlers (NEW) ── */
+    function openLightbox(src, alt) {
+      let overlay = document.getElementById('lightboxOverlay');
+      if (!overlay) {
+        overlay = document.createElement('div');
+        overlay.id = 'lightboxOverlay';
+        overlay.className = 'lightbox-overlay';
+        overlay.onclick = closeLightbox;
+        overlay.innerHTML = `
+          <div class="lightbox-content-wrap" onclick="event.stopPropagation()">
+            <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+            <img id="lightboxImg" class="lightbox-img" src="" alt="">
+            <div id="lightboxCaption" class="lightbox-caption"></div>
+          </div>`;
+        document.body.appendChild(overlay);
+      }
+      const img = document.getElementById('lightboxImg');
+      const caption = document.getElementById('lightboxCaption');
+      img.src = src;
+      img.alt = alt || 'Surgical Illustration';
+      img.onclick = (e) => {
+        e.stopPropagation();
+        img.classList.toggle('zoomed');
+        overlay.classList.toggle('zoomed-state');
+      };
+      caption.innerText = alt || 'Surgical Illustration';
+      overlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      const overlay = document.getElementById('lightboxOverlay');
+      if (overlay) {
+        overlay.classList.remove('open');
+        overlay.classList.remove('zoomed-state');
+        const img = document.getElementById('lightboxImg');
+        if (img) img.classList.remove('zoomed');
+        const drawer = document.getElementById('drawerContainer');
+        if (drawer && !drawer.classList.contains('open')) {
+          document.body.style.overflow = '';
+        }
+      }
+    }
+
+    // Theme
+    const themeToggle = document.getElementById('themeToggle');
+    const moonIcon = document.getElementById('moonIcon');
+    const sunIcon = document.getElementById('sunIcon');
+    function applyTheme(theme) {
+      if (theme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        if (moonIcon) moonIcon.style.display = 'none';
+        if (sunIcon) sunIcon.style.display = 'block';
+      } else {
+        document.documentElement.removeAttribute('data-theme');
+        if (sunIcon) sunIcon.style.display = 'none';
+        if (moonIcon) moonIcon.style.display = 'block';
+      }
+    }
+    themeToggle.addEventListener('click', () => {
+      const isDark = document.documentElement.hasAttribute('data-theme');
+      const newTheme = isDark ? 'light' : 'dark';
+      applyTheme(newTheme);
+      localStorage.setItem('sih-theme', newTheme);
+    });
+
+    // Mobile nav
+    function openMobNav() {
+      document.getElementById('mobNavSheet').classList.add('open');
+      document.getElementById('mobNavOverlay').style.display = 'block';
+      document.body.style.overflow = 'hidden';
+    }
+    function closeMobNav() {
+      document.getElementById('mobNavSheet').classList.remove('open');
+      document.getElementById('mobNavOverlay').style.display = 'none';
+      document.body.style.overflow = '';
+    }
+
+    // Scroll nav
+    const mainNav = document.getElementById('mainNav');
+    window.addEventListener('scroll', () => {
+      mainNav.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      applyTheme(localStorage.getItem('sih-theme') || 'light');
+      applyFilters();
+    });
+  </script>
+  <script src="../../js/navigation.js"></script>
+  <script src="../../js/nav-pill.js"></script>
+</body>
+</html>

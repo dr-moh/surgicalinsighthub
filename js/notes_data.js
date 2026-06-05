@@ -99,6 +99,18 @@ window.NOTES_DATA = {
       isNew: true
     },
     {
+      id: 'hy-adrenal',
+      title: 'Adrenal Disease Pathology & Surgery',
+      kicker: 'Surgical High-Yield Notes',
+      specialty: ['endocrine', 'basics'],
+      description: 'Comprehensive study guide covering the surgical pathology of the adrenal gland. Hypercortisolism, primary aldosteronism, pheochromocytoma, adrenocortical carcinoma, and neuroblastoma.',
+      tags: ['red:Adrenal', 'Endocrine', 'Conn\'s', 'Cushing\'s', 'Pheo', 'ACC', 'ABSITE'],
+      pages: 'Monograph',
+      type: 'web',
+      url: 'notes/Surgical High-Yield Notes/adrenal_disease.html',
+      isNew: true
+    },
+    {
       id: 'hy-hpb-tumours',
       title: 'HPB Tumours Master Library',
       kicker: 'Surgical High-Yield Notes',
@@ -291,6 +303,42 @@ window.NOTES_DATA = {
       opBadge: 'OrthoFixar Standard',
       opMeta: 'Standalone Interactive SPA',
       url: 'notes/Orthopaedic Surgical Portal/orthopedics.html'
+    },
+    {
+      id: 'op-general-surgery-portal',
+      title: 'General Surgery Approaches & Procedures',
+      opKicker: 'General Surgery · Specialty Portal',
+      description: 'Interactive specialty portal mapping general surgical procedures from Zollinger\'s Atlas: laparotomy, gastrectomy, intestinal resections, herniorrhaphy, appendectomy, mastectomies, and amputations. Features drawings and step-by-step techniques.',
+      opBadge: 'Zollinger Standard',
+      opMeta: 'Interactive Portal',
+      url: 'notes/General Surgery Portal/general_surgery.html'
+    },
+    {
+      id: 'op-hpb-portal',
+      title: 'HPB Surgical Approaches & Procedures',
+      opKicker: 'HPB Surgery · Specialty Portal',
+      description: 'Interactive specialty portal mapping hepato-pancreato-biliary procedures: cholecystectomy, choledochostomy, hepatectomy, pancreatic pseudocyst drainage, and the Whipple pancreaticoduodenectomy. Features surgical steps and vascular safety zones.',
+      opBadge: 'Zollinger Standard',
+      opMeta: 'Interactive Portal',
+      url: 'notes/HPB Surgery Portal/hpb.html'
+    },
+    {
+      id: 'op-vascular-portal',
+      title: 'Vascular Surgical Approaches & Procedures',
+      opKicker: 'Vascular Surgery · Specialty Portal',
+      description: 'Interactive specialty portal mapping vascular reconstructions: AAA repair, bypass grafts, carotid endarterectomy, varicose vein stripping, and portal hypertension shunting procedures.',
+      opBadge: 'Zollinger Standard',
+      opMeta: 'Interactive Portal',
+      url: 'notes/Vascular Surgical Portal/vascular.html'
+    },
+    {
+      id: 'op-gynecology-portal',
+      title: 'Gynecologic Surgical Approaches & Procedures',
+      opKicker: 'Gynecology · Specialty Portal',
+      description: 'Interactive specialty portal mapping obstetric and gynecologic procedures: abdominal and vaginal hysterectomy, salpingectomy, oophorectomy, and colporrhaphy.',
+      opBadge: 'Zollinger Standard',
+      opMeta: 'Interactive Portal',
+      url: 'notes/Gynecologic Surgical Portal/gynecology.html'
     }
   ]
 };
