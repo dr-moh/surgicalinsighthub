@@ -18,6 +18,8 @@ scratch/
 
 # MCQ bank PDFs (large binary files - not for GitHub)
 MCQ Bank/
+notes/Surgical Operative Approach/General Principles of Abdominal Operations for Trauma/*.pdf
+
 
 # Environment variables
 .env
