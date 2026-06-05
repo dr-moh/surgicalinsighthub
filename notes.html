@@ -529,7 +529,7 @@
   </div>
 </footer>
 
-<script src="js/notes_data.js?v=4.0.1"></script>
+<script src="js/notes_data.js?v=4.0.2"></script>
 <script>
 /* ── Notes Library Renderer ── */
 (function () {
@@ -622,7 +622,7 @@
     // High-yield notes grid
     var notesGrid = document.getElementById('notes-grid');
     if (notesGrid && data.highjield) {
-      data.highjield.forEach(function (note) {
+      data.highjield.slice().reverse().forEach(function (note) {
         notesGrid.appendChild(buildNoteCard(note));
       });
     }
@@ -630,7 +630,7 @@
     // Operative approach grid
     var opGrid = document.getElementById('operative-grid');
     if (opGrid && data.operative) {
-      data.operative.forEach(function (note) {
+      data.operative.slice().reverse().forEach(function (note) {
         opGrid.appendChild(buildOpCard(note));
       });
     }
