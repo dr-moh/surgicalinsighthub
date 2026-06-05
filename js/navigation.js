@@ -380,5 +380,220 @@ window.closeSidebar = function() {
         const fPersTime = document.getElementById('sihFooterPersonalTime');
         if (fPersTime) fPersTime.textContent = `Active for ${getSessionMinutes()}m this session`;
     }, 6000);
+
+    // ── 7. SYSTEM UPDATES & NOTIFICATION HYBRID SYSTEM ──
+    const SYSTEM_UPDATES = [
+        {
+            id: 'update-crohns-operative',
+            title: "Crohn's Disease Operative Guide",
+            type: 'note',
+            category: 'Colorectal',
+            date: '2026-06-04',
+            desc: 'Step-by-step ileocaecal resection, strictureplasty, and Rutgeerts score management.',
+            url: 'notes/Surgical Operative Approach/crohns_disease_operative.html'
+        },
+        {
+            id: 'update-must-read-books',
+            title: 'Beyond the Textbook: Narrative Medicine Reading List',
+            type: 'blog',
+            category: 'Literature Review',
+            date: '2026-06-04',
+            desc: 'Cultivating empathy, grit, and clinical reasoning in surgery residency.',
+            url: 'blog/must-read-books-for-residents.html'
+        },
+        {
+            id: 'update-anastomotic-complications',
+            title: 'Anastomotic Complications Guide',
+            type: 'note',
+            category: 'Complications',
+            date: '2026-05-21',
+            desc: 'Clinical guide on risk stratification, biomechanical markers, and EVT timelines.',
+            url: 'notes/Surgical High-Yield Notes/anastomotic_complications.html'
+        }
+    ];
+
+    // Detect root path dynamically relative to the current file location
+    const navScript = document.querySelector('script[src*="navigation.js"]');
+    let rootPath = '';
+    if (navScript) {
+        const src = navScript.getAttribute('src');
+        const idx = src.indexOf('js/navigation.js');
+        if (idx !== -1) {
+            rootPath = src.substring(0, idx);
+        }
+    } else {
+        if (window.location.pathname.includes('/blog/')) {
+            rootPath = '../';
+        } else if (window.location.pathname.includes('/notes/Surgical High-Yield Notes/') || window.location.pathname.includes('/notes/Surgical Operative Approach/')) {
+            rootPath = '../../';
+        } else if (window.location.pathname.includes('/notes/')) {
+            rootPath = '../';
+        }
+    }
+
+    function injectNotificationSystem() {
+        const navRight = document.querySelector('.nav-right');
+        if (!navRight || !themeToggle) return;
+
+        // Create Notification Bell Button
+        const bellBtn = document.createElement('button');
+        bellBtn.className = 'theme-toggle nav-bell-btn';
+        bellBtn.setAttribute('aria-label', 'View recent updates');
+        bellBtn.setAttribute('id', 'navBellBtn');
+        bellBtn.innerHTML = `
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/>
+            </svg>
+            <span class="nav-bell-badge" id="navBellBadge" style="display: none;"></span>
+        `;
+
+        // Create Dropdown Container
+        const dropdown = document.createElement('div');
+        dropdown.className = 'nav-dropdown-menu glass-panel';
+        dropdown.setAttribute('id', 'navUpdatesDropdown');
+
+        // Check last seen update to toggle badge
+        const lastSeen = localStorage.getItem('sih-last-seen-update') || '0';
+        const newestUpdateTime = Math.max(...SYSTEM_UPDATES.map(u => new Date(u.date).getTime()));
+        const badge = bellBtn.querySelector('#navBellBadge');
+        if (badge && newestUpdateTime > parseInt(lastSeen)) {
+            badge.style.display = 'block';
+        }
+
+        // Render dropdown items
+        const listHTML = SYSTEM_UPDATES.map(u => {
+            const isNote = u.type === 'note';
+            const icon = isNote 
+                ? `<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>`
+                : `<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>`;
+            
+            const formattedDate = new Date(u.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+            const linkUrl = rootPath + u.url;
+
+            return `
+                <a href="${linkUrl}" class="dropdown-item">
+                    <div class="di-title-row">
+                        <span class="di-badge ${u.type}">${u.category}</span>
+                        <span class="di-date">${formattedDate}</span>
+                    </div>
+                    <p class="di-title">${u.title}</p>
+                    <p class="di-desc">${u.desc}</p>
+                    <span class="di-link-text">${icon} Read Resource</span>
+                </a>
+            `;
+        }).join('');
+
+        dropdown.innerHTML = `
+            <div class="nd-header">
+                <h3>System Updates</h3>
+                <span class="nd-count">${SYSTEM_UPDATES.length} new resources</span>
+            </div>
+            <div class="nd-list">
+                ${listHTML}
+            </div>
+        `;
+
+        // Insert bell before themeToggle in nav-right
+        navRight.insertBefore(bellBtn, themeToggle);
+        document.body.appendChild(dropdown);
+
+        // Position dropdown relative to bellBtn
+        function positionDropdown() {
+            const rect = bellBtn.getBoundingClientRect();
+            dropdown.style.top = `${rect.bottom + window.scrollY + 10}px`;
+            dropdown.style.right = `${window.innerWidth - rect.right - 10}px`;
+        }
+
+        // Toggle dropdown open/close
+        bellBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isOpen = dropdown.classList.contains('open');
+            if (window.closeMobNav) window.closeMobNav();
+            
+            if (isOpen) {
+                dropdown.classList.remove('open');
+            } else {
+                positionDropdown();
+                dropdown.classList.add('open');
+                localStorage.setItem('sih-last-seen-update', Date.now().toString());
+                if (badge) badge.style.display = 'none';
+            }
+        });
+
+        // Close when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!dropdown.contains(e.target) && e.target !== bellBtn && !bellBtn.contains(e.target)) {
+                dropdown.classList.remove('open');
+            }
+        });
+
+        // Handle window resize/scroll positioning
+        window.addEventListener('resize', positionDropdown, { passive: true });
+        window.addEventListener('scroll', () => {
+            if (dropdown.classList.contains('open')) positionDropdown();
+        }, { passive: true });
+    }
+
+    // Populate the Surgical Handover clipboard if on homepage
+    function populateHandoverClipboard() {
+        const clipboard = document.getElementById('handoverClipboard');
+        if (!clipboard) return;
+
+        const cbNewNotes = document.getElementById('cbNewNotes');
+        const cbCriticalAlerts = document.getElementById('cbCriticalAlerts');
+        const dateSpan = document.getElementById('cbHandoverDate');
+        if (!cbNewNotes || !cbCriticalAlerts) return;
+
+        // Set current date formatted as 'OCT 26, 2023'
+        if (dateSpan) {
+            dateSpan.textContent = new Date().toLocaleDateString('en-US', {
+                month: 'short',
+                day: 'numeric',
+                year: 'numeric'
+            }).toUpperCase();
+        }
+
+        // Notes and blogs
+        const recentNotes = SYSTEM_UPDATES.filter(u => u.type === 'note');
+        const recentBlogs = SYSTEM_UPDATES.filter(u => u.type === 'blog');
+
+        // Render new note admissions
+        cbNewNotes.innerHTML = recentNotes.slice(0, 2).map((n, i) => {
+            const isOperative = n.url.includes('Surgical Operative Approach');
+            const typeLabel = isOperative ? 'OPERATIVE ATLAS' : 'HIGH-YIELD NOTE';
+            const ptId = 20000 + Math.floor(Math.random() * 1000);
+            const ages = [42, 68];
+            const age = ages[i] || 45;
+            const formattedDate = new Date(n.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' }).toUpperCase();
+            
+            return `
+                <div class="cb-patient-card">
+                    <p class="cb-patient-name"><strong>${typeLabel}:</strong><br><a href="${rootPath + n.url}" class="cb-link">${n.title}</a></p>
+                    <p class="cb-patient-line"><strong>Ref ID:</strong> ${ptId} <span class="cb-meta-tag">[Adm: ${formattedDate}]</span></p>
+                    <p class="cb-patient-line"><strong>Class:</strong> PGY-${isOperative ? '3' : '2'} &nbsp;&middot;&nbsp; <strong>Sub:</strong> ${n.category}</p>
+                    <p class="cb-patient-line"><strong>Mx Plan:</strong> Read guide for clinical rules</p>
+                </div>
+            `;
+        }).join('');
+
+        // Render latest blog post in the right-hand column
+        const blogItem = recentBlogs[0] || recentNotes[2];
+        if (blogItem) {
+            const formattedDate = new Date(blogItem.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' }).toUpperCase();
+            cbCriticalAlerts.innerHTML = `
+                <div class="cb-patient-card">
+                    <p class="cb-patient-name" style="color: var(--brand-red);"><strong>LATEST DISCUSSION:</strong></p>
+                    <p class="cb-patient-desc">
+                        <a href="${rootPath + blogItem.url}" class="cb-link">${blogItem.title}</a>
+                        <span class="cb-meta-tag" style="color:var(--brand-gold);">[Published: ${formattedDate}]</span>
+                    </p>
+                    <p class="cb-item-desc" style="margin-top: 6px !important;"><strong>Synopsis:</strong> ${blogItem.desc}</p>
+                </div>
+            `;
+        }
+    }
+
+    injectNotificationSystem();
+    populateHandoverClipboard();
 });
 
