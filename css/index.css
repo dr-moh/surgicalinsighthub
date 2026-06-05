@@ -512,15 +512,19 @@ footer { border-top: 1px solid var(--border-color); padding: 48px 24px 32px; max
 
 .cb-column-header span {
   display: block;
-  font-size: 0.52rem;
-  font-weight: 600;
-  opacity: 0.85;
-  margin-top: 2.5px;
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: var(--brand-gold, #b8922a);
+  margin-top: 3.5px;
   text-transform: uppercase;
 }
 
 [data-theme="dark"] .cb-column-header {
   background: #22140e;
+  color: #f0d080;
+}
+
+[data-theme="dark"] .cb-column-header span {
   color: #f0d080;
 }
 
@@ -567,6 +571,17 @@ footer { border-top: 1px solid var(--border-color); padding: 48px 24px 32px; max
   color: #615043;
   margin: 0 !important;
   line-height: 1.35;
+}
+
+.cb-item-desc {
+  font-size: 0.6rem;
+  color: #837265;
+  margin: 4px 0 0 0 !important;
+  line-height: 1.4;
+}
+
+[data-theme="dark"] .cb-item-desc {
+  color: #a79589;
 }
 
 .cb-link {
