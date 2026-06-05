@@ -290,6 +290,24 @@ window.NOTES_DATA = {
       opBadge: 'Essential',
       opMeta: 'Core Skills',
       url: 'notes/Surgical Operative Approach/Fracture Management Monograph.html'
+    },
+    {
+      id: 'op-abdominal-trauma-general',
+      title: 'General Principles of Abdominal Operations for Trauma',
+      opKicker: 'Emergency · Trauma',
+      description: 'Standardized PGY-3 trauma monograph covering exposure, systematic exploration, retroperitoneal vascular zones, medial visceral rotation, and temporary abdominal closure.',
+      opBadge: 'Gold Standard',
+      opMeta: '5 Pillars',
+      url: 'notes/Surgical Operative Approach/General Principles of Abdominal Operations for Trauma.html'
+    },
+    {
+      id: 'op-hernia-monograph',
+      title: 'Surgical Monograph: Hernia & Hernia Repair',
+      opKicker: 'General Surgery · Abdominal Wall',
+      description: 'Comprehensive guide to groin, ventral, incisional, and pelvic hernias. Rives-Stoppa, TAR component separation, and emergency management of strangulation.',
+      opBadge: 'PGY-3 Framework',
+      opMeta: '5 Pillars',
+      url: 'notes/Surgical Operative Approach/Hernia and Hernia Repair Monograph.html'
     }
   ],
 
