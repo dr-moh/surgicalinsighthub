@@ -738,12 +738,14 @@ function normalizeOptions(options) {
 
 function resolveAnswerLetter(question, options) {
   var answer = cleanText(question.answer);
-  if (/^[A-E]$/.test(answer)) return answer;
+  if (/^[A-E]$/i.test(answer)) return answer.toUpperCase();
 
   var verified = cleanText(question.sharp && question.sharp.verified_answer);
-  if (/^[A-E]$/.test(verified)) return verified;
+  if (/^[A-E]$/i.test(verified)) return verified.toUpperCase();
 
   var fallbackAnswer = cleanText(question.correct_answer);
+  if (/^[A-E]$/i.test(fallbackAnswer)) return fallbackAnswer.toUpperCase();
+
   var parsed = fallbackAnswer.match(/^([A-E])[).:\s-]/i);
   if (parsed) return parsed[1].toUpperCase();
 
@@ -859,7 +861,7 @@ async function startSession() {
   btn.disabled = true;
 
   try {
-    var count = state.qCount === 'all' ? 100 : parseInt(state.qCount);
+    var count = state.qCount === 'all' ? 5000 : parseInt(state.qCount);
     
     // Call our RPC function to get random MCQs
     var res = await fetch(SUPA_URL + '/rest/v1/rpc/get_random_mcqs', {
@@ -1279,6 +1281,7 @@ function showSharp(q, selected, isCorrect) {
     hasSupp = true;
   }
   
+  var research = q.research;
   if (research) {
     var points = (research.points || []).map(p => `<li>${p}</li>`).join('');
     suppContent.innerHTML += '<div class="sharp-supp-item"><h4>Live Research Insight (' + research.topic + ')</h4><p>' + renderMarkdownSafely(research.summary) + '</p><ul style="padding-left:20px;margin-top:8px;">' + points + '</ul></div>';
@@ -1449,7 +1452,7 @@ function renderLeaderboard(data) {
 }
 
 function restartSession() {
-  state = { name: state.name, school: state.school, specialty: 'All', qCount: 5, questions: [], current: 0, score: 0, answers: [], startTime: null };
+  state = { name: state.name, school: state.school, specialty: 'All', qCount: 5, questions: [], current: 0, score: 0, answers: [], startTime: null, normalizedQuestionIndexes: {} };
   document.getElementById('resultsScreen').style.display = 'none';
   document.getElementById('arenaScreen').style.display = 'none';
   document.getElementById('setupScreen').style.display = 'flex';
