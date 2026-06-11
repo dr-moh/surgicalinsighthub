@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ERAS in Low-Resource Settings: Adapting Enhanced Recovery for Tertiary Hospitals in Ethiopia — Surgical Insight Hub</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Shared Styles -->
+  <link rel="stylesheet" href="../css/theme.css">
+  <link rel="stylesheet" href="../css/shared.css">
+  <link rel="stylesheet" href="blog.css">
+  
+  <script>
+    const savedTheme = localStorage.getItem('sih-theme') || 'light';
+    if (savedTheme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+  </script>
+  
+  <style>
+    .attribution-card {
+      background: rgba(37,99,235,0.02);
+      border: 1px dashed rgba(37,99,235,0.3);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 2.5rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      font-family: 'Inter', sans-serif;
+    }
+    
+    [data-theme="dark"] .attribution-card {
+      background: rgba(59, 130, 246, 0.03);
+      border-color: rgba(59, 130, 246, 0.2);
+    }
+    
+    .attribution-card svg {
+      color: #2563eb;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    
+    [data-theme="dark"] .attribution-card svg {
+      color: #3b82f6;
+    }
+    
+    .eras-section {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 24px;
+      margin: 2.5rem 0;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.2s ease;
+      font-family: 'Inter', sans-serif;
+    }
+    
+    .eras-section:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+      border-color: #2563eb;
+    }
+    
+    [data-theme="dark"] .eras-section:hover {
+      border-color: #3b82f6;
+    }
+    
+    .eras-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 12px;
+    }
+    
+    .eras-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      margin: 0;
+    }
+    
+    .eras-badge {
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 30px;
+      background: rgba(16, 185, 129, 0.08);
+      color: #10b981;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    
+    [data-theme="dark"] .eras-badge {
+      background: rgba(16, 185, 129, 0.15);
+      color: #10b981;
+    }
+    
+    .recommendation-list {
+      list-style-type: none;
+      padding-left: 0 !important;
+      margin-bottom: 20px;
+    }
+    
+    .recommendation-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      margin-bottom: 12px;
+      line-height: 1.55;
+    }
+    
+    .recommendation-item svg {
+      color: #10b981;
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+    
+    .global-commentary {
+      background: rgba(37, 99, 235, 0.03);
+      border-left: 4px solid #2563eb;
+      padding: 16px 20px;
+      border-radius: 0 12px 12px 0;
+      font-size: 0.9rem;
+      line-height: 1.55;
+      color: var(--text-primary);
+    }
+    
+    [data-theme="dark"] .global-commentary {
+      background: rgba(59, 130, 246, 0.03);
+      border-left-color: #3b82f6;
+    }
+    
+    .global-commentary strong {
+      color: #2563eb;
+      display: block;
+      margin-bottom: 6px;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 800;
+    }
+    
+    [data-theme="dark"] .global-commentary strong {
+      color: #3b82f6;
+    }
+    
+    .highlight-box {
+      background: rgba(184, 146, 42, 0.03);
+      border: 1px solid rgba(184, 146, 42, 0.15);
+      border-radius: 12px;
+      padding: 20px;
+      margin: 2.5rem 0;
+      font-family: 'Inter', sans-serif;
+    }
+    
+    .highlight-title {
+      font-weight: 800;
+      font-size: 1rem;
+      color: #b8922a;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .highlight-text {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="mainNav">
+    <div class="nav-left">
+      <a href="../index.html" class="nav-pill">
+        <div class="nav-logo-img">
+          <img src="../assets/images/Surgical_Insight_Hub_Logo.png" alt="SIH">
+        </div>
+        <div>
+          <div class="nav-brand-text">Surgical Insight Hub</div>
+          <div class="nav-brand-sub">Advanced Surgical Learning</div>
+        </div>
+      </a>
+      <div class="nav-links-pill">
+        <a href="../index.html">Home</a>
+        <a href="../notes.html">Notes</a>
+        <a href="../notes/operative_approach.html">Playbook</a>
+        <a href="../podcast.html">Podcast</a>
+        <a href="../surgery-talk.html" class="active">Surgery Talk</a>
+        <a href="../about.html">About</a>
+      </div>
+    </div>
+
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <svg id="moonIcon" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/></svg>
+        <svg id="sunIcon" style="display:none;" viewBox="0 0 24 24"><path d="M12 7a5 5 0 1 0 5 5 5.006 5.006 0 0 0-5-5zm0 8a3 3 0 1 1 3-3 3.003 3.003 0 0 1-3 3zm0-13a1 1 0 0 0-1 1v2a1 1 0 0 0 2 0V3a1 1 0 0 0-1-1zm0 18a1 1 0 0 0-1 1v2a1 1 0 0 0 2 0v-2a1 1 0 0 0-1-1zm8-11h-2a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2zm-16 0H2a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2zm13.657-5.657a1 1 0 0 0-1.414 0l-1.414 1.414a1 1 0 0 0 1.414 1.414l1.414-1.414a1 1 0 0 0 0-1.414zm-11.314 0a1 1 0 0 0 0 1.414l1.414 1.414a1 1 0 0 0 1.414-1.414L4.929 5.757a1 1 0 0 0-1.414 0zm11.314 11.314a1 1 0 0 0 0 1.414l1.414 1.414a1 1 0 0 0 1.414-1.414l-1.414-1.414a1 1 0 0 0-1.414 0zm-11.314 0a1 1 0 0 0-1.414 1.414l1.414 1.414a1 1 0 0 0 1.414-1.414l-1.414-1.414a1 1 0 0 0 0-1.414z"/></svg>
+      </button>
+      <a href="../arena.html" class="nav-btn arena-btn">MCQ Arena</a>
+      <button class="mob-nav-toggle" onclick="openMobNav()">
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mob-nav-overlay" id="mobNavOverlay" onclick="closeMobNav()"></div>
+  <div class="mob-nav-sheet" id="mobNavSheet">
+    <div class="mob-nav-handle"></div>
+    <a href="../index.html" onclick="closeMobNav()">Home</a>
+    <a href="../notes.html" onclick="closeMobNav()">Notes</a>
+    <a href="../notes/operative_approach.html" onclick="closeMobNav()">Playbook</a>
+    <a href="../podcast.html" onclick="closeMobNav()">Podcast</a>
+    <a href="../surgery-talk.html" class="active" onclick="closeMobNav()">Surgery Talk</a>
+    <a href="../arena.html" onclick="closeMobNav()">MCQ Arena</a>
+    <a href="../about.html" onclick="closeMobNav()">About</a>
+  </div>
+
+  <article>
+    <header class="blog-hero">
+      <h1 class="blog-title">ERAS in Low-Resource Settings: Adapting Enhanced Recovery for Tertiary Hospitals in Ethiopia</h1>
+      <div class="blog-meta" style="margin-top: 1rem;">
+        <span class="blog-badge" style="background: rgba(37, 99, 235, 0.1); color: #2563eb;">Evidence Review</span>
+        <span class="blog-badge" style="background: rgba(16, 185, 129, 0.1); color: #10b981;">Global Surgery</span>
+        <span class="blog-date">June 11, 2026</span>
+      </div>
+      <p class="blog-subtitle">A modified Delphi study deconstruction on how to implement feasible, sustainable, and context-appropriate perioperative care guidelines in LMICs.</p>
+    </header>
+
+    <div class="blog-container">
+      <main class="blog-main blog-content">
+        
+        <!-- Attribution Card -->
+        <div class="attribution-card">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+          <div style="font-size: 0.9rem; line-height: 1.5;">
+            <strong style="color: var(--text-primary); font-size: 0.95rem; display: block; margin-bottom: 4px;">Global Surgery Evidence Review</strong>
+            This article is an editorial analysis and clinical commentary on the study <a href="https://www.sciencedirect.com/science/article/pii/S0039606025002491" target="_blank" style="color: #2563eb; font-weight: 700; text-decoration: underline;">"Adaptation of Enhanced Recovery After Surgery Protocol for Elective Gastrointestinal and Hepatopancreaticobiliary Surgeries for Tertiary Hospitals in Ethiopia: A Modified Delphi Study"</a> (published in the journal <em>Surgery</em>, March 2026) led by <strong>Wongel Tena Shale</strong> (General Surgeon and Assistant Professor, Jimma University Medical Center, Ethiopia) and colleagues.
+          </div>
+        </div>
+
+        <p>The implementation of <strong>Enhanced Recovery After Surgery (ERAS)</strong> protocols has transformed perioperative care globally, significantly reducing post-operative complications and hospital length of stay (LOS). However, the vast majority of standard ERAS guidelines have been designed and validated in high-income countries (HICs). When surgical teams attempt to implement these protocols directly within low- and middle-income countries (LMICs), they encounter significant barriers.</p>
+
+        <p>Resource constraints, differences in local dietary patterns, socio-demographic factors, and varying levels of hospital infrastructure mean that standard Western protocols—which may assume ready access to epidural kits, active thermal warmers, commercial high-carbohydrate drinks, and home-care nursing networks—are often unfeasible. To bridge this gap, a research team led by Dr. Wongel Tena Shale from Jimma University conducted a modified Delphi consensus study. By utilizing a panel of 32 interdisciplinary experts and conducting two rounds of surveys, they established a tailored <strong>27-recommendation ERAS protocol</strong> optimized for elective gastrointestinal (GI) and hepatopancreaticobiliary (HPB) surgeries in Ethiopian tertiary hospitals.</p>
+
+        <hr>
+
+        <!-- PREOPERATIVE -->
+        <div class="eras-section">
+          <div class="eras-header">
+            <h3 class="eras-title">Preoperative Stage Recommendations</h3>
+            <span class="eras-badge">8 Recommendations</span>
+          </div>
+          <ul class="recommendation-list">
+            <li class="recommendation-item">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Preadmission Counseling:</strong> Focused patient and family counseling tailored to language diversity and literacy levels.</span>
+            </li>
+            <li class="recommendation-item">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Nutritional Screening &amp; Optimization:</strong> Mandatory assessment of severe malnutrition (common in rural patient cohorts) using simple, cost-effective measures.</span>
+            </li>
+            <li class="recommendation-item">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Avoidance of Prolonged Fasting:</strong> Implementation of a strict 6-hour limit for solids and a 2-hour limit for clear fluids.</span>
+            </li>
+            <li class="recommendation-item">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Carbohydrate Loading:</strong> Utilizing locally-prepared carbohydrate alternatives instead of high-cost commercial formulas.</span>
+            </li>
+            <li class="recommendation-item">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Bowel Preparation:</strong> Restricting mechanical bowel prep only to specific left-sided colonic or rectal surgeries.</span>
+            </li>
+            <li class="recommendation-item">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Selective Thromboembolism Prophylaxis:</strong> Context-sensitive risk assessment and pharmacotherapy administration.</span>
+            </li>
+            <li class="recommendation-item">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Avoidance of Routine Pre-Medication:</strong> Minimizing sedatives to ensure prompt post-operative mobilization.</span>
+            </li>
+            <li class="recommendation-item">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Antimicrobial Prophylaxis:</strong> Mandatory administration of narrow-spectrum, cost-effective antibiotics within 60 minutes of skin incision.</span>
+            </li>
+          </ul>
+          <div class="global-commentary">
+            <strong>Global Surgery Commentary:</strong>
+            Standard Western protocols recommend commercial maltodextrin carbohydrate drinks. In rural Ethiopia, these are unavailable or prohibitively expensive. The Delphi panel resolved this by recommending locally-available alternatives, such as sweetened black tea or traditional barley water (*Kolo* water), which provide equivalent glycemic loading at a fraction of the cost. Furthermore, nutritional screening is adapted to use mid-upper arm circumference (MUAC) and serum albumin, avoiding advanced body composition diagnostics.
+          </div>
+        </div>
+
+        <!-- INTRAOPERATIVE -->
+        <div class="eras-section">
+          <div class="eras-header">
+            <h3 class="eras-title">Intraoperative Stage Recommendations</h3>
+            <span class="eras-badge">7 Recommendations</span>
+          </div>
+          <ul class="recommendation-list">
+            <li class="recommendation-item">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Standardized Anesthetic Protocol:</strong> Utilizing regional anesthesia (e.g. TAP blocks or wound infiltration) as cost-effective alternatives to thoracic epidurals.</span>
+            </li>
+            <li class="recommendation-item">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Selective Nasogastric Tube (NGT) Use:</strong> Restricting NGT use to decompressing the stomach intraoperatively; avoiding routine post-operative placement.</span>
+            </li>
+            <li class="recommendation-item">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Hypothermia Prevention:</strong> Promoting passive insulation methods (double-sheet wrapping and warmed IV fluids) due to active warmer shortages.</span>
+            </li>
+            <li class="recommendation-item">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Clinical Goal-Directed Fluid Therapy (GDFT):</strong> Titrating fluids based on clinical perfusion endpoints (urine output, heart rate, blood pressure).</span>
+            </li>
+            <li class="recommendation-item">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Surgical Access:</strong> Using minimally invasive surgery (MIS) when equipment is available, but prioritizing rapid, open techniques to limit anesthesia exposure when necessary.</span>
+            </li>
+            <li class="recommendation-item">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Selective Abdominal Drainage:</strong> Avoiding routine drain placement; reserving drains only for high-risk anastomoses (e.g. duodenal leak concerns).</span>
+            </li>
+            <li class="recommendation-item">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Selective Urinary Catheterization:</strong> Removing catheters immediately post-operation or within 24 hours.</span>
+            </li>
+          </ul>
+          <div class="global-commentary">
+            <strong>Global Surgery Commentary:</strong>
+            In HICs, intraoperative fluid optimization is guided by advanced stroke-volume variation monitors or esophageal Doppler devices. In low-resource settings, these are absent. The Jimma University study adapts GDFT by establishing a clinical algorithm that uses heart rate stability, mean arterial pressure (MAP) targets, and capillary refill time as pragmatic, non-invasive guides to avoid fluid overload, which causes bowel edema and anastomotic failure.
+          </div>
+        </div>
+
+        <!-- POSTOPERATIVE -->
+        <div class="eras-section">
+          <div class="eras-header">
+            <h3 class="eras-title">Postoperative Stage Recommendations</h3>
+            <span class="eras-badge">6 Recommendations</span>
+          </div>
+          <ul class="recommendation-list">
+            <li class="recommendation-item">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Early Mobilization:</strong> Getting patients out of bed and walking within 2 to 4 hours post-operatively.</span>
+            </li>
+            <li class="recommendation-item">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Early Oral Intake:</strong> Reintroducing clear fluids and soft foods on Day 0, rather than waiting for flatus or bowel sounds.</span>
+            </li>
+            <li class="recommendation-item">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Multimodal Non-Opioid Analgesia:</strong> Maximizing round-the-clock Paracetamol and NSAIDs, limiting opioids to rescue doses.</span>
+            </li>
+            <li class="recommendation-item">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Early Urinary Catheter Removal:</strong> Discontinuing catheterization within 24 hours for non-pelvic surgeries.</span>
+            </li>
+            <li class="recommendation-item">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Standardized PONV Prevention:</strong> Using readily available anti-emetics (such as metoclopramide and dexamethasone) systematically.</span>
+            </li>
+            <li class="recommendation-item">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Adapted Discharge &amp; Follow-up:</strong> Ensuring patients are clinically stable and counseling them based on distance and travel infrastructure.</span>
+            </li>
+          </ul>
+          <div class="global-commentary">
+            <strong>Global Surgery Commentary:</strong>
+            Traditional post-operative surgical practice in East Africa often kept patients nil-by-mouth (NPO) until they passed flatus, fearing early feeding would rupture bowel anastomoses. The Delphi study aligns with modern science, demonstrating that early feeding on Day 0 reduces post-operative ileus and limits catabolism. Multimodal non-opioid analgesia is emphasized because opioids are frequently out of stock and can cause severe constipation and respiratory depression on unmonitored wards.
+          </div>
+        </div>
+
+        <!-- NOVEL COMPONENTS -->
+        <div class="eras-section" style="border-color: #b8922a;">
+          <div class="eras-header">
+            <h3 class="eras-title" style="color: #b8922a;">6 Novel Context-Specific Components</h3>
+            <span class="eras-badge" style="background: rgba(184, 146, 42, 0.1); color: #b8922a;">Local Adaptations</span>
+          </div>
+          <ol style="padding-left: 20px; font-size: 0.95rem; line-height: 1.6; color: var(--text-secondary);">
+            <li style="margin-bottom: 12px;">
+              <strong>Family Caregiver Integration:</strong> Formally training patient relatives to assist with early mobilization, wound inspections, and fluid monitoring. This leverages strong family ties to offset severe nursing shortages on public wards.
+            </li>
+            <li style="margin-bottom: 12px;">
+              <strong>Pre-admission Logistics Coordination:</strong> Organizing patient transportation and lodging near tertiary hospitals for individuals coming from remote rural villages, preventing delays in preoperative care.
+            </li>
+            <li style="margin-bottom: 12px;">
+              <strong>Local Nutritional Substitutes:</strong> Creating nutritional guidelines based on local staple grains (such as *teff* gruel, *barley* water, and *sorghum* porridge) rather than expensive commercial nutritional formulas.
+            </li>
+            <li style="margin-bottom: 12px;">
+              <strong>Resource-Limited GDFT Titration:</strong> Tilting fluid administration using clinical indicators of tissue perfusion (capillary refill, mental status, urine output) instead of high-cost invasive hemodynamic monitors.
+            </li>
+            <li style="margin-bottom: 12px;">
+              <strong>Alternative Warming Protocols:</strong> Using passive methods, such as double-cotton blankets, reflective surgical drapes, and warmed intravenous fluids, to prevent hypothermia when electric warmers are unavailable.
+            </li>
+            <li style="margin-bottom: 12px;">
+              <strong>Post-discharge Communication Networks:</strong> Coordinating follow-up using phone calls or local Health Extension Workers (HEWs) in rural villages, ensuring patient safety without requiring long, costly travel back to the tertiary hospital.
+            </li>
+          </ol>
+        </div>
+
+        <hr>
+
+        <h2>📊 Comparison: Standard Western vs. Adapted Ethiopian ERAS</h2>
+        <p>This table summarizes how standard, high-resource ERAS components are adapted to be feasible and effective in Ethiopian tertiary centers:</p>
+
+        <div class="blog-table-container">
+          <table class="blog-table">
+            <thead>
+              <tr>
+                <th>ERAS Element</th>
+                <th>Standard Western Protocol (HIC)</th>
+                <th>Adapted Ethiopian Protocol (LMIC)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Glycemic Loading</strong></td>
+                <td>Commercial maltodextrin carbohydrate drinks</td>
+                <td>Locally-prepared sweetened black tea or barley water</td>
+              </tr>
+              <tr>
+                <td><strong>Nutritional Screening</strong></td>
+                <td>DEXA scans, bio-impedance, specialized formulas</td>
+                <td>Mid-upper arm circumference (MUAC) &amp; serum albumin</td>
+              </tr>
+              <tr>
+                <td><strong>Anesthetic Block</strong></td>
+                <td>Thoracic epidural analgesia (requires intensive care unit)</td>
+                <td>TAP blocks or local wound infiltration (ward-safe)</td>
+              </tr>
+              <tr>
+                <td><strong>Fluid Management</strong></td>
+                <td>Invasive stroke-volume variation monitors</td>
+                <td>Clinical perfusion endpoints (urine output, capillary refill)</td>
+              </li>
+              <tr>
+                <td><strong>Hypothermia Control</strong></td>
+                <td>Active forced-air warming blankets</td>
+                <td>Passive insulation (double blankets, warmed IV fluids)</td>
+              </li>
+              <tr>
+                <td><strong>Nutrition Support</strong></td>
+                <td>Commercial liquid nutrition formulas</td>
+                <td>Gruel/porridge prepared from local staples (*teff*, *barley*)</td>
+              </li>
+              <tr>
+                <td><strong>Patient Mobilization</strong></td>
+                <td>Led by physiotherapists and nursing staff</td>
+                <td>Led by integrated family caregivers</td>
+              </li>
+              <tr>
+                <td><strong>Post-op Follow-up</strong></td>
+                <td>Digital patient portals and home nursing visits</td>
+                <td>Mobile phone calls and Health Extension Worker networks</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="highlight-box">
+          <div class="highlight-title">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+            NaPQN and the NaPQN Registry
+          </div>
+          <p class="highlight-text">
+            To ensure the modified Delphi recommendations translate into actual clinical practice, the Ethiopian National Perioperative Quality Improvement Network (NaPQN) has established a national registry. This registry tracks compliance with the adapted guidelines, providing essential audit loops to refine protocols, reduce surgical site infections, and improve patient recovery across all tertiary centers in the country.
+          </p>
+        </div>
+
+      </main>
+
+      <!-- Sidebar -->
+      <aside class="blog-sidebar">
+        <div class="sidebar-card" style="border-top: 4px solid #2563eb;">
+          <h3>⚡ "Triple-ERAS" Focus</h3>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 15px;">Global health research identifies three core, high-impact elements associated with the greatest reduction in LOS:</p>
+          <div style="font-family:'Inter',sans-serif; font-size:0.8rem; display:flex; flex-direction:column; gap:10px;">
+            <div style="background:var(--bg-secondary); padding:10px; border-radius:6px; border:1px solid var(--border-color);">
+              <strong style="color: #2563eb; display:block; margin-bottom:2px;">Early Ambulation</strong>
+              Out of bed within 2–4 hours post-op. Promotes bowel motility and prevents deep vein thrombosis.
+            </div>
+            <div style="background:var(--bg-secondary); padding:10px; border-radius:6px; border:1px solid var(--border-color);">
+              <strong style="color: var(--text-primary); display:block; margin-bottom:2px;">Early Feeding</strong>
+              Oral fluids/staple gruels on Day 0. Reduces post-operative catabolism.
+            </div>
+            <div style="background:var(--bg-secondary); padding:10px; border-radius:6px; border:1px solid var(--border-color);">
+              <strong style="color: #10b981; display:block; margin-bottom:2px;">Early Catheter Removal</strong>
+              Catheter removal within 24 hours. Minimizes urinary tract infections and facilitates mobility.
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar-card">
+          <h3>📖 Related Blog Posts</h3>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 20px;">Read more on clinical guidelines and residency protocols:</p>
+          <div class="sidebar-book-list" style="gap: 15px; text-align: left;">
+            <a href="navigating-hemorrhoidectomy-ulcerative-colitis.html" class="sb-book" style="border: 1px solid var(--border-color); padding: 12px; border-radius: 8px; background: var(--bg-secondary); transition: all 0.2s ease;">
+              <strong style="font-family:'Inter',sans-serif; font-size:0.85rem; color: var(--text-primary); display: block; margin-bottom: 4px;">UC Hemorrhoidectomy Guide</strong>
+              <span style="font-size: 0.75rem; color: var(--text-secondary); line-height: 1.3;">Critical safety requirements and 5-part colorectal board review monographs.</span>
+            </a>
+            
+            <a href="residency-books-and-tools.html" class="sb-book" style="border: 1px solid var(--border-color); padding: 12px; border-radius: 8px; background: var(--bg-secondary); transition: all 0.2s ease;">
+              <strong style="font-family:'Inter',sans-serif; font-size:0.85rem; color: var(--text-primary); display: block; margin-bottom: 4px;">Surgical Books &amp; Tools</strong>
+              <span style="font-size: 0.75rem; color: var(--text-secondary); line-height: 1.3;">Atlases, textbooks, and simulation apps for surgical residents at all levels.</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="sidebar-card" style="border-left: 4px solid var(--brand-gold);">
+          <h3>📢 Join Surgical Insight Hub</h3>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 20px;">Get real-time emergency clinical pearls, trial updates, and high-yield MCQs direct to your phone.</p>
+          <a href="https://t.me/sugicalInsightHub" target="_blank" class="download-tg" style="width: 100%; justify-content: center; margin-top: 10px;">
+            <svg viewBox="0 0 24 24" style="width:18px; height:18px; fill:currentColor; margin-right:6px;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.91-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+            Join Telegram Channel
+          </a>
+        </div>
+      </aside>
+    </div>
+  </article>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="nav-logo-img" style="width:36px; height:36px; margin-bottom:.8rem;">
+          <img src="../assets/images/Surgical_Insight_Hub_Logo.png" alt="SIH">
+        </div>
+        <div style="font-weight:800; font-size:1.1rem; color:var(--text-primary);">Surgical Insight Hub</div>
+        <p style="font-size:.85rem; color:var(--text-secondary); margin-top:.5rem; line-height:1.5;">Elevating surgical education through evidence-based monographs, interactive arenas, and dynamic clinical discussions.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Platform</h4>
+        <a href="../notes.html">Clinical Notes</a>
+        <a href="../notes/operative_approach.html">Operative Playbook</a>
+        <a href="../arena.html">MCQ Arena</a>
+        <a href="../surgery-talk.html">Surgery Talk</a>
+      </div>
+      <div class="footer-links">
+        <h4>Connect</h4>
+        <a href="https://t.me/sugicalInsightHub" target="_blank">Telegram Channel</a>
+        <a href="https://www.youtube.com/@SurgicalInsightHub" target="_blank">YouTube Library</a>
+        <a href="../about.html">About Us</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; <span id="year"></span> Surgical Insight Hub. All rights reserved. Not medical advice.
+    </div>
+  </footer>
+
+  <script src="../js/navigation.js"></script>
+  <script src="../js/nav-pill.js"></script>
+  
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const toggle = document.getElementById('themeToggle');
+    const root = document.documentElement;
+    const moon = document.getElementById('moonIcon');
+    const sun = document.getElementById('sunIcon');
+
+    function updateIcons(theme) {
+      if(theme === 'dark') {
+        moon.style.display = 'none';
+        sun.style.display = 'block';
+      } else {
+        moon.style.display = 'block';
+        sun.style.display = 'none';
+      }
+    }
+    updateIcons(savedTheme);
+
+    toggle.addEventListener('click', () => {
+      const current = root.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      localStorage.setItem('sih-theme', next);
+      updateIcons(next);
+    });
+    
+    function openMobNav() {
+      document.getElementById('mobNavOverlay').classList.add('active');
+      document.getElementById('mobNavSheet').classList.add('active');
+    }
+    function closeMobNav() {
+      document.getElementById('mobNavOverlay').classList.remove('active');
+      document.getElementById('mobNavSheet').classList.remove('active');
+    }
+    let startY = 0;
+    const sheet = document.getElementById('mobNavSheet');
+    sheet.addEventListener('touchstart', e => {
+      startY = e.touches[0].clientY;
+    });
+    sheet.addEventListener('touchmove', e => {
+      const y = e.touches[0].clientY;
+      if (y > startY + 50) closeMobNav();
+    });
+  </script>
+</body>
+</html>
