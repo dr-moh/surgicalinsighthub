@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mastering the Core Surgical Training (CST) Portfolio: A UK Recruitment Strategy Guide — Surgical Insight Hub</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Shared Styles -->
+  <link rel="stylesheet" href="../css/theme.css">
+  <link rel="stylesheet" href="../css/shared.css">
+  <link rel="stylesheet" href="blog.css">
+  
+  <script>
+    const savedTheme = localStorage.getItem('sih-theme') || 'light';
+    if (savedTheme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+  </script>
+  
+  <style>
+    .attribution-card {
+      background: rgba(37,99,235,0.02);
+      border: 1px dashed rgba(37,99,235,0.3);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 2.5rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      font-family: 'Inter', sans-serif;
+    }
+    
+    [data-theme="dark"] .attribution-card {
+      background: rgba(59, 130, 246, 0.03);
+      border-color: rgba(59, 130, 246, 0.2);
+    }
+    
+    .attribution-card svg {
+      color: #2563eb;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    
+    [data-theme="dark"] .attribution-card svg {
+      color: #3b82f6;
+    }
+    
+    .domain-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 24px;
+      margin: 2.5rem 0;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.2s ease;
+      font-family: 'Inter', sans-serif;
+    }
+    
+    .domain-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+      border-color: #2563eb;
+    }
+    
+    [data-theme="dark"] .domain-card:hover {
+      border-color: #3b82f6;
+    }
+    
+    .domain-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 16px;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 12px;
+    }
+    
+    .domain-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      margin: 0;
+    }
+    
+    .domain-grade-badge {
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 30px;
+      background: rgba(16, 185, 129, 0.08);
+      color: #10b981;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    
+    [data-theme="dark"] .domain-grade-badge {
+      background: rgba(16, 185, 129, 0.15);
+      color: #10b981;
+    }
+    
+    .domain-requirements {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+    }
+    
+    .surgical-strategy {
+      background: rgba(37, 99, 235, 0.03);
+      border-left: 4px solid #2563eb;
+      padding: 16px 20px;
+      border-radius: 0 12px 12px 0;
+      font-size: 0.9rem;
+      line-height: 1.55;
+      color: var(--text-primary);
+    }
+    
+    [data-theme="dark"] .surgical-strategy {
+      background: rgba(59, 130, 246, 0.03);
+      border-left-color: #3b82f6;
+    }
+    
+    .surgical-strategy strong {
+      color: #2563eb;
+      display: block;
+      margin-bottom: 6px;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 800;
+    }
+    
+    [data-theme="dark"] .surgical-strategy strong {
+      color: #3b82f6;
+    }
+    
+    .warning-box {
+      background: rgba(220, 38, 38, 0.03);
+      border: 1px solid rgba(220, 38, 38, 0.15);
+      border-radius: 12px;
+      padding: 20px;
+      margin: 2.5rem 0;
+      font-family: 'Inter', sans-serif;
+    }
+    
+    .warning-title {
+      font-weight: 800;
+      font-size: 1rem;
+      color: #dc2626;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .warning-text {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="mainNav">
+    <div class="nav-left">
+      <a href="../index.html" class="nav-pill">
+        <div class="nav-logo-img">
+          <img src="../assets/images/Surgical_Insight_Hub_Logo.png" alt="SIH">
+        </div>
+        <div>
+          <div class="nav-brand-text">Surgical Insight Hub</div>
+          <div class="nav-brand-sub">Advanced Surgical Learning</div>
+        </div>
+      </a>
+      <div class="nav-links-pill">
+        <a href="../index.html">Home</a>
+        <a href="../notes.html">Notes</a>
+        <a href="../notes/operative_approach.html">Playbook</a>
+        <a href="../podcast.html">Podcast</a>
+        <a href="../surgery-talk.html" class="active">Surgery Talk</a>
+        <a href="../about.html">About</a>
+      </div>
+    </div>
+
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <svg id="moonIcon" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/></svg>
+        <svg id="sunIcon" style="display:none;" viewBox="0 0 24 24"><path d="M12 7a5 5 0 1 0 5 5 5.006 5.006 0 0 0-5-5zm0 8a3 3 0 1 1 3-3 3.003 3.003 0 0 1-3 3zm0-13a1 1 0 0 0-1 1v2a1 1 0 0 0 2 0V3a1 1 0 0 0-1-1zm0 18a1 1 0 0 0-1 1v2a1 1 0 0 0 2 0v-2a1 1 0 0 0-1-1zm8-11h-2a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2zm-16 0H2a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2zm13.657-5.657a1 1 0 0 0-1.414 0l-1.414 1.414a1 1 0 0 0 1.414 1.414l1.414-1.414a1 1 0 0 0 0-1.414zm-11.314 0a1 1 0 0 0 0 1.414l1.414 1.414a1 1 0 0 0 1.414-1.414L4.929 5.757a1 1 0 0 0-1.414 0zm11.314 11.314a1 1 0 0 0 0 1.414l1.414 1.414a1 1 0 0 0 1.414-1.414l-1.414-1.414a1 1 0 0 0-1.414 0zm-11.314 0a1 1 0 0 0-1.414 1.414l1.414 1.414a1 1 0 0 0 1.414-1.414l-1.414-1.414a1 1 0 0 0 0-1.414z"/></svg>
+      </button>
+      <a href="../arena.html" class="nav-btn arena-btn">MCQ Arena</a>
+      <button class="mob-nav-toggle" onclick="openMobNav()">
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mob-nav-overlay" id="mobNavOverlay" onclick="closeMobNav()"></div>
+  <div class="mob-nav-sheet" id="mobNavSheet">
+    <div class="mob-nav-handle"></div>
+    <a href="../index.html" onclick="closeMobNav()">Home</a>
+    <a href="../notes.html" onclick="closeMobNav()">Notes</a>
+    <a href="../notes/operative_approach.html" onclick="closeMobNav()">Playbook</a>
+    <a href="../podcast.html" onclick="closeMobNav()">Podcast</a>
+    <a href="../surgery-talk.html" class="active" onclick="closeMobNav()">Surgery Talk</a>
+    <a href="../arena.html" onclick="closeMobNav()">MCQ Arena</a>
+    <a href="../about.html" onclick="closeMobNav()">About</a>
+  </div>
+
+  <article>
+    <header class="blog-hero">
+      <h1 class="blog-title">Mastering the Core Surgical Training (CST) Portfolio: A UK Recruitment Strategy Guide</h1>
+      <div class="blog-meta" style="margin-top: 1rem;">
+        <span class="blog-badge" style="background: rgba(37, 99, 235, 0.1); color: #2563eb;">Career Guide</span>
+        <span class="blog-badge" style="background: rgba(16, 185, 129, 0.1); color: #10b981;">UK Recruitment</span>
+        <span class="blog-date">June 11, 2026</span>
+      </div>
+      <p class="blog-subtitle">A strategic breakdown of the new letter-grading CST portfolio system, key recruitment timelines, and actionable tactics to score Grade A in every domain.</p>
+    </header>
+
+    <div class="blog-container">
+      <main class="blog-main blog-content">
+        
+        <!-- Attribution Card -->
+        <div class="attribution-card">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+          <div style="font-size: 0.9rem; line-height: 1.5;">
+            <strong style="color: var(--text-primary); font-size: 0.95rem; display: block; margin-bottom: 4px;">Editorial Review &amp; Clinical Commentary</strong>
+            This article is an expanded strategic review and clinical commentary on the original guide <a href="https://medset.co.uk/core-surgical-training-cst-portfolio-guide/" target="_blank" style="color: #2563eb; font-weight: 700; text-decoration: underline;">"Core Surgical Training (CST) Portfolio Guide"</a> written by <strong>Leo Gundle</strong> (Plastic Surgery Registrar, Guy's and St Thomas' Hospital, London) and published on <a href="https://medset.co.uk/" target="_blank" style="color: #2563eb; font-weight: 700; text-decoration: underline;">Medset.co.uk</a>. In compliance with copyright guidelines, we summarize the timeline and point frameworks while adding professional development insights from the <em>Surgical Insight Hub</em> editorial staff.
+          </div>
+        </div>
+
+        <p>UK Core Surgical Training (CST) recruitment remains one of the most competitive pathways in postgraduate medical education. Securing a coveted CT1/ST1 surgical post requires not only clinical acumen and solid MSRA performance but also a highly optimized, verified training portfolio. For the 2025/2026 recruitment cycle, the portfolio evaluation system has undergone a major transition, moving away from simple numerical scoring toward a comprehensive **Letter-Grading Evaluation System (A to E)** across key domains.</p>
+
+        <p>Under this revised structure, assessors evaluate portfolios based on specific tiers of evidence, with candidates receiving a final portfolio score at the interview stage based on both their uploaded documents and responses to portfolio-focused questions. Understanding these guidelines and planning early is essential to maximize your score and avoid technical disqualifications.</p>
+
+        <hr>
+
+        <h2>📅 CST Recruitment Timeline 2025/2026</h2>
+        <p>Staying on top of deadlines is critical. The timeline below maps out the key dates for the 2025/2026 CST recruitment cycle:</p>
+
+        <div class="blog-table-container">
+          <table class="blog-table">
+            <thead>
+              <tr>
+                <th>Recruitment Stage / Event</th>
+                <th>Timeline Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Applications Open</strong></td>
+                <td>23rd October 2025</td>
+              </tr>
+              <tr>
+                <td><strong>Applications Close</strong></td>
+                <td>20th November 2025 (4:00 PM GMT)</td>
+              </tr>
+              <tr>
+                <td><strong>Multi-Specialty Recruitment Assessment (MSRA) Window</strong></td>
+                <td>6th to 19th January 2026</td>
+              </tr>
+              <tr>
+                <td><strong>Invitations to Interview Sent</strong></td>
+                <td>13th February 2026</td>
+              </tr>
+              <tr>
+                <td><strong>Evidence Upload Portal Opens</strong></td>
+                <td>16th February 2026</td>
+              </tr>
+              <tr>
+                <td><strong>Evidence Upload Portal Closes</strong></td>
+                <td>26th February 2026</td>
+              </tr>
+              <tr>
+                <td><strong>CST Interview Dates</strong></td>
+                <td>2nd to 11th March 2026</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <hr>
+
+        <h2>📊 Domain Grading Matrix (Grades A–E)</h2>
+        <p>Each portfolio section is assessed and assigned a letter grade. Below is a detailed matrix summarizing the requirements for each tier across the five key domains:</p>
+
+        <div class="blog-table-container">
+          <table class="blog-table">
+            <thead>
+              <tr>
+                <th>Domain</th>
+                <th>Grade A (Highest)</th>
+                <th>Grade B</th>
+                <th>Grade C</th>
+                <th>Grade D</th>
+                <th>Grade E (Lowest)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Operative Experience</strong></td>
+                <td>Involvement logged in 40+ surgical cases</td>
+                <td>30–39 cases logged</td>
+                <td>20–29 cases logged</td>
+                <td>11–19 cases logged</td>
+                <td>&lt;10 cases logged, or no evidence</td>
+              </tr>
+              <tr>
+                <td><strong>Surgical Experience</strong></td>
+                <td>Surgical taster week (5+ days) or surgical elective (4+ weeks)</td>
+                <td colspan="4" style="text-align: center; color: var(--text-muted); background: var(--bg-secondary);">No surgical taster, elective, or placement completed</td>
+              </tr>
+              <tr>
+                <td><strong>QIPs / Audits</strong></td>
+                <td>Led all stages of a surgically-themed QIP (2+ cycles) with demonstrated change</td>
+                <td>Led all stages of a clinical QIP (2+ cycles) with demonstrated change</td>
+                <td>Contributor in a clinical QIP (2+ cycles) with demonstrated change</td>
+                <td>Involved in a clinical QIP (e.g. data collection in 1 cycle)</td>
+                <td>No QIP/audit involvement</td>
+              </tr>
+              <tr>
+                <td><strong>Publications &amp; Presentations</strong></td>
+                <td>Top oral presentation prize at national/international meeting OR first-author PubMed paper</td>
+                <td>Oral presentation/poster prize OR first-author case report/book chapter</td>
+                <td>First author of poster/oral poster at national/international meeting</td>
+                <td>Oral presentation at regional meeting OR collaborative PubMed author</td>
+                <td>No publications or presentations</td>
+              </tr>
+              <tr>
+                <td><strong>Teaching Experience</strong></td>
+                <td>Organised and delivered &ge;4 face-to-face teaching sessions</td>
+                <td>Organised and delivered &ge;4 online teaching sessions</td>
+                <td>Organised a programme but delivered &lt;4 sessions</td>
+                <td>Regular teaching (&ge;4 sessions/year) or completed teaching course</td>
+                <td>No teaching experience</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <hr>
+
+        <!-- DOMAIN 1 -->
+        <div class="domain-card">
+          <div class="domain-header">
+            <h3 class="domain-title">1. Operative Experience</h3>
+            <span class="domain-grade-badge">Grade A: 40+ Cases</span>
+          </div>
+          <div class="domain-requirements">
+            <p><strong>Requirements &amp; Evidence:</strong> Candidates must submit a verified consolidation report generated from the official eLogbook system. This report must include a case count summary and date ranges, alongside a consultant signature, printed name, GMC number, and date. Only cases where the candidate was scrubbed as "Assisting", "Supervised - Scrubbed", or above count toward the total. Observational roles are invalid.</p>
+          </div>
+          <div class="surgical-strategy">
+            <strong>Surgical Insight Strategy:</strong>
+            Hitting 40+ cases can be challenging, particularly during busy medical foundation rotations. 
+            <ul>
+              <li><strong>Negotiate Theatre Time:</strong> Proactively discuss with your clinical supervisors to secure half-days in theatre during light ward periods. Offer to complete discharge summaries early in exchange for scrub opportunities.</li>
+              <li><strong>Log Appropriately:</strong> Ensure you are actively assisting. Do not log cases where you were merely observing. Focus on minor, high-volume procedures (e.g., abscess drainages, appendectomies, hernia repairs, or wound debridement) where you can easily get hands-on experience.</li>
+              <li><strong>Prioritize Efficiency:</strong> Once you reach the 40-case milestone, redirect your attention to other domains of your portfolio where points are outstanding. Excess cases beyond 40 do not yield higher grades.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- DOMAIN 2 -->
+        <div class="domain-card">
+          <div class="domain-header">
+            <h3 class="domain-title">2. Surgical Experience</h3>
+            <span class="domain-grade-badge">Grade A: Taster or Elective</span>
+          </div>
+          <div class="domain-requirements">
+            <p><strong>Requirements &amp; Evidence:</strong> In the updated framework, points are no longer awarded for standard foundation training rotations in surgery. To achieve Grade A, you must upload a letter on official hospital letterhead from your supervisor confirming completion of either a surgical elective (4+ weeks) or a surgical taster week (5+ days) in an accepted surgical specialty (e.g. General, Trauma &amp; Orthopaedics, Plastic, Urology, ENT, Vascular, Neurosurgery, OMFS, Cardiothoracic, Paediatric, or ITU - valid for 2025/26 only).</p>
+          </div>
+          <div class="surgical-strategy">
+            <strong>Surgical Insight Strategy:</strong>
+            Because standard rotations no longer score points, scheduling a taster week is now a mandatory strategy for the vast majority of applicants.
+            <ul>
+              <li><strong>Plan Early:</strong> Do not leave taster days until the end of FY2. Apply for study leave and arrange taster days early in FY1 or the start of FY2.</li>
+              <li><strong>Pick a Strategic Specialty:</strong> Choose a specialty that aligns with your career goals, but also one where you can easily get a consultant supervisor to verify your attendance.</li>
+              <li><strong>Secure the Letter Promptly:</strong> Draft the supervisor letter yourself, ensuring it includes the department details, exact dates, GMC number, and hospital logo, so the consultant only needs to review and sign it.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- DOMAIN 3 -->
+        <div class="domain-card">
+          <div class="domain-header">
+            <h3 class="domain-title">3. Quality Improvement Projects (QIP) &amp; Audits</h3>
+            <span class="domain-grade-badge">Grade A: Surgically-Themed Closed-Loop</span>
+          </div>
+          <div class="domain-requirements">
+            <p><strong>Requirements &amp; Evidence:</strong> Scoring in this domain is split into QIP Involvement and QIP Presentation. To achieve Grade A for involvement, you must lead all aspects of a surgically-themed audit or QIP (including project design, data collection, and implementing an intervention) spanning two or more cycles (closed-loop) with demonstrated improvement. Evidence requires slides or a written summary, plus a consultant letter confirming the project met these criteria.</p>
+          </div>
+          <div class="surgical-strategy">
+            <strong>Surgical Insight Strategy:</strong>
+            Audits take time. A closed-loop QIP with an intervention and re-audit cycle typically takes 3 to 6 months to complete.
+            <ul>
+              <li><strong>Choose a surgically-themed topic:</strong> To get Grade A, the topic must relate to surgical patients, theatre pathways, or perioperative care. General medical audits will limit you to Grade B.</li>
+              <li><strong>Design Simple Interventions:</strong> Focus on simple, high-impact changes (e.g., introducing a new poster, updating a local surgical ward checklist, or giving a short educational presentation to nursing staff). This makes the second cycle data collection straightforward and demonstrates a clear change.</li>
+              <li><strong>Double-Claiming Warning:</strong> You cannot use the same project to score points in both the QIP section and the publications/presentations section. Select your best surgical project for QIP, and use other work for presentations.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- DOMAIN 4 -->
+        <div class="domain-card">
+          <div class="domain-header">
+            <h3 class="domain-title">4. Presentations &amp; Publications</h3>
+            <span class="domain-grade-badge">Grade A: First-Author PubMed or National Prize</span>
+          </div>
+          <div class="domain-requirements">
+            <p><strong>Requirements &amp; Evidence:</strong> Grade A is awarded for either winning a top prize for an oral presentation at a national/international meeting, or being the first author of a PubMed-indexed journal article (excluding case reports or editorials). Evidence must include the PubMed ID, a copy of the publication, or official conference programs showing your name as presenter and the national scope of the meeting.</p>
+          </div>
+          <div class="surgical-strategy">
+            <strong>Surgical Insight Strategy:</strong>
+            Peer-reviewed publishing can have long timelines.
+            <ul>
+              <li><strong>Leverage Collaborative Research:</strong> Join established surgical trainee research collaboratives (e.g., STARSurg, GlobalSurg). While collaborative authorship often lands you in Grade D, it is a reliable backup.</li>
+              <li><strong>Target Trainee Conferences:</strong> Submit abstracts to trainee-focused national conferences (such as the ASiT or BOTA annual conferences). They have higher abstract acceptance rates and offer opportunities to present posters or short oral papers.</li>
+              <li><strong>Consultant Mentorship:</strong> Approach academic surgical registrars or consultants. Ask if they have existing datasets that require analysis and writing. They are often looking for keen juniors to draft papers.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- DOMAIN 5 -->
+        <div class="domain-card">
+          <div class="domain-header">
+            <h3 class="domain-title">5. Teaching Experience</h3>
+            <span class="domain-grade-badge">Grade A: &ge;4 Face-to-Face Sessions</span>
+          </div>
+          <div class="domain-requirements">
+            <p><strong>Requirements &amp; Evidence:</strong> Achieving Grade A requires organizing and personally delivering at least four face-to-face teaching sessions to peers or undergraduates. You must submit a consultant-signed verification letter confirming your role and the delivery dates, alongside formal, anonymized feedback forms summarizing participant responses.</p>
+          </div>
+          <div class="surgical-strategy">
+            <strong>Surgical Insight Strategy:</strong>
+            Setting up a teaching course is one of the easiest ways to secure a Grade A if approached systematically.
+            <ul>
+              <li><strong>Organize a Medical Student Series:</strong> Contact the undergraduate coordinator at your hospital and set up a 4-week bedside teaching or MRCS preparation course for clinical medical students.</li>
+              <li><strong>Maintain Structured Feedback:</strong> Create a simple feedback form (e.g., using Google Forms or printed feedback sheets). Collect feedback after each session, compile the results, and have your consultant review and sign off on the feedback summary.</li>
+              <li><strong>Train the Trainers Courses:</strong> Attending accredited courses (such as the Train the Trainers or Teach the Teachers courses) can support your teaching portfolio and qualify you for Grade D even if you lack independent teaching hours.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="warning-box">
+          <div class="warning-title">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            Critical Portfolio Warnings
+          </div>
+          <p class="warning-text">
+            <strong>Patient Identifiable Data (PID):</strong> Any document uploaded to the recruitment portal containing patient names, initials, NHS numbers, or date of birth will result in an immediate score of zero for that domain, and may lead to a formal GMC referral. Always double-redact your eLogbooks, case summaries, and QIP documents before uploading.
+            <br><br>
+            <strong>Electronic Signatures:</strong> Avoid using copy-pasted or editable digital signatures. Assessors are increasingly rejecting evidence with unverified electronic signatures. Always obtain handwritten signatures or secure GMC-verified email confirmations.
+          </p>
+        </div>
+
+      </main>
+
+      <!-- Sidebar -->
+      <aside class="blog-sidebar">
+        <div class="sidebar-card" style="border-top: 4px solid #2563eb;">
+          <h3>⚡ Quick Portfolio Checklist</h3>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 15px;">Ensure your evidence is flawless before the February deadline:</p>
+          <div style="font-family:'Inter',sans-serif; font-size:0.8rem; display:flex; flex-direction:column; gap:10px;">
+            <div style="background:var(--bg-secondary); padding:10px; border-radius:6px; border:1px solid var(--border-color);">
+              <strong style="color: #2563eb; display:block; margin-bottom:2px;">No PID</strong>
+              Redact names, hospital numbers, and specific dates from logbooks and audit slides.
+            </div>
+            <div style="background:var(--bg-secondary); padding:10px; border-radius:6px; border:1px solid var(--border-color);">
+              <strong style="color: var(--text-primary); display:block; margin-bottom:2px;">Official Letterheads</strong>
+              All supervisor sign-off letters must be on formal NHS Trust or University letterhead.
+            </div>
+            <div style="background:var(--bg-secondary); padding:10px; border-radius:6px; border:1px solid var(--border-color);">
+              <strong style="color: #10b981; display:block; margin-bottom:2px;">GMC Numbers</strong>
+              Ensure every consultant signature includes their printed name and active GMC number.
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar-card">
+          <h3>📖 Related Career Guides</h3>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 20px;">Explore our detailed resource lists and study guides for surgical training:</p>
+          <div class="sidebar-book-list" style="gap: 15px; text-align: left;">
+            <a href="residency-books-and-tools.html" class="sb-book" style="border: 1px solid var(--border-color); padding: 12px; border-radius: 8px; background: var(--bg-secondary); transition: all 0.2s ease;">
+              <strong style="font-family:'Inter',sans-serif; font-size:0.85rem; color: var(--text-primary); display: block; margin-bottom: 4px;">Surgical Books &amp; Tools</strong>
+              <span style="font-size: 0.75rem; color: var(--text-secondary); line-height: 1.3;">Atlases, textbooks, and simulation apps for surgical residents at all levels.</span>
+            </a>
+            
+            <a href="choosing-a-surgical-specialty.html" class="sb-book" style="border: 1px solid var(--border-color); padding: 12px; border-radius: 8px; background: var(--bg-secondary); transition: all 0.2s ease;">
+              <strong style="font-family:'Inter',sans-serif; font-size:0.85rem; color: var(--text-primary); display: block; margin-bottom: 4px;">Surgical Career Choices</strong>
+              <span style="font-size: 0.75rem; color: var(--text-secondary); line-height: 1.3;">A data-driven roadmap to help navigate surgical specialties and training paths.</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="sidebar-card" style="border-left: 4px solid var(--brand-gold);">
+          <h3>📢 Join Surgical Insight Hub</h3>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 20px;">Get real-time emergency clinical pearls, trial updates, and high-yield MCQs direct to your phone.</p>
+          <a href="https://t.me/sugicalInsightHub" target="_blank" class="download-tg" style="width: 100%; justify-content: center; margin-top: 10px;">
+            <svg viewBox="0 0 24 24" style="width:18px; height:18px; fill:currentColor; margin-right:6px;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.91-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+            Join Telegram Channel
+          </a>
+        </div>
+      </aside>
+    </div>
+  </article>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="nav-logo-img" style="width:36px; height:36px; margin-bottom:.8rem;">
+          <img src="../assets/images/Surgical_Insight_Hub_Logo.png" alt="SIH">
+        </div>
+        <div style="font-weight:800; font-size:1.1rem; color:var(--text-primary);">Surgical Insight Hub</div>
+        <p style="font-size:.85rem; color:var(--text-secondary); margin-top:.5rem; line-height:1.5;">Elevating surgical education through evidence-based monographs, interactive arenas, and dynamic clinical discussions.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Platform</h4>
+        <a href="../notes.html">Clinical Notes</a>
+        <a href="../notes/operative_approach.html">Operative Playbook</a>
+        <a href="../arena.html">MCQ Arena</a>
+        <a href="../surgery-talk.html">Surgery Talk</a>
+      </div>
+      <div class="footer-links">
+        <h4>Connect</h4>
+        <a href="https://t.me/sugicalInsightHub" target="_blank">Telegram Channel</a>
+        <a href="https://www.youtube.com/@SurgicalInsightHub" target="_blank">YouTube Library</a>
+        <a href="../about.html">About Us</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; <span id="year"></span> Surgical Insight Hub. All rights reserved. Not medical advice.
+    </div>
+  </footer>
+
+  <script src="../js/navigation.js"></script>
+  <script src="../js/nav-pill.js"></script>
+  
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const toggle = document.getElementById('themeToggle');
+    const root = document.documentElement;
+    const moon = document.getElementById('moonIcon');
+    const sun = document.getElementById('sunIcon');
+
+    function updateIcons(theme) {
+      if(theme === 'dark') {
+        moon.style.display = 'none';
+        sun.style.display = 'block';
+      } else {
+        moon.style.display = 'block';
+        sun.style.display = 'none';
+      }
+    }
+    updateIcons(savedTheme);
+
+    toggle.addEventListener('click', () => {
+      const current = root.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      localStorage.setItem('sih-theme', next);
+      updateIcons(next);
+    });
+    
+    function openMobNav() {
+      document.getElementById('mobNavOverlay').classList.add('active');
+      document.getElementById('mobNavSheet').classList.add('active');
+    }
+    function closeMobNav() {
+      document.getElementById('mobNavOverlay').classList.remove('active');
+      document.getElementById('mobNavSheet').classList.remove('active');
+    }
+    let startY = 0;
+    const sheet = document.getElementById('mobNavSheet');
+    sheet.addEventListener('touchstart', e => {
+      startY = e.touches[0].clientY;
+    });
+    sheet.addEventListener('touchmove', e => {
+      const y = e.touches[0].clientY;
+      if (y > startY + 50) closeMobNav();
+    });
+  </script>
+</body>
+</html>
