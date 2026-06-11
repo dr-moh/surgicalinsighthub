@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The End of Routine Pelvic Drains in Colorectal Resections: Dismantling a Surgical Dogma — Surgical Insight Hub</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Shared Styles -->
+  <link rel="stylesheet" href="../css/theme.css">
+  <link rel="stylesheet" href="../css/shared.css">
+  <link rel="stylesheet" href="blog.css">
+  
+  <script>
+    const savedTheme = localStorage.getItem('sih-theme') || 'light';
+    if (savedTheme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+  </script>
+  
+  <style>
+    /* Flowchart styles */
+    .flowchart-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      margin: 2.5rem 0;
+      font-family: 'Inter', sans-serif;
+    }
+    
+    .flowchart-node {
+      background: var(--bg-card);
+      border: 2px solid var(--border-color);
+      border-radius: 12px;
+      padding: 16px 20px;
+      text-align: center;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      box-shadow: var(--shadow-sm);
+      width: 100%;
+      max-width: 420px;
+      transition: all 0.2s ease;
+    }
+    
+    .flowchart-node:hover {
+      transform: translateY(-2px);
+      border-color: #2563eb;
+      box-shadow: 0 4px 12px rgba(37,99,235,0.08);
+    }
+    
+    .flowchart-node.highlight {
+      border-color: #dc2626;
+      background: rgba(220, 38, 38, 0.01);
+    }
+    
+    [data-theme="dark"] .flowchart-node.highlight {
+      background: rgba(220, 38, 38, 0.03);
+    }
+    
+    .flowchart-node.highlight:hover {
+      border-color: #b91c1c;
+      box-shadow: 0 4px 12px rgba(220, 38, 38, 0.08);
+    }
+    
+    .flowchart-arrow {
+      color: var(--text-muted);
+      font-weight: 800;
+      font-size: 1.3rem;
+    }
+    
+    /* Guide Grid styles */
+    .guide-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin: 3rem 0;
+      font-family: 'Inter', sans-serif;
+    }
+    
+    .guide-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: var(--shadow-sm);
+      transition: border-color 0.2s ease;
+    }
+    
+    .guide-card:hover {
+      border-color: var(--border-color-hover);
+    }
+    
+    .guide-card h3 {
+      margin-top: 0;
+      font-size: 1.15rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .guide-card.trainee h3 {
+      color: #2563eb;
+    }
+    
+    [data-theme="dark"] .guide-card.trainee h3 {
+      color: #3b82f6;
+    }
+    
+    .guide-card.consultant h3 {
+      color: #10b981;
+    }
+    
+    .guide-list {
+      list-style: none;
+      padding-left: 0 !important;
+      margin: 0;
+    }
+    
+    .guide-item {
+      margin-bottom: 16px;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      color: var(--text-secondary);
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 12px;
+    }
+    
+    .guide-item:last-child {
+      margin-bottom: 0;
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+    
+    .guide-item strong {
+      color: var(--text-primary);
+      display: block;
+      margin-bottom: 4px;
+    }
+    
+    @media(max-width: 768px) {
+      .guide-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    /* Bibliography styling */
+    .ref-list {
+      list-style-type: none;
+      padding-left: 0 !important;
+      font-family: 'Inter', sans-serif;
+    }
+    
+    .ref-item {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+      margin-bottom: 12px;
+      padding-left: 20px;
+      position: relative;
+    }
+    
+    .ref-item::before {
+      content: "•";
+      color: #2563eb;
+      position: absolute;
+      left: 0;
+      font-weight: 800;
+    }
+    
+    [data-theme="dark"] .ref-item::before {
+      color: #3b82f6;
+    }
+    
+    .ref-item a {
+      color: #2563eb;
+      text-decoration: underline;
+      font-weight: 500;
+    }
+    
+    [data-theme="dark"] .ref-item a {
+      color: #3b82f6;
+    }
+  </style>
+</head>
+<body>
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="mainNav">
+    <div class="nav-left">
+      <a href="../index.html" class="nav-pill">
+        <div class="nav-logo-img">
+          <img src="../assets/images/Surgical_Insight_Hub_Logo.png" alt="SIH">
+        </div>
+        <div>
+          <div class="nav-brand-text">Surgical Insight Hub</div>
+          <div class="nav-brand-sub">Advanced Surgical Learning</div>
+        </div>
+      </a>
+      <div class="nav-links-pill">
+        <a href="../index.html">Home</a>
+        <a href="../notes.html">Notes</a>
+        <a href="../notes/operative_approach.html">Playbook</a>
+        <a href="../podcast.html">Podcast</a>
+        <a href="../surgery-talk.html" class="active">Surgery Talk</a>
+        <a href="../about.html">About</a>
+      </div>
+    </div>
+
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <svg id="moonIcon" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/></svg>
+        <svg id="sunIcon" style="display:none;" viewBox="0 0 24 24"><path d="M12 7a5 5 0 1 0 5 5 5.006 5.006 0 0 0-5-5zm0 8a3 3 0 1 1 3-3 3.003 3.003 0 0 1-3 3zm0-13a1 1 0 0 0-1 1v2a1 1 0 0 0 2 0V3a1 1 0 0 0-1-1zm0 18a1 1 0 0 0-1 1v2a1 1 0 0 0 2 0v-2a1 1 0 0 0-1-1zm8-11h-2a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2zm-16 0H2a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2zm13.657-5.657a1 1 0 0 0-1.414 0l-1.414 1.414a1 1 0 0 0 1.414 1.414l1.414-1.414a1 1 0 0 0 0-1.414zm-11.314 0a1 1 0 0 0 0 1.414l1.414 1.414a1 1 0 0 0 1.414-1.414L4.929 5.757a1 1 0 0 0-1.414 0zm11.314 11.314a1 1 0 0 0 0 1.414l1.414 1.414a1 1 0 0 0 1.414-1.414l-1.414-1.414a1 1 0 0 0-1.414 0zm-11.314 0a1 1 0 0 0-1.414 1.414l1.414 1.414a1 1 0 0 0 1.414-1.414l-1.414-1.414a1 1 0 0 0 0-1.414z"/></svg>
+      </button>
+      <a href="../arena.html" class="nav-btn arena-btn">MCQ Arena</a>
+      <button class="mob-nav-toggle" onclick="openMobNav()">
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mob-nav-overlay" id="mobNavOverlay" onclick="closeMobNav()"></div>
+  <div class="mob-nav-sheet" id="mobNavSheet">
+    <div class="mob-nav-handle"></div>
+    <a href="../index.html" onclick="closeMobNav()">Home</a>
+    <a href="../notes.html" onclick="closeMobNav()">Notes</a>
+    <a href="../notes/operative_approach.html" onclick="closeMobNav()">Playbook</a>
+    <a href="../podcast.html" onclick="closeMobNav()">Podcast</a>
+    <a href="../surgery-talk.html" class="active" onclick="closeMobNav()">Surgery Talk</a>
+    <a href="../arena.html" onclick="closeMobNav()">MCQ Arena</a>
+    <a href="../about.html" onclick="closeMobNav()">About</a>
+  </div>
+
+  <article>
+    <header class="blog-hero">
+      <h1 class="blog-title">The End of Routine Pelvic Drains in Colorectal Resections: Dismantling a Surgical Dogma</h1>
+      <div class="blog-meta" style="margin-top: 1rem;">
+        <span class="blog-badge" style="background: rgba(163, 21, 21, 0.1); color: #a31515;">Colorectal Surgery</span>
+        <span class="blog-badge" style="background: rgba(37, 99, 235, 0.1); color: #2563eb;">Evidence-Based Medicine</span>
+        <span class="blog-date">June 11, 2026</span>
+      </div>
+      <p class="blog-subtitle">Why dropping a pelvic drain "just in case" fails to prevent or diagnose anastomotic leaks, violates ERAS principles, and how modern trials support immediate omission.</p>
+    </header>
+
+    <div class="blog-container">
+      <main class="blog-main blog-content">
+        
+        <p>For generations, placing a prophylactic pelvic drain "just in case" after an anterior resection was considered an essential safety blanket. The underlying surgical logic was comforting: if the colorectal anastomosis leaks, the tube will catch it early, divert the fecal contamination, and save the patient from a catastrophic return to the operating room. It was a classic practice passed down from consultant to registrar as a baseline tenet of pelvic surgery.</p>
+
+        <p>However, updated international consensus guidelines have completely dismantled this traditional approach. Prophylactic drainage after uncomplicated colorectal anastomoses does not prevent complications, does not catch leaks early, and does not alter the clinical course of a healing failure. Instead, it remains a historic ritual driven by surgical anxiety rather than modern, evidence-based data. In this guide, we review the robust clinical trial data, evaluate the pathophysiology of pelvic healing, and discuss why surgeons must replace routine plastic tubing with active post-operative clinical vigilance.</p>
+
+        <hr>
+
+        <h2>🔄 The Vicious Cycle of the Prophylactic Drain</h2>
+        <p>A surgical drain is not an inert addition to the pelvis. Rather, its presence triggers a sequence of local tissue inflammation and systemic challenges that actively hinder recovery:</p>
+
+        <div class="flowchart-container">
+          <div class="flowchart-node">
+            1. Foreign Body Sits in the Pelvic Cavity
+          </div>
+          <div class="flowchart-arrow">↓</div>
+          <div class="flowchart-node highlight">
+            2. Triggers Local Inflammation &amp; Limits Fluid Clearance
+            <span style="display:block; font-size:0.75rem; color:#dc2626; margin-top:2px;">──► Direct Pathway to Ascending Infection</span>
+          </div>
+          <div class="flowchart-arrow">↓</div>
+          <div class="flowchart-node">
+            3. Splints the Patient to Bed
+            <span style="display:block; font-size:0.75rem; color:var(--text-muted); margin-top:2px;">──► Delayed Mobilization ──► Increased VTE / SSI</span>
+          </div>
+        </div>
+
+        <hr>
+
+        <h2>📊 Routine Drainage vs. Evidence-Based Omission</h2>
+        <p>The data from landmark clinical trials—most notably the multi-center **GRECCAR 5 Trial** published in the *Annals of Surgery*—highlights the stark contrast between traditional habits and modern clinical evidence:</p>
+
+        <div class="blog-table-container">
+          <table class="blog-table">
+            <thead>
+              <tr>
+                <th>Clinical Parameter</th>
+                <th>Traditional Routine Drainage</th>
+                <th>Modern Evidence-Based Omission</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Anastomotic Leak Rate</strong></td>
+                <td style="color:#dc2626; font-weight:600;">No statistical difference (approx. 10%)</td>
+                <td style="color:#10b981; font-weight:600;">No statistical difference (omitting the drain does not increase risk)</td>
+              </tr>
+              <tr>
+                <td><strong>Surgical Site Infection (SSI)</strong></td>
+                <td style="color:#dc2626; font-weight:600;">Higher rates of localized pelvic collection and ascending skin tracking</td>
+                <td style="color:#10b981; font-weight:600;">Significantly lower risk of superficial and deep pelvic space infections</td>
+              </tr>
+              <tr>
+                <td><strong>Primary Diagnostic Marker</strong></td>
+                <td>Often falsely reassuring (fluid stays clear despite a localized leak)</td>
+                <td style="color:#10b981; font-weight:600;">Early elevation of C-Reactive Protein (CRP) and clinical tachycardia</td>
+              </tr>
+              <tr>
+                <td><strong>Post-Op Mobilization</strong></td>
+                <td style="color:#dc2626; font-weight:600;">Delayed due to localized pain and tethering to drainage bags</td>
+                <td style="color:#10b981; font-weight:600;">Immediate Day 1 mobilization compliant with ERAS pathways</td>
+              </tr>
+              <tr>
+                <td><strong>Length of Hospital Stay (LOS)</strong></td>
+                <td>Prolonged while waiting for "acceptable" fluid volume drops</td>
+                <td style="color:#10b981; font-weight:600;">Shorter; determined entirely by functional recovery and bowel habit</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <hr>
+
+        <h2>🔬 The Pathophysiology of the Falsely Reassuring Drain</h2>
+        <p>To understand why the guidelines have shifted, we must look at how a drain behaves inside the peritoneal cavity. Within hours of placement, the body treats the silicone tube as a foreign object, quickly walling it off with omentum and fibrin clots.</p>
+
+        <p>Because of this rapid exclusion, a drain placed near a colorectal anastomosis only samples a tiny, isolated microenvironment. If a leak occurs even two centimeters away, the walled-off drain will continue to pour out completely clear, serosanguinous fluid. Relying on a "dry drain" to rule out a leak is dangerous; it frequently provides a false sense of security that delays life-saving CT imaging or re-intervention.</p>
+
+        <hr>
+
+        <!-- GUIDE GRID FOR TRAINEES & CONSULTANTS -->
+        <div class="guide-grid">
+          
+          <!-- FOR TRAINEES -->
+          <div class="guide-card trainee">
+            <h3>
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+              For the Trainee: Challenge the Auto-Pilot
+            </h3>
+            <ul class="guide-list">
+              <li class="guide-item">
+                <strong>Acknowledge the Global Consensus:</strong>
+                According to the European Association for Endoscopic Surgery (EAES) and SAGES guidelines, routine drainage is no longer recommended. If the anastomosis passed its air-leak test, donut rings are intact, and perfusion looks optimal, do not place a drain out of habit.
+              </li>
+              <li class="guide-item">
+                <strong>Do Not Rely on Clear Drain Fluid:</strong>
+                The GRECCAR 5 data explicitly demonstrates that pelvic drains do not alter the clinical course of an anastomotic leak. If your patient has a spiking CRP and new-onset tachycardia on day three, act immediately—do not assume everything is fine just because the drain output looks benign.
+              </li>
+              <li class="guide-item">
+                <strong>Optimize Your Documentation:</strong>
+                When dictating or writing your operation note, explicitly document the absence of the drain as an intentional choice backed by the joint ASCRS and SAGES Clinical Practice Guidelines for Enhanced Recovery.
+              </li>
+            </ul>
+          </div>
+          
+          <!-- FOR CONSULTANTS -->
+          <div class="guide-card consultant">
+            <h3>
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+              For the Consultant: Help Us Break the Cycle
+            </h3>
+            <ul class="guide-list">
+              <li class="guide-item">
+                <strong>Permit the Missing Drain:</strong>
+                If your registrar or senior trainee feels confident in the mechanical integrity of an anastomosis, support the decision to skip the prophylactic drain. We model our closing habits directly after yours—if you stop dropping them in "just because," the next generation will too.
+              </li>
+              <li class="guide-item">
+                <strong>Audit Post-Op CRP Protocols:</strong>
+                Work with the firm to ensure that your ward protocols prioritize serial inflammatory markers (like CRP) on days two, three, and four, rather than relying on nursing logs of drain fluid volume to screen for leaks.
+              </li>
+              <li class="guide-item">
+                <strong>Reframe the Safety Discussion:</strong>
+                Use the morbidity and mortality (M&M) meetings to audit the complications caused by drains (pain, migration, skin site infections) rather than just treating them as an inert, harmless addition to a surgery.
+              </li>
+            </ul>
+          </div>
+          
+        </div>
+
+        <hr>
+
+        <h2>📚 Bibliography &amp; Evidence References</h2>
+        <ul class="ref-list">
+          <li class="ref-item">
+            <strong>GRECCAR 5 Trial:</strong> Denost Q, et al. <em>To Drain or Not to Drain after Colorectal Cancer Surgery.</em> Annals of Surgery. <a href="https://pubmed.ncbi.nlm.nih.gov/25730485/" target="_blank">PubMed Link</a>.
+          </li>
+          <li class="ref-item">
+            <strong>Systematic Review and Meta-Analysis:</strong> <em>Prophylactic intra-abdominal drainage following colorectal anastomoses. A systematic review and meta-analysis of randomized controlled trials.</em> Translational Cancer Research, 2020. <a href="https://tcr.amegroups.org/article/view/33425/html" target="_blank">Translational Cancer Research Link</a>.
+          </li>
+          <li class="ref-item">
+            <strong>NIH Consensus:</strong> <em>Abandoning the legacy of routine intra-abdominal drain insertion in colorectal and obstetrics surgery.</em> Menopausal Review, 2020. <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7199999/" target="_blank">National Institutes of Health (.gov) Link</a>.
+          </li>
+          <li class="ref-item">
+            <strong>Length of Stay Analysis:</strong> <em>Drainage or nondrainage in elective colorectal anastomosis: A systematic review and meta-analysis.</em> ResearchGate, 2022. <a href="https://www.researchgate.net/publication/359288288_Drainage_or_nondrainage_in_elective_colorectal_anastomosis" target="_blank">Request PDF on ResearchGate</a>.
+          </li>
+          <li class="ref-item">
+            <strong>Complications &amp; Migration:</strong> <em>Intraluminal Migration of Pelvic Drain Following Palliative Colonic Resection: A Rare but Risky Complication.</em> Karnataka Journal of Surgery, 2025. <a href="https://www.kjs.co.in/" target="_blank">KJS Journal Link</a>.
+          </li>
+          <li class="ref-item">
+            <strong>Laparoscopic Cholecystectomy Comparison:</strong> <em>Intra-abdominal drainage for laparoscopic cholecystectomy: A systematic review and meta-analysis.</em> ScienceDirect, 2015. <a href="https://www.sciencedirect.com/science/article/pii/S0039606015002491" target="_blank">ScienceDirect Article Link</a>.
+          </li>
+        </ul>
+
+      </main>
+
+      <!-- Sidebar -->
+      <aside class="blog-sidebar">
+        <div class="sidebar-card" style="border-top: 4px solid #a31515;">
+          <h3>📊 GRECCAR 5 Study Metrics</h3>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 15px;">Key metrics from the landmark randomized controlled trial on pelvic drainage:</p>
+          <div style="font-family:'Inter',sans-serif; font-size:0.8rem; display:flex; flex-direction:column; gap:10px;">
+            <div style="background:var(--bg-secondary); padding:10px; border-radius:6px; border:1px solid var(--border-color);">
+              <strong style="color: #a31515; display:block; margin-bottom:2px;">Cohort Size</strong>
+              469 patients undergoing elective rectal excision with pelvic anastomosis.
+            </div>
+            <div style="background:var(--bg-secondary); padding:10px; border-radius:6px; border:1px solid var(--border-color);">
+              <strong style="color: var(--text-primary); display:block; margin-bottom:2px;">Leak Rate</strong>
+              Equivalent in both arms (~10%). Pelvic drains did not reduce the severity of leaks.
+            </div>
+            <div style="background:var(--bg-secondary); padding:10px; border-radius:6px; border:1px solid var(--border-color);">
+              <strong style="color: #10b981; display:block; margin-bottom:2px;">Complication Rate</strong>
+              Pelvic drain arm suffered higher localized pain and delayed mobilization on day 1-3.
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar-card">
+          <h3>📖 Related Colorectal Guides</h3>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 20px;">Explore our detailed clinical reviews for colorectal surgeries:</p>
+          <div class="sidebar-book-list" style="gap: 15px; text-align: left;">
+            <a href="navigating-hemorrhoidectomy-ulcerative-colitis.html" class="sb-book" style="border: 1px solid var(--border-color); padding: 12px; border-radius: 8px; background: var(--bg-secondary); transition: all 0.2s ease;">
+              <strong style="font-family:'Inter',sans-serif; font-size:0.85rem; color: var(--text-primary); display: block; margin-bottom: 4px;">UC Hemorrhoidectomy Guide</strong>
+              <span style="font-size: 0.75rem; color: var(--text-secondary); line-height: 1.3;">Critical safety requirements and 5-part colorectal board review monographs.</span>
+            </a>
+            
+            <a href="eras-low-resource-settings-ethiopia.html" class="sb-book" style="border: 1px solid var(--border-color); padding: 12px; border-radius: 8px; background: var(--bg-secondary); transition: all 0.2s ease;">
+              <strong style="font-family:'Inter',sans-serif; font-size:0.85rem; color: var(--text-primary); display: block; margin-bottom: 4px;">ERAS in Low-Resource Settings</strong>
+              <span style="font-size: 0.75rem; color: var(--text-secondary); line-height: 1.3;">Modified Delphi study adapting enhanced recovery protocols for Ethiopian hospitals.</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="sidebar-card" style="border-left: 4px solid var(--brand-gold);">
+          <h3>📢 Join Surgical Insight Hub</h3>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 20px;">Get real-time emergency clinical pearls, trial updates, and high-yield MCQs direct to your phone.</p>
+          <a href="https://t.me/sugicalInsightHub" target="_blank" class="download-tg" style="width: 100%; justify-content: center; margin-top: 10px;">
+            <svg viewBox="0 0 24 24" style="width:18px; height:18px; fill:currentColor; margin-right:6px;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.91-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+            Join Telegram Channel
+          </a>
+        </div>
+      </aside>
+    </div>
+  </article>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="nav-logo-img" style="width:36px; height:36px; margin-bottom:.8rem;">
+          <img src="../assets/images/Surgical_Insight_Hub_Logo.png" alt="SIH">
+        </div>
+        <div style="font-weight:800; font-size:1.1rem; color:var(--text-primary);">Surgical Insight Hub</div>
+        <p style="font-size:.85rem; color:var(--text-secondary); margin-top:.5rem; line-height:1.5;">Elevating surgical education through evidence-based monographs, interactive arenas, and dynamic clinical discussions.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Platform</h4>
+        <a href="../notes.html">Clinical Notes</a>
+        <a href="../notes/operative_approach.html">Operative Playbook</a>
+        <a href="../arena.html">MCQ Arena</a>
+        <a href="../surgery-talk.html">Surgery Talk</a>
+      </div>
+      <div class="footer-links">
+        <h4>Connect</h4>
+        <a href="https://t.me/sugicalInsightHub" target="_blank">Telegram Channel</a>
+        <a href="https://www.youtube.com/@SurgicalInsightHub" target="_blank">YouTube Library</a>
+        <a href="../about.html">About Us</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; <span id="year"></span> Surgical Insight Hub. All rights reserved. Not medical advice.
+    </div>
+  </footer>
+
+  <script src="../js/navigation.js"></script>
+  <script src="../js/nav-pill.js"></script>
+  
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const toggle = document.getElementById('themeToggle');
+    const root = document.documentElement;
+    const moon = document.getElementById('moonIcon');
+    const sun = document.getElementById('sunIcon');
+
+    function updateIcons(theme) {
+      if(theme === 'dark') {
+        moon.style.display = 'none';
+        sun.style.display = 'block';
+      } else {
+        moon.style.display = 'block';
+        sun.style.display = 'none';
+      }
+    }
+    updateIcons(savedTheme);
+
+    toggle.addEventListener('click', () => {
+      const current = root.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      localStorage.setItem('sih-theme', next);
+      updateIcons(next);
+    });
+    
+    function openMobNav() {
+      document.getElementById('mobNavOverlay').classList.add('active');
+      document.getElementById('mobNavSheet').classList.add('active');
+    }
+    function closeMobNav() {
+      document.getElementById('mobNavOverlay').classList.remove('active');
+      document.getElementById('mobNavSheet').classList.remove('active');
+    }
+    let startY = 0;
+    const sheet = document.getElementById('mobNavSheet');
+    sheet.addEventListener('touchstart', e => {
+      startY = e.touches[0].clientY;
+    });
+    sheet.addEventListener('touchmove', e => {
+      const y = e.touches[0].clientY;
+      if (y > startY + 50) closeMobNav();
+    });
+  </script>
+</body>
+</html>
