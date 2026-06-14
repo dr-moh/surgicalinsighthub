@@ -157,6 +157,18 @@ window.NOTES_DATA = {
       type: 'web',
       url: 'notes/Surgical Operative Approach/Hernia and Hernia Repair Monograph.html',
       isNew: true
+    },
+    {
+      id: 'hy-cholangiocarcinoma',
+      title: 'Cholangiocarcinoma Pathology & Surgical Management',
+      kicker: 'HPB Oncology Monograph',
+      specialty: ['hpb'],
+      description: 'Comprehensive study guide covering anatomic classification (Bismuth-Corlette), vascular relations, resectability criteria, hepatectomy caudate segment 1 boundaries, and Roux-en-Y reconstruction.',
+      tags: ['red:HPB', 'red:Oncology', 'Bismuth', 'Whipple', 'Roux-en-Y', 'ABSITE'],
+      pages: '5 Pillars',
+      type: 'web',
+      url: 'notes/Surgical High-Yield Notes/cholangiocarcinoma.html',
+      isNew: true
     }
   ],
 
