@@ -169,6 +169,18 @@ window.NOTES_DATA = {
       type: 'web',
       url: 'notes/Surgical High-Yield Notes/cholangiocarcinoma.html',
       isNew: true
+    },
+    {
+      id: 'hy-adrenal-mass',
+      title: 'Adrenal Mass Pathology & Surgical Management',
+      kicker: 'Endocrine Oncology Monograph',
+      specialty: ['endocrine', 'basics'],
+      description: 'Comprehensive study guide covering functional vs non-functional workup algorithms, retroperitoneal vascular relations (adrenal veins), Weiss score components, and transperitoneal vs posterior retroperitoneal adrenalectomy steps.',
+      tags: ['red:Adrenal', 'Endocrine', 'Pheo', 'Conn\'s', 'Cushing\'s', 'ACC', 'ABSITE'],
+      pages: '5 Pillars',
+      type: 'web',
+      url: 'notes/Surgical High-Yield Notes/adrenal_mass.html',
+      isNew: true
     }
   ],
 

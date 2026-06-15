@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Surgical Insight Hub — Adrenal Mass Monograph</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/theme.css?v=4.0.0">
+<link rel="stylesheet" href="../../css/shared.css">
+<script>
+  const savedTheme = localStorage.getItem('sih-theme') || 'light';
+  if (savedTheme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+</script>
+<style>
+:root {
+  /* Endocrine Plum & Rose Aesthetic */
+  --primary:   #4C1D95; 
+  --primary-dk:#2E1065;
+  --primary-lt:#F5F3FF;
+  --accent:    #7C3AED;
+  --accent2:   #EC4899;
+  --gold:      #B8922A;
+  --gold-lt:   #FEF3C7;
+  --s1:        #4C1D95; /* Pillar 1 - Purple */
+  --s2:        #0D9488; /* Pillar 2 - Teal */
+  --s3:        #B45309; /* Pillar 3 - Amber */
+  --s4:        #1D4ED8; /* Pillar 4 - Royal Blue */
+  --s5:        #BE185D; /* Pillar 5 - Rose */
+  --s1-lt:     #F5F3FF;
+  --s2-lt:     #F0FDFA;
+  --s3-lt:     #FEF3C7;
+  --s4-lt:     #EFF6FF;
+  --s5-lt:     #FDF2F8;
+  --red:       #B91C1C;
+  --red-lt:    #FEF2F2;
+  --bg:        #FAFAFB;
+  --bg2:       #F4F4F6;
+  --border:    #E5E7EB;
+  --text:      #1F2937;
+  --muted:     #4B5563;
+  --white:     #FFFFFF;
+  --sidebar-w: 320px;
+}
+
+[data-theme="dark"] {
+  --bg: #0B0F19;
+  --bg2: #141B2D;
+  --text: #E2E8F0;
+  --muted: #94A3B8;
+  --border: rgba(255,255,255,0.08);
+  --primary-lt: #1F103A;
+  --s1-lt: #1F103A;
+  --s2-lt: #0B1D19;
+  --s3-lt: #221B0B;
+  --s4-lt: #0F172A;
+  --s5-lt: #2A0B1A;
+  --white: #141B2D;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.75;}
+
+/* SLIDE-OVER SIDEBAR */
+#sidebar {
+  position: fixed; top: 0; left: 0; width: var(--sidebar-w); height: 100vh;
+  background: var(--primary-dk); color: #ECE5E4;
+  display: flex; flex-direction: column;
+  z-index: 1000; overflow: hidden;
+  transform: translateX(-100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 4px 0 24px rgba(0,0,0,0.4);
+}
+body.sidebar-open #sidebar {
+  transform: translateX(0);
+}
+
+/* OVERLAY */
+#sidebar-overlay {
+  position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+  background: rgba(46, 16, 101, 0.7); backdrop-filter: blur(3px);
+  z-index: 950; opacity: 0; pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+body.sidebar-open #sidebar-overlay {
+  opacity: 1; pointer-events: auto;
+}
+
+/* TOGGLE BUTTON - TOP LEFT */
+#sidebar-toggle {
+  position: fixed; top: 72px; left: 24px; z-index: 900;
+  background: var(--primary); color: white;
+  border: none; border-radius: 30px;
+  padding: 10px 18px; font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600;
+  letter-spacing: 0.05em; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  display: flex; align-items: center; gap: 8px; transition: all 0.2s;
+}
+#sidebar-toggle:hover { background: var(--accent); transform: translateY(-2px); }
+
+#progress-bar {
+  position: fixed; top: 52px; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  transform-origin: left; transform: scaleX(0); transition: transform 0.1s; z-index: 1105;
+}
+
+#sidebar-header{padding:20px 20px 14px;border-bottom:1px solid rgba(255,255,255,0.1);flex-shrink:0;}
+#sidebar-header .logo{font-family:'Playfair Display',serif;font-size:13px;font-weight:700;color:var(--accent2);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;}
+#sidebar-header .sub{font-size:10.5px;color:rgba(236,229,228,0.6);letter-spacing:0.04em;}
+#sidebar-search{padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.08);flex-shrink:0;}
+#sidebar-search input{width:100%;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:6px;color:#ECE5E4;padding:6px 10px;font-size:12px;font-family:'Source Serif 4',serif;outline:none;transition:border-color 0.2s;}
+#sidebar-search input::placeholder{color:rgba(236,229,228,0.4);}
+#sidebar-search input:focus{border-color:var(--accent);}
+#sidebar-nav{flex:1;overflow-y:auto;padding:8px 0 20px;}
+#sidebar-nav::-webkit-scrollbar{width:4px;}
+#sidebar-nav::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.15);border-radius:2px;}
+.vol-label{font-size:9.5px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent2);padding:14px 18px 4px;}
+.nav-item{display:block;padding:8px 18px 8px 22px;font-size:12.5px;color:rgba(236,229,228,0.75);text-decoration:none;border-left:2px solid transparent;transition:all 0.15s;line-height:1.4;}
+.nav-item:hover{color:#fff;background:rgba(255,255,255,0.05);border-left-color:rgba(236,72,153,0.5);}
+.nav-item.active{color:#fff;background:rgba(255,255,255,0.08);border-left-color:var(--accent2);font-weight:600;}
+.nav-item .num{font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(236,229,228,0.4);margin-right:6px;}
+
+/* HERO HEADER */
+#hero{background:linear-gradient(135deg,var(--primary-dk) 0%,#3b0764 60%,#0f051d 100%);color:white;padding:120px 72px 60px;position:relative;overflow:hidden;}
+#hero::before{content:'';position:absolute;top:-60px;right:-60px;width:380px;height:380px;background:radial-gradient(circle,rgba(236,72,153,0.18) 0%,transparent 70%);pointer-events:none;}
+#hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--primary),var(--accent2),transparent);}
+#hero .eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.16em;color:var(--accent2);text-transform:uppercase;margin-bottom:14px;}
+#hero h1{font-family:'Playfair Display',serif;font-size:38px;font-weight:700;line-height:1.15;margin-bottom:10px;color:#fff;}
+#hero .subtitle{font-size:18px;color:rgba(255,255,255,0.65);font-style:italic;margin-bottom:28px;}
+#hero .badges{display:flex;gap:10px;flex-wrap:wrap;}
+#hero .badge{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:4px 14px;font-size:12px;color:rgba(255,255,255,0.8);font-family:'JetBrains Mono',monospace;}
+
+/* CONTENT WRAP */
+.content-wrap{max-width:900px;margin:0 auto;padding:0 48px 80px;}
+
+/* SECTION HEADER */
+.sec-header{margin-top:60px;margin-bottom:8px;padding:28px 36px;border-radius:10px;display:flex;align-items:center;gap:20px;}
+.sec-header.s1{background:linear-gradient(135deg,#4C1D950A,#4C1D951A);border-left:4px solid var(--s1);}
+.sec-header.s2{background:linear-gradient(135deg,#0D94880A,#0D94881A);border-left:4px solid var(--s2);}
+.sec-header.s3{background:linear-gradient(135deg,#B453090A,#B453091A);border-left:4px solid var(--s3);}
+.sec-header.s4{background:linear-gradient(135deg,#1D4ED80A,#1D4ED81A);border-left:4px solid var(--s4);}
+.sec-header.s5{background:linear-gradient(135deg,#BE185D0A,#BE185D1A);border-left:4px solid var(--s5);}
+
+.sec-badge{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;letter-spacing:0.1em;padding:4px 12px;border-radius:4px;white-space:nowrap;flex-shrink:0;}
+.s1 .sec-badge{background:var(--s1);color:white;}
+.s2 .sec-badge{background:var(--s2);color:white;}
+.s3 .sec-badge{background:var(--s3);color:white;}
+.s4 .sec-badge{background:var(--s4);color:white;}
+.s5 .sec-badge{background:var(--s5);color:white;}
+.sec-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;}
+.s1 .sec-title{color:var(--s1);}
+.s2 .sec-title{color:var(--s2);}
+.s3 .sec-title{color:var(--s3);}
+.s4 .sec-title{color:var(--s4);}
+.s5 .sec-title{color:var(--s5);}
+
+/* TOPIC & CONTENT TYPOGRAPHY */
+.topic{margin-top:48px;padding-top:48px;border-top:1px solid var(--border);}
+.topic:first-of-type{border-top:none;}
+.topic-header{display:flex;align-items:flex-start;gap:16px;margin-bottom:24px;}
+.topic-num{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;padding:3px 10px;border-radius:4px;margin-top:4px;flex-shrink:0;}
+.s1 .topic-num{background:var(--s1-lt);color:var(--s1);}
+.s2 .topic-num{background:var(--s2-lt);color:var(--s2);}
+.s3 .topic-num{background:var(--s3-lt);color:var(--s3);}
+.s4 .topic-num{background:var(--s4-lt);color:var(--s4);}
+.s5 .topic-num{background:var(--s5-lt);color:var(--s5);}
+
+.topic h2{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;line-height:1.2;}
+.s1 .topic h2{color:var(--s1);}
+.s2 .topic h2{color:var(--s2);}
+.s3 .topic h2{color:var(--s3);}
+.s4 .topic h2{color:var(--s4);}
+.s5 .topic h2{color:var(--s5);}
+
+.topic h3{font-family:'Playfair Display',serif;font-size:17px;font-weight:600;color:var(--muted);margin:26px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--border);}
+.topic h4{font-size:13px;font-weight:600;color:var(--muted);letter-spacing:0.06em;text-transform:uppercase;margin:18px 0 8px;font-family:'JetBrains Mono',monospace;}
+.topic ul, .topic ol{margin:8px 0 14px 20px;color:var(--text);}
+.topic li{margin-bottom:6px;line-height:1.65;}
+.topic li::marker{color:var(--accent2);}
+.topic strong{color:var(--text);font-weight:600;}
+
+/* TABLES */
+.table-wrap{overflow-x:auto;margin:16px 0 20px;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.06);border:1px solid var(--border);}
+table{width:100%;border-collapse:collapse;font-size:13.5px;background:var(--white);}
+thead tr{background:var(--s1);}
+thead th{color:white;padding:10px 14px;text-align:left;font-family:'Source Serif 4',serif;font-weight:600;font-size:13px;}
+tbody tr:nth-child(even){background:var(--bg2);}
+tbody tr:hover{background:var(--s1-lt);transition:background 0.15s;}
+tbody td{padding:9px 14px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.5;}
+[data-theme="dark"] table { background: var(--bg2); }
+.s2-tbl thead tr{background:var(--s2);}
+.s3-tbl thead tr{background:var(--s3);}
+.s4-tbl thead tr{background:var(--s4);}
+.s5-tbl thead tr{background:var(--s5);}
+
+/* CALLOUTS */
+.callout{margin:18px 0;padding:14px 18px;border-radius:0 8px 8px 0;border-left:4px solid;font-size:14px;line-height:1.65;}
+.callout .label{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;display:block;margin-bottom:4px;}
+.callout.pearl{background:var(--gold-lt);border-color:var(--gold);color:var(--text);}
+.callout.pearl .label{color:var(--gold);}
+.callout.warn{background:var(--red-lt);border-color:var(--red);color:var(--text);}
+.callout.warn .label{color:var(--red);}
+.callout.clin{background:var(--s1-lt);border-color:var(--s1);color:var(--text);}
+.callout.clin .label{color:var(--s1);}
+.callout.exam{background:var(--s4-lt);border-color:var(--s4);color:var(--text);}
+.callout.exam .label{color:var(--s4);}
+[data-theme="dark"] .callout.pearl { background: rgba(184, 146, 42, 0.08); }
+[data-theme="dark"] .callout.warn { background: rgba(185, 28, 28, 0.08); }
+
+#top-btn{position:fixed;bottom:24px;right:24px;width:44px;height:44px;background:var(--primary);color:white;border:none;border-radius:50%;font-size:18px;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,0.3);z-index:1100;opacity:0;pointer-events:none;transition:all 0.3s;display:flex;align-items:center;justify-content:center;}
+#top-btn.show{opacity:1;pointer-events:auto;}
+#top-btn:hover{background:var(--accent);transform:translateY(-3px);}
+
+.rapid-ref{margin-top:60px;padding:36px;background:var(--primary-dk);color:white;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,0.15);}
+.rapid-ref h3{font-family:'Playfair Display',serif;font-size:24px;margin-bottom:18px;color:#fff;border-bottom:1px solid rgba(255,255,255,0.15);padding-bottom:10px;}
+.rapid-ref table{background:transparent;}
+.rapid-ref thead tr{background:rgba(255,255,255,0.08);}
+.rapid-ref thead th{color:#FAF5F0;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;}
+.rapid-ref tbody tr:nth-child(even){background:rgba(255,255,255,0.03);}
+.rapid-ref tbody tr:hover{background:rgba(255,255,255,0.07);}
+.rapid-ref tbody td{border-bottom:1px solid rgba(255,255,255,0.08);color:rgba(255,255,255,0.85);font-size:13px;}
+.rapid-ref strong{color:#fff;}
+
+@media(max-width:900px) {
+  .content-wrap { padding: 0 20px 60px; }
+  #hero { padding: 80px 20px 40px; }
+  #hero h1 { font-size: 30px; }
+  #sidebar-toggle { top: 64px; left: 16px; }
+}
+@media print {
+  #sidebar-toggle, #sidebar-overlay, #sidebar, #top-btn, #progress-bar, #mainNav { display: none !important; }
+  .topic { page-break-inside: avoid; }
+  .sec-header { page-break-before: always; }
+}
+</style>
+<link rel="icon" type="image/png" href="../../assets/images/Surgical_Insight_Hub_Logo.png">
+</head>
+<body>
+
+<!-- Standardized SIH Navbar -->
+<nav class="nav" id="mainNav">
+  <div class="nav-left">
+    <a href="../../index.html" class="nav-pill">
+      <div class="nav-logo-img">
+        <img src="../../assets/images/Surgical_Insight_Hub_Logo.png" alt="SIH Logo">
+      </div>
+      <div>
+        <div class="nav-brand-text">Surgical Insight Hub</div>
+        <div class="nav-brand-sub">The Residency Journal</div>
+      </div>
+    </a>
+  </div>
+  <div class="nav-links-pill">
+    <a href="../../index.html">Home</a>
+    <a href="../../notes.html" class="active">Notes</a>
+    <a href="../operative_approach.html">Playbook</a>
+    <a href="../../arena.html?v=4.0.0">MCQ Arena</a>
+    <a href="../../podcast.html">Podcast</a>
+    <a href="../../surgery-talk.html">Surgery Talk</a>
+    <a href="../../about.html">About</a>
+  </div>
+  <div class="nav-right">
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+      <svg id="moonIcon" viewBox="0 0 24 24" width="18" height="18"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      <svg id="sunIcon" style="display:none;" viewBox="0 0 24 24" width="18" height="18"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+    </button>
+    <a href="https://t.me/sugicalInsightHub" target="_blank" class="nav-tg-btn" title="Join Telegram">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="#f0d080"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.89 8.22l-1.97 9.28c-.15.66-.54.82-1.08.51l-3-2.21-1.45 1.39c-.16.16-.3.3-.61.3l.21-3.05 5.56-5.02c.24-.21-.05-.33-.37-.12l-6.87 4.33-2.96-.92c-.64-.2-.66-.64.14-.95l11.57-4.46c.54-.19 1.01.13.83.94z"/></svg>
+    </a>
+    <a href="../../arena.html?v=4.0.0" class="nav-btn arena-btn">MCQ Arena</a>
+    <button class="mob-nav-toggle" onclick="openMobNav()" aria-label="Menu">
+      <div class="hamburger"><span></span><span></span><span></span></div>
+    </button>
+  </div>
+</nav>
+
+<div class="mob-nav-overlay" id="mobNavOverlay" onclick="closeMobNav()"></div>
+<div class="mob-nav-sheet" id="mobNavSheet">
+  <div class="mob-nav-handle"></div>
+  <a href="../../index.html" onclick="closeMobNav()">Home</a>
+  <a href="../../notes.html" onclick="closeMobNav()">Notes</a>
+  <a href="../operative_approach.html" onclick="closeMobNav()">Playbook</a>
+  <a href="../../podcast.html" onclick="closeMobNav()">Podcast</a>
+  <a href="../../surgery-talk.html" onclick="closeMobNav()">Surgery Talk</a>
+  <a href="../../arena.html" onclick="closeMobNav()">MCQ Arena</a>
+  <a href="../../about.html" onclick="closeMobNav()">About</a>
+  <a href="https://t.me/sugicalInsightHub" target="_blank" rel="noopener" onclick="closeMobNav()" style="color: var(--brand-gold); font-weight: 800;">Join Telegram Community</a>
+  <a href="https://www.linkedin.com/company/surgical-insight-hub" target="_blank" rel="noopener" onclick="closeMobNav()" style="color: var(--brand-gold); font-weight: 800;">LinkedIn Community</a>
+</div>
+
+<div id="progress-bar"></div>
+
+<!-- SIDEBAR TRIGGER -->
+<button id="sidebar-toggle" onclick="toggleSidebar()">
+  <span>📜</span> Table of Contents
+</button>
+<div id="sidebar-overlay" onclick="closeSidebar()"></div>
+
+<!-- SLIDE-OVER SIDEBAR -->
+<aside id="sidebar">
+  <div id="sidebar-header">
+    <div class="logo">Surgical Insight Hub</div>
+    <div class="sub">Adrenal Mass Monograph</div>
+  </div>
+  <div id="sidebar-search">
+    <input type="text" placeholder="Search sections..." oninput="filterNav(this.value)">
+  </div>
+  <nav id="sidebar-nav">
+    <div class="vol-label">Pillar 1: Definition &amp; Anatomy</div>
+    <a class="nav-item" href="#definition"><span class="num">1.1</span>Definition &amp; Classification</a>
+    <a class="nav-item" href="#anatomy"><span class="num">1.2</span>Adrenal Anatomy &amp; Relations</a>
+    
+    <div class="vol-label">Pillar 2: Epidemiology &amp; Pathophysiology</div>
+    <a class="nav-item" href="#epidemiology"><span class="num">2.1</span>Epidemiology &amp; Demographics</a>
+    <a class="nav-item" href="#etiology"><span class="num">2.2</span>Etiology &amp; Risk Factors</a>
+    <a class="nav-item" href="#pathophysiology"><span class="num">2.3</span>Pathophysiology of Excess</a>
+    
+    <div class="vol-label">Pillar 3: Diagnosis &amp; Staging</div>
+    <a class="nav-item" href="#pathology"><span class="num">3.1</span>Pathology &amp; Histology</a>
+    <a class="nav-item" href="#presentation"><span class="num">3.2</span>Clinical Presentation</a>
+    <a class="nav-item" href="#investigations"><span class="num">3.3</span>Diagnostic Investigations</a>
+    <a class="nav-item" href="#staging"><span class="num">3.4</span>Staging &amp; Resectability</a>
+    <a class="nav-item" href="#differential"><span class="num">3.5</span>Differential Diagnosis</a>
+    
+    <div class="vol-label">Pillar 4: Management &amp; Resection</div>
+    <a class="nav-item" href="#management"><span class="num">4.1</span>Management Framework</a>
+    <a class="nav-item" href="#operative"><span class="num">4.2</span>Operative Techniques</a>
+    
+    <div class="vol-label">Pillar 5: Complications &amp; Follow-up</div>
+    <a class="nav-item" href="#complications"><span class="num">5.1</span>Surgical Complications</a>
+    <a class="nav-item" href="#prognosis"><span class="num">5.2</span>Outcomes &amp; Prognosis</a>
+    <a class="nav-item" href="#followup"><span class="num">5.3</span>Long-Term Follow-up</a>
+
+    <div class="vol-label">Board Review</div>
+    <a class="nav-item" href="#board-review-section"><span class="num">6.1</span>ABSITE Board Review</a>
+  </nav>
+</aside>
+
+<!-- MAIN CONTENT -->
+<main id="main">
+<header id="hero">
+  <div class="eyebrow">Endocrine Oncology · Adrenal</div>
+  <h1>Adrenal Mass Pathology &amp; Surgical Management</h1>
+  <p class="subtitle">Comprehensive study guide covering functional workups, vascular relations, Weiss criteria, transperitoneal and retroperitoneoscopic resection, and complication management.</p>
+  <div class="badges">
+    <span class="badge">Endocrine Core</span>
+    <span class="badge">Oncology</span>
+    <span class="badge">5 Pillars</span>
+  </div>
+</header>
+
+<div class="content-wrap">
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- PILLAR 1: DEFINITION & ANATOMY ════════════════════════════ -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<div class="sec-header s1">
+  <span class="sec-badge">PILLAR 1</span>
+  <h2 class="sec-title">Definition, Classification &amp; Surgical Anatomy</h2>
+</div>
+
+<section class="topic s1-topic" id="definition">
+  <div class="topic-header">
+    <span class="topic-num">1.1</span>
+    <h2>Definition &amp; Classification</h2>
+  </div>
+  
+  <p>An <strong>adrenal mass</strong> is a growth (solid or cystic, benign or malignant) arising from the adrenal cortex, medulla, or adjacent structures. Most are incidental findings on cross-sectional imaging (referred to as <em>adrenal incidentalomas</em>). The primary clinical challenge is to systematically distinguish benign, non-functional masses from functional or malignant ones.</p>
+
+  <h3>Classification Matrix</h3>
+  <p>Adrenal masses are classified by functional status (hormonal secretion), histologic origin, and imaging characteristics:</p>
+
+  <h4>A. By Hormone Secretion</h4>
+  <ul>
+    <li><strong>Non-functional:</strong> No excess hormone production. Accounts for 75–85% of all incidentalomas.</li>
+    <li><strong>Functional:</strong> Secretes hormones leading to a specific clinical syndrome:
+      <ul>
+        <li><strong>Cortisol:</strong> Cushing's syndrome or subclinical Cushing's (Autonomous Cortisol Secretion).</li>
+        <li><strong>Aldosterone:</strong> Conn's syndrome (Primary Hyperaldosteronism).</li>
+        <li><strong>Catecholamines:</strong> Pheochromocytoma.</li>
+        <li><strong>Androgens or Estrogens:</strong> Extremely rare; usually points to Adrenocortical Carcinoma (ACC) or adrenal rest tumors.</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h4>B. By Histology and Origin</h4>
+  <ul>
+    <li><strong>Adrenal Cortical:</strong> Adenoma (benign), adrenocortical carcinoma (ACC), or cortical hyperplasia (bilateral; ACTH-dependent or independent).</li>
+    <li><strong>Adrenal Medullary:</strong> Pheochromocytoma (chromaffin cell origin), ganglioneuroma (benign), or neuroblastoma (predominantly in pediatric populations).</li>
+    <li><strong>Other Primary:</strong> Myelolipoma (benign fat + myeloid elements), schwannoma, or true cysts (endothelial, epithelial, or pseudocysts).</li>
+    <li><strong>Metastasis:</strong> Hematogenous spread most commonly originating from lung, kidney, breast, melanoma, lymphoma, or colorectal primary cancers.</li>
+  </ul>
+
+  <h4>C. By Imaging Appearance</h4>
+  <ul>
+    <li><strong>Typical Benign Adenoma:</strong> Lipid-rich, unenhanced CT attenuation &lt;10 Hounsfield Units (HU), homogeneous, well-defined borders, and rapid contrast washout (&gt;60% absolute or &gt;50% relative washout).</li>
+    <li><strong>Atypical / Indeterminate:</strong> Unenhanced CT density &gt;10 HU, heterogeneous enhancement, and irregular or poorly defined borders.</li>
+    <li><strong>Hemorrhagic / Cystic:</strong> Can occur in pheochromocytomas, retroperitoneal trauma, or patients on systemic anticoagulation.</li>
+    <li><strong>Calcified:</strong> Associated with old hemorrhage, neuroblastoma, pheochromocytoma, or chronic infectious granulomatous diseases (e.g., Tuberculosis).</li>
+  </ul>
+
+  <div class="callout warn">
+    <span class="label">Attending's Clinical Pearl</span>
+    Any adrenal mass &ge;4 cm demands a full functional workup AND a highly suspicious evaluation for malignancy. <strong>Always rule out pheochromocytoma first</strong> before performing any biopsy or surgical intervention. Biopsying a pheochromocytoma without adequate alpha-adrenergic blockade can precipitate a lethal hypertensive crisis.
+  </div>
+</section>
+
+<section class="topic s1-topic" id="anatomy">
+  <div class="topic-header">
+    <span class="topic-num">1.2</span>
+    <h2>Adrenal Anatomy &amp; Critical Surgical Relations</h2>
+  </div>
+
+  <h3>Gross Anatomy</h3>
+  <ul>
+    <li><strong>Location:</strong> Retroperitoneal, superior and medial to the upper pole of each kidney, located within Gerota's fascia.
+      <ul>
+        <li><strong>Right Adrenal:</strong> Positioned posterior to the Inferior Vena Cava (IVC), medial to the right kidney, and lateral to the right diaphragmatic crus.</li>
+        <li><strong>Left Adrenal:</strong> Positioned medial to the left kidney, lateral to the abdominal aorta, and anterior to the left diaphragmatic crus.</li>
+      </ul>
+    </li>
+    <li><strong>Shape &amp; Size:</strong> The right adrenal is pyramidal; the left is semilunar (crescent). Typical dimensions are 4–6 cm long, 2–3 cm wide, and 0.5 cm thick, weighing 4–6 g.</li>
+    <li><strong>Arterial Supply:</strong> Derived from three distinct sources (numerous small branches that must be carefully controlled):
+      <ul>
+        <li><strong>Superior Adrenal Arteries:</strong> Branches of the inferior phrenic artery.</li>
+        <li><strong>Middle Adrenal Artery:</strong> Arises directly from the abdominal aorta.</li>
+        <li><strong>Inferior Adrenal Artery:</strong> Branch of the renal artery.</li>
+      </ul>
+    </li>
+    <li><strong>Venous Drainage (Critical Surgical Anatomy):</strong> Unlike the arteries, venous drainage is typically concentrated into a single major vein per side:
+      <ul>
+        <li><strong>Right Adrenal Vein:</strong> Extremely short (5–10 mm) and drains directly into the posterolateral aspect of the **IVC**.</li>
+        <li><strong>Left Adrenal Vein:</strong> Runs inferiorly and drains directly into the **left renal vein** (frequently joined by the left inferior phrenic vein).</li>
+      </ul>
+    </li>
+  </ul>
+
+  <div class="table-wrap">
+    <table class="s1-tbl">
+      <thead>
+        <tr>
+          <th>Adrenal Side</th>
+          <th>Anterior Relation</th>
+          <th>Posterior Relation</th>
+          <th>Medial Relation</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Right Adrenal</strong></td>
+          <td>Liver (bare area), Inferior Vena Cava</td>
+          <td>Diaphragm (right crus)</td>
+          <td>Inferior Vena Cava</td>
+        </tr>
+        <tr>
+          <td><strong>Left Adrenal</strong></td>
+          <td>Pancreas body/tail, splenic vessels, stomach (lesser sac)</td>
+          <td>Diaphragm (left crus)</td>
+          <td>Abdominal Aorta</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Anatomical Relations &amp; Splanchnic Nerves</h3>
+  <ul>
+    <li><strong>Relations:</strong> The right adrenal sits posterior to the liver and IVC. The left adrenal lies posterior to the body of the pancreas and the splenic vessels, and lateral to the aorta.</li>
+    <li><strong>Phrenic Nerve:</strong> Runs laterally on each side; must be avoided during high dissection.</li>
+    <li><strong>Splanchnic Nerves:</strong> Feed into the adrenal medulla. Sectioning them during adrenalectomy helps mitigate reflex intraoperative surge in blood pressure.</li>
+  </ul>
+
+  <h3>Anatomical Variations &amp; Surgical Risks</h3>
+  <ul>
+    <li><strong>Right Adrenal Vein Variations:</strong> Can be absent (rare) or multiple (10%). Extra care is required to identify accessory or retrocaval veins.</li>
+    <li><strong>Left Adrenal Vein Variations:</strong> Can join with the left diaphragmatic or left gonadal vein before inserting into the renal vein.</li>
+    <li><strong>Ectopic Adrenal Tissue:</strong> Can occur along the path of gonadal descent (retroperitoneum, broad ligament, spermatic cord), which can lead to recurrent hypercortisolism or hyperaldosteronism if missed.</li>
+    <li><strong>Horseshoe Adrenal:</strong> Bilateral adrenal glands fused across the midline (extremely rare).</li>
+  </ul>
+
+  <div class="callout clin">
+    <span class="label">Surgical Anatomy Rule</span>
+    The right adrenal vein is the most hazardous structure during an adrenalectomy. It is short, thin-walled, and drains directly into the IVC. Any excess traction on the adrenal gland can avulse the vein from the IVC wall, leading to catastrophic hemorrhage. Secure it with clips or ties, and never pull on it.
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- PILLAR 2: EPIDEMIOLOGY & PATHOPHYSIOLOGY ══════════════════ -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<div class="sec-header s2">
+  <span class="sec-badge">PILLAR 2</span>
+  <h2 class="sec-title">Epidemiology, Etiology &amp; Pathophysiology</h2>
+</div>
+
+<section class="topic s2-topic" id="epidemiology">
+  <div class="topic-header">
+    <span class="topic-num">2.1</span>
+    <h2>Epidemiology &amp; Incidence</h2>
+  </div>
+  
+  <ul>
+    <li><strong>Adrenal Incidentaloma:</strong> Identified in 3–7% of all abdominal CT scans, with prevalence increasing with age (&lt;0.2% under age 30 to &gt;10% in patients over 70). Autopsy series report adrenal nodules in 2–9% of adults.</li>
+    <li><strong>Distribution of Pathology in Incidentalomas:</strong></li>
+  </ul>
+
+  <div class="table-wrap">
+    <table class="s2-tbl">
+      <thead>
+        <tr>
+          <th>Pathology</th>
+          <th>Approximate Percentage (%)</th>
+          <th>Clinical Behavior</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Non-Functional Adenoma</strong></td>
+          <td>75 - 80%</td>
+          <td>Benign, metabolically inert, slow-growing</td>
+        </tr>
+        <tr>
+          <td><strong>Myelolipoma</strong></td>
+          <td>5 - 10%</td>
+          <td>Benign, contains mature fat and myeloid tissue</td>
+        </tr>
+        <tr>
+          <td><strong>Pheochromocytoma</strong></td>
+          <td>3 - 5%</td>
+          <td>Medullary neuroendocrine tumor; potentially malignant</td>
+        </tr>
+        <tr>
+          <td><strong>Metastasis</strong></td>
+          <td>2 - 5%</td>
+          <td>Secondary to lung, breast, renal, or melanoma primaries</td>
+        </tr>
+        <tr>
+          <td><strong>Adrenocortical Carcinoma (ACC)</strong></td>
+          <td>2 - 5%</td>
+          <td>Primary malignant cortical tumor; highly aggressive</td>
+        </tr>
+        <tr>
+          <td><strong>Functional Adenomas (Cushing's/Conn's)</strong></td>
+          <td>2 - 4%</td>
+          <td>Autonomous hormone production (cortisol or aldosterone)</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Oncological Demographics</h3>
+  <ul>
+    <li><strong>Pheochromocytoma:</strong> Occurs at any age, but peaks between 30 and 50. Follows the **"Rule of 10s"**: 10% bilateral, 10% extra-adrenal (paragangliomas), 10% malignant, 10% familial/hereditary, and 10% pediatric.</li>
+    <li><strong>Adrenocortical Carcinoma (ACC):</strong> Rare (0.5–2 cases per million annually) with a bimodal age distribution: children under 5 and adults aged 40–60. Slight female predominance (55–60%).</li>
+    <li><strong>Metastasis:</strong> Most common adrenal malignancy overall. Bilateral in 30–50% of cases. Most commonly from Lung (35%), Renal (20%), Melanoma (15%), Breast (10%), Colorectal (5%).</li>
+  </ul>
+</section>
+
+<section class="topic s2-topic" id="etiology">
+  <div class="topic-header">
+    <span class="topic-num">2.2</span>
+    <h2>Etiology &amp; Risk Factors</h2>
+  </div>
+
+  <h3>Hereditary Syndromes &amp; Genetic Predispositions</h3>
+  <ul>
+    <li><strong>Adrenocortical Carcinoma:</strong> Linked to specific germline mutations:
+      <ul>
+        <li><strong>Li-Fraumeni Syndrome:</strong> *TP53* germline mutations (responsible for 50–80% of pediatric ACC).</li>
+        <li><strong>Beckwith-Wiedemann Syndrome:</strong> Alterations in the 11p15 locus (childhood ACC).</li>
+        <li><strong>Lynch Syndrome:</strong> Mismatch repair gene mutations (*MSH2*, *MLH1*; adult ACC).</li>
+        <li><strong>MEN1 &amp; FAP:</strong> Rare associations.</li>
+      </ul>
+    </li>
+    <li><strong>Pheochromocytoma / Paraganglioma (Hereditary in 30–40%):</strong>
+      <ul>
+        <li><strong>MEN2 (MEN2A &amp; MEN2B):</strong> *RET* proto-oncogene mutations (characterized by bilateral pheos, medullary thyroid cancer, and hyperparathyroidism).</li>
+        <li><strong>Von Hippel-Lindau (VHL) Syndrome:</strong> *VHL* tumor suppressor gene mutations (associated with RCC, hemangioblastomas).</li>
+        <li><strong>Neurofibromatosis Type 1 (NF1):</strong> *NF1* gene mutations.</li>
+        <li><strong>Succinate Dehydrogenase (SDHx) Mutations:</strong> Mutations in *SDHB*, *SDHC*, or *SDHD*. *SDHB* mutations carry the highest risk of malignancy and extra-adrenal paragangliomas.</li>
+      </ul>
+    </li>
+    <li><strong>Primary Hyperaldosteronism:</strong> Can be driven by somatic mutations in *KCNJ5* (potassium channel), *CACNA1D* (calcium channel), or *ATP1A1* (sodium-potassium ATPase).</li>
+  </ul>
+</section>
+
+<section class="topic s2-topic" id="pathophysiology">
+  <div class="topic-header">
+    <span class="topic-num">2.3</span>
+    <h2>Pathophysiology of Hormone Excess</h2>
+  </div>
+
+  <h3>1. Aldosterone Excess (Conn's Syndrome)</h3>
+  <p>Unilateral aldosterone-producing adenomas (or bilateral hyperplasia) secrete aldosterone autonomously, independent of the renin-angiotensin-aldosterone axis. Aldosterone acts on the principal cells of the renal collecting ducts to increase sodium reabsorption via epithelial sodium channels (ENaC), while promoting potassium and hydrogen ion excretion. This leads to volume expansion (hypertension), hypokalemia, metabolic alkalosis, and feedback suppression of plasma renin activity.</p>
+
+  <h3>2. Cortisol Excess (Cushing's Syndrome)</h3>
+  <p>Autonomous hypercortisolism (ACTH-independent) suppresses pituitary ACTH secretion, leading to atrophy of the contralateral adrenal gland. Excess cortisol promotes gluconeogenesis, protein catabolism (causing muscle wasting and skin thinning), lipid redistribution (causing central obesity and moon facies), and suppresses the immune response. Subclinical Cushing's (Autonomous Cortisol Secretion, ACS) exhibits no classic physical features but presents with metabolic abnormalities (HTN, diabetes, osteoporosis).</p>
+
+  <h3>3. Catecholamine Excess (Pheochromocytoma)</h3>
+  <p>Medullary chromaffin tumors synthesize and store excess catecholamines (norepinephrine and epinephrine). Episodic or continuous secretion stimulates alpha-1 adrenergic receptors (causing vasoconstriction and hypertensive crises) and beta-1/beta-2 receptors (causing tachycardia, diaphoresis, and palpitations). Spells can be triggered by pressure, anesthesia, or medications like metoclopramide and beta-blockers.</p>
+
+  <div class="callout pearl">
+    <span class="label">Adrenal Remnant Rule</span>
+    Because autonomous cortisol-producing adenomas suppress pituitary ACTH, the contralateral adrenal cortex will be chronically atrophied at the time of surgery. <strong>Stress-dose steroid replacement is mandatory</strong> postoperatively to prevent acute adrenal crisis.
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- PILLAR 3: DIAGNOSIS & STAGING ═════════════════════════════ -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<div class="sec-header s3">
+  <span class="sec-badge">PILLAR 3</span>
+  <h2 class="sec-title">Pathology, Clinical Presentation &amp; Diagnostic Workup</h2>
+</div>
+
+<section class="topic s3-topic" id="pathology">
+  <div class="topic-header">
+    <span class="topic-num">3.1</span>
+    <h2>Pathology &amp; Histology</h2>
+  </div>
+
+  <h3>Adrenocortical Adenoma vs. Carcinoma</h3>
+  <p>The histologic differentiation between benign adenomas and malignant carcinomas relies on the **Weiss Criteria**. A Weiss score &ge;3 indicates adrenocortical carcinoma:</p>
+
+  <div class="table-wrap">
+    <table class="s3-tbl">
+      <thead>
+        <tr>
+          <th>Weiss Criteria Component</th>
+          <th>Histologic Feature</th>
+          <th>Weiss Criteria Component</th>
+          <th>Histologic Feature</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>1. High Nuclear Grade</strong></td>
+          <td>Fuhrman nuclear grade 3 or 4</td>
+          <td><strong>2. High Mitotic Rate</strong></td>
+          <td>&gt;5 mitoses per 50 HPF</td>
+        </tr>
+        <tr>
+          <td><strong>3. Atypical Mitoses</strong></td>
+          <td>Abnormal mitotic figures</td>
+          <td><strong>4. Necrosis</strong></td>
+          <td>Confluent areas of tumor cell necrosis</td>
+        </tr>
+        <tr>
+          <td><strong>5. Diffuse Architecture</strong></td>
+          <td>Loss of normal nested/cord structure</td>
+          <td><strong>6. Clear Cells &lt;25%</strong></td>
+          <td>Predominantly eosinophilic cytoplasm</td>
+        </tr>
+        <tr>
+          <td><strong>7. Capsular Invasion</strong></td>
+          <td>Penetration of the fibrous capsule</td>
+          <td><strong>8. Vascular Invasion</strong></td>
+          <td>Tumor cells in venous/lymphatic channels</td>
+        </tr>
+        <tr>
+          <td><strong>9. Sinusoidal Invasion</strong></td>
+          <td>Invasion of sinusoidal spaces</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <p><strong>Immunohistochemistry for ACC:</strong> Positivity for SF1 (steroidogenic factor-1), inhibin-&alpha;, and Melan-A. Negative for CK7 (helps differentiate from Renal Cell Carcinoma).</p>
+
+  <h3>Pheochromocytoma Histopathology</h3>
+  <ul>
+    <li><strong>Zellballen Pattern:</strong> Polygonal tumor cells arranged in nested clusters, separated by a rich network of vascular capillaries.</li>
+    <li><strong>Malignancy:</strong> There are no absolute histologic markers of malignancy for pheochromocytomas. Nuclear pleomorphism and mitotic figures are common in benign tumors. <strong>Malignancy is defined strictly by the presence of metastatic disease</strong> in non-chromaffin tissue (e.g., lymph nodes, bone, liver, lungs). The **PASS Score** (Pheochromocytoma of the Adrenal Gland Scaled Score) can help predict malignant potential (PASS &ge;6 suggests aggressive behavior).</li>
+  </ul>
+</section>
+
+<section class="topic s3-topic" id="presentation">
+  <div class="topic-header">
+    <span class="topic-num">3.2</span>
+    <h2>Clinical Presentation</h2>
+  </div>
+
+  <h3>Symptom Profiles by Functional Status</h3>
+  <ul>
+    <li><strong>Pheochromocytoma (The Classic Triad):</strong> Episodic headache, palpitations, and profuse diaphoresis, associated with paroxysmal or sustained hypertension. Orthostatic hypotension is common due to chronic alpha-1 mediated volume contraction.</li>
+    <li><strong>Conn's Syndrome:</strong> Resistant hypertension (frequently requiring &ge;3 medications), muscle weakness, cramps, or paresthesias secondary to severe hypokalemia. Note that 50–70% of patients with primary aldosteronism are normokalemic at presentation.</li>
+    <li><strong>Cushing's Syndrome:</strong> Central adiposity (buffalo hump, supraclavicular fat pads), moon facies, proximal muscle weakness, thin skin, easy bruising, wide purple abdominal striae, osteoporosis, and new-onset type 2 diabetes.</li>
+    <li><strong>Virilizing / Feminizing Tumors:</strong> Rapid-onset hirsutism, clitoromegaly, or postmenopausal bleeding in females; gynecomastia or testicular atrophy in males. Strong clinical indicators of adrenocortical carcinoma (ACC).</li>
+  </ul>
+</section>
+
+<section class="topic s3-topic" id="investigations">
+  <div class="topic-header">
+    <span class="topic-num">3.3</span>
+    <h2>Hormonal &amp; Radiologic Investigations</h2>
+  </div>
+
+  <h3>Mandatory Hormonal Workup (For all masses &gt;1 cm)</h3>
+  <ol>
+    <li><strong>Rule out Pheochromocytoma:</strong> Plasma-free metanephrines (highest sensitivity: 96–100%) or a 24-hour urinary fractionated metanephrines collection. Ensure medications that cause false-positive elevations (e.g., TCAs, SNRIs, beta-blockers) are held prior to testing.</li>
+    <li><strong>Rule out Primary Hyperaldosteronism:</strong> Morning plasma aldosterone concentration (PAC) and plasma renin activity (PRA). An Aldosterone-to-Renin Ratio (ARR) &gt;20–30, with a PAC &gt;15 ng/dL, is a positive screen. Confirmed with saline infusion test or oral sodium load. Adrenal Vein Sampling (AVS) is the gold standard for lateralization.</li>
+    <li><strong>Rule out Cushing's / Cortisol Excess:</strong> Overnight 1-mg dexamethasone suppression test (DST). A morning cortisol level &gt;1.8 &mu;g/dL indicates autonomous cortisol secretion (ACS). Confirmed with 24-hour urinary free cortisol or late-night salivary cortisol.</li>
+    <li><strong>Rule out Sex Hormone Excess:</strong> Obtain serum DHEA-S, testosterone, and estradiol levels if there is clinical virilization or suspicion of ACC.</li>
+  </ol>
+
+  <h3>Radiologic Characterization</h3>
+  <ul>
+    <li><strong>CT Scan (Triple-Phase):</strong> The primary characterization tool.
+      <ul>
+        <li><strong>Unenhanced Density:</strong> &le;10 HU is highly specific for benign lipid-rich adenomas.</li>
+        <li><strong>Contrast Washout:</strong> Absolute washout &gt;60% or relative washout &gt;50% at 15 minutes is diagnostic of an adenoma. Slow washout indicates malignancy (ACC, metastasis) or pheochromocytoma.</li>
+      </ul>
+    </li>
+    <li><strong>MRI:</strong> Chemical shift imaging showing a signal drop on opposed-phase images indicates intracellular lipid, confirming a benign adenoma.</li>
+    <li><strong>PET/CT (FDG):</strong> Reserved for suspected malignancy (ACC or metastases show high SUVmax &gt;3).</li>
+  </ol>
+
+  <div class="callout warn">
+    <span class="label">Contraindications to Biopsy</span>
+    Adrenal biopsy is <strong>absolutely contraindicated</strong> in:
+    <ol>
+      <li>Any patient where pheochromocytoma has not been formally excluded.</li>
+      <li>Any patient with a resectable primary adrenal mass suspicious for ACC (risks tumor capsule rupture and needle tract seeding).</li>
+    </ol>
+  </div>
+</section>
+
+<section class="topic s3-topic" id="staging">
+  <div class="topic-header">
+    <span class="topic-num">3.4</span>
+    <h2>Staging of Adrenocortical Carcinoma</h2>
+  </div>
+
+  <p>Staging for ACC utilizes the European Network for the Study of Adrenal Tumors (ENSAT) and AJCC 8th edition staging system:</p>
+
+  <div class="table-wrap">
+    <table class="s3-tbl">
+      <thead>
+        <tr>
+          <th>Stage</th>
+          <th>T Stage Criteria</th>
+          <th>N Stage</th>
+          <th>M Stage</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Stage I</strong></td>
+          <td>T1: Tumor &le;5 cm, no extra-adrenal invasion</td>
+          <td>N0 (no positive nodes)</td>
+          <td>M0</td>
+        </tr>
+        <tr>
+          <td><strong>Stage II</strong></td>
+          <td>T2: Tumor &gt;5 cm, no extra-adrenal invasion</td>
+          <td>N0</td>
+          <td>M0</td>
+        </tr>
+        <tr>
+          <td><strong>Stage III</strong></td>
+          <td>T3: Any size with periadrenal fat/renal/diaphragm invasion OR T1-3 with N1</td>
+          <td>N1 (positive regional nodes)</td>
+          <td>M0</td>
+        </tr>
+        <tr>
+          <td><strong>Stage IV</strong></td>
+          <td>T4: Invasion of adjacent organs (IVC, renal vein, pancreas, liver) OR M1</td>
+          <td>Any N</td>
+          <td>M1 (distant metastases)</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="topic s3-topic" id="differential">
+  <div class="topic-header">
+    <span class="topic-num">3.5</span>
+    <h2>Differential Diagnosis</h2>
+  </div>
+
+  <div class="table-wrap">
+    <table class="s3-tbl">
+      <thead>
+        <tr>
+          <th>Condition</th>
+          <th>Imaging Characteristics</th>
+          <th>Hormonal Characteristics</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Myelolipoma</strong></td>
+          <td>Large areas of macroscopic fat (CT density &lt; -20 HU); well-defined, benign.</td>
+          <td>Completely non-functional.</td>
+        </tr>
+        <tr>
+          <td><strong>Pheochromocytoma</strong></td>
+          <td>Highly vascular, T2 hyperintense ("light bulb sign" on MRI), necrotic/cystic areas common.</td>
+          <td>Elevated plasma metanephrines.</td>
+        </tr>
+        <tr>
+          <td><strong>Adrenal Metastasis</strong></td>
+          <td>Density &gt;20 HU, irregular, slow washout, often bilateral.</td>
+          <td>Non-functional (insufficiency is rare unless bilateral &gt;90% destruction).</td>
+        </tr>
+        <tr>
+          <td><strong>Adrenal Hemorrhage</strong></td>
+          <td>High density initially, decreases over time; no enhancement with contrast.</td>
+          <td>Non-functional (assess for adrenal insufficiency).</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- PILLAR 4: MANAGEMENT & RESECTION ══════════════════════════ -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<div class="sec-header s4">
+  <span class="sec-badge">PILLAR 4</span>
+  <h2 class="sec-title">Decision Framework &amp; Operative Management</h2>
+</div>
+
+<section class="topic s4-topic" id="management">
+  <div class="topic-header">
+    <span class="topic-num">4.1</span>
+    <h2>Management Framework &amp; Preoperative Preparation</h2>
+  </div>
+
+  <h3>Preoperative Management of Pheochromocytoma (Non-Negotiable Protocols)</h3>
+  <p>To prevent intraoperative hypertensive crises during tumor manipulation, all patients must undergo a rigorous preoperative pharmacological prep for 10–14 days prior to surgery:</p>
+  <ol>
+    <li><strong>Alpha-Adrenergic Blockade (First-line):</strong> Initiate **Phenoxybenzamine** (non-selective, irreversible alpha-blocker; start at 10 mg BID, titrate up to 1 mg/kg/day) or **Doxazosin** (selective alpha-1 blocker). Continue titration until the patient develops mild orthostatic hypotension and nasal congestion.</li>
+    <li><strong>Beta-Adrenergic Blockade:</strong> Only introduced <strong>after</strong> complete alpha-blockade is established (typically 2–3 days pre-op) to treat reflex tachycardia. *Never give a beta-blocker first; unopposed alpha-1 stimulation can cause a catastrophic hypertensive crisis.* Use Propranolol or Metoprolol.</li>
+    <li><strong>Volume Expansion:</strong> Catecholamine-induced vasoconstriction leads to chronic volume contraction. Instruct the patient to eat a high-sodium diet and receive IV saline hydration starting 24–48 hours preoperatively to prevent severe hypotension immediately following ligation of the adrenal vein.</li>
+  </ol>
+
+  <h3>Surgical Decision Criteria</h3>
+  <ul>
+    <li><strong>Surgery Indicated For:</strong> All functional tumors (pheochromocytoma, aldosteronoma, cortisol-producing adenoma), non-functional tumors &gt;4 cm, or any mass showing growth (&gt;0.5 cm/year) or concerning indeterminate features on surveillance.</li>
+    <li><strong>Bilateral Hyperplasia (Conn's):</strong> Managed medically with mineralocorticoid receptor antagonists (Spironolactone or Eplerenone). Surgery is reserved for unilateral aldosteronomas.</li>
+  </ul>
+</section>
+
+<section class="topic s4-topic" id="operative">
+  <div class="topic-header">
+    <span class="topic-num">4.2</span>
+    <h2>Operative Techniques</h2>
+  </div>
+
+  <h3>1. Laparoscopic Transperitoneal Right Adrenalectomy</h3>
+  <ol>
+    <li><strong>Positioning:</strong> Left lateral decubitus position (60–70&deg; angle), table flexed to widen the subcostal space.</li>
+    <li><strong>Port Placement:</strong> 12-mm camera port subcostal in the midclavicular line; three 5-mm/12-mm working ports subcostal, epigastric (for liver retraction), and anterior axillary line.</li>
+    <li><strong>Dissection &amp; Mobilization:</strong>
+      <ul>
+        <li>Incise the right triangular ligament to mobilize and retract the right liver lobe medially.</li>
+        <li>Identify the IVC medially, the right kidney inferiorly, and the right adrenal gland nestled between them.</li>
+        <li>Dissect the medial border of the adrenal gland along the edge of the IVC.</li>
+      </ul>
+    </li>
+    <li><strong>Right Adrenal Vein Control (Critical Step):</strong> Identify the short, wide right adrenal vein draining directly into the posterolateral IVC. Apply Hem-o-lok or titanium clips and divide.</li>
+    <li><strong>Complete Resection:</strong> Dissect the superior and lateral attachments using an energy device. Extract the gland in an retrieval bag.</li>
+  </ol>
+
+  <h3>2. Laparoscopic Transperitoneal Left Adrenalectomy</h3>
+  <ol>
+    <li><strong>Positioning:</strong> Right lateral decubitus position.</li>
+    <li><strong>Mobilization:</strong>
+      <ul>
+        <li>Incise the line of Toldt to mobilize and displace the splenic flexure medially.</li>
+        <li>Divide the splenorenal ligament to mobilize the spleen and tail of the pancreas medially, exposing the left retroperitoneum.</li>
+        <li>Identify the left renal vein inferiorly.</li>
+      </ul>
+    </li>
+    <li><strong>Left Adrenal Vein Control:</strong> Locate the left adrenal vein arising from the superior border of the left renal vein. Clip and divide.</li>
+    <li><strong>Resection:</strong> Mobilize the superior, lateral, and medial attachments, avoiding injury to the adjacent pancreatic tail.</li>
+  </ol>
+
+  <h3>3. Posterior Retroperitoneoscopic Adrenalectomy (PRA)</h3>
+  <p>Performed in the prone position with three retroperitoneal ports placed below the 12th rib. Ideal for small benign tumors (&lt;5–6 cm) and patients with extensive prior abdominal surgery. Avoids peritoneal entry and reduces postoperative pain, but offers a limited working space.</p>
+
+  <div class="callout clin">
+    <span class="label">ACC Operative Principle</span>
+    For any suspected Adrenocortical Carcinoma (ACC), **open adrenalectomy is the gold standard**. The surgeon must perform an en bloc resection of the adrenal gland along with any locally invaded organs (typically the kidney, distal pancreas, spleen, or diaphragmatic crus) to prevent capsular rupture. Tumor spill worsens recurrence rates and survival.
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- PILLAR 5: COMPLICATIONS & FOLLOW-UP ═══════════════════════ -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<div class="sec-header s5">
+  <span class="sec-badge">PILLAR 5</span>
+  <h2 class="sec-title">Complications, Outcomes &amp; Long-Term Surveillance</h2>
+</div>
+
+<section class="topic s5-topic" id="complications">
+  <div class="topic-header">
+    <span class="topic-num">5.1</span>
+    <h2>Surgical Complications &amp; Management</h2>
+  </div>
+
+  <div class="table-wrap">
+    <table class="s5-tbl">
+      <thead>
+        <tr>
+          <th>Complication</th>
+          <th>Mechanism &amp; Presentation</th>
+          <th>Surgical / Medical Management</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>IVC Avulsion (Right Adrenal Vein)</strong></td>
+          <td>Tear at the junction of the right adrenal vein and the IVC during mobilization. Presents as sudden, high-volume bleeding.</td>
+          <td>Apply direct pressure. Obtain proximal and distal control of the IVC. Repair with 5-0 Prolene running suture. Convert to open if laparoscopic.</td>
+        </tr>
+        <tr>
+          <td><strong>Post-Op Hypotension (Pheo)</strong></td>
+          <td>Sudden withdrawal of catecholamines combined with persistent alpha-1 mediated vasodilation.</td>
+          <td>Aggressive IV crystalloid resuscitation. If refractory, initiate vasopressor infusion (Norepinephrine) and taper over 24–48 hours.</td>
+        </tr>
+        <tr>
+          <td><strong>Acute Adrenal Insufficiency</strong></td>
+          <td>Failure to provide stress-dose steroids post-resection of a cortisol-producing tumor (contralateral gland is atrophied). Presents with hypotension, hyponatremia, and hyperkalemia.</td>
+          <td>Administer **Hydrocortisone 100 mg IV** immediately, followed by 50–100 mg q8h, transitioning to an oral maintenance taper. Do not wait for lab confirmation.</td>
+        </tr>
+        <tr>
+          <td><strong>Pancreatic Injury (Left Side)</strong></td>
+          <td>Direct thermal or mechanical injury to the pancreatic tail during splenic/pancreatic mobilization. Presents as high-amylase drain output.</td>
+          <td>Maintain closed-suction drainage. Initiate Octreotide therapy. Transition to parenteral nutrition if high-output fistula persists.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="topic s5-topic" id="prognosis">
+  <div class="topic-header">
+    <span class="topic-num">5.2</span>
+    <h2>Outcomes &amp; Survival Data</h2>
+  </div>
+  
+  <ul>
+    <li><strong>Adrenocortical Carcinoma (ACC):</strong>
+      <ul>
+        <li><strong>R0 Resection (Negative Margins):</strong> 5-year overall survival is 35–50%. Stage I tumors clear &gt;60–80% 5-year survival, while Stage IV (M1) is &lt;10%.</li>
+        <li><strong>Recurrence Rate:</strong> 50–80% within 2 years after curative R0 resection. Requires adjuvant therapy with **Mitotane** (an adrenolytic agent) in high-risk patients.</li>
+      </ul>
+    </li>
+    <li><strong>Pheochromocytoma:</strong>
+      <ul>
+        <li><strong>Benign disease:</strong> Complete resection is curative, with 5-year survival &gt;95%.</li>
+        <li><strong>Malignant disease:</strong> 5-year survival ranges between 30% and 60%, depending on metastatic burden and response to chemotherapy/MIBG therapy.</li>
+      </ul>
+    </li>
+    <li><strong>Primary Hyperaldosteronism:</strong>
+      <ul>
+        <li>Unilateral adrenalectomy corrects hypokalemia in 100% of cases and cures hypertension in 40–60% of patients. The remaining 40–50% show significant improvements in blood pressure control with reduced medication requirements.</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+
+<section class="topic s5-topic" id="followup">
+  <div class="topic-header">
+    <span class="topic-num">5.3</span>
+    <h2>Long-Term Follow-up &amp; Surveillance</h2>
+  </div>
+
+  <ul>
+    <li><strong>Post-Pheochromocytoma Resection:</strong>
+      <ul>
+        <li>Obtain plasma metanephrines at 4–6 weeks post-op to confirm complete resection.</li>
+        <li>Perform annual plasma metanephrines checks for a minimum of 10 years (indefinitely in patients with hereditary syndromes).</li>
+      </ul>
+    </li>
+    <li><strong>Post-Cushing's Resection:</strong>
+      <ul>
+        <li>Maintain Hydrocortisone replacement (20–30 mg daily in divided doses) with a gradual taper over 6–18 months.</li>
+        <li>Monitor morning cortisol levels prior to the daily dose; recovery of the hypothalamic-pituitary-adrenal axis is confirmed when morning cortisol exceeds 10 &mu;g/dL.</li>
+      </ul>
+    </li>
+    <li><strong>Post-ACC Resection:</strong>
+      <ul>
+        <li>CT chest/abdomen/pelvis every 3 months for the first 2 years, then every 6 months for 5 years.</li>
+        <li>Monitor DHEA-S or other preoperatively elevated hormone markers as early indicators of recurrence.</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- BOARD REVIEW SECTION ══════════════════════════════════════ -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<div class="rapid-ref" id="board-review-section">
+  <h3>ABSITE Board Review &amp; High-Yield Core Pearls</h3>
+
+  <h4>High-Yield MCQ Numbers</h4>
+  <div class="table-wrap">
+    <table style="background: transparent;">
+      <thead>
+        <tr>
+          <th>Clinical Target</th>
+          <th>High-Yield Value</th>
+          <th>Clinical Significance</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Adrenal Incidentaloma Prevalence</strong></td>
+          <td><strong>3 - 7%</strong></td>
+          <td>Found on abdominal CT scans; risk increases with advanced age.</td>
+        </tr>
+        <tr>
+          <td><strong>Benign Adenoma HU Cutoff</strong></td>
+          <td><strong>&le;10 HU</strong></td>
+          <td>Unenhanced CT attenuation value indicating a lipid-rich benign adenoma.</td>
+        </tr>
+        <tr>
+          <td><strong>Pheochromocytoma Rules</strong></td>
+          <td><strong>Rule of 10s</strong></td>
+          <td>10% bilateral, 10% extra-adrenal, 10% malignant, 10% familial, 10% pediatric.</td>
+        </tr>
+        <tr>
+          <td><strong>ACC Weiss Criteria Cutoff</strong></td>
+          <td><strong>&ge;3</strong></td>
+          <td>Weiss score threshold used to diagnose Adrenocortical Carcinoma on pathology.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h4>Surgical Eponyms &amp; Board Pearls</h4>
+  <ul>
+    <li><strong>Phenoxybenzamine:</strong> Irreversible, non-selective alpha-antagonist used as first-line prep for pheochromocytomas. Always start before beta-blockade.</li>
+    <li><strong>Adrenal Vein Sampling (AVS):</strong> Mandatory to distinguish unilateral Conn's adenoma from bilateral hyperplasia in surgical candidates. A lateralization ratio &gt;4 confirms unilateral disease.</li>
+    <li><strong>Mitotane:</strong> An adrenolytic agent that selectively destroys adrenocortical cells, used as adjuvant therapy for high-risk ACC.</li>
+  </ul>
+</div>
+
+</div><!-- end content-wrap -->
+</main>
+
+<button id="top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script src="../../js/nav-pill.js"></script>
+<script src="../../js/navigation.js"></script>
+<script>
+const progressBar = document.getElementById('progress-bar');
+const topBtn = document.getElementById('top-btn');
+const navItems = document.querySelectorAll('.nav-item');
+const sections = document.querySelectorAll('.topic[id], .rapid-ref[id]');
+
+window.addEventListener('scroll', () => {
+  const st = window.scrollY;
+  const dh = document.documentElement.scrollHeight - window.innerHeight;
+  if (progressBar) progressBar.style.transform = `scaleX(${st / dh})`;
+  if (topBtn) topBtn.classList.toggle('show', st > 400);
+  
+  let current = '';
+  sections.forEach(s => { if (st >= s.offsetTop - 120) current = s.id; });
+  navItems.forEach(n => { n.classList.toggle('active', n.getAttribute('href') === '#' + current); });
+});
+
+function filterNav(query) {
+  const q = query.toLowerCase();
+  navItems.forEach(item => { item.style.display = (!q || item.textContent.toLowerCase().includes(q)) ? 'block' : 'none'; });
+}
+
+navItems.forEach(item => {
+  item.addEventListener('click', e => {
+    e.preventDefault();
+    if(typeof closeSidebar === 'function') closeSidebar();
+    const target = document.querySelector(item.getAttribute('href'));
+    if (target) window.scrollTo({ top: target.getBoundingClientRect().top - 80, behavior: 'smooth' });
+  });
+});
+
+document.querySelectorAll('.topic').forEach((el, i) => { el.style.animationDelay = `${i * 0.03}s`; });
+</script>
+</body>
+</html>
