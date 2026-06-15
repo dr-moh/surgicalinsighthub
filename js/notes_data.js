@@ -181,6 +181,18 @@ window.NOTES_DATA = {
       type: 'web',
       url: 'notes/Surgical High-Yield Notes/adrenal_mass.html',
       isNew: true
+    },
+    {
+      id: 'hy-hiatal-hernia',
+      title: 'Hiatal Hernia Pathology & Surgical Management',
+      kicker: 'Foregut Surgery Monograph',
+      specialty: ['basics'],
+      description: 'Comprehensive study guide covering sliding vs paraesophageal classifications, Borchardt\'s triad in gastric volvulus, Cameron ulcers, open Nissen and Collis gastroplasty step-by-step techniques.',
+      tags: ['red:Hernia', 'Foregut', 'Nissen', 'Collis', 'Borchardt', 'Cameron', 'ABSITE'],
+      pages: '5 Pillars',
+      type: 'web',
+      url: 'notes/Surgical High-Yield Notes/hiatal_hernia.html',
+      isNew: true
     }
   ],
 

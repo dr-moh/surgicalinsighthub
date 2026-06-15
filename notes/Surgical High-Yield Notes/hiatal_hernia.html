@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Surgical Insight Hub — Hiatal Hernia Monograph</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/theme.css?v=4.0.0">
+<link rel="stylesheet" href="../../css/shared.css">
+<script>
+  const savedTheme = localStorage.getItem('sih-theme') || 'light';
+  if (savedTheme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+</script>
+<style>
+:root {
+  /* General Surgery Forest & Emerald Aesthetic */
+  --primary:   #065F46; /* Forest Green */
+  --primary-dk:#064E3B; /* Deep Forest */
+  --primary-lt:#ECFDF5; /* Mint / Light Emerald */
+  --accent:    #059669; /* Emerald */
+  --accent2:   #10B981; /* Bright Mint */
+  --gold:      #B8922A;
+  --gold-lt:   #FEF3C7;
+  --s1:        #065F46; /* Pillar 1 - Forest Green */
+  --s2:        #0369A1; /* Pillar 2 - Sky Blue */
+  --s3:        #B45309; /* Pillar 3 - Amber */
+  --s4:        #4338CA; /* Pillar 4 - Indigo */
+  --s5:        #BE185D; /* Pillar 5 - Rose */
+  --s1-lt:     #ECFDF5;
+  --s2-lt:     #F0F9FF;
+  --s3-lt:     #FEF3C7;
+  --s4-lt:     #EEF2FF;
+  --s5-lt:     #FDF2F8;
+  --red:       #B91C1C;
+  --red-lt:    #FEF2F2;
+  --bg:        #FAFAFB;
+  --bg2:       #F4F4F6;
+  --border:    #E5E7EB;
+  --text:      #1F2937;
+  --muted:     #4B5563;
+  --white:     #FFFFFF;
+  --sidebar-w: 320px;
+}
+
+[data-theme="dark"] {
+  --bg: #060B0A;
+  --bg2: #0E1A17;
+  --text: #E2EAF0;
+  --muted: #8EB3A7;
+  --border: rgba(255,255,255,0.08);
+  --primary-lt: #0B1C17;
+  --s1-lt: #0B1C17;
+  --s2-lt: #0A1C29;
+  --s3-lt: #221B0B;
+  --s4-lt: #12102E;
+  --s5-lt: #2A0B1A;
+  --white: #0E1A17;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.75;}
+
+/* SLIDE-OVER SIDEBAR */
+#sidebar {
+  position: fixed; top: 0; left: 0; width: var(--sidebar-w); height: 100vh;
+  background: var(--primary-dk); color: #ECE5E4;
+  display: flex; flex-direction: column;
+  z-index: 1000; overflow: hidden;
+  transform: translateX(-100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 4px 0 24px rgba(0,0,0,0.4);
+}
+body.sidebar-open #sidebar {
+  transform: translateX(0);
+}
+
+/* OVERLAY */
+#sidebar-overlay {
+  position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+  background: rgba(6, 78, 59, 0.7); backdrop-filter: blur(3px);
+  z-index: 950; opacity: 0; pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+body.sidebar-open #sidebar-overlay {
+  opacity: 1; pointer-events: auto;
+}
+
+/* TOGGLE BUTTON - TOP LEFT */
+#sidebar-toggle {
+  position: fixed; top: 72px; left: 24px; z-index: 900;
+  background: var(--primary); color: white;
+  border: none; border-radius: 30px;
+  padding: 10px 18px; font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600;
+  letter-spacing: 0.05em; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  display: flex; align-items: center; gap: 8px; transition: all 0.2s;
+}
+#sidebar-toggle:hover { background: var(--accent); transform: translateY(-2px); }
+
+#progress-bar {
+  position: fixed; top: 52px; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  transform-origin: left; transform: scaleX(0); transition: transform 0.1s; z-index: 1105;
+}
+
+#sidebar-header{padding:20px 20px 14px;border-bottom:1px solid rgba(255,255,255,0.1);flex-shrink:0;}
+#sidebar-header .logo{font-family:'Playfair Display',serif;font-size:13px;font-weight:700;color:var(--accent2);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;}
+#sidebar-header .sub{font-size:10.5px;color:rgba(236,229,228,0.6);letter-spacing:0.04em;}
+#sidebar-search{padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.08);flex-shrink:0;}
+#sidebar-search input{width:100%;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:6px;color:#ECE5E4;padding:6px 10px;font-size:12px;font-family:'Source Serif 4',serif;outline:none;transition:border-color 0.2s;}
+#sidebar-search input::placeholder{color:rgba(236,229,228,0.4);}
+#sidebar-search input:focus{border-color:var(--accent);}
+#sidebar-nav{flex:1;overflow-y:auto;padding:8px 0 20px;}
+#sidebar-nav::-webkit-scrollbar{width:4px;}
+#sidebar-nav::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.15);border-radius:2px;}
+.vol-label{font-size:9.5px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent2);padding:14px 18px 4px;}
+.nav-item{display:block;padding:8px 18px 8px 22px;font-size:12.5px;color:rgba(236,229,228,0.75);text-decoration:none;border-left:2px solid transparent;transition:all 0.15s;line-height:1.4;}
+.nav-item:hover{color:#fff;background:rgba(255,255,255,0.05);border-left-color:rgba(16,185,129,0.5);}
+.nav-item.active{color:#fff;background:rgba(255,255,255,0.08);border-left-color:var(--accent2);font-weight:600;}
+.nav-item .num{font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(236,229,228,0.4);margin-right:6px;}
+
+/* HERO HEADER */
+#hero{background:linear-gradient(135deg,var(--primary-dk) 0%,#0f3427 60%,#03100b 100%);color:white;padding:120px 72px 60px;position:relative;overflow:hidden;}
+#hero::before{content:'';position:absolute;top:-60px;right:-60px;width:380px;height:380px;background:radial-gradient(circle,rgba(16,185,129,0.18) 0%,transparent 70%);pointer-events:none;}
+#hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--primary),var(--accent2),transparent);}
+#hero .eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.16em;color:var(--accent2);text-transform:uppercase;margin-bottom:14px;}
+#hero h1{font-family:'Playfair Display',serif;font-size:38px;font-weight:700;line-height:1.15;margin-bottom:10px;color:#fff;}
+#hero .subtitle{font-size:18px;color:rgba(255,255,255,0.65);font-style:italic;margin-bottom:28px;}
+#hero .badges{display:flex;gap:10px;flex-wrap:wrap;}
+#hero .badge{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:4px 14px;font-size:12px;color:rgba(255,255,255,0.8);font-family:'JetBrains Mono',monospace;}
+
+/* CONTENT WRAP */
+.content-wrap{max-width:900px;margin:0 auto;padding:0 48px 80px;}
+
+/* SECTION HEADER */
+.sec-header{margin-top:60px;margin-bottom:8px;padding:28px 36px;border-radius:10px;display:flex;align-items:center;gap:20px;}
+.sec-header.s1{background:linear-gradient(135deg,#065F460A,#065F461A);border-left:4px solid var(--s1);}
+.sec-header.s2{background:linear-gradient(135deg,#0369A10A,#0369A11A);border-left:4px solid var(--s2);}
+.sec-header.s3{background:linear-gradient(135deg,#B453090A,#B453091A);border-left:4px solid var(--s3);}
+.sec-header.s4{background:linear-gradient(135deg,#4338CA0A,#4338CA1A);border-left:4px solid var(--s4);}
+.sec-header.s5{background:linear-gradient(135deg,#BE185D0A,#BE185D1A);border-left:4px solid var(--s5);}
+
+.sec-badge{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;letter-spacing:0.1em;padding:4px 12px;border-radius:4px;white-space:nowrap;flex-shrink:0;}
+.s1 .sec-badge{background:var(--s1);color:white;}
+.s2 .sec-badge{background:var(--s2);color:white;}
+.s3 .sec-badge{background:var(--s3);color:white;}
+.s4 .sec-badge{background:var(--s4);color:white;}
+.s5 .sec-badge{background:var(--s5);color:white;}
+.sec-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;}
+.s1 .sec-title{color:var(--s1);}
+.s2 .sec-title{color:var(--s2);}
+.s3 .sec-title{color:var(--s3);}
+.s4 .sec-title{color:var(--s4);}
+.s5 .sec-title{color:var(--s5);}
+
+/* TOPIC & CONTENT TYPOGRAPHY */
+.topic{margin-top:48px;padding-top:48px;border-top:1px solid var(--border);}
+.topic:first-of-type{border-top:none;}
+.topic-header{display:flex;align-items:flex-start;gap:16px;margin-bottom:24px;}
+.topic-num{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;padding:3px 10px;border-radius:4px;margin-top:4px;flex-shrink:0;}
+.s1 .topic-num{background:var(--s1-lt);color:var(--s1);}
+.s2 .topic-num{background:var(--s2-lt);color:var(--s2);}
+.s3 .topic-num{background:var(--s3-lt);color:var(--s3);}
+.s4 .topic-num{background:var(--s4-lt);color:var(--s4);}
+.s5 .topic-num{background:var(--s5-lt);color:var(--s5);}
+
+.topic h2{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;line-height:1.2;}
+.s1 .topic h2{color:var(--s1);}
+.s2 .topic h2{color:var(--s2);}
+.s3 .topic h2{color:var(--s3);}
+.s4 .topic h2{color:var(--s4);}
+.s5 .topic h2{color:var(--s5);}
+
+.topic h3{font-family:'Playfair Display',serif;font-size:17px;font-weight:600;color:var(--muted);margin:26px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--border);}
+.topic h4{font-size:13px;font-weight:600;color:var(--muted);letter-spacing:0.06em;text-transform:uppercase;margin:18px 0 8px;font-family:'JetBrains Mono',monospace;}
+.topic ul, .topic ol{margin:8px 0 14px 20px;color:var(--text);}
+.topic li{margin-bottom:6px;line-height:1.65;}
+.topic li::marker{color:var(--accent2);}
+.topic strong{color:var(--text);font-weight:600;}
+
+/* TABLES */
+.table-wrap{overflow-x:auto;margin:16px 0 20px;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.06);border:1px solid var(--border);}
+table{width:100%;border-collapse:collapse;font-size:13.5px;background:var(--white);}
+thead tr{background:var(--s1);}
+thead th{color:white;padding:10px 14px;text-align:left;font-family:'Source Serif 4',serif;font-weight:600;font-size:13px;}
+tbody tr:nth-child(even){background:var(--bg2);}
+tbody tr:hover{background:var(--s1-lt);transition:background 0.15s;}
+tbody td{padding:9px 14px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.5;}
+[data-theme="dark"] table { background: var(--bg2); }
+.s2-tbl thead tr{background:var(--s2);}
+.s3-tbl thead tr{background:var(--s3);}
+.s4-tbl thead tr{background:var(--s4);}
+.s5-tbl thead tr{background:var(--s5);}
+
+/* CALLOUTS */
+.callout{margin:18px 0;padding:14px 18px;border-radius:0 8px 8px 0;border-left:4px solid;font-size:14px;line-height:1.65;}
+.callout .label{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;display:block;margin-bottom:4px;}
+.callout.pearl{background:var(--gold-lt);border-color:var(--gold);color:var(--text);}
+.callout.pearl .label{color:var(--gold);}
+.callout.warn{background:var(--red-lt);border-color:var(--red);color:var(--text);}
+.callout.warn .label{color:var(--red);}
+.callout.clin{background:var(--s1-lt);border-color:var(--s1);color:var(--text);}
+.callout.clin .label{color:var(--s1);}
+.callout.exam{background:var(--s4-lt);border-color:var(--s4);color:var(--text);}
+.callout.exam .label{color:var(--s4);}
+[data-theme="dark"] .callout.pearl { background: rgba(184, 146, 42, 0.08); }
+[data-theme="dark"] .callout.warn { background: rgba(185, 28, 28, 0.08); }
+
+#top-btn{position:fixed;bottom:24px;right:24px;width:44px;height:44px;background:var(--primary);color:white;border:none;border-radius:50%;font-size:18px;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,0.3);z-index:1100;opacity:0;pointer-events:none;transition:all 0.3s;display:flex;align-items:center;justify-content:center;}
+#top-btn.show{opacity:1;pointer-events:auto;}
+#top-btn:hover{background:var(--accent);transform:translateY(-3px);}
+
+.rapid-ref{margin-top:60px;padding:36px;background:var(--primary-dk);color:white;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,0.15);}
+.rapid-ref h3{font-family:'Playfair Display',serif;font-size:24px;margin-bottom:18px;color:#fff;border-bottom:1px solid rgba(255,255,255,0.15);padding-bottom:10px;}
+.rapid-ref table{background:transparent;}
+.rapid-ref thead tr{background:rgba(255,255,255,0.08);}
+.rapid-ref thead th{color:#FAF5F0;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;}
+.rapid-ref tbody tr:nth-child(even){background:rgba(255,255,255,0.03);}
+.rapid-ref tbody tr:hover{background:rgba(255,255,255,0.07);}
+.rapid-ref tbody td{border-bottom:1px solid rgba(255,255,255,0.08);color:rgba(255,255,255,0.85);font-size:13px;}
+.rapid-ref strong{color:#fff;}
+
+@media(max-width:900px) {
+  .content-wrap { padding: 0 20px 60px; }
+  #hero { padding: 80px 20px 40px; }
+  #hero h1 { font-size: 30px; }
+  #sidebar-toggle { top: 64px; left: 16px; }
+}
+@media print {
+  #sidebar-toggle, #sidebar-overlay, #sidebar, #top-btn, #progress-bar, #mainNav { display: none !important; }
+  .topic { page-break-inside: avoid; }
+  .sec-header { page-break-before: always; }
+}
+</style>
+<link rel="icon" type="image/png" href="../../assets/images/Surgical_Insight_Hub_Logo.png">
+</head>
+<body>
+
+<!-- Standardized SIH Navbar -->
+<nav class="nav" id="mainNav">
+  <div class="nav-left">
+    <a href="../../index.html" class="nav-pill">
+      <div class="nav-logo-img">
+        <img src="../../assets/images/Surgical_Insight_Hub_Logo.png" alt="SIH Logo">
+      </div>
+      <div>
+        <div class="nav-brand-text">Surgical Insight Hub</div>
+        <div class="nav-brand-sub">The Residency Journal</div>
+      </div>
+    </a>
+  </div>
+  <div class="nav-links-pill">
+    <a href="../../index.html">Home</a>
+    <a href="../../notes.html" class="active">Notes</a>
+    <a href="../operative_approach.html">Playbook</a>
+    <a href="../../arena.html?v=4.0.0">MCQ Arena</a>
+    <a href="../../podcast.html">Podcast</a>
+    <a href="../../surgery-talk.html">Surgery Talk</a>
+    <a href="../../about.html">About</a>
+  </div>
+  <div class="nav-right">
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+      <svg id="moonIcon" viewBox="0 0 24 24" width="18" height="18"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      <svg id="sunIcon" style="display:none;" viewBox="0 0 24 24" width="18" height="18"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+    </button>
+    <a href="https://t.me/sugicalInsightHub" target="_blank" class="nav-tg-btn" title="Join Telegram">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="#f0d080"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.89 8.22l-1.97 9.28c-.15.66-.54.82-1.08.51l-3-2.21-1.45 1.39c-.16.16-.3.3-.61.3l.21-3.05 5.56-5.02c.24-.21-.05-.33-.37-.12l-6.87 4.33-2.96-.92c-.64-.2-.66-.64.14-.95l11.57-4.46c.54-.19 1.01.13.83.94z"/></svg>
+    </a>
+    <a href="../../arena.html?v=4.0.0" class="nav-btn arena-btn">MCQ Arena</a>
+    <button class="mob-nav-toggle" onclick="openMobNav()" aria-label="Menu">
+      <div class="hamburger"><span></span><span></span><span></span></div>
+    </button>
+  </div>
+</nav>
+
+<div class="mob-nav-overlay" id="mobNavOverlay" onclick="closeMobNav()"></div>
+<div class="mob-nav-sheet" id="mobNavSheet">
+  <div class="mob-nav-handle"></div>
+  <a href="../../index.html" onclick="closeMobNav()">Home</a>
+  <a href="../../notes.html" onclick="closeMobNav()">Notes</a>
+  <a href="../operative_approach.html" onclick="closeMobNav()">Playbook</a>
+  <a href="../../podcast.html" onclick="closeMobNav()">Podcast</a>
+  <a href="../../surgery-talk.html" onclick="closeMobNav()">Surgery Talk</a>
+  <a href="../../arena.html" onclick="closeMobNav()">MCQ Arena</a>
+  <a href="../../about.html" onclick="closeMobNav()">About</a>
+  <a href="https://t.me/sugicalInsightHub" target="_blank" rel="noopener" onclick="closeMobNav()" style="color: var(--brand-gold); font-weight: 800;">Join Telegram Community</a>
+  <a href="https://www.linkedin.com/company/surgical-insight-hub" target="_blank" rel="noopener" onclick="closeMobNav()" style="color: var(--brand-gold); font-weight: 800;">LinkedIn Community</a>
+</div>
+
+<div id="progress-bar"></div>
+
+<!-- SIDEBAR TRIGGER -->
+<button id="sidebar-toggle" onclick="toggleSidebar()">
+  <span>📜</span> Table of Contents
+</button>
+<div id="sidebar-overlay" onclick="closeSidebar()"></div>
+
+<!-- SLIDE-OVER SIDEBAR -->
+<aside id="sidebar">
+  <div id="sidebar-header">
+    <div class="logo">Surgical Insight Hub</div>
+    <div class="sub">Hiatal Hernia Monograph</div>
+  </div>
+  <div id="sidebar-search">
+    <input type="text" placeholder="Search sections..." oninput="filterNav(this.value)">
+  </div>
+  <nav id="sidebar-nav">
+    <div class="vol-label">Pillar 1: Definition &amp; Anatomy</div>
+    <a class="nav-item" href="#definition"><span class="num">1.1</span>Definition &amp; Classification</a>
+    <a class="nav-item" href="#anatomy"><span class="num">1.2</span>Biliary/Esophageal Hiatus Anatomy</a>
+    
+    <div class="vol-label">Pillar 2: Epidemiology &amp; Pathophysiology</div>
+    <a class="nav-item" href="#epidemiology"><span class="num">2.1</span>Epidemiology &amp; Incidence</a>
+    <a class="nav-item" href="#etiology"><span class="num">2.2</span>Etiology &amp; Risk Factors</a>
+    <a class="nav-item" href="#pathophysiology"><span class="num">2.3</span>Pathophysiological Mechanisms</a>
+    
+    <div class="vol-label">Pillar 3: Diagnosis &amp; Staging</div>
+    <a class="nav-item" href="#pathology"><span class="num">3.1</span>Pathological Findings</a>
+    <a class="nav-item" href="#presentation"><span class="num">3.2</span>Clinical Presentation</a>
+    <a class="nav-item" href="#investigations"><span class="num">3.3</span>Diagnostic Investigations</a>
+    <a class="nav-item" href="#diagnosis"><span class="num">3.4</span>Diagnostic Criteria &amp; Staging</a>
+    <a class="nav-item" href="#differential"><span class="num">3.5</span>Differential Diagnosis</a>
+    
+    <div class="vol-label">Pillar 4: Management &amp; Open Repair</div>
+    <a class="nav-item" href="#management"><span class="num">4.1</span>Management &amp; Pre-op Prep</a>
+    <a class="nav-item" href="#operative"><span class="num">4.2</span>Operative Steps &amp; Open Techniques</a>
+    
+    <div class="vol-label">Pillar 5: Post-op &amp; Complications</div>
+    <a class="nav-item" href="#postoperative"><span class="num">5.1</span>Post-operative Care Protocol</a>
+    <a class="nav-item" href="#complications"><span class="num">5.2</span>Complications &amp; Management</a>
+    <a class="nav-item" href="#prognosis"><span class="num">5.3</span>Prognosis &amp; Outcomes</a>
+
+    <div class="vol-label">Board Review</div>
+    <a class="nav-item" href="#board-review-section"><span class="num">6.1</span>ABSITE Board Review</a>
+  </nav>
+</aside>
+
+<!-- MAIN CONTENT -->
+<main id="main">
+<header id="hero">
+  <div class="eyebrow">Foregut Surgery · Diaphragmatic Hernias</div>
+  <h1>Hiatal Hernia Pathology &amp; Surgical Management</h1>
+  <p class="subtitle">Comprehensive study guide focusing on sliding vs. paraesophageal hernias, open abdominal repair steps, complications management, and resource-limited settings.</p>
+  <div class="badges">
+    <span class="badge">Foregut Core</span>
+    <span class="badge">Open Surgery Focus</span>
+    <span class="badge">5 Pillars</span>
+  </div>
+</header>
+
+<div class="content-wrap">
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- PILLAR 1: DEFINITION & ANATOMY ════════════════════════════ -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<div class="sec-header s1">
+  <span class="sec-badge">PILLAR 1</span>
+  <h2 class="sec-title">Definition, Anatomical Staging &amp; Hiatal Anatomy</h2>
+</div>
+
+<section class="topic s1-topic" id="definition">
+  <div class="topic-header">
+    <span class="topic-num">1.1</span>
+    <h2>Definition &amp; Classification</h2>
+  </div>
+  
+  <p>A <strong>hiatal hernia</strong> is the protrusion of abdominal contents, most commonly the stomach, into the thoracic cavity through the esophageal hiatus of the diaphragm. It is the most common abnormality found on upper GI imaging and endoscopy.</p>
+
+  <h3>Anatomic Classification</h3>
+  <ul>
+    <li><strong>Type I (Sliding Hiatal Hernia):</strong> Represents 95% of all hiatal hernias. The gastroesophageal junction (GEJ) migrates above the diaphragm while stomach alignment remains normal. This type is strongly associated with GERD due to the disruption of the lower esophageal sphincter (LES) mechanism.</li>
+    <li><strong>Type II (Pure Paraesophageal Hernia):</strong> Represents 5% of hernias. The GEJ remains in its normal position below the diaphragm, but the gastric fundus herniates through the hiatus alongside the esophagus. A true hernia sac is present. It rarely causes reflux but carries a significant risk of obstruction, volvulus, and strangulation.</li>
+    <li><strong>Type III (Mixed Hiatal Hernia):</strong> The most common large paraesophageal hernia. It combines features of both Types I and II, with both the GEJ and the fundus migrating above the diaphragm.</li>
+    <li><strong>Type IV (Complex Hiatal Hernia):</strong> Characterized by the herniation of other abdominal organs (colon, omentum, spleen, or small bowel) into the chest cavity in addition to the stomach.</li>
+  </ul>
+
+  <div class="callout clin">
+    <span class="label">Nomenclature Notes</span>
+    <ul>
+      <li><strong>Sliding Hernia</strong> = Type I hiatal hernia.</li>
+      <li><strong>Paraesophageal Hernia</strong> = Types II, III, and IV collectively (pure Type II is exceptionally rare).</li>
+      <li><strong>Giant Paraesophageal Hernia</strong> = Defined as &gt;30% of the stomach herniated or &gt;5 cm of thoracic stomach.</li>
+    </ul>
+  </div>
+
+  <div class="callout warn">
+    <span class="label">Clinical Pearl</span>
+    Type I hernias primarily cause chemical/reflux symptoms (GERD). In contrast, Types II–IV hernias present with mechanical symptoms (chest pain, dysphagia, early satiety, and iron-deficiency anemia from Cameron ulcers) and carry a life-threatening risk of gastric volvulus or strangulation.
+  </div>
+</section>
+
+<section class="topic s1-topic" id="anatomy">
+  <div class="topic-header">
+    <span class="topic-num">1.2</span>
+    <h2>Anatomy of the Esophageal Hiatus &amp; Relations</h2>
+  </div>
+
+  <h3>Surgical Landmarks</h3>
+  <ul>
+    <li><strong>Esophageal Hiatus:</strong> Formed predominantly by the right crus of the diaphragm, crossing at the T10–T11 level. The normal diameter is approximately 1.5–2 cm. It transmits the esophagus, the anterior and posterior vagus nerves, and the phrenoesophageal membrane.</li>
+    <li><strong>Phrenoesophageal Membrane:</strong> A circumferential connective tissue layer connecting the esophagus to the diaphragmatic hiatus, helping to anchor the GEJ within the abdomen. Weakening or attenuation of this membrane is the pathophysiological basis of hiatal hernias.</li>
+    <li><strong>Lower Esophageal Sphincter (LES):</strong> A physiologic high-pressure zone (10–30 mmHg) comprised of intrinsic esophageal smooth muscle reinforced by the crural pinchcock. A minimum of 1.5–2 cm of intra-abdominal esophageal length is critical to maintaining the antireflux barrier.</li>
+    <li><strong>Vagus Nerves:</strong> The anterior and posterior vagal trunks run along the esophageal wall and must be identified and preserved during mediastinal dissection. Bilateral injury leads to gastric stasis and gastroparesis.</li>
+    <li><strong>Ligaments &amp; Vessels:</strong> Gastrosplenic ligament (contains short gastric arteries), gastrocolic ligament, and gastrophrenic ligament. Note that an aberrant left hepatic artery arising from the left gastric artery (found in 25% of cases) may cross the hiatus and must be protected.</li>
+  </ul>
+
+  <div class="callout pearl">
+    <span class="label">Attending's Anatomy Rule</span>
+    The phrenoesophageal membrane is the key structure for a durable repair. During surgery, it must be dissected and excised circumferentially off the crural margins to allow complete reduction of the hernia sac and mobilize sufficient intra-abdominal esophageal length.
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- PILLAR 2: EPIDEMIOLOGY & PATHOPHYSIOLOGY ══════════════════ -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<div class="sec-header s2">
+  <span class="sec-badge">PILLAR 2</span>
+  <h2 class="sec-title">Epidemiology, Etiology &amp; Pathophysiology</h2>
+</div>
+
+<section class="topic s2-topic" id="epidemiology">
+  <div class="topic-header">
+    <span class="topic-num">2.1</span>
+    <h2>Epidemiology &amp; Incidence</h2>
+  </div>
+  
+  <ul>
+    <li><strong>Prevalence:</strong> Extremely common; radiographic abnormalities are found in 10–50% of adults, and endoscopic findings are noted in 20–60%. Autopsy series show hiatal hernias in up to 60% of the elderly population.</li>
+    <li><strong>Demographics:</strong> Strongly increases with age (most symptomatic paraesophageal hernias present in the 60s–70s). Female predominance for paraesophageal hernias (1.5:1 ratio). Obesity (BMI &gt;30) increases the risk of developing a hiatal hernia by 2–3 fold.</li>
+    <li><strong>Morbidity Metrics:</strong>
+      <ul>
+        <li>Approximately 10–20% of patients with Type I hernias suffer from symptomatic GERD.</li>
+        <li>More than 80% of patients with paraesophageal hernias become symptomatic by age 70.</li>
+        <li>The risk of acute gastric strangulation is estimated at 1–2% per year; emergency repair carries a high mortality rate of 10–30%, compared to &lt;1% for elective cases.</li>
+        <li>Cameron ulcers are identified in 5–10% of large hernias and are a major source of chronic iron-deficiency anemia.</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+
+<section class="topic s2-topic" id="etiology">
+  <div class="topic-header">
+    <span class="topic-num">2.2</span>
+    <h2>Etiology &amp; Risk Factors</h2>
+  </div>
+
+  <ul>
+    <li><strong>Primary (Idiopathic):</strong> Age-related degeneration and weakening of the elastic tissue in the phrenoesophageal membrane.</li>
+    <li><strong>Secondary (Acquired):</strong> Conditions that chronically increase intra-abdominal pressure:
+      <ul>
+        <li>Obesity (BMI &gt;30), chronic cough (COPD, smoking, asthma), chronic constipation, ascites, pregnancy, and repeated heavy lifting.</li>
+        <li>Prior upper GI or bariatric surgery (disrupting the crural fibers and phrenoesophageal attachments).</li>
+        <li>Connective tissue disorders (e.g., Marfan syndrome, Ehlers-Danlos syndrome, scleroderma).</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+
+<section class="topic s2-topic" id="pathophysiology">
+  <div class="topic-header">
+    <span class="topic-num">2.3</span>
+    <h2>Pathophysiological Mechanisms</h2>
+  </div>
+
+  <h3>Type I (Sliding Hernia) Pathophysiology</h3>
+  <p>Chronic laxity of the phrenoesophageal membrane allows the GEJ to slide upward into the low-pressure thoracic cavity. This displacement eliminates the acute angle of His (which forms a natural "flutter valve") and separates the LES from the crural diaphragm. The loss of crural reinforcement, combined with decreased LES tone, permits gastric acid reflux. Prolonged acid exposure impairs esophageal clearance, leading to esophagitis, strictures, Barrett's esophagus, and adenocarcinoma.</p>
+
+  <h3>Types II–IV (Paraesophageal Hernia) Pathophysiology</h3>
+  <p>A focal defect in the anterior or lateral aspect of the phrenoesophageal membrane allows the gastric fundus to herniate alongside the esophagus while the GEJ remains anchored to the retroperitoneum. The herniating stomach pulls a peritoneal sac with it. Over time, the stomach can rotate within the mediastinum. Rotation along its longitudinal axis is called **organoaxial volvulus** (80% of cases), while rotation along its transverse mesenteric axis is called **mesenteroaxial volvulus** (20%). Volvulus can lead to gastric outlet obstruction, ischemia, necrosis, and perforation.</p>
+
+  <div class="callout clin">
+    <span class="label">Cameron Ulcer Pathogenesis</span>
+    Cameron ulcers are linear mucosal erosions located on the gastric folds at the level of the diaphragmatic crura. They are caused by mechanical trauma (friction from the stomach sliding back and forth during respiration) combined with local ischemia from diaphragmatic compression. They lead to chronic, low-grade blood loss and severe iron-deficiency anemia.
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- PILLAR 3: DIAGNOSIS & STAGING ═════════════════════════════ -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<div class="sec-header s3">
+  <span class="sec-badge">PILLAR 3</span>
+  <h2 class="sec-title">Pathology, Presentation &amp; Diagnostic Workup</h2>
+</div>
+
+<section class="topic s3-topic" id="pathology">
+  <div class="topic-header">
+    <span class="topic-num">3.1</span>
+    <h2>Pathological Findings</h2>
+  </div>
+
+  <ul>
+    <li><strong>Macroscopic:</strong> In Type I hernias, the GEJ sits &gt;2 cm above the diaphragmatic hiatus with gastric mucosal folds crossing the diaphragm. In paraesophageal hernias, a large peritoneal sac contains the gastric fundus (and potentially colon/omentum) within the posterior mediastinum, often with linear Cameron ulcers.</li>
+    <li><strong>Microscopic (Histopathology):</strong>
+      <ul>
+        <li><strong>Hernia Sac:</strong> Composed of mesothelial cells lining fibrolamellar connective tissue (peritoneum).</li>
+        <li><strong>Esophagitis:</strong> Basal cell hyperplasia, elongation of lamina propria papillae, and intraepithelial neutrophils or eosinophils.</li>
+        <li><strong>Barrett's Esophagus:</strong> Intestinal metaplasia with specialized columnar epithelium containing acid-mucin producing goblet cells.</li>
+        <li><strong>Cameron Ulcer:</strong> Represents mucosal denudation with underlying granulation tissue, fibrinoid necrosis, and inflammatory cell infiltration.</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+
+<section class="topic s3-topic" id="presentation">
+  <div class="topic-header">
+    <span class="topic-num">3.2</span>
+    <h2>Clinical Presentation</h2>
+  </div>
+
+  <h3>Type I (Sliding Hernia) Presentation</h3>
+  <ul>
+    <li><strong>GERD Symptoms:</strong> Retrosternal burning pain (heartburn) exacerbated by meals or lying flat, and acid regurgitation.</li>
+    <li><strong>Extraesophageal GERD:</strong> Chronic cough, hoarseness (laryngopharyngeal reflux), asthma-like bronchospasm, and non-cardiac chest pain.</li>
+  </ul>
+
+  <h3>Types II–IV (Paraesophageal Hernia) Presentation</h3>
+  <ul>
+    <li><strong>Mechanical Symptoms:</strong> Dysphagia for solids, early satiety, and postprandial retrosternal chest pressure/pain (often radiating to the back, mimicking angina).</li>
+    <li><strong>Cardiopulmonary:</strong> Dyspnea and palpitations from direct compression of the lungs and left atrium by the intrathoracic stomach.</li>
+    <li><strong>Anemia:</strong> Weakness and fatigue due to chronic iron-deficiency anemia from bleeding Cameron ulcers.</li>
+  </ul>
+
+  <div class="callout warn">
+    <span class="label">Emergency Alert: Gastric Volvulus</span>
+    Acute gastric volvulus represents a surgical emergency. It presents as **Borchardt's Triad**:
+    <ol>
+      <li>Severe, sudden-onset epigastric or chest pain.</li>
+      <li>Violent retching without the ability to vomit.</li>
+      <li>Inability to pass a nasogastric (NG) tube.</li>
+    </ol>
+    If these signs are present, proceed immediately to the operating room to prevent gastric necrosis and perforation.
+  </div>
+</section>
+
+<section class="topic s3-topic" id="investigations">
+  <div class="topic-header">
+    <span class="topic-num">3.3</span>
+    <h2>Diagnostic Investigations</h2>
+  </div>
+
+  <h3>Imaging Workup</h3>
+  <ul>
+    <li><strong>Chest X-ray:</strong> Often shows a retrocardiac air-fluid level within the mediastinum.</li>
+    <li><strong>Barium Swallow (Esophagram):</strong> The gold standard for anatomical evaluation. Defines the type of hernia, the position of the GEJ, the size of the hiatal defect, and the presence of gastric rotation/volvulus.</li>
+    <li><strong>CT Scan (Chest/Abdomen):</strong> Useful to evaluate large paraesophageal hernias, identify herniated organs (Type IV), and check for signs of ischemia (e.g., pneumatosis or portal venous gas) in acute presentations.</li>
+  </ul>
+
+  <h3>Endoscopy &amp; Physiologic Testing</h3>
+  <ul>
+    <li><strong>EGD (Esophagogastroduodenoscopy):</strong> Mandatory before any elective surgery. Visualizes the GEJ relative to the diaphragmatic pinch, identifies esophagitis (graded via Los Angeles classification), and detects Cameron ulcers, Barrett's esophagus, or masses.</li>
+    <li><strong>Esophageal Manometry:</strong> Essential to evaluate esophageal peristaltic function. Guides the choice of antireflux procedure (e.g., complete 360&deg; Nissen wrap vs. partial 270&deg; Toupet wrap for patients with ineffective esophageal motility).</li>
+    <li><strong>24-Hour pH / pH-Impedance Testing:</strong> Confirms pathologic acid exposure (DeMeester score &gt;14.7) in patients with Type I hernias who have atypical symptoms or are refractory to medical therapy.</li>
+  </ul>
+</section>
+
+<section class="topic s3-topic" id="diagnosis">
+  <div class="topic-header">
+    <span class="topic-num">3.4</span>
+    <h2>Diagnostic Criteria &amp; Staging</h2>
+  </div>
+
+  <h3>Hernia Size Classification</h3>
+  <ul>
+    <li><strong>Small:</strong> &lt;3 cm of stomach herniated above the hiatus (mostly Type I sliding).</li>
+    <li><strong>Moderate:</strong> 3–5 cm herniated (usually Type III mixed).</li>
+    <li><strong>Large:</strong> &gt;5 cm or &gt;30% of the stomach herniated into the chest.</li>
+    <li><strong>Giant:</strong> &gt;50% of the stomach or the entire stomach herniated ("upside-down stomach").</li>
+  </ul>
+</section>
+
+<section class="topic s3-topic" id="differential">
+  <div class="topic-header">
+    <span class="topic-num">3.5</span>
+    <h2>Differential Diagnosis</h2>
+  </div>
+
+  <div class="table-wrap">
+    <table class="s3-tbl">
+      <thead>
+        <tr>
+          <th>Condition</th>
+          <th>Key Differentiating Features</th>
+          <th>Diagnostic Test</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Coronary Artery Disease</strong></td>
+          <td>Exertional chest pain, relieved by nitroglycerin.</td>
+          <td>ECG, Troponins, Stress Test.</td>
+        </tr>
+        <tr>
+          <td><strong>Achalasia</strong></td>
+          <td>Progressive dysphagia for both solids and liquids; regurgitation of undigested food.</td>
+          <td>Manometry (absent peristalsis, high LES pressure) and Barium Swallow ("bird's beak").</td>
+        </tr>
+        <tr>
+          <td><strong>Esophageal Carcinoma</strong></td>
+          <td>Rapidly progressive dysphagia first for solids, then liquids; significant weight loss.</td>
+          <td>EGD with Biopsy.</td>
+        </tr>
+        <tr>
+          <td><strong>Bochdalek Hernia</strong></td>
+          <td>Posterolateral diaphragmatic defect (usually left-sided); rarely involves the esophageal hiatus.</td>
+          <td>CT Scan.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- PILLAR 4: MANAGEMENT & OPEN REPAIR ════════════════════════ -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<div class="sec-header s4">
+  <span class="sec-badge">PILLAR 4</span>
+  <h2 class="sec-title">Decision Framework &amp; Open Surgical Repair</h2>
+</div>
+
+<section class="topic s4-topic" id="management">
+  <div class="topic-header">
+    <span class="topic-num">4.1</span>
+    <h2>Management &amp; Preoperative Preparation</h2>
+  </div>
+
+  <h3>Decision Framework</h3>
+  <ul>
+    <li><strong>Asymptomatic Type I Hernias:</strong> No intervention is required.</li>
+    <li><strong>Symptomatic Type I (GERD):</strong> Managed first-line with lifestyle modifications and proton pump inhibitors (PPIs). Surgery is indicated for PPI failure, large-volume regurgitation, or severe complications (strictures, dysplastic Barrett's).</li>
+    <li><strong>Types II–IV (Paraesophageal):</strong> Elective repair is recommended for symptomatic patients, or patients with large/giant hernias (&gt;5 cm or &gt;30% stomach) to prevent mechanical complications. Age alone is not a contraindication, but frailty must be assessed.</li>
+  </ul>
+
+  <h3>Preoperative Optimization</h3>
+  <ul>
+    <li><strong>Risk Stratification:</strong> Utilize the **Revised Cardiac Risk Index (RCRI)** and the **mFI-5 Frailty Index**. Obtain cardiology clearance for patients with Class &ge;2 risk or poor functional status (&lt;4 METs).</li>
+    <li><strong>Pulmonary Prep:</strong> Patients with large hernias compressing the lungs are at risk of post-op respiratory failure. Maximize COPD therapy, encourage smoking cessation for &ge;4 weeks, and initiate pre-op incentive spirometry training.</li>
+    <li><strong>DVT &amp; Antibiotic Prophylaxis:</strong> Administer Cefazolin 2g IV (3g if &gt;120 kg) within 60 minutes of incision. Initiate Caprini-guided DVT prophylaxis with Sequential Compression Devices (SCDs) and low-molecular-weight heparin (Enoxaparin 40 mg SC daily).</li>
+  </ul>
+</section>
+
+<section class="topic s4-topic" id="operative">
+  <div class="topic-header">
+    <span class="topic-num">4.2</span>
+    <h2>Operative Techniques: Open Abdominal Hiatal Hernia Repair</h2>
+  </div>
+
+  <p>While laparoscopic repair is the standard in well-equipped centers, **open abdominal repair** remains the primary approach in low-resource settings, in emergencies (strangulated volvulus), for giant hernias, and in reoperative cases.</p>
+
+  <h3>Step-by-Step Surgical Workflow</h3>
+
+  <h4>1. Incision and Exposure</h4>
+  <p>Place the patient in the supine position. Tilting the table into 15–20&deg; reverse Trendelenburg improves exposure of the upper abdomen. Perform an upper midline laparotomy from the xiphoid process to approximately 3–4 cm below the umbilicus.</p>
+<pre style="font-family: 'JetBrains Mono', monospace; line-height: 1.2; background: var(--bg2); padding: 14px; border-radius: 6px; border: 1px solid var(--border); overflow-x: auto; margin: 14px 0;">
+    Xiphoid
+       |
+       | (midline incision)
+       |
+       |
+    Umbilicus
+</pre>
+  <p>Place a Balfour retractor with deep blades and use a Harrington or Deaver retractor to retract the left lobe of the liver superiorly and to the right.</p>
+
+  <h4>2. Hernia Reduction and Sac Identification</h4>
+  <p>Inspect the hiatus. The stomach and GEJ will be displaced into the thoracic cavity. Gently pull the stomach downward to reduce it back into the abdomen. If the stomach is incarcerated, carefully incise the hernia sac at the margin of the hiatus to release the constriction.</p>
+<pre style="font-family: 'JetBrains Mono', monospace; line-height: 1.2; background: var(--bg2); padding: 14px; border-radius: 6px; border: 1px solid var(--border); overflow-x: auto; margin: 14px 0;">
+    Diaphragm
+       |\
+       | \   Hernia sac (filled with stomach)
+       |  \
+       |   \
+    Esophagus ----\ 
+                   \
+                    \___ Stomach (below)
+</pre>
+
+  <h4>3. Complete Excision of the Hernia Sac</h4>
+  <p>Grasp the hernia sac with Babcock or Allis clamps. Using Metzenbaum scissors and blunt dissecting sponges (Kittners), dissect the sac circumferentially off the mediastinal pleura, pericardium, and aorta. **Excise the sac completely** to prevent late recurrence.</p>
+<pre style="font-family: 'JetBrains Mono', monospace; line-height: 1.2; background: var(--bg2); padding: 14px; border-radius: 6px; border: 1px solid var(--border); overflow-x: auto; margin: 14px 0;">
+    Pleura (left)      Pericardium (anterior)
+         \                /
+          \              /
+           \   SAC      /
+            \         /
+             \       /
+           Esophagus (posterior)
+</pre>
+
+  <h4>4. Esophageal Mobilization</h4>
+  <p>Mobilize the distal esophagus 5–6 cm into the posterior mediastinum using blunt finger dissection. Identify and preserve the **anterior and posterior vagus nerves**. You must achieve at least **3 cm of tension-free intra-abdominal esophagus** below the diaphragmatic hiatus.</p>
+<pre style="font-family: 'JetBrains Mono', monospace; line-height: 1.2; background: var(--bg2); padding: 14px; border-radius: 6px; border: 1px solid var(--border); overflow-x: auto; margin: 14px 0;">
+    Diaphragm
+         |
+         |   (3 cm of esophagus below diaphragm)
+         |
+    GEJ --------
+         |
+       Stomach
+</pre>
+
+  <h4>5. Crural Closure</h4>
+  <p>Identify the right and left diaphragmatic crura. Close the defect posterior to the esophagus using interrupted, non-absorbable heavy sutures (e.g., 0 or 2-0 Ethibond or Silk). Re-approximate the crural pillars posterior to the esophagus, leaving a 1 cm gap (enough to pass a Kelly clamp alongside the esophagus to prevent postoperative dysphagia).</p>
+<pre style="font-family: 'JetBrains Mono', monospace; line-height: 1.2; background: var(--bg2); padding: 14px; border-radius: 6px; border: 1px solid var(--border); overflow-x: auto; margin: 14px 0;">
+    Right crus        Left crus
+        \             /
+         \           /
+          \         /
+           \   O   /   (sutures placed here, posterior to esophagus)
+            \     /
+             \   /
+           Esophagus (anterior)
+</pre>
+
+  <h4>6. Fundoplication (Nissen 360&deg; Wrap)</h4>
+  <ul>
+    <li><strong>Mobilize the Fundus:</strong> Divide the short gastric vessels along the upper third of the greater curvature using suture ligation (2-0 Silk ties) to ensure a tension-free wrap.</li>
+    <li><strong>Create the Window:</strong> Pass a right-angled clamp behind the esophagus. Grasp the gastric fundus and pull it from left to right behind the esophagus (the "shoeshine" test).</li>
+  </ul>
+<pre style="font-family: 'JetBrains Mono', monospace; line-height: 1.2; background: var(--bg2); padding: 14px; border-radius: 6px; border: 1px solid var(--border); overflow-x: auto; margin: 14px 0;">
+    Esophagus
+        |\
+        | \  (window behind esophagus)
+        |  \
+        |   \
+    Stomach  Fundus (pulled through)
+</pre>
+  <ul>
+    <li><strong>Calibrate and Wrap:</strong> Have the anesthesiologist pass a large 56–60 Fr bougie to calibrate the esophagus. Create a 2–3 cm wrap around the distal esophagus using three interrupted 2-0 non-absorbable sutures. Ensure each suture takes a bite of the esophageal muscle wall to prevent wrap slippage.</li>
+  </ul>
+<pre style="font-family: 'JetBrains Mono', monospace; line-height: 1.2; background: var(--bg2); padding: 14px; border-radius: 6px; border: 1px solid var(--border); overflow-x: auto; margin: 14px 0;">
+        Esophagus (center)
+           /|\
+          / | \
+         /  |  \
+        /   |   \
+    Fundus  |   Fundus
+        \   |   /
+         \  |  /
+          \ | /
+         Wrap sutures (3)
+</pre>
+
+  <h4>7. Inspection &amp; Closure</h4>
+  <p>Remove the bougie. Check for bleeding. Fill the hiatus with saline and perform a lung inflation test to check for pneumothorax (pleural tear). If bubbles appear, oversew the tear or place a chest tube. Close the abdominal fascia with looped PDS suture.</p>
+<pre style="font-family: 'JetBrains Mono', monospace; line-height: 1.2; background: var(--bg2); padding: 14px; border-radius: 6px; border: 1px solid var(--border); overflow-x: auto; margin: 14px 0;">
+    Diaphragm
+        |\
+        | \  Crural sutures
+        |  \
+        |   \
+    Esophagus   (3 cm below diaphragm)
+        |
+        |   Wrap (Nissen)
+        |
+      Stomach
+</pre>
+
+  <h3>Collis Gastroplasty (For Short Esophagus)</h3>
+  <p>If the esophagus is shortened and cannot achieve 3 cm of intra-abdominal length despite maximal mobilization, a Collis gastroplasty is performed. Create a gastric neo-esophagus by firing a linear GIA stapler parallel to a 56–60 Fr bougie down the greater curvature, lengthening the esophagus before performing the fundoplication over the neo-esophagus.</p>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- PILLAR 5: POST-OP & COMPLICATIONS ═════════════════════════ -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<div class="sec-header s5">
+  <span class="sec-badge">PILLAR 5</span>
+  <h2 class="sec-title">Post-operative Care, Complications &amp; Outcomes</h2>
+</div>
+
+<section class="topic s5-topic" id="postoperative">
+  <div class="topic-header">
+    <span class="topic-num">5.1</span>
+    <h2>Post-operative Care Protocol</h2>
+  </div>
+
+  <ul>
+    <li><strong>Nasogastric (NG) Tube:</strong> In open abdominal repairs, leave the NG tube on free drainage for 24–48 hours until bowel function returns.</li>
+    <li><strong>Diet Progression:</strong> Keep the patient NPO while the NG tube is in place. After removal, progress from clear liquids to full liquids. Discharge the patient on a soft/pureed diet, which must be maintained for 2–3 weeks to allow local edema to subside.</li>
+    <li><strong>Activity Restrictions:</strong> Early ambulation is encouraged on POD 1. Strict lifting restrictions are mandatory: **no heavy lifting &gt;10 kg for 8 weeks** to protect the diaphragmatic repair.</li>
+  </ul>
+</section>
+
+<section class="topic s5-topic" id="complications">
+  <div class="topic-header">
+    <span class="topic-num">5.2</span>
+    <h2>Complications &amp; Management</h2>
+  </div>
+
+  <div class="table-wrap">
+    <table class="s5-tbl">
+      <thead>
+        <tr>
+          <th>Complication</th>
+          <th>Mechanism &amp; Presentation</th>
+          <th>Surgical / Medical Management</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Pneumothorax</strong></td>
+          <td>Injury to the pleura during mediastinal dissection. Presents as hypoxia, decreased breath sounds, or high peak airway pressures.</td>
+          <td>If small (&lt;20%) and stable, observe. If large, symptomatic, or unstable, place a 28 Fr chest tube.</td>
+        </tr>
+        <tr>
+          <td><strong>Severe Dysphagia (Early)</strong></td>
+          <td>Edema at the crura or wrap, or a tight wrap. Presents as an inability to tolerate liquids or saliva.</td>
+          <td>Differentiate normal edema from obstruction via a water-soluble contrast esophagram. Keep NPO, give IV fluids. Dilation should be delayed until &gt;10–14 days.</td>
+        </tr>
+        <tr>
+          <td><strong>Esophageal Perforation</strong></td>
+          <td>Direct thermal or mechanical injury during dissection. Presents as chest pain, fever, mediastinal air, or sepsis.</td>
+          <td>Urgent re-exploration, primary repair of the esophageal wall with Vicryl, and buttressing using the gastric fundus. Place drains.</td>
+        </tr>
+        <tr>
+          <td><strong>Slipped Wrap</strong></td>
+          <td>The wrap slips down onto the stomach, causing obstruction or severe recurrent reflux.</td>
+          <td>Requires reoperation to take down the wrap and redo the repair correctly.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="topic s5-topic" id="prognosis">
+  <div class="topic-header">
+    <span class="topic-num">5.3</span>
+    <h2>Prognosis &amp; Long-Term Outcomes</h2>
+  </div>
+  
+  <ul>
+    <li><strong>Symptom Control:</strong> Open Nissen fundoplication combined with hiatal hernia repair achieves excellent reflux control in 85–95% of patients at 5–10 years.</li>
+    <li><strong>Recurrence Rates:</strong> Radiographic recurrence is reported in 10–30% of patients at 3–5 years (higher in giant hernias, patients with obesity, or untreated chronic cough). However, only 2–5% of patients require a reoperation for symptomatic recurrence.</li>
+    <li><strong>Gas Bloat Syndrome:</strong> Occurs in 30–40% of patients initially, presenting as an inability to belch or vomit and postprandial abdominal fullness. Resolves or improves in &gt;90% of cases by 3–6 months.</li>
+  </ul>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- BOARD REVIEW SECTION ══════════════════════════════════════ -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<div class="rapid-ref" id="board-review-section">
+  <h3>ABSITE Board Review &amp; High-Yield Core Pearls</h3>
+
+  <h4>High-Yield MCQ Numbers</h4>
+  <div class="table-wrap">
+    <table style="background: transparent;">
+      <thead>
+        <tr>
+          <th>Clinical Target</th>
+          <th>High-Yield Value</th>
+          <th>Clinical Significance</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Sliding Hernia Percentage</strong></td>
+          <td><strong>95%</strong></td>
+          <td>Most common type of hiatal hernia; primarily associated with GERD.</td>
+        </tr>
+        <tr>
+          <td><strong>Emergency Volvulus Mortality</strong></td>
+          <td><strong>10 - 30%</strong></td>
+          <td>Contrasts with &lt;1% elective repair mortality, highlighting the importance of elective repair for giant paraesophageal hernias.</td>
+        </tr>
+        <tr>
+          <td><strong>LES High-Pressure Zone</strong></td>
+          <td><strong>10 - 30 mmHg</strong></td>
+          <td>Physiologic barrier target; requires 1.5–2 cm of intra-abdominal length to function.</td>
+        </tr>
+        <tr>
+          <td><strong>Calibrating Bougie Size</strong></td>
+          <td><strong>56 - 60 Fr</strong></td>
+          <td>Large dilator used to calibrate the Nissen wrap to prevent postoperative dysphagia.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h4>Surgical Eponyms &amp; Board Pearls</h4>
+  <ul>
+    <li><strong>Borchardt's Triad:</strong> Diagnostic for acute gastric volvulus (chest/epigastric pain, violent retching without vomiting, inability to pass an NG tube). Mandates emergent laparotomy.</li>
+    <li><strong>Cameron Ulcers:</strong> Linear mucosal erosions on the gastric folds at the level of the diaphragmatic hiatus, caused by friction and ischemia. A major cause of occult GI bleeding.</li>
+    <li><strong>Collis Gastroplasty:</strong> Surgical technique to lengthen a shortened esophagus using a neo-esophageal tube created from the gastric fundus.</li>
+    <li><strong>Belsey Mark IV:</strong> An open transthoracic 270&deg; posterior fundoplication, reserved for complex recurrences or shortened esophagus.</li>
+  </ul>
+</div>
+
+</div><!-- end content-wrap -->
+</main>
+
+<button id="top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script src="../../js/nav-pill.js"></script>
+<script src="../../js/navigation.js"></script>
+<script>
+const progressBar = document.getElementById('progress-bar');
+const topBtn = document.getElementById('top-btn');
+const navItems = document.querySelectorAll('.nav-item');
+const sections = document.querySelectorAll('.topic[id], .rapid-ref[id]');
+
+window.addEventListener('scroll', () => {
+  const st = window.scrollY;
+  const dh = document.documentElement.scrollHeight - window.innerHeight;
+  if (progressBar) progressBar.style.transform = `scaleX(${st / dh})`;
+  if (topBtn) topBtn.classList.toggle('show', st > 400);
+  
+  let current = '';
+  sections.forEach(s => { if (st >= s.offsetTop - 120) current = s.id; });
+  navItems.forEach(n => { n.classList.toggle('active', n.getAttribute('href') === '#' + current); });
+});
+
+function filterNav(query) {
+  const q = query.toLowerCase();
+  navItems.forEach(item => { item.style.display = (!q || item.textContent.toLowerCase().includes(q)) ? 'block' : 'none'; });
+}
+
+navItems.forEach(item => {
+  item.addEventListener('click', e => {
+    e.preventDefault();
+    if(typeof closeSidebar === 'function') closeSidebar();
+    const target = document.querySelector(item.getAttribute('href'));
+    if (target) window.scrollTo({ top: target.getBoundingClientRect().top - 80, behavior: 'smooth' });
+  });
+});
+
+document.querySelectorAll('.topic').forEach((el, i) => { el.style.animationDelay = `${i * 0.03}s`; });
+</script>
+</body>
+</html>
