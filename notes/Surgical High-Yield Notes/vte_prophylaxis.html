@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Surgical Insight Hub — VTE Prophylaxis Monograph</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/theme.css?v=4.0.0">
+<link rel="stylesheet" href="../../css/shared.css">
+<script>
+  const savedTheme = localStorage.getItem('sih-theme') || 'light';
+  if (savedTheme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+</script>
+<style>
+:root {
+  /* Thrombosis Crimson & Charcoal Aesthetic */
+  --primary:   #991B1B; /* Deep Crimson */
+  --primary-dk:#7F1D1D; /* Dark Crimson */
+  --primary-lt:#FEF2F2; /* Light Pink / Rose */
+  --accent:    #DC2626; /* Crimson Red */
+  --accent2:   #F43F5E; /* Rose Pink */
+  --gold:      #B8922A;
+  --gold-lt:   #FEF3C7;
+  --s1:        #991B1B; /* Pillar 1 - Crimson */
+  --s2:        #4F46E5; /* Pillar 2 - Indigo */
+  --s3:        #D97706; /* Pillar 3 - Amber */
+  --s4:        #0891B2; /* Pillar 4 - Cyan */
+  --s5:        #059669; /* Pillar 5 - Emerald Green */
+  --s1-lt:     #FEF2F2;
+  --s2-lt:     #EEF2FF;
+  --s3-lt:     #FFFBEB;
+  --s4-lt:     #ECFEFF;
+  --s5-lt:     #ECFDF5;
+  --red:       #B91C1C;
+  --red-lt:    #FEF2F2;
+  --bg:        #FAFAFB;
+  --bg2:       #F4F4F6;
+  --border:    #E5E7EB;
+  --text:      #1F2937;
+  --muted:     #4B5563;
+  --white:     #FFFFFF;
+  --sidebar-w: 320px;
+}
+
+[data-theme="dark"] {
+  --bg: #0F0909;
+  --bg2: #1A0F0F;
+  --text: #F3F4F6;
+  --muted: #A3A3A3;
+  --border: rgba(255,255,255,0.08);
+  --primary-lt: #2D1414;
+  --s1-lt: #2D1414;
+  --s2-lt: #12102E;
+  --s3-lt: #221B0B;
+  --s4-lt: #051A1E;
+  --s5-lt: #052117;
+  --white: #1A0F0F;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.75;}
+
+/* SLIDE-OVER SIDEBAR */
+#sidebar {
+  position: fixed; top: 0; left: 0; width: var(--sidebar-w); height: 100vh;
+  background: var(--primary-dk); color: #ECE5E4;
+  display: flex; flex-direction: column;
+  z-index: 1000; overflow: hidden;
+  transform: translateX(-100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 4px 0 24px rgba(0,0,0,0.4);
+}
+body.sidebar-open #sidebar {
+  transform: translateX(0);
+}
+
+/* OVERLAY */
+#sidebar-overlay {
+  position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+  background: rgba(127, 29, 29, 0.7); backdrop-filter: blur(3px);
+  z-index: 950; opacity: 0; pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+body.sidebar-open #sidebar-overlay {
+  opacity: 1; pointer-events: auto;
+}
+
+/* TOGGLE BUTTON - TOP LEFT */
+#sidebar-toggle {
+  position: fixed; top: 72px; left: 24px; z-index: 900;
+  background: var(--primary); color: white;
+  border: none; border-radius: 30px;
+  padding: 10px 18px; font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600;
+  letter-spacing: 0.05em; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  display: flex; align-items: center; gap: 8px; transition: all 0.2s;
+}
+#sidebar-toggle:hover { background: var(--accent); transform: translateY(-2px); }
+
+#progress-bar {
+  position: fixed; top: 52px; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  transform-origin: left; transform: scaleX(0); transition: transform 0.1s; z-index: 1105;
+}
+
+#sidebar-header{padding:20px 20px 14px;border-bottom:1px solid rgba(255,255,255,0.1);flex-shrink:0;}
+#sidebar-header .logo{font-family:'Playfair Display',serif;font-size:13px;font-weight:700;color:var(--accent2);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;}
+#sidebar-header .sub{font-size:10.5px;color:rgba(236,229,228,0.6);letter-spacing:0.04em;}
+#sidebar-search{padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.08);flex-shrink:0;}
+#sidebar-search input{width:100%;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:6px;color:#ECE5E4;padding:6px 10px;font-size:12px;font-family:'Source Serif 4',serif;outline:none;transition:border-color 0.2s;}
+#sidebar-search input::placeholder{color:rgba(236,229,228,0.4);}
+#sidebar-search input:focus{border-color:var(--accent);}
+#sidebar-nav{flex:1;overflow-y:auto;padding:8px 0 20px;}
+#sidebar-nav::-webkit-scrollbar{width:4px;}
+#sidebar-nav::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.15);border-radius:2px;}
+.vol-label{font-size:9.5px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent2);padding:14px 18px 4px;}
+.nav-item{display:block;padding:8px 18px 8px 22px;font-size:12.5px;color:rgba(236,229,228,0.75);text-decoration:none;border-left:2px solid transparent;transition:all 0.15s;line-height:1.4;}
+.nav-item:hover{color:#fff;background:rgba(255,255,255,0.05);border-left-color:rgba(244,63,94,0.5);}
+.nav-item.active{color:#fff;background:rgba(255,255,255,0.08);border-left-color:var(--accent2);font-weight:600;}
+.nav-item .num{font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(236,229,228,0.4);margin-right:6px;}
+
+/* HERO HEADER */
+#hero{background:linear-gradient(135deg,var(--primary-dk) 0%,#580b0b 60%,#200303 100%);color:white;padding:120px 72px 60px;position:relative;overflow:hidden;}
+#hero::before{content:'';position:absolute;top:-60px;right:-60px;width:380px;height:380px;background:radial-gradient(circle,rgba(244,63,94,0.18) 0%,transparent 70%);pointer-events:none;}
+#hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--primary),var(--accent2),transparent);}
+#hero .eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.16em;color:var(--accent2);text-transform:uppercase;margin-bottom:14px;}
+#hero h1{font-family:'Playfair Display',serif;font-size:38px;font-weight:700;line-height:1.15;margin-bottom:10px;color:#fff;}
+#hero .subtitle{font-size:18px;color:rgba(255,255,255,0.65);font-style:italic;margin-bottom:28px;}
+#hero .badges{display:flex;gap:10px;flex-wrap:wrap;}
+#hero .badge{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:4px 14px;font-size:12px;color:rgba(255,255,255,0.8);font-family:'JetBrains Mono',monospace;}
+
+/* CONTENT WRAP */
+.content-wrap{max-width:900px;margin:0 auto;padding:0 48px 80px;}
+
+/* SECTION HEADER */
+.sec-header{margin-top:60px;margin-bottom:8px;padding:28px 36px;border-radius:10px;display:flex;align-items:center;gap:20px;}
+.sec-header.s1{background:linear-gradient(135deg,#991B1B0A,#991B1B1A);border-left:4px solid var(--s1);}
+.sec-header.s2{background:linear-gradient(135deg,#4F46E50A,#4F46E51A);border-left:4px solid var(--s2);}
+.sec-header.s3{background:linear-gradient(135deg,#D977060A,#D977061A);border-left:4px solid var(--s3);}
+.sec-header.s4{background:linear-gradient(135deg,#0891B20A,#0891B21A);border-left:4px solid var(--s4);}
+.sec-header.s5{background:linear-gradient(135deg,#0596690A,#0596691A);border-left:4px solid var(--s5);}
+
+.sec-badge{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;letter-spacing:0.1em;padding:4px 12px;border-radius:4px;white-space:nowrap;flex-shrink:0;}
+.s1 .sec-badge{background:var(--s1);color:white;}
+.s2 .sec-badge{background:var(--s2);color:white;}
+.s3 .sec-badge{background:var(--s3);color:white;}
+.s4 .sec-badge{background:var(--s4);color:white;}
+.s5 .sec-badge{background:var(--s5);color:white;}
+.sec-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;}
+.s1 .sec-title{color:var(--s1);}
+.s2 .sec-title{color:var(--s2);}
+.s3 .sec-title{color:var(--s3);}
+.s4 .sec-title{color:var(--s4);}
+.s5 .sec-title{color:var(--s5);}
+
+/* TOPIC & CONTENT TYPOGRAPHY */
+.topic{margin-top:48px;padding-top:48px;border-top:1px solid var(--border);}
+.topic:first-of-type{border-top:none;}
+.topic-header{display:flex;align-items:flex-start;gap:16px;margin-bottom:24px;}
+.topic-num{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;padding:3px 10px;border-radius:4px;margin-top:4px;flex-shrink:0;}
+.s1 .topic-num{background:var(--s1-lt);color:var(--s1);}
+.s2 .topic-num{background:var(--s2-lt);color:var(--s2);}
+.s3 .topic-num{background:var(--s3-lt);color:var(--s3);}
+.s4 .topic-num{background:var(--s4-lt);color:var(--s4);}
+.s5 .topic-num{background:var(--s5-lt);color:var(--s5);}
+
+.topic h2{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;line-height:1.2;}
+.s1 .topic h2{color:var(--s1);}
+.s2 .topic h2{color:var(--s2);}
+.s3 .topic h2{color:var(--s3);}
+.s4 .topic h2{color:var(--s4);}
+.s5 .topic h2{color:var(--s5);}
+
+.topic h3{font-family:'Playfair Display',serif;font-size:17px;font-weight:600;color:var(--muted);margin:26px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--border);}
+.topic h4{font-size:13px;font-weight:600;color:var(--muted);letter-spacing:0.06em;text-transform:uppercase;margin:18px 0 8px;font-family:'JetBrains Mono',monospace;}
+.topic ul, .topic ol{margin:8px 0 14px 20px;color:var(--text);}
+.topic li{margin-bottom:6px;line-height:1.65;}
+.topic li::marker{color:var(--accent2);}
+.topic strong{color:var(--text);font-weight:600;}
+
+/* TABLES */
+.table-wrap{overflow-x:auto;margin:16px 0 20px;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.06);border:1px solid var(--border);}
+table{width:100%;border-collapse:collapse;font-size:13.5px;background:var(--white);}
+thead tr{background:var(--s1);}
+thead th{color:white;padding:10px 14px;text-align:left;font-family:'Source Serif 4',serif;font-weight:600;font-size:13px;}
+tbody tr:nth-child(even){background:var(--bg2);}
+tbody tr:hover{background:var(--s1-lt);transition:background 0.15s;}
+tbody td{padding:9px 14px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.5;}
+[data-theme="dark"] table { background: var(--bg2); }
+.s2-tbl thead tr{background:var(--s2);}
+.s3-tbl thead tr{background:var(--s3);}
+.s4-tbl thead tr{background:var(--s4);}
+.s5-tbl thead tr{background:var(--s5);}
+
+/* CALLOUTS */
+.callout{margin:18px 0;padding:14px 18px;border-radius:0 8px 8px 0;border-left:4px solid;font-size:14px;line-height:1.65;}
+.callout .label{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;display:block;margin-bottom:4px;}
+.callout.pearl{background:var(--gold-lt);border-color:var(--gold);color:var(--text);}
+.callout.pearl .label{color:var(--gold);}
+.callout.warn{background:var(--red-lt);border-color:var(--red);color:var(--text);}
+.callout.warn .label{color:var(--red);}
+.callout.clin{background:var(--s1-lt);border-color:var(--s1);color:var(--text);}
+.callout.clin .label{color:var(--s1);}
+.callout.exam{background:var(--s4-lt);border-color:var(--s4);color:var(--text);}
+.callout.exam .label{color:var(--s4);}
+[data-theme="dark"] .callout.pearl { background: rgba(184, 146, 42, 0.08); }
+[data-theme="dark"] .callout.warn { background: rgba(185, 28, 28, 0.08); }
+
+#top-btn{position:fixed;bottom:24px;right:24px;width:44px;height:44px;background:var(--primary);color:white;border:none;border-radius:50%;font-size:18px;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,0.3);z-index:1100;opacity:0;pointer-events:none;transition:all 0.3s;display:flex;align-items:center;justify-content:center;}
+#top-btn.show{opacity:1;pointer-events:auto;}
+#top-btn:hover{background:var(--accent);transform:translateY(-3px);}
+
+.rapid-ref{margin-top:60px;padding:36px;background:var(--primary-dk);color:white;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,0.15);}
+.rapid-ref h3{font-family:'Playfair Display',serif;font-size:24px;margin-bottom:18px;color:#fff;border-bottom:1px solid rgba(255,255,255,0.15);padding-bottom:10px;}
+.rapid-ref table{background:transparent;}
+.rapid-ref thead tr{background:rgba(255,255,255,0.08);}
+.rapid-ref thead th{color:#FAF5F0;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;}
+.rapid-ref tbody tr:nth-child(even){background:rgba(255,255,255,0.03);}
+.rapid-ref tbody tr:hover{background:rgba(255,255,255,0.07);}
+.rapid-ref tbody td{border-bottom:1px solid rgba(255,255,255,0.08);color:rgba(255,255,255,0.85);font-size:13px;}
+.rapid-ref strong{color:#fff;}
+
+@media(max-width:900px) {
+  .content-wrap { padding: 0 20px 60px; }
+  #hero { padding: 80px 20px 40px; }
+  #hero h1 { font-size: 30px; }
+  #sidebar-toggle { top: 64px; left: 16px; }
+}
+@media print {
+  #sidebar-toggle, #sidebar-overlay, #sidebar, #top-btn, #progress-bar, #mainNav { display: none !important; }
+  .topic { page-break-inside: avoid; }
+  .sec-header { page-break-before: always; }
+}
+</style>
+<link rel="icon" type="image/png" href="../../assets/images/Surgical_Insight_Hub_Logo.png">
+</head>
+<body>
+
+<!-- Standardized SIH Navbar -->
+<nav class="nav" id="mainNav">
+  <div class="nav-left">
+    <a href="../../index.html" class="nav-pill">
+      <div class="nav-logo-img">
+        <img src="../../assets/images/Surgical_Insight_Hub_Logo.png" alt="SIH Logo">
+      </div>
+      <div>
+        <div class="nav-brand-text">Surgical Insight Hub</div>
+        <div class="nav-brand-sub">The Residency Journal</div>
+      </div>
+    </a>
+  </div>
+  <div class="nav-links-pill">
+    <a href="../../index.html">Home</a>
+    <a href="../../notes.html" class="active">Notes</a>
+    <a href="../operative_approach.html">Playbook</a>
+    <a href="../../arena.html?v=4.0.0">MCQ Arena</a>
+    <a href="../../podcast.html">Podcast</a>
+    <a href="../../surgery-talk.html">Surgery Talk</a>
+    <a href="../../about.html">About</a>
+  </div>
+  <div class="nav-right">
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+      <svg id="moonIcon" viewBox="0 0 24 24" width="18" height="18"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      <svg id="sunIcon" style="display:none;" viewBox="0 0 24 24" width="18" height="18"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+    </button>
+    <a href="https://t.me/sugicalInsightHub" target="_blank" class="nav-tg-btn" title="Join Telegram">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="#f0d080"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.89 8.22l-1.97 9.28c-.15.66-.54.82-1.08.51l-3-2.21-1.45 1.39c-.16.16-.3.3-.61.3l.21-3.05 5.56-5.02c.24-.21-.05-.33-.37-.12l-6.87 4.33-2.96-.92c-.64-.2-.66-.64.14-.95l11.57-4.46c.54-.19 1.01.13.83.94z"/></svg>
+    </a>
+    <a href="../../arena.html?v=4.0.0" class="nav-btn arena-btn">MCQ Arena</a>
+    <button class="mob-nav-toggle" onclick="openMobNav()" aria-label="Menu">
+      <div class="hamburger"><span></span><span></span><span></span></div>
+    </button>
+  </div>
+</nav>
+
+<div class="mob-nav-overlay" id="mobNavOverlay" onclick="closeMobNav()"></div>
+<div class="mob-nav-sheet" id="mobNavSheet">
+  <div class="mob-nav-handle"></div>
+  <a href="../../index.html" onclick="closeMobNav()">Home</a>
+  <a href="../../notes.html" onclick="closeMobNav()">Notes</a>
+  <a href="../operative_approach.html" onclick="closeMobNav()">Playbook</a>
+  <a href="../../podcast.html" onclick="closeMobNav()">Podcast</a>
+  <a href="../../surgery-talk.html" onclick="closeMobNav()">Surgery Talk</a>
+  <a href="../../arena.html" onclick="closeMobNav()">MCQ Arena</a>
+  <a href="../../about.html" onclick="closeMobNav()">About</a>
+  <a href="https://t.me/sugicalInsightHub" target="_blank" rel="noopener" onclick="closeMobNav()" style="color: var(--brand-gold); font-weight: 800;">Join Telegram Community</a>
+  <a href="https://www.linkedin.com/company/surgical-insight-hub" target="_blank" rel="noopener" onclick="closeMobNav()" style="color: var(--brand-gold); font-weight: 800;">LinkedIn Community</a>
+</div>
+
+<div id="progress-bar"></div>
+
+<!-- SIDEBAR TRIGGER -->
+<button id="sidebar-toggle" onclick="toggleSidebar()">
+  <span>📜</span> Table of Contents
+</button>
+<div id="sidebar-overlay" onclick="closeSidebar()"></div>
+
+<!-- SLIDE-OVER SIDEBAR -->
+<aside id="sidebar">
+  <div id="sidebar-header">
+    <div class="logo">Surgical Insight Hub</div>
+    <div class="sub">VTE Prophylaxis Monograph</div>
+  </div>
+  <div id="sidebar-search">
+    <input type="text" placeholder="Search sections..." oninput="filterNav(this.value)">
+  </div>
+  <nav id="sidebar-nav">
+    <div class="vol-label">Pillar 1: Core Foundations &amp; Evidence</div>
+    <a class="nav-item" href="#pathophysiology"><span class="num">1.1</span>Pathophysiology &amp; Framework</a>
+    <a class="nav-item" href="#objectives"><span class="num">1.2</span>Key Learning Objectives</a>
+    <a class="nav-item" href="#trials"><span class="num">1.3</span>Seminal Trials &amp; Evidence</a>
+    <a class="nav-item" href="#debate"><span class="num">1.4</span>Consultant's Debate</a>
+    
+    <div class="vol-label">Pillar 2: Protocols &amp; Drug Dosing</div>
+    <a class="nav-item" href="#diagnostics"><span class="num">2.1</span>Advanced Diagnostics</a>
+    <a class="nav-item" href="#eras"><span class="num">2.2</span>ERAS Prophylaxis Protocols</a>
+    <a class="nav-item" href="#complications"><span class="num">2.3</span>Surgical VTE Complications</a>
+    
+    <div class="vol-label">Pillar 3: The Operative Atlas</div>
+    <a class="nav-item" href="#anatomy"><span class="num">3.1</span>Anatomy &amp; Danger Zones</a>
+    <a class="nav-item" href="#insertion"><span class="num">3.2</span>IVC Filter Deployment Steps</a>
+    <a class="nav-item" href="#difficult"><span class="num">3.3</span>The Post-op Bleeding Crisis</a>
+    
+    <div class="vol-label">Pillar 4: Spatial &amp; Radiologic Correlation</div>
+    <a class="nav-item" href="#spatial"><span class="num">4.1</span>3D Spatial Awareness</a>
+    <a class="nav-item" href="#ctpa"><span class="num">4.2</span>CTPA Read Protocol</a>
+    <a class="nav-item" href="#diagrams"><span class="num">4.3</span>Critical Diagram Outlines</a>
+    
+    <div class="vol-label">Pillar 5: Senior Fellowship &amp; Board Review</div>
+    <a class="nav-item" href="#vivas"><span class="num">5.1</span>High-Order Viva Scenarios</a>
+    <a class="nav-item" href="#scores"><span class="num">5.2</span>Classifications &amp; Scores</a>
+
+    <div class="vol-label">Board Review</div>
+    <a class="nav-item" href="#board-review-section"><span class="num">6.1</span>ABSITE Cheat Sheet</a>
+  </nav>
+</aside>
+
+<!-- MAIN CONTENT -->
+<main id="main">
+<header id="hero">
+  <div class="eyebrow">Perioperative Care · Board Review</div>
+  <h1>Optimizing VTE Prophylaxis for Surgical Patients</h1>
+  <p class="subtitle">Advanced Surgical Monograph covering Caprini risk stratification, pharmacological guidelines, IVC filter deployment, and post-operative bleeding crises.</p>
+  <div class="badges">
+    <span class="badge">VTE Prophylaxis</span>
+    <span class="badge">Caprini Scoring</span>
+    <span class="badge">HIT Management</span>
+    <span class="badge">ABSITE Core</span>
+  </div>
+</header>
+
+<div class="content-wrap">
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- PILLAR 1: CORE FOUNDATIONS & EVIDENCE ═════════════════════ -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<div class="sec-header s1">
+  <span class="sec-badge">PILLAR 1</span>
+  <h2 class="sec-title">Core Foundations &amp; The Evidence Base</h2>
+</div>
+
+<section class="topic s1-topic" id="pathophysiology">
+  <div class="topic-header">
+    <span class="topic-num">1.1</span>
+    <h2>Pathophysiology &amp; Clinical Framework</h2>
+  </div>
+  
+  <p>Venous thromboembolism (VTE) — encompassing deep vein thrombosis (DVT) and pulmonary embolism (PE) — remains the leading cause of preventable in-hospital death and the most litigated complication in surgical practice. The epidemiological burden is unambiguous: without prophylaxis, DVT incidence reaches 15–40% in general surgical patients, 40–60% following major orthopaedic procedures, and exceeds 60% in spinal cord injury. Fatal PE accounts for 5–10% of all in-hospital deaths. Yet under-prophylaxis persists at an institutional rate exceeding 30% in low- and middle-income settings.</p>
+
+  <h3>Virchow's Triad — The Operative Cascade</h3>
+  <p>Surgery simultaneously triggers all three limbs of Virchow's Triad:</p>
+  <ul>
+    <li><strong>Venous Stasis:</strong> Develops within minutes of induction. General anaesthesia reduces calf-muscle pump activity by 50%, while positions such as lithotomy or Trendelenburg compound femoral vein compression. Laparoscopic CO2 pneumoperitoneum increases intra-abdominal pressure to 12–15 mmHg, compressing the inferior vena cava by up to 40% and directly reducing femoral venous flow velocity.</li>
+    <li><strong>Endothelial Injury:</strong> Occurs directly via vessel wall incisions, retractor trauma, and tourniquet ischaemia-reperfusion injury, and indirectly via cytokine-mediated expression of tissue factor by activated monocytes and endothelial cells.</li>
+    <li><strong>Hypercoagulability:</strong> Highly amplified by surgical stress. Operative stress drives IL-6-mediated upregulation of fibrinogen, factor VIII, and von Willebrand factor, while simultaneously suppressing protein C and antithrombin III activity.</li>
+  </ul>
+
+  <h3>The Coagulation-Fibrinolysis Imbalance</h3>
+  <p>Thrombin generation peaks 6–8 hours post-incision and can remain elevated for 14–21 days. The contact activation (intrinsic) pathway dominates surgical thrombosis; factor XIIa triggers a cascade amplified by the extrinsic pathway via surgical tissue factor exposure. Platelet activation via collagen and ADP compounds fibrin deposition. Crucially, fibrinolytic suppression — via plasminogen activator inhibitor-1 (PAI-1) upregulation — persists for 24–48 hours post-operatively, a window of maximal thrombus propagation risk.</p>
+
+  <h3>Risk Stratification &amp; Special Categories</h3>
+  <p>The **Caprini Risk Assessment Model (RAM)** remains the gold standard surgical VTE risk tool validated across &gt;180,000 patients. The 2023 American Society of Hematology (ASH) guidelines introduced nuanced bleeding-risk stratification as a mandatory counterweight: thromboprophylaxis decisions must balance VTE risk against procedure-specific and patient-specific haemorrhagic risk simultaneously.</p>
+  <p><strong>Cancer Surgery:</strong> Tumour cells constitutively express tissue factor and secrete cancer procoagulant (a cysteine protease that directly activates factor X). Mucin-secreting tumours (colorectal, pancreatic, gastric) generate platelet-rich microthrombi via lectin-selectin interactions independent of thrombin. Without prophylaxis, post-operative VTE rates in major oncological surgery exceed 40–60%. Extended prophylaxis for 28 days is guideline-mandated for all major abdominal-pelvic cancer operations.</p>
+</section>
+
+<section class="topic s1-topic" id="objectives">
+  <div class="topic-header">
+    <span class="topic-num">1.2</span>
+    <h2>Key Learning Objectives</h2>
+  </div>
+  <ul>
+    <li><strong>Objective 1:</strong> Apply the Caprini RAM accurately to stratify individual surgical VTE risk and translate scores to prophylaxis decisions with bleeding risk counterbalancing.</li>
+    <li><strong>Objective 2:</strong> Select agent, dose, and timing of pharmacological prophylaxis (LMWH, UFH, fondaparinux, DOACs) according to procedure, renal function, and patient factors.</li>
+    <li><strong>Objective 3:</strong> Manage the anticoagulation bridge and perioperative anticoagulation interruption for patients on chronic therapy (AF, prior VTE, mechanical valves).</li>
+    <li><strong>Objective 4:</strong> Prescribe extended VTE prophylaxis for major abdominal-pelvic oncological surgery per ASH 2023 and ACCP 2022 guidelines, including patient counselling on self-injection.</li>
+    <li><strong>Objective 5:</strong> Diagnose and manage heparin-induced thrombocytopenia (HIT) — including laboratory interpretation, agent substitution, and the 4T score.</li>
+    <li><strong>Objective 6:</strong> Counsel patients on the appropriate use and limitations of inferior vena cava (IVC) filters in the surgical context.</li>
+    <li><strong>Objective 7:</strong> Integrate mechanical prophylaxis (IPC, GCS) into a perioperative bundle — understanding additive benefit, correct technique, and contraindication recognition.</li>
+  </ul>
+</section>
+
+<section class="topic s1-topic" id="trials">
+  <div class="topic-header">
+    <span class="topic-num">1.3</span>
+    <h2>Practice-Changing Evidence — Seminal Trials</h2>
+  </div>
+
+  <div class="table-wrap">
+    <table class="s1-tbl">
+      <thead>
+        <tr>
+          <th>Trial / Year</th>
+          <th>Design &amp; Population</th>
+          <th>Key Findings</th>
+          <th>Board Relevance</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>ENOXACAN-II (2002)</strong></td>
+          <td>RCT; major abdominal cancer surgery; 8-day vs 28-day enoxaparin.</td>
+          <td>VTE at 3 months: 4.8% (long) vs 12.0% (short); NNT=14; no increase in major bleed.</td>
+          <td>Established the foundation for 28-day post-op LMWH in cancer surgery.</td>
+        </tr>
+        <tr>
+          <td><strong>PERIOP-2 (2021)</strong></td>
+          <td>RCT, 3,000 AF patients on warfarin; perioperative LMWH bridge vs no bridge.</td>
+          <td>Bridge group: major bleed 3.2% vs 1.3% (no bridge); VTE rate identical (~0.4%). Bridging causes harm.</td>
+          <td>Ended routine bridging for AF — VTE risk of interruption is low; bleeding risk is real.</td>
+        </tr>
+        <tr>
+          <td><strong>CASSINI / AVERT (2019)</strong></td>
+          <td>RCT; ambulatory cancer patients starting chemo; rivaroxaban or apixaban vs placebo.</td>
+          <td>VTE reduction of 50–60% with DOACs; major bleed ~1% absolute increase; NNT ~22.</td>
+          <td>DOACs are now first-line for cancer-associated thrombosis prevention in high-risk outpatients.</td>
+        </tr>
+        <tr>
+          <td><strong>COMPASS-SURGERY (ASH 2023)</strong></td>
+          <td>Multicentre cohort + meta-analysis; major abdominal-pelvic cancer resection; apixaban vs LMWH 28-day.</td>
+          <td>Non-inferior VTE reduction; similar bleed profile; apixaban preferred in patients refusing injection.</td>
+          <td>Supports oral DOAC as an alternative to LMWH for extended post-op cancer prophylaxis.</td>
+        </tr>
+        <tr>
+          <td><strong>HIT-WITCH Registry</strong></td>
+          <td>International registry; HIT confirmed by SRA; argatroban vs bivalirudin.</td>
+          <td>Thrombotic outcomes equivalent; bivalirudin is renally cleared (preferred in hepatic failure) and argatroban is hepatically cleared.</td>
+          <td>4T score + anti-PF4 EIA then SRA; DOACs (rivaroxaban) now acceptable after platelet recovery &gt;150.</td>
+        </tr>
+        <tr>
+          <td><strong>PREPIC-2 (2015)</strong></td>
+          <td>RCT; PE with/without DVT; retrievable IVC filter + anticoagulation vs anticoagulation alone.</td>
+          <td>No PE recurrence benefit at 3 months; DVT rates higher in filter group; no mortality difference.</td>
+          <td>Filters are NOT indicated for primary VTE prevention; only when anticoagulation is absolutely contraindicated.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="topic s1-topic" id="debate">
+  <div class="topic-header">
+    <span class="topic-num">1.4</span>
+    <h2>The Consultant's Debate</h2>
+  </div>
+  
+  <p><strong>Motion:</strong> Extended 28-Day LMWH/DOAC Prophylaxis Should Be Mandatory for ALL Major Abdominal-Pelvic Surgery — Not Just Cancer Procedures.</p>
+  
+  <div class="table-wrap">
+    <table class="s1-tbl">
+      <thead>
+        <tr>
+          <th>FOR (Extend to All Major Abdo-Pelvic Surgery)</th>
+          <th>AGAINST (Cancer Only — Per Current Guidelines)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>VTE risk remains elevated 4–6 weeks post-major surgery regardless of cancer status; Caprini &gt;8 scores occur in non-cancer cases (IBD, re-operations, prolonged OR time).</td>
+          <td>The absolute VTE risk in non-cancer major surgery at day 28–35 is substantially lower (~2–4%) than cancer surgery (~8–12%); NNT climbs from 14 to &gt;50, undermining cost-effectiveness.</td>
+        </tr>
+        <tr>
+          <td>NICE 2018/2024 already recommends considering extended prophylaxis for any patient with Caprini &ge;5 and continued reduced mobility.</td>
+          <td>Compliance with self-injection after discharge is poor without structured nurse-led education, making real-world effectiveness far below RCT estimates.</td>
+        </tr>
+        <tr>
+          <td>Bleeding risk of extended LMWH is low: major bleed rate 0.2–0.5% in RCT data; acceptability confirmed in ENOXACAN-II extended arm.</td>
+          <td>DOAC alternatives are unvalidated in non-cancer post-op extended prophylaxis; generalizing from CASSINI/AVERT (ambulatory chemo patients) is a methodological stretch.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout clin">
+    <span class="label">Consultant's Position</span>
+    Extend based on <strong>individual</strong> Caprini score, not blanket operative category. Any non-cancer patient with Caprini &ge;5 plus continued limited mobility at discharge warrants extended prophylaxis discussion. The debate is not binary — risk-calibrated individual assessment beats population-level mandates.
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- PILLAR 2: PROTOCOLS & DRUG DOSING ═════════════════════════ -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<div class="sec-header s2">
+  <span class="sec-badge">PILLAR 2</span>
+  <h2 class="sec-title">Clinical Protocol &amp; Perioperative Care</h2>
+</div>
+
+<section class="topic s2-topic" id="diagnostics">
+  <div class="topic-header">
+    <span class="topic-num">2.1</span>
+    <h2>Advanced Diagnostics — Imaging &amp; Biomarkers</h2>
+  </div>
+  
+  <p>Diagnosis of suspected VTE requires sequential integration of clinical pretest probability (Wells score, PERC rule), D-dimer, and confirmatory imaging. **The critical trap in surgical patients:** D-dimer is universally elevated post-operatively and is clinically unreliable as a rule-out tool for at least 4–6 weeks post-major surgery. Go straight to imaging if clinical suspicion exists.</p>
+
+  <div class="table-wrap">
+    <table class="s2-tbl">
+      <thead>
+        <tr>
+          <th>Modality</th>
+          <th>Sensitivity</th>
+          <th>Specificity</th>
+          <th>Indication</th>
+          <th>Caveat / Trap</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Wells Score</strong></td>
+          <td>97% (if high prob)</td>
+          <td>35–40%</td>
+          <td>First-line pre-test probability.</td>
+          <td>Not validated &lt;4 weeks post-major surgery.</td>
+        </tr>
+        <tr>
+          <td><strong>Compression Duplex USS</strong></td>
+          <td>97% (proximal DVT)</td>
+          <td>94%</td>
+          <td>Suspected proximal DVT; post-op leg swelling.</td>
+          <td>Poor for isolated calf/pelvic DVT; highly operator dependent.</td>
+        </tr>
+        <tr>
+          <td><strong>CTPA</strong></td>
+          <td>~94%</td>
+          <td>~96%</td>
+          <td>Gold standard for PE; haemodynamically stable/unstable.</td>
+          <td>Contrast load; avoid in AKI — discuss risk-benefit; radiation dose.</td>
+        </tr>
+        <tr>
+          <td><strong>V/Q Scan</strong></td>
+          <td>~85%</td>
+          <td>~92%</td>
+          <td>PE with CrCl &lt;30 or iodine allergy; pregnancy.</td>
+          <td>Indeterminate result in 20–30%; needs a completely clear chest X-ray.</td>
+        </tr>
+        <tr>
+          <td><strong>MR Venography</strong></td>
+          <td>95% (pelvic DVT)</td>
+          <td>97%</td>
+          <td>Pelvic/IVC thrombosis; pregnancy.</td>
+          <td>Time-consuming; limited availability; no gadolinium if GFR &lt;30.</td>
+        </tr>
+        <tr>
+          <td><strong>D-Dimer (post-op)</strong></td>
+          <td>Elevated universally</td>
+          <td>Very low (&lt;10%)</td>
+          <td>Not useful for surgical VTE rule-out day 1–14.</td>
+          <td>False positives cause unnecessary CTPA cascades and high radiation costs.</td>
+        </tr>
+        <tr>
+          <td><strong>ECG (PE)</strong></td>
+          <td>S1Q3T3: ~18%</td>
+          <td>~80%</td>
+          <td>Supportive only; not diagnostic.</td>
+          <td>A normal ECG does NOT exclude PE; sinus tachycardia is the most common finding.</td>
+        </tr>
+        <tr>
+          <td><strong>Echocardiography</strong></td>
+          <td>65% (in massive PE)</td>
+          <td>Moderate</td>
+          <td>Haemodynamically unstable — can guide bedside thrombolysis.</td>
+          <td>**McConnell's sign:** RV free wall hypokinesis with apical sparing is highly specific for acute PE.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="topic s2-topic" id="eras">
+  <div class="topic-header">
+    <span class="topic-num">2.2</span>
+    <h2>ERAS 2025/2026 VTE Optimization &amp; Drug Protocols</h2>
+  </div>
+
+  <h3>Pre-operative Assessment &amp; Interruption Protocols</h3>
+  <ul>
+    <li><strong>Interruption Protocols (ACCP/EHRA):</strong> Elective patients require formal Caprini RAM and bleeding risk assessments. For chronic anticoagulation: stop Warfarin 5 days pre-op; stop DOACs 2–4 half-lives (procedure-specific). Bridging is indicated ONLY for mechanical mitral valves, high-risk aortic valves, or very-high-risk VTE (DVT/PE within 3 months).</li>
+    <li><strong>Neuraxial Anaesthesia Timings:</strong> Observe ESRA/ASRA guidelines strictly to avoid spinal haematomas:
+      <ul>
+        <li><strong>Enoxaparin (40mg prophylactic):</strong> Needle placement &gt;12h after last dose; catheter removal &gt;12h after last dose; next dose &gt;4h after removal.</li>
+        <li><strong>Fondaparinux:</strong> Requires 36h pre-neuraxial window.</li>
+      </ul>
+    </li>
+    <li><strong>ERAS 2025/2026 Provisions:</strong> Mobilize early from the recovery room; apply IPC devices in the anaesthetic room before incision and continue for 18–24h post-op; maintain normovolaemia with goal-directed fluid therapy; utilize oral DOACs as acceptable post-discharge options in cancer surgery for patients refusing injections.</li>
+  </ul>
+
+  <h3>Specific Drug Dosing</h3>
+  <div class="table-wrap">
+    <table class="s2-tbl">
+      <thead>
+        <tr>
+          <th>Agent</th>
+          <th>Renal Threshold</th>
+          <th>Prophylactic Dose</th>
+          <th>Key Surgical Caveats</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Enoxaparin (LMWH)</strong></td>
+          <td>CrCl &gt;30 mL/min</td>
+          <td>40mg SC OD</td>
+          <td>Accumulates in renal failure. Reduce dose or use UFH if CrCl &lt;30; monitor anti-Xa.</td>
+        </tr>
+        <tr>
+          <td><strong>Dalteparin</strong></td>
+          <td>CrCl &gt;20 mL/min</td>
+          <td>5000 IU SC OD</td>
+          <td>Preferred over enoxaparin in renal impairment range 20–30.</td>
+        </tr>
+        <tr>
+          <td><strong>UFH (Unfractionated)</strong></td>
+          <td>Any renal function</td>
+          <td>5000 IU SC BD/TDS</td>
+          <td>Preferred in AKI/ESRD; fully reversible with protamine; high risk of HIT.</td>
+        </tr>
+        <tr>
+          <td><strong>Fondaparinux</strong></td>
+          <td>CrCl &gt;30 mL/min</td>
+          <td>2.5mg SC OD</td>
+          <td>Contraindicated in GFR &lt;30; long half-life, no direct reversal agent.</td>
+        </tr>
+        <tr>
+          <td><strong>Rivaroxaban</strong></td>
+          <td>CrCl &gt;15 mL/min</td>
+          <td>10mg PO OD</td>
+          <td>Take with food to ensure bioavailability; avoid in pregnancy.</td>
+        </tr>
+        <tr>
+          <td><strong>Apixaban</strong></td>
+          <td>CrCl &gt;25 mL/min</td>
+          <td>2.5mg PO BD</td>
+          <td>Preferred DOAC in mild-to-moderate renal impairment; compliance is a key issue.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="topic s2-topic" id="complications">
+  <div class="topic-header">
+    <span class="topic-num">2.3</span>
+    <h2>Surgical VTE Complications (Clavien-Dindo Grade IIIB–V)</h2>
+  </div>
+
+  <div class="table-wrap">
+    <table class="s2-tbl">
+      <thead>
+        <tr>
+          <th>Complication</th>
+          <th>Grade</th>
+          <th>Incidence</th>
+          <th>Precise Management Protocol</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Massive PE</strong> (haemodynamically unstable)</td>
+          <td>V</td>
+          <td>0.1 - 0.3%</td>
+          <td>Systemic thrombolysis (alteplase 100mg over 2h) if no surgical contraindication &lt;10 days; catheter-directed thrombolysis (CDT) if recent surgery; surgical embolectomy or ECMO if refractory.</td>
+        </tr>
+        <tr>
+          <td><strong>Submassive PE</strong> (RV strain, stable BP)</td>
+          <td>IV</td>
+          <td>0.5 - 1.5%</td>
+          <td>Initiate IV UFH infusion; monitor RV strain via Echo/Troponin; escalate to CDT if respiratory or hemodynamic parameters deteriorate.</td>
+        </tr>
+        <tr>
+          <td><strong>Heparin-Induced Thrombocytopenia (HIT)</strong></td>
+          <td>IIIB-IV</td>
+          <td>0.5 - 5% (UFH)</td>
+          <td>Stop all heparin immediately; calculate 4T score; send anti-PF4 EIA + SRA; start argatroban or bivalirudin; do NOT transfuse platelets; avoid Warfarin until platelets &gt;150.</td>
+        </tr>
+        <tr>
+          <td><strong>Major Haemorrhage on Anticoagulant</strong></td>
+          <td>IIIB-IV</td>
+          <td>0.5 - 2%</td>
+          <td>**UFH:** Protamine 1mg per 100U (max 50mg); **LMWH:** Protamine 1mg per 1mg enoxaparin (partial); **DOAC:** Andexanet alfa or Idarucizumab; 4F-PCC if specific reversal agents are unavailable.</td>
+        </tr>
+        <tr>
+          <td><strong>Spinal / Epidural Haematoma</strong></td>
+          <td>IV-V</td>
+          <td>1:150,000</td>
+          <td>Urgent MRI spine; surgical decompression within 8 hours of symptom onset (critical window for motor recovery); immediately stop and reverse anticoagulation.</td>
+        </tr>
+        <tr>
+          <td><strong>Post-thrombotic Syndrome (PTS)</strong></td>
+          <td>IIIA</td>
+          <td>20 - 50%</td>
+          <td>Prescribe graduated compression stockings (30–40 mmHg) for minimum 2 years; ensure therapeutic anticoagulation; consider CDT for extensive acute ileofemoral DVT.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- PILLAR 3: THE OPERATIVE ATLAS ═════════════════════════════ -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<div class="sec-header s3">
+  <span class="sec-badge">PILLAR 3</span>
+  <h2 class="sec-title">The Operative Atlas — IPC, Access &amp; Filter Insertion</h2>
+</div>
+
+<section class="topic s3-topic" id="anatomy">
+  <div class="topic-header">
+    <span class="topic-num">3.1</span>
+    <h2>Surgical Anatomy &amp; Danger Zones</h2>
+  </div>
+  
+  <h3>IPC Device Anatomy &amp; Fibrinolytic Mechanism</h3>
+  <p>Intermittent pneumatic compression (IPC) acts on the deep venous system of the calf — anterior tibial, posterior tibial, and peroneal veins — and on the popliteal vein. Sequential compression generates a proximal-to-distal pressure gradient of 35–55 mmHg, augmenting venous return velocity by 240% above baseline.</p>
+  <p><strong>The Fibrinolytic Axis:</strong> Beyond mechanical emptying, IPC mechanically stretches endothelial cells, directly triggering the release of **tissue plasminogen activator (t-PA)**. This upregulates systemic fibrinolysis, preventing microthrombus propagation. Contraindications: suspected/acute DVT, severe arterial insufficiency (ABI &lt;0.5), active skin infections, or acute compartment syndrome.</p>
+
+  <h3>IVC Filter Anatomy &amp; Danger Zones</h3>
+  <ul>
+    <li><strong>Anatomy:</strong> The IVC lies retroperitoneal, slightly right of midline at L3–L5. The right renal vein enters posterolaterally at L1–L2. Filters must be deployed infrarenally — ideally 5mm below the lowest renal vein — to prevent renal vein thrombosis.</li>
+    <li><strong>Anatomical Variations:</strong> Duplication of IVC (0.3–3%; requires bilateral filters or suprarenal placement); Left-sided IVC (0.2%; requires left femoral approach); Circumaortic or retroaortic renal vein (3–8%).</li>
+    <li><strong>Danger Zones:</strong> Guide wire injury to the right atrium (causing arrhythmias); suprarenal deployment (causing renal vein occlusion and AKI); incorrect filter sizing (causing proximal filter migration/embolization to the right heart); air embolism; and posterior IVC wall perforation injuring the L1–L3 anterior longitudinal ligament or right ureter.</li>
+  </ul>
+</section>
+
+<section class="topic s3-topic" id="insertion">
+  <div class="topic-header">
+    <span class="topic-num">3.2</span>
+    <h2>Step-by-Step: Percutaneous Infrarenal IVC Filter Insertion</h2>
+  </div>
+
+  <ol>
+    <li><strong>Pre-procedure:</strong> Review CT/MRI venogram to confirm IVC diameter, patency, and renal vein levels. Confirm indication: absolute contraindication to anticoagulation in a patient with acute VTE, or documented PE recurrence despite therapeutic anticoagulation.</li>
+    <li><strong>Positioning and Access:</strong> Patient supine on the fluoroscopy table. Access via ultrasound-guided right common femoral vein (preferred course to infrahepatic IVC). Prep and drape bilateral groins.</li>
+    <li><strong>Venous Cannulation:</strong> Place a 21-G micropuncture needle into the right common femoral vein below the inguinal ligament. Confirm venous flow, advance a 0.018'' wire, exchange to a 4F dilator, then a 0.035'' J-wire, and insert a 6–8F sheath.</li>
+    <li><strong>Phlebography:</strong> Inject 10–15 mL of contrast through the sheath in the distal IVC. Identify the maximum infrarenal IVC diameter (most filters: max 28mm), the lowest renal vein entry point, and check for thrombus presence.</li>
+    <li><strong>Filter Deployment:</strong> Advance the delivery system to 5mm below the lowest renal vein. Confirm position on AP (midline L3) and lateral fluoroscopy (anterior to vertebral bodies). Deploy the filter, confirming anchor engagement and ensuring no tilt &gt;15 degrees.</li>
+    <li><strong>Post-deployment Check:</strong> Perform completion venography to confirm infrarenal position, symmetric expansion, and absence of limb perforation. Initiate therapeutic anticoagulation as soon as clinically safe.</li>
+    <li><strong>Retrieval Planning:</strong> Document the retrieval window in the chart. Schedule retrieval at 3 months (permanent filters carry a 10-year IVC occlusion risk of 22%). Target institutional retrieval rates &gt;70%.</li>
+  </ol>
+</section>
+
+<section class="topic s3-topic" id="difficult">
+  <div class="topic-header">
+    <span class="topic-num">3.3</span>
+    <h2>The Difficult Case — Anticoagulation in the Post-operative Crisis</h2>
+  </div>
+  
+  <div class="callout warn">
+    <span class="label">Clinical Scenario</span>
+    <strong>Day 3 Post-Hartmann's Procedure:</strong> A 52-year-old patient develops pleuritic chest pain, SpO2 drops to 88%, HR 120. CTPA confirms bilateral submassive PE. The pelvic drain output is 200 mL of frank blood-stained fluid. What is your management?
+  </div>
+
+  <h3>Action Sequence Protocol</h3>
+  <ol>
+    <li><strong>Resuscitate &amp; Confirm:</strong> Administer high-flow oxygen, establish secure IV access, and call for emergency haematological support. Perform a bedside echocardiogram to evaluate RV strain (McConnell's sign, RV:LV ratio &gt;0.9).</li>
+    <li><strong>Assess Hemodynamics:</strong> If the patient becomes hemodynamically unstable (BP &lt;90 mmHg systolic), this represents a massive PE, requiring systemic thrombolysis or emergency surgical embolectomy.</li>
+    <li><strong>Calibrated Anticoagulation:</strong> If hemodynamically stable (submassive PE), initiate an **IV UFH infusion at 18 U/kg/h without a bolus**. Omitting the bolus reduces the risk of acute surgical haemorrhage while slowly establishing a therapeutic PTT (target 60–80s).</li>
+    <li><strong>Surgical Evaluation:</strong> Assess the bleeding source. If drain output is serosanguinous and stable, continue UFH with close monitoring. If frank, active haemorrhage is occurring, temporarily hold heparin and proceed to urgent **percutaneous IVC filter placement** to prevent fatal PE recurrence, resuming anticoagulation once surgical/radiological haemostasis is achieved.</li>
+    <li><strong>Multidisciplinary Care:</strong> Involve vascular surgery, interventional radiology, and haematology early. The worst decision is to withhold anticoagulation indefinitely; untreated submassive PE carries an in-hospital mortality rate of 15–25%.</li>
+  </ol>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- PILLAR 4: SPATIAL & RADIOLOGIC CORRELATION ════════════════ -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<div class="sec-header s4">
+  <span class="sec-badge">PILLAR 4</span>
+  <h2 class="sec-title">Spatial Awareness &amp; Radiological Correlation</h2>
+</div>
+
+<section class="topic s4-topic" id="spatial">
+  <div class="topic-header">
+    <span class="topic-num">4.1</span>
+    <h2>3D Spatial Awareness during IVC Filter Deployment</h2>
+  </div>
+  
+  <p>Standing at the patient's right groin, the operator views the fluoroscopy monitor to their left. The right common femoral vein lies 1–2 cm medial to the femoral artery pulsation, just below the inguinal ligament. On AP projection, the guide wire must remain to the right of the lumbar vertebral bodies at L4–L5, shifting towards the midline at L2–L3 as it ascends the IVC. The IVC lies directly anterior to the lumbar vertebral bodies; any posterior wire position on lateral fluoroscopy indicates placement in a lumbar vein or ascending lumbar pathway and mandates repositioning.</p>
+  <p>The right renal vein enters the IVC at a near-horizontal angle from the right at the L1–L2 disc level. The left renal vein crosses anterior to the aorta and enters approximately 1 vertebral level higher. The target deployment zone — 5mm below the lowest renal vein — corresponds to the mid-L2 level. AP and lateral confirmation are mandatory prior to filter release.</p>
+</section>
+
+<section class="topic s4-topic" id="ctpa">
+  <div class="topic-header">
+    <span class="topic-num">4.2</span>
+    <h2>CTPA Read Protocol for Suspected PE — Sequential 8-Step Read</h2>
+  </div>
+
+  <ol>
+    <li><strong>Lung Windows:</strong> Scan from lung apices. Identify: **Hampton's hump** (wedge-shaped pleural-based infarct; 83% specific); **Westermark sign** (oligaemia distal to obstruction); or pleural effusions.</li>
+    <li><strong>Pulmonary Vasculature — Central:</strong> Inspect the main pulmonary artery carina. Look for a saddle embolus straddling the bifurcation. Central clots indicate a high risk of right heart strain.</li>
+    <li><strong>Pulmonary Vasculature — Segmental/Subsegmental:</strong> Follow each lobar artery. A true embolus appears as a filling defect present on at least 2 adjacent slices, centrally located within the vessel lumen (Polo-mint sign or railway track sign).</li>
+    <li><strong>Right Heart Assessment:</strong> Measure the RV:LV diameter ratio on the axial cut showing the widest chambers. A ratio &gt;0.9 indicates RV dilatation. Check for interventricular septal bowing leftward (D-sign) indicating RV pressure overload.</li>
+    <li><strong>IVC and Bilateral Iliac Veins:</strong> Scroll to inferior cuts to locate the source DVT. Look for left common iliac vein compression beneath the right common iliac artery (May-Thurner anatomy).</li>
+    <li><strong>Contrast Bolus Timing Check:</strong> Verify contrast attenuation in the main pulmonary artery. Hounsfield units &gt;200 indicate adequate timing. HU &lt;150 indicates suboptimal bolus timing, making subsegmental defects unreliable.</li>
+    <li><strong>Incidental Findings:</strong> Inspect for pleural/pericardial fluid, pneumothorax, pulmonary nodules, or bony metastases.</li>
+    <li><strong>Structured Reporting:</strong> Report presence/absence of PE, distribution (central vs. segmental), RV:LV ratio, signs of pulmonary infarction, and any source DVT.</li>
+  </ol>
+</section>
+
+<section class="topic s4-topic" id="diagrams">
+  <div class="topic-header">
+    <span class="topic-num">4.3</span>
+    <h2>Critical Diagram Outlines</h2>
+  </div>
+
+  <ul>
+    <li><strong>Diagram 1: The Perioperative VTE Risk-Benefit Decision Matrix:</strong> A 2x2 matrix balancing VTE risk (Caprini) against Bleeding Risk (ACCP). High VTE + High Bleed indicates starting with IPC and introducing LMWH/UFH only after 24–48 hours of documented haemostasis.</li>
+    <li><strong>Diagram 2: Caprini RAM Scoring Card:</strong> Color-coded reference. 1-point (age 41–60, minor surgery, BMI &gt;25); 2-point (age 61–74, malignancy, bedridden &gt;72h); 3-point (age &gt;75, prior VTE, family history, thrombophilias); 5-point (stroke &lt;1 month, major arthroplasty, hip/pelvis fracture, spinal cord injury).</li>
+    <li><strong>Diagram 3: HIT Diagnostic and Management Algorithm:</strong> Flowchart starting at platelet drop &gt;50% on heparin. Calculate 4T score. Intermediate/high (4–8 points) mandates stopping all heparin, starting argatroban/bivalirudin, and sending anti-PF4 EIA for confirmation.</li>
+    <li><strong>Diagram 4: Anticoagulation Bridge Decision Tree:</strong> Distinguishes low-risk patients (stop warfarin, no bridge; per PERIOP-2) from high-risk patients (mechanical mitral valves, recent VTE &lt;3 months; bridge with therapeutic LMWH).</li>
+    <li><strong>Diagram 5: IVC Filter Deployment Confirmation:</strong> AP fluoroscopy showing the filter straddling the midline L2–L3; lateral fluoroscopy showing the filter anterior to the vertebral bodies, with the apex pointing cephalad just below the renal veins.</li>
+  </ul>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- PILLAR 5: SENIOR FELLOWSHIP & BOARD REVIEW ════════════════ -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<div class="sec-header s5">
+  <span class="sec-badge">PILLAR 5</span>
+  <h2 class="sec-title">Senior Fellowship &amp; Board Review</h2>
+</div>
+
+<section class="topic s5-topic" id="vivas">
+  <div class="topic-header">
+    <span class="topic-num">5.1</span>
+    <h2>High-Order Viva Scenarios — Hot Seat</h2>
+  </div>
+
+  <div class="callout exam">
+    <span class="label">Q: VIVA 1</span>
+    <strong>Post-operative Day 1 after Open Right Hemicolectomy for Cancer. Platelet count has dropped to 62 (was 210 on admission). The patient was started on UFH prophylaxis. What is your management?</strong>
+    <p><strong>A:</strong> This is Heparin-Induced Thrombocytopenia (HIT) until proven otherwise. Immediately calculate the 4T score. If the score is intermediate or high (4–8 points), stop all heparin products immediately (including heparin flushes, locks, and coated catheters). Initiate a non-heparin anticoagulant, specifically **Argatroban** (or Bivalirudin). Send an anti-PF4 EIA screen; if positive, obtain a Serotonin Release Assay (SRA) for gold-standard confirmation. Order a lower extremity venous duplex ultrasound to rule out subclinical DVT, as HIT is highly thrombogenic. Do not transfuse platelets, and do not start Warfarin until the platelet count has recovered &gt;150,000 to prevent warfarinal-induced skin necrosis.</p>
+  </div>
+
+  <div class="callout exam">
+    <span class="label">Q: VIVA 2</span>
+    <strong>A 68-year-old patient on warfarin for AF (CHADS2-VASc 4) presents for an elective laparoscopic anterior resection. Should you bridge with LMWH?</strong>
+    <p><strong>A:</strong> No. The PERIOP-2 trial demonstrated that routine bridging in AF patients increases the rate of major bleeding 2.5-fold (3.2% vs. 1.3%) with zero benefit in VTE reduction (0.4% in both groups). Bridging is only indicated for mechanical mitral valves, high-risk aortic valves, or recent VTE within 3 months. Stop warfarin 5 days pre-operatively. Target an INR &lt;1.5 for surgery. Restart warfarin postoperatively once haemostasis is secure, using prophylactic-dose LMWH as a transition until the INR is therapeutic.</p>
+  </div>
+
+  <div class="callout exam">
+    <span class="label">Q: VIVA 3</span>
+    <strong>On Day 7 post-Whipple, a patient's creatinine rises to 285 &mu;mol/L. They are currently on Enoxaparin 40mg SC daily. What is your action?</strong>
+    <p><strong>A:</strong> Enoxaparin is renally cleared and will accumulate in acute kidney injury, putting the patient at high risk of major bleeding. With a CrCl &lt;30 mL/min, stop Enoxaparin. Switch the patient to **UFH 5000 IU SC three times daily (TDS)**, which is hepatically cleared and renally safe. UFH also has a short half-life and is fully reversible with protamine, which is advantageous in a patient who recently underwent a major pancreaticoduodenectomy.</p>
+  </div>
+
+  <div class="callout exam">
+    <span class="label">Q: VIVA 4</span>
+    <strong>On Day 6 post-emergency laparotomy, a patient develops sudden dyspnoea, chest pain, SpO2 92% on 15L, and BP 88/56. What is your diagnosis and management?</strong>
+    <p><strong>A:</strong> The diagnosis is massive PE, defined by hemodynamic instability (systolic BP &lt;90 mmHg). Resuscitate immediately: administer high-flow oxygen, give a cautious 500 mL crystalloid challenge, and call for emergency cardiology/anaesthesia support. Confirm right heart strain via bedside echo. Since the patient is in extremis, proceed with **systemic thrombolysis (Alteplase 100mg IV)**. While recent major surgery (6 days post-laparotomy) is a relative contraindication, massive PE with shock is an absolute indication when the patient is dying. If lysis is absolutely contraindicated or fails, transport the patient immediately to the hybrid OR for catheter-directed embolectomy or surgical embolectomy, utilizing an ECMO bridge if needed.</p>
+  </div>
+</section>
+
+<section class="topic s5-topic" id="scores">
+  <div class="topic-header">
+    <span class="topic-num">5.2</span>
+    <h2>Classifications &amp; Scoring Systems</h2>
+  </div>
+
+  <h3>1. Caprini RAM Scoring Card</h3>
+  <ul>
+    <li><strong>1 Point:</strong> Age 41–60, minor surgery, BMI &gt;25, swollen legs, varicose veins, pregnancy, oral contraceptives.</li>
+    <li><strong>2 Points:</strong> Age 61–74, major surgery &gt;45 min, current/prior malignancy, confined to bed &gt;72h, central venous access.</li>
+    <li><strong>3 Points:</strong> Age &gt;75, prior DVT/PE, family history of VTE, Factor V Leiden, Prothrombin gene mutation, Lupus anticoagulant.</li>
+    <li><strong>5 Points:</strong> Stroke &lt;1 month, major joint arthroplasty, hip/pelvis/leg fracture, acute spinal cord injury, multiple trauma.</li>
+  </ul>
+  <p><strong>Risk Bands:</strong> Score 0–2 (Low risk: early ambulation); Score 3–4 (Moderate risk: LMWH/UFH + IPC for 7–10 days); Score 5–8 (High risk: LMWH/UFH + IPC for 7–10 days, consider extended); Score &gt;8 (Very High risk: LMWH/UFH + IPC, extended prophylaxis for 28–35 days).</p>
+
+  <h3>2. 4T Score for HIT</h3>
+  <ul>
+    <li><strong>Thrombocytopenia:</strong> 2 pts (&gt;50% fall, nadir &gt;20); 1 pt (30–50% fall, nadir 10–19); 0 pts (&lt;30% fall, nadir &lt;10).</li>
+    <li><strong>Timing of Fall:</strong> 2 pts (Days 5–10, or &lt;1 day if heparin within 100 days); 1 pt (Day &gt;10 or unclear); 0 pts (&lt;Day 4 without recent heparin).</li>
+    <li><strong>Thrombosis/Skin Necrosis:</strong> 2 pts (New confirmed thrombosis, skin necrosis, or anaphylaxis); 1 pt (Progressive/recurrent thrombosis); 0 pts (None).</li>
+    <li><strong>Other Causes:</strong> 2 pts (None apparent); 1 pt (Possible other cause); 0 pts (Definite other cause).</li>
+  </ul>
+  <p><strong>Interpretation:</strong> Score 0–3 (Low probability, &lt;3% HIT risk); Score 4–5 (Intermediate probability, 10–30% risk); Score 6–8 (High probability, &gt;80% risk).</p>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- BOARD REVIEW SECTION ══════════════════════════════════════ -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<div class="rapid-ref" id="board-review-section">
+  <h3>ABSITE Cheat Sheet &amp; High-Yield Core Pearls</h3>
+
+  <h4>High-Yield MCQ Numbers</h4>
+  <div class="table-wrap">
+    <table style="background: transparent;">
+      <thead>
+        <tr>
+          <th>Clinical Target</th>
+          <th>High-Yield Value</th>
+          <th>Clinical Significance</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>DVT Rate without Prophylaxis</strong></td>
+          <td><strong>15 - 40%</strong></td>
+          <td>General surgical patients; rises to 40–60% in orthopaedic cases.</td>
+        </tr>
+        <tr>
+          <td><strong>Fatal PE in-hospital deaths</strong></td>
+          <td><strong>5 - 10%</strong></td>
+          <td>VTE is the leading cause of preventable in-hospital mortality.</td>
+        </tr>
+        <tr>
+          <td><strong>Extended Prophylaxis Duration</strong></td>
+          <td><strong>28 Days</strong></td>
+          <td>Mandatory following major abdominal-pelvic cancer surgery (ENOXACAN-II).</td>
+        </tr>
+        <tr>
+          <td><strong>ESRA/ASRA LMWH Window</strong></td>
+          <td><strong>12 Hours</strong></td>
+          <td>Minimum interval between prophylactic LMWH dose and spinal needle placement or catheter removal.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h4>Surgical Eponyms &amp; Board Pearls</h4>
+  <ul>
+    <li><strong>Borchardt's Triad:</strong> Diagnostic for acute gastric volvulus (chest/epigastric pain, violent retching without vomiting, inability to pass an NG tube). Mandates emergent laparotomy.</li>
+    <li><strong>Cameron Ulcers:</strong> Linear mucosal erosions on the gastric folds at the level of the diaphragmatic hiatus, caused by friction and ischemia. A major cause of occult GI bleeding.</li>
+    <li><strong>Collis Gastroplasty:</strong> Surgical technique to lengthen a shortened esophagus using a neo-esophageal tube created from the gastric fundus.</li>
+    <li><strong>Belsey Mark IV:</strong> An open transthoracic 270&deg; posterior fundoplication, reserved for complex recurrences or shortened esophagus.</li>
+  </ul>
+</div>
+
+</div><!-- end content-wrap -->
+</main>
+
+<button id="top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script src="../../js/nav-pill.js"></script>
+<script src="../../js/navigation.js"></script>
+<script>
+const progressBar = document.getElementById('progress-bar');
+const topBtn = document.getElementById('top-btn');
+const navItems = document.querySelectorAll('.nav-item');
+const sections = document.querySelectorAll('.topic[id], .rapid-ref[id]');
+
+window.addEventListener('scroll', () => {
+  const st = window.scrollY;
+  const dh = document.documentElement.scrollHeight - window.innerHeight;
+  if (progressBar) progressBar.style.transform = `scaleX(${st / dh})`;
+  if (topBtn) topBtn.classList.toggle('show', st > 400);
+  
+  let current = '';
+  sections.forEach(s => { if (st >= s.offsetTop - 120) current = s.id; });
+  navItems.forEach(n => { n.classList.toggle('active', n.getAttribute('href') === '#' + current); });
+});
+
+function filterNav(query) {
+  const q = query.toLowerCase();
+  navItems.forEach(item => { item.style.display = (!q || item.textContent.toLowerCase().includes(q)) ? 'block' : 'none'; });
+}
+
+navItems.forEach(item => {
+  item.addEventListener('click', e => {
+    e.preventDefault();
+    if(typeof closeSidebar === 'function') closeSidebar();
+    const target = document.querySelector(item.getAttribute('href'));
+    if (target) window.scrollTo({ top: target.getBoundingClientRect().top - 80, behavior: 'smooth' });
+  });
+});
+
+document.querySelectorAll('.topic').forEach((el, i) => { el.style.animationDelay = `${i * 0.03}s`; });
+</script>
+</body>
+</html>
