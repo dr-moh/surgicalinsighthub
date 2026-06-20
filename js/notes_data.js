@@ -217,6 +217,18 @@ window.NOTES_DATA = {
       type: 'web',
       url: 'notes/Surgical High-Yield Notes/pancreatic_trauma.html',
       isNew: true
+    },
+    {
+      id: 'hy-gastric-cancer',
+      title: 'Gastric Cancer Pathology & Surgical Management',
+      kicker: 'Upper GI Oncology Monograph',
+      specialty: ['hpb', 'basics'],
+      description: 'Comprehensive study guide covering Lauren intestinal vs diffuse subtypes, D2 lymphadenectomy clinical trials (JCOG9501, Dutch Trial), FLOT perioperative chemotherapeutic schedules, and Siewert junctional classifications.',
+      tags: ['blue:Oncology', 'blue:Stomach', 'D2 Lymphadenectomy', 'FLOT', 'JCOG9501', 'ABSITE'],
+      pages: '5 Pillars',
+      type: 'web',
+      url: 'notes/Surgical High-Yield Notes/gastric_cancer.html',
+      isNew: true
     }
   ],
 

@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Surgical Insight Hub — Gastric Cancer Monograph</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/theme.css?v=4.0.0">
+<link rel="stylesheet" href="../../css/shared.css">
+<script>
+  const savedTheme = localStorage.getItem('sih-theme') || 'light';
+  if (savedTheme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+</script>
+<style>
+:root {
+  /* Gastric Cyan & Charcoal Aesthetic */
+  --primary:   #0891B2; /* Cyan */
+  --primary-dk:#155E75; /* Dark Cyan */
+  --primary-lt:#ECFEFF; /* Light Cyan */
+  --accent:    #06B6D4; /* Bright Cyan */
+  --accent2:   #22D3EE; /* Sky Cyan */
+  --gold:      #B8922A;
+  --gold-lt:   #FEF3C7;
+  --s1:        #0891B2; /* Pillar 1 - Cyan */
+  --s2:        #059669; /* Pillar 2 - Emerald Green */
+  --s3:        #B45309; /* Pillar 3 - Bronze */
+  --s4:        #7C3AED; /* Pillar 4 - Purple */
+  --s5:        #4B5563; /* Pillar 5 - Slate Gray */
+  --s1-lt:     #ECFEFF;
+  --s2-lt:     #ECFDF5;
+  --s3-lt:     #FFFBEB;
+  --s4-lt:     #F5F3FF;
+  --s5-lt:     #F3F4F6;
+  --red:       #B91C1C;
+  --red-lt:    #FEF2F2;
+  --bg:        #FAFAFB;
+  --bg2:       #F4F4F6;
+  --border:    #E5E7EB;
+  --text:      #1F2937;
+  --muted:     #4B5563;
+  --white:     #FFFFFF;
+  --sidebar-w: 320px;
+}
+
+[data-theme="dark"] {
+  --bg: #02080A;
+  --bg2: #05141A;
+  --text: #F3F4F6;
+  --muted: #A3A3A3;
+  --border: rgba(255,255,255,0.08);
+  --primary-lt: #082F37;
+  --s1-lt: #082F37;
+  --s2-lt: #052117;
+  --s3-lt: #2D1A04;
+  --s4-lt: #12102E;
+  --s5-lt: #1F2937;
+  --white: #05141A;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.75;}
+
+/* SLIDE-OVER SIDEBAR */
+#sidebar {
+  position: fixed; top: 0; left: 0; width: var(--sidebar-w); height: 100vh;
+  background: var(--primary-dk); color: #ECE5E4;
+  display: flex; flex-direction: column;
+  z-index: 1000; overflow: hidden;
+  transform: translateX(-100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 4px 0 24px rgba(0,0,0,0.4);
+}
+body.sidebar-open #sidebar {
+  transform: translateX(0);
+}
+
+/* OVERLAY */
+#sidebar-overlay {
+  position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+  background: rgba(8, 94, 117, 0.7); backdrop-filter: blur(3px);
+  z-index: 950; opacity: 0; pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+body.sidebar-open #sidebar-overlay {
+  opacity: 1; pointer-events: auto;
+}
+
+/* TOGGLE BUTTON - TOP LEFT */
+#sidebar-toggle {
+  position: fixed; top: 72px; left: 24px; z-index: 900;
+  background: var(--primary); color: white;
+  border: none; border-radius: 30px;
+  padding: 10px 18px; font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600;
+  letter-spacing: 0.05em; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  display: flex; align-items: center; gap: 8px; transition: all 0.2s;
+}
+#sidebar-toggle:hover { background: var(--accent); transform: translateY(-2px); }
+
+#progress-bar {
+  position: fixed; top: 52px; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  transform-origin: left; transform: scaleX(0); transition: transform 0.1s; z-index: 1105;
+}
+
+#sidebar-header{padding:20px 20px 14px;border-bottom:1px solid rgba(255,255,255,0.1);flex-shrink:0;}
+#sidebar-header .logo{font-family:'Playfair Display',serif;font-size:13px;font-weight:700;color:var(--accent2);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;}
+#sidebar-header .sub{font-size:10.5px;color:rgba(236,229,228,0.6);letter-spacing:0.04em;}
+#sidebar-search{padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.08);flex-shrink:0;}
+#sidebar-search input{width:100%;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:6px;color:#ECE5E4;padding:6px 10px;font-size:12px;font-family:'Source Serif 4',serif;outline:none;transition:border-color 0.2s;}
+#sidebar-search input::placeholder{color:rgba(236,229,228,0.4);}
+#sidebar-search input:focus{border-color:var(--accent);}
+#sidebar-nav{flex:1;overflow-y:auto;padding:8px 0 20px;}
+#sidebar-nav::-webkit-scrollbar{width:4px;}
+#sidebar-nav::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.15);border-radius:2px;}
+.vol-label{font-size:9.5px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent2);padding:14px 18px 4px;}
+.nav-item{display:block;padding:8px 18px 8px 22px;font-size:12.5px;color:rgba(236,229,228,0.75);text-decoration:none;border-left:2px solid transparent;transition:all 0.15s;line-height:1.4;}
+.nav-item:hover{color:#fff;background:rgba(255,255,255,0.05);border-left-color:rgba(34,211,238,0.5);}
+.nav-item.active{color:#fff;background:rgba(255,255,255,0.08);border-left-color:var(--accent2);font-weight:600;}
+.nav-item .num{font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(236,229,228,0.4);margin-right:6px;}
+
+/* HERO HEADER */
+#hero{background:linear-gradient(135deg,var(--primary-dk) 0%,#0f2830 60%,#020b0d 100%);color:white;padding:120px 72px 60px;position:relative;overflow:hidden;}
+#hero::before{content:'';position:absolute;top:-60px;right:-60px;width:380px;height:380px;background:radial-gradient(circle,rgba(34,211,238,0.18) 0%,transparent 70%);pointer-events:none;}
+#hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--primary),var(--accent2),transparent);}
+#hero .eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.16em;color:var(--accent2);text-transform:uppercase;margin-bottom:14px;}
+#hero h1{font-family:'Playfair Display',serif;font-size:38px;font-weight:700;line-height:1.15;margin-bottom:10px;color:#fff;}
+#hero .subtitle{font-size:18px;color:rgba(255,255,255,0.65);font-style:italic;margin-bottom:28px;}
+#hero .badges{display:flex;gap:10px;flex-wrap:wrap;}
+#hero .badge{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:4px 14px;font-size:12px;color:rgba(255,255,255,0.8);font-family:'JetBrains Mono',monospace;}
+
+/* CONTENT WRAP */
+.content-wrap{max-width:900px;margin:0 auto;padding:0 48px 80px;}
+
+/* SECTION HEADER */
+.sec-header{margin-top:60px;margin-bottom:8px;padding:28px 36px;border-radius:10px;display:flex;align-items:center;gap:20px;}
+.sec-header.s1{background:linear-gradient(135deg,rgba(8,145,178,0.04),rgba(8,145,178,0.10));border-left:4px solid var(--s1);}
+.sec-header.s2{background:linear-gradient(135deg,#0596690A,#0596691A);border-left:4px solid var(--s2);}
+.sec-header.s3{background:linear-gradient(135deg,#B453090A,#B453091A);border-left:4px solid var(--s3);}
+.sec-header.s4{background:linear-gradient(135deg,#7C3AED0A,#7C3AED1A);border-left:4px solid var(--s4);}
+.sec-header.s5{background:linear-gradient(135deg,#4B55630A,#4B55631A);border-left:4px solid var(--s5);}
+
+.sec-badge{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;letter-spacing:0.1em;padding:4px 12px;border-radius:4px;white-space:nowrap;flex-shrink:0;}
+.s1 .sec-badge{background:var(--s1);color:white;}
+.s2 .sec-badge{background:var(--s2);color:white;}
+.s3 .sec-badge{background:var(--s3);color:white;}
+.s4 .sec-badge{background:var(--s4);color:white;}
+.s5 .sec-badge{background:var(--s5);color:white;}
+.sec-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;}
+.s1 .sec-title{color:var(--s1);}
+.s2 .sec-title{color:var(--s2);}
+.s3 .sec-title{color:var(--s3);}
+.s4 .sec-title{color:var(--s4);}
+.s5 .sec-title{color:var(--s5);}
+
+/* TOPIC & CONTENT TYPOGRAPHY */
+.topic{margin-top:48px;padding-top:48px;border-top:1px solid var(--border);}
+.topic:first-of-type{border-top:none;}
+.topic-header{display:flex;align-items:flex-start;gap:16px;margin-bottom:24px;}
+.topic-num{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;padding:3px 10px;border-radius:4px;margin-top:4px;flex-shrink:0;}
+.s1 .topic-num{background:var(--s1-lt);color:var(--s1);}
+.s2 .topic-num{background:var(--s2-lt);color:var(--s2);}
+.s3 .topic-num{background:var(--s3-lt);color:var(--s3);}
+.s4 .topic-num{background:var(--s4-lt);color:var(--s4);}
+.s5 .topic-num{background:var(--s5-lt);color:var(--s5);}
+
+.topic h2{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;line-height:1.2;}
+.s1 .topic h2{color:var(--s1);}
+.s2 .topic h2{color:var(--s2);}
+.s3 .topic h2{color:var(--s3);}
+.s4 .topic h2{color:var(--s4);}
+.s5 .topic h2{color:var(--s5);}
+
+.topic h3{font-family:'Playfair Display',serif;font-size:17px;font-weight:600;color:var(--muted);margin:26px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--border);}
+.topic h4{font-size:13px;font-weight:600;color:var(--muted);letter-spacing:0.06em;text-transform:uppercase;margin:18px 0 8px;font-family:'JetBrains Mono',monospace;}
+.topic ul, .topic ol{margin:8px 0 14px 20px;color:var(--text);}
+.topic li{margin-bottom:6px;line-height:1.65;}
+.topic li::marker{color:var(--accent2);}
+.topic strong{color:var(--text);font-weight:600;}
+
+/* TABLES */
+.table-wrap{overflow-x:auto;margin:16px 0 20px;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.06);border:1px solid var(--border);}
+table{width:100%;border-collapse:collapse;font-size:13.5px;background:var(--white);}
+thead tr{background:var(--s1);}
+thead th{color:white;padding:10px 14px;text-align:left;font-family:'Source Serif 4',serif;font-weight:600;font-size:13px;}
+tbody tr:nth-child(even){background:var(--bg2);}
+tbody tr:hover{background:var(--s1-lt);transition:background 0.15s;}
+tbody td{padding:9px 14px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.5;}
+[data-theme="dark"] table { background: var(--bg2); }
+.s2-tbl thead tr{background:var(--s2);}
+.s3-tbl thead tr{background:var(--s3);}
+.s4-tbl thead tr{background:var(--s4);}
+.s5-tbl thead tr{background:var(--s5);}
+
+/* CALLOUTS */
+.callout{margin:18px 0;padding:14px 18px;border-radius:0 8px 8px 0;border-left:4px solid;font-size:14px;line-height:1.65;}
+.callout .label{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;display:block;margin-bottom:4px;}
+.callout.pearl{background:var(--gold-lt);border-color:var(--gold);color:var(--text);}
+.callout.pearl .label{color:var(--gold);}
+.callout.warn{background:var(--red-lt);border-color:var(--red);color:var(--text);}
+.callout.warn .label{color:var(--red);}
+.callout.clin{background:var(--s1-lt);border-color:var(--s1);color:var(--text);}
+.callout.clin .label{color:var(--s1);}
+.callout.exam{background:var(--s4-lt);border-color:var(--s4);color:var(--text);}
+.callout.exam .label{color:var(--s4);}
+[data-theme="dark"] .callout.pearl { background: rgba(184, 146, 42, 0.08); }
+[data-theme="dark"] .callout.warn { background: rgba(185, 28, 28, 0.08); }
+
+#top-btn{position:fixed;bottom:24px;right:24px;width:44px;height:44px;background:var(--primary);color:white;border:none;border-radius:50%;font-size:18px;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,0.3);z-index:1100;opacity:0;pointer-events:none;transition:all 0.3s;display:flex;align-items:center;justify-content:center;}
+#top-btn.show{opacity:1;pointer-events:auto;}
+#top-btn:hover{background:var(--accent);transform:translateY(-3px);}
+
+.rapid-ref{margin-top:60px;padding:36px;background:var(--primary-dk);color:white;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,0.15);}
+.rapid-ref h3{font-family:'Playfair Display',serif;font-size:24px;margin-bottom:18px;color:#fff;border-bottom:1px solid rgba(255,255,255,0.15);padding-bottom:10px;}
+.rapid-ref table{background:transparent;}
+.rapid-ref thead tr{background:rgba(255,255,255,0.08);}
+.rapid-ref thead th{color:#FAF5F0;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;}
+.rapid-ref tbody tr:nth-child(even){background:rgba(255,255,255,0.03);}
+.rapid-ref tbody tr:hover{background:rgba(255,255,255,0.07);}
+.rapid-ref tbody td{border-bottom:1px solid rgba(255,255,255,0.08);color:rgba(255,255,255,0.85);font-size:13px;}
+.rapid-ref strong{color:#fff;}
+
+@media(max-width:900px) {
+  .content-wrap { padding: 0 20px 60px; }
+  #hero { padding: 80px 20px 40px; }
+  #hero h1 { font-size: 30px; }
+  #sidebar-toggle { top: 64px; left: 16px; }
+}
+@media print {
+  #sidebar-toggle, #sidebar-overlay, #sidebar, #top-btn, #progress-bar, #mainNav { display: none !important; }
+  .topic { page-break-inside: avoid; }
+  .sec-header { page-break-before: always; }
+}
+</style>
+<link rel="icon" type="image/png" href="../../assets/images/Surgical_Insight_Hub_Logo.png">
+</head>
+<body>
+
+<!-- Standardized SIH Navbar -->
+<nav class="nav" id="mainNav">
+  <div class="nav-left">
+    <a href="../../index.html" class="nav-pill">
+      <div class="nav-logo-img">
+        <img src="../../assets/images/Surgical_Insight_Hub_Logo.png" alt="SIH Logo">
+      </div>
+      <div>
+        <div class="nav-brand-text">Surgical Insight Hub</div>
+        <div class="nav-brand-sub">The Residency Journal</div>
+      </div>
+    </a>
+  </div>
+  <div class="nav-links-pill">
+    <a href="../../index.html">Home</a>
+    <a href="../../notes.html" class="active">Notes</a>
+    <a href="../operative_approach.html">Playbook</a>
+    <a href="../../arena.html?v=4.0.0">MCQ Arena</a>
+    <a href="../../podcast.html">Podcast</a>
+    <a href="../../surgery-talk.html">Surgery Talk</a>
+    <a href="../../about.html">About</a>
+  </div>
+  <div class="nav-right">
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+      <svg id="moonIcon" viewBox="0 0 24 24" width="18" height="18"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      <svg id="sunIcon" style="display:none;" viewBox="0 0 24 24" width="18" height="18"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+    </button>
+    <a href="https://t.me/sugicalInsightHub" target="_blank" class="nav-tg-btn" title="Join Telegram">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="#f0d080"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.89 8.22l-1.97 9.28c-.15.66-.54.82-1.08.51l-3-2.21-1.45 1.39c-.16.16-.3.3-.61.3l.21-3.05 5.56-5.02c.24-.21-.05-.33-.37-.12l-6.87 4.33-2.96-.92c-.64-.2-.66-.64.14-.95l11.57-4.46c.54-.19 1.01.13.83.94z"/></svg>
+    </a>
+    <a href="../../arena.html?v=4.0.0" class="nav-btn arena-btn">MCQ Arena</a>
+    <button class="mob-nav-toggle" onclick="openMobNav()" aria-label="Menu">
+      <div class="hamburger"><span></span><span></span><span></span></div>
+    </button>
+  </div>
+</nav>
+
+<div class="mob-nav-overlay" id="mobNavOverlay" onclick="closeMobNav()"></div>
+<div class="mob-nav-sheet" id="mobNavSheet">
+  <div class="mob-nav-handle"></div>
+  <a href="../../index.html" onclick="closeMobNav()">Home</a>
+  <a href="../../notes.html" onclick="closeMobNav()">Notes</a>
+  <a href="../operative_approach.html" onclick="closeMobNav()">Playbook</a>
+  <a href="../../podcast.html" onclick="closeMobNav()">Podcast</a>
+  <a href="../../surgery-talk.html" onclick="closeMobNav()">Surgery Talk</a>
+  <a href="../../arena.html" onclick="closeMobNav()">MCQ Arena</a>
+  <a href="../../about.html" onclick="closeMobNav()">About</a>
+  <a href="https://t.me/sugicalInsightHub" target="_blank" rel="noopener" onclick="closeMobNav()" style="color: var(--brand-gold); font-weight: 800;">Join Telegram Community</a>
+  <a href="https://www.linkedin.com/company/surgical-insight-hub" target="_blank" rel="noopener" onclick="closeMobNav()" style="color: var(--brand-gold); font-weight: 800;">LinkedIn Community</a>
+</div>
+
+<div id="progress-bar"></div>
+
+<!-- SIDEBAR TRIGGER -->
+<button id="sidebar-toggle" onclick="toggleSidebar()">
+  <span>📜</span> Table of Contents
+</button>
+<div id="sidebar-overlay" onclick="closeSidebar()"></div>
+
+<!-- SLIDE-OVER SIDEBAR -->
+<aside id="sidebar">
+  <div id="sidebar-header">
+    <div class="logo">Surgical Insight Hub</div>
+    <div class="sub">Gastric Cancer Monograph</div>
+  </div>
+  <div id="sidebar-search">
+    <input type="text" placeholder="Search sections..." oninput="filterNav(this.value)">
+  </div>
+  <nav id="sidebar-nav">
+    <div class="vol-label">Pillar 1: Core Foundations &amp; Evidence</div>
+    <a class="nav-item" href="#pathophysiology"><span class="num">1.1</span>Pathophysiology &amp; Staging</a>
+    <a class="nav-item" href="#objectives"><span class="num">1.2</span>Learning Objectives</a>
+    <a class="nav-item" href="#evidence"><span class="num">1.3</span>Seminal Trials</a>
+    <a class="nav-item" href="#debate"><span class="num">1.4</span>Consultant's Debate</a>
+    
+    <div class="vol-label">Pillar 2: Protocols &amp; ERAS</div>
+    <a class="nav-item" href="#diagnostics"><span class="num">2.1</span>Advanced Diagnostics</a>
+    <a class="nav-item" href="#eras"><span class="num">2.2</span>ERAS &amp; Drug Timing</a>
+    <a class="nav-item" href="#complications"><span class="num">2.3</span>Surgical Complications</a>
+    
+    <div class="vol-label">Pillar 3: The Operative Atlas</div>
+    <a class="nav-item" href="#anatomy"><span class="num">3.1</span>Anatomy &amp; Danger Zones</a>
+    <a class="nav-item" href="#procedure"><span class="num">3.2</span>Resection &amp; Reconstruction</a>
+    <a class="nav-item" href="#difficult"><span class="num">3.3</span>The Difficult Case</a>
+    
+    <div class="vol-label">Pillar 4: Spatial &amp; Radiologic Correlation</div>
+    <a class="nav-item" href="#spatial"><span class="num">4.1</span>3D Spatial Awareness</a>
+    <a class="nav-item" href="#radiology"><span class="num">4.2</span>CT Read Protocol</a>
+    <a class="nav-item" href="#diagrams"><span class="num">4.3</span>Critical Diagram Outlines</a>
+    
+    <div class="vol-label">Pillar 5: Senior Fellowship &amp; Board Review</div>
+    <a class="nav-item" href="#vivas"><span class="num">5.1</span>High-Order Viva Scenarios</a>
+    <a class="nav-item" href="#scores"><span class="num">5.2</span>Classifications &amp; Scores</a>
+    <a class="nav-item" href="#cheat-sheet"><span class="num">6.1</span>ABSITE Cheat Sheet</a>
+  </nav>
+</aside>
+
+<!-- MAIN CONTENT -->
+<main id="main">
+<header id="hero">
+  <div class="eyebrow">Upper GI Oncology · Board Review</div>
+  <h1>Gastric Cancer</h1>
+  <p class="subtitle">Advanced Surgical Monograph covering Lauren pathology subclassifications, D2 lymphadenectomy, FLOT chemotherapeutic pathways, and esophagojejunal reconstructions.</p>
+  <div class="badges">
+    <span class="badge">Gastric Cancer</span>
+    <span class="badge">D2 Lymphadenectomy</span>
+    <span class="badge">FLOT Regimen</span>
+    <span class="badge">ABSITE Core</span>
+  </div>
+</header>
+
+<div class="content-wrap">
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- PILLAR 1: CORE FOUNDATIONS & EVIDENCE ═════════════════════ -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<div class="sec-header s1">
+  <span class="sec-badge">PILLAR 1</span>
+  <h2 class="sec-title">Core Foundations &amp; The Evidence Base</h2>
+</div>
+
+<section class="topic s1-topic" id="pathophysiology">
+  <div class="topic-header">
+    <span class="topic-num">1.1</span>
+    <h2>Pathophysiology &amp; Clinical Framework</h2>
+  </div>
+  
+  <p>Gastric cancer remains the third leading cause of cancer death worldwide despite a falling incidence in the West. The epidemiology splits cleanly into two patterns that examiners love to test:</p>
+  <ul>
+    <li><strong>Intestinal-type (Lauren classification):</strong> Follows the Correa cascade: chronic gastritis &rarr; atrophic gastritis &rarr; intestinal metaplasia &rarr; dysplasia &rarr; carcinoma. H. pylori drives most of this sequence, which is why eradication studies are highly relevant for board questions.</li>
+    <li><strong>Diffuse-type:</strong> Does not follow a clean stepwise model. It is driven by loss of E-cadherin function (CDH1 mutations, germline in hereditary diffuse gastric cancer) and shows signet-ring cell morphology with linitis plastica infiltration. It typically affects younger patients, carries a worse prognosis, and frequently hides from endoscopy because it spreads submucosally.</li>
+  </ul>
+  
+  <h3>Anatomical &amp; Staging Considerations</h3>
+  <p>Location matters enormously for surgical planning. Proximal/cardia tumors are rising in incidence in the West (linked to GERD and Barrett's biology) and behave more like junctional adenocarcinoma. Distal tumors are still dominant globally, especially in East Asia, and are the ones most amenable to aggressive screening programs that drive Japanese and Korean stage-shift survival data.</p>
+  <p>TNM staging (AJCC 8th edition) is depth-of-invasion driven for T-stage (T1a mucosa, T1b submucosa, T2 muscularis propria, T3 subserosa, T4a serosal penetration, T4b adjacent structure invasion), and node count driven for N-stage (N1: 1-2 nodes, N2: 3-6, N3a: 7-15, N3b: 16+). The N3b cutoff is a favorite exam trap because it correlates almost linearly with 5-year survival collapse.</p>
+  <p>Lymphatic spread does not respect simple anatomic borders. The stomach has a rich submucosal and subserosal lymphatic plexus that allows skip metastases, which is the entire rationale for performing a formal D2 lymphadenectomy rather than picking off "suspicious" nodes.</p>
+</section>
+
+<section class="topic s1-topic" id="objectives">
+  <div class="topic-header">
+    <span class="topic-num">1.2</span>
+    <h2>Key Learning Objectives</h2>
+  </div>
+  <ul>
+    <li>Differentiate intestinal vs diffuse Lauren subtypes by molecular driver, demographic, and surgical implication.</li>
+    <li>Apply AJCC 8th edition T/N staging accurately, including the practical difference between T4a and T4b for resectability planning.</li>
+    <li>Justify D2 lymphadenectomy over D1 using the long-term Dutch trial data, not just "more nodes is better."</li>
+    <li>Build a perioperative chemotherapy decision tree (FLOT vs MAGIC-era ECF vs adjuvant-only CLASSIC/ARTIST approaches) and know when each applies.</li>
+    <li>Recognize the indications and contraindications for endoscopic submucosal dissection (ESD) in early gastric cancer.</li>
+    <li>Manage linitis plastica and signet-ring disease with appropriate skepticism about curative resection.</li>
+    <li>Construct an intraoperative bailout plan for unexpected peritoneal carcinomatosis found at staging laparoscopy.</li>
+  </ul>
+</section>
+
+<section class="topic s1-topic" id="evidence">
+  <div class="topic-header">
+    <span class="topic-num">1.3</span>
+    <h2>Practice-Changing Evidence — Seminal Trials</h2>
+  </div>
+
+  <div class="table-wrap">
+    <table class="s1-tbl">
+      <thead>
+        <tr>
+          <th>Trial (Year)</th>
+          <th>Findings</th>
+          <th>Board Relevance</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>FLOT4 (2019, Lancet)</strong></td>
+          <td>Perioperative FLOT (5-FU, leucovorin, oxaliplatin, docetaxel) beat ECF/ECX: median OS 50 vs 35 months.</td>
+          <td>This is now the Western standard for resectable locally advanced gastric/GEJ cancer. Know it cold; examiners ask "what regimen and why" constantly.</td>
+        </tr>
+        <tr>
+          <td><strong>CLASSIC (2012, Lancet)</strong></td>
+          <td>Adjuvant capecitabine + oxaliplatin after D2 resection improved 5-yr DFS vs surgery alone (68% vs 53%).</td>
+          <td>Foundation of the Asian D2-surgery-first-then-adjuvant-chemo model, contrasting with the Western perioperative model.</td>
+        </tr>
+        <tr>
+          <td><strong>ARTIST-2 (2021, JCO)</strong></td>
+          <td>Adding radiotherapy to adjuvant SOX chemo after D2 resection did NOT improve DFS in node-positive patients.</td>
+          <td>Closes the door on routine adjuvant chemoradiation after adequate D2 surgery; INT-0116 is no longer the default once D2 is performed properly.</td>
+        </tr>
+        <tr>
+          <td><strong>KEYNOTE-859 (2023, Lancet Oncol)</strong></td>
+          <td>Pembrolizumab + chemo improved OS in HER2-negative advanced/metastatic gastric/GEJ cancer, especially with high PD-L1 CPS.</td>
+          <td>Marks the immunotherapy era arriving in gastric cancer; relevant for advanced disease, not yet curative-intent surgery.</td>
+        </tr>
+        <tr>
+          <td><strong>Dutch D1/D2 long-term follow-up (2010, Lancet Oncol)</strong></td>
+          <td>D2 reduced gastric-cancer-related death and locoregional/distant recurrence vs D1, despite higher early morbidity/mortality in the original trial.</td>
+          <td>The single most quoted trial justifying D2 as standard of care. Know that early D2 mortality was a surgical-technique problem (pancreatosplenectomy-heavy), not an indictment of the lymphadenectomy concept itself.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="topic s1-topic" id="debate">
+  <div class="topic-header">
+    <span class="topic-num">1.4</span>
+    <h2>The Consultant's Debate: D2 vs D2+ (Para-aortic Nodal Dissection) in Locally Advanced Disease</h2>
+  </div>
+  
+  <p><strong>FOR extended D2+ para-aortic dissection:</strong> Proponents argue that bulky N2/N3 disease can harbor occult para-aortic micrometastases, and Japanese single-center data showed survival benefit in selected subgroups. If you're already committed to a radical operation, why leave nodal basins unaddressed?</p>
+  <p><strong>AGAINST:</strong> The JCOG9501 trial answered this directly. D2 plus para-aortic lymph node dissection (PAND) added significant operative time and morbidity without any survival benefit over D2 alone. The trial is one of the cleanest "more surgery isn't always better" examples in oncologic surgery.</p>
+
+  <div class="callout clin">
+    <span class="label">Consultant's Position</span>
+    D2 is the ceiling for routine practice. PAND is reserved for genuinely borderline-resectable disease being converted with neoadjuvant therapy, in a multidisciplinary setting, not as a default radical gesture. If a trainee suggests "let's just take the para-aortic nodes too" in a viva, that's your cue to quote JCOG9501 back at them.
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- PILLAR 2: PROTOCOLS & DRUG DOSING ═════════════════════════ -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<div class="sec-header s2">
+  <span class="sec-badge">PILLAR 2</span>
+  <h2 class="sec-title">Clinical Protocol &amp; Perioperative Care</h2>
+</div>
+
+<section class="topic s2-topic" id="diagnostics">
+  <div class="topic-header">
+    <span class="topic-num">2.1</span>
+    <h2>Advanced Diagnostics</h2>
+  </div>
+
+  <div class="table-wrap">
+    <table class="s2-tbl">
+      <thead>
+        <tr>
+          <th>Modality</th>
+          <th>Sensitivity</th>
+          <th>Specificity</th>
+          <th>Clinical Utility</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Upper GI endoscopy + biopsy</strong></td>
+          <td>~95% for visible lesions</td>
+          <td>High with adequate biopsies</td>
+          <td>First-line diagnostic; misses submucosal/linitis disease without deep biopsy (6-8 samples required).</td>
+        </tr>
+        <tr>
+          <td><strong>Endoscopic ultrasound (EUS)</strong></td>
+          <td>65-92% for T-stage depth</td>
+          <td>80-90%</td>
+          <td>Best modality for T-stage and assessing ESD candidacy; highly operator-dependent.</td>
+        </tr>
+        <tr>
+          <td><strong>CT chest/abdomen/pelvis</strong></td>
+          <td>65-90% for T-stage, lower for N-stage (~65-70%)</td>
+          <td>Moderate</td>
+          <td>Workhorse for distant metastasis and gross nodal disease; misses peritoneal micrometastases.</td>
+        </tr>
+        <tr>
+          <td><strong>Staging laparoscopy ± cytology</strong></td>
+          <td>Detects occult peritoneal disease in 20-30% of CT-negative locally advanced cases</td>
+          <td>N/A</td>
+          <td>Mandatory before curative resection in T3/T4 or node-positive disease per NCCN/ESMO; positive cytology alone upstages to M1.</td>
+        </tr>
+        <tr>
+          <td><strong>PET-CT</strong></td>
+          <td>Limited for diffuse/signet-ring (low FDG avidity)</td>
+          <td>Good for intestinal-type</td>
+          <td>Adjunct, not a substitute for staging laparoscopy; false negatives in diffuse-type are a classic exam trap.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <p><strong>Biomarkers:</strong> CEA and CA 19-9 are neither sensitive nor specific enough for diagnosis but are useful for surveillance trend-watching. HER2 (IHC/FISH) and PD-L1 CPS are mandatory in metastatic disease to guide trastuzumab and pembrolizumab eligibility, respectively.</p>
+</section>
+
+<section class="topic s2-topic" id="eras">
+  <div class="topic-header">
+    <span class="topic-num">2.2</span>
+    <h2>ERAS 2025/2026 Optimization</h2>
+  </div>
+  
+  <h3>Fluid &amp; Antibiotic Strategies</h3>
+  <ul>
+    <li><strong>Fluid Strategy:</strong> Goal-directed, near-zero-balance approach using stroke volume variation (SVV) rather than fixed crystalloid volumes; avoid old-school "maintenance plus losses" fluid overload that drives anastomotic edema.</li>
+    <li><strong>Antibiotic Prophylaxis:</strong> Single dose of a second-generation cephalosporin (cefuroxime) or cefazolin within 60 minutes of incision, redosed if surgery exceeds 4 hours or blood loss exceeds 1.5L. No role for prolonged postoperative courses in clean-contaminated gastric surgery.</li>
+  </ul>
+  
+  <h3>ERAS Clinical Provisions</h3>
+  <ul>
+    <li><strong>Nutrition:</strong> ERAS 2025 protocols push early oral intake (clear fluids day 0-1 if anastomosis is sound, no routine nasogastric tube), with immunonutrition (arginine, omega-3, nucleotides) started 5-7 days preoperatively in malnourished patients (shown to reduce infectious complications after major upper GI resections).</li>
+    <li><strong>Pain Management:</strong> Multimodal, opioid-sparing. Transversus abdominis plane (TAP) blocks or epidural for open approaches, scheduled paracetamol/NSAID where renal function allows, and opioids reserved for rescue only.</li>
+    <li><strong>Early Mobilization:</strong> Out of bed within 24 hours, removal of urinary catheter by postoperative day 1-2 in the absence of an epidural.</li>
+  </ul>
+</section>
+
+<section class="topic s2-topic" id="complications">
+  <div class="topic-header">
+    <span class="topic-num">2.3</span>
+    <h2>Complication Management (Clavien-Dindo IIIB-V)</h2>
+  </div>
+
+  <div class="table-wrap">
+    <table class="s2-tbl">
+      <thead>
+        <tr>
+          <th>Complication</th>
+          <th>Approximate Incidence</th>
+          <th>Management Protocol</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Anastomotic/duodenal stump leak</strong></td>
+          <td>2-9% (higher after total gastrectomy)</td>
+          <td>IIIB: percutaneous drainage + NPO + TPN/jejunal feeding if controlled; uncontrolled leak with peritonitis requires return to theatre for washout ± diversion.</td>
+        </tr>
+        <tr>
+          <td><strong>Esophagojejunal anastomotic leak</strong></td>
+          <td>3-6%</td>
+          <td>Early leak (&lt;48h) usually mandates reoperation; late, contained leak can be managed with endoscopic stenting or drainage.</td>
+        </tr>
+        <tr>
+          <td><strong>Pancreatic fistula</strong> (from D2 lymphadenectomy along splenic/pancreatic border)</td>
+          <td>2-5%</td>
+          <td>Conservative drainage management for low-grade (Grade B ISGPF); somatostatin analogs have weak evidence; surgical debridement reserved for necrotizing pancreatitis-pattern disease (Grade C).</td>
+        </tr>
+        <tr>
+          <td><strong>Postoperative hemorrhage</strong></td>
+          <td>1-3%</td>
+          <td>Intraluminal bleed: endoscopic control first; intra-abdominal bleed with hemodynamic instability: immediate return to theatre (do not wait for interventional radiology if unstable).</td>
+        </tr>
+        <tr>
+          <td><strong>Chyle leak</strong></td>
+          <td>1-2%</td>
+          <td>Low-output: MCT-based low-fat diet; high-output (&gt;1L/day) refractory to conservative management: lymphangiography with embolization or surgical ligation.</td>
+        </tr>
+        <tr>
+          <td><strong>Mortality (Grade V)</strong></td>
+          <td>1-3% (high-volume centers)</td>
+          <td>Climbs sharply in low-volume centers. This volume-outcome relationship is one of the strongest arguments for centralization of gastric cancer surgery, and is fair game in a service organization viva.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- PILLAR 3: THE OPERATIVE ATLAS ═════════════════════════════ -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<div class="sec-header s3">
+  <span class="sec-badge">PILLAR 3</span>
+  <h2 class="sec-title">The Operative Atlas</h2>
+</div>
+
+<section class="topic s3-topic" id="anatomy">
+  <div class="topic-header">
+    <span class="topic-num">3.1</span>
+    <h2>Surgical Anatomy &amp; Danger Zones</h2>
+  </div>
+  
+  <p>The stomach's blood supply is the entire roadmap for lymphadenectomy. The left gastric artery (off the celiac trunk) feeds the lesser curve and is the highest-yield nodal station (station 7) because it drains the proximal stomach directly toward the celiac axis. Right gastric and right gastroepiploic arteries (off the hepatic and gastroduodenal arteries respectively) supply the antrum and greater curve distally. Short gastric vessels off the splenic artery feed the fundus, which is why total gastrectomy with splenic hilar dissection (station 10) carries a real risk to the spleen and tail of the pancreas.</p>
+  
+  <h3>Danger Zones</h3>
+  <ul>
+    <li><strong>The Gastroduodenal Artery (GDA):</strong> Hugging the posterior duodenal bulb, it bleeds catastrophically if a posterior duodenal ulcer or tumor has eroded into it during dissection.</li>
+    <li><strong>The Splenic Hilum:</strong> During D2 splenic hilar (station 10/11) lymphadenectomy, aggressive dissection here is the leading cause of incidental splenectomy and a major driver of postoperative pancreatic fistula because the pancreatic tail sits right alongside.</li>
+    <li><strong>Right Gastroepiploic Vein / SMV Confluence:</strong> At the inferior border of the pancreas, careless traction during omental/infrapyloric node dissection (station 6) can tear the gastrocolic trunk of Henle.</li>
+    <li><strong>Left Gastric / Celiac Trunk Nodal Packet:</strong> (Station 7-9) sits directly anterior to the aorta; over-aggressive skeletonization risks the splenic artery and, less commonly, injury near the origin of the celiac trunk itself.</li>
+  </ul>
+</section>
+
+<section class="topic s3-topic" id="procedure">
+  <div class="topic-header">
+    <span class="topic-num">3.2</span>
+    <h2>Resection &amp; Reconstruction: Step-by-Step</h2>
+  </div>
+  
+  <h3>Resectability Decision Tree</h3>
+  <p><strong>T1a mucosal, well/moderately differentiated, &lt;2cm, no ulceration:</strong> ESD candidate; no gastrectomy needed. <strong>T1b or beyond, or T1a not meeting strict criteria:</strong> Surgical resection with D2 lymphadenectomy. <strong>T4b with adjacent organ involvement but no distant metastasis:</strong> Consider neoadjuvant therapy then en-bloc multivisceral resection. <strong>Peritoneal disease or distant metastasis:</strong> Palliative intent; abandon curative resection plan.</p>
+  
+  <h3>Distal Subtotal Gastrectomy Steps</h3>
+  <ol>
+    <li><strong>MIS Approach:</strong> Establish pneumoperitoneum, place ports in a fan distribution, and mobilize the greater omentum off the transverse colon to enter the lesser sac.</li>
+    <li>Sweep along the gastrocolic ligament, preserving (or sacrificing, depending on oncologic extent) the gastroepiploic arcade.</li>
+    <li>Divide the right gastroepiploic vessels at their origin to clear station 6.</li>
+    <li>Free the duodenum 2cm distal to the pylorus and fire a linear stapler across it.</li>
+    <li>Skeletonize the lesser curve, clearing stations 1, 3, and 5.</li>
+    <li>Divide the left gastric artery and vein at their root to clear stations 7-9.</li>
+    <li>Transect the stomach proximally with adequate margins and reconstruct with a Billroth II or Roux-en-Y gastrojejunostomy.</li>
+  </ol>
+  
+  <p><strong>Open Approach:</strong> Mirrors these same steps through an upper midline incision, allowing direct hand palpation for nodal disease and tumor mobility when bulky disease or prior surgery makes laparoscopic visualization unreliable.</p>
+  <p><strong>Total Gastrectomy:</strong> Follows the same lymphadenectomy logic but extends to the splenic hilum (station 10/11) if indicated, divides the short gastrics, and reconstructs with a Roux-en-Y esophagojejunostomy (most commonly stapled circular in the MIS setting using transoral anvil placement).</p>
+  <p><strong>Robotic Platform:</strong> Provides articulated wristed dissection around the splenic hilum and during the esophagojejunal anastomosis, improving ergonomics and suturing in a confined space compared to laparoscopy.</p>
+</section>
+
+<section class="topic s3-topic" id="difficult">
+  <div class="topic-header">
+    <span class="topic-num">3.3</span>
+    <h2>The Difficult Case</h2>
+  </div>
+  
+  <h3>Frozen Abdomen from Prior Radiation / Surgery</h3>
+  <p>Do not start where the tumor or heavy scarring is. Enter through virgin territory (usually the upper abdomen lateral to prior incisions) and work toward the diseased field incrementally. Use sharp dissection over electrocautery near bowel that may be radiation-fibrosed and adherent to the abdominal wall (high enterotomy risk).</p>
+
+  <h3>Sudden Hemorrhage from the Splenic Artery / Hilum</h3>
+  <p>Do not chase bleeding blindly with cautery. Apply direct pressure with a sponge, obtain suction control, then get proximal and distal control of the splenic artery before addressing the bleed. If hilar bleeding is uncontrollable, proceed directly to splenectomy rather than risking ongoing blood loss chasing salvage.</p>
+
+  <h3>Linitis Plastica with Diffuse Serosal Infiltration</h3>
+  <p>Resectability is often overestimated on preoperative imaging because the disease infiltrates submucosally without a discrete mass. Intraoperative frozen section of proximal and distal margins is mandatory; a "normal-looking" margin on gross inspection can still be microscopically positive in diffuse-type disease. Have a low threshold to extend resection or convert to total gastrectomy if frozen margins return positive.</p>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- PILLAR 4: SPATIAL & RADIOLOGICAL CORRELATION ══════════════ -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<div class="sec-header s4">
+  <span class="sec-badge">PILLAR 4</span>
+  <h2 class="sec-title">Spatial Awareness &amp; Radiological Correlation</h2>
+</div>
+
+<section class="topic s4-topic" id="spatial">
+  <div class="topic-header">
+    <span class="topic-num">4.1</span>
+    <h2>Operative 3D Spatial Awareness</h2>
+  </div>
+  
+  <p>Standing at the patient's right side (distal gastrectomy) and looking down into the lesser sac after entering through the gastrocolic ligament, the posterior stomach wall lies anterior to you. The pancreas runs transversely behind it like a horizontal bar, and the splenic vessels track along the superior border of the pancreas toward the spleen in the left upper quadrant. The transverse mesocolon hangs inferiorly, and the middle colic vessels run within it, vulnerable if dissection strays too low during omental clearance.</p>
+  <p>When you lift the stomach cephalad to expose the left gastric pedicle, you look directly down onto the celiac trunk trifurcation: the left gastric artery is the first vessel you encounter running cephalad and slightly leftward off the celiac axis, with the common hepatic artery running rightward toward the porta and the splenic artery running leftward along the pancreatic body.</p>
+</section>
+
+<section class="topic s4-topic" id="radiology">
+  <div class="topic-header">
+    <span class="topic-num">4.2</span>
+    <h2>Radiological Correlation (The Consultant's Read)</h2>
+  </div>
+  
+  <p>Follow this systematic 6-step read protocol for gastric cancer staging CTs:</p>
+  <ol>
+    <li><strong>Gastric Wall Thickening:</strong> Assess for asymmetric, irregular thickening rather than the smooth circumferential thickening of a benign process to distinguish malignant infiltration.</li>
+    <li><strong>Serosal Contour:</strong> A smooth, well-defined outer wall suggests T1-T2 disease, while stranding into perigastric fat with an irregular, spiculated outer margin suggests T3-T4a invasion.</li>
+    <li><strong>Fat Planes with Adjacent Organs:</strong> Scrutinize planes between the stomach and adjacent organs (pancreas, liver, spleen, colon) for loss of the fat plane, raising suspicion for T4b invasion.</li>
+    <li><strong>Regional Lymph Nodes:</strong> Assess nodes by short-axis diameter (&gt;8-10mm is suspicious) and morphology (rounded rather than oval, loss of fatty hilum, and clustering along named vessels).</li>
+    <li><strong>Peritoneum and Omentum:</strong> Scrutinize for nodularity, the "omental cake" appearance, or ascites, all suggesting peritoneal carcinomatosis.</li>
+    <li><strong>Liver:</strong> Check the liver for hypovascular metastases on portal venous phase imaging.</li>
+  </ol>
+</section>
+
+<section class="topic s4-topic" id="diagrams">
+  <div class="topic-header">
+    <span class="topic-num">4.3</span>
+    <h2>Critical Diagram Outlines</h2>
+  </div>
+  
+  <h3>Diagram 1: Lymph Node Station Map (JGCA Numbering)</h3>
+  <p>A stomach outline with numbered stations 1-12 color-coded by D1 vs D2 tier, showing station 1 (right cardial) through station 12 (hepatoduodenal ligament), with the celiac trunk and its branches showing station 7, 8, and 9 relationships.</p>
+  
+  <h3>Diagram 2: Vascular Supply Schematic</h3>
+  <p>Celiac trunk trifurcation showing left gastric, common hepatic, and splenic arteries, along with the gastroepiploic arcade and short gastric vessels, highlighting which vessels are divided in distal vs total gastrectomy.</p>
+
+  <h3>Diagram 3: Reconstruction Options Flowchart</h3>
+  <p>A branching diagram starting from type of resection (distal subtotal vs total) to reconstruction choice (Billroth I, Billroth II, Roux-en-Y), annotated with indications and contraindications.</p>
+
+  <h3>Diagram 4: TNM Staging Cross-Section</h3>
+  <p>A cross-sectional schematic of the gastric wall layers (mucosa, submucosa, muscularis propria, subserosa, serosa) with T1a through T4b overlaid at the corresponding depth, paired with a CT scan inset.</p>
+
+  <h3>Diagram 5: Decision Tree for ESD vs Surgical Resection</h3>
+  <p>Flowchart starting from endoscopic findings (size, differentiation, ulceration, depth on EUS) branching to either ESD or formal gastrectomy with D2 lymphadenectomy.</p>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- PILLAR 5: SENIOR FELLOWSHIP & BOARD REVIEW ════════════════ -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<div class="sec-header s5">
+  <span class="sec-badge">PILLAR 5</span>
+  <h2 class="sec-title">Senior Fellowship &amp; Board Review</h2>
+</div>
+
+<section class="topic s5-topic" id="vivas">
+  <div class="topic-header">
+    <span class="topic-num">5.1</span>
+    <h2>High-Order Viva Scenarios</h2>
+  </div>
+  
+  <p><strong>Q1: A 58-year-old develops fever, tachycardia, and bile-stained fluid in the drain on postoperative day 5 after subtotal distal gastrectomy. What is your management?</strong><br>
+  *Expert Answer:* This is a duodenal stump or anastomotic leak. Resuscitate, start broad-spectrum antibiotics, and obtain a CT abdomen with oral/IV contrast. If stable with a contained collection, percutaneous drainage and bowel rest/TPN are appropriate. If unstable or with diffuse peritonitis, return to theatre for washout, source control, and likely placement of a controlled fistula (T-tube duodenostomy) rather than attempting a high-risk re-anastomosis in a hostile field.</p>
+
+  <p><strong>Q2: Staging laparoscopy on a patient with bulky T3N2 gastric cancer reveals scattered 2-3mm peritoneal nodules on the diaphragm. The patient was consented for curative gastrectomy. What do you do?</strong><br>
+  *Expert Answer:* Abandon the curative resection. Peritoneal disease is M1 disease and changes the intent to palliative. Close, refer to medical oncology for systemic therapy, and manage symptoms (obstruction or bleeding) with palliative stenting or bypass rather than resection.</p>
+
+  <p><strong>Q3: A 45-year-old with a family history of gastric and lobular breast cancer is found to carry a germline CDH1 mutation. Endoscopy and random biopsies are normal. What do you recommend?</strong><br>
+  *Expert Answer:* Recommend prophylactic total gastrectomy. Due to the high lifetime risk of diffuse gastric cancer in CDH1 carriers and the fact that diffuse-type disease spreads submucosally (making it endoscopically occult), gastrectomy is indicated after genetic and family counseling, even with negative biopsies.</p>
+
+  <p><strong>Q4: During a D2 subtotal gastrectomy, you find the tumor invading the transverse mesocolon. Frozen section confirms tumor within the mesocolon. The patient is fit. Do you proceed or abort?</strong><br>
+  *Expert Answer:* Proceed with en-bloc resection of the involved transverse colon/mesocolon segment, provided an R0 resection is achievable and the patient is stable. T4b disease is not a contraindication to curative surgery; it is an indication for en-bloc multivisceral resection.</p>
+
+  <p><strong>Q5: A patient completes neoadjuvant FLOT and restaging CT shows stable disease. What is your plan?</strong><br>
+  *Expert Answer:* Proceed to surgery. Stable disease after neoadjuvant chemotherapy is not a failure signal in gastric cancer; if the patient remains fit and resectable, proceed with gastrectomy and D2 lymphadenectomy, followed by adjuvant FLOT.</p>
+
+  <p><strong>Q6: A patient returns at 3 months post-total gastrectomy with recurrent bilious vomiting and early satiety, with a normal endoscopy. What is your diagnostic approach?</strong><br>
+  *Expert Answer:* Roux stasis syndrome is a major suspect, but mechanical causes must be ruled out (internal hernia, stricture, limb obstruction). Obtain a CT scan with oral contrast to assess transit. If mechanical causes are ruled out, manage with prokinetics; surgical revision is reserved for refractory cases.</p>
+</section>
+
+<section class="topic s5-topic" id="scores">
+  <div class="topic-header">
+    <span class="topic-num">5.2</span>
+    <h2>Classifications &amp; Scoring Systems</h2>
+  </div>
+
+  <div class="table-wrap">
+    <table class="s5-tbl">
+      <thead>
+        <tr>
+          <th>System</th>
+          <th>Clinical Use</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Lauren Classification</strong></td>
+          <td>Intestinal vs diffuse vs mixed type; predicts biology, spread pattern, and prognosis.</td>
+        </tr>
+        <tr>
+          <td><strong>AJCC 8th Edition TNM</strong></td>
+          <td>Standard staging; T-stage by depth, N-stage by node count (N1: 1-2, N2: 3-6, N3a: 7-15, N3b: 16+).</td>
+        </tr>
+        <tr>
+          <td><strong>Japanese Classification (JCGC)</strong></td>
+          <td>Defines D1 vs D2 lymphadenectomy extent by station numbers 1-16.</td>
+        </tr>
+        <tr>
+          <td><strong>Siewert Classification</strong></td>
+          <td>Junctional/GEJ tumors: Type I (esophageal, 1-5cm above GEJ), Type II (true cardia, 1cm above to 2cm below), Type III (subcardial, 2-5cm below). Guides approach.</td>
+        </tr>
+        <tr>
+          <td><strong>Borrmann Classification</strong></td>
+          <td>Macroscopic morphology: Type I (polypoid), II (fungating), III (ulcerated infiltrative), IV (diffusely infiltrative/linitis plastica). Type IV has the worst prognosis.</td>
+        </tr>
+        <tr>
+          <td><strong>Clavien-Dindo</strong></td>
+          <td>Postoperative complication severity grading, I (minor) through V (death).</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="rapid-ref" id="cheat-sheet">
+  <h3>RAPID BOARD REVIEW SUMMARY — Gastric Cancer Must-Know Facts</h3>
+  <div class="table-wrap">
+    <table style="background: transparent;">
+      <thead>
+        <tr>
+          <th>Clinical Entity</th>
+          <th>Key Value / Fact</th>
+          <th>Clinical Significance</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>D2 Lymphadenectomy</strong></td>
+          <td><strong>Standard of care</strong></td>
+          <td>Reduces cancer-specific death and local recurrence compared to D1 (Dutch trial 15-yr data).</td>
+        </tr>
+        <tr>
+          <td><strong>PAND / JCOG9501</strong></td>
+          <td><strong>No benefit</strong></td>
+          <td>Routine para-aortic lymph node dissection adds morbidity and time without improving survival.</td>
+        </tr>
+        <tr>
+          <td><strong>Staging Laparoscopy</strong></td>
+          <td><strong>Mandatory for T3/T4 or N+</strong></td>
+          <td>Identifies occult peritoneal disease in 20-30% of CT-negative cases; positive cytology = M1.</td>
+        </tr>
+        <tr>
+          <td><strong>FLOT4 Regimen</strong></td>
+          <td><strong>50 vs 35 mos median OS</strong></td>
+          <td>Perioperative FLOT is the Western standard of care for locally advanced resectable gastric/GEJ cancer.</td>
+        </tr>
+        <tr>
+          <td><strong>CDH1 Mutation</strong></td>
+          <td><strong>Prophylactic gastrectomy</strong></td>
+          <td>Submucosal occult spread means carriers warrant prophylactic gastrectomy even if biopsies are normal.</td>
+        </tr>
+        <tr>
+          <td><strong>T4b Resection</strong></td>
+          <td><strong>En-bloc resection</strong></td>
+          <td>T4b disease is not a contraindication to curative surgery; perform en-bloc R0 multivisceral resection.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+</div><!-- end content-wrap -->
+</main>
+
+<button id="top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script src="../../js/nav-pill.js"></script>
+<script src="../../js/navigation.js"></script>
+<script>
+const progressBar = document.getElementById('progress-bar');
+const topBtn = document.getElementById('top-btn');
+const navItems = document.querySelectorAll('.nav-item');
+const sections = document.querySelectorAll('.topic[id], .rapid-ref[id]');
+
+window.addEventListener('scroll', () => {
+  const st = window.scrollY;
+  const dh = document.documentElement.scrollHeight - window.innerHeight;
+  if (progressBar) progressBar.style.transform = `scaleX(${st / dh})`;
+  if (topBtn) topBtn.classList.toggle('show', st > 400);
+  
+  let current = '';
+  sections.forEach(s => { if (st >= s.offsetTop - 120) current = s.id; });
+  navItems.forEach(n => { n.classList.toggle('active', n.getAttribute('href') === '#' + current); });
+});
+
+function filterNav(query) {
+  const q = query.toLowerCase();
+  navItems.forEach(item => { item.style.display = (!q || item.textContent.toLowerCase().includes(q)) ? 'block' : 'none'; });
+}
+
+navItems.forEach(item => {
+  item.addEventListener('click', e => {
+    e.preventDefault();
+    if(typeof closeSidebar === 'function') closeSidebar();
+    const target = document.querySelector(item.getAttribute('href'));
+    if (target) window.scrollTo({ top: target.getBoundingClientRect().top - 80, behavior: 'smooth' });
+  });
+});
+
+document.querySelectorAll('.topic').forEach((el, i) => { el.style.animationDelay = `${i * 0.03}s`; });
+</script>
+</body>
+</html>
