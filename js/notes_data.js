@@ -200,7 +200,7 @@ window.NOTES_DATA = {
       kicker: 'Perioperative Care Monograph',
       specialty: ['periop', 'basics'],
       description: 'Advanced clinical guide covering Caprini RAM scoring, ERAS 2025/2026 protocols, heparin-induced thrombocytopenia (HIT) 4T scores, and IVC filter insertion steps.',
-      tags: ['red:VTE', 'red:Anticoagulation', 'Caprini', 'HIT', 'IVC Filter', 'ABSITE'],
+      tags: ['blue:VTE', 'blue:Anticoagulation', 'Caprini', 'HIT', 'IVC Filter', 'ABSITE'],
       pages: '5 Pillars',
       type: 'web',
       url: 'notes/Surgical High-Yield Notes/vte_prophylaxis.html',

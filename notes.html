@@ -561,6 +561,9 @@
       if (t.startsWith('red:')) {
         return '<span class="nc-tag red">' + t.slice(4) + '</span>';
       }
+      if (t.startsWith('blue:')) {
+        return '<span class="nc-tag blue">' + t.slice(5) + '</span>';
+      }
       return '<span class="nc-tag">' + t + '</span>';
     }).join('');
 

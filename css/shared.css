@@ -206,6 +206,11 @@
   background: rgba(163, 21, 21, 0.05);
   border-color: rgba(163, 21, 21, 0.15);
 }
+.nc-tag.blue {
+  color: var(--brand-blue);
+  background: rgba(37, 99, 235, 0.05);
+  border-color: rgba(37, 99, 235, 0.15);
+}
 .nc-foot {
   padding: 14px 20px;
   border-top: 1px solid var(--border-color);
