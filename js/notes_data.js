@@ -205,6 +205,18 @@ window.NOTES_DATA = {
       type: 'web',
       url: 'notes/Surgical High-Yield Notes/vte_prophylaxis.html',
       isNew: true
+    },
+    {
+      id: 'hy-pancreatic-trauma',
+      title: 'Pancreatic Trauma Pathology & Surgical Management',
+      kicker: 'HPB Trauma Monograph',
+      specialty: ['hpb', 'emergency'],
+      description: 'Comprehensive study guide covering AAST Organ Injury Scale revisions (2025), ductal integrity decision algorithms, damage control pancreas packing, associated injury sequencing, and Whipple thresholds.',
+      tags: ['blue:Trauma', 'blue:Pancreas', 'AAST OIS 2025', 'Damage Control', 'Whipple', 'ABSITE'],
+      pages: '5 Pillars',
+      type: 'web',
+      url: 'notes/Surgical High-Yield Notes/pancreatic_trauma.html',
+      isNew: true
     }
   ],
 

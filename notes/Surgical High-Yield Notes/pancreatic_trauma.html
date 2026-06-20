@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Surgical Insight Hub — Pancreatic Trauma Monograph</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/theme.css?v=4.0.0">
+<link rel="stylesheet" href="../../css/shared.css">
+<script>
+  const savedTheme = localStorage.getItem('sih-theme') || 'light';
+  if (savedTheme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+</script>
+<style>
+:root {
+  /* Pancreatic Bronze & Slate/Charcoal Aesthetic */
+  --primary:   #B45309; /* Bronze / Dark Amber */
+  --primary-dk:#78350F; /* Deep Bronze */
+  --primary-lt:#FFFBEB; /* Light Amber */
+  --accent:    #D97706; /* Amber */
+  --accent2:   #F59E0B; /* Yellow Gold */
+  --gold:      #B8922A;
+  --gold-lt:   #FEF3C7;
+  --s1:        #B45309; /* Pillar 1 - Bronze */
+  --s2:        #059669; /* Pillar 2 - Emerald Green */
+  --s3:        #2563EB; /* Pillar 3 - Royal Blue */
+  --s4:        #7C3AED; /* Pillar 4 - Purple */
+  --s5:        #4B5563; /* Pillar 5 - Slate Gray */
+  --s1-lt:     #FFFBEB;
+  --s2-lt:     #ECFDF5;
+  --s3-lt:     #EFF6FF;
+  --s4-lt:     #F5F3FF;
+  --s5-lt:     #F3F4F6;
+  --red:       #B91C1C;
+  --red-lt:    #FEF2F2;
+  --bg:        #FAFAFB;
+  --bg2:       #F4F4F6;
+  --border:    #E5E7EB;
+  --text:      #1F2937;
+  --muted:     #4B5563;
+  --white:     #FFFFFF;
+  --sidebar-w: 320px;
+}
+
+[data-theme="dark"] {
+  --bg: #0A0702;
+  --bg2: #140E05;
+  --text: #F3F4F6;
+  --muted: #A3A3A3;
+  --border: rgba(255,255,255,0.08);
+  --primary-lt: #2D1A04;
+  --s1-lt: #2D1A04;
+  --s2-lt: #052117;
+  --s3-lt: #051A1E;
+  --s4-lt: #12102E;
+  --s5-lt: #1F2937;
+  --white: #140E05;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.75;}
+
+/* SLIDE-OVER SIDEBAR */
+#sidebar {
+  position: fixed; top: 0; left: 0; width: var(--sidebar-w); height: 100vh;
+  background: var(--primary-dk); color: #ECE5E4;
+  display: flex; flex-direction: column;
+  z-index: 1000; overflow: hidden;
+  transform: translateX(-100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 4px 0 24px rgba(0,0,0,0.4);
+}
+body.sidebar-open #sidebar {
+  transform: translateX(0);
+}
+
+/* OVERLAY */
+#sidebar-overlay {
+  position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+  background: rgba(45, 26, 4, 0.7); backdrop-filter: blur(3px);
+  z-index: 950; opacity: 0; pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+body.sidebar-open #sidebar-overlay {
+  opacity: 1; pointer-events: auto;
+}
+
+/* TOGGLE BUTTON - TOP LEFT */
+#sidebar-toggle {
+  position: fixed; top: 72px; left: 24px; z-index: 900;
+  background: var(--primary); color: white;
+  border: none; border-radius: 30px;
+  padding: 10px 18px; font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600;
+  letter-spacing: 0.05em; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  display: flex; align-items: center; gap: 8px; transition: all 0.2s;
+}
+#sidebar-toggle:hover { background: var(--accent); transform: translateY(-2px); }
+
+#progress-bar {
+  position: fixed; top: 52px; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  transform-origin: left; transform: scaleX(0); transition: transform 0.1s; z-index: 1105;
+}
+
+#sidebar-header{padding:20px 20px 14px;border-bottom:1px solid rgba(255,255,255,0.1);flex-shrink:0;}
+#sidebar-header .logo{font-family:'Playfair Display',serif;font-size:13px;font-weight:700;color:var(--accent2);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;}
+#sidebar-header .sub{font-size:10.5px;color:rgba(236,229,228,0.6);letter-spacing:0.04em;}
+#sidebar-search{padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.08);flex-shrink:0;}
+#sidebar-search input{width:100%;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:6px;color:#ECE5E4;padding:6px 10px;font-size:12px;font-family:'Source Serif 4',serif;outline:none;transition:border-color 0.2s;}
+#sidebar-search input::placeholder{color:rgba(236,229,228,0.4);}
+#sidebar-search input:focus{border-color:var(--accent);}
+#sidebar-nav{flex:1;overflow-y:auto;padding:8px 0 20px;}
+#sidebar-nav::-webkit-scrollbar{width:4px;}
+#sidebar-nav::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.15);border-radius:2px;}
+.vol-label{font-size:9.5px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent2);padding:14px 18px 4px;}
+.nav-item{display:block;padding:8px 18px 8px 22px;font-size:12.5px;color:rgba(236,229,228,0.75);text-decoration:none;border-left:2px solid transparent;transition:all 0.15s;line-height:1.4;}
+.nav-item:hover{color:#fff;background:rgba(255,255,255,0.05);border-left-color:rgba(245,158,11,0.5);}
+.nav-item.active{color:#fff;background:rgba(255,255,255,0.08);border-left-color:var(--accent2);font-weight:600;}
+.nav-item .num{font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(236,229,228,0.4);margin-right:6px;}
+
+/* HERO HEADER */
+#hero{background:linear-gradient(135deg,var(--primary-dk) 0%,#1e1b18 60%,#090500 100%);color:white;padding:120px 72px 60px;position:relative;overflow:hidden;}
+#hero::before{content:'';position:absolute;top:-60px;right:-60px;width:380px;height:380px;background:radial-gradient(circle,rgba(245,158,11,0.18) 0%,transparent 70%);pointer-events:none;}
+#hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--primary),var(--accent2),transparent);}
+#hero .eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.16em;color:var(--accent2);text-transform:uppercase;margin-bottom:14px;}
+#hero h1{font-family:'Playfair Display',serif;font-size:38px;font-weight:700;line-height:1.15;margin-bottom:10px;color:#fff;}
+#hero .subtitle{font-size:18px;color:rgba(255,255,255,0.65);font-style:italic;margin-bottom:28px;}
+#hero .badges{display:flex;gap:10px;flex-wrap:wrap;}
+#hero .badge{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:4px 14px;font-size:12px;color:rgba(255,255,255,0.8);font-family:'JetBrains Mono',monospace;}
+
+/* CONTENT WRAP */
+.content-wrap{max-width:900px;margin:0 auto;padding:0 48px 80px;}
+
+/* SECTION HEADER */
+.sec-header{margin-top:60px;margin-bottom:8px;padding:28px 36px;border-radius:10px;display:flex;align-items:center;gap:20px;}
+.sec-header.s1{background:linear-gradient(135deg,rgba(180,83,9,0.04),rgba(180,83,9,0.10));border-left:4px solid var(--s1);}
+.sec-header.s2{background:linear-gradient(135deg,#0596690A,#0596691A);border-left:4px solid var(--s2);}
+.sec-header.s3{background:linear-gradient(135deg,#2563EB0A,#2563EB1A);border-left:4px solid var(--s3);}
+.sec-header.s4{background:linear-gradient(135deg,#7C3AED0A,#7C3AED1A);border-left:4px solid var(--s4);}
+.sec-header.s5{background:linear-gradient(135deg,#4B55630A,#4B55631A);border-left:4px solid var(--s5);}
+
+.sec-badge{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;letter-spacing:0.1em;padding:4px 12px;border-radius:4px;white-space:nowrap;flex-shrink:0;}
+.s1 .sec-badge{background:var(--s1);color:white;}
+.s2 .sec-badge{background:var(--s2);color:white;}
+.s3 .sec-badge{background:var(--s3);color:white;}
+.s4 .sec-badge{background:var(--s4);color:white;}
+.s5 .sec-badge{background:var(--s5);color:white;}
+.sec-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;}
+.s1 .sec-title{color:var(--s1);}
+.s2 .sec-title{color:var(--s2);}
+.s3 .sec-title{color:var(--s3);}
+.s4 .sec-title{color:var(--s4);}
+.s5 .sec-title{color:var(--s5);}
+
+/* TOPIC & CONTENT TYPOGRAPHY */
+.topic{margin-top:48px;padding-top:48px;border-top:1px solid var(--border);}
+.topic:first-of-type{border-top:none;}
+.topic-header{display:flex;align-items:flex-start;gap:16px;margin-bottom:24px;}
+.topic-num{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;padding:3px 10px;border-radius:4px;margin-top:4px;flex-shrink:0;}
+.s1 .topic-num{background:var(--s1-lt);color:var(--s1);}
+.s2 .topic-num{background:var(--s2-lt);color:var(--s2);}
+.s3 .topic-num{background:var(--s3-lt);color:var(--s3);}
+.s4 .topic-num{background:var(--s4-lt);color:var(--s4);}
+.s5 .topic-num{background:var(--s5-lt);color:var(--s5);}
+
+.topic h2{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;line-height:1.2;}
+.s1 .topic h2{color:var(--s1);}
+.s2 .topic h2{color:var(--s2);}
+.s3 .topic h2{color:var(--s3);}
+.s4 .topic h2{color:var(--s4);}
+.s5 .topic h2{color:var(--s5);}
+
+.topic h3{font-family:'Playfair Display',serif;font-size:17px;font-weight:600;color:var(--muted);margin:26px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--border);}
+.topic h4{font-size:13px;font-weight:600;color:var(--muted);letter-spacing:0.06em;text-transform:uppercase;margin:18px 0 8px;font-family:'JetBrains Mono',monospace;}
+.topic ul, .topic ol{margin:8px 0 14px 20px;color:var(--text);}
+.topic li{margin-bottom:6px;line-height:1.65;}
+.topic li::marker{color:var(--accent2);}
+.topic strong{color:var(--text);font-weight:600;}
+
+/* TABLES */
+.table-wrap{overflow-x:auto;margin:16px 0 20px;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.06);border:1px solid var(--border);}
+table{width:100%;border-collapse:collapse;font-size:13.5px;background:var(--white);}
+thead tr{background:var(--s1);}
+thead th{color:white;padding:10px 14px;text-align:left;font-family:'Source Serif 4',serif;font-weight:600;font-size:13px;}
+tbody tr:nth-child(even){background:var(--bg2);}
+tbody tr:hover{background:var(--s1-lt);transition:background 0.15s;}
+tbody td{padding:9px 14px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.5;}
+[data-theme="dark"] table { background: var(--bg2); }
+.s2-tbl thead tr{background:var(--s2);}
+.s3-tbl thead tr{background:var(--s3);}
+.s4-tbl thead tr{background:var(--s4);}
+.s5-tbl thead tr{background:var(--s5);}
+
+/* CALLOUTS */
+.callout{margin:18px 0;padding:14px 18px;border-radius:0 8px 8px 0;border-left:4px solid;font-size:14px;line-height:1.65;}
+.callout .label{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;display:block;margin-bottom:4px;}
+.callout.pearl{background:var(--gold-lt);border-color:var(--gold);color:var(--text);}
+.callout.pearl .label{color:var(--gold);}
+.callout.warn{background:var(--red-lt);border-color:var(--red);color:var(--text);}
+.callout.warn .label{color:var(--red);}
+.callout.clin{background:var(--s1-lt);border-color:var(--s1);color:var(--text);}
+.callout.clin .label{color:var(--s1);}
+.callout.exam{background:var(--s3-lt);border-color:var(--s3);color:var(--text);}
+.callout.exam .label{color:var(--s3);}
+[data-theme="dark"] .callout.pearl { background: rgba(184, 146, 42, 0.08); }
+[data-theme="dark"] .callout.warn { background: rgba(185, 28, 28, 0.08); }
+
+#top-btn{position:fixed;bottom:24px;right:24px;width:44px;height:44px;background:var(--primary);color:white;border:none;border-radius:50%;font-size:18px;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,0.3);z-index:1100;opacity:0;pointer-events:none;transition:all 0.3s;display:flex;align-items:center;justify-content:center;}
+#top-btn.show{opacity:1;pointer-events:auto;}
+#top-btn:hover{background:var(--accent);transform:translateY(-3px);}
+
+.rapid-ref{margin-top:60px;padding:36px;background:var(--primary-dk);color:white;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,0.15);}
+.rapid-ref h3{font-family:'Playfair Display',serif;font-size:24px;margin-bottom:18px;color:#fff;border-bottom:1px solid rgba(255,255,255,0.15);padding-bottom:10px;}
+.rapid-ref table{background:transparent;}
+.rapid-ref thead tr{background:rgba(255,255,255,0.08);}
+.rapid-ref thead th{color:#FAF5F0;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;}
+.rapid-ref tbody tr:nth-child(even){background:rgba(255,255,255,0.03);}
+.rapid-ref tbody tr:hover{background:rgba(255,255,255,0.07);}
+.rapid-ref tbody td{border-bottom:1px solid rgba(255,255,255,0.08);color:rgba(255,255,255,0.85);font-size:13px;}
+.rapid-ref strong{color:#fff;}
+
+/* LaTeX Center */
+.math-display {
+  display: block;
+  overflow-x: auto;
+  text-align: center;
+  margin: 16px 0;
+  padding: 10px;
+  background: var(--bg2);
+  border-radius: 6px;
+  font-family: 'Source Serif 4', serif;
+}
+
+@media(max-width:900px) {
+  .content-wrap { padding: 0 20px 60px; }
+  #hero { padding: 80px 20px 40px; }
+  #hero h1 { font-size: 30px; }
+  #sidebar-toggle { top: 64px; left: 16px; }
+}
+@media print {
+  #sidebar-toggle, #sidebar-overlay, #sidebar, #top-btn, #progress-bar, #mainNav { display: none !important; }
+  .topic { page-break-inside: avoid; }
+  .sec-header { page-break-before: always; }
+}
+</style>
+<link rel="icon" type="image/png" href="../../assets/images/Surgical_Insight_Hub_Logo.png">
+</head>
+<body>
+
+<!-- Standardized SIH Navbar -->
+<nav class="nav" id="mainNav">
+  <div class="nav-left">
+    <a href="../../index.html" class="nav-pill">
+      <div class="nav-logo-img">
+        <img src="../../assets/images/Surgical_Insight_Hub_Logo.png" alt="SIH Logo">
+      </div>
+      <div>
+        <div class="nav-brand-text">Surgical Insight Hub</div>
+        <div class="nav-brand-sub">The Residency Journal</div>
+      </div>
+    </a>
+  </div>
+  <div class="nav-links-pill">
+    <a href="../../index.html">Home</a>
+    <a href="../../notes.html" class="active">Notes</a>
+    <a href="../operative_approach.html">Playbook</a>
+    <a href="../../arena.html?v=4.0.0">MCQ Arena</a>
+    <a href="../../podcast.html">Podcast</a>
+    <a href="../../surgery-talk.html">Surgery Talk</a>
+    <a href="../../about.html">About</a>
+  </div>
+  <div class="nav-right">
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+      <svg id="moonIcon" viewBox="0 0 24 24" width="18" height="18"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      <svg id="sunIcon" style="display:none;" viewBox="0 0 24 24" width="18" height="18"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+    </button>
+    <a href="https://t.me/sugicalInsightHub" target="_blank" class="nav-tg-btn" title="Join Telegram">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="#f0d080"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.89 8.22l-1.97 9.28c-.15.66-.54.82-1.08.51l-3-2.21-1.45 1.39c-.16.16-.3.3-.61.3l.21-3.05 5.56-5.02c.24-.21-.05-.33-.37-.12l-6.87 4.33-2.96-.92c-.64-.2-.66-.64.14-.95l11.57-4.46c.54-.19 1.01.13.83.94z"/></svg>
+    </a>
+    <a href="../../arena.html?v=4.0.0" class="nav-btn arena-btn">MCQ Arena</a>
+    <button class="mob-nav-toggle" onclick="openMobNav()" aria-label="Menu">
+      <div class="hamburger"><span></span><span></span><span></span></div>
+    </button>
+  </div>
+</nav>
+
+<div class="mob-nav-overlay" id="mobNavOverlay" onclick="closeMobNav()"></div>
+<div class="mob-nav-sheet" id="mobNavSheet">
+  <div class="mob-nav-handle"></div>
+  <a href="../../index.html" onclick="closeMobNav()">Home</a>
+  <a href="../../notes.html" onclick="closeMobNav()">Notes</a>
+  <a href="../operative_approach.html" onclick="closeMobNav()">Playbook</a>
+  <a href="../../podcast.html" onclick="closeMobNav()">Podcast</a>
+  <a href="../../surgery-talk.html" onclick="closeMobNav()">Surgery Talk</a>
+  <a href="../../arena.html" onclick="closeMobNav()">MCQ Arena</a>
+  <a href="../../about.html" onclick="closeMobNav()">About</a>
+  <a href="https://t.me/sugicalInsightHub" target="_blank" rel="noopener" onclick="closeMobNav()" style="color: var(--brand-gold); font-weight: 800;">Join Telegram Community</a>
+  <a href="https://www.linkedin.com/company/surgical-insight-hub" target="_blank" rel="noopener" onclick="closeMobNav()" style="color: var(--brand-gold); font-weight: 800;">LinkedIn Community</a>
+</div>
+
+<div id="progress-bar"></div>
+
+<!-- SIDEBAR TRIGGER -->
+<button id="sidebar-toggle" onclick="toggleSidebar()">
+  <span>📜</span> Table of Contents
+</button>
+<div id="sidebar-overlay" onclick="closeSidebar()"></div>
+
+<!-- SLIDE-OVER SIDEBAR -->
+<aside id="sidebar">
+  <div id="sidebar-header">
+    <div class="logo">Surgical Insight Hub</div>
+    <div class="sub">Pancreatic Trauma Monograph</div>
+  </div>
+  <div id="sidebar-search">
+    <input type="text" placeholder="Search sections..." oninput="filterNav(this.value)">
+  </div>
+  <nav id="sidebar-nav">
+    <div class="vol-label">Pillar 1: Foundations &amp; Evidence</div>
+    <a class="nav-item" href="#pathophysiology"><span class="num">1.1</span>Pathophysiology &amp; Framework</a>
+    <a class="nav-item" href="#objectives"><span class="num">1.2</span>Learning Objectives</a>
+    <a class="nav-item" href="#evidence"><span class="num">1.3</span>Seminal Trials</a>
+    <a class="nav-item" href="#debate"><span class="num">1.4</span>Resection vs. Stenting</a>
+    
+    <div class="vol-label">Pillar 2: Protocols &amp; ERAS</div>
+    <a class="nav-item" href="#diagnostics"><span class="num">2.1</span>Advanced Diagnostics</a>
+    <a class="nav-item" href="#eras"><span class="num">2.2</span>Resuscitation &amp; ERAS</a>
+    <a class="nav-item" href="#complications"><span class="num">2.3</span>Complication Management</a>
+    
+    <div class="vol-label">Pillar 3: The Operative Atlas</div>
+    <a class="nav-item" href="#anatomy"><span class="num">3.1</span>Anatomy &amp; Danger Zones</a>
+    <a class="nav-item" href="#framework"><span class="num">3.2</span>Decision Framework</a>
+    <a class="nav-item" href="#difficult"><span class="num">3.3</span>The Difficult Case</a>
+    
+    <div class="vol-label">Pillar 4: Spatial &amp; Radiologic Correlation</div>
+    <a class="nav-item" href="#spatial"><span class="num">4.1</span>3D Spatial Awareness</a>
+    <a class="nav-item" href="#radiology"><span class="num">4.2</span>Radiological Correlation</a>
+    <a class="nav-item" href="#diagrams"><span class="num">4.3</span>Critical Diagram Outlines</a>
+    
+    <div class="vol-label">Pillar 5: Board Review</div>
+    <a class="nav-item" href="#vivas"><span class="num">5.1</span>High-Order Viva Scenarios</a>
+    <a class="nav-item" href="#scores"><span class="num">5.2</span>Classifications &amp; Scores</a>
+    <a class="nav-item" href="#cheat-sheet"><span class="num">6.1</span>ABSITE Cheat Sheet</a>
+  </nav>
+</aside>
+
+<!-- MAIN CONTENT -->
+<main id="main">
+<header id="hero">
+  <div class="eyebrow">HPB Trauma · Board Review</div>
+  <h1>Pancreatic Trauma</h1>
+  <p class="subtitle">Advanced Surgical Monograph covering AAST Organ Injury Scale revisions, ductal integrity decision pathways, damage control pancreas packing, and trauma pancreaticoduodenectomies.</p>
+  <div class="badges">
+    <span class="badge">Pancreatic Trauma</span>
+    <span class="badge">AAST OIS 2025</span>
+    <span class="badge">Damage Control</span>
+    <span class="badge">ABSITE Core</span>
+  </div>
+</header>
+
+<div class="content-wrap">
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- PILLAR 1: CORE FOUNDATIONS & EVIDENCE ═════════════════════ -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<div class="sec-header s1">
+  <span class="sec-badge">PILLAR 1</span>
+  <h2 class="sec-title">Core Foundations &amp; The Evidence Base</h2>
+</div>
+
+<section class="topic s1-topic" id="pathophysiology">
+  <div class="topic-header">
+    <span class="topic-num">1.1</span>
+    <h2>Pathophysiology &amp; Clinical Framework</h2>
+  </div>
+  
+  <p>Pancreatic injury is rare — roughly 1-2% of abdominal trauma, with published ranges as wide as 0.2-12% depending on the series — but the morbidity is disproportionate. The gland sits retroperitoneal across L1-L2, and blunt epigastric force crushes it against the spine. The neck, directly overlying the vertebral column, is the classic fracture point.</p>
+  <p>The central problem is ductal integrity, not parenchymal depth. An intact duct, even with a deep laceration, can often be managed non-operatively or with drainage alone. A disrupted duct means autodigestion, fat necrosis, fistula, and a hostile abdomen days later.</p>
+  
+  <div class="callout warn">
+    <span class="label">AAST Organ Injury Scale Update (2025)</span>
+    The AAST Organ Injury Scale itself was revised in 2025 — Notrica et al. published a refined version introducing more precise ductal injury classification and additional descriptors for complex trauma. If you trained on the old scale, know that examiners may now expect familiarity with the updated ductal-injury stratification, not just the legacy five-grade version.
+  </div>
+
+  <p>The relationship between anatomy and damage severity can be modeled conceptually as:</p>
+  <div class="math-display">
+    \[\text{Grade} = f(\text{parenchymal disruption}, \text{ductal status}, \text{location relative to SMV})\]
+  </div>
+</section>
+
+<section class="topic s1-topic" id="objectives">
+  <div class="topic-header">
+    <span class="topic-num">1.2</span>
+    <h2>Key Learning Objectives</h2>
+  </div>
+  <ul>
+    <li>Apply AAST-OIS grading (including the 2025 revision) and translate grade into operative decision-making.</li>
+    <li>Differentiate proximal (right of SMV) versus distal (left of SMV) ductal injury management.</li>
+    <li>Know the real diagnostic yield and timing limitations of CT, and when to escalate to MRCP or ERCP.</li>
+    <li>Execute damage control technique specifically for the pancreas — not generic "pack and go."</li>
+    <li>Define concrete criteria for when combined pancreaticoduodenal injury crosses the threshold into trauma pancreaticoduodenectomy.</li>
+    <li>Sequence operative priorities when pancreatic injury coexists with major vascular or duodenal injury.</li>
+    <li>Know when endoscopic stenting replaces resection, and when it doesn't.</li>
+  </ul>
+</section>
+
+<section class="topic s1-topic" id="evidence">
+  <div class="topic-header">
+    <span class="topic-num">1.3</span>
+    <h2>Practice-Changing Evidence — Seminal Trials</h2>
+  </div>
+
+  <div class="table-wrap">
+    <table class="s1-tbl">
+      <thead>
+        <tr>
+          <th>Trial / Study</th>
+          <th>Year</th>
+          <th>Findings</th>
+          <th>Board Relevance</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>AAST-OIS Pancreatic Scale Revision</strong> (Notrica et al.)</td>
+          <td><strong>2025</strong></td>
+          <td>Refined ductal injury classification and new descriptors for complex trauma.</td>
+          <td>Examiners testing currency will probe whether you know the scale changed, not just the legacy version.</td>
+        </tr>
+        <tr>
+          <td><strong>ERCP for Traumatic Pancreatic Injury</strong> (Systematic Review, *WJES*)</td>
+          <td><strong>2025</strong></td>
+          <td>15 studies, 1,823 patients; pooled clinical success rate 89% (95% CI 83-93%), with 9.17x odds improvement in ductal integrity.</td>
+          <td>Justifies stent-over-resect in selected partial ductal injuries — high-yield viva ammunition.</td>
+        </tr>
+        <tr>
+          <td><strong>EAST Practice Management Guideline</strong> (Pancreatic Trauma)</td>
+          <td><strong>Living</strong></td>
+          <td>Evaluated grade-stratified treatment, routine octreotide, and routine splenectomy in distal pancreatectomy.</td>
+          <td>Tests whether you know octreotide and splenectomy are NOT automatically indicated (routine use is not supported).</td>
+        </tr>
+        <tr>
+          <td><strong>WSES-ASST Duodeno-Pancreatic Guidelines</strong></td>
+          <td><strong>2023-2025</strong></td>
+          <td>Incorporated duodeno-pancreatic guidelines into severe abdominal trauma consensus work.</td>
+          <td>Combined duodeno-pancreatic framing matters — boards test this as one disease process.</td>
+        </tr>
+        <tr>
+          <td><strong>WTA Pancreaticoduodenal Cohort Study</strong></td>
+          <td><strong>2022-2024</strong></td>
+          <td>Pyloric exclusion showed no consistent advantage over primary repair plus drainage in Grade III-IV duodenal injury.</td>
+          <td>Reinforces selective, rather than routine, use of pyloric exclusion.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="topic s1-topic" id="debate">
+  <div class="topic-header">
+    <span class="topic-num">1.4</span>
+    <h2>The Consultant's Debate: Resection vs. Endoscopic Stenting in Grade III Ductal Injury</h2>
+  </div>
+  
+  <div class="table-wrap">
+    <table class="s1-tbl">
+      <thead>
+        <tr>
+          <th>FOR Resection</th>
+          <th>AGAINST Resection (Stent-First)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Definitive source control in one sitting. No dependency on out-of-hours endoscopic expertise, no risk of stent migration, and no failure requiring a second procedure in an already compromised patient.</td>
+          <td>The 2025 meta-analysis demonstrates an 89% clinical success rate in selected partial ductal injuries, avoiding a distal pancreatectomy (and its attendant 30% fistula risk) entirely.</td>
+        </tr>
+        <tr>
+          <td>Surgical resection eliminates the necrotic tail tissue that can lead to delayed chronic retroperitoneal sepsis or recurrent pseudocysts.</td>
+          <td>The resection dataset is heavily pediatric (32%); its applicability to adult blunt major-mechanism trauma with complete ductal transection is limited.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout clin">
+    <span class="label">Consultant's Position</span>
+    <strong>Partial ductal injury, stable patient, endoscopic expertise available:</strong> Stent first; reserve surgery for failure. <strong>Complete transection distal to the SMV, stable patient:</strong> Resect; stenting a fully transected duct is a low-probability play. <strong>Unstable patient (any ductal status):</strong> Neither applies; you are in damage control.
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- PILLAR 2: PROTOCOLS & DRUG DOSING ═════════════════════════ -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<div class="sec-header s2">
+  <span class="sec-badge">PILLAR 2</span>
+  <h2 class="sec-title">Clinical Protocol &amp; Perioperative Care</h2>
+</div>
+
+<section class="topic s2-topic" id="diagnostics">
+  <div class="topic-header">
+    <span class="topic-num">2.1</span>
+    <h2>Advanced Diagnostics</h2>
+  </div>
+  
+  <p>Nonspecific presentations are the norm due to confounding multiorgan injuries. Amylase and lipase are notoriously unreliable early markers.</p>
+
+  <div class="table-wrap">
+    <table class="s2-tbl">
+      <thead>
+        <tr>
+          <th>Modality</th>
+          <th>Sensitivity</th>
+          <th>Specificity</th>
+          <th>Clinical Utility &amp; Traps</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>CT abdomen/pelvis with contrast (&lt;12h)</strong></td>
+          <td>60-85%</td>
+          <td>~90%</td>
+          <td>Subtle findings (retroperitoneal fluid, minor hematomas) are common. Easy to miss ductal injuries early.</td>
+        </tr>
+        <tr>
+          <td><strong>CT (repeat at 12-24h)</strong></td>
+          <td>&gt;90%</td>
+          <td>~92%</td>
+          <td>Highly defensible; edema and fluid collections declare themselves over time.</td>
+        </tr>
+        <tr>
+          <td><strong>MRCP</strong></td>
+          <td>80-90%</td>
+          <td>~95%</td>
+          <td>Best non-invasive ductal integrity assessment in hemodynamically stable patients.</td>
+        </tr>
+        <tr>
+          <td><strong>ERCP</strong></td>
+          <td>Diagnostic/Therapeutic</td>
+          <td>N/A</td>
+          <td>89% success rate for therapeutic stenting. Combines direct visualization with intervention.</td>
+        </tr>
+        <tr>
+          <td><strong>Amylase/Lipase</strong></td>
+          <td>Poor early (40-60%)</td>
+          <td>Very poor</td>
+          <td>**Classic exam trap:** A normal early level does NOT exclude pancreatic injury.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="topic s2-topic" id="eras">
+  <div class="topic-header">
+    <span class="topic-num">2.2</span>
+    <h2>Resuscitation &amp; ERAS 2025/2026 Optimization</h2>
+  </div>
+  
+  <p><strong>Damage Control Resuscitation:</strong> Balanced 1:1:1 products, permissive hypotension pre-control, and strict crystalloid minimization (crystalloids worsen peripancreatic edema, ductal swelling, and fistula leak rates).</p>
+  
+  <h3>ERAS &amp; Perioperative Protocols</h3>
+  <ul>
+    <li><strong>Antibiotics:</strong> Broad-spectrum single agent (piperacillin-tazobactam) for 24-48h if enteric contamination is present. Avoid prolonged prophylaxis post-source control.</li>
+    <li><strong>Nutrition:</strong> Early enteral feeding via post-pyloric/nasojejunal access is preferred over TPN once gut functionality returns.</li>
+    <li><strong>Drains:</strong> Use closed-suction drains. Leave in place until amylase output trends down. Drain fluid amylase &gt;3x serum at day 3 confirms a persistent fistula.</li>
+    <li><strong>Pain Management:</strong> Multimodal, opioid-sparing protocols, incorporating epidural analgesia where hemodynamics permit.</li>
+  </ul>
+
+  <div class="callout warn">
+    <span class="label">Octreotide &amp; Spleen Preservation (EAST GRADE Analysis)</span>
+    <strong>Octreotide:</strong> Routine use to prevent pancreatic fistula was specifically scrutinized by EAST guidelines and found wanting — do not reflexively start it.
+    <br><br>
+    <strong>Splenectomy with Distal Pancreatectomy:</strong> Routine splenectomy is not indicated; spleen preservation should always be attempted when patient physiology and anatomy allow.
+  </div>
+</section>
+
+<section class="topic s2-topic" id="complications">
+  <div class="topic-header">
+    <span class="topic-num">2.3</span>
+    <h2>Complication Management (Clavien-Dindo IIIB-V)</h2>
+  </div>
+
+  <div class="table-wrap">
+    <table class="s2-tbl">
+      <thead>
+        <tr>
+          <th>Complication</th>
+          <th>Grade</th>
+          <th>Incidence</th>
+          <th>Management Protocol</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Pancreatic Fistula (POPF Grade B/C)</strong></td>
+          <td>IIIA-IIIB</td>
+          <td>15-35%</td>
+          <td>Percutaneous drainage and nutritional optimization. Octreotide is not routinely indicated. Reoperation is reserved for uncontrolled sepsis.</td>
+        </tr>
+        <tr>
+          <td><strong>Intra-abdominal Abscess</strong></td>
+          <td>IIIB</td>
+          <td>10-25%</td>
+          <td>First-line management is CT-guided percutaneous drainage.</td>
+        </tr>
+        <tr>
+          <td><strong>Pseudocyst</strong></td>
+          <td>IIIA-IIIB</td>
+          <td>5-15%</td>
+          <td>Observe if asymptomatic and &lt;6cm. Endoscopic cystgastrostomy once the wall matures (4-6 weeks).</td>
+        </tr>
+        <tr>
+          <td><strong>Delayed Hemorrhage (Pseudoaneurysm)</strong></td>
+          <td>IVA</td>
+          <td>3-8%</td>
+          <td>Emergent CT angiography followed by angioembolization is first-line.</td>
+        </tr>
+        <tr>
+          <td><strong>Anastomotic/Duodenal Disruption</strong></td>
+          <td>IVA-V</td>
+          <td>Variable</td>
+          <td>Re-exploration, wide drainage, and consideration of biliary/enteral diversion.</td>
+        </tr>
+        <tr>
+          <td><strong>Death (Combined Vascular-Pancreatic)</strong></td>
+          <td>V</td>
+          <td>20-40%</td>
+          <td>In Grade IV-V injuries, mortality is driven by hemorrhagic shock from associated major vessels, not the pancreatic component.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- PILLAR 3: THE OPERATIVE ATLAS ═════════════════════════════ -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<div class="sec-header s3">
+  <span class="sec-badge">PILLAR 3</span>
+  <h2 class="sec-title">The Operative Atlas</h2>
+</div>
+
+<section class="topic s3-topic" id="anatomy">
+  <div class="topic-header">
+    <span class="topic-num">3.1</span>
+    <h2>Surgical Anatomy &amp; Danger Zones</h2>
+  </div>
+  
+  <p>The pancreas has no true capsule; sutures easily tear through friable tissue. Access is gained via the gastrocolic ligament into the lesser sac (preferred) or by mobilizing the hepatic flexure.</p>
+  
+  <h3>Danger Zones</h3>
+  <ul>
+    <li><strong>The Pancreatic Neck:</strong> Directly overlies the SMV-portal confluence. This is the single most dangerous point during dissection.</li>
+    <li><strong>The Uncinate Process:</strong> Wraps behind the SMV.</li>
+    <li><strong>Splenic Vasculature:</strong> Runs directly along the superior border of the pancreatic body and tail.</li>
+    <li><strong>Duodenum:</strong> Shares a rich blood supply with the pancreatic head via the anterior and posterior pancreaticoduodenal arcades — injuring one frequently compromises the other.</li>
+  </ul>
+  
+  <p>A full <strong>Kocher maneuver</strong> is mandatory for any suspected injury to the head of the pancreas.</p>
+</section>
+
+<section class="topic s3-topic" id="framework">
+  <div class="topic-header">
+    <span class="topic-num">3.2</span>
+    <h2>Step-by-Step Procedure: Decision Framework</h2>
+  </div>
+  
+  <p><strong>Step 1: Exposure.</strong> Perform a midline laparotomy. Enter the lesser sac through the gastrocolic ligament. Perform a Kocher maneuver if the head is involved.</p>
+  <p><strong>Step 2: Assess duct status.</strong> Direct inspection, intraoperative pancreatography if available, or gentle catheter probing. In most trauma centers, inspection and clinical judgment under time pressure dictate the diagnosis.</p>
+  <p><strong>Step 3a: Distal injury, duct disrupted, stable patient.</strong> Perform a distal pancreatectomy. Spleen preservation must be attempted (avoid routine splenectomy). Secure the parenchymal division with stapled or sutured transection and place wide drainage. If a partial ductal injury is present and the patient is stable, endoscopic stenting is a reasonable post-op alternative to resection; discuss with GI endoscopy if feasible.</p>
+  <p><strong>Step 3b: Proximal injury (head, right of SMV).</strong> Duct intact or partial tear — debride and drain widely; do not perform formal resection. Duct fully transected with combined duodenal injury — execute damage control: control hemorrhage, drain widely, perform selective pyloric exclusion only if duodenal repair is tenuous, and plan a return at 24-48h.</p>
+  <p><strong>Step 3c: Unstable patient (any location).</strong> Pack, drain, and close (see damage control technique below).</p>
+
+  <div class="callout clin">
+    <span class="label">Associated Injury Sequencing (Exam-Relevant)</span>
+    When pancreatic injury coexists with major vascular and duodenal trauma, prioritize as follows:
+    <ol>
+      <li><strong>Hemorrhage control:</strong> Vascular control always comes first. Period.</li>
+      <li><strong>Contamination control:</strong> Staple off or clamp duodenal/bowel injuries without committing to formal repair.</li>
+      <li><strong>Pancreatic damage control:</strong> Drain, do not resect, in the index operation.</li>
+      <li><strong>Definitive reconstruction:</strong> Delay until second-look laparotomy once physiology has normalized.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="topic s3-topic" id="difficult">
+  <div class="topic-header">
+    <span class="topic-num">3.3</span>
+    <h2>The Difficult Case</h2>
+  </div>
+  
+  <h3>Hostile / Frozen Abdomen</h3>
+  <p>Start dissection in an uninvolved, clean quadrant and work toward the injury. Use the lesser sac entry point furthest from prior scarring. Ensure proximal and distal vascular control is obtained before mobilizing tissue near the SMV-PV confluence.</p>
+
+  <h3>Sudden Hemorrhage During Dissection</h3>
+  <p>Apply direct pressure immediately. This is almost always an SMV or splenic vein injury — do not clamp blindly. Note that a Pringle maneuver is useless here, as it only controls hepatic arterial and portal inflow, not systemic venous backflow. Get vessel loops above and below the pancreatic neck; dividing the neck itself is often required to gain adequate exposure to identify and suture the bleeding vessel.</p>
+
+  <h3>Damage Control Packing Technique</h3>
+  <p>Do not simply stuff packs into the lesser sac. Place an omental pedicle over the injured gland before applying lap pads; this cushions the parenchyma and reduces mechanical necrosis from pack pressure. If you identify a ductal injury that cannot be repaired, place a marking suture or a small stent at the visible duct end so the second-look team isn't searching blindly in a swollen, distorted field. Leave wide, well-positioned closed-suction drainage even in the packed abdomen to ensure a controlled fistula rather than a free retroperitoneal leak.</p>
+
+  <h3>Trauma Pancreaticoduodenectomy (Whipple) Threshold</h3>
+  <p>This massive resection is reserved exclusively for cases where the head of the pancreas AND the duodenum are both devascularized beyond viable repair. This typically follows devastating injuries to the inferior pancreaticoduodenal arcade and associated mesenteric vessels where no reconstructable blood supply remains. It is NOT indicated for isolated pancreatic head injuries with an intact duodenum, and it is absolutely contraindicated as a primary procedure in an unstable patient. Perform damage control first; staged reconstruction should be delayed until the second or third operation.</p>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- PILLAR 4: SPATIAL & RADIOLOGICAL CORRELATION ══════════════ -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<div class="sec-header s4">
+  <span class="sec-badge">PILLAR 4</span>
+  <h2 class="sec-title">Spatial Awareness &amp; Radiological Correlation</h2>
+</div>
+
+<section class="topic s4-topic" id="spatial">
+  <div class="topic-header">
+    <span class="topic-num">4.1</span>
+    <h2>Operative 3D Spatial Awareness</h2>
+  </div>
+  
+  <p>Standing at the patient's right side, with the lesser sac entered and the stomach retracted superiorly, the pancreas presents as a transverse, rubbery band with its tail tilting cephalad toward the splenic hilum. The neck sits directly anterior to the spine — you can palpate the vertebral body through it.</p>
+  <p>The SMV runs posterior to the neck and is hidden from direct view. This anatomical configuration explains why blind clamping at the neck is catastrophic; you must work by feel until you have mobilized the tissue sufficiently to expose the vessel.</p>
+</section>
+
+<section class="topic s4-topic" id="radiology">
+  <div class="topic-header">
+    <span class="topic-num">4.2</span>
+    <h2>Radiological Correlation (The Consultant's Read)</h2>
+  </div>
+  
+  <p>Systematically read trauma CT scans for pancreatic injury using this 6-step read protocol:</p>
+  <ol>
+    <li><strong>Fluid in the lesser sac / anterior pararenal space:</strong> The earliest, but least specific, sign of retroperitoneal trauma.</li>
+    <li><strong>Discrete laceration line:</strong> A hypoattenuating line running perpendicular to the gland axis, particularly at the neck — this is the most reliable sign.</li>
+    <li><strong>"Sentinel clot" sign:</strong> A focal high-attenuation hematoma adjacent to an apparently intact gland; prompts a repeat scan in 12-24h.</li>
+    <li><strong>Peripancreatic fat stranding:</strong> Disproportionate stranding in the retroperitoneal space.</li>
+    <li><strong>Ductal discontinuity:</strong> Direct visualization of ductal disruption on thin-cut CT or MRCP. It is frequently absent on initial trauma CT scans; its absence does not exclude injury.</li>
+    <li><strong>Duodenal wall thickening or free air:</strong> Look closely near the pancreatic head to rule out combined duodeno-pancreatic injuries.</li>
+  </ol>
+</section>
+
+<section class="topic s4-topic" id="diagrams">
+  <div class="topic-header">
+    <span class="topic-num">4.3</span>
+    <h2>Critical Diagram Outlines</h2>
+  </div>
+  
+  <h3>Diagram 1: Revised AAST-OIS Schematic (2025)</h3>
+  <p>A sagittal cross-section of the abdomen at the L1-L2 level showing the stomach, pancreas neck, spine, and SMV. Ductal-injury descriptors are overlaid, highlighting the SMV-PV confluence as the anatomical dividing line between proximal and distal management.</p>
+  
+  <h3>Diagram 2: Decision Algorithm</h3>
+  <p>A flowchart branching from hemodynamic stability (stable vs. unstable), through ductal status (intact vs. disrupted), to four clinical endpoints: (1) observation/drainage, (2) endoscopic stenting, (3) distal pancreatectomy, and (4) damage control packing.</p>
+
+  <h3>Diagram 3: Lesser Sac Exposure Cross-Section</h3>
+  <p>An anterior view showing the stomach retracted cephalad, the gastrocolic ligament divided, and the transverse mesocolon retracted caudally, fully exposing the pancreas, splenic vessels, and the SMV-PV confluence.</p>
+
+  <h3>Diagram 4: Vascular Control for SMV Injury</h3>
+  <p>An anatomical sketch showing vessel loops placed above and below the pancreatic neck, with a line indicating where the neck is divided to expose the underlying SMV-portal confluence for suture repair.</p>
+
+  <h3>Diagram 5: Damage Control Packing Technique</h3>
+  <p>A schematic illustrating omental pedicle placement over the injured pancreatic bed, followed by surgical packing, a marking suture at the disrupted duct end, and closed-suction drains placed in the flanks.</p>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- PILLAR 5: SENIOR FELLOWSHIP & BOARD REVIEW ════════════════ -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<div class="sec-header s5">
+  <span class="sec-badge">PILLAR 5</span>
+  <h2 class="sec-title">Senior Fellowship &amp; Board Review</h2>
+</div>
+
+<section class="topic s5-topic" id="vivas">
+  <div class="topic-header">
+    <span class="topic-num">5.1</span>
+    <h2>High-Order Viva Scenarios</h2>
+  </div>
+  
+  <p><strong>Q1: A stable 28-year-old MVC patient presents with a peripancreatic hematoma at the neck, but no clear laceration is visible on the initial CT scan. What is your management?</strong><br>
+  *Expert Answer:* Obtain a repeat CT scan in 12-24 hours or perform an MRCP. Do not operate on an equivocal early scan given the high false-negative rates of initial trauma CTs for ductal injury.</p>
+
+  <p><strong>Q2: You find an intraoperative Grade III pancreatic injury at the neck with a clearly transected duct. The patient is hemodynamically stable and has no other injuries. What is your action?</strong><br>
+  *Expert Answer:* Perform a distal pancreatectomy. Spleen preservation should be attempted (avoid routine splenectomy, in line with the EAST GRADE guidelines).</p>
+
+  <p><strong>Q3: You find the same Grade III neck injury, but the patient is now hypotensive and has a coexisting bleeding liver laceration. How do you manage this?</strong><br>
+  *Expert Answer:* This mandates damage control. Control liver bleeding first, place an omental pedicle over the pancreas, pack, place wide drains, and mark the ductal end if visible. Do not perform resection in an unstable patient. Re-explore once physiology is corrected.</p>
+
+  <p><strong>Q4: A stable patient has a partial ductal injury confirmed on MRCP, and endoscopic expertise is available. What is your preferred approach?</strong><br>
+  *Expert Answer:* Endoscopic stenting (ERCP) is now a legitimate first-line option. The 2025 meta-analysis demonstrates an 89% clinical success rate in selected partial injuries. Reserve surgical resection for stenting failure.</p>
+
+  <p><strong>Q5: On post-operative day 5 after a distal pancreatectomy, the patient's drain output is 200mL, with a fluid amylase 4x serum. The patient is well, tolerating diet, and afebrile. What is your management?</strong><br>
+  *Expert Answer:* This is a Grade B postoperative pancreatic fistula (POPF). Keep the drain in place, optimize enteral nutrition, and do not routinely administer octreotide. Reoperation is only indicated if uncontrolled sepsis develops.</p>
+
+  <p><strong>Q6: A patient with combined pancreaticoduodenal devascularization and no reconstructable blood supply to either organ has been packed and resuscitated, and is now stable at second-look laparotomy. What is your plan?</strong><br>
+  *Expert Answer:* This meets the threshold for staged trauma pancreaticoduodenectomy (Whipple). Reconstruct only now during the planned second operation, never as an index procedure in the emergency setting.</p>
+</section>
+
+<section class="topic s5-topic" id="scores">
+  <div class="topic-header">
+    <span class="topic-num">5.2</span>
+    <h2>Classifications &amp; Scoring Systems</h2>
+  </div>
+  
+  <h3>AAST Pancreatic Organ Injury Scale (Legacy + 2025 Revision)</h3>
+  <div class="table-wrap">
+    <table class="s5-tbl">
+      <thead>
+        <tr>
+          <th>Grade</th>
+          <th>Injury Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>I</strong></td>
+          <td>Minor contusion or superficial laceration; no duct injury.</td>
+        </tr>
+        <tr>
+          <td><strong>II</strong></td>
+          <td>Major contusion or laceration; no duct injury or tissue loss.</td>
+        </tr>
+        <tr>
+          <td><strong>III</strong></td>
+          <td>Distal transection or parenchymal injury with duct injury (left of SMV).</td>
+        </tr>
+        <tr>
+          <td><strong>IV</strong></td>
+          <td>Proximal transection or injury involving the ampulla (right of SMV).</td>
+        </tr>
+        <tr>
+          <td><strong>V</strong></td>
+          <td>Massive disruption of the pancreatic head.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p><em>Note: The 2025 AAST revision adds refined ductal injury sub-classification and specific descriptors for complex combined trauma.</em></p>
+
+  <h3>CPT Coding Guide (Verify current fee schedule)</h3>
+  <ul>
+    <li><strong>48140-48148:</strong> Distal pancreatectomy (with or without splenectomy).</li>
+    <li><strong>48000:</strong> Placement of drains, peripancreatic.</li>
+    <li><strong>47480:</strong> Cholecystostomy (for concurrent biliary decompression).</li>
+    <li><strong>44602-44605:</strong> Duodenal repair.</li>
+  </ul>
+</section>
+
+<section class="rapid-ref" id="cheat-sheet">
+  <h3>RAPID BOARD REVIEW SUMMARY — Pancreatic Trauma Must-Know Facts</h3>
+  <div class="table-wrap">
+    <table style="background: transparent;">
+      <thead>
+        <tr>
+          <th>Clinical Axiom</th>
+          <th>Key Value / Fact</th>
+          <th>Clinical Significance</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Duct Integrity</strong></td>
+          <td><strong>Primary driver</strong></td>
+          <td>Ductal status, not parenchymal depth, dictates all surgical decisions.</td>
+        </tr>
+        <tr>
+          <td><strong>Initial CT Sensitivity</strong></td>
+          <td><strong>60 - 85%</strong></td>
+          <td>Frequently misses early ductal injuries. Repeat CT at 12-24h if clinically suspected.</td>
+        </tr>
+        <tr>
+          <td><strong>ERCP Stenting Success</strong></td>
+          <td><strong>89% success</strong></td>
+          <td>Validates non-operative stenting for stable patients with partial ductal injuries (WJES 2025).</td>
+        </tr>
+        <li><strong>Octreotide / Splenectomy:</strong> EAST GRADE evaluation rejects routine octreotide prophylaxis for POPF and rejects routine splenectomy during distal pancreatectomy. Spleen-preservation is preferred.</li>
+        <li><strong>Associated Injuries:</strong> Sequence must be: hemorrhage control &rarr; contamination control &rarr; pancreatic damage control &rarr; delayed reconstruction.</li>
+        <li><strong>Whipple Indicator:</strong> Trauma pancreaticoduodenectomy is reserved for devascularization of both the head of the pancreas and the duodenum. Never perform Whipple in an unstable patient.</li>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+</div><!-- end content-wrap -->
+</main>
+
+<button id="top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script src="../../js/nav-pill.js"></script>
+<script src="../../js/navigation.js"></script>
+<script>
+const progressBar = document.getElementById('progress-bar');
+const topBtn = document.getElementById('top-btn');
+const navItems = document.querySelectorAll('.nav-item');
+const sections = document.querySelectorAll('.topic[id], .rapid-ref[id]');
+
+window.addEventListener('scroll', () => {
+  const st = window.scrollY;
+  const dh = document.documentElement.scrollHeight - window.innerHeight;
+  if (progressBar) progressBar.style.transform = `scaleX(${st / dh})`;
+  if (topBtn) topBtn.classList.toggle('show', st > 400);
+  
+  let current = '';
+  sections.forEach(s => { if (st >= s.offsetTop - 120) current = s.id; });
+  navItems.forEach(n => { n.classList.toggle('active', n.getAttribute('href') === '#' + current); });
+});
+
+function filterNav(query) {
+  const q = query.toLowerCase();
+  navItems.forEach(item => { item.style.display = (!q || item.textContent.toLowerCase().includes(q)) ? 'block' : 'none'; });
+}
+
+navItems.forEach(item => {
+  item.addEventListener('click', e => {
+    e.preventDefault();
+    if(typeof closeSidebar === 'function') closeSidebar();
+    const target = document.querySelector(item.getAttribute('href'));
+    if (target) window.scrollTo({ top: target.getBoundingClientRect().top - 80, behavior: 'smooth' });
+  });
+});
+
+document.querySelectorAll('.topic').forEach((el, i) => { el.style.animationDelay = `${i * 0.03}s`; });
+</script>
+</body>
+</html>
