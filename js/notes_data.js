@@ -453,6 +453,15 @@ window.NOTES_DATA = {
       opBadge: 'Zollinger Standard',
       opMeta: 'Interactive Portal',
       url: 'notes/Gynecologic Surgical Portal/gynecology.html'
+    },
+    {
+      id: 'op-endocrine-portal',
+      title: 'Endocrine Surgery Approaches & Procedures',
+      opKicker: 'Endocrine Surgery · Specialty Portal',
+      description: 'Interactive specialty portal mapping endocrine procedures: thyroid physiology, goiter, thyroiditis, thyroid carcinoma pathology, thyroidectomy, parathyroidectomy, and adrenalectomy. Features surgical steps, vascular anatomy, and parathyroid preservation safety zones.',
+      opBadge: 'Zollinger Standard',
+      opMeta: 'Interactive Portal',
+      url: 'notes/Endocrine Surgery Portal/endocrine.html'
     }
   ]
 };

@@ -19,6 +19,7 @@ scratch/
 # MCQ bank PDFs (large binary files - not for GitHub)
 MCQ Bank/
 notes/Surgical Operative Approach/General Principles of Abdominal Operations for Trauma/*.pdf
+notes/Endocrine Surgery/*.pdf
 
 
 # Environment variables
@@ -45,6 +46,8 @@ compiled_mcqs/removed_bad_mcqs.json
 compiled_mcqs/Recovered.json
 js/questions/removed_bad_mcqs.js
 test_*.py
+extract_endocrine.py
+generate_portal.py
 *.env
 js/questions/general_surgery.js
 compiled_mcqs/*.json
