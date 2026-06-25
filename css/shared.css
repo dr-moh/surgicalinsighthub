@@ -1433,3 +1433,39 @@ footer {
   gap: 6px;
 }
 
+/* Global Table Outlining and Grid Formatting */
+.table-wrap table, table.s1-tbl, table.s2-tbl, table.s3-tbl, table.s4-tbl, table.s5-tbl {
+  width: 100%;
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+  border: 1px solid var(--border, var(--border-color, rgba(255,255,255,0.15))) !important;
+  border-radius: 8px !important;
+  overflow: hidden !important;
+}
+.table-wrap th, .table-wrap td,
+table.s1-tbl th, table.s1-tbl td,
+table.s2-tbl th, table.s2-tbl td,
+table.s3-tbl th, table.s3-tbl td,
+table.s4-tbl th, table.s4-tbl td,
+table.s5-tbl th, table.s5-tbl td {
+  border-right: 1px solid var(--border, var(--border-color, rgba(255,255,255,0.15))) !important;
+  border-bottom: 1px solid var(--border, var(--border-color, rgba(255,255,255,0.15))) !important;
+}
+.table-wrap th:last-child, .table-wrap td:last-child,
+table.s1-tbl th:last-child, table.s1-tbl td:last-child,
+table.s2-tbl th:last-child, table.s2-tbl td:last-child,
+table.s3-tbl th:last-child, table.s3-tbl td:last-child,
+table.s4-tbl th:last-child, table.s4-tbl td:last-child,
+table.s5-tbl th:last-child, table.s5-tbl td:last-child {
+  border-right: none !important;
+}
+.table-wrap tr:last-child td,
+table.s1-tbl tr:last-child td,
+table.s2-tbl tr:last-child td,
+table.s3-tbl tr:last-child td,
+table.s4-tbl tr:last-child td,
+table.s5-tbl tr:last-child td {
+  border-bottom: none !important;
+}
+
+

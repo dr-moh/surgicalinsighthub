@@ -331,6 +331,64 @@
     margin-top: 15px; text-align: center; max-width: 600px;
     opacity: 0.85; line-height: 1.4;
   }
+  /* Table styling for clinical and staging tables */
+  .surgical-study-notes table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 20px 0;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--bg-card);
+    font-size: 0.9rem;
+    color: var(--text-primary);
+  }
+  .surgical-study-notes th {
+    background: rgba(76, 29, 149, 0.06);
+    color: var(--brand-purple);
+    font-weight: 700;
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+    border-right: 1px solid var(--border-color);
+  }
+  [data-theme="dark"] .surgical-study-notes th {
+    background: rgba(236, 72, 153, 0.08);
+    color: var(--brand-rose);
+  }
+  .surgical-study-notes td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border-color);
+    border-right: 1px solid var(--border-color);
+    line-height: 1.5;
+    vertical-align: top;
+  }
+  .surgical-study-notes th:last-child,
+  .surgical-study-notes td:last-child {
+    border-right: none;
+  }
+  .surgical-study-notes tr:last-child td {
+    border-bottom: none;
+  }
+  .surgical-study-notes tr:nth-child(even) {
+    background: rgba(76, 29, 149, 0.015);
+  }
+  [data-theme="dark"] .surgical-study-notes tr:nth-child(even) {
+    background: rgba(236, 72, 153, 0.02);
+  }
+  .surgical-study-notes .table-wrap {
+    overflow-x: auto;
+    border-radius: 8px;
+    margin: 20px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    border: 1px solid var(--border-color);
+  }
+  .surgical-study-notes .table-wrap table {
+    margin: 0;
+    border: none;
+    border-radius: 0;
+  }
 </style>
 <link rel="icon" type="image/png" href="https://surgicalinsighthub.app/favicon.png">
 </head>
