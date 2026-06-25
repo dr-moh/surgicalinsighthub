@@ -5,7 +5,7 @@
     "kicker": "Part I",
     "title": "Thyroid Physiology and Laboratory Evaluation",
     "summary": "Core physiology of the thyroid gland, synthesis of thyroid hormones (T3/T4), laboratory test interpretations, autoantibody panels, and nonisotopic thyroid imaging modalities.",
-    "image": "../../assets/images/endocrine/img_page_20_1.png",
+    "image": "../../assets/images/endocrine/img_page_22_1.jpeg",
     "imagesList": [
       "../../assets/images/endocrine/img_page_20_1.png",
       "../../assets/images/endocrine/img_page_22_1.jpeg",
@@ -45,9 +45,8 @@
         "chapter": 1,
         "title": "Regulation of Thyroid Function, Synthesis, and Function of Thyroid Hormones",
         "summary": "Core physiology of the thyroid gland, detailing the neuroendocrine Regulation of the Hypothalamus-Pituitary-Thyroid (HPT) axis, biochemical synthesis of thyroxine (T4) and triiodothyronine (T3), and molecular deiodinative regulation in target organs.",
-        "image": "../../assets/images/endocrine/img_page_20_1.png",
+        "image": "../../assets/images/endocrine/img_page_22_1.jpeg",
         "imagesList": [
-          "../../assets/images/endocrine/img_page_20_1.png",
           "../../assets/images/endocrine/img_page_22_1.jpeg",
           "../../assets/images/endocrine/img_page_26_1.jpeg",
           "../../assets/images/endocrine/img_page_32_1.jpeg",
@@ -69,7 +68,7 @@
           {
             "figure": 1,
             "text": "<strong>HPT Axis Feedback Loops</strong>: Central neuroendocrine axis demonstrating how hypothalamic TRH coordinates pituitary TSH secretion, and how free T3/T4 inhibit synthesis.",
-            "image": "../../assets/images/endocrine/img_page_20_1.png"
+            "image": null
           },
           {
             "figure": 2,
@@ -114,9 +113,8 @@
         "chapter": 2,
         "title": "Tests of Thyroid Function",
         "summary": "Surgical and clinical chemistry guidelines for utilizing serum TSH, free thyroid hormones, and radioactive iodine uptake (RAIU) scintigraphy in patient evaluation.",
-        "image": "../../assets/images/endocrine/img_page_50_1.png",
+        "image": "../../assets/images/endocrine/img_page_56_1.jpeg",
         "imagesList": [
-          "../../assets/images/endocrine/img_page_50_1.png",
           "../../assets/images/endocrine/img_page_56_1.jpeg",
           "../../assets/images/endocrine/img_page_57_1.jpeg"
         ],
@@ -133,7 +131,7 @@
           {
             "figure": 1,
             "text": "<strong>Thyroid Function Test Algorithm</strong>: Initial TSH screening followed by reflex Free T4 testing to categorize overt or subclinical hyper- and hypothyroidism.",
-            "image": "../../assets/images/endocrine/img_page_50_1.png"
+            "image": null
           },
           {
             "figure": 2,
@@ -158,10 +156,8 @@
         "chapter": 3,
         "title": "Thyroid Autoantibodies",
         "summary": "Clinical utility of TPO, Tg, and TSH-receptor autoantibodies in diagnosing autoimmune thyroiditis and managing differentiated thyroid cancer surveillance.",
-        "image": "../../assets/images/endocrine/img_page_73_1.png",
-        "imagesList": [
-          "../../assets/images/endocrine/img_page_73_1.png"
-        ],
+        "image": null,
+        "imagesList": [],
         "indications": [
           "# Chapter 3: Thyroid Autoantibodies\n\n### Module 1: Clinical Framework & Pathology\n\n- The production of antibodies is the hallmark of autoimmune conditions, which can be used for diagnosis and monitoring of disease progression and may even have a future role in developing immune-based therapies.\n- autoimmune thyroid disease (autoimmune thyroid disease) encompasses an array of organ-speci\ufb01c autoimmune conditions in which antibodies can be detected in sera against various thyroid antigens.\n- Thyroid antibodies may contribute to propagation of the autoimmune disease and can also have a functional role, directly modulating thyroid hormone synthesis.\n- In particular, antibodies against the `thyroid-stimulating hormone` receptor (TSHR) can activate or block the function of the receptor directly causing hyperor ***hypothyroidism***, respectively.\n- A prerequisite for the synthesis of thyroid hormones is the interaction of the pituitary `thyroid-stimulating hormone` (`TSH`) with its receptor, consequently trigger-ing hormone production by thyroid *follicular cell*.\n- The \ufb01rst step in this process is the uptake of iodine by thyroid cells, mediated by the sodium `iodide` symporter (`NIS`).\n- Pendrin is responsible for ef\ufb02ux of iodine into the thyroid follicles, which is subsequently incorporated into thyroglobulin (`TG`).\n- Protein iodination within `TG` is a process mediated by thyroid peroxidase (`TPO`), thereby forming mono-iodotyrosine and diiodotyrosine and later the thyroid hormones `T3` and `T4`.\n- All of these molecules have been shown to represent thyroid autoantigens and have a variable role in thyroid autoimmunity.\n- This chapter reviews the role of thyroid autoantibodies in the *pathogenesis* of autoimmune thyroid disease and describes the clinical use of these antibodies in the management of thyroid dysfunction, extrathyroidal complications of autoimmune thyroid disease, and thyroid malignancy.\n- Thyroglobulin Antibodies (`TgAb`) The Antigen `TG` was the very \ufb01rst autoantigen to be described; the now classic experiments undertaken by Rose and Witebsky in 1956 showed that immunization of rabbits with thyroid extract led to the production of `TgAb` and a *lymphocytic* ***thyroiditis*** (around three-quarters of thyroid protein is `TG`).\n- Later the same year, Roitt and Doniach identi\ufb01ed `TgAb` in the circulation of patients with Hashimoto\u2019s ***thyroiditis***, using the classical immunoprecipitation method.\n- The failure of these antibodies to \ufb01x complement was also demonstrated very early on Roitt et al..\n- `TG` is a homodimeric 660 kD glycosylated iodoprotein (0.1\u20131.1% iodine) which is synthesized in thyroid cells and accumulates in the thyroid follicular lumen where it is the major component of thyroid *colloid*.\n- The major function of `TG` is in the synthesis of `T3` and `T4`, which are produced as a result of `TPO`-mediated iodination and coupling of several speci\ufb01c, hormonogenic tyrosine residues within `TG`, once the molecule is within the follicular lumen.\n- Iodination status and the activity of the thyroid gland determine the exact composition of `TG` within the lumen, with multimeric and aggregate forms of `TG` being predominant in the center.\n\n#### Diagnostic Tables & Classifications\n\n| | TSHR | `TPO` | `TG` |\n| --- | --- | --- | --- |\n| Chromosomal location | 14 | 2 | 8 |\n| Amino acids | 743 | 933 | 2748 |\n| Protein | G protein- coupled receptor | Hemoprotein enzyme | Iodinated glycoprotein |\n| Molecular weight (kDa) | 85 | 105\u2013110 | 660 |\n| Function | Receptor for `TSH` | Iodination and coupling of tyrosine to form thyroid hormones | Storage of `T3` and `T4` |\n| Homologies | FSH and LH receptor | Myeloperoxidase | Acetylcholinesterase |\n\n---\n\n### Module 2: Diagnostic Investigation & Lab Workup\n\n- The currently used third-generation assays show high accuracy and greater harmonization of results between the different kits available, although cutoff rates continue to be debated, and there are still pronounced differ-ences in the threshold values considered as positive by different manufacturers.\n- The prevalence of `TPOAb` in healthy *children* and adolescent is low, but this increases with age and displays a *female predominance*.\n- Antibodies against `TPO` are detected in the vast majority of patients with autoimmune ***hypothyroidism*** and around 70% of GD patients.\n- Although the prop-erties of `TPO` antibodies from patients with AH and GD are largely similar, some minor differences have been described, such as different IgG heavy chain usage, but have no known clinical signi\ufb01cance.\n- Autoimmune ***hypothyroidism*** In hypothyroid individuals, the presence of `TPOAb` helps to con\ufb01rm the autoimmune nature of thyroid failure.\n- status can also be utilized to make treatment decisions in those with \u201cborderline\u201d thyroid function.\n- For instance, it is known that the risk of developing overt ***hypothyroidism*** is highest in subjects with the highest `TPOAb` levels, while the presence of `TPOAb` at levels up to three times normal has no predictive value.\n- Moreover, the presence of `TPOAb`, partic-ularly at a younger age, can predict the development of future thyroid dysfunction even in individuals with normal `TSH` and thyroid hormone levels.\n- In the *Whickham Survey* and over 20 years of followup, the odds ratio of developing ***hypothyroidism*** in `TPOAb`-positive individuals with normal thyroid function was 8 (95% CI 5\u201315) in women and 25 (10\u201363) in men.\n- In cases in whom the `TSH` was also elevated, the risk of ***hypothyroidism*** rose to 28 (22\u201365) in women and 173 (81\u2013370) in men.\n- The risk in individuals with raised `TSH` alone was comparable to those with positive `TPO` antibodies and normal thyroid function at 8 (3\u201320) and 44 (19\u2013104) for women and men, respectively.\n- Current guidelines are rather equivocal about the utility of measuring thyroid antibodies, including their use in patients with ***subclinical hypothyroidism***.\n- Although `levothyroxine` replacement is **recommended** if the `TSH` is greater than 10 mIU/L, irrespective of thyroid antibody levels, the need for replacement when an elevated `TSH` is below this cutoff is based on individual factors, including the presence of `TPOAb`; a signi\ufb01cant proportion of individuals with `TPOAb` do not develop thyroid dysfunction.\n- The emergence of antibodies against `TPO` has a clear genetic predisposition , and a genome-wide association analysis has identi\ufb01ed \ufb01ve loci associated with `TPOAb` positivity; three of these were also associated with thyroid dysfunction, indicating an interaction between genetic predisposition, `TPOAb` status, and clinical thyroid disease, as well as illustrating that in some cases, `TPOAb` positivity may be independent of the presence of overt disease.\n- Further evidence suggests that antibody status can determine the clinical course of autoimmune ***hypothyroidism***.\n- Rotondi and colleagues have shown that `TgAb`- and `TPOAb`-negative autoimmune ***hypothyroidism*** runs a milder clinical course, with patients having lower `TSH` levels, higher `FT4` levels, and smaller ***goiters***.\n\n#### Radionuclide & Attenuation Data\n\n|  |  |\n| --- | --- |\n| TFC cytotoxicity? | \u2014 |\n\n---\n\n### Module 3: Surgical Anatomy & Operative Approaches\n\n- In order to simplify the technique, third-generation assays have been created that employ a luciferase reporter to detect increased cAMP production, without the need for radioactivity.\n- The luciferase reporter assay was further modi\ufb01ed using CHO cells expressing a chimeric human TSHR/rat LH receptor, although it is not entirely clear whether this approach offers increased sensitivity.\n- Cutoff values for `TSAb` measurements remain laboratory speci\ufb01c, although attempts have recently been made at standardization of the various TSHRAb bioassays.\n- While developing a reliable `TSAb` assay is certainly an attractive scienti\ufb01c proposition, the clinical need for such an assay is relatively limited.\n- Combining the clinical presentation with `TBII` data will enable the physician to predict whether the patient has stimulating or blocking TSHR antibodies.\n- However, a number of rare clinical scenarios remain where a functional assay may be of use.\n- A prime example is a pregnant woman with a history of GD previously treated with `radioactive iodine` or surgery, where the exact nature of TSHRAb might help to decide on the appropriate clinical management (further discussed below).\n- The main features of the two types of TSHRAb assays relevant to clinical practice are summarized in Table 3.\n- TSHR Antibodies in ***hyperthyroidism*** Around 80% of patients with ***hyperthyroidism*** have GD, although this percentage is in\ufb02uenced by iodine status and geographical variations.\n- The diagnosis of autoimmune ***hyperthyroidism*** can be made clinically in those with a typical history, a diffuse ***goiter***, and extrathyroidal complications.\n- In a signi\ufb01cant number of patients, however, the cause of ***hyperthyroidism*** cannot be determined with certainty clinically, not least because the widespread use of thyroid function testing means that presentation is now often at an early stage and detection of TSHRAb con\ufb01rms the autoimmune nature of the ***hyperthyroidism***.\n- Theoretically all patients with GD **should be** positive for TSHRAb and especially `TSAb`, but in practice this is never achievable due to assay insensitivity or the purely intrathyroidal synthesis of these antibodies.\n- The overall detection level in newly diagnosed GD with the second-generation `TBII` is 95%, and those patients who are `TBII` negative have less severe disease and no orbital involvement.\n- There is no clear consensus on which patients to test, with some form of TSHRAb measurement being used by only 58% of endocrinologists in one North American survey which gave an index case of uncomplicated GD as an example.\n- The 2011 American Thyroid Association guidelines on the management of ***thyrotoxicosis*** state that \u201ca `radioactive iodine` uptake **should be** performed when the clinical presentation of ***thyrotoxicosis*** is not diagnostic of GD\u201d and advocate the measurement of TSHRAb when a scintiscan is not available.\n- The high sensitivity of `TBII` assays and the convenience for the patient make such an approach questionable, and our impression is that practice is changing to greater use of TSHRAb measurement as the primary diagnostic tool, especially in Europe.\n\n#### Operative Stratification & Reference\n\n|  |  |  |\n| --- | --- | --- |\n| \u2014 | Preg | nancy |\n| \u2014 | \u2014 | \u2014 |\n| \u2014 | No effect on fetal thyroid | \u2014 |\n\n| | Preg | | |\n| --- | --- | --- | --- |\n| \u2014 | \u2014 | Preg | nancy |\n| \u2014 | \u2014 | \u2014 | \u2014 |\n| Modulation of TFC function; GO *pathogenesis*? Possible role in osteoporosis | \u2014 | Fetal hyper-or ***hypothyroidism*** | \u2014 |\n| \u2014 | \u2014 | \u2014 | \u2014 |\n\n|  |  |\n| --- | --- |\n| TFC cytotoxicity; impaired TFC function | \u2014 |\n\n| `TPO`-Ab Thyroid AIH autoimmunity Confirmation of AH Differentiates Prediction of AH between Treatment of SCH type 1 and type 2 | |\n| --- | --- |\n| Confirmation of AH Prediction of AH Treatment of SCH | Differentiates between type 1 and type 2 |\n| \u2014 | \u2014 |\n\n|  |  |\n| --- | --- |\n| Prediction of NT AIH management | \u2014 |\n\n|  |  |  |  |\n| --- | --- | --- | --- |\n| Confirms autoimmunity when `TPO`-Ab negative | \u2014 | Can predict recurrence; interfere with `TG` measurement | \u2014 |\n| \u2014 | \u2014 | \u2014 | \u2014 |\n\n|  |  |\n| --- | --- |\n| Diagnosis of difficult GD or GO | \u2014 |\n\n|  |  |\n| --- | --- |\n| Possible role in women with normal TFTs Predicts PPT | \u2014 |\n\n| TSHR-Ab type | Assay method |\n| --- | --- |\n| Long-acting thyroid stimulator (LATS), LATS protector (LATS-P) | In vivo release of `radioiodine` from pre-labeled guinea pig or mouse thyroid; LATS-P has also been measured using murine thyroidal intracellular *colloid* droplet formation |\n| Thyroid-stimulating antibody (`TSAb`) | Stimulation of cAMP release by thyroid slices, follicles or cells (including cell lines such as FRTL-5), or CHO cells transfected with the TSHR |\n| Thyroid-blocking antibodies (`TBAb`) | Inhibition of `TSH`-stimulated cAMP release by thyroid cells or cells transfected with the TSHR |\n| `TSH`-binding inhibitory immunoglobulins (`TBII`) | Inhibition of labeled `TSH` binding to the TSHR in solubilized or recombinant form measured by radioassay, chemiluminescence, or ELISA; electrochemiluminescence immunoassay measures inhibition of the binding of a human thyroid-stimulating monoclonal antibody (M22) to TSHR |\n| TSHR-binding antibodies | Immunoprecipitation or flow cytometry of `TSH` receptor-transfected cells or ELISA-based methods using cell extracts |\n\n| | `TBII` assay | Bioassay |\n| --- | --- | --- |\n| Principle | Inhibition of `TSH` (or monoclonal TSHR-Ab) binding to its receptor by patient sera (or immunoglobulin) | Detection of cAMP production by `TSAb` (or blocking of `TSH`-induced cAMP production by `TBAb`) |\n| Platform | Solid-phase assay | Cells transfected with the TSHR |\n| Sensitivity | 95\u201398% | Up to 99% |\n| Advantages | Relatively easy to perform; no more expensive than `TPO`-Ab or `TG`-Ab measurement | Differentiates between `TSAb` and `TBAb`; more sensitive but this is dependent on the specific assay used |\n| Disadvantages | Unable to differentiate `TSAb` from `TBAb` (this disadvantage is offset by using the patient\u2019s biochemical status at the time of measurement as an indicator of functional ability) | Labor intensive and requires cell culture facilities; prone to assay variability and so standardization is complex; expensive; not widely available |\n| Clinical use | Diagnosis of GD or GO Prediction of NT in *pregnant women* with a history of previous or current GD | Prediction of NT in *pregnant women* with GD previously treated with `RAI` or thyroidectomy |",
           "<li class=\"main-bullet\"><strong>Anti-TPO Antibodies</strong>: Present in 90-95% of patients with Hashimoto's thyroiditis and 75-80% of Graves' disease. Predictive of progression from subclinical to overt hypothyroidism.</li>",
@@ -175,7 +171,7 @@
           {
             "figure": 1,
             "text": "<strong>Autoimmune Pathogenesis</strong>: Flowchart detailing T-cell mediated destruction in Hashimoto's vs. antibody-mediated receptor stimulation in Graves'.",
-            "image": "../../assets/images/endocrine/img_page_73_1.png"
+            "image": null
           }
         ],
         "redZone": {
@@ -190,9 +186,8 @@
         "chapter": 4,
         "title": "Nonisotopic Thyroid Imaging",
         "summary": "Nonisotopic imaging modalities in the evaluation of thyroid pathology. Focus on high-resolution neck ultrasound (US) for nodule risk stratification and CT/MRI for compressive goiters.",
-        "image": "../../assets/images/endocrine/img_page_104_1.png",
+        "image": "../../assets/images/endocrine/img_page_109_1.jpeg",
         "imagesList": [
-          "../../assets/images/endocrine/img_page_104_1.png",
           "../../assets/images/endocrine/img_page_109_1.jpeg",
           "../../assets/images/endocrine/img_page_113_1.jpeg",
           "../../assets/images/endocrine/img_page_114_1.jpeg",
@@ -226,7 +221,7 @@
           {
             "figure": 1,
             "text": "<strong>Nodule Ultrasound Risk Classification</strong>: ACR TI-RADS scoring system mapping features like microcalcifications and irregular margins to malignancy risk.",
-            "image": "../../assets/images/endocrine/img_page_104_1.png"
+            "image": null
           },
           {
             "figure": 2,
@@ -339,7 +334,7 @@
     "kicker": "Part II",
     "title": "Goiter and Thyroid Nodule",
     "summary": "Pathophysiology, diagnostics, and management of nontoxic goiter and thyroid nodules. Includes ultrasound risk stratification (TI-RADS) and fine-needle aspiration (FNA) decision algorithms.",
-    "image": "../../assets/images/endocrine/img_page_140_1.png",
+    "image": "../../assets/images/endocrine/img_page_145_1.jpeg",
     "imagesList": [
       "../../assets/images/endocrine/img_page_140_1.png",
       "../../assets/images/endocrine/img_page_145_1.jpeg",
@@ -361,9 +356,8 @@
         "chapter": 5,
         "title": "Nontoxic Goiter",
         "summary": "Pathophysiology and surgical management of diffuse and multinodular non-toxic goiters, including compressive symptoms and retrosternal extension.",
-        "image": "../../assets/images/endocrine/img_page_140_1.png",
+        "image": "../../assets/images/endocrine/img_page_145_1.jpeg",
         "imagesList": [
-          "../../assets/images/endocrine/img_page_140_1.png",
           "../../assets/images/endocrine/img_page_145_1.jpeg",
           "../../assets/images/endocrine/img_page_149_1.jpeg",
           "../../assets/images/endocrine/img_page_150_1.png",
@@ -386,7 +380,7 @@
           {
             "figure": 1,
             "text": "<strong>Substernal Goiter Extension</strong>: Mobilization steps detailing finger dissection along the pretracheal fascia into the superior mediastinum.",
-            "image": "../../assets/images/endocrine/img_page_140_1.png"
+            "image": null
           },
           {
             "figure": 2,
@@ -441,9 +435,8 @@
         "chapter": 6,
         "title": "Thyroid Nodule",
         "summary": "Clinical workup of the thyroid nodule. Detailed ACR TI-RADS risk classification, Bethesda cytopathology, and the clinical application of molecular markers.",
-        "image": "../../assets/images/endocrine/img_page_177_1.png",
+        "image": "../../assets/images/endocrine/img_page_182_1.jpeg",
         "imagesList": [
-          "../../assets/images/endocrine/img_page_177_1.png",
           "../../assets/images/endocrine/img_page_182_1.jpeg",
           "../../assets/images/endocrine/img_page_187_1.jpeg",
           "../../assets/images/endocrine/img_page_187_2.jpeg"
@@ -461,7 +454,7 @@
           {
             "figure": 1,
             "text": "<strong>ACR TI-RADS Calculator Grid</strong>: Point allocation mapping nodule sonographic characteristics to malignancy risk and FNA thresholds.",
-            "image": "../../assets/images/endocrine/img_page_177_1.png"
+            "image": null
           },
           {
             "figure": 2,
@@ -494,7 +487,7 @@
     "kicker": "Part III",
     "title": "Thyroiditis",
     "summary": "Comprehensive guide to inflammatory disorders of the thyroid, including Hashimoto's thyroiditis, postpartum/silent thyroiditis, and acute/subacute thyroiditis.",
-    "image": "../../assets/images/endocrine/img_page_215_1.png",
+    "image": "../../assets/images/endocrine/img_page_217_1.jpeg",
     "imagesList": [
       "../../assets/images/endocrine/img_page_215_1.png",
       "../../assets/images/endocrine/img_page_217_1.jpeg",
@@ -515,9 +508,8 @@
         "chapter": 7,
         "title": "Hashimoto\u00b4s Thyroiditis",
         "summary": "Hashimoto's chronic lymphocytic thyroiditis. Pathophysiology, diagnostic markers, long-term replacement, and the high-yield risk association with primary thyroid lymphoma.",
-        "image": "../../assets/images/endocrine/img_page_215_1.png",
+        "image": "../../assets/images/endocrine/img_page_217_1.jpeg",
         "imagesList": [
-          "../../assets/images/endocrine/img_page_215_1.png",
           "../../assets/images/endocrine/img_page_217_1.jpeg",
           "../../assets/images/endocrine/img_page_223_1.jpeg",
           "../../assets/images/endocrine/img_page_237_1.jpeg",
@@ -536,7 +528,7 @@
           {
             "figure": 1,
             "text": "<strong>Hashimoto's Histopathology Features</strong>: Intense lymphocytic infiltration with germinal center formation and Hurthle cell (oncocytic) metaplasia.",
-            "image": "../../assets/images/endocrine/img_page_215_1.png"
+            "image": null
           },
           {
             "figure": 2,
@@ -571,9 +563,8 @@
         "chapter": 8,
         "title": "Postpartum Thyroiditis and Silent Thyroiditis",
         "summary": "Postpartum thyroiditis (PPT) and silent (subacute lymphocytic) thyroiditis. Clinical phases, differential diagnostics, and treatment parameters.",
-        "image": "../../assets/images/endocrine/img_page_258_1.png",
+        "image": "../../assets/images/endocrine/img_page_267_1.jpeg",
         "imagesList": [
-          "../../assets/images/endocrine/img_page_258_1.png",
           "../../assets/images/endocrine/img_page_267_1.jpeg",
           "../../assets/images/endocrine/img_page_273_1.jpeg"
         ],
@@ -590,7 +581,7 @@
           {
             "figure": 1,
             "text": "<strong>Triphasic Hormone Curve</strong>: Diagram mapping TSH, Free T4, and clinical phases over 12 months.",
-            "image": "../../assets/images/endocrine/img_page_258_1.png"
+            "image": null
           },
           {
             "figure": 2,
@@ -615,9 +606,8 @@
         "chapter": 9,
         "title": "Acute and Subacute Thyroiditis",
         "summary": "Pathogenesis and clinical differentiation of painful Subacute Granulomatous (de Quervain\u2019s) thyroiditis and life-threatening Acute Suppurative (infectious) thyroiditis.",
-        "image": "../../assets/images/endocrine/img_page_286_1.png",
+        "image": "../../assets/images/endocrine/img_page_298_1.jpeg",
         "imagesList": [
-          "../../assets/images/endocrine/img_page_286_1.png",
           "../../assets/images/endocrine/img_page_298_1.jpeg",
           "../../assets/images/endocrine/img_page_299_1.jpeg",
           "../../assets/images/endocrine/img_page_300_1.jpeg"
@@ -635,7 +625,7 @@
           {
             "figure": 1,
             "text": "<strong>de Quervain's Histology</strong>: Multicellular giant cell granulomas surrounding disrupted thyroid follicles.",
-            "image": "../../assets/images/endocrine/img_page_286_1.png"
+            "image": null
           },
           {
             "figure": 2,
@@ -767,10 +757,8 @@
         "chapter": 12,
         "title": "Central Hypothyroidism",
         "summary": "Central hypothyroidism. Evaluation of secondary (pituitary) and tertiary (hypothalamic) thyroid hormone deficiency, sella imaging, and hormone replacement titration.",
-        "image": "../../assets/images/endocrine/img_page_378_1.png",
-        "imagesList": [
-          "../../assets/images/endocrine/img_page_378_1.png"
-        ],
+        "image": null,
+        "imagesList": [],
         "indications": [
           "# Chapter 12: Central Hypothyroidism\n\n### Module 1: Clinical Framework & Pathology\n\n- CH is a rare and heterogeneous disease caused by abnormalities of either the pituitary gland (i.e., secondary ***hypothyroidism***) or the hypothalamus (i.e., tertiary ***hypothyroidism***).\n- The prevalence of CH ranges from **1:20**,000 to **1:80**,000 individuals in the general population and represents an uncommon cause of ***hypothyroidism*** (one of 1,000 hypothyroid patients).\n- As far as congenital CH is concerned, its prevalence depends on the screening protocols adopted.\n- In fact, when `TSH`-only-based protocols are used, CH is often unrecognized since it is usually associated with inappropriately normal/low `TSH` in the presence of low circulating `FT4` levels.\n- When screening programs for neonatal CH include both `TSH` and `FT4` measurements, its prevalence increases to **1:160**,000.\n- Interestingly, CH prevalence further increases to 1 in 16,000 *newborns* if the screening algorithm is based on the combined measurement of `TSH`, `T4`, and `thyroxine`-binding globulin, which could be effective in diagnosing the milder forms of the disease.\n- While ***primary hypothyroidism*** is mainly diagnosed in *females* , CH affects patients of all ages and equally in both sexes.\n- *Etiopathogenesis* CH may be congenital or acquired (Table 1) and is caused by anatomical and/or functional abnormalities affecting either the pituitary (secondary ***hypothyroidism***) or the hypothalamus (tertiary ***hypothyroidism***).\n- It is worth noting that in many instances, both the pituitary and the hypothalamus may be affected simultaneously.\n- A quantitative defect in the amount of functional pituitary thyrotroph cells (i.e., `thyrotropin` reserve) is probably the pathogenic mechanism underlying most acquired CH cases.\n- This quantitative defect in thyrotrophs is associated with a qualitative defect in the secreted `TSH` isoforms, which display an impaired biological activity and ability to bind thyroid `TSH` receptors despite a preserved immunoreactivity.\n- In this setting, circulating levels of immu-noreactive `TSH` may be normal or even slightly increased.\n- Importantly, the secretion of bioinactive `TSH` is often related to CH forms associated with an impaired hypothalamic function (i.e., tertiary ***hypothyroidism***).\n- In this respect, studies have shown that the impaired biological activity of `TSH` observed in these patients is caused by changes in `TSH` carbohydrate structure leading to an impaired glycosylation.\n- In congenital CH, defects in `TSH` secretion may be quantitative and/or qualitative according to the cause of the disease.\n- In this respect, in patients with loss of function `TSH` beta gene mutations, CH is caused by \u201cabnormal\u201d `TSH` molecules lacking part of the Cterminal amino acid sequence.\n\n#### Diagnostic Tables & Classifications\n\n| Acquired | Causes |\n| --- | --- |\n| Invasive | \u2014 |\n| \u2014 | Pituitary macroadenomas, craniopharyngiomas, meningiomas, gliomas, *metastases*, carotid aneurysms |\n| Iatrogenic | \u2014 |\n| \u2014 | Cranial surgery or irradiation, drugs (e.g., bexarotene) |\n| Injury | \u2014 |\n| \u2014 | Head trauma, traumatic delivery |\n| Immunologic lesions | \u2014 |\n| \u2014 | *Lymphocytic* hypophysitis |\n| Infarction | \u2014 |\n| \u2014 | Postpartum necrosis (Sheehan), pituitary apoplexy |\n| Infiltrative lesions | \u2014 |\n| \u2014 | Sarcoidosis, hemochromatosis, histiocytosis X |\n| Infective lesions | \u2014 |\n| \u2014 | Tuberculosis, syphilis, mycoses |\n| Congenital | \u2014 |\n| Isolated | \u2014 |\n| \u2014 | `TSH` beta, TRHR, IGSF1 |\n| Combined | \u2014 |\n| \u2014 | HESX1, LHX3, LHX4, SOX3, OTX2, PROP1, POU1F1 |\n\n---\n\n### Module 2: Diagnostic Investigation & Lab Workup\n\n- Acquired Neoplasias, affecting the hypothalamus-pituitary region as well as therapeutic inter-ventions on sellar and extrasellar tumor masses (i.e., surgery and radiotherapy), represent the most frequent causes of acquired CH.\n- In particular, pituitary macro-adenomas may induce hypopituitarism by affecting either pituitary cells or the pituitary stalk.\n- In this respect, nonfunctioning pituitary adenomas are the tumors most frequently involved.\n- At presentation, isolated or multiple pituitary de\ufb01cits are diagnosed in 62% of patients with pituitary nonfunctioning macroadenomas, with CH found in 27% of them.\n- The risk and extent of postsurgical hypopituitarism depend on tumor size, tumor extension, and the experience of the surgeon.\n- In particular, new pituitary hormone de\ufb01ciency is described in 10% of patients who have undergone pituitary surgery in referral centers, with CH occurring in less than 3% of such cases.\n- Craniopharyngiomas are typically slowly growing extrasellar tumors, and visual \ufb01eld defects and hypopituitarism are the most common presenting clinical manifes-tations.\n- In *children*, GH de\ufb01ciency is the most common pituitary de\ufb01cit diagnosed at presentation (up to 100% of patients), followed by `TSH` de\ufb01ciency (up to 25% of patients).\n- In adults, CH has been described in 40% of cases, growth hormone de\ufb01ciency in 80\u201390% of cases, gonadotropin de\ufb01ciency in 70% of patients, and ACTH in 40% of patients.\n- Surgical intervention is associated with hypopituitarism in the majority of patients with craniopharyngiomas, with CH reported in 40 to 95% of cases.\n- Importantly, hypopituitarism may occur in patients who undergo neurosurgical intracranial procedures for conditions other than pituitary tumors.\n- In this setting, the main pituitary hormone de\ufb01ciencies are related to ACTH, GH, and LH/FSH insuf-\ufb01ciency and only rarely to `TSH` insuf\ufb01ciency.\n- Direct and indirect irradiation of the hypothalamic-pituitary axis may cause hypopituitarism.\n- The risk of developing CH is related to both the effective dose given to the area and the total radiation dose delivered.\n- Radiation-induced CH occurs in patients who undergo radiotherapy, not only for pituitary tumors and craniopharyngiomas but also in 10\u201350% of patients irradiated for nasopharyngeal or paranasal sinus tumors and in 12\u201365% of patients irradiated for any site brain tumors.\n- Unfortunately, data on the long-term effects on hypothalamic-pituitary function of proton beam therapy \u2013 whether by Leksell Gamma Knife or stereotactic linear accelerator \u2013 are still scarce and inconclusive.\n\n#### Radionuclide & Attenuation Data\n\n| Gene | Pituitary function | Other clinical features | Neuroradiological findings |\n| --- | --- | --- | --- |\n| `TSH` beta | CH | \u2014 | Enlarged/normal pituitary |\n| TRHR | CH, HYP | \u2014 | \u2014 |\n| IGSF1 | CH, GHD (transient), HYP | Macroorchidism | \u2014 |\n| POUF1 | CH, HYP, GHD | \u2014 | Variable pituitary hypoplasia |\n| PROP1 | CH, GHD, CHY, CHA (late) | \u2014 | Enlarged/normal/hypoplastic pituitary |\n| HESX1 | CH, GHD, CHY, CHA (late) | Septo-optic dysplasia | Pituitary hypoplasia |\n| LHX3 | CH, GHD, CHY, HYP | Limited neck rotation, short cervical spine, sensorineural deafness | Enlarged/normal/hypoplastic pituitary |\n| LHX4 | CH, GHD, CHY (variable), CHA | Cerebellar abnormalities | Pituitary hypoplasia |\n| SOX3 | CH, GHD, CHY, CHA | Mental retardation | Pituitary hypoplasia |\n| OTX2 | CH, GHD, CHY, CHA | Anopthalmy Retinal abnormalities | Variable pituitary hypoplasia |\n\n---\n\n### Module 3: Surgical Anatomy & Operative Approaches\n\n- Importantly, absent or impaired `FT4` and `FT3` responses, as measured at 120 and 180 min after `TRH` injection, indirectly indicate the secretion of bioinactive `TSH`.\n- A 10% variation in `FT4` may be considered as normal in euthyroid patients.\n- Therefore, in patients followed for pituitary diseases, a decrease in circulating `FT4` 0 30 120 60 minutes `TSH` mU/L Hypothalamic CH: \u2022 delayed \u2022 exaggerated \u2022 prolonged Pituitary CH: \u2022 impaired/absent `TRH` Fig. 1 `TRH` stimulation test (`TRH` `200 \u03bcg` i.v.\n- as a bolus) in CH diagnosis.\n- Blood for `TSH` measurement is withdrawn at \u000130, 0, 20, 60, 120, and 180 min, while `FT4` and `FT3` were measured at the time 0, 120, and 180 min.\n- `TRH` test may be helpful in differentiating hypothalamic from pituitary CH, the \ufb01rst being characterized by an exaggerated, delayed, and/or prolonged `TSH` response and the second by an impaired `TSH` response above 20% may suggest CH, even if `FT4` concentrations are still in the normal range.\n- Patients with nonthyroidal illnesses (NTI), a relatively common \ufb01nding following any acute or chronic illness (e.g., poor nutrition/starvation, sepsis, burns, malig-nancy, myocardial infarction, postsurgery, chronic liver, and renal disease), display thyroid function values that considerably overlap those of CH patients.\n- It has been suggested that NTI may be due to factors such as down-regulation of `TRH` neurons in the paraventricular nucleus, reduced `TSH` secretion, and modi\ufb01cations in thyroid hormone metabolism.\n- It is crucial to be aware of this transient phenomenon and to consider biochemical data in the context of clinical status in order to avoid inappropriate treatment.\n- In this respect, a clue for distinguishing CH from NTI is the evaluation of serum `FT3`, which is reduced in NTI and normal in mild to moderate forms of CH.\n- Once the biochemical diagnosis has been con\ufb01rmed, a family history of CH, a suggestive clinical history (e.g., head trauma, subarachnoidal hemorrhage, previous brain irradiation, or surgery), or speci\ufb01c symptoms (e.g., headaches or visual \ufb01eld defects) should lead to a pituitary MRI and evaluation of the other hypothalamic-pituitary axes.\n- In Table 3, clinical and biochemical features indicating possible CH are summarized.\n- Treatment and FollowUp CH treatment should lead to the restoration and maintenance of euthyroidism in analogy to that intended for patients with ***primary hypothyroidism***.\n- In this respect, Lthyroxine (`LT4`) therapy is **recommended** since no evidence supports the superi-ority of combined treatment with `LT4` and `triiodothyronine` in either adults or *children*.\n- No consensus has been reached concerning the evaluation of the adequacy of `LT4` replacement dose in CH, as, unlike in ***primary hypothyroidism***, serum `TSH` levels cannot be used for monitoring `LT4` therapy.\n- In fact, `TSH` secretion is suppressed even during low-dose `LT4` treatment, a \ufb01nding possibly related to the Clinical features Presence of diseases affecting the hypothalamic-pituitary region Neuroradiological imaging demonstrating alterations in the hypothalamic-pituitary region Normal thyroid structure, at ultrasound scan Biochemical features Low `FT4` and normal/low `TSH` levels Absence of antithyroid autoantibodies Presence of other pituitary hormone de\ufb01ciencies negative feedback of circulating hormones on residual thyrotrophs.\n\n#### Operative Stratification & Reference\n\n| `TRH` Hypo \u2022 dela \u2022 exag \u2022 prol Pituit \u2022 imp | | | | |\n| --- | --- | --- | --- | --- |\n| \u2014 | \u2014 | \u2014 | \u2014 | \u2014 |",
           "<li class=\"main-bullet\"><strong>Low/Normal TSH with Low FT4</strong>: Diagnostic hallmark of central hypothyroidism. Pituitary or hypothalamic pathology leads to the secretion of biologically inactive TSH or absent TSH.</li>",
@@ -784,7 +772,7 @@
           {
             "figure": 1,
             "text": "<strong>Pituitary Tumor Compression</strong>: MRI brain scan detailing a pituitary macroadenoma compressing normal pituitary tissue and the pituitary stalk.",
-            "image": "../../assets/images/endocrine/img_page_378_1.png"
+            "image": null
           }
         ],
         "redZone": {
@@ -799,9 +787,8 @@
         "chapter": 13,
         "title": "Diagnosis and Treatment of Hypothyroidism",
         "summary": "Management guidelines for primary hypothyroidism. Levothyroxine dosing, absorption barriers, pregnancy adjustments, and subclinical hypothyroidism indications.",
-        "image": "../../assets/images/endocrine/img_page_395_1.png",
+        "image": "../../assets/images/endocrine/img_page_398_1.jpeg",
         "imagesList": [
-          "../../assets/images/endocrine/img_page_395_1.png",
           "../../assets/images/endocrine/img_page_398_1.jpeg"
         ],
         "indications": [
@@ -817,7 +804,7 @@
           {
             "figure": 1,
             "text": "<strong>Levothyroxine Dosing Nomogram</strong>: Calculation table adjusting starting dose based on age, weight, and cardiovascular status.",
-            "image": "../../assets/images/endocrine/img_page_395_1.png"
+            "image": null
           },
           {
             "figure": 2,
@@ -840,7 +827,7 @@
     "kicker": "Part V",
     "title": "Hyperthyroidism and Thyrotoxicosis",
     "summary": "Management of Graves' disease, Graves' ophthalmopathy, antithyroid drug therapy, radioiodine ablation, toxic adenoma, and toxic multinodular goiter (MNG).",
-    "image": "../../assets/images/endocrine/img_page_432_1.png",
+    "image": "../../assets/images/endocrine/img_page_437_1.jpeg",
     "imagesList": [
       "../../assets/images/endocrine/img_page_432_1.png",
       "../../assets/images/endocrine/img_page_437_1.jpeg",
@@ -863,9 +850,8 @@
         "chapter": 14,
         "title": "Graves\u00b4 Disease",
         "summary": "Graves' disease. Pathophysiology, diagnostic markers, hypervascularity imaging, and first-line medical therapy with antithyroid drugs.",
-        "image": "../../assets/images/endocrine/img_page_432_1.png",
+        "image": "../../assets/images/endocrine/img_page_437_1.jpeg",
         "imagesList": [
-          "../../assets/images/endocrine/img_page_432_1.png",
           "../../assets/images/endocrine/img_page_437_1.jpeg",
           "../../assets/images/endocrine/img_page_442_1.jpeg",
           "../../assets/images/endocrine/img_page_443_1.jpeg",
@@ -884,7 +870,7 @@
           {
             "figure": 1,
             "text": "<strong>TSH Receptor Antibody Binding</strong>: Diagram showing TSI autoantibodies binding the TSH receptor and activating cyclic AMP pathways.",
-            "image": "../../assets/images/endocrine/img_page_432_1.png"
+            "image": null
           },
           {
             "figure": 2,
@@ -919,9 +905,8 @@
         "chapter": 15,
         "title": "Graves\u00b4 Ophthalmopathy",
         "summary": "Graves' ophthalmopathy. Pathophysiology, CAS (Clinical Activity Score), orbital imaging, and therapeutic steroid and surgical decompression guidelines.",
-        "image": "../../assets/images/endocrine/img_page_453_1.png",
+        "image": "../../assets/images/endocrine/img_page_457_1.jpeg",
         "imagesList": [
-          "../../assets/images/endocrine/img_page_453_1.png",
           "../../assets/images/endocrine/img_page_457_1.jpeg",
           "../../assets/images/endocrine/img_page_465_1.jpeg",
           "../../assets/images/endocrine/img_page_469_1.jpeg",
@@ -940,7 +925,7 @@
           {
             "figure": 1,
             "text": "<strong>Extraocular Muscle Hypertrophy</strong>: Orbital CT scan detailing bilateral enlargement of extraocular muscle bellies (sparing the tendons).",
-            "image": "../../assets/images/endocrine/img_page_453_1.png"
+            "image": null
           },
           {
             "figure": 2,
@@ -975,10 +960,8 @@
         "chapter": 16,
         "title": "Treatment of Graves\u00b4 Disease",
         "summary": "Comparison of definitive therapies for Graves' disease: Antithyroid drugs, Radioiodine (I-131) ablation, and Total Thyroidectomy.",
-        "image": "../../assets/images/endocrine/img_page_491_1.png",
-        "imagesList": [
-          "../../assets/images/endocrine/img_page_491_1.png"
-        ],
+        "image": null,
+        "imagesList": [],
         "indications": [
           "# Chapter 16: Treatment of Graves\u00b4 Disease\n\n### Module 1: Clinical Framework & Pathology\n\n- Although recent years have witnessed relevant improvement in understanding the pathogenic mechanisms under-pinning thyroid and extrathyroidal manifestations of this disease (see \u25b6Chap.\n- 14, \u201cGraves\u2019 Disease\u201d and \u25b615, \u201cGraves\u2019 Ophthalmopathy\u201d), progress in the manage-ment has not been equally impressive.\n- As a matter of fact, management of Graves\u2019 ***hyperthyroidism*** is still based on treatments used for the last 60\u201370 years.\n- All of these treatments are imperfect, because they do not target pathogenic mechanisms of disease, and either are associated with a high rate of recurrent ***hyperthyroidism*** (`antithyroid drugs` (ATDs)) or cause lifelong ***hypothyroidism*** (radio-active iodine (`RAI`) or thyroidectomy) (Fig. 1).\n- Recently published guidelines or reviews are a helpful guidance for the reader, but re\ufb02ect the limited evidence currently available.\n- The same considerations can be Treatment for Graves\u2019 ***hyperthyroidism*** Conserva\u0002ve Abla\u0002ve An\u0002thyroid Drugs Thyroidectomy `Radioiodine` High Relapse Rate Lifelong ***hypothyroidism*** applied to the major extrathyroidal expression of Graves\u2019 disease, Graves\u2019 orbitopathy (GO), although guidelines for its management have recently been published (Bartalena et al. 2016a), the very rare cutaneous manifestation, thyroid dermopathy (or pretibial myxedema), and the exceptional thyroid acropachy.\n- Treatment of ***hyperthyroidism*** None of the available treatments for Graves\u2019 ***hyperthyroidism*** ful\ufb01ll all of the criteria for an ideal treatment for ***hyperthyroidism***, which should eliminate the pathogenic factors, restore euthyroidism, avoid permanent ***hypothyroidism***, and prevent development or progression of GO.\n- Ideally, it should also be devoid of side effects, while having no negative impact on quality of life.\n- Therefore, the choice of ATDs, `RAI`, or thyroidectomy as \ufb01rst-line treatment is often conditioned by physician\u2019s preference and experi-ence, availability of facilities for `RAI` treatment, availability of a skilled surgeon, and costs.\n- Of particular importance is a shared decision-making process involving the informed patient and taking into account not only advantages and disadvantages, safety, and side effects of different treatments but also patient expecta-tions and values.\n- There are geographical differences in selecting treatments.\n- While ATDs are the \ufb01rst choice in Europe, Asia, Oceania, and Latin America, `RAI` is preferred in North America.\n- However, recent reports suggest that ATDs are becoming increasingly popular as \ufb01rst-line treatment also in the USA.\n- Worldwide, thyroidectomy is rarely used as \ufb01rst-line treatment.\n- `Antithyroid Drugs` Drugs and Regimens Three thionamide-derived ATDs are currently used: carbimazole (CBZ), rapidly converted to its active (and more widely used) metabolite, `methimazole` (thiamazole, `MMI`), and `propylthiouracil` (`PTU`).\n- These drugs mainly exert their effect by reduc-ing thyroid hormone synthesis through inhibition of the enzyme thyroperoxidase.\n\n#### Diagnostic Tables & Classifications\n\n| Therapeu\u0002c Regimen Titra\u0002on Block -and -Replace Method Method Star\u0002ng `MMI` dose: Star\u0002ng `MMI` dose: 15-`40 mg`/day 30-`40 mg`/day Lowest dose to Constant dose maintain + euthyroidism `levothyroxine` Dura\u0002on : Dura\u0002on : 18-24 months 6 months | | |\n| --- | --- | --- |\n| Titra\u0002on Method | Block -and -Replace Method | \u2014 |\n| \u2014 | \u2014 | \u2014 |\n| Star\u0002ng `MMI` dose: 15-`40 mg`/day | Star\u0002ng `MMI` dose: 30-`40 mg`/day | \u2014 |\n| \u2014 | \u2014 | \u2014 |\n| Lowest dose to maintain euthyroidism | Constant dose + `levothyroxine` | \u2014 |\n| \u2014 | \u2014 | \u2014 |\n| Dura\u0002on : 18-24 months | Dura\u0002on : 6 months | \u2014 |\n\n---\n\n### Module 2: Diagnostic Investigation & Lab Workup\n\n- However, evidence of the superiority of such calculations and consensus on the use of either approach are missing.\n- In a survey among UK endocrinologists, it appeared that \ufb01xed doses are employed by 70% of respondents.\n- Whether `RAI` **should be** administered after restoration of euthyroidism with ATDs is also a matter of argument.\n- The recent American guidelines state that pretreatment with `MMI` might be considered only in patients who are at risk of complications due to exacerbation of ***hyperthyroidism*** after `I-131` treatment (e.g., patients with relevant cardiovascular comorbidities, or in the *elderly*).\n- In European countries, `RAI` treatment is carried out after autoimmune thyroid disease pretreatment in the large majority of cases (Bartalena et al. 2016b).\n- `MMI`, in any case, is preferred to `PTU`, because the latter might have radioprotective effects and reduce the ef\ufb01cacy of `RAI` treatment.\n- ATDs are usually withdrawn 5\u20137 days before `RAI` administration; they are resumed 7\u201310 days after treatment only in patients whose ***hyperthyroidism***, because of associated comorbidities, **must be** promptly controlled, before `RAI` stably controls thyroid hyperfunction.\n- Lithium carbonate, administered concomitantly with `RAI` and continued for a few weeks, may facilitate prompt control of ***hyperthyroidism*** in these atrisk patients, although it does not increase the long-term cure rate achieved with `RAI` therapy.\n- Outcome of Treatment `RAI` treatment is given with the deliberate purpose of inducing ***hypothyroidism***, which, indeed, represents the \ufb01nal outcome in the large majority of patients.\n- Doses of `RAI` **should be** generous enough to achieve this goal.\n- The use of low activities, aiming at restoring euthyroidism without inducing ***hypothyroidism***, is associated with an **increased risk** of retreatment.\n- As a matter of fact, a small proportion (5\u201310%) of patients require a second dose of `RAI`, which should not be given earlier than 6 months after the \ufb01rst treatment.\n- Contraindications and Safety Measures `RAI` is absolutely **contraindicated** during *pregnancy* and breastfeeding.\n- A *pregnancy* test **should be** obtained 2 days before treatment in women with childbearing potential.\n- *pregnancy* **should be** postponed for 4\u20136 months in women, also allowing for stable restoration of euthyroidism, and for 3\u20134 months in men to permit sperm production turnover.\n- Practice guidelines from the American Thyroid Association **recommend** avoiding `RAI` treatment if the woman has interrupted breastfeeding since less than 6 weeks, to reduce *radiation exposure* of the breast tissue.\n\n#### Radionuclide & Attenuation Data\n\n| Factor | Impact on the risk of recurrence |\n| --- | --- |\n| Age | Uncertain, probably higher risk of recurrence in the young |\n| Gender | Uncertain |\n| Thyroid size | Higher risk when ***goiter*** is large |\n| Severity of ***hyperthyroidism*** | Uncertain |\n| `TSH`-receptor antibody (`TRAb`) | **High risk** if `TRAb` is still positive at the end of treatment |\n| Graves\u2019 orbitopathy (GO) | Uncertain, but **high risk** of relapse if GO is severe |\n| Long-term treatment | Possible higher remission rate after long-term treatment |\n| Smoking | Higher risk of relapse in smokers |\n| Postpartum period | **High risk** of relapse in the postpartum period, also in women in remission |\n\n---\n\n### Module 3: Surgical Anatomy & Operative Approaches\n\n- In addition, a study from Japan did not \ufb01nd any increase in ***hyperthyroidism***-associated malformations.\n- Despite these controversial results, it seems advisable to follow current guidelines, using `PTU` in the \ufb01rst trimester and switching to `MMI` in the second and third trimesters (Bartalena et al. 2016c).\n- Furthermore, the lowest dose of ATDs **should be** employed during *pregnancy*, keeping serum `FT4` in the upper third of normal range (Bartalena et al. 2016c).\n- Childhood Graves\u2019 disease is the most frequent *etiology* of ***hyperthyroidism*** in childhood.\n- ATDs represent the \ufb01rst-line therapy in *children*, and `MMI` is the preferred thionamide, based on a better safety pro\ufb01le, just as in adults.\n- Unfortunately, the rate of relapses after autoimmune thyroid disease withdrawal is higher than in adults.\n- Although it is unsettled whether long-term autoimmune thyroid disease treatment for many years may increase the chance of a permanent remission, this approach is reasonable for *children* who are too young for `RAI` treatment or surgery, but in the end most of the *children* will need an ablative treatment.\n- Although data are reassuring on long-term safety of `RAI`, according to recent American guidelines, `RAI` treatment **should be avoided** if *children* are <5 years of age.\n- Thyroidectomy is a valid option in *children*, although it seems to be associated with a higher risk of complications.\n- Therefore, thyroidectomy **should be** opted for in *children* who are too young to be treated with `RAI`, and it **should be** performed by a skilled surgeon, as in adults.\n- Presence of Graves\u2019 Orbitopathy (see also \u25b6Chap.\n- 15, \u201cGraves\u2019 Ophthalmopathy\u201d) Management of ***hyperthyroidism*** in patients with associated GO is challenging (Table 7).\n- Patients with mild GO can be treated with either of therapeutic options (ATDs, `RAI` treatment, or thyroidectomy).\n- If `RAI` is selected and the patient has mild signs or symptoms of activity, steroid prophylaxis is **recommended** in most of the patients (see `Radioiodine` Treatment).\n- When GO is very severe and sight-threatening, priority **should be** given to the cure of GO (medically or surgically), and ***hyperthyroidism*** **should be** controlled with ATDs.\n- If GO is moderateto-severe, but stably inactive, ***hyperthyroidism*** can be treated by any of the available treatments without any particular precaution Carbimazole/`methimazole` `Propylthiouracil` Choanal atresia Face and neck (preauricular sinus/cyst) Omphalocele Fistula of branchial cleft Esophageal atresia Congenital hydronephrosis Omphalomesenteric duct anomalies Single cyst of the kidney Aplasia cutis Posterior urethral valve Malformations of the nipples Megaureter Anomalies of the eyes Malformations of the circulatory system (heart septal defect, ventricular septal defect, pulmonary valve stenosis, pulmonary artery stenosis) Malformations of the urinary system Derived from Linding Andersen et al. (2013, 2014) concerning GO.\n\n#### Operative Stratification & Reference\n\n| | Side effect | Frequency |\n| --- | --- | --- |\n| Blood | Mild leukopenia | Relatively frequent |\n| \u2014 | Agranulocytosis | Rare (0.2\u20131.2%) |\n| \u2014 | Aplastic anemia | Very rare |\n| \u2014 | Thrombocytopenia | Very rare |\n| Skin | Skin rash | Relatively frequent (>5%)a |\n| \u2014 | Urticaria | Relatively frequent (>5%)a |\n| \u2014 | Itching | Relatively frequent (>5%)a |\n| \u2014 | Aplasia cutis | Very rare (`MMI`) |\n| Liver | Hepatocellular necrosis | Very rare (`PTU`) (0.07%) |\n| \u2014 | Cholestasis | Very rare (`MMI`/CBZ) (0.03%) |\n| Collagen | Polyarthritis | Uncommon |\n| \u2014 | SLE-like syndrome | Very rare (`PTU`>`MMI`) |\n| \u2014 | Vasculitis | Very rare (`PTU`>`MMI`) (<1%) |\n| Miscellaneous | Loss of taste | Rare (`MMI`) |\n| \u2014 | Hypothrombinemia | Rare (`PTU`) |\n| \u2014 | Hypoglycemia | Very rare (`MMI`) |\n\n| Treatment | Advantages | Disadvantages |\n| --- | --- | --- |\n| `Antithyroid drugs` | Conservative treatment | High relapse rate |\n| \u2014 | No hospitalization required | Frequent visits and testing |\n| \u2014 | Low risk of ***hypothyroidism*** | Lack of compliance |\n| \u2014 | No radiation | Adverse events (rarely major) |\n| \u2014 | No negative effect on GO | \u2014 |\n| \u2014 | Use during *pregnancy* and breastfeeding | \u2014 |\n| `Radioiodine` | Definitive treatment | Lifelong ***hypothyroidism*** |\n| \u2014 | Relatively low cost | Radiation risk |\n| \u2014 | No hospitalization required | Slow control of ***hyperthyroidism*** |\n| \u2014 | No anesthetic/surgical risk | Possible progression or de novo occurrence of GO |\n| Thyroidectomy | Definitive treatment | Lifelong ***hypothyroidism*** |\n| \u2014 | No radiation risk | Anesthetic/surgical risk |\n| \u2014 | Prompt control of ***hyperthyroidism*** | Hospitalization |\n| \u2014 | No negative effect on GO | Cost Permanent scar |\n\n| Side effect | Action |\n| --- | --- |\n| Exacerbation of ***hyperthyroidism*** | Debated. Pretreat with `antithyroid drugs` |\n| Actinic ***thyroiditis*** | Rare and usually transient. Treat with steroids |\n| Sialadenitis | Lemon juice |\n| Teratogenicity | Not relevant. *Pregnancy* postponed for 6 months after `RAI` treatment |\n| Cardiovascular and cerebrovascular risk | Recent data are reassuring. Related to ***hyperthyroidism*** per se rather than to `RAI` treatment |\n| Cancer | Slight increase in the risk of thyroid and renal cancer. Likely role of ***hyperthyroidism*** per se |\n| Graves\u2019 orbitopathy | Possible de novo occurrence or progression in at-risk patients (mainly smokers). Preventable by low-dose oral prednisone given concomitantly with `RAI` |\n\n| Complication | Action |\n| --- | --- |\n| Exacerbation of ***hyperthyroidism*** | Render the patient euthyroid with `antithyroid drugs` prior to surgery |\n| Hypoparathyroidism | May be transient or permanent. Give vitamin D and `calcium` preoperatively in at-risk patients |\n| Laryngeal nerve palsy | May be transient or permanent. Intraoperative neuromonitoring of laryngeal nerve helps to detect early damage |\n| Blood loss and hemorrhage | Preoperative treatment with saturated solution of KI or Lugol\u2019s solution reduces thyroid vascularity |\n| Wound infection | Accurate care of the wound, drainage, antibiotics |\n\n| Carbimazole/`methimazole` | `Propylthiouracil` |\n| --- | --- |\n| Choanal atresia | Face and neck (preauricular sinus/cyst) |\n| Omphalocele | Fistula of branchial cleft |\n| Esophageal atresia | Congenital hydronephrosis |\n| Omphalomesenteric duct anomalies | Single cyst of the kidney |\n| Aplasia cutis | Posterior urethral valve |\n| Malformations of the nipples | Megaureter |\n| Anomalies of the eyes | \u2014 |\n| Malformations of the circulatory system (heart septal defect, ventricular septal defect, pulmonary valve stenosis, pulmonary artery stenosis) | \u2014 |\n| Malformations of the urinary system | \u2014 |\n\n| Severity of GO | Activity of GO | Treatment for ***hyperthyroidism*** |\n| --- | --- | --- |\n| Mild | Active | Any treatment for ***hyperthyroidism***, depending on standard criteria and patient choice. If `RAI` is selected, steroid prophylaxis (see text) is advised |\n| Mild | Inactive | Any treatment for ***hyperthyroidism***, as above. Steroid prophylaxis after `RAI` is not necessary in the absence of risk factors for `RAI`-associated progression of GO (smoking, high `TRAb` levels) |\n| Moderate to severe | Active | Priority **should be** given to prompt management of GO with intravenous glucocorticoids. It is unsettled whether ***hyperthyroidism*** **should be** in the meanwhile treated conservatively or whether the thyroid **should be** concomitantly ablated |\n| Moderate to severe | Inactive | Any treatment for ***hyperthyroidism***, as above. No steroid prophylaxis is required |\n| Sight threatening (dysthyroid optic neuropathy and/or corneal breakdown) | Active | Emergent treatment for GO (high doses of intravenous glucocorticoids and/or orbital decompression). Keep the patient euthyroid with `antithyroid drugs`, and postpone definitive treatment until GO is cured |",
           "<li class=\"main-bullet\"><strong>Antithyroid Drugs</strong>: First-line for patients seeking a non-destructive option, mild disease, or prior to definitive surgery or radioiodine therapy.</li>",
@@ -992,7 +975,7 @@
           {
             "figure": 1,
             "text": "<strong>Surgical Access collar Incision</strong>: Low collar collar incision positioned 2 cm above the sternoclavicular joints along a natural skin crease.",
-            "image": "../../assets/images/endocrine/img_page_491_1.png"
+            "image": null
           }
         ],
         "redZone": {
@@ -1007,9 +990,8 @@
         "chapter": 17,
         "title": "Toxic Adenoma and Multinodular Toxic Goiter",
         "summary": "Toxic adenoma and toxic multinodular goiter (Plummer's disease). Diagnostic parameters, radionuclide uptake imaging, and comparative management protocols.",
-        "image": "../../assets/images/endocrine/img_page_514_1.png",
+        "image": "../../assets/images/endocrine/img_page_517_1.jpeg",
         "imagesList": [
-          "../../assets/images/endocrine/img_page_514_1.png",
           "../../assets/images/endocrine/img_page_517_1.jpeg",
           "../../assets/images/endocrine/img_page_521_1.jpeg"
         ],
@@ -1026,7 +1008,7 @@
           {
             "figure": 1,
             "text": "<strong>Radionuclide Uptake Patterns</strong>: Scintigraphy comparison detailing toxic adenoma (single hot nodule, suppressed gland) vs. toxic MNG (patchy nodular uptake).",
-            "image": "../../assets/images/endocrine/img_page_514_1.png"
+            "image": null
           },
           {
             "figure": 2,
@@ -1054,7 +1036,7 @@
     "kicker": "Part VI",
     "title": "Thyroid Carcinoma",
     "summary": "Molecular pathogenesis, surgical approach to differentiated thyroid cancer (DTC), medullary thyroid cancer (MTC), anaplastic thyroid cancer (ATC), and tyrosine kinase inhibitor (TKI) targeted medical therapies.",
-    "image": "../../assets/images/endocrine/img_page_542_1.png",
+    "image": "../../assets/images/endocrine/img_page_549_1.jpeg",
     "imagesList": [
       "../../assets/images/endocrine/img_page_542_1.png",
       "../../assets/images/endocrine/img_page_549_1.jpeg",
@@ -1083,9 +1065,8 @@
         "chapter": 18,
         "title": "Pathogenesis of Thyroid Carcinoma",
         "summary": "Pathogenesis and genetic drivers of thyroid carcinoma. Molecular pathways in Papillary (BRAF, RET/PTC), Follicular (RAS, PAX8-PPARG), Medullary (RET proto-oncogene), and Anaplastic (TP53) cancers.",
-        "image": "../../assets/images/endocrine/img_page_542_1.png",
+        "image": "../../assets/images/endocrine/img_page_549_1.jpeg",
         "imagesList": [
-          "../../assets/images/endocrine/img_page_542_1.png",
           "../../assets/images/endocrine/img_page_549_1.jpeg"
         ],
         "indications": [
@@ -1101,7 +1082,7 @@
           {
             "figure": 1,
             "text": "<strong>Genetic Mutational Pathways</strong>: Diagram mapping BRAF, RAS, RET, and TP53 mutations to differentiated, medullary, and anaplastic thyroid cancers.",
-            "image": "../../assets/images/endocrine/img_page_542_1.png"
+            "image": null
           },
           {
             "figure": 2,
@@ -1165,9 +1146,8 @@
         "chapter": 20,
         "title": "Medullary Carcinoma",
         "summary": "Medullary thyroid cancer (MTC). Diagnostic evaluation (calcitonin/CEA), RET mutation screening, total thyroidectomy, and compartment-oriented neck dissection.",
-        "image": "../../assets/images/endocrine/img_page_587_1.png",
+        "image": "../../assets/images/endocrine/img_page_591_1.jpeg",
         "imagesList": [
-          "../../assets/images/endocrine/img_page_587_1.png",
           "../../assets/images/endocrine/img_page_591_1.jpeg",
           "../../assets/images/endocrine/img_page_593_1.jpeg",
           "../../assets/images/endocrine/img_page_595_1.jpeg",
@@ -1192,7 +1172,7 @@
           {
             "figure": 1,
             "text": "<strong>Central Neck Dissection</strong>: Bilateral dissection of Level VI lymph nodes, showing clearing of nodes along the trachea and recurrent laryngeal nerves.",
-            "image": "../../assets/images/endocrine/img_page_587_1.png"
+            "image": null
           },
           {
             "figure": 2,
@@ -1257,10 +1237,8 @@
         "chapter": 21,
         "title": "Anaplastic and Other Forms of Thyroid Carcinoma",
         "summary": "Anaplastic thyroid cancer (ATC). Rapid diagnostic biopsy, airway management, and the clinical application of targeted therapies (BRAF inhibitors).",
-        "image": "../../assets/images/endocrine/img_page_626_1.png",
-        "imagesList": [
-          "../../assets/images/endocrine/img_page_626_1.png"
-        ],
+        "image": null,
+        "imagesList": [],
         "indications": [
           "# Chapter 21: Anaplastic and Other Forms of Thyroid Carcinoma\n\n### Module 1: Clinical Framework & Pathology\n\n- Based on the American Joint Committee on Cancer (AJCC) TNM cancer classi\ufb01cation, these tumors are always considered Stage IV and can be subclassi\ufb01ed as Stage IVA when caught early and are still intrathyroidal, Stage IVB when there is involvement of regional lymph nodes due to *extrathyroidal extension*, and Stage IVC when distant *metastases* are present.\n- An age of onset of <50 is quite unusual, and many patients have an antecedent history of multinodular ***goiter*** or even of a well-***differentiated thyroid carcinoma***.\n- Microscopic *pathology* will demonstrate residual elements of a more well-differentiated thyroid tumor, as well as giant cells, spindle cells, and intranuclear cytoplasmic inclusions.\n- Like most thyroid tumors, it is more common in women than in men (1.**9:1**) and typically presents as a rapidly enlarging mass in the neck in an older individual.\n- As these tumor cells lack the sodium `iodide` symporter (`NIS`), treatment with `radioactive iodine` is not feasible.\n- The most success with treatment has occurred in those patients caught early whose disease was amenable to aggressive surgical management, but unfortunately this is the case in very few patients.\n- The American Thyroid Association (ATA) has recently published guidelines for the management of ***anaplastic thyroid carcinoma*** that tend to **recommend** aggressive surgical management when it may be possible to resect the bulk of the disease in Stage IVA and IVB patients.\n- The recommendation is based on experience indicating that survival is best with a greater extent of surgery, but this conclusion is biased by the fact that it is the lower-stage patients who are candidates for surgery.\n- The results of an aggressive combined modality therapeutic approach were reported for 26 patients undergoing surgery, adjuvant radiotherapy, and chemother-apy with doxorubicin or paclitaxel for local disease or higher-dose (70 Gy) radio-therapy when surgery was not feasible and either lowor higher-dose (30 vs 50 Gy) palliative radiotherapy for *metastatic* disease depending on the clinical state of the patients.\n- They observed some survival bene\ufb01t for both chemotherapy and higher-dose radiotherapy although perhaps statistically signi\ufb01-cant, the clinical bene\ufb01t was marginal.\n- Given the lack of success with conventional therapy for ***anaplastic thyroid carcinoma*** (including surgery, `radioiodine`, `thyroxine`-suppressive therapy, conventional chemotherapy, and external radiation), efforts have turned to identify speci\ufb01c molecular targets for personalized therapy.\n- The molecular mutation pathways that are typically altered in this tumor include BRAFV600E, P13K-`AKT`, and `ERK` 1/2MEK 1/2, and they have been the targets in several recent clinical trials, albeit with very limited numbers of patients.\n- One such drug, `sorafenib`, a multi-`tyrosine kinase` inhibitor (`TKI`), has had some success with *metastatic* ***differentiated thyroid carcinoma*** but not with anaplas-tic cancer.\n- In conclusion, outcomes remain quite bleak for this highly lethal tumor, and despite the failure of multimodality therapy reported from the Mayo Clinic , other centers have observed moderate success with a combined surgical and external radiation approach.\n- Nonetheless, hope for these patients in the future rests upon our greater understanding of the underlying genetic mutations present in the tumor that will allow the development of effective personalized targeted therapies.\n- Squamous Cell Carcinoma of the Thyroid Squamous cell carcinoma of the thyroid is an extremely rare tumor of squamous epithelium, accounting for less than 0.5% of thyroid malignancies.\n\n---\n\n### Module 2: Diagnostic Investigation & Lab Workup\n\n- There may be symptoms of hoarseness, dysphagia, dysphonia, dyspnea, and signs of neck tender-ness and superior vena cava syndrome.\n- Hoarseness and dysphonia indicate invasion of the `recurrent laryngeal nerve`, while dysphagia indicates esophageal involvement which is present in about a third of patients at presentation.\n- Survival statistics are best with Stage IVA and clearly worst in Stage IVC patients.\n- Decisions regarding approaches to initial management such as extent of surgery and external radiation therapy demand the use of cross-sectional imaging (CT, MRI) to de\ufb01ne the extent of disease, and FDG-PET (\ufb02uorodeoxyglucose positron emission tomography) may be useful to detect distant *metastases*.\n- In one review of 100 cases of ***anaplastic thyroid carcinoma***, survival at 1 year was 73% for Stage IVA, 23% for Stage IVB, and 7% for Stage IVC with only 9/100 patients surviving more than 1 year.\n- Survival was best in those early-stage patients treated with aggressive surgery and both external radiation and chemotherapy.\n- Even more aggressive or socalled super-radical surgery including laryngectomy, pharyngectomy, tracheal-esophageal resection, and mediastinal dis-section was shown to potentially improve survival in highly selected Stage IVB cases.\n- The ATA Guidelines **recommend** external radiation and chemotherapy for Stage IVC disease rather than an initial aggressive surgical approach , but some centers have shown slightly better survival with more extensive debulking of tumor.\n- External beam radiation therapy combined with chemotherapy has been reported with variable but far from encouraging results.\n- In one series of 91 patients, there was a complete response to radiation therapy with local control achieved in 40% of those treated.\n- However, the poor overall survival of 11% at 3 years indicates long-term control is not achieved and patients die of their distant metas-tases.\n- Failure of conventional radiotherapy has led to innova-tions employing novel hyperfractionated and accelerated radiation regimens either alone or in combination with chemotherapy.\n- The tumor cells do not trap iodine and hence `radioactive iodine` scanning or treatment is of no use in these patients.\n- External beam radiation may be palliative for peripheral bone *metastases*; brain *metastases* may also be temporarily controlled although *elderly patients* are known to not tolerate whole-brain radiation well.\n- Given the bleak prognosis with extensive disease, management often turns from attempts at aggressive therapy with external radiation and chemotherapy to that of palliative care.\n- Death is secondary to either extension of locoregional disease to vital structures or to the distant *metastases*.\n\n---\n\n### Module 3: Surgical Anatomy & Operative Approaches\n\n- In a series of 55 patients so treated in whom surgery was possible in 40, there was local control free of recurrence in 60% of the patients, but median survival was still only 3.5 months with 2year survival of 9%.\n- In a Mayo Clinic series of 134 patients, multimodality therapy was not seen to improve survival, but patients who received radiation had a small but nonsigni\ufb01cant improvement in median survival.\n- The likelihood that hyperfractionated radiation and chemotherapy may produce better outcomes in those patients with small tumors amenable to surgical excision is suggested by the small cohort of the total group like this whose 1year survival was 23% compared to the 9% overall survival.\n- The most common sites for *distant metastasis* are the lung, mediastinum, liver, and bone.\n- Pathologically, these tumors are poorly differ-entiated and **should be** distinguished from ***anaplastic thyroid carcinoma*** with squamoid elements.\n- Surgical resection may be quite dif\ufb01cult and incomplete due to its invasiveness, and outcome is poor with a median survival of only 8.6 months even with surgery and combined chemoradiotherapy.\n- Clinically, patients present with a rapidly enlarging neck mass, and more advanced tumors will demonstrate regional *lymphadenopathy* and local invasion into both `strap muscles` and soft tissues with pain, compressive symptoms of stridor, dysphagia, hoarseness, and dyspnea.\n- Care **should be** taken to distinguish the tumor from a local head and neck or lung carcinoma *metastatic* to the thyroid gland.\n- Localized, indolent lymphomas can be treated with radiation or surgery alone, while dissemi-nated indolent lymphoma or aggressive histologic subtypes **should be** treated with CMT.\n- Traditionally, surgery and radiation therapy (RT) were considered the standard treatment for PTL.\n- However, with high relapse rates, low survival rates, and the realization that thyroid lymphomas are sensitive to chemotherapy and radiation, surgery now plays a limited role, largely for alleviation of compressive symptoms and tracheostomy for relief of airway compromise.\n- In addition to radiation, the mainstay of therapy for disseminated disease or tumors with aggressive histology is chemotherapy, usually of the CHOP regimen (cyclo-phosphamide, doxorubicin, vincristine, and prednisone).",
           "<li class=\"main-bullet\"><strong>Aggressive Thyroid mass</strong>: Anaplastic thyroid cancer is an extremely aggressive, rapidly growing neck mass causing airway compromise, dysphagia, and neck pain.</li>",
@@ -1274,7 +1252,7 @@
           {
             "figure": 1,
             "text": "<strong>Airway Compression Scans</strong>: CT neck scan detailing a massive anaplastic thyroid tumor compressing and displacing the trachea.",
-            "image": "../../assets/images/endocrine/img_page_626_1.png"
+            "image": null
           }
         ],
         "redZone": {
@@ -1289,9 +1267,8 @@
         "chapter": 22,
         "title": "New (Medical) Treatment for Thyroid Carcinoma",
         "summary": "Targeted therapies for advanced, radioactive iodine-refractory differentiated thyroid cancer (DTC) and medullary thyroid cancer (MTC). Comparative TKI protocols.",
-        "image": "../../assets/images/endocrine/img_page_641_1.png",
+        "image": "../../assets/images/endocrine/img_page_643_1.jpeg",
         "imagesList": [
-          "../../assets/images/endocrine/img_page_641_1.png",
           "../../assets/images/endocrine/img_page_643_1.jpeg",
           "../../assets/images/endocrine/img_page_645_1.jpeg"
         ],
@@ -1308,7 +1285,7 @@
           {
             "figure": 1,
             "text": "<strong>TKI Receptor Binding</strong>: Diagram showing Lenvatinib and Sorafenib binding the ATP pocket of tyrosine kinase receptors.",
-            "image": "../../assets/images/endocrine/img_page_641_1.png"
+            "image": null
           },
           {
             "figure": 2,
@@ -1336,7 +1313,7 @@
     "kicker": "Part VII",
     "title": "Other Conditions and Drug Influences",
     "summary": "Thyroid diseases in pregnancy, non-thyroidal illness syndrome (NTIS) in critical illness, and drugs inducing thyroid dysfunction (amiodarone, lithium, TKIs, and checkpoint inhibitors).",
-    "image": "../../assets/images/endocrine/img_page_668_1.png",
+    "image": "../../assets/images/endocrine/img_page_671_1.jpeg",
     "imagesList": [
       "../../assets/images/endocrine/img_page_668_1.png",
       "../../assets/images/endocrine/img_page_671_1.jpeg",
@@ -1358,9 +1335,8 @@
         "chapter": 23,
         "title": "Thyroid Physiology and Thyroid Diseases in Pregnancy",
         "summary": "Thyroid physiology during pregnancy, gestational-specific TSH ranges, and medical management of gestational thyrotoxicosis and hypothyroidism.",
-        "image": "../../assets/images/endocrine/img_page_668_1.png",
+        "image": "../../assets/images/endocrine/img_page_671_1.jpeg",
         "imagesList": [
-          "../../assets/images/endocrine/img_page_668_1.png",
           "../../assets/images/endocrine/img_page_671_1.jpeg",
           "../../assets/images/endocrine/img_page_686_1.jpeg",
           "../../assets/images/endocrine/img_page_689_1.jpeg"
@@ -1378,7 +1354,7 @@
           {
             "figure": 1,
             "text": "<strong>Pregnancy Hormone Fluctuations</strong>: Graph mapping hCG, TSH, TBG, and thyroid hormone levels during pregnancy.",
-            "image": "../../assets/images/endocrine/img_page_668_1.png"
+            "image": null
           },
           {
             "figure": 2,
@@ -1408,9 +1384,8 @@
         "chapter": 24,
         "title": "Non-thyroidal Illness",
         "summary": "Non-thyroidal illness syndrome (euthyroid sick syndrome) in critically ill patients. Diagnostic parameters, rT3 profiling, and treatment parameters.",
-        "image": "../../assets/images/endocrine/img_page_704_1.png",
+        "image": "../../assets/images/endocrine/img_page_706_1.jpeg",
         "imagesList": [
-          "../../assets/images/endocrine/img_page_704_1.png",
           "../../assets/images/endocrine/img_page_706_1.jpeg",
           "../../assets/images/endocrine/img_page_709_1.jpeg",
           "../../assets/images/endocrine/img_page_711_1.jpeg",
@@ -1432,7 +1407,7 @@
           {
             "figure": 1,
             "text": "<strong>Euthyroid Sick Hormone Cascade</strong>: Graph mapping T3, T4, TSH, and rT3 changes during acute illness and recovery.",
-            "image": "../../assets/images/endocrine/img_page_704_1.png"
+            "image": null
           },
           {
             "figure": 2,
