@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Surgical Insight Hub — Physiologic Response to Trauma &amp; MODS</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/theme.css?v=4.0.0">
+<link rel="stylesheet" href="../../css/shared.css">
+<script>
+  const savedTheme = localStorage.getItem('sih-theme') || 'light';
+  if (savedTheme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+</script>
+<style>
+:root {
+  --primary:   #9A3412; /* Rust Orange */
+  --primary-dk:#7C2D12;
+  --primary-lt:#FFF7ED;
+  --accent:    #EA580C;
+  --accent2:   #F97316;
+  --gold:      #B8922A;
+  --gold-lt:   #FEF3C7;
+  --s1:   #1E3A8A;
+  --s2:        #0D9488;
+  --s3:        #C27803;
+  --s4:        #2563EB;
+  --s5:        #BE185D;
+  --s1-lt:   #EFF6FF;
+  --s2-lt:     #F0FDFA;
+  --s3-lt:     #FEF3C7;
+  --s4-lt:     #EFF6FF;
+  --s5-lt:     #FDF2F8;
+  --red:       #B91C1C;
+  --red-lt:    #FEF2F2;
+  --bg:        #FBFBFC;
+  --bg2:       #F4F4F6;
+  --border:    #E5E7EB;
+  --text:      #1F2937;
+  --muted:     #4B5563;
+  --white:     #FFFFFF;
+  --sidebar-w: 300px;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--bg);color:var(--text);font-size:16.5px;line-height:1.8;}
+
+/* DARK MODE OVERRIDES */
+[data-theme="dark"] {
+  --bg: #09060F;
+  --bg2: #120D1D;
+  --text: #E2DEE9;
+  --muted: #A78BFA;
+  --border: rgba(255,255,255,0.08);
+  --primary-lt: #7C2D1244;
+  --s1-lt:   #EFF6FF;
+  --s2-lt: #0B1D19;
+  --s3-lt: #221B0B;
+  --s4-lt: #0F172A;
+  --s5-lt: #2A0B1A;
+  --white: #120D1D;
+}
+
+/* SIDEBAR & OVERLAY */
+#sidebar {
+  position: fixed; top: 0; left: 0; width: var(--sidebar-w); height: 100vh;
+  background: var(--primary-dk); color: #E2DEE9;
+  display: flex; flex-direction: column;
+  z-index: 1300; overflow: hidden;
+  transform: translateX(-100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 4px 0 24px rgba(0,0,0,0.3);
+}
+body.sidebar-open #sidebar { transform: translateX(0); }
+
+#sidebar-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.5); backdrop-filter: blur(3px);
+  z-index: 1250; opacity: 0; pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+body.sidebar-open #sidebar-overlay { opacity: 1; pointer-events: auto; }
+
+#sidebar-toggle {
+  position: fixed; top: 72px; left: 24px; z-index: 1200;
+  background: var(--primary); color: white;
+  border: none; border-radius: 30px;
+  padding: 10px 18px; font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 600;
+  letter-spacing: 0.05em; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  display: flex; align-items: center; gap: 8px; transition: all 0.2s;
+}
+#sidebar-toggle:hover { background: var(--accent); transform: translateY(-2px); }
+
+#progress-bar {
+  position: fixed; top: 52px; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  transform-origin: left; transform: scaleX(0); transition: transform 0.1s; z-index: 1105;
+}
+
+#sidebar-header{padding:20px 20px 14px;border-bottom:1px solid rgba(255,255,255,0.1);flex-shrink:0;}
+#sidebar-header .logo{font-family:'Playfair Display',serif;font-size:13px;font-weight:700;color:var(--accent2);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;}
+#sidebar-header .sub{font-size:10.5px;color:rgba(226,222,233,0.6);letter-spacing:0.04em;}
+#sidebar-search{padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.08);flex-shrink:0;}
+#sidebar-search input{width:100%;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:6px;color:#E2DEE9;padding:6px 10px;font-size:12px;font-family:'Source Serif 4',serif;outline:none;transition:border-color 0.2s;}
+#sidebar-search input::placeholder{color:rgba(226,222,233,0.4);}
+#sidebar-search input:focus{border-color:var(--accent2);}
+#sidebar-nav{flex:1;overflow-y:auto;padding:8px 0 20px;}
+#sidebar-nav::-webkit-scrollbar{width:4px;}
+#sidebar-nav::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.15);border-radius:2px;}
+.vol-label{font-size:9.5px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent2);padding:14px 18px 4px;}
+.nav-item{display:block;padding:8px 18px 8px 22px;font-size:12.5px;color:rgba(226,222,233,0.75);text-decoration:none;border-left:2px solid transparent;transition:all 0.15s;line-height:1.4;}
+.nav-item:hover{color:#fff;background:rgba(255,255,255,0.05);border-left-color:var(--accent);}
+.nav-item.active{color:#fff;background:rgba(255,255,255,0.08);border-left-color:var(--accent2);font-weight:600;}
+.nav-item .num{font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(226,222,233,0.4);margin-right:6px;}
+
+/* HERO */
+#hero{background:linear-gradient(135deg,var(--primary-dk) 0%,#9A3412 60%,#090314 100%);color:white;padding:120px 72px 60px;position:relative;overflow:hidden;}
+#hero::before{content:'';position:absolute;top:-60px;right:-60px;width:380px;height:380px;background:radial-gradient(circle,rgba(255,255,255,0.1) 0%,transparent 70%);pointer-events:none;}
+#hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--primary),var(--accent2),transparent);}
+#hero .eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.16em;color:var(--accent2);text-transform:uppercase;margin-bottom:14px;}
+#hero h1{font-family:'Playfair Display',serif;font-size:38px;font-weight:700;line-height:1.15;margin-bottom:10px;color:#fff;}
+#hero .subtitle{font-size:18px;color:rgba(255,255,255,0.65);font-style:italic;margin-bottom:28px;}
+#hero .badges{display:flex;gap:10px;flex-wrap:wrap;}
+#hero .badge{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:4px 14px;font-size:12px;color:rgba(255,255,255,0.8);font-family:'JetBrains Mono',monospace;}
+
+/* CONTENT */
+.content-wrap{max-width:1140px;margin:0 auto;padding:0 48px 80px;}
+
+/* SECTION HEADER */
+.sec-header{margin-top:60px;margin-bottom:8px;padding:28px 36px;border-radius:10px;display:flex;align-items:center;gap:20px;}
+.sec-header.s1{background:linear-gradient(135deg,#9A341208,#9A341218);border-left:4px solid var(--s1);}
+.sec-header.s2{background:linear-gradient(135deg,#0D948808,#0D948818);border-left:4px solid var(--s2);}
+.sec-header.s3{background:linear-gradient(135deg,#C2780308,#C2780318);border-left:4px solid var(--s3);}
+.sec-header.s4{background:linear-gradient(135deg,#2563EB08,#2563EB18);border-left:4px solid var(--s4);}
+.sec-header.s5{background:linear-gradient(135deg,#BE185D08,#BE185D18);border-left:4px solid var(--s5);}
+.sec-badge{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;letter-spacing:0.1em;padding:4px 12px;border-radius:4px;white-space:nowrap;flex-shrink:0;}
+.s1 .sec-badge{background:var(--s1);color:white;}
+.s2 .sec-badge{background:var(--s2);color:white;}
+.s3 .sec-badge{background:var(--s3);color:white;}
+.s4 .sec-badge{background:var(--s4);color:white;}
+.s5 .sec-badge{background:var(--s5);color:white;}
+.sec-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;}
+.s1 .sec-title{color:var(--s1);}
+.s2 .sec-title{color:var(--s2);}
+.s3 .sec-title{color:var(--s3);}
+.s4 .sec-title{color:var(--s4);}
+.s5 .sec-title{color:var(--s5);}
+
+/* TOPIC */
+.topic{margin-top:48px;padding-top:48px;border-top:1px solid var(--border);}
+.topic:first-of-type{border-top:none;}
+.topic-header{display:flex;align-items:flex-start;gap:16px;margin-bottom:24px;}
+.topic-num{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;padding:3px 10px;border-radius:4px;margin-top:4px;flex-shrink:0;}
+.s1 .topic-num{background:var(--s1-lt);color:var(--s1);}
+.s2 .topic-num{background:var(--s2-lt);color:var(--s2);}
+.s3 .topic-num{background:var(--s3-lt);color:var(--s3);}
+.s4 .topic-num{background:var(--s4-lt);color:var(--s4);}
+.s5 .topic-num{background:var(--s5-lt);color:var(--s5);}
+.topic h2{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;line-height:1.2;}
+.s1 .topic h2{color:var(--s1);}
+.s2 .topic h2{color:var(--s2);}
+.s3 .topic h2{color:var(--s3);}
+.s4 .topic h2{color:var(--s4);}
+.s5 .topic h2{color:var(--s5);}
+.topic h3{font-family:'Playfair Display',serif;font-size:17px;font-weight:600;color:var(--muted);margin:26px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--border);}
+.topic h4{font-size:13px;font-weight:600;color:var(--muted);letter-spacing:0.06em;text-transform:uppercase;margin:18px 0 8px;font-family:'JetBrains Mono',monospace;}
+.topic p{margin-bottom:12px;color:var(--text);text-align:justify;}
+.topic ul,.topic ol{margin:8px 0 14px 20px;color:var(--text);}
+.topic li{margin-bottom:6px;line-height:1.65;}
+.topic li::marker{color:var(--accent2);}
+.topic strong{color:var(--text);font-weight:600;}
+
+/* TABLES */
+.table-wrap{overflow-x:auto;margin:16px 0 20px;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.06);border:1px solid var(--border);}
+table{width:100%;border-collapse:collapse;font-size:13.5px;background:var(--white);}
+thead tr{background:var(--s1);}
+thead th{color:white;padding:10px 14px;text-align:left;font-family:'Source Serif 4',serif;font-weight:600;font-size:13px;}
+tbody tr:nth-child(even){background:var(--bg2);}
+tbody tr:hover{background:var(--s1-lt);transition:background 0.15s;}
+tbody td{padding:9px 14px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.5;}
+.s2-tbl thead tr{background:var(--s2);}
+.s3-tbl thead tr{background:var(--s3);}
+.s4-tbl thead tr{background:var(--s4);}
+.s5-tbl thead tr{background:var(--s5);}
+
+/* CALLOUTS */
+.callout{margin:18px 0;padding:14px 18px;border-radius:0 8px 8px 0;border-left:4px solid;font-size:14px;line-height:1.65;}
+.callout .label{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;display:block;margin-bottom:4px;}
+.callout.pearl{background:var(--gold-lt);border-color:var(--gold);}
+.callout.pearl .label{color:var(--gold);}
+.callout.warn{background:var(--red-lt);border-color:var(--red);}
+.callout.warn .label{color:var(--red);}
+.callout.clin{background:var(--s2-lt);border-color:var(--s2);}
+.callout.clin .label{color:var(--s2);}
+.callout.exam{background:var(--s4-lt);border-color:var(--s4);}
+.callout.exam .label{color:var(--s4);}
+
+/* VIVA Scenario */
+.viva{background:var(--s1-lt);border:1px solid var(--border);border-left:4px solid var(--s1);border-radius:0 8px 8px 0;padding:16px 20px;margin:20px 0;}
+.viva .vq{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;color:var(--s1);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:8px;}
+.viva .vscenario{font-size:14px;font-weight:600;color:var(--text);margin-bottom:10px;line-height:1.5;}
+.viva .vanswer{font-size:13.5px;color:var(--muted);line-height:1.65;}
+.viva .vanswer ul{margin:6px 0 0 18px;}
+.viva .vanswer li{margin-bottom:4px;}
+
+/* KEY GRID */
+.key-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:10px;margin:14px 0 20px;}
+.key-card{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:12px 14px;font-size:13px;line-height:1.55;}
+.key-card .kc-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;font-weight:600;color:var(--s1);}
+.key-card .kc-val{font-weight:700;font-size:15px;color:var(--text);}
+.key-card.g2 .kc-label{color:var(--s2);}
+.key-card.g3 .kc-label{color:var(--s3);}
+.key-card.red .kc-label{color:var(--red);}
+.key-card.amb .kc-label{color:var(--accent2);}
+
+/* TOP BTN */
+#top-btn{position:fixed;bottom:28px;right:28px;background:var(--primary);color:white;border:none;border-radius:50%;width:44px;height:44px;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,0.2);transition:all 0.2s;opacity:0;pointer-events:none;z-index:1100;}
+#top-btn.show{opacity:1;pointer-events:auto;}
+#top-btn:hover{background:var(--accent2);transform:translateY(-2px);}
+
+@media(max-width:900px){
+  .content-wrap{padding:0 20px 60px;}
+  #hero{padding:80px 20px 40px;}
+  #hero h1{font-size:30px;}
+  #sidebar-toggle{top:64px; left:16px;}
+}
+</style>
+<script src="https://jsdelivr.net" async></script>
+</head>
+<body>
+  <!-- Standardized SIH Navbar -->
+  <nav class="nav" id="mainNav">
+    <div class="nav-left">
+      <a href="../../index.html" class="nav-pill">
+        <div class="nav-logo-img">
+          <img src="../../assets/images/Surgical_Insight_Hub_Logo.png" alt="SIH Logo">
+        </div>
+        <div>
+          <div class="nav-brand-text">Surgical Insight Hub</div>
+          <div class="nav-brand-sub">The Residency Journal</div>
+        </div>
+      </a>
+    </div>
+    <div class="nav-links-pill">
+      <a href="../../index.html">Home</a>
+      <a href="../../notes.html" class="active">Notes</a>
+      <a href="../operative_approach.html">Playbook</a>
+      <a href="../../arena.html?v=4.0.0">MCQ Arena</a>
+      <a href="../../podcast.html">Podcast</a>
+      <a href="../../surgery-talk.html">Surgery Talk</a>
+      <a href="../../about.html">About</a>
+    </div>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+        <svg id="moonIcon" viewBox="0 0 24 24" width="18" height="18"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        <svg id="sunIcon" style="display:none;" viewBox="0 0 24 24" width="18" height="18"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+      </button>
+      <a href="https://t.me/sugicalInsightHub" target="_blank" class="nav-tg-btn" title="Join Telegram">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="#f0d080"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.89 8.22l-1.97 9.28c-.15.66-.54.82-1.08.51l-3-2.21-1.45 1.39c-.16.16-.3.3-.61.3l.21-3.05 5.56-5.02c.24-.21-.05-.33-.37-.12l-6.87 4.33-2.96-.92c-.64-.2-.66-.64.14-.95l11.57-4.46c.54-.19 1.01.13.83.94z"/></svg>
+      </a>
+      <a href="../../arena.html?v=4.0.0" class="nav-btn arena-btn">MCQ Arena</a>
+      <button class="mob-nav-toggle" onclick="openMobNav()" aria-label="Menu">
+        <div class="hamburger"><span></span><span></span><span></span></div>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mob-nav-overlay" id="mobNavOverlay" onclick="closeMobNav()"></div>
+  <div class="mob-nav-sheet" id="mobNavSheet">
+    <div class="mob-nav-handle"></div>
+    <a href="../../index.html" onclick="closeMobNav()">Home</a>
+    <a href="../../notes.html" onclick="closeMobNav()">Notes</a>
+    <a href="../../notes/operative_approach.html" onclick="closeMobNav()">Playbook</a>
+    <a href="../../podcast.html" onclick="closeMobNav()">Podcast</a>
+    <a href="../../surgery-talk.html" onclick="closeMobNav()">Surgery Talk</a>
+    <a href="../../arena.html" onclick="closeMobNav()">MCQ Arena</a>
+    <a href="../../about.html" onclick="closeMobNav()">About</a>
+    <a href="https://t.me/sugicalInsightHub" target="_blank" rel="noopener" onclick="closeMobNav()" style="color: var(--brand-gold); font-weight: 800;">Join Telegram Community</a>
+  </div>
+
+  <div id="progress-bar"></div>
+  <button id="sidebar-toggle" onclick="toggleSidebar()">
+    <span>📜</span> Sections Menu
+  </button>
+  <div id="sidebar-overlay" onclick="closeSidebar()"></div>
+
+  <!-- SIDEBAR -->
+  <aside id="sidebar">
+    <div id="sidebar-header">
+      <div class="logo">Response to Trauma &amp; MODS</div>
+      <div class="sub">General Surgery Monograph</div>
+    </div>
+    <div id="sidebar-search">
+      <input oninput="filterNav(this.value)" placeholder="Search sections..." type="text"/>
+    </div>
+    <nav id="sidebar-nav">
+      <div class="vol-label">Pillar 1: Pathophysiology</div>
+      <a class="nav-item" href="#p1-neuro"><span class="num">1.1</span>Neuroendocrine Axes</a>
+      <a class="nav-item" href="#p1-metabolic"><span class="num">1.2</span>Metabolic Phases</a>
+      <a class="nav-item" href="#p1-inflammatory"><span class="num">1.3</span>DAMPs &amp; Translocation</a>
+      <a class="nav-item" href="#p1-triad"><span class="num">1.4</span>Lethal Triad Biology</a>
+      <div class="vol-label">Pillar 2: Diagnostics</div>
+      <a class="nav-item" href="#p2-sofa"><span class="num">2.1</span>SOFA &amp; Marshall Tables</a>
+      <div class="vol-label">Pillar 3: Optimization</div>
+      <a class="nav-item" href="#p3-dcr"><span class="num">3.1</span>Damage Control Resuscitation</a>
+      <a class="nav-item" href="#p3-trials"><span class="num">3.2</span>Landmark Trauma Trials</a>
+      <div class="vol-label">Pillar 4: Strategy</div>
+      <a class="nav-item" href="#p4-dcs"><span class="num">4.1</span>Damage Control Timeline</a>
+      <div class="vol-label">Pillar 5: Postoperative</div>
+      <a class="nav-item" href="#p5-acs"><span class="num">5.1</span>Abdominal Compartment (ACS)</a>
+      <div class="vol-label">Board Review</div>
+      <a class="nav-item" href="#board-review"><span class="num">6.1</span>ABSITE High-Yield Recall</a>
+    </nav>
+  </aside>
+
+  <main id="main">
+    <section id="hero">
+      <div class="eyebrow">Trauma &amp; Intensive Care · Monograph</div>
+      <h1>Physiologic Response to Trauma &amp; MODS</h1>
+      <p class="subtitle">Evidence-based analysis of metabolic responses to physical injury, lethal triad mechanics, and Multiple Organ Dysfunction Syndrome.</p>
+      <div class="badges">
+        <span class="badge">General Surgery</span>
+        <span class="badge">Board Review</span>
+        <span class="badge">ABSITE Gold</span>
+      </div>
+    </section>
+
+    <div class="content-wrap">
+      <!-- Key Statistics Grid -->
+      <div class="key-grid">
+        <div class="key-card">
+          <div class="kc-label">DCS Phase 1 Limit</div>
+          <div class="kc-val">&lt;60 - 90 mins</div>
+        </div>
+        <div class="key-card g2">
+          <div class="kc-label">DAMP Trigger</div>
+          <div class="kc-val">mtDNA / HMGB1</div>
+        </div>
+        <div class="key-card red">
+          <div class="kc-label">Lethal Triad Limit</div>
+          <div class="kc-val">pH &lt;7.2 / Temp &lt;35°C</div>
+        </div>
+        <div class="key-card amb">
+          <div class="kc-label">Critical IAP Goal</div>
+          <div class="kc-val">&lt;12 mmHg (ACS &gt;20)</div>
+        </div>
+      </div>
+
+      <!-- PILLAR 1 -->
+      <div class="sec-header s1" id="p1-neuro">
+        <span class="sec-badge">PILLAR 1</span>
+        <span class="sec-title">Core Pathophysiology &amp; Cellular Mechanisms</span>
+      </div>
+      
+      <section class="topic s1">
+        <div class="topic-header"><span class="topic-num">1.1</span><h2>Neuroendocrine Axes &amp; Cytokine Activation Dynamics</h2></div>
+        <p>Physical trauma initiates an immediate neural and humoral signaling cascade. Nociceptive afferents from the site of injury travel via the spinothalamic tracts, activating the hypothalamic-pituitary-adrenal (HPA) and sympathetic-adrenal-medullary (SAM) axes. This triggers a massive, systemic neuroendocrine surge:</p>
+        <ul>
+          <li><strong>Cortisol &amp; ACTH Surge:</strong> Hypothalamic Corticotropin-Releasing Hormone (CRH) stimulates anterior pituitary secretion of Adrenocorticotropic Hormone (ACTH), driving adrenal cortical release of cortisol. Cortisol acts as a primary catabolic driver, initiating skeletal muscle protein breakdown, gluconeogenesis, and lipolysis while stabilizing lysosomal membranes to restrict initial cellular autolysis.</li>
+          <li><strong>Catecholamine Surge:</strong> Sympathetic preganglionic fibers stimulate the adrenal medulla to release Epinephrine and Norepinephrine, which act on &alpha;<sub>1</sub>, &beta;<sub>1</sub>, and &beta;<sub>2</sub> receptors to maximize cardiac output and selectively shunt perfusion to the brain and myocardium.</li>
+          <li><strong>Hormonal Synergy:</strong> renin-angiotensin-aldosterone system (RAAS) activation and Vasopressin (ADH) release work to preserve intravascular volume through distal tubule sodium resorption and direct V<sub>1</sub>-receptor vasoconstriction. Pancreatic glucagon surges alongside growth hormone, acting synergistically with cortisol and catecholamines to trigger hyperglycemic states.</li>
+        </ul>
+        <div class="callout clin">
+          <span class="label">Body Composition Changes Under Stress</span>
+          Surgical trauma induces rapid skeletal muscle proteolysis. Cortisol and inflammatory cytokines upregulate the ubiquitin-proteasome pathway in myofibrils. Skeletal muscle branched-chain amino acids are converted into alanine and glutamine. Alanine is shuttled to the liver to drive gluconeogenesis (the Glucose-Alanine cycle), while glutamine is consumed as vital fuel by fast-dividing enterocytes and immunological cells.
+        </div>
+      </section>
+
+      <section class="topic s1" id="p1-metabolic">
+        <div class="topic-header"><span class="topic-num">1.2</span><h2>Metabolic Phases of Injury: Cuthbertson Classification</h2></div>
+        <p>The metabolic changes following physical trauma are categorized into three distinct, chronological phases: Ebb, Flow, and Recovery:</p>
+        <div class="table-wrap s1-tbl">
+          <table>
+            <thead>
+              <tr>
+                <th>Metabolic Phase</th>
+                <th>Timeline</th>
+                <th>Primary Hormonal Drive</th>
+                <th>Physiological &amp; Metabolic Profile</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Ebb Phase</strong></td>
+                <td>First 24 – 48 hours post-injury</td>
+                <td>Catecholamines, Aldosterone, Vasopressin (ADH)</td>
+                <td>Systemic hypometabolism, decreased core body temperature, decreased basal metabolic rate (BMR), cardiac output depression, lactic acidosis, and splanchnic vasoconstriction. Goal: survive acute hemorrhage.</td>
+              </tr>
+              <tr>
+                <td><strong>Flow Phase (Catabolic)</strong></td>
+                <td>3 – 10 days post-injury (peak)</td>
+                <td>Cortisol, Glucagon, Catecholamines, TNF-&alpha;, IL-6</td>
+                <td>Systemic hypermetabolism, hyperthermia, increased cardiac output, increased BMR, skeletal muscle proteolysis, lipolysis, hepatic acute-phase reactant synthesis, and profound insulin resistance.</td>
+              </tr>
+              <tr>
+                <td><strong>Recovery Phase (Anabolic)</strong></td>
+                <td>Weeks – months post-injury</td>
+                <td>Insulin, IGF-1, Growth Hormone (anabolic)</td>
+                <td>Restoration of positive nitrogen balance, replacement of depleted protein and glycogen reserves, wound collagen cross-linking, and restoration of baseline body composition.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="topic s1" id="p1-inflammatory">
+        <div class="topic-header"><span class="topic-num">1.3</span><h2>DAMP Release, Mucosal Tight Junction Breakdown &amp; Neutrophil Priming</h2></div>
+        <p>Systemic inflammatory response syndrome (SIRS) and organ dysfunction in trauma are propagated by cellular danger signals and gut barrier failure:</p>
+        <ul>
+          <li><strong>DAMP Cascade:</strong> Tissue necrosis releases **Damage-Associated Molecular Patterns (DAMPs)**, including high-mobility group box 1 (HMGB1) protein and mitochondrial DNA (mtDNA) into the blood. mtDNA contains unmethylated CpG motifs that bind directly to **Toll-Like Receptor 9 (TLR-9)** on neutrophils, while HMGB1 binds **TLR-4** on macrophages, inducing an inflammatory cascade without bacterial infection.</li>
+          <li><strong>Splanchnic Hypoperfusion &amp; Mucosal Barrier Breakdown:</strong> Systemic vasoconstriction during the Ebb phase selectively deprives the gut mucosa of oxygen. The resulting enterocyte hypoxia disrupts the mucosal barrier by downregulating tight junction proteins, specifically **claudins** and **occludins**. This compromises the physical barrier, allowing paracellular translocation of luminal bacteria, endotoxins, and pancreatic proteases into the mesenteric lymphatics and portal circulation.</li>
+          <li><strong>The "Two-Hit" Hypothesis of Neutrophil Activation:</strong> Mesenteric lymph containing translocated DAMPs and endotoxins travels via the thoracic duct directly to the pulmonary microcirculation. Here, the molecules prime pulmonary alveolar macrophages and neutrophils (the **First Hit**). Any subsequent stimulus, such as a secondary surgical intervention, fracture fixation, or minor infection (the **Second Hit**), triggers an uncontrolled release of reactive oxygen species (ROS) and proteases, causing alveolar damage, ARDS, and systemic MODS.</li>
+        </ul>
+      </section>
+
+      <section class="topic s1" id="p1-triad">
+        <div class="topic-header"><span class="topic-num">1.4</span><h2>Cellular &amp; Biochemical Biology of the Lethal Triad</h2></div>
+        <p>The "Lethal Triad of Trauma" consists of hypothermia, acidosis, and coagulopathy. These elements interact at the biochemical level to cause physiological failure:</p>
+        <ul>
+          <li><strong>Hypothermia (Core Temp &lt; 35°C):</strong> Clotting factor assembly and enzymatic activation are temperature-dependent. Each 1°C fall in core body temperature decreases the enzymatic rate constant of the coagulation cascade. At &lt;35°C, platelet adhesion and aggregation are directly inhibited due to impaired glycoprotein Ib-IX-V complex binding to von Willebrand factor.</li>
+          <li><strong>Acidosis (Arterial pH &lt; 7.20):</strong> Acidic conditions directly disrupt the calcium-dependent assembly of coagulation complexes. A drop in pH from 7.4 to 7.0 decreases the activity of the **tenase complex** (which activates Factor X) by 50% and reduces the **prothrombinase complex** (which converts prothrombin to thrombin) by over 70%.</li>
+          <li><strong>Coagulopathy Interaction:</strong> Acidosis and hypothermia aggravate trauma-induced coagulopathy (TIC). This is further worsened by tissue hypoperfusion, which upregulates thrombomodulin on endothelial cells, binding thrombin and activating Protein C. Activated Protein C (aPC) consumes Factors Va and VIIIa, while inhibiting plasminogen activator inhibitor-1 (PAI-1), triggering unchecked fibrinolysis and microvascular bleeding.</li>
+        </ul>
+      </section>
+
+      <!-- PILLAR 2 -->
+      <div class="sec-header s2" id="p2-sofa">
+        <span class="sec-badge">PILLAR 2</span>
+        <span class="sec-title">Clinical Presentation &amp; Staging Scoring Systems</span>
+      </div>
+      
+      <section class="topic s2">
+        <div class="topic-header"><span class="topic-num">2.1</span><h2>Sequential Organ Failure Assessment (SOFA) Scoring Matrix</h2></div>
+        <p>The Sepsis-3 guidelines define organ dysfunction as an acute change in the total SOFA score &ge; 2 points secondary to infection. The SOFA score monitors six physiological systems, graded from 0 (normal) to 4 (severe dysfunction):</p>
+        <div class="table-wrap s2-tbl">
+          <table>
+            <thead>
+              <tr>
+                <th>SOFA Organ System</th>
+                <th>Score 1</th>
+                <th>Score 2</th>
+                <th>Score 3</th>
+                <th>Score 4</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Respiration:</strong> PaO<sub>2</sub>/FiO<sub>2</sub> (mmHg)</td>
+                <td>&lt; 400</td>
+                <td>&lt; 300</td>
+                <td>&lt; 200 (with mechanical ventilation)</td>
+                <td>&lt; 100 (with mechanical ventilation)</td>
+              </tr>
+              <tr>
+                <td><strong>Coagulation:</strong> Platelet count (&times;10<sup>3</sup>/&micro;L)</td>
+                <td>&lt; 150</td>
+                <td>&lt; 100</td>
+                <td>&lt; 50</td>
+                <td>&lt; 20</td>
+              </tr>
+              <tr>
+                <td><strong>Hepatic:</strong> Bilirubin (mg/dL) [umol/L]</td>
+                <td>1.2 – 1.9 [20–32]</td>
+                <td>2.0 – 5.9 [33–101]</td>
+                <td>6.0 – 11.9 [102–204]</td>
+                <td>&ge; 12.0 [&gt;204]</td>
+              </tr>
+              <tr>
+                <td><strong>Cardiovascular:</strong> Hypotension / Vasopressors</td>
+                <td>MAP &lt; 70 mmHg</td>
+                <td>Dopamine &le; 5 mcg/kg/min or Dobutamine (any dose)</td>
+                <td>Dopamine &gt; 5 OR Norepinephrine &le; 0.1 mcg/kg/min</td>
+                <td>Dopamine &gt; 15 OR Norepinephrine &gt; 0.1 mcg/kg/min</td>
+              </tr>
+              <tr>
+                <td><strong>Central Nervous:</strong> Glasgow Coma Scale (GCS)</td>
+                <td>13 – 14</td>
+                <td>10 – 12</td>
+                <td>6 – 9</td>
+                <td>&lt; 6</td>
+              </tr>
+              <tr>
+                <td><strong>Renal:</strong> Creatinine (mg/dL) or Urine Output</td>
+                <td>1.2 – 1.9</td>
+                <td>2.0 – 3.4</td>
+                <td>3.5 – 4.9 or &lt; 500 mL/day</td>
+                <td>&ge; 5.0 or &lt; 200 mL/day</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>The Marshall Multiple Organ Dysfunction Score (MODS)</h3>
+        <p>The Marshall score evaluates organ dysfunction based on six parameters. It remains highly validated in post-injury critical care. It introduces the **Pressure-Adjusted Heart Rate (PAR)** to assess cardiovascular dysfunction, calculated using the formula:</p>
+        <div style="font-family:'JetBrains Mono',monospace; background:var(--bg2); padding:12px; border-radius:6px; margin:14px 0; text-align:center; font-size:18px;">
+          PAR = [ Heart Rate (BPM) &times; Central Venous Pressure (mmHg) ] / Mean Arterial Pressure (mmHg)
+        </div>
+        
+        <h4>Marshall Scoring Metrics Table</h4>
+        <div class="table-wrap s2-tbl">
+          <table>
+            <thead>
+              <tr>
+                <th>Marshall Organ System Vector</th>
+                <th>Score 0</th>
+                <th>Score 1</th>
+                <th>Score 2</th>
+                <th>Score 3</th>
+                <th>Score 4</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Respiratory:</strong> PaO<sub>2</sub>/FiO<sub>2</sub> ratio</td>
+                <td>&gt; 300</td>
+                <td>226 – 300</td>
+                <td>151 – 225</td>
+                <td>76 – 150</td>
+                <td>&le; 75</td>
+              </tr>
+              <tr>
+                <td><strong>Renal:</strong> Creatinine (umol/L)</td>
+                <td>&le; 100</td>
+                <td>101 – 200</td>
+                <td>201 – 350</td>
+                <td>351 – 500</td>
+                <td>&gt; 500</td>
+              </tr>
+              <tr>
+                <td><strong>Hepatic:</strong> Bilirubin (umol/L)</td>
+                <td>&le; 20</td>
+                <td>21 – 60</td>
+                <td>61 – 120</td>
+                <td>121 – 240</td>
+                <td>&gt; 240</td>
+              </tr>
+              <tr>
+                <td><strong>Hematologic:</strong> Platelets (&times;10<sup>3</sup>/&micro;L)</td>
+                <td>&gt; 120</td>
+                <td>81 – 120</td>
+                <td>51 – 80</td>
+                <td>21 – 50</td>
+                <td>&le; 20</td>
+              </tr>
+              <tr>
+                <td><strong>Cardiovascular:</strong> PAR Metric</td>
+                <td>&le; 10.0</td>
+                <td>10.1 – 15.0</td>
+                <td>15.1 – 20.0</td>
+                <td>20.1 – 30.0</td>
+                <td>&gt; 30.0</td>
+              </tr>
+              <tr>
+                <td><strong>Neurological:</strong> Glasgow Coma Scale</td>
+                <td>15</td>
+                <td>13 – 14</td>
+                <td>10 – 12</td>
+                <td>7 – 9</td>
+                <td>&le; 6</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- PILLAR 3 -->
+      <div class="sec-header s3" id="p3-dcr">
+        <span class="sec-badge">PILLAR 3</span>
+        <span class="sec-title">Non-Operative Management &amp; Resuscitative Optimization</span>
+      </div>
+      
+      <section class="topic s3">
+        <div class="topic-header"><span class="topic-num">3.1</span><h2>Damage Control Resuscitation (DCR) Strategy</h2></div>
+        <p>Damage Control Resuscitation (DCR) coordinates metabolic and transfusion strategies to stabilize the patient prior to definitive surgery:</p>
+        <ul>
+          <li><strong>Permissive Hypotension:</strong> Maintain Mean Arterial Pressure (MAP) at 60–65 mmHg (Systolic BP 80–90 mmHg) to minimize primary clot disruption. <em>Contraindicated in patients with traumatic brain or spinal cord injuries, where a MAP &ge; 85 mmHg is required to maintain perfusion.</em></li>
+          <li><strong>Balanced Transfusion Ratios:</strong> Transfuse Packed Red Blood Cells (PRBCs), Fresh Frozen Plasma (FFP), and Platelets in a 1:1:1 ratio. This protocol reduces dilutional coagulopathy compared to historical crystalloid-heavy resuscitation schemes.</li>
+          <li><strong>Antifibrinolytic Therapy (TXA):</strong> Administer 1g IV loading dose of Tranexamic Acid (TXA) over 10 minutes, followed by a 1g IV infusion over 8 hours. TXA blocks lysine-binding sites on plasminogen, preventing its interaction with fibrin.</li>
+        </ul>
+      </section>
+
+      <section class="topic s3" id="p3-trials">
+        <div class="topic-header"><span class="topic-num">3.2</span><h2>Landmark Trauma &amp; Resuscitation Literature</h2></div>
+        <p>Key clinical trials that have defined modern damage control resuscitation and surgical protocols include:</p>
+        <div class="table-wrap s3-tbl">
+          <table>
+            <thead>
+              <tr>
+                <th>Trial Name</th>
+                <th>Year</th>
+                <th>Primary Intervention</th>
+                <th>Clinical Outcome &amp; Impact on Practice Guidelines</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Rotondo et al. (J. Trauma)</strong></td>
+                <td>1993</td>
+                <td>Retrospective cohort comparing staged damage control laparotomy (abbreviated operation + packing) vs. immediate definitive repair in penetrating trauma with vascular and multiple visceral injuries.</td>
+                <td>Showed a significant survival benefit in patients with major vascular injuries who underwent staged damage control (77% survival vs. 11% in the definitive group). Established the paradigm of **Damage Control Surgery (DCS)**.</td>
+              </tr>
+              <tr>
+                <td><strong>CRASH-2 (Lancet)</strong></td>
+                <td>2010</td>
+                <td>Multicenter RCT evaluating TXA (1g loading + 1g infusion) vs. placebo in 20,211 bleeding trauma patients.</td>
+                <td>TXA significantly reduced all-cause mortality (14.5% vs 16.0%) and death from bleeding (4.9% vs 5.7%). **Importantly, administration &gt; 3 hours after injury increased the risk of death from bleeding**, leading to strict pre-hospital timing protocols.</td>
+              </tr>
+              <tr>
+                <td><strong>PROPPR Trial (JAMA)</strong></td>
+                <td>2015</td>
+                <td>Multicenter RCT comparing 1:1:1 vs. 1:1:2 (PRBC:FFP:Platelets) transfusion ratios in 680 severely injured trauma patients.</td>
+                <td>No significant difference in overall 24-hour or 30-day mortality. However, the **1:1:1 ratio achieved significantly better hemostasis (86% vs 73%) and reduced deaths from exsanguination at 24 hours (9.2% vs 14.6%)**, validating 1:1:1 as the resuscitation standard of care.</td>
+              </tr>
+              <tr>
+                <td><strong>Moore et al. (J. Trauma)</strong></td>
+                <td>2000</td>
+                <td>Prospective validation study evaluating splanchnic hypoperfusion, mesenteric lymph duct toxicity, and cytokine cascades in post-injury MODS.</td>
+                <td>Confirmed that **gut-derived lymph, rather than portal blood, carries the toxic inflammatory mediators that activate pulmonary neutrophils**, driving post-injury ARDS and secondary MODS. Highlighted the gut-lymph lymphatic vector.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- PILLAR 4 -->
+      <div class="sec-header s4" id="p4-dcs">
+        <span class="sec-badge">PILLAR 4</span>
+        <span class="sec-title">Operative Strategy &amp; Surgical Technique</span>
+      </div>
+      
+      <section class="topic s4">
+        <div class="topic-header"><span class="topic-num">4.1</span><h2>The 3-Stage Damage Control Surgery (DCS) Timeline</h2></div>
+        <p>Damage Control Surgery is an operational strategy designed to prioritize physiological stabilization over anatomical reconstruction:</p>
+        
+        <h3>Phase 1: Immediate Operative Abort and Hemorrhage/Contamination Control</h3>
+        <ul>
+          <li><strong>Goal:</strong> Stop bleeding and prevent contamination. Limit operative time to **&lt;60–90 minutes**.</li>
+          <li><strong>Hemorrhage Control:</strong> Perform rapid packing of parenchymal injuries (liver, spleen), direct clamping, or insertion of temporary intraluminal shunts in major arterial lacerations (e.g., femoral or iliac arteries).</li>
+          <li><strong>Contamination Control:</strong> Deliver rapid ligation or stapling of open bowel segments to prevent peritoneal contamination. Avoid time-consuming anastomoses or stoma construction.</li>
+          <li><strong>Open Abdomen:</strong> Leave the fascia open. Apply a temporary negative pressure closure system (e.g., AbThera) to allow for expansion, preventing abdominal compartment syndrome.</li>
+        </ul>
+
+        <h3>Phase 2: Intensive Care Unit (ICU) Physiological Stabilization</h3>
+        <ul>
+          <li><strong>Rewarming:</strong> Correct hypothermia using warm air blankets, warm IV fluids, and humidified ventilator circuits.</li>
+          <li><strong>Correction of Coagulopathy:</strong> Normalize the coagulation profile using targeted blood products guided by thromboelastography (TEG) or rotational thromboelastometry (ROTEM).</li>
+          <li><strong>Ventilatory Optimization:</strong> Optimize ventilation to correct metabolic acidosis and clear lactate.</li>
+        </ul>
+
+        <h3>Phase 3: Planned Re-exploration and Definitive Reconstruction</h3>
+        <ul>
+          <li><strong>Timing:</strong> Typically performed **24 to 48 hours** after Phase 1, once the patient's temperature, pH, and coagulation profile have normalized.</li>
+          <li><strong>Execution:</strong> Return the patient to the operating room. Remove temporary abdominal packs, perform definitive vascular reconstruction/anastomoses, and formally close the abdominal wall.</li>
+        </ul>
+      </section>
+
+      <!-- PILLAR 5 -->
+      <div class="sec-header s5" id="p5-acs">
+        <span class="sec-badge">PILLAR 5</span>
+        <span class="sec-title">Postoperative Care &amp; Complications</span>
+      </div>
+      
+      <section class="topic s5">
+        <div class="topic-header"><span class="topic-num">5.1</span><h2>Abdominal Compartment Syndrome (ACS) Management</h2></div>
+        <p>Postoperative resuscitation can trigger visceral edema and massive ascites, leading to intra-abdominal hypertension:</p>
+        
+        <h3>1. Intra-Abdominal Hypertension (IAH) Staging</h3>
+        <p>Normal intra-abdominal pressure (IAP) is &lt; 12 mmHg in critically ill adults. IAH is defined by a sustained increase in IAP &ge; 12 mmHg, graded as:</p>
+        <ul>
+          <li>Grade I: IAP 12 – 15 mmHg</li>
+          <li>Grade II: IAP 16 – 20 mmHg</li>
+          <li>Grade III: IAP 21 – 25 mmHg</li>
+          <li>Grade IV: IAP &gt; 25 mmHg</li>
+        </ul>
+
+        <h3>2. Abdominal Compartment Syndrome (ACS) Definition</h3>
+        <p>Defined as a sustained <strong>IAP &gt; 20 mmHg</strong> associated with **new-onset organ dysfunction** (e.g., elevated airway pressures on the ventilator, oliguria/anuria from renal vein compression, or decreased cardiac output from reduced venous return).</p>
+
+        <div class="callout warn">
+          <span class="label">Bladder Pressure Monitoring (Gold Standard)</span>
+          Measure IAP indirectly by instilling a maximum of <strong>25 mL of sterile saline</strong> into the urinary bladder via a Foley catheter, clamping the drainage tube, and measuring pressure using a transducer aligned with the mid-axillary line.
+        </div>
+
+        <h3>3. Treatment Protocol</h3>
+        <p>For refractory ACS (IAP &gt; 20 mmHg with organ failure), perform an emergent bedside decompressive laparotomy. Leave the abdomen open with a temporary negative-pressure wound dressing. Non-surgical adjuncts include nasogastric decompression, neuromuscular blockade, and fluid removal via continuous renal replacement therapy (CRRT).</p>
+      </section>
+
+      <!-- BOARD REVIEW -->
+      <div class="sec-header s1" id="board-review" style="margin-top: 60px;">
+        <span class="sec-badge">BOARD REVIEW</span>
+        <span class="sec-title">ABSITE Core Recall Matrix</span>
+      </div>
+      
+      <section class="topic s1">
+        <h3>High-Yield Recall Matrix</h3>
+        <div class="table-wrap">
+          <table style="background: transparent;">
+            <thead>
+              <tr>
+                <th>Board Question Topic</th>
+                <th>Gold Standard Key Fact</th>
+                <th>Surgical Decision / Clinical Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Lethal Triad Mechanism</strong></td>
+                <td>Acidosis directly impairs the enzymatic assembly of coagulation factor complexes on platelet membranes.</td>
+                <td>Prioritize correction of perfusion and warming over infusing clotting factors alone.</td>
+              </tr>
+              <tr>
+                <td><strong>TXA Therapeutic Window</strong></td>
+                <td>TXA must be administered within 3 hours of injury. Beyond 3 hours, its use is associated with an increased risk of death from bleeding.</td>
+                <td>Confirm time of injury before giving the loading dose of TXA in the trauma bay.</td>
+              </tr>
+              <tr>
+                <td><strong>ACS Bladder Instillation Volume</strong></td>
+                <td>Excessive instillation volume (&gt;25 mL) falsely elevates bladder pressure readings due to detrusor muscle stretch.</td>
+                <td>Ensure exactly 20-25 mL of saline is instilled for transducer measurement.</td>
+              </tr>
+              <tr>
+                <td><strong>Cuthbertson Flow Phase fuel</strong></td>
+                <td>Skeletal muscle proteolysis supplies amino acids (alanine/glutamine) for hepatic acute-phase reactant synthesis.</td>
+                <td>Initiate enteral nutrition early to minimize lean muscle wasting during the flow phase.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="viva">
+          <div class="vq">VIVA SCENARIO — TRANSITION TO DAMAGE CONTROL</div>
+          <div class="vscenario">During an emergent laparotomy for a gunshot wound to the abdomen, you have repaired two enterotomies and are suturing a complex liver laceration. The anesthesiologist informs you that the patient's temperature is 34.2°C, the arterial pH is 7.12, and blood is oozing from all cut tissue edges. What is your next step?</div>
+          <div class="vanswer">
+            <ul>
+              <li><strong>Action:</strong> Immediately abort the definitive repair. The patient has entered the lethal triad of trauma (severe hypothermia, acidosis, and clinical coagulopathy).</li>
+              <li><strong>Execution:</strong>
+                <ul>
+                  <li>Pack the liver laceration tightly with laparotomy pads.</li>
+                  <li>Ligate or staple any remaining open bowel loops without reconstruction.</li>
+                  <li>Leave the fascia open and apply a temporary abdominal negative-pressure dressing.</li>
+                  <li>Transfer the patient immediately to the ICU for aggressive warming, correction of coagulopathy via MTP, and correction of acidosis (Phase 2 DCS).</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <button id="top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+  <script src="../../js/nav-pill.js"></script>
+  <script src="../../js/navigation.js"></script>
+  <script>
+    const progressBar = document.getElementById('progress-bar');
+    const topBtn = document.getElementById('top-btn');
+    const navItems = document.querySelectorAll('.nav-item');
+    const sections = document.querySelectorAll('.sec-header[id], .topic[id]');
+
+    window.addEventListener('scroll', () => {
+      const st = window.scrollY;
+      const dh = document.documentElement.scrollHeight - window.innerHeight;
+      if (progressBar) progressBar.style.transform = `scaleX(${st / dh})`;
+      if (topBtn) topBtn.classList.toggle('show', st > 400);
+      
+      let current = '';
+      sections.forEach(s => { if (st >= s.offsetTop - 120) current = s.id; });
+      navItems.forEach(n => { n.classList.toggle('active', n.getAttribute('href') === '#' + current); });
+    });
+
+    function filterNav(query) {
+      const q = query.toLowerCase();
+      navItems.forEach(item => { item.style.display = (!q || item.textContent.toLowerCase().includes(q)) ? 'block' : 'none'; });
+    }
+
+    navItems.forEach(item => {
+      item.addEventListener('click', e => {
+        e.preventDefault();
+        if(typeof closeSidebar === 'function') closeSidebar();
+        const target = document.querySelector(item.getAttribute('href'));
+        if (target) window.scrollTo({ top: target.getBoundingClientRect().top - 80, behavior: 'smooth' });
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Surgical Insight Hub — Hemostasis, Transfusion &amp; Coagulopathy</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/theme.css?v=4.0.0">
+<link rel="stylesheet" href="../../css/shared.css">
+<script>
+  const savedTheme = localStorage.getItem('sih-theme') || 'light';
+  if (savedTheme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+</script>
+<style>
+:root {
+  --primary:   #881337; /* Deep Burgundy */
+  --primary-dk:#4C0519;
+  --primary-lt:#FFF1F2;
+  --accent:    #E11D48;
+  --accent2:   #F43F5E;
+  --gold:      #B8922A;
+  --gold-lt:   #FEF3C7;
+  --s1:   #C2410C;
+  --s2:        #0D9488;
+  --s3:        #C27803;
+  --s4:        #2563EB;
+  --s5:        #BE185D;
+  --s1-lt:   #FFF7ED;
+  --s2-lt:     #F0FDFA;
+  --s3-lt:     #FEF3C7;
+  --s4-lt:     #EFF6FF;
+  --s5-lt:     #FDF2F8;
+  --red:       #B91C1C;
+  --red-lt:    #FEF2F2;
+  --bg:        #FBFBFC;
+  --bg2:       #F4F4F6;
+  --border:    #E5E7EB;
+  --text:      #1F2937;
+  --muted:     #4B5563;
+  --white:     #FFFFFF;
+  --sidebar-w: 300px;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--bg);color:var(--text);font-size:16.5px;line-height:1.8;}
+
+/* DARK MODE OVERRIDES */
+[data-theme="dark"] {
+  --bg: #09060F;
+  --bg2: #120D1D;
+  --text: #E2DEE9;
+  --muted: #A78BFA;
+  --border: rgba(255,255,255,0.08);
+  --primary-lt: #4C051944;
+  --s1-lt:   #FFF7ED;
+  --s2-lt: #0B1D19;
+  --s3-lt: #221B0B;
+  --s4-lt: #0F172A;
+  --s5-lt: #2A0B1A;
+  --white: #120D1D;
+}
+
+/* SIDEBAR & OVERLAY */
+#sidebar {
+  position: fixed; top: 0; left: 0; width: var(--sidebar-w); height: 100vh;
+  background: var(--primary-dk); color: #E2DEE9;
+  display: flex; flex-direction: column;
+  z-index: 1300; overflow: hidden;
+  transform: translateX(-100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 4px 0 24px rgba(0,0,0,0.3);
+}
+body.sidebar-open #sidebar { transform: translateX(0); }
+
+#sidebar-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.5); backdrop-filter: blur(3px);
+  z-index: 1250; opacity: 0; pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+body.sidebar-open #sidebar-overlay { opacity: 1; pointer-events: auto; }
+
+#sidebar-toggle {
+  position: fixed; top: 72px; left: 24px; z-index: 1200;
+  background: var(--primary); color: white;
+  border: none; border-radius: 30px;
+  padding: 10px 18px; font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 600;
+  letter-spacing: 0.05em; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  display: flex; align-items: center; gap: 8px; transition: all 0.2s;
+}
+#sidebar-toggle:hover { background: var(--accent); transform: translateY(-2px); }
+
+#progress-bar {
+  position: fixed; top: 52px; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  transform-origin: left; transform: scaleX(0); transition: transform 0.1s; z-index: 1105;
+}
+
+#sidebar-header{padding:20px 20px 14px;border-bottom:1px solid rgba(255,255,255,0.1);flex-shrink:0;}
+#sidebar-header .logo{font-family:'Playfair Display',serif;font-size:13px;font-weight:700;color:var(--accent2);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;}
+#sidebar-header .sub{font-size:10.5px;color:rgba(226,222,233,0.6);letter-spacing:0.04em;}
+#sidebar-search{padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.08);flex-shrink:0;}
+#sidebar-search input{width:100%;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:6px;color:#E2DEE9;padding:6px 10px;font-size:12px;font-family:'Source Serif 4',serif;outline:none;transition:border-color 0.2s;}
+#sidebar-search input::placeholder{color:rgba(226,222,233,0.4);}
+#sidebar-search input:focus{border-color:var(--accent2);}
+#sidebar-nav{flex:1;overflow-y:auto;padding:8px 0 20px;}
+#sidebar-nav::-webkit-scrollbar{width:4px;}
+#sidebar-nav::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.15);border-radius:2px;}
+.vol-label{font-size:9.5px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent2);padding:14px 18px 4px;}
+.nav-item{display:block;padding:8px 18px 8px 22px;font-size:12.5px;color:rgba(226,222,233,0.75);text-decoration:none;border-left:2px solid transparent;transition:all 0.15s;line-height:1.4;}
+.nav-item:hover{color:#fff;background:rgba(255,255,255,0.05);border-left-color:var(--accent);}
+.nav-item.active{color:#fff;background:rgba(255,255,255,0.08);border-left-color:var(--accent2);font-weight:600;}
+.nav-item .num{font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(226,222,233,0.4);margin-right:6px;}
+
+/* HERO */
+#hero{background:linear-gradient(135deg,var(--primary-dk) 0%,#881337 60%,#090314 100%);color:white;padding:120px 72px 60px;position:relative;overflow:hidden;}
+#hero::before{content:'';position:absolute;top:-60px;right:-60px;width:380px;height:380px;background:radial-gradient(circle,rgba(255,255,255,0.1) 0%,transparent 70%);pointer-events:none;}
+#hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--primary),var(--accent2),transparent);}
+#hero .eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.16em;color:var(--accent2);text-transform:uppercase;margin-bottom:14px;}
+#hero h1{font-family:'Playfair Display',serif;font-size:38px;font-weight:700;line-height:1.15;margin-bottom:10px;color:#fff;}
+#hero .subtitle{font-size:18px;color:rgba(255,255,255,0.65);font-style:italic;margin-bottom:28px;}
+#hero .badges{display:flex;gap:10px;flex-wrap:wrap;}
+#hero .badge{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:4px 14px;font-size:12px;color:rgba(255,255,255,0.8);font-family:'JetBrains Mono',monospace;}
+
+/* CONTENT */
+.content-wrap{max-width:1140px;margin:0 auto;padding:0 48px 80px;}
+
+/* SECTION HEADER */
+.sec-header{margin-top:60px;margin-bottom:8px;padding:28px 36px;border-radius:10px;display:flex;align-items:center;gap:20px;}
+.sec-header.s1{background:linear-gradient(135deg,#88133708,#88133718);border-left:4px solid var(--s1);}
+.sec-header.s2{background:linear-gradient(135deg,#0D948808,#0D948818);border-left:4px solid var(--s2);}
+.sec-header.s3{background:linear-gradient(135deg,#C2780308,#C2780318);border-left:4px solid var(--s3);}
+.sec-header.s4{background:linear-gradient(135deg,#2563EB08,#2563EB18);border-left:4px solid var(--s4);}
+.sec-header.s5{background:linear-gradient(135deg,#BE185D08,#BE185D18);border-left:4px solid var(--s5);}
+.sec-badge{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;letter-spacing:0.1em;padding:4px 12px;border-radius:4px;white-space:nowrap;flex-shrink:0;}
+.s1 .sec-badge{background:var(--s1);color:white;}
+.s2 .sec-badge{background:var(--s2);color:white;}
+.s3 .sec-badge{background:var(--s3);color:white;}
+.s4 .sec-badge{background:var(--s4);color:white;}
+.s5 .sec-badge{background:var(--s5);color:white;}
+.sec-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;}
+.s1 .sec-title{color:var(--s1);}
+.s2 .sec-title{color:var(--s2);}
+.s3 .sec-title{color:var(--s3);}
+.s4 .sec-title{color:var(--s4);}
+.s5 .sec-title{color:var(--s5);}
+
+/* TOPIC */
+.topic{margin-top:48px;padding-top:48px;border-top:1px solid var(--border);}
+.topic:first-of-type{border-top:none;}
+.topic-header{display:flex;align-items:flex-start;gap:16px;margin-bottom:24px;}
+.topic-num{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;padding:3px 10px;border-radius:4px;margin-top:4px;flex-shrink:0;}
+.s1 .topic-num{background:var(--s1-lt);color:var(--s1);}
+.s2 .topic-num{background:var(--s2-lt);color:var(--s2);}
+.s3 .topic-num{background:var(--s3-lt);color:var(--s3);}
+.s4 .topic-num{background:var(--s4-lt);color:var(--s4);}
+.s5 .topic-num{background:var(--s5-lt);color:var(--s5);}
+.topic h2{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;line-height:1.2;}
+.s1 .topic h2{color:var(--s1);}
+.s2 .topic h2{color:var(--s2);}
+.s3 .topic h2{color:var(--s3);}
+.s4 .topic h2{color:var(--s4);}
+.s5 .topic h2{color:var(--s5);}
+.topic h3{font-family:'Playfair Display',serif;font-size:17px;font-weight:600;color:var(--muted);margin:26px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--border);}
+.topic h4{font-size:13px;font-weight:600;color:var(--muted);letter-spacing:0.06em;text-transform:uppercase;margin:18px 0 8px;font-family:'JetBrains Mono',monospace;}
+.topic p{margin-bottom:12px;color:var(--text);text-align:justify;}
+.topic ul,.topic ol{margin:8px 0 14px 20px;color:var(--text);}
+.topic li{margin-bottom:6px;line-height:1.65;}
+.topic li::marker{color:var(--accent2);}
+.topic strong{color:var(--text);font-weight:600;}
+
+/* TABLES */
+.table-wrap{overflow-x:auto;margin:16px 0 20px;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.06);border:1px solid var(--border);}
+table{width:100%;border-collapse:collapse;font-size:13.5px;background:var(--white);}
+thead tr{background:var(--s1);}
+thead th{color:white;padding:10px 14px;text-align:left;font-family:'Source Serif 4',serif;font-weight:600;font-size:13px;}
+tbody tr:nth-child(even){background:var(--bg2);}
+tbody tr:hover{background:var(--s1-lt);transition:background 0.15s;}
+tbody td{padding:9px 14px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.5;}
+.s2-tbl thead tr{background:var(--s2);}
+.s3-tbl thead tr{background:var(--s3);}
+.s4-tbl thead tr{background:var(--s4);}
+.s5-tbl thead tr{background:var(--s5);}
+
+/* CALLOUTS */
+.callout{margin:18px 0;padding:14px 18px;border-radius:0 8px 8px 0;border-left:4px solid;font-size:14px;line-height:1.65;}
+.callout .label{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;display:block;margin-bottom:4px;}
+.callout.pearl{background:var(--gold-lt);border-color:var(--gold);}
+.callout.pearl .label{color:var(--gold);}
+.callout.warn{background:var(--red-lt);border-color:var(--red);}
+.callout.warn .label{color:var(--red);}
+.callout.clin{background:var(--s2-lt);border-color:var(--s2);}
+.callout.clin .label{color:var(--s2);}
+.callout.exam{background:var(--s4-lt);border-color:var(--s4);}
+.callout.exam .label{color:var(--s4);}
+
+/* VIVA Scenario */
+.viva{background:var(--s1-lt);border:1px solid var(--border);border-left:4px solid var(--s1);border-radius:0 8px 8px 0;padding:16px 20px;margin:20px 0;}
+.viva .vq{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;color:var(--s1);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:8px;}
+.viva .vscenario{font-size:14px;font-weight:600;color:var(--text);margin-bottom:10px;line-height:1.5;}
+.viva .vanswer{font-size:13.5px;color:var(--muted);line-height:1.65;}
+.viva .vanswer ul{margin:6px 0 0 18px;}
+.viva .vanswer li{margin-bottom:4px;}
+
+/* KEY GRID */
+.key-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:10px;margin:14px 0 20px;}
+.key-card{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:12px 14px;font-size:13px;line-height:1.55;}
+.key-card .kc-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;font-weight:600;color:var(--s1);}
+.key-card .kc-val{font-weight:700;font-size:15px;color:var(--text);}
+.key-card.g2 .kc-label{color:var(--s2);}
+.key-card.g3 .kc-label{color:var(--s3);}
+.key-card.red .kc-label{color:var(--red);}
+.key-card.amb .kc-label{color:var(--accent2);}
+
+/* TOP BTN */
+#top-btn{position:fixed;bottom:28px;right:28px;background:var(--primary);color:white;border:none;border-radius:50%;width:44px;height:44px;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,0.2);transition:all 0.2s;opacity:0;pointer-events:none;z-index:1100;}
+#top-btn.show{opacity:1;pointer-events:auto;}
+#top-btn:hover{background:var(--accent2);transform:translateY(-2px);}
+
+@media(max-width:900px){
+  .content-wrap{padding:0 20px 60px;}
+  #hero{padding:80px 20px 40px;}
+  #hero h1{font-size:30px;}
+  #sidebar-toggle{top:64px; left:16px;}
+}
+</style>
+<script src="https://jsdelivr.net" async></script>
+</head>
+<body>
+  <!-- Standardized SIH Navbar -->
+  <nav class="nav" id="mainNav">
+    <div class="nav-left">
+      <a href="../../index.html" class="nav-pill">
+        <div class="nav-logo-img">
+          <img src="../../assets/images/Surgical_Insight_Hub_Logo.png" alt="SIH Logo">
+        </div>
+        <div>
+          <div class="nav-brand-text">Surgical Insight Hub</div>
+          <div class="nav-brand-sub">The Residency Journal</div>
+        </div>
+      </a>
+    </div>
+    <div class="nav-links-pill">
+      <a href="../../index.html">Home</a>
+      <a href="../../notes.html" class="active">Notes</a>
+      <a href="../operative_approach.html">Playbook</a>
+      <a href="../../arena.html?v=4.0.0">MCQ Arena</a>
+      <a href="../../podcast.html">Podcast</a>
+      <a href="../../surgery-talk.html">Surgery Talk</a>
+      <a href="../../about.html">About</a>
+    </div>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+        <svg id="moonIcon" viewBox="0 0 24 24" width="18" height="18"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        <svg id="sunIcon" style="display:none;" viewBox="0 0 24 24" width="18" height="18"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="23" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+      </button>
+      <a href="https://t.me/sugicalInsightHub" target="_blank" class="nav-tg-btn" title="Join Telegram">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="#f0d080"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.89 8.22l-1.97 9.28c-.15.66-.54.82-1.08.51l-3-2.21-1.45 1.39c-.16.16-.3.3-.61.3l.21-3.05 5.56-5.02c.24-.21-.05-.33-.37-.12l-6.87 4.33-2.96-.92c-.64-.2-.66-.64.14-.95l11.57-4.46c.54-.19 1.01.13.83.94z"/></svg>
+      </a>
+      <a href="../../arena.html?v=4.0.0" class="nav-btn arena-btn">MCQ Arena</a>
+      <button class="mob-nav-toggle" onclick="openMobNav()" aria-label="Menu">
+        <div class="hamburger"><span></span><span></span><span></span></div>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mob-nav-overlay" id="mobNavOverlay" onclick="closeMobNav()"></div>
+  <div class="mob-nav-sheet" id="mobNavSheet">
+    <div class="mob-nav-handle"></div>
+    <a href="../../index.html" onclick="closeMobNav()">Home</a>
+    <a href="../../notes.html" onclick="closeMobNav()">Notes</a>
+    <a href="../../notes/operative_approach.html" onclick="closeMobNav()">Playbook</a>
+    <a href="../../podcast.html" onclick="closeMobNav()">Podcast</a>
+    <a href="../../surgery-talk.html" onclick="closeMobNav()">Surgery Talk</a>
+    <a href="../../arena.html" onclick="closeMobNav()">MCQ Arena</a>
+    <a href="../../about.html" onclick="closeMobNav()">About</a>
+    <a href="https://t.me/sugicalInsightHub" target="_blank" rel="noopener" onclick="closeMobNav()" style="color: var(--brand-gold); font-weight: 800;">Join Telegram Community</a>
+  </div>
+
+  <div id="progress-bar"></div>
+  <button id="sidebar-toggle" onclick="toggleSidebar()">
+    <span>📜</span> Sections Menu
+  </button>
+  <div id="sidebar-overlay" onclick="closeSidebar()"></div>
+
+  <!-- SIDEBAR -->
+  <aside id="sidebar">
+    <div id="sidebar-header">
+      <div class="logo">Hemostasis &amp; Transfusion</div>
+      <div class="sub">General Surgery Monograph</div>
+    </div>
+    <div id="sidebar-search">
+      <input oninput="filterNav(this.value)" placeholder="Search sections..." type="text"/>
+    </div>
+    <nav id="sidebar-nav">
+      <div class="vol-label">Pillar 1: Pathophysiology</div>
+      <a class="nav-item" href="#p1-cell-based"><span class="num">1.1</span>Cell-Based Coagulation</a>
+      <a class="nav-item" href="#p1-storage-lesion"><span class="num">1.2</span>Lesion of Storage Mechanics</a>
+      <a class="nav-item" href="#p1-pathology-coag"><span class="num">1.3</span>vWD, HIT &amp; DIC</a>
+      <div class="vol-label">Pillar 2: Calculations</div>
+      <a class="nav-item" href="#p2-components"><span class="num">2.1</span>Blood Component Table</a>
+      <a class="nav-item" href="#p2-hit-4ts"><span class="num">2.2</span>4Ts HIT Scoring Matrix</a>
+      <div class="vol-label">Pillar 3: Resuscitation</div>
+      <a class="nav-item" href="#p3-mtp"><span class="num">3.1</span>Massive Transfusion Protocol</a>
+      <a class="nav-item" href="#p3-trials"><span class="num">3.2</span>Landmark Transfusion Trials</a>
+      <div class="vol-label">Pillar 4: Anticoagulation</div>
+      <a class="nav-item" href="#p4-reversal"><span class="num">4.1</span>DOAC &amp; Warfarin Reversal</a>
+      <a class="nav-item" href="#p4-bridging"><span class="num">4.2</span>Perioperative Bridging</a>
+      <div class="vol-label">Pillar 5: Crisis Care</div>
+      <a class="nav-item" href="#p5-reactions"><span class="num">5.1</span>Transfusion Reactions &amp; Bedside Care</a>
+      <a class="nav-item" href="#p5-trali-taco"><span class="num">5.2</span>TRALI vs. TACO</a>
+      <div class="vol-label">Board Review</div>
+      <a class="nav-item" href="#board-review"><span class="num">6.1</span>ABSITE Core Recall Matrix</a>
+    </nav>
+  </aside>
+
+  <main id="main">
+    <section id="hero">
+      <div class="eyebrow">Hematology &amp; Hemostasis · Monograph</div>
+      <h1>Hemostasis, Transfusion &amp; Coagulopathy</h1>
+      <p class="subtitle">Evidence-based analysis of coagulation cell mechanics, blood bank storage biochemistry, MTP triggers, and reversal algorithms.</p>
+      <div class="badges">
+        <span class="badge">General Surgery</span>
+        <span class="badge">Board Review</span>
+        <span class="badge">ABSITE Gold</span>
+      </div>
+    </section>
+
+    <div class="content-wrap">
+      <!-- Key Statistics Grid -->
+      <div class="key-grid">
+        <div class="key-card">
+          <div class="kc-label">TRICC Target Hb</div>
+          <div class="kc-val">7.0 - 8.0 g/dL</div>
+        </div>
+        <div class="key-card g2">
+          <div class="kc-label">HIT IgG Complex</div>
+          <div class="kc-val">PF4 - Heparin</div>
+        </div>
+        <div class="key-card red">
+          <div class="kc-label">Cryo Payload</div>
+          <div class="kc-val">~250mg Fibrinogen/unit</div>
+        </div>
+        <div class="key-card amb">
+          <div class="kc-label">Reversal target</div>
+          <div class="kc-val">4-Factor PCC</div>
+        </div>
+      </div>
+
+      <!-- Foundational Anchor Callout -->
+      <div class="callout clin" style="border-left-color: var(--primary); background: var(--primary-lt); margin-bottom: 40px;">
+        <span class="label" style="color: var(--primary); font-weight: 700;">Foundational Anchor (From PDF Source Notes)</span>
+        <p style="font-style: italic; color: var(--text);">
+          "Hemostatic cascades, storage lesions of stored blood, transfusion complications, Massive Transfusion Protocols (MTP), bleeding disorders, and perioperative anticoagulation management."
+        </p>
+      </div>
+
+      <!-- PILLAR 1 -->
+      <div class="sec-header s1" id="p1-cell-based">
+        <span class="sec-badge">PILLAR 1</span>
+        <span class="sec-title">Core Pathophysiology &amp; Cellular Mechanics</span>
+      </div>
+      
+      <section class="topic s1">
+        <div class="topic-header"><span class="topic-num">1.1</span><h2>Cell-Based Model of Coagulation</h2></div>
+        <p>The traditional "Y-shaped" cascade model has been replaced by the cell-based model of coagulation, which divides physiological hemostasis into three overlapping phases occurring on cellular surfaces:</p>
+        <ul>
+          <li><strong>Initiation (On Tissue Factor-bearing cells):</strong> Disrupted endothelium exposes subendothelial tissue factor (TF), which binds circulating Factor VIIa. The resulting **TF-VIIa complex** activates Factor IX and Factor X. Activated Factor X (Xa) associates with Factor Va on the TF-bearing cell surface to form the prothrombinase complex, converting a trace amount of prothrombin (Factor II) into thrombin (Factor IIa).</li>
+          <li><strong>Amplification (On platelet surfaces):</strong> This trace thrombin activates nearby platelets, inducing shape change and degranulation. Thrombin activates Factors V, VIII, and XI on the platelet surface, and releases Factor VIII from its chaperone protein, Von Willebrand Factor (vWF).</li>
+          <li><strong>Propagation (On platelet surfaces):</strong> Active Factor IXa pairs with its cofactor VIIIa on the platelet membrane, forming the **intrinsic tenase complex** to activate Factor X. Factor Xa then pairs with Factor Va, forming the **prothrombinase complex**, which generates a massive "thrombin burst." Thrombin rapidly converts soluble fibrinogen into insoluble fibrin monomers, which are subsequently cross-linked and stabilized by Factor XIIIa.</li>
+        </ul>
+      </section>
+
+      <section class="topic s1" id="p1-storage-lesion">
+        <div class="topic-header"><span class="topic-num">1.2</span><h2>The Biochemical "Lesion of Storage" in Banked Packed Red Blood Cells</h2></div>
+        <p>As packed red blood cells (PRBCs) age in cold storage (1–6°C), they undergo progressive biochemical degradation that alters clinical performance:</p>
+        <ul>
+          <li><strong>2,3-DPG Depletion:</strong> Levels of 2,3-diphosphoglycerate (2,3-DPG) fall. 2,3-DPG is required to stabilize the T-state (deoxygenated) of hemoglobin. Its loss **shifts the oxygen-hemoglobin dissociation curve to the left**, increasing oxygen affinity and reducing the release of oxygen to peripheral tissues.</li>
+          <li><strong>Supernatant Hyperkalemia:</strong> Cold temperatures inhibit the ATP-dependent Na<sup>+</sup>/K<sup>+</sup>-ATPase pump. Intracellular potassium leaks out of erythrocytes into the supernatant plasma, which can cause high serum potassium levels when transfused at high volumes.</li>
+          <li><strong>ATP Depletion &amp; Spherocytosis:</strong> Loss of ATP causes cell membrane remodeling and microvesicle shedding, transforming flexible biconcave cells into rigid **spherocytes**. These rigid cells are rapidly cleared by the recipient's splenic macrophages, decreasing post-transfusion survival.</li>
+          <li><strong>Acidosis:</strong> Ongoing anaerobic glycolysis by stored erythrocytes generates lactic acid, lowering the unit pH to &lt; 6.5.</li>
+        </ul>
+      </section>
+
+      <section class="topic s1" id="p1-pathology-coag">
+        <div class="topic-header"><span class="topic-num">1.3</span><h2>Pathogenesis of Coagulopathies: HIT, vWD, and DIC</h2></div>
+        <ul>
+          <li><strong>Heparin-Induced Thrombocytopenia (HIT) Type II:</strong> An autoimmune condition that develops 5–10 days after heparin exposure. IgG antibodies form against **Platelet Factor 4 (PF4)-heparin complexes**. These IgG-PF4-heparin complexes bind to platelet **Fc&gamma;RIIa receptors**, triggering platelet activation, degranulation, and microvascular thrombosis. This leads to thrombocytopenia due to consumption and a severe, prothrombotic state.</li>
+          <li><strong>Von Willebrand Disease (vWD):</strong> The most common inherited bleeding disorder, presenting as:
+            <ul>
+              <li><strong>Type 1 (Quantitative Deficiency):</strong> Mild-to-moderate reduction in normal vWF. Managed with **Desmopressin (DDAVP)**, which stimulates vWF release from endothelial Weibel-Palade bodies.</li>
+              <li><strong>Type 2 (Qualitative Defect):</strong> Normal levels of dysfunctional vWF. Includes subtype **Type 2B**, where increased binding affinity causes spontaneous platelet aggregation and thrombocytopenia. <em>DDAVP is contraindicated in Type 2B as it can worsen thrombocytopenia.</em></li>
+              <li><strong>Type 3 (Severe Deficiency):</strong> Complete absence of vWF and low Factor VIII. Requires replacement with **vWF/Factor VIII concentrates**.</li>
+            </ul>
+          </li>
+          <li><strong>Disseminated Intravascular Coagulation (DIC):</strong> Characterized by systemic tissue factor exposure from trauma or sepsis, leading to widespread thrombin generation. This causes microvascular fibrin thrombosis, organ ischemia, and consumption of platelets and clotting factors, resulting in concurrent hemorrhage.</li>
+        </ul>
+      </section>
+
+      <!-- PILLAR 2 -->
+      <div class="sec-header s2" id="p2-components">
+        <span class="sec-badge">PILLAR 2</span>
+        <span class="sec-title">Component Metrics &amp; Diagnostic Scoring</span>
+      </div>
+      
+      <section class="topic s2">
+        <div class="topic-header"><span class="topic-num">2.1</span><h2>Blood Component Payloads &amp; Expected Yields</h2></div>
+        <p>Intravenous blood component therapy must target specific volume and clinical endpoints:</p>
+        <div class="table-wrap s2-tbl">
+          <table>
+            <thead>
+              <tr>
+                <th>Blood Component</th>
+                <th>Volume</th>
+                <th>Core Composition</th>
+                <th>Clinical Payload / Expected Yield</th>
+                <th>Clinical Indications</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Packed Red Blood Cells (PRBC)</strong></td>
+                <td>~250 – 350 mL</td>
+                <td>Erythrocytes, trace plasma, anticoagulant solution</td>
+                <td>**Increases Hb by 1 g/dL** and Hct by 3% in a standard adult.</td>
+                <td>Symptomatic anemia, active hemorrhage, Hb &lt; 7 g/dL.</td>
+              </tr>
+              <tr>
+                <td><strong>Fresh Frozen Plasma (FFP)</strong></td>
+                <td>~200 – 250 mL</td>
+                <td>All coagulation factors, fibrinogen, albumin, antithrombin</td>
+                <td>**Raises factor activity by 3–5%** per unit in standard adults.</td>
+                <td>Coagulation factor deficiencies, microvascular bleeding, MTP.</td>
+              </tr>
+              <tr>
+                <td><strong>Platelets (Apheresis)</strong></td>
+                <td>~200 – 300 mL</td>
+                <td>Concentrated platelets suspended in plasma</td>
+                <td>**Increases platelet count by 30,000 – 50,000 / &micro;L** per single unit.</td>
+                <td>Thrombocytopenia &lt; 10k/&micro;L (prophylaxis) or &lt; 50k/&micro;L (pre-op), active bleeding.</td>
+              </tr>
+              <tr>
+                <td><strong>Cryoprecipitate</strong></td>
+                <td>~15 – 20 mL per bag (often pooled as 10 bags)</td>
+                <td>Fibrinogen (~250 mg), vWF, Factor VIII, Factor XIII, fibronectin</td>
+                <td>**Increases fibrinogen by 50 mg/dL** per 10-bag pool.</td>
+                <td>Hypofibrinogenemia (fibrinogen &lt; 150 mg/dL), vWD, uremic platelet dysfunction.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="topic s2" id="p2-hit-4ts">
+        <div class="topic-header"><span class="topic-num">2.2</span><h2>The 4Ts Scoring Matrix for Heparin-Induced Thrombocytopenia</h2></div>
+        <p>The 4Ts score determines the clinical probability of HIT Type II before laboratory testing:</p>
+        <div class="table-wrap s2-tbl">
+          <table>
+            <thead>
+              <tr>
+                <th>4T Category</th>
+                <th>2 Points</th>
+                <th>1 Point</th>
+                <th>0 Points</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Thrombocytopenia</strong></td>
+                <td>Platelet fall &gt; 50% AND platelet nadir &ge; 20 &times; 10<sup>9</sup>/L.</td>
+                <td>Platelet fall 30–50% OR platelet nadir 10–19 &times; 10<sup>9</sup>/L.</td>
+                <td>Platelet fall &lt; 30% OR platelet nadir &lt; 10 &times; 10<sup>9</sup>/L.</td>
+              </tr>
+              <tr>
+                <td><strong>Timing</strong> (of platelet fall)</td>
+                <td>Onset day 5–10; OR onset &le; 1 day (if heparin exposed within past 30 days).</td>
+                <td>Onset &gt; day 10; OR onset &le; day 1 (if heparin exposed within past 31–100 days).</td>
+                <td>Platelet fall &le; 4 days without recent heparin exposure.</td>
+              </tr>
+              <tr>
+                <td><strong>Thrombosis</strong> (sequelae)</td>
+                <td>New thrombosis; skin necrosis at injection site; or systemic reaction post-bolus.</td>
+                <td>Progressive/recurrent thrombosis; erythematous skin lesions; suspected thrombosis.</td>
+                <td>None.</td>
+              </tr>
+              <tr>
+                <td><strong>Other causes</strong> (of platelet fall)</td>
+                <td>No other clinical explanation for platelet fall is apparent.</td>
+                <td>Possible alternative explanation is present.</td>
+                <td>Definite alternative explanation is present (e.g., severe sepsis).</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p><strong>Clinical Interpretation:</strong>
+          <br>• <strong>Score 0–3:</strong> Low probability (&gt; 99% Negative Predictive Value). Continue heparin.
+          <br>• <strong>Score 4–5 (Intermediate) or 6–8 (High):</strong> Immediately **stop all heparin products** and initiate a non-heparin anticoagulant (e.g., Argatroban) while awaiting ELISA and Serotonin Release Assays.
+        </p>
+      </section>
+
+      <!-- PILLAR 3 -->
+      <div class="sec-header s3" id="p3-mtp">
+        <span class="sec-badge">PILLAR 3</span>
+        <span class="sec-title">Resuscitative Strategy &amp; Trials</span>
+      </div>
+      
+      <section class="topic s3">
+        <div class="topic-header"><span class="topic-num">3.1</span><h2>Massive Transfusion Protocol (MTP) Administration</h2></div>
+        <p>Massive Transfusion is defined as the transfusion of &ge; 10 units of PRBCs within 24 hours, or &ge; 4 units within 1 hour. Immediate administration must mimic whole blood:</p>
+        <ul>
+          <li><strong>Component Ratio:</strong> Target a <strong>1:1:1 ratio</strong> of PRBCs to FFP to Platelets.</li>
+          <li><strong>Monitoring &amp; Correction Goals:</strong>
+            <br>• Platelets &gt; 50,000/&micro;L (&gt; 100,000/&micro;L in neurotrauma).
+            <br>• Fibrinogen &gt; 150 mg/dL.
+            <br>• Core body temperature &gt; 35°C.
+            <br>• Arterial pH &gt; 7.20.
+            <br>• Ionized Calcium &gt; 1.1 mmol/L. <em>Citrate preservative in FFP and PRBCs binds calcium; monitor and replace with Calcium Gluconate or Chloride.</em>
+          </li>
+        </ul>
+      </section>
+
+      <section class="topic s3" id="p3-trials">
+        <div class="topic-header"><span class="topic-num">3.2</span><h2>Landmark Transfusion &amp; Hemostasis Trials</h2></div>
+        <div class="table-wrap s3-tbl">
+          <table>
+            <thead>
+              <tr>
+                <th>Trial Name</th>
+                <th>Year</th>
+                <th>Primary Intervention</th>
+                <th>Clinical Outcome &amp; Impact on Practice Guidelines</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>TRICC</strong></td>
+                <td>1999</td>
+                <td>Randomized trial comparing restrictive (transfusion trigger Hb &lt; 7 g/dL) vs. liberal (trigger Hb &lt; 10 g/dL) transfusion thresholds in 838 critically ill patients.</td>
+                <td>**Overall 30-day mortality was equivalent or lower in the restrictive group** (22.2% vs. 28.1%, p=0.10). Restrictive strategy was superior in younger and less severely ill patients. Established the standard target Hb of **7.0–8.0 g/dL**.</td>
+              </tr>
+              <tr>
+                <td><strong>PROPPR</strong></td>
+                <td>2015</td>
+                <td>Randomized trial comparing 1:1:1 vs. 1:1:2 (PRBC:FFP:Platelets) transfusion ratios in 680 severely injured bleeding trauma patients.</td>
+                <td>No significant difference in overall 24-hour or 30-day mortality. However, the **1:1:1 group achieved significantly better hemostasis (86% vs 73%) and experienced fewer deaths due to exsanguination at 24 hours (9.2% vs 14.6%)**. Validate early high-ratio protocol.</td>
+              </tr>
+              <tr>
+                <td><strong>PROMMTT</strong></td>
+                <td>2013</td>
+                <td>Prospective observational study evaluating the timing of plasma and platelet administration in 905 trauma patients.</td>
+                <td>Found that **transfusing higher ratios of FFP and platelets early during resuscitation (within the first 6 hours) was associated with significantly decreased mortality** at 24 hours. Led to the design of the PROPPR RCT.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- PILLAR 4 -->
+      <div class="sec-header s4" id="p4-reversal">
+        <span class="sec-badge">PILLAR 4</span>
+        <span class="sec-title">Anticoagulation Reversal &amp; Bridging</span>
+      </div>
+      
+      <section class="topic s4">
+        <div class="topic-header"><span class="topic-num">4.1</span><h2>Anticoagulant Reversal Algorithms</h2></div>
+        <p>Emergency reversal strategies for patients presenting with active hemorrhage or requiring urgent surgery are drug-specific:</p>
+        <ul>
+          <li><strong>Warfarin Reversal:</strong>
+            <br>• **Emergency (Active Major Bleeding):** Administer **4-Factor Prothrombin Complex Concentrate (PCC)** (containing factors II, VII, IX, and X, along with Protein C and S) at 25–50 units/kg based on the baseline INR, plus **10 mg IV Vitamin K** (slow infusion to prevent anaphylaxis). FFP is second-line due to volume constraints and delay in preparation.
+          </li>
+          <li><strong>Direct Oral Anticoagulants (DOACs) Reversal:</strong>
+            <ul>
+              <li><strong>Dabigatran (Direct Thrombin Inhibitor):</strong> Reverse with **Idarucizumab (Praxbind)**, a humanized monoclonal antibody Fab fragment that binds dabigatran with 350-fold higher affinity than thrombin. Dose: 5g IV (given as two 2.5g vials). Hemodialysis is a secondary option.</li>
+              <li><strong>Apixaban &amp; Rivaroxaban (Factor Xa Inhibitors):</strong> Reverse with **Andexanet Alfa (Andexxa)**, a recombinant decoy Factor Xa protein that binds and sequesters the inhibitor. Dose is determined by the DOAC dose and timing. Alternatively, use high-dose 4-Factor PCC (50 units/kg) if Andexanet is unavailable.</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <section class="topic s4" id="p4-bridging">
+        <div class="topic-header"><span class="topic-num">4.2</span><h2>Perioperative Bridging Timelines</h2></div>
+        <p>In elective surgical patients, anticoagulants must be managed to minimize the risk of bleeding while preventing thromboembolism:</p>
+        <ul>
+          <li><strong>Warfarin:</strong> Stop **5 days prior to surgery**. Bridge with therapeutic low-molecular-weight heparin (LMWH, e.g., Enoxaparin 1 mg/kg every 12 hours) in patients at high risk of thromboembolism (e.g., mechanical mitral valve, atrial fibrillation with CHADS<sub>2</sub> &ge; 5, or recent VTE &lt; 3 months). Stop LMWH **24 hours prior to incision**. Restart LMWH and Warfarin 12–24 hours postoperatively once hemostasis is secure.</li>
+          <li><strong>DOACs:</strong> Stop **48 hours prior to high-bleeding-risk surgery** (or 24 hours prior to low-risk procedures). Stop **72 hours prior** in patients with a creatinine clearance &lt; 30 mL/min who are taking dabigatran. Bridging is typically not required due to the rapid onset and offset of these agents.</li>
+        </ul>
+      </section>
+
+      <!-- PILLAR 5 -->
+      <div class="sec-header s5" id="p5-reactions">
+        <span class="sec-badge">PILLAR 5</span>
+        <span class="sec-title">Crisis Care &amp; Transfusion Complications</span>
+      </div>
+      
+      <section class="topic s5">
+        <div class="topic-header"><span class="topic-num">5.1</span><h2>Acute Hemolytic Transfusion Reaction Bedside Protocol</h2></div>
+        <p>Acute Hemolytic Transfusion Reaction (AHTR) is typically caused by ABO incompatibility. This leads to intravascular hemolysis, releasing free hemoglobin that can cause acute kidney injury (AKI) and DIC:</p>
+        
+        <div style="background:var(--white); border:1px solid var(--border); border-radius:8px; padding:24px; margin:20px 0;">
+          <h4 style="color:var(--primary); font-size:16px; margin-bottom:12px; font-weight:700;">Immediate Bedside Action Plan (AHTR)</h4>
+          <ol style="margin-left: 20px; line-height: 1.75;">
+            <li><strong>Stop the Transfusion:</strong> Immediately disconnect the transfusion set from the IV hub. **Do not flush the remaining blood in the line.**</li>
+            <li><strong>Maintain IV Access:</strong> Connect a new IV tubing set and initiate a slow infusion of **0.9% Normal Saline** to maintain access.</li>
+            <li><strong>Clerical Verification:</strong> Re-check the patient ID band against the blood bag tag.</li>
+            <li><strong>Return Blood/Sample:</strong> Return the remaining blood product bag, tubing, and newly drawn patient blood and urine samples to the blood bank for direct Coombs testing.</li>
+            <li><strong>Prevent Renal Injury:</strong> Initiate aggressive IV hydration to maintain a urine output of **100–200 mL/hour** using Normal Saline. Consider alkalinization of urine to prevent precipitation of acid hematin in the renal tubules.</li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="topic s5" id="p5-trali-taco">
+        <div class="topic-header"><span class="topic-num">5.2</span><h2>TRALI vs. TACO Clinical Differential</h2></div>
+        <p>Transfusion-Related Acute Lung Injury (TRALI) and Transfusion-Associated Circulatory Overload (TACO) present with acute respiratory distress, but require different management:</p>
+        
+        <div class="table-wrap s5-tbl">
+          <table>
+            <thead>
+              <tr>
+                <th>Clinical Parameter</th>
+                <th>TRALI (Transfusion-Related Acute Lung Injury)</th>
+                <th>TACO (Transfusion-Associated Circulatory Overload)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Pathophysiology</strong></td>
+                <td>Immune-mediated. Donor antibodies (HLA/HNA) activate recipient neutrophils in the pulmonary vasculature, causing endothelial injury and capillary leak.</td>
+                <td>Hydrostatic overload. Excessive volume or rate of infusion exceeds cardiac capacity, leading to pulmonary congestion.</td>
+              </tr>
+              <tr>
+                <td><strong>Cardiac Output</strong></td>
+                <td>Normal or Hyperdynamic (Non-cardiogenic)</td>
+                <td>Decreased, Left Ventricular Strain (Cardiogenic)</td>
+              </tr>
+              <tr>
+                <td><strong>Central Venous Pressure (CVP) / PAWP</strong></td>
+                <td>Normal or Low</td>
+                <td>Elevated (CVP &gt; 10 mmHg, PAWP &gt; 18 mmHg)</td>
+              </tr>
+              <tr>
+                <td><strong>Brain Natriuretic Peptide (BNP)</strong></td>
+                <td>Normal</td>
+                <td>**Significantly Elevated** (Post/Pre ratio &gt; 1.5)</td>
+              </tr>
+              <tr>
+                <td><strong>Vitals / Temperature</strong></td>
+                <td>**Fever** (Temp elevation &gt; 1°C), **Hypotension**</td>
+                <td>Normal Temp, **Hypertension** (widened pulse pressure)</td>
+              </tr>
+              <tr>
+                <td><strong>Response to Diuretics</strong></td>
+                <td>Minimal to none (can worsen hypotension)</td>
+                <td>**Excellent (therapeutic correction)**</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- BOARD REVIEW -->
+      <div class="sec-header s1" id="board-review" style="margin-top: 60px;">
+        <span class="sec-badge">BOARD REVIEW</span>
+        <span class="sec-title">ABSITE Core Recall Matrix</span>
+      </div>
+      
+      <section class="topic s1">
+        <h3>High-Yield Recall Matrix</h3>
+        <div class="table-wrap">
+          <table style="background: transparent;">
+            <thead>
+              <tr>
+                <th>Board Question Topic</th>
+                <th>Gold Standard Key Fact</th>
+                <th>Surgical Decision / Clinical Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>TRICC Transfusion Target</strong></td>
+                <td>A restrictive transfusion strategy (trigger Hb &lt; 7.0 g/dL) is safe and equivalent to a liberal target in critically ill patients, except those with active myocardial ischemia.</td>
+                <td>Withhold transfusions in stable ICU patients unless Hb drops below 7.0 g/dL.</td>
+              </tr>
+              <tr>
+                <td><strong>HIT Thromboembolic Risk</strong></td>
+                <td>IgG-PF4-heparin complexes activate platelets. Warfarin is contraindicated in acute HIT as it depletes Protein C and can cause venous limb gangrene.</td>
+                <td>Initiate Argatroban. Do not start Warfarin until platelet count has recovered to &gt; 150,000/&micro;L.</td>
+              </tr>
+              <tr>
+                <td><strong>vWD Type 2B Trap</strong></td>
+                <td>Desmopressin (DDAVP) is contraindicated in Type 2B vWD. It causes release of abnormal vWF, leading to platelet aggregation and severe thrombocytopenia.</td>
+                <td>Avoid DDAVP in Type 2B; manage bleeding with Humate-P or intermediate-purity factor concentrates.</td>
+              </tr>
+              <tr>
+                <td><strong>TRALI vs. TACO Management</strong></td>
+                <td>TACO is treated with aggressive loop diuretics. TRALI requires supportive mechanical ventilation; diuretics can worsen shock.</td>
+                <td>Check post-transfusion BNP and vitals to differentiate before administering IV Furosemide.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="viva">
+          <div class="vq">VIVA SCENARIO — TRANSFUSION REACTION</div>
+          <div class="vscenario">A 45-year-old female is undergoing an elective ventral hernia repair. Ten minutes after starting a unit of packed red blood cells, the patient develops a fever of 38.9°C, hypotension (BP 82/40 mmHg), tachycardic arrhythmia, and oozing from her IV site. What is your diagnosis, and what steps do you take?</div>
+          <div class="vanswer">
+            <ul>
+              <li><strong>Diagnosis:</strong> Acute Hemolytic Transfusion Reaction (AHTR) due to ABO incompatibility, presenting with acute distributive shock and secondary DIC.</li>
+              <li><strong>Action:</strong> Immediately stop the transfusion, disconnect the blood tubing, and attach new saline-filled tubing. Do not flush the line.</li>
+              <li><strong>Management Steps:</strong>
+                <ul>
+                  <li>Send the blood unit, tubing, and fresh patient blood/urine samples to the blood bank for Coombs testing and hemolysis assessment.</li>
+                  <li>Initiate aggressive IV crystalloid resuscitation to maintain blood pressure and preserve renal perfusion (target urine output &gt; 100 mL/hour).</li>
+                  <li>Check coagulation parameters (PT, aPTT, Fibrinogen, Platelets) for DIC. Re-verify all patient and unit ID markers.</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <button id="top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+  <script src="../../js/nav-pill.js"></script>
+  <script src="../../js/navigation.js"></script>
+  <script>
+    const progressBar = document.getElementById('progress-bar');
+    const topBtn = document.getElementById('top-btn');
+    const navItems = document.querySelectorAll('.nav-item');
+    const sections = document.querySelectorAll('.sec-header[id], .topic[id]');
+
+    window.addEventListener('scroll', () => {
+      const st = window.scrollY;
+      const dh = document.documentElement.scrollHeight - window.innerHeight;
+      if (progressBar) progressBar.style.transform = `scaleX(${st / dh})`;
+      if (topBtn) topBtn.classList.toggle('show', st > 400);
+      
+      let current = '';
+      sections.forEach(s => { if (st >= s.offsetTop - 120) current = s.id; });
+      navItems.forEach(n => { n.classList.toggle('active', n.getAttribute('href') === '#' + current); });
+    });
+
+    function filterNav(query) {
+      const q = query.toLowerCase();
+      navItems.forEach(item => { item.style.display = (!q || item.textContent.toLowerCase().includes(q)) ? 'block' : 'none'; });
+    }
+
+    navItems.forEach(item => {
+      item.addEventListener('click', e => {
+        e.preventDefault();
+        if(typeof closeSidebar === 'function') closeSidebar();
+        const target = document.querySelector(item.getAttribute('href'));
+        if (target) window.scrollTo({ top: target.getBoundingClientRect().top - 80, behavior: 'smooth' });
+      });
+    });
+  </script>
+</body>
+</html>

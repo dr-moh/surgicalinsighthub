@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Surgical Insight Hub — Shock, Septic Shock &amp; Resuscitation</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/theme.css?v=4.0.0">
+<link rel="stylesheet" href="../../css/shared.css">
+<script>
+  const savedTheme = localStorage.getItem('sih-theme') || 'light';
+  if (savedTheme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+</script>
+<style>
+:root {
+  --primary:   #991B1B; /* Crimson Red */
+  --primary-dk:#7F1D1D;
+  --primary-lt:#FEF2F2;
+  --accent:    #DC2626;
+  --accent2:   #EF4444;
+  --gold:      #B8922A;
+  --gold-lt:   #FEF3C7;
+  --s1:        #991B1B;
+  --s2:        #0D9488;
+  --s3:        #C27803;
+  --s4:        #2563EB;
+  --s5:        #BE185D;
+  --s1-lt:     #FEF2F2;
+  --s2-lt:     #F0FDFA;
+  --s3-lt:     #FEF3C7;
+  --s4-lt:     #EFF6FF;
+  --s5-lt:     #FDF2F8;
+  --red:       #B91C1C;
+  --red-lt:    #FEF2F2;
+  --bg:        #FBFBFC;
+  --bg2:       #F4F4F6;
+  --border:    #E5E7EB;
+  --text:      #1F2937;
+  --muted:     #4B5563;
+  --white:     #FFFFFF;
+  --sidebar-w: 300px;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--bg);color:var(--text);font-size:16.5px;line-height:1.8;}
+
+/* DARK MODE OVERRIDES */
+[data-theme="dark"] {
+  --bg: #09060F;
+  --bg2: #120D1D;
+  --text: #E2DEE9;
+  --muted: #A78BFA;
+  --border: rgba(255,255,255,0.08);
+  --primary-lt: #7F1D1D44;
+  --s1-lt: #7F1D1D44;
+  --s2-lt: #0B1D19;
+  --s3-lt: #221B0B;
+  --s4-lt: #0F172A;
+  --s5-lt: #2A0B1A;
+  --white: #120D1D;
+}
+
+/* SIDEBAR & OVERLAY */
+#sidebar {
+  position: fixed; top: 0; left: 0; width: var(--sidebar-w); height: 100vh;
+  background: var(--primary-dk); color: #E2DEE9;
+  display: flex; flex-direction: column;
+  z-index: 1300; overflow: hidden;
+  transform: translateX(-100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 4px 0 24px rgba(0,0,0,0.3);
+}
+body.sidebar-open #sidebar { transform: translateX(0); }
+
+#sidebar-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.5); backdrop-filter: blur(3px);
+  z-index: 1250; opacity: 0; pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+body.sidebar-open #sidebar-overlay { opacity: 1; pointer-events: auto; }
+
+#sidebar-toggle {
+  position: fixed; top: 72px; left: 24px; z-index: 1200;
+  background: var(--primary); color: white;
+  border: none; border-radius: 30px;
+  padding: 10px 18px; font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 600;
+  letter-spacing: 0.05em; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  display: flex; align-items: center; gap: 8px; transition: all 0.2s;
+}
+#sidebar-toggle:hover { background: var(--accent); transform: translateY(-2px); }
+
+#progress-bar {
+  position: fixed; top: 52px; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  transform-origin: left; transform: scaleX(0); transition: transform 0.1s; z-index: 1105;
+}
+
+#sidebar-header{padding:20px 20px 14px;border-bottom:1px solid rgba(255,255,255,0.1);flex-shrink:0;}
+#sidebar-header .logo{font-family:'Playfair Display',serif;font-size:13px;font-weight:700;color:var(--accent2);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;}
+#sidebar-header .sub{font-size:10.5px;color:rgba(226,222,233,0.6);letter-spacing:0.04em;}
+#sidebar-search{padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.08);flex-shrink:0;}
+#sidebar-search input{width:100%;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:6px;color:#E2DEE9;padding:6px 10px;font-size:12px;font-family:'Source Serif 4',serif;outline:none;transition:border-color 0.2s;}
+#sidebar-search input::placeholder{color:rgba(226,222,233,0.4);}
+#sidebar-search input:focus{border-color:var(--accent2);}
+#sidebar-nav{flex:1;overflow-y:auto;padding:8px 0 20px;}
+#sidebar-nav::-webkit-scrollbar{width:4px;}
+#sidebar-nav::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.15);border-radius:2px;}
+.vol-label{font-size:9.5px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent2);padding:14px 18px 4px;}
+.nav-item{display:block;padding:8px 18px 8px 22px;font-size:12.5px;color:rgba(226,222,233,0.75);text-decoration:none;border-left:2px solid transparent;transition:all 0.15s;line-height:1.4;}
+.nav-item:hover{color:#fff;background:rgba(255,255,255,0.05);border-left-color:var(--accent);}
+.nav-item.active{color:#fff;background:rgba(255,255,255,0.08);border-left-color:var(--accent2);font-weight:600;}
+.nav-item .num{font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(226,222,233,0.4);margin-right:6px;}
+
+/* HERO */
+#hero{background:linear-gradient(135deg,var(--primary-dk) 0%,#991B1B 60%,#090314 100%);color:white;padding:120px 72px 60px;position:relative;overflow:hidden;}
+#hero::before{content:'';position:absolute;top:-60px;right:-60px;width:380px;height:380px;background:radial-gradient(circle,rgba(255,255,255,0.1) 0%,transparent 70%);pointer-events:none;}
+#hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--primary),var(--accent2),transparent);}
+#hero .eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.16em;color:var(--accent2);text-transform:uppercase;margin-bottom:14px;}
+#hero h1{font-family:'Playfair Display',serif;font-size:38px;font-weight:700;line-height:1.15;margin-bottom:10px;color:#fff;}
+#hero .subtitle{font-size:18px;color:rgba(255,255,255,0.65);font-style:italic;margin-bottom:28px;}
+#hero .badges{display:flex;gap:10px;flex-wrap:wrap;}
+#hero .badge{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:4px 14px;font-size:12px;color:rgba(255,255,255,0.8);font-family:'JetBrains Mono',monospace;}
+
+/* CONTENT */
+.content-wrap{max-width:1140px;margin:0 auto;padding:0 48px 80px;}
+
+/* SECTION HEADER */
+.sec-header{margin-top:60px;margin-bottom:8px;padding:28px 36px;border-radius:10px;display:flex;align-items:center;gap:20px;}
+.sec-header.s1{background:linear-gradient(135deg,#991B1B08,#991B1B18);border-left:4px solid var(--s1);}
+.sec-header.s2{background:linear-gradient(135deg,#0D948808,#0D948818);border-left:4px solid var(--s2);}
+.sec-header.s3{background:linear-gradient(135deg,#C2780308,#C2780318);border-left:4px solid var(--s3);}
+.sec-header.s4{background:linear-gradient(135deg,#2563EB08,#2563EB18);border-left:4px solid var(--s4);}
+.sec-header.s5{background:linear-gradient(135deg,#BE185D08,#BE185D18);border-left:4px solid var(--s5);}
+.sec-badge{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;letter-spacing:0.1em;padding:4px 12px;border-radius:4px;white-space:nowrap;flex-shrink:0;}
+.s1 .sec-badge{background:var(--s1);color:white;}
+.s2 .sec-badge{background:var(--s2);color:white;}
+.s3 .sec-badge{background:var(--s3);color:white;}
+.s4 .sec-badge{background:var(--s4);color:white;}
+.s5 .sec-badge{background:var(--s5);color:white;}
+.sec-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;}
+.s1 .sec-title{color:var(--s1);}
+.s2 .sec-title{color:var(--s2);}
+.s3 .sec-title{color:var(--s3);}
+.s4 .sec-title{color:var(--s4);}
+.s5 .sec-title{color:var(--s5);}
+
+/* TOPIC */
+.topic{margin-top:48px;padding-top:48px;border-top:1px solid var(--border);}
+.topic:first-of-type{border-top:none;}
+.topic-header{display:flex;align-items:flex-start;gap:16px;margin-bottom:24px;}
+.topic-num{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;padding:3px 10px;border-radius:4px;margin-top:4px;flex-shrink:0;}
+.s1 .topic-num{background:var(--s1-lt);color:var(--s1);}
+.s2 .topic-num{background:var(--s2-lt);color:var(--s2);}
+.s3 .topic-num{background:var(--s3-lt);color:var(--s3);}
+.s4 .topic-num{background:var(--s4-lt);color:var(--s4);}
+.s5 .topic-num{background:var(--s5-lt);color:var(--s5);}
+.topic h2{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;line-height:1.2;}
+.s1 .topic h2{color:var(--s1);}
+.s2 .topic h2{color:var(--s2);}
+.s3 .topic h2{color:var(--s3);}
+.s4 .topic h2{color:var(--s4);}
+.s5 .topic h2{color:var(--s5);}
+.topic h3{font-family:'Playfair Display',serif;font-size:17px;font-weight:600;color:var(--muted);margin:26px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--border);}
+.topic h4{font-size:13px;font-weight:600;color:var(--muted);letter-spacing:0.06em;text-transform:uppercase;margin:18px 0 8px;font-family:'JetBrains Mono',monospace;}
+.topic p{margin-bottom:12px;color:var(--text);text-align:justify;}
+.topic ul,.topic ol{margin:8px 0 14px 20px;color:var(--text);}
+.topic li{margin-bottom:6px;line-height:1.65;}
+.topic li::marker{color:var(--accent2);}
+.topic strong{color:var(--text);font-weight:600;}
+
+/* TABLES */
+.table-wrap{overflow-x:auto;margin:16px 0 20px;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.06);border:1px solid var(--border);}
+table{width:100%;border-collapse:collapse;font-size:13.5px;background:var(--white);}
+thead tr{background:var(--s1);}
+thead th{color:white;padding:10px 14px;text-align:left;font-family:'Source Serif 4',serif;font-weight:600;font-size:13px;}
+tbody tr:nth-child(even){background:var(--bg2);}
+tbody tr:hover{background:var(--s1-lt);transition:background 0.15s;}
+tbody td{padding:9px 14px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.5;}
+.s2-tbl thead tr{background:var(--s2);}
+.s3-tbl thead tr{background:var(--s3);}
+.s4-tbl thead tr{background:var(--s4);}
+.s5-tbl thead tr{background:var(--s5);}
+
+/* CALLOUTS */
+.callout{margin:18px 0;padding:14px 18px;border-radius:0 8px 8px 0;border-left:4px solid;font-size:14px;line-height:1.65;}
+.callout .label{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;display:block;margin-bottom:4px;}
+.callout.pearl{background:var(--gold-lt);border-color:var(--gold);}
+.callout.pearl .label{color:var(--gold);}
+.callout.warn{background:var(--red-lt);border-color:var(--red);}
+.callout.warn .label{color:var(--red);}
+.callout.clin{background:var(--s2-lt);border-color:var(--s2);}
+.callout.clin .label{color:var(--s2);}
+.callout.exam{background:var(--s4-lt);border-color:var(--s4);}
+.callout.exam .label{color:var(--s4);}
+
+/* VIVA Scenario */
+.viva{background:var(--s1-lt);border:1px solid var(--border);border-left:4px solid var(--s1);border-radius:0 8px 8px 0;padding:16px 20px;margin:20px 0;}
+.viva .vq{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;color:var(--s1);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:8px;}
+.viva .vscenario{font-size:14px;font-weight:600;color:var(--text);margin-bottom:10px;line-height:1.5;}
+.viva .vanswer{font-size:13.5px;color:var(--muted);line-height:1.65;}
+.viva .vanswer ul{margin:6px 0 0 18px;}
+.viva .vanswer li{margin-bottom:4px;}
+
+/* KEY GRID */
+.key-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:10px;margin:14px 0 20px;}
+.key-card{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:12px 14px;font-size:13px;line-height:1.55;}
+.key-card .kc-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;font-weight:600;color:var(--s1);}
+.key-card .kc-val{font-weight:700;font-size:15px;color:var(--text);}
+.key-card.g2 .kc-label{color:var(--s2);}
+.key-card.g3 .kc-label{color:var(--s3);}
+.key-card.red .kc-label{color:var(--red);}
+.key-card.amb .kc-label{color:var(--accent2);}
+
+/* TOP BTN */
+#top-btn{position:fixed;bottom:28px;right:28px;background:var(--primary);color:white;border:none;border-radius:50%;width:44px;height:44px;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,0.2);transition:all 0.2s;opacity:0;pointer-events:none;z-index:1100;}
+#top-btn.show{opacity:1;pointer-events:auto;}
+#top-btn:hover{background:var(--accent2);transform:translateY(-2px);}
+
+@media(max-width:900px){
+  .content-wrap{padding:0 20px 60px;}
+  #hero{padding:80px 20px 40px;}
+  #hero h1{font-size:30px;}
+  #sidebar-toggle{top:64px; left:16px;}
+}
+</style>
+<script src="https://jsdelivr.net" async></script>
+</head>
+<body>
+  <!-- Standardized SIH Navbar -->
+  <nav class="nav" id="mainNav">
+    <div class="nav-left">
+      <a href="../../index.html" class="nav-pill">
+        <div class="nav-logo-img">
+          <img src="../../assets/images/Surgical_Insight_Hub_Logo.png" alt="SIH Logo">
+        </div>
+        <div>
+          <div class="nav-brand-text">Surgical Insight Hub</div>
+          <div class="nav-brand-sub">The Residency Journal</div>
+        </div>
+      </a>
+    </div>
+    <div class="nav-links-pill">
+      <a href="../../index.html">Home</a>
+      <a href="../../notes.html" class="active">Notes</a>
+      <a href="../operative_approach.html">Playbook</a>
+      <a href="../../arena.html?v=4.0.0">MCQ Arena</a>
+      <a href="../../podcast.html">Podcast</a>
+      <a href="../../surgery-talk.html">Surgery Talk</a>
+      <a href="../../about.html">About</a>
+    </div>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+        <svg id="moonIcon" viewBox="0 0 24 24" width="18" height="18"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        <svg id="sunIcon" style="display:none;" viewBox="0 0 24 24" width="18" height="18"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+      </button>
+      <a href="https://t.me/sugicalInsightHub" target="_blank" class="nav-tg-btn" title="Join Telegram">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="#f0d080"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.89 8.22l-1.97 9.28c-.15.66-.54.82-1.08.51l-3-2.21-1.45 1.39c-.16.16-.3.3-.61.3l.21-3.05 5.56-5.02c.24-.21-.05-.33-.37-.12l-6.87 4.33-2.96-.92c-.64-.2-.66-.64.14-.95l11.57-4.46c.54-.19 1.01.13.83.94z"/></svg>
+      </a>
+      <a href="../../arena.html?v=4.0.0" class="nav-btn arena-btn">MCQ Arena</a>
+      <button class="mob-nav-toggle" onclick="openMobNav()" aria-label="Menu">
+        <div class="hamburger"><span></span><span></span><span></span></div>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mob-nav-overlay" id="mobNavOverlay" onclick="closeMobNav()"></div>
+  <div class="mob-nav-sheet" id="mobNavSheet">
+    <div class="mob-nav-handle"></div>
+    <a href="../../index.html" onclick="closeMobNav()">Home</a>
+    <a href="../../notes.html" onclick="closeMobNav()">Notes</a>
+    <a href="../../notes/operative_approach.html" onclick="closeMobNav()">Playbook</a>
+    <a href="../../podcast.html" onclick="closeMobNav()">Podcast</a>
+    <a href="../../surgery-talk.html" onclick="closeMobNav()">Surgery Talk</a>
+    <a href="../../arena.html" onclick="closeMobNav()">MCQ Arena</a>
+    <a href="../../about.html" onclick="closeMobNav()">About</a>
+    <a href="https://t.me/sugicalInsightHub" target="_blank" rel="noopener" onclick="closeMobNav()" style="color: var(--brand-gold); font-weight: 800;">Join Telegram Community</a>
+  </div>
+
+  <div id="progress-bar"></div>
+  <button id="sidebar-toggle" onclick="toggleSidebar()">
+    <span>📜</span> Sections Menu
+  </button>
+  <div id="sidebar-overlay" onclick="closeSidebar()"></div>
+
+  <!-- SIDEBAR -->
+  <aside id="sidebar">
+    <div id="sidebar-header">
+      <div class="logo">Shock &amp; Resuscitation</div>
+      <div class="sub">General Surgery Monograph</div>
+    </div>
+    <div id="sidebar-search">
+      <input oninput="filterNav(this.value)" placeholder="Search sections..." type="text"/>
+    </div>
+    <nav id="sidebar-nav">
+      <div class="vol-label">Pillar 1: Pathophysiology</div>
+      <a class="nav-item" href="#p1-patho"><span class="num">1.1</span>Cellular Energy Deficits</a>
+      <a class="nav-item" href="#p1-reflex"><span class="num">1.2</span>Baro/Chemoreceptor Loops</a>
+      <a class="nav-item" href="#p1-sepsis3"><span class="num">1.3</span>SIRS vs Sepsis-3</a>
+      <a class="nav-item" href="#p1-cytokines"><span class="num">1.4</span>Septic Cytokine Cascades</a>
+      <div class="vol-label">Pillar 2: Diagnostics</div>
+      <a class="nav-item" href="#p2-atls"><span class="num">2.1</span>ATLS Classification Table</a>
+      <a class="nav-item" href="#p2-index"><span class="num">2.2</span>Shock Index &amp; Lactate</a>
+      <div class="vol-label">Pillar 3: Optimization</div>
+      <a class="nav-item" href="#p3-bundle"><span class="num">3.1</span>Surviving Sepsis Bundle</a>
+      <a class="nav-item" href="#p3-trials"><span class="num">3.2</span>Landmark Resuscitation Trials</a>
+      <div class="vol-label">Pillar 4: Strategy</div>
+      <a class="nav-item" href="#p4-source"><span class="num">4.1</span>Source Control &amp; Hemorrhage</a>
+      <div class="vol-label">Pillar 5: Postoperative</div>
+      <a class="nav-item" href="#p5-vasopressors"><span class="num">5.1</span>Vasopressor Titration Protocols</a>
+      <div class="vol-label">Board Review</div>
+      <a class="nav-item" href="#board-review"><span class="num">6.1</span>ABSITE High-Yield Recall</a>
+    </nav>
+  </aside>
+
+  <main id="main">
+    <section id="hero">
+      <div class="eyebrow">Surgical Critical Care · Monograph</div>
+      <h1>Shock, Septic Shock &amp; Resuscitation</h1>
+      <p class="subtitle">Evidence-based cellular, molecular, and clinical algorithms for the diagnosis and management of shock states.</p>
+      <div class="badges">
+        <span class="badge">General Surgery</span>
+        <span class="badge">Board Review</span>
+        <span class="badge">ABSITE Gold</span>
+      </div>
+    </section>
+
+    <div class="content-wrap">
+      <!-- Key Statistics Grid -->
+      <div class="key-grid">
+        <div class="key-card">
+          <div class="kc-label">Lactate Threshold</div>
+          <div class="kc-val">&gt;2.0 mmol/L</div>
+        </div>
+        <div class="key-card g2">
+          <div class="kc-label">Target MAP Goal</div>
+          <div class="kc-val">&ge;65 mmHg</div>
+        </div>
+        <div class="key-card red">
+          <div class="kc-label">Sepsis-3 Criterion</div>
+          <div class="kc-val">SOFA &ge;2 Points</div>
+        </div>
+        <div class="key-card amb">
+          <div class="kc-label">Critical Shock Index</div>
+          <div class="kc-val">&gt;0.9 (Severe &gt;1.3)</div>
+        </div>
+      </div>
+
+      <!-- PILLAR 1 -->
+      <div class="sec-header s1" id="p1-patho">
+        <span class="sec-badge">PILLAR 1</span>
+        <span class="sec-title">Core Pathophysiology &amp; Cellular Mechanisms</span>
+      </div>
+      
+      <section class="topic s1">
+        <div class="topic-header"><span class="topic-num">1.1</span><h2>Cellular Energy Deficits &amp; Metabolic Collapse</h2></div>
+        <p>At the cellular level, shock represents a systemic failure of oxygen and nutrient delivery to mitochondria, causing a rapid shift from aerobic oxidative phosphorylation to anaerobic glycolysis. The consequences are immediate and catastrophic:</p>
+        <ul>
+          <li><strong>ATP Depletion:</strong> Aerobic metabolism yields 36–38 moles of ATP per glucose molecule. Anaerobic glycolysis yields a mere 2 moles. As cellular glycogen reserves deplete, ATP production collapses.</li>
+          <li><strong>Na+/K+ ATPase Pump Failure:</strong> The loss of ATP directly disables the active, membrane-bound <em>Na+/K+ ATPase</em> cotransporter. Sodium accumulates intracellularly, pulling water in down its osmotic gradient. This causes severe cellular swelling, organelle blebbing, and eventual cell membrane rupture.</li>
+          <li><strong>Intracellular Calcium Overload:</strong> Depletion of ATP halts the activity of the energy-dependent <em>calcium-magnesium ATPase</em> pump (which normally sequesters calcium in the sarcoplasmic reticulum and expels it from the cell). Intracellular Ca<sup>2+</sup> levels surge, activating harmful intracellular proteases (calpains), endonucleases, and phospholipases that digest key structural proteins, disrupt the mitochondrial membrane, and trigger apoptotic cell death.</li>
+          <li><strong>Lactic Acidosis:</strong> To regenerate NAD<sup>+</sup> and sustain anaerobic ATP production, lactate dehydrogenase converts pyruvate to lactate. The systemic accumulation of lactic acid, coupled with hydrogen ion accumulation from ATP hydrolysis, produces severe intracellular and extracellular metabolic acidosis (pH &lt; 7.20), depressing myocardial contractility and blunting the vascular response to exogenous catecholamines.</li>
+        </ul>
+      </section>
+
+      <section class="topic s1" id="p1-reflex">
+        <div class="topic-header"><span class="topic-num">1.2</span><h2>Baroreceptor &amp; Chemoreceptor Neuroendocrine Feedback Loops</h2></div>
+        <p>The human body counters systemic arterial hypotension through highly coordinated neural and endocrine baroreflex systems:</p>
+        <ul>
+          <li><strong>High-Pressure Baroreceptors:</strong> Located in the <strong>carotid sinus</strong> (transmitting signals via the glossopharyngeal nerve, CN IX) and the <strong>aortic arch</strong> (transmitting signals via the vagus nerve, CN X). Under physiologic conditions, baseline arterial pressure causes tonic discharge from these receptors, inhibiting the cardiovascular sympathetic centers in the medulla oblongata (Nucleus Tractus Solitarius, NTS). When blood pressure falls, the decrease in arterial wall stretch diminishes baroreceptor firing. This disinhibits the sympathetic vasomotor centers, driving systemic catecholamine discharge (epinephrine and norepinephrine).</li>
+          <li><strong>Effector Response:</strong> Sympathetic activation drives &alpha;<sub>1</sub>-mediated vasoconstriction of arterioles (splanchnic and cutaneous beds) to preserve flow to the brain and heart. Epinephrine drives &beta;<sub>1</sub> stimulation, increasing heart rate and myocardial contractility. Simultaneously, &beta;<sub>2</sub> stimulation induces bronchodilation and skeletal muscle arteriolar vasodilation.</li>
+          <li><strong>Chemoreceptors:</strong> Peripheral chemoreceptors in the <strong>carotid bodies</strong> and <strong>aortic body</strong> monitor oxygen tension (PaO<sub>2</sub>), carbon dioxide tension (PaCO<sub>2</sub>), and pH. Under severe hypoperfusion, localized hypoxia and acidosis trigger intense chemoreceptor discharge. This directly stimulates the medullary respiratory centers to increase tidal volume and respiratory rate (hyperventilation), promoting respiratory alkalosis to compensate for systemic metabolic lactic acidosis.</li>
+        </ul>
+        <div class="callout clin">
+          <span class="label">Endocrine Response Activation</span>
+          Decreased renal perfusion pressure detects a drop in pressure via the juxtaglomerular apparatus, triggering the renin-angiotensin-aldosterone system (RAAS). Angiotensin II acts as a potent direct vasoconstrictor, while aldosterone increases sodium and water retention in the distal collecting duct. Concurrently, pituitary release of vasopressin (Antidiuretic Hormone, ADH) acts on vascular V<sub>1</sub> receptors to induce profound vasoconstriction.
+        </div>
+      </section>
+
+      <section class="topic s1" id="p1-sepsis3">
+        <div class="topic-header"><span class="topic-num">1.3</span><h2>SIRS vs. Sepsis-3 (SOFA vs. qSOFA Shift)</h2></div>
+        <p>The clinical definition of sepsis has transitioned from a focus on the systemic inflammatory response to a focus on organ dysfunction. The <strong>Sepsis-3 Consensus (2016)</strong> redefined sepsis as "life-threatening organ dysfunction caused by a dysregulated host response to infection."</p>
+        <ul>
+          <li><strong>SIRS Criteria (Sepsis-1 and 2):</strong> Historically defined by at least two of: Temp &lt; 36°C or &gt; 38°C; HR &gt; 90 bpm; RR &gt; 20 bpm or PaCO<sub>2</sub> &lt; 32 mmHg; WBC &lt; 4,000/&micro;L or &gt; 12,000/&micro;L (or &gt; 10% bands). SIRS was abandoned because it lacked specificity; simple sterile physiological stress (burns, pancreatitis) meets SIRS criteria.</li>
+          <li><strong>Sepsis-3 SOFA Definition:</strong> Sepsis is now defined by an acute change in the total <strong>Sequential Organ Failure Assessment (SOFA)</strong> score of <strong>&ge; 2 points</strong> secondary to an infection. A SOFA score of &ge; 2 points correlates with an in-hospital mortality rate of over 10%.</li>
+        </ul>
+        
+        <h4>SOFA Scoring Parameters</h4>
+        <div class="table-wrap s1-tbl">
+          <table>
+            <thead>
+              <tr>
+                <th>SOFA System Score</th>
+                <th>1 Point</th>
+                <th>2 Points</th>
+                <th>3 Points</th>
+                <th>4 Points</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Respiration:</strong> PaO<sub>2</sub>/FiO<sub>2</sub> (mmHg)</td>
+                <td>&lt; 400</td>
+                <td>&lt; 300</td>
+                <td>&lt; 200 (with respiratory support)</td>
+                <td>&lt; 100 (with respiratory support)</td>
+              </tr>
+              <tr>
+                <td><strong>Coagulation:</strong> Platelets (&times;10<sup>3</sup>/&micro;L)</td>
+                <td>&lt; 150</td>
+                <td>&lt; 100</td>
+                <td>&lt; 50</td>
+                <td>&lt; 20</td>
+              </tr>
+              <tr>
+                <td><strong>Liver:</strong> Bilirubin (mg/dL)</td>
+                <td>1.2 – 1.9</td>
+                <td>2.0 – 5.9</td>
+                <td>6.0 – 11.9</td>
+                <td>&ge; 12.0</td>
+              </tr>
+              <tr>
+                <td><strong>Cardiovascular:</strong> Hypotension</td>
+                <td>MAP &lt; 70 mmHg</td>
+                <td>Dopamine &le; 5 or Dobutamine (any dose)</td>
+                <td>Dopamine &gt; 5 OR Norepinephrine &le; 0.1</td>
+                <td>Dopamine &gt; 15 OR Norepinephrine &gt; 0.1</td>
+              </tr>
+              <tr>
+                <td><strong>CNS:</strong> Glasgow Coma Scale</td>
+                <td>13 – 14</td>
+                <td>10 – 12</td>
+                <td>6 – 9</td>
+                <td>&lt; 6</td>
+              </tr>
+              <tr>
+                <td><strong>Renal:</strong> Creatinine (mg/dL) or UO</td>
+                <td>1.2 – 1.9</td>
+                <td>2.0 – 3.4</td>
+                <td>3.5 – 4.9 or &lt; 500 mL/day</td>
+                <td>&ge; 5.0 or &lt; 200 mL/day</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>The <strong>qSOFA (quick SOFA)</strong> score, composed of RR &ge; 22/min, altered mentation (GCS &lt; 15), and SBP &le; 100 mmHg, was introduced as a bedside screening tool. Surviving Sepsis guidelines have de-emphasized qSOFA, noting that it lacks sensitivity for early screening compared to SIRS or lactate tracking.</p>
+      </section>
+
+      <section class="topic s1" id="p1-cytokines">
+        <div class="topic-header"><span class="topic-num">1.4</span><h2>Septic Shock Cytokine Cascades &amp; Vasodilatory Mechanics</h2></div>
+        <p>Septic shock is defined under Sepsis-3 as a subset of sepsis in which underlying circulatory and cellular/metabolic abnormalities are profound enough to substantially increase mortality. The cascade is driven by a dysregulated immune response:</p>
+        <ol>
+          <li><strong>Pathogen Recognition:</strong> Lipopolysaccharide (LPS, endotoxin) from Gram-negative bacteria or lipoteichoic acid from Gram-positive cells binds to circulating Lipopolysaccharide-Binding Protein (LBP). This complex is presented to CD14 and Toll-Like Receptor 4 (TLR-4) on macrophages and dendritic cells.</li>
+          <li><strong>Signal Transduction:</strong> TLR-4 activation triggers the myeloid differentiation primary response 88 (MyD88) dependent pathway, translocating <strong>Nuclear Factor kappa B (NF-&kappa;B)</strong> into the nucleus.</li>
+          <li><strong>Pro-inflammatory Cytokine Burst:</strong> NF-&kappa;B upregulates gene transcription of primary inflammatory cytokines: <strong>Tumor Necrosis Factor-alpha (TNF-&alpha;)</strong>, <strong>Interleukin-1 (IL-1)</strong>, and <strong>Interleukin-6 (IL-6)</strong>.</li>
+          <li><strong>Inducible Nitric Oxide Synthase (iNOS) Activation:</strong> TNF-&alpha; and IL-1 directly stimulate vascular endothelial and smooth muscle cells to express the calcium-independent enzyme <strong>iNOS</strong>. Unlike baseline endothelial NOS, iNOS produces massive, continuous quantities of <strong>Nitric Oxide (NO)</strong>.</li>
+          <li><strong>Pathological Vasodilation:</strong> High local NO levels diffuse into vascular smooth muscle cells, binding to soluble guanylyl cyclase. This elevates intracellular cyclic GMP (cGMP), activating protein kinase G, which closes L-type calcium channels and opens potassium channels. The resulting vascular smooth muscle hyperpolarization prevents contraction, causing profound, catecholamine-refractory arterial vasodilation and vascular collapse.</li>
+        </ol>
+      </section>
+
+      <!-- PILLAR 2 -->
+      <div class="sec-header s2" id="p2-atls">
+        <span class="sec-badge">PILLAR 2</span>
+        <span class="sec-title">Clinical Presentation &amp; Diagnostic Workup</span>
+      </div>
+      
+      <section class="topic s2">
+        <div class="topic-header"><span class="topic-num">2.1</span><h2>ATLS Hypovolemic Shock Classification Table</h2></div>
+        <p>The Advanced Trauma Life Support (ATLS 11th Edition) system categorizes hemorrhagic shock into four distinct classes based on systemic clinical parameters. resuscitating patients based on these physiologic findings is crucial:</p>
+        <div class="table-wrap s2-tbl">
+          <table>
+            <thead>
+              <tr>
+                <th>Resuscitative Parameter</th>
+                <th>Class I (Mild)</th>
+                <th>Class II (Moderate)</th>
+                <th>Class III (Severe)</th>
+                <th>Class IV (Critical)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Approximate Blood Loss (mL)</strong></td>
+                <td>&lt; 750 mL</td>
+                <td>750 – 1500 mL</td>
+                <td>1500 – 2000 mL</td>
+                <td>&gt; 2000 mL</td>
+              </tr>
+              <tr>
+                <td><strong>% Circulating Blood Volume Lost</strong></td>
+                <td>&lt; 15%</td>
+                <td>15% – 30%</td>
+                <td>30% – 40%</td>
+                <td>&gt; 40%</td>
+              </tr>
+              <tr>
+                <td><strong>Heart Rate (BPM)</strong></td>
+                <td>&lt; 100 bpm</td>
+                <td>100 – 120 bpm</td>
+                <td>120 – 140 bpm</td>
+                <td>&gt; 140 bpm</td>
+              </tr>
+              <tr>
+                <td><strong>Systolic Blood Pressure (SBP)</strong></td>
+                <td>Normal</td>
+                <td>Normal</td>
+                <td>Decreased</td>
+                <td>Markedly Decreased</td>
+              </tr>
+              <tr>
+                <td><strong>Pulse Pressure (PP)</strong></td>
+                <td>Normal / Increased</td>
+                <td>Decreased</td>
+                <td>Decreased</td>
+                <td>Decreased</td>
+              </tr>
+              <tr>
+                <td><strong>Respiratory Rate (RR)</strong></td>
+                <td>12 – 20 bpm</td>
+                <td>20 – 30 bpm</td>
+                <td>30 – 40 bpm</td>
+                <td>&gt; 35 bpm</td>
+              </tr>
+              <tr>
+                <td><strong>Urine Output (mL/hr)</strong></td>
+                <td>&gt; 30 mL/hr</td>
+                <td>20 – 30 mL/hr</td>
+                <td>5 – 15 mL/hr</td>
+                <td>Negligible</td>
+              </tr>
+              <tr>
+                <td><strong>Mental Status</strong></td>
+                <td>Slightly anxious</td>
+                <td>Mildly anxious</td>
+                <td>Confused / Anxious</td>
+                <td>Lethargic / Obtunded</td>
+              </tr>
+              <tr>
+                <td><strong>Initial Resuscitation Fluid</strong></td>
+                <td>Crystalloid</td>
+                <td>Crystalloid</td>
+                <td>Crystalloid + Blood</td>
+                <td>Massive Transfusion (MTP)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="callout warn">
+          <span class="label">Pulse Pressure Physiology</span>
+          Class II hemorrhagic shock displays a narrowed pulse pressure. This is driven by an increase in diastolic pressure resulting from sympathetic &alpha;<sub>1</sub>-mediated vasoconstriction, even when the systolic pressure remains normal. SBP is not a sensitive indicator for early shock.
+        </div>
+      </section>
+
+      <section class="topic s2" id="p2-index">
+        <div class="topic-header"><span class="topic-num">2.2</span><h2>Shock Index &amp; Serum Lactate Clearance Kinetics</h2></div>
+        <p>Two critical markers are utilized to screen for occult tissue hypoperfusion (compensated shock) and predict clinical mortality:</p>
+        
+        <h3>1. The Shock Index (SI)</h3>
+        <p>Calculated as the ratio of Heart Rate to Systolic Blood Pressure:</p>
+        <div style="font-family:'JetBrains Mono',monospace; background:var(--bg2); padding:12px; border-radius:6px; margin-bottom:14px; text-align:center; font-size:18px;">
+          Shock Index (SI) = HR (bpm) / SBP (mmHg)
+        </div>
+        <ul>
+          <li><strong>Physiologic Normal:</strong> 0.5 – 0.7.</li>
+          <li><strong>Threshold &gt; 0.9:</strong> Indicates occult hypoperfusion (normal SBP masked by tachycardia). Associated with a high risk of elevated lactate, ICU admission, and transfusion requirements.</li>
+          <li><strong>Threshold &gt; 1.3:</strong> Strong predictor of emergency blood transfusion protocol activation, massive transfusion requirements, and elevated 30-day mortality.</li>
+        </ul>
+
+        <h3>2. Serum Lactate &amp; Base Deficit Kinetics</h3>
+        <ul>
+          <li><strong>Base Deficit:</strong> Calculated from arterial blood gases. A base deficit of <strong>&lt; -4 mEq/L</strong> is a sensitive marker of occult tissue hypoperfusion in trauma. A base deficit of <strong>&lt; -10 mEq/L</strong> correlates with severe hemorrhagic shock, coagulopathy, and a high risk of death.</li>
+          <li><strong>Lactate Clearance:</strong> Tracking absolute lactate clearance is a prognostic marker. A <strong>lactate clearance rate of &ge; 10% every 2 hours</strong> during the first 6 hours of resuscitation is associated with decreased mortality. Failing to clear lactate is a strong indicator of inadequate resuscitation or ongoing source hemorrhage.</li>
+        </ul>
+      </section>
+
+      <!-- PILLAR 3 -->
+      <div class="sec-header s3" id="p3-bundle">
+        <span class="sec-badge">PILLAR 3</span>
+        <span class="sec-title">Non-Operative Management &amp; Medical Optimization</span>
+      </div>
+      
+      <section class="topic s3">
+        <div class="topic-header"><span class="topic-num">3.1</span><h2>Surviving Sepsis Campaign 1-Hour Bundle Protocols</h2></div>
+        <p>The Surviving Sepsis Campaign (SSC) 1-Hour Bundle requires immediate implementation of five key interventions once sepsis or septic shock is identified:</p>
+        <ol>
+          <li><strong>Measure Lactate Level:</strong> Re-measure lactate within 2 to 4 hours if the initial level is &gt; 2.0 mmol/L to calculate clearance kinetics.</li>
+          <li><strong>Obtain Blood Cultures:</strong> Draw at least two sets of blood cultures (aerobic and anaerobic) prior to administering antibiotics. Do not delay antibiotics by &gt; 45 minutes for difficult access cultures.</li>
+          <li><strong>Administer Broad-Spectrum Antibiotics:</strong> Deliver empiric broad-spectrum intravenous antimicrobials within 1 hour of recognition (e.g., Piperacillin-Tazobactam or Meropenem; add Vancomycin or Linezolid if MRSA is suspected).</li>
+          <li><strong>Fluid Resuscitation:</strong> Rapidly administer <strong>30 mL/kg</strong> of an isotonic crystalloid (preferably balanced solutions like Lactated Ringer's or Plasma-Lyte) within the first 3 hours for patients presenting with hypotension (MAP &lt; 65 mmHg) or hyperlactatemia (lactate &ge; 4.0 mmol/L).</li>
+          <li><strong>Initiate Vasopressors:</strong> Start vasopressors if the patient remains hypotensive during or immediately following the 30 mL/kg fluid bolus, targeting a Mean Arterial Pressure (MAP) of <strong>&ge; 65 mmHg</strong>.</li>
+        </ol>
+      </section>
+
+      <section class="topic s3" id="p3-trials">
+        <div class="topic-header"><span class="topic-num">3.2</span><h2>Landmark Resuscitation Trials &amp; Evidence Base</h2></div>
+        <p>Resuscitation and sepsis care are guided by several pivotal multicenter randomized controlled trials:</p>
+        <div class="table-wrap s3-tbl">
+          <table>
+            <thead>
+              <tr>
+                <th>Trial Name</th>
+                <th>Year</th>
+                <th>Primary Intervention</th>
+                <th>Clinical Outcome &amp; Impact on Practice Guidelines</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Rivers et al. (EGDT)</strong></td>
+                <td>2001</td>
+                <td>Early Goal-Directed Therapy (EGDT) protocol targeting CVP 8-12, MAP &ge;65, UO &ge;0.5, and ScvO<sub>2</sub> &ge;70% via blood/dobutamine within 6 hrs.</td>
+                <td>Reported a 16% absolute reduction in in-hospital mortality (30.5% vs 46.5%). Led to the global adoption of protocolized EGDT algorithms.</td>
+              </tr>
+              <tr>
+                <td><strong>SAFE Trial</strong></td>
+                <td>2004</td>
+                <td>Compared 4% Albumin against 0.9% Normal Saline for fluid resuscitation in 6,997 critically ill ICU patients.</td>
+                <td>No difference in 28-day mortality. Subgroup analysis showed <strong>increased mortality in traumatic brain injury (TBI) patients resuscitated with albumin</strong>. Establish saline/crystalloids as preferred in neurotrauma.</td>
+              </tr>
+              <tr>
+                <td><strong>ProCESS, ARISE, and PROMISE Trials</strong></td>
+                <td>2014-2015</td>
+                <td>Multicenter RCTs comparing protocolized EGDT (Rivers) against standard clinical resuscitation in septic shock.</td>
+                <td>Showed no survival benefit for protocolized invasive EGDT compared to standard care in modern EDs. Led to guidelines removing mandatory CVP and ScvO<sub>2</sub> monitoring, focusing instead on early antibiotics and clinical parameters.</td>
+              </tr>
+              <tr>
+                <td><strong>ALBIOS Trial</strong></td>
+                <td>2014</td>
+                <td>Compared 20% Albumin + crystalloid vs crystalloid alone to maintain serum albumin &ge;30 g/L in patients with severe sepsis or septic shock.</td>
+                <td>No difference in 28-day or 90-day mortality. Post-hoc analysis showed a potential survival benefit in the severe septic shock subgroup requiring vasopressors.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- PILLAR 4 -->
+      <div class="sec-header s4" id="p4-source">
+        <span class="sec-badge">PILLAR 4</span>
+        <span class="sec-title">Operative Strategy &amp; Surgical Technique</span>
+      </div>
+      
+      <section class="topic s4">
+        <div class="topic-header"><span class="topic-num">4.1</span><h2>Intraoperative Source Control &amp; Hemorrhage Containment</h2></div>
+        <p>In surgical septic shock and traumatic hemorrhagic shock, definitive source control is the most critical intervention:</p>
+        
+        <h3>1. Septic Shock Source Control Techniques</h3>
+        <ul>
+          <li><strong>Secondary Peritonitis:</strong> Perform emergent damage control laparotomy. Isolate and resect perforated or necrotic bowel segments. Avoid primary anastomoses in the setting of shock and vasopressor requirements (anastomotic perfusion is compromised). Perform bowel segment ligation or construct temporary stomas. Leave the abdomen open using a negative pressure temporary closure device (e.g., AbThera) to prevent abdominal compartment syndrome.</li>
+          <li><strong>Necrotizing Soft Tissue Infections (NSTIs):</strong> Perform wide local debridement back to healthy, bleeding fascial margins. Do not rely on medical therapy alone. Plan for mandatory re-exploration in the operating room within 24 hours.</li>
+          <li><strong>Biliary Sepsis (Acute Cholangitis):</strong> Perform emergent biliary decompression. Utilize Endoscopic Retrograde Cholangiopancreatography (ERCP) with stent placement or biliary drainage. Delayed cholecystectomy is scheduled only after systemic resolution.</li>
+        </ul>
+
+        <h3>2. Hemorrhagic Shock Surgical Containment</h3>
+        <ul>
+          <li><strong>Damage Control Surgery (DCS):</strong> Halt surgical bleeding and control enteric spillage within a strict 60–90 minute window. Utilize direct packing of liver parenchymal injuries, temporary vascular shunts for major arterial disruptions, and temporary closure. Deliver definitive repair only after resuscitation in the ICU (Phase 2).</li>
+          <li><strong>Vascular Exposure Maneuvers:</strong> Perform right medial visceral rotation (Cattell-Braasch) for exposure of the infrarenal vena cava, duodenum, and head of the pancreas. Perform left medial visceral rotation (Mattox) to expose the infrarenal and suprarenal abdominal aorta.</li>
+        </ul>
+      </section>
+
+      <!-- PILLAR 5 -->
+      <div class="sec-header s5" id="p5-vasopressors">
+        <span class="sec-badge">PILLAR 5</span>
+        <span class="sec-title">Postoperative Care &amp; Complications</span>
+      </div>
+      
+      <section class="topic s5">
+        <div class="topic-header"><span class="topic-num">5.1</span><h2>Vasoactive Drug Titration Protocols</h2></div>
+        <p>When fluid resuscitation fails to restore perfusion pressure, vasopressors and inotropes must be systematically titrated based on their receptor affinity profiles:</p>
+        
+        <h4>Vasopressor &amp; Inotrope Pharmacology</h4>
+        <div class="table-wrap s5-tbl">
+          <table>
+            <thead>
+              <tr>
+                <th>Vasoactive Agent</th>
+                <th>Primary Receptors</th>
+                <th>Physiological Mechanism</th>
+                <th>Clinical Indications &amp; Dosing Guidelines</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Norepinephrine</strong></td>
+                <td>&alpha;<sub>1</sub> (+++)<br>&beta;<sub>1</sub> (++)</td>
+                <td>Profound systemic vasoconstriction, raising MAP. Moderate chronotropic and inotropic support.</td>
+                <td><strong>First-line agent for septic shock.</strong> Titrate from 0.02 to 1.0 mcg/kg/min via a central line.</td>
+              </tr>
+              <tr>
+                <td><strong>Vasopressin</strong></td>
+                <td>V<sub>1</sub> (++++)</td>
+                <td>Direct G-protein coupled V<sub>1</sub> activation on vascular smooth muscle, bypassing catecholamine pathways.</td>
+                <td><strong>Second-line adjunct in septic shock.</strong> Standard fixed dose of 0.03 – 0.04 units/min. Useful in severe acidosis where catecholamine receptors are downregulated.</td>
+              </tr>
+              <tr>
+                <td><strong>Epinephrine</strong></td>
+                <td>&alpha;<sub>1</sub> (+++)<br>&beta;<sub>1</sub> (+++)<br>&beta;<sub>2</sub> (++)</td>
+                <td>Potent mixed vasoconstrictor and inotrope. Increases cardiac output and heart rate.</td>
+                <td>Add-on agent for refractory septic shock or post-bypass myocardial dysfunction. Can elevate lactate via &beta;<sub>2</sub> skeletal muscle hypermetabolism.</td>
+              </tr>
+              <tr>
+                <td><strong>Dobutamine</strong></td>
+                <td>&beta;<sub>1</sub> (++++)<br>&beta;<sub>2</sub> (++)</td>
+                <td>Potent positive inotrope. Induces peripheral vasodilation (decreases afterload).</td>
+                <td>First-line agent for cardiogenic shock or septic myocardial dysfunction with adequate intravascular volume. Avoid in uncorrected hypotension.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout warn">
+          <span class="label">Vasopressor Extravasation Crisis</span>
+          Infusion of vasopressors via peripheral intravenous lines poses a high risk of extravasation, inducing local tissue necrosis from severe vasoconstriction.
+          <br><strong>Treatment:</strong> Stop the infusion immediately. Infiltrate the area with <strong>Phentolamine</strong> (5–10 mg in 10 mL saline), a competitive &alpha;-adrenergic antagonist, to restore local tissue perfusion.
+        </div>
+      </section>
+
+      <!-- BOARD REVIEW -->
+      <div class="sec-header s1" id="board-review" style="margin-top: 60px;">
+        <span class="sec-badge">BOARD REVIEW</span>
+        <span class="sec-title">ABSITE Core Recall Matrix</span>
+      </div>
+      
+      <section class="topic s1">
+        <h3>High-Yield Recall Matrix</h3>
+        <div class="table-wrap">
+          <table style="background: transparent;">
+            <thead>
+              <tr>
+                <th>Board Question Topic</th>
+                <th>Gold Standard Key Fact</th>
+                <th>Surgical Decision / Clinical Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Septic Shock definition</strong></td>
+                <td>Sepsis + requirement for vasopressors to maintain MAP &ge; 65 mmHg AND serum lactate &gt; 2.0 mmol/L despite fluid resuscitation.</td>
+                <td>Initiate Norepinephrine first line; obtain lactate levels to calculate clearance kinetics.</td>
+              </tr>
+              <tr>
+                <td><strong>Neurogenic Shock hemodynamics</strong></td>
+                <td>Hypotension paired with bradycardia due to spinal cord injury disrupting sympathetic outflow.</td>
+                <td>Rule out hemorrhagic shock first. Resuscitate with crystalloids and vasopressors with &beta;<sub>1</sub> activity (e.g., Norepinephrine or Phenylephrine).</td>
+              </tr>
+              <tr>
+                <td><strong>Extravasation Antidote</strong></td>
+                <td>Phentolamine is the specific antidote for peripheral vasopressor extravasation.</td>
+                <td>Inject 5-10 mg diluted phentolamine subcutaneously into the affected site.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="viva">
+          <div class="vq">VIVA SCENARIO — HEMORRHAGIC SHOCK RESUSCITATION</div>
+          <div class="vscenario">A 30-year-old male is brought to the trauma bay after a motorcycle crash. Heart rate is 138 bpm, blood pressure is 80/40 mmHg, and he is obtunded. What is your immediate diagnostic categorization and step-by-step resuscitation strategy?</div>
+          <div class="vanswer">
+            <ul>
+              <li><strong>Categorization:</strong> Class IV Hemorrhagic Shock (&gt;40% circulating volume loss) based on tachycardia &gt;140, hypotension, and obtundation.</li>
+              <li><strong>Immediate Actions:</strong>
+                <ul>
+                  <li>Obtain large-bore peripheral access (14-gauge) or a central venous sheath (Cordis).</li>
+                  <li>Activate the <strong>Massive Transfusion Protocol (MTP)</strong>: administer blood products in a 1:1:1 ratio (Packed RBCs, Fresh Frozen Plasma, and Platelets) to avoid dilutional coagulopathy and hypothermia.</li>
+                  <li>Perform a rapid eFAST (Extended Focused Assessment with Sonography for Trauma) exam to evaluate for free intraperitoneal or pericardial fluid.</li>
+                  <li>Administer 1 gram of <strong>Tranexamic Acid (TXA)</strong> within 3 hours of injury based on CRASH-2 trial data.</li>
+                  <li>Move directly to the operating room for surgical source control if the patient remains hemodynamically unstable.</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <button id="top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+  <script src="../../js/nav-pill.js"></script>
+  <script src="../../js/navigation.js"></script>
+  <script>
+    const progressBar = document.getElementById('progress-bar');
+    const topBtn = document.getElementById('top-btn');
+    const navItems = document.querySelectorAll('.nav-item');
+    const sections = document.querySelectorAll('.sec-header[id], .topic[id]');
+
+    window.addEventListener('scroll', () => {
+      const st = window.scrollY;
+      const dh = document.documentElement.scrollHeight - window.innerHeight;
+      if (progressBar) progressBar.style.transform = `scaleX(${st / dh})`;
+      if (topBtn) topBtn.classList.toggle('show', st > 400);
+      
+      let current = '';
+      sections.forEach(s => { if (st >= s.offsetTop - 120) current = s.id; });
+      navItems.forEach(n => { n.classList.toggle('active', n.getAttribute('href') === '#' + current); });
+    });
+
+    function filterNav(query) {
+      const q = query.toLowerCase();
+      navItems.forEach(item => { item.style.display = (!q || item.textContent.toLowerCase().includes(q)) ? 'block' : 'none'; });
+    }
+
+    navItems.forEach(item => {
+      item.addEventListener('click', e => {
+        e.preventDefault();
+        if(typeof closeSidebar === 'function') closeSidebar();
+        const target = document.querySelector(item.getAttribute('href'));
+        if (target) window.scrollTo({ top: target.getBoundingClientRect().top - 80, behavior: 'smooth' });
+      });
+    });
+  </script>
+</body>
+</html>

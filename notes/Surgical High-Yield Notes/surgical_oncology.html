@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Surgical Insight Hub — Surgical Oncology Principles</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/theme.css?v=4.0.0">
+<link rel="stylesheet" href="../../css/shared.css">
+<script>
+  const savedTheme = localStorage.getItem('sih-theme') || 'light';
+  if (savedTheme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+</script>
+<style>
+:root {
+  --primary:   #581C87; /* Dark Plum */
+  --primary-dk:#3B0764;
+  --primary-lt:#F3E8FF;
+  --accent:    #7E22CE;
+  --accent2:   #9333EA;
+  --gold:      #B8922A;
+  --gold-lt:   #FEF3C7;
+  --s1:        #581C87;
+  --s2:        #0D9488;
+  --s3:        #C27803;
+  --s4:        #2563EB;
+  --s5:        #BE185D;
+  --s1-lt:     #F3E8FF;
+  --s2-lt:     #F0FDFA;
+  --s3-lt:     #FEF3C7;
+  --s4-lt:     #EFF6FF;
+  --s5-lt:     #FDF2F8;
+  --red:       #B91C1C;
+  --red-lt:    #FEF2F2;
+  --bg:        #FBFBFC;
+  --bg2:       #F4F4F6;
+  --border:    #E5E7EB;
+  --text:      #1F2937;
+  --muted:     #4B5563;
+  --white:     #FFFFFF;
+  --sidebar-w: 300px;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--bg);color:var(--text);font-size:16.5px;line-height:1.8;}
+
+/* DARK MODE OVERRIDES */
+[data-theme="dark"] {
+  --bg: #09060F;
+  --bg2: #120D1D;
+  --text: #E2DEE9;
+  --muted: #A78BFA;
+  --border: rgba(255,255,255,0.08);
+  --primary-lt: #3B076444;
+  --s1-lt: #3B076444;
+  --s2-lt: #0B1D19;
+  --s3-lt: #221B0B;
+  --s4-lt: #0F172A;
+  --s5-lt: #2A0B1A;
+  --white: #120D1D;
+}
+
+/* SIDEBAR & OVERLAY */
+#sidebar {
+  position: fixed; top: 0; left: 0; width: var(--sidebar-w); height: 100vh;
+  background: var(--primary-dk); color: #E2DEE9;
+  display: flex; flex-direction: column;
+  z-index: 1300; overflow: hidden;
+  transform: translateX(-100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 4px 0 24px rgba(0,0,0,0.3);
+}
+body.sidebar-open #sidebar { transform: translateX(0); }
+
+#sidebar-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.5); backdrop-filter: blur(3px);
+  z-index: 1250; opacity: 0; pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+body.sidebar-open #sidebar-overlay { opacity: 1; pointer-events: auto; }
+
+#sidebar-toggle {
+  position: fixed; top: 72px; left: 24px; z-index: 1200;
+  background: var(--primary); color: white;
+  border: none; border-radius: 30px;
+  padding: 10px 18px; font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 600;
+  letter-spacing: 0.05em; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  display: flex; align-items: center; gap: 8px; transition: all 0.2s;
+}
+#sidebar-toggle:hover { background: var(--accent); transform: translateY(-2px); }
+
+#progress-bar {
+  position: fixed; top: 52px; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  transform-origin: left; transform: scaleX(0); transition: transform 0.1s; z-index: 1105;
+}
+
+#sidebar-header{padding:20px 20px 14px;border-bottom:1px solid rgba(255,255,255,0.1);flex-shrink:0;}
+#sidebar-header .logo{font-family:'Playfair Display',serif;font-size:13px;font-weight:700;color:var(--accent2);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;}
+#sidebar-header .sub{font-size:10.5px;color:rgba(226,222,233,0.6);letter-spacing:0.04em;}
+#sidebar-search{padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.08);flex-shrink:0;}
+#sidebar-search input{width:100%;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:6px;color:#E2DEE9;padding:6px 10px;font-size:12px;font-family:'Source Serif 4',serif;outline:none;transition:border-color 0.2s;}
+#sidebar-search input::placeholder{color:rgba(226,222,233,0.4);}
+#sidebar-search input:focus{border-color:var(--accent2);}
+#sidebar-nav{flex:1;overflow-y:auto;padding:8px 0 20px;}
+#sidebar-nav::-webkit-scrollbar{width:4px;}
+#sidebar-nav::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.15);border-radius:2px;}
+.vol-label{font-size:9.5px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent2);padding:14px 18px 4px;}
+.nav-item{display:block;padding:8px 18px 8px 22px;font-size:12.5px;color:rgba(226,222,233,0.75);text-decoration:none;border-left:2px solid transparent;transition:all 0.15s;line-height:1.4;}
+.nav-item:hover{color:#fff;background:rgba(255,255,255,0.05);border-left-color:var(--accent);}
+.nav-item.active{color:#fff;background:rgba(255,255,255,0.08);border-left-color:var(--accent2);font-weight:600;}
+.nav-item .num{font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(226,222,233,0.4);margin-right:6px;}
+
+/* HERO */
+#hero{background:linear-gradient(135deg,var(--primary-dk) 0%,#581C87 60%,#090314 100%);color:white;padding:120px 72px 60px;position:relative;overflow:hidden;}
+#hero::before{content:'';position:absolute;top:-60px;right:-60px;width:380px;height:380px;background:radial-gradient(circle,rgba(255,255,255,0.1) 0%,transparent 70%);pointer-events:none;}
+#hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--primary),var(--accent2),transparent);}
+#hero .eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.16em;color:var(--accent2);text-transform:uppercase;margin-bottom:14px;}
+#hero h1{font-family:'Playfair Display',serif;font-size:38px;font-weight:700;line-height:1.15;margin-bottom:10px;color:#fff;}
+#hero .subtitle{font-size:18px;color:rgba(255,255,255,0.65);font-style:italic;margin-bottom:28px;}
+#hero .badges{display:flex;gap:10px;flex-wrap:wrap;}
+#hero .badge{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:4px 14px;font-size:12px;color:rgba(255,255,255,0.8);font-family:'JetBrains Mono',monospace;}
+
+/* CONTENT */
+.content-wrap{max-width:1140px;margin:0 auto;padding:0 48px 80px;}
+
+/* SECTION HEADER */
+.sec-header{margin-top:60px;margin-bottom:8px;padding:28px 36px;border-radius:10px;display:flex;align-items:center;gap:20px;}
+.sec-header.s1{background:linear-gradient(135deg,#581C8708,#581C8718);border-left:4px solid var(--s1);}
+.sec-header.s2{background:linear-gradient(135deg,#0D948808,#0D948818);border-left:4px solid var(--s2);}
+.sec-header.s3{background:linear-gradient(135deg,#C2780308,#C2780318);border-left:4px solid var(--s3);}
+.sec-header.s4{background:linear-gradient(135deg,#2563EB08,#2563EB18);border-left:4px solid var(--s4);}
+.sec-header.s5{background:linear-gradient(135deg,#BE185D08,#BE185D18);border-left:4px solid var(--s5);}
+.sec-badge{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;letter-spacing:0.1em;padding:4px 12px;border-radius:4px;white-space:nowrap;flex-shrink:0;}
+.s1 .sec-badge{background:var(--s1);color:white;}
+.s2 .sec-badge{background:var(--s2);color:white;}
+.s3 .sec-badge{background:var(--s3);color:white;}
+.s4 .sec-badge{background:var(--s4);color:white;}
+.s5 .sec-badge{background:var(--s5);color:white;}
+.sec-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;}
+.s1 .sec-title{color:var(--s1);}
+.s2 .sec-title{color:var(--s2);}
+.s3 .sec-title{color:var(--s3);}
+.s4 .sec-title{color:var(--s4);}
+.s5 .sec-title{color:var(--s5);}
+
+/* TOPIC */
+.topic{margin-top:48px;padding-top:48px;border-top:1px solid var(--border);}
+.topic:first-of-type{border-top:none;}
+.topic-header{display:flex;align-items:flex-start;gap:16px;margin-bottom:24px;}
+.topic-num{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;padding:3px 10px;border-radius:4px;margin-top:4px;flex-shrink:0;}
+.s1 .topic-num{background:var(--s1-lt);color:var(--s1);}
+.s2 .topic-num{background:var(--s2-lt);color:var(--s2);}
+.s3 .topic-num{background:var(--s3-lt);color:var(--s3);}
+.s4 .topic-num{background:var(--s4-lt);color:var(--s4);}
+.s5 .topic-num{background:var(--s5-lt);color:var(--s5);}
+.topic h2{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;line-height:1.2;}
+.s1 .topic h2{color:var(--s1);}
+.s2 .topic h2{color:var(--s2);}
+.s3 .topic h2{color:var(--s3);}
+.s4 .topic h2{color:var(--s4);}
+.s5 .topic h2{color:var(--s5);}
+.topic h3{font-family:'Playfair Display',serif;font-size:17px;font-weight:600;color:var(--muted);margin:26px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--border);}
+.topic h4{font-size:13px;font-weight:600;color:var(--muted);letter-spacing:0.06em;text-transform:uppercase;margin:18px 0 8px;font-family:'JetBrains Mono',monospace;}
+.topic p{margin-bottom:12px;color:var(--text);text-align:justify;}
+.topic ul,.topic ol{margin:8px 0 14px 20px;color:var(--text);}
+.topic li{margin-bottom:6px;line-height:1.65;}
+.topic li::marker{color:var(--accent2);}
+.topic strong{color:var(--text);font-weight:600;}
+
+/* TABLES */
+.table-wrap{overflow-x:auto;margin:16px 0 20px;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.06);border:1px solid var(--border);}
+table{width:100%;border-collapse:collapse;font-size:13.5px;background:var(--white);}
+thead tr{background:var(--s1);}
+thead th{color:white;padding:10px 14px;text-align:left;font-family:'Source Serif 4',serif;font-weight:600;font-size:13px;}
+tbody tr:nth-child(even){background:var(--bg2);}
+tbody tr:hover{background:var(--s1-lt);transition:background 0.15s;}
+tbody td{padding:9px 14px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.5;}
+.s2-tbl thead tr{background:var(--s2);}
+.s3-tbl thead tr{background:var(--s3);}
+.s4-tbl thead tr{background:var(--s4);}
+.s5-tbl thead tr{background:var(--s5);}
+
+/* CALLOUTS */
+.callout{margin:18px 0;padding:14px 18px;border-radius:0 8px 8px 0;border-left:4px solid;font-size:14px;line-height:1.65;}
+.callout .label{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;display:block;margin-bottom:4px;}
+.callout.pearl{background:var(--gold-lt);border-color:var(--gold);}
+.callout.pearl .label{color:var(--gold);}
+.callout.warn{background:var(--red-lt);border-color:var(--red);}
+.callout.warn .label{color:var(--red);}
+.callout.clin{background:var(--s2-lt);border-color:var(--s2);}
+.callout.clin .label{color:var(--s2);}
+.callout.exam{background:var(--s4-lt);border-color:var(--s4);}
+.callout.exam .label{color:var(--s4);}
+
+/* VIVA Scenario */
+.viva{background:var(--s1-lt);border:1px solid var(--border);border-left:4px solid var(--s1);border-radius:0 8px 8px 0;padding:16px 20px;margin:20px 0;}
+.viva .vq{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;color:var(--s1);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:8px;}
+.viva .vscenario{font-size:14px;font-weight:600;color:var(--text);margin-bottom:10px;line-height:1.5;}
+.viva .vanswer{font-size:13.5px;color:var(--muted);line-height:1.65;}
+.viva .vanswer ul{margin:6px 0 0 18px;}
+.viva .vanswer li{margin-bottom:4px;}
+
+/* KEY GRID */
+.key-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:10px;margin:14px 0 20px;}
+.key-card{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:12px 14px;font-size:13px;line-height:1.55;}
+.key-card .kc-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;font-weight:600;color:var(--s1);}
+.key-card .kc-val{font-weight:700;font-size:15px;color:var(--text);}
+.key-card.g2 .kc-label{color:var(--s2);}
+.key-card.g3 .kc-label{color:var(--s3);}
+.key-card.red .kc-label{color:var(--red);}
+.key-card.amb .kc-label{color:var(--accent2);}
+
+/* TOP BTN */
+#top-btn{position:fixed;bottom:28px;right:28px;background:var(--primary);color:white;border:none;border-radius:50%;width:44px;height:44px;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,0.2);transition:all 0.2s;opacity:0;pointer-events:none;z-index:1100;}
+#top-btn.show{opacity:1;pointer-events:auto;}
+#top-btn:hover{background:var(--accent2);transform:translateY(-2px);}
+
+@media(max-width:900px){
+  .content-wrap{padding:0 20px 60px;}
+  #hero{padding:80px 20px 40px;}
+  #hero h1{font-size:30px;}
+  #sidebar-toggle{top:64px; left:16px;}
+}
+</style>
+<script src="https://jsdelivr.net" async></script>
+</head>
+<body>
+  <!-- Standardized SIH Navbar -->
+  <nav class="nav" id="mainNav">
+    <div class="nav-left">
+      <a href="../../index.html" class="nav-pill">
+        <div class="nav-logo-img">
+          <img src="../../assets/images/Surgical_Insight_Hub_Logo.png" alt="SIH Logo">
+        </div>
+        <div>
+          <div class="nav-brand-text">Surgical Insight Hub</div>
+          <div class="nav-brand-sub">The Residency Journal</div>
+        </div>
+      </a>
+    </div>
+    <div class="nav-links-pill">
+      <a href="../../index.html">Home</a>
+      <a href="../../notes.html" class="active">Notes</a>
+      <a href="../operative_approach.html">Playbook</a>
+      <a href="../../arena.html?v=4.0.0">MCQ Arena</a>
+      <a href="../../podcast.html">Podcast</a>
+      <a href="../../surgery-talk.html">Surgery Talk</a>
+      <a href="../../about.html">About</a>
+    </div>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+        <svg id="moonIcon" viewBox="0 0 24 24" width="18" height="18"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        <svg id="sunIcon" style="display:none;" viewBox="0 0 24 24" width="18" height="18"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+      </button>
+      <a href="https://t.me/sugicalInsightHub" target="_blank" class="nav-tg-btn" title="Join Telegram">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="#f0d080"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.89 8.22l-1.97 9.28c-.15.66-.54.82-1.08.51l-3-2.21-1.45 1.39c-.16.16-.3.3-.61.3l.21-3.05 5.56-5.02c.24-.21-.05-.33-.37-.12l-6.87 4.33-2.96-.92c-.64-.2-.66-.64.14-.95l11.57-4.46c.54-.19 1.01.13.83.94z"/></svg>
+      </a>
+      <a href="../../arena.html?v=4.0.0" class="nav-btn arena-btn">MCQ Arena</a>
+      <button class="mob-nav-toggle" onclick="openMobNav()" aria-label="Menu">
+        <div class="hamburger"><span></span><span></span><span></span></div>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mob-nav-overlay" id="mobNavOverlay" onclick="closeMobNav()"></div>
+  <div class="mob-nav-sheet" id="mobNavSheet">
+    <div class="mob-nav-handle"></div>
+    <a href="../../index.html" onclick="closeMobNav()">Home</a>
+    <a href="../../notes.html" onclick="closeMobNav()">Notes</a>
+    <a href="../../notes/operative_approach.html" onclick="closeMobNav()">Playbook</a>
+    <a href="../../podcast.html" onclick="closeMobNav()">Podcast</a>
+    <a href="../../surgery-talk.html" onclick="closeMobNav()">Surgery Talk</a>
+    <a href="../../arena.html" onclick="closeMobNav()">MCQ Arena</a>
+    <a href="../../about.html" onclick="closeMobNav()">About</a>
+    <a href="https://t.me/sugicalInsightHub" target="_blank" rel="noopener" onclick="closeMobNav()" style="color: var(--brand-gold); font-weight: 800;">Join Telegram Community</a>
+  </div>
+
+  <div id="progress-bar"></div>
+  <button id="sidebar-toggle" onclick="toggleSidebar()">
+    <span>📜</span> Sections Menu
+  </button>
+  <div id="sidebar-overlay" onclick="closeSidebar()"></div>
+
+  <!-- SIDEBAR -->
+  <aside id="sidebar">
+    <div id="sidebar-header">
+      <div class="logo">Surgical Oncology</div>
+      <div class="sub">General Surgery Monograph</div>
+    </div>
+    <div id="sidebar-search">
+      <input oninput="filterNav(this.value)" placeholder="Search sections..." type="text"/>
+    </div>
+    <nav id="sidebar-nav">
+      <div class="vol-label">Pillar 1: Pathophysiology</div>
+      <a class="nav-item" href="#p1-angiogenesis"><span class="num">1.1</span>VEGF Tyrosine Kinase Loops</a>
+      <a class="nav-item" href="#p1-emt"><span class="num">1.2</span>EMT E-Cadherin Transitions</a>
+      <a class="nav-item" href="#p1-gompertz"><span class="num">1.3</span>Gompertz Growth Curves</a>
+      <div class="vol-label">Pillar 2: Diagnostics &amp; Matrices</div>
+      <a class="nav-item" href="#p2-markers"><span class="num">2.1</span>Tumor Marker Profiles</a>
+      <a class="nav-item" href="#p2-screening"><span class="num">2.2</span>Wilson &amp; Jungner Matrix</a>
+      <div class="vol-label">Pillar 3: Clinical Trials</div>
+      <a class="nav-item" href="#p3-trials"><span class="num">3.1</span>Landmark Oncology Studies</a>
+      <div class="vol-label">Pillar 4: Margin Boundaries</div>
+      <a class="nav-item" href="#p4-margins"><span class="num">4.1</span>R0 vs. R1 vs. R2 Matrix</a>
+      <a class="nav-item" href="#p4-biopsy"><span class="num">4.2</span>Incisional vs. Excisional Guidelines</a>
+      <div class="vol-label">Pillar 5: Acute Crises</div>
+      <a class="nav-item" href="#p5-svc"><span class="num">5.1</span>Bedside SVC Management</a>
+      <a class="nav-item" href="#p5-carcinoid"><span class="num">5.2</span>Carcinoid Crisis Protocol</a>
+      <div class="vol-label">Board Review</div>
+      <a class="nav-item" href="#board-review"><span class="num">6.1</span>ABSITE Core Recall Matrix</a>
+    </nav>
+  </aside>
+
+  <main id="main">
+    <section id="hero">
+      <div class="eyebrow">Oncological Surgery · Monograph</div>
+      <h1>Surgical Oncology Principles</h1>
+      <p class="subtitle">Molecular kinetics of malignancy, tumor markers, screening validation databases, and the surgical roles in diagnosis, curation, and palliation.</p>
+      <div class="badges">
+        <span class="badge">General Surgery</span>
+        <span class="badge">Board Review</span>
+        <span class="badge">ABSITE Gold</span>
+      </div>
+    </section>
+
+    <div class="content-wrap">
+      <!-- Key Statistics Grid -->
+      <div class="key-grid">
+        <div class="key-card">
+          <div class="kc-label">Angiogenesis Loop</div>
+          <div class="kc-val">VEGF &rarr; VEGFR-2</div>
+        </div>
+        <div class="key-card g2">
+          <div class="kc-label">EMT Transition</div>
+          <div class="kc-val">E-Cadherin Loss</div>
+        </div>
+        <div class="key-card red">
+          <div class="kc-label">Gompertz Growth</div>
+          <div class="kc-val">Decelerating Sigmoid</div>
+        </div>
+        <div class="key-card amb">
+          <div class="kc-label">Carcinoid Rescue</div>
+          <div class="kc-val">Octreotide Bolus</div>
+        </div>
+      </div>
+
+      <!-- Foundational Anchor Callout -->
+      <div class="callout clin" style="border-left-color: var(--primary); background: var(--primary-lt); margin-bottom: 40px;">
+        <span class="label" style="color: var(--primary); font-weight: 700;">Foundational Anchor (From PDF Source Notes)</span>
+        <p style="font-style: italic; color: var(--text);">
+          "Basic concepts in surgical oncology including Gompertzian tumor growth kinetics, tumor markers, screening validation criteria, and the surgical roles in diagnosis, curation, and palliation."
+        </p>
+      </div>
+
+      <!-- PILLAR 1 -->
+      <div class="sec-header s1" id="p1-angiogenesis">
+        <span class="sec-badge">PILLAR 1</span>
+        <span class="sec-title">Core Pathophysiology &amp; Molecular Kinetics</span>
+      </div>
+      
+      <section class="topic s1">
+        <div class="topic-header"><span class="topic-num">1.1</span><h2>VEGF-Driven Tyrosine Kinase Angiogenesis loops</h2></div>
+        <p>Tumor growth beyond 1–2 mm in diameter requires neovascularization to bypass the limits of oxygen diffusion:</p>
+        <ul>
+          <li><strong>VEGF Signaling Cascade:</strong> Hypoxic tumor cells upregulate **Hypoxia-Inducible Factor 1-alpha (HIF-1&alpha;)**, which drives the transcription and secretion of **Vascular Endothelial Growth Factor (VEGF-A)**. VEGF-A binds to the extracellular domain of the tyrosine kinase receptor **VEGFR-2** on adjacent endothelial cells.</li>
+          <li><strong>Intracellular Activation:</strong> Receptor binding induces VEGFR-2 homodimerization and autophosphorylation of intracellular tyrosine residues. This activates downstream **Mitogen-Activated Protein Kinase (MAPK/ERK)** and **PI3K/Akt/mTOR** signaling pathways. These cascades promote endothelial cell survival, proliferation, migration, and assembly into new capillary loops.</li>
+        </ul>
+      </section>
+
+      <section class="topic s1" id="p1-emt">
+        <div class="topic-header"><span class="topic-num">1.2</span><h2>Epithelial-Mesenchymal Transition (EMT) Mechanics</h2></div>
+        <p>Epithelial-Mesenchymal Transition (EMT) is the cellular process that enables epithelial cells to acquire migratory and invasive properties:</p>
+        <ul>
+          <li><strong>Loss of E-Cadherin:</strong> E-cadherin is the primary transmembrane protein forming adherens junctions that anchor adjacent epithelial cells. It links to the actin cytoskeleton via &beta;-catenin, maintaining cell polarity and tissue integrity. In EMT, E-cadherin expression is downregulated.</li>
+          <li><strong>Transcription Factor Upregulation:</strong> The transcription factors **Snail, Slug, and Twist** bind directly to the promoter region of the E-cadherin gene (*CDH1*), suppressing its transcription.</li>
+          <li><strong>Mesenchymal Phenotype:</strong> Concurrently, cells upregulate mesenchymal proteins such as **Vimentin** and N-cadherin. This change disrupts cellular adhesion, alters cell morphology, and increases motility, allowing tumor cells to invade the extracellular matrix (via matrix metalloproteinases) and enter the circulation.</li>
+        </ul>
+      </section>
+
+      <section class="topic s1" id="p1-gompertz">
+        <div class="topic-header"><span class="topic-num">1.3</span><h2>Mathematical Properties of the Gompertzian Growth Curve</h2></div>
+        <p>Tumor growth is not linear. Instead, it follows a sigmoidal pattern described by the Gompertz equation:</p>
+        <ul>
+          <li><strong>The Gompertz Growth Equation:</strong>
+            \[V(t) = V_0 \cdot \exp\left(K\left(1 - \exp(-\alpha t)\right)\right)\]
+            where \(V(t)\) is the tumor volume at time \(t\), \(V_0\) is the initial tumor volume, \(K\) is a carrying capacity factor, and \(\alpha\) is the growth deceleration constant.
+          </li>
+          <li><strong>Growth Deceleration:</strong> As the tumor volume \(V(t)\) increases, the growth rate decelerates. This is due to physical crowding, contact inhibition, and limited nutrient/oxygen diffusion in the tumor core. Consequently, the **growth fraction** (the proportion of active, dividing cells) decreases as the tumor grows larger.</li>
+        </ul>
+      </section>
+
+      <!-- PILLAR 2 -->
+      <div class="sec-header s2" id="p2-markers">
+        <span class="sec-badge">PILLAR 2</span>
+        <span class="sec-title">Diagnostics &amp; Matrices</span>
+      </div>
+      
+      <section class="topic s2">
+        <div class="topic-header"><span class="topic-num">2.1</span><h2>Oncological Tumor Marker Matrix</h2></div>
+        <p>Tumor markers are primarily used to monitor response to therapy and detect postoperative recurrence:</p>
+        <div class="table-wrap s2-tbl">
+          <table>
+            <thead>
+              <tr>
+                <th>Tumor Marker</th>
+                <th>Primary Malignancy Profiles</th>
+                <th>Clinical Application &amp; Limitations</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>CEA</strong></td>
+                <td>Colorectal adenocarcinoma, medullary thyroid carcinoma.</td>
+                <td>Postoperative recurrence monitoring in colorectal cancer. Elevated in smokers, inflammatory bowel disease, and pancreatitis.</td>
+              </tr>
+              <tr>
+                <td><strong>CA 19-9</strong></td>
+                <td>Pancreatic adenocarcinoma, cholangiocarcinoma.</td>
+                <td>Correlates with tumor burden and resectability. **Requires Lewis antigen expression** (Lewis negative [Le a-b-] individuals will not express CA 19-9). Elevated by biliary obstruction.</td>
+              </tr>
+              <tr>
+                <td><strong>AFP</strong></td>
+                <td>Hepatocellular carcinoma (HCC), non-seminomatous germ cell tumors.</td>
+                <td>Used for HCC surveillance in cirrhosis and for staging germ cell tumors. Elevated in pregnancy and active hepatitis.</td>
+              </tr>
+              <tr>
+                <td><strong>&beta;-hCG</strong></td>
+                <td>Choriocarcinoma, testicular germ cell tumors (seminoma, NSGCT).</td>
+                <td>Essential for staging, monitoring response, and detecting recurrence in testicular cancers.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="topic s2" id="p2-screening">
+        <div class="topic-header"><span class="topic-num">2.2</span><h2>Wilson &amp; Jungner WHO Screening Validation Matrix</h2></div>
+        <p>Screening programs must meet the ten classic criteria established by the World Health Organization:</p>
+        <div class="table-wrap s2-tbl">
+          <table>
+            <thead>
+              <tr>
+                <th>Wilson &amp; Jungner Criterion</th>
+                <th>Epidemiological Target &amp; Definition</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>1. Important Health Problem</strong></td>
+                <td>The disease must have high prevalence or severity, causing significant public health burden.</td>
+              </tr>
+              <tr>
+                <td><strong>2. Accepted Treatment</strong></td>
+                <td>There must be a proven, effective therapy available for patients diagnosed through screening.</td>
+              </tr>
+              <tr>
+                <td><strong>3. Available Facilities</strong></td>
+                <td>Healthcare infrastructure must be sufficient to handle diagnostic confirmation and subsequent therapy.</td>
+              </tr>
+              <tr>
+                <td><strong>4. Latent Stage</strong></td>
+                <td>The disease must have a recognizable latent or early asymptomatic phase during which intervention can change outcomes.</td>
+              </tr>
+              <tr>
+                <td><strong>5. Suitable Test</strong></td>
+                <td>The screening test must be valid, safe, and have acceptable sensitivity and specificity.</td>
+              </tr>
+              <tr>
+                <td><strong>6. Public Acceptability</strong></td>
+                <td>The test must be tolerable to the population (non-invasive or minimally invasive to ensure compliance).</td>
+              </tr>
+              <tr>
+                <td><strong>7. Natural History</strong></td>
+                <td>The natural history of the condition, including development from latent to manifest disease, must be understood.</td>
+              </tr>
+              <tr>
+                <td><strong>8. Policy on Treatment</strong></td>
+                <td>There must be clear, agreed-upon clinical guidelines defining who requires treatment.</td>
+              </tr>
+              <tr>
+                <td><strong>9. Economic Balance</strong></td>
+                <td>The cost of screening and diagnosis must be balanced relative to total healthcare expenditure and expected benefits.</td>
+              </tr>
+              <tr>
+                <td><strong>10. Continuous Process</strong></td>
+                <td>Screening must be implemented as an ongoing service, not a single, short-term project.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- PILLAR 3 -->
+      <div class="sec-header s3" id="p3-trials">
+        <span class="sec-badge">PILLAR 3</span>
+        <span class="sec-title">Landmark Clinical Trials</span>
+      </div>
+      
+      <section class="topic s3">
+        <div class="topic-header"><span class="topic-num">3.1</span><h2>Oncological Sequencing Trials</h2></div>
+        <div class="table-wrap s3-tbl">
+          <table>
+            <thead>
+              <tr>
+                <th>Trial Name</th>
+                <th>Year</th>
+                <th>Primary Intervention</th>
+                <th>Clinical Outcome &amp; Impact on Practice Guidelines</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>MAGIC Trial</strong></td>
+                <td>2006</td>
+                <td>Randomized trial comparing perioperative ECF chemotherapy (3 pre-op and 3 post-op cycles of Epirubicin, Cisplatin, and 5-FU) plus surgery vs. surgery alone in 503 patients with resectable gastric or lower esophageal adenocarcinoma.</td>
+                <td>**Perioperative chemotherapy significantly improved 5-year overall survival** (36% vs. 23%, p=0.009) and disease-free survival. Established perioperative chemotherapy as the gold standard of care for resectable gastric and lower esophageal cancers, demonstrating the benefit of neoadjuvant downstaging.</td>
+              </tr>
+              <tr>
+                <td><strong>CROSS Trial</strong></td>
+                <td>2012</td>
+                <td>Randomized phase III trial comparing neoadjuvant chemoradiotherapy (Carboplatin + Paclitaxel + 41.4 Gy radiation) followed by surgery vs. surgery alone in 366 patients with resectable esophageal or GEJ cancer.</td>
+                <td>**Median overall survival was 49.4 months in the neoadjuvant group vs. 24.0 months in the surgery-alone group** (p=0.003). Confirmed neoadjuvant therapy followed by margin-negative (R0) resection as the gold standard for esophageal adenocarcinoma and squamous cell carcinoma.</td>
+              </tr>
+              <tr>
+                <td><strong>NSABP B-06</strong></td>
+                <td>1985 / 2002</td>
+                <td>Randomized trial comparing total mastectomy vs. lumpectomy alone vs. lumpectomy plus local radiation in 1,851 women with Stage I/II breast cancer.</td>
+                <td>**No difference in overall survival or disease-free survival** between mastectomy and lumpectomy plus radiation. Established breast-conserving therapy (lumpectomy + RT) as the standard of care for early-stage breast cancer.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- PILLAR 4 -->
+      <div class="sec-header s4" id="p4-margins">
+        <span class="sec-badge">PILLAR 4</span>
+        <span class="sec-title">Surgical Strategy &amp; Resection Margins</span>
+      </div>
+      
+      <section class="topic s4">
+        <div class="topic-header"><span class="topic-num">4.1</span><h2>Absolute Surgical Resection Margin Matrix</h2></div>
+        <p>Oncological resection margins are defined by pathologic examination of the inked specimen:</p>
+        <div class="table-wrap s4-tbl">
+          <table>
+            <thead>
+              <tr>
+                <th>Margin Category</th>
+                <th>Microscopic / Macroscopic Status</th>
+                <th>Residual Tumor Volume Definition</th>
+                <th>Clinical Implications</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="font-bold text-white bg-slate-900/30"><strong>R0 Margin</strong></td>
+                <td>Microscopically negative margins.</td>
+                <td>No residual tumor remaining in the patient. No tumor cells are present at the inked resection margin (typically &ge; 1 mm clearance).</td>
+                <td>Curative resection; lowest risk of local recurrence.</td>
+              </tr>
+              <tr>
+                <td class="font-bold text-white bg-slate-900/30"><strong>R1 Margin</strong></td>
+                <td>Microscopically positive margins.</td>
+                <td>Microscopic residual tumor remaining in the patient. Tumor cells are observed directly at the inked margin under the microscope, but no gross tumor was left behind.</td>
+                <td>High risk of local recurrence. Often requires re-excision, margin revision, or adjuvant chemoradiation.</td>
+              </tr>
+              <tr>
+                <td class="font-bold text-white bg-slate-900/30"><strong>R2 Margin</strong></td>
+                <td>Macroscopically positive margins.</td>
+                <td>Gross residual tumor remaining in the patient. The surgeon left visible or palpable tumor behind (e.g., due to invasion of unresectable structures).</td>
+                <td>Incomplete resection; non-curative. Associated with poor prognosis. Often managed with palliative intent or systemic therapy.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="topic s4" id="p4-biopsy">
+        <div class="topic-header"><span class="topic-num">4.2</span><h2>Procedural Intents: Diagnostic, Curative, Cytoreductive, and Palliative</h2></div>
+        <p>Surgical procedures are classified by their primary clinical objective:</p>
+        <ul>
+          <li><strong>Diagnostic Intent (Biopsy):</strong>
+            <ul>
+              <li><strong>Incisional Biopsy:</strong> Removal of a representative portion of a large mass. Indicated when complete excision would require major reconstruction (e.g., extremity sarcomas). The incision **must be oriented longitudinally** to allow complete excision of the biopsy tract during definitive surgery.</li>
+              <li><strong>Excisional Biopsy:</strong> Complete removal of a small lesion with a narrow margin of normal tissue (e.g., suspicious melanomas with a **1–3 mm margin**). Avoid shave or partial biopsies of suspicious pigmented lesions to prevent understaging Breslow thickness.</li>
+            </ul>
+          </li>
+          <li><strong>Curative Intent:</strong> Complete surgical excision of the primary tumor with negative margins (R0) and regional lymphadenectomy, aiming to cure the disease.</li>
+          <li><strong>Cytoreductive (Debulking) Intent:</strong> Removal of as much tumor tissue as possible. Indicated when complete resection is not feasible, aiming to reduce the tumor burden to enhance the efficacy of chemotherapy or radiation (e.g., advanced epithelial ovarian cancer).</li>
+          <li><strong>Palliative Intent:</strong> Procedures aimed at relieving symptoms (e.g., pain, obstruction, bleeding) rather than extending survival (e.g., gastrojejunal bypass for gastric outlet obstruction, stoma creation for unresectable colorectal cancer).</li>
+        </ul>
+      </section>
+
+      <!-- PILLAR 5 -->
+      <div class="sec-header s5" id="p5-svc">
+        <span class="sec-badge">PILLAR 5</span>
+        <span class="sec-title">Crisis Care &amp; Clinical Management</span>
+      </div>
+      
+      <section class="topic s5">
+        <div class="topic-header"><span class="topic-num">5.1</span><h2>Superior Vena Cava (SVC) Syndrome Bedside Protocol</h2></div>
+        <p>Superior Vena Cava (SVC) Syndrome is an oncological emergency characterized by obstruction of blood flow through the SVC, typically due to mediastinal tumor invasion or thrombosis:</p>
+        
+        <div style="background:var(--white); border:1px solid var(--border); border-radius:8px; padding:24px; margin:20px 0;">
+          <h4 style="color:var(--primary); font-size:16px; margin-bottom:12px; font-weight:700;">Immediate Bedside Management Steps</h4>
+          <ol style="margin-left: 20px; line-height: 1.75;">
+            <li><strong>Positioning:</strong> Elevate the head of the bed to **&ge; 45 degrees** to decrease hydrostatic pressure in the head, neck, and upper extremities.</li>
+            <li><strong>Oxygenation:</strong> Administer supplemental high-flow oxygen to alleviate dyspnea.</li>
+            <li><strong>Steroid Therapy:</strong> Administer **Dexamethasone 4–10 mg IV** immediately to reduce tumor-associated edema.</li>
+            <li><strong>Avoid Upper Extremity IVs:</strong> Place intravenous lines in the lower extremities to avoid local venous hypertension and rapid drug clearance issues in the upper body.</li>
+            <li><strong>Definitive Action:</strong> Obtain urgent CT scan of the chest with IV contrast to evaluate the obstruction. Plan for urgent endovascular stenting or emergency radiation therapy.</li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="topic s5" id="p5-carcinoid">
+        <div class="topic-header"><span class="topic-num">5.2</span><h2>Intraoperative Carcinoid Crisis Protocol</h2></div>
+        <div class="callout warn">
+          <span class="label">ABSITE Exam Trap: Carcinoid Crisis Management</span>
+          <p>Manipulation of carcinoid tumors can trigger a massive release of vasoactive substances (serotonin, bradykinin, histamine, prostaglandins). This presents intraoperatively as severe, refractory hypotension or hypertension, bronchospasm, and cutaneous flushing.</p>
+          <p style="margin-top: 8px; font-weight: 700;">
+            • Immediate Action: Administer **Octreotide 500–1000 &micro;g IV bolus**, followed by a continuous infusion of **50–200 &micro;g/hour**.
+            <br>• Avoid &beta;-agonists (e.g., Albuterol) or catecholamines (e.g., Epinephrine, Norepinephrine) for hypotension or bronchospasm, as they can stimulate further mediator release and worsen the crisis. Use Octreotide and fluid resuscitation.
+          </p>
+        </div>
+      </section>
+
+      <!-- BOARD REVIEW -->
+      <div class="sec-header s1" id="board-review" style="margin-top: 60px;">
+        <span class="sec-badge">BOARD REVIEW</span>
+        <span class="sec-title">ABSITE Core Recall Matrix</span>
+      </div>
+      
+      <section class="topic s1">
+        <h3>High-Yield Recall Matrix</h3>
+        <div class="table-wrap">
+          <table style="background: transparent;">
+            <thead>
+              <tr>
+                <th>Board Question Topic</th>
+                <th>Gold Standard Key Fact</th>
+                <th>Surgical Decision / Clinical Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Lead-time Bias</strong></td>
+                <td>Screening detects cancer earlier than standard diagnosis, artificially increasing survival time without extending the actual lifespan.</td>
+                <td>Recognize lead-time bias as a statistical artifact in screening evaluation, not a true survival benefit.</td>
+              </tr>
+              <tr>
+                <td><strong>Length-time Bias</strong></td>
+                <td>Screening tests are more likely to detect slow-growing, less aggressive tumors, making survival outcomes appear better.</td>
+                <td>Do not assume a screening tool is effective based solely on improved survival rates of screened cohorts.</td>
+              </tr>
+              <tr>
+                <td><strong>Chemotherapy Kinetics</strong></td>
+                <td>**Alkylating agents** are cell-cycle non-specific. **Antimetabolites (5-FU)** are S-phase specific. **Taxanes/Vinca alkaloids** are M-phase specific.</td>
+                <td>Understand these mechanism parameters when managing chemotherapy sequencing and toxicity.</td>
+              </tr>
+              <tr>
+                <td><strong>Carcinoid Manipulation</strong></td>
+                <td>Tumor manipulation releases serotonin, histamine, and bradykinin, causing severe flushing and hemodynamic instability.</td>
+                <td>Preoperatively administer Octreotide for suspected carcinoid tumors, and avoid epinephrine/norepinephrine during crisis.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="viva">
+          <div class="vq">VIVA SCENARIO — CARCINOID HYPOTENSION</div>
+          <div class="vscenario">A 56-year-old male with a history of an ileal carcinoid tumor with extensive liver metastases is undergoing an elective small bowel resection. During mobilization of the hepatic metastasis, his blood pressure drops from 120/80 mmHg to 64/32 mmHg. He is flushed, and the anesthesiologist notes severe bronchospasm with high peak airway pressures. What is the diagnosis, and how do you manage this crisis?</div>
+          <div class="vanswer">
+            <ul>
+              <li><strong>Diagnosis:</strong> Intraoperative Carcinoid Crisis triggered by tumor manipulation.</li>
+              <li><strong>Immediate Management:</strong>
+                <ul>
+                  <li>Instruct the surgical team to stop tumor manipulation immediately.</li>
+                  <li>Administer **Octreotide 500–1000 &micro;g IV bolus** immediately.</li>
+                  <li>Start a continuous intravenous Octreotide infusion of **100 &micro;g/hour**.</li>
+                  <li>Administer intravenous crystalloid fluid boluses to support circulation.</li>
+                </ul>
+              </li>
+              <li><strong>Contraindicated Actions:</strong> Do not administer epinephrine, norepinephrine, or beta-agonists (like albuterol) for hypotension or bronchospasm, as catecholamines can trigger further mediator release.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <button id="top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+  <script src="../../js/nav-pill.js"></script>
+  <script src="../../js/navigation.js"></script>
+  <script>
+    const progressBar = document.getElementById('progress-bar');
+    const topBtn = document.getElementById('top-btn');
+    const navItems = document.querySelectorAll('.nav-item');
+    const sections = document.querySelectorAll('.sec-header[id], .topic[id]');
+
+    window.addEventListener('scroll', () => {
+      const st = window.scrollY;
+      const dh = document.documentElement.scrollHeight - window.innerHeight;
+      if (progressBar) progressBar.style.transform = `scaleX(${st / dh})`;
+      if (topBtn) topBtn.classList.toggle('show', st > 400);
+      
+      let current = '';
+      sections.forEach(s => { if (st >= s.offsetTop - 120) current = s.id; });
+      navItems.forEach(n => { n.classList.toggle('active', n.getAttribute('href') === '#' + current); });
+    });
+
+    function filterNav(query) {
+      const q = query.toLowerCase();
+      navItems.forEach(item => { item.style.display = (!q || item.textContent.toLowerCase().includes(q)) ? 'block' : 'none'; });
+    }
+
+    navItems.forEach(item => {
+      item.addEventListener('click', e => {
+        e.preventDefault();
+        if(typeof closeSidebar === 'function') closeSidebar();
+        const target = document.querySelector(item.getAttribute('href'));
+        if (target) window.scrollTo({ top: target.getBoundingClientRect().top - 80, behavior: 'smooth' });
+      });
+    });
+  </script>
+</body>
+</html>

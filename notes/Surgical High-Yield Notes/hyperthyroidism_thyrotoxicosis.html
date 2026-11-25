@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Surgical Insight Hub — Hyperthyroidism & Thyrotoxicosis Pathology & Surgery</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,300;1,8..60,400;1,8..60,600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/theme.css?v=4.0.0">
+<link rel="stylesheet" href="../../css/shared.css">
+<script>
+  const savedTheme = localStorage.getItem('sih-theme') || 'light';
+  if (savedTheme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+</script>
+<style>
+:root {
+  --primary:   #4C1D95; 
+  --primary-dk:#2E1065;
+  --primary-lt:#F5F3FF;
+  --accent:    #7C3AED;
+  --accent2:   #E11D48;
+  --gold:      #D97706;
+  --gold-lt:   #FEF3C7;
+  --s1:        #4C1D95;
+  --s2:        #5B21B6;
+  --s3:        #6D28D9;
+  --s4:        #7C3AED;
+  --s5:        #2E1065;
+  --s1-lt:     #F5F3FF;
+  --s2-lt:     #EDE9FE;
+  --s3-lt:     #F5F3FF;
+  --s4-lt:     #EDE9FE;
+  --s5-lt:     #F5F3FF;
+  --red:       #E11D48;
+  --red-lt:    #FFF1F2;
+  --bg:        #FAFAFA;
+  --bg2:       #F4F4F5;
+  --border:    #E5E7EB;
+  --text:      #0F172A;
+  --muted:     #64748B;
+  --white:     #FFFFFF;
+  --sidebar-w: 320px;
+}
+[data-theme="dark"] {
+  --bg: #0A0702;
+  --bg2: #140E05;
+  --text: #F3F4F6;
+  --muted: #A3A3A3;
+  --border: rgba(255,255,255,0.08);
+  --primary-lt: #2E1065;
+  --s1-lt: #2E1065;
+  --s2-lt: #2E1065;
+  --s3-lt: #2E1065;
+  --s4-lt: #2E1065;
+  --s5-lt: #2E1065;
+  --white: #140E05;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--bg);color:var(--text);font-size:16.5px;line-height:1.8;}
+
+#sidebar {
+  position: fixed; top: 0; left: 0; width: var(--sidebar-w); height: 100vh;
+  background: var(--primary-dk); color: #F5F3FF;
+  display: flex; flex-direction: column;
+  z-index: 1000; overflow: hidden;
+  transform: translateX(-100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 4px 0 24px rgba(0,0,0,0.4);
+}
+body.sidebar-open #sidebar { transform: translateX(0); }
+
+#sidebar-overlay {
+  position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+  background: rgba(46, 16, 101, 0.7); backdrop-filter: blur(3px);
+  z-index: 950; opacity: 0; pointer-events: none; transition: opacity 0.3s ease;
+}
+body.sidebar-open #sidebar-overlay { opacity: 1; pointer-events: auto; }
+
+#sidebar-toggle {
+  position: fixed; top: 72px; left: 24px; z-index: 900;
+  background: var(--primary); color: white;
+  border: none; border-radius: 30px;
+  padding: 10px 18px; font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600;
+  letter-spacing: 0.05em; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  display: flex; align-items: center; gap: 8px; transition: all 0.2s;
+}
+#sidebar-toggle:hover { background: var(--accent2); transform: translateY(-2px); }
+
+#sidebar-header{padding:20px 20px 14px;border-bottom:1px solid rgba(255,255,255,0.08);flex-shrink:0;}
+#sidebar-header .logo{font-family:'Playfair Display',serif;font-size:13px;font-weight:700;color:var(--accent2);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;}
+#sidebar-header .sub{font-size:10.5px;color:rgba(245,243,255,0.6);letter-spacing:0.04em;}
+#sidebar-search{padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.05);flex-shrink:0;}
+#sidebar-search input{width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:6px;color:#F5F3FF;padding:6px 10px;font-size:12px;font-family:'Source Serif 4',serif;outline:none;transition:border-color 0.2s;}
+#sidebar-search input::placeholder{color:rgba(245,243,255,0.4);}
+#sidebar-search input:focus{border-color:var(--accent2);}
+#sidebar-nav{flex:1;overflow-y:auto;padding:8px 0 20px;}
+#sidebar-nav::-webkit-scrollbar{width:4px;}
+#sidebar-nav::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.15);border-radius:2px;}
+.vol-label{font-size:9.5px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent2);padding:14px 18px 4px;}
+.nav-item{display:block;padding:8px 18px 8px 22px;font-size:12.5px;color:rgba(245,243,255,0.8);text-decoration:none;border-left:2px solid transparent;transition:all 0.15s;line-height:1.4;}
+.nav-item:hover{color:#fff;background:rgba(255,255,255,0.03);border-left-color:rgba(225,29,72,0.5);}
+.nav-item.active{color:#fff;background:rgba(255,255,255,0.06);border-left-color:var(--accent2);font-weight:600;}
+.nav-item .num{font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(245,243,255,0.4);margin-right:6px;}
+
+#main{margin-left:0; min-height:100vh;}
+#hero{background:linear-gradient(135deg,var(--primary-dk) 0%,#4C1D95 60%,#2E1065 100%);color:white;padding:120px 72px 60px;position:relative;overflow:hidden;}
+#hero::before{content:'';position:absolute;top:-60px;right:-60px;width:380px;height:380px;background:radial-gradient(circle,rgba(225,29,72,0.15) 0%,transparent 70%);pointer-events:none;}
+#hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent2),var(--gold),transparent);}
+#hero .eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.16em;color:var(--accent2);text-transform:uppercase;margin-bottom:14px;}
+#hero h1{font-family:'Playfair Display',serif;font-size:42px;font-weight:700;line-height:1.15;margin-bottom:10px;color:#fff;}
+#hero .subtitle{font-size:18px;color:rgba(255,255,255,0.8);font-style:italic;margin-bottom:28px;}
+#hero .badges{display:flex;gap:10px;flex-wrap:wrap;}
+#hero .badge{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:4px 14px;font-size:12px;color:rgba(255,255,255,0.95);font-family:'JetBrains Mono',monospace;}
+
+.content-wrap{max-width:1140px;margin:0 auto;padding:0 48px 80px;}
+
+.sec-header{margin-top:60px;margin-bottom:12px;padding:26px 34px;border-radius:12px;display:flex;align-items:center;gap:20px;box-shadow:0 4px 16px rgba(0,0,0,0.03);}
+.sec-header.s1{background:linear-gradient(135deg,#4C1D950C,#4C1D951C);border-left:5px solid var(--s1);}
+.sec-header.s2{background:linear-gradient(135deg,#5B21B60C,#5B21B61C);border-left:5px solid var(--s2);}
+.sec-header.s3{background:linear-gradient(135deg,#6D28D90C,#6D28D91C);border-left:5px solid var(--s3);}
+.sec-header.s4{background:linear-gradient(135deg,#7C3AED0C,#7C3AED1C);border-left:5px solid var(--s4);}
+.sec-header.s5{background:linear-gradient(135deg,#2E10650C,#2E10651C);border-left:5px solid var(--s5);}
+.sec-badge{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.12em;padding:5px 14px;border-radius:6px;white-space:nowrap;flex-shrink:0;}
+.s1 .sec-badge{background:var(--s1);color:white;}
+.s2 .sec-badge{background:var(--s2);color:white;}
+.s3 .sec-badge{background:var(--s3);color:white;}
+.s4 .sec-badge{background:var(--s4);color:white;}
+.s5 .sec-badge{background:var(--s5);color:white;}
+.sec-title{font-family:'Playfair Display',serif;font-size:23px;font-weight:700;}
+.s1 .sec-title{color:var(--s1);}
+.s2 .sec-title{color:var(--s2);}
+.s3 .sec-title{color:var(--s3);}
+.s4 .sec-title{color:var(--s4);}
+.s5 .sec-title{color:var(--s5);}
+
+.topic{margin-top:48px;padding-top:48px;border-top:1px solid var(--border);}
+.topic:first-of-type{border-top:none;}
+.topic-header{display:flex;align-items:flex-start;gap:16px;margin-bottom:24px;}
+.topic-num{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;padding:4px 12px;border-radius:6px;margin-top:4px;flex-shrink:0;}
+.s1 .topic-num{background:var(--s1-lt);color:var(--s1);}
+.s2 .topic-num{background:var(--s2-lt);color:var(--s2);}
+.s3 .topic-num{background:var(--s3-lt);color:var(--s3);}
+.s4 .topic-num{background:var(--s4-lt);color:var(--s4);}
+.s5 .topic-num{background:var(--s5-lt);color:var(--s5);}
+
+.topic h2{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;line-height:1.2;}
+.s1 .topic h2{color:var(--s1);}
+.s2 .topic h2{color:var(--s2);}
+.s3 .topic h2{color:var(--s3);}
+.s4 .topic h2{color:var(--s4);}
+.s5 .topic h2{color:var(--s5);}
+
+.topic h3{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--primary);margin:32px 0 12px;padding-bottom:6px;border-bottom:2px solid var(--border);}
+.topic h4{font-size:14px;font-weight:700;color:var(--muted);letter-spacing:0.08em;text-transform:uppercase;margin:24px 0 10px;font-family:'JetBrains Mono',monospace;}
+.topic p{margin-bottom:18px; line-height:1.8; font-size:16.5px; color:var(--text);}
+.topic ul, .topic ol{margin:10px 0 20px 24px;color:var(--text);}
+.topic li{margin-bottom:10px;line-height:1.7;}
+.topic li::marker{color:var(--accent2);font-weight:bold;}
+.topic strong{color:var(--text);font-weight:700;}
+.topic em{font-style:italic;color:var(--text);}
+.topic code{font-family:'JetBrains Mono',monospace;font-size:13.5px;background:var(--bg2);padding:2px 6px;border-radius:4px;border:1px solid var(--border);color:var(--primary);}
+
+.outline-box{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:24px 28px;margin:24px 0 36px;box-shadow:0 2px 8px rgba(0,0,0,0.03);}
+.outline-box h3{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--primary);margin-bottom:16px;border-bottom:2px solid var(--primary-lt);padding-bottom:8px;}
+.outline-list{list-style:none;margin:0;padding:0;}
+.outline-list li{margin-bottom:12px;line-height:1.6;font-size:15px;}
+.outline-list li strong{color:var(--accent2);font-family:'JetBrains Mono',monospace;font-size:13px;display:block;margin-bottom:2px;}
+
+.table-wrap{overflow-x:auto;margin:24px 0 28px;border-radius:10px;box-shadow:0 2px 10px rgba(0,0,0,0.05);border:1px solid var(--border);}
+table{width:100%;border-collapse:collapse;font-size:14px;background:var(--white);}
+thead tr{background:var(--s1);}
+thead th{color:white;padding:12px 16px;text-align:left;font-family:'Source Serif 4',serif;font-weight:700;font-size:14px;}
+tbody tr:nth-child(even){background:var(--bg2);}
+tbody tr:hover{background:var(--s1-lt);transition:background 0.15s;}
+tbody td{padding:11px 16px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.6;}
+
+.callout{margin:24px 0;padding:18px 22px;border-radius:0 10px 10px 0;border-left:5px solid;font-size:14.5px;line-height:1.7;box-shadow:0 2px 8px rgba(0,0,0,0.03);}
+.callout .label{font-family:'JetBrains Mono',monospace;font-size:10.5px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;display:block;margin-bottom:6px;}
+.callout.pearl{background:var(--gold-lt);border-color:var(--gold);color:var(--text);}
+.callout.pearl .label{color:var(--gold);}
+.callout.warn{background:var(--red-lt);border-color:var(--red);color:var(--text);}
+.callout.warn .label{color:var(--red);}
+
+@media(max-width:900px) {
+  .content-wrap { padding: 0 20px 60px; }
+  #hero { padding: 80px 20px 40px; }
+  #hero h1 { font-size: 30px; }
+  #sidebar-toggle { top: 64px; left: 16px; }
+}
+</style>
+<link rel="icon" type="image/png" href="../../assets/images/Surgical_Insight_Hub_Logo.png">
+</head>
+<body>
+
+<nav class="nav" id="mainNav">
+  <div class="nav-left">
+    <a href="../../index.html" class="nav-pill">
+      <div class="nav-logo-img">
+        <img src="../../assets/images/Surgical_Insight_Hub_Logo.png" alt="SIH Logo">
+      </div>
+      <div>
+        <div class="nav-brand-text">Surgical Insight Hub</div>
+        <div class="nav-brand-sub">The Residency Journal</div>
+      </div>
+    </a>
+  </div>
+  <div class="nav-links-pill">
+    <a href="../../index.html">Home</a>
+    <a href="../../notes.html" class="active">Notes</a>
+    <a href="../operative_approach.html">Playbook</a>
+    <a href="../../arena.html?v=4.0.0">MCQ Arena</a>
+    <a href="../../podcast.html">Podcast</a>
+    <a href="../../surgery-talk.html">Surgery Talk</a>
+    <a href="../../about.html">About</a>
+  </div>
+  <div class="nav-right">
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+      <svg id="moonIcon" viewBox="0 0 24 24" width="18" height="18"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      <svg id="sunIcon" style="display:none;" viewBox="0 0 24 24" width="18" height="18"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+    </button>
+    <a href="https://t.me/sugicalInsightHub" target="_blank" class="nav-tg-btn" title="Join Telegram">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="#f0d080"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.89 8.22l-1.97 9.28c-.15.66-.54.82-1.08.51l-3-2.21-1.45 1.39c-.16.16-.3.3-.61.3l.21-3.05 5.56-5.02c.24-.21-.05-.33-.37-.12l-6.87 4.33-2.96-.92c-.64-.2-.66-.64.14-.95l11.57-4.46c.54-.19 1.01.13.83.94z"/></svg>
+    </a>
+    <a href="../../arena.html?v=4.0.0" class="nav-btn arena-btn">MCQ Arena</a>
+  </div>
+</nav>
+
+<div class="mob-nav-overlay" id="mobNavOverlay" onclick="closeMobNav()"></div>
+<div class="mob-nav-sheet" id="mobNavSheet">
+  <div class="mob-nav-handle"></div>
+  <a href="../../index.html" onclick="closeMobNav()">Home</a>
+  <a href="../../notes.html" onclick="closeMobNav()">Notes</a>
+  <a href="../operative_approach.html" onclick="closeMobNav()">Playbook</a>
+  <a href="../../podcast.html" onclick="closeMobNav()">Podcast</a>
+  <a href="../../surgery-talk.html" onclick="closeMobNav()">Surgery Talk</a>
+  <a href="../../arena.html" onclick="closeMobNav()">MCQ Arena</a>
+  <a href="../../about.html" onclick="closeMobNav()">About</a>
+  <a href="https://t.me/sugicalInsightHub" target="_blank" rel="noopener" onclick="closeMobNav()" style="color: var(--brand-gold); font-weight: 800;">Join Telegram Community</a>
+</div>
+
+<button id="sidebar-toggle" onclick="toggleSidebar()">
+  Table of Contents
+</button>
+<div id="sidebar-overlay" onclick="closeSidebar()"></div>
+
+<aside id="sidebar">
+  <div id="sidebar-header">
+    <div class="logo">Surgical Insight Hub</div>
+    <div class="sub">Chronological Monograph</div>
+  </div>
+  <div id="sidebar-search">
+    <input type="text" placeholder="Search topics..." oninput="filterNav(this.value)">
+  </div>
+  <nav id="sidebar-nav">
+    <div class="vol-label">Chapter 14: Graves' Disease Pathophysiology & TSI</div>
+<a class="nav-item" href="#topic-14-1"><span class="num">14.1</span>Immunopathogenesis & Receptor Activation</a>
+<div class="vol-label">Chapter 15: Graves' Ophthalmopathy & Orbitopathy CAS Scoring</div>
+<a class="nav-item" href="#topic-15-1"><span class="num">15.1</span>Orbital Fibroblast Inflammatory Scoring</a>
+<div class="vol-label">Chapter 16: Treatment of Graves' Disease & Operative Lugol Protocol</div>
+<a class="nav-item" href="#topic-16-1"><span class="num">16.1</span>Thionamides, RAI, & Surgical Preparation</a>
+<div class="vol-label">Chapter 17: Toxic Adenoma, Multinodular Goiter & Thyroid Storm</div>
+<a class="nav-item" href="#topic-17-1"><span class="num">17.1</span>Plummer's Disease & Emergency Resuscitation Protocols</a>
+
+  </nav>
+</aside>
+
+<main id="main">
+<header id="hero">
+  <div class="eyebrow">Endocrine Surgery · Structured Chapter Outline Monograph</div>
+  <h1>Hyperthyroidism & Thyrotoxicosis Pathology & Surgery</h1>
+  <p class="subtitle">Comprehensive Chronological Monograph covering Graves disease immunopathogenesis, orbitopathy CAS scores, Plummer disease, operative Lugol preparation, and thyroid storm protocols.</p>
+  <div class="badges">
+    <span class="badge">Graves Disease</span><span class="badge">Orbitopathy CAS</span><span class="badge">Plummer Disease</span><span class="badge">Thyroid Storm</span><span class="badge">ABSITE Core</span>
+  </div>
+</header>
+
+<div class="content-wrap">
+  
+        <div class="sec-header s1" id="chapter-14" style="margin-top:50px;">
+          <span class="sec-badge">CHAPTER 14</span>
+          <h2 class="sec-title">Graves' Disease Pathophysiology & TSI</h2>
+        </div>
+            <section class="topic s1-topic" id="topic-14-1">
+              <div class="topic-header">
+                <span class="topic-num">14.1</span>
+                <h2>Immunopathogenesis & Receptor Activation</h2>
+              </div>
+              <div class="outline-box"><h3>Chapter Outline: Graves' Disease Pathophysiology</h3><ul class="outline-list">
+<li><strong>Section 1. Introduction & Epidemiology</strong>Leading cause of hyperthyroidism in adults (60–80%), female predominance (8:1).</li>
+<li><strong>Section 2. Autoimmune Immunopathogenesis</strong>Loss of self-tolerance driving production of IgG Thyroid-Stimulating Immunoglobulins (TSI).</li>
+<li><strong>Section 3. TSH Receptor Autonomous Activation</strong>TSI binding to basolateral TSHR activating adenylate cyclase independently of TSH feedback.</li>
+<li><strong>Section 4. Histopathology of Diffuse Hyperplasia</strong>Columnar follicular cells, papillary infoldings into colloid, and scalloped colloid margins.</li>
+<li><strong>Section 5. Clinical Manifestations Across Systems</strong>Heat intolerance, weight loss despite increased appetite, tremor, palpitations, sinus tachycardia, atrial fibrillation.</li>
+<li><strong>Section 6. Extrathyroidal Manifestations</strong>Pretibial myxedema (infiltrative dermopathy) and thyroid acropachy (subperiosteal bone formation).</li>
+<li><strong>Section 7. Diagnostic Laboratory Evaluation</strong>Suppressed TSH (<0.01 mIU/L), elevated FT4/FT3, and positive serum TSI/TRAb titers.</li>
+<li><strong>Section 8. Radioactive Iodine Uptake Scintigraphy Patterns</strong>Diffusely elevated, symmetrical I-123 uptake throughout both thyroid lobes.</li>
+<li><strong>Section 9. High-Yield Review & Graves Pathophysiology Summary</strong>Consolidated diagnostic and pathologic recall points for examinations.</li>
+</ul></div>
+                <h3>1. Introduction &amp; Epidemiology</h3>
+                <p>Graves' disease is the leading cause of hyperthyroidism in adults (60–80%), demonstrating a strong female predominance (8:1) and peaking between ages 30–50.</p>
+
+                <h3>2. Autoimmune Immunopathogenesis</h3>
+                <p>Graves' disease is an autoimmune disorder caused by B-cell production of IgG autoantibodies directed against the TSH receptor.</p>
+
+                <div style="font-family:'JetBrains Mono',monospace; font-size:12px; font-weight:700; color:var(--primary); margin-top:28px; text-transform:uppercase; letter-spacing:0.05em;">Diagnostic Plates — Graves Hyperplasia & TSI Pathways (Click Image to Enlarge)</div>
+<div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(260px, 1fr)); gap:16px; margin:14px 0 32px;">
+
+        <div onclick="openLightbox('../../assets/images/endocrine_pdf_images/ch14_p437_0_4479.jpeg')" style="background:var(--bg2); border:1px solid var(--border); border-radius:12px; overflow:hidden; padding:12px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s; cursor:pointer;" onmouseover="this.style.transform='scale(1.02)'; this.style.borderColor='var(--accent2)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--border)';">
+          <img src="../../assets/images/endocrine_pdf_images/ch14_p437_0_4479.jpeg" alt="Figure 1" style="max-width:100%; max-height:210px; object-fit:contain; border-radius:8px; background:#fff; padding:6px; border:1px solid var(--border);">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent2); margin-top:8px; display:flex; align-items:center; justify-content:center; gap:6px;">
+            <span>Diagnostic Plate 1</span>
+            <span style="font-size:10px; opacity:0.7;">🔍</span>
+          </div>
+        </div>
+
+        <div onclick="openLightbox('../../assets/images/endocrine_pdf_images/ch14_p442_0_4550.jpeg')" style="background:var(--bg2); border:1px solid var(--border); border-radius:12px; overflow:hidden; padding:12px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s; cursor:pointer;" onmouseover="this.style.transform='scale(1.02)'; this.style.borderColor='var(--accent2)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--border)';">
+          <img src="../../assets/images/endocrine_pdf_images/ch14_p442_0_4550.jpeg" alt="Figure 2" style="max-width:100%; max-height:210px; object-fit:contain; border-radius:8px; background:#fff; padding:6px; border:1px solid var(--border);">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent2); margin-top:8px; display:flex; align-items:center; justify-content:center; gap:6px;">
+            <span>Diagnostic Plate 2</span>
+            <span style="font-size:10px; opacity:0.7;">🔍</span>
+          </div>
+        </div>
+
+        <div onclick="openLightbox('../../assets/images/endocrine_pdf_images/ch14_p443_0_4567.jpeg')" style="background:var(--bg2); border:1px solid var(--border); border-radius:12px; overflow:hidden; padding:12px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s; cursor:pointer;" onmouseover="this.style.transform='scale(1.02)'; this.style.borderColor='var(--accent2)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--border)';">
+          <img src="../../assets/images/endocrine_pdf_images/ch14_p443_0_4567.jpeg" alt="Figure 3" style="max-width:100%; max-height:210px; object-fit:contain; border-radius:8px; background:#fff; padding:6px; border:1px solid var(--border);">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent2); margin-top:8px; display:flex; align-items:center; justify-content:center; gap:6px;">
+            <span>Diagnostic Plate 3</span>
+            <span style="font-size:10px; opacity:0.7;">🔍</span>
+          </div>
+        </div>
+
+        <div onclick="openLightbox('../../assets/images/endocrine_pdf_images/ch14_p446_0_4589.jpeg')" style="background:var(--bg2); border:1px solid var(--border); border-radius:12px; overflow:hidden; padding:12px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s; cursor:pointer;" onmouseover="this.style.transform='scale(1.02)'; this.style.borderColor='var(--accent2)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--border)';">
+          <img src="../../assets/images/endocrine_pdf_images/ch14_p446_0_4589.jpeg" alt="Figure 4" style="max-width:100%; max-height:210px; object-fit:contain; border-radius:8px; background:#fff; padding:6px; border:1px solid var(--border);">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent2); margin-top:8px; display:flex; align-items:center; justify-content:center; gap:6px;">
+            <span>Diagnostic Plate 4</span>
+            <span style="font-size:10px; opacity:0.7;">🔍</span>
+          </div>
+        </div>
+</div>
+
+                <h3>3. TSH Receptor Autonomous Activation</h3>
+                <p>Thyroid-Stimulating Immunoglobulins (TSI) bind to and activate the TSH receptor, stimulating adenylate cyclase and driving autonomous hormone synthesis, thyroid growth, and diffuse vascular hyperplasia.</p>
+
+                <h3>4. Histopathology of Diffuse Hyperplasia</h3>
+                <p>Histology demonstrates small follicles lined by tall columnar epithelial cells with papillary infoldings projecting into colloid, featuring characteristic pale, scalloped colloid margins ("moth-eaten" colloid).</p>
+
+                <h3>5. Clinical Manifestations Across Systems</h3>
+                <p>Hypermetabolic features include weight loss despite polyphagia, heat intolerance, fine resting tremor, warm moist skin, palpitations, sinus tachycardia, and atrial fibrillation in elderly patients.</p>
+
+                <h3>6. Extrathyroidal Manifestations</h3>
+                <p>Infiltrative dermopathy (pretibial myxedema) manifests as non-pitting erythematous indurated plaques on the anterior lower legs. Thyroid acropachy presents with digital clubbing and periosteal bone formation.</p>
+
+                <h3>7. Diagnostic Laboratory Evaluation</h3>
+                <p>Biochemical evaluation shows suppressed serum TSH (<0.01 mIU/L), elevated Free T4 and Free T3, and positive circulating TSI autoantibody titers.</p>
+
+                <h3>8. Radioactive Iodine Uptake Scintigraphy Patterns</h3>
+                <p>Nuclear I-123 scintigraphy demonstrates diffusely elevated, homogeneous, symmetrical uptake (40–80%) throughout both enlarged thyroid lobes.</p>
+
+                <h3>9. High-Yield Review &amp; Graves Pathophysiology Summary</h3>
+                <ul>
+                  <li><strong>Pathogenesis:</strong> IgG TSI autoantibodies stimulating TSH receptor.</li>
+                  <li><strong>Histology:</strong> Columnar epithelium with scalloped colloid margins.</li>
+                  <li><strong>RAIU Pattern:</strong> Diffuse, symmetrical elevated iodine uptake.</li>
+                </ul>
+                
+            </section>
+        <div class="sec-header s2" id="chapter-15" style="margin-top:50px;">
+          <span class="sec-badge">CHAPTER 15</span>
+          <h2 class="sec-title">Graves' Ophthalmopathy & Orbitopathy CAS Scoring</h2>
+        </div>
+            <section class="topic s2-topic" id="topic-15-1">
+              <div class="topic-header">
+                <span class="topic-num">15.1</span>
+                <h2>Orbital Fibroblast Inflammatory Scoring</h2>
+              </div>
+              <div class="outline-box"><h3>Chapter Outline: Graves' Ophthalmopathy</h3><ul class="outline-list">
+<li><strong>Section 1. Pathophysiology of Orbital Inflammation</strong>Cross-reacting TSI autoantibodies targeting TSHR and IGF-1R on orbital fibroblasts.</li>
+<li><strong>Section 2. Glycosaminoglycan Deposition & Extraocular Swelling</strong>Fibroblast proliferation and hyaluronan synthesis driving muscle swelling and fat expansion.</li>
+<li><strong>Section 3. Clinical Signs & Physical Examination Features</strong>Proptosis, lid retraction (Dalrymple sign), lid lag (von Graefe sign), diplopia, and chemosis.</li>
+<li><strong>Section 4. Optic Nerve Compression Emergency Mechanics</strong>Apical crowding causing compressive optic neuropathy, visual field defects, and loss of color vision.</li>
+<li><strong>Section 5. Clinical Activity Score (CAS) 7-Item Framework</strong>Standardized scoring tool quantifying active orbital inflammation (threshold CAS >= 3/7).</li>
+<li><strong>Section 6. EUGOGO Severity Classification</strong>Mild, moderate-to-severe, and sight-threatening orbitopathy categories.</li>
+<li><strong>Section 7. Medical Therapies & Glucocorticoid Protocols</strong>High-dose IV pulse Methylprednisolone vs oral steroids for active moderate-to-severe disease.</li>
+<li><strong>Section 8. Targeted Biologics (Teprotumumab)</strong>FDA-approved monoclonal antibody inhibitor of IGF-1R reducing proptosis and CAS.</li>
+<li><strong>Section 9. Surgical Orbital Decompression Indications</strong>Indications for surgical bone wall removal in sight-threatening compressive optic neuropathy.</li>
+<li><strong>Section 10. High-Yield Review & Orbitopathy Board Anchors</strong>Core board recall points and CAS scoring criteria.</li>
+</ul></div>
+                <h3>1. Pathophysiology of Orbital Inflammation</h3>
+                <p>Graves' orbitopathy affects 25–50% of Graves patients. Autoantibodies target TSH receptors and IGF-1 receptors co-expressed on orbital fibroblasts and preadipocytes.</p>
+
+                <h3>2. Glycosaminoglycan Deposition &amp; Extraocular Swelling</h3>
+                <p>Activated orbital fibroblasts secrete hydrophilic glycosaminoglycans (hyaluronic acid), causing marked extraocular muscle swelling, orbital fat expansion, and intraorbital pressure elevation.</p>
+
+                <div style="font-family:'JetBrains Mono',monospace; font-size:12px; font-weight:700; color:var(--primary); margin-top:28px; text-transform:uppercase; letter-spacing:0.05em;">Diagnostic Plates — Graves Orbitopathy Clinical Signs (Click Image to Enlarge)</div>
+<div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(260px, 1fr)); gap:16px; margin:14px 0 32px;">
+
+        <div onclick="openLightbox('../../assets/images/endocrine_pdf_images/ch15_p457_0_4646.jpeg')" style="background:var(--bg2); border:1px solid var(--border); border-radius:12px; overflow:hidden; padding:12px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s; cursor:pointer;" onmouseover="this.style.transform='scale(1.02)'; this.style.borderColor='var(--accent2)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--border)';">
+          <img src="../../assets/images/endocrine_pdf_images/ch15_p457_0_4646.jpeg" alt="Figure 1" style="max-width:100%; max-height:210px; object-fit:contain; border-radius:8px; background:#fff; padding:6px; border:1px solid var(--border);">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent2); margin-top:8px; display:flex; align-items:center; justify-content:center; gap:6px;">
+            <span>Diagnostic Plate 1</span>
+            <span style="font-size:10px; opacity:0.7;">🔍</span>
+          </div>
+        </div>
+
+        <div onclick="openLightbox('../../assets/images/endocrine_pdf_images/ch15_p465_0_4733.jpeg')" style="background:var(--bg2); border:1px solid var(--border); border-radius:12px; overflow:hidden; padding:12px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s; cursor:pointer;" onmouseover="this.style.transform='scale(1.02)'; this.style.borderColor='var(--accent2)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--border)';">
+          <img src="../../assets/images/endocrine_pdf_images/ch15_p465_0_4733.jpeg" alt="Figure 2" style="max-width:100%; max-height:210px; object-fit:contain; border-radius:8px; background:#fff; padding:6px; border:1px solid var(--border);">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent2); margin-top:8px; display:flex; align-items:center; justify-content:center; gap:6px;">
+            <span>Diagnostic Plate 2</span>
+            <span style="font-size:10px; opacity:0.7;">🔍</span>
+          </div>
+        </div>
+
+        <div onclick="openLightbox('../../assets/images/endocrine_pdf_images/ch15_p469_0_4757.jpeg')" style="background:var(--bg2); border:1px solid var(--border); border-radius:12px; overflow:hidden; padding:12px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s; cursor:pointer;" onmouseover="this.style.transform='scale(1.02)'; this.style.borderColor='var(--accent2)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--border)';">
+          <img src="../../assets/images/endocrine_pdf_images/ch15_p469_0_4757.jpeg" alt="Figure 3" style="max-width:100%; max-height:210px; object-fit:contain; border-radius:8px; background:#fff; padding:6px; border:1px solid var(--border);">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent2); margin-top:8px; display:flex; align-items:center; justify-content:center; gap:6px;">
+            <span>Diagnostic Plate 3</span>
+            <span style="font-size:10px; opacity:0.7;">🔍</span>
+          </div>
+        </div>
+
+        <div onclick="openLightbox('../../assets/images/endocrine_pdf_images/ch15_p474_0_4811.png')" style="background:var(--bg2); border:1px solid var(--border); border-radius:12px; overflow:hidden; padding:12px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s; cursor:pointer;" onmouseover="this.style.transform='scale(1.02)'; this.style.borderColor='var(--accent2)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--border)';">
+          <img src="../../assets/images/endocrine_pdf_images/ch15_p474_0_4811.png" alt="Figure 4" style="max-width:100%; max-height:210px; object-fit:contain; border-radius:8px; background:#fff; padding:6px; border:1px solid var(--border);">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent2); margin-top:8px; display:flex; align-items:center; justify-content:center; gap:6px;">
+            <span>Diagnostic Plate 4</span>
+            <span style="font-size:10px; opacity:0.7;">🔍</span>
+          </div>
+        </div>
+</div>
+
+                <h3>3. Clinical Signs &amp; Physical Examination Features</h3>
+                <p>Features include proptosis (exophthalmos), upper eyelid retraction (Dalrymple's sign), lid lag on downward gaze (von Graefe's sign), conjunctival injection, chemosis, and restrictive extraocular strabismus causing diplopia.</p>
+
+                <h3>4. Optic Nerve Compression Emergency Mechanics</h3>
+                <p>Severe muscle swelling at the orbital apex compresses the optic nerve, manifesting as decreased visual acuity, loss of color vision, and visual field defects (sight-threatening emergency).</p>
+
+                <h3>5. Clinical Activity Score (CAS) 7-Item Framework</h3>
+                <div class="callout pearl">
+                  <span class="label">CLINICAL PEARL — ORBITOPATHY CLINICAL ACTIVITY SCORE (CAS)</span>
+                  Active inflammation is quantified using the 7-item Clinical Activity Score (spontaneous orbital pain, gaze pain, eyelid erythema, eyelid edema, conjunctival injection, chemosis, caruncle edema). CAS &ge;3/7 defines active inflammatory disease requiring medical immunosuppression.
+                </div>
+
+                <h3>6. EUGOGO Severity Classification</h3>
+                <p>The European Group on Graves' Orbitopathy (EUGOGO) stratifies patients into mild, moderate-to-severe (impact on daily life), and sight-threatening (optic neuropathy or corneal breakdown).</p>
+
+                <h3>7. Medical Therapies &amp; Glucocorticoid Protocols</h3>
+                <p>Active moderate-to-severe disease is treated with IV pulse Methylprednisolone (500 mg weekly for 6 weeks, then 250 mg weekly for 6 weeks; total 4.5 g). Oral steroids are less effective and carry higher toxicity.</p>
+
+                <h3>8. Targeted Biologics (Teprotumumab)</h3>
+                <p><strong>Teprotumumab</strong> is a fully human monoclonal antibody inhibitor of the IGF-1 receptor that significantly reduces proptosis, orbital fat volume, and inflammation in active orbitopathy.</p>
+
+                <h3>9. Surgical Orbital Decompression Indications</h3>
+                <p>Urgent surgical orbital decompression (resecting medial and lateral orbital bone walls) is indicated for sight-threatening optic neuropathy unresponsive to IV steroids, or severe corneal exposure.</p>
+
+                <h3>10. High-Yield Review &amp; Orbitopathy Board Anchors</h3>
+                <ul>
+                  <li><strong>Receptor Targets:</strong> TSHR and IGF-1R on orbital fibroblasts.</li>
+                  <li><strong>Active Inflammation Threshold:</strong> CAS &ge;3/7.</li>
+                  <li><strong>First-Line Medical Therapy:</strong> IV pulse Methylprednisolone.</li>
+                </ul>
+                
+            </section>
+        <div class="sec-header s3" id="chapter-16" style="margin-top:50px;">
+          <span class="sec-badge">CHAPTER 16</span>
+          <h2 class="sec-title">Treatment of Graves' Disease & Operative Lugol Protocol</h2>
+        </div>
+            <section class="topic s3-topic" id="topic-16-1">
+              <div class="topic-header">
+                <span class="topic-num">16.1</span>
+                <h2>Thionamides, RAI, & Surgical Preparation</h2>
+              </div>
+              <div class="outline-box"><h3>Chapter Outline: Treatment of Graves' Disease</h3><ul class="outline-list">
+<li><strong>Section 1. Overview of Treatment Modalities</strong>Comparison of antithyroid thionamides, radioactive iodine ablation (RAI), and total thyroidectomy.</li>
+<li><strong>Section 2. Thionamide Pharmacology (Methimazole vs PTU)</strong>Inhibition of TPO organification; PTU inhibition of peripheral T4-to-T3 5'-deiodination.</li>
+<li><strong>Section 3. Thionamide Adverse Effects & Black-Box Warnings</strong>Agranulocytosis (<0.5%, sudden fever/sore throat), Methimazole embryopathy, and PTU hepatotoxicity.</li>
+<li><strong>Section 4. Radioactive Iodine (RAI I-131) Ablation Protocols</strong>Induction of radiation thyroiditis, permanent hypothyroidism, and contraindications (pregnancy/orbitopathy).</li>
+<li><strong>Section 5. Surgical Indications for Total Thyroidectomy</strong>Severe orbitopathy, large compressive goiters, co-existing suspicious nodules, or thionamide toxicity.</li>
+<li><strong>Section 6. Preoperative Euthyroid Optimization</strong>Medical normalization of thyroid hormone levels with Methimazole to prevent intraoperative storm.</li>
+<li><strong>Section 7. Inorganic Iodine & Lugol's Solution Protocol</strong>Administration of SSKI / Lugol's iodine to induce Wolff-Chaikoff blockade and decrease gland vascularity.</li>
+<li><strong>Section 8. Operative Technique & Postoperative Care</strong>Total thyroidectomy technique, RLN protection, parathyroid preservation, and calcium replacement.</li>
+<li><strong>Section 9. High-Yield Review & Treatment Comparison Summary</strong>Consolidated modality selection matrix for surgical board examinations.</li>
+</ul></div>
+                <h3>1. Overview of Treatment Modalities</h3>
+                <p>Definitive management options for Graves' disease include thionamide antithyroid drugs, radioactive iodine (RAI) ablation, and total thyroidectomy. Selection depends on patient age, goiter size, orbitopathy status, and comorbidities.</p>
+
+                <h3>2. Thionamide Pharmacology (Methimazole vs PTU)</h3>
+                <p>Methimazole and Propylthiouracil (PTU) inhibit Thyroid Peroxidase (TPO), blocking organification and coupling. PTU also uniquely inhibits peripheral 5'-deiodinase conversion of T4 to T3.</p>
+
+                
+
+                <h3>3. Thionamide Adverse Effects &amp; Black-Box Warnings</h3>
+                <p>Major adverse effects include agranulocytosis (granulocyte count <500/mcL; presents with sudden fever and sore throat requiring immediate CBC and drug cessation). Methimazole carries embryopathy risk (aplasia cutis); PTU carries a black-box warning for severe fulminant hepatotoxicity.</p>
+
+                <h3>4. Radioactive Iodine (RAI I-131) Ablation Protocols</h3>
+                <p>Oral I-131 delivers beta-particle radiation destroying follicular tissue over 2–3 months, inducing permanent hypothyroidism. RAI is strictly contraindicated in pregnancy and active moderate-to-severe Graves' orbitopathy (may exacerbate eye disease).</p>
+
+                <h3>5. Surgical Indications for Total Thyroidectomy</h3>
+                <p>Total thyroidectomy is preferred for patients with moderate-to-severe orbitopathy, large compressive goiters (&ge;80 g), co-existing suspicious thyroid nodules, pregnancy, or thionamide adverse reactions.</p>
+
+                <h3>6. Preoperative Euthyroid Optimization</h3>
+                <p>Patients MUST be rendered euthyroid preoperatively using Methimazole to prevent precipitating intraoperative thyroid storm. Beta-blockers control sympathetic symptoms.</p>
+
+                <h3>7. Inorganic Iodine &amp; Lugol's Solution Protocol</h3>
+                <div class="callout warn">
+                  <span class="label">SURGICAL PREPARATION — LUGOL'S IODINE PROTOCOL</span>
+                  Prior to total thyroidectomy for Graves' disease, patients must be rendered euthyroid with thionamides. Saturated solution of potassium iodide (SSKI, 1–2 drops q8h) or <strong>Lugol's iodine solution</strong> (5–7 drops q8h) is administered for 10–14 days preoperatively to temporarily inhibit thyroid hormone release (Wolff-Chaikoff effect) and dramatically decrease thyroid gland vascularity and intraoperative blood loss.
+                </div>
+
+                <h3>8. Operative Technique &amp; Postoperative Care</h3>
+                <p>Perform total thyroidectomy. Subtotal thyroidectomy is obsolete due to high disease recurrence rates. Preserve parathyroids and recurrent laryngeal nerves.</p>
+
+                <h3>9. High-Yield Review &amp; Treatment Comparison Summary</h3>
+                <ul>
+                  <li><strong>Agranulocytosis Warning:</strong> Sudden fever/sore throat -> STOP drug &amp; check CBC.</li>
+                  <li><strong>RAI Contraindication:</strong> Pregnancy &amp; active moderate-to-severe orbitopathy.</li>
+                  <li><strong>Preop Lugol Effect:</strong> Decreases gland vascularity via Wolff-Chaikoff blockade.</li>
+                </ul>
+                
+            </section>
+        <div class="sec-header s4" id="chapter-17" style="margin-top:50px;">
+          <span class="sec-badge">CHAPTER 17</span>
+          <h2 class="sec-title">Toxic Adenoma, Multinodular Goiter & Thyroid Storm</h2>
+        </div>
+            <section class="topic s4-topic" id="topic-17-1">
+              <div class="topic-header">
+                <span class="topic-num">17.1</span>
+                <h2>Plummer's Disease & Emergency Resuscitation Protocols</h2>
+              </div>
+              <div class="outline-box"><h3>Chapter Outline: Plummer Disease & Thyroid Storm</h3><ul class="outline-list">
+<li><strong>Section 1. Toxic Autonomous Nodules (Plummer's Disease)</strong>Somatic activating mutations in TSHR gene causing autonomous hyperfunctioning nodules.</li>
+<li><strong>Section 2. Clinical Presentation & Absence of Autoimmune Signs</strong>Hyperthyroidism in older adults lacking orbitopathy or pretibial myxedema.</li>
+<li><strong>Section 3. Diagnostic Imaging & RAIU Scintigraphy</strong>Scintigraphy showing hyperfunctioning 'hot' nodules with suppression of surrounding extranodular tissue.</li>
+<li><strong>Section 4. Therapeutic Management (Surgical Lobectomy vs RAI)</strong>Surgical lobectomy for toxic solitary adenomas vs total thyroidectomy / RAI for toxic MNG.</li>
+<li><strong>Section 5. Thyroid Storm Definition & Precipitating Triggers</strong>Extreme life-threatening thyrotoxicosis triggered by surgery, infection, trauma, or RAI.</li>
+<li><strong>Section 6. Burch-Wartofsky Point Scale Diagnostic Framework</strong>Diagnostic scoring system evaluating fever, CNS dysfunction, GI-hepatic impairment, and cardiovascular compromise.</li>
+<li><strong>Section 7. Emergency Resuscitation 4-Pillar Pharmacotherapy</strong>Sequential administration of Beta-blockers, Thionamides, Inorganic Iodine, and Corticosteroids.</li>
+<li><strong>Section 8. Plasma Exchange and Definitive Management</strong>Plasmapheresis for refractory storm followed by delayed total thyroidectomy upon euthyroid recovery.</li>
+<li><strong>Section 9. High-Yield Review & Emergency Storm Summary</strong>Consolidated emergency treatment flowchart for medical/surgical board exams.</li>
+</ul></div>
+                <h3>1. Toxic Autonomous Nodules (Plummer's Disease)</h3>
+                <p>Toxic solitary adenoma and toxic multinodular goiter (Plummer's disease) arise from somatic activating point mutations in the TSH receptor gene (or Gs-alpha subunit), leading to constitutive G-protein activation and autonomous hormone secretion.</p>
+
+                <h3>2. Clinical Presentation &amp; Absence of Autoimmune Signs</h3>
+                <p>Plummer's disease typically affects older individuals presenting with subacute hyperthyroidism, cardiovascular symptoms (atrial fibrillation, high-output heart failure), and weight loss, without orbitopathy or pretibial myxedema.</p>
+
+                <div style="font-family:'JetBrains Mono',monospace; font-size:12px; font-weight:700; color:var(--primary); margin-top:28px; text-transform:uppercase; letter-spacing:0.05em;">Diagnostic Plates — Plummer Toxic Adenoma & Thyroid Storm (Click Image to Enlarge)</div>
+<div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(260px, 1fr)); gap:16px; margin:14px 0 32px;">
+
+        <div onclick="openLightbox('../../assets/images/endocrine_pdf_images/ch17_p517_0_5283.jpeg')" style="background:var(--bg2); border:1px solid var(--border); border-radius:12px; overflow:hidden; padding:12px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s; cursor:pointer;" onmouseover="this.style.transform='scale(1.02)'; this.style.borderColor='var(--accent2)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--border)';">
+          <img src="../../assets/images/endocrine_pdf_images/ch17_p517_0_5283.jpeg" alt="Figure 1" style="max-width:100%; max-height:210px; object-fit:contain; border-radius:8px; background:#fff; padding:6px; border:1px solid var(--border);">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent2); margin-top:8px; display:flex; align-items:center; justify-content:center; gap:6px;">
+            <span>Diagnostic Plate 1</span>
+            <span style="font-size:10px; opacity:0.7;">🔍</span>
+          </div>
+        </div>
+
+        <div onclick="openLightbox('../../assets/images/endocrine_pdf_images/ch17_p521_0_5353.jpeg')" style="background:var(--bg2); border:1px solid var(--border); border-radius:12px; overflow:hidden; padding:12px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s; cursor:pointer;" onmouseover="this.style.transform='scale(1.02)'; this.style.borderColor='var(--accent2)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--border)';">
+          <img src="../../assets/images/endocrine_pdf_images/ch17_p521_0_5353.jpeg" alt="Figure 2" style="max-width:100%; max-height:210px; object-fit:contain; border-radius:8px; background:#fff; padding:6px; border:1px solid var(--border);">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent2); margin-top:8px; display:flex; align-items:center; justify-content:center; gap:6px;">
+            <span>Diagnostic Plate 2</span>
+            <span style="font-size:10px; opacity:0.7;">🔍</span>
+          </div>
+        </div>
+</div>
+
+                <h3>3. Diagnostic Imaging &amp; RAIU Scintigraphy</h3>
+                <p>I-123 scintigraphy demonstrates intense focal uptake in the autonomous nodule ("hot" nodule) with complete suppression of radioactive uptake in the surrounding normal extranodular tissue.</p>
+
+                <h3>4. Therapeutic Management (Surgical Lobectomy vs RAI)</h3>
+                <p>Toxic solitary adenomas are definitively treated with surgical thyroid lobectomy or RAI ablation. Toxic multinodular goiter is treated with total thyroidectomy or RAI.</p>
+
+                <h3>5. Thyroid Storm Definition &amp; Precipitating Triggers</h3>
+                <p>Thyroid storm is a acute life-threatening emergency representing extreme hypermetabolic decompensation of thyrotoxicosis, precipitated by surgery, systemic infection, trauma, parturition, or RAI therapy in poorly controlled patients.</p>
+
+                <h3>6. Burch-Wartofsky Point Scale Diagnostic Framework</h3>
+                <p>The Burch-Wartofsky Point Scale quantifies storm severity based on fever (>100°F), CNS agitation/coma, tachyarrhythmias, congestive heart failure, and jaundice. A score &ge;45 is highly suggestive of thyroid storm.</p>
+
+                <h3>7. Emergency Resuscitation 4-Pillar Pharmacotherapy</h3>
+                <div class="table-wrap">
+                  <table class="s3-tbl">
+                    <thead>
+                      <tr>
+                        <th>Therapeutic Class</th>
+                        <th>Medication &amp; Dosing</th>
+                        <th>Mechanism of Action &amp; Administration Order</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><strong>1. Beta-Blocker</strong></td>
+                        <td>Propranolol 60–80 mg PO q4h or IV push</td>
+                        <td>Controls sympathetic hyperactivity; high doses inhibit peripheral T4-to-T3 conversion.</td>
+                      </tr>
+                      <tr>
+                        <td><strong>2. Thionamide</strong></td>
+                        <td>PTU 200–400 mg PO q4h OR Methimazole 20 mg PO q4h</td>
+                        <td>Blocks new hormone synthesis. PTU also blocks peripheral 5'-deiodination. Give BEFORE iodine.</td>
+                      </tr>
+                      <tr>
+                        <td><strong>3. Inorganic Iodine</strong></td>
+                        <td>Lugol's solution 5 drops PO q8h OR SSKI 1–2 drops q8h</td>
+                        <td>Blocks preformed hormone release (Wolff-Chaikoff effect). MUST give 1 hour AFTER thionamide.</td>
+                      </tr>
+                      <tr>
+                        <td><strong>4. Corticosteroid</strong></td>
+                        <td>Hydrocortisone 100 mg IV q8h OR Dexamethasone 2 mg q6h</td>
+                        <td>Treats relative adrenal insufficiency and inhibits peripheral T4-to-T3 conversion.</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <h3>8. Plasma Exchange and Definitive Management</h3>
+                <p>In patients refractory to medical therapy, therapeutic plasma exchange (plasmapheresis) removes circulating plasma-bound thyroid hormones and TSI antibodies. Perform definitive total thyroidectomy once euthyroid stability is restored.</p>
+
+                <h3>9. High-Yield Review &amp; Emergency Storm Summary</h3>
+                <ul>
+                  <li><strong>Plummer Scintigraphy:</strong> "Hot" hyperfunctioning nodule with extranodular suppression.</li>
+                  <li><strong>Storm Iodine Timing:</strong> Administer inorganic iodine strictly 1 HOUR AFTER thionamide.</li>
+                  <li><strong>Burch-Wartofsky Threshold:</strong> Score &ge;45 confirms Thyroid Storm.</li>
+                </ul>
+                
+            </section>
+</div>
+</main>
+
+<div id="lightbox-modal" onclick="closeLightbox()" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.85); backdrop-filter:blur(6px); z-index:2000; align-items:center; justify-content:center; padding:20px;">
+  <span style="position:absolute; top:20px; right:30px; color:#fff; font-size:36px; font-weight:bold; cursor:pointer; font-family:sans-serif; transition:color 0.2s;" onmouseover="this.style.color='var(--accent2)'" onmouseout="this.style.color='#fff'">&times;</span>
+  <img id="lightbox-img" src="" alt="Enlarged Diagnostic Plate" style="max-width:92vw; max-height:92vh; object-fit:contain; border-radius:8px; box-shadow:0 12px 40px rgba(0,0,0,0.6); background:#fff; padding:8px;" onclick="event.stopPropagation()">
+</div>
+
+<script>
+  function openLightbox(imgUrl) {
+    const modal = document.getElementById('lightbox-modal');
+    const img = document.getElementById('lightbox-img');
+    img.src = imgUrl;
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox() {
+    const modal = document.getElementById('lightbox-modal');
+    modal.style.display = 'none';
+    document.body.style.overflow = '';
+  }
+
+  function toggleSidebar() {
+    document.body.classList.toggle('sidebar-open');
+  }
+  function closeSidebar() {
+    document.body.classList.remove('sidebar-open');
+  }
+  function filterNav(q) {
+    q = q.toLowerCase();
+    document.querySelectorAll('#sidebar-nav .nav-item').forEach(el => {
+      el.style.display = el.textContent.toLowerCase().includes(q) ? 'block' : 'none';
+    });
+  }
+  
+  function openMobNav() {
+    document.getElementById('mobNavSheet').classList.add('open');
+    document.getElementById('mobNavOverlay').style.display = 'block';
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMobNav() {
+    document.getElementById('mobNavSheet').classList.remove('open');
+    document.getElementById('mobNavOverlay').style.display = 'none';
+    document.body.style.overflow = '';
+  }
+
+  const themeToggle = document.getElementById('themeToggle');
+  const moonIcon = document.getElementById('moonIcon');
+  const sunIcon = document.getElementById('sunIcon');
+  
+  function applyTheme(theme) {
+    if (theme === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      if (moonIcon) moonIcon.style.display = 'none';
+      if (sunIcon) sunIcon.style.display = 'block';
+    } else {
+      document.documentElement.removeAttribute('data-theme');
+      if (sunIcon) sunIcon.style.display = 'none';
+      if (moonIcon) moonIcon.style.display = 'block';
+    }
+  }
+  
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      const isDark = document.documentElement.hasAttribute('data-theme');
+      const newTheme = isDark ? 'light' : 'dark';
+      applyTheme(newTheme);
+      localStorage.setItem('sih-theme', newTheme);
+    });
+  }
+  
+  document.addEventListener('DOMContentLoaded', () => {
+    applyTheme(localStorage.getItem('sih-theme') || 'light');
+  });
+</script>
+<script src="../../js/navigation.js"></script>
+<script src="../../js/nav-pill.js"></script>
+</body>
+</html>

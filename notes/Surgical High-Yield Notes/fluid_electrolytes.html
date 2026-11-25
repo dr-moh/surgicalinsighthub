@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Surgical Insight Hub — Fluid, Electrolyte &amp; Acid-Base Therapy</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/theme.css?v=4.0.0">
+<link rel="stylesheet" href="../../css/shared.css">
+<script>
+  const savedTheme = localStorage.getItem('sih-theme') || 'light';
+  if (savedTheme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+</script>
+<style>
+:root {
+  --primary:   #0F766E; /* Ocean Teal */
+  --primary-dk:#115E59;
+  --primary-lt:#F0FDFA;
+  --accent:    #0D9488;
+  --accent2:   #14B8A6;
+  --gold:      #B8922A;
+  --gold-lt:   #FEF3C7;
+  --s1:        #0F766E;
+  --s2:        #0D9488;
+  --s3:        #C27803;
+  --s4:        #2563EB;
+  --s5:        #BE185D;
+  --s1-lt:     #F0FDFA;
+  --s2-lt:     #F0FDFA;
+  --s3-lt:     #FEF3C7;
+  --s4-lt:     #EFF6FF;
+  --s5-lt:     #FDF2F8;
+  --red:       #B91C1C;
+  --red-lt:    #FEF2F2;
+  --bg:        #FBFBFC;
+  --bg2:       #F4F4F6;
+  --border:    #E5E7EB;
+  --text:      #1F2937;
+  --muted:     #4B5563;
+  --white:     #FFFFFF;
+  --sidebar-w: 300px;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--bg);color:var(--text);font-size:16.5px;line-height:1.8;}
+
+/* DARK MODE OVERRIDES */
+[data-theme="dark"] {
+  --bg: #09060F;
+  --bg2: #120D1D;
+  --text: #E2DEE9;
+  --muted: #A78BFA;
+  --border: rgba(255,255,255,0.08);
+  --primary-lt: #115E5944;
+  --s1-lt: #115E5944;
+  --s2-lt: #0B1D19;
+  --s3-lt: #221B0B;
+  --s4-lt: #0F172A;
+  --s5-lt: #2A0B1A;
+  --white: #120D1D;
+}
+
+/* SIDEBAR & OVERLAY */
+#sidebar {
+  position: fixed; top: 0; left: 0; width: var(--sidebar-w); height: 100vh;
+  background: var(--primary-dk); color: #E2DEE9;
+  display: flex; flex-direction: column;
+  z-index: 1300; overflow: hidden;
+  transform: translateX(-100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 4px 0 24px rgba(0,0,0,0.3);
+}
+body.sidebar-open #sidebar { transform: translateX(0); }
+
+#sidebar-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.5); backdrop-filter: blur(3px);
+  z-index: 1250; opacity: 0; pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+body.sidebar-open #sidebar-overlay { opacity: 1; pointer-events: auto; }
+
+#sidebar-toggle {
+  position: fixed; top: 72px; left: 24px; z-index: 1200;
+  background: var(--primary); color: white;
+  border: none; border-radius: 30px;
+  padding: 10px 18px; font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 600;
+  letter-spacing: 0.05em; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  display: flex; align-items: center; gap: 8px; transition: all 0.2s;
+}
+#sidebar-toggle:hover { background: var(--accent); transform: translateY(-2px); }
+
+#progress-bar {
+  position: fixed; top: 52px; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  transform-origin: left; transform: scaleX(0); transition: transform 0.1s; z-index: 1105;
+}
+
+#sidebar-header{padding:20px 20px 14px;border-bottom:1px solid rgba(255,255,255,0.1);flex-shrink:0;}
+#sidebar-header .logo{font-family:'Playfair Display',serif;font-size:13px;font-weight:700;color:var(--accent2);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;}
+#sidebar-header .sub{font-size:10.5px;color:rgba(226,222,233,0.6);letter-spacing:0.04em;}
+#sidebar-search{padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.08);flex-shrink:0;}
+#sidebar-search input{width:100%;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:6px;color:#E2DEE9;padding:6px 10px;font-size:12px;font-family:'Source Serif 4',serif;outline:none;transition:border-color 0.2s;}
+#sidebar-search input::placeholder{color:rgba(226,222,233,0.4);}
+#sidebar-search input:focus{border-color:var(--accent2);}
+#sidebar-nav{flex:1;overflow-y:auto;padding:8px 0 20px;}
+#sidebar-nav::-webkit-scrollbar{width:4px;}
+#sidebar-nav::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.15);border-radius:2px;}
+.vol-label{font-size:9.5px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent2);padding:14px 18px 4px;}
+.nav-item{display:block;padding:8px 18px 8px 22px;font-size:12.5px;color:rgba(226,222,233,0.75);text-decoration:none;border-left:2px solid transparent;transition:all 0.15s;line-height:1.4;}
+.nav-item:hover{color:#fff;background:rgba(255,255,255,0.05);border-left-color:var(--accent);}
+.nav-item.active{color:#fff;background:rgba(255,255,255,0.08);border-left-color:var(--accent2);font-weight:600;}
+.nav-item .num{font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(226,222,233,0.4);margin-right:6px;}
+
+/* HERO */
+#hero{background:linear-gradient(135deg,var(--primary-dk) 0%,#0F766E 60%,#090314 100%);color:white;padding:120px 72px 60px;position:relative;overflow:hidden;}
+#hero::before{content:'';position:absolute;top:-60px;right:-60px;width:380px;height:380px;background:radial-gradient(circle,rgba(255,255,255,0.1) 0%,transparent 70%);pointer-events:none;}
+#hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--primary),var(--accent2),transparent);}
+#hero .eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.16em;color:var(--accent2);text-transform:uppercase;margin-bottom:14px;}
+#hero h1{font-family:'Playfair Display',serif;font-size:38px;font-weight:700;line-height:1.15;margin-bottom:10px;color:#fff;}
+#hero .subtitle{font-size:18px;color:rgba(255,255,255,0.65);font-style:italic;margin-bottom:28px;}
+#hero .badges{display:flex;gap:10px;flex-wrap:wrap;}
+#hero .badge{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:4px 14px;font-size:12px;color:rgba(255,255,255,0.8);font-family:'JetBrains Mono',monospace;}
+
+/* CONTENT */
+.content-wrap{max-width:1140px;margin:0 auto;padding:0 48px 80px;}
+
+/* SECTION HEADER */
+.sec-header{margin-top:60px;margin-bottom:8px;padding:28px 36px;border-radius:10px;display:flex;align-items:center;gap:20px;}
+.sec-header.s1{background:linear-gradient(135deg,#0F766E08,#0F766E18);border-left:4px solid var(--s1);}
+.sec-header.s2{background:linear-gradient(135deg,#0D948808,#0D948818);border-left:4px solid var(--s2);}
+.sec-header.s3{background:linear-gradient(135deg,#C2780308,#C2780318);border-left:4px solid var(--s3);}
+.sec-header.s4{background:linear-gradient(135deg,#2563EB08,#2563EB18);border-left:4px solid var(--s4);}
+.sec-header.s5{background:linear-gradient(135deg,#BE185D08,#BE185D18);border-left:4px solid var(--s5);}
+.sec-badge{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;letter-spacing:0.1em;padding:4px 12px;border-radius:4px;white-space:nowrap;flex-shrink:0;}
+.s1 .sec-badge{background:var(--s1);color:white;}
+.s2 .sec-badge{background:var(--s2);color:white;}
+.s3 .sec-badge{background:var(--s3);color:white;}
+.s4 .sec-badge{background:var(--s4);color:white;}
+.s5 .sec-badge{background:var(--s5);color:white;}
+.sec-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;}
+.s1 .sec-title{color:var(--s1);}
+.s2 .sec-title{color:var(--s2);}
+.s3 .sec-title{color:var(--s3);}
+.s4 .sec-title{color:var(--s4);}
+.s5 .sec-title{color:var(--s5);}
+
+/* TOPIC */
+.topic{margin-top:48px;padding-top:48px;border-top:1px solid var(--border);}
+.topic:first-of-type{border-top:none;}
+.topic-header{display:flex;align-items:flex-start;gap:16px;margin-bottom:24px;}
+.topic-num{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;padding:3px 10px;border-radius:4px;margin-top:4px;flex-shrink:0;}
+.s1 .topic-num{background:var(--s1-lt);color:var(--s1);}
+.s2 .topic-num{background:var(--s2-lt);color:var(--s2);}
+.s3 .topic-num{background:var(--s3-lt);color:var(--s3);}
+.s4 .topic-num{background:var(--s4-lt);color:var(--s4);}
+.s5 .topic-num{background:var(--s5-lt);color:var(--s5);}
+.topic h2{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;line-height:1.2;}
+.s1 .topic h2{color:var(--s1);}
+.s2 .topic h2{color:var(--s2);}
+.s3 .topic h2{color:var(--s3);}
+.s4 .topic h2{color:var(--s4);}
+.s5 .topic h2{color:var(--s5);}
+.topic h3{font-family:'Playfair Display',serif;font-size:17px;font-weight:600;color:var(--muted);margin:26px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--border);}
+.topic h4{font-size:13px;font-weight:600;color:var(--muted);letter-spacing:0.06em;text-transform:uppercase;margin:18px 0 8px;font-family:'JetBrains Mono',monospace;}
+.topic p{margin-bottom:12px;color:var(--text);text-align:justify;}
+.topic ul,.topic ol{margin:8px 0 14px 20px;color:var(--text);}
+.topic li{margin-bottom:6px;line-height:1.65;}
+.topic li::marker{color:var(--accent2);}
+.topic strong{color:var(--text);font-weight:600;}
+
+/* TABLES */
+.table-wrap{overflow-x:auto;margin:16px 0 20px;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.06);border:1px solid var(--border);}
+table{width:100%;border-collapse:collapse;font-size:13.5px;background:var(--white);}
+thead tr{background:var(--s1);}
+thead th{color:white;padding:10px 14px;text-align:left;font-family:'Source Serif 4',serif;font-weight:600;font-size:13px;}
+tbody tr:nth-child(even){background:var(--bg2);}
+tbody tr:hover{background:var(--s1-lt);transition:background 0.15s;}
+tbody td{padding:9px 14px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.5;}
+.s2-tbl thead tr{background:var(--s2);}
+.s3-tbl thead tr{background:var(--s3);}
+.s4-tbl thead tr{background:var(--s4);}
+.s5-tbl thead tr{background:var(--s5);}
+
+/* CALLOUTS */
+.callout{margin:18px 0;padding:14px 18px;border-radius:0 8px 8px 0;border-left:4px solid;font-size:14px;line-height:1.65;}
+.callout .label{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;display:block;margin-bottom:4px;}
+.callout.pearl{background:var(--gold-lt);border-color:var(--gold);}
+.callout.pearl .label{color:var(--gold);}
+.callout.warn{background:var(--red-lt);border-color:var(--red);}
+.callout.warn .label{color:var(--red);}
+.callout.clin{background:var(--s2-lt);border-color:var(--s2);}
+.callout.clin .label{color:var(--s2);}
+.callout.exam{background:var(--s4-lt);border-color:var(--s4);}
+.callout.exam .label{color:var(--s4);}
+
+/* VIVA Scenario */
+.viva{background:var(--s1-lt);border:1px solid var(--border);border-left:4px solid var(--s1);border-radius:0 8px 8px 0;padding:16px 20px;margin:20px 0;}
+.viva .vq{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;color:var(--s1);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:8px;}
+.viva .vscenario{font-size:14px;font-weight:600;color:var(--text);margin-bottom:10px;line-height:1.5;}
+.viva .vanswer{font-size:13.5px;color:var(--muted);line-height:1.65;}
+.viva .vanswer ul{margin:6px 0 0 18px;}
+.viva .vanswer li{margin-bottom:4px;}
+
+/* KEY GRID */
+.key-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:10px;margin:14px 0 20px;}
+.key-card{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:12px 14px;font-size:13px;line-height:1.55;}
+.key-card .kc-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;font-weight:600;color:var(--s1);}
+.key-card .kc-val{font-weight:700;font-size:15px;color:var(--text);}
+.key-card.g2 .kc-label{color:var(--s2);}
+.key-card.g3 .kc-label{color:var(--s3);}
+.key-card.red .kc-label{color:var(--red);}
+.key-card.amb .kc-label{color:var(--accent2);}
+
+/* TOP BTN */
+#top-btn{position:fixed;bottom:28px;right:28px;background:var(--primary);color:white;border:none;border-radius:50%;width:44px;height:44px;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,0.2);transition:all 0.2s;opacity:0;pointer-events:none;z-index:1100;}
+#top-btn.show{opacity:1;pointer-events:auto;}
+#top-btn:hover{background:var(--accent2);transform:translateY(-2px);}
+
+@media(max-width:900px){
+  .content-wrap{padding:0 20px 60px;}
+  #hero{padding:80px 20px 40px;}
+  #hero h1{font-size:30px;}
+  #sidebar-toggle{top:64px; left:16px;}
+}
+</style>
+<script src="https://jsdelivr.net" async></script>
+</head>
+<body>
+  <!-- Standardized SIH Navbar -->
+  <nav class="nav" id="mainNav">
+    <div class="nav-left">
+      <a href="../../index.html" class="nav-pill">
+        <div class="nav-logo-img">
+          <img src="../../assets/images/Surgical_Insight_Hub_Logo.png" alt="SIH Logo">
+        </div>
+        <div>
+          <div class="nav-brand-text">Surgical Insight Hub</div>
+          <div class="nav-brand-sub">The Residency Journal</div>
+        </div>
+      </a>
+    </div>
+    <div class="nav-links-pill">
+      <a href="../../index.html">Home</a>
+      <a href="../../notes.html" class="active">Notes</a>
+      <a href="../operative_approach.html">Playbook</a>
+      <a href="../../arena.html?v=4.0.0">MCQ Arena</a>
+      <a href="../../podcast.html">Podcast</a>
+      <a href="../../surgery-talk.html">Surgery Talk</a>
+      <a href="../../about.html">About</a>
+    </div>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+        <svg id="moonIcon" viewBox="0 0 24 24" width="18" height="18"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        <svg id="sunIcon" style="display:none;" viewBox="0 0 24 24" width="18" height="18"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="23" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+      </button>
+      <a href="https://t.me/sugicalInsightHub" target="_blank" class="nav-tg-btn" title="Join Telegram">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="#f0d080"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.89 8.22l-1.97 9.28c-.15.66-.54.82-1.08.51l-3-2.21-1.45 1.39c-.16.16-.3.3-.61.3l.21-3.05 5.56-5.02c.24-.21-.05-.33-.37-.12l-6.87 4.33-2.96-.92c-.64-.2-.66-.64.14-.95l11.57-4.46c.54-.19 1.01.13.83.94z"/></svg>
+      </a>
+      <a href="../../arena.html?v=4.0.0" class="nav-btn arena-btn">MCQ Arena</a>
+      <button class="mob-nav-toggle" onclick="openMobNav()" aria-label="Menu">
+        <div class="hamburger"><span></span><span></span><span></span></div>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mob-nav-overlay" id="mobNavOverlay" onclick="closeMobNav()"></div>
+  <div class="mob-nav-sheet" id="mobNavSheet">
+    <div class="mob-nav-handle"></div>
+    <a href="../../index.html" onclick="closeMobNav()">Home</a>
+    <a href="../../notes.html" onclick="closeMobNav()">Notes</a>
+    <a href="../../notes/operative_approach.html" onclick="closeMobNav()">Playbook</a>
+    <a href="../../podcast.html" onclick="closeMobNav()">Podcast</a>
+    <a href="../../surgery-talk.html" onclick="closeMobNav()">Surgery Talk</a>
+    <a href="../../arena.html" onclick="closeMobNav()">MCQ Arena</a>
+    <a href="../../about.html" onclick="closeMobNav()">About</a>
+    <a href="https://t.me/sugicalInsightHub" target="_blank" rel="noopener" onclick="closeMobNav()" style="color: var(--brand-gold); font-weight: 800;">Join Telegram Community</a>
+  </div>
+
+  <div id="progress-bar"></div>
+  <button id="sidebar-toggle" onclick="toggleSidebar()">
+    <span>📜</span> Sections Menu
+  </button>
+  <div id="sidebar-overlay" onclick="closeSidebar()"></div>
+
+  <!-- SIDEBAR -->
+  <aside id="sidebar">
+    <div id="sidebar-header">
+      <div class="logo">Fluid, Electrolyte &amp; Acid-Base</div>
+      <div class="sub">General Surgery Monograph</div>
+    </div>
+    <div id="sidebar-search">
+      <input oninput="filterNav(this.value)" placeholder="Search sections..." type="text"/>
+    </div>
+    <nav id="sidebar-nav">
+      <div class="vol-label">Pillar 1: Pathophysiology</div>
+      <a class="nav-item" href="#p1-fluid-compartments"><span class="num">1.1</span>Fluid Compartment Physiology</a>
+      <a class="nav-item" href="#p1-pediatric-phases"><span class="num">1.2</span>Pediatric Stabilization Phases</a>
+      <div class="vol-label">Pillar 2: Diagnostics</div>
+      <a class="nav-item" href="#p2-composition"><span class="num">2.1</span>IV Fluid Compositions</a>
+      <a class="nav-item" href="#p2-alkalosis"><span class="num">2.2</span>Paradoxical Aciduria Mechanics</a>
+      <div class="vol-label">Pillar 3: Calculations</div>
+      <a class="nav-item" href="#p3-maintenance"><span class="num">3.1</span>Maintenance Calculations</a>
+      <a class="nav-item" href="#p3-walkthrough"><span class="num">3.2</span>Adult Deficit Walkthrough</a>
+      <a class="nav-item" href="#p3-trials"><span class="num">3.3</span>Landmark Fluid Trials</a>
+      <div class="vol-label">Pillar 4: Acid-Base Management</div>
+      <a class="nav-item" href="#p4-acid-base"><span class="num">4.1</span>Delta-Delta Mixed Disorders</a>
+      <a class="nav-item" href="#p4-deficit-correction"><span class="num">4.2</span>Electrolyte Derangement Velocity</a>
+      <div class="vol-label">Board Review</div>
+      <a class="nav-item" href="#board-review"><span class="num">5.1</span>ABSITE Core Recall Matrix</a>
+    </nav>
+  </aside>
+
+  <main id="main">
+    <section id="hero">
+      <div class="eyebrow">Perioperative Homeostasis · Monograph</div>
+      <h1>Fluid, Electrolyte &amp; Acid-Base Therapy</h1>
+      <p class="subtitle">Evidence-based analysis of body water dynamics, pediatric and adult maintenance equations, fluid composition impact, and mixed acid-base disorder algorithms.</p>
+      <div class="badges">
+        <span class="badge">General Surgery</span>
+        <span class="badge">Board Review</span>
+        <span class="badge">ABSITE Gold</span>
+      </div>
+    </section>
+
+    <div class="content-wrap">
+      <!-- Key Statistics Grid -->
+      <div class="key-grid">
+        <div class="key-card">
+          <div class="kc-label">TBW Breakdown</div>
+          <div class="kc-val">2/3 ICF + 1/3 ECF</div>
+        </div>
+        <div class="key-card g2">
+          <div class="kc-label">Pediatric Rule</div>
+          <div class="kc-val">Holiday-Segar 4-2-1</div>
+        </div>
+        <div class="key-card red">
+          <div class="kc-label">NS Osmolarity</div>
+          <div class="kc-val">308 mOsm/L</div>
+        </div>
+        <div class="key-card amb">
+          <div class="kc-label">Na+ Velocity Limit</div>
+          <div class="kc-val">&lt;10 mEq/L/24h</div>
+        </div>
+      </div>
+
+      <!-- Foundational Anchor Callout -->
+      <div class="callout clin" style="border-left-color: var(--primary); background: var(--primary-lt); margin-bottom: 40px;">
+        <span class="label" style="color: var(--primary); font-weight: 700;">Foundational Anchor (From PDF Source Notes)</span>
+        <p style="font-style: italic; color: var(--text);">
+          "Fluid compartment distributions, infant fluid balance phases, Deficit vs. Maintenance vs. Ongoing loss calculations, pediatric-specific formulas, IV fluid osmolarities, and complex perioperative case scenarios (e.g., adult hemicolectomy NPO calculations)."
+        </p>
+        <p style="margin-top: 8px; font-weight: 600; color: var(--primary-dk);">
+          Clinical Focus Note: Never look at serum sodium concentration as a marker of total body sodium content; it is purely a ratio of total body solute to total body water.
+        </p>
+      </div>
+
+      <!-- PILLAR 1 -->
+      <div class="sec-header s1" id="p1-fluid-compartments">
+        <span class="sec-badge">PILLAR 1</span>
+        <span class="sec-title">Core Pathophysiology &amp; Volume Dynamics</span>
+      </div>
+      
+      <section class="topic s1">
+        <div class="topic-header"><span class="topic-num">1.1</span><h2>Body Water Partitioning &amp; Gender/Age Variations</h2></div>
+        <p>Total Body Water (TBW) represents the primary component of physical tissue mass, varying dynamically across the lifespan and between biological sexes:</p>
+        <ul>
+          <li><strong>Age &amp; Sex Variations:</strong>
+            <ul>
+              <li><strong>Neonates:</strong> 75% to 80% of body weight is TBW, which is extracellular-skewed, creating a high vulnerability to rapid dehydration.</li>
+              <li><strong>Adult Males:</strong> ~60% of body weight is TBW, reflecting a higher muscle-to-fat ratio.</li>
+              <li><strong>Adult Females:</strong> ~50% of body weight is TBW, driven by higher subcutaneous adipose tissue deposits (which are hydrophobic).</li>
+              <li><strong>Elderly Adults:</strong> ~45% to 50% of body weight is TBW, indicating progressive sarcopenia and decreased muscle mass.</li>
+            </ul>
+          </li>
+          <li><strong>The Rule of Thirds Fluid Breakdown:</strong>
+            <p>TBW is structured into compartments using the following standard fractions:</p>
+            <ul>
+              <li><strong>Intracellular Fluid (ICF):</strong> Represents <strong>two-thirds (2/3)</strong> of TBW (~40% of total body weight), anchored by its dominant osmotically active cation, <strong>Potassium ($K^+$)</strong>, and organic phosphate/protein anions.</li>
+              <li><strong>Extracellular Fluid (ECF):</strong> Represents <strong>one-third (1/3)</strong> of TBW (~20% of total body weight), dominated by <strong>Sodium ($Na^+$)</strong> and balancing $Cl^-$ and $HCO_3^-$ ions. The ECF is further divided into:
+                <ul>
+                  <li><strong>Interstitial Fluid:</strong> Three-quarters (3/4) of the ECF compartment (~15% of body weight).</li>
+                  <li><strong>Intravascular Fluid (Plasma):</strong> One-quarter (1/4) of the ECF compartment (~5% of body weight).</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <section class="topic s1" id="p1-pediatric-phases">
+        <div class="topic-header"><span class="topic-num">1.2</span><h2>The Three Postnatal Pediatric Fluid Stabilization Phases</h2></div>
+        <p>Neonatal fluid therapy must adapt to the three distinct physiological phases of postnatal renal and volume development:</p>
+        <ol>
+          <li><strong>Phase I (Early Postnatal / Extracellular Volume Contraction):</strong> Occurs during the first 1 to 3 days of life. There is a physiological diuresis of sodium and water driven by high levels of atrial natriuretic peptide (ANP) and transitioning neonatal circulation. This leads to a normal 5% to 10% weight loss in term neonates. <em>Over-resuscitation during this phase is linked to patent ductus arteriosus (PDA) and necrotizing enterocolitis (NEC).</em></li>
+          <li><strong>Phase II (Fluid Stabilization / Transition Phase):</strong> Occurs from day 4 to 7. Insensible losses stabilize, and renal tubular function matures, allowing the neonatal kidney to adjust to varying solute and free water ratios.</li>
+          <li><strong>Phase III (Growth / Positive Nitrogen Balance Phase):</strong> Occurs from day 8 onward. Characterized by true positive solute and nitrogen retention, enabling cellular division, skeletal growth, and linear physiological weight gain.</li>
+        </ol>
+      </section>
+
+      <!-- PILLAR 2 -->
+      <div class="sec-header s2" id="p2-composition">
+        <span class="sec-badge">PILLAR 2</span>
+        <span class="sec-title">Clinical Diagnostics &amp; Fluid Biochemistry</span>
+      </div>
+      
+      <section class="topic s2">
+        <div class="topic-header"><span class="topic-num">2.1</span><h2>Intravenous Crystalloid Compositions &amp; Clinical Profiles</h2></div>
+        <p>Selecting an intravenous fluid requires understanding its ionic and biochemical properties compared to human plasma:</p>
+        
+        <div class="table-wrap s2-tbl">
+          <table>
+            <thead>
+              <tr>
+                <th>Crystalloid Fluid</th>
+                <th>Na<sup>+</sup> (mEq/L)</th>
+                <th>Cl<sup>-</sup> (mEq/L)</th>
+                <th>K<sup>+</sup> (mEq/L)</th>
+                <th>Other Ions (mEq/L)</th>
+                <th>Buffer Profile</th>
+                <th>Osmolarity (mOsm/L) &amp; pH</th>
+                <th>Clinical Effects &amp; Complications</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>0.9% Normal Saline (NS)</strong></td>
+                <td>154</td>
+                <td>154</td>
+                <td>0</td>
+                <td>-</td>
+                <td>None</td>
+                <td>308 mOsm/L (Hyperosmolar)<br>pH 5.5</td>
+                <td>Induces **Hyperchloremic Non-Anion Gap Metabolic Acidosis (NAGMA)**. High chloride levels cause renal afferent arteriole vasoconstriction, reducing GFR and increasing risk of acute kidney injury (AKI).</td>
+              </tr>
+              <tr>
+                <td><strong>Lactated Ringer's (LR)</strong></td>
+                <td>130</td>
+                <td>109</td>
+                <td>4</td>
+                <td>Ca<sup>2+</sup>: 2.7</td>
+                <td>Lactate: 28 mEq/L (metabolized to HCO<sub>3</sub><sup>-</sup> by liver)</td>
+                <td>273 mOsm/L (Hypoosmolar)<br>pH 6.5</td>
+                <td>More physiological. **Calcium content binds to citrated blood products** (do not run in the same IV line as packed red cells to prevent clotting). Lactate clearance requires intact hepatic metabolism.</td>
+              </tr>
+              <tr>
+                <td><strong>Plasma-Lyte 148</strong></td>
+                <td>140</td>
+                <td>98</td>
+                <td>5</td>
+                <td>Mg<sup>2+</sup>: 3.0</td>
+                <td>Acetate: 27, Gluconate: 23 (metabolized by muscle/kidney)</td>
+                <td>294 mOsm/L (Isosmolar)<br>pH 7.4</td>
+                <td>Highly physiological. Ideal for large-volume resuscitation, liver failure, and metabolic acidosis. Does not cause hyperchloremia or interfere with citrate in blood products.</td>
+              </tr>
+              <tr>
+                <td><strong>Dextrose 5% in Water (D5W)</strong></td>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>-</td>
+                <td>None</td>
+                <td>252 mOsm/L (Hypoosmolar)<br>pH 4.0</td>
+                <td>Acts as **Free Water** once dextrose is metabolized by hexokinase. Distributes throughout body compartments (2/3 intracellular, 1/3 extracellular), providing minimal intravascular volume support. Used for hypernatremia correction.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="topic s2" id="p2-alkalosis">
+        <div class="topic-header"><span class="topic-num">2.2</span><h2>Paradoxical Aciduria in Contraction Alkalosis Mechanics</h2></div>
+        <p>A classic ABSITE topic is the development of paradoxical aciduria in patients with severe volume depletion and chloride loss, such as in gastric outlet obstruction (e.g., pyloric stenosis, severe vomiting):</p>
+        <ol>
+          <li><strong>Initial Insult:</strong> Repetitive loss of gastric hydrochloric acid (HCl) and water leads to **hypochloremic, hypokalemic metabolic alkalosis**.</li>
+          <li><strong>ECF Depletion:</strong> Severe dehydration stimulates the renin-angiotensin-aldosterone system (RAAS). Aldosterone acts on the principal cells of the cortical collecting duct to maximize sodium reabsorption, creating a negative luminal charge.</li>
+          <li><strong>Potassium Depletion:</strong> To conserve sodium, the kidney excretion of potassium via the ROMK channels increases. As potassium levels fall, a severe intracellular hypokalemia develops.</li>
+          <li><strong>The Aciduria Switch:</strong> With severe potassium depletion, the intercalated cells of the collecting duct are forced to swap potassium conservation for hydrogen excretion. The H<sup>+</sup>-ATPase pump runs at maximum capacity to reabsorb sodium and potassium, **excreting hydrogen ions into the urine despite systemic alkalosis**. This results in **paradoxical aciduria** (urine pH &lt; 6.0).</li>
+          <li><strong>Correction:</strong> Infuse 0.9% Normal Saline with Potassium Chloride. Chloride delivery permits renal bicarbonate excretion, volume expansion deactivates the RAAS axis, and potassium replacement stops hydrogen ion wasting.</li>
+        </ol>
+      </section>
+
+      <!-- PILLAR 3 -->
+      <div class="sec-header s3" id="p3-maintenance">
+        <span class="sec-badge">PILLAR 3</span>
+        <span class="sec-title">Calculations &amp; Maintenance Formulations</span>
+      </div>
+      
+      <section class="topic s3">
+        <div class="topic-header"><span class="topic-num">3.1</span><h2>Pediatric Holiday-Segar (4-2-1) &amp; Adult Shortcut Math</h2></div>
+        <p>Maintenance fluid rates prevent dehydration and support baseline metabolic processes:</p>
+        <ul>
+          <li><strong>Holiday-Segar 4-2-1 Pediatric Formula (Hourly Rate):</strong>
+            <ul>
+              <li><strong>First 10 kg of body weight:</strong> 4 mL/kg/hour</li>
+              <li><strong>Second 10 kg of body weight (11–20 kg):</strong> + 2 mL/kg/hour</li>
+              <li><strong>Every 1 kg thereafter (&gt; 20 kg):</strong> + 1 mL/kg/hour</li>
+              <li><em>Example for a 25 kg child:</em> <code style="font-family:'JetBrains Mono',monospace;">(10 &times; 4) + (10 &times; 2) + (5 &times; 1) = 65 mL/hour</code>.</li>
+            </ul>
+          </li>
+          <li><strong>Adult Shortcut Equations:</strong>
+            <ul>
+              <li><strong>Weight-Based Shortcut:</strong> **30–35 mL/kg/day** (corresponds to approximately 1.5–2.0 mL/kg/hour).</li>
+              <li><strong>Standard Baseline:</strong> For a typical 70 kg adult, this yields 100–120 mL/hour of maintenance fluid. Normal adult maintenance requires ~1–2 mEq/kg/day of sodium and ~0.5–1 mEq/kg/day of potassium. For mature surgical candidates weighing &gt; 20 kg, a simple bedside shortcut is: <span class="text-white font-mono font-bold">Patient's Weight (in kg) + 40 mL/hour</span>.</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <section class="topic s3" id="p3-walkthrough">
+        <div class="topic-header"><span class="topic-num">3.2</span><h2>Clinical Deficit &amp; Third-Spacing Calculation Walkthrough</h2></div>
+        <div style="background:var(--white); border:1px solid var(--border); border-radius:8px; padding:24px; margin:20px 0;">
+          <h4 style="color:var(--primary); font-size:16px; margin-bottom:12px; font-weight:700;">Case Study: 70kg Adult Patient Scheduled for Left Hemicolectomy</h4>
+          <p><strong>Clinical Scenario:</strong> A 70 kg male is NPO for 12 hours prior to a left hemicolectomy. Intraoperatively, he experiences moderate tissue exposure and third-spacing. Let's calculate his fluid requirement:</p>
+          
+          <ol style="margin-left: 20px; line-height: 1.7;">
+            <li><strong>Accrued NPO Deficit:</strong>
+              <br>• Baseline Maintenance: <code style="font-family:'JetBrains Mono',monospace;">70 kg &times; 1.5 mL/kg/hour = 105 mL/hour</code>.
+              <br>• 12-Hour Deficit: <code style="font-family:'JetBrains Mono',monospace;">105 mL/hour &times; 12 hours = 1,260 mL</code>.
+              <br>• <em>Deficit Replacement Strategy:</em> Replace 50% (630 mL) in the first hour of surgery, 25% (315 mL) in the second hour, and 25% (315 mL) in the third hour.
+            </li>
+            <li><strong>Intraoperative Third-Spacing Loss:</strong>
+              <br>• Moderate abdominal surgery shifts fluids out of the ECF compartment at a rate of 4–6 mL/kg/hour.
+              <br>• Hourly Third-Space Loss: <code style="font-family:'JetBrains Mono',monospace;">70 kg &times; 6 mL/kg/hour = 420 mL/hour</code>.
+            </li>
+            <li><strong>Total Fluid Strategy for Hour 1 of Surgery:</strong>
+              <br>• Maintenance (105 mL) + 50% NPO Deficit (630 mL) + Third-Space Replacement (420 mL) = <strong>1,155 mL of Lactated Ringer's</strong> in the first hour.
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="topic s3" id="p3-trials">
+        <div class="topic-header"><span class="topic-num">3.3</span><h2>Landmark Glycemic &amp; Crystalloid Trials</h2></div>
+        <p>Decisions regarding fluid selection and metabolic management are guided by several multi-center clinical trials:</p>
+        <div class="table-wrap s3-tbl">
+          <table>
+            <thead>
+              <tr>
+                <th>Trial Name</th>
+                <th>Year</th>
+                <th>Primary Intervention</th>
+                <th>Clinical Outcome &amp; Impact on Practice Guidelines</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>NICE-SUGAR</strong></td>
+                <td>2009</td>
+                <td>Randomized 6,104 ICU patients to tight glycemic control (target blood glucose 81–108 mg/dL) vs. conventional glycemic control (target &le; 180 mg/dL).</td>
+                <td>**Tight glycemic control significantly increased 90-day mortality (27.5% vs. 24.9%)** and led to a high rate of severe, life-threatening hypoglycemia. Established the modern standard of targeting **140–180 mg/dL** in critically ill patients.</td>
+              </tr>
+              <tr>
+                <td><strong>SMART</strong></td>
+                <td>2018</td>
+                <td>Pragmatic trial randomizing 15,802 critically ill adults to balanced crystalloids (Lactated Ringer's or Plasma-Lyte 148) vs. 0.9% Normal Saline.</td>
+                <td>**Balanced crystalloids significantly reduced the composite outcome of Major Adverse Kidney Events at 30 days (MAKE30)** (14.3% vs. 15.4%). Normal saline was associated with higher rates of new renal replacement therapy and persistent renal congestion.</td>
+              </tr>
+              <tr>
+                <td><strong>SPLIT</strong></td>
+                <td>2015</td>
+                <td>Double-blind crossover trial comparing Plasma-Lyte 148 vs. 0.9% Normal Saline in 2,278 ICU patients.</td>
+                <td>No significant difference in the incidence of acute kidney injury (AKI) or renal replacement therapy in a predominantly elective post-surgical population, suggesting that the choice of fluid has the greatest impact in high-volume resuscitation and septic cohorts (as validated in the later SMART trial).</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- PILLAR 4 -->
+      <div class="sec-header s4" id="p4-acid-base">
+        <span class="sec-badge">PILLAR 4</span>
+        <span class="sec-title">Acid-Base Sequence &amp; Electrolyte Management</span>
+      </div>
+      
+      <section class="topic s4">
+        <div class="topic-header"><span class="topic-num">4.1</span><h2>The Delta-Delta / Anion Gap Mixed Acid-Base Algorithm</h2></div>
+        <p>Evaluating complex mixed acid-base disorders requires a systematic, step-by-step mathematical approach:</p>
+        
+        <ol style="margin-left: 20px; line-height: 1.8;">
+          <li><strong>Step 1: Calculate the Serum Anion Gap (AG):</strong>
+            <div style="font-family:'JetBrains Mono',monospace; background:var(--bg2); padding:8px 12px; border-radius:4px; margin:8px 0; display:inline-block;">
+              AG = Na<sup>+</sup> - (Cl<sup>-</sup> + HCO<sub>3</sub><sup>-</sup>)
+            </div>
+            <br>• Correct for hypoalbuminemia: for every 1 g/dL drop in serum albumin below 4.0 g/dL, add 2.5 mEq/L to the calculated Anion Gap. Normal gap is **12 &plusmn; 2 mEq/L**.
+          </li>
+          <li><strong>Step 2: Calculate the Delta Gap (&Delta;AG):</strong>
+            <div style="font-family:'JetBrains Mono',monospace; background:var(--bg2); padding:8px 12px; border-radius:4px; margin:8px 0; display:inline-block;">
+              &Delta;AG = Calculated Anion Gap - 12
+            </div>
+            <br>• This represents the excess unmeasured anions present in the ECF.
+          </li>
+          <li><strong>Step 3: Calculate the Delta-Delta (Expected Bicarbonate):</strong>
+            <p>Add the excess Anion Gap to the measured bicarbonate to determine what the bicarbonate level would be if the metabolic acidosis were resolved:</p>
+            <div style="font-family:'JetBrains Mono',monospace; background:var(--bg2); padding:8px 12px; border-radius:4px; margin:8px 0; display:inline-block;">
+              Expected HCO<sub>3</sub><sup>-</sup> = Measured HCO<sub>3</sub><sup>-</sup> + &Delta;AG
+            </div>
+            <br>• <strong>If Expected HCO<sub>3</sub><sup>-</sup> &gt; 26 mEq/L:</strong> A concurrent **Metabolic Alkalosis** is present (commonly due to concurrent vomiting or nasogastric suction).
+            <br>• <strong>If Expected HCO<sub>3</sub><sup>-</sup> &lt; 22 mEq/L:</strong> A concurrent **Non-Anion Gap Metabolic Acidosis (NAGMA)** is present (commonly due to normal saline administration or renal tubular acidosis).
+          </li>
+        </ol>
+      </section>
+
+      <section class="topic s4" id="p4-deficit-correction">
+        <div class="topic-header"><span class="topic-num">4.2</span><h2>Electrolyte Derangement Velocity Rules &amp; Free Water Deficit</h2></div>
+        <p>Rapid correction of sodium abnormalities can cause neurological injury. Correction rates must adhere to strict velocity limits:</p>
+        <ul>
+          <li><strong>Chronic Hyponatremia Correction Velocity:</strong>
+            <br>• Limit correction to <strong>&le; 8–10 mEq/L in a 24-hour period</strong> (or &le; 0.5 mEq/L/hour).
+            <br>• **Pathophysiology:** Rapid sodium replacement increases extracellular osmolarity, pulling water out of brain cells. In the pontine sheath, this causes cell shrinkage and **Central Pontine Myelinolysis (Osmotic Demyelination Syndrome)**, which presents with flaccid paralysis, dysarthria, and dysphagia.
+          </li>
+          <li><strong>Hypernatremia &amp; Free Water Deficit (FWD) Math:</strong>
+            <br>• Calculate the free water deficit to guide hypotonic fluid (D5W) replacement:
+            <div style="font-family:'JetBrains Mono',monospace; background:var(--bg2); padding:10px 14px; border-radius:6px; margin:10px 0; text-align:center;">
+              FWD (Liters) = Coeff &times; Total Body Weight &times; [ (Measured Na<sup>+</sup> / 140) - 1 ]
+            </div>
+            <br>• <em>Coefficients: 0.6 for adult males, 0.5 for adult females, 0.5 for elderly males, 0.45 for elderly females.</em>
+            <br>• **Correction Velocity:** Correction must not exceed **10 mEq/L/day** (or 0.5 mEq/L/hour) to prevent astrocyte swelling and **cerebral edema**, which can cause seizures, herniation, and death.
+          </li>
+        </ul>
+      </section>
+
+      <!-- BOARD REVIEW -->
+      <div class="sec-header s1" id="board-review" style="margin-top: 60px;">
+        <span class="sec-badge">BOARD REVIEW</span>
+        <span class="sec-title">ABSITE Core Recall Matrix</span>
+      </div>
+      
+      <section class="topic s1">
+        <h3>High-Yield Recall Matrix</h3>
+        <div class="table-wrap">
+          <table style="background: transparent;">
+            <thead>
+              <tr>
+                <th>Board Question Topic</th>
+                <th>Gold Standard Key Fact</th>
+                <th>Surgical Decision / Clinical Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Saline-Induced Acidosis</strong></td>
+                <td>High-volume Normal Saline (0.9% NaCl) causes hyperchloremic NAGMA via dilution of bicarbonate.</td>
+                <td>Switch to balanced crystalloids (LR or Plasma-Lyte) in large-volume resuscitation.</td>
+              </tr>
+              <tr>
+                <td><strong>Paradoxical Aciduria</strong></td>
+                <td>Due to severe potassium depletion, the distal tubule excretes H<sup>+</sup> in exchange for Na<sup>+</sup> to conserve potassium.</td>
+                <td>Infuse isotonic saline with Potassium Chloride; do not give bicarbonate.</td>
+              </tr>
+              <tr>
+                <td><strong>Delta-Delta Analysis</strong></td>
+                <td>A delta-delta sum &gt; 26 mEq/L indicates a concurrent metabolic alkalosis.</td>
+                <td>Identify secondary losses (e.g., NG tube output, vomiting, or diuretics).</td>
+              </tr>
+              <tr>
+                <td><strong>Hyponatremia Correction Risk</strong></td>
+                <td>Overly rapid correction of chronic hyponatremia causes Central Pontine Myelinolysis.</td>
+                <td>Target a maximum increase of 8–10 mEq/L/24 hours, using hypertonic saline (3% NaCl) only in symptomatic seizures.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="viva">
+          <div class="vq">VIVA SCENARIO — gastric outlet obstruction alkalosis</div>
+          <div class="vscenario">A 4-week-old male infant presents with non-bilious, projectile vomiting. His weight is 4.0 kg. The laboratory panel shows: Na<sup>+</sup> 132 mEq/L, K<sup>+</sup> 2.9 mEq/L, Cl<sup>-</sup> 88 mEq/L, HCO<sub>3</sub><sup>-</sup> 34 mEq/L, and arterial pH 7.52. His urine pH is 5.5. What is the diagnosis, and how do you optimize him for the operating room?</div>
+          <div class="vanswer">
+            <ul>
+              <li><strong>Diagnosis:</strong> Hypertrophic Pyloric Stenosis presenting with hypokalemic, hypochloremic metabolic alkalosis with paradoxical aciduria.</li>
+              <li><strong>Action:</strong> **Do not schedule the patient for immediate surgery.** Pyloromyotomy is an elective procedure for a medical emergency; the patient must be biochemically optimized first.</li>
+              <li><strong>Management Plan:</strong>
+                <ul>
+                  <li>Establish IV access and initiate a fluid bolus of 20 mL/kg of 0.9% Normal Saline to restore intravascular volume.</li>
+                  <li>Follow with maintenance and deficit replacement using D5W 0.45% NS with 20–30 mEq/L of Potassium Chloride.</li>
+                  <li>**Target parameters for surgery:** Urine output &gt; 1–2 mL/kg/hour, serum Cl<sup>-</sup> &gt; 100 mEq/L, K<sup>+</sup> &gt; 3.5 mEq/L, and correction of paradoxical aciduria (urine pH becomes alkaline as potassium is replaced).</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <button id="top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+  <script src="../../js/nav-pill.js"></script>
+  <script src="../../js/navigation.js"></script>
+  <script>
+    const progressBar = document.getElementById('progress-bar');
+    const topBtn = document.getElementById('top-btn');
+    const navItems = document.querySelectorAll('.nav-item');
+    const sections = document.querySelectorAll('.sec-header[id], .topic[id]');
+
+    window.addEventListener('scroll', () => {
+      const st = window.scrollY;
+      const dh = document.documentElement.scrollHeight - window.innerHeight;
+      if (progressBar) progressBar.style.transform = `scaleX(${st / dh})`;
+      if (topBtn) topBtn.classList.toggle('show', st > 400);
+      
+      let current = '';
+      sections.forEach(s => { if (st >= s.offsetTop - 120) current = s.id; });
+      navItems.forEach(n => { n.classList.toggle('active', n.getAttribute('href') === '#' + current); });
+    });
+
+    function filterNav(query) {
+      const q = query.toLowerCase();
+      navItems.forEach(item => { item.style.display = (!q || item.textContent.toLowerCase().includes(q)) ? 'block' : 'none'; });
+    }
+
+    navItems.forEach(item => {
+      item.addEventListener('click', e => {
+        e.preventDefault();
+        if(typeof closeSidebar === 'function') closeSidebar();
+        const target = document.querySelector(item.getAttribute('href'));
+        if (target) window.scrollTo({ top: target.getBoundingClientRect().top - 80, behavior: 'smooth' });
+      });
+    });
+  </script>
+</body>
+</html>

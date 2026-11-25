@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Surgical Insight Hub — Thyroid Physiology & Laboratory Evaluation</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,300;1,8..60,400;1,8..60,600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/theme.css?v=4.0.0">
+<link rel="stylesheet" href="../../css/shared.css">
+<script>
+  const savedTheme = localStorage.getItem('sih-theme') || 'light';
+  if (savedTheme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+</script>
+<style>
+:root {
+  --primary:   #4C1D95; 
+  --primary-dk:#2E1065;
+  --primary-lt:#F5F3FF;
+  --accent:    #7C3AED;
+  --accent2:   #E11D48;
+  --gold:      #D97706;
+  --gold-lt:   #FEF3C7;
+  --s1:        #4C1D95;
+  --s2:        #5B21B6;
+  --s3:        #6D28D9;
+  --s4:        #7C3AED;
+  --s5:        #2E1065;
+  --s1-lt:     #F5F3FF;
+  --s2-lt:     #EDE9FE;
+  --s3-lt:     #F5F3FF;
+  --s4-lt:     #EDE9FE;
+  --s5-lt:     #F5F3FF;
+  --red:       #E11D48;
+  --red-lt:    #FFF1F2;
+  --bg:        #FAFAFA;
+  --bg2:       #F4F4F5;
+  --border:    #E5E7EB;
+  --text:      #0F172A;
+  --muted:     #64748B;
+  --white:     #FFFFFF;
+  --sidebar-w: 320px;
+}
+[data-theme="dark"] {
+  --bg: #0A0702;
+  --bg2: #140E05;
+  --text: #F3F4F6;
+  --muted: #A3A3A3;
+  --border: rgba(255,255,255,0.08);
+  --primary-lt: #2E1065;
+  --s1-lt: #2E1065;
+  --s2-lt: #2E1065;
+  --s3-lt: #2E1065;
+  --s4-lt: #2E1065;
+  --s5-lt: #2E1065;
+  --white: #140E05;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--bg);color:var(--text);font-size:16.5px;line-height:1.8;}
+
+#sidebar {
+  position: fixed; top: 0; left: 0; width: var(--sidebar-w); height: 100vh;
+  background: var(--primary-dk); color: #F5F3FF;
+  display: flex; flex-direction: column;
+  z-index: 1000; overflow: hidden;
+  transform: translateX(-100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 4px 0 24px rgba(0,0,0,0.4);
+}
+body.sidebar-open #sidebar { transform: translateX(0); }
+
+#sidebar-overlay {
+  position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+  background: rgba(46, 16, 101, 0.7); backdrop-filter: blur(3px);
+  z-index: 950; opacity: 0; pointer-events: none; transition: opacity 0.3s ease;
+}
+body.sidebar-open #sidebar-overlay { opacity: 1; pointer-events: auto; }
+
+#sidebar-toggle {
+  position: fixed; top: 72px; left: 24px; z-index: 900;
+  background: var(--primary); color: white;
+  border: none; border-radius: 30px;
+  padding: 10px 18px; font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600;
+  letter-spacing: 0.05em; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  display: flex; align-items: center; gap: 8px; transition: all 0.2s;
+}
+#sidebar-toggle:hover { background: var(--accent2); transform: translateY(-2px); }
+
+#sidebar-header{padding:20px 20px 14px;border-bottom:1px solid rgba(255,255,255,0.08);flex-shrink:0;}
+#sidebar-header .logo{font-family:'Playfair Display',serif;font-size:13px;font-weight:700;color:var(--accent2);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;}
+#sidebar-header .sub{font-size:10.5px;color:rgba(245,243,255,0.6);letter-spacing:0.04em;}
+#sidebar-search{padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.05);flex-shrink:0;}
+#sidebar-search input{width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:6px;color:#F5F3FF;padding:6px 10px;font-size:12px;font-family:'Source Serif 4',serif;outline:none;transition:border-color 0.2s;}
+#sidebar-search input::placeholder{color:rgba(245,243,255,0.4);}
+#sidebar-search input:focus{border-color:var(--accent2);}
+#sidebar-nav{flex:1;overflow-y:auto;padding:8px 0 20px;}
+#sidebar-nav::-webkit-scrollbar{width:4px;}
+#sidebar-nav::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.15);border-radius:2px;}
+.vol-label{font-size:9.5px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent2);padding:14px 18px 4px;}
+.nav-item{display:block;padding:8px 18px 8px 22px;font-size:12.5px;color:rgba(245,243,255,0.8);text-decoration:none;border-left:2px solid transparent;transition:all 0.15s;line-height:1.4;}
+.nav-item:hover{color:#fff;background:rgba(255,255,255,0.03);border-left-color:rgba(225,29,72,0.5);}
+.nav-item.active{color:#fff;background:rgba(255,255,255,0.06);border-left-color:var(--accent2);font-weight:600;}
+.nav-item .num{font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(245,243,255,0.4);margin-right:6px;}
+
+#main{margin-left:0; min-height:100vh;}
+#hero{background:linear-gradient(135deg,var(--primary-dk) 0%,#4C1D95 60%,#2E1065 100%);color:white;padding:120px 72px 60px;position:relative;overflow:hidden;}
+#hero::before{content:'';position:absolute;top:-60px;right:-60px;width:380px;height:380px;background:radial-gradient(circle,rgba(225,29,72,0.15) 0%,transparent 70%);pointer-events:none;}
+#hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent2),var(--gold),transparent);}
+#hero .eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.16em;color:var(--accent2);text-transform:uppercase;margin-bottom:14px;}
+#hero h1{font-family:'Playfair Display',serif;font-size:42px;font-weight:700;line-height:1.15;margin-bottom:10px;color:#fff;}
+#hero .subtitle{font-size:18px;color:rgba(255,255,255,0.8);font-style:italic;margin-bottom:28px;}
+#hero .badges{display:flex;gap:10px;flex-wrap:wrap;}
+#hero .badge{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:4px 14px;font-size:12px;color:rgba(255,255,255,0.95);font-family:'JetBrains Mono',monospace;}
+
+.content-wrap{max-width:1140px;margin:0 auto;padding:0 48px 80px;}
+
+.sec-header{margin-top:60px;margin-bottom:12px;padding:26px 34px;border-radius:12px;display:flex;align-items:center;gap:20px;box-shadow:0 4px 16px rgba(0,0,0,0.03);}
+.sec-header.s1{background:linear-gradient(135deg,#4C1D950C,#4C1D951C);border-left:5px solid var(--s1);}
+.sec-header.s2{background:linear-gradient(135deg,#5B21B60C,#5B21B61C);border-left:5px solid var(--s2);}
+.sec-header.s3{background:linear-gradient(135deg,#6D28D90C,#6D28D91C);border-left:5px solid var(--s3);}
+.sec-header.s4{background:linear-gradient(135deg,#7C3AED0C,#7C3AED1C);border-left:5px solid var(--s4);}
+.sec-header.s5{background:linear-gradient(135deg,#2E10650C,#2E10651C);border-left:5px solid var(--s5);}
+.sec-badge{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.12em;padding:5px 14px;border-radius:6px;white-space:nowrap;flex-shrink:0;}
+.s1 .sec-badge{background:var(--s1);color:white;}
+.s2 .sec-badge{background:var(--s2);color:white;}
+.s3 .sec-badge{background:var(--s3);color:white;}
+.s4 .sec-badge{background:var(--s4);color:white;}
+.s5 .sec-badge{background:var(--s5);color:white;}
+.sec-title{font-family:'Playfair Display',serif;font-size:23px;font-weight:700;}
+.s1 .sec-title{color:var(--s1);}
+.s2 .sec-title{color:var(--s2);}
+.s3 .sec-title{color:var(--s3);}
+.s4 .sec-title{color:var(--s4);}
+.s5 .sec-title{color:var(--s5);}
+
+.topic{margin-top:48px;padding-top:48px;border-top:1px solid var(--border);}
+.topic:first-of-type{border-top:none;}
+.topic-header{display:flex;align-items:flex-start;gap:16px;margin-bottom:24px;}
+.topic-num{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;padding:4px 12px;border-radius:6px;margin-top:4px;flex-shrink:0;}
+.s1 .topic-num{background:var(--s1-lt);color:var(--s1);}
+.s2 .topic-num{background:var(--s2-lt);color:var(--s2);}
+.s3 .topic-num{background:var(--s3-lt);color:var(--s3);}
+.s4 .topic-num{background:var(--s4-lt);color:var(--s4);}
+.s5 .topic-num{background:var(--s5-lt);color:var(--s5);}
+
+.topic h2{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;line-height:1.2;}
+.s1 .topic h2{color:var(--s1);}
+.s2 .topic h2{color:var(--s2);}
+.s3 .topic h2{color:var(--s3);}
+.s4 .topic h2{color:var(--s4);}
+.s5 .topic h2{color:var(--s5);}
+
+.topic h3{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--primary);margin:32px 0 12px;padding-bottom:6px;border-bottom:2px solid var(--border);}
+.topic h4{font-size:14px;font-weight:700;color:var(--muted);letter-spacing:0.08em;text-transform:uppercase;margin:24px 0 10px;font-family:'JetBrains Mono',monospace;}
+.topic p{margin-bottom:18px; line-height:1.8; font-size:16.5px; color:var(--text);}
+.topic ul, .topic ol{margin:10px 0 20px 24px;color:var(--text);}
+.topic li{margin-bottom:10px;line-height:1.7;}
+.topic li::marker{color:var(--accent2);font-weight:bold;}
+.topic strong{color:var(--text);font-weight:700;}
+.topic em{font-style:italic;color:var(--text);}
+.topic code{font-family:'JetBrains Mono',monospace;font-size:13.5px;background:var(--bg2);padding:2px 6px;border-radius:4px;border:1px solid var(--border);color:var(--primary);}
+
+.outline-box{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:24px 28px;margin:24px 0 36px;box-shadow:0 2px 8px rgba(0,0,0,0.03);}
+.outline-box h3{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--primary);margin-bottom:16px;border-bottom:2px solid var(--primary-lt);padding-bottom:8px;}
+.outline-list{list-style:none;margin:0;padding:0;}
+.outline-list li{margin-bottom:12px;line-height:1.6;font-size:15px;}
+.outline-list li strong{color:var(--accent2);font-family:'JetBrains Mono',monospace;font-size:13px;display:block;margin-bottom:2px;}
+
+.table-wrap{overflow-x:auto;margin:24px 0 28px;border-radius:10px;box-shadow:0 2px 10px rgba(0,0,0,0.05);border:1px solid var(--border);}
+table{width:100%;border-collapse:collapse;font-size:14px;background:var(--white);}
+thead tr{background:var(--s1);}
+thead th{color:white;padding:12px 16px;text-align:left;font-family:'Source Serif 4',serif;font-weight:700;font-size:14px;}
+tbody tr:nth-child(even){background:var(--bg2);}
+tbody tr:hover{background:var(--s1-lt);transition:background 0.15s;}
+tbody td{padding:11px 16px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.6;}
+
+.callout{margin:24px 0;padding:18px 22px;border-radius:0 10px 10px 0;border-left:5px solid;font-size:14.5px;line-height:1.7;box-shadow:0 2px 8px rgba(0,0,0,0.03);}
+.callout .label{font-family:'JetBrains Mono',monospace;font-size:10.5px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;display:block;margin-bottom:6px;}
+.callout.pearl{background:var(--gold-lt);border-color:var(--gold);color:var(--text);}
+.callout.pearl .label{color:var(--gold);}
+.callout.warn{background:var(--red-lt);border-color:var(--red);color:var(--text);}
+.callout.warn .label{color:var(--red);}
+
+@media(max-width:900px) {
+  .content-wrap { padding: 0 20px 60px; }
+  #hero { padding: 80px 20px 40px; }
+  #hero h1 { font-size: 30px; }
+  #sidebar-toggle { top: 64px; left: 16px; }
+}
+</style>
+<link rel="icon" type="image/png" href="../../assets/images/Surgical_Insight_Hub_Logo.png">
+</head>
+<body>
+
+<nav class="nav" id="mainNav">
+  <div class="nav-left">
+    <a href="../../index.html" class="nav-pill">
+      <div class="nav-logo-img">
+        <img src="../../assets/images/Surgical_Insight_Hub_Logo.png" alt="SIH Logo">
+      </div>
+      <div>
+        <div class="nav-brand-text">Surgical Insight Hub</div>
+        <div class="nav-brand-sub">The Residency Journal</div>
+      </div>
+    </a>
+  </div>
+  <div class="nav-links-pill">
+    <a href="../../index.html">Home</a>
+    <a href="../../notes.html" class="active">Notes</a>
+    <a href="../operative_approach.html">Playbook</a>
+    <a href="../../arena.html?v=4.0.0">MCQ Arena</a>
+    <a href="../../podcast.html">Podcast</a>
+    <a href="../../surgery-talk.html">Surgery Talk</a>
+    <a href="../../about.html">About</a>
+  </div>
+  <div class="nav-right">
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+      <svg id="moonIcon" viewBox="0 0 24 24" width="18" height="18"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      <svg id="sunIcon" style="display:none;" viewBox="0 0 24 24" width="18" height="18"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+    </button>
+    <a href="https://t.me/sugicalInsightHub" target="_blank" class="nav-tg-btn" title="Join Telegram">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="#f0d080"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.89 8.22l-1.97 9.28c-.15.66-.54.82-1.08.51l-3-2.21-1.45 1.39c-.16.16-.3.3-.61.3l.21-3.05 5.56-5.02c.24-.21-.05-.33-.37-.12l-6.87 4.33-2.96-.92c-.64-.2-.66-.64.14-.95l11.57-4.46c.54-.19 1.01.13.83.94z"/></svg>
+    </a>
+    <a href="../../arena.html?v=4.0.0" class="nav-btn arena-btn">MCQ Arena</a>
+  </div>
+</nav>
+
+<div class="mob-nav-overlay" id="mobNavOverlay" onclick="closeMobNav()"></div>
+<div class="mob-nav-sheet" id="mobNavSheet">
+  <div class="mob-nav-handle"></div>
+  <a href="../../index.html" onclick="closeMobNav()">Home</a>
+  <a href="../../notes.html" onclick="closeMobNav()">Notes</a>
+  <a href="../operative_approach.html" onclick="closeMobNav()">Playbook</a>
+  <a href="../../podcast.html" onclick="closeMobNav()">Podcast</a>
+  <a href="../../surgery-talk.html" onclick="closeMobNav()">Surgery Talk</a>
+  <a href="../../arena.html" onclick="closeMobNav()">MCQ Arena</a>
+  <a href="../../about.html" onclick="closeMobNav()">About</a>
+  <a href="https://t.me/sugicalInsightHub" target="_blank" rel="noopener" onclick="closeMobNav()" style="color: var(--brand-gold); font-weight: 800;">Join Telegram Community</a>
+</div>
+
+<button id="sidebar-toggle" onclick="toggleSidebar()">
+  Table of Contents
+</button>
+<div id="sidebar-overlay" onclick="closeSidebar()"></div>
+
+<aside id="sidebar">
+  <div id="sidebar-header">
+    <div class="logo">Surgical Insight Hub</div>
+    <div class="sub">Chronological Monograph</div>
+  </div>
+  <div id="sidebar-search">
+    <input type="text" placeholder="Search topics..." oninput="filterNav(this.value)">
+  </div>
+  <nav id="sidebar-nav">
+    <div class="vol-label">Chapter 1: Regulation of Thyroid Function & HPT Axis</div>
+<a class="nav-item" href="#topic-1-1"><span class="num">1.1</span>Pathophysiology & Iodide Transport Dynamics</a>
+<div class="vol-label">Chapter 2: Tests of Thyroid Function & Diagnostic Assays</div>
+<a class="nav-item" href="#topic-2-1"><span class="num">2.1</span>Laboratory Biomarkers & Diagnostic Principles</a>
+<div class="vol-label">Chapter 3: Thyroid Autoantibodies & Serology Profiles</div>
+<a class="nav-item" href="#topic-3-1"><span class="num">3.1</span>Autoimmune Serology & Immunoassays</a>
+<div class="vol-label">Chapter 4: Nonisotopic Thyroid Imaging & Ultrasonography</div>
+<a class="nav-item" href="#topic-4-1"><span class="num">4.1</span>High-Resolution Ultrasound & Cervical Nodal Staging</a>
+
+  </nav>
+</aside>
+
+<main id="main">
+<header id="hero">
+  <div class="eyebrow">Endocrine Surgery · Structured Chapter Outline Monograph</div>
+  <h1>Thyroid Physiology & Laboratory Evaluation</h1>
+  <p class="subtitle">Comprehensive Chronological Monograph detailing HPT axis cascades, iodide transport, serologic assays, autoantibodies, and ultrasound diagnostic staging.</p>
+  <div class="badges">
+    <span class="badge">Thyroid Physiology</span><span class="badge">HPT Cascade</span><span class="badge">Autoantibodies</span><span class="badge">Ultrasound Staging</span><span class="badge">ABSITE Core</span>
+  </div>
+</header>
+
+<div class="content-wrap">
+  
+        <div class="sec-header s1" id="chapter-1" style="margin-top:50px;">
+          <span class="sec-badge">CHAPTER 1</span>
+          <h2 class="sec-title">Regulation of Thyroid Function & HPT Axis</h2>
+        </div>
+            <section class="topic s1-topic" id="topic-1-1">
+              <div class="topic-header">
+                <span class="topic-num">1.1</span>
+                <h2>Pathophysiology & Iodide Transport Dynamics</h2>
+              </div>
+              <div class="outline-box"><h3>Chapter Outline: Regulation of Thyroid Function</h3><ul class="outline-list">
+<li><strong>Section 1. Introduction & Hypothalamic-Pituitary Axis</strong>TRH stimulation of TSH secretion and endocrine negative feedback loops.</li>
+<li><strong>Section 2. TSH Receptor Adenylate Cyclase Cascade</strong>G-protein activation of intracellular cAMP and follicular cell hypertrophy.</li>
+<li><strong>Section 3. Sodium-Iodide Symporter (NIS) Mechanics</strong>Active basolateral iodide trapping against electrical gradients.</li>
+<li><strong>Section 4. Apical Transport and Pendrin Function</strong>Transport of iodide across apical membrane into colloid space.</li>
+<li><strong>Section 5. Thyroid Peroxidase (TPO) Organification</strong>Iodination of tyrosine residues on thyroglobulin scaffolds.</li>
+<li><strong>Section 6. MIT and DIT Coupling Kinetics</strong>Formation of Thyroxine (T4) and Triiodothyronine (T3).</li>
+<li><strong>Section 7. Peripheral Deiodination (D1, D2, D3)</strong>Conversion of T4 to active T3 or inactive reverse T3 in tissues.</li>
+<li><strong>Section 8. Plasma Protein Binding & Free Hormone Fraction</strong>TBG, transthyretin, and albumin binding kinetics.</li>
+<li><strong>Section 9. High-Yield Review & Board Exam Memory Anchors</strong>Summary of central endocrine feedback concepts and deiodinase properties.</li>
+</ul></div>
+                <h3>1. Introduction &amp; Hypothalamic-Pituitary Axis</h3>
+                <p>The hypothalamic-pituitary-thyroid (HPT) axis regulates systemic basal metabolic rate, thermogenesis, and cellular oxygen consumption through precise endocrine negative feedback loops. Hypothalamic thyrotropin-releasing hormone (TRH) stimulates anterior pituitary thyrotropes to secrete thyroid-stimulating hormone (TSH).</p>
+
+                <h3>2. TSH Receptor Adenylate Cyclase Cascade</h3>
+                <p>TSH binds to G-protein coupled TSH receptors (TSHR) on the basolateral membrane of thyroid follicular epithelial cells, activating adenylate cyclase to produce cyclic AMP (cAMP).</p>
+
+                <div style="font-family:'JetBrains Mono',monospace; font-size:12px; font-weight:700; color:var(--primary); margin-top:28px; text-transform:uppercase; letter-spacing:0.05em;">Diagnostic Plates — HPT Axis & Iodide Organification Cascades (Click Image to Enlarge)</div>
+<div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(260px, 1fr)); gap:16px; margin:14px 0 32px;">
+
+        <div onclick="openLightbox('../../assets/images/endocrine_pdf_images/ch01_p22_0_150.jpeg')" style="background:var(--bg2); border:1px solid var(--border); border-radius:12px; overflow:hidden; padding:12px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s; cursor:pointer;" onmouseover="this.style.transform='scale(1.02)'; this.style.borderColor='var(--accent2)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--border)';">
+          <img src="../../assets/images/endocrine_pdf_images/ch01_p22_0_150.jpeg" alt="Figure 1" style="max-width:100%; max-height:210px; object-fit:contain; border-radius:8px; background:#fff; padding:6px; border:1px solid var(--border);">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent2); margin-top:8px; display:flex; align-items:center; justify-content:center; gap:6px;">
+            <span>Diagnostic Plate 1</span>
+            <span style="font-size:10px; opacity:0.7;">🔍</span>
+          </div>
+        </div>
+
+        <div onclick="openLightbox('../../assets/images/endocrine_pdf_images/ch01_p26_0_199.jpeg')" style="background:var(--bg2); border:1px solid var(--border); border-radius:12px; overflow:hidden; padding:12px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s; cursor:pointer;" onmouseover="this.style.transform='scale(1.02)'; this.style.borderColor='var(--accent2)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--border)';">
+          <img src="../../assets/images/endocrine_pdf_images/ch01_p26_0_199.jpeg" alt="Figure 2" style="max-width:100%; max-height:210px; object-fit:contain; border-radius:8px; background:#fff; padding:6px; border:1px solid var(--border);">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent2); margin-top:8px; display:flex; align-items:center; justify-content:center; gap:6px;">
+            <span>Diagnostic Plate 2</span>
+            <span style="font-size:10px; opacity:0.7;">🔍</span>
+          </div>
+        </div>
+
+        <div onclick="openLightbox('../../assets/images/endocrine_pdf_images/ch01_p32_0_303.jpeg')" style="background:var(--bg2); border:1px solid var(--border); border-radius:12px; overflow:hidden; padding:12px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s; cursor:pointer;" onmouseover="this.style.transform='scale(1.02)'; this.style.borderColor='var(--accent2)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--border)';">
+          <img src="../../assets/images/endocrine_pdf_images/ch01_p32_0_303.jpeg" alt="Figure 3" style="max-width:100%; max-height:210px; object-fit:contain; border-radius:8px; background:#fff; padding:6px; border:1px solid var(--border);">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent2); margin-top:8px; display:flex; align-items:center; justify-content:center; gap:6px;">
+            <span>Diagnostic Plate 3</span>
+            <span style="font-size:10px; opacity:0.7;">🔍</span>
+          </div>
+        </div>
+
+        <div onclick="openLightbox('../../assets/images/endocrine_pdf_images/ch01_p34_0_338.jpeg')" style="background:var(--bg2); border:1px solid var(--border); border-radius:12px; overflow:hidden; padding:12px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s; cursor:pointer;" onmouseover="this.style.transform='scale(1.02)'; this.style.borderColor='var(--accent2)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--border)';">
+          <img src="../../assets/images/endocrine_pdf_images/ch01_p34_0_338.jpeg" alt="Figure 4" style="max-width:100%; max-height:210px; object-fit:contain; border-radius:8px; background:#fff; padding:6px; border:1px solid var(--border);">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent2); margin-top:8px; display:flex; align-items:center; justify-content:center; gap:6px;">
+            <span>Diagnostic Plate 4</span>
+            <span style="font-size:10px; opacity:0.7;">🔍</span>
+          </div>
+        </div>
+
+        <div onclick="openLightbox('../../assets/images/endocrine_pdf_images/ch01_p40_0_422.jpeg')" style="background:var(--bg2); border:1px solid var(--border); border-radius:12px; overflow:hidden; padding:12px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s; cursor:pointer;" onmouseover="this.style.transform='scale(1.02)'; this.style.borderColor='var(--accent2)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--border)';">
+          <img src="../../assets/images/endocrine_pdf_images/ch01_p40_0_422.jpeg" alt="Figure 5" style="max-width:100%; max-height:210px; object-fit:contain; border-radius:8px; background:#fff; padding:6px; border:1px solid var(--border);">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent2); margin-top:8px; display:flex; align-items:center; justify-content:center; gap:6px;">
+            <span>Diagnostic Plate 5</span>
+            <span style="font-size:10px; opacity:0.7;">🔍</span>
+          </div>
+        </div>
+
+        <div onclick="openLightbox('../../assets/images/endocrine_pdf_images/ch01_p42_0_446.jpeg')" style="background:var(--bg2); border:1px solid var(--border); border-radius:12px; overflow:hidden; padding:12px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s; cursor:pointer;" onmouseover="this.style.transform='scale(1.02)'; this.style.borderColor='var(--accent2)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--border)';">
+          <img src="../../assets/images/endocrine_pdf_images/ch01_p42_0_446.jpeg" alt="Figure 6" style="max-width:100%; max-height:210px; object-fit:contain; border-radius:8px; background:#fff; padding:6px; border:1px solid var(--border);">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent2); margin-top:8px; display:flex; align-items:center; justify-content:center; gap:6px;">
+            <span>Diagnostic Plate 6</span>
+            <span style="font-size:10px; opacity:0.7;">🔍</span>
+          </div>
+        </div>
+</div>
+
+                <h3>3. Sodium-Iodide Symporter (NIS) Mechanics</h3>
+                <p>Basolateral iodide trapping occurs via the <strong>Sodium-Iodide Symporter (NIS)</strong>, co-transporting 2 Na+ ions down their electrochemical gradient per 1 I- ion into the follicular cell.</p>
+
+                <h3>4. Apical Transport and Pendrin Function</h3>
+                <p>Iodide is transported across the apical follicular membrane into the colloid space via <strong>Pendrin</strong> (an anion exchanger mutated in Pendred syndrome).</p>
+
+                <h3>5. Thyroid Peroxidase (TPO) Organification</h3>
+                <p>On the apical membrane, <strong>Thyroid Peroxidase (TPO)</strong> catalyzes oxidation of iodide and organification onto tyrosine residues of thyroglobulin (Tg) scaffolds, forming monoiodotyrosine (MIT) and diiodotyrosine (DIT).</p>
+
+                <h3>6. MIT and DIT Coupling Kinetics</h3>
+                <p>TPO catalyzes coupling of MIT + DIT to form Triiodothyronine (T3), and DIT + DIT to form Thyroxine (T4), stored within colloid thyroglobulin colloid.</p>
+
+                <h3>7. Peripheral Deiodination (D1, D2, D3)</h3>
+                <div class="callout pearl">
+                  <span class="label">CLINICAL PEARL — T3 VS T4 KINETICS</span>
+                  The thyroid gland secretes predominantly <strong>Thyroxine (T4, ~85%)</strong> and a minor amount of <strong>Triiodothyronine (T3, ~15%)</strong>. However, T3 is 4-times more potent metabolically than T4. Over 80% of circulating active T3 is generated in peripheral tissues via outer-ring 5'-deiodination catalyzed by Deiodinase type 1 (D1) and type 2 (D2). Inner-ring deiodination by D3 forms inactive reverse T3 (rT3).
+                </div>
+
+                <h3>8. Plasma Protein Binding &amp; Free Hormone Fraction</h3>
+                <p>Over 99.9% of circulating T4 is bound to plasma carrier proteins: Thyroxine-Binding Globulin (TBG, 70%), transthyretin (15%), and albumin (15%). Only the unbound free fraction is biologically active.</p>
+
+                <h3>9. High-Yield Review &amp; Board Exam Memory Anchors</h3>
+                <ul>
+                  <li><strong>Primary Active Transport:</strong> Basolateral Na+/I- Symporter (NIS).</li>
+                  <li><strong>Organification Enzyme:</strong> Apical Thyroid Peroxidase (TPO).</li>
+                  <li><strong>Most Active Hormone:</strong> T3 (generated peripherally via D1/D2).</li>
+                </ul>
+                
+            </section>
+        <div class="sec-header s2" id="chapter-2" style="margin-top:50px;">
+          <span class="sec-badge">CHAPTER 2</span>
+          <h2 class="sec-title">Tests of Thyroid Function & Diagnostic Assays</h2>
+        </div>
+            <section class="topic s2-topic" id="topic-2-1">
+              <div class="topic-header">
+                <span class="topic-num">2.1</span>
+                <h2>Laboratory Biomarkers & Diagnostic Principles</h2>
+              </div>
+              <div class="outline-box"><h3>Chapter Outline: Tests of Thyroid Function</h3><ul class="outline-list">
+<li><strong>Section 1. Serum TSH 3rd Generation Immunoassays</strong>Functional sensitivity 0.01 mIU/L and log-linear relationship with Free T4.</li>
+<li><strong>Section 2. Free T4 and Free T3 Direct Measurement</strong>Equilibrium dialysis vs direct immunometric assays and protein displacement artifacts.</li>
+<li><strong>Section 3. Serum Thyroglobulin (Tg) Surveillance</strong>Role as post-thyroidectomy tumor marker for recurrent differentiated thyroid cancer.</li>
+<li><strong>Section 4. Anti-Thyroglobulin Antibody (TgAb) Interference</strong>Impact of TgAb autoantibodies falsely suppressing immunometric Tg immunoassay levels.</li>
+<li><strong>Section 5. Calcitonin and CEA Neuroendocrine Assays</strong>Biochemical surveillance markers in medullary thyroid carcinoma.</li>
+<li><strong>Section 6. Radioactive Iodine Uptake (RAIU) Scintigraphy</strong>Diagnostic differentiation of hyperthyroidism (high uptake) vs thyroiditis (low uptake).</li>
+<li><strong>Section 7. Fine-Needle Aspiration (FNA) Biopsy Techniques</strong>Ultrasound-guided sampling methodology and specimen adequacy criteria.</li>
+<li><strong>Section 8. Molecular Testing Panels (ThyroSeq & Afirma)</strong>Next-generation sequencing for cytologically indeterminate nodules.</li>
+<li><strong>Section 9. High-Yield Review & Diagnostic Assay Summary</strong>Tabulated reference ranges and core board diagnostic algorithms.</li>
+</ul></div>
+                <h3>1. Serum TSH 3rd Generation Immunoassays</h3>
+                <p>Serum TSH measurement using 3rd generation immunometric assays (functional sensitivity 0.01 mIU/L) is the single most sensitive screening test for thyroid dysfunction. Due to log-linear feedback, a 2-fold change in Free T4 induces a 100-fold change in TSH.</p>
+
+                <h3>2. Free T4 and Free T3 Direct Measurement</h3>
+                <p>Free T4 (normal 0.9–1.7 ng/dL) measures unbound biologically active hormone. Direct analog immunoassays can be artifactually skewed by severe dysproteinemias or pregnancy.</p>
+
+                
+
+                <h3>3. Serum Thyroglobulin (Tg) Surveillance</h3>
+                <p>Serum Thyroglobulin (Tg) serves as a surveillance tumor marker for recurrent differentiated thyroid carcinoma post-total thyroidectomy. Tg should drop to <1 ng/mL.</p>
+
+                <h3>4. Anti-Thyroglobulin Antibody (TgAb) Interference</h3>
+                <p>Concurrent measurement of TgAb is mandatory. Circulating anti-Tg antibodies falsely suppress immunometric Tg assays, producing false-negative cancer recurrence results.</p>
+
+                <h3>5. Calcitonin and CEA Neuroendocrine Assays</h3>
+                <p>Serum Calcitonin (>100 pg/mL diagnostic) and CEA serve as tumor markers for Medullary Thyroid Carcinoma surveillance.</p>
+
+                <h3>6. Radioactive Iodine Uptake (RAIU) Scintigraphy</h3>
+                <p>RAIU distinguishes hyperfunctioning synthesis (Graves, toxic adenoma = high diffuse or focal uptake) from follicular destruction (thyroiditis = low/absent uptake).</p>
+
+                <h3>7. Fine-Needle Aspiration (FNA) Biopsy Techniques</h3>
+                <p>Ultrasound-guided FNA using 22–25 gauge needles is the gold standard diagnostic evaluation for thyroid nodules &ge;1 cm.</p>
+
+                <h3>8. Molecular Testing Panels (ThyroSeq &amp; Afirma)</h3>
+                <p>Gene expression classifiers (Afirma GSC) and NGS mutation panels (ThyroSeq v3) risk-stratify indeterminate Bethesda III/IV nodules.</p>
+
+                <h3>9. High-Yield Review &amp; Diagnostic Assay Summary</h3>
+                <div class="table-wrap">
+                  <table class="s1-tbl">
+                    <thead>
+                      <tr>
+                        <th>Diagnostic Assay</th>
+                        <th>Normal Reference Range</th>
+                        <th>Clinical Significance &amp; Board Trap</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><strong>Serum TSH</strong></td>
+                        <td>0.4 to 4.2 mIU/L</td>
+                        <td>First-line screening test. Log-linear sensitivity to free T4 changes.</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Free T4</strong></td>
+                        <td>0.9 to 1.7 ng/dL</td>
+                        <td>Measures unbound active hormone. Elevated in hyperthyroidism.</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Thyroglobulin (Tg)</strong></td>
+                        <td><1 ng/mL (post-thyroidectomy)</td>
+                        <td>Surveillance tumor marker. MUST check TgAb concurrently.</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                
+            </section>
+        <div class="sec-header s3" id="chapter-3" style="margin-top:50px;">
+          <span class="sec-badge">CHAPTER 3</span>
+          <h2 class="sec-title">Thyroid Autoantibodies & Serology Profiles</h2>
+        </div>
+            <section class="topic s3-topic" id="topic-3-1">
+              <div class="topic-header">
+                <span class="topic-num">3.1</span>
+                <h2>Autoimmune Serology & Immunoassays</h2>
+              </div>
+              <div class="outline-box"><h3>Chapter Outline: Thyroid Autoantibodies</h3><ul class="outline-list">
+<li><strong>Section 1. Introduction to Autoimmune Thyroid Diseases (AITD)</strong>Overview of humoral autoimmunity targeting thyroid follicular antigens.</li>
+<li><strong>Section 2. Anti-Thyroid Peroxidase Antibodies (TPOAb)</strong>Pathophysiology and diagnostic presence in Hashimoto's and Graves' disease.</li>
+<li><strong>Section 3. TSH Receptor Antibodies (TRAb & TSI)</strong>Stimulatory TSI in Graves vs blocking TBII in atrophic thyroiditis.</li>
+<li><strong>Section 4. Anti-Thyroglobulin Antibodies (TgAb)</strong>Clinical prevalence and impact on cancer surveillance immunoassay interference.</li>
+<li><strong>Section 5. Serologic Patterns in Hashimoto's Thyroiditis</strong>High titer TPOAb and TgAb driving chronic lymphocytic follicular destruction.</li>
+<li><strong>Section 6. Serologic Patterns in Graves' Disease</strong>Diagnostic confirmation using Thyroid-Stimulating Immunoglobulin (TSI) assays.</li>
+<li><strong>Section 7. Transplacental Autoantibody Transfer</strong>Maternal TSI crossing placenta inducing neonatal thyrotoxicosis.</li>
+<li><strong>Section 8. Autoantibody Predictive Value in Subclinical Disease</strong>TPOAb positivity predicting progression from subclinical to overt hypothyroidism.</li>
+<li><strong>Section 9. High-Yield Autoantibody Summary & Memory Anchors</strong>Consolidated reference guide for board examinations.</li>
+</ul></div>
+                <h3>1. Introduction to Autoimmune Thyroid Diseases (AITD)</h3>
+                <p>Autoimmune thyroid diseases (AITD) result from immune tolerance loss, leading to autoantibodies targeting thyroid antigens: TPO, TSH receptor, and Thyroglobulin.</p>
+
+                <h3>2. Anti-Thyroid Peroxidase Antibodies (TPOAb)</h3>
+                <p>Anti-TPO antibodies target the enzyme responsible for organification. TPOAb is present in >95% of Hashimoto's thyroiditis and 50–70% of Graves' disease.</p>
+
+                
+
+                <h3>3. TSH Receptor Antibodies (TRAb &amp; TSI)</h3>
+                <p>TSH receptor autoantibodies are functionally divided into Thyroid-Stimulating Immunoglobulins (TSI, driving Graves' disease) and TSH-binding inhibitor immunoglobulins (TBII, blocking TSH and causing atrophic thyroiditis).</p>
+
+                <h3>4. Anti-Thyroglobulin Antibodies (TgAb)</h3>
+                <p>TgAb is present in 80% of Hashimoto's cases and serves as an essential co-test during thyroid cancer Tg surveillance.</p>
+
+                <h3>5. Serologic Patterns in Hashimoto's Thyroiditis</h3>
+                <p>Hashimoto's manifests marked elevation of TPOAb and TgAb, driving progressive cell-mediated follicular atrophy.</p>
+
+                <h3>6. Serologic Patterns in Graves' Disease</h3>
+                <p>Graves' disease is characterized by elevated stimulatory TSI autoantibodies. TPOAb is co-present in up to 70% of patients.</p>
+
+                <h3>7. Transplacental Autoantibody Transfer</h3>
+                <p>Maternal IgG TRAb/TSI crosses the placenta during the 3rd trimester, potentially triggering fetal or neonatal thyrotoxicosis.</p>
+
+                <h3>8. Autoantibody Predictive Value in Subclinical Disease</h3>
+                <p>In subclinical hypothyroidism (elevated TSH, normal FT4), positive TPOAb titers predict a 4.3% annual progression rate to overt hypothyroidism.</p>
+
+                <h3>9. High-Yield Autoantibody Summary &amp; Memory Anchors</h3>
+                <ul>
+                  <li><strong>Hashimoto Marker:</strong> Anti-TPO (>95%).</li>
+                  <li><strong>Graves Driver:</strong> TSI (TSH receptor stimulating antibody).</li>
+                  <li><strong>Immunoassay Confounder:</strong> Anti-Thyroglobulin (TgAb).</li>
+                </ul>
+                
+            </section>
+        <div class="sec-header s4" id="chapter-4" style="margin-top:50px;">
+          <span class="sec-badge">CHAPTER 4</span>
+          <h2 class="sec-title">Nonisotopic Thyroid Imaging & Ultrasonography</h2>
+        </div>
+            <section class="topic s4-topic" id="topic-4-1">
+              <div class="topic-header">
+                <span class="topic-num">4.1</span>
+                <h2>High-Resolution Ultrasound & Cervical Nodal Staging</h2>
+              </div>
+              <div class="outline-box"><h3>Chapter Outline: Thyroid Ultrasonography</h3><ul class="outline-list">
+<li><strong>Section 1. Introduction to High-Frequency Ultrasound</strong>7.5–15 MHz linear transducers for evaluating thyroid anatomy and parenchymal texture.</li>
+<li><strong>Section 2. Ultrasound Assessment of Parenchymal Disease</strong>Diffuse hypoechogenicity and hypervascularity in Graves vs coarse heterogeneity in Hashimoto.</li>
+<li><strong>Section 3. Thyroid Nodule Sonographic Features</strong>Composition, echogenicity, margins, shape (taller-than-wide), and calcifications.</li>
+<li><strong>Section 4. Microcalcifications vs Macrocalcifications</strong>Diagnostic weight of psammoma microcalcifications vs rim/coarse calcifications.</li>
+<li><strong>Section 5. Cervical Lymph Node Compartment Mapping</strong>Normal oval architecture vs abnormal round, cystic, microcalcified malignant nodes.</li>
+<li><strong>Section 6. Elastography and Doppler Flow Patterns</strong>Strain elastography tissue stiffness and central hypervascularity patterns.</li>
+<li><strong>Section 7. Ultrasound-Guided Interventional Procedures</strong>FNA biopsy technique, cyst aspiration, and ethanol/RFA ablation modalities.</li>
+<li><strong>Section 8. Preoperative Staging Ultrasonography Protocols</strong>Routine mapping of Level VI central and Levels II-V lateral neck node basins.</li>
+<li><strong>Section 9. High-Yield Review & Sonographic Board Anchors</strong>Key suspicious ultrasound features and board recall points.</li>
+</ul></div>
+                <h3>1. Introduction to High-Frequency Ultrasound</h3>
+                <p>High-resolution real-time B-mode ultrasonography (using a 7.5–15 MHz linear transducer) is the essential imaging modality for evaluating thyroid parenchymal architecture, nodule stratification, and cervical lymph node basins.</p>
+
+                <h3>2. Ultrasound Assessment of Parenchymal Disease</h3>
+                <p>Graves' disease demonstrates a diffusely enlarged, hypoechoic gland with marked hypervascularity ("thyroid inferno" on color Doppler). Hashimoto's shows a coarse, pseudonodular, heterogeneous texture with fibrous septations.</p>
+
+                <div style="font-family:'JetBrains Mono',monospace; font-size:12px; font-weight:700; color:var(--primary); margin-top:28px; text-transform:uppercase; letter-spacing:0.05em;">Diagnostic Plates — High-Resolution Thyroid Ultrasound (Click Image to Enlarge)</div>
+<div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(260px, 1fr)); gap:16px; margin:14px 0 32px;">
+
+        <div onclick="openLightbox('../../assets/images/endocrine_pdf_images/ch04_p109_0_1004.jpeg')" style="background:var(--bg2); border:1px solid var(--border); border-radius:12px; overflow:hidden; padding:12px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s; cursor:pointer;" onmouseover="this.style.transform='scale(1.02)'; this.style.borderColor='var(--accent2)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--border)';">
+          <img src="../../assets/images/endocrine_pdf_images/ch04_p109_0_1004.jpeg" alt="Figure 1" style="max-width:100%; max-height:210px; object-fit:contain; border-radius:8px; background:#fff; padding:6px; border:1px solid var(--border);">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent2); margin-top:8px; display:flex; align-items:center; justify-content:center; gap:6px;">
+            <span>Diagnostic Plate 1</span>
+            <span style="font-size:10px; opacity:0.7;">🔍</span>
+          </div>
+        </div>
+
+        <div onclick="openLightbox('../../assets/images/endocrine_pdf_images/ch04_p113_0_1112.jpeg')" style="background:var(--bg2); border:1px solid var(--border); border-radius:12px; overflow:hidden; padding:12px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s; cursor:pointer;" onmouseover="this.style.transform='scale(1.02)'; this.style.borderColor='var(--accent2)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--border)';">
+          <img src="../../assets/images/endocrine_pdf_images/ch04_p113_0_1112.jpeg" alt="Figure 2" style="max-width:100%; max-height:210px; object-fit:contain; border-radius:8px; background:#fff; padding:6px; border:1px solid var(--border);">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent2); margin-top:8px; display:flex; align-items:center; justify-content:center; gap:6px;">
+            <span>Diagnostic Plate 2</span>
+            <span style="font-size:10px; opacity:0.7;">🔍</span>
+          </div>
+        </div>
+
+        <div onclick="openLightbox('../../assets/images/endocrine_pdf_images/ch04_p114_0_1132.jpeg')" style="background:var(--bg2); border:1px solid var(--border); border-radius:12px; overflow:hidden; padding:12px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s; cursor:pointer;" onmouseover="this.style.transform='scale(1.02)'; this.style.borderColor='var(--accent2)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--border)';">
+          <img src="../../assets/images/endocrine_pdf_images/ch04_p114_0_1132.jpeg" alt="Figure 3" style="max-width:100%; max-height:210px; object-fit:contain; border-radius:8px; background:#fff; padding:6px; border:1px solid var(--border);">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent2); margin-top:8px; display:flex; align-items:center; justify-content:center; gap:6px;">
+            <span>Diagnostic Plate 3</span>
+            <span style="font-size:10px; opacity:0.7;">🔍</span>
+          </div>
+        </div>
+
+        <div onclick="openLightbox('../../assets/images/endocrine_pdf_images/ch04_p115_0_1137.jpeg')" style="background:var(--bg2); border:1px solid var(--border); border-radius:12px; overflow:hidden; padding:12px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s; cursor:pointer;" onmouseover="this.style.transform='scale(1.02)'; this.style.borderColor='var(--accent2)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--border)';">
+          <img src="../../assets/images/endocrine_pdf_images/ch04_p115_0_1137.jpeg" alt="Figure 4" style="max-width:100%; max-height:210px; object-fit:contain; border-radius:8px; background:#fff; padding:6px; border:1px solid var(--border);">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent2); margin-top:8px; display:flex; align-items:center; justify-content:center; gap:6px;">
+            <span>Diagnostic Plate 4</span>
+            <span style="font-size:10px; opacity:0.7;">🔍</span>
+          </div>
+        </div>
+
+        <div onclick="openLightbox('../../assets/images/endocrine_pdf_images/ch04_p115_1_1138.jpeg')" style="background:var(--bg2); border:1px solid var(--border); border-radius:12px; overflow:hidden; padding:12px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s; cursor:pointer;" onmouseover="this.style.transform='scale(1.02)'; this.style.borderColor='var(--accent2)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--border)';">
+          <img src="../../assets/images/endocrine_pdf_images/ch04_p115_1_1138.jpeg" alt="Figure 5" style="max-width:100%; max-height:210px; object-fit:contain; border-radius:8px; background:#fff; padding:6px; border:1px solid var(--border);">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent2); margin-top:8px; display:flex; align-items:center; justify-content:center; gap:6px;">
+            <span>Diagnostic Plate 5</span>
+            <span style="font-size:10px; opacity:0.7;">🔍</span>
+          </div>
+        </div>
+
+        <div onclick="openLightbox('../../assets/images/endocrine_pdf_images/ch04_p116_0_1153.jpeg')" style="background:var(--bg2); border:1px solid var(--border); border-radius:12px; overflow:hidden; padding:12px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s; cursor:pointer;" onmouseover="this.style.transform='scale(1.02)'; this.style.borderColor='var(--accent2)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--border)';">
+          <img src="../../assets/images/endocrine_pdf_images/ch04_p116_0_1153.jpeg" alt="Figure 6" style="max-width:100%; max-height:210px; object-fit:contain; border-radius:8px; background:#fff; padding:6px; border:1px solid var(--border);">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent2); margin-top:8px; display:flex; align-items:center; justify-content:center; gap:6px;">
+            <span>Diagnostic Plate 6</span>
+            <span style="font-size:10px; opacity:0.7;">🔍</span>
+          </div>
+        </div>
+
+        <div onclick="openLightbox('../../assets/images/endocrine_pdf_images/ch04_p117_0_1177.jpeg')" style="background:var(--bg2); border:1px solid var(--border); border-radius:12px; overflow:hidden; padding:12px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s; cursor:pointer;" onmouseover="this.style.transform='scale(1.02)'; this.style.borderColor='var(--accent2)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--border)';">
+          <img src="../../assets/images/endocrine_pdf_images/ch04_p117_0_1177.jpeg" alt="Figure 7" style="max-width:100%; max-height:210px; object-fit:contain; border-radius:8px; background:#fff; padding:6px; border:1px solid var(--border);">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent2); margin-top:8px; display:flex; align-items:center; justify-content:center; gap:6px;">
+            <span>Diagnostic Plate 7</span>
+            <span style="font-size:10px; opacity:0.7;">🔍</span>
+          </div>
+        </div>
+
+        <div onclick="openLightbox('../../assets/images/endocrine_pdf_images/ch04_p118_0_1192.jpeg')" style="background:var(--bg2); border:1px solid var(--border); border-radius:12px; overflow:hidden; padding:12px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s; cursor:pointer;" onmouseover="this.style.transform='scale(1.02)'; this.style.borderColor='var(--accent2)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--border)';">
+          <img src="../../assets/images/endocrine_pdf_images/ch04_p118_0_1192.jpeg" alt="Figure 8" style="max-width:100%; max-height:210px; object-fit:contain; border-radius:8px; background:#fff; padding:6px; border:1px solid var(--border);">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent2); margin-top:8px; display:flex; align-items:center; justify-content:center; gap:6px;">
+            <span>Diagnostic Plate 8</span>
+            <span style="font-size:10px; opacity:0.7;">🔍</span>
+          </div>
+        </div>
+
+        <div onclick="openLightbox('../../assets/images/endocrine_pdf_images/ch04_p124_0_1274.jpeg')" style="background:var(--bg2); border:1px solid var(--border); border-radius:12px; overflow:hidden; padding:12px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s; cursor:pointer;" onmouseover="this.style.transform='scale(1.02)'; this.style.borderColor='var(--accent2)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--border)';">
+          <img src="../../assets/images/endocrine_pdf_images/ch04_p124_0_1274.jpeg" alt="Figure 9" style="max-width:100%; max-height:210px; object-fit:contain; border-radius:8px; background:#fff; padding:6px; border:1px solid var(--border);">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent2); margin-top:8px; display:flex; align-items:center; justify-content:center; gap:6px;">
+            <span>Diagnostic Plate 9</span>
+            <span style="font-size:10px; opacity:0.7;">🔍</span>
+          </div>
+        </div>
+
+        <div onclick="openLightbox('../../assets/images/endocrine_pdf_images/ch04_p125_0_1286.jpeg')" style="background:var(--bg2); border:1px solid var(--border); border-radius:12px; overflow:hidden; padding:12px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s; cursor:pointer;" onmouseover="this.style.transform='scale(1.02)'; this.style.borderColor='var(--accent2)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--border)';">
+          <img src="../../assets/images/endocrine_pdf_images/ch04_p125_0_1286.jpeg" alt="Figure 10" style="max-width:100%; max-height:210px; object-fit:contain; border-radius:8px; background:#fff; padding:6px; border:1px solid var(--border);">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent2); margin-top:8px; display:flex; align-items:center; justify-content:center; gap:6px;">
+            <span>Diagnostic Plate 10</span>
+            <span style="font-size:10px; opacity:0.7;">🔍</span>
+          </div>
+        </div>
+
+        <div onclick="openLightbox('../../assets/images/endocrine_pdf_images/ch04_p126_0_1305.jpeg')" style="background:var(--bg2); border:1px solid var(--border); border-radius:12px; overflow:hidden; padding:12px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s; cursor:pointer;" onmouseover="this.style.transform='scale(1.02)'; this.style.borderColor='var(--accent2)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--border)';">
+          <img src="../../assets/images/endocrine_pdf_images/ch04_p126_0_1305.jpeg" alt="Figure 11" style="max-width:100%; max-height:210px; object-fit:contain; border-radius:8px; background:#fff; padding:6px; border:1px solid var(--border);">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent2); margin-top:8px; display:flex; align-items:center; justify-content:center; gap:6px;">
+            <span>Diagnostic Plate 11</span>
+            <span style="font-size:10px; opacity:0.7;">🔍</span>
+          </div>
+        </div>
+
+        <div onclick="openLightbox('../../assets/images/endocrine_pdf_images/ch04_p127_0_1312.jpeg')" style="background:var(--bg2); border:1px solid var(--border); border-radius:12px; overflow:hidden; padding:12px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s; cursor:pointer;" onmouseover="this.style.transform='scale(1.02)'; this.style.borderColor='var(--accent2)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--border)';">
+          <img src="../../assets/images/endocrine_pdf_images/ch04_p127_0_1312.jpeg" alt="Figure 12" style="max-width:100%; max-height:210px; object-fit:contain; border-radius:8px; background:#fff; padding:6px; border:1px solid var(--border);">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent2); margin-top:8px; display:flex; align-items:center; justify-content:center; gap:6px;">
+            <span>Diagnostic Plate 12</span>
+            <span style="font-size:10px; opacity:0.7;">🔍</span>
+          </div>
+        </div>
+
+        <div onclick="openLightbox('../../assets/images/endocrine_pdf_images/ch04_p127_1_1313.jpeg')" style="background:var(--bg2); border:1px solid var(--border); border-radius:12px; overflow:hidden; padding:12px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s; cursor:pointer;" onmouseover="this.style.transform='scale(1.02)'; this.style.borderColor='var(--accent2)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--border)';">
+          <img src="../../assets/images/endocrine_pdf_images/ch04_p127_1_1313.jpeg" alt="Figure 13" style="max-width:100%; max-height:210px; object-fit:contain; border-radius:8px; background:#fff; padding:6px; border:1px solid var(--border);">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent2); margin-top:8px; display:flex; align-items:center; justify-content:center; gap:6px;">
+            <span>Diagnostic Plate 13</span>
+            <span style="font-size:10px; opacity:0.7;">🔍</span>
+          </div>
+        </div>
+
+        <div onclick="openLightbox('../../assets/images/endocrine_pdf_images/ch04_p128_0_1329.jpeg')" style="background:var(--bg2); border:1px solid var(--border); border-radius:12px; overflow:hidden; padding:12px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s; cursor:pointer;" onmouseover="this.style.transform='scale(1.02)'; this.style.borderColor='var(--accent2)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--border)';">
+          <img src="../../assets/images/endocrine_pdf_images/ch04_p128_0_1329.jpeg" alt="Figure 14" style="max-width:100%; max-height:210px; object-fit:contain; border-radius:8px; background:#fff; padding:6px; border:1px solid var(--border);">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent2); margin-top:8px; display:flex; align-items:center; justify-content:center; gap:6px;">
+            <span>Diagnostic Plate 14</span>
+            <span style="font-size:10px; opacity:0.7;">🔍</span>
+          </div>
+        </div>
+
+        <div onclick="openLightbox('../../assets/images/endocrine_pdf_images/ch04_p129_0_1332.png')" style="background:var(--bg2); border:1px solid var(--border); border-radius:12px; overflow:hidden; padding:12px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s; cursor:pointer;" onmouseover="this.style.transform='scale(1.02)'; this.style.borderColor='var(--accent2)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--border)';">
+          <img src="../../assets/images/endocrine_pdf_images/ch04_p129_0_1332.png" alt="Figure 15" style="max-width:100%; max-height:210px; object-fit:contain; border-radius:8px; background:#fff; padding:6px; border:1px solid var(--border);">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent2); margin-top:8px; display:flex; align-items:center; justify-content:center; gap:6px;">
+            <span>Diagnostic Plate 15</span>
+            <span style="font-size:10px; opacity:0.7;">🔍</span>
+          </div>
+        </div>
+
+        <div onclick="openLightbox('../../assets/images/endocrine_pdf_images/ch04_p129_1_1333.jpeg')" style="background:var(--bg2); border:1px solid var(--border); border-radius:12px; overflow:hidden; padding:12px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s; cursor:pointer;" onmouseover="this.style.transform='scale(1.02)'; this.style.borderColor='var(--accent2)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--border)';">
+          <img src="../../assets/images/endocrine_pdf_images/ch04_p129_1_1333.jpeg" alt="Figure 16" style="max-width:100%; max-height:210px; object-fit:contain; border-radius:8px; background:#fff; padding:6px; border:1px solid var(--border);">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent2); margin-top:8px; display:flex; align-items:center; justify-content:center; gap:6px;">
+            <span>Diagnostic Plate 16</span>
+            <span style="font-size:10px; opacity:0.7;">🔍</span>
+          </div>
+        </div>
+
+        <div onclick="openLightbox('../../assets/images/endocrine_pdf_images/ch04_p131_0_1353.jpeg')" style="background:var(--bg2); border:1px solid var(--border); border-radius:12px; overflow:hidden; padding:12px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s; cursor:pointer;" onmouseover="this.style.transform='scale(1.02)'; this.style.borderColor='var(--accent2)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--border)';">
+          <img src="../../assets/images/endocrine_pdf_images/ch04_p131_0_1353.jpeg" alt="Figure 17" style="max-width:100%; max-height:210px; object-fit:contain; border-radius:8px; background:#fff; padding:6px; border:1px solid var(--border);">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent2); margin-top:8px; display:flex; align-items:center; justify-content:center; gap:6px;">
+            <span>Diagnostic Plate 17</span>
+            <span style="font-size:10px; opacity:0.7;">🔍</span>
+          </div>
+        </div>
+
+        <div onclick="openLightbox('../../assets/images/endocrine_pdf_images/ch04_p131_1_1354.jpeg')" style="background:var(--bg2); border:1px solid var(--border); border-radius:12px; overflow:hidden; padding:12px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s; cursor:pointer;" onmouseover="this.style.transform='scale(1.02)'; this.style.borderColor='var(--accent2)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--border)';">
+          <img src="../../assets/images/endocrine_pdf_images/ch04_p131_1_1354.jpeg" alt="Figure 18" style="max-width:100%; max-height:210px; object-fit:contain; border-radius:8px; background:#fff; padding:6px; border:1px solid var(--border);">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent2); margin-top:8px; display:flex; align-items:center; justify-content:center; gap:6px;">
+            <span>Diagnostic Plate 18</span>
+            <span style="font-size:10px; opacity:0.7;">🔍</span>
+          </div>
+        </div>
+
+        <div onclick="openLightbox('../../assets/images/endocrine_pdf_images/ch04_p132_0_1360.jpeg')" style="background:var(--bg2); border:1px solid var(--border); border-radius:12px; overflow:hidden; padding:12px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s; cursor:pointer;" onmouseover="this.style.transform='scale(1.02)'; this.style.borderColor='var(--accent2)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--border)';">
+          <img src="../../assets/images/endocrine_pdf_images/ch04_p132_0_1360.jpeg" alt="Figure 19" style="max-width:100%; max-height:210px; object-fit:contain; border-radius:8px; background:#fff; padding:6px; border:1px solid var(--border);">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent2); margin-top:8px; display:flex; align-items:center; justify-content:center; gap:6px;">
+            <span>Diagnostic Plate 19</span>
+            <span style="font-size:10px; opacity:0.7;">🔍</span>
+          </div>
+        </div>
+</div>
+
+                <h3>3. Thyroid Nodule Sonographic Features</h3>
+                <p>Nodule risk is determined by solid composition, hypoechogenicity, microlobulated or irregular margins, taller-than-wide shape, and microcalcifications.</p>
+
+                <h3>4. Microcalcifications vs Macrocalcifications</h3>
+                <p>Punctate hyperechoic foci without acoustic shadowing represent psammoma bodies (microcalcifications), highly specific for Papillary Thyroid Carcinoma.</p>
+
+                <h3>5. Cervical Lymph Node Compartment Mapping</h3>
+                <p>Normal lymph nodes are oval with a hyperechoic fatty hilum. Malignant nodal features include round shape, loss of fatty hilum, cystic change, microcalcifications, and peripheral hypervascularity.</p>
+
+                <h3>6. Elastography and Doppler Flow Patterns</h3>
+                <p>Real-time ultrasound elastography measures tissue hardness; hard, non-compressible nodules carry high malignancy risk. Intranodular hypervascularity correlates with neoplasia.</p>
+
+                <h3>7. Ultrasound-Guided Interventional Procedures</h3>
+                <p>Ultrasound guidance ensures precise needle tip placement during FNA of suspicious solid nodule components and suspicious cervical lymph nodes.</p>
+
+                <h3>8. Preoperative Staging Ultrasonography Protocols</h3>
+                <p>Routine preoperative ultrasound mapping of central (Level VI) and lateral (Levels II–V) neck compartments is mandatory for all biopsy-proven thyroid cancers.</p>
+
+                <h3>9. High-Yield Review &amp; Sonographic Board Anchors</h3>
+                <div class="callout warn">
+                  <span class="label">BOARD WARNING — SUSPICIOUS ULTRASOUND FEATURES</span>
+                  The ultrasound features most strongly predictive of thyroid malignancy are: <strong>microcalcifications</strong> (psammoma bodies), <strong>hypoechogenicity</strong>, <strong>irregular or microlobulated margins</strong>, a <strong>taller-than-wide shape</strong> (transverse view), and <strong>extrathyroidal extension</strong>.
+                </div>
+                
+            </section>
+</div>
+</main>
+
+<div id="lightbox-modal" onclick="closeLightbox()" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.85); backdrop-filter:blur(6px); z-index:2000; align-items:center; justify-content:center; padding:20px;">
+  <span style="position:absolute; top:20px; right:30px; color:#fff; font-size:36px; font-weight:bold; cursor:pointer; font-family:sans-serif; transition:color 0.2s;" onmouseover="this.style.color='var(--accent2)'" onmouseout="this.style.color='#fff'">&times;</span>
+  <img id="lightbox-img" src="" alt="Enlarged Diagnostic Plate" style="max-width:92vw; max-height:92vh; object-fit:contain; border-radius:8px; box-shadow:0 12px 40px rgba(0,0,0,0.6); background:#fff; padding:8px;" onclick="event.stopPropagation()">
+</div>
+
+<script>
+  function openLightbox(imgUrl) {
+    const modal = document.getElementById('lightbox-modal');
+    const img = document.getElementById('lightbox-img');
+    img.src = imgUrl;
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox() {
+    const modal = document.getElementById('lightbox-modal');
+    modal.style.display = 'none';
+    document.body.style.overflow = '';
+  }
+
+  function toggleSidebar() {
+    document.body.classList.toggle('sidebar-open');
+  }
+  function closeSidebar() {
+    document.body.classList.remove('sidebar-open');
+  }
+  function filterNav(q) {
+    q = q.toLowerCase();
+    document.querySelectorAll('#sidebar-nav .nav-item').forEach(el => {
+      el.style.display = el.textContent.toLowerCase().includes(q) ? 'block' : 'none';
+    });
+  }
+  
+  function openMobNav() {
+    document.getElementById('mobNavSheet').classList.add('open');
+    document.getElementById('mobNavOverlay').style.display = 'block';
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMobNav() {
+    document.getElementById('mobNavSheet').classList.remove('open');
+    document.getElementById('mobNavOverlay').style.display = 'none';
+    document.body.style.overflow = '';
+  }
+
+  const themeToggle = document.getElementById('themeToggle');
+  const moonIcon = document.getElementById('moonIcon');
+  const sunIcon = document.getElementById('sunIcon');
+  
+  function applyTheme(theme) {
+    if (theme === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      if (moonIcon) moonIcon.style.display = 'none';
+      if (sunIcon) sunIcon.style.display = 'block';
+    } else {
+      document.documentElement.removeAttribute('data-theme');
+      if (sunIcon) sunIcon.style.display = 'none';
+      if (moonIcon) moonIcon.style.display = 'block';
+    }
+  }
+  
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      const isDark = document.documentElement.hasAttribute('data-theme');
+      const newTheme = isDark ? 'light' : 'dark';
+      applyTheme(newTheme);
+      localStorage.setItem('sih-theme', newTheme);
+    });
+  }
+  
+  document.addEventListener('DOMContentLoaded', () => {
+    applyTheme(localStorage.getItem('sih-theme') || 'light');
+  });
+</script>
+<script src="../../js/navigation.js"></script>
+<script src="../../js/nav-pill.js"></script>
+</body>
+</html>

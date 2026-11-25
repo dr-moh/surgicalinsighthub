@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Surgical Insight Hub — Surgical Infections, Antibiotics &amp; Wound Management</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/theme.css?v=4.0.0">
+<link rel="stylesheet" href="../../css/shared.css">
+<script>
+  const savedTheme = localStorage.getItem('sih-theme') || 'light';
+  if (savedTheme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+</script>
+<style>
+:root {
+  --primary:   #065F46; /* Forest Green */
+  --primary-dk:#064E3B;
+  --primary-lt:#ECFDF5;
+  --accent:    #10B981;
+  --accent2:   #34D399;
+  --gold:      #B8922A;
+  --gold-lt:   #FEF3C7;
+  --s1:        #065F46;
+  --s2:        #0D9488;
+  --s3:        #C27803;
+  --s4:        #2563EB;
+  --s5:        #BE185D;
+  --s1-lt:     #ECFDF5;
+  --s2-lt:     #F0FDFA;
+  --s3-lt:     #FEF3C7;
+  --s4-lt:     #EFF6FF;
+  --s5-lt:     #FDF2F8;
+  --red:       #B91C1C;
+  --red-lt:    #FEF2F2;
+  --bg:        #FBFBFC;
+  --bg2:       #F4F4F6;
+  --border:    #E5E7EB;
+  --text:      #1F2937;
+  --muted:     #4B5563;
+  --white:     #FFFFFF;
+  --sidebar-w: 300px;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--bg);color:var(--text);font-size:16.5px;line-height:1.8;}
+
+/* DARK MODE OVERRIDES */
+[data-theme="dark"] {
+  --bg: #09060F;
+  --bg2: #120D1D;
+  --text: #E2DEE9;
+  --muted: #A78BFA;
+  --border: rgba(255,255,255,0.08);
+  --primary-lt: #064E3B44;
+  --s1-lt: #064E3B44;
+  --s2-lt: #0B1D19;
+  --s3-lt: #221B0B;
+  --s4-lt: #0F172A;
+  --s5-lt: #2A0B1A;
+  --white: #120D1D;
+}
+
+/* SIDEBAR & OVERLAY */
+#sidebar {
+  position: fixed; top: 0; left: 0; width: var(--sidebar-w); height: 100vh;
+  background: var(--primary-dk); color: #E2DEE9;
+  display: flex; flex-direction: column;
+  z-index: 1300; overflow: hidden;
+  transform: translateX(-100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 4px 0 24px rgba(0,0,0,0.3);
+}
+body.sidebar-open #sidebar { transform: translateX(0); }
+
+#sidebar-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.5); backdrop-filter: blur(3px);
+  z-index: 1250; opacity: 0; pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+body.sidebar-open #sidebar-overlay { opacity: 1; pointer-events: auto; }
+
+#sidebar-toggle {
+  position: fixed; top: 72px; left: 24px; z-index: 1200;
+  background: var(--primary); color: white;
+  border: none; border-radius: 30px;
+  padding: 10px 18px; font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 600;
+  letter-spacing: 0.05em; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  display: flex; align-items: center; gap: 8px; transition: all 0.2s;
+}
+#sidebar-toggle:hover { background: var(--accent); transform: translateY(-2px); }
+
+#progress-bar {
+  position: fixed; top: 52px; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  transform-origin: left; transform: scaleX(0); transition: transform 0.1s; z-index: 1105;
+}
+
+#sidebar-header{padding:20px 20px 14px;border-bottom:1px solid rgba(255,255,255,0.1);flex-shrink:0;}
+#sidebar-header .logo{font-family:'Playfair Display',serif;font-size:13px;font-weight:700;color:var(--accent2);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;}
+#sidebar-header .sub{font-size:10.5px;color:rgba(226,222,233,0.6);letter-spacing:0.04em;}
+#sidebar-search{padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.08);flex-shrink:0;}
+#sidebar-search input{width:100%;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:6px;color:#E2DEE9;padding:6px 10px;font-size:12px;font-family:'Source Serif 4',serif;outline:none;transition:border-color 0.2s;}
+#sidebar-search input::placeholder{color:rgba(226,222,233,0.4);}
+#sidebar-search input:focus{border-color:var(--accent2);}
+#sidebar-nav{flex:1;overflow-y:auto;padding:8px 0 20px;}
+#sidebar-nav::-webkit-scrollbar{width:4px;}
+#sidebar-nav::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.15);border-radius:2px;}
+.vol-label{font-size:9.5px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent2);padding:14px 18px 4px;}
+.nav-item{display:block;padding:8px 18px 8px 22px;font-size:12.5px;color:rgba(226,222,233,0.75);text-decoration:none;border-left:2px solid transparent;transition:all 0.15s;line-height:1.4;}
+.nav-item:hover{color:#fff;background:rgba(255,255,255,0.05);border-left-color:var(--accent);}
+.nav-item.active{color:#fff;background:rgba(255,255,255,0.08);border-left-color:var(--accent2);font-weight:600;}
+.nav-item .num{font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(226,222,233,0.4);margin-right:6px;}
+
+/* HERO */
+#hero{background:linear-gradient(135deg,var(--primary-dk) 0%,#065F46 60%,#090314 100%);color:white;padding:120px 72px 60px;position:relative;overflow:hidden;}
+#hero::before{content:'';position:absolute;top:-60px;right:-60px;width:380px;height:380px;background:radial-gradient(circle,rgba(255,255,255,0.1) 0%,transparent 70%);pointer-events:none;}
+#hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--primary),var(--accent2),transparent);}
+#hero .eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.16em;color:var(--accent2);text-transform:uppercase;margin-bottom:14px;}
+#hero h1{font-family:'Playfair Display',serif;font-size:38px;font-weight:700;line-height:1.15;margin-bottom:10px;color:#fff;}
+#hero .subtitle{font-size:18px;color:rgba(255,255,255,0.65);font-style:italic;margin-bottom:28px;}
+#hero .badges{display:flex;gap:10px;flex-wrap:wrap;}
+#hero .badge{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:4px 14px;font-size:12px;color:rgba(255,255,255,0.8);font-family:'JetBrains Mono',monospace;}
+
+/* CONTENT */
+.content-wrap{max-width:1140px;margin:0 auto;padding:40px 48px 80px;}
+
+/* TOP BTN */
+#top-btn{position:fixed;bottom:28px;right:28px;background:var(--primary);color:white;border:none;border-radius:50%;width:44px;height:44px;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,0.2);transition:all 0.2s;opacity:0;pointer-events:none;z-index:1100;}
+#top-btn.show{opacity:1;pointer-events:auto;}
+#top-btn:hover{background:var(--accent2);transform:translateY(-2px);}
+
+@media(max-width:900px){
+  .content-wrap{padding:20px 20px 60px;}
+  #hero{padding:80px 20px 40px;}
+  #hero h1{font-size:30px;}
+  #sidebar-toggle{top:64px; left:16px;}
+}
+</style>
+<script src="https://jsdelivr.net" async></script>
+</head>
+<body>
+  <!-- Standardized SIH Navbar -->
+  <nav class="nav" id="mainNav">
+    <div class="nav-left">
+      <a href="../../index.html" class="nav-pill">
+        <div class="nav-logo-img">
+          <img src="../../assets/images/Surgical_Insight_Hub_Logo.png" alt="SIH Logo">
+        </div>
+        <div>
+          <div class="nav-brand-text">Surgical Insight Hub</div>
+          <div class="nav-brand-sub">The Residency Journal</div>
+        </div>
+      </a>
+    </div>
+    <div class="nav-links-pill">
+      <a href="../../index.html">Home</a>
+      <a href="../../notes.html" class="active">Notes</a>
+      <a href="../operative_approach.html">Playbook</a>
+      <a href="../../arena.html?v=4.0.0">MCQ Arena</a>
+      <a href="../../podcast.html">Podcast</a>
+      <a href="../../surgery-talk.html">Surgery Talk</a>
+      <a href="../../about.html">About</a>
+    </div>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+        <svg id="moonIcon" viewBox="0 0 24 24" width="18" height="18"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        <svg id="sunIcon" style="display:none;" viewBox="0 0 24 24" width="18" height="18"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="23" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+      </button>
+      <a href="https://t.me/sugicalInsightHub" target="_blank" class="nav-tg-btn" title="Join Telegram">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="#f0d080"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.89 8.22l-1.97 9.28c-.15.66-.54.82-1.08.51l-3-2.21-1.45 1.39c-.16.16-.3.3-.61.3l.21-3.05 5.56-5.02c.24-.21-.05-.33-.37-.12l-6.87 4.33-2.96-.92c-.64-.2-.66-.64.14-.95l11.57-4.46c.54-.19 1.01.13.83.94z"/></svg>
+      </a>
+      <a href="../../arena.html?v=4.0.0" class="nav-btn arena-btn">MCQ Arena</a>
+      <button class="mob-nav-toggle" onclick="openMobNav()" aria-label="Menu">
+        <div class="hamburger"><span></span><span></span><span></span></div>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mob-nav-overlay" id="mobNavOverlay" onclick="closeMobNav()"></div>
+  <div class="mob-nav-sheet" id="mobNavSheet">
+    <div class="mob-nav-handle"></div>
+    <a href="../../index.html" onclick="closeMobNav()">Home</a>
+    <a href="../../notes.html" onclick="closeMobNav()">Notes</a>
+    <a href="../../notes/operative_approach.html" onclick="closeMobNav()">Playbook</a>
+    <a href="../../podcast.html" onclick="closeMobNav()">Podcast</a>
+    <a href="../../surgery-talk.html" onclick="closeMobNav()">Surgery Talk</a>
+    <a href="../../arena.html" onclick="closeMobNav()">MCQ Arena</a>
+    <a href="../../about.html" onclick="closeMobNav()">About</a>
+    <a href="https://t.me/sugicalInsightHub" target="_blank" rel="noopener" onclick="closeMobNav()" style="color: var(--brand-gold); font-weight: 800;">Join Telegram Community</a>
+  </div>
+
+  <div id="progress-bar"></div>
+  <button id="sidebar-toggle" onclick="toggleSidebar()">
+    <span>📜</span> Sections Menu
+  </button>
+  <div id="sidebar-overlay" onclick="closeSidebar()"></div>
+
+  <!-- SIDEBAR -->
+  <aside id="sidebar">
+    <div id="sidebar-header">
+      <div class="logo">Surgical Infections</div>
+      <div class="sub">General Surgery Monograph</div>
+    </div>
+    <div id="sidebar-search">
+      <input oninput="filterNav(this.value)" placeholder="Search sections..." type="text"/>
+    </div>
+    <nav id="sidebar-nav">
+      <div class="vol-label">Pillar 1: Pathophysiology</div>
+      <a class="nav-item" href="#p1-resistance"><span class="num">1.1</span>Bacterial Resistance Mechanics</a>
+      <a class="nav-item" href="#p1-nsti"><span class="num">1.2</span>Necrotizing Soft Tissue Infections</a>
+      <a class="nav-item" href="#p1-tetanus"><span class="num">1.3</span>Tetanus Pathogenesis</a>
+      <div class="vol-label">Pillar 2: Diagnostics &amp; Wound Class</div>
+      <a class="nav-item" href="#p2-wound-class"><span class="num">2.1</span>CDC Wound Classification Matrix</a>
+      <a class="nav-item" href="#p2-autoclave"><span class="num">2.2</span>Steam Autoclaving Parameters</a>
+      <div class="vol-label">Pillar 3: Optimization &amp; Care</div>
+      <a class="nav-item" href="#p3-prophylaxis"><span class="num">3.1</span>SCIP Prophylaxis Standards</a>
+      <a class="nav-item" href="#p3-tetanus-mgmt"><span class="num">3.2</span>Tetanus Prophylaxis Algorithm</a>
+      <div class="vol-label">Pillar 4: Surgical Strategy</div>
+      <a class="nav-item" href="#p4-fourniers"><span class="num">4.1</span>Fournier's &amp; NSTI Source Control</a>
+      <a class="nav-item" href="#p4-abdomen"><span class="num">4.2</span>The Open Abdomen Dressing Pitfall</a>
+      <div class="vol-label">Pillar 5: Postoperative Complications</div>
+      <a class="nav-item" href="#p5-disinfection"><span class="num">5.1</span>Disinfection vs. Sterilization</a>
+      <a class="nav-item" href="#p5-clostridial"><span class="num">5.2</span>Clostridial Myonecrosis</a>
+      <div class="vol-label">Board Review</div>
+      <a class="nav-item" href="#board-review"><span class="num">6.1</span>ABSITE Core Recall Matrix</a>
+    </nav>
+  </aside>
+
+  <main id="main">
+    <section id="hero">
+      <div class="eyebrow">Infectious Diseases &amp; Sterile Care · Monograph</div>
+      <h1>Surgical Infections, Antibiotics &amp; Wound Management</h1>
+      <p class="subtitle">Molecular mechanisms of resistance, necrotizing soft-tissue infection pathways, CDC wound classification, and autoclaving parameters.</p>
+      <div class="badges">
+        <span class="badge">General Surgery</span>
+        <span class="badge">Board Review</span>
+        <span class="badge">ABSITE Gold</span>
+      </div>
+    </section>
+
+    <div class="content-wrap">
+      <section id="chapter-5-surgical-infections" class="p-6 my-4 border-l-4 rounded-r-lg bg-slate-900 text-slate-100 border-[#065F46]">
+        <!-- Header Block -->
+        <div class="pb-4 mb-6 border-b border-slate-700">
+            <div class="flex items-center justify-between">
+                <span class="px-3 py-1 text-xs font-bold uppercase tracking-wider text-white bg-[#065F46] rounded-full">Chapter 5</span>
+                <span class="text-xs text-slate-400 font-mono">File Ref: notes/Surgical High-Yield Notes/surgical_infections.html</span>
+            </div>
+            <h1 class="mt-2 text-3xl font-extrabold text-white tracking-tight">Surgical Infections, Antibiotics &amp; Wound Management</h1>
+        </div>
+
+        <!-- Foundational Anchor: Original Note Integration -->
+        <div class="p-4 mb-6 border-l-2 rounded-r bg-emerald-950/40 border-emerald-500/50">
+            <h5 class="text-xs font-bold uppercase tracking-wider text-emerald-400 mb-1">Foundational Anchor (From PDF Source Notes)</h5>
+            <p class="text-sm italic leading-relaxed text-slate-300">
+                "Rational use of antibiotics, mechanisms of antibiotic resistance, selection parameters, causes of treatment failure, surgical wound classification (Clean, Clean-Contaminated, Contaminated, Dirty) and SSI risk, tetanus-prone wound protocols, five pillars of infection control, and methods of sterilization vs. disinfection."
+                <span class="block mt-1 font-semibold not-italic text-emerald-300">Clinical Focus Note: Prophylactic antibiotic administration is a pharmacokinetic race to achieve minimum inhibitory concentration (MIC) in the target tissue *before* the first blade-to-skin incision. Postoperative extension is a common driver of resistance.</span>
+            </p>
+        </div>
+
+        <!-- 1. Evidence-Based Pathophysiology -->
+        <div class="mb-8" id="p1-resistance">
+            <h3 class="text-xl font-bold text-white mb-3 flex items-center">
+                <span class="w-2 h-6 bg-[#065F46] mr-2 inline-block rounded-sm"></span>
+                1. Molecular Resistance Kinetics &amp; Tissue-Destructive Infections
+            </h3>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 text-sm leading-relaxed text-slate-300">
+                <div>
+                    <h4 class="text-sm font-bold uppercase text-slate-400 mb-2 tracking-wide" id="p1-nsti">Genetics and Enzymes of Antimicrobial Resistance</h4>
+                    <p class="mb-3">
+                        <strong>MRSA (mecA Gene):</strong> Methicillin resistance in <i>Staphylococcus aureus</i> is mediated by the acquisition of the mobile genetic element SCCmec carrying the <strong>mecA gene</strong>. This gene encodes <strong>Penicillin-Binding Protein 2a (PBP2a)</strong>, a modified transpeptidase with an exceptionally low binding affinity for standard $\beta$-lactam rings. Cell wall peptidoglycan cross-linking continues uninhibited despite lethal concentrations of standard penicillins or cephalosporins.
+                    </p>
+                    <p class="mb-3">
+                        <strong>VRE (vanA Alteration):</strong> Vancomycin resistance in <i>Enterococcus faecium/faecalis</i> is driven by operons (typically vanA/vanB) that structurally re-engineer cell wall synthesis components. The bacteria switch the terminal cell wall peptide sequence from <strong>D-Alanyl-D-Alanine</strong> (the high-affinity target for vancomycin binding) to <strong>D-Alanyl-D-Lactate</strong> (D-Ala-D-Lac). This simple ester modification decreases vancomycin binding affinity by a factor of 1,000.
+                    </p>
+                    <p class="mb-3">
+                        <strong>ESBL (Plasmid Expansion):</strong> Extended-Spectrum $\beta$-Lactamases are plasmid-mediated enzymes (e.g., CTX-M, TEM, SHV) that cleave the structural cyclic amide bond of third-generation cephalosporins and monobactams. These plasmids frequently co-transmit resistance vectors for fluoroquinolones and aminoglycosides, restricting therapy to carbapenems.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-sm font-bold uppercase text-slate-400 mb-2 tracking-wide" id="p1-tetanus">Pathogenesis of NSTIs &amp; Clostridial Cascades</h4>
+                    <p class="mb-3">
+                        <strong>Necrotizing Soft Tissue Infections (NSTIs):</strong> Classified microbiologically into two main divisions:
+                    </p>
+                    <ul class="mb-3 space-y-1 list-disc list-inside text-slate-400">
+                        <li><strong>Type I (Polymicrobial):</strong> Synergy between obligate anaerobes (<i>Bacteroides, Clostridium</i>) and facultative anaerobes (<i>Enterobacteriaceae</i>, streptococci). Anaerobes create profound tissue hypoxia, which impairs neutrophil killing capacity and accelerates gas production.</li>
+                        <li><strong>Type II (Monomicrobial):</strong> Dominated by <i>Streptococcus pyogenes</i> (Group A Strep) or <i>Staphylococcus aureus</i>. <i>S. pyogenes</i> expresses surface <strong>M-protein</strong> which resists phagocytosis and releases potent exotoxins (SpeA, SpeC). These exotoxins act as **superantigens**, binding directly to MHC Class II complexes and T-cell receptors without processing. This triggers a massive, uncoordinated T-cell clonal explosion, driving rapid systemic septic shock.</li>
+                    </ul>
+                    <p class="mb-3">
+                        <strong>Clostridium tetani Neurotransmission:</strong> Spores produce the neurotoxin <strong>tetanospasmin</strong>. The toxin binds irreversibly to gangliosides on peripheral nerve terminals and hitches a ride via retrograde axonal transport into the central nervous system. It directly cleaves <strong>synaptobrevin</strong>, a critical vesicle-associated membrane protein (VAMP) within inhibitory interneurons (Renshaw cells). This blocks the release of GABA and glycine, causing uninhibited $\alpha$-motor neuron firing, resulting in severe tetanic muscle spasms and trismus.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. Exact Classifications & Sterilization Engines -->
+        <div class="mb-8 font-sans" id="p2-wound-class">
+            <h3 class="text-xl font-bold text-white mb-3 flex items-center">
+                <span class="w-2 h-6 bg-[#065F46] mr-2 inline-block rounded-sm"></span>
+                2. CDC Wound Classification &amp; Physical Sterilization Parameters
+            </h3>
+
+            <!-- Wound Classification Table -->
+            <div class="overflow-x-auto mb-6 rounded-lg border border-slate-700 bg-slate-950">
+                <table class="w-full text-left border-collapse text-xs">
+                    <thead>
+                        <tr class="bg-slate-900 border-b border-slate-700 text-slate-300 font-semibold">
+                            <th class="p-3 text-[#065F46] font-bold">CDC Wound Classification</th>
+                            <th class="p-3">Operative Criteria &amp; Anatomic Boundaries</th>
+                            <th class="p-3">Expected Surgical Site Infection (SSI) Risk</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-800 text-slate-300">
+                        <tr>
+                            <td class="p-3 font-bold text-white bg-slate-900/30">Class I: Clean</td>
+                            <td class="p-3">
+                                Uninfected operative wound where no inflammation is encountered. The respiratory, alimentary, genital, or uninfected urinary tracts are **not entered**. Primary mechanical closure without drainage is achieved. <br>
+                                <i>Examples: Elective inguinal hernia repair, thyroidectomy, simple mastectomy.</i>
+                            </td>
+                            <td class="p-3 font-mono text-emerald-400 font-bold">&lt; 2.0%</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-bold text-white bg-slate-900/30">Class II: Clean-Contaminated</td>
+                            <td class="p-3">
+                                Operative wounds where the respiratory, alimentary, genital, or urinary tracts are entered under **controlled, supervised conditions** and without unusual contamination. No evidence of infection or major break in sterile technique.<br>
+                                <i>Examples: Elective cholecystectomy, uncomplicated appendectomy, Whipple procedure.</i>
+                            </td>
+                            <td class="p-3 font-mono text-emerald-500">2.0% – 10.0%</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-bold text-white bg-slate-900/30">Class III: Contaminated</td>
+                            <td class="p-3">
+                                Open, fresh, accidental wounds. Operations with **major breaks in sterile technique** or gross spillage from the gastrointestinal tract. Incisions presenting acute, non-purulent inflammation are automatically grouped here.<br>
+                                <i>Examples: Open trauma laparotomy for blunt bowel injury, enterocutaneous fistula resection with gross spillage.</i>
+                            </td>
+                            <td class="p-3 font-mono text-amber-400">10.0% – 20.0%</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-bold text-white bg-slate-900/30">Class IV: Dirty / Infected</td>
+                            <td class="p-3">
+                                Old traumatic wounds with retained devitalized tissue; wounds that involve existing **clinical infection or perforated viscera**. This classification implies that the organisms causing post-op infection were present in the field *before* the operation.<br>
+                                <i>Examples: Perforated diverticulitis with feculent peritonitis, debridement of ischemic gas gangrene.</i>
+                            </td>
+                            <td class="p-3 font-mono text-rose-500 font-bold">&gt; 30.0%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Autoclaving Tables Grid -->
+            <h4 class="text-sm font-bold uppercase text-slate-400 mb-3 tracking-wide" id="p2-autoclave">Physical Parameters for Moist Heat (Steam) Autoclaving</h4>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div class="p-4 rounded-lg border border-slate-700 bg-slate-950 text-xs">
+                    <h5 class="font-bold text-emerald-400 mb-2 border-b border-slate-800 pb-1">Gravity Displacement Cycle</h5>
+                    <ul class="space-y-2 text-slate-300 leading-relaxed">
+                        <li><strong>Minimum Temperature:</strong> 121°C (250°F)</li>
+                        <li><strong>Chamber Pressure:</strong> 15 psi</li>
+                        <li><strong>Minimum Time Constraints:</strong> **30 minutes** (for wrapped loads)</li>
+                        <li><strong>Mechanism:</strong> Steam is introduced at top/sides of chamber, pushing heavier cool air down and out the exhaust port.</li>
+                    </ul>
+                </div>
+                <div class="p-4 rounded-lg border border-slate-700 bg-slate-950 text-xs">
+                    <h5 class="font-bold text-emerald-400 mb-2 border-b border-slate-800 pb-1">Pre-vacuum (Dynamic-Air-Removal) Cycle</h5>
+                    <ul class="space-y-2 text-slate-300 leading-relaxed">
+                        <li><strong>Minimum Temperature:</strong> 132°C (270°F)</li>
+                        <li><strong>Chamber Pressure:</strong> 27 – 30 psi</li>
+                        <li><strong>Minimum Time Constraints:</strong> **4 minutes** (standard cycle)</li>
+                        <li><strong>Mechanism:</strong> Active vacuum pump removes air before steam injection, permitting near-instantaneous steam penetration into dense packages.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. SCIP Standards & Tetanus Prophylaxis -->
+        <div class="mb-8" id="p3-prophylaxis">
+            <h3 class="text-xl font-bold text-white mb-3 flex items-center">
+                <span class="w-2 h-6 bg-[#065F46] mr-2 inline-block rounded-sm"></span>
+                3. Quality Metrics: SCIP Consensus &amp; Tetanus Resuscitation
+            </h3>
+            
+            <p class="text-sm text-slate-300 mb-4 leading-relaxed">
+                The **Surgical Care Improvement Project (SCIP)** established standardized protocol bundles to reduce surgical site infections, verified in national quality datasets:
+            </p>
+
+            <div class="overflow-x-auto mb-6 rounded-lg border border-slate-700 bg-slate-950">
+                <table class="w-full text-left border-collapse text-xs">
+                    <thead>
+                        <tr class="bg-slate-900 border-b border-slate-700 text-slate-300 font-semibold">
+                            <th class="p-3 text-[#065F46] font-bold">SCIP Parameter</th>
+                            <th class="p-3">Primary Quality Standard &amp; Intervention</th>
+                            <th class="p-3">Evidence-Based Clinical Rationale</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-800 text-slate-300">
+                        <tr>
+                            <td class="p-3 font-bold text-white">Pre-Incision Timing</td>
+                            <td class="p-3">Infusion must begin **within 60 minutes prior to surgical incision** (120 minutes for Vancomycin or Fluoroquinolones).</td>
+                            <td class="p-3">Ensures tissue antibiotic concentration exceeds the minimum inhibitory concentration (MIC) at the exact moment of incision.</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-bold text-white">Intraoperative Re-dosing</td>
+                            <td class="p-3">Re-dose if duration exceeds **two half-lives** of the agent (e.g., Cefazolin re-dosed at 4 hours) or blood loss exceeds **1,500 mL**.</td>
+                            <td class="p-3">Maintains therapeutic serum and tissue drug levels during extended exposures or dilution from bleeding.</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-bold text-white">Discontinuation Rules</td>
+                            <td class="p-3">Prophylactic antibiotics must be stopped **within 24 hours of anesthesia end-time** (48 hours for cardiac surgery).</td>
+                            <td class="p-3">Prolonged postoperative administration does not reduce infection rates and strongly drives drug-resistant strains.</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-bold text-white">Glycemic Target</td>
+                            <td class="p-3">Maintain perioperative blood glucose **&le; 180 mg/dL** in all surgical patients.</td>
+                            <td class="p-3">Reduces hyperglycemia-induced leukocyte dysfunction, which impairs phagocytosis and bacterial intracellular killing.</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-bold text-white">Oxygenation &amp; Temp</td>
+                            <td class="p-3">Maintain core body temp **&ge; 36.0°C** and optimize perioperative oxygenation (FiO2 &ge; 80% for intubated patients).</td>
+                            <td class="p-3">Hypothermia causes cutaneous vasoconstriction, decreasing oxygen tension. High FiO2 enhances neutrophil oxidative burst activity.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Tetanus Prophylaxis Wound Management Table -->
+            <h4 class="text-sm font-bold uppercase text-slate-400 mb-3 tracking-wide" id="p3-tetanus-mgmt">Tetanus Prophylaxis Algorithmic Wound Matrix</h4>
+            <div class="overflow-x-auto mb-6 rounded-lg border border-slate-700 bg-slate-950">
+                <table class="w-full text-left border-collapse text-xs">
+                    <thead>
+                        <tr class="bg-slate-900 border-b border-slate-700 text-slate-300 font-semibold">
+                            <th class="p-3 text-[#065F46] font-bold">History of Adsorbed Tetanus Toxoid</th>
+                            <th class="p-3">Clean, Minor Wounds: Vaccine (Tdap/Td)</th>
+                            <th class="p-3">Clean, Minor Wounds: TIG</th>
+                            <th class="p-3">All Other Wounds*: Vaccine (Tdap/Td)</th>
+                            <th class="p-3">All Other Wounds*: TIG</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-800 text-slate-300">
+                        <tr>
+                            <td class="p-3 font-bold text-white">Unknown or &lt; 3 Doses</td>
+                            <td class="p-3 text-emerald-400 font-semibold">Yes (Complete series)</td>
+                            <td class="p-3 text-slate-400">No</td>
+                            <td class="p-3 text-emerald-400 font-semibold">Yes (Complete series)</td>
+                            <td class="p-3 text-rose-400 font-bold">Yes (250 units IM)</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-bold text-white">&ge; 3 Doses</td>
+                            <td class="p-3 text-slate-300">No (unless &gt; 10 years since last dose)</td>
+                            <td class="p-3 text-slate-400">No</td>
+                            <td class="p-3 text-slate-300">No (unless &gt; 5 years since last dose)</td>
+                            <td class="p-3 text-slate-400">No</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="text-xs text-slate-400 italic leading-relaxed">
+                *Note: "All other wounds" includes wounds contaminated with soil, feces, soil-contaminated dust, puncture wounds, avulsions, burns, frostbite, or devitalized crush tissue. Tdap is preferred over Td for adults who have not previously received Tdap.
+            </p>
+        </div>
+
+        <!-- 4. Source Control and Tactics -->
+        <div class="mb-8" id="p4-fourniers">
+            <h3 class="text-xl font-bold text-white mb-3 flex items-center">
+                <span class="w-2 h-6 bg-[#065F46] mr-2 inline-block rounded-sm"></span>
+                4. Surgical Tactics &amp; Source Control
+            </h3>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 text-sm leading-relaxed text-slate-300">
+                <div>
+                    <h4 class="text-sm font-bold uppercase text-slate-400 mb-2 tracking-wide">Fournier's Gangrene Resuscitation &amp; Debridement</h4>
+                    <p class="mb-3">
+                        Fournier's Gangrene is a necrotizing fasciitis of the perineum and scrotum, requiring rapid intervention:
+                    </p>
+                    <ul class="list-decimal list-inside space-y-2 text-slate-300 mb-3">
+                        <li><strong>Aggressive Resuscitation:</strong> Initiate large-volume crystalloid infusion to restore organ perfusion. Correct acidosis.</li>
+                        <li><strong>Toxin Suppression:</strong> Administer IV Clindamycin (suppresses SpeA/SpeC protein synthesis at 50S ribosome) alongside Vancomycin and Piperacillin/Tazobactam.</li>
+                        <li><strong>Emergency Surgical Debridement:</strong> Debride all necrotic skin, subcutaneous tissue, and fascia. Expose down to healthy, bleeding tissue.</li>
+                        <li><strong>Testicular Preservation:</strong> Testicular blood supply arises from the abdominal aorta via the testicular arteries, protecting them from superficial scrotal fascial gangrene. Do not perform orchiectomy unless direct parenchymal necrosis is confirmed.</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-sm font-bold uppercase text-slate-400 mb-2 tracking-wide" id="p4-abdomen">The Open Abdomen Dressing Timing Pitfall</h4>
+                    <div class="p-4 rounded-lg bg-emerald-950/20 border border-emerald-800/40 text-xs">
+                        <h5 class="font-bold text-emerald-400 mb-1">Warning: Negative Pressure Wound Therapy Duration</h5>
+                        <p class="text-slate-300 mb-2">
+                            When managing an open abdomen (e.g., damage control surgery, severe peritonitis), a temporary closure dressing (negative pressure wound therapy) must be cycled frequently.
+                        </p>
+                        <p class="text-slate-300">
+                            Leaving a temporary abdominal closure dressing unchanged for <strong>&gt; 48 hours</strong> dramatically increases the risk of severe bowel wall edema, adhesion formation, and direct mechanical breakdown of the intestinal wall, leading to catastrophic <strong>enterocutaneous fistulas</strong>. Schedule re-exploration and washout every 24–48 hours until closure is feasible.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5. Crisis Care & Sterilization -->
+        <div class="mb-8" id="p5-disinfection">
+            <h3 class="text-xl font-bold text-white mb-3 flex items-center">
+                <span class="w-2 h-6 bg-[#065F46] mr-2 inline-block rounded-sm"></span>
+                5. Sterilization vs. Disinfection &amp; Clostridial Myonecrosis
+            </h3>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 text-sm leading-relaxed text-slate-300">
+                <div>
+                    <h4 class="text-sm font-bold uppercase text-slate-400 mb-2 tracking-wide">High-Level Disinfection vs. True Sterilization</h4>
+                    <p class="mb-3">
+                        <strong>True Sterilization:</strong> The complete destruction of all forms of microbial life, including highly resistant bacterial endospores (e.g., <i>Bacillus</i> and <i>Clostridium</i>). Required for **critical devices** that enter sterile tissues or the vascular system (e.g., implants, vascular catheters, surgical instruments).
+                    </p>
+                    <p class="mb-3">
+                        <strong>High-Level Disinfection (HLD):</strong> Destroys all vegetative microorganisms, mycobacteria, fungi, and lipid/non-lipid viruses, but **does not guarantee the destruction of all bacterial endospores**. Acceptable for **semi-critical devices** that contact mucous membranes or non-intact skin (e.g., flexible endoscopes, laryngoscope blades).
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-sm font-bold uppercase text-slate-400 mb-2 tracking-wide" id="p5-clostridial">Clostridial Myonecrosis (Gas Gangrene) Diagnostics</h4>
+                    <p class="mb-3">
+                        Usually caused by <i>Clostridium perfringens</i>, a Gram-positive anaerobic rod that releases **alpha-toxin** (lecithinase), causing cell lysis and gas production:
+                    </p>
+                    <ul class="list-disc list-inside space-y-1 text-slate-400 mb-3">
+                        <li><strong>Clinical presentation:</strong> Sudden, severe pain out of proportion to exam, crepitus, dishwater drainage, and bronze skin discoloration.</li>
+                        <li><strong>Microbiology Trap:</strong> Gram stain of wound exudate reveals **large Gram-positive rods with a complete absence of white blood cells (PMNs)**. The PMNs are lysed in the local environment by alpha-toxin.</li>
+                        <li><strong>Treatment:</strong> Immediate surgical debridement, IV Penicillin G + Clindamycin, and hyperbaric oxygen.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Board Review Checklists -->
+        <div class="sec-header s1 border-t border-slate-800 pt-6 mt-8" id="board-review">
+            <span class="sec-badge">BOARD REVIEW</span>
+            <span class="sec-title">ABSITE Core Recall Matrix</span>
+        </div>
+        
+        <div class="mt-6 text-sm text-slate-300 leading-relaxed">
+            <h4 class="text-sm font-bold uppercase text-slate-400 mb-3 tracking-wide">High-Yield Practice Points</h4>
+            <div class="overflow-x-auto rounded-lg border border-slate-700 bg-slate-950 mb-6 text-xs">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="bg-slate-900 border-b border-slate-700 text-slate-300 font-semibold">
+                            <th class="p-3 text-[#065F46] font-bold">Exam Topic</th>
+                            <th class="p-3">Core Fact / Landmark Consensus</th>
+                            <th class="p-3">ABSITE Test-Taking Strategy</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-800 text-slate-300">
+                        <tr>
+                            <td class="p-3 font-bold text-white">MRSA PBP2a Mutation</td>
+                            <td class="p-3">mecA gene mutation encodes Penicillin-Binding Protein 2a, preventing beta-lactam binding.</td>
+                            <td class="p-3">For MRSA, look for PBP2a as the correct answer. Cephalosporins (except 5th gen Ceftaroline) are ineffective.</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-bold text-white">VRE Cell Wall Target</td>
+                            <td class="p-3">vanA/vanB operons change cell wall peptide structure from D-Ala-D-Ala to D-Ala-D-Lac.</td>
+                            <td class="p-3">Look for the ester bond replacement of D-Ala-D-Ala to D-Ala-D-Lac to explain high-level glycopeptide resistance.</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-bold text-white">Clostridial Smear PMN Lysis</td>
+                            <td class="p-3">Alpha-toxin (lecithinase) lyses tissue membranes and local neutrophils.</td>
+                            <td class="p-3">If shown a gram stain of gas gangrene, expect to see large gram-positive rods with **no neutrophils**.</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-bold text-white">Open Abdomen NPWT Timing</td>
+                            <td class="p-3">Leaving NPWT dressings unchanged for &gt; 48 hours increases fistula and abscess rates.</td>
+                            <td class="p-3">Correct answer is return to the OR for dressing change/washout every 24–48 hours.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- VIVA Scenario -->
+            <div class="viva bg-emerald-950/20 border-l-4 border-[#065F46]">
+                <div class="vq text-[#10B981] font-mono text-xs font-bold uppercase tracking-wider">VIVA SCENARIO — HIGH-RISK CONTAMINATED WOUND</div>
+                <div class="vscenario text-white font-semibold text-sm my-2">A 42-year-old construction worker presents to the trauma bay with a deep puncture wound to his left calf from a rusty rebar that was buried in damp soil. His immunization history is unknown. How do you manage his surgical wound and tetanus risk?</div>
+                <div class="vanswer text-slate-300 text-xs leading-relaxed">
+                    <ul>
+                        <li class="mb-2"><strong>Wound Management:</strong> Perform immediate bedside irrigation and debridement of any devitalized tissue. This is classified as a <strong>Class III (Contaminated)</strong> or Class IV (Dirty) wound. Leave the wound open to heal by secondary intention (or plan delayed primary closure in 3–5 days). Do not close primarily.</li>
+                        <li class="mb-2"><strong>Tetanus Prophylaxis:</strong> Because the patient has an unknown vaccination history and the wound is dirty/soil-contaminated, he must receive:
+                            <ol class="list-decimal list-inside ml-4 mt-1 space-y-1">
+                                <li><strong>Tetanus-Diphtheria-Pertussis (Tdap) Vaccine:</strong> 0.5 mL IM to initiate a 3-dose series.</li>
+                                <li><strong>Tetanus Immune Globulin (TIG):</strong> 250 units IM administered at a separate anatomical site to provide immediate passive immunity.</li>
+                            </ol>
+                        </li>
+                        <li class="mb-1"><strong>Antibiotics:</strong> Administer prophylactic antibiotics targeting skin flora and anaerobic organisms.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+  </div>
+</main>
+
+  <button id="top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+  <script src="../../js/nav-pill.js"></script>
+  <script src="../../js/navigation.js"></script>
+  <script>
+    const progressBar = document.getElementById('progress-bar');
+    const topBtn = document.getElementById('top-btn');
+    const navItems = document.querySelectorAll('.nav-item');
+    const sections = document.querySelectorAll('.sec-header[id], .topic[id], [id^="p1-"], [id^="p2-"], [id^="p3-"], [id^="p4-"], [id^="p5-"]');
+
+    window.addEventListener('scroll', () => {
+      const st = window.scrollY;
+      const dh = document.documentElement.scrollHeight - window.innerHeight;
+      if (progressBar) progressBar.style.transform = `scaleX(${st / dh})`;
+      if (topBtn) topBtn.classList.toggle('show', st > 400);
+      
+      let current = '';
+      sections.forEach(s => { if (st >= s.offsetTop - 120) current = s.id; });
+      navItems.forEach(n => { n.classList.toggle('active', n.getAttribute('href') === '#' + current); });
+    });
+
+    function filterNav(query) {
+      const q = query.toLowerCase();
+      navItems.forEach(item => { item.style.display = (!q || item.textContent.toLowerCase().includes(q)) ? 'block' : 'none'; });
+    }
+
+    navItems.forEach(item => {
+      item.addEventListener('click', e => {
+        e.preventDefault();
+        if(typeof closeSidebar === 'function') closeSidebar();
+        const target = document.querySelector(item.getAttribute('href'));
+        if (target) window.scrollTo({ top: target.getBoundingClientRect().top - 80, behavior: 'smooth' });
+      });
+    });
+  </script>
+</body>
+</html>

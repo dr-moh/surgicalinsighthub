@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Surgical Insight Hub — Surgical Nutrition &amp; Starvation</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/theme.css?v=4.0.0">
+<link rel="stylesheet" href="../../css/shared.css">
+<script>
+  const savedTheme = localStorage.getItem('sih-theme') || 'light';
+  if (savedTheme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+</script>
+<style>
+:root {
+  --primary:   #78350F; /* Warm Sienna */
+  --primary-dk:#451A03;
+  --primary-lt:#FFF7ED;
+  --accent:    #9A3412;
+  --accent2:   #C2410C;
+  --gold:      #B8922A;
+  --gold-lt:   #FEF3C7;
+  --s1:        #78350F;
+  --s2:        #0D9488;
+  --s3:        #C27803;
+  --s4:        #2563EB;
+  --s5:        #BE185D;
+  --s1-lt:     #FFF7ED;
+  --s2-lt:     #F0FDFA;
+  --s3-lt:     #FEF3C7;
+  --s4-lt:     #EFF6FF;
+  --s5-lt:     #FDF2F8;
+  --red:       #B91C1C;
+  --red-lt:    #FEF2F2;
+  --bg:        #FBFBFC;
+  --bg2:       #F4F4F6;
+  --border:    #E5E7EB;
+  --text:      #1F2937;
+  --muted:     #4B5563;
+  --white:     #FFFFFF;
+  --sidebar-w: 300px;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--bg);color:var(--text);font-size:16.5px;line-height:1.8;}
+
+/* DARK MODE OVERRIDES */
+[data-theme="dark"] {
+  --bg: #09060F;
+  --bg2: #120D1D;
+  --text: #E2DEE9;
+  --muted: #A78BFA;
+  --border: rgba(255,255,255,0.08);
+  --primary-lt: #451A0344;
+  --s1-lt: #451A0344;
+  --s2-lt: #0B1D19;
+  --s3-lt: #221B0B;
+  --s4-lt: #0F172A;
+  --s5-lt: #2A0B1A;
+  --white: #120D1D;
+}
+
+/* SIDEBAR & OVERLAY */
+#sidebar {
+  position: fixed; top: 0; left: 0; width: var(--sidebar-w); height: 100vh;
+  background: var(--primary-dk); color: #E2DEE9;
+  display: flex; flex-direction: column;
+  z-index: 1300; overflow: hidden;
+  transform: translateX(-100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 4px 0 24px rgba(0,0,0,0.3);
+}
+body.sidebar-open #sidebar { transform: translateX(0); }
+
+#sidebar-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.5); backdrop-filter: blur(3px);
+  z-index: 1250; opacity: 0; pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+body.sidebar-open #sidebar-overlay { opacity: 1; pointer-events: auto; }
+
+#sidebar-toggle {
+  position: fixed; top: 72px; left: 24px; z-index: 1200;
+  background: var(--primary); color: white;
+  border: none; border-radius: 30px;
+  padding: 10px 18px; font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 600;
+  letter-spacing: 0.05em; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  display: flex; align-items: center; gap: 8px; transition: all 0.2s;
+}
+#sidebar-toggle:hover { background: var(--accent); transform: translateY(-2px); }
+
+#progress-bar {
+  position: fixed; top: 52px; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  transform-origin: left; transform: scaleX(0); transition: transform 0.1s; z-index: 1105;
+}
+
+#sidebar-header{padding:20px 20px 14px;border-bottom:1px solid rgba(255,255,255,0.1);flex-shrink:0;}
+#sidebar-header .logo{font-family:'Playfair Display',serif;font-size:13px;font-weight:700;color:var(--accent2);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;}
+#sidebar-header .sub{font-size:10.5px;color:rgba(226,222,233,0.6);letter-spacing:0.04em;}
+#sidebar-search{padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.08);flex-shrink:0;}
+#sidebar-search input{width:100%;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:6px;color:#E2DEE9;padding:6px 10px;font-size:12px;font-family:'Source Serif 4',serif;outline:none;transition:border-color 0.2s;}
+#sidebar-search input::placeholder{color:rgba(226,222,233,0.4);}
+#sidebar-search input:focus{border-color:var(--accent2);}
+#sidebar-nav{flex:1;overflow-y:auto;padding:8px 0 20px;}
+#sidebar-nav::-webkit-scrollbar{width:4px;}
+#sidebar-nav::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.15);border-radius:2px;}
+.vol-label{font-size:9.5px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent2);padding:14px 18px 4px;}
+.nav-item{display:block;padding:8px 18px 8px 22px;font-size:12.5px;color:rgba(226,222,233,0.75);text-decoration:none;border-left:2px solid transparent;transition:all 0.15s;line-height:1.4;}
+.nav-item:hover{color:#fff;background:rgba(255,255,255,0.05);border-left-color:var(--accent);}
+.nav-item.active{color:#fff;background:rgba(255,255,255,0.08);border-left-color:var(--accent2);font-weight:600;}
+.nav-item .num{font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(226,222,233,0.4);margin-right:6px;}
+
+/* HERO */
+#hero{background:linear-gradient(135deg,var(--primary-dk) 0%,#78350F 60%,#090314 100%);color:white;padding:120px 72px 60px;position:relative;overflow:hidden;}
+#hero::before{content:'';position:absolute;top:-60px;right:-60px;width:380px;height:380px;background:radial-gradient(circle,rgba(255,255,255,0.1) 0%,transparent 70%);pointer-events:none;}
+#hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--primary),var(--accent2),transparent);}
+#hero .eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.16em;color:var(--accent2);text-transform:uppercase;margin-bottom:14px;}
+#hero h1{font-family:'Playfair Display',serif;font-size:38px;font-weight:700;line-height:1.15;margin-bottom:10px;color:#fff;}
+#hero .subtitle{font-size:18px;color:rgba(255,255,255,0.65);font-style:italic;margin-bottom:28px;}
+#hero .badges{display:flex;gap:10px;flex-wrap:wrap;}
+#hero .badge{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:4px 14px;font-size:12px;color:rgba(255,255,255,0.8);font-family:'JetBrains Mono',monospace;}
+
+/* CONTENT */
+.content-wrap{max-width:1140px;margin:0 auto;padding:0 48px 80px;}
+
+/* SECTION HEADER */
+.sec-header{margin-top:60px;margin-bottom:8px;padding:28px 36px;border-radius:10px;display:flex;align-items:center;gap:20px;}
+.sec-header.s1{background:linear-gradient(135deg,#78350F08,#78350F18);border-left:4px solid var(--s1);}
+.sec-header.s2{background:linear-gradient(135deg,#0D948808,#0D948818);border-left:4px solid var(--s2);}
+.sec-header.s3{background:linear-gradient(135deg,#C2780308,#C2780318);border-left:4px solid var(--s3);}
+.sec-header.s4{background:linear-gradient(135deg,#2563EB08,#2563EB18);border-left:4px solid var(--s4);}
+.sec-header.s5{background:linear-gradient(135deg,#BE185D08,#BE185D18);border-left:4px solid var(--s5);}
+.sec-badge{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;letter-spacing:0.1em;padding:4px 12px;border-radius:4px;white-space:nowrap;flex-shrink:0;}
+.s1 .sec-badge{background:var(--s1);color:white;}
+.s2 .sec-badge{background:var(--s2);color:white;}
+.s3 .sec-badge{background:var(--s3);color:white;}
+.s4 .sec-badge{background:var(--s4);color:white;}
+.s5 .sec-badge{background:var(--s5);color:white;}
+.sec-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;}
+.s1 .sec-title{color:var(--s1);}
+.s2 .sec-title{color:var(--s2);}
+.s3 .sec-title{color:var(--s3);}
+.s4 .sec-title{color:var(--s4);}
+.s5 .sec-title{color:var(--s5);}
+
+/* TOPIC */
+.topic{margin-top:48px;padding-top:48px;border-top:1px solid var(--border);}
+.topic:first-of-type{border-top:none;}
+.topic-header{display:flex;align-items:flex-start;gap:16px;margin-bottom:24px;}
+.topic-num{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;padding:3px 10px;border-radius:4px;margin-top:4px;flex-shrink:0;}
+.s1 .topic-num{background:var(--s1-lt);color:var(--s1);}
+.s2 .topic-num{background:var(--s2-lt);color:var(--s2);}
+.s3 .topic-num{background:var(--s3-lt);color:var(--s3);}
+.s4 .topic-num{background:var(--s4-lt);color:var(--s4);}
+.s5 .topic-num{background:var(--s5-lt);color:var(--s5);}
+.topic h2{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;line-height:1.2;}
+.s1 .topic h2{color:var(--s1);}
+.s2 .topic h2{color:var(--s2);}
+.s3 .topic h2{color:var(--s3);}
+.s4 .topic h2{color:var(--s4);}
+.s5 .topic h2{color:var(--s5);}
+.topic h3{font-family:'Playfair Display',serif;font-size:17px;font-weight:600;color:var(--muted);margin:26px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--border);}
+.topic h4{font-size:13px;font-weight:600;color:var(--muted);letter-spacing:0.06em;text-transform:uppercase;margin:18px 0 8px;font-family:'JetBrains Mono',monospace;}
+.topic p{margin-bottom:12px;color:var(--text);text-align:justify;}
+.topic ul,.topic ol{margin:8px 0 14px 20px;color:var(--text);}
+.topic li{margin-bottom:6px;line-height:1.65;}
+.topic li::marker{color:var(--accent2);}
+.topic strong{color:var(--text);font-weight:600;}
+
+/* TABLES */
+.table-wrap{overflow-x:auto;margin:16px 0 20px;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.06);border:1px solid var(--border);}
+table{width:100%;border-collapse:collapse;font-size:13.5px;background:var(--white);}
+thead tr{background:var(--s1);}
+thead th{color:white;padding:10px 14px;text-align:left;font-family:'Source Serif 4',serif;font-weight:600;font-size:13px;}
+tbody tr:nth-child(even){background:var(--bg2);}
+tbody tr:hover{background:var(--s1-lt);transition:background 0.15s;}
+tbody td{padding:9px 14px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.5;}
+.s2-tbl thead tr{background:var(--s2);}
+.s3-tbl thead tr{background:var(--s3);}
+.s4-tbl thead tr{background:var(--s4);}
+.s5-tbl thead tr{background:var(--s5);}
+
+/* CALLOUTS */
+.callout{margin:18px 0;padding:14px 18px;border-radius:0 8px 8px 0;border-left:4px solid;font-size:14px;line-height:1.65;}
+.callout .label{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;display:block;margin-bottom:4px;}
+.callout.pearl{background:var(--gold-lt);border-color:var(--gold);}
+.callout.pearl .label{color:var(--gold);}
+.callout.warn{background:var(--red-lt);border-color:var(--red);}
+.callout.warn .label{color:var(--red);}
+.callout.clin{background:var(--s2-lt);border-color:var(--s2);}
+.callout.clin .label{color:var(--s2);}
+.callout.exam{background:var(--s4-lt);border-color:var(--s4);}
+.callout.exam .label{color:var(--s4);}
+
+/* VIVA Scenario */
+.viva{background:var(--s1-lt);border:1px solid var(--border);border-left:4px solid var(--s1);border-radius:0 8px 8px 0;padding:16px 20px;margin:20px 0;}
+.viva .vq{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;color:var(--s1);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:8px;}
+.viva .vscenario{font-size:14px;font-weight:600;color:var(--text);margin-bottom:10px;line-height:1.5;}
+.viva .vanswer{font-size:13.5px;color:var(--muted);line-height:1.65;}
+.viva .vanswer ul{margin:6px 0 0 18px;}
+.viva .vanswer li{margin-bottom:4px;}
+
+/* KEY GRID */
+.key-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:10px;margin:14px 0 20px;}
+.key-card{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:12px 14px;font-size:13px;line-height:1.55;}
+.key-card .kc-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;font-weight:600;color:var(--s1);}
+.key-card .kc-val{font-weight:700;font-size:15px;color:var(--text);}
+.key-card.g2 .kc-label{color:var(--s2);}
+.key-card.g3 .kc-label{color:var(--s3);}
+.key-card.red .kc-label{color:var(--red);}
+.key-card.amb .kc-label{color:var(--accent2);}
+
+/* TOP BTN */
+#top-btn{position:fixed;bottom:28px;right:28px;background:var(--primary);color:white;border:none;border-radius:50%;width:44px;height:44px;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,0.2);transition:all 0.2s;opacity:0;pointer-events:none;z-index:1100;}
+#top-btn.show{opacity:1;pointer-events:auto;}
+#top-btn:hover{background:var(--accent2);transform:translateY(-2px);}
+
+@media(max-width:900px){
+  .content-wrap{padding:0 20px 60px;}
+  #hero{padding:80px 20px 40px;}
+  #hero h1{font-size:30px;}
+  #sidebar-toggle{top:64px; left:16px;}
+}
+</style>
+<script src="https://jsdelivr.net" async></script>
+</head>
+<body>
+  <!-- Standardized SIH Navbar -->
+  <nav class="nav" id="mainNav">
+    <div class="nav-left">
+      <a href="../../index.html" class="nav-pill">
+        <div class="nav-logo-img">
+          <img src="../../assets/images/Surgical_Insight_Hub_Logo.png" alt="SIH Logo">
+        </div>
+        <div>
+          <div class="nav-brand-text">Surgical Insight Hub</div>
+          <div class="nav-brand-sub">The Residency Journal</div>
+        </div>
+      </a>
+    </div>
+    <div class="nav-links-pill">
+      <a href="../../index.html">Home</a>
+      <a href="../../notes.html" class="active">Notes</a>
+      <a href="../operative_approach.html">Playbook</a>
+      <a href="../../arena.html?v=4.0.0">MCQ Arena</a>
+      <a href="../../podcast.html">Podcast</a>
+      <a href="../../surgery-talk.html">Surgery Talk</a>
+      <a href="../../about.html">About</a>
+    </div>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+        <svg id="moonIcon" viewBox="0 0 24 24" width="18" height="18"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        <svg id="sunIcon" style="display:none;" viewBox="0 0 24 24" width="18" height="18"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+      </button>
+      <a href="https://t.me/sugicalInsightHub" target="_blank" class="nav-tg-btn" title="Join Telegram">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="#f0d080"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.89 8.22l-1.97 9.28c-.15.66-.54.82-1.08.51l-3-2.21-1.45 1.39c-.16.16-.3.3-.61.3l.21-3.05 5.56-5.02c.24-.21-.05-.33-.37-.12l-6.87 4.33-2.96-.92c-.64-.2-.66-.64.14-.95l11.57-4.46c.54-.19 1.01.13.83.94z"/></svg>
+      </a>
+      <a href="../../arena.html?v=4.0.0" class="nav-btn arena-btn">MCQ Arena</a>
+      <button class="mob-nav-toggle" onclick="openMobNav()" aria-label="Menu">
+        <div class="hamburger"><span></span><span></span><span></span></div>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mob-nav-overlay" id="mobNavOverlay" onclick="closeMobNav()"></div>
+  <div class="mob-nav-sheet" id="mobNavSheet">
+    <div class="mob-nav-handle"></div>
+    <a href="../../index.html" onclick="closeMobNav()">Home</a>
+    <a href="../../notes.html" onclick="closeMobNav()">Notes</a>
+    <a href="../../notes/operative_approach.html" onclick="closeMobNav()">Playbook</a>
+    <a href="../../podcast.html" onclick="closeMobNav()">Podcast</a>
+    <a href="../../surgery-talk.html" onclick="closeMobNav()">Surgery Talk</a>
+    <a href="../../arena.html" onclick="closeMobNav()">MCQ Arena</a>
+    <a href="../../about.html" onclick="closeMobNav()">About</a>
+    <a href="https://t.me/sugicalInsightHub" target="_blank" rel="noopener" onclick="closeMobNav()" style="color: var(--brand-gold); font-weight: 800;">Join Telegram Community</a>
+  </div>
+
+  <div id="progress-bar"></div>
+  <button id="sidebar-toggle" onclick="toggleSidebar()">
+    <span>📜</span> Sections Menu
+  </button>
+  <div id="sidebar-overlay" onclick="closeSidebar()"></div>
+
+  <!-- SIDEBAR -->
+  <aside id="sidebar">
+    <div id="sidebar-header">
+      <div class="logo">Surgical Nutrition</div>
+      <div class="sub">General Surgery Monograph</div>
+    </div>
+    <div id="sidebar-search">
+      <input oninput="filterNav(this.value)" placeholder="Search sections..." type="text"/>
+    </div>
+    <nav id="sidebar-nav">
+      <div class="vol-label">Pillar 1: Pathophysiology</div>
+      <a class="nav-item" href="#p1-starvation"><span class="num">1.1</span>Starvation vs. Stress Metabolism</a>
+      <a class="nav-item" href="#p1-refeeding"><span class="num">1.2</span>Refeeding Syndrome Mechanics</a>
+      <a class="nav-item" href="#p1-overfeeding"><span class="num">1.3</span>Overfeeding &amp; RQ Kinetics</a>
+      <div class="vol-label">Pillar 2: Diagnostics &amp; Assessment</div>
+      <a class="nav-item" href="#p2-visceral"><span class="num">2.1</span>Visceral Protein Matrix</a>
+      <a class="nav-item" href="#p2-dosing"><span class="num">2.2</span>Caloric &amp; Protein Target Dosing</a>
+      <div class="vol-label">Pillar 3: Clinical Trials</div>
+      <a class="nav-item" href="#p3-trials"><span class="num">3.1</span>Landmark Trials (CALORIES, NUTRIREA-2)</a>
+      <div class="vol-label">Pillar 4: Feeding Strategy</div>
+      <a class="nav-item" href="#p4-refeeding-protocol"><span class="num">4.1</span>Refeeding Prevention &amp; Titration</a>
+      <div class="vol-label">Pillar 5: Bedside Crises</div>
+      <a class="nav-item" href="#p5-tpn-crash"><span class="num">5.1</span>TPN Cessation Hypoglycemia</a>
+      <a class="nav-item" href="#p5-air-embolism"><span class="num">5.2</span>Central Line Air Embolism</a>
+      <div class="vol-label">Board Review</div>
+      <a class="nav-item" href="#board-review"><span class="num">6.1</span>ABSITE Core Recall Matrix</a>
+    </nav>
+  </aside>
+
+  <main id="main">
+    <section id="hero">
+      <div class="eyebrow">Metabolism &amp; Nutrition · Monograph</div>
+      <h1>Surgical Nutrition &amp; Starvation</h1>
+      <p class="subtitle">Metabolic adaptations to hunger and surgical stress, clinical indicators of malnutrition, enteral and parenteral feeding pathways, and prevention of refeeding syndrome.</p>
+      <div class="badges">
+        <span class="badge">General Surgery</span>
+        <span class="badge">Board Review</span>
+        <span class="badge">ABSITE Gold</span>
+      </div>
+    </section>
+
+    <div class="content-wrap">
+      <!-- Key Statistics Grid -->
+      <div class="key-grid">
+        <div class="key-card">
+          <div class="kc-label">Visceral Protein</div>
+          <div class="kc-val">Prealbumin t1/2 = 2d</div>
+        </div>
+        <div class="key-card g2">
+          <div class="kc-label">Refeeding Trigger</div>
+          <div class="kc-val">Insulin Shift</div>
+        </div>
+        <div class="key-card red">
+          <div class="kc-label">Shock EN Rule</div>
+          <div class="kc-val">Hold EN on Pressors</div>
+        </div>
+        <div class="key-card amb">
+          <div class="kc-label">Air Embolism Rescue</div>
+          <div class="kc-val">Durant's Maneuver</div>
+        </div>
+      </div>
+
+      <!-- Foundational Anchor Callout -->
+      <div class="callout clin" style="border-left-color: var(--primary); background: var(--primary-lt); margin-bottom: 40px;">
+        <span class="label" style="color: var(--primary); font-weight: 700;">Foundational Anchor (From PDF Source Notes)</span>
+        <p style="font-style: italic; color: var(--text);">
+          "Complete review of hunger and stress metabolism, indicators of surgical malnutrition, enteral vs. parenteral nutrition access pipelines, and complications like Refeeding Syndrome."
+        </p>
+      </div>
+
+      <!-- PILLAR 1 -->
+      <div class="sec-header s1" id="p1-starvation">
+        <span class="sec-badge">PILLAR 1</span>
+        <span class="sec-title">Core Pathophysiology &amp; Metabolic Adaptation</span>
+      </div>
+      
+      <section class="topic s1">
+        <div class="topic-header"><span class="topic-num">1.1</span><h2>Starvation vs. Stress Metabolism Pathways</h2></div>
+        <p>The body responds to nutritional deprivation differently depending on whether it is in a stressed or non-stressed state:</p>
+        <ul>
+          <li><strong>Simple Starvation (Non-stressed):</strong>
+            <br>• <strong>0 – 24 Hours:</strong> Hepatic glycogenolysis maintains serum glucose. These reserves are depleted within 24 hours.
+            <br>• <strong>24 Hours – 5 Days:</strong> Gluconeogenesis begins in the liver and kidneys, using amino acids (alanine from skeletal muscle proteolysis) and glycerol (from adipose tissue lipolysis) to maintain glucose delivery to the brain and red blood cells.
+            <br>• <strong>&gt; 5 Days (Ketosis Adaptation):</strong> The brain adapts to using **ketone bodies** (acetoacetate and &beta;-hydroxybutyrate) derived from free fatty acid oxidation. This reduces the requirement for gluconeogenesis, decreasing skeletal muscle proteolysis (reducing nitrogen loss from 10–12 g/day to 2–4 g/day) and lowering the Basal Metabolic Rate (BMR) to conserve energy.
+          </li>
+          <li><strong>Stress Metabolism (Trauma, Sepsis, Major Surgery):</strong>
+            <br>• Driven by inflammatory cytokines (**TNF-&alpha;, IL-1, IL-6**) and counter-regulatory hormones (**Cortisol, Catecholamines, Glucagon**).
+            <br>• BMR increases (hypermetabolism) and glycogen stores are rapidly depleted.
+            <br>• High counter-regulatory hormones cause insulin resistance and block the shift to ketosis.
+            <br>• Muscle proteolysis occurs continuously to provide amino acids for hepatic acute-phase protein synthesis and gluconeogenesis, leading to rapid loss of lean body mass.
+          </li>
+        </ul>
+      </section>
+
+      <section class="topic s1" id="p1-refeeding">
+        <div class="topic-header"><span class="topic-num">1.2</span><h2>Cellular Mechanisms of Refeeding Syndrome</h2></div>
+        <p>Refeeding syndrome is a life-threatening metabolic emergency caused by rapid nutritional replenishment in severely malnourished patients:</p>
+        <ul>
+          <li><strong>Baseline Malnourished State:</strong> Chronic starvation depletes intracellular electrolytes (phosphate, potassium, magnesium), though serum levels may remain normal due to contraction of extracellular volume. Intracellular ATP stores are also depleted.</li>
+          <li><strong>Insulin-Mediated Shift:</strong> Reintroducing carbohydrates (dextrose) triggers a rapid release of **insulin** and stops glucagon secretion. Insulin activates the **Na+/K+ ATPase pump** (which co-transports phosphate, potassium, and magnesium into cells along with glucose).</li>
+          <li><strong>Serum Depletion:</strong> This shift causes a sudden drop in serum levels of **phosphate, potassium, and magnesium**.
+            <br>• **Phosphate Depletion:** Limits the synthesis of adenosine triphosphate (ATP) and 2,3-diphosphoglycerate (2,3-DPG). The lack of ATP causes cellular dysfunction, presenting as diaphragmatic weakness (respiratory failure), cardiac arrhythmias, seizures, and red blood cell lysis.
+          </li>
+        </ul>
+      </section>
+
+      <section class="topic s1" id="p1-overfeeding">
+        <div class="topic-header"><span class="topic-num">1.3</span><h2>Overfeeding Kinetics &amp; Respiratory Quotient (RQ)</h2></div>
+        <p>Overfeeding occurs when caloric intake exceeds energy expenditure, leading to lipogenesis and metabolic stress:</p>
+        <ul>
+          <li><strong>Respiratory Quotient Definition:</strong> The ratio of carbon dioxide produced to oxygen consumed:
+            \[RQ = \frac{\text{VCO}_2}{\text{VO}_2}\]
+          </li>
+          <li><strong>Substrate Oxidation RQs:</strong>
+            <br>• Pure lipid oxidation: **0.7**
+            <br>• Pure protein oxidation: **0.8**
+            <br>• Pure carbohydrate oxidation: **1.0**
+            <br>• Lipogenesis (excess carbohydrate/overfeeding): **1.1 – 1.3**
+          </li>
+          <li><strong>Clinical Consequences:</strong> Overfeeding carbohydrates drives lipogenesis, producing excess carbon dioxide (\(\text{VCO}_2\)). This increases the work of breathing, which can trigger hypercapnic respiratory failure or make it difficult to wean patients from mechanical ventilation.</li>
+        </ul>
+      </section>
+
+      <!-- PILLAR 2 -->
+      <div class="sec-header s2" id="p2-visceral">
+        <span class="sec-badge">PILLAR 2</span>
+        <span class="sec-title">Classifications &amp; Assessment Metrics</span>
+      </div>
+      
+      <section class="topic s2">
+        <div class="topic-header"><span class="topic-num">2.1</span><h2>Visceral Protein Assessment Matrix</h2></div>
+        <p>Serum proteins reflect hepatic synthesis rates but are confounded by the systemic inflammatory response:</p>
+        <div class="table-wrap s2-tbl">
+          <table>
+            <thead>
+              <tr>
+                <th>Visceral Protein</th>
+                <th>Serum Half-Life</th>
+                <th>Normal Range</th>
+                <th>Clinical Utility &amp; Diagnostic Confounders</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="font-bold text-white bg-slate-900/30"><strong>Albumin</strong></td>
+                <td>**20 Days**</td>
+                <td>3.5 – 5.0 g/dL</td>
+                <td>Reflects long-term nutritional status. **Decreased by acute inflammation** (negative acute-phase reactant), fluid overload, cirrhosis, nephrotic syndrome, and protein-losing enteropathy. Not useful for tracking acute nutritional changes.</td>
+              </tr>
+              <tr>
+                <td class="font-bold text-white bg-slate-900/30"><strong>Transferrin</strong></td>
+                <td>**8 – 10 Days**</td>
+                <td>200 – 400 mg/dL</td>
+                <td>Reflects intermediate nutritional status. Decreased by acute inflammation. **Increased in iron deficiency states** (making it appear falsely normal in malnourished patients with concurrent iron deficiency).</td>
+              </tr>
+              <tr>
+                <td class="font-bold text-white bg-slate-900/30"><strong>Prealbumin</strong> (Transthyretin)</td>
+                <td>**2 Days**</td>
+                <td>15 – 35 mg/dL</td>
+                <td>**Best marker for tracking acute changes** and response to nutritional therapy. Decreased by acute inflammation and hepatic failure. **Falsely elevated in renal failure** due to decreased clearance.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="topic s2" id="p2-dosing">
+        <div class="topic-header"><span class="topic-num">2.2</span><h2>Caloric &amp; Protein Target Dosing Grid</h2></div>
+        <p>Nutritional targets must be adjusted based on the patient's metabolic stress level:</p>
+        <div class="table-wrap s2-tbl">
+          <table>
+            <thead>
+              <tr>
+                <th>Stress Tier Category</th>
+                <th>Clinical Presentation</th>
+                <th>Caloric Target (kcal/kg/day)</th>
+                <th>Protein Target (g/kg/day)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Low Stress / Baseline</strong></td>
+                <td>Uncomplicated post-op patient, mild illness, non-ventilated.</td>
+                <td>20 – 25</td>
+                <td>0.8 – 1.0</td>
+              </tr>
+              <tr>
+                <td><strong>Moderate Stress</strong></td>
+                <td>Major abdominal surgery, severe infection, stable trauma.</td>
+                <td>25 – 30</td>
+                <td>1.2 – 1.5</td>
+              </tr>
+              <tr>
+                <td><strong>Severe Stress</strong></td>
+                <td>Severe sepsis, active multi-system trauma, closed head injury.</td>
+                <td>30 – 32</td>
+                <td>1.5 – 2.0</td>
+              </tr>
+              <tr>
+                <td><strong>Hypermetabolic (Burns)</strong></td>
+                <td>Severe burns covering &gt; 30% Total Body Surface Area (TBSA).</td>
+                <td>32 – 35</td>
+                <td>2.0 – 2.5</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- PILLAR 3 -->
+      <div class="sec-header s3" id="p3-trials">
+        <span class="sec-badge">PILLAR 3</span>
+        <span class="sec-title">Landmark Clinical Trials</span>
+      </div>
+      
+      <section class="topic s3">
+        <div class="topic-header"><span class="topic-num">3.1</span><h2>Clinical Nutrition Trial Evidence</h2></div>
+        <div class="table-wrap s3-tbl">
+          <table>
+            <thead>
+              <tr>
+                <th>Trial Name</th>
+                <th>Year</th>
+                <th>Primary Intervention</th>
+                <th>Clinical Outcome &amp; Impact on Practice Guidelines</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>CALORIES</strong></td>
+                <td>2014</td>
+                <td>Multicenter randomized trial comparing early enteral nutrition (EN) vs. early parenteral nutrition (PN) initiated within 36 hours of ICU admission in 2,400 patients.</td>
+                <td>**No difference in 30-day mortality** (22.4% vs. 21.5%, p=0.57) or infectious complications between EN and PN. Challenged the historical assumption that parenteral nutrition is inherently associated with higher infection rates when glycemic control is maintained.</td>
+              </tr>
+              <tr>
+                <td><strong>NUTRIREA-2</strong></td>
+                <td>2018</td>
+                <td>Multicenter randomized trial comparing early EN vs. early PN in 2,410 critically ill patients with shock requiring high-dose vasopressor support.</td>
+                <td>**No difference in 28-day mortality**, but the **early EN group had significantly higher rates of gastrointestinal complications**, including vomiting, diarrhea, and **acute bowel ischemia** (1.0% vs. 0.0%, p=0.007). Established that enteral nutrition should be delayed or initiated at a low trophic rate in patients with unstable hemodynamics or requiring high-dose vasopressors.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- PILLAR 4 -->
+      <div class="sec-header s4" id="p4-refeeding-protocol">
+        <span class="sec-badge">PILLAR 4</span>
+        <span class="sec-title">Surgical Strategy &amp; Feeding Protocols</span>
+      </div>
+      
+      <section class="topic s4">
+        <div class="topic-header"><span class="topic-num">4.1</span><h2>Refeeding Prevention &amp; Titration Protocol</h2></div>
+        <p>A standardized protocol is used to initiate nutrition safely in severely malnourished patients (e.g., BMI &lt; 16, or no oral intake for &gt; 7–10 days):</p>
+        
+        <div style="background:var(--white); border:1px solid var(--border); border-radius:8px; padding:24px; margin:20px 0;">
+          <h4 style="color:var(--primary); font-size:16px; margin-bottom:12px; font-weight:700;">Malnutrition Reintroduction Protocol</h4>
+          <ol style="margin-left: 20px; line-height: 1.75; font-size: 13.5px;">
+            <li><strong>Electrolyte Correction:</strong> Measure and correct serum potassium, magnesium, and phosphate levels **before initiating feeding**.</li>
+            <li><strong>Thiamine Pre-treatment:</strong> Administer **Thiamine 100–300 mg IV** at least 30 minutes before feeding, and continue daily for 3–5 days to prevent Wernicke's encephalopathy.</li>
+            <li><strong>Conservative Caloric Initiation:</strong> Start feeding at **10–15 kcal/kg/day** (typically 50% of the calculated target). Limit initial dextrose load to **100–150 g/day**.</li>
+            <li><strong>Fluid Restriction:</strong> Limit initial fluids to avoid volume overload, as insulin-induced antidiuresis can precipitate acute heart failure.</li>
+            <li><strong>Frequent Monitoring:</strong> Measure serum phosphate, potassium, and magnesium every **6–8 hours** for the first 48 hours, and daily thereafter.</li>
+            <li><strong>Slow Escalation:</strong> Gradually increase caloric intake by 20–25% every 24–48 hours to the target goal if electrolytes remain stable and corrected.</li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- PILLAR 5 -->
+      <div class="sec-header s5" id="p5-tpn-crash">
+        <span class="sec-badge">PILLAR 5</span>
+        <span class="sec-title">Crisis Care &amp; Clinical Management</span>
+      </div>
+      
+      <section class="topic s5">
+        <div class="topic-header"><span class="topic-num">5.1</span><h2>TPN Hypoglycemic Crash Protocol</h2></div>
+        <p>Sudden cessation of high-dextrose TPN (e.g., due to line displacement or running out of TPN bags) causes rebound hypoglycemia due to high circulating insulin levels from pancreatic islet cell hyperplasia:</p>
+        <div class="p-4 rounded-lg bg-rose-950/20 border border-rose-800/40 text-xs text-slate-300 mb-6">
+            <h5 class="font-bold text-rose-400 mb-1">Immediate Bedside Action</h5>
+            <p class="mb-2">1. Check blood glucose immediately.</p>
+            <p class="mb-2">2. **Hang 10% Dextrose in Water (D10W) IV** to run at the same rate as the TPN infusion.</p>
+            <p class="mb-2">3. Monitor blood glucose every 15–30 minutes until stable.</p>
+            <p>4. Do not administer bolus doses of D50W unless symptomatic, as this can trigger another round of insulin release and worsening rebound hypoglycemia.</p>
+        </div>
+      </section>
+
+      <section class="topic s5" id="p5-air-embolism">
+        <div class="topic-header"><span class="topic-num">5.2</span><h2>Central Line Air Embolism Management</h2></div>
+        <div class="callout warn">
+          <span class="label">ABSITE Exam Trap: Central Line Air Embolism</span>
+          <p>Dislodgement or opening of a central venous catheter can allow air into the venous circulation, leading to right ventricular outflow tract obstruction (air lock). This presents as sudden dyspnea, hypoxia, chest pain, hypotension, and a classic **"mill-wheel" murmur**.</p>
+          <p style="margin-top: 8px; font-weight: 700;">
+            Bedside Rescue Protocol:
+            <br>• Place the patient in **left lateral decubitus head-down (Durant's maneuver / Trendelenburg)** position. This traps the air bubble in the apex of the right ventricle, keeping the outflow tract clear.
+            <br>• Administer 100% high-flow oxygen to help resorb the nitrogen in the bubble.
+            <br>• Attempt to aspirate the air bubble through the distal port of the central venous catheter.
+          </p>
+        </div>
+      </section>
+
+      <!-- BOARD REVIEW -->
+      <div class="sec-header s1" id="board-review" style="margin-top: 60px;">
+        <span class="sec-badge">BOARD REVIEW</span>
+        <span class="sec-title">ABSITE Core Recall Matrix</span>
+      </div>
+      
+      <section class="topic s1">
+        <h3>High-Yield Recall Matrix</h3>
+        <div class="table-wrap">
+          <table style="background: transparent;">
+            <thead>
+              <tr>
+                <th>Board Question Topic</th>
+                <th>Gold Standard Key Fact</th>
+                <th>Surgical Decision / Clinical Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>NUTRIREA-2 Shock Feeding</strong></td>
+                <td>Early enteral nutrition in patients with severe shock requiring high-dose vasopressors increases the risk of non-occlusive mesenteric ischemia.</td>
+                <td>Hold or delay enteral nutrition in hemodynamically unstable patients; use parenteral nutrition if long-term support is needed and shock persists.</td>
+              </tr>
+              <tr>
+                <td><strong>Zinc Deficiency Features</strong></td>
+                <td>Presents with perioral and acral dermatitis, alopecia, dysgeusia (altered taste), and impaired wound healing.</td>
+                <td>Supplements zinc in patients on long-term TPN or with high output chronic fistulas.</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><strong>Chromium Deficiency</strong></td>
+                <td>Chromium is an essential insulin cofactor. Deficiency presents as unexplained glucose intolerance.</td>
+                <td>Consider chromium deficiency in patients on long-term TPN who develop worsening hyperglycemia despite insulin therapy.</td>
+              </tr>
+              <tr>
+                <td><strong>Respiratory Quotient Trap</strong></td>
+                <td>Overfeeding carbohydrates drives lipogenesis, raising the RQ to &gt; 1.0. This increases CO2 production and makes weaning from the ventilator difficult.</td>
+                <td>Reduce the total caloric load and carbohydrate-to-fat ratio in patients with hypercapnia or ventilator-weaning failure.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="viva">
+          <div class="vq">VIVA SCENARIO — POSTOPERATIVE REFRACTORY VENTILATOR WEAN</div>
+          <div class="vscenario">A 68-year-old male is in the ICU on POD 10 after a pancreaticoduodenectomy (Whipple procedure). He is receiving TPN (delivering 35 kcal/kg/day, with 70% of calories from dextrose). The ICU team is unable to wean him from mechanical ventilation due to persistent hypercapnia (PaCO2 56 mmHg) and high minute ventilation. What is your diagnosis, and how do you manage this?</div>
+          <div class="vanswer">
+            <ul>
+              <li><strong>Diagnosis:</strong> Hypercapnic respiratory failure secondary to overfeeding and carbohydrate-induced lipogenesis (expected RQ &gt; 1.0).</li>
+              <li><strong>Management Plan:</strong>
+                <ul>
+                  <li>Obtain a metabolic cart measurement (indirect calorimetry) to determine the patient's actual energy expenditure.</li>
+                  <li>Reduce total caloric intake to target **20–25 kcal/kg/day** (avoiding overfeeding).</li>
+                  <li>Adjust the TPN formulation to decrease the dextrose load and increase the lipid fraction, targeting a balanced respiratory quotient (RQ ~0.8–0.85).</li>
+                </ul>
+              </li>
+              <li><strong>Verification:</strong> Monitor arterial blood gases over the subsequent 24–48 hours to confirm resolution of hypercapnia before attempting to extubate.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <button id="top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+  <script src="../../js/nav-pill.js"></script>
+  <script src="../../js/navigation.js"></script>
+  <script>
+    const progressBar = document.getElementById('progress-bar');
+    const topBtn = document.getElementById('top-btn');
+    const navItems = document.querySelectorAll('.nav-item');
+    const sections = document.querySelectorAll('.sec-header[id], .topic[id]');
+
+    window.addEventListener('scroll', () => {
+      const st = window.scrollY;
+      const dh = document.documentElement.scrollHeight - window.innerHeight;
+      if (progressBar) progressBar.style.transform = `scaleX(${st / dh})`;
+      if (topBtn) topBtn.classList.toggle('show', st > 400);
+      
+      let current = '';
+      sections.forEach(s => { if (st >= s.offsetTop - 120) current = s.id; });
+      navItems.forEach(n => { n.classList.toggle('active', n.getAttribute('href') === '#' + current); });
+    });
+
+    function filterNav(query) {
+      const q = query.toLowerCase();
+      navItems.forEach(item => { item.style.display = (!q || item.textContent.toLowerCase().includes(q)) ? 'block' : 'none'; });
+    }
+
+    navItems.forEach(item => {
+      item.addEventListener('click', e => {
+        e.preventDefault();
+        if(typeof closeSidebar === 'function') closeSidebar();
+        const target = document.querySelector(item.getAttribute('href'));
+        if (target) window.scrollTo({ top: target.getBoundingClientRect().top - 80, behavior: 'smooth' });
+      });
+    });
+  </script>
+</body>
+</html>

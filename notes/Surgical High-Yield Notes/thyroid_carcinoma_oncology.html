@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Surgical Insight Hub — Thyroid Carcinoma Pathology & Surgical Oncology</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,300;1,8..60,400;1,8..60,600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/theme.css?v=4.0.0">
+<link rel="stylesheet" href="../../css/shared.css">
+<script>
+  const savedTheme = localStorage.getItem('sih-theme') || 'light';
+  if (savedTheme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+</script>
+<style>
+:root {
+  --primary:   #4C1D95; 
+  --primary-dk:#2E1065;
+  --primary-lt:#F5F3FF;
+  --accent:    #7C3AED;
+  --accent2:   #E11D48;
+  --gold:      #D97706;
+  --gold-lt:   #FEF3C7;
+  --s1:        #4C1D95;
+  --s2:        #5B21B6;
+  --s3:        #6D28D9;
+  --s4:        #7C3AED;
+  --s5:        #2E1065;
+  --s1-lt:     #F5F3FF;
+  --s2-lt:     #EDE9FE;
+  --s3-lt:     #F5F3FF;
+  --s4-lt:     #EDE9FE;
+  --s5-lt:     #F5F3FF;
+  --red:       #E11D48;
+  --red-lt:    #FFF1F2;
+  --bg:        #FAFAFA;
+  --bg2:       #F4F4F5;
+  --border:    #E5E7EB;
+  --text:      #0F172A;
+  --muted:     #64748B;
+  --white:     #FFFFFF;
+  --sidebar-w: 320px;
+}
+[data-theme="dark"] {
+  --bg: #0A0702;
+  --bg2: #140E05;
+  --text: #F3F4F6;
+  --muted: #A3A3A3;
+  --border: rgba(255,255,255,0.08);
+  --primary-lt: #2E1065;
+  --s1-lt: #2E1065;
+  --s2-lt: #2E1065;
+  --s3-lt: #2E1065;
+  --s4-lt: #2E1065;
+  --s5-lt: #2E1065;
+  --white: #140E05;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--bg);color:var(--text);font-size:16.5px;line-height:1.8;}
+
+#sidebar {
+  position: fixed; top: 0; left: 0; width: var(--sidebar-w); height: 100vh;
+  background: var(--primary-dk); color: #F5F3FF;
+  display: flex; flex-direction: column;
+  z-index: 1000; overflow: hidden;
+  transform: translateX(-100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 4px 0 24px rgba(0,0,0,0.4);
+}
+body.sidebar-open #sidebar { transform: translateX(0); }
+
+#sidebar-overlay {
+  position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+  background: rgba(46, 16, 101, 0.7); backdrop-filter: blur(3px);
+  z-index: 950; opacity: 0; pointer-events: none; transition: opacity 0.3s ease;
+}
+body.sidebar-open #sidebar-overlay { opacity: 1; pointer-events: auto; }
+
+#sidebar-toggle {
+  position: fixed; top: 72px; left: 24px; z-index: 900;
+  background: var(--primary); color: white;
+  border: none; border-radius: 30px;
+  padding: 10px 18px; font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600;
+  letter-spacing: 0.05em; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  display: flex; align-items: center; gap: 8px; transition: all 0.2s;
+}
+#sidebar-toggle:hover { background: var(--accent2); transform: translateY(-2px); }
+
+#sidebar-header{padding:20px 20px 14px;border-bottom:1px solid rgba(255,255,255,0.08);flex-shrink:0;}
+#sidebar-header .logo{font-family:'Playfair Display',serif;font-size:13px;font-weight:700;color:var(--accent2);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;}
+#sidebar-header .sub{font-size:10.5px;color:rgba(245,243,255,0.6);letter-spacing:0.04em;}
+#sidebar-search{padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.05);flex-shrink:0;}
+#sidebar-search input{width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:6px;color:#F5F3FF;padding:6px 10px;font-size:12px;font-family:'Source Serif 4',serif;outline:none;transition:border-color 0.2s;}
+#sidebar-search input::placeholder{color:rgba(245,243,255,0.4);}
+#sidebar-search input:focus{border-color:var(--accent2);}
+#sidebar-nav{flex:1;overflow-y:auto;padding:8px 0 20px;}
+#sidebar-nav::-webkit-scrollbar{width:4px;}
+#sidebar-nav::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.15);border-radius:2px;}
+.vol-label{font-size:9.5px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent2);padding:14px 18px 4px;}
+.nav-item{display:block;padding:8px 18px 8px 22px;font-size:12.5px;color:rgba(245,243,255,0.8);text-decoration:none;border-left:2px solid transparent;transition:all 0.15s;line-height:1.4;}
+.nav-item:hover{color:#fff;background:rgba(255,255,255,0.03);border-left-color:rgba(225,29,72,0.5);}
+.nav-item.active{color:#fff;background:rgba(255,255,255,0.06);border-left-color:var(--accent2);font-weight:600;}
+.nav-item .num{font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(245,243,255,0.4);margin-right:6px;}
+
+#main{margin-left:0; min-height:100vh;}
+#hero{background:linear-gradient(135deg,var(--primary-dk) 0%,#4C1D95 60%,#2E1065 100%);color:white;padding:120px 72px 60px;position:relative;overflow:hidden;}
+#hero::before{content:'';position:absolute;top:-60px;right:-60px;width:380px;height:380px;background:radial-gradient(circle,rgba(225,29,72,0.15) 0%,transparent 70%);pointer-events:none;}
+#hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent2),var(--gold),transparent);}
+#hero .eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.16em;color:var(--accent2);text-transform:uppercase;margin-bottom:14px;}
+#hero h1{font-family:'Playfair Display',serif;font-size:42px;font-weight:700;line-height:1.15;margin-bottom:10px;color:#fff;}
+#hero .subtitle{font-size:18px;color:rgba(255,255,255,0.8);font-style:italic;margin-bottom:28px;}
+#hero .badges{display:flex;gap:10px;flex-wrap:wrap;}
+#hero .badge{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:4px 14px;font-size:12px;color:rgba(255,255,255,0.95);font-family:'JetBrains Mono',monospace;}
+
+.content-wrap{max-width:1140px;margin:0 auto;padding:0 48px 80px;}
+
+.sec-header{margin-top:60px;margin-bottom:12px;padding:26px 34px;border-radius:12px;display:flex;align-items:center;gap:20px;box-shadow:0 4px 16px rgba(0,0,0,0.03);}
+.sec-header.s1{background:linear-gradient(135deg,#4C1D950C,#4C1D951C);border-left:5px solid var(--s1);}
+.sec-header.s2{background:linear-gradient(135deg,#5B21B60C,#5B21B61C);border-left:5px solid var(--s2);}
+.sec-header.s3{background:linear-gradient(135deg,#6D28D90C,#6D28D91C);border-left:5px solid var(--s3);}
+.sec-header.s4{background:linear-gradient(135deg,#7C3AED0C,#7C3AED1C);border-left:5px solid var(--s4);}
+.sec-header.s5{background:linear-gradient(135deg,#2E10650C,#2E10651C);border-left:5px solid var(--s5);}
+.sec-badge{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.12em;padding:5px 14px;border-radius:6px;white-space:nowrap;flex-shrink:0;}
+.s1 .sec-badge{background:var(--s1);color:white;}
+.s2 .sec-badge{background:var(--s2);color:white;}
+.s3 .sec-badge{background:var(--s3);color:white;}
+.s4 .sec-badge{background:var(--s4);color:white;}
+.s5 .sec-badge{background:var(--s5);color:white;}
+.sec-title{font-family:'Playfair Display',serif;font-size:23px;font-weight:700;}
+.s1 .sec-title{color:var(--s1);}
+.s2 .sec-title{color:var(--s2);}
+.s3 .sec-title{color:var(--s3);}
+.s4 .sec-title{color:var(--s4);}
+.s5 .sec-title{color:var(--s5);}
+
+.topic{margin-top:48px;padding-top:48px;border-top:1px solid var(--border);}
+.topic:first-of-type{border-top:none;}
+.topic-header{display:flex;align-items:flex-start;gap:16px;margin-bottom:24px;}
+.topic-num{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;padding:4px 12px;border-radius:6px;margin-top:4px;flex-shrink:0;}
+.s1 .topic-num{background:var(--s1-lt);color:var(--s1);}
+.s2 .topic-num{background:var(--s2-lt);color:var(--s2);}
+.s3 .topic-num{background:var(--s3-lt);color:var(--s3);}
+.s4 .topic-num{background:var(--s4-lt);color:var(--s4);}
+.s5 .topic-num{background:var(--s5-lt);color:var(--s5);}
+
+.topic h2{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;line-height:1.2;}
+.s1 .topic h2{color:var(--s1);}
+.s2 .topic h2{color:var(--s2);}
+.s3 .topic h2{color:var(--s3);}
+.s4 .topic h2{color:var(--s4);}
+.s5 .topic h2{color:var(--s5);}
+
+.topic h3{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--primary);margin:32px 0 12px;padding-bottom:6px;border-bottom:2px solid var(--border);}
+.topic h4{font-size:14px;font-weight:700;color:var(--muted);letter-spacing:0.08em;text-transform:uppercase;margin:24px 0 10px;font-family:'JetBrains Mono',monospace;}
+.topic p{margin-bottom:18px; line-height:1.8; font-size:16.5px; color:var(--text);}
+.topic ul, .topic ol{margin:10px 0 20px 24px;color:var(--text);}
+.topic li{margin-bottom:10px;line-height:1.7;}
+.topic li::marker{color:var(--accent2);font-weight:bold;}
+.topic strong{color:var(--text);font-weight:700;}
+.topic em{font-style:italic;color:var(--text);}
+.topic code{font-family:'JetBrains Mono',monospace;font-size:13.5px;background:var(--bg2);padding:2px 6px;border-radius:4px;border:1px solid var(--border);color:var(--primary);}
+
+.outline-box{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:24px 28px;margin:24px 0 36px;box-shadow:0 2px 8px rgba(0,0,0,0.03);}
+.outline-box h3{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--primary);margin-bottom:16px;border-bottom:2px solid var(--primary-lt);padding-bottom:8px;}
+.outline-list{list-style:none;margin:0;padding:0;}
+.outline-list li{margin-bottom:12px;line-height:1.6;font-size:15px;}
+.outline-list li strong{color:var(--accent2);font-family:'JetBrains Mono',monospace;font-size:13px;display:block;margin-bottom:2px;}
+
+.table-wrap{overflow-x:auto;margin:24px 0 28px;border-radius:10px;box-shadow:0 2px 10px rgba(0,0,0,0.05);border:1px solid var(--border);}
+table{width:100%;border-collapse:collapse;font-size:14px;background:var(--white);}
+thead tr{background:var(--s1);}
+thead th{color:white;padding:12px 16px;text-align:left;font-family:'Source Serif 4',serif;font-weight:700;font-size:14px;}
+tbody tr:nth-child(even){background:var(--bg2);}
+tbody tr:hover{background:var(--s1-lt);transition:background 0.15s;}
+tbody td{padding:11px 16px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.6;}
+
+.callout{margin:24px 0;padding:18px 22px;border-radius:0 10px 10px 0;border-left:5px solid;font-size:14.5px;line-height:1.7;box-shadow:0 2px 8px rgba(0,0,0,0.03);}
+.callout .label{font-family:'JetBrains Mono',monospace;font-size:10.5px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;display:block;margin-bottom:6px;}
+.callout.pearl{background:var(--gold-lt);border-color:var(--gold);color:var(--text);}
+.callout.pearl .label{color:var(--gold);}
+.callout.warn{background:var(--red-lt);border-color:var(--red);color:var(--text);}
+.callout.warn .label{color:var(--red);}
+
+@media(max-width:900px) {
+  .content-wrap { padding: 0 20px 60px; }
+  #hero { padding: 80px 20px 40px; }
+  #hero h1 { font-size: 30px; }
+  #sidebar-toggle { top: 64px; left: 16px; }
+}
+</style>
+<link rel="icon" type="image/png" href="../../assets/images/Surgical_Insight_Hub_Logo.png">
+</head>
+<body>
+
+<nav class="nav" id="mainNav">
+  <div class="nav-left">
+    <a href="../../index.html" class="nav-pill">
+      <div class="nav-logo-img">
+        <img src="../../assets/images/Surgical_Insight_Hub_Logo.png" alt="SIH Logo">
+      </div>
+      <div>
+        <div class="nav-brand-text">Surgical Insight Hub</div>
+        <div class="nav-brand-sub">The Residency Journal</div>
+      </div>
+    </a>
+  </div>
+  <div class="nav-links-pill">
+    <a href="../../index.html">Home</a>
+    <a href="../../notes.html" class="active">Notes</a>
+    <a href="../operative_approach.html">Playbook</a>
+    <a href="../../arena.html?v=4.0.0">MCQ Arena</a>
+    <a href="../../podcast.html">Podcast</a>
+    <a href="../../surgery-talk.html">Surgery Talk</a>
+    <a href="../../about.html">About</a>
+  </div>
+  <div class="nav-right">
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+      <svg id="moonIcon" viewBox="0 0 24 24" width="18" height="18"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      <svg id="sunIcon" style="display:none;" viewBox="0 0 24 24" width="18" height="18"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+    </button>
+    <a href="https://t.me/sugicalInsightHub" target="_blank" class="nav-tg-btn" title="Join Telegram">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="#f0d080"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.89 8.22l-1.97 9.28c-.15.66-.54.82-1.08.51l-3-2.21-1.45 1.39c-.16.16-.3.3-.61.3l.21-3.05 5.56-5.02c.24-.21-.05-.33-.37-.12l-6.87 4.33-2.96-.92c-.64-.2-.66-.64.14-.95l11.57-4.46c.54-.19 1.01.13.83.94z"/></svg>
+    </a>
+    <a href="../../arena.html?v=4.0.0" class="nav-btn arena-btn">MCQ Arena</a>
+  </div>
+</nav>
+
+<div class="mob-nav-overlay" id="mobNavOverlay" onclick="closeMobNav()"></div>
+<div class="mob-nav-sheet" id="mobNavSheet">
+  <div class="mob-nav-handle"></div>
+  <a href="../../index.html" onclick="closeMobNav()">Home</a>
+  <a href="../../notes.html" onclick="closeMobNav()">Notes</a>
+  <a href="../operative_approach.html" onclick="closeMobNav()">Playbook</a>
+  <a href="../../podcast.html" onclick="closeMobNav()">Podcast</a>
+  <a href="../../surgery-talk.html" onclick="closeMobNav()">Surgery Talk</a>
+  <a href="../../arena.html" onclick="closeMobNav()">MCQ Arena</a>
+  <a href="../../about.html" onclick="closeMobNav()">About</a>
+  <a href="https://t.me/sugicalInsightHub" target="_blank" rel="noopener" onclick="closeMobNav()" style="color: var(--brand-gold); font-weight: 800;">Join Telegram Community</a>
+</div>
+
+<button id="sidebar-toggle" onclick="toggleSidebar()">
+  Table of Contents
+</button>
+<div id="sidebar-overlay" onclick="closeSidebar()"></div>
+
+<aside id="sidebar">
+  <div id="sidebar-header">
+    <div class="logo">Surgical Insight Hub</div>
+    <div class="sub">Chronological Monograph</div>
+  </div>
+  <div id="sidebar-search">
+    <input type="text" placeholder="Search topics..." oninput="filterNav(this.value)">
+  </div>
+  <nav id="sidebar-nav">
+    <div class="vol-label">Chapter 18: Pathogenesis & Molecular Drivers of Thyroid Carcinoma</div>
+<a class="nav-item" href="#topic-18-1"><span class="num">18.1</span>Molecular Oncogenesis & Signaling Cascades</a>
+<div class="vol-label">Chapter 19: Differentiated Thyroid Carcinoma (PTC & FTC)</div>
+<a class="nav-item" href="#topic-19-1"><span class="num">19.1</span>Histopathologic Variants & Clinical Spectrum</a>
+<div class="vol-label">Chapter 20: Medullary Thyroid Carcinoma & RET Genetics</div>
+<a class="nav-item" href="#topic-20-1"><span class="num">20.1</span>Complete Chronological Surgical Masterclass on Medullary Thyroid Cancer</a>
+<div class="vol-label">Chapter 21: Anaplastic & Poorly Differentiated Carcinomas</div>
+<a class="nav-item" href="#topic-21-1"><span class="num">21.1</span>Rapid Growth Emergency Protocols & Targeted Biologics</a>
+<div class="vol-label">Chapter 22: Targeted Medical Therapies & Operative Neck Dissections</div>
+<a class="nav-item" href="#topic-22-1"><span class="num">22.1</span>Operative Technique Atlas & Surgical Anatomy Dissection Boundaries</a>
+
+  </nav>
+</aside>
+
+<main id="main">
+<header id="hero">
+  <div class="eyebrow">Endocrine Surgery · Structured Chapter Outline Monograph</div>
+  <h1>Thyroid Carcinoma Pathology & Surgical Oncology</h1>
+  <p class="subtitle">Comprehensive Chronological Monograph covering molecular genetics, MTC RET protocols, operative technique atlas, nerve preservation, and emergency hematoma algorithms.</p>
+  <div class="badges">
+    <span class="badge">PTC & FTC</span><span class="badge">MTC & RET</span><span class="badge">ATC Anaplastic</span><span class="badge">Neck Dissection</span><span class="badge">Operative Atlas</span><span class="badge">ABSITE Core</span>
+  </div>
+</header>
+
+<div class="content-wrap">
+  
+        <div class="sec-header s1" id="chapter-18" style="margin-top:50px;">
+          <span class="sec-badge">CHAPTER 18</span>
+          <h2 class="sec-title">Pathogenesis & Molecular Drivers of Thyroid Carcinoma</h2>
+        </div>
+            <section class="topic s1-topic" id="topic-18-1">
+              <div class="topic-header">
+                <span class="topic-num">18.1</span>
+                <h2>Molecular Oncogenesis & Signaling Cascades</h2>
+              </div>
+              <div class="outline-box"><h3>Chapter Outline: Pathogenesis & Molecular Drivers</h3><ul class="outline-list">
+<li><strong>Section 1. Introduction, Origin, and Cellular Lineages</strong>Overview of follicular epithelial vs neuroendocrine parafollicular C-cell malignant transformations.</li>
+<li><strong>Section 2. MAPK and PI3K-AKT Signaling Cascades</strong>Detailed molecular mechanics of RAS-RAF-MEK-ERK activation in differentiated thyroid carcinomas.</li>
+<li><strong>Section 3. BRAF V600E and RAS Mutations</strong>Comparison of BRAF-like vs RAS-like molecular tumor signatures and phenotypic behavior.</li>
+<li><strong>Section 4. Chromosomal Rearrangements (RET/PTC & PAX8-PPARgamma)</strong>Impact of radiation-induced gene fusions in papillary and follicular thyroid carcinomas.</li>
+<li><strong>Section 5. TERT Promoter Mutations & Co-Mutational Synergy</strong>Explains the high-risk synergy between TERT promoter and BRAF V600E mutations.</li>
+<li><strong>Section 6. Anaplastic Dedifferentiation Dynamics</strong>Accumulation of late-stage TP53 and PIK3CA alterations driving lethal transformational phenotypes.</li>
+<li><strong>Section 7. Differentiating Biomarkers & Gene Expression</strong>Analysis of NIS, TPO, and TG gene expression profiles across molecular variants.</li>
+<li><strong>Section 8. Targeted Molecular Diagnostics</strong>Clinical utility of Next-Generation Sequencing (NGS) panels in surgical risk stratification.</li>
+<li><strong>Section 9. High-Yield Review & Examination Concepts</strong>Summary of frequently tested board concepts and molecular diagnostic associations.</li>
+</ul></div>
+                <h3>1. Introduction, Origin, and Cellular Lineages</h3>
+                <p>Thyroid carcinoma encompasses a diverse spectrum of malignancies arising from two distinct parenchymal cell lineages within the thyroid gland: <strong><em>follicular epithelial cells</em></strong> (giving rise to Papillary, Follicular, Poorly Differentiated, and Anaplastic carcinomas) and <strong><em>neuroendocrine parafollicular C-cells</em></strong> (giving rise to Medullary thyroid carcinoma).</p>
+                
+                <h3>2. MAPK and PI3K-AKT Signaling Cascades</h3>
+                <p>The <strong>mitogen-activated protein kinase (MAPK) signaling pathway</strong> (<code>RAS-RAF-MEK-ERK</code>) is the primary oncologic driver in differentiated thyroid carcinoma. Activating point mutations in <code>BRAF</code> (specifically the <code>BRAF V600E</code> nucleotide substitution) and <code>RAS</code> (<code>HRAS</code>, <code>KRAS</code>, <code>NRAS</code>) or chromosomal rearrangements involving <code>RET/PTC</code> drive constituent cellular proliferation and anti-apoptosis.</p>
+                
+                <div style="font-family:'JetBrains Mono',monospace; font-size:12px; font-weight:700; color:var(--primary); margin-top:28px; text-transform:uppercase; letter-spacing:0.05em;">Diagnostic Plates — Molecular Oncogenesis & Signaling (Click Image to Enlarge)</div>
+<div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(260px, 1fr)); gap:16px; margin:14px 0 32px;">
+
+        <div onclick="openLightbox('../../assets/images/endocrine_pdf_images/ch18_p549_0_5645.jpeg')" style="background:var(--bg2); border:1px solid var(--border); border-radius:12px; overflow:hidden; padding:12px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s; cursor:pointer;" onmouseover="this.style.transform='scale(1.02)'; this.style.borderColor='var(--accent2)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--border)';">
+          <img src="../../assets/images/endocrine_pdf_images/ch18_p549_0_5645.jpeg" alt="Figure 1" style="max-width:100%; max-height:210px; object-fit:contain; border-radius:8px; background:#fff; padding:6px; border:1px solid var(--border);">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent2); margin-top:8px; display:flex; align-items:center; justify-content:center; gap:6px;">
+            <span>Diagnostic Plate 1</span>
+            <span style="font-size:10px; opacity:0.7;">🔍</span>
+          </div>
+        </div>
+</div>
+                
+                <h3>3. BRAF V600E and RAS Mutations</h3>
+                <p>Molecular research establishes two mutually exclusive driver paradigms: BRAF-like and RAS-like signaling. BRAF V600E-mutated tumors exhibit high MAPK activity, severe downregulation of thyroid metabolizing genes (NIS, TPO), and aggressive lymph node metastasis.</p>
+
+                <h3>4. Chromosomal Rearrangements (RET/PTC &amp; PAX8-PPAR&gamma;)</h3>
+                <p>Chromosomal translocations generate chimeric oncogenes. <code>RET/PTC1</code> and <code>RET/PTC3</code> rearrangements are strongly associated with childhood post-radiation papillary carcinomas, whereas <code>PAX8-PPAR&gamma;</code> fusions characterize follicular neoplasms.</p>
+
+                <h3>5. TERT Promoter Mutations &amp; Co-Mutational Synergy</h3>
+                <div class="callout warn">
+                  <span class="label">BOARD WARNING — BRAF V600E &amp; TERT PROMOTER CO-MUTATION</span>
+                  The combination of a <code>BRAF V600E</code> point mutation co-existing with a <code>TERT promoter mutation</code> (<code>C228T</code> or <code>C250T</code>) represents an exceptionally high-risk molecular signature associated with aggressive extrathyroidal extension, massive nodal metastases, radioiodine refractoriness, and high disease-specific mortality.
+                </div>
+
+                <h3>6. Anaplastic Dedifferentiation Dynamics</h3>
+                <p>Anaplastic transformation occurs when well-differentiated tumors accumulate late-stage inactivating mutations in <code>TP53</code> (>70% of ATC) and activating mutations in <code>PIK3CA</code> or <code>&beta;-catenin</code>.</p>
+
+                <h3>7. Differentiating Biomarkers &amp; Gene Expression</h3>
+                <p>Loss of thyroid differentiation markers correlates with therapeutic RAI resistance. BRAF-mutated tumors demonstrate marked suppression of the sodium-iodide symporter (NIS).</p>
+
+                <h3>8. Targeted Molecular Diagnostics</h3>
+                <p>Next-Generation Sequencing (NGS) molecular panels (ThyroSeq v3, Afirma GSC) guide surgical decision-making for cytologically indeterminate thyroid nodules.</p>
+
+                <h3>9. High-Yield Review &amp; Examination Concepts</h3>
+                <ul>
+                  <li><strong>Papillary Carcinoma Driver:</strong> <code>BRAF V600E</code> (40–60%), <code>RET/PTC</code>.</li>
+                  <li><strong>Follicular Carcinoma Driver:</strong> <code>RAS</code> mutations, <code>PAX8-PPAR&gamma;</code> fusion.</li>
+                  <li><strong>Lethal Synergy:</strong> <code>BRAF V600E</code> + <code>TERT promoter</code> mutation.</li>
+                </ul>
+                
+            </section>
+        <div class="sec-header s2" id="chapter-19" style="margin-top:50px;">
+          <span class="sec-badge">CHAPTER 19</span>
+          <h2 class="sec-title">Differentiated Thyroid Carcinoma (PTC & FTC)</h2>
+        </div>
+            <section class="topic s2-topic" id="topic-19-1">
+              <div class="topic-header">
+                <span class="topic-num">19.1</span>
+                <h2>Histopathologic Variants & Clinical Spectrum</h2>
+              </div>
+              <div class="outline-box"><h3>Chapter Outline: Differentiated Thyroid Carcinoma</h3><ul class="outline-list">
+<li><strong>Section 1. Introduction, Epidemiology, and Classification</strong>Defines DTC subtypes, epidemiology, and 10-year overall survival statistics.</li>
+<li><strong>Section 2. Histopathology and Classical Nuclear Features</strong>Details Orphan Annie eye nuclei, psammoma bodies, and cytoplasmic inclusions.</li>
+<li><strong>Section 3. Aggressive Papillary Histologic Variants</strong>Evaluates Tall Cell, Hobnail, and Diffuse Sclerosing variant prognosis.</li>
+<li><strong>Section 4. Follicular Carcinoma Diagnostic Criteria</strong>Explains capsular and vascular invasion rules differentiating FTC from adenoma.</li>
+<li><strong>Section 5. Clinical Staging and AJCC 8th Edition Framework</strong>Summarizes TNM staging and age-cutoff prognosis (55 years).</li>
+<li><strong>Section 6. Radioactive Iodine (RAI) Remnant Ablation</strong>Guidelines for postoperative I-131 administration in intermediate/high risk DTC.</li>
+<li><strong>Section 7. TSH Suppression Therapy Protocols</strong>Target TSH thresholds based on ATA structural recurrence risk stratification.</li>
+<li><strong>Section 8. Surveillance Biomarkers (Tg & TgAb)</strong>Long-term monitoring protocols using serum thyroglobulin and antibody interference.</li>
+<li><strong>Section 9. Examination Revision and High-Yield Summary</strong>Consolidated review tables and core board memory anchors.</li>
+</ul></div>
+                <h3>1. Introduction, Epidemiology, and Classification</h3>
+                <p>Differentiated thyroid carcinoma (DTC) accounts for >90% of all thyroid malignancies. <strong>Papillary thyroid carcinoma (PTC)</strong> is the most prevalent variant (85%), followed by <strong>follicular thyroid carcinoma (FTC)</strong> (10%). Overall 10-year survival exceeds 95% for early-stage disease.</p>
+
+                <h3>2. Histopathology and Classical Nuclear Features</h3>
+                <p>Pathologically, PTC is defined by distinct nuclear features: <em>ground-glass "Orphan Annie eye" nuclei</em>, nuclear psammoma bodies, intranuclear cytoplasmic inclusions, and nuclear grooves.</p>
+
+                <div style="font-family:'JetBrains Mono',monospace; font-size:12px; font-weight:700; color:var(--primary); margin-top:28px; text-transform:uppercase; letter-spacing:0.05em;">Histopathologic Diagnostic Plates — Papillary & Follicular Carcinoma (Click Image to Enlarge)</div>
+<div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(260px, 1fr)); gap:16px; margin:14px 0 32px;">
+
+        <div onclick="openLightbox('../../assets/images/endocrine_pdf_images/ch19_p569_0_5895.jpeg')" style="background:var(--bg2); border:1px solid var(--border); border-radius:12px; overflow:hidden; padding:12px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s; cursor:pointer;" onmouseover="this.style.transform='scale(1.02)'; this.style.borderColor='var(--accent2)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--border)';">
+          <img src="../../assets/images/endocrine_pdf_images/ch19_p569_0_5895.jpeg" alt="Figure 1" style="max-width:100%; max-height:210px; object-fit:contain; border-radius:8px; background:#fff; padding:6px; border:1px solid var(--border);">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent2); margin-top:8px; display:flex; align-items:center; justify-content:center; gap:6px;">
+            <span>Diagnostic Plate 1</span>
+            <span style="font-size:10px; opacity:0.7;">🔍</span>
+          </div>
+        </div>
+
+        <div onclick="openLightbox('../../assets/images/endocrine_pdf_images/ch19_p572_0_5922.jpeg')" style="background:var(--bg2); border:1px solid var(--border); border-radius:12px; overflow:hidden; padding:12px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s; cursor:pointer;" onmouseover="this.style.transform='scale(1.02)'; this.style.borderColor='var(--accent2)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--border)';">
+          <img src="../../assets/images/endocrine_pdf_images/ch19_p572_0_5922.jpeg" alt="Figure 2" style="max-width:100%; max-height:210px; object-fit:contain; border-radius:8px; background:#fff; padding:6px; border:1px solid var(--border);">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent2); margin-top:8px; display:flex; align-items:center; justify-content:center; gap:6px;">
+            <span>Diagnostic Plate 2</span>
+            <span style="font-size:10px; opacity:0.7;">🔍</span>
+          </div>
+        </div>
+
+        <div onclick="openLightbox('../../assets/images/endocrine_pdf_images/ch19_p575_0_5954.jpeg')" style="background:var(--bg2); border:1px solid var(--border); border-radius:12px; overflow:hidden; padding:12px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s; cursor:pointer;" onmouseover="this.style.transform='scale(1.02)'; this.style.borderColor='var(--accent2)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--border)';">
+          <img src="../../assets/images/endocrine_pdf_images/ch19_p575_0_5954.jpeg" alt="Figure 3" style="max-width:100%; max-height:210px; object-fit:contain; border-radius:8px; background:#fff; padding:6px; border:1px solid var(--border);">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent2); margin-top:8px; display:flex; align-items:center; justify-content:center; gap:6px;">
+            <span>Diagnostic Plate 3</span>
+            <span style="font-size:10px; opacity:0.7;">🔍</span>
+          </div>
+        </div>
+</div>
+
+                <h3>3. Aggressive Papillary Histologic Variants</h3>
+                <ul>
+                  <li><strong>Tall Cell Variant:</strong> Height-to-width ratio &ge;3 in &ge;30% of cells. Associated with vascular invasion and RAI resistance.</li>
+                  <li><strong>Hobnail &amp; Diffuse Sclerosing Variants:</strong> Aggressive subtypes with microcalcifications and early distant pulmonary metastases.</li>
+                </ul>
+
+                <h3>4. Follicular Carcinoma Diagnostic Criteria</h3>
+                <div class="callout pearl">
+                  <span class="label">CLINICAL PEARL — FOLLICULAR CARCINOMA DIAGNOSIS</span>
+                  Fine-needle aspiration (FNA) <strong>cannot differentiate</strong> benign Follicular Adenoma from malignant Follicular Carcinoma. Diagnosis of FTC strictly requires demonstration of <strong>capsular invasion</strong> or <strong>vascular invasion</strong> on permanent histology after diagnostic lobectomy.
+                </div>
+
+                <h3>5. Clinical Staging and AJCC 8th Edition Framework</h3>
+                <p>AJCC 8th Edition utilizes an age cutoff of <strong>55 years</strong>. Patients <55 years old are Stage I (any T, any N, M0) or Stage II (M1). Patients &ge;55 years are stratified by T and N stage.</p>
+
+                <h3>6. Radioactive Iodine (RAI) Remnant Ablation</h3>
+                <p>Postoperative I-131 ablation is administered for intermediate-risk (vascular invasion, LN metastases) and high-risk (extrathyroidal extension) patients following thyroid hormone withdrawal or recombinant human TSH (rhTSH) stimulation.</p>
+
+                <h3>7. TSH Suppression Therapy Protocols</h3>
+                <p>Levothyroxine suppresses TSH to minimize stimulation of residual thyroid cells. High-risk patients target TSH <0.1 mIU/L; low-risk patients target 0.5–2.0 mIU/L.</p>
+
+                <h3>8. Surveillance Biomarkers (Tg &amp; TgAb)</h3>
+                <p>Serum Thyroglobulin (Tg) serves as a sensitive recurrence marker. Concurrent measurement of anti-Thyroglobulin antibodies (TgAb) is mandatory to prevent false-negative immunoassay results.</p>
+
+                <h3>9. Examination Revision and High-Yield Summary</h3>
+                <ul>
+                  <li><strong>PTC Diagnostic Feature:</strong> Psammoma bodies &amp; Orphan Annie eye nuclei.</li>
+                  <li><strong>FTC Malignancy Proof:</strong> Capsular/vascular invasion on lobectomy histology.</li>
+                  <li><strong>AJCC Age Threshold:</strong> 55 years old.</li>
+                </ul>
+                
+            </section>
+        <div class="sec-header s3" id="chapter-20" style="margin-top:50px;">
+          <span class="sec-badge">CHAPTER 20</span>
+          <h2 class="sec-title">Medullary Thyroid Carcinoma & RET Genetics</h2>
+        </div>
+            <section class="topic s3-topic" id="topic-20-1">
+              <div class="topic-header">
+                <span class="topic-num">20.1</span>
+                <h2>Complete Chronological Surgical Masterclass on Medullary Thyroid Cancer</h2>
+              </div>
+
+
+<div class="outline-box">
+  <h3>Chapter Outline: Medullary Thyroid Carcinoma (MTC) — Exhaustive Elisei &amp; Jarzab Consensus</h3>
+  <ul class="outline-list">
+    <li>
+      <strong>Section 1. Introduction, Origins &amp; Epidemiology</strong>
+      Neuroendocrine C-cell lineage, ultimobranchial body origin vs endodermal E-cadherin progenitor theories, US SEER incidence trends (0.14 to 0.21 per 100,000), 1:1 gender ratio, and 5-year survival statistics.
+    </li>
+    <li>
+      <strong>Section 2. Molecular Pathogenesis &amp; RET/RAS Oncogene Mechanics</strong>
+      Detailed molecular structure of RET (chromosome 10q11.2, 21 exons, TK transmembrane receptor), GDNF family ligands (GDNF, neurturin, artemin, persephin) and GFR&alpha; co-receptors, autophosphorylation cascades, and mutually exclusive somatic RAS mutations (15%).
+    </li>
+    <li>
+      <strong>Section 3. Hereditary MEN 2 Syndromes &amp; ATA 2015 Risk Stratification</strong>
+      Exhaustive phenotype and organ prevalence tables for MEN 2A, MEN 2B, and FMTC, germline mutation codonic spectrum, <em>de novo</em> paternal inheritance, and ATA 2015 Risk Levels (HST, H, MOD).
+    </li>
+    <li>
+      <strong>Section 4. Clinical Presentation &amp; Syndromic Manifestations</strong>
+      Sporadic thyroid nodules, secretory diarrhea/flushing, MEN 2A hyperparathyroidism and Cutaneous Lichen Amyloidosis (CLA), and MEN 2B marfanoid features, mucosal/conjunctival neuromas, and intestinal ganglioneuromatosis megacolon.
+    </li>
+    <li>
+      <strong>Section 5. Diagnostic Workup, FNAC Limitations &amp; Calcitonin Dynamics</strong>
+      Neck US, FNAC limitations (&lt;50% accuracy without Ct immunocytochemistry; Essig et al. multicenter trial), needle washout Ct, basal serum calcitonin (&gt;100 pg/mL), calcium stimulation testing, CEA monitoring, and non-thyroidal hypercalcitoninemia differential diagnosis.
+    </li>
+    <li>
+      <strong>Section 6. Histopathology, Amyloid &amp; C-Cell Hyperplasia Criteria</strong>
+      Nested spindle/polygonal cell architecture, stromal amyloid deposits with Congo Red apple-green birefringence, immunophenotype (Ct+, Tg-), C-cell hyperplasia quantitative criteria (&gt;50 C-cells/LPF), and collision mixed MTC/PTC tumors.
+    </li>
+    <li>
+      <strong>Section 7. Post-Treatment Surveillance &amp; Doubling Time Kinetics</strong>
+      3-month post-op calcitonin clearance protocols, biochemical cure thresholds, calcitonin and CEA doubling time (DT &lt;0.5–1 year prognosis), and functional PET imaging (18F-DOPA PET/CT &amp; 68Ga-DOTATATE).
+    </li>
+    <li>
+      <strong>Section 8. Primary Surgical Resection &amp; Prophylactic Guidelines</strong>
+      Total thyroidectomy + routine Level VI central neck dissection rules, serum Ct thresholds for central node metastases (&lt;20 pg/mL zero risk, &lt;50 pg/mL &lt;10% risk, &gt;200 pg/mL lateral risk), age-based prophylactic thyroidectomy in RET carriers, and mandatory preoperative pheochromocytoma rule-out.
+    </li>
+    <li>
+      <strong>Section 9. Advanced Disease, Targeted Biologics &amp; High-Yield Review</strong>
+      Systemic therapies for distant metastases (selective RET inhibitors Selpercatinib &amp; Pralsetinib vs multi-kinase TKIs Vandetanib &amp; Cabozantinib), palliative diarrhea management, and consolidated examination recall matrices.
+    </li>
+  </ul>
+</div>
+
+
+<h3>1. Introduction, Origins &amp; Epidemiology</h3>
+<p>Medullary thyroid carcinoma (MTC) is a distinct neuroendocrine malignant neoplasm originating from the parafollicular or calcitonin-producing C cells of the thyroid gland (Schmid 2015). In contrast to thyroid follicular epithelial cells, C cells are of neuroendocrine origin; they do not respond to thyroid-stimulating hormone (TSH), do not synthesize thyroglobulin (Tg), and lack the active transport mechanisms required to trap radioiodine. Traditionally, mammalian C cells were believed to derive exclusively from neural crest-derived mesenchyme migrating into the lateral thyroid lobes via the <em>ultimobranchial body</em>. However, recent developmental biology studies (Johansson et al. 2015, Nilsson &amp; Williams 2016) have put forward an endodermal origin for C cell progenitors, strongly supported by constituent cellular expression of <code>E-cadherin</code> (Kameda et al. 2007).</p>
+
+<p>Epidemiologically, MTC accounts for 5–10% of all clinical thyroid malignancies, 0.4–1.4% of all evaluated thyroid nodules, and approximately 0.14% in unselected autopsy series (Valle &amp; Kloos 2011). Population-based SEER registry analyses demonstrate that the incidence of MTC increased from 0.14 to 0.21 per 100,000 population between 1983 and 2012 in the United States, regardless of tumor stage at diagnosis (Randle et al. 2017). Unlike papillary (PTC) and follicular (FTC) thyroid carcinomas, MTC displays <strong>no gender predominance</strong> (1:1 female-to-male ratio). The peak clinical incidence occurs in the 4th and 5th decades of life, with a minor increase in mean age at diagnosis from 50 to 54 years over the last 30 years (Randle et al. 2017). Pediatric presentation is extremely rare and almost invariably signifies an inherited familial/hereditary germline syndrome (Pelizzo et al. 2007). Environmental or ethnic risk factors for MTC development remain unknown.</p>
+
+<p>MTC is classified into two major clinical forms: <strong>Sporadic MTC (75%)</strong>, presenting as unifocal disease, and <strong>Hereditary/Familial MTC (25%)</strong>, presenting as an autosomal dominant inherited syndrome with variable expressivity and age-related penetrance. Historical series report a 10-year overall survival of approximately 50%. However, modern multidisciplinary referral management has significantly improved 5-year disease-specific survival from 86% to 89% overall, with marked improvements in patients presenting with regional nodal disease (from 82% to 91%) and distant metastatic disease (from 40% to 51%), driven by extensive primary surgical compartment clearance including thyroidectomy and lymphadenectomy (Randle et al. 2017).</p>
+
+<div class="table-wrap">
+  <table class="s1-tbl">
+    <thead>
+      <tr>
+        <th>Hereditary MEN 2 Syndrome Variant</th>
+        <th>MTC &amp; CCH Prevalence</th>
+        <th>Pheochromocytoma (PHEO)</th>
+        <th>Parathyroid Adenomas (PTHAd)</th>
+        <th>Distinctive Non-Endocrine Syndromic Manifestations</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>MEN 2A</strong></td>
+        <td>100%</td>
+        <td>45 – 50%</td>
+        <td>20 – 30%</td>
+        <td>Cutaneous Lichen Amyloidosis (CLA, 10–30% of kindreds)</td>
+      </tr>
+      <tr>
+        <td><strong>MEN 2B</strong></td>
+        <td>100%</td>
+        <td>50%</td>
+        <td>0%</td>
+        <td>Marfanoid habitus (100%), Mucosal neuromas (98–100%), Skeletal deformities (40%), Megacolon (50%)</td>
+      </tr>
+      <tr>
+        <td><strong>FMTC</strong></td>
+        <td>100%</td>
+        <td>0%</td>
+        <td>0%</td>
+        <td>Inheritable MTC strictly isolated without other endocrine neoplasias</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h3>2. Molecular Pathogenesis &amp; RET/RAS Oncogene Mechanics</h3>
+<p>The molecular pathogenesis of MTC is defined by genetic alterations in receptor tyrosine kinase signaling pathways. Germline or somatic activating point mutations in the <code>RET proto-oncogene</code> drive virtually 100% of hereditary MTC cases and 40–80% of sporadic cases (Romei et al. 2016b). Somatic <code>RAS</code> point mutations represent the second most common genetic alteration in sporadic MTC (Ciampi et al. 2013).</p>
+
+<p>The <code>RET proto-oncogene</code> is a 21-exon gene located on chromosome <code>10q11.2</code> encoding a single-pass transmembrane receptor tyrosine kinase (TK) expressed in neural crest-derived cell lineages, including thyroid C cells and the adrenal medulla. Physiological activation requires binding of glial cell line-derived neurotrophic factor (GDNF) family ligands (GDNF, neurturin, artemin, persephin) in complex with GFR&alpha; co-receptors. Oncogenic point mutations induce ligand-independent dimerization and autophosphorylation of intracellular tyrosine residues, triggering constitutive activation of downstream pro-survival, proliferative, angiogenic, and migratory pathways: the <code>MAPK</code> pathway (<code>RAS-RAF-MEK-ERK</code>) and the <code>PI3K-AKT</code> pathway (Romei et al. 2016b).</p>
+
+<div class="table-wrap">
+  <table class="s2-tbl">
+    <thead>
+      <tr>
+        <th>Oncogene Alteration</th>
+        <th>Mutational Spectrum &amp; Genomic Location</th>
+        <th>Pathophysiologic Mechanism &amp; Clinical Correlation</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Germline RET (Hereditary)</strong></td>
+        <td>Point mutations in exons 10, 11, 13, 14, 15, 16. Autosomal dominant.</td>
+        <td>Ligand-independent receptor dimerization. Dictates syndromic phenotype (MEN 2A, MEN 2B, FMTC) and age of MTC onset.</td>
+      </tr>
+      <tr>
+        <td><strong>Somatic RET (Sporadic)</strong></td>
+        <td>Found in 40–50% overall; &gt;80% in advanced metastatic sporadic MTC. Predominantly <code>M918T</code> (exon 16).</td>
+        <td>Correlates with advanced stage at diagnosis, presence of distant metastases, higher Ki-67 proliferation index, and poor overall survival (Elisei et al. 2008, Mian et al. 2011).</td>
+      </tr>
+      <tr>
+        <td><strong>Somatic RAS (Sporadic)</strong></td>
+        <td>Found in ~15% of RET-negative sporadic MTC. Predominantly <code>H-RAS</code> and <code>K-RAS</code> point mutations.</td>
+        <td>Mutually exclusive with RET mutations (Ciampi et al. 2013). Associated with less aggressive tumor biology and lower recurrence rates (Simbolo et al. 2014).</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h3>3. Hereditary Syndromes &amp; ATA Risk Stratification</h3>
+<p>In 1993, independent groups identified activating germline point mutations in RET as the causative event in MEN 2A and FMTC (Donis-Keller et al. 1993, Mulligan et al. 1993), followed by MEN 2B in 1994 (Eng et al. 1994). Approximately 98% of MEN 2A cases involve RET mutations in the extracellular cysteine-rich domain, specifically codons <code>609, 611, 618, 620</code> in exon 10 and codon <code>634</code> in exon 11. Germline mutations at codon <code>634</code> (specifically <code>C634R</code>) account for 85% of MEN 2A cases and strongly correlate with the co-development of Pheochromocytoma, Parathyroid Adenomas, and Cutaneous Lichen Amyloidosis (Eng et al. 1996, Raue &amp; Frank-Raue 2009).</p>
+
+<p>MEN 2B is almost invariably driven by a specific intracellular catalytic tyrosine kinase domain mutation in exon 16: <code>M918T</code> (&gt;95% of cases), conferring aggressive infantile oncogenicity. Rare MEN 2B cases harbor exon 15 <code>A883F</code> mutations (Mathiesen et al. 2017) or double mutations at codons 804/904 (Menko et al. 2002). FMTC involves mutations distributed across cysteine codons or non-cysteine codons (exon 13 <code>E768D</code>, <code>L790F</code>; exon 14 <code>V804L/M</code>; exon 15 <code>S891A</code>), demonstrating lower aggressiveness and older age at diagnosis (Raue &amp; Frank-Raue 2009). In 4–10% of MEN 2A/FMTC and ~95% of MEN 2B patients, the mutation is a <em>de novo</em> alteration arising on the paternal allele (Schuffenecker et al. 1997). Rare Variants of Unknown Significance (VUS) require careful surveillance rather than immediate surgery (Cosci et al. 2011, Lebeault et al. 2017).</p>
+
+<div class="table-wrap">
+  <table class="s1-tbl">
+    <thead>
+      <tr>
+        <th>RET Codon Mutation</th>
+        <th>Exon</th>
+        <th>ATA MTC Risk Level</th>
+        <th>PHEO Penetrance</th>
+        <th>PTHAd Penetrance</th>
+        <th>CLA Association</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>M918T</code></td>
+        <td>16</td>
+        <td>Highest Risk (HST)</td>
+        <td>50% (+++)</td>
+        <td>0% (N)</td>
+        <td>No (N)</td>
+      </tr>
+      <tr>
+        <td><code>A883F</code></td>
+        <td>15</td>
+        <td>High Risk (H)</td>
+        <td>50% (+++)</td>
+        <td>0% (N)</td>
+        <td>No (N)</td>
+      </tr>
+      <tr>
+        <td><code>C634F/G/R/S/W/Y</code></td>
+        <td>11</td>
+        <td>High Risk (H)</td>
+        <td>50% (+++)</td>
+        <td>20 – 30% (++)</td>
+        <td>Yes (Y, 10–30%)</td>
+      </tr>
+      <tr>
+        <td><code>C609, C611, C618, C620</code></td>
+        <td>10</td>
+        <td>Moderate Risk (MOD)</td>
+        <td>10 – 30% (+/++)</td>
+        <td>10% (+)</td>
+        <td>No (N)</td>
+      </tr>
+      <tr>
+        <td><code>V804L / V804M</code></td>
+        <td>14</td>
+        <td>Moderate Risk (MOD)</td>
+        <td>10% (+)</td>
+        <td>10% (+)</td>
+        <td>No (N)</td>
+      </tr>
+      <tr>
+        <td><code>S891A</code></td>
+        <td>15</td>
+        <td>Moderate Risk (MOD)</td>
+        <td>10% (+)</td>
+        <td>10% (+)</td>
+        <td>No (N)</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h3>4. Clinical Presentation &amp; Syndromic Manifestations</h3>
+<p>Sporadic MTC presents clinically as a solitary thyroid nodule or dominant nodule in a multinodular goiter. Patients are usually euthyroid and asymptomatic. In advanced stage IV disease with heavy tumor burden and high serum calcitonin, tumor co-secretion of calcitonin, vasoactive intestinal peptide (VIP), serotonin, and prostaglandins causes severe secretory diarrhea and cutaneous facial flushing (Alam 1994, Hannah-Shmouni et al. 2016).</p>
+
+<p>Familial MTC presents as bilateral, multicentric nodular disease associated with C-cell hyperplasia (Schmid 2015). In MEN 2A, hyperparathyroidism occurs in ~30% (mean age 3rd–4th decades) as asymptomatic hypercalcemia or multiple adenomatosis/hyperplasia (Alevizaki &amp; Saltiki 2015). Pheochromocytoma develops in 50% of MEN 2A and 40–45% of MEN 2B patients (Mucha et al. 2017); unlike sporadic pheochromocytoma, MEN 2 adrenal tumors are characteristically bilateral and multicentric (often asynchronously developed over a 10-year window). MEN 2B manifests pathognomonic physical signs: marfanoid habitus (long limbs relative to trunk, pectus excavatum), skeletal deformities (scoliosis, lordosis, polydactyly; Brauckhoff et al. 2004), thickened lips with prominent mucosal neuromas on the tongue, buccal mucosa, and conjunctiva, and infantile intestinal ganglioneuromatosis causing megacolon and severe motility cramping (Erdogan et al. 2006). Cutaneous Lichen Amyloidosis (CLA)—an intensely pruritic, hyperpigmented papular lesion in the interscapular back region—occurs in ~10% of MEN 2A kindreds and is pathognomonic when present (Ceccherini et al. 1994).</p>
+
+<h3>5. Diagnostic Workup, FNAC Limitations &amp; Calcitonin Dynamics</h3>
+<p>Presurgical evaluation utilizes neck physical examination, ultrasonography, fine-needle aspiration cytology (FNAC), and biochemical tumor markers:</p>
+
+<ul>
+  <li><strong>Ultrasonography:</strong> MTC typically displays a hypoechoic nodule with acoustic shadowing microcalcifications. However, sonographic patterns are non-specific and mimic other thyroid cancer histotypes (Lee et al. 2010).</li>
+  <li><strong>FNAC Diagnostic Limitations:</strong> Presurgical FNA cytology fails to correctly identify MTC in <strong>&gt;50% of cases</strong> in large international multicenter series (313 patients across 12 referral centers; Essig et al. 2013), leading to inadequate initial surgical resection in &gt;60% of patients. Diagnostic failure stems from variable cellular morphology (plasmacytoid, spindle, or giant cell patterns) mimicking follicular neoplasms, Hurthle cell tumors, or anaplastic cancer (Pacini et al. 1994, Rieu et al. 1995, Niccoli et al. 1997, Forrest et al. 1998). FNAC accuracy is dramatically improved by performing <strong>calcitonin immunocytochemistry</strong> on cytological smears or measuring <strong>calcitonin in needle washout fluid</strong> (Boi et al. 2007).</li>
+  <li><strong>Serum Calcitonin (Ct):</strong> Calcitonin (a 32-amino acid polypeptide produced by C cells; Melvin &amp; Tashjian 1968) is the most sensitive and specific biomarker for MTC. Basal serum Ct <code>&gt;100 pg/mL</code> is 100% diagnostic of MTC (Costante et al. 2007). For moderately elevated levels (20–100 pg/mL), a <strong>Calcium Stimulation Test</strong> (25 mg/kg calcium gluconate IV over 5 min) differentiates MTC from non-thyroidal causes. Routine serum Ct screening in thyroid nodular disease detects early stage I unsuspected sporadic MTC, significantly improving survival (Elisei et al. 2004a, Cheung et al. 2008, Wells et al. 2015).</li>
+  <li><strong>Serum Carcinoembryonic Antigen (CEA):</strong> Co-secreted by MTC cells. Elevated CEA correlates with bulky disease and distant metastases (Rougier et al. 1983). Serial CEA monitoring tracks disease progression; rising CEA alongside falling calcitonin indicates aggressive tumor dedifferentiation. Other secretory products include Chromogranin-A (Baudin et al. 2001), Procalcitonin (Machens et al. 2014), Somatostatin, CGRP, VIP, and NSE (Pacini et al. 1991, Barakat et al. 2004).</li>
+  <li><strong>Germline RET Genetic Screening:</strong> Mandatory in <strong>ALL patients with documented MTC</strong> (sporadic and familial) to identify unsuspected hereditary germline transmission (found in 5–7% of apparently sporadic cases; Romei et al. 2011, Elisei et al. 2013a) and enable screening of first-degree relatives.</li>
+</ul>
+
+<div class="table-wrap">
+  <table class="s2-tbl">
+    <thead>
+      <tr>
+        <th>Non-Thyroidal Pathologies</th>
+        <th>Thyroidal Pathologies</th>
+        <th>Technical &amp; Assay Interferences</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Small cell lung carcinoma (advanced)</td>
+        <td>Lymphocytic Hashimoto's thyroiditis (with CCH)</td>
+        <td>Heterophilic antibodies (false positive)</td>
+      </tr>
+      <tr>
+        <td>Breast carcinoma (advanced)</td>
+        <td>Micropapillary thyroid carcinoma (with CCH)</td>
+        <td>Excessive assay sensitivity / high baseline threshold</td>
+      </tr>
+      <tr>
+        <td>Neuroendocrine gastrointestinal tumors</td>
+        <td>C-cell hyperplasia (idiopathic or secondary)</td>
+        <td>Macrocalcitonin complexes</td>
+      </tr>
+      <tr>
+        <td>Chronic renal failure / Omeprazole therapy</td>
+        <td>Zollinger-Ellison syndrome / Pancreatitis</td>
+        <td>Pernicious anemia</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h3>6. Histopathology, Amyloid &amp; C-Cell Hyperplasia Criteria</h3>
+<p>Macroscopically, MTC presents as a hard, firm, unencapsulated chalky-white or reddish tumor mass (Schmid 2015). Histologically, malignant C cells exhibit spindle-shaped or rounded polygonal morphology arranged in nests, cords, or insular patterns separated by fibrovascular stroma. Nuclei display uniform "salt-and-pepper" chromatin, and granular eosinophilic cytoplasm contains calcitonin secretory vesicles.</p>
+
+<p>A pathognomonic histologic hallmark present in 60–80% of MTC specimens is stromal <strong>amyloid deposition</strong> composed of misfolded pro-calcitonin fibrils (Sletten et al. 1976). Amyloid stains positive with <strong>Congo Red</strong>, displaying classic <em>apple-green birefringence</em> under polarized light microscopy. Immunohistochemistry is strongly positive for Calcitonin, CEA, Chromogranin-A, Synaptophysin, and TTF-1, while remaining <strong>strictly negative for Thyroglobulin (Tg)</strong> (Giovanella et al. 2008, Trimboli &amp; Giovanella 2015).</p>
+
+<p><strong>C-Cell Hyperplasia (CCH)</strong>—defined as <code>&gt;50 C-cells per single low-power field (100x)</code> or anatomical filling of follicles (LiVolsi 1997)—is the established pre-neoplastic precursor lesion present in virtually 100% of hereditary MTC cases and ~30% of sporadic cases (Nikiforov et al. 2012). Mixed collision tumors containing concurrent separate foci of MTC and Papillary Thyroid Carcinoma (PTC) occur in clinical practice, driven by distinct molecular alterations rather than single stem cell divergence (Matias-Guiu 1999, Biscolla et al. 2004, Wong et al. 2012, Ciampi et al. 2017).</p>
+
+<h3>7. Post-Treatment Surveillance &amp; Doubling Time Kinetics</h3>
+<p>Postoperative surveillance evaluates surgical cure completeness. Postoperative serum basal and stimulated calcitonin should be measured <strong>3 months after surgery</strong> to allow complete metabolic degradation of preoperative circulating protein pools (Fugazzola et al. 1994):</p>
+<ul>
+  <li><strong>Undetectable Calcitonin (&lt;2–5 pg/mL):</strong> Confirms complete biochemical cure, associated with an estimated long-term recurrence risk of 10% (Pellegriti et al. 2003), which drops to <strong>3.3%</strong> if post-op stimulation testing is negative (Franc et al. 2001). Surveillance requires annual Ct and neck US.</li>
+  <li><strong>Detectable Calcitonin / Biochemical Disease:</strong> Approximately 50% of patients not cured by primary surgery have no visible anatomical tumor on traditional imaging ("biochemical disease"). When serum Ct is &lt;150 pg/mL, anatomical localization is rarely achieved, and guidelines recommend a conservative "wait and see" management strategy (Meijer et al. 2010, Schlumberger et al. 2012a).</li>
+  <li><strong>Calcitonin &amp; CEA Doubling Time (DT):</strong> The single most powerful prognostic biomarker for disease progression and mortality (Gawlik et al. 2010). Calculate DT using serial measurements over 12–24 months:
+    <ul>
+      <li><code>DT &lt; 6 months (or &lt;1 year)</code>: Indicates rapid progressive metastatic recurrence and high mortality rate (Meijer et al. 2010). Triggers immediate systemic imaging staging.</li>
+      <li><code>DT &gt; 2 years</code>: Indicates indolent stable disease with excellent long-term survival.</li>
+    </ul>
+  </li>
+  <li><strong>Advanced Localization Imaging:</strong> For progressive disease (Ct &gt;150 pg/mL or rapid DT), imaging includes neck US, contrast CT neck/chest/abdomen, liver MRI, <strong>18F-DOPA PET/CT</strong> (the most sensitive PET radiotracer for MTC; Skoura 2013, Giraudet &amp; Taieb 2017), or <strong>68Ga-DOTATATE / DOTATOC PET/CT</strong> (Baudin et al. 1996, Giraudet et al. 2007). Selective venous sampling is obsolete.</li>
+</ul>
+
+<h3>8. Primary Surgical Resection &amp; Prophylactic Guidelines</h3>
+<p>Because C cells do not concentrate radioiodine (RAI) and TSH suppression has zero therapeutic efficacy, surgery is the ONLY curative treatment for MTC. Early complete surgical clearance dictates long-term survival (Pelizzo et al. 2007, Randle et al. 2017, Raue et al. 2018):</p>
+
+<div class="callout warn">
+  <span class="label">MANDATORY SURGICAL BOARD RULE — PHEOCHROMOCYTOMA RULE-OUT</span>
+  Prior to undergoing neck surgery, <strong>ALL patients with MTC or RET mutations MUST be screened for Pheochromocytoma</strong> via plasma free metanephrines or 24-hour urinary fractionated metanephrines (Wells et al. 2013, 2015). Operating on an unrecognized, unblocked pheochromocytoma can precipitate fatal intraoperative hypertensive crisis. If a pheochromocytoma is identified, <strong>laparoscopic adrenalectomy MUST precede thyroidectomy</strong>.
+</div>
+
+<p>Standard initial surgical procedures comprise:</p>
+<ol>
+  <li><strong>Total Thyroidectomy:</strong> Mandatory for all MTC cases due to high rates of multicentricity and bilaterality (100% in hereditary, 20–30% in sporadic; Essig et al. 2016). Subtotal thyroidectomy is obsolete.</li>
+  <li><strong>Central Neck Lymph Node Dissection (Level VI):</strong> Routine bilateral Level VI dissection (prelaryngeal, pretracheal, paratracheal nodes) is performed in ALL clinical MTC cases because 50–60% of patients harbor occult central node metastases at initial presentation (Moley &amp; DeBenedetti 1999, Ukkat et al. 2004). Correlation with preop Ct: basal Ct &lt;20 pg/mL carries zero central node risk; Ct &lt;50 pg/mL carries &lt;10% risk (Machens &amp; Dralle 2010). ATA Guidelines (Wells et al. 2015): RET carriers with serum Ct &lt;40 pg/mL may undergo total thyroidectomy alone (Rohmer et al. 2011, Elisei et al. 2012).</li>
+  <li><strong>Lateral Neck Lymph Node Dissection (Levels II–V):</strong> "En bloc" modified radical lateral neck dissection is indicated when preop US confirms lateral nodal metastases, or when primary tumor size is &gt;2 cm or basal serum Ct is &gt;200 pg/mL (lateral nodal metastasis risk &gt;75-90%; Scollo et al. 2003, Machens &amp; Dralle 2010).</li>
+</ol>
+
+<h3>9. Advanced Disease, Targeted Biologics &amp; High-Yield Review</h3>
+<p>For unresectable, progressive, or symptomatic systemic metastatic MTC (liver, lung, bone metastases), traditional cytotoxic chemotherapy yields poor response rates. Modern systemic therapy utilizes oral targeted small-molecule tyrosine kinase inhibitors (TKIs):</p>
+<ul>
+  <li><strong>Highly Selective RET Inhibitors (First-Line Standard):</strong> <strong>Selpercatinib (LOXO-292)</strong> and <strong>Pralsetinib (BLU-667)</strong> are highly selective RET kinase inhibitors demonstrating objective response rates (ORR) &gt;60–70% in RET-mutated MTC with durable progression-free survival and favorable safety profiles.</li>
+  <li><strong>Multi-Kinase Inhibitors (FDA Approved):</strong> <strong>Vandetanib (ZACTIMA)</strong> and <strong>Cabozantinib (COMETRIQ)</strong> inhibit RET, VEGFR2/3, and EGFR, significantly prolonging progression-free survival in advanced progressive MTC (Wells et al. 2012, Elisei et al. 2013b, Schlumberger et al. 2012b).</li>
+  <li><strong>Palliative Management of Secretory Symptoms:</strong> Severe secretory diarrhea and cutaneous flushing are palliated using long-acting Somatostatin Analogs (Octreotide LAR, Lanreotide) or Telotristat ethyl. Painful bone metastases or airway compression are managed with external beam radiation therapy (EBRT), chemoembolization, or radiofrequency ablation.</li>
+</ul>
+
+<div class="table-wrap">
+  <table class="s3-tbl">
+    <thead>
+      <tr>
+        <th>High-Yield Topic</th>
+        <th>Key Board Concept &amp; Recall Anchor</th>
+        <th>Clinical Action &amp; Exam Trap</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Cell Lineage</strong></td>
+        <td>Parafollicular C-cells (neuroendocrine origin). Expresses E-cadherin. Produces Ct &amp; CEA.</td>
+        <td>Tg negative on IHC. No radioiodine uptake. No TSH response.</td>
+      </tr>
+      <tr>
+        <td><strong>RET Genetics</strong></td>
+        <td>Chromosome 10q11.2. MEN 2A (C634R), MEN 2B (M918T), FMTC (non-cysteine).</td>
+        <td>Screen ALL MTC cases for germline RET mutations regardless of family history.</td>
+      </tr>
+      <tr>
+        <td><strong>Pheochromocytoma</strong></td>
+        <td>50% incidence in MEN 2A &amp; MEN 2B. Screen with plasma metanephrines.</td>
+        <td>Resect Pheochromocytoma BEFORE neck surgery to prevent hypertensive crisis.</td>
+      </tr>
+      <tr>
+        <td><strong>Diagnostic Biomarker</strong></td>
+        <td>Basal Serum Calcitonin &gt;100 pg/mL diagnostic. Calcium stimulation test if 20-100.</td>
+        <td>Measure Ct in FNA needle washout for lymph node localization.</td>
+      </tr>
+      <tr>
+        <td><strong>Pathology Hallmark</strong></td>
+        <td>Stromal amyloid deposits showing Congo Red apple-green birefringence.</td>
+        <td>C-cell hyperplasia (&gt;50 C-cells/LPF) is pre-neoplastic hallmark.</td>
+      </tr>
+      <tr>
+        <td><strong>Doubling Time (DT)</strong></td>
+        <td>Calcitonin/CEA DT &lt;6 months indicates rapid progression &amp; poor survival.</td>
+        <td>Triggers high-sensitivity 18F-DOPA PET/CT and liver MRI imaging.</td>
+      </tr>
+      <tr>
+        <td><strong>Surgical Standard</strong></td>
+        <td>Total Thyroidectomy + Routine Central Neck Dissection (Level VI).</td>
+        <td>Prophylactic thyroidectomy timing: MEN 2B in 1st yr of life; MEN 2A before age 5.</td>
+      </tr>
+      <tr>
+        <td><strong>Targeted Biologics</strong></td>
+        <td>Selective RET inhibitors: Selpercatinib &amp; Pralsetinib (ORR &gt;60-70%).</td>
+        <td>Replaces older multi-kinase TKIs (Vandetanib, Cabozantinib) as 1st-line standard.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</section>
+        <div class="sec-header s4" id="chapter-21" style="margin-top:50px;">
+          <span class="sec-badge">CHAPTER 21</span>
+          <h2 class="sec-title">Anaplastic & Poorly Differentiated Carcinomas</h2>
+        </div>
+            <section class="topic s4-topic" id="topic-21-1">
+              <div class="topic-header">
+                <span class="topic-num">21.1</span>
+                <h2>Rapid Growth Emergency Protocols & Targeted Biologics</h2>
+              </div>
+              <div class="outline-box"><h3>Chapter Outline: Anaplastic Thyroid Carcinoma (ATC)</h3><ul class="outline-list">
+<li><strong>Section 1. Introduction, Epidemiology, and Classification</strong>Overview of ATC as a lethal human cancer and Stage IV staging classification.</li>
+<li><strong>Section 2. Molecular Pathogenesis & TP53 Driver Mutations</strong>Explains dedifferentiation from DTC through TP53 and PIK3CA gene alterations.</li>
+<li><strong>Section 3. Clinical Presentation and Rapid Compressive Symptoms</strong>Describes acute stridor, dyspnea, dysphagia, and fixed rock-hard neck mass.</li>
+<li><strong>Section 4. Diagnostic Evaluation & Rapid NGS Sequencing</strong>Core biopsy techniques and urgent next-generation sequencing for BRAF V600E.</li>
+<li><strong>Section 5. Airway Management & Emergency Resuscitation</strong>Protocols for avoiding tracheostomy stomal recurrence vs securing airway.</li>
+<li><strong>Section 6. Surgical Resection Indications</strong>Strict surgical criteria for localized Stage IVA disease vs unresectable IVB/C.</li>
+<li><strong>Section 7. Multi-Modal Systemic & Radiation Protocols</strong>Hyperfractionated external beam radiation combined with radiosensitizing chemotherapy.</li>
+<li><strong>Section 8. Targeted Biologics (Dabrafenib + Trametinib)</strong>FDA-approved BRAF/MEK inhibitor targeted therapy yielding surgical conversion.</li>
+<li><strong>Section 9. High-Yield Board Summary & Prognostic Review</strong>Key survival statistics and essential board exam revision anchors.</li>
+</ul></div>
+                <h3>1. Introduction, Epidemiology, and Classification</h3>
+                <p>Anaplastic thyroid carcinoma (ATC) is one of the most lethal human malignancies, accounting for <2% of thyroid cancers but >50% of thyroid cancer-related mortality. Median overall survival is 4 to 6 months. All ATC tumors are classified as <strong>Stage IV</strong> (IVA localized to thyroid, IVB extrathyroidal extension, IVC distant metastases).</p>
+
+                <h3>2. Molecular Pathogenesis &amp; TP53 Driver Mutations</h3>
+                <p>ATC develops via dedifferentiation of preexisting differentiated thyroid carcinomas. Tumors accumulate late-stage inactivating mutations in <code>TP53</code> (>70% of ATC) and activating mutations in <code>PIK3CA</code> or <code>&beta;-catenin</code> superimposed on precursor <code>BRAF</code> or <code>RAS</code> mutations.</p>
+
+                
+
+                <h3>3. Clinical Presentation and Rapid Compressive Symptoms</h3>
+                <p>ATC presents as a rapidly expanding, rock-hard anterior neck mass causing acute compressive symptoms: dysphagia, stridor, dyspnea, and recurrent laryngeal nerve palsy.</p>
+
+                <h3>4. Diagnostic Evaluation &amp; Rapid NGS Sequencing</h3>
+                <p>Core needle or open incisional biopsy is performed immediately. Biopsy tissue must undergo urgent Next-Generation Sequencing (NGS) or immunohistochemistry for <code>BRAF V600E</code> status within 48–72 hours.</p>
+
+                <h3>5. Airway Management &amp; Emergency Resuscitation</h3>
+                <p>Airway preservation is the primary clinical goal. Tracheostomy is avoided if possible due to high rates of tumor fungation and stomal recurrence, but is performed for impending asphyxia.</p>
+
+                <h3>6. Surgical Resection Indications</h3>
+                <p>Surgical resection (total thyroidectomy with neck dissection) is indicated only for localized Stage IVA disease where gross R0/R1 resection can be achieved without sacrificing major neurovascular structures.</p>
+
+                <h3>7. Multi-Modal Systemic &amp; Radiation Protocols</h3>
+                <p>Unresectable BRAF-wildtype tumors undergo hyperfractionated external beam radiation therapy (EBRT) combined with radiosensitizing cytotoxic chemotherapy (Paclitaxel or Cisplatin).</p>
+
+                <h3>8. Targeted Biologics (Dabrafenib + Trametinib)</h3>
+                <p>Patients harboring <code>BRAF V600E</code> mutations receive targeted therapy with <strong>Dabrafenib (BRAF inhibitor) + Trametinib (MEK inhibitor)</strong>. This combination achieves rapid tumor regression, enabling secondary surgical resection in previously unresectable patients.</p>
+
+                <h3>9. High-Yield Board Summary &amp; Prognostic Review</h3>
+                <ul>
+                  <li><strong>ATC Staging:</strong> All cases are Stage IV (IVA, IVB, IVC).</li>
+                  <li><strong>Key Molecular Alteration:</strong> <code>TP53</code> mutation (>70%).</li>
+                  <li><strong>Targeted Biologic Pair:</strong> Dabrafenib + Trametinib for <code>BRAF V600E</code>.</li>
+                </ul>
+                
+            </section>
+        <div class="sec-header s5" id="chapter-22" style="margin-top:50px;">
+          <span class="sec-badge">CHAPTER 22</span>
+          <h2 class="sec-title">Targeted Medical Therapies & Operative Neck Dissections</h2>
+        </div>
+            <section class="topic s5-topic" id="topic-22-1">
+              <div class="topic-header">
+                <span class="topic-num">22.1</span>
+                <h2>Operative Technique Atlas & Surgical Anatomy Dissection Boundaries</h2>
+              </div>
+              <div class="outline-box"><h3>Chapter Outline: Operative Atlas & Neck Dissections</h3><ul class="outline-list">
+<li><strong>Section 1. Introduction and Surgical Anatomy Framework</strong>Overview of cervical fascial layers and surgical compartments of the anterior neck.</li>
+<li><strong>Section 2. Recurrent Laryngeal Nerve (RLN) Dissection Mechanics</strong>Detailed identification in Simon's triangle, Zuckerkandl tubercle, and Berry's ligament.</li>
+<li><strong>Section 3. Superior Laryngeal Nerve (EBSLN) Protection</strong>Surgical technique for superior pole ligation in Joll's space to preserve cricothyroid function.</li>
+<li><strong>Section 4. Parathyroid Preservation and Autotransplantation</strong>Anatomy of 3rd/4th pouch glands, vascular supply preservation, and autotransplantation protocol.</li>
+<li><strong>Section 5. Level VI Central Compartment Dissection</strong>Boundaries and technical steps for prelaryngeal, pretracheal, and paratracheal node clearance.</li>
+<li><strong>Section 6. Levels II-V Lateral Neck Dissection Boundaries</strong>Anatomical borders of modified radical neck dissection and spinal accessory nerve protection.</li>
+<li><strong>Section 7. Systemic Tyrosine Kinase Inhibitor (TKI) Therapies</strong>Role of Lenvatinib, Sorafenib, and targeted biologics in radioiodine refractory DTC.</li>
+<li><strong>Section 8. Postoperative Complications & Emergency Protocols</strong>Emergency management of compressive hematoma, hypocalcemia tetany, and RLN palsies.</li>
+<li><strong>Section 9. Examination Revision and Surgical Board Anchors</strong>High-yield surgical recall tables and landmark anatomical boundary summaries.</li>
+</ul></div>
+                <h3>1. Introduction and Surgical Anatomy Framework</h3>
+                <p>Surgical resection remains the definitive curative modality for thyroid cancer. A thorough understanding of anatomical cervical nodal compartments, nerve relationships, and fascial planes is essential for achieving complete oncologic clearance while preventing permanent morbidity.</p>
+
+                <div style="font-family:'JetBrains Mono',monospace; font-size:12px; font-weight:700; color:var(--primary); margin-top:28px; text-transform:uppercase; letter-spacing:0.05em;">Diagnostic Plates — Neck Dissection Boundaries & Atlas (Click Image to Enlarge)</div>
+<div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(260px, 1fr)); gap:16px; margin:14px 0 32px;">
+
+        <div onclick="openLightbox('../../assets/images/endocrine_pdf_images/ch22_p643_0_6647.jpeg')" style="background:var(--bg2); border:1px solid var(--border); border-radius:12px; overflow:hidden; padding:12px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s; cursor:pointer;" onmouseover="this.style.transform='scale(1.02)'; this.style.borderColor='var(--accent2)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--border)';">
+          <img src="../../assets/images/endocrine_pdf_images/ch22_p643_0_6647.jpeg" alt="Figure 1" style="max-width:100%; max-height:210px; object-fit:contain; border-radius:8px; background:#fff; padding:6px; border:1px solid var(--border);">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent2); margin-top:8px; display:flex; align-items:center; justify-content:center; gap:6px;">
+            <span>Diagnostic Plate 1</span>
+            <span style="font-size:10px; opacity:0.7;">🔍</span>
+          </div>
+        </div>
+
+        <div onclick="openLightbox('../../assets/images/endocrine_pdf_images/ch22_p645_0_6659.jpeg')" style="background:var(--bg2); border:1px solid var(--border); border-radius:12px; overflow:hidden; padding:12px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s; cursor:pointer;" onmouseover="this.style.transform='scale(1.02)'; this.style.borderColor='var(--accent2)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--border)';">
+          <img src="../../assets/images/endocrine_pdf_images/ch22_p645_0_6659.jpeg" alt="Figure 2" style="max-width:100%; max-height:210px; object-fit:contain; border-radius:8px; background:#fff; padding:6px; border:1px solid var(--border);">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent2); margin-top:8px; display:flex; align-items:center; justify-content:center; gap:6px;">
+            <span>Diagnostic Plate 2</span>
+            <span style="font-size:10px; opacity:0.7;">🔍</span>
+          </div>
+        </div>
+</div>
+
+                <h3>2. Recurrent Laryngeal Nerve (RLN) Dissection Mechanics</h3>
+                <p>The RLN is identified within <strong>Simon's triangle</strong> (bounded by common carotid laterally, trachea medially, inferior thyroid artery superiorly). The nerve passes under the <strong>Zuckerkandl tubercle</strong> and enters the larynx posterior to <strong>Berry's ligament</strong> (suspensory ligament of the thyroid). Ligate Berry's ligament with extreme care to avoid traction or thermal nerve injury.</p>
+
+                <h3>3. Superior Laryngeal Nerve (EBSLN) Protection</h3>
+                <p>The External Branch of the Superior Laryngeal Nerve (EBSLN) innervates the cricothyroid muscle. It travels in <strong>Joll's space</strong> closely adherent to the superior thyroid artery. To prevent nerve injury (causing loss of high-pitch voice), superior pole vessels must be ligated individually right on the capsule of the thyroid lobe.</p>
+
+                <h3>4. Parathyroid Preservation and Autotransplantation</h3>
+                <p>Preserve parathyroid vascularity from the inferior thyroid artery. If a parathyroid gland is devascularized or accidentally resected, verify its histology by frozen section/water flotation and autotransplant it into biopsy-proven pockets within the ipsilateral sternocleidomastoid or brachioradialis muscle.</p>
+
+                <h3>5. Level VI Central Compartment Dissection</h3>
+                <p>Level VI is bounded by the hyoid bone superiorly, innominate artery inferiorly, and carotid sheaths laterally. It contains prelaryngeal (Delphian), pretracheal, and paratracheal lymph nodes. Central dissection is mandatory in MTC and therapeutic in cN1a DTC.</p>
+
+                <h3>6. Levels II-V Lateral Neck Dissection Boundaries</h3>
+                <div class="table-wrap">
+                  <table class="s3-tbl">
+                    <thead>
+                      <tr>
+                        <th>Nodal Level</th>
+                        <th>Anatomical Boundaries</th>
+                        <th>Surgical Dissection Indications</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><strong>Level VI (Central Compartment)</strong></td>
+                        <td>Hyoid bone superiorly, innominate artery inferiorly, carotid sheaths laterally.</td>
+                        <td>Mandatory in MTC and cN1a DTC; recommended in T3/T4 DTC.</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Levels II–V (Lateral Compartment)</strong></td>
+                        <td>Level II (upper jugular), Level III (middle jugular), Level IV (lower jugular), Level V (posterior triangle).</td>
+                        <td>Therapeutic lateral neck dissection performed when biopsy-proven lateral nodal metastasis is present (cN1b).</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <h3>7. Systemic Tyrosine Kinase Inhibitor (TKI) Therapies</h3>
+                <p>Patients with radioiodine-refractory progressive DTC undergo systemic therapy with multi-kinase inhibitors <strong>Lenvatinib</strong> (SELECT trial) or <strong>Sorafenib</strong> (DECISION trial), which significantly prolong progression-free survival.</p>
+
+                <h3>8. Postoperative Complications &amp; Emergency Protocols</h3>
+                <div class="callout warn">
+                  <span class="label">POSTOPERATIVE EMERGENCY — COMPRESSIVE HEMATOMA MANAGEMENT</span>
+                  Post-thyroidectomy neck hematoma is a life-threatening airway emergency causing venous congestion and laryngeal edema. If a patient develops stridor, respiratory distress, or expanding neck swelling, <strong>DO NOT wait for an OR or transport</strong>. Immediately open the surgical wound (cut skin sutures and open strap muscles) <strong>at the bedside</strong> to evacuate the clot and relieve airway compression before transferring to the OR for formal hemostasis.
+                </div>
+
+                <h3>9. Examination Revision and Surgical Board Anchors</h3>
+                <ul>
+                  <li><strong>RLN Crossing:</strong> Posterior to inferior thyroid artery.</li>
+                  <li><strong>EBSLN Protection:</strong> Ligate superior pole vessels individually on thyroid capsule.</li>
+                  <li><strong>Compressive Hematoma Action:</strong> Immediate bedside wound decompression.</li>
+                </ul>
+                
+            </section>
+</div>
+</main>
+
+<div id="lightbox-modal" onclick="closeLightbox()" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.85); backdrop-filter:blur(6px); z-index:2000; align-items:center; justify-content:center; padding:20px;">
+  <span style="position:absolute; top:20px; right:30px; color:#fff; font-size:36px; font-weight:bold; cursor:pointer; font-family:sans-serif; transition:color 0.2s;" onmouseover="this.style.color='var(--accent2)'" onmouseout="this.style.color='#fff'">&times;</span>
+  <img id="lightbox-img" src="" alt="Enlarged Diagnostic Plate" style="max-width:92vw; max-height:92vh; object-fit:contain; border-radius:8px; box-shadow:0 12px 40px rgba(0,0,0,0.6); background:#fff; padding:8px;" onclick="event.stopPropagation()">
+</div>
+
+<script>
+  function openLightbox(imgUrl) {
+    const modal = document.getElementById('lightbox-modal');
+    const img = document.getElementById('lightbox-img');
+    img.src = imgUrl;
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox() {
+    const modal = document.getElementById('lightbox-modal');
+    modal.style.display = 'none';
+    document.body.style.overflow = '';
+  }
+
+  function toggleSidebar() {
+    document.body.classList.toggle('sidebar-open');
+  }
+  function closeSidebar() {
+    document.body.classList.remove('sidebar-open');
+  }
+  function filterNav(q) {
+    q = q.toLowerCase();
+    document.querySelectorAll('#sidebar-nav .nav-item').forEach(el => {
+      el.style.display = el.textContent.toLowerCase().includes(q) ? 'block' : 'none';
+    });
+  }
+  
+  function openMobNav() {
+    document.getElementById('mobNavSheet').classList.add('open');
+    document.getElementById('mobNavOverlay').style.display = 'block';
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMobNav() {
+    document.getElementById('mobNavSheet').classList.remove('open');
+    document.getElementById('mobNavOverlay').style.display = 'none';
+    document.body.style.overflow = '';
+  }
+
+  const themeToggle = document.getElementById('themeToggle');
+  const moonIcon = document.getElementById('moonIcon');
+  const sunIcon = document.getElementById('sunIcon');
+  
+  function applyTheme(theme) {
+    if (theme === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      if (moonIcon) moonIcon.style.display = 'none';
+      if (sunIcon) sunIcon.style.display = 'block';
+    } else {
+      document.documentElement.removeAttribute('data-theme');
+      if (sunIcon) sunIcon.style.display = 'none';
+      if (moonIcon) moonIcon.style.display = 'block';
+    }
+  }
+  
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      const isDark = document.documentElement.hasAttribute('data-theme');
+      const newTheme = isDark ? 'light' : 'dark';
+      applyTheme(newTheme);
+      localStorage.setItem('sih-theme', newTheme);
+    });
+  }
+  
+  document.addEventListener('DOMContentLoaded', () => {
+    applyTheme(localStorage.getItem('sih-theme') || 'light');
+  });
+</script>
+<script src="../../js/navigation.js"></script>
+<script src="../../js/nav-pill.js"></script>
+</body>
+</html>

@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abdominal Sepsis &amp; Peritonitis: Source Control, STOP-IT, and the New Rules of Surgical Infection Management — Surgical Insight Hub</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Shared Styles -->
+  <link rel="stylesheet" href="../css/theme.css?v=4.0.0">
+  <link rel="stylesheet" href="../css/shared.css">
+  <link rel="stylesheet" href="blog.css">
+
+  <script>
+    const savedTheme = localStorage.getItem('sih-theme') || 'light';
+    if (savedTheme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+  </script>
+  <link rel="icon" type="image/png" href="https://surgicalinsighthub.app/favicon.png">
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Evidence Review on Abdominal Sepsis &amp; Peritonitis: SSC 2026 resuscitation targets, timely source control, STOP-IT and DURAPOP trials, and SIS 2024 antimicrobial stewardship.">
+  <meta name="keywords" content="abdominal sepsis, secondary peritonitis, source control, STOP-IT trial, DURAPOP trial, Surviving Sepsis Campaign 2026, SIS 2024, surgical infection management">
+  <link rel="canonical" href="https://surgicalinsighthub.app/blog/abdominal-sepsis-peritonitis-source-control.html">
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://surgicalinsighthub.app/blog/abdominal-sepsis-peritonitis-source-control.html">
+  <meta property="og:title" content="Abdominal Sepsis &amp; Peritonitis: Source Control, STOP-IT, and the New Rules of Surgical Infection Management">
+  <meta property="og:description" content="Antibiotics treat infection, but they cannot repair a perforated bowel or drain an undrained abscess. A clinical breakdown of SSC 2026, STOP-IT, DURAPOP, and SIS 2024.">
+  <meta property="og:image" content="https://surgicalinsighthub.app/assets/images/blog/abdominal-sepsis-peritonitis-poster.jpg">
+
+  <style>
+    /* Poster Showcase */
+    .poster-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 20px;
+      margin: 0 0 2.75rem 0;
+      box-shadow: var(--shadow-sm);
+      font-family: 'Inter', sans-serif;
+    }
+
+    .poster-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+
+    .poster-label {
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #a31515;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    [data-theme="dark"] .poster-label {
+      color: #f87171;
+    }
+
+    .poster-actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .poster-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 6px 12px;
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+      background: var(--bg-secondary);
+      color: var(--text-primary);
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .poster-btn:hover {
+      border-color: #a31515;
+      color: #a31515;
+    }
+
+    [data-theme="dark"] .poster-btn:hover {
+      border-color: #f87171;
+      color: #f87171;
+    }
+
+    .poster-frame {
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+      cursor: zoom-in;
+      background: #1a0c0c;
+    }
+
+    .poster-frame img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.25s ease;
+    }
+
+    .poster-frame:hover img {
+      transform: scale(1.008);
+    }
+
+    .poster-caption {
+      font-size: 0.84rem;
+      color: var(--text-secondary);
+      margin: 12px 0 0 0;
+      line-height: 1.5;
+      text-align: center;
+    }
+
+    /* Poster Lightbox */
+    .poster-lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: rgba(10, 10, 15, 0.9);
+      backdrop-filter: blur(4px);
+      padding: 24px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .poster-lightbox.open {
+      display: flex;
+    }
+
+    .poster-lightbox-inner {
+      position: relative;
+      max-width: 1280px;
+      max-height: 92vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .poster-lightbox-inner img {
+      max-width: 100%;
+      max-height: 86vh;
+      width: auto;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.55);
+    }
+
+    .poster-lightbox-close {
+      position: absolute;
+      top: -14px;
+      right: -14px;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      background: #18181b;
+      color: #fff;
+      font-size: 1.25rem;
+      line-height: 1;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .poster-lightbox-close:hover {
+      background: #a31515;
+    }
+
+    /* Section numbering pill */
+    .sec-kicker {
+      display: inline-block;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.74rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #a31515;
+      background: rgba(163, 21, 21, 0.08);
+      padding: 4px 10px;
+      border-radius: 6px;
+      margin-bottom: 10px;
+    }
+
+    [data-theme="dark"] .sec-kicker {
+      color: #f87171;
+      background: rgba(248, 113, 113, 0.12);
+    }
+
+    .blog-content h2.numbered-h2 {
+      margin-top: 8px;
+    }
+
+    /* Pathophysiology Chain */
+    .patho-chain {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      margin: 2rem 0;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .patho-step {
+      width: 100%;
+      max-width: 520px;
+      background: var(--bg-card);
+      border: 1.5px solid var(--border-color);
+      border-radius: 12px;
+      padding: 13px 18px;
+      text-align: center;
+      font-weight: 700;
+      font-size: 0.94rem;
+      color: var(--text-primary);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .patho-step.critical {
+      border-color: #dc2626;
+      background: rgba(220, 38, 38, 0.04);
+      color: #b91c1c;
+    }
+
+    [data-theme="dark"] .patho-step.critical {
+      color: #fca5a5;
+      background: rgba(220, 38, 38, 0.08);
+    }
+
+    .patho-arrow {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--text-muted);
+      line-height: 1;
+    }
+
+    /* SSC 2026 Pillar Cards */
+    .ssc-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+      margin: 1.8rem 0;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .ssc-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-left: 4px solid #2563eb;
+      border-radius: 12px;
+      padding: 20px 22px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .ssc-card.resus { border-left-color: #dc2626; }
+    .ssc-card.abx { border-left-color: #b8922a; }
+    .ssc-card.source { border-left-color: #10b981; }
+
+    .ssc-card h3 {
+      margin: 0 0 12px 0 !important;
+      font-size: 1.1rem !important;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .ssc-tag {
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 3px 9px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .ssc-card.resus .ssc-tag { background: rgba(220,38,38,0.1); color: #dc2626; }
+    .ssc-card.abx .ssc-tag { background: rgba(184,146,42,0.12); color: #b8922a; }
+    .ssc-card.source .ssc-tag { background: rgba(16,185,129,0.12); color: #10b981; }
+
+    .ssc-card ul {
+      margin: 0 !important;
+      padding-left: 20px !important;
+    }
+
+    .ssc-card li {
+      font-size: 0.93rem;
+      color: var(--text-secondary);
+      margin-bottom: 8px;
+      line-height: 1.55;
+    }
+
+    .ssc-card li:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Callout boxes */
+    .key-statement {
+      background: rgba(37, 99, 235, 0.04);
+      border-left: 4px solid #2563eb;
+      padding: 18px 22px;
+      border-radius: 0 12px 12px 0;
+      margin: 26px 0;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.98rem;
+      line-height: 1.6;
+      color: var(--text-primary);
+    }
+
+    [data-theme="dark"] .key-statement {
+      background: rgba(59, 130, 246, 0.06);
+      border-left-color: #3b82f6;
+    }
+
+    .key-statement strong.ks-title {
+      display: block;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #2563eb;
+      margin-bottom: 6px;
+      font-weight: 800;
+    }
+
+    [data-theme="dark"] .key-statement strong.ks-title {
+      color: #60a5fa;
+    }
+
+    /* Stat Comparison Strip */
+    .trial-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin: 1.8rem 0;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .metric-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 16px;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .metric-val {
+      font-size: 1.45rem;
+      font-weight: 900;
+      color: var(--text-primary);
+      line-height: 1.2;
+      margin-bottom: 4px;
+    }
+
+    .metric-lbl {
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+      line-height: 1.35;
+    }
+
+    @media(max-width: 640px) {
+      .trial-metrics {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Two-column escalation cards */
+    .escalation-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 1.8rem 0;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .esc-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 18px;
+    }
+
+    .esc-card.stable { border-top: 4px solid #2563eb; }
+    .esc-card.unstable { border-top: 4px solid #dc2626; }
+
+    .esc-card h4 {
+      margin: 0 0 8px 0;
+      font-size: 0.98rem;
+      font-weight: 800;
+      color: var(--text-primary);
+    }
+
+    .esc-card p {
+      margin: 0 !important;
+      font-size: 0.88rem;
+      line-height: 1.55 !important;
+      color: var(--text-secondary);
+    }
+
+    @media(max-width: 640px) {
+      .escalation-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Perspective Flow Banner */
+    .judgment-flow {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 18px 20px;
+      margin: 22px 0;
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-size: 0.92rem;
+      color: var(--text-primary);
+      text-align: center;
+      line-height: 1.7;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .judgment-flow span.jf-arrow {
+      color: #a31515;
+      margin: 0 6px;
+      font-weight: 900;
+    }
+
+    /* Bibliography */
+    .ref-list {
+      list-style-type: none;
+      padding-left: 0 !important;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .ref-item {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.55;
+      margin-bottom: 14px;
+      padding-left: 26px;
+      position: relative;
+    }
+
+    .ref-num {
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-weight: 800;
+      color: #a31515;
+    }
+
+    [data-theme="dark"] .ref-num {
+      color: #f87171;
+    }
+
+    .ref-item a {
+      color: #2563eb;
+      text-decoration: underline;
+      font-weight: 600;
+      word-break: break-all;
+    }
+
+    [data-theme="dark"] .ref-item a {
+      color: #60a5fa;
+    }
+
+    .sih-brand-footer-note {
+      margin-top: 2.5rem;
+      padding: 20px;
+      border-radius: 12px;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      text-align: center;
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="mainNav">
+    <div class="nav-left">
+      <a href="../index.html" class="nav-pill">
+        <div class="nav-logo-img">
+          <img src="../assets/images/Surgical_Insight_Hub_Logo.png" alt="SIH">
+        </div>
+        <div>
+          <div class="nav-brand-text">Surgical Insight Hub</div>
+          <div class="nav-brand-sub">Advanced Surgical Learning</div>
+        </div>
+      </a>
+      <div class="nav-links-pill">
+        <a href="../index.html">Home</a>
+        <a href="../notes.html">Notes</a>
+        <a href="../notes/operative_approach.html">Playbook</a>
+        <a href="../podcast.html">Podcast</a>
+        <a href="../surgery-talk.html" class="active">Surgery Talk</a>
+        <a href="../about.html">About</a>
+      </div>
+    </div>
+
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <svg id="moonIcon" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/></svg>
+        <svg id="sunIcon" style="display:none;" viewBox="0 0 24 24"><path d="M12 7a5 5 0 1 0 5 5 5.006 5.006 0 0 0-5-5zm0 8a3 3 0 1 1 3-3 3.003 3.003 0 0 1-3 3zm0-13a1 1 0 0 0-1 1v2a1 1 0 0 0 2 0V3a1 1 0 0 0-1-1zm0 18a1 1 0 0 0-1 1v2a1 1 0 0 0 2 0v-2a1 1 0 0 0-1-1zm8-11h-2a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2zm-16 0H2a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2zm13.657-5.657a1 1 0 0 0-1.414 0l-1.414 1.414a1 1 0 0 0 1.414 1.414l1.414-1.414a1 1 0 0 0 0-1.414zm-11.314 0a1 1 0 0 0 0 1.414l1.414 1.414a1 1 0 0 0 1.414-1.414L4.929 5.757a1 1 0 0 0-1.414 0zm11.314 11.314a1 1 0 0 0 0 1.414l1.414 1.414a1 1 0 0 0 1.414-1.414l-1.414-1.414a1 1 0 0 0-1.414 0zm-11.314 0a1 1 0 0 0-1.414 1.414l1.414 1.414a1 1 0 0 0 1.414-1.414l-1.414-1.414a1 1 0 0 0 0-1.414z"/></svg>
+      </button>
+      <a href="../arena.html?v=4.0.0" class="nav-btn arena-btn">MCQ Arena</a>
+      <button class="mob-nav-toggle" onclick="openMobNav()" aria-label="Open menu">
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mob-nav-overlay" id="mobNavOverlay" onclick="closeMobNav()"></div>
+  <div class="mob-nav-sheet" id="mobNavSheet">
+    <div class="mob-nav-handle"></div>
+    <a href="../index.html" onclick="closeMobNav()">Home</a>
+    <a href="../notes.html" onclick="closeMobNav()">Notes</a>
+    <a href="../notes/operative_approach.html" onclick="closeMobNav()">Playbook</a>
+    <a href="../podcast.html" onclick="closeMobNav()">Podcast</a>
+    <a href="../surgery-talk.html" class="active" onclick="closeMobNav()">Surgery Talk</a>
+    <a href="../arena.html?v=4.0.0" onclick="closeMobNav()">MCQ Arena</a>
+    <a href="../about.html" onclick="closeMobNav()">About</a>
+    <a href="https://t.me/sugicalInsightHub" target="_blank" rel="noopener" onclick="closeMobNav()" style="color: var(--brand-gold); font-weight: 800;">Join Telegram Community</a>
+    <a href="https://www.linkedin.com/company/surgical-insight-hub" target="_blank" rel="noopener" onclick="closeMobNav()" style="color: var(--brand-gold); font-weight: 800;">LinkedIn Community</a>
+  </div>
+
+  <article>
+    <header class="blog-hero">
+      <h1 class="blog-title">Abdominal Sepsis &amp; Peritonitis: Source Control, STOP-IT, and the New Rules of Surgical Infection Management</h1>
+      <div class="blog-meta" style="margin-top: 1rem; flex-wrap: wrap;">
+        <span class="blog-badge" style="background: rgba(37, 99, 235, 0.1); color: #2563eb;">Evidence Review</span>
+        <span class="blog-badge" style="background: rgba(163, 21, 21, 0.1); color: #a31515;">Emergency Surgery</span>
+        <span class="blog-badge" style="background: rgba(184, 146, 42, 0.12); color: #b8922a;">Surgical Critical Care</span>
+        <span class="blog-date">November 2026</span>
+      </div>
+      <p class="blog-subtitle"><strong>The surgical principle is simple: antibiotics treat infection, but they cannot repair a perforated bowel or drain an undrained abscess.</strong></p>
+    </header>
+
+    <div class="blog-container">
+      <main class="blog-main blog-content">
+
+        <!-- Official SIH Infographic Poster -->
+        <div class="poster-card">
+          <div class="poster-header">
+            <span class="poster-label">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              Official Clinical Poster — Surgical Insights Hub
+            </span>
+            <div class="poster-actions">
+              <button type="button" class="poster-btn" id="openPosterModalBtn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+                Expand Poster
+              </button>
+              <a href="../assets/images/blog/abdominal-sepsis-peritonitis-poster.jpg" download="Management-of-Abdominal-Sepsis-and-Peritonitis-SIH-Poster.jpg" class="poster-btn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Download Poster
+              </a>
+            </div>
+          </div>
+          <div class="poster-frame" id="posterTrigger" role="button" tabindex="0" aria-label="Click to view full-resolution Management of Abdominal Sepsis and Peritonitis poster">
+            <img src="../assets/images/blog/abdominal-sepsis-peritonitis-poster.jpg" alt="Management of Abdominal Sepsis &amp; Peritonitis infographic poster covering definitions, causes, pathophysiology, SSC 2026 resuscitation, antimicrobial therapy, operative source-control options, and STOP-IT/DURAPOP/SIS/IDSA updates">
+          </div>
+          <p class="poster-caption"><strong>Figure 1. Management of Abdominal Sepsis &amp; Peritonitis (Surgical Insights Hub).</strong> Click the poster to inspect high-resolution diagrams, resuscitation bundles, and operative source-control pathways.</p>
+        </div>
+
+        <p>The management of complicated intra-abdominal infection has evolved. Modern evidence challenges prolonged antibiotic courses, emphasizes timely source control, and calls for more individualized hemodynamic resuscitation.</p>
+
+        <p>For the operating surgeon, the important question is no longer simply <em>which antibiotic should we prescribe?</em></p>
+
+        <div class="clinical-pearl">
+          <strong>The Core Surgical Question</strong>
+          Have we adequately controlled the source of infection—and how do we know?
+        </div>
+
+        <hr>
+
+        <!-- SECTION 01 -->
+        <span class="sec-kicker">Section 01</span>
+        <h2 class="numbered-h2">Understanding Abdominal Sepsis</h2>
+
+        <p>Secondary peritonitis results from contamination of the peritoneal cavity, commonly following gastrointestinal perforation, appendiceal rupture, anastomotic leakage, or bowel ischemia with necrosis.</p>
+
+        <p>Infection may remain localized or progress to diffuse peritonitis and organ dysfunction.</p>
+
+        <p><strong>Sepsis is infection-associated, life-threatening organ dysfunction.</strong> Peritonitis alone does not automatically establish sepsis, and septic shock represents a more severe circulatory and metabolic disturbance.</p>
+
+        <p>The central pathophysiological sequence is:</p>
+
+        <div class="patho-chain">
+          <div class="patho-step">1. Intra-abdominal infection</div>
+          <div class="patho-arrow">↓</div>
+          <div class="patho-step">2. Inflammatory response</div>
+          <div class="patho-arrow">↓</div>
+          <div class="patho-step">3. Endothelial dysfunction and capillary leak</div>
+          <div class="patho-arrow">↓</div>
+          <div class="patho-step">4. Circulatory impairment</div>
+          <div class="patho-arrow">↓</div>
+          <div class="patho-step critical">5. Organ dysfunction (Sepsis → Septic shock)</div>
+        </div>
+
+        <p>Management must address both the systemic physiological disturbance and the intra-abdominal source.</p>
+
+        <hr>
+
+        <!-- SECTION 02 -->
+        <span class="sec-kicker">Section 02</span>
+        <h2 class="numbered-h2">SSC 2026: What Matters to the Surgeon?</h2>
+
+        <p>The 2026 Surviving Sepsis Campaign reinforces early treatment, with important distinctions according to clinical severity.</p>
+
+        <div class="ssc-grid">
+          <div class="ssc-card resus">
+            <h3>
+              Initial Resuscitation
+              <span class="ssc-tag">Hemodynamics</span>
+            </h3>
+            <ul>
+              <li>Start resuscitation immediately in patients with septic shock.</li>
+              <li>For sepsis-induced hypoperfusion or septic shock, the guideline suggests at least <strong>30 mL/kg of IV crystalloid</strong> during the first three hours, with frequent reassessment to avoid under- or over-resuscitation.</li>
+              <li><strong>Balanced crystalloids</strong> are generally preferred over normal saline.</li>
+              <li><strong>Norepinephrine</strong> remains the first-line vasopressor for septic shock, with an initial <strong>MAP target of approximately 65 mmHg</strong>.</li>
+              <li>Use repeated clinical perfusion assessment, dynamic fluid responsiveness, and serial lactate measurements when indicated.</li>
+            </ul>
+          </div>
+
+          <div class="ssc-card abx">
+            <h3>
+              Antimicrobial Timing
+              <span class="ssc-tag">1h vs 3h Window</span>
+            </h3>
+            <ul>
+              <li>For <strong>septic shock or probable/definite sepsis</strong>, administer appropriate antimicrobials immediately, ideally <strong>within one hour</strong>.</li>
+              <li><strong>Possible sepsis without shock</strong> allows a short, structured diagnostic assessment; when concern persists, antibiotics should generally begin <strong>within three hours</strong>.</li>
+            </ul>
+          </div>
+
+          <div class="ssc-card source">
+            <h3>
+              Source Control
+              <span class="ssc-tag">≤ 6 Hours Target</span>
+            </h3>
+            <ul>
+              <li>When an anatomical source requires intervention, SSC 2026 suggests source control ideally <strong>within six hours</strong> of diagnosing sepsis or septic shock requiring source control.</li>
+              <li>This six-hour target is a conditional recommendation supported by very-low-certainty evidence, not a rigid rule that overrides immediate intervention in a deteriorating patient.</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3>The Clinical Implication</h3>
+        <div class="key-statement">
+          <strong class="ks-title">Parallel Execution Rule</strong>
+          Resuscitation, antimicrobial treatment, imaging, and operative preparation should occur in parallel—not as sequential steps that unnecessarily delay definitive treatment.
+        </div>
+
+        <hr>
+
+        <!-- SECTION 03 -->
+        <span class="sec-kicker">Section 03</span>
+        <h2 class="numbered-h2">Source Control: The Operation That Changes the Outcome</h2>
+
+        <p>Source control may require:</p>
+        <ul>
+          <li>Image-guided or operative drainage of infected collections.</li>
+          <li>Closure or repair of gastrointestinal perforation.</li>
+          <li>Resection of ischemic or necrotic bowel.</li>
+          <li>Removal of an infected focus.</li>
+          <li>Intestinal diversion when an anastomosis would be unsafe.</li>
+          <li>Damage-control surgery with temporary abdominal closure in selected physiologically exhausted patients.</li>
+        </ul>
+
+        <p>The operative strategy depends on disease location, contamination, tissue viability, hemodynamic stability, and the patient's ability to tolerate reconstruction.</p>
+
+        <p>A stable patient with viable bowel may undergo definitive resection and anastomosis. A severely unstable patient with diffuse contamination may require abbreviated surgery and delayed reconstruction.</p>
+
+        <div class="clinical-pearl">
+          <strong>Operative Objective</strong>
+          The objective is effective source control with the least physiological burden compatible with safe treatment.
+        </div>
+
+        <hr>
+
+        <!-- SECTION 04 -->
+        <span class="sec-kicker">Section 04</span>
+        <h2 class="numbered-h2">STOP-IT: The Trial That Challenged Prolonged Antibiotics</h2>
+
+        <p>The landmark <strong>STOP-IT trial</strong>, published in the <em>New England Journal of Medicine</em> in 2015, randomized <strong>518 patients</strong> with complicated intra-abdominal infection after adequate source control.</p>
+
+        <p>Two strategies were compared:</p>
+        <ul>
+          <li><strong>Short course:</strong> Approximately four days of antibiotics.</li>
+          <li><strong>Conventional course:</strong> Approximately eight days, guided by resolution of physiological abnormalities.</li>
+        </ul>
+
+        <div class="trial-metrics">
+          <div class="metric-box">
+            <div class="metric-val" style="color: #10b981;">21.8%</div>
+            <div class="metric-lbl">Short Course (~4 Days)<br>Primary Composite Outcome</div>
+          </div>
+          <div class="metric-box">
+            <div class="metric-val" style="color: #2563eb;">22.3%</div>
+            <div class="metric-lbl">Conventional (~8 Days)<br>Primary Composite Outcome</div>
+          </div>
+          <div class="metric-box">
+            <div class="metric-val">P = 0.92</div>
+            <div class="metric-lbl">No Statistically Significant<br>Difference (n = 518)</div>
+          </div>
+        </div>
+
+        <p>The primary composite outcome—surgical-site infection, recurrent intra-abdominal infection, or death—occurred in <strong>21.8% versus 22.3%, respectively (P = 0.92)</strong>. There was no statistically significant difference.</p>
+
+        <h3>What Did STOP-IT Establish?</h3>
+        <p>In the studied population, continuing antibiotics until fever, leukocytosis, and ileus resolved did not improve the measured outcomes compared with a fixed short course.</p>
+
+        <p>However, the trial does not establish that four days is sufficient for every patient, particularly when source control is inadequate or important populations are underrepresented.</p>
+
+        <div class="clinical-pearl">
+          <strong>STOP-IT Caveat</strong>
+          STOP-IT supports shorter antimicrobial treatment after successful source control—not shorter treatment of an uncontrolled septic focus.
+        </div>
+
+        <hr>
+
+        <!-- SECTION 05 -->
+        <span class="sec-kicker">Section 05</span>
+        <h2 class="numbered-h2">DURAPOP: Does the Principle Apply to Critically Ill Patients?</h2>
+
+        <p>The <strong>DURAPOP</strong> randomized trial, published in 2018, examined postoperative intra-abdominal infection in critically ill ICU patients. It compared <strong>eight versus fifteen days</strong> of antimicrobial treatment.</p>
+
+        <p>The eight-day group had more antibiotic-free days, without a statistically significant increase in mortality or recurrence.</p>
+
+        <div class="blog-table-container">
+          <table class="blog-table">
+            <thead>
+              <tr>
+                <th>Landmark Trial</th>
+                <th>Patient Population</th>
+                <th>Duration Arms</th>
+                <th>Key Finding</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>STOP-IT</strong><br><span style="font-size:0.78rem; color:var(--text-muted);">NEJM, 2015 (n = 518)</span></td>
+                <td>Complicated intra-abdominal infection after adequate source control</td>
+                <td>~4 days (fixed) vs. ~8 days (until symptom resolution)</td>
+                <td>Composite outcome equivalent (21.8% vs 22.3%, P = 0.92).</td>
+              </tr>
+              <tr>
+                <td><strong>DURAPOP</strong><br><span style="font-size:0.78rem; color:var(--text-muted);">Intensive Care Med, 2018</span></td>
+                <td>Critically ill ICU patients with postoperative intra-abdominal infection</td>
+                <td>8 days vs. 15 days</td>
+                <td>More antibiotic-free days with 8 days; no significant increase in mortality or recurrence.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>The distinction matters: STOP-IT primarily established the feasibility of approximately four days after adequate source control in a broader complicated-infection population, whereas DURAPOP examined a different, more critically ill postoperative population and compared longer courses.</p>
+
+        <div class="key-statement">
+          <strong class="ks-title">Stewardship Precision</strong>
+          The studies support antimicrobial stewardship, but they should not be treated as interchangeable protocols for every surgical patient.
+        </div>
+
+        <hr>
+
+        <!-- SECTION 06 -->
+        <span class="sec-kicker">Section 06</span>
+        <h2 class="numbered-h2">SIS 2024 and Other Guideline Developments</h2>
+
+        <p>The <strong>Surgical Infection Society's 2024 update</strong> recommends no more than four days of antimicrobials after adequate source control for complicated intra-abdominal infection. This is consistent with the direction established by STOP-IT and subsequent evidence.</p>
+
+        <p>The <strong>2023 EAST practice management guideline</strong> also supports shorter treatment after definitive source control, based on a systematic review and meta-analysis.</p>
+
+        <p>Meanwhile, <strong>IDSA's 2024 update</strong> focuses on risk assessment, imaging, and microbiological evaluation. It should not be mistaken for a comprehensive replacement of all antimicrobial-duration guidance.</p>
+
+        <div class="blog-table-container">
+          <table class="blog-table">
+            <thead>
+              <tr>
+                <th>Guideline Body</th>
+                <th>Primary Scope &amp; Recommendation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>SIS (2024 Update)</strong></td>
+                <td>Recommends <strong>&le; 4 days</strong> of antimicrobials after adequate source control for complicated intra-abdominal infection.</td>
+              </tr>
+              <tr>
+                <td><strong>EAST (2023)</strong></td>
+                <td>Supports shorter antimicrobial treatment after definitive source control based on systematic review and meta-analysis.</td>
+              </tr>
+              <tr>
+                <td><strong>IDSA (2024 Update)</strong></td>
+                <td>Focuses on risk stratification, diagnostic imaging, and microbiological evaluation (not a standalone replacement for duration guidance).</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>Together, these publications emphasize three priorities:</p>
+        <ol>
+          <li>Obtain adequate source control.</li>
+          <li>Select appropriate empirical therapy using patient-specific resistance risks and local microbiology.</li>
+          <li>De-escalate and stop antimicrobials when their continued use is no longer supported.</li>
+        </ol>
+
+        <hr>
+
+        <!-- SECTION 07 -->
+        <span class="sec-kicker">Section 07</span>
+        <h2 class="numbered-h2">Persistent Sepsis After Surgery: What Should the Surgeon Investigate?</h2>
+
+        <p>Persistent fever, leukocytosis, vasopressor requirements, or organ dysfunction should trigger a systematic reassessment. Potential causes include:</p>
+        <ul>
+          <li>Residual or inadequately drained abscess.</li>
+          <li>Anastomotic leak or ongoing gastrointestinal perforation.</li>
+          <li>Missed ischemic or necrotic bowel.</li>
+          <li>Persistent biliary or pancreatic leakage.</li>
+          <li>Resistant microorganisms or an alternative infectious source.</li>
+          <li>Noninfectious causes of postoperative deterioration.</li>
+        </ul>
+
+        <div class="escalation-grid">
+          <div class="esc-card stable">
+            <h4>Sufficiently Stable Patient</h4>
+            <p>Repeat contrast-enhanced CT may identify residual collections, anastomotic leakage, or an additional source requiring percutaneous or operative drainage.</p>
+          </div>
+          <div class="esc-card unstable">
+            <h4>Unstable Patient</h4>
+            <p>When strong evidence points to ongoing surgical contamination, operative re-exploration may be necessary without delaying for imaging.</p>
+          </div>
+        </div>
+
+        <div class="clinical-pearl">
+          <strong>Diagnostic Discipline</strong>
+          Persistent inflammation is a reason to reconsider the diagnosis and the adequacy of source control—not an automatic indication for extending antibiotics.
+        </div>
+
+        <hr>
+
+        <!-- SECTION 08 -->
+        <span class="sec-kicker">Section 08</span>
+        <h2 class="numbered-h2">The Surgical Insight Hub Perspective</h2>
+
+        <p>Modern abdominal sepsis management is not simply about choosing broader antibiotics or performing a larger operation. It requires integrated judgment:</p>
+
+        <div class="judgment-flow">
+          Early recognition <span class="jf-arrow">→</span> Individualized resuscitation <span class="jf-arrow">→</span> Appropriate antimicrobials <span class="jf-arrow">→</span> Timely source control <span class="jf-arrow">→</span> Reassessment <span class="jf-arrow">→</span> Antimicrobial stewardship
+        </div>
+
+        <p>For surgeons working in resource-limited hospitals, the principles remain relevant. Limited access to CT, interventional radiology, ICU beds, or advanced laboratory tests makes serial clinical examination, timely referral, careful operative planning, and recognition of deterioration particularly important.</p>
+
+        <p>The safest approach is not always the most extensive operation. It is the intervention that achieves sufficient source control while respecting the patient's physiology.</p>
+
+        <div class="clinical-pearl" style="background: rgba(184, 146, 42, 0.06); border-left-color: #b8922a;">
+          <strong style="color: #b8922a;">Final Surgical Pearl</strong>
+          Antibiotics cannot substitute for source control. And once source control is adequate, prolonged antibiotics are not automatically better treatment.
+        </div>
+
+        <hr>
+
+        <h2>📚 References</h2>
+        <ol class="ref-list">
+          <li class="ref-item">
+            <span class="ref-num">1.</span>
+            Surviving Sepsis Campaign. <em>International Guidelines for Management of Sepsis and Septic Shock.</em> Critical Care Medicine. 2026.
+            <a href="https://doi.org/10.1097/CCM.0000000000007075" target="_blank" rel="noopener">https://doi.org/10.1097/CCM.0000000000007075</a>
+          </li>
+          <li class="ref-item">
+            <span class="ref-num">2.</span>
+            Sawyer RG, et al. <em>Trial of Short-Course Antimicrobial Therapy for Intraabdominal Infection.</em> New England Journal of Medicine. 2015;372:1996–2005.
+            <a href="https://doi.org/10.1056/NEJMoa1411162" target="_blank" rel="noopener">https://doi.org/10.1056/NEJMoa1411162</a>
+          </li>
+          <li class="ref-item">
+            <span class="ref-num">3.</span>
+            Montravers P, et al. <em>Short-course antibiotic therapy for critically ill patients treated for postoperative intra-abdominal infection: the DURAPOP randomised clinical trial.</em> Intensive Care Medicine. 2018.
+            <a href="https://pubmed.ncbi.nlm.nih.gov/29484469/" target="_blank" rel="noopener">https://pubmed.ncbi.nlm.nih.gov/29484469/</a>
+          </li>
+          <li class="ref-item">
+            <span class="ref-num">4.</span>
+            Surgical Infection Society. <em>Guidelines on the Management of Intra-Abdominal Infection: 2024 Update.</em> Surgical Infections. 2024.
+            <a href="https://pubmed.ncbi.nlm.nih.gov/38990709/" target="_blank" rel="noopener">https://pubmed.ncbi.nlm.nih.gov/38990709/</a>
+          </li>
+          <li class="ref-item">
+            <span class="ref-num">5.</span>
+            EAST. <em>Duration of Antimicrobial Treatment for Complicated Intra-Abdominal Infections After Definitive Source Control.</em> 2023.
+            <a href="https://pubmed.ncbi.nlm.nih.gov/37316989/" target="_blank" rel="noopener">https://pubmed.ncbi.nlm.nih.gov/37316989/</a>
+          </li>
+          <li class="ref-item">
+            <span class="ref-num">6.</span>
+            IDSA. <em>Clinical Practice Guideline Update on Complicated Intra-Abdominal Infections: Risk Assessment, Diagnostic Imaging, and Microbiological Evaluation.</em> 2024.
+            <a href="https://www.idsociety.org/practice-guideline/intra-abdominal-infections/" target="_blank" rel="noopener">https://www.idsociety.org/practice-guideline/intra-abdominal-infections/</a>
+          </li>
+        </ol>
+
+        <div class="sih-brand-footer-note">
+          <div style="font-weight:900; font-size:0.95rem; letter-spacing:0.06em; color:#a31515; margin-bottom:4px;">SURGICAL INSIGHTS HUB</div>
+          <div style="font-style:italic; font-size:0.88rem; color:var(--text-primary); font-weight:600; margin-bottom:6px;">Dissect. Learn. Dominate. · surgicalinsighthub.app</div>
+          <div style="font-size:0.78rem; color:var(--text-muted);">Educational content for healthcare professionals. Clinical decisions must be individualized to the patient and available expertise.</div>
+        </div>
+
+      </main>
+
+      <!-- Sidebar -->
+      <aside class="blog-sidebar">
+        <div class="sidebar-card" style="border-top: 4px solid #a31515; text-align: left;">
+          <h3>⏱️ Surgical Sepsis Targets</h3>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 15px;">High-yield time windows and targets from SSC 2026 &amp; SIS 2024:</p>
+          <div style="font-family:'Inter',sans-serif; font-size:0.8rem; display:flex; flex-direction:column; gap:10px;">
+            <div style="background:var(--bg-secondary); padding:10px; border-radius:6px; border:1px solid var(--border-color);">
+              <strong style="color: #dc2626; display:block; margin-bottom:2px;">Antimicrobials: &le; 1 Hour</strong>
+              Immediate broad-spectrum therapy for septic shock or probable/definite sepsis (&le; 3h if possible sepsis without shock).
+            </div>
+            <div style="background:var(--bg-secondary); padding:10px; border-radius:6px; border:1px solid var(--border-color);">
+              <strong style="color: #2563eb; display:block; margin-bottom:2px;">Resuscitation: &ge; 30 mL/kg</strong>
+              Balanced crystalloids preferred within 3h; Norepinephrine for MAP &ge; 65 mmHg.
+            </div>
+            <div style="background:var(--bg-secondary); padding:10px; border-radius:6px; border:1px solid var(--border-color);">
+              <strong style="color: #10b981; display:block; margin-bottom:2px;">Source Control: &le; 6 Hours</strong>
+              Conditional SSC 2026 target; intervene earlier if deteriorating.
+            </div>
+            <div style="background:var(--bg-secondary); padding:10px; border-radius:6px; border:1px solid var(--border-color);">
+              <strong style="color: #b8922a; display:block; margin-bottom:2px;">Duration: &le; 4 Days</strong>
+              STOP-IT &amp; SIS 2024 standard after adequate source control.
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar-card">
+          <h3>📖 Related Emergency Guides</h3>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 20px;">Explore more acute care and perioperative surgery reviews:</p>
+          <div class="sidebar-book-list" style="gap: 15px; text-align: left;">
+            <a href="fourniers-gangrene.html" class="sb-book" style="border: 1px solid var(--border-color); padding: 12px; border-radius: 8px; background: var(--bg-secondary);">
+              <strong style="font-family:'Inter',sans-serif; font-size:0.85rem; color: var(--text-primary); display: block; margin-bottom: 4px;">Fournier's Gangrene</strong>
+              <span style="font-size: 0.75rem; color: var(--text-secondary); line-height: 1.3;">FGSI scoring, fascial spread, and emergency surgical debridement.</span>
+            </a>
+
+            <a href="post-cholecystectomy-bile-leak.html" class="sb-book" style="border: 1px solid var(--border-color); padding: 12px; border-radius: 8px; background: var(--bg-secondary);">
+              <strong style="font-family:'Inter',sans-serif; font-size:0.85rem; color: var(--text-primary); display: block; margin-bottom: 4px;">Post-Cholecystectomy Bile Leak</strong>
+              <span style="font-size: 0.75rem; color: var(--text-secondary); line-height: 1.3;">Diagnostic escalation, biloma drainage, and SAGES-AHPBA repair timing.</span>
+            </a>
+
+            <a href="routine-pelvic-drains-colorectal-resections.html" class="sb-book" style="border: 1px solid var(--border-color); padding: 12px; border-radius: 8px; background: var(--bg-secondary);">
+              <strong style="font-family:'Inter',sans-serif; font-size:0.85rem; color: var(--text-primary); display: block; margin-bottom: 4px;">Routine Pelvic Drains</strong>
+              <span style="font-size: 0.75rem; color: var(--text-secondary); line-height: 1.3;">GRECCAR 5 evidence and why CRP outperforms drains for detecting leaks.</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="sidebar-card" style="border-left: 4px solid var(--brand-gold);">
+          <h3>📢 Join Surgical Insight Hub</h3>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 20px;">Get real-time emergency clinical pearls, posters, trial updates, and high-yield MCQs direct to your phone.</p>
+          <a href="https://t.me/sugicalInsightHub" target="_blank" rel="noopener" class="download-tg" style="width: 100%; justify-content: center; margin-top: 10px;">
+            <svg viewBox="0 0 24 24" style="width:18px; height:18px; fill:currentColor; margin-right:6px;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.91-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+            Join Telegram Channel
+          </a>
+        </div>
+      </aside>
+    </div>
+  </article>
+
+  <!-- Full-Resolution Poster Lightbox -->
+  <div class="poster-lightbox" id="posterLightbox" aria-hidden="true" role="dialog" aria-label="Full-resolution poster viewer">
+    <div class="poster-lightbox-inner">
+      <button type="button" class="poster-lightbox-close" id="closePosterModalBtn" aria-label="Close poster view">&times;</button>
+      <img src="../assets/images/blog/abdominal-sepsis-peritonitis-poster.jpg" alt="Full-resolution Management of Abdominal Sepsis &amp; Peritonitis poster">
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="nav-logo-img" style="width:36px; height:36px; margin-bottom:.8rem;">
+          <img src="../assets/images/Surgical_Insight_Hub_Logo.png" alt="SIH">
+        </div>
+        <div style="font-weight:800; font-size:1.1rem; color:var(--text-primary);">Surgical Insight Hub</div>
+        <p style="font-size:.85rem; color:var(--text-secondary); margin-top:.5rem; line-height:1.5;">Elevating surgical education through evidence-based monographs, interactive arenas, and dynamic clinical discussions.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Platform</h4>
+        <a href="../notes.html">Clinical Notes</a>
+        <a href="../notes/operative_approach.html">Operative Playbook</a>
+        <a href="../arena.html?v=4.0.0">MCQ Arena</a>
+        <a href="../surgery-talk.html">Surgery Talk</a>
+      </div>
+      <div class="footer-links">
+        <h4>Connect</h4>
+        <a href="https://t.me/sugicalInsightHub" target="_blank" rel="noopener">Telegram Channel</a>
+        <a href="https://www.youtube.com/@SurgicalInsightHub" target="_blank" rel="noopener">YouTube Library</a>
+        <a href="../about.html">About Us</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; <span id="year"></span> Surgical Insight Hub. All rights reserved. Not medical advice.
+    </div>
+  </footer>
+
+  <script src="../js/navigation.js"></script>
+  <script src="../js/nav-pill.js"></script>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const toggle = document.getElementById('themeToggle');
+    const root = document.documentElement;
+    const moon = document.getElementById('moonIcon');
+    const sun = document.getElementById('sunIcon');
+
+    function updateIcons(theme) {
+      if (theme === 'dark') {
+        moon.style.display = 'none';
+        sun.style.display = 'block';
+      } else {
+        moon.style.display = 'block';
+        sun.style.display = 'none';
+      }
+    }
+    updateIcons(savedTheme);
+
+    toggle.addEventListener('click', () => {
+      const current = root.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      localStorage.setItem('sih-theme', next);
+      updateIcons(next);
+    });
+
+    function openMobNav() {
+      document.getElementById('mobNavOverlay').classList.add('active');
+      document.getElementById('mobNavSheet').classList.add('active');
+    }
+    function closeMobNav() {
+      document.getElementById('mobNavOverlay').classList.remove('active');
+      document.getElementById('mobNavSheet').classList.remove('active');
+    }
+    let startY = 0;
+    const sheet = document.getElementById('mobNavSheet');
+    sheet.addEventListener('touchstart', e => {
+      startY = e.touches[0].clientY;
+    });
+    sheet.addEventListener('touchmove', e => {
+      const y = e.touches[0].clientY;
+      if (y > startY + 50) closeMobNav();
+    });
+
+    // Poster Lightbox controls
+    const lightbox = document.getElementById('posterLightbox');
+    const posterTrigger = document.getElementById('posterTrigger');
+    const openPosterBtn = document.getElementById('openPosterModalBtn');
+    const closePosterBtn = document.getElementById('closePosterModalBtn');
+
+    function openPosterModal() {
+      lightbox.classList.add('open');
+      lightbox.setAttribute('aria-hidden', 'false');
+    }
+    function closePosterModal() {
+      lightbox.classList.remove('open');
+      lightbox.setAttribute('aria-hidden', 'true');
+    }
+
+    posterTrigger.addEventListener('click', openPosterModal);
+    posterTrigger.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openPosterModal();
+      }
+    });
+    openPosterBtn.addEventListener('click', openPosterModal);
+    closePosterBtn.addEventListener('click', closePosterModal);
+    lightbox.addEventListener('click', e => {
+      if (e.target === lightbox) closePosterModal();
+    });
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && lightbox.classList.contains('open')) {
+        closePosterModal();
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Surgical Insight Hub — Goiter & Thyroid Nodule Pathology & Management</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,300;1,8..60,400;1,8..60,600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/theme.css?v=4.0.0">
+<link rel="stylesheet" href="../../css/shared.css">
+<script>
+  const savedTheme = localStorage.getItem('sih-theme') || 'light';
+  if (savedTheme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+</script>
+<style>
+:root {
+  --primary:   #4C1D95; 
+  --primary-dk:#2E1065;
+  --primary-lt:#F5F3FF;
+  --accent:    #7C3AED;
+  --accent2:   #E11D48;
+  --gold:      #D97706;
+  --gold-lt:   #FEF3C7;
+  --s1:        #4C1D95;
+  --s2:        #5B21B6;
+  --s3:        #6D28D9;
+  --s4:        #7C3AED;
+  --s5:        #2E1065;
+  --s1-lt:     #F5F3FF;
+  --s2-lt:     #EDE9FE;
+  --s3-lt:     #F5F3FF;
+  --s4-lt:     #EDE9FE;
+  --s5-lt:     #F5F3FF;
+  --red:       #E11D48;
+  --red-lt:    #FFF1F2;
+  --bg:        #FAFAFA;
+  --bg2:       #F4F4F5;
+  --border:    #E5E7EB;
+  --text:      #0F172A;
+  --muted:     #64748B;
+  --white:     #FFFFFF;
+  --sidebar-w: 320px;
+}
+[data-theme="dark"] {
+  --bg: #0A0702;
+  --bg2: #140E05;
+  --text: #F3F4F6;
+  --muted: #A3A3A3;
+  --border: rgba(255,255,255,0.08);
+  --primary-lt: #2E1065;
+  --s1-lt: #2E1065;
+  --s2-lt: #2E1065;
+  --s3-lt: #2E1065;
+  --s4-lt: #2E1065;
+  --s5-lt: #2E1065;
+  --white: #140E05;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--bg);color:var(--text);font-size:16.5px;line-height:1.8;}
+
+#sidebar {
+  position: fixed; top: 0; left: 0; width: var(--sidebar-w); height: 100vh;
+  background: var(--primary-dk); color: #F5F3FF;
+  display: flex; flex-direction: column;
+  z-index: 1000; overflow: hidden;
+  transform: translateX(-100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 4px 0 24px rgba(0,0,0,0.4);
+}
+body.sidebar-open #sidebar { transform: translateX(0); }
+
+#sidebar-overlay {
+  position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+  background: rgba(46, 16, 101, 0.7); backdrop-filter: blur(3px);
+  z-index: 950; opacity: 0; pointer-events: none; transition: opacity 0.3s ease;
+}
+body.sidebar-open #sidebar-overlay { opacity: 1; pointer-events: auto; }
+
+#sidebar-toggle {
+  position: fixed; top: 72px; left: 24px; z-index: 900;
+  background: var(--primary); color: white;
+  border: none; border-radius: 30px;
+  padding: 10px 18px; font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600;
+  letter-spacing: 0.05em; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  display: flex; align-items: center; gap: 8px; transition: all 0.2s;
+}
+#sidebar-toggle:hover { background: var(--accent2); transform: translateY(-2px); }
+
+#sidebar-header{padding:20px 20px 14px;border-bottom:1px solid rgba(255,255,255,0.08);flex-shrink:0;}
+#sidebar-header .logo{font-family:'Playfair Display',serif;font-size:13px;font-weight:700;color:var(--accent2);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;}
+#sidebar-header .sub{font-size:10.5px;color:rgba(245,243,255,0.6);letter-spacing:0.04em;}
+#sidebar-search{padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.05);flex-shrink:0;}
+#sidebar-search input{width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:6px;color:#F5F3FF;padding:6px 10px;font-size:12px;font-family:'Source Serif 4',serif;outline:none;transition:border-color 0.2s;}
+#sidebar-search input::placeholder{color:rgba(245,243,255,0.4);}
+#sidebar-search input:focus{border-color:var(--accent2);}
+#sidebar-nav{flex:1;overflow-y:auto;padding:8px 0 20px;}
+#sidebar-nav::-webkit-scrollbar{width:4px;}
+#sidebar-nav::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.15);border-radius:2px;}
+.vol-label{font-size:9.5px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent2);padding:14px 18px 4px;}
+.nav-item{display:block;padding:8px 18px 8px 22px;font-size:12.5px;color:rgba(245,243,255,0.8);text-decoration:none;border-left:2px solid transparent;transition:all 0.15s;line-height:1.4;}
+.nav-item:hover{color:#fff;background:rgba(255,255,255,0.03);border-left-color:rgba(225,29,72,0.5);}
+.nav-item.active{color:#fff;background:rgba(255,255,255,0.06);border-left-color:var(--accent2);font-weight:600;}
+.nav-item .num{font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(245,243,255,0.4);margin-right:6px;}
+
+#main{margin-left:0; min-height:100vh;}
+#hero{background:linear-gradient(135deg,var(--primary-dk) 0%,#4C1D95 60%,#2E1065 100%);color:white;padding:120px 72px 60px;position:relative;overflow:hidden;}
+#hero::before{content:'';position:absolute;top:-60px;right:-60px;width:380px;height:380px;background:radial-gradient(circle,rgba(225,29,72,0.15) 0%,transparent 70%);pointer-events:none;}
+#hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent2),var(--gold),transparent);}
+#hero .eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.16em;color:var(--accent2);text-transform:uppercase;margin-bottom:14px;}
+#hero h1{font-family:'Playfair Display',serif;font-size:42px;font-weight:700;line-height:1.15;margin-bottom:10px;color:#fff;}
+#hero .subtitle{font-size:18px;color:rgba(255,255,255,0.8);font-style:italic;margin-bottom:28px;}
+#hero .badges{display:flex;gap:10px;flex-wrap:wrap;}
+#hero .badge{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:4px 14px;font-size:12px;color:rgba(255,255,255,0.95);font-family:'JetBrains Mono',monospace;}
+
+.content-wrap{max-width:1140px;margin:0 auto;padding:0 48px 80px;}
+
+.sec-header{margin-top:60px;margin-bottom:12px;padding:26px 34px;border-radius:12px;display:flex;align-items:center;gap:20px;box-shadow:0 4px 16px rgba(0,0,0,0.03);}
+.sec-header.s1{background:linear-gradient(135deg,#4C1D950C,#4C1D951C);border-left:5px solid var(--s1);}
+.sec-header.s2{background:linear-gradient(135deg,#5B21B60C,#5B21B61C);border-left:5px solid var(--s2);}
+.sec-header.s3{background:linear-gradient(135deg,#6D28D90C,#6D28D91C);border-left:5px solid var(--s3);}
+.sec-header.s4{background:linear-gradient(135deg,#7C3AED0C,#7C3AED1C);border-left:5px solid var(--s4);}
+.sec-header.s5{background:linear-gradient(135deg,#2E10650C,#2E10651C);border-left:5px solid var(--s5);}
+.sec-badge{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.12em;padding:5px 14px;border-radius:6px;white-space:nowrap;flex-shrink:0;}
+.s1 .sec-badge{background:var(--s1);color:white;}
+.s2 .sec-badge{background:var(--s2);color:white;}
+.s3 .sec-badge{background:var(--s3);color:white;}
+.s4 .sec-badge{background:var(--s4);color:white;}
+.s5 .sec-badge{background:var(--s5);color:white;}
+.sec-title{font-family:'Playfair Display',serif;font-size:23px;font-weight:700;}
+.s1 .sec-title{color:var(--s1);}
+.s2 .sec-title{color:var(--s2);}
+.s3 .sec-title{color:var(--s3);}
+.s4 .sec-title{color:var(--s4);}
+.s5 .sec-title{color:var(--s5);}
+
+.topic{margin-top:48px;padding-top:48px;border-top:1px solid var(--border);}
+.topic:first-of-type{border-top:none;}
+.topic-header{display:flex;align-items:flex-start;gap:16px;margin-bottom:24px;}
+.topic-num{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;padding:4px 12px;border-radius:6px;margin-top:4px;flex-shrink:0;}
+.s1 .topic-num{background:var(--s1-lt);color:var(--s1);}
+.s2 .topic-num{background:var(--s2-lt);color:var(--s2);}
+.s3 .topic-num{background:var(--s3-lt);color:var(--s3);}
+.s4 .topic-num{background:var(--s4-lt);color:var(--s4);}
+.s5 .topic-num{background:var(--s5-lt);color:var(--s5);}
+
+.topic h2{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;line-height:1.2;}
+.s1 .topic h2{color:var(--s1);}
+.s2 .topic h2{color:var(--s2);}
+.s3 .topic h2{color:var(--s3);}
+.s4 .topic h2{color:var(--s4);}
+.s5 .topic h2{color:var(--s5);}
+
+.topic h3{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--primary);margin:32px 0 12px;padding-bottom:6px;border-bottom:2px solid var(--border);}
+.topic h4{font-size:14px;font-weight:700;color:var(--muted);letter-spacing:0.08em;text-transform:uppercase;margin:24px 0 10px;font-family:'JetBrains Mono',monospace;}
+.topic p{margin-bottom:18px; line-height:1.8; font-size:16.5px; color:var(--text);}
+.topic ul, .topic ol{margin:10px 0 20px 24px;color:var(--text);}
+.topic li{margin-bottom:10px;line-height:1.7;}
+.topic li::marker{color:var(--accent2);font-weight:bold;}
+.topic strong{color:var(--text);font-weight:700;}
+.topic em{font-style:italic;color:var(--text);}
+.topic code{font-family:'JetBrains Mono',monospace;font-size:13.5px;background:var(--bg2);padding:2px 6px;border-radius:4px;border:1px solid var(--border);color:var(--primary);}
+
+.outline-box{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:24px 28px;margin:24px 0 36px;box-shadow:0 2px 8px rgba(0,0,0,0.03);}
+.outline-box h3{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--primary);margin-bottom:16px;border-bottom:2px solid var(--primary-lt);padding-bottom:8px;}
+.outline-list{list-style:none;margin:0;padding:0;}
+.outline-list li{margin-bottom:12px;line-height:1.6;font-size:15px;}
+.outline-list li strong{color:var(--accent2);font-family:'JetBrains Mono',monospace;font-size:13px;display:block;margin-bottom:2px;}
+
+.table-wrap{overflow-x:auto;margin:24px 0 28px;border-radius:10px;box-shadow:0 2px 10px rgba(0,0,0,0.05);border:1px solid var(--border);}
+table{width:100%;border-collapse:collapse;font-size:14px;background:var(--white);}
+thead tr{background:var(--s1);}
+thead th{color:white;padding:12px 16px;text-align:left;font-family:'Source Serif 4',serif;font-weight:700;font-size:14px;}
+tbody tr:nth-child(even){background:var(--bg2);}
+tbody tr:hover{background:var(--s1-lt);transition:background 0.15s;}
+tbody td{padding:11px 16px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.6;}
+
+.callout{margin:24px 0;padding:18px 22px;border-radius:0 10px 10px 0;border-left:5px solid;font-size:14.5px;line-height:1.7;box-shadow:0 2px 8px rgba(0,0,0,0.03);}
+.callout .label{font-family:'JetBrains Mono',monospace;font-size:10.5px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;display:block;margin-bottom:6px;}
+.callout.pearl{background:var(--gold-lt);border-color:var(--gold);color:var(--text);}
+.callout.pearl .label{color:var(--gold);}
+.callout.warn{background:var(--red-lt);border-color:var(--red);color:var(--text);}
+.callout.warn .label{color:var(--red);}
+
+@media(max-width:900px) {
+  .content-wrap { padding: 0 20px 60px; }
+  #hero { padding: 80px 20px 40px; }
+  #hero h1 { font-size: 30px; }
+  #sidebar-toggle { top: 64px; left: 16px; }
+}
+</style>
+<link rel="icon" type="image/png" href="../../assets/images/Surgical_Insight_Hub_Logo.png">
+</head>
+<body>
+
+<nav class="nav" id="mainNav">
+  <div class="nav-left">
+    <a href="../../index.html" class="nav-pill">
+      <div class="nav-logo-img">
+        <img src="../../assets/images/Surgical_Insight_Hub_Logo.png" alt="SIH Logo">
+      </div>
+      <div>
+        <div class="nav-brand-text">Surgical Insight Hub</div>
+        <div class="nav-brand-sub">The Residency Journal</div>
+      </div>
+    </a>
+  </div>
+  <div class="nav-links-pill">
+    <a href="../../index.html">Home</a>
+    <a href="../../notes.html" class="active">Notes</a>
+    <a href="../operative_approach.html">Playbook</a>
+    <a href="../../arena.html?v=4.0.0">MCQ Arena</a>
+    <a href="../../podcast.html">Podcast</a>
+    <a href="../../surgery-talk.html">Surgery Talk</a>
+    <a href="../../about.html">About</a>
+  </div>
+  <div class="nav-right">
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+      <svg id="moonIcon" viewBox="0 0 24 24" width="18" height="18"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      <svg id="sunIcon" style="display:none;" viewBox="0 0 24 24" width="18" height="18"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+    </button>
+    <a href="https://t.me/sugicalInsightHub" target="_blank" class="nav-tg-btn" title="Join Telegram">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="#f0d080"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.89 8.22l-1.97 9.28c-.15.66-.54.82-1.08.51l-3-2.21-1.45 1.39c-.16.16-.3.3-.61.3l.21-3.05 5.56-5.02c.24-.21-.05-.33-.37-.12l-6.87 4.33-2.96-.92c-.64-.2-.66-.64.14-.95l11.57-4.46c.54-.19 1.01.13.83.94z"/></svg>
+    </a>
+    <a href="../../arena.html?v=4.0.0" class="nav-btn arena-btn">MCQ Arena</a>
+  </div>
+</nav>
+
+<div class="mob-nav-overlay" id="mobNavOverlay" onclick="closeMobNav()"></div>
+<div class="mob-nav-sheet" id="mobNavSheet">
+  <div class="mob-nav-handle"></div>
+  <a href="../../index.html" onclick="closeMobNav()">Home</a>
+  <a href="../../notes.html" onclick="closeMobNav()">Notes</a>
+  <a href="../operative_approach.html" onclick="closeMobNav()">Playbook</a>
+  <a href="../../podcast.html" onclick="closeMobNav()">Podcast</a>
+  <a href="../../surgery-talk.html" onclick="closeMobNav()">Surgery Talk</a>
+  <a href="../../arena.html" onclick="closeMobNav()">MCQ Arena</a>
+  <a href="../../about.html" onclick="closeMobNav()">About</a>
+  <a href="https://t.me/sugicalInsightHub" target="_blank" rel="noopener" onclick="closeMobNav()" style="color: var(--brand-gold); font-weight: 800;">Join Telegram Community</a>
+</div>
+
+<button id="sidebar-toggle" onclick="toggleSidebar()">
+  Table of Contents
+</button>
+<div id="sidebar-overlay" onclick="closeSidebar()"></div>
+
+<aside id="sidebar">
+  <div id="sidebar-header">
+    <div class="logo">Surgical Insight Hub</div>
+    <div class="sub">Chronological Monograph</div>
+  </div>
+  <div id="sidebar-search">
+    <input type="text" placeholder="Search topics..." oninput="filterNav(this.value)">
+  </div>
+  <nav id="sidebar-nav">
+    <div class="vol-label">Chapter 5: Nontoxic Goiter & Airway Compression</div>
+<a class="nav-item" href="#topic-5-1"><span class="num">5.1</span>Retrosternal Mechanics & Operative Strategy for Substernal Goiters</a>
+<div class="vol-label">Chapter 6: Thyroid Nodule Evaluation & Cytopathology</div>
+<a class="nav-item" href="#topic-6-1"><span class="num">6.1</span>ACR TI-RADS & Bethesda Cytopathology Stratification</a>
+
+  </nav>
+</aside>
+
+<main id="main">
+<header id="hero">
+  <div class="eyebrow">Endocrine Surgery · Structured Chapter Outline Monograph</div>
+  <h1>Goiter & Thyroid Nodule Pathology & Management</h1>
+  <p class="subtitle">Comprehensive Chronological Monograph detailing substernal goiters, Pemberton sign, ACR TI-RADS ultrasound criteria, and Bethesda cytopathology.</p>
+  <div class="badges">
+    <span class="badge">Nontoxic Goiter</span><span class="badge">Pemberton Sign</span><span class="badge">TI-RADS 2024</span><span class="badge">Bethesda System</span><span class="badge">ABSITE Core</span>
+  </div>
+</header>
+
+<div class="content-wrap">
+  
+        <div class="sec-header s1" id="chapter-5" style="margin-top:50px;">
+          <span class="sec-badge">CHAPTER 5</span>
+          <h2 class="sec-title">Nontoxic Goiter & Airway Compression</h2>
+        </div>
+            <section class="topic s1-topic" id="topic-5-1">
+              <div class="topic-header">
+                <span class="topic-num">5.1</span>
+                <h2>Retrosternal Mechanics & Operative Strategy for Substernal Goiters</h2>
+              </div>
+              <div class="outline-box"><h3>Chapter Outline: Nontoxic Goiter & Airway Compression</h3><ul class="outline-list">
+<li><strong>Section 1. Introduction, Definition, and Etiology</strong>Epidemiology of endemic iodine deficiency vs sporadic multinodular goiter.</li>
+<li><strong>Section 2. Pathophysiology of Nodular Hyperplasia</strong>Trophic TSH stimulation and clonal heterogeneity driving autonomous nodule growth.</li>
+<li><strong>Section 3. Retrosternal and Substernal Extension Mechanics</strong>Anatomical descent into superior mediastinum guided by pretracheal fascia and negative intrathoracic pressure.</li>
+<li><strong>Section 4. Clinical Presentation & Compressive Symptoms</strong>Evaluation of progressive dyspnea, orthopnea, stridor, and dysphagia.</li>
+<li><strong>Section 5. Pemberton's Sign Mechanics & SVC Obstruction</strong>Physical maneuver demonstrating thoracic inlet crowding and venous congestion.</li>
+<li><strong>Section 6. Diagnostic Imaging Workup (CT & MRI)</strong>Cross-sectional imaging assessing tracheal cross-sectional area and luminal narrowing.</li>
+<li><strong>Section 7. Surgical Indications & Preoperative Planning</strong>Absolute indications: airway compromise, dysphagia, retrosternal growth, suspicion of malignancy.</li>
+<li><strong>Section 8. Operative Technique: Cervical vs Sternotomy Approach</strong>Surgical steps for cervical collar resection (>95%) and strict sternotomy criteria (<5%).</li>
+<li><strong>Section 9. Examination Revision and High-Yield Board Summary</strong>Summary of key operative pearls and physical diagnostic signs.</li>
+</ul></div>
+                <h3>1. Introduction, Definition, and Etiology</h3>
+                <p>Goiter refers to abnormal enlargement of the thyroid gland. Nontoxic goiter develops without associated hyperthyroidism or inflammation. Endemic goiter results from dietary iodine deficiency, whereas sporadic goiter is driven by dyshormonogenesis, goitrogens, or autoimmune mechanisms.</p>
+
+                <h3>2. Pathophysiology of Nodular Hyperplasia</h3>
+                <p>Persistent TSH stimulation induces diffuse follicular cell hyperplasia. Over time, recurring cycles of hyperplasia and involution produce structural heterogeneity, fibrous scarring, hemorrhage, and autonomous multinodular goiter.</p>
+
+                <h3>3. Retrosternal and Substernal Extension Mechanics</h3>
+                <p>Long-standing multinodular goiters expand inferiorly into the mediastinum along paths of least resistance, guided by pretracheal fascial planes, swallowing deglutition forces, and negative intrathoracic pressure.</p>
+
+                <div style="font-family:'JetBrains Mono',monospace; font-size:12px; font-weight:700; color:var(--primary); margin-top:28px; text-transform:uppercase; letter-spacing:0.05em;">Diagnostic Plates — Retrosternal Goiter & Airway CT (Click Image to Enlarge)</div>
+<div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(260px, 1fr)); gap:16px; margin:14px 0 32px;">
+
+        <div onclick="openLightbox('../../assets/images/endocrine_pdf_images/ch05_p145_0_1454.jpeg')" style="background:var(--bg2); border:1px solid var(--border); border-radius:12px; overflow:hidden; padding:12px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s; cursor:pointer;" onmouseover="this.style.transform='scale(1.02)'; this.style.borderColor='var(--accent2)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--border)';">
+          <img src="../../assets/images/endocrine_pdf_images/ch05_p145_0_1454.jpeg" alt="Figure 1" style="max-width:100%; max-height:210px; object-fit:contain; border-radius:8px; background:#fff; padding:6px; border:1px solid var(--border);">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent2); margin-top:8px; display:flex; align-items:center; justify-content:center; gap:6px;">
+            <span>Diagnostic Plate 1</span>
+            <span style="font-size:10px; opacity:0.7;">🔍</span>
+          </div>
+        </div>
+
+        <div onclick="openLightbox('../../assets/images/endocrine_pdf_images/ch05_p149_0_1506.jpeg')" style="background:var(--bg2); border:1px solid var(--border); border-radius:12px; overflow:hidden; padding:12px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s; cursor:pointer;" onmouseover="this.style.transform='scale(1.02)'; this.style.borderColor='var(--accent2)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--border)';">
+          <img src="../../assets/images/endocrine_pdf_images/ch05_p149_0_1506.jpeg" alt="Figure 2" style="max-width:100%; max-height:210px; object-fit:contain; border-radius:8px; background:#fff; padding:6px; border:1px solid var(--border);">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent2); margin-top:8px; display:flex; align-items:center; justify-content:center; gap:6px;">
+            <span>Diagnostic Plate 2</span>
+            <span style="font-size:10px; opacity:0.7;">🔍</span>
+          </div>
+        </div>
+
+        <div onclick="openLightbox('../../assets/images/endocrine_pdf_images/ch05_p150_0_1510.png')" style="background:var(--bg2); border:1px solid var(--border); border-radius:12px; overflow:hidden; padding:12px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s; cursor:pointer;" onmouseover="this.style.transform='scale(1.02)'; this.style.borderColor='var(--accent2)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--border)';">
+          <img src="../../assets/images/endocrine_pdf_images/ch05_p150_0_1510.png" alt="Figure 3" style="max-width:100%; max-height:210px; object-fit:contain; border-radius:8px; background:#fff; padding:6px; border:1px solid var(--border);">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent2); margin-top:8px; display:flex; align-items:center; justify-content:center; gap:6px;">
+            <span>Diagnostic Plate 3</span>
+            <span style="font-size:10px; opacity:0.7;">🔍</span>
+          </div>
+        </div>
+
+        <div onclick="openLightbox('../../assets/images/endocrine_pdf_images/ch05_p152_0_1530.jpeg')" style="background:var(--bg2); border:1px solid var(--border); border-radius:12px; overflow:hidden; padding:12px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s; cursor:pointer;" onmouseover="this.style.transform='scale(1.02)'; this.style.borderColor='var(--accent2)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--border)';">
+          <img src="../../assets/images/endocrine_pdf_images/ch05_p152_0_1530.jpeg" alt="Figure 4" style="max-width:100%; max-height:210px; object-fit:contain; border-radius:8px; background:#fff; padding:6px; border:1px solid var(--border);">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent2); margin-top:8px; display:flex; align-items:center; justify-content:center; gap:6px;">
+            <span>Diagnostic Plate 4</span>
+            <span style="font-size:10px; opacity:0.7;">🔍</span>
+          </div>
+        </div>
+
+        <div onclick="openLightbox('../../assets/images/endocrine_pdf_images/ch05_p154_0_1557.jpeg')" style="background:var(--bg2); border:1px solid var(--border); border-radius:12px; overflow:hidden; padding:12px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s; cursor:pointer;" onmouseover="this.style.transform='scale(1.02)'; this.style.borderColor='var(--accent2)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--border)';">
+          <img src="../../assets/images/endocrine_pdf_images/ch05_p154_0_1557.jpeg" alt="Figure 5" style="max-width:100%; max-height:210px; object-fit:contain; border-radius:8px; background:#fff; padding:6px; border:1px solid var(--border);">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent2); margin-top:8px; display:flex; align-items:center; justify-content:center; gap:6px;">
+            <span>Diagnostic Plate 5</span>
+            <span style="font-size:10px; opacity:0.7;">🔍</span>
+          </div>
+        </div>
+
+        <div onclick="openLightbox('../../assets/images/endocrine_pdf_images/ch05_p155_0_1564.jpeg')" style="background:var(--bg2); border:1px solid var(--border); border-radius:12px; overflow:hidden; padding:12px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s; cursor:pointer;" onmouseover="this.style.transform='scale(1.02)'; this.style.borderColor='var(--accent2)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--border)';">
+          <img src="../../assets/images/endocrine_pdf_images/ch05_p155_0_1564.jpeg" alt="Figure 6" style="max-width:100%; max-height:210px; object-fit:contain; border-radius:8px; background:#fff; padding:6px; border:1px solid var(--border);">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent2); margin-top:8px; display:flex; align-items:center; justify-content:center; gap:6px;">
+            <span>Diagnostic Plate 6</span>
+            <span style="font-size:10px; opacity:0.7;">🔍</span>
+          </div>
+        </div>
+
+        <div onclick="openLightbox('../../assets/images/endocrine_pdf_images/ch05_p156_0_1572.png')" style="background:var(--bg2); border:1px solid var(--border); border-radius:12px; overflow:hidden; padding:12px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s; cursor:pointer;" onmouseover="this.style.transform='scale(1.02)'; this.style.borderColor='var(--accent2)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--border)';">
+          <img src="../../assets/images/endocrine_pdf_images/ch05_p156_0_1572.png" alt="Figure 7" style="max-width:100%; max-height:210px; object-fit:contain; border-radius:8px; background:#fff; padding:6px; border:1px solid var(--border);">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent2); margin-top:8px; display:flex; align-items:center; justify-content:center; gap:6px;">
+            <span>Diagnostic Plate 7</span>
+            <span style="font-size:10px; opacity:0.7;">🔍</span>
+          </div>
+        </div>
+
+        <div onclick="openLightbox('../../assets/images/endocrine_pdf_images/ch05_p166_0_1692.png')" style="background:var(--bg2); border:1px solid var(--border); border-radius:12px; overflow:hidden; padding:12px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s; cursor:pointer;" onmouseover="this.style.transform='scale(1.02)'; this.style.borderColor='var(--accent2)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--border)';">
+          <img src="../../assets/images/endocrine_pdf_images/ch05_p166_0_1692.png" alt="Figure 8" style="max-width:100%; max-height:210px; object-fit:contain; border-radius:8px; background:#fff; padding:6px; border:1px solid var(--border);">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent2); margin-top:8px; display:flex; align-items:center; justify-content:center; gap:6px;">
+            <span>Diagnostic Plate 8</span>
+            <span style="font-size:10px; opacity:0.7;">🔍</span>
+          </div>
+        </div>
+</div>
+
+                <h3>4. Clinical Presentation &amp; Compressive Symptoms</h3>
+                <p>Compressive symptoms include dyspnea, orthopnea, stridor (tracheal compression), dysphagia (esophageal compression), and hoarseness (recurrent laryngeal nerve stretching).</p>
+
+                <h3>5. Pemberton's Sign Mechanics &amp; SVC Obstruction</h3>
+                <p>Pemberton's sign evaluates superior vena cava (SVC) obstruction from a substernal goiter. The patient elevates both arms above the head for 60 seconds. A positive test manifests as facial flushing, cyanosis, stridor, and jugular venous distension due to thoracic inlet crowding.</p>
+
+                <h3>6. Diagnostic Imaging Workup (CT &amp; MRI)</h3>
+                <p>Non-contrast CT chest/neck is the gold standard for defining substernal extent, tracheal deviation, and cross-sectional airway narrowing. Intravenous iodinated contrast is avoided if post-op RAI therapy is anticipated.</p>
+
+                <h3>7. Surgical Indications &amp; Preoperative Planning</h3>
+                <p>Surgical resection is indicated for symptomatic airway compression, retrosternal extension, rapid growth, or suspected malignancy. Total or near-total thyroidectomy is preferred to prevent recurrence.</p>
+
+                <h3>8. Operative Technique: Cervical vs Sternotomy Approach</h3>
+                <div class="callout pearl">
+                  <span class="label">SURGICAL RESIDENT PEARL — SUBSTERNAL GOITER RESECTION</span>
+                  Over 95% of substernal goiters can be successfully resected through a standard <strong>cervical collar incision</strong> without sternotomy. Sternotomy is strictly required in <5% of cases, primarily for recurrent intrathoracic goiters, goiters extending inferior to the aortic arch, posterior mediastinal extension with malignancy, or when blood supply arises directly from intrathoracic vessels.
+                </div>
+
+                <h3>9. Examination Revision and High-Yield Board Summary</h3>
+                <ul>
+                  <li><strong>Pemberton Sign:</strong> Arm elevation causing facial congestion / stridor.</li>
+                  <li><strong>Substernal Resection Route:</strong> Cervical collar incision (>95% of cases).</li>
+                  <li><strong>CT Contrast Caution:</strong> Avoid IV contrast if post-op RAI is planned.</li>
+                </ul>
+                
+            </section>
+        <div class="sec-header s2" id="chapter-6" style="margin-top:50px;">
+          <span class="sec-badge">CHAPTER 6</span>
+          <h2 class="sec-title">Thyroid Nodule Evaluation & Cytopathology</h2>
+        </div>
+            <section class="topic s2-topic" id="topic-6-1">
+              <div class="topic-header">
+                <span class="topic-num">6.1</span>
+                <h2>ACR TI-RADS & Bethesda Cytopathology Stratification</h2>
+              </div>
+              <div class="outline-box"><h3>Chapter Outline: Thyroid Nodule Evaluation</h3><ul class="outline-list">
+<li><strong>Section 1. Introduction and Nodule Epidemiology</strong>High clinical prevalence of thyroid nodules (up to 68% on ultrasound).</li>
+<li><strong>Section 2. Clinical Risk Stratification Framework</strong>History of radiation exposure, family history, rapid growth, and firm fixed physical exams.</li>
+<li><strong>Section 3. ACR TI-RADS Ultrasound Scoring System</strong>Point allocation for composition, echogenicity, shape, margin, and echogenic foci.</li>
+<li><strong>Section 4. Fine-Needle Aspiration (FNA) Biopsy Indications</strong>Size thresholds for FNA based on TI-RADS risk categories 3, 4, and 5.</li>
+<li><strong>Section 5. The Bethesda System for Reporting Thyroid Cytopathology</strong>Six standardized cytological categories, malignancy risks, and management algorithms.</li>
+<li><strong>Section 6. Indeterminate Cytology Management (Bethesda III & IV)</strong>Molecular diagnostic testing (Afirma vs ThyroSeq) vs diagnostic lobectomy.</li>
+<li><strong>Section 7. Surgical Management Protocols</strong>Indications for lobectomy vs total thyroidectomy in suspicious/malignant cytopathologies.</li>
+<li><strong>Section 8. Core Needle Biopsy and Frozen Section Utility</strong>Limited role of intraoperative frozen section in follicular neoplasms.</li>
+<li><strong>Section 9. High-Yield Review & Bethesda Diagnostic Summary</strong>Consolidated risk stratification tables for board exam review.</li>
+</ul></div>
+                <h3>1. Introduction and Nodule Epidemiology</h3>
+                <p>Thyroid nodules are detected in up to 68% of adults on high-frequency ultrasound. The primary clinical objective is identifying the 7–15% of nodules harboring malignancy.</p>
+
+                <h3>2. Clinical Risk Stratification Framework</h3>
+                <p>High-risk clinical features include childhood neck irradiation, family history of thyroid cancer or MEN 2, male gender, vocal cord paralysis, and firm fixed cervical adenopathy.</p>
+
+                <h3>3. ACR TI-RADS Ultrasound Scoring System</h3>
+                <p>The ACR TI-RADS system categorizes nodules into TR1 (benign) through TR5 (highly suspicious) based on cumulative ultrasound points assigned for composition, echogenicity, shape, margin, and echogenic foci.</p>
+
+                <div style="font-family:'JetBrains Mono',monospace; font-size:12px; font-weight:700; color:var(--primary); margin-top:28px; text-transform:uppercase; letter-spacing:0.05em;">Diagnostic Plates — TI-RADS & Bethesda Cytopathology Atlas (Click Image to Enlarge)</div>
+<div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(260px, 1fr)); gap:16px; margin:14px 0 32px;">
+
+        <div onclick="openLightbox('../../assets/images/endocrine_pdf_images/ch06_p182_0_1837.jpeg')" style="background:var(--bg2); border:1px solid var(--border); border-radius:12px; overflow:hidden; padding:12px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s; cursor:pointer;" onmouseover="this.style.transform='scale(1.02)'; this.style.borderColor='var(--accent2)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--border)';">
+          <img src="../../assets/images/endocrine_pdf_images/ch06_p182_0_1837.jpeg" alt="Figure 1" style="max-width:100%; max-height:210px; object-fit:contain; border-radius:8px; background:#fff; padding:6px; border:1px solid var(--border);">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent2); margin-top:8px; display:flex; align-items:center; justify-content:center; gap:6px;">
+            <span>Diagnostic Plate 1</span>
+            <span style="font-size:10px; opacity:0.7;">🔍</span>
+          </div>
+        </div>
+
+        <div onclick="openLightbox('../../assets/images/endocrine_pdf_images/ch06_p187_0_1923.jpeg')" style="background:var(--bg2); border:1px solid var(--border); border-radius:12px; overflow:hidden; padding:12px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s; cursor:pointer;" onmouseover="this.style.transform='scale(1.02)'; this.style.borderColor='var(--accent2)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--border)';">
+          <img src="../../assets/images/endocrine_pdf_images/ch06_p187_0_1923.jpeg" alt="Figure 2" style="max-width:100%; max-height:210px; object-fit:contain; border-radius:8px; background:#fff; padding:6px; border:1px solid var(--border);">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent2); margin-top:8px; display:flex; align-items:center; justify-content:center; gap:6px;">
+            <span>Diagnostic Plate 2</span>
+            <span style="font-size:10px; opacity:0.7;">🔍</span>
+          </div>
+        </div>
+
+        <div onclick="openLightbox('../../assets/images/endocrine_pdf_images/ch06_p187_1_1924.jpeg')" style="background:var(--bg2); border:1px solid var(--border); border-radius:12px; overflow:hidden; padding:12px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s; cursor:pointer;" onmouseover="this.style.transform='scale(1.02)'; this.style.borderColor='var(--accent2)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--border)';">
+          <img src="../../assets/images/endocrine_pdf_images/ch06_p187_1_1924.jpeg" alt="Figure 3" style="max-width:100%; max-height:210px; object-fit:contain; border-radius:8px; background:#fff; padding:6px; border:1px solid var(--border);">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent2); margin-top:8px; display:flex; align-items:center; justify-content:center; gap:6px;">
+            <span>Diagnostic Plate 3</span>
+            <span style="font-size:10px; opacity:0.7;">🔍</span>
+          </div>
+        </div>
+</div>
+
+                <h3>4. Fine-Needle Aspiration (FNA) Biopsy Indications</h3>
+                <p>FNA is recommended for TR3 nodules &ge;2.5 cm, TR4 nodules &ge;1.5 cm, and TR5 nodules &ge;1.0 cm.</p>
+
+                <h3>5. The Bethesda System for Reporting Thyroid Cytopathology</h3>
+                <div class="table-wrap">
+                  <table class="s2-tbl">
+                    <thead>
+                      <tr>
+                        <th>Bethesda Category</th>
+                        <th>Diagnostic Description</th>
+                        <th>Malignancy Risk (%)</th>
+                        <th>Standard Management</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><strong>Category I</strong></td>
+                        <td>Nondiagnostic / Unsatisfactory</td>
+                        <td>5 – 10%</td>
+                        <td>Repeat ultrasound-guided FNA</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Category II</strong></td>
+                        <td>Benign (colloid, thyroiditis)</td>
+                        <td>0 – 3%</td>
+                        <td>Clinical &amp; ultrasound surveillance</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Category III</strong></td>
+                        <td>AUS / FLUS (Indeterminate)</td>
+                        <td>10 – 30%</td>
+                        <td>Molecular testing (Afirma/ThyroSeq) or repeat FNA</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Category IV</strong></td>
+                        <td>Follicular Neoplasm / FN (Indeterminate)</td>
+                        <td>25 – 40%</td>
+                        <td>Diagnostic lobectomy or molecular testing</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Category V</strong></td>
+                        <td>Suspicious for Malignancy</td>
+                        <td>50 – 75%</td>
+                        <td>Near-total / Total thyroidectomy or lobectomy</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Category VI</strong></td>
+                        <td>Malignant (PTC, MTC, ATC)</td>
+                        <td>97 – 99%</td>
+                        <td>Surgical resection (Lobectomy or Total)</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <h3>6. Indeterminate Cytology Management (Bethesda III &amp; IV)</h3>
+                <p>Indeterminate nodules undergo molecular testing (Afirma GSC rule-out test or ThyroSeq v3 rule-in test) to avoid unnecessary surgery for benign lesions.</p>
+
+                <h3>7. Surgical Management Protocols</h3>
+                <p>Diagnostic thyroid lobectomy is the standard initial surgical procedure for solitary Bethesda IV follicular neoplasms and isolated suspicious nodules.</p>
+
+                <h3>8. Core Needle Biopsy and Frozen Section Utility</h3>
+                <p>Intraoperative frozen section has minimal utility in Bethesda IV follicular lesions because capsular/vascular invasion cannot be fully evaluated during surgery.</p>
+
+                <h3>9. High-Yield Review &amp; Bethesda Diagnostic Summary</h3>
+                <ul>
+                  <li><strong>Bethesda Category II:</strong> Benign (<3% risk).</li>
+                  <li><strong>Bethesda Category IV:</strong> Follicular Neoplasm (25–40% risk; requires lobectomy).</li>
+                  <li><strong>Bethesda Category VI:</strong> Malignant (97–99% risk).</li>
+                </ul>
+                
+            </section>
+</div>
+</main>
+
+<div id="lightbox-modal" onclick="closeLightbox()" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.85); backdrop-filter:blur(6px); z-index:2000; align-items:center; justify-content:center; padding:20px;">
+  <span style="position:absolute; top:20px; right:30px; color:#fff; font-size:36px; font-weight:bold; cursor:pointer; font-family:sans-serif; transition:color 0.2s;" onmouseover="this.style.color='var(--accent2)'" onmouseout="this.style.color='#fff'">&times;</span>
+  <img id="lightbox-img" src="" alt="Enlarged Diagnostic Plate" style="max-width:92vw; max-height:92vh; object-fit:contain; border-radius:8px; box-shadow:0 12px 40px rgba(0,0,0,0.6); background:#fff; padding:8px;" onclick="event.stopPropagation()">
+</div>
+
+<script>
+  function openLightbox(imgUrl) {
+    const modal = document.getElementById('lightbox-modal');
+    const img = document.getElementById('lightbox-img');
+    img.src = imgUrl;
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox() {
+    const modal = document.getElementById('lightbox-modal');
+    modal.style.display = 'none';
+    document.body.style.overflow = '';
+  }
+
+  function toggleSidebar() {
+    document.body.classList.toggle('sidebar-open');
+  }
+  function closeSidebar() {
+    document.body.classList.remove('sidebar-open');
+  }
+  function filterNav(q) {
+    q = q.toLowerCase();
+    document.querySelectorAll('#sidebar-nav .nav-item').forEach(el => {
+      el.style.display = el.textContent.toLowerCase().includes(q) ? 'block' : 'none';
+    });
+  }
+  
+  function openMobNav() {
+    document.getElementById('mobNavSheet').classList.add('open');
+    document.getElementById('mobNavOverlay').style.display = 'block';
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMobNav() {
+    document.getElementById('mobNavSheet').classList.remove('open');
+    document.getElementById('mobNavOverlay').style.display = 'none';
+    document.body.style.overflow = '';
+  }
+
+  const themeToggle = document.getElementById('themeToggle');
+  const moonIcon = document.getElementById('moonIcon');
+  const sunIcon = document.getElementById('sunIcon');
+  
+  function applyTheme(theme) {
+    if (theme === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      if (moonIcon) moonIcon.style.display = 'none';
+      if (sunIcon) sunIcon.style.display = 'block';
+    } else {
+      document.documentElement.removeAttribute('data-theme');
+      if (sunIcon) sunIcon.style.display = 'none';
+      if (moonIcon) moonIcon.style.display = 'block';
+    }
+  }
+  
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      const isDark = document.documentElement.hasAttribute('data-theme');
+      const newTheme = isDark ? 'light' : 'dark';
+      applyTheme(newTheme);
+      localStorage.setItem('sih-theme', newTheme);
+    });
+  }
+  
+  document.addEventListener('DOMContentLoaded', () => {
+    applyTheme(localStorage.getItem('sih-theme') || 'light');
+  });
+</script>
+<script src="../../js/navigation.js"></script>
+<script src="../../js/nav-pill.js"></script>
+</body>
+</html>

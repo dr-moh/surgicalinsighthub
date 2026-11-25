@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Surgical Insight Hub — Special Thyroid Conditions & Pharmacological Influences</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,300;1,8..60,400;1,8..60,600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/theme.css?v=4.0.0">
+<link rel="stylesheet" href="../../css/shared.css">
+<script>
+  const savedTheme = localStorage.getItem('sih-theme') || 'light';
+  if (savedTheme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+</script>
+<style>
+:root {
+  --primary:   #4C1D95; 
+  --primary-dk:#2E1065;
+  --primary-lt:#F5F3FF;
+  --accent:    #7C3AED;
+  --accent2:   #E11D48;
+  --gold:      #D97706;
+  --gold-lt:   #FEF3C7;
+  --s1:        #4C1D95;
+  --s2:        #5B21B6;
+  --s3:        #6D28D9;
+  --s4:        #7C3AED;
+  --s5:        #2E1065;
+  --s1-lt:     #F5F3FF;
+  --s2-lt:     #EDE9FE;
+  --s3-lt:     #F5F3FF;
+  --s4-lt:     #EDE9FE;
+  --s5-lt:     #F5F3FF;
+  --red:       #E11D48;
+  --red-lt:    #FFF1F2;
+  --bg:        #FAFAFA;
+  --bg2:       #F4F4F5;
+  --border:    #E5E7EB;
+  --text:      #0F172A;
+  --muted:     #64748B;
+  --white:     #FFFFFF;
+  --sidebar-w: 320px;
+}
+[data-theme="dark"] {
+  --bg: #0A0702;
+  --bg2: #140E05;
+  --text: #F3F4F6;
+  --muted: #A3A3A3;
+  --border: rgba(255,255,255,0.08);
+  --primary-lt: #2E1065;
+  --s1-lt: #2E1065;
+  --s2-lt: #2E1065;
+  --s3-lt: #2E1065;
+  --s4-lt: #2E1065;
+  --s5-lt: #2E1065;
+  --white: #140E05;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--bg);color:var(--text);font-size:16.5px;line-height:1.8;}
+
+#sidebar {
+  position: fixed; top: 0; left: 0; width: var(--sidebar-w); height: 100vh;
+  background: var(--primary-dk); color: #F5F3FF;
+  display: flex; flex-direction: column;
+  z-index: 1000; overflow: hidden;
+  transform: translateX(-100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 4px 0 24px rgba(0,0,0,0.4);
+}
+body.sidebar-open #sidebar { transform: translateX(0); }
+
+#sidebar-overlay {
+  position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+  background: rgba(46, 16, 101, 0.7); backdrop-filter: blur(3px);
+  z-index: 950; opacity: 0; pointer-events: none; transition: opacity 0.3s ease;
+}
+body.sidebar-open #sidebar-overlay { opacity: 1; pointer-events: auto; }
+
+#sidebar-toggle {
+  position: fixed; top: 72px; left: 24px; z-index: 900;
+  background: var(--primary); color: white;
+  border: none; border-radius: 30px;
+  padding: 10px 18px; font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600;
+  letter-spacing: 0.05em; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  display: flex; align-items: center; gap: 8px; transition: all 0.2s;
+}
+#sidebar-toggle:hover { background: var(--accent2); transform: translateY(-2px); }
+
+#sidebar-header{padding:20px 20px 14px;border-bottom:1px solid rgba(255,255,255,0.08);flex-shrink:0;}
+#sidebar-header .logo{font-family:'Playfair Display',serif;font-size:13px;font-weight:700;color:var(--accent2);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;}
+#sidebar-header .sub{font-size:10.5px;color:rgba(245,243,255,0.6);letter-spacing:0.04em;}
+#sidebar-search{padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.05);flex-shrink:0;}
+#sidebar-search input{width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:6px;color:#F5F3FF;padding:6px 10px;font-size:12px;font-family:'Source Serif 4',serif;outline:none;transition:border-color 0.2s;}
+#sidebar-search input::placeholder{color:rgba(245,243,255,0.4);}
+#sidebar-search input:focus{border-color:var(--accent2);}
+#sidebar-nav{flex:1;overflow-y:auto;padding:8px 0 20px;}
+#sidebar-nav::-webkit-scrollbar{width:4px;}
+#sidebar-nav::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.15);border-radius:2px;}
+.vol-label{font-size:9.5px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent2);padding:14px 18px 4px;}
+.nav-item{display:block;padding:8px 18px 8px 22px;font-size:12.5px;color:rgba(245,243,255,0.8);text-decoration:none;border-left:2px solid transparent;transition:all 0.15s;line-height:1.4;}
+.nav-item:hover{color:#fff;background:rgba(255,255,255,0.03);border-left-color:rgba(225,29,72,0.5);}
+.nav-item.active{color:#fff;background:rgba(255,255,255,0.06);border-left-color:var(--accent2);font-weight:600;}
+.nav-item .num{font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(245,243,255,0.4);margin-right:6px;}
+
+#main{margin-left:0; min-height:100vh;}
+#hero{background:linear-gradient(135deg,var(--primary-dk) 0%,#4C1D95 60%,#2E1065 100%);color:white;padding:120px 72px 60px;position:relative;overflow:hidden;}
+#hero::before{content:'';position:absolute;top:-60px;right:-60px;width:380px;height:380px;background:radial-gradient(circle,rgba(225,29,72,0.15) 0%,transparent 70%);pointer-events:none;}
+#hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent2),var(--gold),transparent);}
+#hero .eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.16em;color:var(--accent2);text-transform:uppercase;margin-bottom:14px;}
+#hero h1{font-family:'Playfair Display',serif;font-size:42px;font-weight:700;line-height:1.15;margin-bottom:10px;color:#fff;}
+#hero .subtitle{font-size:18px;color:rgba(255,255,255,0.8);font-style:italic;margin-bottom:28px;}
+#hero .badges{display:flex;gap:10px;flex-wrap:wrap;}
+#hero .badge{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:4px 14px;font-size:12px;color:rgba(255,255,255,0.95);font-family:'JetBrains Mono',monospace;}
+
+.content-wrap{max-width:1140px;margin:0 auto;padding:0 48px 80px;}
+
+.sec-header{margin-top:60px;margin-bottom:12px;padding:26px 34px;border-radius:12px;display:flex;align-items:center;gap:20px;box-shadow:0 4px 16px rgba(0,0,0,0.03);}
+.sec-header.s1{background:linear-gradient(135deg,#4C1D950C,#4C1D951C);border-left:5px solid var(--s1);}
+.sec-header.s2{background:linear-gradient(135deg,#5B21B60C,#5B21B61C);border-left:5px solid var(--s2);}
+.sec-header.s3{background:linear-gradient(135deg,#6D28D90C,#6D28D91C);border-left:5px solid var(--s3);}
+.sec-header.s4{background:linear-gradient(135deg,#7C3AED0C,#7C3AED1C);border-left:5px solid var(--s4);}
+.sec-header.s5{background:linear-gradient(135deg,#2E10650C,#2E10651C);border-left:5px solid var(--s5);}
+.sec-badge{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.12em;padding:5px 14px;border-radius:6px;white-space:nowrap;flex-shrink:0;}
+.s1 .sec-badge{background:var(--s1);color:white;}
+.s2 .sec-badge{background:var(--s2);color:white;}
+.s3 .sec-badge{background:var(--s3);color:white;}
+.s4 .sec-badge{background:var(--s4);color:white;}
+.s5 .sec-badge{background:var(--s5);color:white;}
+.sec-title{font-family:'Playfair Display',serif;font-size:23px;font-weight:700;}
+.s1 .sec-title{color:var(--s1);}
+.s2 .sec-title{color:var(--s2);}
+.s3 .sec-title{color:var(--s3);}
+.s4 .sec-title{color:var(--s4);}
+.s5 .sec-title{color:var(--s5);}
+
+.topic{margin-top:48px;padding-top:48px;border-top:1px solid var(--border);}
+.topic:first-of-type{border-top:none;}
+.topic-header{display:flex;align-items:flex-start;gap:16px;margin-bottom:24px;}
+.topic-num{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;padding:4px 12px;border-radius:6px;margin-top:4px;flex-shrink:0;}
+.s1 .topic-num{background:var(--s1-lt);color:var(--s1);}
+.s2 .topic-num{background:var(--s2-lt);color:var(--s2);}
+.s3 .topic-num{background:var(--s3-lt);color:var(--s3);}
+.s4 .topic-num{background:var(--s4-lt);color:var(--s4);}
+.s5 .topic-num{background:var(--s5-lt);color:var(--s5);}
+
+.topic h2{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;line-height:1.2;}
+.s1 .topic h2{color:var(--s1);}
+.s2 .topic h2{color:var(--s2);}
+.s3 .topic h2{color:var(--s3);}
+.s4 .topic h2{color:var(--s4);}
+.s5 .topic h2{color:var(--s5);}
+
+.topic h3{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--primary);margin:32px 0 12px;padding-bottom:6px;border-bottom:2px solid var(--border);}
+.topic h4{font-size:14px;font-weight:700;color:var(--muted);letter-spacing:0.08em;text-transform:uppercase;margin:24px 0 10px;font-family:'JetBrains Mono',monospace;}
+.topic p{margin-bottom:18px; line-height:1.8; font-size:16.5px; color:var(--text);}
+.topic ul, .topic ol{margin:10px 0 20px 24px;color:var(--text);}
+.topic li{margin-bottom:10px;line-height:1.7;}
+.topic li::marker{color:var(--accent2);font-weight:bold;}
+.topic strong{color:var(--text);font-weight:700;}
+.topic em{font-style:italic;color:var(--text);}
+.topic code{font-family:'JetBrains Mono',monospace;font-size:13.5px;background:var(--bg2);padding:2px 6px;border-radius:4px;border:1px solid var(--border);color:var(--primary);}
+
+.outline-box{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:24px 28px;margin:24px 0 36px;box-shadow:0 2px 8px rgba(0,0,0,0.03);}
+.outline-box h3{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--primary);margin-bottom:16px;border-bottom:2px solid var(--primary-lt);padding-bottom:8px;}
+.outline-list{list-style:none;margin:0;padding:0;}
+.outline-list li{margin-bottom:12px;line-height:1.6;font-size:15px;}
+.outline-list li strong{color:var(--accent2);font-family:'JetBrains Mono',monospace;font-size:13px;display:block;margin-bottom:2px;}
+
+.table-wrap{overflow-x:auto;margin:24px 0 28px;border-radius:10px;box-shadow:0 2px 10px rgba(0,0,0,0.05);border:1px solid var(--border);}
+table{width:100%;border-collapse:collapse;font-size:14px;background:var(--white);}
+thead tr{background:var(--s1);}
+thead th{color:white;padding:12px 16px;text-align:left;font-family:'Source Serif 4',serif;font-weight:700;font-size:14px;}
+tbody tr:nth-child(even){background:var(--bg2);}
+tbody tr:hover{background:var(--s1-lt);transition:background 0.15s;}
+tbody td{padding:11px 16px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.6;}
+
+.callout{margin:24px 0;padding:18px 22px;border-radius:0 10px 10px 0;border-left:5px solid;font-size:14.5px;line-height:1.7;box-shadow:0 2px 8px rgba(0,0,0,0.03);}
+.callout .label{font-family:'JetBrains Mono',monospace;font-size:10.5px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;display:block;margin-bottom:6px;}
+.callout.pearl{background:var(--gold-lt);border-color:var(--gold);color:var(--text);}
+.callout.pearl .label{color:var(--gold);}
+.callout.warn{background:var(--red-lt);border-color:var(--red);color:var(--text);}
+.callout.warn .label{color:var(--red);}
+
+@media(max-width:900px) {
+  .content-wrap { padding: 0 20px 60px; }
+  #hero { padding: 80px 20px 40px; }
+  #hero h1 { font-size: 30px; }
+  #sidebar-toggle { top: 64px; left: 16px; }
+}
+</style>
+<link rel="icon" type="image/png" href="../../assets/images/Surgical_Insight_Hub_Logo.png">
+</head>
+<body>
+
+<nav class="nav" id="mainNav">
+  <div class="nav-left">
+    <a href="../../index.html" class="nav-pill">
+      <div class="nav-logo-img">
+        <img src="../../assets/images/Surgical_Insight_Hub_Logo.png" alt="SIH Logo">
+      </div>
+      <div>
+        <div class="nav-brand-text">Surgical Insight Hub</div>
+        <div class="nav-brand-sub">The Residency Journal</div>
+      </div>
+    </a>
+  </div>
+  <div class="nav-links-pill">
+    <a href="../../index.html">Home</a>
+    <a href="../../notes.html" class="active">Notes</a>
+    <a href="../operative_approach.html">Playbook</a>
+    <a href="../../arena.html?v=4.0.0">MCQ Arena</a>
+    <a href="../../podcast.html">Podcast</a>
+    <a href="../../surgery-talk.html">Surgery Talk</a>
+    <a href="../../about.html">About</a>
+  </div>
+  <div class="nav-right">
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+      <svg id="moonIcon" viewBox="0 0 24 24" width="18" height="18"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      <svg id="sunIcon" style="display:none;" viewBox="0 0 24 24" width="18" height="18"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+    </button>
+    <a href="https://t.me/sugicalInsightHub" target="_blank" class="nav-tg-btn" title="Join Telegram">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="#f0d080"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.89 8.22l-1.97 9.28c-.15.66-.54.82-1.08.51l-3-2.21-1.45 1.39c-.16.16-.3.3-.61.3l.21-3.05 5.56-5.02c.24-.21-.05-.33-.37-.12l-6.87 4.33-2.96-.92c-.64-.2-.66-.64.14-.95l11.57-4.46c.54-.19 1.01.13.83.94z"/></svg>
+    </a>
+    <a href="../../arena.html?v=4.0.0" class="nav-btn arena-btn">MCQ Arena</a>
+  </div>
+</nav>
+
+<div class="mob-nav-overlay" id="mobNavOverlay" onclick="closeMobNav()"></div>
+<div class="mob-nav-sheet" id="mobNavSheet">
+  <div class="mob-nav-handle"></div>
+  <a href="../../index.html" onclick="closeMobNav()">Home</a>
+  <a href="../../notes.html" onclick="closeMobNav()">Notes</a>
+  <a href="../operative_approach.html" onclick="closeMobNav()">Playbook</a>
+  <a href="../../podcast.html" onclick="closeMobNav()">Podcast</a>
+  <a href="../../surgery-talk.html" onclick="closeMobNav()">Surgery Talk</a>
+  <a href="../../arena.html" onclick="closeMobNav()">MCQ Arena</a>
+  <a href="../../about.html" onclick="closeMobNav()">About</a>
+  <a href="https://t.me/sugicalInsightHub" target="_blank" rel="noopener" onclick="closeMobNav()" style="color: var(--brand-gold); font-weight: 800;">Join Telegram Community</a>
+</div>
+
+<button id="sidebar-toggle" onclick="toggleSidebar()">
+  Table of Contents
+</button>
+<div id="sidebar-overlay" onclick="closeSidebar()"></div>
+
+<aside id="sidebar">
+  <div id="sidebar-header">
+    <div class="logo">Surgical Insight Hub</div>
+    <div class="sub">Chronological Monograph</div>
+  </div>
+  <div id="sidebar-search">
+    <input type="text" placeholder="Search topics..." oninput="filterNav(this.value)">
+  </div>
+  <nav id="sidebar-nav">
+    <div class="vol-label">Chapter 23: Thyroid Physiology & Disease in Pregnancy</div>
+<a class="nav-item" href="#topic-23-1"><span class="num">23.1</span>Gestational Physiology & Thionamide Protocols</a>
+<div class="vol-label">Chapter 24: Non-Thyroidal Illness Syndrome (NTIS / Euthyroid Sick)</div>
+<a class="nav-item" href="#topic-24-1"><span class="num">24.1</span>Critical Care Deiodinase Alterations</a>
+<div class="vol-label">Chapter 25: Pharmacological Influences: Amiodarone & Lithium</div>
+<a class="nav-item" href="#topic-25-1"><span class="num">25.1</span>Amiodarone-Induced Thyrotoxicosis (AIT-1 vs AIT-2)</a>
+
+  </nav>
+</aside>
+
+<main id="main">
+<header id="hero">
+  <div class="eyebrow">Endocrine Surgery · Structured Chapter Outline Monograph</div>
+  <h1>Special Thyroid Conditions & Pharmacological Influences</h1>
+  <p class="subtitle">Comprehensive Chronological Monograph detailing gestational thyroid disease, Non-Thyroidal Illness Syndrome (euthyroid sick), and Amiodarone AIT-1 vs AIT-2 protocols.</p>
+  <div class="badges">
+    <span class="badge">Pregnancy Thyroid</span><span class="badge">Euthyroid Sick</span><span class="badge">Amiodarone AIT-1/2</span><span class="badge">Lithium</span><span class="badge">ABSITE Core</span>
+  </div>
+</header>
+
+<div class="content-wrap">
+  
+        <div class="sec-header s1" id="chapter-23" style="margin-top:50px;">
+          <span class="sec-badge">CHAPTER 23</span>
+          <h2 class="sec-title">Thyroid Physiology & Disease in Pregnancy</h2>
+        </div>
+            <section class="topic s1-topic" id="topic-23-1">
+              <div class="topic-header">
+                <span class="topic-num">23.1</span>
+                <h2>Gestational Physiology & Thionamide Protocols</h2>
+              </div>
+              <div class="outline-box"><h3>Chapter Outline: Thyroid Disease in Pregnancy</h3><ul class="outline-list">
+<li><strong>Section 1. Gestational Maternal Physiology Alterations</strong>Elevated hCG alpha-subunit TSHR stimulation and estrogen-induced TBG elevation.</li>
+<li><strong>Section 2. Transient Gestational Thyrotoxicosis</strong>First trimester self-limiting hyperthyroidism secondary to peak hCG levels.</li>
+<li><strong>Section 3. Diagnostic Laboratory Trimester Reference Ranges</strong>Trimester-specific TSH reference cutoffs and free hormone equilibrium dialysis.</li>
+<li><strong>Section 4. Gestational Graves' Disease Management</strong>Monitoring maternal TSI titers and assessing fetal tachycardia / goiter risk.</li>
+<li><strong>Section 5. Thionamide Selection Protocols (PTU vs Methimazole)</strong>First trimester PTU preference vs 2nd/3rd trimester Methimazole transition.</li>
+<li><strong>Section 6. Teratogenic Risk & Embryopathy Breakdown</strong>Methimazole embryopathy (aplasia cutis, choanal atresia) vs PTU black-box hepatotoxicity.</li>
+<li><strong>Section 7. Surgical Indications During Pregnancy</strong>Timing of mandatory thyroid surgery during the 2nd trimester.</li>
+<li><strong>Section 8. Postpartum Maternal Surveillance</strong>Monitoring for postpartum thyroiditis rebound recurrence post-delivery.</li>
+<li><strong>Section 9. High-Yield Review & Gestational Board Summary</strong>Summary of trimester thionamide selection rules and TSH cutoffs.</li>
+</ul></div>
+                <h3>1. Gestational Maternal Physiology Alterations</h3>
+                <p>Pregnancy alters maternal thyroid physiology due to elevated human chorionic gonadotropin (hCG) sharing structural alpha-subunit homology with TSH, and high estrogen increasing serum Thyroxine-Binding Globulin (TBG).</p>
+
+                <h3>2. Transient Gestational Thyrotoxicosis</h3>
+                <p>Peak hCG levels during weeks 8–11 transiently stimulate TSH receptors, causing mild self-limiting thyrotoxicosis without autoimmune autoantibodies.</p>
+
+                <div style="font-family:'JetBrains Mono',monospace; font-size:12px; font-weight:700; color:var(--primary); margin-top:28px; text-transform:uppercase; letter-spacing:0.05em;">Diagnostic Plates — Gestational Thyroid Physiology (Click Image to Enlarge)</div>
+<div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(260px, 1fr)); gap:16px; margin:14px 0 32px;">
+
+        <div onclick="openLightbox('../../assets/images/endocrine_pdf_images/ch23_p671_0_6878.jpeg')" style="background:var(--bg2); border:1px solid var(--border); border-radius:12px; overflow:hidden; padding:12px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s; cursor:pointer;" onmouseover="this.style.transform='scale(1.02)'; this.style.borderColor='var(--accent2)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--border)';">
+          <img src="../../assets/images/endocrine_pdf_images/ch23_p671_0_6878.jpeg" alt="Figure 1" style="max-width:100%; max-height:210px; object-fit:contain; border-radius:8px; background:#fff; padding:6px; border:1px solid var(--border);">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent2); margin-top:8px; display:flex; align-items:center; justify-content:center; gap:6px;">
+            <span>Diagnostic Plate 1</span>
+            <span style="font-size:10px; opacity:0.7;">🔍</span>
+          </div>
+        </div>
+
+        <div onclick="openLightbox('../../assets/images/endocrine_pdf_images/ch23_p686_0_7046.jpeg')" style="background:var(--bg2); border:1px solid var(--border); border-radius:12px; overflow:hidden; padding:12px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s; cursor:pointer;" onmouseover="this.style.transform='scale(1.02)'; this.style.borderColor='var(--accent2)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--border)';">
+          <img src="../../assets/images/endocrine_pdf_images/ch23_p686_0_7046.jpeg" alt="Figure 2" style="max-width:100%; max-height:210px; object-fit:contain; border-radius:8px; background:#fff; padding:6px; border:1px solid var(--border);">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent2); margin-top:8px; display:flex; align-items:center; justify-content:center; gap:6px;">
+            <span>Diagnostic Plate 2</span>
+            <span style="font-size:10px; opacity:0.7;">🔍</span>
+          </div>
+        </div>
+
+        <div onclick="openLightbox('../../assets/images/endocrine_pdf_images/ch23_p689_0_7077.jpeg')" style="background:var(--bg2); border:1px solid var(--border); border-radius:12px; overflow:hidden; padding:12px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s; cursor:pointer;" onmouseover="this.style.transform='scale(1.02)'; this.style.borderColor='var(--accent2)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--border)';">
+          <img src="../../assets/images/endocrine_pdf_images/ch23_p689_0_7077.jpeg" alt="Figure 3" style="max-width:100%; max-height:210px; object-fit:contain; border-radius:8px; background:#fff; padding:6px; border:1px solid var(--border);">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent2); margin-top:8px; display:flex; align-items:center; justify-content:center; gap:6px;">
+            <span>Diagnostic Plate 3</span>
+            <span style="font-size:10px; opacity:0.7;">🔍</span>
+          </div>
+        </div>
+</div>
+
+                <h3>3. Diagnostic Laboratory Trimester Reference Ranges</h3>
+                <p>Serum TSH reference ranges are lower in pregnancy (1st trimester 0.1–2.5 mIU/L; 2nd trimester 0.2–3.0 mIU/L; 3rd trimester 0.3–3.0 mIU/L).</p>
+
+                <h3>4. Gestational Graves' Disease Management</h3>
+                <p>Graves' disease during pregnancy requires careful monitoring of maternal TSI autoantibodies, which cross the placenta and can induce fetal hyperthyroidism and goiter.</p>
+
+                <h3>5. Thionamide Selection Protocols (PTU vs Methimazole)</h3>
+                <div class="callout warn">
+                  <span class="label">BOARD WARNING — THIONAMIDES IN PREGNANCY</span>
+                  During the 1st trimester of pregnancy, <strong>Propylthiouracil (PTU)</strong> is preferred because Methimazole is associated with embryopathy (aplasia cutis and choanal atresia). Switch to <strong>Methimazole</strong> for the 2nd and 3rd trimesters due to PTU black-box risk of severe maternal hepatotoxicity.
+                </div>
+
+                <h3>6. Teratogenic Risk &amp; Embryopathy Breakdown</h3>
+                <p>Methimazole exposure during organogenesis (weeks 6–10) risks aplasia cutis congenita and congenital gastrointestinal atresia. PTU hepatotoxicity carries a FDA black-box warning.</p>
+
+                <h3>7. Surgical Indications During Pregnancy</h3>
+                <p>If surgery is required for medication intolerance or large compressive goiter, operation is safely performed during the <strong>2nd trimester</strong> (weeks 14–24) to minimize teratogenic anesthesia risks (1st trimester) and preterm labor risks (3rd trimester).</p>
+
+                <h3>8. Postpartum Maternal Surveillance</h3>
+                <p>Evaluate maternal thyroid function 6 weeks and 3 months postpartum to detect immune rebound thyroiditis.</p>
+
+                <h3>9. High-Yield Review &amp; Gestational Board Summary</h3>
+                <ul>
+                  <li><strong>1st Trimester Thionamide:</strong> PTU (prevents Methimazole embryopathy).</li>
+                  <li><strong>2nd/3rd Trimester Thionamide:</strong> Methimazole (prevents PTU hepatotoxicity).</li>
+                  <li><strong>Surgical Timing:</strong> 2nd trimester (weeks 14–24).</li>
+                </ul>
+                
+            </section>
+        <div class="sec-header s2" id="chapter-24" style="margin-top:50px;">
+          <span class="sec-badge">CHAPTER 24</span>
+          <h2 class="sec-title">Non-Thyroidal Illness Syndrome (NTIS / Euthyroid Sick)</h2>
+        </div>
+            <section class="topic s2-topic" id="topic-24-1">
+              <div class="topic-header">
+                <span class="topic-num">24.1</span>
+                <h2>Critical Care Deiodinase Alterations</h2>
+              </div>
+              <div class="outline-box"><h3>Chapter Outline: Non-Thyroidal Illness Syndrome (NTIS)</h3><ul class="outline-list">
+<li><strong>Section 1. Introduction and Clinical Definition</strong>Abnormal serum thyroid hormone profiles in severe non-thyroidal critical illness without intrinsic gland dysfunction.</li>
+<li><strong>Section 2. Pathophysiology & Tissue Deiodinase Alterations</strong>Systemic cytokine-mediated inhibition of D1 5'-deiodination and activation of D3 inner-ring deiodination.</li>
+<li><strong>Section 3. Biochemical Stage Progression in Critical Care</strong>Early stage low T3, progressing to severe stage low T3 and low T4 with suppressed TSH.</li>
+<li><strong>Section 4. Reverse T3 (rT3) Diagnostic Elevation Kinetics</strong>Diagnostic accumulation of metabolically inactive rT3 in septic and trauma patients.</li>
+<li><strong>Section 5. Prognostic Correlation with Mortality</strong>Degree of T4 suppression correlating directly with ICU mortality (>80% mortality when T4 <2 mcg/dL).</li>
+<li><strong>Section 6. Differential Diagnosis vs Central Hypothyroidism</strong>Distinguishing NTIS (high rT3, acute illness) from true central pituitary failure (low rT3).</li>
+<li><strong>Section 7. Consensus Treatment Guidelines</strong>Evidence confirming thyroid hormone substitution (L-T4 or L-T3) is NOT beneficial and potentially harmful.</li>
+<li><strong>Section 8. Resolution Kinetics Post-Recovery</strong>Transient TSH elevation into subclinical range during clinical ICU recovery.</li>
+<li><strong>Section 9. High-Yield Review & Critical Care Board Summary</strong>Summary of deiodinase shifts and consensus treatment non-intervention rules.</li>
+</ul></div>
+                <h3>1. Introduction and Clinical Definition</h3>
+                <p>Non-Thyroidal Illness Syndrome (NTIS, euthyroid sick syndrome) refers to characteristic alterations in circulating thyroid hormone levels occurring in critically ill ICU patients, trauma, major sepsis, or starvation, without intrinsic thyroid pathology.</p>
+
+                <h3>2. Pathophysiology &amp; Tissue Deiodinase Alterations</h3>
+                <p>Pro-inflammatory cytokines (IL-6, TNF-alpha) inhibit hepatic Deiodinase type 1 (D1), reducing outer-ring conversion of T4 to active T3. Concurrently, Deiodinase type 3 (D3) is upregulated, converting T4 to inactive reverse T3 (rT3).</p>
+
+                <div style="font-family:'JetBrains Mono',monospace; font-size:12px; font-weight:700; color:var(--primary); margin-top:28px; text-transform:uppercase; letter-spacing:0.05em;">Diagnostic Plates — Non-Thyroidal Illness Deiodinase Pathways (Click Image to Enlarge)</div>
+<div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(260px, 1fr)); gap:16px; margin:14px 0 32px;">
+
+        <div onclick="openLightbox('../../assets/images/endocrine_pdf_images/ch24_p706_0_7170.jpeg')" style="background:var(--bg2); border:1px solid var(--border); border-radius:12px; overflow:hidden; padding:12px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s; cursor:pointer;" onmouseover="this.style.transform='scale(1.02)'; this.style.borderColor='var(--accent2)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--border)';">
+          <img src="../../assets/images/endocrine_pdf_images/ch24_p706_0_7170.jpeg" alt="Figure 1" style="max-width:100%; max-height:210px; object-fit:contain; border-radius:8px; background:#fff; padding:6px; border:1px solid var(--border);">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent2); margin-top:8px; display:flex; align-items:center; justify-content:center; gap:6px;">
+            <span>Diagnostic Plate 1</span>
+            <span style="font-size:10px; opacity:0.7;">🔍</span>
+          </div>
+        </div>
+
+        <div onclick="openLightbox('../../assets/images/endocrine_pdf_images/ch24_p711_0_7231.jpeg')" style="background:var(--bg2); border:1px solid var(--border); border-radius:12px; overflow:hidden; padding:12px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s; cursor:pointer;" onmouseover="this.style.transform='scale(1.02)'; this.style.borderColor='var(--accent2)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--border)';">
+          <img src="../../assets/images/endocrine_pdf_images/ch24_p711_0_7231.jpeg" alt="Figure 2" style="max-width:100%; max-height:210px; object-fit:contain; border-radius:8px; background:#fff; padding:6px; border:1px solid var(--border);">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent2); margin-top:8px; display:flex; align-items:center; justify-content:center; gap:6px;">
+            <span>Diagnostic Plate 2</span>
+            <span style="font-size:10px; opacity:0.7;">🔍</span>
+          </div>
+        </div>
+
+        <div onclick="openLightbox('../../assets/images/endocrine_pdf_images/ch24_p712_0_7243.jpeg')" style="background:var(--bg2); border:1px solid var(--border); border-radius:12px; overflow:hidden; padding:12px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s; cursor:pointer;" onmouseover="this.style.transform='scale(1.02)'; this.style.borderColor='var(--accent2)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--border)';">
+          <img src="../../assets/images/endocrine_pdf_images/ch24_p712_0_7243.jpeg" alt="Figure 3" style="max-width:100%; max-height:210px; object-fit:contain; border-radius:8px; background:#fff; padding:6px; border:1px solid var(--border);">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent2); margin-top:8px; display:flex; align-items:center; justify-content:center; gap:6px;">
+            <span>Diagnostic Plate 3</span>
+            <span style="font-size:10px; opacity:0.7;">🔍</span>
+          </div>
+        </div>
+
+        <div onclick="openLightbox('../../assets/images/endocrine_pdf_images/ch24_p714_0_7271.jpeg')" style="background:var(--bg2); border:1px solid var(--border); border-radius:12px; overflow:hidden; padding:12px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s; cursor:pointer;" onmouseover="this.style.transform='scale(1.02)'; this.style.borderColor='var(--accent2)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--border)';">
+          <img src="../../assets/images/endocrine_pdf_images/ch24_p714_0_7271.jpeg" alt="Figure 4" style="max-width:100%; max-height:210px; object-fit:contain; border-radius:8px; background:#fff; padding:6px; border:1px solid var(--border);">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent2); margin-top:8px; display:flex; align-items:center; justify-content:center; gap:6px;">
+            <span>Diagnostic Plate 4</span>
+            <span style="font-size:10px; opacity:0.7;">🔍</span>
+          </div>
+        </div>
+
+        <div onclick="openLightbox('../../assets/images/endocrine_pdf_images/ch24_p716_0_7293.jpeg')" style="background:var(--bg2); border:1px solid var(--border); border-radius:12px; overflow:hidden; padding:12px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s; cursor:pointer;" onmouseover="this.style.transform='scale(1.02)'; this.style.borderColor='var(--accent2)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--border)';">
+          <img src="../../assets/images/endocrine_pdf_images/ch24_p716_0_7293.jpeg" alt="Figure 5" style="max-width:100%; max-height:210px; object-fit:contain; border-radius:8px; background:#fff; padding:6px; border:1px solid var(--border);">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent2); margin-top:8px; display:flex; align-items:center; justify-content:center; gap:6px;">
+            <span>Diagnostic Plate 5</span>
+            <span style="font-size:10px; opacity:0.7;">🔍</span>
+          </div>
+        </div>
+
+        <div onclick="openLightbox('../../assets/images/endocrine_pdf_images/ch24_p718_0_7316.jpeg')" style="background:var(--bg2); border:1px solid var(--border); border-radius:12px; overflow:hidden; padding:12px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s; cursor:pointer;" onmouseover="this.style.transform='scale(1.02)'; this.style.borderColor='var(--accent2)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--border)';">
+          <img src="../../assets/images/endocrine_pdf_images/ch24_p718_0_7316.jpeg" alt="Figure 6" style="max-width:100%; max-height:210px; object-fit:contain; border-radius:8px; background:#fff; padding:6px; border:1px solid var(--border);">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent2); margin-top:8px; display:flex; align-items:center; justify-content:center; gap:6px;">
+            <span>Diagnostic Plate 6</span>
+            <span style="font-size:10px; opacity:0.7;">🔍</span>
+          </div>
+        </div>
+</div>
+
+                <h3>3. Biochemical Stage Progression in Critical Care</h3>
+                <p>Early NTIS manifests isolated low serum T3 with normal T4 and TSH. Severe prolonged critical illness progresses to low T3, low T4, and transiently suppressed TSH.</p>
+
+                <h3>4. Reverse T3 (rT3) Diagnostic Elevation Kinetics</h3>
+                <p>Serum reverse T3 (rT3) is markedly elevated due to impaired clearance and active D3 synthesis, serving as the biochemical hallmark of NTIS.</p>
+
+                <h3>5. Prognostic Correlation with Mortality</h3>
+                <p>In critical illness, the severity of serum T4 suppression correlates inversely with survival; total T4 levels <2 mcg/dL predict an ICU mortality rate exceeding 80%.</p>
+
+                <h3>6. Differential Diagnosis vs Central Hypothyroidism</h3>
+                <p>Distinguish NTIS from central hypothyroidism by checking reverse T3: rT3 is elevated in NTIS, but reduced/low in true central pituitary failure.</p>
+
+                <h3>7. Consensus Treatment Guidelines</h3>
+                <div class="callout pearl">
+                  <span class="label">CLINICAL PEARL — NTIS MANAGEMENT</span>
+                  Thyroid hormone replacement is <strong>NOT recommended</strong> in Non-Thyroidal Illness Syndrome. Randomized controlled trials confirm L-T4 or L-T3 administration does not improve survival and may exacerbate tissue catabolism. The hormone shifts represent a protective metabolic adaptation reducing energy expenditure during severe stress.
+                </div>
+
+                <h3>8. Resolution Kinetics Post-Recovery</h3>
+                <p>As critical illness resolves, serum TSH transiently surges into the mildly elevated subclinical range (5–10 mIU/L) before completely normalizing alongside T4 and T3.</p>
+
+                <h3>9. High-Yield Review &amp; Critical Care Board Summary</h3>
+                <ul>
+                  <li><strong>Biochemical Hallmark:</strong> Low T3 with elevated Reverse T3 (rT3).</li>
+                  <li><strong>Deiodinase Shift:</strong> Inactive D1, activated D3.</li>
+                  <li><strong>Treatment Consensus:</strong> Do NOT treat with Levothyroxine.</li>
+                </ul>
+                
+            </section>
+        <div class="sec-header s3" id="chapter-25" style="margin-top:50px;">
+          <span class="sec-badge">CHAPTER 25</span>
+          <h2 class="sec-title">Pharmacological Influences: Amiodarone & Lithium</h2>
+        </div>
+            <section class="topic s3-topic" id="topic-25-1">
+              <div class="topic-header">
+                <span class="topic-num">25.1</span>
+                <h2>Amiodarone-Induced Thyrotoxicosis (AIT-1 vs AIT-2)</h2>
+              </div>
+              <div class="outline-box"><h3>Chapter Outline: Amiodarone & Lithium Dysfunction</h3><ul class="outline-list">
+<li><strong>Section 1. Pharmacology of Amiodarone Iodine Content</strong>37% iodine weight delivering 7 mg organic iodine per 200 mg daily dose (huge excess over 150 mcg daily requirement).</li>
+<li><strong>Section 2. Amiodarone-Induced Hypothyroidism (AIH)</strong>Wolff-Chaikoff blockade failure to escape in underlying Hashimoto's thyroiditis.</li>
+<li><strong>Section 3. Amiodarone-Induced Thyrotoxicosis (AIT) Breakdown</strong>Classification into AIT Type 1 (iodine-induced hyperthyroidism) vs AIT Type 2 (destructive thyroiditis).</li>
+<li><strong>Section 4. AIT Type 1 Pathophysiology & Doppler Flow</strong>Jod-Basedow effect in underlying nodule/Graves showing marked hypervascularity on color flow Doppler.</li>
+<li><strong>Section 5. AIT Type 2 Pathophysiology & Doppler Flow</strong>Direct drug-induced toxic destructive thyroiditis showing avascular gland on color flow Doppler.</li>
+<li><strong>Section 6. Differential Diagnostic Workup (RAIU & Doppler)</strong>Comparing hypervascular AIT-1 vs avascular AIT-2 to dictate medical therapy.</li>
+<li><strong>Section 7. Medical Management Protocols (AIT-1 vs AIT-2)</strong>Thionamides + Potassium Perchlorate for AIT-1 vs high-dose oral Glucocorticoids for AIT-2.</li>
+<li><strong>Section 8. Lithium-Induced Thyroid Dysfunction</strong>Inhibition of thyroid hormone release causing goiter (50%) and hypothyroidism (20%).</li>
+<li><strong>Section 9. High-Yield Review & Drug Dysfunction Board Matrix</strong>Consolidated differential diagnostic matrix for medical/surgical board exams.</li>
+</ul></div>
+                <h3>1. Pharmacology of Amiodarone Iodine Content</h3>
+                <p>Amiodarone contains 37% iodine by weight. A standard 200 mg daily dose releases 7 mg of free inorganic iodine into circulation—more than 45 times the recommended daily adult intake of 150 mcg.</p>
+
+                <h3>2. Amiodarone-Induced Hypothyroidism (AIH)</h3>
+                <p>Excess iodine induces temporary inhibition of hormone synthesis (Wolff-Chaikoff effect). Patients with underlying Hashimoto's fail to escape this blockade, developing persistent hypothyroidism treated with L-T4.</p>
+
+                
+
+                <h3>3. Amiodarone-Induced Thyrotoxicosis (AIT) Breakdown</h3>
+                <p>Amiodarone-induced thyrotoxicosis is divided into two distinct pathophysiologic entities requiring opposing medical treatments:</p>
+
+                <h3>Section 4 &amp; 5. AIT Type 1 vs AIT Type 2 Differentiation</h3>
+                <div class="table-wrap">
+                  <table class="s2-tbl">
+                    <thead>
+                      <tr>
+                        <th>Diagnostic Feature</th>
+                        <th>AIT Type 1 (Jod-Basedow Effect)</th>
+                        <th>AIT Type 2 (Destructive Thyroiditis)</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><strong>Underlying Pathology</strong></td>
+                        <td>Iodine-induced autonomous synthesis in underlying nodule or Graves.</td>
+                        <td>Direct drug-induced toxic chemical destructive thyroiditis in normal gland.</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Color Flow Doppler</strong></td>
+                        <td>Hypervascularity (increased parenchymal blood flow).</td>
+                        <td>Avascular (absent/decreased blood flow).</td>
+                      </tr>
+                      <tr>
+                        <td><strong>First-Line Therapy</strong></td>
+                        <td>High-dose Thionamides (Methimazole) + Potassium Perchlorate.</td>
+                        <td>High-dose oral Glucocorticoids (Prednisone 40–60 mg/day).</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <h3>6. Differential Diagnostic Workup (RAIU &amp; Doppler)</h3>
+                <p>Color flow Doppler ultrasound is the primary diagnostic tool. RAIU is typically low in both due to heavy systemic iodine saturation.</p>
+
+                <h3>7. Medical Management Protocols (AIT-1 vs AIT-2)</h3>
+                <p>AIT-1 requires antithyroid thionamides to block synthesis. AIT-2 responds rapidly to oral prednisone. In mixed or uncertain cases, initiate combined thionamide + corticosteroid therapy.</p>
+
+                <h3>8. Lithium-Induced Thyroid Dysfunction</h3>
+                <p>Lithium concentrates in the thyroid gland and inhibits thyroid hormone release. It causes goiter in 50% and hypothyroidism in 20% of long-term users. Treat with Levothyroxine while continuing lithium therapy.</p>
+
+                <h3>9. High-Yield Review &amp; Drug Dysfunction Board Matrix</h3>
+                <ul>
+                  <li><strong>AIT-1 Hallmark:</strong> Hypervascular on Doppler -> Treat with Thionamides.</li>
+                  <li><strong>AIT-2 Hallmark:</strong> Avascular on Doppler -> Treat with Prednisone.</li>
+                  <li><strong>Lithium Action:</strong> Inhibits thyroid hormone release.</li>
+                </ul>
+                
+            </section>
+</div>
+</main>
+
+<div id="lightbox-modal" onclick="closeLightbox()" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.85); backdrop-filter:blur(6px); z-index:2000; align-items:center; justify-content:center; padding:20px;">
+  <span style="position:absolute; top:20px; right:30px; color:#fff; font-size:36px; font-weight:bold; cursor:pointer; font-family:sans-serif; transition:color 0.2s;" onmouseover="this.style.color='var(--accent2)'" onmouseout="this.style.color='#fff'">&times;</span>
+  <img id="lightbox-img" src="" alt="Enlarged Diagnostic Plate" style="max-width:92vw; max-height:92vh; object-fit:contain; border-radius:8px; box-shadow:0 12px 40px rgba(0,0,0,0.6); background:#fff; padding:8px;" onclick="event.stopPropagation()">
+</div>
+
+<script>
+  function openLightbox(imgUrl) {
+    const modal = document.getElementById('lightbox-modal');
+    const img = document.getElementById('lightbox-img');
+    img.src = imgUrl;
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox() {
+    const modal = document.getElementById('lightbox-modal');
+    modal.style.display = 'none';
+    document.body.style.overflow = '';
+  }
+
+  function toggleSidebar() {
+    document.body.classList.toggle('sidebar-open');
+  }
+  function closeSidebar() {
+    document.body.classList.remove('sidebar-open');
+  }
+  function filterNav(q) {
+    q = q.toLowerCase();
+    document.querySelectorAll('#sidebar-nav .nav-item').forEach(el => {
+      el.style.display = el.textContent.toLowerCase().includes(q) ? 'block' : 'none';
+    });
+  }
+  
+  function openMobNav() {
+    document.getElementById('mobNavSheet').classList.add('open');
+    document.getElementById('mobNavOverlay').style.display = 'block';
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMobNav() {
+    document.getElementById('mobNavSheet').classList.remove('open');
+    document.getElementById('mobNavOverlay').style.display = 'none';
+    document.body.style.overflow = '';
+  }
+
+  const themeToggle = document.getElementById('themeToggle');
+  const moonIcon = document.getElementById('moonIcon');
+  const sunIcon = document.getElementById('sunIcon');
+  
+  function applyTheme(theme) {
+    if (theme === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      if (moonIcon) moonIcon.style.display = 'none';
+      if (sunIcon) sunIcon.style.display = 'block';
+    } else {
+      document.documentElement.removeAttribute('data-theme');
+      if (sunIcon) sunIcon.style.display = 'none';
+      if (moonIcon) moonIcon.style.display = 'block';
+    }
+  }
+  
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      const isDark = document.documentElement.hasAttribute('data-theme');
+      const newTheme = isDark ? 'light' : 'dark';
+      applyTheme(newTheme);
+      localStorage.setItem('sih-theme', newTheme);
+    });
+  }
+  
+  document.addEventListener('DOMContentLoaded', () => {
+    applyTheme(localStorage.getItem('sih-theme') || 'light');
+  });
+</script>
+<script src="../../js/navigation.js"></script>
+<script src="../../js/nav-pill.js"></script>
+</body>
+</html>

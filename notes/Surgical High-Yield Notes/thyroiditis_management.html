@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Surgical Insight Hub — Thyroiditis Pathology & Surgical Management</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,300;1,8..60,400;1,8..60,600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/theme.css?v=4.0.0">
+<link rel="stylesheet" href="../../css/shared.css">
+<script>
+  const savedTheme = localStorage.getItem('sih-theme') || 'light';
+  if (savedTheme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+</script>
+<style>
+:root {
+  --primary:   #4C1D95; 
+  --primary-dk:#2E1065;
+  --primary-lt:#F5F3FF;
+  --accent:    #7C3AED;
+  --accent2:   #E11D48;
+  --gold:      #D97706;
+  --gold-lt:   #FEF3C7;
+  --s1:        #4C1D95;
+  --s2:        #5B21B6;
+  --s3:        #6D28D9;
+  --s4:        #7C3AED;
+  --s5:        #2E1065;
+  --s1-lt:     #F5F3FF;
+  --s2-lt:     #EDE9FE;
+  --s3-lt:     #F5F3FF;
+  --s4-lt:     #EDE9FE;
+  --s5-lt:     #F5F3FF;
+  --red:       #E11D48;
+  --red-lt:    #FFF1F2;
+  --bg:        #FAFAFA;
+  --bg2:       #F4F4F5;
+  --border:    #E5E7EB;
+  --text:      #0F172A;
+  --muted:     #64748B;
+  --white:     #FFFFFF;
+  --sidebar-w: 320px;
+}
+[data-theme="dark"] {
+  --bg: #0A0702;
+  --bg2: #140E05;
+  --text: #F3F4F6;
+  --muted: #A3A3A3;
+  --border: rgba(255,255,255,0.08);
+  --primary-lt: #2E1065;
+  --s1-lt: #2E1065;
+  --s2-lt: #2E1065;
+  --s3-lt: #2E1065;
+  --s4-lt: #2E1065;
+  --s5-lt: #2E1065;
+  --white: #140E05;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--bg);color:var(--text);font-size:16.5px;line-height:1.8;}
+
+#sidebar {
+  position: fixed; top: 0; left: 0; width: var(--sidebar-w); height: 100vh;
+  background: var(--primary-dk); color: #F5F3FF;
+  display: flex; flex-direction: column;
+  z-index: 1000; overflow: hidden;
+  transform: translateX(-100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 4px 0 24px rgba(0,0,0,0.4);
+}
+body.sidebar-open #sidebar { transform: translateX(0); }
+
+#sidebar-overlay {
+  position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+  background: rgba(46, 16, 101, 0.7); backdrop-filter: blur(3px);
+  z-index: 950; opacity: 0; pointer-events: none; transition: opacity 0.3s ease;
+}
+body.sidebar-open #sidebar-overlay { opacity: 1; pointer-events: auto; }
+
+#sidebar-toggle {
+  position: fixed; top: 72px; left: 24px; z-index: 900;
+  background: var(--primary); color: white;
+  border: none; border-radius: 30px;
+  padding: 10px 18px; font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600;
+  letter-spacing: 0.05em; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  display: flex; align-items: center; gap: 8px; transition: all 0.2s;
+}
+#sidebar-toggle:hover { background: var(--accent2); transform: translateY(-2px); }
+
+#sidebar-header{padding:20px 20px 14px;border-bottom:1px solid rgba(255,255,255,0.08);flex-shrink:0;}
+#sidebar-header .logo{font-family:'Playfair Display',serif;font-size:13px;font-weight:700;color:var(--accent2);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;}
+#sidebar-header .sub{font-size:10.5px;color:rgba(245,243,255,0.6);letter-spacing:0.04em;}
+#sidebar-search{padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.05);flex-shrink:0;}
+#sidebar-search input{width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:6px;color:#F5F3FF;padding:6px 10px;font-size:12px;font-family:'Source Serif 4',serif;outline:none;transition:border-color 0.2s;}
+#sidebar-search input::placeholder{color:rgba(245,243,255,0.4);}
+#sidebar-search input:focus{border-color:var(--accent2);}
+#sidebar-nav{flex:1;overflow-y:auto;padding:8px 0 20px;}
+#sidebar-nav::-webkit-scrollbar{width:4px;}
+#sidebar-nav::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.15);border-radius:2px;}
+.vol-label{font-size:9.5px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent2);padding:14px 18px 4px;}
+.nav-item{display:block;padding:8px 18px 8px 22px;font-size:12.5px;color:rgba(245,243,255,0.8);text-decoration:none;border-left:2px solid transparent;transition:all 0.15s;line-height:1.4;}
+.nav-item:hover{color:#fff;background:rgba(255,255,255,0.03);border-left-color:rgba(225,29,72,0.5);}
+.nav-item.active{color:#fff;background:rgba(255,255,255,0.06);border-left-color:var(--accent2);font-weight:600;}
+.nav-item .num{font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(245,243,255,0.4);margin-right:6px;}
+
+#main{margin-left:0; min-height:100vh;}
+#hero{background:linear-gradient(135deg,var(--primary-dk) 0%,#4C1D95 60%,#2E1065 100%);color:white;padding:120px 72px 60px;position:relative;overflow:hidden;}
+#hero::before{content:'';position:absolute;top:-60px;right:-60px;width:380px;height:380px;background:radial-gradient(circle,rgba(225,29,72,0.15) 0%,transparent 70%);pointer-events:none;}
+#hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent2),var(--gold),transparent);}
+#hero .eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.16em;color:var(--accent2);text-transform:uppercase;margin-bottom:14px;}
+#hero h1{font-family:'Playfair Display',serif;font-size:42px;font-weight:700;line-height:1.15;margin-bottom:10px;color:#fff;}
+#hero .subtitle{font-size:18px;color:rgba(255,255,255,0.8);font-style:italic;margin-bottom:28px;}
+#hero .badges{display:flex;gap:10px;flex-wrap:wrap;}
+#hero .badge{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:4px 14px;font-size:12px;color:rgba(255,255,255,0.95);font-family:'JetBrains Mono',monospace;}
+
+.content-wrap{max-width:1140px;margin:0 auto;padding:0 48px 80px;}
+
+.sec-header{margin-top:60px;margin-bottom:12px;padding:26px 34px;border-radius:12px;display:flex;align-items:center;gap:20px;box-shadow:0 4px 16px rgba(0,0,0,0.03);}
+.sec-header.s1{background:linear-gradient(135deg,#4C1D950C,#4C1D951C);border-left:5px solid var(--s1);}
+.sec-header.s2{background:linear-gradient(135deg,#5B21B60C,#5B21B61C);border-left:5px solid var(--s2);}
+.sec-header.s3{background:linear-gradient(135deg,#6D28D90C,#6D28D91C);border-left:5px solid var(--s3);}
+.sec-header.s4{background:linear-gradient(135deg,#7C3AED0C,#7C3AED1C);border-left:5px solid var(--s4);}
+.sec-header.s5{background:linear-gradient(135deg,#2E10650C,#2E10651C);border-left:5px solid var(--s5);}
+.sec-badge{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.12em;padding:5px 14px;border-radius:6px;white-space:nowrap;flex-shrink:0;}
+.s1 .sec-badge{background:var(--s1);color:white;}
+.s2 .sec-badge{background:var(--s2);color:white;}
+.s3 .sec-badge{background:var(--s3);color:white;}
+.s4 .sec-badge{background:var(--s4);color:white;}
+.s5 .sec-badge{background:var(--s5);color:white;}
+.sec-title{font-family:'Playfair Display',serif;font-size:23px;font-weight:700;}
+.s1 .sec-title{color:var(--s1);}
+.s2 .sec-title{color:var(--s2);}
+.s3 .sec-title{color:var(--s3);}
+.s4 .sec-title{color:var(--s4);}
+.s5 .sec-title{color:var(--s5);}
+
+.topic{margin-top:48px;padding-top:48px;border-top:1px solid var(--border);}
+.topic:first-of-type{border-top:none;}
+.topic-header{display:flex;align-items:flex-start;gap:16px;margin-bottom:24px;}
+.topic-num{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;padding:4px 12px;border-radius:6px;margin-top:4px;flex-shrink:0;}
+.s1 .topic-num{background:var(--s1-lt);color:var(--s1);}
+.s2 .topic-num{background:var(--s2-lt);color:var(--s2);}
+.s3 .topic-num{background:var(--s3-lt);color:var(--s3);}
+.s4 .topic-num{background:var(--s4-lt);color:var(--s4);}
+.s5 .topic-num{background:var(--s5-lt);color:var(--s5);}
+
+.topic h2{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;line-height:1.2;}
+.s1 .topic h2{color:var(--s1);}
+.s2 .topic h2{color:var(--s2);}
+.s3 .topic h2{color:var(--s3);}
+.s4 .topic h2{color:var(--s4);}
+.s5 .topic h2{color:var(--s5);}
+
+.topic h3{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--primary);margin:32px 0 12px;padding-bottom:6px;border-bottom:2px solid var(--border);}
+.topic h4{font-size:14px;font-weight:700;color:var(--muted);letter-spacing:0.08em;text-transform:uppercase;margin:24px 0 10px;font-family:'JetBrains Mono',monospace;}
+.topic p{margin-bottom:18px; line-height:1.8; font-size:16.5px; color:var(--text);}
+.topic ul, .topic ol{margin:10px 0 20px 24px;color:var(--text);}
+.topic li{margin-bottom:10px;line-height:1.7;}
+.topic li::marker{color:var(--accent2);font-weight:bold;}
+.topic strong{color:var(--text);font-weight:700;}
+.topic em{font-style:italic;color:var(--text);}
+.topic code{font-family:'JetBrains Mono',monospace;font-size:13.5px;background:var(--bg2);padding:2px 6px;border-radius:4px;border:1px solid var(--border);color:var(--primary);}
+
+.outline-box{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:24px 28px;margin:24px 0 36px;box-shadow:0 2px 8px rgba(0,0,0,0.03);}
+.outline-box h3{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--primary);margin-bottom:16px;border-bottom:2px solid var(--primary-lt);padding-bottom:8px;}
+.outline-list{list-style:none;margin:0;padding:0;}
+.outline-list li{margin-bottom:12px;line-height:1.6;font-size:15px;}
+.outline-list li strong{color:var(--accent2);font-family:'JetBrains Mono',monospace;font-size:13px;display:block;margin-bottom:2px;}
+
+.table-wrap{overflow-x:auto;margin:24px 0 28px;border-radius:10px;box-shadow:0 2px 10px rgba(0,0,0,0.05);border:1px solid var(--border);}
+table{width:100%;border-collapse:collapse;font-size:14px;background:var(--white);}
+thead tr{background:var(--s1);}
+thead th{color:white;padding:12px 16px;text-align:left;font-family:'Source Serif 4',serif;font-weight:700;font-size:14px;}
+tbody tr:nth-child(even){background:var(--bg2);}
+tbody tr:hover{background:var(--s1-lt);transition:background 0.15s;}
+tbody td{padding:11px 16px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.6;}
+
+.callout{margin:24px 0;padding:18px 22px;border-radius:0 10px 10px 0;border-left:5px solid;font-size:14.5px;line-height:1.7;box-shadow:0 2px 8px rgba(0,0,0,0.03);}
+.callout .label{font-family:'JetBrains Mono',monospace;font-size:10.5px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;display:block;margin-bottom:6px;}
+.callout.pearl{background:var(--gold-lt);border-color:var(--gold);color:var(--text);}
+.callout.pearl .label{color:var(--gold);}
+.callout.warn{background:var(--red-lt);border-color:var(--red);color:var(--text);}
+.callout.warn .label{color:var(--red);}
+
+@media(max-width:900px) {
+  .content-wrap { padding: 0 20px 60px; }
+  #hero { padding: 80px 20px 40px; }
+  #hero h1 { font-size: 30px; }
+  #sidebar-toggle { top: 64px; left: 16px; }
+}
+</style>
+<link rel="icon" type="image/png" href="../../assets/images/Surgical_Insight_Hub_Logo.png">
+</head>
+<body>
+
+<nav class="nav" id="mainNav">
+  <div class="nav-left">
+    <a href="../../index.html" class="nav-pill">
+      <div class="nav-logo-img">
+        <img src="../../assets/images/Surgical_Insight_Hub_Logo.png" alt="SIH Logo">
+      </div>
+      <div>
+        <div class="nav-brand-text">Surgical Insight Hub</div>
+        <div class="nav-brand-sub">The Residency Journal</div>
+      </div>
+    </a>
+  </div>
+  <div class="nav-links-pill">
+    <a href="../../index.html">Home</a>
+    <a href="../../notes.html" class="active">Notes</a>
+    <a href="../operative_approach.html">Playbook</a>
+    <a href="../../arena.html?v=4.0.0">MCQ Arena</a>
+    <a href="../../podcast.html">Podcast</a>
+    <a href="../../surgery-talk.html">Surgery Talk</a>
+    <a href="../../about.html">About</a>
+  </div>
+  <div class="nav-right">
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+      <svg id="moonIcon" viewBox="0 0 24 24" width="18" height="18"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      <svg id="sunIcon" style="display:none;" viewBox="0 0 24 24" width="18" height="18"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+    </button>
+    <a href="https://t.me/sugicalInsightHub" target="_blank" class="nav-tg-btn" title="Join Telegram">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="#f0d080"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.89 8.22l-1.97 9.28c-.15.66-.54.82-1.08.51l-3-2.21-1.45 1.39c-.16.16-.3.3-.61.3l.21-3.05 5.56-5.02c.24-.21-.05-.33-.37-.12l-6.87 4.33-2.96-.92c-.64-.2-.66-.64.14-.95l11.57-4.46c.54-.19 1.01.13.83.94z"/></svg>
+    </a>
+    <a href="../../arena.html?v=4.0.0" class="nav-btn arena-btn">MCQ Arena</a>
+  </div>
+</nav>
+
+<div class="mob-nav-overlay" id="mobNavOverlay" onclick="closeMobNav()"></div>
+<div class="mob-nav-sheet" id="mobNavSheet">
+  <div class="mob-nav-handle"></div>
+  <a href="../../index.html" onclick="closeMobNav()">Home</a>
+  <a href="../../notes.html" onclick="closeMobNav()">Notes</a>
+  <a href="../operative_approach.html" onclick="closeMobNav()">Playbook</a>
+  <a href="../../podcast.html" onclick="closeMobNav()">Podcast</a>
+  <a href="../../surgery-talk.html" onclick="closeMobNav()">Surgery Talk</a>
+  <a href="../../arena.html" onclick="closeMobNav()">MCQ Arena</a>
+  <a href="../../about.html" onclick="closeMobNav()">About</a>
+  <a href="https://t.me/sugicalInsightHub" target="_blank" rel="noopener" onclick="closeMobNav()" style="color: var(--brand-gold); font-weight: 800;">Join Telegram Community</a>
+</div>
+
+<button id="sidebar-toggle" onclick="toggleSidebar()">
+  Table of Contents
+</button>
+<div id="sidebar-overlay" onclick="closeSidebar()"></div>
+
+<aside id="sidebar">
+  <div id="sidebar-header">
+    <div class="logo">Surgical Insight Hub</div>
+    <div class="sub">Chronological Monograph</div>
+  </div>
+  <div id="sidebar-search">
+    <input type="text" placeholder="Search topics..." oninput="filterNav(this.value)">
+  </div>
+  <nav id="sidebar-nav">
+    <div class="vol-label">Chapter 7: Hashimoto's Autoimmune Thyroiditis</div>
+<a class="nav-item" href="#topic-7-1"><span class="num">7.1</span>Autoimmune Destruction & Primary Lymphoma Risk</a>
+<div class="vol-label">Chapter 8: Postpartum & Silent Painless Thyroiditis</div>
+<a class="nav-item" href="#topic-8-1"><span class="num">8.1</span>Triphasic Course & Clinical Management</a>
+<div class="vol-label">Chapter 9: Acute Suppurative & Riedel's Fibrous Struma</div>
+<a class="nav-item" href="#topic-9-1"><span class="num">9.1</span>Suppurative Fistulas & IgG4 Riedel Decompression</a>
+
+  </nav>
+</aside>
+
+<main id="main">
+<header id="hero">
+  <div class="eyebrow">Endocrine Surgery · Structured Chapter Outline Monograph</div>
+  <h1>Thyroiditis Pathology & Surgical Management</h1>
+  <p class="subtitle">Comprehensive Chronological Monograph covering Hashimoto's, primary lymphoma risk, postpartum thyroiditis, acute suppurative fistulas, and Riedel fibrous struma.</p>
+  <div class="badges">
+    <span class="badge">Hashimoto Disease</span><span class="badge">Suppurative Abscess</span><span class="badge">de Quervain</span><span class="badge">Riedel Struma</span><span class="badge">ABSITE Core</span>
+  </div>
+</header>
+
+<div class="content-wrap">
+  
+        <div class="sec-header s1" id="chapter-7" style="margin-top:50px;">
+          <span class="sec-badge">CHAPTER 7</span>
+          <h2 class="sec-title">Hashimoto's Autoimmune Thyroiditis</h2>
+        </div>
+            <section class="topic s1-topic" id="topic-7-1">
+              <div class="topic-header">
+                <span class="topic-num">7.1</span>
+                <h2>Autoimmune Destruction & Primary Lymphoma Risk</h2>
+              </div>
+              <div class="outline-box"><h3>Chapter Outline: Hashimoto's Thyroiditis</h3><ul class="outline-list">
+<li><strong>Section 1. Introduction and Autoimmune Pathogenesis</strong>Cell-mediated CD4+/CD8+ T-cell and humoral autoimmune follicle destruction.</li>
+<li><strong>Section 2. Histopathology and Hürthle Cell Transformation</strong>Dense lymphocytic infiltrates, germinal centers, and oxyphilic Hürthle cells.</li>
+<li><strong>Section 3. Serologic Biomarkers (Anti-TPO & Anti-Tg)</strong>Diagnostic utility of high-titer TPOAb (>95%) and TgAb antibodies.</li>
+<li><strong>Section 4. Clinical Presentation and Progression to Hypothyroidism</strong>Painless firm goiter progressing from transient hashitoxicosis to overt hypothyroidism.</li>
+<li><strong>Section 5. Ultrasonographic Features of Hashimoto's</strong>Coarse heterogeneous echotexture with fibrous septations and pseudonodules.</li>
+<li><strong>Section 6. Medical Management & Levothyroxine Replacement</strong>Thyroid hormone substitution targeting euthyroid TSH restoration.</li>
+<li><strong>Section 7. Primary Thyroid Lymphoma Risk</strong>Pathophysiology of long-standing B-cell stimulation driving primary non-Hodgkin lymphoma.</li>
+<li><strong>Section 8. Surgical Indications in Hashimoto's Disease</strong>Compressive goiter, suspected malignancy, or rapid enlargement evaluating lymphoma.</li>
+<li><strong>Section 9. High-Yield Review & Board Exam Memory Anchors</strong>Summary of Hürthle cell features and primary lymphoma surveillance rules.</li>
+</ul></div>
+                <h3>1. Introduction and Autoimmune Pathogenesis</h3>
+                <p>Hashimoto's thyroiditis (chronic lymphocytic thyroiditis) is the most common cause of hypothyroidism in iodine-sufficient regions. It is characterized by cell-mediated and humoral autoimmune destruction of thyroid follicular cells.</p>
+
+                <h3>2. Histopathology and Hürthle Cell Transformation</h3>
+                <p>Histologically, Hashimoto's shows dense lymphocytic infiltrates with germinal center formation, follicular destruction, and eosinophilic <strong>Hürthle cells (Askanazy cells)</strong> featuring metaplastic mitochondria-rich cytoplasm.</p>
+
+                <div style="font-family:'JetBrains Mono',monospace; font-size:12px; font-weight:700; color:var(--primary); margin-top:28px; text-transform:uppercase; letter-spacing:0.05em;">Diagnostic Plates — Hashimoto Lymphocytic Thyroiditis (Click Image to Enlarge)</div>
+<div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(260px, 1fr)); gap:16px; margin:14px 0 32px;">
+
+        <div onclick="openLightbox('../../assets/images/endocrine_pdf_images/ch07_p217_0_2302.jpeg')" style="background:var(--bg2); border:1px solid var(--border); border-radius:12px; overflow:hidden; padding:12px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s; cursor:pointer;" onmouseover="this.style.transform='scale(1.02)'; this.style.borderColor='var(--accent2)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--border)';">
+          <img src="../../assets/images/endocrine_pdf_images/ch07_p217_0_2302.jpeg" alt="Figure 1" style="max-width:100%; max-height:210px; object-fit:contain; border-radius:8px; background:#fff; padding:6px; border:1px solid var(--border);">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent2); margin-top:8px; display:flex; align-items:center; justify-content:center; gap:6px;">
+            <span>Diagnostic Plate 1</span>
+            <span style="font-size:10px; opacity:0.7;">🔍</span>
+          </div>
+        </div>
+
+        <div onclick="openLightbox('../../assets/images/endocrine_pdf_images/ch07_p223_0_2352.jpeg')" style="background:var(--bg2); border:1px solid var(--border); border-radius:12px; overflow:hidden; padding:12px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s; cursor:pointer;" onmouseover="this.style.transform='scale(1.02)'; this.style.borderColor='var(--accent2)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--border)';">
+          <img src="../../assets/images/endocrine_pdf_images/ch07_p223_0_2352.jpeg" alt="Figure 2" style="max-width:100%; max-height:210px; object-fit:contain; border-radius:8px; background:#fff; padding:6px; border:1px solid var(--border);">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent2); margin-top:8px; display:flex; align-items:center; justify-content:center; gap:6px;">
+            <span>Diagnostic Plate 2</span>
+            <span style="font-size:10px; opacity:0.7;">🔍</span>
+          </div>
+        </div>
+
+        <div onclick="openLightbox('../../assets/images/endocrine_pdf_images/ch07_p237_0_2528.jpeg')" style="background:var(--bg2); border:1px solid var(--border); border-radius:12px; overflow:hidden; padding:12px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s; cursor:pointer;" onmouseover="this.style.transform='scale(1.02)'; this.style.borderColor='var(--accent2)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--border)';">
+          <img src="../../assets/images/endocrine_pdf_images/ch07_p237_0_2528.jpeg" alt="Figure 3" style="max-width:100%; max-height:210px; object-fit:contain; border-radius:8px; background:#fff; padding:6px; border:1px solid var(--border);">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent2); margin-top:8px; display:flex; align-items:center; justify-content:center; gap:6px;">
+            <span>Diagnostic Plate 3</span>
+            <span style="font-size:10px; opacity:0.7;">🔍</span>
+          </div>
+        </div>
+
+        <div onclick="openLightbox('../../assets/images/endocrine_pdf_images/ch07_p238_0_2542.jpeg')" style="background:var(--bg2); border:1px solid var(--border); border-radius:12px; overflow:hidden; padding:12px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s; cursor:pointer;" onmouseover="this.style.transform='scale(1.02)'; this.style.borderColor='var(--accent2)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--border)';">
+          <img src="../../assets/images/endocrine_pdf_images/ch07_p238_0_2542.jpeg" alt="Figure 4" style="max-width:100%; max-height:210px; object-fit:contain; border-radius:8px; background:#fff; padding:6px; border:1px solid var(--border);">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent2); margin-top:8px; display:flex; align-items:center; justify-content:center; gap:6px;">
+            <span>Diagnostic Plate 4</span>
+            <span style="font-size:10px; opacity:0.7;">🔍</span>
+          </div>
+        </div>
+</div>
+
+                <h3>3. Serologic Biomarkers (Anti-TPO &amp; Anti-Tg)</h3>
+                <p>Patients present with markedly elevated anti-TPO antibodies (>95%) and anti-Tg antibodies (80%), serving as diagnostic serologic hallmarks.</p>
+
+                <h3>4. Clinical Presentation and Progression to Hypothyroidism</h3>
+                <p>Parenchymal inflammation presents as a painless, diffuse, firm goiter. Early follicle lysis can cause transient hyperthyroidism ("hashitoxicosis"), followed by permanent hypothyroidism.</p>
+
+                <h3>5. Ultrasonographic Features of Hashimoto's</h3>
+                <p>Ultrasound reveals a diffusely heterogeneous, hypoechoic architecture traversed by fibrous bands and micronodular pseudonodules.</p>
+
+                <h3>6. Medical Management &amp; Levothyroxine Replacement</h3>
+                <p>Standard therapy is lifelong oral Levothyroxine (L-T4) replacement tailored to restore serum TSH to normal reference ranges.</p>
+
+                <h3>7. Primary Thyroid Lymphoma Risk</h3>
+                <div class="callout warn">
+                  <span class="label">BOARD WARNING — PRIMARY THYROID LYMPHOMA</span>
+                  Patients with long-standing Hashimoto's thyroiditis have a <strong>60-fold increased risk</strong> of developing primary thyroid lymphoma (typically non-Hodgkin marginal zone B-cell or diffuse large B-cell lymphoma). Suspect lymphoma when a Hashimoto patient presents with a rapidly enlarging painless neck mass.
+                </div>
+
+                <h3>8. Surgical Indications in Hashimoto's Disease</h3>
+                <p>Surgery (total thyroidectomy) is reserved for large compressive goiters causing dyspnea/dysphagia, co-existing suspicious nodules, or cosmetic disfigurement.</p>
+
+                <h3>9. High-Yield Review &amp; Board Exam Memory Anchors</h3>
+                <ul>
+                  <li><strong>Histologic Feature:</strong> Germinal centers &amp; Hürthle (Askanazy) cells.</li>
+                  <li><strong>Lymphoma Risk:</strong> 60-fold increased risk of B-cell thyroid lymphoma.</li>
+                  <li><strong>Primary Antibodies:</strong> Anti-TPO (>95%).</li>
+                </ul>
+                
+            </section>
+        <div class="sec-header s2" id="chapter-8" style="margin-top:50px;">
+          <span class="sec-badge">CHAPTER 8</span>
+          <h2 class="sec-title">Postpartum & Silent Painless Thyroiditis</h2>
+        </div>
+            <section class="topic s2-topic" id="topic-8-1">
+              <div class="topic-header">
+                <span class="topic-num">8.1</span>
+                <h2>Triphasic Course & Clinical Management</h2>
+              </div>
+              <div class="outline-box"><h3>Chapter Outline: Postpartum & Silent Thyroiditis</h3><ul class="outline-list">
+<li><strong>Section 1. Introduction and Clinical Definition</strong>Autoimmune lymphocytic thyroiditis occurring within 12 months of delivery.</li>
+<li><strong>Section 2. Epidemiology and Risk Factors</strong>5–10% incidence in postpartum women; higher in type 1 diabetics and TPOAb positive mothers.</li>
+<li><strong>Section 3. Triphasic Clinical Course Dynamics</strong>Transient thyrotoxicosis phase, hypothyroid phase, and euthyroid recovery phase.</li>
+<li><strong>Section 4. Thyrotoxic Phase (Follicle Destruction Kinetics)</strong>Follicular cell lysis releasing stored hormone lasting 1–2 months.</li>
+<li><strong>Section 5. Hypothyroid Phase Kinetics</strong>Hormone depletion lasting 2–6 months requiring temporary levothyroxine substitution.</li>
+<li><strong>Section 6. Diagnostic Differentiation (RAIU & Serology)</strong>Low/absent RAI uptake distinguishing destructive thyroiditis from Graves disease.</li>
+<li><strong>Section 7. Medical Management Protocols</strong>Beta-blockers for thyrotoxic symptoms; temporary L-T4 for hypothyroid phase.</li>
+<li><strong>Section 8. Long-Term Recurrence and Hypothyroidism Risk</strong>80% resolve completely; 20% develop permanent hypothyroidism or recurrence in subsequent pregnancies.</li>
+<li><strong>Section 9. High-Yield Review & Triphasic Summary</strong>Consolidated timeline reference for clinical board examinations.</li>
+</ul></div>
+                <h3>1. Introduction and Clinical Definition</h3>
+                <p>Postpartum thyroiditis is a variant of silent lymphocytic thyroiditis occurring within 12 months of parturition due to rebound immune activation post-delivery.</p>
+
+                <h3>2. Epidemiology and Risk Factors</h3>
+                <p>Affects 5–10% of postpartum women. Risk is significantly elevated in women with positive pre-pregnancy TPOAb titers or type 1 diabetes mellitus.</p>
+
+                <h3>3. Triphasic Clinical Course Dynamics</h3>
+                <p>Postpartum thyroiditis follows a classic triphasic course: transient thyrotoxicosis (1–2 months), followed by hypothyroidism (2–6 months), and eventual euthyroid recovery in 80% of cases.</p>
+
+                <div style="font-family:'JetBrains Mono',monospace; font-size:12px; font-weight:700; color:var(--primary); margin-top:28px; text-transform:uppercase; letter-spacing:0.05em;">Diagnostic Plates — Postpartum Thyroiditis Stages (Click Image to Enlarge)</div>
+<div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(260px, 1fr)); gap:16px; margin:14px 0 32px;">
+
+        <div onclick="openLightbox('../../assets/images/endocrine_pdf_images/ch08_p267_0_2793.jpeg')" style="background:var(--bg2); border:1px solid var(--border); border-radius:12px; overflow:hidden; padding:12px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s; cursor:pointer;" onmouseover="this.style.transform='scale(1.02)'; this.style.borderColor='var(--accent2)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--border)';">
+          <img src="../../assets/images/endocrine_pdf_images/ch08_p267_0_2793.jpeg" alt="Figure 1" style="max-width:100%; max-height:210px; object-fit:contain; border-radius:8px; background:#fff; padding:6px; border:1px solid var(--border);">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent2); margin-top:8px; display:flex; align-items:center; justify-content:center; gap:6px;">
+            <span>Diagnostic Plate 1</span>
+            <span style="font-size:10px; opacity:0.7;">🔍</span>
+          </div>
+        </div>
+
+        <div onclick="openLightbox('../../assets/images/endocrine_pdf_images/ch08_p273_0_2868.jpeg')" style="background:var(--bg2); border:1px solid var(--border); border-radius:12px; overflow:hidden; padding:12px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s; cursor:pointer;" onmouseover="this.style.transform='scale(1.02)'; this.style.borderColor='var(--accent2)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--border)';">
+          <img src="../../assets/images/endocrine_pdf_images/ch08_p273_0_2868.jpeg" alt="Figure 2" style="max-width:100%; max-height:210px; object-fit:contain; border-radius:8px; background:#fff; padding:6px; border:1px solid var(--border);">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent2); margin-top:8px; display:flex; align-items:center; justify-content:center; gap:6px;">
+            <span>Diagnostic Plate 2</span>
+            <span style="font-size:10px; opacity:0.7;">🔍</span>
+          </div>
+        </div>
+</div>
+
+                <h3>4. Thyrotoxic Phase (Follicle Destruction Kinetics)</h3>
+                <p>The initial thyrotoxic phase results from immune destruction of follicles releasing preformed T4/T3 into circulation, not active hormone synthesis.</p>
+
+                <h3>5. Hypothyroid Phase Kinetics</h3>
+                <p>Following colloid depletion, patients enter a hypothyroid phase manifesting fatigue, weight gain, constipation, and depression.</p>
+
+                <h3>6. Diagnostic Differentiation (RAIU &amp; Serology)</h3>
+                <p>Nuclear RAIU shows low/absent uptake (<1%), definitively distinguishing destructive thyroiditis from true hyper-synthesizing Graves' disease (which has elevated uptake).</p>
+
+                <h3>7. Medical Management Protocols</h3>
+                <p>Thyrotoxic symptoms are managed with beta-blockers (Propranolol). Thionamides are ineffective because synthesis is absent. L-T4 is administered temporarily during the hypothyroid phase.</p>
+
+                <h3>8. Long-Term Recurrence and Hypothyroidism Risk</h3>
+                <p>Although 80% recover euthyroid function, 20% develop permanent hypothyroidism or experience recurrence in future pregnancies.</p>
+
+                <h3>9. High-Yield Review &amp; Triphasic Summary</h3>
+                <ul>
+                  <li><strong>Clinical Course:</strong> Thyrotoxic (1-2 mo) -> Hypothyroid (2-6 mo) -> Euthyroid.</li>
+                  <li><strong>RAIU Scintigraphy:</strong> Low/absent radioactive iodine uptake (<1%).</li>
+                  <li><strong>Treatment Warning:</strong> Thionamides are contraindicated; use Beta-blockers.</li>
+                </ul>
+                
+            </section>
+        <div class="sec-header s3" id="chapter-9" style="margin-top:50px;">
+          <span class="sec-badge">CHAPTER 9</span>
+          <h2 class="sec-title">Acute Suppurative & Riedel's Fibrous Struma</h2>
+        </div>
+            <section class="topic s3-topic" id="topic-9-1">
+              <div class="topic-header">
+                <span class="topic-num">9.1</span>
+                <h2>Suppurative Fistulas & IgG4 Riedel Decompression</h2>
+              </div>
+              <div class="outline-box"><h3>Chapter Outline: Suppurative & Riedel's Thyroiditis</h3><ul class="outline-list">
+<li><strong>Section 1. Acute Suppurative Thyroiditis Pathophysiology</strong>Bacterial infection (Staph/Strep) protected by high iodine content and encapsulated vascularity.</li>
+<li><strong>Section 2. Congenital Pyriform Sinus Fistula Remnants</strong>Persistent 3rd/4th branchial pouch tracts causing recurrent left-sided neck abscesses in children.</li>
+<li><strong>Section 3. Suppurative Abscess Diagnostic Workup & Drainage</strong>Ultrasound identification, FNA Gram stain/culture, parenteral antibiotics, and surgical/percutaneous drainage.</li>
+<li><strong>Section 4. Subacute Granulomatous (de Quervain's) Thyroiditis</strong>Post-viral painful tender thyroiditis with granulomatous giant cells and elevated ESR.</li>
+<li><strong>Section 5. Riedel's Fibrous Struma Pathology & IgG4 Association</strong>Rare IgG4-related systemic sclerosing disease replacing thyroid parenchyma with dense fibrous tissue.</li>
+<li><strong>Section 6. Clinical Presentation of Riedel Struma</strong>Rock-hard fixed neck mass causing tracheal, esophageal, and recurrent laryngeal nerve compression.</li>
+<li><strong>Section 7. Diagnostic Evaluation and Biopsy Confirmation</strong>Core/open biopsy demonstrating dense hyalinized fibrous tissue invading adjacent cervical muscles.</li>
+<li><strong>Section 8. Medical & Surgical Decompression Management</strong>High-dose systemic steroids, Tamoxifen, and surgical thyroid isthmusectomy to relieve tracheal compression.</li>
+<li><strong>Section 9. High-Yield Review & Infectious/Fibrous Board Summary</strong>Summary of pediatric fistulas, de Quervain ESR, and Riedel surgical decompression.</li>
+</ul></div>
+                <h3>1. Acute Suppurative Thyroiditis Pathophysiology</h3>
+                <p>Acute suppurative thyroiditis is a rare bacterial infection of the thyroid gland (Staphylococcus aureus, Streptococcus pyogenes) protected by its high iodine content and rich vascular encapsulation.</p>
+
+                <h3>2. Congenital Pyriform Sinus Fistula Remnants</h3>
+                <div class="callout pearl">
+                  <span class="label">SURGICAL PEARL — PEDIATRIC RECURRENT THYROIDITIS</span>
+                  Recurrent left-sided suppurative thyroiditis in children is caused by a congenital <strong>pyriform sinus fistula</strong> derived from a persistent 3rd or 4th branchial pouch remnant. Definitive cure requires endoscopic fistulotomy or open excision of the tract during quiescent phases.
+                </div>
+
+                <h3>3. Suppurative Abscess Diagnostic Workup &amp; Drainage</h3>
+                <p>Patients present with fever, severe neck pain, erythema, and dysphagia. Workup includes ultrasound, FNA Gram stain/culture, IV antibiotics, and abscess drainage.</p>
+
+                <h3>4. Subacute Granulomatous (de Quervain's) Thyroiditis</h3>
+                <p>Subacute granulomatous thyroiditis is a post-viral inflammatory disorder presenting with severe anterior neck pain radiating to the jaw, hyperthyroidism, markedly elevated ESR (>50 mm/hr), and granulomatous multinucleated giant cells on histology.</p>
+
+                <div style="font-family:'JetBrains Mono',monospace; font-size:12px; font-weight:700; color:var(--primary); margin-top:28px; text-transform:uppercase; letter-spacing:0.05em;">Diagnostic Plates — Suppurative Abscess & Riedel Fibrosis (Click Image to Enlarge)</div>
+<div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(260px, 1fr)); gap:16px; margin:14px 0 32px;">
+
+        <div onclick="openLightbox('../../assets/images/endocrine_pdf_images/ch09_p298_0_3109.jpeg')" style="background:var(--bg2); border:1px solid var(--border); border-radius:12px; overflow:hidden; padding:12px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s; cursor:pointer;" onmouseover="this.style.transform='scale(1.02)'; this.style.borderColor='var(--accent2)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--border)';">
+          <img src="../../assets/images/endocrine_pdf_images/ch09_p298_0_3109.jpeg" alt="Figure 1" style="max-width:100%; max-height:210px; object-fit:contain; border-radius:8px; background:#fff; padding:6px; border:1px solid var(--border);">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent2); margin-top:8px; display:flex; align-items:center; justify-content:center; gap:6px;">
+            <span>Diagnostic Plate 1</span>
+            <span style="font-size:10px; opacity:0.7;">🔍</span>
+          </div>
+        </div>
+
+        <div onclick="openLightbox('../../assets/images/endocrine_pdf_images/ch09_p299_0_3112.jpeg')" style="background:var(--bg2); border:1px solid var(--border); border-radius:12px; overflow:hidden; padding:12px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s; cursor:pointer;" onmouseover="this.style.transform='scale(1.02)'; this.style.borderColor='var(--accent2)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--border)';">
+          <img src="../../assets/images/endocrine_pdf_images/ch09_p299_0_3112.jpeg" alt="Figure 2" style="max-width:100%; max-height:210px; object-fit:contain; border-radius:8px; background:#fff; padding:6px; border:1px solid var(--border);">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent2); margin-top:8px; display:flex; align-items:center; justify-content:center; gap:6px;">
+            <span>Diagnostic Plate 2</span>
+            <span style="font-size:10px; opacity:0.7;">🔍</span>
+          </div>
+        </div>
+
+        <div onclick="openLightbox('../../assets/images/endocrine_pdf_images/ch09_p300_0_3125.jpeg')" style="background:var(--bg2); border:1px solid var(--border); border-radius:12px; overflow:hidden; padding:12px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s; cursor:pointer;" onmouseover="this.style.transform='scale(1.02)'; this.style.borderColor='var(--accent2)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--border)';">
+          <img src="../../assets/images/endocrine_pdf_images/ch09_p300_0_3125.jpeg" alt="Figure 3" style="max-width:100%; max-height:210px; object-fit:contain; border-radius:8px; background:#fff; padding:6px; border:1px solid var(--border);">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent2); margin-top:8px; display:flex; align-items:center; justify-content:center; gap:6px;">
+            <span>Diagnostic Plate 3</span>
+            <span style="font-size:10px; opacity:0.7;">🔍</span>
+          </div>
+        </div>
+</div>
+
+                <h3>5. Riedel's Fibrous Struma Pathology &amp; IgG4 Association</h3>
+                <p>Riedel's thyroiditis is a rare IgG4-related systemic sclerosing disease characterized by dense fibrous tissue replacing thyroid parenchyma and invading adjacent neck structures.</p>
+
+                <h3>6. Clinical Presentation of Riedel Struma</h3>
+                <p>Presents as a "woody" or rock-hard, fixed neck mass causing severe tracheal compression, dysphagia, and recurrent laryngeal nerve palsy, mimicking anaplastic carcinoma.</p>
+
+                <h3>7. Diagnostic Evaluation and Biopsy Confirmation</h3>
+                <p>Core needle or open biopsy is required to confirm dense hyalinized fibrous tissue with chronic inflammatory infiltrates, ruling out anaplastic cancer or lymphoma.</p>
+
+                <h3>8. Medical &amp; Surgical Decompression Management</h3>
+                <p>Medical therapy includes high-dose systemic corticosteroids and Tamoxifen. Surgery is limited to <strong>thyroid isthmusectomy</strong> to relieve tracheal compression; total thyroidectomy is contraindicated due to loss of anatomical planes and extreme risk of nerve/parathyroid injury.</p>
+
+                <h3>9. High-Yield Review &amp; Infectious/Fibrous Board Summary</h3>
+                <ul>
+                  <li><strong>Pediatric Recurrent Abscess:</strong> Left pyriform sinus fistula (3rd/4th pouch).</li>
+                  <li><strong>de Quervain Hallmark:</strong> Painful tender thyroid, high ESR, post-viral.</li>
+                  <li><strong>Riedel Surgical Procedure:</strong> Isthmusectomy only (tracheal decompression).</li>
+                </ul>
+                
+            </section>
+</div>
+</main>
+
+<div id="lightbox-modal" onclick="closeLightbox()" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.85); backdrop-filter:blur(6px); z-index:2000; align-items:center; justify-content:center; padding:20px;">
+  <span style="position:absolute; top:20px; right:30px; color:#fff; font-size:36px; font-weight:bold; cursor:pointer; font-family:sans-serif; transition:color 0.2s;" onmouseover="this.style.color='var(--accent2)'" onmouseout="this.style.color='#fff'">&times;</span>
+  <img id="lightbox-img" src="" alt="Enlarged Diagnostic Plate" style="max-width:92vw; max-height:92vh; object-fit:contain; border-radius:8px; box-shadow:0 12px 40px rgba(0,0,0,0.6); background:#fff; padding:8px;" onclick="event.stopPropagation()">
+</div>
+
+<script>
+  function openLightbox(imgUrl) {
+    const modal = document.getElementById('lightbox-modal');
+    const img = document.getElementById('lightbox-img');
+    img.src = imgUrl;
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox() {
+    const modal = document.getElementById('lightbox-modal');
+    modal.style.display = 'none';
+    document.body.style.overflow = '';
+  }
+
+  function toggleSidebar() {
+    document.body.classList.toggle('sidebar-open');
+  }
+  function closeSidebar() {
+    document.body.classList.remove('sidebar-open');
+  }
+  function filterNav(q) {
+    q = q.toLowerCase();
+    document.querySelectorAll('#sidebar-nav .nav-item').forEach(el => {
+      el.style.display = el.textContent.toLowerCase().includes(q) ? 'block' : 'none';
+    });
+  }
+  
+  function openMobNav() {
+    document.getElementById('mobNavSheet').classList.add('open');
+    document.getElementById('mobNavOverlay').style.display = 'block';
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMobNav() {
+    document.getElementById('mobNavSheet').classList.remove('open');
+    document.getElementById('mobNavOverlay').style.display = 'none';
+    document.body.style.overflow = '';
+  }
+
+  const themeToggle = document.getElementById('themeToggle');
+  const moonIcon = document.getElementById('moonIcon');
+  const sunIcon = document.getElementById('sunIcon');
+  
+  function applyTheme(theme) {
+    if (theme === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      if (moonIcon) moonIcon.style.display = 'none';
+      if (sunIcon) sunIcon.style.display = 'block';
+    } else {
+      document.documentElement.removeAttribute('data-theme');
+      if (sunIcon) sunIcon.style.display = 'none';
+      if (moonIcon) moonIcon.style.display = 'block';
+    }
+  }
+  
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      const isDark = document.documentElement.hasAttribute('data-theme');
+      const newTheme = isDark ? 'light' : 'dark';
+      applyTheme(newTheme);
+      localStorage.setItem('sih-theme', newTheme);
+    });
+  }
+  
+  document.addEventListener('DOMContentLoaded', () => {
+    applyTheme(localStorage.getItem('sih-theme') || 'light');
+  });
+</script>
+<script src="../../js/navigation.js"></script>
+<script src="../../js/nav-pill.js"></script>
+</body>
+</html>

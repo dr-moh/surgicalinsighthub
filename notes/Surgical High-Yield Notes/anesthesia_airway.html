@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Surgical Insight Hub — Anesthesia &amp; Airway Management</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/theme.css?v=4.0.0">
+<link rel="stylesheet" href="../../css/shared.css">
+<script>
+  const savedTheme = localStorage.getItem('sih-theme') || 'light';
+  if (savedTheme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+</script>
+<style>
+:root {
+  --primary:   #0369A1; /* Slate Blue */
+  --primary-dk:#0C4A6E;
+  --primary-lt:#F0F9FF;
+  --accent:    #0284C7;
+  --accent2:   #0EA5E9;
+  --gold:      #B8922A;
+  --gold-lt:   #FEF3C7;
+  --s1:        #0369A1;
+  --s2:        #0D9488;
+  --s3:        #C27803;
+  --s4:        #2563EB;
+  --s5:        #BE185D;
+  --s1-lt:     #F0F9FF;
+  --s2-lt:     #F0FDFA;
+  --s3-lt:     #FEF3C7;
+  --s4-lt:     #EFF6FF;
+  --s5-lt:     #FDF2F8;
+  --red:       #B91C1C;
+  --red-lt:    #FEF2F2;
+  --bg:        #FBFBFC;
+  --bg2:       #F4F4F6;
+  --border:    #E5E7EB;
+  --text:      #1F2937;
+  --muted:     #4B5563;
+  --white:     #FFFFFF;
+  --sidebar-w: 300px;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--bg);color:var(--text);font-size:16.5px;line-height:1.8;}
+
+/* DARK MODE OVERRIDES */
+[data-theme="dark"] {
+  --bg: #09060F;
+  --bg2: #120D1D;
+  --text: #E2DEE9;
+  --muted: #A78BFA;
+  --border: rgba(255,255,255,0.08);
+  --primary-lt: #0C4A6E44;
+  --s1-lt: #0C4A6E44;
+  --s2-lt: #0B1D19;
+  --s3-lt: #221B0B;
+  --s4-lt: #0F172A;
+  --s5-lt: #2A0B1A;
+  --white: #120D1D;
+}
+
+/* SIDEBAR & OVERLAY */
+#sidebar {
+  position: fixed; top: 0; left: 0; width: var(--sidebar-w); height: 100vh;
+  background: var(--primary-dk); color: #E2DEE9;
+  display: flex; flex-direction: column;
+  z-index: 1300; overflow: hidden;
+  transform: translateX(-100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 4px 0 24px rgba(0,0,0,0.3);
+}
+body.sidebar-open #sidebar { transform: translateX(0); }
+
+#sidebar-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.5); backdrop-filter: blur(3px);
+  z-index: 1250; opacity: 0; pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+body.sidebar-open #sidebar-overlay { opacity: 1; pointer-events: auto; }
+
+#sidebar-toggle {
+  position: fixed; top: 72px; left: 24px; z-index: 1200;
+  background: var(--primary); color: white;
+  border: none; border-radius: 30px;
+  padding: 10px 18px; font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 600;
+  letter-spacing: 0.05em; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  display: flex; align-items: center; gap: 8px; transition: all 0.2s;
+}
+#sidebar-toggle:hover { background: var(--accent); transform: translateY(-2px); }
+
+#progress-bar {
+  position: fixed; top: 52px; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  transform-origin: left; transform: scaleX(0); transition: transform 0.1s; z-index: 1105;
+}
+
+#sidebar-header{padding:20px 20px 14px;border-bottom:1px solid rgba(255,255,255,0.1);flex-shrink:0;}
+#sidebar-header .logo{font-family:'Playfair Display',serif;font-size:13px;font-weight:700;color:var(--accent2);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;}
+#sidebar-header .sub{font-size:10.5px;color:rgba(226,222,233,0.6);letter-spacing:0.04em;}
+#sidebar-search{padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.08);flex-shrink:0;}
+#sidebar-search input{width:100%;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:6px;color:#E2DEE9;padding:6px 10px;font-size:12px;font-family:'Source Serif 4',serif;outline:none;transition:border-color 0.2s;}
+#sidebar-search input::placeholder{color:rgba(226,222,233,0.4);}
+#sidebar-search input:focus{border-color:var(--accent2);}
+#sidebar-nav{flex:1;overflow-y:auto;padding:8px 0 20px;}
+#sidebar-nav::-webkit-scrollbar{width:4px;}
+#sidebar-nav::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.15);border-radius:2px;}
+.vol-label{font-size:9.5px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent2);padding:14px 18px 4px;}
+.nav-item{display:block;padding:8px 18px 8px 22px;font-size:12.5px;color:rgba(226,222,233,0.75);text-decoration:none;border-left:2px solid transparent;transition:all 0.15s;line-height:1.4;}
+.nav-item:hover{color:#fff;background:rgba(255,255,255,0.05);border-left-color:var(--accent);}
+.nav-item.active{color:#fff;background:rgba(255,255,255,0.08);border-left-color:var(--accent2);font-weight:600;}
+.nav-item .num{font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(226,222,233,0.4);margin-right:6px;}
+
+/* HERO */
+#hero{background:linear-gradient(135deg,var(--primary-dk) 0%,#0369A1 60%,#090314 100%);color:white;padding:120px 72px 60px;position:relative;overflow:hidden;}
+#hero::before{content:'';position:absolute;top:-60px;right:-60px;width:380px;height:380px;background:radial-gradient(circle,rgba(255,255,255,0.1) 0%,transparent 70%);pointer-events:none;}
+#hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--primary),var(--accent2),transparent);}
+#hero .eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.16em;color:var(--accent2);text-transform:uppercase;margin-bottom:14px;}
+#hero h1{font-family:'Playfair Display',serif;font-size:38px;font-weight:700;line-height:1.15;margin-bottom:10px;color:#fff;}
+#hero .subtitle{font-size:18px;color:rgba(255,255,255,0.65);font-style:italic;margin-bottom:28px;}
+#hero .badges{display:flex;gap:10px;flex-wrap:wrap;}
+#hero .badge{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:4px 14px;font-size:12px;color:rgba(255,255,255,0.8);font-family:'JetBrains Mono',monospace;}
+
+/* CONTENT */
+.content-wrap{max-width:1140px;margin:0 auto;padding:0 48px 80px;}
+
+/* SECTION HEADER */
+.sec-header{margin-top:60px;margin-bottom:8px;padding:28px 36px;border-radius:10px;display:flex;align-items:center;gap:20px;}
+.sec-header.s1{background:linear-gradient(135deg,#0369A108,#0369A118);border-left:4px solid var(--s1);}
+.sec-header.s2{background:linear-gradient(135deg,#0D948808,#0D948818);border-left:4px solid var(--s2);}
+.sec-header.s3{background:linear-gradient(135deg,#C2780308,#C2780318);border-left:4px solid var(--s3);}
+.sec-header.s4{background:linear-gradient(135deg,#2563EB08,#2563EB18);border-left:4px solid var(--s4);}
+.sec-header.s5{background:linear-gradient(135deg,#BE185D08,#BE185D18);border-left:4px solid var(--s5);}
+.sec-badge{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;letter-spacing:0.1em;padding:4px 12px;border-radius:4px;white-space:nowrap;flex-shrink:0;}
+.s1 .sec-badge{background:var(--s1);color:white;}
+.s2 .sec-badge{background:var(--s2);color:white;}
+.s3 .sec-badge{background:var(--s3);color:white;}
+.s4 .sec-badge{background:var(--s4);color:white;}
+.s5 .sec-badge{background:var(--s5);color:white;}
+.sec-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;}
+.s1 .sec-title{color:var(--s1);}
+.s2 .sec-title{color:var(--s2);}
+.s3 .sec-title{color:var(--s3);}
+.s4 .sec-title{color:var(--s4);}
+.s5 .sec-title{color:var(--s5);}
+
+/* TOPIC */
+.topic{margin-top:48px;padding-top:48px;border-top:1px solid var(--border);}
+.topic:first-of-type{border-top:none;}
+.topic-header{display:flex;align-items:flex-start;gap:16px;margin-bottom:24px;}
+.topic-num{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;padding:3px 10px;border-radius:4px;margin-top:4px;flex-shrink:0;}
+.s1 .topic-num{background:var(--s1-lt);color:var(--s1);}
+.s2 .topic-num{background:var(--s2-lt);color:var(--s2);}
+.s3 .topic-num{background:var(--s3-lt);color:var(--s3);}
+.s4 .topic-num{background:var(--s4-lt);color:var(--s4);}
+.s5 .topic-num{background:var(--s5-lt);color:var(--s5);}
+.topic h2{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;line-height:1.2;}
+.s1 .topic h2{color:var(--s1);}
+.s2 .topic h2{color:var(--s2);}
+.s3 .topic h2{color:var(--s3);}
+.s4 .topic h2{color:var(--s4);}
+.s5 .topic h2{color:var(--s5);}
+.topic h3{font-family:'Playfair Display',serif;font-size:17px;font-weight:600;color:var(--muted);margin:26px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--border);}
+.topic h4{font-size:13px;font-weight:600;color:var(--muted);letter-spacing:0.06em;text-transform:uppercase;margin:18px 0 8px;font-family:'JetBrains Mono',monospace;}
+.topic p{margin-bottom:12px;color:var(--text);text-align:justify;}
+.topic ul,.topic ol{margin:8px 0 14px 20px;color:var(--text);}
+.topic li{margin-bottom:6px;line-height:1.65;}
+.topic li::marker{color:var(--accent2);}
+.topic strong{color:var(--text);font-weight:600;}
+
+/* TABLES */
+.table-wrap{overflow-x:auto;margin:16px 0 20px;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.06);border:1px solid var(--border);}
+table{width:100%;border-collapse:collapse;font-size:13.5px;background:var(--white);}
+thead tr{background:var(--s1);}
+thead th{color:white;padding:10px 14px;text-align:left;font-family:'Source Serif 4',serif;font-weight:600;font-size:13px;}
+tbody tr:nth-child(even){background:var(--bg2);}
+tbody tr:hover{background:var(--s1-lt);transition:background 0.15s;}
+tbody td{padding:9px 14px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.5;}
+.s2-tbl thead tr{background:var(--s2);}
+.s3-tbl thead tr{background:var(--s3);}
+.s4-tbl thead tr{background:var(--s4);}
+.s5-tbl thead tr{background:var(--s5);}
+
+/* CALLOUTS */
+.callout{margin:18px 0;padding:14px 18px;border-radius:0 8px 8px 0;border-left:4px solid;font-size:14px;line-height:1.65;}
+.callout .label{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;display:block;margin-bottom:4px;}
+.callout.pearl{background:var(--gold-lt);border-color:var(--gold);}
+.callout.pearl .label{color:var(--gold);}
+.callout.warn{background:var(--red-lt);border-color:var(--red);}
+.callout.warn .label{color:var(--red);}
+.callout.clin{background:var(--s2-lt);border-color:var(--s2);}
+.callout.clin .label{color:var(--s2);}
+.callout.exam{background:var(--s4-lt);border-color:var(--s4);}
+.callout.exam .label{color:var(--s4);}
+
+/* VIVA Scenario */
+.viva{background:var(--s1-lt);border:1px solid var(--border);border-left:4px solid var(--s1);border-radius:0 8px 8px 0;padding:16px 20px;margin:20px 0;}
+.viva .vq{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;color:var(--s1);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:8px;}
+.viva .vscenario{font-size:14px;font-weight:600;color:var(--text);margin-bottom:10px;line-height:1.5;}
+.viva .vanswer{font-size:13.5px;color:var(--muted);line-height:1.65;}
+.viva .vanswer ul{margin:6px 0 0 18px;}
+.viva .vanswer li{margin-bottom:4px;}
+
+/* KEY GRID */
+.key-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:10px;margin:14px 0 20px;}
+.key-card{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:12px 14px;font-size:13px;line-height:1.55;}
+.key-card .kc-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;font-weight:600;color:var(--s1);}
+.key-card .kc-val{font-weight:700;font-size:15px;color:var(--text);}
+.key-card.g2 .kc-label{color:var(--s2);}
+.key-card.g3 .kc-label{color:var(--s3);}
+.key-card.red .kc-label{color:var(--red);}
+.key-card.amb .kc-label{color:var(--accent2);}
+
+/* TOP BTN */
+#top-btn{position:fixed;bottom:28px;right:28px;background:var(--primary);color:white;border:none;border-radius:50%;width:44px;height:44px;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,0.2);transition:all 0.2s;opacity:0;pointer-events:none;z-index:1100;}
+#top-btn.show{opacity:1;pointer-events:auto;}
+#top-btn:hover{background:var(--accent2);transform:translateY(-2px);}
+
+@media(max-width:900px){
+  .content-wrap{padding:0 20px 60px;}
+  #hero{padding:80px 20px 40px;}
+  #hero h1{font-size:30px;}
+  #sidebar-toggle{top:64px; left:16px;}
+}
+</style>
+<script src="https://jsdelivr.net" async></script>
+</head>
+<body>
+  <!-- Standardized SIH Navbar -->
+  <nav class="nav" id="mainNav">
+    <div class="nav-left">
+      <a href="../../index.html" class="nav-pill">
+        <div class="nav-logo-img">
+          <img src="../../assets/images/Surgical_Insight_Hub_Logo.png" alt="SIH Logo">
+        </div>
+        <div>
+          <div class="nav-brand-text">Surgical Insight Hub</div>
+          <div class="nav-brand-sub">The Residency Journal</div>
+        </div>
+      </a>
+    </div>
+    <div class="nav-links-pill">
+      <a href="../../index.html">Home</a>
+      <a href="../../notes.html" class="active">Notes</a>
+      <a href="../operative_approach.html">Playbook</a>
+      <a href="../../arena.html?v=4.0.0">MCQ Arena</a>
+      <a href="../../podcast.html">Podcast</a>
+      <a href="../../surgery-talk.html">Surgery Talk</a>
+      <a href="../../about.html">About</a>
+    </div>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+        <svg id="moonIcon" viewBox="0 0 24 24" width="18" height="18"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        <svg id="sunIcon" style="display:none;" viewBox="0 0 24 24" width="18" height="18"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+      </button>
+      <a href="https://t.me/sugicalInsightHub" target="_blank" class="nav-tg-btn" title="Join Telegram">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="#f0d080"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.89 8.22l-1.97 9.28c-.15.66-.54.82-1.08.51l-3-2.21-1.45 1.39c-.16.16-.3.3-.61.3l.21-3.05 5.56-5.02c.24-.21-.05-.33-.37-.12l-6.87 4.33-2.96-.92c-.64-.2-.66-.64.14-.95l11.57-4.46c.54-.19 1.01.13.83.94z"/></svg>
+      </a>
+      <a href="../../arena.html?v=4.0.0" class="nav-btn arena-btn">MCQ Arena</a>
+      <button class="mob-nav-toggle" onclick="openMobNav()" aria-label="Menu">
+        <div class="hamburger"><span></span><span></span><span></span></div>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mob-nav-overlay" id="mobNavOverlay" onclick="closeMobNav()"></div>
+  <div class="mob-nav-sheet" id="mobNavSheet">
+    <div class="mob-nav-handle"></div>
+    <a href="../../index.html" onclick="closeMobNav()">Home</a>
+    <a href="../../notes.html" onclick="closeMobNav()">Notes</a>
+    <a href="../../notes/operative_approach.html" onclick="closeMobNav()">Playbook</a>
+    <a href="../../podcast.html" onclick="closeMobNav()">Podcast</a>
+    <a href="../../surgery-talk.html" onclick="closeMobNav()">Surgery Talk</a>
+    <a href="../../arena.html" onclick="closeMobNav()">MCQ Arena</a>
+    <a href="../../about.html" onclick="closeMobNav()">About</a>
+    <a href="https://t.me/sugicalInsightHub" target="_blank" rel="noopener" onclick="closeMobNav()" style="color: var(--brand-gold); font-weight: 800;">Join Telegram Community</a>
+  </div>
+
+  <div id="progress-bar"></div>
+  <button id="sidebar-toggle" onclick="toggleSidebar()">
+    <span>📜</span> Sections Menu
+  </button>
+  <div id="sidebar-overlay" onclick="closeSidebar()"></div>
+
+  <!-- SIDEBAR -->
+  <aside id="sidebar">
+    <div id="sidebar-header">
+      <div class="logo">Anesthesia &amp; Airway</div>
+      <div class="sub">General Surgery Monograph</div>
+    </div>
+    <div id="sidebar-search">
+      <input oninput="filterNav(this.value)" placeholder="Search sections..." type="text"/>
+    </div>
+    <nav id="sidebar-nav">
+      <div class="vol-label">Pillar 1: Pathophysiology</div>
+      <a class="nav-item" href="#p1-neuro"><span class="num">1.1</span>Neuropharmacology of Induction</a>
+      <a class="nav-item" href="#p1-paralytic"><span class="num">1.2</span>Paralytic NMJ Mechanics</a>
+      <a class="nav-item" href="#p1-neuraxial"><span class="num">1.3</span>Neuraxial Blockade Reflex Loops</a>
+      <div class="vol-label">Pillar 2: Diagnostics &amp; Scoring</div>
+      <a class="nav-item" href="#p2-mallampati"><span class="num">2.1</span>Mallampati Airway Grid</a>
+      <a class="nav-item" href="#p2-asa"><span class="num">2.2</span>ASA Status Classification</a>
+      <a class="nav-item" href="#p2-lemon"><span class="num">2.3</span>LEMON Airway Protocol</a>
+      <div class="vol-label">Pillar 3: Clinical Trials</div>
+      <a class="nav-item" href="#p3-trials"><span class="num">3.1</span>Landmark Trials (NAP4, ASRA)</a>
+      <div class="vol-label">Pillar 4: RSI Timeline</div>
+      <a class="nav-item" href="#p4-rsi"><span class="num">4.1</span>Rapid Sequence Induction Schedule</a>
+      <div class="vol-label">Pillar 5: Bedside Crises</div>
+      <a class="nav-item" href="#p5-cico"><span class="num">5.1</span>CICO Airway &amp; Cricothyroidotomy</a>
+      <a class="nav-item" href="#p5-last"><span class="num">5.2</span>LAST Lipid Emulsion Rescue</a>
+      <div class="vol-label">Board Review</div>
+      <a class="nav-item" href="#board-review"><span class="num">6.1</span>ABSITE Core Recall Matrix</a>
+    </nav>
+  </aside>
+
+  <main id="main">
+    <section id="hero">
+      <div class="eyebrow">Perioperative Anesthesiology · Monograph</div>
+      <h1>Anesthesia &amp; Airway Management</h1>
+      <p class="subtitle">General anesthetic pharmacology, paralytic receptor mechanics, neuraxial sympathetic blockades, airway assessments, and emergency cricothyroidotomy protocols.</p>
+      <div class="badges">
+        <span class="badge">General Surgery</span>
+        <span class="badge">Board Review</span>
+        <span class="badge">ABSITE Gold</span>
+      </div>
+    </section>
+
+    <div class="content-wrap">
+      <!-- Key Statistics Grid -->
+      <div class="key-grid">
+        <div class="key-card">
+          <div class="kc-label">ASA V Status</div>
+          <div class="kc-val">Moribund Patient</div>
+        </div>
+        <div class="key-card g2">
+          <div class="kc-label">Succinylcholine Danger</div>
+          <div class="kc-val">Extrajunctional Upregulation</div>
+        </div>
+        <div class="key-card red">
+          <div class="kc-label">LAST Rescue</div>
+          <div class="kc-val">20% Lipid Emulsion</div>
+        </div>
+        <div class="key-card amb">
+          <div class="kc-label">CICO Airway</div>
+          <div class="kc-val">Emergent Cric</div>
+        </div>
+      </div>
+
+      <!-- Foundational Anchor Callout -->
+      <div class="callout clin" style="border-left-color: var(--primary); background: var(--primary-lt); margin-bottom: 40px;">
+        <span class="label" style="color: var(--primary); font-weight: 700;">Foundational Anchor (From PDF Source Notes)</span>
+        <p style="font-style: italic; color: var(--text);">
+          "High-yield anesthesiology review covering GA phases and complications, regional vs. neuraxial anesthesia, pre-anesthetic risk grading, premedication, and Rapid Sequence Induction (RSI)."
+        </p>
+      </div>
+
+      <!-- PILLAR 1 -->
+      <div class="sec-header s1" id="p1-neuro">
+        <span class="sec-badge">PILLAR 1</span>
+        <span class="sec-title">Core Pathophysiology &amp; Neuropharmacology</span>
+      </div>
+      
+      <section class="topic s1">
+        <div class="topic-header"><span class="topic-num">1.1</span><h2>Neuropharmacology of General Anesthetic Induction</h2></div>
+        <p>Induction agents produce rapid unconsciousness through specific receptor interactions in the central nervous system:</p>
+        <ul>
+          <li><strong>Propofol &amp; Etomidate (GABA-A Agonists):</strong> Bind to specific &beta;-subunits of the ligand-gated **GABA-A receptor**. This increases the duration of channel opening in response to GABA, leading to increased chloride ion influx. The resulting neuronal hyperpolarization suppresses postsynaptic electrical activity.
+            <br>• <em>Hemodynamics:</em> Propofol causes significant arterial and venous vasodilation (by reducing sympathetic tone and increasing nitric oxide release) and inhibits the baroreceptor reflex. Etomidate is hemodynamically neutral but causes transient **adrenal suppression** by inhibiting **11-beta-hydroxylase** (preventing conversion of 11-deoxycortisol to cortisol).
+          </li>
+          <li><strong>Ketamine (NMDA Antagonist):</strong> Non-competitively binds to the phencyclidine site within the **N-methyl-D-aspartate (NMDA)** receptor channel, blocking glutamate binding and calcium influx. This produces a "dissociative" state by disconnecting the sensory cortex from the limbic system.
+            <br>• <em>Hemodynamics:</em> Ketamine stimulates the sympathetic nervous system, increasing circulating catecholamines, which raises heart rate, cardiac output, and mean arterial pressure. However, it is a direct myocardial depressant, which can cause hypotension in catecholamine-depleted patients.
+          </li>
+        </ul>
+      </section>
+
+      <section class="topic s1" id="p1-paralytic">
+        <div class="topic-header"><span class="topic-num">1.2</span><h2>Neuromuscular Junction (NMJ) Blockade Kinetics</h2></div>
+        <p>Paralytics interrupt signal transmission at the motor endplate through two distinct mechanisms:</p>
+        <ul>
+          <li><strong>Depolarizing Blockade (Succinylcholine):</strong> Composed of two joined acetylcholine molecules. It binds to nicotinic acetylcholine receptors at the motor endplate, causing persistent depolarization (seen as transient fasciculations). The muscle remains refractory to subsequent action potentials because the sodium channels at the edge of the motor endplate remain inactivated.
+            <br>• <em>Potassium Kinetics:</em> In normal tissue, succinylcholine transiently increases serum potassium by **0.5 mEq/L**. In patients with upregulated extrajunctional receptors (containing &alpha;_7 subunits, seen in burns, major trauma, denervation/stroke, or prolonged immobilization &gt; 72 hours), it can trigger massive, life-threatening hyperkalemia.
+          </li>
+          <li><strong>Non-Depolarizing competitive Blockade (Rocuronium / Vecuronium):</strong> Act as competitive antagonists at the post-junctional nicotinic acetylcholine receptors. They prevent acetylcholine from binding and opening the channel, without causing depolarization. They are reversed using **Sugammadex** (a modified &gamma;-cyclodextrin that encapsulates and inactivates the drug) or **Neostigmine** (an acetylcholinesterase inhibitor given with glycopyrrolate to prevent systemic muscarinic side effects).
+          </li>
+        </ul>
+      </section>
+
+      <section class="topic s1" id="p1-neuraxial">
+        <div class="topic-header"><span class="topic-num">1.3</span><h2>Neuraxial Sympathetic Blockade Reflex Loops</h2></div>
+        <p>Spinal and epidural anesthesia block preganglionic sympathetic fibers (B fibers), which are smaller and more sensitive than sensory or motor fibers:</p>
+        <ul>
+          <li><strong>Cardioaccelerator Blockade (T1 – T4):</strong> Preganglionic sympathetic fibers originating from the **T1 to T4** spinal cord segments travel to the cardiac plexus (cardioaccelerator fibers). If the neuraxial block reaches this level, these sympathetic signals are blocked.</li>
+          <li><strong>Unopposed Vagal Tone:</strong> This loss of sympathetic input leaves vagal parasympathetic innervation unopposed, presenting clinically as **profound bradycardia** and a decrease in myocardial contractility. Combined with vasodilation from the blockade of lower sympathetic vasomotor fibers, this can lead to severe cardiovascular collapse (neurogenic shock).</li>
+        </ul>
+      </section>
+
+      <!-- PILLAR 2 -->
+      <div class="sec-header s2" id="p2-mallampati">
+        <span class="sec-badge">PILLAR 2</span>
+        <span class="sec-title">Classifications &amp; Assessment Matrices</span>
+      </div>
+      
+      <section class="topic s2">
+        <div class="topic-header"><span class="topic-num">2.1</span><h2>Mallampati Airway Classification Grid</h2></div>
+        <p>The Mallampati score estimates the space in the oral cavity relative to the size of the tongue, predicting the ease of direct laryngoscopy:</p>
+        <div class="table-wrap s2-tbl">
+          <table>
+            <thead>
+              <tr>
+                <th>Mallampati Class</th>
+                <th>Anatomic Structures Visible on Examination</th>
+                <th>Predictive Difficulty for Intubation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Class I</strong></td>
+                <td>Soft palate, fauces, uvula, and anterior/posterior tonsillar pillars are fully visible.</td>
+                <td>Easy. Suggests adequate oral volume to accommodate the laryngoscope blade and tongue.</td>
+              </tr>
+              <tr>
+                <td><strong>Class II</strong></td>
+                <td>Soft palate, fauces, and uvula are visible. The tonsillar pillars are obscured.</td>
+                <td>Mild difficulty. Normal anatomy but reduced lateral space.</td>
+              </tr>
+              <tr>
+                <td><strong>Class III</strong></td>
+                <td>Only the soft palate and the base of the uvula are visible.</td>
+                <td>**High difficulty.** Strongly correlates with difficult direct laryngoscopy (Cormack-Lehane Grade III/IV).</td>
+              </tr>
+              <tr>
+                <td><strong>Class IV</strong></td>
+                <td>Only the hard palate is visible. The soft palate is completely obscured.</td>
+                <td>**Extreme difficulty.** Highly predictive of a difficult airway. Requires advanced airway equipment (video laryngoscope, fiberoptic).</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="topic s2" id="p2-asa">
+        <div class="topic-header"><span class="topic-num">2.2</span><h2>American Society of Anesthesiologists (ASA) Physical Status Staging</h2></div>
+        <p>The ASA score classifies patient physical status to estimate perioperative risk:</p>
+        <div class="table-wrap s2-tbl">
+          <table>
+            <thead>
+              <tr>
+                <th>ASA Class</th>
+                <th>Clinical Status Definition</th>
+                <th>Surgical Examples &amp; Parameters</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>ASA I</strong></td>
+                <td>A normal, healthy patient.</td>
+                <td>Non-smoker, minimal/no alcohol use, normal BMI.</td>
+              </tr>
+              <tr>
+                <td><strong>ASA II</strong></td>
+                <td>A patient with mild systemic disease.</td>
+                <td>Social smoker, well-controlled DM or HTN, pregnancy, BMI 30-40, mild lung disease.</td>
+              </tr>
+              <tr>
+                <td><strong>ASA III</strong></td>
+                <td>A patient with severe systemic disease that limits activity but is not constantly life-threatening.</td>
+                <td>Poorly controlled DM or HTN, COPD, BMI &gt; 40, active hepatitis, alcohol abuse/dependence, pacemaker, history of MI/stroke &gt; 3 months ago, end-stage renal disease (ESRD) on scheduled dialysis.</td>
+              </tr>
+              <tr>
+                <td><strong>ASA IV</strong></td>
+                <td>A patient with severe systemic disease that is a constant threat to life.</td>
+                <td>History of MI, stroke, or TIA &lt; 3 months ago; ongoing cardiac ischemia or severe valve disease; severe reduction in ejection fraction; sepsis; acute respiratory distress syndrome (ARDS); ESRD not undergoing scheduled dialysis.</td>
+              </tr>
+              <tr>
+                <td><strong>ASA V</strong></td>
+                <td>A moribund patient who is not expected to survive without the operation.</td>
+                <td>Ruptured abdominal or thoracic aortic aneurysm, massive intracranial hemorrhage with midline shift, ischemic bowel with multi-system organ failure.</td>
+              </tr>
+              <tr>
+                <td><strong>ASA VI</strong></td>
+                <td>A declared brain-dead patient whose organs are being harvested.</td>
+                <td>Organ donor transplant track.</td>
+              </tr>
+              <tr>
+                <td><strong>"E" Modifier</strong></td>
+                <td>Appended to any class if the procedure is an emergency (e.g., ASA III-E).</td>
+                <td>Denotes an emergency where delay would significantly increase the risk of limb or life loss.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="topic s2" id="p2-lemon">
+        <div class="topic-header"><span class="topic-num">2.3</span><h2>The LEMON Airway Assessment Protocol</h2></div>
+        <div class="p-4 rounded-lg bg-slate-950 border border-slate-700 text-xs text-slate-300">
+          <ul class="space-y-2">
+            <li><strong>L — Look Externally:</strong> Inspect for features that predict difficult airway management (e.g., facial hair, receding mandible, buck teeth, thick neck, or facial trauma).</li>
+            <li><strong>E — Evaluate the 3-3-2 Rule:</strong>
+              <br>• **3:** Inter-incisor distance &ge; 3 finger breadths (mouth opening).
+              <br>• **3:** Hyoid-to-mental distance &ge; 3 finger breadths (mandibular space).
+              <br>• **2:** Thyroid-to-mouth/hyoid distance &ge; 2 finger breadths (larynx position relative to base of tongue).
+            </li>
+            <li><strong>M — Mallampati Score:</strong> Class III or IV predicts a difficult airway.</li>
+            <li><strong>O — Obstruction:</strong> Evaluate for conditions that can compromise airflow or visualization (e.g., epiglottitis, peritonsillar abscess, retrosternal goiter, hematoma, or expanding neck mass).</li>
+            <li><strong>N — Neck Mobility:</strong> Assess cervical spine range of motion. Restricted extension (due to trauma, cervical collar, severe osteoarthritis, or ankylosing spondylitis) limits the ability to align the airway axes.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- PILLAR 3 -->
+      <div class="sec-header s3" id="p3-trials">
+        <span class="sec-badge">PILLAR 3</span>
+        <span class="sec-title">Landmark Anesthesia Trials &amp; Consensus Reports</span>
+      </div>
+      
+      <section class="topic s3">
+        <div class="topic-header"><span class="topic-num">3.1</span><h2>Field-Defining Guidelines</h2></div>
+        <div class="table-wrap s3-tbl">
+          <table>
+            <thead>
+              <tr>
+                <th>Guideline / Audit Name</th>
+                <th>Year</th>
+                <th>Primary Evaluation</th>
+                <th>Clinical Outcome &amp; Impact on Practice Guidelines</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>NAP4 Audit (UK)</strong></td>
+                <td>2011</td>
+                <td>National audit evaluating major complications of airway management (death, brain damage, emergent surgical airway) across all UK hospitals.</td>
+                <td>Identified that poor airway assessment, failure to plan for difficulty, and **failure to use capnography routinely** were major contributors to airway catastrophes. **Mandated continuous wave-form capnography** for all intubated patients in the operating room, emergency department, and ICU.</td>
+              </tr>
+              <tr>
+                <td><strong>ASRA Guidelines</strong></td>
+                <td>2018 / 2021 updates</td>
+                <td>Consensus guidelines for neuraxial (spinal/epidural) anesthesia and regional blocks in anticoagulated patients.</td>
+                <td>Established safe time intervals for placing and removing catheters relative to anticoagulant administration:
+                  <br>• Hold Clopidogrel for **5–7 days**.
+                  <br>• Hold prophylactic LMWH for **12 hours**; therapeutic LMWH for **24 hours** prior to needle insertion or catheter removal.
+                  <br>• Reduces the risk of epidural hematoma and spinal cord compression.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- PILLAR 4 -->
+      <div class="sec-header s4" id="p4-rsi">
+        <span class="sec-badge">PILLAR 4</span>
+        <span class="sec-title">Surgical Strategy &amp; Airway Algorithms</span>
+      </div>
+      
+      <section class="topic s4">
+        <div class="topic-header"><span class="topic-num">4.1</span><h2>Rapid Sequence Induction (RSI) Protocol Timeline</h2></div>
+        <p>RSI is indicated for patients at high risk for aspiration (e.g., full stomach, bowel obstruction, acute trauma, or severe gastroparesis):</p>
+        
+        <div class="relative pl-6 border-l-2 border-sky-600 space-y-6 text-xs text-slate-300">
+            <div>
+                <div class="absolute -left-2 w-3 h-3 bg-sky-600 rounded-full"></div>
+                <h5 class="font-bold text-white uppercase">1. Pre-oxygenation (3–5 Minutes prior to Induction)</h5>
+                <p>Administer 100% oxygen via tight-fitting face mask. This replaces nitrogen in the functional residual capacity with oxygen (denitrogenation), extending the duration of safe apnea before oxygen desaturation occurs.</p>
+            </div>
+            <div>
+                <div class="absolute -left-2 w-3 h-3 bg-sky-600 rounded-full"></div>
+                <h5 class="font-bold text-white uppercase">2. Pre-medication (2–3 Minutes prior to Induction)</h5>
+                <p>Administer agents to blunt the sympathetic response to intubation (e.g., Fentanyl 1–2 &micro;g/kg) and lidocaine to attenuate airway reflexes if indicated.</p>
+            </div>
+            <div>
+                <div class="absolute -left-2 w-3 h-3 bg-sky-600 rounded-full"></div>
+                <h5 class="font-bold text-white uppercase">3. Induction agent &amp; Paralytic (Time Zero)</h5>
+                <p>Administer a rapid-acting induction agent (e.g., Propofol 1.5–2.5 mg/kg or Etomidate 0.3 mg/kg) followed immediately by a rapid-acting neuromuscular blocker (**Succinylcholine 1.0–1.5 mg/kg** or **Rocuronium 1.2 mg/kg**). Apply **cricoid pressure (Sellick maneuver)** (30 Newtons of force) to occlude the esophagus.</p>
+            </div>
+            <div>
+                <div class="absolute -left-2 w-3 h-3 bg-sky-600 rounded-full"></div>
+                <h5 class="font-bold text-white uppercase">4. Intubation &amp; Verification (45–60 Seconds post-Injection)</h5>
+                <p>Once paralysis is achieved, perform direct or video laryngoscopy without manual bag-valve-mask ventilation. Pass the endotracheal tube, inflate the cuff, and verify correct placement using **waveform capnography** (gold standard) and bilateral breath sounds. Only then release cricoid pressure.</p>
+            </div>
+        </div>
+      </section>
+
+      <!-- PILLAR 5 -->
+      <div class="sec-header s5" id="p5-cico">
+        <span class="sec-badge">PILLAR 5</span>
+        <span class="sec-title">Crisis Care &amp; Bedside Rescue Protocols</span>
+      </div>
+      
+      <section class="topic s5">
+        <div class="topic-header"><span class="topic-num">5.1</span><h2>"Cannot Intubate, Cannot Oxygenate" (CICO) Airway Emergency</h2></div>
+        <p>A CICO emergency occurs when attempts to intubate fail and bag-valve-mask or supraglottic airway ventilation is impossible. This requires an immediate surgical airway:</p>
+        
+        <div style="background:var(--white); border:1px solid var(--border); border-radius:8px; padding:24px; margin:20px 0;">
+          <h4 style="color:var(--primary); font-size:16px; margin-bottom:12px; font-weight:700;">Emergent Surgical Cricothyroidotomy (Scalpel-Bougie Method)</h4>
+          <ol style="margin-left: 20px; line-height: 1.75; font-size: 13.5px;">
+            <li><strong>Laryngeal Hand Positioning:</strong> Identify the thyroid notch and cricoid ring. Stablize the larynx with the non-dominant hand.</li>
+            <li><strong>Incision:</strong> Make a **horizontal incision** through the skin and the **cricothyroid membrane**.</li>
+            <li><strong>Dilation &amp; Stabilization:</strong> Insert a scalpel handle or tracheal hook into the incision, rotating it 90 degrees to open the airway.</li>
+            <li><strong>Bougie Passage:</strong> Pass a lubricated tracheal tube **bougie** through the incision and direct it distally into the trachea.</li>
+            <li><strong>Tube Placement:</strong> Advance a size **5.0 or 6.0 endotracheal tube** over the bougie into the trachea. Inflate the cuff, verify placement with capnography, and secure the tube.</li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="topic s5" id="p5-last">
+        <div class="topic-header"><span class="topic-num">5.2</span><h2>Local Anesthetic Systemic Toxicity (LAST) Rescue Protocol</h2></div>
+        <div class="callout warn">
+          <span class="label">ABSITE Exam Trap: Local Anesthetic Systemic Toxicity (LAST)</span>
+          <p>LAST is caused by accidental intravascular injection of local anesthetics (classically **Bupivacaine** due to high affinity for cardiac sodium channels). Signs include perioral numbness, metallic taste, auditory changes, seizures, followed by cardiovascular collapse and refractory ventricular arrhythmias.</p>
+          <p style="margin-top: 8px; font-weight: 700;">
+            Bedside Lipid Rescue Protocol:
+            <br>• Administer **20% Lipid Emulsion: 1.5 mL/kg IV bolus** over 1 minute.
+            <br>• Initiate a continuous infusion of **20% Lipid Emulsion at 0.25 mL/kg/minute**.
+            <br>• If cardiovascular collapse persists, repeat the bolus up to 2 times and increase the infusion rate to 0.5 mL/kg/minute.
+            <br>• Avoid vasopressin, calcium channel blockers, or high-dose epinephrine (use small doses &lt; 1 &micro;g/kg if epinephrine is needed).
+          </p>
+        </div>
+      </section>
+
+      <!-- BOARD REVIEW -->
+      <div class="sec-header s1" id="board-review" style="margin-top: 60px;">
+        <span class="sec-badge">BOARD REVIEW</span>
+        <span class="sec-title">ABSITE Core Recall Matrix</span>
+      </div>
+      
+      <section class="topic s1">
+        <h3>High-Yield Recall Matrix</h3>
+        <div class="table-wrap">
+          <table style="background: transparent;">
+            <thead>
+              <tr>
+                <th>Board Question Topic</th>
+                <th>Gold Standard Key Fact</th>
+                <th>Surgical Decision / Clinical Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Succinylcholine Hyperkalemia</strong></td>
+                <td>Denervation, massive burns, and prolonged immobilization lead to upregulation of extrajunctional nicotinic receptors. Succinylcholine can trigger massive potassium efflux.</td>
+                <td>Avoid succinylcholine in these patients; use Rocuronium instead.</td>
+              </tr>
+              <tr>
+                <td><strong>Etomidate Side Effects</strong></td>
+                <td>Etomidate is hemodynamically stable but causes transient adrenal insufficiency by inhibiting **11-beta-hydroxylase**.</td>
+                <td>Avoid etomidate in patients with chronic adrenal insufficiency or refractory septic shock.</td>
+              </tr>
+              <tr>
+                <td><strong>T1–T4 Blockade Reflex</strong></td>
+                <td>High spinal or epidural blocks can inhibit T1-T4 preganglionic sympathetic fibers, leading to bradycardia and hypotension.</td>
+                <td>Treat immediately with **Ephedrine** or **Atropine** to restore sympathetic tone.</td>
+              </tr>
+              <tr>
+                <td><strong>Anatomic Needle Layers</strong></td>
+                <td>Spinal needle layers: **Skin &rarr; subcutaneous tissue &rarr; supraspinous &rarr; interspinous &rarr; ligamentum flavum &rarr; epidural space &rarr; dura mater &rarr; arachnoid &rarr; subarachnoid space**.</td>
+                <td>Correctly identify this sequence when describing lumbar puncture or spinal block insertion.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="viva">
+          <div class="vq">VIVA SCENARIO — REFRACTORY LOCAL ANESTHETIC SEIZURE</div>
+          <div class="vscenario">A 38-year-old female is undergoing an inguinal hernia repair under local tissue infiltration. The resident administers 40 mL of 0.5% Bupivacaine. Ten minutes later, the patient reports a metallic taste and starts having a generalized tonic-clonic seizure. Her heart rate drops to 38 bpm, and she goes into pulseless electrical activity (PEA). What is your diagnosis, and how do you manage this crisis?</div>
+          <div class="vanswer">
+            <ul>
+              <li><strong>Diagnosis:</strong> Local Anesthetic Systemic Toxicity (LAST) secondary to Bupivacaine absorption or accidental intravascular injection.</li>
+              <li><strong>Immediate Resuscitation Steps:</strong>
+                <ul>
+                  <li>Establish and secure the airway; hyperventilate with 100% oxygen to prevent respiratory acidosis (which worsens toxicity).</li>
+                  <li>Initiate standard CPR. Use low-dose epinephrine (&lt; 1 &micro;g/kg) and avoid vasopressin.</li>
+                  <li>Administer **20% Lipid Emulsion: 1.5 mL/kg IV bolus** immediately.</li>
+                  <li>Start a continuous infusion of **20% Lipid Emulsion at 0.25 mL/kg/minute**.</li>
+                </ul>
+              </li>
+              <li><strong>Follow-up Action:</strong> If cardiac stability is not restored, repeat the bolus dose and continue chest compressions (which help circulate the lipid emulsion to bind the local anesthetic). Keep the patient monitored in an ICU setting once stabilized.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <button id="top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+  <script src="../../js/nav-pill.js"></script>
+  <script src="../../js/navigation.js"></script>
+  <script>
+    const progressBar = document.getElementById('progress-bar');
+    const topBtn = document.getElementById('top-btn');
+    const navItems = document.querySelectorAll('.nav-item');
+    const sections = document.querySelectorAll('.sec-header[id], .topic[id]');
+
+    window.addEventListener('scroll', () => {
+      const st = window.scrollY;
+      const dh = document.documentElement.scrollHeight - window.innerHeight;
+      if (progressBar) progressBar.style.transform = `scaleX(${st / dh})`;
+      if (topBtn) topBtn.classList.toggle('show', st > 400);
+      
+      let current = '';
+      sections.forEach(s => { if (st >= s.offsetTop - 120) current = s.id; });
+      navItems.forEach(n => { n.classList.toggle('active', n.getAttribute('href') === '#' + current); });
+    });
+
+    function filterNav(query) {
+      const q = query.toLowerCase();
+      navItems.forEach(item => { item.style.display = (!q || item.textContent.toLowerCase().includes(q)) ? 'block' : 'none'; });
+    }
+
+    navItems.forEach(item => {
+      item.addEventListener('click', e => {
+        e.preventDefault();
+        if(typeof closeSidebar === 'function') closeSidebar();
+        const target = document.querySelector(item.getAttribute('href'));
+        if (target) window.scrollTo({ top: target.getBoundingClientRect().top - 80, behavior: 'smooth' });
+      });
+    });
+  </script>
+</body>
+</html>

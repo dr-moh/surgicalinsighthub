@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Surgical Insight Hub — Hypothyroidism Classification & Clinical Management</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,300;1,8..60,400;1,8..60,600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/theme.css?v=4.0.0">
+<link rel="stylesheet" href="../../css/shared.css">
+<script>
+  const savedTheme = localStorage.getItem('sih-theme') || 'light';
+  if (savedTheme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+</script>
+<style>
+:root {
+  --primary:   #4C1D95; 
+  --primary-dk:#2E1065;
+  --primary-lt:#F5F3FF;
+  --accent:    #7C3AED;
+  --accent2:   #E11D48;
+  --gold:      #D97706;
+  --gold-lt:   #FEF3C7;
+  --s1:        #4C1D95;
+  --s2:        #5B21B6;
+  --s3:        #6D28D9;
+  --s4:        #7C3AED;
+  --s5:        #2E1065;
+  --s1-lt:     #F5F3FF;
+  --s2-lt:     #EDE9FE;
+  --s3-lt:     #F5F3FF;
+  --s4-lt:     #EDE9FE;
+  --s5-lt:     #F5F3FF;
+  --red:       #E11D48;
+  --red-lt:    #FFF1F2;
+  --bg:        #FAFAFA;
+  --bg2:       #F4F4F5;
+  --border:    #E5E7EB;
+  --text:      #0F172A;
+  --muted:     #64748B;
+  --white:     #FFFFFF;
+  --sidebar-w: 320px;
+}
+[data-theme="dark"] {
+  --bg: #0A0702;
+  --bg2: #140E05;
+  --text: #F3F4F6;
+  --muted: #A3A3A3;
+  --border: rgba(255,255,255,0.08);
+  --primary-lt: #2E1065;
+  --s1-lt: #2E1065;
+  --s2-lt: #2E1065;
+  --s3-lt: #2E1065;
+  --s4-lt: #2E1065;
+  --s5-lt: #2E1065;
+  --white: #140E05;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--bg);color:var(--text);font-size:16.5px;line-height:1.8;}
+
+#sidebar {
+  position: fixed; top: 0; left: 0; width: var(--sidebar-w); height: 100vh;
+  background: var(--primary-dk); color: #F5F3FF;
+  display: flex; flex-direction: column;
+  z-index: 1000; overflow: hidden;
+  transform: translateX(-100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 4px 0 24px rgba(0,0,0,0.4);
+}
+body.sidebar-open #sidebar { transform: translateX(0); }
+
+#sidebar-overlay {
+  position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+  background: rgba(46, 16, 101, 0.7); backdrop-filter: blur(3px);
+  z-index: 950; opacity: 0; pointer-events: none; transition: opacity 0.3s ease;
+}
+body.sidebar-open #sidebar-overlay { opacity: 1; pointer-events: auto; }
+
+#sidebar-toggle {
+  position: fixed; top: 72px; left: 24px; z-index: 900;
+  background: var(--primary); color: white;
+  border: none; border-radius: 30px;
+  padding: 10px 18px; font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600;
+  letter-spacing: 0.05em; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  display: flex; align-items: center; gap: 8px; transition: all 0.2s;
+}
+#sidebar-toggle:hover { background: var(--accent2); transform: translateY(-2px); }
+
+#sidebar-header{padding:20px 20px 14px;border-bottom:1px solid rgba(255,255,255,0.08);flex-shrink:0;}
+#sidebar-header .logo{font-family:'Playfair Display',serif;font-size:13px;font-weight:700;color:var(--accent2);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;}
+#sidebar-header .sub{font-size:10.5px;color:rgba(245,243,255,0.6);letter-spacing:0.04em;}
+#sidebar-search{padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.05);flex-shrink:0;}
+#sidebar-search input{width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:6px;color:#F5F3FF;padding:6px 10px;font-size:12px;font-family:'Source Serif 4',serif;outline:none;transition:border-color 0.2s;}
+#sidebar-search input::placeholder{color:rgba(245,243,255,0.4);}
+#sidebar-search input:focus{border-color:var(--accent2);}
+#sidebar-nav{flex:1;overflow-y:auto;padding:8px 0 20px;}
+#sidebar-nav::-webkit-scrollbar{width:4px;}
+#sidebar-nav::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.15);border-radius:2px;}
+.vol-label{font-size:9.5px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent2);padding:14px 18px 4px;}
+.nav-item{display:block;padding:8px 18px 8px 22px;font-size:12.5px;color:rgba(245,243,255,0.8);text-decoration:none;border-left:2px solid transparent;transition:all 0.15s;line-height:1.4;}
+.nav-item:hover{color:#fff;background:rgba(255,255,255,0.03);border-left-color:rgba(225,29,72,0.5);}
+.nav-item.active{color:#fff;background:rgba(255,255,255,0.06);border-left-color:var(--accent2);font-weight:600;}
+.nav-item .num{font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(245,243,255,0.4);margin-right:6px;}
+
+#main{margin-left:0; min-height:100vh;}
+#hero{background:linear-gradient(135deg,var(--primary-dk) 0%,#4C1D95 60%,#2E1065 100%);color:white;padding:120px 72px 60px;position:relative;overflow:hidden;}
+#hero::before{content:'';position:absolute;top:-60px;right:-60px;width:380px;height:380px;background:radial-gradient(circle,rgba(225,29,72,0.15) 0%,transparent 70%);pointer-events:none;}
+#hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent2),var(--gold),transparent);}
+#hero .eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.16em;color:var(--accent2);text-transform:uppercase;margin-bottom:14px;}
+#hero h1{font-family:'Playfair Display',serif;font-size:42px;font-weight:700;line-height:1.15;margin-bottom:10px;color:#fff;}
+#hero .subtitle{font-size:18px;color:rgba(255,255,255,0.8);font-style:italic;margin-bottom:28px;}
+#hero .badges{display:flex;gap:10px;flex-wrap:wrap;}
+#hero .badge{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:4px 14px;font-size:12px;color:rgba(255,255,255,0.95);font-family:'JetBrains Mono',monospace;}
+
+.content-wrap{max-width:1140px;margin:0 auto;padding:0 48px 80px;}
+
+.sec-header{margin-top:60px;margin-bottom:12px;padding:26px 34px;border-radius:12px;display:flex;align-items:center;gap:20px;box-shadow:0 4px 16px rgba(0,0,0,0.03);}
+.sec-header.s1{background:linear-gradient(135deg,#4C1D950C,#4C1D951C);border-left:5px solid var(--s1);}
+.sec-header.s2{background:linear-gradient(135deg,#5B21B60C,#5B21B61C);border-left:5px solid var(--s2);}
+.sec-header.s3{background:linear-gradient(135deg,#6D28D90C,#6D28D91C);border-left:5px solid var(--s3);}
+.sec-header.s4{background:linear-gradient(135deg,#7C3AED0C,#7C3AED1C);border-left:5px solid var(--s4);}
+.sec-header.s5{background:linear-gradient(135deg,#2E10650C,#2E10651C);border-left:5px solid var(--s5);}
+.sec-badge{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.12em;padding:5px 14px;border-radius:6px;white-space:nowrap;flex-shrink:0;}
+.s1 .sec-badge{background:var(--s1);color:white;}
+.s2 .sec-badge{background:var(--s2);color:white;}
+.s3 .sec-badge{background:var(--s3);color:white;}
+.s4 .sec-badge{background:var(--s4);color:white;}
+.s5 .sec-badge{background:var(--s5);color:white;}
+.sec-title{font-family:'Playfair Display',serif;font-size:23px;font-weight:700;}
+.s1 .sec-title{color:var(--s1);}
+.s2 .sec-title{color:var(--s2);}
+.s3 .sec-title{color:var(--s3);}
+.s4 .sec-title{color:var(--s4);}
+.s5 .sec-title{color:var(--s5);}
+
+.topic{margin-top:48px;padding-top:48px;border-top:1px solid var(--border);}
+.topic:first-of-type{border-top:none;}
+.topic-header{display:flex;align-items:flex-start;gap:16px;margin-bottom:24px;}
+.topic-num{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;padding:4px 12px;border-radius:6px;margin-top:4px;flex-shrink:0;}
+.s1 .topic-num{background:var(--s1-lt);color:var(--s1);}
+.s2 .topic-num{background:var(--s2-lt);color:var(--s2);}
+.s3 .topic-num{background:var(--s3-lt);color:var(--s3);}
+.s4 .topic-num{background:var(--s4-lt);color:var(--s4);}
+.s5 .topic-num{background:var(--s5-lt);color:var(--s5);}
+
+.topic h2{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;line-height:1.2;}
+.s1 .topic h2{color:var(--s1);}
+.s2 .topic h2{color:var(--s2);}
+.s3 .topic h2{color:var(--s3);}
+.s4 .topic h2{color:var(--s4);}
+.s5 .topic h2{color:var(--s5);}
+
+.topic h3{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--primary);margin:32px 0 12px;padding-bottom:6px;border-bottom:2px solid var(--border);}
+.topic h4{font-size:14px;font-weight:700;color:var(--muted);letter-spacing:0.08em;text-transform:uppercase;margin:24px 0 10px;font-family:'JetBrains Mono',monospace;}
+.topic p{margin-bottom:18px; line-height:1.8; font-size:16.5px; color:var(--text);}
+.topic ul, .topic ol{margin:10px 0 20px 24px;color:var(--text);}
+.topic li{margin-bottom:10px;line-height:1.7;}
+.topic li::marker{color:var(--accent2);font-weight:bold;}
+.topic strong{color:var(--text);font-weight:700;}
+.topic em{font-style:italic;color:var(--text);}
+.topic code{font-family:'JetBrains Mono',monospace;font-size:13.5px;background:var(--bg2);padding:2px 6px;border-radius:4px;border:1px solid var(--border);color:var(--primary);}
+
+.outline-box{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:24px 28px;margin:24px 0 36px;box-shadow:0 2px 8px rgba(0,0,0,0.03);}
+.outline-box h3{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--primary);margin-bottom:16px;border-bottom:2px solid var(--primary-lt);padding-bottom:8px;}
+.outline-list{list-style:none;margin:0;padding:0;}
+.outline-list li{margin-bottom:12px;line-height:1.6;font-size:15px;}
+.outline-list li strong{color:var(--accent2);font-family:'JetBrains Mono',monospace;font-size:13px;display:block;margin-bottom:2px;}
+
+.table-wrap{overflow-x:auto;margin:24px 0 28px;border-radius:10px;box-shadow:0 2px 10px rgba(0,0,0,0.05);border:1px solid var(--border);}
+table{width:100%;border-collapse:collapse;font-size:14px;background:var(--white);}
+thead tr{background:var(--s1);}
+thead th{color:white;padding:12px 16px;text-align:left;font-family:'Source Serif 4',serif;font-weight:700;font-size:14px;}
+tbody tr:nth-child(even){background:var(--bg2);}
+tbody tr:hover{background:var(--s1-lt);transition:background 0.15s;}
+tbody td{padding:11px 16px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.6;}
+
+.callout{margin:24px 0;padding:18px 22px;border-radius:0 10px 10px 0;border-left:5px solid;font-size:14.5px;line-height:1.7;box-shadow:0 2px 8px rgba(0,0,0,0.03);}
+.callout .label{font-family:'JetBrains Mono',monospace;font-size:10.5px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;display:block;margin-bottom:6px;}
+.callout.pearl{background:var(--gold-lt);border-color:var(--gold);color:var(--text);}
+.callout.pearl .label{color:var(--gold);}
+.callout.warn{background:var(--red-lt);border-color:var(--red);color:var(--text);}
+.callout.warn .label{color:var(--red);}
+
+@media(max-width:900px) {
+  .content-wrap { padding: 0 20px 60px; }
+  #hero { padding: 80px 20px 40px; }
+  #hero h1 { font-size: 30px; }
+  #sidebar-toggle { top: 64px; left: 16px; }
+}
+</style>
+<link rel="icon" type="image/png" href="../../assets/images/Surgical_Insight_Hub_Logo.png">
+</head>
+<body>
+
+<nav class="nav" id="mainNav">
+  <div class="nav-left">
+    <a href="../../index.html" class="nav-pill">
+      <div class="nav-logo-img">
+        <img src="../../assets/images/Surgical_Insight_Hub_Logo.png" alt="SIH Logo">
+      </div>
+      <div>
+        <div class="nav-brand-text">Surgical Insight Hub</div>
+        <div class="nav-brand-sub">The Residency Journal</div>
+      </div>
+    </a>
+  </div>
+  <div class="nav-links-pill">
+    <a href="../../index.html">Home</a>
+    <a href="../../notes.html" class="active">Notes</a>
+    <a href="../operative_approach.html">Playbook</a>
+    <a href="../../arena.html?v=4.0.0">MCQ Arena</a>
+    <a href="../../podcast.html">Podcast</a>
+    <a href="../../surgery-talk.html">Surgery Talk</a>
+    <a href="../../about.html">About</a>
+  </div>
+  <div class="nav-right">
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+      <svg id="moonIcon" viewBox="0 0 24 24" width="18" height="18"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      <svg id="sunIcon" style="display:none;" viewBox="0 0 24 24" width="18" height="18"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+    </button>
+    <a href="https://t.me/sugicalInsightHub" target="_blank" class="nav-tg-btn" title="Join Telegram">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="#f0d080"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.89 8.22l-1.97 9.28c-.15.66-.54.82-1.08.51l-3-2.21-1.45 1.39c-.16.16-.3.3-.61.3l.21-3.05 5.56-5.02c.24-.21-.05-.33-.37-.12l-6.87 4.33-2.96-.92c-.64-.2-.66-.64.14-.95l11.57-4.46c.54-.19 1.01.13.83.94z"/></svg>
+    </a>
+    <a href="../../arena.html?v=4.0.0" class="nav-btn arena-btn">MCQ Arena</a>
+  </div>
+</nav>
+
+<div class="mob-nav-overlay" id="mobNavOverlay" onclick="closeMobNav()"></div>
+<div class="mob-nav-sheet" id="mobNavSheet">
+  <div class="mob-nav-handle"></div>
+  <a href="../../index.html" onclick="closeMobNav()">Home</a>
+  <a href="../../notes.html" onclick="closeMobNav()">Notes</a>
+  <a href="../operative_approach.html" onclick="closeMobNav()">Playbook</a>
+  <a href="../../podcast.html" onclick="closeMobNav()">Podcast</a>
+  <a href="../../surgery-talk.html" onclick="closeMobNav()">Surgery Talk</a>
+  <a href="../../arena.html" onclick="closeMobNav()">MCQ Arena</a>
+  <a href="../../about.html" onclick="closeMobNav()">About</a>
+  <a href="https://t.me/sugicalInsightHub" target="_blank" rel="noopener" onclick="closeMobNav()" style="color: var(--brand-gold); font-weight: 800;">Join Telegram Community</a>
+</div>
+
+<button id="sidebar-toggle" onclick="toggleSidebar()">
+  Table of Contents
+</button>
+<div id="sidebar-overlay" onclick="closeSidebar()"></div>
+
+<aside id="sidebar">
+  <div id="sidebar-header">
+    <div class="logo">Surgical Insight Hub</div>
+    <div class="sub">Chronological Monograph</div>
+  </div>
+  <div id="sidebar-search">
+    <input type="text" placeholder="Search topics..." oninput="filterNav(this.value)">
+  </div>
+  <nav id="sidebar-nav">
+    <div class="vol-label">Chapter 10: Classification & Etiopathogenesis of Hypothyroidism</div>
+<a class="nav-item" href="#topic-10-1"><span class="num">10.1</span>Primary vs Central Framework & Diagnostic Biomarkers</a>
+<div class="vol-label">Chapter 11: Congenital Hypothyroidism & Dyshormonogenesis</div>
+<a class="nav-item" href="#topic-11-1"><span class="num">11.1</span>Pediatric Screening & Metabolic Defects</a>
+<div class="vol-label">Chapter 12: Central Hypothyroidism & Pituitary Disorders</div>
+<a class="nav-item" href="#topic-12-1"><span class="num">12.1</span>Pituitary Macroadenomas & TSH Deficiency</a>
+<div class="vol-label">Chapter 13: Levothyroxine Kinetics & Myxedema Resuscitation</div>
+<a class="nav-item" href="#topic-13-1"><span class="num">13.1</span>L-T4 Dosing & Myxedema Coma Emergency Protocol</a>
+
+  </nav>
+</aside>
+
+<main id="main">
+<header id="hero">
+  <div class="eyebrow">Endocrine Surgery · Structured Chapter Outline Monograph</div>
+  <h1>Hypothyroidism Classification & Clinical Management</h1>
+  <p class="subtitle">Comprehensive Chronological Monograph covering primary vs central etiologies, congenital dyshormonogenesis, levothyroxine kinetics, and myxedema coma protocols.</p>
+  <div class="badges">
+    <span class="badge">Primary Hypothyroidism</span><span class="badge">Central Hypothyroidism</span><span class="badge">Myxedema Coma</span><span class="badge">Levothyroxine</span><span class="badge">ABSITE Core</span>
+  </div>
+</header>
+
+<div class="content-wrap">
+  
+        <div class="sec-header s1" id="chapter-10" style="margin-top:50px;">
+          <span class="sec-badge">CHAPTER 10</span>
+          <h2 class="sec-title">Classification & Etiopathogenesis of Hypothyroidism</h2>
+        </div>
+            <section class="topic s1-topic" id="topic-10-1">
+              <div class="topic-header">
+                <span class="topic-num">10.1</span>
+                <h2>Primary vs Central Framework & Diagnostic Biomarkers</h2>
+              </div>
+              <div class="outline-box"><h3>Chapter Outline: Hypothyroidism Classification</h3><ul class="outline-list">
+<li><strong>Section 1. Introduction & Etiopathogenesis Framework</strong>Definition of systemic thyroid hormone deficiency and primary vs central breakdown.</li>
+<li><strong>Section 2. Primary Hypothyroidism Etiologies</strong>Thyroid gland failure driven by Hashimoto's, I-131 ablation, thyroidectomy, or iodine deficiency.</li>
+<li><strong>Section 3. Central (Secondary & Tertiary) Hypothyroidism</strong>Pituitary TSH deficiency or hypothalamic TRH failure secondary to adenomas or trauma.</li>
+<li><strong>Section 4. Subclinical Hypothyroidism Definition & Risk</strong>Elevated TSH with normal Free T4; clinical indications for levothyroxine initiation.</li>
+<li><strong>Section 5. Clinical Manifestations Across Organ Systems</strong>Lethargy, cold intolerance, weight gain, bradycardia, constipation, hypercholesterolemia.</li>
+<li><strong>Section 6. Laboratory Serologic Biomarker Profiles</strong>Interpretation of TSH, Free T4, and autoantibody panels.</li>
+<li><strong>Section 7. Cardiovascular and Metabolic Impact</strong>Systemic vascular resistance changes, pericardial effusion, and impaired cardiac contractility.</li>
+<li><strong>Section 8. Special Population Considerations (Elderly & Cardiac)</strong>Conservative start-low go-slow dosing strategies in patients with CAD.</li>
+<li><strong>Section 9. High-Yield Review & Hypothyroidism Board Summary</strong>Summary table of diagnostic laboratory profiles and treatment thresholds.</li>
+</ul></div>
+                <h3>1. Introduction &amp; Etiopathogenesis Framework</h3>
+                <p>Hypothyroidism results from insufficient circulating thyroid hormone levels. Primary hypothyroidism accounts for 99% of cases and is caused by thyroid gland failure. Central (secondary/tertiary) hypothyroidism is caused by pituitary TSH deficiency or hypothalamic TRH deficiency.</p>
+
+                <h3>2. Primary Hypothyroidism Etiologies</h3>
+                <p>Primary etiologies include autoimmune Hashimoto's thyroiditis, post-surgical thyroidectomy, post-radioactive iodine ablation, and severe endemic iodine deficiency.</p>
+
+                <div style="font-family:'JetBrains Mono',monospace; font-size:12px; font-weight:700; color:var(--primary); margin-top:28px; text-transform:uppercase; letter-spacing:0.05em;">Diagnostic Plates — Hypothyroidism Etiopathogenesis (Click Image to Enlarge)</div>
+<div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(260px, 1fr)); gap:16px; margin:14px 0 32px;">
+
+        <div onclick="openLightbox('../../assets/images/endocrine_pdf_images/ch10_p318_0_3344.jpeg')" style="background:var(--bg2); border:1px solid var(--border); border-radius:12px; overflow:hidden; padding:12px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s; cursor:pointer;" onmouseover="this.style.transform='scale(1.02)'; this.style.borderColor='var(--accent2)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--border)';">
+          <img src="../../assets/images/endocrine_pdf_images/ch10_p318_0_3344.jpeg" alt="Figure 1" style="max-width:100%; max-height:210px; object-fit:contain; border-radius:8px; background:#fff; padding:6px; border:1px solid var(--border);">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent2); margin-top:8px; display:flex; align-items:center; justify-content:center; gap:6px;">
+            <span>Diagnostic Plate 1</span>
+            <span style="font-size:10px; opacity:0.7;">🔍</span>
+          </div>
+        </div>
+
+        <div onclick="openLightbox('../../assets/images/endocrine_pdf_images/ch10_p322_0_3370.jpeg')" style="background:var(--bg2); border:1px solid var(--border); border-radius:12px; overflow:hidden; padding:12px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s; cursor:pointer;" onmouseover="this.style.transform='scale(1.02)'; this.style.borderColor='var(--accent2)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--border)';">
+          <img src="../../assets/images/endocrine_pdf_images/ch10_p322_0_3370.jpeg" alt="Figure 2" style="max-width:100%; max-height:210px; object-fit:contain; border-radius:8px; background:#fff; padding:6px; border:1px solid var(--border);">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent2); margin-top:8px; display:flex; align-items:center; justify-content:center; gap:6px;">
+            <span>Diagnostic Plate 2</span>
+            <span style="font-size:10px; opacity:0.7;">🔍</span>
+          </div>
+        </div>
+
+        <div onclick="openLightbox('../../assets/images/endocrine_pdf_images/ch10_p329_0_3422.jpeg')" style="background:var(--bg2); border:1px solid var(--border); border-radius:12px; overflow:hidden; padding:12px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s; cursor:pointer;" onmouseover="this.style.transform='scale(1.02)'; this.style.borderColor='var(--accent2)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--border)';">
+          <img src="../../assets/images/endocrine_pdf_images/ch10_p329_0_3422.jpeg" alt="Figure 3" style="max-width:100%; max-height:210px; object-fit:contain; border-radius:8px; background:#fff; padding:6px; border:1px solid var(--border);">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent2); margin-top:8px; display:flex; align-items:center; justify-content:center; gap:6px;">
+            <span>Diagnostic Plate 3</span>
+            <span style="font-size:10px; opacity:0.7;">🔍</span>
+          </div>
+        </div>
+</div>
+
+                <h3>3. Central (Secondary &amp; Tertiary) Hypothyroidism</h3>
+                <p>Central hypothyroidism results from destructive pituitary macroadenomas, craniopharyngiomas, pituitary apoplexy, Sheehan syndrome, or cranial irradiation.</p>
+
+                <h3>4. Subclinical Hypothyroidism Definition &amp; Risk</h3>
+                <div class="table-wrap">
+                  <table class="s1-tbl">
+                    <thead>
+                      <tr>
+                        <th>Clinical Category</th>
+                        <th>Serum TSH Level</th>
+                        <th>Serum Free T4 Level</th>
+                        <th>Primary Etiologies &amp; Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><strong>Primary Hypothyroidism</strong></td>
+                        <td>Elevated (>4.2 mIU/L)</td>
+                        <td>Low (<0.9 ng/dL)</td>
+                        <td>Hashimoto's, iatrogenic ablation. Treat with L-T4.</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Central Hypothyroidism</strong></td>
+                        <td>Low or inappropriately normal</td>
+                        <td>Low (<0.9 ng/dL)</td>
+                        <td>Pituitary macroadenoma, Sheehan syndrome. Evaluate adrenals.</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Subclinical Hypothyroidism</strong></td>
+                        <td>Elevated (4.5–10 mIU/L)</td>
+                        <td>Normal</td>
+                        <td>Treat if TSH >10, pregnancy, or positive TPOAb.</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <h3>5. Clinical Manifestations Across Organ Systems</h3>
+                <p>Clinical features include lethargy, cold intolerance, weight gain, bradycardia, constipation, dry skin, non-pitting periorbital edema (myxedema), and delayed relaxation of deep tendon reflexes.</p>
+
+                <h3>6. Laboratory Serologic Biomarker Profiles</h3>
+                <p>Primary disease presents with elevated TSH and low FT4. Central disease manifests low or inappropriately normal TSH alongside low FT4.</p>
+
+                <h3>7. Cardiovascular and Metabolic Impact</h3>
+                <p>Hypothyroidism increases systemic vascular resistance, decreases cardiac output, causes hypercholesterolemia (downregulated LDL receptors), and promotes pericardial effusion.</p>
+
+                <h3>8. Special Population Considerations (Elderly &amp; Cardiac)</h3>
+                <p>In elderly patients or those with underlying coronary artery disease, initiate levothyroxine at low doses (12.5–25 mcg/day) to avoid precipitating myocardial ischemia.</p>
+
+                <h3>9. High-Yield Review &amp; Hypothyroidism Board Summary</h3>
+                <ul>
+                  <li><strong>Primary vs Central Hallmark:</strong> TSH is elevated in primary, low/normal in central.</li>
+                  <li><strong>Subclinical Treatment Threshold:</strong> TSH >10 mIU/L or positive TPOAb in pregnancy.</li>
+                </ul>
+                
+            </section>
+        <div class="sec-header s2" id="chapter-11" style="margin-top:50px;">
+          <span class="sec-badge">CHAPTER 11</span>
+          <h2 class="sec-title">Congenital Hypothyroidism & Dyshormonogenesis</h2>
+        </div>
+            <section class="topic s2-topic" id="topic-11-1">
+              <div class="topic-header">
+                <span class="topic-num">11.1</span>
+                <h2>Pediatric Screening & Metabolic Defects</h2>
+              </div>
+              <div class="outline-box"><h3>Chapter Outline: Congenital Hypothyroidism</h3><ul class="outline-list">
+<li><strong>Section 1. Epidemiology and Newborn Screening Protocols</strong>1 in 3,000 live births; routine heel-stick TSH screening on day 2–4 of life.</li>
+<li><strong>Section 2. Thyroid Dysgenesis Pathophysiology</strong>Thyroid aplasia, hypoplasia, or ectopy (lingual thyroid) accounting for 85% of cases.</li>
+<li><strong>Section 3. Dyshormonogenesis Enzyme Defects</strong>Autosomal recessive enzymatic errors in iodide trapping, organification, or coupling (15%).</li>
+<li><strong>Section 4. Pendred Syndrome & Inborn Errors</strong>Mutation in Pendrin gene (SLC26A4) causing sensorineural hearing loss and goiter.</li>
+<li><strong>Section 5. Clinical Signs in Newborns & Infants</strong>Macroglossia, umbilical hernia, umbilical distension, prolonged jaundice, hypotonia, hoarse cry.</li>
+<li><strong>Section 6. Diagnostic Evaluation (Ultrasound & Scintigraphy)</strong>Tc-99m scanning distinguishing thyroid agenesis from ectopy or dyshormonogenesis.</li>
+<li><strong>Section 7. Emergency Pediatric Replacement Dosing</strong>Immediate initiation of Levothyroxine (10–15 mcg/kg/day) to prevent cretinism.</li>
+<li><strong>Section 8. Neurocognitive Development Outcomes</strong>Normal intellectual development contingent on treatment initiation within 2 weeks of birth.</li>
+<li><strong>Section 9. High-Yield Pediatric Review & Board Anchors</strong>Core pediatric recall points and enzymatic mutation profiles.</li>
+</ul></div>
+                <h3>1. Epidemiology and Newborn Screening Protocols</h3>
+                <p>Congenital hypothyroidism affects 1 in 3,000 live births. Mandatory newborn screening via heel-stick blood spot TSH on day 2–4 of life enables early detection.</p>
+
+                <h3>2. Thyroid Dysgenesis Pathophysiology</h3>
+                <p>Thyroid dysgenesis (ectopy 60%, aplasia 20%, hypoplasia 5%) accounts for 85% of congenital cases, stemming from developmental migration failure of the median thyroid primordium.</p>
+
+                <div style="font-family:'JetBrains Mono',monospace; font-size:12px; font-weight:700; color:var(--primary); margin-top:28px; text-transform:uppercase; letter-spacing:0.05em;">Diagnostic Plates — Congenital Dyshormonogenesis (Click Image to Enlarge)</div>
+<div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(260px, 1fr)); gap:16px; margin:14px 0 32px;">
+
+        <div onclick="openLightbox('../../assets/images/endocrine_pdf_images/ch11_p359_0_3749.jpeg')" style="background:var(--bg2); border:1px solid var(--border); border-radius:12px; overflow:hidden; padding:12px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s; cursor:pointer;" onmouseover="this.style.transform='scale(1.02)'; this.style.borderColor='var(--accent2)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--border)';">
+          <img src="../../assets/images/endocrine_pdf_images/ch11_p359_0_3749.jpeg" alt="Figure 1" style="max-width:100%; max-height:210px; object-fit:contain; border-radius:8px; background:#fff; padding:6px; border:1px solid var(--border);">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent2); margin-top:8px; display:flex; align-items:center; justify-content:center; gap:6px;">
+            <span>Diagnostic Plate 1</span>
+            <span style="font-size:10px; opacity:0.7;">🔍</span>
+          </div>
+        </div>
+</div>
+
+                <h3>3. Dyshormonogenesis Enzyme Defects</h3>
+                <p>Dyshormonogenesis (15% of cases) results from autosomal recessive defects in TPO organification, NIS trapping, thyroglobulin synthesis, or deiodination.</p>
+
+                <h3>4. Pendred Syndrome &amp; Inborn Errors</h3>
+                <p>Pendred syndrome is caused by biallelic mutations in the <code>SLC26A4</code> gene encoding Pendrin, characterized by congenital sensorineural hearing loss and euthyroid/hypothyroid goiter.</p>
+
+                <h3>5. Clinical Signs in Newborns &amp; Infants</h3>
+                <p>Infants present with macroglossia, umbilical hernia, abdominal distension, prolonged unconjugated jaundice, hypothermia, hypotonia, and a hoarse cry (cretinism).</p>
+
+                <h3>6. Diagnostic Evaluation (Ultrasound &amp; Scintigraphy)</h3>
+                <p>Technetium-99m or I-123 scintigraphy identifies ectopic thyroid tissue (e.g., lingual thyroid at the base of the tongue) vs complete agenesis.</p>
+
+                <h3>7. Emergency Pediatric Replacement Dosing</h3>
+                <p>Initiate oral Levothyroxine immediately at a high replacement dose of <strong>10–15 mcg/kg/day</strong> upon screening confirmation.</p>
+
+                <h3>8. Neurocognitive Development Outcomes</h3>
+                <p>Starting L-T4 replacement within the first 2 weeks of life prevents irreversible neurodevelopmental impairment (cretinism) and secures normal IQ outcomes.</p>
+
+                <h3>9. High-Yield Pediatric Review &amp; Board Anchors</h3>
+                <ul>
+                  <li><strong>Most Common Cause:</strong> Thyroid dysgenesis / ectopic thyroid (85%).</li>
+                  <li><strong>Pendred Syndrome triad:</strong> Sensorineural deafness + Goiter + SLC26A4 mutation.</li>
+                  <li><strong>L-T4 Dosing:</strong> 10–15 mcg/kg/day within 2 weeks of life.</li>
+                </ul>
+                
+            </section>
+        <div class="sec-header s3" id="chapter-12" style="margin-top:50px;">
+          <span class="sec-badge">CHAPTER 12</span>
+          <h2 class="sec-title">Central Hypothyroidism & Pituitary Disorders</h2>
+        </div>
+            <section class="topic s3-topic" id="topic-12-1">
+              <div class="topic-header">
+                <span class="topic-num">12.1</span>
+                <h2>Pituitary Macroadenomas & TSH Deficiency</h2>
+              </div>
+              <div class="outline-box"><h3>Chapter Outline: Central Hypothyroidism</h3><ul class="outline-list">
+<li><strong>Section 1. Definition and Etiology Breakdown</strong>Secondary pituitary TSH deficiency or tertiary hypothalamic TRH failure.</li>
+<li><strong>Section 2. Pituitary Adenomas and Mass Effects</strong>Non-functioning pituitary macroadenomas causing compression of normal thyrotrope cells.</li>
+<li><strong>Section 3. Sheehan Syndrome & Vascular Necrosis</strong>Postpartum ischemic pituitary necrosis secondary to severe obstetric hemorrhage.</li>
+<li><strong>Section 4. Iatrogenic and Traumatic Causes</strong>Cranial irradiation, neurosurgical resection, and traumatic brain injury (TBI).</li>
+<li><strong>Section 5. Clinical Evaluation & Combined Pituitary Deficits</strong>Co-existing hypogonadism, GH deficiency, and secondary adrenal insufficiency.</li>
+<li><strong>Section 6. Diagnostic Workup & Neuroimaging</strong>Low/normal TSH with low FT4; MRI sella turcica defining mass lesions.</li>
+<li><strong>Section 7. Mandatory Adrenal Axis Evaluation</strong>Baseline morning cortisol and ACTH stimulation testing prior to L-T4 initiation.</li>
+<li><strong>Section 8. Therapeutic Dosing and Monitoring Rules</strong>L-T4 dosing monitored strictly via Free T4 levels (TSH cannot be used for surveillance).</li>
+<li><strong>Section 9. High-Yield Central Review & Board Traps</strong>Essential board exam warnings regarding unreplaced adrenal insufficiency.</li>
+</ul></div>
+                <h3>1. Definition and Etiology Breakdown</h3>
+                <p>Central hypothyroidism stems from secondary pituitary TSH deficiency or tertiary hypothalamic TRH failure, accounting for <1% of hypothyroid cases.</p>
+
+                <h3>2. Pituitary Adenomas and Mass Effects</h3>
+                <p>Non-functioning pituitary macroadenomas (>10 mm) compress normal anterior pituitary tissue, causing sequential loss of GH, LH/FSH, TSH, and ACTH.</p>
+
+                
+
+                <h3>3. Sheehan Syndrome &amp; Vascular Necrosis</h3>
+                <p>Sheehan syndrome results from postpartum ischemic necrosis of the hypertrophied anterior pituitary gland triggered by severe obstetric hemorrhage and hypotension.</p>
+
+                <h3>4. Iatrogenic and Traumatic Causes</h3>
+                <p>Other causes include cranial radiotherapy for brain tumors, transsphenoidal neurosurgery, craniopharyngiomas, and severe traumatic brain injury.</p>
+
+                <h3>5. Clinical Evaluation &amp; Combined Pituitary Deficits</h3>
+                <p>Patients manifest hypothyroid symptoms alongside amenorrhea/erectile dysfunction (hypogonadism), fatigue (adrenal insufficiency), and visual field cuts (bitemporal hemianopsia).</p>
+
+                <h3>6. Diagnostic Workup &amp; Neuroimaging</h3>
+                <p>Laboratory testing demonstrates low Free T4 with a low or inappropriately normal TSH. Dedicated MRI of the sella turcica defines structural pituitary pathology.</p>
+
+                <h3>7. Mandatory Adrenal Axis Evaluation</h3>
+                <div class="callout warn">
+                  <span class="label">MANDATORY BOARD RULE — CORTICOSTEROID FIRST PROTOCOL</span>
+                  In central hypothyroidism, you <strong>MUST evaluate and rule out secondary adrenal insufficiency</strong> (via morning cortisol or Cosyntropin stimulation test) prior to starting levothyroxine. Administering levothyroxine alone increases metabolic clearance of cortisol and can precipitate fatal adrenal crisis. Glucocorticoids MUST be started before L-T4.
+                </div>
+
+                <h3>8. Therapeutic Dosing and Monitoring Rules</h3>
+                <p>Initiate L-T4 replacement. Monitoring is performed strictly using serial serum <strong>Free T4 levels</strong> (targeting mid-to-upper normal range); serum TSH is unmeasurable/unreliable for monitoring central disease.</p>
+
+                <h3>9. High-Yield Central Review &amp; Board Traps</h3>
+                <ul>
+                  <li><strong>Surveillance Biomarker:</strong> Monitor Free T4, NOT TSH.</li>
+                  <li><strong>Adrenal Rule:</strong> Always replace Cortisol before Levothyroxine.</li>
+                </ul>
+                
+            </section>
+        <div class="sec-header s4" id="chapter-13" style="margin-top:50px;">
+          <span class="sec-badge">CHAPTER 13</span>
+          <h2 class="sec-title">Levothyroxine Kinetics & Myxedema Resuscitation</h2>
+        </div>
+            <section class="topic s4-topic" id="topic-13-1">
+              <div class="topic-header">
+                <span class="topic-num">13.1</span>
+                <h2>L-T4 Dosing & Myxedema Coma Emergency Protocol</h2>
+              </div>
+              <div class="outline-box"><h3>Chapter Outline: Levothyroxine Kinetics & Myxedema</h3><ul class="outline-list">
+<li><strong>Section 1. Pharmacokinetics of Synthetic Levothyroxine (L-T4)</strong>Half-life of 7 days, jejunal/ileal absorption kinetics, and steady-state timing (6–8 weeks).</li>
+<li><strong>Section 2. Standard Replacement Dosing Strategies</strong>Full replacement dose calculation (1.6 mcg/kg/day based on lean body mass).</li>
+<li><strong>Section 3. Gastrointestinal Absorption Interferences</strong>Impairment by calcium carbonate, ferrous sulfate, PPIs, sucralfate, bile acid sequestrants, and celiac disease.</li>
+<li><strong>Section 4. Drug Interactions Increasing L-T4 Clearance</strong>Hepatic CYP3A4 induction by Rifampin, Phenytoin, Carbamazepine, and Phenobarbital.</li>
+<li><strong>Section 5. Therapeutic Surveillance & Dose Titration</strong>Adjusting doses in 12.5–25 mcg increments every 6–8 weeks targeting euthyroid TSH.</li>
+<li><strong>Section 6. Myxedema Coma Definition and Precipitating Factors</strong>Life-threatening decompensated hypothyroidism triggered by infection, cold exposure, surgery, or sedatives.</li>
+<li><strong>Section 7. Clinical Presentation of Myxedema Coma</strong>Hypothermia (<35°C), severe bradycardia, hyponatremia, hypercapnia, hypoventilation, and coma.</li>
+<li><strong>Section 8. ICU Emergency Resuscitation Protocols</strong>Hemodynamic support, passive rewarming, empirical IV hydrocortisone, and loading IV levothyroxine.</li>
+<li><strong>Section 9. High-Yield Review & Emergency Resuscitation Summary</strong>Consolidated ICU resuscitation flowchart for board examinations.</li>
+</ul></div>
+                <h3>1. Pharmacokinetics of Synthetic Levothyroxine (L-T4)</h3>
+                <p>Synthetic L-T4 has a long circulating half-life of 7 days. Absorption occurs primarily in the jejunum and ileum under acidic gastric conditions. Steady-state serum levels are achieved 6–8 weeks after dose initiation or adjustment.</p>
+
+                <h3>2. Standard Replacement Dosing Strategies</h3>
+                <p>Full replacement dose for young healthy adults post-thyroidectomy is <strong>1.6 mcg/kg/day</strong> based on ideal body mass. Elderly patients or those with CAD start at 12.5–25 mcg/day.</p>
+
+                <div style="font-family:'JetBrains Mono',monospace; font-size:12px; font-weight:700; color:var(--primary); margin-top:28px; text-transform:uppercase; letter-spacing:0.05em;">Diagnostic Plates — Levothyroxine Kinetics & Emergency Protocols (Click Image to Enlarge)</div>
+<div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(260px, 1fr)); gap:16px; margin:14px 0 32px;">
+
+        <div onclick="openLightbox('../../assets/images/endocrine_pdf_images/ch13_p398_0_4153.jpeg')" style="background:var(--bg2); border:1px solid var(--border); border-radius:12px; overflow:hidden; padding:12px; text-align:center; box-shadow:0 2px 8px rgba(0,0,0,0.04); transition:all 0.2s; cursor:pointer;" onmouseover="this.style.transform='scale(1.02)'; this.style.borderColor='var(--accent2)';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='var(--border)';">
+          <img src="../../assets/images/endocrine_pdf_images/ch13_p398_0_4153.jpeg" alt="Figure 1" style="max-width:100%; max-height:210px; object-fit:contain; border-radius:8px; background:#fff; padding:6px; border:1px solid var(--border);">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700; color:var(--accent2); margin-top:8px; display:flex; align-items:center; justify-content:center; gap:6px;">
+            <span>Diagnostic Plate 1</span>
+            <span style="font-size:10px; opacity:0.7;">🔍</span>
+          </div>
+        </div>
+</div>
+
+                <h3>3. Gastrointestinal Absorption Interferences</h3>
+                <p>Co-administration of calcium carbonate, ferrous sulfate, aluminum hydroxide, proton pump inhibitors, sucralfate, or cholestyramine significantly impairs GI absorption. L-T4 must be taken on an empty stomach with water 30–60 minutes before breakfast.</p>
+
+                <h3>4. Drug Interactions Increasing L-T4 Clearance</h3>
+                <p>Hepatic microsomal enzyme inducers (Rifampin, Phenytoin, Carbamazepine) accelerate T4 clearance, requiring higher daily replacement doses.</p>
+
+                <h3>5. Therapeutic Surveillance &amp; Dose Titration</h3>
+                <p>Monitor serum TSH 6–8 weeks post-adjustment. Titrate L-T4 in 12.5–25 mcg increments until TSH normalizes (0.4–2.5 mIU/L).</p>
+
+                <h3>6. Myxedema Coma Definition and Precipitating Factors</h3>
+                <p>Myxedema coma is a life-threatening endocrine emergency representing severe decompensated hypothyroidism, precipitated by sepsis, cold exposure, trauma, stroke, or sedatives in long-standing untreated patients.</p>
+
+                <h3>7. Clinical Presentation of Myxedema Coma</h3>
+                <p>Features include profound hypothermia (<35°C), hypoventilation, hypercapnia, hyponatremia (SIADH), bradycardia, pericardial effusion, non-pitting edema, and altered mental status progressing to coma.</p>
+
+                <h3>8. ICU Emergency Resuscitation Protocols</h3>
+                <div class="callout warn">
+                  <span class="label">EMERGENCY RESUSCITATION — MYXEDEMA COMA PROTOCOL</span>
+                  Myxedema coma requires immediate ICU admission, mechanical ventilation, passive rewarming (avoid active rewarming to prevent vasodilation/shock), and IV administration of:
+                  <ol style="margin-top:8px;">
+                    <li><strong>IV Hydrocortisone (100 mg q8h):</strong> MUST be administered PRIOR to levothyroxine to prevent precipitating acute adrenal crisis.</li>
+                    <li><strong>IV Levothyroxine:</strong> Loading dose of 200–400 mcg IV push, followed by 50–100 mcg IV daily.</li>
+                  </ol>
+                </div>
+
+                <h3>9. High-Yield Review &amp; Emergency Resuscitation Summary</h3>
+                <ul>
+                  <li><strong>Full Replacement Dose:</strong> 1.6 mcg/kg/day.</li>
+                  <li><strong>Steady-State Timing:</strong> Recheck TSH in 6-8 weeks.</li>
+                  <li><strong>Myxedema Coma Order:</strong> IV Hydrocortisone FIRST, then IV Levothyroxine.</li>
+                </ul>
+                
+            </section>
+</div>
+</main>
+
+<div id="lightbox-modal" onclick="closeLightbox()" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.85); backdrop-filter:blur(6px); z-index:2000; align-items:center; justify-content:center; padding:20px;">
+  <span style="position:absolute; top:20px; right:30px; color:#fff; font-size:36px; font-weight:bold; cursor:pointer; font-family:sans-serif; transition:color 0.2s;" onmouseover="this.style.color='var(--accent2)'" onmouseout="this.style.color='#fff'">&times;</span>
+  <img id="lightbox-img" src="" alt="Enlarged Diagnostic Plate" style="max-width:92vw; max-height:92vh; object-fit:contain; border-radius:8px; box-shadow:0 12px 40px rgba(0,0,0,0.6); background:#fff; padding:8px;" onclick="event.stopPropagation()">
+</div>
+
+<script>
+  function openLightbox(imgUrl) {
+    const modal = document.getElementById('lightbox-modal');
+    const img = document.getElementById('lightbox-img');
+    img.src = imgUrl;
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox() {
+    const modal = document.getElementById('lightbox-modal');
+    modal.style.display = 'none';
+    document.body.style.overflow = '';
+  }
+
+  function toggleSidebar() {
+    document.body.classList.toggle('sidebar-open');
+  }
+  function closeSidebar() {
+    document.body.classList.remove('sidebar-open');
+  }
+  function filterNav(q) {
+    q = q.toLowerCase();
+    document.querySelectorAll('#sidebar-nav .nav-item').forEach(el => {
+      el.style.display = el.textContent.toLowerCase().includes(q) ? 'block' : 'none';
+    });
+  }
+  
+  function openMobNav() {
+    document.getElementById('mobNavSheet').classList.add('open');
+    document.getElementById('mobNavOverlay').style.display = 'block';
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMobNav() {
+    document.getElementById('mobNavSheet').classList.remove('open');
+    document.getElementById('mobNavOverlay').style.display = 'none';
+    document.body.style.overflow = '';
+  }
+
+  const themeToggle = document.getElementById('themeToggle');
+  const moonIcon = document.getElementById('moonIcon');
+  const sunIcon = document.getElementById('sunIcon');
+  
+  function applyTheme(theme) {
+    if (theme === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      if (moonIcon) moonIcon.style.display = 'none';
+      if (sunIcon) sunIcon.style.display = 'block';
+    } else {
+      document.documentElement.removeAttribute('data-theme');
+      if (sunIcon) sunIcon.style.display = 'none';
+      if (moonIcon) moonIcon.style.display = 'block';
+    }
+  }
+  
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      const isDark = document.documentElement.hasAttribute('data-theme');
+      const newTheme = isDark ? 'light' : 'dark';
+      applyTheme(newTheme);
+      localStorage.setItem('sih-theme', newTheme);
+    });
+  }
+  
+  document.addEventListener('DOMContentLoaded', () => {
+    applyTheme(localStorage.getItem('sih-theme') || 'light');
+  });
+</script>
+<script src="../../js/navigation.js"></script>
+<script src="../../js/nav-pill.js"></script>
+</body>
+</html>

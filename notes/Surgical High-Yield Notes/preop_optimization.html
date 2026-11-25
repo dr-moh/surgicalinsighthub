@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Surgical Insight Hub — Preoperative Medical Optimization</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../css/theme.css?v=4.0.0">
+<link rel="stylesheet" href="../../css/shared.css">
+<script>
+  const savedTheme = localStorage.getItem('sih-theme') || 'light';
+  if (savedTheme === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+</script>
+<style>
+:root {
+  --primary:   #3730A3; /* Royal Indigo */
+  --primary-dk:#312E81;
+  --primary-lt:#EEF2FF;
+  --accent:    #4F46E5;
+  --accent2:   #6366F1;
+  --gold:      #B8922A;
+  --gold-lt:   #FEF3C7;
+  --s1:        #3730A3;
+  --s2:        #0D9488;
+  --s3:        #C27803;
+  --s4:        #2563EB;
+  --s5:        #BE185D;
+  --s1-lt:     #EEF2FF;
+  --s2-lt:     #F0FDFA;
+  --s3-lt:     #FEF3C7;
+  --s4-lt:     #EFF6FF;
+  --s5-lt:     #FDF2F8;
+  --red:       #B91C1C;
+  --red-lt:    #FEF2F2;
+  --bg:        #FBFBFC;
+  --bg2:       #F4F4F6;
+  --border:    #E5E7EB;
+  --text:      #1F2937;
+  --muted:     #4B5563;
+  --white:     #FFFFFF;
+  --sidebar-w: 300px;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Source Serif 4',Georgia,serif;background:var(--bg);color:var(--text);font-size:16.5px;line-height:1.8;}
+
+/* DARK MODE OVERRIDES */
+[data-theme="dark"] {
+  --bg: #09060F;
+  --bg2: #120D1D;
+  --text: #E2DEE9;
+  --muted: #A78BFA;
+  --border: rgba(255,255,255,0.08);
+  --primary-lt: #312E8144;
+  --s1-lt: #312E8144;
+  --s2-lt: #0B1D19;
+  --s3-lt: #221B0B;
+  --s4-lt: #0F172A;
+  --s5-lt: #2A0B1A;
+  --white: #120D1D;
+}
+
+/* SIDEBAR & OVERLAY */
+#sidebar {
+  position: fixed; top: 0; left: 0; width: var(--sidebar-w); height: 100vh;
+  background: var(--primary-dk); color: #E2DEE9;
+  display: flex; flex-direction: column;
+  z-index: 1300; overflow: hidden;
+  transform: translateX(-100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 4px 0 24px rgba(0,0,0,0.3);
+}
+body.sidebar-open #sidebar { transform: translateX(0); }
+
+#sidebar-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.5); backdrop-filter: blur(3px);
+  z-index: 1250; opacity: 0; pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+body.sidebar-open #sidebar-overlay { opacity: 1; pointer-events: auto; }
+
+#sidebar-toggle {
+  position: fixed; top: 72px; left: 24px; z-index: 1200;
+  background: var(--primary); color: white;
+  border: none; border-radius: 30px;
+  padding: 10px 18px; font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 600;
+  letter-spacing: 0.05em; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  display: flex; align-items: center; gap: 8px; transition: all 0.2s;
+}
+#sidebar-toggle:hover { background: var(--accent); transform: translateY(-2px); }
+
+#progress-bar {
+  position: fixed; top: 52px; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  transform-origin: left; transform: scaleX(0); transition: transform 0.1s; z-index: 1105;
+}
+
+#sidebar-header{padding:20px 20px 14px;border-bottom:1px solid rgba(255,255,255,0.1);flex-shrink:0;}
+#sidebar-header .logo{font-family:'Playfair Display',serif;font-size:13px;font-weight:700;color:var(--accent2);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;}
+#sidebar-header .sub{font-size:10.5px;color:rgba(226,222,233,0.6);letter-spacing:0.04em;}
+#sidebar-search{padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.08);flex-shrink:0;}
+#sidebar-search input{width:100%;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:6px;color:#E2DEE9;padding:6px 10px;font-size:12px;font-family:'Source Serif 4',serif;outline:none;transition:border-color 0.2s;}
+#sidebar-search input::placeholder{color:rgba(226,222,233,0.4);}
+#sidebar-search input:focus{border-color:var(--accent2);}
+#sidebar-nav{flex:1;overflow-y:auto;padding:8px 0 20px;}
+#sidebar-nav::-webkit-scrollbar{width:4px;}
+#sidebar-nav::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.15);border-radius:2px;}
+.vol-label{font-size:9.5px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent2);padding:14px 18px 4px;}
+.nav-item{display:block;padding:8px 18px 8px 22px;font-size:12.5px;color:rgba(226,222,233,0.75);text-decoration:none;border-left:2px solid transparent;transition:all 0.15s;line-height:1.4;}
+.nav-item:hover{color:#fff;background:rgba(255,255,255,0.05);border-left-color:var(--accent);}
+.nav-item.active{color:#fff;background:rgba(255,255,255,0.08);border-left-color:var(--accent2);font-weight:600;}
+.nav-item .num{font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(226,222,233,0.4);margin-right:6px;}
+
+/* HERO */
+#hero{background:linear-gradient(135deg,var(--primary-dk) 0%,#3730A3 60%,#090314 100%);color:white;padding:120px 72px 60px;position:relative;overflow:hidden;}
+#hero::before{content:'';position:absolute;top:-60px;right:-60px;width:380px;height:380px;background:radial-gradient(circle,rgba(255,255,255,0.1) 0%,transparent 70%);pointer-events:none;}
+#hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--primary),var(--accent2),transparent);}
+#hero .eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.16em;color:var(--accent2);text-transform:uppercase;margin-bottom:14px;}
+#hero h1{font-family:'Playfair Display',serif;font-size:38px;font-weight:700;line-height:1.15;margin-bottom:10px;color:#fff;}
+#hero .subtitle{font-size:18px;color:rgba(255,255,255,0.65);font-style:italic;margin-bottom:28px;}
+#hero .badges{display:flex;gap:10px;flex-wrap:wrap;}
+#hero .badge{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:20px;padding:4px 14px;font-size:12px;color:rgba(255,255,255,0.8);font-family:'JetBrains Mono',monospace;}
+
+/* CONTENT */
+.content-wrap{max-width:1140px;margin:0 auto;padding:0 48px 80px;}
+
+/* SECTION HEADER */
+.sec-header{margin-top:60px;margin-bottom:8px;padding:28px 36px;border-radius:10px;display:flex;align-items:center;gap:20px;}
+.sec-header.s1{background:linear-gradient(135deg,#3730A308,#3730A318);border-left:4px solid var(--s1);}
+.sec-header.s2{background:linear-gradient(135deg,#0D948808,#0D948818);border-left:4px solid var(--s2);}
+.sec-header.s3{background:linear-gradient(135deg,#C2780308,#C2780318);border-left:4px solid var(--s3);}
+.sec-header.s4{background:linear-gradient(135deg,#2563EB08,#2563EB18);border-left:4px solid var(--s4);}
+.sec-header.s5{background:linear-gradient(135deg,#BE185D08,#BE185D18);border-left:4px solid var(--s5);}
+.sec-badge{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;letter-spacing:0.1em;padding:4px 12px;border-radius:4px;white-space:nowrap;flex-shrink:0;}
+.s1 .sec-badge{background:var(--s1);color:white;}
+.s2 .sec-badge{background:var(--s2);color:white;}
+.s3 .sec-badge{background:var(--s3);color:white;}
+.s4 .sec-badge{background:var(--s4);color:white;}
+.s5 .sec-badge{background:var(--s5);color:white;}
+.sec-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;}
+.s1 .sec-title{color:var(--s1);}
+.s2 .sec-title{color:var(--s2);}
+.s3 .sec-title{color:var(--s3);}
+.s4 .sec-title{color:var(--s4);}
+.s5 .sec-title{color:var(--s5);}
+
+/* TOPIC */
+.topic{margin-top:48px;padding-top:48px;border-top:1px solid var(--border);}
+.topic:first-of-type{border-top:none;}
+.topic-header{display:flex;align-items:flex-start;gap:16px;margin-bottom:24px;}
+.topic-num{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;padding:3px 10px;border-radius:4px;margin-top:4px;flex-shrink:0;}
+.s1 .topic-num{background:var(--s1-lt);color:var(--s1);}
+.s2 .topic-num{background:var(--s2-lt);color:var(--s2);}
+.s3 .topic-num{background:var(--s3-lt);color:var(--s3);}
+.s4 .topic-num{background:var(--s4-lt);color:var(--s4);}
+.s5 .topic-num{background:var(--s5-lt);color:var(--s5);}
+.topic h2{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;line-height:1.2;}
+.s1 .topic h2{color:var(--s1);}
+.s2 .topic h2{color:var(--s2);}
+.s3 .topic h2{color:var(--s3);}
+.s4 .topic h2{color:var(--s4);}
+.s5 .topic h2{color:var(--s5);}
+.topic h3{font-family:'Playfair Display',serif;font-size:17px;font-weight:600;color:var(--muted);margin:26px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--border);}
+.topic h4{font-size:13px;font-weight:600;color:var(--muted);letter-spacing:0.06em;text-transform:uppercase;margin:18px 0 8px;font-family:'JetBrains Mono',monospace;}
+.topic p{margin-bottom:12px;color:var(--text);text-align:justify;}
+.topic ul,.topic ol{margin:8px 0 14px 20px;color:var(--text);}
+.topic li{margin-bottom:6px;line-height:1.65;}
+.topic li::marker{color:var(--accent2);}
+.topic strong{color:var(--text);font-weight:600;}
+
+/* TABLES */
+.table-wrap{overflow-x:auto;margin:16px 0 20px;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.06);border:1px solid var(--border);}
+table{width:100%;border-collapse:collapse;font-size:13.5px;background:var(--white);}
+thead tr{background:var(--s1);}
+thead th{color:white;padding:10px 14px;text-align:left;font-family:'Source Serif 4',serif;font-weight:600;font-size:13px;}
+tbody tr:nth-child(even){background:var(--bg2);}
+tbody tr:hover{background:var(--s1-lt);transition:background 0.15s;}
+tbody td{padding:9px 14px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.5;}
+.s2-tbl thead tr{background:var(--s2);}
+.s3-tbl thead tr{background:var(--s3);}
+.s4-tbl thead tr{background:var(--s4);}
+.s5-tbl thead tr{background:var(--s5);}
+
+/* CALLOUTS */
+.callout{margin:18px 0;padding:14px 18px;border-radius:0 8px 8px 0;border-left:4px solid;font-size:14px;line-height:1.65;}
+.callout .label{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;display:block;margin-bottom:4px;}
+.callout.pearl{background:var(--gold-lt);border-color:var(--gold);}
+.callout.pearl .label{color:var(--gold);}
+.callout.warn{background:var(--red-lt);border-color:var(--red);}
+.callout.warn .label{color:var(--red);}
+.callout.clin{background:var(--s2-lt);border-color:var(--s2);}
+.callout.clin .label{color:var(--s2);}
+.callout.exam{background:var(--s4-lt);border-color:var(--s4);}
+.callout.exam .label{color:var(--s4);}
+
+/* VIVA Scenario */
+.viva{background:var(--s1-lt);border:1px solid var(--border);border-left:4px solid var(--s1);border-radius:0 8px 8px 0;padding:16px 20px;margin:20px 0;}
+.viva .vq{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;color:var(--s1);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:8px;}
+.viva .vscenario{font-size:14px;font-weight:600;color:var(--text);margin-bottom:10px;line-height:1.5;}
+.viva .vanswer{font-size:13.5px;color:var(--muted);line-height:1.65;}
+.viva .vanswer ul{margin:6px 0 0 18px;}
+.viva .vanswer li{margin-bottom:4px;}
+
+/* KEY GRID */
+.key-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:10px;margin:14px 0 20px;}
+.key-card{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:12px 14px;font-size:13px;line-height:1.55;}
+.key-card .kc-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:4px;font-weight:600;color:var(--s1);}
+.key-card .kc-val{font-weight:700;font-size:15px;color:var(--text);}
+.key-card.g2 .kc-label{color:var(--s2);}
+.key-card.g3 .kc-label{color:var(--s3);}
+.key-card.red .kc-label{color:var(--red);}
+.key-card.amb .kc-label{color:var(--accent2);}
+
+/* TOP BTN */
+#top-btn{position:fixed;bottom:28px;right:28px;background:var(--primary);color:white;border:none;border-radius:50%;width:44px;height:44px;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,0.2);transition:all 0.2s;opacity:0;pointer-events:none;z-index:1100;}
+#top-btn.show{opacity:1;pointer-events:auto;}
+#top-btn:hover{background:var(--accent2);transform:translateY(-2px);}
+
+@media(max-width:900px){
+  .content-wrap{padding:0 20px 60px;}
+  #hero{padding:80px 20px 40px;}
+  #hero h1{font-size:30px;}
+  #sidebar-toggle{top:64px; left:16px;}
+}
+</style>
+<script src="https://jsdelivr.net" async></script>
+</head>
+<body>
+  <!-- Standardized SIH Navbar -->
+  <nav class="nav" id="mainNav">
+    <div class="nav-left">
+      <a href="../../index.html" class="nav-pill">
+        <div class="nav-logo-img">
+          <img src="../../assets/images/Surgical_Insight_Hub_Logo.png" alt="SIH Logo">
+        </div>
+        <div>
+          <div class="nav-brand-text">Surgical Insight Hub</div>
+          <div class="nav-brand-sub">The Residency Journal</div>
+        </div>
+      </a>
+    </div>
+    <div class="nav-links-pill">
+      <a href="../../index.html">Home</a>
+      <a href="../../notes.html" class="active">Notes</a>
+      <a href="../operative_approach.html">Playbook</a>
+      <a href="../../arena.html?v=4.0.0">MCQ Arena</a>
+      <a href="../../podcast.html">Podcast</a>
+      <a href="../../surgery-talk.html">Surgery Talk</a>
+      <a href="../../about.html">About</a>
+    </div>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+        <svg id="moonIcon" viewBox="0 0 24 24" width="18" height="18"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        <svg id="sunIcon" style="display:none;" viewBox="0 0 24 24" width="18" height="18"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="23" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+      </button>
+      <a href="https://t.me/sugicalInsightHub" target="_blank" class="nav-tg-btn" title="Join Telegram">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="#f0d080"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.89 8.22l-1.97 9.28c-.15.66-.54.82-1.08.51l-3-2.21-1.45 1.39c-.16.16-.3.3-.61.3l.21-3.05 5.56-5.02c.24-.21-.05-.33-.37-.12l-6.87 4.33-2.96-.92c-.64-.2-.66-.64.14-.95l11.57-4.46c.54-.19 1.01.13.83.94z"/></svg>
+      </a>
+      <a href="../../arena.html?v=4.0.0" class="nav-btn arena-btn">MCQ Arena</a>
+      <button class="mob-nav-toggle" onclick="openMobNav()" aria-label="Menu">
+        <div class="hamburger"><span></span><span></span><span></span></div>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mob-nav-overlay" id="mobNavOverlay" onclick="closeMobNav()"></div>
+  <div class="mob-nav-sheet" id="mobNavSheet">
+    <div class="mob-nav-handle"></div>
+    <a href="../../index.html" onclick="closeMobNav()">Home</a>
+    <a href="../../notes.html" onclick="closeMobNav()">Notes</a>
+    <a href="../../notes/operative_approach.html" onclick="closeMobNav()">Playbook</a>
+    <a href="../../podcast.html" onclick="closeMobNav()">Podcast</a>
+    <a href="../../surgery-talk.html" onclick="closeMobNav()">Surgery Talk</a>
+    <a href="../../arena.html" onclick="closeMobNav()">MCQ Arena</a>
+    <a href="../../about.html" onclick="closeMobNav()">About</a>
+    <a href="https://t.me/sugicalInsightHub" target="_blank" rel="noopener" onclick="closeMobNav()" style="color: var(--brand-gold); font-weight: 800;">Join Telegram Community</a>
+  </div>
+
+  <div id="progress-bar"></div>
+  <button id="sidebar-toggle" onclick="toggleSidebar()">
+    <span>📜</span> Sections Menu
+  </button>
+  <div id="sidebar-overlay" onclick="closeSidebar()"></div>
+
+  <!-- SIDEBAR -->
+  <aside id="sidebar">
+    <div id="sidebar-header">
+      <div class="logo">Preoperative Optimization</div>
+      <div class="sub">General Surgery Monograph</div>
+    </div>
+    <div id="sidebar-search">
+      <input oninput="filterNav(this.value)" placeholder="Search sections..." type="text"/>
+    </div>
+    <nav id="sidebar-nav">
+      <div class="vol-label">Pillar 1: Pathophysiology</div>
+      <a class="nav-item" href="#p1-hpa-axis"><span class="num">1.1</span>HPA-Axis &amp; Steroids</a>
+      <a class="nav-item" href="#p1-cardio-stress"><span class="num">1.2</span>Cardiovascular Stress Mechanics</a>
+      <a class="nav-item" href="#p1-pulm-stress"><span class="num">1.3</span>Pulmonary Decompensation</a>
+      <div class="vol-label">Pillar 2: Risk Scoring</div>
+      <a class="nav-item" href="#p2-rcri"><span class="num">2.1</span>Revised Cardiac Risk Index (RCRI)</a>
+      <a class="nav-item" href="#p2-caprini"><span class="num">2.2</span>Caprini VTE Risk Index</a>
+      <div class="vol-label">Pillar 3: Optimization &amp; Trials</div>
+      <a class="nav-item" href="#p3-glycemic"><span class="num">3.1</span>Glycemic Titration Rules</a>
+      <a class="nav-item" href="#p3-trials"><span class="num">3.2</span>Landmark Preoperative Trials</a>
+      <div class="vol-label">Pillar 4: Care Pathways</div>
+      <a class="nav-item" href="#p4-hypertension"><span class="num">4.1</span>Hypertension Management Track</a>
+      <a class="nav-item" href="#p4-hyperglycemia"><span class="num">4.2</span>Hyperglycemia Management Track</a>
+      <div class="vol-label">Pillar 5: Crisis Care</div>
+      <a class="nav-item" href="#p5-adrenal-crisis"><span class="num">5.1</span>Acute Adrenal Crisis Protocol</a>
+      <a class="nav-item" href="#p5-pheo"><span class="num">5.2</span>Pheochromocytoma Alpha Blockade</a>
+      <div class="vol-label">Board Review</div>
+      <a class="nav-item" href="#board-review"><span class="num">6.1</span>ABSITE Core Recall Matrix</a>
+    </nav>
+  </aside>
+
+  <main id="main">
+    <section id="hero">
+      <div class="eyebrow">Perioperative Medicine · Monograph</div>
+      <h1>Preoperative Medical Optimization</h1>
+      <p class="subtitle">Evidence-based assessment of cardiac indices, pulmonary mechanics, endocrine axis optimization, and VTE prophylaxis stratification.</p>
+      <div class="badges">
+        <span class="badge">General Surgery</span>
+        <span class="badge">Board Review</span>
+        <span class="badge">ABSITE Gold</span>
+      </div>
+    </section>
+
+    <div class="content-wrap">
+      <!-- Key Statistics Grid -->
+      <div class="key-grid">
+        <div class="key-card">
+          <div class="kc-label">RCRI Predictors</div>
+          <div class="kc-val">6 Parameters</div>
+        </div>
+        <div class="key-card g2">
+          <div class="kc-label">Glycemic Range</div>
+          <div class="kc-val">140 - 180 mg/dL</div>
+        </div>
+        <div class="key-card red">
+          <div class="kc-label">Steroid Hold</div>
+          <div class="kc-val">Stress-Dosing Protocol</div>
+        </div>
+        <div class="key-card amb">
+          <div class="kc-label">Pheo Blockade</div>
+          <div class="kc-val">Alpha before Beta</div>
+        </div>
+      </div>
+
+      <!-- Foundational Anchor Callout -->
+      <div class="callout clin" style="border-left-color: var(--primary); background: var(--primary-lt); margin-bottom: 40px;">
+        <span class="label" style="color: var(--primary); font-weight: 700;">Foundational Anchor (From PDF Source Notes)</span>
+        <p style="font-style: italic; color: var(--text);">
+          "Evidence-based protocols for preoperative cardiac, pulmonary, and endocrine optimization. Managing diabetes, chronic or acute hypertension, DVT prophylaxis, and cardiac risk index calculations."
+        </p>
+      </div>
+
+      <!-- PILLAR 1 -->
+      <div class="sec-header s1" id="p1-hpa-axis">
+        <span class="sec-badge">PILLAR 1</span>
+        <span class="sec-title">Core Pathophysiology &amp; Stress Physiology</span>
+      </div>
+      
+      <section class="topic s1">
+        <div class="topic-header"><span class="topic-num">1.1</span><h2>HPA-Axis Suppression &amp; Glucocorticoid Receptor Kinetics</h2></div>
+        <p>Exogenous steroid administration suppresses the Hypothalamic-Pituitary-Adrenal (HPA) axis via negative feedback loop kinetics. Circulating glucocorticoids bind to glucocorticoid receptors in the hypothalamus, decreasing Corticotropin-Releasing Hormone (CRH) synthesis, and in the anterior pituitary, reducing Adrenocorticotropic Hormone (ACTH) expression. This leads to bilateral adrenal cortical atrophy:</p>
+        <ul>
+          <li><strong>Surgical Stress Vulnerability:</strong> Under physiological stress (e.g., surgical incision), cortisol secretion normally increases up to 5–10 fold to maintain cardiovascular tone, expand vascular reactivity to catecholamines (upregulation of vascular $\alpha_1$-adrenergic receptors), and modulate inflammatory responses. Patients with HPA axis suppression cannot mount this cortisol response, putting them at high risk for refractory vasodilatory shock and cardiovascular collapse (adrenal crisis).</li>
+          <li><strong>Steroid Equivalencies &amp; Physiological Baselines:</strong>
+            <br>• Normal baseline daily cortisol production is **15–20 mg/day** (equivalent to 5 mg of prednisone or 20 mg of hydrocortisone).
+            <br>• Suppression can occur with any dose equivalent to &ge; 20 mg/day hydrocortisone (or &ge; 5 mg/day prednisone) taken for &ge; 3 weeks.
+          </li>
+        </ul>
+      </section>
+
+      <section class="topic s1" id="p1-cardio-stress">
+        <div class="topic-header"><span class="topic-num">1.2</span><h2>Cardiovascular Emergence &amp; Arteriole Wall Stress</h2></div>
+        <p>Surgical emergence causes a surge in endogenous catecholamines, leading to tachycardia and hypertension. In patients with chronic uncontrolled hypertension, arteriole walls are thickened and stiffened by hyaline and hyperplastic arteriolosclerosis:</p>
+        <ul>
+          <li><strong>Left Ventricular Mechanics:</strong> According to Laplace’s Law:
+            \[T = \frac{P \cdot r}{2h}\]
+            where \(T\) is wall tension, \(P\) is transmural pressure, \(r\) is ventricular chamber radius, and \(h\) is wall thickness. A sudden rise in systemic vascular resistance (SVR) increases afterload and ventricular pressure, causing a rapid spike in myocardial wall tension.
+          </li>
+          <li><strong>Myocardial Ischemia &amp; Decompensation:</strong> This spike in wall tension increases myocardial oxygen demand. Stiffened arteriole walls restrict oxygen delivery, which can trigger subendocardial ischemia, acute diastolic heart failure, intracranial hemorrhage, or arterial dissection.</li>
+        </ul>
+      </section>
+
+      <section class="topic s1" id="p1-pulm-stress">
+        <div class="topic-header"><span class="topic-num">1.3</span><h2>Pulmonary Decompensation &amp; Atelectasis</h2></div>
+        <p>Postoperative pulmonary complications (PPCs) are primarily driven by physiological and mechanical changes:</p>
+        <ul>
+          <li><strong>Postoperative Atelectasis:</strong> Diaphragmatic dysfunction occurs due to phrenic nerve inhibition from abdominal manipulation and splinting from incisional pain. This, combined with surfactant loss, leads to alveolar collapse in dependent lung zones, reducing Functional Residual Capacity (FRC) by up to 50%. This causes ventilation-perfusion (V/Q) mismatch and intrapulmonary shunt.</li>
+          <li><strong>Ventilatory Muscle Fatigue:</strong> Anesthetics and narcotics blunt the central respiratory drive, forcing respiratory muscles to work against stiff, collapsed alveoli. This can progress to hypercapnic respiratory failure if not managed with early mobilization and lung expansion techniques.</li>
+        </ul>
+      </section>
+
+      <!-- PILLAR 2 -->
+      <div class="sec-header s2" id="p2-rcri">
+        <span class="sec-badge">PILLAR 2</span>
+        <span class="sec-title">Risk Scoring Index Models</span>
+      </div>
+      
+      <section class="topic s2">
+        <div class="topic-header"><span class="topic-num">2.1</span><h2>Revised Cardiac Risk Index (RCRI / Lee's Score)</h2></div>
+        <p>The RCRI is the gold standard for predicting perioperative Major Adverse Cardiac Events (MACE), including myocardial infarction, cardiac arrest, complete heart block, and cardiac death:</p>
+        <div class="table-wrap s2-tbl">
+          <table>
+            <thead>
+              <tr>
+                <th>Lee's Independent Predictors (1 Point Each)</th>
+                <th>Diagnostic and Anatomic Definition Criteria</th>
+                <th>Score Staging &amp; Predicted MACE Rate</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>1. High-risk Surgery</strong></td>
+                <td>Intrathoracic, intraperitoneal, or suprainguinal vascular surgery.</td>
+                <td rowspan="3" style="vertical-align: middle; border-right: 1px solid var(--border);">
+                  **Score 0 (Class I):** **0.4%** MACE Risk
+                  <br><br>
+                  **Score 1 (Class II):** **0.9%** MACE Risk
+                </td>
+              </tr>
+              <tr>
+                <td><strong>2. Ischemic Heart Disease</strong></td>
+                <td>History of MI, angina, positive noninvasive stress test, or prior CABG/PCI.</td>
+              </tr>
+              <tr>
+                <td><strong>3. Congestive Heart Failure</strong></td>
+                <td>History of CHF, pulmonary edema, paroxysmal nocturnal dyspnea, or S3 gallop.</td>
+              </tr>
+              <tr>
+                <td><strong>4. Cerebrovascular Disease</strong></td>
+                <td>History of transient ischemic attack (TIA) or stroke.</td>
+                <td rowspan="3" style="vertical-align: middle;">
+                  **Score 2 (Class III):** **6.6%** MACE Risk
+                  <br><br>
+                  **Score &ge; 3 (Class IV):** **11.0%** MACE Risk
+                </td>
+              </tr>
+              <tr>
+                <td><strong>5. Insulin-Dependent Diabetes</strong></td>
+                <td>Preoperative treatment with exogenous insulin.</td>
+              </tr>
+              <tr>
+                <td><strong>6. Renal Insufficiency</strong></td>
+                <td>Preoperative serum creatinine **&gt; 2.0 mg/dL** (177 &micro;mol/L).</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="topic s2" id="p2-caprini">
+        <div class="topic-header"><span class="topic-num">2.2</span><h2>Caprini VTE Risk Assessment Matrix</h2></div>
+        <p>The Caprini Score stratifies venous thromboembolism (VTE) risk to guide perioperative prophylaxis:</p>
+        <div class="table-wrap s2-tbl">
+          <table>
+            <thead>
+              <tr>
+                <th>Caprini Score Staging</th>
+                <th>VTE Risk Category</th>
+                <th>Prophylaxis Recommendations &amp; Chemical Prophylaxis Mandates</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>0 – 1 Points</strong></td>
+                <td>Very Low Risk</td>
+                <td>Early, frequent ambulation. No chemical prophylaxis required.</td>
+              </tr>
+              <tr>
+                <td><strong>2 Points</strong></td>
+                <td>Low Risk</td>
+                <td>Mechanical prophylaxis only (Sequential Compression Devices [SCDs] or TED stockings).</td>
+              </tr>
+              <tr>
+                <td><strong>3 – 4 Points</strong></td>
+                <td>Moderate Risk</td>
+                <td>**Chemical prophylaxis** (LMWH, e.g., Enoxaparin 40 mg SC daily; or UFH 5,000 U SC q12h) PLUS mechanical prophylaxis.</td>
+              </tr>
+              <tr>
+                <td><strong>&ge; 5 Points</strong></td>
+                <td>High Risk</td>
+                <td>**Chemical prophylaxis** (LMWH, e.g., Enoxaparin 40 mg SC daily; or UFH 5,000 U SC q8h) PLUS mechanical prophylaxis. Consider extended prophylaxis (4 weeks) for major oncologic pelvic/abdominal surgery.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- PILLAR 3 -->
+      <div class="sec-header s3" id="p3-glycemic">
+        <span class="sec-badge">PILLAR 3</span>
+        <span class="sec-title">Optimization Protocols &amp; Trials</span>
+      </div>
+      
+      <section class="topic s3">
+        <div class="topic-header"><span class="topic-num">3.1</span><h2>Perioperative Glycemic Titration Rules</h2></div>
+        <p>Preoperative management of diabetic medications is required to avoid hyperglycemia (which impairs leukocyte function and increases wound infection risk) while preventing hypoglycemia under NPO conditions:</p>
+        <ul>
+          <li><strong>Oral &amp; Non-Insulin Injectable Agents:</strong>
+            <ul>
+              <li><strong>Metformin:</strong> Hold **24 hours prior to surgery** to minimize the risk of Metformin-Associated Lactic Acidosis (MALA), especially if renal perfusion falls intraoperatively.</li>
+              <li><strong>SGLT-2 Inhibitors (e.g., Empagliflozin):</strong> Hold **3–4 days prior to surgery** to prevent euglycemic diabetic ketoacidosis (eugDKA).</li>
+              <li><strong>GLP-1 Receptor Agonists (e.g., Semaglutide):</strong> Hold **1 week prior to elective surgery** to minimize gastric stasis and the risk of aspiration during induction.</li>
+              <li><strong>Sulfonylureas (e.g., Glipizide):</strong> Hold the morning of surgery.</li>
+            </ul>
+          </li>
+          <li><strong>Exogenous Insulin Regimen:</strong>
+            <ul>
+              <li><strong>Night Before Surgery:</strong> Administer **75–80%** of the standard long-acting basal dose (e.g., Glargine). Hold short-acting bolus insulin.</li>
+              <li><strong>Morning of Surgery:</strong> Administer **50–75%** of the standard long-acting basal dose. Hold all short-acting doses unless blood glucose exceeds 180 mg/dL, in which case correct using a low-dose sliding scale.</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <section class="topic s3" id="p3-trials">
+        <div class="topic-header"><span class="topic-num">3.2</span><h2>Landmark Preoperative Optimization Trials</h2></div>
+        <div class="table-wrap s3-tbl">
+          <table>
+            <thead>
+              <tr>
+                <th>Trial Name</th>
+                <th>Year</th>
+                <th>Primary Intervention</th>
+                <th>Clinical Outcome &amp; Impact on Practice Guidelines</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>POISE-1</strong></td>
+                <td>2008</td>
+                <td>Randomized trial comparing high-dose Metoprolol Succinate (100 mg starting 2–4 hours pre-op) vs. placebo in 8,351 patients.</td>
+                <td>**Metoprolol reduced MI** (5.8% vs. 6.9%) but **significantly increased overall mortality** (3.1% vs. 2.3%) and **stroke** (1.0% vs. 0.5%), driven by hypotension. Established that **beta-blockers should not be initiated on the day of surgery**. Continue chronic therapy, but do not start immediately pre-op.</td>
+              </tr>
+              <tr>
+                <td><strong>POISE-2</strong></td>
+                <td>2014</td>
+                <td>Randomized trial evaluating perioperative Aspirin (200 mg starting pre-op) vs. placebo in 10,010 patients undergoing noncardiac surgery.</td>
+                <td>**Aspirin did not reduce myocardial infarction or mortality** at 30 days (7.0% vs. 7.1%), but **significantly increased major bleeding events** (4.6% vs. 3.8%). Guided recommendations to hold prophylactic aspirin pre-op unless recent coronary stenting is present.</td>
+              </tr>
+              <tr>
+                <td><strong>CARP</strong></td>
+                <td>2004</td>
+                <td>Randomized trial comparing prophylactic coronary revascularization (CABG or PCI) vs. medical optimization in 510 patients with stable coronary artery disease undergoing major vascular surgery.</td>
+                <td>**No difference in long-term mortality** (22% vs. 23% at 2.7 years) or postoperative MI. Proved that routine coronary revascularization before high-risk noncardiac surgery is not beneficial. Reserve revascularization for patients who meet standard, non-surgical indications.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- PILLAR 4 -->
+      <div class="sec-header s4" id="p4-hypertension">
+        <span class="sec-badge">PILLAR 4</span>
+        <span class="sec-title">Dual Management Pathways</span>
+      </div>
+      
+      <section class="topic s4">
+        <div class="topic-header"><span class="topic-num">4.1</span><h2>Uncontrolled Hypertension Pathway</h2></div>
+        <p>Preoperative management of severe hypertension (systolic BP &ge; 180 mmHg or diastolic BP &ge; 110 mmHg) depends on the surgical timeline:</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div style="background: var(--white); border: 1px solid var(--border); border-radius: 8px; padding: 20px;">
+                <h4 style="color: var(--primary); font-size: 14px; font-weight: 700; margin-bottom: 10px; text-transform: uppercase;">Elective Surgical Track</h4>
+                <p style="font-size: 13.5px; color: var(--text); line-height: 1.6;">
+                    • **Delay the surgery.**
+                    <br>• Do not use rapid IV antihypertensives (e.g., hydralazine/labetalol) in the holding area to "force" a normal blood pressure, as this can cause unpredictable cerebral or coronary hypoperfusion.
+                    <br>• Refer the patient to their primary care provider for oral medication adjustment and optimization over 2–4 weeks.
+                </p>
+            </div>
+            <div style="background: var(--white); border: 1px solid var(--border); border-radius: 8px; padding: 20px;">
+                <h4 style="color: var(--red); font-size: 14px; font-weight: 700; margin-bottom: 10px; text-transform: uppercase;">Emergency/Urgent Surgical Track</h4>
+                <p style="font-size: 13.5px; color: var(--text); line-height: 1.6;">
+                    • **Proceed to the operating room.**
+                    <br>• Manage blood pressure intraoperatively using short-acting, titratable intravenous infusions to prevent rapid pressure fluctuations.
+                    <br>• **First-line agents:** **Clevidipine** (calcium channel blocker, quick onset and offset), **Nicardipine**, or **Esmolol** (short-acting &beta;-blocker for tachycardia).
+                </p>
+            </div>
+        </div>
+      </section>
+
+      <section class="topic s4" id="p4-hyperglycemia">
+        <div class="topic-header"><span class="topic-num">4.2</span><h2>Severe Hyperglycemia Pathway</h2></div>
+        <p>Preoperative management of severe hyperglycemia (blood glucose &gt; 300 mg/dL) depends on the surgical timeline:</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div style="background: var(--white); border: 1px solid var(--border); border-radius: 8px; padding: 20px;">
+                <h4 style="color: var(--primary); font-size: 14px; font-weight: 700; margin-bottom: 10px; text-transform: uppercase;">Elective Surgical Track</h4>
+                <p style="font-size: 13.5px; color: var(--text); line-height: 1.6;">
+                    • **Delay the surgery.**
+                    <br>• Assess HbA1c. If HbA1c is &gt; 8.5% (especially if &gt; 10%), postpone elective cases to optimize glycemic control.
+                    <br>• Assess for acute ketosis. If positive, refer for medical management.
+                </p>
+            </div>
+            <div style="background: var(--white); border: 1px solid var(--border); border-radius: 8px; padding: 20px;">
+                <h4 style="color: var(--red); font-size: 14px; font-weight: 700; margin-bottom: 10px; text-transform: uppercase;">Emergency/Urgent Surgical Track</h4>
+                <p style="font-size: 13.5px; color: var(--text); line-height: 1.6;">
+                    • **Proceed to the operating room.**
+                    <br>• Initiate a continuous **intravenous regular insulin infusion** (drip) rather than subcutaneous boluses, targeting a blood glucose range of **140–180 mg/dL**.
+                    <br>• Check arterial blood gas and basic metabolic panel to rule out Diabetic Ketoacidosis (DKA) or Hyperosmolar Hyperglycemic State (HHS).
+                </p>
+            </div>
+        </div>
+      </section>
+
+      <!-- PILLAR 5 -->
+      <div class="sec-header s5" id="p5-adrenal-crisis">
+        <span class="sec-badge">PILLAR 5</span>
+        <span class="sec-title">Crisis Care &amp; Endocrine Management</span>
+      </div>
+      
+      <section class="topic s5">
+        <div class="topic-header"><span class="topic-num">5.1</span><h2>Acute Adrenal Crisis Protocol</h2></div>
+        <p>Suspected perioperative adrenal crisis is a life-threatening endocrine emergency presenting as refractory hypotension despite fluid resuscitation and vasopressors, often accompanied by hyponatremia, hyperkalemia, and hypoglycemia:</p>
+        
+        <div style="background:var(--white); border:1px solid var(--border); border-radius:8px; padding:24px; margin:20px 0;">
+          <h4 style="color:var(--primary); font-size:16px; margin-bottom:12px; font-weight:700;">Immediate Bedside Crisis Protocol</h4>
+          <ol style="margin-left: 20px; line-height: 1.75;">
+            <li><strong>Blood Draw:</strong> Draw baseline serum cortisol and ACTH levels immediately. **Do not delay treatment while awaiting laboratory results.**</li>
+            <li><strong>Administer Stress-Dose Steroids:</strong>
+              <br>• **If an ACTH stimulation test is planned:** Administer **Dexamethasone 4 mg IV** immediately. Dexamethasone does not cross-react with serum cortisol assays, allowing the test to be performed.
+              <br>• **If no test is planned:** Administer **Hydrocortisone 100 mg IV** immediately, followed by 50 mg IV every 8 hours.
+            </li>
+            <li><strong>Fluid Resuscitation:</strong> Infuse **0.9% Normal Saline** or D5NS (if hypoglycemic) aggressively to correct hypovolemia and hyponatremia.</li>
+            <li><strong>Supportive Care:</strong> Monitor electrolytes closely; avoid potassium-sparing fluids, as hyperkalemia is often present due to mineralocorticoid deficiency.</li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="topic s5" id="p5-pheo">
+        <div class="topic-header"><span class="topic-num">5.2</span><h2>Pheochromocytoma Preoperative Preparation</h2></div>
+        <div class="callout warn">
+          <span class="label">ABSITE Exam Trap: Pheochromocytoma Blockade Sequence</span>
+          <p>When preparing a patient with a pheochromocytoma for adrenalectomy, **alpha-blockade must always be initiated first** (using Phenoxybenzamine or Doxazosin) for 7–14 days. Beta-blockade (e.g., Metoprolol) is only started after alpha-blockade is established, typically 2–3 days before surgery, to control tachycardia.</p>
+          <p style="margin-top: 8px; font-weight: 600;">
+            *If a beta-blocker is started first, the loss of beta-2 mediated vasodilation leads to unopposed alpha-1 vasoconstriction by circulating catecholamines, causing a life-threatening hypertensive crisis.*
+          </p>
+        </div>
+      </section>
+
+      <!-- BOARD REVIEW -->
+      <div class="sec-header s1" id="board-review" style="margin-top: 60px;">
+        <span class="sec-badge">BOARD REVIEW</span>
+        <span class="sec-title">ABSITE Core Recall Matrix</span>
+      </div>
+      
+      <section class="topic s1">
+        <h3>High-Yield Recall Matrix</h3>
+        <div class="table-wrap">
+          <table style="background: transparent;">
+            <thead>
+              <tr>
+                <th>Board Question Topic</th>
+                <th>Gold Standard Key Fact</th>
+                <th>Surgical Decision / Clinical Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>POISE-1 Beta-Blocker Rule</strong></td>
+                <td>Initiating high-dose beta-blockers immediately before surgery decreases nonfatal MI but significantly increases stroke and overall mortality.</td>
+                <td>Do not start new beta-blockade on the day of surgery. Optimize beta-blockers weeks in advance, or continue chronic doses.</td>
+              </tr>
+              <tr>
+                <td><strong>POISE-2 Aspirin Rule</strong></td>
+                <td>Initiating aspirin before noncardiac surgery increases major bleeding without reducing cardiovascular events.</td>
+                <td>Hold aspirin preoperatively unless the patient has a recently placed coronary stent.</td>
+              </tr>
+              <tr>
+                <td><strong>Steroid Equivalencies</strong></td>
+                <td>**Hydrocortisone 20 mg = Prednisone 5 mg = Methylprednisolone 4 mg = Dexamethasone 0.75 mg**.</td>
+                <td>Use these conversions to calculate baseline and stress-dose requirements.</td>
+              </tr>
+              <tr>
+                <td><strong>CARP Coronary Revascularization</strong></td>
+                <td>Routine coronary revascularization prior to vascular surgery does not reduce postoperative MI or long-term mortality.</td>
+                <td>Do not refer vascular patients for prophylactic CABG/PCI unless they meet standard, non-surgical indications.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="viva">
+          <div class="vq">VIVA SCENARIO — ADRENAL INSUFFICIENCY COLLAPSE</div>
+          <div class="vscenario">A 54-year-old female with a history of severe rheumatoid arthritis managed with chronic prednisone (10 mg daily) undergoes an elective low anterior resection. In the PACU, her blood pressure drops to 72/38 mmHg. She is unresponsive to two 1-liter crystalloid boluses and a low-dose Norepinephrine infusion. What is your diagnosis, and what steps do you take?</div>
+          <div class="vanswer">
+            <ul>
+              <li><strong>Diagnosis:</strong> Acute Adrenal Crisis caused by HPA-axis suppression from chronic exogenous steroid use, unmasked by major surgical stress.</li>
+              <li><strong>Initial Management:</strong>
+                <ul>
+                  <li>Draw blood for baseline serum cortisol and ACTH levels immediately.</li>
+                  <li>Administer **Hydrocortisone 100 mg IV** bolus immediately. Do not wait for lab results.</li>
+                  <li>Infuse **0.9% Normal Saline** rapidly.</li>
+                </ul>
+              </li>
+              <li><strong>Subsequent Management:</strong> Continue Hydrocortisone 50 mg IV every 8 hours, transitioning to her oral home dose once stable and tolerating oral intake.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <button id="top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+  <script src="../../js/nav-pill.js"></script>
+  <script src="../../js/navigation.js"></script>
+  <script>
+    const progressBar = document.getElementById('progress-bar');
+    const topBtn = document.getElementById('top-btn');
+    const navItems = document.querySelectorAll('.nav-item');
+    const sections = document.querySelectorAll('.sec-header[id], .topic[id]');
+
+    window.addEventListener('scroll', () => {
+      const st = window.scrollY;
+      const dh = document.documentElement.scrollHeight - window.innerHeight;
+      if (progressBar) progressBar.style.transform = `scaleX(${st / dh})`;
+      if (topBtn) topBtn.classList.toggle('show', st > 400);
+      
+      let current = '';
+      sections.forEach(s => { if (st >= s.offsetTop - 120) current = s.id; });
+      navItems.forEach(n => { n.classList.toggle('active', n.getAttribute('href') === '#' + current); });
+    });
+
+    function filterNav(query) {
+      const q = query.toLowerCase();
+      navItems.forEach(item => { item.style.display = (!q || item.textContent.toLowerCase().includes(q)) ? 'block' : 'none'; });
+    }
+
+    navItems.forEach(item => {
+      item.addEventListener('click', e => {
+        e.preventDefault();
+        if(typeof closeSidebar === 'function') closeSidebar();
+        const target = document.querySelector(item.getAttribute('href'));
+        if (target) window.scrollTo({ top: target.getBoundingClientRect().top - 80, behavior: 'smooth' });
+      });
+    });
+  </script>
+</body>
+</html>
