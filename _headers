@@ -1,0 +1,18 @@
+# Ensure HTML pages and navigation scripts revalidate immediately on deploy
+/
+  Cache-Control: public, max-age=0, must-revalidate
+
+/surgery-talk
+  Cache-Control: public, max-age=0, must-revalidate
+
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+/blog/*
+  Cache-Control: public, max-age=0, must-revalidate
+
+/js/*
+  Cache-Control: public, max-age=0, must-revalidate
+
+/blog/blog.css
+  Cache-Control: public, max-age=0, must-revalidate
