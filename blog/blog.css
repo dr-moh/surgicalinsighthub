@@ -22,7 +22,7 @@ img, svg {
 .blog-hero {
   background: var(--bg-card);
   border-bottom: 1px solid var(--border-color);
-  padding: 60px 5%;
+  padding: 112px 5% 60px;
   text-align: center;
 }
 
@@ -156,7 +156,7 @@ img, svg {
     order: 2;
   }
   .blog-hero {
-    padding: 40px 5%;
+    padding: 104px 5% 40px;
   }
   .blog-title {
     font-size: 2.2rem;

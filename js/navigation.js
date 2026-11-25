@@ -384,6 +384,15 @@ window.closeSidebar = function() {
     // ── 7. SYSTEM UPDATES & NOTIFICATION HYBRID SYSTEM ──
     const SYSTEM_UPDATES = [
         {
+            id: 'update-abdominal-sepsis-2026',
+            title: 'Abdominal Sepsis & Peritonitis: Source Control & STOP-IT',
+            type: 'blog',
+            category: 'Emergency Surgery',
+            date: '2026-11-25',
+            desc: 'SSC 2026 targets, operative source control, STOP-IT & DURAPOP trials, and official poster.',
+            url: 'blog/abdominal-sepsis-peritonitis-source-control.html'
+        },
+        {
             id: 'update-crohns-operative',
             title: "Crohn's Disease Operative Guide",
             type: 'note',
